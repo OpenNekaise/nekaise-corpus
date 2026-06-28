@@ -7,16 +7,18 @@ A curated, license-tagged, **reproducible recipe** for assembling a building / H
 
 | | |
 |---|---|
-| **Documents** | **435** |
-| **Raw originals** | **~1.2 GB** (PDF / HTML) |
-| **Extracted text** | **~33 MB** (~32.8M chars, **≈8.2M tokens**) |
+| **Documents** | **547** |
+| **Raw originals** | **~1.7 GB** (PDF / HTML) |
+| **Extracted text** | **~58 MB** (~57.8M chars, **≈14.4M tokens**) |
 | **Topics** | 5 |
 
-**By topic:** controls_bas 121 · equipment_systems 97 · building_energy 94 · commissioning_fdd 71 · standards_protocols 52
+**By genre:** research papers (arXiv / OSTI / OpenAlex) 321 · reference manuals, standards & gov guides 21 · encyclopedic + seed (Wikipedia / gov) 205. _The 21 curated non-paper docs (EnergyPlus refs, UFC, Title 24, NIST, FEMP, GSA, Brick / 223P) are 4% of the docs but ~28% of the tokens — dense, authoritative, non-academic coverage._
 
-**By source:** arXiv 136 · OSTI 135 · Wikipedia 97 · OpenAlex 32 · PNNL 15 · LBNL 13 · ASHRAE 4 · other 3
+**By topic:** controls_bas 215 · equipment_systems 100 · building_energy 98 · commissioning_fdd 80 · standards_protocols 54
 
-**By license:** public-domain (US gov) 164 · open 159 · cc-by-sa 97 · cc-by 10 · proprietary-internal 5
+**By source:** OSTI 184 · arXiv 170 · Wikipedia 97 · OpenAlex 40 · PNNL 16 · LBNL 15 · NIST 4 · DOE 4 · ASHRAE 4 · GSA / CEC / ENERGY STAR / EnergyPlus / etc. 13
+
+**By license:** public-domain (US gov) 227 · open 205 · cc-by-sa 97 · cc-by 13 · proprietary-internal 5
 
 _Snapshot of the current registry (2026-06-28). The bytes are not shipped — these are what you get
 after running the loader. The corpus grows as sources are added to `sources.yaml`._
@@ -72,7 +74,7 @@ python build_corpus.py --verify   # re-hash local raw/ files against the manifes
 
 `controls_bas` · `equipment_systems` · `building_energy` · `commissioning_fdd` · `standards_protocols`
 
-(~186 sources; ~14 MB extracted text / ~300 MB raw originals when fully fetched.)
+(~550 sources; ~58 MB extracted text / ~1.7 GB raw originals when fully fetched.)
 
 ## Licensing — read before you redistribute
 
