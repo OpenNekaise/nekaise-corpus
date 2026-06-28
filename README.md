@@ -7,18 +7,18 @@ A curated, license-tagged, **reproducible recipe** for assembling a building / H
 
 | | |
 |---|---|
-| **Documents** | **613** |
+| **Documents** | **711** |
 | **Raw originals** | **~1.7 GB** (PDF / HTML) |
-| **Extracted text** | **~59 MB** (~59.1M chars, **≈14.8M tokens**) |
+| **Extracted text** | **~60 MB** (~59.8M chars, **≈15.0M tokens**) |
 | **Topics** | 5 |
 
-**By genre:** research papers (arXiv / OSTI / OpenAlex) 321 · reference manuals, standards & gov guides — PDF (EnergyPlus, UFC, Title 24, 90.1 PRM, NIST, FEMP, IEA EBC) 23 · crawled doc-site pages (Brick / Haystack / ASHRAE 223P / VOLTTRON / Modelica) 64 · encyclopedic + seed (Wikipedia / gov) 205. _Multi-genre on purpose — the 23 reference PDFs are ~28% of the tokens; the crawled ontology / software docs fill out coverage that academic papers miss._
+**By genre:** research papers (arXiv / OSTI / OpenAlex) 321 · reference PDFs — manuals, standards & gov guides (EnergyPlus, UFC, Title 24, 90.1 PRM, NIST, FEMP, IEA EBC) 23 · crawled doc-site pages (Brick / Haystack / ASHRAE 223P / VOLTTRON / Modelica) 64 · practitioner Q&A (Unmet Hours) 98 · encyclopedic + seed (Wikipedia / gov) 205. _Multi-genre on purpose — research + reference manuals + ontology/software docs + real operator Q&A._
 
-**By topic:** controls_bas 237 · building_energy 103 · equipment_systems 101 · standards_protocols 94 · commissioning_fdd 78
+**By topic:** controls_bas 237 · equipment_systems 199 · building_energy 103 · standards_protocols 94 · commissioning_fdd 78
 
-**By source:** OSTI 184 · arXiv 170 · Wikipedia 97 · crawled doc sites (VOLTTRON / Haystack / Brick / open223 / Modelica) 64 · OpenAlex 40 · PNNL 17 · LBNL 15 · NIST 4 · EnergyPlus / IEA EBC / GSA / CEC / etc.
+**By source:** OSTI 184 · arXiv 170 · Unmet Hours 98 · Wikipedia 97 · crawled doc sites (VOLTTRON / Haystack / Brick / open223 / Modelica) 64 · OpenAlex 40 · PNNL 17 · LBNL 15 · EnergyPlus / NIST / IEA EBC / GSA / etc.
 
-**By license:** open 270 · public-domain (US gov) 228 · cc-by-sa 97 · cc-by 13 · proprietary-internal 5
+**By license:** open 270 · public-domain (US gov) 228 · cc-by-sa 195 · cc-by 13 · proprietary-internal 5
 
 _Snapshot of the current registry (2026-06-28). The bytes are not shipped — these are what you get
 after running the loader. The corpus grows as sources are added to `sources.yaml`._
