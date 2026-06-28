@@ -9,8 +9,12 @@ copy.
 - **[`skills/load-corpus.md`](skills/load-corpus.md)** — download/refresh the corpus from
   `sources.yaml` via `build_corpus.py`, then verify (failures, text quality, hashes).
 - **[`skills/find-sources.md`](skills/find-sources.md)** — grow the corpus: discover new
-  open-access sources via OpenAlex (`find_sources.py`), review them, add the good ones to
-  `sources.yaml`, then load. (Both mirrored to `.claude/skills/` for Claude Code.)
+  open-access sources via OpenAlex / OSTI / arXiv (`find_sources.py`), review them, add the good
+  ones to `sources.yaml`, then load.
+- **[`skills/crawl-docs.md`](skills/crawl-docs.md)** — add a multi-page documentation site
+  (software / ontology docs that aren't a single PDF) via `crawl_docs.py`, then load + gate.
+- Quality gate: `python prune_corpus.py --apply` drops thin / garbage / off-topic discovered &
+  crawled docs. (All skills mirrored to `.claude/skills/` for Claude Code.)
 
 ## Hard rules
 

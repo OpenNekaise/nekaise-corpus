@@ -7,18 +7,18 @@ A curated, license-tagged, **reproducible recipe** for assembling a building / H
 
 | | |
 |---|---|
-| **Documents** | **549** |
+| **Documents** | **613** |
 | **Raw originals** | **~1.7 GB** (PDF / HTML) |
-| **Extracted text** | **~58 MB** (~58.5M chars, **≈14.6M tokens**) |
+| **Extracted text** | **~59 MB** (~59.1M chars, **≈14.8M tokens**) |
 | **Topics** | 5 |
 
-**By genre:** research papers (arXiv / OSTI / OpenAlex) 321 · reference manuals, standards & gov guides 23 · encyclopedic + seed (Wikipedia / gov) 205. _The 23 curated non-paper docs (EnergyPlus refs, UFC, Title 24, GSA, NIST, FEMP, IEA EBC, 90.1 PRM, Brick / 223P, VOLTTRON) are ~4% of the docs but ~28% of the tokens — dense, authoritative, non-academic coverage._
+**By genre:** research papers (arXiv / OSTI / OpenAlex) 321 · reference manuals, standards & gov guides — PDF (EnergyPlus, UFC, Title 24, 90.1 PRM, NIST, FEMP, IEA EBC) 23 · crawled doc-site pages (Brick / Haystack / ASHRAE 223P / VOLTTRON / Modelica) 64 · encyclopedic + seed (Wikipedia / gov) 205. _Multi-genre on purpose — the 23 reference PDFs are ~28% of the tokens; the crawled ontology / software docs fill out coverage that academic papers miss._
 
-**By topic:** controls_bas 216 · equipment_systems 101 · building_energy 99 · commissioning_fdd 78 · standards_protocols 55
+**By topic:** controls_bas 237 · building_energy 103 · equipment_systems 101 · standards_protocols 94 · commissioning_fdd 78
 
-**By source:** OSTI 184 · arXiv 170 · Wikipedia 97 · OpenAlex 40 · PNNL 17 · LBNL 15 · NIST 4 · DOE 4 · ASHRAE 4 · IEA EBC / GSA / CEC / EnergyPlus / VOLTTRON / etc. 14
+**By source:** OSTI 184 · arXiv 170 · Wikipedia 97 · crawled doc sites (VOLTTRON / Haystack / Brick / open223 / Modelica) 64 · OpenAlex 40 · PNNL 17 · LBNL 15 · NIST 4 · EnergyPlus / IEA EBC / GSA / CEC / etc.
 
-**By license:** public-domain (US gov) 228 · open 206 · cc-by-sa 97 · cc-by 13 · proprietary-internal 5
+**By license:** open 270 · public-domain (US gov) 228 · cc-by-sa 97 · cc-by 13 · proprietary-internal 5
 
 _Snapshot of the current registry (2026-06-28). The bytes are not shipped — these are what you get
 after running the loader. The corpus grows as sources are added to `sources.yaml`._
@@ -34,9 +34,11 @@ after running the loader. The corpus grows as sources are added to `sources.yaml
 |---|---|
 | `sources.yaml` | The curated registry — each source's URL, topic, license, format. **Edit this to grow the corpus.** |
 | `build_corpus.py` | The loader — downloads sources into `raw/`, extracts plain text into `text/`, dedups by sha256, writes the manifest. |
-| `find_sources.py` | Discovery — queries OpenAlex for new open-access sources and proposes registry entries to grow the corpus. |
+| `find_sources.py` | Discovery — queries OpenAlex / OSTI / arXiv for open-access sources (download-friendly hosts only) and proposes registry entries. |
+| `crawl_docs.py` | Discovery — BFS-crawls a doc site (sphinx / readthedocs / mkdocs) and registers its pages, so multi-page references (not single PDFs) can be loaded. |
+| `prune_corpus.py` | Quality gate — drops thin / garbage / non-English / off-topic discovered & crawled docs. |
 | `manifest.jsonl` | Provenance — id, url, license, topic, sha256, bytes for every fetched doc. |
-| `skills/` | The **skills** an AI agent runs: `load-corpus` (fetch + verify) and `find-sources` (discover + grow). Mirrored to `.claude/skills/`. |
+| `skills/` | The **skills** an AI agent runs: `load-corpus` (fetch + verify), `find-sources` (discover papers/reports), `crawl-docs` (add doc sites). Mirrored to `.claude/skills/`. |
 | `raw/`, `text/` | **Git-ignored.** Your local copy of the bytes / extracted text. Never committed. |
 
 ## Use it

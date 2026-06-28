@@ -1660,6 +1660,34 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: crawl-modelica_buildings-bestpractice-html
+    title: 'modelica_buildings docs: bestPractice.html'
+    url: https://simulationresearch.lbl.gov/modelica/userGuide/bestPractice.html
+    source: modelica_buildings
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-modelica_buildings-development-html
+    title: 'modelica_buildings docs: development.html'
+    url: https://simulationresearch.lbl.gov/modelica/userGuide/development.html
+    source: modelica_buildings
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-modelica_buildings-gettingstarted-html
+    title: 'modelica_buildings docs: gettingStarted.html'
+    url: https://simulationresearch.lbl.gov/modelica/userGuide/gettingStarted.html
+    source: modelica_buildings
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-modelica_buildings-performance-html
+    title: 'modelica_buildings docs: performance.html'
+    url: https://simulationresearch.lbl.gov/modelica/userGuide/performance.html
+    source: modelica_buildings
+    license: open
+    topic: building_energy
+    format: html
   - id: oa-a-global-comparison-of-building-decarbonization-
     title: A global comparison of building decarbonization scenarios by 2050 towards
       1.5–2 °C targets
@@ -2846,6 +2874,153 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
+  - id: crawl-volttron-developing-volttron-developing-agents-agent-con
+    title: 'volttron docs: developing-volttron/developing-agents/agent-configuration-store.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/developing-volttron/developing-agents/agent-configuration-store.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-developing-volttron-developing-agents-agent-dev
+    title: 'volttron docs: developing-volttron/developing-agents/agent-development.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/developing-volttron/developing-agents/agent-development.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-external-docs-volttron-ansible-index-html
+    title: 'volttron docs: external-docs/volttron-ansible/index.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/external-docs/volttron-ansible/index.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-external-docs-volttron-economizer-rcx-index-htm
+    title: 'volttron docs: external-docs/volttron-economizer-rcx/index.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/external-docs/volttron-economizer-rcx/index.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-external-docs-volttron-ilc-index-html
+    title: 'volttron docs: external-docs/volttron-ilc/index.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/external-docs/volttron-ilc/index.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-external-docs-volttron-lib-base-driver-docs-roo
+    title: 'volttron docs: external-docs/volttron-lib-base-driver_docs_root/docs/source/index.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/external-docs/volttron-lib-base-driver_docs_root/docs/source/index.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-external-docs-volttron-lib-base-historian-docs-
+    title: 'volttron docs: external-docs/volttron-lib-base-historian_docs_root/docs/source/index.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/external-docs/volttron-lib-base-historian_docs_root/docs/source/index.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-external-docs-volttron-lib-base-historian-index
+    title: 'volttron docs: external-docs/volttron-lib-base-historian/index.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/external-docs/volttron-lib-base-historian/index.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-external-docs-volttron-lib-fake-driver-docs-roo
+    title: 'volttron docs: external-docs/volttron-lib-fake-driver_docs_root/docs/source/index.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/external-docs/volttron-lib-fake-driver_docs_root/docs/source/index.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-external-docs-volttron-lib-tagging-index-html
+    title: 'volttron docs: external-docs/volttron-lib-tagging/index.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/external-docs/volttron-lib-tagging/index.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-external-docs-volttron-lib-web-docs-root-docs-sxxxxxxxxx
+    title: 'volttron docs: external-docs/volttron-lib-web_docs_root/docs/source/platforms/device-endpoints.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/external-docs/volttron-lib-web_docs_root/docs/source/platforms/device-endpoints.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-external-docs-volttron-lib-web-docs-root-docs-sxxxxxxxxxx
+    title: 'volttron docs: external-docs/volttron-lib-web_docs_root/docs/source/platforms/historian-endpoints.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/external-docs/volttron-lib-web_docs_root/docs/source/platforms/historian-endpoints.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-external-docs-volttron-platform-driver-docs-roo
+    title: 'volttron docs: external-docs/volttron-platform-driver_docs_root/docs/source/index.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/external-docs/volttron-platform-driver_docs_root/docs/source/index.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-external-docs-volttron-platform-driver-docs-roox
+    title: 'volttron docs: external-docs/volttron-platform-driver_docs_root/docs/source/platform-driver-agent.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/external-docs/volttron-platform-driver_docs_root/docs/source/platform-driver-agent.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-external-docs-volttron-platform-driver-index-ht
+    title: 'volttron docs: external-docs/volttron-platform-driver/index.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/external-docs/volttron-platform-driver/index.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-external-docs-volttron-platform-driver-platform
+    title: 'volttron docs: external-docs/volttron-platform-driver/platform-driver-agent.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/external-docs/volttron-platform-driver/platform-driver-agent.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-external-docs-volttron-sysmon-index-html
+    title: 'volttron docs: external-docs/volttron-sysmon/index.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/external-docs/volttron-sysmon/index.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-platform-features-config-store-agent-configurat
+    title: 'volttron docs: platform-features/config-store/agent-configuration-store.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/platform-features/config-store/agent-configuration-store.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-platform-features-config-store-configuration-st
+    title: 'volttron docs: platform-features/config-store/configuration-store.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/platform-features/config-store/configuration-store.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-platform-features-message-bus-vip-vip-json-rpc-
+    title: 'volttron docs: platform-features/message-bus/vip/vip-json-rpc.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/platform-features/message-bus/vip/vip-json-rpc.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
+  - id: crawl-volttron-platform-features-message-bus-vip-vip-pubsub-su
+    title: 'volttron docs: platform-features/message-bus/vip/vip-pubsub-subsystem.html'
+    url: https://eclipse-volttron.readthedocs.io/en/latest/platform-features/message-bus/vip/vip-pubsub-subsystem.html
+    source: volttron
+    license: open
+    topic: controls_bas
+    format: html
   - id: oa-energy-management-for-internet-of-things-via-dis
     title: Energy Management for Internet of Things via Distributed Systems
     url: https://jastt.org/index.php/jasttpath/article/download/85/28
@@ -4002,6 +4177,279 @@ sources:
     license: open
     topic: standards_protocols
     format: pdf
+  - id: crawl-brick-brick-aliases-html
+    title: 'brick docs: brick/aliases.html'
+    url: https://docs.brickschema.org/brick/aliases.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-brick-brick-concepts-html
+    title: 'brick docs: brick/concepts.html'
+    url: https://docs.brickschema.org/brick/concepts.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-brick-brick-relationships-html
+    title: 'brick docs: brick/relationships.html'
+    url: https://docs.brickschema.org/brick/relationships.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-brick-brick-timeseries-html
+    title: 'brick docs: brick/timeseries.html'
+    url: https://docs.brickschema.org/brick/timeseries.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-brick-extra-custom-shapes-html
+    title: 'brick docs: extra/custom-shapes.html'
+    url: https://docs.brickschema.org/extra/custom-shapes.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-brick-intro-html
+    title: 'brick docs: intro.html'
+    url: https://docs.brickschema.org/intro.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-brick-lifecycle-creation-html
+    title: 'brick docs: lifecycle/creation.html'
+    url: https://docs.brickschema.org/lifecycle/creation.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-brick-lifecycle-inference-html
+    title: 'brick docs: lifecycle/inference.html'
+    url: https://docs.brickschema.org/lifecycle/inference.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-brick-metadata-external-representations-html
+    title: 'brick docs: metadata/external-representations.html'
+    url: https://docs.brickschema.org/metadata/external-representations.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-brick-metadata-tags-html
+    title: 'brick docs: metadata/tags.html'
+    url: https://docs.brickschema.org/metadata/tags.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-brick-modeling-collections-html
+    title: 'brick docs: modeling/collections.html'
+    url: https://docs.brickschema.org/modeling/collections.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-brick-modeling-connections-html
+    title: 'brick docs: modeling/connections.html'
+    url: https://docs.brickschema.org/modeling/connections.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-brick-modeling-controllers-html
+    title: 'brick docs: modeling/controllers.html'
+    url: https://docs.brickschema.org/modeling/controllers.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-brick-modeling-meters-html
+    title: 'brick docs: modeling/meters.html'
+    url: https://docs.brickschema.org/modeling/meters.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-brick-modeling-point-collections-html
+    title: 'brick docs: modeling/point-collections.html'
+    url: https://docs.brickschema.org/modeling/point-collections.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-brick-modeling-terminal-units-html
+    title: 'brick docs: modeling/terminal-units.html'
+    url: https://docs.brickschema.org/modeling/terminal-units.html
+    source: brick
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-haystack-appendix-choice
+    title: 'haystack docs: appendix/choice'
+    url: https://project-haystack.org/doc/appendix/choice
+    source: haystack
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-haystack-appendix-conjuncts
+    title: 'haystack docs: appendix/conjuncts'
+    url: https://project-haystack.org/doc/appendix/conjuncts
+    source: haystack
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-haystack-appendix-equip
+    title: 'haystack docs: appendix/equip'
+    url: https://project-haystack.org/doc/appendix/equip
+    source: haystack
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-haystack-appendix-marker
+    title: 'haystack docs: appendix/marker'
+    url: https://project-haystack.org/doc/appendix/marker
+    source: haystack
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-haystack-appendix-phenomenon
+    title: 'haystack docs: appendix/phenomenon'
+    url: https://project-haystack.org/doc/appendix/phenomenon
+    source: haystack
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-haystack-appendix-quantity
+    title: 'haystack docs: appendix/quantity'
+    url: https://project-haystack.org/doc/appendix/quantity
+    source: haystack
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-haystack-appendix-system
+    title: 'haystack docs: appendix/system'
+    url: https://project-haystack.org/doc/appendix/system
+    source: haystack
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-haystack-appendix-tags
+    title: 'haystack docs: appendix/tags'
+    url: https://project-haystack.org/doc/appendix/tags
+    source: haystack
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-haystack-appendix-val
+    title: 'haystack docs: appendix/val'
+    url: https://project-haystack.org/doc/appendix/val
+    source: haystack
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-haystack-dochaystack-changelog
+    title: 'haystack docs: docHaystack/ChangeLog'
+    url: https://project-haystack.org/doc/docHaystack/ChangeLog
+    source: haystack
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-haystack-dochaystack-index
+    title: 'haystack docs: docHaystack/index'
+    url: https://project-haystack.org/doc/docHaystack/index
+    source: haystack
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-haystack-lib-ph-marker
+    title: 'haystack docs: lib-ph/marker'
+    url: https://project-haystack.org/doc/lib-ph/marker
+    source: haystack
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-haystack-lib-ph-val
+    title: 'haystack docs: lib-ph/val'
+    url: https://project-haystack.org/doc/lib-ph/val
+    source: haystack
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-open223-brick-rec
+    title: 'open223 docs: brick-rec'
+    url: https://docs.open223.info/brick-rec
+    source: open223
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-open223-definitions
+    title: 'open223 docs: definitions'
+    url: https://docs.open223.info/definitions
+    source: open223
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-open223-design-patterns
+    title: 'open223 docs: design-patterns'
+    url: https://docs.open223.info/design-patterns
+    source: open223
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-open223-model-creation-buildingmotif
+    title: 'open223 docs: model-creation-buildingmotif'
+    url: https://docs.open223.info/model-creation-buildingmotif
+    source: open223
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-open223-model-exploration
+    title: 'open223 docs: model-exploration'
+    url: https://docs.open223.info/model-exploration
+    source: open223
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-open223-model-inference
+    title: 'open223 docs: model-inference'
+    url: https://docs.open223.info/model-inference
+    source: open223
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-open223-other-resources
+    title: 'open223 docs: other-resources'
+    url: https://docs.open223.info/other-resources
+    source: open223
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-open223-overview
+    title: 'open223 docs: overview'
+    url: https://docs.open223.info/overview
+    source: open223
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-open223-related-standards
+    title: 'open223 docs: related-standards'
+    url: https://docs.open223.info/related-standards
+    source: open223
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-open223-sensors-and-properties
+    title: 'open223 docs: sensors-and-properties'
+    url: https://docs.open223.info/sensors-and-properties
+    source: open223
+    license: open
+    topic: standards_protocols
+    format: html
   - id: oa-a-large-scale-evaluation-of-automated-metadata-i
     title: A large-scale evaluation of automated metadata inference approaches on sensors
       from air handling units

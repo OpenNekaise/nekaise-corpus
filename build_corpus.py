@@ -58,14 +58,23 @@ def extract_html(data: bytes) -> str:
     soup = BeautifulSoup(data, "html.parser")
     for tag in soup(["script", "style", "noscript"]):
         tag.decompose()
-    # MediaWiki/Wikipedia main content if present, else whole body
-    main = soup.select_one("div.mw-parser-output") or soup.body or soup
+    # main content: MediaWiki first, then common doc-site (sphinx/readthedocs/mkdocs) containers, else body
+    main = (soup.select_one("div.mw-parser-output") or soup.select_one("[role=main]")
+            or soup.select_one("main") or soup.select_one("article")
+            or soup.select_one("div.body") or soup.select_one("div.document")
+            or soup.select_one(".md-content") or soup.select_one(".rst-content")
+            or soup.body or soup)
     drop = (".reference", ".mw-editsection", "table.navbox", ".navbox",
             ".vertical-navbox", ".reflist", "#toc", ".toc",
             ".navigation-not-searchable", ".hatnote", ".ambox", "table.ambox",
             ".mbox-small", ".metadata", ".sistersitebox", ".shortdescription",
             ".noprint", ".mw-empty-elt", ".mw-jump-link", "#References",
-            "#External_links", "#Further_reading", "#See_also")
+            "#External_links", "#Further_reading", "#See_also",
+            # doc-site chrome (sphinx / readthedocs / mkdocs):
+            "nav", "header", "footer", ".sphinxsidebar", ".wy-nav-side",
+            ".toctree-wrapper", ".headerlink", ".md-sidebar", ".md-header",
+            ".md-footer", ".rst-footer-buttons", ".related", "#searchbox",
+            ".breadcrumbs", ".wy-breadcrumbs", "[role=navigation]")
     for sel in drop:
         for t in main.select(sel):
             t.decompose()

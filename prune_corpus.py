@@ -49,7 +49,7 @@ def quality(text: str) -> str:
 
 
 def discovered(i: str) -> bool:
-    return i.startswith(("oa-", "ope-", "ost-", "arx-"))
+    return i.startswith(("oa-", "ope-", "ost-", "arx-", "crawl-"))
 
 
 def emit_entry(r: dict) -> str:
