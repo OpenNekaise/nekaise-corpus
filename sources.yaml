@@ -1401,3 +1401,171 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+
+  # --- discovered via find_sources.py (openalex) ---
+  - id: oa-a-global-comparison-of-building-decarbonization-
+    title: A global comparison of building decarbonization scenarios by 2050 towards
+      1.5–2 °C targets
+    url: https://www.nature.com/articles/s41467-022-29890-5.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oa-data-driven-model-predictive-control-using-rando
+    title: Data-driven model predictive control using random forests for building energy
+      optimization and climate control
+    url: https://repository.upenn.edu/bitstreams/bb8f0f16-f789-4390-ab2b-17cdb6df5ae2/download
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: oa-digital-twin-and-its-implementations-in-the-civi
+    title: Digital twin and its implementations in the civil engineering sector
+    url: https://discovery.ucl.ac.uk/10131833/1/AUTCON-D-21-00189_R2%20copy.pdf
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: oa-occupant-behavior-in-building-energy-simulation-
+    title: 'Occupant behavior in building energy simulation: Towards a fit-for-purpose
+      modeling strategy'
+    url: https://pure.tue.nl/ws/files/28098476/1_s2.0_S0378778816301918_main.pdf
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: oa-a-survey-on-scada-systems-secure-protocols-incid
+    title: 'A Survey on SCADA Systems: Secure Protocols, Incidents, Threats and Tactics'
+    url: https://ieeexplore.ieee.org/ielx7/9739/9173582/09066892.pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+  - id: oa-advanced-controls-on-energy-reliability-flexibil
+    title: Advanced controls on energy reliability, flexibility and occupant-centric
+      control for smart and energy-efficient buildings
+    url: https://repository.tudelft.nl/file/File_026e6464-854a-43a6-bb5f-a017c27a8a9a
+    source: openalex
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: oa-ai-big-data-analytics-for-building-automation-an
+    title: 'AI-big data analytics for building automation and management systems: a
+      survey, actual challenges and future perspectives'
+    url: https://link.springer.com/content/pdf/10.1007/s10462-022-10286-2.pdf
+    source: openalex
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: oa-challenges-with-developing-and-deploying-ai-mode
+    title: Challenges with developing and deploying AI models and applications in industrial
+      systems
+    url: https://link.springer.com/content/pdf/10.1007/s44163-024-00151-2.pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+  - id: oa-digital-twin-perspective-of-fourth-industrial-an
+    title: Digital Twin Perspective of Fourth Industrial and Healthcare Revolution
+    url: https://ieeexplore.ieee.org/ielx7/6287639/9668973/09726212.pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+  - id: oa-opportunistic-occupancy-count-estimation-using-s
+    title: 'Opportunistic occupancy-count estimation using sensor fusion: A case study'
+    url: https://nrc-publications.canada.ca/eng/view/accepted/?id=8e77d138-bc74-4c71-bc41-c81df25cbfb6
+    source: openalex
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: oa-potential-of-artificial-intelligence-in-reducing
+    title: Potential of artificial intelligence in reducing energy and carbon emissions
+      of commercial buildings at scale
+    url: https://www.nature.com/articles/s41467-024-50088-4.pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+  - id: oa-energy-management-for-internet-of-things-via-dis
+    title: Energy Management for Internet of Things via Distributed Systems
+    url: https://jastt.org/index.php/jasttpath/article/download/85/28
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: oa-modeling-and-evaluation-of-cyber-attacks-on-grid
+    title: Modeling and evaluation of cyber-attacks on grid-interactive efficient buildings
+    url: https://www.osti.gov/servlets/purl/2331294
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: oa-monitoring-of-the-daily-living-activities-in-sma
+    title: Monitoring of the daily living activities in smart home care
+    url: https://hcis-journal.springeropen.com/track/pdf/10.1186/s13673-017-0113-6
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+  - id: oa-recent-developments-of-the-modelica-buildings-li
+    title: Recent Developments of the Modelica "Buildings" Library for Building Energy
+      and Control Systems
+    url: http://www.ep.liu.se/ecp/063/030/ecp11063030.pdf
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: oa-review-of-recent-developments-in-fire-detection-
+    title: Review of Recent Developments in Fire Detection Technologies
+    url: https://nrc-publications.canada.ca/eng/view/accepted/?id=b5d43d26-c4fe-41c1-acf8-5425c216654c
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: oa-climate-change-and-industrial-f-gases-a-critical
+    title: 'Climate change and industrial F-gases: A critical and systematic review
+      of developments, sociotechnical systems and policy options for reducing synthe'
+    url: https://pure.au.dk/ws/files/267309491/Climate_change_and_industrial_F_gases.pdf
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: oa-energy-efficiency-in-smart-buildings-iot-approac
+    title: 'Energy Efficiency in Smart Buildings: IoT Approaches'
+    url: https://ieeexplore.ieee.org/ielx7/6287639/8948470/09050775.pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: oa-the-past-present-and-future-of-power-electronics
+    title: The Past, Present, and Future of Power Electronics Integration Technology
+      in Motor Drives
+    url: https://doi.org/10.24295/cpsstpea.2017.00019
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: oa-a-large-scale-evaluation-of-automated-metadata-i
+    title: A large-scale evaluation of automated metadata inference approaches on sensors
+      from air handling units
+    url: https://www.osti.gov/servlets/purl/1537927
+    source: openalex
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: oa-an-end-to-end-implementation-of-a-service-orient
+    title: An End-to-End Implementation of a Service-Oriented Architecture for Data-Driven
+      Smart Buildings
+    url: https://ieeexplore.ieee.org/ielx7/6287639/6514899/10287934.pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+  - id: oa-development-of-a-cognitive-digital-twin-for-buil
+    title: Development of a Cognitive Digital Twin for Building Management and Operations
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2022.856873/pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf

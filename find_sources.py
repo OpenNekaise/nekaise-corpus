@@ -88,6 +88,8 @@ def search(term: str, topic: str, per: int) -> list[dict]:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--per", type=int, default=15, help="results per topic query")
+    ap.add_argument("--append", action="store_true",
+                    help="append candidates under `sources:` in sources.yaml (then load + prune)")
     args = ap.parse_args()
 
     urls, titles = existing_keys()
@@ -114,6 +116,16 @@ def main() -> None:
     print(f"# by license: {by_lic}")
     print("# --- review, paste accepted entries under `sources:` in sources.yaml, run build_corpus.py ---")
     print(yaml.safe_dump(out, sort_keys=False, allow_unicode=True))
+
+    if args.append and out:
+        blk = ""
+        for h in out:
+            e = {k: h[k] for k in ("id", "title", "url", "source", "license", "topic", "format")}
+            dumped = yaml.safe_dump([e], sort_keys=False, allow_unicode=True)
+            blk += "".join(("  " + ln + "\n") if ln else "\n" for ln in dumped.splitlines())
+        with open(HERE / "sources.yaml", "a") as f:
+            f.write("\n  # --- discovered via find_sources.py (openalex) ---\n" + blk)
+        print(f"# appended {len(out)} entries to sources.yaml", file=sys.stderr)
 
 
 if __name__ == "__main__":
