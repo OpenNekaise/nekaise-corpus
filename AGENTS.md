@@ -7,8 +7,10 @@ copy.
 ## How to work here
 
 - **[`skills/load-corpus.md`](skills/load-corpus.md)** — download/refresh the corpus from
-  `sources.yaml` via `build_corpus.py`, then verify (failures, text quality, hashes). Mirrored to
-  `.claude/skills/` for Claude Code.
+  `sources.yaml` via `build_corpus.py`, then verify (failures, text quality, hashes).
+- **[`skills/find-sources.md`](skills/find-sources.md)** — grow the corpus: discover new
+  open-access sources via OpenAlex (`find_sources.py`), review them, add the good ones to
+  `sources.yaml`, then load. (Both mirrored to `.claude/skills/` for Claude Code.)
 
 ## Hard rules
 

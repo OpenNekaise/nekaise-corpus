@@ -32,8 +32,9 @@ after running the loader. The corpus grows as sources are added to `sources.yaml
 |---|---|
 | `sources.yaml` | The curated registry — each source's URL, topic, license, format. **Edit this to grow the corpus.** |
 | `build_corpus.py` | The loader — downloads sources into `raw/`, extracts plain text into `text/`, dedups by sha256, writes the manifest. |
+| `find_sources.py` | Discovery — queries OpenAlex for new open-access sources and proposes registry entries to grow the corpus. |
 | `manifest.jsonl` | Provenance — id, url, license, topic, sha256, bytes for every fetched doc. |
-| `skills/load-corpus.md` | The **skill** an AI agent runs to fetch + verify the corpus (mirrored to `.claude/skills/`). |
+| `skills/` | The **skills** an AI agent runs: `load-corpus` (fetch + verify) and `find-sources` (discover + grow). Mirrored to `.claude/skills/`. |
 | `raw/`, `text/` | **Git-ignored.** Your local copy of the bytes / extracted text. Never committed. |
 
 ## Use it
