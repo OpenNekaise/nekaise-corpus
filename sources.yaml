@@ -1424,6 +1424,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: doc-iea-ebc-annex53
+    title: 'IEA EBC Annex 53: Total Energy Use in Buildings (Project Summary Report)'
+    url: https://www.iea-ebc.org/Data/publications/EBC_PSR_Annex53.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
   - id: doc-title24-2022-standards
     title: California Title 24 Building Energy Efficiency Standards (2022)
     url: https://www.energy.ca.gov/sites/default/files/2022-12/CEC-400-2022-010_CMF.pdf
@@ -1458,21 +1465,6 @@ sources:
     url: https://www.wbdg.org/FFC/GSA/gsa_commissioning_guide_2020.pdf
     source: gsa
     license: public-domain
-    topic: commissioning_fdd
-    format: pdf
-  - id: doc-lbnl-fdd-review
-    title: A Review of Data-Driven Fault Detection and Diagnostics for Building HVAC
-      Systems (LBNL)
-    url: https://eta-publications.lbl.gov/sites/default/files/a_review_of_data-driven_fault_detection_and_diagnostics_for_building_hvac_systems.pdf
-    source: gov_lbnl
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: doc-lbnl-fdd-tools-granderson
-    title: Commercial Fault Detection and Diagnostics Tools (LBNL, Granderson)
-    url: https://eta-publications.lbl.gov/sites/default/files/commercial_fault_detection_and_diagnostics_-_granderson.pdf
-    source: gov_lbnl
-    license: open
     topic: commissioning_fdd
     format: pdf
   - id: doc-nist-tn1924-hvac-cx
@@ -1518,11 +1510,25 @@ sources:
     license: public-domain
     topic: controls_bas
     format: pdf
+  - id: doc-volttron-docs
+    title: Eclipse VOLTTRON Documentation (PNNL open building automation platform)
+    url: https://my-eclipse-volttron-docs.readthedocs.io/_/downloads/en/latest/pdf/
+    source: docs
+    license: open
+    topic: controls_bas
+    format: pdf
   - id: doc-gsa-p100-facilities
     title: GSA P100 Facilities Standards for the Public Buildings Service (2024)
     url: https://www.gsa.gov/system/files/P100%202024%20Final%20(1).pdf
     source: gsa
     license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doc-iea-ebc-annex48
+    title: 'IEA EBC Annex 48: Reversible Air-Conditioning (Final Report)'
+    url: https://iea-ebc.org/Data/publications/EBC_Annex_48_Final_Report_R31.pdf
+    source: iea_ebc
+    license: open
     topic: equipment_systems
     format: pdf
   - id: doc-nist-tn1868-iaq
@@ -1552,6 +1558,14 @@ sources:
     url: https://brickschema.readthedocs.io/_/downloads/en/latest/pdf/
     source: docs
     license: open
+    topic: standards_protocols
+    format: pdf
+  - id: doc-pnnl-901-prm-2016
+    title: PNNL-26917 ANSI/ASHRAE/IES Standard 90.1-2016 Performance Rating Method Reference
+      Manual
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-26917.pdf
+    source: gov_pnnl
+    license: public-domain
     topic: standards_protocols
     format: pdf
 

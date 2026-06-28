@@ -7,18 +7,18 @@ A curated, license-tagged, **reproducible recipe** for assembling a building / H
 
 | | |
 |---|---|
-| **Documents** | **547** |
+| **Documents** | **549** |
 | **Raw originals** | **~1.7 GB** (PDF / HTML) |
-| **Extracted text** | **~58 MB** (~57.8M chars, **≈14.4M tokens**) |
+| **Extracted text** | **~58 MB** (~58.5M chars, **≈14.6M tokens**) |
 | **Topics** | 5 |
 
-**By genre:** research papers (arXiv / OSTI / OpenAlex) 321 · reference manuals, standards & gov guides 21 · encyclopedic + seed (Wikipedia / gov) 205. _The 21 curated non-paper docs (EnergyPlus refs, UFC, Title 24, NIST, FEMP, GSA, Brick / 223P) are 4% of the docs but ~28% of the tokens — dense, authoritative, non-academic coverage._
+**By genre:** research papers (arXiv / OSTI / OpenAlex) 321 · reference manuals, standards & gov guides 23 · encyclopedic + seed (Wikipedia / gov) 205. _The 23 curated non-paper docs (EnergyPlus refs, UFC, Title 24, GSA, NIST, FEMP, IEA EBC, 90.1 PRM, Brick / 223P, VOLTTRON) are ~4% of the docs but ~28% of the tokens — dense, authoritative, non-academic coverage._
 
-**By topic:** controls_bas 215 · equipment_systems 100 · building_energy 98 · commissioning_fdd 80 · standards_protocols 54
+**By topic:** controls_bas 216 · equipment_systems 101 · building_energy 99 · commissioning_fdd 78 · standards_protocols 55
 
-**By source:** OSTI 184 · arXiv 170 · Wikipedia 97 · OpenAlex 40 · PNNL 16 · LBNL 15 · NIST 4 · DOE 4 · ASHRAE 4 · GSA / CEC / ENERGY STAR / EnergyPlus / etc. 13
+**By source:** OSTI 184 · arXiv 170 · Wikipedia 97 · OpenAlex 40 · PNNL 17 · LBNL 15 · NIST 4 · DOE 4 · ASHRAE 4 · IEA EBC / GSA / CEC / EnergyPlus / VOLTTRON / etc. 14
 
-**By license:** public-domain (US gov) 227 · open 205 · cc-by-sa 97 · cc-by 13 · proprietary-internal 5
+**By license:** public-domain (US gov) 228 · open 206 · cc-by-sa 97 · cc-by 13 · proprietary-internal 5
 
 _Snapshot of the current registry (2026-06-28). The bytes are not shipped — these are what you get
 after running the loader. The corpus grows as sources are added to `sources.yaml`._
