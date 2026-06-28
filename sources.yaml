@@ -1427,6 +1427,13 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: arx-energyplus-room-simulator
+    title: EnergyPlus Room Simulator
+    url: https://arxiv.org/pdf/2410.19888
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
   - id: arx-large-synoptic-survey-telescope-dark-energy-sc
     title: 'Large Synoptic Survey Telescope: Dark Energy Science Collaboration'
     url: https://arxiv.org/pdf/1211.0310
@@ -1470,6 +1477,14 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: arx-thermal-model-of-an-omnimagnet-for-performance
+    title: Thermal Model of an Omnimagnet for Performance Assessment and Temperature
+      Control
+    url: https://arxiv.org/pdf/2009.05074
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
   - id: arx-uncertainty-cognizant-model-predictive-control
     title: Uncertainty-Cognizant Model Predictive Control for Energy Management of Residential
       Buildings with PVT and Thermal Energy Storage
@@ -1509,6 +1524,22 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-sustainable-energy-transition-for-renewable-an
+    title: Sustainable Energy Transition for Renewable and Low Carbon Grid Electricity
+      Generation and Supply
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2021.743114/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: ope-the-shared-socioeconomic-pathways-and-their-en
+    title: 'The Shared Socioeconomic Pathways and their energy, land use, and greenhouse
+      gas emissions implications: An overview'
+    url: https://www.osti.gov/servlets/purl/1358497
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
   - id: ope-urban-building-energy-modeling-ubem-tools-a-st
     title: 'Urban building energy modeling (UBEM) tools: A state-of-the-art review of
       bottom-up physics-based approaches'
@@ -1517,10 +1548,33 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ost-a-cross-dimensional-analysis-of-data-driven-sh
+    title: A cross-dimensional analysis of data-driven short-term load forecasting methods
+      with large-scale smart meter data
+    url: https://www.osti.gov/servlets/purl/2997924
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-a-machine-learning-method-of-modern-urban-buil
     title: 'A machine learning method of modern urban building energy modeling: A case
       study of Chicago'
     url: https://www.osti.gov/servlets/purl/3011446
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-a-prototype-cooling-blanket-for-mitigating-occ
+    title: 'A prototype cooling blanket for mitigating occupant overheating risk in
+      a hot indoor environment: Modeling and assessments'
+    url: https://www.osti.gov/servlets/purl/3004783
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-a-simple-panel-system-to-overcome-interface-ch
+    title: 'A Simple Panel System to Overcome Interface Challenges for Retrofits: Preprint'
+    url: https://www.osti.gov/servlets/purl/3030037
     source: osti
     license: public-domain
     topic: building_energy
@@ -1533,10 +1587,96 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-addressing-the-split-incentive-challenge-for-r
+    title: Addressing the split incentive challenge for rooftop solar PV and battery
+      energy storage in multifamily rental buildings (CRADA 638) Final Report
+    url: https://www.osti.gov/servlets/purl/3374953
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-are-deep-energy-retrofits-in-commercial-buildi
+    title: Are Deep Energy Retrofits in Commercial Buildings Including Window Upgrades?
+    url: https://www.osti.gov/servlets/purl/3030177
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-assess-the-water-resistance-and-thermal-perfor
+    title: Assess The Water Resistance And Thermal Performance Of Pre-flashing Methods
+      When Adding Continuous Insulation During Re-siding (AIRS)
+    url: https://www.osti.gov/servlets/purl/3030500
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-calibration-of-urban-building-energy-model-usi
+    title: Calibration of urban building energy model using smart meter data for district
+      peak load prediction
+    url: https://www.osti.gov/servlets/purl/3018884
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-comstock-measure-documentation-high-efficiency
+    title: 'ComStock Measure Documentation: High-Efficiency Rooftop Unit'
+    url: https://www.osti.gov/servlets/purl/3021518
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-conditional-distribution-estimation-of-buildin
+    title: Conditional Distribution Estimation of Building Characteristics with Diffusion
+      Models for Urban Energy Modeling
+    url: https://www.osti.gov/servlets/purl/3374360
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-considerations-for-distributed-edge-data-cente
+    title: Considerations for Distributed Edge Data Centers and Use of Building Loads
+      to Support Large Interconnections
+    url: https://www.osti.gov/servlets/purl/3011887
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-decomposing-sources-of-value-for-electricity-a
+    title: Decomposing sources of value for electricity and negative emissions technologies
+      in net-zero power systems
+    url: https://www.osti.gov/servlets/purl/3015704
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-energyplus-mcp-a-model-context-protocol-server
     title: 'EnergyPlus-MCP: A model-context-protocol server for ai-driven building energy
       modeling'
     url: https://www.osti.gov/servlets/purl/3015372
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-ev-load-forecasting-guide-a-report-by-the-ener
+    title: 'EV Load Forecasting Guide: A Report by the Energy Systems Integration Group’s
+      EV Load Forecasting Task Force'
+    url: https://www.osti.gov/servlets/purl/3024116
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-evaluating-energy-savings-measures-for-buildin
+    title: Evaluating Energy Savings Measures for Building Retrofits in an Interactive
+      Workshop Environment
+    url: https://www.osti.gov/servlets/purl/3024211
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-evaluating-indoor-thermal-resilience-of-passiv
+    title: Evaluating indoor thermal resilience of passive and low-power cooling shelters
+      for outdoor workers in India
+    url: https://www.osti.gov/servlets/purl/3012717
     source: osti
     license: public-domain
     topic: building_energy
@@ -1549,10 +1689,54 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-machine-learning-driven-optimization-of-buildi
+    title: Machine Learning-Driven Optimization of Building Enclosures for Moisture
+      Durability and Thermal Performance
+    url: https://www.osti.gov/servlets/purl/3012516
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-mcp-enabled-agentic-ai-workflow-for-building-e
     title: 'MCP-enabled agentic AI workflow for building energy modelling: framework
       and use cases'
     url: https://www.osti.gov/servlets/purl/3363609
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-meadowview-neighborhood-electrification-projec
+    title: Meadowview Neighborhood Electrification Project
+    url: https://www.osti.gov/servlets/purl/3023101
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-mitigating-urban-climate-energy-feedback-with-
+    title: Mitigating urban climate-energy feedback with citywide building-integrated
+      photovoltaics implementation
+    url: https://www.osti.gov/servlets/purl/3015984
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-opportunities-to-expand-building-efficiency-pr
+    title: Opportunities to Expand Building Efficiency Programming at Community Colleges
+    url: https://www.osti.gov/servlets/purl/3030036
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-overview-of-building-electrification-technolog
+    title: Overview of Building Electrification Technologies and Market Opportunities
+    url: https://www.osti.gov/servlets/purl/2478106
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-plug-load-management-through-occupant-engageme
+    title: Plug Load Management Through Occupant Engagement at Washington State University
+    url: https://www.osti.gov/servlets/purl/3015708
     source: osti
     license: public-domain
     topic: building_energy
@@ -1575,6 +1759,21 @@ sources:
   - id: ost-resstock-measure-documentation-duct-sealing-an
     title: 'ResStock Measure Documentation: Duct Sealing and Insulation'
     url: https://www.osti.gov/servlets/purl/3030032
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-resstock-measure-documentation-efficient-elect
+    title: 'ResStock Measure Documentation: Efficient Electric Vehicle Adoption With
+      Level 2 Charging'
+    url: https://www.osti.gov/servlets/purl/3363715
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-resstock-measure-documentation-electric-vehicl
+    title: 'ResStock Measure Documentation: Electric Vehicle Adoption With Level 1 Charging'
+    url: https://www.osti.gov/servlets/purl/3363586
     source: osti
     license: public-domain
     topic: building_energy
@@ -1609,10 +1808,34 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-ten-questions-on-building-stock-modeling-to-in
+    title: Ten questions on building stock modeling to inform energy efficiency and
+      sustainability
+    url: https://www.osti.gov/servlets/purl/3012398
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-use-case-development-for-advancing-long-durati
+    title: Use Case Development for Advancing Long Duration Energy Storage (LDES) Technologies
+      in the LDES National Consortium
+    url: https://www.osti.gov/servlets/purl/3365373
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: arx-a-dissimilarity-based-approach-to-predictive-m
     title: A dissimilarity-based approach to predictive maintenance with application
       to HVAC systems
     url: https://arxiv.org/pdf/1701.03633
+    source: arxiv
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: arx-a-novel-semi-supervised-data-driven-method-for
+    title: A Novel Semi-Supervised Data-Driven Method for Chiller Fault Diagnosis with
+      Unlabeled Data
+    url: https://arxiv.org/pdf/2011.00187
     source: arxiv
     license: open
     topic: commissioning_fdd
@@ -1686,6 +1909,46 @@ sources:
     license: open
     topic: commissioning_fdd
     format: pdf
+  - id: arx-quickest-change-point-detection-and-identifica
+    title: Quickest Change Point Detection and Identification Across a Generic Sensor
+      Array
+    url: https://arxiv.org/pdf/1305.4199
+    source: arxiv
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: arx-semantic-based-detection-of-segment-outliers-a
+    title: Semantic-based Detection of Segment Outliers and Unusual Events for Wireless
+      Sensor Networks
+    url: https://arxiv.org/pdf/1411.2188
+    source: arxiv
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: arx-spectroscopic-time-series-performance-of-jwst-
+    title: Spectroscopic Time-series Performance of JWST/NIRSpec from Commissioning
+      Observations
+    url: https://arxiv.org/pdf/2211.01459
+    source: arxiv
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: arx-unsupervised-learning-for-fault-detection-of-h
+    title: 'Unsupervised Learning for Fault Detection of HVAC Systems: An OPTICS -based
+      Approach for Terminal Air Handling Units'
+    url: https://arxiv.org/pdf/2312.11405
+    source: arxiv
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: arx-virtual-sensor-based-fault-detection-and-class
+    title: Virtual Sensor Based Fault Detection and Classification on a Plasma Etch
+      Reactor
+    url: https://arxiv.org/pdf/0706.0465
+    source: arxiv
+    license: open
+    topic: commissioning_fdd
+    format: pdf
   - id: oa-a-survey-on-scada-systems-secure-protocols-incid
     title: 'A Survey on SCADA Systems: Secure Protocols, Incidents, Threats and Tactics'
     url: https://ieeexplore.ieee.org/ielx7/9739/9173582/09066892.pdf
@@ -1717,13 +1980,6 @@ sources:
     license: cc-by
     topic: commissioning_fdd
     format: pdf
-  - id: oa-digital-twin-perspective-of-fourth-industrial-an
-    title: Digital Twin Perspective of Fourth Industrial and Healthcare Revolution
-    url: https://ieeexplore.ieee.org/ielx7/6287639/9668973/09726212.pdf
-    source: openalex
-    license: cc-by
-    topic: commissioning_fdd
-    format: pdf
   - id: oa-opportunistic-occupancy-count-estimation-using-s
     title: 'Opportunistic occupancy-count estimation using sensor fusion: A case study'
     url: https://nrc-publications.canada.ca/eng/view/accepted/?id=8e77d138-bc74-4c71-bc41-c81df25cbfb6
@@ -1739,10 +1995,65 @@ sources:
     license: cc-by
     topic: commissioning_fdd
     format: pdf
+  - id: ope-an-innovative-fault-impact-analysis-framework-
+    title: An innovative fault impact analysis framework for enhancing building operations
+    url: https://www.osti.gov/servlets/purl/1545255
+    source: openalex
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: ope-building-fault-detection-data-to-aid-diagnosti
+    title: Building fault detection data to aid diagnostic algorithm creation and performance
+      testing
+    url: https://www.osti.gov/servlets/purl/1603785
+    source: openalex
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: ope-i-phenix-i-a-comprehensive-python-based-system
+    title: '<i>PHENIX</i>: a comprehensive Python-based system for macromolecular structure
+      solution'
+    url: https://www.osti.gov/servlets/purl/1625666
+    source: openalex
+    license: open
+    topic: commissioning_fdd
+    format: pdf
   - id: ost-a-field-and-laboratory-study-to-characterize-f
     title: A Field and Laboratory Study to Characterize Fault Prevalence in Residential
       Comfort Systems
     url: https://www.osti.gov/servlets/purl/3374854
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: ost-a-hybrid-statistical-engineering-approach-to-e
+    title: A hybrid statistical-engineering approach to enhance the performance of non-routine
+      event detection in building energy savings estimation
+    url: https://www.osti.gov/servlets/purl/3367737
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: ost-accelerating-template-generation-in-resonant-a
+    title: Accelerating template generation in resonant anomaly detection searches with
+      optimal transport
+    url: https://www.osti.gov/servlets/purl/3012722
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: ost-anomaly-detection-for-online-monitoring-of-the
+    title: Anomaly Detection for Online Monitoring of Thermocouple Sensors in the Advanced
+      Test Reactor
+    url: https://www.osti.gov/servlets/purl/3030704
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: ost-augmenting-llm-based-agents-for-improved-perfo
+    title: Augmenting LLM-Based Agents for Improved Performance in Pentesting and Commissioning
+      Operational Technology in Critical Infrastructure
+    url: https://www.osti.gov/servlets/purl/3367033
     source: osti
     license: public-domain
     topic: commissioning_fdd
@@ -1755,6 +2066,20 @@ sources:
     license: public-domain
     topic: commissioning_fdd
     format: pdf
+  - id: ost-commissioning-guidance-for-energy-savings-perf
+    title: Commissioning Guidance for Energy Savings Performance Contracts (ESPCs)
+    url: https://www.osti.gov/servlets/purl/2569694
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: ost-compressor-is-a-sensor-final-report
+    title: Compressor is A Sensor (Final Report)
+    url: https://www.osti.gov/servlets/purl/3022928
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
   - id: ost-comstock-measure-documentation-fan-static-pres
     title: 'ComStock Measure Documentation: Fan Static Pressure Reset for Multizone
       Variable Air Volume Systems'
@@ -1763,9 +2088,18 @@ sources:
     license: public-domain
     topic: commissioning_fdd
     format: pdf
-  - id: ost-electron-storage-ring-power-supply-system-desi
-    title: Electron storage ring power supply system design report
-    url: https://www.osti.gov/servlets/purl/3362674
+  - id: ost-emulation-and-detection-of-physical-faults-and
+    title: Emulation and detection of physical faults and cyber-attacks on building
+      energy systems through real-time hardware-in-the-loop experiments
+    url: https://www.osti.gov/servlets/purl/2458230
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: ost-energy-efficiency-analysis-and-grid-service-re
+    title: Energy Efficiency Analysis and Grid Service Results for Commercial Buildings
+      using the VOLTRON IoT Platform
+    url: https://www.osti.gov/servlets/purl/3011086
     source: osti
     license: public-domain
     topic: commissioning_fdd
@@ -1778,10 +2112,26 @@ sources:
     license: public-domain
     topic: commissioning_fdd
     format: pdf
+  - id: ost-explainable-machine-learning-for-incipient-ano
+    title: Explainable machine learning for incipient anomaly detection in compact molten
+      salt heat exchanger with overlapping feature distributions
+    url: https://www.osti.gov/servlets/purl/3374539
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
   - id: ost-legacy-devices-and-interoperability-developing
     title: 'Legacy Devices and Interoperability: Developing a Scientific Strategy for
       Inclusion and Representation of Older Devices'
     url: https://www.osti.gov/servlets/purl/3022461
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: ost-monte-carlo-dropout-uncertainty-quantification
+    title: Monte Carlo Dropout Uncertainty Quantification of Long Short-Term Memory
+      Autoencoder Anomaly Detection in a Liquid Sodium Cold Trap
+    url: https://www.osti.gov/servlets/purl/3375068
     source: osti
     license: public-domain
     topic: commissioning_fdd
@@ -1794,6 +2144,14 @@ sources:
     license: public-domain
     topic: commissioning_fdd
     format: pdf
+  - id: ost-reliable-statistics-based-detection-and-invest
+    title: Reliable statistics-based detection and investigation of anomalies in a SMART
+      valve system
+    url: https://www.osti.gov/servlets/purl/3374209
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
   - id: ost-retro-commissioning-sensor-suitcase-for-energy
     title: Retro-Commissioning Sensor Suitcase for Energy Efficiency (CRADA Final Report)
     url: https://www.osti.gov/servlets/purl/2997166
@@ -1801,10 +2159,48 @@ sources:
     license: public-domain
     topic: commissioning_fdd
     format: pdf
+  - id: ost-rooftop-unit-rtu-maintenance-guide
+    title: Rooftop Unit (RTU) Maintenance Guide
+    url: https://www.osti.gov/servlets/purl/2589168
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: ost-satellite-embedding-based-population-imputatio
+    title: 'Satellite Embedding-Based Population Imputation for Areas with Missing Building
+      Footprint Data: A Computer Vision-Based Approach'
+    url: https://www.osti.gov/servlets/purl/3022921
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: ost-transforming-particle-physics-research-applica
+    title: Transforming particle physics research applications into efficiency solutions
+    url: https://www.osti.gov/servlets/purl/2570336
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: arx-a-comprehensive-survey-of-pid-and-pure-pursuit
+    title: A Comprehensive Survey of PID and Pure Pursuit Control Algorithms for Autonomous
+      Vehicle Navigation
+    url: https://arxiv.org/pdf/2409.09848
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
   - id: arx-a-systematic-approach-for-exploring-tradeoffs-
     title: A Systematic Approach for Exploring Tradeoffs in Predictive HVAC Control
       Systems for Buildings
     url: https://arxiv.org/pdf/1705.02058
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-automatic-hvac-control-with-real-time-occupanc
+    title: Automatic HVAC Control with Real-time Occupancy Recognition and Simulation-guided
+      Model Predictive Control in Low-cost Embedded System
+    url: https://arxiv.org/pdf/1708.05208
     source: arxiv
     license: open
     topic: controls_bas
@@ -1832,10 +2228,34 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
+  - id: arx-data-efficient-deep-reinforcement-learning-for
+    title: 'Data-Efficient Deep Reinforcement Learning for Attitude Control of Fixed-Wing
+      UAVs: Field Experiments'
+    url: https://arxiv.org/pdf/2111.04153
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
   - id: arx-decentralized-and-distributed-temperature-cont
     title: Decentralized and Distributed Temperature Control via HVAC Systems in Energy
       Efficient Buildings
     url: https://arxiv.org/pdf/1702.03308
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-diffloop-tuning-pid-controllers-by-differentia
+    title: 'DiffLoop: Tuning PID controllers by differentiating through the feedback
+      loop'
+    url: https://arxiv.org/pdf/2106.10516
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-distributed-multi-agent-deep-reinforcement-lea
+    title: Distributed Multi-Agent Deep Reinforcement Learning Framework for Whole-building
+      HVAC Control
+    url: https://arxiv.org/pdf/2110.13450
     source: arxiv
     license: open
     topic: controls_bas
@@ -1850,6 +2270,21 @@ sources:
   - id: arx-energy-efficient-building-hvac-control-using-h
     title: Energy-Efficient Building HVAC Control Using Hybrid System LBMPC
     url: https://arxiv.org/pdf/1204.4717
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-enhancing-modbus-tcp-protocol-security-with-eb
+    title: Enhancing Modbus TCP Protocol Security with eBPF Technology
+    url: https://arxiv.org/pdf/2312.05665
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-experimental-evaluation-of-offline-reinforceme
+    title: Experimental evaluation of offline reinforcement learning for HVAC control
+      in buildings
+    url: https://arxiv.org/pdf/2408.07986
     source: arxiv
     license: open
     topic: controls_bas
@@ -1869,10 +2304,69 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
+  - id: arx-koopman-based-control-using-sum-of-squares-opt
+    title: 'Koopman-based control using sum-of-squares optimization: Improved stability
+      guarantees and data efficiency'
+    url: https://arxiv.org/pdf/2411.03875
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-laxity-aware-scalable-reinforcement-learning-f
+    title: Laxity-Aware Scalable Reinforcement Learning for HVAC Control
+    url: https://arxiv.org/pdf/2306.16619
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-leveraging-pid-gain-selection-towards-adaptive
+    title: Leveraging PID Gain Selection Towards Adaptive Backstepping Control for a
+      Class of Second-Order Systems
+    url: https://arxiv.org/pdf/2107.10697
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
   - id: arx-linear-model-predictive-controller-lmpc-for-bu
     title: Linear Model-Predictive Controller (LMPC) for Building's Heating Ventilation
       and Air Conditioning (HVAC) System
     url: https://arxiv.org/pdf/1906.00352
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-methods-for-robust-pid-control
+    title: Methods for robust PID control
+    url: https://arxiv.org/pdf/1303.0425
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-model-predictive-path-integral-pid-control-for
+    title: Model Predictive Path Integral PID Control for Learning-Based Path Following
+    url: https://arxiv.org/pdf/2603.29499
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-multi-agent-deep-reinforcement-learning-for-hv
+    title: Multi-Agent Deep Reinforcement Learning for HVAC Control in Commercial Buildings
+    url: https://arxiv.org/pdf/2006.14156
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-nonlinear-moving-horizon-estimation-and-model-
+    title: Nonlinear Moving Horizon Estimation and Model Predictive Control for Buildings
+      with Unknown HVAC Dynamics
+    url: https://arxiv.org/pdf/2211.10097
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-on-ell-2-performance-of-weakly-hard-real-time-
+    title: On $\ell_2$-performance of weakly-hard real-time control systems
+    url: https://arxiv.org/pdf/2305.07875
     source: arxiv
     license: open
     topic: controls_bas
@@ -1884,10 +2378,46 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
+  - id: arx-optimal-design-of-pid-controllers-using-the-qf
+    title: Optimal design of PID controllers using the QFT method
+    url: https://arxiv.org/pdf/1211.5494
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-resilient-supervisory-control-of-autonomous-in
+    title: Resilient Supervisory Control of Autonomous Intersections in the Presence
+      of Sensor Attacks
+    url: https://arxiv.org/pdf/1606.06699
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-safe-control-synthesis-via-input-constrained-c
+    title: Safe Control Synthesis via Input Constrained Control Barrier Functions
+    url: https://arxiv.org/pdf/2104.01704
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
   - id: arx-security-and-human-centered-assessment-of-bacn
     title: Security and Human-Centered Assessment of BACnet-Controlled DALI Infrastructure
       in an Educational Building Automation Testbed
     url: https://arxiv.org/pdf/2606.17089
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-visualizing-bacnet-data-to-facilitate-humans-i
+    title: Visualizing BACnet data to facilitate humans in building-security decision-making
+    url: https://arxiv.org/pdf/1502.06460
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-volume-control-of-low-cost-ventilator-with-aut
+    title: Volume Control of Low-Cost Ventilator with Automatic Set-Point Adaptation
+    url: https://arxiv.org/pdf/2009.01530
     source: arxiv
     license: open
     topic: controls_bas
@@ -1935,6 +2465,52 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
+  - id: ope-modelica-based-modeling-and-simulation-of-dist
+    title: 'Modelica-based modeling and simulation of district cooling systems: A case
+      study'
+    url: https://www.osti.gov/servlets/purl/1847269
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: ope-reinforcement-learning-building-control-approa
+    title: Reinforcement learning building control approach harnessing imitation learning
+    url: https://www.osti.gov/servlets/purl/1969539
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: ost-a-bi-level-advanced-control-framework-for-larg
+    title: A bi-level advanced control framework for large-scale control of buildings
+      with system-level impact
+    url: https://www.osti.gov/servlets/purl/3015700
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: ost-a-neural-network-enhanced-parameter-varying-fr
+    title: A neural-network-enhanced parameter-varying framework for multi-objective
+      model predictive control applied to buildings
+    url: https://www.osti.gov/servlets/purl/2586530
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: ost-adapting-random-tree-search-to-fixed-wing-aeri
+    title: Adapting Random Tree Search to Fixed Wing Aerial Vehicles with Closed-Loop
+      Prediction and Hybrid Control
+    url: https://www.osti.gov/servlets/purl/2429895
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: ost-ai-ready-control-system-for-the-fermilab-accel
+    title: AI-Ready Control System for the Fermilab Accelerator Complex
+    url: https://www.osti.gov/servlets/purl/3025871
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
   - id: ost-an-open-control-sequence-specification-to-scal
     title: An open control sequence specification to scale building demand flexibility
       via analytics software
@@ -1951,10 +2527,24 @@ sources:
     license: public-domain
     topic: controls_bas
     format: pdf
-  - id: ost-demonstration-of-a-novel-technology-to-manage-
-    title: Demonstration of a Novel Technology to Manage Electricity Demand in Grid-Independent
-      Military Microgrids
-    url: https://www.osti.gov/servlets/purl/2588552
+  - id: ost-comstock-measure-documentation-lighting-contro
+    title: 'ComStock Measure Documentation: Lighting Control for Load Shedding'
+    url: https://www.osti.gov/servlets/purl/3013233
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: ost-comstock-measure-documentation-thermostat-and-
+    title: 'ComStock Measure Documentation: Thermostat and Lighting Control for Load
+      Shedding + Photovoltaics With 40% Rooftop Coverage'
+    url: https://www.osti.gov/servlets/purl/3013235
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: ost-connectivity-troubleshooting-guide-for-advance
+    title: Connectivity Troubleshooting Guide for Advanced Electricity Meters
+    url: https://www.osti.gov/servlets/purl/3006961
     source: osti
     license: public-domain
     topic: controls_bas
@@ -1991,6 +2581,14 @@ sources:
     license: public-domain
     topic: controls_bas
     format: pdf
+  - id: ost-evaluating-thermostats-deadbands-using-hvac-ha
+    title: 'Evaluating Thermostats'' Deadbands Using HVAC Hardware-In-the-Loop Experiment
+      for Advanced Control Strategies: Preprint'
+    url: https://www.osti.gov/servlets/purl/2589394
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
   - id: ost-experimental-test-of-model-predictive-control-
     title: Experimental test of model predictive control in a variable air volume system
     url: https://www.osti.gov/servlets/purl/3020905
@@ -2005,6 +2603,14 @@ sources:
     license: public-domain
     topic: controls_bas
     format: pdf
+  - id: ost-machine-learning-enhanced-hybrid-modeling-appr
+    title: Machine learning-enhanced hybrid modeling approach for better identification
+      of a building thermal network model and improved prediction
+    url: https://www.osti.gov/servlets/purl/3365176
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
   - id: ost-machine-learning-enhanced-mpc-for-demand-flexi
     title: 'Machine learning-enhanced MPC for demand flexibility in small commercial
       buildings: An experimental study'
@@ -2012,6 +2618,76 @@ sources:
     source: osti
     license: public-domain
     topic: controls_bas
+    format: pdf
+  - id: ost-multi-agent-hierarchical-deep-reinforcement-le
+    title: Multi-Agent Hierarchical Deep Reinforcement Learning for HVAC Control With
+      Flexible DERs
+    url: https://www.osti.gov/servlets/purl/2587057
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: ost-operator-learning-for-energy-efficient-buildin
+    title: Operator learning for energy-efficient building ventilation control with
+      computational fluid dynamics simulation of a real-world classroom
+    url: https://www.osti.gov/servlets/purl/3365432
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: ost-optimal-co-design-of-integrated-thermal-electr
+    title: Optimal Co-Design of Integrated Thermal-Electrical Networks and Control Systems
+      for Grid-interactive Efficient District (GED) Energy Systems
+    url: https://www.osti.gov/servlets/purl/3012207
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: ost-physics-vs-structure-a-systematic-benchmark-of
+    title: 'Physics vs structure: A systematic benchmark of learning strategies for
+      multi-zone building thermal dynamics'
+    url: https://www.osti.gov/servlets/purl/3029725
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: ost-providing-thermal-stability-for-an-exascale-su
+    title: 'Providing Thermal Stability for an Exascale Supercomputer: A Case Study
+      of Frontier''s Cooling System'
+    url: https://www.osti.gov/servlets/purl/3013860
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: ost-pumped-thermal-energy-storage-using-low-cost-p
+    title: Pumped Thermal Energy Storage Using Low-Cost Particles and a Fluid Bed Heat
+      Exchanger for Maximum Power Efficiency
+    url: https://www.osti.gov/servlets/purl/3024210
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: ost-simulation-based-validation-of-an-open-source-
+    title: Simulation-Based Validation of An Open-Source, Scalable Framework for Building
+      Energy Management in Small and Medium-Sized Commercial Buildings
+    url: https://www.osti.gov/servlets/purl/3368807
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: ost-threat-hunt-guide-for-bess-environments
+    title: Threat Hunt Guide for BESS Environments
+    url: https://www.osti.gov/servlets/purl/3023094
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: arx-a-modeling-system-for-monitoring-the-air-water
+    title: A modeling system for monitoring the air - water pollution
+    url: https://arxiv.org/pdf/1709.01443
+    source: arxiv
+    license: open
+    topic: equipment_systems
     format: pdf
   - id: arx-ai-chiller-an-open-iot-cloud-based-machine-lea
     title: 'AI Chiller: An Open IoT Cloud Based Machine Learning Framework for the Energy
@@ -2024,6 +2700,59 @@ sources:
   - id: arx-applications-of-earth-to-air-heat-exchangers-a
     title: 'Applications of Earth-to-Air Heat Exchangers: A Holistic Review'
     url: https://arxiv.org/pdf/2107.05019
+    source: arxiv
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: arx-assessment-of-pollutant-spread-from-a-building
+    title: Assessment of Pollutant Spread from a Building Basement with three Ventilation
+      Systems
+    url: https://arxiv.org/pdf/1003.4834
+    source: arxiv
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: arx-co-optimize-condenser-water-temperature-and-co
+    title: Co-optimize condenser water temperature and cooling tower fan using high-fidelity
+      synthetic data
+    url: https://arxiv.org/pdf/2505.15041
+    source: arxiv
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: arx-data-driven-chiller-plant-energy-optimization-
+    title: Data Driven Chiller Plant Energy Optimization with Domain Knowledge
+    url: https://arxiv.org/pdf/1812.00679
+    source: arxiv
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: arx-existence-of-solutions-for-a-model-of-microwav
+    title: Existence of solutions for a model of microwave heating
+    url: https://arxiv.org/pdf/1505.03280
+    source: arxiv
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: arx-fault-detection-for-non-condensing-boilers-usi
+    title: Fault Detection for Non-Condensing Boilers using Simulated Building Automation
+      System Sensor Data
+    url: https://arxiv.org/pdf/2205.08418
+    source: arxiv
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: arx-feature-engineering-approach-to-building-load-
+    title: 'Feature Engineering Approach to Building Load Prediction: A Case Study for
+      Commercial Building Chiller Plant Optimization in Tropical Weather'
+    url: https://arxiv.org/pdf/2502.15780
+    source: arxiv
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: arx-graph-neural-networks-for-pressure-estimation-
+    title: Graph Neural Networks for Pressure Estimation in Water Distribution Systems
+    url: https://arxiv.org/pdf/2311.10579
     source: arxiv
     license: open
     topic: equipment_systems
@@ -2044,18 +2773,41 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
-  - id: arx-measurement-of-pressure-dependent-fluorescence
-    title: 'Measurement of Pressure Dependent Fluorescence Yield of Air: Calibration
-      Factor for UHECR Detectors'
-    url: https://arxiv.org/pdf/astro-ph/0506741
+  - id: arx-impact-of-climate-change-on-the-cost-optimal-m
+    title: Impact of climate change on the cost-optimal mix of decentralised heat pump
+      and gas boiler technologies in Europe
+    url: https://arxiv.org/pdf/1907.04067
     source: arxiv
     license: open
     topic: equipment_systems
     format: pdf
-  - id: arx-performance-enhancement-of-the-ozaki-scheme-on
-    title: Performance Enhancement of the Ozaki Scheme on Integer Matrix Multiplication
-      Unit
-    url: https://arxiv.org/pdf/2409.13313
+  - id: arx-novel-modelling-and-control-strategies-for-a-s
+    title: Novel Modelling and Control Strategies for a Steam Boiler under Fast Load
+      Dynamics
+    url: https://arxiv.org/pdf/2007.15433
+    source: arxiv
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: arx-optimal-chiller-loading-including-transients
+    title: Optimal chiller loading including transients
+    url: https://arxiv.org/pdf/2512.16356
+    source: arxiv
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: arx-optimal-integration-of-heat-pump-and-solar-the
+    title: Optimal Integration Of Heat-Pump And Solar Thermal Energy In The Pre-heating
+      Loop Of Wood And Gas Boiler Based District Heating System
+    url: https://arxiv.org/pdf/2507.18204
+    source: arxiv
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: arx-performance-analysis-of-heat-and-energy-recove
+    title: Performance analysis of heat and energy recovery ventilators using exergy
+      analysis and nonequilibrium thermodynamics
+    url: https://arxiv.org/pdf/1806.06661
     source: arxiv
     license: open
     topic: equipment_systems
@@ -2068,9 +2820,17 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
-  - id: arx-performance-of-genetic-algorithms-in-the-conte
-    title: Performance of Genetic Algorithms in the Context of Software Model Refactoring
-    url: https://arxiv.org/pdf/2308.13875
+  - id: arx-radiation-cooled-dew-water-condensers-studied-
+    title: Radiation-cooled Dew Water Condensers Studied by Computational Fluid Dynamic
+      (CFD)
+    url: https://arxiv.org/pdf/0707.2514
+    source: arxiv
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: arx-real-time-boiler-control-optimization-with-mac
+    title: Real-Time Boiler Control Optimization with Machine Learning
+    url: https://arxiv.org/pdf/1903.04958
     source: arxiv
     license: open
     topic: equipment_systems
@@ -2079,6 +2839,14 @@ sources:
     title: Reinforcement Learning-Based Co-Design and Operation of Chiller and Thermal
       Energy Storage for Cost-Optimal HVAC Systems
     url: https://arxiv.org/pdf/2601.22880
+    source: arxiv
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: arx-research-on-brick-schema-representation-for-bu
+    title: Research on Brick Schema Representation for Building Operation with Variable
+      Refrigerant Flow Systems
+    url: https://arxiv.org/pdf/2108.07037
     source: arxiv
     license: open
     topic: equipment_systems
@@ -2113,9 +2881,68 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
+  - id: ope-topological-photonics
+    title: Topological photonics
+    url: https://arxiv.org/pdf/1802.04173
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
   - id: ost-a-central-plant-retrofit-assessment-guide-for-
     title: A Central Plant Retrofit Assessment Guide for Owners
     url: https://www.osti.gov/servlets/purl/3365183
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-a-guide-for-creating-a-building-level-action-p
+    title: A Guide for Creating a Building-Level Action Plan to Manage Refrigerants
+      in Buildings
+    url: https://www.osti.gov/servlets/purl/3096215
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-a-matheuristic-for-design-and-dispatch-of-a-ut
+    title: A Matheuristic for Design and Dispatch of a Utility-Connected Distributed
+      Energy System
+    url: https://www.osti.gov/servlets/purl/3011871
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-a-methodology-for-selection-of-solid-desiccant
+    title: A methodology for selection of solid desiccants in energy recovery ventilators
+    url: https://www.osti.gov/servlets/purl/2478357
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-advances-in-desiccant-wheels-for-dehumidificat
+    title: Advances in Desiccant Wheels for Dehumidification, VOC Mitigation, and CO2
+      Removal for Energy-Efficient IAQ Management
+    url: https://www.osti.gov/servlets/purl/3030315
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-akiachak-energy-efficiency-retrofit-project
+    title: Akiachak Energy Efficiency Retrofit Project
+    url: https://www.osti.gov/servlets/purl/3367494
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-aniak-energy-efficiency-retrofit-project
+    title: Aniak Energy Efficiency Retrofit Project
+    url: https://www.osti.gov/servlets/purl/3362526
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-clean-water-production-in-cooling-towers
+    title: Clean Water Production in Cooling Towers
+    url: https://www.osti.gov/servlets/purl/3008428
     source: osti
     license: public-domain
     topic: equipment_systems
@@ -2128,10 +2955,42 @@ sources:
     license: public-domain
     topic: equipment_systems
     format: pdf
+  - id: ost-cold-climate-field-study-of-the-effect-of-defr
+    title: Cold Climate Field Study of the Effect of Defrost Controls on the Integrated
+      Performance of a Ductless Air-Source Heat Pump
+    url: https://www.osti.gov/servlets/purl/3022360
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-comparative-experimental-study-of-heat-transfe
+    title: Comparative experimental study of heat transfer processes in accumulation
+      energy recovery exchangers
+    url: https://www.osti.gov/servlets/purl/3000116
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
   - id: ost-comstock-measure-documentation-geothermal-heat
     title: 'ComStock Measure Documentation: Geothermal Heat Pumps + High Efficiency
       Envelope Package'
     url: https://www.osti.gov/servlets/purl/2588547
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-comstock-measure-scenario-documentation-labora
+    title: 'ComStock Measure Scenario Documentation: Laboratory-Informed Modeling of
+      Standard Performance Heat Pump Rooftop Units'
+    url: https://www.osti.gov/servlets/purl/2588996
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-design-and-performance-assessment-of-a-dual-mo
+    title: Design and performance assessment of a dual-mode latent thermal storage integrated
+      heat pump across multiple climate zones
+    url: https://www.osti.gov/servlets/purl/3023330
     source: osti
     license: public-domain
     topic: equipment_systems
@@ -2144,6 +3003,22 @@ sources:
     license: public-domain
     topic: equipment_systems
     format: pdf
+  - id: ost-end-use-savings-shapes-measure-documentation-v
+    title: 'End-Use Savings Shapes Measure Documentation: Variable Refrigerant Flow
+      With 25% Upsizing Allowance for Heating'
+    url: https://www.osti.gov/servlets/purl/2356776
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-energy-performance-augmentation-of-domestic-re
+    title: Energy performance augmentation of domestic refrigerators with microchannel
+      condensers
+    url: https://www.osti.gov/servlets/purl/3030358
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
   - id: ost-exploring-the-potential-of-ashrae-guideline-36
     title: 'Exploring the Potential of ASHRAE Guideline 36 in District Cooling Systems:
       Preprint'
@@ -2152,10 +3027,41 @@ sources:
     license: public-domain
     topic: equipment_systems
     format: pdf
+  - id: ost-federal-water-management-planning-manual
+    title: Federal Water Management Planning Manual
+    url: https://www.osti.gov/servlets/purl/3025617
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-investigation-of-ventilation-coupled-high-ener
+    title: Investigation of ventilation-coupled high energy density sensible thermal
+      energy storage
+    url: https://www.osti.gov/servlets/purl/2545695
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
   - id: ost-laboratory-testing-and-performance-characteriz
     title: Laboratory Testing and Performance Characterization of the High Efficiency
       Dehumidification System (HEDS) Technology
     url: https://www.osti.gov/servlets/purl/2588553
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-latent-heat-thermal-energy-storage-performance
+    title: Latent heat thermal energy storage performance maps enabling fast &amp; accurate
+      building energy simulations
+    url: https://www.osti.gov/servlets/purl/3367540
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-on-the-validity-and-limitations-of-1d-model-fo
+    title: 'On the validity and limitations of 1D model for heat and mass transfer performance
+      evaluation in a multilayer binder-free desiccant dehumidifier: isot'
+    url: https://www.osti.gov/servlets/purl/3030286
     source: osti
     license: public-domain
     topic: equipment_systems
@@ -2176,10 +3082,33 @@ sources:
     license: public-domain
     topic: equipment_systems
     format: pdf
+  - id: ost-performance-evaluation-of-low-cost-condensers-
+    title: Performance Evaluation of Low-Cost Condensers Immersed in the Water Tank
+      of a Heat Pump Water Heater
+    url: https://www.osti.gov/servlets/purl/3002034
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-resstock-measure-documentation-cold-climate-ai
+    title: 'ResStock Measure Documentation: Cold Climate Air-Source Heat Pump'
+    url: https://www.osti.gov/servlets/purl/3365374
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
   - id: ost-techno-economic-analysis-of-geologically-conne
     title: Techno-Economic Analysis of Geologically Connected Seawater Air Conditioning
       (GeoSWAC) Concept for District Cooling at the University of Puerto Rico a
     url: https://www.osti.gov/servlets/purl/3023539
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-variable-refrigerant-flow-performance-humidity
+    title: 'Variable Refrigerant Flow Performance: Humidity and Efficiency in Multifamily
+      Buildings in New York, NY'
+    url: https://www.osti.gov/servlets/purl/2567465
     source: osti
     license: public-domain
     topic: equipment_systems
@@ -2196,49 +3125,6 @@ sources:
     title: 'BIM-to-BRICK: Using graph modeling for IoT/BMS and spatial semantic data
       interoperability within digital data models of buildings'
     url: https://arxiv.org/pdf/2307.13197
-    source: arxiv
-    license: open
-    topic: standards_protocols
-    format: pdf
-  - id: arx-data-encoding-for-byzantine-resilient-distribu
-    title: Data Encoding for Byzantine-Resilient Distributed Optimization
-    url: https://arxiv.org/pdf/1907.02664
-    source: arxiv
-    license: open
-    topic: standards_protocols
-    format: pdf
-  - id: arx-gene-ontology-pitfalls-biases-remedies
-    title: 'Gene Ontology: Pitfalls, Biases, Remedies'
-    url: https://arxiv.org/pdf/1602.01875
-    source: arxiv
-    license: open
-    topic: standards_protocols
-    format: pdf
-  - id: arx-graphmatcher-a-graph-representation-learning-a
-    title: 'GraphMatcher: A Graph Representation Learning Approach for Ontology Matching'
-    url: https://arxiv.org/pdf/2404.14450
-    source: arxiv
-    license: open
-    topic: standards_protocols
-    format: pdf
-  - id: arx-integration-of-contextual-descriptors-in-ontol
-    title: Integration of Contextual Descriptors in Ontology Alignment for Enrichment
-      of Semantic Correspondence
-    url: https://arxiv.org/pdf/2411.19113
-    source: arxiv
-    license: open
-    topic: standards_protocols
-    format: pdf
-  - id: arx-ivoa-recommendation-spectrum-data-model-1-1
-    title: 'IVOA Recommendation: Spectrum Data Model 1.1'
-    url: https://arxiv.org/pdf/1204.3055
-    source: arxiv
-    license: open
-    topic: standards_protocols
-    format: pdf
-  - id: arx-primer-on-the-gene-ontology
-    title: Primer on the Gene Ontology
-    url: https://arxiv.org/pdf/1602.01876
     source: arxiv
     license: open
     topic: standards_protocols
@@ -2282,6 +3168,44 @@ sources:
     license: cc-by
     topic: standards_protocols
     format: pdf
+  - id: ope-open-babel-an-open-chemical-toolbox
+    title: 'Open Babel: An open chemical toolbox'
+    url: https://jcheminf.biomedcentral.com/counter/pdf/10.1186/1758-2946-3-33
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+  - id: ost-a-community-guide-to-regulatory-barriers-affec
+    title: A Community Guide to Regulatory Barriers Affecting Microgrids (Reports 1-3)
+    url: https://www.osti.gov/servlets/purl/3025421
+    source: osti
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: ost-a-scalable-hardware-and-human-in-the-loop-grid
+    title: A Scalable Hardware-and-Human-in-the-Loop Grid-interactive Efficient Building
+      Equipment Performance Dataset
+    url: https://www.osti.gov/servlets/purl/2998578
+    source: osti
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: ost-artificial-intelligence-and-digital-engineerin
+    title: Artificial Intelligence and Digital Engineering as Enablers for System Engineering
+      in the Energy Sector
+    url: https://www.osti.gov/servlets/purl/3374192
+    source: osti
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: ost-establishing-models-for-digital-twin-of-hydrop
+    title: Establishing Models for Digital Twin of Hydropower Systems Using Probability
+      Density Function Shaping
+    url: https://www.osti.gov/servlets/purl/3002639
+    source: osti
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
   - id: ost-extraction-and-analysis-of-time-series-data-fr
     title: Extraction and Analysis of Time Series Data from Building Automation Systems
       Using Large Language Models
@@ -2298,10 +3222,40 @@ sources:
     license: public-domain
     topic: standards_protocols
     format: pdf
+  - id: ost-gateway-cities-unplugged-em-powering-affordabl
+    title: 'Gateway Cities Unplugged: (em)Powering Affordable Housing (Final Technical
+      Report)'
+    url: https://www.osti.gov/servlets/purl/3015810
+    source: osti
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
   - id: ost-hp-flex-field-demonstration-of-the-semantics-d
     title: 'HP-FLEX: Field demonstration of the semantics-driven configuration of a
       Model Predictive Control system to make heat pumps flexible'
     url: https://www.osti.gov/servlets/purl/2587237
+    source: osti
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: ost-improving-and-automating-building-model-data-e
+    title: Improving and Automating Building Model Data Exchange
+    url: https://www.osti.gov/servlets/purl/2491410
+    source: osti
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: ost-machine-learning-digital-twin-for-lithium-ion-
+    title: Machine Learning Digital Twin for Lithium Ion Battery State of Health Predictions
+    url: https://www.osti.gov/servlets/purl/3031061
+    source: osti
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: ost-maximizing-efficiency-and-quality-leveraging-a
+    title: 'Maximizing Efficiency and Quality: Leveraging Automated Testing for Laboratory
+      Commissioning'
+    url: https://www.osti.gov/servlets/purl/2440272
     source: osti
     license: public-domain
     topic: standards_protocols
@@ -2314,10 +3268,24 @@ sources:
     license: public-domain
     topic: standards_protocols
     format: pdf
-  - id: ost-optimizing-facility-operations-by-applying-mac
-    title: Optimizing Facility Operations by Applying Machine Learning to the Army Reserve
-      Enterprise Building Control System (Final Report)
-    url: https://www.osti.gov/servlets/purl/2587978
+  - id: ost-optimisation-of-the-kaplan-hydropower-system-v
+    title: Optimisation of the Kaplan hydropower system via PID2 and digital twin
+    url: https://www.osti.gov/servlets/purl/3030457
+    source: osti
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: ost-progress-update-from-the-ev-charging-working-g
+    title: Progress Update from the EV Charging Working Group (#982)
+    url: https://www.osti.gov/servlets/purl/1984977
+    source: osti
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: ost-scenario-generation-for-built-environment-deci
+    title: 'Scenario Generation for Built Environment Decision Support under Uncertainty:
+      Case Studies of Airflow Modeling and Climate-Resilient Infrastructure Sy'
+    url: https://www.osti.gov/servlets/purl/3030764
     source: osti
     license: public-domain
     topic: standards_protocols
@@ -2330,9 +3298,31 @@ sources:
     license: public-domain
     topic: standards_protocols
     format: pdf
+  - id: ost-smart-energy-storage-integration-and-managemen
+    title: Smart Energy Storage Integration and Management Platform for Buildings (SESIMP-B)
+    url: https://www.osti.gov/servlets/purl/3030712
+    source: osti
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: ost-ten-questions-concerning-large-language-models
+    title: Ten questions concerning Large Language Models (LLMs) for building applications
+    url: https://www.osti.gov/servlets/purl/3017558
+    source: osti
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
   - id: ost-visual-brick-model-authoring-tool-for-building
     title: Visual Brick model authoring tool for building metadata standardization
     url: https://www.osti.gov/servlets/purl/2378109
+    source: osti
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: ost-white-paper-scalable-digital-twin-capabilities
+    title: 'White Paper: Scalable Digital Twin Capabilities for Aging and Surveillance
+      of Engineered Systems'
+    url: https://www.osti.gov/servlets/purl/3001797
     source: osti
     license: public-domain
     topic: standards_protocols

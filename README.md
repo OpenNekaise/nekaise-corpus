@@ -7,16 +7,16 @@ A curated, license-tagged, **reproducible recipe** for assembling a building / H
 
 | | |
 |---|---|
-| **Documents** | **306** |
-| **Raw originals** | **~697 MB** (PDF / HTML) |
-| **Extracted text** | **~25 MB** (~24.5M chars, **≈6.1M tokens**) |
+| **Documents** | **435** |
+| **Raw originals** | **~1.2 GB** (PDF / HTML) |
+| **Extracted text** | **~33 MB** (~32.8M chars, **≈8.2M tokens**) |
 | **Topics** | 5 |
 
-**By topic:** controls_bas 83 · building_energy 66 · equipment_systems 63 · commissioning_fdd 50 · standards_protocols 44
+**By topic:** controls_bas 121 · equipment_systems 97 · building_energy 94 · commissioning_fdd 71 · standards_protocols 52
 
-**By source:** arXiv 101 · Wikipedia 97 · OSTI 49 · OpenAlex 24 · PNNL 15 · LBNL 13 · ASHRAE 4 · other 3
+**By source:** arXiv 136 · OSTI 135 · Wikipedia 97 · OpenAlex 32 · PNNL 15 · LBNL 13 · ASHRAE 4 · other 3
 
-**By license:** open 117 · cc-by-sa 97 · public-domain (US gov) 78 · cc-by 9 · proprietary-internal 5
+**By license:** public-domain (US gov) 164 · open 159 · cc-by-sa 97 · cc-by 10 · proprietary-internal 5
 
 _Snapshot of the current registry (2026-06-28). The bytes are not shipped — these are what you get
 after running the loader. The corpus grows as sources are added to `sources.yaml`._
@@ -44,11 +44,29 @@ the [`load-corpus`](skills/load-corpus.md) skill drives the download and verifie
 yourself:
 
 ```bash
-pip install requests pyyaml pypdf beautifulsoup4
+pip install -r requirements.txt
 python build_corpus.py            # fetch missing sources (needs network)
 python build_corpus.py --force    # re-fetch everything
 python build_corpus.py --only controls_bas
 ```
+
+## Reproducibility
+
+A clone gets the **same corpus** we have. `manifest.jsonl` is the canonical record -- every doc's
+`url` and **`sha256`**. When you run the loader it compares each download to the committed manifest
+and reports `reproduced (sha256 match) / drifted (source changed upstream) / new`. To check an
+already-downloaded copy without re-fetching:
+
+```bash
+python build_corpus.py --verify   # re-hash local raw/ files against the manifest sha256
+```
+
+- **Raw bytes** are the strong guarantee: sha256 is version-independent, so fetching the same URL
+  yields a byte-identical file (or the run flags drift).
+- **Extracted text** (`text/`) is derived via pypdf / beautifulsoup4 -- pin those
+  (`requirements.txt`) for byte-identical text too.
+- `sources.yaml` and `manifest.jsonl` are kept in sync; stable hosts (arXiv, `*.gov`) reproduce
+  reliably, and any dead or changed source is reported, never silently dropped.
 
 ## Topics
 

@@ -19,6 +19,7 @@ import argparse
 import json
 import re
 import sys
+import time
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -28,13 +29,39 @@ import yaml
 HERE = Path(__file__).resolve().parent
 MAILTO = "corpus@opennekaise.org"
 
-# (search term -> our corpus topic)
+# (search term -> our corpus topic). Many specific sub-topic queries -> more unique results.
 QUERIES = [
-    ("HVAC control sequences building automation BACnet", "controls_bas"),
-    ("building fault detection diagnostics commissioning HVAC", "commissioning_fdd"),
-    ("chiller heat pump air handling unit performance HVAC", "equipment_systems"),
-    ("building energy modeling EnergyPlus retrofit envelope efficiency", "building_energy"),
-    ("building data model ontology Brick Haystack semantic interoperability", "standards_protocols"),
+    ("HVAC supervisory control sequences ASHRAE Guideline 36", "controls_bas"),
+    ("model predictive control building HVAC energy", "controls_bas"),
+    ("reinforcement learning HVAC control building", "controls_bas"),
+    ("BACnet Modbus building automation communication protocol", "controls_bas"),
+    ("demand controlled ventilation occupancy based control", "controls_bas"),
+    ("PID control loop tuning air handling unit", "controls_bas"),
+    ("automated fault detection diagnostics HVAC chiller", "commissioning_fdd"),
+    ("building retro-commissioning energy savings", "commissioning_fdd"),
+    ("air handling unit fault detection sensor diagnostics", "commissioning_fdd"),
+    ("anomaly detection building energy operation", "commissioning_fdd"),
+    ("monitoring based commissioning building performance", "commissioning_fdd"),
+    ("rooftop unit fault detection diagnostics RTU", "commissioning_fdd"),
+    ("chiller plant optimization performance modeling", "equipment_systems"),
+    ("heat pump performance coefficient of performance", "equipment_systems"),
+    ("variable refrigerant flow VRF system performance", "equipment_systems"),
+    ("cooling tower condenser water system", "equipment_systems"),
+    ("energy recovery ventilation enthalpy wheel", "equipment_systems"),
+    ("boiler hydronic heating system efficiency", "equipment_systems"),
+    ("building energy simulation EnergyPlus calibration", "building_energy"),
+    ("building envelope thermal performance retrofit", "building_energy"),
+    ("net zero energy building design renewable", "building_energy"),
+    ("building electricity load forecasting machine learning", "building_energy"),
+    ("building electrification heat pump decarbonization", "building_energy"),
+    ("occupant thermal comfort energy efficiency building", "building_energy"),
+    ("urban building energy modeling stock", "building_energy"),
+    ("Brick schema building ontology metadata", "standards_protocols"),
+    ("Project Haystack semantic tagging building data", "standards_protocols"),
+    ("building information modeling IFC interoperability", "standards_protocols"),
+    ("semantic data model building automation 223P", "standards_protocols"),
+    ("digital twin building automation systems", "standards_protocols"),
+    ("grid interactive efficient buildings demand flexibility", "standards_protocols"),
 ]
 
 # hosts that reliably serve a direct PDF to a bot (publisher pages 403, so we whitelist).
@@ -114,6 +141,7 @@ def from_osti(term, topic, per):
 
 
 def from_arxiv(term, topic, per):
+    time.sleep(3.1)  # arXiv API asks for >=3s between requests (429 otherwise)
     r = requests.get("https://export.arxiv.org/api/query",
                      params={"search_query": f"all:{term}", "max_results": per,
                              "sortBy": "relevance"}, timeout=30)

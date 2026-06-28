@@ -1,19 +1,18 @@
 #!/usr/bin/env python3
-"""build_corpus.py — fetch & maintain the public HVAC reference corpus.
+"""build_corpus.py — fetch & verify the building-energy corpus from the registry.
 
-Reads sources.yaml (the curated seed registry), downloads each source into
-raw/<source>/<id>.<ext>, extracts plain text into text/<id>.md, and records
-everything in manifest.jsonl (one JSON object per line).
+Reads sources.yaml, downloads each source into raw/<source>/<id>.<ext>, extracts plain text into
+text/<id>.md, and records everything (incl. sha256) in manifest.jsonl. The committed manifest is the
+REPRODUCIBILITY record: a fresh clone runs this to fetch the SAME bytes, and the run reports how many
+reproduced exactly (sha256 matches the manifest) vs drifted (the source changed upstream) vs new.
 
-  python build_corpus.py            # fetch missing only
+  python build_corpus.py            # fetch missing; report reproduced / drifted / new vs manifest
   python build_corpus.py --force    # re-fetch everything
-  python build_corpus.py --only controls_bas,standards_protocols
+  python build_corpus.py --only controls_bas
+  python build_corpus.py --verify   # no download: re-hash local raw files against the manifest
 
-Idempotent (skips sources already fetched ok), dedups identical bytes by sha256,
-checkpoints the manifest after every fetch.
-
-This corpus is for INTERNAL RESEARCH ONLY — some sources are copyrighted.
-Do not redistribute. See README.md.
+Idempotent, dedups identical bytes by sha256, checkpoints the manifest after every fetch. raw/ and
+text/ are git-ignored; respect each source's license (see README.md).
 """
 from __future__ import annotations
 
@@ -156,6 +155,8 @@ def main() -> None:
     ap.add_argument("--only", default="", help="comma-separated topics to limit to")
     ap.add_argument("--reextract", action="store_true",
                     help="re-extract text from existing raw files; no download")
+    ap.add_argument("--verify", action="store_true",
+                    help="re-hash local raw files against the manifest sha256; no download")
     args = ap.parse_args()
     only = {t.strip() for t in args.only.split(",") if t.strip()}
 
@@ -188,6 +189,26 @@ def main() -> None:
         print(f"re-extracted {done} docs | total text {tot / 1e6:.2f} M chars")
         return
 
+    if args.verify:
+        # reproducibility check: re-hash local raw files against the committed manifest sha256.
+        match = miss = mismatch = 0
+        for r in manifest.values():
+            if r.get("status") != "ok" or not r.get("sha256"):
+                continue
+            rp = r.get("raw_path")
+            if not rp or not (HERE / rp).exists():
+                miss += 1
+                continue
+            if sha256_bytes((HERE / rp).read_bytes()) == r["sha256"]:
+                match += 1
+            else:
+                mismatch += 1
+                print(f"  MISMATCH {r['id']}")
+        n_ok = sum(1 for r in manifest.values() if r.get("status") == "ok")
+        print(f"verify: {match} match | {mismatch} sha256 MISMATCH | {miss} not downloaded "
+              f"(of {n_ok} ok docs in manifest)")
+        return
+
     todo = []
     for s in srcs:
         if only and s.get("topic") not in only:
@@ -198,6 +219,9 @@ def main() -> None:
                 continue
         todo.append(s)
 
+    # the committed manifest's sha256 = what WE fetched; compare to detect upstream drift.
+    expected = {sid: r.get("sha256") for sid, r in manifest.items() if r.get("sha256")}
+    repro = drift = new = 0
     print(f"sources: {len(srcs)} total, {len(todo)} to fetch "
           f"({'forced' if args.force else 'missing only'})")
     for i, s in enumerate(todo, 1):
@@ -205,7 +229,12 @@ def main() -> None:
         rec = fetch_one(s)
         manifest[rec["id"]] = rec
         if rec["status"] == "ok":
-            print(f"ok  {rec['bytes'] // 1024}KB  {rec['text_chars']} chars")
+            exp = expected.get(rec["id"])
+            tag = "reproduced" if exp == rec["sha256"] else ("DRIFTED" if exp else "new")
+            repro += exp == rec["sha256"]
+            drift += bool(exp) and exp != rec["sha256"]
+            new += not exp
+            print(f"ok  {rec['bytes'] // 1024}KB  {rec['text_chars']} chars  [{tag}]")
         else:
             print(f"FAIL http={rec['http_status']} {rec.get('error')}")
         write_manifest(manifest)  # checkpoint after each
@@ -223,6 +252,9 @@ def main() -> None:
             by_topic[r["topic"]] = by_topic.get(r["topic"], 0) + 1
     print(f"\nmanifest: {len(manifest)} rows | {ok} ok | {len(manifest) - ok} failed")
     print("ok by topic:", by_topic)
+    if repro or drift or new:
+        print(f"reproducibility vs manifest: {repro} reproduced (sha256 match) | "
+              f"{drift} DRIFTED (source changed) | {new} new")
     if dups:
         print("duplicate bytes (same sha256):", dups)
 
