@@ -1,0 +1,1403 @@
+# HVAC reference corpus — curated seed registry.
+# Maintain THIS file: add entries below, then run `python build_corpus.py`.
+#
+# fields per source:
+#   id       stable slug (becomes raw/<source>/<id>.<ext> and text/<id>.md)
+#   title    human label
+#   url      direct download URL
+#   source   bucket for raw/ subfolder (gov_pnnl, gov_nrel, arxiv, wikipedia, web)
+#   license  public-domain | cc-by-sa | open | proprietary-internal
+#   topic    controls_bas | commissioning_fdd | equipment_systems | standards_protocols
+#   format   pdf | html
+#
+# NOTE: some URLs may 404 / move; the build logs failures and keeps going.
+# Fix or drop dead entries and re-run.
+
+sources:
+  # ---------- US government / national labs (public domain, pdf) ----------
+  - id: pnnl-20761
+    title: "PNNL-20761 — DOE Building Technologies Program (retro-commissioning / PECI)"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/pnnl-20761.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: pnnl-19004
+    title: "PNNL-19004 — Technical Support Document: 50% Energy Savings Design"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/pnnl-19004.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: pnnl-17056
+    title: "PNNL-17056 — Technical Support Document (Advanced Energy Design Guide development)"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/pnnl-17056.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: pnnl-19341
+    title: "PNNL-19341 — DOE technical report"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-19341.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: nrel-55470
+    title: "NREL/CP — 50% Advanced Energy Design Guides (preprint)"
+    url: https://www.nrel.gov/docs/fy12osti/55470.pdf
+    source: gov_nrel
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+
+  # ---------- arXiv (open) ----------
+  - id: arxiv-2410-03756-smart-buildings-control-suite
+    title: "The Smart Buildings Control Suite — open benchmark for HVAC control policies"
+    url: https://arxiv.org/pdf/2410.03756
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+
+  # ---------- Wikipedia (CC-BY-SA, html) ----------
+  - id: wiki-bacnet
+    title: "BACnet (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/BACnet
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-modbus
+    title: "Modbus (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Modbus
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-building-automation
+    title: "Building automation (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Building_automation
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-hvac-control-system
+    title: "HVAC control system (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/HVAC_control_system
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-variable-air-volume
+    title: "Variable air volume (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Variable_air_volume
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-economizer
+    title: "Economizer (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Economizer
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-demand-controlled-ventilation
+    title: "Demand controlled ventilation (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Demand_controlled_ventilation
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-hvac
+    title: "HVAC (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/HVAC
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-air-handler
+    title: "Air handler (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Air_handler
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-chiller
+    title: "Chiller (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Chiller
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-heat-pump
+    title: "Heat pump (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Heat_pump
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-psychrometrics
+    title: "Psychrometrics (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Psychrometrics
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-building-commissioning
+    title: "Building commissioning (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Building_commissioning
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+  - id: wiki-fault-detection-and-isolation
+    title: "Fault detection and isolation (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Fault_detection_and_isolation
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+
+  # ---------- vendor / web explainers (copyrighted — internal research only) ----------
+  - id: ccontrols-bacnet-intro
+    title: "BACnet — Building Automation and Control Network (Contemporary Controls)"
+    url: https://www.ccontrols.com/tech/bacnet.htm
+    source: web
+    license: proprietary-internal
+    topic: standards_protocols
+    format: html
+
+  # ============================================================
+  # EXPANSION BATCH 1 — Wikipedia (CC-BY-SA). Bulk domain coverage.
+  # ============================================================
+
+  # ---- equipment & systems fundamentals ----
+  - id: wiki-air-conditioning
+    title: "Air conditioning (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Air_conditioning
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-refrigeration
+    title: "Refrigeration (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Refrigeration
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-vapor-compression-refrigeration
+    title: "Vapor-compression refrigeration (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Vapor-compression_refrigeration
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-refrigerant
+    title: "Refrigerant (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Refrigerant
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-coefficient-of-performance
+    title: "Coefficient of performance (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Coefficient_of_performance
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-cooling-tower
+    title: "Cooling tower (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Cooling_tower
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-boiler
+    title: "Boiler (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Boiler
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-furnace
+    title: "Furnace (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Furnace
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-heat-exchanger
+    title: "Heat exchanger (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Heat_exchanger
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-condenser-heat-transfer
+    title: "Condenser (heat transfer) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Condenser_(heat_transfer)
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-thermal-expansion-valve
+    title: "Thermal expansion valve (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Thermal_expansion_valve
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-fan-coil-unit
+    title: "Fan coil unit (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Fan_coil_unit
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-dedicated-outdoor-air-system
+    title: "Dedicated outdoor air system (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Dedicated_outdoor_air_system
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-heat-recovery-ventilation
+    title: "Heat recovery ventilation (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Heat_recovery_ventilation
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-geothermal-heat-pump
+    title: "Geothermal heat pump (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Geothermal_heat_pump
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-air-source-heat-pump
+    title: "Air source heat pump (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Air_source_heat_pump
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-district-heating
+    title: "District heating (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/District_heating
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-district-cooling
+    title: "District cooling (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/District_cooling
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-hydronics
+    title: "Hydronics (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Hydronics
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-radiant-heating-and-cooling
+    title: "Radiant heating and cooling (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Radiant_heating_and_cooling
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-underfloor-heating
+    title: "Underfloor heating (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Underfloor_heating
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-absorption-refrigerator
+    title: "Absorption refrigerator (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Absorption_refrigerator
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-enthalpy
+    title: "Enthalpy (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Enthalpy
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-humidity
+    title: "Humidity (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Humidity
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-dew-point
+    title: "Dew point (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Dew_point
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-ventilation-architecture
+    title: "Ventilation (architecture) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Ventilation_(architecture)
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-indoor-air-quality
+    title: "Indoor air quality (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Indoor_air_quality
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-duct-flow
+    title: "Duct (flow) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Duct_(flow)
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+
+  # ---- controls / BAS ----
+  - id: wiki-pid-controller
+    title: "PID controller (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/PID_controller
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-control-theory
+    title: "Control theory (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Control_theory
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-control-loop
+    title: "Control loop (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Control_loop
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-thermostat
+    title: "Thermostat (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Thermostat
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-setpoint-control-system
+    title: "Setpoint (control system) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Setpoint_(control_system)
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-programmable-logic-controller
+    title: "Programmable logic controller (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Programmable_logic_controller
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-scada
+    title: "SCADA (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/SCADA
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-constant-air-volume
+    title: "Constant air volume (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Constant_air_volume
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-occupancy-sensor
+    title: "Occupancy sensor (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Occupancy_sensor
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-actuator
+    title: "Actuator (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Actuator
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-control-valve
+    title: "Control valve (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Control_valve
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-damper-flow
+    title: "Damper (flow) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Damper_(flow)
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+
+  # ---- standards & protocols ----
+  - id: wiki-knx
+    title: "KNX (standard) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/KNX_(standard)
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-lonworks
+    title: "LonWorks (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/LonWorks
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-mqtt
+    title: "MQTT (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/MQTT
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-rs-485
+    title: "RS-485 (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/RS-485
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-fieldbus
+    title: "Fieldbus (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Fieldbus
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-ashrae
+    title: "ASHRAE (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/ASHRAE
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+
+  # ---- commissioning & FDD ----
+  - id: wiki-condition-monitoring
+    title: "Condition monitoring (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Condition_monitoring
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+  - id: wiki-predictive-maintenance
+    title: "Predictive maintenance (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Predictive_maintenance
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+  - id: wiki-anomaly-detection
+    title: "Anomaly detection (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Anomaly_detection
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+  - id: wiki-energy-audit
+    title: "Energy audit (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Energy_audit
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+  - id: wiki-root-cause-analysis
+    title: "Root cause analysis (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Root_cause_analysis
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+  - id: wiki-measurement-and-verification
+    title: "Measurement and verification (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Measurement_and_verification
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+
+  # ============================================================
+  # EXPANSION BATCH 2 — arXiv papers + DOE/PNNL/LBNL reports + ontology/standards.
+  # (non-arxiv/non-pnnl hosts may not resolve in every env; build logs failures.)
+  # ============================================================
+
+  # ---- arXiv: data-driven / RL / MPC control (open) ----
+  - id: arxiv-1910-05313-hvac-rl-scheduling
+    title: "Building HVAC Scheduling Using RL via NN Model Approximation (arXiv 1910.05313)"
+    url: https://arxiv.org/pdf/1910.05313
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2106-14450-ddmpc-rl-hvac
+    title: "Data-driven MPC and RL approaches for HVAC (arXiv 2106.14450)"
+    url: https://arxiv.org/pdf/2106.14450
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2310-08569-calibrated-sim-offline-control
+    title: "Lightweight Calibrated Simulation for Offline Learning of Building Control (arXiv 2310.08569)"
+    url: https://arxiv.org/pdf/2310.08569
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2407-12195-clue-safe-mbrl-hvac
+    title: "CLUE: Safe & Data-efficient Model-based RL for HVAC Control (arXiv 2407.12195)"
+    url: https://arxiv.org/pdf/2407.12195
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2503-05022-mpc-rl-hvac-field-review
+    title: "Lessons from Field Demos of MPC and RL for Residential/Commercial HVAC: a review (arXiv 2503.05022)"
+    url: https://arxiv.org/pdf/2503.05022
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2510-01475-rl-vs-mpc-residential-hvac
+    title: "Comparative Field Deployment of RL and MPC for Residential HVAC (arXiv 2510.01475)"
+    url: https://arxiv.org/pdf/2510.01475
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2503-19212-continual-rl-hvac
+    title: "Continual RL for HVAC Systems Control: Hypernetworks + Transfer Learning (arXiv 2503.19212)"
+    url: https://arxiv.org/pdf/2503.19212
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2405-03848-citylearn-v2
+    title: "CityLearn v2: occupant-centric, carbon-aware grid-interactive control (arXiv 2405.03848)"
+    url: https://arxiv.org/pdf/2405.03848
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+
+  # ---- arXiv: fault detection & diagnosis (open) ----
+  - id: arxiv-2510-17146-physics-informed-llm-hvac-fdd
+    title: "Physics-Informed Large Language Models for HVAC FDD (arXiv 2510.17146)"
+    url: https://arxiv.org/pdf/2510.17146
+    source: arxiv
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: arxiv-2508-00880-ml-fdd-reproducibility
+    title: "Reproducibility of ML-Based FDD for HVAC Systems: An Empirical Study (arXiv 2508.00880)"
+    url: https://arxiv.org/pdf/2508.00880
+    source: arxiv
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: arxiv-2002-01060-transfer-learning-hvac-fdd
+    title: "Transfer Learning for HVAC System Fault Detection (arXiv 2002.01060)"
+    url: https://arxiv.org/pdf/2002.01060
+    source: arxiv
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+
+  # ---- arXiv: semantic modeling / ontology (open) ----
+  - id: arxiv-2404-11716-semantic-modeling-bem-survey
+    title: "A Survey on Semantic Modeling for Building Energy Management (arXiv 2404.11716)"
+    url: https://arxiv.org/pdf/2404.11716
+    source: arxiv
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: arxiv-2509-16259-semantic-buildings
+    title: "Semantic modeling for buildings (arXiv 2509.16259)"
+    url: https://arxiv.org/pdf/2509.16259
+    source: arxiv
+    license: open
+    topic: standards_protocols
+    format: pdf
+
+  # ---- PNNL AFDD / re-tuning / sensors (public domain) ----
+  - id: pnnl-23790-rtu-embedded-afdd
+    title: "PNNL-23790 — Rooftop Unit Embedded Diagnostics (AFDD development, field test)"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-23790.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: pnnl-25985-building-retuning
+    title: "PNNL-25985 — Building Re-tuning of controls and HVAC systems"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-25985.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: pnnl-23989-afdd
+    title: "PNNL-23989 — DOE building HVAC technical report"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-23989.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: pnnl-30077-afdd-market-assessment
+    title: "PNNL-30077 — Automated Fault Detection & Diagnostics: market assessment"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-30077.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: pnnl-15149-advanced-sensors-controls
+    title: "PNNL-15149 — Advanced Sensors and Controls for Building Applications"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-15149.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+
+  # ---- LBNL / OSTI (public domain; hosts may not resolve here) ----
+  - id: lbnl-59975-commissioning-intro
+    title: "LBNL-59975 — Introduction to Commercial Building Commissioning / HVAC strategies"
+    url: https://eta-publications.lbl.gov/sites/default/files/59975.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: lbnl-4944e-building-performance
+    title: "LBNL-4944E — Quantifying Changes in Building Performance"
+    url: https://eta-publications.lbl.gov/sites/default/files/LBNL-4944E.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: osti-1172718-monitoring-based-commissioning
+    title: "OSTI 1172718 — Monitoring-based HVAC Commissioning of an Existing Office"
+    url: https://www.osti.gov/servlets/purl/1172718
+    source: gov_osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+
+  # ---- ontology / standards docs (mixed license; hosts may not resolve) ----
+  - id: brick-buildsys16-paper
+    title: "Brick: Towards a Unified Metadata Schema For Buildings (BuildSys'16, author copy)"
+    url: https://cseweb.ucsd.edu/~dehong/pdf/buildsys16-paper.pdf
+    source: academic
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: ashrae-g36-2018-addendum-u
+    title: "ASHRAE Addendum u to Guideline 36-2018 (High-Performance Sequences)"
+    url: https://www.ashrae.org/file%20library/technical%20resources/standards%20and%20guidelines/standards%20addenda/g36_2018_u_20210330.pdf
+    source: ashrae
+    license: proprietary-internal
+    topic: controls_bas
+    format: pdf
+
+  # ============================================================
+  # EXPANSION BATCH 3 — deep authoritative docs (arXiv + PNNL/LBNL/OSTI + ASHRAE).
+  # Skew toward controls_bas (RL/LLM control literature) is intentional.
+  # ============================================================
+
+  # ---- arXiv: LLM agents for buildings / control (open) ----
+  - id: arxiv-2510-26603-agentic-llm-home-energy
+    title: "Agentic AI Home Energy Management: LLM framework for load scheduling (arXiv 2510.26603)"
+    url: https://arxiv.org/pdf/2510.26603
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2602-03433-control-meets-llms
+    title: "When control meets large language models: from words to dynamics (arXiv 2602.03433)"
+    url: https://arxiv.org/pdf/2602.03433
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2308-03028-llm-industrial-control
+    title: "Pre-Trained Large Language Models for Industrial Control (arXiv 2308.03028)"
+    url: https://arxiv.org/pdf/2308.03028
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2603-26050-hierarchical-llm-rl-hvac
+    title: "Hierarchical LLM + RL framework for decarbonized HVAC operation (arXiv 2603.26050)"
+    url: https://arxiv.org/pdf/2603.26050
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2312-11701-llm-building-energy-overview
+    title: "Opportunities & Challenges of LLMs in Building Energy & Decarbonization (arXiv 2312.11701)"
+    url: https://arxiv.org/pdf/2312.11701
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2411-05904-agentic-llm-industrial-control
+    title: "Autonomous Industrial Control using an Agentic LLM Framework (arXiv 2411.05904)"
+    url: https://arxiv.org/pdf/2411.05904
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+
+  # ---- arXiv: RL control frameworks / benchmarks (open) ----
+  - id: arxiv-2412-08293-sinergym
+    title: "Sinergym: virtual testbed for building energy optimization with RL (arXiv 2412.08293)"
+    url: https://arxiv.org/pdf/2412.08293
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2209-15626-b2rl-dataset
+    title: "B2RL: an open-source dataset for Building Batch Reinforcement Learning (arXiv 2209.15626)"
+    url: https://arxiv.org/pdf/2209.15626
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2408-15170-citylearn-multiobjective
+    title: "CityLearn Gym: multi-objective control benchmarking in grid-interactive buildings (arXiv 2408.15170)"
+    url: https://arxiv.org/pdf/2408.15170
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2409-08132-safe-rl-geb
+    title: "Optimal Management of Grid-Interactive Efficient Buildings via Safe RL (arXiv 2409.08132)"
+    url: https://arxiv.org/pdf/2409.08132
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2301-01148-merlin-geb
+    title: "MERLIN: multi-agent offline & transfer learning for grid-interactive communities (arXiv 2301.01148)"
+    url: https://arxiv.org/pdf/2301.01148
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2301-02593-marl-fast-dr
+    title: "Multi-Agent RL for Fast-Timescale Demand Response of Residential Loads (arXiv 2301.02593)"
+    url: https://arxiv.org/pdf/2301.02593
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+
+  # ---- arXiv: thermal comfort + energy forecasting (open) ----
+  - id: arxiv-2507-02351-indoor-comfort-bayesian
+    title: "Indoor thermal comfort management: Bayesian ML denoising & HVAC dynamics (arXiv 2507.02351)"
+    url: https://arxiv.org/pdf/2507.02351
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2004-14382-transfer-comfort-cities
+    title: "Transfer Learning for Thermal Comfort Prediction in Multiple Cities (arXiv 2004.14382)"
+    url: https://arxiv.org/pdf/2004.14382
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2104-02214-ai-comfort-energy-review
+    title: "Intelligent Building Control for Comfort & Energy: AI-assisted review (arXiv 2104.02214)"
+    url: https://arxiv.org/pdf/2104.02214
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2305-04498-dl-digital-twins-energy
+    title: "Leveraging Deep Learning and Digital Twins to Improve Building Energy Performance (arXiv 2305.04498)"
+    url: https://arxiv.org/pdf/2305.04498
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2507-20838-buildstg-load-forecasting
+    title: "BuildSTG: multi-building energy load forecasting via spatio-temporal GNN (arXiv 2507.20838)"
+    url: https://arxiv.org/pdf/2507.20838
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2311-08035-pinn-energy-efficiency
+    title: "Data-driven building energy efficiency prediction using physics-informed NNs (arXiv 2311.08035)"
+    url: https://arxiv.org/pdf/2311.08035
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2403-06474-nilm-review
+    title: "Non-Intrusive Load Monitoring in Smart Grids: a Comprehensive Review (arXiv 2403.06474)"
+    url: https://arxiv.org/pdf/2403.06474
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2605-01362-dr-coordination-districts
+    title: "Coordination Architecture Shapes Continuous Demand Response in Building Districts (arXiv 2605.01362)"
+    url: https://arxiv.org/pdf/2605.01362
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+
+  # ---- PNNL (public domain) ----
+  - id: pnnl-29078-army-retuning-guides
+    title: "PNNL-29078 — Army Re-tuning Implementation Guides (controls sequences)"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-29078.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: pnnl-26348-energy-code-controls
+    title: "PNNL-26348 — Implementation of Energy Code Controls Requirements in New Buildings"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-26348.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: pnnl-15074-emcs-capabilities
+    title: "PNNL-15074 — Energy Management and Control System: Desired Capabilities"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-15074.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: pnnl-13890-om-best-practices
+    title: "PNNL-13890 — Operations & Maintenance Best Practices Guide"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/pnnl-13890.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: pnnl-25130-901-2010-performance
+    title: "PNNL-25130 — ANSI/ASHRAE/IES Standard 90.1-2010 Performance analysis"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-25130.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+
+  # ---- LBNL FDD literature (public domain) ----
+  - id: lbnl-review-data-driven-fdd-hvac
+    title: "LBNL — A Review of Data-Driven Fault Detection and Diagnostics for Building HVAC Systems"
+    url: https://eta-publications.lbl.gov/sites/default/files/a_review_of_data-driven_fault_detection_and_diagnostics_for_building_hvac_systems.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: lbnl-commercial-fdd-tools-granderson
+    title: "LBNL — Commercial Fault Detection and Diagnostics Tools (Granderson)"
+    url: https://eta-publications.lbl.gov/sites/default/files/commercial_fault_detection_and_diagnostics_-_granderson.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: lbnl-building-fault-detection-data
+    title: "LBNL — Building Fault Detection Data to Aid Diagnostic Algorithm Development"
+    url: https://eta-publications.lbl.gov/sites/default/files/granderson_-_building_fault_detection_data__0.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: lbnl-47966-emerging-diagnostic-tools
+    title: "LBNL-47966 — Evaluation of Emerging Diagnostic Tools for Commercial HVAC Systems"
+    url: https://eta-publications.lbl.gov/sites/default/files/lbnl-47966.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: lbnl-fault-correction-lin
+    title: "LBNL — Development and Implementation of Fault Correction Algorithms in FDD Tools (Lin)"
+    url: https://eta-publications.lbl.gov/sites/default/files/lin_-_development_and_implementation_of_fault_correction.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+
+  # ---- OSTI (public domain) ----
+  - id: osti-1782053-realtime-vfd-hvac
+    title: "OSTI 1782053 — Real-time optimization & control for variable-speed HVAC (distributed)"
+    url: https://www.osti.gov/servlets/purl/1782053
+    source: gov_osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: osti-1580209-geb-technical-series
+    title: "OSTI 1580209 — Grid-interactive Efficient Buildings Technical Report Series (HVAC)"
+    url: https://www.osti.gov/servlets/purl/1580209
+    source: gov_osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+
+  # ---- ASHRAE free addenda (copyrighted — internal only) ----
+  - id: ashrae-901-2022-addendum-u
+    title: "ASHRAE Addendum u to Standard 90.1-2022 (Energy Standard)"
+    url: https://www.ashrae.org/file%20library/technical%20resources/standards%20and%20guidelines/standards%20addenda/90_1_2022_u_20241231.pdf
+    source: ashrae
+    license: proprietary-internal
+    topic: standards_protocols
+    format: pdf
+  - id: ashrae-901-2019-addendum-cq
+    title: "ASHRAE Addendum cq to Standard 90.1-2019 (Energy Standard)"
+    url: https://www.ashrae.org/file%20library/technical%20resources/standards%20and%20guidelines/standards%20addenda/90_1_2019_cq_20220729.pdf
+    source: ashrae
+    license: proprietary-internal
+    topic: standards_protocols
+    format: pdf
+  - id: ashrae-901-2007-supplement
+    title: "ASHRAE Standard 90.1-2007 supplement"
+    url: https://www.ashrae.org/file%20library/technical%20resources/standards%20and%20guidelines/standards%20addenda/90_1_2007_supplement.pdf
+    source: ashrae
+    license: proprietary-internal
+    topic: standards_protocols
+    format: pdf
+
+  # ============================================================
+  # EXPANSION BATCH 4 (FINAL) — broaden to buildings & building energy.
+  # New topic: building_energy (envelope, modeling, codes, renewables/storage, decarb).
+  # Part A: Wikipedia (cc-by-sa). Part B (harvested PDFs) appended separately.
+  # ============================================================
+
+  # ---- building_energy: envelope / building science ----
+  - id: wiki-building-envelope
+    title: "Building envelope (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Building_envelope
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-thermal-insulation
+    title: "Thermal insulation (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Thermal_insulation
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-r-value-insulation
+    title: "R-value (insulation) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/R-value_(insulation)
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-thermal-bridge
+    title: "Thermal bridge (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Thermal_bridge
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-infiltration-hvac
+    title: "Infiltration (HVAC) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Infiltration_(HVAC)
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-insulated-glazing
+    title: "Insulated glazing (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Insulated_glazing
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-low-emissivity
+    title: "Low emissivity (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Low_emissivity
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-daylighting
+    title: "Daylighting (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Daylighting
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+
+  # ---- building_energy: low-energy buildings / modeling / codes ----
+  - id: wiki-passive-house
+    title: "Passive house (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Passive_house
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-zero-energy-building
+    title: "Zero-energy building (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Zero-energy_building
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-passive-solar-design
+    title: "Passive solar building design (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Passive_solar_building_design
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-building-performance-simulation
+    title: "Building performance simulation (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Building_performance_simulation
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-energyplus
+    title: "EnergyPlus (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/EnergyPlus
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-building-information-modeling
+    title: "Building information modeling (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Building_information_modeling
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-leed
+    title: "Leadership in Energy and Environmental Design (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Leadership_in_Energy_and_Environmental_Design
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-energy-star
+    title: "Energy Star (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Energy_Star
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+
+  # ---- building_energy: renewables & storage on buildings ----
+  - id: wiki-building-integrated-photovoltaics
+    title: "Building-integrated photovoltaics (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Building-integrated_photovoltaics
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-thermal-energy-storage
+    title: "Thermal energy storage (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Thermal_energy_storage
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-solar-water-heating
+    title: "Solar water heating (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Solar_water_heating
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-cogeneration
+    title: "Cogeneration (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Cogeneration
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+
+  # ---- equipment_systems: additional equipment ----
+  - id: wiki-variable-refrigerant-flow
+    title: "Variable refrigerant flow (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Variable_refrigerant_flow
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-variable-frequency-drive
+    title: "Variable-frequency drive (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Variable-frequency_drive
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-dehumidifier
+    title: "Dehumidifier (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Dehumidifier
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-evaporative-cooler
+    title: "Evaporative cooler (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Evaporative_cooler
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-chilled-beam
+    title: "Chilled beam (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Chilled_beam
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-radiator
+    title: "Radiator (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Radiator
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+
+  # ---- standards_protocols: data models & device protocols ----
+  - id: wiki-industry-foundation-classes
+    title: "Industry Foundation Classes (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Industry_Foundation_Classes
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-opc-ua
+    title: "OPC Unified Architecture (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/OPC_Unified_Architecture
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-zigbee
+    title: "Zigbee (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Zigbee
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-matter-standard
+    title: "Matter (standard) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Matter_(standard)
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-dali
+    title: "Digital Addressable Lighting Interface (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Digital_Addressable_Lighting_Interface
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-green-button
+    title: "Green Button (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Green_Button
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+
+  # ---- BATCH 4 Part B: harvested authoritative PDFs (arXiv + gov) ----
+
+  # arXiv: building energy modeling / decarbonization / net-zero / datasets (open)
+  - id: arxiv-2603-11121-weather-surrogate-energy
+    title: "Weather-guided surrogate modeling for cross-location building energy prediction (arXiv 2603.11121)"
+    url: https://arxiv.org/pdf/2603.11121
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2407-11618-heating-network-decarb
+    title: "Decarbonization of Existing Heating Networks via Producer Retrofit & Low-Temp Operation (arXiv 2407.11618)"
+    url: https://arxiv.org/pdf/2407.11618
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2310-02756-heatpump-demand-smartmeter
+    title: "Modeling Electricity Demand of Retrofitted Heat Pumps from Gas Smart Meter Data (arXiv 2310.02756)"
+    url: https://arxiv.org/pdf/2310.02756
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2403-01027-retrofit-ercot-uri
+    title: "Building Sector Retrofits to Mitigate ERCOT Shortfalls during Winter Storm Uri (arXiv 2403.01027)"
+    url: https://arxiv.org/pdf/2403.01027
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2406-04133-globus-renovation
+    title: "GLOBUS: Global Building Renovation Potential by 2070 (arXiv 2406.04133)"
+    url: https://arxiv.org/pdf/2406.04133
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2312-03137-netzero-florida
+    title: "Role of Net-Zero Energy Residential Buildings in Florida's Energy Transition (arXiv 2312.03137)"
+    url: https://arxiv.org/pdf/2312.03137
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2602-20453-iot-bems-netzero
+    title: "IoT-Driven Building Energy Management Systems for Net Zero Energy Buildings (arXiv 2602.20453)"
+    url: https://arxiv.org/pdf/2602.20453
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2102-07654-energy-efficiency-recommenders
+    title: "A Survey of Recommender Systems for Energy Efficiency in Buildings (arXiv 2102.07654)"
+    url: https://arxiv.org/pdf/2102.07654
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2307-00142-buildingsbench
+    title: "BuildingsBench: 900K Buildings & Benchmark for Short-Term Load Forecasting (arXiv 2307.00142)"
+    url: https://arxiv.org/pdf/2307.00142
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2507-12207-buildevo-forecasting
+    title: "BUILDEVO: Designing Building Energy Consumption Forecasting Heuristics (arXiv 2507.12207)"
+    url: https://arxiv.org/pdf/2507.12207
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-1411-4679-ann-heating-demand
+    title: "Pseudo-Dynamic Transitional Modeling of Building Heating Energy Demand using ANN (arXiv 1411.4679)"
+    url: https://arxiv.org/pdf/1411.4679
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+
+  # arXiv: semantic data models / interoperability (open)
+  - id: arxiv-2601-16663-categorical-semantic-interop
+    title: "A Categorical Approach to Semantic Interoperability across the Building Lifecycle (arXiv 2601.16663)"
+    url: https://arxiv.org/pdf/2601.16663
+    source: arxiv
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: arxiv-2205-05521-brick-vs-haystack
+    title: "Comparison of Brick and Project Haystack to Support Smart Building Applications (arXiv 2205.05521)"
+    url: https://arxiv.org/pdf/2205.05521
+    source: arxiv
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: arxiv-2003-07690-automated-metadata-tagging
+    title: "Automated Metadata Tagging for building points (arXiv 2003.07690)"
+    url: https://arxiv.org/pdf/2003.07690
+    source: arxiv
+    license: open
+    topic: standards_protocols
+    format: pdf
+
+  # arXiv: grid-interactive DER control (open)
+  - id: arxiv-2211-07926-twolevel-der-geb
+    title: "Two-Level Decentralized-Centralized Control of DER in Grid-Interactive Efficient Buildings (arXiv 2211.07926)"
+    url: https://arxiv.org/pdf/2211.07926
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+
+  # PNNL (public domain)
+  - id: pnnl-28605-energy-codes-geb
+    title: "PNNL-28605 — Building Energy Codes and Grid-Interactive Efficient Buildings"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-28605.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: building_energy
+    format: pdf
+
+  # LBNL (public domain)
+  - id: lbnl-6774e-retrofit-tools-review
+    title: "LBNL-6774E — Review of Existing Energy Retrofit Tools (Hong)"
+    url: https://eta-publications.lbl.gov/sites/default/files/tianzhen_hong_-_review_of_existing_energy_retrofit_tools.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: lbnl-nexus-electrification-ee
+    title: "LBNL — The Nexus of Electrification and Energy Efficiency Upgrades"
+    url: https://eta-publications.lbl.gov/sites/default/files/186_-_the_nexus_of_electrification_and_ee_upgrades_clean_tableupdate.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: lbnl-53538-hpcbs-final
+    title: "LBNL-53538 — High Performance Commercial Building Systems (HPCBS) Final Report"
+    url: https://eta-publications.lbl.gov/sites/default/files/lbnl-53538.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: lbnl-5065e-cosimulation-energyplus
+    title: "LBNL-5065E — Co-Simulation of Building Energy and Control Systems (Wetter)"
+    url: https://eta-publications.lbl.gov/sites/default/files/wetter-paper-9711.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: lbnl-energyplus-simulation-program
+    title: "EnergyPlus: Energy Simulation Program (LBNL simulationresearch)"
+    url: https://simulationresearch.lbl.gov/dirpubs/46002.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: lbnl-geb-national-roadmap
+    title: "A National Roadmap for Grid-Interactive Efficient Buildings (LBNL/DOE)"
+    url: https://gebroadmap.lbl.gov/A%20National%20Roadmap%20for%20GEBs%20-%20Final.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: building_energy
+    format: pdf
+
+  # DOE (public domain; energy.gov host may not resolve)
+  - id: doe-bto-geb-project-summary
+    title: "DOE BTO — Grid-interactive Efficient Buildings Projects Summary (2020)"
+    url: https://www.energy.gov/sites/prod/files/2020/09/f79/bto-geb-project-summary-093020.pdf
+    source: gov_doe
+    license: public-domain
+    topic: building_energy
+    format: pdf

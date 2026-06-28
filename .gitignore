@@ -1,0 +1,13 @@
+# Downloaded bytes — fetch your own copy with the loader; respect each source's license.
+# These hold copyrighted content under mixed licenses and must NEVER be committed.
+raw/
+text/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
