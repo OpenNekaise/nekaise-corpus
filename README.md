@@ -3,6 +3,24 @@
 A curated, license-tagged, **reproducible recipe** for assembling a building / HVAC /
 **building-energy** corpus for training and evaluating LLMs in the building-energy domain.
 
+## At a glance
+
+| | |
+|---|---|
+| **Documents** | **184** |
+| **Raw originals** | **~299 MB** (PDF / HTML) |
+| **Extracted text** | **~14 MB** (~13.9M chars, **≈3.5M tokens**) |
+| **Topics** | 5 |
+
+**By topic:** controls_bas 55 · equipment_systems 41 · building_energy 39 · commissioning_fdd 25 · standards_protocols 24
+
+**By source:** Wikipedia 97 · arXiv 49 · PNNL 15 · LBNL 13 · ASHRAE 4 · OSTI 3 · DOE 1 · other 2
+
+**By license:** cc-by-sa 97 · open/arXiv 50 · public-domain (US gov) 32 · proprietary-internal 5
+
+_Snapshot of the current registry (2026-06-28). The bytes are not shipped — these are what you get
+after running the loader. The corpus grows as sources are added to `sources.yaml`._
+
 > This repo ships the **registry + loader + provenance**, NOT the data bytes. The corpus mixes
 > licenses (US-gov public-domain, CC-BY-SA, arXiv, and some non-redistributable vendor/standards
 > material), so we cannot and do not host the files. You fetch your own copy with the loader and
