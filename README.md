@@ -7,16 +7,16 @@ A curated, license-tagged, **reproducible recipe** for assembling a building / H
 
 | | |
 |---|---|
-| **Documents** | **206** |
-| **Raw originals** | **~397 MB** (PDF / HTML) |
-| **Extracted text** | **~16 MB** (~16.3M chars, **≈4.1M tokens**) |
+| **Documents** | **306** |
+| **Raw originals** | **~697 MB** (PDF / HTML) |
+| **Extracted text** | **~25 MB** (~24.5M chars, **≈6.1M tokens**) |
 | **Topics** | 5 |
 
-**By topic:** controls_bas 60 · equipment_systems 44 · building_energy 43 · commissioning_fdd 32 · standards_protocols 27
+**By topic:** controls_bas 83 · building_energy 66 · equipment_systems 63 · commissioning_fdd 50 · standards_protocols 44
 
-**By source:** Wikipedia 97 · arXiv 49 · OpenAlex 22 · PNNL 15 · LBNL 13 · ASHRAE 4 · OSTI 3 · DOE 1 · other 2
+**By source:** arXiv 101 · Wikipedia 97 · OSTI 49 · OpenAlex 24 · PNNL 15 · LBNL 13 · ASHRAE 4 · other 3
 
-**By license:** cc-by-sa 97 · open 63 · public-domain (US gov) 32 · cc-by 9 · proprietary-internal 5
+**By license:** open 117 · cc-by-sa 97 · public-domain (US gov) 78 · cc-by 9 · proprietary-internal 5
 
 _Snapshot of the current registry (2026-06-28). The bytes are not shipped — these are what you get
 after running the loader. The corpus grows as sources are added to `sources.yaml`._
