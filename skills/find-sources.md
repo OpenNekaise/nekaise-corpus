@@ -8,11 +8,14 @@ agent) judge relevance + license and decide what to keep.
 
 1. **Discover** (needs network; run outside a sandbox):
    ```
-   python find_sources.py --per 20
+   python find_sources.py --per 20            # propose
+   python find_sources.py --per 20 --append   # append straight into sources.yaml
    ```
-   It queries the free OpenAlex API across the five topics, keeps open-access works that have a
-   fetchable PDF and a usable license, dedups against `manifest.jsonl` + `sources.yaml`, and prints
-   ready-to-paste `sources.yaml` entries.
+   It queries three free backends -- **OpenAlex** (filtered to repository / gov / arXiv / PMC PDF
+   copies, NOT publisher pages that 403 bots), **OSTI** (US DOE / national-lab reports,
+   public-domain), and the **arXiv API** -- across the five topics, keeps candidates whose PDF is on
+   a download-friendly host, dedups against `manifest.jsonl` + `sources.yaml`, and prints
+   ready-to-paste entries. `--backends openalex,osti,arxiv` selects which to use.
 
 2. **Review** (your judgment, not the script's):
    - **Relevance:** is it really building / HVAC / building-energy, and on-topic for its `topic`
@@ -31,6 +34,7 @@ agent) judge relevance + license and decide what to keep.
 
 - Tune `find_sources.py`'s `QUERIES` to target gaps. We are paper-heavy; thin on equipment depth,
   commissioning checklists, codes, and manufacturer application data.
-- Other discovery backends worth adding (same propose -> review -> load flow): the OSTI.gov API
-  (US-gov / national-lab reports), the arXiv API, CORE.ac.uk, OpenEI.
+- More backends to add (same propose -> review -> load flow): CORE.ac.uk, OpenEI, Semantic Scholar.
+  Extend `WHITELIST` with more reliably-downloadable OA hosts as you find them; publisher landing
+  pages (sciencedirect / springer / wiley / ieee) 403 bots and are deliberately excluded.
 - Never add `proprietary-internal` bytes; list paywalled high-value items as pointers only.
