@@ -1569,6 +1569,121 @@ sources:
     topic: standards_protocols
     format: pdf
 
+  # --- curated non-paper (batch: NIST/IEA/PNNL/LBNL dense reports) ---
+  - id: doc-nist-tn1767-whole-bldg-energy
+    title: NIST TN 1767 Annual Whole Building Energy Simulation
+    url: https://nvlpubs.nist.gov/nistpubs/technicalnotes/nist.tn.1767.pdf
+    source: nist
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: doc-nist-tn1774-fddcx
+    title: 'NIST TN 1774 FDD CX: A Fault Detection and Diagnostics Tool'
+    url: https://nvlpubs.nist.gov/nistpubs/technicalnotes/nist.tn.1774.pdf
+    source: nist
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: doc-nist-tn1981-hvaccx-guide
+    title: NIST TN 1981 User's Guide to HVAC-Cx v2.2
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1981.pdf
+    source: nist
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: doc-nist-tn2017-residential-hvac
+    title: NIST TN 2017r1 Assessing the Performance of Residential HVAC Controls and
+      FDD
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2017r1.pdf
+    source: nist
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doc-nist-tn1648-heating-perf
+    title: NIST TN 1648 Heating Mode Performance Measurements
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1648_2009.pdf
+    source: nist
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doc-iea-ebc-annex35-hybrid-vent
+    title: IEA EBC Annex 35 Hybrid Ventilation Control (Technical Synthesis)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_35_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: doc-iea-ebc-annex60-psr
+    title: IEA EBC Annex 60 New-Generation Computational Tools (Project Summary)
+    url: https://iea-ebc.org/Data/publications/EBC_PSR_Annex60.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-iea-ebc-annex58
+    title: IEA EBC Annex 58 Reliable Building Energy Performance (Final Report)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_58_Final_Report_ST3b.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-pnnl-26348-energy-code-controls
+    title: PNNL-26348 Implementation of Energy Code Controls Requirements
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-26348.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: doc-pnnl-31571-hvac-perf-codes
+    title: PNNL-31571 HVAC System Performance for Energy Codes
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-31571.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doc-pnnl-25985-controls-impacts
+    title: PNNL-25985 Impacts of Commercial Building Controls on Energy
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-25985.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: doc-pnnl-19074-self-correcting-hvac
+    title: PNNL-19074 Self-Correcting HVAC Controls Project Final Report
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-19074.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: doc-lbnl-6432e-bem-hvac
+    title: 'LBNL-6432E Comparison of Building Energy Modeling Programs: HVAC Systems'
+    url: https://eta-publications.lbl.gov/sites/default/files/lbnl-6432e.pdf
+    source: gov_lbnl
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-lbnl-41365-thermal-dist
+    title: LBNL-41365 Efficient Thermal Energy Distribution in Commercial Buildings
+    url: https://eta-publications.lbl.gov/sites/default/files/lbnl-41365.pdf
+    source: gov_lbnl
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: doc-lbnl-53538-hpcbs
+    title: LBNL-53538 High Performance Commercial Building Systems (Final Report)
+    url: https://eta-publications.lbl.gov/sites/default/files/lbnl-53538.pdf
+    source: gov_lbnl
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-lbnl-5894e-bldg-energy-info
+    title: LBNL-5894E Intelligent Building Energy Information Systems
+    url: https://eta-publications.lbl.gov/sites/default/files/LBNL-5894E.pdf
+    source: gov_lbnl
+    license: open
+    topic: controls_bas
+    format: pdf
+
   # --- discovered (find_sources.py) ---
   - id: arx-a-comparative-assessment-of-deep-learning-mode
     title: 'A comparative assessment of deep learning models for day-ahead load forecasting:
