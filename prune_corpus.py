@@ -64,6 +64,11 @@ def main() -> None:
     args = ap.parse_args()
 
     manifest = [json.loads(l) for l in (HERE / "manifest.jsonl").read_text().splitlines() if l.strip()]
+    # near-dup gate: seed titles are always kept; a discovered doc whose normalized title already
+    # exists (same paper from another source, v1/v2, etc.) is dropped so CPT doesn't over-weight it.
+    tkey = lambda t: re.sub(r"\W+", " ", (t or "").lower()).strip()
+    seen_titles = {tkey(r.get("title")) for r in manifest
+                   if not discovered(r["id"]) and r.get("status") == "ok"}
     drop: dict[str, str] = {}
     for r in manifest:
         if not discovered(r["id"]):
@@ -78,6 +83,12 @@ def main() -> None:
         q = quality((HERE / tp).read_text())
         if q != "ok":
             drop[r["id"]] = q
+            continue
+        tk = tkey(r.get("title"))
+        if tk and tk in seen_titles:
+            drop[r["id"]] = "dup-title"
+        else:
+            seen_titles.add(tk)
 
     disc_total = sum(1 for r in manifest if discovered(r["id"]))
     print(f"discovered docs: {disc_total} | would prune: {dict(Counter(drop.values()))} "
