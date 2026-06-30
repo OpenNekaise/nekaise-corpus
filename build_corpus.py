@@ -31,7 +31,11 @@ RAW = HERE / "raw"
 TEXT = HERE / "text"
 MANIFEST = HERE / "manifest.jsonl"
 SOURCES = HERE / "sources.yaml"
-UA = "nekaise-studio-hvac-corpus/0.1 (research)"
+# Browser-like UA: publisher / repository bot-walls (eScholarship, Frontiers, PMC, …) 403 a generic
+# UA even for openly-licensed (CC-BY / OA) PDFs we're entitled to fetch. (MDPI sits behind Cloudflare
+# and still blocks; those need a headless browser — skipped for now.)
+UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
+      "Chrome/124.0.0.0 Safari/537.36")
 TIMEOUT = 45
 
 
@@ -122,7 +126,9 @@ def fetch_one(src: dict) -> dict:
         "error": None, "fetched_at": None,
     }
     try:
-        resp = requests.get(src["url"], headers={"User-Agent": UA},
+        resp = requests.get(src["url"],
+                            headers={"User-Agent": UA,
+                                     "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8"},
                             timeout=TIMEOUT, allow_redirects=True)
         rec["http_status"] = resp.status_code
         resp.raise_for_status()

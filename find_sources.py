@@ -62,6 +62,28 @@ QUERIES = [
     ("semantic data model building automation 223P", "standards_protocols"),
     ("digital twin building automation systems", "standards_protocols"),
     ("grid interactive efficient buildings demand flexibility", "standards_protocols"),
+    # --- depth + under-pumped veins (mission: MORE good building-energy text) ---
+    ("advanced rooftop unit controller retrofit savings", "controls_bas"),
+    ("data center cooling control optimization efficiency", "controls_bas"),
+    ("lighting controls daylighting commercial building", "controls_bas"),
+    ("ASHRAE Guideline 36 high performance control sequences", "controls_bas"),
+    ("ongoing commissioning energy information system", "commissioning_fdd"),
+    ("chiller plant fault detection field demonstration", "commissioning_fdd"),
+    ("automated fault detection diagnostics building portfolio", "commissioning_fdd"),
+    ("cold climate air source heat pump field performance", "equipment_systems"),
+    ("heat pump water heater field performance", "equipment_systems"),
+    ("thermal energy storage building cooling load shifting", "equipment_systems"),
+    ("dedicated outdoor air system DOAS design performance", "equipment_systems"),
+    ("electrification gas to heat pump retrofit building", "equipment_systems"),
+    ("building stock energy model ResStock ComStock", "building_energy"),
+    ("commercial buildings energy consumption survey end use", "building_energy"),
+    ("residential energy consumption end use load profile", "building_energy"),
+    ("deep energy retrofit measured savings case study", "building_energy"),
+    ("embodied carbon building life cycle assessment", "building_energy"),
+    ("ASHRAE 90.1 energy savings determination", "standards_protocols"),
+    ("residential energy code cost effectiveness IECC", "standards_protocols"),
+    ("building energy code compliance field study", "standards_protocols"),
+    ("measurement and verification IPMVP savings protocol", "standards_protocols"),
 ]
 
 # hosts that reliably serve a direct PDF to a bot (publisher pages 403, so we whitelist).
@@ -185,6 +207,17 @@ def main() -> None:
                     continue
                 seen.add(u)
                 out.append(h)
+
+    # de-collide ids: id = source[:3]-slug[:46] can clash for distinct URLs, and the manifest is
+    # id-keyed, so a clash would silently overwrite a doc. Suffix any repeat within the batch.
+    used: set = set()
+    for h in out:
+        base = h["id"]
+        i = 2
+        while h["id"] in used:
+            h["id"] = f"{base[:44]}-{i}"
+            i += 1
+        used.add(h["id"])
 
     by_topic, by_src, by_lic = {}, {}, {}
     for h in out:
