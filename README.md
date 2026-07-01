@@ -13,9 +13,11 @@ fetchable. This repo ships the **curation + loader + provenance** — **never th
 point your coding agent (Claude Code / Codex) at it; the agent fetches the seed corpus and discovers
 more.
 
-> **▶ Use it with your agent** — open this repo in Claude Code or Codex and say:
-> - *"load the building-energy corpus"* → fetches every source into `raw/` + `text/`
+> **▶ Use it with your agent** — clone, open the repo in Claude Code or Codex, and just say:
+> - **`go`** → loads every indexed source into `raw/` + `text/`; once caught up, offers to turn on a
+>   **daily job that keeps digging** for more open data (crontab, ≤3h/day, commits locally — never pushes)
 > - *"find more building-energy sources and grow the corpus"* → discovers + adds new open sources
+>   (papers/reports **and GitHub repos** — Modelica Buildings, EnergyPlus, OpenStudio, ResStock, …)
 > - *"add the EnergyPlus docs"* → crawls a whole doc site into the registry
 >
 > The [`skills/`](skills/) drive each loop; [`AGENTS.md`](AGENTS.md) is the full operating manual.
@@ -51,6 +53,16 @@ after running the loader. The corpus grows as sources are added to `sources.yaml
 > material), so we cannot and do not host the files. You fetch your own copy with the loader and
 > respect each source's license. (This is how RedPajama / The Pile-style corpora work.)
 
+## Proven useful
+
+Training on this corpus measurably works. Continued-pretraining **granite-4.1-3B** on nekaise-corpus
+cuts held-out **building-energy perplexity by 56%** (13.7 → 6.0) — and *specializes* the model: a base
+model finds building-energy text *harder* than general text (13.7 vs 11.5); after CPT it finds it
+**easier** (6.0 vs 7.2). **The effect holds across five models (0.8B–14B, three families)**, general knowledge is preserved
+(domain quiz 0.975 → 0.975), and the corpus lifts the downstream building task (a 3B model reaches
+~86% of Opus-4.8 on building-energy Q&A). Full method, honest caveats, and reproduction:
+**[`RESULTS.md`](RESULTS.md)**.
+
 ## How it works
 
 ```mermaid
@@ -76,10 +88,12 @@ widening it.
 | `sources.yaml` | The curated **registry** — each source's URL, topic, license, format. **Edit this to grow the corpus.** |
 | `build_corpus.py` | The **loader** — downloads sources into `raw/`, extracts plain text into `text/`, dedups by sha256, writes the manifest. |
 | `find_sources.py` | **Discovery** — queries OpenAlex / OSTI / arXiv for open-access sources (download-friendly hosts only) and proposes registry entries. |
+| `find_github.py` | **Discovery** — walks a curated list of permissive building-sim GitHub repos and registers their README / `docs/*.md` / `*.rst` as raw text entries. |
 | `crawl_docs.py` | **Discovery** — BFS-crawls a doc site (sphinx / readthedocs / mkdocs) and registers its pages, so multi-page references (not single PDFs) can be loaded. |
 | `prune_corpus.py` | **Quality gate** — drops thin / garbage / non-English / off-topic discovered & crawled docs. |
 | `manifest.jsonl` | **Provenance** — id, url, license, topic, sha256, bytes for every fetched doc. |
-| `skills/` | The **skills** your agent runs — `load-corpus`, `find-sources`, `crawl-docs`. Exposed to Claude Code as pointer-stubs under `.claude/skills/` (the `skills/` files are the single source of truth). |
+| `scripts/` | `dig.sh` (one headless growth round) + `install_cron.sh` (wire it to a daily crontab entry — commits locally, never pushes). |
+| `skills/` | The **skills** your agent runs — `go`, `load-corpus`, `find-sources`, `crawl-docs`, `dig`. Exposed to Claude Code as pointer-stubs under `.claude/skills/` (the `skills/` files are the single source of truth). |
 | [`AGENTS.md`](AGENTS.md) · [`CLAUDE.md`](CLAUDE.md) | The **operating manual** your coding agent reads first. |
 | `raw/`, `text/` | **Git-ignored.** Your local copy of the bytes / extracted text. Never committed. |
 
@@ -97,7 +111,9 @@ pip install -r requirements.txt
 python build_corpus.py            # fetch missing sources (needs network)
 python build_corpus.py --force    # re-fetch everything
 python build_corpus.py --only controls_bas
-python find_sources.py --per 20   # discover new sources to propose
+python find_sources.py --per 20   # discover new papers/reports to propose
+python find_github.py             # discover README/docs from curated building-sim GitHub repos
+bash scripts/install_cron.sh      # optional: enable the daily growth job (commits locally, never pushes)
 ```
 
 ## Reproducibility

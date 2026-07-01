@@ -4,7 +4,8 @@
 Next-token CPT memorizes text literally, so junk in = junk out. This removes, from the manifest +
 registry + disk, docs that are: failed downloads, thin/empty, garbage extractions (symbol soup from
 scanned / math-heavy PDFs), non-English, or off-topic (too few building/energy keywords). It prunes
-only *discovered* sources (id prefix oa-/ope-/ost-/arx-); hand-curated originals are left alone.
+only *discovered* sources (id prefix oa-/ope-/ost-/arx-/crawl-/gh-); hand-curated originals are left
+alone.
 
     python prune_corpus.py            # dry run -- report what would be pruned
     python prune_corpus.py --apply    # prune (delete files, rewrite manifest + sources.yaml)
@@ -24,7 +25,17 @@ HERE = Path(__file__).resolve().parent
 DOMAIN = re.compile(
     r"build|hvac|energy|thermal|heat|cool|ventil|chiller|boiler|refriger|damper|ahu|vav|setpoint|"
     r"occupan|comfort|retrofit|envelope|commission|controller|sensor|actuator|bacnet|ashrae|kwh|"
-    r"carbon|emission|psychrometr|economizer|fault|diagnos|efficien|envelope|insulat", re.I)
+    r"carbon|emission|psychrometr|economizer|fault|diagnos|efficien|insulat|"
+    # AEC / built-environment: architecture, engineering, construction, infrastructure, materials
+    r"struct|concret|cement|reinforc|rebar|masonr|timber|lumber|steel|weld|beam|column|"
+    r"truss|girder|slab|foundation|footing|bearing|geotech|soil|slope|retain|excavat|"
+    r"settlement|tunnel|bridge|deck|abutment|pavement|asphalt|aggregat|seismic|earthquake|"
+    r"deflection|modulus|stress|strain|shear|bending|axial|construct|contractor|scaffold|"
+    r"formwork|demolition|renovat|estimat|architect|facade|roof|floor|durab|corros|"
+    r"fatigue|fracture|composite|civil|infrastructur|survey|geomat|\bbim\b|\bifc\b|hydraul|"
+    r"drainag|culvert|fire|egress|sprinkler|smoke|osha|material|coating|polymer|elastic|"
+    r"plastic|urban|zoning|transport|highway|traffic|wastewater|geolog|hazard|flood|"
+    r"coastal|levee", re.I)
 EN = re.compile(r"\b(the|and|of|to|in|is|for|that|with|are|this|be|as|by|on|from)\b", re.I)
 
 
@@ -49,7 +60,7 @@ def quality(text: str) -> str:
 
 
 def discovered(i: str) -> bool:
-    return i.startswith(("oa-", "ope-", "ost-", "arx-", "crawl-"))
+    return i.startswith(("oa-", "ope-", "ost-", "arx-", "crawl-", "gh-"))
 
 
 def emit_entry(r: dict) -> str:

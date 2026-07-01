@@ -34,6 +34,10 @@ agent) judge relevance + license and decide what to keep.
 
 - Tune `find_sources.py`'s `QUERIES` to target gaps. We are paper-heavy; thin on equipment depth,
   commissioning checklists, codes, and manufacturer application data.
+- **GitHub has its own backend:** `python find_github.py` walks a curated list of permissive
+  building-sim repos (Modelica Buildings, EnergyPlus, OpenStudio, ResStock, …) and registers their
+  README / `docs/*.md` / `*.rst` as raw-text entries (same propose -> `--append` -> load flow). The
+  [`dig`](dig.md) skill runs it alongside this one.
 - More backends to add (same propose -> review -> load flow): CORE.ac.uk, OpenEI, Semantic Scholar.
   Extend `WHITELIST` with more reliably-downloadable OA hosts as you find them; publisher landing
   pages (sciencedirect / springer / wiley / ieee) 403 bots and are deliberately excluded.

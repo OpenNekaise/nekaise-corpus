@@ -20,6 +20,7 @@ import argparse
 import hashlib
 import io
 import json
+import subprocess
 import time
 from pathlib import Path
 
@@ -37,10 +38,27 @@ SOURCES = HERE / "sources.yaml"
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/124.0.0.0 Safari/537.36")
 TIMEOUT = 45
+# plain-text source formats (GitHub READMEs / docs, .rst, etc.): stored verbatim, no parsing.
+TEXT_FORMATS = {"md", "rst", "txt"}
 
 
 def sha256_bytes(b: bytes) -> str:
     return hashlib.sha256(b).hexdigest()
+
+
+def extract_text_plain(data: bytes) -> str:
+    """Decode an already-human-readable text file (markdown / rst / txt) verbatim."""
+    return data.decode("utf-8", "ignore").strip()
+
+
+def extract_for(fmt: str, data: bytes) -> str:
+    if fmt == "pdf":
+        return extract_pdf(data)
+    if fmt == "html":
+        return extract_html(data)
+    if fmt in TEXT_FORMATS:
+        return extract_text_plain(data)
+    return ""
 
 
 def extract_pdf(data: bytes) -> str:
@@ -116,7 +134,7 @@ def fetch_one(src: dict) -> dict:
     sid = src["id"]
     fmt = src.get("format", "pdf")
     source = src.get("source", "misc")
-    ext = {"pdf": "pdf", "html": "html"}.get(fmt, "bin")
+    ext = {"pdf": "pdf", "html": "html"}.get(fmt, fmt if fmt in TEXT_FORMATS else "bin")
     rec = {
         "id": sid, "title": src.get("title", sid), "url": src["url"],
         "source": source, "license": src.get("license", "unknown"),
@@ -131,8 +149,23 @@ def fetch_one(src: dict) -> dict:
                                      "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8"},
                             timeout=TIMEOUT, allow_redirects=True)
         rec["http_status"] = resp.status_code
-        resp.raise_for_status()
-        data = resp.content
+        if resp.status_code in (403, 429):
+            # Akamai/Cloudflare WAFs (e.g. fema.gov) 403 the python client but pass curl's TLS
+            # fingerprint. Fall back to curl for openly-licensed docs we're entitled to fetch.
+            out = subprocess.run(["curl", "-sSL", "--max-time", str(TIMEOUT), "-A", UA, src["url"]],
+                                 capture_output=True, timeout=TIMEOUT + 15)
+            body = out.stdout if out.returncode == 0 else b""
+            # only trust the fallback if it returned the expected content (a real PDF, not a WAF
+            # HTML challenge page that curl happily 200s)
+            good = len(body) > 512 and (body[:5] == b"%PDF-" if fmt == "pdf" else True)
+            if good:
+                data, rec["http_status"] = body, 200
+            else:
+                resp.raise_for_status()
+                data = resp.content
+        else:
+            resp.raise_for_status()
+            data = resp.content
         rec["sha256"] = sha256_bytes(data)
         rec["bytes"] = len(data)
 
@@ -143,8 +176,7 @@ def fetch_one(src: dict) -> dict:
         rec["raw_path"] = str(raw_path.relative_to(HERE))
 
         try:
-            txt = extract_pdf(data) if fmt == "pdf" else (
-                extract_html(data) if fmt == "html" else "")
+            txt = extract_for(fmt, data)
         except Exception as e:
             txt, rec["error"] = "", f"text-extract: {e}"
         if txt:
@@ -188,8 +220,7 @@ def main() -> None:
             data = (HERE / rp).read_bytes()
             fmt = r.get("format", "pdf")
             try:
-                txt = extract_pdf(data) if fmt == "pdf" else (
-                    extract_html(data) if fmt == "html" else "")
+                txt = extract_for(fmt, data)
             except Exception as e:
                 txt, r["error"] = "", f"reextract: {e}"
             if txt:

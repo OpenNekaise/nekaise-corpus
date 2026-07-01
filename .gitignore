@@ -3,6 +3,9 @@
 raw/
 text/
 
+# Daily-dig run logs (scripts/dig.sh)
+logs/
+
 # Python
 __pycache__/
 *.py[cod]
