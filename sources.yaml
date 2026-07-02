@@ -3598,6 +3598,329 @@ sources:
     topic: controls_bas
     format: pdf
 
+  # --- curated books via find_books.py (OAPEN CC-BY) ---
+  - id: oer-association-of-architecture-schools-in-australasia
+    title: Association of Architecture Schools in Australasia
+    url: https://library.oapen.org/rest/bitstreams/39e59868-a733-4e26-bead-50537d0e5c03/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-heritage-conservation-and-tourism-development-at-cha
+    title: Heritage Conservation and Tourism Development at Cham Sacred Sites in Vietnam
+    url: https://library.oapen.org/rest/bitstreams/23f08889-9bc5-4788-b037-75df52095bd0/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-experimental-characterization-and-modelling-of-texti
+    title: Experimental characterization and modelling of textile reinforced masonry
+      structures with the Equivalent frame method
+    url: https://library.oapen.org/rest/bitstreams/ea4f9ad8-3557-4098-bfd5-055c584d2341/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: materials
+    format: pdf
+  - id: oer-codeless-sarajevo
+    title: Codeless Sarajevo
+    url: https://library.oapen.org/rest/bitstreams/ec588145-5972-4925-b433-b124af574353/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+  - id: oer-jahresbericht-2020-2021-annual-report-2020-2021
+    title: Jahresbericht 2020/2021 | Annual report 2020/2021
+    url: https://library.oapen.org/rest/bitstreams/05dda92d-8486-479a-9dcd-b0d3e8b87aec/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+
+  # --- curated books via find_books.py (OAPEN CC-BY) ---
+  - id: oer-heritage-conservation-and-social-engagement
+    title: Heritage Conservation and Social Engagement
+    url: https://library.oapen.org/rest/bitstreams/19844d3e-62cc-4c7d-af91-a76ef8cd724b/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-the-past-in-the-present
+    title: The Past in the Present
+    url: https://library.oapen.org/rest/bitstreams/3f7688dd-4d0e-4db8-aa97-7582a5375fbe/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-a-laser-based-technique-to-evaluate-sound-generation
+    title: A laser-based technique to evaluate sound generation during phonation
+    url: https://library.oapen.org/rest/bitstreams/e89d01f9-471d-4fee-9526-f0f841109d2e/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-word-stress-in-prosodic-theory
+    title: Word stress in prosodic theory
+    url: https://library.oapen.org/rest/bitstreams/5fe40bc5-bc39-49de-9586-b57064d807ba/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-nonlinear-acoustics
+    title: Nonlinear Acoustics
+    url: https://library.oapen.org/rest/bitstreams/b568e72d-ea2a-40b4-8852-5719d27c6472/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-exploring-animal-behavior-through-sound-volume-1
+    title: 'Exploring Animal Behavior Through Sound: Volume 1'
+    url: https://library.oapen.org/rest/bitstreams/2db795c4-3652-48d9-a3f4-3928bf200b0f/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-marine-mammal-acoustics-in-a-noisy-ocean
+    title: Marine Mammal Acoustics in a Noisy Ocean
+    url: https://library.oapen.org/rest/bitstreams/293b45a3-4949-4f8c-b6a5-a25261ff3df2/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-visualising-safety-an-exploration
+    title: Visualising Safety, an Exploration
+    url: https://library.oapen.org/rest/bitstreams/6de8283c-db44-4e12-9721-e4310013eb5e/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-the-coupling-of-safety-and-security
+    title: The Coupling of Safety and Security
+    url: https://library.oapen.org/rest/bitstreams/43a56786-6b87-416a-8140-59b7fe02431f/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-safety-cultures-safety-models
+    title: Safety Cultures, Safety Models
+    url: https://library.oapen.org/rest/bitstreams/a027c6f7-bce2-46d9-a5c1-35d2b32e1932/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-human-and-organisational-factors
+    title: Human and Organisational Factors
+    url: https://library.oapen.org/rest/bitstreams/160b19af-7328-41ad-8da0-eda6cb4cb9e5/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-digital-transformation-of-the-design-construction-an
+    title: Digital Transformation of the Design, Construction and Management Processes
+      of the Built Environment
+    url: https://library.oapen.org/rest/bitstreams/2cf6bfb9-aba9-4d33-b5a5-0383a57a950a/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-sbe22-berlin-built-environment-within-planetary-boun
+    title: sbe22 berlin – Built environment within planetary boundaries
+    url: https://library.oapen.org/rest/bitstreams/63406fc0-7484-4484-bca5-10e692e472e3/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-wood-modification-in-europe
+    title: Wood Modification in Europe
+    url: https://library.oapen.org/rest/bitstreams/23297d15-02a5-487b-a4fa-66d80a26d143/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-sustainable-structures-and-buildings
+    title: Sustainable Structures and Buildings
+    url: https://library.oapen.org/rest/bitstreams/6c4a15b2-06b7-4784-8369-b96a39c4cf49/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-freemasonry-and-the-orient
+    title: Freemasonry and the Orient
+    url: https://library.oapen.org/rest/bitstreams/c0a84d8f-5de5-4063-9056-650bb2a7db08/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-engineering-research-infrastructures-for-european-sy
+    title: Engineering Research Infrastructures for European Synergies
+    url: https://library.oapen.org/rest/bitstreams/22815e4f-dc93-4285-b10b-6d7f2eceef99/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-industry-4-0-and-the-road-to-sustainable-steelmaking
+    title: Industry 4.0 and the Road to Sustainable Steelmaking in Europe
+    url: https://library.oapen.org/rest/bitstreams/ffd2a535-b95f-4816-a2e3-3e449545a709/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-advances-in-frontier-research-on-engineering-structu
+    title: Advances in Frontier Research on Engineering Structures
+    url: https://library.oapen.org/rest/bitstreams/3c299324-3d8f-410d-840f-3fe5c1c631e9/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-digital-intelligent-aeroengine
+    title: Digital Intelligent Aeroengine
+    url: https://library.oapen.org/rest/bitstreams/a9289452-d42c-4603-bf23-228955da5434/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-new-mechanism
+    title: New Mechanism
+    url: https://library.oapen.org/rest/bitstreams/03147dcd-a0e4-4258-a274-5120652d9f0e/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-evaluating-evidence-of-mechanisms-in-medicine
+    title: Evaluating Evidence of Mechanisms in Medicine
+    url: https://library.oapen.org/rest/bitstreams/eca3b0ad-60ac-4a65-b97a-a2dc937d34a9/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-augmented-reality-for-engineering-graphics
+    title: Augmented Reality for Engineering Graphics
+    url: https://library.oapen.org/rest/bitstreams/a93bd6ed-5eff-45e0-bd36-15bb56b730dd/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-guideline-for-salinity-assessment-mitigation-and-ada
+    title: Guideline for Salinity Assessment, Mitigation and Adaptation Using Nuclear
+      and Related Techniques
+    url: https://library.oapen.org/rest/bitstreams/fa591144-4b76-41b4-a297-791b27c51720/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-bond-failure-mechanism-of-fully-grouted-rock-bolts
+    title: Bond Failure Mechanism of Fully Grouted Rock Bolts
+    url: https://library.oapen.org/rest/bitstreams/1e4f7fd8-f9c8-4ad5-afd7-d352261fa891/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-wind-power-deployment-in-urbanised-regions
+    title: Wind power deployment in urbanised regions
+    url: https://library.oapen.org/rest/bitstreams/f5a62df1-458c-40b1-98a8-928f876002e4/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-winderful-wind-and-infrastructures
+    title: WINDERFUL Wind and INfrastructures
+    url: https://library.oapen.org/rest/bitstreams/befb9321-375d-480d-9c4c-10ddc13ed263/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-creating-healthy-and-sustainable-buildings
+    title: Creating Healthy and Sustainable Buildings
+    url: https://library.oapen.org/rest/bitstreams/80625103-d9db-449e-a3d1-6e47636bbc83/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-energy-demand-challenges-in-europe
+    title: Energy Demand Challenges in Europe
+    url: https://library.oapen.org/rest/bitstreams/2e7f44b1-ce46-4b4d-befd-ada45889a214/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-proceedings-of-the-australian-summer-study-on-energy
+    title: Proceedings of the Australian Summer Study on Energy Productivity
+    url: https://library.oapen.org/rest/bitstreams/6188203c-78cd-4eae-8873-8a933f0a9bd1/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-collection-care
+    title: Collection Care
+    url: https://library.oapen.org/rest/bitstreams/59cd9e6d-5758-48d8-a54e-4b6638b47a38/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-recognizing-green-skills-through-non-formal-learning
+    title: Recognizing Green Skills Through Non-formal Learning
+    url: https://library.oapen.org/rest/bitstreams/e7d2aad2-2229-4ec3-9ec6-7b112b1826b6/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-green-economy-in-the-transport-sector
+    title: Green Economy in the Transport Sector
+    url: https://library.oapen.org/rest/bitstreams/e2c092d4-8462-4e3a-a0a2-5a00fc4441ec/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-smart-cities-in-asia
+    title: Smart Cities in Asia
+    url: https://library.oapen.org/rest/bitstreams/780a8900-a6b2-48ca-b452-dd4f72f31fe8/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-transport-in-capitalism
+    title: Transport in Capitalism
+    url: https://library.oapen.org/rest/bitstreams/fe3d0563-be95-4355-a99e-4d68278bd126/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-railways-music
+    title: Railways & Music
+    url: https://library.oapen.org/rest/bitstreams/550f8bab-f683-4f97-8054-9a07666f4560/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-fellow-travellers
+    title: Fellow Travellers
+    url: https://library.oapen.org/rest/bitstreams/feeda87f-e232-4f3a-a1c4-25eca9a63a3a/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-prisms-of-work
+    title: Prisms of Work
+    url: https://library.oapen.org/rest/bitstreams/878f271c-1a09-42f7-8b9a-9d03cdd835c0/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-hydraulic-fracturing-and-rock-mechanics
+    title: Hydraulic Fracturing and Rock Mechanics
+    url: https://library.oapen.org/rest/bitstreams/bba4d5c8-eb74-4b14-8e08-b90106d7b1db/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-advancements-in-fluid-power-technology-sustainabilit
+    title: 'Advancements in Fluid Power Technology: Sustainability, Electrification,
+      and Digitalization'
+    url: https://library.oapen.org/rest/bitstreams/13e24896-3ca2-47fb-8dac-7410a315f0c9/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+
   # --- discovered (find_sources.py) ---
   - id: arx-a-digitalization-framework-for-smart-maintenan
     title: A Digitalization Framework for Smart Maintenance of Historic Buildings
@@ -16547,6 +16870,14 @@ sources:
     title: 'Brick Schema Standardized Plug Load Control Strategies for Load Reduction:
       Preprint'
     url: https://www.osti.gov/servlets/purl/2446843
+    source: osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: ost-bridging-semantics-control-specifications-and-
+    title: 'Bridging semantics, control specifications and assessment: A library for
+      scalable demand flexibility controls'
+    url: https://www.osti.gov/servlets/purl/3376255
     source: osti
     license: public-domain
     topic: controls_bas
