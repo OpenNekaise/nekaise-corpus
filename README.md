@@ -58,7 +58,9 @@ after running the loader. The corpus grows as sources are added to `sources.yaml
 
 ## Proven useful
 
-Training on this corpus measurably works. Continued-pretraining **granite-4.1-3B** on nekaise-corpus
+Training on this corpus measurably works. _(Evidence below is from the building-energy core at the
+round-6 snapshot — 1,707 docs / 38.3M tokens, before the round-7 built-environment expansion; a re-run
+on the full 4,327-doc corpus is pending.)_ Continued-pretraining **granite-4.1-3B** on nekaise-corpus
 cuts held-out **building-energy perplexity by 56%** (13.7 → 6.0) — and *specializes* the model: a base
 model finds building-energy text *harder* than general text (13.7 vs 11.5); after CPT it finds it
 **easier** (6.0 vs 7.2). **The effect holds across five models (0.8B–14B, three families)**, general knowledge is preserved
@@ -80,9 +82,9 @@ flowchart LR
     P -. "rewrites" .-> S
 ```
 
-**discover → register → fetch → gate → repeat.** `find_sources.py` / `crawl_docs.py` propose new
-entries for `sources.yaml`; `build_corpus.py` fetches each into `raw/` + `text/` and records its
-sha256 in `manifest.jsonl`; `prune_corpus.py` drops the junk. Your agent runs this loop and keeps
+**discover → register → fetch → gate → repeat.** `find_sources.py` / `find_github.py` / `crawl_docs.py`
+propose new entries for `sources.yaml`; `build_corpus.py` fetches each into `raw/` + `text/` and records
+its sha256 in `manifest.jsonl`; `prune_corpus.py` drops the junk. Your agent runs this loop and keeps
 widening it.
 
 ## What's here
@@ -104,9 +106,9 @@ widening it.
 ## Use it
 
 **Easiest — drive it with your agent.** Open the repo in Claude Code / Codex and ask it to *"load the
-building-energy corpus"* or *"find more building-energy sources and grow the corpus."* The
-[`load-corpus`](skills/load-corpus.md), [`find-sources`](skills/find-sources.md), and
-[`crawl-docs`](skills/crawl-docs.md) skills drive each loop and verify the result.
+corpus"* or *"find more built-environment sources and grow the corpus"* (or just say *`go`* or *`dig`*).
+The [`go`](skills/go.md), [`load-corpus`](skills/load-corpus.md), [`find-sources`](skills/find-sources.md),
+[`crawl-docs`](skills/crawl-docs.md), and [`dig`](skills/dig.md) skills drive each loop and verify the result.
 
 **Or run it yourself:**
 
@@ -116,7 +118,7 @@ python build_corpus.py            # fetch missing sources (needs network)
 python build_corpus.py --force    # re-fetch everything
 python build_corpus.py --only controls_bas
 python find_sources.py --per 20   # discover new papers/reports to propose
-python find_github.py             # discover README/docs from curated building-sim GitHub repos
+python find_github.py             # discover README/docs + source code from curated AEC GitHub repos
 bash scripts/install_cron.sh      # optional: enable the daily growth job (commits locally, never pushes)
 ```
 
@@ -154,8 +156,10 @@ above as a moving snapshot, not a target.
 **Read before you redistribute.** Every source carries a `license` in `sources.yaml` /
 `manifest.jsonl`:
 
-- **`public-domain`** — US government / national-lab reports (DOE, PNNL, LBNL, OSTI). Free to use.
-- **`cc-by` / `cc-by-sa`** — Wikipedia and CC-licensed papers. Attribution (+ share-alike for `-sa`).
+- **`public-domain`** — US government / national-lab work (DOE · PNNL · LBNL · ORNL · OSTI · NIST ·
+  NASA · FHWA · FEMA · USGS · OSHA · GSA · NPS · HUD · USDA-FPL · WBDG UFC). Free to use.
+- **`cc-by` / `cc-by-sa`** — Wikipedia, CC-licensed papers, open textbooks (OpenStax, Cleynen), and
+  CC-BY books (OAPEN, IntechOpen). Attribution (+ share-alike for `-sa`).
 - **`open`** — arXiv / other OA papers. Check each paper's individual license; many are NOT freely
   redistributable.
 - **`proprietary-internal`** — copyrighted vendor pages / standards (e.g. ASHRAE). Listed here as
