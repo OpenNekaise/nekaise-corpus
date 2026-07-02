@@ -2917,6 +2917,256 @@ sources:
     topic: structures_civil
     format: pdf
 
+  # --- curated round 8: CC-BY open-access built-environment books (OAPEN / IntechOpen) ---
+  - id: oer-concrete-polymer-composites-circular-economy
+    title: Concrete-Polymer Composites in Circular Economy
+    url: https://library.oapen.org/rest/bitstreams/e2a16af3-cc6b-4696-9959-0438cb900172/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-timber-engineering
+    title: Timber Engineering
+    url: https://library.oapen.org/rest/bitstreams/500b5248-9818-42d6-a0b4-11a8427e46b1/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: materials
+    format: pdf
+  - id: oer-high-performance-concrete-frontier-research
+    title: Frontier Research on High Performance Concrete and Mechanical Properties
+    url: https://library.oapen.org/rest/bitstreams/93b21b6e-4538-4253-8c87-2f09475aa4a7/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-nanotechnology-in-construction-circular-economy
+    title: Nanotechnology in Construction for Circular Economy
+    url: https://library.oapen.org/rest/bitstreams/b6451621-4e7f-4620-8286-f5bb05f3ff0f/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-strand-corrosion-prestressed-concrete
+    title: Strand Corrosion in Prestressed Concrete Structures
+    url: https://library.oapen.org/rest/bitstreams/d30b7e79-c93c-47bc-ba36-556f5901c2f8/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-himalayan-building-craft-traditions
+    title: 'Material Aspects of Building and Craft Traditions: A Himalayan Case Study'
+    url: https://library.oapen.org/rest/bitstreams/a6e6618d-a5a1-4fc2-8ebd-209253de504b/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-sprayed-concrete-linings-soft-ground
+    title: Sprayed Concrete Linings in Soft Ground
+    url: https://library.oapen.org/rest/bitstreams/b52690cf-ada1-4f88-9301-31836d675499/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-prefabricated-building-whole-process-management
+    title: Novel Technology and Whole-Process Management in Prefabricated Building
+    url: https://library.oapen.org/rest/bitstreams/45d35664-2ddf-4419-a85f-786d49e906fd/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-bim-efficient-building-renovation
+    title: Innovative Tools and Methods Using BIM for an Efficient Renovation in Buildings
+    url: https://library.oapen.org/rest/bitstreams/540949e0-3eb1-42b3-9c1d-388b218649a2/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-circular-economy-built-environment
+    title: Circular Economy Design and Management in the Built Environment
+    url: https://library.oapen.org/rest/bitstreams/c950ca5c-a82f-44a7-889d-452afd021ccf/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-8th-civil-engineering-conference-proceedings
+    title: Proceedings of the 8th International Conference on Civil Engineering
+    url: https://library.oapen.org/rest/bitstreams/3c8f2ec2-e43b-402b-b6e4-86264b82fe35/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-seismic-safety-concrete-faced-rockfill-dams
+    title: Stochastic Dynamic Response Analysis and Performance-Based Seismic Safety
+      Evaluation for High Concrete Faced Rockfill Dams
+    url: https://library.oapen.org/rest/bitstreams/87f99537-3f88-4d2f-b038-e41c99c8bf86/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-geotechnical-modeling-intelligent-systems
+    title: Geotechnical Modeling and Intelligent Systems
+    url: https://library.oapen.org/rest/bitstreams/b69106fe-7b1a-4afd-bce5-85171bae88ab/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-understanding-past-earthquakes
+    title: Understanding Past Earthquakes
+    url: https://library.oapen.org/rest/bitstreams/9e4c454f-82fa-42d8-b2ab-87fcd6f95f32/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-sliding-base-structures
+    title: Sliding Base Structures
+    url: https://library.oapen.org/rest/bitstreams/c11de313-7bb6-422f-b7c0-2968d8257ade/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-offshore-wind-turbine-foundations-soft-clays
+    title: Dynamic Analysis of Offshore Wind Turbine Foundations in Soft Clays
+    url: https://library.oapen.org/rest/bitstreams/4e3b5b09-94a4-4a19-a40e-dfc0e642088c/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-building-digital-twins
+    title: Building Digital Twins
+    url: https://library.oapen.org/rest/bitstreams/be8048c0-2904-4a31-880d-ceb4c794e15e/retrieve
+    source: oapen
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: oer-infrastructure-investment-indonesia
+    title: Infrastructure Investment in Indonesia
+    url: https://library.oapen.org/rest/bitstreams/2d9811a5-da20-4e0d-8508-d68765b5f9ce/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-decarbonizing-freight-transport
+    title: Decarbonizing Freight Transport
+    url: https://library.oapen.org/rest/bitstreams/f692bb2d-7107-43e4-867f-d336960b5b25/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-urban-water-demand-management
+    title: Urban Water Demand Management
+    url: https://library.oapen.org/rest/bitstreams/1cd27c2e-6e92-43b1-9de1-576039ebf57f/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-routledge-handbook-planning-history
+    title: The Routledge Handbook of Planning History
+    url: https://library.oapen.org/rest/bitstreams/62b84d5d-7a85-48c0-a656-f8fbcb90c6a1/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-urban-planning-against-poverty
+    title: Urban Planning Against Poverty
+    url: https://library.oapen.org/rest/bitstreams/9bc4f96c-3e1e-420c-8da9-ea785a782f7e/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-national-spatial-planning-china
+    title: National Spatial Planning in China
+    url: https://library.oapen.org/rest/bitstreams/6655d4d4-6590-49b5-b2c6-f217e5eaf0a3/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-smart-cities
+    title: Smart Cities
+    url: https://library.oapen.org/rest/bitstreams/efb65ad0-22b9-4e21-9509-b1d75c4312f5/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-housing-estates-in-europe
+    title: Housing Estates in Europe
+    url: https://library.oapen.org/rest/bitstreams/32dbb7ba-fca0-4c86-83d7-dc515ddc8adf/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-disrupting-buildings
+    title: Disrupting Buildings
+    url: https://library.oapen.org/rest/bitstreams/a2fb32a1-37c5-4d3d-8df8-ec0d83135ff5/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-occupant-demand-response-mpc-heating
+    title: Occupant-Oriented Demand Response with Model Predictive Heating Control in
+      a Multi-Zone Residential Building
+    url: https://library.oapen.org/rest/bitstreams/b966489d-e576-48c0-b739-0d6d586ae026/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-sustainable-energy-access-communities
+    title: Sustainable Energy Access for Communities
+    url: https://library.oapen.org/rest/bitstreams/57d7a322-cd43-467c-9f24-d96fbcb3899e/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-fire-hazards-socioeconomic-regional
+    title: 'Fire Hazards: Socio-economic and Regional Issues'
+    url: https://library.oapen.org/rest/bitstreams/e634af84-1e73-491f-abbf-c3ce38408259/retrieve
+    source: oapen
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+  - id: ito-sustainable-construction-building-materials
+    title: Sustainable Construction and Building Materials
+    url: https://mts.intechopen.com/storage/books/8412/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: ito-masonry-sustainable-construction
+    title: Masonry for Sustainable Construction
+    url: https://mts.intechopen.com/storage/books/12061/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: ito-nearly-zero-energy-building-nzeb
+    title: Nearly Zero Energy Building (NZEB) - Materials, Design and New Approaches
+    url: https://mts.intechopen.com/storage/books/11175/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: ito-structural-health-monitoring-failure-analysis
+    title: Failure Analysis - Structural Health Monitoring of Structure and Infrastructure
+      Components
+    url: https://mts.intechopen.com/storage/books/11544/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: ito-hydraulic-structures-theory-applications
+    title: Hydraulic Structures - Theory and Applications
+    url: https://mts.intechopen.com/storage/books/7587/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: ito-risk-management-construction-projects
+    title: Risk Management in Construction Projects
+    url: https://mts.intechopen.com/storage/books/8808/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: construction
+    format: pdf
+
   # --- discovered (find_sources.py) ---
   - id: arx-a-digitalization-framework-for-smart-maintenan
     title: A Digitalization Framework for Smart Maintenance of Historic Buildings
@@ -3034,6 +3284,14 @@ sources:
   - id: arx-behaviour-and-perception-based-pedestrian-evac
     title: Behaviour and Perception-based Pedestrian Evacuation Simulation
     url: https://arxiv.org/pdf/1002.3892
+    source: arxiv
+    license: open
+    topic: architecture
+    format: pdf
+  - id: arx-constructing-numerically-stable-kalman-filter-
+    title: Constructing numerically stable Kalman filter-based algorithms for gradient-based
+      adaptive filtering
+    url: https://arxiv.org/pdf/1303.4622
     source: arxiv
     license: open
     topic: architecture
@@ -3807,6 +4065,14 @@ sources:
     title: AIn't Nothing But a Survey? Using Large Language Models for Coding German
       Open-Ended Survey Responses on Survey Motivation
     url: https://arxiv.org/pdf/2506.14634
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arx-alert-transformer-bridging-asynchronous-and-sy
+    title: 'ALERT-Transformer: Bridging Asynchronous and Synchronous Machine Learning
+      for Real-Time Event-based Spatio-Temporal Data'
+    url: https://arxiv.org/pdf/2402.01393
     source: arxiv
     license: open
     topic: building_energy
@@ -18719,6 +18985,13 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
+  - id: arx-skipgs-post-densification-backward-skipping-fo
+    title: 'SkipGS: Post-Densification Backward Skipping for Efficient 3DGS Training'
+    url: https://arxiv.org/pdf/2603.08997
+    source: arxiv
+    license: open
+    topic: equipment_systems
+    format: pdf
   - id: arx-small-bottle-big-pipe-quantifying-and-addressi
     title: 'Small Bottle, Big Pipe: Quantifying and Addressing the Impact of Data Centers
       on Public Water Systems'
@@ -22751,6 +23024,14 @@ sources:
     license: public-domain
     topic: equipment_systems
     format: pdf
+  - id: ost-development-of-a-conduction-based-model-for-an
+    title: Development of a conduction-based model for analyzing frozen startup of alkali-metal
+      heat pipes
+    url: https://www.osti.gov/servlets/purl/2587781
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
   - id: ost-development-of-a-high-efficiency-hybrid-dry-co
     title: Development of a High-Efficiency Hybrid Dry Cooler System for sCO<sub>2</sub>
       Power Cycles in CSP Applications
@@ -24780,6 +25061,41 @@ sources:
     license: open
     topic: infrastructure
     format: pdf
+  - id: gh-epanet-building
+    title: 'EPANET: BUILDING.md'
+    url: https://raw.githubusercontent.com/OpenWaterAnalytics/EPANET/dev/BUILDING.md
+    source: gh_epanet
+    license: open
+    topic: infrastructure
+    format: md
+  - id: gh-epanet-readme
+    title: 'EPANET: README.md'
+    url: https://raw.githubusercontent.com/OpenWaterAnalytics/EPANET/dev/README.md
+    source: gh_epanet
+    license: open
+    topic: infrastructure
+    format: md
+  - id: gh-epanet-releasenotes2-2
+    title: 'EPANET: ReleaseNotes2_2.md'
+    url: https://raw.githubusercontent.com/OpenWaterAnalytics/EPANET/dev/ReleaseNotes2_2.md
+    source: gh_epanet
+    license: open
+    topic: infrastructure
+    format: md
+  - id: gh-epanet-releasenotes2-3
+    title: 'EPANET: ReleaseNotes2_3.md'
+    url: https://raw.githubusercontent.com/OpenWaterAnalytics/EPANET/dev/ReleaseNotes2_3.md
+    source: gh_epanet
+    license: open
+    topic: infrastructure
+    format: md
+  - id: gh-flopy-docs-mf6-dev-guide
+    title: 'flopy: docs/mf6_dev_guide.md'
+    url: https://raw.githubusercontent.com/modflowpy/flopy/develop/docs/mf6_dev_guide.md
+    source: gh_flopy
+    license: open
+    topic: infrastructure
+    format: md
   - id: gh-geopandas-doc-source-community-ecosystem
     title: 'geopandas: doc/source/community/ecosystem.md'
     url: https://raw.githubusercontent.com/geopandas/geopandas/main/doc/source/community/ecosystem.md
@@ -24822,6 +25138,62 @@ sources:
     license: open
     topic: infrastructure
     format: rst
+  - id: gh-landlab-docs-source-install-developer-install
+    title: 'landlab: docs/source/install/developer_install.md'
+    url: https://raw.githubusercontent.com/landlab/landlab/master/docs/source/install/developer_install.md
+    source: gh_landlab
+    license: open
+    topic: infrastructure
+    format: md
+  - id: gh-landlab-docs-source-user-guide-cell-lab-user-guide
+    title: 'landlab: docs/source/user_guide/cell_lab_user_guide.md'
+    url: https://raw.githubusercontent.com/landlab/landlab/master/docs/source/user_guide/cell_lab_user_guide.md
+    source: gh_landlab
+    license: open
+    topic: infrastructure
+    format: md
+  - id: gh-landlab-docs-source-user-guide-grid
+    title: 'landlab: docs/source/user_guide/grid.md'
+    url: https://raw.githubusercontent.com/landlab/landlab/master/docs/source/user_guide/grid.md
+    source: gh_landlab
+    license: open
+    topic: infrastructure
+    format: md
+  - id: gh-landlab-docs-source-user-guide-overland-flow-user-guide
+    title: 'landlab: docs/source/user_guide/overland_flow_user_guide.md'
+    url: https://raw.githubusercontent.com/landlab/landlab/master/docs/source/user_guide/overland_flow_user_guide.md
+    source: gh_landlab
+    license: open
+    topic: infrastructure
+    format: md
+  - id: gh-landlab-src-landlab-components-network-sediment-transporter-
+    title: 'landlab: src/landlab/components/network_sediment_transporter/README.md'
+    url: https://raw.githubusercontent.com/landlab/landlab/master/src/landlab/components/network_sediment_transporter/README.md
+    source: gh_landlab
+    license: open
+    topic: infrastructure
+    format: md
+  - id: gh-landlab-src-landlab-components-priority-flood-flow-router-re
+    title: 'landlab: src/landlab/components/priority_flood_flow_router/README.md'
+    url: https://raw.githubusercontent.com/landlab/landlab/master/src/landlab/components/priority_flood_flow_router/README.md
+    source: gh_landlab
+    license: open
+    topic: infrastructure
+    format: md
+  - id: gh-momepy-docs-source-user-guide-data-structure
+    title: 'momepy: docs/source/user_guide/data_structure.md'
+    url: https://raw.githubusercontent.com/pysal/momepy/main/docs/source/user_guide/data_structure.md
+    source: gh_momepy
+    license: open
+    topic: infrastructure
+    format: md
+  - id: gh-momepy-readme
+    title: 'momepy: README.md'
+    url: https://raw.githubusercontent.com/pysal/momepy/main/README.md
+    source: gh_momepy
+    license: open
+    topic: infrastructure
+    format: md
   - id: gh-osmnx-docs-source-further-reading
     title: 'osmnx: docs/source/further-reading.rst'
     url: https://raw.githubusercontent.com/gboeing/osmnx/main/docs/source/further-reading.rst
@@ -24836,6 +25208,41 @@ sources:
     license: open
     topic: infrastructure
     format: rst
+  - id: gh-pyproj-docs-history
+    title: 'pyproj: docs/history.rst'
+    url: https://raw.githubusercontent.com/pyproj4/pyproj/main/docs/history.rst
+    source: gh_pyproj
+    license: open
+    topic: infrastructure
+    format: rst
+  - id: gh-pyproj-docs-installation
+    title: 'pyproj: docs/installation.rst'
+    url: https://raw.githubusercontent.com/pyproj4/pyproj/main/docs/installation.rst
+    source: gh_pyproj
+    license: open
+    topic: infrastructure
+    format: rst
+  - id: gh-pysal-readme
+    title: 'pysal: README.md'
+    url: https://raw.githubusercontent.com/pysal/pysal/main/README.md
+    source: gh_pysal
+    license: open
+    topic: infrastructure
+    format: md
+  - id: gh-rasterio-docs-cli
+    title: 'rasterio: docs/cli.rst'
+    url: https://raw.githubusercontent.com/rasterio/rasterio/main/docs/cli.rst
+    source: gh_rasterio
+    license: open
+    topic: infrastructure
+    format: rst
+  - id: gh-rasterio-governance
+    title: 'rasterio: governance.md'
+    url: https://raw.githubusercontent.com/rasterio/rasterio/main/governance.md
+    source: gh_rasterio
+    license: open
+    topic: infrastructure
+    format: md
   - id: gh-shapely-docs-manual
     title: 'shapely: docs/manual.rst'
     url: https://raw.githubusercontent.com/shapely/shapely/main/docs/manual.rst
@@ -24857,6 +25264,14 @@ sources:
     license: open
     topic: infrastructure
     format: rst
+  - id: gh-stormwater-management-model-doc-new-swmm-5-2-features
+    title: 'Stormwater-Management-Model: doc/New SWMM 5.2 Features.md'
+    url: https://raw.githubusercontent.com/USEPA/Stormwater-Management-Model/develop/doc/New
+      SWMM 5.2 Features.md
+    source: gh_stormwater-management-model
+    license: open
+    topic: infrastructure
+    format: md
   - id: ost-a-hybrid-cnn-lstm-surrogate-model-for-hyper-re
     title: A hybrid CNN-LSTM surrogate model for hyper-resolution spatiotemporal flood
       forecasting in Norfolk, Virginia
@@ -25877,6 +26292,14 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
+  - id: ost-compatibilization-strategy-and-mechanism-for-c
+    title: Compatibilization Strategy and Mechanism for Co-stabilizing Commingled Plastics
+      and Pyrolyzed Rubber in Asphalt
+    url: https://www.osti.gov/servlets/purl/2997286
+    source: osti
+    license: public-domain
+    topic: materials
+    format: pdf
   - id: ost-conserving-asphalt-resources-rethinking-rejuve
     title: 'Conserving asphalt resources: Rethinking rejuvenator performance evaluation
       through peptizing efficiency'
@@ -26134,6 +26557,14 @@ sources:
   - id: ost-scalable-electrified-cementitious-materials-pr
     title: Scalable electrified cementitious materials production and recycling
     url: https://www.osti.gov/servlets/purl/2483753
+    source: osti
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: ost-self-healable-copolymer-composites-for-extende
+    title: Self-healable Copolymer Composites for Extended Service H<sub>2</sub> Dispensing
+      Hoses
+    url: https://www.osti.gov/servlets/purl/2575016
     source: osti
     license: public-domain
     topic: materials
