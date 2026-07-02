@@ -3167,6 +3167,437 @@ sources:
     topic: construction
     format: pdf
 
+  # --- curated round 9: +61 CC-BY open-access built-environment books (OAPEN) ---
+  - id: oer-design-transactions
+    title: Design Transactions
+    url: https://library.oapen.org/rest/bitstreams/7668532d-a015-4799-b1f7-c7a42d5c178a/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-reference-contemporaneity-architecture
+    title: Reference and Contemporaneity in Architecture
+    url: https://library.oapen.org/rest/bitstreams/e8dc8f27-7cca-4911-8336-571bb8a766fa/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-drawing-experiencing-architecture
+    title: Drawing and Experiencing Architecture
+    url: https://library.oapen.org/rest/bitstreams/c84a2ac4-84ee-4adc-a02e-34401d5c1b6c/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-monospace-and-multiverse
+    title: Monospace and Multiverse
+    url: https://library.oapen.org/rest/bitstreams/040a2e29-44e4-4329-ba11-5493a1a78497/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-ungers-koolhaas
+    title: Oswald Mathias Ungers and Rem Koolhaas
+    url: https://library.oapen.org/rest/bitstreams/3dd47efd-93b4-42c1-9f3a-b19151eaf044/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-school-of-architectures
+    title: School of Architecture(s) - New Frontiers of Architectural Education
+    url: https://library.oapen.org/rest/bitstreams/e6596d5f-5b6a-43fc-9f10-c8b507167686/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-the-palladio-method
+    title: The Palladio Method
+    url: https://library.oapen.org/rest/bitstreams/9257a5c5-885c-4baa-9db7-e49758f9fdeb/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: architecture
+    format: pdf
+  - id: oer-expanding-fields-architectural-discourse
+    title: Expanding Fields of Architectural Discourse and Practice
+    url: https://library.oapen.org/rest/bitstreams/9aad260b-4325-48d1-8c3d-2758c168d306/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-understanding-acoustics
+    title: Understanding Acoustics
+    url: https://library.oapen.org/rest/bitstreams/62613ca7-d2c7-4773-8c51-c630d5858d8e/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-the-sound-of-architecture
+    title: The Sound of Architecture
+    url: https://library.oapen.org/rest/bitstreams/07e0141b-97fa-42dc-bad7-dd5c8033d3c7/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-sound-approach-noise-health
+    title: A Sound Approach to Noise and Health
+    url: https://library.oapen.org/rest/bitstreams/86575327-fc92-4f09-813e-85b8f5789322/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-aviation-noise-impact-management
+    title: Aviation Noise Impact Management
+    url: https://library.oapen.org/rest/bitstreams/94f59a12-6898-491f-aa78-86df47ecb844/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-designing-with-photovoltaics
+    title: Designing with Photovoltaics
+    url: https://library.oapen.org/rest/bitstreams/c09f30ef-c128-4061-b7f2-37809f2ae87b/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-vertical-green-2
+    title: Vertical Green 2.0 - The Good, the Bad and the Science
+    url: https://library.oapen.org/rest/bitstreams/9284ab0b-2b9b-463f-8402-a664eb23db6c/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-energy-efficient-building-details-seismic
+    title: Assessment of Energy-Efficient Building Details for Seismic Regions
+    url: https://library.oapen.org/rest/bitstreams/848b6fba-6f3d-4a1a-9d08-a9a1ef930208/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-buildings-for-education
+    title: Buildings for Education
+    url: https://library.oapen.org/rest/bitstreams/0d374f2a-5454-4d19-a18a-678ab120f0d9/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-counteracting-urban-heat-island
+    title: Counteracting Urban Heat Island Effects in a Global Climate Change Scenario
+    url: https://library.oapen.org/rest/bitstreams/b4dbff49-3b29-4ad0-94f6-354c98257929/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-nbs-climate-adaptation-urban
+    title: Nature-Based Solutions to Climate Change Adaptation in Urban Areas
+    url: https://library.oapen.org/rest/bitstreams/a07cde19-7b78-4a65-9ac5-90c7bf480e5f/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-assessment-of-tensegrity-structures
+    title: Assessment of Tensegrity Structures
+    url: https://library.oapen.org/rest/bitstreams/7ce45ce4-0f19-46f9-bfc3-12017f8edf88/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-frontier-research-engineering-structures-2
+    title: Advances in Frontier Research on Engineering Structures II
+    url: https://library.oapen.org/rest/bitstreams/e4e3baba-e058-4aac-b2fc-024428eac541/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-topology-optimization-structural-design
+    title: Generalized Topology Optimization for Structural Design
+    url: https://library.oapen.org/rest/bitstreams/70d38c3f-3c6b-4ca5-9859-64b6b8cd50cd/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-cast-steel-cyclic-loading
+    title: Design of Cast Steel Components under Cyclic Loading
+    url: https://library.oapen.org/rest/bitstreams/9b3d3af4-5d43-4aac-a293-3fe6420792e3/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+  - id: oer-austenitic-trip-twip-steels
+    title: Austenitic TRIP/TWIP Steels and Steel-Zirconia Composites
+    url: https://library.oapen.org/rest/bitstreams/13f83952-0737-48b5-8d8f-cc77cad6e4c0/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-mechanized-tunneling-interaction-modeling
+    title: Interaction Modeling in Mechanized Tunneling
+    url: https://library.oapen.org/rest/bitstreams/0d84c1eb-b400-43f0-8ff3-7bf3926e6191/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-deep-sea-tunnel-construction
+    title: Advanced Construction Technology and Research of Deep-Sea Tunnels
+    url: https://library.oapen.org/rest/bitstreams/049b39f7-6124-4808-8588-765ff31b0eb0/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-liquefaction-lateral-spreading-model-tests
+    title: Model Tests and Numerical Simulations of Liquefaction and Lateral Spreading
+    url: https://library.oapen.org/rest/bitstreams/cb0e38c2-5074-4b79-bc6c-d54730bbbba6/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-landslide-research-technology-v4
+    title: Progress in Landslide Research and Technology, Volume 4 Issue 1, 2025
+    url: https://library.oapen.org/rest/bitstreams/eae022a5-a362-4147-9fac-01de460bf7e2/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-living-with-landslides-v1
+    title: 'Advancing Culture of Living with Landslides: Volume 1'
+    url: https://library.oapen.org/rest/bitstreams/39913944-6c82-406b-8bb1-9c009d679f8c/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-geomint-mechanical-integrity-host-rocks
+    title: GeomInt - Mechanical Integrity of Host Rocks
+    url: https://library.oapen.org/rest/bitstreams/e5b86500-eeb7-48cb-940e-a5ca0116b64b/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-multiphase-flows-deformable-geomaterials
+    title: Multiphase Flows in Deformable Geomaterials
+    url: https://library.oapen.org/rest/bitstreams/04f9e509-66e1-467a-b02a-c44487395111/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-rainfall-infiltration-soil-slope-failure
+    title: Rainfall Infiltration in Unsaturated Soil Slope Failure
+    url: https://library.oapen.org/rest/bitstreams/9b6d0ae5-924b-4626-ac0e-a7cacd75cd3a/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-arching-in-piled-embankments
+    title: Arching in Piled Embankments Including the Effects of Reinforcement and Subsoil
+    url: https://library.oapen.org/rest/bitstreams/f57ff65f-c349-4905-99fe-31b1636d1162/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-building-with-nature-perspectives
+    title: Building with Nature perspectives
+    url: https://library.oapen.org/rest/bitstreams/bcba9754-e130-43c1-becc-c4e0ecc1fdc3/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-pianc-smart-rivers-2022
+    title: Proceedings of PIANC Smart Rivers 2022
+    url: https://library.oapen.org/rest/bitstreams/eb1d7204-a698-4119-a7eb-8b8aca5282bb/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-wadi-flash-floods
+    title: Wadi Flash Floods
+    url: https://library.oapen.org/rest/bitstreams/2fef342b-9f42-4423-8156-78556b581320/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-maritime-spatial-planning
+    title: Maritime Spatial Planning
+    url: https://library.oapen.org/rest/bitstreams/8d2d1cd0-834b-41c8-a3b0-290f12ffe1b1/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-source-separation-wastewater-management
+    title: Source Separation and Decentralization for Wastewater Management
+    url: https://library.oapen.org/rest/bitstreams/4aeb4682-804a-4661-bdd0-84438840e09d/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-hydropower-renewable-energies
+    title: Hydropower and Renewable Energies
+    url: https://library.oapen.org/rest/bitstreams/815d6b67-ce86-4fb7-a64e-1f2f7f8bb4cd/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-hydraulics-in-civil-engineering
+    title: Hydraulics in Civil Engineering
+    url: https://library.oapen.org/rest/bitstreams/0915778c-ee5d-4e10-b201-9e0f86005027/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-tire-road-vehicle-operating-conditions
+    title: The Influence of Vehicle Operating Conditions on Tire-Road Particulate Matter
+      Emissions
+    url: https://library.oapen.org/rest/bitstreams/71aab5de-133c-4497-aa82-957dadc32919/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: infrastructure
+    format: pdf
+  - id: oer-railway-ecology
+    title: Railway Ecology
+    url: https://library.oapen.org/rest/bitstreams/b342cf5a-87ec-466f-94b0-833e5414995b/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-avenue21-connected-automated-driving
+    title: 'AVENUE21. Connected and Automated Driving: Prospects for Urban Europe'
+    url: https://library.oapen.org/rest/bitstreams/940b50d8-616a-43e9-8e35-9ffaaead953c/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-matsim-transport-simulation
+    title: The Multi-Agent Transport Simulation MATSim
+    url: https://library.oapen.org/rest/bitstreams/859157dd-5478-4089-9fca-b3df7a7a39d4/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-transport-transitions
+    title: 'Transport Transitions: Advancing Sustainable and Inclusive Mobility'
+    url: https://library.oapen.org/rest/bitstreams/b72341df-c9ca-4b52-a160-de90693b0a89/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-urban-informatics
+    title: Urban Informatics
+    url: https://library.oapen.org/rest/bitstreams/4ab0c11e-9e78-42f5-8619-b56326a2263c/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-the-ai-city
+    title: The AI City
+    url: https://library.oapen.org/rest/bitstreams/07c76e15-5c57-402c-8912-afd0088feb48/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-space-syntax-urban-studies
+    title: Introduction to Space Syntax in Urban Studies
+    url: https://library.oapen.org/rest/bitstreams/e5d30537-f2a3-4916-9a7c-501fd4251ba4/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-modelling-the-city
+    title: Modelling the City
+    url: https://library.oapen.org/rest/bitstreams/4e38d97d-1d81-4ae1-91f5-6375fd40a47e/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-together-again-for-geodesy
+    title: Together Again for Geodesy
+    url: https://library.oapen.org/rest/bitstreams/8fde9252-920e-41fc-947a-cd6966ec1c28/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-beyond-100-next-century-geodesy
+    title: 'Beyond 100: The Next Century in Geodesy'
+    url: https://library.oapen.org/rest/bitstreams/19d5f770-2e84-4ea4-aab2-3c6f642532a7/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-fabricate-2020
+    title: Fabricate 2020
+    url: https://library.oapen.org/rest/bitstreams/5ec09b49-b570-4171-87cb-42a2bf9b6cba/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-patan-earthen-heritage
+    title: PATAN
+    url: https://library.oapen.org/rest/bitstreams/a1ddc067-5f4a-49e2-80d7-a56a662474b5/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-versus-heritage-for-tomorrow
+    title: 'VERSUS: Heritage for Tomorrow'
+    url: https://library.oapen.org/rest/bitstreams/0c92e9f3-4939-40c5-aaea-f143b7082ef2/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-cultural-heritage-fragile-contexts
+    title: Cultural Heritage and Development in Fragile Contexts
+    url: https://library.oapen.org/rest/bitstreams/197a004c-2f60-4c27-814a-e538ec6bdca7/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-urban-heritage-planning-tehran
+    title: Urban Heritage Planning in Tehran and Beyond
+    url: https://library.oapen.org/rest/bitstreams/6a22840f-4e4c-4a8f-aefd-63e84bc6ef83/retrieve
+    source: oapen
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: oer-portuguese-landscape-architecture
+    title: Portuguese Landscape Architecture Education, Heritage and Research
+    url: https://library.oapen.org/rest/bitstreams/9542cd42-2b1c-44c1-be39-64d0f0d7afb2/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-euro-african-wind-engineering
+    title: 5 European & African Conference on Wind Engineering
+    url: https://library.oapen.org/rest/bitstreams/b1b1e611-5775-48b6-999a-f08bbcfda6a1/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-earthquake-loss-assessment-modeling
+    title: Advances in Assessment and Modeling of Earthquake Loss
+    url: https://library.oapen.org/rest/bitstreams/8bcacb75-d141-4a0b-9cc3-0a7bad35516a/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-post-disaster-reconstruction
+    title: 'Post-Disaster Reconstruction: Meeting Stakeholder Interests'
+    url: https://library.oapen.org/rest/bitstreams/3fe052ba-bf03-4b96-ac17-c97f0e39a76e/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-green-infrastructure-climate-adaptation
+    title: Green Infrastructure and Climate Change Adaptation
+    url: https://library.oapen.org/rest/bitstreams/142f18d2-cf32-4a2d-9f80-4fe9f7f81ca2/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-internet-of-things-information-processing
+    title: 'Internet of Things: Information Processing in an Increasingly Connected
+      World'
+    url: https://library.oapen.org/rest/bitstreams/9eed98f3-cc05-4d77-83a0-4712a3f709ab/retrieve
+    source: oapen
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+
   # --- discovered (find_sources.py) ---
   - id: arx-a-digitalization-framework-for-smart-maintenan
     title: A Digitalization Framework for Smart Maintenance of Historic Buildings
@@ -23587,6 +24018,13 @@ sources:
     title: Heating performance of an air source heat pump with a portable thermoelectric
       subcooler
     url: https://www.osti.gov/servlets/purl/2588241
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-high-efficiency-ultra-light-superconducting-ge
+    title: High Efficiency Ultra-Light Superconducting Generator for Offshore Wind
+    url: https://www.osti.gov/servlets/purl/3375697
     source: osti
     license: public-domain
     topic: equipment_systems
