@@ -3921,6 +3921,100 @@ sources:
     topic: infrastructure
     format: pdf
 
+  # --- curated books via find_books.py (OAPEN CC-BY) ---
+  - id: oer-saving-a-world-treasure-protecting-florence-from-flo
+    title: 'Saving a World Treasure: Protecting Florence from Flooding'
+    url: https://library.oapen.org/rest/bitstreams/9518ac79-c719-45e8-adca-8422cd0c9a77/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-integrating-climate-risks-in-bank-risk-management-an
+    title: Integrating Climate Risks in Bank Risk Management and Capital Requirements
+    url: https://library.oapen.org/rest/bitstreams/ac2e9e19-9bca-48f5-9704-8ffc94ab262b/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-flood-risk-in-a-climate-change-context
+    title: Flood Risk in a Climate Change Context
+    url: https://library.oapen.org/rest/bitstreams/064fdc22-0e42-426e-a0b9-3181919a15e2/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-exploring-resilience
+    title: Exploring Resilience
+    url: https://library.oapen.org/rest/bitstreams/d74ad65c-c7c2-40af-8df0-e63684cd4374/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-democratic-resilience-in-the-baltics-vol-1
+    title: Democratic Resilience in the Baltics, Vol. 1
+    url: https://library.oapen.org/rest/bitstreams/801276e8-1a39-49c2-a66f-e2665d1a8f2f/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-multi-frequency-and-multi-gnss-ppp-phase-bias-estima
+    title: Multi-frequency and multi-GNSS PPP phase bias estimation and ambiguity resolution
+    url: https://library.oapen.org/rest/bitstreams/70fcf6bd-7f2e-4c43-a9f3-a5d18030df05/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: infrastructure
+    format: pdf
+  - id: oer-gravity-positioning-and-reference-frames
+    title: Gravity, Positioning and Reference Frames
+    url: https://library.oapen.org/rest/bitstreams/c8ed8df3-65a6-417e-9352-45a426599d03/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-x-hotine-marussi-symposium-on-mathematical-geodesy
+    title: X Hotine-Marussi Symposium on Mathematical Geodesy
+    url: https://library.oapen.org/rest/bitstreams/4fdce152-5e16-4ff1-8753-c894aafc22cf/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-geodesy-for-a-sustainable-earth
+    title: Geodesy for a Sustainable Earth
+    url: https://library.oapen.org/rest/bitstreams/7a146437-e3bc-4a62-993a-2f63ac48e8e9/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-5th-symposium-on-terrestrial-gravimetry-static-and-m
+    title: '5th Symposium on Terrestrial Gravimetry: Static and Mobile Measurements
+      (TG-SMM 2019)'
+    url: https://library.oapen.org/rest/bitstreams/11201203-98c9-4e4b-8c7c-7c34996cda55/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-civil-and-environmental-engineering-for-the-sustaina
+    title: Civil and Environmental Engineering for the Sustainable Development Goals
+    url: https://library.oapen.org/rest/bitstreams/d247e4dc-293c-4f63-8ef1-3adc22512cba/retrieve
+    source: oapen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: oer-life-cycle-analysis-based-on-nanoparticles-applied-t
+    title: Life Cycle Analysis Based on Nanoparticles Applied to the Construction Industry
+    url: https://library.oapen.org/rest/bitstreams/fcced768-57c6-43ec-944b-f7a365bc7916/retrieve
+    source: oapen
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+  - id: oer-designing-sustainable-technologies-products-and-poli
+    title: Designing Sustainable Technologies, Products and Policies
+    url: https://library.oapen.org/rest/bitstreams/e0a0d538-4e17-4de9-a72c-a8da18ea11e6/retrieve
+    source: oapen
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+
   # --- discovered (find_sources.py) ---
   - id: arx-a-digitalization-framework-for-smart-maintenan
     title: A Digitalization Framework for Smart Maintenance of Historic Buildings
