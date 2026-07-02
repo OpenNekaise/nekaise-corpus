@@ -206,6 +206,33 @@ def existing_keys():
     return urls, titles
 
 
+def done_sources():
+    """gh_ source buckets already ingested (manifest or sources.yaml). Returns (all_done, code_done)
+    where code_done = buckets that already have a txt (source-code) entry. Lets repeated runs skip
+    finished repos — and skip code repos whose code is already pulled — spending the 60/hr API budget
+    only on repos not yet walked."""
+    all_done, code_done = set(), set()
+
+    def note(s, fmt):
+        if s and s.startswith("gh_"):
+            all_done.add(s)
+            if fmt == "txt":
+                code_done.add(s)
+
+    mp = HERE / "manifest.jsonl"
+    if mp.exists():
+        for line in mp.read_text().splitlines():
+            if line.strip():
+                r = json.loads(line)
+                note(r.get("source", ""), r.get("format"))
+    try:
+        for s in yaml.safe_load((HERE / "sources.yaml").read_text())["sources"]:
+            note(s.get("source", ""), s.get("format"))
+    except Exception:
+        pass
+    return all_done, code_done
+
+
 def from_repo(spec: dict) -> list:
     repo = spec["repo"]
     name = repo.split("/")[-1]
@@ -249,6 +276,19 @@ def main() -> None:
     if args.repo and not repos:
         print(f"# {args.repo} not in curated REPOS; add it to find_github.py first", file=sys.stderr)
         return
+
+    if not args.repo:  # skip repos already ingested; re-walk a code repo only until its code lands
+        done, code_done = done_sources()
+        def pending(r):
+            b = f"gh_{slug(r['repo'].split('/')[-1])}"
+            if b not in done:
+                return True                       # never walked
+            return bool(r.get("code")) and b not in code_done  # walked docs, code still to pull
+        keep = [r for r in repos if pending(r)]
+        if len(keep) < len(repos):
+            print(f"# skipping {len(repos) - len(keep)} already-ingested repos; "
+                  f"walking {len(keep)} (60/hr API budget)", file=sys.stderr)
+        repos = keep
 
     urls, titles = existing_keys()
     out, seen = [], set()

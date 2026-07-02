@@ -5,19 +5,23 @@
 [![built for: Claude Code · Codex](https://img.shields.io/badge/built%20for-Claude%20Code%20%C2%B7%20Codex-8A2BE2)](AGENTS.md)
 [![part of: OpenNekaise](https://img.shields.io/badge/part%20of-OpenNekaise-0aa)](https://github.com/OpenNekaise)
 
-**An agent-operable recipe for assembling — and continuously growing — a building / HVAC /
-building-energy corpus for LLM training & evaluation.**
+**An agent-operable recipe for assembling — and continuously growing — a built-environment / AEC
+corpus (architecture, engineering & construction: structures, HVAC & building energy, materials,
+construction, infrastructure) for LLM training & evaluation.**
 
-The mission: find *all* the open building-energy knowledge on the internet and make it reproducibly
-fetchable. This repo ships the **curation + loader + provenance** — **never the data bytes**. You
-point your coding agent (Claude Code / Codex) at it; the agent fetches the seed corpus and discovers
-more.
+The mission: find *all* the open **built-environment / AEC** knowledge on the internet — architecture,
+engineering & construction, plus structures, bridges, geotechnical, building energy & HVAC, materials,
+construction, fire, transportation, water, and urban systems — and make it reproducibly fetchable.
+This repo ships the **curation + loader + provenance** — **never the data bytes**. You point your
+coding agent (Claude Code / Codex) at it; the agent fetches the seed corpus and discovers more.
+(Started as a building-energy corpus; scope widened to the whole built environment in round 7.)
 
 > **▶ Use it with your agent** — clone, open the repo in Claude Code or Codex, and just say:
 > - **`go`** → loads every indexed source into `raw/` + `text/`; once caught up, offers to turn on a
 >   **daily job that keeps digging** for more open data (crontab, ≤3h/day, commits locally — never pushes)
-> - *"find more building-energy sources and grow the corpus"* → discovers + adds new open sources
->   (papers/reports **and GitHub repos** — Modelica Buildings, EnergyPlus, OpenStudio, ResStock, …)
+> - *"find more built-environment sources and grow the corpus"* → discovers + adds new open sources
+>   (papers/reports, **GitHub repos** — Modelica Buildings, EnergyPlus, PyPSA, structural/FEA/BIM libs —
+>   **and their source code**, e.g. Modelica `.mo` physics models)
 > - *"add the EnergyPlus docs"* → crawls a whole doc site into the registry
 >
 > The [`skills/`](skills/) drive each loop; [`AGENTS.md`](AGENTS.md) is the full operating manual.
@@ -26,26 +30,25 @@ more.
 
 | | |
 |---|---|
-| **Documents** | **1,707** |
-| **Raw originals** | **~6.2 GB** (PDF / HTML) |
-| **Extracted text** | **~153 MB** (~153.1M chars, **≈38.3M tokens**) |
-| **Topics** | 5 |
+| **Documents** | **4,327** |
+| **Raw originals** | **~16 GB** (PDF / HTML / source code) |
+| **Extracted text** | **~372 MB** (~371.9M chars, **≈93M tokens**) |
+| **Topics** | 11 |
 
-**By genre** (the live partition from [`coverage.py`](coverage.py)): US gov / lab reports 955 ·
-research papers 392 · practitioner Q&A (Unmet Hours) 177 · encyclopedic (Wikipedia) 97 ·
-ontology / data-spec (Brick / Haystack / 223P) 39 · software / sim docs (VOLTTRON / Modelica) 29 ·
-international bodies (IEA EBC) 8 · codes & standards 6 · industry / NGO 4. _Heavy on gov reports +
-papers; codes, international, and datasets are the veins still being pumped._
+**By topic** (a source gets one at registration): equipment_systems 1,074 · building_energy 905 ·
+controls_bas 592 · standards_protocols 427 · structures_civil 423 · commissioning_fdd 335 ·
+construction 161 · materials 150 · architecture 122 · infrastructure 117 · urban 21. _The first five
+are the building-energy core; the rest are the built-environment / AEC veins opened in round 7._
 
-**By topic:** equipment_systems 491 · controls_bas 373 · building_energy 317 · standards_protocols
-281 · commissioning_fdd 245
+**By source:** arXiv 1,390 · OSTI 1,390 · OpenAlex 179 · Unmet Hours 177 · Wikipedia 98 · then dozens
+of curated public-domain manuals (FHWA · FEMA · NIST · USGS · OSHA · GSA · NPS · HUD · USDA-FPL · WBDG
+UFC · DOE / NASA / NBS) and permissive GitHub repos incl. **source code** — Modelica `.mo` from
+modelica-buildings / IBPSA / IDEAS / AixLib / MSL, plus pvlib · PyPSA · VOLTTRON · sfepy · IfcOpenShell.
 
-**By source:** OSTI 877 · arXiv 211 · OpenAlex 179 · Unmet Hours 177 · Wikipedia 97 · PNNL 23 ·
-VOLTTRON 21 · LBNL 20 · Brick 16 · Haystack 13 · open223 10 · etc.
+**By license:** open (arXiv / OA) 2,408 · public-domain (US gov) 1,588 · cc-by-sa 277 · cc-by 49 ·
+proprietary-internal 5
 
-**By license:** public-domain (US gov) 952 · open 443 · cc-by-sa 274 · cc-by 33 · proprietary-internal 5
-
-_Snapshot of the current registry (2026-06-30). The bytes are not shipped — these are what you get
+_Snapshot of the current registry (2026-07-02). The bytes are not shipped — these are what you get
 after running the loader. The corpus grows as sources are added to `sources.yaml`._
 
 > This repo ships the **registry + loader + provenance**, NOT the data bytes. The corpus mixes
@@ -68,6 +71,7 @@ model finds building-energy text *harder* than general text (13.7 vs 11.5); afte
 ```mermaid
 flowchart LR
     F["find_sources.py<br/>OpenAlex · OSTI · arXiv"] --> S
+    G["find_github.py<br/>GitHub repos + code"] --> S
     C["crawl_docs.py<br/>doc sites"] --> S
     S["sources.yaml<br/>(registry)"] --> B["build_corpus.py<br/>fetch + extract + hash"]
     B --> D["raw/ + text/<br/>(git-ignored bytes)"]
@@ -88,7 +92,7 @@ widening it.
 | `sources.yaml` | The curated **registry** — each source's URL, topic, license, format. **Edit this to grow the corpus.** |
 | `build_corpus.py` | The **loader** — downloads sources into `raw/`, extracts plain text into `text/`, dedups by sha256, writes the manifest. |
 | `find_sources.py` | **Discovery** — queries OpenAlex / OSTI / arXiv for open-access sources (download-friendly hosts only) and proposes registry entries. |
-| `find_github.py` | **Discovery** — walks a curated list of permissive building-sim GitHub repos and registers their README / `docs/*.md` / `*.rst` as raw text entries. |
+| `find_github.py` | **Discovery** — walks a curated list (68) of permissive AEC / building-sim GitHub repos and registers their README / `docs/*.md` / `*.rst` — and, opt-in, **source code** (Modelica `.mo`, structural/FEA `.py`) via a `code:` field. Skips already-ingested repos to spread the 60/hr API budget across runs. |
 | `crawl_docs.py` | **Discovery** — BFS-crawls a doc site (sphinx / readthedocs / mkdocs) and registers its pages, so multi-page references (not single PDFs) can be loaded. |
 | `prune_corpus.py` | **Quality gate** — drops thin / garbage / non-English / off-topic discovered & crawled docs. |
 | `manifest.jsonl` | **Provenance** — id, url, license, topic, sha256, bytes for every fetched doc. |
@@ -136,10 +140,14 @@ python build_corpus.py --verify   # re-hash local raw/ files against the manifes
 
 ## Topics
 
-`controls_bas` · `equipment_systems` · `building_energy` · `commissioning_fdd` · `standards_protocols`
+Building-energy core: `controls_bas` · `equipment_systems` · `building_energy` · `commissioning_fdd` ·
+`standards_protocols`
+Built-environment / AEC (added round 7): `structures_civil` · `construction` · `materials` ·
+`architecture` · `infrastructure` · `urban`
 
-The five tags are coarse on purpose — a source gets exactly one, chosen at registration. Coverage is
-meant to keep growing, so treat the per-topic counts above as a moving snapshot, not a target.
+The tags are coarse on purpose — a source gets exactly one, chosen at registration. They're a coverage
+radar, not a relevance gate (that's `prune_corpus.py`'s domain filter). Treat the per-topic counts
+above as a moving snapshot, not a target.
 
 ## Licensing
 
