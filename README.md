@@ -28,28 +28,28 @@ coding agent (Claude Code / Codex) at it; the agent fetches the seed corpus and 
 
 ## At a glance
 
+<!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **4,327** |
-| **Raw originals** | **~16 GB** (PDF / HTML / source code) |
-| **Extracted text** | **~372 MB** (~371.9M chars, **≈93M tokens**) |
+| **Documents** | **4,585** |
+| **Raw originals** | **~20G** (PDF / HTML / source code) |
+| **Extracted text** | **~496M** (~502M chars, **≈126M tokens**) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): equipment_systems 1,074 · building_energy 905 ·
-controls_bas 592 · standards_protocols 427 · structures_civil 423 · commissioning_fdd 335 ·
-construction 161 · materials 150 · architecture 122 · infrastructure 117 · urban 21. _The first five
-are the building-energy core; the rest are the built-environment / AEC veins opened in round 7._
+**By topic** (a source gets one at registration): equipment_systems 1,108 · building_energy 925 · controls_bas 598 · structures_civil 465 · standards_protocols 442 · commissioning_fdd 344 · construction 171 · infrastructure 171 · materials 169 · architecture 155 · urban 37.
 
-**By source:** arXiv 1,390 · OSTI 1,390 · OpenAlex 179 · Unmet Hours 177 · Wikipedia 98 · then dozens
-of curated public-domain manuals (FHWA · FEMA · NIST · USGS · OSHA · GSA · NPS · HUD · USDA-FPL · WBDG
-UFC · DOE / NASA / NBS) and permissive GitHub repos incl. **source code** — Modelica `.mo` from
-modelica-buildings / IBPSA / IDEAS / AixLib / MSL, plus pvlib · PyPSA · VOLTTRON · sfepy · IfcOpenShell.
+**By license:** open 2,493 · public-domain 1,594 · cc-by-sa 284 · cc-by 209 · proprietary-internal 5.
 
-**By license:** open (arXiv / OA) 2,408 · public-domain (US gov) 1,588 · cc-by-sa 277 · cc-by 49 ·
-proprietary-internal 5
+_Snapshot of the live registry (2026-07-03) — auto-generated from `manifest.jsonl`. The bytes are not
+shipped; run the loader to fetch your own copy. The corpus grows as sources are added to `sources.yaml`._
+<!-- STATS:END -->
 
-_Snapshot of the current registry (2026-07-02). The bytes are not shipped — these are what you get
-after running the loader. The corpus grows as sources are added to `sources.yaml`._
+**By source:** OSTI · arXiv · OpenAlex · Unmet Hours · **OAPEN** (CC-BY open-access books) · Wikipedia,
+then dozens of curated public-domain manuals (FHWA · FEMA · NIST · USGS · OSHA · GSA · NPS · HUD ·
+USDA-FPL · WBDG UFC · DOE / NASA / NBS) and permissive GitHub repos incl. **source code** — Modelica
+`.mo` from modelica-buildings / IBPSA / IDEAS / AixLib / MSL, plus pvlib · PyPSA · VOLTTRON · sfepy ·
+IfcOpenShell. _The first five topics are the building-energy core; the rest are the built-environment /
+AEC veins._
 
 > This repo ships the **registry + loader + provenance**, NOT the data bytes. The corpus mixes
 > licenses (US-gov public-domain, CC-BY-SA, arXiv, and some non-redistributable vendor/standards
