@@ -12899,6 +12899,886 @@ sources:
     topic: standards_protocols
     format: pdf
 
+  # --- curated books via find_books.py (OAPEN CC-BY) ---
+  - id: oer-architecture-in-the-anthropocene
+    title: Architecture in the Anthropocene
+    url: https://library.oapen.org/rest/bitstreams/5482012e-9744-41d8-8326-92086b8285ed/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: architecture
+    format: pdf
+  - id: oer-conservation-biology-in-sub-saharan-africa
+    title: Conservation Biology in Sub-Saharan Africa
+    url: https://library.oapen.org/rest/bitstreams/18cea16d-4148-4f1a-a95f-554d20248c3e/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-collecting-seeds-assembling-worlds
+    title: Collecting Seeds, Assembling Worlds
+    url: https://library.oapen.org/rest/bitstreams/7ae128a7-715b-4aeb-9c93-4cd94a0ac4b6/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: architecture
+    format: pdf
+  - id: oer-managing-protected-areas
+    title: Managing Protected Areas
+    url: https://library.oapen.org/rest/bitstreams/0e145317-6cba-43d1-b83e-d9603d8b3700/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-unearthing-collections
+    title: Unearthing Collections
+    url: https://library.oapen.org/rest/bitstreams/ba3b18d9-c3b6-4ea8-baf4-3f1dd3d5865a/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-sonic-ethnography
+    title: Sonic ethnography
+    url: https://library.oapen.org/rest/bitstreams/6c4dd4a9-a6a6-4b26-bad7-91601f3455b7/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-production-perception-and-comprehension-of-subphonem
+    title: Production, perception, and comprehension of subphonemic detail
+    url: https://library.oapen.org/rest/bitstreams/8e1417cc-b2ed-464b-b20d-3681fd90b2ec/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-machine-learning-for-camera-based-monitoring-of-lase
+    title: Machine Learning for Camera-Based Monitoring of Laser Welding Processes
+    url: https://library.oapen.org/rest/bitstreams/281db32a-81bf-4c74-868b-1c8c018b2bed/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: architecture
+    format: pdf
+  - id: oer-game-world-architectonics
+    title: Game | World | Architectonics
+    url: https://library.oapen.org/rest/bitstreams/02fd8d78-48f8-40ee-bb31-8fda1f0db526/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: architecture
+    format: pdf
+  - id: oer-supercomputing-frontiers
+    title: Supercomputing Frontiers
+    url: https://library.oapen.org/rest/bitstreams/c9361a08-f405-400d-b466-4a5c9f282beb/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-privacy-aware-monitoring-for-assisted-living
+    title: Privacy-Aware Monitoring for Assisted Living
+    url: https://library.oapen.org/rest/bitstreams/847db62f-07a8-41be-a56a-8e06809efeed/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-the-unknown-in-design-art-and-technology
+    title: The Unknown in Design, Art, and Technology
+    url: https://library.oapen.org/rest/bitstreams/9013f21f-8ca2-4e07-9d7e-c1d1a1999474/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+  - id: oer-production-ergonomics
+    title: '"Production Ergonomics'
+    url: https://library.oapen.org/rest/bitstreams/588ee899-d333-4b67-8a03-a88cfb8c2608/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-medication-safety-in-municipal-health-and-care-servi
+    title: Medication Safety in Municipal Health and Care Services
+    url: https://library.oapen.org/rest/bitstreams/a661f076-424a-4589-b57a-124ceec305d1/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-novel-foods-and-edible-insects-in-the-european-union
+    title: Novel Foods and Edible Insects in the European Union
+    url: https://library.oapen.org/rest/bitstreams/3f7d10f3-441e-4242-9495-98e1be46f398/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-introduction-to-ethical-software-development
+    title: Introduction to Ethical Software Development
+    url: https://library.oapen.org/rest/bitstreams/71aaf3dc-5e91-4e4d-9ef9-c140ce63037e/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-on-demand-triple-modular-redundancy-for-autonomous-v
+    title: On-Demand Triple Modular Redundancy for Autonomous Vehicles
+    url: https://library.oapen.org/rest/bitstreams/4780651d-f1ef-42ae-b955-9ccaa02a9577/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-anomaly-detection-for-interoperable-and-modular-oper
+    title: Anomaly detection for interoperable and modular operating room tables
+    url: https://library.oapen.org/rest/bitstreams/71ff289e-3a94-4494-9baa-7da78c0665b9/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-dangerous-science
+    title: Dangerous Science
+    url: https://library.oapen.org/rest/bitstreams/4ed00d08-5355-47d2-90d7-2ea779ff4908/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-the-world-of-the-seafarer
+    title: The World of the Seafarer
+    url: https://library.oapen.org/rest/bitstreams/6dfa1a19-8b9f-4416-a2f5-e64086b9b778/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-dementia-lab-2025-ethics-aesthetics-in-design
+    title: 'Dementia Lab 2025: Ethics + Aesthetics in Design'
+    url: https://library.oapen.org/rest/bitstreams/faf34384-505f-4af0-93ff-05318c4c2c4a/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-entrepreneurial-theorizing
+    title: Entrepreneurial Theorizing
+    url: https://library.oapen.org/rest/bitstreams/d928ae15-9018-494b-b86e-421ae39655b2/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-firm-competitive-advantage-through-relationship-mana
+    title: Firm Competitive Advantage Through Relationship Management
+    url: https://library.oapen.org/rest/bitstreams/9bb55d64-aea2-40b3-89a8-770de34d40a2/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-promoting-regional-industries-through-cross-sectoral
+    title: Promoting Regional Industries Through Cross-Sectoral Collaborations
+    url: https://library.oapen.org/rest/bitstreams/88e70c28-cd11-4b5a-bae7-d908fb6875eb/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-reconstructions-of-gender-and-information-technology
+    title: Reconstructions of Gender and Information Technology
+    url: https://library.oapen.org/rest/bitstreams/83ac91e0-6583-4f71-81e5-de57d2f5c0b8/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-digital-ageism
+    title: Digital Ageism
+    url: https://library.oapen.org/rest/bitstreams/fb484f49-7290-4f8e-b1d1-f67b2a0ffc7f/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-deep-integration-global-firms-and-technology-spillov
+    title: Deep Integration, Global Firms, and Technology Spillovers
+    url: https://library.oapen.org/rest/bitstreams/88874d67-8445-47db-b139-791d8fe70d39/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-smartphone-based-3d-indoor-localization-and-navigati
+    title: Smartphone-Based 3D Indoor Localization and Navigation (Volume 1)
+    url: https://library.oapen.org/rest/bitstreams/c120eacf-45b8-41c5-b2b7-df469ebe8aab/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: construction
+    format: pdf
+  - id: oer-informed-machine-learning
+    title: Informed Machine Learning
+    url: https://library.oapen.org/rest/bitstreams/52d33104-0e3e-41b0-be9d-4976a8676bee/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-global-internet-of-things-and-edge-computing-summit
+    title: Global Internet of Things and Edge Computing Summit
+    url: https://library.oapen.org/rest/bitstreams/dc85d11e-da81-49b6-8c5b-87ccd47f817e/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-a-shrine-to-moses-a-reappraisal-of-the-mount-nebo-mo
+    title: 'A Shrine to Moses: A reappraisal of the Mount Nebo Monastic Complex between
+      Byzantium and Islam'
+    url: https://library.oapen.org/rest/bitstreams/961b52ae-1065-4652-8caa-8501a59236c4/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-hybrid-art-space
+    title: Hybrid Art Space
+    url: https://library.oapen.org/rest/bitstreams/aee0a721-70bb-4f28-ae17-d8a12c6ed5d7/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-post-digital-post-internet-art-and-education
+    title: Post-Digital, Post-Internet Art and Education
+    url: https://library.oapen.org/rest/bitstreams/6d8465b5-d171-49c1-a7b9-d29c4d72892d/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-informatics-in-schools-beyond-bits-and-bytes-nurturi
+    title: 'Informatics in Schools. Beyond Bits and Bytes: Nurturing Informatics Intelligence
+      in Education'
+    url: https://library.oapen.org/rest/bitstreams/eb91501c-693d-42a6-94ab-7d41ae7308c7/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-advances-in-automotive-production-technology-digital
+    title: Advances in Automotive Production Technology – Digital Product Development
+      and Manufacturing
+    url: https://library.oapen.org/rest/bitstreams/a948eaae-fc9d-4045-8665-5d91963ac453/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-artificial-intelligence-in-military-technology
+    title: Artificial Intelligence in Military Technology
+    url: https://library.oapen.org/rest/bitstreams/95f39dcf-b1f5-4dd2-aede-567794591368/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-utopia-in-the-factory
+    title: Utopia in the Factory
+    url: https://library.oapen.org/rest/bitstreams/56c38aa5-f412-43e5-bf11-4fe27eb7bd34/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-the-future-of-manufacturing-the-italian-roadmap
+    title: 'The Future of Manufacturing: The Italian Roadmap'
+    url: https://library.oapen.org/rest/bitstreams/d708e288-2b63-4bc1-bd38-de6d5c4d3304/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-the-political-economy-of-the-hospital-in-history
+    title: The Political Economy of the Hospital in History
+    url: https://library.oapen.org/rest/bitstreams/2ce8cb36-c9e6-4e48-ae95-1b086d8b0d38/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-work-and-legal-guidelines-in-the-age-of-digitalisati
+    title: Work and Legal Guidelines in the Age of Digitalisation and Green Transition
+    url: https://library.oapen.org/rest/bitstreams/b202b839-d4d2-452f-8048-09206ad20b03/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-sustainable-business-models
+    title: Sustainable Business Models
+    url: https://library.oapen.org/rest/bitstreams/e46c0fd5-dca7-48da-97d2-d64c722ea524/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-economy-studies
+    title: Economy Studies
+    url: https://library.oapen.org/rest/bitstreams/67284f04-448a-4fb0-b9f3-24b23a912afd/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-doing-experimental-media-archaeology
+    title: Doing Experimental Media Archaeology
+    url: https://library.oapen.org/rest/bitstreams/38acec15-d150-46ff-bab5-1029d50d8e85/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-perspectives-on-digital-humanism
+    title: Perspectives on Digital Humanism
+    url: https://library.oapen.org/rest/bitstreams/358fb6e8-7ddf-417f-83c7-5de7e95864cc/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-the-future-of-work
+    title: The Future of Work
+    url: https://library.oapen.org/rest/bitstreams/73af99a0-a6a2-4557-b05c-0e07fbd2ff09/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-ai-in-the-age-of-cyber-disorder
+    title: AI IN THE AGE OF CYBER-DISORDER
+    url: https://library.oapen.org/rest/bitstreams/aa1b6367-6832-42a9-b0d6-27a8f5cc42fe/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: materials
+    format: pdf
+  - id: oer-reworking-the-computer-age
+    title: Reworking the Computer Age
+    url: https://library.oapen.org/rest/bitstreams/e20a397a-1031-4d8e-a5b6-100da954358b/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-pragmatist-democracy
+    title: Pragmatist Democracy
+    url: https://library.oapen.org/rest/bitstreams/18d22d73-f35f-4391-83ba-a07aeb5b6664/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-interdisciplinary-nutritional-management-and-care-fo
+    title: Interdisciplinary Nutritional Management and Care for Older Adults
+    url: https://library.oapen.org/rest/bitstreams/8bcf194e-6454-4665-b930-17866bbb50a6/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-advances-in-formal-slavic-linguistics-2022
+    title: Advances in Formal Slavic Linguistics 2022
+    url: https://library.oapen.org/rest/bitstreams/d1c0d5d8-c9ce-4d60-80cf-451321409c0f/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-definiteness-across-languages
+    title: Definiteness across languages
+    url: https://library.oapen.org/rest/bitstreams/3e018c22-7de7-4efc-aea2-39b774469b63/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-metathesis-and-unmetathesis-in-amarasi
+    title: Metathesis and unmetathesis in Amarasi
+    url: https://library.oapen.org/rest/bitstreams/9c2b6ad4-b646-417d-b5b5-b2907b085d9b/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-building-memories
+    title: Building Memories
+    url: https://library.oapen.org/rest/bitstreams/bc5359af-3580-473b-b292-af18ff0e56a4/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-roman-urbanism-in-italy
+    title: Roman Urbanism in Italy
+    url: https://library.oapen.org/rest/bitstreams/2e453be5-6cc2-4eaa-ae0b-f9858bd1eea6/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-roman-and-medieval-exeter-and-their-hinterlands
+    title: Roman and Medieval Exeter and their Hinterlands
+    url: https://library.oapen.org/rest/bitstreams/0de25e05-e7d6-4a52-9edd-822dec5c5799/retrieve
+    source: oapen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: oer-a-contemporary-study-of-musical-arts-informed-by-afr
+    title: A Contemporary Study of Musical Arts Informed by African Indigenous Knowledge
+      Systems Volume 2
+    url: https://library.oapen.org/rest/bitstreams/dcee36d4-35b8-4768-9b54-84f59721ab7b/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-compositionality-and-concepts-in-linguistics-and-psy
+    title: Compositionality and Concepts in Linguistics and Psychology
+    url: https://library.oapen.org/rest/bitstreams/668af6de-fb05-4259-b725-b764ed2c9ea2/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-learning-skilled-trades-in-the-workplace
+    title: Learning Skilled Trades in the Workplace
+    url: https://library.oapen.org/rest/bitstreams/1652fe3b-c4a3-4d94-89be-e83683b53f49/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-optimization-of-adaptive-test-design-methods-for-the
+    title: Optimization of adaptive test design methods for the determination of steady-state
+      data-driven models in terms of combustion engine calibration
+    url: https://library.oapen.org/rest/bitstreams/84f79d23-320b-4ad9-92c6-2d4e4644c77c/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-deletion-phenomena-in-comparative-constructions
+    title: Deletion phenomena in comparative constructions
+    url: https://library.oapen.org/rest/bitstreams/2d359fad-1edd-408d-962b-db7e8fbfcaae/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-architectural-data-flow-analysis-for-detecting-viola
+    title: Architectural Data Flow Analysis for Detecting Violations of Confidentiality
+      Requirements
+    url: https://library.oapen.org/rest/bitstreams/97449ee6-4f92-49fd-8315-c0342c9de6fa/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+  - id: oer-highly-complex-syllable-structure
+    title: Highly complex syllable structure
+    url: https://library.oapen.org/rest/bitstreams/50b178ff-7a27-43db-9bf7-b71664949b65/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-dynamic-switching-state-systems-for-visual-tracking
+    title: Dynamic Switching State Systems for Visual Tracking
+    url: https://library.oapen.org/rest/bitstreams/1f59e816-07b6-4c08-99e9-90a84c0fb053/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+  - id: oer-thermodynamically-consistent-space-time-discretizati
+    title: Thermodynamically consistent space-time discretization of non-isothermal
+      mechanical systems in the framework of GENERIC
+    url: https://library.oapen.org/rest/bitstreams/c3191902-40ca-49f9-870e-750cc12fcb09/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+  - id: oer-anthropocosmic-theatre
+    title: Anthropocosmic Theatre
+    url: https://library.oapen.org/rest/bitstreams/2fb1e21e-50be-4254-8a25-f9f531e14cec/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-non-equilibrium-social-science-and-policy
+    title: Non-Equilibrium Social Science and Policy
+    url: https://library.oapen.org/rest/bitstreams/657dcacf-1ac2-4eb7-8709-d59989051057/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-crossroads-between-contrastive-linguistics-translati
+    title: Crossroads between contrastive linguistics, translation studies and machine
+      translation
+    url: https://library.oapen.org/rest/bitstreams/ad47a4a4-bc16-4076-a7bf-a4fb78ecdefe/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-performance-analysis-and-capacity-planning-of-multi-
+    title: Performance Analysis and Capacity Planning of Multi-stage Stochastic Order
+      Fulfilment Systems with Levelled Order Release and Order Deadlines
+    url: https://library.oapen.org/rest/bitstreams/04963d5f-3a3e-4e57-ab14-1af8bbb70003/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-tools-and-algorithms-for-the-construction-and-analys
+    title: 'Tools and Algorithms for the Construction and Analysis of Systems: 24th
+      International Conference, TACAS 2018, Held as Part of the European Joint Confe'
+    url: https://library.oapen.org/rest/bitstreams/80391b3b-66cf-4e22-b713-f244cd023100/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-sensitivity-analysis-matrix-methods-in-demography-an
+    title: 'Sensitivity Analysis: Matrix Methods in Demography and Ecology'
+    url: https://library.oapen.org/rest/bitstreams/c05d316b-bb28-482f-87bb-1aeec781a637/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-space-time-conservation-element-and-solution-element
+    title: Space–Time Conservation Element and Solution Element Method
+    url: https://library.oapen.org/rest/bitstreams/c5bbdabd-1be6-43f8-ac73-ee998f698591/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-rule-developing-experimentation-a-systematic-approac
+    title: 'Rule Developing Experimentation: A Systematic Approach to Understand & Engineer
+      the Consumer Mind'
+    url: https://library.oapen.org/rest/bitstreams/0303e70d-64df-4f98-a16e-008d8d44be60/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-interprofessional-approach-to-refugee-health
+    title: Interprofessional Approach to Refugee Health
+    url: https://library.oapen.org/rest/bitstreams/713a9ee5-f653-4942-9cd1-e67f4f83cff3/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-handbook-of-life-course-health-development
+    title: Handbook of Life Course Health Development
+    url: https://library.oapen.org/rest/bitstreams/68673404-eddf-4160-9813-875513c2769c/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-global-challenges-in-cardiovascular-prevention-in-po
+    title: Global Challenges in Cardiovascular Prevention in Populations with Low Socioeconomic
+      Status
+    url: https://library.oapen.org/rest/bitstreams/722a4782-690b-40de-9aa4-fbfac618d3d2/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-sexual-and-reproductive-health-and-rights-in-india
+    title: Sexual and Reproductive Health and Rights in India
+    url: https://library.oapen.org/rest/bitstreams/2b4a80fb-f1c3-4669-9e88-c741373370e3/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-environments-resources-and-infrastructures-between-r
+    title: Environments, Resources, and Infrastructures Between Russia and the Asia-Pacific
+    url: https://library.oapen.org/rest/bitstreams/ab0704b2-540e-476f-bda8-e1d0a2040856/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+  - id: oer-data-assimilation-fundamentals
+    title: Data Assimilation Fundamentals
+    url: https://library.oapen.org/rest/bitstreams/f7ff8fe8-3fa2-4e11-9e00-9c9e576d5c48/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-reckoning-with-everything
+    title: Reckoning with Everything
+    url: https://library.oapen.org/rest/bitstreams/2ca13078-f642-4a85-9278-4ef0ed3f1f62/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+  - id: oer-research-on-teaching-and-learning-mathematics-at-the
+    title: Research on Teaching and Learning Mathematics at the Tertiary Level
+    url: https://library.oapen.org/rest/bitstreams/f993c83c-6e7e-4396-ad9c-5331586acb77/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-technologies-and-applications-for-big-data-value
+    title: Technologies and Applications for Big Data Value
+    url: https://library.oapen.org/rest/bitstreams/ffe1fa9d-43fa-4e10-b801-32e429c3df81/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-electromechanobiology-of-cartilage-and-osteoarthriti
+    title: Electromechanobiology of Cartilage and Osteoarthritis
+    url: https://library.oapen.org/rest/bitstreams/845090ab-8aa6-40a5-b5bd-6bc658c3e363/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-current-topics-in-sars-cov-2-covid-19
+    title: Current Topics in SARS-CoV-2/COVID-19
+    url: https://library.oapen.org/rest/bitstreams/2d7c9e01-1a93-4bd8-a29e-ce75fe3bc729/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-deployment-and-operation-of-complex-software-in-hete
+    title: Deployment and Operation of Complex Software in Heterogeneous Execution Environments
+    url: https://library.oapen.org/rest/bitstreams/eceb15e8-7648-4536-8ddf-842b8ea83adc/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-the-interconnected-arctic-uarctic-congress-2016
+    title: The Interconnected Arctic — UArctic Congress 2016
+    url: https://library.oapen.org/rest/bitstreams/5a428f4d-f97f-4ff3-a925-f4981cf1db3a/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-ecological-impacts-of-toxic-chemicals
+    title: Ecological Impacts of Toxic Chemicals
+    url: https://library.oapen.org/rest/bitstreams/95397caf-f3b6-460b-bfb7-ada4b8412299/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-the-limits-of-art
+    title: The Limits of Art
+    url: https://library.oapen.org/rest/bitstreams/bacb0456-6096-481b-8703-256106262693/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-development-of-a-modular-knowledge-discovery-framewo
+    title: Development of a modular Knowledge-Discovery Framework based on Machine Learning
+    url: https://library.oapen.org/rest/bitstreams/d659d894-2331-4a34-9eaf-c1b075acca3f/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+  - id: oer-two-level-system-hyperpolarization-with-a-quantum-sz
+    title: Two-level system hyperpolarization with a quantum Szilard engine
+    url: https://library.oapen.org/rest/bitstreams/c9a85a77-9296-4166-8b50-37e0abdf1fa5/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+  - id: oer-multimedia-information-technology-and-applications
+    title: Multimedia Information Technology and Applications
+    url: https://library.oapen.org/rest/bitstreams/bd0a3950-a7e6-4e37-829d-be50128f50ba/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-twenty-years-of-education-transformation-in-gauteng-
+    title: Twenty Years of Education Transformation in Gauteng 1994 to 2014
+    url: https://library.oapen.org/rest/bitstreams/435cdda6-7672-49fd-807e-f8b1e167f2c8/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-african-livestock-genetic-resources-and-sustainable-
+    title: African Livestock Genetic Resources and Sustainable Breeding Strategies
+    url: https://library.oapen.org/rest/bitstreams/bb0bf08b-9d46-49c1-a1c4-ffdf890fce2f/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-brainlesion-glioma-multiple-sclerosis-stroke-and-tra
+    title: 'Brainlesion: Glioma, Multiple Sclerosis, Stroke and Traumatic Brain Injuries'
+    url: https://library.oapen.org/rest/bitstreams/0c1765b4-198d-4955-afa5-904c9a397d75/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-a-multiscale-in-silico-study-to-characterize-the-atr
+    title: A Multiscale In Silico Study to Characterize the Atrial Electrical Activity
+      of Patients With Atrial Fibrillation
+    url: https://library.oapen.org/rest/bitstreams/9e9755d6-0af6-4fdb-a898-78cc942afb2d/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+  - id: oer-self-learning-longitudinal-control-for-on-road-vehic
+    title: Self-Learning Longitudinal Control for On-Road Vehicles
+    url: https://library.oapen.org/rest/bitstreams/f62c4fbb-d0a9-4bd0-9bb7-5c7652906ff6/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-modeling-and-control-of-power-converters-in-weak-and
+    title: Modeling and control of power converters in weak and unbalanced electric
+      grids
+    url: https://library.oapen.org/rest/bitstreams/d764e475-cba1-4705-a6f2-8bdee3f91b39/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-central-bank-capital-in-turbulent-times
+    title: Central Bank Capital in Turbulent Times
+    url: https://library.oapen.org/rest/bitstreams/6e4d19df-7430-4124-a480-04b2cafdda71/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-yemen-at-the-crossroads
+    title: Yemen at the Crossroads
+    url: https://library.oapen.org/rest/bitstreams/e69c2597-ebec-4c86-9a7b-95f5e8960613/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-novel-plant-imaging-and-analysis
+    title: Novel Plant Imaging and Analysis
+    url: https://library.oapen.org/rest/bitstreams/a06c972c-587e-4f20-9751-279eef9c3c82/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-sustainable-rice-straw-management
+    title: Sustainable Rice Straw Management
+    url: https://library.oapen.org/rest/bitstreams/694b2afe-1b93-4aa6-b845-10fb597062a1/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-population-dynamics-and-land-use-patterns-in-the-sou
+    title: Population dynamics and land-use patterns in the southwestern Baltic region
+      during the Neolithic and the Bronze Age
+    url: https://library.oapen.org/rest/bitstreams/5da5c295-e6c8-41c6-8f30-6c7ec55893bc/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-regeneration-of-complex-capital-goods
+    title: Regeneration of Complex Capital Goods
+    url: https://library.oapen.org/rest/bitstreams/b297da0f-f61b-4418-b40c-8d15cccb74cb/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-karl-popper-science-and-enightenment
+    title: Karl Popper, Science and Enightenment
+    url: https://library.oapen.org/rest/bitstreams/2d8ee598-c36e-40dd-9c69-bf5181a8b84c/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-atlas
+    title: Atlas
+    url: https://library.oapen.org/rest/bitstreams/39d34944-b375-45cf-9ae0-b79647b93bfb/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-body-and-reality
+    title: Body and Reality
+    url: https://library.oapen.org/rest/bitstreams/8054df3c-c7bb-4ac9-8b92-26e9308457e8/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-bruno-touschek-100-years
+    title: Bruno Touschek 100 Years
+    url: https://library.oapen.org/rest/bitstreams/bbf3677e-3931-453a-a537-5e43a10f74d7/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-digital-energetics
+    title: Digital Energetics
+    url: https://library.oapen.org/rest/bitstreams/6c51cd68-4a29-4036-b867-35fc5022d47f/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+  - id: oer-eu-cohesion-policy-implementation-evaluation-challen
+    title: EU Cohesion Policy Implementation - Evaluation Challenges and Opportunities
+    url: https://library.oapen.org/rest/bitstreams/ca3e41b3-0bcf-4757-938d-375446a1c387/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-libraries-driving-education-for-sustainable-developm
+    title: Libraries Driving Education for Sustainable Development
+    url: https://library.oapen.org/rest/bitstreams/472227b2-47bd-496d-bff9-64f90839a6bb/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-biodiversity-and-health-in-the-face-of-climate-chang
+    title: Biodiversity and Health in the Face of Climate Change
+    url: https://library.oapen.org/rest/bitstreams/b92a510a-a296-4e1c-a582-122ba0130d84/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-mid-infrared-digital-holography-and-terahertz-imagin
+    title: Mid infrared digital holography and terahertz imaging
+    url: https://library.oapen.org/rest/bitstreams/3013a3f8-4595-43ca-88d8-1c314a5466d8/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-vrummmummmmm-fvish
+    title: »Vrummmummmmm FVISH!«
+    url: https://library.oapen.org/rest/bitstreams/5a465c37-23db-45a5-8dc2-efa324cf97f6/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+  - id: oer-embedded-system-design
+    title: Embedded System Design
+    url: https://library.oapen.org/rest/bitstreams/debdf343-c10b-4cba-b630-b64c47b90881/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-platia-magoula-zarkou
+    title: Platia Magoula Zarkou
+    url: https://library.oapen.org/rest/bitstreams/56b4f9e4-3937-4c47-a84e-3f7f0bac1ce3/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-a-typology-of-marked-s-languages
+    title: A typology of marked-S languages
+    url: https://library.oapen.org/rest/bitstreams/10475040-edad-4eb6-a219-343b92b71f28/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-contested-social-and-ecological-reproduction
+    title: Contested Social and Ecological Reproduction
+    url: https://library.oapen.org/rest/bitstreams/2108a4e0-90a9-4ebc-a257-0a4051a6751d/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-urban-living-lab-for-local-regeneration
+    title: Urban Living Lab for Local Regeneration
+    url: https://library.oapen.org/rest/bitstreams/d7a4aa23-0e75-4b38-b850-ddbc08dd1ba1/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-the-eco-social-polity
+    title: The Eco-Social Polity?
+    url: https://library.oapen.org/rest/bitstreams/8cd4da10-2ee3-4771-8312-b1432b132c3a/retrieve
+    source: oapen
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+  - id: oer-road-to-net-zero
+    title: Road to Net Zero
+    url: https://library.oapen.org/rest/bitstreams/8b96e73e-7df4-4b36-ac14-965a5c9ba246/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-bayesian-filter-design-for-computational-medicine
+    title: Bayesian Filter Design for Computational Medicine
+    url: https://library.oapen.org/rest/bitstreams/ee0a54aa-cc12-43f0-b314-f68e2af74a00/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-in-situ-characterization-and-modelling-of-drying-dyn
+    title: In Situ Characterization and Modelling of Drying Dynamics for Scalable Printing
+      of Hybrid Perovskite Photovoltaics
+    url: https://library.oapen.org/rest/bitstreams/0356417c-ca5a-4ae4-ab79-bc724b04b63c/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-china-s-environmental-policy-in-terms-of-european-un
+    title: China’s environmental policy in terms of European Union standards (Edition
+      1)
+    url: https://library.oapen.org/rest/bitstreams/2485e560-b008-4baf-b137-a3f32d875b74/retrieve
+    source: oapen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: oer-the-hirsch-institute-of-tropical-medicine
+    title: The Hirsch Institute of Tropical Medicine
+    url: https://library.oapen.org/rest/bitstreams/75cf24aa-d7a3-47bf-b665-fbaffbf6b5e2/retrieve
+    source: oapen
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+
   # --- discovered (find_sources.py) ---
   - id: arx-a-digitalization-framework-for-smart-maintenan
     title: A Digitalization Framework for Smart Maintenance of Historic Buildings
@@ -18068,6 +18948,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-a-computational-tool-compatible-with-neams-cod
+    title: A Computational Tool Compatible with NEAMS Code Packages for Optimizing the
+      Shape of Nuclear Reactor Components and of Whole Core Performance
+    url: https://www.osti.gov/servlets/purl/3013833
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-a-conceptual-framework-for-residential-energy-
     title: A conceptual framework for residential energy security in the context of
       clean energy transitions
@@ -18178,6 +19066,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-a-framework-for-streamlining-large-load-interc
+    title: 'A Framework for Streamlining Large Load Interconnection: An Assessment of
+      Current Practices and Emerging Strategies for Fair and Efficient Load Interc'
+    url: https://www.osti.gov/servlets/purl/3364477
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-a-framework-to-design-consumer-centric-operati
     title: A Framework to Design Consumer-Centric Operational Strategies for Resilience
       Enhancement
@@ -18230,6 +19126,14 @@ sources:
     title: 'A High-Granularity Approach to Modeling Energy Consumption and Savings Potential
       in the U.S. Residential Building Stock: Preprint'
     url: https://www.osti.gov/servlets/purl/1871535
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-a-high-power-density-and-high-efficiency-tract
+    title: A High Power Density and High Efficiency Traction Drive Based on a Segmented
+      Inverter and an Axial and Radial Flux Hybrid Machine
+    url: https://www.osti.gov/servlets/purl/3374763
     source: osti
     license: public-domain
     topic: building_energy
@@ -18543,6 +19447,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-a-scalable-and-cost-effective-solution-to-the-
+    title: 'A Scalable and Cost-Effective Solution to the U.S. Housing Crisis: A Case
+      Study on Locally Manufactured Modular Multifamily Housing'
+    url: https://www.osti.gov/servlets/purl/2589398
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-a-scalable-method-for-decarbonizing-modular-bu
     title: 'A Scalable Method for Decarbonizing Modular Building Solutions: Preprint'
     url: https://www.osti.gov/servlets/purl/1885585
@@ -18682,6 +19594,20 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-ac-to-ac-solid-state-transformer-with-bidirect
+    title: AC to AC Solid State Transformer with Bidirectional Switches
+    url: https://www.osti.gov/servlets/purl/2999127
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-accelerating-innovations-to-save-the-planet-pa
+    title: 'Accelerating Innovations to Save the Planet: Pathways to Net-zero Concrete'
+    url: https://www.osti.gov/servlets/purl/2431909
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-accelerating-kinetic-plasma-simulations-with-m
     title: Accelerating kinetic plasma simulations with machine-learning-generated initial
       conditions
@@ -18702,6 +19628,14 @@ sources:
     title: 'Accelerating Optimal Integration of Energy Efficiency Strategies with Industrialized
       Modular Construction: Preprint'
     url: https://www.osti.gov/servlets/purl/1885588
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-accelerating-phase-field-simulations-through-a
+    title: Accelerating Phase Field Simulations Through a Hybrid Adaptive Fourier Neural
+      Operator with U-Net Backbone
+    url: https://www.osti.gov/servlets/purl/2999292
     source: osti
     license: public-domain
     topic: building_energy
@@ -18907,6 +19841,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-advanced-fuels-campaign-2022-accomplishments
+    title: Advanced Fuels Campaign 2022 Accomplishments
+    url: https://www.osti.gov/servlets/purl/1906490
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-advanced-fuels-campaign-execution-plan
     title: Advanced Fuels Campaign Execution Plan
     url: https://www.osti.gov/servlets/purl/3157830
@@ -18962,6 +19903,13 @@ sources:
     title: 'Advanced pathways for hydrogen production: a collective view from a technical
       experts meeting'
     url: https://www.osti.gov/servlets/purl/3375358
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-advanced-reaction-systems
+    title: Advanced Reaction Systems
+    url: https://www.osti.gov/servlets/purl/2438314
     source: osti
     license: public-domain
     topic: building_energy
@@ -19036,6 +19984,14 @@ sources:
   - id: ost-advancing-grid-integration-nrel-research-and-g
     title: 'Advancing Grid Integration: NREL Research and Global Future Prospects'
     url: https://www.osti.gov/servlets/purl/3013278
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-advancing-manufacturing-water-resilience-2
+    title: 'Advancing Manufacturing Water Resilience: Addressing Risks through New Approaches
+      and Technologies'
+    url: https://www.osti.gov/servlets/purl/3002308
     source: osti
     license: public-domain
     topic: building_energy
@@ -19469,6 +20425,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-analysis-of-water-energy-issues-for-nuclear-po
+    title: Analysis of Water-Energy Issues for Nuclear Power with Industry Perspective
+    url: https://www.osti.gov/servlets/purl/2283068
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-annual-technology-baseline-atb-and-cost-outloo
     title: Annual Technology Baseline (ATB) and Cost Outlook for Offshore Wind in the
       Philippines [Slides]
@@ -19581,6 +20544,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-ash-fouling-free-regenerative-air-preheater-fo
+    title: Ash Fouling Free Regenerative Air Preheater for Deep Cyclic Operation
+    url: https://www.osti.gov/servlets/purl/2472813
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-assess-the-water-resistance-and-thermal-perfor
     title: Assess The Water Resistance And Thermal Performance Of Pre-flashing Methods
       When Adding Continuous Insulation During Re-siding (AIRS)
@@ -19637,10 +20607,26 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-assessing-the-performance-and-impact-of-pv-tec
+    title: Assessing the Performance and Impact of PV Technologies on Storage in Hybrid
+      Renewable Systems
+    url: https://www.osti.gov/servlets/purl/2526692
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-assessing-the-performance-application-and-cost
     title: Assessing the Performance, Application, and Cost of Retrofit Wall Systems
       for Residential Buildings
     url: https://www.osti.gov/servlets/purl/1872860
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-assessing-the-potential-of-active-insulation-s
+    title: Assessing the Potential of Active Insulation Systems to Reduce Energy Consumption
+      and Enhance Electrical Grid Services
+    url: https://www.osti.gov/servlets/purl/1615782
     source: osti
     license: public-domain
     topic: building_energy
@@ -19681,6 +20667,13 @@ sources:
     title: Assessment of Fission Product Release in High-Temperature Gas-Cooled Reactors
       using TRISO Fuel for Radiological Consequence Assessment
     url: https://www.osti.gov/servlets/purl/3007914
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-assessment-of-low-cost-minisplit-heat-pump-con
+    title: Assessment of Low-Cost Minisplit Heat Pump Connection System
+    url: https://www.osti.gov/servlets/purl/1922100
     source: osti
     license: public-domain
     topic: building_energy
@@ -19758,6 +20751,13 @@ sources:
   - id: ost-avista-cef2-shared-energy-economy-modeling-and
     title: 'Avista CEF2 Shared Energy Economy: Modeling and Simulation'
     url: https://www.osti.gov/servlets/purl/2433780
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-avista-s-shared-energy-economy-model-pilot-a-t
+    title: 'Avista’s Shared Energy Economy Model Pilot: A Techno-economic Assessment'
+    url: https://www.osti.gov/servlets/purl/1887859
     source: osti
     license: public-domain
     topic: building_energy
@@ -19992,6 +20992,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-blueprinting-electrified-transit-system-implem
+    title: Blueprinting Electrified Transit System Implementation
+    url: https://www.osti.gov/servlets/purl/2574624
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-bre-x-emissions-database-for-end-of-life-scena
     title: BRE‐X Emissions Database for End‐of‐Life Scenarios of Selective Building
       Construction Materials to Enable Circular Economy in Construction
@@ -20023,6 +21030,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-bringing-low-and-moderate-income-solar-financi
+    title: Bringing Low- and Moderate-Income Solar Financing Models to Scale (Final
+      Technical Report (FTR))
+    url: https://www.osti.gov/servlets/purl/2316025
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-broadband-swir-photodetector-arrays-enabled-by
     title: Broadband SWIR photodetector arrays enabled by nanomaterial semiconductor
       inks
@@ -20045,6 +21060,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-building-100-groundwater-bioremediation-at-the
+    title: 'Building 100 Groundwater Bioremediation at the Former DOE Pinellas Plant,
+      Florida: Review of Progress and Opportunities'
+    url: https://www.osti.gov/servlets/purl/3023071
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-building-851-firing-table-sediment-monitoring-
     title: Building 851 Firing Table Sediment (Monitoring Report)
     url: https://www.osti.gov/servlets/purl/1874858
@@ -20059,10 +21082,49 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-building-a-sustainable-aviation-brain-trust-ke
+    title: 'Building a Sustainable Aviation Brain Trust: Key Insights From the 2022
+      NREL Partner Forum'
+    url: https://www.osti.gov/servlets/purl/1892081
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-building-advantage-through-allies-and-partners
     title: 'Building Advantage through Allies and Partnerships: Institutionalizing Research
       Collaborations for National Security'
     url: https://www.osti.gov/servlets/purl/3014103
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-building-america-case-study-heat-pump-water-he
+    title: 'Building America Case Study: Heat Pump Water Heater Ducting Strategies with
+      Encapsulated Attics in Climate Zones 2 and 4, LaFayette, Georgia (CZ4), an'
+    url: https://www.osti.gov/servlets/purl/1358073
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-building-america-fy-2016-annual-report-buildin
+    title: 'Building America FY 2016 Annual Report: Building America Is Driving Real
+      Solutions in the Race to Zero Energy Homes -- Appendix'
+    url: https://www.osti.gov/servlets/purl/1358067
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-building-collaboration-to-advance-our-understa
+    title: Building collaboration to advance our understanding of regional climate impacts
+      of dust in California's San Joaquin Valley
+    url: https://www.osti.gov/servlets/purl/2575366
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-building-energy-modeling-bem-at-sandia-nationa
+    title: Building Energy Modeling (BEM) at Sandia National Laboratories (SNL) FY21.
+    url: https://www.osti.gov/servlets/purl/1890379
     source: osti
     license: public-domain
     topic: building_energy
@@ -20225,6 +21287,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-cambium-2023-scenario-descriptions-and-documen
+    title: Cambium 2023 Scenario Descriptions and Documentation
+    url: https://www.osti.gov/servlets/purl/2316014
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-cambium-2024-scenario-descriptions-and-documen
     title: Cambium 2024 Scenario Descriptions and Documentation
     url: https://www.osti.gov/servlets/purl/2558937
@@ -20235,6 +21304,13 @@ sources:
   - id: ost-canada-s-actions-for-rapid-decarbonization-of-
     title: Canada's Actions for Rapid Decarbonization of Power Sector
     url: https://www.osti.gov/servlets/purl/2448076
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-carbon-emissions-in-a-typical-new-production-h
+    title: 'Carbon Emissions in a Typical New Production Home: A Case Study'
+    url: https://www.osti.gov/servlets/purl/1959306
     source: osti
     license: public-domain
     topic: building_energy
@@ -20322,9 +21398,24 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-cements-and-a-modeling-tool-to-calculate-their
+    title: Cements and a Modeling Tool to Calculate their Viability under Various Exploitation
+      Conditions of HT RTES Systems
+    url: https://www.osti.gov/servlets/purl/2560698
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-center-for-integrated-simulation-of-fusion-rel
     title: Center for Integrated Simulation of Fusion Relevant RF Actuators
     url: https://www.osti.gov/servlets/purl/3158854
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-center-for-wind-energy
+    title: Center for Wind Energy
+    url: https://www.osti.gov/servlets/purl/3006042
     source: osti
     license: public-domain
     topic: building_energy
@@ -20534,6 +21625,13 @@ sources:
   - id: ost-cloudzero-phase-2-technical-report
     title: CloudZero Phase 2 Technical Report
     url: https://www.osti.gov/servlets/purl/2346119
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-cmcscfcb-critical-minerals-in-coaly-strata-of-
+    title: CMCSCFCB—Critical Minerals in Coaly Strata of the Cherokee-Forest City Basin
+    url: https://www.osti.gov/servlets/purl/3009807
     source: osti
     license: public-domain
     topic: building_energy
@@ -20799,6 +21897,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-comparison-of-different-simulation-programs-in
+    title: Comparison of different simulation programs in modeling the energy savings
+      of cool roofs
+    url: https://www.osti.gov/servlets/purl/1651267
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-comparison-of-effectiveness-and-energy-use-of-
     title: Comparison of effectiveness and energy use of airborne pathogen mitigation
       measures to meet clean air targets in a prototypical office building
@@ -20929,6 +22035,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-connected-loads-grid-connected-appliances-comm
+    title: 'Connected Loads – Grid Connected Appliances: Commercial Refrigeration System
+      Fault Detection and Diagnostics'
+    url: https://www.osti.gov/servlets/purl/1905423
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-connected-thermostat-alternatives-for-room-air
     title: Connected Thermostat Alternatives for Room Air Conditioners and Minisplit
       Heat Pumps
@@ -20961,6 +22075,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-consumer-benefits-of-clean-energy-energy-effic
+    title: 'Consumer Benefits of Clean Energy: Energy Efficiency'
+    url: https://www.osti.gov/servlets/purl/2478820
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-contemporary-income-inequality-outweighs-histo
     title: Contemporary income inequality outweighs historic redlining in shaping intra-urban
       heat disparities in Los Angeles
@@ -20989,6 +22110,14 @@ sources:
     title: 'Control Oriented Models for Co-Design: Technical Overview of MT HVDC, MVDC,
       and Solid State Transformer Building Blocks'
     url: https://www.osti.gov/servlets/purl/3001923
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-controlling-distributed-energy-resources-via-d
+    title: Controlling distributed energy resources via deep reinforcement learning
+      for load flexibility and energy efficiency
+    url: https://www.osti.gov/servlets/purl/1860348
     source: osti
     license: public-domain
     topic: building_energy
@@ -21098,6 +22227,98 @@ sources:
     title: Cost-Effective Thermally Activated Building Systems to Support a Power Grid
       System With High Penetrations Of As-Available Renewable Energy Resources
     url: https://www.osti.gov/servlets/purl/2997051
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-cost-effectiveness-of-ansi-ashrae-ies-st-10
+    title: Cost-Effectiveness of ANSI/ASHRAE/IES Standard 90.1-2019 for Delaware
+    url: https://www.osti.gov/servlets/purl/1835083
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-cost-effectiveness-of-ansi-ashrae-ies-st-11
+    title: Cost-Effectiveness of ANSI/ASHRAE/IES Standard 90.1-2019 for Kansas
+    url: https://www.osti.gov/servlets/purl/1845138
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-cost-effectiveness-of-ansi-ashrae-ies-st-12
+    title: Cost-Effectiveness of ANSI/ASHRAE/IES Standard 90.1-2019 for Illinois
+    url: https://www.osti.gov/servlets/purl/1835095
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-cost-effectiveness-of-ansi-ashrae-ies-st-13
+    title: Cost-Effectiveness of ANSI/ASHRAE/IES Standard 90.1-2019 for Arkansas
+    url: https://www.osti.gov/servlets/purl/1832993
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-cost-effectiveness-of-ansi-ashrae-ies-st-2
+    title: Cost-Effectiveness of ANSI/ASHRAE/IES Standard 90.1-2019 for Nebraska
+    url: https://www.osti.gov/servlets/purl/1854934
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-cost-effectiveness-of-ansi-ashrae-ies-st-3
+    title: Cost-Effectiveness of ANSI/ASHRAE/IES Standard 90.1-2019 for Montana
+    url: https://www.osti.gov/servlets/purl/1854933
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-cost-effectiveness-of-ansi-ashrae-ies-st-4
+    title: Cost-Effectiveness of ANSI/ASHRAE/IES Standard 90.1-2019 for Massachusetts
+    url: https://www.osti.gov/servlets/purl/1845145
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-cost-effectiveness-of-ansi-ashrae-ies-st-5
+    title: Cost-Effectiveness of ANSI/ASHRAE/IES Standard 90.1-2019 for Kentucky
+    url: https://www.osti.gov/servlets/purl/1845140
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-cost-effectiveness-of-ansi-ashrae-ies-st-6
+    title: Cost-Effectiveness of ANSI/ASHRAE/IES Standard 90.1-2019 for Hawaii
+    url: https://www.osti.gov/servlets/purl/1835093
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-cost-effectiveness-of-ansi-ashrae-ies-st-7
+    title: Cost-Effectiveness of ANSI/ASHRAE/IES Standard 90.1-2019 for Connecticut
+    url: https://www.osti.gov/servlets/purl/1835082
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-cost-effectiveness-of-ansi-ashrae-ies-st-8
+    title: Cost-Effectiveness of ANSI/ASHRAE/IES Standard 90.1-2019 for Rhode Island
+    url: https://www.osti.gov/servlets/purl/1856826
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-cost-effectiveness-of-ansi-ashrae-ies-st-9
+    title: Cost-Effectiveness of ANSI/ASHRAE/IES Standard 90.1-2019 for District of
+      Columbia
+    url: https://www.osti.gov/servlets/purl/1835084
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-cost-effectiveness-of-ansi-ashrae-ies-standard
+    title: Cost-Effectiveness of ANSI/ASHRAE/IES Standard 90.1-2019 for Vermont
+    url: https://www.osti.gov/servlets/purl/1964066
     source: osti
     license: public-domain
     topic: building_energy
@@ -21262,6 +22483,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-cybersecurity-standards-for-distributed-energy
+    title: 'Cybersecurity Standards for Distributed Energy Resources: Gaps and Harmonization
+      Strategy'
+    url: https://www.osti.gov/servlets/purl/3015882
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-daily-operational-impacts-on-battery-degradati
     title: Daily operational impacts on battery degradation in heavy-duty electric drayage
       trucks
@@ -21270,10 +22499,25 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-damsa-experiment-conceptual-design-white-paper
+    title: DAMSA Experiment Conceptual Design White Paper
+    url: https://www.osti.gov/servlets/purl/3017438
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-data-acquisition-system-selection-and-calibrat
     title: Data Acquisition System Selection and Calibration of Resistive Moisture Content
       Measurements for Large-Scale Field Studies in Cold Climate Residential
     url: https://www.osti.gov/servlets/purl/2438820
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-data-driven-analysis-tool-plays-critical-role-
+    title: 'Data-Driven Analysis Tool Plays Critical Role in Climate Neutral Buildings:
+      Improving energy efficiency and reducing emissions'
+    url: https://www.osti.gov/servlets/purl/1826328
     source: osti
     license: public-domain
     topic: building_energy
@@ -21374,6 +22618,13 @@ sources:
     title: Decomposing sources of value for electricity and negative emissions technologies
       in net-zero power systems
     url: https://www.osti.gov/servlets/purl/3015704
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-decovalex-2023-task-c-final-report
+    title: 'DECOVALEX-2023: Task C Final Report'
+    url: https://www.osti.gov/servlets/purl/2481303
     source: osti
     license: public-domain
     topic: building_energy
@@ -21540,6 +22791,22 @@ sources:
   - id: ost-demonstration-trials-of-ai-ml-edge-cloud-suite
     title: Demonstration Trials of AI/ML Edge+Cloud Suite (CRADA Final Report)
     url: https://www.osti.gov/servlets/purl/3017673
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-deploying-extended-reality-xr-for-digital-oper
+    title: Deploying Extended Reality (XR) for Digital Operations and Maintenance (O&M)
+      at the Mechanisms Engineering Test Loop (METL)
+    url: https://www.osti.gov/servlets/purl/1973766
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-deriving-simulation-parameters-for-storage-typ
+    title: 'Deriving Simulation Parameters for Storage-Type Water Heaters Using Ratings
+      Data Produced from the Uniform Energy Factor Test Procedure: Preprint'
+    url: https://www.osti.gov/servlets/purl/1766851
     source: osti
     license: public-domain
     topic: building_energy
@@ -21739,10 +23006,25 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-developing-residential-energy-usage-baselines-
+    title: Developing Residential Energy Usage Baselines and Energy Efficiency Options
+    url: https://www.osti.gov/servlets/purl/1864584
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-developing-stable-critical-materials-and-micro
     title: Developing Stable Critical Materials and Microstructure for High-Flux and
       Efficient Hydrogen Production through Reversible Solid Oxide Cells
     url: https://www.osti.gov/servlets/purl/3000714
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-developing-the-next-generation-of-net-zero-pro
+    title: 'Developing the Next Generation of Net Zero Professionals through the Race
+      to Zero: Preprint'
+    url: https://www.osti.gov/servlets/purl/1479867
     source: osti
     license: public-domain
     topic: building_energy
@@ -21783,6 +23065,14 @@ sources:
     title: Development and Validation of Home Comfort System for Total Performance Deficiency/Fault
       Detection and Optimal Comfort Control
     url: https://www.osti.gov/servlets/purl/2352250
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-development-and-verification-of-control-sequen
+    title: Development and Verification of Control Sequences for Single-Zone Variable
+      Air Volume System Based on ASHRAEGuideline 36
+    url: https://www.osti.gov/servlets/purl/1706669
     source: osti
     license: public-domain
     topic: building_energy
@@ -21837,6 +23127,14 @@ sources:
   - id: ost-development-of-a-web-based-screening-tool-for-
     title: Development of a web-based screening tool for ground source heat pump applications
     url: https://www.osti.gov/servlets/purl/1909079
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-development-of-an-occupancy-schedule-for-opens
+    title: Development of an Occupancy Schedule for OpenStudio Prototype College Building
+      Model
+    url: https://www.osti.gov/servlets/purl/1891406
     source: osti
     license: public-domain
     topic: building_energy
@@ -22004,6 +23302,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-distribution-system-research-roadmap-energy-ef
+    title: Distribution System Research Roadmap; Energy Efficiency and Renewable Energy
+    url: https://www.osti.gov/servlets/purl/1843579
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-district-geothermal-heating-cooling-deployment
     title: District Geothermal Heating + Cooling Deployment in a CT Environmental Justice
       Community
@@ -22071,6 +23376,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-doe-early-career-award-de-sc0012152-understand
+    title: 'DOE Early Career Award # DE-SC0012152: Understanding the Roles of Cloud
+      Microphysics and Land Surface Coupling Feedbacks in Multi-Scale Predictions of'
+    url: https://www.osti.gov/servlets/purl/1828967
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-doe-zerh-hia-2019-case-study-charis-homes-the-
     title: 'DOE ZERH HIA 2019 Case Study: Charis Homes, The Sanctuary, North Canton,
       OH'
@@ -22094,10 +23407,25 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-doe-zerh-hia-2019-case-study-mantell-hecathorn
+    title: 'DOE ZERH HIA 2019 Case Study: Mantell-Hecathorn Builders, Glacier Club Modern
+      Home, Durango, CO'
+    url: https://www.osti.gov/servlets/purl/1571189
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-doe-zerh-hia-2019-case-study-revive-properties
     title: 'DOE ZERH HIA 2019 Case Study: Revive Properties and Philgreen Construction,
       The Lupine Model, Fort Collins, CO'
     url: https://www.osti.gov/servlets/purl/1571190
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-doe-zerh-hia-2019-case-study-thrive-home-build
+    title: 'DOE ZERH HIA 2019 Case Study: Thrive Home Builders, Panacea, Denver, CO'
+    url: https://www.osti.gov/servlets/purl/1571188
     source: osti
     license: public-domain
     topic: building_energy
@@ -22282,6 +23610,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-ecological-monitoring-and-compliance-program-2
+    title: Ecological Monitoring and Compliance Program 2024 Report
+    url: https://www.osti.gov/servlets/purl/2997803
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-eddy-correlation-flux-measurement-system-2
     title: Eddy Correlation Flux Measurement System (ECOR) Instrument Handbook
     url: https://www.osti.gov/servlets/purl/1467448
@@ -22376,10 +23711,26 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-efficacy-of-occupancy-based-smart-ventilation-
+    title: Efficacy of occupancy-based smart ventilation control strategies in energy-efficient
+      homes in the United States
+    url: https://www.osti.gov/servlets/purl/1498693
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-efficient-computation-of-surface-sunlit-fracti
     title: Efficient Computation Of Surface Sunlit Fractions In Urban-Scale Building
       Modeling Using Ray-Tracing Techniques
     url: https://www.osti.gov/servlets/purl/1784300
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-efficient-silicon-carbide-sic-fiber-manufactur
+    title: 'Efficient Silicon Carbide (SiC) Fiber Manufacture: Continuous Processing
+      of Novel Precursors via Modified Material Handling'
+    url: https://www.osti.gov/servlets/purl/3015962
     source: osti
     license: public-domain
     topic: building_energy
@@ -22434,6 +23785,14 @@ sources:
     title: Electrification Options for Multi-Family Water Heating in Cold Climates -
       Final Report
     url: https://www.osti.gov/servlets/purl/2438845
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-electrifying-high-efficiency-future-communitie
+    title: 'Electrifying High-Efficiency Future Communities: Impact on Energy, Emissions,
+      and Grid'
+    url: https://www.osti.gov/servlets/purl/1880545
     source: osti
     license: public-domain
     topic: building_energy
@@ -22539,6 +23898,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-empowered-distributed-energy-resources-permit-
+    title: EMPOWERED Distributed Energy Resources Permit Accelerator Pilot
+    url: https://www.osti.gov/servlets/purl/2526618
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-empowering-rural-electrification-in-honduras-a
     title: 'Empowering Rural Electrification in Honduras: An Integrated Assessment of
       PV/BESS and Productive Uses of Electricity in Gracias a Dios'
@@ -22562,9 +23928,33 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-enabling-production-of-low-carbon-emissions-st
+    title: Enabling Production of Low Carbon Emissions Steel through CO<sub>2</sub>
+      Capture from Blast Furnace Gases at Cleveland Cliffs’ 5 mtpa Steel Plant at B
+    url: https://www.osti.gov/servlets/purl/2561324
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-end-use-analysis-of-ashrae-standard-90-1-2019
     title: End-Use Analysis of ASHRAE Standard 90.1-2019
     url: https://www.osti.gov/servlets/purl/1975090
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-end-use-load-profiles-for-the-u-s-buildi-2
+    title: 'End-Use Load Profiles for the U.S. Building Stock: Practical Guidance on
+      Accessing and Using the Data'
+    url: https://www.osti.gov/servlets/purl/1906716
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-end-use-load-profiles-for-the-u-s-buildi-3
+    title: 'End-Use Load Profiles for the U.S. Building Stock: Technical Advisory Group
+      Meeting #7'
+    url: https://www.osti.gov/servlets/purl/1823431
     source: osti
     license: public-domain
     topic: building_energy
@@ -22756,10 +24146,33 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-energy-savings-estimates-for-occupancy-and-tem
+    title: Energy Savings Estimates for Occupancy- and Temperature-based Smart Ventilation
+      Control Approaches in Single-family California Homes
+    url: https://www.osti.gov/servlets/purl/1823057
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-energy-savings-performance-contracting-for-sma
+    title: Energy Savings Performance Contracting for Small Projects
+    url: https://www.osti.gov/servlets/purl/1826281
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-energy-savings-with-acceptable-indoor-air-qual
     title: Energy Savings With Acceptable Indoor Air Quality Through Improved Airflow
       Control in Residential Retrofits
     url: https://www.osti.gov/servlets/purl/1985923
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-energy-savings-with-outdoor-temperature-based-
+    title: Energy savings with outdoor temperature-based smart ventilation control strategies
+      in advanced California homes
+    url: https://www.osti.gov/servlets/purl/1823043
     source: osti
     license: public-domain
     topic: building_energy
@@ -22872,6 +24285,14 @@ sources:
   - id: ost-engineered-wood-sustainable-technologies-and-a
     title: 'Engineered Wood: Sustainable Technologies and Applications'
     url: https://www.osti.gov/servlets/purl/2422286
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-engineering-design-of-a-polaris-membrane-co-su
+    title: Engineering Design of a Polaris Membrane CO<sub>2</sub> Capture System at
+      a Cement Plant
+    url: https://www.osti.gov/servlets/purl/2336740
     source: osti
     license: public-domain
     topic: building_energy
@@ -23199,6 +24620,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-evaluating-probability-of-assessment-for-centr
+    title: Evaluating Probability of Assessment for Central Alarm Station Operators
+    url: https://www.osti.gov/servlets/purl/2589589
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-evaluating-the-thermal-and-hygrothermal-effica
     title: Evaluating the Thermal and Hygrothermal Efficacy of Wood Fiber Insulation
       in Diverse Climate
@@ -23211,6 +24639,14 @@ sources:
     title: Evaluating Thermostats’ Deadbands Using HVAC Hardware-In-the-Loop Experiment
       for Advanced Control Strategies
     url: https://www.osti.gov/servlets/purl/2998522
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-evaluation-of-building-23-117-administration-b
+    title: Evaluation of Building 23-117, Administration Building, Nevada National Security
+      Site, Nye County, Nevada
+    url: https://www.osti.gov/servlets/purl/2333661
     source: osti
     license: public-domain
     topic: building_energy
@@ -23404,10 +24840,26 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-exploring-decarbonization-and-clean-energy-pat
+    title: Exploring Decarbonization and Clean Energy Pathways for Disadvantaged Communities
+      in California
+    url: https://www.osti.gov/servlets/purl/1879645
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-exploring-diversion-pathway-analysis-of-a-gene
     title: Exploring diversion-pathway analysis of a generic molten-salt fast reactor
       using multiphysics informed signatures
     url: https://www.osti.gov/servlets/purl/3017231
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-exploring-electric-sector-evolution-and-cuttin
+    title: 'Exploring Electric Sector Evolution and Cutting-Edge Reliability Technologies:
+      Cooperative Power'
+    url: https://www.osti.gov/servlets/purl/3029959
     source: osti
     license: public-domain
     topic: building_energy
@@ -23420,10 +24872,18 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: ost-exploring-professor-motivations-and-implementa
+  - id: ost-exploring-offshore-regional-atlantic-carbon-st
+    title: 'Exploring Offshore Regional Atlantic Carbon Storage and Infrastructure for
+      Eastern USA (Supporting Communities and Industry for Mid-Atlantic Offshore '
+    url: https://www.osti.gov/servlets/purl/3022248
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-exploring-professor-motivations-and-impl-2
     title: 'Exploring Professor Motivations and Implementations of a Real-World Problem-Solving
       Project: A Case Study in Preparing Students for the Emerging Build'
-    url: https://www.osti.gov/servlets/purl/2575625
+    url: https://www.osti.gov/servlets/purl/2575266
     source: osti
     license: public-domain
     topic: building_energy
@@ -23448,6 +24908,13 @@ sources:
     title: Exploring the Variability of Indoor-Outdoor Ratio of Particle Matter in Santiago,
       Chile
     url: https://www.osti.gov/servlets/purl/3024245
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-extended-plate-and-beam-wall-system
+    title: Extended Plate and Beam Wall System
+    url: https://www.osti.gov/servlets/purl/1439541
     source: osti
     license: public-domain
     topic: building_energy
@@ -23500,6 +24967,14 @@ sources:
   - id: ost-fall-2025-solar-industry-update-slides
     title: Fall 2025 Solar Industry Update [Slides]
     url: https://www.osti.gov/servlets/purl/3020694
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-fast-epitaxial-growth-and-extrinsic-doping-of-
+    title: Fast Epitaxial Growth and Extrinsic Doping of Single-Crystal Cd(Zn)Te on
+      Silicon Substrate
+    url: https://www.osti.gov/servlets/purl/3013184
     source: osti
     license: public-domain
     topic: building_energy
@@ -23569,6 +25044,14 @@ sources:
     title: 'Feedback, physics, and forecasts: The emerging paradigm of machine learning-driven
       battery research'
     url: https://www.osti.gov/servlets/purl/3025517
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-feedstock-conversion-interface-consortium-fail
+    title: 'Feedstock-Conversion Interface Consortium: Failure Mode and Effects Analysis
+      Summary Report (FY2022)'
+    url: https://www.osti.gov/servlets/purl/1894327
     source: osti
     license: public-domain
     topic: building_energy
@@ -23737,6 +25220,13 @@ sources:
     title: First Phase Consensus Roadmap for Development of Condition-Based Cable Reliability
       Assurance
     url: https://www.osti.gov/servlets/purl/2478702
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-first-principles-cost-analysis-of-advanced-hig
+    title: First-Principles Cost Analysis of Advanced High-Temperature Nuclear Plants
+    url: https://www.osti.gov/servlets/purl/3367626
     source: osti
     license: public-domain
     topic: building_energy
@@ -23936,6 +25426,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-fundamental-needs-for-dynamic-and-interactive-
+    title: Fundamental Needs for Dynamic and Interactive Thermal Storage Solutions for
+      Buildings (2019 Workshop)
+    url: https://www.osti.gov/servlets/purl/1665781
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-future-foundries-a-convergent-manufacturing-pl
     title: 'Future foundries: A convergent manufacturing platform'
     url: https://www.osti.gov/servlets/purl/3020909
@@ -23953,6 +25451,14 @@ sources:
   - id: ost-future-heat-wave-effects-in-cold-versus-hot-cl
     title: Future Heat Wave Effects in Cold Versus Hot Climate Zones
     url: https://www.osti.gov/servlets/purl/2432210
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-future-typical-meteorological-year-ftmy-weathe
+    title: Future Typical Meteorological Year (fTMY) Weather Data and Climate Change
+      Impacts to Maricopa County, Arizona
+    url: https://www.osti.gov/servlets/purl/1898988
     source: osti
     license: public-domain
     topic: building_energy
@@ -24058,6 +25564,27 @@ sources:
     title: 'Getting Beyond Widgets: Performance of Efficient Indoor Air Quality System
       Retrofit Packages for Schools A report on the modeled energy, greenhouse ga'
     url: https://www.osti.gov/servlets/purl/2234034
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-ghg-emissions-reduction-audit-a-checklist-for-
+    title: 'GHG Emissions Reduction Audit: A Checklist for Owners'
+    url: https://www.osti.gov/servlets/purl/1971620
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-girl-scouts-of-the-colonial-coast-6th-12th-sma
+    title: Girl Scouts of the Colonial Coast 6th-12th SmartFlower Curriculum
+    url: https://www.osti.gov/servlets/purl/3008111
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-girl-scouts-of-the-colonial-coast-k-5-smartflo
+    title: Girl Scouts of the Colonial Coast K-5 SmartFlower Curriculum
+    url: https://www.osti.gov/servlets/purl/3008098
     source: osti
     license: public-domain
     topic: building_energy
@@ -24323,6 +25850,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-heat-pump-water-heater-guide-for-small-busines
+    title: Heat Pump Water Heater Guide for Small Businesses
+    url: https://www.osti.gov/servlets/purl/1974996
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-heating-ventilation-air-conditioning-hvac-syst
     title: Heating Ventilation Air-Conditioning (HVAC) System Analysis and Optimization
       for Revit with the OpenStudio Analytical Framework (CRADA Final Report)
@@ -24335,6 +25869,22 @@ sources:
     title: 'HelioScope Energy Performance Modeling Validation: Cooperative Research
       and Development Final Report, CRADA Number CRD-17-00685'
     url: https://www.osti.gov/servlets/purl/1763976
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-hia-2018-doe-zero-energy-ready-home-case-2
+    title: 'HIA 2018 DOE Zero Energy Ready Home Case Study: Thrive Home Builders, Z.E.N.
+      2.0 Collection, Denver, CO'
+    url: https://www.osti.gov/servlets/purl/1489201
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-hia-2018-doe-zero-energy-ready-home-case-study
+    title: 'HIA 2018 DOE Zero Energy Ready Home Case Study: Thrive Home Builders, Elements
+      Collection, Denver, CO'
+    url: https://www.osti.gov/servlets/purl/1489202
     source: osti
     license: public-domain
     topic: building_energy
@@ -24402,6 +25952,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-high-efficiency-high-current-laser-driven-elec
+    title: High-Efficiency, High-Current Laser-Driven Electron Injector
+    url: https://www.osti.gov/servlets/purl/3023392
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-high-efficiency-mixing-controlled-compression-
     title: High-Efficiency Mixing Controlled Compression Ignition Combustion of Propane
       DME Blends
@@ -24413,6 +25970,22 @@ sources:
   - id: ost-high-fidelity-analysis-of-ev-integration-on-re
     title: High-Fidelity Analysis of EV Integration on Real Utility Feeders in Colorado
     url: https://www.osti.gov/servlets/purl/3011892
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-high-performance-r-10-inch-clay-cellulose-sili
+    title: High Performance (R-10/inch) Clay-Cellulose-Silica Nanopore Insulation Board
+      For New and Retrofit Buildings (Final Scientific Report)
+    url: https://www.osti.gov/servlets/purl/2511251
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-high-temperature-additive-architectures-for-65
+    title: High Temperature Additive Architectures for 65% Efficiency (Final Technical
+      Report)
+    url: https://www.osti.gov/servlets/purl/2523956
     source: osti
     license: public-domain
     topic: building_energy
@@ -24475,6 +26048,14 @@ sources:
     title: 'Historic Buildings Report: Five-Year Preservation Planning for Manhattan
       Project National Historical Park Sites'
     url: https://www.osti.gov/servlets/purl/1846877
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-holistic-modeling-of-future-transportation-ene
+    title: 'Holistic Modeling of Future Transportation Energy Use and Emissions: Transportation
+      Energy and Mobility Pathway Options (TEMPO) Model'
+    url: https://www.osti.gov/servlets/purl/3020126
     source: osti
     license: public-domain
     topic: building_energy
@@ -24552,6 +26133,13 @@ sources:
     title: 'How Building America Research is Removing Major Roadblocks to High-Performance
       Homes: Preprint'
     url: https://www.osti.gov/servlets/purl/1470713
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-how-can-floor-covering-influence-buildings-dem
+    title: How Can Floor Covering Influence Buildings’ Demand Flexibility?
+    url: https://www.osti.gov/servlets/purl/1813998
     source: osti
     license: public-domain
     topic: building_energy
@@ -24671,6 +26259,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-hydrogen-and-electric-charging-infrastructure-
+    title: 'Hydrogen and Electric Charging Infrastructure for Heavy-Duty Trucks: A Nationally
+      Scalable Megaregion Assessment'
+    url: https://www.osti.gov/servlets/purl/2583825
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-hydrogen-applications-for-energy-transition-in
     title: Hydrogen Applications for Energy Transition in Port and Airport Operations
       at the Port Authority of New York and New Jersey
@@ -24785,6 +26381,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-identifying-controlling-variables-related-to-m
+    title: 'Identifying Controlling Variables Related to Mercury Vapor Concentrations
+      in Legacy Facilities: SRNL Technology Development For D&D'
+    url: https://www.osti.gov/servlets/purl/1896452
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-identifying-nuclear-cost-targets-for-competiti
     title: Identifying Nuclear Cost Targets for Competitive Maritime Decarbonization
     url: https://www.osti.gov/servlets/purl/3018514
@@ -24867,6 +26471,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-impact-of-electric-vehicle-charging-on-the-pow
+    title: Impact of electric vehicle charging on the power demand of retail buildings
+    url: https://www.osti.gov/servlets/purl/1821903
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-impact-of-extreme-weather-on-sizing-batt-2
     title: 'Impact of Extreme Weather on Sizing Battery Energy Storage Systems: A Case
       Study of Fairbanks, Alaska.'
@@ -24895,6 +26506,14 @@ sources:
     title: Impact of Penetrating Kelvin Waves on MJO Rainfall Propagation Through Deep
       Convection Modulation
     url: https://www.osti.gov/servlets/purl/2569575
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-impact-of-post-rainfall-evaporation-from-porou
+    title: Impact of post-rainfall evaporation from porous roof tiles on building cooling
+      load in subtropical China
+    url: https://www.osti.gov/servlets/purl/1506357
     source: osti
     license: public-domain
     topic: building_energy
@@ -24943,6 +26562,14 @@ sources:
     title: Implementation of WBG devices in circuits - Electric Drive Technologies Project
       (Final Technical Report)
     url: https://www.osti.gov/servlets/purl/2570703
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-implementation-plan-for-combined-heat-and-powe
+    title: 'Implementation Plan for Combined Heat and Power Systems VOLTTRON Controller:
+      Performance Monitoring and Real-Time Commissioning Algorithm Verification'
+    url: https://www.osti.gov/servlets/purl/1996826
     source: osti
     license: public-domain
     topic: building_energy
@@ -25225,6 +26852,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-integrated-multimodel-analysis-reveals-achieva
+    title: Integrated multimodel analysis reveals achievable pathways toward reliable,
+      100% renewable electricity for Los Angeles
+    url: https://www.osti.gov/servlets/purl/2428939
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-integrated-operations-in-nuclear-a-strategic-a
     title: 'Integrated Operations in Nuclear: A Strategic Approach Addressing Workforce
       Attraction and Knowledge Retention'
@@ -25274,6 +26909,13 @@ sources:
   - id: ost-integrating-health-and-energy-efficiency-2
     title: Integrating Health and Energy Efficiency in Healthcare Facilities
     url: https://www.osti.gov/servlets/purl/1773167
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-integrating-physics-based-models-with-sensor-d
+    title: 'Integrating physics-based models with sensor data: An inverse modeling approach'
+    url: https://www.osti.gov/servlets/purl/1526597
     source: osti
     license: public-domain
     topic: building_energy
@@ -25471,6 +27113,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-kansas-city-missouri-streetlight-electric-vehi
+    title: 'Kansas City, Missouri, Streetlight Electric Vehicle Charging: Strategies
+      and challenges for site selection of streetlight electric vehicle infrastruct'
+    url: https://www.osti.gov/servlets/purl/2459282
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-key-grid-interactive-efficient-building--2
     title: Key Grid-Interactive Efficient Building Technologies for Federal and Commercial
       Facilities
@@ -25521,6 +27171,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-la100-equity-strategies-chapter-1-justice-as-r
+    title: 'LA100 Equity Strategies. Chapter 1: Justice as Recognition'
+    url: https://www.osti.gov/servlets/purl/2221831
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-la100-equity-strategies-chapter-3-community-gu
     title: 'LA100 Equity Strategies. Chapter 3: Community-Guided Energy Equity Strategies'
     url: https://www.osti.gov/servlets/purl/2221832
@@ -25539,6 +27196,13 @@ sources:
   - id: ost-la100-equity-strategies-chapter-7-housing-weat
     title: 'LA100 Equity Strategies. Chapter 7: Housing Weatherization and Resilience'
     url: https://www.osti.gov/servlets/purl/2221834
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-la100-equity-strategies-executive-summary
+    title: 'LA100 Equity Strategies: Executive Summary'
+    url: https://www.osti.gov/servlets/purl/2221830
     source: osti
     license: public-domain
     topic: building_energy
@@ -25590,6 +27254,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-land-based-wind-market-report-2024-edition
+    title: 'Land-Based Wind Market Report: 2024 Edition'
+    url: https://www.osti.gov/servlets/purl/2434282
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-landscan-mosaic-enables-high-resolution-gridde
     title: LandScan mosaic enables high-resolution gridded population estimates with
       explicit uncertainty
@@ -25602,6 +27273,13 @@ sources:
     title: Large CO<sub>2</sub> removal potential of woody debris preservation in managed
       forests
     url: https://www.osti.gov/servlets/purl/3022287
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-large-load-planning-siting-and-interconnection
+    title: Large Load Planning, Siting, and Interconnection
+    url: https://www.osti.gov/servlets/purl/3018003
     source: osti
     license: public-domain
     topic: building_energy
@@ -25637,6 +27315,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-laser-powder-bed-fusion-manufactured-alloys-62
+    title: Laser Powder Bed Fusion Manufactured Alloys 625 and 282 and Properties Relevant
+      to Advanced Nuclear Components
+    url: https://www.osti.gov/servlets/purl/3002311
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-laser-powder-directed-energy-deposition-of-ste
     title: Laser Powder Directed Energy Deposition of Steels for Nuclear Applications
     url: https://www.osti.gov/servlets/purl/3015854
@@ -25663,6 +27349,14 @@ sources:
     title: LCC-based framework for building envelope and structure co-design considering
       energy efficiency and natural hazard performance
     url: https://www.osti.gov/servlets/purl/1765498
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-ldrd-2024-annual-report-laboratory-directed-re
+    title: 'LDRD 2024 Annual Report: Laboratory Directed Research and Development Program
+      Activities'
+    url: https://www.osti.gov/servlets/purl/3001455
     source: osti
     license: public-domain
     topic: building_energy
@@ -25694,6 +27388,13 @@ sources:
     title: 'Lessons Learned: Summary of Insights From the HERO WEC and Waves to Water
       Deployments Between 2022 and 2024'
     url: https://www.osti.gov/servlets/purl/3011878
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-leveraging-open-source-satellite-derived-build
+    title: Leveraging Open-Source Satellite-Derived Building Footprints for Height Inference
+    url: https://www.osti.gov/servlets/purl/2584527
     source: osti
     license: public-domain
     topic: building_energy
@@ -25882,6 +27583,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-low-cost-community-microgrids-by-efficiency-an
+    title: Low Cost Community Microgrids by Efficiency and Reduced Availability.
+    url: https://www.osti.gov/servlets/purl/2002148
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-low-cost-fin-tube-heat-exchanger-design-for-bu
     title: Low-cost fin-tube heat exchanger design for building thermal energy storage
       using phase change material
@@ -25991,6 +27699,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-maintenance-plan-for-the-composite-analysis-of
+    title: Maintenance Plan for the Composite Analysis of the Hanford Site, Southeast
+      Washington
+    url: https://www.osti.gov/servlets/purl/2511312
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-makah-tribe-strategic-energy-plan
     title: Makah Tribe Strategic Energy Plan
     url: https://www.osti.gov/servlets/purl/3362571
@@ -26001,6 +27717,14 @@ sources:
   - id: ost-make-the-most-of-online-weatherization-trainin
     title: Make the Most of Online Weatherization Training Resources
     url: https://www.osti.gov/servlets/purl/1779408
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-making-it-happen-on-site-renewable-energy-and-
+    title: 'Making It Happen: On-Site Renewable Energy and Storage Challenges and Solutions
+      for Commercial Buildings: Preprint'
+    url: https://www.osti.gov/servlets/purl/2447790
     source: osti
     license: public-domain
     topic: building_energy
@@ -26076,6 +27800,13 @@ sources:
     title: Materials for Energy Management across the Electromagnetic Spectrum (MEMES)
       (LDRD Report)
     url: https://www.osti.gov/servlets/purl/3004456
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-materials-fr-2023-annual-progress-report
+    title: Materials (FR 2023 Annual Progress Report)
+    url: https://www.osti.gov/servlets/purl/3010231
     source: osti
     license: public-domain
     topic: building_energy
@@ -26237,6 +27968,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-meta-analysis-of-advanced-nuclear-reactor-cost
+    title: Meta-Analysis of Advanced Nuclear Reactor Cost Estimations
+    url: https://www.osti.gov/servlets/purl/2371533
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-metal-halide-perovskite-photovoltaics-research
     title: Metal Halide Perovskite Photovoltaics Research
     url: https://www.osti.gov/servlets/purl/3030038
@@ -26256,6 +27994,14 @@ sources:
     title: Methodology and analytical approach to investigate the impact of building
       temperature setpoint schedules
     url: https://www.osti.gov/servlets/purl/1844361
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-methodology-for-determining-the-effective-airc
+    title: Methodology For Determining The Effective Aircraft Impact Area For Irregularly
+      Shaped Facilities
+    url: https://www.osti.gov/servlets/purl/3023834
     source: osti
     license: public-domain
     topic: building_energy
@@ -26314,6 +28060,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-microgrids-2025-editorial
+    title: Microgrids 2025 editorial
+    url: https://www.osti.gov/servlets/purl/2511241
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-microgrids-slides
     title: Microgrids [Slides]
     url: https://www.osti.gov/servlets/purl/3031081
@@ -26333,6 +28086,13 @@ sources:
     title: Microreactor Core Transportation Cask Model Description for Criticality Safety
       Validation Basis Assessment (Rev. 1)
     url: https://www.osti.gov/servlets/purl/3022321
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-microwave-assisted-conversion-of-1-6-hexanedio
+    title: Microwave-Assisted Conversion of 1,6-Hexanediol into Polycarbonate
+    url: https://www.osti.gov/servlets/purl/2446886
     source: osti
     license: public-domain
     topic: building_energy
@@ -26368,10 +28128,26 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-mitigation-for-roof-alterations-to-building-06
+    title: Mitigation for roof alterations to building 06-cp-65 at the area 6 control
+      point, nevada national security site, nye county, nevada
+    url: https://www.osti.gov/servlets/purl/3004998
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-mitigation-for-the-demolition-of-buildin-2
     title: MITIGATION FOR THE DEMOLITION OF BUILDING 25-4314, RADIATION SERVICES, AREA
       25, NEVADA NATIONAL SECURITY SITE, NYE COUNTY, NEVADA
     url: https://www.osti.gov/servlets/purl/3365669
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-mitigation-for-the-demolition-of-building-25-3
+    title: MITIGATION FOR THE DEMOLITION OF BUILDING 25-3153, FIRE STATION, AREA 25,
+      NEVADA NATIONAL SECURITY SITE, NYE COUNTY, NEVADA
+    url: https://www.osti.gov/servlets/purl/3365644
     source: osti
     license: public-domain
     topic: building_energy
@@ -26426,6 +28202,14 @@ sources:
     title: Model-based predictive control of multi-zone commercial building with a lumped
       building modelling approach
     url: https://www.osti.gov/servlets/purl/1963139
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-model-predictive-control-for-a-grid-interactiv
+    title: Model Predictive Control for a Grid-interactive Efficient Thermal Storage-integrated
+      Heat Pump System
+    url: https://www.osti.gov/servlets/purl/1877463
     source: osti
     license: public-domain
     topic: building_energy
@@ -26514,6 +28298,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-modeling-whole-building-air-leakage-and-valida
+    title: Modeling Whole Building Air Leakage and Validation of Simulation Results
+      against Field Measurements
+    url: https://www.osti.gov/servlets/purl/1607281
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-modelling-moisture-sources-due-to-air-leakage-
     title: Modelling moisture sources due to air leakage with the HAMT extension for
       EnergyPlus
@@ -26554,6 +28346,13 @@ sources:
     title: Modulating Operational Conditions to Mitigate Deactivation in Formate Dehydrogenation
       on Pd Phases
     url: https://www.osti.gov/servlets/purl/3024979
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-moisture-performance-of-high-r-wall-systems
+    title: Moisture Performance of High-R Wall Systems
+    url: https://www.osti.gov/servlets/purl/1439443
     source: osti
     license: public-domain
     topic: building_energy
@@ -26609,6 +28408,13 @@ sources:
   - id: ost-morphology-based-building-use-type-modeling-le
     title: 'Morphology-Based Building Use-Type Modeling: Learnability-First Schema Discovery'
     url: https://www.osti.gov/servlets/purl/3029730
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-mpex-ai-digital-twins
+    title: MPEX AI Digital Twins
+    url: https://www.osti.gov/servlets/purl/3002172
     source: osti
     license: public-domain
     topic: building_energy
@@ -26812,6 +28618,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-national-impacts-of-community-level-strategies
+    title: National Impacts of Community-Level Strategies to Improve Convenience of
+      Mobility
+    url: https://www.osti.gov/servlets/purl/3015038
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-national-laboratory-of-the-rockies-nlr-2025-u-
     title: National Laboratory of the Rockies (NLR) 2025 U.S. Geothermal Market Report
     url: https://www.osti.gov/servlets/purl/3014949
@@ -26913,6 +28727,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-neutron-capture-measurements-at-umass-lowell-r
+    title: Neutron Capture Measurements at UMass Lowell Research Reactor
+    url: https://www.osti.gov/servlets/purl/2569494
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-neutron-diffraction-residual-stress-characteri
     title: Neutron Diffraction Residual Stress Characterization of Large-Scale Components
       by WA-DED
@@ -26966,6 +28787,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-next-generation-desiccant-based-gas-clothes-dr
+    title: Next-Generation Desiccant-Based Gas Clothes Dryer Systems
+    url: https://www.osti.gov/servlets/purl/2571756
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-next-generation-electric-motors-and-electromag
     title: Next-Generation Electric Motors and Electromagnetic Devices (CRADA Final
       Report)
@@ -27015,6 +28843,14 @@ sources:
     title: Nexus of electrification and energy efficiency retrofit of commercial buildings
       at the district scale
     url: https://www.osti.gov/servlets/purl/1973777
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-nexus-of-thermal-resilience-and-energy-efficie
+    title: 'Nexus of thermal resilience and energy efficiency in buildings: A case study
+      of a nursing home'
+    url: https://www.osti.gov/servlets/purl/1782148
     source: osti
     license: public-domain
     topic: building_energy
@@ -27152,6 +28988,13 @@ sources:
   - id: ost-nuclear-energy-cost-estimates-for-net-zero-wor
     title: Nuclear Energy Cost Estimates for Net Zero World Initiative – 2024 Update
     url: https://www.osti.gov/servlets/purl/2476508
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-nuclear-fusion-award-2024-acceptance-speech
+    title: Nuclear Fusion Award 2024 Acceptance Speech
+    url: https://www.osti.gov/servlets/purl/3375383
     source: osti
     license: public-domain
     topic: building_energy
@@ -27349,6 +29192,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-oppenheimer-study-center-solar-analysis
+    title: Oppenheimer Study Center Solar Analysis
+    url: https://www.osti.gov/servlets/purl/1883123
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-opportunities-to-expand-building-efficiency-pr
     title: Opportunities to Expand Building Efficiency Programming at Community Colleges
     url: https://www.osti.gov/servlets/purl/3030036
@@ -27400,6 +29250,14 @@ sources:
     title: Optimally sited microgrids for energy resilience in Mount Desert Island,
       ME
     url: https://www.osti.gov/servlets/purl/3366740
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-optimization-of-cool-roof-and-night-ventilatio
+    title: 'Optimization of cool roof and night ventilation in office buildings: A case
+      study in Xiamen, China'
+    url: https://www.osti.gov/servlets/purl/1782139
     source: osti
     license: public-domain
     topic: building_energy
@@ -27527,6 +29385,13 @@ sources:
   - id: ost-overview-of-netl-s-low-temperature-co2-electro
     title: Overview of NETL’s Low Temperature CO2 Electrolysis Research
     url: https://www.osti.gov/servlets/purl/2478214
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-overview-of-solar-panel-recycling-for-indigeno
+    title: Overview of Solar Panel Recycling for Indigenous Communities
+    url: https://www.osti.gov/servlets/purl/2480082
     source: osti
     license: public-domain
     topic: building_energy
@@ -27668,6 +29533,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-performance-analysis-of-novel-thermal-storage-
+    title: Performance analysis of novel thermal storage integrated heat pump system
+      in a residential building at the hot climate for demand flexibility
+    url: https://www.osti.gov/servlets/purl/1877462
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-performance-assessment-of-a-dual-purpose-hp-te
     title: Performance Assessment of a Dual-purpose HP-TES for a Typical Year Comparing
       Different Climate Zones
@@ -27688,6 +29561,14 @@ sources:
     title: Performance assessment of active insulation systems in residential buildings
       for energy savings and peak demand reduction
     url: https://www.osti.gov/servlets/purl/1994724
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-performance-assessment-of-the-active-trenches-
+    title: Performance Assessment of the Active Trenches in 200 East and 200 West Low-Level
+      Burial Grounds at the Hanford Site
+    url: https://www.osti.gov/servlets/purl/2202253
     source: osti
     license: public-domain
     topic: building_energy
@@ -27942,6 +29823,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-port-technical-assistance-program-a-proposed-i
+    title: 'Port Technical Assistance Program: A Proposed Initiative to Support U.S.
+      Ports Through Energy Innovation'
+    url: https://www.osti.gov/servlets/purl/3021915
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-potential-benefits-and-optimization-of-cool-co
     title: 'Potential benefits and optimization of cool-coated office buildings: A case
       study in Chongqing, China'
@@ -28060,6 +29949,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-preparing-solar-photovoltaic-systems-against-s
+    title: 'Preparing Solar Photovoltaic Systems Against Storms. Pre-Storm Solar PV
+      Checklist: Utility-Scale Ground-Mounted Systems'
+    url: https://www.osti.gov/servlets/purl/1873500
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-primer-to-swift-2-0-technical-information-shee
     title: Primer to SWIFt 2.0 Technical Information Sheets
     url: https://www.osti.gov/servlets/purl/3001740
@@ -28108,6 +30005,14 @@ sources:
     title: 'Probabilistic Modeling of Commercial Building Occupancy Patterns Using Location-Based
       Map Data: Preprint'
     url: https://www.osti.gov/servlets/purl/1885969
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-probing-the-dark-sector-using-an-beam-dump-fac
+    title: Probing the Dark Sector using an Beam Dump Facility at Fermilab in the PIP-II
+      Era
+    url: https://www.osti.gov/servlets/purl/3018677
     source: osti
     license: public-domain
     topic: building_energy
@@ -28173,10 +30078,25 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-protection-of-megawatt-scale-dc-fast-charging-
+    title: 'Protection of Megawatt-Scale DC Fast Charging Infrastructure for Heavy-Duty
+      Vehicles: Ultra-Fast DC Breaker Development, Testing, and Future Roadmap'
+    url: https://www.osti.gov/servlets/purl/3364946
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-prototype-courthouse-building-energy-model-bui
     title: 'Prototype Courthouse Building Energy Model: Building Characteristics and
       Energy Simulation Results'
     url: https://www.osti.gov/servlets/purl/1878672
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-prototype-energy-models-for-data-centers
+    title: Prototype energy models for data centers
+    url: https://www.osti.gov/servlets/purl/1769331
     source: osti
     license: public-domain
     topic: building_energy
@@ -28442,6 +30362,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-rebound-reverse-engineering-bidirectional-outf
+    title: 'REBOUND: Reverse Engineering Bidirectional Outflow Under Non-Equilibrium
+      Diffusion'
+    url: https://www.osti.gov/servlets/purl/3007679
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-recent-advances-and-future-perspectives-of-low
     title: Recent Advances and Future Perspectives of Low-Concentration CO<sub>2</sub>
       Enrichment and Emerging Applications
@@ -28532,6 +30460,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-remote-home-energy-score-assessments-feasibili
+    title: Remote Home Energy Score Assessments (Feasibility Study)
+    url: https://www.osti.gov/servlets/purl/1817916
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-removal-and-deactivation-of-bond-sodium-from-f
     title: Removal and Deactivation of Bond Sodium from Fast Reactor Blanket Materials
     url: https://www.osti.gov/servlets/purl/3004922
@@ -28569,6 +30504,30 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-report-of-the-2025-workshop-on-next-generation
+    title: 'Report of the 2025 Workshop on Next-Generation Ecosystems for Scientific
+      Computing: Harnessing Community, Software, and AI for Cross-Disciplinary Team'
+    url: https://www.osti.gov/servlets/purl/2589068
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-report-on-the-creation-and-progress-of-the-hyd
+    title: Report on the Creation and Progress of the Hydrogen Regulatory Research Review
+      Group
+    url: https://www.osti.gov/servlets/purl/1998561
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-representation-and-evolution-of-urban-weather-
+    title: Representation and evolution of urban weather boundary conditions in downtown
+      Chicago
+    url: https://www.osti.gov/servlets/purl/1484209
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-research-needs-and-new-capabilities-for-retail
     title: Research Needs and New Capabilities for Retail Electricity Rate Analysis
     url: https://www.osti.gov/servlets/purl/2499778
@@ -28588,6 +30547,14 @@ sources:
     title: 'Residential and Small Commercial Solar Photovoltaic and Storage Permitting,
       Inspection, and Interconnection Timelines: A Retrospective Review (2017-20'
     url: https://www.osti.gov/servlets/purl/3011864
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-residential-battery-modeling-for-control-orien
+    title: 'Residential Battery Modeling for Control-Oriented Techno-Economic Studies:
+      Preprint'
+    url: https://www.osti.gov/servlets/purl/1669521
     source: osti
     license: public-domain
     topic: building_energy
@@ -28913,6 +30880,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-reviewing-flexibility-in-industrial-electrific
+    title: 'Reviewing Flexibility in Industrial Electrification: U.S. Green Ammonia
+      and Steel Industries [Slides]'
+    url: https://www.osti.gov/servlets/purl/2345169
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-rigorous-incorporation-of-ph-effects-into-em-a
     title: Rigorous incorporation of pH effects into <em>ab initio</em> electrochemical
       models
@@ -28952,6 +30927,13 @@ sources:
   - id: ost-robust-in-situ-strain-measurements-to-monitor-
     title: Robust In-Situ Strain Measurements to Monitor CO<sub>2</sub> Storage
     url: https://www.osti.gov/servlets/purl/1997547
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-robustness-of-energy-performance-of-zero-net-e
+    title: Robustness of energy performance of Zero-Net-Energy (ZNE) homes
+    url: https://www.osti.gov/servlets/purl/1769320
     source: osti
     license: public-domain
     topic: building_energy
@@ -29006,6 +30988,14 @@ sources:
     title: 'Rooftop unit comparison calculator: a framework for comparing performance
       of rooftop units with building energy simulation'
     url: https://www.osti.gov/servlets/purl/2204572
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-routine-nonredundant-steel-tension-member-nstm
+    title: 'Routine & Nonredundant Steel Tension Member (NSTM) Inspection Report (Final):
+      Property ID No. 43-0434 - Los Alamos Canyon Bridge'
+    url: https://www.osti.gov/servlets/purl/2476820
     source: osti
     license: public-domain
     topic: building_energy
@@ -29130,6 +31120,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-seamlessly-fuel-flexible-heat-pump-with-optima
+    title: Seamlessly Fuel Flexible Heat Pump with Optimal Model-based Control Strategies
+      to Reduce Peak Demand, Utility Cost and CO2 Emission
+    url: https://www.osti.gov/servlets/purl/1885311
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-seasonal-maintenance-for-schools
     title: Seasonal Maintenance For Schools
     url: https://www.osti.gov/servlets/purl/2477303
@@ -29214,6 +31212,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-sera-a-hydrogen-infrastructure-capacity-expans
+    title: 'SERA: A Hydrogen Infrastructure Capacity Expansion Model'
+    url: https://www.osti.gov/servlets/purl/3145666
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-seventh-oregon-climate-assessment
     title: Seventh Oregon Climate Assessment
     url: https://www.osti.gov/servlets/purl/2500783
@@ -29271,6 +31276,14 @@ sources:
     title: 'Simulation-aided occupant-centric building design: A critical review of
       tools, methods, and applications'
     url: https://www.osti.gov/servlets/purl/1784287
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-simulation-and-power-quality-analysis-of-a-loo
+    title: Simulation and power quality analysis of a Loose-Coupled bipolar DC microgrid
+      in an office building
+    url: https://www.osti.gov/servlets/purl/1902114
     source: osti
     license: public-domain
     topic: building_energy
@@ -29340,6 +31353,14 @@ sources:
     title: Site 300 Small Firearms Training Facility Project Soil Sampling and Analysis
       Plan
     url: https://www.osti.gov/servlets/purl/1959573
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-site-demonstration-and-performance-evaluation-
+    title: Site demonstration and performance evaluation of MPC for a large chiller
+      plant with TES for renewable energy integration and grid decarbonization
+    url: https://www.osti.gov/servlets/purl/1876865
     source: osti
     license: public-domain
     topic: building_energy
@@ -29584,6 +31605,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-southcentral-upper-west-combined-heat-and-powe
+    title: Southcentral/Upper-West Combined Heat and Power Technical Assistance Partnership
+    url: https://www.osti.gov/servlets/purl/2584312
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-southeast-regional-co-sub-2-sub-utilization-an
     title: 'Southeast Regional CO<sub>2</sub> Utilization and Storage Acceleration Partnership
       (SECARB-USA): Results of Existing CO<sub>2</sub> Source and Sink Da'
@@ -29712,6 +31740,21 @@ sources:
     title: 'State of Innovation 2025: Progress in Accelerating Next-Generation Cement
       and Concrete Technologies'
     url: https://www.osti.gov/servlets/purl/3019239
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-state-of-the-art-for-hygrothermal-simulation-t
+    title: State-of-the-Art for Hygrothermal Simulation Tools
+    url: https://www.osti.gov/servlets/purl/1407999
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-state-technical-assistance-new-mexico-energy-a
+    title: State Technical Assistance - New Mexico Energy and Conservation Management
+      Division Report [Slides]
+    url: https://www.osti.gov/servlets/purl/3015066
     source: osti
     license: public-domain
     topic: building_energy
@@ -29889,6 +31932,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-summary-of-carbon-dioxide-pipeline-systems-and
+    title: Summary of Carbon Dioxide Pipeline Systems and Incident Data in North America
+    url: https://www.osti.gov/servlets/purl/3022723
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-summary-of-dm1200-sbs-history-and-performance
     title: Summary of DM1200 SBS history and performance
     url: https://www.osti.gov/servlets/purl/2587946
@@ -29922,6 +31972,14 @@ sources:
     title: Summary of Potential Incidents and Consequences from Carbon Dioxide Pipeline
       and Storage Systems Construction and Operation
     url: https://www.osti.gov/servlets/purl/3022726
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-summary-of-responses-to-the-request-for-inform
+    title: Summary of Responses to the Request for Information (RFI) on Partnerships
+      for Transformational Artificial Intelligence Models
+    url: https://www.osti.gov/servlets/purl/3374934
     source: osti
     license: public-domain
     topic: building_energy
@@ -30070,6 +32128,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-system-level-key-performance-indicators-for-bu
+    title: System-level key performance indicators for building performance evaluation
+    url: https://www.osti.gov/servlets/purl/1607409
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-system-modeling-for-grid-interactive-efficient
     title: System modeling for grid-interactive efficient building applications
     url: https://www.osti.gov/servlets/purl/1961951
@@ -30087,6 +32152,14 @@ sources:
   - id: ost-systematic-approach-to-define-a-prototype-buil
     title: 'Systematic approach to define a prototype building model: Convenience Store'
     url: https://www.osti.gov/servlets/purl/2324007
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-systems-packages-for-washington-state-building
+    title: 'Systems Packages for Washington State Building Performance Standard Incentive
+      Program: Phase 1 Analysis'
+    url: https://www.osti.gov/servlets/purl/1896476
     source: osti
     license: public-domain
     topic: building_energy
@@ -30261,6 +32334,21 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-technology-acceptance-workshop-meeting-proceed
+    title: Technology Acceptance Workshop Meeting Proceedings, April 20-29, 2022
+    url: https://www.osti.gov/servlets/purl/1963407
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-technology-case-study-economic-sustainability-
+    title: 'Technology Case Study: Economic, Sustainability, and Deployment Considerations
+      for Sustainable Aviation Fuels Produced via Lignocellulosic Sugar Catal'
+    url: https://www.osti.gov/servlets/purl/2522760
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-teleoperation-of-construction-robots-using-hum
     title: 'Teleoperation of Construction Robots Using Human Interaction: Case Study
       Examples: Preprint'
@@ -30391,6 +32479,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-the-global-climate-action-partnership
+    title: The Global Climate Action Partnership
+    url: https://www.osti.gov/servlets/purl/2228320
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-the-high-rigidity-spectrometer-at-the-frib-mag
     title: 'The High Rigidity Spectrometer at the FRIB: Magnet Development Status'
     url: https://www.osti.gov/servlets/purl/3008748
@@ -30487,6 +32582,14 @@ sources:
     title: The missing correlation between the potential rate impacts of rooftop solar
       and the timing of state net metering policy revisions
     url: https://www.osti.gov/servlets/purl/2583547
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-the-multi-scenario-extreme-weather-simulator-e
+    title: 'The Multi-scenario Extreme Weather Simulator: Energy Resilience for Mission
+      Assurance'
+    url: https://www.osti.gov/servlets/purl/1885888
     source: osti
     license: public-domain
     topic: building_energy
@@ -30790,10 +32893,26 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-towards-cop27-decarbonization-patterns-of-resi
+    title: 'Towards COP27: Decarbonization patterns of residential building in China
+      and India'
+    url: https://www.osti.gov/servlets/purl/2439962
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-towards-low-carbon-low-energy-concrete-alterna
     title: 'Towards low-carbon low-energy concrete alternatives: Life cycle assessment
       of carbonated cementitious material-based precast panels'
     url: https://www.osti.gov/servlets/purl/2573630
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-towards-off-policy-evaluation-as-a-prere-2
+    title: Towards Off-policy Evaluation as a Prerequisite for Real-world Reinforcement
+      Learning in Building Control
+    url: https://www.osti.gov/servlets/purl/1686144
     source: osti
     license: public-domain
     topic: building_energy
@@ -30948,10 +33067,25 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-typologies-of-actionable-climate-information-a
+    title: Typologies of actionable climate information and its use
+    url: https://www.osti.gov/servlets/purl/2281219
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-u-s-building-stock-characterization-study-a-na
     title: 'U.S. Building Stock Characterization Study: A National Typology for Decarbonizing
       U.S. Buildings'
     url: https://www.osti.gov/servlets/purl/1877069
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-u-s-china-clean-energy-research-center-buildin
+    title: U.S.-China Clean Energy Research Center Building Energy Efficiency (CERC-BEE)
+      Open-Source Retrofit Targeting Tool (CRADA FP00007338 Final Report)
+    url: https://www.osti.gov/servlets/purl/1798331
     source: osti
     license: public-domain
     topic: building_energy
@@ -31032,6 +33166,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-understanding-building-energy-use-in-boise-twi
+    title: 'Understanding Building Energy Use in Boise-Twin Falls: Basic Building Stock
+      Characterization'
+    url: https://www.osti.gov/servlets/purl/1998651
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-understanding-building-energy-use-in-brownsvil
     title: 'Understanding Building Energy Use in Brownsville-Corpus Christi-McAllen-Victoria
       Areas: Basic Building Stock Characterization'
@@ -31072,6 +33214,22 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-understanding-building-energy-use-in-cal-6
+    title: 'Understanding Building Energy Use in California Climate Zone 9: Basic Building
+      Stock Characterization'
+    url: https://www.osti.gov/servlets/purl/1998885
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-understanding-building-energy-use-in-cal-7
+    title: 'Understanding Building Energy Use in California Climate Zone 8: Basic Building
+      Stock Characterization'
+    url: https://www.osti.gov/servlets/purl/1998884
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-understanding-building-energy-use-in-californi
     title: 'Understanding Building Energy Use in California Climate Zones 5 and 6: Basic
       Building Stock Characterization'
@@ -31096,10 +33254,34 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-understanding-building-energy-use-in-counties-
+    title: 'Understanding Building Energy Use in Counties in North Carolina and South
+      Carolina: Basic Building Stock Characterization'
+    url: https://www.osti.gov/servlets/purl/1998681
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-understanding-building-energy-use-in-des-moine
+    title: 'Understanding Building Energy Use in Des Moines, Cedar Rapids, and Sioux
+      Falls: Basic Building Stock Characterization'
+    url: https://www.osti.gov/servlets/purl/1998642
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-understanding-building-energy-use-in-eastern-c
     title: 'Understanding Building Energy Use in Eastern Counties in South Carolina
       and Georgia: Basic Building Stock Characterization'
     url: https://www.osti.gov/servlets/purl/1998688
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-understanding-building-energy-use-in-eau-clair
+    title: 'Understanding Building Energy Use in Eau Claire, La Crosse, Rochester, and
+      Wausau: Basic Building Stock Characterization'
+    url: https://www.osti.gov/servlets/purl/1998650
     source: osti
     license: public-domain
     topic: building_energy
@@ -31173,6 +33355,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-understanding-building-energy-use-in-northwest
+    title: 'Understanding Building Energy Use in Northwestern PA, Ashtabulam, and Chautauqua
+      Counties: Basic Building Stock Characterization'
+    url: https://www.osti.gov/servlets/purl/1998646
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-understanding-building-energy-use-in-rur-2
     title: 'Understanding Building Energy Use in Rural Climate Zone 2A - Georgia and
       Florida: Basic Building Stock Characterization'
@@ -31217,6 +33407,22 @@ sources:
     title: 'Understanding Building Energy Use in Rural North and South Carolina Counties:
       Basic Building Stock Characterization'
     url: https://www.osti.gov/servlets/purl/1998700
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-understanding-building-energy-use-in-rural-sou
+    title: 'Understanding Building Energy Use in Rural Southern Arizona: Basic Building
+      Stock Characterization'
+    url: https://www.osti.gov/servlets/purl/1998670
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-understanding-building-energy-use-in-rural-upp
+    title: 'Understanding Building Energy Use in Rural Upper Michigan, Door and Marinette
+      Counties: Basic Building Stock Characterization'
+    url: https://www.osti.gov/servlets/purl/1998669
     source: osti
     license: public-domain
     topic: building_energy
@@ -31349,6 +33555,14 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-understanding-building-energy-use-in-the-albuq
+    title: 'Understanding Building Energy Use in the Albuquerque-Santa Fe Area: Basic
+      Building Stock Characterization'
+    url: https://www.osti.gov/servlets/purl/1998665
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-understanding-building-energy-use-in-the-centr
     title: 'Understanding Building Energy Use in the Central Gulf Coast Area: Basic
       Building Stock Characterization'
@@ -31421,6 +33635,22 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-understanding-building-energy-use-in-the-el-pa
+    title: 'Understanding Building Energy Use in the El Paso-Las Cruces Area: Basic
+      Building Stock Characterization'
+    url: https://www.osti.gov/servlets/purl/1998671
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-understanding-building-energy-use-in-the-evans
+    title: 'Understanding Building Energy Use in the Evansville and the Shawnee National
+      Forest Area: Basic Building Stock Characterization'
+    url: https://www.osti.gov/servlets/purl/1998647
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-understanding-building-energy-use-in-the-great
     title: 'Understanding Building Energy Use in the Greater Memphis Area: Basic Building
       Stock Characterization'
@@ -31441,6 +33671,14 @@ sources:
     title: 'Understanding Building Energy Use in the Jackson-Hattiesburg Area: Basic
       Building Stock Characterization'
     url: https://www.osti.gov/servlets/purl/1998666
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-understanding-building-energy-use-in-the-knoxv
+    title: 'Understanding Building Energy Use in the Knoxville-Chattanooga-Asheville
+      and Greenville, SC Area: Basic Building Stock Characterization'
+    url: https://www.osti.gov/servlets/purl/1998664
     source: osti
     license: public-domain
     topic: building_energy
@@ -31477,10 +33715,34 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-understanding-building-energy-use-in-the-roche
+    title: 'Understanding Building Energy Use in the Rochester-Buffalo and Erie, PA
+      Area: Basic Building Stock Characterization'
+    url: https://www.osti.gov/servlets/purl/1998653
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-understanding-building-energy-use-in-the-rural
     title: 'Understanding Building Energy Use in the Rural Mountain West: Basic Building
       Stock Characterization'
     url: https://www.osti.gov/servlets/purl/1998684
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-understanding-building-energy-use-in-the-shrev
+    title: 'Understanding Building Energy Use in the Shreveport-Texarkana and Alexandria
+      Area: Basic Building Stock Characterization'
+    url: https://www.osti.gov/servlets/purl/1998673
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-understanding-building-energy-use-in-the-spoka
+    title: 'Understanding Building Energy Use in the Spokane-Coeur d''Alene-Lewiston-Yakima-Wenatchee
+      Area: Basic Building Stock Characterization'
+    url: https://www.osti.gov/servlets/purl/1998672
     source: osti
     license: public-domain
     topic: building_energy
@@ -31929,6 +34191,13 @@ sources:
     title: 'Understanding Commercial Building Energy Use in San Antonio to Waco: Building
       Stock Segmentation for Retrofit Planning'
     url: https://www.osti.gov/servlets/purl/2565376
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-understanding-decision-relevant-regional-data-
+    title: 'Understanding Decision-Relevant Regional Data Products: Workshop Report'
+    url: https://www.osti.gov/servlets/purl/2474992
     source: osti
     license: public-domain
     topic: building_energy
@@ -32473,6 +34742,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-updated-assessment-of-water-energy-issues-for-
+    title: Updated Assessment of Water-Energy Issues for Nuclear Power
+    url: https://www.osti.gov/servlets/purl/1989658
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-updates-to-usa-structures-phase-3-completion-2
     title: Updates to USA Structures (Phase 3 Completion) 2024-2025 Technical Report
     url: https://www.osti.gov/servlets/purl/3001745
@@ -32520,6 +34796,13 @@ sources:
   - id: ost-urc-hrc-selection-guidance
     title: URC/HRC Selection Guidance
     url: https://www.osti.gov/servlets/purl/2999089
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-uruguay-s-action-plan-and-experience-for-power
+    title: Uruguay's Action Plan and Experience for Power Sector Decarbonization
+    url: https://www.osti.gov/servlets/purl/2448070
     source: osti
     license: public-domain
     topic: building_energy
@@ -32661,6 +34944,13 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  - id: ost-validation-of-an-inverse-model-of-zone-air-hea
+    title: Validation of an inverse model of zone air heat balance
+    url: https://www.osti.gov/servlets/purl/1572834
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: ost-validation-of-hvac-hardware-in-the-loop-simula
     title: 'Validation of HVAC Hardware-in-the-Loop Simulation for Advanced Control
       Strategies in Smart Homes: Preprint'
@@ -32681,6 +34971,13 @@ sources:
     title: Validation Study of Experimental Insulating and Air-Sealing Technology for
       Enclosed Roof Cavities
     url: https://www.osti.gov/servlets/purl/2297399
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-value-added-process-intensification-in-the-sup
+    title: Value-Added Process Intensification in the Supply Chain
+    url: https://www.osti.gov/servlets/purl/1769598
     source: osti
     license: public-domain
     topic: building_energy
@@ -32770,6 +35067,13 @@ sources:
   - id: ost-washington-housing-electrification-analysis-sl
     title: Washington Housing Electrification Analysis [Slides]
     url: https://www.osti.gov/servlets/purl/2409183
+    source: osti
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ost-waste-to-energy-potential-in-guam-slides
+    title: Waste-to-Energy Potential in Guam [Slides]
+    url: https://www.osti.gov/servlets/purl/3021968
     source: osti
     license: public-domain
     topic: building_energy
