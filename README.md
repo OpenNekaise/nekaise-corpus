@@ -31,14 +31,14 @@ coding agent (Claude Code / Codex) at it; the agent fetches the seed corpus and 
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **8,345** |
-| **Raw originals** | **~53G** (PDF / HTML / source code) |
-| **Extracted text** | **~1.7G** (~1709M chars, **≈427M tokens**) |
+| **Documents** | **8,707** |
+| **Raw originals** | **~57G** (PDF / HTML / source code) |
+| **Extracted text** | **~1.8G** (~1854M chars, **≈463M tokens**) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): building_energy 3,227 · equipment_systems 1,430 · structures_civil 902 · controls_bas 599 · standards_protocols 463 · infrastructure 401 · commissioning_fdd 347 · construction 304 · architecture 299 · materials 227 · urban 146.
+**By topic** (a source gets one at registration): building_energy 3,442 · equipment_systems 1,444 · structures_civil 954 · controls_bas 599 · standards_protocols 466 · infrastructure 433 · commissioning_fdd 347 · construction 321 · architecture 315 · materials 232 · urban 154.
 
-**By license:** open 2,495 · public-domain 3,928 · cc-by-sa 475 · cc-by 1,442 · proprietary-internal 5.
+**By license:** open 2,495 · public-domain 4,123 · cc-by-sa 491 · cc-by 1,593 · proprietary-internal 5.
 
 _Snapshot of the live registry (2026-07-04) — auto-generated from `manifest.jsonl`. The bytes are not
 shipped; run the loader to fetch your own copy. The corpus grows as sources are added to `sources.yaml`._
