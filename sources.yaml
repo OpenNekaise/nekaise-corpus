@@ -16528,6 +16528,150 @@ sources:
     topic: standards_protocols
     format: pdf
 
+  # ---------- EIA consumption surveys — CBECS / RECS (public domain, dig 2026-07-05) ----------
+  - id: eia-cbecs-2018-consumption-highlights
+    title: "2018 CBECS — Consumption and Expenditures Highlights"
+    url: https://www.eia.gov/consumption/commercial/data/2018/index.php?view=consumption
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-cbecs-2018-characteristics-highlights
+    title: "2018 CBECS — Building Characteristics Highlights"
+    url: https://www.eia.gov/consumption/commercial/data/2018/index.php?view=characteristics
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-cbecs-2012-energy-usage-summary
+    title: "2012 CBECS — Energy Usage Summary"
+    url: https://www.eia.gov/consumption/commercial/reports/2012/energyusage/
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-cbecs-2012-building-stock
+    title: "A Look at the U.S. Commercial Building Stock (2012 CBECS)"
+    url: https://www.eia.gov/consumption/commercial/reports/2012/buildstock/
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-cbecs-2012-lighting-trends
+    title: "Trends in Lighting in Commercial Buildings (2012 CBECS)"
+    url: https://www.eia.gov/consumption/commercial/reports/2012/lighting/
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-cbecs-2012-water-consumption
+    title: "Water Consumption in Large Buildings Summary (2012 CBECS)"
+    url: https://www.eia.gov/consumption/commercial/reports/2012/water/
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-recs-2015-overview
+    title: "What's New in How We Use Energy at Home (2015 RECS overview)"
+    url: https://www.eia.gov/consumption/residential/reports/2015/overview/index.php
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-recs-2015-square-footage
+    title: "2015 RECS Square Footage Methodology"
+    url: https://www.eia.gov/consumption/residential/reports/2015/squarefootage/
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-recs-2015-energy-bills
+    title: "One in Three U.S. Households Faced Challenges Paying Energy Bills (2015 RECS)"
+    url: https://www.eia.gov/consumption/residential/reports/2015/energybills/
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-recs-multifamily-pilot
+    title: "Multifamily Building Study Pilot: Methods, Findings, and Lessons Learned"
+    url: https://www.eia.gov/consumption/residential/pdf/Multifamily_Building_Study_Pilot.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-recs-residential-lighting-1996
+    title: "Residential Lighting: Use and Potential Savings (DOE/EIA-0555(96)/2)"
+    url: https://www.eia.gov/consumption/archive/residential/DOE%20EIA-0555(96)%202.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-recs-quality-profile-1996
+    title: "Residential Energy Consumption Survey Quality Profile (DOE/EIA-0555(96)/1)"
+    url: https://www.eia.gov/consumption/archive/residential/DOE%20EIA-0555(96)-1.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-buildings-equipment-costs
+    title: "Updated Buildings Sector Appliance and Equipment Costs and Efficiencies (EIA)"
+    url: https://www.eia.gov/analysis/studies/buildings/equipcosts/pdf/full.pdf
+    source: eia
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+
+  # ---------- UK gov — EFUS / English Housing Survey (Open Government Licence v3.0, dig 2026-07-05) ----------
+  - id: gov-uk-efus-2017-heating-patterns
+    title: "Energy Follow Up Survey 2017: Heating Patterns and Occupancy"
+    url: https://assets.publishing.service.gov.uk/media/61449c5e8fa8f503bc6658dd/efus-heating-patterns-occupancy.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: gov-uk-efus-2017-thermal-comfort
+    title: "Energy Follow Up Survey 2017: Thermal Comfort, Ventilation, Damp and Mould"
+    url: https://assets.publishing.service.gov.uk/media/61449c52d3bf7f05b4562b66/efus-thermal.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: gov-uk-efus-2017-consumption-affordability
+    title: "Energy Follow Up Survey 2017: Household Energy Consumption and Affordability"
+    url: https://assets.publishing.service.gov.uk/media/61449c45e90e07044435c9e7/efus-Household-Energy-Consumption-Affordability.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: gov-uk-efus-2017-lights-appliances
+    title: "Energy Follow Up Survey 2017: Lights, Appliances and Smart Technologies"
+    url: https://assets.publishing.service.gov.uk/media/61449c3cd3bf7f05b2ac20a4/efus-light-appliances-smart-tech.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: gov-uk-efus-2017-fuel-poverty
+    title: "Energy Follow Up Survey 2017: Fuel Poverty"
+    url: https://assets.publishing.service.gov.uk/media/61449f23e90e070446ce5206/efus-fuel-poverty.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: gov-uk-efus-2017-methodology
+    title: "Energy Follow Up Survey 2017: Methodology Report"
+    url: https://assets.publishing.service.gov.uk/media/65312efc26b9b1000daf1bea/efus-methodology-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: gov-uk-ehs-2017-18-headline
+    title: "English Housing Survey Headline Report 2017-18"
+    url: https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/834603/2017-18_EHS_Headline_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+
   # --- discovered (find_sources.py) ---
   - id: arx-a-digitalization-framework-for-smart-maintenan
     title: A Digitalization Framework for Smart Maintenance of Historic Buildings
@@ -17204,6 +17348,13 @@ sources:
     title: 'HexWeather: Hexagonal Spatial Data Aggregation for Weather-Driven Grid Resilience
       Analysis'
     url: https://www.osti.gov/servlets/purl/3002387
+    source: osti
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: ost-integrated-security-safety-consequence-study-o
+    title: Integrated Security-Safety Consequence Study of a Heat Pipe Reactor
+    url: https://www.osti.gov/servlets/purl/3376512
     source: osti
     license: public-domain
     topic: architecture
@@ -43335,6 +43486,13 @@ sources:
     license: public-domain
     topic: commissioning_fdd
     format: pdf
+  - id: ost-a-comprehensive-comparison-of-building-height-
+    title: A Comprehensive Comparison of Building Height Products at a Global Level
+    url: https://www.osti.gov/servlets/purl/3376462
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
   - id: ost-a-field-and-laboratory-study-to-characterize-f
     title: A Field and Laboratory Study to Characterize Fault Prevalence in Residential
       Comfort Systems
@@ -43456,6 +43614,14 @@ sources:
     title: Assessing the Impact of Variable Air Volume Box Damper Stuck Faults Using
       a Building Automation System and Building Energy Simulation Model
     url: https://www.osti.gov/servlets/purl/2441107
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: ost-attention-based-3d-convolutional-neural-networ
+    title: Attention-based 3D – convolutional neural network model for mechanical property
+      predictions using visible light images in metal additive manufacturing
+    url: https://www.osti.gov/servlets/purl/3376473
     source: osti
     license: public-domain
     topic: commissioning_fdd
@@ -44019,6 +44185,13 @@ sources:
   - id: ost-lansce-accelerator-modernization-project-conce
     title: LANSCE Accelerator Modernization Project Conceptual Design Report
     url: https://www.osti.gov/servlets/purl/3005578
+    source: osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: ost-large-scale-field-demonstration-evaluation-pla
+    title: Large Scale Field Demonstration Evaluation Plan
+    url: https://www.osti.gov/servlets/purl/3376514
     source: osti
     license: public-domain
     topic: commissioning_fdd
@@ -55414,6 +55587,14 @@ sources:
     license: public-domain
     topic: equipment_systems
     format: pdf
+  - id: ost-an-online-tool-for-preliminary-design-and-tech
+    title: An Online Tool for Preliminary Design and Techno-Economic Analysis of District
+      Geothermal Heating and Cooling Systems
+    url: https://www.osti.gov/servlets/purl/3376490
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
   - id: ost-an-optimization-approach-for-cryogenic-distill
     title: An optimization approach for cryogenic distillation-based protium removal
       systems in magnetic fusion energy fuel cycles
@@ -58321,6 +58502,14 @@ sources:
     license: public-domain
     topic: equipment_systems
     format: pdf
+  - id: ost-sensitivity-analysis-of-design-parameters-in-r
+    title: Sensitivity analysis of design parameters in RowWise borehole layout for
+      ground heat exchangers
+    url: https://www.osti.gov/servlets/purl/3376488
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
   - id: ost-separating-sensible-and-latent-cooling-with-el
     title: Separating Sensible and Latent Cooling with Electrically Charged Rotating
       Vortexes and Vapor Capturing Air Handler Technology
@@ -58661,6 +58850,14 @@ sources:
     title: Thermoelectric heat pump water heater priced for mass market deployment with
       30% energy savings
     url: https://www.osti.gov/servlets/purl/2588266
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ost-thermoelectric-heating-and-cooling-integrated-
+    title: Thermoelectric heating and cooling–integrated dishwasher with thermal energy
+      storage
+    url: https://www.osti.gov/servlets/purl/3376497
     source: osti
     license: public-domain
     topic: equipment_systems
@@ -59695,6 +59892,21 @@ sources:
     license: open
     topic: infrastructure
     format: md
+  - id: ope-climatologies-at-high-resolution-for-the-earth
+    title: Climatologies at high resolution for the earth’s land surface areas
+    url: https://arxiv.org/pdf/1607.00217
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
+  - id: ope-remote-sensing-image-scene-classification-meet
+    title: 'Remote Sensing Image Scene Classification Meets Deep Learning: Challenges,
+      Methods, Benchmarks, and Opportunities'
+    url: https://arxiv.org/pdf/2005.01094
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
   - id: ost-a-hybrid-cnn-lstm-surrogate-model-for-hyper-re
     title: A hybrid CNN-LSTM surrogate model for hyper-resolution spatiotemporal flood
       forecasting in Norfolk, Virginia
@@ -59926,6 +60138,13 @@ sources:
     title: Predicting Large‐Scale Systematic Missing Pipe Attributes in Water Distribution
       Networks
     url: https://www.osti.gov/servlets/purl/3019029
+    source: osti
+    license: public-domain
+    topic: infrastructure
+    format: pdf
+  - id: ost-reimagining-how-flood-warnings-can-inform-deci
+    title: Reimagining How Flood Warnings Can Inform Decision-Making and Community Actions
+    url: https://www.osti.gov/servlets/purl/3376484
     source: osti
     license: public-domain
     topic: infrastructure
@@ -60811,6 +61030,14 @@ sources:
     title: Elucidating microstructural evolution and hardness variation across friction
       self-piercing riveted Al-7055 using synchrotron x-ray scattering and adva
     url: https://www.osti.gov/servlets/purl/3371925
+    source: osti
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: ost-enhanced-interfacial-strength-in-carbon-fiber-
+    title: Enhanced Interfacial Strength in Carbon Fiber Composites via Mussel-Inspired
+      Sizing Polymers
+    url: https://www.osti.gov/servlets/purl/3376469
     source: osti
     license: public-domain
     topic: materials
@@ -66710,6 +66937,13 @@ sources:
     license: public-domain
     topic: structures_civil
     format: pdf
+  - id: ost-microstructural-stability-of-irradiated-yttriu
+    title: Microstructural stability of irradiated yttrium hydride under thermal cycles
+    url: https://www.osti.gov/servlets/purl/3376485
+    source: osti
+    license: public-domain
+    topic: structures_civil
+    format: pdf
   - id: ost-modeling-offshore-wind-farm-performance-in-coa
     title: Modeling Offshore Wind Farm Performance in Coastal Low-Level Jets Using Coupled
       Mesoscale-Microscale Large Eddy Simulations
@@ -67265,6 +67499,14 @@ sources:
     title: Exploring how urban form and demographics are linked with pedestrian and
       bicycle safety
     url: https://www.osti.gov/servlets/purl/2573078
+    source: osti
+    license: public-domain
+    topic: urban
+    format: pdf
+  - id: ost-large-language-models-for-transportation-resea
+    title: 'Large language models for transportation research: Methodologies, state
+      of the art, and future opportunities'
+    url: https://www.osti.gov/servlets/purl/3376499
     source: osti
     license: public-domain
     topic: urban
