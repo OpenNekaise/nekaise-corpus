@@ -16672,6 +16672,295 @@ sources:
     topic: building_energy
     format: pdf
 
+  # --- curated vein: IEA EBC Annex technical & summary reports (restored after prune-bug; 2026-07-06) ---
+  - id: iea-ebc-annex-74-final-report
+    title: IEA EBC — PDF (1.2MB)
+    url: https://www.iea-ebc.org/Data/publications/Annex_74_final_report.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-annex-78-summary-report-v2
+    title: IEA EBC — PDF (0.3MB)
+    url: https://www.iea-ebc.org/Data/publications/Annex%2078%20summary%20report_V2.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-annex73-project-summary-report
+    title: IEA EBC — PDF (1.2MB)
+    url: https://www.iea-ebc.org/Data/publications/Annex73-Project-Summary-Report.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-16-17-tsr
+    title: IEA EBC — PDF (0.9MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_16-17_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-18-tsr
+    title: IEA EBC — PDF (1.1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_18_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-19-tsr
+    title: IEA EBC — PDF (1.1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_19_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-21-tsr
+    title: IEA EBC — PDF (1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_21_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-22-33-tsr
+    title: IEA EBC — PDF (1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_22-33_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-23-tsr
+    title: IEA EBC — PDF (1.5MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_23_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-24-tsr
+    title: IEA EBC — PDF (0.7MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_24_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-25-tsr1
+    title: IEA EBC — PDF (1.6MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_25_tsr1.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-26-tsr
+    title: IEA EBC — PDF (3.1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_26_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-27-tsr
+    title: IEA EBC — PDF (1.5MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_27_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-28-tsr
+    title: IEA EBC — PDF (2.9MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_28_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-29-psr
+    title: IEA EBC — PDF (3.2MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_29_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-30-tsr-final
+    title: IEA EBC — PDF (1.2MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_30_tsr_final.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-31-tsr
+    title: IEA EBC — PDF (0.5MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_31_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-32-tsr
+    title: IEA EBC — PDF (2.3MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_32_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-34-tsr
+    title: IEA EBC — PDF (0.5MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_34_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-36-tsr
+    title: IEA EBC — PDF (4MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_36_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-37-psr
+    title: IEA EBC — PDF (5.1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_37_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-38-psr
+    title: IEA EBC — PDF (13MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_38_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-39-psr
+    title: IEA EBC — PDF (0.9MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_39_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-40-psr
+    title: IEA EBC — PDF (1.6MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_40_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-41-psr
+    title: IEA EBC — PDF (2.5MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_41_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-42-psr
+    title: IEA EBC — PDF (1.9MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_42_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-43-task-34-final-mgmt-report
+    title: IEA EBC — PDF (0.1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_43_Task_34_Final_Mgmt_Report.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-44-psr
+    title: IEA EBC — PDF (7.8MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_44_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-45-psr
+    title: IEA EBC — PDF (1.7MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_45_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-46-psr
+    title: IEA EBC — PDF (3.3MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_46_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-47-psr
+    title: IEA EBC — PDF (1.1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_47_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-48-psr
+    title: IEA EBC — PDF (2.7MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_48_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-84-project-summary-report-20251
+    title: IEA EBC — PDF (0.8MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex%2084_Project_Summary_Report_20251.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-psr-annex49
+    title: IEA EBC — PDF (1.9MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_PSR_Annex49.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-psr-annex50
+    title: IEA EBC — PDF (5.2MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_PSR_Annex50.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-psr-annex54
+    title: IEA EBC — PDF (0.8MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_PSR_Annex54.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-sr-annex62
+    title: IEA EBC — PDF (2.7MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_SR_Annex62.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-energy-flexible-buildings-towards-resilient-low-carbon-energ
+    title: IEA EBC — PDF (1.7MB)
+    url: https://www.iea-ebc.org/Data/publications/Energy%20Flexible%20Buildings%20Towards%20Resilient%20Low%20Carbon%20Energy%20Systems%20(Annex%2082)%20Summary%20report.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-iea-ebc-annex-86-sr
+    title: IEA EBC — PDF (0.3MB)
+    url: https://www.iea-ebc.org/Data/publications/IEA%20EBC_Annex%2086_SR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-iea-ebc-annex72-summaryreport-v2-0
+    title: IEA EBC — PDF (0.6MB)
+    url: https://www.iea-ebc.org/Data/publications/IEA-EBC-Annex72_summaryReport_v2.0.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-international-energy-agency-resilient-cooling-of-buildings-p
+    title: IEA EBC — PDF (1.9MB)
+    url: https://www.iea-ebc.org/Data/publications/International%20Energy%20Agency%20-%20Resilient%20Cooling%20of%20Buildings%20-%20Project%20Summary%20Report%20(Annex%2080).pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+
   # --- discovered (find_sources.py) ---
   - id: arx-a-digitalization-framework-for-smart-maintenan
     title: A Digitalization Framework for Smart Maintenance of Historic Buildings
@@ -18454,14 +18743,6 @@ sources:
   - id: arx-merlin-a-discovery-engine-for-photonic-and-hyb
     title: 'MerLin: A Discovery Engine for Photonic and Hybrid Quantum Machine Learning'
     url: https://arxiv.org/pdf/2602.11092
-    source: arxiv
-    license: open
-    topic: building_energy
-    format: pdf
-  - id: arx-method-development-for-lowering-supply-tempera
-    title: Method development for lowering supply temperatures in existing buildings
-      using minimal building information and demand measurement data
-    url: https://arxiv.org/pdf/2311.01800
     source: arxiv
     license: open
     topic: building_energy
@@ -28608,14 +28889,6 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: ost-empirical-validation-of-building-energy-modeli
-    title: 'Empirical Validation of Building Energy Modeling Input Parameters: Cooling
-      Performance Curves of a Direct Expansion Coil'
-    url: https://www.osti.gov/servlets/purl/2333822
-    source: osti
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: ost-empirical-validation-of-building-envelope-in-a
     title: Empirical Validation of Building Envelope in a Commercial Test Building
     url: https://www.osti.gov/servlets/purl/1923214
@@ -37675,14 +37948,6 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: ost-sensorium-commissioning-abundant-sensors-with-
-    title: 'Sensorium: commissioning abundant sensors with augmented reality and QR
-      codes'
-    url: https://www.osti.gov/servlets/purl/2324045
-    source: osti
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: ost-sera-a-hydrogen-infrastructure-capacity-expans
     title: 'SERA: A Hydrogen Infrastructure Capacity Expansion Model'
     url: https://www.osti.gov/servlets/purl/3145666
@@ -38783,13 +39048,6 @@ sources:
   - id: ost-system-study-high-pressure-safety-injection-19
     title: 'System Study: High-Pressure Safety Injection 1998-2024'
     url: https://www.osti.gov/servlets/purl/3376025
-    source: osti
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: ost-systematic-approach-to-define-a-prototype-buil
-    title: 'Systematic approach to define a prototype building model: Convenience Store'
-    url: https://www.osti.gov/servlets/purl/2324007
     source: osti
     license: public-domain
     topic: building_energy
@@ -45894,6 +46152,13 @@ sources:
     title: Using micro-XRF to characterize chloride ingress through cold joints in 3D
       printed concrete
     url: https://www.osti.gov/servlets/purl/2471414
+    source: osti
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: ost-virginia-energy-resiliency-study
+    title: Virginia Energy Resiliency Study
+    url: https://www.osti.gov/servlets/purl/3376123
     source: osti
     license: public-domain
     topic: construction
@@ -59905,6 +60170,13 @@ sources:
     url: https://arxiv.org/pdf/2005.01094
     source: openalex
     license: open
+    topic: infrastructure
+    format: pdf
+  - id: ope-the-world-s-user-generated-road-map-is-more-th
+    title: The world’s user-generated road map is more than 80% complete
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0180698&type=printable
+    source: openalex
+    license: cc-by
     topic: infrastructure
     format: pdf
   - id: ost-a-hybrid-cnn-lstm-surrogate-model-for-hyper-re
