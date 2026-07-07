@@ -6,10 +6,10 @@ text/<id>.md, and records everything (incl. sha256) in manifest.jsonl. The commi
 REPRODUCIBILITY record: a fresh clone runs this to fetch the SAME bytes, and the run reports how many
 reproduced exactly (sha256 matches the manifest) vs drifted (the source changed upstream) vs new.
 
-  python build_corpus.py            # fetch missing; report reproduced / drifted / new vs manifest
-  python build_corpus.py --force    # re-fetch everything
-  python build_corpus.py --only controls_bas
-  python build_corpus.py --verify   # no download: re-hash local raw files against the manifest
+  python scripts/build_corpus.py            # fetch missing; report reproduced / drifted / new vs manifest
+  python scripts/build_corpus.py --force    # re-fetch everything
+  python scripts/build_corpus.py --only controls_bas
+  python scripts/build_corpus.py --verify   # no download: re-hash local raw files against the manifest
 
 Idempotent, dedups identical bytes by sha256, checkpoints the manifest after every fetch. raw/ and
 text/ are git-ignored; respect each source's license (see README.md).
@@ -27,7 +27,7 @@ from pathlib import Path
 import requests
 import yaml
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 RAW = HERE / "raw"
 TEXT = HERE / "text"
 MANIFEST = HERE / "manifest.jsonl"

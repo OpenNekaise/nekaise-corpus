@@ -18,9 +18,9 @@ paginate deeper cheaply (only genuinely-new candidates cost an xoai lookup).
 Entries use the `oer-` id prefix and are INSERTED above the `# --- discovered` marker (curated region)
 so `prune_corpus.py` never touches them.
 
-    python find_books.py                                   # propose
-    python find_books.py --append                          # insert (then load + prune)
-    python find_books.py --per 25 --depth 150 --max 200 --append
+    python scripts/find_books.py                                   # propose
+    python scripts/find_books.py --append                          # insert (then load + prune)
+    python scripts/find_books.py --per 25 --depth 150 --max 200 --append
 """
 from __future__ import annotations
 
@@ -34,7 +34,7 @@ from pathlib import Path
 import requests
 import yaml
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 SEARCH = "https://library.oapen.org/rest/search"
 OAI = "https://library.oapen.org/oai/request"
 UA = {"User-Agent": "nekaise-corpus/find_books"}

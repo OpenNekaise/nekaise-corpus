@@ -82,7 +82,7 @@ substrate; the results above confirm both.
 
 ```bash
 # 1. fetch the corpus (this repo)
-python build_corpus.py
+python scripts/build_corpus.py
 # 2. in nekaise-studio (GPU; no API needed):
 python experiments/granite-4.1-3b-building/build_cpt_data.py          # corpus -> CPT trainset
 NEKAISE_METHOD=cpt NEKAISE_STAGE=cpt_gran_full NEKAISE_CPT_FULL=1 \

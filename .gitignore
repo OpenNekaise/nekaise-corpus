@@ -3,12 +3,17 @@
 raw/
 text/
 
-# Daily-dig run logs (scripts/dig.sh)
+# Agent scratch space — one-off scripts & notes stay local (see workspace/README.md)
+workspace/*
+!workspace/README.md
+
+# Daily-dig / marathon run logs (scripts/dig.sh, scripts/marathon.sh)
 logs/
 
 # Python
 __pycache__/
 *.py[cod]
+.venv/
 
 # OS / editor
 .DS_Store

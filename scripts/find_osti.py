@@ -10,8 +10,8 @@ public-domain, discovered → pruned normally).
 The marathon rotates --page each round to harvest DEEPER; prune's DOMAIN gate drops the DOE-science
 tail (fusion / bio / HEP …) that isn't built-environment.
 
-    python find_osti.py                                    # propose (page 1)
-    python find_osti.py --rows 50 --pages 2 --page 1 --max 400 --append
+    python scripts/find_osti.py                                    # propose (page 1)
+    python scripts/find_osti.py --rows 50 --pages 2 --page 1 --max 400 --append
 """
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ from pathlib import Path
 import requests
 import yaml
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 API = "https://www.osti.gov/api/v1/records"
 
 # built-environment subjects (OSTI is DOE-science-heavy, so prune trims the off-topic tail).
@@ -148,7 +148,7 @@ def main() -> None:
         by_topic[h["topic"]] = by_topic.get(h["topic"], 0) + 1
     print(f"# {len(out)} NEW OSTI full-text records (public-domain, deduped vs manifest + registry)")
     print(f"# by topic: {by_topic}")
-    print("# --- review, then --append, then build_corpus.py ---")
+    print("# --- review, then --append, then scripts/build_corpus.py ---")
     print(yaml.safe_dump(out, sort_keys=False, allow_unicode=True))
 
     if args.append and out:

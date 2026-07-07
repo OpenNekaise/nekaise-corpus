@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # dig.sh — daily corpus-growth round, run headless by the crontab entry that scripts/install_cron.sh
-# installs. It drives Claude Code through the `dig` loop (skills/dig.md): discover new open
+# installs. It drives Claude Code through the `dig` loop (.claude/skills/dig/SKILL.md): discover new open
 # building-energy sources, append + load + prune, and COMMIT LOCALLY. It never pushes — you review
 # the commits and push. Bounded by a wall-clock cap (default 3h). Logs to logs/dig-<ts>.log.
 #
@@ -25,10 +25,10 @@ if [ -z "$CLAUDE" ]; then
   exit 127
 fi
 
-PROMPT='Run ONE nekaise-corpus growth round, following skills/dig.md exactly.
-Steps: (1) python find_sources.py --per 20 --append ; (2) python find_github.py --append ;
+PROMPT='Run ONE nekaise-corpus growth round, following .claude/skills/dig/SKILL.md exactly.
+Steps: (1) python scripts/find_sources.py --per 20 --append ; (2) python scripts/find_github.py --append ;
 (3) briefly web-search for one or two NEW open building-energy veins we do not tap yet and add them;
-(4) python build_corpus.py ; (5) python prune_corpus.py --apply ;
+(4) python scripts/build_corpus.py ; (5) python scripts/prune_corpus.py --apply ;
 (6) git add sources.yaml manifest.jsonl && git commit with a message summarizing what landed.
 Do NOT git push. Never commit raw/ or text/. Investigate and report any load failures. End with a
 one-paragraph summary of what was added this round.'

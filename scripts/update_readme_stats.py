@@ -13,7 +13,7 @@ import time
 from collections import Counter
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 README = HERE / "README.md"
 START = "<!-- STATS:START -->"
 END = "<!-- STATS:END -->"

@@ -11,9 +11,9 @@ Curated on purpose: GitHub's license auto-detection is unreliable (many building
 BSD-style licenses the API reports as null), so we hardcode the license per repo and only list ones
 that are clearly redistributable. Depth is docs + READMEs only — high signal, low noise.
 
-    python find_github.py                 # propose entries for every curated repo
-    python find_github.py --repo lbl-srg/modelica-buildings   # just one repo
-    python find_github.py --append        # append under `sources:` in sources.yaml, then load + prune
+    python scripts/find_github.py                 # propose entries for every curated repo
+    python scripts/find_github.py --repo lbl-srg/modelica-buildings   # just one repo
+    python scripts/find_github.py --append        # append under `sources:` in sources.yaml, then load + prune
 
 No key needed (unauthenticated GitHub API = 60 req/hr, ~2 calls/repo). Set GITHUB_TOKEN / GH_TOKEN to
 raise the limit.
@@ -30,7 +30,7 @@ from pathlib import Path
 import requests
 import yaml
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 API = "https://api.github.com"
 
 # Curated, clearly-permissive (BSD / MIT / Apache) building-energy repos. Extend freely.
@@ -325,7 +325,7 @@ def main() -> None:
     print(f"# {len(out)} NEW GitHub text files (deduped vs manifest + registry)")
     print(f"# by repo:   {by_src}")
     print(f"# by format: {by_fmt}")
-    print("# --- review, then --append (or paste under `sources:`), then run build_corpus.py ---")
+    print("# --- review, then --append (or paste under `sources:`), then run scripts/build_corpus.py ---")
     print(yaml.safe_dump(out, sort_keys=False, allow_unicode=True))
 
     if args.append and out:

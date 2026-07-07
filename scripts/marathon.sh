@@ -39,16 +39,16 @@ while [ "$(date +%s)" -lt "$END" ]; do
   say "=== round $round (disk ${avail_kb}KB free) ==="
 
   # deep OSTI harvest (the scale lever: 200k+ public-domain records/query) — rotate page deeper each round
-  python find_osti.py  --rows 50 --pages 2 --page $(( 1 + (round-1)*2 )) --max 400 --append >>"$LOG" 2>&1 || say "  find_osti FAILED"
+  python scripts/find_osti.py  --rows 50 --pages 2 --page $(( 1 + (round-1)*2 )) --max 400 --append >>"$LOG" 2>&1 || say "  find_osti FAILED"
   # rotate the OAPEN offset deeper each round (search is ~20s/call → 1 page per subject per round)
-  python find_books.py --per 25 --depth 25 --offset $(( (round-1)*25 )) --max 200 --append >>"$LOG" 2>&1 || say "  find_books FAILED"
+  python scripts/find_books.py --per 25 --depth 25 --offset $(( (round-1)*25 )) --max 200 --append >>"$LOG" 2>&1 || say "  find_books FAILED"
   if [ $(( (round-1) % 4 )) -eq 0 ]; then
-    python find_sources.py --per 20 --append        >>"$LOG" 2>&1 || say "  find_sources FAILED"
-    python find_github.py  --append                 >>"$LOG" 2>&1 || say "  find_github FAILED"
+    python scripts/find_sources.py --per 20 --append        >>"$LOG" 2>&1 || say "  find_sources FAILED"
+    python scripts/find_github.py  --append                 >>"$LOG" 2>&1 || say "  find_github FAILED"
   fi
-  python build_corpus.py                            >>"$LOG" 2>&1 || say "  build_corpus FAILED"
-  python prune_corpus.py --apply                    >>"$LOG" 2>&1 || say "  prune FAILED"
-  python update_readme_stats.py                     >>"$LOG" 2>&1 || true
+  python scripts/build_corpus.py                            >>"$LOG" 2>&1 || say "  build_corpus FAILED"
+  python scripts/prune_corpus.py --apply                    >>"$LOG" 2>&1 || say "  prune FAILED"
+  python scripts/update_readme_stats.py                     >>"$LOG" 2>&1 || true
 
   stats=$(python3 -c "import json;r=[json.loads(l) for l in open('manifest.jsonl') if l.strip()];ok=[x for x in r if x.get('status')=='ok'];print(len(ok), sum(x.get('text_chars',0) for x in ok)//4)" 2>/dev/null || echo "0 0")
   DOCS=${stats% *}; TOK=${stats#* }; TOKM=$(( TOK/1000000 ))

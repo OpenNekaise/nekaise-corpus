@@ -7,9 +7,9 @@ BFS-crawls a seed within ONE domain + path prefix, collects content-page URLs, a
 its own sha256 and the crawl stays REPRODUCIBLE: the registry freezes the page list, and a clone
 fetches that frozen list -- it does not re-crawl, so it cannot drift.
 
-    python crawl_docs.py --seed https://eclipse-volttron.readthedocs.io/en/latest/ \
+    python scripts/crawl_docs.py --seed https://eclipse-volttron.readthedocs.io/en/latest/ \
         --prefix /en/latest/ --source volttron --topic controls_bas --license open --max 80
-    # add --append to write the discovered pages into sources.yaml, then run build_corpus.py
+    # add --append to write the discovered pages into sources.yaml, then run scripts/build_corpus.py
 
 Crawled pages get id prefix `crawl-`, so prune_corpus.py quality-gates them like discovered sources.
 """
@@ -27,7 +27,7 @@ import requests
 import yaml
 from bs4 import BeautifulSoup
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 UA = "nekaise-studio-hvac-corpus/0.1 (research)"
 SKIP_EXT = re.compile(r"\.(pdf|zip|png|jpe?g|gif|svg|js|css|woff2?|ico|tar|gz|whl|epub|json|xml)$", re.I)
 

@@ -7,8 +7,8 @@ scanned / math-heavy PDFs), non-English, or off-topic (too few building/energy k
 only *discovered* sources (id prefix oa-/ope-/ost-/arx-/crawl-/gh-); hand-curated originals are left
 alone.
 
-    python prune_corpus.py            # dry run -- report what would be pruned
-    python prune_corpus.py --apply    # prune (delete files, rewrite manifest + sources.yaml)
+    python scripts/prune_corpus.py            # dry run -- report what would be pruned
+    python scripts/prune_corpus.py --apply    # prune (delete files, rewrite manifest + sources.yaml)
 """
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ from pathlib import Path
 
 import yaml
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 
 DOMAIN = re.compile(
     r"build|hvac|energy|thermal|heat|cool|ventil|chiller|boiler|refriger|damper|ahu|vav|setpoint|"

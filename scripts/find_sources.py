@@ -10,8 +10,8 @@ Three backends, all free / no key:
 Keeps candidates with a fetchable PDF, dedups against the current manifest + registry, and PROPOSES
 ready-to-paste `sources.yaml` entries. Review, then `--append` (or paste) and run the loader.
 
-    python find_sources.py --per 20            # propose
-    python find_sources.py --per 20 --append   # append under `sources:` in sources.yaml, then load + prune
+    python scripts/find_sources.py --per 20            # propose
+    python scripts/find_sources.py --per 20 --append   # append under `sources:` in sources.yaml, then load + prune
 """
 from __future__ import annotations
 
@@ -26,7 +26,7 @@ from urllib.parse import urlparse
 import requests
 import yaml
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 MAILTO = "corpus@opennekaise.org"
 
 # (search term -> our corpus topic). Many specific sub-topic queries -> more unique results.
@@ -288,7 +288,7 @@ def main() -> None:
     print(f"# by topic:   {by_topic}")
     print(f"# by source:  {by_src}")
     print(f"# by license: {by_lic}")
-    print("# --- review, then --append (or paste under `sources:`), then run build_corpus.py ---")
+    print("# --- review, then --append (or paste under `sources:`), then run scripts/build_corpus.py ---")
     print(yaml.safe_dump(out, sort_keys=False, allow_unicode=True))
 
     if args.append and out:

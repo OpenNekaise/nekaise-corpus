@@ -8,8 +8,8 @@ with the gaps flagged. It is self-updating: run it after every load and the numb
 source it does not recognize is reported as "uncategorized" so the map can't silently drift -- add
 that source to SOURCE_GENRE (one line) when it shows up.
 
-    python coverage.py            # print the coverage table (gaps first)
-    python coverage.py --sources  # also dump the raw per-source counts
+    python scripts/coverage.py            # print the coverage table (gaps first)
+    python scripts/coverage.py --sources  # also dump the raw per-source counts
 """
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ import json
 from collections import Counter
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 MANIFEST = HERE / "manifest.jsonl"
 
 # The UNIVERSE of building-energy data kinds (the target list). Curated + slowly grown: add a row
