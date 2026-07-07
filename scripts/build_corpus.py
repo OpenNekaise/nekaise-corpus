@@ -9,10 +9,12 @@ reproduced exactly (sha256 matches the manifest) vs drifted (the source changed 
   python scripts/build_corpus.py            # fetch missing; report reproduced / drifted / new vs manifest
   python scripts/build_corpus.py --force    # re-fetch everything
   python scripts/build_corpus.py --only controls_bas
+  python scripts/build_corpus.py --workers 16   # more parallel downloads (default 8, ≤2 per host)
   python scripts/build_corpus.py --verify   # no download: re-hash local raw files against the manifest
 
-Idempotent, dedups identical bytes by sha256, checkpoints the manifest after every fetch. raw/ and
-text/ are git-ignored; respect each source's license (see README.md).
+Idempotent, dedups identical bytes by sha256, checkpoints the manifest every 25 fetches. Downloads
+run in parallel but politely: at most 2 in-flight requests per host regardless of --workers. raw/
+and text/ are git-ignored; respect each source's license (see README.md).
 """
 from __future__ import annotations
 
@@ -21,8 +23,11 @@ import hashlib
 import io
 import json
 import subprocess
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+from urllib.parse import urlparse
 
 import requests
 import yaml
@@ -40,10 +45,26 @@ UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
 TIMEOUT = 45
 # plain-text source formats (GitHub READMEs / docs, .rst, etc.): stored verbatim, no parsing.
 TEXT_FORMATS = {"md", "rst", "txt"}
+# politeness: never more than this many in-flight requests against one host, however many workers.
+PER_HOST = 2
+
+_host_sems: dict[str, threading.BoundedSemaphore] = {}
+_host_sems_lock = threading.Lock()
+
+
+def _host_sem(url: str) -> threading.BoundedSemaphore:
+    host = urlparse(url).netloc.lower()
+    with _host_sems_lock:
+        return _host_sems.setdefault(host, threading.BoundedSemaphore(PER_HOST))
 
 
 def sha256_bytes(b: bytes) -> str:
     return hashlib.sha256(b).hexdigest()
+
+
+def clean_text(s: str) -> str:
+    """Drop lone surrogates etc. that pypdf sometimes emits — they crash write_text()."""
+    return s.encode("utf-8", "replace").decode("utf-8")
 
 
 def extract_text_plain(data: bytes) -> str:
@@ -176,7 +197,7 @@ def fetch_one(src: dict) -> dict:
         rec["raw_path"] = str(raw_path.relative_to(HERE))
 
         try:
-            txt = extract_for(fmt, data)
+            txt = clean_text(extract_for(fmt, data))
         except Exception as e:
             txt, rec["error"] = "", f"text-extract: {e}"
         if txt:
@@ -196,9 +217,16 @@ def fetch_one(src: dict) -> dict:
     return rec
 
 
+def fetch_polite(src: dict) -> dict:
+    with _host_sem(src["url"]):
+        return fetch_one(src)
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--force", action="store_true", help="re-fetch everything")
+    ap.add_argument("--workers", type=int, default=8,
+                    help="parallel downloads (per-host capped at %d); 1 = sequential" % PER_HOST)
     ap.add_argument("--only", default="", help="comma-separated topics to limit to")
     ap.add_argument("--reextract", action="store_true",
                     help="re-extract text from existing raw files; no download")
@@ -220,7 +248,7 @@ def main() -> None:
             data = (HERE / rp).read_bytes()
             fmt = r.get("format", "pdf")
             try:
-                txt = extract_for(fmt, data)
+                txt = clean_text(extract_for(fmt, data))
             except Exception as e:
                 txt, r["error"] = "", f"reextract: {e}"
             if txt:
@@ -267,23 +295,30 @@ def main() -> None:
 
     # the committed manifest's sha256 = what WE fetched; compare to detect upstream drift.
     expected = {sid: r.get("sha256") for sid, r in manifest.items() if r.get("sha256")}
-    repro = drift = new = 0
+    repro = drift = new = done = 0
     print(f"sources: {len(srcs)} total, {len(todo)} to fetch "
-          f"({'forced' if args.force else 'missing only'})")
-    for i, s in enumerate(todo, 1):
-        print(f"[{i}/{len(todo)}] {s['id']} ...", end=" ", flush=True)
-        rec = fetch_one(s)
-        manifest[rec["id"]] = rec
-        if rec["status"] == "ok":
-            exp = expected.get(rec["id"])
-            tag = "reproduced" if exp == rec["sha256"] else ("DRIFTED" if exp else "new")
-            repro += exp == rec["sha256"]
-            drift += bool(exp) and exp != rec["sha256"]
-            new += not exp
-            print(f"ok  {rec['bytes'] // 1024}KB  {rec['text_chars']} chars  [{tag}]")
-        else:
-            print(f"FAIL http={rec['http_status']} {rec.get('error')}")
-        write_manifest(manifest)  # checkpoint after each
+          f"({'forced' if args.force else 'missing only'}, {args.workers} workers)")
+    with ThreadPoolExecutor(max_workers=max(1, args.workers)) as pool:
+        futures = {pool.submit(fetch_polite, s): s for s in todo}
+        for fut in as_completed(futures):
+            rec = fut.result()
+            done += 1
+            manifest[rec["id"]] = rec
+            if rec["status"] == "ok":
+                exp = expected.get(rec["id"])
+                tag = "reproduced" if exp == rec["sha256"] else ("DRIFTED" if exp else "new")
+                repro += exp == rec["sha256"]
+                drift += bool(exp) and exp != rec["sha256"]
+                new += not exp
+                print(f"[{done}/{len(todo)}] {rec['id']}  ok  {rec['bytes'] // 1024}KB  "
+                      f"{rec['text_chars']} chars  [{tag}]", flush=True)
+            else:
+                print(f"[{done}/{len(todo)}] {rec['id']}  FAIL http={rec['http_status']} "
+                      f"{rec.get('error')}", flush=True)
+            if done % 25 == 0:
+                write_manifest(manifest)  # checkpoint so an interrupted run loses <25 fetches
+    if todo:
+        write_manifest(manifest)
 
     seen: dict = {}
     for r in manifest.values():

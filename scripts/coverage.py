@@ -25,6 +25,7 @@ MANIFEST = HERE / "manifest.jsonl"
 # only when a genuinely new KIND of source appears. The "have" count is computed, never hand-typed.
 GENRES = [
     ("research_papers",      "arXiv · OpenAlex · OA journals"),
+    ("books_textbooks",      "OAPEN / IntechOpen CC-BY books · OER textbooks"),
     ("us_gov_lab_reports",   "OSTI · NREL · PNNL · LBNL · ORNL · DOE/FEMP"),
     ("international_bodies",  "IEA EBC · EU JRC · IPEEC · REHVA"),
     ("codes_standards",      "IECC · ASHRAE 90.1 / G36 · Title 24 · ISO/EN"),
@@ -57,6 +58,26 @@ SOURCE_GENRE = {
     "patents": "patents",
 }
 
+# prefix fallback for the long tail of source buckets (an exact SOURCE_GENRE match wins).
+# Order matters: first hit applies.
+PREFIX_GENRE = [
+    (("gh_",), "software_sim_docs"),
+    (("oapen", "intechopen", "textbook", "oer"), "books_textbooks"),
+    (("gov_uk",), "international_bodies"),
+    (("gov_", "doe", "eere", "epa", "fhwa", "fema", "usgs", "osha", "gsa", "nps", "hud", "usda",
+      "wbdg", "nist", "nasa", "ornl", "sandia", "access_board", "noaa", "usbr"), "us_gov_lab_reports"),
+]
+
+
+def genre_of(src: str) -> str | None:
+    g = SOURCE_GENRE.get(src)
+    if g:
+        return g
+    for prefixes, genre in PREFIX_GENRE:
+        if src.startswith(prefixes):
+            return genre
+    return None
+
 
 def status(n: int) -> str:
     if n == 0:
@@ -80,7 +101,7 @@ def main() -> None:
     counts = {g: 0 for g, _ in GENRES}
     uncategorized: Counter = Counter()
     for src, n in by_source.items():
-        g = SOURCE_GENRE.get(src)
+        g = genre_of(src or "")
         if g:
             counts[g] += n
         else:

@@ -38,8 +38,9 @@ hand as `/dig` any time you want to grow the corpus in one shot.
    ```
    python scripts/prune_corpus.py --apply        # drop thin / garbage / non-English / off-topic
    ```
-   The pruner only touches *discovered/crawled* docs (below the `# --- discovered` marker), never
-   hand-curated ones.
+   The pruner only touches *machine-discovered* docs (id prefixes `oa-`/`ope-`/`ost-`/`arx-`/
+   `crawl-`/`gh-`/`oer-`), never hand-curated ones; it edits `sources.yaml` in place and validates
+   the result before writing.
 
 5. **Commit locally — do NOT push:**
    ```

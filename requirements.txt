@@ -1,6 +1,6 @@
-# Pinned so a clone reproduces the same corpus. Raw bytes (sha256 in manifest.jsonl) are the
-# canonical reproducibility anchor and are version-independent; the EXTRACTED text in text/ is
-# derived and depends on pypdf / beautifulsoup4, so pin those for byte-identical text too.
+# Raw bytes (sha256 in manifest.jsonl) are the reproducibility anchor and are version-independent.
+# The EXTRACTED text in text/ is derived and can vary slightly across pypdf / beautifulsoup4
+# versions — pin exact versions (==) if you need byte-identical text across machines.
 requests>=2.31
 pyyaml>=6.0
 pypdf>=6.0,<7

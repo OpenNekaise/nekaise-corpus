@@ -3,9 +3,11 @@
 
 Next-token CPT memorizes text literally, so junk in = junk out. This removes, from the manifest +
 registry + disk, docs that are: failed downloads, thin/empty, garbage extractions (symbol soup from
-scanned / math-heavy PDFs), non-English, or off-topic (too few building/energy keywords). It prunes
-only *discovered* sources (id prefix oa-/ope-/ost-/arx-/crawl-/gh-); hand-curated originals are left
-alone.
+scanned / math-heavy PDFs), non-English, off-topic (too few built-environment keywords; books use a
+length-scaled density gate), or byte-duplicates (same sha256 under two ids). It prunes only
+*machine-discovered* sources (id prefix oa-/ope-/ost-/arx-/crawl-/gh-/oer-); hand-curated originals
+are left alone. sources.yaml is edited in place per dropped id — comments, section markers, and
+entries of any other id are preserved wherever they sit in the file.
 
     python scripts/prune_corpus.py            # dry run -- report what would be pruned
     python scripts/prune_corpus.py --apply    # prune (delete files, rewrite manifest + sources.yaml)
@@ -43,8 +45,16 @@ def body(text: str) -> str:
     return text.split("\n---\n\n", 1)[-1] if "\n---\n\n" in text else text
 
 
-def quality(text: str) -> str:
-    t = body(text)[:20000]
+def quality(text: str, fmt: str = "pdf") -> str:
+    bod = body(text)
+    # Long PDFs (books, reports) are judged over a 100k-char window: their first 20k chars are
+    # front matter (title pages, TOC dot-leaders) that fails alpha-ratio checks and under-represents
+    # the content. Their off-topic gate is density-based, calibrated 2026-07-07 on a 300-book OAPEN
+    # sample: clearly-unrelated books score < 8 DOMAIN hits / 1000 words; real AEC books score
+    # 30-150. Plain-text formats (source code, repo docs) keep the 20k/absolute gate — code
+    # identifiers have book-unlike word statistics and would be falsely killed by the density rule.
+    is_book = fmt == "pdf" and len(bod) > 120_000
+    t = bod[:100_000] if is_book else bod[:20_000]
     if len(t.strip()) < 2000:
         return "thin"
     if sum(c.isalpha() for c in t) / len(t) < 0.55:
@@ -54,19 +64,55 @@ def quality(text: str) -> str:
         return "thin"
     if len(EN.findall(t)) / len(words) < 0.04:
         return "non-english"
-    if len(DOMAIN.findall(t)) < 10:
+    hits = len(DOMAIN.findall(t))
+    if (1000 * hits / len(words) < 8.0) if is_book else (hits < 10):
         return "off-topic"
     return "ok"
 
 
 def discovered(i: str) -> bool:
-    return i.startswith(("oa-", "ope-", "ost-", "arx-", "crawl-", "gh-"))
+    return i.startswith(("oa-", "ope-", "ost-", "arx-", "crawl-", "gh-", "oer-"))
 
 
-def emit_entry(r: dict) -> str:
-    e = {k: r[k] for k in ("id", "title", "url", "source", "license", "topic", "format")}
-    d = yaml.safe_dump([e], sort_keys=False, allow_unicode=True)
-    return "".join(("  " + ln + "\n") if ln else "\n" for ln in d.splitlines())
+ENTRY_RE = re.compile(r"^  - id:\s*['\"]?(.+?)['\"]?\s*$")
+
+
+def rewrite_sources(drop: set) -> int:
+    """Delete dropped entries from sources.yaml IN PLACE, preserving everything else byte-for-byte
+    (comments, section markers, hand formatting). Position-agnostic: an entry is removed because
+    its id is in `drop`, never because of where it sits relative to a marker — the old
+    head/marker-split rewrite wiped non-prefixed veins living below the marker (2026-07-06).
+    Validates the result (parses, exactly the dropped ids gone) before writing; raises otherwise."""
+    path = HERE / "sources.yaml"
+    old_text = path.read_text()
+    lines = old_text.splitlines(keepends=True)
+    out: list[str] = []
+    removed = 0
+    i = 0
+    while i < len(lines):
+        m = ENTRY_RE.match(lines[i])
+        if not m:
+            out.append(lines[i])
+            i += 1
+            continue
+        j = i + 1
+        while j < len(lines) and re.match(r"^    \s*\S", lines[j]):  # entry field lines
+            j += 1
+        if m.group(1) in drop:
+            removed += 1
+        else:
+            out.extend(lines[i:j])
+        i = j
+    new_text = "".join(out)
+    entries = yaml.safe_load(new_text)["sources"]
+    old_count = len(yaml.safe_load(old_text)["sources"])
+    leftover = {e["id"] for e in entries} & drop
+    if leftover:
+        raise RuntimeError(f"rewrite failed to remove {len(leftover)} ids, e.g. {sorted(leftover)[:3]}")
+    if len(entries) != old_count - removed:
+        raise RuntimeError(f"rewrite entry-count mismatch: {old_count} - {removed} != {len(entries)}")
+    path.write_text(new_text)
+    return removed
 
 
 def main() -> None:
@@ -91,7 +137,7 @@ def main() -> None:
         if not tp or not (HERE / tp).exists():
             drop[r["id"]] = "no-text"
             continue
-        q = quality((HERE / tp).read_text())
+        q = quality((HERE / tp).read_text(), r.get("format", "pdf"))
         if q != "ok":
             drop[r["id"]] = q
             continue
@@ -101,6 +147,22 @@ def main() -> None:
         else:
             seen_titles.add(tk)
 
+    # byte-dup gate: identical sha256 under two ids (same file reached via two URLs) would be
+    # double-weighted by CPT. Drop the discovered copy, keep curated; curated==curated is reported.
+    by_sha: dict[str, list] = {}
+    for r in manifest:
+        if r.get("status") == "ok" and r.get("sha256") and r["id"] not in drop:
+            by_sha.setdefault(r["sha256"], []).append(r)
+    for twins in by_sha.values():
+        if len(twins) < 2:
+            continue
+        twins.sort(key=lambda r: (discovered(r["id"]), r["id"]))  # curated first, then stable
+        for r in twins[1:]:
+            if discovered(r["id"]):
+                drop[r["id"]] = "dup-bytes"
+            else:
+                print(f"  note: same bytes, both hand-curated (kept): {twins[0]['id']} == {r['id']}")
+
     disc_total = sum(1 for r in manifest if discovered(r["id"]))
     print(f"discovered docs: {disc_total} | would prune: {dict(Counter(drop.values()))} "
           f"(total {len(drop)})")
@@ -108,6 +170,7 @@ def main() -> None:
         print("dry run -- pass --apply to prune")
         return
 
+    removed = rewrite_sources(set(drop))  # validate/rewrite the registry BEFORE touching files
     for r in manifest:
         if r["id"] in drop:
             for p in (r.get("raw_path"), r.get("text_path")):
@@ -115,13 +178,9 @@ def main() -> None:
                     (HERE / p).unlink()
     keep = [r for r in manifest if r["id"] not in drop]
     (HERE / "manifest.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in keep))
-
-    good_disc = [r for r in keep if discovered(r["id"]) and r["status"] == "ok"]
-    text = (HERE / "sources.yaml").read_text()
-    head = text.split("# --- discovered")[0].rstrip()
-    block = "".join(emit_entry(r) for r in good_disc)
-    (HERE / "sources.yaml").write_text(head + "\n\n  # --- discovered (find_sources.py) ---\n" + block)
-    print(f"pruned {len(drop)}; kept {len(good_disc)} good discovered docs")
+    good_disc = sum(1 for r in keep if discovered(r["id"]) and r["status"] == "ok")
+    print(f"pruned {len(drop)} docs ({removed} registry entries removed); "
+          f"kept {good_disc} good discovered docs, {len(keep)} manifest rows")
 
 
 if __name__ == "__main__":

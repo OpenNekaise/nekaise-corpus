@@ -102,7 +102,7 @@ def norm(s: str) -> str:
 
 
 def existing_keys():
-    urls, titles = set(), set()
+    urls, titles, ids = set(), set(), set()
     mp = HERE / "manifest.jsonl"
     if mp.exists():
         for line in mp.read_text().splitlines():
@@ -110,13 +110,15 @@ def existing_keys():
                 r = json.loads(line)
                 urls.add((r.get("url") or "").rstrip("/"))
                 titles.add(norm(r.get("title")))
+                ids.add(r.get("id") or "")
     try:
         for s in yaml.safe_load((HERE / "sources.yaml").read_text())["sources"]:
             urls.add((s.get("url") or "").rstrip("/"))
             titles.add(norm(s.get("title")))
+            ids.add(s.get("id") or "")
     except Exception:
         pass
-    return urls, titles
+    return urls, titles, ids
 
 
 def pdf_link(item) -> str | None:
@@ -174,7 +176,7 @@ def main() -> None:
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
 
-    urls, titles = existing_keys()
+    urls, titles, reg_ids = existing_keys()
     out, seen = [], set()
     for term, topic in QUERIES:
         if len(out) >= args.max:
@@ -213,7 +215,9 @@ def main() -> None:
                             "source": "oapen", "license": lic, "topic": topic, "format": "pdf"})
             time.sleep(0.2)
 
-    used: set = set()
+    # uniquify ids against the whole registry/manifest, not just this batch — two different books
+    # can truncate-slug to the same id across runs (7 silent raw/text overwrites before 2026-07-07).
+    used: set = set(reg_ids)
     for h in out:
         base, i = h["id"], 2
         while h["id"] in used:

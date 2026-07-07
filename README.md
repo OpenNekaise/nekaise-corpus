@@ -39,14 +39,14 @@ bash scripts/install_cron.sh              # optional: enable the daily growth jo
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **9,120** |
-| **Raw originals** | **~61G** (PDF / HTML / source code) |
-| **Extracted text** | **~2.0G** (~1997M chars, **≈499M tokens**) |
+| **Documents** | **8,441** |
+| **Raw originals** | **~52G** (PDF / HTML / source code) |
+| **Extracted text** | **~1.5G** (~1504M chars, **≈376M tokens**) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): building_energy 3,698 · equipment_systems 1,454 · structures_civil 999 · controls_bas 599 · infrastructure 477 · standards_protocols 470 · commissioning_fdd 350 · construction 339 · architecture 333 · materials 239 · urban 162.
+**By topic** (a source gets one at registration): building_energy 3,601 · equipment_systems 1,428 · structures_civil 797 · controls_bas 595 · standards_protocols 447 · infrastructure 362 · commissioning_fdd 344 · construction 268 · architecture 253 · materials 211 · urban 135.
 
-**By license:** open 2,544 · public-domain 4,329 · cc-by-sa 509 · cc-by 1,733 · proprietary-internal 5.
+**By license:** open 2,509 · public-domain 4,306 · cc-by-sa 451 · cc-by 1,170 · proprietary-internal 5.
 
 _Snapshot of the live registry (2026-07-07) — auto-generated from `manifest.jsonl`. The bytes are not
 shipped; run the loader to fetch your own copy. The corpus grows as sources are added to `sources.yaml`._
@@ -99,7 +99,9 @@ Opus-4.8 on building-energy Q&A. Full method, honest caveats, and reproduction:
 A clone gets the **same corpus** we have. `manifest.jsonl` records every doc's `url` and `sha256`;
 the loader compares each download against it and reports `reproduced / drifted / new`. Stable hosts
 (arXiv, `*.gov`) reproduce reliably; any dead or changed source is reported, never silently dropped.
-Extracted text is derived with pinned parsers (`requirements.txt`).
+The raw bytes + sha256 are the reproducibility anchor; the extracted text in `text/` is derived and
+can vary slightly across parser versions (pin exact versions in `requirements.txt` if you need
+byte-identical text).
 
 ```bash
 python scripts/build_corpus.py --verify   # re-hash local raw/ files against the manifest
