@@ -16,8 +16,12 @@ hand as `/dig` any time you want to grow the corpus in one shot.
    ```
    python scripts/find_sources.py --per 20 --append   # OpenAlex / OSTI / arXiv papers + gov reports
    python scripts/find_github.py --append             # curated GitHub repos: READMEs + docs/*.md + *.rst
+   python scripts/find_osti.py --rows 50 --pages 2 --page <N> --append    # deep OSTI (rotate N deeper)
+   python scripts/find_archive.py --rows 30 --page <N> --append           # pre-1929 PD texts (rotate N)
+   python scripts/find_books.py --per 25 --depth 25 --offset <N*25> --append  # OAPEN CC-BY books
    ```
-   Both dedup against `manifest.jsonl` + `sources.yaml` before appending, so re-running is safe.
+   All dedup against `manifest.jsonl` + `sources.yaml` + the `pruned_urls.txt` blocklist before
+   appending, so re-running is safe and never re-churns pruned material.
 
 2. **Widen (judgment — the part a human/agent adds over the scripts):** spend a little of the budget
    looking for *new veins*, not just more of the head:

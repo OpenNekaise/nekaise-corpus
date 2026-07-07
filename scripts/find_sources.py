@@ -26,6 +26,8 @@ from urllib.parse import urlparse
 import requests
 import yaml
 
+import blocklist
+
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 MAILTO = "corpus@opennekaise.org"
 
@@ -166,7 +168,7 @@ def downloadable(url: str) -> bool:
 
 
 def existing_keys():
-    urls, titles = set(), set()
+    urls, titles, ids = set(), set(), set()
     mp = HERE / "manifest.jsonl"
     if mp.exists():
         for line in mp.read_text().splitlines():
@@ -174,12 +176,15 @@ def existing_keys():
                 r = json.loads(line)
                 urls.add((r.get("url") or "").rstrip("/"))
                 titles.add(norm(r.get("title")))
+                ids.add(r.get("id") or "")
     try:
         for s in yaml.safe_load((HERE / "sources.yaml").read_text())["sources"]:
             urls.add((s.get("url") or "").rstrip("/"))
+            ids.add(s.get("id") or "")
     except Exception:
         pass
-    return urls, titles
+    urls |= blocklist.load()  # skip urls the pruner already dropped (no re-churn)
+    return urls, titles, ids
 
 
 def entry(title, url, source, license, topic):
@@ -252,7 +257,7 @@ def main() -> None:
     args = ap.parse_args()
     backends = [b.strip() for b in args.backends.split(",") if b.strip() in BACKENDS]
 
-    urls, titles = existing_keys()
+    urls, titles, reg_ids = existing_keys()
     out, seen = [], set()
     for term, topic in QUERIES:
         for b in backends:
@@ -270,7 +275,7 @@ def main() -> None:
 
     # de-collide ids: id = source[:3]-slug[:46] can clash for distinct URLs, and the manifest is
     # id-keyed, so a clash would silently overwrite a doc. Suffix any repeat within the batch.
-    used: set = set()
+    used: set = set(reg_ids)  # uniquify vs the whole registry, not just this batch
     for h in out:
         base = h["id"]
         i = 2

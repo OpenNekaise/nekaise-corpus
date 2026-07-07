@@ -30,6 +30,8 @@ from pathlib import Path
 import requests
 import yaml
 
+import blocklist
+
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 API = "https://api.github.com"
 
@@ -203,6 +205,7 @@ def existing_keys():
             urls.add((s.get("url") or "").rstrip("/"))
     except Exception:
         pass
+    urls |= blocklist.load()  # skip urls the pruner already dropped (no re-churn)
     return urls, titles
 
 

@@ -25,6 +25,8 @@ from pathlib import Path
 import requests
 import yaml
 
+import blocklist
+
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 API = "https://www.osti.gov/api/v1/records"
 
@@ -68,7 +70,7 @@ def slug(s: str) -> str:
 
 
 def existing_keys():
-    urls, titles = set(), set()
+    urls, titles, ids = set(), set(), set()
     mp = HERE / "manifest.jsonl"
     if mp.exists():
         for line in mp.read_text().splitlines():
@@ -76,13 +78,16 @@ def existing_keys():
                 r = json.loads(line)
                 urls.add((r.get("url") or "").rstrip("/"))
                 titles.add(norm(r.get("title")))
+                ids.add(r.get("id") or "")
     try:
         for s in yaml.safe_load((HERE / "sources.yaml").read_text())["sources"]:
             urls.add((s.get("url") or "").rstrip("/"))
             titles.add(norm(s.get("title")))
+            ids.add(s.get("id") or "")
     except Exception:
         pass
-    return urls, titles
+    urls |= blocklist.load()  # skip urls the pruner already dropped (no re-churn)
+    return urls, titles, ids
 
 
 def from_osti(term: str, rows: int, page: int):
@@ -107,7 +112,7 @@ def main() -> None:
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
 
-    urls, titles = existing_keys()
+    urls, titles, reg_ids = existing_keys()
     out, seen = [], set()
     for term, topic in QUERIES:
         if len(out) >= args.max:
@@ -135,7 +140,7 @@ def main() -> None:
                             "source": "osti", "license": "public-domain", "topic": topic, "format": "pdf"})
             time.sleep(0.3)
 
-    used: set = set()
+    used: set = set(reg_ids)  # uniquify vs the whole registry, not just this batch
     for h in out:
         base, i = h["id"], 2
         while h["id"] in used:

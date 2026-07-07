@@ -39,23 +39,24 @@ bash scripts/install_cron.sh              # optional: enable the daily growth jo
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **8,441** |
-| **Raw originals** | **~52G** (PDF / HTML / source code) |
-| **Extracted text** | **~1.5G** (~1504M chars, **≈376M tokens**) |
+| **Documents** | **9,333** |
+| **Raw originals** | **~57G** (PDF / HTML / source code) |
+| **Extracted text** | **~1.8G** (~1861M chars, **≈465M tokens**) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): building_energy 3,601 · equipment_systems 1,428 · structures_civil 797 · controls_bas 595 · standards_protocols 447 · infrastructure 362 · commissioning_fdd 344 · construction 268 · architecture 253 · materials 211 · urban 135.
+**By topic** (a source gets one at registration): building_energy 4,084 · equipment_systems 1,544 · structures_civil 871 · controls_bas 600 · standards_protocols 451 · infrastructure 375 · commissioning_fdd 349 · construction 340 · architecture 310 · materials 267 · urban 142.
 
-**By license:** open 2,509 · public-domain 4,306 · cc-by-sa 451 · cc-by 1,170 · proprietary-internal 5.
+**By license:** open 2,522 · public-domain 5,105 · cc-by-sa 458 · cc-by 1,243 · proprietary-internal 5.
 
 _Snapshot of the live registry (2026-07-07) — auto-generated from `manifest.jsonl`. The bytes are not
 shipped; run the loader to fetch your own copy. The corpus grows as sources are added to `sources.yaml`._
 <!-- STATS:END -->
 
-**Where it comes from:** OSTI · arXiv · OpenAlex · OAPEN (CC-BY books) · Wikipedia · Unmet Hours,
-dozens of curated public-domain manuals (DOE · NIST · FHWA · FEMA · USGS · OSHA · GSA · NPS · HUD ·
-USDA-FPL · WBDG UFC · NASA), and permissive GitHub repos including **source code** (Modelica `.mo`
-physics models, structural/FEA `.py`).
+**Where it comes from:** OSTI · arXiv · OpenAlex · OAPEN (CC-BY books) · **Internet Archive**
+(pre-1929 public-domain engineering handbooks) · Wikipedia · Unmet Hours, dozens of curated
+public-domain manuals (DOE · NIST · FHWA · FEMA · USGS · OSHA · GSA · NPS · HUD · USDA-FPL ·
+WBDG UFC · NASA), and permissive GitHub repos including **source code** (Modelica `.mo` physics
+models, structural/FEA `.py`).
 
 ## How it works
 
@@ -79,7 +80,7 @@ flowchart LR
 |---|---|
 | `sources.yaml` | The curated **registry** — each source's URL, topic, license, format. **Edit this to grow the corpus.** |
 | `manifest.jsonl` | **Provenance** — id, url, license, topic, sha256, bytes for every fetched doc. |
-| `scripts/` | The **machinery** — loader (`build_corpus.py`), discovery (`find_sources.py`, `find_github.py`, `find_osti.py`, `find_books.py`, `crawl_docs.py`), quality gate (`prune_corpus.py`), cron runners. |
+| `scripts/` | The **machinery** — loader (`build_corpus.py`), discovery (`find_sources.py`, `find_github.py`, `find_osti.py`, `find_books.py`, `find_archive.py`, `crawl_docs.py`), quality gate (`prune_corpus.py`) + its `pruned_urls.txt` blocklist, cron runners. |
 | `.claude/skills/` | The **playbooks** the agent follows — `go`, `load-corpus`, `find-sources`, `crawl-docs`, `dig`. |
 | `workspace/` | The agent's **scratch space** (git-ignored) — one-off scripts stay out of the root. |
 | [`AGENTS.md`](AGENTS.md) | The **operating manual** your coding agent reads first. |

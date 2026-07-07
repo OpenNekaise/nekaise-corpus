@@ -5,7 +5,7 @@ Next-token CPT memorizes text literally, so junk in = junk out. This removes, fr
 registry + disk, docs that are: failed downloads, thin/empty, garbage extractions (symbol soup from
 scanned / math-heavy PDFs), non-English, off-topic (too few built-environment keywords; books use a
 length-scaled density gate), or byte-duplicates (same sha256 under two ids). It prunes only
-*machine-discovered* sources (id prefix oa-/ope-/ost-/arx-/crawl-/gh-/oer-); hand-curated originals
+*machine-discovered* sources (id prefix oa-/ope-/ost-/arx-/crawl-/gh-/oer-/arc-); hand-curated originals
 are left alone. sources.yaml is edited in place per dropped id — comments, section markers, and
 entries of any other id are preserved wherever they sit in the file.
 
@@ -21,6 +21,8 @@ from collections import Counter
 from pathlib import Path
 
 import yaml
+
+import blocklist
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 
@@ -45,15 +47,16 @@ def body(text: str) -> str:
     return text.split("\n---\n\n", 1)[-1] if "\n---\n\n" in text else text
 
 
-def quality(text: str, fmt: str = "pdf") -> str:
+def quality(text: str, book: bool = True) -> str:
     bod = body(text)
-    # Long PDFs (books, reports) are judged over a 100k-char window: their first 20k chars are
-    # front matter (title pages, TOC dot-leaders) that fails alpha-ratio checks and under-represents
-    # the content. Their off-topic gate is density-based, calibrated 2026-07-07 on a 300-book OAPEN
-    # sample: clearly-unrelated books score < 8 DOMAIN hits / 1000 words; real AEC books score
-    # 30-150. Plain-text formats (source code, repo docs) keep the 20k/absolute gate — code
-    # identifiers have book-unlike word statistics and would be falsely killed by the density rule.
-    is_book = fmt == "pdf" and len(bod) > 120_000
+    # Long book-like docs are judged over a 100k-char window: their first 20k chars are front
+    # matter (title pages, TOC dot-leaders, OCR noise) that fails alpha-ratio checks and
+    # under-represents the content. Their off-topic gate is density-based, calibrated 2026-07-07
+    # on a 300-book OAPEN sample: clearly-unrelated books score < 8 DOMAIN hits / 1000 words; real
+    # AEC books score 30-150. `book` is decided by the caller (pdf format, or arc- OCR texts) —
+    # source code / repo docs keep the 20k/absolute gate, since code identifiers have book-unlike
+    # word statistics and the density rule falsely kills them.
+    is_book = book and len(bod) > 120_000
     t = bod[:100_000] if is_book else bod[:20_000]
     if len(t.strip()) < 2000:
         return "thin"
@@ -71,7 +74,7 @@ def quality(text: str, fmt: str = "pdf") -> str:
 
 
 def discovered(i: str) -> bool:
-    return i.startswith(("oa-", "ope-", "ost-", "arx-", "crawl-", "gh-", "oer-"))
+    return i.startswith(("oa-", "ope-", "ost-", "arx-", "crawl-", "gh-", "oer-", "arc-"))
 
 
 ENTRY_RE = re.compile(r"^  - id:\s*['\"]?(.+?)['\"]?\s*$")
@@ -137,7 +140,8 @@ def main() -> None:
         if not tp or not (HERE / tp).exists():
             drop[r["id"]] = "no-text"
             continue
-        q = quality((HERE / tp).read_text(), r.get("format", "pdf"))
+        q = quality((HERE / tp).read_text(),
+                    book=r.get("format", "pdf") == "pdf" or r["id"].startswith("arc-"))
         if q != "ok":
             drop[r["id"]] = q
             continue
@@ -170,6 +174,7 @@ def main() -> None:
         print("dry run -- pass --apply to prune")
         return
 
+    blocked = blocklist.add(r.get("url") for r in manifest if r["id"] in drop)
     removed = rewrite_sources(set(drop))  # validate/rewrite the registry BEFORE touching files
     for r in manifest:
         if r["id"] in drop:
@@ -179,7 +184,7 @@ def main() -> None:
     keep = [r for r in manifest if r["id"] not in drop]
     (HERE / "manifest.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in keep))
     good_disc = sum(1 for r in keep if discovered(r["id"]) and r["status"] == "ok")
-    print(f"pruned {len(drop)} docs ({removed} registry entries removed); "
+    print(f"pruned {len(drop)} docs ({removed} registry entries removed, {blocked} urls blocklisted); "
           f"kept {good_disc} good discovered docs, {len(keep)} manifest rows")
 
 

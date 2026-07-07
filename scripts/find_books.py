@@ -34,6 +34,8 @@ from pathlib import Path
 import requests
 import yaml
 
+import blocklist
+
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 SEARCH = "https://library.oapen.org/rest/search"
 OAI = "https://library.oapen.org/oai/request"
@@ -118,6 +120,7 @@ def existing_keys():
             ids.add(s.get("id") or "")
     except Exception:
         pass
+    urls |= blocklist.load()  # skip urls the pruner already dropped (no re-churn)
     return urls, titles, ids
 
 

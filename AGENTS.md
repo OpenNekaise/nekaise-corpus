@@ -14,6 +14,7 @@ run the loop that fetches the seed corpus and grows it.
 |---|---|
 | `sources.yaml` | The **registry** — one entry per source (`id` · `title` · `url` · `source` · `license` · `topic` · `format`). Edit this to grow the corpus. |
 | `manifest.jsonl` | The **provenance + reproducibility record** — url, license, topic, sha256, bytes for every fetched doc. |
+| `pruned_urls.txt` | **Blocklist** of URLs the quality gate dropped — finders dedup against it so discovery never re-churns pruned material. |
 | `scripts/` | The **machinery** — loader, discovery backends, quality gate, cron/marathon runners. All run from the repo root: `python scripts/<x>.py`. |
 | `.claude/skills/` | The **skills** — step-by-step playbooks for each loop (`go` · `load-corpus` · `find-sources` · `crawl-docs` · `dig`). Claude Code picks them up natively; Codex: read the `SKILL.md` files directly. |
 | `workspace/` | **Your scratch space** (git-ignored). One-off helper scripts, notes, dumps go here — never the repo root. Promote durable tools into `scripts/`. |
@@ -27,9 +28,12 @@ durable code goes in `scripts/`; experiments go in `workspace/`.
 
 `scripts/build_corpus.py` is the **loader**: reads the registry → downloads into `raw/<source>/` →
 extracts plain text into `text/<id>.md` → records sha256 + metadata in `manifest.jsonl`. Idempotent;
-dedups by sha256. The discovery backends (`find_sources.py` OpenAlex/OSTI/arXiv · `find_github.py`
-curated repos + source code · `find_osti.py` deep OSTI · `find_books.py` OAPEN CC-BY books ·
-`crawl_docs.py` doc sites) propose registry entries; `prune_corpus.py --apply` is the quality gate.
+dedups by sha256; parallel (`--workers`, ≤2 in-flight per host). The discovery backends
+(`find_sources.py` OpenAlex/OSTI/arXiv · `find_github.py` curated repos + source code ·
+`find_osti.py` deep OSTI · `find_books.py` OAPEN CC-BY books · `find_archive.py` pre-1929
+public-domain engineering texts from the Internet Archive · `crawl_docs.py` doc sites) propose
+registry entries; `prune_corpus.py --apply` is the quality gate. URLs the pruner drops land in
+`pruned_urls.txt` (committed) and every finder skips them — rounds never re-churn pruned material.
 
 ## The operating loop
 

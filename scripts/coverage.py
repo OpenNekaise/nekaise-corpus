@@ -62,7 +62,7 @@ SOURCE_GENRE = {
 # Order matters: first hit applies.
 PREFIX_GENRE = [
     (("gh_",), "software_sim_docs"),
-    (("oapen", "intechopen", "textbook", "oer"), "books_textbooks"),
+    (("oapen", "intechopen", "textbook", "oer", "internet_archive"), "books_textbooks"),
     (("gov_uk",), "international_bodies"),
     (("gov_", "doe", "eere", "epa", "fhwa", "fema", "usgs", "osha", "gsa", "nps", "hud", "usda",
       "wbdg", "nist", "nasa", "ornl", "sandia", "access_board", "noaa", "usbr"), "us_gov_lab_reports"),
