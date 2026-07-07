@@ -93,4 +93,4 @@ python eval_domain.py --model outputs/cpt_gran_full                   # closed-b
 
 _Snapshot 2026-07-01. Perplexity is a language-modeling metric (does the model learn the domain);
 the building-task numbers are the deployment metric. Corpus grows as sources are added to
-`sources.yaml` — bigger, denser corpora raise the representation + retrieval ceiling._
+the registry — bigger, denser corpora raise the representation + retrieval ceiling._

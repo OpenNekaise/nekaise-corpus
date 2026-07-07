@@ -8,10 +8,10 @@ Three backends, all free / no key:
   - arXiv API : open preprints (always downloadable at arxiv.org/pdf).
 
 Keeps candidates with a fetchable PDF, dedups against the current manifest + registry, and PROPOSES
-ready-to-paste `sources.yaml` entries. Review, then `--append` (or paste) and run the loader.
+ready-to-paste registry entries. Review, then `--append` and run the loader.
 
     python scripts/find_sources.py --per 20            # propose
-    python scripts/find_sources.py --per 20 --append   # append under `sources:` in sources.yaml, then load + prune
+    python scripts/find_sources.py --per 20 --append   # append into the registry, then load + prune
 """
 from __future__ import annotations
 
@@ -26,7 +26,7 @@ from urllib.parse import urlparse
 import requests
 import yaml
 
-import blocklist
+import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 MAILTO = "corpus@opennekaise.org"
@@ -154,41 +154,13 @@ WHITELIST = ("arxiv.org", ".gov", "escholarship.org", "ncbi.nlm.nih.gov", "europ
 PERMISSIVE = {"cc-by", "cc-by-sa", "cc0", "public-domain"}
 
 
-def norm(s: str) -> str:
-    return re.sub(r"\W+", " ", (s or "").lower()).strip()
-
-
-def slug(s: str) -> str:
-    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", (s or "").lower())).strip("-")
-
-
 def downloadable(url: str) -> bool:
     host = (urlparse(url).hostname or "").lower()
     return any(w in host for w in WHITELIST)
 
 
-def existing_keys():
-    urls, titles, ids = set(), set(), set()
-    mp = HERE / "manifest.jsonl"
-    if mp.exists():
-        for line in mp.read_text().splitlines():
-            if line.strip():
-                r = json.loads(line)
-                urls.add((r.get("url") or "").rstrip("/"))
-                titles.add(norm(r.get("title")))
-                ids.add(r.get("id") or "")
-    try:
-        for s in yaml.safe_load((HERE / "sources.yaml").read_text())["sources"]:
-            urls.add((s.get("url") or "").rstrip("/"))
-            ids.add(s.get("id") or "")
-    except Exception:
-        pass
-    urls |= blocklist.load()  # skip urls the pruner already dropped (no re-churn)
-    return urls, titles, ids
-
-
 def entry(title, url, source, license, topic):
-    return {"id": f"{source[:3]}-{slug(title)[:46]}", "title": (title or "").strip()[:150],
+    return {"id": f"{source[:3]}-{registry.slug(title)[:46]}", "title": (title or "").strip()[:150],
             "url": url, "source": source, "license": license, "topic": topic, "format": "pdf"}
 
 
@@ -253,11 +225,11 @@ def main() -> None:
     ap.add_argument("--per", type=int, default=15, help="results per backend per topic query")
     ap.add_argument("--backends", default="openalex,osti,arxiv")
     ap.add_argument("--append", action="store_true",
-                    help="append candidates under `sources:` in sources.yaml (then load + prune)")
+                    help="append candidates into the registry shards (then load + prune)")
     args = ap.parse_args()
     backends = [b.strip() for b in args.backends.split(",") if b.strip() in BACKENDS]
 
-    urls, titles, reg_ids = existing_keys()
+    urls, titles, reg_ids = registry.existing_keys()
     out, seen = [], set()
     for term, topic in QUERIES:
         for b in backends:
@@ -267,22 +239,15 @@ def main() -> None:
                 print(f"# {b} [{topic}] failed: {e}", file=sys.stderr)
                 continue
             for h in hits:
-                u, t = h["url"].rstrip("/"), norm(h["title"])
+                u, t = h["url"].rstrip("/"), registry.norm(h["title"])
                 if not h["title"] or u in urls or t in titles or u in seen:
                     continue
                 seen.add(u)
                 out.append(h)
 
-    # de-collide ids: id = source[:3]-slug[:46] can clash for distinct URLs, and the manifest is
-    # id-keyed, so a clash would silently overwrite a doc. Suffix any repeat within the batch.
-    used: set = set(reg_ids)  # uniquify vs the whole registry, not just this batch
-    for h in out:
-        base = h["id"]
-        i = 2
-        while h["id"] in used:
-            h["id"] = f"{base[:44]}-{i}"
-            i += 1
-        used.add(h["id"])
+    # de-collide ids: truncated title slugs clash across runs; the manifest is id-keyed, so a
+    # clash silently overwrites a doc. registry.uniquify_ids guards vs the whole registry.
+    registry.uniquify_ids(out, reg_ids)
 
     by_topic, by_src, by_lic = {}, {}, {}
     for h in out:
@@ -293,18 +258,12 @@ def main() -> None:
     print(f"# by topic:   {by_topic}")
     print(f"# by source:  {by_src}")
     print(f"# by license: {by_lic}")
-    print("# --- review, then --append (or paste under `sources:`), then run scripts/build_corpus.py ---")
+    print("# --- review, then --append, then run scripts/build_corpus.py ---")
     print(yaml.safe_dump(out, sort_keys=False, allow_unicode=True))
 
     if args.append and out:
-        blk = ""
-        for h in out:
-            e = {k: h[k] for k in ("id", "title", "url", "source", "license", "topic", "format")}
-            d = yaml.safe_dump([e], sort_keys=False, allow_unicode=True)
-            blk += "".join(("  " + ln + "\n") if ln else "\n" for ln in d.splitlines())
-        with open(HERE / "sources.yaml", "a") as f:
-            f.write("\n  # --- discovered via find_sources.py ---\n" + blk)
-        print(f"# appended {len(out)} entries to sources.yaml", file=sys.stderr)
+        counts = registry.append_entries(out)
+        print(f"# appended {len(out)} entries to the registry: {counts}", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ CPT gold, and unambiguously redistributable (public-domain).
 
 Searches advancedsearch.php per subject (English texts, date-capped), keeps items with a plain-text
 OCR derivative ({identifier}_djvu.txt — fetched as format `txt`), dedups against manifest /
-registry / pruned-URL blocklist, and appends `arc-` entries to sources.yaml. OCR quality varies;
+registry / pruned-URL blocklist, and appends `arc-` entries to registry/archive.yaml. OCR quality varies;
 prune_corpus gates the garbage afterwards — always load + prune after appending.
 
     python scripts/find_archive.py                       # propose (page 1)
@@ -26,7 +26,7 @@ from pathlib import Path
 import requests
 import yaml
 
-import blocklist
+import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 SEARCH = "https://archive.org/advancedsearch.php"
@@ -55,50 +55,16 @@ QUERIES = [
 ]
 
 
-def slug(s: str) -> str:
-    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", (s or "").lower())).strip("-")
-
-
-def norm(s: str) -> str:
-    return re.sub(r"\W+", " ", (s or "").lower()).strip()
-
-
-def existing_keys():
-    urls, titles, ids = set(), set(), set()
-    mp = HERE / "manifest.jsonl"
-    if mp.exists():
-        for line in mp.read_text().splitlines():
-            if line.strip():
-                r = json.loads(line)
-                urls.add((r.get("url") or "").rstrip("/"))
-                titles.add(norm(r.get("title")))
-                ids.add(r.get("id") or "")
-    try:
-        for s in yaml.safe_load((HERE / "sources.yaml").read_text())["sources"]:
-            urls.add((s.get("url") or "").rstrip("/"))
-            titles.add(norm(s.get("title")))
-            ids.add(s.get("id") or "")
-    except Exception:
-        pass
-    urls |= blocklist.load()  # skip urls the pruner already dropped (no re-churn)
-    return urls, titles, ids
-
-
-def emit(e) -> str:
-    d = yaml.safe_dump([e], sort_keys=False, allow_unicode=True)
-    return "".join(("  " + ln + "\n") if ln else "\n" for ln in d.splitlines())
-
-
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--rows", type=int, default=50, help="results per query page")
     ap.add_argument("--page", type=int, default=1, help="search page (rotate deeper each round)")
     ap.add_argument("--max", type=int, default=300, help="cap on new entries this run")
-    ap.add_argument("--append", action="store_true", help="append into sources.yaml")
+    ap.add_argument("--append", action="store_true", help="append into the registry (registry/archive.yaml)")
     args = ap.parse_args()
 
-    urls, titles, ids = existing_keys()
-    out, used = [], set(ids)
+    urls, titles, reg_ids = registry.existing_keys()
+    out = []
     for term, topic in QUERIES:
         if len(out) >= args.max:
             break
@@ -129,21 +95,17 @@ def main() -> None:
             if re.search(r"catalog|catalogue|price.?book|price list|tables of", title, re.I):
                 continue
             url = f"https://archive.org/download/{ident}/{ident}_djvu.txt"
-            if url.rstrip("/") in urls or norm(title) in titles:
+            if url.rstrip("/") in urls or registry.norm(title) in titles:
                 continue
-            sid = f"arc-{slug(ident)[:52]}"
-            base, n = sid, 2
-            while sid in used:
-                sid = f"{base[:50]}-{n}"
-                n += 1
-            used.add(sid)
+            sid = f"arc-{registry.slug(ident)[:52]}"
             urls.add(url.rstrip("/"))
-            titles.add(norm(title))
+            titles.add(registry.norm(title))
             out.append({"id": sid, "title": f"{title[:130]} ({year})" if year else title[:150],
                         "url": url, "source": "internet_archive", "license": "public-domain",
                         "topic": topic, "format": "txt"})
         time.sleep(1)  # politeness between queries
 
+    registry.uniquify_ids(out, reg_ids)
     by_topic: dict = {}
     for h in out:
         by_topic[h["topic"]] = by_topic.get(h["topic"], 0) + 1
@@ -154,10 +116,8 @@ def main() -> None:
     print(yaml.safe_dump(out, sort_keys=False, allow_unicode=True))
 
     if args.append and out:
-        blk = "".join(emit(h) for h in out)
-        with open(HERE / "sources.yaml", "a") as f:
-            f.write("\n  # --- discovered via find_archive.py ---\n" + blk)
-        print(f"# appended {len(out)} entries to sources.yaml", file=sys.stderr)
+        counts = registry.append_entries(out)
+        print(f"# appended {len(out)} entries to the registry: {counts}", file=sys.stderr)
 
 
 if __name__ == "__main__":

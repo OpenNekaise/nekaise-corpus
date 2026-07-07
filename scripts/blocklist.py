@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """blocklist.py — persistent set of URLs the pruner has dropped (pruned_urls.txt, committed).
 
-Why: prune removes a dropped doc from BOTH the manifest and sources.yaml, so without this file the
+Why: prune removes a dropped doc from BOTH the manifest and the registry, so without this file the
 discovery scripts (find_sources / find_github / find_osti / find_books / find_archive) re-find,
 re-append, re-fetch, and re-prune the same URLs every round (~200 wasted fetches/round). Every
 finder dedups against blocklist.load(); prune_corpus --apply calls blocklist.add() for what it drops.

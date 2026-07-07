@@ -4,7 +4,7 @@
 The building-simulation world lives on GitHub (Modelica Buildings, EnergyPlus, OpenStudio, ResStock,
 …) and much of it is openly licensed with rich prose docs. This backend walks a CURATED list of
 permissive repos, enumerates their human-readable text files (README* / docs/*.md / *.rst) via one
-Git-Trees API call per repo, and PROPOSES ready-to-paste `sources.yaml` entries pointing at
+Git-Trees API call per repo, and PROPOSES ready-to-paste registry entries pointing at
 raw.githubusercontent.com (which build_corpus.py now fetches as plain text).
 
 Curated on purpose: GitHub's license auto-detection is unreliable (many building repos use custom
@@ -13,7 +13,7 @@ that are clearly redistributable. Depth is docs + READMEs only — high signal, 
 
     python scripts/find_github.py                 # propose entries for every curated repo
     python scripts/find_github.py --repo lbl-srg/modelica-buildings   # just one repo
-    python scripts/find_github.py --append        # append under `sources:` in sources.yaml, then load + prune
+    python scripts/find_github.py --append        # append into the registry, then load + prune
 
 No key needed (unauthenticated GitHub API = 60 req/hr, ~2 calls/repo). Set GITHUB_TOKEN / GH_TOKEN to
 raise the limit.
@@ -30,7 +30,7 @@ from pathlib import Path
 import requests
 import yaml
 
-import blocklist
+import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 API = "https://api.github.com"
@@ -153,14 +153,6 @@ SKIP_SEGMENTS = ("/.github/", "/node_modules/", "/test/", "/tests/", "/vendor/",
                  "/third_party/", "/examples/", "/example/")
 
 
-def slug(s: str) -> str:
-    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", (s or "").lower())).strip("-")
-
-
-def norm(s: str) -> str:
-    return re.sub(r"\W+", " ", (s or "").lower()).strip()
-
-
 def headers() -> dict:
     h = {"Accept": "application/vnd.github+json", "User-Agent": "nekaise-corpus"}
     tok = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
@@ -191,26 +183,8 @@ def wanted(path: str, include, code_exts=()) -> bool:
             or path.count("/") == 0)
 
 
-def existing_keys():
-    urls, titles = set(), set()
-    mp = HERE / "manifest.jsonl"
-    if mp.exists():
-        for line in mp.read_text().splitlines():
-            if line.strip():
-                r = json.loads(line)
-                urls.add((r.get("url") or "").rstrip("/"))
-                titles.add(norm(r.get("title")))
-    try:
-        for s in yaml.safe_load((HERE / "sources.yaml").read_text())["sources"]:
-            urls.add((s.get("url") or "").rstrip("/"))
-    except Exception:
-        pass
-    urls |= blocklist.load()  # skip urls the pruner already dropped (no re-churn)
-    return urls, titles
-
-
 def done_sources():
-    """gh_ source buckets already ingested (manifest or sources.yaml). Returns (all_done, code_done)
+    """gh_ source buckets already ingested (manifest or registry). Returns (all_done, code_done)
     where code_done = buckets that already have a txt (source-code) entry. Lets repeated runs skip
     finished repos — and skip code repos whose code is already pulled — spending the 60/hr API budget
     only on repos not yet walked."""
@@ -222,17 +196,10 @@ def done_sources():
             if fmt == "txt":
                 code_done.add(s)
 
-    mp = HERE / "manifest.jsonl"
-    if mp.exists():
-        for line in mp.read_text().splitlines():
-            if line.strip():
-                r = json.loads(line)
-                note(r.get("source", ""), r.get("format"))
-    try:
-        for s in yaml.safe_load((HERE / "sources.yaml").read_text())["sources"]:
-            note(s.get("source", ""), s.get("format"))
-    except Exception:
-        pass
+    for r in registry.load_manifest_rows():
+        note(r.get("source", ""), r.get("format"))
+    for e in registry.load_entries():
+        note(e.get("source", ""), e.get("format"))
     return all_done, code_done
 
 
@@ -263,8 +230,8 @@ def from_repo(spec: dict) -> list:
         fmt = "rst" if low.endswith(".rst") else "md" if low.endswith(".md") else "txt"
         url = f"https://raw.githubusercontent.com/{repo}/{branch}/{p}"
         title = f"{name}: {p}"[:150]
-        sid = f"gh-{slug(name)}-{slug(p.rsplit('.', 1)[0])}"[:63]
-        out.append({"id": sid, "title": title, "url": url, "source": f"gh_{slug(name)}",
+        sid = f"gh-{registry.slug(name)}-{registry.slug(p.rsplit('.', 1)[0])}"[:63]
+        out.append({"id": sid, "title": title, "url": url, "source": f"gh_{registry.slug(name)}",
                     "license": spec["license"], "topic": spec["topic"], "format": fmt})
     return out
 
@@ -273,7 +240,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default="", help="limit to one owner/repo from the curated list")
     ap.add_argument("--append", action="store_true",
-                    help="append candidates under `sources:` in sources.yaml (then load + prune)")
+                    help="append candidates into the registry shards (then load + prune)")
     args = ap.parse_args()
     repos = [r for r in REPOS if not args.repo or r["repo"] == args.repo]
     if args.repo and not repos:
@@ -283,7 +250,7 @@ def main() -> None:
     if not args.repo:  # skip repos already ingested; re-walk a code repo only until its code lands
         done, code_done = done_sources()
         def pending(r):
-            b = f"gh_{slug(r['repo'].split('/')[-1])}"
+            b = f"gh_{registry.slug(r['repo'].split('/')[-1])}"
             if b not in done:
                 return True                       # never walked
             return bool(r.get("code")) and b not in code_done  # walked docs, code still to pull
@@ -293,7 +260,7 @@ def main() -> None:
                   f"walking {len(keep)} (60/hr API budget)", file=sys.stderr)
         repos = keep
 
-    urls, titles = existing_keys()
+    urls, titles, reg_ids = registry.existing_keys()
     out, seen = [], set()
     for spec in repos:
         try:
@@ -303,7 +270,7 @@ def main() -> None:
             continue
         kept = 0
         for h in hits:
-            u, t = h["url"].rstrip("/"), norm(h["title"])
+            u, t = h["url"].rstrip("/"), registry.norm(h["title"])
             if u in urls or t in titles or u in seen:
                 continue
             seen.add(u)
@@ -311,15 +278,7 @@ def main() -> None:
             kept += 1
         print(f"# {spec['repo']}: {kept} new", file=sys.stderr)
 
-    # de-collide ids (manifest is id-keyed; a clash would silently overwrite a doc)
-    used: set = set()
-    for h in out:
-        base = h["id"]
-        i = 2
-        while h["id"] in used:
-            h["id"] = f"{base[:60]}-{i}"
-            i += 1
-        used.add(h["id"])
+    registry.uniquify_ids(out, reg_ids)
 
     by_src, by_fmt = {}, {}
     for h in out:
@@ -328,18 +287,12 @@ def main() -> None:
     print(f"# {len(out)} NEW GitHub text files (deduped vs manifest + registry)")
     print(f"# by repo:   {by_src}")
     print(f"# by format: {by_fmt}")
-    print("# --- review, then --append (or paste under `sources:`), then run scripts/build_corpus.py ---")
+    print("# --- review, then --append, then run scripts/build_corpus.py ---")
     print(yaml.safe_dump(out, sort_keys=False, allow_unicode=True))
 
     if args.append and out:
-        blk = ""
-        for h in out:
-            e = {k: h[k] for k in ("id", "title", "url", "source", "license", "topic", "format")}
-            d = yaml.safe_dump([e], sort_keys=False, allow_unicode=True)
-            blk += "".join(("  " + ln + "\n") if ln else "\n" for ln in d.splitlines())
-        with open(HERE / "sources.yaml", "a") as f:
-            f.write("\n  # --- discovered via find_github.py ---\n" + blk)
-        print(f"# appended {len(out)} entries to sources.yaml", file=sys.stderr)
+        counts = registry.append_entries(out)
+        print(f"# appended {len(out)} entries to the registry: {counts}", file=sys.stderr)
 
 
 if __name__ == "__main__":

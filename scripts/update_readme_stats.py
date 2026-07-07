@@ -54,7 +54,7 @@ def main() -> None:
 **By license:** {by_lic}.
 
 _Snapshot of the live registry ({date}) — auto-generated from `manifest.jsonl`. The bytes are not
-shipped; run the loader to fetch your own copy. The corpus grows as sources are added to `sources.yaml`._
+shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._
 {END}"""
 
     text = README.read_text()

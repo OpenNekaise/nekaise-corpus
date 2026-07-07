@@ -1,0 +1,3351 @@
+# nekaise-corpus registry — the HAND-CURATED shard. Add entries here (or via a PR).
+# Machine-discovered entries live in the sibling shards (books/papers/reports/github/
+# archive/crawl .yaml), appended by the find_* scripts and gated by prune_corpus.py.
+# fields: id · title · url · source · license · topic · format  (see AGENTS.md)
+sources:
+  # ---------- US government / national labs (public domain, pdf) ----------
+  - id: pnnl-20761
+    title: "PNNL-20761 — DOE Building Technologies Program (retro-commissioning / PECI)"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/pnnl-20761.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: pnnl-19004
+    title: "PNNL-19004 — Technical Support Document: 50% Energy Savings Design"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/pnnl-19004.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: pnnl-17056
+    title: "PNNL-17056 — Technical Support Document (Advanced Energy Design Guide development)"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/pnnl-17056.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: pnnl-19341
+    title: "PNNL-19341 — DOE technical report"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-19341.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  # ---------- arXiv (open) ----------
+  - id: arxiv-2410-03756-smart-buildings-control-suite
+    title: "The Smart Buildings Control Suite — open benchmark for HVAC control policies"
+    url: https://arxiv.org/pdf/2410.03756
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+
+  # ---------- Wikipedia (CC-BY-SA, html) ----------
+  - id: wiki-bacnet
+    title: "BACnet (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/BACnet
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-modbus
+    title: "Modbus (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Modbus
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-building-automation
+    title: "Building automation (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Building_automation
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-hvac-control-system
+    title: "HVAC control system (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/HVAC_control_system
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-variable-air-volume
+    title: "Variable air volume (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Variable_air_volume
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-economizer
+    title: "Economizer (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Economizer
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-demand-controlled-ventilation
+    title: "Demand controlled ventilation (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Demand_controlled_ventilation
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-hvac
+    title: "HVAC (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/HVAC
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-air-handler
+    title: "Air handler (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Air_handler
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-chiller
+    title: "Chiller (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Chiller
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-heat-pump
+    title: "Heat pump (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Heat_pump
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-psychrometrics
+    title: "Psychrometrics (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Psychrometrics
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-building-commissioning
+    title: "Building commissioning (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Building_commissioning
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+  - id: wiki-fault-detection-and-isolation
+    title: "Fault detection and isolation (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Fault_detection_and_isolation
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+
+  # ---------- vendor / web explainers (copyrighted — internal research only) ----------
+  - id: ccontrols-bacnet-intro
+    title: "BACnet — Building Automation and Control Network (Contemporary Controls)"
+    url: https://www.ccontrols.com/tech/bacnet.htm
+    source: web
+    license: proprietary-internal
+    topic: standards_protocols
+    format: html
+
+  # ============================================================
+  # EXPANSION BATCH 1 — Wikipedia (CC-BY-SA). Bulk domain coverage.
+  # ============================================================
+
+  # ---- equipment & systems fundamentals ----
+  - id: wiki-air-conditioning
+    title: "Air conditioning (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Air_conditioning
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-refrigeration
+    title: "Refrigeration (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Refrigeration
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-vapor-compression-refrigeration
+    title: "Vapor-compression refrigeration (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Vapor-compression_refrigeration
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-refrigerant
+    title: "Refrigerant (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Refrigerant
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-coefficient-of-performance
+    title: "Coefficient of performance (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Coefficient_of_performance
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-cooling-tower
+    title: "Cooling tower (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Cooling_tower
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-boiler
+    title: "Boiler (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Boiler
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-furnace
+    title: "Furnace (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Furnace
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-heat-exchanger
+    title: "Heat exchanger (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Heat_exchanger
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-condenser-heat-transfer
+    title: "Condenser (heat transfer) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Condenser_(heat_transfer)
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-thermal-expansion-valve
+    title: "Thermal expansion valve (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Thermal_expansion_valve
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-fan-coil-unit
+    title: "Fan coil unit (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Fan_coil_unit
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-dedicated-outdoor-air-system
+    title: "Dedicated outdoor air system (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Dedicated_outdoor_air_system
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-heat-recovery-ventilation
+    title: "Heat recovery ventilation (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Heat_recovery_ventilation
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-geothermal-heat-pump
+    title: "Geothermal heat pump (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Geothermal_heat_pump
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-air-source-heat-pump
+    title: "Air source heat pump (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Air_source_heat_pump
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-district-heating
+    title: "District heating (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/District_heating
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-district-cooling
+    title: "District cooling (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/District_cooling
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-hydronics
+    title: "Hydronics (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Hydronics
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-radiant-heating-and-cooling
+    title: "Radiant heating and cooling (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Radiant_heating_and_cooling
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-underfloor-heating
+    title: "Underfloor heating (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Underfloor_heating
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-absorption-refrigerator
+    title: "Absorption refrigerator (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Absorption_refrigerator
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-enthalpy
+    title: "Enthalpy (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Enthalpy
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-humidity
+    title: "Humidity (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Humidity
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-dew-point
+    title: "Dew point (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Dew_point
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-ventilation-architecture
+    title: "Ventilation (architecture) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Ventilation_(architecture)
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-indoor-air-quality
+    title: "Indoor air quality (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Indoor_air_quality
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-duct-flow
+    title: "Duct (flow) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Duct_(flow)
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+
+  # ---- controls / BAS ----
+  - id: wiki-pid-controller
+    title: "PID controller (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/PID_controller
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-control-theory
+    title: "Control theory (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Control_theory
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-control-loop
+    title: "Control loop (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Control_loop
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-thermostat
+    title: "Thermostat (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Thermostat
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-setpoint-control-system
+    title: "Setpoint (control system) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Setpoint_(control_system)
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-programmable-logic-controller
+    title: "Programmable logic controller (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Programmable_logic_controller
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-scada
+    title: "SCADA (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/SCADA
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-constant-air-volume
+    title: "Constant air volume (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Constant_air_volume
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-occupancy-sensor
+    title: "Occupancy sensor (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Occupancy_sensor
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-actuator
+    title: "Actuator (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Actuator
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-control-valve
+    title: "Control valve (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Control_valve
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+  - id: wiki-damper-flow
+    title: "Damper (flow) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Damper_(flow)
+    source: wikipedia
+    license: cc-by-sa
+    topic: controls_bas
+    format: html
+
+  # ---- standards & protocols ----
+  - id: wiki-knx
+    title: "KNX (standard) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/KNX_(standard)
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-lonworks
+    title: "LonWorks (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/LonWorks
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-mqtt
+    title: "MQTT (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/MQTT
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-rs-485
+    title: "RS-485 (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/RS-485
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-fieldbus
+    title: "Fieldbus (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Fieldbus
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-ashrae
+    title: "ASHRAE (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/ASHRAE
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+
+  # ---- commissioning & FDD ----
+  - id: wiki-condition-monitoring
+    title: "Condition monitoring (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Condition_monitoring
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+  - id: wiki-predictive-maintenance
+    title: "Predictive maintenance (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Predictive_maintenance
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+  - id: wiki-anomaly-detection
+    title: "Anomaly detection (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Anomaly_detection
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+  - id: wiki-energy-audit
+    title: "Energy audit (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Energy_audit
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+  - id: wiki-root-cause-analysis
+    title: "Root cause analysis (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Root_cause_analysis
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+  - id: wiki-measurement-and-verification
+    title: "Measurement and verification (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Measurement_and_verification
+    source: wikipedia
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: html
+
+  # ============================================================
+  # EXPANSION BATCH 2 — arXiv papers + DOE/PNNL/LBNL reports + ontology/standards.
+  # (non-arxiv/non-pnnl hosts may not resolve in every env; build logs failures.)
+  # ============================================================
+
+  # ---- arXiv: data-driven / RL / MPC control (open) ----
+  - id: arxiv-1910-05313-hvac-rl-scheduling
+    title: "Building HVAC Scheduling Using RL via NN Model Approximation (arXiv 1910.05313)"
+    url: https://arxiv.org/pdf/1910.05313
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2106-14450-ddmpc-rl-hvac
+    title: "Data-driven MPC and RL approaches for HVAC (arXiv 2106.14450)"
+    url: https://arxiv.org/pdf/2106.14450
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2310-08569-calibrated-sim-offline-control
+    title: "Lightweight Calibrated Simulation for Offline Learning of Building Control (arXiv 2310.08569)"
+    url: https://arxiv.org/pdf/2310.08569
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2407-12195-clue-safe-mbrl-hvac
+    title: "CLUE: Safe & Data-efficient Model-based RL for HVAC Control (arXiv 2407.12195)"
+    url: https://arxiv.org/pdf/2407.12195
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2503-05022-mpc-rl-hvac-field-review
+    title: "Lessons from Field Demos of MPC and RL for Residential/Commercial HVAC: a review (arXiv 2503.05022)"
+    url: https://arxiv.org/pdf/2503.05022
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2510-01475-rl-vs-mpc-residential-hvac
+    title: "Comparative Field Deployment of RL and MPC for Residential HVAC (arXiv 2510.01475)"
+    url: https://arxiv.org/pdf/2510.01475
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2503-19212-continual-rl-hvac
+    title: "Continual RL for HVAC Systems Control: Hypernetworks + Transfer Learning (arXiv 2503.19212)"
+    url: https://arxiv.org/pdf/2503.19212
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2405-03848-citylearn-v2
+    title: "CityLearn v2: occupant-centric, carbon-aware grid-interactive control (arXiv 2405.03848)"
+    url: https://arxiv.org/pdf/2405.03848
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+
+  # ---- arXiv: fault detection & diagnosis (open) ----
+  - id: arxiv-2510-17146-physics-informed-llm-hvac-fdd
+    title: "Physics-Informed Large Language Models for HVAC FDD (arXiv 2510.17146)"
+    url: https://arxiv.org/pdf/2510.17146
+    source: arxiv
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: arxiv-2508-00880-ml-fdd-reproducibility
+    title: "Reproducibility of ML-Based FDD for HVAC Systems: An Empirical Study (arXiv 2508.00880)"
+    url: https://arxiv.org/pdf/2508.00880
+    source: arxiv
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: arxiv-2002-01060-transfer-learning-hvac-fdd
+    title: "Transfer Learning for HVAC System Fault Detection (arXiv 2002.01060)"
+    url: https://arxiv.org/pdf/2002.01060
+    source: arxiv
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+
+  # ---- arXiv: semantic modeling / ontology (open) ----
+  - id: arxiv-2404-11716-semantic-modeling-bem-survey
+    title: "A Survey on Semantic Modeling for Building Energy Management (arXiv 2404.11716)"
+    url: https://arxiv.org/pdf/2404.11716
+    source: arxiv
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: arxiv-2509-16259-semantic-buildings
+    title: "Semantic modeling for buildings (arXiv 2509.16259)"
+    url: https://arxiv.org/pdf/2509.16259
+    source: arxiv
+    license: open
+    topic: standards_protocols
+    format: pdf
+
+  # ---- PNNL AFDD / re-tuning / sensors (public domain) ----
+  - id: pnnl-23790-rtu-embedded-afdd
+    title: "PNNL-23790 — Rooftop Unit Embedded Diagnostics (AFDD development, field test)"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-23790.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: pnnl-25985-building-retuning
+    title: "PNNL-25985 — Building Re-tuning of controls and HVAC systems"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-25985.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: pnnl-23989-afdd
+    title: "PNNL-23989 — DOE building HVAC technical report"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-23989.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: pnnl-30077-afdd-market-assessment
+    title: "PNNL-30077 — Automated Fault Detection & Diagnostics: market assessment"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-30077.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: pnnl-15149-advanced-sensors-controls
+    title: "PNNL-15149 — Advanced Sensors and Controls for Building Applications"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-15149.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+
+  # ---- LBNL / OSTI (public domain; hosts may not resolve here) ----
+  - id: lbnl-59975-commissioning-intro
+    title: "LBNL-59975 — Introduction to Commercial Building Commissioning / HVAC strategies"
+    url: https://eta-publications.lbl.gov/sites/default/files/59975.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: lbnl-4944e-building-performance
+    title: "LBNL-4944E — Quantifying Changes in Building Performance"
+    url: https://eta-publications.lbl.gov/sites/default/files/LBNL-4944E.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: osti-1172718-monitoring-based-commissioning
+    title: "OSTI 1172718 — Monitoring-based HVAC Commissioning of an Existing Office"
+    url: https://www.osti.gov/servlets/purl/1172718
+    source: gov_osti
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+
+  # ---- ontology / standards docs (mixed license; hosts may not resolve) ----
+  - id: brick-buildsys16-paper
+    title: "Brick: Towards a Unified Metadata Schema For Buildings (BuildSys'16, author copy)"
+    url: https://cseweb.ucsd.edu/~dehong/pdf/buildsys16-paper.pdf
+    source: academic
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: ashrae-g36-2018-addendum-u
+    title: "ASHRAE Addendum u to Guideline 36-2018 (High-Performance Sequences)"
+    url: https://www.ashrae.org/file%20library/technical%20resources/standards%20and%20guidelines/standards%20addenda/g36_2018_u_20210330.pdf
+    source: ashrae
+    license: proprietary-internal
+    topic: controls_bas
+    format: pdf
+
+  # ============================================================
+  # EXPANSION BATCH 3 — deep authoritative docs (arXiv + PNNL/LBNL/OSTI + ASHRAE).
+  # Skew toward controls_bas (RL/LLM control literature) is intentional.
+  # ============================================================
+
+  # ---- arXiv: LLM agents for buildings / control (open) ----
+  - id: arxiv-2510-26603-agentic-llm-home-energy
+    title: "Agentic AI Home Energy Management: LLM framework for load scheduling (arXiv 2510.26603)"
+    url: https://arxiv.org/pdf/2510.26603
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2602-03433-control-meets-llms
+    title: "When control meets large language models: from words to dynamics (arXiv 2602.03433)"
+    url: https://arxiv.org/pdf/2602.03433
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2308-03028-llm-industrial-control
+    title: "Pre-Trained Large Language Models for Industrial Control (arXiv 2308.03028)"
+    url: https://arxiv.org/pdf/2308.03028
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2603-26050-hierarchical-llm-rl-hvac
+    title: "Hierarchical LLM + RL framework for decarbonized HVAC operation (arXiv 2603.26050)"
+    url: https://arxiv.org/pdf/2603.26050
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2312-11701-llm-building-energy-overview
+    title: "Opportunities & Challenges of LLMs in Building Energy & Decarbonization (arXiv 2312.11701)"
+    url: https://arxiv.org/pdf/2312.11701
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2411-05904-agentic-llm-industrial-control
+    title: "Autonomous Industrial Control using an Agentic LLM Framework (arXiv 2411.05904)"
+    url: https://arxiv.org/pdf/2411.05904
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+
+  # ---- arXiv: RL control frameworks / benchmarks (open) ----
+  - id: arxiv-2412-08293-sinergym
+    title: "Sinergym: virtual testbed for building energy optimization with RL (arXiv 2412.08293)"
+    url: https://arxiv.org/pdf/2412.08293
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2209-15626-b2rl-dataset
+    title: "B2RL: an open-source dataset for Building Batch Reinforcement Learning (arXiv 2209.15626)"
+    url: https://arxiv.org/pdf/2209.15626
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2408-15170-citylearn-multiobjective
+    title: "CityLearn Gym: multi-objective control benchmarking in grid-interactive buildings (arXiv 2408.15170)"
+    url: https://arxiv.org/pdf/2408.15170
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2409-08132-safe-rl-geb
+    title: "Optimal Management of Grid-Interactive Efficient Buildings via Safe RL (arXiv 2409.08132)"
+    url: https://arxiv.org/pdf/2409.08132
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2301-01148-merlin-geb
+    title: "MERLIN: multi-agent offline & transfer learning for grid-interactive communities (arXiv 2301.01148)"
+    url: https://arxiv.org/pdf/2301.01148
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2301-02593-marl-fast-dr
+    title: "Multi-Agent RL for Fast-Timescale Demand Response of Residential Loads (arXiv 2301.02593)"
+    url: https://arxiv.org/pdf/2301.02593
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+
+  # ---- arXiv: thermal comfort + energy forecasting (open) ----
+  - id: arxiv-2507-02351-indoor-comfort-bayesian
+    title: "Indoor thermal comfort management: Bayesian ML denoising & HVAC dynamics (arXiv 2507.02351)"
+    url: https://arxiv.org/pdf/2507.02351
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2004-14382-transfer-comfort-cities
+    title: "Transfer Learning for Thermal Comfort Prediction in Multiple Cities (arXiv 2004.14382)"
+    url: https://arxiv.org/pdf/2004.14382
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2104-02214-ai-comfort-energy-review
+    title: "Intelligent Building Control for Comfort & Energy: AI-assisted review (arXiv 2104.02214)"
+    url: https://arxiv.org/pdf/2104.02214
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2305-04498-dl-digital-twins-energy
+    title: "Leveraging Deep Learning and Digital Twins to Improve Building Energy Performance (arXiv 2305.04498)"
+    url: https://arxiv.org/pdf/2305.04498
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2507-20838-buildstg-load-forecasting
+    title: "BuildSTG: multi-building energy load forecasting via spatio-temporal GNN (arXiv 2507.20838)"
+    url: https://arxiv.org/pdf/2507.20838
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2311-08035-pinn-energy-efficiency
+    title: "Data-driven building energy efficiency prediction using physics-informed NNs (arXiv 2311.08035)"
+    url: https://arxiv.org/pdf/2311.08035
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2403-06474-nilm-review
+    title: "Non-Intrusive Load Monitoring in Smart Grids: a Comprehensive Review (arXiv 2403.06474)"
+    url: https://arxiv.org/pdf/2403.06474
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arxiv-2605-01362-dr-coordination-districts
+    title: "Coordination Architecture Shapes Continuous Demand Response in Building Districts (arXiv 2605.01362)"
+    url: https://arxiv.org/pdf/2605.01362
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+
+  # ---- PNNL (public domain) ----
+  - id: pnnl-29078-army-retuning-guides
+    title: "PNNL-29078 — Army Re-tuning Implementation Guides (controls sequences)"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-29078.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: pnnl-26348-energy-code-controls
+    title: "PNNL-26348 — Implementation of Energy Code Controls Requirements in New Buildings"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-26348.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: pnnl-15074-emcs-capabilities
+    title: "PNNL-15074 — Energy Management and Control System: Desired Capabilities"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-15074.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: pnnl-13890-om-best-practices
+    title: "PNNL-13890 — Operations & Maintenance Best Practices Guide"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/pnnl-13890.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: pnnl-25130-901-2010-performance
+    title: "PNNL-25130 — ANSI/ASHRAE/IES Standard 90.1-2010 Performance analysis"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-25130.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+
+  # ---- LBNL FDD literature (public domain) ----
+  - id: lbnl-review-data-driven-fdd-hvac
+    title: "LBNL — A Review of Data-Driven Fault Detection and Diagnostics for Building HVAC Systems"
+    url: https://eta-publications.lbl.gov/sites/default/files/a_review_of_data-driven_fault_detection_and_diagnostics_for_building_hvac_systems.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: lbnl-commercial-fdd-tools-granderson
+    title: "LBNL — Commercial Fault Detection and Diagnostics Tools (Granderson)"
+    url: https://eta-publications.lbl.gov/sites/default/files/commercial_fault_detection_and_diagnostics_-_granderson.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: lbnl-building-fault-detection-data
+    title: "LBNL — Building Fault Detection Data to Aid Diagnostic Algorithm Development"
+    url: https://eta-publications.lbl.gov/sites/default/files/granderson_-_building_fault_detection_data__0.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: lbnl-47966-emerging-diagnostic-tools
+    title: "LBNL-47966 — Evaluation of Emerging Diagnostic Tools for Commercial HVAC Systems"
+    url: https://eta-publications.lbl.gov/sites/default/files/lbnl-47966.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: lbnl-fault-correction-lin
+    title: "LBNL — Development and Implementation of Fault Correction Algorithms in FDD Tools (Lin)"
+    url: https://eta-publications.lbl.gov/sites/default/files/lin_-_development_and_implementation_of_fault_correction.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+
+  # ---- OSTI (public domain) ----
+  - id: osti-1782053-realtime-vfd-hvac
+    title: "OSTI 1782053 — Real-time optimization & control for variable-speed HVAC (distributed)"
+    url: https://www.osti.gov/servlets/purl/1782053
+    source: gov_osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: osti-1580209-geb-technical-series
+    title: "OSTI 1580209 — Grid-interactive Efficient Buildings Technical Report Series (HVAC)"
+    url: https://www.osti.gov/servlets/purl/1580209
+    source: gov_osti
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+
+  # ---- ASHRAE free addenda (copyrighted — internal only) ----
+  - id: ashrae-901-2022-addendum-u
+    title: "ASHRAE Addendum u to Standard 90.1-2022 (Energy Standard)"
+    url: https://www.ashrae.org/file%20library/technical%20resources/standards%20and%20guidelines/standards%20addenda/90_1_2022_u_20241231.pdf
+    source: ashrae
+    license: proprietary-internal
+    topic: standards_protocols
+    format: pdf
+  - id: ashrae-901-2019-addendum-cq
+    title: "ASHRAE Addendum cq to Standard 90.1-2019 (Energy Standard)"
+    url: https://www.ashrae.org/file%20library/technical%20resources/standards%20and%20guidelines/standards%20addenda/90_1_2019_cq_20220729.pdf
+    source: ashrae
+    license: proprietary-internal
+    topic: standards_protocols
+    format: pdf
+  - id: ashrae-901-2007-supplement
+    title: "ASHRAE Standard 90.1-2007 supplement"
+    url: https://www.ashrae.org/file%20library/technical%20resources/standards%20and%20guidelines/standards%20addenda/90_1_2007_supplement.pdf
+    source: ashrae
+    license: proprietary-internal
+    topic: standards_protocols
+    format: pdf
+
+  # ============================================================
+  # EXPANSION BATCH 4 (FINAL) — broaden to buildings & building energy.
+  # New topic: building_energy (envelope, modeling, codes, renewables/storage, decarb).
+  # Part A: Wikipedia (cc-by-sa). Part B (harvested PDFs) appended separately.
+  # ============================================================
+
+  # ---- building_energy: envelope / building science ----
+  - id: wiki-building-envelope
+    title: "Building envelope (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Building_envelope
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-thermal-insulation
+    title: "Thermal insulation (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Thermal_insulation
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-r-value-insulation
+    title: "R-value (insulation) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/R-value_(insulation)
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-thermal-bridge
+    title: "Thermal bridge (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Thermal_bridge
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-infiltration-hvac
+    title: "Infiltration (HVAC) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Infiltration_(HVAC)
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-insulated-glazing
+    title: "Insulated glazing (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Insulated_glazing
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-low-emissivity
+    title: "Low emissivity (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Low_emissivity
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-daylighting
+    title: "Daylighting (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Daylighting
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+
+  # ---- building_energy: low-energy buildings / modeling / codes ----
+  - id: wiki-passive-house
+    title: "Passive house (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Passive_house
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-zero-energy-building
+    title: "Zero-energy building (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Zero-energy_building
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-passive-solar-design
+    title: "Passive solar building design (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Passive_solar_building_design
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-building-performance-simulation
+    title: "Building performance simulation (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Building_performance_simulation
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-energyplus
+    title: "EnergyPlus (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/EnergyPlus
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-building-information-modeling
+    title: "Building information modeling (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Building_information_modeling
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-leed
+    title: "Leadership in Energy and Environmental Design (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Leadership_in_Energy_and_Environmental_Design
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-energy-star
+    title: "Energy Star (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Energy_Star
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+
+  # ---- building_energy: renewables & storage on buildings ----
+  - id: wiki-building-integrated-photovoltaics
+    title: "Building-integrated photovoltaics (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Building-integrated_photovoltaics
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-thermal-energy-storage
+    title: "Thermal energy storage (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Thermal_energy_storage
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-solar-water-heating
+    title: "Solar water heating (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Solar_water_heating
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wiki-cogeneration
+    title: "Cogeneration (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Cogeneration
+    source: wikipedia
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+
+  # ---- equipment_systems: additional equipment ----
+  - id: wiki-variable-refrigerant-flow
+    title: "Variable refrigerant flow (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Variable_refrigerant_flow
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-variable-frequency-drive
+    title: "Variable-frequency drive (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Variable-frequency_drive
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-dehumidifier
+    title: "Dehumidifier (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Dehumidifier
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-evaporative-cooler
+    title: "Evaporative cooler (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Evaporative_cooler
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-chilled-beam
+    title: "Chilled beam (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Chilled_beam
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+  - id: wiki-radiator
+    title: "Radiator (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Radiator
+    source: wikipedia
+    license: cc-by-sa
+    topic: equipment_systems
+    format: html
+
+  # ---- standards_protocols: data models & device protocols ----
+  - id: wiki-industry-foundation-classes
+    title: "Industry Foundation Classes (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Industry_Foundation_Classes
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-opc-ua
+    title: "OPC Unified Architecture (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/OPC_Unified_Architecture
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-zigbee
+    title: "Zigbee (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Zigbee
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-matter-standard
+    title: "Matter (standard) (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Matter_(standard)
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-dali
+    title: "Digital Addressable Lighting Interface (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Digital_Addressable_Lighting_Interface
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+  - id: wiki-green-button
+    title: "Green Button (Wikipedia)"
+    url: https://en.wikipedia.org/wiki/Green_Button
+    source: wikipedia
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html
+
+  # ---- BATCH 4 Part B: harvested authoritative PDFs (arXiv + gov) ----
+
+  # arXiv: building energy modeling / decarbonization / net-zero / datasets (open)
+  - id: arxiv-2603-11121-weather-surrogate-energy
+    title: "Weather-guided surrogate modeling for cross-location building energy prediction (arXiv 2603.11121)"
+    url: https://arxiv.org/pdf/2603.11121
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2407-11618-heating-network-decarb
+    title: "Decarbonization of Existing Heating Networks via Producer Retrofit & Low-Temp Operation (arXiv 2407.11618)"
+    url: https://arxiv.org/pdf/2407.11618
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2310-02756-heatpump-demand-smartmeter
+    title: "Modeling Electricity Demand of Retrofitted Heat Pumps from Gas Smart Meter Data (arXiv 2310.02756)"
+    url: https://arxiv.org/pdf/2310.02756
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2403-01027-retrofit-ercot-uri
+    title: "Building Sector Retrofits to Mitigate ERCOT Shortfalls during Winter Storm Uri (arXiv 2403.01027)"
+    url: https://arxiv.org/pdf/2403.01027
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2406-04133-globus-renovation
+    title: "GLOBUS: Global Building Renovation Potential by 2070 (arXiv 2406.04133)"
+    url: https://arxiv.org/pdf/2406.04133
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2312-03137-netzero-florida
+    title: "Role of Net-Zero Energy Residential Buildings in Florida's Energy Transition (arXiv 2312.03137)"
+    url: https://arxiv.org/pdf/2312.03137
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2602-20453-iot-bems-netzero
+    title: "IoT-Driven Building Energy Management Systems for Net Zero Energy Buildings (arXiv 2602.20453)"
+    url: https://arxiv.org/pdf/2602.20453
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2102-07654-energy-efficiency-recommenders
+    title: "A Survey of Recommender Systems for Energy Efficiency in Buildings (arXiv 2102.07654)"
+    url: https://arxiv.org/pdf/2102.07654
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2307-00142-buildingsbench
+    title: "BuildingsBench: 900K Buildings & Benchmark for Short-Term Load Forecasting (arXiv 2307.00142)"
+    url: https://arxiv.org/pdf/2307.00142
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-2507-12207-buildevo-forecasting
+    title: "BUILDEVO: Designing Building Energy Consumption Forecasting Heuristics (arXiv 2507.12207)"
+    url: https://arxiv.org/pdf/2507.12207
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arxiv-1411-4679-ann-heating-demand
+    title: "Pseudo-Dynamic Transitional Modeling of Building Heating Energy Demand using ANN (arXiv 1411.4679)"
+    url: https://arxiv.org/pdf/1411.4679
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+
+  # arXiv: semantic data models / interoperability (open)
+  - id: arxiv-2601-16663-categorical-semantic-interop
+    title: "A Categorical Approach to Semantic Interoperability across the Building Lifecycle (arXiv 2601.16663)"
+    url: https://arxiv.org/pdf/2601.16663
+    source: arxiv
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: arxiv-2205-05521-brick-vs-haystack
+    title: "Comparison of Brick and Project Haystack to Support Smart Building Applications (arXiv 2205.05521)"
+    url: https://arxiv.org/pdf/2205.05521
+    source: arxiv
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: arxiv-2003-07690-automated-metadata-tagging
+    title: "Automated Metadata Tagging for building points (arXiv 2003.07690)"
+    url: https://arxiv.org/pdf/2003.07690
+    source: arxiv
+    license: open
+    topic: standards_protocols
+    format: pdf
+
+  # arXiv: grid-interactive DER control (open)
+  - id: arxiv-2211-07926-twolevel-der-geb
+    title: "Two-Level Decentralized-Centralized Control of DER in Grid-Interactive Efficient Buildings (arXiv 2211.07926)"
+    url: https://arxiv.org/pdf/2211.07926
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+
+  # PNNL (public domain)
+  - id: pnnl-28605-energy-codes-geb
+    title: "PNNL-28605 — Building Energy Codes and Grid-Interactive Efficient Buildings"
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-28605.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: building_energy
+    format: pdf
+
+  # LBNL (public domain)
+  - id: lbnl-6774e-retrofit-tools-review
+    title: "LBNL-6774E — Review of Existing Energy Retrofit Tools (Hong)"
+    url: https://eta-publications.lbl.gov/sites/default/files/tianzhen_hong_-_review_of_existing_energy_retrofit_tools.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: lbnl-nexus-electrification-ee
+    title: "LBNL — The Nexus of Electrification and Energy Efficiency Upgrades"
+    url: https://eta-publications.lbl.gov/sites/default/files/186_-_the_nexus_of_electrification_and_ee_upgrades_clean_tableupdate.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: lbnl-53538-hpcbs-final
+    title: "LBNL-53538 — High Performance Commercial Building Systems (HPCBS) Final Report"
+    url: https://eta-publications.lbl.gov/sites/default/files/lbnl-53538.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: lbnl-5065e-cosimulation-energyplus
+    title: "LBNL-5065E — Co-Simulation of Building Energy and Control Systems (Wetter)"
+    url: https://eta-publications.lbl.gov/sites/default/files/wetter-paper-9711.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: lbnl-energyplus-simulation-program
+    title: "EnergyPlus: Energy Simulation Program (LBNL simulationresearch)"
+    url: https://simulationresearch.lbl.gov/dirpubs/46002.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: lbnl-geb-national-roadmap
+    title: "A National Roadmap for Grid-Interactive Efficient Buildings (LBNL/DOE)"
+    url: https://gebroadmap.lbl.gov/A%20National%20Roadmap%20for%20GEBs%20-%20Final.pdf
+    source: gov_lbnl
+    license: public-domain
+    topic: building_energy
+    format: pdf
+
+  # DOE (public domain; energy.gov host may not resolve)
+  - id: doe-bto-geb-project-summary
+    title: "DOE BTO — Grid-interactive Efficient Buildings Projects Summary (2020)"
+    url: https://www.energy.gov/sites/prod/files/2020/09/f79/bto-geb-project-summary-093020.pdf
+    source: gov_doe
+    license: public-domain
+    topic: building_energy
+    format: pdf
+
+  # --- curated non-paper sources (software docs / standards / gov guides / control / ontology) ---
+  - id: doc-energyplus-engineering-reference
+    title: EnergyPlus Engineering Reference (v26.1.0)
+    url: https://energyplus.net/assets/nrel_custom/pdfs/pdfs_v26.1.0/EngineeringReference.pdf
+    source: docs
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-energyplus-io-reference
+    title: EnergyPlus Input Output Reference (v26.1.0)
+    url: https://energyplus.net/assets/nrel_custom/pdfs/pdfs_v26.1.0/InputOutputReference.pdf
+    source: docs
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-energystar-source-energy
+    title: 'ENERGY STAR Portfolio Manager Technical Reference: Source Energy'
+    url: https://portfoliomanager.energystar.gov/pdf/reference/Source%20Energy.pdf
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: doc-iea-ebc-annex53
+    title: 'IEA EBC Annex 53: Total Energy Use in Buildings (Project Summary Report)'
+    url: https://www.iea-ebc.org/Data/publications/EBC_PSR_Annex53.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-title24-2022-standards
+    title: California Title 24 Building Energy Efficiency Standards (2022)
+    url: https://www.energy.ca.gov/sites/default/files/2022-12/CEC-400-2022-010_CMF.pdf
+    source: gov_ca
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: doc-doe-mv-guidelines
+    title: 'DOE M&V Guidelines: Measurement and Verification for Performance-Based Contracts
+      (5.0)'
+    url: https://www.energy.gov/sites/default/files/2024-10/mv_guide_5_0.pdf
+    source: gov_doe
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: doc-femp-commissioning-ch7
+    title: FEMP O&M Best Practices Ch.7 - Commissioning Existing Buildings
+    url: https://www1.eere.energy.gov/femp/pdfs/om_7.pdf
+    source: gov_doe
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: doc-femp-om-best-practices
+    title: FEMP Operations and Maintenance Best Practices Guide (Release 3.0)
+    url: https://www1.eere.energy.gov/femp/pdfs/OandM.pdf
+    source: gov_doe
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: doc-gsa-commissioning-guide
+    title: GSA Building Commissioning Guide (2020)
+    url: https://www.wbdg.org/FFC/GSA/gsa_commissioning_guide_2020.pdf
+    source: gsa
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: doc-nist-tn1924-hvac-cx
+    title: NIST TN 1924 Evaluating the Field Performance of HVAC-Cx Fault Detection
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1924.pdf
+    source: nist
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: doc-nist-tn2024-commissioning
+    title: NIST TN 2024 Commissioning ASHRAE High-Performance Sequences with HVAC-Cx
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2024.pdf
+    source: nist
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: doc-nist-tn2027-retrocommissioning
+    title: NIST TN 2027 Retro-Commissioning a Performing Building with HVAC-Cx
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2027.pdf
+    source: nist
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: doc-cec-obc-final-report
+    title: OpenBuildingControl Final Project Report (CEC-500-2021-012)
+    url: https://www.energy.ca.gov/sites/default/files/2021-05/CEC-500-2021-012.pdf
+    source: gov_ca
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: doc-g36-opensource-control
+    title: ASHRAE Guideline 36 Open-Source Supervisory Control Technology Development
+      (Final Report)
+    url: https://calnext.com/wp-content/uploads/2025/11/ET22SWE0039_ASHRAE-Guideline-36-Open-Source-Supervisory-Control-Technology-Development-and-Demonstration_Final-Report.pdf
+    source: calnext
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: doc-pnnl-transactive-control
+    title: PNNL-26083 Transactive Control of Commercial Building HVAC Systems
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-26083.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: doc-volttron-docs
+    title: Eclipse VOLTTRON Documentation (PNNL open building automation platform)
+    url: https://my-eclipse-volttron-docs.readthedocs.io/_/downloads/en/latest/pdf/
+    source: docs
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: doc-gsa-p100-facilities
+    title: GSA P100 Facilities Standards for the Public Buildings Service (2024)
+    url: https://www.gsa.gov/system/files/P100%202024%20Final%20(1).pdf
+    source: gsa
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doc-iea-ebc-annex48
+    title: 'IEA EBC Annex 48: Reversible Air-Conditioning (Final Report)'
+    url: https://iea-ebc.org/Data/publications/EBC_Annex_48_Final_Report_R31.pdf
+    source: iea_ebc
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: doc-nist-tn1868-iaq
+    title: NIST TN 1868 Characterizing Indoor Air Quality
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1868.pdf
+    source: nist
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doc-ufc-3-410-01-hvac
+    title: UFC 3-410-01 Heating, Ventilating, and Air Conditioning Systems (DoD)
+    url: https://www.wbdg.org/FFC/DOD/UFC/ufc_3_410_01_2025.pdf
+    source: wbdg
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doc-ashrae-223p-buildingmotif
+    title: Tooling for Creation, Validation and Use of Semantic Models (ASHRAE 223P
+      / BuildingMOTIF)
+    url: https://gtf.fyi/files/Original-2023-ASHRAE-BuildingMOTIF-Tutorial-Fierro.pdf
+    source: academic
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: doc-brick-schema-docs
+    title: Brick Ontology Documentation
+    url: https://brickschema.readthedocs.io/_/downloads/en/latest/pdf/
+    source: docs
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: doc-pnnl-901-prm-2016
+    title: PNNL-26917 ANSI/ASHRAE/IES Standard 90.1-2016 Performance Rating Method Reference
+      Manual
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-26917.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+
+  # --- curated non-paper (batch: NIST/IEA/PNNL/LBNL dense reports) ---
+  - id: doc-nist-tn1767-whole-bldg-energy
+    title: NIST TN 1767 Annual Whole Building Energy Simulation
+    url: https://nvlpubs.nist.gov/nistpubs/technicalnotes/nist.tn.1767.pdf
+    source: nist
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: doc-nist-tn1774-fddcx
+    title: 'NIST TN 1774 FDD CX: A Fault Detection and Diagnostics Tool'
+    url: https://nvlpubs.nist.gov/nistpubs/technicalnotes/nist.tn.1774.pdf
+    source: nist
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: doc-nist-tn1981-hvaccx-guide
+    title: NIST TN 1981 User's Guide to HVAC-Cx v2.2
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1981.pdf
+    source: nist
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: doc-nist-tn2017-residential-hvac
+    title: NIST TN 2017r1 Assessing the Performance of Residential HVAC Controls and
+      FDD
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2017r1.pdf
+    source: nist
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doc-nist-tn1648-heating-perf
+    title: NIST TN 1648 Heating Mode Performance Measurements
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1648_2009.pdf
+    source: nist
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doc-iea-ebc-annex35-hybrid-vent
+    title: IEA EBC Annex 35 Hybrid Ventilation Control (Technical Synthesis)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_35_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: doc-iea-ebc-annex60-psr
+    title: IEA EBC Annex 60 New-Generation Computational Tools (Project Summary)
+    url: https://iea-ebc.org/Data/publications/EBC_PSR_Annex60.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-iea-ebc-annex58
+    title: IEA EBC Annex 58 Reliable Building Energy Performance (Final Report)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_58_Final_Report_ST3b.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-pnnl-26348-energy-code-controls
+    title: PNNL-26348 Implementation of Energy Code Controls Requirements
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-26348.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: doc-pnnl-31571-hvac-perf-codes
+    title: PNNL-31571 HVAC System Performance for Energy Codes
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-31571.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doc-pnnl-25985-controls-impacts
+    title: PNNL-25985 Impacts of Commercial Building Controls on Energy
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-25985.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: doc-pnnl-19074-self-correcting-hvac
+    title: PNNL-19074 Self-Correcting HVAC Controls Project Final Report
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-19074.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: doc-lbnl-6432e-bem-hvac
+    title: 'LBNL-6432E Comparison of Building Energy Modeling Programs: HVAC Systems'
+    url: https://eta-publications.lbl.gov/sites/default/files/lbnl-6432e.pdf
+    source: gov_lbnl
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-lbnl-41365-thermal-dist
+    title: LBNL-41365 Efficient Thermal Energy Distribution in Commercial Buildings
+    url: https://eta-publications.lbl.gov/sites/default/files/lbnl-41365.pdf
+    source: gov_lbnl
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: doc-lbnl-53538-hpcbs
+    title: LBNL-53538 High Performance Commercial Building Systems (Final Report)
+    url: https://eta-publications.lbl.gov/sites/default/files/lbnl-53538.pdf
+    source: gov_lbnl
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-lbnl-5894e-bldg-energy-info
+    title: LBNL-5894E Intelligent Building Energy Information Systems
+    url: https://eta-publications.lbl.gov/sites/default/files/LBNL-5894E.pdf
+    source: gov_lbnl
+    license: open
+    topic: controls_bas
+    format: pdf
+
+  # --- curated non-paper (batch: commissioning/controls reports) ---
+  - id: doc-pnnl-21003-cx-guide
+    title: PNNL-21003 A Guide to Building Commissioning
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/pnnl-21003.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: doc-pnnl-15149-sensors-controls
+    title: PNNL-15149 Advanced Sensors and Controls for Building Applications
+    url: https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-15149.pdf
+    source: gov_pnnl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: doc-ornl-osti-2572756
+    title: ORNL building HVAC technical report (OSTI 2572756)
+    url: https://www.osti.gov/servlets/purl/2572756
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doc-gsa-bttrg-v3
+    title: GSA Building Technologies Technical Reference Guide (BTTRG) v3.0
+    url: https://www.gsa.gov/system/files/Building_Technologies_Technical_Reference_Guide_(BTTRG)_Version_3.0_(REDACTED_Final)_May2024.pdf
+    source: gsa
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: doc-aceee-ssb24-hvac-cx
+    title: ACEEE Increasing Uptake of Residential HVAC Commissioning with Advanced Technologies
+    url: https://www.aceee.org/sites/default/files/proceedings/ssb24/pdfs/Increasing%20Uptake%20of%20Residential%20HVAC%20Commissioning%20with%20Advanced%20Technologies.pdf
+    source: aceee
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: doc-lbnl-innovations-sensors-controls
+    title: LBNL Innovations in Sensors and Controls for Building Energy Management
+    url: https://connectedcommunities.lbl.gov/sites/default/files/2021-09/Innovations%20Sensors%20and%20Controls%2075601.pdf
+    source: gov_lbnl
+    license: open
+    topic: controls_bas
+    format: pdf
+
+  # --- curated non-paper (batch: IEA annexes / GEB / FDD / BEMS) ---
+  - id: doc-iea-ebc-annex79
+    title: IEA EBC Annex 79 Occupant-Centric Building Design and Operation (Final Report
+      2024)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_79_Final_Report_2024.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-iea-ebc-annex68-psr
+    title: IEA EBC Annex 68 IAQ Design and Control in Low Energy Residential Buildings
+      (Project Summary)
+    url: https://www.iea-ebc.org/Data/publications/EBC_PSR_Annex_68.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-iea-ebc-annex66
+    title: IEA EBC Annex 66 Definition and Simulation of Occupant Behavior (Final Report)
+    url: https://annex66.org/sites/default/files/2018FinalReport/Annex%2066%20Final%20Report%20-%20read.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-doe-geb-75475
+    title: DOE Grid-interactive Efficient Buildings Technical Report Series
+    url: https://www1.eere.energy.gov/buildings/pdfs/75475.pdf
+    source: gov_doe
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: doc-aceee-geb-utility
+    title: 'ACEEE Grid-Interactive Efficient Building Utility Programs: State of the
+      Market'
+    url: https://www.aceee.org/sites/default/files/pdfs/gebs-103019.pdf
+    source: aceee
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-naseo-geb
+    title: NASEO Residential Grid-Interactive Efficient Building Technology Report
+    url: https://www.naseo.org/data/sites/1/documents/publications/AnnDyl-NASEO-GEB-Report.pdf
+    source: naseo
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: doc-lbnl-47966-fdd-tools
+    title: LBNL Evaluation of Emerging Diagnostic Tools for Commercial HVAC Systems
+    url: https://eta-publications.lbl.gov/sites/default/files/lbnl-47966.pdf
+    source: gov_lbnl
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: doc-aceee-bems-brief
+    title: ACEEE Unlocking Energy Savings Using Building Energy Management Control Systems
+    url: https://www.aceee.org/sites/default/files/pdfs/unlocking_energy_savings_using_building_energy_management_control_systems.pdf
+    source: aceee
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: doc-aceee-1992-fdd-office
+    title: ACEEE Multilevel Fault Detection and Diagnosis on Office Building HVAC
+    url: https://www.aceee.org/files/proceedings/2010/data/papers/1992.pdf
+    source: aceee
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: doc-lbnl-obrien-a79
+    title: LBNL Introducing IEA EBC Annex 79 (occupant-centric, BuildEnv)
+    url: https://eta-publications.lbl.gov/sites/default/files/introducing_iea_ebc_obrien.pdf
+    source: gov_lbnl
+    license: open
+    topic: building_energy
+    format: pdf
+
+  # --- curated new-vein: energy codes + DOE/EERE buildings (public-domain) ---
+  - id: ecc-90-1-2016-cost-effectiveness-nh
+    title: Cost-Effectiveness of ASHRAE Standard 90.1-2016 (New Hampshire)
+    url: https://www.energycodes.gov/sites/default/files/2021-03/Cost-effectiveness_of_ASHRAE_Standard_90-1-2016-NewHampshire.pdf
+    source: energycodes
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: ecc-commercial-cost-methodology
+    title: Methodology for Evaluating Cost-Effectiveness of Commercial Energy Code Changes
+      (PNNL)
+    url: https://www.energycodes.gov/sites/default/files/2021-07/commercial_methodology.pdf
+    source: energycodes
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: eere-comm-hvac-energy-consumption-vol1
+    title: Energy Consumption Characteristics of Commercial Building HVAC Systems, Volume
+      1
+    url: https://www1.eere.energy.gov/buildings/publications/pdfs/commercial_initiative/hvac_volume1_final_report.pdf
+    source: eere
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: eere-comm-hvac-savings-potential-2011
+    title: Energy Savings Potential and RD&D Opportunities for Commercial Building HVAC
+      Systems (2011)
+    url: https://www1.eere.energy.gov/buildings/publications/pdfs/corporate/savings_potential_comm_hvac.pdf
+    source: eere
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: eere-comm-hvac-savings-rdd-2017
+    title: Energy Savings Potential and RD&D Opportunities for Commercial Building HVAC
+      Systems (2017)
+    url: https://www.energy.gov/sites/prod/files/2017/12/f46/bto-DOE-Comm-HVAC-Report-12-21-17.pdf
+    source: eere
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: eere-commercial-energy-asset-score-protocol
+    title: 'Commercial Building Energy Asset Score: Technical Protocol (Phase 1)'
+    url: https://www1.eere.energy.gov/buildings/commercial_initiative/pdfs/energy_asset_score_technical_protocol_phase1.pdf
+    source: eere
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: eere-efficiency-trends-resid-comm-2008
+    title: Energy Efficiency Trends in Residential and Commercial Buildings (2008)
+    url: https://www1.eere.energy.gov/buildings/publications/pdfs/corporate/bt_stateindustry.pdf
+    source: eere
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eere-measure-guide-ac-diagnostics
+    title: 'Measure Guideline: Air Conditioner Diagnostics, Maintenance, and Replacement'
+    url: https://www1.eere.energy.gov/buildings/publications/pdfs/building_america/measure_guide_air_cond_diagnostics.pdf
+    source: eere
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: eere-residential-hvac-research-opportunities
+    title: Research and Development Opportunities for Residential HVAC Systems
+    url: https://www1.eere.energy.gov/buildings/pdfs/residential_hvac_research_opportunities.pdf
+    source: eere
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: eere-sustainable-bldg-ch5-lighting-hvac-plumbing
+    title: 'Sustainable Building Technical Guide Ch.5: Lighting, HVAC, and Plumbing'
+    url: https://www1.eere.energy.gov/buildings/publications/pdfs/commercial_initiative/sustainable_guide_ch5.pdf
+    source: eere
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+
+  # --- curated round 7: thermal-science + gov design manuals (thermo/HVAC/controls/renewables) ---
+  - id: txt-openstax-college-physics
+    title: College Physics (OpenStax, 1st ed) — heat, thermodynamics, fluid mechanics
+    url: https://assets.openstax.org/oscms-prodcms/media/documents/College_Physics-WEB_2s5sHvR.pdf
+    source: textbook_oer
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: txt-cleynen-engineering-thermodynamics
+    title: Engineering Thermodynamics (Olivier Cleynen)
+    url: https://thermodynamicsbook.com/thermodynamics-free-textbook.pdf
+    source: textbook_oer
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+  - id: txt-cleynen-fluid-mechanics
+    title: Fluid Mechanics (Olivier Cleynen)
+    url: https://fluidmech.ninja/fluidmech.pdf
+    source: textbook_oer
+    license: cc-by-sa
+    topic: equipment_systems
+    format: pdf
+  - id: txt-doe-hdbk-1012-v1-thermodynamics
+    title: DOE Fundamentals Handbook — Thermodynamics, Heat Transfer & Fluid Flow, Vol
+      1 (Thermodynamics)
+    url: https://www.steamtablesonline.com/pdf/Thermodynamics-Volume1.pdf
+    source: doe_handbook
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: txt-doe-hdbk-1012-v2-heat-transfer
+    title: DOE Fundamentals Handbook — Thermodynamics, Heat Transfer & Fluid Flow, Vol
+      2 (Heat Transfer)
+    url: https://www.steamtablesonline.com/pdf/Thermodynamics-Volume2.pdf
+    source: doe_handbook
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: txt-doe-hdbk-1012-v3-fluid-flow
+    title: DOE Fundamentals Handbook — Thermodynamics, Heat Transfer & Fluid Flow, Vol
+      3 (Fluid Flow)
+    url: https://www.steamtablesonline.com/pdf/Thermodynamics-Volume3.pdf
+    source: doe_handbook
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: txt-naca-tr1135-compressible-flow
+    title: Equations, Tables, and Charts for Compressible Flow (NACA Report 1135)
+    url: https://ntrs.nasa.gov/api/citations/19930091059/downloads/19930091059.pdf
+    source: nasa_ntrs
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: txt-naca-tn-compressible-flow-charts
+    title: Charts for the Analysis of One-Dimensional Steady Compressible Flow (NACA
+      TN 1419)
+    url: https://ntrs.nasa.gov/api/citations/19930082114/downloads/19930082114.pdf
+    source: nasa_ntrs
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: txt-nbs-circ564-thermal-props-gases
+    title: Tables of Thermal Properties of Gases (NBS Circular 564)
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular564.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: txt-nbs-circ500-chem-thermo-props
+    title: Selected Values of Chemical Thermodynamic Properties (NBS Circular 500)
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular500.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: txt-nasa-rp1311-cea-thermodynamics
+    title: Computer Program for Calculation of Complex Chemical Equilibrium Compositions
+      (NASA RP-1311, CEA)
+    url: https://ntrs.nasa.gov/api/citations/19950013764/downloads/19950013764.pdf
+    source: nasa_ntrs
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: txt-naca-tr1037-thermodynamic-tables
+    title: General Method and Thermodynamic Tables for Computation of Equilibrium Composition
+      (NACA Report 1037)
+    url: https://ntrs.nasa.gov/api/citations/19930091090/downloads/19930091090.pdf
+    source: nasa_ntrs
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: txt-nasa-sp164-thermal-radiation-v2
+    title: Thermal Radiation Heat Transfer, Vol II — Radiation Exchange Between Surfaces
+      (Siegel & Howell, NASA SP-164)
+    url: https://ntrs.nasa.gov/api/citations/19690020939/downloads/19690020939.pdf
+    source: nasa_ntrs
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: txt-nasa-sp164-thermal-radiation-v3
+    title: Thermal Radiation Heat Transfer, Vol III — Absorbing, Emitting, Scattering
+      Media (Siegel & Howell, NASA SP-164)
+    url: https://ntrs.nasa.gov/api/citations/19710021465/downloads/19710021465.pdf
+    source: nasa_ntrs
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ufc-3-400-02-weather-data
+    title: 'UFC 3-400-02 / Design: Engineering Weather Data (Technical Guide)'
+    url: https://www.wbdg.org/FFC/DOD/UFC/Design_Engineering_Weather_Data_Technical_Guide.pdf
+    source: wbdg_ufc
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ufc-3-401-01-mechanical
+    title: 'UFC 3-401-01: Mechanical Engineering'
+    url: https://www.wbdg.org/FFC/DOD/UFC/ufc_3_401_01_2025.pdf
+    source: wbdg_ufc
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ufc-3-410-04-industrial-ventilation
+    title: 'UFC 3-410-04: Industrial Ventilation'
+    url: https://www.wbdg.org/FFC/DOD/UFC/ufc_3_410_04_2017.pdf
+    source: wbdg_ufc
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ufc-3-410-02n-hvac-dehumidifying
+    title: 'UFC 3-410-02N: Heating, Ventilating, Air Conditioning and Dehumidifying
+      Systems'
+    url: https://www.wbdg.org/FFC/DOD/UFC/ARCHIVES/ufc_3_410_02n_2005.pdf
+    source: wbdg_ufc
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ufc-3-410-01fa-hvac
+    title: 'UFC 3-410-01FA: Heating, Ventilating, and Air Conditioning (Army/Air Force)'
+    url: https://www.wbdg.org/FFC/DOD/UFC/ARCHIVES/ufc_3_410_01fa_2003_c3.pdf
+    source: wbdg_ufc
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ufc-3-430-01fa-heating-cooling-distribution
+    title: 'UFC 3-430-01FA: Heating and Cooling Distribution Systems'
+    url: https://www.wbdg.org/FFC/DOD/UFC/ufc_3_430_01fa_2003.pdf
+    source: wbdg_ufc
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ufc-3-430-08n-central-heating-plants
+    title: 'UFC 3-430-08N: Central Heating Plants'
+    url: https://www.wbdg.org/FFC/DOD/UFC/INACTIVE/ufc_3_430_08n_2004.pdf
+    source: wbdg_ufc
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ufc-4-826-10-refrigeration-cold-storage
+    title: 'UFC 4-826-10 / Design: Refrigeration Systems for Cold Storage'
+    url: https://www.wbdg.org/FFC/DOD/UFC/ufc_4_826_10_2024.pdf
+    source: wbdg_ufc
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ufc-3-420-01-plumbing
+    title: 'UFC 3-420-01: Plumbing Systems'
+    url: https://www.wbdg.org/FFC/DOD/UFC/ufc_3_420_01_2021.pdf
+    source: wbdg_ufc
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ufc-3-440-01-facility-renewable-energy
+    title: 'UFC 3-440-01: Facility-Scale Renewable Energy Systems'
+    url: https://www.wbdg.org/FFC/DOD/UFC/ufc_3_440_01_2015.pdf
+    source: wbdg_ufc
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ufc-3-540-08-utility-renewable-energy
+    title: 'UFC 3-540-08: Utility-Scale Renewable Energy Systems'
+    url: https://www.wbdg.org/FFC/DOD/UFC/ufc_3_540_08_2017.pdf
+    source: wbdg_ufc
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: ufc-1-200-02-high-performance-sustainable
+    title: 'UFC 1-200-02: High Performance and Sustainable Building Requirements'
+    url: https://www.wbdg.org/FFC/DOD/UFC/ufc_1_200_02_2020_c3.pdf
+    source: wbdg_ufc
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: tm-5-697-commissioning-mechanical
+    title: 'TM 5-697: Commissioning of Mechanical Systems'
+    url: https://www.wbdg.org/FFC/ARMYCOE/COETM/ARCHIVES/tm_5_697_2002.pdf
+    source: wbdg_ufc
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: nistir-4821-envelope-design-guidelines
+    title: 'NISTIR 4821: Envelope Design Guidelines for Federal Office Buildings'
+    url: https://www.wbdg.org/FFC/NIST/nist4821.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: nist-tn1847-net-zero-design
+    title: 'NIST TN 1847: Design Challenges of the NIST Net Zero Energy Residential
+      Test Facility'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1847.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: nist-tn1887-contam-user-guide
+    title: 'NIST TN 1887: CONTAM User Guide and Program Documentation'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1887.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: nist-tn2072-airflow-iaq-models
+    title: 'NIST TN 2072: Airflow and Indoor Air Quality Models of DOE Prototype Commercial
+      Buildings'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2072.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: nist-tn2221-infiltration-correlations
+    title: 'NIST TN 2221: Implementing NIST Infiltration Correlations'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2221-upd1.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: nist-persily-evaluating-ventilation
+    title: Evaluating Ventilation Performance (Persily, NIST — Handbook of Indoor Air
+      Quality)
+    url: https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=932281
+    source: nist_pubs
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: epa-building-air-quality-guide
+    title: 'EPA Building Air Quality: A Guide for Building Owners and Facility Managers'
+    url: https://www.epa.gov/sites/default/files/2014-08/documents/iaq.pdf
+    source: epa_iaq
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: epa-moisture-control-guidance
+    title: EPA Moisture Control Guidance for Building Design, Construction and Maintenance
+    url: https://www.epa.gov/sites/default/files/2014-08/documents/moisture-control.pdf
+    source: epa_iaq
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: doe-ba-moisture-management-high-r-walls
+    title: 'Building America: Moisture Management for High R-Value Walls'
+    url: https://www1.eere.energy.gov/buildings/publications/pdfs/building_america/moisture_management_high_rwalls.pdf
+    source: doe_buildings
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: doe-ba-climate-specific-guidance
+    title: 'Building America Best Practices Series: Climate-Specific Guidance (Vol 7.1)'
+    url: https://www1.eere.energy.gov/buildings/publications/pdfs/building_america/ba_climateguide_7_1.pdf
+    source: doe_buildings
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: textbook-basic-hvac-cc-by
+    title: Basic HVAC (open textbook)
+    url: https://opentextbc.ca/basichvac/open/download?type=pdf
+    source: textbook_oer
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: nist-sp1108r4-smart-grid-interop
+    title: NIST Framework and Roadmap for Smart Grid Interoperability Standards, Release
+      4.0 (SP 1108r4)
+    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1108r4.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nist-sp800-82r2-ics-security
+    title: Guide to Industrial Control Systems (ICS) Security (NIST SP 800-82 Rev. 2)
+    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r2.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: nist-sp1500-201-cps-framework-v1
+    title: Framework for Cyber-Physical Systems, Volume 1 Overview (NIST SP 1500-201)
+    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1500-201.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: nist-sp1500-202-cps-framework-v2
+    title: Framework for Cyber-Physical Systems, Volume 2 Working Group Reports (NIST
+      SP 1500-202)
+    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1500-202.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: kuphaldt-lessons-industrial-instrumentation
+    title: Lessons In Industrial Instrumentation (Kuphaldt, v2.32)
+    url: https://www.ibiblio.org/kuphaldt/socratic/sinst/book/liii_2v32.pdf
+    source: textbook_oer
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+  - id: sandia-doe-epri-electricity-storage-handbook
+    title: DOE/EPRI Electricity Storage Handbook in Collaboration with NRECA (SAND2015-1002)
+    url: https://www.sandia.gov/ess-ssl/publications/SAND2015-1002.pdf
+    source: sandia
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: eia-battery-storage-market-trends
+    title: U.S. Battery Storage Market Trends (EIA)
+    url: https://www.eia.gov/analysis/studies/electricity/batterystorage/pdf/battery_storage.pdf
+    source: eia
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doe-amo-motors-drive-sourcebook
+    title: Improving Motor and Drive System Performance - A Sourcebook for Industry
+      (DOE AMO)
+    url: https://www.energy.gov/sites/prod/files/2014/04/f15/amo_motors_sourcebook_web.pdf
+    source: doe_amo
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doe-qtr2015-ch5-building-systems
+    title: Quadrennial Technology Review 2015, Ch.5 Increasing Efficiency of Building
+      Energy Systems
+    url: https://www.energy.gov/sites/default/files/2017/03/f34/qtr-2015-chapter5.pdf
+    source: doe_buildings
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: epa-catalog-chp-technologies
+    title: Catalog of CHP Technologies (EPA CHP Partnership, full report)
+    url: https://www.epa.gov/sites/default/files/2015-07/documents/catalog_of_chp_technologies.pdf
+    source: epa_chp
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doe-guide-geothermal-heat-pumps
+    title: Guide to Geothermal Heat Pumps (DOE/EERE)
+    url: https://www.energy.gov/sites/prod/files/guide_to_geothermal_heat_pumps.pdf
+    source: doe_geothermal
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ornl-advanced-controls-gshp
+    title: Advanced Controls for Ground-Source Heat Pump Systems (ORNL Pub75387)
+    url: https://info.ornl.gov/sites/publications/Files/Pub75387.pdf
+    source: ornl
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: doe-solar-futures-study
+    title: Solar Futures Study (DOE/EERE, 2021)
+    url: https://www.energy.gov/sites/default/files/2021-09/Solar%20Futures%20Study.pdf
+    source: doe_solar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: nrel-pv-storage-cost-benchmark-q1-2023
+    title: U.S. Solar Photovoltaic System and Energy Storage Cost Benchmarks, Q1 2023
+      (NREL, via OSTI)
+    url: https://www.osti.gov/servlets/purl/2005540
+    source: osti
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doe-qtr2015-6d-chp-systems
+    title: Quadrennial Technology Review 2015, 6D Combined Heat and Power Systems Technology
+      Assessment
+    url: https://www.energy.gov/sites/prod/files/2015/12/f27/QTR2015-6D-Combined-Heat-and-Power-Systems.pdf
+    source: doe_chp
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: ornl-chp-effective-energy-solutions
+    title: Combined Heat and Power - Effective Energy Solutions for a Sustainable Future
+      (ORNL Pub13655)
+    url: https://info.ornl.gov/sites/publications/files/Pub13655.pdf
+    source: ornl
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doe-chp-resource-guide-2015
+    title: Combined Heat and Power (CHP) Resource Guide (DOE, 2015)
+    url: https://www.energy.gov/sites/default/files/2019/01/f58/CHPGuide2015.pdf
+    source: doe_chp
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: doe-ssl-energy-savings-forecast-2019
+    title: Energy Savings Forecast of Solid-State Lighting in General Illumination Applications
+      (DOE SSL)
+    url: https://www.energy.gov/sites/prod/files/2019/12/f69/2019_ssl-energy-savings-forecast.pdf
+    source: doe_ssl
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: doe-ssl-rd-opportunities-2020
+    title: 2019 Solid-State Lighting R&D Opportunities (DOE SSL)
+    url: https://www.energy.gov/sites/prod/files/2020/01/f70/ssl-rd-opportunities2-jan2020.pdf
+    source: doe_ssl
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+
+  # --- curated round 7 (built-environment): FHWA/FEMA/NIST/USGS/OSHA/GSA/NPS/HUD/USDA-FPL + CC-BY OA books ---
+  - id: fhwa-soils-and-foundations-ref-manual
+    title: FHWA NHI-06-089 — Soils and Foundations Reference Manual (NHI Course 132012)
+    url: https://www.fhwa.dot.gov/engineering/geotech/pubs/nhi06089.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-gec4-ground-anchors
+    title: FHWA GEC 4 — Ground Anchors and Anchored Systems (FHWA-IF-99-015)
+    url: https://www.fhwa.dot.gov/engineering/geotech/pubs/if99015.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-gec5-geotechnical-site-characterization
+    title: FHWA GEC 5 — Geotechnical Site Characterization (FHWA-NHI-16-072)
+    url: https://www.fhwa.dot.gov/engineering/geotech/pubs/nhi16072.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-gec6-shallow-foundations
+    title: FHWA GEC 6 — Shallow Foundations (FHWA-SA-02-054 / 010943)
+    url: https://www.fhwa.dot.gov/engineering/geotech/pubs/010943.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-gec7-soil-nailing-walls
+    title: FHWA GEC 7 — Soil Nail Walls Reference Manual (FHWA-NHI-14-007)
+    url: https://www.fhwa.dot.gov/engineering/geotech/pubs/nhi14007.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-gec9-laterally-loaded-deep-foundations
+    title: FHWA GEC 9 — Design, Analysis, and Testing of Laterally Loaded Deep Foundations
+      (FHWA-HIF-18-031)
+    url: https://www.fhwa.dot.gov/engineering/geotech/pubs/hif18031.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-gec11-mse-walls-vol1
+    title: FHWA GEC 11 — MSE Walls and Reinforced Soil Slopes, Volume I (FHWA-NHI-10-024)
+    url: https://www.fhwa.dot.gov/engineering/geotech/pubs/nhi10024/nhi10024.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-gec11-mse-walls-vol2
+    title: FHWA GEC 11 — MSE Walls and Reinforced Soil Slopes, Volume II (FHWA-NHI-10-025)
+    url: https://www.fhwa.dot.gov/engineering/geotech/pubs/nhi10025/nhi10025.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-gec13-ground-modification-vol1
+    title: FHWA GEC 13 — Ground Modification Methods Reference Manual, Volume I (FHWA-NHI-16-027)
+    url: https://www.fhwa.dot.gov/engineering/geotech/pubs/nhi16027.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-gec13-ground-modification-vol2
+    title: FHWA GEC 13 — Ground Modification Methods Reference Manual, Volume II (FHWA-NHI-16-028)
+    url: https://www.fhwa.dot.gov/engineering/geotech/pubs/nhi16028.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-lrfd-steel-girder-design-example
+    title: FHWA — LRFD Design Example for Steel Girder Superstructure Bridge (FHWA-NHI-04-041)
+    url: https://www.fhwa.dot.gov/bridge/lrfd/fhwanhi04041_steel.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-lrfd-psc-concrete-girder-design-example
+    title: FHWA — Comprehensive Design Example for Prestressed Concrete (PSC) Girder
+      Superstructure Bridge (FHWA-NHI-04-043)
+    url: https://www.fhwa.dot.gov/bridge/lrfd/fhwanhi04043.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-lrfd-bridge-superstructures-design-examples
+    title: FHWA NHI-15-058 — LRFD for Highway Bridge Superstructures, Design Examples
+      (NHI Course 130081)
+    url: https://www.fhwa.dot.gov/bridge/pubs/nhi15058.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-underwater-bridge-inspection-manual
+    title: FHWA NHI-23-027 — Underwater Bridge Inspection Reference Manual (2024)
+    url: https://www.fhwa.dot.gov/bridge/nbis/pubs/nhi23027.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-hec18-scour-at-bridges
+    title: FHWA HEC-18 — Evaluating Scour at Bridges, Fifth Edition (FHWA-HIF-12-003)
+    url: https://www.fhwa.dot.gov/engineering/hydraulics/pubs/hif12003.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-hec20-stream-stability
+    title: FHWA HEC-20 — Stream Stability at Highway Structures, Fourth Edition (FHWA-HIF-12-004)
+    url: https://www.fhwa.dot.gov/engineering/hydraulics/pubs/hif12004.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fhwa-hec23-scour-countermeasures-vol1
+    title: FHWA HEC-23 — Bridge Scour and Stream Instability Countermeasures, Volume
+      1 (FHWA-NHI-09-111)
+    url: https://www.fhwa.dot.gov/engineering/hydraulics/pubs/09111/09111.pdf
+    source: fhwa
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fema-p751-nehrp-design-examples-2009
+    title: 'FEMA P-751 — 2009 NEHRP Recommended Seismic Provisions: Design Examples'
+    url: https://nibs-s3-wbdg3-production.s3.us-east-1.amazonaws.com/FFC/DHS/ARCHIVES/FEMA_P-751_NEHRP_Design_Examples_2009.pdf
+    source: fema
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fema-454-designing-for-earthquakes
+    title: 'FEMA 454 — Designing for Earthquakes: A Manual for Architects'
+    url: https://www.wbdg.org/FFC/DHS/fema454.pdf
+    source: fema
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: fema-547-seismic-rehabilitation-techniques
+    title: FEMA 547 — Techniques for the Seismic Rehabilitation of Existing Buildings
+    url: https://www.wbdg.org/FFC/DHS/fema547.pdf
+    source: fema
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nistpubs-progressive-collapse-best-practices
+    title: NISTIR 7396 — Best Practices for Reducing the Potential for Progressive Collapse
+      in Buildings
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7396.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nistpubs-nonlinear-structural-analysis-guidelines-p1
+    title: NIST GCR 17-917-46v1 — Guidelines for Nonlinear Structural Analysis for Design
+      of Buildings, Part I
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2017/NIST.GCR.17-917-46v1.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nistpubs-high-strength-reinforcement-eq-concrete
+    title: NIST GCR 14-917-30 — Use of High-Strength Reinforcement in Earthquake-Resistant
+      Concrete Structures
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2014/NIST.GCR.14-917-30.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nistpubs-seismic-rc-special-moment-frames
+    title: NIST GCR 16-917-40 — Seismic Design of Reinforced Concrete Special Moment
+      Frames (NEHRP Tech Brief 1)
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2016/NIST.GCR.16-917-40.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nistpubs-seismic-concrete-diaphragms-collectors
+    title: NIST GCR 16-917-42 — Seismic Design of Cast-in-Place Concrete Diaphragms,
+      Chords, and Collectors (NEHRP Tech Brief 3)
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2016/NIST.GCR.16-917-42.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nistpubs-seismic-cold-formed-steel-systems
+    title: NIST GCR 16-917-38 — Seismic Design of Cold-Formed Steel Lateral Load-Resisting
+      Systems (NEHRP Tech Brief 12)
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2016/NIST.GCR.16-917-38.pdf
+    source: nist_pubs
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: usgs-shakemap-manual
+    title: 'USGS — ShakeMap Manual: Technical Manual, Users Guide, and Software Guide
+      (TM 12-A1)'
+    url: https://pubs.usgs.gov/tm/2005/12A01/pdf/508TM12-A1.pdf
+    source: usgs
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: ito-bridge-engineering
+    title: Bridge Engineering (IntechOpen open-access book, ed. Yaghoubi)
+    url: https://mts.intechopen.com/storage/books/6395/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: ito-earthquake-resistant-structures
+    title: Earthquake-Resistant Structures — Design, Assessment and Rehabilitation (IntechOpen
+      open-access book)
+    url: https://mts.intechopen.com/storage/books/2050/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: ito-earthquake-engineering-sezen
+    title: Earthquake Engineering (IntechOpen open-access book, ed. Sezen)
+    url: https://mts.intechopen.com/storage/books/1120/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: ito-earthquake-engineering-seismology-optimal-design
+    title: Earthquake Engineering — From Engineering Seismology to Optimal Seismic Design
+      of Engineering Structures (IntechOpen)
+    url: https://mts.intechopen.com/storage/books/4488/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: ito-engineering-seismology-geotech-structural-eq
+    title: Engineering Seismology, Geotechnical and Structural Earthquake Engineering
+      (IntechOpen open-access book)
+    url: https://mts.intechopen.com/storage/books/3059/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: gsa-historic-roofing-tech-guide
+    title: 'GSA Technical Preservation Guidelines: Historic Building Roofing'
+    url: https://www.gsa.gov/system/files/RoofingTechGuide.pdf
+    source: gsa
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: gsa-historic-hvac-tech-guide
+    title: 'GSA Technical Preservation Guidelines: HVAC for Historic Buildings'
+    url: https://www.gsa.gov/system/files/HVAC.pdf
+    source: gsa
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: firenist-ncstar1-wtc-towers
+    title: 'NIST NCSTAR 1: Final Report on the Collapse of the World Trade Center Towers'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1.pdf
+    source: nist
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: firenist-ncstar1a-wtc7-collapse
+    title: 'NIST NCSTAR 1A: Final Report on the Collapse of World Trade Center Building
+      7'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1a.pdf
+    source: nist
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: firenist-ncstar1-7-fire-life-safety
+    title: 'NIST NCSTAR 1-7: Fire Protection and Life Safety Investigation of the WTC'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1-7.pdf
+    source: nist
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: firenist-fds-technical-reference
+    title: 'NIST SP 1018: Fire Dynamics Simulator (FDS) Technical Reference Guide'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication1018.pdf
+    source: nist
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: firenist-fds-user-guide
+    title: 'NIST SP 1019: Fire Dynamics Simulator (FDS) User''s Guide'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication1019.pdf
+    source: nist
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: firenist-cfast-technical-reference
+    title: 'NIST TN 1889v1: CFAST Consolidated Fire and Smoke Transport Model Technical
+      Reference Guide'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1889v1.pdf
+    source: nist
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: ab-ada-accessibility-standards
+    title: 2010 ADA Standards for Accessible Design
+    url: https://www.access-board.gov/files/ada/ADA-Standards.pdf
+    source: access_board
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: ab-guide-to-ada-standards
+    title: Guide to the ADA Standards (Chapters 1-5)
+    url: https://www.access-board.gov/files/ada/guides/ADA-Standards-Guide_Chapters1-5.pdf
+    source: access_board
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nps-brief-17-architectural-character
+    title: 'NPS Preservation Brief 17: Architectural Character'
+    url: https://www.nps.gov/orgs/1739/upload/preservation-brief-17-architectural-character.pdf
+    source: nps
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nps-brief-14-exterior-additions
+    title: 'NPS Preservation Brief 14: New Exterior Additions to Historic Buildings'
+    url: https://www.nps.gov/orgs/1739/upload/preservation-brief-14-exterior-additions.pdf
+    source: nps
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nps-brief-03-energy-efficiency
+    title: 'NPS Preservation Brief 3: Improving Energy Efficiency in Historic Buildings'
+    url: https://www.nps.gov/orgs/1739/upload/preservation-brief-03-energy-efficiency.pdf
+    source: nps
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nps-brief-24-heating-cooling
+    title: 'NPS Preservation Brief 24: Heating, Ventilating, and Cooling Historic Buildings'
+    url: https://www.nps.gov/orgs/1739/upload/preservation-brief-24-heating-cooling.pdf
+    source: nps
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nps-brief-02-repointing-masonry
+    title: 'NPS Preservation Brief 2: Repointing Mortar Joints in Historic Masonry Buildings'
+    url: https://www.nps.gov/orgs/1739/upload/preservation-brief-02-repointing.pdf
+    source: nps
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nps-brief-31-mothballing-buildings
+    title: 'NPS Preservation Brief 31: Mothballing Historic Buildings'
+    url: https://www.nps.gov/orgs/1739/upload/preservation-brief-31-mothballing-buildings.pdf
+    source: nps
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: hud-residential-rehab-inspection-guide
+    title: HUD Residential Rehabilitation Inspection Guide
+    url: https://www.huduser.gov/publications/pdf/rehabinspect.pdf
+    source: hud
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: hud-rehab-guide-foundations
+    title: 'HUD Rehab Guide, Volume 6: Foundations'
+    url: https://www.huduser.gov/publications/pdf/found.pdf
+    source: hud
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: hud-smart-codes-rehabilitation
+    title: 'HUD SMART Codes in Your Community: A Guide to Building Rehabilitation Codes'
+    url: https://www.huduser.gov/Publications/pdf/smartcodes.pdf
+    source: hud
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: hud-recommended-rehabilitation-provisions
+    title: HUD Nationally Applicable Recommended Rehabilitation Provisions
+    url: https://www.huduser.gov/publications/pdf/hud-7842.pdf
+    source: hud
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: gi-epa-green-streets-design-manual
+    title: EPA Green Streets Handbook (Green Streets Design Manual)
+    url: https://www.epa.gov/sites/default/files/2021-04/documents/green_streets_design_manual_feb_2021_web_res_small_508.pdf
+    source: epa
+    license: public-domain
+    topic: infrastructure
+    format: pdf
+  - id: osha-fall-protection-construction
+    title: 'OSHA 3146: Fall Protection in Construction'
+    url: https://www.osha.gov/sites/default/files/publications/osha3146.pdf
+    source: osha
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: osha-construction-industry-digest
+    title: 'OSHA 2202: Construction Industry Digest'
+    url: https://www.osha.gov/sites/default/files/publications/osha2202.pdf
+    source: osha
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: osha-scaffold-use-construction
+    title: 'OSHA 3150: A Guide to Scaffold Use in the Construction Industry'
+    url: https://www.osha.gov/sites/default/files/publications/osha3150.pdf
+    source: osha
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: osha-trenching-excavation
+    title: 'OSHA 2226: Trenching and Excavation Safety'
+    url: https://www.osha.gov/sites/default/files/publications/osha2226.pdf
+    source: osha
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: osha-silica-construction
+    title: 'OSHA 3902: Small Entity Compliance Guide for the Respirable Crystalline
+      Silica Standard for Construction'
+    url: https://www.osha.gov/sites/default/files/publications/osha3902.pdf
+    source: osha
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: osha-training-requirements
+    title: 'OSHA 2254: Training Requirements in OSHA Standards'
+    url: https://www.osha.gov/sites/default/files/publications/osha2254.pdf
+    source: osha
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: osha-hand-power-tools
+    title: 'OSHA 3080: Hand and Power Tools'
+    url: https://www.osha.gov/sites/default/files/publications/osha3080.pdf
+    source: osha
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: osha-job-hazard-analysis
+    title: 'OSHA 3071: Job Hazard Analysis'
+    url: https://www.osha.gov/sites/default/files/publications/osha3071.pdf
+    source: osha
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: fhwa-hmec-quality-assurance
+    title: 'FHWA Highway Materials Engineering Course, Module A: Quality Assurance (Participant
+      Workbook)'
+    url: https://www.fhwa.dot.gov/pavement/materials/hmec/pubs/module_a/participant_workbook.pdf
+    source: fhwa_hmec
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: fhwa-hmec-soils-foundations
+    title: 'FHWA Highway Materials Engineering Course, Module B: Soils and Foundations
+      (Participant Workbook)'
+    url: https://www.fhwa.dot.gov/pavement/materials/hmec/pubs/module_b/participant_workbook.pdf
+    source: fhwa_hmec
+    license: public-domain
+    topic: infrastructure
+    format: pdf
+  - id: fhwa-hmec-steel-welding-coatings
+    title: 'FHWA Highway Materials Engineering Course, Module C: Steel, Welding, and
+      Coatings (Participant Workbook)'
+    url: https://www.fhwa.dot.gov/pavement/materials/hmec/pubs/module_c/participant_workbook.pdf
+    source: fhwa_hmec
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: fhwa-hmec-aggregates
+    title: 'FHWA Highway Materials Engineering Course, Module D: Aggregates for Transportation
+      Construction Projects (Participant Workbook)'
+    url: https://www.fhwa.dot.gov/pavement/materials/hmec/pubs/module_d/participant_workbook.pdf
+    source: fhwa_hmec
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: fhwa-hmec-me-pavement-design
+    title: 'FHWA Highway Materials Engineering Course, Module E: Mechanistic-Empirical
+      Pavement Design Guide (Participant Workbook)'
+    url: https://www.fhwa.dot.gov/pavement/materials/hmec/pubs/module_e/participant_workbook.pdf
+    source: fhwa_hmec
+    license: public-domain
+    topic: infrastructure
+    format: pdf
+  - id: fhwa-hmec-asphalt-mixtures
+    title: 'FHWA Highway Materials Engineering Course, Module F: Asphalt Materials and
+      Paving Mixtures (Participant Workbook)'
+    url: https://www.fhwa.dot.gov/pavement/materials/hmec/pubs/module_f/participant_workbook.pdf
+    source: fhwa_hmec
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: fhwa-hmec-portland-cement-concrete
+    title: 'FHWA Highway Materials Engineering Course, Module G: Portland Cement Concrete
+      (Participant Workbook)'
+    url: https://www.fhwa.dot.gov/pavement/materials/hmec/pubs/module_g/participant_workbook.pdf
+    source: fhwa_hmec
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: fhwa-hmec-recycled-materials
+    title: 'FHWA Highway Materials Engineering Course, Module H: Evaluating Recycled
+      Materials for Beneficial Uses (Participant Workbook)'
+    url: https://www.fhwa.dot.gov/pavement/materials/hmec/pubs/module_h/participant_workbook.pdf
+    source: fhwa_hmec
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: fhwa-concrete-pavement-preservation
+    title: FHWA Concrete Pavement Preservation Guide, Second Edition (HIF-14-004)
+    url: https://www.fhwa.dot.gov/pavement/concrete/pubs/hif14004.pdf
+    source: fhwa
+    license: public-domain
+    topic: infrastructure
+    format: pdf
+  - id: fpl-wood-handbook-gtr190
+    title: 'Wood Handbook: Wood as an Engineering Material (FPL-GTR-190)'
+    url: https://www.fpl.fs.usda.gov/documnts/fplgtr/fpl_gtr190.pdf
+    source: usda_fpl
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: fpl-timber-condition-assessment
+    title: Wood and Timber Condition Assessment Manual, Second Edition (FPL-GTR-234)
+    url: https://www.fpl.fs.usda.gov/documnts/fplgtr/fpl_gtr234.pdf
+    source: usda_fpl
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: fpl-durable-wood-bridges
+    title: Evaluating Naturally Durable Wood Species for Repair and Rehabilitation of
+      Covered Bridges (FPL-GTR-224)
+    url: https://www.fpl.fs.usda.gov/documnts/fplgtr/fpl_gtr224.pdf
+    source: usda_fpl
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: fpl-mass-timber-research
+    title: Research Needs Assessment for the Mass Timber Industry (FPL-GTR-297)
+    url: https://www.fpl.fs.usda.gov/documnts/fplgtr/fpl_gtr297.pdf
+    source: usda_fpl
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nbs-concrete-service-life
+    title: Service Life of Concrete (NISTIR 89-4086)
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir89-4086.pdf
+    source: nist
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nbs-concrete-masonry-requirements
+    title: Requirements for Concrete-Masonry Construction (NBS Report 2462)
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport2462.pdf
+    source: nist
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nbs-fire-resistance-concrete-steel
+    title: Best Practice Guidelines for Structural Fire Resistance Design of Concrete
+      and Steel Buildings (NIST TN 1681)
+    url: https://nvlpubs.nist.gov/nistpubs/technicalnotes/nist.tn.1681.pdf
+    source: nist
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+
+  # --- curated round 8: CC-BY open-access built-environment books (OAPEN / IntechOpen) ---
+  - id: ito-sustainable-construction-building-materials
+    title: Sustainable Construction and Building Materials
+    url: https://mts.intechopen.com/storage/books/8412/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: ito-masonry-sustainable-construction
+    title: Masonry for Sustainable Construction
+    url: https://mts.intechopen.com/storage/books/12061/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: ito-nearly-zero-energy-building-nzeb
+    title: Nearly Zero Energy Building (NZEB) - Materials, Design and New Approaches
+    url: https://mts.intechopen.com/storage/books/11175/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: ito-structural-health-monitoring-failure-analysis
+    title: Failure Analysis - Structural Health Monitoring of Structure and Infrastructure
+      Components
+    url: https://mts.intechopen.com/storage/books/11544/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: ito-hydraulic-structures-theory-applications
+    title: Hydraulic Structures - Theory and Applications
+    url: https://mts.intechopen.com/storage/books/7587/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: ito-risk-management-construction-projects
+    title: Risk Management in Construction Projects
+    url: https://mts.intechopen.com/storage/books/8808/authors_book/authors_book.pdf
+    source: intechopen
+    license: cc-by
+    topic: construction
+    format: pdf
+
+  # --- curated round 9: +61 CC-BY open-access built-environment books (OAPEN) ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  # ---------- EIA consumption surveys — CBECS / RECS (public domain, dig 2026-07-05) ----------
+  - id: eia-cbecs-2018-consumption-highlights
+    title: "2018 CBECS — Consumption and Expenditures Highlights"
+    url: https://www.eia.gov/consumption/commercial/data/2018/index.php?view=consumption
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-cbecs-2018-characteristics-highlights
+    title: "2018 CBECS — Building Characteristics Highlights"
+    url: https://www.eia.gov/consumption/commercial/data/2018/index.php?view=characteristics
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-cbecs-2012-energy-usage-summary
+    title: "2012 CBECS — Energy Usage Summary"
+    url: https://www.eia.gov/consumption/commercial/reports/2012/energyusage/
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-cbecs-2012-building-stock
+    title: "A Look at the U.S. Commercial Building Stock (2012 CBECS)"
+    url: https://www.eia.gov/consumption/commercial/reports/2012/buildstock/
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-cbecs-2012-lighting-trends
+    title: "Trends in Lighting in Commercial Buildings (2012 CBECS)"
+    url: https://www.eia.gov/consumption/commercial/reports/2012/lighting/
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-cbecs-2012-water-consumption
+    title: "Water Consumption in Large Buildings Summary (2012 CBECS)"
+    url: https://www.eia.gov/consumption/commercial/reports/2012/water/
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-recs-2015-overview
+    title: "What's New in How We Use Energy at Home (2015 RECS overview)"
+    url: https://www.eia.gov/consumption/residential/reports/2015/overview/index.php
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-recs-2015-square-footage
+    title: "2015 RECS Square Footage Methodology"
+    url: https://www.eia.gov/consumption/residential/reports/2015/squarefootage/
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-recs-2015-energy-bills
+    title: "One in Three U.S. Households Faced Challenges Paying Energy Bills (2015 RECS)"
+    url: https://www.eia.gov/consumption/residential/reports/2015/energybills/
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: eia-recs-multifamily-pilot
+    title: "Multifamily Building Study Pilot: Methods, Findings, and Lessons Learned"
+    url: https://www.eia.gov/consumption/residential/pdf/Multifamily_Building_Study_Pilot.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-recs-residential-lighting-1996
+    title: "Residential Lighting: Use and Potential Savings (DOE/EIA-0555(96)/2)"
+    url: https://www.eia.gov/consumption/archive/residential/DOE%20EIA-0555(96)%202.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-recs-quality-profile-1996
+    title: "Residential Energy Consumption Survey Quality Profile (DOE/EIA-0555(96)/1)"
+    url: https://www.eia.gov/consumption/archive/residential/DOE%20EIA-0555(96)-1.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-buildings-equipment-costs
+    title: "Updated Buildings Sector Appliance and Equipment Costs and Efficiencies (EIA)"
+    url: https://www.eia.gov/analysis/studies/buildings/equipcosts/pdf/full.pdf
+    source: eia
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+
+  # ---------- UK gov — EFUS / English Housing Survey (Open Government Licence v3.0, dig 2026-07-05) ----------
+  - id: gov-uk-efus-2017-heating-patterns
+    title: "Energy Follow Up Survey 2017: Heating Patterns and Occupancy"
+    url: https://assets.publishing.service.gov.uk/media/61449c5e8fa8f503bc6658dd/efus-heating-patterns-occupancy.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: gov-uk-efus-2017-thermal-comfort
+    title: "Energy Follow Up Survey 2017: Thermal Comfort, Ventilation, Damp and Mould"
+    url: https://assets.publishing.service.gov.uk/media/61449c52d3bf7f05b4562b66/efus-thermal.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: gov-uk-efus-2017-consumption-affordability
+    title: "Energy Follow Up Survey 2017: Household Energy Consumption and Affordability"
+    url: https://assets.publishing.service.gov.uk/media/61449c45e90e07044435c9e7/efus-Household-Energy-Consumption-Affordability.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: gov-uk-efus-2017-lights-appliances
+    title: "Energy Follow Up Survey 2017: Lights, Appliances and Smart Technologies"
+    url: https://assets.publishing.service.gov.uk/media/61449c3cd3bf7f05b2ac20a4/efus-light-appliances-smart-tech.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: gov-uk-efus-2017-fuel-poverty
+    title: "Energy Follow Up Survey 2017: Fuel Poverty"
+    url: https://assets.publishing.service.gov.uk/media/61449f23e90e070446ce5206/efus-fuel-poverty.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: gov-uk-efus-2017-methodology
+    title: "Energy Follow Up Survey 2017: Methodology Report"
+    url: https://assets.publishing.service.gov.uk/media/65312efc26b9b1000daf1bea/efus-methodology-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: gov-uk-ehs-2017-18-headline
+    title: "English Housing Survey Headline Report 2017-18"
+    url: https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/834603/2017-18_EHS_Headline_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+
+  # --- curated vein: IEA EBC Annex technical & summary reports (restored after prune-bug; 2026-07-06) ---
+  - id: iea-ebc-annex-74-final-report
+    title: IEA EBC — PDF (1.2MB)
+    url: https://www.iea-ebc.org/Data/publications/Annex_74_final_report.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-annex-78-summary-report-v2
+    title: IEA EBC — PDF (0.3MB)
+    url: https://www.iea-ebc.org/Data/publications/Annex%2078%20summary%20report_V2.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-annex73-project-summary-report
+    title: IEA EBC — PDF (1.2MB)
+    url: https://www.iea-ebc.org/Data/publications/Annex73-Project-Summary-Report.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-16-17-tsr
+    title: IEA EBC — PDF (0.9MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_16-17_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-18-tsr
+    title: IEA EBC — PDF (1.1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_18_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-19-tsr
+    title: IEA EBC — PDF (1.1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_19_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-21-tsr
+    title: IEA EBC — PDF (1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_21_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-22-33-tsr
+    title: IEA EBC — PDF (1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_22-33_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-23-tsr
+    title: IEA EBC — PDF (1.5MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_23_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-24-tsr
+    title: IEA EBC — PDF (0.7MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_24_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-25-tsr1
+    title: IEA EBC — PDF (1.6MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_25_tsr1.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-26-tsr
+    title: IEA EBC — PDF (3.1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_26_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-27-tsr
+    title: IEA EBC — PDF (1.5MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_27_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-28-tsr
+    title: IEA EBC — PDF (2.9MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_28_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-29-psr
+    title: IEA EBC — PDF (3.2MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_29_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-30-tsr-final
+    title: IEA EBC — PDF (1.2MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_30_tsr_final.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-31-tsr
+    title: IEA EBC — PDF (0.5MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_31_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-32-tsr
+    title: IEA EBC — PDF (2.3MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_32_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-34-tsr
+    title: IEA EBC — PDF (0.5MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_34_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-36-tsr
+    title: IEA EBC — PDF (4MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_36_tsr.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-37-psr
+    title: IEA EBC — PDF (5.1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_37_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-38-psr
+    title: IEA EBC — PDF (13MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_38_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-39-psr
+    title: IEA EBC — PDF (0.9MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_39_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-40-psr
+    title: IEA EBC — PDF (1.6MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_40_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-41-psr
+    title: IEA EBC — PDF (2.5MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_41_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-42-psr
+    title: IEA EBC — PDF (1.9MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_42_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-43-task-34-final-mgmt-report
+    title: IEA EBC — PDF (0.1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_43_Task_34_Final_Mgmt_Report.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-44-psr
+    title: IEA EBC — PDF (7.8MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_44_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-45-psr
+    title: IEA EBC — PDF (1.7MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_45_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-46-psr
+    title: IEA EBC — PDF (3.3MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_46_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-47-psr
+    title: IEA EBC — PDF (1.1MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_47_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-48-psr
+    title: IEA EBC — PDF (2.7MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex_48_PSR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-annex-84-project-summary-report-20251
+    title: IEA EBC — PDF (0.8MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_Annex%2084_Project_Summary_Report_20251.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-psr-annex49
+    title: IEA EBC — PDF (1.9MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_PSR_Annex49.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-psr-annex50
+    title: IEA EBC — PDF (5.2MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_PSR_Annex50.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-psr-annex54
+    title: IEA EBC — PDF (0.8MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_PSR_Annex54.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-ebc-sr-annex62
+    title: IEA EBC — PDF (2.7MB)
+    url: https://www.iea-ebc.org/Data/publications/EBC_SR_Annex62.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-energy-flexible-buildings-towards-resilient-low-carbon-energ
+    title: IEA EBC — PDF (1.7MB)
+    url: https://www.iea-ebc.org/Data/publications/Energy%20Flexible%20Buildings%20Towards%20Resilient%20Low%20Carbon%20Energy%20Systems%20(Annex%2082)%20Summary%20report.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-iea-ebc-annex-86-sr
+    title: IEA EBC — PDF (0.3MB)
+    url: https://www.iea-ebc.org/Data/publications/IEA%20EBC_Annex%2086_SR.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-iea-ebc-annex72-summaryreport-v2-0
+    title: IEA EBC — PDF (0.6MB)
+    url: https://www.iea-ebc.org/Data/publications/IEA-EBC-Annex72_summaryReport_v2.0.pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-ebc-international-energy-agency-resilient-cooling-of-buildings-p
+    title: IEA EBC — PDF (1.9MB)
+    url: https://www.iea-ebc.org/Data/publications/International%20Energy%20Agency%20-%20Resilient%20Cooling%20of%20Buildings%20-%20Project%20Summary%20Report%20(Annex%2080).pdf
+    source: iea_ebc
+    license: open
+    topic: building_energy
+    format: pdf
+
+
+
+
+
+

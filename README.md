@@ -10,7 +10,7 @@ architecture, engineering & construction, structures, building energy & HVAC, ma
 infrastructure, urban systems — for LLM training & evaluation.**
 
 This repo ships the **registry + loader + provenance — never the data bytes**. Every document is
-indexed in `sources.yaml` with its URL, license, and sha256; you fetch your own copy with the
+indexed in the registry (`registry/*.yaml`) with its URL, license, and sha256; you fetch your own copy with the
 loader (the RedPajama / Pile model). A coding agent (Claude Code / Codex) is the intended operator:
 it loads the corpus for you, then keeps discovering and adding new open sources.
 
@@ -49,7 +49,7 @@ bash scripts/install_cron.sh              # optional: enable the daily growth jo
 **By license:** open 2,522 · public-domain 5,105 · cc-by-sa 458 · cc-by 1,243 · proprietary-internal 5.
 
 _Snapshot of the live registry (2026-07-07) — auto-generated from `manifest.jsonl`. The bytes are not
-shipped; run the loader to fetch your own copy. The corpus grows as sources are added to `sources.yaml`._
+shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._
 <!-- STATS:END -->
 
 **Where it comes from:** OSTI · arXiv · OpenAlex · OAPEN (CC-BY books) · **Internet Archive**
@@ -65,20 +65,20 @@ flowchart LR
     F["find_sources.py<br/>OpenAlex · OSTI · arXiv"] --> S
     G["find_github.py<br/>GitHub repos + code"] --> S
     C["crawl_docs.py<br/>doc sites"] --> S
-    S["sources.yaml<br/>(registry)"] --> B["build_corpus.py<br/>fetch + extract + hash"]
+    S["registry/*.yaml<br/>(the registry)"] --> B["build_corpus.py<br/>fetch + extract + hash"]
     B --> D["raw/ + text/<br/>(git-ignored bytes)"]
     B --> M["manifest.jsonl<br/>(sha256 provenance)"]
     D --> P["prune_corpus.py<br/>quality gate"]
     P -. "rewrites" .-> S
 ```
 
-**discover → register → fetch → gate → repeat.** The discovery scripts propose entries for
-`sources.yaml`; the loader fetches each into `raw/` + `text/` and records its sha256 in
+**discover → register → fetch → gate → repeat.** The discovery scripts propose registry
+entries; the loader fetches each into `raw/` + `text/` and records its sha256 in
 `manifest.jsonl`; the pruner drops the junk. Your agent runs this loop and keeps widening it.
 
 | Path | What it is |
 |---|---|
-| `sources.yaml` | The curated **registry** — each source's URL, topic, license, format. **Edit this to grow the corpus.** |
+| `registry/` | The **registry** — one YAML shard per vein: `curated.yaml` (hand-picked; **edit this to grow the corpus**) + machine shards (`books` · `papers` · `reports` · `github` · `archive` · `crawl`). |
 | `manifest.jsonl` | **Provenance** — id, url, license, topic, sha256, bytes for every fetched doc. |
 | `scripts/` | The **machinery** — loader (`build_corpus.py`), discovery (`find_sources.py`, `find_github.py`, `find_osti.py`, `find_books.py`, `find_archive.py`, `crawl_docs.py`), quality gate (`prune_corpus.py`) + its `pruned_urls.txt` blocklist, cron runners. |
 | `.claude/skills/` | The **playbooks** the agent follows — `go`, `load-corpus`, `find-sources`, `crawl-docs`, `dig`. |
@@ -110,7 +110,7 @@ python scripts/build_corpus.py --verify   # re-hash local raw/ files against the
 
 ## Licensing
 
-Every source carries a `license` in `sources.yaml` / `manifest.jsonl` — **read it before you
+Every source carries a `license` in the registry / `manifest.jsonl` — **read it before you
 redistribute anything**:
 
 - **`public-domain`** — US government / national-lab work (DOE · NIST · FHWA · FEMA · …). Free to use.
@@ -126,7 +126,7 @@ manifest, and loader (our curation) — never the documents themselves.
 
 ## Contributing
 
-Append an entry to `sources.yaml` and open a PR. Prefer openly-licensed material (public-domain gov
+Add an entry to `registry/curated.yaml` and open a PR. Prefer openly-licensed material (public-domain gov
 reports, CC, arXiv); tag copyrighted material `proprietary-internal` and never add its bytes.
 
 ## License

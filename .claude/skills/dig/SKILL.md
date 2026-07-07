@@ -20,14 +20,14 @@ hand as `/dig` any time you want to grow the corpus in one shot.
    python scripts/find_archive.py --rows 30 --page <N> --append           # pre-1929 PD texts (rotate N)
    python scripts/find_books.py --per 25 --depth 25 --offset <N*25> --append  # OAPEN CC-BY books
    ```
-   All dedup against `manifest.jsonl` + `sources.yaml` + the `pruned_urls.txt` blocklist before
+   All dedup against `manifest.jsonl` + the registry + the `pruned_urls.txt` blocklist before
    appending, so re-running is safe and never re-churns pruned material.
 
 2. **Widen (judgment — the part a human/agent adds over the scripts):** spend a little of the budget
    looking for *new veins*, not just more of the head:
    - Web-search for open built-environment collections we don't tap yet (new gov programs, datasets,
      standards bodies, doc sites) and add them — a single PDF/HTML source goes straight into
-     `sources.yaml`; a whole doc site goes through [`crawl-docs`](../crawl-docs/SKILL.md); a new
+     `registry/curated.yaml`; a whole doc site goes through [`crawl-docs`](../crawl-docs/SKILL.md); a new
      GitHub repo goes into `find_github.py`'s curated `REPOS` list.
    - Tune `find_sources.py`'s `QUERIES` toward gaps (we're paper-heavy; thin on equipment depth,
      codes, datasets, international).
@@ -43,15 +43,15 @@ hand as `/dig` any time you want to grow the corpus in one shot.
    python scripts/prune_corpus.py --apply        # drop thin / garbage / non-English / off-topic
    ```
    The pruner only touches *machine-discovered* docs (id prefixes `oa-`/`ope-`/`ost-`/`arx-`/
-   `crawl-`/`gh-`/`oer-`), never hand-curated ones; it edits `sources.yaml` in place and validates
+   `crawl-`/`gh-`/`oer-`), never hand-curated ones; it edits the registry shards in place and validates
    the result before writing.
 
 5. **Commit locally — do NOT push:**
    ```
-   git add sources.yaml manifest.jsonl
+   git add registry/ manifest.jsonl pruned_urls.txt
    git commit -m "dig: +<N> docs -> <total> docs / <tokens> tokens (<what landed>)"
    ```
-   Only `sources.yaml` + `manifest.jsonl` are committed (pointers + provenance). `raw/` and `text/`
+   Only `registry/` + `manifest.jsonl` + `pruned_urls.txt` are committed (pointers + provenance). `raw/` and `text/`
    are git-ignored and must never be committed. **Never `git push`** — the maintainer reviews the
    commits and pushes.
 

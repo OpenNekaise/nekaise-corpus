@@ -24,7 +24,7 @@ open223), and similar references that aren't a single PDF.
        --topic <topic> --license <license> --max 80 --append
    ```
    BFS within the domain + prefix, collects up to `--max` content pages, and (with `--append`)
-   writes them into `sources.yaml` as `html` sources (id prefix `crawl-`). Pick the right `--topic`
+   writes them into `registry/crawl.yaml` as `html` sources (id prefix `crawl-`). Pick the right `--topic`
    and a redistributable `--license`.
 
 3. **Load + gate:** run the **`load-corpus`** skill (`python scripts/build_corpus.py`) to fetch each
@@ -33,7 +33,7 @@ open223), and similar references that aren't a single PDF.
 
 ## Reproducibility
 
-The crawl runs ONCE (by us). `sources.yaml` freezes the page list, and each page keeps its own
+The crawl runs ONCE (by us). The registry freezes the page list, and each page keeps its own
 sha256 in the manifest, so a clone fetches that frozen list -- it does NOT re-crawl -- and the corpus
 can't drift from a changing site. Re-run the crawl only to intentionally refresh a site.
 

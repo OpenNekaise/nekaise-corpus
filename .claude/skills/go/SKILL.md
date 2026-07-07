@@ -1,6 +1,6 @@
 ---
 name: go
-description: One-command entrypoint for the corpus — load everything indexed in sources.yaml onto this machine, then (once fully caught up) offer to enable the daily growth cron. Use on a fresh clone or whenever the user just says "go", "start", or "get the data".
+description: One-command entrypoint for the corpus — load everything indexed in the registry onto this machine, then (once fully caught up) offer to enable the daily growth cron. Use on a fresh clone or whenever the user just says "go", "start", or "get the data".
 ---
 
 # Skill: go
@@ -16,11 +16,11 @@ say **"go"**.
 Make sure deps are present, then run the loader (needs network; run outside any sandbox):
 ```
 pip install -r requirements.txt      # first run only
-python scripts/build_corpus.py       # fetch every missing source from sources.yaml
+python scripts/build_corpus.py       # fetch every missing source from the registry
 ```
 `build_corpus.py` is idempotent — it only fetches what is missing, so on a caught-up machine it
 fetches nothing. Read the printed summary (`ok` vs `failed` by topic), investigate every failure
-(a 404 = a moved/dead URL to fix or drop in `sources.yaml`; a DNS error may be a sandbox), and
+(a 404 = a moved/dead URL to fix or drop in the registry; a DNS error may be a sandbox), and
 spot-check a few `text/*.md` for real content. Report failures — never hide them.
 
 ### 2. Decide: is the corpus fully materialized?
@@ -54,5 +54,5 @@ and `python scripts/find_github.py`.
 
 ## Notes
 - **License discipline:** `raw/` and `text/` are git-ignored and never committed. The daily job only
-  ever commits `sources.yaml` + `manifest.jsonl` (pointers + provenance), never the bytes.
+  ever commits `registry/` + `manifest.jsonl` + `pruned_urls.txt` (pointers + provenance), never the bytes.
 - The daily job **commits but does not push** — growth is unattended, publishing is your call.

@@ -8,15 +8,15 @@ dense, cleanly-licensed vein (whole books, hundreds of pages of prose = CPT gold
 
 This backend PAGINATES the OAPEN REST search across many built-env subjects (offset 0, per, 2·per, …
 up to --depth), keeps English books with a direct PDF bitstream whose license is CC-BY / CC-BY-SA /
-CC0, and inserts ready-to-load `sources.yaml` entries.
+CC0, and inserts ready-to-load registry entries.
 
 License is NOT in the REST metadata — it lives in the OAI-PMH `xoai` record as a
 creativecommons.org/licenses/<code> URL. We keep ONLY `by` / `by-sa` / `publicdomain/zero`; ANY `nc`
 or `nd` marker rejects the record (fail-closed). Dedup is checked BEFORE the xoai call, so re-runs
 paginate deeper cheaply (only genuinely-new candidates cost an xoai lookup).
 
-Entries use the `oer-` id prefix and are INSERTED above the `# --- discovered` marker (curated region)
-so `prune_corpus.py` never touches them.
+Entries use the `oer-` id prefix and land in registry/books.yaml; prune_corpus.py quality-gates
+them (length-scaled density rule) like every machine-discovered source.
 
     python scripts/find_books.py                                   # propose
     python scripts/find_books.py --append                          # insert (then load + prune)
@@ -34,7 +34,7 @@ from pathlib import Path
 import requests
 import yaml
 
-import blocklist
+import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 SEARCH = "https://library.oapen.org/rest/search"
@@ -95,35 +95,6 @@ QUERIES = [
 ]
 
 
-def slug(s: str) -> str:
-    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", (s or "").lower())).strip("-")
-
-
-def norm(s: str) -> str:
-    return re.sub(r"\W+", " ", (s or "").lower()).strip()
-
-
-def existing_keys():
-    urls, titles, ids = set(), set(), set()
-    mp = HERE / "manifest.jsonl"
-    if mp.exists():
-        for line in mp.read_text().splitlines():
-            if line.strip():
-                r = json.loads(line)
-                urls.add((r.get("url") or "").rstrip("/"))
-                titles.add(norm(r.get("title")))
-                ids.add(r.get("id") or "")
-    try:
-        for s in yaml.safe_load((HERE / "sources.yaml").read_text())["sources"]:
-            urls.add((s.get("url") or "").rstrip("/"))
-            titles.add(norm(s.get("title")))
-            ids.add(s.get("id") or "")
-    except Exception:
-        pass
-    urls |= blocklist.load()  # skip urls the pruner already dropped (no re-churn)
-    return urls, titles, ids
-
-
 def pdf_link(item) -> str | None:
     for b in item.get("bitstreams") or []:
         name = (b.get("name") or "").lower()
@@ -179,7 +150,7 @@ def main() -> None:
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
 
-    urls, titles, reg_ids = existing_keys()
+    urls, titles, reg_ids = registry.existing_keys()
     out, seen = [], set()
     for term, topic in QUERIES:
         if len(out) >= args.max:
@@ -204,7 +175,7 @@ def main() -> None:
                 title, url, handle = it.get("name"), pdf_link(it), it.get("handle")
                 if not (title and url and handle):
                     continue
-                u, t = url.rstrip("/"), norm(title)
+                u, t = url.rstrip("/"), registry.norm(title)
                 if u in urls or t in titles or u in seen:
                     continue  # dedup BEFORE the (costly) license lookup
                 if not is_english_book(it):
@@ -214,19 +185,11 @@ def main() -> None:
                 if not lic:
                     continue
                 seen.add(u)
-                out.append({"id": f"oer-{slug(title)[:52]}", "title": title.strip()[:150], "url": url,
+                out.append({"id": f"oer-{registry.slug(title)[:52]}", "title": title.strip()[:150], "url": url,
                             "source": "oapen", "license": lic, "topic": topic, "format": "pdf"})
             time.sleep(0.2)
 
-    # uniquify ids against the whole registry/manifest, not just this batch — two different books
-    # can truncate-slug to the same id across runs (7 silent raw/text overwrites before 2026-07-07).
-    used: set = set(reg_ids)
-    for h in out:
-        base, i = h["id"], 2
-        while h["id"] in used:
-            h["id"] = f"{base[:50]}-{i}"
-            i += 1
-        used.add(h["id"])
+    registry.uniquify_ids(out, reg_ids)
 
     by_lic: dict = {}
     for h in out:
@@ -237,19 +200,8 @@ def main() -> None:
     print(yaml.safe_dump(out, sort_keys=False, allow_unicode=True))
 
     if args.append and out:
-        text = (HERE / "sources.yaml").read_text()
-        block = "\n  # --- curated books via find_books.py (OAPEN CC-BY) ---\n" + "".join(emit(h) for h in out)
-        marker = "# --- discovered"
-        idx = text.find(marker)
-        if idx == -1:
-            with open(HERE / "sources.yaml", "a") as f:
-                f.write(block)
-        else:
-            line_start = text.rfind("\n", 0, idx) + 1
-            new = text[:line_start] + block.lstrip("\n") + "\n" + text[line_start:]
-            assert len(yaml.safe_load(new)["sources"]) == len(yaml.safe_load(text)["sources"]) + len(out)
-            (HERE / "sources.yaml").write_text(new)
-        print(f"# inserted {len(out)} book entries into sources.yaml", file=sys.stderr)
+        counts = registry.append_entries(out)
+        print(f"# appended {len(out)} book entries to the registry: {counts}", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@ run the loop that fetches the seed corpus and grows it.
 
 | Path | What it is |
 |---|---|
-| `sources.yaml` | The **registry** — one entry per source (`id` · `title` · `url` · `source` · `license` · `topic` · `format`). Edit this to grow the corpus. |
+| `registry/` | The **registry** — one entry per source (`id` · `title` · `url` · `source` · `license` · `topic` · `format`), sharded per vein: `curated.yaml` (hand-picked — edit this to grow) + machine shards (`books` · `papers` · `reports` · `github` · `archive` · `crawl`), routed by id prefix (`scripts/registry.py`). |
 | `manifest.jsonl` | The **provenance + reproducibility record** — url, license, topic, sha256, bytes for every fetched doc. |
 | `pruned_urls.txt` | **Blocklist** of URLs the quality gate dropped — finders dedup against it so discovery never re-churns pruned material. |
 | `scripts/` | The **machinery** — loader, discovery backends, quality gate, cron/marathon runners. All run from the repo root: `python scripts/<x>.py`. |
@@ -72,7 +72,7 @@ new sources land as local commits for you to review + push. Remove with
 - **Respect each source's `license`:** `public-domain` (US gov) · `cc-by` / `cc-by-sa` (attribute) ·
   `open` (arXiv / OA — check per-source terms) · `proprietary-internal` (vendor / standards —
   **pointers only, never add the bytes**).
-- **Prefer openly-licensed sources.** Grow the corpus by editing `sources.yaml`; high-value paywalled
+- **Prefer openly-licensed sources.** Grow the corpus by editing `registry/curated.yaml`; high-value paywalled
   items go in as pointers only.
 - **Report failures, never hide them.** A 404 = fix or drop the entry; never leave a known-dead URL
   silently failing in the registry.
@@ -86,7 +86,7 @@ Built-environment / AEC vein (added round 7): `structures_civil` · `constructio
 `architecture` · `infrastructure` · `urban`
 
 Topics are just a **radar label** for coverage — they don't gate anything except `scripts/coverage.py`.
-The real relevance gate is `prune_corpus.py`'s `DOMAIN` regex (widened in round 7 to AEC/built-env
+The real relevance gate is the `DOMAIN` regex in `scripts/quality.py` (widened in round 7 to AEC/built-env
 vocabulary). `find_github.py` can also pull **source code** (not just docs) from a repo via an opt-in
 `code: [ext]` + `cap` on its `REPOS` entry — used for Modelica `.mo` physics models and pedagogical
 structural/FEA `.py`.

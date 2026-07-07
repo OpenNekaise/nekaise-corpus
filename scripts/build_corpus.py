@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""build_corpus.py — fetch & verify the building-energy corpus from the registry.
+"""build_corpus.py — fetch & verify the corpus from the registry.
 
-Reads sources.yaml, downloads each source into raw/<source>/<id>.<ext>, extracts plain text into
-text/<id>.md, and records everything (incl. sha256) in manifest.jsonl. The committed manifest is the
+Reads the registry (registry/*.yaml), downloads each source into raw/<source>/<id>.<ext>, extracts
+plain text into text/<id>.md, and records everything (incl. sha256 and quality metrics) in
+manifest.jsonl. The committed manifest is the
 REPRODUCIBILITY record: a fresh clone runs this to fetch the SAME bytes, and the run reports how many
 reproduced exactly (sha256 matches the manifest) vs drifted (the source changed upstream) vs new.
 
@@ -30,13 +31,14 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 import requests
-import yaml
+
+import quality
+import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 RAW = HERE / "raw"
 TEXT = HERE / "text"
 MANIFEST = HERE / "manifest.jsonl"
-SOURCES = HERE / "sources.yaml"
 # Browser-like UA: publisher / repository bot-walls (eScholarship, Frontiers, PMC, …) 403 a generic
 # UA even for openly-licensed (CC-BY / OA) PDFs we're entitled to fetch. (MDPI sits behind Cloudflare
 # and still blocks; those need a headless browser — skipped for now.)
@@ -209,6 +211,7 @@ def fetch_one(src: dict) -> dict:
             tp.write_text(header + txt)
             rec["text_path"] = str(tp.relative_to(HERE))
             rec["text_chars"] = len(txt)
+            rec["quality"] = quality.metrics(txt)  # prune verdicts read this, not the file
 
         rec["status"] = "ok"
         rec["fetched_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
@@ -235,7 +238,7 @@ def main() -> None:
     args = ap.parse_args()
     only = {t.strip() for t in args.only.split(",") if t.strip()}
 
-    srcs = yaml.safe_load(SOURCES.read_text())["sources"]
+    srcs = registry.load_entries()
     manifest = load_manifest()
 
     if args.reextract:
@@ -257,6 +260,7 @@ def main() -> None:
                 (TEXT / f"{r['id']}.md").write_text(header + txt)
                 r["text_path"] = f"text/{r['id']}.md"
                 r["text_chars"] = len(txt)
+                r["quality"] = quality.metrics(txt)
             done += 1
         write_manifest(manifest)
         tot = sum(r["text_chars"] for r in manifest.values() if r["status"] == "ok")

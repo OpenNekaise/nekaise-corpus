@@ -3,13 +3,13 @@
 
 The single-URL loader can't reach multi-page doc sites (sphinx / readthedocs / mkdocs). This
 BFS-crawls a seed within ONE domain + path prefix, collects content-page URLs, and PROPOSES them as
-`html` sources in sources.yaml. build_corpus then fetches each page on its own, so every page keeps
+`html` sources in registry/crawl.yaml. build_corpus then fetches each page on its own, so every page keeps
 its own sha256 and the crawl stays REPRODUCIBLE: the registry freezes the page list, and a clone
 fetches that frozen list -- it does not re-crawl, so it cannot drift.
 
     python scripts/crawl_docs.py --seed https://eclipse-volttron.readthedocs.io/en/latest/ \
         --prefix /en/latest/ --source volttron --topic controls_bas --license open --max 80
-    # add --append to write the discovered pages into sources.yaml, then run scripts/build_corpus.py
+    # add --append to write the discovered pages into the registry, then run scripts/build_corpus.py
 
 Crawled pages get id prefix `crawl-`, so prune_corpus.py quality-gates them like discovered sources.
 """
@@ -27,13 +27,11 @@ import requests
 import yaml
 from bs4 import BeautifulSoup
 
+import registry
+
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 UA = "nekaise-studio-hvac-corpus/0.1 (research)"
 SKIP_EXT = re.compile(r"\.(pdf|zip|png|jpe?g|gif|svg|js|css|woff2?|ico|tar|gz|whl|epub|json|xml)$", re.I)
-
-
-def slug(s: str) -> str:
-    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", (s or "").lower())).strip("-")
 
 
 def crawl(seed: str, prefix: str, maxp: int) -> list[str]:
@@ -80,28 +78,24 @@ def main() -> None:
     pages = crawl(args.seed, args.prefix, args.max)
     print(f"# crawled {len(pages)} pages from {args.seed}", file=sys.stderr)
 
-    rows, used = [], set()
+    urls_known, _titles, reg_ids = registry.existing_keys()
+    rows = []
     for u in pages:
+        if u.rstrip("/") in urls_known:
+            continue  # already registered or previously pruned (blocklist)
         rel = urlparse(u).path
         if args.prefix and rel.startswith(args.prefix):
             rel = rel[len(args.prefix):]
-        sid = f"crawl-{args.source}-{slug(rel) or 'index'}"[:62]
-        while sid in used:
-            sid += "x"
-        used.add(sid)
+        sid = f"crawl-{args.source}-{registry.slug(rel) or 'index'}"[:62]
         rows.append({"id": sid, "title": f"{args.source} docs: {rel.strip('/') or 'index'}"[:150],
                      "url": u, "source": args.source, "license": args.license,
                      "topic": args.topic, "format": "html"})
+    registry.uniquify_ids(rows, reg_ids)
     print(yaml.safe_dump(rows, sort_keys=False, allow_unicode=True))
 
     if args.append and rows:
-        blk = ""
-        for r in rows:
-            d = yaml.safe_dump([r], sort_keys=False, allow_unicode=True)
-            blk += "".join(("  " + ln + "\n") if ln else "\n" for ln in d.splitlines())
-        with open(HERE / "sources.yaml", "a") as f:
-            f.write(f"\n  # --- crawled docs: {args.source} ---\n" + blk)
-        print(f"# appended {len(rows)} pages to sources.yaml", file=sys.stderr)
+        counts = registry.append_entries(rows)
+        print(f"# appended {len(rows)} pages to the registry: {counts}", file=sys.stderr)
 
 
 if __name__ == "__main__":

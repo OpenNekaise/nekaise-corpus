@@ -1,24 +1,22 @@
 #!/usr/bin/env python3
-"""lint_registry.py — sanity-check sources.yaml + manifest.jsonl before publishing.
+"""lint_registry.py — sanity-check the registry shards + manifest before publishing.
 
 Catches the failure modes that have actually bitten this repo: duplicate ids (truncated slugs
 silently overwriting each other's files), manifest rows orphaned from the registry (a bad prune
-rewrite), unknown license/topic/format values, non-http urls, and a missing `# --- discovered`
-marker (find_books/find_sources insertion anchor). Run by CI on every push/PR; run it locally
-any time with:
+rewrite), entries sitting in the wrong shard (routing drift), unknown license/topic/format values,
+and non-http urls. Run by CI on every push/PR; run it locally any time with:
 
     python scripts/lint_registry.py
 """
 from __future__ import annotations
 
-import json
 import sys
 from collections import Counter
 from pathlib import Path
 
 import yaml
 
-HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
+import registry
 
 REQUIRED = ("id", "title", "url", "source", "license", "topic", "format")
 LICENSES = {"public-domain", "cc-by", "cc-by-sa", "cc0", "open", "proprietary-internal"}
@@ -30,50 +28,57 @@ FORMATS = {"pdf", "html", "md", "rst", "txt"}
 
 def main() -> int:
     errors: list[str] = []
-    text = (HERE / "sources.yaml").read_text()
-    entries = yaml.safe_load(text)["sources"]
+    all_ids: Counter = Counter()
+    n_entries = 0
 
-    if "# --- discovered" not in text:
-        errors.append("missing '# --- discovered' marker (find_sources/find_books insertion anchor)")
+    if not registry.REG_DIR.is_dir():
+        print("LINT: registry/ directory missing")
+        return 1
+    for path in registry.shard_files():
+        try:
+            entries = yaml.safe_load(path.read_text()).get("sources") or []
+        except Exception as e:
+            errors.append(f"{path.name}: does not parse: {e}")
+            continue
+        for e in entries:
+            n_entries += 1
+            eid = e.get("id", "<no id>")
+            all_ids[eid] += 1
+            for k in REQUIRED:
+                if not e.get(k):
+                    errors.append(f"{path.name}: {eid}: missing field '{k}'")
+            if e.get("license") not in LICENSES:
+                errors.append(f"{path.name}: {eid}: unknown license '{e.get('license')}'")
+            if e.get("topic") not in TOPICS:
+                errors.append(f"{path.name}: {eid}: unknown topic '{e.get('topic')}'")
+            if e.get("format") not in FORMATS:
+                errors.append(f"{path.name}: {eid}: unknown format '{e.get('format')}'")
+            if not str(e.get("url", "")).startswith(("http://", "https://")):
+                errors.append(f"{path.name}: {eid}: url is not http(s): {e.get('url')}")
+            # routing: machine shards hold only their prefixes; curated holds no machine prefixes
+            want = registry.shard_path(eid).name
+            if want != path.name:
+                errors.append(f"{path.name}: {eid}: belongs in {want} (prefix routing)")
 
-    ids = Counter(e.get("id") for e in entries)
-    for i, n in ids.items():
+    for i, n in all_ids.items():
         if n > 1:
             errors.append(f"duplicate id ({n}x): {i}")
-    for e in entries:
-        eid = e.get("id", "<no id>")
-        for k in REQUIRED:
-            if not e.get(k):
-                errors.append(f"{eid}: missing field '{k}'")
-        if e.get("license") not in LICENSES:
-            errors.append(f"{eid}: unknown license '{e.get('license')}'")
-        if e.get("topic") not in TOPICS:
-            errors.append(f"{eid}: unknown topic '{e.get('topic')}'")
-        if e.get("format") not in FORMATS:
-            errors.append(f"{eid}: unknown format '{e.get('format')}'")
-        if not str(e.get("url", "")).startswith(("http://", "https://")):
-            errors.append(f"{eid}: url is not http(s): {e.get('url')}")
 
-    mp = HERE / "manifest.jsonl"
     n_rows = 0
-    if mp.exists():
-        reg_ids = set(ids)
-        for line in mp.read_text().splitlines():
-            if not line.strip():
-                continue
-            n_rows += 1
-            r = json.loads(line)
-            if r.get("id") not in reg_ids:
-                errors.append(f"manifest row orphaned from registry: {r.get('id')}")
+    for r in registry.load_manifest_rows():
+        n_rows += 1
+        if r.get("id") not in all_ids:
+            errors.append(f"manifest row orphaned from registry: {r.get('id')}")
 
     if errors:
         for e in errors[:50]:
             print(f"LINT: {e}")
         if len(errors) > 50:
             print(f"LINT: ... and {len(errors) - 50} more")
-        print(f"\nFAIL — {len(errors)} problem(s) in {len(entries)} entries / {n_rows} manifest rows")
+        print(f"\nFAIL — {len(errors)} problem(s) in {n_entries} entries / {n_rows} manifest rows")
         return 1
-    print(f"OK — {len(entries)} registry entries, {n_rows} manifest rows, no problems")
+    print(f"OK — {n_entries} registry entries in {len(registry.shard_files())} shards, "
+          f"{n_rows} manifest rows, no problems")
     return 0
 
 

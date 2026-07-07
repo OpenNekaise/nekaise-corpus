@@ -4,7 +4,7 @@
 OSTI (osti.gov) indexes 200k+ PUBLIC-DOMAIN records per built-environment query and paginates cleanly,
 so it's the scalable, reachable, reliable vein for volume (the path toward ~1B tokens). This backend
 paginates the OSTI API across many built-env subjects, keeps records with a downloadable full-text
-(`/servlets/purl/<id>`) link, dedups vs the registry, and appends `sources.yaml` entries (ost- ids,
+(`/servlets/purl/<id>`) link, dedups vs the registry, and appends entries to registry/reports.yaml (ost- ids,
 public-domain, discovered → pruned normally).
 
 The marathon rotates --page each round to harvest DEEPER; prune's DOMAIN gate drops the DOE-science
@@ -25,7 +25,7 @@ from pathlib import Path
 import requests
 import yaml
 
-import blocklist
+import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 API = "https://www.osti.gov/api/v1/records"
@@ -61,35 +61,6 @@ QUERIES = [
 ]
 
 
-def norm(s: str) -> str:
-    return re.sub(r"\W+", " ", (s or "").lower()).strip()
-
-
-def slug(s: str) -> str:
-    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", (s or "").lower())).strip("-")
-
-
-def existing_keys():
-    urls, titles, ids = set(), set(), set()
-    mp = HERE / "manifest.jsonl"
-    if mp.exists():
-        for line in mp.read_text().splitlines():
-            if line.strip():
-                r = json.loads(line)
-                urls.add((r.get("url") or "").rstrip("/"))
-                titles.add(norm(r.get("title")))
-                ids.add(r.get("id") or "")
-    try:
-        for s in yaml.safe_load((HERE / "sources.yaml").read_text())["sources"]:
-            urls.add((s.get("url") or "").rstrip("/"))
-            titles.add(norm(s.get("title")))
-            ids.add(s.get("id") or "")
-    except Exception:
-        pass
-    urls |= blocklist.load()  # skip urls the pruner already dropped (no re-churn)
-    return urls, titles, ids
-
-
 def from_osti(term: str, rows: int, page: int):
     r = requests.get(API, params={"q": term, "rows": rows, "page": page}, timeout=45)
     r.raise_for_status()
@@ -112,7 +83,7 @@ def main() -> None:
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
 
-    urls, titles, reg_ids = existing_keys()
+    urls, titles, reg_ids = registry.existing_keys()
     out, seen = [], set()
     for term, topic in QUERIES:
         if len(out) >= args.max:
@@ -132,21 +103,15 @@ def main() -> None:
                     break
                 if not title:
                     continue
-                u, t = url.rstrip("/"), norm(title)
+                u, t = url.rstrip("/"), registry.norm(title)
                 if u in urls or t in titles or u in seen:
                     continue
                 seen.add(u)
-                out.append({"id": f"ost-{slug(title)[:46]}", "title": title.strip()[:150], "url": url,
+                out.append({"id": f"ost-{registry.slug(title)[:46]}", "title": title.strip()[:150], "url": url,
                             "source": "osti", "license": "public-domain", "topic": topic, "format": "pdf"})
             time.sleep(0.3)
 
-    used: set = set(reg_ids)  # uniquify vs the whole registry, not just this batch
-    for h in out:
-        base, i = h["id"], 2
-        while h["id"] in used:
-            h["id"] = f"{base[:44]}-{i}"
-            i += 1
-        used.add(h["id"])
+    registry.uniquify_ids(out, reg_ids)
 
     by_topic: dict = {}
     for h in out:
@@ -157,14 +122,8 @@ def main() -> None:
     print(yaml.safe_dump(out, sort_keys=False, allow_unicode=True))
 
     if args.append and out:
-        blk = ""
-        for h in out:
-            e = {k: h[k] for k in ("id", "title", "url", "source", "license", "topic", "format")}
-            d = yaml.safe_dump([e], sort_keys=False, allow_unicode=True)
-            blk += "".join(("  " + ln + "\n") if ln else "\n" for ln in d.splitlines())
-        with open(HERE / "sources.yaml", "a") as f:
-            f.write("\n  # --- discovered via find_osti.py ---\n" + blk)
-        print(f"# appended {len(out)} entries to sources.yaml", file=sys.stderr)
+        counts = registry.append_entries(out)
+        print(f"# appended {len(out)} entries to the registry: {counts}", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 ---
 name: find-sources
-description: Grow the corpus — run find_sources.py to discover new open-access sources via OpenAlex/OSTI/arXiv, review them (relevance, license, direct-PDF), add the good ones to sources.yaml, then load + verify. Use when asked to find more data, enlarge, or grow the corpus.
+description: Grow the corpus — run find_sources.py to discover new open-access sources via OpenAlex/OSTI/arXiv, review them (relevance, license, direct-PDF), add the good ones to the registry, then load + verify. Use when asked to find more data, enlarge, or grow the corpus.
 ---
 
 # Skill: find-sources
@@ -14,12 +14,12 @@ you (the agent) judge relevance + license and decide what to keep.
 1. **Discover** (needs network; run outside a sandbox):
    ```
    python scripts/find_sources.py --per 20            # propose
-   python scripts/find_sources.py --per 20 --append   # append straight into sources.yaml
+   python scripts/find_sources.py --per 20 --append   # append straight into the registry
    ```
    It queries three free backends -- **OpenAlex** (filtered to repository / gov / arXiv / PMC PDF
    copies, NOT publisher pages that 403 bots), **OSTI** (US DOE / national-lab reports,
    public-domain), and the **arXiv API** -- across the topics, keeps candidates whose PDF is on
-   a download-friendly host, dedups against `manifest.jsonl` + `sources.yaml`, and prints
+   a download-friendly host, dedups against `manifest.jsonl` + the registry + `pruned_urls.txt`, and prints
    ready-to-paste entries. `--backends openalex,osti,arxiv` selects which to use.
 
 2. **Review** (your judgment, not the script's):
@@ -31,7 +31,7 @@ you (the agent) judge relevance + license and decide what to keep.
      will fetch HTML or fail on those; fix or drop them.
    - **Dedup by meaning,** not just URL: skip near-duplicates of what is already in the corpus.
 
-3. **Add + fetch:** paste the accepted entries under `sources:` in `sources.yaml`, then run the
+3. **Add + fetch:** use `--append` (routes entries to their registry shard), then run the
    **`load-corpus`** skill (`python scripts/build_corpus.py`) to download + verify. Inspect the new
    `text/*.md` for quality; drop any source that extracts to junk.
 

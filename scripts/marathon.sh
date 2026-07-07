@@ -54,7 +54,7 @@ while [ "$(date +%s)" -lt "$END" ]; do
 
   stats=$(python3 -c "import json;r=[json.loads(l) for l in open('manifest.jsonl') if l.strip()];ok=[x for x in r if x.get('status')=='ok'];print(len(ok), sum(x.get('text_chars',0) for x in ok)//4)" 2>/dev/null || echo "0 0")
   DOCS=${stats% *}; TOK=${stats#* }; TOKM=$(( TOK/1000000 ))
-  git add sources.yaml manifest.jsonl README.md 2>>"$LOG"
+  git add registry manifest.jsonl pruned_urls.txt README.md 2>>"$LOG"
   if git commit -q -m "marathon r$round: ${DOCS} docs / ${TOKM}M tokens" -m "Autonomous OAPEN-books + papers + repos growth round." -m "$TRAILER1" -m "$TRAILER2" 2>>"$LOG"; then
     if git push origin main >>"$LOG" 2>&1; then say "  round $round PUSHED — ${DOCS} docs / ${TOKM}M tokens"
     else say "  round $round committed LOCAL (push failed)"; fi
