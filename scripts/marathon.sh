@@ -52,6 +52,8 @@ while [ "$(date +%s)" -lt "$END" ]; do
   python scripts/find_ibpsa.py --conf bs --year $(( 2025 - round*2 )) --max 600 --append >>"$LOG" 2>&1 || say "  find_ibpsa FAILED"
   # Zenodo CC-licensed publications (rate-limited anonymous API — keep modest)
   python scripts/find_zenodo.py --page "$round" --max 100 --append >>"$LOG" 2>&1 || say "  find_zenodo FAILED"
+  # Google Patents sitemap (public-domain US patents, building/HVAC titles) — walk weeks backwards
+  python scripts/find_patents.py --bucket "$(date -d "-$((round*7)) days" +%G-W%V 2>/dev/null || echo 2018-W01)" --max 400 --append >>"$LOG" 2>&1 || say "  find_patents FAILED"
   if [ $(( (round-1) % 4 )) -eq 0 ]; then
     python scripts/find_sources.py --per 20 --append        >>"$LOG" 2>&1 || say "  find_sources FAILED"
     python scripts/find_github.py  --append                 >>"$LOG" 2>&1 || say "  find_github FAILED"

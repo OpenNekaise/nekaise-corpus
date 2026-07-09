@@ -23,6 +23,7 @@ hand as `/dig` any time you want to grow the corpus in one shot.
    python scripts/find_nist.py --rows 50 --page <N> --append              # NIST/NBS tech series via Crossref (rotate N)
    python scripts/find_ibpsa.py --conf bs --year <Y> --append             # IBPSA proceedings (biennial: 2023, 2021, …)
    python scripts/find_zenodo.py --page <N> --max 100 --append            # Zenodo CC records (rate-limited; modest)
+   python scripts/find_patents.py --bucket <YYYY-WNN> --append            # US patents (Google sitemap; rotate weeks/years)
    ```
    All dedup against `manifest.jsonl` + the registry + the `pruned_urls.txt` blocklist before
    appending, so re-running is safe and never re-churns pruned material.

@@ -35,6 +35,7 @@ SHARDS = {
     "ost-": "reports.yaml",    # find_osti + find_sources OSTI backend
     "eud-": "deliverables.yaml",  # find_openaire (EU Horizon/H2020 project deliverables)
     "nst-": "nist.yaml",       # find_nist (NIST/NBS technical series via Crossref DOI prefix)
+    "pat-": "patents.yaml",    # find_patents (Google Patents sitemap, building/HVAC CPC classes)
     "ibp-": "ibpsa.yaml",      # find_ibpsa (Building Simulation proceedings)
     "zen-": "zenodo.yaml",     # find_zenodo (open CC-licensed records)
     "ope-": "papers.yaml",     # find_sources OpenAlex backend

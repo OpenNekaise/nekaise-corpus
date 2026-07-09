@@ -24,6 +24,7 @@ import hashlib
 import io
 import json
 import re
+import shutil
 import subprocess
 import threading
 import time
@@ -95,7 +96,31 @@ def extract_pdf(data: bytes) -> str:
             parts.append(page.extract_text() or "")
         except Exception as e:  # keep going on a bad page
             parts.append(f"[page {i} extract error: {e}]")
-    return "\n\n".join(parts).strip()
+    txt = "\n\n".join(parts).strip()
+    # pypdf glues words together on many legacy scans (OCR text layers without space glyphs:
+    # "ThermalAnalysisofEffect..."), which reads as non-English junk and got 259 good NBS docs
+    # pruned on 2026-07-09. When the output looks word-glued and poppler is available, re-extract
+    # with pdftotext (handles those spacing operators correctly) and keep the better result.
+    if txt and _word_glued(txt) and shutil.which("pdftotext"):
+        alt = _pdftotext(data)
+        if alt and not _word_glued(alt):
+            return alt
+    return txt
+
+
+def _word_glued(t: str) -> bool:
+    head = t[:20_000]
+    return head.count(" ") / max(len(head), 1) < 0.05  # spaced English prose runs ~15-18%
+
+
+def _pdftotext(data: bytes) -> str:
+    import tempfile
+
+    with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
+        f.write(data)
+        f.flush()
+        out = subprocess.run(["pdftotext", f.name, "-"], capture_output=True, timeout=300)
+    return out.stdout.decode("utf-8", "ignore").strip() if out.returncode == 0 else ""
 
 
 def extract_html(data: bytes) -> str:
@@ -191,15 +216,19 @@ def fetch_one(src: dict) -> dict:
                                          "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8"},
                                 timeout=TIMEOUT, allow_redirects=True)
         rec["http_status"] = resp.status_code
-        if resp.status_code in (403, 429):
-            # Akamai/Cloudflare WAFs (e.g. fema.gov) 403 the python client but pass curl's TLS
-            # fingerprint. Fall back to curl for openly-licensed docs we're entitled to fetch.
+        if resp.status_code in (403, 429, 503):
+            # WAFs (Akamai/Cloudflare/Google) block the python client's TLS fingerprint but pass
+            # curl's (google patents 503s requests yet 200s curl with the SAME UA). Fall back to
+            # curl for openly-licensed docs we're entitled to fetch.
             out = subprocess.run(["curl", "-sSL", "--max-time", str(TIMEOUT), "-A", UA, src["url"]],
                                  capture_output=True, timeout=TIMEOUT + 15)
             body = out.stdout if out.returncode == 0 else b""
-            # only trust the fallback if it returned the expected content (a real PDF, not a WAF
-            # HTML challenge page that curl happily 200s)
-            good = len(body) > 512 and (body[:5] == b"%PDF-" if fmt == "pdf" else True)
+            # only trust the fallback if it returned the expected content — not a WAF challenge /
+            # "automated queries" block page that curl happily 200s
+            good = len(body) > 512 and (
+                body[:5] == b"%PDF-" if fmt == "pdf"
+                else (b"automated queries" not in body[:4000]
+                      and b"unusual traffic" not in body[:4000]))
             if good:
                 data, rec["http_status"] = body, 200
             else:

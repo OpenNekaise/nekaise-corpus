@@ -1,0 +1,4037 @@
+# patents — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: pat-us20200002956a1
+    title: Scaffold assembly and method of manufacture
+    url: https://patents.google.com/patent/US20200002956A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200003046a1
+    title: Well Construction Using Downhole Communication and/or Data
+    url: https://patents.google.com/patent/US20200003046A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10519673b2
+    title: Building cladding and method for preparing same
+    url: https://patents.google.com/patent/US10519673B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200000947a1
+    title: Modular electromagnetic heating system
+    url: https://patents.google.com/patent/US20200000947A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520210b2
+    title: Building automation systems for online, offline, and hybrid licensing of
+      distributed edge devices
+    url: https://patents.google.com/patent/US10520210B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200005043a1
+    title: Building black box
+    url: https://patents.google.com/patent/US20200005043A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10520204b2
+    title: Heat pump and heat exchanger heating system for a domestic hot water tank
+    url: https://patents.google.com/patent/US10520204B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200003447a1
+    title: Artificial intelligence device and artificial intelligence system for managing
+      indoor air condition
+    url: https://patents.google.com/patent/US20200003447A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200005861a1
+    title: Multi-level magnetic tunnel junction (mtj) devices
+    url: https://patents.google.com/patent/US20200005861A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200001951a1
+    title: Universal mounting system for insulated instruments
+    url: https://patents.google.com/patent/US20200001951A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200003431a1
+    title: Pulse Modulated Heating, Ventilation, and Air Conditioning (HVAC) Control
+    url: https://patents.google.com/patent/US20200003431A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200003849a1
+    title: Stray field suppression in magnetic sensor wheatstone bridges
+    url: https://patents.google.com/patent/US20200003849A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200006853a1
+    title: Circuit board including insulating layer having a plurality of dielectrics
+      with different dielectric loss, and electronic device including the circuit
+    url: https://patents.google.com/patent/US20200006853A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10519772b2
+    title: Construction element for creating a tunnel, tunnel comprising such an element
+      and methods for constructing such an element and such a tunnel
+    url: https://patents.google.com/patent/US10519772B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200006471a1
+    title: Ic with 3d metal-insulator-metal capacitor
+    url: https://patents.google.com/patent/US20200006471A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10520239b2
+    title: Refrigerator appliance and air duct therefor
+    url: https://patents.google.com/patent/US10520239B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200006542a1
+    title: Tunnel field-effect transistor with reduced trap-assisted tunneling leakage
+    url: https://patents.google.com/patent/US20200006542A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200006794a1
+    title: Fuel cell ventilation systems
+    url: https://patents.google.com/patent/US20200006794A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520475b2
+    title: Fiber acoustic emission sensing apparatus and method for service behavior
+      of hydraulic concrete structure
+    url: https://patents.google.com/patent/US10520475B2/en
+    source: google_patents
+    license: public-domain
+    topic: materials
+    format: html
+  - id: pat-us10522482b2
+    title: Semiconductor device manufacturing method comprising bonding an electrode
+      terminal to a conductive pattern on an insulating substrate using ultrasonic
+    url: https://patents.google.com/patent/US10522482B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200006168a1
+    title: Ceramic/aluminum bonded body, insulating substrate, led module, ceramic member,
+      method for producing ceramic/aluminum bonded body, and method for prod
+    url: https://patents.google.com/patent/US20200006168A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10519659b2
+    title: Methods and apparatuses for connecting concrete structural elements
+    url: https://patents.google.com/patent/US10519659B2/en
+    source: google_patents
+    license: public-domain
+    topic: materials
+    format: html
+  - id: pat-us20200003486a1
+    title: Refrigerator with sound reproducing capability
+    url: https://patents.google.com/patent/US20200003486A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002538a1
+    title: Composition and method for treating an asphalt pavement with a void-filling
+      asphalt emulsion
+    url: https://patents.google.com/patent/US20200002538A1/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us20200002395a1
+    title: Novel peptides and combination of peptides and scaffolds thereof for use
+      in immunotherapy against colorectal carcinoma (crc) and other cancers
+    url: https://patents.google.com/patent/US20200002395A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200005408a1
+    title: Reverse construction project auction system and method
+    url: https://patents.google.com/patent/US20200005408A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10519649b2
+    title: Facade support system
+    url: https://patents.google.com/patent/US10519649B2/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20200001386a1
+    title: Reflow furnace and soldering method
+    url: https://patents.google.com/patent/US20200001386A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10519912b2
+    title: Protective construction of fuel pump
+    url: https://patents.google.com/patent/US10519912B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200003196a1
+    title: Heat insulation structure and liquid supply system
+    url: https://patents.google.com/patent/US20200003196A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200006473a1
+    title: Tunnel field-effect transistor and method for forming the same
+    url: https://patents.google.com/patent/US20200006473A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10519961b2
+    title: Ventilation device
+    url: https://patents.google.com/patent/US10519961B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10519651b2
+    title: Fire resistant tunnel expansion joint systems
+    url: https://patents.google.com/patent/US10519651B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10520221b2
+    title: Refractory for heating system
+    url: https://patents.google.com/patent/US10520221B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200005609a1
+    title: A lighting enabled system and methods for building evacuation planning
+    url: https://patents.google.com/patent/US20200005609A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10517354b2
+    title: Segmented tunnels on articles
+    url: https://patents.google.com/patent/US10517354B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10519664b1
+    title: Method and system for ensuring leak-free roof installation
+    url: https://patents.google.com/patent/US10519664B1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us10520247b2
+    title: Refrigerator
+    url: https://patents.google.com/patent/US10520247B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002940a1
+    title: Prefabricated booth
+    url: https://patents.google.com/patent/US20200002940A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10522273b2
+    title: Insulated joystick assembly
+    url: https://patents.google.com/patent/US10522273B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200003461a1
+    title: Magnetic Heat Pump Apparatus
+    url: https://patents.google.com/patent/US20200003461A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200001962a1
+    title: Insulation pack having drying openings, for thermally and acoustically insulating
+      an aircraft
+    url: https://patents.google.com/patent/US20200001962A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10518507b2
+    title: Vehicle and building using a window film having carbon nanotubes
+    url: https://patents.google.com/patent/US10518507B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200002935a1
+    title: Construction system for building a module of a dwelling
+    url: https://patents.google.com/patent/US20200002935A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10518609b2
+    title: Air outlet for heating and ventilation or air-conditioning systems of motor
+      vehicles
+    url: https://patents.google.com/patent/US10518609B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10519523b2
+    title: Infrared heating method, infrared heating and forming method of steel sheet
+      and automobile component obtained thereby, and infrared heating furnace
+    url: https://patents.google.com/patent/US10519523B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002958a1
+    title: Integrated formwork system for construction of super high-rise building
+    url: https://patents.google.com/patent/US20200002958A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200005976a1
+    title: Electric Winding Body with Optimised Performance Characteristics and Improved
+      Protection Against Overheating
+    url: https://patents.google.com/patent/US20200005976A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10521127b2
+    title: Building stable storage area networks for compute clusters
+    url: https://patents.google.com/patent/US10521127B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10519064b2
+    title: Process and additive to improve adhesion of building compositions to substrates
+    url: https://patents.google.com/patent/US10519064B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10520218b2
+    title: Fluid heating device for engine
+    url: https://patents.google.com/patent/US10520218B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002124a1
+    title: Elevator usage in venues
+    url: https://patents.google.com/patent/US20200002124A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002135a1
+    title: Auto adjust elevator door system
+    url: https://patents.google.com/patent/US20200002135A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200003482a1
+    title: Refrigerator and method for operating the refrigerator
+    url: https://patents.google.com/patent/US20200003482A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10521138b2
+    title: Memory system and operating method for re-building map data according to
+      operation logs
+    url: https://patents.google.com/patent/US10521138B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200006213a1
+    title: Copper/ceramic joined body, insulated circuit board, method for producing
+      copper/ceramic joined body, and method for producing insulated circuit board
+    url: https://patents.google.com/patent/US20200006213A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10522996b2
+    title: Electronic circuit breaker with physical open-contact construction and fail-safe
+      protection
+    url: https://patents.google.com/patent/US10522996B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10518497b2
+    title: Heating device for a heating and sealing system
+    url: https://patents.google.com/patent/US10518497B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200003464a1
+    title: Oil distributing device and refrigeration system having the oil distributing
+      device
+    url: https://patents.google.com/patent/US20200003464A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002166a1
+    title: Tail gas heating within psa surge tank
+    url: https://patents.google.com/patent/US20200002166A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10519771b2
+    title: Rock breaking seismic source and active source three-dimensional seismic
+      combined advanced detection system using tunnel boring machine
+    url: https://patents.google.com/patent/US10519771B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200006651a1
+    title: Metal insulator transition field programmable routing block
+    url: https://patents.google.com/patent/US20200006651A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10520212b1
+    title: Heating and cooling control system
+    url: https://patents.google.com/patent/US10520212B1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200001797a1
+    title: Roof luggage rack and article separation device
+    url: https://patents.google.com/patent/US20200001797A1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20200002400a1
+    title: Construction of chimeric antigen receptor targeting cd20 antigen and activity
+      identification of engineered t cells thereof
+    url: https://patents.google.com/patent/US20200002400A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10520135b2
+    title: Vacuum heat-insulating material, and heat-insulting container, dwelling wall,
+      transport machine, hydrogen transport tanker, and LNG transport tanker e
+    url: https://patents.google.com/patent/US10520135B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200006023a1
+    title: Wall-Mounted Smart Switches and Outlets for Use in Building Wiring for Load
+      Control, Home Automation, and/or Security Purposes
+    url: https://patents.google.com/patent/US20200006023A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200001756a1
+    title: Heating system for an occupant
+    url: https://patents.google.com/patent/US20200001756A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10519578b2
+    title: Self-wrapping, braided textile sleeve with self-sustaining expanded and contracted
+      states and method of construction thereof
+    url: https://patents.google.com/patent/US10519578B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200000515a1
+    title: Electrically-insulative hinge for electrosurgical jaw assembly, bipolar forceps
+      including same, and methods of jaw-assembly alignment using fastened e
+    url: https://patents.google.com/patent/US20200000515A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10517502b1
+    title: Insulated pedicle access system and related methods
+    url: https://patents.google.com/patent/US10517502B1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10519591b2
+    title: Combination washing/drying laundry appliance having a heat pump system with
+      reversible condensing and evaporating heat exchangers
+    url: https://patents.google.com/patent/US10519591B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002960a1
+    title: Concrete form system and method
+    url: https://patents.google.com/patent/US20200002960A1/en
+    source: google_patents
+    license: public-domain
+    topic: materials
+    format: html
+  - id: pat-us10524310b2
+    title: PTC heating element and electric heating device for an automotive vehicle
+      comprising such a PTC heating element
+    url: https://patents.google.com/patent/US10524310B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002781a1
+    title: Sealing Device for a Continuous Furnace
+    url: https://patents.google.com/patent/US20200002781A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002123a1
+    title: Data transmission via elevator system tension member
+    url: https://patents.google.com/patent/US20200002123A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520185b2
+    title: Heater device for heating liquefied gas
+    url: https://patents.google.com/patent/US10520185B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10519653b2
+    title: Facade assembly, building structure, and method for mounting the facade assembly
+    url: https://patents.google.com/patent/US10519653B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10519736b2
+    title: Exploding bridge wire detonation wave shaper
+    url: https://patents.google.com/patent/US10519736B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10520903b2
+    title: Building management system with priority array preview interface
+    url: https://patents.google.com/patent/US10520903B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10521202b2
+    title: Customizable project and help building interfaces for deployable software
+    url: https://patents.google.com/patent/US10521202B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200002590a1
+    title: Heat storage particle, composition for thermostatic device, and thermostatic
+      device
+    url: https://patents.google.com/patent/US20200002590A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10522265b2
+    title: Solid insulation material
+    url: https://patents.google.com/patent/US10522265B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200004279a1
+    title: Hvac system configuration and zone management
+    url: https://patents.google.com/patent/US20200004279A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520238b2
+    title: Partition refrigeration control method and device for refrigerating chamber
+      of refrigerator
+    url: https://patents.google.com/patent/US10520238B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200001830a1
+    title: Systems and methods for perception surface cleaning, drying, and/or thermal
+      management with localized heating
+    url: https://patents.google.com/patent/US20200001830A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200000965a1
+    title: Stabilization of collagen scaffolds
+    url: https://patents.google.com/patent/US20200000965A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200000715a1
+    title: Nasolacrimal drainage system implants for drug therapy
+    url: https://patents.google.com/patent/US20200000715A1/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us20200003085a1
+    title: Engine valve actuation systems with lost motion valve train components, including
+      collapsing valve bridges with locking pins
+    url: https://patents.google.com/patent/US20200003085A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200007073a1
+    title: Solar roof tile module with embedded inter-tile circuitry
+    url: https://patents.google.com/patent/US20200007073A1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us10519642b2
+    title: Adjustable sensor device for a plumbing fixture
+    url: https://patents.google.com/patent/US10519642B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200003429a1
+    title: Method and apparatus for positioning heating elements
+    url: https://patents.google.com/patent/US20200003429A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200004273a1
+    title: Method, apparatus and storage medium for controlling drainage of equipment
+    url: https://patents.google.com/patent/US20200004273A1/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us20200002085a1
+    title: Thermal insulating structure
+    url: https://patents.google.com/patent/US20200002085A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10521992b2
+    title: Method for providing a visitor controlled access into a building
+    url: https://patents.google.com/patent/US10521992B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200003480a1
+    title: Method for controlling  defrost in refrigeration systems
+    url: https://patents.google.com/patent/US20200003480A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002914a1
+    title: Construction machine
+    url: https://patents.google.com/patent/US20200002914A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10523528b2
+    title: Determination of quality of service of a network tunnel
+    url: https://patents.google.com/patent/US10523528B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200001932a1
+    title: Automotive perforated insulated glass structure
+    url: https://patents.google.com/patent/US20200001932A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200000150a1
+    title: Heating element and method of analyzing
+    url: https://patents.google.com/patent/US20200000150A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200000241a1
+    title: Body Support Cushion With Ventilation System
+    url: https://patents.google.com/patent/US20200000241A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200003428a1
+    title: Heating cooking device
+    url: https://patents.google.com/patent/US20200003428A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200000172a1
+    title: Hat with an air ventilating structure
+    url: https://patents.google.com/patent/US20200000172A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200004527a1
+    title: Dongle for a building management system and method of operating
+    url: https://patents.google.com/patent/US20200004527A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200002964a1
+    title: System and method for hydro-demolition of concrete structures
+    url: https://patents.google.com/patent/US20200002964A1/en
+    source: google_patents
+    license: public-domain
+    topic: materials
+    format: html
+  - id: pat-us10519685b2
+    title: Hybrid concrete-composite tower for a wind turbine and method of manufacturing
+    url: https://patents.google.com/patent/US10519685B2/en
+    source: google_patents
+    license: public-domain
+    topic: materials
+    format: html
+  - id: pat-us10524316b2
+    title: Low-frequency heating apparatus and method using magnetic field
+    url: https://patents.google.com/patent/US10524316B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002227a1
+    title: Lightweight thermal insulating cement-based materials
+    url: https://patents.google.com/patent/US20200002227A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200003554a1
+    title: System and process for roof measurement using imagery
+    url: https://patents.google.com/patent/US20200003554A1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us10519628b2
+    title: Control system for construction machinery and control method for construction
+      machinery
+    url: https://patents.google.com/patent/US10519628B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200003410a1
+    title: Boiler system controlling fuel to a furnace based on temperature of a structure
+      in a superheater section
+    url: https://patents.google.com/patent/US20200003410A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10522667b2
+    title: Silicon carbide epitaxial wafer, silicon carbide insulated gate bipolar transistor,
+      and method of manufacturing the same
+    url: https://patents.google.com/patent/US10522667B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200006012a1
+    title: Electrically insulating continuous film for an aluminum electrolytic capacitor
+    url: https://patents.google.com/patent/US20200006012A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10520229b2
+    title: Caloric heat pump for an appliance
+    url: https://patents.google.com/patent/US10520229B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520403b2
+    title: Apparatuses for heating microscope slides carrying specimens
+    url: https://patents.google.com/patent/US10520403B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200006386a1
+    title: Bulk Semiconductor Substrate Configured to Exhibit Semiconductor-on-Insulator
+      Behavior
+    url: https://patents.google.com/patent/US20200006386A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200003880a1
+    title: Automatic determination of position and orientation of elevator device entry
+      terminals and hallway fixtures
+    url: https://patents.google.com/patent/US20200003880A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10519948b2
+    title: Method of operating a pressurized drainage system for wastewater
+    url: https://patents.google.com/patent/US10519948B2/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us20200007400a1
+    title: Systems and methods for extending link layer discovery over virtual ethernet
+      bridges
+    url: https://patents.google.com/patent/US20200007400A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200000262a1
+    title: 'Accessory for steam-heating and/or steam-cooking food and steamer comprising
+      a container and an accessory for steam-heating and/or steam-cooking food '
+    url: https://patents.google.com/patent/US20200000262A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10522666b2
+    title: Methods for fabricating anode shorted field stop insulated gate bipolar transistor
+    url: https://patents.google.com/patent/US10522666B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200002137a1
+    title: Apparatus and method for carrying elongate construction elements
+    url: https://patents.google.com/patent/US20200002137A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200002932a1
+    title: Thermal break for concrete slabs
+    url: https://patents.google.com/patent/US20200002932A1/en
+    source: google_patents
+    license: public-domain
+    topic: materials
+    format: html
+  - id: pat-us10517230b2
+    title: Layered facade panel
+    url: https://patents.google.com/patent/US10517230B2/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20200000149a1
+    title: Heating element selection method
+    url: https://patents.google.com/patent/US20200000149A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10518190b2
+    title: Rod-shaped module for toy magnetic construction kits and method for making
+      same
+    url: https://patents.google.com/patent/US10518190B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10520225b2
+    title: Refrigeration and/or liquefaction device using selective pre-cooling, and
+      corresponding method
+    url: https://patents.google.com/patent/US10520225B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520240b2
+    title: Defrosting device and refrigerator having the same
+    url: https://patents.google.com/patent/US10520240B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10519959b2
+    title: Compressor end head heating arrangement
+    url: https://patents.google.com/patent/US10519959B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200007323a1
+    title: Building or enclosure termination closing and/or opening apparatus, and method
+      for operating a building or enclosure termination
+    url: https://patents.google.com/patent/US20200007323A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200008272a1
+    title: Induction heating cooker
+    url: https://patents.google.com/patent/US20200008272A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10518216b2
+    title: Process and device for treating furnace gas
+    url: https://patents.google.com/patent/US10518216B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200001831a1
+    title: Washer liquid heating device
+    url: https://patents.google.com/patent/US20200001831A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002911a1
+    title: Sheet pile of concrete and wall comprising a plurality of said sheet piles
+    url: https://patents.google.com/patent/US20200002911A1/en
+    source: google_patents
+    license: public-domain
+    topic: materials
+    format: html
+  - id: pat-us20200003473a1
+    title: Refrigerator and method of controlling the same
+    url: https://patents.google.com/patent/US20200003473A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520205b2
+    title: Thermostat
+    url: https://patents.google.com/patent/US10520205B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200006385a1
+    title: Semiconductor-on-insulator (soi) substrate comprising a trap-rich layer with
+      small grain sizes
+    url: https://patents.google.com/patent/US20200006385A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10518427b2
+    title: Insulative liner for a hair clipper
+    url: https://patents.google.com/patent/US10518427B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200000642a1
+    title: Multilayer absorbent dressing construction
+    url: https://patents.google.com/patent/US20200000642A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10520102b2
+    title: Gas safety valve sensitive to temperature and method for the construction
+      of such a safety valve
+    url: https://patents.google.com/patent/US10520102B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200002949a1
+    title: Supporting a Load on a Roof
+    url: https://patents.google.com/patent/US20200002949A1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20200004216a1
+    title: Building management system with nested stream generation
+    url: https://patents.google.com/patent/US20200004216A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10521033b2
+    title: Touch sensor assembly and refrigerator door including same
+    url: https://patents.google.com/patent/US10521033B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10522592b2
+    title: Tunnel magnetoresistive effect element, magnetic memory, and built-in memory
+    url: https://patents.google.com/patent/US10522592B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200002937a1
+    title: Unbonded loosefill insulation
+    url: https://patents.google.com/patent/US20200002937A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200006627a1
+    title: Magnetic tunnel junction (mtj) integration on backside of silicon
+    url: https://patents.google.com/patent/US20200006627A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200008294a1
+    title: Thermal insulation and temperature control of components
+    url: https://patents.google.com/patent/US20200008294A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10521098b2
+    title: Non-contacting monitor for bridges and civil structures
+    url: https://patents.google.com/patent/US10521098B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200003102a1
+    title: Heating system
+    url: https://patents.google.com/patent/US20200003102A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200007074a1
+    title: Solar roof tile with a uniform appearance
+    url: https://patents.google.com/patent/US20200007074A1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us10520232b2
+    title: Low charge packaged refrigeration systems
+    url: https://patents.google.com/patent/US10520232B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200000848a1
+    title: Novel peptides and scaffolds for use in immunotherapy against head and neck
+      squamous cell carcinoma and other cancers
+    url: https://patents.google.com/patent/US20200000848A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200005011a1
+    title: Half-bridge Fingeprint Sensing Method
+    url: https://patents.google.com/patent/US20200005011A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10518049b2
+    title: System for automated adjustment of a pressure set by a ventilation device
+    url: https://patents.google.com/patent/US10518049B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10518242b2
+    title: Reactor for a cracking furnace
+    url: https://patents.google.com/patent/US10518242B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520211b1
+    title: Thermostat based control system and method for use with water-cooled air
+      conditioning unit to effect automatic reset of refrigerant pressure switches
+    url: https://patents.google.com/patent/US10520211B1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10519826b2
+    title: Oil mist separator and device for a crankcase ventilation
+    url: https://patents.google.com/patent/US10519826B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10517991b2
+    title: Iron based and absorbable implanted medical device and prefabricated tube
+      and preparation method therefor
+    url: https://patents.google.com/patent/US10517991B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200000573a1
+    title: Tissue augmentation scaffolds for use in soft tissue fixation repair
+    url: https://patents.google.com/patent/US20200000573A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10519854b2
+    title: Thermally insulated engine components and method of making using a ceramic
+      coating
+    url: https://patents.google.com/patent/US10519854B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10519855b2
+    title: Engine assembly with insulated crankshaft bearing housing
+    url: https://patents.google.com/patent/US10519855B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200007407a1
+    title: Network building apparatus, network building method, non-transitory computer
+      readable medium storing program
+    url: https://patents.google.com/patent/US20200007407A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200006580a1
+    title: Termination structure for insulated gate semiconductor device and method
+    url: https://patents.google.com/patent/US20200006580A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10519645b2
+    title: End wall for a gutter for surface drainage
+    url: https://patents.google.com/patent/US10519645B2/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us20200004277a1
+    title: Interactive navigation environment for building performance visualization
+    url: https://patents.google.com/patent/US20200004277A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200005992a1
+    title: System and method for building electromagnetic coil structures
+    url: https://patents.google.com/patent/US20200005992A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200005098a1
+    title: Method and apparatus for building image model
+    url: https://patents.google.com/patent/US20200005098A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10517601b2
+    title: Surgical stapling device with firing indicator of unitary construction
+    url: https://patents.google.com/patent/US10517601B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10518050b2
+    title: Synchronous airway pressure release ventilation
+    url: https://patents.google.com/patent/US10518050B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520213b2
+    title: Air conditioner units and methods of operation
+    url: https://patents.google.com/patent/US10520213B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200003970a1
+    title: Grating couplers for a silicon on insulator waveguide, and methods of designing,
+      fabricating and using the grating couplers
+    url: https://patents.google.com/patent/US20200003970A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10519815b2
+    title: 'Compact energy cycle construction utilizing some combination of a scroll
+      type expander, pump, and compressor for operating according to a rankine, an '
+    url: https://patents.google.com/patent/US10519815B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520866b2
+    title: Fixing apparatus and image forming apparatus that set target temperatures
+      of heat generating elements for heating a developer image in each of a plura
+    url: https://patents.google.com/patent/US10520866B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10518057b2
+    title: Facial interface and headgear system for use with ventilation and positive
+      air pressure systems
+    url: https://patents.google.com/patent/US10518057B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10521005b2
+    title: System and method for full range control of dual active bridge
+    url: https://patents.google.com/patent/US10521005B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10522954b1
+    title: Powered tree construction
+    url: https://patents.google.com/patent/US10522954B1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10520228b2
+    title: Multi-split HVAC system
+    url: https://patents.google.com/patent/US10520228B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002698a1
+    title: Hierarchical magnetic nanoparticle-enzyme mesoporous assemblies embedded
+      in macroporous scaffolds
+    url: https://patents.google.com/patent/US20200002698A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200003440a1
+    title: Method of determining replacement time of filter and air conditioner that
+      determines replacement time of filter
+    url: https://patents.google.com/patent/US20200003440A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520603b2
+    title: Tunnel detection system and method for a motor vehicle
+    url: https://patents.google.com/patent/US10520603B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200002030a1
+    title: Metal encapsulated ceramic tile thermal insulation, and associated systems
+      and methods
+    url: https://patents.google.com/patent/US20200002030A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10522746b1
+    title: Dual magnetic tunnel junction devices for magnetic random access memory (MRAM)
+    url: https://patents.google.com/patent/US10522746B1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10517405b2
+    title: Seat with ventilation system
+    url: https://patents.google.com/patent/US10517405B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10519003b2
+    title: Elevator operation panel
+    url: https://patents.google.com/patent/US10519003B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10521694b2
+    title: 3D building extraction apparatus, method and system
+    url: https://patents.google.com/patent/US10521694B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200006868a1
+    title: Insulation displacement termination (idt) for applying multiple electrical
+      wire gauge sizes simultaneously or individually to electrical connectors, s
+    url: https://patents.google.com/patent/US20200006868A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200002901a1
+    title: Method of Producing an Asphalt Pavement and Supply Arrangement for Supplying
+      Asphalt Pavement
+    url: https://patents.google.com/patent/US20200002901A1/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us10518968b2
+    title: Block connector for septic tank and water treatment facility, and prefabricated
+      block using same
+    url: https://patents.google.com/patent/US10518968B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10518270b2
+    title: Dust collector and air conditioner
+    url: https://patents.google.com/patent/US10518270B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10524317b2
+    title: Heating cooker
+    url: https://patents.google.com/patent/US10524317B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10522517b2
+    title: Half-bridge power semiconductor module and manufacturing method therefor
+    url: https://patents.google.com/patent/US10522517B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200002957a1
+    title: Formwork for producing concrete products
+    url: https://patents.google.com/patent/US20200002957A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10518236b2
+    title: Systems for heating multi-tubular reactors
+    url: https://patents.google.com/patent/US10518236B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200003002a1
+    title: Security device for a window frame
+    url: https://patents.google.com/patent/US20200003002A1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20200006641a1
+    title: Spacer stack for magnetic tunnel junctions
+    url: https://patents.google.com/patent/US20200006641A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200006425a1
+    title: Magnetic tunneling junction (mtj) element with an amorphous buffer layer
+      and its fabrication process
+    url: https://patents.google.com/patent/US20200006425A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200004900a1
+    title: System and method for detection and simulation of building models
+    url: https://patents.google.com/patent/US20200004900A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10524314b2
+    title: Fluid heating device of engine
+    url: https://patents.google.com/patent/US10524314B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200004214a1
+    title: Variable air volume modeling for an hvac system
+    url: https://patents.google.com/patent/US20200004214A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200000971a1
+    title: Nerve repair scaffolds having high microchannel volume and methods for making
+      the same
+    url: https://patents.google.com/patent/US20200000971A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10520217b2
+    title: Assembled heatable media line comprising a media line having at least two
+      heating elements arranged on the exterior thereof, and method for the produc
+    url: https://patents.google.com/patent/US10520217B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10519069b2
+    title: Roller for a roller furnace having at least one coating on the surface
+    url: https://patents.google.com/patent/US10519069B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10518511b2
+    title: Wrappable protective sleeve with closure and locating feature and methods
+      of construction and use thereof
+    url: https://patents.google.com/patent/US10518511B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10519004b2
+    title: Elevator system
+    url: https://patents.google.com/patent/US10519004B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10522982b2
+    title: Gas insulation switch cabinet and switch device
+    url: https://patents.google.com/patent/US10522982B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200002010a1
+    title: Composite aerostructure with integrated heating element
+    url: https://patents.google.com/patent/US20200002010A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10518193b2
+    title: Toy construction set
+    url: https://patents.google.com/patent/US10518193B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200007469a1
+    title: Cut-through bridge error isolation
+    url: https://patents.google.com/patent/US20200007469A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200007425a1
+    title: Traceroute method to identify devices in tunneled segment of routing path
+    url: https://patents.google.com/patent/US20200007425A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10522664b2
+    title: Electronic device including a tunnel layer
+    url: https://patents.google.com/patent/US10522664B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10518825b2
+    title: Roof fairing with distributed flow channels
+    url: https://patents.google.com/patent/US10518825B2/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20200002078a1
+    title: Airtight thermal insulation package with physical sucker structure at the
+      convex edge of the opening thereof
+    url: https://patents.google.com/patent/US20200002078A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10522981b2
+    title: Water and contamination absorber for C02 insulated electrical apparatus for
+      the generation, transmission, distribution and/or usage of electrical ener
+    url: https://patents.google.com/patent/US10522981B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200002904a1
+    title: Self-Propelled Construction Machine and Method for Operating a Self-Propelled
+      Construction Machine
+    url: https://patents.google.com/patent/US20200002904A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10519844b2
+    title: Heat insulation structure
+    url: https://patents.google.com/patent/US10519844B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200000984a1
+    title: Corporeal drainage system
+    url: https://patents.google.com/patent/US20200000984A1/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us20200007006a1
+    title: Device for applying in a pavement for collecting mechanical energy from vehicles
+      passing over for generating electricity
+    url: https://patents.google.com/patent/US20200007006A1/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us10517350b2
+    title: Sole structure for an article of footwear having longitudinal extending bridge
+      portions with an interwoven stiffness controlling device
+    url: https://patents.google.com/patent/US10517350B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200003503a1
+    title: Apparatus and method for protecting the tube-sheet of a syngas loop boiler
+    url: https://patents.google.com/patent/US20200003503A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10523147b2
+    title: Motor driving device, air conditioning device including same, and control
+      method for motor driving device
+    url: https://patents.google.com/patent/US10523147B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002959a1
+    title: Formwork support
+    url: https://patents.google.com/patent/US20200002959A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200005937a1
+    title: Dynamic report building
+    url: https://patents.google.com/patent/US20200005937A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200003441a1
+    title: Method and system for heating auto-setback
+    url: https://patents.google.com/patent/US20200003441A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002856a1
+    title: Textile sleeve with adhesive fixation layer and methods of construction and
+      use thereof
+    url: https://patents.google.com/patent/US20200002856A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10522626b2
+    title: Silicon-on-insulator backside contacts
+    url: https://patents.google.com/patent/US10522626B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200002948a1
+    title: Roof forming element, roof, and method of manufacturing
+    url: https://patents.google.com/patent/US20200002948A1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20200000148a1
+    title: Apparatus for heating smokable material
+    url: https://patents.google.com/patent/US20200000148A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002134a1
+    title: Elevator device
+    url: https://patents.google.com/patent/US20200002134A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10518610b2
+    title: Air outlet assemblies for vehicle ventilation systems
+    url: https://patents.google.com/patent/US10518610B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200003328a1
+    title: Industrial plumbing fixture adaptor kit and method
+    url: https://patents.google.com/patent/US20200003328A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200003478a1
+    title: Refrigerator and controlling method thereof
+    url: https://patents.google.com/patent/US20200003478A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002122a1
+    title: Method and elevator
+    url: https://patents.google.com/patent/US20200002122A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10518861b2
+    title: Continuous fiber reinforcement for airship construction
+    url: https://patents.google.com/patent/US10518861B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200006644a1
+    title: Method of manufacturing magnetic tunnel junction and magnetic tunnel junction
+    url: https://patents.google.com/patent/US20200006644A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200004182a1
+    title: Heating device and image forming apparatus
+    url: https://patents.google.com/patent/US20200004182A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10519614b2
+    title: System and method for automated deployment of a passenger boarding bridge
+    url: https://patents.google.com/patent/US10519614B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10518189b2
+    title: Tool for use with toy construction elements
+    url: https://patents.google.com/patent/US10518189B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10522749b2
+    title: Combined physical and chemical etch to reduce magnetic tunnel junction (MTJ)
+      sidewall damage
+    url: https://patents.google.com/patent/US10522749B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200001385a1
+    title: System and method employing active thermal buffer element for improved joule
+      heating
+    url: https://patents.google.com/patent/US20200001385A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200003427a1
+    title: Frontal cooling towers for a ventilation system of a cooking appliance
+    url: https://patents.google.com/patent/US20200003427A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10519666b2
+    title: Roof drain cover
+    url: https://patents.google.com/patent/US10519666B2/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20200007507a1
+    title: Internet Protocol Security Tunnel Maintenance Method, Apparatus, and System
+    url: https://patents.google.com/patent/US20200007507A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10522388b1
+    title: Method of forming high-voltage silicon-on-insulator device with diode connection
+      to handle layer
+    url: https://patents.google.com/patent/US10522388B1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200001683a1
+    title: Air conditioning fitting with axial and radial elastomeric sealing element
+      and metal to metal taper saddle
+    url: https://patents.google.com/patent/US20200001683A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10518602b2
+    title: Automatic control of heating and cooling of a vehicle seating assembly pursuant
+      to predictive modeling that recalibrates based on occupant manual cont
+    url: https://patents.google.com/patent/US10518602B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200003430a1
+    title: Remotely operated heating system
+    url: https://patents.google.com/patent/US20200003430A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200005176a1
+    title: Causal inference model construction method
+    url: https://patents.google.com/patent/US20200005176A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10518300b2
+    title: Method and means for recovery boiler outage
+    url: https://patents.google.com/patent/US10518300B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200006639a1
+    title: Diffusion layer for magnetic tunnel junctions
+    url: https://patents.google.com/patent/US20200006639A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200006844a1
+    title: Under-roof antenna modules for vehicle
+    url: https://patents.google.com/patent/US20200006844A1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us10523561b2
+    title: Tunnel provisioning with link aggregation
+    url: https://patents.google.com/patent/US10523561B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10519678b2
+    title: Tool for marking and measuring struts for construction
+    url: https://patents.google.com/patent/US10519678B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10519943b2
+    title: Concrete pump system and method
+    url: https://patents.google.com/patent/US10519943B2/en
+    source: google_patents
+    license: public-domain
+    topic: materials
+    format: html
+  - id: pat-us10520237b2
+    title: Refrigeration cycle comprising a common condensing section for two separate
+      evaporator-compressor circuits
+    url: https://patents.google.com/patent/US10520237B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10519978b2
+    title: Blade of a ventilator wheel, ventilator wheel and axial ventilator
+    url: https://patents.google.com/patent/US10519978B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200000512a1
+    title: Electrically-insulative shafts, methods of manufacturing electrically-insulative
+      shafts, and energy-based surgical instruments incorporating electrica
+    url: https://patents.google.com/patent/US20200000512A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10520864b2
+    title: Image forming apparatus that controls a target temperature of a heating member
+      based on whether pixels for forming an image are a predetermined densit
+    url: https://patents.google.com/patent/US10520864B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002941a1
+    title: High sound attenuation building panels
+    url: https://patents.google.com/patent/US20200002941A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200001517a1
+    title: Station for heating thermoplastic sheet-like blanks for thermoforming lines
+    url: https://patents.google.com/patent/US20200001517A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520207b1
+    title: Refrigerated drying module for moisture sensitive device storage
+    url: https://patents.google.com/patent/US10520207B1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10517474b2
+    title: Ventilatory laryngoscope with disposable laryngoscope lens
+    url: https://patents.google.com/patent/US10517474B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520206b2
+    title: Window air conditioner
+    url: https://patents.google.com/patent/US10520206B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200001316a1
+    title: Warning system for protecting a fire sprinkler head
+    url: https://patents.google.com/patent/US20200001316A1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20200003413a1
+    title: Furnace including perforated and bluff body flame holder for enhanced stability
+      and turndown
+    url: https://patents.google.com/patent/US20200003413A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200003650a1
+    title: Apparatus and Method for Thermal Insulation of High-Temperature Pressure
+      Sensors
+    url: https://patents.google.com/patent/US20200003650A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20200004213a1
+    title: Interactive building management system
+    url: https://patents.google.com/patent/US20200004213A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200003495a1
+    title: Temperature measuring instrument for high temperature and pressure furnace
+    url: https://patents.google.com/patent/US20200003495A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200007070a1
+    title: Systems and methods for mounting roof-mounted photovoltaic arrays including
+      flashing and adhesive pads
+    url: https://patents.google.com/patent/US20200007070A1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us10519654b2
+    title: Building component
+    url: https://patents.google.com/patent/US10519654B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10524313b2
+    title: Rear slider window assembly with laminated heating element
+    url: https://patents.google.com/patent/US10524313B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10522012b1
+    title: Verifying occupancy of a building
+    url: https://patents.google.com/patent/US10522012B1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10519662b2
+    title: Metal roof panel with deformation resistant rib and method of making the
+      same
+    url: https://patents.google.com/patent/US10519662B2/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20200002954a1
+    title: Scaffold System
+    url: https://patents.google.com/patent/US20200002954A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200003453a1
+    title: Solar refraction device for heating industrial materials
+    url: https://patents.google.com/patent/US20200003453A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200003057a1
+    title: Positioner and positioning method for reinforcing steel bars of tunnel side
+      wall
+    url: https://patents.google.com/patent/US20200003057A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20200003463a1
+    title: Heating and cooling devices, systems and related method
+    url: https://patents.google.com/patent/US20200003463A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520862b2
+    title: Image heating apparatus having an opening and closing mechanism that opens
+      and closes an air blowing port using a plurality of shutter members
+    url: https://patents.google.com/patent/US10520862B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002213a1
+    title: Seal structure for optical fiber drawing furnace and optical fiber production
+      method
+    url: https://patents.google.com/patent/US20200002213A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10518206b1
+    title: Systems and methods of predicting life of a filter in an HVAC system
+    url: https://patents.google.com/patent/US10518206B1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10522992b2
+    title: Thermal snow and ice prevention system for bridge cables
+    url: https://patents.google.com/patent/US10522992B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10519006b2
+    title: Elevator guide rail bracket and method for securing a guide rail
+    url: https://patents.google.com/patent/US10519006B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002229a1
+    title: Asphalt compositions and methods of forming the same
+    url: https://patents.google.com/patent/US20200002229A1/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us20200003434a1
+    title: Outdoor unit for air conditioner and air conditioner
+    url: https://patents.google.com/patent/US20200003434A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520215b2
+    title: Air sweeping blade, air sweeping mechanism and air conditioner
+    url: https://patents.google.com/patent/US10520215B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200003467a1
+    title: Hvac refrigerant charging and relieving systems and methods
+    url: https://patents.google.com/patent/US20200003467A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10520254b2
+    title: Electric induction furnace lining wear detection system
+    url: https://patents.google.com/patent/US10520254B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200001685a1
+    title: Heating system and method for heating the interior of a vehicle and motor
+      vehicle
+    url: https://patents.google.com/patent/US20200001685A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10518347b2
+    title: Roof laser brazing system
+    url: https://patents.google.com/patent/US10518347B2/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us10518603b2
+    title: Air conditioner for vehicle
+    url: https://patents.google.com/patent/US10518603B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200001697a1
+    title: Construction of a Transmission for a Hybrid Vehicle, Drive Train and Hybrid
+      Vehicle
+    url: https://patents.google.com/patent/US20200001697A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20200006628a1
+    title: Magnetic tunnel junction (mtj) devices with a synthetic antiferromagnet (saf)
+      structure including a magnetic skyrmion
+    url: https://patents.google.com/patent/US20200006628A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10517528b2
+    title: Method and system for validating inspiratory muscle activity of a patient,
+      and mechanical ventilation system using the same
+    url: https://patents.google.com/patent/US10517528B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20200002939a1
+    title: Building structure with means to reduce induced vibrations
+    url: https://patents.google.com/patent/US20200002939A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10522745b2
+    title: Low resistance MgO capping layer for perpendicularly magnetized magnetic
+      tunnel junctions
+    url: https://patents.google.com/patent/US10522745B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190003181a1
+    title: Truss structure
+    url: https://patents.google.com/patent/US20190003181A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10166420b1
+    title: Sensor reservoir with probe to monitor, measure, and control fire sprinkler
+      and other systems and method of constructing and using the same
+    url: https://patents.google.com/patent/US10166420B1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us10165859b2
+    title: Refrigerator appliance with a drawer slide synchronizer
+    url: https://patents.google.com/patent/US10165859B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10168079b2
+    title: Refrigeration cycle device
+    url: https://patents.google.com/patent/US10168079B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190000603a1
+    title: Scaffold with cortical wall
+    url: https://patents.google.com/patent/US20190000603A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190002776a1
+    title: Gasification furnace
+    url: https://patents.google.com/patent/US20190002776A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10172244b1
+    title: Construction of printed circuit board having a buried via
+    url: https://patents.google.com/patent/US10172244B1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190003143a1
+    title: Pad site construction and method
+    url: https://patents.google.com/patent/US20190003143A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10168092b2
+    title: Refrigeration device for container
+    url: https://patents.google.com/patent/US10168092B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10170282b2
+    title: Insulated semiconductor faceplate designs
+    url: https://patents.google.com/patent/US10170282B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10166436b2
+    title: Methods and program products for building a workout
+    url: https://patents.google.com/patent/US10166436B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10167625b1
+    title: Foundation anchor system and anchor installation method using the same
+    url: https://patents.google.com/patent/US10167625B1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10166839b2
+    title: Vehicle display system relating to air conditioner operating load
+    url: https://patents.google.com/patent/US10166839B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10169699b1
+    title: Cognitive interactive elevator assistant
+    url: https://patents.google.com/patent/US10169699B1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003246a1
+    title: Filling and sealing device and method for an insulated glass unit
+    url: https://patents.google.com/patent/US20190003246A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10168245b2
+    title: Optically-based interstory drift meter system for rapid assessment of the
+      earthquake response of building structures
+    url: https://patents.google.com/patent/US10168245B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190003763a1
+    title: Combined microwave oven and refrigerator appliance
+    url: https://patents.google.com/patent/US20190003763A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002184a1
+    title: Insulative sleeve for beverage cup
+    url: https://patents.google.com/patent/US20190002184A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190006495a1
+    title: Insulated gate bipolar transistor
+    url: https://patents.google.com/patent/US20190006495A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10168102b2
+    title: Plate type heat exchanger and refrigeration cycle apparatus having the same
+      plate type heat exchanger
+    url: https://patents.google.com/patent/US10168102B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190007235a1
+    title: Udp over tcp tunnel
+    url: https://patents.google.com/patent/US20190007235A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190001166a1
+    title: Double Sided Concrete Fall Arrest Anchor
+    url: https://patents.google.com/patent/US20190001166A1/en
+    source: google_patents
+    license: public-domain
+    topic: materials
+    format: html
+  - id: pat-us20190003463a1
+    title: Improved electro-thermal heating
+    url: https://patents.google.com/patent/US20190003463A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002792a1
+    title: Refrigeration oil, and composition for use in refrigerating machine
+    url: https://patents.google.com/patent/US20190002792A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003134a1
+    title: A method of determining the quality of a newly produced asphalt pavement
+    url: https://patents.google.com/patent/US20190003134A1/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us10170217b2
+    title: Edge insulation structure for electrical cable
+    url: https://patents.google.com/patent/US10170217B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190002066a1
+    title: Dry dock for building and/or dismantling navel structures
+    url: https://patents.google.com/patent/US20190002066A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190001089a1
+    title: Ventilator mount system
+    url: https://patents.google.com/patent/US20190001089A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190005860a1
+    title: Low Drag Outdoor Media Facade Display
+    url: https://patents.google.com/patent/US20190005860A1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20190003772a1
+    title: Method of Operating a Furnace
+    url: https://patents.google.com/patent/US20190003772A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003756a1
+    title: Refrigeration system using emergency electric power
+    url: https://patents.google.com/patent/US20190003756A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190001824a1
+    title: Solar support mounted on a vehicle roof
+    url: https://patents.google.com/patent/US20190001824A1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us10167966b2
+    title: Ventilating valve for a sewer pipe
+    url: https://patents.google.com/patent/US10167966B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10169486b2
+    title: Building management system with timeseries processing
+    url: https://patents.google.com/patent/US10169486B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-usd837036s1
+    title: Truss arm
+    url: https://patents.google.com/patent/USD837036S1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10167886b2
+    title: Securement clip for pipe and scaffold engaged fabric
+    url: https://patents.google.com/patent/US10167886B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190006582a1
+    title: Memory Cell Having Magnetic Tunnel Junction and Thermal Stability Enhancement
+      Layer
+    url: https://patents.google.com/patent/US20190006582A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10167226b2
+    title: Anti-static agent for glass fiber insulation
+    url: https://patents.google.com/patent/US10167226B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190006318a1
+    title: Monolithic silicon bridge stack including a hybrid baseband die supporting
+      processors and memory
+    url: https://patents.google.com/patent/US20190006318A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-usd837418s1
+    title: Structural building panel
+    url: https://patents.google.com/patent/USD837418S1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190003706a1
+    title: Furnace with integrated heat recovery utilizing radiative recuperator for
+      preheating combustion reactants using heat from flue gas
+    url: https://patents.google.com/patent/US20190003706A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190001594a1
+    title: Heating system for composite rework of aircraft
+    url: https://patents.google.com/patent/US20190001594A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003108a1
+    title: Condensing type clothes dryer having a heat pump cycle and a method for controlling
+      a condensing type clothes dryer having a heat pump cycle
+    url: https://patents.google.com/patent/US20190003108A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10172185b2
+    title: Selective heating of vehicle side window
+    url: https://patents.google.com/patent/US10172185B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190006518a1
+    title: Strained semiconductor using elastic edge relaxation of a stressor combined
+      with buried insulating layer
+    url: https://patents.google.com/patent/US20190006518A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190002215a1
+    title: Hot beverage container lid construction and packaging method
+    url: https://patents.google.com/patent/US20190002215A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190001797a1
+    title: Roof structure for vehicle
+    url: https://patents.google.com/patent/US20190001797A1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20190003765a1
+    title: Controlling a refrigeration unit in response to a specific cargo load
+    url: https://patents.google.com/patent/US20190003765A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190005427a1
+    title: Profit generation method by means of building team utilizing idle resources
+      associated with occurrence of scraps
+    url: https://patents.google.com/patent/US20190005427A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190006238a1
+    title: Manufacturing process of element chip and substrate heating apparatus
+    url: https://patents.google.com/patent/US20190006238A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10170626b2
+    title: Transistor panel having a good insulation property and a manufacturing method
+      thereof
+    url: https://patents.google.com/patent/US10170626B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190004550a1
+    title: Control of a heating/cooling system
+    url: https://patents.google.com/patent/US20190004550A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10166834b2
+    title: Heating system of hybrid vehicle and method for controlling the same
+    url: https://patents.google.com/patent/US10166834B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190001559a1
+    title: Cooling of print device and heating of print material
+    url: https://patents.google.com/patent/US20190001559A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002327a1
+    title: Method for producing an integral bond between components of quartz glass
+      and heating burner suited therefor
+    url: https://patents.google.com/patent/US20190002327A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10167860b2
+    title: Hermetic compressor and refrigeration apparatus
+    url: https://patents.google.com/patent/US10167860B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003182a1
+    title: Set of components for tendon encapsulation process in active anchor plate
+      in prestressed concrete
+    url: https://patents.google.com/patent/US20190003182A1/en
+    source: google_patents
+    license: public-domain
+    topic: materials
+    format: html
+  - id: pat-us20190003757a1
+    title: Portable refrigerator and method of using
+    url: https://patents.google.com/patent/US20190003757A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10167757b2
+    title: Insulation structure of catalytic converter of vehicle
+    url: https://patents.google.com/patent/US10167757B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10168066b2
+    title: Air conditioner with outdoor fan control in accordance with suction pressure
+      and suction superheating degree of a compressor
+    url: https://patents.google.com/patent/US10168066B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003749a1
+    title: Heating, ventilation, air conditioning and refrigeration system
+    url: https://patents.google.com/patent/US20190003749A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10170780b2
+    title: Furnace with an integrated flame assisted fuel cell for combined heating
+      and power
+    url: https://patents.google.com/patent/US10170780B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003189a1
+    title: Floor panel having drainage protrusions
+    url: https://patents.google.com/patent/US20190003189A1/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us20190002238a1
+    title: Elevator accelerometer sensor data usage
+    url: https://patents.google.com/patent/US20190002238A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10167645b2
+    title: Building, in particular a hospital
+    url: https://patents.google.com/patent/US10167645B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190001025a1
+    title: Biodegradable scaffolds
+    url: https://patents.google.com/patent/US20190001025A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10170428b2
+    title: Cavity generation for embedded interconnect bridges utilizing temporary structures
+    url: https://patents.google.com/patent/US10170428B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190001626a1
+    title: Thermal insulator, vacuum insulation member, and method of manufacturing
+      vacuum insulation member
+    url: https://patents.google.com/patent/US20190001626A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190003305a1
+    title: Tunnel boring machine backup train comprising means for conveying an arch
+      segment
+    url: https://patents.google.com/patent/US20190003305A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10168080b2
+    title: Eutectic mixtures of ionic liquids in absorption chillers
+    url: https://patents.google.com/patent/US10168080B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10165721b2
+    title: Disc holder and scraper construction for disc harrows
+    url: https://patents.google.com/patent/US10165721B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190007033a1
+    title: Tunnel field-effect transistor (tfet) based high-density and low-power sequential
+    url: https://patents.google.com/patent/US20190007033A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-usd837411s1
+    title: Vacuum-insulated glass plate
+    url: https://patents.google.com/patent/USD837411S1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10168647b2
+    title: Fixing device and image forming apparatus including heat insulating member
+      in contact with bearing
+    url: https://patents.google.com/patent/US10168647B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10167581b2
+    title: Braided textile sleeve with self-sustaining expanded and contracted states
+      and method of construction thereof
+    url: https://patents.google.com/patent/US10167581B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10171892b2
+    title: System and method for monitoring water level on a roof
+    url: https://patents.google.com/patent/US10171892B2/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20190001598a1
+    title: Non-pneumatic wheel and method of construction
+    url: https://patents.google.com/patent/US20190001598A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10170628b2
+    title: Method for forming an extremely thin silicon-on-insulator (ETSOI) device
+      having reduced parasitic capacitance and contact resistance due to wrap-aroun
+    url: https://patents.google.com/patent/US10170628B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190001788a1
+    title: Air conditioner for vehicle and method for controlling the same
+    url: https://patents.google.com/patent/US20190001788A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10168679b2
+    title: Toilet ventilation system and device
+    url: https://patents.google.com/patent/US10168679B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10166737b2
+    title: Load floor having sound absorption and insulation performances for vehicle
+    url: https://patents.google.com/patent/US10166737B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10168941b2
+    title: Historical state snapshot construction over temporally evolving data
+    url: https://patents.google.com/patent/US10168941B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10166148b2
+    title: Surgical cavity drainage and closure system
+    url: https://patents.google.com/patent/US10166148B2/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us10171677b2
+    title: Systems and methods for monitoring sound during an in-building emergency
+    url: https://patents.google.com/patent/US10171677B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10167171b2
+    title: Elevator with brake device in the manner of a clamp brake
+    url: https://patents.google.com/patent/US10167171B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190006896a1
+    title: Electric motor, compressor, and refrigeration and air conditioning apparatus
+    url: https://patents.google.com/patent/US20190006896A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10167623b2
+    title: Prefabricated reinforced concrete-filled steel pipe sleeve joint
+    url: https://patents.google.com/patent/US10167623B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190002239a1
+    title: Method for monitoring a safety circuit of an elevator system and monitoring
+      device for a safety circuit of an elevator system
+    url: https://patents.google.com/patent/US20190002239A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10170742b2
+    title: Battery pack having electric insulating pack case
+    url: https://patents.google.com/patent/US10170742B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10167615b2
+    title: Control system for construction machinery and control method for construction
+      machinery using the same
+    url: https://patents.google.com/patent/US10167615B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10167633b2
+    title: Tie system for insulated concrete panels
+    url: https://patents.google.com/patent/US10167633B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190005013a1
+    title: Conversation system-building method and apparatus based on artificial intelligence,
+      device and computer-readable storage medium
+    url: https://patents.google.com/patent/US20190005013A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10168099b2
+    title: Apparatus and a method for heating plastic preforms with a removable movement
+      device
+    url: https://patents.google.com/patent/US10168099B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10165798b2
+    title: Method for manufacturing electric heating wire element
+    url: https://patents.google.com/patent/US10165798B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002241a1
+    title: Elevator car power supply system
+    url: https://patents.google.com/patent/US20190002241A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190008005a1
+    title: Method and apparatus for determining heating strategies
+    url: https://patents.google.com/patent/US20190008005A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10170817b2
+    title: Superconducting airbridge crossover using superconducting sacrificial material
+    url: https://patents.google.com/patent/US10170817B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190001825a1
+    title: Photovoltaic vehicle roof
+    url: https://patents.google.com/patent/US20190001825A1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20190001086a1
+    title: Electronic vaping device with tubular heating element
+    url: https://patents.google.com/patent/US20190001086A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003046a1
+    title: METHOD FOR CLEANING SiC MONOCRYSTAL GROWTH FURNACE
+    url: https://patents.google.com/patent/US20190003046A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190005618a1
+    title: Automated seamline construction for high-quality high-resolution orthomosaics
+    url: https://patents.google.com/patent/US20190005618A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10166375b2
+    title: Body fluid drainage system
+    url: https://patents.google.com/patent/US10166375B2/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us10170599b2
+    title: Semiconductor device including insulating films with different thicknesses
+      and method for manufacturing the semiconductor device
+    url: https://patents.google.com/patent/US10170599B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10170695b2
+    title: Magnetic tunnel junction device utilizing lattice strain
+    url: https://patents.google.com/patent/US10170695B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190005293a1
+    title: Multiphase Fingerprint Sensor Layout and Construction
+    url: https://patents.google.com/patent/US20190005293A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10170172b2
+    title: Logic circuits including magnetic tunnel junction devices
+    url: https://patents.google.com/patent/US10170172B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10166525b2
+    title: Microwave irradiating and heating device
+    url: https://patents.google.com/patent/US10166525B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002748a1
+    title: Heat-storage material and refrigerator and cooling container that include
+      the heat-storage material
+    url: https://patents.google.com/patent/US20190002748A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190001651a1
+    title: Method for Manufacturing Vacuum Insulation Panels
+    url: https://patents.google.com/patent/US20190001651A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190002185a1
+    title: An insulated carry bag
+    url: https://patents.google.com/patent/US20190002185A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190001249a1
+    title: Air Purifying Unit and Air Cleaning/Ventilation Device Comprising Same
+    url: https://patents.google.com/patent/US20190001249A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003728a1
+    title: Air conditioner and blower device
+    url: https://patents.google.com/patent/US20190003728A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190001785a1
+    title: Vehicle air conditioner
+    url: https://patents.google.com/patent/US20190001785A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190001821a1
+    title: A method and system for monitoring electrical insulation resistance in an
+      electric system
+    url: https://patents.google.com/patent/US20190001821A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10170606b2
+    title: Insulated gate bipolar transistor and diode
+    url: https://patents.google.com/patent/US10170606B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10168087b2
+    title: Refrigerant charge management in an integrated heat pump
+    url: https://patents.google.com/patent/US10168087B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10171975b2
+    title: Efficient distribution of heating, ventilation, and air conditioning functionality
+    url: https://patents.google.com/patent/US10171975B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10170692b2
+    title: Semiconductor device with integrated magnetic tunnel junction
+    url: https://patents.google.com/patent/US10170692B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190007999a1
+    title: Metal heating sleeve pipe and replacer thereof
+    url: https://patents.google.com/patent/US20190007999A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002244a1
+    title: Self cleaning elevator
+    url: https://patents.google.com/patent/US20190002244A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002614a1
+    title: Method for preparing concrete superplasticizer having phosphorous acid group
+      and use thereof
+    url: https://patents.google.com/patent/US20190002614A1/en
+    source: google_patents
+    license: public-domain
+    topic: materials
+    format: html
+  - id: pat-us10167020b2
+    title: Roof segment for a vehicle and method for producing a roof segment
+    url: https://patents.google.com/patent/US10167020B2/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20190003363a1
+    title: Apparatus and method for gaseous emissions treatment using induction heating
+      with movable heat profile
+    url: https://patents.google.com/patent/US20190003363A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190008000a1
+    title: Heating tape and system
+    url: https://patents.google.com/patent/US20190008000A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190007789a1
+    title: Building sensor array
+    url: https://patents.google.com/patent/US20190007789A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10165822b2
+    title: Insulated footwear articles
+    url: https://patents.google.com/patent/US10165822B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10167657b2
+    title: Hinge assembly for an insulated door
+    url: https://patents.google.com/patent/US10167657B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190004491a1
+    title: Cooking appliance control of residential heating, ventilation and/or air
+      conditioning (hvac) system
+    url: https://patents.google.com/patent/US20190004491A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190006254a1
+    title: Microelectronic package construction enabled through ceramic insulator strengthening
+      and design
+    url: https://patents.google.com/patent/US20190006254A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10166145b2
+    title: Intraocular drainage device
+    url: https://patents.google.com/patent/US10166145B2/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us20190003758a1
+    title: Refrigerator with tandem evaporators
+    url: https://patents.google.com/patent/US20190003758A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003224a1
+    title: Refrigerator door hinge
+    url: https://patents.google.com/patent/US20190003224A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003744a1
+    title: 'Mechanical subcooling of transcritical r744 refrigeration systems using
+      separate r-744 or other refrigerants units for mechanical subcooling and as a '
+    url: https://patents.google.com/patent/US20190003744A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10171012b2
+    title: Air conditioner and startup control method and system for outdoor fan of
+      the air conditioner
+    url: https://patents.google.com/patent/US10171012B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-usd837351s1
+    title: Combined boiler low water cutoff and pump controller bottle
+    url: https://patents.google.com/patent/USD837351S1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10170603b2
+    title: Semiconductor device including a resonant tunneling diode structure with
+      electron mean free path control layers
+    url: https://patents.google.com/patent/US10170603B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10170697b2
+    title: Cryogenic patterning of magnetic tunnel junctions
+    url: https://patents.google.com/patent/US10170697B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190002356a1
+    title: Improved process for producing silica aerogel thermal insulation product
+      with increased efficiency
+    url: https://patents.google.com/patent/US20190002356A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190003948a1
+    title: Devices and methods for determining the density of insulation
+    url: https://patents.google.com/patent/US20190003948A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190003732a1
+    title: Window type air conditioner
+    url: https://patents.google.com/patent/US20190003732A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190001530a1
+    title: Method for Manufacturing Heated Molding Material and Device for Heating Molding
+      Material
+    url: https://patents.google.com/patent/US20190001530A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002675a1
+    title: Asphaltene/polyethylene blend
+    url: https://patents.google.com/patent/US20190002675A1/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us20190001523a1
+    title: Concrete runways, roads, highways and slabs on grade and methods of making
+      same
+    url: https://patents.google.com/patent/US20190001523A1/en
+    source: google_patents
+    license: public-domain
+    topic: materials
+    format: html
+  - id: pat-us20190001311a1
+    title: Zeolitic 3d scaffolds with tailored surface topography for methanol conversion
+      with light olefins selectivity
+    url: https://patents.google.com/patent/US20190001311A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10168081b2
+    title: Adsorption heat pump system and cooling generation method
+    url: https://patents.google.com/patent/US10168081B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003771a1
+    title: Heating furnace for heating annular component
+    url: https://patents.google.com/patent/US20190003771A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10167130b2
+    title: Insulating container
+    url: https://patents.google.com/patent/US10167130B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10167170b2
+    title: Smart elevator system
+    url: https://patents.google.com/patent/US10167170B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003245a1
+    title: Gas filling assembly machine and method for an insulated glass unit
+    url: https://patents.google.com/patent/US20190003245A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10170655b2
+    title: Energy harvesting device with prefabricated thin film energy absorption sheets
+      and roll-to-sheet and roll-to-roll fabrication thereof
+    url: https://patents.google.com/patent/US10170655B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190005843a1
+    title: System, Method and Apparatus for Online Gaming for Managing Addictions and
+      Building Habits
+    url: https://patents.google.com/patent/US20190005843A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190003244a1
+    title: No-chamber gas filling for an insulated glass unit
+    url: https://patents.google.com/patent/US20190003244A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190006901a1
+    title: Stator assembly including insulation member and method of assembly thereof
+    url: https://patents.google.com/patent/US20190006901A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10167571b2
+    title: Wafer carrier having provisions for improving heating uniformity in chemical
+      vapor deposition systems
+    url: https://patents.google.com/patent/US10167571B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10168056b2
+    title: Desiccant air conditioning methods and systems using evaporative chiller
+    url: https://patents.google.com/patent/US10168056B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002243a1
+    title: Elevator guide rail cleaner
+    url: https://patents.google.com/patent/US20190002243A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10166489b2
+    title: Methods and systems for heating and manipulating fluids
+    url: https://patents.google.com/patent/US10166489B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190007143a1
+    title: System and Method for Communication by Means of Visible Light for Underground
+      Tunnels
+    url: https://patents.google.com/patent/US20190007143A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190003764a1
+    title: Household refrigeration device having an interior lighting system and method
+      for producing a household refrigeration device
+    url: https://patents.google.com/patent/US20190003764A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190001439a1
+    title: Induction heating coil
+    url: https://patents.google.com/patent/US20190001439A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190006281a1
+    title: Cross-connected multi-chip modules coupled by silicon bent-bridge interconnects
+      and methods of assembling same
+    url: https://patents.google.com/patent/US20190006281A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190001617a1
+    title: Super insulating nano-spheres for appliance insulation and method for creating
+      a super insulating nano-sphere material
+    url: https://patents.google.com/patent/US20190001617A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10167058b2
+    title: Retractable roof
+    url: https://patents.google.com/patent/US10167058B2/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us20190003186a1
+    title: Spacer for prefabricated spiral staircase and prefabricated spiral staircase
+      using same
+    url: https://patents.google.com/patent/US20190003186A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190003650a1
+    title: Method and system for calculating, in real-time, the duration of autonomy
+      of a non-refrigerated tank containing lng
+    url: https://patents.google.com/patent/US20190003650A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003715a1
+    title: Electromagnetic wave heating system
+    url: https://patents.google.com/patent/US20190003715A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10167431b2
+    title: Pinned furnace tubes
+    url: https://patents.google.com/patent/US10167431B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190000296a1
+    title: Heating assembly for a washing appliance
+    url: https://patents.google.com/patent/US20190000296A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003180a1
+    title: Insulated roof diaphragms and methods
+    url: https://patents.google.com/patent/US20190003180A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190000628a1
+    title: Modular tissue scaffolds
+    url: https://patents.google.com/patent/US20190000628A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190005572a1
+    title: Method and system of building store product finders
+    url: https://patents.google.com/patent/US20190005572A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10168065b2
+    title: Diagnosing and troubleshooting a heating, ventilation, and air conditioning
+      system
+    url: https://patents.google.com/patent/US10168065B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003752a1
+    title: Chemical heat pump with multi-channel membrane reactor
+    url: https://patents.google.com/patent/US20190003752A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10167613b2
+    title: Hydraulic drive system of construction machine
+    url: https://patents.google.com/patent/US10167613B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190006954a1
+    title: Synchronous bridge rectifier, methods of operation thereof and components
+      thereof
+    url: https://patents.google.com/patent/US20190006954A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10167129b2
+    title: Food tray with improved construction
+    url: https://patents.google.com/patent/US10167129B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190003726a1
+    title: Moisture abatement in heating operation of climate controlled systems
+    url: https://patents.google.com/patent/US20190003726A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190001425a1
+    title: Heating apparatus and method for producing plate-like object
+    url: https://patents.google.com/patent/US20190001425A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190007986a1
+    title: Apparatus For Role Identification And Power Supply Control In A Wireless
+      Tunneling System
+    url: https://patents.google.com/patent/US20190007986A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190008003a1
+    title: Heating element for sensor array
+    url: https://patents.google.com/patent/US20190008003A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002240a1
+    title: Elevator maintenance space projection systems
+    url: https://patents.google.com/patent/US20190002240A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10166635b2
+    title: Welding device comprising an active heating device for heating the workpiece
+    url: https://patents.google.com/patent/US10166635B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003760a1
+    title: Method for defrosting a heat pump
+    url: https://patents.google.com/patent/US20190003760A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190004487a1
+    title: Mobility room, mobility room management system, management server, and building
+      management system
+    url: https://patents.google.com/patent/US20190004487A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10170653b2
+    title: Tunneling barrier infrared detector devices
+    url: https://patents.google.com/patent/US10170653B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190003171a1
+    title: Method for Controlling a Vacuum Sewage System for a Building or for a Marine
+      Vessel
+    url: https://patents.google.com/patent/US20190003171A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190007890a1
+    title: Building access zone specification for mobile applications
+    url: https://patents.google.com/patent/US20190007890A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190003742a1
+    title: Heat source device for heating
+    url: https://patents.google.com/patent/US20190003742A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10168100b2
+    title: Furnace stave
+    url: https://patents.google.com/patent/US10168100B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10170696b1
+    title: MnN and Heusler layers in magnetic tunnel junctions
+    url: https://patents.google.com/patent/US10170696B1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10170961b2
+    title: Blower motor of HVAC system for vehicle
+    url: https://patents.google.com/patent/US10170961B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002234a1
+    title: Elevator control apparatus and elevator control method
+    url: https://patents.google.com/patent/US20190002234A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10167229b2
+    title: Quick-drying building material composition based on a mineral hybrid binder
+    url: https://patents.google.com/patent/US10167229B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10170688b2
+    title: Magnetic field sensor based on topological insulator and insulating coupler
+      materials
+    url: https://patents.google.com/patent/US10170688B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190003148a1
+    title: Actuator Drive Control System in Construction Machine
+    url: https://patents.google.com/patent/US20190003148A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190003169a1
+    title: Toilet drainage device
+    url: https://patents.google.com/patent/US20190003169A1/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us10167698b2
+    title: Configurable bridge plug apparatus and method
+    url: https://patents.google.com/patent/US10167698B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10170433b2
+    title: Insulated circuit board, power module and power unit
+    url: https://patents.google.com/patent/US10170433B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190003153a1
+    title: Construction management system, construction management method, and management
+      device
+    url: https://patents.google.com/patent/US20190003153A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10167232b1
+    title: Process for making an ultra stable cementitious construction material
+    url: https://patents.google.com/patent/US10167232B1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190002235a1
+    title: Health monitoring systems and methods for elevator systems
+    url: https://patents.google.com/patent/US20190002235A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-usd837038s1
+    title: Insulation hanger
+    url: https://patents.google.com/patent/USD837038S1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190008001a1
+    title: Induction heating power supply apparatus
+    url: https://patents.google.com/patent/US20190008001A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190004844a1
+    title: Cloud platform construction method and cloud platform
+    url: https://patents.google.com/patent/US20190004844A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10168083b2
+    title: Refrigeration system and heat exchanger thereof
+    url: https://patents.google.com/patent/US10168083B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003617a1
+    title: Modular support system for plumbing connections
+    url: https://patents.google.com/patent/US20190003617A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002467a1
+    title: Novel fused pyrimidinone and triazinone derivatives containing bridged nitrogen,
+      their process of preparation and their therapeutic uses as antifungal
+    url: https://patents.google.com/patent/US20190002467A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10168617b2
+    title: Composition for forming interlayer insulating film, interlayer insulating
+      film, method for forming interlayer insulating film pattern, and device
+    url: https://patents.google.com/patent/US10168617B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190006976a1
+    title: Multi-pulse constant voltage transformer for a variable speed drive in chiller
+      applications
+    url: https://patents.google.com/patent/US20190006976A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10169934b2
+    title: Building access and layout mapping for an autonomous vehicle based transportation
+      system
+    url: https://patents.google.com/patent/US10169934B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10171384b2
+    title: Method to configure network bonds as a port on an integration bridge for
+      a virtualized multilayer switch
+    url: https://patents.google.com/patent/US10171384B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190003251a1
+    title: Internal insulating window shade
+    url: https://patents.google.com/patent/US20190003251A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190006264a1
+    title: Embedded bridge with through-silicon vias
+    url: https://patents.google.com/patent/US20190006264A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10165966b2
+    title: Methods and systems for monitoring resistance and work of breathing for ventilator-dependent
+      patients
+    url: https://patents.google.com/patent/US10165966B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10171262b2
+    title: Method for provisioning of room automation components of a building automation
+    url: https://patents.google.com/patent/US10171262B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10171297b2
+    title: Multivariable controller for coordinated control of computing devices and
+      building infrastructure in data centers or other locations
+    url: https://patents.google.com/patent/US10171297B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190003228a1
+    title: Single hung window construction with an upper fixed lite of glass and a movable
+      bottom sash being generally coplanar
+    url: https://patents.google.com/patent/US20190003228A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10166905b2
+    title: Heating and cooling cup holder
+    url: https://patents.google.com/patent/US10166905B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002349a1
+    title: Early strength enhancing concrete admixture
+    url: https://patents.google.com/patent/US20190002349A1/en
+    source: google_patents
+    license: public-domain
+    topic: materials
+    format: html
+  - id: pat-us20190006965a1
+    title: Air conditioner, and method and device for controlling its compressor to
+      stop
+    url: https://patents.google.com/patent/US20190006965A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002245a1
+    title: Locking system for elevator car door
+    url: https://patents.google.com/patent/US20190002245A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002347a1
+    title: Non-calcined cementitious compositions, non-calcined concrete compositions,
+      non-calcined concrete and preparation methods thereof
+    url: https://patents.google.com/patent/US20190002347A1/en
+    source: google_patents
+    license: public-domain
+    topic: materials
+    format: html
+  - id: pat-us10168088b2
+    title: Air conditioning device having bypass and being operable in a positive cycle
+      defrosting mode
+    url: https://patents.google.com/patent/US10168088B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190001891a1
+    title: Vehicle roof mounted system
+    url: https://patents.google.com/patent/US20190001891A1/en
+    source: google_patents
+    license: public-domain
+    topic: architecture
+    format: html
+  - id: pat-us10170177b2
+    title: Manufacture of a tunnel diode memory
+    url: https://patents.google.com/patent/US10170177B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10167634b2
+    title: Truss section connection apparatus
+    url: https://patents.google.com/patent/US10167634B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190006376a1
+    title: 'Memory Arrays Comprising Vertically-Alternating Tiers Of Insulative Material
+      And Memory Cells And Methods Of Forming A Memory Array Comprising Memory '
+    url: https://patents.google.com/patent/US20190006376A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10167829b2
+    title: Fuel heating device for vehicle and method thereof
+    url: https://patents.google.com/patent/US10167829B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-usd836969s1
+    title: Universal ventilation support for plug-in electric heating stove plate
+    url: https://patents.google.com/patent/USD836969S1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10167607b2
+    title: Drainage system with contiguous void
+    url: https://patents.google.com/patent/US10167607B2/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us10171330b2
+    title: Integrating a communication bridge into a data processing system
+    url: https://patents.google.com/patent/US10171330B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190003142a1
+    title: Block Retaining Wall with Micro-Pile Soldier Piles
+    url: https://patents.google.com/patent/US20190003142A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10170604b2
+    title: Method for making a semiconductor device including a resonant tunneling diode
+      with electron mean free path control layers
+    url: https://patents.google.com/patent/US10170604B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us10165888b2
+    title: Heating and cooking system
+    url: https://patents.google.com/patent/US10165888B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190000596a1
+    title: Force damping dental bridge assembly with synthetic periodontal ligament
+      fibers
+    url: https://patents.google.com/patent/US20190000596A1/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190003418a1
+    title: Monolithic, galleryless piston and method of construction thereof
+    url: https://patents.google.com/patent/US20190003418A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10168093b2
+    title: Door guide assembly and refrigerator having the same
+    url: https://patents.google.com/patent/US10168093B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003629a1
+    title: Apparatus and method for heating subsea pipeline
+    url: https://patents.google.com/patent/US20190003629A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003145a1
+    title: Building Foundation and Soil Stabilization method and System
+    url: https://patents.google.com/patent/US20190003145A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190003191a1
+    title: Scaffold extensions
+    url: https://patents.google.com/patent/US20190003191A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10166548b2
+    title: Dust collection assembly, air purification device and air conditioner
+    url: https://patents.google.com/patent/US10166548B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002674a1
+    title: Asphaltene-based composite with ldpe crystallites
+    url: https://patents.google.com/patent/US20190002674A1/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us10168047b2
+    title: Water heating apparatus and system having a scale detecting function
+    url: https://patents.google.com/patent/US10168047B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10168070b1
+    title: HVAC boot and grille assembly
+    url: https://patents.google.com/patent/US10168070B1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003200a1
+    title: Heat-insulating air dome
+    url: https://patents.google.com/patent/US20190003200A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10166015b2
+    title: Implantable scaffold and method
+    url: https://patents.google.com/patent/US10166015B2/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us10171022b2
+    title: Motor driving device, an air conditioner including same and a control method
+      therefor
+    url: https://patents.google.com/patent/US10171022B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190003945a1
+    title: Accelerated pavement testing
+    url: https://patents.google.com/patent/US20190003945A1/en
+    source: google_patents
+    license: public-domain
+    topic: infrastructure
+    format: html
+  - id: pat-us10165865b2
+    title: Compressible foam foundation for mattress support
+    url: https://patents.google.com/patent/US10165865B2/en
+    source: google_patents
+    license: public-domain
+    topic: structures_civil
+    format: html
+  - id: pat-us20190003789a1
+    title: Heat exchanger for heating gas and use of the heat exchanger
+    url: https://patents.google.com/patent/US20190003789A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10168078b2
+    title: Refrigeration system
+    url: https://patents.google.com/patent/US10168078B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190006209a1
+    title: Device and method for holding, rotating, as well as heating and/or cooling
+      a substrate
+    url: https://patents.google.com/patent/US20190006209A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190006063a1
+    title: Channeled insulation for telecommunication cable
+    url: https://patents.google.com/patent/US20190006063A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10168091b2
+    title: Air conditioning companion stabilizer system
+    url: https://patents.google.com/patent/US10168091B2/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us20190002236a1
+    title: Elevator emergency operation device
+    url: https://patents.google.com/patent/US20190002236A1/en
+    source: google_patents
+    license: public-domain
+    topic: equipment_systems
+    format: html
+  - id: pat-us10167665b2
+    title: Spacer for insulating glazing units, comprising extruded profiled seal
+    url: https://patents.google.com/patent/US10167665B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10170574b2
+    title: Hybrid source and drain contact formation using metal liner and metal insulator
+      semiconductor contacts
+    url: https://patents.google.com/patent/US10170574B2/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us20190003198a1
+    title: Method of Modular Pole Construction and Modular Pole Assembly
+    url: https://patents.google.com/patent/US20190003198A1/en
+    source: google_patents
+    license: public-domain
+    topic: construction
+    format: html
+  - id: pat-us20190006366a1
+    title: Metal-insulator-metal capacitor analog memory unit cell
+    url: https://patents.google.com/patent/US20190006366A1/en
+    source: google_patents
+    license: public-domain
+    topic: building_energy
+    format: html
+  - id: pat-us10167626b1
+    title: Masonry support apparatus
+    url: https://patents.google.com/patent/US10167626B1/en
+    source: google_patents
+    license: public-domain
+    topic: materials
+    format: html

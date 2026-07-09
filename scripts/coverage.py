@@ -59,6 +59,7 @@ SOURCE_GENRE = {
     "openaire_deliverable": "international_bodies",
     "zenodo": "research_papers",
     "patents": "patents",
+    "google_patents": "patents",
 }
 
 # prefix fallback for the long tail of source buckets (an exact SOURCE_GENRE match wins).
