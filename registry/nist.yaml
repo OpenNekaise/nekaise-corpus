@@ -1,0 +1,655 @@
+# nist — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: nst-naval-shipboard-fire-risk-criteria
+    title: 'Naval shipboard fire risk criteria :'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport10095.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-manual-of-fire-loss-prevention-of-the-federal-fire-c
+    title: Manual of fire-loss prevention of the federal fire council
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/hb/nbshandbook19.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-evaluation-of-fire-models-for-nuclear-fire-plant-app
+    title: 'Evaluation of fire models for nuclear fire plant applications:'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6872.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-identifying-residential-fire-involving-upholstered-f
+    title: Identifying Residential FIre Involving Upholstered Furniture within the National
+      Fire Incident Reporting System
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1845.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-smoke-component-yields-from-bench-scale-fire-tests-4
+    title: 'Smoke component yields from Bench-Scale Fire Tests : 4. Comparison with
+      Room Fire Results'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1763.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-summary-of-workshop-for-fire-structure-interaction-a
+    title: 'Summary of Workshop for Fire-Structure Interaction and Large Outdoor Fires:
+      Operation Tomodachi: Fire Research'
+    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1189.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-major-u-s-citites-using-national-standard-fire-hydra
+    title: Major U.S. citites using national standard fire hydrants, one century after
+      the great Baltimore fire
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7158.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-framework-for-addressing-the-nationalwildland-urban-
+    title: Framework for Addressing the NationalWildland Urban Interface Fire Problem
+      – Determining Fire and Ember Exposure Zones using a WUI Hazard Scale
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1748.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-measuring-water-flow-rate-for-a-fire-hose-using-wire
+    title: Measuring water flow rate for a fire hose using wired accelerometers for
+      smart fire fighting
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2075.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-fire-research-publications-1983
+    title: Fire research publications, 1983
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir84-2871.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-towards-smart-fire-panels
+    title: Towards Smart Fire Panels
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1780.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-the-fire-resistance-of-prestressed-concrete-beams
+    title: The fire resistance of prestressed concrete beams
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport3368.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-fire-resistance-determination-and-performance-predic
+    title: 'Fire resistance determination and performance prediction research needs
+      workshop:'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6890.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-white-paper-on-fire-resistance-of-concrete-structure
+    title: White paper on fire resistance of concrete structures
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2015/NIST.GCR.15-983.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-analysis-of-needs-and-existing-capabilities-for-full
+    title: Analysis of needs and existing capabilities for full-scale fire resistance
+      testing
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2008/gcr02-843-1.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-fire-resistance-of-walls-of-gravel-aggregate-concret
+    title: Fire resistance of walls of gravel-aggregate concrete masonry units
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/BMS/nbsbuildingmaterialsstructures120.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-a-study-of-thermal-behavior-of-a-composite-floor-sys
+    title: A Study of Thermal Behavior of a Composite Floor System in Standard Fire
+      Resistance Tests
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1771.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-fire-resilience-of-a-steel-concrete-composite-floor-
+    title: 'Fire resilience of a steel-concrete composite floor system :'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2165.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-international-r-and-d-roadmap-for-fire-resistance-of
+    title: International R and D Roadmap for Fire Resistance of Structures Summary of
+      NIST/CIB Workshop
+    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1188.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-influence-of-fire-on-the-lateral-resistance-of-cold-
+    title: 'Influence of fire on the lateral resistance of cold-formed steel shear walls
+      – phase 2:'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2038.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-proposed-general-approach-to-fire-safety-scenarios
+    title: "Proposed General Approach to fire-Safety\n                             \
+      \           Scenarios"
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1743.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-fire-safety-of-passenger-trains-phase-ii
+    title: 'Fire safety of passenger trains; phase II:'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6525.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-fire-safety-of-passenger-trains-phase-i
+    title: 'Fire safety of passenger trains, phase I:'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6132.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-a-legacy-of-fire-safety
+    title: 'A legacy of fire safety:'
+    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1325.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-fire-safety-of-passenger-trains-phase-iii
+    title: 'Fire safety of passenger trains; phase III :'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6563.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-the-national-institute-of-standards-and-technology-s
+    title: The National Institute of Standards and Technology's Impact on Fire Safety
+      Standards
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2025/NIST.GCR.25-061.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-public-update-on-the-federal-building-and-fire-safet
+    title: Public update on the federal building and fire safety investigation of the
+      world Trade Center disaster
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication1000-4.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-design-of-smoke-control-systems-for-buildings
+    title: Design of smoke control systems for buildings
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/hb/nbshandbook141.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-estimating-smoke-alarm-effectiveness-and-spatial-dis
+    title: Estimating smoke alarm effectiveness and spatial distribution in homes
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2020.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-visualization-and-modeling-of-smoke-transport-over-l
+    title: Visualization and modeling of smoke transport over landscape scales
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7428.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-software-independent-data-mapping-tool-for-structura
+    title: Software independent data mapping tool for structural fire analysis
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1828.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-structural-design-for-fire-a-survey-of-building-code
+    title: 'Structural Design for Fire: A Survey of Building Codes and Standards'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1842.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-digital-image-correlation-measurements-during-gusset
+    title: "Digital image correlation measurements during gusset\n                 \
+      \                       plate connection testing to structural failure"
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1752.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-nehrp-seismic-design-technical-brief-no-2-seismic-de
+    title: 'NEHRP Seismic Design Technical Brief No. 2 - Seismic Design of Steel Special
+      Moment Frames: A Guide for Practicing Engineers Second Edition'
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2016/NIST.GCR.16-917-41.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-recommendations-for-improved-seismic-performance-of-
+    title: Recommendations for improved seismic performance of nonstructural components
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2018/NIST.GCR.18-917-43.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-lateral-torsional-response-of-structures-subjected-t
+    title: Lateral-torsional response of structures subjected to seismic waves
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir83-2727.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-a-methodology-for-estimating-seismic-retroft-costs
+    title: A methodology for estimating seismic retroft costs
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1973.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-a-technical-framework-to-map-functional-recovery-per
+    title: A technical framework to map functional recovery performance objectives to
+      prescriptive seismic design provisions for buildings
+    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1321.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-seismic-analysis-design-and-installation-of-nonstruc
+    title: Seismic analysis, design, and installation of nonstructural components and
+      systems � background and recommendations for future work
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2017/NIST.GCR.17-917-44.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-nist-disaster-and-failure-studies-data-repository-th
+    title: 'NIST Disaster and Failure Studies Data Repository: The Chile Earthquake
+      Database – Ground Motion and Building Performance Data from the 2010 Chile Ear'
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2015/NIST.GCR.15-1008.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-infographic-on-post-earthquake-functional-recovery-p
+    title: Infographic on Post-Earthquake Functional Recovery Performance
+    url: https://nvlpubs.nist.gov/nistpubs/rb/NIST.RB.4.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-recommended-options-for-improving-the-built-environm
+    title: Recommended Options for Improving the Built Environment for Post-Earthquake
+      Reoccupancy and Functional Recovery Time
+    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1254.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-distribution-of-earthquake-input-energy-in-structure
+    title: Distribution of earthquake input energy in structures
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6903.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-implementation-guidelines-for-executive-order-13717-
+    title: 'Implementation guidelines for executive order 13717: establishing a federal
+      earthquake risk management standard'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1922.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-a-survey-of-steel-moment-resisting-frame-buildings-a
+    title: "A survey of steel moment-resisting frame buildings affected by the 1994\n\
+      \                        Northridge Earthquake"
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5625.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-icssc-biennial-progress-report-for-2024
+    title: 'ICSSC biennial progress report for 2024 :'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2136-4.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-trip-transportation-risk-recovery-investment-plannin
+    title: 'TRIP$ - transportation risk-recovery investment planning solutions:'
+    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1340.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-initial-framework-to-design-lifeline-infrastructure-
+    title: 'Initial framework to design lifeline infrastructure for post-earthquake
+      functional recovery :'
+    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1311.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-nist-fema-post-earthquake-functional-recovery-worksh
+    title: NIST-FEMA post-earthquake functional recovery workshop report
+    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1269.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-initial-framework-to-design-lifeline-infrastru-2
+    title: Initial framework to design lifeline infrastructure for post-earthquake functional
+      recovery volume 1
+    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1310.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-icssc-biennial-progress-report-for-2022
+    title: 'ICSSC biennial progress report for 2022 :'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2136-3.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-icssc-biennial-progress-report-for-2020
+    title: 'ICSSC biennial progress report for 2020 :'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2136-2.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-the-use-of-demand-to-capacity-indexes-for-the-iterat
+    title: The Use of Demand-to-Capacity Indexes for the Iterative Design of Rigid Structures
+      for Wind
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1908.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-database-assisted-design-and-equivalent-static-wind-
+    title: 'Database-assisted design and equivalent static wind loads for mid- and high-rise
+      structures: concepts, software, and user�s manual'
+    url: http://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2000.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-a-model-for-directional-hurricane-wind-speeds
+    title: A model for directional hurricane wind speeds
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2006/gcr06_905.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-probabilistic-models-for-directionless-wind-speeds-i
+    title: Probabilistic models for directionless wind speeds in hurricanes
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2006/gcr06_906.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-load-forecasting-tool-for-nist-transactive-energy-ma
+    title: Load forecasting tool for NIST transactive energy market
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2181.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-proceedings
+    title: 'Proceedings:'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5597.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-proposed-uniformat-ii-classification-of-bridge-eleme
+    title: Proposed UNIFORMAT II classification of bridge elements
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication1122.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-safety-assessment-of-parallel-wire-suspension-bridge
+    title: Safety assessment of parallel wire suspension bridge cables under thermal
+      effects
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1678.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-use-of-a-d-c-amplifier-and-recorder-to-balance-a-hig
+    title: Use of a D.C. amplifier and recorder to balance a high precision resistance
+      bridge
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport5683.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-stress-corrosion-tests-of-bridge-cable-wire
+    title: Stress-corrosion tests of bridge-cable wire
+    url: https://nvlpubs.nist.gov/nistpubs/jres/33/jresv33n3p201_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-analysis-of-the-direct-current-bolometer-bridge
+    title: Analysis of the direct-current bolometer bridge
+    url: https://nvlpubs.nist.gov/nistpubs/jres/43/jresv43n6p581_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-a-bolometer-bridge-for-standardizing-radio-frequency
+    title: A bolometer bridge for standardizing radio-frequency voltmeters
+    url: https://nvlpubs.nist.gov/nistpubs/jres/44/jresv44n1p15_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-a-self-balancing-direct-current-bridge-for-accurate-
+    title: A self-balancing direct-current bridge for accurate bolometric power measurements
+    url: https://nvlpubs.nist.gov/nistpubs/jres/59/jresv59n2p101_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-location-of-the-galvanometer-branch-for-maximum-sens
+    title: Location of the galvanometer branch for maximum sensitivity of the Wheatstone
+      bridge
+    url: https://nvlpubs.nist.gov/nistpubs/jres/40/jresv40n5p401_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-tests-of-steel-tower-columns-for-the-george-washingt
+    title: Tests of steel tower columns for the George Washington Bridge
+    url: https://nvlpubs.nist.gov/nistpubs/jres/15/jresv15n3p317_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-evaluations-of-a-detector-limited-digital-impedance-
+    title: "Evaluations of a Detector-Limited Digital Impedance\n                Bridge"
+    url: https://nvlpubs.nist.gov/nistpubs/jres/126/jres.126.006.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-applicability-of-the-colebrook-white-formula-to-repr
+    title: Applicability of the Colebrook-White Formula to Represent Frictional Losses
+      in Partially Filled Unsteady Pipeflow
+    url: https://nvlpubs.nist.gov/nistpubs/jres/088/jresv88n6p389_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-tests-of-steel-chord-members-for-the-bayonne-bridge
+    title: Tests of steel chord members for the Bayonne bridge
+    url: https://nvlpubs.nist.gov/nistpubs/jres/16/jresv16n6p627_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-an-a-c-resistance-thermometer-bridge
+    title: An A-C resistance thermometer bridge
+    url: https://nvlpubs.nist.gov/nistpubs/jres/74C/jresv74Cn1-2p15_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-applications-of-coaxial-chokes-to-a-c-bridge-circuit
+    title: Applications of coaxial chokes to a-c bridge circuits
+    url: https://nvlpubs.nist.gov/nistpubs/jres/72C/jresv72Cn2p161_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-eddy-current-rail-inspection-using-ac-bridge-techniq
+    title: Eddy Current Rail Inspection Using AC Bridge Techniques
+    url: https://nvlpubs.nist.gov/nistpubs/jres/118/jres.118.007.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-an-ultra-low-frequency-bridge-for-dielectric-measure
+    title: An ultra low frequency bridge for dielectric measurements
+    url: https://nvlpubs.nist.gov/nistpubs/jres/65C/jresv65Cn1p23_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-improved-bridge-method-for-the-measurement-of-core-l
+    title: Improved bridge method for the measurement of core losses in ferromagnetic
+      materials at high flux densities
+    url: https://nvlpubs.nist.gov/nistpubs/jres/60/jresv60n5p509_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-voltage-ratio-measurements-with-a-transformer-capaci
+    title: Voltage ratio measurements with a transformer capacitance bridge
+    url: https://nvlpubs.nist.gov/nistpubs/jres/66C/jresv66Cn1p25_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-calibration-of-inductance-standards-in-the-maxwell-w
+    title: Calibration of inductance standards in the Maxwell-Wien bridge circuit
+    url: https://nvlpubs.nist.gov/nistpubs/jres/65C/jresv65Cn3p183_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-a-dual-bridge-for-the-measurement-of-self-inductance
+    title: A dual bridge for the measurement of self inductance in terms of resistance
+      and time
+    url: https://nvlpubs.nist.gov/nistpubs/jres/25/jresv25n1p1_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-national-construction-sector-goals-industry-strategi
+    title: 'National construction sector goals: industry strategies for implementation'
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/1995/NIST.GCR.95-680.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-nist-scientific-foundation-reviews
+    title: NIST Scientific Foundation Reviews
+    url: https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8225-draft.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-bitemark-analysis
+    title: Bitemark Analysis
+    url: https://nvlpubs.nist.gov/nistpubs/ir/2022/NIST.IR.8352-draft.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-managing-misuse-risk-for-dual-use-foundation-models
+    title: Managing Misuse Risk for Dual-Use Foundation Models
+    url: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-1.ipd2.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-forum-workshop-on-establishing-the-scientific-founda
+    title: 'Forum workshop on establishing the scientific foundation for performance-based
+      fire codes :'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication1061.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-secure-software-development-practices-for-generative
+    title: 'Secure Software Development Practices for Generative AI and Dual-Use Foundation
+      Models:'
+    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.ipd.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-recommended-performance-based-criteria-for-the-desig
+    title: "Recommended performance-based criteria for the design of manufactured\n\
+      \                        home foundation systems to resist wind and seismic loads"
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5664.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-measurement-science-roadmap-workshop-for-water-use-e
+    title: 'Measurement science roadmap workshop for water use efficiency and water
+      quality in premise plumbing systems, August 1-2, 2018:'
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2019/NIST.GCR.19-020.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-systems-security-engineering-considerations-fo-2
+    title: "Systems security engineering: considerations for a multidisciplinary\n \
+      \                       approach in the engineering of trustworthy secure systems"
+    url: http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-160v1.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: nst-concrete-model-building-subtypes
+    title: Concrete model building subtypes
+    url: https://nvlpubs.nist.gov/nistpubs/gcr/2010/NIST.GCR.10-917-6.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: building_energy
+    format: pdf

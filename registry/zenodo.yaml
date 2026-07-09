@@ -1,0 +1,1017 @@
+# zenodo — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: zen-online-building-energy-and-heat-index-simulation-and
+    title: Online Building Energy and Heat Index Simulation and Optimization BESOO v512
+    url: https://zenodo.org/api/records/16999952/files/Online%20Building%20Energy%20Simulation%20and%20Optimization%20BESOO%20v512.02.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-online-building-energy-simulation-and-optimization-b
+    title: Online Building Energy Simulation and Optimization BESOO v201 Solar Gain
+      in Winter
+    url: https://zenodo.org/api/records/15569208/files/Online%20Building%20Energy%20Simulation%20and%20Optimization%20BESOO%20v201%20Solar%20Gain%20in%20Winter.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-calibro-an-r-package-for-the-automatic-calibration-o
+    title: 'CALIBRO: an R Package for the Automatic Calibration of Building Energy Simulation
+      Models'
+    url: https://zenodo.org/api/records/1173078/files/BS2017_224.pdf/content
+    source: zenodo
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+  - id: zen-overcooling-index-of-air-conditioning
+    title: Overcooling Index of Air Conditioning
+    url: https://zenodo.org/api/records/17630849/files/Overcooling%20Index%20of%20Air%20Conditioning.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-comfort-heat-index-thermostatic-control-of-air-condi
+    title: Comfort Heat Index – Thermostatic Control of Air Conditioning Units
+    url: https://zenodo.org/api/records/17375074/files/Comfort%20Heat%20Index%20%E2%80%93%20Thermostatic%20Control%20of%20Air%20Conditioning%20Units.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-calibration-of-detailed-building-energy-models-using
+    title: Calibration of detailed building energy models using a hybrid modelling approach
+    url: https://zenodo.org/api/records/10732764/files/PFM_document_Adalberto.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-d3-3-baseline-bes-models
+    title: D3.3 Baseline BES models
+    url: https://zenodo.org/api/records/17865616/files/D3.3_Baseline%20BES-models_v1.0.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-online-building-energy-simulation-and-optimiza-2
+    title: Online Building Energy Simulation and Optimization BESOO – Single-Family
+      Houses in Boston, MA
+    url: https://zenodo.org/api/records/19219325/files/Online%20Building%20Energy%20Simulation%20and%20Optimization%20BESOO%20%E2%80%93%20Single-Family%20Houses%20in%20Boston,%20MA.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-including-indoor-vertical-greening-installation-infl
+    title: Including indoor vertical greening installation influence in building thermal
+      and energy use simulations
+    url: https://zenodo.org/api/records/15877021/files/Gunawardena,%20K%20-%20Including%20indoor%20vertical%20greening%20installation%20influence%20in%20building%20thermal%20&%20energy.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-increase-in-air-conditioning-energy-consumption-with
+    title: Increase in Air Conditioning Energy Consumption with Each Centigrade
+    url: https://zenodo.org/api/records/17678836/files/Increase%20in%20Air%20Conditioning%20Energy%20Consumption%20with%20Each%20Centigrade.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-online-building-energy-simulation-and-optimiza-3
+    title: Online Building Energy Simulation and Optimization BESOO v101
+    url: https://zenodo.org/api/records/15511334/files/Online%20Building%20Energy%20Simulation%20and%20Optimization%20BESOO%20v101.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-ventilation-opportunities-in-air-conditioning-system
+    title: Ventilation Opportunities in Air Conditioning Systems
+    url: https://zenodo.org/api/records/17423420/files/Ventilation%20Opportunities%20in%20Air%20Conditioning%20Systems.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-heat-index-online-calculator
+    title: Heat Index Online Calculator
+    url: https://zenodo.org/api/records/17630853/files/Heat%20Index%20Online%20Calculator.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-double-skin-fa-ade-adoption-influencing-ventilation-
+    title: Double Skin Façade Adoption Influencing Ventilation Performance in Educational
+      Buildings
+    url: https://zenodo.org/api/records/8378799/files/document-1.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-heat-island-influence-on-space-conditioning-loads-of
+    title: Heat island influence on space-conditioning loads of urban and suburban office
+      buildings
+    url: https://zenodo.org/api/records/15877286/files/Gunawardena%20Kanchane%20-%20Heat%20island%20influence%20on%20space-conditioning%20loads%20of%20urban%20and%20suburban%20office%20buildings.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-report-on-the-selection-of-the-open-source-simulatio
+    title: Report on the selection of the open-source simulation tool and its compliance
+      with ISO 52000 series
+    url: https://zenodo.org/api/records/4982704/files/ePANACEA%20D4.7%20fs.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-mediating-heat-and-light-a-visualization-based-tool-
+    title: 'Mediating Heat and Light: A Visualization-based Tool for the Analysis and
+      Development of Dynamic Shading Control Protocols'
+    url: https://zenodo.org/api/records/17192933/files/Mediatingheatandlight.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-a-computational-analysis-of-trees-effects-on-tropica
+    title: A Computational Analysis of Trees' Effects on Tropical Climate Thermal Load
+      Reduction
+    url: https://zenodo.org/api/records/11196060/files/A%20computational%20analysis%20of%20trees'%20effects%20on%20tropical%20climate.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-analysing-the-influence-of-stable-and-lower-consumer
+    title: Analysing the influence of stable and lower consumer return temperature on
+      heat losses in an isolated branch of a district heating system
+    url: https://zenodo.org/api/records/18139277/files/SZE2024.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-evaluation-of-energy-flows-in-the-district-heating-s
+    title: Evaluation of energy flows in the district heating system in Velenje
+    url: https://zenodo.org/api/records/18230436/files/En-Re.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-assessment-of-district-heating-network-flow-rate-a-w
+    title: Assessment of District Heating Network Flow Rate – a Way to Find Out Is Heat
+      Demand Met and as a Leak Location-Supportive Measure
+    url: https://zenodo.org/api/records/10722648/files/EJAET-5-9-697-700.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-decarbonisation-pathways-for-district-heating-sector
+    title: 'Decarbonisation Pathways for District Heating Sector: A Policy and Private
+      Business Perspective'
+    url: https://zenodo.org/api/records/7970368/files/T000293_22_1.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-sustainable-district-cooling-guidelines
+    title: Sustainable District Cooling Guidelines
+    url: https://zenodo.org/api/records/4061869/files/191115_Sustainable_district_cooling_guidelines_R2M.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-a-study-on-data-driven-hybrid-heating-load-predictio
+    title: 'A study on data-driven hybrid heating load prediction methods in  low-temperature
+      district heating: An example for nursing homes in  Nordic countries'
+    url: https://zenodo.org/api/records/7805861/files/A%20study%20on%20data-driven%20hybrid%20heating_KTH.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-definitions-of-ultra-low-temperature-district-heatin
+    title: Definitions of ultra-low temperature district heating
+    url: https://zenodo.org/api/records/6610835/files/RELaTED_D2_1_UltraLowTemperatureDistrictHeating.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-impacts-of-earlier-natural-gas-phase-out-heat-saving
+    title: Impacts of earlier natural gas phase-out & heat-saving policies on district
+      heating and the energy system
+    url: https://zenodo.org/api/records/7572523/files/Inpacts%20of%20earlier%20natural%20gas%20phase%20out%20-%20Energy%20Policy%202023.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-d1-2-design-flexibility-and-flexibility-constraints-
+    title: D1.2 Design flexibility and flexibility constraints for optimization
+    url: https://zenodo.org/api/records/4911650/files/Design-flexibility-and-flexibility-constraints-for-optimization-D1.2.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-d5-2-report-on-maintenance-effects-of-flexibility-in
+    title: D5.2 Report on maintenance effects of flexibility installed in demosites
+    url: https://zenodo.org/api/records/4911940/files/report-on-maintenance-effects-of-flexibility-installed-in-demosites-D5.2.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-energy-price-assessment-an-insight-to-energy-costs-i
+    title: 'Energy Price Assessment: an insight to energy costs in the context of District
+      Heating'
+    url: https://zenodo.org/api/records/6610573/files/RELATED_D4.1_Energy_price_assessment_v2.0.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-an-innovative-control-framework-for-district-heating
+    title: 'An Innovative Control Framework for District Heating Systems: Conceptualisation
+      and Preliminary Results'
+    url: https://zenodo.org/api/records/3239229/files/resources-08-00027.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-comparative-assessment-of-district-heating-systems-i
+    title: Comparative Assessment of District Heating Systems in Affordable Housing
+      within Nairobi Slums
+    url: https://zenodo.org/api/records/18792932/files/zenodo.18792932.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-d1-1-flexibility-characterization-and-assessment-met
+    title: D1.1 Flexibility characterization and assessment methodologies
+    url: https://zenodo.org/api/records/4911877/files/publication-flexi-sync-D1.1.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-d1-3-operational-and-design-optimization-methodologi
+    title: D1.3 Operational and design optimization methodologies for flexibility
+    url: https://zenodo.org/api/records/5797822/files/D1.3.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-flexi-sync-final-report
+    title: Flexi-Sync final report
+    url: https://zenodo.org/api/records/7188509/files/Flexi_Sync_Final_report.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-multi-objective-optimisation-model-a-housing-block-r
+    title: 'Multi-objective optimisation model: A housing block retrofit in Seville'
+    url: https://zenodo.org/api/records/10601495/files/1-s2.0-S0378778817315165-main.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-plug-and-play-modular-fa-ade-construction-system-for
+    title: '"Plug and play" modular façade construction system for building renovation
+      to achieve nearly Zero Energy Building (nZEB)'
+    url: https://zenodo.org/api/records/5642631/files/ASA2020_Paper_TORRES_PnP_20200710_V02_small.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-improvement-of-thermal-storage-system-in-residential
+    title: Improvement of thermal storage system in residential building retrofit
+    url: https://zenodo.org/api/records/5070365/files/SZE_2021-Extended%20Abstract-Kozelj.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-thermodynamic-and-thermal-comfort-performance-evalua
+    title: Thermodynamic and Thermal Comfort Performance Evaluation of Two Geothermal
+      High-Temperature Cooling Systems in the Mediterranean Climate
+    url: https://zenodo.org/api/records/6628323/files/1-s2.0-S2352710222007513-main.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-buildings-energy-retrofit-components-service-life-im
+    title: 'Buildings energy retrofit: components service life impact on the costs-benefits
+      analysis'
+    url: https://zenodo.org/api/records/3964389/files/7.%20OK%20_%20Colloquiate.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-design-requirements-for-condensation-free-operation-
+    title: Design requirements for condensation-free operation of high-temperature cooling
+      systems in mediterranean climate
+    url: https://zenodo.org/api/records/4275746/files/Design%20requirements%20for%20condensation-free%20operation%20of%20high-temperature%20cooling%20systems%20in%20mediterranean%20climate.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-comparative-assessment-of-insulation-materials-for-i
+    title: Comparative Assessment of Insulation Materials for Improving Indoor Air Quality
+      in Building Retrofit
+    url: https://zenodo.org/api/records/13118530/files/Comparative+Assessment+of+Insulation+Materials+for+Improving+Indoor+Air+Quality+in+Building+Retrofit%20(2).pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-all-in-one-industrialized-active-fa-ade-for-deep-bui
+    title: 'All-In-One Industrialized Active Façade for Deep Building Retrofit: Timber
+      Engineering Process and Performances Analysis'
+    url: https://zenodo.org/api/records/20407645/files/080513-0229open.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-retrofitting-conventional-school-building-into-self-
+    title: 'Retrofitting Conventional School Building into Self-Sustainable Building:
+      A Case Study'
+    url: https://zenodo.org/api/records/10820521/files/Retrofitting%20Conventional%20School%20Building%20into%20Self-Sustainable.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-a-critical-review-of-energy-retrofitting-techniques-
+    title: A Critical Review of Energy Retrofitting Techniques in Building
+    url: https://zenodo.org/api/records/7947703/files/A%20Critical%20Review%20of%20Energy%20Retrofitting%20Techniques%20in%20Building.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-construction-of-the-expert-system-of-geo-spatial-ana
+    title: CONSTRUCTION OF THE EXPERT SYSTEM OF GEO­SPATIAL ANALYSIS THAT EMPLOYS SCENARIOS
+      FOR THE AUTOMATED DATA GENERATION FOR A DIGITAL MAP
+    url: https://zenodo.org/api/records/3371331/files/Influence%20of%20the%20direct%20message%20search%20mechanism%20based%20on%20the%20TCP%20protocols%20on%20the%20exchange%20process.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-an-innovative-window-heat-recovery-whr-system-with-h
+    title: 'An innovative window heat recovery (WHR) system with heat pipe technology:
+      Analytical, CFD, experimental analysis and building retrofit performance'
+    url: https://zenodo.org/api/records/6572759/files/1.%20An%20innovative%20window%20heat%20recovery%20(WHR)%20system%20with%20heat%20pipe%20technology%20Analytical,%20CFD,%20experimental%20analysis%20and%20building%20retrofit%20performance.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-energy-performance-evaluation-and-economical-analysi
+    title: Energy performance evaluation and economical analysis by means of simulation
+      activities for a renovated building reaching different nZEB definitions t
+    url: https://zenodo.org/api/records/20446828/files/9788860461919_46.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-from-emergency-reconstruction-to-adaptive-recovery-a
+    title: 'From Emergency Reconstruction to Adaptive Recovery: A Mechanics-Based Review
+      of Circular and Resilience-Oriented Structural Design for Post-Seismic an'
+    url: https://zenodo.org/api/records/18796892/files/C264014030226.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-analysis-of-business-models-for-delivering-energy-ef
+    title: Analysis of business models for delivering energy efficiency through smart
+      energy services to the European commercial rented sector
+    url: https://zenodo.org/api/records/10720391/files/openreseurope-2-16482.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-enhancement-of-energy-transfer-efficiency-for-photov
+    title: Enhancement of energy transfer efficiency for photovoltaic (PV) systems by
+      cooling the panel surfaces
+    url: https://zenodo.org/api/records/5482353/files/Enhancement%20of%20energy%20transfer%20efficiency%20for%20photovoltaic%20(PV)%20systems%20by%20cooling%20the%20panel%20surfaces.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-building-1163-4-design-of-a-net-zero-energy-building
+    title: 'Building 1163/4: design of a net-zero energy building'
+    url: https://zenodo.org/api/records/3535525/files/Building_1163_4_design_of_a_net-zero_energy_building.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-the-application-potential-of-net-zero-energy-buildin
+    title: The application potential of net zero energy building using rooftop photovoltaics
+      case study of apartments in  Gorontalo Province
+    url: https://zenodo.org/api/records/17034633/files/24%2021667.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-case-study-on-improving-the-energy-performance-of-ex
+    title: Case Study on Improving the Energy Performance of Existing Buildings Towards
+      Net Zero or Nearly Zero Energy Building Transition
+    url: https://zenodo.org/api/records/13117697/files/V2%20I2%20P3.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-integrating-of-building-energy-modelling-for-achievi
+    title: Integrating Of Building Energy Modelling For Achieving Net Zero Energy Building
+      In Hot Humid Climate
+    url: https://zenodo.org/api/records/20399884/files/IJSARTV12I5105391.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-from-the-passive-pluralist-house-to-the-modern-nzeb-
+    title: FROM THE PASSIVE PLURALIST HOUSE TO THE MODERN nZEB, DESIGN AND APPLICATION
+      CONSIDERATION FOR A BETTER PERFORMING LESS COSTLY ENERGY EFFICIENT HOUSE
+    url: https://zenodo.org/api/records/10070260/files/69_Ben%20Senior_Ungureanu_Banica.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-zero-energy-building-for-dtu-building-design-bachelo
+    title: Zero Energy Building for DTU Building Design Bachelor
+    url: https://zenodo.org/api/records/3535925/files/Zero_Energy_Building_for_DTU_Building_Design_Bachelor.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-integration-of-the-life-cycle-assessment-lca-and-lif
+    title: Integration of the Life Cycle Assessment (LCA) and Life Cycle Costing (LCC)
+      for an Evaluation of Alternative Structural Systems
+    url: https://zenodo.org/api/records/17316804/files/10-%20Tam%20Metin%20-%20Neriman%20G%C3%BCl%20v5.1.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-towards-zero-energy-healthcare-facilities-reducing-e
+    title: 'Towards Zero Energy Healthcare Facilities: Reducing Energy Demand in Operating
+      Rooms'
+    url: https://zenodo.org/api/records/15781980/files/V03%20I02%20P02.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-review-on-proposing-transformation-of-existing-build
+    title: Review On Proposing Transformation Of Existing Building Into Net-Zero Energy
+      Building
+    url: https://zenodo.org/api/records/7024407/files/JETIR2207363.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-the-importance-of-zenithal-lighting-systems-for-natu
+    title: The Importance of Zenithal Lighting Systems for Natural Light Gains and for
+      Local Energy Generation in Brazil
+    url: https://zenodo.org/api/records/1317278/files/10009210.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-achieving-net-zero-energy-building-in-a-hot-climate-
+    title: Achieving Net Zero Energy Building in a Hot Climate Using Integrated Photovoltaic
+      and Parabolic trough Collectors
+    url: https://zenodo.org/api/records/1108903/files/10002413.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-the-development-of-net-zero-energy-buildings-the-cas
+    title: 'The Development of Net Zero Energy Buildings: The Case for the Chancellor''s
+      Building at Keele University, United Kingdom'
+    url: https://zenodo.org/api/records/15190859/files/Development%20of%20the%20Net%20Zero%20Energy%20Bulding-%20Thesis%20on%20the%20Chancellors%20Building%20at%20Keele.pdf/content
+    source: zenodo
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+  - id: zen-biomimicry-as-a-tool-for-form-creativity-of-building
+    title: Biomimicry as A Tool for Form Creativity of Building Envelope to Enhance
+      Thermal Performance
+    url: https://zenodo.org/api/records/17854872/files/12.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-thermal-load-calculations-of-multilayered-walls
+    title: Thermal Load Calculations of Multilayered Walls
+    url: https://zenodo.org/api/records/1056432/files/2089.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-post-workshop-report-for-plug-n-harvest-modular-fa-a
+    title: Post-Workshop Report for Plug-N-Harvest Modular Façade Retrofit Workshop
+      on Sustainable Places 2019
+    url: https://zenodo.org/api/records/3349648/files/FINAL%20PAPER%20PnH,%20SP19.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-development-of-construction-of-energy-efficient-buil
+    title: DEVELOPMENT OF CONSTRUCTION OF ENERGY EFFICIENT BUILDINGS
+    url: https://zenodo.org/api/records/6944394/files/40-45.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-energy-efficient-buildings-design-principles-and-ope
+    title: 'ENERGY-EFFICIENT BUILDINGS: DESIGN PRINCIPLES AND OPERATIONAL BENEFITS'
+    url: https://zenodo.org/api/records/17607038/files/Sciences%20of%20Europe%20No%20176%20(2025)-88-96.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-energy-efficient-buildings-in-nigeria-managerial-and
+    title: 'Energy Efficient Buildings in Nigeria: Managerial and Policy Assessment'
+    url: https://zenodo.org/api/records/15502640/files/Energy%20Efficient%20Buildings%20in%20Nigeria%20Managerial%20and%20Policy%20Assessment.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-recommendation-for-innovation-governance-models-supp
+    title: Recommendation for innovation governance models supporting energy efficient
+      buildings
+    url: https://zenodo.org/api/records/3479521/files/D4.3%20v1.0.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-restoration-of-energy-efficient-buildings-from-local
+    title: Restoration of energy-efficient buildings from local raw materials
+    url: https://zenodo.org/api/records/14064757/files/67.30.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-district-heating-cost-modelling
+    title: District heating cost modelling
+    url: https://zenodo.org/api/records/6611578/files/D4.6_-Publishable_R_DH_cost_modelling_and_advised_billing_cases_2_0.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-the-state-of-construction-of-energy-efficient-buildi
+    title: THE STATE OF CONSTRUCTION OF ENERGY-EFFICIENT BUILDINGS IN UZBEKISTAN
+    url: https://zenodo.org/api/records/6401610/files/V2I3-273.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-an-analytical-approach-for-the-selection-of-technolo
+    title: 'An Analytical Approach for the Selection of Technologies to Be Integrated
+      in a Plug&play Façade Unit: The RenoZEB Case Study'
+    url: https://zenodo.org/api/records/5346844/files/proceedings-65-00029.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-d2-2-behavioral-analysis-and-operational-best-practi
+    title: D2.2 Behavioral analysis and operational  best practice
+    url: https://zenodo.org/api/records/12665579/files/PROBONO-D2.2-Behavioural_analysis_and_operational_best_practice-15122022-FINAL-EUR.pdf/content
+    source: zenodo
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+  - id: zen-smart-energy-efficient-buildings-for-smart-energy-gr
+    title: SMART ENERGY-EFFICIENT BUILDINGS FOR SMART ENERGY GRIDS AND CIRCULAR ECONOMY
+    url: https://zenodo.org/api/records/7752847/files/elibrary_49932140_59289834.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-strengthening-global-climate-governance-and-internat
+    title: Strengthening global climate governance and international cooperation for
+      energy-efficient buildings
+    url: https://zenodo.org/api/records/10355569/files/s12053-023-10177-7.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-building-envelopes-toward-energy-efficient-buildings
+    title: 'Building envelopes toward energy-efficient buildings: A balanced multi-approach
+      decision making'
+    url: https://zenodo.org/api/records/14171253/files/9-Articulo_William-Manuscript_revised_29%20July%202021.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-new-generation-buildings-that-effectively-use-energy
+    title: NEW GENERATION BUILDINGS THAT EFFECTIVELY USE ENERGY AND THEIR UZBEK EXPERIENCE
+    url: https://zenodo.org/api/records/7762278/files/IBET0214.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-irregular-light-scattering-properties-of-innovative-
+    title: Irregular light scattering properties of innovative fenestration for comfortable
+      and energy-efficient buildings
+    url: https://zenodo.org/api/records/4049475/files/GrobeIrregularOptics_ATI2020_AccManuscriptCompr-20200925.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-thermal-evaluation-and-preparation-of-mortar-contain
+    title: THERMAL EVALUATION AND PREPARATION OF MORTAR CONTAINING N-HEXADECANE-XGNP
+      SSPCM FOR ENERGY EFFICIENT BUILDINGS
+    url: https://zenodo.org/api/records/15445642/files/paper-P201-7.pdf/content
+    source: zenodo
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+  - id: zen-im2dr-incentive-based-multi-tier-and-multi-agent-app
+    title: 'IM2DR: Incentive Based Multi-tier and Multi-agent Approach for Demand Response
+      in Electricity Market with Reinforcement Learning'
+    url: https://zenodo.org/api/records/10853080/files/+EG-ICE_Proceedings_2022_Chapter11.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-optimization-of-hvac-energy-consumption-under-uncert
+    title: 'OPTIMIZATION OF HVAC ENERGY CONSUMPTION UNDER UNCERTAINTY OF EXTERNAL CONDITIONS:
+      A PROBABILISTIC MODELING APPROACH'
+    url: https://zenodo.org/api/records/17258661/files/13_888-75-79-Varlamova.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-usage-of-the-wind-energy-for-heating-of-the-energy-e
+    title: 'Usage of the Wind Energy for Heating of the Energy- Efficient Buildings:
+      Analysis of Possibilities'
+    url: https://zenodo.org/api/records/1118890/files/10.5755_j01.sace.10.1.7479.pdf/content
+    source: zenodo
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+  - id: zen-dissemination-and-communication-plan
+    title: Dissemination and Communication Plan
+    url: https://zenodo.org/api/records/10796994/files/REDI4HEAT_D6.1%20FINAL.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-current-status-and-development-of-contemporary-high-
+    title: Current status and development of contemporary high temperature heat pump
+      technology
+    url: https://zenodo.org/api/records/1461982/files/Shi%20Y.,%20Levtsev%20A.,%20Jin%20Y.,%20Povorov%20S.%20.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-innovative-coupling-of-pvt-collectors-with-electric-
+    title: Innovative Coupling of PVT Collectors with Electric-Driven Heat Pumps for
+      Sustainable Buildings
+    url: https://zenodo.org/api/records/5075363/files/eurosun2020-0044-Kosmadakis.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-testing-of-the-res4build-integrated-heat-pump
+    title: Testing of the RES4BUILD Integrated Heat Pump
+    url: https://zenodo.org/api/records/7198859/files/d2-4-testing-the-integrated-heat-pump.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-critical-review-of-heat-pump-prototype-operation-and
+    title: Critical review of heat pump prototype operation and required modications
+    url: https://zenodo.org/api/records/7285499/files/TRI_HP_WP5_D5_5.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-configurational-design-of-a-hybrid-system-based-on-a
+    title: Configurational Design of a Hybrid System Based on an Air–Water Heat Pump
+      and Biomass Boiler for a Rural Dwelling
+    url: https://zenodo.org/api/records/14215433/files/Configurational%20Design%20of%20a%20Hybrid%20System%20Based.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-simulation-of-photovoltaic-thermal-pv-t-solar-assist
+    title: Simulation of photovoltaic-thermal (PV-T) solar assisted heat pump  (SAHP)
+      systems for building thermal demands
+    url: https://zenodo.org/api/records/14264902/files/MScThesis_PranayKasturi.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-common-fault-effects-on-a-natural-refrigerant-variab
+    title: Common fault effects on a natural refrigerant, variable-speed heat pump
+    url: https://zenodo.org/api/records/20179502/files/1-s2.0-S0140700721004114-main.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-study-on-the-analysis-of-cycle-characteristics-in-lo
+    title: Study on the Analysis of Cycle Characteristics in Low Temperature Environment
+      of Automatic Cascaded Air Source Heat Pump with Flash Tank and Economize
+    url: https://zenodo.org/api/records/17471667/files/Study%20on%20the%20analysis%20of%20cycle%20characteristics%20in%20low%20temperature%20environment%20of%20automatic%20cascaded%20air%20source%20heat%20pump%20with%20flash%20tank%20and%20economizer.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-the-variables-affecting-the-willingness-to-be-flexib
+    title: The variables affecting the willingness to be flexible in exchange for financial
+      compensation of consumers by smart heat pump usage to support the sma
+    url: https://zenodo.org/api/records/7537106/files/Paper_Group4.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-performance-evaluation-of-high-temperature-heat-pump
+    title: Performance evaluation of high-temperature heat pump systems for hot water
+      and steam generation in food processing
+    url: https://zenodo.org/api/records/7503439/files/2022%20GL%20Ren%20et%20al%20HTHP.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-preliminary-model-for-an-adsorption-chiller-designed
+    title: Preliminary model for an adsorption chiller designed for data centre rack-based
+      cooling
+    url: https://zenodo.org/api/records/17235766/files/HPC2025_Preliminary_model_RIAC.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-comparative-performance-of-a-solar-assisted-heat-pum
+    title: Comparative performance of a solar assisted heat pump dryer with a heat pump
+      dryer for Curcuma
+    url: https://zenodo.org/api/records/4089356/files/55%2020512%202020.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-energy-water-nexus-for-a-comfort-maltese-household-u
+    title: Energy Water Nexus for a Comfort Maltese Household Using PVs
+    url: https://zenodo.org/api/records/6801073/files/41_Paper-Original-Blanked.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-energy-efficiency-of-heat-pumps-heating-systems-at-s
+    title: Energy Efficiency of Heat Pumps Heating Systems at Subsoil Waters for South-East
+      Regions of Europe
+    url: https://zenodo.org/api/records/4317115/files/PER_4_20_pp78_89.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-calculation-of-the-thermodynamic-cycle-of-a-vapor-co
+    title: CALCULATION OF THE THERMODYNAMIC CYCLE OF A VAPOR COMPRESSION HEAT PUMP INSTALLATION
+      WITH A SUBCOOLER FOR HEATING AND HOT WATER SUPPLY.
+    url: https://zenodo.org/api/records/7336606/files/CAJEI0108.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-d-3-5-manufacturing-and-commissioning-of-the-full-sc
+    title: D.3.5 Manufacturing and commissioning of the full-scale hybrid heat pump
+    url: https://zenodo.org/api/records/7153531/files/D3.5_20210510_v0.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-simplified-heat-pump-modelling-in-trnsys-and-validat
+    title: Simplified heat pump modelling in TRNSYS and validation
+    url: https://zenodo.org/api/records/7817508/files/TRI_HP_WP5_D5_8.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-evaluation-of-electrical-energy-conservation-opportu
+    title: 'Evaluation of Electrical Energy Conservation Opportunities: A Case Study
+      on SABIC Facilities'
+    url: https://zenodo.org/api/records/18409267/files/C473515030226.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-potential-and-limitations-of-modern-kraft-boilers-de
+    title: POTENTIAL AND LIMITATIONS OF MODERN KRAFT BOILERS DESIGN IMPACT ON UTILITY
+      SYSTEM OF A PAPER MILL – A CASE STUDY
+    url: https://zenodo.org/api/records/13255320/files/ICCT-2018-Proceedings-214-219.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-d-3-3-boiler-performance-using-fpbo-for-a-smartchp-s
+    title: D.3.3 Boiler Performance using FPBO for a SmartCHP system
+    url: https://zenodo.org/api/records/7822425/files/D.3.3-OWI-Boiler-Performance-using-FPBO-for-a-SmartCHP-system.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-improving-the-energy-efficiency-of-the-tgmp-114s-ste
+    title: IMPROVING THE ENERGY EFFICIENCY OF THE TGMP-114S STEAM BOILER DUE TO BURNING
+      IN THE FORM OF OIL-WATER MIXED EMULSION
+    url: https://zenodo.org/api/records/11237932/files/JARTES20240228.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-boiler-water-chemistry-a-critical-mechanism-for-boil
+    title: 'Boiler Water Chemistry: A Critical Mechanism for Boiler Tube Failure'
+    url: https://zenodo.org/api/records/15021268/files/Njete-25-A-14.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-optimization-control-design-and-simulation-of-furnac
+    title: 'Optimization control design and simulation of furnace-fired  boiler exit
+      pressure: leveraging disruptive technology'
+    url: https://zenodo.org/api/records/17855903/files/39%2026499.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-the-enhancement-of-temperature-in-boiler-by-steam-in
+    title: THE ENHANCEMENT OF TEMPERATURE IN BOILER  BY STEAM INJECTION
+    url: https://zenodo.org/api/records/10060500/files/7043-Oct%202023_5.pdf/content
+    source: zenodo
+    license: cc-by-sa
+    topic: equipment_systems
+    format: pdf
+  - id: zen-fuzzy-applications-in-a-power-station
+    title: Fuzzy Applications in a Power Station
+    url: https://zenodo.org/api/records/5543601/files/6215ijsc01.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-performance-evaluation-of-sugarcane-derived-bioethan
+    title: 'PERFORMANCE EVALUATION OF SUGARCANE-DERIVED BIOETHANOL IN WATER-TUBE BOILERS:
+      COMBUSTION EFFICIENCY, COST-EFFECTIVENESS, AND ENVIRONMENTAL IMPACT'
+    url: https://zenodo.org/api/records/15031001/files/Performance_Evaluation_of_Sugarcane_Derived_Bioethanol_in%20Water_tube_Boilers.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-assessment-of-performance-and-emission-characteristi
+    title: Assessment of Performance and Emission Characteristics of Biodiesel/Graphene/
+      N-Octanal Blends in Water Cooled Compression Ignition Engine
+    url: https://zenodo.org/api/records/11056948/files/D442613040424.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-boiler-performance-assessment-and-heat-balance-of-70
+    title: BOILER PERFORMANCE ASSESSMENT AND HEAT BALANCE OF 70 MW LIGNITE BASED THERMAL
+      POWER PLANT
+    url: https://zenodo.org/api/records/17987969/files/4-JSEE3527.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-the-influence-of-swirl-burner-geometry-on-the-sugar-
+    title: The Influence of Swirl Burner Geometry on the Sugar-Cane Bagasse Injection
+      and Burning
+    url: https://zenodo.org/api/records/1106251/files/10001479.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-optimizing-boiler-combustion-system-in-a-petrochemic
+    title: Optimizing Boiler Combustion System in a Petrochemical Plant Using Neuro-Fuzzy
+      Inference System and Genetic Algorithm
+    url: https://zenodo.org/api/records/1130213/files/10006984.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-a-comprehensive-cfd-model-for-sugar-cane-bagasse-het
+    title: A Comprehensive CFD Model for Sugar-Cane Bagasse Heterogeneous Combustion
+      in a Grate Boiler System
+    url: https://zenodo.org/api/records/1107015/files/10001615.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-thermal-energy-storage-enhancement-using-phase-chang
+    title: 'Thermal Energy Storage Enhancement Using Phase Change Materials: Design,
+      Analysis, and Applications'
+    url: https://zenodo.org/api/records/17522584/files/Thermal%20Energy%20Storage%20Enhancement%20Using%20Phase%20Change%20Materials.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-latent-thermal-energy-storage-for-heating-and-coolin
+    title: Latent thermal energy storage for heating and cooling of buildings
+    url: https://zenodo.org/api/records/4704883/files/Eurotherm112-Kozelj.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-model-for-analyzing-the-thermal-behaviour-and-perfor
+    title: Model for Analyzing the Thermal Behaviour and Performance Characteristics
+      of Phase Change Materials (PCMs) for Thermal Energy Storage (TES) Applicatio
+    url: https://zenodo.org/api/records/18998442/files/Model%20for%20Analyzing%20the%20Thermal%20Behaviour.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-zero-emission-chemical-sites-combining-power-purchas
+    title: Zero-emission chemical sites – combining power purchase agreements with thermal
+      energy storage
+    url: https://zenodo.org/api/records/15395345/files/Zero-emission%20chemical%20sites%20%E2%80%93%20combining%20power%20purchase%20agreements%20with%20thermal%20energy%20storage.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-d8-7-intermediate-version-of-training-material-on-pt
+    title: D8.7 Intermediate version of training material on PTES
+    url: https://zenodo.org/api/records/18847692/files/D8.7%20Intermediate%20Version%20of%20Training%20Material_compressed.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-cost-analysis-for-large-thermal-energy-storage-syste
+    title: 'Cost Analysis for Large Thermal
+
+      Energy Storage Systems'
+    url: https://zenodo.org/api/records/17347333/files/Luchinger_et_al._2025_Cost_Analysis_for_Large_TES_final.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-the-viability-of-thermal-energy-storage-and-phase-ch
+    title: The Viability of Thermal Energy Storage and Phase Change Material A Review
+    url: https://zenodo.org/api/records/3580867/files/466%20The%20Viability%20of%20Thermal%20Energy%20Storage%20and%20Phase%20Change%20Material.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-a-bibliography-on-recent-advancement-in-thermal-ener
+    title: A bibliography on recent advancement in thermal energy storage – a Mini Review
+    url: https://zenodo.org/api/records/7619927/files/Paper_001.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-numerical-analysis-on-thermal-energy-storage-tank-fi
+    title: NUMERICAL ANALYSIS ON THERMAL ENERGY STORAGE TANK FILLED WITH PHASE CHANGE
+      MATERIAL
+    url: https://zenodo.org/api/records/1413820/files/20150540-thermal-energy-storage-tank.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-performance-of-thermal-energy-storage-system-using-c
+    title: Performance of Thermal Energy Storage System Using Cylindrical Encapsulated
+      PCM
+    url: https://zenodo.org/api/records/15201122/files/Performance%20of%20Thermal%20Energy%20Storage.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-thermal-performance-comparison-of-pcm-based-latent-h
+    title: Thermal Performance Comparison of Pcm Based Latent Heat Storage Systems
+    url: https://zenodo.org/api/records/13902763/files/Abdukarimov%20JCET-template.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-experimental-testing-of-a-single-bed-adsorption-unit
+    title: Experimental testing of a single-bed adsorption unit for thermal energy storage
+      applications
+    url: https://zenodo.org/api/records/18401343/files/HPC2025_Di_Cicco_Freni_Toppi_Extended_Abstract.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-heat-transfer-based-on-nano-particles-for-thermal-en
+    title: Heat Transfer-Based on Nano-particles for Thermal Energy Storage in Phase
+      Change Material
+    url: https://zenodo.org/api/records/15223592/files/Heat%20Transfer-Based%20on%20Nano-particles-15042025-3.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-analysis-of-the-thermal-characteristics-of-the-paraf
+    title: 'Analysis of the thermal characteristics of the paraffin wax/high-density
+      polyethylene (HDPE) composite as a form-stable phase change material (FSPCM) '
+    url: https://zenodo.org/api/records/7741723/files/Analysis%20of%20the%20thermal%20characteristics%20of%20the%20paraffin.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-thermal-energy-storage-with-phase-change-material
+    title: Thermal Energy Storage with Phase Change Material
+    url: https://zenodo.org/api/records/7214163/files/Konferensiya-2022-OKTABR-1-qism-145-149.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-d3-1-description-of-the-numerical-model-for-hp-orc-s
+    title: D3.1 – Description of the numerical model for HP/ORC systems optimization
+      and application to different test cases
+    url: https://zenodo.org/api/records/10391424/files/D3.1%20-%20Description%20of%20the%20numerical%20model%20for%20HPORC%20systems_v1.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-pvt-solar-collectors-a-key-technology-for-buildings-
+    title: 'PVT solar collectors: a key technology for buildings thermal demand'
+    url: https://zenodo.org/api/records/15533932/files/MiniStor_PB%20B_25.06.06.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-classification-potential-role-and-modeling-of-power-
+    title: 'Classification, potential role, and modeling of power-to-heat and thermal
+      energy storage in energy systems: A review'
+    url: https://zenodo.org/api/records/12699239/files/Maruf%20TNO%20Paper.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf

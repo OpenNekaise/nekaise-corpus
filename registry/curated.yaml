@@ -3453,3 +3453,66 @@ sources:
     license: public-domain
     topic: standards_protocols
     format: pdf
+  - id: eia-cbecs-2018-building-characteristics-flipbook-highlig
+    title: CBECS 2018 Building Characteristics Flipbook (highlights + methodology)
+    url: https://www.eia.gov/consumption/commercial/data/2018/pdf/CBECS_2018_Building_Characteristics_Flipbook.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-cbecs-2018-consumption-expenditures-release-2-flipbo
+    title: CBECS 2018 Consumption & Expenditures Release 2 Flipbook
+    url: https://www.eia.gov/consumption/commercial/data/2018/pdf/CBECS%202018%20CE%20Release%202%20Flipbook.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-cbecs-principal-building-activity-pba-plus-examples-
+    title: CBECS Principal Building Activity (PBA plus) examples and definitions
+    url: https://www.eia.gov/consumption/commercial/data/2018/bc/pdf/pbaplus%20examples%20and%20definitions.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-the-national-energy-modeling-system-an-overview-2023
+    title: 'The National Energy Modeling System: An Overview (2023, DOE/EIA-0581)'
+    url: https://www.eia.gov/outlooks/aeo/nems/overview/pdf/0581(2023).pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-annual-energy-outlook-2026-narrative
+    title: Annual Energy Outlook 2026 — Narrative
+    url: https://www.eia.gov/outlooks/aeo/pdf/AEO_Narrative.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-aeo2026-supplement-electricity-market-module-time-sl
+    title: 'AEO2026 supplement: Electricity Market Module time slices'
+    url: https://www.eia.gov/outlooks/aeo/pdf/2026/AEO2026_EMMTimeslices.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-aeo2026-supplement-hydrogen-supply-module-production
+    title: 'AEO2026 supplement: Hydrogen Supply Module production'
+    url: https://www.eia.gov/outlooks/aeo/pdf/2026/AEO2026_HSM_Prod.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-aeo2026-supplement-lng-exports
+    title: 'AEO2026 supplement: LNG exports'
+    url: https://www.eia.gov/outlooks/aeo/pdf/2026/AEO2026_LNGexports.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-aeo2026-supplement-obbba-policy-assumptions
+    title: 'AEO2026 supplement: OBBBA policy assumptions'
+    url: https://www.eia.gov/outlooks/aeo/pdf/2026/OBBBA_Assumptions.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf

@@ -39,14 +39,14 @@ bash scripts/install_cron.sh              # optional: enable the daily growth jo
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **10,220** |
-| **Raw originals** | **~61G** (PDF / HTML / source code) |
-| **Extracted text** | **~2.1G** (~2157M chars, **≈539M tokens**) |
+| **Documents** | **11,242** |
+| **Raw originals** | **~65G** (PDF / HTML / source code) |
+| **Extracted text** | **~2.4G** (~2435M chars, **≈609M tokens**) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): building_energy 4,564 · equipment_systems 1,673 · structures_civil 901 · controls_bas 643 · standards_protocols 456 · construction 426 · infrastructure 388 · commissioning_fdd 350 · materials 341 · architecture 317 · urban 161.
+**By topic** (a source gets one at registration): building_energy 5,176 · equipment_systems 1,805 · structures_civil 985 · controls_bas 643 · construction 479 · standards_protocols 456 · infrastructure 425 · materials 385 · architecture 377 · commissioning_fdd 350 · urban 161.
 
-**By license:** open 2,792 · public-domain 5,649 · cc-by-sa 467 · cc-by 1,307 · proprietary-internal 5.
+**By license:** open 2,889 · public-domain 6,425 · cc-by-sa 477 · cc-by 1,446 · proprietary-internal 5.
 
 _Snapshot of the live registry (2026-07-09) — auto-generated from `manifest.jsonl`. The bytes are not
 shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._

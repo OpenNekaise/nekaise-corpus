@@ -46,6 +46,12 @@ while [ "$(date +%s)" -lt "$END" ]; do
   python scripts/find_archive.py --rows 30 --page "$round" --max 300 --append >>"$LOG" 2>&1 || say "  find_archive FAILED"
   # EU Horizon/H2020 project deliverables (OpenAIRE) — rotate the search page each round
   python scripts/find_openaire.py --rows 50 --page "$round" --max 300 --append >>"$LOG" 2>&1 || say "  find_openaire FAILED"
+  # NIST/NBS technical series via Crossref DOI prefix — rotate page deeper each round
+  python scripts/find_nist.py --rows 50 --page "$round" --max 300 --append >>"$LOG" 2>&1 || say "  find_nist FAILED"
+  # IBPSA Building Simulation proceedings — biennial bs series, walk backwards from 2023
+  python scripts/find_ibpsa.py --conf bs --year $(( 2025 - round*2 )) --max 600 --append >>"$LOG" 2>&1 || say "  find_ibpsa FAILED"
+  # Zenodo CC-licensed publications (rate-limited anonymous API — keep modest)
+  python scripts/find_zenodo.py --page "$round" --max 100 --append >>"$LOG" 2>&1 || say "  find_zenodo FAILED"
   if [ $(( (round-1) % 4 )) -eq 0 ]; then
     python scripts/find_sources.py --per 20 --append        >>"$LOG" 2>&1 || say "  find_sources FAILED"
     python scripts/find_github.py  --append                 >>"$LOG" 2>&1 || say "  find_github FAILED"

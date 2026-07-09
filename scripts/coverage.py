@@ -55,6 +55,9 @@ SOURCE_GENRE = {
     "unmethours": "practitioner_qa",
     "wikipedia": "encyclopedic",
     "aceee": "industry_ngo_utility",
+    "ngo_globalabc": "industry_ngo_utility",
+    "openaire_deliverable": "international_bodies",
+    "zenodo": "research_papers",
     "patents": "patents",
 }
 

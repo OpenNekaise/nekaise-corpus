@@ -208,6 +208,11 @@ def fetch_one(src: dict) -> dict:
         else:
             resp.raise_for_status()
             data = resp.content
+        if fmt == "pdf" and not data.startswith(b"%PDF-"):
+            # a 200 that isn't a PDF is a WAF interstitial / captcha / error page — without this
+            # check it lands in the corpus as an ok row with 0 text chars (IBPSA sgcaptcha, 07-09)
+            rec["error"] = f"not-a-pdf (got {data[:12]!r})"
+            return rec
         rec["sha256"] = sha256_bytes(data)
         rec["bytes"] = len(data)
 
