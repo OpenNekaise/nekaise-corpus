@@ -33,6 +33,7 @@ SHARDS = {
     "gh-": "github.yaml",      # find_github (repo docs + source code)
     "crawl-": "crawl.yaml",    # crawl_docs (doc-site pages)
     "ost-": "reports.yaml",    # find_osti + find_sources OSTI backend
+    "eud-": "deliverables.yaml",  # find_openaire (EU Horizon/H2020 project deliverables)
     "ope-": "papers.yaml",     # find_sources OpenAlex backend
     "oa-": "papers.yaml",
     "arx-": "papers.yaml",     # find_sources arXiv backend

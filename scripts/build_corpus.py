@@ -23,6 +23,7 @@ import argparse
 import hashlib
 import io
 import json
+import re
 import subprocess
 import threading
 import time
@@ -153,6 +154,21 @@ def write_manifest(rows: dict) -> None:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
 
+def _fetch_ec_deliverable(url: str) -> requests.Response:
+    """EC 'Documents download module' (Horizon project deliverables, eud- ids): the stable public
+    URL returns a JS interstitial whose window.location points at a session-bound tokenized URL —
+    follow it with the same cookie jar to get the actual PDF."""
+    with requests.Session() as s:
+        s.headers.update({"User-Agent": UA})
+        first = s.get(url, timeout=TIMEOUT, allow_redirects=True)
+        if not first.headers.get("Content-Type", "").startswith("text/html"):
+            return first
+        m = re.search(r"window\.location='(https://ec\.europa\.eu[^']+)'", first.text)
+        if not m:
+            return first
+        return s.get(m.group(1), timeout=TIMEOUT, allow_redirects=True)
+
+
 def fetch_one(src: dict) -> dict:
     sid = src["id"]
     fmt = src.get("format", "pdf")
@@ -167,10 +183,13 @@ def fetch_one(src: dict) -> dict:
         "error": None, "fetched_at": None,
     }
     try:
-        resp = requests.get(src["url"],
-                            headers={"User-Agent": UA,
-                                     "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8"},
-                            timeout=TIMEOUT, allow_redirects=True)
+        if "ec.europa.eu/research/participants/documents/downloadPublic" in src["url"]:
+            resp = _fetch_ec_deliverable(src["url"])
+        else:
+            resp = requests.get(src["url"],
+                                headers={"User-Agent": UA,
+                                         "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8"},
+                                timeout=TIMEOUT, allow_redirects=True)
         rec["http_status"] = resp.status_code
         if resp.status_code in (403, 429):
             # Akamai/Cloudflare WAFs (e.g. fema.gov) 403 the python client but pass curl's TLS

@@ -19,6 +19,7 @@ hand as `/dig` any time you want to grow the corpus in one shot.
    python scripts/find_osti.py --rows 50 --pages 2 --page <N> --append    # deep OSTI (rotate N deeper)
    python scripts/find_archive.py --rows 30 --page <N> --append           # pre-1929 PD texts (rotate N)
    python scripts/find_books.py --per 25 --depth 25 --offset <N*25> --append  # OAPEN CC-BY books
+   python scripts/find_openaire.py --rows 50 --page <N> --append          # EU Horizon/H2020 deliverables (rotate N)
    ```
    All dedup against `manifest.jsonl` + the registry + the `pruned_urls.txt` blocklist before
    appending, so re-running is safe and never re-churns pruned material.

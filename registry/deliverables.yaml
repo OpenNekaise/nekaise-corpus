@@ -1,0 +1,1932 @@
+# deliverables — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: eud-case-study-capture-of-building-retrofit-includ
+    title: Case study capture of Building Retrofit, including discussion on experience
+      in different building types and energy efficiency performance
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e8c5c720&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-building-and-district-retrofit-technologies-re
+    title: Building and district retrofit technologies review and characterisation
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5beca70e3&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-energy-efficiency-assessment-and-energy-monito
+    title: Energy efficiency assessment and energy monitoring results
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d713b943&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-local-energy-production
+    title: Local energy production
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b85aaa1f&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-of-demonstration-of-full-scale-storage-
+    title: Report of demonstration of full scale storage system in a real building
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e4f796db&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-lth-and-htc-retrofit-solutions
+    title: LTH and HTC retrofit solutions
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cbb42ec4&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-multi-measure-interventions-and-building-retro
+    title: Multi-measure interventions and building retrofit planning
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f9dd7cc2&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-with-integration-aspects-and-implementa
+    title: Report with integration aspects and implementation of full scale storage
+      system in a real building
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e3fb8701&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-evaluation-of-building-users-satisfaction-ii
+    title: Evaluation of building users satisfaction - II
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f3773ffd&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-evaluation-of-building-users-satisfaction-i
+    title: Evaluation of building users satisfaction - I
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cdafa824&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-documentation-of-api-specification-for-the-cou
+    title: Documentation of API specification for the coupling of external energy management
+      algorithms or products
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b4c495f3&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-building-amp-grid-retrofit-regulatory-framewor
+    title: Building &amp; Grid Retrofit Regulatory Framework
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d11f8b50&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-on-literature-review-wp4
+    title: Report on literature review WP4
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50ec5e989&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-publishable-final-report
+    title: Publishable Final Report
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c3ad2590&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-the-re-modulees-platform-analysis
+    title: The re-MODULEES platform analysis
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ee3cc9df&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-energy-performance-of-buildings-before-renovat
+    title: Energy performance of buildings before renovation
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b1675b07&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-guideline-for-energy-performance-guarantee
+    title: Guideline for energy performance guarantee
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cec15fe2&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-detailed-dynamic-models-for-the-plus-energy-bu
+    title: Detailed dynamic models for the plus energy buildings of syn.ikia neighbourhoods
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51e7df8f3&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-d6-6-final-versions-of-the-tools-of-the-innova
+    title: D6.6 - Final versions of the tools of the Innovative Energy Services Suite
+      towards Optimized Buildings Energy Performance Management
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5053dc825&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-list-of-buildings-performance-monitoring-indic
+    title: list of buildings performance-monitoring indicators
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ae3e35ce&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-impact-of-the-energy-performance-on-building-v
+    title: ￼ Impact of the energy- performance on building valuation
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b8ee8080&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-fact-sheet-on-energy-related-behaviour-pattern
+    title: Fact sheet on energy related behaviour patterns in the context of buildings
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e06b4e66&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-of-the-energy-performance-analysis-befo
+    title: Report of the energy performance analysis before intervention
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f23d4669&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-on-the-integration-of-qm-into-environme
+    title: report on the integration of QM into environmental certification for buildings
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ca8469a7&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-socio-economic-assessment-and-end-users-segmen
+    title: Socio-economic assessment and end users' segmentation.
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5fdb8b47a&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-local-and-global-energy-performance-models
+    title: Local and Global Energy performance models
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b2070fd6&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-tech-diagnosis-sri-energy-performance-air-qual
+    title: Tech. diagnosis (SRI, energy performance, air quality) initial status
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50b36623e&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-epcs-sustainability-certifications-and-buildin
+    title: EPCs, sustainability certifications and buildings' green value
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ecdb1aa6&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-monitoring-of-the-buildings-after-retrofitting
+    title: Monitoring of the buildings after retrofitting
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5bbb45060&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-energy-performance-replicability-and-scalabili
+    title: Energy performance, replicability and scalability analysis of large-scale
+      local storage technologies deployment
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c040761c&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-of-the-energy-performanc
+    title: Report of the energy performanc
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f23d466b&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-on-buildings-performance-aligned-with-t
+    title: Report on buildings performance aligned with the SRI&amp;KPIs
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ee0a8dad&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-requirements-key-performance-indicators-system
+    title: 'Requirements: Key Performance Indicators, system components and performance
+      targets'
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5bfa63472&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-on-improving-building-operation-with-en
+    title: Report on improving building operation with enhanced EPC
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50bf3a99e&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-social-acceptance
+    title: Social acceptance
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5bd4aa0ae&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-key-performance-indicators-kpis-for-glass-faca
+    title: Key Performance Indicators (KPIs) for glass facade buildings
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50493f204&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-measurement-and-verification-procedures-for-en
+    title: Measurement and verification procedures for energy efficiency investments
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e681584d&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-kpis-for-performance-based-characterisation-of
+    title: KPIs for performance-based characterisation of NZEB
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c1fd3e0a&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-on-system-performance
+    title: Report on system performance
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f23d4174&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-on-performance-tests-on-the-operation-o
+    title: Report on performance tests on the operation of the electrical energy storage
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c7c59feb&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-moeebius-energy-performance-assessment-methodo
+    title: MOEEBIUS Energy Performance Assessment Methodology
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ab2d80e3&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-modelling-handbook
+    title: Modelling Handbook
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5082d9f09&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-training-courses-for-targeted-professionals
+    title: Training courses for targeted professionals
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5bdad4d23&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-on-life-cycle-assessment-cost-analysis-
+    title: Report on Life Cycle Assessment, Cost analysis and Energy Performance evaluation
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5bd4a8f52&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-website
+    title: Website
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f2f70e31&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-current-practice-of-renovation
+    title: Current practice of renovation
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e516b3cf15&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-project-reporting
+    title: Project reporting
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5167be172&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-introductory-video
+    title: Introductory Video
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5139e3a4e&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-medzeb-certification-scheme-outline
+    title: MedZEB certification scheme outline
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d58192fa&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-city-characterization-report
+    title: City Characterization Report
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d40199aa&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-project-manual
+    title: Project manual
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e7a03375&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-sets-of-deep-renovation-solutions-of-building-
+    title: Sets of deep renovation solutions of building HVAC systems
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b82e1276&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-design-of-integrated-packages-of-deep-renovati
+    title: Design of integrated packages of deep renovation solutions
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c797671b&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-standardised-deep-renovation-feasibility-asses
+    title: Standardised deep renovation feasibility assessment and project proposal
+      for client’s and authority’s approval
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c706e567&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-set-up-of-a-database-for-asset-management-of-d
+    title: Set-up of a database for asset management of deep renovation
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c7ae0b60&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-state-of-the-art-report-of-innovations-for-dee
+    title: State-of-the-art report of innovations for deep renovation
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b83206bb&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-mobile-inspection-tool-demonstrator-for-buildi
+    title: Mobile inspection tool demonstrator for building condition assessment
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c7ad511a&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-baseline-reports-of-pre-renovation-condition-o
+    title: Baseline reports of pre-renovation condition of demonstration cases
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cccc048d&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-sets-of-pnp-prefab-components-for-building-env
+    title: Sets of PnP prefab components for building envelopes
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b8319021&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-technical-and-alliance-plan-for-temporary-loca
+    title: Technical and alliance plan for temporary local renovation factory at district
+      level
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cc704aed&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-4rineu-repository-of-deep-renovation-packages-
+    title: 4RinEU repository of deep renovation packages in the geo-cluster
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d9e6d613&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-potential-renovation-rate-of-a-building-typolo
+    title: Potential renovation rate of a building typology in a specific area
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d9e6cbe1&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-eu-regulations-and-installations
+    title: EU Regulations and Installations
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e52299403e&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-market-assessment-report-for-deep-renovation-o
+    title: Market assessment report for deep renovation of public buildings
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b8ff9b99&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-on-barriers-to-deep-renovation-for-each
+    title: Report on barriers to deep renovation for each participating country
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b3a088c0&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-study-on-energy-savings-and-wider-benefits-of-
+    title: Study on energy savings and wider benefits of deep renovation measures
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b2009e7c&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-machine-learning-for-as-built-diagnostics-and-
+    title: Machine-learning for As-Built diagnostics and enrichment of design rules
+      for deep renovation
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e907c0db&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-validation-report-of-reduced-renovation-cost-a
+    title: Validation report of reduced renovation cost and time
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d9ebaaad&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-booklet-presenting-4reneu-deep-renovation
+    title: Booklet presenting 4RenEU deep renovation
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5def8384f&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-evaluation-of-the-impact-of-local-drivers-to-t
+    title: Evaluation of the impact of local drivers to trigger deep renovation
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e506a144fa&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-demonstrator-of-3d-printing-with-on-site-robot
+    title: Demonstrator of 3D printing with on-site robotics
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d9e5667d&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-vr-ar-demonstrators-of-deep-renovation-scenari
+    title: VR/AR demonstrators of deep renovation scenarios
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f43deeff&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-semantic-design-rules-and-tool-for-deep-renova
+    title: Semantic design rules and tool for deep renovation design
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e484e9f6&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-validation-report-of-reduced-disturbance-for-i
+    title: Validation report of reduced disturbance for inhabitants during renovation
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d9ec46f8&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-abacus-of-renovation-measures-at-building-and-
+    title: Abacus of “renovation measures” at building and district scale
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cefbafc6&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-building-as-is-capturing-and-mapping-tools-v1
+    title: Building-As-Is Capturing and Mapping Tools (V1)
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f4c4e47a&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-aldren-methodology-note-on-energy-rating-proce
+    title: ALDREN Methodology note on energy rating procedure (including the specified
+      annexes)
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c3732b8f&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-of-the-tcp-business-workshops-and-for-m
+    title: Report of the TCP business workshops and for market upscaling
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c718cc94&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-roadmap-for-the-resolution-of-the-obstacles-fo
+    title: Roadmap for the resolution of the obstacles for a broader application of
+      deep renovation in HOA
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e507f44661&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-validation-report-of-replicability-and-scalabi
+    title: Validation report of replicability and scalability of PnP prefab solutions
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ccb2a539&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-bim-models-of-existing-buildings-based-on-3d-s
+    title: BIM models of existing buildings based on 3D scanning
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d9ec9aac&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-validation-report-of-reduced-use-of-net-primar
+    title: Validation report of reduced use of net primary energy
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cf4ff88b&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-the-case-of-historic-building
+    title: The case of historic building
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5db9a298e&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-aldren-methodology-note-on-linking-the-evcs-to
+    title: ALDREN Methodology note on linking the EVCS to building financial valuation
+      (including the specified annexes).
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c3b21fb1&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-x13-national-renovation-stakeholder-systems-ma
+    title: x13 national renovation stakeholder systems maps and mapping tool to allow
+      transferability to other countries
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5a00b1f0f&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-bim-execution-plan-for-residential-deep-renova
+    title: BIM Execution Plan for residential deep renovation
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f3af6d77&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-multi-criteria-decision-making-method-and-tool
+    title: Multi-criteria decision making method and tool for housing renovation projects
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e5951c32&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-validation-report-of-lowered-embodied-energy-a
+    title: Validation report of lowered embodied energy at prefab renovation projects
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cc9857b1&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-market-assessment-report
+    title: Market assessment report
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5a6861535&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-bim-parametric-modeller
+    title: BIM parametric modeller
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b831b215&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-guidelines-and-technology-concepts-for-managin
+    title: Guidelines and technology concepts for managing building end-of-life
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c9caee18&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-design-of-energy-systems-at-building-and-distr
+    title: Design of energy systems at building and district level
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ca929a5e&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-on-eeb-ppp-clustering-activities-involv
+    title: Report on EeB PPP clustering activities involving P2Endure
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d9ed0e6e&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-of-joint-initiatives-within-eeb-ppp
+    title: Report of joint initiatives within EeB PPP
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c71873fa&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-parametric-models-for-buildings-and-building-c
+    title: 'Parametric models for buildings and building clusters: building features
+      and boundaries'
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c1fe053a&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-needs-requirements-and-barriers-breaking-innov
+    title: Needs/requirements and barriers breaking innovation of building envelope
+      products
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f43a48ae&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-business-model-for-prototypical-implementation
+    title: Business model for prototypical implementation
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ce3699cb&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-optimized-nzeb-solution-sets
+    title: Optimized NZEB- solution sets
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cda4b99d&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-recommendations-on-how-to-prepare-upcoming-nat
+    title: Recommendations on how to prepare upcoming National Building Renovation Plans
+      with a focus on Zero Energy Buildings
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51c1c2623&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-report-on-value-chain-and-innovation-workflows
+    title: Report on value chain and innovation workflows for nEES
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f4aa15fa&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-energy-flexible-building-managing-models
+    title: Energy flexible building managing models
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c70b26c9&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-protocol-for-managing-bim-based-information-fl
+    title: Protocol for managing BIM-based information flow in innovation process
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f7187d84&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-potential-contribution-of-bipv-systems-to-near
+    title: Potential contribution of BIPV systems to nearly Zero Energy Buildings and
+      methodology for project outputs assessment
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d12d3d5d&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-circular-economy-approach-for-contributing-to-
+    title: Circular economy approach for contributing to bld stock decarbonisation
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50cbb4eaf&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-international-sinergy-conference-on-smart-ener
+    title: International SINERGY Conference on Smart Energy Management Technologies
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e503534f29&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-the-third-sinergy-workshop-belgrade-s-smart-en
+    title: The Third SINERGY Workshop - Belgrade's Smart Energy Management laboratory
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f5961be0&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-training-courses-and-learning-material-on-ener
+    title: Training Courses and Learning Material on Energy Efficient Building Operation
+      (v2)
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50898ac3b&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-training-courses-and-learning-material-on-ener-2
+    title: Training Courses and Learning Material on Energy Efficient Building Operation
+      (v1)
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ea64f47a&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-the-second-sinergy-workshop-energy-efficient-b
+    title: The Second SINERGY Workshop - Energy Efficient Building Operation
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ee3360cd&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-report-on-retrofitted-actions-and-implemented-
+    title: Report on retrofitted actions and implemented actions new buildings including
+      RES and storages in Hamburg
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c9d53f2b&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-training-courses-and-learning-material-on-smar
+    title: Training Courses and Learning Material on Smart Grid Technologies (v1)
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ea64f932&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-training-courses-and-learning-material-on-smar-2
+    title: Training Courses and Learning Material on Smart Grid Technologies (v2)
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5fddf6b1a&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-the-first-sinergy-workshop-smart-grid-technolo
+    title: The First SINERGY Workshop - Smart Grid Technologies
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e66ca24f&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-building-smart-energy-communities-for-the-bene
+    title: Building smart energy communities for the benefit of all
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50adfb7b3&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-parmenides-system-architecture
+    title: PARMENIDES system architecture
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5066e4f6f&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-updated-report-on-early-stage-researcher-engag
+    title: Updated report on Early Stage Researcher Engagement and Mentoring
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5066dda27&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-detailed-functionality-specification-and-desig
+    title: Detailed functionality specification and design of the Optimized Energy Performance
+      Management Suite
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5dc731727&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-updated-report-on-mutual-exchange-of-personnel
+    title: Updated report on Mutual Exchange of Personnel and Training Activities
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5068833a5&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-governance-structure-communication-flow-and-me
+    title: Governance structure, communication flow and methods. Quality Plan. Risk
+      analysis and contingency plan.
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5af358708&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-tutorials-for-energy-managers-and-professional
+    title: Tutorials for energy managers and professionals
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5bf376029&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-digital-twins-and-ai-based-analytics-for-smart
+    title: Digital Twins and AI-based analytics for smart energy management Final release
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5227a3087&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-digital-twins-and-ai-based-analytics-for-smart-2
+    title: Digital Twins and AI-based analytics for smart energy management 1st technology
+      release
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51804f96c&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-test-and-evaluation-plans
+    title: Test and Evaluation Plans
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f2168a3f&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-smart-sustainability-amp-comfort-balancing-mod
+    title: Smart Sustainability &amp; Comfort Balancing Module
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e525b61b25&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-report-on-early-stage-researcher-engagement-an
+    title: Report on Early Stage Researcher Engagement and Mentoring
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ea650e1e&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-report-on-dissemination-and-promotional-activi
+    title: Report on Dissemination and Promotional Activities
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5066de2ec&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-2nd-periodic-report-on-l-amp-d
+    title: 2nd Periodic report on L&amp;D
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51eace0ea&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-information-management-and-security
+    title: Information management and security
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50c53ddb3&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-sinergy-web-portal-and-communication-material
+    title: SINERGY Web Portal and Communication Material
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5df247920&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-report-on-mutual-exchange-of-personnel-and-tra
+    title: Report on Mutual Exchange of Personnel and Training Activities
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ea64f0e3&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-response-performance-monitoring-framework
+    title: RESPONSE Performance monitoring framework
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5fb3f7123&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-1st-periodic-report-on-l-amp-d
+    title: 1st Periodic report on L&amp;D
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50ae92253&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-energy-solutions-catalogue-for-positive-energy
+    title: Energy Solutions Catalogue for Positive Energy Blocks/Districts
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e511ba6e64&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-market-uptake-initial-steps
+    title: Market uptake initial steps
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50c54213e&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-documentation-and-drawing-from-engineering-and
+    title: Documentation and drawing from Engineering and design. Execution of the retrofitting
+      plan for the Solar assisted AHP system in Toledo
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d8dbd54d&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-demonstration-case-of-plus-energy-neighbourhoo
+    title: Demonstration case of plus energy neighbourhoods in Subarctic climate
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5fb42b0e6&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-demonstration-progress-report
+    title: Demonstration progress report
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5fb40b1e6&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-listing-of-required-hardware-for-eumap
+    title: Listing of required hardware for eUMaP
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5fe49e8b9&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-pilot-results-of-buildings-for-assisted-living
+    title: Pilot results of Buildings for Assisted Living Neighbourhood use-case
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c83d0073&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-demonstration-case-of-plus-energy-neighbourhoo-2
+    title: Demonstration case of plus energy neighbourhoods in Mediterranean climate
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5fb42bea8&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-twinergy-connectors-to-distributed-smart-grid-
+    title: TwinERGY connectors to distributed smart grid assets and respective APIs
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f7c3f661&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-technical-feasibility-study-of-the-potential-p
+    title: Technical feasibility study of the potential PEB replications in each FC
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5fd566e7c&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-local-demand-manager-specifications-and-intra-
+    title: Local Demand Manager Specifications and Intra-building Optimization Algorithms
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c2e0ab03&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-definition-of-project-kpis-and-a-common-method
+    title: Definition of project KPIs and a common methodology across the demos
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5abac5c2e&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-features-bankability-and-viability-of-business
+    title: Features, bankability and viability of business model
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e510c5dde0&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: eud-development-of-personalised-heat-pump-for-heat
+    title: Development of personalised heat pump for heating and cooling tool
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cc9b2ed6&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-final-communication-activities
+    title: Final communication activities
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cdeccc78&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-planned-communication-activities
+    title: Planned communication activities
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5bcd43041&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-mapping-of-gshp-for-cooling-and-for-low-and-hi
+    title: Mapping of GSHP for cooling and for low and high temperature terminals for
+      heating
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c6bf706f&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-multi-source-sink-energy-sub-system
+    title: Multi-source/sink Energy Sub-system
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c6f91fa2&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-configuration-and-sizing-of-package-substation
+    title: Configuration and sizing of Package Substations
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5dc83c172&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-impact-monitoring-report
+    title: Impact monitoring report
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51e86b604&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-ites-mes-numerical-model
+    title: ITES-MES numerical model
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cca64d36&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-demonstration-case-of-plus-energy-neighbourhoo-3
+    title: Demonstration case of plus energy neighbourhoods in Marine climate
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5fb42b3c1&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-e2district-demonstration-experience-how-to-ope
+    title: E2District demonstration experience; how to operate a DHC network in an efficient
+      manner
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c7bd4cd0&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-project-website-and-social-network-accounts
+    title: Project website and social network accounts
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d9f39453&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-analysis-of-network-layouts-in-selected-urban-
+    title: Analysis of network layouts in selected urban contexts
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b33cb050&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-customers-perspective-on-rewardheat-solutions
+    title: Customers’ perspective on REWARDHeat solutions
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d901270c&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-low-and-high-level-controls-for-low-temperatur
+    title: Low- and high-level controls for low temperature DHC networks
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c1f9bccf&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-integration-of-substations-into-dhc-networks
+    title: Integration of substations into DHC networks
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b0a5b884&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-strategies-for-the-integration-of-dhc-networks
+    title: Strategies for the integration of DHC networks with the electric and gas
+      grids
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b0a5e350&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-smart-energy-supply-and-demand-with-res
+    title: Smart Energy Supply and Demand with RES
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c9a02abe&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-improved-concept-of-energy-infrastructures-at-
+    title: Improved concept of Energy Infrastructures at district-city level in Antalya
+      - First Version
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c7c7aec1&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-rewardheat-planning-schemes-database
+    title: REWARDHeat PLANNING schemes database
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5db4cc92c&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-rewardheat-predesign-tool
+    title: REWARDHeat predesign tool
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5db7c4eb2&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-dynamic-physical-system-modelling
+    title: Dynamic physical system modelling
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ad22cf0c&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-smart-energy-supply-and-demand-integration-of-
+    title: Smart Energy Supply and Demand. Integration of RES, storage, management and
+      control
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5bfa6e211&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-results-from-laboratory-testing-of-vi-water-st
+    title: Results from laboratory testing of VI-water storage system for all configurations.
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51038f57f&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-merlon-virtual-thermal-energy-storage-componen
+    title: MERLON Virtual Thermal Energy Storage Component - First Version
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d2495cf0&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-energy-storage-for-optimal-energy-harvesting-e
+    title: Energy Storage for Optimal Energy Harvesting Exploitation- public summary
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f59e7a14&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-promising-storage-and-system-configurations-an
+    title: Promising storage and system configurations and geographical cluster.
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50229da36&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-module-to-represent-the-system-in-whole-buildi
+    title: Module to represent the system in whole-building energy modelling packages
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5195afb78&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-plan-for-all-management-meetings-in-the-projec
+    title: Plan for all management meetings in the project
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5a49f527b&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-technical-amp-scientific-publications-announce
+    title: Technical &amp; scientific publications/announcements
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c7d8fb51&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-conference-on-teaching-training-activities
+    title: Conference on teaching/training activities
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c022b02e&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-gender-report
+    title: Gender report
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ad12ce70&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-requirements-context-of-application-building-c
+    title: 'Requirements: context of application, building classification, and dynamic
+      uses consideration'
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5bf56dc66&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-hybuild-optimised-building-management-system
+    title: HYBUILD optimised building management system
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cda50875&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-definition-of-system-context-and-limits-for-us
+    title: Definition of system context and limits for use
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e510f4588e&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-identification-of-pcm-amp-characterisation-and
+    title: Identification of PCM &amp; characterisation and provide report on PCMs for
+      IDEAS with the experimental effect of PCMs used in the selected applicatio
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cebc65a2&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-visual-identity
+    title: Visual Identity.
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5fde32109&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-report-on-the-functional-verification-of-the-c
+    title: Report on the functional verification of the control integrated with the
+      prototype erected during the project
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c324698f&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-identification-of-the-key-energetic-environmen
+    title: Identification of the key energetic, environmental, and economic KPIs.
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e506a61de5&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-first-version-of-simulation-model-of-the-therm
+    title: First version of simulation model of the thermo-chemical storage system.
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e512a237a6&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-energy-audit-of-buildings-and-identification-o
+    title: Energy audit of buildings and identification of BIPV possibilities in every
+      demo site
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b2a783d4&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-8-workshops-with-b2b-meetings-with-industry
+    title: 8 workshops with B2B meetings with industry
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c7ceb7ef&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-project-communication-and-dissemination-plan
+    title: Project communication and dissemination plan
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5ad12cab8&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-report-of-the-prediction-and-analysis-on-the-s
+    title: Report of the prediction and analysis on the systems
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f4ff4b8d&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-current-and-future-overview-of-technical-marke
+    title: Current and future overview of technical market application.
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50229ea94&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-smart-system-algorithms
+    title: Smart system algorithms
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5bdfa35a3&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-training-material
+    title: Training material
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b82fcaa0&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-characterisation-of-novel-designs-and-device-o
+    title: Characterisation of novel designs and device optimisation
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5fb12ed95&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-report-on-the-business-case-innovative-busines
+    title: 'Report on the business case: innovative business &amp; financial models
+      &amp; standards'
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b92a378f&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-specific-climate-considerations-and-building-t
+    title: Specific climate considerations and building typological classification
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e523efab51&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-exploitation-plan
+    title: Exploitation plan
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c9e2ea00&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-european-market-study-report
+    title: European market study report
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5b2a8dbb2&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-guidelines-for-ites-design
+    title: Guidelines for ITES design
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c62574b2&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-validated-model-with-experiments
+    title: Validated model with experiments
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e85b7f2e&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-definition-and-selection-of-kpis
+    title: Definition and selection of KPIs
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5242a985d&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: eud-validation-report-of-improved-indoor-environme
+    title: Validation report of improved indoor environment quality
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d9ebf51f&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-aldren-methodology-note-on-address-ing-health-
+    title: ALDREN Methodology note on address-ing health and wellbeing (including the
+      specified annexes).
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c3b21bbf&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: eud-legal-aspects
+    title: Legal Aspects
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5dc8db53b&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-white-paper-on-basic-concepts-of-data-integrat
+    title: White paper on basic concepts of data integration services for building industry
+      using BIM and Digital Building Twins
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5dc8dafde&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-prototype-system-description-and-test-results
+    title: Prototype system description and test results
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f5cd17d4&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-functional-samples-description-and-test-result
+    title: Functional samples description and test results
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e178c889&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-safety-critical-situation-detection
+    title: Safety-critical situation detection
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e903c83f&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-technology-demonstrations
+    title: Technology Demonstrations
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e2aea3ad&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-risk-and-safety-assessment-method
+    title: Risk and safety assessment method
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5db48f8c3&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-b-improve-reference-architecture-document
+    title: B¦IMprove reference architecture document
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5dc8da07d&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-dissemination-and-communication-final-report
+    title: Dissemination and Communication Final Report
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e500c35e12&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-detailed-description-of-the-safety-functionali
+    title: Detailed description of the safety functionalities and worker notifications
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e178c885&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-user-interface-software-and-interface-descript
+    title: User interface software and interface description
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f5cd21c0&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-layer-services-description
+    title: Layer Services description
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e178e10d&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-outreach-material
+    title: Outreach Material
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d9fbaf97&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-benchmarking-evaluation-amp-demonstration
+    title: Benchmarking, Evaluation &amp; Demonstration
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5fde456c9&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-impact-assessment-and-exploitation-interim-rep
+    title: Impact Assessment and Exploitation Interim Report
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e903de03&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-concept-descriptions-of-user-interfaces-and-hu
+    title: Concept descriptions of user interfaces and human-robot interaction
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5dc8db936&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-impact-assessment-and-exploitation-final-repor
+    title: Impact Assessment and Exploitation Final Report
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e500c370e5&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-white-paper-on-b-improve-open-layer-services-s
+    title: White paper on B¦IMprove open layer services software and data structure
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f5cd17bd&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-dissemination-and-communication-interim-report
+    title: Dissemination and Communication Interim Report
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e903e146&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-b-improve-impact-master-plan
+    title: B¦IMprove Impact Master Plan
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d67327e3&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-technical-data-sheets-and-bim-file-available
+    title: Technical data sheets and BIM file available
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50156c162&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-open-interface-description-for-stationery-grou
+    title: Open Interface Description for stationery, ground and UAV based data acquisition
+      systems
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f1efdad8&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-b-improve-asset-portfolio
+    title: B¦IMprove Asset Portfolio
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e500c370e8&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-user-interface-implementation-description
+    title: User interface implementation description
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e3f40670&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-use-case-requirements
+    title: Use-Case requirements
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e2aea527&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: construction
+    format: pdf
+  - id: eud-closed-loop-supply-chains-of-the-six-carbon-in
+    title: Closed-Loop Supply Chains of the six carbon-intensive Construction materials
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51d4131b8&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-adoption-pathways-for-circular-innovations-in-
+    title: Adoption pathways for circular innovations in the construction industry
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51d711f19&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-materials-exchange-portal-functioning
+    title: Materials Exchange Portal functioning
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50d0cb2c5&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-integrated-information-management-for-circular
+    title: Integrated information management for circular value flow planning
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51da50dd8&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-booklet-with-training-materials-from-summer-sc
+    title: Booklet with training materials from summer school on circular solutions
+      (published open- access, with ISSN and DOI numbers for easier traceability
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5245a9f37&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-an-ontology-for-circular-management-of-buildin
+    title: An ontology for circular management of buildings
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e505a09655&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-workshop-agreement-on-standardisation-and-inte
+    title: Workshop Agreement on standardisation and interoperability
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51d5a8214&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-recommendation-for-improving-the-use-of-recycl
+    title: Recommendation for improving the use of recycled materials and reusable elements
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50cda93f5&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-circular-strategies-for-new-construction-mater
+    title: Circular strategies for new construction materials
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5132b47e4&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-business-eco-systems-for-circular-markets-matu
+    title: 'Business eco-systems for circular markets: maturity, transformation, and
+      mapping'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51da51645&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-combined-data-for-six-construction-materials
+    title: Combined data for six construction materials
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51d34efdf&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-report-on-thematic-linking-with-eit-raw-materi
+    title: Report on Thematic linking with EIT Raw Materials networks of infrastructure
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f478a880&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-schematic-architecture-of-data-workflows
+    title: Schematic architecture of data workflows
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5286ebfad&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-circular-decision-making-for-extending-the-use
+    title: Circular decision making for extending the use life of real estate assets
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50dc3ed7b&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-a-set-of-methods-for-economic-and-ecological-a
+    title: A set of methods for economic and ecological appraisal of circular economy
+      innovations
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51d71085a&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-ai-based-cdw-classification-software-utilizing
+    title: AI-based CDW classification software utilizing low-cost sensors' inputs
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50ea0acf6&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-4-pilots-built-feedback-report
+    title: 4 Pilots built + Feedback report
+    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c1f36e9b&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-circular-decision-making-for-adaptive-refurbis
+    title: Circular decision making for adaptive refurbishment and renovation of real
+      estate assets
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50dc3ec14&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-four-e-learning-modules-at-circularity-hub
+    title: Four e-learning modules at Circularity Hub
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50d0a87bb&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-an-automated-system-for-planning-and-decision-
+    title: An automated system for planning and decision making on deconstruction and
+      demolition supported by a database of EoSL materials and products
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51eb2fd34&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-report-on-the-provision-of-data-to-the-ec-rmis
+    title: Report on the provision of data to the EC RMIS
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51288e5ac&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-report-on-legislative-regulative-requirements-
+    title: Report on legislative/regulative requirements for (1) transport and processing
+      of mining residues in the EU and (2) construction product standards and
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c3a42665&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-pilot-road-construction-and-monitoring
+    title: Pilot road construction and monitoring
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f473580d&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-business-case-for-database-and-marketing-strat
+    title: Business case for database and marketing strategy
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f6df385a&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-methodology-for-a-material-mapping-dataset-dat
+    title: Methodology for a material mapping dataset (databank) and C&amp;D waste predictor
+      application/solution integrated in BIM processes
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51ec6e104&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-communication-materials
+    title: Communication materials
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f473a272&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-impact-monitoring-plan
+    title: Impact monitoring plan
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e515574115&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: materials
+    format: pdf
+  - id: eud-strategy-for-developing-interoperability-and-e
+    title: Strategy for developing interoperability and ecosystems for positive energy
+      districts
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5db4a3b4a&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf
+  - id: eud-positive-district-energy-flows-groningen
+    title: Positive District Energy Flows (Groningen)
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e5a78d8a&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf
+  - id: eud-positive-district-energy-flows-oulu
+    title: Positive District Energy Flows (Oulu)
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51361f203&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf
+  - id: eud-playbook-of-regulatory-recommendations-for-ena
+    title: Playbook of regulatory recommendations for enabling new energy systems
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e3c3f4fc&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf
+  - id: eud-interoperability-of-holistic-energy-systems-in
+    title: Interoperability of holistic energy systems in Leipzig
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f9f2f258&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf
+  - id: eud-interoperability-of-holistic-energy-systems-in-2
+    title: Interoperability of holistic energy systems in Espoo
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f1e7921e&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf
+  - id: eud-additional-source-of-thermal-amp-electrical-fl
+    title: Additional source of thermal &amp; electrical flexibility in district heating
+      substations
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d6503911&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf
+  - id: eud-replication-and-city-vision-strategy-for-fcs
+    title: Replication and City-Vision Strategy for FCs
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f37b9a3d&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf
+  - id: eud-how-to-boost-district-renovation-in-positive-e
+    title: How to boost district renovation in Positive Energy Districts
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5229b1902&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf
+  - id: eud-european-cities-and-district-market-analysis
+    title: European cities and district market analysis
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5e96a70d1&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf
+  - id: eud-district-digital-twin-1
+    title: District Digital Twin (1)
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51eaf556e&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf
+  - id: eud-user-innovation-in-business-model-incubation-h
+    title: User Innovation in business model incubation handbook for implementation
+      in MAKING-CITY cities and beyond
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5157f24a0&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf
+  - id: eud-demand-driven-holistic-smart-city-service-road
+    title: Demand-driven Holistic Smart City Service Roadmap for Impact Enhancement
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5dcd90518&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf
+  - id: eud-methodology-and-guidelines-for-ped-design
+    title: Methodology and Guidelines for PED design
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c9d29d62&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf
+  - id: eud-methodology-and-guidelines-for-ped-design-inte
+    title: Methodology and Guidelines for PED design (Intermediate Version)
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cba5133f&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf
+  - id: eud-botosani-replication-roadmap-planning-amp-bold
+    title: Botosani Replication Roadmap, Planning &amp;Bold City Vision - V2
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e52709fd05&appId=PPGMS
+    source: openaire_deliverable
+    license: open
+    topic: urban
+    format: pdf

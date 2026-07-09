@@ -3349,3 +3349,107 @@ sources:
 
 
 
+
+  # ---------- GlobalABC / UNEP Global Status Reports for Buildings & Construction (CC BY 3.0 IGO) ----------
+  - id: gabc-gsr-2016
+    title: "GlobalABC Global Status Report 2016 — Towards zero-emission, efficient and resilient buildings"
+    url: https://globalabc.org/sites/default/files/2020-03/GABC_GSR_2016.pdf
+    source: ngo_globalabc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: gabc-gsr-2017
+    title: "GlobalABC Global Status Report 2017 — buildings and construction sector"
+    url: https://globalabc.org/sites/default/files/2020-09/2017%20GlobalABC%20GSR%20.pdf
+    source: ngo_globalabc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: gabc-gsr-2019
+    title: "2019 Global Status Report for Buildings and Construction (UNEP / GlobalABC)"
+    url: https://globalabc.org/sites/default/files/2020-03/GSR2019.pdf
+    source: ngo_globalabc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: gabc-gsr-2020
+    title: "2020 Global Status Report for Buildings and Construction (UNEP / GlobalABC)"
+    url: https://globalabc.org/sites/default/files/2021-03/Buildings-GSR-2020_Report_24-03-21_0.pdf
+    source: ngo_globalabc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: gabc-gsr-2021
+    title: "2021 Global Status Report for Buildings and Construction (UNEP / GlobalABC)"
+    url: https://globalabc.org/sites/default/files/2021-10/GABC_Buildings-GSR-2021_BOOK.pdf
+    source: ngo_globalabc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: gabc-gsr-2022
+    title: "2022 Global Status Report for Buildings and Construction (UNEP / GlobalABC)"
+    url: https://globalabc.org/sites/default/files/2023-03/2022%20Global%20Status%20Report%20for%20Buildings%20and%20Construction_0.pdf
+    source: ngo_globalabc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: gabc-gsr-2023
+    title: "Global Status Report for Buildings and Construction 2023 — Beyond foundations"
+    url: https://globalabc.org/sites/default/files/2024-11/global_status_report_buildings_construction_2023.pdf
+    source: ngo_globalabc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: gabc-gsr-2024-2025
+    title: "Global Status Report for Buildings and Construction 2024/2025 (UNEP / GlobalABC)"
+    url: https://globalabc.org/sites/default/files/2025-03/Global-Status-Report-2024_2025.pdf
+    source: ngo_globalabc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: gabc-gsr-2025-2026
+    title: "Global Status Report for Buildings and Construction 2025/2026 (UNEP / GlobalABC)"
+    url: https://globalabc.org/sites/default/files/resources/2026-05/global-status-report-for-buildings-and-construction-2025_2026.pdf
+    source: ngo_globalabc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+
+  # ---------- Pressbooks OER trades textbooks (CC-BY, whole-book PDF export) ----------
+  - id: textbook-basic-motor-control-cc-by
+    title: "Basic Motor Control (open textbook, BCcampus)"
+    url: https://pressbooks.bccampus.ca/basicmotorcontrol/open/download?type=pdf
+    source: textbook_oer
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+  - id: textbook-building-maintenance-construction-cc-by
+    title: "Building Maintenance & Construction: Tools and Maintenance Tasks (open textbook, UH OER)"
+    url: https://pressbooks.oer.hawaii.edu/buildingmaint/open/download?type=pdf
+    source: textbook_oer
+    license: cc-by
+    topic: construction
+    format: pdf
+
+  # ---------- DOE Building Energy Codes Program (PNNL, public domain) ----------
+  - id: ecc-2015-iecc-energy-savings-analysis
+    title: "2015 IECC: Energy Savings Analysis (DOE final determination, PNNL)"
+    url: https://www.energycodes.gov/sites/default/files/2021-07/2015_IECC_FinalDeterminationAnalysis.pdf
+    source: doe_energycodes
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: ecc-techbrief-geb-demand-response
+    title: "Demand Response in Residential Energy Codes — GEB Technical Brief (PNNL-31994-1)"
+    url: https://www.energycodes.gov/sites/default/files/2025-01/TechBrief_GEB_Demand_Response.pdf
+    source: doe_energycodes
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: ecc-geb-in-codes-pnnl-28605
+    title: "Building Energy Codes and Grid-Interactive Efficient Buildings (PNNL-28605)"
+    url: https://www.energycodes.gov/sites/default/files/2021-10/GEB_in_Codes_PNNL_28605.pdf
+    source: doe_energycodes
+    license: public-domain
+    topic: standards_protocols
+    format: pdf

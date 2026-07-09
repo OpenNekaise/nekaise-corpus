@@ -44,6 +44,8 @@ while [ "$(date +%s)" -lt "$END" ]; do
   python scripts/find_books.py --per 25 --depth 25 --offset $(( (round-1)*25 )) --max 200 --append >>"$LOG" 2>&1 || say "  find_books FAILED"
   # pre-1929 public-domain engineering texts (Internet Archive) — rotate the search page each round
   python scripts/find_archive.py --rows 30 --page "$round" --max 300 --append >>"$LOG" 2>&1 || say "  find_archive FAILED"
+  # EU Horizon/H2020 project deliverables (OpenAIRE) — rotate the search page each round
+  python scripts/find_openaire.py --rows 50 --page "$round" --max 300 --append >>"$LOG" 2>&1 || say "  find_openaire FAILED"
   if [ $(( (round-1) % 4 )) -eq 0 ]; then
     python scripts/find_sources.py --per 20 --append        >>"$LOG" 2>&1 || say "  find_sources FAILED"
     python scripts/find_github.py  --append                 >>"$LOG" 2>&1 || say "  find_github FAILED"
