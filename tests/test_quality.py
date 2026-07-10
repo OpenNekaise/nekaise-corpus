@@ -31,12 +31,34 @@ SPICED = OFF_TOPIC * 2 + "The lecture hall building was mentioned once in passin
 # Number-table soup — the trade-catalog / Barlow's-tables class (OCR of tabular matter).
 CATALOG_LINE = "No. 482  3/4 in.  12 1/2  9.75  0.375  1 1/4  18 20 22  $4.60  7/8 x 5 3/16\n"
 
-# German academic prose — the non-English class (few English stopwords).
+# German GENERIC academic prose — off-topic in any language (no built-environment vocabulary).
 GERMAN = (
     "Die Untersuchung beschreibt das Verfahren zur Bestimmung der Kennwerte und erläutert die "
     "wesentlichen Ergebnisse der Messreihe. Anschließend werden die Abweichungen zwischen den "
     "berechneten und gemessenen Werten diskutiert sowie mögliche Ursachen benannt. Der zweite "
     "Abschnitt behandelt die Auswertung der Stichprobe und die statistische Unsicherheit. "
+)
+
+# German BUILDING prose — the corpus is all-language; on-topic German must pass.
+GERMAN_BUILDING = (
+    "Die energetische Sanierung der Gebäude umfasst die Dämmung der Fassade, den Austausch der "
+    "Heizung gegen eine Wärmepumpe und eine kontrollierte Lüftung mit Wärmerückgewinnung. Für das "
+    "Tragwerk aus Beton und Mauerwerk wurden die Anforderungen des Brandschutzes geprüft, und die "
+    "Bauteile der Gebäudehülle erreichen nach der Dämmung deutlich bessere Kennwerte. "
+)
+
+# Chinese building-energy prose — CJK has no spaces; the cjk-aware word count must carry it.
+CHINESE_BUILDING = (
+    "本报告分析了公共建筑的节能改造方案，包括围护结构保温、供暖系统改造与通风空调系统的优化运行。"
+    "针对钢筋混凝土结构的既有建筑，评估了外墙保温材料的热工性能与防火要求，并对锅炉房进行了改造设计。"
+    "施工过程中对地基与基础工程进行了监测，桥梁与隧道等市政设施的维护也纳入了城市规划的整体考虑。"
+)
+
+# Chinese GENERIC prose — off-topic in any language.
+CHINESE_OFFTOPIC = (
+    "本文考察了宋代诗歌的音韵演变及其在民间的传播方式，讨论了不同抄本之间的文字差异。"
+    "作者比较了多位学者对词牌起源的看法，并分析了唐宋文学批评传统中的审美观念如何影响后世的选本编纂。"
+    "文章最后回顾了近代以来的研究史，指出版本考证与文体研究相结合的必要性。"
 )
 
 # Modelica-style source code — passes via the short/absolute gate; the density rule must NOT
@@ -90,8 +112,22 @@ def test_catalog_is_garbage():
     assert v(rep(CATALOG_LINE, 150_000), book=True) == "garbage"
 
 
-def test_german_is_non_english():
-    assert v(rep(GERMAN, 10_000), book=False) == "non-english"
+def test_german_generic_is_off_topic():
+    assert v(rep(GERMAN, 10_000), book=False) == "off-topic"
+
+
+def test_german_building_ok():
+    assert v(rep(GERMAN_BUILDING, 10_000), book=False) == "ok"
+    assert v(rep(GERMAN_BUILDING, 150_000), book=True) == "ok"
+
+
+def test_chinese_building_ok():
+    assert v(rep(CHINESE_BUILDING, 10_000), book=False) == "ok"
+    assert v(rep(CHINESE_BUILDING, 150_000), book=True) == "ok"
+
+
+def test_chinese_generic_is_off_topic():
+    assert v(rep(CHINESE_OFFTOPIC, 10_000), book=False) == "off-topic"
 
 
 def test_thin():

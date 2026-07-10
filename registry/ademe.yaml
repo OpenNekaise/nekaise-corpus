@@ -1,0 +1,517 @@
+# ademe — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: adm-recommandations-pour-la-r-alisation-d-un-bilan-des-m
+    title: Recommandations pour la réalisation d'un bilan des émissions de gaz à effet
+      de serre dans les travaux publics — Guide-BEGES-Travaux-publics-013256
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=10623
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-d-carboner-votre-entreprise-artisanale-du-b-timent-q
+    title: 'Décarboner votre entreprise artisanale du bâtiment : quelles sont les bonnes
+      pratiques ? — Decarboner-entreprise-artisanale-batiment-bonnes-pratiques-'
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=10601
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-recommandations-pour-la-r-alisation-d-un-bilan-2
+    title: Recommandations pour la réalisation d'un bilan des émissions de gaz à effet
+      de serre d'une entreprise artisanale du bâtiment — Guide-BEGES-entreprise-
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=10622
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-d-terminants-du-besoin-de-climatisation-des-logement
+    title: Déterminants du besoin de climatisation des logements — ADEME - 2024 - Etude
+      de sensibilité paramétrique - FINALE
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=10479
+    source: ademe
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: adm-tout-comprendre-l-lectricit-photovolta-que
+    title: 'Tout comprendre : l''électricité photovoltaïque — guide-tout-comprendre-electricite-photovoltaique'
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=10482
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-comment-choisir-un-chauffage-au-bois
+    title: Comment choisir un chauffage au bois ? — guide-comment-choisir-chauffage-bois
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=10483
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-producing-housing-differently-the-economic-models
+    title: 'Producing housing differently: the economic models — ADEME - 2025 - Producing
+      housing differently Economic models - Synthesis - ENG'
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=10477
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-l-elu-et-les-d-chets-sauvages
+    title: L'Elu et ... les déchets sauvages — GUIDE-SYNTHETIQUE-ELUS-DECHETS-SAUVAGES-WEB
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=10500
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-rapport-d-activit-2025-repr-sentation-territoriale-d
+    title: Rapport d'activité 2025 - Représentation territoriale de l'ADEME en Polynésie
+      française — ADEME_PF_RA_2025
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9227
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-performance-des-syst-mes-de-refroidissement-des-cent
+    title: Performance des systèmes de refroidissement des centres de données et récupération
+      de chaleur fatale — Webinaire_national_systemes_refroidissement_et_
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9218
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-guide-2026-des-aides-aux-entreprises-pour-la-transit
+    title: Guide 2026 des aides aux entreprises pour la transition écologique en Guadeloupe,
+      à Saint-Barthélemy et à Saint-Martin. — ADEME-GA-AidesAuxEntreprises
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=10616
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-coop-r-no-les-projets-accompagn-s
+    title: Coop'Réno - les projets accompagnés — Newsletter 2026 - Coop réno ADEME  V5
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9168
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-cmcp-catalogue-de-modules-3d-et-syst-me-constructif-
+    title: CMCP - Catalogue de modules 3D et système constructif innovant — FRANCE_2030-CMCP_2026VEAok
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9153
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-macoretz-d-carbonation-des-activit-s-de-macoretz-sco
+    title: MACORETZ - Décarbonation des activités de Macoretz SCOP — FRANCE_2030-MACORETZ_2026VEA
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9156
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-activ-home-construction-hors-site-et-bas-carbone
+    title: ACTIV HOME - Construction Hors Site et Bas Carbone — FRANCE_2030-ACTIV HOME_2026VEAOK
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9152
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-auto-r-novation-accompagn-e-et-politiques-de-r-novat
+    title: Auto-Rénovation Accompagnée et Politiques de Rénovation — ADEME_Auto-Rénovation
+      Accompagnée_Recommandations pour l'action publique
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9144
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-r-novation-et-information-sur-la-performance-nerg-ti
+    title: Rénovation et information sur la performance énergétique pour les banques
+      — APLC_Renovation-et-donnees-post-travaux_Note technique
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9033
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-lave-d-veloppement-d-une-solution-bas-e-sur-les-nerg
+    title: LAVE - Développement d'une solution basée sur les énergies naturelles pour
+      performance énergétique et qualité de l'air intérieur — France_2030-LAVE_20
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9267
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-picpaco-d-veloppement-d-une-pompe-chaleur-et-climati
+    title: PiCPACO - Développement d'une pompe à chaleur et climatiseur au R718 — France_2030-PICPACO_2025-vf
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9271
+    source: ademe
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: adm-pasiv-syst-me-de-traitement-d-air-intelligent-hybrid
+    title: PASIV - Système de Traitement d'air Intelligent Hybride — France_2030-PASIV_2025-vf
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9270
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-pac-bas-carbone-d-veloppement-d-une-nouvelle-gamme-d
+    title: PAC Bas Carbone - Développement d'une nouvelle gamme de pompes à chaleur
+      fonctionnant au propane — France_2030-PAC bas carbone_2025-vf
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9269
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-pythagore-r-f-rencement-des-performances-du-b-ton-de
+    title: PYTHAGORE - Référencement des performances du béton de chanvre — France_2030-PYTHAGORE_2025-vf
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8836
+    source: ademe
+    license: open
+    topic: materials
+    format: pdf
+  - id: adm-panel-usages-lectrodomestiques-ann-e-6
+    title: Panel usages électrodomestiques année 6 — Rapport-Panel-Elecdom-An6_2026
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8837
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-ne-c-c-ite-d-veloppement-de-l-isolation-thermique-ex
+    title: NE-C-C'ITE - Développement de l'isolation Thermique Extérieure en Béton de
+      Chanvre — France_2030-NE-C-C'ITE_2025-vf
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8834
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-pop-2030-massification-pour-augmenter-l-utilisation-
+    title: POP 2030 - Massification pour augmenter l'utilisation de la paille en construction
+      en 2030 — France_2030-POP 2030_2025-vf
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8835
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-bois-paille-hva-d-veloppement-d-ossatures-bois-paill
+    title: BOIS PAILLE HVA - Développement d'ossatures bois-paille à haute valeur ajoutée
+      — France_2030-BOIS PAILLE HVA_2026_okEA
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8820
+    source: ademe
+    license: open
+    topic: materials
+    format: pdf
+  - id: adm-sprinter-num-risation-pr-fabrication-automatisation-
+    title: SPRINTER - Numérisation, préfabrication, automatisation de la rénovation/construction
+      biosourcée — France_2030-SPRINTER_2026_VEA
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8823
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-g-othermie-sur-sondes-pour-le-p-le-sant-savign-sur-l
+    title: Géothermie sur sondes pour le Pôle santé à Savigné sur Lathan (37) — REX
+      Pôle de santé Savigné sur Lathan
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8819
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-booa-3d-indus-industrialisation-hors-site-innovante-
+    title: BOOA 3D INDUS - Industrialisation, hors-site innovante, logements collectifs,
+      modules 3D, neuf et rénovation — FRANCE_2030-BOOA_3D_2026VEa
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8829
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-ufobac-isolation-industrialis-e-de-fa-ades-ossature-
+    title: UFOBAC - Isolation industrialisée de Façades Ossature Bois en béton de Chanvre
+      — France_2030-UFOBAC_2026_BC
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8824
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-urban-lite-construire-la-ville-sur-la-ville-en-hors-
+    title: URBAN LITE - Construire la ville sur la ville, en hors-site — France_2030-URBAN
+      LITE_2026_IC_VEA
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8825
+    source: ademe
+    license: open
+    topic: urban
+    format: pdf
+  - id: adm-biostructures-industrialisation-de-syst-mes-construc
+    title: BIOSTRUCTURES - Industrialisation de systèmes constructifs biosourcés bois
+      & chanvre — FRANCE_2030-BIOSTRUCTURES_2026VEA
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8827
+    source: ademe
+    license: open
+    topic: materials
+    format: pdf
+  - id: adm-lab-hors-site-isolation-thermique-ext-rieure-par-fa-
+    title: LAB' HORS SITE - Isolation Thermique Extérieure par Façade Ossature Bois
+      active paille — France_2030-LAB'HORS SITE_2026_VEA
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8822
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-bywall-syst-me-int-gr-global-de-r-novation-nerg-tiqu
+    title: BYWALL - Système intégré global de rénovation énergétique de façades — France_2030-BY
+      WALL_2026_BC
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8821
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-juliper-ligne-production-hors-site-blocs-innovants-i
+    title: JULIPER - Ligne production hors-site blocs innovants isolants économes —
+      France_2030-JULIPER_2026_Fiche LaureatVEA
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8828
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-enrico-elaboration-de-sc-narios-de-comportement-des-
+    title: ENRICO - Elaboration de scénaRIos de Comportement des Occupants — ENRICO_Etat
+      de l'art_v1
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8780
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-modernisation-compl-te-r-novation-nerg-tique-et-nerg
+    title: Modernisation complète, rénovation énergétique et énergie solaire — ILF-FTD-La
+      Truffiere-Gignac-013194
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8774
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-projet-actelos-accompagnement-la-transition-energ-ti
+    title: Projet ACTELOS - Accompagnement à la Transition Energétique dans le Logement
+      Social — 2026_ADEME_ACTELOS_Rapport Final
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8698
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-kallistyle-2-0-industrialisation-d-une-unit-de-produ
+    title: KALLISTYLE 2.0 - Industrialisation d'une unité de production bois hors-site
+      — France_2030-KALLISTYLE 2.0_2026
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8668
+    source: ademe
+    license: open
+    topic: materials
+    format: pdf
+  - id: adm-l-offre-ademe-aux-entreprises-2026
+    title: L'offre ADEME aux entreprises 2026 — Presentation-offre-ADEME-entreprises-062026
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=10556
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-tropicopro
+    title: Tropicopro — guide-tropicopro-pdf
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8523
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-portraits-de-tiers-lieux-engag-s-pour-la-transition-
+    title: Portraits de tiers-lieux engagés pour la transition écologique — Monographies
+      TLs transition écologique VF
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8506
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-prospective-d-volution-des-consommations-des-data-ce
+    title: Prospective d'évolution des consommations des data centers à court, moyen
+      et long terme de 2024 à 2060 — Prospective-evolution-consommations-DC-France
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8478
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-evaluation-par-la-mesure-des-dispositifs-existants-d
+    title: Evaluation par la mesure des dispositifs existants de rénovation PERformante
+      de Maisons INDividuelles, partie 2 — Lot 2- Perf in Mind 2 Campagne de me
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8349
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-b-tizoom-barom-tre-de-la-transition-cologique-du-b-t
+    title: 'BâtiZoom : Baromètre de la transition écologique du bâtiment en 2024 — BATIZOOM_210X240_V9_08122025'
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8306
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-guide-des-bonnes-pratiques-agricoles-pour-l-am-liora
+    title: Guide des bonnes pratiques agricoles pour l'amélioration de la qualité de
+      l'air — GuideBonnesPratiquesAgricoles_MaJ-2025_012788
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8310
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-comment-changer-de-chauffage
+    title: Comment changer de chauffage ? — guide-comment-changer-chauffage
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8225
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-54-logements-chauff-s-gr-ce-au-m-tro-neotoa-rennes-3
+    title: 54 logements chauffés grâce au métro - NEOTOA - Rennes (35) - Bretagne —
+      IlslontFait_NEOTOA Geothermie VF2
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8231
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-mod-le-uses-3
+    title: Modèle USES 3 — ADEME - 2025 - Notice USES 3 FINALE
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8160
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-onpe-tableau-de-bord-de-la-pr-carit-nerg-tique-novem
+    title: ONPE - Tableau de bord de la précarité énergétique - novembre 2025 — ONPE
+      Tableau de bord de la précarité énergétique 2025
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9022
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-the-french-climate-challenge
+    title: The French Climate Challenge — The-French-Climate-Challenge-013097
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8056
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-enerloc-repenser-le-chauffage-par-l-usage
+    title: 'ENERLOC : repenser le chauffage par l''usage — ENERLOC_RapportFinalPublic'
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=8005
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-parasisterre-tude-de-la-vuln-rabilit-sismique-des-st
+    title: PARASISTERRE - Étude de la vulnérabilité sismique des structures en pisé
+      avec et sans renforcement — France_2030-PARASISTERRE_2025-vf
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=7993
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-carac-terre-caract-risation-et-dimensionnement-acous
+    title: CARAC'TERRE - Caractérisation et dimensionnement acoustique des constructions
+      en terre crue — France_2030-CARAC'TERRE_2025-vf
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=7983
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-murterfeu-comportement-au-feu-de-murs-de-terre-crue
+    title: MURTERFEU - Comportement au feu de murs de terre crue — France_2030-MURTERFEU_2025-vf
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=7985
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-mobbe-massification-ossature-bois-isolant-biosourc-e
+    title: MOBBE - Massification Ossature Bois isolant Biosourcé en Enveloppe — France_2030-MOBBE_2025-vf-rel
+      EM
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=7984
+    source: ademe
+    license: open
+    topic: materials
+    format: pdf
+  - id: adm-la-fibre-tropicale-nouveaux-mat-riaux-isolants-bioso
+    title: 'LA FIBRE TROPICALE - Nouveaux matériaux isolants biosourcés et géosourcés
+      pour la construction en Guyane — France_2030-LA FIBRE TROPICALE_2025-vf-rel '
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=7982
+    source: ademe
+    license: open
+    topic: materials
+    format: pdf
+  - id: adm-march-s-et-emplois-concourant-la-transition-nerg-tiq
+    title: Marchés et emplois concourant à la transition énergétique, édition 2025 —
+      Etude-Marches-et-emplois-Methodo-Generale-2025
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=7946
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-mareno-garantie-offre-d-accompagnement-technique-et-
+    title: MARENO GARANTIE - Offre d'accompagnement technique et financier en copropriété
+      avec garantie de résultat énergétique — France_2030-MARENO_2025-vf
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=7894
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-evaluation-france-2030-innovations-technologiques-cl
+    title: Evaluation France 2030 - Innovations technologiques clés pour la décarbonation
+      du secteur de l'énergie — Synthese - Evaluation de France 2030 - Innova
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=10633
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-d-cryptage-17-paca-solaire-thermique-comment-r-habil
+    title: 'Décryptage 17 PACA : solaire thermique, comment réhabiliter vos installations
+      existantes ? — ADEMEPACA_D17_solairethermique_11062026'
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=10481
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-grande-centrale-solaire-thermique-de-la-ville-de-nar
+    title: Grande centrale solaire thermique de la ville de Narbonne (11) — REX_Solaire_Narbosol_Narbonne_013243
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9352
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-operat-bilan-des-d-clarations-2024-2025-et-enseignem
+    title: 'OPERAT : Bilan des déclarations 2024-2025 et enseignements sur la performance
+      énergétique du parc tertiaire — ADEME_Bilan_OPERAT_2026_v2'
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9319
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-tude-sur-la-gestion-des-comp-tences-en-lien-avec-l-e
+    title: Étude sur la gestion des compétences en lien avec l'efficacité énergétique
+      — Gestion-competences-DEE_art_28-6_ADEME
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9188
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-cethi-pour-le-collectif-d-veloppement-de-chauffe-eau
+    title: CETHI POUR LE COLLECTIF - Développement de chauffe-eau thermodynamiques (CETHI)
+      bas carbone pour le collectif — France_2030-CETHI POUR LE COLLECTIF_20
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9159
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-g-othermie-de-surface-une-nergie-performante-et-dura
+    title: 'Géothermie de surface : une énergie performante et durable pour les entreprises
+      — geothemie-surface-entreprise'
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9079
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: adm-observatoire-des-batteries-stationnaires
+    title: Observatoire des batteries stationnaires — observatoire-batteries-stationnaires-edition-2025
+    url: https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=9083
+    source: ademe
+    license: open
+    topic: building_energy
+    format: pdf

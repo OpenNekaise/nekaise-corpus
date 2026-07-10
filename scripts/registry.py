@@ -36,6 +36,12 @@ SHARDS = {
     "eud-": "deliverables.yaml",  # find_openaire (EU Horizon/H2020 project deliverables)
     "nst-": "nist.yaml",       # find_nist (NIST/NBS technical series via Crossref DOI prefix)
     "pat-": "patents.yaml",    # find_patents (Google Patents sitemap, building/HVAC CPC classes)
+    "wik-": "wiki.yaml",       # find_wiki (multilingual Wikipedia articles via langlinks/categories)
+    "doa-": "doaj.yaml",       # find_doaj (DOAJ open-access articles, all languages)
+    "sdz-": "austria.yaml",    # find_sdz (Austrian Stadt/Haus der Zukunft building-research reports, German)
+    "kit-": "kitopen.yaml",    # find_kitopen (KIT OAI repository, ddc:690 Bauwesen, German+English)
+    "adm-": "ademe.yaml",      # find_ademe (French energy-agency reports, librairie.ademe.fr)
+    "jpn-": "japan.yaml",      # find_japan (BRI kenken.go.jp + NILIM research reports, Japanese)
     "ibp-": "ibpsa.yaml",      # find_ibpsa (Building Simulation proceedings)
     "zen-": "zenodo.yaml",     # find_zenodo (open CC-licensed records)
     "ope-": "papers.yaml",     # find_sources OpenAlex backend

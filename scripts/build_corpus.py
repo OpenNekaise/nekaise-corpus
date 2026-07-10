@@ -89,28 +89,34 @@ def extract_for(fmt: str, data: bytes) -> str:
 def extract_pdf(data: bytes) -> str:
     from pypdf import PdfReader
 
-    reader = PdfReader(io.BytesIO(data))
-    parts = []
-    for i, page in enumerate(reader.pages):
-        try:
-            parts.append(page.extract_text() or "")
-        except Exception as e:  # keep going on a bad page
-            parts.append(f"[page {i} extract error: {e}]")
-    txt = "\n\n".join(parts).strip()
-    # pypdf glues words together on many legacy scans (OCR text layers without space glyphs:
-    # "ThermalAnalysisofEffect..."), which reads as non-English junk and got 259 good NBS docs
-    # pruned on 2026-07-09. When the output looks word-glued and poppler is available, re-extract
-    # with pdftotext (handles those spacing operators correctly) and keep the better result.
-    if txt and _word_glued(txt) and shutil.which("pdftotext"):
+    try:
+        reader = PdfReader(io.BytesIO(data))
+        parts = []
+        for i, page in enumerate(reader.pages):
+            try:
+                parts.append(page.extract_text() or "")
+            except Exception as e:  # keep going on a bad page
+                parts.append(f"[page {i} extract error: {e}]")
+        txt = "\n\n".join(parts).strip()
+    except Exception:  # broken xref/trailer — pypdf can't even open it; poppler usually can
+        txt = ""
+    # pdftotext (poppler) rescues two pypdf failure classes: (a) legacy scans whose OCR text layer
+    # has no space glyphs ("ThermalAnalysisofEffect...", 259 NBS docs wrongly pruned 07-09), and
+    # (b) CID-keyed CJK fonts where pypdf extracts NOTHING (413 Japanese NILIM PDFs, 07-10).
+    if shutil.which("pdftotext") and (len(txt) < 500 or _word_glued(txt)):
         alt = _pdftotext(data)
-        if alt and not _word_glued(alt):
+        if len(alt) > max(len(txt), 400) and not _word_glued(alt):
             return alt
     return txt
 
 
 def _word_glued(t: str) -> bool:
     head = t[:20_000]
-    return head.count(" ") / max(len(head), 1) < 0.05  # spaced English prose runs ~15-18%
+    if not head:
+        return False
+    if len(quality.CJK.findall(head)) / len(head) > 0.10:
+        return False  # CJK scripts don't space-separate — that's not gluing
+    return head.count(" ") / len(head) < 0.05  # spaced prose runs ~15-18%
 
 
 def _pdftotext(data: bytes) -> str:
@@ -228,7 +234,9 @@ def fetch_one(src: dict) -> dict:
             good = len(body) > 512 and (
                 body[:5] == b"%PDF-" if fmt == "pdf"
                 else (b"automated queries" not in body[:4000]
-                      and b"unusual traffic" not in body[:4000]))
+                      and b"unusual traffic" not in body[:4000]
+                      and b"Too many requests" not in body[:4000]
+                      and b"too many requests" not in body[:4000]))
             if good:
                 data, rec["http_status"] = body, 200
             else:

@@ -1,0 +1,968 @@
+# japan — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: jpn-bri-report-146-all
+    title: 建築研究報告 No.146 — 建築基準法に基づく構造方法基準の備えるべき要件と評価方法に関する研究
+    url: https://www.kenken.go.jp/japanese/contents/publications/report/146/146-all.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-report-147-all
+    title: 建築研究報告 No.147 — 鉄筋コンクリート造建築物のかぶり厚さ確保に関する研究
+    url: https://www.kenken.go.jp/japanese/contents/publications/report/147/6.pdf
+    source: bri_jp
+    license: open
+    topic: materials
+    format: pdf
+  - id: jpn-bri-report-149-all
+    title: 建築研究報告 No.149 — 内装材の燃焼拡大を含めた多層ゾーン建物内煙流動予測モデル
+    url: https://www.kenken.go.jp/japanese/contents/publications/report/149/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-report-150-all
+    title: 建築研究報告 No.150 — 応答スペクトルに基づく建築物の安全限界時応答評価と現行基準に関する研究
+    url: https://www.kenken.go.jp/japanese/contents/publications/report/150/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-report-152-all
+    title: 建築研究報告 No.152 — 建築物の耐火設計における火災リスク基盤の火災荷重の設定方法
+    url: https://www.kenken.go.jp/japanese/contents/publications/report/152/all.pdf
+    source: bri_jp
+    license: open
+    topic: architecture
+    format: pdf
+  - id: jpn-bri-report-153-all
+    title: 建築研究報告 No.153 — 建築物の浸水対策案の試設計に基づく その費用対効果に関する研究
+    url: https://www.kenken.go.jp/japanese/contents/publications/report/153/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-report-154-all
+    title: 建築研究報告 No.154 — リスク基盤の避難安全検証法に関する研究
+    url: https://www.kenken.go.jp/japanese/contents/publications/report/154/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-report-156-all
+    title: 建築研究報告 No.156 — JIS改正後のセメントを使用したコンクリートの性能に関する研究
+    url: https://www.kenken.go.jp/japanese/contents/publications/report/156/all.pdf
+    source: bri_jp
+    license: open
+    topic: materials
+    format: pdf
+  - id: jpn-nilim-2020-hp001
+    title: 国総研資料 2020 — 頭を柔らかく発想しましょう ～社会・技術の変化をリードしていくために～
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp001.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp002
+    title: 国総研資料 2020 — 巻頭クローズアップ
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp002.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp003
+    title: 国総研資料 2020 — 目 次
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp003.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp009
+    title: 国総研資料 2020 — 新しい道路ビジョンの実現に向けて
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp009.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp010
+    title: 国総研資料 2020 — 社会からの要請に応え得る建築基準や普及技術
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp010.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp011
+    title: 国総研資料 2020 — IoT・AIと住宅・建築物の防災
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp011.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp012
+    title: 国総研資料 2020 — 持続可能な都市、新たな価値を創造する都市をめざして
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp012.pdf
+    source: nilim_jp
+    license: open
+    topic: urban
+    format: pdf
+  - id: jpn-nilim-2020-hp015
+    title: 国総研資料 2020 — 空港の技術基準
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp015.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp016
+    title: 国総研資料 2020 — 社会資本マネジメント研究センターの取り組みと今後の展望
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp016.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp021
+    title: 国総研資料 2020 — ダムの長寿命化を支える健全度診断・モニタリング技術の開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp021.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp026
+    title: 国総研資料 2020 — 交通安全対策へのETC2.0プローブ情報の効果的な活用方法の提案
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp026.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp027
+    title: 国総研資料 2020 — 無電柱化事業のスピードアップに向けた調査・研究
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp027.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp028
+    title: 国総研資料 2020 — 洗掘被害を受けやすい既設橋梁の抽出方法の検討と台風第19号の被害橋梁への適用性に関する調査
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp028.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp029
+    title: 国総研資料 2020 — 道路舗装の長期性能に係る調査分析
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp029.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp030
+    title: 国総研資料 2020 — 防火・避難規定の合理化に向けた技術開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp030.pdf
+    source: nilim_jp
+    license: open
+    topic: architecture
+    format: pdf
+  - id: jpn-nilim-2020-hp031
+    title: 国総研資料 2020 — 地震を受けた拠点建築物の健全性迅速判定技術の開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp031.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2020-hp032
+    title: 国総研資料 2020 — 既存建築物の長寿命化改修を目的とした外装･防水層の長寿命化に資する既存RC部材の評価技術の開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp032.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp034
+    title: 国総研資料 2020 — 地震火災が通行可能性に与える影響
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp034.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2020-hp038
+    title: 国総研資料 2020 — 多様な入札契約方式の現場への適用支援と改善
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp038.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp043
+    title: 国総研資料 2020 — 新しい木質材料を活用した混構造建築物の設計・施工技術の開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp043.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2020-hp044
+    title: 国総研資料 2020 — 公共賃貸住宅の建設事業に適したBIMモデルの開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp044.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp048
+    title: 国総研資料 2020 — ICT活用工事の対象工種・適用技術等に関する研究
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp048.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp049
+    title: 国総研資料 2020 — i-Constructionの推進
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp049.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp053
+    title: 国総研資料 2020 — 建築物のエネルギー消費性能の向上を目指したファサード設計法に関する研究
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp053.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp054
+    title: 国総研資料 2020 — 多様化する生活支援機能を踏まえた都市構造の分析・評価技術の開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp054.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2020-hp062
+    title: 国総研資料 2020 — 災害時の技術支援活動状況及びTEC-FORCE等専門家派遣
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp062.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp063
+    title: 国総研資料 2020 — 令和元年房総半島台風及び東日本台風等による災害の緊急調査
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp063.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp067
+    title: 国総研資料 2020 — 地震で被災した道路橋の早期復旧を図るための研究
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp067.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2020-hp069
+    title: 国総研資料 2020 — 剥離の生じたタイル仕上げ押出成形セメント板の補修技術の研究
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp069.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp071
+    title: 国総研資料 2020 — シンガポールにおける新技術導入を促進する制度に関する調査
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp071.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp074
+    title: 国総研資料 2020 — 強震モニタリングシステムの開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp074.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp078
+    title: 国総研資料 2020 — 技術連携
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp078.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp079
+    title: 国総研資料 2020 — 国際研究活動
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp079.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2020-hp080
+    title: 国総研資料 2020 — 国総研研究報告・資料・プロジェクト研究報告リスト
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2020report/ar2020hp080.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2021-hp002
+    title: 国総研資料 2021 — 巻頭クローズアップ
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp002.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2021-hp003
+    title: 国総研資料 2021 — 目 次
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp003.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2021-hp009
+    title: 国総研資料 2021 — 国土強靱化に向けた道路構造物研究部の取り組み
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp009.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2021-hp010
+    title: 国総研資料 2021 — 社会からの要請に知識・経験・知恵を結集し応える
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp010.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2021-hp014
+    title: 国総研資料 2021 — 港湾を取り巻く社会経済情勢と研究動向
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp014.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2021-hp016
+    title: 国総研資料 2021 — 社会資本マネジメント研究センターの取り組みとDXに向けた今後の展望
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp016.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2021-hp021
+    title: 国総研資料 2021 — ダム施設の効果的な維持管理のためのリスク構造の可視化の試み
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp021.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2021-hp026
+    title: 国総研資料 2021 — コンクリート床版橋の保全に関する共同研究
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp026.pdf
+    source: nilim_jp
+    license: open
+    topic: materials
+    format: pdf
+  - id: jpn-nilim-2021-hp027
+    title: 国総研資料 2021 — 盛土・切土等の要求性能に対応した管理手法の調査検討
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp027.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2021-hp031
+    title: 国総研資料 2021 — 建築物の外装・防水層の長寿命化改修に資する既存RC部材の評価技術の開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp031.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2021-hp032
+    title: 国総研資料 2021 — 非住宅建築物の防火性能の高度化に資する新しい性能評価指標及び評価プログラムの開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp032.pdf
+    source: nilim_jp
+    license: open
+    topic: architecture
+    format: pdf
+  - id: jpn-nilim-2021-hp036
+    title: 国総研資料 2021 — 老朽宅地擁壁の耐震化に資する技術開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp036.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2021-hp041
+    title: 国総研資料 2021 — ２次元ＣＡＤデータを用いた３次元モデル自動構築技術
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp041.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2021-hp043
+    title: 国総研資料 2021 — 新しい木質材料を活用した混構造建築物の設計・施工技術の開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp043.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2021-hp050
+    title: 国総研資料 2021 — 多様な入札契約方式を活用した新たな建設生産・管理システム
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp050.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2021-hp064
+    title: 国総研資料 2021 — 『建物用途規制緩和の運用実態とその解説』の刊行
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp064.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2021-hp075
+    title: 国総研資料 2021 — 災害時の技術支援活動状況及びTEC-FORCE等専門家派遣
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp075.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2021-hp085
+    title: 国総研資料 2021 — 技術連携
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp085.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2021-hp087
+    title: 国総研資料 2021 — 国総研研究報告・資料・プロジェクト研究報告リスト
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2021report/ar2021hp087.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp001
+    title: 国総研資料 2022 — 技術政策を総合的に研究する
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp001.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp003
+    title: 国総研資料 2022 — 目 次
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp003.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp009
+    title: 国総研資料 2022 — 多発する道路災害への技術支援
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp009.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp010
+    title: 国総研資料 2022 — 社会的ニーズの変化に応える建築研究
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp010.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp011
+    title: 国総研資料 2022 — 建物の維持管理・運用におけるＢＩＭ活用
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp011.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp016
+    title: 国総研資料 2022 — インフラ分野のDXの推進に向けた社会資本マネジメント研究センターの取組み
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp016.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp018
+    title: 国総研資料 2022 — 危機管理型ハード対策を上回る効果を有する粘り強い堤防の開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp018.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp024
+    title: 国総研資料 2022 — 橋梁の流出や洗掘に対する被災可能性の判定方法及び対策方法の開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp024.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp025
+    title: 国総研資料 2022 — 大型ボックスカルバートの耐震性照査手法の開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp025.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2022-hp026
+    title: 国総研資料 2022 — 近年施工されたコンクリート舗装の調査および分析
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp026.pdf
+    source: nilim_jp
+    license: open
+    topic: materials
+    format: pdf
+  - id: jpn-nilim-2022-hp030
+    title: 国総研資料 2022 — 非住宅建築物の防火性能の高度化に資する新しい性能指標および評価プログラムの開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp030.pdf
+    source: nilim_jp
+    license: open
+    topic: architecture
+    format: pdf
+  - id: jpn-nilim-2022-hp035
+    title: 国総研資料 2022 — 『密集市街地におけるきめ細かな整備事例集』の刊行
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp035.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp039
+    title: 国総研資料 2022 — 災害復旧における入札契約方式の適用手法
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp039.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp043
+    title: 国総研資料 2022 — 新しい木質材料を活用した混構造建築物の設計・施工技術の開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp043.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2022-hp053
+    title: 国総研資料 2022 — 詳細設計のための3次元モデル成果物作成要領の策定
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp053.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp055
+    title: 国総研資料 2022 — 安全・安心な生活道路形成に資する「物理的デバイス」普及のための技術開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp055.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp056
+    title: 国総研資料 2022 — 無電柱化の更なるコスト縮減とスピードアップに向けて
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp056.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp071
+    title: 国総研資料 2022 — 災害時の技術支援活動状況及びTEC-FORCE等専門家派遣
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp071.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp077
+    title: 国総研資料 2022 — ダムの安全管理におけるAIの活用－維持管理の質を高める現場支援技術の開発－
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp077.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp079
+    title: 国総研資料 2022 — 公共賃貸住宅ストックでの活用を想定したBIMモデルの開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp079.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp081
+    title: 国総研資料 2022 — 省エネ基準申請データを活用した建築外皮・設備設計仕様の実態解明
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp081.pdf
+    source: nilim_jp
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: jpn-nilim-2022-hp083
+    title: 国総研資料 2022 — 技術連携
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp083.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp084
+    title: 国総研資料 2022 — 国際研究活動
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp084.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2022-hp085
+    title: 国総研資料 2022 — 国総研研究報告・資料・プロジェクト研究報告リスト
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2022report/ar2022hp085.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp002
+    title: 国総研資料 2023 — 巻頭クローズアップ
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp002.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp003
+    title: 国総研資料 2023 — 目 次
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp003.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp009
+    title: 国総研資料 2023 — より効率的なインフラ管理に向けて
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp009.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp010
+    title: 国総研資料 2023 — カーボンニュートラルの実現に向けた建築研究部の取り組み
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp010.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp011
+    title: 国総研資料 2023 — 住宅・建築物の省エネルギー対策の加速化に向けた取り組み
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp011.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp012
+    title: 国総研資料 2023 — スマート技術を活用した人間中心のコンパクトなまちづくりに向けて
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp012.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp016
+    title: 国総研資料 2023 — 自然・社会条件の変化をふまえた社会資本マネジメント研究センターの取組
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp016.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp017
+    title: 国総研資料 2023 — AI等新技術を活用した堤防点検の効率化に向けた取組
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp017.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp024
+    title: 国総研資料 2023 — 地震直後における構造物被害の規模感を把握するための研究
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp024.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2023-hp026
+    title: 国総研資料 2023 — 非住宅建築物の防火性能の高度化に資する新しい性能指標および評価プログラムの開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp026.pdf
+    source: nilim_jp
+    license: open
+    topic: architecture
+    format: pdf
+  - id: jpn-nilim-2023-hp027
+    title: 国総研資料 2023 — 災害後における居住継続のための自立型エネルギーシステムの設計目標
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp027.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp032
+    title: 国総研資料 2023 — 空港地盤改良工事における隆起量管理方法
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp032.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp041
+    title: 国総研資料 2023 — 多様な入札・契約方式の活用と改善への取組
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp041.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp042
+    title: 国総研資料 2023 — コンクリート躯体工施工現場の労働環境改善等に関する研究
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp042.pdf
+    source: nilim_jp
+    license: open
+    topic: materials
+    format: pdf
+  - id: jpn-nilim-2023-hp043
+    title: 国総研資料 2023 — 現場の環境変化を考慮した土木施工の安全対策の高度化に関する研究
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp043.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp052
+    title: 国総研資料 2023 — RC造共同住宅ストックの有効活用に向けてー構造性能を回復する２戸１化における補強技術の開発ー
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp052.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2023-hp064
+    title: 国総研資料 2023 — 災害時の技術支援活動状況及びTEC-FORCE等専門家派遣
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp064.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp068
+    title: 国総研資料 2023 — 道路橋メンテナンス技術者育成のための各地方整備局等との連携
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp068.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp073
+    title: 国総研資料 2023 — 技術連携
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp073.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2023-hp076
+    title: 国総研資料 2023 — 国総研研究報告・資料・プロジェクト研究報告リスト
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp076.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2024-hp002
+    title: 国総研資料 2024 — 研究開発成果の社会実装への橋渡しプログラム（BRIDGE）
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2024report/ar2024hp002.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2024-hp003
+    title: 国総研資料 2024 — 目 次
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2024report/ar2024hp003.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2024-hp009
+    title: 国総研資料 2024 — 道路構造物の戦略的なマネジメントサイクルの構築
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2024report/ar2024hp009.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2024-hp010
+    title: 国総研資料 2024 — ＲＣ造建築物の耐震レジリエンス性能の向上に向けて
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2024report/ar2024hp010.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2024-hp014
+    title: 国総研資料 2024 — 現場の課題、社会の課題
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2024report/ar2024hp014.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2024-hp015
+    title: 国総研資料 2024 — インフラ分野のDX、GXの推進に向けた社会資本マネジメント研究センターの取組み
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2024report/ar2024hp015.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2024-hp016
+    title: 国総研資料 2024 — 港湾情報化支援センターの新設
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2024report/ar2024hp016.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2024-hp017
+    title: 国総研資料 2024 — 高波浪に対して粘り強い海岸堤防の構造を考える -現場への実装に向けて-
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2024report/ar2024hp017.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2024-hp025
+    title: 国総研資料 2024 — 既存建築物の強風対策－屋根ふき材の耐風診断と耐風補強評価に関する研究
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2024report/ar2024hp025.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2024-hp050
+    title: 国総研資料 2024 — 既存事務庁舎ビルを対象としたZEB化改修計画作成の試行
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2024report/ar2024hp050.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2024-hp054
+    title: 国総研資料 2024 — のり面緑化における地域生態系の保全
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2024report/ar2024hp054.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2024-hp058
+    title: 国総研資料 2024 — 災害時の技術支援活動状況及びTEC-FORCE等専門家派遣
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2024report/ar2024hp058.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2024-hp065
+    title: 国総研資料 2024 — 直轄国道における舗装の供用性に関する分析
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2024report/ar2024hp065.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2024-hp067
+    title: 国総研資料 2024 — 技術連携
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2024report/ar2024hp067.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2024-hp069
+    title: 国総研資料 2024 — 国総研研究報告・資料・プロジェクト研究報告リスト
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2024report/ar2024hp069.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2025-hp003
+    title: 国総研資料 2025 — 令和6年能登半島地震における国総研の対応
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp003.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2025-hp004
+    title: 国総研資料 2025 — 目 次
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp004.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2025-hp010
+    title: 国総研資料 2025 — 地方整備局等と連携した道路構造物メンテナンス技術者の育成
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp010.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2025-hp011
+    title: 国総研資料 2025 — 社会のこれからをつくる建築研究の取組
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp011.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2025-hp012
+    title: 国総研資料 2025 — 住宅・建築物のストック改修・活用を通じた社会ニーズ対応の取り組み
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp012.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2025-hp015
+    title: 国総研資料 2025 — 空港に関する最新研究の紹介と次世代研究者の育成に向けて
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp015.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2025-hp017
+    title: 国総研資料 2025 — 港湾分野のインフラＤＸ・ｉ－Ｃｏｎｓｔｒｕｃｔｉｏｎの推進
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp017.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2025-hp018
+    title: 国総研資料 2025 — 官民連携した越水に対して粘り強い河川堤防構造の開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp018.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2025-hp025
+    title: 国総研資料 2025 — 「道路の移動等円滑化に関するガイドライン」の改定に向けた研究 ～踏切道における視覚障害者の誘導表示の設置方法に関する評価実験～
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp025.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2025-hp026
+    title: 国総研資料 2025 — 洗掘による道路土工構造物の被災メカニズムを踏まえた被災リスクの評価方法
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp026.pdf
+    source: nilim_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-nilim-2025-hp039
+    title: 国総研資料 2025 — 既存オフィスビル等を対象とした省エネ改修効果評価手法の開発
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp039.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2025-hp041
+    title: 国総研資料 2025 — 技術提案・交渉方式の適用拡大に向けた検討
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp041.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2025-hp043
+    title: 国総研資料 2025 — ICT活用工事の適用拡大-３次元計測技術の推進
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp043.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2025-hp054
+    title: 国総研資料 2025 — マンション外断熱改修事例の居住者による効果の評価
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp054.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2025-hp061
+    title: 国総研資料 2025 — 被災した上下水道施設の早期復旧及び上下水道一体となった復旧手法の技術的支援
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp061.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2025-hp064
+    title: 国総研資料 2025 — 道路橋の定期点検要領の改定に伴った技術情報の充実
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp064.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2025-hp072
+    title: 国総研資料 2025 — 技術連携
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp072.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-nilim-2025-hp074
+    title: 国総研資料 2025 — 国総研研究報告・資料・プロジェクト研究報告リスト
+    url: https://www.nilim.go.jp/lab/bcg/siryou/2025report/ar2025hp074.pdf
+    source: nilim_jp
+    license: open
+    topic: building_energy
+    format: pdf

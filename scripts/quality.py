@@ -23,8 +23,24 @@ DOMAIN = re.compile(
     r"fatigue|fracture|composite|civil|infrastructur|survey|geomat|\bbim\b|\bifc\b|hydraul|"
     r"drainag|culvert|fire|egress|sprinkler|smoke|osha|material|coating|polymer|elastic|"
     r"plastic|urban|zoning|transport|highway|traffic|wastewater|geolog|hazard|flood|"
-    r"coastal|levee", re.I)
+    r"coastal|levee|"
+    # multilingual built-environment vocabulary (corpus went all-language 2026-07-09):
+    # German / French / Spanish-Portuguese / Italian / Dutch / Nordic (Latin script)
+    r"gebäude|bauwesen|baustoff|beton|heizung|lüftung|dämmung|tragwerk|brandschutz|mauerwerk|"
+    r"stahlbau|holzbau|energieeffizien|wärme|bauteil|"
+    r"bâtiment|chauffage|climatisation|génie civil|charpente|maçonnerie|béton|isolation|"
+    r"edificio|edifício|hormigón|concreto|calefacción|construcción|construção|estructura|"
+    r"estrutura|albañiler|cimentación|edilizia|calcestruzzo|riscaldamento|impianti|muratura|"
+    r"gebouw|verwarming|bouwkunde|byggnad|uppvärmning|bygning|rakennus|"
+    # Russian / Ukrainian (Cyrillic)
+    r"здани|бетон|отоплен|вентиляц|строительств|фундамент|теплоснабжен|конструкци|"
+    # Chinese (simplified + traditional), Japanese, Korean — matched as substrings
+    r"建筑|建築|结构|構造|混凝土|钢筋|鋼筋|暖通|空调|空調|供热|供暖|采暖|通风|換気|通風|"
+    r"节能|節能|省エネ|保温|保溫|断熱|隔热|锅炉|鍋爐|制冷|製冷|冷凍|桥梁|橋梁|隧道|"
+    r"钢结构|鋼結構|鉄骨|抗震|耐震|岩土|地基|施工|工程|造价|给排水|排水|市政|城市规划|"
+    r"都市計画|コンクリート|建材|건축|구조|공조|난방|단열|콘크리트", re.I)
 EN = re.compile(r"\b(the|and|of|to|in|is|for|that|with|are|this|be|as|by|on|from)\b", re.I)
+CJK = re.compile(r"[一-鿿㐀-䶿぀-ヿ가-힯]")
 
 # Long book-like docs are judged over a 100k-char window: their first 20k chars are front matter
 # (title pages, TOC dot-leaders, OCR noise) that fails alpha-ratio checks and under-represents the
@@ -35,7 +51,6 @@ BOOK_MIN_CHARS = 120_000
 BOOK_MIN_DENSITY = 8.0
 SHORT_MIN_HITS = 10
 MIN_ALPHA = 0.55
-MIN_EN_RATIO = 0.04
 
 
 def body(text: str) -> str:
@@ -47,8 +62,9 @@ def _window(t: str) -> dict:
     words = re.findall(r"[A-Za-z]{2,}", t)
     return {
         "chars": len(t.strip()),
-        "alpha": round(sum(c.isalpha() for c in t) / len(t), 6) if t else 0.0,
+        "alpha": round(sum(c.isalpha() for c in t) / len(t), 6) if t else 0.0,  # CJK isalpha ✓
         "words": len(words),
+        "cjk": len(CJK.findall(t)),  # CJK scripts don't space-separate; ~2 chars ≈ 1 word
         "en": len(EN.findall(t)),
         "domain": len(DOMAIN.findall(t)),
     }
@@ -67,17 +83,19 @@ def is_booklike(sid: str, fmt: str) -> bool:
 
 
 def verdict(m: dict, book: bool) -> str:
+    # The corpus is ALL-LANGUAGE (2026-07-09): there is deliberately no non-English kill — the
+    # DOMAIN vocabulary covers the major languages, so any language passes if it's on-topic.
+    # CJK text has no space-separated words; cjk//2 approximates its word count.
     is_book = book and m["total"] > BOOK_MIN_CHARS
     w = m["w100"] if is_book else m["w20"]
+    eff_words = w["words"] + w.get("cjk", 0) // 2
     if w["chars"] < 2000:
         return "thin"
     if w["alpha"] < MIN_ALPHA:
         return "garbage"
-    if w["words"] < 200:
+    if eff_words < 200:
         return "thin"
-    if w["en"] / w["words"] < MIN_EN_RATIO:
-        return "non-english"
-    density = 1000 * w["domain"] / w["words"]
+    density = 1000 * w["domain"] / eff_words
     if (density < BOOK_MIN_DENSITY) if is_book else (w["domain"] < SHORT_MIN_HITS):
         return "off-topic"
     return "ok"

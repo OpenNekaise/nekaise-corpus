@@ -12,21 +12,20 @@ hand as `/dig` any time you want to grow the corpus in one shot.
 
 ## The round (run outside any sandbox — needs network)
 
-1. **Discover — every backend, append straight in:**
+1. **Discover — every backend. Page/offset/bucket pointers come from the COMMITTED excavation
+   state** (`registry/rotation.json` via `scripts/rotation.py`) so any agent on any machine resumes
+   where the last one stopped. Pattern per backend: read the pointer → run → advance on success:
    ```
-   python scripts/find_sources.py --per 20 --append   # OpenAlex / OSTI / arXiv papers + gov reports
-   python scripts/find_github.py --append             # curated GitHub repos: READMEs + docs/*.md + *.rst
-   python scripts/find_osti.py --rows 50 --pages 2 --page <N> --append    # deep OSTI (rotate N deeper)
-   python scripts/find_archive.py --rows 30 --page <N> --append           # pre-1929 PD texts (rotate N)
-   python scripts/find_books.py --per 25 --depth 25 --offset <N*25> --append  # OAPEN CC-BY books
-   python scripts/find_openaire.py --rows 50 --page <N> --append          # EU Horizon/H2020 deliverables (rotate N)
-   python scripts/find_nist.py --rows 50 --page <N> --append              # NIST/NBS tech series via Crossref (rotate N)
-   python scripts/find_ibpsa.py --conf bs --year <Y> --append             # IBPSA proceedings (biennial: 2023, 2021, …)
-   python scripts/find_zenodo.py --page <N> --max 100 --append            # Zenodo CC records (rate-limited; modest)
-   python scripts/find_patents.py --bucket <YYYY-WNN> --append            # US patents (Google sitemap; rotate weeks/years)
+   python scripts/find_osti.py --rows 50 --pages 2 $(python scripts/rotation.py next find_osti) --max 400 --append \
+     && python scripts/rotation.py advance find_osti
    ```
-   All dedup against `manifest.jsonl` + the registry + the `pruned_urls.txt` blocklist before
-   appending, so re-running is safe and never re-churns pruned material.
+   Backends (same pattern): `find_osti` (deep OSTI) · `find_archive` (pre-1929 PD texts) ·
+   `find_books` (OAPEN books, ALL languages) · `find_openaire` (EU deliverables) · `find_nist`
+   (NIST/NBS via Crossref) · `find_zenodo` (CC records; keep `--max 100`) · `find_patents`
+   (US patents via Google sitemap — the biggest open vein) · `find_wiki` (multilingual Wikipedia).
+   Plus non-rotating: `find_sources.py --per 20 --append`, `find_github.py --append` (head mostly
+   mined out). `find_ibpsa` is PAUSED (see rotation.json note). All backends dedup against
+   `manifest.jsonl` + the registry + `pruned_urls.txt` before appending — re-running is safe.
 
 2. **Widen (judgment — the part a human/agent adds over the scripts):** spend a little of the budget
    looking for *new veins*, not just more of the head:

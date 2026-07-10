@@ -2,11 +2,14 @@
 
 **Mission:** find *all* the open **built-environment / AEC** knowledge on the internet — architecture,
 engineering & construction, plus civil infrastructure, structures, geotechnical, building materials,
-building-energy/HVAC, transportation, water, fire, and urban systems — and make it reproducibly
-fetchable for LLM training & evaluation. (Started as a building-energy corpus; scope widened to the
-whole built environment in round 7.) This repo is the **curation + the machinery + the provenance** —
-it never holds the data bytes. You, a coding agent (Claude Code / Codex), are the **operator**: you
-run the loop that fetches the seed corpus and grows it.
+building-energy/HVAC, transportation, water, fire, and urban systems — **in ANY language** (the
+quality gate's DOMAIN vocabulary covers zh/ja/ko/de/fr/es/pt/it/nl/nordic/ru alongside English) —
+and make it reproducibly fetchable for LLM training & evaluation. This repo is the **curation + the
+machinery + the provenance** — it never holds the data bytes. You, a coding agent (Claude Code /
+Codex), are the **operator**: you run the loop that fetches the seed corpus and grows it. The loop's
+excavation state (which page/bucket each backend mines next) is COMMITTED in
+`registry/rotation.json` — read/advance it via `scripts/rotation.py`, so any operator on any
+machine resumes exactly where the last one stopped.
 
 ## Repo layout
 
@@ -15,6 +18,7 @@ run the loop that fetches the seed corpus and grows it.
 | `registry/` | The **registry** — one entry per source (`id` · `title` · `url` · `source` · `license` · `topic` · `format`), sharded per vein: `curated.yaml` (hand-picked — edit this to grow) + machine shards (`books` · `papers` · `reports` · `github` · `archive` · `crawl`), routed by id prefix (`scripts/registry.py`). |
 | `manifest.jsonl` | The **provenance + reproducibility record** — url, license, topic, sha256, bytes for every fetched doc. |
 | `pruned_urls.txt` | **Blocklist** of URLs the quality gate dropped — finders dedup against it so discovery never re-churns pruned material. |
+| `registry/rotation.json` | **Excavation state** — the next page/offset/bucket per backend, advanced by `scripts/rotation.py` after each successful run. Committed, so the growth loop is resumable by anyone. |
 | `scripts/` | The **machinery** — loader, discovery backends, quality gate, cron/marathon runners. All run from the repo root: `python scripts/<x>.py`. |
 | `.claude/skills/` | The **skills** — step-by-step playbooks for each loop (`go` · `load-corpus` · `find-sources` · `crawl-docs` · `dig`). Claude Code picks them up natively; Codex: read the `SKILL.md` files directly. |
 | `workspace/` | **Your scratch space** (git-ignored). One-off helper scripts, notes, dumps go here — never the repo root. Promote durable tools into `scripts/`. |
@@ -28,12 +32,17 @@ durable code goes in `scripts/`; experiments go in `workspace/`.
 
 `scripts/build_corpus.py` is the **loader**: reads the registry → downloads into `raw/<source>/` →
 extracts plain text into `text/<id>.md` → records sha256 + metadata in `manifest.jsonl`. Idempotent;
-dedups by sha256; parallel (`--workers`, ≤2 in-flight per host). The discovery backends
-(`find_sources.py` OpenAlex/OSTI/arXiv · `find_github.py` curated repos + source code ·
-`find_osti.py` deep OSTI · `find_books.py` OAPEN CC-BY books · `find_archive.py` pre-1929
-public-domain engineering texts from the Internet Archive · `crawl_docs.py` doc sites) propose
-registry entries; `prune_corpus.py --apply` is the quality gate. URLs the pruner drops land in
-`pruned_urls.txt` (committed) and every finder skips them — rounds never re-churn pruned material.
+dedups by sha256; parallel (`--workers`, ≤2 in-flight per host); PDF downloads are magic-byte
+checked, and a curl fallback rides over WAF/TLS-fingerprint walls (403/429/503). The discovery
+backends (`find_sources.py` OpenAlex/OSTI/arXiv · `find_github.py` curated repos + source code ·
+`find_osti.py` deep OSTI · `find_books.py` OAPEN books, all languages · `find_archive.py` pre-1929
+public-domain texts (Internet Archive) · `find_openaire.py` EU project deliverables · `find_nist.py`
+NIST/NBS via Crossref · `find_zenodo.py` CC-licensed records · `find_patents.py` US patents via the
+Google Patents sitemap (the biggest open vein) · `find_wiki.py` multilingual Wikipedia ·
+`find_ibpsa.py` (paused — see rotation.json) · `crawl_docs.py` doc sites) propose registry entries;
+`prune_corpus.py --apply` is the quality gate (logic in `scripts/quality.py`, golden-tested in
+`tests/`). URLs the pruner drops land in `pruned_urls.txt` (committed) and every finder skips them —
+rounds never re-churn pruned material.
 
 ## The operating loop
 

@@ -7,8 +7,8 @@ external; MDPI Books are Cloudflare-blocked from most hosts). Built-environment 
 dense, cleanly-licensed vein (whole books, hundreds of pages of prose = CPT gold).
 
 This backend PAGINATES the OAPEN REST search across many built-env subjects (offset 0, per, 2·per, …
-up to --depth), keeps English books with a direct PDF bitstream whose license is CC-BY / CC-BY-SA /
-CC0, and inserts ready-to-load registry entries.
+up to --depth), keeps books (ANY language since 2026-07-09) with a direct PDF bitstream whose license is
+CC-BY / CC-BY-SA / CC0, and inserts ready-to-load registry entries.
 
 License is NOT in the REST metadata — it lives in the OAI-PMH `xoai` record as a
 creativecommons.org/licenses/<code> URL. We keep ONLY `by` / `by-sa` / `publicdomain/zero`; ANY `nc`
@@ -92,6 +92,14 @@ QUERIES = [
     ("disaster risk reduction", "infrastructure"), ("geodesy surveying", "infrastructure"),
     ("remote sensing", "infrastructure"), ("geographic information systems", "infrastructure"),
     ("life cycle assessment building", "standards_protocols"), ("embodied carbon", "standards_protocols"),
+    # native-language queries (all-language corpus since 2026-07-09) — OAPEN subject search is
+    # language-literal, so non-English books need non-English terms
+    ("Gebäude", "building_energy"), ("Bauwesen", "construction"), ("Architektur", "architecture"),
+    ("Stadtplanung", "urban"), ("Baugeschichte", "architecture"), ("Denkmalpflege", "architecture"),
+    ("architettura", "architecture"), ("edilizia", "construction"), ("urbanistica", "urban"),
+    ("architecture urbaine", "urban"), ("patrimoine architectural", "architecture"),
+    ("arquitectura", "architecture"), ("urbanismo", "urban"), ("construcción", "construction"),
+    ("arquitetura", "architecture"), ("stedenbouw", "urban"), ("architectuur", "architecture"),
 ]
 
 
@@ -103,11 +111,12 @@ def pdf_link(item) -> str | None:
     return None
 
 
-def is_english_book(item) -> bool:
+def is_book(item) -> bool:
+    # ALL LANGUAGES kept since 2026-07-09 (the quality gate's DOMAIN vocabulary is multilingual);
+    # only the document TYPE is filtered here.
     md = item.get("metadata") or []
     typ = " ".join(m["value"] for m in md if m.get("key") == "dc.type").lower()
-    lang = " ".join(m["value"] for m in md if m.get("key") == "dc.language").lower()
-    return ("book" in typ) and (not lang or "english" in lang or lang.strip() in ("en", "eng"))
+    return "book" in typ
 
 
 def license_of(handle: str) -> str | None:
@@ -178,7 +187,7 @@ def main() -> None:
                 u, t = url.rstrip("/"), registry.norm(title)
                 if u in urls or t in titles or u in seen:
                     continue  # dedup BEFORE the (costly) license lookup
-                if not is_english_book(it):
+                if not is_book(it):
                     continue
                 lic = license_of(handle)
                 time.sleep(0.2)  # be polite to the OAI-PMH endpoint

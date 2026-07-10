@@ -1,0 +1,79 @@
+{
+  "_readme": "Shared excavation state for the discovery loop — read/advance via scripts/rotation.py. Committed so any agent/machine resumes where the last one stopped. History of what is already mined lives in git log + manifest.jsonl.",
+  "find_osti": {
+    "flag": "--page",
+    "next": 33,
+    "step": 2,
+    "note": "run with --rows 50 --pages 2; ~200k records/query universe"
+  },
+  "find_archive": {
+    "flag": "--page",
+    "next": 5,
+    "step": 1,
+    "note": "pre-1929 public-domain texts; rows 30"
+  },
+  "find_books": {
+    "flag": "--offset",
+    "next": 25,
+    "step": 25,
+    "note": "OAPEN all-language since 2026-07-09 (offsets 0-350 were mined English-only before that; the all-language re-walk restarted at 0)"
+  },
+  "find_openaire": {
+    "flag": "--page",
+    "next": 4,
+    "step": 1,
+    "note": "vein thinning: p1=300, p2=109, p3=52"
+  },
+  "find_nist": {
+    "flag": "--page",
+    "next": 3,
+    "step": 1,
+    "note": "Crossref DOI prefix 10.6028; ~2k on-topic docs"
+  },
+  "find_zenodo": {
+    "flag": "--page",
+    "next": 3,
+    "step": 1,
+    "note": "rate-limited anonymous API — keep --max 100-150"
+  },
+  "find_patents": {
+    "flag": "--bucket",
+    "next": "2015-W52",
+    "note": "weekly buckets 1900..now walked BACKWARDS one ISO week per advance; already mined: 2017-2020 W01, 1925/1930/1935/1940 W01; yearly buckets exist only pre-1900"
+  },
+  "find_ibpsa": {
+    "flag": "--year",
+    "next": 2023,
+    "note": "PAUSED — rate-triggered sgcaptcha poisons bulk fetches; needs slow pacing (~1 req/2-3s) before re-enabling; bs series biennial 1985-2025"
+  },
+  "find_sdz": {
+    "flag": "--page",
+    "next": 6,
+    "step": 5,
+    "note": "run with --pages 5 per series; sdz ends ~p16, hdz ~p25; --series sdz|hdz (both mined in parallel from p1 on 2026-07-09)"
+  },
+  "find_ademe": {
+    "flag": "--page",
+    "next": 5,
+    "step": 4,
+    "note": "run with --pages 4; categories: 3153-batiment (504 results, mined p1-4), 3149-energies (p1-2), 3509-urbanisme (untouched); license=open (non-commercial reuse w/ attribution)"
+  },
+  "find_kitopen": {
+    "flag": "--token",
+    "next": "Z0S-kO3C1STvRnkV",
+    "step": 0,
+    "note": "MANUAL pointer: each run prints '# next-token: <t>' — paste it here ('END' = ddc:690 set exhausted, 9,346 records total, ~26% pass the fail-closed CC filter). Do NOT use rotation.py advance for this one."
+  },
+  "find_japan": {
+    "flag": "--start",
+    "next": 2014,
+    "step": -6,
+    "note": "MANUAL-ish: nilim years 2020-2025 mined 07-09 (next: --series nilim --start 2014 --count 6); bri reports 139-158 mined (new reports appear at the top: retry --start 157 occasionally); bri 1-138 have no PDFs; 建築研究資料 series (data.html, up to No.214) is an UNMINED sibling vein"
+  },
+  "find_wiki": {
+    "flag": "--depth",
+    "next": 2,
+    "step": 1,
+    "note": "category mode: depth 1 x lang-cap 250 mined 07-09 for zh,de,fr,ja,es,ru,ko,it; next round try --depth 2 --lang-cap 400 (expect drift, gate handles); langlinks mode saturated for current curated set; --books zh done"
+  }
+}

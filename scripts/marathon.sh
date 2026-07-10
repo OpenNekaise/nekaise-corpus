@@ -38,22 +38,26 @@ while [ "$(date +%s)" -lt "$END" ]; do
   fi
   say "=== round $round (disk ${avail_kb}KB free) ==="
 
-  # deep OSTI harvest (the scale lever: 200k+ public-domain records/query) — rotate page deeper each round
-  python scripts/find_osti.py  --rows 50 --pages 2 --page $(( 1 + (round-1)*2 )) --max 400 --append >>"$LOG" 2>&1 || say "  find_osti FAILED"
-  # rotate the OAPEN offset deeper each round (search is ~20s/call → 1 page per subject per round)
-  python scripts/find_books.py --per 25 --depth 25 --offset $(( (round-1)*25 )) --max 200 --append >>"$LOG" 2>&1 || say "  find_books FAILED"
-  # pre-1929 public-domain engineering texts (Internet Archive) — rotate the search page each round
-  python scripts/find_archive.py --rows 30 --page "$round" --max 300 --append >>"$LOG" 2>&1 || say "  find_archive FAILED"
-  # EU Horizon/H2020 project deliverables (OpenAIRE) — rotate the search page each round
-  python scripts/find_openaire.py --rows 50 --page "$round" --max 300 --append >>"$LOG" 2>&1 || say "  find_openaire FAILED"
-  # NIST/NBS technical series via Crossref DOI prefix — rotate page deeper each round
-  python scripts/find_nist.py --rows 50 --page "$round" --max 300 --append >>"$LOG" 2>&1 || say "  find_nist FAILED"
-  # IBPSA Building Simulation proceedings — biennial bs series, walk backwards from 2023
-  python scripts/find_ibpsa.py --conf bs --year $(( 2025 - round*2 )) --max 600 --append >>"$LOG" 2>&1 || say "  find_ibpsa FAILED"
-  # Zenodo CC-licensed publications (rate-limited anonymous API — keep modest)
-  python scripts/find_zenodo.py --page "$round" --max 100 --append >>"$LOG" 2>&1 || say "  find_zenodo FAILED"
-  # Google Patents sitemap (public-domain US patents, building/HVAC titles) — walk weeks backwards
-  python scripts/find_patents.py --bucket "$(date -d "-$((round*7)) days" +%G-W%V 2>/dev/null || echo 2018-W01)" --max 400 --append >>"$LOG" 2>&1 || say "  find_patents FAILED"
+  # Every backend's next page/offset/bucket comes from the COMMITTED excavation state
+  # (registry/rotation.json via scripts/rotation.py) — any machine resumes where the last stopped.
+  run_finder() {  # run_finder <name> <fixed args...>: read pointer, run, advance on success
+    local name=$1; shift
+    local ptr
+    ptr=$(python scripts/rotation.py next "$name" 2>>"$LOG") || { say "  $name: no rotation entry"; return 1; }
+    if python "scripts/${name}.py" "$@" $ptr --append >>"$LOG" 2>&1; then
+      python scripts/rotation.py advance "$name" >>"$LOG" 2>&1
+    else
+      say "  $name FAILED (pointer not advanced)"
+    fi
+  }
+  run_finder find_osti     --rows 50 --pages 2 --max 400
+  run_finder find_books    --per 25 --depth 25 --max 200
+  run_finder find_archive  --rows 30 --max 300
+  run_finder find_openaire --rows 50 --max 300
+  run_finder find_nist     --rows 50 --max 300
+  run_finder find_zenodo   --max 100
+  run_finder find_patents  --max 400
+  # find_ibpsa is PAUSED (rate-triggered sgcaptcha) — see registry/rotation.json note
   if [ $(( (round-1) % 4 )) -eq 0 ]; then
     python scripts/find_sources.py --per 20 --append        >>"$LOG" 2>&1 || say "  find_sources FAILED"
     python scripts/find_github.py  --append                 >>"$LOG" 2>&1 || say "  find_github FAILED"
