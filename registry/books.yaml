@@ -63,13 +63,6 @@ sources:
     license: cc-by
     topic: materials
     format: pdf
-  - id: oer-timber-engineering
-    title: Timber Engineering
-    url: https://library.oapen.org/rest/bitstreams/500b5248-9818-42d6-a0b4-11a8427e46b1/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: materials
-    format: pdf
   - id: oer-high-performance-concrete-frontier-research
     title: Frontier Research on High Performance Concrete and Mechanical Properties
     url: https://library.oapen.org/rest/bitstreams/93b21b6e-4538-4253-8c87-2f09475aa4a7/retrieve
@@ -10556,28 +10549,6 @@ sources:
     license: cc-by
     topic: architecture
     format: pdf
-  - id: oer-roboter-f-r-assistenzfunktionen
-    title: Roboter für Assistenzfunktionen
-    url: https://library.oapen.org/rest/bitstreams/c5e3c61f-2ac5-499a-955f-d921d259de2a/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: construction
-    format: pdf
-  - id: oer-klimaeffizientes-bauen-baustoffe-und-bauweisen-21-sy
-    title: 'Klimaeffizientes Bauen - Baustoffe und Bauweisen: 21. Symposium Baustoffe
-      und Bauwerkserhaltung, Karlsruher Institut für Technologie (KIT), 01. April '
-    url: https://library.oapen.org/rest/bitstreams/e847fc4b-b5f2-48da-a527-fd6ed68eb8d2/retrieve
-    source: oapen
-    license: cc-by
-    topic: structures_civil
-    format: pdf
-  - id: oer-semantics-and-pragmatics-of-the-reflexive-verbs
-    title: Semantics and Pragmatics of the "Reflexive" Verbs
-    url: https://library.oapen.org/rest/bitstreams/f7a72bb0-4911-4b23-8228-30d7bb97cbb7/retrieve
-    source: oapen
-    license: cc-by
-    topic: building_energy
-    format: pdf
   - id: oer-progetto-streaming-strategie-di-mitigazione-e-gestio
     title: 'PROGETTO STREAMING - STRategiE di mitigazione e gestione dei rischi AMbientalI:
       casi di studio Nel territorio reGionale Toscano'
@@ -10585,20 +10556,6 @@ sources:
     source: oapen
     license: cc-by
     topic: equipment_systems
-    format: pdf
-  - id: oer-global-warming-in-local-discourses
-    title: Global Warming in Local Discourses
-    url: https://library.oapen.org/rest/bitstreams/7eac3729-3a90-49de-bb77-4f4076f3a399/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
-  - id: oer-the-rights-of-children-and-youth-in-the-climate-cris
-    title: The Rights of Children and Youth in the Climate Crisis
-    url: https://library.oapen.org/rest/bitstreams/855ebf6d-3a63-454a-983e-00590da0c9af/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
     format: pdf
   - id: oer-islands-and-communities
     title: Islands and Communities
@@ -10621,27 +10578,12 @@ sources:
     license: cc-by
     topic: infrastructure
     format: pdf
-  - id: oer-verkehrsphasenbasierte-datenanalyse-von-zeitlich-r-u
-    title: Verkehrsphasenbasierte Datenanalyse von zeitlich-räumlichen Strukturen der
-      Staufronten
-    url: https://library.oapen.org/rest/bitstreams/5925809e-9d4f-4452-b7de-ff83eb897a4e/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: infrastructure
-    format: pdf
   - id: oer-driver-behavior-analysis-and-decision-making-for-aut
     title: Driver Behavior Analysis and Decision-Making for Autonomous Driving at Non-Signalized
       Inner City Intersections
     url: https://library.oapen.org/rest/bitstreams/37ad73e7-cc24-4819-a3cb-80e21faf63b1/retrieve
     source: oapen
     license: cc-by-sa
-    topic: infrastructure
-    format: pdf
-  - id: oer-cyber-security
-    title: Cyber Security
-    url: https://library.oapen.org/rest/bitstreams/55a4d10f-d128-4582-a709-1e3eb2c06484/retrieve
-    source: oapen
-    license: cc-by
     topic: infrastructure
     format: pdf
   - id: oer-mobile-research-methods
@@ -10659,30 +10601,9 @@ sources:
     license: cc-by
     topic: infrastructure
     format: pdf
-  - id: oer-connecting-water
-    title: Connecting Water
-    url: https://library.oapen.org/rest/bitstreams/131d8c79-1b5e-48cd-989e-8d0b93347e53/retrieve
-    source: oapen
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-  - id: oer-resilience-and-food-security-in-a-food-systems-conte
-    title: Resilience and Food Security in a Food Systems Context
-    url: https://library.oapen.org/rest/bitstreams/f6ce712f-bb17-4008-9ac1-81e1e5d93d25/retrieve
-    source: oapen
-    license: cc-by
-    topic: infrastructure
-    format: pdf
   - id: oer-cultivating-teacher-resilience
     title: Cultivating Teacher Resilience
     url: https://library.oapen.org/rest/bitstreams/3cc0ec4b-fe63-48c7-b634-01e69fd95af5/retrieve
-    source: oapen
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-  - id: oer-cultivating-teacher-resilience-2
-    title: Cultivating Teacher Resilience
-    url: https://library.oapen.org/rest/bitstreams/1191dbf5-8eb4-4e12-9bdd-602ad78be66b/retrieve
     source: oapen
     license: cc-by
     topic: infrastructure
@@ -10694,33 +10615,12 @@ sources:
     license: cc-by
     topic: infrastructure
     format: pdf
-  - id: oer-remote-sensing-of-plant-biodiversity
-    title: Remote Sensing of Plant Biodiversity
-    url: https://library.oapen.org/rest/bitstreams/29106b1f-fcb4-4a37-b654-4caffa52b755/retrieve
-    source: oapen
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-  - id: oer-israel-s-academic-arena
-    title: Israel’s Academic Arena
-    url: https://library.oapen.org/rest/bitstreams/89983c4c-d367-468d-8a24-9f6aa3c25369/retrieve
-    source: oapen
-    license: cc-by
-    topic: infrastructure
-    format: pdf
   - id: oer-mapping-and-the-citizen-sensor
     title: Mapping and the Citizen Sensor
     url: https://library.oapen.org/rest/bitstreams/ceea1769-8e2d-4d92-9131-f8b09bd81762/retrieve
     source: oapen
     license: cc-by
     topic: infrastructure
-    format: pdf
-  - id: oer-nachverdichtung-im-st-dtebau
-    title: Nachverdichtung im Städtebau
-    url: https://library.oapen.org/rest/bitstreams/4268bda2-5780-48cf-ba21-c3ac4f6b04fb/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: building_energy
     format: pdf
   - id: oer-neue-kreuzberger-mischung-kooperative-szenarien-der-
     title: Neue Kreuzberger Mischung – Kooperative Szenarien der Nachverdichtung für
@@ -10733,14 +10633,6 @@ sources:
   - id: oer-die-minoischen-villen-kretas
     title: Die Minoischen Villen Kretas
     url: https://library.oapen.org/rest/bitstreams/d18a694a-f432-407e-84ac-c646c00b5603/retrieve
-    source: oapen
-    license: cc-by
-    topic: building_energy
-    format: pdf
-  - id: oer-gutes-klima-f-r-die-zukunft-dekarbonisierung-als-wic
-    title: Gutes Klima für die Zukunft. Dekarbonisierung als wichtiger Schlüssel zum
-      nachhaltigen Bauen mit Beton
-    url: https://library.oapen.org/rest/bitstreams/399eca8b-4382-44d8-b956-d6e7f848c87a/retrieve
     source: oapen
     license: cc-by
     topic: building_energy
@@ -10767,27 +10659,6 @@ sources:
     license: cc-by
     topic: building_energy
     format: pdf
-  - id: oer-raumplanungsprozesse-im-klinikneubau-und-klinikumbau
-    title: Raumplanungsprozesse im Klinikneubau und Klinikumbau
-    url: https://library.oapen.org/rest/bitstreams/13cfd959-2d3d-4e85-bd07-e5017af18b21/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-digitalisierung-beruflicher-lern-und-arbeitsprozesse
-    title: Digitalisierung beruflicher Lern- und Arbeitsprozesse
-    url: https://library.oapen.org/rest/bitstreams/f200b3fa-f4d7-445d-9299-7bfafffd507e/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-die-identit-tsstiftende-region
-    title: Die identitätsstiftende Region
-    url: https://library.oapen.org/rest/bitstreams/63d11ae3-bdb2-459e-b975-313c23106825/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
   - id: oer-infrarot-thermographie-in-der-bauforschung
     title: Infrarot-Thermographie in der Bauforschung
     url: https://library.oapen.org/rest/bitstreams/9109248b-29a4-4511-8dcb-60e68c324548/retrieve
@@ -10802,69 +10673,9 @@ sources:
     license: cc-by
     topic: construction
     format: pdf
-  - id: oer-digitalisierung-souver-n-gestalten
-    title: Digitalisierung souverän gestalten
-    url: https://library.oapen.org/rest/bitstreams/749babcc-485a-40aa-b93e-bcf5c6d95e41/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-die-finanzierung-von-agglomerationen-ueber-die-finan
-    title: Die Finanzierung von Agglomerationen ueber die Finanzausgleichssysteme in
-      der Bundesrepublik Deutschland
-    url: https://library.oapen.org/rest/bitstreams/6fd48b26-916a-4da5-bbce-c93651e77e98/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-sch-ne-wissenschaften-sammeln-ordnen-und-pr-sentiere
-    title: 'Schöne Wissenschaften: Sammeln, Ordnen und Präsentieren im josephinischen
-      Wien'
-    url: https://library.oapen.org/rest/bitstreams/63059288-4b3c-404e-832f-a71d465568bf/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-ganzjaehrige-beschaeftigung-in-der-bauwirtschaft-ein
-    title: Ganzjaehrige Beschaeftigung in der Bauwirtschaft - Eine Wirkungsanalyse
-    url: https://library.oapen.org/rest/bitstreams/9fe42d0d-3502-44ac-88f6-927475e0aee7/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-kommunen-und-wohnprojekte
-    title: Kommunen und Wohnprojekte
-    url: https://library.oapen.org/rest/bitstreams/b69d9602-bcaa-4bf8-b298-1ccbbbe6c288/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-heimat-volkstum-architektur
-    title: Heimat. Volkstum. Architektur
-    url: https://library.oapen.org/rest/bitstreams/2c687c68-a518-4d84-9b25-28c9829ddd17/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: architecture
-    format: pdf
-  - id: oer-im-spannungsfeld-brutalistischer-str-mungen-und-litu
-    title: Im Spannungsfeld brutalistischer Strömungen und Liturgischer Bewegung - Bauten
-      der Nachkriegsmoderne von Klaus Franz
-    url: https://library.oapen.org/rest/bitstreams/61c3ccc9-4ce4-4429-b4e5-4cef73a394a2/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: architecture
-    format: pdf
   - id: oer-artefakte-des-entwerfens
     title: Artefakte des Entwerfens
     url: https://library.oapen.org/rest/bitstreams/f7a73a21-fccd-4ca0-b61b-9b61ef5e98a2/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-schulbauten-debatten-darstellungen-und-aneignungspra
-    title: Schulbauten – Debatten, Darstellungen und Aneignungspraktiken von 1968 bis
-      heute
-    url: https://library.oapen.org/rest/bitstreams/7c451d64-54e1-4b94-81a4-3eb63225e8b6/retrieve
     source: oapen
     license: cc-by
     topic: architecture
@@ -10898,27 +10709,6 @@ sources:
     license: cc-by
     topic: architecture
     format: pdf
-  - id: oer-postwachstumsgeographien
-    title: Postwachstumsgeographien
-    url: https://library.oapen.org/rest/bitstreams/500b6d80-4d83-406c-bae5-200d2d213a3a/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
-  - id: oer-soziales-wohnen-in-wien
-    title: Soziales Wohnen in Wien
-    url: https://library.oapen.org/rest/bitstreams/0827085a-187f-49af-b74c-6ce91a7636ac/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: urban
-    format: pdf
-  - id: oer-wohnen-in-hamburg
-    title: Wohnen in Hamburg
-    url: https://library.oapen.org/rest/bitstreams/81edf107-024e-436f-b592-a739eebf8dcf/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: urban
-    format: pdf
   - id: oer-leitfaden-ko-kreation-urbane-transformationen-mit-ur
     title: 'Leitfaden Ko-Kreation: Urbane Transformationen mit Urban Design Thinking'
     url: https://library.oapen.org/rest/bitstreams/b6890952-82fe-4d3a-85b5-290e3986fe61/retrieve
@@ -10926,83 +10716,9 @@ sources:
     license: cc-by
     topic: urban
     format: pdf
-  - id: oer-lebenswerte-und-umweltgerechte-stadtentwicklung
-    title: Lebenswerte und umweltgerechte Stadtentwicklung
-    url: https://library.oapen.org/rest/bitstreams/cc64e125-30fd-4725-8ffc-a04382e21e17/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
-  - id: oer-kleinstadtforschung
-    title: Kleinstadtforschung
-    url: https://library.oapen.org/rest/bitstreams/382a5572-c948-4c76-96a0-3c04b1829982/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
-  - id: oer-zielgerichtete-ressourcenallokation
-    title: Zielgerichtete Ressourcenallokation
-    url: https://library.oapen.org/rest/bitstreams/01327350-075e-4fa3-afc9-349e1dc48a4b/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
-  - id: oer-skateparks
-    title: Skateparks
-    url: https://library.oapen.org/rest/bitstreams/62bbc72c-a0c4-481c-bde2-60ec5b954578/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
-  - id: oer-nachhaltige-stadtentwicklung
-    title: Nachhaltige Stadtentwicklung
-    url: https://library.oapen.org/rest/bitstreams/00af75d1-c256-4bdc-b4e4-4864ed1525b9/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
-  - id: oer-sakralm-bel-aus-sterreich-von-tischlern-und-ihren-ar
-    title: Sakralmöbel aus Österreich. Von Tischlern und ihren Arbeiten im Zeitalter
-      des Absolutismus
-    url: https://library.oapen.org/rest/bitstreams/35f8e82f-a1b4-4b18-8f2c-7ca34e03c784/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-von-tischlern-und-ihren-arbeiten-im-zeitalter-des-ab
-    title: 'Von Tischlern und ihren Arbeiten im Zeitalter des Absolutismus: II: Kunstlandschaften
-      im Norden, Süden und Westen'
-    url: https://library.oapen.org/rest/bitstreams/8e41cbcb-e72b-406b-befb-4d191c5b7d9c/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-kunstgeschichte-n
-    title: Kunstgeschichte(n)
-    url: https://library.oapen.org/rest/bitstreams/15ab0726-f05f-4302-83e1-8921ea952c38/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-die-chronologie-der-kuretenstra-e-arch-ologische-evi
-    title: 'Die Chronologie der Kuretenstraße: Archäologische Evidenzen zur Baugeschichte
-      des unteren Embolos von Ephesos von der lysimachischen Neugründung bis i'
-    url: https://library.oapen.org/rest/bitstreams/c4dfe086-ce9c-4c62-8aea-43dbdf8c2bc8/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
   - id: oer-der-zuschauerraum-des-theaters-von-ephesos
     title: Der Zuschauerraum des Theaters von Ephesos
     url: https://library.oapen.org/rest/bitstreams/42372a62-7643-4759-b424-6e51a462a363/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-entwurfs-und-konstruktionsprinzipien-des-sp-tgotisch
-    title: Entwurfs- und Konstruktionsprinzipien des spätgotischen Netzgewölbes der
-      Kirche St. Peter und Paul in der Lutherstadt Eisleben
-    url: https://library.oapen.org/rest/bitstreams/e686782a-95d3-4023-95c8-e1a764823f7c/retrieve
     source: oapen
     license: cc-by
     topic: architecture
@@ -11014,59 +10730,9 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: pdf
-  - id: oer-bamberger-perspektiven
-    title: Bamberger Perspektiven
-    url: https://library.oapen.org/rest/bitstreams/b36d3219-f935-4891-b7c4-e4a8e427d590/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
   - id: oer-schaufenster-der-nation
     title: Schaufenster der Nation
     url: https://library.oapen.org/rest/bitstreams/86596c9c-f396-46da-bae0-33aa72af2189/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-vienna-italiana-neue-forschungen-zur-italienischen-k
-    title: Vienna italiana. Neue Forschungen zur italienischen Kunst und Kultur in Wien
-      (16.–19. Jahrhundert)
-    url: https://library.oapen.org/rest/bitstreams/c9e24252-a7a0-41bd-a591-2ab2acb26080/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-die-glasmalereien-vom-mittelalter-bis-1930-im-kanton
-    title: Die Glasmalereien vom Mittelalter bis 1930 im Kanton Thurgau
-    url: https://library.oapen.org/rest/bitstreams/5a1a4ea8-3145-4b3a-9e45-78abe003996a/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-written-in-the-landscape
-    title: Written in the Landscape
-    url: https://library.oapen.org/rest/bitstreams/3be498ac-4e53-45b5-9e4e-3727932599a4/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: architecture
-    format: pdf
-  - id: oer-rudolf-eitelberger-von-edelberg
-    title: Rudolf Eitelberger von Edelberg
-    url: https://library.oapen.org/rest/bitstreams/e67eea0f-2b46-41fd-9665-10410adda5fa/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-vom-hauen-und-stechen
-    title: Vom Hauen und Stechen
-    url: https://library.oapen.org/rest/bitstreams/8dbd0d96-5b9f-44d7-93f5-03754c9b8d46/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-arch-cube
-    title: Arch Cube
-    url: https://library.oapen.org/rest/bitstreams/67aac55e-0bea-4cb1-89b9-200d9f7eafb1/retrieve
     source: oapen
     license: cc-by
     topic: architecture
@@ -11092,177 +10758,12 @@ sources:
     license: cc-by
     topic: construction
     format: pdf
-  - id: oer-il-territorio-soggetto-vivente
-    title: Il territorio soggetto vivente
-    url: https://library.oapen.org/rest/bitstreams/c1c732fc-a9b6-4863-96fc-66279d3e6286/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
-  - id: oer-la-pianificazione-paesaggistica-in-italia
-    title: La pianificazione paesaggistica in Italia
-    url: https://library.oapen.org/rest/bitstreams/d514914f-20bc-41c5-9912-c815ace3c5c7/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
-  - id: oer-lezione-di-sguardi-edoardo-detti-fotografo
-    title: Lezione di sguardi. Edoardo Detti fotografo
-    url: https://library.oapen.org/rest/bitstreams/3ee21c5c-270a-4383-a1ec-34016ba3f054/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
   - id: oer-progettare-parchi-agricoli-nei-territori-intermedi
     title: Progettare parchi agricoli nei territori intermedi
     url: https://library.oapen.org/rest/bitstreams/c4b1647b-6018-4d19-88f9-206d500dbf48/retrieve
     source: oapen
     license: cc-by
     topic: urban
-    format: pdf
-  - id: oer-la-ville-jur-e
-    title: La ville jurée
-    url: https://library.oapen.org/rest/bitstreams/cec0d4b7-be0a-4366-85b6-5f9dabfea810/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: urban
-    format: pdf
-  - id: oer-nuove-strategie-per-la-traduzione-del-lessico-artist
-    title: Nuove strategie per la traduzione del lessico artistico
-    url: https://library.oapen.org/rest/bitstreams/82f6e910-19e9-456c-a750-27ef3285def2/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-cultural-heritage-scenarios-2015-2017
-    title: Cultural Heritage. Scenarios 2015-2017
-    url: https://library.oapen.org/rest/bitstreams/fc83ca25-32ba-497c-a085-011fa1de7fb2/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-effectivit-des-agences-nationales-anti-corruption-en
-    title: Effectivité des Agences Nationales Anti-Corruption en Afrique de L’ouest
-    url: https://library.oapen.org/rest/bitstreams/00e8204a-a3e5-41c0-bbd4-f3720dc8b8bc/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-provincia-del-limar
-    title: Provincia del Limarí
-    url: https://library.oapen.org/rest/bitstreams/44f76f4a-d8b5-4f7c-9cd3-581cedfdbd69/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-food-design-y-cultura-men-s-y-vinos-en-la-belle-poqu
-    title: 'Food design y cultura: menús y vinos en la belle époque chilena, 1884-1925'
-    url: https://library.oapen.org/rest/bitstreams/a9ba2f26-aef8-4fb2-a7d6-c0ee931d3c8e/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-luchas-educativas-anticolonialismo-y-socialismo
-    title: Luchas educativas, anticolonialismo y socialismo
-    url: https://library.oapen.org/rest/bitstreams/1f6fe8e0-ec2a-4866-b3b7-150c19b2b1ce/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-re-construir-movimiento-pedag-gico-en-chile
-    title: (Re)Construir movimiento pedagógico en Chile
-    url: https://library.oapen.org/rest/bitstreams/c3a5b12b-eea1-45aa-9b3a-16064f9e59cd/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-decolonialidad-e-interculturalidad-cr-tica
-    title: Decolonialidad e interculturalidad crítica
-    url: https://library.oapen.org/rest/bitstreams/118ccb01-5707-46e2-871a-3ed6820654a6/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-esclavos-y-tierras-entre-posesi-n-y-t-tulos
-    title: Esclavos y tierras entre posesión y títulos
-    url: https://library.oapen.org/rest/bitstreams/d142f36f-b458-4d08-8931-730d6d754dc8/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-lexicograf-a-del-espa-ol-intercomunicaci-n-y-di-logo
-    title: 'Lexicografía del español: intercomunicación y diálogos'
-    url: https://library.oapen.org/rest/bitstreams/0c557c42-89d0-4577-9ef3-93cd2f1dac25/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-repensar-y-subvertir-el-informe-social-perspectivas-
-    title: Repensar y subvertir el informe social. Perspectivas y claves contemporáneas
-      para el Trabajo Social
-    url: https://library.oapen.org/rest/bitstreams/fc042964-e529-4303-ab38-b58e911afe89/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-antropolog-a-producci-n-disciplinar-reciente-en-la-u
-    title: Antropología. Producción disciplinar reciente en la Universidad Católica
-      de Temuco
-    url: https://library.oapen.org/rest/bitstreams/a08df104-a4c9-462b-9447-5c9e41546cdc/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-el-espacio-en-escena
-    title: El espacio en escena
-    url: https://library.oapen.org/rest/bitstreams/25a088a4-2f97-4d24-b6e7-4bb8049f3167/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-gatopardismo-progresista-argentina-bolivia-y-chile-d
-    title: ¿Gatopardismo progresista? Argentina, Bolivia y Chile durante el boom de
-      las materias primas
-    url: https://library.oapen.org/rest/bitstreams/3fbe2550-8704-492f-9a21-b0a08fe57881/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-le-teorie-le-tecniche-i-repertori-figurativi-nella-p
-    title: Le teorie, le tecniche, i repertori figurativi nella prospettiva d'architettura
-      tra il '400 e il '700
-    url: https://library.oapen.org/rest/bitstreams/3d4b243a-4b13-4db6-a436-096b9eed1561/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: architecture
-    format: pdf
-  - id: oer-diminuzioni-e-accrescimenti
-    title: Diminuzioni e accrescimenti
-    url: https://library.oapen.org/rest/bitstreams/e98d3d4c-f546-4ac9-8360-993bc88fa362/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-the-imensity-of-being-singular
-    title: The Imensity of Being Singular
-    url: https://library.oapen.org/rest/bitstreams/458bd477-02ea-4610-b71c-bf1f8d713c19/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-tic-s-latinoamericanas-antecedentes-tendencias-usos-
-    title: TIC’s latinoamericanas Antecedentes, tendencias, usos y representaciones
-    url: https://library.oapen.org/rest/bitstreams/fce41a92-fd76-4b20-b508-f52f297f6dab/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: architecture
-    format: pdf
-  - id: oer-journeys-in-portuguese-language
-    title: Journeys in Portuguese Language
-    url: https://library.oapen.org/rest/bitstreams/a32215ed-42c4-4f72-94a2-5f578b4ca7f0/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
     format: pdf
   - id: oer-the-rise-of-the-common-city
     title: The Rise of the Common City
@@ -11271,39 +10772,11 @@ sources:
     license: cc-by
     topic: urban
     format: pdf
-  - id: oer-on-the-earth-we-want-to-live
-    title: On the Earth We Want to Live
-    url: https://library.oapen.org/rest/bitstreams/13b5694c-286f-4c8f-90b5-f23dc95604f0/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-moralische-roboter
-    title: Moralische Roboter
-    url: https://library.oapen.org/rest/bitstreams/aa24dd9d-5a94-488f-a510-52e3aaee4df0/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: construction
-    format: pdf
   - id: oer-virtualisierung-von-umgebungen
     title: Virtualisierung von Umgebungen
     url: https://library.oapen.org/rest/bitstreams/5a515385-a976-4697-8e90-606ff82f5653/retrieve
     source: oapen
     license: cc-by-sa
-    topic: construction
-    format: pdf
-  - id: oer-die-philosophie-der-bio-robotik
-    title: Die Philosophie der Bio-Robotik
-    url: https://library.oapen.org/rest/bitstreams/1e500ce7-5cab-43e1-b053-bf3cbc159587/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: construction
-    format: pdf
-  - id: oer-vertrauen-in-roboter-und-dessen-beeinflussbarkeit-du
-    title: Vertrauen in Roboter und dessen Beeinflussbarkeit durch sprachliches Framing
-    url: https://library.oapen.org/rest/bitstreams/8ac45f82-4a5c-4a2d-ba70-33ecc1677741/retrieve
-    source: oapen
-    license: cc-by
     topic: construction
     format: pdf
   - id: oer-theoretische-und-praktische-entwicklung-einer-aufgek
@@ -11330,13 +10803,6 @@ sources:
     license: cc-by
     topic: equipment_systems
     format: pdf
-  - id: oer-regions-in-international-trade
-    title: Regions in International Trade
-    url: https://library.oapen.org/rest/bitstreams/d0f4da3b-51e9-4541-9890-9dba8e5554bf/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
   - id: oer-cross-border-transport-and-mobility-in-the-eu
     title: Cross-Border Transport and Mobility in the EU
     url: https://library.oapen.org/rest/bitstreams/8ab62975-729a-4af8-b165-48cc1b31f955/retrieve
@@ -11348,49 +10814,6 @@ sources:
     title: 'Autonomous Control for a Reliable Internet of Services: Methods, Models,
       Approaches, Techniques, Algorithms, and Tools'
     url: https://library.oapen.org/rest/bitstreams/eafe35b0-63d4-4ae9-a625-5ccb79d9cfeb/retrieve
-    source: oapen
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-  - id: oer-control-problems-for-conservation-laws-with-traffic-
-    title: Control Problems for Conservation Laws with Traffic Applications
-    url: https://library.oapen.org/rest/bitstreams/29edc5bc-099d-4057-a375-b362d5dee990/retrieve
-    source: oapen
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-  - id: oer-co-creation-for-sustainability
-    title: Co-Creation for Sustainability
-    url: https://library.oapen.org/rest/bitstreams/c75ef0ee-ad11-4061-bac7-9b901c69b3a8/retrieve
-    source: oapen
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-  - id: oer-forged-in-genocide
-    title: Forged in Genocide
-    url: https://library.oapen.org/rest/bitstreams/5083a46c-def2-451f-b0b6-2b252cbfd5a6/retrieve
-    source: oapen
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-  - id: oer-pacific-strife
-    title: Pacific Strife
-    url: https://library.oapen.org/rest/bitstreams/9915c8f0-c839-4ace-96a1-da3778058b88/retrieve
-    source: oapen
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-  - id: oer-erfassung-der-sichtweite-bei-nebel-durch-die-kombina
-    title: Erfassung der Sichtweite bei Nebel durch die Kombination aus hochauflösendem
-      Scheinwerfer und einem Kamerasystem
-    url: https://library.oapen.org/rest/bitstreams/0de6723f-ed7a-4579-a631-2128a4b8a4ac/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: infrastructure
-    format: pdf
-  - id: oer-law-society-and-corruption
-    title: Law, Society and Corruption
-    url: https://library.oapen.org/rest/bitstreams/22d08ceb-bf88-4d02-8bf9-4228961040f2/retrieve
     source: oapen
     license: cc-by
     topic: infrastructure
@@ -11407,20 +10830,6 @@ sources:
     url: https://library.oapen.org/rest/bitstreams/e709c36d-4467-40c2-b64a-91ca670bdda9/retrieve
     source: oapen
     license: cc-by-sa
-    topic: infrastructure
-    format: pdf
-  - id: oer-terrestrial-mammal-conservation
-    title: Terrestrial Mammal Conservation
-    url: https://library.oapen.org/rest/bitstreams/c53d1450-63cc-473d-a171-08e670a9b256/retrieve
-    source: oapen
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-  - id: oer-vann-juss-og-samfunn
-    title: Vann, juss og samfunn
-    url: https://library.oapen.org/rest/bitstreams/47e1dcb6-8fcf-484c-a2db-fc5cc0b3ee43/retrieve
-    source: oapen
-    license: cc-by
     topic: infrastructure
     format: pdf
   - id: oer-the-pilgrim-s-guide-to-the-workplace
@@ -11451,34 +10860,6 @@ sources:
     license: cc-by
     topic: infrastructure
     format: pdf
-  - id: oer-adult-and-continuing-education-in-belarus
-    title: Adult and Continuing Education in Belarus
-    url: https://library.oapen.org/rest/bitstreams/9282fce0-40b9-4f2f-9da8-439171ddc2e1/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: infrastructure
-    format: pdf
-  - id: oer-optimal-surface-fitting-of-point-clouds-using-local-
-    title: Optimal Surface Fitting of Point Clouds Using Local Refinement
-    url: https://library.oapen.org/rest/bitstreams/d18558d7-1f02-47b3-aab9-fba9f542ae96/retrieve
-    source: oapen
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-  - id: oer-manual-of-digital-earth
-    title: Manual of Digital Earth
-    url: https://library.oapen.org/rest/bitstreams/4a4ccb2b-a0bf-4fdf-a318-1eeaeb48c565/retrieve
-    source: oapen
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-  - id: oer-non-equilibrium-social-science-and-policy
-    title: Non-Equilibrium Social Science and Policy
-    url: https://library.oapen.org/rest/bitstreams/7813411d-bffd-4da2-b8c6-6cc1ae7e9f74/retrieve
-    source: oapen
-    license: cc-by
-    topic: infrastructure
-    format: pdf
   - id: oer-negotiating-climate-change-in-crisis
     title: Negotiating Climate Change in Crisis
     url: https://library.oapen.org/rest/bitstreams/3965ede7-9a36-4348-990a-a35acd422d14/retrieve
@@ -11493,101 +10874,9 @@ sources:
     license: cc-by
     topic: standards_protocols
     format: pdf
-  - id: oer-ein-haus-f-r-herkules
-    title: Ein Haus für Herkules
-    url: https://library.oapen.org/rest/bitstreams/ff86b756-7a32-4d53-b424-740f723536fa/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: building_energy
-    format: pdf
-  - id: oer-public-private-partnerships-und-oeffentliche-verschu
-    title: Public Private Partnerships und oeffentliche Verschuldung
-    url: https://library.oapen.org/rest/bitstreams/d10ae103-e919-4b0d-ab22-258f80c043f7/retrieve
-    source: oapen
-    license: cc-by
-    topic: building_energy
-    format: pdf
-  - id: oer-der-einfluss-der-besteuerung-auf-die-entwicklung-der
-    title: Der Einfluss der Besteuerung auf die Entwicklung der Wohnungs- und Baulandmaerkte
-    url: https://library.oapen.org/rest/bitstreams/36643460-e6cc-440c-840a-9dce99556ea4/retrieve
-    source: oapen
-    license: cc-by
-    topic: building_energy
-    format: pdf
-  - id: oer-zielkonflikt-zwischen-l-rmschutz-und-siedlungsverdic
-    title: Zielkonflikt zwischen Lärmschutz und Siedlungsverdichtung
-    url: https://library.oapen.org/rest/bitstreams/19818b98-33b3-49fc-9070-5bd575241c64/retrieve
-    source: oapen
-    license: cc-by
-    topic: building_energy
-    format: pdf
-  - id: oer-wende-perspektive-planung
-    title: Wende. Perspektive. Planung
-    url: https://library.oapen.org/rest/bitstreams/e4703de9-5142-47c1-9d17-dadd5509bfb3/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: building_energy
-    format: pdf
-  - id: oer-diakonische-kirchen-um-nutzung
-    title: Diakonische Kirchen(um)nutzung
-    url: https://library.oapen.org/rest/bitstreams/98852d3d-df58-416c-beea-ca2e97e25d87/retrieve
-    source: oapen
-    license: cc-by
-    topic: building_energy
-    format: pdf
-  - id: oer-stadt-als-schule
-    title: Stadt als Schule
-    url: https://library.oapen.org/rest/bitstreams/0825fbf6-fea5-4137-91dc-920536045191/retrieve
-    source: oapen
-    license: cc-by
-    topic: building_energy
-    format: pdf
-  - id: oer-der-einfluss-nachhaltigkeitsbezogener-objektmerkmale
-    title: Der Einfluss nachhaltigkeitsbezogener Objektmerkmale auf den Wert von Immobilien
-      – ein Beitrag zur Weiterentwicklung von Datenhaltung und Wertermittlu
-    url: https://library.oapen.org/rest/bitstreams/474bf247-16bc-4db6-a8f2-8b96f8caecc2/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: building_energy
-    format: pdf
-  - id: oer-stadt-land-boden
-    title: Stadt – Land – Boden
-    url: https://library.oapen.org/rest/bitstreams/7f82c18b-c2f9-463a-8132-6d0992e978dc/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: construction
-    format: pdf
-  - id: oer-konzeptionelle-probleme-oeffentlicher-planung
-    title: Konzeptionelle Probleme oeffentlicher Planung
-    url: https://library.oapen.org/rest/bitstreams/207653c4-861a-4244-906d-cbc284491ea2/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
   - id: oer-10-fachtagung-hybride-und-energieeffiziente-antriebe
     title: 10. Fachtagung Hybride und energieeffiziente Antriebe für mobile Arbeitsmaschinen
     url: https://library.oapen.org/rest/bitstreams/836bdc12-e5ad-481e-9035-2af87745b813/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-deutschland-mit-89-millionen-menschen
-    title: Deutschland mit 89 Millionen Menschen?
-    url: https://library.oapen.org/rest/bitstreams/eed21573-61a4-4991-adc2-8d026261dda2/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: construction
-    format: pdf
-  - id: oer-auf-der-suche-nach-der-eigenen-alma-mater
-    title: Auf der Suche nach der eigenen Alma Mater
-    url: https://library.oapen.org/rest/bitstreams/31dcccaa-ef20-41c7-a943-c412d41916cb/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-bauen-mit-beton-im-kreislauf-recycling-re-use-und-re
-    title: Bauen mit Beton im Kreislauf - Recycling, Re-Use und Ressourcenschonung
-    url: https://library.oapen.org/rest/bitstreams/f31adce3-c061-4848-a763-d5576612ee13/retrieve
     source: oapen
     license: cc-by
     topic: construction
@@ -11600,61 +10889,12 @@ sources:
     license: cc-by-sa
     topic: construction
     format: pdf
-  - id: oer-place-of-importance
-    title: Place of Importance
-    url: https://library.oapen.org/rest/bitstreams/1c0e31fe-60d9-41dc-a095-80c9e8ea9373/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
   - id: oer-hybride-beamformingsysteme-niedriger-komplexit-t-f-r
     title: Hybride Beamformingsysteme niedriger Komplexität für den Mobilfunk
     url: https://library.oapen.org/rest/bitstreams/8009ce73-fc82-4d89-8746-45218f065ed7/retrieve
     source: oapen
     license: cc-by-sa
     topic: architecture
-    format: pdf
-  - id: oer-gilly-weinbrenner-schinkel-baukunst-auf-papier-zwisc
-    title: Gilly - Weinbrenner - Schinkel - Baukunst auf Papier zwischen Gotik und Klassizismus
-    url: https://library.oapen.org/rest/bitstreams/7900b5a4-52a7-4bf6-91a0-a437a939f999/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: architecture
-    format: pdf
-  - id: oer-maschinische-normativit-t
-    title: Maschinische Normativität
-    url: https://library.oapen.org/rest/bitstreams/cd239c0b-3c48-44df-9993-f60752778b0c/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-zeitr-ume-gestalten
-    title: Zeiträume gestalten
-    url: https://library.oapen.org/rest/bitstreams/eadcd7a0-00bf-44ee-a867-4eda83e8dcde/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-gilly
-    title: Gilly
-    url: https://library.oapen.org/rest/bitstreams/682bbbf3-44df-4056-b30a-f428a8931114/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: architecture
-    format: pdf
-  - id: oer-entwicklung-von-methoden-zur-abstrakten-modellierung
-    title: Entwicklung von Methoden zur abstrakten Modellierung von Automotive Systems-on-Chips
-    url: https://library.oapen.org/rest/bitstreams/13a7cd3a-5938-4ebf-ad66-1ae667e17d93/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-transformation-von-mittelst-dten
-    title: Transformation von Mittelstädten
-    url: https://library.oapen.org/rest/bitstreams/7293fa12-8aa3-4142-bbac-f072e3faaae5/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
     format: pdf
   - id: oer-vages-terrain
     title: Vages Terrain
@@ -11670,30 +10910,9 @@ sources:
     license: cc-by
     topic: urban
     format: pdf
-  - id: oer-commons
-    title: Commons
-    url: https://library.oapen.org/rest/bitstreams/7fdd4833-a5a2-4adf-94f5-933efa5edc2a/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: urban
-    format: pdf
-  - id: oer-interdisziplin-re-stadtforschung-ii
-    title: Interdisziplinäre Stadtforschung II
-    url: https://library.oapen.org/rest/bitstreams/3c1aec52-7be5-4d6a-a9a1-12390dce9737/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
   - id: oer-radlogistik
     title: Radlogistik
     url: https://library.oapen.org/rest/bitstreams/1714a05e-df5b-46db-a285-438499419e1c/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
-  - id: oer-stadtklanggestaltung
-    title: Stadtklanggestaltung
-    url: https://library.oapen.org/rest/bitstreams/f7032930-541a-4cdb-a0a8-2636073d855c/retrieve
     source: oapen
     license: cc-by
     topic: urban
@@ -11705,34 +10924,6 @@ sources:
     license: cc-by-sa
     topic: urban
     format: pdf
-  - id: oer-partizipation-und-soziale-ausschlie-ung
-    title: Partizipation und soziale Ausschließung
-    url: https://library.oapen.org/rest/bitstreams/14744a35-2e02-4979-b5c6-9a7d86cbf7ac/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
-  - id: oer-das-jahr-1813-ostmitteleuropa-und-leipzig
-    title: Das Jahr 1813, Ostmitteleuropa und Leipzig
-    url: https://library.oapen.org/rest/bitstreams/d782a178-332e-4d7f-9aa0-cf70768f86df/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-stuben-und-s-le
-    title: Stuben und Säle
-    url: https://library.oapen.org/rest/bitstreams/4f27d651-446d-46c3-b058-cad4a67cfba5/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-das-dehmelhaus-in-blankenese
-    title: Das Dehmelhaus in Blankenese
-    url: https://library.oapen.org/rest/bitstreams/ee33abd9-8080-42d4-a7e7-6a7b6f1cc4d4/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
   - id: oer-between-thy-and-t-bingen
     title: Between Thy and Tübingen
     url: https://library.oapen.org/rest/bitstreams/71511bca-3cb6-43dc-869c-521c12e2e5e7/retrieve
@@ -11743,49 +10934,6 @@ sources:
   - id: oer-ruinen-und-vergessene-orte
     title: Ruinen und vergessene Orte
     url: https://library.oapen.org/rest/bitstreams/185f3920-398a-4236-8e41-07aa5f263776/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: architecture
-    format: pdf
-  - id: oer-vom-germanenerbe-zum-urkommunismus
-    title: Vom Germanenerbe zum Urkommunismus
-    url: https://library.oapen.org/rest/bitstreams/f0f26834-f4f2-4f79-9558-3f643958ca35/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-kulturlandschaften-in-deutschland-und-polen
-    title: Kulturlandschaften in Deutschland und Polen
-    url: https://library.oapen.org/rest/bitstreams/0b2e33fb-becb-4fed-a825-e54cf834c300/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-sichtlich-evangelisch
-    title: Sichtlich evangelisch
-    url: https://library.oapen.org/rest/bitstreams/8b3c9ca3-c13f-4f8e-af0b-0a66b1cf7bae/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: architecture
-    format: pdf
-  - id: oer-sichtlich-evangelisch-die-glasfenster-der-jakobikirc
-    title: Sichtlich evangelisch - Die Glasfenster der Jakobikirche in Göttingen von
-      1900/1901 und die Hannoveraner Glasmalwerkstätten Henning & Andres und Laute
-    url: https://library.oapen.org/rest/bitstreams/e7e96fec-4c7b-4660-82d7-f19973a3ce06/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: architecture
-    format: pdf
-  - id: oer-heimat-als-soziale-praxis
-    title: Heimat als soziale Praxis
-    url: https://library.oapen.org/rest/bitstreams/bd0f0ec1-9102-40df-a137-254da53d84ef/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-konstituierung-einer-kulturlandschaft
-    title: Konstituierung einer Kulturlandschaft
-    url: https://library.oapen.org/rest/bitstreams/a4f9941e-ef67-408c-b13f-4eece48c9e5a/retrieve
     source: oapen
     license: cc-by-sa
     topic: architecture
@@ -11818,23 +10966,9 @@ sources:
     license: cc-by
     topic: urban
     format: pdf
-  - id: oer-intellettuali-e-uomini-di-regime-nell-italia-fascist
-    title: Intellettuali e uomini di regime nell’Italia fascista
-    url: https://library.oapen.org/rest/bitstreams/41e62386-abb0-483c-a382-553580a40a4b/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
   - id: oer-partecipazione-in-toscana
     title: Partecipazione in Toscana
     url: https://library.oapen.org/rest/bitstreams/f8c9d36c-e507-413e-9035-570c61ea35e2/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
-  - id: oer-olivetti-una-complessit-virtuosa
-    title: 'Olivetti: una complessità virtuosa'
-    url: https://library.oapen.org/rest/bitstreams/6dbcc937-c191-4e87-8e1e-cfba7b251f22/retrieve
     source: oapen
     license: cc-by
     topic: urban
@@ -11854,180 +10988,10 @@ sources:
     license: cc-by
     topic: urban
     format: pdf
-  - id: oer-r-inventer-l-art-sacr
-    title: Réinventer l’art sacré
-    url: https://library.oapen.org/rest/bitstreams/dfa643ca-7185-4b66-9cc5-b66ede6f6e72/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-lumi-res-nouvelles-sur-le-sacr
-    title: Lumières nouvelles sur le sacré
-    url: https://library.oapen.org/rest/bitstreams/eaaa5a84-2c42-437d-9c25-bb0882d6d340/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-gardens-of-the-iberian-peninsula
-    title: Gardens of the Iberian Peninsula
-    url: https://library.oapen.org/rest/bitstreams/ae016371-11e5-4182-91ea-7352c83efbef/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: architecture
-    format: pdf
-  - id: oer-la-construcci-n-de-imaginarios
-    title: La construcción de imaginarios
-    url: https://library.oapen.org/rest/bitstreams/d63ea341-34e4-41fc-a6a3-aa8053f5c34e/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-archivos-abiertos
-    title: Archivos Abiertos
-    url: https://library.oapen.org/rest/bitstreams/c52d74a3-25a0-4ac6-aa9e-b625a906d2c6/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-anatom-a-de-una-transici-n-estados-unidos-y-chile-19
-    title: 'Anatomía de una transición: Estados Unidos y Chile (1920-1929)'
-    url: https://library.oapen.org/rest/bitstreams/14bd5a45-d465-4a97-abaa-371d70bd9d29/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-migraciones-y-desplazamientos-forzados
-    title: Migraciones y desplazamientos forzados
-    url: https://library.oapen.org/rest/bitstreams/0c5ca428-8677-46a7-8947-a4d46372fa30/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
-    format: pdf
-  - id: oer-100-a-os-de-trabajo-social-en-chile-tejiendo-saberes
-    title: '100 años de Trabajo Social en Chile: tejiendo saberes para transformar futuros'
-    url: https://library.oapen.org/rest/bitstreams/2550d55b-a3c3-4b4a-bfb6-1feee1666436/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
   - id: oer-los-auditoria-de-adriano-y-el-athenaeum-de-roma
     title: Los Auditoria de Adriano y el Athenaeum de Roma
     url: https://library.oapen.org/rest/bitstreams/ef418cce-1cb9-4287-8df1-7b8b7e706bf4/retrieve
     source: oapen
     license: cc-by
     topic: construction
-    format: pdf
-  - id: oer-antropolog-a-reciente
-    title: Antropología reciente
-    url: https://library.oapen.org/rest/bitstreams/4e16573e-a19e-4247-9431-43cc4329044b/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-bosques-comunidades-y-monocultivos
-    title: Bosques, comunidades y monocultivos
-    url: https://library.oapen.org/rest/bitstreams/6dba5efe-0488-43f8-98ef-5a933c19617e/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-paradigmas-y-polifuncionalidad-estudio-diacr-nico-de
-    title: 'Paradigmas y polifuncionalidad: Estudio diacrónico de «preciso»/«precisamente»,
-      «justo»/«justamente», «exacto»/«exactamente» y «cabal»/«cabalmente»'
-    url: https://library.oapen.org/rest/bitstreams/4158eec7-74ac-41d5-831d-0a1d492eb85f/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-paradigmas-y-polifuncionalidad
-    title: Paradigmas y polifuncionalidad
-    url: https://library.oapen.org/rest/bitstreams/1a668be8-480d-45c6-b65c-4adf81bbace7/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-siempre-estuvimos-aqu-mujeres-e-infancias-en-la-gest
-    title: 'Siempre estuvimos aquí: mujeres e infancias en la gestión cultural'
-    url: https://library.oapen.org/rest/bitstreams/6524e4bf-9721-4390-aa4c-292c79a71b42/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-di-logos-sur-sur
-    title: Diálogos Sur-Sur
-    url: https://library.oapen.org/rest/bitstreams/c2bfe336-06ee-4e95-8ebc-93a352d54495/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-educaci-n-pol-tica-e-ideolog-a
-    title: Educación, política e ideología
-    url: https://library.oapen.org/rest/bitstreams/926c3d65-6ec8-476a-948f-f881a72e2f3c/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-navegaciones-acad-micas-por-los-saberes-de-trabajo-s
-    title: Navegaciones académicas por los saberes de Trabajo Social
-    url: https://library.oapen.org/rest/bitstreams/e0972308-87f5-449b-a620-8798f658db28/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-aproximaciones-al-marxismo-latinoamericano
-    title: Aproximaciones al marxismo latinoamericano
-    url: https://library.oapen.org/rest/bitstreams/293f2614-74cf-4f07-ac62-ec9dd4fadd21/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-meditaciones-fichteanas
-    title: Meditaciones Fichteanas
-    url: https://library.oapen.org/rest/bitstreams/97b5ee5f-ea69-4819-935c-300e21a55155/retrieve
-    source: oapen
-    license: cc-by-sa
-    topic: construction
-    format: pdf
-  - id: oer-estrategias-para-desarrollar-habilidades-del-pensami
-    title: 'Estrategias para desarrollar habilidades del pensamiento en la educación
-      superior: variables ocultas y estrategias'
-    url: https://library.oapen.org/rest/bitstreams/14a51bde-6a13-4f52-9a59-6bf070283094/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-hello-friends-cantemos
-    title: Hello Friends, Cantemos
-    url: https://library.oapen.org/rest/bitstreams/b47c2726-d3fb-4090-9b68-aceaed738692/retrieve
-    source: oapen
-    license: cc-by
-    topic: construction
-    format: pdf
-  - id: oer-ciencias-tecnolog-as-y-culturas-integraci-n-y-calida
-    title: Ciencias, Tecnologías y Culturas. Integración y calidad de vida en Latinoamérica
-    url: https://library.oapen.org/rest/bitstreams/c4fdd21b-f2ca-4306-a8b5-e28ff1bd90b6/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-the-idea-of-south
-    title: The Idea of South
-    url: https://library.oapen.org/rest/bitstreams/4fc6b8d0-6721-4ab4-a861-d2c9e09361fd/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-migraciones-de-ayer-y-de-hoy
-    title: Migraciones de ayer y de hoy
-    url: https://library.oapen.org/rest/bitstreams/9029ac82-f9c5-4fce-ba74-0beaf1cd6816/retrieve
-    source: oapen
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: oer-terra-incognita-globalisering-ecologie-en-rechtvaard
-    title: Terra Incognita. Globalisering, ecologie en rechtvaardige duurzaamheid
-    url: https://library.oapen.org/rest/bitstreams/3a3284b6-e884-4d96-b115-36d91b835928/retrieve
-    source: oapen
-    license: cc-by
-    topic: urban
     format: pdf

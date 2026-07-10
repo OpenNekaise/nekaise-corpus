@@ -6345,13 +6345,6 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-fire-suppression-in-aircraft
-    title: Fire suppression in aircraft
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication1069.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-fire-test-of-steel-joist-roof-deck
     title: Fire test of steel joist roof deck
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport4594.pdf
@@ -6376,13 +6369,6 @@ sources:
   - id: nst-elevators-as-a-means-of-fire-escape
     title: Elevators as a means of fire escape
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir82-2507.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-nasa-fire-detector-study
-    title: NASA fire detector study
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5798.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -6412,13 +6398,6 @@ sources:
   - id: nst-a-survey-of-some-magnesium-fire-problems
     title: A survey of some magnesium fire problems
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport6340.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-next-generation-fire-suppression-technology-program-
-    title: Next-generation fire suppression technology program (NGP)
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6163.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -6495,21 +6474,6 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-smoke-component-yields-from-bench-scale-fire-tests-2
-    title: 'Smoke component yields from Bench-Scale Fire Tests : 2. ISO 19700 Controlled
-      Equivalence Ratio Tube Furnace'
-    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1761.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-free-space-optics-communication-system-testing-in-sm
-    title: Free space optics communication system testing in smoke and fire environments
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7317.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-verification-and-validation-of-cfast
     title: 'Verification and validation of CFAST :'
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7080.pdf
@@ -6532,13 +6496,6 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-the-zone-fire-model-jet
-    title: 'The zone fire model jet:'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6324.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-smoke-component-yields-from-bench-scale-fire-tests-1
     title: 'Smoke component yields from Bench-Scale Fire Tests : 1. NFPA 269/ASTM E
       1678'
@@ -6547,26 +6504,10 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-measurement-of-room-conditions-and-response-of-sprin
-    title: Measurement of room conditions and response of sprinklers and smoke detectors
-      during a simulated two-bed hospital patient room fire
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5240.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-analysis-of-data-from-room-fire-test-of-parsons-tabl
     title: Analysis of data from room fire test of Parsons tables and comparison with
       laboratory test methods for flame spread and smoke generation, Volume I
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir81-2400.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-smoke-component-yields-from-bench-scale-fire-tests-3
-    title: 'Smoke component yields from Bench-Scale Fire Tests : 3. ISO 5660-1 / ASTM
-      E 1354 with Enclosure and Variable Oxygen Concentration'
-    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1762.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -6612,14 +6553,6 @@ sources:
     title: Performance of home smoke alarms analysis of the response of several available
       technologies in residential fire settings
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote1455-1r2007.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-guide-to-industrial-control-systems-ics-security-sup
-    title: 'Guide to Industrial Control Systems (ICS) Security - Supervisory Control
-      and Data Acquisition (SCADA) systems, Distributed Control Systems (DCS), and '
-    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800.82.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -6701,23 +6634,9 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-logical-link-control
-    title: Logical link control
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub107-Feb1985.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-integration-of-servo-control-into-a-large-scale-cont
     title: 'Integration of servo control into a large-scale control system design:'
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5446.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-channel-level-power-control-interface
-    title: Channel level power control interface
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub61.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -6758,32 +6677,10 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-advanced-data-communication-control-procedures-adccp
-    title: Advanced data communication control procedures (ADCCP)
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub71-1980.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-prototype-water-heater-with-legionella-control
-    title: Prototype Water Heater with Legionella Control
-    url: https://nvlpubs.nist.gov/nistpubs/gcr/2023/NIST.GCR.23-048.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-structural-properties-of-a-tilecrete-floor-construct
     title: Structural properties of a "tilecrete" floor construction sponsored by Tilecrete
       Floors, Inc.
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/BMS/nbsbuildingmaterialsstructures16.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-a-summary-of-the-structural-performance-of-single-fa
-    title: "A summary of the structural performance of single-family, wood-frame\n \
-      \                       housing"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6224.pdf
     source: nist_crossref
     license: public-domain
     topic: structures_civil
@@ -6807,13 +6704,6 @@ sources:
   - id: nst-circular-of-the-bureau-of-standards-no-201
     title: 'Circular of the Bureau of Standards no. 201:'
     url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular201.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-tensile-properties-of-some-structural-alloy-steels-a
-    title: Tensile properties of some structural alloy steels at high temperatures.
-    url: https://nvlpubs.nist.gov/nistpubs/nbstechnologic/nbstechnologicpaperT205.pdf
     source: nist_crossref
     license: public-domain
     topic: structures_civil
@@ -6884,13 +6774,6 @@ sources:
     title: Structural tests on housing components of glass fiber reinforced polyester
       laminate
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir73-188.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-results-of-some-compression-tests-of-structural-stee
-    title: Results of some compression tests of structural steel angles.
-    url: https://nvlpubs.nist.gov/nistpubs/nbstechnologic/nbstechnologicpaperT218.pdf
     source: nist_crossref
     license: public-domain
     topic: structures_civil
@@ -7084,14 +6967,6 @@ sources:
     license: public-domain
     topic: structures_civil
     format: pdf
-  - id: nst-proceedings-of-a-workshop-on-developing-and-adopting
-    title: "Proceedings of a workshop on developing and adopting seismic design and\n\
-      \                        construction standards for lifelines"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5907.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
   - id: nst-plan-for-the-assessment-and-implementation-of-seismi
     title: Plan for the assessment and implementation of seismic design provisions for
       buildings
@@ -7118,13 +6993,6 @@ sources:
     title: United States-Japan Panel on Wind and Seismic Effects - National Bureau of
       Standards, Gaithersburg, Md, May 17-20, 1988
     url: https://nvlpubs.nist.gov/nistpubs/jres/093/jresv93n6p671_A1b.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-extreme-wind-speeds-at-129-stations-in-the-contiguou
-    title: Extreme wind speeds at 129 stations in the contiguous United States
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/BSS/nbsbuildingscience118.pdf
     source: nist_crossref
     license: public-domain
     topic: structures_civil
@@ -7219,14 +7087,6 @@ sources:
     license: public-domain
     topic: structures_civil
     format: pdf
-  - id: nst-intercomparison-of-load-cell-verification-tests-perf
-    title: "Intercomparison of load cell verification tests performed by national\n\
-      \                        laboratories of five countries"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir89-4101.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
   - id: nst-evaluation-of-dad-etabs-procedure-and-software-for-t
     title: Evaluation of DAD_ETABS procedure and software for the design of high-rise
       steel buildings for wind
@@ -7285,14 +7145,6 @@ sources:
   - id: nst-survey-of-building-code-provisions-for-historic-stru
     title: Survey of building code provisions for historic structures
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote918.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-influence-of-fire-on-the-lateral-load-capacity-of-st
-    title: Influence of fire on the lateral load capacity of steel-sheathed cold-formed
-      steel shear walls - report of test
-    url: https://nvlpubs.nist.gov/nistpubs/ir/2016/NIST.IR.8160.pdf
     source: nist_crossref
     license: public-domain
     topic: structures_civil
@@ -7412,14 +7264,6 @@ sources:
     license: public-domain
     topic: structures_civil
     format: pdf
-  - id: nst-semi-active-control-algorithms-for-structures-with-v
-    title: "Semi-active control algorithms for structures with variable\n          \
-      \              dampers"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6052.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
   - id: nst-evaluation-of-selected-connectors-for-aluminum-wire-
     title: Evaluation of selected connectors for aluminum wire in residential structures
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir76-1039.pdf
@@ -7490,14 +7334,6 @@ sources:
     license: public-domain
     topic: structures_civil
     format: pdf
-  - id: nst-computer-aided-manufacturing-engineering-forum-first
-    title: "Computer-Aided Manufacturing Engineering Forum, first technical meeting\n\
-      \                        proceedings"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5699.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
   - id: nst-manufacturing-engineering-laboratory-information-tec
     title: Manufacturing engineering laboratory information technology improvement plan
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6378.pdf
@@ -7529,20 +7365,6 @@ sources:
   - id: nst-2010-programs-of-the-manufacturing-engineering-labor
     title: 2010 programs of the Manufacturing Engineering Laboratory
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7713.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-characteristics-and-functions-of-software-engineerin
-    title: Characteristics and functions of software engineering environments
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir85-3250.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-model-based-engineering-standardization-and-validati
-    title: Model based engineering standardization and validation
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7796.pdf
     source: nist_crossref
     license: public-domain
     topic: structures_civil
@@ -7591,28 +7413,6 @@ sources:
     license: public-domain
     topic: structures_civil
     format: pdf
-  - id: nst-the-role-of-product-data-management-in-the-manufactu
-    title: "The role of Product Data Management in the Manufacturing Engineering\n \
-      \                       Toolkit"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6042.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-electrical-engineering-units-and-constants-supersede
-    title: Electrical engineering units and constants (superseded by SP368 1976)
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/MP/nbsmiscellaneouspub268.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-reference-model-for-frameworks-of-software-engineeri
-    title: Reference model for frameworks of software engineering environments
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-201.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
   - id: nst-an-engineering-method-for-calculating-protection-aff
     title: An Engineering method for calculating protection afforded by structures against
       fallout radiation
@@ -7629,13 +7429,6 @@ sources:
     license: public-domain
     topic: structures_civil
     format: pdf
-  - id: nst-guide-to-software-engineering-environment-assessment
-    title: Guide to software engineering environment assessment and evaluation
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5295.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
   - id: nst-office-of-law-enforcement-standards
     title: 'Office of Law Enforcement Standards:'
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6843.pdf
@@ -7647,13 +7440,6 @@ sources:
     title: "International cooperation and competition in materials science and\n   \
       \                     engineering"
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir89-4041.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-forward-looking-codes-and-standards
-    title: 'Forward-Looking Codes and Standards:'
-    url: https://nvlpubs.nist.gov/nistpubs/gcr/2026/NIST.GCR.26-073.pdf
     source: nist_crossref
     license: public-domain
     topic: structures_civil
@@ -7813,13 +7599,6 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: nst-letter-circular-1112
-    title: 'Letter Circular 1112:'
-    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular1112.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: nst-building-research-at-the-national-bureau-of-st-2
     title: Building research at the National Bureau of Standards 1968-1974
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/BSS/nbsbuildingscience75.pdf
@@ -7865,14 +7644,6 @@ sources:
   - id: nst-federal-building-telecommunications-wiring-standard
     title: Federal building telecommunications wiring standard
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub174.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-project-summaries-1998-nist-building-and-fire-resear
-    title: "Project summaries 1998, NIST building and fire research\n              \
-      \          laboratory"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6203.pdf
     source: nist_crossref
     license: public-domain
     topic: building_energy
@@ -7943,14 +7714,6 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: nst-community-resilience-planning-guide-for-buildings-an
-    title: 'Community resilience planning guide for buildings and infrastructure systems
-      : volume I'
-    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1900v1.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: nst-an-optimum-startstop-control-algorithm-for-heating-a
     title: An optimum startstop control algorithm for heating and cooling systems in
       buildings
@@ -7997,13 +7760,6 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: nst-carbon-monoxide-dispersion-in-residential-buildings
-    title: 'Carbon monoxide dispersion in residential buildings:'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5906.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: nst-community-resilience-planning-guide-for-buildi-3
     title: 'COMMUNITY RESILIENCE PLANNING GUIDE FOR BUILDINGS AND INFRASTRUCTURE SYSTEMS:
       A Playbook'
@@ -8023,14 +7779,6 @@ sources:
   - id: nst-steel-research-needs-for-buildings
     title: 'Steel research needs for buildings :'
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir86-3371.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-impacts-to-and-recovery-of-infrastructure-systems-su
-    title: Impacts to and Recovery of Infrastructure Systems Supporting Critical Buildings
-      and Emergency Communications
-    url: https://nvlpubs.nist.gov/nistpubs/NWIRP/NIST.NWIRP.4-1.pdf
     source: nist_crossref
     license: public-domain
     topic: building_energy
@@ -8291,23 +8039,9 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: nst-performance-tests-of-a-trion-electric-air-filter
-    title: Performance tests of a Trion electric air filter
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport2813.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: nst-neutron-dose-and-fluence-distributions-in-an-infinit
     title: Neutron dose and fluence distributions in an infinite air medium
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote745.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-air-kerma-rate-coefficients-for-selected-photon-emit
-    title: Air-kerma-rate coefficients for selected photon-emitting radionuclide sources
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7092.pdf
     source: nist_crossref
     license: public-domain
     topic: building_energy
@@ -8381,13 +8115,6 @@ sources:
   - id: nst-the-accuracy-of-air-tower-pressure-gages-in-suburban
     title: The accuracy of air tower pressure gages in suburban Washington, D.C.
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote512.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-effect-of-magnification-on-the-precision-of-indoor-t
-    title: Effect of magnification on the precision of indoor telescope pointing
-    url: https://nvlpubs.nist.gov/nistpubs/jres/39/jresv39n2p163_A1b.pdf
     source: nist_crossref
     license: public-domain
     topic: building_energy
@@ -8485,20 +8212,6 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: nst-program-handbook
-    title: 'Program handbook:'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6262.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-a-bibliography-of-thermophysical-properties-of-air-f
-    title: A bibliography of thermophysical properties of air from 0 to 300 K
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote383.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: nst-air-delivery-performance-of-a-herman-nelson-unit-ven
     title: Air delivery performance of a Herman Nelson unit ventilator under isothermal
       conditions
@@ -8521,13 +8234,6 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-thermal-properties-and-thermal-modeling-of-ballistic
-    title: Thermal properties and thermal modeling of ballistic clay box
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7840.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-method-of-testing-for-rating-thermal-storage-devices
     title: Method of testing for rating thermal storage devices based on thermal performance
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir74-634.pdf
@@ -8546,30 +8252,6 @@ sources:
     title: Thermal performance of fire restrictive materials I. characterization with
       respect to thermal performance models
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7401.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-experimental-thermal-conductivity-and-thermal-diffus
-    title: Experimental thermal conductivity and thermal diffusivity values for Neon
-      and mixtures of Neon and Nitrogen
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5088.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-experimental-thermal-conductivity-thermal-diffusivit
-    title: Experimental thermal conductivity, thermal diffusivity, and specific heat
-      values for mixtures of nitrogen, oxygen, and argon
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir3961.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-experimental-thermal-conductivity-thermal-diff-2
-    title: Experimental thermal conductivity, thermal diffusivity, and specific heat
-      values of argon and nitrogen
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir88-3902.pdf
     source: nist_crossref
     license: public-domain
     topic: materials
@@ -8651,13 +8333,6 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-thermal-properties-of-petroleum-products
-    title: Thermal properties of petroleum products/
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/MP/nbsmiscellaneouspub97.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-thermal-resistance-measurements
     title: Thermal resistance measurements
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication400-86.pdf
@@ -8682,13 +8357,6 @@ sources:
   - id: nst-thermal-performance-of-masonry-chimneys-and-fireplac
     title: Thermal performance of masonry chimneys and fireplaces
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir87-3515.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-thermal-conductivity-measurements-of-two-paperboard-
-    title: Thermal conductivity measurements of two paperboard materials
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport3188.pdf
     source: nist_crossref
     license: public-domain
     topic: materials
@@ -8840,14 +8508,6 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-thermal-analysis-of-directly-buried-conduit-heat-dis
-    title: "Thermal analysis of directly buried conduit heat distribution\n        \
-      \                systems"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4365.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-penetration-of-gamma-rays-from-isotropic-sources-thr
     title: Penetration of gamma rays from isotropic sources through aluminum and concrete
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote11.pdf
@@ -8919,13 +8579,6 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-long-term-performance-of-engineered-concrete-barrier
-    title: Long-term performance of engineered concrete barriers
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5690.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-design-loads-for-inserts-embedded-in-reinforced-conc
     title: Design loads for inserts embedded in reinforced concrete slabs
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport10055.pdf
@@ -8969,30 +8622,9 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-mechanical-properties-of-high-strength-concrete-at-e
-    title: Mechanical properties of high-strength concrete at elevated temperatures
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6726.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-methods-for-predicting-remaining-life-of-concrete-in
     title: Methods for predicting remaining life of concrete in structures
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4954.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-report-on-the-concrete-standards-of-the-internationa
-    title: Report on the concrete standards of the international electrical units
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/MP/nbsmiscellaneouspub16.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-effect-of-drying-shrinkage-cracks-and-flexural-crack
-    title: Effect of drying shrinkage cracks and flexural cracks on concrete bulk permeability
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6519.pdf
     source: nist_crossref
     license: public-domain
     topic: materials
@@ -9025,25 +8657,9 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-comprehensive-design-of-new-connections-for-enhancin
-    title: Comprehensive Design of New Connections for Enhancing the Robustness of Precast
-      Concrete Frame Structures
-    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2348A.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-measuring-the-rate-of-corrosion-of-reinforcing-steel
     title: Measuring the rate of corrosion of reinforcing steel in concrete
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir80-2012.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-measurement-of-rheological-properties-of-high-perfor
-    title: "Measurement of rheological properties of high performance\n            \
-      \            concrete:"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5869.pdf
     source: nist_crossref
     license: public-domain
     topic: materials
@@ -9067,13 +8683,6 @@ sources:
     title: "Strength and ductility of concrete beams reinforced with carbon FRP and\n\
       \                        steel"
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6830.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-optimization-of-polymer-concrete-composites
-    title: 'Optimization of polymer concrete composites:'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6361.pdf
     source: nist_crossref
     license: public-domain
     topic: materials
@@ -9116,14 +8725,6 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-simplified-design-procedure-for-hybrid-precast-concr
-    title: "Simplified design procedure for hybrid precast concrete\n              \
-      \          connections"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5765.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-feasibility-of-using-a-concrete-mixing-truck-as-a-rh
     title: Feasibility of using a concrete mixing truck as a rheometer
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7333.pdf
@@ -9137,13 +8738,6 @@ sources:
     source: nist_crossref
     license: public-domain
     topic: materials
-    format: pdf
-  - id: nst-compf2
-    title: 'COMPF2 :'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote991.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
     format: pdf
   - id: nst-fire-performance-characteristics-of-a-glass-fiber-sa
     title: Fire performance characteristics of a glass fiber sandwich panel
@@ -9176,13 +8770,6 @@ sources:
   - id: nst-human-response-to-fire
     title: 'Human response to fire :'
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir77-1508.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-fire-test-of-precast-reinforced-concrete-roof-slabs
-    title: Fire test of precast, reinforced concrete roof slabs
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport3321.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -9313,37 +8900,9 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-mechanisms-of-fire-ignition-and-extinguishment
-    title: 'Mechanisms of fire ignition and extinguishment :'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport6906.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-the-molecular-level-design-of-fire-retardants-and-su
-    title: The molecular level design of fire retardants and suppressants
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6275.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-attacking-the-fire-problem
-    title: 'Attacking the fire problem :'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nbsspecialpublication416.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-a-new-test-method-for-automatic-fire-detection-devic
     title: A new test method for automatic fire detection devices
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir76-1172.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-oxygen-limited-fires-inside-under-ventilated-enclosu
-    title: Oxygen-Limited Fires Inside Under-Ventilated Enclosures (OLIVE-FIRE)
-    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2232-upd1.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -9383,13 +8942,6 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-simulating-the-opening-of-fusible-link-actuated-fire
-    title: Simulating the opening of fusible-link-actuated fire vents
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6227.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-attribute-considerations-for-access-control-systems
     title: Attribute Considerations for Access Control Systems
     url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-205-draft.pdf
@@ -9425,13 +8977,6 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-for-advanced-data-communication-control-procedures-a
-    title: For advanced data communication control procedures (ADCCP)
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub71.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-automated-control-of-lighting-and-fenestration
     title: Automated control of lighting and fenestration
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir83-2728.pdf
@@ -9460,20 +9005,6 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-control-baselines-for-information-systems-and-organi
-    title: Control Baselines for Information Systems and Organizations
-    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53B-draft.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-secure-data-network-system-sdns-access-control-docum
-    title: Secure data network system (SDNS) access control documents
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir90-4259.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-thermometry-in-the-control-of-water-quality
     title: thermometry in the control of water quality
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir77-1227.pdf
@@ -9491,28 +9022,6 @@ sources:
   - id: nst-an-architecture-for-a-robot-hierarchical-control-sys
     title: An architecture for a robot hierarchical control systme
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nbsspecialpublication500-23.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-guideline-for-implementing-advanced-data-communicati
-    title: Guideline for implementing advanced data communication control procedures
-      (ADCCP)
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub78.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-guideline-on-integrity-assurance-and-control-in-data
-    title: Guideline on integrity assurance and control in database administration
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub88.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-control-overlays-for-securing-ai-systems-overview-an
-    title: 'Control Overlays for Securing AI Systems: Overview and Methodology'
-    url: https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8605.ipd.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -9545,23 +9054,9 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-access-control-for-sar-systems
-    title: Access control for SAR systems
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7815.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-a-revised-model-for-role-based-access-control
     title: A revised model for role-based access control
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6192.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-automation-support-for-control-assessments
-    title: 'Automation Support for Control Assessments:'
-    url: https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.30.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -9587,23 +9082,9 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-graphic-representation-of-the-control-characters-of-
-    title: Graphic representation of the control characters of ASCII (FIPS 1)
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub36-1975.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-visual-perception-processing-in-a-hierarchical-contr
     title: 'Visual perception processing in a hierarchical control system :'
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote1260.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-guideline-on-user-authentication-techniques-for-comp
-    title: Guideline on user authentication techniques for computer network access control
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub83.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -9656,13 +9137,6 @@ sources:
     title: Control experiments to avoid artifacts and misinterpretations in nanoecotoxicology
       testing
     url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1200-11.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-letter-circular-82
-    title: 'Letter Circular 82:'
-    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular82.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -9854,14 +9328,6 @@ sources:
     license: public-domain
     topic: structures_civil
     format: pdf
-  - id: nst-a-basis-for-using-fire-modeling-with-1-d-thermal-ana
-    title: "A basis for using fire modeling with 1-d thermal analyses of\n         \
-      \               barrierspartitions to simulate 2-d and 3-D barrierpartition struc"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6170.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
   - id: nst-macromolecular-crystallography-and-structural-biolog
     title: Macromolecular crystallography and structural biology databases a NIST
     url: https://nvlpubs.nist.gov/nistpubs/jres/106/6/j66gil.pdf
@@ -9911,21 +9377,6 @@ sources:
   - id: nst-poisson-s-ratio-of-some-structural-alloys-for-large-
     title: Poisson's ratio of some structural alloys for large strains
     url: https://nvlpubs.nist.gov/nistpubs/jres/37/jresv37n4p211_A1b.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-infrared-study-of-some-structural-changes-in-natural
-    title: Infrared study of some structural changes in natural rubber during vulcanization
-    url: https://nvlpubs.nist.gov/nistpubs/jres/60/jresv60n1p9_A1b.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-structural-reliability-and-damage-tolerance-of-3
-    title: Structural reliability and damage tolerance of ceramic composites for high-temperature
-      applications- semi-annual progress report for the period ending
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir88-3817.pdf
     source: nist_crossref
     license: public-domain
     topic: structures_civil
@@ -9996,14 +9447,6 @@ sources:
     title: Formulation and experimental verification of an axisymmetric finite-element
       structural analysis
     url: https://nvlpubs.nist.gov/nistpubs/jres/75C/jresv75Cn3-4p155_A1b.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-experiments-and-modeling-of-structural-steel-e-2
-    title: Experiments and modeling of structural steel elements exposed to fire (Appendices
-      D-G)
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1-5bv2.pdf
     source: nist_crossref
     license: public-domain
     topic: structures_civil
@@ -10098,14 +9541,6 @@ sources:
   - id: nst-sensitivity-analysis-of-reinforced-concrete-structur
     title: 'Sensitivity analysis of reinforced concrete structures :'
     url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2254.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-review-of-nondestructive-evaluation-methods-applicab
-    title: Review of nondestructive evaluation methods applicable to construction materials
-      and structures
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote1247.pdf
     source: nist_crossref
     license: public-domain
     topic: structures_civil
@@ -10240,14 +9675,6 @@ sources:
     license: public-domain
     topic: structures_civil
     format: pdf
-  - id: nst-report-of-a-workshop-on-requalification-of-tubular-s
-    title: "Report of a workshop on requalification of tubular steel joints in\n   \
-      \                     offshore structures"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5877.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
   - id: nst-moisture-resistant-coatings-for-walls-of-structures-
     title: Moisture-resistant coatings for walls of structures used for storage
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport2163.pdf
@@ -10272,21 +9699,6 @@ sources:
   - id: nst-letter-circular-800
     title: 'Letter Circular 800:'
     url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular800.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-performance-of-physical-structures-in-hurricane-katr
-    title: 'Performance of physical structures in Hurricane Katrina and Hurricane Rita
-      :'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote1476.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-an-efficient-large-eddy-simulation-algorithm-for-com
-    title: 'An efficient large eddy simulation algorithm for computational wind engineering:'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6371.pdf
     source: nist_crossref
     license: public-domain
     topic: structures_civil
@@ -10350,14 +9762,6 @@ sources:
     license: public-domain
     topic: structures_civil
     format: pdf
-  - id: nst-reference-model-for-frameworks-of-software-eng-2
-    title: Reference model for frameworks of software engineering environments, 3rd
-      edition.
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-211.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
   - id: nst-developing-cyber-resilient-systems
     title: Developing Cyber Resilient Systems
     url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-160v2r1-draft.pdf
@@ -10405,13 +9809,6 @@ sources:
   - id: nst-systems-engineering-in-ceramics
     title: Systems engineering in ceramics
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/MP/nbsmiscellaneouspub267.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-semiconductor-industry-it-needs
-    title: 'Semiconductor industry IT needs:'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7003.pdf
     source: nist_crossref
     license: public-domain
     topic: structures_civil
@@ -10512,14 +9909,6 @@ sources:
     license: public-domain
     topic: structures_civil
     format: pdf
-  - id: nst-engineering-manual-for-protective-construction-part-
-    title: Engineering Manual for protective construction part V heating and air conditioning
-      of underground installations
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport4185.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
   - id: nst-nist-conference-papers-fiscal-year-2019
     title: 'NIST conference papers fiscal year 2019 :'
     url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1276v1.pdf
@@ -10567,13 +9956,6 @@ sources:
   - id: nst-selected-papers-dealing-with-regulatory-concerns-of-
     title: Selected papers dealing with regulatory concerns of building rehabilitation
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nbsspecialpublication536.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-prototype-residential-building-designs-for-energy-an
-    title: Prototype Residential Building Designs for Energy and Sustainability Assessment
-    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1765.pdf
     source: nist_crossref
     license: public-domain
     topic: building_energy
@@ -10708,13 +10090,6 @@ sources:
   - id: nst-building-an-information-technology-security-awarenes
     title: Building an Information Technology Security Awareness and Training Program
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-50.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-letter-circular-1113
-    title: 'Letter Circular 1113:'
-    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular1113.pdf
     source: nist_crossref
     license: public-domain
     topic: building_energy
@@ -10895,13 +10270,6 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: nst-nvlap-efficiency-of-electric-motors
-    title: NVLAP efficiency of electric motors
-    url: https://nvlpubs.nist.gov/nistpubs/hb/2020/NIST.HB.150-10-2020.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: nst-fedsol
     title: 'FEDSOL :'
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir81-2342.pdf
@@ -10913,14 +10281,6 @@ sources:
     title: Initial evaluation of displacement ventilation and dedicated outdoor air
       systems for U.S. commercial buildings
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7244.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-application-of-natural-ventilation-for-u-s-commerica
-    title: 'Application of natural ventilation for U.S. commerical buildings : climate
-      suitability design strategies [and] methods modeling studies'
-    url: http://nvlpubs.nist.gov/nistpubs/gcr/2001/gcr01-820.pdf
     source: nist_crossref
     license: public-domain
     topic: building_energy
@@ -11084,23 +10444,9 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: nst-progress-report-on-engine-air-cleaning
-    title: 'Progress report on engine air cleaning :'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport3685.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: nst-proposed-design-of-a-taxiway-guidance-system-for-mir
     title: Proposed design of a taxiway guidance system for Miramar Naval Air Station
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport6846.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-simulation-of-air-traffic-control-radar-beacon-code-
-    title: 'Simulation of air traffic control radar beacon code assignment plans :'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote568.pdf
     source: nist_crossref
     license: public-domain
     topic: building_energy
@@ -11165,14 +10511,6 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: nst-measurement-uncertainty-of-the-air-system-in-the-int
-    title: Measurement uncertainty of the air system in the intelligent building agents
-      laboratory
-    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2037.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: nst-measurements-of-outdoor-air-distribution-in-an-offic
     title: Measurements of outdoor air distribution in an office building
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5320.pdf
@@ -11191,13 +10529,6 @@ sources:
     title: Transportation, handling and field service loads for air mobility shelter
       systems
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir77-1254.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-air-side-velocity-distribution-in-finned-tube-heat-e
-    title: Air-side velocity distribution in finned-tube heat exchangers
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7474.pdf
     source: nist_crossref
     license: public-domain
     topic: building_energy
@@ -11428,14 +10759,6 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-experimental-thermal-conductivity-values-for-hydroge
-    title: Experimental thermal conductivity values for hydrogen, methane, ethane and
-      propane
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir84-3006.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-thermal-conductivity-of-five-epoxy-resin-specimens
     title: Thermal conductivity of five epoxy resin specimens
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport8574.pdf
@@ -11506,14 +10829,6 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-experimental-thermal-conductivity-values-for-mixture
-    title: Experimental thermal conductivity values for mixtures of R32, R125, R134a,
-      and propane
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5093.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-thermal-conductivity-of-a-specimen-of-electroformed-
     title: Thermal conductivity of a specimen of electroformed nickel
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport8345.pdf
@@ -11539,20 +10854,6 @@ sources:
   - id: nst-thermal-behavior-of-fine-grained-soils
     title: Thermal behavior of fine-grained soils
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/BSS/nbsbuildingscience149.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-thermal-conductivity-measurements-of-eight-rubber-li
-    title: Thermal conductivity measurements of eight rubber-like materials
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport2547.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-thermal-conductivity-measurements-of-three-rubber-li
-    title: Thermal conductivity measurements of three rubber-like materials
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport3063.pdf
     source: nist_crossref
     license: public-domain
     topic: materials
@@ -11704,14 +11005,6 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-report-of-examination-of-perlite-gypsum-concrete-roo
-    title: Report of examination of perlite-gypsum concrete roof deck, Gentile Air Force
-      Base, Dayton, Ohio
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport3424.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-diagnosis-of-causes-of-concrete-deterioration-in-the
     title: Diagnosis of causes of concrete deterioration in the MLP-7A parking garage
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5492.pdf
@@ -11723,14 +11016,6 @@ sources:
     title: Proceedings of the Workshop on Evaluation of Cement and Concrete Laboratory
       Performance
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication788.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-minimizing-paste-content-in-concrete-using-limestone
-    title: Minimizing Paste Content in Concrete Using Limestone Powders - Demonstration
-      Mixtures
-    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1906.pdf
     source: nist_crossref
     license: public-domain
     topic: materials
@@ -11760,13 +11045,6 @@ sources:
   - id: nst-evaluation-testing-of-coating-materials-for-concrete
     title: 'Evaluation testing of coating materials for concrete reinforcing bars:'
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport10984.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-polymer-composites-for-repairing-of-portland-cement-
-    title: 'Polymer composites for repairing of Portland cement concrete:'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6394.pdf
     source: nist_crossref
     license: public-domain
     topic: materials
@@ -11824,21 +11102,6 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-multi-scale-picture-of-concrete-and-its-transport-pr
-    title: 'Multi-scale picture of concrete and its transport properties:'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5900.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-computerized-integrated-knowledge-based-system-for-h
-    title: "Computerized integrated knowledge based system for high-performance\n  \
-      \                      concrete:"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5947.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-recommended-guidelines-for-safety-inspection-of-cons
     title: Recommended guidelines for safety inspection of construction of concrete
       cooling towers
@@ -11854,24 +11117,10 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-interrelations-between-cement-and-concrete-propertie
-    title: 'Interrelations between cement and concrete properties, part 6 :'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/BSS/nbsbuildingscience36.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-freezing-and-thawing-tests-of-grout-pocket-assemblie
     title: Freezing and thawing tests of grout pocket assemblies as used at welded joints
       of precast concrete panels
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport6682.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-shear-design-of-high-strength-concrete-beams
-    title: 'Shear design of high-strength concrete beams:'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5870.pdf
     source: nist_crossref
     license: public-domain
     topic: materials
@@ -11887,14 +11136,6 @@ sources:
     title: Fire endurance of open-web steel-joist floors with concrete slabs and gypsum
       ceilings
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/BMS/nbsbuildingmaterialsstructures141.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-experimental-plan-for-testing-the-mechanical-propert
-    title: "Experimental plan for testing the mechanical properties of high-strength\n\
-      \                        concrete at elevated temperatures"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6210.pdf
     source: nist_crossref
     license: public-domain
     topic: materials
@@ -11982,13 +11223,6 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-soil-corrosion-studies-1946-and-1948-copper-alloys-l
-    title: 'Soil-corrosion studies, 1946 and 1948: Copper alloys, lead, and zinc'
-    url: https://nvlpubs.nist.gov/nistpubs/jres/44/jresv44n3p259_A1b.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-relationship-between-crystal-orientation-and-stress-
     title: Relationship between crystal orientation and stress-corrosion cracking in
       alpha and beta brasses
@@ -12020,33 +11254,9 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-mechanical-properties-and-resistance-to-corrosion-of
-    title: Mechanical properties and resistance to corrosion of rolled light alloys
-      of aluminum and magnesium with copper, with nickel, and with manganese.
-    url: https://nvlpubs.nist.gov/nistpubs/nbstechnologic/nbstechnologicpaperT132.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-soil-corrosion-studies-1934-rates-of-loss-of-weight-
-    title: Soil-corrosion studies, 1934. Rates of loss of weight and pitting of ferrous
-      specimens
-    url: https://nvlpubs.nist.gov/nistpubs/jres/16/jresv16n5p431_A1b.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-corrosion-of-steel-pilings-in-soils
     title: Corrosion of steel pilings in soils.
     url: https://nvlpubs.nist.gov/nistpubs/jres/66C/jresv66Cn3p223_A1b.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-soil-corrosion-studies-1934-rates-of-loss-of-w-2
-    title: Soil-corrosion studies, 1934. Rates of loss of weight and penetration of
-      nonferrous materials
-    url: https://nvlpubs.nist.gov/nistpubs/jres/17/jresv17n5p781_A1b.pdf
     source: nist_crossref
     license: public-domain
     topic: materials
@@ -12340,13 +11550,6 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-control-overlays-for-securing-ai-systems-security-co
-    title: 'Control Overlays for Securing AI Systems: Security Controls for AI Developers'
-    url: https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8605C.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-methods-of-measurement-for-semiconductor-materials-p
     title: Methods of measurement for semiconductor materials, process control, and
       devices.
@@ -12358,14 +11561,6 @@ sources:
   - id: nst-implementation-of-the-execution-control-system-of-th
     title: Implementation of the execution control system of the Inspection Workstation
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir88-3787.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-control-overlays-for-securing-ai-systems-adapting-an
-    title: 'Control Overlays for Securing AI Systems: Adapting and Using Generative
-      AI'
-    url: https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8605B.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -12398,24 +11593,9 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-guideline-for-inspection-and-quality-control-for-alp
-    title: Guideline for inspection and quality control for alphanumeric computer-output
-      microforms
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub82-Sep1980.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-measurement-technology-for-safeguards-and-materials-
     title: Measurement technology for safeguards and materials control
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nbsspecialpublication582.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-a-conformance-test-for-fddi-medium-access-control-ma
-    title: A conformance test for FDDI Medium Access Control (MAC)
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir90-4267.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -12435,24 +11615,9 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-letter-circular-752
-    title: 'Letter Circular 752:'
-    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular752.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-formalizing-isa-95-level-3-control-with-smart-manufa
     title: Formalizing ISA-95 level 3 control with smart manufacturing system models
     url: https://nvlpubs.nist.gov/nistpubs/gcr/2019/NIST.GCR.19-022.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-control-overlays-for-securing-ai-systems-using-and-f
-    title: 'Control Overlays for Securing AI Systems: Using and Fine-tuning Predictive
-      AI'
-    url: https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8605A.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -12472,13 +11637,6 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-guideline-for-quality-control-of-image-scanners
-    title: Guideline for quality control of image scanners
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub157.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-mining-automation-real-time-control-system-architect
     title: Mining automation real-time control system architecture standard reference
       model (MASREM)
@@ -12494,13 +11652,6 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-assessment-of-access-control-systems
-    title: Assessment of access control systems
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7316.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-development-of-methods-of-test-for-quality-control-o
     title: Development of methods of test for quality control of porcelain enamels
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport10075.pdf
@@ -12511,14 +11662,6 @@ sources:
   - id: nst-circular-of-the-bureau-of-standards-no-491
     title: 'Circular of the Bureau of Standards no. 491:'
     url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular491.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-methodology-for-statistical-control-of-the-anechoic-
-    title: Methodology for statistical control of the anechoic chamber field generation
-      system
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir85-3033.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -12549,13 +11692,6 @@ sources:
     title: Technology adoption indicators applied to the ATP flow-control machining
       project
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6888.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
-  - id: nst-automation-support-for-security-control-assessments-
-    title: 'Automation support for security control assessments. volume 1: overview'
-    url: https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8011-1.pdf
     source: nist_crossref
     license: public-domain
     topic: architecture
@@ -12743,14 +11879,6 @@ sources:
     license: public-domain
     topic: structures_civil
     format: pdf
-  - id: nst-linear-static-and-dynamic-procedures-for-structures-
-    title: Linear static and dynamic procedures for structures with velocity-dependent
-      supplemental dampers
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6329.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
   - id: nst-innovative-office-building-structures-and-enclosures
     title: 'Innovative office building structures and enclosures :'
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir84-2950.pdf
@@ -12804,14 +11932,6 @@ sources:
     license: public-domain
     topic: structures_civil
     format: pdf
-  - id: nst-conductor-loading-nomograph-chart-1a-and-chart-1b-be
-    title: 'Conductor loading nomograph (chart 1A and chart 1B), Bending moment due
-      to wind pressure on pole (chart 2A), Ultimate resisting moments of wood poles '
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/MP/nbsmiscellaneouspub176.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
   - id: nst-a-computer-program-for-analysis-of-data-from-microel
     title: A computer program for analysis of data from microelectronic test structures
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir82-2492.pdf
@@ -12831,21 +11951,6 @@ sources:
     title: "Punching shear resistance of lightweight concrete offshore structures for\n\
       \                        the Arctic:"
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir88-4007.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-large-and-small-scale-structures-and-their-interacti
-    title: Large- and small-scale structures and their interactions in an axisymmetric
-      jet
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6393.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-path-finding-algorithms-and-data-structures-for-poin
-    title: Path finding algorithms and data structures for point-to-point trip management
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir75-676.pdf
     source: nist_crossref
     license: public-domain
     topic: structures_civil
@@ -12977,14 +12082,6 @@ sources:
     license: public-domain
     topic: structures_civil
     format: pdf
-  - id: nst-group-1-for-the-process-engineering-data-step-applic
-    title: "Group 1 for the process engineering data STEP application\n            \
-      \            protocol"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5909.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
   - id: nst-publications-of-the-center-for-manufacturing-enginee
     title: "Publications of the Center for Manufacturing Engineering covering the\n\
       \                        period January 1978 - December 1988"
@@ -13017,24 +12114,10 @@ sources:
     license: public-domain
     topic: structures_civil
     format: pdf
-  - id: nst-advanced-engineering-environments-for-small-manufact
-    title: 'Advanced engineering environments for small manufacturing enterprises :'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7055.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
   - id: nst-publications-of-the-manufacturing-engineering-labora
     title: "Publications of the Manufacturing Engineering Laboratory covering the\n\
       \                        period January 1989 - September 1991"
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4713.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: structures_civil
-    format: pdf
-  - id: nst-an-introduction-to-privacy-engineering-and-risk-mana
-    title: An introduction to privacy engineering and risk management in federal systems
-    url: https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8062.pdf
     source: nist_crossref
     license: public-domain
     topic: structures_civil
@@ -13245,13 +12328,6 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: nst-data-gap-filling-in-nist-s-building-systems-reposito
-    title: Data Gap Filling in NIST’s Building Systems Repository with USEEIO Bridging
-    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2378.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: nst-probabilistic-carbon-assessment-of-post-disaster-bui
     title: Probabilistic Carbon Assessment of Post-Disaster Building Repairs using Pelicun-LCA
     url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2374.pdf
@@ -13380,13 +12456,6 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: nst-standards-referenced-in-model-state-and-city-buildin
-    title: Standards referenced in model, state, and city building codes
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4952.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: nst-the-effect-of-atmospheric-contaminants-on-the-durabi
     title: "The effect of atmospheric contaminants on the durability of building\n \
       \                       materials:"
@@ -13510,33 +12579,9 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: nst-prediction-based-design-of-fire-detection-for-buildi
-    title: "Prediction based design of fire detection for buildings with ceiling\n \
-      \                       heights between 9 m and 18 m"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6199.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: nst-letter-circular-570
     title: 'Letter Circular 570:'
     url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular570r1939.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-evaluation-of-kitchen-cooking-appliance-efficiency-t
-    title: "Evaluation of kitchen cooking appliance efficiency test\n              \
-      \          procedures"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6181.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-state-building-regulatory-programs-for-mobile-homes-
-    title: "State building regulatory programs for mobile homes and\n              \
-      \                          manufactured buildings :"
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote853.pdf
     source: nist_crossref
     license: public-domain
     topic: building_energy
@@ -13673,13 +12718,6 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: nst-a-gas-dilution-system-for-arsine-air-mixtures
-    title: A gas dilution system for arsine-air mixtures
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir73-260.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: nst-performance-test-of-a-minneapolis-honeywell-electron
     title: Performance test of a Minneapolis-Honeywell electronic air cleaner, model
       FC1A2
@@ -13691,14 +12729,6 @@ sources:
   - id: nst-a-study-of-two-34-hp-sterling-air-conditioners
     title: A study of two 34 HP Sterling air conditioners
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport2506.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-air-flow-measurements-in-a-laboratory-fume-hood-fish
-    title: Air flow measurements in a laboratory fume hood, Fisher Scientific Co., type
-      17-105
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport6260.pdf
     source: nist_crossref
     license: public-domain
     topic: building_energy
@@ -13729,13 +12759,6 @@ sources:
   - id: nst-phase-ii-final-report
     title: 'Phase II final report:'
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6186.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-alphanumeric-com-quality-test-slide
-    title: Alphanumeric COM quality test slide
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub108.pdf
     source: nist_crossref
     license: public-domain
     topic: building_energy
@@ -13778,13 +12801,6 @@ sources:
   - id: nst-economic-analysis-of-improved-efficiency-for-central
     title: Economic analysis of improved efficiency for central air conditioners
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir80-1993.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-capacity-tests-of-two-remote-air-cooled-size-b-refri
-    title: Capacity tests of two remote air-cooled size B refrigerant condensers
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport6670.pdf
     source: nist_crossref
     license: public-domain
     topic: building_energy
@@ -13834,14 +12850,6 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: nst-improving-the-performance-of-a-roof-top-air-conditio
-    title: Improving the Performance of a Roof Top Air-Conditioning Unit by Refrigerant
-      Circuitry Optimization
-    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1806.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: nst-air-filter-systems-for-army-aircraft
     title: 'Air filter systems for Army aircraft :'
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport5260.pdf
@@ -13886,13 +12894,6 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: nst-improvement-of-visual-aids-for-air-navigation
-    title: 'Improvement of visual aids for air navigation :'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport3185.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: nst-air-leakage-measurements-in-three-apartment-houses-i
     title: Air leakage measurements in three apartment houses in the Chicago area
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir78-1475.pdf
@@ -13912,14 +12913,6 @@ sources:
     title: Performance tests of a Farr Co. "Roll-Kleen" automatic renewable media air
       filter
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport5827.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: nst-characterization-of-residential-air-distribution-sys
-    title: Characterization of residential air distribution system performance for thermal
-      comfort
-    url: https://nvlpubs.nist.gov/nistpubs/gcr/2019/NIST.GCR.19-021.pdf
     source: nist_crossref
     license: public-domain
     topic: building_energy
@@ -13996,23 +12989,9 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-thermal-conductivity-of-a-specimen-of-stainless-stee
-    title: Thermal conductivity of a specimen of stainless steel type 502
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport5788.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-thermal-conductivities-of-no-430-stainless-steel-and
     title: Thermal conductivities of no. 430 stainless steel and 2S aluminum specimens
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport2767.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-experimental-thermal-conductivity-values-for-m-2
-    title: Experimental thermal conductivity values for mixtures of methane and ethane
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir85-3024.pdf
     source: nist_crossref
     license: public-domain
     topic: materials
@@ -14036,13 +13015,6 @@ sources:
     title: Procedures for precise determination of thermal radiation properties, November
       1964 to October 1965
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote292.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-gasification-of-silicone-fluids-under-external-therm
-    title: Gasification of silicone fluids under external thermal radiation
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6041.pdf
     source: nist_crossref
     license: public-domain
     topic: materials
@@ -14197,13 +13169,6 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-letter-circular-234
-    title: 'Letter Circular 234:'
-    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular234.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-thermal-conductivity-standard-reference-materi-2
     title: Thermal conductivity standard reference materials from 4 to 300 K. I. Armco
       iron
@@ -14286,14 +13251,6 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-field-observations-of-a-pyrrhotite-affected-resident
-    title: Field Observations of a Pyrrhotite-Affected Residential Foundation and the
-      Mechanical Properties of Extracted Concrete Cores
-    url: https://nvlpubs.nist.gov/nistpubs/ir/2025/NIST.IR.8598.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-shear-tests-of-reinforced-concrete-beams
     title: Shear tests of reinforced concrete beams.
     url: https://nvlpubs.nist.gov/nistpubs/nbstechnologic/nbstechnologicpaperT314.pdf
@@ -14327,13 +13284,6 @@ sources:
     title: Evaluation of test methods for measuring the bond strength of Portland-cement
       based repair materials to concrete
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir88-3746.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
-  - id: nst-transport-properties-and-durability-of-concrete
-    title: 'Transport properties and durability of concrete:'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6395.pdf
     source: nist_crossref
     license: public-domain
     topic: materials
@@ -14443,13 +13393,6 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-interrelations-between-cement-and-concrete-pro-5
-    title: 'Interrelations between cement and concrete properties, part 4 :'
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/BSS/nbsbuildingscience15.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: materials
-    format: pdf
   - id: nst-tests-of-hollow-tile-and-concrete-slabs-reinforced-i
     title: Tests of hollow tile and concrete slabs reinforced in one direction.
     url: https://nvlpubs.nist.gov/nistpubs/nbstechnologic/nbstechnologicpaperT291.pdf
@@ -14494,13 +13437,6 @@ sources:
     license: public-domain
     topic: materials
     format: pdf
-  - id: nst-nist-cybersecurity-framework-2-0
-    title: 'NIST cybersecurity framework 2.0:'
-    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1300.spa.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
   - id: nst-prioritizing-cybersecurity-risk-for-enterprise-risk-
     title: Prioritizing cybersecurity risk for enterprise risk management
     url: https://nvlpubs.nist.gov/nistpubs/ir/2022/NIST.IR.8286B.pdf
@@ -14515,47 +13451,9 @@ sources:
     license: public-domain
     topic: controls_bas
     format: pdf
-  - id: nst-cybersecurity-framework-version-1-1-manufacturing-pr
-    title: Cybersecurity framework version 1.1 manufacturing profile
-    url: https://nvlpubs.nist.gov/nistpubs/ir/2020/NIST.IR.8183r1.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
-  - id: nst-implementing-the-health-insurance-portability-and-ac
-    title: 'Implementing the health insurance portability and accountability act (HIPAA)
-      security rule :'
-    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-66r2.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
   - id: nst-using-hardware-enabled-security-to-ensure-5g-system-
     title: 'Using Hardware-Enabled Security to Ensure 5G System Platform Integrity:'
     url: https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.36B.ipd.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
-  - id: nst-satellite-ground-segment
-    title: 'Satellite ground segment :'
-    url: https://nvlpubs.nist.gov/nistpubs/ir/2022/NIST.IR.8401.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
-  - id: nst-satellite-ground-segment-applying-the-cybersecurity-
-    title: 'Satellite Ground Segment: Applying the Cybersecurity Framework to Assure
-      Satellite Command and Control'
-    url: https://nvlpubs.nist.gov/nistpubs/ir/2022/NIST.IR.8401.ipd.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
-  - id: nst-workforce-framework-for-cybersecurity-nice-fra-2
-    title: "Workforce framework for cybersecurity (NICE framework) (French\n       \
-      \         translation)"
-    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-181r1.fre.pdf
     source: nist_crossref
     license: public-domain
     topic: controls_bas
@@ -14576,20 +13474,6 @@ sources:
     license: public-domain
     topic: controls_bas
     format: pdf
-  - id: nst-getting-started-with-the-nist-cybersecurity-framewor
-    title: 'Getting started with the NIST Cybersecurity Framework :'
-    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1271.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
-  - id: nst-advancing-cybersecurity-and-enterprise-risk-manageme
-    title: 'Advancing Cybersecurity and Enterprise Risk Management (ERM):'
-    url: https://nvlpubs.nist.gov/nistpubs/ir/2020/NIST.IR.8286-draft.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
   - id: nst-mitigating-cybersecurity-and-privacy-risks-in-telehe
     title: 'Mitigating Cybersecurity and Privacy Risks in Telehealth Smart Home Integration:'
     url: https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.34.ipd.pdf
@@ -14605,31 +13489,10 @@ sources:
     license: public-domain
     topic: controls_bas
     format: pdf
-  - id: nst-workforce-framework-for-cybersecurity-nice-fra-3
-    title: Workforce framework for cybersecurity (NICE Framework) (Portuguese translation)
-    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-181r1pt.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
-  - id: nst-workforce-framework-for-cybersecurity-nice-fra-4
-    title: Workforce framework for cybersecurity (NICE Framework) (Ukranian translation)
-    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-181r1.ukr.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
   - id: nst-interagency-report-on-strategic-u-s-government-engag
     title: Interagency Report on Strategic U.S. Government Engagement in International
       Standardization to Achieve U.S. Objectives for Cybersecurity
     url: https://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.8074v1.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
-  - id: nst-workforce-framework-for-cybersecurity-nice-fra-5
-    title: Workforce framework for cybersecurity (NICE Framework) (Spanish translation)
-    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-181r1es.pdf
     source: nist_crossref
     license: public-domain
     topic: controls_bas
@@ -14656,46 +13519,9 @@ sources:
     license: public-domain
     topic: controls_bas
     format: pdf
-  - id: nst-workforce-framework-for-cybersecurity-nice-fra-6
-    title: Workforce framework for cybersecurity (NICE Framework) (Slovak translation)
-    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-181r1.slo.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
-  - id: nst-developing-security-privacy-and-cybersecurity-supply
-    title: Developing Security, Privacy, and Cybersecurity Supply Chain Risk Management
-      Plans for Systems
-    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-18r2.ipd.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
   - id: nst-foundational-pnt-profile
     title: 'Foundational PNT Profile:'
     url: https://nvlpubs.nist.gov/nistpubs/ir/2022/NIST.IR.8323r1.ipd.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
-  - id: nst-cybersecurity-threat-modeling-the-genomic-data-seque
-    title: 'Cybersecurity Threat Modeling the Genomic Data Sequencing Workflow:'
-    url: https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.35.ipd.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
-  - id: nst-cybersecurity-supply-chain-risk-management-for-syste
-    title: Cybersecurity supply chain risk management for systems and organizations
-    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-161r1.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
-  - id: nst-getting-started-with-the-nist-cybersecurity-fr-2
-    title: 'Getting Started with the NIST Cybersecurity Framework: A Quick Start Guide
-      (Spanish Translation)'
-    url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1271es.pdf
     source: nist_crossref
     license: public-domain
     topic: controls_bas
@@ -14722,14 +13548,6 @@ sources:
     license: public-domain
     topic: controls_bas
     format: pdf
-  - id: nst-mapping-relationships-between-documentary-standards-
-    title: 'Mapping relationships between documentary standards, regulations, frameworks,
-      and guidelines :'
-    url: https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8477.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
   - id: nst-staging-cybersecurity-risks-for-enterprise-ris-2
     title: Staging cybersecurity risks for enterprise risk management and governance
       overs
@@ -14746,25 +13564,9 @@ sources:
     license: public-domain
     topic: controls_bas
     format: pdf
-  - id: nst-report-of-conference-on-making-service-industries-mo
-    title: Report of conference on making service industries more productive through
-      computers and automation
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir74-515.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
   - id: nst-shop-of-the-90-s
     title: 'Shop of the 90''s:'
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4786.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: controls_bas
-    format: pdf
-  - id: nst-security-content-automation-protocol-scap-version-1-
-    title: Security content automation protocol (SCAP) version 1.3 validation program
-      test requirements
-    url: http://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.7511r5.pdf
     source: nist_crossref
     license: public-domain
     topic: controls_bas
@@ -14869,13 +13671,6 @@ sources:
     license: public-domain
     topic: standards_protocols
     format: pdf
-  - id: nst-national-bureau-of-standards-nbs
-    title: National Bureau of Standards (NBS)
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nbsspecialpublication367.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: standards_protocols
-    format: pdf
   - id: nst-circular-of-the-bureau-of-standards-no-24-6th-editio
     title: 'Circular of the Bureau of Standards no. 24 6th edition:'
     url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular24e6.pdf
@@ -14932,30 +13727,9 @@ sources:
     license: public-domain
     topic: standards_protocols
     format: pdf
-  - id: nst-recommendations-for-database-management-system-stand
-    title: Recommendations for database management system standards.
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nbsspecialpublication500-51.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: standards_protocols
-    format: pdf
   - id: nst-biennial-report
     title: Biennial Report
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/MP/nbsmiscellaneouspub213.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: standards_protocols
-    format: pdf
-  - id: nst-letter-circular-1094
-    title: 'Letter Circular 1094:'
-    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular1094.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: standards_protocols
-    format: pdf
-  - id: nst-the-national-bureau-of-standards-1966
-    title: The National Bureau of Standards 1966
-    url: https://nvlpubs.nist.gov/nistpubs/Legacy/MP/nbsmiscellaneouspub282.pdf
     source: nist_crossref
     license: public-domain
     topic: standards_protocols

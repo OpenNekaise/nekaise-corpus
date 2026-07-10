@@ -84,7 +84,19 @@ def main() -> None:
         print("dry run -- pass --apply to prune")
         return
 
-    blocked = blocklist.add(r.get("url") for r in manifest if r["id"] in drop)
+    # Blocklist policy: quality-fails and HARD fetch failures (404/410, fake PDFs) never return.
+    # TRANSIENT walls (429/202/503, timeouts, connection errors) are NOT blocklisted — the entry
+    # leaves the registry but a later finder run may rediscover it once the wall lifts
+    # (IBPSA's sgcaptcha and Wikimedia rate limits taught us this the hard way).
+    TRANSIENT = (202, 429, 503)
+    def _blocklistable(r) -> bool:
+        if drop.get(r["id"]) != "failed":
+            return True
+        if r.get("http_status") in TRANSIENT:
+            return False
+        err = (r.get("error") or "").lower()
+        return not any(k in err for k in ("timeout", "timed out", "connection", "too many requests"))
+    blocked = blocklist.add(r.get("url") for r in manifest if r["id"] in drop and _blocklistable(r))
     removed = registry.remove_ids(set(drop))  # validate/rewrite the registry BEFORE touching files
     for r in manifest:
         if r["id"] in drop:

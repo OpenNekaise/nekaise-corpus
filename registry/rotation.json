@@ -2,50 +2,50 @@
   "_readme": "Shared excavation state for the discovery loop — read/advance via scripts/rotation.py. Committed so any agent/machine resumes where the last one stopped. History of what is already mined lives in git log + manifest.jsonl.",
   "find_osti": {
     "flag": "--page",
-    "next": 33,
+    "next": 39,
     "step": 2,
     "note": "run with --rows 50 --pages 2; ~200k records/query universe"
   },
   "find_archive": {
     "flag": "--page",
-    "next": 5,
+    "next": 9,
     "step": 1,
     "note": "pre-1929 public-domain texts; rows 30"
   },
   "find_books": {
     "flag": "--offset",
-    "next": 25,
+    "next": 75,
     "step": 25,
-    "note": "OAPEN all-language since 2026-07-09 (offsets 0-350 were mined English-only before that; the all-language re-walk restarted at 0)"
+    "note": "OAPEN all-language + native-language queries (de/it/fr/es/pt/nl added 07-10); offsets 0-50 mined multilingual, 0-350 English-era"
   },
   "find_openaire": {
     "flag": "--page",
-    "next": 4,
+    "next": 5,
     "step": 1,
-    "note": "vein thinning: p1=300, p2=109, p3=52"
+    "note": "vein nearly dry: p1=300, p2=109, p3=52, p4=22"
   },
   "find_nist": {
     "flag": "--page",
-    "next": 3,
+    "next": 6,
     "step": 1,
     "note": "Crossref DOI prefix 10.6028; ~2k on-topic docs"
   },
   "find_zenodo": {
     "flag": "--page",
-    "next": 3,
+    "next": 4,
     "step": 1,
     "note": "rate-limited anonymous API — keep --max 100-150"
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "2015-W52",
-    "note": "weekly buckets 1900..now walked BACKWARDS one ISO week per advance; already mined: 2017-2020 W01, 1925/1930/1935/1940 W01; yearly buckets exist only pre-1900"
+    "next": "2015-W18",
+    "note": "weekly buckets 1900..now, walked backwards; mined: 2017-2020 W01, 1925-1940 W01s, 2015-W52..W19 (38 buckets). --countries flag NEW (default US): CN/EP/DE work, sitemap titles are English for all countries; CN buckets 2018-2020 W03 mined 07-10 (license=open for non-US)"
   },
   "find_purdue": {
     "flag": "--token",
     "next": "",
     "step": 0,
-    "note": "PAUSED before first append — discovery via OAI works (icec/iracc/ihpbc, ~7k equipment/HVAC papers, iracc alone 2,682) but PDF paths sit behind an AWS WAF JS challenge (x-amzn-waf-action: challenge, empty 202) that plain requests cannot pass; needs a browser-assisted or waf-token fetcher before appending. MANUAL token per --pub, printed as '# next-token:'"
+    "note": "PAUSED 07-10: docs.lib.purdue.edu serves 202-challenge to all our clients (bepress wall; referer trick fails). 400 pur- rows purged from manifest, entries kept in registry. Retry from different network or headless browser."
   },
   "find_ibpsa": {
     "flag": "--year",
@@ -56,7 +56,7 @@
     "flag": "--page",
     "next": 6,
     "step": 5,
-    "note": "run with --pages 5 per series; sdz ends ~p16, hdz ~p25; --series sdz|hdz (both mined in parallel from p1 on 2026-07-09)"
+    "note": "sdz+hdz pages 1-5 mined 07-10 (165 kept); sdz ends ~p16, hdz ~p25"
   },
   "find_ademe": {
     "flag": "--page",
@@ -66,20 +66,25 @@
   },
   "find_kitopen": {
     "flag": "--token",
-    "next": "Z0S-kO3C1STvRnkV",
+    "next": "END",
     "step": 0,
-    "note": "MANUAL pointer: each run prints '# next-token: <t>' — paste it here ('END' = ddc:690 set exhausted, 9,346 records total, ~26% pass the fail-closed CC filter). Do NOT use rotation.py advance for this one."
+    "note": "EXHAUSTED 07-10: ddc:690 set fully harvested (9,346 records, ~700 passed CC filter). Other ddc sets (620 engineering?) unexplored."
   },
   "find_japan": {
     "flag": "--start",
-    "next": 2014,
+    "next": 2012,
     "step": -6,
-    "note": "MANUAL-ish: nilim years 2020-2025 mined 07-09 (next: --series nilim --start 2014 --count 6); bri reports 139-158 mined (new reports appear at the top: retry --start 157 occasionally); bri 1-138 have no PDFs; 建築研究資料 series (data.html, up to No.214) is an UNMINED sibling vein"
+    "note": "nilim 2012-2025 mined (800-cap hit walking 2012-2019 — re-run to finish tail); bri 139-158 done, new reports appear at top; 建築研究資料 series (data.html No.1-214) UNMINED"
   },
   "find_wiki": {
     "flag": "--depth",
     "next": 2,
     "step": 1,
     "note": "category mode: depth 1 x lang-cap 250 mined 07-09 for zh,de,fr,ja,es,ru,ko,it; next round try --depth 2 --lang-cap 400 (expect drift, gate handles); langlinks mode saturated for current curated set; --books zh done"
+  },
+  "find_patents_cn": {
+    "flag": "--bucket",
+    "next": "2020-W04",
+    "note": "CN patents (Chinese full text; license=open). Same weekly-bucket walk as find_patents but separate pointer; marathon runs it with --countries CN. Mined: 2018/2019/2020-W03."
   }
 }

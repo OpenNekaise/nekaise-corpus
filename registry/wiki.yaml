@@ -574,366 +574,9 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-zh-8a46444c47
-    title: 地牢 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%89%A2
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-a7a48b7247
-    title: 地王国际商会中心 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%8E%8B%E5%9B%BD%E9%99%85%E5%95%86%E4%BC%9A%E4%B8%AD%E5%BF%83
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-b78eab2eed
-    title: 垛口 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%9E%9B%E5%8F%A3
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-9dbc9df383
-    title: 城門 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%9F%8E%E9%96%80
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-b5a414f74f
-    title: 堤 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%A0%A4
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-f220fbae67
-    title: 塔逊寺 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%A1%94%E9%80%8A%E5%AF%BA
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-8c3f97d160
-    title: 墙梁 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%A2%99%E6%A2%81
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-589832459a
-    title: 壁柱 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%A3%81%E6%9F%B1
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-6dfbd622d2
-    title: 天津宝坻万科广场 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%A4%A9%E6%B4%A5%E5%AE%9D%E5%9D%BB%E4%B8%87%E7%A7%91%E5%B9%BF%E5%9C%BA
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-09af2db5b3
-    title: 天津恒隆廣場 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%A4%A9%E6%B4%A5%E6%81%92%E9%9A%86%E5%BB%A3%E5%A0%B4
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-zh-604c0937b9
     title: 威尼斯建築雙年展 (zh Wikipedia)
     url: https://zh.wikipedia.org/wiki/%E5%A8%81%E5%B0%BC%E6%96%AF%E5%BB%BA%E7%AF%89%E9%9B%99%E5%B9%B4%E5%B1%95
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-fec72da4a9
-    title: 客廳 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%AE%A2%E5%BB%B3
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-a28beb4590
-    title: 家庭保險大樓 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%AE%B6%E5%BA%AD%E4%BF%9D%E9%9A%AA%E5%A4%A7%E6%A8%93
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-295b0bf8a1
-    title: 封頂 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%B0%81%E9%A0%82
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-3d64d166b3
-    title: 巴格达塔 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%B7%B4%E6%A0%BC%E8%BE%BE%E5%A1%94
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-5d1fd4b2df
-    title: 广州正佳广场万豪酒店 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%B9%BF%E5%B7%9E%E6%AD%A3%E4%BD%B3%E5%B9%BF%E5%9C%BA%E4%B8%87%E8%B1%AA%E9%85%92%E5%BA%97
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-4e4e79fe6d
-    title: 廢棄建築物 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%BB%A2%E6%A3%84%E5%BB%BA%E7%AF%89%E7%89%A9
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-12f525c803
-    title: 建筑光学 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%BB%BA%E7%AD%91%E5%85%89%E5%AD%A6
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-75c6fccf0c
-    title: 建蔽率 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E5%BB%BA%E8%94%BD%E7%8E%87
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-10ccecc9d5
-    title: 戈登坝 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%88%88%E7%99%BB%E5%9D%9D
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-0b309c8ffa
-    title: 承壓含水層 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%89%BF%E5%A3%93%E5%90%AB%E6%B0%B4%E5%B1%A4
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-832ecf2bca
-    title: 承重牆 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%89%BF%E9%87%8D%E7%89%86
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-66f94d97d3
-    title: 把頭絞項作 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%8A%8A%E9%A0%AD%E7%B5%9E%E9%A0%85%E4%BD%9C
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-c37884dddc
-    title: 拉法爾塔 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%8B%89%E6%B3%95%E7%88%BE%E5%A1%94
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-3e244ac3e0
-    title: 捲簾門 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%8D%B2%E7%B0%BE%E9%96%80
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-653e43de01
-    title: 捷克克鲁姆洛夫地方法院 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%8D%B7%E5%85%8B%E5%85%8B%E9%B2%81%E5%A7%86%E6%B4%9B%E5%A4%AB%E5%9C%B0%E6%96%B9%E6%B3%95%E9%99%A2
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-0633ac0c36
-    title: 採光 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%8E%A1%E5%85%89
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-d2c0508dc7
-    title: 撓度 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%92%93%E5%BA%A6
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-d07bd4241f
-    title: 新文藝復興建築 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%96%B0%E6%96%87%E8%97%9D%E5%BE%A9%E8%88%88%E5%BB%BA%E7%AF%89
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-c2a01c7716
-    title: 普萊斯大樓 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%99%AE%E8%90%8A%E6%96%AF%E5%A4%A7%E6%A8%93
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-1d810268ca
-    title: 書房 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%9B%B8%E6%88%BF
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-eee371f1b3
-    title: 曼哈頓壽險大樓 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%9B%BC%E5%93%88%E9%A0%93%E5%A3%BD%E9%9A%AA%E5%A4%A7%E6%A8%93
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-1deda5032a
-    title: 木骨架 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%9C%A8%E9%AA%A8%E6%9E%B6
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-3dc2f0c004
-    title: 机械、电气和管道 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%9C%BA%E6%A2%B0%E3%80%81%E7%94%B5%E6%B0%94%E5%92%8C%E7%AE%A1%E9%81%93
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-2195199604
-    title: 枋 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%9E%8B
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-d287ae034a
-    title: 格蘭特大廈 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%A0%BC%E8%98%AD%E7%89%B9%E5%A4%A7%E5%BB%88
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-e86cfbe780
-    title: 欄杆 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%AC%84%E6%9D%86
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-c70e6f8de4
-    title: 欧亚卖场 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%AC%A7%E4%BA%9A%E5%8D%96%E5%9C%BA
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-22713b6847
-    title: 水碓斗母宮 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%B0%B4%E7%A2%93%E6%96%97%E6%AF%8D%E5%AE%AE
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-627cb6341d
-    title: 沉箱 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%B2%89%E7%AE%B1
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-99b358aefc
-    title: 沉降缝 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%B2%89%E9%99%8D%E7%BC%9D
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-de017f7ba6
-    title: 泡沫混凝土 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%B3%A1%E6%B2%AB%E6%B7%B7%E5%87%9D%E5%9C%9F
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-79a0b6a37c
-    title: 洋蔥形圓頂 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%B4%8B%E8%94%A5%E5%BD%A2%E5%9C%93%E9%A0%82
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-8342f2c64b
-    title: 流體建築 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%B5%81%E9%AB%94%E5%BB%BA%E7%AF%89
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-73bcc39a33
-    title: 消防局 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%B6%88%E9%98%B2%E5%B1%80
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-c2697c2ad1
-    title: 混合用途开发 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%B7%B7%E5%90%88%E7%94%A8%E9%80%94%E5%BC%80%E5%8F%91
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-a45be809c9
-    title: 漩渦裝飾 (設計) (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E6%BC%A9%E6%B8%A6%E8%A3%9D%E9%A3%BE_%28%E8%A8%AD%E8%A8%88%29
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-14b1354a28
-    title: 無限塔 (布里斯本) (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E7%84%A1%E9%99%90%E5%A1%94_%28%E5%B8%83%E9%87%8C%E6%96%AF%E6%9C%AC%29
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-8159f19ad9
-    title: 王在山大紀念碑 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%9C%A8%E5%B1%B1%E5%A4%A7%E7%B4%80%E5%BF%B5%E7%A2%91
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-9ce1c3678b
-    title: 琴面 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E7%90%B4%E9%9D%A2
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-6a83313808
-    title: 瓦檐饰 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E7%93%A6%E6%AA%90%E9%A5%B0
-    source: wikipedia_zh
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-zh-b0e74cf49e
-    title: 甸桥 (zh Wikipedia)
-    url: https://zh.wikipedia.org/wiki/%E7%94%B8%E6%A1%A5
     source: wikipedia_zh
     license: cc-by-sa
     topic: architecture
@@ -959,13 +602,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-sterreichisches-institut-f-r-bauwesen
-    title: Österreichisches Institut für Bauwesen (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/%C3%96sterreichisches_Institut_f%C3%BCr_Bauwesen
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-au-enanlage-bauwesen
     title: Außenanlage (Bauwesen) (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Au%C3%9Fenanlage_%28Bauwesen%29
@@ -976,13 +612,6 @@ sources:
   - id: wik-de-baubeamter
     title: Baubeamter (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Baubeamter
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-baurecht-deutschland
-    title: Baurecht (Deutschland) (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Baurecht_%28Deutschland%29
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1001,23 +630,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-bauform
-    title: Bauform (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Bauform
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-liste-kugelf-rmiger-bauwerke
     title: Liste kugelförmiger Bauwerke (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Liste_kugelf%C3%B6rmiger_Bauwerke
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-aussichtswarte
-    title: Aussichtswarte (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Aussichtswarte
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1036,13 +651,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-br-ckenfeld
-    title: Brückenfeld (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Br%C3%BCckenfeld
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-b-geleisengeb-ude
     title: Bügeleisengebäude (de Wikipedia)
     url: https://de.wikipedia.org/wiki/B%C3%BCgeleisengeb%C3%A4ude
@@ -1050,58 +658,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-cas-di-torto
-    title: Cas di torto (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Cas_di_torto
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-durchhaus
-    title: Durchhaus (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Durchhaus
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-ehrenpforte
-    title: Ehrenpforte (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Ehrenpforte
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-feuchtbodensiedlung
-    title: Feuchtbodensiedlung (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Feuchtbodensiedlung
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-freestander
-    title: Freestander (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Freestander
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-garage
     title: Garage (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Garage
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-gastgarten
-    title: Gastgarten (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Gastgarten
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-gekuppelt-architektur
-    title: Gekuppelt (Architektur) (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Gekuppelt_%28Architektur%29
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1134,37 +693,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-karree-st-dtebau
-    title: Karree (Städtebau) (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Karree_%28St%C3%A4dtebau%29
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-kettenhaus
-    title: Kettenhaus (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Kettenhaus
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-lehmbau
     title: Lehmbau (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Lehmbau
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-lusthaus
-    title: Lusthaus (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Lusthaus
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-maneaba
-    title: Maneaba (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Maneaba
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1176,20 +707,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-oberlaube
-    title: Oberlaube (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Oberlaube
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-oktogon-architektur
-    title: Oktogon (Architektur) (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Oktogon_%28Architektur%29
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-pavillon
     title: Pavillon (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Pavillon
@@ -1197,51 +714,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-rechtkant
-    title: Rechtkant (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Rechtkant
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-ruka-mapuche
-    title: Ruka (Mapuche) (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Ruka_%28Mapuche%29
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-solit-r-architektur
-    title: Solitär (Architektur) (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Solit%C3%A4r_%28Architektur%29
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-tempietto
-    title: Tempietto (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Tempietto
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-theater-bauwerk
     title: Theater (Bauwerk) (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Theater_%28Bauwerk%29
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-tor-architektur
-    title: Tor (Architektur) (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Tor_%28Architektur%29
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-wechselberger-figuration
-    title: Wechselberger-Figuration (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Wechselberger-Figuration
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1267,13 +742,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-bundesverband-der-deutschen-kalkindustri
-    title: Bundesverband der Deutschen Kalkindustrie (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Bundesverband_der_Deutschen_Kalkindustrie
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-eidgen-ssische-materialpr-fungs-und-fors
     title: Eidgenössische Materialprüfungs- und Forschungsanstalt (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Eidgen%C3%B6ssische_Materialpr%C3%BCfungs-_und_Forschungsanstalt
@@ -1284,20 +752,6 @@ sources:
   - id: wik-de-baustoffpr-fer
     title: Baustoffprüfer (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Baustoffpr%C3%BCfer
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-purbeck-ball-clay
-    title: Purbeck Ball Clay (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Purbeck_Ball_Clay
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-sinterbims
-    title: Sinterbims (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Sinterbims
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1323,13 +777,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-bautypologie
-    title: Bautypologie (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Bautypologie
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-amphitheater
     title: Amphitheater (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Amphitheater
@@ -1351,27 +798,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-armenhaus
-    title: Armenhaus (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Armenhaus
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-auf-dem-kopf-stehendes-haus
-    title: Auf dem Kopf stehendes Haus (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Auf_dem_Kopf_stehendes_Haus
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-badebude
-    title: Badebude (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Badebude
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-ballhaus
     title: Ballhaus (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Ballhaus
@@ -1386,23 +812,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-campanile
-    title: Campanile (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Campanile
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-einheitsbahnhof-gro-herzogtum-hessen
     title: Einheitsbahnhof (Großherzogtum Hessen) (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Einheitsbahnhof_%28Gro%C3%9Fherzogtum_Hessen%29
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-feuerwachturm
-    title: Feuerwachturm (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Feuerwachturm
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1435,13 +847,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-geh-ft
-    title: Gehöft (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Geh%C3%B6ft
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-gew-chshaus
     title: Gewächshaus (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Gew%C3%A4chshaus
@@ -1449,51 +854,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-hamburger-fahrradh-uschen
-    title: Hamburger Fahrradhäuschen (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Hamburger_Fahrradh%C3%A4uschen
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-haupthalle-buddhistischer-tempel-japan
-    title: Haupthalle (Buddhistischer Tempel Japan) (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Haupthalle_%28Buddhistischer_Tempel_Japan%29
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-haus-tambaran
-    title: Haus Tambaran (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Haus_Tambaran
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-hochhaus
     title: Hochhaus (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Hochhaus
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-kapitelhaus
-    title: Kapitelhaus (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Kapitelhaus
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-konzertmuschel
-    title: Konzertmuschel (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Konzertmuschel
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-k-nstliche-ruine
-    title: Künstliche Ruine (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/K%C3%BCnstliche_Ruine
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1512,23 +875,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-palas
-    title: Palas (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Palas
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-parkhaus
     title: Parkhaus (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Parkhaus
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-pfleghof
-    title: Pfleghof (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Pfleghof
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1554,20 +903,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-tanzhaus
-    title: Tanzhaus (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Tanzhaus
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-taut-kiosk
-    title: Taut-Kiosk (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Taut-Kiosk
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-volkshaus
     title: Volkshaus (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Volkshaus
@@ -1582,37 +917,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-wewa
-    title: Wewa (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Wewa
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-zollhaus-geb-ude
-    title: Zollhaus (Gebäude) (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Zollhaus_%28Geb%C3%A4ude%29
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-tragelement
     title: Tragelement (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Tragelement
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-ausbaufacharbeiter
-    title: Ausbaufacharbeiter (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Ausbaufacharbeiter
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-bauconducteur
-    title: Bauconducteur (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Bauconducteur
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1624,44 +931,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-bauschreiber
-    title: Bauschreiber (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Bauschreiber
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-bau-berwacher-bahn
-    title: Bauüberwacher Bahn (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Bau%C3%BCberwacher_Bahn
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-bauzeichner
     title: Bauzeichner (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Bauzeichner
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-bodenleger
-    title: Bodenleger (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Bodenleger
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-brandschutzgutachter
-    title: Brandschutzgutachter (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Brandschutzgutachter
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-verena-dubach
-    title: Verena Dubach (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Verena_Dubach
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1680,23 +952,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-font-nenmeister
-    title: Fontänenmeister (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Font%C3%A4nenmeister
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-frauen-in-der-mittelalterlichen-bauwirts
     title: Frauen in der mittelalterlichen Bauwirtschaft (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Frauen_in_der_mittelalterlichen_Bauwirtschaft
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-geb-udeenergieberater
-    title: Gebäudeenergieberater (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Geb%C3%A4udeenergieberater
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1722,13 +980,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-lichtgestalter
-    title: Lichtgestalter (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Lichtgestalter
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-oberlandbaumeister
     title: Oberlandbaumeister (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Oberlandbaumeister
@@ -1743,37 +994,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-regierungsbauf-hrer
-    title: Regierungsbauführer (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Regierungsbauf%C3%BChrer
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-reinigungskraft
     title: Reinigungskraft (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Reinigungskraft
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-stoffpr-fer
-    title: Stoffprüfer (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Stoffpr%C3%BCfer
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-tiefbauingenieur
-    title: Tiefbauingenieur (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Tiefbauingenieur
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-vermessungstechniker
-    title: Vermessungstechniker (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Vermessungstechniker
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1785,65 +1008,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-bauherrenhaftpflichtversicherung
-    title: Bauherrenhaftpflichtversicherung (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Bauherrenhaftpflichtversicherung
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-bauleistungsversicherung
     title: Bauleistungsversicherung (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Bauleistungsversicherung
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-baumangel
-    title: Baumangel (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Baumangel
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-brandst-tze
-    title: Brandstütze (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Brandst%C3%BCtze
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-geb-udeneubauversicherung
-    title: Gebäudeneubauversicherung (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Geb%C3%A4udeneubauversicherung
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-gleisabsenkung
-    title: Gleisabsenkung (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Gleisabsenkung
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-ist-leipzig-noch-zu-retten
-    title: Ist Leipzig noch zu retten? (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Ist_Leipzig_noch_zu_retten%3F
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-baugeschichte
-    title: Baugeschichte (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Baugeschichte
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-bande-noire
-    title: Bande noire (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Bande_noire
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1862,20 +1029,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-chausseew-rter
-    title: Chausseewärter (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Chausseew%C3%A4rter
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-hucker-beruf
-    title: Hucker (Beruf) (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Hucker_%28Beruf%29
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-lost-place
     title: Lost Place (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Lost_Place
@@ -1883,23 +1036,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-steind-mmer
-    title: Steindämmer (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Steind%C3%A4mmer
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-theorien-zum-steintransport-beim-bau-der
     title: Theorien zum Steintransport beim Bau der ägyptischen Pyramiden (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Theorien_zum_Steintransport_beim_Bau_der_%C3%A4gyptischen_Pyramiden
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-berliner-traufh-he
-    title: Berliner Traufhöhe (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Berliner_Traufh%C3%B6he
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1925,13 +1064,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-kostenfl-chenart
-    title: Kostenflächenart (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Kostenfl%C3%A4chenart
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-niedrigenergiehaus
     title: Niedrigenergiehaus (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Niedrigenergiehaus
@@ -1953,30 +1085,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-de-steindruckfestigkeitsklasse
-    title: Steindruckfestigkeitsklasse (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Steindruckfestigkeitsklasse
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-de-wohnfl-che
     title: Wohnfläche (de Wikipedia)
     url: https://de.wikipedia.org/wiki/Wohnfl%C3%A4che
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-wohnfl-chenverordnung
-    title: Wohnflächenverordnung (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Wohnfl%C3%A4chenverordnung
-    source: wikipedia_de
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-de-allgemeine-bauaufsichtliche-zulassung
-    title: Allgemeine bauaufsichtliche Zulassung (de Wikipedia)
-    url: https://de.wikipedia.org/wiki/Allgemeine_bauaufsichtliche_Zulassung
     source: wikipedia_de
     license: cc-by-sa
     topic: construction
@@ -1999,20 +1110,6 @@ sources:
     title: Association des professionnels de la construction et de l'habitation du Québec
       (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Association_des_professionnels_de_la_construction_et_de_l%27habitation_du_Qu%C3%A9bec
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-asuntomessut
-    title: Asuntomessut (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Asuntomessut
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-bunk-art-2
-    title: Bunk'Art 2 (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Bunk%27Art_2
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -2045,20 +1142,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-dalle-pierre
-    title: Dalle (pierre) (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Dalle_%28pierre%29
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-d-gradation-du-bien-d-autrui-droit-fran-
-    title: Dégradation du bien d'autrui (droit français) (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/D%C3%A9gradation_du_bien_d%27autrui_%28droit_fran%C3%A7ais%29
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-d-sordre-construction
     title: Désordre (construction) (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/D%C3%A9sordre_%28construction%29
@@ -2087,13 +1170,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-g-ologie-appliqu-e
-    title: Géologie appliquée (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/G%C3%A9ologie_appliqu%C3%A9e
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-impression-3d-dans-la-construction
     title: Impression 3D dans la construction (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Impression_3D_dans_la_construction
@@ -2104,13 +1180,6 @@ sources:
   - id: wik-fr-instabilit-g-om-trique
     title: Instabilité géométrique (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Instabilit%C3%A9_g%C3%A9om%C3%A9trique
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-kotan-village
-    title: Kotan (village) (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Kotan_%28village%29
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -2129,30 +1198,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-lumon-oy
-    title: Lumon Oy (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Lumon_Oy
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-lutte-contre-l-rosion
     title: Lutte contre l'érosion (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Lutte_contre_l%27%C3%A9rosion
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-ma-tre-manol
-    title: Maître Manol (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Ma%C3%AEtre_Manol
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-p-t-de-sable
-    title: Pâté de sable (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/P%C3%A2t%C3%A9_de_sable
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -2192,20 +1240,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-talutage-en-gradin
-    title: Talutage en gradin (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Talutage_en_gradin
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-uponor
-    title: Uponor (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Uponor
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-liste-de-corps-d-tat
     title: Liste de corps d'état (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Liste_de_corps_d%27%C3%A9tat
@@ -2234,23 +1268,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-batteuse-hydraulique-d-audressein
-    title: Batteuse hydraulique d'Audressein (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Batteuse_hydraulique_d%27Audressein
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-botte-agriculture
     title: Botte (agriculture) (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Botte_%28agriculture%29
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-grange
-    title: Grange (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Grange
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -2265,13 +1285,6 @@ sources:
   - id: wik-fr-paille-mat-riau
     title: Paille (matériau) (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Paille_%28mat%C3%A9riau%29
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-c-r-monie-d-inauguration-des-travaux
-    title: Cérémonie d'inauguration des travaux (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/C%C3%A9r%C3%A9monie_d%27inauguration_des_travaux
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -2353,37 +1366,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-onglet-architecture
-    title: Onglet (architecture) (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Onglet_%28architecture%29
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-perspecteur
-    title: Perspecteur (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Perspecteur
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-programmation-architecturale
     title: Programmation architecturale (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Programmation_architecturale
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-science-de-la-conception
-    title: Science de la conception (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Science_de_la_conception
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-substruction
-    title: Substruction (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Substruction
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -2398,13 +1383,6 @@ sources:
   - id: wik-fr-syndrome-du-b-timent-malsain
     title: Syndrome du bâtiment malsain (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Syndrome_du_b%C3%A2timent_malsain
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-makoto-ueda-diteur
-    title: Makoto Ueda (éditeur) (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Makoto_Ueda_%28%C3%A9diteur%29
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -2437,13 +1415,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-charges-d-exploitation-btp
-    title: Charges d'exploitation (BTP) (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Charges_d%27exploitation_%28BTP%29
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-corps-de-b-timent
     title: Corps de bâtiment (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Corps_de_b%C3%A2timent
@@ -2465,23 +1436,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-lectronique-domestique
-    title: Électronique domestique (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/%C3%89lectronique_domestique
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-tage-architecture
     title: Étage (architecture) (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/%C3%89tage_%28architecture%29
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-finalcad
-    title: Finalcad (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Finalcad
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -2507,13 +1464,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-hyp-thre
-    title: Hypèthre (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Hyp%C3%A8thre
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-immeuble
     title: Immeuble (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Immeuble
@@ -2524,27 +1474,6 @@ sources:
   - id: wik-fr-immeuble-d-habitation
     title: Immeuble d'habitation (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Immeuble_d%27habitation
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-immeuble-de-rapport
-    title: Immeuble de rapport (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Immeuble_de_rapport
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-joint-permanent
-    title: Joint permanent (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Joint_permanent
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-joint-sp-cial
-    title: Joint spécial (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Joint_sp%C3%A9cial
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -2571,23 +1500,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-maison-du-jardinier
-    title: Maison du jardinier (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Maison_du_jardinier
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-maison-t-moin
     title: Maison témoin (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Maison_t%C3%A9moin
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-mosqu-e-chiouda
-    title: Mosquée Chiouda (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Mosqu%C3%A9e_Chiouda
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -2620,27 +1535,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-brevet-de-technicien-sup-rieur-am-nageme
-    title: Brevet de technicien supérieur - Aménagement finition (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Brevet_de_technicien_sup%C3%A9rieur_-_Am%C3%A9nagement_finition
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-coffrage-glissant
-    title: Coffrage glissant (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Coffrage_glissant
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-concassage
-    title: Concassage (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Concassage
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-curage-btp
     title: Curage (BTP) (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Curage_%28BTP%29
@@ -2662,13 +1556,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-t-te-de-pont
-    title: Tête de pont (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/T%C3%AAte_de_pont
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-vsl-international-entreprise
     title: VSL International (entreprise) (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/VSL_International_%28entreprise%29
@@ -2676,121 +1563,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-t-trapyle
-    title: Tétrapyle (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/T%C3%A9trapyle
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-pilotis
     title: Pilotis (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Pilotis
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-a-rohabitat
-    title: Aérohabitat (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/A%C3%A9rohabitat
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-site-palafittique-d-alvastra
-    title: Site palafittique d'Alvastra (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Site_palafittique_d%27Alvastra
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-caserne-jacques-vion
-    title: Caserne Jacques Vion (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Caserne_Jacques_Vion
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-cit-radieuse-de-marseille
-    title: Cité radieuse de Marseille (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Cit%C3%A9_radieuse_de_Marseille
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-crannog
-    title: Crannog (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Crannog
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-d-grad
-    title: Dégrad (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/D%C3%A9grad
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-ganvi
-    title: Ganvié (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Ganvi%C3%A9
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-immeuble-pont-burdeau
-    title: Immeuble-pont Burdeau (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Immeuble-pont_Burdeau
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-maison-citrohan
-    title: Maison Citrohan (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Maison_Citrohan
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-maison-du-parlement-la-valette
-    title: Maison du Parlement (La Valette) (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Maison_du_Parlement_%28La_Valette%29
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-mus-e-des-palafittes-d-unteruhldingen
-    title: Musée des palafittes d'Unteruhldingen (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Mus%C3%A9e_des_palafittes_d%27Unteruhldingen
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-pavillon-keller
-    title: Pavillon Keller (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Pavillon_Keller
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-sanskar-kendra
-    title: Sanskar Kendra (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Sanskar_Kendra
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-unit-d-habitation-de-berlin
-    title: Unité d'habitation de Berlin (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Unit%C3%A9_d%27habitation_de_Berlin
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-usine-claude-et-duval
-    title: Usine Claude-et-Duval (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Usine_Claude-et-Duval
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -2809,37 +1584,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-carte-fen-tre
-    title: Carte à fenêtre (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Carte_%C3%A0_fen%C3%AAtre
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-conception-assist-e-par-ordinateur
     title: Conception assistée par ordinateur (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Conception_assist%C3%A9e_par_ordinateur
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-cotation-fonctionnelle
-    title: Cotation fonctionnelle (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Cotation_fonctionnelle
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-design-num-rique
-    title: Design numérique (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Design_num%C3%A9rique
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-dessin-d-ensemble
-    title: Dessin d'ensemble (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Dessin_d%27ensemble
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -2865,58 +1612,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-g-om-trie-descriptive
-    title: Géométrie descriptive (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/G%C3%A9om%C3%A9trie_descriptive
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-ombre-port-e
-    title: Ombre portée (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Ombre_port%C3%A9e
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-plan-de-situation
-    title: Plan de situation (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Plan_de_situation
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-section-transversale
-    title: Section transversale (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Section_transversale
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-syst-me-de-contraintes-g-om-triques
     title: Système de contraintes géométriques (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_contraintes_g%C3%A9om%C3%A9triques
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-tra-age-chaudronnerie
-    title: Traçage (chaudronnerie) (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Tra%C3%A7age_%28chaudronnerie%29
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-vue-en-clat
-    title: Vue en éclaté (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Vue_en_%C3%A9clat%C3%A9
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-cahier-des-clauses-techniques-particuli-
-    title: Cahier des clauses techniques particulières (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Cahier_des_clauses_techniques_particuli%C3%A8res
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -2942,23 +1640,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-glossaire-de-la-couverture
-    title: Glossaire de la couverture (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Glossaire_de_la_couverture
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-glossaire-de-la-ma-onnerie
     title: Glossaire de la maçonnerie (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Glossaire_de_la_ma%C3%A7onnerie
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-glossaire-de-la-peinture-et-de-la-dorure
-    title: Glossaire de la peinture et de la dorure (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Glossaire_de_la_peinture_et_de_la_dorure
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -3026,13 +1710,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-accident-des-latrines-d-erfurt
-    title: Accident des latrines d'Erfurt (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Accident_des_latrines_d%27Erfurt
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-affaissement-et-effondrement-miniers
     title: Affaissement et effondrement miniers (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Affaissement_et_effondrement_miniers
@@ -3082,30 +1759,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-brique-de-verre
-    title: Brique de verre (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Brique_de_verre
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-brique-foraine
     title: Brique foraine (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Brique_foraine
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-chirinka
-    title: Chirinka (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Chirinka
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-pi-de-fa-tage
-    title: Épi de faîtage (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/%C3%89pi_de_fa%C3%AEtage
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -3117,13 +1773,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-fl-che-fa-ti-re
-    title: Flèche faîtière (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Fl%C3%A8che_fa%C3%AEti%C3%A8re
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-hourdis
     title: Hourdis (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Hourdis
@@ -3131,51 +1780,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-fr-kletski-khram
-    title: Kletski khram (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Kletski_khram
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-kokochnik-architecture
-    title: Kokochnik (architecture) (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Kokochnik_%28architecture%29
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-fr-lauze-pierre
     title: Lauze (pierre) (fr Wikipedia)
     url: https://fr.wikipedia.org/wiki/Lauze_%28pierre%29
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-noquet
-    title: Noquet (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Noquet
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-pav-autobloquant
-    title: Pavé autobloquant (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Pav%C3%A9_autobloquant
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-planelle
-    title: Planelle (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Planelle
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-fr-rive-de-toit
-    title: Rive de toit (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/Rive_de_toit
     source: wikipedia_fr
     license: cc-by-sa
     topic: construction
@@ -3278,58 +1885,9 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ja-construction-master
-    title: Construction Master (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/Construction_Master
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-881cb41886
-    title: アクソノメトリー (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AF%E3%82%BD%E3%83%8E%E3%83%A1%E3%83%88%E3%83%AA%E3%83%BC
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-32fc5ee4a2
-    title: インテリア (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%86%E3%83%AA%E3%82%A2
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-9a17120d6c
-    title: ウェイファインディングシステム (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%82%A4%E3%83%95%E3%82%A1%E3%82%A4%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-c16661a989
-    title: 柄鏡形竪穴建物 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E6%9F%84%E9%8F%A1%E5%BD%A2%E7%AB%AA%E7%A9%B4%E5%BB%BA%E7%89%A9
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-ad4d9cc1b0
-    title: 屋外 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E5%B1%8B%E5%A4%96
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ja-757e289e87
     title: 折り紙建築 (ja Wikipedia)
     url: https://ja.wikipedia.org/wiki/%E6%8A%98%E3%82%8A%E7%B4%99%E5%BB%BA%E7%AF%89
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-e3d8c6237a
-    title: 外空間 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E5%A4%96%E7%A9%BA%E9%96%93
     source: wikipedia_ja
     license: cc-by-sa
     topic: architecture
@@ -3348,27 +1906,6 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ja-397f7c4c58
-    title: 気候風土適応住宅 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E6%B0%97%E5%80%99%E9%A2%A8%E5%9C%9F%E9%81%A9%E5%BF%9C%E4%BD%8F%E5%AE%85
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-50d0f01bd0
-    title: 距離計 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E8%B7%9D%E9%9B%A2%E8%A8%88
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-261f2f37d2
-    title: 金属防水 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E9%87%91%E5%B1%9E%E9%98%B2%E6%B0%B4
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ja-c7b92498ff
     title: ケース・スタディ・ハウス (ja Wikipedia)
     url: https://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%BC%E3%82%B9%E3%83%BB%E3%82%B9%E3%82%BF%E3%83%87%E3%82%A3%E3%83%BB%E3%83%8F%E3%82%A6%E3%82%B9
@@ -3383,30 +1920,9 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ja-4e57cf98da
-    title: 洪積層 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E6%B4%AA%E7%A9%8D%E5%B1%A4
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ja-034276a511
     title: コンセプチュアル・デザイン (ja Wikipedia)
     url: https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%97%E3%83%81%E3%83%A5%E3%82%A2%E3%83%AB%E3%83%BB%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-e6fb41ddb6
-    title: サインシステム (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%B5%E3%82%A4%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-d8227b913a
-    title: 三四五 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E4%B8%89%E5%9B%9B%E4%BA%94
     source: wikipedia_ja
     license: cc-by-sa
     topic: architecture
@@ -3425,93 +1941,9 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ja-46c0592e26
-    title: 地盤調査 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E5%9C%B0%E7%9B%A4%E8%AA%BF%E6%9F%BB
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-fb38aac13f
-    title: 絨毯 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E7%B5%A8%E6%AF%AF
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-50dc0a15cd
-    title: シロアリ (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%AD%E3%82%A2%E3%83%AA
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ja-42687e56d9
     title: 垂直農法 (ja Wikipedia)
     url: https://ja.wikipedia.org/wiki/%E5%9E%82%E7%9B%B4%E8%BE%B2%E6%B3%95
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-9675c443a3
-    title: 水盤 (建築) (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E6%B0%B4%E7%9B%A4_%28%E5%BB%BA%E7%AF%89%29
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-abf8490179
-    title: スリット (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%AA%E3%83%83%E3%83%88
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-9d2eeec684
-    title: 正投影図 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E6%AD%A3%E6%8A%95%E5%BD%B1%E5%9B%B3
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-6b4d44e065
-    title: ダイマクション・ハウス (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%83%80%E3%82%A4%E3%83%9E%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%BB%E3%83%8F%E3%82%A6%E3%82%B9
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-b69ece9450
-    title: 高床式住居 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E9%AB%98%E5%BA%8A%E5%BC%8F%E4%BD%8F%E5%B1%85
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-2645996c53
-    title: 高床建物 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E9%AB%98%E5%BA%8A%E5%BB%BA%E7%89%A9
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-49b12b0565
-    title: 建ち (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E5%BB%BA%E3%81%A1
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-61d95344fe
-    title: 沖積層 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E6%B2%96%E7%A9%8D%E5%B1%A4
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-diy
-    title: DIY (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/DIY
     source: wikipedia_ja
     license: cc-by-sa
     topic: architecture
@@ -3565,23 +1997,9 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ja-52018a0850
-    title: 広場空間 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E5%BA%83%E5%A0%B4%E7%A9%BA%E9%96%93
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ja-938d0f4aa2
     title: 仏教建築 (ja Wikipedia)
     url: https://ja.wikipedia.org/wiki/%E4%BB%8F%E6%95%99%E5%BB%BA%E7%AF%89
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-5109f98504
-    title: 平地建物 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E5%B9%B3%E5%9C%B0%E5%BB%BA%E7%89%A9
     source: wikipedia_ja
     license: cc-by-sa
     topic: architecture
@@ -3600,20 +2018,6 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ja-4f59bb135a
-    title: モジュール建築 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E5%BB%BA%E7%AF%89
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-7e44c044cb
-    title: モデュロール (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%87%E3%83%A5%E3%83%AD%E3%83%BC%E3%83%AB
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ja-uia
     title: UIA世界大会 (ja Wikipedia)
     url: https://ja.wikipedia.org/wiki/UIA%E4%B8%96%E7%95%8C%E5%A4%A7%E4%BC%9A
@@ -3628,51 +2032,9 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ja-7815bbe972
-    title: 陸迫り (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E9%99%B8%E8%BF%AB%E3%82%8A
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-111-57
-    title: 111 西57丁目 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/111_%E8%A5%BF57%E4%B8%81%E7%9B%AE
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-17-6dd8b71597
-    title: 17 ステート・ストリート (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/17_%E3%82%B9%E3%83%86%E3%83%BC%E3%83%88%E3%83%BB%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-1890
-    title: 1890年代の建築 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/1890%E5%B9%B4%E4%BB%A3%E3%81%AE%E5%BB%BA%E7%AF%89
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ja-2000
     title: 2000年代の建築 (ja Wikipedia)
     url: https://ja.wikipedia.org/wiki/2000%E5%B9%B4%E4%BB%A3%E3%81%AE%E5%BB%BA%E7%AF%89
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-240
-    title: 240 センター・ストリート (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/240_%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%BB%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-48-dd7347966e
-    title: 48 ウォール・ストリート (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/48_%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB%E3%83%BB%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88
     source: wikipedia_ja
     license: cc-by-sa
     topic: architecture
@@ -3705,177 +2067,9 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ja-dra-cad
-    title: DRA-CAD (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/DRA-CAD
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-jis-a-4201
-    title: JIS A 4201 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/JIS_A_4201
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-kvly-tv
-    title: KVLY-TV塔 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/KVLY-TV%E5%A1%94
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-oma
-    title: OMA (建築設計事務所) (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/OMA_%28%E5%BB%BA%E7%AF%89%E8%A8%AD%E8%A8%88%E4%BA%8B%E5%8B%99%E6%89%80%29
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-d000d67769
-    title: アーグラ城塞 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%BC%E3%82%B0%E3%83%A9%E5%9F%8E%E5%A1%9E
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-849e53150b
-    title: アースオーガー (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%BC%E3%82%B9%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%BC
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-15798231cd
-    title: アースバッグ (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%BC%E3%82%B9%E3%83%90%E3%83%83%E3%82%B0
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-07ecbc9012
-    title: 豊洲ベイサイドクロスタワー (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E8%B1%8A%E6%B4%B2%E3%83%99%E3%82%A4%E3%82%B5%E3%82%A4%E3%83%89%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%BF%E3%83%AF%E3%83%BC
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-d7e12d52a4
-    title: アーバンビレッジ (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%BC%E3%83%90%E3%83%B3%E3%83%93%E3%83%AC%E3%83%83%E3%82%B8
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-5f54909f1a
-    title: 愛知県産業貿易館 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%94%A3%E6%A5%AD%E8%B2%BF%E6%98%93%E9%A4%A8
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ja-1bed561e06
     title: 愛知県産業労働センター (ja Wikipedia)
     url: https://ja.wikipedia.org/wiki/%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%94%A3%E6%A5%AD%E5%8A%B4%E5%83%8D%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-fb45e3c059
-    title: 會津風雅堂 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E6%9C%83%E6%B4%A5%E9%A2%A8%E9%9B%85%E5%A0%82
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-0c1f1a7ba7
-    title: 粟飯原家住宅 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E7%B2%9F%E9%A3%AF%E5%8E%9F%E5%AE%B6%E4%BD%8F%E5%AE%85
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-af33f08457
-    title: アイプラザ半田 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%A4%E3%83%97%E3%83%A9%E3%82%B6%E5%8D%8A%E7%94%B0
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-ec936ef670
-    title: アイプラザ豊橋 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%A4%E3%83%97%E3%83%A9%E3%82%B6%E8%B1%8A%E6%A9%8B
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-f6fbd15350
-    title: アイン・ドバイ (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%A4%E3%83%B3%E3%83%BB%E3%83%89%E3%83%90%E3%82%A4
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-16745456f8
-    title: パークシティ豊洲 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%86%E3%82%A3%E8%B1%8A%E6%B4%B2
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-61f82637aa
-    title: アウルタワー (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%A6%E3%83%AB%E3%82%BF%E3%83%AF%E3%83%BC
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-66d10b5dab
-    title: アウンサン廟 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%A6%E3%83%B3%E3%82%B5%E3%83%B3%E5%BB%9F
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-834cd40fb8
-    title: 葵橋 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E8%91%B5%E6%A9%8B
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-14d4c23c9b
-    title: 青砂ヶ浦天主堂 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E9%9D%92%E7%A0%82%E3%83%B6%E6%B5%A6%E5%A4%A9%E4%B8%BB%E5%A0%82
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-67b0b0ed52
-    title: 青図 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E9%9D%92%E5%9B%B3
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-774a93032f
-    title: 青森県武道館 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E9%9D%92%E6%A3%AE%E7%9C%8C%E6%AD%A6%E9%81%93%E9%A4%A8
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-a4bb061a03
-    title: 青山北町アパート (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E9%9D%92%E5%B1%B1%E5%8C%97%E7%94%BA%E3%82%A2%E3%83%91%E3%83%BC%E3%83%88
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-fd489af758
-    title: 青山ザ・タワー (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E9%9D%92%E5%B1%B1%E3%82%B6%E3%83%BB%E3%82%BF%E3%83%AF%E3%83%BC
     source: wikipedia_ja
     license: cc-by-sa
     topic: architecture
@@ -3887,55 +2081,6 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ja-6703481577
-    title: 青山ビル (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E9%9D%92%E5%B1%B1%E3%83%93%E3%83%AB
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-43e6f9da9f
-    title: 赤岩橋 (渡良瀬川) (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E8%B5%A4%E5%B2%A9%E6%A9%8B_%28%E6%B8%A1%E8%89%AF%E7%80%AC%E5%B7%9D%29
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-14438d0174
-    title: 赤坂サカス (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E8%B5%A4%E5%9D%82%E3%82%B5%E3%82%AB%E3%82%B9
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-cd788da835
-    title: 赤羽輝臣 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E8%B5%A4%E7%BE%BD%E8%BC%9D%E8%87%A3
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-f28f9903d6
-    title: 安芸大橋 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E5%AE%89%E8%8A%B8%E5%A4%A7%E6%A9%8B
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-9b2901a205
-    title: 秋田建築デザイン専門学校 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%94%B0%E5%BB%BA%E7%AF%89%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%B0%82%E9%96%80%E5%AD%A6%E6%A0%A1
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-63ea7528dd
-    title: 秋田総合生活文化会館・美術館 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%94%B0%E7%B7%8F%E5%90%88%E7%94%9F%E6%B4%BB%E6%96%87%E5%8C%96%E4%BC%9A%E9%A4%A8%E3%83%BB%E7%BE%8E%E8%A1%93%E9%A4%A8
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ja-45fa14cbbd
     title: 空地 (ja Wikipedia)
     url: https://ja.wikipedia.org/wiki/%E7%A9%BA%E5%9C%B0
@@ -3943,121 +2088,9 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ja-d06dd13e6c
-    title: 秋月目鏡橋 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E7%A7%8B%E6%9C%88%E7%9B%AE%E9%8F%A1%E6%A9%8B
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-i-mk
-    title: 秋葉原I'MKビル (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E7%A7%8B%E8%91%89%E5%8E%9FI%27MK%E3%83%93%E3%83%AB
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-59494c5afa
-    title: 空き家バンク制度 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E7%A9%BA%E3%81%8D%E5%AE%B6%E3%83%90%E3%83%B3%E3%82%AF%E5%88%B6%E5%BA%A6
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-5c83bc9cd9
-    title: アクロス多摩境 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AF%E3%83%AD%E3%82%B9%E5%A4%9A%E6%91%A9%E5%A2%83
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-0bbaf46e03
-    title: アクロス福岡 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AF%E3%83%AD%E3%82%B9%E7%A6%8F%E5%B2%A1
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-6753ab3fb5
-    title: アクロスモール新鎌ヶ谷 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AF%E3%83%AD%E3%82%B9%E3%83%A2%E3%83%BC%E3%83%AB%E6%96%B0%E9%8E%8C%E3%83%B6%E8%B0%B7
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-4a86e434e0
-    title: アクロスモール泉北 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AF%E3%83%AD%E3%82%B9%E3%83%A2%E3%83%BC%E3%83%AB%E6%B3%89%E5%8C%97
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-c371846d38
-    title: アーサー・アッシュ・スタジアム (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%BC%E3%82%B5%E3%83%BC%E3%83%BB%E3%82%A2%E3%83%83%E3%82%B7%E3%83%A5%E3%83%BB%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ja-f2a7082cfc
     title: 阿佐ヶ谷住宅 (ja Wikipedia)
     url: https://ja.wikipedia.org/wiki/%E9%98%BF%E4%BD%90%E3%83%B6%E8%B0%B7%E4%BD%8F%E5%AE%85
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-4a08fb9e5e
-    title: 浅川橋 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E6%B5%85%E5%B7%9D%E6%A9%8B
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-811c68c429
-    title: 朝潮水門 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E6%9C%9D%E6%BD%AE%E6%B0%B4%E9%96%80
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-c9e087e93c
-    title: 麻名用水 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E9%BA%BB%E5%90%8D%E7%94%A8%E6%B0%B4
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-546b3de702
-    title: 朝日会館 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E6%9C%9D%E6%97%A5%E4%BC%9A%E9%A4%A8
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-980e3d80ba
-    title: 旭川市大雪クリスタルホール (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E6%97%AD%E5%B7%9D%E5%B8%82%E5%A4%A7%E9%9B%AA%E3%82%AF%E3%83%AA%E3%82%B9%E3%82%BF%E3%83%AB%E3%83%9B%E3%83%BC%E3%83%AB
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-99c94a0ab9
-    title: 朝日生命大手町ビル (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E6%9C%9D%E6%97%A5%E7%94%9F%E5%91%BD%E5%A4%A7%E6%89%8B%E7%94%BA%E3%83%93%E3%83%AB
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-2b1b2f493c
-    title: アジールフロッタン (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B8%E3%83%BC%E3%83%AB%E3%83%95%E3%83%AD%E3%83%83%E3%82%BF%E3%83%B3
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-59274cad27
-    title: あじき路地 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%98%E3%81%8D%E8%B7%AF%E5%9C%B0
     source: wikipedia_ja
     license: cc-by-sa
     topic: architecture
@@ -4076,55 +2109,6 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ja-9972fdbcf6
-    title: 芦屋仏教会館 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E8%8A%A6%E5%B1%8B%E4%BB%8F%E6%95%99%E4%BC%9A%E9%A4%A8
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-fba1de77bc
-    title: アシュラムセンター (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B7%E3%83%A5%E3%83%A9%E3%83%A0%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-6213391624
-    title: あずきミュージアム (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%9A%E3%81%8D%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-20399afc5d
-    title: アステールプラザ (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B9%E3%83%86%E3%83%BC%E3%83%AB%E3%83%97%E3%83%A9%E3%82%B6
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-a98283ad53
-    title: アステ川西 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B9%E3%83%86%E5%B7%9D%E8%A5%BF
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-bcf2f39320
-    title: アスファルトルーフィング (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B9%E3%83%95%E3%82%A1%E3%83%AB%E3%83%88%E3%83%AB%E3%83%BC%E3%83%95%E3%82%A3%E3%83%B3%E3%82%B0
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-4300cbf3a0
-    title: 四阿 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E5%9B%9B%E9%98%BF
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ja-0fe83cff5f
     title: 阿蘇大橋 (ja Wikipedia)
     url: https://ja.wikipedia.org/wiki/%E9%98%BF%E8%98%87%E5%A4%A7%E6%A9%8B
@@ -4139,107 +2123,9 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ja-3d448f71d2
-    title: 頭大仏殿 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E9%A0%AD%E5%A4%A7%E4%BB%8F%E6%AE%BF
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ja-4c9f9105cc
     title: 厚木シティプラザ (ja Wikipedia)
     url: https://ja.wikipedia.org/wiki/%E5%8E%9A%E6%9C%A8%E3%82%B7%E3%83%86%E3%82%A3%E3%83%97%E3%83%A9%E3%82%B6
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-cf0350cc41
-    title: 圧入工法 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E5%9C%A7%E5%85%A5%E5%B7%A5%E6%B3%95
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-8de22eb0c7
-    title: 圧密 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E5%9C%A7%E5%AF%86
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-318947491b
-    title: アトラスタワー五反田 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%88%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%AF%E3%83%BC%E4%BA%94%E5%8F%8D%E7%94%B0
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-4a86df3b16
-    title: アトラスタワー六本木 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%88%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%AF%E3%83%BC%E5%85%AD%E6%9C%AC%E6%9C%A8
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-d2fbff96c7
-    title: アトリウム (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%88%E3%83%AA%E3%82%A6%E3%83%A0
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-k-3ccbfdc46d
-    title: アトリエ・K (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%88%E3%83%AA%E3%82%A8%E3%83%BBK
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-5fd4f4cce5
-    title: 阿南市文化会館 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E9%98%BF%E5%8D%97%E5%B8%82%E6%96%87%E5%8C%96%E4%BC%9A%E9%A4%A8
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-7b203bd3bc
-    title: アバッセたかた (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%90%E3%83%83%E3%82%BB%E3%81%9F%E3%81%8B%E3%81%9F
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-81aeaf11c2
-    title: アピタテラス横浜綱島 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%94%E3%82%BF%E3%83%86%E3%83%A9%E3%82%B9%E6%A8%AA%E6%B5%9C%E7%B6%B1%E5%B3%B6
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-286ddbd4af
-    title: アピタ戸塚店 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%94%E3%82%BF%E6%88%B8%E5%A1%9A%E5%BA%97
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-c6ced4f56c
-    title: アランフエス王宮 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A9%E3%83%B3%E3%83%95%E3%82%A8%E3%82%B9%E7%8E%8B%E5%AE%AE
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-nini
-    title: あべのnini (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%B9%E3%81%AEnini
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-115a3774c7
-    title: 大庄北生涯学習プラザ (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%BA%84%E5%8C%97%E7%94%9F%E6%B6%AF%E5%AD%A6%E7%BF%92%E3%83%97%E3%83%A9%E3%82%B6
     source: wikipedia_ja
     license: cc-by-sa
     topic: architecture
@@ -4251,37 +2137,9 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ja-d02d83c389
-    title: 天草五橋 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E5%A4%A9%E8%8D%89%E4%BA%94%E6%A9%8B
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-accf1f54ad
-    title: 雨仕舞 (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E9%9B%A8%E4%BB%95%E8%88%9E
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ja-2868afc149
     title: 天野彰 (ja Wikipedia)
     url: https://ja.wikipedia.org/wiki/%E5%A4%A9%E9%87%8E%E5%BD%B0
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-b7941b9939
-    title: 雨漏り (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E9%9B%A8%E6%BC%8F%E3%82%8A
-    source: wikipedia_ja
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ja-6c8000a4e9
-    title: アメニティ (ja Wikipedia)
-    url: https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A1%E3%83%8B%E3%83%86%E3%82%A3
     source: wikipedia_ja
     license: cc-by-sa
     topic: architecture
@@ -4328,20 +2186,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-albacara
-    title: Albacara (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Albacara
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-alf-izar
-    title: Alféizar (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Alf%C3%A9izar
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-anatirosis
     title: Anatirosis (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Anatirosis
@@ -4377,20 +2221,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-armaz-n-carpinter-a
-    title: Armazón (carpintería) (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Armaz%C3%B3n_%28carpinter%C3%ADa%29
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-arquitectura
-    title: Arquitectura (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Arquitectura
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-arquitectura-solar-pasiva
     title: Arquitectura solar pasiva (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Arquitectura_solar_pasiva
@@ -4412,30 +2242,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-babeta-construcci-n
-    title: Babeta (construcción) (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Babeta_%28construcci%C3%B3n%29
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-balloon-frame
     title: Balloon frame (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Balloon_frame
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-barricada
-    title: Barricada (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Barricada
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-berenjeno
-    title: Berenjeno (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Berenjeno
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -4468,30 +2277,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-campamento-de-obra
-    title: Campamento de obra (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Campamento_de_obra
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-carpinter-a
     title: Carpintería (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Carpinter%C3%ADa
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-carpinter-a-de-lo-blanco
-    title: Carpintería de lo blanco (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Carpinter%C3%ADa_de_lo_blanco
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-castillo-construcci-n
-    title: Castillo (construcción) (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Castillo_%28construcci%C3%B3n%29
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -4531,20 +2319,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-codal-construcci-n
-    title: Codal (construcción) (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Codal_%28construcci%C3%B3n%29
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-condensaci-n-intersticial
-    title: Condensación intersticial (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Condensaci%C3%B3n_intersticial
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-construcci-n-civil
     title: Construcción civil (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Construcci%C3%B3n_civil
@@ -4573,13 +2347,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-construyendo-y-creciendo
-    title: Construyendo y Creciendo (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Construyendo_y_Creciendo
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-contrapiso
     title: Contrapiso (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Contrapiso
@@ -4587,23 +2354,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-coquilla-construcci-n
-    title: Coquilla (construcción) (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Coquilla_%28construcci%C3%B3n%29
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-coronaci-n-arquitectura
     title: Coronación (arquitectura) (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Coronaci%C3%B3n_%28arquitectura%29
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-cuaderno-de-obra
-    title: Cuaderno de obra (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Cuaderno_de_obra
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -4618,20 +2371,6 @@ sources:
   - id: wik-es-cubierta-invertida
     title: Cubierta invertida (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Cubierta_invertida
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-cumbrera
-    title: Cumbrera (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Cumbrera
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-dala
-    title: Dala (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Dala
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -4685,44 +2424,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-encofrado-de-vigas
-    title: Encofrado de vigas (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Encofrado_de_vigas
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-enfoscado
     title: Enfoscado (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Enfoscado
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-engalaberno
-    title: Engalaberno (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Engalaberno
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-ensayo-de-permeabilidad
-    title: Ensayo de permeabilidad (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Ensayo_de_permeabilidad
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-entibaci-n
-    title: Entibación (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Entibaci%C3%B3n
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-entrevigado
-    title: Entrevigado (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Entrevigado
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -4748,13 +2452,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-estructura-pretensada
-    title: Estructura pretensada (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Estructura_pretensada
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-f-brica-construcci-n
     title: Fábrica (construcción) (es Wikipedia)
     url: https://es.wikipedia.org/wiki/F%C3%A1brica_%28construcci%C3%B3n%29
@@ -4765,20 +2462,6 @@ sources:
   - id: wik-es-fachada-ventilada
     title: Fachada ventilada (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Fachada_ventilada
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-falso-arco
-    title: Falso arco (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Falso_arco
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-falso-techo
-    title: Falso techo (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Falso_techo
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -4800,27 +2483,6 @@ sources:
   - id: wik-es-gavi-n
     title: Gavión (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Gavi%C3%B3n
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-gotera
-    title: Gotera (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Gotera
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-goter-n
-    title: Goterón (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Goter%C3%B3n
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-hilada
-    title: Hilada (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Hilada
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -4881,20 +2543,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-inglete
-    title: Inglete (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Inglete
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-junta-construcci-n
-    title: Junta (construcción) (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Junta_%28construcci%C3%B3n%29
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-labrado-artesanal
     title: Labrado artesanal (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Labrado_artesanal
@@ -4916,23 +2564,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-mangrullo
-    title: Mangrullo (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Mangrullo
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-material-de-construcci-n-viviente
     title: Material de Construcción Viviente (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Material_de_Construcci%C3%B3n_Viviente
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-mechinal
-    title: Mechinal (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Mechinal
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -4958,13 +2592,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-n-cleo-h-medo
-    title: Núcleo húmedo (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/N%C3%BAcleo_h%C3%BAmedo
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-optimizaci-n-topol-gica
     title: Optimización topológica (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_topol%C3%B3gica
@@ -4979,44 +2606,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-opus-incertum
-    title: Opus incertum (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Opus_incertum
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-opus-quadratum
-    title: Opus quadratum (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Opus_quadratum
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-opus-reticulatum
-    title: Opus reticulatum (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Opus_reticulatum
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-oraaflex-sistema-constructivo-modular
     title: Oraaflex (sistema constructivo modular) (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Oraaflex_%28sistema_constructivo_modular%29
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-pantalla-de-paneles-prefabricados-de-hor
-    title: Pantalla de paneles prefabricados de hormigón (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Pantalla_de_paneles_prefabricados_de_hormig%C3%B3n
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-pantalla-de-pilotes
-    title: Pantalla de pilotes (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Pantalla_de_pilotes
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -5049,23 +2641,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-poyo-piedra
-    title: Poyo (piedra) (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Poyo_%28piedra%29
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-prefabricaci-n
     title: Prefabricación (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Prefabricaci%C3%B3n
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-premios-catalu-a-construcci-n
-    title: Premios Cataluña Construcción (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Premios_Catalu%C3%B1a_Construcci%C3%B3n
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -5133,20 +2711,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-shunt-arquitectura
-    title: Shunt (arquitectura) (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Shunt_%28arquitectura%29
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-sillar
-    title: Sillar (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Sillar
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-simulacro-de-terremoto
     title: Simulacro de terremoto (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Simulacro_de_terremoto
@@ -5157,20 +2721,6 @@ sources:
   - id: wik-es-sistema-estructural
     title: Sistema estructural (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Sistema_estructural
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-sistema-modular-de-sellado
-    title: Sistema modular de sellado (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Sistema_modular_de_sellado
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-solado
-    title: Solado (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Solado
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -5210,13 +2760,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-techumbre
-    title: Techumbre (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Techumbre
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-tela-met-lica
     title: Tela metálica (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Tela_met%C3%A1lica
@@ -5224,37 +2767,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-tetr-podo-estructura
-    title: Tetrápodo (estructura) (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Tetr%C3%A1podo_%28estructura%29
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-torre-de-vigilancia
-    title: Torre de vigilancia (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Torre_de_vigilancia
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-tratamiento-de-los-residuos-de-construcc
     title: Tratamiento de los residuos de construcción y demolición de la obra (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Tratamiento_de_los_residuos_de_construcci%C3%B3n_y_demolici%C3%B3n_de_la_obra
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-trazo-construcci-n
-    title: Trazo (construcción) (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Trazo_%28construcci%C3%B3n%29
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-tremi
-    title: Tremi (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Tremi
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -5276,20 +2791,6 @@ sources:
   - id: wik-es-vierteaguas
     title: Vierteaguas (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Vierteaguas
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-zanja
-    title: Zanja (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Zanja
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-z-calo-arquitectura
-    title: Zócalo (arquitectura) (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Z%C3%B3calo_%28arquitectura%29
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -5322,23 +2823,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-alicatado
-    title: Alicatado (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Alicatado
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-aparejo-construcci-n
     title: Aparejo (construcción) (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Aparejo_%28construcci%C3%B3n%29
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-bovedilla
-    title: Bovedilla (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Bovedilla
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -5353,13 +2840,6 @@ sources:
   - id: wik-es-esgrafiado
     title: Esgrafiado (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Esgrafiado
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-esgrafiado-segoviano
-    title: Esgrafiado segoviano (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Esgrafiado_segoviano
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -5406,37 +2886,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-perpia-o
-    title: Perpiaño (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Perpia%C3%B1o
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-piedra-angular
     title: Piedra angular (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Piedra_angular
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-revoco
-    title: Revoco (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Revoco
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-aldo-roso
-    title: Aldo Roso (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Aldo_Roso
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-soga-y-tiz-n
-    title: Soga y tizón (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Soga_y_tiz%C3%B3n
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -5451,13 +2903,6 @@ sources:
   - id: wik-es-dep-sito-de-fundaci-n
     title: Depósito de fundación (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Dep%C3%B3sito_de_fundaci%C3%B3n
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-albardeca
-    title: Albardeca (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Albardeca
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -5511,13 +2956,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-arquitectura-espacial
-    title: Arquitectura espacial (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Arquitectura_espacial
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-arquitectura-fractal
     title: Arquitectura fractal (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Arquitectura_fractal
@@ -5539,13 +2977,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-arquitectura-monol-tica
-    title: Arquitectura monolítica (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Arquitectura_monol%C3%ADtica
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-arquitectura-perdida
     title: Arquitectura perdida (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Arquitectura_perdida
@@ -5556,13 +2987,6 @@ sources:
   - id: wik-es-arquitectura-reivindicativa
     title: Arquitectura reivindicativa (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Arquitectura_reivindicativa
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-arquitectura-social
-    title: Arquitectura social (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Arquitectura_social
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -5595,13 +3019,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-arquitectura-zoomorfa
-    title: Arquitectura zoomorfa (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Arquitectura_zoomorfa
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-atm-sfera-dise-o-de-interiores
     title: Atmósfera (diseño de interiores) (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Atm%C3%B3sfera_%28dise%C3%B1o_de_interiores%29
@@ -5609,23 +3026,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-calceniza
-    title: Calceniza (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Calceniza
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-casa-cabo-cod
     title: Casa Cabo Cod (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Casa_Cabo_Cod
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-ciudad-de-c-pulas
-    title: Ciudad de cúpulas (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Ciudad_de_c%C3%BApulas
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -5640,13 +3043,6 @@ sources:
   - id: wik-es-conectividad-paisaj-stica
     title: Conectividad paisajística (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Conectividad_paisaj%C3%ADstica
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-covachuela
-    title: Covachuela (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Covachuela
     source: wikipedia_es
     license: cc-by-sa
     topic: construction
@@ -5672,13 +3068,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-dise-o-conductual
-    title: Diseño conductual (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Dise%C3%B1o_conductual
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-es-dise-o-modular
     title: Diseño modular (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Dise%C3%B1o_modular
@@ -5686,816 +3075,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-es-efecto-gruen
-    title: Efecto Gruen (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Efecto_Gruen
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-escalera-del-tico
-    title: Escalera del ático (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Escalera_del_%C3%A1tico
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-es-fellow-of-the-american-institute-of-arch
-    title: Fellow of the American Institute of Architects (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Fellow_of_the_American_Institute_of_Architects
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-ba4c6bff61
-    title: Строительство (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-5f23d483d4
-    title: Архитектурная инженерия (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%90%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%BD%D0%B0%D1%8F_%D0%B8%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D0%B8%D1%8F
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-5c1c2d1df7
-    title: Диафрагма жёсткости (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B0%D1%84%D1%80%D0%B0%D0%B3%D0%BC%D0%B0_%D0%B6%D1%91%D1%81%D1%82%D0%BA%D0%BE%D1%81%D1%82%D0%B8
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-95edaef2e4
-    title: Дорожное строительство (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B5_%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-fbfa427ca1
-    title: Засечка (определение координат) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%81%D0%B5%D1%87%D0%BA%D0%B0_%28%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-d4bded59ae
-    title: Кирпичная кладка (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-3904d0302c
-    title: Купершлак (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D0%BF%D0%B5%D1%80%D1%88%D0%BB%D0%B0%D0%BA
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-4865d66f9c
-    title: Монолитный купол (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%BD%D0%BE%D0%BB%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D0%BA%D1%83%D0%BF%D0%BE%D0%BB
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-689b5e1fd1
-    title: Полигональная кладка (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%B8%D0%B3%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-47f4d014ed
-    title: Реконструкция мостов (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D1%8F_%D0%BC%D0%BE%D1%81%D1%82%D0%BE%D0%B2
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-84929d93aa
-    title: Строительство на территориях, вернувшихся под контроль Азербайджана в ходе
-      и после Второй карабахской войны (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE_%D0%BD%D0%B0_%D1%82%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F%D1%85%2C_%D0%B2%D0%B5%D1%80%D0%BD%D1%83%D0%B2%D1%88%D0%B8%D1%85%D1%81%D1%8F_%D0%BF%D0%BE%D0%B4_%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C_%D0%90%D0%B7%D0%B5%D1%80%D0%B1%D0%B0%D0%B9%D0%B4%D0%B6%D0%B0%D0%BD%D0%B0_%D0%B2_%D1%85%D0%BE%D0%B4%D0%B5_%D0%B8_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5_%D0%92%D1%82%D0%BE%D1%80%D0%BE%D0%B9_%D0%BA%D0%B0%D1%80%D0%B0%D0%B1%D0%B0%D1%85%D1%81%D0%BA%D0%BE%D0%B9_%D0%B2%D0%BE%D0%B9%D0%BD%D1%8B
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-fe80679308
-    title: Структурная инженерия (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%BD%D0%B0%D1%8F_%D0%B8%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D0%B8%D1%8F
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-bfac07a521
-    title: Аварская архитектура (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%90%D0%B2%D0%B0%D1%80%D1%81%D0%BA%D0%B0%D1%8F_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-87bd024e7d
-    title: Адельфи (фирма) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%90%D0%B4%D0%B5%D0%BB%D1%8C%D1%84%D0%B8_%28%D1%84%D0%B8%D1%80%D0%BC%D0%B0%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-eb94ab60fd
-    title: Аркология (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%90%D1%80%D0%BA%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-fc389a6138
-    title: Архитектура Барселоны (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%90%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0_%D0%91%D0%B0%D1%80%D1%81%D0%B5%D0%BB%D0%BE%D0%BD%D1%8B
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-d7cf3d2872
-    title: Архитектура этрусков (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%90%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0_%D1%8D%D1%82%D1%80%D1%83%D1%81%D0%BA%D0%BE%D0%B2
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-38c8a589ad
-    title: Архитектурный ансамбль (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%90%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%BD%D1%8B%D0%B9_%D0%B0%D0%BD%D1%81%D0%B0%D0%BC%D0%B1%D0%BB%D1%8C
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-4f7d697198
-    title: Двусветный зал (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%94%D0%B2%D1%83%D1%81%D0%B2%D0%B5%D1%82%D0%BD%D1%8B%D0%B9_%D0%B7%D0%B0%D0%BB
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-b9f36faead
-    title: Квадратура (искусство) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0_%28%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-8f4091e778
-    title: Квадрифолий (храм) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D0%B2%D0%B0%D0%B4%D1%80%D0%B8%D1%84%D0%BE%D0%BB%D0%B8%D0%B9_%28%D1%85%D1%80%D0%B0%D0%BC%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-0b55c0be3c
-    title: Ламбри (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BC%D0%B1%D1%80%D0%B8
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-6c97a0b789
-    title: Леттнер (архитектура) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9B%D0%B5%D1%82%D1%82%D0%BD%D0%B5%D1%80_%28%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-fe013f3251
-    title: Параметрический дизайн (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-49faa2f65d
-    title: Пропорционирование (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%BF%D0%BE%D1%80%D1%86%D0%B8%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-8f0fee3e7d
-    title: Пропорция (архитектура) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%BF%D0%BE%D1%80%D1%86%D0%B8%D1%8F_%28%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-fb8bb0aab9
-    title: Стереотомия (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D1%80%D0%B5%D0%BE%D1%82%D0%BE%D0%BC%D0%B8%D1%8F
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-f68361d809
-    title: Тектоника (искусство) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BA%D1%82%D0%BE%D0%BD%D0%B8%D0%BA%D0%B0_%28%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-7a90c9fa30
-    title: Триангуляция (архитектура) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B8%D0%B0%D0%BD%D0%B3%D1%83%D0%BB%D1%8F%D1%86%D0%B8%D1%8F_%28%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-bim
-    title: Целевая группа BIM (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%BB%D0%B5%D0%B2%D0%B0%D1%8F_%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0_BIM
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-627873a48a
-    title: Экземпеда Альберти (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%AD%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%B5%D0%B4%D0%B0_%D0%90%D0%BB%D1%8C%D0%B1%D0%B5%D1%80%D1%82%D0%B8
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-forensic-architecture
-    title: Forensic Architecture (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/Forensic_Architecture
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-70c489a223
-    title: Башня Ветров (Севастополь) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D1%88%D0%BD%D1%8F_%D0%92%D0%B5%D1%82%D1%80%D0%BE%D0%B2_%28%D0%A1%D0%B5%D0%B2%D0%B0%D1%81%D1%82%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-317c12d525
-    title: Вентиляционная шахта (метро) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%BD%D1%82%D0%B8%D0%BB%D1%8F%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%88%D0%B0%D1%85%D1%82%D0%B0_%28%D0%BC%D0%B5%D1%82%D1%80%D0%BE%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-1fd96aec4d
-    title: Виндзейль (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D0%BD%D0%B4%D0%B7%D0%B5%D0%B9%D0%BB%D1%8C
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-8a062abd05
-    title: Дефлектор (аэродинамика) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D1%84%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80_%28%D0%B0%D1%8D%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D0%BA%D0%B0%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-899c3f778f
-    title: Дымовой люк (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%94%D1%8B%D0%BC%D0%BE%D0%B2%D0%BE%D0%B9_%D0%BB%D1%8E%D0%BA
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-a72c4bb026
-    title: Канальный нагреватель (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BD%D0%B0%D0%B3%D1%80%D0%B5%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-332c943459
-    title: Каплеуловитель (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BF%D0%BB%D0%B5%D1%83%D0%BB%D0%BE%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-d9680bf3b2
-    title: Научно-исследовательский институт по вентиляции и очистке воздуха на горнорудных
-      предприятиях (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%83%D1%87%D0%BD%D0%BE-%D0%B8%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9_%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82_%D0%BF%D0%BE_%D0%B2%D0%B5%D0%BD%D1%82%D0%B8%D0%BB%D1%8F%D1%86%D0%B8%D0%B8_%D0%B8_%D0%BE%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B5_%D0%B2%D0%BE%D0%B7%D0%B4%D1%83%D1%85%D0%B0_%D0%BD%D0%B0_%D0%B3%D0%BE%D1%80%D0%BD%D0%BE%D1%80%D1%83%D0%B4%D0%BD%D1%8B%D1%85_%D0%BF%D1%80%D0%B5%D0%B4%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D1%8F%D1%85
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-c839162ddc
-    title: Турбодефлектор (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D1%80%D0%B1%D0%BE%D0%B4%D0%B5%D1%84%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-i-d
-    title: I-d диаграмма влажного воздуха (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/I-d_%D0%B4%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0_%D0%B2%D0%BB%D0%B0%D0%B6%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D0%BE%D0%B7%D0%B4%D1%83%D1%85%D0%B0
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-ec0c79467c
-    title: Абиссинский колодец (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%90%D0%B1%D0%B8%D1%81%D1%81%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BE%D0%BB%D0%BE%D0%B4%D0%B5%D1%86
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-d732389fa8
-    title: Вантуз (устройство) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BD%D1%82%D1%83%D0%B7_%28%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%BE%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-f0ebd6db53
-    title: Водоснабжение Вены (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D0%BD%D0%B0%D0%B1%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%92%D0%B5%D0%BD%D1%8B
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-330f36245b
-    title: Водоканал (Нижний Новгород) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB_%28%D0%9D%D0%B8%D0%B6%D0%BD%D0%B8%D0%B9_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-47d54fd25e
-    title: Водоканал Новосибирска (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB_%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%D0%B0
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-19d411a422
-    title: Водонапорная башня (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D0%BD%D0%B0%D0%BF%D0%BE%D1%80%D0%BD%D0%B0%D1%8F_%D0%B1%D0%B0%D1%88%D0%BD%D1%8F
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-7e12451bc2
-    title: Водонапорная башня (Мытищи) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D0%BD%D0%B0%D0%BF%D0%BE%D1%80%D0%BD%D0%B0%D1%8F_%D0%B1%D0%B0%D1%88%D0%BD%D1%8F_%28%D0%9C%D1%8B%D1%82%D0%B8%D1%89%D0%B8%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-353e1916e8
-    title: Гидравлический режим (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%B4%D1%80%D0%B0%D0%B2%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B5%D0%B6%D0%B8%D0%BC
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-3173ad00d7
-    title: Джрухи (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D1%80%D1%83%D1%85%D0%B8
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-449c9a5c85
-    title: Запорная арматура (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BF%D0%BE%D1%80%D0%BD%D0%B0%D1%8F_%D0%B0%D1%80%D0%BC%D0%B0%D1%82%D1%83%D1%80%D0%B0
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-35385e27ab
-    title: Запорный клапан (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BF%D0%BE%D1%80%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BB%D0%B0%D0%BF%D0%B0%D0%BD
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-833d876725
-    title: Защитная арматура (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D0%B0%D1%8F_%D0%B0%D1%80%D0%BC%D0%B0%D1%82%D1%83%D1%80%D0%B0
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-bae9d3a1da
-    title: Канализационная установка (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-964f6a0054
-    title: Каптаж (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BF%D1%82%D0%B0%D0%B6
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-16a5540da3
-    title: Конденсационный колодец (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D0%B4%D0%B5%D0%BD%D1%81%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BB%D0%BE%D0%B4%D0%B5%D1%86
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-8e4e6af797
-    title: Кулер (аппарат) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D0%BB%D0%B5%D1%80_%28%D0%B0%D0%BF%D0%BF%D0%B0%D1%80%D0%B0%D1%82%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-e00ff09f25
-    title: Насос (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%81%D0%BE%D1%81
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-94948ec360
-    title: Перепускной клапан (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B5%D0%BF%D1%83%D1%81%D0%BA%D0%BD%D0%BE%D0%B9_%D0%BA%D0%BB%D0%B0%D0%BF%D0%B0%D0%BD
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-63ce9a0862
-    title: Повторное использование сточной воды (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B2%D1%82%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9_%D0%B2%D0%BE%D0%B4%D1%8B
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-326403faa1
-    title: Подводный водопровод Турция ― Северный Кипр (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B4%D0%B2%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B2%D0%BE%D0%B4%D0%BE%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4_%D0%A2%D1%83%D1%80%D1%86%D0%B8%D1%8F_%E2%80%95_%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%9A%D0%B8%D0%BF%D1%80
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-3f18102b61
-    title: Серая вода (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B0%D1%8F_%D0%B2%D0%BE%D0%B4%D0%B0
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-c7d8881cbb
-    title: Смеситель (сантехника) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B5%D1%81%D0%B8%D1%82%D0%B5%D0%BB%D1%8C_%28%D1%81%D0%B0%D0%BD%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-1ef97a9439
-    title: Темзенское водопроводное кольцо (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BC%D0%B7%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%BD%D0%BE%D0%B5_%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%BE
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-5229633062
-    title: Теневые шарики (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BD%D0%B5%D0%B2%D1%8B%D0%B5_%D1%88%D0%B0%D1%80%D0%B8%D0%BA%D0%B8
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-07763fca45
-    title: Чистая вода (целевая программа) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D1%82%D0%B0%D1%8F_%D0%B2%D0%BE%D0%B4%D0%B0_%28%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D0%B0%D1%8F_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-c0812ef9fa
-    title: Геотехника (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-53d140308f
-    title: Замораживание грунта (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BC%D0%BE%D1%80%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B3%D1%80%D1%83%D0%BD%D1%82%D0%B0
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-889e526b83
-    title: Осипов, Юрий Борисович (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%B8%D0%BF%D0%BE%D0%B2%2C_%D0%AE%D1%80%D0%B8%D0%B9_%D0%91%D0%BE%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B8%D1%87
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-948e06c566
-    title: Стандартное пенетрационное испытание (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%B5_%D0%BF%D0%B5%D0%BD%D0%B5%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D0%B0%D0%BD%D0%B8%D0%B5
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-soletanche-bachy
-    title: Soletanche Bachy (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/Soletanche_Bachy
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-eb2fb92ff6
-    title: Игротеко (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%98%D0%B3%D1%80%D0%BE%D1%82%D0%B5%D0%BA%D0%BE
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-2aa9385711
-    title: Кубики (игрушка) (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D0%B1%D0%B8%D0%BA%D0%B8_%28%D0%B8%D0%B3%D1%80%D1%83%D1%88%D0%BA%D0%B0%29
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-fischertechnik
-    title: Fischertechnik (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/Fischertechnik
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-ru-lego
     title: Lego (ru Wikipedia)
     url: https://ru.wikipedia.org/wiki/Lego
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-nintendo-labo
-    title: Nintendo Labo (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/Nintendo_Labo
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-zometool
-    title: Zometool (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/Zometool
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-8fe319f726
-    title: Гибкое бетонное покрытие (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%B1%D0%BA%D0%BE%D0%B5_%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D0%BE%D0%BA%D1%80%D1%8B%D1%82%D0%B8%D0%B5
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-742d7d7110
-    title: Гидратация цемента (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D1%86%D0%B8%D1%8F_%D1%86%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-9086ed5d31
-    title: Монолитный пенобетон (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%BD%D0%BE%D0%BB%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D0%BF%D0%B5%D0%BD%D0%BE%D0%B1%D0%B5%D1%82%D0%BE%D0%BD
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-03c7e4ea73
-    title: Памятник первооткрывателям алмазной трубки «Мир» (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%BC%D1%8F%D1%82%D0%BD%D0%B8%D0%BA_%D0%BF%D0%B5%D1%80%D0%B2%D0%BE%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F%D0%BC_%D0%B0%D0%BB%D0%BC%D0%B0%D0%B7%D0%BD%D0%BE%D0%B9_%D1%82%D1%80%D1%83%D0%B1%D0%BA%D0%B8_%C2%AB%D0%9C%D0%B8%D1%80%C2%BB
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-a6c36adcae
-    title: Здание (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%97%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-faa0373cc1
-    title: Виброконтроль (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D0%B1%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-69a630fa43
-    title: Парадный вход (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B0%D0%B4%D0%BD%D1%8B%D0%B9_%D0%B2%D1%85%D0%BE%D0%B4
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-88a3a714d4
-    title: Самострой (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BC%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B9
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-60016b347b
-    title: Сейсмопротектор (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%B9%D1%81%D0%BC%D0%BE%D0%BF%D1%80%D0%BE%D1%82%D0%B5%D0%BA%D1%82%D0%BE%D1%80
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-834d6548a1
-    title: Системы дифференциальной коррекции (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D0%BA%D0%BE%D1%80%D1%80%D0%B5%D0%BA%D1%86%D0%B8%D0%B8
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-b9badf9c93
-    title: Топографическая съёмка (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BF%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D1%8A%D1%91%D0%BC%D0%BA%D0%B0
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-post-processing-kinematic
-    title: Post Processing Kinematic (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/Post_Processing_Kinematic
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-precise-point-positioning
-    title: Precise Point Positioning (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/Precise_Point_Positioning
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-real-time-ppp
-    title: Real-Time PPP (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/Real-Time_PPP
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-rtcm-sc-104
-    title: RTCM SC-104 (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/RTCM_SC-104
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-1f4ac202d9
-    title: Инженерная геология (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D0%BD%D0%B0%D1%8F_%D0%B3%D0%B5%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-909593db69
-    title: Биотические свойства грунтов (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D0%BE%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0_%D0%B3%D1%80%D1%83%D0%BD%D1%82%D0%BE%D0%B2
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-9acb8e3630
-    title: Влагоёмкость грунтов (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%92%D0%BB%D0%B0%D0%B3%D0%BE%D1%91%D0%BC%D0%BA%D0%BE%D1%81%D1%82%D1%8C_%D0%B3%D1%80%D1%83%D0%BD%D1%82%D0%BE%D0%B2
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-783bb5bf4f
-    title: Газы в грунтах (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%B7%D1%8B_%D0%B2_%D0%B3%D1%80%D1%83%D0%BD%D1%82%D0%B0%D1%85
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-ffd89eede6
-    title: Геополимерное инъектирование (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%BF%D0%BE%D0%BB%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%D0%B5_%D0%B8%D0%BD%D1%8A%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-cdb47ae914
-    title: Закрепление грунтов (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BA%D1%80%D0%B5%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B3%D1%80%D1%83%D0%BD%D1%82%D0%BE%D0%B2
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-cbf1e6125b
-    title: Инженерное карстоведение (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D0%BD%D0%BE%D0%B5_%D0%BA%D0%B0%D1%80%D1%81%D1%82%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-b15b0f96d4
-    title: Криотекстура (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D1%81%D1%82%D1%83%D1%80%D0%B0
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-89214387d2
-    title: Региональная инженерная геология (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%B8%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D0%BD%D0%B0%D1%8F_%D0%B3%D0%B5%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-17dfef248c
-    title: Техническая мелиорация грунтов (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BC%D0%B5%D0%BB%D0%B8%D0%BE%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%B3%D1%80%D1%83%D0%BD%D1%82%D0%BE%D0%B2
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-7792378339
-    title: Канализация (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-9cb33edc78
-    title: Анаэробный пруд (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0%D1%8D%D1%80%D0%BE%D0%B1%D0%BD%D1%8B%D0%B9_%D0%BF%D1%80%D1%83%D0%B4
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-06a6d9bbf7
-    title: Безраструбная чугунная канализация (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%B7%D1%80%D0%B0%D1%81%D1%82%D1%80%D1%83%D0%B1%D0%BD%D0%B0%D1%8F_%D1%87%D1%83%D0%B3%D1%83%D0%BD%D0%BD%D0%B0%D1%8F_%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-ddb19cbadf
-    title: Дождевая канализация (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%B6%D0%B4%D0%B5%D0%B2%D0%B0%D1%8F_%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-bc2fb96a40
-    title: Дорожная снегоплавильная система (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D1%80%D0%BE%D0%B6%D0%BD%D0%B0%D1%8F_%D1%81%D0%BD%D0%B5%D0%B3%D0%BE%D0%BF%D0%BB%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-2e9edac173
-    title: Канализационная насосная станция (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D0%BD%D0%B0%D1%81%D0%BE%D1%81%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-58fb3a72a0
-    title: Канализационный люк (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BB%D1%8E%D0%BA
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-8fe7946976
-    title: Канализация на Украине (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F_%D0%BD%D0%B0_%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B5
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-1db630c56f
-    title: Лондонская канализация (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D0%BD%D0%B4%D0%BE%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F
-    source: wikipedia_ru
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-ru-e9c5e075b8
-    title: Манжета сантехническая (ru Wikipedia)
-    url: https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BD%D0%B6%D0%B5%D1%82%D0%B0_%D1%81%D0%B0%D0%BD%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F
     source: wikipedia_ru
     license: cc-by-sa
     topic: construction
@@ -6514,93 +3096,9 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ko-35927712d5
-    title: 건축면적 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EA%B1%B4%EC%B6%95%EB%A9%B4%EC%A0%81
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-b9e8afaa4e
-    title: 건축사진 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EA%B1%B4%EC%B6%95%EC%82%AC%EC%A7%84
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ko-5f58df62ab
     title: 골재 (ko Wikipedia)
     url: https://ko.wikipedia.org/wiki/%EA%B3%A8%EC%9E%AC
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-d72301f3a8
-    title: 공개공지 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EA%B3%B5%EA%B0%9C%EA%B3%B5%EC%A7%80
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-6f5c421bcc
-    title: 공시지가 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%8B%9C%EC%A7%80%EA%B0%80
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-82ad607fc8
-    title: 국민낭만주의 양식 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%AF%BC%EB%82%AD%EB%A7%8C%EC%A3%BC%EC%9D%98_%EC%96%91%EC%8B%9D
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-5788a3024b
-    title: 그린리모델링 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%A6%B0%EB%A6%AC%EB%AA%A8%EB%8D%B8%EB%A7%81
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-eab47aec08
-    title: 난연재료 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%82%9C%EC%97%B0%EC%9E%AC%EB%A3%8C
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-13917b279b
-    title: 노출콘크리트 공법 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%85%B8%EC%B6%9C%EC%BD%98%ED%81%AC%EB%A6%AC%ED%8A%B8_%EA%B3%B5%EB%B2%95
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-74deafc096
-    title: 대지 (터) (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%8C%80%EC%A7%80_%28%ED%84%B0%29
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-091e1416f8
-    title: 대지면적 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%8C%80%EC%A7%80%EB%A9%B4%EC%A0%81
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-dbe5d4af4a
-    title: 대한건축학회 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EA%B1%B4%EC%B6%95%ED%95%99%ED%9A%8C
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-a34b012b65
-    title: 동바리 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%8F%99%EB%B0%94%EB%A6%AC
     source: wikipedia_ko
     license: cc-by-sa
     topic: architecture
@@ -6612,72 +3110,9 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ko-c80dad9ce1
-    title: 막 구조 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%A7%89_%EA%B5%AC%EC%A1%B0
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-dc73dfd9dd
-    title: 맹지 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%A7%B9%EC%A7%80
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-35296f3e89
-    title: 먹매김 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%A8%B9%EB%A7%A4%EA%B9%80
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-4b3a189e1e
-    title: 물-시멘트비 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%AC%BC-%EC%8B%9C%EB%A9%98%ED%8A%B8%EB%B9%84
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-b527992ca7
-    title: 방화벽 (건축) (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%B0%A9%ED%99%94%EB%B2%BD_%28%EA%B1%B4%EC%B6%95%29
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-084ad62660
-    title: 부스 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%B6%80%EC%8A%A4
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-d8d4458944
-    title: 상량식 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EC%83%81%EB%9F%89%EC%8B%9D
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ko-90191c8eff
     title: 새로운 건축의 다섯 가지 요소 (ko Wikipedia)
     url: https://ko.wikipedia.org/wiki/%EC%83%88%EB%A1%9C%EC%9A%B4_%EA%B1%B4%EC%B6%95%EC%9D%98_%EB%8B%A4%EC%84%AF_%EA%B0%80%EC%A7%80_%EC%9A%94%EC%86%8C
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-debb247247
-    title: 스테인드글라스 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%85%8C%EC%9D%B8%EB%93%9C%EA%B8%80%EB%9D%BC%EC%8A%A4
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-11f7b54e65
-    title: 스티로폼 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%8B%B0%EB%A1%9C%ED%8F%BC
     source: wikipedia_ko
     license: cc-by-sa
     topic: architecture
@@ -6689,135 +3124,9 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ko-651a4a62c4
-    title: 용도지역 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EC%9A%A9%EB%8F%84%EC%A7%80%EC%97%AD
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-8b3785f4b3
-    title: 용적률 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EC%9A%A9%EC%A0%81%EB%A5%A0
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-0209cead56
-    title: 장미창 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EC%9E%A5%EB%AF%B8%EC%B0%BD
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-4f45d20992
-    title: 정초식 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EC%A0%95%EC%B4%88%EC%8B%9D
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-73209dd8fd
-    title: 주랑 현관 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EC%A3%BC%EB%9E%91_%ED%98%84%EA%B4%80
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-124207119d
-    title: 쪽모이 마루 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EC%AA%BD%EB%AA%A8%EC%9D%B4_%EB%A7%88%EB%A3%A8
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-6e5da32381
-    title: 철근비 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EC%B2%A0%EA%B7%BC%EB%B9%84
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-5b5aeb2abd
-    title: 청와 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EC%B2%AD%EC%99%80
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-a88f143145
-    title: 커튼 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EC%BB%A4%ED%8A%BC
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ko-193359b134
     title: 테라스 (ko Wikipedia)
     url: https://ko.wikipedia.org/wiki/%ED%85%8C%EB%9D%BC%EC%8A%A4
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-553291197b
-    title: 패턴 언어 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%ED%8C%A8%ED%84%B4_%EC%96%B8%EC%96%B4
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-c21f1e41d1
-    title: 필지 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%ED%95%84%EC%A7%80
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-b61f5f803d
-    title: 화재하중 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%ED%99%94%EC%9E%AC%ED%95%98%EC%A4%91
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-2e55971ad7
-    title: 흙둘레집 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%ED%9D%99%EB%91%98%EB%A0%88%EC%A7%91
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-2b1cc56fa3
-    title: 구성주의 (예술) (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EA%B5%AC%EC%84%B1%EC%A3%BC%EC%9D%98_%28%EC%98%88%EC%88%A0%29
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-b6faaabb44
-    title: 구성주의 건축 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EA%B5%AC%EC%84%B1%EC%A3%BC%EC%9D%98_%EA%B1%B4%EC%B6%95
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-553acc9276
-    title: 국제 양식 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EA%B5%AD%EC%A0%9C_%EC%96%91%EC%8B%9D
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-223e93a484
-    title: 그리스 리바이벌 건축 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%A6%AC%EC%8A%A4_%EB%A6%AC%EB%B0%94%EC%9D%B4%EB%B2%8C_%EA%B1%B4%EC%B6%95
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-d3918a5386
-    title: 근대 건축 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EA%B7%BC%EB%8C%80_%EA%B1%B4%EC%B6%95
     source: wikipedia_ko
     license: cc-by-sa
     topic: architecture
@@ -6829,79 +3138,9 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ko-481d8e2996
-    title: 네오바로크 건축 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%84%A4%EC%98%A4%EB%B0%94%EB%A1%9C%ED%81%AC_%EA%B1%B4%EC%B6%95
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-4d017fcf86
-    title: 디렉투아르 양식 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%94%94%EB%A0%89%ED%88%AC%EC%95%84%EB%A5%B4_%EC%96%91%EC%8B%9D
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-7ab1d02300
-    title: 모더니즘 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%8D%94%EB%8B%88%EC%A6%98
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-ko-4707b64893
     title: 바로크 건축 (ko Wikipedia)
     url: https://ko.wikipedia.org/wiki/%EB%B0%94%EB%A1%9C%ED%81%AC_%EA%B1%B4%EC%B6%95
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-50e7042701
-    title: 벽면녹화 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%B2%BD%EB%A9%B4%EB%85%B9%ED%99%94
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-44ec3f3afd
-    title: 브루탈리즘 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%B8%8C%EB%A3%A8%ED%83%88%EB%A6%AC%EC%A6%98
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-01259b891e
-    title: 비더마이어 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%B9%84%EB%8D%94%EB%A7%88%EC%9D%B4%EC%96%B4
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-a16d1364bf
-    title: 종 (건축) (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EC%A2%85_%28%EA%B1%B4%EC%B6%95%29
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-6215875ed7
-    title: 중국의 건축 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EC%A4%91%EA%B5%AD%EC%9D%98_%EA%B1%B4%EC%B6%95
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-ac47a3ff8e
-    title: 티툴루스 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%ED%8B%B0%ED%88%B4%EB%A3%A8%EC%8A%A4
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-688c88d968
-    title: 팔라디오 건축 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%ED%8C%94%EB%9D%BC%EB%94%94%EC%98%A4_%EA%B1%B4%EC%B6%95
     source: wikipedia_ko
     license: cc-by-sa
     topic: architecture
@@ -6913,55 +3152,6 @@ sources:
     license: cc-by-sa
     topic: architecture
     format: html
-  - id: wik-ko-400d3d96cf
-    title: 경첩 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%B2%A9
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-3710cf8aa6
-    title: 공회당 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EA%B3%B5%ED%9A%8C%EB%8B%B9
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-24a72dd1f6
-    title: 관문 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EA%B4%80%EB%AC%B8
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-fe79347344
-    title: 독립관 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%8F%85%EB%A6%BD%EA%B4%80
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-3edaa47049
-    title: 모듈러 건물 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%93%88%EB%9F%AC_%EA%B1%B4%EB%AC%BC
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-15802872b8
-    title: 문 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%AC%B8
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
-  - id: wik-ko-1025d14db6
-    title: 봉안담 (ko Wikipedia)
-    url: https://ko.wikipedia.org/wiki/%EB%B4%89%EC%95%88%EB%8B%B4
-    source: wikipedia_ko
-    license: cc-by-sa
-    topic: architecture
-    format: html
   - id: wik-zhwb-1h411010
     title: 机电工程管理与实务/1H411010 机电工程常用材料 (zh Wikibooks)
     url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H411010_%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E5%B8%B8%E7%94%A8%E6%9D%90%E6%96%99
@@ -6969,44 +3159,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-zhwb-1h411020
-    title: 机电工程管理与实务/1H411020 机电工程常用工程设备 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H411020_%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E5%B8%B8%E7%94%A8%E5%B7%A5%E7%A8%8B%E8%AE%BE%E5%A4%87
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-zhwb-1h412010
-    title: 机电工程管理与实务/1H412010 工程测量技术 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H412010_%E5%B7%A5%E7%A8%8B%E6%B5%8B%E9%87%8F%E6%8A%80%E6%9C%AF
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-zhwb-1h412020
-    title: 机电工程管理与实务/1H412020 起重技术 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H412020_%E8%B5%B7%E9%87%8D%E6%8A%80%E6%9C%AF
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-zhwb-1h412030
-    title: 机电工程管理与实务/1H412030 焊接技术 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H412030_%E7%84%8A%E6%8E%A5%E6%8A%80%E6%9C%AF
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-zhwb-1h413010
     title: 机电工程管理与实务/1H413010 机械设备安装技术 (zh Wikibooks)
     url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H413010_%E6%9C%BA%E6%A2%B0%E8%AE%BE%E5%A4%87%E5%AE%89%E8%A3%85%E6%8A%80%E6%9C%AF
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-zhwb-1h413020
-    title: 机电工程管理与实务/1H413020 电气工程安装技术 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H413020_%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B%E5%AE%89%E8%A3%85%E6%8A%80%E6%9C%AF
     source: wikibooks_zh
     license: cc-by-sa
     topic: construction
@@ -7025,13 +3180,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-zhwb-1h413050
-    title: 机电工程管理与实务/1H413050 发电设备安装技术 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H413050_%E5%8F%91%E7%94%B5%E8%AE%BE%E5%A4%87%E5%AE%89%E8%A3%85%E6%8A%80%E6%9C%AF
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-zhwb-1h413060
     title: 机电工程管理与实务/1H413060 自动化仪表工程安装技术 (zh Wikibooks)
     url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H413060_%E8%87%AA%E5%8A%A8%E5%8C%96%E4%BB%AA%E8%A1%A8%E5%B7%A5%E7%A8%8B%E5%AE%89%E8%A3%85%E6%8A%80%E6%9C%AF
@@ -7042,13 +3190,6 @@ sources:
   - id: wik-zhwb-1h413070
     title: 机电工程管理与实务/1H413070 防腐蚀工程施工技术 (zh Wikibooks)
     url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H413070_%E9%98%B2%E8%85%90%E8%9A%80%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E6%8A%80%E6%9C%AF
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-zhwb-1h413080
-    title: 机电工程管理与实务/1H413080 绝热工程施工技术 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H413080_%E7%BB%9D%E7%83%AD%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E6%8A%80%E6%9C%AF
     source: wikibooks_zh
     license: cc-by-sa
     topic: construction
@@ -7067,23 +3208,9 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-zhwb-1h414020
-    title: 机电工程管理与实务/1H414020 建筑电气工程施工技术 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H414020_%E5%BB%BA%E7%AD%91%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E6%8A%80%E6%9C%AF
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-zhwb-1h414030
     title: 机电工程管理与实务/1H414030 通风与空调工程施工技术 (zh Wikibooks)
     url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H414030_%E9%80%9A%E9%A3%8E%E4%B8%8E%E7%A9%BA%E8%B0%83%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E6%8A%80%E6%9C%AF
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-zhwb-1h414040
-    title: 机电工程管理与实务/1H414040 建筑智能化工程施工技术 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H414040_%E5%BB%BA%E7%AD%91%E6%99%BA%E8%83%BD%E5%8C%96%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E6%8A%80%E6%9C%AF
     source: wikibooks_zh
     license: cc-by-sa
     topic: construction
@@ -7109,34 +3236,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-zhwb-1h420020
-    title: 机电工程管理与实务/1H420020 机电工程施工招标投标管理 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H420020_%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E6%8B%9B%E6%A0%87%E6%8A%95%E6%A0%87%E7%AE%A1%E7%90%86
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-zhwb-1h420030
-    title: 机电工程管理与实务/1H420030 机电工程施工合同管理 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H420030_%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E5%90%88%E5%90%8C%E7%AE%A1%E7%90%86
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-zhwb-1h420040
-    title: 机电工程管理与实务/1H420040 机电工程设备采购管理 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H420040_%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E8%AE%BE%E5%A4%87%E9%87%87%E8%B4%AD%E7%AE%A1%E7%90%86
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-zhwb-1h420050
-    title: 机电工程管理与实务/1H420050 机电工程施工组织设计 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H420050_%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E7%BB%84%E7%BB%87%E8%AE%BE%E8%AE%A1
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-zhwb-1h420060
     title: 机电工程管理与实务/1H420060 机电工程施工资源管理 (zh Wikibooks)
     url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H420060_%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86
@@ -7158,13 +3257,6 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-zhwb-1h420090
-    title: 机电工程管理与实务/1H420090 机电工程施工成本管理 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H420090_%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E6%88%90%E6%9C%AC%E7%AE%A1%E7%90%86
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
   - id: wik-zhwb-1h420100
     title: 机电工程管理与实务/1H420100 机电工程施工预结算 (zh Wikibooks)
     url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H420100_%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E9%A2%84%E7%BB%93%E7%AE%97
@@ -7182,20 +3274,6 @@ sources:
   - id: wik-zhwb-1h420120
     title: 机电工程管理与实务/1H420120 机电工程施工质量管理 (zh Wikibooks)
     url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H420120_%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-zhwb-1h420130
-    title: 机电工程管理与实务/1H420130 机电工程试运行管理 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H420130_%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E8%AF%95%E8%BF%90%E8%A1%8C%E7%AE%A1%E7%90%86
-    source: wikibooks_zh
-    license: cc-by-sa
-    topic: construction
-    format: html
-  - id: wik-zhwb-1h420140
-    title: 机电工程管理与实务/1H420140 机电工程竣工验收管理 (zh Wikibooks)
-    url: https://zh.wikibooks.org/wiki/%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%9E%E5%8A%A1/1H420140_%E6%9C%BA%E7%94%B5%E5%B7%A5%E7%A8%8B%E7%AB%A3%E5%B7%A5%E9%AA%8C%E6%94%B6%E7%AE%A1%E7%90%86
     source: wikibooks_zh
     license: cc-by-sa
     topic: construction
@@ -7228,38 +3306,10 @@ sources:
     license: cc-by-sa
     topic: construction
     format: html
-  - id: wik-it-scada
-    title: SCADA (it Wikipedia)
-    url: https://it.wikipedia.org/wiki/SCADA
-    source: wikipedia_it
-    license: cc-by-sa
-    topic: controls_bas
-    format: html
-  - id: wik-es-energy-star
-    title: Energy Star (es Wikipedia)
-    url: https://es.wikipedia.org/wiki/Energy_Star
-    source: wikipedia_es
-    license: cc-by-sa
-    topic: building_energy
-    format: html
   - id: wik-es-industry-foundation-classes
     title: Industry Foundation Classes (es Wikipedia)
     url: https://es.wikipedia.org/wiki/Industry_Foundation_Classes
     source: wikipedia_es
-    license: cc-by-sa
-    topic: standards_protocols
-    format: html
-  - id: wik-fr-lonworks
-    title: LonWorks (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/LonWorks
-    source: wikipedia_fr
-    license: cc-by-sa
-    topic: standards_protocols
-    format: html
-  - id: wik-fr-rs-485
-    title: EIA-485 (fr Wikipedia)
-    url: https://fr.wikipedia.org/wiki/EIA-485
-    source: wikipedia_fr
     license: cc-by-sa
     topic: standards_protocols
     format: html

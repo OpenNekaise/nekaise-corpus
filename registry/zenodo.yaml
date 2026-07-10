@@ -1916,14 +1916,6 @@ sources:
     license: cc-by
     topic: building_energy
     format: pdf
-  - id: zen-development-of-mobile-application-for-energy-consump
-    title: Development of Mobile Application for Energy Consumption Assessment of University
-      Buildings
-    url: https://zenodo.org/api/records/1089253/files/9996687.pdf/content
-    source: zenodo
-    license: cc-by
-    topic: building_energy
-    format: pdf
   - id: zen-energy-saving-potential-with-improved-concrete-in-ic
     title: Energy Saving Potential with Improved Concrete in Ice Rink Floor Designs
     url: https://zenodo.org/api/records/1093056/files/9998437.pdf/content
@@ -1985,14 +1977,6 @@ sources:
     license: cc-by
     topic: building_energy
     format: pdf
-  - id: zen-unlocking-a-potential-of-district-heating-network-ef
-    title: Unlocking a Potential of District Heating Network Efficient Operation and
-      Maintenance by Minimizing the Depth of a Trench System
-    url: https://zenodo.org/api/records/1158414/files/%D0%B7%D0%B0%D0%B3%D0%BB%D1%83%D0%B1%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_v16.pdf/content
-    source: zenodo
-    license: cc-by
-    topic: building_energy
-    format: pdf
   - id: zen-low-temperature-district-heating-concepts
     title: Low temperature district heating concepts
     url: https://zenodo.org/api/records/6610779/files/RELaTED_D2_1_Concepts_v3.5.pdf/content
@@ -2047,13 +2031,6 @@ sources:
     license: cc-by
     topic: building_energy
     format: pdf
-  - id: zen-use-of-industrial-waste-heat-in-heat-transfer-networ
-    title: Use of Industrial Waste Heat In  Heat Transfer Networks (Factsheet)
-    url: https://zenodo.org/api/records/14935353/files/Factsheet%20-%20HeatHighway_Industrial_Waste_Heat.pdf/content
-    source: zenodo
-    license: cc-by
-    topic: building_energy
-    format: pdf
   - id: zen-book-of-abstracts-xi-international-conference-on-soc
     title: BOOK OF ABSTRACTS - XI INTERNATIONAL CONFERENCE ON SOCIAL AND TECHNOLOGICAL
       DEVELOPMENT – STED 2022
@@ -2088,13 +2065,6 @@ sources:
     title: IMPROVING THE EFFICIENCY OF ELECTRICAL ENERGY DISTRIBUTION WITH DECENTRALIZED
       ELECTRIC HEATING CONTROL BASED ON NASH EQUILIBRIUM
     url: https://zenodo.org/api/records/4264381/files/Improving%20the%20efficiency%20of%20electrical%20energy%20distribution%20with%20decentralized%20electric%20heating%20control%20based%20on%20nash%20equilibrium.pdf/content
-    source: zenodo
-    license: cc-by
-    topic: building_energy
-    format: pdf
-  - id: zen-greensoul-fact-sheet
-    title: GreenSoul - Fact Sheet
-    url: https://zenodo.org/api/records/228159/files/GreenSoul%20Fact%20Sheet%20v1.pdf/content
     source: zenodo
     license: cc-by
     topic: building_energy
@@ -2276,13 +2246,6 @@ sources:
     license: cc-by
     topic: equipment_systems
     format: pdf
-  - id: zen-integration-of-steam-generating-heat-pumps-factsheet
-    title: Integration of Steam-Generating Heat Pumps (Factsheet)
-    url: https://zenodo.org/api/records/14067286/files/LEAP_NEFI-Factsheet_EN.pdf/content
-    source: zenodo
-    license: cc-by
-    topic: equipment_systems
-    format: pdf
   - id: zen-concise-cycle-test-cct-method-definition
     title: Concise Cycle Test (CCT) method definition
     url: https://zenodo.org/api/records/5960592/files/TRI-HP_D7_1_%20v1.0.pdf/content
@@ -2306,24 +2269,10 @@ sources:
     license: cc-by
     topic: equipment_systems
     format: pdf
-  - id: zen-susheat-d3-1-piston-ring-design-solutions-and-perfor
-    title: SUSHEAT D3.1 Piston Ring Design Solutions and Performance (Public Summary)
-    url: https://zenodo.org/api/records/20809989/files/SUSHEAT_D3.1_PistonRingDesignSolutionsandPerformance_(Public%20Summary).pdf/content
-    source: zenodo
-    license: cc-by
-    topic: equipment_systems
-    format: pdf
   - id: zen-d3-5-description-and-report-of-energy-exchange-and-s
     title: 'D3.5: Description and report of energy exchange and smart trading tool including
       simulation studies for living labs as active LECs. Preliminary versio'
     url: https://zenodo.org/api/records/17532419/files/D3_5.pdf/content
-    source: zenodo
-    license: cc-by
-    topic: equipment_systems
-    format: pdf
-  - id: zen-susheat-d2-3-preliminary-laboratory-rig-design-and-v
-    title: SUSHEAT D2.3 Preliminary laboratory rig design and validation strategy definition
-    url: https://zenodo.org/api/records/20809951/files/SUSHEAT_D2.3_Preliminary%20laboratory%20rig%20design%20and%20validation%20strategy%20definition%20KTH.pdf/content
     source: zenodo
     license: cc-by
     topic: equipment_systems
@@ -2403,13 +2352,6 @@ sources:
     license: cc-by
     topic: equipment_systems
     format: pdf
-  - id: zen-d4-1-engineering-configuration-of-the-thermal-energy
-    title: D4.1 Engineering configuration of the thermal energy storage system
-    url: https://zenodo.org/api/records/5772391/files/ASTEP_D4.1_Engineering%20configuration%20of%20the%20thermal%20energy%20storage%20system_V1.0_211115_UPCT.pdf/content
-    source: zenodo
-    license: cc-by
-    topic: equipment_systems
-    format: pdf
   - id: zen-characterization-by-key-performance-indicators-of-sf
     title: Characterization by key performance indicators of SFERA-III project to ALTAYR
       packed-bed prototype
@@ -2452,22 +2394,6 @@ sources:
     title: A Control Volume Analysis of Energy Distribution on Nano-Enhanced Phase Change
       Material
     url: https://zenodo.org/api/records/15223406/files/A%20Control%20Volume%20Analysis%20of%20Energy%20Distribution-15042025-2.pdf/content
-    source: zenodo
-    license: cc-by
-    topic: equipment_systems
-    format: pdf
-  - id: zen-heat-highways-and-thermal-storage-take-centre-stage-
-    title: Heat highways and thermal storage take centre stage at Linz District Heating
-      Forum 2026
-    url: https://zenodo.org/api/records/19564952/files/build-up-ec-europa-eu-en-resources-and-tools-articles-heat-highways-and-large-thermal-storage-district-heating-innovation-2026-04-14-09_32_08.pdf/content
-    source: zenodo
-    license: cc-by
-    topic: equipment_systems
-    format: pdf
-  - id: zen-avalia-o-da-competitividade-de-configura-es-tecnol-g
-    title: Avaliação da Competitividade de Configurações Tecnológicas de Centrais Solares
-      com Armazenamento no Espaço Iberoamericano
-    url: https://zenodo.org/api/records/17360800/files/AVALIACAO_DA_COMPETITIVIDADE_DE_CONFIGURACOES_TECNOLOGICAS_DE_CENTRAIS_SOLARES_COM_ARMAZENAMENTO_NO_ESPACO_IBEROAMERICANO.pdf/content
     source: zenodo
     license: cc-by
     topic: equipment_systems
@@ -2543,13 +2469,6 @@ sources:
     license: cc-by
     topic: equipment_systems
     format: pdf
-  - id: zen-bridging-the-epbd-data-gap-with-large-thermal-energy
-    title: Bridging the EPBD Data Gap with Large Thermal Energy Storage
-    url: https://zenodo.org/api/records/19064773/files/BuildUp_Bridging%20the%20EPBD%20Data%20Gap%20with%20Large%20Thermal%20Energy%20Storage.pdf/content
-    source: zenodo
-    license: cc-by
-    topic: equipment_systems
-    format: pdf
   - id: zen-some-investigations-to-evaluate-optimum-ventilation-
     title: SOME INVESTIGATIONS TO EVALUATE OPTIMUM VENTILATION STRATEGY FOR UFAD VENTILATED
       ROOM
@@ -2570,14 +2489,6 @@ sources:
     title: MONITORING THE IGNITION OF TECTONIC-COAL WITH ITS FACTOR ANALYSIS IN THE
       COAL MINE OF QIANJING, SHANXI PROVINCE, CHINA
     url: https://zenodo.org/api/records/3778560/files/18.pdf/content
-    source: zenodo
-    license: cc-by
-    topic: equipment_systems
-    format: pdf
-  - id: zen-the-dependence-of-fan-performance-on-engine-speed-in
-    title: THE DEPENDENCE OF FAN PERFORMANCE ON ENGINE SPEED IN VENTILATION SYSTEMS.
-      AUTOMATION OF ENGINE OPERATION
-    url: https://zenodo.org/api/records/8123232/files/Scientific%20discussion%20No%2078,%20(2023)-33-35.pdf/content
     source: zenodo
     license: cc-by
     topic: equipment_systems
@@ -2720,14 +2631,6 @@ sources:
     source: zenodo
     license: cc-by
     topic: equipment_systems
-    format: pdf
-  - id: zen-condition-assessment-of-rc-building-as-part-of-struc
-    title: 'Condition Assessment of RC Building as Part of Structural Health Monitoring
-      (SHM) Using Micro-Tremor Measurement System in Bangladesh: A Case Study'
-    url: https://zenodo.org/api/records/17441695/files/ConditionAssessmentofRCBuildingasPartofStructuralHealthMonitoringSHMUsingMicro-TremorMeasurementSysteminBangladesh.pdf/content
-    source: zenodo
-    license: cc-by
-    topic: structures_civil
     format: pdf
   - id: zen-development-of-a-self-powered-weigh-in-motion-system
     title: Development of a Self-Powered Weigh-in-Motion System

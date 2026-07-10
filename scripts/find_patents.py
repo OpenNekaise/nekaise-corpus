@@ -48,7 +48,11 @@ UA = {"User-Agent": "nekaise-corpus/find_patents"}
 # one <li> line per publication: "US10520091B2 - Double direction seal with locking :"
 # followed by one <a href='.../patent/<pub>/<lang>'>lang</a> per available language — we only need
 # the pub number + title from the first line; the URL is built directly from the pub number.
-ENTRY_RE = re.compile(r"<li>(US[0-9A-Z]+) - (.*) :\s*$")
+def entry_re(countries: str):
+    """One <li> per publication. countries: "US" or "US,CN,EP" -> alternation. Sitemap titles
+    are English for every country (Google translates), so the keyword filter works unchanged."""
+    alt = "|".join(c.strip().upper() for c in countries.split(",") if c.strip())
+    return re.compile(rf"<li>((?:{alt})[0-9A-Z]+) - (.*) :\s*$")
 
 # (title regex, topic) — first match wins. Tuned for precision: multi-word phrases before single
 # words, \b-bounded single words so "pile" doesn't fire on "stockpile" / "compile", "roof" doesn't
@@ -95,9 +99,9 @@ def subpages(bucket: str, index_html: str) -> list[str]:
     return [f"{bucket}-p{n}.html" for n in nums]
 
 
-def parse_entries(page_html: str):
+def parse_entries(page_html: str, rx):
     for line in page_html.splitlines():
-        m = ENTRY_RE.search(line)
+        m = rx.search(line)
         if not m:
             continue
         pubnum = m.group(1)
@@ -111,9 +115,12 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--bucket", default="2020-W01",
                      help="sitemap bucket name: weekly 'YYYY-WNN' or yearly 'YYYY' (pre-1900)")
+    ap.add_argument("--countries", default="US",
+                    help='publication-country prefixes, e.g. "US" or "US,CN,EP,DE"')
     ap.add_argument("--max", type=int, default=400, help="cap on new entries this run")
     ap.add_argument("--append", action="store_true", help="append into the registry (registry/patents.yaml)")
     args = ap.parse_args()
+    rx = entry_re(args.countries)
 
     urls, titles, reg_ids = registry.existing_keys()
 
@@ -144,7 +151,7 @@ def main() -> None:
             except Exception as e:
                 print(f"# fetch failed {purl}: {e}", file=sys.stderr)
                 continue
-        for pubnum, title in parse_entries(text):
+        for pubnum, title in parse_entries(text, rx):
             us_scanned += 1
             if len(out) >= args.max:
                 break
@@ -160,7 +167,10 @@ def main() -> None:
             urls.add(u)
             titles.add(t)
             out.append({"id": f"pat-{registry.slug(pubnum)}", "title": title[:150],
-                        "url": url, "source": "google_patents", "license": "public-domain",
+                        "url": url, "source": "google_patents",
+                        # US patent text is unambiguously public domain; other jurisdictions'
+                        # specifications are official documents but terms vary -> tag open
+                        "license": "public-domain" if pubnum.startswith("US") else "open",
                         "topic": topic, "format": "html"})
 
     registry.uniquify_ids(out, reg_ids)

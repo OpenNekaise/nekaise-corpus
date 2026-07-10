@@ -12,6 +12,8 @@
 set -uo pipefail
 cd "$(dirname "$0")/.."
 REPO="$(pwd)"
+# prefer the repo venv (system python on some hosts has no pip/deps)
+[ -x "$REPO/.venv/bin/python" ] && export PATH="$REPO/.venv/bin:$PATH"
 HOURS="${HOURS:-12}"
 SLEEP="${SLEEP:-90}"
 MIN_FREE_KB="${MIN_FREE_KB:-31457280}"   # stop if < 30 GB free
@@ -20,8 +22,8 @@ mkdir -p "$REPO/logs"
 LOG="$REPO/logs/marathon-$(date +%Y%m%d-%H%M).log"
 say(){ echo "[$(date +%H:%M:%S)] $*" | tee -a "$LOG"; }
 
-TRAILER1="Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"
-TRAILER2="Claude-Session: https://claude.ai/code/session_01QgQjLeCAJGzJFXBQ7Xar7q"
+TRAILER1="Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
+TRAILER2="Claude-Session: https://claude.ai/code/session_01DxxKfj3Nbcpx65nS4mAS75"
 
 say "marathon START — until $(date -d @$END) (HOURS=$HOURS, sleep=${SLEEP}s)"
 # avoid colliding with the 02:00 daily dig cron for the duration
@@ -57,6 +59,12 @@ while [ "$(date +%s)" -lt "$END" ]; do
   run_finder find_nist     --rows 50 --max 300
   run_finder find_zenodo   --max 100
   run_finder find_patents  --max 400
+  # Chinese patents: same script, separate rotation pointer (multilingual corpus since 07-09)
+  if ptr=$(python scripts/rotation.py next find_patents_cn 2>>"$LOG"); then
+    if python scripts/find_patents.py $ptr --countries CN --max 400 --append >>"$LOG" 2>&1; then
+      python scripts/rotation.py advance find_patents_cn >>"$LOG" 2>&1
+    else say "  find_patents_cn FAILED (pointer not advanced)"; fi
+  fi
   # find_ibpsa is PAUSED (rate-triggered sgcaptcha) — see registry/rotation.json note
   if [ $(( (round-1) % 4 )) -eq 0 ]; then
     python scripts/find_sources.py --per 20 --append        >>"$LOG" 2>&1 || say "  find_sources FAILED"

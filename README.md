@@ -40,19 +40,17 @@ for you:
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **22,268** |
-| **Raw originals** | **~90G** (PDF / HTML / source code) |
-| **Extracted text** | **~3.9G** (~4049M chars, **≈1012M tokens**) |
+| **Documents** | **26,856** |
+| **Raw originals** | **~96G** (PDF / HTML / source code) |
+| **Extracted text** | **~4.4G** (~4541M chars, **≈1135M tokens**) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): building_energy 8,911 · equipment_systems 4,095 · structures_civil 2,472 · construction 1,956 · architecture 1,178 · materials 1,062 · infrastructure 759 · controls_bas 698 · standards_protocols 495 · commissioning_fdd 352 · urban 290.
+**By topic** (a source gets one at registration): building_energy 9,527 · equipment_systems 5,985 · construction 3,087 · structures_civil 2,988 · architecture 1,258 · materials 1,255 · infrastructure 959 · controls_bas 679 · standards_protocols 494 · commissioning_fdd 352 · urban 272.
 
-**By license:** open 4,132 · public-domain 15,382 · cc-by-sa 907 · cc-by 1,842 · proprietary-internal 5.
+**By license:** open 4,697 · public-domain 19,087 · cc-by-sa 1,040 · cc-by 2,027 · proprietary-internal 5.
 
 _Snapshot of the live registry (2026-07-10) — auto-generated from `manifest.jsonl`. The bytes are not
 shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._
-_A load is currently in flight (~5k more patents/reports downloading) and the quality gate runs
-after it — expected settled figure: **≈1.0–1.07B tokens**. Numbers refresh automatically._
 <!-- STATS:END -->
 
 **Where it comes from:** US patents (Google Patents, public domain) · OSTI / NIST / NBS national-lab
