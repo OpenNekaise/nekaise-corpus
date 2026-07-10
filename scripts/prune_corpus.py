@@ -95,6 +95,8 @@ def main() -> None:
         if r.get("http_status") in TRANSIENT:
             return False
         err = (r.get("error") or "").lower()
+        if "certificate" in err or "ssl" in err:
+            return True  # cert mismatch = decommissioned/re-pointed host, permanently dead
         return not any(k in err for k in ("timeout", "timed out", "connection", "too many requests"))
     blocked = blocklist.add(r.get("url") for r in manifest if r["id"] in drop and _blocklistable(r))
     removed = registry.remove_ids(set(drop))  # validate/rewrite the registry BEFORE touching files
