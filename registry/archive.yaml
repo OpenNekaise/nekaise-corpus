@@ -486,13 +486,6 @@ sources:
     license: public-domain
     topic: equipment_systems
     format: txt
-  - id: arc-practicalphysics00rowarich
-    title: The practical physics of the modern steam boiler (1903)
-    url: https://archive.org/download/practicalphysics00rowarich/practicalphysics00rowarich_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
   - id: arc-catalogwholprice00smaruoft
     title: Combined catalogue and wholesale price list of "Perfection" stoves, ranges
       and furnaces, "Favorite" stoves and ranges (1894)
@@ -1343,13 +1336,6 @@ sources:
     license: public-domain
     topic: materials
     format: txt
-  - id: arc-logoftimbercruis00lawsrich
-    title: The log of a timber cruiser (1915)
-    url: https://archive.org/download/logoftimbercruis00lawsrich/logoftimbercruis00lawsrich_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
   - id: arc-concretereinforc00tweliala
     title: Concrete and reinforced concrete (1922)
     url: https://archive.org/download/concretereinforc00tweliala/concretereinforc00tweliala_djvu.txt
@@ -1506,14 +1492,6 @@ sources:
   - id: arc-mechanicsofengin00chur
     title: Mechanics of engineering (1908)
     url: https://archive.org/download/mechanicsofengin00chur/mechanicsofengin00chur_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: structures_civil
-    format: txt
-  - id: arc-americanhousecar00hatfrich
-    title: The American house carpenter. A treatise on the art of building. Comprising
-      styles of architecture, strength of materials, and the (1883)
-    url: https://archive.org/download/americanhousecar00hatfrich/americanhousecar00hatfrich_djvu.txt
     source: internet_archive
     license: public-domain
     topic: structures_civil
@@ -2618,13 +2596,6 @@ sources:
     license: public-domain
     topic: construction
     format: txt
-  - id: arc-concretinginwint00portrich
-    title: Concreting in winter (1915)
-    url: https://archive.org/download/concretinginwint00portrich/concretinginwint00portrich_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: construction
-    format: txt
   - id: arc-cu31924015370483
     title: Concrete beam and column design (1900)
     url: https://archive.org/download/cu31924015370483/cu31924015370483_djvu.txt
@@ -2979,14 +2950,6 @@ sources:
   - id: arc-atreatiseonprin00cunngoog
     title: A Treatise on the Principles and Practice of Harbour Engineering (1908)
     url: https://archive.org/download/atreatiseonprin00cunngoog/atreatiseonprin00cunngoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: structures_civil
-    format: txt
-  - id: arc-cu31924003647421
-    title: A treatise on concrete, plain and reinforced; materials, construction and
-      design of concrete and reinforced concrete (1905)
-    url: https://archive.org/download/cu31924003647421/cu31924003647421_djvu.txt
     source: internet_archive
     license: public-domain
     topic: structures_civil
@@ -3472,14 +3435,6 @@ sources:
   - id: arc-annualreportsna05deptgoog
     title: Annual reports of the Navy Department for the fiscal year .. (1890)
     url: https://archive.org/download/annualreportsna05deptgoog/annualreportsna05deptgoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-  - id: arc-powerplanttestin00moyeuoft
-    title: Power plant testing, a manual of testing engines, turbines, boilers, pumps,
-      refrigerating, machinery, fans, fuels, lubricants, mat (1913)
-    url: https://archive.org/download/powerplanttestin00moyeuoft/powerplanttestin00moyeuoft_djvu.txt
     source: internet_archive
     license: public-domain
     topic: equipment_systems
@@ -4061,13 +4016,6 @@ sources:
     license: public-domain
     topic: materials
     format: txt
-  - id: arc-timberbate00bateuoft
-    title: Timber (1908)
-    url: https://archive.org/download/timberbate00bateuoft/timberbate00bateuoft_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
   - id: arc-cu31924002900201
     title: Timbers and their uses; a handbook for woodworkers, merchants, and all interested
       in the conversion and use of timber (1919)
@@ -4201,14 +4149,6 @@ sources:
   - id: arc-cu31924004616409
     title: Reinforced concrete design (1920)
     url: https://archive.org/download/cu31924004616409/cu31924004616409_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: structures_civil
-    format: txt
-  - id: arc-reinforcedconcre00ransrich
-    title: Reinforced concrete buildings; a treatise on the history, patents, design
-      and erection of the principal parts entering into a mode (1912)
-    url: https://archive.org/download/reinforcedconcre00ransrich/reinforcedconcre00ransrich_djvu.txt
     source: internet_archive
     license: public-domain
     topic: structures_civil
@@ -5284,13 +5224,6 @@ sources:
     license: public-domain
     topic: construction
     format: txt
-  - id: arc-buildingconstruc02kidduoft
-    title: Building construction and superintendence (1906)
-    url: https://archive.org/download/buildingconstruc02kidduoft/buildingconstruc02kidduoft_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: construction
-    format: txt
   - id: arc-buildingmaterial00lauruoft
     title: Building materials; being an introduction to the study of the principal materials
       used in building construction (1922)
@@ -5938,13 +5871,6 @@ sources:
     license: public-domain
     topic: structures_civil
     format: txt
-  - id: arc-lessonsinapplied00cottrich
-    title: Lessons in applied mechanics (1891)
-    url: https://archive.org/download/lessonsinapplied00cottrich/lessonsinapplied00cottrich_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: structures_civil
-    format: txt
   - id: arc-practicalessayon00tredrich
     title: 'Practical essay on the strength of cast iron and other metals: containing
       practical rules, tables, and examples, founded on a seri (1860)'
@@ -5971,14 +5897,6 @@ sources:
     title: Mechanics of engineering. Comprising statics and kinetics of solids; the
       mechanics of the materials of construction, or strength a (1908)
     url: https://archive.org/download/mechanicsengine05churgoog/mechanicsengine05churgoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: structures_civil
-    format: txt
-  - id: arc-strengthofmateri00smitrich
-    title: Strength of material; an elementary study prepared for the use of midshipmen
-      at the U. S. Naval Academy (1909)
-    url: https://archive.org/download/strengthofmateri00smitrich/strengthofmateri00smitrich_djvu.txt
     source: internet_archive
     license: public-domain
     topic: structures_civil
@@ -6257,13 +6175,6 @@ sources:
   - id: arc-hydraulicmanual02jackgoog
     title: Hydraulic manual (1875)
     url: https://archive.org/download/hydraulicmanual02jackgoog/hydraulicmanual02jackgoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: infrastructure
-    format: txt
-  - id: arc-elementsofhydrau00merrrich
-    title: 'Elements of hydraulics : a text-book for secondary technical schools (1912)'
-    url: https://archive.org/download/elementsofhydrau00merrrich/elementsofhydrau00merrrich_djvu.txt
     source: internet_archive
     license: public-domain
     topic: infrastructure
@@ -7701,13 +7612,6 @@ sources:
     license: public-domain
     topic: urban
     format: txt
-  - id: arc-plumbinghousehol00putn
-    title: Plumbing and household sanitation (1911)
-    url: https://archive.org/download/plumbinghousehol00putn/plumbinghousehol00putn_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
   - id: arc-mechanicaldrawin00starrich
     title: Mechanical drawing for plumbers; a concise, comprehensive and practical treatise
       on the subject of mechanical drawing, in its vari (1910)
@@ -7734,13 +7638,6 @@ sources:
   - id: arc-housedrainagesan00gerhuoft
     title: House drainage and sanitary plumbing (1882)
     url: https://archive.org/download/housedrainagesan00gerhuoft/housedrainagesan00gerhuoft_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-  - id: arc-practicaluptodat00clowrich
-    title: Practical up-to-date plumbing (1906)
-    url: https://archive.org/download/practicaluptodat00clowrich/practicaluptodat00clowrich_djvu.txt
     source: internet_archive
     license: public-domain
     topic: equipment_systems
@@ -8337,14 +8234,6 @@ sources:
     license: public-domain
     topic: materials
     format: txt
-  - id: arc-framingapractic00radfgoog
-    title: Framing; a practical manual of approved up-to-date methods of house framing
-      and construction, together with tested methods of heav (1909)
-    url: https://archive.org/download/framingapractic00radfgoog/framingapractic00radfgoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
   - id: arc-cihm-33289
     title: Canadian forests, forest trees, timber and forest products [microform] (1884)
     url: https://archive.org/download/cihm_33289/cihm_33289_djvu.txt
@@ -8416,14 +8305,6 @@ sources:
     title: The romance of modern commerce; a popular account of the production of cereals,
       tea, coffee, rubber, tobacco, cotton, silk, wool,  (1920)
     url: https://archive.org/download/cu31924013803881/cu31924013803881_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-  - id: arc-designandconstr03wegmgoog
-    title: The design and construction of dams; including masonry, earth, rock-fill,
-      and timber structures, also the principal types of movab (1899)
-    url: https://archive.org/download/designandconstr03wegmgoog/designandconstr03wegmgoog_djvu.txt
     source: internet_archive
     license: public-domain
     topic: materials
@@ -8770,13 +8651,6 @@ sources:
   - id: arc-manualofundergro00trumuoft
     title: A manual of underground surveying (1910)
     url: https://archive.org/download/manualofundergro00trumuoft/manualofundergro00trumuoft_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: infrastructure
-    format: txt
-  - id: arc-textbookofplanes00raymiala
-    title: A text-book of plane surveying (1896)
-    url: https://archive.org/download/textbookofplanes00raymiala/textbookofplanes00raymiala_djvu.txt
     source: internet_archive
     license: public-domain
     topic: infrastructure
@@ -9673,13 +9547,6 @@ sources:
     license: public-domain
     topic: materials
     format: txt
-  - id: arc-atreatiseonmaso02bakegoog
-    title: A treatise on masonry construction (1909)
-    url: https://archive.org/download/atreatiseonmaso02bakegoog/atreatiseonmaso02bakegoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: structures_civil
-    format: txt
   - id: arc-specificstandard00ostrrich
     title: Standard specifications for structural steel, timber, concrete and reinforced
       concrete (1910)
@@ -9692,14 +9559,6 @@ sources:
     title: Standard Specifications For Structural Steel - Timber - Concrete & Reinforced
       Concrete (1911)
     url: https://archive.org/download/standardspecific004184mbp/standardspecific004184mbp_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: structures_civil
-    format: txt
-  - id: arc-theoryofflexures00eddyrich
-    title: The theory of the flexure and strength of rectangular flat plates applied
-      to reinforced concrete floor slabs (1913)
-    url: https://archive.org/download/theoryofflexures00eddyrich/theoryofflexures00eddyrich_djvu.txt
     source: internet_archive
     license: public-domain
     topic: structures_civil
@@ -9749,13 +9608,6 @@ sources:
   - id: arc-cu31924090411723
     title: Strength of materials (1920)
     url: https://archive.org/download/cu31924090411723/cu31924090411723_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: structures_civil
-    format: txt
-  - id: arc-textbookonstreng00slocuoft
-    title: Text-book on the strength of materials (1906)
-    url: https://archive.org/download/textbookonstreng00slocuoft/textbookonstreng00slocuoft_djvu.txt
     source: internet_archive
     license: public-domain
     topic: structures_civil
@@ -9985,13 +9837,6 @@ sources:
     license: public-domain
     topic: infrastructure
     format: txt
-  - id: arc-hydraulicswithw03bellgoog
-    title: Hydraulics, with working tables; (1903)
-    url: https://archive.org/download/hydraulicswithw03bellgoog/hydraulicswithw03bellgoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: infrastructure
-    format: txt
   - id: arc-cihm-03817
     title: A treatise on hydraulics [microform] (1899)
     url: https://archive.org/download/cihm_03817/cihm_03817_djvu.txt
@@ -10108,14 +9953,6 @@ sources:
   - id: arc-plumbingplansan01cosggoog
     title: Plumbing plans and specifications (1910)
     url: https://archive.org/download/plumbingplansan01cosggoog/plumbingplansan01cosggoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-  - id: arc-modernplumbingil04star
-    title: Modern plumbing illustrated; a comprehensive and thoroughly practical work
-      on the modern and most approved methods of plumbing con (1922)
-    url: https://archive.org/download/modernplumbingil04star/modernplumbingil04star_djvu.txt
     source: internet_archive
     license: public-domain
     topic: equipment_systems
@@ -11182,13 +11019,6 @@ sources:
     license: public-domain
     topic: infrastructure
     format: txt
-  - id: arc-simplehydraulic01stongoog
-    title: Simple hydraulic formulæ (1881)
-    url: https://archive.org/download/simplehydraulic01stongoog/simplehydraulic01stongoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: infrastructure
-    format: txt
   - id: arc-mechanicsengine04churgoog
     title: 'Mechanics of engineering : comprising statics and dynamics of solids, the
       mechanics of the materials of construction, or strength  (1905)'
@@ -12026,14 +11856,6 @@ sources:
     license: public-domain
     topic: materials
     format: txt
-  - id: arc-sacredmysteriesa01lepl
-    title: Sacred mysteries among the Mayas and the Quiches, 11,500 years ago. Their
-      relation to the sacred mysteries of Egypt, Greece, Chald (1886)
-    url: https://archive.org/download/sacredmysteriesa01lepl/sacredmysteriesa01lepl_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
   - id: arc-strengthofmateri00mauriala
     title: Strength of materials; a comprehensive presentation of scientific methods
       of locating and determining stresses and calculating the (1919)
@@ -12164,13 +11986,6 @@ sources:
   - id: arc-costofgrowingtim00kellrich
     title: The cost of growing timber (1911)
     url: https://archive.org/download/costofgrowingtim00kellrich/costofgrowingtim00kellrich_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-  - id: arc-valuationofameri00wooduoft
-    title: The valuation of American timberlands (1921)
-    url: https://archive.org/download/valuationofameri00wooduoft/valuationofameri00wooduoft_djvu.txt
     source: internet_archive
     license: public-domain
     topic: materials
@@ -12375,13 +12190,6 @@ sources:
     license: public-domain
     topic: structures_civil
     format: txt
-  - id: arc-problemsinstren01shepgoog
-    title: Problems in strength of materials (1907)
-    url: https://archive.org/download/problemsinstren01shepgoog/problemsinstren01shepgoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: structures_civil
-    format: txt
   - id: arc-studyofbasebeari00rickrich
     title: A study of base and bearing plates for columns and beams (1909)
     url: https://archive.org/download/studyofbasebeari00rickrich/studyofbasebeari00rickrich_djvu.txt
@@ -12470,14 +12278,6 @@ sources:
     title: 'Special message of Governor George Stoneman : transmitting the report of
       the State Engineer on the sewerage of the Deaf, Dumb and  (1883)'
     url: https://archive.org/download/specialmessageof00calirich/specialmessageof00calirich_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: infrastructure
-    format: txt
-  - id: arc-reportuponasyst00unkngoog
-    title: Report Upon a System of Sewerage for the City and County of San Francisco
-      (1899)
-    url: https://archive.org/download/reportuponasyst00unkngoog/reportuponasyst00unkngoog_djvu.txt
     source: internet_archive
     license: public-domain
     topic: infrastructure
@@ -12612,6 +12412,1301 @@ sources:
     title: A system of geometry and trigonometry, together with a treatise on surveying
       ... Likewise, rectangular surveying ... To the whole  (1825)
     url: https://archive.org/download/systemofgeometry03flin/systemofgeometry03flin_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-plumbingandhous02putngoog
+    title: Plumbing and household sanitation (1911)
+    url: https://archive.org/download/plumbingandhous02putngoog/plumbingandhous02putngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-domesticsanitar00rayngoog
+    title: 'Domestic Sanitary Engineering and Plumbing: Dealing with Domestic Water
+      ... (1909)'
+    url: https://archive.org/download/domesticsanitar00rayngoog/domesticsanitar00rayngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-modernplumbingi00stargoog
+    title: Modern plumbing illustrated; a comprehensive and thoroughly practical work
+      on the modern and most approved methods of plumbing con (1922)
+    url: https://archive.org/download/modernplumbingi00stargoog/modernplumbingi00stargoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-plumbingandhous00unkngoog
+    title: Plumbing and house drainage problems; a selection of articles for practical
+      plumbers (1904)
+    url: https://archive.org/download/plumbingandhous00unkngoog/plumbingandhous00unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-standardamerican02clow
+    title: 'Standard American plumbing : hot air and hot water heating, steam and gas
+      fitting (1920)'
+    url: https://archive.org/download/standardamerican02clow/standardamerican02clow_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-practicaluptoda00clowgoog
+    title: Practical up-to-date plumbing (1906)
+    url: https://archive.org/download/practicaluptoda00clowgoog/practicaluptoda00clowgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-plumbingproblem01unkngoog
+    title: Plumbing problems; or, Questions, answers, and descriptions, relating to
+      house-drainage and plumbing, from the Sanitary engineer (1885)
+    url: https://archive.org/download/plumbingproblem01unkngoog/plumbingproblem01unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-rightwaytofigure00discrich
+    title: The right way to figure plumbing (1915)
+    url: https://archive.org/download/rightwaytofigure00discrich/rightwaytofigure00discrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sanitaryplumbin00hartgoog
+    title: Sanitary Plumbing and Drainage (1904)
+    url: https://archive.org/download/sanitaryplumbin00hartgoog/sanitaryplumbin00hartgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-domesticsanitar01magugoog
+    title: 'Domestic Sanitary Drainage and Plumbing: Lectures on Practical Sanitation
+      Delivered to Plumbers ... (1890)'
+    url: https://archive.org/download/domesticsanitar01magugoog/domesticsanitar01magugoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-standardpractic00stargoog
+    title: 'Standard Practical Plumbing: An Exhaustive Treatise on All Branches of ...
+      (1910)'
+    url: https://archive.org/download/standardpractic00stargoog/standardpractic00stargoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-improvedplumbing00putnrich
+    title: Improved plumbing appliances (1887)
+    url: https://archive.org/download/improvedplumbing00putnrich/improvedplumbing00putnrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sim-energy-engineering-1923-10-20-10
+    title: 'The Heating and Ventilating Magazine 1923-10: Vol 20 Iss 10 (1923)'
+    url: https://archive.org/download/sim_energy-engineering_1923-10_20_10/sim_energy-engineering_1923-10_20_10_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-testofuniversity00post
+    title: A test of the university refrigerating plant (1902)
+    url: https://archive.org/download/testofuniversity00post/testofuniversity00post_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-stevensopenpanco00bast
+    title: Stevens open pan cooling rooms (1906)
+    url: https://archive.org/download/stevensopenpanco00bast/stevensopenpanco00bast_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sim-ashrae-transactions-1910-16-index
+    title: 'The American Society of Heating and Ventilating Engineers. Transactions
+      1910: Vol 16 Index (1910)'
+    url: https://archive.org/download/sim_ashrae-transactions_1910_16_index/sim_ashrae-transactions_1910_16_index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sim-energy-engineering-1919-01-16-1
+    title: 'The Heating and Ventilating Magazine 1919-01: Vol 16 Iss 1 (1919)'
+    url: https://archive.org/download/sim_energy-engineering_1919-01_16_1/sim_energy-engineering_1919-01_16_1_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-refrigerationpla00seib
+    title: Refrigeration plant operated in parallel with central station (1911)
+    url: https://archive.org/download/refrigerationpla00seib/refrigerationpla00seib_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-ge1926fooditsproperrefrigeration
+    title: GE 1926 Food Its Proper Refrigeration (1926)
+    url: https://archive.org/download/GE1926FoodItsProperRefrigeration/GE1926FoodItsProperRefrigeration_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sim-energy-engineering-1923-11-20-11
+    title: 'The Heating and Ventilating Magazine 1923-11: Vol 20 Iss 11 (1923)'
+    url: https://archive.org/download/sim_energy-engineering_1923-11_20_11/sim_energy-engineering_1923-11_20_11_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sim-energy-engineering-1922-12-19-12
+    title: 'The Heating and Ventilating Magazine 1922-12: Vol 19 Iss 12 (1922)'
+    url: https://archive.org/download/sim_energy-engineering_1922-12_19_12/sim_energy-engineering_1922-12_19_12_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sim-energy-engineering-1925-01-22-1
+    title: 'The Heating and Ventilating Magazine 1925-01: Vol 22 Iss 1 (1925)'
+    url: https://archive.org/download/sim_energy-engineering_1925-01_22_1/sim_energy-engineering_1925-01_22_1_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-gpl-1762227
+    title: An essay on the most eligible construction of ice-houses:also, A description
+      of the newly invented machine called the refrigerator (1803)
+    url: https://archive.org/download/gpl_1762227/gpl_1762227_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sim-energy-engineering-1916-08-13-8
+    title: 'The Heating and Ventilating Magazine 1916-08: Vol 13 Iss 8 (1916)'
+    url: https://archive.org/download/sim_energy-engineering_1916-08_13_8/sim_energy-engineering_1916-08_13_8_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sim-ashrae-transactions-january-18-20-1916-22
+    title: 'The American Society of Heating and Ventilating Engineers. Transactions
+      January 18-20, 1916: Vol 22 (1916)'
+    url: https://archive.org/download/sim_ashrae-transactions_january-18-20-1916_22/sim_ashrae-transactions_january-18-20-1916_22_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sim-energy-engineering-1908-02-5-2
+    title: 'The Heating and Ventilating Magazine 1908-02: Vol 5 Iss 2 (1908)'
+    url: https://archive.org/download/sim_energy-engineering_1908-02_5_2/sim_energy-engineering_1908-02_5_2_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-b30752589
+    title: 'Specification of Alfred Vincent Newton : preserving provisions, and ventilating
+      buildings, cars, and vessels (1856)'
+    url: https://archive.org/download/b30752589/b30752589_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sim-energy-engineering-1920-04-17-4
+    title: 'The Heating and Ventilating Magazine 1920-04: Vol 17 Iss 4 (1920)'
+    url: https://archive.org/download/sim_energy-engineering_1920-04_17_4/sim_energy-engineering_1920-04_17_4_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sim-energy-engineering-1912-04-9-4
+    title: 'The Heating and Ventilating Magazine 1912-04: Vol 9 Iss 4 (1912)'
+    url: https://archive.org/download/sim_energy-engineering_1912-04_9_4/sim_energy-engineering_1912-04_9_4_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sim-energy-engineering-1924-01-21-1
+    title: 'The Heating and Ventilating Magazine 1924-01: Vol 21 Iss 1 (1924)'
+    url: https://archive.org/download/sim_energy-engineering_1924-01_21_1/sim_energy-engineering_1924-01_21_1_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sim-energy-engineering-1922-01-19-1
+    title: 'The Heating and Ventilating Magazine 1922-01: Vol 19 Iss 1 (1922)'
+    url: https://archive.org/download/sim_energy-engineering_1922-01_19_1/sim_energy-engineering_1922-01_19_1_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sim-energy-engineering-1912-09-9-9
+    title: 'The Heating and Ventilating Magazine 1912-09: Vol 9 Iss 9 (1912)'
+    url: https://archive.org/download/sim_energy-engineering_1912-09_9_9/sim_energy-engineering_1912-09_9_9_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-sim-ashrae-transactions-january-21-23-1908-14
+    title: 'The American Society of Heating and Ventilating Engineers. Transactions
+      January 21-23, 1908: Vol 14 (1908)'
+    url: https://archive.org/download/sim_ashrae-transactions_january-21-23-1908_14/sim_ashrae-transactions_january-21-23-1908_14_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-boilersandfurna00barrgoog
+    title: Boilers and furnaces considered in their relations to steam engineering;
+      (1898)
+    url: https://archive.org/download/boilersandfurna00barrgoog/boilersandfurna00barrgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-anhistoricaland01partgoog
+    title: 'An Historical and Descriptive Account of the Steam Engine: Comprising a
+      General View of the ... (1822)'
+    url: https://archive.org/download/anhistoricaland01partgoog/anhistoricaland01partgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-powerplanttesti02moyegoog
+    title: 'Power plant testing : a manual of testing engines, turbines, boilers, pumps,
+      refrigerating machinery, fans, fuels, lubricants, mat (1913)'
+    url: https://archive.org/download/powerplanttesti02moyegoog/powerplanttesti02moyegoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-practicaltreati00campgoog
+    title: Practical treatise on mechanical engineering ... with an appendix on the
+      analysis of iron and iron ores; observations on the const (1877)
+    url: https://archive.org/download/practicaltreati00campgoog/practicaltreati00campgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-economylibertyto00liberich
+    title: Economy; [Liberty tools for cleaning water tube boiler tubes] (1903)
+    url: https://archive.org/download/economylibertyto00liberich/economylibertyto00liberich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-practicalphysic00rowagoog
+    title: The practical physics of the modern steam boiler (1903)
+    url: https://archive.org/download/practicalphysic00rowagoog/practicalphysic00rowagoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-boilertestsembra00barruoft
+    title: Boiler tests; embracing the results of one hundred and thirty-seven evaporative
+      tests, made on seventy-one boilers (1900)
+    url: https://archive.org/download/boilertestsembra00barruoft/boilertestsembra00barruoft_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-effectofscaleont00schmrich
+    title: Effect of scale on the transmission of heat through locomotive boiler tubes
+      (1907)
+    url: https://archive.org/download/effectofscaleont00schmrich/effectofscaleont00schmrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-heinesafetyboile00hein
+    title: The Heine safety boiler co., manufactureres of water tube steam boilers for
+      all pressures, duties and fuels .. (1897)
+    url: https://archive.org/download/heinesafetyboile00hein/heinesafetyboile00hein_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-hotwatersupplyki00hutt
+    title: 'Hot water supply and kitchen boiler connections : a text book on the installation
+      of hot water service in residences and other bui (1913)'
+    url: https://archive.org/download/hotwatersupplyki00hutt/hotwatersupplyki00hutt_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-fiftyyearshistor00fowliala
+    title: Fifty years' history of the development of Green's Economiser, with notes
+      on other economiser inventions and early tubular boilers (1895)
+    url: https://archive.org/download/fiftyyearshistor00fowliala/fiftyyearshistor00fowliala_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-marineboilerman01strogoog
+    title: Marine boiler management and construction; being a treatise on boiler troubles
+      and repairs, corrosion, fuels and heat, on the prop (1893)
+    url: https://archive.org/download/marineboilerman01strogoog/marineboilerman01strogoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-indicatorpractic00hemerich
+    title: Indicator practice and steam-engine economy. With plain directions for attaching
+      the indicator, taking diagrams, [etc.] also table (1901)
+    url: https://archive.org/download/indicatorpractic00hemerich/indicatorpractic00hemerich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-guidepostsoneng00towegoog
+    title: 'Guide posts on the engineer''s journey. : Illustrated by numerous engravings
+      and containing many useful tables (1889)'
+    url: https://archive.org/download/guidepostsoneng00towegoog/guidepostsoneng00towegoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-helioscompilatio00hein
+    title: Helios; a compilation of boiler room engineering information (1919)
+    url: https://archive.org/download/helioscompilatio00hein/helioscompilatio00hein_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+  - id: arc-gri-33125000171773
+    title: 'Advanced building construction : a manual for students (1901)'
+    url: https://archive.org/download/gri_33125000171773/gri_33125000171773_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-academy-architecture-and-architectural-rev-3
+    title: 'Academy Architecture and Architectural Review 1889: Vol 3 (1889)'
+    url: https://archive.org/download/sim_academy-architecture-and-architectural-review_1889_3/sim_academy-architecture-and-architectural-review_1889_3_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-building-uk-1892-04-02-62-2565
+    title: 'The Builder 1892-04-02: Vol 62 Iss 2565 (1892)'
+    url: https://archive.org/download/sim_building-uk_1892-04-02_62_2565/sim_building-uk_1892-04-02_62_2565_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-home-improvement-center-1901-05-11-1355
+    title: 'American Lumberman 1901-05-11: Iss 1355 (1901)'
+    url: https://archive.org/download/sim_home-improvement-center_1901-05-11_1355/sim_home-improvement-center_1901-05-11_1355_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-academy-architecture-and-architectural-rev-7
+    title: 'Academy Architecture and Architectural Review 1924 - 1925: Vol 56 (1924)'
+    url: https://archive.org/download/sim_academy-architecture-and-architectural-review_1924-1925_56/sim_academy-architecture-and-architectural-review_1924-1925_56_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-building-uk-1891-10-31-61-2543
+    title: 'The Builder 1891-10-31: Vol 61 Iss 2543 (1891)'
+    url: https://archive.org/download/sim_building-uk_1891-10-31_61_2543/sim_building-uk_1891-10-31_61_2543_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-american-artisan-the-warm-heating-and-shee-9
+    title: 'American Artisan and Hardware Record 1921-12-10: Vol 82 Iss 24 (1921)'
+    url: https://archive.org/download/sim_american-artisan-the-warm-heating-and-sheet-metal_1921-12-10_82_24/sim_american-artisan-the-warm-heating-and-sheet-metal_1921-12-10_82_24_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-american-artisan-the-warm-heating-and-shee-10
+    title: 'The American Artisan 1903-08-08: Vol 46 Iss 6 (1903)'
+    url: https://archive.org/download/sim_american-artisan-the-warm-heating-and-sheet-metal_1903-08-08_46_6/sim_american-artisan-the-warm-heating-and-sheet-metal_1903-08-08_46_6_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-american-architect-and-architecture-1895-10-05-5
+    title: 'The American Architect and Architecture 1895-10-05: Vol 50 Iss 1032 (1895)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1895-10-05_50_1032/sim_american-architect-and-architecture_1895-10-05_50_1032_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-american-artisan-the-warm-heating-and-shee-11
+    title: 'American Artisan and Hardware Record 1916-10-07: Vol 72 Iss 15 (1916)'
+    url: https://archive.org/download/sim_american-artisan-the-warm-heating-and-sheet-metal_1916-10-07_72_15/sim_american-artisan-the-warm-heating-and-sheet-metal_1916-10-07_72_15_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-buildingconstru02kiddgoog
+    title: Building Construction and Superintendence (1906)
+    url: https://archive.org/download/buildingconstru02kiddgoog/buildingconstru02kiddgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-academy-architecture-and-architectural-rev-11
+    title: 'Academy Architecture and Architectural Review 1907: Vol 32 (1907)'
+    url: https://archive.org/download/sim_academy-architecture-and-architectural-review_1907_32/sim_academy-architecture-and-architectural-review_1907_32_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-american-artisan-the-warm-heating-and-shee-12
+    title: 'The American Artisan and Hardware Record 1908-07-04: Vol 56 Iss 1 (1908)'
+    url: https://archive.org/download/sim_american-artisan-the-warm-heating-and-sheet-metal_1908-07-04_56_1/sim_american-artisan-the-warm-heating-and-sheet-metal_1908-07-04_56_1_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-academy-architecture-and-architectural-rev-12
+    title: 'Academy Architecture and Architectural Review 1926: Vol 58 (1926)'
+    url: https://archive.org/download/sim_academy-architecture-and-architectural-review_1926_58/sim_academy-architecture-and-architectural-review_1926_58_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-academy-architecture-and-architectural-rev-13
+    title: 'Academy Architecture and Architectural Review 1889: Vol 2 (1889)'
+    url: https://archive.org/download/sim_academy-architecture-and-architectural-review_1889_2/sim_academy-architecture-and-architectural-review_1889_2_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-building-uk-1891-11-21-61-2546
+    title: 'The Builder 1891-11-21: Vol 61 Iss 2546 (1891)'
+    url: https://archive.org/download/sim_building-uk_1891-11-21_61_2546/sim_building-uk_1891-11-21_61_2546_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-inland-architect-and-news-record-1906-05-47-4-0
+    title: 'The Inland Architect and News Record 1906-05: Vol 47 Iss 4 (1906)'
+    url: https://archive.org/download/sim_inland-architect-and-news-record_1906-05_47_4_0/sim_inland-architect-and-news-record_1906-05_47_4_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-academy-architecture-and-architectural-rev-14
+    title: 'Academy Architecture and Architectural Review 1894: Vol 6 (1894)'
+    url: https://archive.org/download/sim_academy-architecture-and-architectural-review_1894_6/sim_academy-architecture-and-architectural-review_1894_6_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-building-uk-1902-05-10-82-3092
+    title: 'The Builder 1902-05-10: Vol 82 Iss 3092 (1902)'
+    url: https://archive.org/download/sim_building-uk_1902-05-10_82_3092/sim_building-uk_1902-05-10_82_3092_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-building-uk-1922-05-05-122-4135
+    title: 'The Builder 1922-05-05: Vol 122 Iss 4135 (1922)'
+    url: https://archive.org/download/sim_building-uk_1922-05-05_122_4135/sim_building-uk_1922-05-05_122_4135_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-sim-american-architect-and-architecture-1904-04-30-8
+    title: 'The American Architect and Architecture 1904-04-30: Vol 84 Iss 1479 (1904)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1904-04-30_84_1479/sim_american-architect-and-architecture_1904-04-30_84_1479_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-framingapractic01johngoog
+    title: Framing; a practical manual of approved up-to-date methods of house framing
+      and construction, together with tested methods of heav (1909)
+    url: https://archive.org/download/framingapractic01johngoog/framingapractic01johngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-carpentersjoiner00holl
+    title: 'The carpenter''s and joiner''s hand-book: containing a complete treatise
+      on framing hip and valley roofs (1867)'
+    url: https://archive.org/download/carpentersjoiner00holl/carpentersjoiner00holl_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-cyclopediaarchi07socigoog
+    title: 'Cyclopedia of Architecture, Carpentry and Building: A General Reference
+      Work ... (1909)'
+    url: https://archive.org/download/cyclopediaarchi07socigoog/cyclopediaarchi07socigoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-cyclopediaarchi00goog
+    title: cyclopedia of architecture carpentry and building (1916)
+    url: https://archive.org/download/cyclopediaarchi00goog/cyclopediaarchi00goog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-briefchapterson00morrgoog
+    title: 'Brief chapters on British carpentry: history and principles of Gothic roofs
+      (1871)'
+    url: https://archive.org/download/briefchapterson00morrgoog/briefchapterson00morrgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-mechanicscompan03nichgoog
+    title: 'The Mechanic''s Companion: Or, the Elements and Practice of Carpentry ...
+      (1832)'
+    url: https://archive.org/download/mechanicscompan03nichgoog/mechanicscompan03nichgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-americanhouseca00hatfgoog
+    title: The American house carpenter. A treatise on the art of building. Comprising
+      styles of architecture, strength of materials, and the (1883)
+    url: https://archive.org/download/americanhouseca00hatfgoog/americanhouseca00hatfgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-practicalhintsf00douggoog
+    title: Practical hints for concrete constructors (1907)
+    url: https://archive.org/download/practicalhintsf00douggoog/practicalhintsf00douggoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-buildingforfutur00marq
+    title: Building for the future (1915)
+    url: https://archive.org/download/buildingforfutur00marq/buildingforfutur00marq_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-gri-33125000091161
+    title: The Atlas handbook on concrete construction (1920)
+    url: https://archive.org/download/gri_33125000091161/gri_33125000091161_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-steamcuringsteam00mont
+    title: Steam-curing and steam hardening of concrete building tile (1912)
+    url: https://archive.org/download/steamcuringsteam00mont/steamcuringsteam00mont_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-foundationwallsb00port
+    title: 'Foundation walls and basements of concrete : concrete for permanence (1925)'
+    url: https://archive.org/download/foundationwallsb00port/foundationwallsb00port_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-blawformsforroad00blaw
+    title: 'Blawforms for roads and streets : illustrating and describing the use of
+      Blaw steel forms in the construction of concrete roads, b (1920)'
+    url: https://archive.org/download/blawformsforroad00blaw/blawformsforroad00blaw_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-lateralpressureo00fogg
+    title: Lateral pressure of wet concrete on column forms (1915)
+    url: https://archive.org/download/lateralpressureo00fogg/lateralpressureo00fogg_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-betoncoignetgood00newy
+    title: 'Beton Coignet and Goodridge system of constructing and repairing railway
+      and other structures : with claim of patents in United St (1885)'
+    url: https://archive.org/download/betoncoignetgood00newy/betoncoignetgood00newy_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-concretinginwin00assogoog
+    title: Concreting in winter (1915)
+    url: https://archive.org/download/concretinginwin00assogoog/concretinginwin00assogoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-structuresincon00bellgoog
+    title: Structures in concrete. Construction of La Corbière lighthouse and the St.
+      Helier's harbour ... (1880)
+    url: https://archive.org/download/structuresincon00bellgoog/structuresincon00bellgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-buildingwithconc00port
+    title: Building with concrete and cobblestone (1920)
+    url: https://archive.org/download/buildingwithconc00port/buildingwithconc00port_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-gri-33125000604229
+    title: 'Notes on concrete and works in concrete : especially written to assist those
+      engaged upon public works (1894)'
+    url: https://archive.org/download/gri_33125000604229/gri_33125000604229_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-lapidolithforall00lson
+    title: 'Lapidolith for all concrete floors : used for years - everywhere (1920)'
+    url: https://archive.org/download/lapidolithforall00lson/lapidolithforall00lson_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-fireproofconstru00vang
+    title: Fireproof construction to compete with wood (1914)
+    url: https://archive.org/download/fireproofconstru00vang/fireproofconstru00vang_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-contractorshandy00lehi-0
+    title: 'Contractors handy book : on everyday concrete jobs (1925)'
+    url: https://archive.org/download/contractorshandy00lehi_0/contractorshandy00lehi_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-fireproofingprod00penn
+    title: 'Fireproofing products for modern buildings : Penco (1913)'
+    url: https://archive.org/download/fireproofingprod00penn/fireproofingprod00penn_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-whatfarmercandow00unse
+    title: What the farmer can do with concrete (1910)
+    url: https://archive.org/download/whatfarmercandow00unse/whatfarmercandow00unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+  - id: arc-annualprogressr00deptgoog
+    title: Annual progress report of public works (1871)
+    url: https://archive.org/download/annualprogressr00deptgoog/annualprogressr00deptgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-perfectceremoni00freegoog
+    title: The perfect ceremonies of craft masonry ... as taught in the Unions emulation
+      lodge of ... (1871)
+    url: https://archive.org/download/perfectceremoni00freegoog/perfectceremoni00freegoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-asystemspeculat00towngoog
+    title: A system of speculative masonry, in its origin, patronage, dissemination,
+      principles, duties, and ultimate designs, laid open for  (1818)
+    url: https://archive.org/download/asystemspeculat00towngoog/asystemspeculat00towngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-cu31924020417758
+    title: Sacred mysteries among the Mayas and the Quiches, 11,500 years ago. Their
+      relation to the sacred mysteries of Egypt, Greece, Chald (1886)
+    url: https://archive.org/download/cu31924020417758/cu31924020417758_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-amanualengineer04haupgoog
+    title: 'A Manual of Engineering Specifications and Contracts: Designed as a Text
+      ... (1878)'
+    url: https://archive.org/download/amanualengineer04haupgoog/amanualengineer04haupgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-universalmasoni01olivgoog
+    title: 'The universal Masonic library : a republication in thirty volumes of all
+      the standard publications in Masonry, designed for the li (1855)'
+    url: https://archive.org/download/universalmasoni01olivgoog/universalmasoni01olivgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-somebeautiesfre00bradgoog
+    title: Some of the beauties of Free-masonry; being an extract from publications
+      which have recieved the approbation of the wise and virtu (1816)
+    url: https://archive.org/download/somebeautiesfre00bradgoog/somebeautiesfre00bradgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-thcenturybrickl00hodggoog
+    title: 'The 20th century bricklayer''s and mason''s assistant. Part 1: The bricklayer''s
+      guide and assistant .. (1905)'
+    url: https://archive.org/download/thcenturybrickl00hodggoog/thcenturybrickl00hodggoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-cu31924015384427
+    title: A treatise on masonry construction (1909)
+    url: https://archive.org/download/cu31924015384427/cu31924015384427_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-symbolicteaching00stew
+    title: 'Symbolic teaching : or Masonry and its message (1917)'
+    url: https://archive.org/download/symbolicteaching00stew/symbolicteaching00stew_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-indianalimestone00indi-0
+    title: Indiana limestone, the aristocrat of building materials. (1919)
+    url: https://archive.org/download/indianalimestone00indi_0/indianalimestone00indi_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-cihm-90207
+    title: Fire-proof building materials [microform] (1891)
+    url: https://archive.org/download/cihm_90207/cihm_90207_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-manufacturersman00inte
+    title: Manufacturer's manual. (1887)
+    url: https://archive.org/download/manufacturersman00inte/manufacturersman00inte_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-elasticityandre02burrgoog
+    title: The elasticity and resistance of the materials of engineering (1888)
+    url: https://archive.org/download/elasticityandre02burrgoog/elasticityandre02burrgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-buildingmateria00collgoog
+    title: The Building Materials of Pennsylvania (1896)
+    url: https://archive.org/download/buildingmateria00collgoog/buildingmateria00collgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-cihm-90208
+    title: What the people say [microform] (1894)
+    url: https://archive.org/download/cihm_90208/cihm_90208_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-earthquake-resistantstructures
+    title: Earthquake-resistant structures. (1928)
+    url: https://archive.org/download/Earthquake-resistantStructures/Earthquake-resistantStructures_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-buildingmateria00blaigoog
+    title: 'The building materials of Otago and South New Zealand generally: Papers
+      originally read at the ... (1879)'
+    url: https://archive.org/download/buildingmateria00blaigoog/buildingmateria00blaigoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-architectengine01davygoog
+    title: The Architect, Engineer , and Operative Builder's Constructive Manual (1841)
+    url: https://archive.org/download/architectengine01davygoog/architectengine01davygoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-cu31924003031717
+    title: The valuation of American timberlands (1921)
+    url: https://archive.org/download/cu31924003031717/cu31924003031717_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-forestersguidepr00mont
+    title: 'The forester''s guide and profitable planter : containing a practical treatise
+      on planting moss, rocky, waste, and other lands, als (1824)'
+    url: https://archive.org/download/forestersguidepr00mont/forestersguidepr00mont_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-cu31924002965949
+    title: The log of a timber cruiser (1915)
+    url: https://archive.org/download/cu31924002965949/cu31924002965949_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-adiaryinamerica02marrgoog
+    title: 'A diary in America : with remarks on its institutions (1839)'
+    url: https://archive.org/download/adiaryinamerica02marrgoog/adiaryinamerica02marrgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-cu31924002967200
+    title: Timber; from the forest to its use in commerce (1915)
+    url: https://archive.org/download/cu31924002967200/cu31924002967200_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-sketchesofwoodco00shaw-0
+    title: 'Sketches of Wood County : its early history : as embraced in and connected
+      with other counties of West Virginia : also brief accou (1878)'
+    url: https://archive.org/download/sketchesofwoodco00shaw_0/sketchesofwoodco00shaw_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-lumbercutofunite1119reyn
+    title: Lumber cut of the United States, 1870-1920 (1923)
+    url: https://archive.org/download/lumbercutofunite1119reyn/lumbercutofunite1119reyn_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-iowaasitisin185500parkuoft
+    title: Iowa as it is in 1855; a gazetteer for citizens, and a hand-book for immigrants,
+      embracing a full description of the State of Iowa (1855)
+    url: https://archive.org/download/iowaasitisin185500parkuoft/iowaasitisin185500parkuoft_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-descriptionhisto00soci
+    title: A Description and history of vegetable substances, used in the arts, and
+      in domestic economy. Timber trees; fruits .. (1829)
+    url: https://archive.org/download/descriptionhisto00soci/descriptionhisto00soci_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-cu31924032226593
+    title: The design and construction of dams; including masonry, earth, rock-fill,
+      and timber structures, also the principal types of movab (1899)
+    url: https://archive.org/download/cu31924032226593/cu31924032226593_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-propervaluemanag05houg
+    title: The proper value and management of government timber lands and the distribution
+      of North American forest trees, being papers read  (1884)
+    url: https://archive.org/download/propervaluemanag05houg/propervaluemanag05houg_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-gri-33125001405725
+    title: 'Woodworking machinery : its rise, progress, and construction, with hints
+      on the management of saw mills and the economical convers (1894)'
+    url: https://archive.org/download/gri_33125001405725/gri_33125001405725_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-seasoningoftimbe00vons
+    title: Seasoning of timber (1903)
+    url: https://archive.org/download/seasoningoftimbe00vons/seasoningoftimbe00vons_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-timber00bategoog
+    title: Timber (1908)
+    url: https://archive.org/download/timber00bategoog/timber00bategoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-scheduletimber00unitrich
+    title: Timber schedule and specifications for standard wood steamship, Pacific coast,
+      largely Douglas fir. May 20, 1917 (1917)
+    url: https://archive.org/download/scheduletimber00unitrich/scheduletimber00unitrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-cu31924002988412
+    title: Notes on the commercial timbers of New South Wales (1895)
+    url: https://archive.org/download/cu31924002988412/cu31924002988412_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-timbertreesofnew00nils
+    title: The timber trees of New South Wales (1884)
+    url: https://archive.org/download/timbertreesofnew00nils/timbertreesofnew00nils_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+  - id: arc-reinforcedconcr00ballgoog
+    title: Reinforced Concrete Railway Structures (1914)
+    url: https://archive.org/download/reinforcedconcr00ballgoog/reinforcedconcr00ballgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-relativestrength00aebe
+    title: The relative strengths of spiral reinforced concrete columns (1913)
+    url: https://archive.org/download/relativestrength00aebe/relativestrength00aebe_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-testofthreelarge00talbrich
+    title: A test of three large reinforced concrete beams (1908)
+    url: https://archive.org/download/testofthreelarge00talbrich/testofthreelarge00talbrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-reinforcedconcr02saurgoog
+    title: Reinforced concrete buildings; a treatise on the history, patents, design
+      and erection of the principal parts entering into a mode (1912)
+    url: https://archive.org/download/reinforcedconcr02saurgoog/reinforcedconcr02saurgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-testreinfortbeam00talbrich
+    title: Tests of reinforced concrete T-beams. Series of 1906 (1907)
+    url: https://archive.org/download/testreinfortbeam00talbrich/testreinfortbeam00talbrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-effectofaddingsp00kann
+    title: The effect of adding spiral reinforcing to vertically reinforced concrete
+      columns (1914)
+    url: https://archive.org/download/effectofaddingsp00kann/effectofaddingsp00kann_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-designofreinforc00mill
+    title: Design of a reinforced concrete roof for the Archer Avenue and Rockwell street
+      car house of the Chicago city railway company (1910)
+    url: https://archive.org/download/designofreinforc00mill/designofreinforc00mill_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-modernschoolcons00trus
+    title: Modern school construction; fireproofness, soudproofness, daylight, sanitation,
+      economy .. (1914)
+    url: https://archive.org/download/modernschoolcons00trus/modernschoolcons00trus_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-newmethodfortest00eckl
+    title: A new method for testing reinforced concrete slabs (1909)
+    url: https://archive.org/download/newmethodfortest00eckl/newmethodfortest00eckl_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-theoryofflexures00eddy
+    title: The theory of the flexure and strength of rectangular flat plates applied
+      to reinforced concrete floor slabs (1913)
+    url: https://archive.org/download/theoryofflexures00eddy/theoryofflexures00eddy_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-atreatiseonconc00taylgoog
+    title: A treatise on concrete, plain and reinforced; materials, construction, and
+      design of concrete and reinforced concrete (1905)
+    url: https://archive.org/download/atreatiseonconc00taylgoog/atreatiseonconc00taylgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-graphicalmethods00klei
+    title: Graphical methods in reinforced concrete design (1909)
+    url: https://archive.org/download/graphicalmethods00klei/graphicalmethods00klei_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-actionmaterials03greegoog
+    title: The action of materials under stress; or, Structural mechanics; comprising
+      the strength and resistance of materials and elements o (1897)
+    url: https://archive.org/download/actionmaterials03greegoog/actionmaterials03greegoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-materialsandcon00pratgoog
+    title: Materials and constructions, a text-book of elementary structural design
+      (1912)
+    url: https://archive.org/download/materialsandcon00pratgoog/materialsandcon00pratgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-cu31924004704544
+    title: Problems in strength of materials (1907)
+    url: https://archive.org/download/cu31924004704544/cu31924004704544_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-textbookonstren03hancgoog
+    title: Text-book on the strength of materials (1906)
+    url: https://archive.org/download/textbookonstren03hancgoog/textbookonstren03hancgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-cihm-55825
+    title: The strength of Canadian Douglas fir, red pine, white pine and spruce [microform]
+      (1800)
+    url: https://archive.org/download/cihm_55825/cihm_55825_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-materialsconstr08johngoog
+    title: 'The materials of construction : a treatise for engineers on the strength
+      of engineering materials (1912)'
+    url: https://archive.org/download/materialsconstr08johngoog/materialsconstr08johngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-lessonsinapplie00sladgoog
+    title: Lessons in applied mechanics (1891)
+    url: https://archive.org/download/lessonsinapplie00sladgoog/lessonsinapplie00sladgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-strengthmateria00smitgoog
+    title: Strength of material; an elementary study prepared for the use of midshipmen
+      at the U. S. Naval Academy (1909)
+    url: https://archive.org/download/strengthmateria00smitgoog/strengthmateria00smitgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-theoryanddesign01andrgoog
+    title: The theory and design of structures. A text-book for the use of students,
+      draughtsmen, and engineers engaged in constructional wor (1908)
+    url: https://archive.org/download/theoryanddesign01andrgoog/theoryanddesign01andrgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+  - id: arc-b20424309
+    title: Report to the General Board of Health on a preliminary inquiry into the sewerage,
+      drainage, and supply of water, and the sanitary  (1851)
+    url: https://archive.org/download/b20424309/b20424309_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-annualreportmet11unkngoog
+    title: Annual Report of the Metropolitan Water and Sewerage Board (1912)
+    url: https://archive.org/download/annualreportmet11unkngoog/annualreportmet11unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-reportuponasyst00tiltgoog
+    title: Report Upon a System of Sewerage for the City and County of San Francisco
+      (1899)
+    url: https://archive.org/download/reportuponasyst00tiltgoog/reportuponasyst00tiltgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-reporttoboardofh00chic
+    title: A report to the Board of health of the city of Chicago, on the necessity
+      of an extension of the sewerage of the city (1873)
+    url: https://archive.org/download/reporttoboardofh00chic/reporttoboardofh00chic_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-cu31924004988154
+    title: Sanitary improvements for the City and Port of Santos, Brazil .. (1894)
+    url: https://archive.org/download/cu31924004988154/cu31924004988154_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-annualreport14boargoog
+    title: Annual Report (1906)
+    url: https://archive.org/download/annualreport14boargoog/annualreport14boargoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-cihm-94709
+    title: 'Reports on the sanitary condition of the city of Winnipeg, Manitoba [microform]
+      : with reference to water supply, sewers, sewer ve (1893)'
+    url: https://archive.org/download/cihm_94709/cihm_94709_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-alberta-01283
+    title: Report by E.H. Keating, Esq., city engineer, Toronto, on proposed trunk sewer,
+      Ottawa [microform] (1893)
+    url: https://archive.org/download/alberta_01283/alberta_01283_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-separatesystemof00unse
+    title: Separate system of sewerage, its theory and construction (1899)
+    url: https://archive.org/download/separatesystemof00unse/separatesystemof00unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-cleaningandsewe01goodgoog
+    title: The Cleaning and Sewerage of Cities (1891)
+    url: https://archive.org/download/cleaningandsewe01goodgoog/cleaningandsewe01goodgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-cihm-15726
+    title: Report on proposed system of sewerage and sewage disposal [microform] (1890)
+    url: https://archive.org/download/cihm_15726/cihm_15726_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-reportofstatebo00mass
+    title: Report of the State board of health of Massachusetts on water-supply and
+      sewerage, under the provisions of chapter 274, of the act (1888)
+    url: https://archive.org/download/reportofstatebo00mass/reportofstatebo00mass_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-maindrainagewor06clargoog
+    title: Main drainage works of the city of Boston (Massachusetts ...) (1885)
+    url: https://archive.org/download/maindrainagewor06clargoog/maindrainagewor06clargoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-atextbookonhydr00hoskgoog
+    title: A text book on hydraulics, including an outline of the theory of turbines
+      (1906)
+    url: https://archive.org/download/atextbookonhydr00hoskgoog/atextbookonhydr00hoskgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-treatiseonhydrau00merr-0
+    title: Treatise on hydraulics, (1913)
+    url: https://archive.org/download/treatiseonhydrau00merr_0/treatiseonhydrau00merr_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-hydraulicswithw01bellgoog
+    title: 'Hydraulics: With Working Tables (1903)'
+    url: https://archive.org/download/hydraulicswithw01bellgoog/hydraulicswithw01bellgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-notesonhydraulic00swai
+    title: Notes on hydraulics (1885)
+    url: https://archive.org/download/notesonhydraulic00swai/notesonhydraulic00swai_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-atreatiseonhydr00merrgoog
+    title: A Treatise on Hydraulics (1889)
+    url: https://archive.org/download/atreatiseonhydr00merrgoog/atreatiseonhydr00merrgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-specimensofancie00ewba
+    title: 'Specimens of ancient oracular and fighting eolipiles : with remarks on dragons
+      and other fire breathing monsters of mythology and  (1845)'
+    url: https://archive.org/download/specimensofancie00ewba/specimensofancie00ewba_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-elementshydraul00merrgoog
+    title: 'Elements of Hydraulics: A Text-book for Secondary Technical Schools (1912)'
+    url: https://archive.org/download/elementshydraul00merrgoog/elementshydraul00merrgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-simplehydraulic00stongoog
+    title: Simple hydraulic formulæ (1881)
+    url: https://archive.org/download/simplehydraulic00stongoog/simplehydraulic00stongoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-hydraulicmachine00blai
+    title: Hydraulic machinery, with an introduction to hydraulics .. (1913)
+    url: https://archive.org/download/hydraulicmachine00blai/hydraulicmachine00blai_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-atextbookplanes02crocgoog
+    title: A text-book of plane surveying (1896)
+    url: https://archive.org/download/atextbookplanes02crocgoog/atextbookplanes02crocgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-planesurveyinga01tracgoog
+    title: Plane surveying; a text-book and pocket manual (1907)
+    url: https://archive.org/download/planesurveyinga01tracgoog/planesurveyinga01tracgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+  - id: arc-proceedingsannu00engigoog
+    title: Proceedings of the ... annual meeting (1880)
+    url: https://archive.org/download/proceedingsannu00engigoog/proceedingsannu00engigoog_djvu.txt
     source: internet_archive
     license: public-domain
     topic: infrastructure
