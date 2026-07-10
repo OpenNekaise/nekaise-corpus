@@ -41,6 +41,12 @@
     "next": "2015-W52",
     "note": "weekly buckets 1900..now walked BACKWARDS one ISO week per advance; already mined: 2017-2020 W01, 1925/1930/1935/1940 W01; yearly buckets exist only pre-1900"
   },
+  "find_purdue": {
+    "flag": "--token",
+    "next": "",
+    "step": 0,
+    "note": "PAUSED before first append — discovery via OAI works (icec/iracc/ihpbc, ~7k equipment/HVAC papers, iracc alone 2,682) but PDF paths sit behind an AWS WAF JS challenge (x-amzn-waf-action: challenge, empty 202) that plain requests cannot pass; needs a browser-assisted or waf-token fetcher before appending. MANUAL token per --pub, printed as '# next-token:'"
+  },
   "find_ibpsa": {
     "flag": "--year",
     "next": 2023,

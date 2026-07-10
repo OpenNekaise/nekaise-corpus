@@ -43,6 +43,7 @@ SHARDS = {
     "adm-": "ademe.yaml",      # find_ademe (French energy-agency reports, librairie.ademe.fr)
     "jpn-": "japan.yaml",      # find_japan (BRI kenken.go.jp + NILIM research reports, Japanese)
     "ibp-": "ibpsa.yaml",      # find_ibpsa (Building Simulation proceedings)
+    "pur-": "purdue.yaml",     # find_purdue (Purdue e-Pubs Herrick conferences: icec/iracc/ihpbc)
     "zen-": "zenodo.yaml",     # find_zenodo (open CC-licensed records)
     "ope-": "papers.yaml",     # find_sources OpenAlex backend
     "oa-": "papers.yaml",

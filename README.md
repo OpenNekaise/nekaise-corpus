@@ -7,32 +7,33 @@
 
 **An agent-operated, continuously growing corpus of open built-environment / AEC knowledge —
 architecture, engineering & construction, structures, building energy & HVAC, materials,
-infrastructure, urban systems — for LLM training & evaluation.**
+infrastructure, urban systems — in every language — for LLM training & evaluation.**
 
-This repo ships the **registry + loader + provenance — never the data bytes**. Every document is
-indexed in the registry (`registry/*.yaml`) with its URL, license, and sha256; you fetch your own copy with the
-loader (the RedPajama / Pile model). A coding agent (Claude Code / Codex) is the intended operator:
-it loads the corpus for you, then keeps discovering and adding new open sources.
+> ### ⚠️ We do not redistribute the data
+> The sources in this corpus carry many different licenses — US-government public domain, CC-BY,
+> CC-BY-SA, open access with per-paper terms, and some copyrighted material we index as pointers
+> only. Shipping the bytes would violate several of them, so **this repo never contains the
+> documents themselves**. What it ships is the *recipe*: a *registry* of every source (URL, license,
+> topic, sha256), a *loader* that fetches your own copy onto your own machine, and the *provenance*
+> to verify it. This is the same model RedPajama and The Pile use. Every document's license is
+> recorded per-source — respect it in whatever you do downstream.
 
-## Quick start
+## Use it
 
-Clone, open the repo in **Claude Code** or **Codex**, and say:
+There are no commands to learn. Clone the repo, open it in **Claude Code** or **Codex**, and tell
+the agent what you want — it reads [`AGENTS.md`](AGENTS.md) and the skills, and operates the corpus
+for you:
 
-- **`go`** — loads every indexed source into `raw/` + `text/`; once caught up, offers a **daily
-  growth job** (crontab, ≤3h/day) that keeps digging for new open data — commits locally, never pushes.
-- **`dig`** — one growth round right now: discover new open sources → add → load → prune → local commit.
-- *"add the EnergyPlus docs"* — crawls a whole documentation site into the registry.
-
-Or run the machinery yourself:
-
-```bash
-pip install -r requirements.txt
-python scripts/build_corpus.py            # fetch everything indexed (idempotent; --force, --only <topic>)
-python scripts/find_sources.py --per 20   # discover new open-access papers/reports (OpenAlex/OSTI/arXiv)
-python scripts/find_github.py             # discover docs + source code from curated AEC GitHub repos
-python scripts/prune_corpus.py --apply    # quality-gate what came in
-bash scripts/install_cron.sh              # optional: enable the daily growth job
-```
+- *“**Get me the corpus.**”* — the agent fetches every indexed source into `raw/` + `text/` on your
+  machine, verifies the failures, and reports what you got. Once you're caught up it can enable a
+  **daily growth job** (crontab, ≤3h/day) that keeps discovering new open data — committing locally,
+  never pushing.
+- *“**Find more sources and grow it.**”* — one growth round: the agent sweeps 14 discovery backends
+  (papers, patents, books, multilingual repositories), judges relevance and license, loads what
+  survives, and prunes the junk. The excavation state is committed (`registry/rotation.json`), so
+  any agent on any machine resumes exactly where the last one stopped.
+- *“**Add the EnergyPlus docs.**”* / *“重点挖一些中文的暖通资料”* — point it at anything specific:
+  a doc site to crawl, a language to prioritize, a vein to dig deeper.
 
 ## At a glance
 
@@ -52,48 +53,49 @@ _Snapshot of the live registry (2026-07-10) — auto-generated from `manifest.js
 shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._
 <!-- STATS:END -->
 
-**Where it comes from:** OSTI · arXiv · OpenAlex · OAPEN (CC-BY books) · **Internet Archive**
-(pre-1929 public-domain engineering handbooks) · Wikipedia · Unmet Hours, dozens of curated
-public-domain manuals (DOE · NIST · FHWA · FEMA · USGS · OSHA · GSA · NPS · HUD · USDA-FPL ·
-WBDG UFC · NASA), and permissive GitHub repos including **source code** (Modelica `.mo` physics
-models, structural/FEA `.py`).
+**Where it comes from:** US patents (Google Patents, public domain) · OSTI / NIST / NBS national-lab
+reports · arXiv · OpenAlex · Zenodo · EU Horizon project deliverables (OpenAIRE) · OAPEN open-access
+books (all languages) · Internet Archive pre-1929 engineering handbooks · Wikipedia in 9 languages ·
+German building research (KIT, Austria's Stadt/Haus der Zukunft) · France's ADEME · Japan's BRI &
+NILIM · dozens of curated public-domain manuals (DOE · FHWA · FEMA · USGS · OSHA · GSA · HUD ·
+WBDG UFC · NASA) · permissive GitHub repos including **source code** (Modelica `.mo` physics models,
+structural/FEA `.py`).
 
 ## How it works
 
 ```mermaid
 flowchart LR
-    F["find_sources.py<br/>OpenAlex · OSTI · arXiv"] --> S
-    G["find_github.py<br/>GitHub repos + code"] --> S
-    C["crawl_docs.py<br/>doc sites"] --> S
-    S["registry/*.yaml<br/>(the registry)"] --> B["build_corpus.py<br/>fetch + extract + hash"]
-    B --> D["raw/ + text/<br/>(git-ignored bytes)"]
-    B --> M["manifest.jsonl<br/>(sha256 provenance)"]
-    D --> P["prune_corpus.py<br/>quality gate"]
-    P -. "rewrites" .-> S
+    subgraph FINDERS ["14 discovery backends (scripts/find_*.py)"]
+        direction TB
+        F1["papers & reports<br/>OpenAlex · OSTI · arXiv · NIST(Crossref) · Zenodo · OpenAIRE"]
+        F2["books & heritage<br/>OAPEN (all languages) · Internet Archive (pre-1929)"]
+        F3["patents<br/>Google Patents sitemap, 1900→now"]
+        F4["multilingual<br/>Wikipedia ×9 · KIT (de) · Austria (de) · ADEME (fr) · BRI/NILIM (ja)"]
+    end
+    FINDERS -->|"propose entries<br/>(dedup vs manifest + blocklist)"| R
+    R["registry/*.yaml — sharded registry<br/>+ rotation.json (committed excavation state)"]
+    R --> B["build_corpus.py — the loader<br/>parallel, ≤2 req/host, WAF/TLS fallback,<br/>pypdf→pdftotext rescue, sha256 + quality metrics"]
+    B --> D["raw/ + text/<br/>(your machine only — git-ignored)"]
+    B --> M["manifest.jsonl<br/>provenance: url · license · sha256 · metrics"]
+    M --> P["prune_corpus.py — quality gate<br/>multilingual on-topic check, dedup,<br/>golden-tested (tests/)"]
+    P -.->|"edits registry in place"| R
+    P -.->|"pruned_urls.txt — never re-churned"| FINDERS
 ```
 
-**discover → register → fetch → gate → repeat.** The discovery scripts propose registry
-entries; the loader fetches each into `raw/` + `text/` and records its sha256 in
-`manifest.jsonl`; the pruner drops the junk. Your agent runs this loop and keeps widening it.
+**discover → register → fetch → gate → repeat.** The agent runs this loop and keeps widening it —
+new backends are ~100-line scripts on top of the shared `registry.py`/`quality.py` machinery.
 
 | Path | What it is |
 |---|---|
-| `registry/` | The **registry** — one YAML shard per vein: `curated.yaml` (hand-picked; **edit this to grow the corpus**) + machine shards (`books` · `papers` · `reports` · `github` · `archive` · `crawl`). |
-| `manifest.jsonl` | **Provenance** — id, url, license, topic, sha256, bytes for every fetched doc. |
-| `scripts/` | The **machinery** — loader (`build_corpus.py`), discovery (`find_sources.py`, `find_github.py`, `find_osti.py`, `find_books.py`, `find_archive.py`, `crawl_docs.py`), quality gate (`prune_corpus.py`) + its `pruned_urls.txt` blocklist, cron runners. |
-| `.claude/skills/` | The **playbooks** the agent follows — `go`, `load-corpus`, `find-sources`, `crawl-docs`, `dig`. |
-| `workspace/` | The agent's **scratch space** (git-ignored) — one-off scripts stay out of the root. |
+| `registry/` | The **registry** — one YAML shard per vein (`curated.yaml` is the hand-picked seed; 15+ machine shards) + `rotation.json`, the committed excavation state that makes the growth loop resumable by anyone. |
+| `manifest.jsonl` | **Provenance** — id, url, license, topic, sha256, bytes, quality metrics for every fetched doc. |
+| `pruned_urls.txt` | **Blocklist** of everything the quality gate dropped — discovery never re-churns it. |
+| `scripts/` | The **machinery** — the loader, 14 discovery backends, the quality gate, shared registry/quality libs, cron runners. |
+| `.claude/skills/` | The **playbooks** the agent follows (`go` · `load-corpus` · `find-sources` · `crawl-docs` · `dig`). |
+| `tests/` | **Golden tests** pinning the quality gate's verdicts per document class, wired to CI. |
+| `workspace/` | The agent's **scratch space** (git-ignored). |
 | [`AGENTS.md`](AGENTS.md) | The **operating manual** your coding agent reads first. |
 | `raw/`, `text/` | **Git-ignored.** Your local copy of the bytes / extracted text. Never committed. |
-
-## Proven useful
-
-Training on this corpus measurably works: continued-pretraining **granite-4.1-3B** on the
-building-energy core cut held-out domain **perplexity by 56%** (13.7 → 6.0) and flipped the model
-from finding domain text *harder* than general text to finding it *easier* — across five models
-(0.8B–14B, three families), with general knowledge preserved and a 3B model reaching ~86% of
-Opus-4.8 on building-energy Q&A. Full method, honest caveats, and reproduction:
-**[`RESULTS.md`](RESULTS.md)**.
 
 ## Reproducibility
 
@@ -102,22 +104,19 @@ the loader compares each download against it and reports `reproduced / drifted /
 (arXiv, `*.gov`) reproduce reliably; any dead or changed source is reported, never silently dropped.
 The raw bytes + sha256 are the reproducibility anchor; the extracted text in `text/` is derived and
 can vary slightly across parser versions (pin exact versions in `requirements.txt` if you need
-byte-identical text).
-
-```bash
-python scripts/build_corpus.py --verify   # re-hash local raw/ files against the manifest
-```
+byte-identical text). Ask your agent to *"verify the corpus"* any time.
 
 ## Licensing
 
 Every source carries a `license` in the registry / `manifest.jsonl` — **read it before you
 redistribute anything**:
 
-- **`public-domain`** — US government / national-lab work (DOE · NIST · FHWA · FEMA · …). Free to use.
-- **`cc-by` / `cc-by-sa`** — Wikipedia, CC-licensed papers and books (OAPEN, IntechOpen, OpenStax).
+- **`public-domain`** — US government / national-lab work and expired-copyright texts (patents,
+  DOE · NIST · FHWA · FEMA · pre-1929 books). Free to use.
+- **`cc-by` / `cc-by-sa`** — Wikipedia, CC-licensed papers and books (OAPEN, IntechOpen, KIT).
   Attribution required (+ share-alike for `-sa`).
-- **`open`** — arXiv / other OA papers. Check each paper's individual license; many are NOT freely
-  redistributable.
+- **`open`** — arXiv / OA papers / government sites that allow downloading but not blanket
+  redistribution. Check each source's individual terms.
 - **`proprietary-internal`** — copyrighted vendor/standards material (e.g. ASHRAE). Pointers for
   your own access only; **never redistribute the bytes.**
 
@@ -126,12 +125,11 @@ manifest, and loader (our curation) — never the documents themselves.
 
 ## Contributing
 
-Add an entry to `registry/curated.yaml` and open a PR. Prefer openly-licensed material (public-domain gov
-reports, CC, arXiv); tag copyrighted material `proprietary-internal` and never add its bytes.
+Add an entry to `registry/curated.yaml` and open a PR — or clone it, tell your agent to dig a new
+vein, and PR what it finds. Prefer openly-licensed material (public-domain gov reports, CC, arXiv);
+tag copyrighted material `proprietary-internal` and never add its bytes.
 
 ## License
 
 The code, registry, and manifest in this repo are MIT. The referenced source documents retain their
-own licenses (see above). Part of the [OpenNekaise](https://github.com/OpenNekaise) ecosystem;
-consumed by [nekaise-studio](https://github.com/OpenNekaise/nekaise-studio) as domain-ceiling
-material.
+own licenses (see above). Part of the [OpenNekaise](https://github.com/OpenNekaise) ecosystem.
