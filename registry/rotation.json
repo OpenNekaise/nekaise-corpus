@@ -2,43 +2,43 @@
   "_readme": "Shared excavation state for the discovery loop — read/advance via scripts/rotation.py. Committed so any agent/machine resumes where the last one stopped. History of what is already mined lives in git log + manifest.jsonl.",
   "find_osti": {
     "flag": "--page",
-    "next": 55,
+    "next": 57,
     "step": 2,
     "note": "run with --rows 50 --pages 2; ~200k records/query universe"
   },
   "find_archive": {
     "flag": "--page",
-    "next": 17,
+    "next": 18,
     "step": 1,
     "note": "pre-1929 public-domain texts; rows 30"
   },
   "find_books": {
     "flag": "--offset",
-    "next": 275,
+    "next": 300,
     "step": 25,
     "note": "OAPEN all-language + native-language queries (de/it/fr/es/pt/nl added 07-10); offsets 0-50 mined multilingual, 0-350 English-era"
   },
   "find_openaire": {
     "flag": "--page",
-    "next": 13,
+    "next": 14,
     "step": 1,
     "note": "vein nearly dry: p1=300, p2=109, p3=52, p4=22"
   },
   "find_nist": {
     "flag": "--page",
-    "next": 14,
+    "next": 15,
     "step": 1,
     "note": "Crossref DOI prefix 10.6028; ~2k on-topic docs"
   },
   "find_zenodo": {
     "flag": "--page",
-    "next": 12,
+    "next": 13,
     "step": 1,
     "note": "rate-limited anonymous API — keep --max 100-150"
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "2015-W10",
+    "next": "2015-W09",
     "note": "weekly buckets 1900..now, walked backwards; mined: 2017-2020 W01, 1925-1940 W01s, 2015-W52..W19 (38 buckets). --countries flag NEW (default US): CN/EP/DE work, sitemap titles are English for all countries; CN buckets 2018-2020 W03 mined 07-10 (license=open for non-US)"
   },
   "find_purdue": {
@@ -84,7 +84,7 @@
   },
   "find_patents_cn": {
     "flag": "--bucket",
-    "next": "2019-W48",
+    "next": "2019-W47",
     "note": "CN patents (Chinese full text; license=open). Same weekly-bucket walk as find_patents but separate pointer; marathon runs it with --countries CN. Mined: 2018/2019/2020-W03."
   }
 }
