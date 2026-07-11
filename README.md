@@ -42,7 +42,7 @@ for you:
 |---|---|
 | **Documents** | **37,639** |
 | **Raw originals** | **~128G** (PDF / HTML / source code) |
-| **Extracted text** | **~5.7G** (~5938M chars, **≈1484M tokens**) |
+| **Extracted text** | **~5.7G** (~5.938B chars, **≈1.484B tokens**) |
 | **Topics** | 11 |
 
 **By topic** (a source gets one at registration): building_energy 12,890 · equipment_systems 8,433 · construction 4,690 · structures_civil 4,194 · materials 2,145 · architecture 1,746 · infrastructure 1,378 · standards_protocols 807 · controls_bas 701 · commissioning_fdd 354 · urban 301.

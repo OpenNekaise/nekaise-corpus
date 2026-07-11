@@ -41,12 +41,16 @@ def main() -> None:
     by_lic = " · ".join(f"{k} {lic[k]:,}" for k in lic_order if lic.get(k)) or \
         " · ".join(f"{k} {n:,}" for k, n in lic.most_common())
 
+    def big(n: float) -> str:
+        """1484M -> '1.484B'; below a billion stay in M."""
+        return f"{n/1e9:.3f}B" if n >= 1e9 else f"{n/1e6:.0f}M"
+
     block = f"""{START}
 | | |
 |---|---|
 | **Documents** | **{len(ok):,}** |
 | **Raw originals** | **~{du('raw')}** (PDF / HTML / source code) |
-| **Extracted text** | **~{du('text')}** (~{chars/1e6:.0f}M chars, **≈{tok/1e6:.0f}M tokens**) |
+| **Extracted text** | **~{du('text')}** (~{big(chars)} chars, **≈{big(tok)} tokens**) |
 | **Topics** | {len(topics)} |
 
 **By topic** (a source gets one at registration): {by_topic}.
