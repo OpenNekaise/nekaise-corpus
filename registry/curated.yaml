@@ -3586,3 +3586,120 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+
+  # ---------- HUD User / PATH — US Dept. of Housing & Urban Development research (public domain, pdf) ----------
+  # (Residential Rehabilitation Inspection Guide already curated as hud-residential-rehab-inspection-guide)
+  - id: hud-rehab-guide-vol1-foundations
+    title: "HUD Rehab Guide Vol 1: Foundations"
+    url: https://www.huduser.gov/publications/pdf/foundations.pdf
+    source: gov_hud
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: hud-rehab-guide-vol2-exterior-walls
+    title: "HUD Rehab Guide Vol 2: Exterior Walls"
+    url: https://www.huduser.gov/publications/pdf/walls.pdf
+    source: gov_hud
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: hud-rehab-guide-vol3-roofs
+    title: "HUD Rehab Guide Vol 3: Roofs"
+    url: https://www.huduser.gov/publications/pdf/roofs.pdf
+    source: gov_hud
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: hud-rehab-guide-vol6-kitchens-baths
+    title: "HUD Rehab Guide Vol 6: Kitchens & Baths"
+    url: https://www.huduser.gov/publications/pdf/kitchen.pdf
+    source: gov_hud
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: hud-rehab-guide-vol8-hvac-plumbing-electrical
+    title: "HUD Rehab Guide Vol 8: HVAC / Plumbing / Electrical"
+    url: https://www.huduser.gov/publications/pdf/hvac.pdf
+    source: gov_hud
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: hud-rehab-guide-vol9-site-work
+    title: "HUD Rehab Guide Vol 9: Site Work"
+    url: https://www.huduser.gov/publications/pdf/sitework.pdf
+    source: gov_hud
+    license: public-domain
+    topic: infrastructure
+    format: pdf
+  - id: hud-building-moisture-durability
+    title: "HUD/PATH — Building Moisture and Durability: Past, Present and Future Work"
+    url: https://www.huduser.gov/publications/pdf/buildingmoistureanddurability.pdf
+    source: gov_hud
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: hud-moisture-problems-homes
+    title: "HUD — Alternatives for Minimizing Moisture Problems in Homes"
+    url: https://www.huduser.gov/publications/pdf/moisturereport.pdf
+    source: gov_hud
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: hud-innovative-rehab-technologies
+    title: "HUD/PATH — Innovative Rehabilitation Technologies"
+    url: https://www.huduser.gov/publications/pdf/rehabtech.pdf
+    source: gov_hud
+    license: public-domain
+    topic: construction
+    format: pdf
+  - id: hud-advanced-residential-roof-systems
+    title: "HUD/PATH — Advanced Residential Roof Systems Research Agenda"
+    url: https://www.huduser.gov/portal/Publications/pdf/Adv_Residential_Roof_Systems.pdf
+    source: gov_hud
+    license: public-domain
+    topic: construction
+    format: pdf
+
+  # ---------- World Bank / ESMAP — open-licensed (CC BY 3.0 IGO) building energy reports (pdf) ----------
+  - id: wb-esmap-scaling-up-ee-retrofit-buildings
+    title: "World Bank/ESMAP — Scaling Up Energy Efficiency Retrofit of Residential and Public Buildings (ECA)"
+    url: https://documents1.worldbank.org/curated/en/828581468005123913/pdf/103125-ESMAP-P152143-Box394855B-PUBLIC-Scaling-up-investment-in-thermal-retrofit-of-residential-and-public-buildings.pdf
+    source: worldbank
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wb-esmap-astana-ee-plan
+    title: "World Bank/ESMAP — Energy Efficiency Transformation in Astana and Almaty (KEEP)"
+    url: https://documents1.worldbank.org/curated/en/362411510931587832/pdf/121462-ESM-P130013-PUBLIC-KEEPAstanaEEPlanNovengfinal.pdf
+    source: worldbank
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wb-unlocking-efficiency-building-energy-regulations
+    title: "World Bank — Unlocking Efficiency: The Global Landscape of Building Energy Regulations and Their Enforcement"
+    url: https://documents1.worldbank.org/curated/en/099718504112546491/pdf/IDU-1d303826-4a43-4eff-8649-1052aa316783.pdf
+    source: worldbank
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+  - id: wb-mainstreaming-building-ee-codes
+    title: "World Bank — Mainstreaming Building Energy Efficiency Codes in Developing Countries"
+    url: https://documents1.worldbank.org/curated/en/284341468324865236/pdf/578770PUB0Main101public10BOX353783B.pdf
+    source: worldbank
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+  - id: wb-assessing-performance-ee-projects
+    title: "World Bank — Assessing and Measuring the Performance of Energy Efficiency Projects"
+    url: https://documents1.worldbank.org/curated/en/144381608284310204/pdf/Assessing-and-Measuring-the-Performance-of-Energy-Efficiency-Projects.pdf
+    source: worldbank
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wb-sustainable-urban-energy-planning-guidebook
+    title: "World Bank — Sustainable Urban Energy and Emissions Planning Guidebook"
+    url: https://documents1.worldbank.org/curated/en/313881468262141487/pdf/NonAsciiFileName0.pdf
+    source: worldbank
+    license: cc-by
+    topic: urban
+    format: pdf
