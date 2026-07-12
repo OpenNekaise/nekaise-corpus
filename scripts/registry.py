@@ -45,6 +45,7 @@ SHARDS = {
     "ibp-": "ibpsa.yaml",      # find_ibpsa (Building Simulation proceedings)
     "pur-": "purdue.yaml",     # find_purdue (Purdue e-Pubs Herrick conferences: icec/iracc/ihpbc)
     "zen-": "zenodo.yaml",     # find_zenodo (open CC-licensed records)
+    "nrc-": "canada.yaml",     # find_nrc (NRC Canada Publications Archive: CBD digests, DBR/IRC reports)
     "ope-": "papers.yaml",     # find_sources OpenAlex backend
     "oa-": "papers.yaml",
     "arx-": "papers.yaml",     # find_sources arXiv backend

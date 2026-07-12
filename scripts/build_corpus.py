@@ -51,9 +51,18 @@ TIMEOUT = 45
 TEXT_FORMATS = {"md", "rst", "txt"}
 # politeness: never more than this many in-flight requests against one host, however many workers.
 PER_HOST = 2
+# hosts whose WAF tarpits at volume (410s/captchas every client after ~dozens of rapid hits, then
+# recovers — nrc-publications 07-12): minimum seconds between request STARTS against that host.
+HOST_DELAY = {"nrc-publications.canada.ca": 2.5}
+# hosts that 410/block the spoofed-browser UA but pass an honest bot UA (nrc-publications 07-12:
+# fake Chrome = 410, plain-named client = 200 — the inverse of the Google-patents WAF the spoofed
+# UA exists for). Overrides UA for both the requests call and the curl fallback.
+HOST_UA = {"nrc-publications.canada.ca": "nekaise-corpus (open research corpus builder)"}
 
 _host_sems: dict[str, threading.BoundedSemaphore] = {}
 _host_sems_lock = threading.Lock()
+_host_next: dict[str, float] = {}
+_host_next_lock = threading.Lock()
 
 
 def _host_sem(url: str) -> threading.BoundedSemaphore:
@@ -213,20 +222,21 @@ def fetch_one(src: dict) -> dict:
         "raw_path": None, "text_path": None, "text_chars": 0,
         "error": None, "fetched_at": None,
     }
+    ua = HOST_UA.get(urlparse(src["url"]).netloc.lower(), UA)
     try:
         if "ec.europa.eu/research/participants/documents/downloadPublic" in src["url"]:
             resp = _fetch_ec_deliverable(src["url"])
         else:
             resp = requests.get(src["url"],
-                                headers={"User-Agent": UA,
+                                headers={"User-Agent": ua,
                                          "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8"},
                                 timeout=TIMEOUT, allow_redirects=True)
         rec["http_status"] = resp.status_code
-        if resp.status_code in (403, 429, 503):
+        if resp.status_code in (403, 410, 429, 503):
             # WAFs (Akamai/Cloudflare/Google) block the python client's TLS fingerprint but pass
             # curl's (google patents 503s requests yet 200s curl with the SAME UA). Fall back to
             # curl for openly-licensed docs we're entitled to fetch.
-            out = subprocess.run(["curl", "-sSL", "--max-time", str(TIMEOUT), "-A", UA, src["url"]],
+            out = subprocess.run(["curl", "-sSL", "--max-time", str(TIMEOUT), "-A", ua, src["url"]],
                                  capture_output=True, timeout=TIMEOUT + 15)
             body = out.stdout if out.returncode == 0 else b""
             # only trust the fallback if it returned the expected content — not a WAF challenge /
@@ -283,6 +293,14 @@ def fetch_one(src: dict) -> dict:
 
 def fetch_polite(src: dict) -> dict:
     with _host_sem(src["url"]):
+        host = urlparse(src["url"]).netloc.lower()
+        delay = HOST_DELAY.get(host)
+        if delay:
+            with _host_next_lock:
+                start = max(time.monotonic(), _host_next.get(host, 0.0))
+                _host_next[host] = start + delay
+            if (wait := start - time.monotonic()) > 0:
+                time.sleep(wait)
         return fetch_one(src)
 
 
