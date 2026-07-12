@@ -2,44 +2,44 @@
   "_readme": "Shared excavation state for the discovery loop — read/advance via scripts/rotation.py. Committed so any agent/machine resumes where the last one stopped. History of what is already mined lives in git log + manifest.jsonl.",
   "find_osti": {
     "flag": "--page",
-    "next": 59,
+    "next": 61,
     "step": 2,
     "note": "run with --rows 50 --pages 2; ~200k records/query universe"
   },
   "find_archive": {
     "flag": "--page",
-    "next": 19,
+    "next": 20,
     "step": 1,
     "note": "pre-1929 public-domain texts; rows 30"
   },
   "find_books": {
     "flag": "--offset",
-    "next": 325,
+    "next": 350,
     "step": 25,
     "note": "OAPEN all-language + native-language queries (de/it/fr/es/pt/nl added 07-10); offsets 0-50 mined multilingual, 0-350 English-era"
   },
   "find_openaire": {
     "flag": "--page",
-    "next": 15,
+    "next": 16,
     "step": 1,
     "note": "vein nearly dry: p1=300, p2=109, p3=52, p4=22"
   },
   "find_nist": {
     "flag": "--page",
-    "next": 16,
+    "next": 17,
     "step": 1,
     "note": "Crossref DOI prefix 10.6028; ~2k on-topic docs"
   },
   "find_zenodo": {
     "flag": "--page",
-    "next": 14,
+    "next": 15,
     "step": 1,
     "note": "rate-limited anonymous API — keep --max 100-150"
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "2015-W08",
-    "note": "weekly buckets 1900..now, walked backwards; mined: 2017-2020 W01, 1925-1940 W01s, 2015-W52..W19 (38 buckets). --countries flag NEW (default US): CN/EP/DE work, sitemap titles are English for all countries; CN buckets 2018-2020 W03 mined 07-10 (license=open for non-US)"
+    "next": "2015-W07",
+    "note": "weekly buckets 1900..now, walked backwards; mined: 2017-2020 W01, 1925-1940 W01s, 2015-W52..W08 (49 buckets). --countries flag NEW (default US): CN/EP/DE work, sitemap titles are English for all countries; CN buckets 2018-2020 W03 mined 07-10 (license=open for non-US)"
   },
   "find_purdue": {
     "flag": "--token",
@@ -54,15 +54,15 @@
   },
   "find_sdz": {
     "flag": "--page",
-    "next": 6,
+    "next": 11,
     "step": 5,
-    "note": "sdz+hdz pages 1-5 mined 07-10 (165 kept); sdz ends ~p16, hdz ~p25"
+    "note": "sdz+hdz pages 1-5 mined 07-10 (165 kept), pages 6-10 mined 07-12 (35 sdz + 72 hdz); sdz ends ~p16, hdz ~p25"
   },
   "find_ademe": {
     "flag": "--page",
-    "next": 5,
+    "next": 9,
     "step": 4,
-    "note": "run with --pages 4; categories: 3153-batiment (504 results, mined p1-4), 3149-energies (p1-2), 3509-urbanisme (untouched); license=open (non-commercial reuse w/ attribution)"
+    "note": "run with --pages 4; categories: 3153-batiment (504 results, mined p1-8), 3149-energies (p1-4), 3509-urbanisme (p1-4, +77 on 07-12); license=open (non-commercial reuse w/ attribution)"
   },
   "find_kitopen": {
     "flag": "--token",
@@ -72,19 +72,25 @@
   },
   "find_japan": {
     "flag": "--start",
-    "next": 2012,
+    "next": 2006,
     "step": -6,
-    "note": "nilim 2012-2025 mined (800-cap hit walking 2012-2019 — re-run to finish tail); bri 139-158 done, new reports appear at top; 建築研究資料 series (data.html No.1-214) UNMINED"
+    "note": "nilim 2012-2025 mined; tail re-run 07-12 recovered +78 from 2012-2017. NILIM listing only exists back to 2012, so next=2006 will no-op — switch to --series bri (139-158 done, new reports appear at top) or build the UNMINED 建築研究資料 series (data.html No.1-214)"
   },
   "find_wiki": {
     "flag": "--depth",
     "next": 2,
     "step": 1,
-    "note": "category mode: depth 1 x lang-cap 250 mined 07-09 for zh,de,fr,ja,es,ru,ko,it; next round try --depth 2 --lang-cap 400 (expect drift, gate handles); langlinks mode saturated for current curated set; --books zh done"
+    "note": "category mode: depth 1 x lang-cap 250 mined 07-09; depth 2 x lang-cap 400 run 07-12 HIT the --max 800 cap — depth 2 NOT exhausted (pointer held at 2), re-run with --max 1500+ until dry before deepening; langlinks mode saturated for current curated set; --books zh done"
   },
   "find_patents_cn": {
     "flag": "--bucket",
-    "next": "2019-W46",
-    "note": "CN patents (Chinese full text; license=open). Same weekly-bucket walk as find_patents but separate pointer; marathon runs it with --countries CN. Mined: 2018/2019/2020-W03."
+    "next": "2019-W45",
+    "note": "CN patents (Chinese full text; license=open). Same weekly-bucket walk as find_patents but separate pointer; marathon runs it with --countries CN. Mined: 2018/2019/2020-W03, 2019-W46 (+400 on 07-12)."
+  },
+  "find_nrc": {
+    "flag": "--page",
+    "next": 1,
+    "step": 4,
+    "note": "NRC Canada Publications Archive (~23k full-text objects; run with --pages 4, rotate queries via --q). DONE 07-12: 'canadian building digest' (251, complete CBD-1..250) + 'building research note' p1-3 (5, rest overlap/citation-only). NEXT --q: 'division of building research' (large), then 'building practice note', 'national building code' (old PD editions); reset next=1 when switching query"
   }
 }

@@ -1229,3 +1229,745 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: sdz-green-bim-bauwerksbegr-nung-als-teil-bim-basierter-p
+    title: Green BIM - Bauwerksbegrünung als Teil BIM-basierter Planung und Pflege
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2023-42-green-bim.pdf
+    source: sdz_at
+    license: open
+    topic: construction
+    format: pdf
+  - id: sdz-greenvaluation-echtzeit-monitoring-und-leistungseval
+    title: GREeNvaluation - Echtzeit Monitoring und Leistungsevaluierung
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2023-37-GRENvaluation.pdf
+    source: sdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-programmevaluierung-stadt-der-zukunft-2013-2021
+    title: Programmevaluierung "Stadt der Zukunft" 2013 - 2021
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2023-8-sdz-evaluierung.pdf
+    source: sdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-klimdo-gesamtst-dtische-energie-und-klimastrategie-d
+    title: KLIMDO - Gesamtstädtische Energie- und Klimastrategie der Stadt Dornbirn
+      als Grundlage der Erreichung einer Klimaneutralität 2030
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2023-06-klimdo.pdf
+    source: sdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-king-klimainnovationsstadt-graz-strategien-und-ma-na
+    title: KING, KlimaINnovationsstadt Graz - Strategien und Maßnahmen für ein klimaneutrales
+      Graz
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2022-43-king.pdf
+    source: sdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-zukunftsquartier-sterreich-entwicklung-von-qualit-ts
+    title: Zukunftsquartier Österreich - Entwicklung von qualitätsgesicherten Plus-Energie-Quartierskonzepten
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2022-40-zq-at.pdf
+    source: sdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-stp2030-st-p-lten-2030-klimaneutral-klimafit
+    title: 'STP2030, St. Pölten 2030: KlimaNEUTRAL + KlimaFIT'
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2022-39-stp2030.pdf
+    source: sdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-technologiereport-digitalisierung-der-bau-und-immobi
+    title: 'Technologiereport: Digitalisierung der Bau- und Immobilienbranche'
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2022-32-dfs.pdf
+    source: sdz_at
+    license: open
+    topic: construction
+    format: pdf
+  - id: sdz-bim-basierte-planungsmethoden-zur-sicherstellung-von
+    title: BIM-basierte Planungsmethoden zur Sicherstellung von Energieeffizienz im
+      Bauprozess (BIMSavesEnergy)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2022-2-bimsavesenergy.pdf
+    source: sdz_at
+    license: open
+    topic: construction
+    format: pdf
+  - id: sdz-ernte-von-urbaner-solarer-abw-rme-von-geb-uden-und-o
+    title: Ernte von urbaner solarer Abwärme von Gebäuden und Oberflächen zur Vermeidung
+      der sommerlichen Überhitzung in Städten (Heat Harvest)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2021-44-heat-harvest.pdf
+    source: sdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-joint-programming-platform-smart-energy-systems
+    title: Joint Programming Platform Smart Energy Systems
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe-2021-34-jpp-ses-ergebnisbroschuere_bf.pdf
+    source: sdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-rcc-reduced-carbon-concrete-implementierung-von-co2-
+    title: RCC-Reduced Carbon Concrete - Implementierung von CO2-reduzierten Betonen
+      auf der Baustelle
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2021-30_rcc.pdf
+    source: sdz_at
+    license: open
+    topic: materials
+    format: pdf
+  - id: sdz-kapazit-tsanpassung-der-bauwirtschaft-f-r-eine-erh-h
+    title: Kapazitätsanpassung der Bauwirtschaft  für eine erhöhte Sanierungsrate
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2021-27-kapazitaetsanpassung-bauwirtschaft.pdf
+    source: sdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-monitoring-und-evaluierung-von-st-dtischen-energiefl
+    title: Monitoring und Evaluierung von städtischen Energieflüssen
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2021-17-em-staedte.pdf
+    source: sdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-weiterf-hrende-untersuchungen-und-monitoring-der-gr-
+    title: Weiterführende Untersuchungen und Monitoring der grünen Wände  am GRG7 Kandlgasse
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe_2021-16-gruene-waende-kandlgasse.pdf
+    source: sdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-digitale-transformation-der-sterreichischen-bauwirts
+    title: Digitale Transformation der österreichischen Bauwirtschaft und Auswirkungen
+      auf die Erwerbstätigen
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2021-15-forba-studie-digitalisierung_bf.pdf
+    source: sdz_at
+    license: open
+    topic: construction
+    format: pdf
+  - id: sdz-digitalisierung-in-der-stadtplanung-von-der-raumplan
+    title: 'Digitalisierung in der Stadtplanung: Von der Raumplanung bis zur Digitalisierung
+      im Bauwesen (PBM_integrativ)'
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2021-11-pbm-integrativ.pdf
+    source: sdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-digitale-informationsmodelle-f-r-die-planung-und-opt
+    title: Digitale Informationsmodelle für die Planung und Optimierung von Gebäuden
+      und urbaner Energieinfrastruktur (DIM4Energy)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2021-07-dim4energy.pdf
+    source: sdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-missing-link-f-r-die-planung-co2-neutraler-geb-ude-6
+    title: Missing Link für die Planung CO2-neutraler Gebäude (6D-BIM-Terminal)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-49-6d-bim-terminal.pdf
+    source: sdz_at
+    license: open
+    topic: construction
+    format: pdf
+  - id: sdz-effiziente-kosteng-nstige-und-wartungsfreundliche-ze
+    title: Effiziente, kostengünstige und wartungsfreundliche zentrale Mehrfamilienhaus-Lüftungsanlagen
+      – Planung, Betrieb und Brandschutz (E.Vent)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-48-event.pdf
+    source: sdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-fensterprototypen-mit-integriertem-vakuumglas-fiva
+    title: Fensterprototypen mit integriertem Vakuumglas (FIVA)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-47-fiva.pdf
+    source: sdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-building-information-modeling-for-building-energy-ma
+    title: Building Information Modeling for Building Energy Management Systems (BIM4BEMS)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-46-bim4bems.pdf
+    source: sdz_at
+    license: open
+    topic: construction
+    format: pdf
+  - id: sdz-superbe-potenziale-von-superblock-konzepten-als-beit
+    title: SUPERBE - Potenziale von Superblock-Konzepten als Beitrag zur Planung energieeffizienter
+      Stadtquartiere
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-42-superbe.pdf
+    source: sdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-drob-drohnen-und-robotik-f-r-effizientes-monitoring-
+    title: DRoB - Drohnen und Robotik für effizientes Monitoring und Pflegemanagement
+      von Gebäudebegrünungen
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-40-drob.pdf
+    source: sdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-feelings-user-feedback-for-energy-efficiency-in-buil
+    title: FEELings - User Feedback for Energy Efficiency in Buildings
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-39-feelings.pdf
+    source: sdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-parasol-multifunktionale-solaraktive-platz-und-stra-
+    title: ParaSol - Multifunktionale solaraktive Platz- und Straßenüberdachung Leoben
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-37-parasol.pdf
+    source: sdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-evaluierung-vision-rer-architekturkonzepte
+    title: Evaluierung Visionärer Architekturkonzepte
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-29-eva.pdf
+    source: sdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-green-market-report-austria-kompakt-bauwerksbegr-nun
+    title: Green Market Report Austria Kompakt - Bauwerksbegrünung in Österreich - Zahlen,
+      Daten, Märkte
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-27-green-market-report-kompakt.pdf
+    source: sdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-energie-und-lebensqualit-tsoptimierte-planung-und-mo
+    title: Energie- und lebensqualitätsoptimierte Planung und Modernisierung von Smart
+      City-Quartieren (Smart City MIKROQUARTIERE)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-26-smart-city-mikroquartiere.pdf
+    source: sdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-entwicklung-einer-merit-order-bei-regenerationsw-rme
+    title: Entwicklung einer „Merit-Order“ bei Regenerationswärme für Erdsondenfelder
+      in urbanen Wohngebieten (ecoRegeneration)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-25-ecoregeneration.pdf
+    source: sdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-energieoptimierte-design-regeln-und-planungsschnitts
+    title: Energieoptimierte Design-Regeln und Planungsschnittstellen für bauwerkintegrierte
+      Photovoltaik im urbanen Raum (VITALITY)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-24-vitality.pdf
+    source: sdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-bestand-optimal-nutzen-sanierung-energieeffizient-im
+    title: Bestand optimal nutzen - Sanierung energieeffizient implementieren! (BONSEI!)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-23-bonsei.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-ergebnisband-urban-data-management
+    title: Ergebnisband „Urban Data Management“
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-21-ergebnisband-urban-data-management.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-energetisch-optimierte-siedlungsentwicklung-unter-sy
+    title: Energetisch optimierte Siedlungsentwicklung unter Synergienutzung von Energieeffizienz,
+      Raumplanung & Baukultur (SynENERGIE)
+    url: https://nachhaltigwirtschaften.at/resources/iea_pdf/schriftenreihe-2020-19-synenergie.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-technical-tours-smart-cities-2014-2018
+    title: Technical Tours Smart Cities 2014-2018
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-15-smart-city.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-pv-gemeinschaftsanlagen-sondierung-eines-partizipati
+    title: 'PV-Gemeinschaftsanlagen: Sondierung eines partizipativen Pilotprojekts mit
+      Mehrwert in strukturschwachen Städten (MehrWertStrom 2030)'
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-12-mehrwertstrom2030.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-zukunftsquartier-weg-zum-plus-energie-quartier-in-wi
+    title: Zukunftsquartier - Weg zum Plus-Energie-Quartier in Wien
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-11-zukunftsquartier.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-smart-readiness-indikator-bewertungsschema-und-chanc
+    title: 'Smart Readiness Indikator: Bewertungsschema und Chancen für intelligente
+      Gebäude (SRI Austria)'
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-08-sri-austria.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-vertical-farming-ermittlung-der-anforderungs-bedingu
+    title: 'Vertical Farming: Ermittlung der Anforderungs­bedingungen zur Entwicklung
+      eines Vertical Farm-Prototyps zur Kulturpflanzenproduktion'
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-08-vertical-farming.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-demogeb-ude-leuchtturm-gugler-koeffektive-plusenergi
+    title: Demogebäude Leuchtturm gugler Ökoeffektive Plusenergiedruckerei Zero emission,
+      zero energy, zero waste
+    url: https://nachhaltigwirtschaften.at/resources/hdz_pdf/schriftenreihe-2020-06_gugler-subprojekt-8.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-sanierung-von-mehrfamilienh-usern-mit-kleinen-wohnun
+    title: Sanierung von Mehrfamilienhäusern mit kleinen Wohnungen - Kostengünstige
+      technische Lösungsansätze für Lüftung, Heizung und Warmwasser (SalüH!)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-05-salueh.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-simultane-planungsumgebung-f-r-geb-udecluster-in-res
+    title: Simultane Planungsumgebung für Gebäudecluster in resilienten, ressourcen-
+      und höchst energieeffizienten Stadtteilen (SIMULTAN)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-04-simultan.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-ergebnisband-geb-udetechnologien
+    title: Ergebnisband „Gebäudetechnologien“
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2020-01-ergebnisband-gebaeudetechnologien.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-pr-fstand-f-r-energieeffiziente-automation-und-regel
+    title: Prüfstand für energieeffiziente Automation und Regelung von Gebäuden
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2019-58-pear.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-sondierung-f-r-pv-fassadensysteme-aus-leichten-kunst
+    title: Sondierung für PV-Fassadensysteme aus leichten Kunststoff-Modulen mit reversiblen
+      Befestigungen für Neu- und Altbauten (PV-FAS_light+easy)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schrftenreihe-2019-56-pv-fas-light-easy-v2.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-fit4power2heat-sondierung-zur-realisierung-des-w-rme
+    title: fit4power2heat - Sondierung zur Realisierung des Wärmepumpenpooling für städtische
+      Wärmenetze
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2019-50-fit4power2heat.pdf
+    source: hdz_at
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: sdz-urbane-gr-nraumpotenziale-im-verbauten-bestand-urban
+    title: Urbane Grünraumpotenziale iM verBauten BestAnd (Urbane GmbA)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2019-46-urbane-gmba.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-multi-aktiv-fassade
+    title: Multi-Aktiv-Fassade
+    url: https://nachhaltigwirtschaften.at/resources/hdz_pdf/schriftenreihe-2019-45-mafa.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-kleinma-st-bliche-nachverdichtung-in-modularer-bauwe
+    title: Kleinmaßstäbliche Nachverdichtung in modularer Bauweise (Intensified Density)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2019-44-koen.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-visergycontrol-integrale-tages-und-kunstlicht-steuer
+    title: VisErgyControl - Integrale Tages- und Kunstlicht­steuerung für hohen visuellen
+      und melanopischen Komfort bei hoher Primärenergieeffizienz
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2019-43-visergycontrol.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-innovationsachse-graz-gleisdorf-g2g
+    title: Innovationsachse Graz-Gleisdorf (G2G)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2019-42-g2g.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-kosten-und-prozessoptimierung-im-lebenszyklus-von-ni
+    title: Kosten- und Prozessoptimierung im Lebenszyklus von Niedrigst- und Plusenergie­gebäuden
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2019-39-koprolzk.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-freiformfl-chen-tageslichtsysteme-f-r-fassaden-und-o
+    title: Freiformflächen-Tageslichtsysteme für Fassaden und Oberlichter (FFF-TaliSys)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2019-34-fff-talisys.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-hocheffiziente-fassaden-und-dachbegr-nung-mit-photov
+    title: Hocheffiziente Fassaden- und Dachbegrünung mit Photovoltaik-Kombination.
+      Optimale Lösung für die Energieeffizienz in gesamtökologischer Betrachtung (G
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe_2019-27-gruenplusschule.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-system-bergreifende-optimale-dezentrale-hybridspeich
+    title: Systemübergreifende optimale dezentrale Hybridspeicher-4-Industrie und Gewerbe
+      (Symbiose-4-IuG)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe-2019-16-symbiose_4_iug.pdf
+    source: hdz_at
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: sdz-gr-nderzeit-mit-zukunft-dokumentation-und-monitoring
+    title: 'Gründerzeit mit Zukunft: Dokumentation und Monitoring von vier Demonstrationsgebäuden'
+    url: https://nachhaltigwirtschaften.at/resources/hdz_pdf/berichte/schriftenreihe-2018-44-gruenderzeit-zukunft.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-photonic-cooling-effizientere-geb-udek-hlung-durch-n
+    title: Photonic Cooling - Effizientere Gebäudekühlung durch Nutzung von Photonik
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe_2018-41-photonic-cooling.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-manage-geocity-entwicklung-einer-methodik-zur-koordi
+    title: 'Manage_GeoCity: Entwicklung einer Methodik zur koordinierten Nutzung und
+      Bewirtschaftung der oberflächennahen Erdwärme in urbanen Räumen'
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe-2018-35-manage-geocity.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-tflex-temperaturflexibilisierung-im-schwachlast-bere
+    title: TFlex - Temperaturflexibilisierung im Schwachlast­bereich des Betriebs von
+      Nahwärmenetzen
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe-2016-34-tflex.pdf
+    source: hdz_at
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: sdz-sondierung-von-fenstersystemen-mit-innovativen-gl-se
+    title: Sondierung von Fenstersystemen mit innovativen Gläsern, speziell Vakuum-Isoliergläsern,
+      zur Gebäudesanierung
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe-2018-33-vigsysreno.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-pesi-paradigmenwechsel-im-urbanen-energie-system-dur
+    title: PESI - Paradigmenwechsel im urbanen Energie­system durch Synergiepotentiale
+      mit der Industrie
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe-2018-32-pesi.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-citycalc-energieplanungs-und-bewertungsinstrument-f-
+    title: CityCalc - Energieplanungs- und Bewertungsinstrument für den Städtebau
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe-2018-31-citycalc.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-p2h-pot-potentiale-wirtschaftlichkeit-und-system-l-s
+    title: 'P2H-Pot: Potentiale, Wirtschaftlichkeit und System­lösungen für Power-to-Heat'
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe_2018-30-p2hpot.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-kelvin-reduktion-st-dtischer-w-rmeinseln-durch-verbe
+    title: KELVIN - Reduktion städtischer Wärmeinseln durch Verbesserung der Abstrahleigenschaften
+      von Gebäuden und Quartieren
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe_2018-29-kelvin.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-geb-ude-bergreifender-energieaustausch-anhand-zweier
+    title: Gebäudeübergreifender Energieaustausch anhand zweier Pilotprojekte in Weiz
+      (WEIZconnected)
+    url: https://nachhaltigwirtschaften.at/resources/hdz_pdf/endbericht_1828_weizconnected.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-the-green-p-nutzung-von-st-dtischen-verkehrsfl-chen-
+    title: The Green P - Nutzung von städtischen Verkehrsflächen für die Produktion
+      von Biomasse
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe-2018-25-greenp.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-motive-modellierung-optimierung-und-technische-integ
+    title: MOTIVE - Modellierung, Optimierung, und technische Integration von Vakuumglas-Elementen
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe-2018-24-motive.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-dalec-day-and-artificial-light-with-energy-calculati
+    title: DALEC - Day- and Artificial Light with Energy Calculation
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe-2018-23-dalec.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-syn-en-ergy-synergiepotenziale-zwischen-stadtplanung
+    title: Syn[EN]ergy - Synergiepotenziale zwischen Stadtplanungszielen und Photovoltaiknutzung
+      auf Freiflächen
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe-2018-22-synenergy.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-seasonalgridstorage-innovative-saisonale-w-rmespeich
+    title: SeasonalGridStorage - Innovative saisonale Wärmespeicher für urbane Wärmenetze
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe-2018-21-sgs.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-solspongehigh-hohe-solare-deckungsgrade-durch-thermi
+    title: solSPONGEhigh - Hohe solare Deckungsgrade durch thermisch aktivierte Bauteile
+      im urbanen Umfeld
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe_2018-20-solSPONGEhigh.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-leise-wand-innovative-fassaden-f-r-nat-rliche-rauml-
+    title: 'LEIse-Wand: Innovative Fassaden für natürliche Raumlüftung und optimierten
+      Schallschutz'
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe_2018-19_lei_wand.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-pvopti-ray-optimierung-reflektierender-materialien-u
+    title: 'PVOPTI-Ray: Optimierung reflektierender Materialien und Photovoltaik im
+      Stadtraum bezüglich Strahlungsbilanz und Bioklimatik'
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe_2018-18_pvoptiray.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-sondierung-f-r-die-entwicklung-von-moosbewachsenen-g
+    title: Sondierung für die Entwicklung von moosbewachsenen Gebäudefassadenpaneelen
+      (BE-MO-FA)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2018-16-bemofa-klein.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-plus-energie-geb-ude-durch-ein-adaptives-fassadensys
+    title: 'Plus-Energie-Gebäude durch ein adaptives Fassadensystem: thermocollect'
+    url: https://nachhaltigwirtschaften.at/resources/hdz_pdf/berichte/endbericht_1811_thermocollect.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-entwicklung-von-transparenten-technischen-und-wirtsc
+    title: Entwicklung von transparenten, technischen und wirtschaftlichen Modellen
+      für den mittel- und großvolumigen (gemeinnützigen) Wohnbau
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe_2018-08_wohnmodellmitzukunft.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-open-heat-grid-offene-w-rmenetze-in-urbanen-hybridsy
+    title: OPEN HEAT GRID - Offene Wärmenetze in urbanen Hybridsystemen
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe_2018-1a_open-heat-grid.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-hotspots-holistic-thermographic-screening-of-urban-p
+    title: 'Hotspots: Holistic thermographic screening of urban physical objects at
+      transient scales'
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe_2017-48-hotspots.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-model-predictive-control-von-aktiven-bauteilen-und-m
+    title: Model Predictive Control von aktiven Bauteilen und Messungen in zwei Test-BOXen
+      (MPC-BOXES)
+    url: https://nachhaltigwirtschaften.at/resources/hdz_pdf/berichte/endbericht_2017-45_mpc-boxes.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-richt-und-zielwerte-f-r-siedlungen-zur-integralen-be
+    title: Richt- und Zielwerte für Siedlungen zur integralen Bewertung der Klimaverträglichkeit
+      von Gebäuden und Mobilitätsinfrastruktur in Neubausiedlungen
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe_2017-39_richt-zielwerte-siedlungen.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-smart-facade-energetische-potentiale-von-adaptiven-f
+    title: smart facade - energetische Potentiale von adaptiven Fassadensystemen
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe-2017-38-smartfacade.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-eco-suite-hotel-salzburg
+    title: Eco-Suite Hotel Salzburg
+    url: https://nachhaltigwirtschaften.at/resources/hdz_pdf/berichte/endbericht_1735_ecosuitehotel.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-zero-carbon-geb-ude-international
+    title: Zero Carbon Gebäude International
+    url: https://nachhaltigwirtschaften.at/resources/hdz_pdf/berichte/endbericht_1734_zero_carbon_gebaeude_international.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-innovatives-finanzierungs-und-gesch-ftsmodell-f-r-pv
+    title: Innovatives Finanzierungs- und Geschäftsmodell für PV Gemeinschaftsanlagen
+      auf Mehrparteienhäusern zur Vor-Ort Nutzung
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2017-33-pv4residents.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-anwendung-nichtlinearer-regelungstechnik-und-intelli
+    title: Anwendung nichtlinearer Regelungstechnik und intelligenter Sensorik zur Effizienzsteigerung
+      in Gebäuden
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/endbericht-2017-32-aris-845143.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-der-st-dtische-untergrund-als-rohstoffmine-potential
+    title: Der städtische Untergrund als Rohstoffmine? Potential an Sekundärressourcen
+      in der erdverlegten Infrastruktur
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/endbericht_2017-27_suro.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-renew-school-austria-beispiele-und-finanzierungsmode
+    title: 'RENEW SCHOOL AUSTRIA: Beispiele und Finanzierungsmodelle zu Schulsanierungen'
+    url: https://nachhaltigwirtschaften.at/resources/hdz_pdf/berichte/endbericht_1723_renew-school.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-thermisch-optimierte-balkonsanierung-therm-opti-balk
+    title: Thermisch optimierte Balkonsanierung (THERM-opti-BALKON)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2017-21-thermo-opti-balkon.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-energieraumplanung-f-r-smart-city-quartiere-und-smar
+    title: EnergieRaumPlanung für Smart City Quartiere und Smart City Regionen (ERP_hoch3)
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/endbericht_2017-16_erphoch3.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-hocheffiziente-kombinationen-von-solarthermie-photov
+    title: Hocheffiziente Kombinationen von Solarthermie, Photovoltaik und Wärmepumpenanlagen
+      (Sol2Pump)
+    url: https://nachhaltigwirtschaften.at/resources/hdz_pdf/berichte/endbericht_sol2pump_2017-14.pdf
+    source: hdz_at
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: sdz-wohnen-und-arbeiten-in-der-bildungsgemeinde-moosburg
+    title: Wohnen und Arbeiten in der Bildungsgemeinde Moosburg
+    url: https://nachhaltigwirtschaften.at/resources/hdz_pdf/berichte/endbericht_1631_wohnen-in-moosburg.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-idsolutions-l-sungen-f-r-die-sanierung-mit-innend-mm
+    title: IDsolutions – Lösungen für die Sanierung mit Innendämmung im mehrgeschoßigen
+      Gebäudebestand auf Ebene der Nutzungseinheit
+    url: https://nachhaltigwirtschaften.at/resources/hdz_pdf/berichte/endbericht_1624_idsolutions.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-monitoring-urbaner-technologien
+    title: Monitoring urbaner Technologien
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2016-18_mut.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf
+  - id: sdz-energiespeicher-beton-thermische-bauteilaktivierung-
+    title: 'Energiespeicher Beton: Thermische Bauteilaktivierung. Planungsleitfaden
+      Einfamilien- und Reihenhäuser'
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/schriftenreihe-2016-9-energiespeicher-beton.pdf
+    source: hdz_at
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: sdz-programmevaluierung-haus-der-zukunft-1999-2013
+    title: Programmevaluierung Haus der Zukunft 1999 - 2013
+    url: https://nachhaltigwirtschaften.at/resources/hdz_pdf/berichte/endbericht_1607_evaluierungsbericht_haus_der_zukunft.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-rahmenplan-energy-city-graz-reininghaus
+    title: Rahmenplan Energy City Graz-Reininghaus
+    url: https://nachhaltigwirtschaften.at/resources/hdz_pdf/berichte/schriftenreihe-2015-44-RPE_ECR.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-e80-3-subprojekt-5-monitoring-und-verbreitung
+    title: 'e80^3 - Subprojekt 5: Monitoring und Verbreitung'
+    url: https://nachhaltigwirtschaften.at/resources/hdz_pdf/berichte/endbericht_1543_e803_sp5.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-e80-3-subprojekt-4-demonstrationsgeb-ude
+    title: 'e80^3 Subprojekt 4: Demonstrationsgebäude'
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/schriftenreihe-2015-42-e80-3_sp4.pdf
+    source: hdz_at
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: sdz-zertifizierung-von-siedlungen-quartieren
+    title: Zertifizierung von Siedlungen / Quartieren
+    url: https://nachhaltigwirtschaften.at/resources/sdz_pdf/berichte/201527-zertifizierung-von-siedlungen-quartieren.pdf
+    source: hdz_at
+    license: open
+    topic: urban
+    format: pdf

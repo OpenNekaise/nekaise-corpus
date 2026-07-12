@@ -1,0 +1,1766 @@
+# canada — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: nrc-humidity-in-canadian-buildings-canadian-building-dig
+    title: Humidity in Canadian buildings (Canadian Building Digest; no. CBD-1)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=45026a35-5958-4864-9667-115d9f9d2531
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-performance-of-building-materials-canadian-building-
+    title: Performance of building materials (Canadian Building Digest; no. CBD-115)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=6aea5397-9391-4a47-a6f7-f9d4a0c4a107
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-general-recommendations-for-painting-buildings-canad
+    title: General recommendations for painting buildings (Canadian Building Digest;
+      no. CBD-172)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=c011254d-5cdc-4bba-9d27-b1a814a5f580
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-applying-building-codes-to-existing-buildings-canadi
+    title: Applying building codes to existing buildings (Canadian Building Digest;
+      no. CBD-230)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=7b47e684-fcd1-48c2-8371-ca2604817c79
+    source: nrc_canada
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: nrc-blasting-and-building-damage-canadian-building-diges
+    title: Blasting and building damage (Canadian Building Digest; no. CBD-63)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=fd59bc9c-c757-4dd8-8461-b67985cc4ea6
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-water-and-building-materials-canadian-building-diges
+    title: Water and building materials (Canadian Building Digest; no. CBD-30)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=1cba1306-1a3d-422c-9936-f45754a5ab08
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-fire-endurance-of-building-constructions-canadian-bu
+    title: Fire endurance of building constructions (Canadian Building Digest; no. CBD-53)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=7022fa73-01aa-4d30-ab9b-9b640e02eb6b
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-temperature-gradients-through-building-envelopes-can
+    title: Temperature gradients through building envelopes (Canadian Building Digest;
+      no. CBD-36)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=45c7f820-6eda-44de-b79a-520ac413f538
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-stack-effect-and-building-design-canadian-building-d
+    title: Stack effect and building design (Canadian Building Digest; no. CBD-107)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=598b8655-d03a-4779-b59e-d140cf8549a8
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-heat-transfer-at-building-surfaces-canadian-building
+    title: Heat transfer at building surfaces (Canadian Building Digest; no. CBD-52)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=80c6bf5c-c384-49ad-9415-5a368afb834c
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-performance-testing-standards-for-building-canadian-
+    title: Performance testing standards for building (Canadian Building Digest; no.
+      CBD-210)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=2f17ec39-b741-4c5e-8a02-f9cd1c044088
+    source: nrc_canada
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: nrc-thermal-resistance-of-building-insulation-canadian-b
+    title: Thermal resistance of building insulation (Canadian Building Digest; no.
+      CBD-149)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=dc537ce8-ca46-46ab-8f4b-722c1bfc536a
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-thermographic-identification-of-building-enclosure-d
+    title: Thermographic identification of building enclosure defects and deficiencies
+      (Canadian Building Digest; no. CBD-229)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=28f91710-6527-4258-a505-5bd00cfa659b
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-thermal-and-moisture-deformations-in-building-materi
+    title: Thermal and moisture deformations in building materials (Canadian Building
+      Digest; no. CBD-56)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=a600d4b1-34ea-4c3f-956f-8954e2926b38
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-building-automation-an-overview-of-central-control-a
+    title: 'Building automation: an overview of central control and monitoring systems
+      (Canadian Building Digest; no. CBD-214)'
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=81758a36-8738-499c-aed3-451c6506f07b
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-thermal-bridges-in-buildings-canadian-building-diges
+    title: Thermal bridges in buildings (Canadian Building Digest; no. CBD-44)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=696c4e12-5505-4a03-b9cd-a460fe0546df
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-building-technology-and-its-use-canadian-building-di
+    title: Building technology and its use (Canadian Building Digest; no. CBD-200)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=442a9152-770a-4c1f-9d34-c58284fcd181
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-vibrations-in-buildings-canadian-building-digest-no-
+    title: Vibrations in buildings (Canadian Building Digest; no. CBD-232)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=85326a8d-780f-4915-8a82-94d72e2f351c
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-corrosion-in-buildings-canadian-building-digest-no-c
+    title: Corrosion in buildings (Canadian Building Digest; no. CBD-20)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=02928eea-0deb-4287-bc3f-951573a47d31
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-fire-in-buildings-canadian-building-digest-no-cbd-31
+    title: Fire in buildings (Canadian Building Digest; no. CBD-31)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=7f4fe6a4-ad20-462a-ab1d-246caf14e849
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-wind-on-buildings-canadian-building-digest-no-cbd-28
+    title: Wind on buildings (Canadian Building Digest; no. CBD-28)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=f8a4c287-cbca-4e4a-b430-50e9cf571302
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-trees-and-buildings-canadian-building-digest-no-cbd-
+    title: Trees and buildings (Canadian Building Digest; no. CBD-62)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=961ad268-b7ba-42d1-8552-f950beb08dd8
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-effects-of-wood-shrinkage-in-buildings-canadian-buil
+    title: Effects of wood shrinkage in buildings (Canadian Building Digest; no. CBD-244)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=7468efdb-75ff-4e36-b5c9-4d26c06db6a0
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-earthquakes-and-buildings-in-canada-canadian-buildin
+    title: Earthquakes and buildings in Canada (Canadian Building Digest; no. CBD-208)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=5c554ffc-e8cb-4ed2-bda4-98e4e6cef294
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-stack-effect-in-buildings-canadian-building-digest-n
+    title: Stack effect in buildings (Canadian Building Digest; no. CBD-104)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=3a277cf1-57c3-4751-87aa-55eb3a330118
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-spread-of-fire-between-buildings-canadian-building-d
+    title: Spread of fire between buildings (Canadian Building Digest; no. CBD-216)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=e651868c-c5a8-4ac5-871d-af90d57c825b
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-drainage-around-buildings-canadian-building-digest-n
+    title: Drainage around buildings (Canadian Building Digest; no. CBD-156)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=b18cecb9-23ca-4953-900f-9b4ce7567d0f
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-energy-conservation-in-existing-school-buildings-can
+    title: Energy conservation in existing school buildings (Canadian Building Digest;
+      no. CBD-209)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=09bebb48-7eb0-472b-8f94-f968c223ec36
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-buildings-and-life-cycle-costing-canadian-building-d
+    title: Buildings and life-cycle costing (Canadian Building Digest; no. CBD-212)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=448ca1d4-9423-42f3-b01e-9dab12dc7985
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-ground-level-winds-around-tall-buildings-canadian-bu
+    title: Ground-level winds around tall buildings (Canadian Building Digest; no. CBD-174)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=8ecc4b1f-12aa-4f47-8056-976c2bb494aa
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-weather-and-building-canadian-building-digest-no-cbd
+    title: Weather and building (Canadian Building Digest; no. CBD-14)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=28b52264-9eca-4ed1-9e9e-1e73e3d59895
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-failure-of-brick-facing-on-high-rise-buildings-canad
+    title: Failure of brick facing on high-rise buildings (Canadian Building Digest;
+      no. CBD-185)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=946d9b81-a44a-4df8-99f7-aed5fde47d5f
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-chemicals-for-snow-and-ice-control-around-buildings-
+    title: Chemicals for snow and ice control around buildings (Canadian Building Digest;
+      no. CBD-191)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=1f663745-533a-483a-87cc-a8a5953db5fe
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-building-on-fill-canadian-building-digest-no-cbd-87
+    title: Building on fill (Canadian Building Digest; no. CBD-87)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=30873139-f196-4a39-8e9d-43a921cedc5b
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-the-regulation-of-building-construction-canadian-bui
+    title: The regulation of building construction (Canadian Building Digest; no. CBD-237)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=f51e0cdc-1a56-4601-999d-cacd84eb5219
+    source: nrc_canada
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: nrc-introduction-to-building-acoustics-canadian-building
+    title: Introduction to building acoustics (Canadian Building Digest; no. CBD-236)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=47deba40-bff7-446c-95cc-02d08a6327e0
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-control-of-ignition-in-building-materials-canadian-b
+    title: Control of ignition in building materials (Canadian Building Digest; no.
+      CBD-249)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=b7083555-d3d8-4e2c-aa98-b14059987a06
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-the-structure-of-porous-building-materials-canadian-
+    title: The structure of porous building materials (Canadian Building Digest; no.
+      CBD-127)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=66ac1431-227d-4f57-ae49-3ca04920f16a
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-weathering-of-organic-building-materials-canadian-bu
+    title: Weathering of organic building materials (Canadian Building Digest; no. CBD-117)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=7e271b1e-b48e-4bc4-ab55-c85823686c09
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-on-using-old-bricks-in-new-buildings-canadian-buildi
+    title: On using old bricks in new buildings (Canadian Building Digest; no. CBD-138)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=d86205be-e5a2-42a5-9438-3767f817d710
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-portland-cements-in-building-construction-canadian-b
+    title: Portland cements in building construction (Canadian Building Digest; no.
+      CBD-145)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=9e8ae011-a9ca-4f36-81bd-4f550e400d1b
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-accelerated-durability-tests-for-organic-building-ma
+    title: Accelerated durability tests for organic building materials (Canadian Building
+      Digest; no. CBD-118)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=c5ca1cb5-6ac8-4e4f-ac56-52c022ff96e3
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-bricks-canadian-building-digest-no-cbd-169
+    title: Bricks (Canadian Building Digest; no. CBD-169)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=d6be0dc1-f80d-4ac4-9804-8aa18a5a7d0b
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-humidified-buildings-canadian-building-digest-no-cbd
+    title: Humidified buildings (Canadian Building Digest; no. CBD-42)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=e3003b9f-8987-4976-8694-a1e21eb6f6a0
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-soil-and-buildings-canadian-building-digest-no-cbd-3
+    title: Soil and buildings (Canadian Building Digest; no. CBD-3)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=0eaf5772-237b-4eb1-ac8d-978b8df623d6
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-safety-in-buildings-canadian-building-digest-no-cbd-
+    title: Safety in buildings (Canadian Building Digest; no. CBD-114)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=28172aa9-dd6a-4876-994e-6db4dc9696ca
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-noise-transmission-in-buildings-canadian-building-di
+    title: Noise transmission in buildings (Canadian Building Digest; no. CBD-10)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=301f9a06-7b16-431d-a9cc-34fd2b628149
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-flood-proofing-of-buildings-canadian-building-digest
+    title: Flood-proofing of buildings (Canadian Building Digest; no. CBD-198)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=9343724e-9a71-4ebc-8b63-8faa0f20682e
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-wind-pressures-on-buildings-canadian-building-digest
+    title: Wind pressures on buildings (Canadian Building Digest; no. CBD-34)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=2610d377-cdac-4bdc-aa0e-6f231317bb33
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-fire-and-the-design-of-buildings-canadian-building-d
+    title: Fire and the design of buildings (Canadian Building Digest; no. CBD-11)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=3a41edad-de88-4dfe-a9fe-4ea2c4099a8f
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-fire-and-the-compartmentation-of-buildings-canadian-
+    title: Fire and the compartmentation of buildings (Canadian Building Digest; no.
+      CBD-33)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=0312596c-9af7-4ac2-88f4-c3e58cae1641
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-foundations-on-swelling-or-shrinking-subsoils-canadi
+    title: Foundations on swelling or shrinking subsoils (Canadian Building Digest;
+      no. CBD-184)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=42c58aa1-17e6-4e7a-a041-5a687c293d7f
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-air-leakage-in-buildings-canadian-building-digest-no
+    title: Air leakage in buildings (Canadian Building Digest; no. CBD-23)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=02cfa29b-5a20-4870-8046-7379074bcb8e
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-control-of-snow-drifting-about-buildings-canadian-bu
+    title: Control of snow drifting about buildings (Canadian Building Digest; no. CBD-146)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=13911ee6-ef74-4e1c-affe-c04aab9ad439
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-smoke-control-in-high-rise-buildings-canadian-buildi
+    title: Smoke control in high-rise buildings (Canadian Building Digest; no. CBD-134)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=4eb36c33-4ac8-4039-a0c7-4268c531adfb
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-smoke-movement-in-high-rise-buildings-canadian-build
+    title: Smoke movement in high-rise buildings (Canadian Building Digest; no. CBD-133)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=af1afd4c-f8d6-4daf-8d2b-0aea9bf0089e
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-air-supported-structures-canadian-building-digest-no
+    title: Air-supported structures (Canadian Building Digest; no. CBD-137)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=5a4a0627-a35e-4383-bfce-a8f9b84e96d9
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-fire-performance-ratings-canadian-building-digest-no
+    title: Fire performance ratings (Canadian Building Digest; no. CBD-71)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=2d24574a-0dcb-4f7e-8bcc-685696e09869
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-drainage-and-erosion-at-construction-sites-canadian-
+    title: Drainage and erosion at construction sites (Canadian Building Digest; no.
+      CBD-183)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=3bc2facb-038d-47a3-b313-72df5d8b6c5b
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-frost-heave-in-ice-rinks-and-cold-storage-buildings-
+    title: Frost heave in ice rinks and cold storage buildings (Canadian Building Digest;
+      no. CBD-61)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=15a56b8e-8b0a-4b62-858f-33c6da82f1c4
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-heating-and-cooling-requirements-canadian-building-d
+    title: Heating and cooling requirements (Canadian Building Digest; no. CBD-105)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=426b06b0-b9d0-41d2-971f-80c9ea8cdc44
+    source: nrc_canada
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: nrc-thermoplastics-canadian-building-digest-no-cbd-158
+    title: Thermoplastics (Canadian Building Digest; no. CBD-158)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=a4dec974-339c-4aff-86d3-bb6c8375bdaa
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-sound-and-people-canadian-building-digest-no-cbd-41
+    title: Sound and people (Canadian Building Digest; no. CBD-41)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=e676728a-9287-4488-89dd-581f3a3b77fb
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-design-heat-requirements-for-snow-melting-systems-ca
+    title: Design heat requirements for snow melting systems (Canadian Building Digest;
+      no. CBD-160)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=ea4000fb-340b-4fdf-878f-27658e1f7df8
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-inaccuracies-in-construction-canadian-building-diges
+    title: Inaccuracies in construction (Canadian Building Digest; no. CBD-171)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=d9a1a715-fa43-41e0-831b-ea1ec311fadb
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-moisture-and-thermal-considerations-in-basement-wall
+    title: Moisture and thermal considerations in basement walls (Canadian Building
+      Digest; no. CBD-161)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=0967e5cd-1bf3-4fa6-b74d-88fc332e5dd3
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-paint-what-is-it-canadian-building-digest-no-cbd-76
+    title: 'Paint: what is it? (Canadian Building Digest; no. CBD-76)'
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=5f60865d-eb1f-416f-ac4f-31cf143d98bc
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-extreme-temperatures-at-the-outer-surfaces-of-buildi
+    title: Extreme temperatures at the outer surfaces of buildings (Canadian Building
+      Digest; no. CBD-47)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=50653a9d-319f-41e4-992f-7dd5b80b15c8
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-radiation-and-other-weather-factors-canadian-buildin
+    title: Radiation and other weather factors (Canadian Building Digest; no. CBD-122)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=7b9f58b5-392d-4872-9bf2-8af42f286bf9
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-frost-action-and-foundations-canadian-building-diges
+    title: Frost action and foundations (Canadian Building Digest; no. CBD-182)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=ca79b35f-da41-4320-a260-eefb8e751e43
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-space-heating-and-energy-conservation-canadian-build
+    title: Space heating and energy conservation (Canadian Building Digest; no. CBD-142)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=500bda70-10bd-4e86-8a7c-fb16240d1173
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-non-destructive-testing-of-concrete-canadian-buildin
+    title: Non-destructive testing of concrete (Canadian Building Digest; no. CBD-187)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=d79248be-a237-4f1c-b2e2-51a540be1232
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-wind-forces-on-mobile-homes-canadian-building-digest
+    title: Wind forces on mobile homes (Canadian Building Digest; no. CBD-188)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=afe36a96-518b-4625-9b00-6ad7e3909ccb
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-calculating-resistance-to-fire-canadian-building-dig
+    title: Calculating resistance to fire (Canadian Building Digest; no. CBD-204)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=cfa09663-806d-4050-b153-360e50449f58
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-toxic-gases-and-vapours-produced-at-fires-canadian-b
+    title: Toxic gases and vapours produced at fires (Canadian Building Digest; no.
+      CBD-144)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=f31c60f7-83d4-474b-b631-84f0f36e3365
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-thermal-performance-of-concrete-masonry-walls-in-fir
+    title: Thermal performance of concrete masonry walls in fire (Canadian Building
+      Digest; no. CBD-140)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=881d6c66-d386-450f-8911-714c7bc83000
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-biological-attack-on-organic-materials-canadian-buil
+    title: Biological attack on organic materials (Canadian Building Digest; no. CBD-124)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=33f64f04-eab3-459d-94f7-084c9dad6cfa
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-airtight-houses-and-carbon-monoxide-poisoning-canadi
+    title: Airtight houses and carbon monoxide poisoning (Canadian Building Digest;
+      no. CBD-222)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=c19d2997-3141-458e-8ed7-3855c8dafda0
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-cladding-problems-due-to-frame-movements-canadian-bu
+    title: Cladding problems due to frame movements (Canadian Building Digest; no. CBD-125)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=d065a04d-afe1-4289-abd7-d2e5f99048c7
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-heat-pumps-for-residential-heating-canadian-building
+    title: Heat pumps for residential heating (Canadian Building Digest; no. CBD-195)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=8be43e73-ba20-43f8-bb5d-4a214d95f41a
+    source: nrc_canada
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: nrc-sliding-snow-on-sloping-roofs-canadian-building-dige
+    title: Sliding snow on sloping roofs (Canadian Building Digest; no. CBD-228)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=0178340d-cb9e-4e07-8e04-94551cc337d6
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-look-at-joint-performance-canadian-building-digest-n
+    title: Look at joint performance (Canadian Building Digest; no. CBD-97)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=35788dfc-6cf9-48b8-ac89-80ae55b47219
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-a-conceptual-approach-to-the-control-of-fire-hazards
+    title: A conceptual approach to the control of fire hazards (Canadian Building Digest;
+      no. CBD-226)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=a66a027e-add8-4b12-a855-7fe8ed10240f
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-principles-applied-to-an-insulated-masonry-wall-cana
+    title: Principles applied to an insulated masonry wall (Canadian Building Digest;
+      no. CBD-50)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=9a2d21fd-87e9-4bc2-b965-fbb6189508eb
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-control-of-condensation-in-curling-rinks-canadian-bu
+    title: Control of condensation in curling rinks (Canadian Building Digest; no. CBD-35)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=f86a866a-bc94-4ee3-8e67-54939dfdc8ad
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-structural-safety-canadian-building-digest-no-cbd-14
+    title: Structural safety (Canadian Building Digest; no. CBD-147)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=7c40d582-dcb7-4e35-ae70-8095b3854128
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-reinforced-thermosetting-plastic-pipe-canadian-build
+    title: Reinforced thermosetting plastic pipe (Canadian Building Digest; no. CBD-227)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=bfa4fac6-3680-4add-aad8-fde91e82846e
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-glass-thickness-for-windows-canadian-building-digest
+    title: Glass thickness for windows (Canadian Building Digest; no. CBD-132)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=ccb98067-4448-4319-b868-c69cb6311b08
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-concrete-canadian-building-digest-no-cbd-15
+    title: Concrete (Canadian Building Digest; no. CBD-15)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=6f80dcb7-2b36-4b78-8de4-c698e0cfb3b9
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-engineering-site-investigations-canadian-building-di
+    title: Engineering site investigations (Canadian Building Digest; no. CBD-29)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=cd973eec-ed3e-418b-b5cd-f4c59ce83a9d
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-soil-testing-canadian-building-digest-no-cbd-43
+    title: Soil testing (Canadian Building Digest; no. CBD-43)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=1f5ab3a3-cb6b-4db4-b861-85beadab8506
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-decay-of-wood-canadian-building-digest-no-cbd-111
+    title: Decay of wood (Canadian Building Digest; no. CBD-111)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=4db969e0-d114-4ebf-8034-a804f212853c
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-thermal-insulation-in-dwellings-canadian-building-di
+    title: Thermal insulation in dwellings (Canadian Building Digest; no. CBD-16)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=11e00ddd-7090-452d-a15a-136fbad7c6c1
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-daylight-design-canadian-building-digest-no-cbd-17
+    title: Daylight design (Canadian Building Digest; no. CBD-17)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=097b2f91-cb17-46e2-9c3e-d49ac24ac8d0
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-built-up-roofing-canadian-building-digest-no-cbd-24
+    title: Built-up roofing (Canadian Building Digest; no. CBD-24)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=075e5e3f-799c-417c-8a8f-97d7c586b2eb
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-ground-freezing-and-frost-heaving-canadian-building-
+    title: Ground freezing and frost heaving (Canadian Building Digest; no. CBD-26)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=15f6f5eb-a070-4327-aec4-71472a903119
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-office-partitions-acoustical-requirements-for-design
+    title: 'Office partitions: acoustical requirements for design and construction (Canadian
+      Building Digest; no. CBD-186)'
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=a51e884f-1f07-4831-b6a5-3be70630f8d8
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-ground-temperatures-canadian-building-digest-no-cbd-
+    title: Ground temperatures (Canadian Building Digest; no. CBD-180)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=386ddf88-fe8d-45dd-aabb-0a55be826f3f
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-window-air-leakage-canadian-building-digest-no-cbd-2
+    title: Window air leakage (Canadian Building Digest; no. CBD-25)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=df7b268a-091b-4465-bdda-7fe942548c34
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-inspection-and-maintenance-of-flat-roofs-canadian-bu
+    title: Inspection and maintenance of flat roofs (Canadian Building Digest; no. CBD-179)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=fd17ad2c-591c-4eb6-8e85-3c55840c3df2
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-plastics-in-glazing-and-lighting-applications-canadi
+    title: Plastics in glazing and lighting applications (Canadian Building Digest;
+      no. CBD-213)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=34e6fe35-ae19-4766-9853-c7597e096fd5
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-quarry-tile-and-other-ceramic-floor-tiles-canadian-b
+    title: Quarry tile and other ceramic floor tiles (Canadian Building Digest; no.
+      CBD-206)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=23f08c17-ec1b-490c-9151-add404ad433f
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-shrinkage-of-bituminous-roofing-membranes-canadian-b
+    title: Shrinkage of bituminous roofing membranes (Canadian Building Digest; no.
+      CBD-181)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=ae2a4f4e-5fd2-4930-a527-3f198e3a33a4
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-vapour-barriers-what-are-they-are-they-effective-can
+    title: 'Vapour barriers: what are they? are they effective? (Canadian Building Digest;
+      no. CBD-175)'
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=e13f948d-6b12-41c9-90b3-49b20699b1f1
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-limit-states-design-canadian-building-digest-no-cbd-
+    title: Limit states design (Canadian Building Digest; no. CBD-221)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=3c346f2e-8c56-44c5-8bc7-ec9258c8bb61
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-vapour-diffusion-and-condensation-canadian-building-
+    title: Vapour diffusion and condensation (Canadian Building Digest; no. CBD-57)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=897fca5e-67e2-46e0-9e83-c2c456faadf1
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-the-basic-air-conditioning-problem-canadian-building
+    title: The basic air-conditioning problem (Canadian Building Digest; no. CBD-106)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=df4b80b8-f03d-441d-a759-464b1189e558
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-house-basements-canadian-building-digest-no-cbd-13
+    title: House basements (Canadian Building Digest; no. CBD-13)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=a905f9ee-5481-4bd7-a224-1a9b89c6089b
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-floor-vibration-canadian-building-digest-no-cbd-173
+    title: Floor vibration (Canadian Building Digest; no. CBD-173)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=74571169-b6f5-4044-8145-73914e2942d6
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-moisture-considerations-in-roof-design-canadian-buil
+    title: Moisture considerations in roof design (Canadian Building Digest; no. CBD-73)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=12ff3282-447f-4a21-884f-7565d6bbf8ee
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-thermoplastic-pipe-canadian-building-digest-no-cbd-2
+    title: Thermoplastic pipe (Canadian Building Digest; no. CBD-220)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=116ad64b-4411-4524-975d-c67611abb254
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-bituminous-materials-canadian-building-digest-no-cbd
+    title: Bituminous materials (Canadian Building Digest; no. CBD-38)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=523bd2e1-86d2-4398-86fc-e88052d5031b
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-moisture-problems-in-houses-canadian-building-digest
+    title: Moisture problems in houses (Canadian Building Digest; no. CBD-231)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=6d649ada-5d4e-49cc-b029-c3d988f7bd9c
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-fire-safety-of-furnishings-canadian-building-digest-
+    title: Fire safety of furnishings (Canadian Building Digest; no. CBD-243)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=2bba027a-4e54-4e2b-bc30-2bd8683626e0
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-adfreezing-and-frost-heaving-of-foundations-canadian
+    title: Adfreezing and frost heaving of foundations (Canadian Building Digest; no.
+      CBD-128)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=8896d31f-b220-4a29-af64-a673b9d4f2da
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-atmospheric-corrosion-of-metals-canadian-building-di
+    title: Atmospheric corrosion of metals (Canadian Building Digest; no. CBD-170)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=4fc5225b-e007-4025-b4df-beafbaca6e80
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-acoustical-design-of-open-planned-offices-canadian-b
+    title: Acoustical design of open-planned offices (Canadian Building Digest; no.
+      CBD-139)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=63e657e9-76af-4585-bae4-ef9bca325a37
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-acoustical-effects-of-screens-in-landscaped-offices-
+    title: Acoustical effects of screens in landscaped offices (Canadian Building Digest;
+      no. CBD-164)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=3f908f80-8461-4152-8801-91a8ac368c83
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-waste-and-by-products-as-concrete-aggregates-canadia
+    title: Waste and by-products as concrete aggregates (Canadian Building Digest; no.
+      CBD-215)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=4bed21ff-6f00-4428-a4a9-707eb1e91962
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-use-of-plastics-as-piping-materials-canadian-buildin
+    title: Use of plastics as piping materials (Canadian Building Digest; no. CBD-219)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=0f28a7a3-1986-447a-ae75-592c3b0621ba
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-landslides-in-clays-canadian-building-digest-no-cbd-
+    title: Landslides in clays (Canadian Building Digest; no. CBD-143)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=f41fa37c-b951-48a0-8a7f-c17ba0580094
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-effects-of-insulation-on-fire-safety-canadian-buildi
+    title: Effects of insulation on fire safety (Canadian Building Digest; no. CBD-218)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=d29c6ff6-f7db-49b2-ab26-5d73545313b2
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-permafrost-and-foundations-canadian-building-digest-
+    title: Permafrost and foundations (Canadian Building Digest; no. CBD-64)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=2137e26e-6ed9-4f5e-942f-70e40e88618a
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-fire-and-plastic-foam-insulation-material-canadian-b
+    title: Fire and plastic foam insulation material (Canadian Building Digest; no.
+      CBD-178)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=a89d3f54-d1a7-4536-97cd-ae2161e610ca
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-concrete-floor-finishes-canadian-building-digest-no-
+    title: Concrete floor finishes (Canadian Building Digest; no. CBD-22)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=7de6f4b4-dfae-4f19-9b06-3e7828fa3d63
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-bituminous-roofing-membranes-practical-consideration
+    title: 'Bituminous roofing membranes: practical considerations (Canadian Building
+      Digest; no. CBD-211)'
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=8718f824-48e4-459f-97e9-622ebba82f0d
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-spontaneous-ignition-canadian-building-digest-no-cbd
+    title: Spontaneous ignition (Canadian Building Digest; no. CBD-189)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=2b6038f9-1e26-4df9-89fc-351b69f854c2
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-fibre-reinforced-concrete-canadian-building-digest-n
+    title: Fibre-reinforced concrete (Canadian Building Digest; no. CBD-223)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=d4c79e11-5434-4ceb-bf5d-484b50e1fa63
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-domestic-chimneys-and-gas-vents-canadian-building-di
+    title: Domestic chimneys and gas vents (Canadian Building Digest; no. CBD-217)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=72dd73cf-9460-460d-9849-8a995fbc4685
+    source: nrc_canada
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: nrc-calcium-chloride-in-concrete-canadian-building-diges
+    title: Calcium chloride in concrete (Canadian Building Digest; no. CBD-165)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=ce2e913d-e68b-4698-a245-460421620e6c
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-the-reliability-of-automatic-sprinkler-systems-canad
+    title: The reliability of automatic sprinkler systems (Canadian Building Digest;
+      no. CBD-238)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=65edcdb6-8319-4efd-aff9-8083c4dc6218
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-use-of-wood-in-construction-canadian-building-digest
+    title: Use of wood in construction (Canadian Building Digest; no. CBD-88)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=bdfd0a0b-e86c-4815-97ce-7020922683e1
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-mechanical-ventilation-and-air-pressure-in-houses-ca
+    title: Mechanical ventilation and air pressure in houses (Canadian Building Digest;
+      no. CBD-246)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=f1943f09-6f50-4d6e-8556-6f98a9ed3007
+    source: nrc_canada
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: nrc-durability-of-concrete-under-winter-conditions-canad
+    title: Durability of concrete under winter conditions (Canadian Building Digest;
+      no. CBD-116)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=080c21f9-9875-42e3-814e-64d1fd99561c
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-thermal-considerations-in-roof-design-canadian-build
+    title: Thermal considerations in roof design (Canadian Building Digest; no. CBD-70)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=8a48a687-3de0-4d93-9d07-6b1a45a16100
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-thermosetting-plastics-canadian-building-digest-no-c
+    title: Thermosetting plastics (Canadian Building Digest; no. CBD-159)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=3e5be12e-5fbe-4180-97a3-e747171de024
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-plastic-foams-canadian-building-digest-no-cbd-166
+    title: Plastic foams (Canadian Building Digest; no. CBD-166)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=f6c09b6e-e677-4089-9111-7f2605bfa387
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-consideration-of-the-physically-disabled-canadian-bu
+    title: Consideration of the physically disabled (Canadian Building Digest; no. CBD-135)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=1176cad0-3c3b-4007-9942-072c2d3419c7
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-coatings-for-interior-walls-canadian-building-digest
+    title: Coatings for interior walls (Canadian Building Digest; no. CBD-90)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=dbba7ecb-901d-4aac-9788-abe0faf4f3bf
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-air-conditioning-systems-canadian-building-digest-no
+    title: Air conditioning systems (Canadian Building Digest; no. CBD-109)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=ee81e58d-3dae-43a5-bf3c-6de5444c3fd7
+    source: nrc_canada
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: nrc-fire-alarm-and-detection-systems-canadian-building-d
+    title: Fire alarm and detection systems (Canadian Building Digest; no. CBD-233)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=87822fc2-3840-46da-a7f4-b102cecad3fa
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-cold-weather-masonry-construction-canadian-building-
+    title: Cold weather masonry construction (Canadian Building Digest; no. CBD-123)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=0ff5a246-273b-4030-84cd-60eb7ffd74d4
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-roofing-membrane-design-canadian-building-digest-no-
+    title: Roofing membrane design (Canadian Building Digest; no. CBD-95)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=b4d6f6ff-29b6-43db-9723-53b378061ee4
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-air-conditioning-processes-canadian-building-digest-
+    title: Air conditioning processes (Canadian Building Digest; no. CBD-108)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=e6647282-c355-4f0d-b6fb-e993e1c33692
+    source: nrc_canada
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: nrc-winter-construction-canadian-building-digest-no-cbd-
+    title: Winter construction (Canadian Building Digest; no. CBD-7)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=d6e86bab-fb18-4a44-95b3-0372da41c27c
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-computers-in-construction-practice-canadian-building
+    title: Computers in construction practice (Canadian Building Digest; no. CBD-250)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=d9719929-5ac1-4e61-8083-fe06a7c8e7b0
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-properties-and-behaviour-of-plastics-canadian-buildi
+    title: Properties and behaviour of plastics (Canadian Building Digest; no. CBD-157)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=7820e19b-46d5-46b2-bb7d-4eac818802e7
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-irradiation-effects-on-organic-materials-canadian-bu
+    title: Irradiation effects on organic materials (Canadian Building Digest; no. CBD-121)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=86eeeb1c-03ee-4300-a3ba-e832d073721e
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-flashings-for-membrane-roofing-canadian-building-dig
+    title: Flashings for membrane roofing (Canadian Building Digest; no. CBD-69)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=c52cc1eb-e18b-4373-bbe1-cca56c3e74dd
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-indoor-swimming-pools-canadian-building-digest-no-cb
+    title: Indoor swimming pools (Canadian Building Digest; no. CBD-83)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=50734af5-fc2e-4e4a-8035-26dd1934192c
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-caulking-compounds-canadian-building-digest-no-cbd-1
+    title: Caulking compounds (Canadian Building Digest; no. CBD-19)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=7b59312d-6438-4ce1-9176-9e144337b7b5
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-some-implications-of-the-properties-of-wood-canadian
+    title: Some implications of the properties of wood (Canadian Building Digest; no.
+      CBD-86)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=6f196aa5-91e6-4669-addd-b438aa96d7ee
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-selecting-the-foundation-canadian-building-digest-no
+    title: Selecting the foundation (Canadian Building Digest; no. CBD-81)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=0f043b5b-d19f-4144-9f1e-b646f3c6d6ba
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-glazing-in-fire-resistant-wall-assemblies-canadian-b
+    title: Glazing in fire-resistant wall assemblies (Canadian Building Digest; no.
+      CBD-248)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=81bcda38-628d-45c6-9a95-d168251915a3
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-flame-spread-canadian-building-digest-no-cbd-45
+    title: Flame spread (Canadian Building Digest; no. CBD-45)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=9ae306ca-0540-4675-b48e-bce3147d50f3
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-strategies-for-improving-visibility-in-fires-canadia
+    title: Strategies for improving visibility in fires (Canadian Building Digest; no.
+      CBD-246)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=fe5d0167-6d0a-48d7-914a-48ec92f92539
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-removal-of-stains-from-concrete-surfaces-canadian-bu
+    title: Removal of stains from concrete surfaces (Canadian Building Digest; no. CBD-153)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=84447434-d463-4164-b106-3531401f4a0a
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-glass-fibre-reinforced-polyester-composites-canadian
+    title: Glass fibre-reinforced polyester composites (Canadian Building Digest; no.
+      CBD-205)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=9bbc8369-55fb-4ed1-be50-5b7ca8409d9e
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-house-foundations-canadian-building-digest-no-cbd-12
+    title: House foundations (Canadian Building Digest; no. CBD-12)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=d80d0b5e-47ea-40a3-b162-dfceac5dd389
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-use-of-sealants-canadian-building-digest-no-cbd-96
+    title: Use of sealants (Canadian Building Digest; no. CBD-96)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=0872cc24-edcc-4c39-b4b9-9ed504762492
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-wetting-and-drying-of-porous-materials-canadian-buil
+    title: Wetting and drying of porous materials (Canadian Building Digest; no. CBD-130)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=69a7357a-b9e6-46a6-be9f-55156eef62c0
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-thermal-environment-and-human-comfort-canadian-build
+    title: Thermal environment and human comfort (Canadian Building Digest; no. CBD-102)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=df202dd4-556c-4f07-8d5a-0ef90846203b
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-solar-heat-gain-through-glass-walls-canadian-buildin
+    title: Solar heat gain through glass walls (Canadian Building Digest; no. CBD-39)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=898c67b1-d4b2-4826-9211-6e6132e70747
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-control-of-air-leakage-is-important-canadian-buildin
+    title: Control of air leakage is important (Canadian Building Digest; no. CBD-72)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=a5ac3f42-c191-4fcb-9d72-0a483c6640ec
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-principles-of-solar-shading-canadian-building-digest
+    title: Principles of solar shading (Canadian Building Digest; no. CBD-59)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=9111dfc1-169a-4f83-a786-faa6335daae0
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-coatings-for-masonry-surfaces-canadian-building-dige
+    title: Coatings for masonry surfaces (Canadian Building Digest; no. CBD-131)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=d42dc476-bc6a-4558-8df1-99fde8a5b284
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-ventilation-and-air-quality-canadian-building-digest
+    title: Ventilation and air quality (Canadian Building Digest; no. CBD-110)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=4afc03c5-d496-478a-b159-1b8765848089
+    source: nrc_canada
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: nrc-thermal-characteristics-of-double-windows-canadian-b
+    title: Thermal characteristics of double windows (Canadian Building Digest; no.
+      CBD-58)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=afdd2d5b-3d4f-4dbe-b667-c33566a22dc2
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-paints-and-other-coatings-canadian-building-digest-n
+    title: Paints and other coatings (Canadian Building Digest; no. CBD-78)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=7e3150fd-0fcd-46a6-bd0d-c9e662a0d76f
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-joint-movement-and-sealant-selection-canadian-buildi
+    title: Joint movement and sealant selection (Canadian Building Digest; no. CBD-155)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=8fbe571f-ac50-405a-948f-00cdad40d4a4
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-air-ions-and-human-comfort-canadian-building-digest-
+    title: Air ions and human comfort (Canadian Building Digest; no. CBD-199)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=b7fae38b-d029-42b9-91f7-8774e55cde8b
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-factory-sealed-double-glazing-units-canadian-buildin
+    title: Factory-sealed double-glazing units (Canadian Building Digest; no. CBD-46)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=648f1096-8ff5-499c-b695-3dda11cc17d8
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-expansion-of-pyritic-shales-canadian-building-digest
+    title: Expansion of pyritic shales (Canadian Building Digest; no. CBD-152)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=3be4ce93-b334-463e-9afc-49c6518274ba
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-coatings-for-exterior-metal-canadian-building-digest
+    title: Coatings for exterior metal (Canadian Building Digest; no. CBD-98)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=e8850442-a55b-4897-8c5a-bab7c556669e
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-new-roofing-systems-canadian-building-digest-no-cbd-
+    title: New roofing systems (Canadian Building Digest; no. CBD-49)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=98e1524e-dedb-4030-b09d-7bd57054b2b1
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-interior-lighting-design-and-energy-conservation-can
+    title: Interior lighting design and energy conservation (Canadian Building Digest;
+      no. CBD-192)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=b9c06e19-d020-4d79-854e-6696f291c53e
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-silicone-water-repellents-for-masonry-canadian-build
+    title: Silicone water-repellents for masonry (Canadian Building Digest; no. CBD-162)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=c2cf4d86-ad71-42fa-817e-6cb29887a724
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-wood-frame-foundations-canadian-building-digest-no-c
+    title: Wood frame foundations (Canadian Building Digest; no. CBD-234)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=d80f61df-024f-4000-a08c-67240502226e
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-new-organic-coatings-canadian-building-digest-no-cbd
+    title: New organic coatings (Canadian Building Digest; no. CBD-79)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=91baaebd-7b60-42f2-b4ae-99e6ece77f47
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-efflorescence-canadian-building-digest-no-cbd-2
+    title: Efflorescence (Canadian Building Digest; no. CBD-2)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=6f533fda-f66a-4f61-8626-20940e3f657e
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-drainage-from-roofs-canadian-building-digest-no-cbd-
+    title: Drainage from roofs (Canadian Building Digest; no. CBD-151)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=d7ff4625-a7b4-4588-b901-303e7b7be802
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-condensation-on-inside-window-surfaces-canadian-buil
+    title: Condensation on inside window surfaces (Canadian Building Digest; no. CBD-4)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=5b01cc78-a2b5-4be4-be5b-f681e8b741bf
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-condensation-between-panes-of-double-windows-canadia
+    title: Condensation between panes of double windows (Canadian Building Digest; no.
+      CBD-5)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=cd8e9ae4-955f-4d37-b08f-c3700e919690
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-cleaning-of-brickwork-canadian-building-digest-no-cb
+    title: Cleaning of brickwork (Canadian Building Digest; no. CBD-194)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=4163bf5b-da74-4abd-bd96-92385b6d95fd
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-rain-penetration-of-walls-of-unit-masonry-canadian-b
+    title: Rain penetration of walls of unit masonry (Canadian Building Digest; no.
+      CBD-6)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=a9c928f8-a44e-4c29-a19c-94638117e051
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-exterior-coating-for-wood-canadian-building-digest-n
+    title: Exterior coating for wood (Canadian Building Digest; no. CBD-91)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=efbd6364-58d9-4739-a53f-f43735afda6c
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-user-requirements-of-elevators-canadian-building-dig
+    title: User requirements of elevators (Canadian Building Digest; no. CBD-190)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=180e79ce-798c-40d4-9502-7fde22f34157
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-requirements-for-exterior-walls-canadian-building-di
+    title: Requirements for exterior walls (Canadian Building Digest; no. CBD-48)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=6e20b761-6642-4b3d-9eb6-971b534c64e4
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-masonry-mortar-canadian-building-digest-no-cbd-163
+    title: Masonry mortar (Canadian Building Digest; no. CBD-163)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=3a2059fb-c177-4680-a662-853bc0b6a8c8
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-precast-concrete-walls-a-new-basis-for-design-canadi
+    title: 'Precast concrete walls: a new basis for design (Canadian Building Digest;
+      no. CBD-94)'
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=dc1f8498-a671-401e-b4eb-00acd83ea078
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-ice-on-roofs-canadian-building-digest-no-cbd-89
+    title: Ice on roofs (Canadian Building Digest; no. CBD-89)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=7ac35b87-2373-4634-a348-9f644d5476d3
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-groundwater-canadian-building-digest-no-cbd-82
+    title: Groundwater (Canadian Building Digest; no. CBD-82)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=5f4d2b50-d4c4-4014-8e25-2e5ad6d9ed9e
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-cavity-walls-canadian-building-digest-no-cbd-21
+    title: Cavity walls (Canadian Building Digest; no. CBD-21)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=252a21bc-fe92-48b1-b373-19104e9b3061
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-designing-wood-roofs-to-prevent-decay-canadian-build
+    title: Designing wood roofs to prevent decay (Canadian Building Digest; no. CBD-112)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=e51f1d76-a6e3-4e98-bc25-cea5e1c9af5d
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-reflective-glazing-units-canadian-building-digest-no
+    title: Reflective glazing units (Canadian Building Digest; no. CBD-101)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=8214e1ba-a79f-4503-bce1-75e700c2080d
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-room-acoustics-design-for-listening-canadian-buildin
+    title: 'Room acoustics: design for listening (Canadian Building Digest; no. CBD-92)'
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=2a387c1f-2595-47f0-be46-adcd3edb90b8
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-swelling-and-shrinking-subsoils-canadian-building-di
+    title: Swelling and shrinking subsoils (Canadian Building Digest; no. CBD-84)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=770cac02-6311-4b0c-bd7e-6e0ecf08864d
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-evaluation-and-repair-of-deteriorated-garage-floors-
+    title: Evaluation and repair of deteriorated garage floors (Canadian Building Digest;
+      no. CBD-225)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=0e401135-4c32-4eea-ac08-ee79a4ff4782
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-deterioration-of-indoor-parking-garages-canadian-bui
+    title: Deterioration of indoor parking garages (Canadian Building Digest; no. CBD-224)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=3e8fead7-c7c2-4fb3-afdd-b5cf01666190
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-urban-geology-canadian-building-digest-no-cbd-113
+    title: Urban geology (Canadian Building Digest; no. CBD-113)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=9814d874-a144-4aa2-a3f8-c72b1f79b138
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-admixtures-in-portland-cement-concrete-canadian-buil
+    title: Admixtures in Portland cement concrete (Canadian Building Digest; no. CBD-103)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=23d370f2-b098-4711-a2ed-9cd402d3d29e
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-some-basic-characteristics-of-wood-canadian-building
+    title: Some basic characteristics of wood (Canadian Building Digest; no. CBD-85)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=888d3ad8-6220-486f-99b7-549d0874400f
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-rain-penetration-and-its-control-canadian-building-d
+    title: Rain penetration and its control (Canadian Building Digest; no. CBD-40)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=85c77a08-0a5b-4920-8dd5-e8c1ebdf878a
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-sound-transmission-through-windows-canadian-building
+    title: Sound transmission through windows (Canadian Building Digest; no. CBD-240)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=5468d3d7-d326-4d2a-9e80-ecc8b5bec651
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-factors-affecting-sound-transmission-loss-canadian-b
+    title: Factors affecting sound transmission loss (Canadian Building Digest; no.
+      CBD-239)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=6f04ffd7-4531-4ea2-ada6-3df32c9674ee
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-evaluating-the-toxic-hazard-of-fires-canadian-buildi
+    title: Evaluating the toxic hazard of fires (Canadian Building Digest; no. CBD-197)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=9159840b-313a-4254-b848-0b10613b50bc
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-estimating-snow-loads-on-roofs-canadian-building-dig
+    title: Estimating snow loads on roofs (Canadian Building Digest; no. CBD-193)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=96ca4c13-232b-42b7-b75e-ed055ae91324
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-joints-in-conventional-bituminous-roofing-systems-ca
+    title: Joints in conventional bituminous roofing systems (Canadian Building Digest;
+      no. CBD-202)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=ccde0331-086c-41a9-8fff-7b82e29f8144
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-precast-concrete-walls-problems-with-conventional-de
+    title: 'Precast concrete walls: problems with conventional design (Canadian Building
+      Digest; no. CBD-93)'
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=ab50d45d-fbd0-4755-8961-0a780a404a81
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-influence-of-orientation-on-exterior-cladding-canadi
+    title: Influence of orientation on exterior cladding (Canadian Building Digest;
+      no. CBD-126)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=186d8064-77aa-4cec-a575-55a359b184f4
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-humidit-dans-les-b-timents-canadiens-digeste-de-la-c
+    title: Humidité dans les bâtiments canadiens (Digeste de la construction au Canada;
+      no.CBD-1F)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=466af7ea-c038-4dec-923e-1b6a87fccc59
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-single-ply-roofing-membranes-canadian-building-diges
+    title: Single-ply roofing membranes (Canadian Building Digest; no. CBD-235)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=1180d438-3b18-4126-9eb0-6c8f90c8908f
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-superplasticizers-in-concrete-canadian-building-dige
+    title: Superplasticizers in concrete (Canadian Building Digest; no. CBD-203)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=a4c5185a-b1ab-4c2d-879a-055b074fff10
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-concrete-in-sulphate-environments-canadian-building-
+    title: Concrete in sulphate environments (Canadian Building Digest; no. CBD-136)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=a7f77ae8-e385-420e-b9fa-b671a6f4a7c7
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-volume-change-and-creep-of-concrete-canadian-buildin
+    title: Volume change and creep of concrete (Canadian Building Digest; no. CBD-119)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=6bcadeb0-f78c-4fb8-b6d8-e14de04869cc
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-characteristics-of-window-glass-canadian-building-di
+    title: Characteristics of window glass (Canadian Building Digest; no. CBD-60)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=af879ad1-8063-49de-941d-226b771a2d6b
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-application-of-roof-design-principles-canadian-build
+    title: Application of roof design principles (Canadian Building Digest; no. CBD-99)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=88121932-06c6-4b04-9ff2-726a15270fae
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-roof-terraces-canadian-building-digest-no-cbd-75
+    title: Roof terraces (Canadian Building Digest; no. CBD-75)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=78a77fa6-6d68-490d-a870-97519517cac2
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-glazing-design-canadian-building-digest-no-cbd-55
+    title: Glazing Design (Canadian Building Digest; no. CBD-55)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=1a5c09da-0751-4532-868c-823fb7df7447
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-snow-loads-on-roofs-canadian-building-digest-no-cbd-
+    title: Snow loads on roofs (Canadian Building Digest; no. CBD-37)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=95beebcf-d6a6-4654-ad96-60b66c7c93b0
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-rigid-thermoplastic-foams-canadian-building-digest-n
+    title: Rigid thermoplastic foams (Canadian Building Digest; no. CBD-167)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=3f7e63ce-4fcc-46ab-90ee-2ff7b94fb6de
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-plastics-canadian-building-digest-no-cbd-154
+    title: Plastics (Canadian Building Digest; no. CBD-154)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=8d81a5a2-5e60-4933-a6ab-19a180fc96f9
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-strength-of-small-roofs-canadian-building-digest-no-
+    title: Strength of small roofs (Canadian Building Digest; no. CBD-18)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=3dde7ed1-cd73-4285-a81a-7ebb0e3ad347
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-control-of-radon-in-houses-canadian-building-digest-
+    title: Control of radon in houses (Canadian Building Digest; no. CBD-247)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=4fb569f8-481f-4dbc-a890-239af51a9e71
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-hazards-from-products-of-combustion-and-oxygen-deple
+    title: Hazards from products of combustion and oxygen depletion in occupied spaces
+      (Canadian Building Digest; no. CBD-207)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=79cbd7b2-8e33-4d44-a494-7945662017b0
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-rigid-thermosetting-plastic-foams-canadian-building-
+    title: Rigid thermosetting plastic foams (Canadian Building Digest; no. CBD-168)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=6cf6fe71-2e26-411b-b5fb-e475e4a9be5e
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-protected-membrane-roofs-canadian-building-digest-no
+    title: Protected-membrane roofs (Canadian Building Digest; no. CBD-150)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=68025695-e9fe-4549-b801-f8e04af81f8d
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-flammability-of-lining-and-insulating-materials-cana
+    title: Flammability of lining and insulating materials (Canadian Building Digest;
+      no. CBD-141)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=0f3070db-633d-418f-80a6-8659e81ca713
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-mineral-aggregate-roof-surfacing-canadian-building-d
+    title: Mineral aggregate roof surfacing (Canadian Building Digest; no. CBD-65)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=e6646f6a-9d90-4b45-8cab-0d9e2a6e307d
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-polymer-concrete-canadian-building-digest-no-cbd-242
+    title: Polymer concrete (Canadian Building Digest; no. CBD-242)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=9509196b-fe01-49ae-82a0-755471dab950
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-venting-of-flat-roofs-canadian-building-digest-no-cb
+    title: Venting of flat roofs (Canadian Building Digest; no. CBD-176)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=abcb13d9-2f07-48af-b6bd-021ae66a2e19
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-tower-silo-foundations-canadian-building-digest-no-c
+    title: Tower silo foundations (Canadian Building Digest; no. CBD-177)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=ef3dbeb8-1d52-4c7a-ba73-f5ac2767569a
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-safety-from-fires-and-explosions-in-hospital-operati
+    title: Safety from fires and explosions in hospital operating rooms (Canadian Building
+      Digest; no. CBD-32)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=63371d2d-814b-4126-b0f6-f1ae658fb554
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-polymer-modified-concrete-canadian-building-digest-n
+    title: Polymer modified concrete (Canadian Building Digest; no. CBD-241)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=0964e598-525b-4a5b-ab10-5fd4d6cf7538
+    source: nrc_canada
+    license: open
+    topic: materials
+    format: pdf
+  - id: nrc-properties-of-bituminous-membranes-canadian-building
+    title: Properties of bituminous membranes (Canadian Building Digest; no. CBD-74)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=81bc7f8d-0ab0-4a53-954c-220e67fcc593
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-foundation-movements-canadian-building-digest-no-cbd
+    title: Foundation movements (Canadian Building Digest; no. CBD-148)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=b65498c9-e6fa-4a88-86e7-d26381ead9e7
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-potential-for-thermal-breakage-of-sealed-double-glaz
+    title: Potential for thermal breakage of sealed double-glazing units (Canadian Building
+      Digest; no. CBD-129)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=19fbd0ae-ab83-4682-ad1f-fa9e4afdba10
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-vapour-barriers-in-home-construction-canadian-buildi
+    title: Vapour barriers in home construction (Canadian Building Digest; no. CBD-9)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=87d2c55c-7605-472a-82de-502c37ef645a
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-deflections-of-horizontal-structural-members-canadia
+    title: Deflections of horizontal structural members (Canadian Building Digest; no.
+      CBD-54)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=fe15c9a0-10f8-45bf-8cdc-bc2d04e4dac8
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-user-s-guide-national-energy-code-of-canada-for-buil
+    title: 'User''s Guide: National Energy Code of Canada for Buildings 2011'
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=d8d2b862-11ca-44e2-80ea-0aac1f7bad08
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-notes-from-a-one-day-colloquium-on-progressive-colla
+    title: Notes from a one-day colloquium on progressive collapse (Proceedings (National
+      Research Council Canada. Division of Building Research; no. DBR-PR-1)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=f97d26d9-0139-4dc8-be78-6d2f318f245e
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrc-structural-commentaries-user-s-guide-nbc-2015-part-4
+    title: 'Structural Commentaries (User''s Guide: NBC 2015: Part 4 of Division B)'
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=a23153d5-ad9d-46f9-9a29-3f76aa09dd7c
+    source: nrc_canada
+    license: open
+    topic: construction
+    format: pdf
+  - id: nrc-preliminary-notes-on-muskeg-from-churchill-technical
+    title: Preliminary notes on "MUSKEG' from Churchill (Technical Memorandum (National
+      Research Council of Canada. Division of Building Research); no. DBR-TM-7)
+    url: https://nrc-publications.canada.ca/eng/view/ft/?id=dd8cdc2d-a176-41f0-a643-f4b915aeb001
+    source: nrc_canada
+    license: open
+    topic: building_energy
+    format: pdf

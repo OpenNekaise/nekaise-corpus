@@ -40,16 +40,16 @@ for you:
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **40,178** |
-| **Raw originals** | **~135G** (PDF / HTML / source code) |
-| **Extracted text** | **~6.1G** (~6.281B chars, **≈1.570B tokens**) |
+| **Documents** | **42,079** |
+| **Raw originals** | **~140G** (PDF / HTML / source code) |
+| **Extracted text** | **~6.3G** (~6.479B chars, **≈1.620B tokens**) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): building_energy 13,627 · equipment_systems 9,009 · construction 5,082 · structures_civil 4,536 · materials 2,320 · architecture 1,833 · infrastructure 1,478 · standards_protocols 935 · controls_bas 702 · commissioning_fdd 354 · urban 302.
+**By topic** (a source gets one at registration): building_energy 14,270 · equipment_systems 9,296 · construction 5,509 · structures_civil 4,654 · materials 2,467 · architecture 1,937 · infrastructure 1,546 · standards_protocols 1,009 · controls_bas 702 · commissioning_fdd 354 · urban 335.
 
-**By license:** open 8,699 · public-domain 27,151 · cc-by-sa 1,106 · cc-by 3,217 · proprietary-internal 5.
+**By license:** open 9,548 · public-domain 27,851 · cc-by-sa 1,334 · cc-by 3,341 · proprietary-internal 5.
 
-_Snapshot of the live registry (2026-07-11) — auto-generated from `manifest.jsonl`. The bytes are not
+_Snapshot of the live registry (2026-07-12) — auto-generated from `manifest.jsonl`. The bytes are not
 shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._
 <!-- STATS:END -->
 

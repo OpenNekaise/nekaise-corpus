@@ -3703,3 +3703,46 @@ sources:
     license: cc-by
     topic: urban
     format: pdf
+  # ---------- IEA flagship reports (CC-BY-4.0; verified per report page 2026-07-12) ----------
+  - id: iea-future-of-heat-pumps
+    title: "IEA — The Future of Heat Pumps (World Energy Outlook special report, 2022)"
+    url: https://iea.blob.core.windows.net/assets/4713780d-c0ae-4686-8c9b-29e782452695/TheFutureofHeatPumps.pdf
+    source: iea
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: iea-future-of-heat-pumps-in-china
+    title: "IEA — The Future of Heat Pumps in China (2024)"
+    url: https://iea.blob.core.windows.net/assets/c099bae3-40f1-48cf-b905-64ff37755867/FutureofHeatpumpsinChina.pdf
+    source: iea
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: iea-future-of-cooling
+    title: "IEA — The Future of Cooling: Opportunities for energy-efficient air conditioning (2018)"
+    url: https://iea.blob.core.windows.net/assets/0bb45525-277f-4c9c-8d0c-9c0cb5e7d525/The_Future_of_Cooling.pdf
+    source: iea
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: iea-energy-efficiency-2024
+    title: "IEA — Energy Efficiency 2024 (annual market report)"
+    url: https://iea.blob.core.windows.net/assets/f304f2ba-e9a2-4e6d-b529-fb67cd13f646/EnergyEfficiency2024.pdf
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: iea-energy-efficiency-2025
+    title: "IEA — Energy Efficiency 2025 (annual market report)"
+    url: https://iea.blob.core.windows.net/assets/23a80bb2-6985-4507-ab99-c1d700f6548b/EnergyEfficiency2025.pdf
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: iea-critical-role-of-buildings
+    title: "IEA — The Critical Role of Buildings: Perspectives for the Clean Energy Transition (2019)"
+    url: https://iea.blob.core.windows.net/assets/026bff1b-821d-48bc-8a0e-7c10280c62bc/Perspectives_for_the_Clean_Energy_Transition_2019.pdf
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
