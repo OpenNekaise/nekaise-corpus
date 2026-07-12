@@ -22,9 +22,7 @@ hand as `/dig` any time you want to grow the corpus in one shot.
    Backends (same pattern): `find_osti` (deep OSTI) · `find_archive` (pre-1929 PD texts) ·
    `find_books` (OAPEN books, ALL languages) · `find_openaire` (EU deliverables) · `find_nist`
    (NIST/NBS via Crossref) · `find_zenodo` (CC records; keep `--max 100`) · `find_patents`
-   (US patents via Google sitemap — the biggest open vein) · `find_wiki` (multilingual Wikipedia) ·
-   `find_nrc` (NRC Canada archive: CBD digests, DBR/IRC reports — rotate queries via `--q`, see
-   rotation.json note).
+   (US patents via Google sitemap — the biggest open vein) · `find_wiki` (multilingual Wikipedia).
    Plus non-rotating: `find_sources.py --per 20 --append`, `find_github.py --append` (head mostly
    mined out). `find_ibpsa` is PAUSED (see rotation.json note). All backends dedup against
    `manifest.jsonl` + the registry + `pruned_urls.txt` before appending — re-running is safe.

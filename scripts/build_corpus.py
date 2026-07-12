@@ -51,13 +51,15 @@ TIMEOUT = 45
 TEXT_FORMATS = {"md", "rst", "txt"}
 # politeness: never more than this many in-flight requests against one host, however many workers.
 PER_HOST = 2
-# hosts whose WAF tarpits at volume (410s/captchas every client after ~dozens of rapid hits, then
-# recovers — nrc-publications 07-12): minimum seconds between request STARTS against that host.
-HOST_DELAY = {"nrc-publications.canada.ca": 2.5}
-# hosts that 410/block the spoofed-browser UA but pass an honest bot UA (nrc-publications 07-12:
-# fake Chrome = 410, plain-named client = 200 — the inverse of the Google-patents WAF the spoofed
-# UA exists for). Overrides UA for both the requests call and the curl fallback.
-HOST_UA = {"nrc-publications.canada.ca": "nekaise-corpus (open research corpus builder)"}
+# politeness overrides for hosts that need them (currently none). HOST_DELAY: minimum seconds
+# between request STARTS against a host, enforced under its semaphore — for hosts that tarpit at
+# volume. HOST_UA: per-host User-Agent override, applied to both the requests call and the curl
+# fallback — for hosts that block the spoofed-browser UA but pass an honest bot UA. Before adding
+# a host here to work around its wall, check its ToS/robots.txt — a wall is sometimes the host
+# enforcing terms we must respect (nrc-publications.canada.ca, 07-12: "systematic downloading is
+# not permitted" — that vein was reverted, NO-GO).
+HOST_DELAY: dict[str, float] = {}
+HOST_UA: dict[str, str] = {}
 
 _host_sems: dict[str, threading.BoundedSemaphore] = {}
 _host_sems_lock = threading.Lock()

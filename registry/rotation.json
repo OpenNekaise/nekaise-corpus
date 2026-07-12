@@ -86,11 +86,5 @@
     "flag": "--bucket",
     "next": "2019-W45",
     "note": "CN patents (Chinese full text; license=open). Same weekly-bucket walk as find_patents but separate pointer; marathon runs it with --countries CN. Mined: 2018/2019/2020-W03, 2019-W46 (+400 on 07-12)."
-  },
-  "find_nrc": {
-    "flag": "--page",
-    "next": 1,
-    "step": 4,
-    "note": "NRC Canada Publications Archive (~23k full-text objects; run with --pages 4, rotate queries via --q). DONE 07-12: 'canadian building digest' (251, complete CBD-1..250) + 'building research note' p1-3 (5, rest overlap/citation-only). NEXT --q: 'division of building research' (large), then 'building practice note', 'national building code' (old PD editions); reset next=1 when switching query"
   }
 }
