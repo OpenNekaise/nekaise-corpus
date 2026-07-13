@@ -3846,3 +3846,66 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
+  - id: nrcan-heat-recovery-ventilators
+    title: "NRCan — Heat Recovery Ventilators (HRV selection, installation and operation)"
+    url: https://natural-resources.canada.ca/sites/nrcan/files/oee/files/pdf/publications/HRV_EN.pdf
+    source: nrcan_oee
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: nrcan-necb-2011-buildings-guide
+    title: "NRCan — ecoENERGY Efficiency for Buildings: National Energy Code of Canada for Buildings 2011"
+    url: https://natural-resources.canada.ca/sites/nrcan/files/oee/files/pdf/publications/commercial/codes_eng.pdf
+    source: nrcan_oee
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: nrcan-buildings-benchmarking-tools
+    title: "NRCan — ecoENERGY Efficiency for Buildings: Benchmarking Tools for commercial building energy performance"
+    url: https://natural-resources.canada.ca/sites/nrcan/files/oee/files/pdf/publications/commercial/Benchmarking_eng.pdf
+    source: nrcan_oee
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrcan-buildings-commissioning-recommissioning
+    title: "NRCan — ecoENERGY Efficiency for Buildings: Building Commissioning and Recommissioning"
+    url: https://natural-resources.canada.ca/sites/nrcan/files/oee/files/pdf/publications/commercial/CxRCx_eng.pdf
+    source: nrcan_oee
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: nrcan-grander-view-case-study
+    title: "NRCan — A Grander View of the Future: Enermodal Engineering high-performance office building case study"
+    url: https://natural-resources.canada.ca/sites/nrcan/files/oee/files/pdf/publications/commercial/Grander_View_e.pdf
+    source: nrcan_oee
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrcan-federal-buildings-initiative
+    title: "NRCan — Federal Buildings Initiative: energy performance retrofits in federal facilities"
+    url: https://natural-resources.canada.ca/sites/nrcan/files/oee/files/pdf/publications/commercial/FBI_eng.pdf
+    source: nrcan_oee
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrcan-buildings-awareness-program
+    title: "NRCan — Implementing an Energy Efficiency Awareness Program in commercial and institutional buildings"
+    url: https://natural-resources.canada.ca/sites/nrcan/files/oee/files/pdf/publications/commercial/Awareness_Program_e.pdf
+    source: nrcan_oee
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrcan-energy-performance-contracting-federal
+    title: "NRCan — Energy Performance Contracting: Guide for Federal Buildings"
+    url: "https://natural-resources.canada.ca/sites/nrcan/files/oee/files/pdf/communities-government/buildings/federal/pdf/12-0419%20-%20EPC_e.pdf"
+    source: nrcan_oee
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrcan-10-questions-ask-builder
+    title: "NRCan — Building an Energy-Efficient Home: 10 Questions to Ask Your Builder"
+    url: https://natural-resources.canada.ca/sites/nrcan/files/oee/files/pdf/infosource/M144-174-2010E.pdf
+    source: nrcan_oee
+    license: open
+    topic: construction
+    format: pdf

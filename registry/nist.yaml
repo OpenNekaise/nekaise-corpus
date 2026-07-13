@@ -32143,14 +32143,6 @@ sources:
     license: public-domain
     topic: architecture
     format: pdf
-  - id: nst-summary-and-conclusions-of-a-workshop-on-quantifying
-    title: Summary and Conclusions of a Workshop on “Quantifying the Contribution of
-      Flaming Residential Upholstered Furniture to Fire Losses in the United State
-    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1757.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: architecture
-    format: pdf
   - id: nst-fire-tests-of-columns-protected-with-gypsum
     title: Fire tests of columns protected with gypsum
     url: https://nvlpubs.nist.gov/nistpubs/jres/10/jresv10n6p737_A2b.pdf
@@ -33078,6 +33070,850 @@ sources:
     title: Application of the interferometer to the measurement of dimensional changes
       in rubber
     url: https://nvlpubs.nist.gov/nistpubs/jres/23/jresv23n5p571_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-134-2nd-editi
+    title: 'Circular of the Bureau of Standards no. 134 2nd edition:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular134e2.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-preliminary-data-collected-from-the-camp-fire-reconn
+    title: Preliminary Data Collected from the Camp Fire Reconnaissance
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2128.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-analysis-of-fire-data-large-scale-tests-and-small-sc
+    title: Analysis of fire data, large-scale tests, and small-scale tests for conveyor
+      belts used in underground coal mines
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir81-2256.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-a-plan-for-the-development-of-the-generic-framework-
+    title: A plan for the development of the generic framework and associated computer
+      software for a consolidated compartment fire model computer code
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir86-3500.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-evacuation-decision-making-in-the-2016-chimney-tops-
+    title: 'Evacuation decision-making in the 2016 chimney tops 2 fire: results of a
+      household survey'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2103.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-aid-for-decontamination-of-fire-and-rescue-service-p
+    title: Aid for decontamination of fire and rescue service protective clothing and
+      equipment after chemical, biological, and radiological exposures
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication981.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-fire-clay-ladle-sleeves
+    title: Fire-clay ladle sleeves
+    url: https://nvlpubs.nist.gov/nistpubs/jres/20/jresv20n3p411_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-114-2nd-editi
+    title: 'Circular of the Bureau of Standards no. 114 2nd edition:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular114e2.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-fire-clays-some-fundamental-properties-at-several-te
+    title: Fire clays; Some fundamental properties at several temperatures
+    url: https://nvlpubs.nist.gov/nistpubs/jres/5/jresv5n2p213_A2b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-testing-of-fire-clay-brick-with-special-reference-to
+    title: Testing of fire-clay brick with special reference to their use in coal-fired
+      boiler settings.
+    url: https://nvlpubs.nist.gov/nistpubs/nbstechnologic/nbstechnologicpaperT279.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-effect-of-fire-retardant-coatings-and-accelerated-we
+    title: Effect of Fire-Retardant Coatings and Accelerated-Weathering on the Flammability
+      of Wood-Based Materials in Wildland-Urban Interface (WUI) Communities
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2094.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-fire-resistant-doped-fabric-for-aircraft
+    title: Fire-resistant doped fabric for aircraft
+    url: https://nvlpubs.nist.gov/nistpubs/jres/14/jresv14n5p575_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-report-no-7
+    title: 'Report No. 7 :'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir75-657.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-fire-dynamics-simulator-version-2
+    title: 'Fire dynamics simulator (version 2) :'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6783e2002.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-assessing-fire-blocking-effectiveness-of-barrier-fab
+    title: Assessing fire-blocking effectiveness of barrier fabrics in the cone calorimeter
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2043.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-large-scale-compartment-fire-toxicity-study
+    title: 'Large-scale compartment fire toxicity study :'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir88-3764.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-a-comparison-of-the-heat-insulating-properties-of-so
+    title: A comparison of the heat-insulating properties of some of the materials used
+      in fire-resistive constructions.
+    url: https://nvlpubs.nist.gov/nistpubs/nbstechnologic/nbstechnologicpaperT130.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-analysis-of-a-steel-gravity-frame-with-composite-flo
+    title: 'Analysis of a steel gravity frame with composite floor system subjected
+      to compartment fire (test #2)'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2269.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-ventcf2
+    title: 'VENTCF2:'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5470.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-report-of-experimental-results-for-the-international
+    title: 'Report of experimental results for the international fire model benchmarking
+      and validation exercise #3'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication1013-1.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-a-comparison-of-ceiling-jet-temperatures-measured-in
+    title: A comparison of ceiling jet temperatures measured in an aircraft hanger test
+      fire with temperatures predicted by the DETACT-QS and LAVENT computer mod
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4947.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-hazard-i-volume-1
+    title: 'Hazard I. Volume 1 :'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir87-3602.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-compartment-fire-experiments-on-long-span-composite-
+    title: 'Compartment fire experiments on long-span composite-beams with simple shear
+      connections part 2:'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2055.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-fire-tests-of-treated-and-untreated-wood-partitions
+    title: Fire tests of treated and untreated wood partitions
+    url: https://nvlpubs.nist.gov/nistpubs/jres/20/jresv20n2p217_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-report-no-8
+    title: 'Report no. 8 :'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir75-725.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-measurements-and-observations-of-the-toxicological-h
+    title: Measurements and observations of the toxicological hazard of fire in a metrorail
+      interior mock-up
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir75-966.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-evaluation-of-alternative-in-flight-fire-suppressant
+    title: Evaluation of alternative in-flight fire suppressants for full-scale testing
+      in simulated aircraft engine nacelles and dry bays
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication861.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-applications-of-the-generalized-global-equivalence-r
+    title: "Applications of the Generalized Global Equivalence Ratio Model (GGERM)\n\
+      \                        for predicting the generation rate and distribution of "
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4590.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-penetration-resistance-of-concrete-a-review
+    title: Penetration resistance of concrete- a review
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nbsspecialpublication480-45.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-masonry-wall-resistance-to-rain-penetration
+    title: Masonry wall resistance to rain penetration
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/TIBM/nbstibm58.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-penetration-resistance-tests-of-reinforced-concrete-
+    title: Penetration resistance tests of reinforced concrete barriers
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir73-101.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-weather-resistance-of-porcelain-enamels
+    title: Weather resistance of porcelain enamels
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/BSS/nbsbuildingscience4.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-calibration-procedures-for-direct-current-resistance
+    title: Calibration procedures for direct-current resistance apparatus
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/MONO/nbsmonograph39.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-a-method-of-adjusting-the-temperature-coefficient-an
+    title: A method of adjusting the temperature coefficient and resistance of low-valued
+      resistance standards
+    url: https://nvlpubs.nist.gov/nistpubs/jres/12/jresv12n2p147_A2b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-testing-for-the-impact-resistance-of-ophthalmic-lens
+    title: Testing for the impact resistance of ophthalmic lenses
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir76-996.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-letter-circular-221
+    title: 'Letter Circular 221:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular221.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-summary-and-conclusions-of-a-workshop-on-quant-2
+    title: Summary and Conclusions of a Workshop on “Quantifying the Contribution of
+      Flaming Residential Upholstered Furniture to Fire Losses in the United State
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1757r1.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-safety-rules-for-the-installation-and-maintena-2
+    title: "Safety rules for the installation and maintenance of electric supply\n \
+      \                       stations: comprising part I and the grounding rules of\
+      \ th"
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/hb/nbshandbook31.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-safety-rules-for-the-installation-and-maintena-3
+    title: "Safety rules for the installation and maintenance of electric supply\n \
+      \                       stations: comprising part 3 and the grounding rules of\
+      \ th"
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/hb/nbshandbook33.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-safety-rules-for-the-installation-and-maintena-4
+    title: "Safety rules for the installation and maintenance of electrical supply\n\
+      \                        stations: comprising part 1 and the grounding rules of "
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/hb/nbshandbook6.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-safety-rules-for-the-installation-and-maintena-5
+    title: "Safety rules for the installation and maintenance of electric supply\n \
+      \                       stations: comprising part 2 and the grounding rules of\
+      \ th"
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/hb/nbshandbook32.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-technical-assessment-of-safety-for-hair-dryerstylers
+    title: Technical assessment of safety for hair dryerstylers
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir76-1112.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-guidelines-for-pressure-vessel-safety-assessment
+    title: Guidelines for pressure vessel safety assessment
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication780.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-a-study-of-personal-fall-safety-equipment
+    title: A study of personal fall-safety equipment
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir76-1146.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-evaluation-of-safety-symbols
+    title: Evaluation of safety symbols
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir79-1760.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-american-logging-and-sawmill-safety-code-a-code-of-s
+    title: "American logging and sawmill safety code: a code of safety standards for\n\
+      \                        use in logging operations and in the construction, op"
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/hb/nbshandbook5.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: architecture
+    format: pdf
+  - id: nst-electrical-properties-of-biological-materials
+    title: 'Electrical properties of biological materials:'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6564.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-a-review-of-zinc-oxide-eugenol-type-filling-material
+    title: A review of zinc oxide-eugenol type filling materials and cements
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport8647.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-a-numerical-model-for-combustion-of-bubbling-thermop
+    title: A numerical model for combustion of bubbling thermoplastic materials in microgravity
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6894.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-ultrasonic-methods-for-determination-of-mechanical-p
+    title: 'Ultrasonic methods for determination of mechanical properties of dental
+      materials :'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport10177.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-letter-circular-538
+    title: 'Letter Circular 538:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular538.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-1982-annual-report
+    title: '1982 annual report :'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir83-2649.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-hazardous-combustible-characteristics-of-cabin-mater
+    title: 'Hazardous combustible characteristics of cabin materials January to Marach
+      1968:'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport9696.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-water-vapor-measurements-of-low-slope-roofing-materi
+    title: Water-vapor measurements of low-slope roofing materials
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5681.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-nist-measurement-service-for-electromagnetic-charact
+    title: NIST measurement service for electromagnetic characterization of materials
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5006.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-materials-reliability-division-fy-2001-programs-and-
+    title: Materials reliability division, FY 2001 programs and accomplishments
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6795.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-development-of-standards-for-flexible-caselining-mat
+    title: Development of standards for flexible caselining materials/
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/MP/nbsmiscellaneouspub182.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-simulated-precipitation-reference-materials-iii
+    title: Simulated precipitation reference materials, III
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir79-1953.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-ignition-and-lateral-flame-spread-characteristics-of
+    title: "Ignition and lateral flame spread characteristics of certain composite\n\
+      \                        materials"
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir89-4030.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-biodeterioration-of-standard-reference-materials
+    title: Biodeterioration of standard reference materials
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir81-2246.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-dielectric-and-conductor-loss-characterization-and-m
+    title: Dielectric and conductor-loss characterization and measurements on electronic
+      packaging materials
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote1520.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-1981-annual-report-office-of-standard-reference-mate
+    title: 1981 annual report Office of Standard Reference Materials
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir81-2447.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-reference-materials-for-the-determination-of-trace-e
+    title: Reference materials for the determination of trace elements in biological
+      fluids
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir73-406.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-letter-circular-1013
+    title: 'Letter Circular 1013:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular1013r1953.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-a-semi-quantitative-model-for-the-burning-rate-of-so
+    title: A semi-quantitative model for the burning rate of solid materials
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4840.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-materials-reliability-division-fy-2000-programs-and-
+    title: Materials reliability division, FY 2000 programs and accomplishments
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6595.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-microbiological-deterioration-of-organic-materials
+    title: 'Microbiological deterioration of organic materials :'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/MP/nbsmiscellaneouspub188.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-survey-of-roofing-materials-in-the-northeastern-stat
+    title: Survey of roofing materials in the northeastern states
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/BMS/nbsbuildingmaterialsstructures29.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-materials-reliability-division-fy-2004-programs-and-
+    title: Materials Reliability Division FY 2004 programs and accomplishments
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7125.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-water-tightness-of-expansion-joint-materials-in-conc
+    title: Water-tightness of expansion joint materials in concrete roof construction
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/TIBM/nbstibm55.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-hazardous-combustible-characteristics-of-cabin-2
+    title: 'Hazardous combustible characteristics of cabin materials July to December
+      1967:'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport9656.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-survey-on-metallic-implant-materials
+    title: Survey on metallic implant materials
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir73-420.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-letter-circular-249
+    title: 'Letter Circular 249:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular249.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-letter-circular-502g
+    title: 'Letter Circular 502G:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular502G.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-hazardous-combustible-characteristics-of-cabin-3
+    title: 'Hazardous combustible characteristics of cabin materials:'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport9913.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-adsorption-of-water-on-tooth-components-and-related-
+    title: 'Adsorption of water on tooth components and related materials :'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport10609.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-chemistry-of-electronic-ceramic-materials
+    title: Chemistry of electronic ceramic materials
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication804.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: materials
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-63
+    title: 'Circular of the Bureau of Standards no. 63:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular63.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-14-4th-editio
+    title: 'Circular of the Bureau of Standards no. 14 4th edition:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular14e4.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-81-2nd-editio
+    title: 'Circular of the Bureau of Standards no. 81 2nd edition:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular81e2.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-443
+    title: 'Circular of the Bureau of Standards no. 443:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular443.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-6-4th-edition
+    title: 'Circular of the Bureau of Standards no. 6 4th edition:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular6e4.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-letter-circular-1107
+    title: 'Letter Circular 1107:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular1107.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-345
+    title: 'Circular of the Bureau of Standards no. 345:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular345.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-362
+    title: 'Circular of the Bureau of Standards no. 362:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular362.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-248
+    title: 'Circular of the Bureau of Standards no. 248:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular248.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-97
+    title: 'Circular of the Bureau of Standards no. 97:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular97.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-103-2nd-editi
+    title: 'Circular of the Bureau of Standards no. 103 2nd edition:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular103e2.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-302
+    title: 'Circular of the Bureau of Standards no. 302:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular302.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-245
+    title: 'Circular of the Bureau of Standards no. 245:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular245.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-192
+    title: 'Circular of the Bureau of Standards no. 192:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular192.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-547-section-1
+    title: 'Circular of the Bureau of Standards no. 547 section 1:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular547.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-14-2nd-editio
+    title: 'Circular of the Bureau of Standards no. 14 2nd edition:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular14e2.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-278
+    title: 'Circular of the Bureau of Standards no. 278:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular278.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-391
+    title: 'Circular of the Bureau of Standards no. 391:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular391.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-379
+    title: 'Circular of the Bureau of Standards no. 379:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular379.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-272
+    title: 'Circular of the Bureau of Standards no. 272:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular272.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-26-3rd-editio
+    title: 'Circular of the Bureau of Standards no. 26 3rd edition:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular26e3.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-132-2nd-editi
+    title: 'Circular of the Bureau of Standards no. 132 2nd edition:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular132e2.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-arc-measurement-of-some-argon-transition-probabiliti
+    title: Arc measurement of some argon transition probabilities
+    url: https://nvlpubs.nist.gov/nistpubs/jres/69A/jresv69An6p495_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-continuous-measurement-of-atmospheric-ozone-by-an-au
+    title: Continuous measurement of atmospheric ozone by an automatic photoelectric
+      method
+    url: https://nvlpubs.nist.gov/nistpubs/jres/52/jresv52n3p133_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-x-ray-measurement-of-the-thickness-of-the-cold-worke
+    title: X-ray measurement of the thickness of the cold-worked surface layer resulting
+      from metallographic polishing
+    url: https://nvlpubs.nist.gov/nistpubs/jres/29/jresv29n2p177_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-standardization-of-light-scattering-measurement-in-c
+    title: Standardization of light scattering measurement in conjunction with immunochemical
+      analysis
+    url: https://nvlpubs.nist.gov/nistpubs/jres/80A/jresv80An4p605_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-on-the-actinometric-measurement-of-absolute-luminesc
+    title: On the actinometric measurement of absolute luminescence quantum yields
+    url: https://nvlpubs.nist.gov/nistpubs/jres/80A/jresv80An3p409_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-method-for-determining-individual-hydrocar-bons-in-m
+    title: Method for determining individual hydrocar- bons in mixtures of hydrocarbons
+      by measurement of freezing points
+    url: https://nvlpubs.nist.gov/nistpubs/jres/32/jresv32n5p185_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-measurement-in-roentgens-of-the-gamma-radiation-from
+    title: Measurement, in roentgens, of the gamma radiation from radium by the free-air
+      ionization chamber
+    url: https://nvlpubs.nist.gov/nistpubs/jres/24/jresv24n3p247_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-high-accuracy-measurement-of-aperture-area-relative-
+    title: High-Accuracy Measurement of Aperture Area Relative to A Standard Known Aperture
+    url: https://nvlpubs.nist.gov/nistpubs/jres/100/3/j13fow.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-measurement-of-absorption-and-scattering-with-an-int
+    title: 'Measurement of Absorption and Scattering With an Integrating Sphere Detector:
+      Application to Microalgae'
+    url: https://nvlpubs.nist.gov/nistpubs/jres/114/2/V114.N02.A01.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-the-nmr-spectral-measurement-database-a-system-for-o
+    title: "The NMR Spectral Measurement Database: A System for Organizing and\n   \
+      \             Accessing NMR Spectra of Therapeutic Proteins"
+    url: https://nvlpubs.nist.gov/nistpubs/jres/126/jres.126.035.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-on-the-theory-of-the-matthews-and-the-russell-leonar
+    title: On the theory of the Matthews and the Russell-Leonard photometers for the
+      measurement of mean spherical and mean hemispherical intensities
+    url: https://nvlpubs.nist.gov/nistpubs/bulletin/01/nbsbulletinv1n2p255_A2b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-an-iterative-image-registration-algorithm-by-optimiz
+    title: An iterative image registration algorithm by optimizing similarity measurement
+    url: https://nvlpubs.nist.gov/nistpubs/jres/115/1/V115.N01.A01.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-measurement-assurance-program-transmittance-standard
+    title: 'Measurement Assurance Program Transmittance Standards for Spectrophotometric
+      Linearity Testing: Preparation and Calibration'
+    url: https://nvlpubs.nist.gov/nistpubs/jres/088/jresv88n1p25_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-accuracy-of-the-double-variation-technique-of-refrac
+    title: Accuracy of the double variation technique of refractive index measurement
+    url: https://nvlpubs.nist.gov/nistpubs/jres/097/jresv97n6p693_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-measurement-of-scattering-and-absorption-cross-secti
+    title: Measurement of Scattering and Absorption Cross Sections of Dyed Microspheres
+    url: https://nvlpubs.nist.gov/nistpubs/jres/118/jres.118.002.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-a-three-ratio-scheme-for-the-measurement-of-isotopic
+    title: A three-ratio scheme for the measurement of isotopic ratios of silicon
+    url: https://nvlpubs.nist.gov/nistpubs/jres/098/jresv98n2p225_A1b.pdf
     source: nist_crossref
     license: public-domain
     topic: standards_protocols
