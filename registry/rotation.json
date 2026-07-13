@@ -2,43 +2,43 @@
   "_readme": "Shared excavation state for the discovery loop — read/advance via scripts/rotation.py. Committed so any agent/machine resumes where the last one stopped. History of what is already mined lives in git log + manifest.jsonl.",
   "find_osti": {
     "flag": "--page",
-    "next": 61,
+    "next": 63,
     "step": 2,
     "note": "run with --rows 50 --pages 2; ~200k records/query universe"
   },
   "find_archive": {
     "flag": "--page",
-    "next": 20,
+    "next": 21,
     "step": 1,
     "note": "pre-1929 public-domain texts; rows 30"
   },
   "find_books": {
     "flag": "--offset",
-    "next": 350,
+    "next": 375,
     "step": 25,
     "note": "OAPEN all-language + native-language queries (de/it/fr/es/pt/nl added 07-10); offsets 0-50 mined multilingual, 0-350 English-era"
   },
   "find_openaire": {
     "flag": "--page",
-    "next": 16,
+    "next": 17,
     "step": 1,
     "note": "vein nearly dry: p1=300, p2=109, p3=52, p4=22"
   },
   "find_nist": {
     "flag": "--page",
-    "next": 17,
+    "next": 18,
     "step": 1,
     "note": "Crossref DOI prefix 10.6028; ~2k on-topic docs"
   },
   "find_zenodo": {
     "flag": "--page",
-    "next": 15,
+    "next": 16,
     "step": 1,
     "note": "rate-limited anonymous API — keep --max 100-150"
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "2015-W07",
+    "next": "2015-W06",
     "note": "weekly buckets 1900..now, walked backwards; mined: 2017-2020 W01, 1925-1940 W01s, 2015-W52..W08 (49 buckets). --countries flag NEW (default US): CN/EP/DE work, sitemap titles are English for all countries; CN buckets 2018-2020 W03 mined 07-10 (license=open for non-US)"
   },
   "find_purdue": {
@@ -54,15 +54,15 @@
   },
   "find_sdz": {
     "flag": "--page",
-    "next": 11,
+    "next": 16,
     "step": 5,
-    "note": "sdz+hdz pages 1-5 mined 07-10 (165 kept), pages 6-10 mined 07-12 (35 sdz + 72 hdz); sdz ends ~p16, hdz ~p25"
+    "note": "sdz+hdz pages 1-5 mined 07-10 (165 kept), 6-10 mined 07-12 (35+72), 11-15 mined 07-12 (43 sdz; hdz p11 came back EMPTY — series ended earlier than the ~p25 estimate). sdz ends ~p16 — next run p16 likely the last"
   },
   "find_ademe": {
     "flag": "--page",
-    "next": 9,
+    "next": 13,
     "step": 4,
-    "note": "run with --pages 4; categories: 3153-batiment (504 results, mined p1-8), 3149-energies (p1-4), 3509-urbanisme (p1-4, +77 on 07-12); license=open (non-commercial reuse w/ attribution)"
+    "note": "run with --pages 4; categories: 3153-batiment (504 results, mined p1-12), 3149-energies (p1-8), 3509-urbanisme (p1-8); all three still yielding ~80-95/round on 07-12; license=open (non-commercial reuse w/ attribution)"
   },
   "find_kitopen": {
     "flag": "--token",
@@ -78,13 +78,19 @@
   },
   "find_wiki": {
     "flag": "--depth",
-    "next": 2,
+    "next": 3,
     "step": 1,
-    "note": "category mode: depth 1 x lang-cap 250 mined 07-09; depth 2 x lang-cap 400 run 07-12 HIT the --max 800 cap — depth 2 NOT exhausted (pointer held at 2), re-run with --max 1500+ until dry before deepening; langlinks mode saturated for current curated set; --books zh done"
+    "note": "category mode: depth 1 x cap 250 mined 07-09; depth 2 x cap 400 drained 07-12 (800 capped run + 825 uncapped run < --max 1500 = dry) — advanced to depth 3; expect heavier drift at d3, the gate handles it; langlinks mode saturated; --books zh done"
   },
   "find_patents_cn": {
     "flag": "--bucket",
-    "next": "2019-W45",
-    "note": "CN patents (Chinese full text; license=open). Same weekly-bucket walk as find_patents but separate pointer; marathon runs it with --countries CN. Mined: 2018/2019/2020-W03, 2019-W46 (+400 on 07-12)."
+    "next": "2019-W44",
+    "note": "CN patents (Chinese full text; license=open). Same weekly-bucket walk as find_patents but separate pointer; marathon runs it with --countries CN. Mined: 2018/2019/2020-W03, 2019-W46+W45 (+800 on 07-12)."
+  },
+  "find_worldbank": {
+    "flag": "--os",
+    "next": 300,
+    "step": 400,
+    "note": "World Bank Documents & Reports official API (see find_worldbank.py docstring); run with --rows 50 --pages 8 --max 250. Query 'building energy efficiency' = 16,890 records (os 0-400 mined 07-12, 250 kept — overlap at os 300 is dedup-safe). When it thins, rotate --q: 'energy efficient buildings', 'district heating', 'building code', 'thermal insulation', 'green building construction' — reset next=0 per query. cc-by, junk doctys filtered in-script"
   }
 }

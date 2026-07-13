@@ -7381,14 +7381,6 @@ sources:
     license: cc-by
     topic: equipment_systems
     format: pdf
-  - id: zen-characterization-of-the-hydraulic-properties-of-a-pl
-    title: Characterization of the hydraulic properties of a planned High Temperature
-      Aquifer Thermal Energy Storage (HT-ATES) system during well development
-    url: https://zenodo.org/api/records/17759725/files/adgeo-65-37-2024.pdf/content
-    source: zenodo
-    license: cc-by
-    topic: equipment_systems
-    format: pdf
   - id: zen-thermal-and-mechanical-properties-of-two-sensible-en
     title: Thermal and Mechanical Properties of Two Sensible Energy Storage Materials
       (Firebrick)
@@ -10751,6 +10743,739 @@ sources:
   - id: zen-geothermal-heat-generation-and-gradient-modeling-in-
     title: Geothermal Heat Generation and Gradient Modeling in Okigwe Basin, Nigeria
     url: https://zenodo.org/api/records/14601654/files/Geothermal%20Heat%20Generation%20and%20Gradient%20Modeling%20in%20Okigwe%20Basin,%20Nigeria.docx.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-how-to-operationalise-energy-efficiency-first-ee1st-
+    title: How to operationalise Energy Efficiency First (EE1st) in the EU? Key recommendations
+      to Member States
+    url: https://zenodo.org/api/records/7134916/files/ENEFIRST_D5-3_PolicyRecommendations.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-entwicklung-aufbau-und-erprobung-einer-bergeordneten
+    title: Entwicklung, Aufbau und Erprobung einer übergeordneten Energiesteuerung –
+      Energiecockpit
+    url: https://zenodo.org/api/records/14961780/files/DBU-Abschlussbericht-AZ-37710_01-Hauptbericht.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-mathematical-model-to-calculate-heat-transfer-in-cyl
+    title: Mathematical Model to Calculate Heat Transfer in Cylindrical Vessels with
+      Temperature-Dependent Materials
+    url: https://zenodo.org/api/records/14735839/files/axioms-12-00335-v2%20(3).pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-home-energy-management-system-validation-in-real-tim
+    title: Home Energy Management System Validation in Real Time (HEMSVRT)
+    url: https://zenodo.org/api/records/16847908/files/ERIGrid2-Report-Lab-Access-238-HEMSVRT-submitted-v1.0.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-d6-1-market-assessment
+    title: D6.1 Market Assessment
+    url: https://zenodo.org/api/records/4774683/files/D6.1-Exergia-R-P-SmartCHP-Market-Assessment.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-developing-strategy-framework-for-the-sustainable-re
+    title: 'Developing Strategy Framework for the Sustainable Reconstruction of the
+      Ukrainian Building Stock: A Literature Review and Proposal'
+    url: https://zenodo.org/api/records/15211663/files/V03%20I02%20P01.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-general-problems-of-moldovan-district-heating-system
+    title: General Problems of Moldovan District Heating Systems
+    url: https://zenodo.org/api/records/1208385/files/07_01_30_2016.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-comparative-dynamic-performance-tests-of-two-real-te
+    title: Comparative Dynamic Performance Tests of Two Real Technology Packages for
+      Buildings Heating System Retrofit
+    url: https://zenodo.org/api/records/3741460/files/Comparative%20Dynamic%20Performance%20Tests.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-economic-efficiency-of-district-heating-for-low-ener
+    title: ECONOMIC EFFICIENCY OF DISTRICT HEATING FOR LOW-ENERGY BUILDINGS OF THE FUTURE
+    url: https://zenodo.org/api/records/10925897/files/574-578.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-modeling-and-simulations-of-solar-bidirectional-subs
+    title: Modeling and Simulations of Solar Bidirectional Substation
+    url: https://zenodo.org/api/records/3741442/files/Modeling%20and%20Simulations%20of%20Solar%20Bidirectional%20Substation.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-district-heating-systems-in-republic-of-moldova-real
+    title: 'District Heating Systems in Republic of Moldova: Reality and Perspectives'
+    url: https://zenodo.org/api/records/3240286/files/PER-2019-1-3-pp-46-52.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-thermoss-project-building-and-district-thermal-retro
+    title: THERMOSS project "BUILDING AND DISTRICT Thermal Retrofit and Management Solutions"
+    url: https://zenodo.org/api/records/3741732/files/THERMOSS-EEI%20magazine.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-simulation-eines-geothermie-gest-tzten-anergienetzes
+    title: Simulation eines geothermie-gestützten Anergienetzes zur Wärme- und Kälteversorgung
+      eines Stadtquartiers
+    url: https://zenodo.org/api/records/15791395/files/enova-2025-Schittl.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-enhancing-the-energy-efficiency-in-district-heating-
+    title: Enhancing the energy efficiency in district heating networks through digital
+      twins
+    url: https://zenodo.org/api/records/17648782/files/Enhancing%20the%20energy%20efficiency%20in%20district%20heating%20networks%20through%20digital%20twins.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-new-district-heating-and-cooling-network-at-universi
+    title: New District Heating and Cooling Network at University of Cordoba in Spain
+      – EU-funded project WEDISTRICT
+    url: https://zenodo.org/api/records/10963860/files/13CNIT_Proceedings_ID613.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-comparison-of-the-fertilizer-properties-of-ash-fract
+    title: Comparison of The Fertilizer Properties of Ash Fractions from Medium-Sized
+      (32 MW) and Small-Sized (6 MW) Municipal District Heating Plants
+    url: https://zenodo.org/api/records/1076810/files/11180.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-conference-proceedings-of-the-18th-international-sym
+    title: Conference Proceedings of the 18th International Symposium on District Heating
+      and Cooling
+    url: https://zenodo.org/api/records/20120093/files/DHC2023%20-%20Proceedings.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-combined-heat-system-by-using-solar-energy-and-heat-
+    title: Combined HEat SyStem by using Solar Energy and heaT pUmPs
+    url: https://zenodo.org/api/records/3901503/files/Book_of_abstracts_2017_online_version.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: zen-identifying-the-influence-of-number-of-blades-and-di
+    title: Identifying the influence of number of blades and distance between blades
+      on tesla pump characteristics
+    url: https://zenodo.org/api/records/7522998/files/Identifying%20the%20influence%20of%20number%20of%20blades%20and%20distance%20between%20blades%20on%20tesla%20pump%20characteristics.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-exergy-analysis-of-a-cogeneration-system-for-utiliza
+    title: EXERGY ANALYSIS OF A COGENERATION SYSTEM FOR UTILIZATION OF WASTE HEAT OF
+      INDUSTRIAL ENTERPRISES
+    url: https://zenodo.org/api/records/3714896/files/Exergy%20analysis%20of%20a%20cogeneration%20system%20for%20utilization%20of%20waste%20heat%20of%20industrial%20enterprises.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-geofit-experimental-investigations-and-numerical-val
+    title: 'Geofit: Experimental Investigations and Numerical Validation of Shallow
+      Spiral Collectors as a Basis for Development of a Design Tool for Geothermal R'
+    url: https://zenodo.org/api/records/7273966/files/Kling-GeoFit-427_c.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-heat-transfer-analysis-cabinet-type-erk-solar-dryer-
+    title: Heat transfer analysis cabinet-type ERK solar dryer machine for drying agricultural
+      products
+    url: https://zenodo.org/api/records/6983791/files/Heat%20transfer%20analysis%20cabinet-type%20ERK%20solar%20dryer%20machine%20for%20drying%20agricultural%20products_zenodo.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-methods-based-on-a-semi-empirical-model-for-simulati
+    title: Methods based on a semi-empirical model for simulating scroll compressors
+      with HFC and HFO refrigerants
+    url: https://zenodo.org/api/records/6589102/files/openreseurope-1-15442.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-guidelines-and-calculation-methods-for-lifecycle-env
+    title: Guidelines and calculation methods for  Lifecycle Environmental Impact  Assessment
+      of Plus Energy Buildings
+    url: https://zenodo.org/api/records/14800754/files/CULTURAL-E_D4.5.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-seasonal-heat-storage-in-partially-flooded-mines-in-
+    title: Seasonal heat storage in partially flooded mines - In-situ investigations  at
+      the Freiberg, Saxony, site
+    url: https://zenodo.org/api/records/14849345/files/DGK2024_Oppelt-Saisonale_W%C3%A4rmespeicherung_in_teilgefluteten_Grubengeb%C3%A4uden_-_In-situ_Untersu%20(1).pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-d-5-4-advanced-data-analytics-for-optimal-control
+    title: D.5.4 Advanced data analytics for optimal control
+    url: https://zenodo.org/api/records/8059327/files/D5.4_20220328_v1.5.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-contribution-to-the-improvement-of-scroll-compressor
+    title: Contribution to the improvement of scroll compressors operating under two-phase
+      conditions
+    url: https://zenodo.org/api/records/20809568/files/Thesis_NLeclercq_V3.0.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-analytical-analysis-of-bottoming-organic-rankine-cyc
+    title: Analytical Analysis of Bottoming Organic  Rankine Cycle (ORC) in Steam Turbine
+      Power  Station
+    url: https://zenodo.org/api/records/8001256/files/A69160511122.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-cooling-egypt-sustainable-solutions-for-rising-air-c
+    title: 'Cooling Egypt: Sustainable Solutions for Rising Air Conditioning Demand
+      in Extreme Heat'
+    url: https://zenodo.org/api/records/15587751/files/Cooling%20Egypt_%20Sustainable%20Solutions%20for%20Rising%20Air%20Conditioning%20Demand%20in%20Extreme%20Heat.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-optimize-energy-supply-and-energy-use-in-dtu-solar-d
+    title: Optimize energy supply and energy use in DTU-Solar Decathlon House, with
+      emphasis on benefits of using PVT compared to PV
+    url: https://zenodo.org/api/records/3535903/files/Optimize_energy_supply_and_energy_use_in_DTU-Solar_Decathlon_House_with_emphasis_on_benefits_of_using_PVT_compared_to_PV.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-solar-sustainable-heating-cooling-and-ventilation-of
+    title: Solar Sustainable Heating, Cooling and Ventilation of A Net Zero Energy House
+    url: https://zenodo.org/api/records/3536808/files/Solar_Sustainable_Heating_Cooling_and_Ventilation_of_A_Net_Zero_Energy_House.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-energy-demands-for-multi-family-buildings-in-differe
+    title: Energy demands for multi-family buildings in different climatic zones D1.1
+    url: https://zenodo.org/api/records/3763249/files/TRI-HP_D1.1_v2.0.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-determining-the-effect-of-fire-from-external-air-con
+    title: Determining the effect of fire from external air conditioning units on buildings'
+      facades
+    url: https://zenodo.org/api/records/6861890/files/Determining%20the%20effect%20of%20fire%20from%20external%20air%20conditioning%20units%20on%20buildings'%20facades.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-entwicklung-einer-methodik-zur-energie-und-exergiean
+    title: Entwicklung einer Methodik zur Energie- und Exergieanalyse in Produktionsanlagen
+      mit unvollständigen Messdaten
+    url: https://zenodo.org/api/records/14215117/files/Pfeifer,%202021.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-fedecom-d3-2-techno-economic-assessment-pdf
+    title: FEDECOM - D3.2 - Techno-economic assessment.pdf
+    url: https://zenodo.org/api/records/13320836/files/FEDECOM%20-%20D3.2%20Techno-economic%20assessment.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-implementation-of-the-dynamic-balancing-approach-of-
+    title: Implementation of the dynamic balancing approach of a rotating composite
+      hollow shaft
+    url: https://zenodo.org/api/records/6407017/files/Implementation%20of%20the%20dynamic%20balancing%20approach%20of%20a%20rotating%20composite%20hollow%20shaft_zenodo.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-amadeus-project-deliverable-1-4-annual-technical-pro
+    title: 'AMADEUS Project Deliverable 1.4: Annual Technical Progress Report'
+    url: https://zenodo.org/api/records/1163387/files/D1.4_AMADEUS.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-advanced-cooling-methods-for-naval-laser-directed-en
+    title: Advanced Cooling Methods for Naval Laser Directed Energy Weapons
+    url: https://zenodo.org/api/records/4498478/files/INEC_2020_Paper_100.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-porous-monolithic-perovskite-structures-for-high-tem
+    title: Porous Monolithic Perovskite Structures for High-Temperature Thermochemical
+      Heat Storage in Concentrated Solar Power (CSP) Plants and Renewable Electr
+    url: https://zenodo.org/api/records/17652728/files/862_Agrafiotis_et_al..pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-res4build-key-achievements
+    title: RES4BUILD Key Achievements
+    url: https://zenodo.org/api/records/8046838/files/key-achievements.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-enhancing-latent-heat-storage-systems-the-impact-of-
+    title: 'Enhancing latent heat storage systems: The impact of PCM volumetric ratios
+      on energy storage rates with auxiliary fluid assistance'
+    url: https://zenodo.org/api/records/8332939/files/1-s2.0-S2772427123000578-main.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-study-of-the-solidification-behaviour-of-calcium-chl
+    title: Study of the solidification behaviour of calcium chloride hexahydrate by
+      in-situ X-ray computed tomography
+    url: https://zenodo.org/api/records/10517813/files/ECNDT2023_PAPER_374.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-thermo-economic-analysis-of-a-particle-based-multi-t
+    title: Thermo-economic analysis of a particle-based multi-tower solar power plant
+      using unfired combined cycle for evening peak power generation
+    url: https://zenodo.org/api/records/5806393/files/Thermo-economic%20analysis.%20Energy%20240%202022.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-investigation-of-doubling-heat-capacity-of-storage-f
+    title: Investigation of Doubling Heat Capacity of Storage Fluids through Nanomaterials
+    url: https://zenodo.org/api/records/7976797/files/B2011101221.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-heat-supply-to-industrial-processes-via-molten-salt-
+    title: Heat Supply to Industrial Processes via Molten Salt Solar Concentrators
+    url: https://zenodo.org/api/records/15411932/files/Heat%20Supply%20to%20Industrial%20Processes%20via%20Molten%20Salt%20Solar%20Concentrators.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-silicon-as-a-phase-change-material-performance-of-h-
+    title: 'Silicon as a Phase Change Material: Performance of h-BN Ceramic During Multi-Cycle
+      Melting/Solidification of Silicon'
+    url: https://zenodo.org/api/records/2561639/files/Silicon%20as%20a%20Phase%20Change%20Material%20Performance%20of%20h-BN%20Ceramic%20During%20Multi-Cycle%20%20of%20Silicon.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-sand-battery-technology-a-promising-solution-for-ren
+    title: 'Sand Battery Technology: A Promising Solution for Renewable Energy Storage'
+    url: https://zenodo.org/api/records/8012403/files/49.%20NACORE%20P125%20upload.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-theoretical-analysis-of-the-evolution-and-properties
+    title: Theoretical Analysis of the Evolution and Properties of Nano Refrigerant
+      to Improve Coefficient of Performance
+    url: https://zenodo.org/api/records/12625224/files/Theoretical%20Analysis%20of%20the%20Evolution%20.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-carbon-neutral-fuels-and-chemicals-from-standalone-b
+    title: Carbon Neutral Fuels and Chemicals from Standalone Biomass Refineries
+    url: https://zenodo.org/api/records/10203727/files/B1845113223.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-mosaic-a-new-csp-plant-concept-for-the-highest-conce
+    title: 'MOSAIC: A NEW CSP PLANT CONCEPT FOR THE HIGHEST CONCENTRATION RATIOS AT
+      THE LOWEST COST'
+    url: https://zenodo.org/api/records/3260868/files/SOLARPACES2018_PAPER_MOSAIC_After_Revision_Uploaded.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-characterization-of-artesian-flow-and-heat-transitio
+    title: Characterization of artesian flow and heat transition in an ATES research
+      wellbore using DTS monitoring and numerical modelling
+    url: https://zenodo.org/api/records/21236850/files/Characterization%20of%20artesian%20flow%20and%20heat%20transition%20in%20an%20ATES.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-ultra-high-temperature-interaction-between-h-bn-base
+    title: Ultra-High Temperature Interaction Between h-BN-Based Composite and Molten
+      Silicon
+    url: https://zenodo.org/api/records/1929914/files/10.1007_s11661-018-5035-z.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-thermal-performance-enhancement-of-organic-phase-cha
+    title: Thermal performance enhancement of organic phase change materials using spent
+      diatomite from the palm oil bleaching process as support
+    url: https://zenodo.org/api/records/12549216/files/Thermal%20performance%20enhancement%20of%20organic%20phase%20change%20materials%20using%20spent%20diatomite%20from%20the%20palm%20oil%20bleaching%20process%20as%20support.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: zen-virtual-hull-monitoring-systems-for-assessment-of-st
+    title: Virtual hull monitoring systems for assessment of structural integrity of
+      ships
+    url: https://zenodo.org/api/records/4468757/files/INEC_2020_Paper_5.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-development-of-a-method-to-calculate-the-probability
+    title: DEVELOPMENT OF A METHOD TO CALCULATE THE PROBABILITY OF A BERTH FAILURE UNDER
+      VERTICAL STOCHASTIC LOAD
+    url: https://zenodo.org/api/records/3469525/files/Development%20of%20a%20method%20to%20calculate%20the%20probability%20of%20a%20berth%20failure%20under%20vertical%20stochastic%20load.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-investigation-of-complex-structure-systems-based-on-
+    title: INVESTIGATION OF COMPLEX STRUCTURE SYSTEMS BASED ON SPECTRAL ANALYSIS
+    url: https://zenodo.org/api/records/3715875/files/Investigation%20of%20complex%20structure%20systems%20based%20on%20spectral%20analysis.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-developing-a-sustainable-and-earthquake-resistant-hi
+    title: 'DEVELOPING A SUSTAINABLE AND EARTHQUAKE RESISTANT HIGH-RISE DESIGN FRAMEWORK:
+      INTEGRATION OF ADAPTIVE SYSTEMS AND ENERGY DISSIPATION TECHNIQUES'
+    url: https://zenodo.org/api/records/17382742/files/Paper-11.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-a-laboratory-test-aimed-at-demonstrating-the-potenti
+    title: A Laboratory test aimed at demonstrating the potential of an Interferometric
+      Radar to estimate the Seismic Risk of damaged buildings
+    url: https://zenodo.org/api/records/17701306/files/A%20Laboratory%20test%20aimed%20at%20demonstrating%20the%20potential%20of%20an%20Interferometric%20Radar%20to%20estimate%20the%20Seismic%20Risk%20of%20damaged%20buildings.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-deep-learning-algorithms-for-delaminations-ide-2
+    title: Deep learning algorithms for delaminations identification on composite panels
+      by wave propagation signal analysis
+    url: https://zenodo.org/api/records/13683952/files/Paper_SPIE_DNN.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-noise-reduction-for-improvement-of-ultrasonic-monito
+    title: Noise Reduction for Improvement of Ultrasonic Monitoring Using CodaWave Interferometry
+      on a Real Bridge
+    url: https://zenodo.org/api/records/4539867/files/Wang2021.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-concrete-surface-crack-detection-with-convolutional-
+    title: Concrete Surface Crack Detection with Convolutional-based Deep Learning Models
+    url: https://zenodo.org/api/records/10061654/files/Concrete%20Surface%20Crack%20Detection-01112023-5.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-structural-integrity-diagnostics-and-maintenance-gov
+    title: 'Structural Integrity Diagnostics and Maintenance Governance for Uganda''s
+      Aging Infrastructure: A Case Study'
+    url: https://zenodo.org/api/records/18970897/files/zenodo.18970897.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-digital-twin-assisted-optimal-sensor-placement-for-r
+    title: Digital Twin-Assisted Optimal Sensor Placement for Real-Time Monitoring of
+      Probe Cards in EWS Applications
+    url: https://zenodo.org/api/records/20309006/files/Mehdi_Bejani_EuroSimE.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-implementation-of-the-decision-making-along-with-ana
+    title: Implementation of the decision making along with analytic hierarchy process
+      (AHP) approaches in the assessment of the petroleum products cost based on
+    url: https://zenodo.org/api/records/7090287/files/Implementation%20of%20the%20decision%20making%20along%20with%20analytic%20hierarchy%20process%20(AHP)%20approaches%20in%20the%20assessment%20of%20the%20petroleum%20products%20cost%20based%20on%20the%20statical%20model.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-the-effects-of-cnt-type-alignment-and-dopants-on-pie
+    title: The effects of CNT type, alignment and dopants on piezoresistance in CNT
+      fibres
+    url: https://zenodo.org/api/records/14287762/files/Mikhalchan_et%20al..pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-embedded-ultrasonic-transmission-sensors-and-signal-
+    title: Embedded ultrasonic transmission sensors and signal processing techniques
+      for structural change detection in the Gliwice bridge
+    url: https://zenodo.org/api/records/3403110/files/1-s2.0-S2452321619302550-main.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-a-study-of-early-prediction-of-emergency-situations-
+    title: A STUDY OF EARLY PREDICTION OF EMERGENCY SITUATIONS IN BRIDGES
+    url: https://zenodo.org/api/records/7624460/files/344-354.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-role-of-iot-big-data-in-construction-industry
+    title: Role of IoT & Big Data in Construction Industry
+    url: https://zenodo.org/api/records/7540261/files/Role%20of%20IoT%20&%20Big%20Data%20in%20Construction%20Industry%20-Formatted%20Paper.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-potential-efforts-for-conservation-of-dayak-tomun-tr
+    title: Potential Efforts for Conservation of Dayak Tomun Traditional House in Lamandau
+      Regency, Indonesia
+    url: https://zenodo.org/api/records/7022722/files/Potential%20Efforts%20for%20Conservation-23082022-5.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-globalized-aesthetics-and-their-political-implicatio
+    title: 'Globalized Aesthetics and Their Political Implications: An Architectural–Geopolitical
+      Analysis of Dubai''s Urban Transformation'
+    url: https://zenodo.org/api/records/18548162/files/SHJ2I4A02.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-masonry-cseb-building-models-under-shaketable-testin
+    title: Masonry CSEB Building Models under Shaketable Testing-An Experimental Study
+    url: https://zenodo.org/api/records/1074603/files/10102.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-performance-based-seismic-methodology-and-its-applic
+    title: '''Performance-Based'' Seismic Methodology and Its Application in Seismic
+      Design of Reinforced Concrete Structures'
+    url: https://zenodo.org/api/records/1123711/files/10004137.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-an-investigation-on-the-accuracy-of-nonlinear-static
+    title: An Investigation on the Accuracy of Nonlinear Static Procedures for Seismic
+      Evaluation of Buckling-restrained Braced Frames
+    url: https://zenodo.org/api/records/1075262/files/10450.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-study-of-the-effect-of-seismic-behavior-of-twin-tunn
+    title: Study of the Effect of Seismic Behavior of Twin Tunnels Position on Each
+      Other
+    url: https://zenodo.org/api/records/1093036/files/9998427.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-effect-of-scarp-topography-on-seismic-ground-motion
+    title: Effect of Scarp Topography on Seismic Ground Motion
+    url: https://zenodo.org/api/records/1132132/files/10007886.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-assessing-soil-shaft-interaction-at-an-instrumented-
+    title: 'Assessing Soil-Shaft Interaction at an Instrumented Bridge In California
+      In Terms of Effects of Soil-Shaft Nonlinear Properties In Various Earthquake '
+    url: https://zenodo.org/api/records/13936751/files/Technical%20Paper.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-experimental-investigation-on-excess-pore-water-pres
+    title: Experimental Investigation on Excess Pore Water Pressure in Soft Soil-Foundations
+      under Minor Shocks
+    url: https://zenodo.org/api/records/1072812/files/9462.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-behaviour-of-base-isolated-structures-with-high-init
+    title: Behaviour of Base-Isolated Structures with High Initial Isolator Stiffness
+    url: https://zenodo.org/api/records/1056430/files/2088.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-reliability-based-ductility-seismic-spectra-of-struc
+    title: Reliability-Based Ductility Seismic Spectra of Structures with Tilting
+    url: https://zenodo.org/api/records/1100827/files/10001301.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-numerical-modeling-of-soil-shaft-interaction-validat
+    title: Numerical Modeling of Soil-Shaft Interaction Validated Using the Instrumented
+      Hayward Bridge in California
+    url: https://zenodo.org/api/records/11026667/files/TechnicalPaperUpload_99_0818123843.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-using-micropiles-to-improve-the-anzali-s-saturated-l
+    title: Using Micropiles to Improve the Anzali's Saturated Loose Silty Sand
+    url: https://zenodo.org/api/records/1132264/files/10007952.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-selection-of-rayleigh-damping-coefficients-for-seism
+    title: Selection of Rayleigh Damping Coefficients for Seismic Response Analysis
+      of Soil Layers
+    url: https://zenodo.org/api/records/1128809/files/10006399.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-x-bracing-configuration-and-seismic-response
+    title: X-Bracing Configuration and Seismic Response
+    url: https://zenodo.org/api/records/1093058/files/9998438.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-seismic-performance-evaluation-of-bridge-structures-
+    title: Seismic Performance Evaluation of Bridge Structures Using 3D Finite Element
+      Methods in South Korea
+    url: https://zenodo.org/api/records/1112049/files/10003895.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-seismic-behaviour-of-rc-knee-joints-in-closing-and-o
+    title: Seismic Behaviour of RC Knee Joints in Closing and Opening Actions
+    url: https://zenodo.org/api/records/1129786/files/10006768.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-human-walking-vertical-force-and-vertical-vibration-
+    title: Human Walking Vertical Force and Vertical Vibration of Pedestrian Bridge
+      Induced by Its Higher Components
+    url: https://zenodo.org/api/records/1109113/files/10002517.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-bond-slip-response-of-reinforcing-bars-embedded-in-h
+    title: Bond-Slip Response of Reinforcing Bars Embedded in High Performance Fiber
+      Reinforced Cement Composites
+    url: https://zenodo.org/api/records/1107045/files/10001630.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-smrf-seismic-response-unequal-beam-depths
+    title: 'SMRF Seismic Response: Unequal Beam Depths'
+    url: https://zenodo.org/api/records/1093126/files/9998472.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-a-review-on-earthquake-engineering-and-seismic-risk-
+    title: A Review on Earthquake Engineering and Seismic Risk Mitigation
+    url: https://zenodo.org/api/records/17658700/files/IJSRED-V8I6P69.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-optimizing-the-parameters-of-the-tuned-mass-damper-i
+    title: Optimizing the Parameters of the Tuned Mass Damper Inerter to Reduce the
+      Park-Ang Damage Index
+    url: https://zenodo.org/api/records/15387514/files/OptimizingtheParametersoftheTunedMassDamperInertertoReducethePark-AngDamageIndex.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-load-discontinuity-in-shock-response-and-its-remedie
+    title: Load Discontinuity in Shock Response and Its Remedies
+    url: https://zenodo.org/api/records/1082013/files/13918.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-influence-of-local-soil-conditions-on-optimal-load-f
+    title: Influence of Local Soil Conditions on Optimal Load Factors for Seismic Design
+      of Buildings
+    url: https://zenodo.org/api/records/1130669/files/10007212.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-review-on-artificial-intelligence-application-in-str
+    title: Review on artificial intelligence application in structural earthquake engineering
+    url: https://zenodo.org/api/records/16893316/files/IJSRA-2024-2659.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-evaluation-of-behavior-factor-for-steel-moment-resis
+    title: Evaluation of Behavior Factor for Steel Moment-Resisting Frames
+    url: https://zenodo.org/api/records/1123588/files/10004077.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-study-of-the-influence-of-thermobaric-conditions-on-
+    title: Study of the influence of thermobaric conditions on the rheological characteristics
+      of plugging solutions for insulation works
+    url: https://zenodo.org/api/records/7764350/files/Study%20of%20the%20influence%20of%20thermobaric%20conditions%20on%20the%20rheological%20characteristics%20of%20plugging%20solutions%20for%20insulation%20works_zenodo.pdf/content
+    source: zenodo
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: zen-hydrogeochemical-characterization-of-groundwater-in-
+    title: Hydrogeochemical characterization of groundwater in the Trans boundary watershed
+      of the Medjerda River (Extreme North-East Algeria)
+    url: https://zenodo.org/api/records/16947988/files/JBES-V14-No2-p181-188.pdf/content
     source: zenodo
     license: cc-by
     topic: structures_civil

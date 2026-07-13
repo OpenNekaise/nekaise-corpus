@@ -1,0 +1,1833 @@
+# worldbank — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: wbd-china-urban-scale-building-energy-efficiency-and-ren
+    title: China - Urban Scale Building Energy Efficiency and Renewable Energy Project
+    url: https://documents.worldbank.org/curated/en/814401607969389205/pdf/China-Urban-Scale-Building-Energy-Efficiency-and-Renewable-Energy-Project.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-disclosable-restructuring-paper-urban-scale-building
+    title: Disclosable Restructuring Paper - Urban Scale Building Energy Efficiency
+      and Renewable Energy - P130786
+    url: https://documents.worldbank.org/curated/en/383441522554335405/pdf/Disclosable-Restructuring-Paper-Urban-Scale-Building-Energy-Efficiency-and-Renewable-Energy-P130786.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-georgia-energy-efficiency-policy-note
+    title: Georgia Energy Efficiency Policy Note
+    url: https://documents.worldbank.org/curated/en/728011616751921724/pdf/Georgia-Energy-Efficiency-Policy-Note.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-roadmap-for-implementation-of-energy-efficiency-in-p
+    title: Roadmap for Implementation of Energy Efficiency in Public Buildings of Kyrgyz
+      Republic
+    url: https://documents.worldbank.org/curated/en/640011547807634493/pdf/January-2019-Roadmap-to-Improve-Energy-Efficiency-of-Public-Buildings-in-the-Kyrgyz-Republic.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: wbd-the-philippines-options-for-financing-energy-efficie
+    title: The Philippines - Options for financing energy efficiency in public buildings
+    url: https://documents.worldbank.org/curated/en/498971521603027987/pdf/Options-for-Financing-Energy-Efficiency-in-Public-Buildings-in-the-Philippines.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-belarus-energy-efficiency-project
+    title: Belarus - Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/180081543250739020/pdf/Belarus-Energy-Efficiency-Project.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-energy-efficiency-roadmap-for-pakistan
+    title: Energy Efficiency Roadmap for Pakistan
+    url: https://documents.worldbank.org/curated/en/280681555926394575/pdf/Energy-Efficiency-Roadmap-for-Pakistan.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-urban-scale-building-
+    title: 'Disclosable Version of the ISR - Urban Scale Building Energy Efficiency
+      and Renewable Energy - P130786 - Sequence No : 13'
+    url: https://documents.worldbank.org/curated/en/696251571426677100/pdf/Disclosable-Version-of-the-ISR-Urban-Scale-Building-Energy-Efficiency-and-Renewable-Energy-P130786-Sequence-No-13.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-urban-scale-bui-2
+    title: 'Disclosable Version of the ISR - Urban Scale Building Energy Efficiency
+      and Renewable Energy - P130786 - Sequence No : 12'
+    url: https://documents.worldbank.org/curated/en/311391555639598892/pdf/Disclosable-Version-of-the-ISR-Urban-Scale-Building-Energy-Efficiency-and-Renewable-Energy-P130786-Sequence-No-12.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-urban-scale-bui-3
+    title: 'Disclosable Version of the ISR - Urban Scale Building Energy Efficiency
+      and Renewable Energy - P130786 - Sequence No : 11'
+    url: https://documents.worldbank.org/curated/en/249291539965316218/pdf/Disclosable-Version-of-the-ISR-Urban-Scale-Building-Energy-Efficiency-and-Renewable-Energy-P130786-Sequence-No-11.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-urban-scale-bui-4
+    title: 'Disclosable Version of the ISR - Urban Scale Building Energy Efficiency
+      and Renewable Energy - P130786 - Sequence No : 09'
+    url: https://documents.worldbank.org/curated/en/956711516073774444/pdf/Disclosable-Version-of-the-ISR-Urban-Scale-Building-Energy-Efficiency-and-Renewable-Energy-P130786-Sequence-No-09.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-world-energy-efficiency-project-resource-center-eepr
+    title: World - Energy Efficiency Project Resource Center (EEPRC)
+    url: https://documents.worldbank.org/curated/en/273361552596228564/pdf/World-Energy-Efficiency-Project-Resource-Center-EEPRC.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-romania-improving-energy-efficiency-in-timisoara
+    title: Romania - Improving energy efficiency in Timisoara
+    url: https://documents.worldbank.org/curated/en/305561468333031230/pdf/Romania-Improving-energy-efficiency-in-Timisoara.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-romania-improving-energy-efficiency-in-constanta
+    title: Romania - Improving energy efficiency in Constanta
+    url: https://documents.worldbank.org/curated/en/863121468105857283/pdf/Romania-Improving-energy-efficiency-in-Constanta.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-turkey-energy-efficiency-in-public-buildings-project
+    title: Turkey - Energy Efficiency in Public Buildings Project
+    url: https://documents.worldbank.org/curated/en/195431573268453378/pdf/Turkey-Energy-Efficiency-in-Public-Buildings-Project.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-restructuring-paper-energy-efficiency-pr
+    title: Disclosable Restructuring Paper - Energy Efficiency Project - P143580
+    url: https://documents.worldbank.org/curated/en/451261593462895424/pdf/Disclosable-Restructuring-Paper-Energy-Efficiency-Project-P143580.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-romania-improving-energy-efficiency-in-ploiesti
+    title: Romania - Improving energy efficiency in Ploiesti
+    url: https://documents.worldbank.org/curated/en/455061468094761992/pdf/Romania-Improving-energy-efficiency-in-Ploiesti.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-romania-improving-energy-efficiency-in-brasov
+    title: Romania - Improving energy efficiency in Brasov
+    url: https://documents.worldbank.org/curated/en/179111468298464886/pdf/Romania-Improving-energy-efficiency-in-Brasov.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-romania-improving-energy-efficiency-in-craiova
+    title: Romania - Improving energy efficiency in Craiova
+    url: https://documents.worldbank.org/curated/en/932151468294616623/pdf/Romania-Improving-energy-efficiency-in-Craiova.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-romania-improving-energy-efficiency-in-iasi
+    title: Romania - Improving energy efficiency in Iasi
+    url: https://documents.worldbank.org/curated/en/890791468298465518/pdf/Romania-Improving-energy-efficiency-in-Iasi.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-concept-project-information-document-pid-belarus-pub
+    title: Concept Project Information Document (PID) - Belarus Public Buildings Energy
+      Efficiency Project - P173192
+    url: https://documents.worldbank.org/curated/en/668271591033668332/pdf/Concept-Project-Information-Document-PID-Belarus-Public-Buildings-Energy-Efficiency-Project-P173192.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-romania-improving-energy-efficiency-in-cluj-napoca
+    title: Romania - Improving energy efficiency in Cluj-Napoca
+    url: https://documents.worldbank.org/curated/en/119991468094457433/pdf/Romania-Improving-energy-efficiency-in-Cluj-Napoca.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-bulgaria-national-program-for-residential-energy-eff
+    title: Bulgaria - National Program for Residential Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/247571472028017878/pdf/Revised-Bulgaria-Residential-Energy-Efficiency-PID.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-bulgaria-national-program-for-energy-efficiency-in-r
+    title: 'Bulgaria - National Program for Energy Efficiency in Residential Buildings
+      : Program Design Report for the Second Phase : Bulgaria National Residentia'
+    url: https://documents.worldbank.org/curated/en/329851534930802672/pdf/Bulgaria-National-Residential-Energy-Efficiency-Program-Phase-2-Design-Report.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-india-chiller-energy-efficiency-project
+    title: India - Chiller Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/218001577728987141/pdf/India-Chiller-Energy-Efficiency-Project.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: wbd-brazil-energy-efficiency-project
+    title: Brazil - Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/507461468769769798/pdf/multi-page.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-concept-environmental-and-social-review-summary-esrs
+    title: Concept Environmental and Social Review Summary (ESRS) - Belarus Public Buildings
+      Energy Efficiency Project - P173192
+    url: https://documents.worldbank.org/curated/en/866301590787763812/pdf/Concept-Environmental-and-Social-Review-Summary-ESRS-Belarus-Public-Buildings-Energy-Efficiency-Project-P173192.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-gender-differences-in-behavior-and-perceptions-of-en
+    title: Gender Differences in Behavior and Perceptions of Energy Efficiency in Public
+      Buildings in Turkey
+    url: https://documents.worldbank.org/curated/en/668791621584453024/pdf/Gender-Differences-in-Behavior-and-Perceptions-of-Energy-Efficiency-in-Public-Buildings-in-Turkey.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-uruguay-energy-efficiency-project
+    title: Uruguay - Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/547251468781795659/pdf/285250UY.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-restructuring-paper-kazakhstan-energy-ef
+    title: Disclosable Restructuring Paper - Kazakhstan Energy Efficiency Project -
+      P130013
+    url: https://documents.worldbank.org/curated/en/517791629221139353/pdf/Disclosable-Restructuring-Paper-Kazakhstan-Energy-Efficiency-Project-P130013.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-restructuring-paper-energy-efficiency-in
+    title: Disclosable Restructuring Paper - Energy Efficiency in Public Facilities
+      Project (PRESEMEH) - P149872
+    url: https://documents.worldbank.org/curated/en/136621608303841563/pdf/Disclosable-Restructuring-Paper-Energy-Efficiency-in-Public-Facilities-Project-PRESEMEH-P149872.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-montenegro-energy-efficiency-in-public-buildings
+    title: Montenegro - ENERGY EFFICIENCY IN PUBLIC BUILDINGS
+    url: https://documents.worldbank.org/curated/en/456181548970493167/pdf/Montenegro-ENERGY-EFFICIENCY-IN-PUBLIC-BUILDINGS.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-egypt-energy-efficiency-implementation-energy-effici
+    title: 'Egypt energy efficiency implementation : Energy efficiency and rooftop solar
+      PV opportunities: report summary'
+    url: https://documents.worldbank.org/curated/en/578631498760292189/pdf/Final-Output-Summary.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-project-information-document-integrated-safeguards-d
+    title: Project Information Document-Integrated Safeguards Data Sheet - Turkey Energy
+      Efficiency in Public Buildings - P162762
+    url: https://documents.worldbank.org/curated/en/233761563478805983/pdf/Project-Information-Document-Integrated-Safeguards-Data-Sheet-Turkey-Energy-Efficiency-in-Public-Buildings-P162762.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-energy-efficiency-pro
+    title: 'Disclosable Version of the ISR - Energy Efficiency Project - P143580 - Sequence
+      No : 10'
+    url: https://documents.worldbank.org/curated/en/868631561640444804/pdf/Disclosable-Version-of-the-ISR-Energy-Efficiency-Project-P143580-Sequence-No-10.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-energy-efficien-2
+    title: 'Disclosable Version of the ISR - Energy Efficiency Project - P143580 - Sequence
+      No : 09'
+    url: https://documents.worldbank.org/curated/en/477461545423729239/pdf/Disclosable-Version-of-the-ISR-Energy-Efficiency-Project-P143580-Sequence-No-09.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-energy-efficiency-retrofitting-of-residential-buildi
+    title: 'Energy Efficiency Retrofitting of Residential Buildings : Solutions and
+      Recommendations : Tbilisi Urban Regeneration  Energy Efficiency Project - Seco'
+    url: https://documents.worldbank.org/curated/en/720901591357951282/pdf/Tbilisi-Urban-Regeneration-Energy-Efficiency-Project-Second-Phase.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-ukraine-ua-energy-efficiency
+    title: Ukraine - UA - ENERGY EFFICIENCY
+    url: https://documents.worldbank.org/curated/en/207911521582196819/pdf/Ukraine-UA-ENERGY-EFFICIENCY.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-croatia-energy-efficiency-project
+    title: Croatia - Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/416271474483632027/pdf/000020051-20140624194000.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-shandong-energy-efficiency-project
+    title: China - Shandong Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/329041563484309219/pdf/China-Shandong-Energy-Efficiency-Project.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-philippines-action-plan-on-electric-energy-efficienc
+    title: Philippines - Action plan on electric energy efficiency and conservation
+      options
+    url: https://documents.worldbank.org/curated/en/373871493860693522/pdf/Philippines-Action-plan-on-electric-energy-efficiency-and-conservation-options.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-montenegro-energy-efficiency-project
+    title: Montenegro - Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/704261468123867329/pdf/PAD6210P1079920C0disclosed012050130.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-turkey-energy-efficie
+    title: 'Disclosable Version of the ISR - Turkey Energy Efficiency in Public Buildings
+      - P162762 - Sequence No : 04'
+    url: https://documents.worldbank.org/curated/en/330091624294024621/pdf/Disclosable-Version-of-the-ISR-Turkey-Energy-Efficiency-in-Public-Buildings-P162762-Sequence-No-04.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-kosovo-energy-efficie
+    title: 'Disclosable Version of the ISR - Kosovo Energy Efficiency and Renewable
+      Energy Project - P143055 - Sequence No : 11'
+    url: https://documents.worldbank.org/curated/en/625591573474405783/pdf/Disclosable-Version-of-the-ISR-Kosovo-Energy-Efficiency-and-Renewable-Energy-Project-P143055-Sequence-No-11.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-kosovo-kosovo-energy-efficiency-and-renewable-energy
+    title: 'Kosovo - Kosovo Energy Efficiency and Renewable Energy Project : P143055
+      - Implementation Status Results Report : Sequence 03'
+    url: https://documents.worldbank.org/curated/en/131781468047366751/pdf/Kosovo-Kosovo-Energy-Efficiency-and-Renewable-Energy-Project-P143055-Implementation-Status-Results-Report-Sequence-03.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-montenegro-second-energy-efficiency-project
+    title: Montenegro - Second Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/455461528342280829/pdf/MEEP2-Project-Appraisal-Document-SECPO-May-15-05152018.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-report-on-vietnamese-delegation-s-energy-efficiency-
+    title: 'Report on Vietnamese Delegation’s Energy Efficiency Knowledge Exchange Program
+      in India : 25 February to 1 March, 2019'
+    url: https://documents.worldbank.org/curated/en/374271561958890631/pdf/Report-on-Vietnamese-Delegation-s-Energy-Efficiency-Knowledge-Exchange-Program-in-India-25-February-to-1-March-2019.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-turkey-energy-e-2
+    title: 'Disclosable Version of the ISR - Turkey Energy Efficiency in Public Buildings
+      - P162762 - Sequence No : 02'
+    url: https://documents.worldbank.org/curated/en/349701593433596711/pdf/Disclosable-Version-of-the-ISR-Turkey-Energy-Efficiency-in-Public-Buildings-P162762-Sequence-No-02.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-romania-energy-efficiency-project
+    title: Romania - Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/466271468758985753/pdf/multi0page.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-montenegro-second-ene
+    title: 'Disclosable Version of the ISR - Montenegro Second Energy Efficiency Project
+      - P165509 - Sequence No : 03'
+    url: https://documents.worldbank.org/curated/en/425431593424253645/pdf/Disclosable-Version-of-the-ISR-Montenegro-Second-Energy-Efficiency-Project-P165509-Sequence-No-03.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-north-macedonia-public-sector-energy-efficiency-proj
+    title: North Macedonia - Public Sector Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/616851580698875411/pdf/North-Macedonia-Public-Sector-Energy-Efficiency-Project.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-turkey-energy-e-3
+    title: 'Disclosable Version of the ISR - Turkey Energy Efficiency in Public Buildings
+      - P162762 - Sequence No : 03'
+    url: https://documents.worldbank.org/curated/en/283621608131709049/pdf/Disclosable-Version-of-the-ISR-Turkey-Energy-Efficiency-in-Public-Buildings-P162762-Sequence-No-03.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-kosovo-energy-e-2
+    title: 'Disclosable Version of the ISR - Kosovo Energy Efficiency and Renewable
+      Energy Project - P143055 - Sequence No : 10'
+    url: https://documents.worldbank.org/curated/en/959631556943256214/pdf/Disclosable-Version-of-the-ISR-Kosovo-Energy-Efficiency-and-Renewable-Energy-Project-P143055-Sequence-No-10.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-building-back-green-energy-efficiency-retrofit-progr
+    title: 'Building Back Green : Energy Efficiency Retrofit Program and Certification
+      Scheme for Existing Residential Buildings in Jordan'
+    url: https://documents.worldbank.org/curated/en/553861617183880008/pdf/Building-Back-Green-Energy-Efficiency-Retrofit-Program-and-Certification-Scheme-for-Existing-Residential-Buildings-in-Jordan.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+  - id: wbd-ukraine-kiev-public-buildings-energy-efficiency-proj
+    title: Ukraine - Kiev Public Buildings Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/683051474553506194/pdf/000020051-20140613082147.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-energy-efficien-3
+    title: 'Disclosable Version of the ISR - Energy Efficiency Project - P143580 - Sequence
+      No : 15'
+    url: https://documents.worldbank.org/curated/en/686651628064601320/pdf/Disclosable-Version-of-the-ISR-Energy-Efficiency-Project-P143580-Sequence-No-15.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-kosovo-energy-e-3
+    title: 'Disclosable Version of the ISR - Kosovo Energy Efficiency and Renewable
+      Energy Project - P143055 - Sequence No : 08'
+    url: https://documents.worldbank.org/curated/en/239711526045584761/pdf/Disclosable-Version-of-the-ISR-Kosovo-Energy-Efficiency-and-Renewable-Energy-Project-P143055-Sequence-No-08.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-energy-efficien-4
+    title: 'Disclosable Version of the ISR - Energy Efficiency Project - P143580 - Sequence
+      No : 13'
+    url: https://documents.worldbank.org/curated/en/313071593424248729/pdf/Disclosable-Version-of-the-ISR-Energy-Efficiency-Project-P143580-Sequence-No-13.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-energy-efficiency-lessons-learned-from-success-stori
+    title: 'Energy efficiency : lessons learned from success stories'
+    url: https://documents.worldbank.org/curated/en/966991468030250095/pdf/Energy-efficiency-lessons-learned-from-success-stories.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-concept-project-information-document-pid-sustainable
+    title: Concept Project Information Document (PID) - Sustainable Energy Efficiency
+      in Municipal Services (SEEMS) - P177493
+    url: https://documents.worldbank.org/curated/en/588641634275883386/pdf/Concept-Project-Information-Document-PID-Sustainable-Energy-Efficiency-in-Municipal-Services-SEEMS-P177493.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-energy-efficien-5
+    title: 'Disclosable Version of the ISR - Energy Efficiency Project - P143580 - Sequence
+      No : 11'
+    url: https://documents.worldbank.org/curated/en/134761576616352392/pdf/Disclosable-Version-of-the-ISR-Energy-Efficiency-Project-P143580-Sequence-No-11.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-project-information-document-integrated-safegu-2
+    title: Project Information Document-Integrated Safeguards Data Sheet - Kosovo Energy
+      Efficiency and Renewable Energy Additional Financing - P167572
+    url: https://documents.worldbank.org/curated/en/975161578502409994/pdf/Project-Information-Document-Integrated-Safeguards-Data-Sheet-Kosovo-Energy-Efficiency-and-Renewable-Energy-Additional-Financing-P167572.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-armenia-energy-efficiency-project
+    title: Armenia - Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/232481468221986063/pdf/670350PAD0P1160Official0Use0Only090.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-burundi-energy-efficiency-project
+    title: Burundi - Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/593671468242097077/pdf/661250PAD0GEF00SIMLUT0DISCL02020012.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-poland-krakow-energy-efficiency-project
+    title: Poland - Krakow Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/199211468776382745/pdf/multi0page.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-energy-efficiency-development-in-china-the-successfu
+    title: 'Energy Efficiency Development in China : The Successful Partnership of China
+      and the World Bank Group on Energy Efficiency, 1992-2020'
+    url: https://documents.worldbank.org/curated/en/722211624896639274/pdf/Energy-Efficiency-Development-in-China-The-Successful-Partnership-of-China-and-the-World-Bank-Group-on-Energy-Efficiency-1992-2020.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-energy-efficien-6
+    title: 'Disclosable Version of the ISR - Energy Efficiency Project - P143580 - Sequence
+      No : 14'
+    url: https://documents.worldbank.org/curated/en/746141609793143678/pdf/Disclosable-Version-of-the-ISR-Energy-Efficiency-Project-P143580-Sequence-No-14.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-kosovo-energy-e-4
+    title: 'Disclosable Version of the ISR - Kosovo Energy Efficiency and Renewable
+      Energy Project - P143055 - Sequence No : 14'
+    url: https://documents.worldbank.org/curated/en/170641621337073308/pdf/Disclosable-Version-of-the-ISR-Kosovo-Energy-Efficiency-and-Renewable-Energy-Project-P143055-Sequence-No-14.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-montenegro-seco-2
+    title: 'Disclosable Version of the ISR - Montenegro Second Energy Efficiency Project
+      - P165509 - Sequence No : 02'
+    url: https://documents.worldbank.org/curated/en/535241575461322698/pdf/Disclosable-Version-of-the-ISR-Montenegro-Second-Energy-Efficiency-Project-P165509-Sequence-No-02.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-concept-environmental-and-social-review-summar-2
+    title: Concept Environmental and Social Review Summary (ESRS) - Sustainable Energy
+      Efficiency in Municipal Services (SEEMS) - P177493
+    url: https://documents.worldbank.org/curated/en/349501634258850412/pdf/Concept-Environmental-and-Social-Review-Summary-ESRS-Sustainable-Energy-Efficiency-in-Municipal-Services-SEEMS-P177493.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-integrated-safeguards-data-sheet-isds-energy-efficie
+    title: Integrated Safeguards Data Sheet (ISDS) - Energy Efficiency Improvements
+      in Public Buildings in the Kyrgyz Republic - P166751
+    url: https://documents.worldbank.org/curated/en/708731533881065126/pdf/Integrated-Safeguards-Data-Sheet-ISDS-Energy-Efficiency-Improvements-in-Public-Buildings-in-the-Kyrgyz-Republic-P166751.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-poland-energy-efficiency-project
+    title: Poland - Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/102151468780958088/pdf/270060PL.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-energy-efficien-7
+    title: 'Disclosable Version of the ISR - Energy Efficiency Project - P143580 - Sequence
+      No : 08'
+    url: https://documents.worldbank.org/curated/en/214091529412701793/pdf/Disclosable-Version-of-the-ISR-Energy-Efficiency-Project-P143580-Sequence-No-08.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-project-information-document-integrated-safegu-3
+    title: Project Information Document-Integrated Safeguards Data Sheet - Montenegro
+      Second Energy Efficiency Project - P165509
+    url: https://documents.worldbank.org/curated/en/871461524086683158/pdf/Project-Information-Document-Integrated-Safeguards-Data-Sheet-Montenegro-Second-Energy-Efficiency-Project-P165509.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-urban-scale-bui-5
+    title: 'Disclosable Version of the ISR - Urban Scale Building Energy Efficiency
+      and Renewable Energy - P130786 - Sequence No : 10'
+    url: https://documents.worldbank.org/curated/en/847841530294943095/pdf/Disclosable-Version-of-the-ISR-Urban-Scale-Building-Energy-Efficiency-and-Renewable-Energy-P130786-Sequence-No-10.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-kosovo-energy-e-5
+    title: 'Disclosable Version of the ISR - Kosovo Energy Efficiency and Renewable
+      Energy Project - P143055 - Sequence No : 09'
+    url: https://documents.worldbank.org/curated/en/508581541776558979/pdf/Disclosable-Version-of-the-ISR-Kosovo-Energy-Efficiency-and-Renewable-Energy-Project-P143055-Sequence-No-09.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-40-year-experience-in-energy-efficiency-develo
+    title: 'China : 40-Year Experience in Energy Efficiency Development - Policies,
+      Achievements, and Lessons Learned'
+    url: https://documents.worldbank.org/curated/en/975831625856343245/pdf/China-40-Year-Experience-in-Energy-Efficiency-Development-Policies-Achievements-and-Lessons-Learned.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-energy-efficiency-for-smes
+    title: Energy efficiency for SMEs
+    url: https://documents.worldbank.org/curated/en/379251468165570598/pdf/948200BRI0Box30s00FMS0EO0EEF0SME0EE.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-energy-efficien-8
+    title: 'Disclosable Version of the ISR - Energy Efficiency Project - P143580 - Sequence
+      No : 12'
+    url: https://documents.worldbank.org/curated/en/334251591360893121/pdf/Disclosable-Version-of-the-ISR-Energy-Efficiency-Project-P143580-Sequence-No-12.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-cn-shandong-energy-efficiency
+    title: China - CN-Shandong Energy Efficiency
+    url: https://documents.worldbank.org/curated/en/391201584548256778/pdf/China-CN-Shandong-Energy-Efficiency.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-india-energy-efficien
+    title: 'Disclosable Version of the ISR - India Energy Efficiency Scale-up Program
+      - P162849 - Sequence No : 05'
+    url: https://documents.worldbank.org/curated/en/171041632229219310/pdf/Disclosable-Version-of-the-ISR-India-Energy-Efficiency-Scale-up-Program-P162849-Sequence-No-05.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-kosovo-energy-e-6
+    title: 'Disclosable Version of the ISR - Kosovo Energy Efficiency and Renewable
+      Energy Project - P143055 - Sequence No : 12'
+    url: https://documents.worldbank.org/curated/en/739171590326756623/pdf/Disclosable-Version-of-the-ISR-Kosovo-Energy-Efficiency-and-Renewable-Energy-Project-P143055-Sequence-No-12.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-montenegro-seco-3
+    title: 'Disclosable Version of the ISR - Montenegro Second Energy Efficiency Project
+      - P165509 - Sequence No : 01'
+    url: https://documents.worldbank.org/curated/en/663711553721211371/pdf/Disclosable-Version-of-the-ISR-Montenegro-Second-Energy-Efficiency-Project-P165509-Sequence-No-01.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-concept-project-information-document-pid-serbia-resi
+    title: Concept Project Information Document (PID) - Serbia Residential Clean Energy
+      and Energy Efficiency Scale-Up Project - P176770
+    url: https://documents.worldbank.org/curated/en/957791634118373054/pdf/Concept-Project-Information-Document-PID-Serbia-Residential-Clean-Energy-and-Energy-Efficiency-Scale-Up-Project-P176770.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-brazil-energy-efficiency-project-apl
+    title: Brazil - Energy Efficiency Project (APL)
+    url: https://documents.worldbank.org/curated/en/488951468743816866/pdf/multi0page.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-india-financing-energy-efficiency-at-msmes-project
+    title: India - Financing Energy Efficiency at MSMEs Project
+    url: https://documents.worldbank.org/curated/en/561461577729300064/pdf/India-Financing-Energy-Efficiency-at-MSMEs-Project.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-scaling-up-energy-efficiency-in-buildings-in-the-wes
+    title: 'Scaling up energy efficiency in buildings in the Western Balkans : financing
+      energy efficiency measures for residential building stock - guidance note'
+    url: https://documents.worldbank.org/curated/en/418181468300545429/pdf/893240WP0P1332000002014006016018-42.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-montenegro-seco-4
+    title: 'Disclosable Version of the ISR - Montenegro Second Energy Efficiency Project
+      - P165509 - Sequence No : 04'
+    url: https://documents.worldbank.org/curated/en/696541608827020644/pdf/Disclosable-Version-of-the-ISR-Montenegro-Second-Energy-Efficiency-Project-P165509-Sequence-No-04.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-project-information-document-pid-energy-efficiency-i
+    title: Project Information Document (PID) - Energy Efficiency Improvements in Public
+      Buildings in the Kyrgyz Republic - P166751
+    url: https://documents.worldbank.org/curated/en/457961533881051623/pdf/Project-Information-Document-PID-Energy-Efficiency-Improvements-in-Public-Buildings-in-the-Kyrgyz-Republic-P166751.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-montenegro-seco-5
+    title: 'Disclosable Version of the ISR - Montenegro Second Energy Efficiency Project
+      - P165509 - Sequence No : 05'
+    url: https://documents.worldbank.org/curated/en/321361622860806734/pdf/Disclosable-Version-of-the-ISR-Montenegro-Second-Energy-Efficiency-Project-P165509-Sequence-No-05.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-brazil-energy-efficiency-project-gef
+    title: Brazil - Energy Efficiency Project (GEF)
+    url: https://documents.worldbank.org/curated/en/926211468744085237/pdf/multi0page.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-vietnam-energy-efficiency-for-industrial-enterprises
+    title: 'Vietnam - Energy Efficiency for Industrial Enterprises Project : indigenous
+      peoples plan : Vietnam - Energy Efficiency for Industrial Enterprises Proj'
+    url: https://documents.worldbank.org/curated/en/426401468174909664/pdf/Vietnam-Energy-Efficiency-for-Industrial-Enterprises-Project-ethnic-minority-planning-framework.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-concept-project-information-document-integrate-2
+    title: Concept Project Information Document-Integrated Safeguards Data Sheet - Montenegro
+      Second Energy Efficiency Project - P165509
+    url: https://documents.worldbank.org/curated/en/274381523915988478/pdf/Concept-Project-Information-Document-Integrated-Safeguards-Data-Sheet-Montenegro-Second-Energy-Efficiency-Project-P165509.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-urban-scale-building-energy-efficiency-a-2
+    title: 'China - Urban Scale Building Energy Efficiency and Renewable Energy : P130786
+      - Implementation Status Results Report : Sequence 06'
+    url: https://documents.worldbank.org/curated/en/101551468019243747/pdf/ISR-Disclosable-P130786-06-02-2016-1464863501421.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-montenegro-seco-6
+    title: 'Disclosable Version of the ISR - Montenegro Second Energy Efficiency Project
+      - P165509 - Sequence No : 06'
+    url: https://documents.worldbank.org/curated/en/313881624890128994/pdf/Disclosable-Version-of-the-ISR-Montenegro-Second-Energy-Efficiency-Project-P165509-Sequence-No-06.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-urban-scale-building-energy-efficiency-a-3
+    title: 'China - Urban Scale Building Energy Efficiency and Renewable Energy : P130786
+      - Implementation Status Results Report : Sequence 08'
+    url: https://documents.worldbank.org/curated/en/184151498596948147/pdf/ISR-Disclosable-P130786-06-27-2017-1498596938533.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-kosovo-energy-e-7
+    title: 'Disclosable Version of the ISR - Kosovo Energy Efficiency and Renewable
+      Energy Project - P143055 - Sequence No : 13'
+    url: https://documents.worldbank.org/curated/en/479091605801226932/pdf/Disclosable-Version-of-the-ISR-Kosovo-Energy-Efficiency-and-Renewable-Energy-Project-P143055-Sequence-No-13.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-kazakhstan-energy-eff
+    title: 'Disclosable Version of the ISR - Kazakhstan Energy Efficiency Project -
+      P130013 - Sequence No : 13'
+    url: https://documents.worldbank.org/curated/en/976391604595480639/pdf/Disclosable-Version-of-the-ISR-Kazakhstan-Energy-Efficiency-Project-P130013-Sequence-No-13.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-india-energy-efficiency-scale-up-program-project
+    title: India - Energy Efficiency Scale-up Program Project
+    url: https://documents.worldbank.org/curated/en/532521527391818294/pdf/India-Energy-Efficiency-Scale-up-Program-Project.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-urban-scale-building-energy-efficiency-a-4
+    title: 'China - Urban Scale Building Energy Efficiency and Renewable Energy : P130786
+      - Implementation Status Results Report : Sequence 05'
+    url: https://documents.worldbank.org/curated/en/850501468213909902/pdf/ISR-Disclosable-P130786-10-18-2015-1445171497720.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-turkey-institutional-review-of-energy-efficiency
+    title: Turkey - Institutional review of energy efficiency
+    url: https://documents.worldbank.org/curated/en/725221468334280649/pdf/ACS12738-REVISED-WP-P146501-PUBLIC-EEIR-ACS12738-English.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-urban-scale-building-energy-efficiency-a-5
+    title: 'China - Urban Scale Building Energy Efficiency and Renewable Energy : P130786
+      - Implementation Status Results Report : Sequence 03'
+    url: https://documents.worldbank.org/curated/en/247311468024297566/pdf/ISR-Disclosable-P130786-10-25-2014-1414246659887.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-kazakhstan-ener-2
+    title: 'Disclosable Version of the ISR - Kazakhstan Energy Efficiency Project -
+      P130013 - Sequence No : 14'
+    url: https://documents.worldbank.org/curated/en/480121621357879417/pdf/Disclosable-Version-of-the-ISR-Kazakhstan-Energy-Efficiency-Project-P130013-Sequence-No-14.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-india-energy-ef-2
+    title: 'Disclosable Version of the ISR - India Energy Efficiency Scale-up Program
+      - P162849 - Sequence No : 04'
+    url: https://documents.worldbank.org/curated/en/472991593469736145/pdf/Disclosable-Version-of-the-ISR-India-Energy-Efficiency-Scale-up-Program-P162849-Sequence-No-04.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-kosovo-energy-e-8
+    title: 'Disclosable Version of the ISR - Kosovo Energy Efficiency and Renewable
+      Energy Project - P143055 - Sequence No : 07'
+    url: https://documents.worldbank.org/curated/en/582161512625795917/pdf/Disclosable-Version-of-the-ISR-Kosovo-Energy-Efficiency-and-Renewable-Energy-Project-P143055-Sequence-No-07.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-urban-scale-building-energy-efficiency-a-6
+    title: 'China - Urban Scale Building Energy Efficiency and Renewable Energy : P130786
+      - Implementation Status Results Report : Sequence 07'
+    url: https://documents.worldbank.org/curated/en/569651482094675955/pdf/ISR-Disclosable-P130786-12-18-2016-1482094665302.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-capacity-building-for-the-national-energy-efficiency
+    title: 'Capacity building for the National Energy Efficiency Improvement Programme
+      (NEEIP) : routes to an implementing agency for energy efficiency in Zimbabw'
+    url: https://documents.worldbank.org/curated/en/713541468782153485/pdf/multi-page.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-energy-efficiency-p10
+    title: 'Disclosable Version of the ISR - Energy Efficiency - P107992 - Sequence
+      No : 18'
+    url: https://documents.worldbank.org/curated/en/124851510761146981/pdf/Disclosable-Version-of-the-ISR-Energy-Efficiency-P107992-Sequence-No-18.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-bulgaria-energy-efficiency-project
+    title: Bulgaria - Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/975381468770090858/pdf/27545.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-western-balkans-scaling-up-energy-efficiency-in-buil
+    title: 'Western Balkans - Scaling up energy efficiency in buildings : final report'
+    url: https://documents.worldbank.org/curated/en/612291468303019094/pdf/893210WP0P1332020002014006016018-42.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-poland-energy-efficiency-development-policy-loan
+    title: Poland - Energy Efficiency Development Policy Loan
+    url: https://documents.worldbank.org/curated/en/211791474586622602/pdf/000020051-20140626112900.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-mexico-municipal-ener
+    title: 'Disclosable Version of the ISR - Mexico Municipal Energy Efficiency Project
+      - P149872 - Sequence No : 06'
+    url: https://documents.worldbank.org/curated/en/669951545042339645/pdf/Disclosable-Version-of-the-ISR-Mexico-Municipal-Energy-Efficiency-Project-P149872-Sequence-No-06.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-bosnia-and-herzegovina-energy-efficiency-project-res
+    title: 'Bosnia and Herzegovina - Energy Efficiency Project : restructuring'
+    url: https://documents.worldbank.org/curated/en/869501510310783759/pdf/IL-RESDATA-EXT-P143580-11-10-2017-1510310773055.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-energy-efficiency-in-
+    title: 'Disclosable Version of the ISR - Energy Efficiency in Public Facilities
+      Project (PRESEMEH) - P149872 - Sequence No : 09'
+    url: https://documents.worldbank.org/curated/en/113141593180275044/pdf/Disclosable-Version-of-the-ISR-Energy-Efficiency-in-Public-Facilities-Project-PRESEMEH-P149872-Sequence-No-09.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-mexico-municipa-2
+    title: 'Disclosable Version of the ISR - Mexico Municipal Energy Efficiency Project
+      - P149872 - Sequence No : 05'
+    url: https://documents.worldbank.org/curated/en/166401529529738163/pdf/Disclosable-Version-of-the-ISR-Mexico-Municipal-Energy-Efficiency-Project-P149872-Sequence-No-05.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-concept-environmental-and-social-review-summar-3
+    title: Concept Environmental and Social Review Summary (ESRS) - Serbia Residential
+      Clean Energy and Energy Efficiency Scale-Up Project - P176770
+    url: https://documents.worldbank.org/curated/en/552181634841189068/pdf/Concept-Environmental-and-Social-Review-Summary-ESRS-Serbia-Residential-Clean-Energy-and-Energy-Efficiency-Scale-Up-Project-P176770.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-turkey-seismic-resilience-and-energy-efficiency-in-p
+    title: Turkey - Seismic Resilience and Energy Efficiency in Public Buildings Project
+    url: https://documents.worldbank.org/curated/en/738871623549676664/pdf/Turkey-Seismic-Resilience-and-Energy-Efficiency-in-Public-Buildings-Project.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-india-energy-ef-3
+    title: 'Disclosable Version of the ISR - India Energy Efficiency Scale-up Program
+      - P162849 - Sequence No : 03'
+    url: https://documents.worldbank.org/curated/en/966481568171680720/pdf/Disclosable-Version-of-the-ISR-India-Energy-Efficiency-Scale-up-Program-P162849-Sequence-No-03.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-ukraine-energy-efficiency-project
+    title: Ukraine - Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/115991506970342455/pdf/ICR00004191-FINAL-09292017.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-energy-efficien-9
+    title: 'Disclosable Version of the ISR - Energy Efficiency in Public Facilities
+      Project (PRESEMEH) - P149872 - Sequence No : 11'
+    url: https://documents.worldbank.org/curated/en/918091636676197165/pdf/Disclosable-Version-of-the-ISR-Energy-Efficiency-in-Public-Facilities-Project-PRESEMEH-P149872-Sequence-No-11.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-energy-efficien-10
+    title: 'Disclosable Version of the ISR - Energy Efficiency in Public Facilities
+      Project (PRESEMEH) - P149872 - Sequence No : 08'
+    url: https://documents.worldbank.org/curated/en/193811576808417736/pdf/Disclosable-Version-of-the-ISR-Energy-Efficiency-in-Public-Facilities-Project-PRESEMEH-P149872-Sequence-No-08.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-tunisia-energy-efficiency-project
+    title: Tunisia - Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/134241475519900776/pdf/ICR-Main-Document-P104266-2016-09-29-14-52-09302016.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-energy-efficien-11
+    title: 'Disclosable Version of the ISR - Energy Efficiency in Public Facilities
+      Project (PRESEMEH) - P149872 - Sequence No : 10'
+    url: https://documents.worldbank.org/curated/en/945481611556099388/pdf/Disclosable-Version-of-the-ISR-Energy-Efficiency-in-Public-Facilities-Project-PRESEMEH-P149872-Sequence-No-10.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-project-information-document-integrated-safegu-4
+    title: Project Information Document-Integrated Safeguards Data Sheet - Vietnam Scaling
+      Up Energy Efficiency Project - P164938
+    url: https://documents.worldbank.org/curated/en/612251550120458931/pdf/Project-Information-Document-Integrated-Safeguards-Data-Sheet-Vietnam-Scaling-Up-Energy-Efficiency-Project-P164938.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-india-energy-efficient-street-lighting-implementatio
+    title: 'India - Energy-efficient street lighting : implementation and financing
+      solutions'
+    url: https://documents.worldbank.org/curated/en/444081468282557427/pdf/India-EE-Street-Lighting-Implementation-and-Financing-P149482-June-27-2015.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-energy-efficien-12
+    title: 'Disclosable Version of the ISR - Energy Efficiency in Public Facilities
+      Project (PRESEMEH) - P149872 - Sequence No : 07'
+    url: https://documents.worldbank.org/curated/en/845721560322572091/pdf/Disclosable-Version-of-the-ISR-Energy-Efficiency-in-Public-Facilities-Project-PRESEMEH-P149872-Sequence-No-07.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-improving-energy-efficiency-in-public-institut
+    title: China - Improving energy efficiency in public institutions
+    url: https://documents.worldbank.org/curated/en/749981468011417224/pdf/823720ESM0ESMA0Box0379861B00PUBLIC0.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-scaling-up-energy-efficiency-in-buildings-in-t-2
+    title: 'Scaling up energy efficiency in buildings in the Western Balkans : the residential
+      energy efficiency program in Lithuania - case study'
+    url: https://documents.worldbank.org/curated/en/219131468101065684/pdf/893220WP0P1332000002014006016018-42.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-north-macedonia-publi
+    title: 'Disclosable Version of the ISR - North Macedonia Public Sector Energy Efficiency
+      Project - P149990 - Sequence No : 03'
+    url: https://documents.worldbank.org/curated/en/853381624974877534/pdf/Disclosable-Version-of-the-ISR-North-Macedonia-Public-Sector-Energy-Efficiency-Project-P149990-Sequence-No-03.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-urban-scale-building-energy-efficiency-a-7
+    title: 'China - Urban Scale Building Energy Efficiency and Renewable Energy : P130786
+      - Implementation Status Results Report : Sequence 02'
+    url: https://documents.worldbank.org/curated/en/897481468028823643/pdf/ISR-Disclosable-P130786-06-14-2014-1402740364902.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-argentina-energy-efficiency-project
+    title: Argentina - Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/471641467997033860/pdf/374590Argentin1cutive0Summary0Final.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-bosnia-and-herzegovina-energy-efficiency-project-add
+    title: 'Bosnia and Herzegovina - Energy Efficiency Project : Additional Financing'
+    url: https://documents.worldbank.org/curated/en/393641541210478122/pdf/Bosnia-and-Herzegovina-Energy-Efficiency-Project-Additional-Financing.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-bulgaria-energy-efficiency-gef-project
+    title: Bulgaria - Energy Efficiency Gef Project
+    url: https://documents.worldbank.org/curated/en/518821474664906172/pdf/000020051-20140624185858.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-designing-credit-lines-for-energy-efficiency
+    title: Designing credit lines for energy efficiency
+    url: https://documents.worldbank.org/curated/en/568471468165565865/pdf/IBArchive-fca3f894-d7e7-4964-8394-ba31f6ae444b.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-heat-reform-and-building-energy-efficiency-pro
+    title: China - Heat Reform and Building Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/458551468770148424/pdf/30747.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-urban-scale-building-energy-efficiency-a-8
+    title: 'China - Urban Scale Building Energy Efficiency and Renewable Energy : P130786
+      - Implementation Status Results Report : Sequence 01'
+    url: https://documents.worldbank.org/curated/en/722361468241169098/pdf/ISR-Disclosable-P130786-10-24-2013-1382610240408.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-north-macedonia-2
+    title: 'Disclosable Version of the ISR - North Macedonia Public Sector Energy Efficiency
+      Project - P149990 - Sequence No : 01'
+    url: https://documents.worldbank.org/curated/en/401271588947743354/pdf/Disclosable-Version-of-the-ISR-North-Macedonia-Public-Sector-Energy-Efficiency-Project-P149990-Sequence-No-01.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-montenegro-energy-efficiency-in-public-buildings-pro
+    title: 'Montenegro - Energy Efficiency in Public Buildings Project : restructuring
+      (Vol. 2 of 2) : Data sheet'
+    url: https://documents.worldbank.org/curated/en/993961468287371278/pdf/682060v20PJPR00Box0374379B00PUBLIC0.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-integrated-safeguards-data-sheet-appraisal-stage-ene
+    title: Integrated Safeguards Data Sheet (Appraisal Stage) - Energy Efficiency Project
+      - P116680
+    url: https://documents.worldbank.org/curated/en/565121468741631143/pdf/P1166800Apprai009201201328794216756.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-urban-scale-building-energy-efficiency-a-9
+    title: 'China - Urban Scale Building Energy Efficiency and Renewable Energy : P130786
+      - Implementation Status Results Report : Sequence 04'
+    url: https://documents.worldbank.org/curated/en/541551468018606450/pdf/ISR-Disclosable-P130786-03-11-2015-1426103985690.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-tanzania-energy-sector-capacity-building-project
+    title: Tanzania - Energy Sector Capacity Building Project
+    url: https://documents.worldbank.org/curated/en/506811563297886425/pdf/Tanzania-Energy-Sector-Capacity-Building-Project.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-lithuania-energy-efficiency-housing
+    title: Lithuania - Energy Efficiency housing
+    url: https://documents.worldbank.org/curated/en/811371474635145086/pdf/000020051-20140607143707.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: wbd-serbia-and-montenegro-serbia-energy-efficiency-proje
+    title: Serbia and Montenegro - Serbia Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/427791468781183690/pdf/279210YU.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-scaling-up-energy-efficiency-in-buildings-in-t-3
+    title: 'Scaling up energy efficiency in buildings in the Western Balkans : establishing
+      and operationalizing an energy efficiency revolving fund - guidance no'
+    url: https://documents.worldbank.org/curated/en/295141468300667166/pdf/893190WP0P1332033200002014006016018.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-poland-energy-efficiency-gef-project
+    title: Poland - Energy Efficiency Gef Project
+    url: https://documents.worldbank.org/curated/en/374091474941823770/pdf/000180307-20150108100733.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-concept-project-information-document-pid-north-maced
+    title: Concept Project Information Document (PID) - North Macedonia Public Sector
+      Energy Efficiency Project - P149990
+    url: https://documents.worldbank.org/curated/en/867411553708509122/pdf/Concept-Project-Information-Document-PID-North-Macedonia-Public-Sector-Energy-Efficiency-Project-P149990.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-yemen-energy-efficiency-institutional-framework-and-
+    title: 'Yemen : energy efficiency institutional framework and 3-year DSM/EE action
+      plan'
+    url: https://documents.worldbank.org/curated/en/637361468181746454/pdf/705820ESW0P1140t000Final000March030.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-romania-energy-efficiency-gef-project
+    title: Romania - Energy Efficiency Gef Project
+    url: https://documents.worldbank.org/curated/en/947091474502135144/pdf/000146597-20140619154204.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-scaling-up-energy-efficiency-in-buildings-in-t-4
+    title: 'Scaling up energy efficiency in buildings in the Western Balkans : energy
+      services market development - guidance note'
+    url: https://documents.worldbank.org/curated/en/309341468303018806/pdf/893200WP0P1332013320002014006016018.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-north-macedonia-3
+    title: 'Disclosable Version of the ISR - North Macedonia Public Sector Energy Efficiency
+      Project - P149990 - Sequence No : 02'
+    url: https://documents.worldbank.org/curated/en/287951605880877327/pdf/Disclosable-Version-of-the-ISR-North-Macedonia-Public-Sector-Energy-Efficiency-Project-P149990-Sequence-No-02.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-ict-solutions-for-energy-efficiency
+    title: ICT solutions for energy efficiency
+    url: https://documents.worldbank.org/curated/en/896511468332990644/pdf/704360ESW0P1210forEnergy0Efficiency.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-turkey-energy-efficiency-in-public-buildings-p-2
+    title: 'Turkey - Energy Efficiency in Public Buildings Project : Environmental Assessment
+      : Environmental and Social Management Framework'
+    url: https://documents.worldbank.org/curated/en/407161562736522016/pdf/Environmental-and-Social-Management-Framework.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-brazil-energy-efficiency-electrobras-project
+    title: Brazil - Energy Efficiency (Electrobras) Project
+    url: https://documents.worldbank.org/curated/en/379541468214220437/pdf/NCO0000262.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-argentina-energy-efficiency-project-argentine-projet
+    title: 'Argentina - Energy Efficiency Project (Argentine : projet de rendement énergétique),الأرجنتين-مشروع
+      كفاءة استخدام الطاقة,Argentina - Proyecto de efici'
+    url: https://documents.worldbank.org/curated/en/371131468217807365/pdf/438400PAD0P09010161101OFF0USE0ONLY1.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-restructuring-paper-district-heating-eff
+    title: Disclosable Restructuring Paper - District Heating Efficiency Improvement
+      Project - P132443
+    url: https://documents.worldbank.org/curated/en/746851549538979718/pdf/Disclosable-Restructuring-Paper-District-Heating-Efficiency-Improvement-Project-P132443.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: wbd-tunisia-energy-efficiency-project-restructuring
+    title: 'Tunisia - Energy Efficiency Project : restructuring'
+    url: https://documents.worldbank.org/curated/en/648471468350132160/pdf/728310PJPR0P100ox0379800B00PUBLIC00.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-poland-krakow-energy-efficiency-gef-project
+    title: Poland - Krakow Energy Efficiency (GEF) Project
+    url: https://documents.worldbank.org/curated/en/528141468776041640/pdf/multi0page.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-bulgaria-national-program-for-residential-ener-2
+    title: 'Bulgaria - National Program for Residential Energy Efficiency Project :
+      environmental assessment - Environmental and social systems assessment'
+    url: https://documents.worldbank.org/curated/en/832571468021541092/pdf/105747-EA-P154710-Box396254B-PUBLIC-Disclosed-5-17-2016.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-turkey-small-and-medium-enterprises-energy-efficienc
+    title: Turkey - Small and Medium Enterprises Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/904171586198902878/pdf/Turkey-Small-and-Medium-Enterprises-Energy-Efficiency-Project.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-environmental-and-social-review-summary-esrs-north-m
+    title: Environmental and Social Review Summary (ESRS) - North Macedonia Public Sector
+      Energy Efficiency Project - P149990
+    url: https://documents.worldbank.org/curated/en/782261554674691551/pdf/Environmental-and-Social-Review-Summary-ESRS-North-Macedonia-Public-Sector-Energy-Efficiency-Project-P149990.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-project-information-document-concept-stage-turkey-sm
+    title: Project Information Document (Concept Stage) - TURKEY SME ENERGY EFFICIENCY
+      - P122178
+    url: https://documents.worldbank.org/curated/en/652111468781502984/pdf/P1221780PID0Print00314201201331736449594.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-energy-efficiency-financing-project
+    title: China - Energy Efficiency Financing Project
+    url: https://documents.worldbank.org/curated/en/303211504632422283/pdf/ICRR-Disclosable-P084874-09-05-2017-1504632411317.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-second-roundtable-on-energy-efficiency-institutional
+    title: Second Roundtable on Energy Efficiency - institutional and financial delivery
+      mechanisms
+    url: https://documents.worldbank.org/curated/en/317341468765271270/pdf/multi-page.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-heat-reform-and-building-energy-efficiency-gef
+    title: China - Heat Reform and Building Energy Efficiency (GEF) Project
+    url: https://documents.worldbank.org/curated/en/722981468769160810/pdf/Project0Inform1010Appraisal0Stage12.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-project-information-document-appraisal-stage-energy-
+    title: Project Information Document (Appraisal Stage) - Energy Efficiency Project
+      - P116680
+    url: https://documents.worldbank.org/curated/en/174351468741630737/pdf/P1166800PID0Ap008201201328715372453.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-roadmap-for-the-implementation-of-energy-efficiency-
+    title: Roadmap for the Implementation of Energy Efficiency in Public Buildings of
+      the Kyrgyz Republic
+    url: https://documents.worldbank.org/curated/en/491271560400148398/pdf/Roadmap-for-the-Implementation-of-Energy-Efficiency-in-Public-Buildings-of-the-Kyrgyz-Republic.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: wbd-energy-efficiency-of-public-buildings-in-pre-ov-regi
+    title: 'Energy Efficiency of Public Buildings in Prešov region : Regulatory and
+      Institutional Framework - Diagnostics and Overview Report'
+    url: https://documents.worldbank.org/curated/en/550581560920717848/pdf/Energy-Efficiency-of-Public-Buildings-in-Prešov-region-Regulatory-and-Institutional-Framework-Diagnostics-and-Overview-Report.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-montenegro-energy-efficiency-in-public-buildings-p10
+    title: 'Montenegro - Energy Efficiency in Public Buildings : P107992 - Implementation
+      Status Results Report : Sequence 07'
+    url: https://documents.worldbank.org/curated/en/313071468774553652/pdf/P1079920ISR0Di023201201332527216966.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-kosovo-energy-efficiency-and-renewable-energy-projec
+    title: Kosovo - Energy Efficiency and Renewable Energy Project
+    url: https://documents.worldbank.org/curated/en/437581468265751164/pdf/PAD7540PAD0P14010Box385222B00OUO090.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-city-energy-efficiency-assessments
+    title: City energy efficiency assessments
+    url: https://documents.worldbank.org/curated/en/450301468143370230/pdf/936770NWP0Box30Note0EE0Assessment05.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-energy-efficiency-in-china-technical-and-sectoral-an
+    title: 'Energy efficiency in China : technical and sectoral analysis'
+    url: https://documents.worldbank.org/curated/en/715581468746692153/pdf/Energy-efficiency-in-China-technical-and-sectoral-analysis.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-philippines-gef-chiller-energy-efficiency-project
+    title: Philippines - GEF Chiller Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/336471504638112807/pdf/ICRR-Disclosable-P114119-09-05-2017-1504638100993.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: wbd-jordan-energy-efficiency-investment-support-framewor
+    title: 'Jordan - Energy Efficiency Investment Support Framework Project : restructuring'
+    url: https://documents.worldbank.org/curated/en/947531468038676749/pdf/782560PJRP0P1000Box037737900PUBLIC0.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-serbia-and-montenegro-energy-efficiency-project
+    title: Serbia and Montenegro - Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/476811468760780887/pdf/multi0page.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-announcement-of-the-world-bank-supports-energy-effic
+    title: Announcement of the World Bank Supports Energy Efficiency with Twenty-One
+      Million Dollars in Serbia on March 16, 2004
+    url: https://documents.worldbank.org/curated/en/571001629716455502/pdf/Announcement-of-the-World-Bank-Supports-Energy-Efficiency-with-Twenty-One-Million-Dollars-in-Serbia-on-March-16-2004.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: wbd-china-provincial-energy-efficiency-scale-up-program-
+    title: 'China - Provincial Energy Efficiency Scale-up Program : P114182 - Implementation
+      Status Results Report : Sequence 08'
+    url: https://documents.worldbank.org/curated/en/375491468214191746/pdf/China-Provincial-Energy-Efficiency-Scale-up-Program-P114182-Implementation-Status-Results-Report-Sequence-08.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-mexico-energy-efficiency-in-public-facilities-projec
+    title: 'Mexico - Energy Efficiency in Public Facilities Project : additional financing
+      and restructuring'
+    url: https://documents.worldbank.org/curated/en/747701535721210912/pdf/Mexico-Energy-PP-03132018.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-integrated-safeguards-data-sheet-appraisal-stage-bur
+    title: Integrated Safeguards Data Sheet (Appraisal Stage) - Burundi - Energy Efficiency
+      Project - P117225
+    url: https://documents.worldbank.org/curated/en/326271468769451319/pdf/P1172250Apprai022201101324532785588.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-argentina-energy-efficiency-project-argentine--2
+    title: 'الأرجنتين-مشروع كفاءة استخدام الطاقة,Argentina - Energy Efficiency Project
+      (Argentine : projet de rendement énergétique),Argentina - Proyecto de efici'
+    url: https://documents.worldbank.org/curated/en/788211468742562052/pdf/Project0Inform1t0Stage0Argentina0EE.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-india-partial-risk-sharing-facility-in-energy-effici
+    title: 'India - Partial Risk Sharing Facility in Energy Efficiency : P132620 - Implementation
+      Status Results Report : Sequence 01'
+    url: https://documents.worldbank.org/curated/en/147221468268513763/pdf/India-Partial-Risk-Sharing-Facility-in-Energy-Efficiency-P132620-Implementation-Status-Results-Report-Sequence-01.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-energy-efficiency-fac
+    title: 'Disclosable Version of the ISR - Energy Efficiency Facility for Industrial
+      Enterprises - P118737 - Sequence No : 11'
+    url: https://documents.worldbank.org/curated/en/823231516795993812/pdf/Disclosable-Version-of-the-ISR-Energy-Efficiency-Facility-for-Industrial-Enterprises-P118737-Sequence-No-11.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-energy-efficiency-financing-option-papers-for-georgi
+    title: Energy efficiency financing option papers for Georgia
+    url: https://documents.worldbank.org/curated/en/825761475845097689/pdf/108847-ESM-P157135-PUBLIC-EE-Options-Paper-Georgia.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-poland-energy-efficiency-and-renewable-energy-develo
+    title: Poland - Energy Efficiency and Renewable Energy Development Policy Loan Project
+    url: https://documents.worldbank.org/curated/en/962021468332357152/pdf/ICR26050ICR0En0Box0377356B00PUBLIC0.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-concept-stage-program-information-document-pid-polan
+    title: Concept Stage Program Information Document (PID) - Poland Energy Efficiency
+      in Single Family Buildings Program - P170131
+    url: https://documents.worldbank.org/curated/en/283061553109177027/pdf/Concept-Stage-Program-Information-Document-PID-Poland-Energy-Efficiency-in-Single-Family-Buildings-Program-P170131.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-montenegro-energy-efficiency-in-public-buildin-2
+    title: 'Montenegro - Energy Efficiency in Public Buildings Project : restructuring
+      (Vol. 1 of 2) : Main report'
+    url: https://documents.worldbank.org/curated/en/778891468287370912/pdf/682060v10PJPR0Box0374379B00PUBLIC0.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-ukraine-facilitating-municipal-energy-efficiency-fin
+    title: 'Ukraine - Facilitating municipal energy efficiency finance : policy paper'
+    url: https://documents.worldbank.org/curated/en/398561467997561296/pdf/103219-ESMAP-P150553-Box394857B-PUBLIC-EECI-Policy-Paper-Finalt-Clean-2015-09-30-v2-002.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-energy-efficiency-financing-option-papers-for-kosovo
+    title: Energy efficiency financing option papers for Kosovo
+    url: https://documents.worldbank.org/curated/en/607521475846166137/pdf/108848-ESM-P157135-PUBLIC-EE-Options-Paper-Kosovo-ENGLISH.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-montenegro-energy-efficiency-project-environmental-a
+    title: 'Montenegro - Energy Efficiency Project : environmental assessment : Environmental
+      and social management framework'
+    url: https://documents.worldbank.org/curated/en/402381522698338900/pdf/P165509-ESMF.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-partial-risk-sharing-
+    title: 'Disclosable Version of the ISR - Partial Risk Sharing Facility in Energy
+      Efficiency - P132620 - Sequence No : 06'
+    url: https://documents.worldbank.org/curated/en/479811577203123889/pdf/Disclosable-Version-of-the-ISR-Partial-Risk-Sharing-Facility-in-Energy-Efficiency-P132620-Sequence-No-06.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-scaling-up-energy-efficiency-in-buildings-in-t-5
+    title: 'Scaling up energy efficiency in buildings in the Western Balkans : municipal
+      budgeting and finance - guidance note'
+    url: https://documents.worldbank.org/curated/en/889231468113054231/pdf/893230WP0P1332000020140060160018-42.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-energy-efficiency-retrofitting-of-residential--2
+    title: 'Energy Efficiency Retrofitting of Residential Buildings : Solutions and
+      Recommendations : თბილისის ურბანული რეგენერაციის ენერგოეფექტურობის პროექტი - მ'
+    url: https://documents.worldbank.org/curated/en/312661591359698839/pdf/თბილისის-ურბანული-რეგენერაციის-ენერგოეფექტურობის-პროექტი-მეორე-ფაზა.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-project-information-document-integrated-safegu-5
+    title: Project Information Document-Integrated Safeguards Data Sheet - Additional
+      Financing for the Bosnia and Herzegovina Energy Efficiency Project - P16540
+    url: https://documents.worldbank.org/curated/en/370801533631894885/pdf/Project-Information-Document-Integrated-Safeguards-Data-Sheet-Additional-Financing-for-the-Bosnia-and-Herzegovina-Energy-Efficiency-Project-P165405.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-project-information-document-seismic-resilience-and-
+    title: Project Information Document - Seismic Resilience and Energy Efficiency in
+      Public Buildings Project - P175894
+    url: https://documents.worldbank.org/curated/en/203141617230182618/pdf/Project-Information-Document-Seismic-Resilience-and-Energy-Efficiency-in-Public-Buildings-Project-P175894.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-partial-risk-sh-2
+    title: 'Disclosable Version of the ISR - Partial Risk Sharing Facility in Energy
+      Efficiency - P132620 - Sequence No : 05'
+    url: https://documents.worldbank.org/curated/en/368311561713886227/pdf/Disclosable-Version-of-the-ISR-Partial-Risk-Sharing-Facility-in-Energy-Efficiency-P132620-Sequence-No-05.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-integrated-safeguards-data-sheet-appraisal-stage-vie
+    title: Integrated Safeguards Data Sheet (Appraisal Stage) - Vietnam Energy Efficiency
+      for Industrial Enterprises(VEEIE) - P151086
+    url: https://documents.worldbank.org/curated/en/734411468338398397/pdf/Integrated-Safeguards-Data-Sheet-Appraisal-Stage-Vietnam-Energy-Efficiency-for-Industrial-Enterprises-VEEIE-P151086.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-mexico-municipa-3
+    title: 'Disclosable Version of the ISR - Mexico Municipal Energy Efficiency Project
+      - P149872 - Sequence No : 04'
+    url: https://documents.worldbank.org/curated/en/643621513891413890/pdf/Disclosable-Version-of-the-ISR-Mexico-Municipal-Energy-Efficiency-Project-P149872-Sequence-No-04.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-kosovo-energy-efficiency-and-renewable-energy--2
+    title: 'Kosovo - Energy Efficiency and Renewable Energy Project : Environmental
+      Assessment : Environmental and Social Management Framework'
+    url: https://documents.worldbank.org/curated/en/301131580503669447/pdf/Environmental-and-Social-Management-Framework.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-bosnia-and-herzegovina-energy-efficiency-project
+    title: Bosnia and Herzegovina - Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/472661468005401980/pdf/PAD6760P143580010Box382153B00OUO090.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-serbia-energy-efficiency-ee-project
+    title: Serbia - Energy Efficiency (EE) Project
+    url: https://documents.worldbank.org/curated/en/894041468103145608/pdf/ICR28290P0753430Box379865B00OUO090.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-financing-municipal-energy-efficiency-projects
+    title: Financing municipal energy efficiency projects
+    url: https://documents.worldbank.org/curated/en/858481468338366144/pdf/936740NWP0Box30inancing0KS180140web.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-india-s-state-level-energy-efficiency-implementation
+    title: 'India’s state-level energy efficiency implementation readiness : prepared
+      for the World Bankenergy and extractives global practice, South Asia Region'
+    url: https://documents.worldbank.org/curated/en/949051488954519741/pdf/113212-WP-P147807-State-level-Energy-Efficiency-PUBLIC.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-poland-energy-efficiency-project-restructuring-vol-1
+    title: 'Poland - Energy Efficiency Project : restructuring (Vol. 1 of 2) : Main
+      report'
+    url: https://documents.worldbank.org/curated/en/803131468293450724/pdf/675390PJPR0v100270B00PUBLIC000SEC0.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-lebanon-energy-efficiency-study-in-lebanon
+    title: Lebanon - Energy efficiency study in Lebanon
+    url: https://documents.worldbank.org/curated/en/863271468055739324/pdf/703020ESW0P1130al0version00912180WB.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd--3
+    title: 'التجديد الأخضر للبناء : برنامج نظام تقييم كفاءة الطاقة وإعادة التأهيل للمباني
+      السكنية القائمة في الأردن'
+    url: https://documents.worldbank.org/curated/en/247301617185476823/pdf/Building-Back-Green-Energy-Efficiency-Retrofit-Program-and-Certification-Scheme-for-Existing-Residential-Buildings-in-Jordan.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-project-information-document-appraisal-stage-urban-s
+    title: Project Information Document (Appraisal Stage) - Urban Scale Building Energy
+      Efficiency and Renewable Energy - P130786
+    url: https://documents.worldbank.org/curated/en/287861468024601687/pdf/PID-Appraisal-Print-P130786-01032013-1357266992091.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-t-nez-programa-de-eficiencia-energ-tica-y-proyecto-d
+    title: Túnez - Programa de eficiencia energética y proyecto del sector industrial,تونس
+      ــ مشروع كفاءة استخدام الطاقة/القطاع الصناعي,Tunisia - Energy Efficien
+    url: https://documents.worldbank.org/curated/en/713521468760755470/pdf/28045.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-mexico-additional-financing-for-energy-efficiency-in
+    title: Mexico - Additional Financing for Energy Efficiency In Public Facilities
+      Project
+    url: https://documents.worldbank.org/curated/en/297571515721526122/pdf/Project-Information-Document-Integrated-Safeguards-Data-Sheet.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-driving-energy-efficiency-markets-through-municipal-
+    title: Driving energy efficiency markets through municipal procurement
+    url: https://documents.worldbank.org/curated/en/532071468326412153/pdf/893870ESMAP0P10curement0KS170140web.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-disclosable-version-of-the-isr-turkey-energy-e-4
+    title: 'Disclosable Version of the ISR - Turkey Energy Efficiency in Public Buildings
+      - P162762 - Sequence No : 01'
+    url: https://documents.worldbank.org/curated/en/280121579962263665/pdf/Disclosable-Version-of-the-ISR-Turkey-Energy-Efficiency-in-Public-Buildings-P162762-Sequence-No-01.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-residential-energy-efficiency
+    title: Residential Energy Efficiency
+    url: https://documents.worldbank.org/curated/en/682441544815307200/pdf/IBArchive-d00287be-ef50-4498-8746-616ebe718058.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-uzbekistan-scaling-up-energy-efficiency-in-buildings
+    title: 'Uzbekistan - Scaling up energy efficiency in buildings : short-to-medium-term
+      priorities and recommended actions (Vol. 1 of 2)'
+    url: https://documents.worldbank.org/curated/en/134491473858224929/pdf/ACS19957-ESM-OUO-9-Uzbekistan-Scaling-Up-Energy-Efficiency-in-Buildings-has-been-approved-P152135.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-gef-china-energy-efficiency-promotion-in-indus
+    title: China - GEF China Energy Efficiency Promotion In Industry
+    url: https://documents.worldbank.org/curated/en/318261497975478825/pdf/ICRR-Disclosable-P119357-06-20-2017-1497975470344.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-concept-project-information-document-pid-seismic-res
+    title: Concept Project Information Document (PID) - Seismic Resilience and Energy
+      Efficiency in Public Buildings Project - P175894
+    url: https://documents.worldbank.org/curated/en/201171607929334071/pdf/Concept-Project-Information-Document-PID-Seismic-Resilience-and-Energy-Efficiency-in-Public-Buildings-Project-P175894.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-announcement-of-china-s-energy-efficiency-the-target
+    title: Announcement of China’s Energy Efficiency the Target of Three New World Bank
+      Projects on May 28, 2008
+    url: https://documents.worldbank.org/curated/en/287171630680087712/pdf/Announcement-of-China-s-Energy-Efficiency-the-Target-of-Three-New-World-Bank-Projects-on-May-28-2008.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: wbd-montenegro-energy-efficiency-in-public-buildin-3
+    title: 'Montenegro - Energy Efficiency in Public Buildings Project : restructuring'
+    url: https://documents.worldbank.org/curated/en/839141468123866545/pdf/RES101280PJPR00paper00200P10799202.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-mexico-municipal-energy-efficiency-project
+    title: Mexico - Municipal Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/222971467992503902/pdf/PAD1193-PAD-P149872-R2016-0023-1-OUO-9.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-poland-energy-efficiency-project-restructuring-vol-2
+    title: 'Poland - Energy Efficiency Project : restructuring (Vol. 2 of 2) : Data
+      sheet'
+    url: https://documents.worldbank.org/curated/en/373801468093568496/pdf/675390PJPR0v200ructuring0Data0sheet-doc.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-provincial-energy-efficiency-scale-up-project
+    title: China - Provincial Energy Efficiency Scale-up Project
+    url: https://documents.worldbank.org/curated/en/446691468022742282/pdf/579200PAD0P1141OFFICIAL0USE0ONLY191.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-slovakia-catching-up-regions-energy-efficiency-of-pu
+    title: 'Slovakia Catching-Up Regions – Energy Efficiency of Public Buildings in
+      the Presov Region : Strategic Planning for Scaling-Up EE in PSK Building'
+    url: https://documents.worldbank.org/curated/en/421401560921535234/pdf/Slovakia-Catching-Up-Regions-Energy-Efficiency-of-Public-Buildings-in-the-Presov-Region-Strategic-Planning-for-Scaling-Up-EE-in-PSK-Building.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-vietnam-clean-production-energy-efficiency-project
+    title: Vietnam - Clean Production Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/781731523025593046/pdf/Implementation-Completion-and-Results-Report-ICR-Document-04032018.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-tunisia-energy-efficiency-program-industrial-sector-
+    title: Tunisia - Energy Efficiency Program Industrial Sector Project
+    url: https://documents.worldbank.org/curated/en/722981468108837524/pdf/ICR19380P078130LIC0dislosed07090120.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-china-energy-efficiency-promotion-in-industry-projec
+    title: China - Energy Efficiency Promotion in Industry Project
+    url: https://documents.worldbank.org/curated/en/254961483023391000/pdf/1483023403890-000A10458-ICR-Main-Document-P119357-2016-12-21-11-07-V4-12272016.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-ukraine-district-heating-energy-efficiency-project
+    title: Ukraine - District Heating Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/473501468317048683/pdf/PAD7970REVISED0PUBLIC00R20140009301.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: wbd-project-information-document-second-district-heating
+    title: Project Information Document - Second District Heating Efficiency Improvement
+      Project - P172668
+    url: https://documents.worldbank.org/curated/en/612701588778844866/pdf/Project-Information-Document-Second-District-Heating-Efficiency-Improvement-Project-P172668.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: wbd-energy-efficiency-assessment-for-selected-municipal-
+    title: 'Energy Efficiency Assessment for Selected Municipal Buildings : Final Report
+      with Recommendations for Implementation'
+    url: https://documents.worldbank.org/curated/en/826991559194228794/pdf/Energy-Efficiency-Assessment-for-Selected-Municipal-Buildings-Final-Report-with-Recommendations-for-Implementation.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-uzbekistan-district-heating-energy-efficiency-projec
+    title: Uzbekistan - District Heating Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/591171517108418870/pdf/Uzbekistan-PAD-01052018.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: wbd-announcement-of-global-environment-facility-grant-to
+    title: Announcement of Global Environment Facility Grant to Benin for an Energy
+      Efficiency Project on May 21, 2009
+    url: https://documents.worldbank.org/curated/en/104071640019318648/pdf/Announcement-of-Global-Environment-Facility-Grant-to-Benin-for-an-Energy-Efficiency-Project-on-May-21-2009.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: wbd-serbia-key-design-features-for-a-residential-energy-
+    title: 'Serbia - Key Design Features for a Residential Energy Efficiency Program
+      : Examples of Nis and Novi Sad (Vol. 1 of 2)'
+    url: https://documents.worldbank.org/curated/en/462711622009793089/pdf/Serbia-Key-Design-Features-for-a-Residential-Energy-Efficiency-Program-Examples-of-Nis-and-Novi-Sad.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-poland-energy-efficiency-development-policy-loan-pro
+    title: Poland - Energy Efficiency Development Policy Loan Project
+    url: https://documents.worldbank.org/curated/en/799961468293726997/pdf/PID1March031.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-colombia-energy-efficiency-study-for-the-residential
+    title: Colombia - Energy efficiency study for the residential, commercial and public
+      sectors
+    url: https://documents.worldbank.org/curated/en/852681468914960260/pdf/Colombia-Energy-efficiency-study-for-the-residential-commercial-and-public-sectors.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-assessing-and-measuring-the-performance-of-energy-ef
+    title: Assessing and measuring the performance of energy efficiency projects
+    url: https://documents.worldbank.org/curated/en/531691498680679016/pdf/117041-REVISED-PUBLIC-FINAL-ESMAP-Assessing-and-Measuring-EE-TR011-17-Web-rev-opt.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-belarus-social-sector-energy-efficiency-project
+    title: Belarus - Social Sector Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/658241468767985397/pdf/multi0page.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-thailand-promotion-of-electricity-energy-efficiency-
+    title: Thailand - Promotion of Electricity Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/405161468780971619/pdf/multi0page.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: wbd-viet-nam-demand-side-management-and-energy-efficienc
+    title: Viet Nam - Demand-Side Management and Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/225901468761721373/pdf/multi0page.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-india-chiller-energy-efficiency-project-environmenta
+    title: 'India - Chiller Energy Efficiency Project : environmental assessment'
+    url: https://documents.worldbank.org/curated/en/417481468267359455/pdf/E20450EA0P10051anagement0Plan0Dec08.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: wbd-croatia-energy-efficiency-project-restructuring-vol-
+    title: 'Croatia - Energy Efficiency Project : restructuring  (Vol. 1 of 2) : Main
+      report'
+    url: https://documents.worldbank.org/curated/en/462201468026130089/pdf/554630PJPR0P071turing0Paper010legal.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-brazil-centrais-electricas-brasileiras-s-a-electrobr
+    title: Brazil - Centrais Electricas Brasileiras S.A. (Electrobras) Energy Efficiency
+      Project
+    url: https://documents.worldbank.org/curated/en/960361468227648857/pdf/ICR0000184.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-mena-delivery-mechanisms-and-institutions-to-realize
+    title: MENA – Delivery mechanisms and institutions to realize energy efficiency
+      potential
+    url: https://documents.worldbank.org/curated/en/790641476347126270/pdf/109025-WP-P148222-PUBLIC-MENAEnergyProjectionsEEPotential.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-supporting-energy-efficiency-in-vietnam-designing-th
+    title: 'Supporting Energy Efficiency in Vietnam : Designing the Financial Structure
+      of an Energy Efficiency Credit Line - Case Study'
+    url: https://documents.worldbank.org/curated/en/832761546962490025/pdf/Supporting-Energy-Efficiency-in-Vietnam-Designing-the-Financial-Structure-of-an-Energy-Efficiency-Credit-Line-Case-Study.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-montenegro-proyecto-de-eficiencia-energ-tica-montene
+    title: 'Montenegro - Proyecto de eficiencia energética,Montenegro - Energy Efficiency
+      Project (Monténégro - Projet de rendement énergétique ),الجبل الأسود ــ '
+    url: https://documents.worldbank.org/curated/en/550561468053961064/pdf/MEEP1P1079921P1praisal0Stage1Sept24.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: wbd-philippines-chiller-energy-efficiency-project
+    title: Philippines - Chiller Energy Efficiency Project
+    url: https://documents.worldbank.org/curated/en/618471468144882379/pdf/Integrated0Saf10Concept0Stage01GEF1.pdf
+    source: worldbank_wds
+    license: cc-by
+    topic: equipment_systems
+    format: pdf

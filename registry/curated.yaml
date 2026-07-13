@@ -3746,3 +3746,103 @@ sources:
     license: cc-by
     topic: building_energy
     format: pdf
+  # ---------- NZ Building Code compliance docs (MBIE, Crown copyright CC-BY-4.0 per building.govt.nz/about-building-performance/copyright; verified 2026-07-12) ----------
+  - id: nzbc-h1-as1-energy-efficiency-6th-ed
+    title: "NZ Building Code — Acceptable Solution H1/AS1 Energy Efficiency (6th edition)"
+    url: https://www.building.govt.nz/assets/Uploads/building-code-compliance/h1-energy-efficiency/asvm/h1-energy-efficiency-as1-sixth-edition.pdf
+    source: nz_mbie
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+  - id: nzbc-h1-vm1-energy-efficiency-5th-ed-amd1
+    title: "NZ Building Code — Verification Method H1/VM1 Energy Efficiency (5th edition, amendment 1)"
+    url: https://www.building.govt.nz/assets/Uploads/building-code-compliance/h1-energy-efficiency/asvm/h1-energy-efficiency-vm1-5th-edition-amendment-1.pdf
+    source: nz_mbie
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+  - id: nzbc-e2-as1-external-moisture-4th-ed
+    title: "NZ Building Code — Acceptable Solution E2/AS1 External Moisture (4th edition)"
+    url: https://www.building.govt.nz/assets/Uploads/building-code-compliance/e-moisture/e2-external-moisture/asvm/e2-external-moisture-as1-fourth-edition.pdf
+    source: nz_mbie
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: nzbc-e2-external-moisture-3rd-ed-amd10
+    title: "NZ Building Code — E2 External Moisture VM1/AS1-AS3 combined (3rd edition, amendment 10)"
+    url: https://www.building.govt.nz/assets/Uploads/building-code-compliance/e-moisture/e2-external-moisture/asvm/e2-external-moisture-3rd-edition-amendment-10.pdf
+    source: nz_mbie
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: nzbc-g4-as1-ventilation-5th-ed
+    title: "NZ Building Code — Acceptable Solution G4/AS1 Ventilation (5th edition)"
+    url: https://www.building.govt.nz/assets/Uploads/building-code-compliance/g-services-and-facilities/g4-ventilation/asvm/g4-ventilation-as1-fifth-edition.pdf
+    source: nz_mbie
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: nzbc-h1-as2-energy-efficiency-2nd-ed
+    title: "NZ Building Code — Acceptable Solution H1/AS2 Energy Efficiency, buildings >300 m2 (2nd edition)"
+    url: https://www.building.govt.nz/assets/Uploads/building-code-compliance/h1-energy-efficiency/asvm/h1-energy-efficiency-as2-second-edition.pdf
+    source: nz_mbie
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+  - id: nzbc-h1-vm1-energy-efficiency-6th-ed
+    title: "NZ Building Code — Verification Method H1/VM1 Energy Efficiency (6th edition)"
+    url: https://www.building.govt.nz/assets/Uploads/building-code-compliance/h1-energy-efficiency/asvm/h1-energy-efficiency-vm1-sixth-edition.pdf
+    source: nz_mbie
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+  - id: nzbc-h1-vm2-energy-efficiency-2nd-ed
+    title: "NZ Building Code — Verification Method H1/VM2 Energy Efficiency, buildings >300 m2 (2nd edition)"
+    url: https://www.building.govt.nz/assets/Uploads/building-code-compliance/h1-energy-efficiency/asvm/h1-energy-efficiency-vm2-second-edition.pdf
+    source: nz_mbie
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+  - id: nzbc-h1-vm3-energy-efficiency-1st-ed-amd1
+    title: "NZ Building Code — Verification Method H1/VM3 Energy Efficiency, HVAC in commercial buildings (1st edition, amendment 1)"
+    url: https://www.building.govt.nz/assets/Uploads/building-code-compliance/h1-energy-efficiency/asvm/h1-energy-efficiency-vm3-first-edition-amendment-1.pdf
+    source: nz_mbie
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+  # ---------- NRCan Office of Energy Efficiency homeowner/equipment guides (Canada open-gov terms: non-commercial reproduction permitted w/ attribution, natural-resources.canada.ca/terms-conditions; robots.txt clean; verified 2026-07-13 — NOT the NRC publications archive, which is NO-GO) ----------
+  - id: nrcan-keeping-the-heat-in
+    title: "NRCan — Keeping the Heat In: a practical guide to home insulation, air sealing and retrofit (complete)"
+    url: https://natural-resources.canada.ca/sites/www.nrcan.gc.ca/files/canmetenergy/pdf/housing/KeepingtheHeatIn.pdf
+    source: nrcan_oee
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nrcan-water-heater-guide
+    title: "NRCan — Water Heater Guide (selection and efficiency of residential water heating systems)"
+    url: https://natural-resources.canada.ca/sites/nrcan/files/oee/files/pdf/equipment/WaterHeaterGuide_e.pdf
+    source: nrcan_oee
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: nrcan-heating-with-gas
+    title: "NRCan — Heating with Gas (furnace types, distribution systems, EnerGuide ratings)"
+    url: https://natural-resources.canada.ca/sites/nrcan/files/energy/pdf/energystar/Heating_With_Gas.pdf
+    source: nrcan_oee
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: nrcan-heating-with-electricity
+    title: "NRCan — Heating with Electricity (electric heating systems and efficiency)"
+    url: https://natural-resources.canada.ca/sites/www.nrcan.gc.ca/files/energy/pdf/energystar/Heating_with_Electricity.pdf
+    source: nrcan_oee
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: nrcan-solar-water-heating-buyers-guide
+    title: "NRCan — Solar Water Heating Systems: A Buyer's Guide"
+    url: https://natural-resources.canada.ca/sites/www.nrcan.gc.ca/files/canmetenergy/files/pubs/SOLAR-BuyersGuide-SolarWaterHeatingSystems_ENG.pdf
+    source: nrcan_oee
+    license: open
+    topic: equipment_systems
+    format: pdf
