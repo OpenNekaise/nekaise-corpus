@@ -3909,3 +3909,84 @@ sources:
     license: open
     topic: construction
     format: pdf
+  # ---------- GSA Green Proving Ground (US federal, public domain) ----------
+  # Field evaluations of emerging building technologies in the GSA real-estate portfolio,
+  # run with DOE national labs. Listing pages are WAF-walled but direct /system/files/*.pdf
+  # fetch 200 (see no-go-veins memo). Curated batch 2026-07-14; more reports remain.
+  - id: gsa-gpg-magnetic-bearing-chiller
+    title: "GSA GPG — Variable-Speed Oil-Free Magnetic-Bearing Centrifugal Chiller (Findings)"
+    url: https://www.gsa.gov/system/files/GPG_Mag_Lev_FullReport_508_6-17-13.pdf
+    source: gsa_gpg
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: gsa-gpg-chiller-plant-control-optimization
+    title: "GSA GPG — Chiller Plant Control Optimization System (Findings GPG-028)"
+    url: "https://www.gsa.gov/system/files/GPG028-Chiller%20Plant%20Control%20Optimization-Findings-508R.pdf"
+    source: gsa_gpg
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: gsa-gpg-electrochemical-water-treatment-cooling-towers
+    title: "GSA GPG — Electrochemical Water Treatment for Cooling Towers (Final Report)"
+    url: "https://www.gsa.gov/system/files/DWT%20Final%20Report%206-28-19.pdf"
+    source: gsa_gpg
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: gsa-gpg-co2-heat-pump
+    title: "GSA GPG — CO2-Based Heat Pump for Heating and Cooling (Findings 2022)"
+    url: https://www.gsa.gov/system/files/Applied_Research/2022-Co2-Based_Heat_Pump.pdf
+    source: gsa_gpg
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: gsa-gpg-advanced-lighting-controls
+    title: "GSA GPG — Evaluation of Advanced Lighting Control Systems (Findings GPG-037)"
+    url: https://www.gsa.gov/system/files/GPG037_Advanced_Lighting_Controls.pdf
+    source: gsa_gpg
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: gsa-gpg-led-lighting-controls-guidance
+    title: "GSA GPG — LED Lighting and Controls Guidance for Federal Buildings"
+    url: "https://www.gsa.gov/system/files/LED%20and%20Controls%20Guidance%20for%20GSA.pdf"
+    source: gsa_gpg
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: gsa-gpg-insulating-window-panels
+    title: "GSA GPG — Insulating Window Panels (Findings GPG-054)"
+    url: "https://www.gsa.gov/system/files/GPG054-Findings-Insulating%20Window%20Panels-April2024.pdf"
+    source: gsa_gpg
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: gsa-gpg-integrated-daylighting
+    title: "GSA GPG — Integrated Daylighting Systems (Findings GPG-015)"
+    url: "https://www.gsa.gov/system/files/GPG015-Integrated%20Daylighting-Findings-508R.pdf"
+    source: gsa_gpg
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+  - id: gsa-gpg-solar-control-films
+    title: "GSA GPG — Solar-Control Films (Findings GPG-017)"
+    url: "https://www.gsa.gov/system/files/GPG017-Solar%20Control%20Films-Findings-508R.pdf"
+    source: gsa_gpg
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: gsa-gpg-high-r-window-panel-retrofit
+    title: "GSA GPG — Highly Insulating Window Panel Attachment Retrofit"
+    url: https://www.gsa.gov/system/files/GPG_High_R_Value_Windows_12-2013.pdf
+    source: gsa_gpg
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: gsa-gpg-submeters-analytics-full-panel
+    title: "GSA GPG — Submeters and Analytics: Full Panel (Findings GPG-041)"
+    url: "https://www.gsa.gov/system/files/041-Submeters%20and%20Analytics-Full%20Panel-Findings-508.pdf"
+    source: gsa_gpg
+    license: public-domain
+    topic: controls_bas
+    format: pdf
