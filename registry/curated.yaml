@@ -3054,6 +3054,94 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  # ---------- UK gov.uk — heat pumps, Home Energy Model & building standards (OGL v3.0) ----------
+  # Crown copyright under the Open Government Licence v3.0 (attribution; interoperable with CC-BY).
+  # gov.uk robots allows publication/asset fetches; assets.publishing.service.gov.uk serves direct
+  # %PDF at 200. New subject areas beyond the existing EFUS survey batch. Curated 2026-07-15.
+  - id: gov-uk-hem-heat-pump-methodology
+    title: "Home Energy Model — Heat Pump Methodology (HEM TP-12, Jan 2026)"
+    url: https://assets.publishing.service.gov.uk/media/69a6cbe7723a61518b9f1395/hem-tp-12-heat-pump-methodology.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: gov-uk-hem-consultation
+    title: "The Home Energy Model: replacing the Standard Assessment Procedure (Dec 2023 consultation)"
+    url: https://assets.publishing.service.gov.uk/media/65e1f99a2f2b3b001c7cd879/home-energy-model-consultation.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: gov-uk-hem-fhs-assessment
+    title: "The Home Energy Model: Future Homes Standard assessment (consultation)"
+    url: https://assets.publishing.service.gov.uk/media/65f86671ce4c150011a1508b/home-energy-model-future-homes-standard-assessment-consultation.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: gov-uk-hem-epc-methodology
+    title: "Home Energy Model: Energy Performance Certificates methodology (2026)"
+    url: https://assets.publishing.service.gov.uk/media/69b93b7b635612b767a46600/home-energy-model-energy-performance-certificates-methodology.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: gov-uk-future-buildings-standard-consultation
+    title: "The Future Buildings Standard (non-domestic buildings & dwellings) consultation document"
+    url: https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/956037/Future_Buildings_Standard_consultation_document.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: gov-uk-einas-2025-heat-and-buildings
+    title: "Energy Innovation Needs Assessment 2025 — Heat and Buildings (DESNZ)"
+    url: https://assets.publishing.service.gov.uk/media/69449d1f9273c48f554cf643/einas-2025-heat-and-buildings.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: gov-uk-heat-pumps-district-heating
+    title: "DECC — Heat Pumps in District Heating (Final report)"
+    url: https://assets.publishing.service.gov.uk/media/5a814b72e5274a2e8ab53321/DECC_Heat_Pumps_in_District_Heating_-_Final_report.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: gov-uk-est-heat-pump-field-trials-phase1
+    title: "Energy Saving Trust Heat Pump Field Trials — first-phase detailed analysis"
+    url: https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/48327/5045-heat-pump-field-trials.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: gov-uk-est-heat-pump-field-trials-phase2
+    title: "Energy Saving Trust Heat Pump Field Trials — second-phase detailed analysis"
+    url: https://assets.publishing.service.gov.uk/media/5a7f09a0e5274a2e87db3727/analysis_data_second_phase_est_heat_pump_field_trials.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: gov-uk-rhpp-heat-pump-final-report
+    title: "Analysis of heat pump data from the Renewable Heat Premium Payment (RHPP) scheme — final report"
+    url: https://assets.publishing.service.gov.uk/media/5a82b8faed915d74e62374d8/DECC_RHPP_161214_Final_Report_v1-13.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: gov-uk-low-carbon-heating-evidence
+    title: "Evidence Gathering — Low Carbon Heating Technologies: heat pumps combined summary report (2016)"
+    url: https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/565248/Heat_Pumps_Combined_Summary_report_-_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: gov-uk-innovation-heat-pump-technology
+    title: "Innovation in heat pump technology and manufacturing (thematic report, DESNZ)"
+    url: https://assets.publishing.service.gov.uk/media/6978d7a8128d9c1d09a98c30/thematic-report-innovation-hpr.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
 
   # --- curated vein: IEA EBC Annex technical & summary reports (restored after prune-bug; 2026-07-06) ---
   - id: iea-ebc-annex-74-final-report
