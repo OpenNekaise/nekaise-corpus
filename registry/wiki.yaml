@@ -6484,3 +6484,31 @@ sources:
     license: cc-by-sa
     topic: standards_protocols
     format: html
+  - id: wik-fr-organisation-des-chantiers
+    title: Organisation des chantiers (fr Wikipedia)
+    url: https://fr.wikipedia.org/wiki/Organisation_des_chantiers
+    source: wikipedia_fr
+    license: cc-by-sa
+    topic: construction
+    format: html
+  - id: wik-fr-p-tardage
+    title: Pétardage (fr Wikipedia)
+    url: https://fr.wikipedia.org/wiki/P%C3%A9tardage
+    source: wikipedia_fr
+    license: cc-by-sa
+    topic: construction
+    format: html
+  - id: wik-it-energy-star
+    title: Energy Star (it Wikipedia)
+    url: https://it.wikipedia.org/wiki/Energy_Star
+    source: wikipedia_it
+    license: cc-by-sa
+    topic: building_energy
+    format: html
+  - id: wik-ko-knx-standard
+    title: KNX (ko Wikipedia)
+    url: https://ko.wikipedia.org/wiki/KNX
+    source: wikipedia_ko
+    license: cc-by-sa
+    topic: standards_protocols
+    format: html

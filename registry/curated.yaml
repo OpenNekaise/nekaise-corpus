@@ -4078,3 +4078,156 @@ sources:
     license: public-domain
     topic: controls_bas
     format: pdf
+  # ---------- US EPA ENERGY STAR (public domain, pdf) — added 2026-07-16 ----------
+  # Portfolio Manager Technical Reference series (portfoliomanager.energystar.gov/pdf/reference/).
+  # NOTE: that host soft-404s (HTTP 200 + 53KB HTML) for missing files — verify %PDF before adding.
+  - id: estar-tr-emissions
+    title: "ENERGY STAR Portfolio Manager Technical Reference: Greenhouse Gas Emissions"
+    url: "https://portfoliomanager.energystar.gov/pdf/reference/Emissions.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-tr-energy-star-score
+    title: "ENERGY STAR Portfolio Manager Technical Reference: The ENERGY STAR Score (1-100 methodology)"
+    url: "https://portfoliomanager.energystar.gov/pdf/reference/ENERGY%20STAR%20Score.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-tr-climate-and-weather
+    title: "ENERGY STAR Portfolio Manager Technical Reference: Climate and Weather (weather normalization)"
+    url: "https://portfoliomanager.energystar.gov/pdf/reference/Climate%20and%20Weather.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-tr-us-national-median-table
+    title: "ENERGY STAR Portfolio Manager Technical Reference: U.S. National Median Table"
+    url: "https://portfoliomanager.energystar.gov/pdf/reference/US%20National%20Median%20Table.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-tr-national-median-table
+    title: "ENERGY STAR Portfolio Manager Technical Reference: National Median Table"
+    url: "https://portfoliomanager.energystar.gov/pdf/reference/National%20Median%20Table.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-tr-canadian-national-median-table
+    title: "ENERGY STAR Portfolio Manager Technical Reference: Canadian National Median Table"
+    url: "https://portfoliomanager.energystar.gov/pdf/reference/Canadian%20National%20Median%20Table.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-tr-green-power
+    title: "ENERGY STAR Portfolio Manager Technical Reference: Green Power"
+    url: "https://portfoliomanager.energystar.gov/pdf/reference/Green%20Power.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-ws-intro-exchanging-data
+    title: "ENERGY STAR Portfolio Manager Web Services: Introduction to Exchanging Data"
+    url: "https://portfoliomanager.energystar.gov/pdf/reference/Introduction_to_Exchanging_Data_en_US.pdf"
+    source: energystar
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: estar-ws-testing-web-services
+    title: "ENERGY STAR Portfolio Manager Web Services: Testing Web Services"
+    url: "https://portfoliomanager.energystar.gov/pdf/reference/Testing_Web_Services_en_US.pdf"
+    source: energystar
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  # ENERGY STAR score technical references + guides (www.energystar.gov asset host).
+  # Listing pages under /buildings/tools-and-resources are robots-disallowed for '*' —
+  # harvest direct asset URLs via search, then verify. Filenames are DATED (Office_August_2019_508.pdf).
+  - id: estar-score-offices-2019
+    title: "ENERGY STAR Score for Offices in the United States (Technical Reference, August 2019)"
+    url: "https://www.energystar.gov/sites/default/files/tools/Office_August_2019_508.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-score-residence-halls-2018
+    title: "ENERGY STAR Score for Residence Halls/Dormitories in the United States (Technical Reference, August 2018)"
+    url: "https://www.energystar.gov/sites/default/files/tools/Residence_Hall_August_2018_EN_508.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-managing-your-energy-lbnl-3714e
+    title: "Managing Your Energy: An ENERGY STAR Guide for Identifying Energy Savings in Manufacturing Plants (LBNL-3714E)"
+    url: "https://www.energystar.gov/sites/default/files/buildings/tools/Managing_Your_Energy_Final_LBNL-3714E.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-k12-energy-efficiency-student-toolkit
+    title: "ENERGY STAR Energy Efficiency Student Toolkit (K-12)"
+    url: "https://www.energystar.gov/sites/default/files/tools/K12EnergyEfficiencyStudentToolkit.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-small-business-offices
+    title: "ENERGY STAR Energy Savings Tips for Small Businesses: Offices - Owners and Tenants"
+    url: "https://www.energystar.gov/sites/default/files/tools/Small_Business_Offices_0.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-small-business-grocery
+    title: "ENERGY STAR Energy Savings Tips for Small Businesses: Grocery and Convenience Stores"
+    url: "https://www.energystar.gov/sites/default/files/tools/Small_Business_Grocery_0.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-us-property-types-definitions-2024
+    title: "ENERGY STAR U.S. Property Types, Definitions, and Use Details (October 2024)"
+    url: "https://www.energystar.gov/sites/default/files/2024-11/US_PropertyTypesUseDetails_Definitions_Oct2024_508.pdf"
+    source: energystar
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: estar-benchmarking-performance-reporting-part3
+    title: "ENERGY STAR Benchmarking & Performance Reporting Part 3 - To Efficiency and Beyond: Strategies for Improving Energy Performance"
+    url: "https://www.energystar.gov/sites/default/files/2025-03/Benchmarking_Performance_Reporting-Part_3.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-verifying-certification-application-2024
+    title: "Verifying the ENERGY STAR Certification Application (May 2024)"
+    url: "https://www.energystar.gov/sites/default/files/2024-07/Verifying%20the%20ENERGY%20STAR%20Certification%20Application%20-%20May%202024_FINAL_508.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-tracking-ghg-emissions-in-pm-2024
+    title: "Tracking Greenhouse Gas Emissions in ENERGY STAR Portfolio Manager (May 2024)"
+    url: "https://www.energystar.gov/sites/default/files/2024-07/TrackingGHGEmissionsinPM%20-%20May%202024_FINAL_508.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-portfolio-manager-101
+    title: "ENERGY STAR Portfolio Manager 101: Navigating Portfolio Manager, Adding a Property and Benchmarking"
+    url: "https://www.energystar.gov/sites/default/files/asset/document/Portfolio%20Manager%20101_508.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: estar-portfolio-manager-201
+    title: "ENERGY STAR Portfolio Manager 201: Editing Property Details, Data Quality and Sharing (May 2023)"
+    url: "https://www.energystar.gov/sites/default/files/asset/document/Portfolio%20Manager%20201%20-%20May%202023_508.pdf"
+    source: energystar
+    license: public-domain
+    topic: building_energy
+    format: pdf

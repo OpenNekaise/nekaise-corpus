@@ -11996,3 +11996,138 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-polycyclic-aromatic-hydrocarbons-sources-toxic
+    title: 'Polycyclic Aromatic Hydrocarbons: Sources, Toxicity, and Remediation Approaches'
+    url: https://www.frontiersin.org/articles/10.3389/fmicb.2020.562813/pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: ope-luminescent-metal-organic-frameworks
+    title: Luminescent metal–organic frameworks
+    url: https://www.osti.gov/servlets/purl/1675297
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: ope-response-to-burden-of-proof-a-comprehensive-re
+    title: 'Response to ‘Burden of proof: A comprehensive review of the feasibility
+      of 100% renewable-electricity systems’'
+    url: https://arxiv.org/pdf/1709.05716
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: ope-forecasting-residential-heating-and-electricit
+    title: Forecasting residential heating and electricity demand with scalable, high-resolution,
+      open-source models
+    url: https://arxiv.org/pdf/2505.22873
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: ope-a-review-of-the-corrective-power-of-personal-c
+    title: A review of the corrective power of personal comfort systems in non-neutral
+      ambient environments
+    url: https://escholarship.org/content/qt4kv4f2mk/qt4kv4f2mk.pdf?t=nrh8in
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: ope-a-survey-of-large-language-models
+    title: A Survey of Large Language Models
+    url: https://arxiv.org/pdf/2303.18223
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arx-evaluating-gan-lstm-for-smart-meter-anomaly-de
+    title: Evaluating GAN-LSTM for Smart Meter Anomaly Detection in Power Systems
+    url: https://arxiv.org/pdf/2601.09701
+    source: arxiv
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: ope-a-review-on-data-preprocessing-techniques-towa
+    title: A Review on Data Preprocessing Techniques Toward Efficient and Reliable Knowledge
+      Discovery From Building Operational Data
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2021.652801/pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+  - id: ope-bio-aviation-fuel-a-comprehensive-review-and-a
+    title: 'Bio-aviation Fuel: A Comprehensive Review and Analysis of the Supply Chain
+      Components'
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2020.00110/pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+  - id: ope-a-review-of-metasurfaces-physics-and-applicati
+    title: 'A review of metasurfaces: physics and applications'
+    url: https://arxiv.org/pdf/1605.07672
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: ope-a-global-review-of-the-state-of-the-evidence-o
+    title: A global review of the state of the evidence of household air pollution's
+      contribution to ambient fine particulate matter and their related health imp
+    url: https://escholarship.org/content/qt70m234r0/qt70m234r0.pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: ope-2019-novel-coronavirus-covid-19-pandemic-built
+    title: '2019 Novel Coronavirus (COVID-19) Pandemic: Built Environment Considerations
+      To Reduce Transmission'
+    url: https://escholarship.org/content/qt6136m08m/qt6136m08m.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: ope-combining-theory-and-experiment-in-electrocata
+    title: 'Combining theory and experiment in electrocatalysis: Insights into materials
+      design'
+    url: https://www.osti.gov/servlets/purl/1349286
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: ope-net-zero-emissions-energy-systems
+    title: Net-zero emissions energy systems
+    url: https://www.osti.gov/servlets/purl/1460617
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: ope-ensemble-deep-learning-a-review
+    title: 'Ensemble deep learning: A review'
+    url: https://arxiv.org/pdf/2104.02395
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: ope-technology-roadmap-for-flexible-sensors
+    title: Technology Roadmap for Flexible Sensors
+    url: https://escholarship.org/content/qt3m6447z5/qt3m6447z5.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: ope-the-role-of-artificial-intelligence-in-achievi
+    title: The role of artificial intelligence in achieving the Sustainable Development
+      Goals
+    url: https://arxiv.org/pdf/1905.00501
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: ope-medical-image-analysis-using-deep-learning-alg
+    title: Medical image analysis using deep learning algorithms
+    url: https://www.frontiersin.org/articles/10.3389/fpubh.2023.1273253/pdf?isPublishedV2=False
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
