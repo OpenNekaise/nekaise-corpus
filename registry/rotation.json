@@ -2,19 +2,19 @@
   "_readme": "Shared excavation state for the discovery loop — read/advance via scripts/rotation.py. Committed so any agent/machine resumes where the last one stopped. History of what is already mined lives in git log + manifest.jsonl.",
   "find_osti": {
     "flag": "--page",
-    "next": 67,
+    "next": 69,
     "step": 2,
     "note": "run with --rows 50 --pages 2; ~200k records/query universe"
   },
   "find_archive": {
     "flag": "--page",
-    "next": 23,
+    "next": 24,
     "step": 1,
     "note": "pre-1929 public-domain texts; rows 30"
   },
   "find_books": {
     "flag": "--offset",
-    "next": 400,
+    "next": 425,
     "step": 25,
     "note": "OAPEN all-language + native-language queries (de/it/fr/es/pt/nl added 07-10); offsets 0-50 mined multilingual, 0-375 English-era. NOT HUNG, just SLOW: 117 QUERIES x ~15-20s/search + a 30s OAI license lookup per candidate = ~45-60min/run, and it prints only at the end. Two rounds mistook that for a hang at offset 375 and skipped it; a 3600s cap ran it fine (offset 375 -> +153 books on 07-16). Give it >=3600s; do NOT retire the English queries."
   },
@@ -26,19 +26,19 @@
   },
   "find_nist": {
     "flag": "--page",
-    "next": 20,
+    "next": 21,
     "step": 1,
     "note": "Crossref DOI prefix 10.6028; ~2k on-topic docs"
   },
   "find_zenodo": {
     "flag": "--page",
-    "next": 18,
+    "next": 19,
     "step": 1,
     "note": "rate-limited anonymous API — keep --max 100-150"
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "2015-W04",
+    "next": "2015-W03",
     "note": "weekly buckets 1900..now, walked backwards; mined: 2017-2020 W01, 1925-1940 W01s, 2015-W52..W08 (49 buckets). --countries flag NEW (default US): CN/EP/DE work, sitemap titles are English for all countries; CN buckets 2018-2020 W03 mined 07-10 (license=open for non-US)"
   },
   "find_purdue": {
@@ -60,7 +60,7 @@
   },
   "find_ademe": {
     "flag": "--page",
-    "next": 21,
+    "next": 25,
     "step": 4,
     "note": "run with --pages 4; categories: 3153-batiment (504 results, mined p1-12), 3149-energies (p1-8), 3509-urbanisme (p1-8); all three still yielding ~80-95/round on 07-12; license=open (non-commercial reuse w/ attribution)"
   },
@@ -84,12 +84,12 @@
   },
   "find_patents_cn": {
     "flag": "--bucket",
-    "next": "2019-W42",
+    "next": "2019-W41",
     "note": "CN patents (Chinese full text; license=open). Same weekly-bucket walk as find_patents but separate pointer; marathon runs it with --countries CN. Mined: 2018/2019/2020-W03, 2019-W46+W45 (+800 on 07-12)."
   },
   "find_worldbank": {
     "flag": "--os",
-    "next": 1100,
+    "next": 1500,
     "step": 400,
     "note": "World Bank Documents & Reports official API (see find_worldbank.py docstring); run with --rows 50 --pages 8 --max 250. Query 'building energy efficiency' = 16,890 records (os 0-400 mined 07-12, 250 kept — overlap at os 300 is dedup-safe). When it thins, rotate --q: 'energy efficient buildings', 'district heating', 'building code', 'thermal insulation', 'green building construction' — reset next=0 per query. cc-by, junk doctys filtered in-script"
   }
