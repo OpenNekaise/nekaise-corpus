@@ -20,9 +20,10 @@ whichever link's label is exactly/contains "全文" (full text) — NOT reliably
 link resolves (HEAD, GET-magic-byte fallback) we register ONE entry for the whole report; otherwise
 one entry per chapter PDF (each titled with its own chapter label so registry title-dedup doesn't
 collapse them). NOTE: the live site's own heading calls this series 建築研究報告 ("Building
-Research Report"); 建築研究資料 ("Building Research Data") is a *different*, messier BRI series at
-`data.html` with inconsistent PDF naming and no reliable "full text" link — not covered here, and
-worth its own pass later.
+Research Report"); 建築研究資料 ("Building Research Data", `--series data`) is the sibling series
+at `data.html` (numbers 1..217+, ~105 live folders) with the same page skeleton — newer numbers
+have an `all.pdf`-style "全文" link, older ones (e.g. No.120) only chapter PDFs, which the same
+full-text-else-chapters fallback handles.
 
 NILIM: `report.html` lists year pages `<year>report/index.htm` (seen back to 2012). Each year page
 links every article as its own numbered PDF (`arYYYYhpNNN.pdf` in recent years; older years use a
@@ -56,11 +57,13 @@ UA = {"User-Agent": "nekaise-corpus/find_japan"}
 TIMEOUT = 30
 
 BRI_REPORT = "https://www.kenken.go.jp/japanese/contents/publications/report/{n}/index.html"
+BRI_DATA = "https://www.kenken.go.jp/japanese/contents/publications/data/{n}/index.html"
 NILIM_YEAR = "https://www.nilim.go.jp/lab/bcg/siryou/{year}report/index.htm"
 
 TAG_RE = re.compile(r"<[^>]+>")
 PDF_LINK_RE = re.compile(r'<a\s+href="([^"]+\.pdf)(?:#[^"]*)?"[^>]*>(.*?)</a>', re.S | re.I)
-BRI_MARKER = re.compile(r"建築研究報告</b>")
+# both BRI series use the same page skeleton; only the banner text differs
+BRI_MARKER = re.compile(r"建築研究(?:報告|資料)</b>")
 
 # ordered (regex, topic) title-keyword remap — first match wins, default building_energy.
 TOPIC_RULES = [
@@ -146,11 +149,15 @@ def bri_title(txt: str) -> str | None:
     return lines[0].strip("「」").strip() if lines else None
 
 
-def bri_report(session: requests.Session, n: int) -> list[tuple[str, str, str, str]]:
-    """One BRI report number -> [(id, title, url, topic), ...]. Empty if the report doesn't exist
-    at this number (pre-digitization reports <139 have an abstract-only .htm page with no PDF and
-    simply 404 against the folder URL checked here) or has no PDF links."""
-    page_url = BRI_REPORT.format(n=n)
+def bri_report(session: requests.Session, n: int,
+               series: str = "bri") -> list[tuple[str, str, str, str]]:
+    """One BRI report/data number -> [(id, title, url, topic), ...]. Empty if the item doesn't
+    exist at this number (pre-digitization reports <139 have an abstract-only .htm page with no
+    PDF and simply 404 against the folder URL checked here) or has no PDF links. `series` picks
+    建築研究報告 (report.html, "bri") vs 建築研究資料 (data.html, "data") — same page skeleton."""
+    tmpl, banner, prefix = ((BRI_REPORT, "建築研究報告", "jpn-bri-report") if series == "bri"
+                            else (BRI_DATA, "建築研究資料", "jpn-bri-data"))
+    page_url = tmpl.format(n=n)
     resp = fetch(session, page_url)
     if resp is None:
         return []
@@ -161,17 +168,17 @@ def bri_report(session: requests.Session, n: int) -> list[tuple[str, str, str, s
     if not links:
         return []
     topic = classify_topic(title)
-    base_title = f"建築研究報告 No.{n} — {title}"
+    base_title = f"{banner} No.{n} — {title}"
     full = next(((u, l) for u, l in links if "全文" in l), None)
     if full and head_ok(session, full[0]):
-        return [(f"jpn-bri-report-{n}-all", base_title, full[0], topic)]
+        return [(f"{prefix}-{n}-all", base_title, full[0], topic)]
     rows = []
     for u, l in links:
         if "全文" in l:
             continue  # broken/unreachable whole-doc link — fall back to its sibling chapters only
         stem = registry.slug(PurePosixPath(u).stem) or "pdf"
         chap_title = f"{base_title}｜{l}" if l else base_title
-        rows.append((f"jpn-bri-report-{n}-{stem}", chap_title, u, topic))
+        rows.append((f"{prefix}-{n}-{stem}", chap_title, u, topic))
     return rows
 
 
@@ -203,9 +210,9 @@ def nilim_year(session: requests.Session, year: int) -> list[tuple[str, str, str
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--series", choices=["bri", "nilim"], default="bri")
+    ap.add_argument("--series", choices=["bri", "data", "nilim"], default="bri")
     ap.add_argument("--start", type=int, default=1,
-                     help="BRI report number, or NILIM year (e.g. 2024)")
+                     help="BRI report/data number, or NILIM year (e.g. 2024)")
     ap.add_argument("--count", type=int, default=20,
                      help="how many report-numbers/years to walk this run")
     ap.add_argument("--max", type=int, default=300, help="cap on new entries this run")
@@ -223,7 +230,8 @@ def main() -> None:
             break
         key = args.start + i
         try:
-            rows = bri_report(session, key) if args.series == "bri" else nilim_year(session, key)
+            rows = (nilim_year(session, key) if args.series == "nilim"
+                    else bri_report(session, key, args.series))
         except Exception as e:
             print(f"# {args.series} {key} failed: {e}", file=sys.stderr)
             rows = []
@@ -237,7 +245,7 @@ def main() -> None:
             urls.add(u)
             titles.add(t)
             out.append({"id": sid, "title": title[:200], "url": url,
-                        "source": "bri_jp" if args.series == "bri" else "nilim_jp",
+                        "source": "nilim_jp" if args.series == "nilim" else "bri_jp",
                         "license": "open", "topic": topic, "format": "pdf"})
         time.sleep(0.5)  # politeness between page fetches
 

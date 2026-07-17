@@ -2184,3 +2184,558 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: jpn-bri-data-109-all
+    title: 建築研究資料 No.109 — 平成19年（2007年）新潟県中越沖地震建築物被害調査報告
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/109/ks0430.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-114-all
+    title: 建築研究資料 No.114 — 平成20年(2008年)岩手・宮城内陸地震建築物被害調査報告
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/114/ks0481.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-118-all
+    title: 建築研究資料 No.118 — 2008年5月12日(四川大地震)における
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/118/ks0535.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-119-all
+    title: 建築研究資料 No.119 — No.119号（2010(平成22年)　8月）
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/119/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-127-127-2
+    title: 建築研究資料 No.127 — 長周期地震動に対する超高層建築物等の安全対策に関する検討｜概要 ・ Summary
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/127/127-2.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-127-127-4-1
+    title: 建築研究資料 No.127 — 長周期地震動に対する超高層建築物等の安全対策に関する検討｜第 1 章
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/127/127-4-1.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-127-127-4-2
+    title: 建築研究資料 No.127 — 長周期地震動に対する超高層建築物等の安全対策に関する検討｜第 2 章
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/127/127-4-2.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-127-127-4-5
+    title: 建築研究資料 No.127 — 長周期地震動に対する超高層建築物等の安全対策に関する検討｜第 5 章
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/127/127-4-5.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-127-127-all
+    title: 建築研究資料 No.127 — 長周期地震動に対する超高層建築物等の安全対策に関する検討｜全 文
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/127/127-all.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-128-all
+    title: 建築研究資料 No.128 — 大地震動時における木造軸組構法住宅の倒壊解析手法の開発
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/128/siryou_no128_all.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-10
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜第1章 はじめに
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_10.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-20
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜第2章 調査研究の概要
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_20.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-40
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜第4章 地震および地震動、津波
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_40.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-52
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜5.2 木造建築物の振動的被害
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_52.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-53
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜5.3 鉄骨造建築物の被害
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_53.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-54
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜5.4 鉄筋コンクリート造等建築物の被害
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_54.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-55
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜5.5 宅地地盤・基礎の被害
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_55.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-56
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜5.6 非構造部材の被害
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_56.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-50
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜5.1〜5.6の一括ダウンロード
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_50.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-61
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜6.1 はじめに〜6.2 調査内容
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_61.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-62
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜6.2 現地調査（その1/岩手県山田町〜宮城県石巻市）
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_62.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-63
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜6.3 現地調査（その2/宮城県仙台市〜宮城県山元町）
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_63.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-64
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜6.4 被害調査の分類と考察〜6.6
+      まとめ
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_64.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-60
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜6.1〜6.6の一括ダウンロード
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_60.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-65
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜付録：調査建築物データベース
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_65.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-70
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜第7章 火災による建築物被害
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_70.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-80
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜第8章 おわりに〜裏表紙
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_80.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-132-0311quickreport-emendation
+    title: 建築研究資料 No.132 — 平成23年（2011年）東北地方太平洋沖地震調査研究（速報）（東日本大震災）｜修正箇所の一覧はこちらです【PDF/79KB】。
+    url: https://www.kenken.go.jp/japanese/contents/topics/20110311/pdf/quickreport/0311quickreport_emendation.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-134-all
+    title: 建築研究資料 No.134 — 防犯まちづくりデザインガイド
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/134/134-all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-138-all
+    title: 建築研究資料 No.138 — 平成23年（2011年）東北地方太平洋沖地震において観測された強震記録に基づく
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/138/all.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-139-all
+    title: 建築研究資料 No.139 — 低炭素建築物認定基準(平成24年12月公布)等関係技術資料
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/139/4.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-140-all
+    title: 建築研究資料 No.140 — 低炭素建築物認定基準(平成24年12月公布)等関係技術資料
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/140/6.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-143-all
+    title: 建築研究資料 No.143 — No.143号（2013(平成25年)3月）鉄骨造建築物の接合部ディテール例示資料集
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/143/9.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-144-all
+    title: 建築研究資料 No.144 — No.144号（2013(平成25年)8月）超高層建築物等への長周期地震動の影響に関する検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/144/8_all.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-145-all
+    title: 建築研究資料 No.145 — No.145号（2013(平成25年)8月）建築物の長期使用に対応した外装・防水の品質確保
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/145/8.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-146-all
+    title: 建築研究資料 No.146 — No.146号（2013(平成25年)9月）建築物における天井脱落対策に係る技術基準の解説
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/146/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-149-all
+    title: 建築研究資料 No.149 — No.149号（2013(平成25年)11月）平成25年省エネルギー基準(平成25年9月公布)等関係技術資料
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/149/all_No149.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-150-all
+    title: 建築研究資料 No.150 — No.150号（2013(平成25年)11月）平成25年省エネルギー基準(平成25年9月公布)等関係技術資料
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/150/all_No150.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-151-all
+    title: 建築研究資料 No.151 — No.151号（2013(平成25年)11月）平成25年省エネルギー基準(平成25年9月公布)等関係技術資料
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/151/all_No151.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-152-all
+    title: 建築研究資料 No.152 — No.152号（2013(平成25年)11月）平成25年省エネルギー基準(平成25年9月公布)等関係技術資料
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/152/all_No152.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-153-all
+    title: 建築研究資料 No.153 — No.153号（2014(平成26年)1月）アスベスト含有成形板の塗装改修工事指針（案）
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/153/153.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-162-all
+    title: 建築研究資料 No.162 — No.162号（2014(平成26年)8月）免震建築物の設計用地震層せん断力係数に関する検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/162/10.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-163-all
+    title: 建築研究資料 No.163 — No.163号（2014(平成26年)10月）アスベスト含有建材の劣化時および除去工事時における
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/163/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-164-all
+    title: 建築研究資料 No.164 — No.164号（2015(平成27年)2月）住宅･建築物省CO2先導事業全般部門(平成22年度〜24年度)
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/164/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-165-all
+    title: 建築研究資料 No.165 — No.165号（2015(平成27年)4月）東日本大震災における災害公営住宅の供給促進のための計画に関する検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/165/10.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-166-all
+    title: 建築研究資料 No.166 — No.166号（2015(平成27年)7月）平成26年度建築研究所すまいづくり表彰地域住宅賞
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/166/6.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-167-all
+    title: 建築研究資料 No.167 — No.167号（2015(平成27年)　10月）地震観測に基づく地盤−建築構造物の動的相互作用に関する研究
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/167/11.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-169-all
+    title: 建築研究資料 No.169 — No.168号（2016(平成28年3月） 型わくの取り外しに関する管理基準の検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/169/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-170-all
+    title: 建築研究資料 No.170 — No.170号（2016(平成28年)　4月）免震部材の多数回繰り返し特性と免震建築物の地震応答性状への影響に関する研究
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/170/10.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-171-all
+    title: 建築研究資料 No.171 — No.171号（2016(平成28)年5月）建築物の改修・解体時における石綿含有建築用仕上塗材からの石綿粉じん飛散防止処理技術指針
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/171/5.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-172-all
+    title: 建築研究資料 No.172 — No.172号（2016(平成28)年5月）平成27年度建築研究所すまいづくり表彰地域住宅賞
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/172/6.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-174-all
+    title: 建築研究資料 No.174 — No.168号（2016(平成28年3月） 型わくの取り外しに関する管理基準の検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/174/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-175-all
+    title: 建築研究資料 No.175 — No.168号（2016(平成28年3月） 型わくの取り外しに関する管理基準の検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/175/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-178-all
+    title: 建築研究資料 No.178 — No.168号（2016(平成28年3月） 型わくの取り外しに関する管理基準の検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/178/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-180-all
+    title: 建築研究資料 No.180 — No.168号（2016(平成28年3月） 型わくの取り外しに関する管理基準の検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/180/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-181-all
+    title: 建築研究資料 No.181 — No.168号（2016(平成28年3月） 型わくの取り外しに関する管理基準の検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/181/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-182-all
+    title: 建築研究資料 No.182 — No.168号（2016(平成28年3月） 型わくの取り外しに関する管理基準の検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/182/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-183-all
+    title: 建築研究資料 No.183 — No.168号（2016(平成28年3月） 型わくの取り外しに関する管理基準の検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/183/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-184-all
+    title: 建築研究資料 No.184 — No.168号（2016(平成28年3月） 型わくの取り外しに関する管理基準の検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/184/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-185-all
+    title: 建築研究資料 No.185 — No.168号（2016(平成28年3月） 型わくの取り外しに関する管理基準の検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/185/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-186-all
+    title: 建築研究資料 No.186 — No.168号（2016(平成28年3月） 型わくの取り外しに関する管理基準の検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/186/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-187-all
+    title: 建築研究資料 No.187 — No.168号（2016(平成28年3月） 型わくの取り外しに関する管理基準の検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/187/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-188-all
+    title: 建築研究資料 No.188 — No.168号（2016(平成28年3月） 型わくの取り外しに関する管理基準の検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/188/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-190-all
+    title: 建築研究資料 No.190 — No.190号（2019(平成31年)　4月）「各種空調設備システムの潜熱負荷処理メカニズムを踏まえた
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/190/all.pdf
+    source: bri_jp
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: jpn-bri-data-192-all
+    title: 建築研究資料 No.192 — No.192号（2019(平成31年)　3月）「宅地擁壁に用いる透水マットの実大排水性能実験
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/192/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-193-all
+    title: 建築研究資料 No.193 — No.193号（2019(平成31年)　3月）「東日本大震災における地震被害を踏まえた吊り天井の基準の整備に資する検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/193/all.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-194-all
+    title: 建築研究資料 No.194 — No.194号（2019(平成31年)　4月）「2017年9月19日メキシコ中部地震建築物被害調査報告
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/194/all.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-196-all
+    title: 建築研究資料 No.196 — No.196号（2020(令和2年)　3月）「空き家の改修による高齢者の居場所づくりの手引き
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/196/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-197-all
+    title: 建築研究資料 No.197 — No.197号（2020(令和2年)　3月）「実験データベースを用いた鉄筋コンクリート造部材の構造特性評価式の検証（2020年版）
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/197/all.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-198-all
+    title: 建築研究資料 No.198 — No.198号（2020(令和2年)　4月）「サステナブル建築物等先導事業(省CO2先導型)(平成27年度−29年度)における採択事例の評価分析
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/198/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-200-all
+    title: 建築研究資料 No.200 — No.200号（2020(令和2年)　7月）「接着系あと施工アンカーを用いた構造部材の構造性能評価方法に関する検討
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/200/all.pdf
+    source: bri_jp
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: jpn-bri-data-202-all
+    title: 建築研究資料 No.202 — No.202号（2021(令和3年)　3月）「省エネルギー建築のための設計ガイドライン
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/202/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-203-all
+    title: 建築研究資料 No.203 — No.203号（2021(令和3年)　8月）「サステナブル建築物等先導事業（省CO2先導型）（平成30年度-令和2年度）における採択事例の評価分析
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/203/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-204-all
+    title: 建築研究資料 No.204 — No.204号（2021(令和3年)　10月）
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/204/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-205-all
+    title: 建築研究資料 No.205 — No.205号（2022(令和4年)4月）
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/205/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-208-all
+    title: 建築研究資料 No.208 — No.208号（2023(令和5年)7月）
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/208/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-211-all
+    title: 建築研究資料 No.211 — 211号（2024（令和6年）8月）
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/211/211_04_all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-213-all
+    title: 建築研究資料 No.213 — 213号（2025（令和7年）10月）サステナブル建築物等先導事業（省CO2先導型）（令和３年度〜令和６年度）における
+      採択事例の評価分析
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/213/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: jpn-bri-data-217-all
+    title: 建築研究資料 No.217 — 217号（2026（令和8年）7月）東日本大震災・宮城県南三陸町における高齢者生活支援施設「結の里」の検討経緯
+    url: https://www.kenken.go.jp/japanese/contents/publications/data/217/all.pdf
+    source: bri_jp
+    license: open
+    topic: building_energy
+    format: pdf
