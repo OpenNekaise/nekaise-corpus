@@ -46,6 +46,7 @@ SHARDS = {
     "pur-": "purdue.yaml",     # find_purdue (Purdue e-Pubs Herrick conferences: icec/iracc/ihpbc)
     "zen-": "zenodo.yaml",     # find_zenodo (open CC-licensed records)
     "wbd-": "worldbank.yaml",  # find_worldbank (World Bank Documents & Reports API, cc-by)
+    "jrc-": "jrc.yaml",        # find_jrc (EU JRC science-for-policy reports via OpenAIRE, cc-by)
     "ope-": "papers.yaml",     # find_sources OpenAlex backend
     "oa-": "papers.yaml",
     "arx-": "papers.yaml",     # find_sources arXiv backend

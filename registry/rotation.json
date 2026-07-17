@@ -74,7 +74,7 @@
     "flag": "--start",
     "next": 2006,
     "step": -6,
-    "note": "nilim 2012-2025 mined; tail re-run 07-12 recovered +78 from 2012-2017. NILIM listing only exists back to 2012, so next=2006 will no-op — switch to --series bri (139-158 done, new reports appear at top) or build the UNMINED 建築研究資料 series (data.html No.1-214)"
+    "note": "nilim 2012-2025 mined (floor 2012); bri reports 139-158 done (new numbers appear at top); --series data (建築研究資料, data.html) walked No.1-217 on 07-17 (+141 appended, ~105 live folders) — re-walk the top numbers occasionally for new releases"
   },
   "find_wiki": {
     "flag": "--depth",
@@ -86,6 +86,12 @@
     "flag": "--bucket",
     "next": "2019-W41",
     "note": "CN patents (Chinese full text; license=open). Same weekly-bucket walk as find_patents but separate pointer; marathon runs it with --countries CN. Mined: 2018/2019/2020-W03, 2019-W46+W45 (+800 on 07-12)."
+  },
+  "find_jrc": {
+    "flag": "--page",
+    "next": 2,
+    "step": 1,
+    "note": "JRC Publications Repository via OpenAIRE datasource filter -> handle page -> OP-DOI (10.2760 etc, cc-by) + bitstream PDF; run with --rows 25 --max 200; ~0.6s/handle fetch so a page-1 run is ~10min. Repository has ~38k records, 'energy' alone 6.3k"
   },
   "find_worldbank": {
     "flag": "--os",

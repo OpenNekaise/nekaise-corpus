@@ -1,0 +1,836 @@
+# jrc — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: jrc-building-renovation-in-the-eu-scenarios-and-im
+    title: 'Building renovation in the EU: scenarios and impact assessment'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC130242/JRC130242_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-synthesis-report-on-the-assessment-of-member-s
+    title: Synthesis Report on the assessment of Member States' building renovation
+      strategies
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC97754/syntesis%20report%20building%20renovation%20strategies_online%20fin.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-policy-practice-and-regional-impact-assessment
+    title: Policy practice and regional impact assessment for building renovation
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC131250/JRC131250_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-overview-of-combined-seismic-and-energy-upgrad
+    title: Overview of combined seismic and energy upgrading technologies for existing
+      buildings
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC130861/JRC130861_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-towards-energy-efficient-and-asbestos-free-dwe
+    title: Towards energy efficient and asbestos-free dwellings through deep energy
+      renovation
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC129218/JRC129218_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-assessment-of-first-long-term-renovation-strat
+    title: Assessment of first long-term renovation strategies under the Energy Performance
+      of Building Directive (Art. 2a)
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC128067/JRC128067_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-energy-renovation-the-trump-card-for-the-new-s
+    title: 'Energy Renovation: The Trump Card for the New Start for Europe'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC92284/eur26888_buildingreport_online_2015-03-25.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-overview-of-seismic-and-energy-retrofit-techno
+    title: Overview of seismic and energy retrofit technologies for existing buildings
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC132445/JRC132445_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-identification-of-vulnerable-eu-regions-consid
+    title: Identification of vulnerable EU regions considering asbestos presence and
+      seismic risk.
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC133139/JRC133139_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-integrated-seismic-and-energy-renovation-of-bu
+    title: Integrated seismic and energy renovation of buildings
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC132940/JRC132940_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-prioritising-eu-regions-for-building-renovatio
+    title: 'Prioritising EU regions for building renovation: seismic risk, energy efficiency,
+      socioeconomic vulnerability'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC128988/JRC128988_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-iresist-innovative-seismic-and-energy-retrofit
+    title: iRESIST+ Innovative seismic and energy retrofitting of the existing building
+      stock
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC123638/2020_iresist_report_final_online.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-identification-of-european-buildings-most-need
+    title: Identification of European buildings most needing seismic and energy retrofit
+      with a focus on the Italian context
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC130997/JRC130997_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-technologies-for-the-combined-seismic-and-ener
+    title: Technologies for the combined seismic and energy upgrading of existing buildings
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC128458/JRC128458_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-updates-on-the-energy-performance-of-buildings
+    title: Updates on the Energy Performance of Buildings Directive implementation in
+      the EU Member States
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC140950/JRC140950_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-achieving-the-cost-effective-energy-transforma
+    title: Achieving the cost-effective energy transformation of Europe's buildings
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC117739/cost_optimal_energy_renovations_online.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-promoting-healthy-and-energy-efficient-buildin
+    title: 'Promoting healthy and energy efficient buildings in the European Union:
+      National implementation of related requirements of the Energy Performance Buil'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC99434/kj1a27665enn%281%29.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-assessing-the-progress-of-nearly-zero-energy-b
+    title: Assessing the progress of Nearly Zero Energy Buildings (NZEBs) implementation
+      in Europe
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC138771/JRC138771_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-policy-measures-for-seismic-and-energy-upgradi
+    title: Policy measures for seismic and energy upgrading of buildings in EU Member
+      States
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC130039/JRC130039_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-progress-of-the-member-states-in-implementing-
+    title: Progress of the Member States in implementing the Energy Performance of Building
+      Directive
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC122347/epbd_report_12.07-rev-27-07-2.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-enabling-positive-energy-districts-across-euro
+    title: 'Enabling Positive Energy Districts across Europe: energy efficiency couples
+      renewable energy'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC121405/enabling_positive_energy_districts_across_europe.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-progress-on-the-implementation-of-energy-perfo
+    title: Progress on the implementation of Energy Performance Certificates in EU
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC135473/JRC135473_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-a-model-for-cost-optimal-simulation-of-new-nea
+    title: A model for cost-optimal simulation of new Nearly Zero Energy Buildings (NZEBs)
+      in Europe
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC106218/JRC106218_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-assessing-progress-towards-the-eu-energy-effic
+    title: Assessing progress towards the EU energy efficiency targets using index decomposition
+      analysis
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC106782/jrc_decomposition_report_final%281%29.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-energy-efficiency-the-value-of-buildings-and-t
+    title: Energy efficiency, the value of buildings and the payment default risk
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC113215/jrc113215_kjna29471enn_v2_ipo_final.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-energy-efficiency-and-energy-savings-in-scient
+    title: Energy Efficiency and Energy Savings in Scientific Laboratories
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC136989/JRC136989_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-proceedings-of-the-jrc-workshop-on-scientific-
+    title: 'Proceedings of the JRC Workshop on Scientific Technical Reference System
+      on Renewable Energy & Use Efficiency: "Effective Policies for Improving Energ'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC41111/reqno_jrc41111.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-the-impact-of-energy-efficiency-policies-on-en
+    title: 'The impact of energy efficiency policies on energy consumption in the EU
+      Member States: a new approach based on Energy Policy indicators'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC98236/jrc%20report_jrc98236-pdf.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-assessment-of-the-second-national-energy-effic
+    title: Assessment of the Second National Energy Efficiency Action Plans under the
+      Energy Efficiency Directive
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC110304/110304_neeap_2017_synthesis_final.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-proceedings-of-the-7th-jrc-workshop-on-energy-
+    title: Proceedings of the 7th JRC Workshop on Energy Efficiency in Buildings
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC56089/istanbul%20proceedings.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-assessment-of-the-first-national-energy-effici
+    title: 'Assessment of the first National Energy Efficiency Action Plans under the
+      Energy Efficiency Directive: Synthesis report'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC102284/jrc102284_jrc%20synthesis%20report_online%20template.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-assessing-the-progress-towards-the-eu-energy-e
+    title: Assessing the progress towards the EU energy efficiency targets using index
+      decomposition analysis in 2005-2016
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC115210/kjna29665enn.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-energy-savings-calculation-methods-under-artic
+    title: Energy Savings Calculation Methods under Article 7 of the Energy Efficiency
+      Directive
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC99698/report%20on%20eed%20art%207%20-%20publishable.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-analysis-of-the-annual-reports-2017-under-the-
+    title: 'Analysis of the annual reports 2017 under the Energy Efficiency Directive:
+      Summary Report'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC108810/eed_annual_reports_2017_final.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-assessing-the-impact-of-energy-efficiency-on-t
+    title: 'Assessing the impact of Energy Efficiency on the EU Energy Consumption in
+      2010-2022: an index decomposition analysis'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC139305/JRC139305_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-framework-for-resilience-analysis-of-eu-buildi
+    title: Framework for resilience analysis of EU buildings
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC110165/d3_framework_for_resilience_analysis_of_eu_buildings_f%281%29.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-dbsm-r2025-eu-digital-building-stock-model-upd
+    title: 'DBSM R2025: EU Digital Building Stock Model update including satellite-based
+      attributes'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC142133/Report_DBSMv2_2025_pubsy_Final_afterReviews_corrected_link.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-ghs-age-global-gridded-estimates-of-the-domina
+    title: 'GHS-AGE: Global gridded estimates of the dominant age of the built stock
+      (1975-2020)'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC141711/JRC141711_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-how-to-develop-an-energy-poverty-assessment
+    title: How to develop an energy poverty assessment
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC142169/JRC142169_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-energy-poverty-through-the-lens-of-eu-research
+    title: Energy poverty through the lens of EU Research & Innovation projects
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC113953/kjna29785enn.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-the-persistence-of-energy-poverty-in-the-eu
+    title: The persistence of energy poverty in the EU
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC138409/JRC138409_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-mapping-european-projects
+    title: Mapping European Projects
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC126994/JRC126994_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-energy-justice-insights-from-energy-poverty-re
+    title: Energy justice insights from energy poverty research and innovation experiences
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC135544/JRC135544_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-shedding-light-unveiling-the-dynamics-of-energ
+    title: 'Shedding Light: Unveiling the Dynamics of Energy Poverty in the EU'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC138567/JRC138567_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-energy-poverty-new-insights-and-analysis-for-i
+    title: Energy poverty - New insights and analysis for improved measurement and policy
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC133804/JRC133804_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-energy-poverty-transport-poverty-and-living-co
+    title: Energy poverty, transport poverty and living conditions - An analysis of
+      EU data and socioeconomic indicators
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC128084/JRC128084_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-energy-communities-and-energy-poverty
+    title: Energy Communities and Energy Poverty
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC134832/JRC134832_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-exploring-rural-energy-poverty-and-needs
+    title: Exploring rural energy poverty and needs
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC142243/JRC142243_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-addressing-residential-cooling-demand-and-summ
+    title: Addressing Residential Cooling Demand and Summer Energy Poverty in the EU
+      - Towards a Cooler Future
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC143288/JRC143288_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-overview-of-activities-performed-in-the-heatin
+    title: Overview of activities performed in the heating and cooling initiative of
+      the smart specialisation platform for energy
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC117119/kjna29780enn.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-techno-economic-projections-until-2050-for-sma
+    title: Techno-economic projections until 2050 for smaller heating and cooling technologies
+      in the residential and tertiary sector in the EU
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC109034/kjna28861enn.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-assessment-of-the-impact-of-climate-change-on-
+    title: Assessment of the impact of climate change on residential energy demand for
+      heating and cooling
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC110191/jrc_technical_report_peseta3_energy_20180117.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-workshop-on-regional-heating-and-cooling-prior
+    title: Workshop on regional heating and cooling priorities and financing in the
+      framework of the Smart Specialisation Platform (S3P-E H&C)
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC113411/jrc113411_regional_s3p-workshop_report_181105_final.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-efficient-district-heating-and-cooling
+    title: Efficient District Heating and Cooling
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC126522/JRC126522_01.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-air-pollution-trends-in-the-heating-and-coolin
+    title: 'Air pollution trends in the heating and cooling sector in the EU-27: A forward
+      look to 2030'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC138715/JRC138715_01.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-background-report-providing-guidance-on-tools-
+    title: Background report providing guidance on tools and methods for the preparation
+      of public heat maps
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC98823/reqno_jrc98823_background%20report%20providing%20guidance%20on%20tools%20and%20methods%20for%20the%20preparation%20of%20public%20heat%20maps.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-heat-and-cooling-demand-and-market-perspective
+    title: Heat and Cooling Demand and Market Perspective
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC70962/ldna25381enn.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-long-term-2050-projections-of-techno-economic-
+    title: Long term (2050) projections of techno-economic performance of large-scale
+      heating and cooling in the EU
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC109006/kjna28859enn.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-jrc-eu-times-2017-upgrade-buildings-and-heatin
+    title: 'JRC-EU-TIMES 2017 Upgrade: Buildings and heating & cooling technologies'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC110037/kjna29078enn.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-efficient-district-heating-and-cooling-markets
+    title: 'Efficient district heating and cooling markets in the EU: Case studies analysis,
+      replicable key success factors and potential policy implications'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC104437/study%20on%20efficient%20dhc%20systems%20in%20the%20eu%20-dec2016_final%20-%20public%20report6.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-solar-thermal-heating-and-cooling-technology-d
+    title: 'Solar Thermal Heating and Cooling: Technology Development Report'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC118301/JRC118301_01.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-eu-funding-strategy-for-four-regional-heating-
+    title: EU funding strategy for four regional heating and cooling projects
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC116309/jrc_eu_funding_strategy_regions_final20190430.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-digitalisation-opportunities-for-heating-and-c
+    title: 'Digitalisation: Opportunities for heating and cooling'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC116074/kjna29702enn.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-decarbonising-the-eu-heating-sector-integratio
+    title: 'Decarbonising the EU heating sector: Integration of the power and heating
+      sector'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC114758/kjna29772enn.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-defining-and-accounting-for-waste-heat-and-col
+    title: Defining and accounting for waste heat and cold
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC126383/JRC126383_01.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-the-heat-pump-wave-opportunities-and-challenge
+    title: 'The Heat Pump Wave: Opportunities and Challenges'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC134045/JRC134045_01.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-clean-energy-technology-observatory-heat-pumps
+    title: 'Clean Energy Technology Observatory: Heat Pumps in the European Union -
+      2025 Status Report on Technology Development, Trends, Value Chains and Markets'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC144191/JRC144191_01.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-clean-energy-technology-observatory-heat-pumps-2
+    title: 'Clean Energy Technology Observatory: Heat Pumps in the European Union -
+      2024 Status Report on Technology Development, Trends, Value Chains and Markets'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC139377/JRC139377_01.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-clean-energy-technology-observatory-heat-pumps-3
+    title: 'Clean Energy Technology Observatory: Heat pumps in the European Union -
+      2023 Status Report on Technology Development, Trends, Value Chains and Markets'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC134991/JRC134991_01.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-2015-jrc-geothermal-energy-status-report-re-ed
+    title: '2015 JRC Geothermal Energy Status Report: Re-edition'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC99264/2015%20jrc%20geothermal%20energy%20status%20report_online.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-2014-jrc-geothermal-energy-status-report
+    title: 2014 JRC Geothermal Energy Status Report
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC93338/jrc%20geothermal%20report_final.pdf
+    source: jrc
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: jrc-clean-energy-technology-observatory-smart-ther
+    title: 'Clean Energy Technology Observatory: Smart Thermal Networks in the European
+      Union - 2025 Status Report on Technology Development, Trends, Value Chains'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC144163/JRC144163_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-consumers-in-district-heating-and-cooling
+    title: Consumers in district heating and cooling
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC132057/JRC132057_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-background-report-on-eu-27-district-heating-an
+    title: Background Report on EU-27 District Heating and Cooling Potentials, Barriers,
+      Best Practice and Measures of Promotion
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC68846/JRC68846_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-clean-energy-technology-observatory-solar-ther
+    title: 'Clean Energy Technology Observatory: Solar Thermal Energy in the European
+      Union - 2024 Status Report on Technology Development, Trends, Value Chains a'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC139446/JRC139446_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-integrating-renewable-and-waste-heat-and-cold-
+    title: Integrating renewable and waste heat and cold sources into district heating
+      and cooling systems
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC123771/jrc123771_20210211_study_on_sustainable_dhc_jrc_tilia_vf_%282%29.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-district-heat-and-the-new-european-bauhaus
+    title: District heat and the New European Bauhaus
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC133275/JRC133275_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-background-report-on-best-practices-and-inform
+    title: Background report on best practices and informal guidance on installation
+      level CBA for installations falling under Article 14(5) of the Energy Effici
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC98829/reqno_jrc98829_background%20report%20on%20best%20practices%20and%20informal%20guidance%20on%20installation%20level%20cba%20for%20installation.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-clean-energy-technology-observatory-deep-geoth
+    title: 'Clean Energy Technology Observatory: Deep Geothermal Heat and Power in the
+      European Union – 2022 Status Report on Technology Development, Trends, Valu'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC130585/kjna31275enn.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-synthesis-report-on-the-evaluation-of-national
+    title: Synthesis report on the evaluation of national notifications related to Article
+      14 of the Energy Efficiency Directive
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC112225/jrc112225_synthesis_report_final.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-best-practices-and-informal-guidance-on-how-to
+    title: Best practices and informal guidance on how to implement the Comprehensive
+      Assessment at Member State level
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC98819/d1%2c%20dec%202015.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-harmonised-rules-for-the-calculation-of-the-ca
+    title: Harmonised rules for the calculation of the carbon footprint of photovoltaic
+      modules in the context of the EU Ecodesign Directive
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC141275/JRC141275_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-eu-code-of-conduct-on-energy-consumption-of-br
+    title: 'EU Code of Conduct on Energy Consumption of Broadband Equipment: Version
+      6'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC106039/ictcoc-ecbe-v6_feb_2017_final.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-high-resolution-energy-atlas
+    title: High-resolution energy atlas
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC136080/JRC136080_01.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-distributional-impacts-of-reaching-ambitious-n
+    title: Distributional impacts of reaching ambitious near-term climate targets across
+      households with heterogeneous consumption patterns
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC121765/jrc121765_kjna30368enn_%281%29_1.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-the-european-natural-gas-demand-database-enaga
+    title: The European Natural Gas Demand database (ENaGaD)
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC125730/jrc125730_enagad_1.pdf
+    source: jrc
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: jrc-eurocode-7-geotechnical-design-worked-examples
+    title: 'Eurocode 7: Geotechnical Design. Worked examples'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC85029/lbna26227enn.pdf
+    source: jrc
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: jrc-guidance-for-european-structural-design-of-gla
+    title: Guidance for European Structural Design of Glass Components
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC86637/lbna26439enn.pdf
+    source: jrc
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: jrc-non-linear-shear-model-for-r-c-piers
+    title: Non-linear shear model for R/C piers
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC56446/reqno_jrc56446_jrc_st_report_non-linear_shear_model_for_rc_piers.pdf%5b1%5d.pdf
+    source: jrc
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: jrc-sera-cen-tc-250-sc-8-workshop-on-seismic-hazar
+    title: SERA – CEN/TC 250/SC 8 workshop on seismic hazard
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC112673/jrc112673_sera_d2.13_workshop.pdf
+    source: jrc
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: jrc-eurocode-8-seismic-design-of-buildings-worked-
+    title: 'Eurocode 8: Seismic Design of Buildings - Worked examples'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC68411/lbna25204enn.pdf
+    source: jrc
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: jrc-prospect-for-european-guidance-for-the-structu
+    title: Prospect for European Guidance for the Structural design of Tensile Membrane
+      Structures
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC132615/JRC132615_01.pdf
+    source: jrc
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: jrc-assessment-methodologies-for-the-combined-seis
+    title: Assessment methodologies for the combined seismic and energy retrofit of
+      existing buildings
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC131412/JRC131412_01.pdf
+    source: jrc
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: jrc-combined-seismic-and-energy-upgrading-of-exist
+    title: Combined seismic and energy upgrading of existing buildings using advanced
+      materials
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC111303/jrc111303_jrc_technical_report_online.pdf
+    source: jrc
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: jrc-innovative-materials-for-seismic-and-energy-re
+    title: Innovative Materials for Seismic and Energy Retrofitting of the Existing
+      EU Buildings
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC109907/kjna29184enn.pdf
+    source: jrc
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: jrc-novel-technologies-for-the-seismic-upgrading-o
+    title: Novel Technologies for the Seismic Upgrading of Existing European Buildings
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC123314/JRC123314_01.pdf
+    source: jrc
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: jrc-interlaboratory-comparison-to-evaluate-the-pre
+    title: Interlaboratory comparison to evaluate the precision of test methods for
+      the assessment of the release of inorganic substances from construction produ
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC119719/construction_inorg_report.pdf
+    source: jrc
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: jrc-sustainable-design-of-buildings
+    title: Sustainable design of buildings
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC112808/sustainable_design_buildings_online.pdf
+    source: jrc
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: jrc-harmonisation-framework-for-health-based-evalu
+    title: Harmonisation framework for health based evaluation of indoor emissions from
+      construction products in the European Union using the EU-LCI concept
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC83683/eca%20report%2029_final.pdf
+    source: jrc
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: jrc-a-simplified-balance-sheet-to-estimate-apparen
+    title: A simplified balance sheet to estimate apparent use of meat, crops and dairy
+      products at EU Member State level
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC111182/2018_gorrincaivano_asimplifiedbalancesheettoestimateapparentuse-final.pdf
+    source: jrc
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: jrc-capturing-the-potential-of-the-circular-econom
+    title: Capturing the Potential of the Circular Economy Transition in the EU Cement
+      & Concrete Industry
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC143440/JRC143440_01.pdf
+    source: jrc
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: jrc-environmental-and-socio-economic-impacts-of-th
+    title: Environmental and Socio-Economic Impacts of the Circular Economy Transition
+      in the EU Cement and Concrete Sector
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC143126/JRC143126_01.pdf
+    source: jrc
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: jrc-capturing-the-potential-of-the-circular-econom-2
+    title: Capturing the Potential of the Circular Economy Transition in Energy-Intensive
+      Industries
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC142938/JRC142938_01.pdf
+    source: jrc
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: jrc-eu-ecolabel-criteria-for-hard-covering-product
+    title: EU Ecolabel criteria for hard covering products
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC124266/jrc124266_final_tr_pubsy-revised-with-identifiers.pdf
+    source: jrc
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: jrc-clean-energy-technology-observatory-smart-ther-2
+    title: 'Clean Energy Technology Observatory: Smart Thermal Networks in the European
+      Union - 2024 Status Report on Technology Development, Trends, Value Chains'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC139334/JRC139334_01.pdf
+    source: jrc
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: jrc-citizen-science-and-smart-cities
+    title: Citizen Science and Smart Cities
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC90374/lbna26652enn.pdf
+    source: jrc
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: jrc-clean-energy-technology-observatory-smart-ther-3
+    title: 'Clean Energy Technology Observatory: Smart Thermal Networks in the European
+      Union - 2023 Status Report on Technology Development, Trends, Value Chains'
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC135006/JRC135006_01.pdf
+    source: jrc
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: jrc-12th-international-conference-on-improving-ene
+    title: 12th International Conference on Improving Energy Efficiency in Commercial
+      Buildings and Smart Communities
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC137722/JRC137722_01.pdf
+    source: jrc
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: jrc-update-on-status-of-solid-state-lighting-smart
+    title: Update on Status of Solid-State Lighting & Smart Lighting Systems
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC135597/JRC135597_01.pdf
+    source: jrc
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: jrc-guidance-on-negative-emissions-for-cities
+    title: Guidance on negative emissions for cities
+    url: https://publications.jrc.ec.europa.eu/repository/bitstream/JRC145723/JRC145723_01.pdf
+    source: jrc
+    license: cc-by
+    topic: urban
+    format: pdf
