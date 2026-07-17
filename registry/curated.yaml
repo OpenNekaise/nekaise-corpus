@@ -4231,3 +4231,84 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  # ---------- California Energy Commission — Title 24 Part 6 Building Energy Efficiency Standards ----------
+  # State-government building-energy code + official code-support staff reports (Title 24 = government
+  # edict). Direct PDFs on www.energy.ca.gov/sites/default/files; all verified %PDF (2026-07-17).
+  - id: cec-2025-sf-compliance
+    title: "California Energy Commission: 2025 Single-Family Residential Compliance Manual for the 2025 Building Energy Efficiency Standards (Title 24, Part 6)"
+    url: "https://www.energy.ca.gov/sites/default/files/2025-06/CEC-400-2025-005.pdf"
+    source: cec
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: cec-2025-nonres-compliance
+    title: "California Energy Commission: 2025 Nonresidential Compliance Manual for the 2025 Building Energy Efficiency Standards (Title 24, Part 6)"
+    url: "https://www.energy.ca.gov/sites/default/files/2025-06/CEC-400-2025-008.pdf"
+    source: cec
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: cec-2025-multifamily-compliance
+    title: "California Energy Commission: 2025 Multifamily Compliance Manual for the 2025 Building Energy Efficiency Standards (Title 24, Part 6)"
+    url: "https://www.energy.ca.gov/sites/default/files/2025-06/CEC-400-2025-009.pdf"
+    source: cec
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: cec-2025-sf-acm
+    title: "California Energy Commission: 2025 Single-Family Residential Alternative Calculation Method (ACM) Reference Manual for the 2025 Building Energy Efficiency Standards"
+    url: "https://www.energy.ca.gov/sites/default/files/2025-07/CEC-400-2025-006.pdf"
+    source: cec
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: cec-2025-nrmf-acm
+    title: "California Energy Commission: 2025 Nonresidential and Multifamily Alternative Calculation Method (ACM) Reference Manual for the 2025 Building Energy Efficiency Standards"
+    url: "https://www.energy.ca.gov/sites/default/files/2025-07/CEC-400-2025-007.pdf"
+    source: cec
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: cec-2025-nrmf-acm-cmf
+    title: "California Energy Commission: 2025 Nonresidential and Multifamily ACM Reference Manual (Compliance Manual Format) for the 2025 Building Energy Efficiency Standards"
+    url: "https://www.energy.ca.gov/sites/default/files/2025-11/CEC-400-2025-007-CMF.pdf"
+    source: cec
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: cec-2025-standards
+    title: "California Energy Commission: 2025 Building Energy Efficiency Standards for Residential and Nonresidential Buildings (Title 24, Part 6; adopted)"
+    url: "https://www.energy.ca.gov/sites/default/files/2025-07/CEC-400-2025-010-F_0.pdf"
+    source: cec
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: cec-2025-reference-appendices
+    title: "California Energy Commission: 2025 Reference Appendices for the 2025 Building Energy Efficiency Standards (Title 24, Part 6)"
+    url: "https://www.energy.ca.gov/sites/default/files/2025-07/CEC-400-2025-010-AP.pdf"
+    source: cec
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  # (2022 full standards already curated as doc-title24-2022-standards — not re-added)
+  - id: cec-2022-reference-appendices
+    title: "California Energy Commission: 2022 Reference Appendices for the 2022 Building Energy Efficiency Standards (Title 24, Part 6)"
+    url: "https://www.energy.ca.gov/sites/default/files/2022-08/CEC-400-2022-010-AP.pdf"
+    source: cec
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: cec-2019-residential-compliance
+    title: "California Energy Commission: 2019 Residential Compliance Manual for the 2019 Building Energy Efficiency Standards (Title 24, Part 6)"
+    url: "https://www.energy.ca.gov/sites/default/files/2021-07/2019_Residential_Compliance_Manual-Complete_without_forms_ada.pdf"
+    source: cec
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: cec-2019-standards
+    title: "California Energy Commission: 2019 Building Energy Efficiency Standards for Residential and Nonresidential Buildings (Title 24, Part 6)"
+    url: "https://www.energy.ca.gov/sites/default/files/2021-06/CEC-400-2018-020-CMF_0.pdf"
+    source: cec
+    license: public-domain
+    topic: building_energy
+    format: pdf

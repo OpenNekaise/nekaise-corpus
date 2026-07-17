@@ -12131,3 +12131,64 @@ sources:
     license: cc-by
     topic: commissioning_fdd
     format: pdf
+  - id: ope-grand-challenges-in-the-science-of-wind-energy
+    title: Grand challenges in the science of wind energy
+    url: https://www.osti.gov/servlets/purl/1571388
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arx-cradle-of-life-from-the-formation-of-stars-to-
+    title: 'Cradle of Life: From the Formation of Stars to Habitable Worlds with the
+      SKAO'
+    url: https://arxiv.org/pdf/2607.13867
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: ope-30-years-of-lithium-ion-batteries
+    title: 30 Years of Lithium‐Ion Batteries
+    url: https://www.osti.gov/servlets/purl/1468617
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: ope-accelerating-the-discovery-of-materials-for-cl
+    title: Accelerating the discovery of materials for clean energy in the era of smart
+      automation
+    url: https://www.osti.gov/servlets/purl/1461992
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: ope-physics-informed-machine-learning
+    title: Physics-informed machine learning
+    url: https://www.osti.gov/servlets/purl/2282016
+    source: openalex
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: ope-biomineralization-of-calcium-carbonates-and-th
+    title: 'Biomineralization of calcium carbonates and their engineered applications:
+      a review'
+    url: https://www.frontiersin.org/articles/10.3389/fmicb.2013.00314/pdf
+    source: openalex
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: ope-short-chain-fatty-acids-scfas-mediated-gut-epi
+    title: Short Chain Fatty Acids (SCFAs)-Mediated Gut Epithelial and Immune Regulation
+      and Its Relevance for Inflammatory Bowel Diseases
+    url: https://www.frontiersin.org/articles/10.3389/fimmu.2019.00277/pdf
+    source: openalex
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: ope-brain-derived-neurotrophic-factor-a-key-molecu
+    title: 'Brain-Derived Neurotrophic Factor: A Key Molecule for Memory in the Healthy
+      and the Pathological Brain'
+    url: https://www.frontiersin.org/articles/10.3389/fncel.2019.00363/pdf
+    source: openalex
+    license: cc-by
+    topic: materials
+    format: pdf
