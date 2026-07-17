@@ -89,13 +89,13 @@
   },
   "find_jrc": {
     "flag": "--page",
-    "next": 2,
+    "next": 5,
     "step": 1,
     "note": "JRC Publications Repository via OpenAIRE datasource filter -> handle page -> OP-DOI (10.2760 etc, cc-by) + bitstream PDF; run with --rows 25 --max 200; ~0.6s/handle fetch so a page-1 run is ~10min. Repository has ~38k records, 'energy' alone 6.3k"
   },
   "find_worldbank": {
     "flag": "--os",
-    "next": 1500,
+    "next": 1900,
     "step": 400,
     "note": "World Bank Documents & Reports official API (see find_worldbank.py docstring); run with --rows 50 --pages 8 --max 250. Query 'building energy efficiency' = 16,890 records (os 0-400 mined 07-12, 250 kept — overlap at os 300 is dedup-safe). When it thins, rotate --q: 'energy efficient buildings', 'district heating', 'building code', 'thermal insulation', 'green building construction' — reset next=0 per query. cc-by, junk doctys filtered in-script"
   }
