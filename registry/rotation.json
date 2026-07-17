@@ -8,13 +8,13 @@
   },
   "find_archive": {
     "flag": "--page",
-    "next": 24,
+    "next": 25,
     "step": 1,
     "note": "pre-1929 public-domain texts; rows 30"
   },
   "find_books": {
     "flag": "--offset",
-    "next": 425,
+    "next": 450,
     "step": 25,
     "note": "OAPEN all-language + native-language queries (de/it/fr/es/pt/nl added 07-10); offsets 0-50 mined multilingual, 0-375 English-era. NOT HUNG, just SLOW: 117 QUERIES x ~15-20s/search + a 30s OAI license lookup per candidate = ~45-60min/run, and it prints only at the end. Two rounds mistook that for a hang at offset 375 and skipped it; a 3600s cap ran it fine (offset 375 -> +153 books on 07-16). Give it >=3600s; do NOT retire the English queries."
   },
@@ -26,13 +26,13 @@
   },
   "find_nist": {
     "flag": "--page",
-    "next": 21,
+    "next": 22,
     "step": 1,
     "note": "Crossref DOI prefix 10.6028; ~2k on-topic docs"
   },
   "find_zenodo": {
     "flag": "--page",
-    "next": 19,
+    "next": 20,
     "step": 1,
     "note": "rate-limited anonymous API — keep --max 100-150"
   },
@@ -89,19 +89,19 @@
   },
   "find_jrc": {
     "flag": "--page",
-    "next": 6,
+    "next": 2,
     "step": 1,
-    "note": "JRC Publications Repository via OpenAIRE datasource filter -> handle page -> OP-DOI (10.2760 etc, cc-by) + bitstream PDF; run with --rows 25 --max 200; ~0.6s/handle fetch so a page-1 run is ~10min. Repository has ~38k records, 'energy' alone 6.3k"
+    "note": "JRC Publications Repository via OpenAIRE datasource filter -> handle page -> OP-DOI (10.2760 etc, cc-by) + bitstream PDF; run with --rows 40 --max 250. First 15 QUERIES dry at p5; second-wave QUERIES added 07-17 (+61 at p1 rows40) — pointer restarted at p2 for the widened set"
   },
   "find_govuk": {
     "flag": "--page",
-    "next": 4,
+    "next": 6,
     "step": 1,
     "note": "gov.uk Search API (q + filter_content_store_document_type multi-value OR) -> Content API attachments -> assets.publishing.service.gov.uk PDFs; OGL v3 = open; run with --rows 20 --max 250; 'heat pump' alone = 2k+ pages across the filtered doctypes"
   },
   "find_worldbank": {
     "flag": "--os",
-    "next": 1900,
+    "next": 2300,
     "step": 400,
     "note": "World Bank Documents & Reports official API (see find_worldbank.py docstring); run with --rows 50 --pages 8 --max 250. Query 'building energy efficiency' = 16,890 records (os 0-400 mined 07-12, 250 kept — overlap at os 300 is dedup-safe). When it thins, rotate --q: 'energy efficient buildings', 'district heating', 'building code', 'thermal insulation', 'green building construction' — reset next=0 per query. cc-by, junk doctys filtered in-script"
   }

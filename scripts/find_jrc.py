@@ -64,6 +64,23 @@ QUERIES = [
     ("construction products", "materials"),
     ("cement concrete", "materials"),
     ("smart cities energy", "urban"),
+    # second wave (07-17): the first 15 went dry at p5 while 'energy' alone still counts 6.3k —
+    # JRC policy-support vocabulary the head queries miss.
+    ("energy performance certificates", "building_energy"),
+    ("cost-optimal energy", "building_energy"),
+    ("nearly zero-energy", "building_energy"),
+    ("renovation wave", "building_energy"),
+    ("energy communities", "building_energy"),
+    ("ecodesign energy label", "equipment_systems"),
+    ("air conditioning cooling demand", "equipment_systems"),
+    ("solar thermal", "equipment_systems"),
+    ("insulation thermal", "materials"),
+    ("construction demolition waste", "materials"),
+    ("green public procurement buildings", "standards_protocols"),
+    ("energy consumption tertiary sector", "building_energy"),
+    ("urban heat island", "urban"),
+    ("climate adaptation buildings", "urban"),
+    ("housing conditions", "construction"),
 ]
 
 
