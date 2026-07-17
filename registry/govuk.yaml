@@ -1,0 +1,1808 @@
+# govuk — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: guk-building-energy-efficiency-survey-bees-bees-ex
+    title: Building Energy Efficiency Survey (BEES) — BEES Executive Summary
+    url: https://assets.publishing.service.gov.uk/media/5a8185ede5274a2e87dbe162/BEES_Executive_Summary_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-building-energy-efficiency-survey-bees-bees-ov
+    title: Building Energy Efficiency Survey (BEES) — BEES Overarching Report
+    url: https://assets.publishing.service.gov.uk/media/5a75964540f0b67f59fce0d4/BEES_overarching_report_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-building-energy-efficiency-survey-bees-bees-te
+    title: Building Energy Efficiency Survey (BEES) — BEES Technical Annex
+    url: https://assets.publishing.service.gov.uk/media/5a8161e840f0b6230269700e/BEES_Technical_Annex_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-building-energy-efficiency-survey-bees-technic
+    title: 'Building Energy Efficiency Survey (BEES) — Technical annex: Appendix A'
+    url: https://assets.publishing.service.gov.uk/media/5a80014eed915d74e33f7e24/Appendix_A_Telephone_survey_script_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-building-energy-efficiency-survey-bees-support
+    title: 'Building Energy Efficiency Survey (BEES) — Supporting document: Peer Review
+      of BEES energy use model'
+    url: https://assets.publishing.service.gov.uk/media/5a801355e5274a2e87db7b5c/Shadow_Modelling_report_FINALv2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-changes-to-the-energy-efficiency-requirements-
+    title: 'Changes to the energy efficiency requirements of the Building Regulations
+      for domestic buildings: RPC Opinion (Green-rated) — Changes to the energy efficiency
+      requirements of the B'
+    url: https://assets.publishing.service.gov.uk/media/66505f788f4cb8fef9f64f66/CLG-5129_1__-_Domestic_Energy_Efficiency_Requirements_-_final_25_11_21.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-changes-to-the-energy-efficiency-requirements--2
+    title: 'Changes to the energy efficiency requirements of the Building Regulations
+      for non-domestic buildings: RPC Opinion (Green-rated) — Changes to the energy
+      efficiency requirements of t'
+    url: https://assets.publishing.service.gov.uk/media/66505e888f4cb8fef9f64f64/CLG-5128_1__-_Non-Domestic_Energy_Efficiency_Requirements_-_final_25_11_21.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-allocation-of-heat-and-energy-efficiency-relat
+    title: Allocation of heat and energy efficiency related costs in rented non-domestic
+      buildings
+    url: https://assets.publishing.service.gov.uk/media/678a198e2080f65f988bd33b/commercial-leases-heat-energy-efficiency-cost-responsibility.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-allocation-of-heat-and-energy-efficiency-relat-2
+    title: 'Allocation of heat and energy efficiency related costs in rented non-domestic
+      buildings — Allocation of heat and energy efficiency related costs in rented non-domestic
+      buildings: a'
+    url: https://assets.publishing.service.gov.uk/media/675992be9f669f2e28ce2b04/commercial-leases-heat-energy-efficiency-cost-responsibility-appendices.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-efficiency-in-buildings-resources-for-c
+    title: 'Energy efficiency in buildings: resources for councils — Improving energy
+      efficiency in buildings: Resources for Local Authorities'
+    url: https://assets.publishing.service.gov.uk/media/5a789721e5274a277e68de8f/6746-improving-energy-efficiency-in-buildings-resource.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-building-energy-efficiency-survey-bees-phase-1
+    title: 'Building Energy Efficiency Survey (BEES): phase 1'
+    url: https://assets.publishing.service.gov.uk/media/5a7c8d65ed915d48c2410885/DECC_Non_-_domestic_building_energy_use_project_phase_I.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-building-energy-efficiency-survey-bees-phase-1-2
+    title: 'Building Energy Efficiency Survey (BEES): phase 1 — Annex 1 - Comparison
+      Stage Tables'
+    url: https://assets.publishing.service.gov.uk/media/5a74a2a1e5274a44083b8408/Annex_1_-_Comparison_Stage_Tables.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-building-energy-efficiency-survey-bees-phase-1-3
+    title: 'Building Energy Efficiency Survey (BEES): phase 1 — Annex 2 - Main Stage
+      Tables'
+    url: https://assets.publishing.service.gov.uk/media/5a7c444ee5274a1b004229b4/Annex_2_-_Main_Stage_Tables.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-building-energy-efficiency-survey-bees-phase-1-4
+    title: 'Building Energy Efficiency Survey (BEES): phase 1 — Annex 3 - Profile of
+      Independents and Small Chains'
+    url: https://assets.publishing.service.gov.uk/media/5a7c301340f0b67d0b11f6fd/Annex_3_-__Profile_of_Independents_and_Small_Chains.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-building-energy-efficiency-survey-bees-phase-1-6
+    title: 'Building Energy Efficiency Survey (BEES): phase 1 — Annex 5 - Methodology'
+    url: https://assets.publishing.service.gov.uk/media/5a7bfbb7e5274a7202e18d19/Annex_5_-__Methodology_Appendix.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need
+    title: 'National Energy Efficiency Data-Framework (NEED) report: Summary of analysis
+      2013 Part 2 — National Energy Efficiency Data-Framework November 2013 Part II'
+    url: https://assets.publishing.service.gov.uk/media/5a7cbfcaed915d63cc65ca04/National_Energy_Efficiency_Data-Framework_November_2013_Part_II.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-2
+    title: 'National Energy Efficiency Data-Framework (NEED) report: Summary of analysis
+      2013 Part 2 — Annex A: Domestic NEED Methodology'
+    url: https://assets.publishing.service.gov.uk/media/5a7c2eb6ed915d76e2ebb9f1/Annex_A_-_Domestic_NEED_Methodology.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-4
+    title: 'National Energy Efficiency Data-Framework (NEED) report: Summary of analysis
+      2013 Part 2 — Annex C: Data Tables'
+    url: https://assets.publishing.service.gov.uk/media/5a7b9affed915d131106055c/Annex_C_-_Data_tables.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-new-and-amended-approved-documents-and-complia
+    title: New and amended Approved Documents and compliance guides to support Part
+      L — New and amended Approved Documents and new Building Services Compliance Guides
+      to support the energy ef
+    url: https://assets.publishing.service.gov.uk/media/5a7c3245e5274a1f5cc766de/131130__AD_L_Circular_Letter___annex__web_Final.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-sector-decarbonisation-scheme-psds-eval
+    title: 'Public Sector Decarbonisation Scheme (PSDS): evaluation of Phase 1 — Public
+      Sector Decarbonisation Scheme Phase 1: Process evaluation'
+    url: https://assets.publishing.service.gov.uk/media/67d15d06830cc78f825c32b0/psds-phase-1-process-evaluation.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-sector-decarbonisation-scheme-psds-eval-2
+    title: 'Public Sector Decarbonisation Scheme (PSDS): evaluation of Phase 1 — Public
+      Sector Decarbonisation Scheme Phase 1: Process evaluation first stage topic guides
+      and survey scripts'
+    url: https://assets.publishing.service.gov.uk/media/67d15d180f8734b8791a1d43/psds-phase-1-process-evaluation-research-material-appendix.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-sector-decarbonisation-scheme-psds-eval-3
+    title: 'Public Sector Decarbonisation Scheme (PSDS): evaluation of Phase 1 — Public
+      Sector Decarbonisation Scheme Phase 1: Impact evaluation'
+    url: https://assets.publishing.service.gov.uk/media/67d15d7ba6d78876a3fb09fa/psds-phase-1-impact-evaluation.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-sector-decarbonisation-scheme-psds-eval-4
+    title: 'Public Sector Decarbonisation Scheme (PSDS): evaluation of Phase 3 — Public
+      Sector Decarbonisation Scheme Phase 3a: Interim process evaluation'
+    url: https://assets.publishing.service.gov.uk/media/67d29925a005e6f9841a1dbb/psds-phase-3-process-evaluation-1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-sector-decarbonisation-scheme-psds-eval-5
+    title: 'Public Sector Decarbonisation Scheme (PSDS): evaluation of Phase 3 — Public
+      Sector Decarbonisation Scheme Phase 3a: Interim process evaluation technical method
+      annex'
+    url: https://assets.publishing.service.gov.uk/media/67d14dc00c485ba00777a005/psds-phase-3-process-evaluation-1-technical-annex.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-sector-decarbonisation-scheme-psds-eval-6
+    title: 'Public Sector Decarbonisation Scheme (PSDS): evaluation of Phase 3 — Public
+      Sector Decarbonisation Scheme Phases 3a and 3b: Process evaluation'
+    url: https://assets.publishing.service.gov.uk/media/67d150300c569e0d48fb09e9/psds-phase-3-process-evaluation-2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-sector-decarbonisation-scheme-psds-eval-7
+    title: 'Public Sector Decarbonisation Scheme (PSDS): evaluation of Phase 3 — Public
+      Sector Decarbonisation Scheme Phases 3a and 3b: Process evaluation technical method
+      annex'
+    url: https://assets.publishing.service.gov.uk/media/67d1544b0f8734b8791a1d2e/psds-phase-3-process-evaluation-2-technical-annex.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-energy-efficien
+    title: '2010 to 2015 government policy: energy efficiency in buildings — New-look
+      EPC'
+    url: https://assets.publishing.service.gov.uk/media/5a748d20ed915d0e8bf19346/1790388.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-building-approved-inspectors-etc-regulatio
+    title: 'The Building (Approved Inspectors etc) Regulations 2010: publication of
+      the Approved Documents and compliance guides'
+    url: https://assets.publishing.service.gov.uk/media/5a7b8694e5274a7318b8f39d/100928_-_Dcl_about_The_Building_-Approved_Inspectors_etc.-_Regulations_2010__-_publication_of_the_ADs_and_compliance_guides.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-uk-s-national-energy-efficiency-action-pla
+    title: The UK’s National Energy Efficiency Action Plan and Building Renovation Strategy
+    url: https://assets.publishing.service.gov.uk/media/5a7ddbe5e5274a5eaea66c3c/uk_national_energy_efficiency_action_plan.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-sector-energy-efficiency-loans-scheme-p
+    title: 'Public Sector Energy Efficiency Loans Scheme (PSEELS): evaluation — Public
+      Sector Energy Efficiency Loan scheme: interim evaluation report (added 2018)'
+    url: https://assets.publishing.service.gov.uk/media/5b60834040f0b63582ddc2b7/Public-sector-energy-efficiency_loan_scheme_evaluation_Interim_Report_Final.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-sector-energy-efficiency-loans-scheme-p-2
+    title: 'Public Sector Energy Efficiency Loans Scheme (PSEELS): evaluation — Public
+      Sector Energy Efficiency Loan scheme: interim evaluation report appendices (added
+      2018)'
+    url: https://assets.publishing.service.gov.uk/media/5b607d4140f0b635766fc909/Public-sector-energy-efficiency_loan_scheme_evaluation_Appendices_Final.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-sector-energy-efficiency-loans-scheme-p-3
+    title: 'Public Sector Energy Efficiency Loans Scheme (PSEELS): evaluation — Public
+      Sector Energy Efficiency Loan scheme: synthesis report (added March 2025)'
+    url: https://assets.publishing.service.gov.uk/media/67d2189f74ec357ef25c3331/pseels-synthesis-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-sector-energy-efficiency-loans-scheme-p-4
+    title: 'Public Sector Energy Efficiency Loans Scheme (PSEELS): evaluation — Public
+      Sector Energy Efficiency Loan scheme: evaluation technical annex (added March
+      2025)'
+    url: https://assets.publishing.service.gov.uk/media/67d21aac830cc78f825c331f/pseels-evaluation-technical-annex.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-conservation-of-fuel-and-power-approved-docume
+    title: 'Conservation of fuel and power: Approved Document L — Approved Document
+      L, Conservation of fuel and power, Volume 1: Dwellings, 2021 edition incorporating
+      2023 amendments'
+    url: https://assets.publishing.service.gov.uk/media/662a2e3e55e1582b6ca7e592/Approved_Document_L__Conservation_of_fuel_and_power__Volume_1_Dwellings__2021_edition_incorporating_2023_amendments.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-conservation-of-fuel-and-power-approved-docume-2
+    title: 'Conservation of fuel and power: Approved Document L — Approved Document
+      L, Conservation of fuel and power, Volume 2: Buildings other than dwellings, 2021
+      edition incorporating 2023'
+    url: https://assets.publishing.service.gov.uk/media/63d8edbde90e0773d8af2c98/Approved_Document_L__Conservation_of_fuel_and_power__Volume_2_Buildings_other_than_dwellings__2021_edition_incorporating_2023_amendments.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-conservation-of-fuel-and-power-approved-docume-3
+    title: 'Conservation of fuel and power: Approved Document L — February 2023 amendments
+      to Approved Document L, volume 1 and volume 2'
+    url: https://assets.publishing.service.gov.uk/media/63d8ee35d3bf7f2522b98c20/February_2023_amendments_to_Approved_Document_L__volume_1_and_volume_2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-defence-investment-plan
+    title: The Defence Investment Plan
+    url: https://assets.publishing.service.gov.uk/media/6a44e989167a99cf0018da38/The_Defence_Investment_Plan.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-defence-investment-plan-the-defence-invest
+    title: 'The Defence Investment Plan — The Defence Investment Plan: Four-Page Summary'
+    url: https://assets.publishing.service.gov.uk/media/6a43c091fa72f76532a4e3d2/DIP_Four-Page_Summary.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-warm-homes-plan-warm-homes-plan-web-optimised-
+    title: Warm Homes Plan — Warm Homes Plan (web-optimised PDF)
+    url: https://assets.publishing.service.gov.uk/media/69d51c8a3efd329a5269df21/warm-homes-plan-corrected-web-optimised.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-warm-homes-plan-warm-homes-plan-print-ready-pd
+    title: Warm Homes Plan — Warm Homes Plan (print-ready PDF)
+    url: https://assets.publishing.service.gov.uk/media/69cea1d7019a4faf2745b333/warm-homes-plan-corrected-print-ready.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-warm-homes-plan-warm-homes-plan-large-print-pd
+    title: Warm Homes Plan — Warm Homes Plan (large print PDF)
+    url: https://assets.publishing.service.gov.uk/media/69cea230b168efedf97eeff1/warm-homes-plan-corrected-large-print.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-performance-of-buildings-certificates-i
+    title: 'Energy Performance of Buildings Certificates in England and Wales: 2008
+      to 2013 — Energy Performance of Buildings Certificates: Q1 2008 to Q4 2013, England
+      and Wales'
+    url: https://assets.publishing.service.gov.uk/media/5a7edc4ce5274a2e87db25da/EPC_Register_-_Official_Statistics_Release.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-performance-of-building-certificates-in
+    title: 'Energy Performance of Building Certificates in England and Wales: January
+      to March 2025 — Energy Performance of Buildings Certificates: change note'
+    url: https://assets.publishing.service.gov.uk/media/6809008f148a9969d2394f32/Change_Note.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-approved-software-for-the-production-of-non-do
+    title: Approved software for the production of non-domestic Energy Performance Certificates
+      — Approved national calculation methodologies and software programs for buildings
+      other than dw
+    url: https://assets.publishing.service.gov.uk/media/68f8b1daec6267c615ed8f64/2025-10-15_NCM_approved_software_programs_for_buildings_other_than_dwellings.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-performance-of-buildings-certificates-i-2
+    title: 'Energy Performance of Buildings Certificates in England and Wales: 2008
+      to December 2019'
+    url: https://assets.publishing.service.gov.uk/media/5e3196c940f0b60915732c3a/EPB_Cert_Statistics_Release_Q4_2019.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-performance-of-buildings-certificates-i-3
+    title: 'Energy Performance of Buildings Certificates in England and Wales: 2008
+      to June 2019'
+    url: https://assets.publishing.service.gov.uk/media/5d40209d40f0b60a89b49fb6/EPB_Cert_Statistics_Release_Q2_2019.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-performance-of-buildings-certificates-i-4
+    title: 'Energy Performance of Buildings Certificates in England and Wales: 2008
+      to September 2014 — Energy Performance of Buildings Certificates: Q1 2008 to Q3
+      2014, England and Wales'
+    url: https://assets.publishing.service.gov.uk/media/5a7e32e340f0b62305b816f7/EPC_Register_-_Official_Statistics_Release.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-performance-of-buildings-certificates-i-5
+    title: 'Energy Performance of Buildings Certificates in England and Wales: 2008
+      to June 2014 — Energy Performance of Buildings Certificates: Q1 2008 to Q2 2014,
+      England and Wales'
+    url: https://assets.publishing.service.gov.uk/media/5a7cfb47ed915d321c2de18e/EPC_Register_-_Official_Statistics_Release.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-performance-of-buildings-certificates-i-6
+    title: 'Energy Performance of Buildings Certificates in England and Wales: 2008
+      to June 2015'
+    url: https://assets.publishing.service.gov.uk/media/5a7f71e740f0b62305b872fe/150729_EPC_Register_-_Official_Statistics_Release__revised_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-performance-of-buildings-certificates-i-7
+    title: 'Energy Performance of Buildings Certificates in England and Wales: 2008
+      to June 2018 — Energy Performance of Buildings Certificates in England and Wales:
+      Q2 2018'
+    url: https://assets.publishing.service.gov.uk/media/5b58615840f0b63388fbada2/EPB_Cert_Statistics_Release_-_Qtr_2_2018_final.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-performance-of-buildings-certificates-i-8
+    title: 'Energy Performance of Buildings Certificates in England and Wales: 2008
+      to March 2016'
+    url: https://assets.publishing.service.gov.uk/media/5a7f945f40f0b62302690563/160426_-_EPB_Register_-_Official_Statistics_Release_-_2016_Q1_-_summary.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-performance-of-buildings-certificates-i-9
+    title: 'Energy Performance of Buildings Certificates in England and Wales: 2008
+      to March 2018 — Energy Performance of Buildings Certificates in England and Wales:
+      Q1 2018'
+    url: https://assets.publishing.service.gov.uk/media/5ae05b74e5274a0d82094815/EPB_Cert_Statistics_Release_-_Qtr_1_2018_final.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-academy-trust-handbook-academy-trust-handbook-
+    title: Academy trust handbook — Academy trust handbook 2024
+    url: https://assets.publishing.service.gov.uk/media/68c130eca74b1137c7edd7e9/Academy_trust_handbook_2024.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-academy-trust-handbook-academy-trust-handbook--2
+    title: Academy trust handbook — Academy trust handbook 2023
+    url: https://assets.publishing.service.gov.uk/media/68c406c2eeb238b20672aa63/Academy_trust_handbook_2023.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-terrorism-protection-of-premises-act-2025-
+    title: 'The Terrorism (Protection of Premises) Act 2025 — Terrorism (Protection
+      of Premises) Act 2025: Statutory guidance'
+    url: https://assets.publishing.service.gov.uk/media/69d7c1ff4abe5b6c5ddf26c9/Web_accessible_PDF_-_Terrorism__Protection_of_Premises__Act_2025_Stat_Guidance.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-terrorism-protection-of-premises-act-2025--2
+    title: 'The Terrorism (Protection of Premises) Act 2025 — Non-statutory supplementary
+      document A: Methods for assessing the reasonable expectation of individuals present
+      at the premises an'
+    url: https://assets.publishing.service.gov.uk/media/69d7c689eff9f7b7e0b3d26d/Web_accessible_-_Terrorism__Protection_of_Premises__Act_2025_-_Non-statutory_Supplementary_Document_A.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-terrorism-protection-of-premises-act-2025--3
+    title: 'The Terrorism (Protection of Premises) Act 2025 — Non-statutory supplementary
+      document B: Scope – illustrative examples'
+    url: https://assets.publishing.service.gov.uk/media/69d7c6afeff9f7b7e0b3d26e/Web_accessible_-_Terrorism__Protection_of_Premises__Act_2025_-_Non-statutory_Supplementary_Document_B.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-10-year-health-plan-for-england-fit-for-the-fu
+    title: '10 Year Health Plan for England: fit for the future — Fit for the future:
+      10 Year Health Plan for England - executive summary'
+    url: https://assets.publishing.service.gov.uk/media/6888a0996478525675738f3a/fit-for-the-future-10-year-health-plan-for-england-executive-summary.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-future-homes-standard-assess
+    title: 'Home Energy Model: Future Homes Standard assessment: technical documentation
+      — HEMFHS-TP-01: Summary of the FHS assessment wrapper for the Home Energy Model'
+    url: https://assets.publishing.service.gov.uk/media/69c29cabd588c92c483e4c99/hemfhs-tp-01-summary-of-the-fhs-assessment-wrapper.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-future-homes-standard-assess-2
+    title: 'Home Energy Model: Future Homes Standard assessment: technical documentation
+      — HEMFHS-TP-02: Occupancy assumptions in the Home Energy Model'
+    url: https://assets.publishing.service.gov.uk/media/69c29c5bd588c92c483e4c98/hemfhs-tp-02-fhs-occupancy-assumptions.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-future-homes-standard-assess-3
+    title: 'Home Energy Model: Future Homes Standard assessment: technical documentation
+      — HEMFHS-TP-03: Space heating and cooling assumptions in the Home Energy Model'
+    url: https://assets.publishing.service.gov.uk/media/69c29c05d588c92c483e4c97/hemfhs-tp-03-fhs-space-heating-and-cooling-assumptions.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-future-homes-standard-assess-4
+    title: 'Home Energy Model: Future Homes Standard assessment: technical documentation
+      — HEMFHS-TP-04: Hot water usage assumptions in the Home Energy Model'
+    url: https://assets.publishing.service.gov.uk/media/69c293aacfa346b9d4704b85/hemfhs-tp-04-fhs-domestic-hot-water-assumptions.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-future-homes-standard-assess-5
+    title: 'Home Energy Model: Future Homes Standard assessment: technical documentation
+      — HEMFHS-TP-05: Lighting, cooking, electrical appliances, and incidental heat
+      losses in the Home Energy'
+    url: https://assets.publishing.service.gov.uk/media/69c29b88b920af63be1c7771/hemfhs-tp-05-fhs-appliances-assumptions.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-future-homes-standard-assess-6
+    title: 'Home Energy Model: Future Homes Standard assessment: technical documentation
+      — HEMFHS-TP-06: Modelling ventilation and infiltration within the Home Energy
+      Model'
+    url: https://assets.publishing.service.gov.uk/media/69c296867e02b81c0d1c7764/hemfhs-tp-06-fhs-infiltration-and-ventilation-assumptions.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-future-homes-standard-assess-7
+    title: 'Home Energy Model: Future Homes Standard assessment: technical documentation
+      — HEMFHS-TP-07: Calculating cold water and evaporative losses within the Home
+      Energy Model'
+    url: https://assets.publishing.service.gov.uk/media/69c2916e13101e9908704b8e/hemfhs-tp-07-fhs-cold-water-and-evaporative-losses.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-future-homes-standard-assess-8
+    title: 'Home Energy Model: Future Homes Standard assessment: technical documentation
+      — HEMFHS-TP-08: Modelling curtains and blinds within the Home Energy Model'
+    url: https://assets.publishing.service.gov.uk/media/69c28ea3cfa346b9d4704b83/hemfhs-tp-08-curtains-and-blinds.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-future-homes-standard-assess-9
+    title: 'Home Energy Model: Future Homes Standard assessment: technical documentation
+      — HEMFHS-TP-09: Fuel factors within the Home Energy Model'
+    url: https://assets.publishing.service.gov.uk/media/69c28ec8b920af63be1c7764/hemfhs-tp-09-fhs-fuel-factors.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-future-homes-standard-assess-10
+    title: 'Home Energy Model: Future Homes Standard assessment: technical documentation
+      — HEMFHS-TP-10: Standardised weather data for the FHS wrapper'
+    url: https://assets.publishing.service.gov.uk/media/69c28eb513101e9908704b8c/hemfhs-tp-10-standardised-weather-data.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-future-homes-and-buildings-standards-impac
+    title: 'The Future Homes and Buildings Standards: impact assessments — Future Buildings
+      Standard impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/69c16a6113101e9908704acb/Future_Buildings_Standard_Impact_Assessment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-future-homes-and-buildings-standards-impac-2
+    title: 'The Future Homes and Buildings Standards: impact assessments — Future Homes
+      Standard impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/69c16a87bb0dfe55b83e4bd3/Future_Homes_Standards_Impact_Assessment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-rpc-opinion-future-homes-and-buildings-standar
+    title: 'RPC opinion: Future Homes and Buildings Standards impact assessments — RPC
+      opinion: Future Homes Standard impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/69c26cfe7e02b81c0d1c7717/rpc-opinion-future-homes-standard-impact-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-rpc-opinion-future-homes-and-buildings-standar-2
+    title: 'RPC opinion: Future Homes and Buildings Standards impact assessments — RPC
+      opinion: Future Buildings Standard impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/69c26c9abb0dfe55b83e4c49/rpc-opinion-future-buildings-standard-impact-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-validation-documentation-hem
+    title: 'Home Energy Model: validation documentation — HEM-VAL-01 Inter-model comparison'
+    url: https://assets.publishing.service.gov.uk/media/6578b3da254aaa0010050bb3/hem-val-01-inter-model-comparison.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-validation-documentation-hem-2
+    title: 'Home Energy Model: validation documentation — HEM-VAL-02 In-use validation:
+      IEA Annex 58'
+    url: https://assets.publishing.service.gov.uk/media/657859ca0467eb000d55f5cc/hem-val-02-in-use-validation-iea-annex-58.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-validation-documentation-hem-3
+    title: 'Home Energy Model: validation documentation — HEM-VAL-03 In-use validation:
+      Camden Passivhaus'
+    url: https://assets.publishing.service.gov.uk/media/657859d90467eb000d55f5cd/hem-val-03-in-use-validation-camden-passivhaus.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-validation-documentation-hem-4
+    title: 'Home Energy Model: validation documentation — HEM-VAL-04 In-use validation:
+      Building for 2050'
+    url: https://assets.publishing.service.gov.uk/media/657859f7095987000d95debe/hem-val-04-in-use-validation-building-for-2050.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-validation-documentation-hem-5
+    title: 'Home Energy Model: validation documentation — HEM-VAL-05 Lab testing: boiler
+      cycling'
+    url: https://assets.publishing.service.gov.uk/media/65785a000467eb000d55f5ce/hem-val-05-lab-testing-boiler-cycling.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-energy-model-validation-documentation-hem-6
+    title: 'Home Energy Model: validation documentation — HEM-VAL-06 Lab testing: heat
+      pumps DHW'
+    url: https://assets.publishing.service.gov.uk/media/65785a15254aaa0010050b25/hem-val-06-lab-testing-heat-pumps.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-future-homes-standard-consultation-impact-
+    title: The Future Homes Standard consultation impact assessment — Future Homes Standard
+      consultation impact assessment
+    url: https://assets.publishing.service.gov.uk/media/5d976b8ce5274a595bf5da8a/REQUEST.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-national-minimum-wage-in-2026
+    title: The National Minimum Wage in 2026
+    url: https://assets.publishing.service.gov.uk/media/69cbe06e024cdf09254f3f92/2026_Uprating_report_v2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-every-child-achieving-and-thriving-6-500-addit
+    title: Every child achieving and thriving — 6,500 additional teachers delivery plan
+      (web-accessible version)
+    url: https://assets.publishing.service.gov.uk/media/6995df8d339ee33f3ad0b8cc/6500_additional_teachers_delivery_plan_web_accessible_version.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-every-child-achieving-and-thriving-6-500-addit-2
+    title: Every child achieving and thriving — 6,500 additional teachers delivery plan
+      (print-ready version)
+    url: https://assets.publishing.service.gov.uk/media/6995de6aa58a315dbe72bf7c/6500_additional_teachers_delivery_plan_print_ready_version.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-home-office-performance-standards-and-test-pro-3
+    title: Home Office performance standards and test protocols for radiological equipment
+      — Contamination monitors (PDF file - 753kb)
+    url: https://assets.publishing.service.gov.uk/media/5a78a5ec40f0b632476990e9/contamination-monitors.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-sector-risk-profile-2025-sector-risk-profile-2
+    title: Sector Risk Profile 2025 — Sector Risk Profile 2025 (PDF)
+    url: https://assets.publishing.service.gov.uk/media/690a1a19b04a520c50518467/20251106_Sector_Risk_Profile_2025.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-infographic-the-benefits-of-design-codes
+    title: 'Infographic: The Benefits of Design Codes'
+    url: https://assets.publishing.service.gov.uk/media/669674a9ce1fd0da7b592648/The_Benefits_of_Design_Codes_Infographic.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-usability-research-building-regulations-approv
+    title: 'Usability research: building regulations Approved Documents B and M — Usability
+      research: Approved Document B: fire safety and Approved Document M: access to
+      and use of buildings'
+    url: https://assets.publishing.service.gov.uk/media/5a7f8aab40f0b62305b87c67/Usability_Research_ADB_and_M.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-changes-to-the-building-regulations-amendments
+    title: 'Changes to the building regulations: amendments to Approved Documents A
+      and C'
+    url: https://assets.publishing.service.gov.uk/media/5a7c5916ed915d3d0e87bc6e/130730_Amendments_to_approved_documents_a_c_-_circular_letter.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-building-regulations-2010-amended-approved-doc
+    title: 'Building Regulations 2010: Amended Approved Documents G and M: circular
+      01/2016 — Circular 01/2016: Amended Approved Documents to support Part G and Part
+      M of Schedule 1 to the Bui'
+    url: https://assets.publishing.service.gov.uk/media/5a8094ed40f0b62305b8bfd0/160301_dclg-circular_-0116_Final.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-the-building-regulations-2000-approved-documen
+    title: 'The Building Regulations 2000: Approved Documents L: proposed revisions
+      to multi-foil insulation — Building Regulations 2000 Approved Documents L1A, L1B,
+      L2A, L2B – proposed revisi'
+    url: https://assets.publishing.service.gov.uk/media/5a7ce31de5274a2c9a484b95/090618-_Dcl_about_the_Building_Regulations_2000_-_ADs_L1A__L1B__L2A__L2B_-_proposed_revisions_-_Multi-foil_ins.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-building-regulations-2010-amended-approved-doc-2
+    title: 'Building Regulations 2010: Amended Approved Documents L1B and Compliance
+      Guide: circular 01/2018 — Circular 01/2018: Amended Approved Document L1B and
+      Domestic Building Services Co'
+    url: https://assets.publishing.service.gov.uk/media/5ac5f58ced915d76a04b2bb5/MHCLG_Circular_012018.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-building-regulations-approved-documents-l-and-
+    title: 'Building Regulations: Approved Documents L and F (consultation version)
+      — Draft guidance: Approved Document L (conservation of fuel and power)'
+    url: https://assets.publishing.service.gov.uk/media/5d931b6fe5274a2fac487398/ADL_vol_1.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-building-regulations-approved-documents-l-f-an
+    title: 'Building Regulations: Approved Documents L, F and Overheating (consultation
+      version) — Draft guidance: Approved Document F (ventilation), volume 1: dwellings'
+    url: https://assets.publishing.service.gov.uk/media/6006eae98fa8f50d959e20ba/AD_F_1.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-building-regulations-approved-documents-l-f-an-3
+    title: 'Building Regulations: Approved Documents L, F and Overheating (consultation
+      version) — Draft guidance: Approved Document L (conservation of fuel and power),
+      volume 1: dwellings'
+    url: https://assets.publishing.service.gov.uk/media/60114f91e90e07143c6dafe7/AD_L_1.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-building-regulations-approved-documents-l-f-an-4
+    title: 'Building Regulations: Approved Documents L, F and Overheating (consultation
+      version) — Draft guidance: Approved Document L (conservation of fuel and power),
+      volume 2: buildings oth'
+    url: https://assets.publishing.service.gov.uk/media/6006eb2ed3bf7f0bfaf594a3/ADL_2.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-building-regulations-approved-documents-l-f-an-5
+    title: 'Building Regulations: Approved Documents L, F and Overheating (consultation
+      version) — Draft guidance on overheating'
+    url: https://assets.publishing.service.gov.uk/media/6006fe098fa8f50d9645b224/Draft_guidance_on_heating.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-approved-document-l-2026-approved-document-l-v
+    title: 'Approved Document L (2026) — Approved Document L, Volume 1: Dwellings'
+    url: https://assets.publishing.service.gov.uk/media/69c122a6cfa346b9d4704a55/ADL1_2026.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-approved-document-l-2026-approved-document-l-v-2
+    title: 'Approved Document L (2026) — Approved Document L, Volume 2: Buildings other
+      than dwellings'
+    url: https://assets.publishing.service.gov.uk/media/69c122b9b920af63be1c763b/ADL2_2026.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-approved-document-f-2026-approved-document-f-v
+    title: 'Approved Document F (2026) — Approved Document F, Volume 1: Dwellings'
+    url: https://assets.publishing.service.gov.uk/media/69c12224d588c92c483e4b6a/ADF1_2026.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-building-regulations-2000-schedule-1-part-l-ap
+    title: Building Regulations 2000, Schedule 1, Part L Approved Documents proposed
+      revisions for multi-foil insulation — Building Regulations 2000, Schedule 1, Part
+      L Approved Documents L1A
+    url: https://assets.publishing.service.gov.uk/media/5a7cb8aeed915d63cc65c726/071207_-_Dcl_about_Building_Regulations_2000__Schedule_1__Part_L_ADs_L1A__L1B__L2A__L2B_-_proposed_revisions_Multi-foil_insul.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-the-building-regulations-etc-amendment-regulat
+    title: 'The Building Regulations etc (Amendment) Regulations 2012 (SI 2012/3119)
+      and associated documents — The Building Regulations etc. (Amendment) Regulations
+      2012 (S.I. 2012/3119) and '
+    url: https://assets.publishing.service.gov.uk/media/5a756e9c40f0b6360e474116/121219_Circular_Letter_Final.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-research-on-part-m-access-to-and-use-of-buildi
+    title: 'Research on Part M: access to and use of buildings'
+    url: https://assets.publishing.service.gov.uk/media/60093f188fa8f51ee7dbe3ab/Part_M_Report_with_appendices.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-fire-safety-approved-document-b-approved-docum
+    title: 'Fire safety: Approved Document B — Approved Document B (fire safety) volume
+      1: Dwellings, 2019 edition incorporating 2020, 2022 and 2025 amendments collated
+      with 2026 and 2029 amen'
+    url: https://assets.publishing.service.gov.uk/media/67d2bb074702aacd2251cb94/Approved_Document_B_volume_1_Dwellings_2019_edition_incorporating_2020_2022_and_2025_amendments_collated_with_2026_and_2029_amendments.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-fire-safety-approved-document-b-approved-docum-2
+    title: 'Fire safety: Approved Document B — Approved Document B (fire safety) volume
+      2: Buildings other than dwellings, 2019 edition incorporating 2020, 2022 and 2025
+      amendments collated wi'
+    url: https://assets.publishing.service.gov.uk/media/67d17064a005e6f9841a1d50/Approved_Document_B_volume_2_Buildings_other_than_Dwellings_2019_edition_incorporating_2020_2022_and_2025_amendments_collated_with_2026_and_2029_amendments.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-fire-safety-approved-document-b-2029-amendment
+    title: 'Fire safety: Approved Document B — 2029 amendments to Approved Document
+      B, volume 1 and volume 2'
+    url: https://assets.publishing.service.gov.uk/media/66d57aaabdecebe01a18341b/AD_B_2029_amendments.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-fire-safety-approved-document-b-2026-amendment
+    title: 'Fire safety: Approved Document B — 2026 amendments to Approved Document
+      B, volume 1 and volume 2'
+    url: https://assets.publishing.service.gov.uk/media/66d57a94d107658faec7e448/AD_B_2026_amendments.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-fire-safety-approved-document-b-2025-amendment
+    title: 'Fire safety: Approved Document B — 2025 amendments to Approved Document
+      B, volume 1 and volume 2'
+    url: https://assets.publishing.service.gov.uk/media/67c1ac3d16dc9038974dbcfe/2025_Amendments_to_Approved_Document_B_volume_1_and_volume_2.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-fire-safety-approved-document-b-march-2024-ame
+    title: 'Fire safety: Approved Document B — March 2024 amendments to Approved Document
+      B, volume 1 and volume 2 (No longer current)'
+    url: https://assets.publishing.service.gov.uk/media/66054cc0f9ab41001aeea490/AD_B_amendment_booklet.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-fire-safety-approved-document-b-june-2022-amen
+    title: 'Fire safety: Approved Document B — June 2022 amendments to Approved Document
+      B, volume 1 and volume 2'
+    url: https://assets.publishing.service.gov.uk/media/62964fac8fa8f5039927d15b/ADB_amendment_booklet_June_2022.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-fire-safety-approved-document-b-may-2020-amend
+    title: 'Fire safety: Approved Document B — May 2020 amendments to Approved Document
+      B, volume 1 and volume 2'
+    url: https://assets.publishing.service.gov.uk/media/5ec7f1c086650c76ab17fc0c/AD_B_2019_edition__May2020_amendments.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-access-to-and-use-of-buildings-approved-docume
+    title: 'Access to and use of buildings: Approved Document M — Approved Document
+      M: access to and use of buildings, volume 1: dwellings'
+    url: https://assets.publishing.service.gov.uk/media/5a7f8a82ed915d74e622b17b/BR_PDF_AD_M1_2015_with_2016_amendments_V3.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-access-to-and-use-of-buildings-approved-docume-2
+    title: 'Access to and use of buildings: Approved Document M — Approved Document
+      M: access to and use of buildings, volume 2: buildings other than dwellings'
+    url: https://assets.publishing.service.gov.uk/media/66f6c5eec71e42688b65ee11/ADM__V2_with_2024_amendments.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-access-to-and-use-of-buildings-approved-docume-3
+    title: 'Access to and use of buildings: Approved Document M — May 2024 amendments
+      to Approved Document M: Access to and use of buildings Volume 2 – Buildings other
+      than dwellings'
+    url: https://assets.publishing.service.gov.uk/media/66f6c59fe84ae1fd8592eac2/ADM__V2_Amendment_Booklet_2024.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-access-to-and-use-of-buildings-approved-docume-4
+    title: 'Access to and use of buildings: Approved Document M — Corrections to Approved
+      Document M 2015 edition with 2016 amendments volume 1: dwellings'
+    url: https://assets.publishing.service.gov.uk/media/5a804045e5274a2e8ab4f118/AD_M_Corrigenda_SECURE.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-access-to-and-use-of-buildings-approved-docume-5
+    title: 'Access to and use of buildings: Approved Document M — July 2020 amendments
+      to Approved Document M: Access to and use of buildings Volume 2 – Buildings other
+      than dwellings'
+    url: https://assets.publishing.service.gov.uk/media/5f11d4dfe90e075e8c58b7e1/200717_AD_M_July2020_amend.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-access-to-and-use-of-buildings-approved-docume-6
+    title: 'Access to and use of buildings: Approved Document M — Frequently asked questions'
+    url: https://assets.publishing.service.gov.uk/media/5a821e3be5274a2e87dc13c1/FAQ_ADM_Vol1_and_Vol2.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-ban-on-combustible-materials-in-external-wall-
+    title: 'Ban on combustible materials in external wall systems: impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/5c001dd8ed915d1199c8b277/Ban_on_combustible_materials_in_external_wall_systems_impact_assessment.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-protection-from-falling-collision-and-impact-a
+    title: 'Protection from falling, collision and impact: Approved Document K — Approved
+      Document K: protection from falling, collision  and impact'
+    url: https://assets.publishing.service.gov.uk/media/60d5bdcde90e07716f516cfd/Approved_Document_K.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-ventilation-approved-document-f-approved-docum
+    title: 'Ventilation: Approved Document F — Approved Document F: Volume 1 applies
+      to dwellings'
+    url: https://assets.publishing.service.gov.uk/media/61deba42d3bf7f054fcc243d/ADF1.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-ventilation-approved-document-f-approved-docum-2
+    title: 'Ventilation: Approved Document F — Approved Document F: Volume 2 applies
+      to buildings other than dwellings'
+    url: https://assets.publishing.service.gov.uk/media/62a761edd3bf7f03667c667e/ADF2_revised.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-thin-internal-wall-insulation-tiwi-thin-intern
+    title: 'Thin internal wall insulation (TIWI) — Thin internal wall insulation: summary
+      report'
+    url: https://assets.publishing.service.gov.uk/media/606c31a9d3bf7f400d3b8cef/tiwi-summary-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-thin-internal-wall-insulation-tiwi-thin-intern-2
+    title: 'Thin internal wall insulation (TIWI) — Thin internal wall insulation, annex
+      A: introduction to TIWI'
+    url: https://assets.publishing.service.gov.uk/media/606c32dae90e074e4e4e864a/tiwi-annex-a.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-thin-internal-wall-insulation-tiwi-thin-intern-3
+    title: 'Thin internal wall insulation (TIWI) — Thin internal wall insulation, annex
+      B: TIWI field trials'
+    url: https://assets.publishing.service.gov.uk/media/606c3301e90e074e4e4e864b/tiwi-annex-b.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-thin-internal-wall-insulation-tiwi-thin-intern-4
+    title: 'Thin internal wall insulation (TIWI) — Thin internal wall insulation, annex
+      C: predicting TIWI impact'
+    url: https://assets.publishing.service.gov.uk/media/606c33518fa8f515b4067b07/tiwi-annex-c.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-thin-internal-wall-insulation-tiwi-thin-intern-5
+    title: 'Thin internal wall insulation (TIWI) — Thin internal wall insulation, annex
+      D: moisture risks of TIWI'
+    url: https://assets.publishing.service.gov.uk/media/606c33c1d3bf7f400cd5c111/tiwi-annex-d.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-great-british-insulation-scheme-willingness-to
+    title: 'Great British Insulation Scheme: willingness to co-fund — Great British
+      Insulation Scheme: willingness to co-fund: a discrete choice experiment - report'
+    url: https://assets.publishing.service.gov.uk/media/66043a79f9ab41001aeea3f4/great-british-insulation-scheme-willingness-co-fund-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-great-british-insulation-scheme-willingness-to-2
+    title: 'Great British Insulation Scheme: willingness to co-fund — Great British
+      Insulation Scheme: willingness to co-fund: a discrete choice experiment - Appendices'
+    url: https://assets.publishing.service.gov.uk/media/6605ae9191a320001a82b21f/great-british-insulation-scheme-willingness-co-fund-appendices.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-social-housing-decarbonisation-fund-wave-2-2-c
+    title: 'Social Housing Decarbonisation Fund: Wave 2.2 (closed to applications) —
+      SHDF Wave 2.2: Competition guidance (updated 29 December 2023)'
+    url: https://assets.publishing.service.gov.uk/media/6703e7dee84ae1fd8592ef36/shdf-wave-2-2-competition-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-social-housing-decarbonisation-fund-wave-2-2-c-2
+    title: 'Social Housing Decarbonisation Fund: Wave 2.2 (closed to applications) —
+      Case studies on value for money considerations for the space heating demand performance
+      outcome'
+    url: https://assets.publishing.service.gov.uk/media/6703e814a31f45a9c765f21c/shdf-wave-2-2-case-studies.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-social-housing-decarbonisation-fund-wave-2-1-c
+    title: 'Social Housing Decarbonisation Fund: Wave 2.1 (closed to applications) —
+      Social Housing Decarbonisation Fund Wave 2.1: Competition guidance'
+    url: https://assets.publishing.service.gov.uk/media/6703ed813b919067bb482d53/shdf-wave-2-1-competition-guidance-notes.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-social-housing-decarbonisation-fund-wave-2-1-c-2
+    title: 'Social Housing Decarbonisation Fund: Wave 2.1 (closed to applications) —
+      Social Housing Decarbonisation Fund Wave 2.1: Case studies on value for money
+      considerations for the space '
+    url: https://assets.publishing.service.gov.uk/media/6703edc5c71e42688b65f244/shdf-wave-2-1-space-heating-demand-consideration-vfm-case-studies.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-warm-homes-local-grant-guidance-for-local-auth
+    title: 'Warm Homes: Local Grant – guidance for local authorities — Warm Homes: Local
+      Grant - policy guidance (updated July 2026)'
+    url: https://assets.publishing.service.gov.uk/media/6a4629fa732d8e7ce5f53b13/warm-homes-local-grant-policy-guidance-july-2026.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-warm-homes-local-grant-guidance-for-local-auth-2
+    title: 'Warm Homes: Local Grant – guidance for local authorities — Warm Homes: Local
+      Grant - allocation guidance'
+    url: https://assets.publishing.service.gov.uk/media/671110878a62ffa8df77b2ca/warm-homes-local-grant-allocation-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-warm-homes-local-grant-guidance-for-local-auth-3
+    title: 'Warm Homes: Local Grant – guidance for local authorities — Warm Homes: Local
+      Grant - Memorandum of Understanding template'
+    url: https://assets.publishing.service.gov.uk/media/67fe2f8b4f66a92e285466cf/warm-homes-local-grant-memorandum-of-understanding.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-warm-homes-local-grant-guidance-for-local-auth-4
+    title: 'Warm Homes: Local Grant – guidance for local authorities — Warm Homes: Local
+      Grant - technical annex'
+    url: https://assets.publishing.service.gov.uk/media/679a4f869e2b573e463f7f55/wh-lg-technical-annex.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-warm-homes-local-grant-guidance-for-local-auth-5
+    title: 'Warm Homes: Local Grant – guidance for local authorities — Warm Homes: Local
+      Grant - delivery guidance for grant recipients (updated July 2026)'
+    url: https://assets.publishing.service.gov.uk/media/6a4628141c8bd7ce25a5e956/Warm_Homes_Local_Grant_-_Updated_Delivery_Guidance_for_Grant_Recipients__Updated_March_2026___1_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-green-home-finance-accelerator-discovery-and-p
+    title: 'Green Home Finance Accelerator: Discovery and Pilot Phase projects — Green
+      Home Finance Accelerator: Discovery Phase synthesis report'
+    url: https://assets.publishing.service.gov.uk/media/689b6cd77b0b51a850e940d5/GHFA_Discovery_Phase_Synthesis_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-buying-green-heating-and-insulation-products-c
+    title: 'Buying green heating and insulation products: consumer guide — Buying green
+      heating and insulation products: consumer guide (Printable version)'
+    url: https://assets.publishing.service.gov.uk/media/647dc020103ca6000c0398ef/2.0_Green_home_energy_consumer_guide_FINAL_links.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-warm-homes-social-housing-fund-wave-3-closed-t
+    title: 'Warm Homes: Social Housing Fund Wave 3 (closed to applications) — Warm Homes:
+      Social Housing Fund: Wave 3 - scheme guidance (updated July 2026)'
+    url: https://assets.publishing.service.gov.uk/media/6a4527e2732d8e7ce5f53aa2/WHSHF-wave-3-scheme-guidance-may-26-addendum.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-warm-homes-social-housing-fund-wave-3-closed-t-3
+    title: 'Warm Homes: Social Housing Fund Wave 3 (closed to applications) — Warm Homes:
+      Social Housing Fund: Wave 3 - data sharing agreement'
+    url: https://assets.publishing.service.gov.uk/media/67ed060c199d1cd55b48c629/warm-homes-social-housing-fund-wave-3-data-sharing-agreement.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-warm-homes-social-housing-fund-wave-3-closed-t-4
+    title: 'Warm Homes: Social Housing Fund Wave 3 (closed to applications) — Warm Homes:
+      Social Housing Fund Wave 3 - technical annex'
+    url: https://assets.publishing.service.gov.uk/media/679a502731516e496676ce02/wh-sfh-technical-annex.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-warm-homes-skills-programme-closed-to-applicat
+    title: 'Warm Homes Skills Programme (closed to applications) — Warm Homes Skills
+      Programme: competition guidance (updated 5 June 2025)'
+    url: https://assets.publishing.service.gov.uk/media/6841b4c3578282a4b102c0ba/warm-homes-skills-fund-competition-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-carbon-budget-and-growth-delivery-plan-heat-an
+    title: 'Carbon budget and growth delivery plan: Heat and buildings factsheet — CBGDP
+      investor factsheet: Heat and buildings'
+    url: https://assets.publishing.service.gov.uk/media/6a3a4e4cc6e94f095f3efc7f/CBGDP_heat_and_buildings_factsheet.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-company-obligation-2022-to-2026-innovat
+    title: 'Energy Company Obligation, 2022 to 2026: innovation guidance — ECO 2022
+      to 2026: guidance on applying for demonstration actions, innovation score uplifts
+      and in-situ performance'
+    url: https://assets.publishing.service.gov.uk/media/64787c1cb32b9e0012a96038/energy-company-obligation-eco-guidance-2022-2026.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-evaluation-of-the-boiler-upgrade-scheme-2025-e
+    title: 'Evaluation of the Boiler Upgrade Scheme, 2025 — Evaluation of the Boiler
+      Upgrade Scheme: 2025 interim report'
+    url: https://assets.publishing.service.gov.uk/media/696926220c654a0ec44022b9/bus-evaluation-interim-report-2025.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-evaluation-of-the-boiler-upgrade-scheme-2025-e-2
+    title: 'Evaluation of the Boiler Upgrade Scheme, 2025 — Evaluation of the Boiler
+      Upgrade Scheme: 2025 interim technical methodological report'
+    url: https://assets.publishing.service.gov.uk/media/697a340633bc3750e7653002/bus-evaluation-interim-technical-report-2025.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-evaluation-of-the-boiler-upgrade-scheme-2024-e
+    title: 'Evaluation of the Boiler Upgrade Scheme, 2024 — Evaluation of the Boiler
+      Upgrade Scheme: 2024 interim report'
+    url: https://assets.publishing.service.gov.uk/media/679129c5119e3470fd1e26c7/bus-evaluation-2024-interim-report.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-evaluation-of-the-boiler-upgrade-scheme-2024-e-2
+    title: 'Evaluation of the Boiler Upgrade Scheme, 2024 — Evaluation of the Boiler
+      Upgrade Scheme: 2024 interim technical methodological report'
+    url: https://assets.publishing.service.gov.uk/media/67912a2043f931eea1a34e25/bus-evaluation-2024-interim-technical-report.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-evidence-gathering-high-temperature-heat-pumps-2
+    title: Evidence gathering - High temperature heat pumps, hybrid heat pumps and gas
+      driven heat pumps — Domestic High Temperature Heat Pumps
+    url: https://assets.publishing.service.gov.uk/media/5a8033fae5274a2e87db874d/Domestic_High_Temperature_HPs-_FINAL2.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-evidence-gathering-high-temperature-heat-pumps-3
+    title: Evidence gathering - High temperature heat pumps, hybrid heat pumps and gas
+      driven heat pumps — Domestic Hybrid Heat Pumps
+    url: https://assets.publishing.service.gov.uk/media/5a7f4a6aed915d74e62298fd/Domestic_Hybrid_Heat_Pumps_-_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-evidence-gathering-high-temperature-heat-pumps-4
+    title: Evidence gathering - High temperature heat pumps, hybrid heat pumps and gas
+      driven heat pumps — Gas Driven Heat Pumps
+    url: https://assets.publishing.service.gov.uk/media/5c9201dee5274a470e9d4a51/Gas_Drive_heat_pumps.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pumps-in-district-heating-heat-pumps-in-d
+    title: Heat Pumps in District Heating — Heat pumps in district heating - Case studies
+    url: https://assets.publishing.service.gov.uk/media/5a7f6c9e40f0b62305b8710b/DECC_Heat_Pumps_in_District_Heating_-_Case_studies.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pump-ready-programme-heat-pump-ready-prog
+    title: 'Heat Pump Ready Programme — Heat Pump Ready Programme: Background on innovation
+      needs'
+    url: https://assets.publishing.service.gov.uk/media/66d1f4bdd107658faec7e42c/heat-pump-ready-background-innovation-needs.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pump-ready-programme-heat-pump-ready-prog-2
+    title: 'Heat Pump Ready Programme — Heat Pump Ready Programme: Stakeholder engagement
+      feedback'
+    url: https://assets.publishing.service.gov.uk/media/66d1fc5c5e39b54bdb18340a/heat-pump-ready-engagement-feedback-summary.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pump-ready-programme-programme-engagement
+    title: Heat Pump Ready Programme — Programme engagement document (withdrawn)
+    url: https://assets.publishing.service.gov.uk/media/619fb431d3bf7f0555071bf1/heat-pump-ready-programme-engagement.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pump-ready-programme-questions-and-respon
+    title: Heat Pump Ready Programme — Questions and responses (withdrawn)
+    url: https://assets.publishing.service.gov.uk/media/619fb2bcd3bf7f0559e1da6e/heat-pump-ready-programme-questions.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pump-ready-programme-presentation-from-en
+    title: Heat Pump Ready Programme — Presentation from engagement session (Stream
+      1) (withdrawn)
+    url: https://assets.publishing.service.gov.uk/media/618a5cc28fa8f5297eda691a/stream-1-slides.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pump-ready-programme-presentation-from-en-2
+    title: Heat Pump Ready Programme — Presentation from engagement session (Stream
+      2) (withdrawn)
+    url: https://assets.publishing.service.gov.uk/media/618a5cce8fa8f529777ffe28/heat-pump-ready-stream-2.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pump-ready-programme-presentation-from-en-3
+    title: Heat Pump Ready Programme — Presentation from engagement session (Stream
+      3) (withdrawn)
+    url: https://assets.publishing.service.gov.uk/media/618a5cd7d3bf7f5603ecf234/heat-pump-ready-stream-3.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pump-ready-programme-presentation-from-en-4
+    title: 'Heat Pump Ready Programme — Presentation from engagement session: Heat Pump
+      Ready Round 2'
+    url: https://assets.publishing.service.gov.uk/media/697b7f12f8f4a746d9572f45/heat-pump-ready-round-2-engagement-session.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pumps-for-domestic-heating-what-impact-ca
+    title: Heat pumps for domestic heating — What impact can heat pumps have in domestic
+      heating today, and how might that change over time as technology improves? PDF
+    url: https://assets.publishing.service.gov.uk/media/6555ee12d03a8d001207fa37/Heat_Pump_PDF.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-fuel-driven-heat-pumps-uk-summary-report-janua
+    title: Fuel Driven Heat Pumps — UK summary report (January 2019)
+    url: https://assets.publishing.service.gov.uk/media/5e344eb4ed915d093cbe4e93/Summary_report_on_IEA_Heat_Pump_Annex_43__1_.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-fuel-driven-heat-pumps-uk-market-report
+    title: Fuel Driven Heat Pumps — UK market report
+    url: https://assets.publishing.service.gov.uk/media/5a74c744e5274a3f93b48bc0/Gas_Driven_Heat_Pumps_UK_Market_Report_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-fuel-driven-heat-pumps-state-of-the-art-in-gas
+    title: Fuel Driven Heat Pumps — State of the art in Gas Heat Pumps
+    url: https://assets.publishing.service.gov.uk/media/5a7e29f740f0b62302689943/Gas_Driven_Heat_Pumps_State_of_the_art_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-fuel-driven-heat-pumps-report-on-a-database-of
+    title: Fuel Driven Heat Pumps — Report on a database of sorption materials
+    url: https://assets.publishing.service.gov.uk/media/5a7d67b7e5274a7b50ccec68/Gas_Driven_Heat_Pumps_Sorption_Materials_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-fuel-driven-heat-pumps-performance-testing-of-
+    title: Fuel Driven Heat Pumps — Performance testing of a Gas Heat Pump
+    url: https://assets.publishing.service.gov.uk/media/5a7e3aa8ed915d74e6224f28/30197_WarwickDECC_reportv7_Performance_Testing.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pumps-in-smart-grids-heat-pumps-in-smart-
+    title: 'Heat Pumps in Smart Grids — Heat Pumps in Smart Grids: UK roadmap'
+    url: https://assets.publishing.service.gov.uk/media/5a7d8988ed915d497af700a2/heat-pumps-smart-grids-roadmap.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pumps-in-smart-grids-heat-pumps-in-smart--2
+    title: 'Heat Pumps in Smart Grids — Heat Pumps in Smart Grids: Executive summary'
+    url: https://assets.publishing.service.gov.uk/media/5a7d899aed915d3fb95945d1/heat-pumps-smart-grids-executive-summary.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pumps-in-smart-grids-heat-pumps-in-smart--3
+    title: 'Heat Pumps in Smart Grids — Heat Pumps in Smart Grids: UK market report'
+    url: https://assets.publishing.service.gov.uk/media/5a7dc347e5274a5eaea662f2/Delta-ee_Task_1_UK_Market_Report_-_Final.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pumps-in-smart-grids-heat-pumps-in-smart--4
+    title: 'Heat Pumps in Smart Grids — Heat Pumps in Smart Grids: Review of Smart Heat
+      Pump Products'
+    url: https://assets.publishing.service.gov.uk/media/5a7de77940f0b62302687e0d/Delta-ee_Smart_Ready_Heat_Pumps_in_UK_22_Jan_14_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pumps-in-smart-grids-heat-pumps-in-smart--5
+    title: 'Heat Pumps in Smart Grids — Heat Pumps in Smart Grids: Review of modelling
+      studies'
+    url: https://assets.publishing.service.gov.uk/media/5a7eb7d140f0b62305b82bb6/Delta-ee_Task_2_Review_of_Modelling_Studies_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pumps-in-smart-grids-heat-pumps-in-smart--6
+    title: 'Heat Pumps in Smart Grids — Heat Pumps in Smart Grids: Review of demonstration
+      projects'
+    url: https://assets.publishing.service.gov.uk/media/5a7d715740f0b64a5813f096/Delta-ee_Task_3_Review_of_Demonstration_Projects_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pumps-in-smart-grids-heat-pumps-in-smart--7
+    title: 'Heat Pumps in Smart Grids — Heat Pumps in Smart Grids: Research Gap Analysis'
+    url: https://assets.publishing.service.gov.uk/media/5a7ece28ed915d74e622691c/Delta-ee_Gap_Analysis_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-hybrid-heat-pumps-study
+    title: Hybrid heat pumps study
+    url: https://assets.publishing.service.gov.uk/media/5ad6142040f0b617dca714c5/Hybrid_heat_pumps_Final_report-.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-training-providers-register-to-offer-the-heat-
+    title: 'Training providers: register to offer the Heat Training Grant for heat pumps
+      — Heat Training Grant for heat pumps: guidance for training providers (updated
+      24 March 2023)'
+    url: https://assets.publishing.service.gov.uk/media/65dcd9a1f1cab30011fc474a/heat-training-grant-heat-pumps-training-provider-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pump-investment-accelerator-competition-r
+    title: 'Heat Pump Investment Accelerator Competition: round 2 — Heat pump investment
+      accelerator competition: round 2 – scheme guidance'
+    url: https://assets.publishing.service.gov.uk/media/69e64d4c3e3b4e9340cc92ff/heat-pump-investment-accelerator-competition-round-2-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pump-ready-programme-stream-2-closed-to-a
+    title: 'Heat Pump Ready Programme: Stream 2 (closed to applications) — Stream 2:
+      Competition guidance'
+    url: https://assets.publishing.service.gov.uk/media/61c2ffe78fa8f54c1c2441fb/stream-2-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-pump-ready-programme-stream-2-closed-to-a-2
+    title: 'Heat Pump Ready Programme: Stream 2 (closed to applications) — Stream 2:
+      responses to competition questions (updated 11 February 2022)'
+    url: https://assets.publishing.service.gov.uk/media/62065c67e90e077f745b8cff/heat-pump-ready-stream-2-questions.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-networks-consumer-survey-consumer-experie
+    title: 'Heat Networks Consumer Survey: consumer experiences on heat networks and
+      other heating systems — Heat Networks Consumer Survey: Executive summary'
+    url: https://assets.publishing.service.gov.uk/media/5a81bfcbed915d74e6233e80/HNCS_Executive_Summary_-_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-networks-consumer-survey-consumer-experie-2
+    title: 'Heat Networks Consumer Survey: consumer experiences on heat networks and
+      other heating systems — Heat Networks Consumer Survey: Results report'
+    url: https://assets.publishing.service.gov.uk/media/5a75c3cced915d506ee814e4/HNCS_Results_Report_-_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-networks-consumer-survey-consumer-experie-3
+    title: 'Heat Networks Consumer Survey: consumer experiences on heat networks and
+      other heating systems — Heat Networks Consumer Survey: Technical report'
+    url: https://assets.publishing.service.gov.uk/media/5a82eae1e5274a2e8ab5a01e/HNCS_-_Technical_Report_-_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zoning-overview
+    title: 'Heat network zoning: overview'
+    url: https://assets.publishing.service.gov.uk/media/65a1488b3308d2000d1fbf50/heat-network-zoning-overview.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-estimating-the-cost-reduction-impact-of-the-he
+    title: Estimating the cost reduction impact of the Heat Networks Investment Project
+      on future heat networks — Estimating the cost-reduction impact of the Heat Network
+      Investment Project o
+    url: https://assets.publishing.service.gov.uk/media/5ace1ce6ed915d32a65db8fa/Carbon_Trust._Estimating_the_cost-reduction_impact_of_the_Heat_Network_Investment_Proj...pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net
+    title: 'Heat network zone opportunity reports — Heat network zoning pilot: supporting
+      methodology statements'
+    url: https://assets.publishing.service.gov.uk/media/67aa009e5dea3871ea1ceae0/heat-network-zoning-pilot-methodology.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-2
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Birmingham'
+    url: https://assets.publishing.service.gov.uk/media/679b598d15f01fdf8e05e79a/heat-network-zone-opportunity-report-birmingham.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-3
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Bridlington'
+    url: https://assets.publishing.service.gov.uk/media/6839ab975150d70c85aafb5b/bridlington-zone-opportunity-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-4
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Bristol'
+    url: https://assets.publishing.service.gov.uk/media/679b59a13ea083bc5f30eafb/heat-network-zone-opportunity-report-bristol.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-5
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Canterbury'
+    url: https://assets.publishing.service.gov.uk/media/679b5be715f01fdf8e05e7a5/heat-network-zone-opportunity-report-canterbury.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-6
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Carlisle'
+    url: https://assets.publishing.service.gov.uk/media/6839abb2e0f10eed80aafb60/carlisle-zone-opportunity-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-7
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Cheltenham'
+    url: https://assets.publishing.service.gov.uk/media/679b5c9ef2c688b4b630eafc/heat-network-zone-opportunity-report-cheltenham.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-8
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Coventry'
+    url: https://assets.publishing.service.gov.uk/media/679b5d83413ef177de146c1c/heat-network-zone-opportunity-report-coventry.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-9
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Darlington'
+    url: https://assets.publishing.service.gov.uk/media/6839abc6e0f10eed80aafb61/darlington-zone-opportunity-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-10
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Exeter'
+    url: https://assets.publishing.service.gov.uk/media/6839ad1bc99c4f37ab4e8705/exeter-zone-opportunity-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-11
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Greater Manchester Combined Authority (GMCA)'
+    url: https://assets.publishing.service.gov.uk/media/6839ad0d210698b3364e86f0/GMCA-zone-opportunity-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-12
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Hull'
+    url: https://assets.publishing.service.gov.uk/media/679b5e1215f01fdf8e05e7aa/heat-network-zone-opportunity-report-hull.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-13
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Lancaster'
+    url: https://assets.publishing.service.gov.uk/media/6839ac1c28c5943237ae65bc/lancaster-zone-opportunity-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-14
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Leeds'
+    url: https://assets.publishing.service.gov.uk/media/679b5f1a15f01fdf8e05e7ad/heat-network-zone-opportunity-report-leeds.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-15
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Leicester'
+    url: https://assets.publishing.service.gov.uk/media/6839ac78c99c4f37ab4e8702/leicester-zone-opportunity-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-16
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Liverpool'
+    url: https://assets.publishing.service.gov.uk/media/679b6541f2c688b4b630eb0d/heat-network-zone-opportunity-report-liverpool.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-17
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Newcastle'
+    url: https://assets.publishing.service.gov.uk/media/679b672f6bb4c44f0805e7c1/heat-network-zone-opportunity-report-newcastle.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-18
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Norwich'
+    url: https://assets.publishing.service.gov.uk/media/679b6806413ef177de146c2b/heat-network-zone-opportunity-report-norwich.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-19
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Northallerton'
+    url: https://assets.publishing.service.gov.uk/media/6839ac915150d70c85aafb5c/northallerton-zone-opportunity-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-20
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Nottingham'
+    url: https://assets.publishing.service.gov.uk/media/6839acfb9c65cc8cdbae65c2/nottingham-zone-opportunity-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-21
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Peterborough'
+    url: https://assets.publishing.service.gov.uk/media/6839acaae0f10eed80aafb63/peterborough-zone-opportunity-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-22
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Plymouth'
+    url: https://assets.publishing.service.gov.uk/media/679b69ee6bb4c44f0805e7ca/heat-network-zone-opportunity-report-plymouth.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-23
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      London Borough of Barking and Dagenham (LBBD)'
+    url: https://assets.publishing.service.gov.uk/media/6839ac4dc99c4f37ab4e8701/LBBD-zone-opportunity-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-24
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      London Borough of Southwark'
+    url: https://assets.publishing.service.gov.uk/media/679b6cbde4fd11226828f5a5/heat-network-zone-opportunity-report-southwark.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-25
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Sheffield'
+    url: https://assets.publishing.service.gov.uk/media/67b33e517c070e71525f581e/Sheffield_Zone_Opportunity_Report__1_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-26
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Southampton'
+    url: https://assets.publishing.service.gov.uk/media/6839acbec99c4f37ab4e8704/southampton-zone-opportunity-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-27
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Stoke-on-Trent'
+    url: https://assets.publishing.service.gov.uk/media/6839acda210698b3364e86ef/stoke-zone-opportunity-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-28
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Strood'
+    url: https://assets.publishing.service.gov.uk/media/6839aceb28c5943237ae65be/strood-zone-opportunity-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-zone-opportunity-reports-heat-net-29
+    title: 'Heat network zone opportunity reports — Heat network zone opportunity report:
+      Sunderland'
+    url: https://assets.publishing.service.gov.uk/media/679b6d2615f01fdf8e05e7c7/heat-network-zone-opportunity-report-sunderland.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-apply-for-the-heat-network-efficiency-scheme-h
+    title: 'Apply for the Heat Network Efficiency Scheme (HNES) — Heat Network Efficiency
+      Scheme (HNES): guidance for applicants'
+    url: https://assets.publishing.service.gov.uk/media/69d50026d6a236570a263e81/HNES-guidance-for-applicants-round-12.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-apply-for-the-heat-network-efficiency-scheme-h-2
+    title: 'Apply for the Heat Network Efficiency Scheme (HNES) — Heat Network Efficiency
+      Scheme (HNES): overview'
+    url: https://assets.publishing.service.gov.uk/media/69f0881008ecdb5c6f34b062/heat-ntwork-efficiency-scheme-HNES-overview.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-networks-regulation-technical-standards-h
+    title: 'Heat networks regulation: technical standards — Huge changes to regulate
+      UK heat networks, including technical standards, zoning and consumer protection'
+    url: https://assets.publishing.service.gov.uk/media/669fb7b8a3c2a28abb50d545/cibse-2024-huge-changes-to-regulate-uk-heat-networks.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-networks-regulation-technical-standards-d
+    title: 'Heat networks regulation: technical standards — Developing a Heat Networks
+      Technical Assurance Scheme in the UK'
+    url: https://assets.publishing.service.gov.uk/media/669fb8910808eaf43b50d536/cibse-2023-developing-a-heat-networks-technical-assurance-scheme.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-financing-heat-networks-in-the-uk-guidebook-fi
+    title: 'Financing heat networks in the UK: guidebook — Financing heat networks in
+      the UK: web version containing bookmarks'
+    url: https://assets.publishing.service.gov.uk/media/5b86bea140f0b63cb48afdcb/GRT107812_A4_Interactive_PDF_framework_Issued.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-financing-heat-networks-in-the-uk-guidebook-fi-2
+    title: 'Financing heat networks in the UK: guidebook — Financing heat networks in
+      the UK: print ready version with no crop marks'
+    url: https://assets.publishing.service.gov.uk/media/5b86bec440f0b63c91ffb37a/GRT107812_A4_Interactive_PDF_framework_Issued_PRINT_NO_CROPS.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-financing-heat-networks-in-the-uk-guidebook-fi-3
+    title: 'Financing heat networks in the UK: guidebook — Financing heat networks in
+      the UK: print ready version containing crop marks'
+    url: https://assets.publishing.service.gov.uk/media/5b86beec40f0b63ca51c4a7e/GRT107812_A4_Interactive_PDF_framework_Issued_PRINT_CROPS.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-international-heat-networks-market-frameworks-
+    title: 'International heat networks: market frameworks review — International review
+      of heat network market frameworks: rapid evidence assessment, regulatory document
+      review, and qualitati'
+    url: https://assets.publishing.service.gov.uk/media/5e3bede440f0b609169cb583/international-review-of-heat-network-market-frameworks.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-international-heat-networks-market-frameworks--2
+    title: 'International heat networks: market frameworks review — International heat
+      networks: market frameworks research – regulatory document review'
+    url: https://assets.publishing.service.gov.uk/media/5e3bea0aed915d095784f525/international-heat-networks-market-frameworks-research-regulatory-document-review.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-heat-networks-market-overview
+    title: 'UK heat networks: market overview'
+    url: https://assets.publishing.service.gov.uk/media/66a23740a3c2a28abb50d711/uk-heat-networks-market-overview.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-electricity-revenues-and-licencin
+    title: Heat network electricity revenues and licencing — Heat network electricity
+      revenues and licencing guidance
+    url: https://assets.publishing.service.gov.uk/media/5b29295a40f0b634a8cf808e/Heat_Network_Electricity_Revenues_and_Licencing_Guidance.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-optimisation-of-heat-networks-issues-for-proje
+    title: 'Optimisation of heat networks: issues for project sponsors to consider'
+    url: https://assets.publishing.service.gov.uk/media/5b87b88fe5274a3cbb8723b1/Optimisation_of_Heat_Networks_final_-_GOV.UK.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-detailed-project-development-stra
+    title: Heat network detailed project development — Strategic and commercial case
+      development
+    url: https://assets.publishing.service.gov.uk/media/5b2a1f03e5274a18e8bf52bb/Strategic_and_Commercial_Case_development.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-detailed-project-development-econ
+    title: Heat network detailed project development — Economic and financial guidance
+    url: https://assets.publishing.service.gov.uk/media/5b2a1f7440f0b634c6141400/Economic_and_Financial_Case_development.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-network-detailed-project-development-proc
+    title: Heat network detailed project development — Procurement and State Aid
+    url: https://assets.publishing.service.gov.uk/media/5b2a1fa8e5274a190383bd19/Procurement_and_State_Aid_guidance.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf

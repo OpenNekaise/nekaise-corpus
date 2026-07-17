@@ -93,6 +93,12 @@
     "step": 1,
     "note": "JRC Publications Repository via OpenAIRE datasource filter -> handle page -> OP-DOI (10.2760 etc, cc-by) + bitstream PDF; run with --rows 25 --max 200; ~0.6s/handle fetch so a page-1 run is ~10min. Repository has ~38k records, 'energy' alone 6.3k"
   },
+  "find_govuk": {
+    "flag": "--page",
+    "next": 2,
+    "step": 1,
+    "note": "gov.uk Search API (q + filter_content_store_document_type multi-value OR) -> Content API attachments -> assets.publishing.service.gov.uk PDFs; OGL v3 = open; run with --rows 20 --max 250; 'heat pump' alone = 2k+ pages across the filtered doctypes"
+  },
   "find_worldbank": {
     "flag": "--os",
     "next": 1900,
