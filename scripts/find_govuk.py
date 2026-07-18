@@ -37,7 +37,8 @@ TIMEOUT = 30
 
 # gov.uk content_store_document_type values worth harvesting (multi-value filter = OR).
 DOC_TYPES = ["guidance", "policy_paper", "official_statistics", "independent_report",
-             "impact_assessment", "research", "notice", "statutory_guidance"]
+             "impact_assessment", "research", "notice", "statutory_guidance",
+             "national_statistics", "consultation_outcome", "statistical_data_set"]
 
 QUERIES = [
     ("building energy efficiency", "building_energy"),

@@ -3604,6 +3604,35 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  # ---------- EIA CBECS/RECS survey methodology + questionnaires (public domain; dig 2026-07-18) ----------
+  - id: eia-cbecs-questionnaire-summary
+    title: "CBECS Commercial Buildings Energy Consumption Survey — questionnaire (survey instrument, building energy end-use detail)"
+    url: https://www.eia.gov/consumption/commercial/pdf/questionnaire_cbecs.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-recs-2020-microdata-guide
+    title: "2020 RECS Residential Energy Consumption Survey — microdata file guide (variable & codebook documentation)"
+    url: https://www.eia.gov/consumption/residential/data/2020/pdf/microdata-guide.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-recs-2020-methodology-report
+    title: "2020 RECS Methodology Report — housing characteristics survey design, sampling, and estimation"
+    url: https://www.eia.gov/consumption/residential/data/2020/pdf/2020%20RECS_Methodology%20Report.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: eia-recs-2020-ce-methodology-monthly
+    title: "2020 RECS Consumption & Expenditures methodology (with monthly appendix) — modeling household energy consumption"
+    url: https://www.eia.gov/consumption/residential/data/2020/pdf/2020%20RECS%20CE%20Methodology%20-%20Monthly%20Appendix%20-%20Final.pdf
+    source: eia
+    license: public-domain
+    topic: building_energy
+    format: pdf
   - id: aivc-tn-77-projects-2011-2025
     title: 'AIVC Technical Note 77: AIVC projects 2011-2025'
     url: https://www.aivc.org/sites/default/files/TN%2077.pdf
