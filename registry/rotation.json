@@ -38,7 +38,7 @@
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "2014-W51",
+    "next": "2014-W50",
     "note": "weekly buckets 1900..now, walked backwards; mined: 2017-2020 W01, 1925-1940 W01s, 2015-W52..W08 (49 buckets). --countries flag NEW (default US): CN/EP/DE work, sitemap titles are English for all countries; CN buckets 2018-2020 W03 mined 07-10 (license=open for non-US)"
   },
   "find_purdue": {
