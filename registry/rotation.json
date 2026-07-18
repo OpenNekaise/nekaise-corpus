@@ -89,7 +89,7 @@
   },
   "find_jrc": {
     "flag": "--page",
-    "next": 3,
+    "next": 4,
     "step": 1,
     "note": "JRC Publications Repository via OpenAIRE datasource filter -> handle page -> OP-DOI (10.2760 etc, cc-by) + bitstream PDF; run with --rows 40 --max 250. First 15 QUERIES dry at p5; second-wave QUERIES added 07-17 (+61 at p1 rows40) — pointer restarted at p2 for the widened set"
   },
