@@ -44,6 +44,9 @@ def main() -> None:
         if r["status"] != "ok":
             drop[r["id"]] = "failed"
             continue
+        if r["id"].startswith("pat-") and quality.off_domain_title(r.get("title", "")):
+            drop[r["id"]] = "off-topic-title"
+            continue
         tp = r.get("text_path")
         if not tp or not (HERE / tp).exists():
             drop[r["id"]] = "no-text"

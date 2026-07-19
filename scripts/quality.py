@@ -42,6 +42,38 @@ DOMAIN = re.compile(
 EN = re.compile(r"\b(the|and|of|to|in|is|for|that|with|are|this|be|as|by|on|from)\b", re.I)
 CJK = re.compile(r"[一-鿿㐀-䶿぀-ヿ가-힯]")
 
+# Patent-title off-domain kill. The polysemous stems that route patent discovery ("insulat",
+# "heating", "tunnel", "construction") also fire on semiconductor, smoking-device and
+# quantum-electronics patents — and those slip the full-text DOMAIN gate too, because chip prose
+# is saturated with "structure/thermal/insulator/stress". These classes are unambiguous from the
+# TITLE alone, so they are killed there: find_patents.py skips them at discovery and
+# prune_corpus.py drops already-ingested ones (reason "off-topic-title"). Calibrated 2026-07-19
+# on the 29k-patent corpus: ~800 kills, sampled for collateral.
+PATENT_KILL_HARD = re.compile(  # never rescued — "ventilated smoking article" is still a vape
+    r"electronic cigarette|e-cigarette|smoking article|nicotine", re.I)
+PATENT_KILL = re.compile(
+    r"transistor|semiconductor|field[- ]effect|insulated[- ]gate bipolar|\bwafer\b|"
+    r"photolithograph|integrated circuit|memory cell|\bdram\b|\bcmos\b|\bmosfet\b|\bigbt\b|"
+    r"silicon[- ]on[- ]insulator|epitaxial|atomizer|"
+    r"magnetic tunnel|tunnel junction|tunnel(?:ing)? (?:junction|magnetoresist|barrier|diode)|"
+    r"quantum tunnel|bridge (?:circuit|rectifier)|wheatstone|dental bridge|"
+    r"pile fabric|pile yarn|carpet pile|"
+    r"(?:cosmetic|makeup|make-up).{0,30}foundation|foundation.{0,30}(?:cosmetic|makeup|concealer)|"
+    r"construction of (?:a )?(?:point cloud|data|image|gene|genome|dna|plasmid|genetic)", re.I)
+# Genuine AEC/HVAC anchors rescue a soft kill: "UHPC wafer board … bridge", Peltier
+# ("semiconductor refrigeration") HVAC gear, IGBT drives inside air conditioners.
+PATENT_GUARD = re.compile(
+    r"wafer ?board|ventilat|dehumidif|heat pump|air.?condition|\bhvac\b|chiller|refrigerat|"
+    r"formwork|concrete|masonry|girder|abutment|asphalt|pavement|curtain wall", re.I)
+
+
+def off_domain_title(title: str) -> bool:
+    """True if a patent TITLE alone marks the doc off-domain (see PATENT_KILL above)."""
+    t = title or ""
+    if PATENT_KILL_HARD.search(t):
+        return True
+    return bool(PATENT_KILL.search(t)) and not PATENT_GUARD.search(t)
+
 # Long book-like docs are judged over a 100k-char window: their first 20k chars are front matter
 # (title pages, TOC dot-leaders, OCR noise) that fails alpha-ratio checks and under-represents the
 # content. Short docs (and source code, whatever its length) use the 20k window + absolute gate.

@@ -150,3 +150,31 @@ def test_is_booklike_routing():
 def test_assess_strips_header():
     header = "# Title\n\nsource: http://x\nlicense: open\ntopic: t\n\n---\n\n"
     assert quality.assess(header + rep(ON_TOPIC, 5_000), "ost-x", "pdf") == "ok"
+
+
+# --- patent-title off-domain kill (added 2026-07-19: semiconductor/vape/quantum patents whose
+# full text passes the DOMAIN gate — "structure/thermal/insulator" saturate chip prose) ---
+
+def test_patent_title_kill_semiconductor():
+    assert quality.off_domain_title("Silicon-on-insulator channels")
+    assert quality.off_domain_title("Method and Structure for Vertical Tunneling Field Effect Transistor")
+    assert quality.off_domain_title("Magnetic tunnel junction with electronically reflective insulative spacer")
+    assert quality.off_domain_title("Insulated gate bipolar transistor and its manufacturing method")
+
+
+def test_patent_title_kill_hard_beats_guard():
+    # "ventilated" would rescue via PATENT_GUARD, but a smoking article is never AEC
+    assert quality.off_domain_title("Smoking article with a ventilated mouthpiece")
+    assert quality.off_domain_title("Electronic cigarette with prolonged heating protection")
+
+
+def test_patent_title_guard_rescues_real_aec():
+    assert not quality.off_domain_title("A kind of UHPC wafer board composite beam bridge shear connector")
+    assert not quality.off_domain_title("Semiconductor full heat recovery device, fresh air ventilator")
+    assert not quality.off_domain_title("A semiconductor refrigerator")
+
+
+def test_patent_title_on_topic_untouched():
+    assert not quality.off_domain_title("Method and system for ensuring leak-free roof installation")
+    assert not quality.off_domain_title("Heat pump with variable speed compressor")
+    assert not quality.off_domain_title("Silicone roof edge accessory for foam roof")

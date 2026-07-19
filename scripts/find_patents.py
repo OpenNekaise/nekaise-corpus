@@ -40,6 +40,7 @@ import time
 import requests
 import yaml
 
+import quality
 import registry
 
 SITEMAP = "https://patents.google.com/sitemap"
@@ -159,6 +160,8 @@ def main() -> None:
                 continue
             topic = topic_for(title)
             if topic is None:
+                continue
+            if quality.off_domain_title(title):  # semiconductor/vape/quantum false positives
                 continue
             url = f"https://patents.google.com/patent/{pubnum}/en"
             u, t = url.rstrip("/"), registry.norm(title)
