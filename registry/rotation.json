@@ -32,7 +32,7 @@
   },
   "find_zenodo": {
     "flag": "--page",
-    "next": 29,
+    "next": 30,
     "step": 1,
     "note": "rate-limited anonymous API — keep --max 100-150"
   },
