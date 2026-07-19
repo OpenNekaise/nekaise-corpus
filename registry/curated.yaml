@@ -4341,3 +4341,40 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
+  # ---------- SEAI — Sustainable Energy Authority of Ireland (Irish PSI, CC-BY 4.0) ----------
+  # Irish public-sector information, re-usable under CC-BY 4.0 (SI 376/2021; Circular 12/2016).
+  - id: seai-domestic-technical-standards
+    title: "SEAI: Domestic Technical Standards and Specifications (energy-efficient retrofit of dwellings)"
+    url: "https://www.seai.ie/sites/default/files/publications/Domestic-Technical-Standards-and-Specifications.pdf"
+    source: seai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: seai-energy-efficiency-traditional-buildings
+    title: "SEAI: Improving Energy Efficiency in Traditional Buildings — Guidance for Specifiers and Installers"
+    url: "https://www.seai.ie/sites/default/files/documents/Energy_Efficiency_in_Traditional_Buildings.pdf"
+    source: seai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: seai-deap-heat-pump-methodology
+    title: "SEAI: DEAP Heat Pump Methodology (space/water heating heat-pump modelling)"
+    url: "https://www.seai.ie/sites/default/files/publications/DEAP-Heat-pumps-consultation.pdf"
+    source: seai
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: seai-deep-retrofit-guidance
+    title: "SEAI: Deep Retrofit — Application Guidance (whole-house upgrade, monitoring, heat pump & PV)"
+    url: "https://www.seai.ie/sites/default/files/publications/Deep-Retrofit-Application-Guidance-Document-.pdf"
+    source: seai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: seai-national-retrofit-report-2024
+    title: "SEAI: National Retrofit Plan — Full Year Report 2024"
+    url: "https://www.seai.ie/sites/default/files/publications/SEAI-Retrofit-Full-Year-Report-2024.pdf"
+    source: seai
+    license: cc-by
+    topic: building_energy
+    format: pdf
