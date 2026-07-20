@@ -14,7 +14,7 @@
   },
   "find_books": {
     "flag": "--offset",
-    "next": 525,
+    "next": 550,
     "step": 25,
     "note": "OAPEN all-language + native-language queries (de/it/fr/es/pt/nl added 07-10); offsets 0-50 mined multilingual, 0-375 English-era. NOT HUNG, just SLOW: 117 QUERIES x ~15-20s/search + a 30s OAI license lookup per candidate = ~45-60min/run, and it prints only at the end. Two rounds mistook that for a hang at offset 375 and skipped it; a 3600s cap ran it fine (offset 375 -> +153 books on 07-16). Give it >=3600s; do NOT retire the English queries."
   },
