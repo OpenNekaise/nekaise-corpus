@@ -29,7 +29,7 @@ PROMPT='Run ONE nekaise-corpus growth round, following .claude/skills/dig/SKILL.
 Steps: (1) python scripts/find_sources.py --per 20 --append ; (2) python scripts/find_github.py --append ;
 (3) briefly web-search for one or two NEW open building-energy veins we do not tap yet and add them;
 (4) python scripts/build_corpus.py ; (5) python scripts/prune_corpus.py --apply ;
-(6) git add registry/ manifest.jsonl pruned_urls.txt && git commit with a message summarizing what landed.
+(6) git add registry/ manifest/ pruned_urls.txt && git commit with a message summarizing what landed.
 Do NOT git push. Never commit raw/ or text/. Investigate and report any load failures. End with a
 one-paragraph summary of what was added this round.'
 

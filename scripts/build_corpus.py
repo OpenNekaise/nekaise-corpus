@@ -2,8 +2,8 @@
 """build_corpus.py — fetch & verify the corpus from the registry.
 
 Reads the registry (registry/*.yaml), downloads each source into raw/<source>/<id>.<ext>, extracts
-plain text into text/<id>.md, and records everything (incl. sha256 and quality metrics) in
-manifest.jsonl. The committed manifest is the
+plain text into text/<id>.md, and records everything (incl. sha256 and quality metrics) in the
+sharded manifest (manifest/<shard>.jsonl, all I/O via registry.py). The committed manifest is the
 REPRODUCIBILITY record: a fresh clone runs this to fetch the SAME bytes, and the run reports how many
 reproduced exactly (sha256 matches the manifest) vs drifted (the source changed upstream) vs new.
 
@@ -22,7 +22,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import io
-import json
 import re
 import shutil
 import subprocess
@@ -40,7 +39,6 @@ import registry
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 RAW = HERE / "raw"
 TEXT = HERE / "text"
-MANIFEST = HERE / "manifest.jsonl"
 # Browser-like UA: publisher / repository bot-walls (eScholarship, Frontiers, PMC, …) 403 a generic
 # UA even for openly-licensed (CC-BY / OA) PDFs we're entitled to fetch. (MDPI sits behind Cloudflare
 # and still blocks; those need a headless browser — skipped for now.)
@@ -180,20 +178,11 @@ def extract_html(data: bytes) -> str:
 
 
 def load_manifest() -> dict:
-    rows: dict = {}
-    if MANIFEST.exists():
-        for line in MANIFEST.read_text().splitlines():
-            line = line.strip()
-            if line:
-                r = json.loads(line)
-                rows[r["id"]] = r
-    return rows
+    return {r["id"]: r for r in registry.load_manifest_rows()}
 
 
 def write_manifest(rows: dict) -> None:
-    with MANIFEST.open("w") as f:
-        for r in sorted(rows.values(), key=lambda x: (x.get("topic", ""), x["id"])):
-            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    registry.write_manifest_rows(rows.values())
 
 
 def _fetch_ec_deliverable(url: str) -> requests.Response:

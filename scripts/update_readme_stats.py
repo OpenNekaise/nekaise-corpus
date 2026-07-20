@@ -7,11 +7,12 @@ never goes stale. No-op (leaves README untouched) if the sentinels are missing.
 """
 from __future__ import annotations
 
-import json
 import subprocess
 import time
 from collections import Counter
 from pathlib import Path
+
+import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 README = HERE / "README.md"
@@ -28,7 +29,7 @@ def du(path: str) -> str:
 
 
 def main() -> None:
-    rows = [json.loads(l) for l in (HERE / "manifest.jsonl").read_text().splitlines() if l.strip()]
+    rows = registry.load_manifest_rows()
     ok = [r for r in rows if r.get("status") == "ok"]
     chars = sum(r.get("text_chars", 0) for r in ok)
     tok = chars // 4
@@ -57,7 +58,7 @@ def main() -> None:
 
 **By license:** {by_lic}.
 
-_Snapshot of the live registry ({date}) — auto-generated from `manifest.jsonl`. The bytes are not
+_Snapshot of the live registry ({date}) — auto-generated from the manifest. The bytes are not
 shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._
 {END}"""
 

@@ -2,7 +2,7 @@
 """coverage.py — what the corpus HAS vs. what it's MISSING, straight from the manifest.
 
 The mission is to find *all* open building-energy data, so the agent needs a live denominator:
-which KINDS of data we already hold and which are gaps. This reads manifest.jsonl, buckets every
+which KINDS of data we already hold and which are gaps. This reads the manifest, buckets every
 fetched doc into a genre (the "universe" of building-energy data below), and prints have-vs-target
 with the gaps flagged. It is self-updating: run it after every load and the numbers refresh. A
 source it does not recognize is reported as "uncategorized" so the map can't silently drift -- add
@@ -14,12 +14,12 @@ that source to SOURCE_GENRE (one line) when it shows up.
 from __future__ import annotations
 
 import argparse
-import json
 from collections import Counter
 from pathlib import Path
 
+import registry
+
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
-MANIFEST = HERE / "manifest.jsonl"
 
 # The UNIVERSE of building-energy data kinds (the target list). Curated + slowly grown: add a row
 # only when a genuinely new KIND of source appears. The "have" count is computed, never hand-typed.
@@ -100,7 +100,7 @@ def main() -> None:
     ap.add_argument("--sources", action="store_true", help="also dump raw per-source counts")
     args = ap.parse_args()
 
-    rows = [json.loads(l) for l in MANIFEST.read_text().splitlines() if l.strip()]
+    rows = registry.load_manifest_rows()
     ok = [r for r in rows if r.get("status") == "ok"]
     by_source = Counter(r.get("source") for r in ok)
 

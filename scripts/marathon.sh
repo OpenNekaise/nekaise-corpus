@@ -74,9 +74,9 @@ while [ "$(date +%s)" -lt "$END" ]; do
   python scripts/prune_corpus.py --apply                    >>"$LOG" 2>&1 || say "  prune FAILED"
   python scripts/update_readme_stats.py                     >>"$LOG" 2>&1 || true
 
-  stats=$(python3 -c "import json;r=[json.loads(l) for l in open('manifest.jsonl') if l.strip()];ok=[x for x in r if x.get('status')=='ok'];print(len(ok), sum(x.get('text_chars',0) for x in ok)//4)" 2>/dev/null || echo "0 0")
+  stats=$(python3 -c "import json,glob;r=[json.loads(l) for f in sorted(glob.glob('manifest/*.jsonl')) for l in open(f) if l.strip()];ok=[x for x in r if x.get('status')=='ok'];print(len(ok), sum(x.get('text_chars',0) for x in ok)//4)" 2>/dev/null || echo "0 0")
   DOCS=${stats% *}; TOK=${stats#* }; TOKM=$(( TOK/1000000 ))
-  git add registry manifest.jsonl pruned_urls.txt README.md 2>>"$LOG"
+  git add registry manifest pruned_urls.txt README.md 2>>"$LOG"
   if git commit -q -m "marathon r$round: ${DOCS} docs / ${TOKM}M tokens" -m "Autonomous OAPEN-books + papers + repos growth round." -m "$TRAILER1" -m "$TRAILER2" 2>>"$LOG"; then
     if git push origin main >>"$LOG" 2>&1; then say "  round $round PUSHED — ${DOCS} docs / ${TOKM}M tokens"
     else say "  round $round committed LOCAL (push failed)"; fi
@@ -88,4 +88,4 @@ done
 
 # best-effort restore of the daily dig cron
 bash "$REPO/scripts/install_cron.sh" >>"$LOG" 2>&1 && say "daily dig cron re-installed" || say "cron re-install failed (run: bash scripts/install_cron.sh)"
-say "marathon DONE — $round rounds. final: $(python3 -c "import json;r=[json.loads(l) for l in open('manifest.jsonl') if l.strip()];ok=[x for x in r if x.get('status')=='ok'];print(len(ok),'docs /', sum(x.get('text_chars',0) for x in ok)//4//1000000,'M tokens')" 2>/dev/null)"
+say "marathon DONE — $round rounds. final: $(python3 -c "import json,glob;r=[json.loads(l) for f in sorted(glob.glob('manifest/*.jsonl')) for l in open(f) if l.strip()];ok=[x for x in r if x.get('status')=='ok'];print(len(ok),'docs /', sum(x.get('text_chars',0) for x in ok)//4//1000000,'M tokens')" 2>/dev/null)"

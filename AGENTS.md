@@ -16,7 +16,7 @@ machine resumes exactly where the last one stopped.
 | Path | What it is |
 |---|---|
 | `registry/` | The **registry** — one entry per source (`id` · `title` · `url` · `source` · `license` · `topic` · `format`), sharded per vein: `curated.yaml` (hand-picked — edit this to grow) + machine shards (`books` · `papers` · `reports` · `github` · `archive` · `crawl`), routed by id prefix (`scripts/registry.py`). |
-| `manifest.jsonl` | The **provenance + reproducibility record** — url, license, topic, sha256, bytes for every fetched doc. |
+| `manifest/` | The **provenance + reproducibility record** — url, license, topic, sha256, bytes for every fetched doc. Sharded like the registry (`manifest/<shard>.jsonl`, patents split by country) so no file nears GitHub's 100MB push limit; all I/O via `registry.py` (`load_manifest_rows` / `write_manifest_rows`). |
 | `pruned_urls.txt` | **Blocklist** of URLs the quality gate dropped — finders dedup against it so discovery never re-churns pruned material. |
 | `registry/rotation.json` | **Excavation state** — the next page/offset/bucket per backend, advanced by `scripts/rotation.py` after each successful run. Committed, so the growth loop is resumable by anyone. |
 | `scripts/` | The **machinery** — loader, discovery backends, quality gate, cron/marathon runners. All run from the repo root: `python scripts/<x>.py`. |
@@ -31,7 +31,7 @@ durable code goes in `scripts/`; experiments go in `workspace/`.
 ## The machinery
 
 `scripts/build_corpus.py` is the **loader**: reads the registry → downloads into `raw/<source>/` →
-extracts plain text into `text/<id>.md` → records sha256 + metadata in `manifest.jsonl`. Idempotent;
+extracts plain text into `text/<id>.md` → records sha256 + metadata in the manifest. Idempotent;
 dedups by sha256; parallel (`--workers`, ≤2 in-flight per host); PDF downloads are magic-byte
 checked, and a curl fallback rides over WAF/TLS-fingerprint walls (403/429/503). The discovery
 backends (`find_sources.py` OpenAlex/OSTI/arXiv · `find_github.py` curated repos + source code ·
@@ -47,6 +47,10 @@ rounds never re-churn pruned material.
 ## The operating loop
 
 Run in a network-enabled shell (outside any sandbox). Each step has a skill that drives it.
+
+**Cloning: use `git clone --depth 1`.** The full history carries every past manifest/registry
+revision (~1.7GB); the recipe never needs it to operate — a shallow clone is ~10× smaller and
+works with every loop below (only deep `git log` archaeology needs `--unshallow`).
 
 **Just cloned? Say `go`.** [`go`](.claude/skills/go/SKILL.md) is the one-command entrypoint: it
 loads everything indexed (below), and — once the machine is fully caught up — offers to enable the

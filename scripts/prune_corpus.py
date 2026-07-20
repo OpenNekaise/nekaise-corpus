@@ -16,7 +16,6 @@ Dropped URLs land in pruned_urls.txt so discovery never re-churns them.
 from __future__ import annotations
 
 import argparse
-import json
 from collections import Counter
 from pathlib import Path
 
@@ -109,7 +108,7 @@ def main() -> None:
                 if p and (HERE / p).exists():
                     (HERE / p).unlink()
     keep = [r for r in manifest if r["id"] not in drop]
-    (HERE / "manifest.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in keep))
+    registry.write_manifest_rows(keep)
     good_disc = sum(1 for r in keep if registry.discovered(r["id"]) and r["status"] == "ok")
     print(f"pruned {len(drop)} docs ({removed} registry entries removed, {blocked} urls "
           f"blocklisted); kept {good_disc} good discovered docs, {len(keep)} manifest rows")

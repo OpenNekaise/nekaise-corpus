@@ -49,7 +49,7 @@ for you:
 
 **By license:** open 24,142 · public-domain 40,869 · cc-by-sa 1,605 · cc-by 8,920 · proprietary-internal 5.
 
-_Snapshot of the live registry (2026-07-19) — auto-generated from `manifest.jsonl`. The bytes are not
+_Snapshot of the live registry (2026-07-20) — auto-generated from the manifest. The bytes are not
 shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._
 <!-- STATS:END -->
 
@@ -76,7 +76,7 @@ flowchart LR
     R["registry/*.yaml — sharded registry<br/>+ rotation.json (committed excavation state)"]
     R --> B["build_corpus.py — the loader<br/>parallel, ≤2 req/host, WAF/TLS fallback,<br/>pypdf→pdftotext rescue, sha256 + quality metrics"]
     B --> D["raw/ + text/<br/>(your machine only — git-ignored)"]
-    B --> M["manifest.jsonl<br/>provenance: url · license · sha256 · metrics"]
+    B --> M["manifest/*.jsonl — sharded manifest<br/>provenance: url · license · sha256 · metrics"]
     M --> P["prune_corpus.py — quality gate<br/>multilingual on-topic check, dedup,<br/>golden-tested (tests/)"]
     P -.->|"edits registry in place"| R
     P -.->|"pruned_urls.txt — never re-churned"| FINDERS
@@ -88,7 +88,7 @@ new backends are ~100-line scripts on top of the shared `registry.py`/`quality.p
 | Path | What it is |
 |---|---|
 | `registry/` | The **registry** — one YAML shard per vein (`curated.yaml` is the hand-picked seed; 15+ machine shards) + `rotation.json`, the committed excavation state that makes the growth loop resumable by anyone. |
-| `manifest.jsonl` | **Provenance** — id, url, license, topic, sha256, bytes, quality metrics for every fetched doc. |
+| `manifest/` | **Provenance** — id, url, license, topic, sha256, bytes, quality metrics for every fetched doc; one `.jsonl` shard per vein (patents split by country) so no file nears GitHub push limits. |
 | `pruned_urls.txt` | **Blocklist** of everything the quality gate dropped — discovery never re-churns it. |
 | `scripts/` | The **machinery** — the loader, 14 discovery backends, the quality gate, shared registry/quality libs, cron runners. |
 | `.claude/skills/` | The **playbooks** the agent follows (`go` · `load-corpus` · `find-sources` · `crawl-docs` · `dig`). |
@@ -99,7 +99,7 @@ new backends are ~100-line scripts on top of the shared `registry.py`/`quality.p
 
 ## Reproducibility
 
-A clone gets the **same corpus** we have. `manifest.jsonl` records every doc's `url` and `sha256`;
+A clone gets the **same corpus** we have (`git clone --depth 1` — history not needed). The manifest records every doc's `url` and `sha256`;
 the loader compares each download against it and reports `reproduced / drifted / new`. Stable hosts
 (arXiv, `*.gov`) reproduce reliably; any dead or changed source is reported, never silently dropped.
 The raw bytes + sha256 are the reproducibility anchor; the extracted text in `text/` is derived and
@@ -108,7 +108,7 @@ byte-identical text). Ask your agent to *"verify the corpus"* any time.
 
 ## Licensing
 
-Every source carries a `license` in the registry / `manifest.jsonl` — **read it before you
+Every source carries a `license` in the registry / manifest — **read it before you
 redistribute anything**:
 
 - **`public-domain`** — US government / national-lab work and expired-copyright texts (patents,

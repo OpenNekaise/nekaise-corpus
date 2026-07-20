@@ -54,5 +54,5 @@ and `python scripts/find_github.py`.
 
 ## Notes
 - **License discipline:** `raw/` and `text/` are git-ignored and never committed. The daily job only
-  ever commits `registry/` + `manifest.jsonl` + `pruned_urls.txt` (pointers + provenance), never the bytes.
+  ever commits `registry/` + `manifest/` + `pruned_urls.txt` (pointers + provenance), never the bytes.
 - The daily job **commits but does not push** — growth is unattended, publishing is your call.

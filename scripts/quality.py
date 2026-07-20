@@ -104,7 +104,7 @@ def _window(t: str) -> dict:
 
 def metrics(bod: str) -> dict:
     """Window stats for both gates + total length. `bod` is extracted text WITHOUT the header.
-    Stored per-doc in manifest.jsonl (key `quality`) so verdicts never re-read the text."""
+    Stored per-doc in the manifest (key `quality`) so verdicts never re-read the text."""
     return {"total": len(bod), "w20": _window(bod[:20_000]), "w100": _window(bod[:100_000])}
 
 

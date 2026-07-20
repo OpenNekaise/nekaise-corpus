@@ -23,7 +23,11 @@ import blocklist
 
 ROOT = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 REG_DIR = ROOT / "registry"
-MANIFEST = ROOT / "manifest.jsonl"
+# The manifest is sharded like the registry (manifest/<shard>.jsonl, patents further split by
+# country) so no single file approaches GitHub's 100MB push limit — the monolithic manifest.jsonl
+# hit 61MB at 75k docs (2026-07-20). All manifest I/O goes through load_manifest_rows /
+# write_manifest_rows below; nothing else may open these files.
+MAN_DIR = ROOT / "manifest"
 
 CURATED = "curated.yaml"
 # id prefix -> shard file. Anything not matching is hand-curated (curated.yaml).
@@ -106,10 +110,48 @@ def load_entries() -> list[dict]:
     return out
 
 
+def manifest_shard(sid: str) -> str:
+    """Manifest shard stem for an id: mirrors the registry shard, except patents split further
+    by publication country (pat-us…/pat-cn…) — the patents vein alone is ~25MB and growing."""
+    stem = shard_path(sid).stem
+    if stem == "patents":
+        m = re.match(r"pat-([a-z]{2})", sid)
+        if m:
+            return f"patents-{m.group(1)}"
+    return stem
+
+
+def manifest_files() -> list[Path]:
+    return sorted(MAN_DIR.glob("*.jsonl")) if MAN_DIR.exists() else []
+
+
 def load_manifest_rows() -> list[dict]:
-    if not MANIFEST.exists():
-        return []
-    return [json.loads(l) for l in MANIFEST.read_text().splitlines() if l.strip()]
+    out: list[dict] = []
+    for p in manifest_files():
+        out.extend(json.loads(l) for l in p.read_text().splitlines() if l.strip())
+    return out
+
+
+def write_manifest_rows(rows) -> None:
+    """Rewrite manifest/ from `rows` (any iterable of row dicts): group by shard, sort each shard
+    by (topic, id) for stable diffs, write only the files whose content changed, and delete shard
+    files whose rows are all gone (a fully-pruned vein). This per-shard skip is what keeps
+    build_corpus's every-25-fetches checkpoint cheap and a dig round's diff confined to the
+    shards it actually touched."""
+    groups: dict[str, list[dict]] = {}
+    for r in rows:
+        groups.setdefault(manifest_shard(r["id"]), []).append(r)
+    MAN_DIR.mkdir(exist_ok=True)
+    live = {f"{stem}.jsonl" for stem in groups}
+    for stem, group in groups.items():
+        text = "".join(json.dumps(r, ensure_ascii=False) + "\n"
+                       for r in sorted(group, key=lambda x: (x.get("topic", ""), x["id"])))
+        p = MAN_DIR / f"{stem}.jsonl"
+        if not p.exists() or p.read_text() != text:
+            p.write_text(text)
+    for p in manifest_files():
+        if p.name not in live:
+            p.unlink()
 
 
 def existing_keys(include_blocklist: bool = True):

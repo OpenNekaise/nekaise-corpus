@@ -17,7 +17,7 @@ their own copy.
    python scripts/build_corpus.py
    ```
    It reads the registry (`registry/*.yaml`), downloads any missing source into `raw/<source>/`, extracts plain text
-   into `text/<id>.md`, dedups by sha256, and writes `manifest.jsonl`. Idempotent — re-running only
+   into `text/<id>.md`, dedups by sha256, and writes the sharded manifest (`manifest/*.jsonl`). Idempotent — re-running only
    fetches what is missing. `--force` re-fetches everything; `--only <topic>` limits scope.
 
 2. **Verify** (your job, not the script's):
@@ -26,7 +26,7 @@ their own copy.
      be the environment (some hosts are blocked in sandboxes). Report failures, do not hide them.
    - Spot-check quality: open a few `text/*.md` and confirm they are real content, not error pages or
      near-empty stubs. Flag thin extractions (a few hundred chars) for a better source or re-extract.
-   - Optionally re-hash a downloaded file and confirm it matches its `sha256` in `manifest.jsonl`
+   - Optionally re-hash a downloaded file and confirm it matches its `sha256` in the manifest
      (`python scripts/build_corpus.py --verify` re-hashes everything).
 
 3. **Summarize** what was fetched (doc count, MB, topics) and any license caveats.

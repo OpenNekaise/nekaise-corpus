@@ -19,7 +19,7 @@ you (the agent) judge relevance + license and decide what to keep.
    It queries three free backends -- **OpenAlex** (filtered to repository / gov / arXiv / PMC PDF
    copies, NOT publisher pages that 403 bots), **OSTI** (US DOE / national-lab reports,
    public-domain), and the **arXiv API** -- across the topics, keeps candidates whose PDF is on
-   a download-friendly host, dedups against `manifest.jsonl` + the registry + `pruned_urls.txt`, and prints
+   a download-friendly host, dedups against the manifest + the registry + `pruned_urls.txt`, and prints
    ready-to-paste entries. `--backends openalex,osti,arxiv` selects which to use.
 
 2. **Review** (your judgment, not the script's):

@@ -25,7 +25,7 @@ hand as `/dig` any time you want to grow the corpus in one shot.
    (US patents via Google sitemap — the biggest open vein) · `find_wiki` (multilingual Wikipedia).
    Plus non-rotating: `find_sources.py --per 20 --append`, `find_github.py --append` (head mostly
    mined out). `find_ibpsa` is PAUSED (see rotation.json note). All backends dedup against
-   `manifest.jsonl` + the registry + `pruned_urls.txt` before appending — re-running is safe.
+   the manifest + the registry + `pruned_urls.txt` before appending — re-running is safe.
 
 2. **Widen (judgment — the part a human/agent adds over the scripts):** spend a little of the budget
    looking for *new veins*, not just more of the head:
@@ -52,10 +52,10 @@ hand as `/dig` any time you want to grow the corpus in one shot.
 
 5. **Commit locally — do NOT push:**
    ```
-   git add registry/ manifest.jsonl pruned_urls.txt
+   git add registry/ manifest/ pruned_urls.txt
    git commit -m "dig: +<N> docs -> <total> docs / <tokens> tokens (<what landed>)"
    ```
-   Only `registry/` + `manifest.jsonl` + `pruned_urls.txt` are committed (pointers + provenance). `raw/` and `text/`
+   Only `registry/` + `manifest/` + `pruned_urls.txt` are committed (pointers + provenance). `raw/` and `text/`
    are git-ignored and must never be committed. **Never `git push`** — the maintainer reviews the
    commits and pushes.
 
