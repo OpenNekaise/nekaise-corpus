@@ -59,6 +59,22 @@ QUERIES = [
     ("ventilation buildings", "equipment_systems"),
     ("overheating dwellings", "building_energy"),
     ("net zero buildings decarbonisation", "building_energy"),
+    # second wave (2026-07-20): first 18 queries thinning at p27 (101/250 pruned) — new terms
+    # reset the universe (jrc precedent 07-17); pointer restarted at 1, dedup makes re-walk safe
+    ("building regulations Part L conservation fuel power", "standards_protocols"),
+    ("Energy Company Obligation retrofit", "building_energy"),
+    ("social housing decarbonisation fund", "building_energy"),
+    ("minimum energy efficiency standard rented", "building_energy"),
+    ("display energy certificate public buildings", "building_energy"),
+    ("ESOS energy savings opportunity scheme", "building_energy"),
+    ("district heating heat network zoning", "building_energy"),
+    ("damp and mould housing guidance", "architecture"),
+    ("decent homes standard", "architecture"),
+    ("cladding remediation", "construction"),
+    ("fire safety buildings regulations", "standards_protocols"),
+    ("modern methods of construction", "construction"),
+    ("embodied carbon construction", "materials"),
+    ("building services engineering", "equipment_systems"),
 ]
 
 
