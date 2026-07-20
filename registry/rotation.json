@@ -101,7 +101,7 @@
   },
   "find_worldbank": {
     "flag": "--os",
-    "next": 9100,
+    "next": 9500,
     "step": 400,
     "note": "World Bank Documents & Reports official API (see find_worldbank.py docstring); run with --rows 50 --pages 8 --max 250. Query 'building energy efficiency' = 16,890 records (os 0-400 mined 07-12, 250 kept — overlap at os 300 is dedup-safe). When it thins, rotate --q: 'energy efficient buildings', 'district heating', 'building code', 'thermal insulation', 'green building construction' — reset next=0 per query. cc-by, junk doctys filtered in-script"
   }
