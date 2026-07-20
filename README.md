@@ -40,14 +40,14 @@ for you:
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **78,793** |
-| **Raw originals** | **~234G** (PDF / HTML / source code) |
-| **Extracted text** | **~11G** (~10.638B chars, **≈2.659B tokens**) |
+| **Documents** | **79,097** |
+| **Raw originals** | **~236G** (PDF / HTML / source code) |
+| **Extracted text** | **~11G** (~10.687B chars, **≈2.672B tokens**) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): building_energy 29,684 · equipment_systems 16,984 · construction 11,142 · structures_civil 7,077 · materials 3,773 · infrastructure 2,875 · architecture 2,699 · standards_protocols 1,874 · controls_bas 1,331 · urban 985 · commissioning_fdd 369.
+**By topic** (a source gets one at registration): building_energy 29,988 · equipment_systems 16,984 · construction 11,142 · structures_civil 7,077 · materials 3,773 · infrastructure 2,875 · architecture 2,699 · standards_protocols 1,874 · controls_bas 1,331 · urban 985 · commissioning_fdd 369.
 
-**By license:** open 25,688 · public-domain 42,134 · cc-by-sa 1,607 · cc-by 9,359 · proprietary-internal 5.
+**By license:** open 25,688 · public-domain 42,438 · cc-by-sa 1,607 · cc-by 9,359 · proprietary-internal 5.
 
 _Snapshot of the live registry (2026-07-20) — auto-generated from the manifest. The bytes are not
 shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._
