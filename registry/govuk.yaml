@@ -19681,22 +19681,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-renewable-heat-incentive-expanding-the-non-dom-2
-    title: 'Renewable Heat Incentive: expanding the non-domestic scheme — RHI - impact
-      assessment on changes to the non-domestic scheme'
-    url: https://assets.publishing.service.gov.uk/media/5a78ecd6ed915d07d35b3815/RHI_-_impact_assessment_on_changes_to_the_non-domestic_scheme.pdf
-    source: gov_uk
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: guk-renewable-heat-incentive-expanding-the-non-dom-3
-    title: 'Renewable Heat Incentive: expanding the non-domestic scheme — RHI - impact
-      assessment - annex 1'
-    url: https://assets.publishing.service.gov.uk/media/5a79920ded915d07d35b6861/RHI_-_expanding_the_non-domestic_scheme_-_Annex_1.pdf
-    source: gov_uk
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: guk-renewable-heat-incentive-expanding-the-non-dom-4
     title: 'Renewable Heat Incentive: expanding the non-domestic scheme — Renewable
       CHP heat cost curves for RHI setting'
@@ -38606,6 +38590,1063 @@ sources:
   - id: guk-the-uk-s-nuclear-deterrent-what-you-need-to-kn
     title: 'The UK''s nuclear deterrent: what you need to know'
     url: https://assets.publishing.service.gov.uk/media/6a4f79c91228eb26a4cab5ee/20260707_UK_Nuclear_Deterrent_National_Endeavour_v25.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-24
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2025'
+    url: https://assets.publishing.service.gov.uk/media/685bf0d30433072fce0e1000/need-report-june-2025.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-25
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2025 — Annex A: What is NEED?'
+    url: https://assets.publishing.service.gov.uk/media/685bf314c779b80d9a0e0ff9/annex-a-what-is-need-2025.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-26
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2025 — Annex B: Overview of data tables'
+    url: https://assets.publishing.service.gov.uk/media/685bf4be7d72089d1997610a/annex-b-overview-of-data-tables-2025.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-27
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2025 — Annex C: Comparisons with other sources'
+    url: https://assets.publishing.service.gov.uk/media/685bf9f8c779b80d9a0e1001/annex-c-comparisons-with-other-sources-2025.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-28
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2025 — Annex D: Methodology note'
+    url: https://assets.publishing.service.gov.uk/media/685bfce889ba18761d97610f/annex-d-domestic-need-methodology-2025.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-29
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2020'
+    url: https://assets.publishing.service.gov.uk/media/5ef3ac02e90e075c5674daca/National_Energy_Efficiency_Data_Framework_NEED_report_summary_of_analysis_2020.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-30
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2020 — Annex A: Comparison with other sources'
+    url: https://assets.publishing.service.gov.uk/media/5ef3ac99e90e075c5b5ec8ca/Annex_A_Comparison_with_other_sources_2020.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-31
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2020 — Annex B: Overview of data tables'
+    url: https://assets.publishing.service.gov.uk/media/5ef3ad5886650c129b9af047/Annex_B_Overview_of_Data_Tables.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-32
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2020 — NEED Methodology'
+    url: https://assets.publishing.service.gov.uk/media/60d382f0e90e0743acb7a34e/Domestic_NEED_Methodology__1_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-33
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2023'
+    url: https://assets.publishing.service.gov.uk/media/649c37abbb13dc000cb2e268/need-report-june-2023.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-34
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2023 — Annex A: What is NEED?'
+    url: https://assets.publishing.service.gov.uk/media/649b6479f901090012818907/annex-a-what-is-need-2023.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-35
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2023 — Annex B: Overview of data tables'
+    url: https://assets.publishing.service.gov.uk/media/64a26b7bbb13dc0012b2e4dc/annex-b-overview-of-data-tables-2023.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-36
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2023 — Annex C: Comparisons with other sources'
+    url: https://assets.publishing.service.gov.uk/media/649b66b7f90109000c818908/annex-c-comparisons-with-other-sources-2023.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-37
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2023 — Annex D: Methodology note'
+    url: https://assets.publishing.service.gov.uk/media/649b6861b4d6ef0012038ff4/annex-d-domestic-need-methodology-2023.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-38
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2019 (2017 data) — National Energy Efficiency Data-Framework (NEED) report: summary
+      of analysis 2019'
+    url: https://assets.publishing.service.gov.uk/media/5d1482c5e5274a716fd060ab/National_Energy_Efficiency_Data_Framework__NEED__report_summary_of_analysis_2019.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-39
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2019 (2017 data) — Annex A: Comparison with other sources'
+    url: https://assets.publishing.service.gov.uk/media/5d13835a40f0b6350572aaf6/Annex_A_Comparison_with_other_sources.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-40
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2019 (2017 data) — Annex B: Overview of data tables'
+    url: https://assets.publishing.service.gov.uk/media/5d13836ce5274a0693075547/Annex_B_Overview_of_Data_Tables.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-41
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2019 (2017 data) — Annex C: Impact of Measures Method update'
+    url: https://assets.publishing.service.gov.uk/media/5d13837fed915d3200001b7f/Annex_C_Impact_of_Measures_Method_Update.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-42
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2019 (2017 data) — Annex D: Determinants of domestic gas consumption'
+    url: https://assets.publishing.service.gov.uk/media/5d13839740f0b635c76dfc88/Annex_D_Determinants_of_household_gas_use.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-43
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2024'
+    url: https://assets.publishing.service.gov.uk/media/66e0203ad65d5c23df086710/NEED-report-june-2024.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-44
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2024 — Annex A: What is NEED?'
+    url: https://assets.publishing.service.gov.uk/media/667be04297ea0c79abfe4c61/annex-a-what-is-need-2024.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-45
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2024 — Annex B: Overview of data tables'
+    url: https://assets.publishing.service.gov.uk/media/667bde7797ea0c79abfe4c60/annex-b-overview-of-data-tables-2024.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-46
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2024 — Annex C: Comparisons with other sources'
+    url: https://assets.publishing.service.gov.uk/media/667bde805b0d63b556a4b376/annex-c-comparisons-with-other-sources-2024.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-47
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2024 — Annex D: Methodology note'
+    url: https://assets.publishing.service.gov.uk/media/667bde887d26b2be17a4b35b/annex-d-need-methodology-2024.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-48
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2015 — National Energy Efficiency Data-Framework (NEED): summary of analysis 2015'
+    url: https://assets.publishing.service.gov.uk/media/5a7f43b2ed915d74e33f55af/National_Energy_Efficiency_Data-Framework__NEED__Main_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-49
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2015 — Annex A: Quality Assurance'
+    url: https://assets.publishing.service.gov.uk/media/5a80760d40f0b62302693a47/Annex_A_-_Quality_Assurance.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-50
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2015 — Annex B: Electricity use in households with solar PV panels'
+    url: https://assets.publishing.service.gov.uk/media/5a804cb9e5274a2e87db9050/Annex_B_Electricity_use_in_households_with_solar_PV_panels.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-51
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2015 — Annex C: Change of occupancy analysis'
+    url: https://assets.publishing.service.gov.uk/media/5a8061f1ed915d74e622e222/Annex_C_Change_of_occupancy_analysis.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-52
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2015 — Annex D: Scotland'
+    url: https://assets.publishing.service.gov.uk/media/5a7561e640f0b6360e473afb/Annex_D_Scotland.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-53
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2015 — Annex E: Data tables'
+    url: https://assets.publishing.service.gov.uk/media/5a802043e5274a2e8ab4e54d/Annex_E_Data_tables.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-54
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2015 — Annex F: Summary of Building Regulations'
+    url: https://assets.publishing.service.gov.uk/media/5a80492940f0b62305b8a434/Annex_F_Summary_of_Building_Regulations.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-55
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2018'
+    url: https://assets.publishing.service.gov.uk/media/5cc965e340f0b64c1adb39e0/National_Energy_Efficienct_Data-Framework__NEED__Summary_2018.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-56
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2018 — Annex A: Quality assurance'
+    url: https://assets.publishing.service.gov.uk/media/5b33783ae5274a55d4c296d0/Annex_A_-_Quality_Assurance.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-57
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2018 — Annex B: Overview of data tables'
+    url: https://assets.publishing.service.gov.uk/media/5b3378a040f0b67f7f306163/Overview_of_Data_Tables.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-59
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2018 — Annex D: What is NEED?'
+    url: https://assets.publishing.service.gov.uk/media/5b3378e640f0b67f6744de8b/Annex_D_-_What_is_NEED.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-making-better-use-of-energy-performance-certif
+    title: 'Making better use of Energy Performance Certificates and data — Making better
+      use of Energy Performance Certificates and data: consultation'
+    url: https://assets.publishing.service.gov.uk/media/5a79c799e5274a18ba50ec6c/1491167.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-making-better-use-of-energy-performance-certif-2
+    title: 'Making better use of Energy Performance Certificates and data — Making better
+      use of energy performance certificates and data: summary of responses'
+    url: https://assets.publishing.service.gov.uk/media/5a79009940f0b676f4a7d17d/37907201.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-english-housing-survey-2017-to-2018-energy
+    title: 'English Housing Survey 2017 to 2018: energy'
+    url: https://assets.publishing.service.gov.uk/media/5d2ecf5e40f0b64a8099e1b8/EHS_2017-18_Energy_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-taxi-and-private-hire-vehicle-licensing-best-p
+    title: 'Taxi and private hire vehicle licensing: best practice — Model byelaws for
+      taxis'
+    url: https://assets.publishing.service.gov.uk/media/655234576a650f000dbf48b3/model-byelaws-taxis.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-taxi-and-private-hire-vehicle-licensing-best-p-2
+    title: 'Taxi and private hire vehicle licensing: best practice — Driver vehicle
+      checklist'
+    url: https://assets.publishing.service.gov.uk/media/654b99c9e2e16a001242abcb/taxi-driver-vehicle-checklist.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-drug-misuse-findings-from-the-2014-to-2015-cse
+    title: 'Drug misuse: findings from the 2014 to 2015 CSEW second edition — Drug misuse:
+      findings from the 2014 to 2015 Crime Survey for England and Wales second edition'
+    url: https://assets.publishing.service.gov.uk/media/5a7f1514e5274a2e8ab4a009/drug-misuse-1415.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-drug-misuse-findings-from-the-2014-to-2015-cse-2
+    title: 'Drug misuse: findings from the 2014 to 2015 CSEW second edition — Statistical
+      news release: drug misuse - findings from the 2014 to 2015 Crime Survey for England
+      and Wales'
+    url: https://assets.publishing.service.gov.uk/media/5a7f859de5274a2e8ab4caee/snr-drug-misuse-1415.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-renewable-heat-incentive-air-to-water-heat-pum-2
+    title: 'Renewable Heat Incentive: air to water heat pumps and energy from waste
+      — Renewable Heat Incentive: Air to Water Heat Pumps & Energy from Waste Consultation
+      Document'
+    url: https://assets.publishing.service.gov.uk/media/5a79a4b9e5274a684690b0b4/6452-renewable-heat-incentive-air-to-water-heat-pumps-.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-renewable-heat-incentive-air-to-water-heat-pum-3
+    title: 'Renewable Heat Incentive: air to water heat pumps and energy from waste
+      — Impact Assessment - RHI Non-Domestic'
+    url: https://assets.publishing.service.gov.uk/media/5a79b45ce5274a684690b7f0/6444-impact-assessment-on-changes-to-the-current-nondo.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-renewable-heat-incentive-air-to-water-heat-pum-4
+    title: 'Renewable Heat Incentive: air to water heat pumps and energy from waste
+      — Impact Assessment Annex 1'
+    url: https://assets.publishing.service.gov.uk/media/5a79584840f0b642860d749b/6446-renewable-heat-incentive-expanding-the-nondomest.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-market-based-mechanism-for-low-carbon-heat
+    title: Market-based mechanism for low carbon heat
+    url: https://assets.publishing.service.gov.uk/media/616e981f8fa8f529777ffc42/clean-heat-market-consultation.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-market-based-mechanism-for-low-carbon-heat-mar
+    title: 'Market-based mechanism for low carbon heat — Market-based mechanism for
+      low carbon heat: impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/616d9f07d3bf7f55fbc3ab15/heat-market-mechanism-impact-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-market-based-mechanism-for-low-carbon-heat-a-m
+    title: Market-based mechanism for low carbon heat — A market-based mechanism for
+      low-carbon heat - summary of responses received and government response
+    url: https://assets.publishing.service.gov.uk/media/63bd6ba68fa8f55e2df4bd81/market-based-mechanism-for-low-carbon-heat-government-response.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-clean-heat-market-mechanism
+    title: Clean heat market mechanism
+    url: https://assets.publishing.service.gov.uk/media/6424154560a35e000c0cb07f/clean_heat_market_mechanism.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-clean-heat-market-mechanism-clean-heat-market-
+    title: Clean heat market mechanism — Clean heat market mechanism impact assessment
+    url: https://assets.publishing.service.gov.uk/media/647757b15f7bb700127fa2a4/clean-heat-market-mechanism-ia.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-clean-heat-market-mechanism-clean-heat-market--2
+    title: 'Clean heat market mechanism — Clean heat market mechanism: summary of responses
+      received and government response'
+    url: https://assets.publishing.service.gov.uk/media/6567cbfb2ee693000d60caed/clean-heat-market-mechanism-government-response.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-proposals-for-heat-network-zoning-heat-network
+    title: Proposals for heat network zoning — Heat network zoning
+    url: https://assets.publishing.service.gov.uk/media/616028b7d3bf7f55fe946baf/heat-network-zoning-consultation.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-proposals-for-heat-network-zoning-impact-asses
+    title: Proposals for heat network zoning — Impact assessment
+    url: https://assets.publishing.service.gov.uk/media/61602bb9e90e071979dfebbc/heat-network-zoning-consultation-stage-impact-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-proposals-for-heat-network-zoning-proposals-fo
+    title: 'Proposals for heat network zoning — Proposals for heat network zoning: government
+      response'
+    url: https://assets.publishing.service.gov.uk/media/62aae50f8fa8f503af595b2f/heat-networks-zoning-consultation-government-response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-recovering-the-costs-of-heat-networks-regulati
+    title: Recovering the costs of heat networks regulation
+    url: https://assets.publishing.service.gov.uk/media/61c45ba2e90e07197007ddd0/recovering-the-costs-of-heat-networks-regulation.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-recovering-the-costs-of-heat-networks-regulati-2
+    title: 'Recovering the costs of heat networks regulation — Heat networks cost recovery
+      proposals: government response'
+    url: https://assets.publishing.service.gov.uk/media/62a9fbbe8fa8f50397828a1c/heat-networks-cost-recovery-consultation-govt-response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-consultation-on-the-heat-networks-investment-p
+    title: Consultation on the Heat Networks Investment Project (HNIP) — HNIP consultation
+    url: https://assets.publishing.service.gov.uk/media/5a7f361940f0b62305b85c3c/HNIP_consultation_vFINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-consultation-on-the-heat-networks-investment-p-2
+    title: 'Consultation on the Heat Networks Investment Project (HNIP) — Government
+      response: Heat Networks Investment Project consultation'
+    url: https://assets.publishing.service.gov.uk/media/5a8017a5ed915d74e33f8661/HNIP_consultation_response-Final.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-60
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2017 — National Energy Efficiency Data-Framework (NEED): summary of analysis 2017'
+    url: https://assets.publishing.service.gov.uk/media/5a82186be5274a2e8ab5777f/need-framework-summary-of-analysis-2017.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-61
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2017 — Annex A: Machine learning and fuel poverty targeting'
+    url: https://assets.publishing.service.gov.uk/media/5a823bc5e5274a2e87dc1d8c/need-framework-annex-a-fuel-poverty-targeting.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-energy-efficiency-data-framework-need-62
+    title: 'National Energy Efficiency Data-Framework (NEED) report: summary of analysis
+      2017 — Annex B: Data tables'
+    url: https://assets.publishing.service.gov.uk/media/5a756bbce5274a1baf95e723/need-framework-annex-b-data-tables.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-smart-meter-policy-framework-post-2020-deliver
+    title: 'Smart meter policy framework post 2020 — Delivering a smart system: a Smart
+      Meter Policy Framework post 2020'
+    url: https://assets.publishing.service.gov.uk/media/5d7f61bded915d522f3e6a86/smart-meter-policy-framework-post-2020-consultation.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-meter-policy-framework-post-2020-annex-1
+    title: 'Smart meter policy framework post 2020 — Annex 1: Proposed amendments to
+      standard conditions 33A and 39A'
+    url: https://assets.publishing.service.gov.uk/media/5d7e9c6ce5274a2035e6aa59/smart-meter-policy-framework-post-2020-consultation-annex-1.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-meter-policy-framework-post-2020-annex-2
+    title: 'Smart meter policy framework post 2020 — Annex 2: Proposed amendments to
+      standard conditions 37 and 43'
+    url: https://assets.publishing.service.gov.uk/media/5d7e9cc140f0b61d01bba9a7/smart-meter-policy-framework-post-2020-consultation-annex-2.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-meter-policy-framework-post-2020-annex-3
+    title: 'Smart meter policy framework post 2020 — Annex 3: Proposed amendments to
+      Section K of the Smart Energy Code (SEC)'
+    url: https://assets.publishing.service.gov.uk/media/5d922118e5274a2fab26b28a/smart-meter-policy-framework-post-2020-consultation-annex-3.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-meter-policy-framework-post-2020-annex-4
+    title: 'Smart meter policy framework post 2020 — Annex 4: Analytical Evidence'
+    url: https://assets.publishing.service.gov.uk/media/5d7787fced915d52581db741/smart-meter-policy-framework-post-2020-consultation-annex-4.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-meter-policy-framework-post-2020-annex-5
+    title: 'Smart meter policy framework post 2020 — Annex 5: Impact Assessment'
+    url: https://assets.publishing.service.gov.uk/media/5d77880f40f0b61cdf60ac34/smart-meter-policy-framework-post-2020-consultation-annex-5.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-meter-policy-framework-post-2020-annex-6
+    title: 'Smart meter policy framework post 2020 — Annex 6: Consequential changes
+      to standard conditions'
+    url: https://assets.publishing.service.gov.uk/media/5d7e9cdfed915d52428dc0c9/smart-meter-policy-framework-post-2020-consultation-annex-6.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-meter-policy-framework-post-2020-deliver-2
+    title: 'Smart meter policy framework post 2020 — Delivering a smart system: government
+      response to a consultation on smart meter policy framework post-2020'
+    url: https://assets.publishing.service.gov.uk/media/5eea4dbfe90e07042be6d52a/delivering-smart-system-post-2020-govt-response-consultation.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-meter-policy-framework-post-2020-impact-
+    title: Smart meter policy framework post 2020 — Impact assessment
+    url: https://assets.publishing.service.gov.uk/media/5ee9fe3186650c03ed8dad67/delivering-smart-system-post-2020-annex-b.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-meter-policy-framework-post-2020-extensi
+    title: 'Smart meter policy framework post 2020 — Extension to All Reasonable steps:
+      amendments to standard conditions 1, 33 (gas) and 39 (electricity)'
+    url: https://assets.publishing.service.gov.uk/media/5ee9fee086650c03ebe8e446/delivering-smart-system-post-2020-annex-c.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-meter-policy-framework-post-2020-amendme
+    title: Smart meter policy framework post 2020 — Amendments to standard conditions
+      37 (gas) and 43 (electricity)
+    url: https://assets.publishing.service.gov.uk/media/5eea005bd3bf7f1ebd553004/delivering-smart-system-post-2020-annex-e.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-meter-policy-framework-post-2020-consequ
+    title: Smart meter policy framework post 2020 — Consequential amendments
+    url: https://assets.publishing.service.gov.uk/media/5eea007bd3bf7f1ebbaab90e/delivering-smart-system-post-2020-annex-f.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-building-safety-programme-monthly-data-release-54
+    title: 'Building Safety Programme: monthly data release - December 2021'
+    url: https://assets.publishing.service.gov.uk/media/61e83b42d3bf7f054db938ab/Building_Safety_Data_Release_December_2021.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-building-safety-programme-monthly-data-release-55
+    title: 'Building Safety Programme: monthly data release - December 2021 — Building
+      Safety Programme: Technical note - December 2021'
+    url: https://assets.publishing.service.gov.uk/media/61e83b51e90e07037794ff4d/Building_Safety_Technical_Note_December_2021.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-building-safety-programme-monthly-data-release-56
+    title: 'Building Safety Programme: monthly data release - January 2022'
+    url: https://assets.publishing.service.gov.uk/media/620d2478e90e0710c30a45ee/Building_Safety_Data_Release_January_2022.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-building-safety-programme-monthly-data-release-57
+    title: 'Building Safety Programme: monthly data release - January 2022 — Building
+      Safety Programme: Technical note - January 2022'
+    url: https://assets.publishing.service.gov.uk/media/620d26ece90e0710bfc89d77/Building_Safety_Technical_Note_January_2022.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-building-safety-programme-monthly-data-release-58
+    title: 'Building Safety Programme: monthly data release - July 2022'
+    url: https://assets.publishing.service.gov.uk/media/62f3c722e90e076cfa481c31/Building_Safety_Data_Release_July_2022.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-building-safety-programme-monthly-data-release-59
+    title: 'Building Safety Programme: monthly data release - July 2022 — Building Safety
+      Programme: Technical note - July 2022'
+    url: https://assets.publishing.service.gov.uk/media/62f3c72d8fa8f50b4ab301ee/Building_Safety_Technical_Note_July_2022.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-building-safety-programme-monthly-data-release-60
+    title: 'Building Safety Programme: monthly data release - June 2022'
+    url: https://assets.publishing.service.gov.uk/media/62d55b88d3bf7f28601a1786/Building_Safety_Data_Release_June_2022.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-building-safety-programme-monthly-data-release-61
+    title: 'Building Safety Programme: monthly data release - June 2022 — Building Safety
+      Programme: Technical note - June 2022'
+    url: https://assets.publishing.service.gov.uk/media/62ced03d8fa8f50c05012367/Building_Safety_Technical_Note_June_2022.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-building-safety-programme-monthly-data-release-62
+    title: 'Building Safety Programme: monthly data release - January 2023'
+    url: https://assets.publishing.service.gov.uk/media/63ecbfffd3bf7f62ef2b17b4/Building_Safety_Data_Release_January_2023.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-building-safety-programme-monthly-data-release-63
+    title: 'Building Safety Programme: monthly data release - January 2023 — Building
+      Safety Programme: Technical note - January 2023'
+    url: https://assets.publishing.service.gov.uk/media/63ecc211d3bf7f62e9d23e56/Building_Safety_Technical_Note_January_2023.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-the-social-sector-building-safety-engagement-b
+    title: 'The Social Sector (Building Safety) Engagement Best Practice Group: Final
+      Report — Social Sector (Building safety) Engagement Best Practice Group: Final
+      Report'
+    url: https://assets.publishing.service.gov.uk/media/6050912ee90e0752874a8563/Best_Practice_Group_Final_Report.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-the-social-sector-building-safety-engagement-b-4
+    title: 'The Social Sector (Building Safety) Engagement Best Practice Group: Final
+      Report — Information and understanding combined report'
+    url: https://assets.publishing.service.gov.uk/media/60507f10e90e077feadba14a/Information_and_Understanding_Combined_Report.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-the-social-sector-building-safety-engagement-b-5
+    title: 'The Social Sector (Building Safety) Engagement Best Practice Group: Final
+      Report — Landlords and resident responsibilities combined report'
+    url: https://assets.publishing.service.gov.uk/media/60507fbad3bf7f1d0da757ce/Landlord_and_Resident_Responsibilities_Combined_Report.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-the-social-sector-building-safety-engagement-b-6
+    title: 'The Social Sector (Building Safety) Engagement Best Practice Group: Final
+      Report — Action to take in the event of fire combined report'
+    url: https://assets.publishing.service.gov.uk/media/6050e0b7e90e075286b0e025/Action_to_take_in_the_event_of_fire_combined_report.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-the-social-sector-building-safety-engagement-b-7
+    title: 'The Social Sector (Building Safety) Engagement Best Practice Group: Final
+      Report — Sheffield City Council Fire Study Summary'
+    url: https://assets.publishing.service.gov.uk/media/60507fe5e90e077fdf884958/Sheffield_City_Council_Fire_Study_Summary_Final.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-fire-safety-in-the-winter
+    title: Fire safety in the winter
+    url: https://assets.publishing.service.gov.uk/media/6287b5f8d3bf7f1f44695435/Fire_Safety_in_the_Winter_v4_-_Web_accessible.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-code-of-good-agricultural-practice-for-reducin
+    title: Code of Good Agricultural Practice for reducing ammonia emissions — Code
+      of Good Agricultural Practice (COGAP) for Reducing Ammonia Emissions (print version)
+    url: https://assets.publishing.service.gov.uk/media/65a90562ed27ca001327b21b/code-good-agricultural-practice-ammonia.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-spi-b-spi-m-and-emg-considerations-for-potenti
+    title: 'SPI-B, SPI-M and EMG: Considerations for potential impact of Plan B measures,
+      13 October 2021'
+    url: https://assets.publishing.service.gov.uk/media/6171591de90e0719827b908e/S1393_SPI-B_SPI-M_EMG_Considerations_for_potential_impact_of_Plan_B_measures_13_October_2021.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-english-housing-survey-2020-to-2021-subjective
+    title: 'English Housing Survey, 2020 to 2021: subjective overheating and construction
+      type - fact sheet'
+    url: https://assets.publishing.service.gov.uk/media/62c6b0f1e90e077484133fec/EHS_2020-21_Subjective_Overheating_and_Construction_Type_Factsheet.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-heat-vulnerability-assessment-and-adaptation-o
+    title: 'Heat vulnerability assessment and adaptation of urban buildings: a Manchester
+      case study'
+    url: https://assets.publishing.service.gov.uk/media/68821bbdf47abf78ca1d361a/Adapting_homes_to_heat_in_Greater_Manchester.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-advice-on-how-to-use-heating-controls-evaluati
+    title: 'Advice on how to use heating controls: Evaluation of a trial in Newcastle'
+    url: https://assets.publishing.service.gov.uk/media/5a7d510940f0b60a7f1a9c5f/decc_heating_controls_report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-housing-health-and-safety-rating-system-hhsrs-
+    title: 'Housing Health and Safety Rating System (HHSRS): Operating guidance — HHSRS
+      operating guidance: Part 1 - An introductory guide'
+    url: https://assets.publishing.service.gov.uk/media/6a3914730bea238415c9a38a/HHSRS_Operating_Guidance_Part_1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-housing-health-and-safety-rating-system-hhsrs--2
+    title: 'Housing Health and Safety Rating System (HHSRS): Operating guidance — HHSRS
+      operating guidance: Part 2 - A technical guide for assessors'
+    url: https://assets.publishing.service.gov.uk/media/6a3917770bea238415c9a38b/HHSRS_Operating_Guidance_Part_2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-housing-health-and-safety-rating-system-hhsrs--3
+    title: 'Housing Health and Safety Rating System (HHSRS): Operating guidance — HHSRS
+      operating guidance: Part 3 - A supplementary guide to the hazard of fire and explosions'
+    url: https://assets.publishing.service.gov.uk/media/6a391aecc6e94f095f3efbab/HHSRS_Operating_Guidance_Part_3.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-design-considerations-for-electric-vehicle-cha
+    title: Design considerations for electric vehicle chargepoints — Design considerations
+      for electric vehicle chargepoints (print version)
+    url: https://assets.publishing.service.gov.uk/media/623b62888fa8f540f6c23236/design-considerations-for-electric-vehicle-chargepoints-print-version.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-quarterly-survey-for-q3-october-to-december-20-3
+    title: Quarterly survey for Q3 (October to December 2023) — Quarterly survey for
+      Q3 (October to December 2023) (PDF)
+    url: https://assets.publishing.service.gov.uk/media/65e5999f3f69457ff1035fd4/Quarterly_Survey_Q3_2023-24_Final.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-quarterly-survey-for-q1-april-to-june-2024-qua
+    title: Quarterly survey for Q1 (April to June 2024) — Quarterly survey for Q1 (April
+      to June 2024) (PDF)
+    url: https://assets.publishing.service.gov.uk/media/66d70fa06eb664e57141dbae/202425_Q1_Quarterly_Survey.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-unlocking-the-sharing-economy-independent-revi
+    title: 'Unlocking the sharing economy: independent review — Unlocking the sharing
+      economy: an independent review'
+    url: https://assets.publishing.service.gov.uk/media/5a75b1a1ed915d506ee80c77/bis-14-1227-unlocking-the-sharing-economy-an-independent-review.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-greenhouse-gas-removals-ggrs-independent-revie
+    title: 'Greenhouse gas removals (GGRs): independent review — Independent Review
+      of Greenhouse Gas Removals'
+    url: https://assets.publishing.service.gov.uk/media/68f8d27a0794bb80118bb764/independent-review-of-ggr.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-greenhouse-gas-removals-ggrs-independent-revie-2
+    title: 'Greenhouse gas removals (GGRs): independent review — Independent Review
+      of Greenhouse Gas Removals: annex'
+    url: https://assets.publishing.service.gov.uk/media/68f8d2890794bb80118bb765/independent-review-of-ggr-annex.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-solid-wall-heat-losses-and-the-potential-for-e
+    title: Solid wall heat losses and the potential for energy saving — The nature of
+      solid walls in-situ
+    url: https://assets.publishing.service.gov.uk/media/5c409bd6ed915d389d28176f/WP2_Nature_of_solid_walls_in-situ_v3.2b.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-solid-wall-heat-losses-and-the-potential-for-e-2
+    title: Solid wall heat losses and the potential for energy saving — Classification
+      of solid walls
+    url: https://assets.publishing.service.gov.uk/media/5a82adcbe5274a2e87dc26c3/WP6_Solid_wall_classification_system_-_structure_final_draft.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-solid-wall-heat-losses-and-the-potential-for-e-3
+    title: Solid wall heat losses and the potential for energy saving — Rapid measurement
+      device test report
+    url: https://assets.publishing.service.gov.uk/media/5a758760ed915d6faf2b3b17/WP4_Rapid_measurement_test_report_SUMMARY_v2.2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-solid-wall-heat-losses-and-the-potential-for-e-4
+    title: 'Solid wall heat losses and the potential for energy saving — Closing the
+      gap: pre, post-insulation field trial'
+    url: https://assets.publishing.service.gov.uk/media/5c9234ca40f0b633f24d046c/Closing-the-gap_Pre-post-insulation-field-trial.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-solid-wall-heat-losses-and-the-potential-for-e-5
+    title: Solid wall heat losses and the potential for energy saving — In situ U-value
+      measurement method review
+    url: https://assets.publishing.service.gov.uk/media/5c92349aed915d07b0af3d7f/Solid_wall_insulation_measurement_method_review_in_situ_u-value_measurement_method_review.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-solid-wall-heat-losses-and-the-potential-for-e-6
+    title: Solid wall heat losses and the potential for energy saving — A route-map
+      for change
+    url: https://assets.publishing.service.gov.uk/media/5c923474e5274a29a86395ac/Solid_wall_heat_losses_and_the_potential_for_energy_saving_route-map.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-local-government-pension-scheme-opportunities-
+    title: 'Local government pension scheme: opportunities for collaboration, cost savings
+      and efficiencies — Local Government Pension Scheme: opportunities for collaboration,
+      cost savings and'
+    url: https://assets.publishing.service.gov.uk/media/5a74be1de5274a3f93b4872a/Consultation_LGPS_structural_reform.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-local-government-pension-scheme-opportunities--2
+    title: 'Local government pension scheme: opportunities for collaboration, cost savings
+      and efficiencies — Hymans Robertson report: Local Government Pension Scheme structure
+      analysis'
+    url: https://assets.publishing.service.gov.uk/media/5a7da6c740f0b65d8b4e2af2/Hymans_Robertson_report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-quarterly-survey-for-q4-january-to-march-2026-
+    title: Quarterly Survey for Q4 (January to March 2026) — Quarterly Survey for Q4
+      (January to March 2026) (pdf)
+    url: https://assets.publishing.service.gov.uk/media/6a198a5dc7335e2ca6daad26/20262004-QS_Q4_Final.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-a-fairer-private-rented-sector-a-fairer-privat
+    title: A fairer private rented sector — A fairer private rented sector (web accessible)
+    url: https://assets.publishing.service.gov.uk/media/62ab00c3d3bf7f04a0a491c6/A_fairer_private_rented_sector_web_accessible.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-a-fairer-private-rented-sector-a-fairer-privat-2
+    title: A fairer private rented sector — A fairer private rented sector (print PDF)
+    url: https://assets.publishing.service.gov.uk/media/62ab0121e90e07039009d7ec/A_fairer_private_rented_sector_print.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-private-registered-provider-social-housing-sto-2
+    title: Private registered provider social housing stock and rents in England 2022
+      to 2023 — Private registered providers stock and rents in England - Stock briefing
+      note
+    url: https://assets.publishing.service.gov.uk/media/65313d0de839fd000d8671f7/2023_PRP_STOCK_-briefing-notes_FINAL_V1.0_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-private-registered-provider-social-housing-sto-10
+    title: Private registered provider social housing stock and rents in England 2022
+      to 2023 — Private registered providers - Sector briefing note
+    url: https://assets.publishing.service.gov.uk/media/65313d5d0b5392000da92a15/2023_PRP_SECTOR_-briefing-notes_FINAL_V1.0_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-private-registered-provider-social-housing-sto-11
+    title: Private registered provider social housing stock and rents in England 2022
+      to 2023 — Private registered providers data quality and methodology note
+    url: https://assets.publishing.service.gov.uk/media/65313dad0b53920013a92a1f/2023_PRP_Data_quality_and_methodology_note_FINAL_V1.0_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-private-registered-provider-social-housing-sto-12
+    title: Private registered provider social housing stock and rents in England 2022
+      to 2023 — Private registered providers technical notes and definitions
+    url: https://assets.publishing.service.gov.uk/media/65329610e839fd000d8672eb/2023_PRP_Technical_notes_and_definitions_FINAL_V1.0_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-private-registered-provider-social-housing-sto-13
+    title: Private registered provider social housing stock and rents in England 2021
+      to 2022 — Private registered providers stock briefing note
+    url: https://assets.publishing.service.gov.uk/media/634fb48fe90e0731ac4a565d/2022_PRP_STOCK_-briefing-notes_FINAL_V1.0_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-private-registered-provider-social-housing-sto-15
+    title: Private registered provider social housing stock and rents in England 2021
+      to 2022 — Private registered providers sector briefing note
+    url: https://assets.publishing.service.gov.uk/media/634fb4ce8fa8f53468995393/2022_PRP_SECTOR_-briefing-notes_FINAL_V1.0_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-private-registered-provider-social-housing-sto-18
+    title: Private registered provider social housing stock and rents in England 2020
+      to 2021 — Private registered providers (PRP) stock briefing note
+    url: https://assets.publishing.service.gov.uk/media/61a77852d3bf7f055c4b7731/PRP_statistic_2020-21_STOCK_briefing_notes_v1.1__FINAL_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-private-registered-provider-social-housing-sto-20
+    title: Private registered provider social housing stock and rents in England 2020
+      to 2021 — Private registered providers (PRP)  sector briefing note
+    url: https://assets.publishing.service.gov.uk/media/616fbf29d3bf7f55fa926a74/PRP_statistic_2020-21_SECTOR_briefing_notes_v1.0__FINAL_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-fire-safety-remediation-in-social-housing-in-e-13
+    title: 'Fire safety remediation in social housing in England: February 2024 — Fire
+      safety remediation in social housing in England'
+    url: https://assets.publishing.service.gov.uk/media/65d5d33a2ab2b3001a7595fc/20240219_Fire_Safety_Remediation_Report.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-cadet-training-modernisation-programme-syllabu-21
+    title: Cadet Training & Modernisation Programme Syllabus Review – First Group of
+      Consultation Templates — 01. Marine Engineering -Thermodynamics
+    url: https://assets.publishing.service.gov.uk/media/63c7e8338fa8f56dc1359657/01._Marine_Engineering_-_Thermodynamics.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-cadet-training-modernisation-programme-syllabu-24
+    title: Cadet Training & Modernisation Programme Syllabus Review – First Group of
+      Consultation Templates — 02. Marine Engineer - Mechanical Principals
+    url: https://assets.publishing.service.gov.uk/media/63c7e833e90e075194fca628/02._Marine_Engineer_-_Mechanical_Principals_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-cadet-training-modernisation-programme-syllabu-31
+    title: 'Cadet Training & Modernisation Programme Syllabus Review – First Group of
+      Consultation Templates — Consultation Report: Cadet Training & Modernisation Programme Syllabus
+      Review – F'
+    url: https://assets.publishing.service.gov.uk/media/64638e03d3231e001332da55/Consultation_Report_TG1.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-cadet-training-modernisation-programme-syllabu-37
+    title: Cadet Training & Modernisation Programme Syllabus Review – First Group of
+      Consultation Templates — Responses to Consultation Feedback
+    url: https://assets.publishing.service.gov.uk/media/64638dc2e14070000cb6e006/Responses_to_Consultation_Feedback.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-modern-slavery-act-2015-review-first-interim-r
+    title: 'Modern Slavery Act 2015 review: first interim report — Independent Review
+      of the Modern Slavery Act 2015 first interim report: The Independent Anti-Slavery
+      Commissioner'
+    url: https://assets.publishing.service.gov.uk/media/5f5f425fe90e076cce6fb49c/independent-msa-review-interim-report-1-iasc__1_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-modern-slavery-act-2015-review-fourth-interim-
+    title: 'Modern Slavery Act 2015 review: fourth interim report'
+    url: https://assets.publishing.service.gov.uk/media/5f1abc3fe90e074568940133/Indpendent_MSA_Review_Report_4_-_Legal_Application__2_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-space-related-educational-resources-uk-space-a
+    title: Space-related educational resources — UK Space Agency careers leaflet
+    url: https://assets.publishing.service.gov.uk/media/669a50d5fc8e12ac3edb0033/CareersLeafletA3v9.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-dsit-fellowship-closed-for-applications-dsit-f
+    title: DSIT Fellowship (closed for applications) — DSIT Fellowship Cohort 4 brochure
+    url: https://assets.publishing.service.gov.uk/media/69d623273efd329a5269df51/DSIT_Fellowship_Cohort_4_Brochure.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-principles-of-cyber-security-for-connected-and
+    title: Principles of cyber security for connected and automated vehicles — The key
+      principles of vehicle cyber security for connected and automated vehicles
+    url: https://assets.publishing.service.gov.uk/media/5a8229c2ed915d74e62361f1/cyber-security-connected-automated-vehicles-key-principles.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-government-science-capability-review-a-review--2
+    title: 'Government Science Capability Review — A review of Government Science Capability:
+      progress update (9 January 2024)'
+    url: https://assets.publishing.service.gov.uk/media/6597d47cc23a10000d8d0bbe/Government_Science_Capability_Review___Progress_Update.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-international-dimensions-of-climate-change-int
+    title: 'International dimensions of climate change — International dimensions of
+      climate change: final project report'
+    url: https://assets.publishing.service.gov.uk/media/5a7c831fed915d48c24103f9/11-1042-international-dimensions-of-climate-change.pdf
     source: gov_uk
     license: open
     topic: equipment_systems
