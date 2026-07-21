@@ -84,7 +84,7 @@
   },
   "find_patents_cn": {
     "flag": "--bucket",
-    "next": "2019-W12",
+    "next": "2019-W11",
     "note": "CN patents (Chinese full text; license=open). Same weekly-bucket walk as find_patents but separate pointer; marathon runs it with --countries CN. Mined: 2018/2019/2020-W03, 2019-W46+W45 (+800 on 07-12)."
   },
   "find_jrc": {
