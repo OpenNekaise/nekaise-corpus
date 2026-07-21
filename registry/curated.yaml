@@ -4378,3 +4378,172 @@ sources:
     license: cc-by
     topic: building_energy
     format: pdf
+
+  # ---------- California Energy Commission — EPIC/PIER research reports (open, pdf) ----------
+  # Vein: CEC-500-* final project reports, harvested via search (listings need a finder:
+  # sitemap.xml -> /media/NNNNN entities, mixed with solicitation docs — future find_cec.py).
+  - id: cec-500-2018-031-richmond-aec
+    title: "CEC-500-2018-031 — Richmond Advanced Energy Community: Final Project Report"
+    url: "https://www.energy.ca.gov/sites/default/files/2021-06/CEC-500-2018-031.pdf"
+    source: gov_cec
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: cec-500-2019-010-aec-disadvantaged
+    title: "CEC-500-2019-010 — Accelerating Advanced Energy Community Deployment Around Existing Buildings in Disadvantaged Communities"
+    url: "https://www.energy.ca.gov/sites/default/files/2021-05/CEC-500-2019-010.pdf"
+    source: gov_cec
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: cec-500-2019-030-small-chp
+    title: "CEC-500-2019-030 — A Comprehensive Assessment of Small Combined Heat and Power"
+    url: "https://www.energy.ca.gov/sites/default/files/2021-06/CEC-500-2019-030.pdf"
+    source: gov_cec
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: cec-500-2019-038-dc-zne-buildings
+    title: "CEC-500-2019-038 — Direct Current as an Integrating and Enabling Platform for Zero-Net-Energy Buildings"
+    url: "https://www.energy.ca.gov/sites/default/files/2021-06/CEC-500-2019-038.pdf"
+    source: gov_cec
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: cec-500-2019-040-cool-walls
+    title: "CEC-500-2019-040 — Solar-Reflective \"Cool\" Walls: Benefits, Technologies, and Implementation"
+    url: "https://www.energy.ca.gov/sites/default/files/2021-06/CEC-500-2019-040.pdf"
+    source: gov_cec
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: cec-500-2019-043-oakland-ecoblock
+    title: "CEC-500-2019-043 — Accelerating the Deployment of Advanced Energy Communities: The Oakland EcoBlock"
+    url: "https://www.energy.ca.gov/sites/default/files/2021-06/CEC-500-2019-043.pdf"
+    source: gov_cec
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: cec-500-2020-001-window-facade
+    title: "CEC-500-2020-001 — High-Performance Integrated Window and Facade Solutions for California"
+    url: "https://www.energy.ca.gov/sites/default/files/2021-05/CEC-500-2020-001.pdf"
+    source: gov_cec
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: cec-500-2021-024-commercial-hot-water
+    title: "CEC-500-2021-024 — Commercial Hot Water Systems Field Retrofit Characterization Study"
+    url: "https://www.energy.ca.gov/sites/default/files/2021-05/CEC-500-2021-024.pdf"
+    source: gov_cec
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: cec-500-2021-025-zne-commercial
+    title: "CEC-500-2021-025 — Zero-Net-Energy New Commercial Buildings: Final Project Report"
+    url: "https://www.energy.ca.gov/sites/default/files/2021-05/CEC-500-2021-025.pdf"
+    source: gov_cec
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: cec-500-2021-043-hot-water-code-changes
+    title: "CEC-500-2021-043 — Code Changes and Hot Water Distribution Systems in Buildings"
+    url: "https://www.energy.ca.gov/sites/default/files/2021-09/CEC-500-2021-043.pdf"
+    source: gov_cec
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: cec-500-2022-017-controls-sequences
+    title: "CEC-500-2022-017 — Demonstrating Scalable Operational Efficiency through Optimized Controls Sequences and Plug-and-Play Solutions"
+    url: "https://www.energy.ca.gov/sites/default/files/2022-10/CEC-500-2022-017.pdf"
+    source: gov_cec
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: cec-500-2023-005-networked-lighting
+    title: "CEC-500-2023-005 — Developing Flexible, Networked Lighting Control Systems That Reliably Save Energy in California Buildings"
+    url: "https://www.energy.ca.gov/sites/default/files/2023-03/CEC-500-2023-005.pdf"
+    source: gov_cec
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: cec-500-2023-015-thermm-tool
+    title: "CEC-500-2023-015 — THERMM: Integrated Heat and Moisture Calculation Tool for Building Envelopes"
+    url: "https://www.energy.ca.gov/sites/default/files/2023-05/CEC-500-2023-015.pdf"
+    source: gov_cec
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: cec-500-2023-043-cost-constrained-zne
+    title: "CEC-500-2023-043 — Cost-Constrained Zero-Net-Energy Commercial Buildings"
+    url: "https://www.energy.ca.gov/sites/default/files/2023-06/CEC-500-2023-043.pdf"
+    source: gov_cec
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: cec-500-2023-047-residential-gas-heat-pump
+    title: "CEC-500-2023-047 — Demonstration and Assessment of Residential Gas Heat Pumps"
+    url: "https://www.energy.ca.gov/sites/default/files/2023-07/CEC-500-2023-047.pdf"
+    source: gov_cec
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: cec-500-2023-049-affordable-zne-homes
+    title: "CEC-500-2023-049 — Measure Results from Affordable Zero Net Energy Homes"
+    url: "https://www.energy.ca.gov/sites/default/files/2023-07/CEC-500-2023-049.pdf"
+    source: gov_cec
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: cec-500-2025-007-energy-equity-coastal
+    title: "CEC-500-2025-007 — Improving Energy Equity, Air Quality, and Comfort in a Low-Income Coastal Community"
+    url: "https://www.energy.ca.gov/sites/default/files/2025-01/CEC-500-2025-007.pdf"
+    source: gov_cec
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: cec-500-2025-015-tes-packaged-hvac
+    title: "CEC-500-2025-015 — A Thermal Energy Storage System for Packaged HVAC Systems"
+    url: "https://www.energy.ca.gov/sites/default/files/2025-04/CEC-500-2025-015.pdf"
+    source: gov_cec
+    license: open
+    topic: equipment_systems
+    format: pdf
+
+  # ---------- NYSERDA — research & technical reports (open, pdf) ----------
+  # Vein: nyserda.ny.gov /-/media/... direct PDFs; listing pages (Clean Heating & Cooling
+  # Reports, Building Stock & Potential Studies) are enumerable for a future finder.
+  - id: nyserda-mf-ee-potential-2021
+    title: "NYSERDA — Assessment of Energy Efficiency Potential in New York State Multifamily Buildings (2021)"
+    url: "https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/Publications/building-stock-potential-studies/Assessment_of_EE_Potential_in_NYS_MF_Buildings_June2021.pdf"
+    source: gov_nyserda
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nyserda-ee-electrification-methodology-2023
+    title: "NYSERDA — NYS Energy Efficiency and Electrification Potential Study: Methodology Appendix (2023)"
+    url: "https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/Publications/building-stock-potential-studies/AppendixAMethodologyNYSEEandElectrificationPotentialStudyApril2023-acc.pdf"
+    source: gov_nyserda
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nyserda-18-44-heat-pump-analysis
+    title: "NYSERDA 18-44 — New Efficiency New York: Analysis of Residential Heat Pump Potential and Economics"
+    url: "https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/Publications/PPSER/NYSERDA/18-44-HeatPump.pdf"
+    source: gov_nyserda
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: nyserda-25-03-syracuse-district-energy
+    title: "NYSERDA 25-03 — Syracuse District Energy System (large-scale thermal feasibility)"
+    url: "https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/About/Publications/Research-and-Technical-Reports/Clean-Heating-and-Cooling-Reports/Large-Scale-Thermal/PON-4614/25-03-Syracuse-District-Energy-System.pdf"
+    source: gov_nyserda
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: nyserda-24-19-white-hawk-ecovillage
+    title: "NYSERDA 24-19 — White Hawk Ecovillage Community Thermal Feasibility Study"
+    url: "https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/About/Publications/Research-and-Technical-Reports/Clean-Heating-and-Cooling-Reports/Large-Scale-Thermal/PON-4614/24-19-White-Hawk-Ecovillage-Feasibility-Study.pdf"
+    source: gov_nyserda
+    license: open
+    topic: building_energy
+    format: pdf
