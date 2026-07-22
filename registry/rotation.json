@@ -95,7 +95,7 @@
   },
   "find_govuk": {
     "flag": "--page",
-    "next": 13,
+    "next": 14,
     "step": 1,
     "note": "gov.uk Search API (q + filter_content_store_document_type multi-value OR) -> Content API attachments -> assets.publishing.service.gov.uk PDFs; OGL v3 = open; run with --rows 20 --max 250. Wave-1 (18 queries) mined p1-27, thinning (101/250 pruned at p27); wave-2 +14 UK-policy queries added 2026-07-20, pointer RESET to p1 (dedup makes re-walk safe)"
   },
