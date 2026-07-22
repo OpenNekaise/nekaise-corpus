@@ -4547,3 +4547,35 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  # ---------- IEA — International Energy Agency (CC BY 4.0 reports, pdf) ----------
+  # 2026-07-22 widening of the existing iea vein (see block near line 3824); main-site
+  # reports are CC BY 4.0, PDFs on iea.blob.core.windows.net. (IEA EBC annexes via
+  # INIVE remain NO-GO all-rights-reserved — this is the main IEA site only.)
+  - id: iea-future-of-cooling-china
+    title: "IEA — The Future of Cooling in China: Delivering on action plans for sustainable air conditioning (2019)"
+    url: "https://iea.blob.core.windows.net/assets/9212903b-e310-48d4-96fa-3eaf7ddf56d9/The_Future_of_Cooling_in_China.pdf"
+    source: iea
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: iea-energy-efficiency-china-buildings
+    title: "IEA — Energy Efficiency in China's Buildings Sector (2026)"
+    url: "https://iea.blob.core.windows.net/assets/4f4d0e97-9ff2-4e13-a96a-f41e7a49ed40/EnergyEfficiencyinChinasBuildingsSector.pdf"
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: iea-buildings-ee-workforce
+    title: "IEA — Developing a Global Energy Efficiency Workforce in the Buildings Sector (2024)"
+    url: "https://iea.blob.core.windows.net/assets/a926c3d4-2b46-4d88-a51e-9b53f5a62caf/DevelopingaGlobalEnergyEfficiencyWorkforceintheBuildingsSector.pdf"
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: iea-roadmap-building-envelopes
+    title: "IEA — Technology Roadmap: Energy Efficient Building Envelopes (2013)"
+    url: "https://iea.blob.core.windows.net/assets/2be63379-1185-42e7-9608-94e5d3682956/TechnologyRoadmapEnergyEfficientBuildingEnvelopes.pdf"
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
