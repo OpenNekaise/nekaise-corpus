@@ -4579,3 +4579,88 @@ sources:
     license: cc-by
     topic: building_energy
     format: pdf
+  # ---------- Scottish Government (gov.scot, Crown copyright OGL v3.0) — NEW VEIN 2026-07-23 ----------
+  - id: govscot-bs-tech-handbook-domestic-apr2026
+    title: "Scottish Building Standards Technical Handbook — Domestic (April 2026 edition)"
+    url: "https://www.gov.scot/binaries/content/documents/govscot/publications/advice-and-guidance/2026/03/building-standards-technical-handbook-domestic-april-2026-pdf/documents/building-standards-technical-handbook-domestic-april-2026-pdf/building-standards-technical-handbook-domestic-april-2026-pdf/govscot:document/Building+Standards+Technical+Handbook+-+Domestic+%28April+2026%29.pdf"
+    source: gov_scot
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: govscot-bs-tech-handbook-nondomestic-apr2026
+    title: "Scottish Building Standards Technical Handbook — Non-domestic (April 2026 edition)"
+    url: "https://www.gov.scot/binaries/content/documents/govscot/publications/advice-and-guidance/2026/03/building-standards-technical-handbook-non-domestic-april-2026-pdf/documents/building-standards-technical-handbook-non-domestic-april-2026-pdf/building-standards-technical-handbook-non-domestic-april-2026-pdf/govscot:document/Building+Standards+Technical+Handbook+-+Non-domestic+%28April+2026%29.pdf"
+    source: gov_scot
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: govscot-bs-handbook-changes-apr2026
+    title: "Summary of Changes to Building Standards Technical Handbooks for 6 April 2026"
+    url: "https://www.gov.scot/binaries/content/documents/govscot/publications/advice-and-guidance/2026/03/building-standards-technical-handbook-domestic-april-2026-pdf/documents/building-standards-technical-handbooks-summary-of-changes-for-6-april-2026-copy/building-standards-technical-handbooks-summary-of-changes-for-6-april-2026-copy/govscot:document/Summary+of+Changes+to+Building+Standards+Technical+Handbooks+for+6+April+2026.pdf"
+    source: gov_scot
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: govscot-heat-in-buildings-strategy-2021
+    title: "Heat in Buildings Strategy — Achieving Net Zero Emissions in Scotland's Buildings (2021)"
+    url: "https://www.gov.scot/binaries/content/documents/govscot/publications/strategy-plan/2021/10/heat-buildings-strategy-achieving-net-zero-emissions-scotlands-buildings/documents/heat-buildings-strategy-achieving-net-zero-emissions-scotlands-buildings/heat-buildings-strategy-achieving-net-zero-emissions-scotlands-buildings/govscot%3Adocument/heat-buildings-strategy-achieving-net-zero-emissions-scotlands-buildings.pdf"
+    source: gov_scot
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: govscot-heat-in-buildings-consult-analysis-2021
+    title: "Heat in Buildings Strategy — Analysis of Responses to the Consultation (2021)"
+    url: "https://www.gov.scot/binaries/content/documents/govscot/publications/strategy-plan/2021/10/heat-buildings-strategy-achieving-net-zero-emissions-scotlands-buildings/documents/heat-buildings-strategy-analysis-responses-consultation/heat-buildings-strategy-analysis-responses-consultation/govscot%3Adocument/heat-buildings-strategy-analysis-responses-consultation.pdf"
+    source: gov_scot
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: govscot-heat-in-buildings-strategy-2021-gd
+    title: "Ro-innleachd air Teas ann an Togalaichean — Heat in Buildings Strategy (Scottish Gaelic)"
+    url: "https://www.gov.scot/binaries/content/documents/govscot/publications/strategy-plan/2021/10/heat-buildings-strategy-achieving-net-zero-emissions-scotlands-buildings/documents/ro-innleachd-air-teas-ann-togalaichean/ro-innleachd-air-teas-ann-togalaichean/govscot%3Adocument/ro-innleachd-air-teas-ann-togalaichean.pdf"
+    source: gov_scot
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: govscot-shcs-2023-key-findings
+    title: "Scottish House Condition Survey 2023 — Key Findings"
+    url: "https://www.gov.scot/binaries/content/documents/govscot/publications/statistics/2025/01/scottish-house-condition-survey-2023-key-findings/documents/scottish-house-condition-survey-2023-key-findings/scottish-house-condition-survey-2023-key-findings/govscot%3Adocument/Scottish%2BHouse%2BCondition%2BSurvey%2B2023%2BKey%2BFindings.pdf"
+    source: gov_scot
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: govscot-shcs-2023-surveyor-manual
+    title: "Scottish House Condition Survey 2023 — Surveyor Manual"
+    url: "https://www.gov.scot/binaries/content/documents/govscot/publications/statistics/2025/01/scottish-house-condition-survey-2023-key-findings/documents/shcs-2023--surveyor-manual/shcs-2023--surveyor-manual/govscot%3Adocument/SHCS%2B2023-%2BSurveyor%2BManual.pdf"
+    source: gov_scot
+    license: open
+    topic: construction
+    format: pdf
+  - id: govscot-shcs-2023-questionnaire
+    title: "Scottish House Condition Survey 2023 — Questionnaire"
+    url: "https://www.gov.scot/binaries/content/documents/govscot/publications/statistics/2025/01/scottish-house-condition-survey-2023-key-findings/documents/shcs-2023--questionnaire/shcs-2023--questionnaire/govscot%3Adocument/SHCS%2B2023-%2BQuestionnaire.pdf"
+    source: gov_scot
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: govscot-heat-networks-delivery-plan-2022
+    title: "Heat Networks Delivery Plan (Scotland, March 2022)"
+    url: "https://www.gov.scot/binaries/content/documents/govscot/publications/strategy-plan/2022/03/heat-networks-delivery-plan/documents/heat-networks-delivery-plan-march-2022/heat-networks-delivery-plan-march-2022/govscot%3Adocument/heat-networks-delivery-plan-march-2022.pdf"
+    source: gov_scot
+    license: open
+    topic: infrastructure
+    format: pdf
+  - id: govscot-energy-efficient-scotland-route-map-2018
+    title: "Energy Efficient Scotland — Route Map (May 2018)"
+    url: "https://www.gov.scot/binaries/content/documents/govscot/publications/strategy-plan/2018/05/energy-efficient-scotland-route-map/documents/00534980-pdf/00534980-pdf/govscot%3Adocument/00534980.pdf"
+    source: gov_scot
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: iea-roadmap-asean-buildings-construction
+    title: "IEA — Roadmap for Energy-Efficient Buildings and Construction in ASEAN (2022)"
+    url: "https://iea.blob.core.windows.net/assets/5255ea58-1fa7-4fb4-bca0-b32923e9184a/RoadmapforEnergy-EfficientBuildingsandConstructioninASEAN.pdf"
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf

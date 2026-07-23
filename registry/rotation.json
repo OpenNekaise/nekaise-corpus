@@ -38,7 +38,7 @@
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "2014-W17",
+    "next": "2014-W16",
     "note": "weekly buckets 1900..now, walked backwards; mined: 2017-2020 W01, 1925-1940 W01s, 2015-W52..W08 (49 buckets). --countries flag NEW (default US): CN/EP/DE work, sitemap titles are English for all countries; CN buckets 2018-2020 W03 mined 07-10 (license=open for non-US)"
   },
   "find_purdue": {
@@ -84,7 +84,7 @@
   },
   "find_patents_cn": {
     "flag": "--bucket",
-    "next": "2018-W52",
+    "next": "2018-W51",
     "note": "CN patents (Chinese full text; license=open). Same weekly-bucket walk as find_patents but separate pointer; marathon runs it with --countries CN. Mined: 2018/2019/2020-W03, 2019-W46+W45 (+800 on 07-12)."
   },
   "find_jrc": {
@@ -101,7 +101,7 @@
   },
   "find_worldbank": {
     "flag": "--os",
-    "next": 14700,
+    "next": 15100,
     "step": 400,
     "note": "World Bank Documents & Reports official API (see find_worldbank.py docstring); run with --rows 50 --pages 8 --max 250. Query 'building energy efficiency' = 16,890 records (os 0-400 mined 07-12, 250 kept — overlap at os 300 is dedup-safe). When it thins, rotate --q: 'energy efficient buildings', 'district heating', 'building code', 'thermal insulation', 'green building construction' — reset next=0 per query. cc-by, junk doctys filtered in-script"
   }
