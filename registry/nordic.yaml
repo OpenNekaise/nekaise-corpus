@@ -1,0 +1,44 @@
+# nordic — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: bov-versv-mningsrisk-i-fysisk-planering-internationell
+    title: 'Översvämningsrisk i fysisk planering: Internationella perspektiv och vägval'
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2026/oversvamningsrisk-i-fysisk-planering---internationella-perspektiv-och-vagval.pdf
+    source: boverket
+    license: open
+    topic: urban
+    format: pdf
+  - id: bov-redovisning-av-plan-och-bygglagstiftningens-till-m
+    title: Redovisning av plan- och bygglagstiftningens tillämpning år 2025
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2026/redovisning-av-tillampningen-av-plan--och-bygglagstiftningen-ar-2025.pdf
+    source: boverket
+    license: open
+    topic: urban
+    format: pdf
+  - id: bov-regler-om-livscykel-gwp-och-gr-nsv-rden-f-r-byggna
+    title: Regler om livscykel-GWP och gränsvärden för byggnaders  klimatpåverkan
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2026/regler-om-livscykel-gwp-och-gransvarden-for-byggnaders-klimatpaverkan---del-1.pdf
+    source: boverket
+    license: open
+    topic: construction
+    format: pdf
+  - id: bov-ldre-v-gledning-om-bbr-f-re-1-december-2025
+    title: Äldre vägledning om BBR (före 1 december 2025)
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2026/boverkets-byggregler-bbr-avsnitt-1---inledning---vagledning-fran-pbl-kunskapsbanken-fore-1-december-2025.pdf
+    source: boverket
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: bov-f-rebygg-fel-brister-och-skador
+    title: Förebygg fel, brister och skador
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2026/forebygg-fel-brister-och-skador---delrapport-1_rapport-2026-8.pdf
+    source: boverket
+    license: open
+    topic: construction
+    format: pdf
+  - id: bov-uppdrag-att-f-resl-ndringar-i-trafikbullerf-rordni
+    title: Uppdrag att föreslå ändringar i trafikbullerförordningen
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2026/boverkets-rapport---uppdrag-att-foresla-andringar-i-trafikbullerforordningen.pdf
+    source: boverket
+    license: open
+    topic: urban
+    format: pdf
