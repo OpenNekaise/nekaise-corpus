@@ -32,6 +32,13 @@ DOMAIN = re.compile(
     r"edificio|edifício|hormigón|concreto|calefacción|construcción|construção|estructura|"
     r"estrutura|albañiler|cimentación|edilizia|calcestruzzo|riscaldamento|impianti|muratura|"
     r"gebouw|verwarming|bouwkunde|byggnad|uppvärmning|bygning|rakennus|"
+    # Nordic (sv/no/dk) — widened 2026-07-23: the 2-stem list wrongly off-topic'd Boverket docs
+    # (a solar-park land-use planning report scored domain=9 < 10). "\bbygg" covers
+    # bygga/byggande/byggeri/byggregler across sv/no/dk.
+    r"\bbygg|bostad|bostäder|planering|detaljplan|översiktsplan|fastighet|isolering|"
+    r"fjärrvärme|solcell|inomhusmiljö|stomme|brandskydd|\bfukt|renover|stadsplan|"
+    r"infrastruktur|energieffektiv|klimatdeklaration|bolig|oppvarming|opvarmning|"
+    r"\bbrann|byggeforskrift|"
     # Russian / Ukrainian (Cyrillic)
     r"здани|бетон|отоплен|вентиляц|строительств|фундамент|теплоснабжен|конструкци|"
     # Chinese (simplified + traditional), Japanese, Korean — matched as substrings

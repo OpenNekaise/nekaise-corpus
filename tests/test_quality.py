@@ -178,3 +178,18 @@ def test_patent_title_on_topic_untouched():
     assert not quality.off_domain_title("Method and system for ensuring leak-free roof installation")
     assert not quality.off_domain_title("Heat pump with variable speed compressor")
     assert not quality.off_domain_title("Silicone roof edge accessory for foam roof")
+
+
+SWEDISH_PLANNING = (  # Boverket-style planning/energy prose — regression for the 07-23 Nordic
+    "Boverket redovisar ett ramverk för nationell planering. Kommunernas översiktsplan och "
+    "detaljplan styr var bostäder och byggnader får uppföras. Rapporten beskriver "
+    "energieffektivisering av befintlig bebyggelse, krav på klimatdeklaration vid nybyggnad, "
+    "samt planering av solcellsparker och fjärrvärme. God inomhusmiljö kräver ventilation och "
+    "isolering av klimatskalet, och fastighetsägare ansvarar för fukt och underhåll. "
+)
+
+
+def test_swedish_planning_ok():
+    # the pre-07-23 DOMAIN (2 Swedish stems) killed this class as off-topic (domain=9 < 10)
+    assert v(rep(SWEDISH_PLANNING, 10_000), book=False) == "ok"
+    assert v(rep(SWEDISH_PLANNING, 150_000), book=True) == "ok"
