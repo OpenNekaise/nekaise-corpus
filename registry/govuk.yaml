@@ -41778,15 +41778,6 @@ sources:
     license: open
     topic: materials
     format: pdf
-  - id: guk-climate-and-investment-reporting-setting-expec-4
-    title: 'Climate and investment reporting: setting expectations and empowering savers
-      — Reporting on stewardship and other topics through the Statement of Investment
-      Principles and the Impl'
-    url: https://assets.publishing.service.gov.uk/media/617158f98fa8f5297f88d092/reporting-on-stewardship-and-other-topics-through-the-sip-and-the-implementation-statement.pdf
-    source: gov_uk
-    license: open
-    topic: materials
-    format: pdf
   - id: guk-climate-and-investment-reporting-setting-expec-5
     title: 'Climate and investment reporting: setting expectations and empowering savers
       — Government response: Climate and investment reporting: setting expectations
@@ -47543,4 +47534,849 @@ sources:
     source: gov_uk
     license: open
     topic: equipment_systems
+    format: pdf
+  - id: guk-energy-trends-and-prices-statistical-release-2-76
+    title: 'Energy Trends and Prices statistical release: 24 February 2022'
+    url: https://assets.publishing.service.gov.uk/media/62162f1ce90e0710acb254e1/Energy_Trends_and_Prices_statistical_release_February_2022.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-and-prices-statistical-release-2-77
+    title: 'Energy Trends and Prices statistical release: 25 June 2020'
+    url: https://assets.publishing.service.gov.uk/media/5ef3629086650c12a176d716/GOV.UK_monthly_trends___prices_announcement.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-greenhouse-gas-emissions-other-technical-re
+    title: 'UK greenhouse gas emissions: other technical reports — UK territorial greenhouse
+      gas emissions statistics: background quality report'
+    url: https://assets.publishing.service.gov.uk/media/67a34168ad556423b636ca7b/uk-territorial-greenhouse-gas-emissions-background-quality-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-greenhouse-gas-emissions-other-technical-re-2
+    title: 'UK greenhouse gas emissions: other technical reports — UK greenhouse gas
+      emissions statistics: frequently asked questions'
+    url: https://assets.publishing.service.gov.uk/media/67a33d807da1f1ac64e5fed5/uk-emissions-statistics-frequently-asked-questions.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-greenhouse-gas-emissions-other-technical-re-3
+    title: 'UK greenhouse gas emissions: other technical reports — Sub-national greenhouse
+      gas emissions statistics: frequently asked questions'
+    url: https://assets.publishing.service.gov.uk/media/67a32a7308d82b458c553c59/sub-national-emissions-statistics-frequently-asked-questions.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-foreign-influence-registration-scheme-politica
+    title: 'Foreign Influence Registration Scheme: political influence tier — Guidance
+      on the Foreign Influence Registration Scheme: political influence tier'
+    url: https://assets.publishing.service.gov.uk/media/687a20a09b1337e9a7726b69/Guidance-on-the-Political-Influence-Tier.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-energy-and-emissions-projections-2021-to-2040-
+    title: 'Energy and emissions projections: 2021 to 2040 — Updated energy and emissions
+      projections 2021 to 2040'
+    url: https://assets.publishing.service.gov.uk/media/634e5f75e90e0731a8008927/updated-energy-and-emissions-projections-2021-2040.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-energy-and-emissions-projections-2021-to-2040--2
+    title: 'Energy and emissions projections: 2021 to 2040 — Annex N: Projected emissions
+      of non-CO2 greenhouse gases 2021 to 2040'
+    url: https://assets.publishing.service.gov.uk/media/634d5396d3bf7f61827af96b/annex-n-2021_2040-non-co2-emissions-projections-report.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-energy-and-emissions-projections-2021-to-2040--3
+    title: 'Energy and emissions projections: 2021 to 2040 — Annex O: Net zero and the
+      power sector scenarios'
+    url: https://assets.publishing.service.gov.uk/media/6464ac150b72d30013344604/annex-o-net-zero-power-sector-scenarios.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-climate-and-investment-reporting-setting-expec
+    title: 'Climate and investment reporting: setting expectations and empowering savers
+      — Reporting on Stewardship and Other Topics through the Statement of Investment
+      Principles and the Impl'
+    url: https://assets.publishing.service.gov.uk/media/62b990268fa8f53572e3db59/reporting-stewardship-other-topics.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-amends-to-legislation-on-vehicle-removal-stora
+    title: Amends to legislation on vehicle removal, storage and disposal — Amendments
+      to secondary legislation on the police removal, storage and disposal of vehicles
+    url: https://assets.publishing.service.gov.uk/media/6836de3ee11dd1e85b0cba92/Annex_B_20250521_Consultation-Vehicle_Recovery_Regulations.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-amends-to-legislation-on-vehicle-removal-stora-2
+    title: 'Amends to legislation on vehicle removal, storage and disposal — Vehicle
+      recovery options assessment: amends to police vehicle recovery legislation'
+    url: https://assets.publishing.service.gov.uk/media/683839dcc99c4f37ab4e8651/Vehicle_Recovery_Options_Assessment_-_Amends_to_Police_Vehicle_Recovery_Legislation.PDF
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-conversion-practices-bill-conversion-pra
+    title: Draft Conversion Practices Bill — Conversion practices draft bill (PDF)
+    url: https://assets.publishing.service.gov.uk/media/6a3bde09eaee00074150f395/E03633248_CP_1604_Draft_Conversion_Practices_Bill_Accessible__1_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-conversion-practices-bill-conversion-pra-2
+    title: Draft Conversion Practices Bill — Conversion practices draft bill (large
+      print)
+    url: https://assets.publishing.service.gov.uk/media/6a3be38b33bc5beefd3c48d3/E03633248_CP_1604_Draft_Conversion_Practices_Bill_20pt_LP_v03.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-conversion-practices-bill-draft-final-st
+    title: Draft Conversion Practices Bill — Draft final stage impact assessment (PDF)
+    url: https://assets.publishing.service.gov.uk/media/6a43dabe1a04d4dae8b814ee/2006-06-25_Economic_Impact_Assessment_Draft_CP_Bill.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-understanding-mixed-tenure-in-english-social-h
+    title: 'Understanding mixed tenure in English social housing — Understanding mixed
+      tenure in English social housing: summary report'
+    url: https://assets.publishing.service.gov.uk/media/69aecc57c78869bf8eb8a54c/understanding-mixed-tenure-in-english-social-housing-summary-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-understanding-mixed-tenure-in-english-social-h-2
+    title: 'Understanding mixed tenure in English social housing — Understanding mixed
+      tenure in English social housing: qualitative report'
+    url: https://assets.publishing.service.gov.uk/media/69aecd3cc78869bf8eb8a54e/understanding-mixed-tenure-in-english-social-housing-qualitative.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-understanding-mixed-tenure-in-english-social-h-3
+    title: 'Understanding mixed tenure in English social housing — Understanding mixed
+      tenure in English social housing: quantitative report'
+    url: https://assets.publishing.service.gov.uk/media/69aecd5fc78869bf8eb8a54f/understanding-mixed-tenure-in-english-social-housing-quantitative.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-permitted-development-rights-response-to-the-s
+    title: 'Permitted development rights: response to the Select Committee report'
+    url: https://assets.publishing.service.gov.uk/media/646492e20b72d300133445d2/Command_paper_permitted_development_rights_May_2023_WEB.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-permitted-development-rights-response-to-the-s-2
+    title: 'Permitted development rights: response to the Select Committee report —
+      Permitted development rights: response to the Select Committee report (print version)'
+    url: https://assets.publishing.service.gov.uk/media/646492c5d3231e000c32dab3/Command_paper_permitted_development_rights_May_2023.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-exploring-the-use-of-display-energy-certificat
+    title: Exploring the use of Display Energy Certificates
+    url: https://assets.publishing.service.gov.uk/media/5a7cc5f8e5274a38e5756a91/D13_703672__130605_Display_Energy_Certificates_-_Report_V8_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-data-protection-and-digital-information-bill-s
+    title: 'Data Protection and Digital Information Bill: supporting documents — Keeling
+      schedule for PECR - DPDI (No. 2) Bill as introduced (published 10 May 2023)'
+    url: https://assets.publishing.service.gov.uk/media/645a65542226ee000c0ae4ee/Keeling_Schedule_for_PECR_-_DPDI_No2_Bill_as_introduced.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-data-protection-and-digital-information-bill-s-2
+    title: 'Data Protection and Digital Information Bill: supporting documents — Keeling
+      schedule for UK GDPR - DPDI (No. 2) Bill as introduced (published 10 May 2023)'
+    url: https://assets.publishing.service.gov.uk/media/645a655f2226ee000c0ae4ef/Keeling_Schedule_for_UK_GDPR_-_DPDI_No2_Bill_as_introduced.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-data-protection-and-digital-information-bill-s-3
+    title: 'Data Protection and Digital Information Bill: supporting documents — Keeling
+      schedule for DPA 2018 - DPDI (No. 2) Bill as introduced (published 10 May 2023)'
+    url: https://assets.publishing.service.gov.uk/media/645a656e2226ee000c0ae4f0/Keeling_Schedule_for_DPA_2018_-_DPDI_No2_Bill_as_introduced.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-data-protection-and-digital-information-bill-s-4
+    title: 'Data Protection and Digital Information Bill: supporting documents — Data
+      Protection and Digital Information Bill: impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/643fba2322ef3b000f66f4af/data_protection_and_digital_information_bill_impact_assessment_march_2023.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-data-protection-and-digital-information-bill-s-5
+    title: 'Data Protection and Digital Information Bill: supporting documents — Regulatory
+      powers for Smart Data: impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/62e00f46d3bf7f2d7d83bc10/Final_stage_Impact_Assessment___Smart_Data_primary_legislation.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-data-protection-and-digital-information-bill-s-6
+    title: 'Data Protection and Digital Information Bill: supporting documents — DWP
+      third party data gathering: impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/6564bab01524e6000da10168/DWP_third_party_data_impact_assessment_november_2023.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-data-protection-and-digital-information-bill-s-7
+    title: 'Data Protection and Digital Information Bill: supporting documents — Overview
+      of the expected impact of changes to the Data Protection and Digital Information
+      Bill following Commit'
+    url: https://assets.publishing.service.gov.uk/media/6582e3a8ed3c34000d3bfc73/Overview_of_expected_impact_of_changes_made_at_Committee_stage_to_the_DPDI_Bill.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-data-protection-and-digital-information-bill-s-8
+    title: 'Data Protection and Digital Information Bill: supporting documents — Overview
+      of the expected impact of changes to the Data Protection and Digital Information
+      Bill following Report'
+    url: https://assets.publishing.service.gov.uk/media/66992cb4a3c2a28abb50d269/Overview_of_expeced_impact_of_changes_to_the_DPDI_Bill_at_Report_Stage.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-high-stakes-gambling-reform-for-the-digital-ag
+    title: 'High stakes: gambling reform for the digital age'
+    url: https://assets.publishing.service.gov.uk/media/644923b5814c6600128d0723/1286-HH-E02769112-Gambling_White_Paper_Book_Accessible1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-building-the-right-support-for-people-with-a-l
+    title: Building the right support for people with a learning disability and autistic
+      people — Building the Right Support Action Plan
+    url: https://assets.publishing.service.gov.uk/media/62d7df62e90e071e7cbe1ef0/Building-the-Right-Support-for-People-with-a-Learning-Disability-and-Autistic-People-Action-Plan-accessible.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-building-the-right-support-for-people-with-a-l-2
+    title: Building the right support for people with a learning disability and autistic
+      people — Table of Commitments (Annex A)
+    url: https://assets.publishing.service.gov.uk/media/62cc156e8fa8f54e8bf2fd15/Building-the-Right-Support-Annex-A-Table-of-Commitments.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-building-the-right-support-for-people-with-a-l-3
+    title: Building the right support for people with a learning disability and autistic
+      people — Building the Right Support Action Plan (easy read)
+    url: https://assets.publishing.service.gov.uk/media/62cfd9abd3bf7f285a88f41d/Building-the-Right-Support-Action-Plan_easy-read.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-housing-benefit-subsidy-guidance-manual-2016-t-15
+    title: Housing Benefit subsidy guidance manual 2016 to 2017 — Appendices A to G
+    url: https://assets.publishing.service.gov.uk/media/5a759a1ae5274a4368298888/hbsgm-appendices-2016-17.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-acetonitrile-properties-and-incident-managemen
+    title: 'Acetonitrile: properties and incident management — Acetonitrile: incident
+      management'
+    url: https://assets.publishing.service.gov.uk/media/6749d89324108edc3c8cecb6/Incident_management_acetonitrile.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-standard-civil-contract-2024-table-of-amendmen
+    title: Standard civil contract 2024 — Table of amendments to the 2024 standard civil
+      contract (December 2025)
+    url: https://assets.publishing.service.gov.uk/media/694970b72f02611393508a01/2024_Standard_Civil_Contract_Summary_of_Amendments_22_December_2025.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-standard-civil-contract-2024-annex-a-amendment
+    title: 'Standard civil contract 2024 — Annex A: amendments made to tables A-G of
+      the 2024 standard civil contract: DAPOs pilot  scheme specification (21 May 2025)'
+    url: https://assets.publishing.service.gov.uk/media/682c7d815ba51be7c0f45316/Annex_A_Amendments_to_tables_A-G_of_the_2024_Standard_Civil_Contract_DAPOs_Pilot_Scheme_Specification__21_May_2025.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-standard-civil-contract-2024-2024-standard-civ-6
+    title: Standard civil contract 2024 — 2024 standard civil contract category specific
+      rules family (section 7)
+    url: https://assets.publishing.service.gov.uk/media/66a9fef2ce1fd0da7b593038/3_7_2024_Family_Category_Specific_Rules.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-standard-civil-contract-2024-2024-standard-civ-7
+    title: Standard civil contract 2024 — 2024 standard civil contract category specific
+      rules immigration and asylum (section 8) (December 2025)
+    url: https://assets.publishing.service.gov.uk/media/6949746372075a1d4a508a12/2024_Immigration_and_Asylum_Category_Specific_Rules_22_December_2025.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-standard-civil-contract-2024-2024-standard-civ-17
+    title: Standard civil contract 2024 — 2024 standard civil contract category specific
+      rules family mediation (section 18) (May 2025)
+    url: https://assets.publishing.service.gov.uk/media/682c7c885ba51be7c0f45313/18_2024_Mediation_Category_Specific_Rules_Clean.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-standard-civil-contract-2024-2024-standard-civ-18
+    title: Standard civil contract 2024 — 2024 standard civil contract DAPO pilot scheme
+      specification (section 19) (May 2025)
+    url: https://assets.publishing.service.gov.uk/media/682c7cbed112b221dce8ecf2/DAPO_Pilot_Scheme_Specification__Section_19__-_Clean.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-standard-civil-contract-2024-2024-standard-civ-19
+    title: Standard civil contract 2024 — 2024 standard civil contract schedule
+    url: https://assets.publishing.service.gov.uk/media/66aa00cf0808eaf43b50da77/16_0.2_2024_Standard_Civil_Contract_Schedule.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-standard-civil-contract-2024-2024-standard-civ-22
+    title: Standard civil contract 2024 — 2024 standard civil contract category definitions
+      (May 2025)
+    url: https://assets.publishing.service.gov.uk/media/682c7d0560f66b9c23b00c8c/Category_Definitions_2024__May_2025_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-standard-civil-contract-2024-guidance-on-compl
+    title: Standard civil contract 2024 — Guidance on completing supervisor declaration
+      forms (December 2024)
+    url: https://assets.publishing.service.gov.uk/media/674dc4b3eb52380f5456af80/Guidance_on_Civil_Supervisor_Requirements_for_2024_SCC_December_2024.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-standard-civil-contract-2024-2024-standard-civ-23
+    title: Standard civil contract 2024 — 2024 Standard civil contract - useful information
+      for providers (September 2024)
+    url: https://assets.publishing.service.gov.uk/media/66b0e5c9a3c2a28abb50dce9/2024_Standard_Civil_Contract-_Useful_Information_For_New_Provider_September_2024.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-standard-civil-contract-2024-2024-standard-civ-24
+    title: Standard civil contract 2024 — 2024 standard civil contract useful information
+      for new providers (immigration)
+    url: https://assets.publishing.service.gov.uk/media/66d0765259b0ec2e151f84ce/2024_Standard_Civil_Contract_Useful_Information__Immigration_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-standard-civil-contract-2024-mental-health-gui
+    title: Standard civil contract 2024 — Mental health guidance for contract management
+      (September 2024)
+    url: https://assets.publishing.service.gov.uk/media/66d076aa1df0ac810b1f84da/Mental_Health_Guidance_-_Contract_management_1_September_2024.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-standard-civil-contract-2024-provider-data-sec
+    title: Standard civil contract 2024 — Provider data security guidance - September
+      2023
+    url: https://assets.publishing.service.gov.uk/media/65001bf7572780000d251950/Provider_Data_Security_Guidance_September_2023.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-standard-civil-contract-2024-provider-data-sec-2
+    title: Standard civil contract 2024 — Provider data security requirements - September
+      2023
+    url: https://assets.publishing.service.gov.uk/media/65001c251886eb000d977156/Provider_Data_Security_Requirements_September_2023.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-rent-repayment-orders-under-the-housing-and-pl
+    title: Rent repayment orders under the Housing and Planning Act 2016
+    url: https://assets.publishing.service.gov.uk/media/5a81fcbae5274a2e87dc08cc/Rent_Repayment_Orders_guidance.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-increased-risk-of-straw-bedding-shortages-this
+    title: Increased risk of straw bedding shortages this winter in the UK
+    url: https://assets.publishing.service.gov.uk/media/675bfdbd1857548bccbcf986/Bedding-shortage-info-note.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-local-government-reorganisation-staffing-issue
+    title: 'Local government reorganisation: staffing issues guidance'
+    url: https://assets.publishing.service.gov.uk/media/6a58f75b24d4d0ad06d94627/LGR_Staffing_Issues_Guidance.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-g7-food-security-working-group-financial-repor
+    title: G7 Food Security Working Group financial report on food security and nutrition,
+      2021 — G7 Food Security Working Group financial report on food security and nutrition
+      for 2021
+    url: https://assets.publishing.service.gov.uk/media/61b25e1fd3bf7f055eb9b841/G7-Food-Security-Working-Group-financial-report-on-food-security-and-nutrition-2021.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-open-government-partnership-uk-national-action
+    title: 'Open Government Partnership: UK National Action Plan 2013 — OGP UK 2013
+      Draft National Action Plan: From Open Data to Open Government'
+    url: https://assets.publishing.service.gov.uk/media/5a7c08cfed915d01ba1cab92/UK_OGP_interim_action_plan_with_Annexes_A_and_B.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-open-government-partnership-uk-national-action-2
+    title: 'Open Government Partnership: UK National Action Plan 2013 — Open Government
+      Partnership UK National Action Plan 2013 to 2015'
+    url: https://assets.publishing.service.gov.uk/media/5a7ce751e5274a724f0be382/ogp_uknationalactionplan.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-open-government-partnership-uk-national-action-3
+    title: 'Open Government Partnership: UK National Action Plan 2013 — Summary: Open
+      Government Partnership UK National Action Plan 2013 to 2015'
+    url: https://assets.publishing.service.gov.uk/media/5a7b9535ed915d131106030e/2901399_OpenGovernment_NAP_summary.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-disabled-people-s-rights-information-following-2
+    title: 'Disabled people’s rights: information following the UK’s first periodic
+      review — PDF: Progress on the UK’s vision to build a society which is fully inclusive
+      of disabled people: le'
+    url: https://assets.publishing.service.gov.uk/media/5b9145b340f0b65566f15589/uncrdp-first-periodic-review-follow-up-ministers-note.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-antisemitism-recent-government-actions-and-nex
+    title: 'Antisemitism: recent government actions and next steps'
+    url: https://assets.publishing.service.gov.uk/media/6942d82f9273c48f554cf55f/Antisemitism_-_recent_government_actions_and_next_steps.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-universal-credit-childcare-costs-support-resea
+    title: Universal Credit childcare costs support research
+    url: https://assets.publishing.service.gov.uk/media/6711026c9cd657734653d722/universal-credit-childcare-costs-support-research.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-public-procurement-growing-british-industry-jo
+    title: 'Public Procurement: Growing British industry, jobs and skills - consultation
+      on further reforms to public procurement — Public Procurement: Growing British
+      industry, jobs and skill'
+    url: https://assets.publishing.service.gov.uk/media/685c072489ba18761d976125/E03229899_CP_xxx_CO_Procurement_Act_Part_2_Elay__2_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-digital-inclusion-action-plan-first-steps
+    title: 'Digital Inclusion Action Plan: First Steps'
+    url: https://assets.publishing.service.gov.uk/media/67bdc3edb0d253f92e213c47/digital_inclusion_action_plan_first_steps.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-sudan-country-policy-and-information-notes-cou-4
+    title: 'Sudan: country policy and information notes — Country policy and information
+      note: security situation, Sudan, July 2026'
+    url: https://assets.publishing.service.gov.uk/media/6a61cc5ce2d191f0bc8b6d54/SDN_CPIN_-_Security_situation.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-4
+    title: 'Vets market investigation: remedies working paper — Summary of responses'
+    url: https://assets.publishing.service.gov.uk/media/68efcb6f8427701993d5e135/Summary_of_responses.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-7
+    title: 'Vets market investigation: remedies working paper — Animal Trust'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e68427701993d5e011/Animal_Trust.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-8
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (1)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e3a8398380cb4ad00a/Respondent_1.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-9
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (2)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e3a8398380cb4ad009/Respondent_2.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-11
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (4)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e3f159f887526bbdd1/Respondent_4.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-12
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (5)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e2a8398380cb4ad008/Respondent_5.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-15
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (8)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e28427701993d5e00b/Respondent_8.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-16
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (9)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e28427701993d5e00a/Respondent_9.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-17
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (10)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e282670806f9d5e00a/Respondent_10.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-18
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (11)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e2e7b6794c076bbdd0/Respondent_11.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-20
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (13)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e1a8398380cb4ad007/Respondent_13.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-21
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (14)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e2e7b6794c076bbdcf/Respondent_14.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-23
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (16)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e12adc28a81b4ad01b/Respondent_16.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-25
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (18)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e182670806f9d5e008/Respondent_18.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-28
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (21)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e1e7b6794c076bbdce/Respondent_21.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-31
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (24)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e0e7b6794c076bbdcd/Respondent_24.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-34
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (26)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e1a8398380cb4ad005/Respondent_26.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-35
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (27)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e18427701993d5e007/Respondent_27.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-36
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (28)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e0f159f887526bbdcb/Respondent_28.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-37
+    title: 'Vets market investigation: remedies working paper — Anonymous respondent
+      (29)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e02adc28a81b4ad019/Respondent_29.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-39
+    title: 'Vets market investigation: remedies working paper — Assistance Dogs UK'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e5a8398380cb4ad011/Assistance_Dogs_UK.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-43
+    title: 'Vets market investigation: remedies working paper — Blue Cross'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e52adc28a81b4ad021/Blue_Cross.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-47
+    title: 'Vets market investigation: remedies working paper — CVS'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e582670806f9d5e00c/CVS.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-49
+    title: 'Vets market investigation: remedies working paper — FIVP & SPVS'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e5f159f887526bbdd7/FIVP___SPVS.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-51
+    title: 'Vets market investigation: remedies working paper — HNVG Ltd'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e582670806f9d5e00b/HNVG_Ltd.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-57
+    title: 'Vets market investigation: remedies working paper — Milestone Veterinary
+      Centre'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e4e7b6794c076bbdd4/Milestone_Veterinary_Centre.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-61
+    title: 'Vets market investigation: remedies working paper — Paragon Veterinary Group'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e48427701993d5e00d/Paragon_Veterinary_Group.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-62
+    title: 'Vets market investigation: remedies working paper — PDSA'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e4e7b6794c076bbdd2/PDSA.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-63
+    title: 'Vets market investigation: remedies working paper — Pennard Vets'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e3a8398380cb4ad00c/Pennard_Vets.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-64
+    title: 'Vets market investigation: remedies working paper — Pet and Equine Insurance
+      Association (PEIA)'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e32adc28a81b4ad01e/Pet_and_Equine_Insurance_Association__PEIA_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-65
+    title: 'Vets market investigation: remedies working paper — Pets at Home'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e4e7b6794c076bbdd3/Pets_at_Home.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-66
+    title: 'Vets market investigation: remedies working paper — Progressive Veterinary
+      Association'
+    url: https://assets.publishing.service.gov.uk/media/68eeb88782670806f9d5e090/Progressive_Veterinary_Association.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-70
+    title: 'Vets market investigation: remedies working paper — Reader & Summers'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e3f159f887526bbdd3/Reader___Summers.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-73
+    title: 'Vets market investigation: remedies working paper — The George Vet Group'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e08427701993d5e005/The_George_Vet_Group.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-74
+    title: 'Vets market investigation: remedies working paper — Thrums Vets'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e0e7b6794c076bbdcc/Thrums_Vets.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-76
+    title: 'Vets market investigation: remedies working paper — Vets4u'
+    url: https://assets.publishing.service.gov.uk/media/68ee07e02adc28a81b4ad017/Vets4u.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-78
+    title: 'Vets market investigation: remedies working paper — VCMS'
+    url: https://assets.publishing.service.gov.uk/media/68ee07dfa8398380cb4ad003/VCMS.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-79
+    title: 'Vets market investigation: remedies working paper — VMD'
+    url: https://assets.publishing.service.gov.uk/media/68ee07df8427701993d5e003/VMD.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vets-market-investigation-remedies-working-pap-81
+    title: 'Vets market investigation: remedies working paper — Which?'
+    url: https://assets.publishing.service.gov.uk/media/68ee07dfe7b6794c076bbdcb/Which.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-understanding-past-merger-remedies-2023-update
+    title: Understanding past merger remedies – 2023 update — CMA report on case study
+      research
+    url: https://assets.publishing.service.gov.uk/media/6537944c3099f900117f301e/CMA_report_on_case_study_research____.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-coal-mining-licence-applications-woodhouse-col
+    title: Coal mining licence applications — Woodhouse Colliery North licence application
+      redacted
+    url: https://assets.publishing.service.gov.uk/media/64a6b34c7a4c23000cbba2bb/Woodhouse_Colliery_North_Licence_Application_Redacted.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-controlled-drug-licensees-security-advice-and-
+    title: 'Controlled drug licensees: security advice and guidance — Security guidance
+      for all existing or prospective Home Office controlled drug licensees and/or precursor
+      chemical licensee'
+    url: https://assets.publishing.service.gov.uk/media/63a1b6c8e90e075874d91825/Security_Guidance_for_all_Businesses_and_Other_Organisations_v1.5_Nov_2022.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-electric-vehicle-battery-recycling-capacity-wh
+    title: Electric vehicle battery recycling capacity — What are the technical and
+      policy barriers to increasing EV battery recycling capacity in the UK? PDF
+    url: https://assets.publishing.service.gov.uk/media/6554af673718980013d29741/EV_Battery_Recycling_PDF.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-industrial-policies-new-evidence-for-the-uk-in
+    title: 'Industrial policies: new evidence for the UK — Industrial policies: new
+      evidence for the UK (printable version)'
+    url: https://assets.publishing.service.gov.uk/media/67f8d0226812c7adcf513f06/Industrial_policies_new_evidence_for_the_UK.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-competition-take-cover-phase-2-take-cover-sc-i
+    title: 'Competition: Take Cover! Phase 2 — Take Cover! SC (Innovation) - Schedules'
+    url: https://assets.publishing.service.gov.uk/media/5d6cf742ed915d53b49048c4/20190819-ISC_Terms-TAKE_COVER__-_Schedules.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-competition-take-cover-phase-2-take-cover-phas
+    title: 'Competition: Take Cover! Phase 2 — Take Cover! Phase 2 SC (Innovation) -
+      Terms'
+    url: https://assets.publishing.service.gov.uk/media/5d6cf77040f0b607c3adc0d3/20190819-ISC_Terms-TAKE_COVER__-_Terms.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-national-security-bill-overarching-documents-i
+    title: 'National Security Bill: overarching documents — Impact Assessment: Home
+      Office'
+    url: https://assets.publishing.service.gov.uk/media/64f9f5099ee0f2000db7c070/Annex_B_-_20230421-National_Security_Bill_Impact_Assessment-Main__Non-FIRS_-Enactment-FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: construction
     format: pdf
