@@ -113,7 +113,7 @@
   },
   "find_boverket": {
     "flag": "--page",
-    "next": 3,
+    "next": 5,
     "step": 2,
     "note": "Swedish building authority, ~35 listing pages x ~10 pubs; run with --pages 2 --max 40. Crawl-delay 10s (finder sleeps + build HOST_DELAY). NEW 2026-07-23, Nordic-gap vein."
   }
