@@ -107,7 +107,7 @@
   },
   "find_jstage": {
     "flag": "--start",
-    "next": 2838,
+    "next": 2638,
     "step": -200,
     "note": "AIJ journals via J-STAGE API; kankyo total=3637. WALK BACKWARD (newest first): vol 76-77 (2011-12, start 1-200) PDFs lack ToUnicode -> mojibake garbage (182 correctly pruned+blocklisted 07-23); modern vols extract clean. Advance goes 3438->3238->... ; STOP the series when a batch prunes >50% (hit the mojibake era), then re-aim to kouzou/keikaku/gijutsu (start = total-199 each). --series kankyo --count 200."
   },
