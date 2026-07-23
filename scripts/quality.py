@@ -90,6 +90,12 @@ BOOK_MIN_CHARS = 120_000
 BOOK_MIN_DENSITY = 8.0
 SHORT_MIN_HITS = 10
 MIN_ALPHA = 0.55
+# CJK engineering papers are legitimately digit/symbol-dense (equations, tables, DOI headers):
+# clean 2019 AIJ structural papers score alpha ~0.54 and were wrongly killed as garbage
+# (07-23). A doc that is verifiably CJK (hundreds of true-CJK chars in the window) gets a
+# lower alpha floor; symbol-soup garbage rarely lands in the CJK blocks, so this stays safe.
+MIN_ALPHA_CJK = 0.45
+CJK_ALPHA_MIN_CHARS = 300
 
 
 def body(text: str) -> str:
@@ -130,7 +136,8 @@ def verdict(m: dict, book: bool) -> str:
     eff_words = w["words"] + w.get("cjk", 0) // 2
     if w["chars"] < 2000:
         return "thin"
-    if w["alpha"] < MIN_ALPHA:
+    floor = MIN_ALPHA_CJK if w.get("cjk", 0) >= CJK_ALPHA_MIN_CHARS else MIN_ALPHA
+    if w["alpha"] < floor:
         return "garbage"
     if eff_words < 200:
         return "thin"

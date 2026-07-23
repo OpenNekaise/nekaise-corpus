@@ -193,3 +193,23 @@ def test_swedish_planning_ok():
     # the pre-07-23 DOMAIN (2 Swedish stems) killed this class as off-topic (domain=9 < 10)
     assert v(rep(SWEDISH_PLANNING, 10_000), book=False) == "ok"
     assert v(rep(SWEDISH_PLANNING, 150_000), book=True) == "ok"
+
+
+JA_STRUCTURAL = (  # AIJ kouzou-style prose: dense numerics/DOI headers drag alpha to ~0.54 —
+    # regression for the 07-23 CJK alpha-floor carve-out (clean papers were killed as garbage)
+    "日本建築学会構造系論文集 第84巻 第764号，1355-1365，2019年10月 "
+    "DOI http://doi.org/10.3130/aijs.84.1355 無耐火被覆CFT柱の耐火性能に関する解析的考察 "
+    "実験は載荷比 0.3, 0.45, 0.6 の 3 水準、断面 400×400×12 mm、鋼材 SN490B とし、"
+    "コンクリート強度 Fc=36 N/mm2 の試験体 12 体を用いた。耐震性能と耐火性能の関係を検討し、"
+    "鉄骨造建築物の構造設計における許容応力度 235 N/mm2 に対する安全率を 1.5 とした。 "
+)
+
+
+def test_japanese_structural_numerics_ok():
+    assert v(rep(JA_STRUCTURAL, 25_000), book=False) == "ok"
+
+
+def test_symbol_soup_still_garbage_despite_some_cjk():
+    # a mostly-symbol doc with a sprinkle of CJK must NOT ride the lower floor
+    soup = ("±×÷≦≧∑∫√∂ 0.123 4.56e-7 |—|=|+|*| 建 " * 400)
+    assert v(soup[:20_000] + rep(ON_TOPIC, 2_000), book=False) == "garbage"

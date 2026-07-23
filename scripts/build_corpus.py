@@ -112,13 +112,26 @@ def extract_pdf(data: bytes) -> str:
         txt = "\n\n".join(parts).strip()
     except Exception:  # broken xref/trailer — pypdf can't even open it; poppler usually can
         txt = ""
-    # pdftotext (poppler) rescues two pypdf failure classes: (a) legacy scans whose OCR text layer
-    # has no space glyphs ("ThermalAnalysisofEffect...", 259 NBS docs wrongly pruned 07-09), and
-    # (b) CID-keyed CJK fonts where pypdf extracts NOTHING (413 Japanese NILIM PDFs, 07-10).
-    if shutil.which("pdftotext") and (len(txt) < 500 or _word_glued(txt)):
-        alt = _pdftotext(data)
-        if len(alt) > max(len(txt), 400) and not _word_glued(alt):
-            return alt
+    # pdftotext (poppler) rescues three pypdf failure classes: (a) legacy scans whose OCR text
+    # layer has no space glyphs ("ThermalAnalysisofEffect...", 259 NBS docs wrongly pruned 07-09),
+    # (b) CID-keyed CJK fonts where pypdf extracts NOTHING (413 Japanese NILIM PDFs, 07-10), and
+    # (c) subset CJK fonts where pypdf extracts PLENTY of text but maps glyphs to WRONG codepoints
+    # (2019 AIJ kouzou PDFs, 07-23: "⪏ⅆ⿕そCFT..." — never trips the length/glue checks). For (c)
+    # the tell is a CJK-ish doc with a depressed alpha ratio; the arbiter is which extractor
+    # yields more true-CJK chars.
+    if shutil.which("pdftotext"):
+        if len(txt) < 500 or _word_glued(txt):
+            alt = _pdftotext(data)
+            if len(alt) > max(len(txt), 400) and not _word_glued(alt):
+                return alt
+        else:
+            head = txt[:20_000]
+            cjk = len(quality.CJK.findall(head))
+            alpha = sum(c.isalpha() for c in head) / max(len(head), 1)
+            if cjk > 50 and alpha < 0.60:
+                alt = _pdftotext(data)
+                if len(quality.CJK.findall(alt[:20_000])) > cjk * 1.3:
+                    return alt
     return txt
 
 
