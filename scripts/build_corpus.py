@@ -56,7 +56,10 @@ PER_HOST = 2
 # a host here to work around its wall, check its ToS/robots.txt — a wall is sometimes the host
 # enforcing terms we must respect (nrc-publications.canada.ca, 07-12: "systematic downloading is
 # not permitted" — that vein was reverted, NO-GO).
-HOST_DELAY: dict[str, float] = {}
+HOST_DELAY: dict[str, float] = {
+    "www.jstage.jst.go.jp": 2.0,  # J-STAGE throttles bulk fetches; nightly ~00:00 JST 503 window
+    "www.boverket.se": 10.0,      # robots.txt Crawl-delay: 10 — respect it
+}
 HOST_UA: dict[str, str] = {}
 
 _host_sems: dict[str, threading.BoundedSemaphore] = {}

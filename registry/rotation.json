@@ -103,6 +103,18 @@
     "flag": "--os",
     "next": 15500,
     "step": 400,
-    "note": "World Bank Documents & Reports official API (see find_worldbank.py docstring); run with --rows 50 --pages 8 --max 250. Query 'building energy efficiency' = 16,890 records (os 0-400 mined 07-12, 250 kept — overlap at os 300 is dedup-safe). When it thins, rotate --q: 'energy efficient buildings', 'district heating', 'building code', 'thermal insulation', 'green building construction' — reset next=0 per query. cc-by, junk doctys filtered in-script"
+    "note": "World Bank Documents & Reports official API (see find_worldbank.py docstring); run with --rows 50 --pages 8 --max 250. Query 'building energy efficiency' = 16,890 records (os 0-400 mined 07-12, 250 kept — overlap at os 300 is dedup-safe). When it thins, rotate --q: 'energy efficient buildings', 'district heating', 'building code', 'thermal insulation', 'green building construction' — reset next=0 per query. cc-by, junk doctys filtered in-script Q 'building commissioning' = 4,308 records, os0-400 mined 07-23 (+174) — rotate INTO this q when the main one thins."
+  },
+  "find_jstage": {
+    "flag": "--start",
+    "next": 1,
+    "step": 200,
+    "note": "AIJ journals via J-STAGE API; run with --series kankyo --count 200 (env-eng, 3,637 total), then kouzou/keikaku/gijutsu series (separate universes — re-aim start=1 per series). NEW 2026-07-23 targeting coverage-radar JP/ja gaps. Nightly ~00:00 JST = 503 window."
+  },
+  "find_boverket": {
+    "flag": "--page",
+    "next": 1,
+    "step": 2,
+    "note": "Swedish building authority, ~35 listing pages x ~10 pubs; run with --pages 2 --max 40. Crawl-delay 10s (finder sleeps + build HOST_DELAY). NEW 2026-07-23, Nordic-gap vein."
   }
 }

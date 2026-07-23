@@ -52,6 +52,8 @@ SHARDS = {
     "wbd-": "worldbank.yaml",  # find_worldbank (World Bank Documents & Reports API, cc-by)
     "jrc-": "jrc.yaml",        # find_jrc (EU JRC science-for-policy reports via OpenAIRE, cc-by)
     "guk-": "govuk.yaml",      # find_govuk (UK gov.uk publications via Search/Content APIs, OGL v3)
+    "jst-": "jstage.yaml",     # find_jstage (AIJ journals via the J-STAGE search API, Japanese)
+    "bov-": "nordic.yaml",     # find_boverket (Swedish building authority; shard shared by Nordic sources)
     "ope-": "papers.yaml",     # find_sources OpenAlex backend
     "oa-": "papers.yaml",
     "arx-": "papers.yaml",     # find_sources arXiv backend
