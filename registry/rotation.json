@@ -107,7 +107,7 @@
   },
   "find_jstage": {
     "flag": "--start",
-    "next": 1,
+    "next": 201,
     "step": 200,
     "note": "AIJ via J-STAGE API with pubyearfrom=2014 (pre-2014 PDFs lack ToUnicode -> mojibake; API sort is NOT chronological — backward-walk assumption was wrong, kouzou tail was 1999). Filtered totals: kouzou 2,129 (NOW, --series kouzou, forward from 1); kankyo mined unfiltered 07-23 (+424 net) — RE-SWEEP with filter after kouzou (dedup-safe); then keikaku/gijutsu (probe filtered totals). Stop a series at >50% prune."
   },
