@@ -49,9 +49,10 @@ SERIES = {
 ATOM = "{http://www.w3.org/2005/Atom}"
 
 
-def fetch_page(material: str, start: int, count: int) -> list[ET.Element]:
+def fetch_page(material: str, start: int, count: int, from_year: int = 2014) -> list[ET.Element]:
     r = requests.get(API, params={"service": 3, "material": material,
-                                  "start": start, "count": count},
+                                  "start": start, "count": count,
+                                  "pubyearfrom": from_year},
                      headers=UA, timeout=60)
     r.raise_for_status()
     root = ET.fromstring(r.content)
@@ -88,6 +89,9 @@ def main() -> None:
                     help="AIJ journal to walk (see SERIES)")
     ap.add_argument("--start", type=int, default=1, help="1-based result index to start at")
     ap.add_argument("--count", type=int, default=200, help="how many results to walk this run")
+    ap.add_argument("--from-year", type=int, default=2014,
+                    help="pubyearfrom API filter: pre-2014 AIJ PDFs lack ToUnicode (mojibake); "
+                         "the API's sort order is NOT chronological, so filter at the source")
     ap.add_argument("--append", action="store_true",
                     help="append into the registry (registry/jstage.yaml)")
     args = ap.parse_args()
@@ -99,7 +103,7 @@ def main() -> None:
     for start in range(args.start, args.start + args.count, PAGE):
         n = min(PAGE, args.start + args.count - start)
         try:
-            entries = fetch_page(material, start, n)
+            entries = fetch_page(material, start, n, args.from_year)
         except Exception as e:
             print(f"# API fetch failed at start={start}: {e}", file=sys.stderr)
             sys.exit(1)  # throttle/maintenance window — abort WITHOUT advancing rotation

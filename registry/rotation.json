@@ -107,9 +107,9 @@
   },
   "find_jstage": {
     "flag": "--start",
-    "next": 8911,
-    "step": -200,
-    "note": "AIJ via J-STAGE API, WALK BACKWARD per series. kankyo DONE 07-23 (2638→3637 mined, stopped at 68% prune = mojibake era; 1-200 also mined pre-strategy). NOW ON kouzou (構造系, structural): total=9310, start 9111, step -200 — run --series kouzou --count 200. Then keikaku/gijutsu (probe totals first). Stop a series when a batch prunes >50%."
+    "next": 1,
+    "step": 200,
+    "note": "AIJ via J-STAGE API with pubyearfrom=2014 (pre-2014 PDFs lack ToUnicode -> mojibake; API sort is NOT chronological — backward-walk assumption was wrong, kouzou tail was 1999). Filtered totals: kouzou 2,129 (NOW, --series kouzou, forward from 1); kankyo mined unfiltered 07-23 (+424 net) — RE-SWEEP with filter after kouzou (dedup-safe); then keikaku/gijutsu (probe filtered totals). Stop a series at >50% prune."
   },
   "find_boverket": {
     "flag": "--page",
