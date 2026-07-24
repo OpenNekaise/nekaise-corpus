@@ -119,7 +119,7 @@
   },
   "find_iea": {
     "flag": "--offset",
-    "next": 40,
+    "next": 80,
     "step": 40,
     "note": "NEW VEIN 2026-07-24: iea.org analysis reports, CC BY 4.0 only (licence-gated per page), blob PDFs. KEY_RE \\b fix same day (city matched electriCITY; 36 power-sector entries purged+blocklisted): universe now 175 slugs, offsets 0-40 mined under the FIXED regex equivalence. Run with --limit 40; EBC/INIVE annexes remain NO-GO (different channel, ARR)"
   }
