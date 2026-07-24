@@ -1,0 +1,238 @@
+# iea — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: iag-25-energy-efficiency-policy-recommendations-2011
+    title: 25 Energy Efficiency Policy Recommendations 2011
+    url: https://iea.blob.core.windows.net/assets/19d78643-6f1a-4700-9d6b-dd79ce567ce9/25EnergyEfficiencyPolicyRecommendations2011.pdf
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: iag-350-million-building-units-connected-to-district-e
+    title: 350 million building units connected to district energy networks by 2030,
+      provide about 20% of space heating needs
+    url: https://iea.blob.core.windows.net/assets/deebef5d-0c34-4539-9d0c-10b13d840027/NetZeroby2050-ARoadmapfortheGlobalEnergySector_CORR.pdf
+    source: iea
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: iag-a-vision-for-clean-cooking-access-for-all
+    title: A Vision for Clean Cooking Access for All
+    url: https://iea.blob.core.windows.net/assets/f63eebbc-a3df-4542-b2fb-364dd66a2199/AVisionforCleanCookingAccessforAll.pdf
+    source: iea
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: iag-achievements-of-appliance-energy-efficiency-standa
+    title: Achievements of appliance energy efficiency standards and labelling programs
+    url: https://iea.blob.core.windows.net/assets/ddb810ba-2f42-4d3d-9306-b09d52db4ef7/4E_S_L_Report_180915.pdf
+    source: iea
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: iag-achievements-of-energy-efficiency-appliance-and-eq
+    title: Achievements of Energy Efficiency Appliance and Equipment Standards and Labelling
+      Programmes
+    url: https://iea.blob.core.windows.net/assets/996ea40e-e010-48c3-ab53-9b4f72ddc815/AchievementsofEnergyEfficiencyApplianceandEquipmentStandardsandLabellingProgrammes.pdf
+    source: iea
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: iag-assessing-measures-of-energy-efficiency-perfor-2
+    title: Assessing Measures of Energy Efficiency Performance & Their Application in
+      Industry
+    url: https://iea.blob.core.windows.net/assets/c3d3f045-a40d-4926-8ede-0a67aa55d74e/JPRG_Info_Paper.pdf
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: iag-boosting-efficiency-in-latin-america
+    title: Boosting Efficiency in Latin America
+    url: https://iea.blob.core.windows.net/assets/c8972f43-55af-4368-83a6-865f2d17b461/Boostingefficiency_Deliveringaffordability%2CsecurityandjobsinLatinAmerica.pdf
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: iag-boosting-the-economy-with-energy-efficiency-financ
+    title: Boosting the economy with energy efficiency financing
+    url: https://iea.blob.core.windows.net/assets/06c72520-d8c1-418e-a857-ac041d8ae6fd/ee_financing.pdf
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: iag-building-a-unified-national-power-market-system-in
+    title: Building a Unified National Power Market System in China
+    url: https://iea.blob.core.windows.net/assets/666f55e2-83a8-470d-b8e4-f48618aeec1e/BuildingaUnifiedNationalPowerMarketSysteminChina.pdf
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: iag-building-energy-performance-metrics
+    title: Building Energy Performance Metrics
+    url: https://iea.blob.core.windows.net/assets/fca4cdfc-ce94-4644-a6a6-5c9f00f7529c/BuildingEnergyPerformanceMetrics.pdf
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: iag-building-the-future-transmission-grid
+    title: Building the Future Transmission Grid
+    url: https://iea.blob.core.windows.net/assets/744ff0bb-905a-4f9f-83e3-2d04ce99e09c/BuildingtheFutureTransmissionGrid.pdf
+    source: iea
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+  - id: iag-can-energy-efficient-electrical-appliances-be-cons
+    title: Can Energy-Efficient Electrical Appliances be considered 'Environmental Goods'?
+    url: https://iea.blob.core.windows.net/assets/c3728afa-3c44-4f2d-8b2a-f4a5df50b990/efficient_appliances.pdf
+    source: iea
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: iag-ccus-policies-and-business-models-building-a-comme
+    title: 'CCUS Policies and Business Models: Building a Commercial Market'
+    url: https://iea.blob.core.windows.net/assets/d0cb5c89-3bd4-4efd-8ef5-57dc327a02d6/CCUSPoliciesandBusinessModels.pdf
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: iag-cement-technology-roadmap-carbon-emissions-reducti
+    title: 'Cement Technology Roadmap: Carbon Emissions Reductions up to 2050'
+    url: https://iea.blob.core.windows.net/assets/897b7ad9-200a-4314-b870-394dc8e6861a/CementTechnologyRoadmap-CarbonEmissionsReductionsupto2050.pdf
+    source: iea
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: iag-cities-towns-and-renewable-energy-yes-in-my-front-
+    title: 'Cities, Towns and Renewable Energy: Yes in my front yard'
+    url: https://iea.blob.core.windows.net/assets/53bca3ab-9c2f-4c4e-93bd-5e0034df7124/Cities2009.pdf
+    source: iea
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: iag-clean-cooking-in-africa-2026
+    title: Clean Cooking in Africa 2026
+    url: https://iea.blob.core.windows.net/assets/1d4e0b2e-1db0-45ab-873d-fe22354a9aa7/CleanCookinginAfrica2026-Progressreport.pdf
+    source: iea
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: iag-co-generation-and-district-energy
+    title: Cogeneration and District Energy
+    url: https://iea.blob.core.windows.net/assets/5c02850f-e951-4f4b-abae-f55cc29275f8/CogenerationandDistrictEnergy.pdf
+    source: iea
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: iag-comparative-study-on-rural-electrification-policie
+    title: Comparative Study on Rural Electrification Policies in Emerging Economies
+    url: https://iea.blob.core.windows.net/assets/fb086e42-bc87-4939-a18b-145616bc9410/rural_elect.pdf
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: iag-cool-appliances-policy-strategies-for-energy-effic
+    title: 'Cool Appliances : Policy Strategies for Energy-Efficient Homes'
+    url: https://iea.blob.core.windows.net/assets/25aba9f3-5cad-4df9-9b4b-ad1cd02fdd2c/CoolAppliances-PolicyStrategiesforEnergy-EfficientHomes.pdf
+    source: iea
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: iag-cooling-emissions-and-policy-synthesis-report
+    title: Cooling Emissions and Policy Synthesis Report
+    url: https://iea.blob.core.windows.net/assets/71c8db7e-1137-41ef-99c3-8f2c8d3a5d86/Cooling_Emissions_and_Policy_Synthesis_Report.pdf
+    source: iea
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: iag-cooling-on-the-move
+    title: Cooling on the Move
+    url: https://iea.blob.core.windows.net/assets/425608f4-4368-42ca-8faa-568d241ce7ea/Cooling_on_the_Move.pdf
+    source: iea
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: iag-coping-with-the-crisis-increasing-resilience-in-sm
+    title: 'Coping with the Crisis: Increasing Resilience in Small Businesses in Europe
+      through Energy Efficiency'
+    url: https://iea.blob.core.windows.net/assets/237dd801-f170-4c56-abd9-69d52951f26b/CopingwiththeCrisis_IncreasingResilienceinSmallBusinessesinEuropethroughEnergyEfficiency.pdf
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: iag-definitions-for-near-zero-and-low-emissions-steel-
+    title: Definitions for Near-Zero and Low-Emissions Steel and Cement, and Underlying
+      Emissions Measurement Methodologies
+    url: https://iea.blob.core.windows.net/assets/0910c4ff-4008-48f5-a3ec-c52996ed694d/Definitionsfornear-zeroandlow-emissionssteelandcementandunderlyingemissionsmeasurementmethodologies.pdf
+    source: iea
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: iag-demand-and-supply-measures-for-the-steel-and-cemen
+    title: Demand and Supply Measures for the Steel and Cement Transition
+    url: https://iea.blob.core.windows.net/assets/c432d713-d778-46cd-9566-024075124fa5/DemandandSupplyMeasuresfortheSteelandCementTransition.pdf
+    source: iea
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: iag-demand-side-data-and-energy-efficiency-indicators
+    title: Demand-side Data and Energy Efficiency Indicators
+    url: https://iea.blob.core.windows.net/assets/bcc21d9c-47df-4d5b-8e20-f9688d9f9279/Demand-sidedataandenergyefficiencyindicators.pdf
+    source: iea
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+  - id: iag-designing-energy-efficiency-policies-to-enhance-af
+    title: Designing Energy Efficiency Policies to Enhance Affordability
+    url: https://iea.blob.core.windows.net/assets/35a0cb2e-e8d8-4869-9022-b4c48802d1ee/DesigningEnergyEfficiencyPoliciestoEnhanceAffordability.pdf
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: iag-development-of-energy-efficiency-indicators-in-rus
+    title: Development of Energy Efficiency Indicators in Russia
+    url: https://iea.blob.core.windows.net/assets/ead2a202-4144-42f5-9d42-52508ef671c4/Russia_En_Eff_Ind.pdf
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf
+  - id: iag-district-energy-systems-in-china
+    title: District Energy Systems in China
+    url: https://iea.blob.core.windows.net/assets/590cc681-349a-4a55-9d3f-609eff6cde0b/DistrictEnergySystemsinChina.pdf
+    source: iea
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: iag-efficient-grid-interactive-buildings
+    title: Efficient Grid-Interactive Buildings
+    url: https://iea.blob.core.windows.net/assets/71d1b69d-e8aa-49e5-9e0c-12c13d5a3a1f/EfficientGrid-InteractiveBuildings.pdf
+    source: iea
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+  - id: iag-efficient-grid-interactive-buildings-in-india
+    title: Efficient Grid-Interactive Buildings in India
+    url: https://iea.blob.core.windows.net/assets/b446b79f-baa9-4d4f-a5d5-c54a1aaa28a0/EfficientGrid-InteractiveBuildingsinIndia.pdf
+    source: iea
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+  - id: iag-empowering-cities-for-a-net-zero-future
+    title: Empowering Cities for a Net Zero Future
+    url: https://iea.blob.core.windows.net/assets/4d5c939d-9c37-490b-bb53-2c0d23f2cf3d/G20EmpoweringCitiesforaNetZeroFuture.pdf
+    source: iea
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: iag-empowering-urban-energy-transitions
+    title: Empowering Urban Energy Transitions
+    url: https://iea.blob.core.windows.net/assets/00f7d520-d517-473d-b357-5adb43c4a57e/EmpoweringUrbanEnergyTransitions.pdf
+    source: iea
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: iag-enabling-renewable-energy-and-energy-efficiency-te
+    title: Insights Series 2015 - Enabling Renewable Energy and Energy Efficiency Technologies
+    url: https://iea.blob.core.windows.net/assets/3e0cb2b2-3aad-4fce-a9b8-066c0392c816/EnablingRenewableEnergyandEnergyEfficiencyTechnologies.pdf
+    source: iea
+    license: cc-by
+    topic: building_energy
+    format: pdf

@@ -116,5 +116,11 @@
     "next": 11,
     "step": 2,
     "note": "Swedish building authority, ~35 listing pages x ~10 pubs; run with --pages 2 --max 40. Crawl-delay 10s (finder sleeps + build HOST_DELAY). NEW 2026-07-23, Nordic-gap vein."
+  },
+  "find_iea": {
+    "flag": "--offset",
+    "next": 40,
+    "step": 40,
+    "note": "NEW VEIN 2026-07-24: iea.org analysis reports, CC BY 4.0 only (licence-gated per page), blob PDFs. KEY_RE \\b fix same day (city matched electriCITY; 36 power-sector entries purged+blocklisted): universe now 175 slugs, offsets 0-40 mined under the FIXED regex equivalence. Run with --limit 40; EBC/INIVE annexes remain NO-GO (different channel, ARR)"
   }
 }

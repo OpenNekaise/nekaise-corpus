@@ -53,6 +53,9 @@ SHARDS = {
     "jrc-": "jrc.yaml",        # find_jrc (EU JRC science-for-policy reports via OpenAIRE, cc-by)
     "guk-": "govuk.yaml",      # find_govuk (UK gov.uk publications via Search/Content APIs, OGL v3)
     "jst-": "jstage.yaml",     # find_jstage (AIJ journals via the J-STAGE search API, Japanese)
+    "iag-": "iea.yaml",        # find_iea (IEA agency analysis reports, CC BY 4.0, Azure-blob PDFs).
+                               # NOT "iea-": that prefix shadows hand-curated iea-ebc-* ids in
+                               # curated.yaml and the pruner ate 15 of them (2026-07-24, repaired).
     "bov-": "nordic.yaml",     # find_boverket (Swedish building authority; shard shared by Nordic sources)
     "ope-": "papers.yaml",     # find_sources OpenAlex backend
     "oa-": "papers.yaml",
