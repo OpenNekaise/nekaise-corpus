@@ -220,6 +220,27 @@ def _fetch_ec_deliverable(url: str) -> requests.Response:
         return s.get(m.group(1), timeout=TIMEOUT, allow_redirects=True)
 
 
+def _fetch_publications_gc_ca(url: str) -> requests.Response:
+    """Fetch archived Government of Canada PDFs.
+
+    publications.gc.ca redirects older documents to a bilingual archive notice.  Continuing to
+    the publication requires the notice's session cookie and Referer; a stateless retry receives
+    the notice forever and fails the PDF magic-byte check.
+    """
+    with requests.Session() as s:
+        s.headers.update({
+            "User-Agent": UA,
+            "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8",
+        })
+        first = s.get(url, timeout=TIMEOUT, allow_redirects=True)
+        if first.content.startswith(b"%PDF-"):
+            return first
+        if "/site/archivee-archived.html" not in first.url:
+            return first
+        return s.get(url, headers={"Referer": first.url},
+                     timeout=TIMEOUT, allow_redirects=True)
+
+
 def fetch_one(src: dict) -> dict:
     sid = src["id"]
     fmt = src.get("format", "pdf")
@@ -239,6 +260,9 @@ def fetch_one(src: dict) -> dict:
     try:
         if "ec.europa.eu/research/participants/documents/downloadPublic" in src["url"]:
             resp = _fetch_ec_deliverable(src["url"])
+        elif (urlparse(src["url"]).netloc.lower().removeprefix("www.") == "publications.gc.ca"
+              and "/collections/" in urlparse(src["url"]).path):
+            resp = _fetch_publications_gc_ca(src["url"])
         else:
             resp = requests.get(src["url"],
                                 headers={"User-Agent": ua,
