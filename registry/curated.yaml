@@ -4664,3 +4664,67 @@ sources:
     license: cc-by
     topic: building_energy
     format: pdf
+  # ---------- Historic Canadian building codes (Government of Canada, Crown copyright expired) — NEW VEIN 2026-07-27 ----------
+  - id: can-nbc-1960-en
+    title: "National Building Code of Canada 1960"
+    url: "https://publications.gc.ca/collections/collection_2025/cnrc-nrc/NR24-28-1960-eng.pdf"
+    source: canada_publications
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: can-nbc-1960-fr
+    title: "Code national du bâtiment Canada, 1960"
+    url: "https://publications.gc.ca/collections/collection_2025/cnrc-nrc/NR24-28-1960-fra.pdf"
+    source: canada_publications
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: can-nbc-1965-en
+    title: "National Building Code of Canada 1965"
+    url: "https://publications.gc.ca/collections/collection_2025/cnrc-nrc/NR24-28-1965-eng.pdf"
+    source: canada_publications
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: can-nbc-1965-fr
+    title: "Code national du bâtiment Canada, 1965"
+    url: "https://publications.gc.ca/collections/collection_2025/cnrc-nrc/NR24-28-1965-fra.pdf"
+    source: canada_publications
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: can-nbc-1970-en
+    title: "National Building Code of Canada 1970"
+    url: "https://publications.gc.ca/collections/collection_2025/cnrc-nrc/NR24-28-1970-eng.pdf"
+    source: canada_publications
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: can-nbc-1970-fr
+    title: "Code national du bâtiment Canada, 1970"
+    url: "https://publications.gc.ca/collections/collection_2025/cnrc-nrc/NR24-28-1970-fra.pdf"
+    source: canada_publications
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: can-structural-design-1965-en
+    title: "Structural Information for Building Design in Canada 1965"
+    url: "https://publications.gc.ca/collections/collection_2025/cnrc-nrc/NR24-28-1965-3-eng.pdf"
+    source: canada_publications
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: can-structural-design-1965-fr
+    title: "Renseignements de construction pour le calcul des bâtiments au Canada 1965"
+    url: "https://publications.gc.ca/collections/collection_2025/cnrc-nrc/NR24-28-1965-3-fra.pdf"
+    source: canada_publications
+    license: public-domain
+    topic: structures_civil
+    format: pdf
+  - id: can-residential-standards-1965-en
+    title: "Residential Standards Canada 1965"
+    url: "https://publications.gc.ca/collections/collection_2025/cnrc-nrc/NR24-84-1965-eng.pdf"
+    source: canada_publications
+    license: public-domain
+    topic: construction
+    format: pdf

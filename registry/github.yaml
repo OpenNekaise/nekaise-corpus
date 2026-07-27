@@ -5637,3 +5637,10 @@ sources:
     license: open
     topic: structures_civil
     format: txt
+  - id: gh-pyfem-doc-tutorials-index
+    title: 'PyFEM: doc/tutorials/index.md'
+    url: https://raw.githubusercontent.com/jjcremmers/PyFEM/main/doc/tutorials/index.md
+    source: gh_pyfem
+    license: open
+    topic: structures_civil
+    format: md
