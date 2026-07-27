@@ -53,6 +53,10 @@ individual [`find-sources`](../find-sources/SKILL.md) / [`crawl-docs`](../crawl-
 and `python scripts/find_github.py`.
 
 ## Notes
-- **License discipline:** `raw/` and `text/` are git-ignored and never committed. The daily job only
-  ever commits `registry/` + `manifest/` + `pruned_urls.txt` (pointers + provenance), never the bytes.
+- **License discipline:** `raw/`, `text/` and `corpus/` are git-ignored and never committed. The daily
+  job only ever commits `registry/` + `manifest/` + `pruned_urls.txt` (pointers + provenance), never
+  the bytes.
+- **Three stages:** `raw/` (bytes) → `text/` (verbatim extraction) → `corpus/` (cleaned, training-ready).
+  Run `python scripts/clean_corpus.py` after the loader so `corpus/` exists — it is what a training run
+  reads. Full playbook: [`clean-corpus`](../clean-corpus/SKILL.md).
 - The daily job **commits but does not push** — growth is unattended, publishing is your call.

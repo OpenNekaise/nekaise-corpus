@@ -27,9 +27,11 @@ open223), and similar references that aren't a single PDF.
    writes them into `registry/crawl.yaml` as `html` sources (id prefix `crawl-`). Pick the right `--topic`
    and a redistributable `--license`.
 
-3. **Load + gate:** run the **`load-corpus`** skill (`python scripts/build_corpus.py`) to fetch each
-   page, then `python scripts/prune_corpus.py --apply` to drop thin nav / stub / off-topic pages (it
-   gates `crawl-` pages too). Spot-check a few `text/crawl-*.md`.
+3. **Load + gate + clean:** run the **`load-corpus`** skill (`python scripts/build_corpus.py`) to fetch
+   each page, then `python scripts/prune_corpus.py --apply` to drop thin nav / stub / off-topic pages
+   (it gates `crawl-` pages too), then `python scripts/clean_corpus.py` to rebuild `corpus/`.
+   Spot-check a few `text/crawl-*.md`. Crawled HTML is the junkiest class in the corpus (the `crawl`
+   shard measured ~45% non-prose), so it is worth a closer look than a PDF vein.
 
 ## Reproducibility
 

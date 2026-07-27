@@ -50,16 +50,25 @@ hand as `/dig` any time you want to grow the corpus in one shot.
    `crawl-`/`gh-`/`oer-`), never hand-curated ones; it edits the registry shards in place and validates
    the result before writing.
 
-5. **Commit locally — do NOT push:**
+5. **Clean** — rebuild the training-ready stage so it mirrors the post-prune manifest
+   ([`clean-corpus`](../clean-corpus/SKILL.md)):
+   ```
+   python scripts/clean_corpus.py && python scripts/clean_corpus.py --check
+   ```
+   Incremental; only new/changed docs are rewritten. `--check` must pass before you commit — it
+   exits non-zero if `corpus/` and the manifest disagree. **Never change the ruleset as part of a
+   dig** — cleaning policy is the maintainer's call, not a growth-round decision.
+
+6. **Commit locally — do NOT push:**
    ```
    git add registry/ manifest/ pruned_urls.txt
    git commit -m "dig: +<N> docs -> <total> docs / <tokens> tokens (<what landed>)"
    ```
-   Only `registry/` + `manifest/` + `pruned_urls.txt` are committed (pointers + provenance). `raw/` and `text/`
-   are git-ignored and must never be committed. **Never `git push`** — the maintainer reviews the
-   commits and pushes.
+   Only `registry/` + `manifest/` + `pruned_urls.txt` are committed (pointers + provenance). `raw/`,
+   `text/` and `corpus/` are git-ignored and must never be committed. **Never `git push`** — the
+   maintainer reviews the commits and pushes.
 
-6. **Summarize** what landed this round (docs added by source/topic, new total, any failures) so the
+7. **Summarize** what landed this round (docs added by source/topic, new total, any failures) so the
    commit log and `logs/dig-*.log` tell the story.
 
 ## Notes

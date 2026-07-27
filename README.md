@@ -24,10 +24,10 @@ There are no commands to learn. Clone the repo, open it in **Claude Code** or **
 the agent what you want — it reads [`AGENTS.md`](AGENTS.md) and the skills, and operates the corpus
 for you:
 
-- *“**Get me the corpus.**”* — the agent fetches every indexed source into `raw/` + `text/` on your
-  machine, verifies the failures, and reports what you got. Once you're caught up it can enable a
-  **daily growth job** (crontab, ≤3h/day) that keeps discovering new open data — committing locally,
-  never pushing.
+- *“**Get me the corpus.**”* — the agent fetches every indexed source into `raw/` → `text/` →
+  `corpus/` on your machine, verifies the failures, and reports what you got. Once you're caught up it
+  can enable a **daily growth job** (crontab, ≤3h/day) that keeps discovering new open data —
+  committing locally, never pushing.
 - *“**Find more sources and grow it.**”* — one growth round: the agent sweeps 14 discovery backends
   (papers, patents, books, multilingual repositories), judges relevance and license, loads what
   survives, and prunes the junk. The excavation state is committed (`registry/rotation.json`), so
@@ -80,22 +80,25 @@ flowchart LR
     M --> P["prune_corpus.py — quality gate<br/>multilingual on-topic check, dedup,<br/>golden-tested (tests/)"]
     P -.->|"edits registry in place"| R
     P -.->|"pruned_urls.txt — never re-churned"| FINDERS
+    D --> C["clean_corpus.py — cleaning stage<br/>strips headers/footers, TOC leaders, OCR debris<br/>structural rules only (CJK-safe), golden-tested"]
+    C --> O["corpus/<br/>cleaned, training-ready — git-ignored"]
 ```
 
-**discover → register → fetch → gate → repeat.** The agent runs this loop and keeps widening it —
-new backends are ~100-line scripts on top of the shared `registry.py`/`quality.py` machinery.
+**discover → register → fetch → gate → clean → repeat.** The agent runs this loop and keeps widening
+it — new backends are ~100-line scripts on top of the shared `registry.py`/`quality.py` machinery.
+The gate decides *which documents* survive; the cleaner decides *which lines within them* do.
 
 | Path | What it is |
 |---|---|
 | `registry/` | The **registry** — one YAML shard per vein (`curated.yaml` is the hand-picked seed; 15+ machine shards) + `rotation.json`, the committed excavation state that makes the growth loop resumable by anyone. |
 | `manifest/` | **Provenance** — id, url, license, topic, sha256, bytes, quality metrics for every fetched doc; one `.jsonl` shard per vein (patents split by country) so no file nears GitHub push limits. |
 | `pruned_urls.txt` | **Blocklist** of everything the quality gate dropped — discovery never re-churns it. |
-| `scripts/` | The **machinery** — the loader, 14 discovery backends, the quality gate, shared registry/quality libs, cron runners. |
-| `.claude/skills/` | The **playbooks** the agent follows (`go` · `load-corpus` · `find-sources` · `crawl-docs` · `dig`). |
-| `tests/` | **Golden tests** pinning the quality gate's verdicts per document class, wired to CI. |
+| `scripts/` | The **machinery** — the loader, 14 discovery backends, the quality gate, the cleaning stage, shared registry/quality libs, cron runners. |
+| `.claude/skills/` | The **playbooks** the agent follows (`go` · `load-corpus` · `find-sources` · `crawl-docs` · `clean-corpus` · `dig`). |
+| `tests/` | **Golden tests** pinning the quality gate's verdicts per document class and the cleaner's keep/drop rules, wired to CI. |
 | `workspace/` | The agent's **scratch space** (git-ignored). |
 | [`AGENTS.md`](AGENTS.md) | The **operating manual** your coding agent reads first. |
-| `raw/`, `text/` | **Git-ignored.** Your local copy of the bytes / extracted text. Never committed. |
+| `raw/`, `text/`, `corpus/` | **Git-ignored.** Your local copy in three stages: original bytes → verbatim extraction → cleaned, training-ready text. Never committed. |
 
 ## Reproducibility
 
@@ -104,7 +107,9 @@ the loader compares each download against it and reports `reproduced / drifted /
 (arXiv, `*.gov`) reproduce reliably; any dead or changed source is reported, never silently dropped.
 The raw bytes + sha256 are the reproducibility anchor; the extracted text in `text/` is derived and
 can vary slightly across parser versions (pin exact versions in `requirements.txt` if you need
-byte-identical text). Ask your agent to *"verify the corpus"* any time.
+byte-identical text). `corpus/` is derived again, from `text/` plus the cleaning ruleset recorded in
+`corpus/.ruleset` — quote that ruleset alongside the manifest if you publish results, since it is
+part of what produced your training text. Ask your agent to *"verify the corpus"* any time.
 
 ## Licensing
 
@@ -120,8 +125,8 @@ redistribute anything**:
 - **`proprietary-internal`** — copyrighted vendor/standards material (e.g. ASHRAE). Pointers for
   your own access only; **never redistribute the bytes.**
 
-`raw/` and `text/` are git-ignored for exactly this reason: this project publishes the registry,
-manifest, and loader (our curation) — never the documents themselves.
+`raw/`, `text/` and `corpus/` are git-ignored for exactly this reason: this project publishes the
+registry, manifest, loader and cleaner (our curation) — never the documents themselves.
 
 ## Contributing
 

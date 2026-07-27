@@ -33,7 +33,8 @@ you (the agent) judge relevance + license and decide what to keep.
 
 3. **Add + fetch:** use `--append` (routes entries to their registry shard), then run the
    **`load-corpus`** skill (`python scripts/build_corpus.py`) to download + verify. Inspect the new
-   `text/*.md` for quality; drop any source that extracts to junk.
+   `text/*.md` for quality; drop any source that extracts to junk. Finish with
+   `python scripts/clean_corpus.py` so the new docs reach `corpus/`, the training-ready stage.
 
 ## Notes
 

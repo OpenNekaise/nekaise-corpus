@@ -16,6 +16,10 @@ reproduced exactly (sha256 matches the manifest) vs drifted (the source changed 
 Idempotent, dedups identical bytes by sha256, checkpoints the manifest every 25 fetches. Downloads
 run in parallel but politely: at most 2 in-flight requests per host regardless of --workers. raw/
 and text/ are git-ignored; respect each source's license (see README.md).
+
+text/ is the VERBATIM extraction and stays that way — the cleaned, training-ready copy is built
+from it by the next stage, scripts/clean_corpus.py, into corpus/. Keeping the two separate is what
+lets an improved cleaning ruleset be re-applied in minutes instead of re-extracting 104k PDFs.
 """
 from __future__ import annotations
 
@@ -227,6 +231,8 @@ def fetch_one(src: dict) -> dict:
         "topic": src.get("topic", "misc"), "format": fmt,
         "status": "failed", "http_status": None, "sha256": None, "bytes": 0,
         "raw_path": None, "text_path": None, "text_chars": 0,
+        # corpus_path / corpus_chars are written by the next stage (clean_corpus.py), not here.
+        "corpus_path": None, "corpus_chars": 0,
         "error": None, "fetched_at": None,
     }
     ua = HOST_UA.get(urlparse(src["url"]).netloc.lower(), UA)

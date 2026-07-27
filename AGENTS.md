@@ -20,13 +20,33 @@ machine resumes exactly where the last one stopped.
 | `pruned_urls.txt` | **Blocklist** of URLs the quality gate dropped — finders dedup against it so discovery never re-churns pruned material. |
 | `registry/rotation.json` | **Excavation state** — the next page/offset/bucket per backend, advanced by `scripts/rotation.py` after each successful run. Committed, so the growth loop is resumable by anyone. |
 | `scripts/` | The **machinery** — loader, discovery backends, quality gate, cron/marathon runners. All run from the repo root: `python scripts/<x>.py`. |
-| `.claude/skills/` | The **skills** — step-by-step playbooks for each loop (`go` · `load-corpus` · `find-sources` · `crawl-docs` · `dig`). Claude Code picks them up natively; Codex: read the `SKILL.md` files directly. |
+| `.claude/skills/` | The **skills** — step-by-step playbooks for each loop (`go` · `load-corpus` · `find-sources` · `crawl-docs` · `clean-corpus` · `dig`). Claude Code picks them up natively; Codex: read the `SKILL.md` files directly. |
 | `workspace/` | **Your scratch space** (git-ignored). One-off helper scripts, notes, dumps go here — never the repo root. Promote durable tools into `scripts/`. |
-| `raw/` + `text/` | Your local copy of the bytes / extracted text. **Git-ignored. Never committed.** |
+| `raw/` · `text/` · `corpus/` | Your local copy, in three stages: original bytes → verbatim extraction → **cleaned, training-ready text**. **All git-ignored. Never committed.** See *The three stages* below. |
 | `logs/` | Headless dig/marathon run logs (git-ignored). |
 
 **Keep the root clean.** The root holds docs + the registry + the manifest, nothing else. New
 durable code goes in `scripts/`; experiments go in `workspace/`.
+
+## The three stages
+
+Your local copy is a pipeline, not one directory. Each stage is derived from the one before it and
+all three are git-ignored:
+
+| Stage | Written by | What it holds | Why it exists |
+|---|---|---|---|
+| `raw/<source>/<id>.<ext>` | `build_corpus.py` | Original downloaded bytes, unmodified | The **reproducibility anchor** — the manifest's `sha256` is over these bytes, so a later re-fetch is provably `reproduced` / `DRIFTED` / `new`. Also the dedup key. |
+| `text/<id>.md` | `build_corpus.py` | **Verbatim** extraction + provenance header | The re-clean substrate. Never edited in place. |
+| `corpus/<id>.md` | `clean_corpus.py` | **Cleaned, training-ready** text | What a training run reads. |
+
+**Why `text/` and `corpus/` are separate rather than one cleaned directory:** a cleaning ruleset is
+never right the first time. Re-running an improved cleaner over `corpus/` reads `text/` and takes
+minutes; folding cleaning into extraction would mean re-parsing 104k PDFs (CPU-hours) for every rule
+tweak and would make `raw/` permanently undeletable. The extra ~11GB buys cheap iteration.
+
+`corpus/` is built **from the manifest**, never from a directory listing, so it can only contain docs
+that have a provenance row — a training run over `corpus/*` cannot pick up unprovenanced text, and
+ids whose `text_path` drifted from their id get canonical `corpus/<id>.md` names automatically.
 
 ## The machinery
 
@@ -43,6 +63,47 @@ Google Patents sitemap (the biggest open vein) · `find_wiki.py` multilingual Wi
 `prune_corpus.py --apply` is the quality gate (logic in `scripts/quality.py`, golden-tested in
 `tests/`). URLs the pruner drops land in `pruned_urls.txt` (committed) and every finder skips them —
 rounds never re-churn pruned material.
+
+`scripts/clean_corpus.py` is the **cleaning stage**: `text/` → `corpus/`. The pruner is a
+*document-level* gate (keep or drop a whole doc); the cleaner works *within* a document, stripping
+PDF artefacts that survive any doc-level test — running headers, contents dot-leaders, bare page
+numbers, OCR punctuation debris, patent identifier blocks, Modelica diagram geometry. Measured over
+the **full 103,931-doc corpus**: all rules together remove **966.9M of 13,089.4M chars (7.39%)**,
+`repeated_boilerplate` alone accounting for 529.4M.
+
+Which rules run is **opt-in and currently `none`** — the default is a faithful pass-through, so
+`corpus/` is complete and byte-identical to `text/` until a ruleset is chosen. Cleaning *policy* is a
+separate decision from this machinery.
+
+```
+python scripts/clean_corpus.py --list-rules          # what's available
+python scripts/clean_corpus.py --report --sample 40  # measure each rule, write nothing
+python scripts/clean_corpus.py --check               # verify corpus/ agrees with the manifest
+python scripts/clean_corpus.py --rules all           # apply everything
+python scripts/clean_corpus.py --rules toc_leaders,page_markers
+```
+
+Timings on a 40-core box: pass-through rebuild **6s**, full ruleset **46s** (11 min CPU), `--check`
+**14s**. Process-parallel, not thread-parallel — the rules are regex-bound and a thread pool pins at
+~1 core.
+
+**Operational hazards, both hit while building this:**
+
+- **Interrupting a run leaves cleaned files whose mtime beats their `text/` source**, which the
+  incremental check would accept as up-to-date. Guarded: the stamp is written `IN-PROGRESS <ruleset>`
+  *before* any file is touched and replaced with the real ruleset only after the manifest is written,
+  so any interruption forces a full rebuild. Never hand-edit `corpus/.ruleset`.
+- **`kill <pid>` on a run orphans its 16 worker processes**, which keep writing to `corpus/` after the
+  parent is gone. Use `pkill -9 -f clean_corpus.py`, then re-run — and if `corpus/` and the manifest
+  ever disagree, `--check` names the drift and `--force` repairs it.
+
+Every rule is **structural** (repetition- or shape-based), never a letters-per-character threshold.
+That is deliberate: an alpha-fraction rule reads real Japanese prose interleaved with figures
+(`測定は 2019 年 3 月 14（暖房期）に`) as number soup — the trap `quality.py` already hit once
+(`MIN_ALPHA_CJK`). Structural rules are script-agnostic by construction, and `tests/test_clean.py`
+pins both directions: what each rule must drop, and the CJK prose / numeric data tables / Modelica
+equations it must never touch. **Numeric tables are content, not noise** — `Asphalt workers 2.81
+(1.11-7.13)` and `Concrete C25/30 25 30 2400 31` are real AEC knowledge and no rule may eat them.
 
 ## The operating loop
 
@@ -67,10 +128,16 @@ loads everything indexed (below), and — once the machine is fully caught up �
 3. **crawl** — [`crawl-docs`](.claude/skills/crawl-docs/SKILL.md): `python scripts/crawl_docs.py` →
    add a multi-page documentation site (software / ontology docs that aren't a single PDF).
 4. **prune** — `python scripts/prune_corpus.py --apply` → drop thin / garbage / non-English /
-   off-topic discovered & crawled docs (hand-curated sources are left alone).
+   off-topic discovered & crawled docs (hand-curated sources are left alone). *Document-level.*
+5. **clean** — [`clean-corpus`](.claude/skills/clean-corpus/SKILL.md): `python scripts/clean_corpus.py`
+   → build `corpus/` from `text/`, then `--check`. *Within-document.* Run it after every prune so
+   `corpus/` mirrors the manifest; it is incremental (only changed docs are rewritten) unless the
+   ruleset changed, in which case it rebuilds everything.
 
-Then re-load and repeat. **The mission is coverage** — keep *widening* discovery (new backends, new
-source types, deeper enumeration of known collections), not just re-fetching the popular head.
+Then re-load and repeat. **The mission is the loop itself** — an autonomous grower *and curator*.
+Keep *widening* discovery (new backends, new source types, deeper enumeration of known collections)
+and keep *sharpening* curation (the gate, the cleaner). Being the biggest and the cleanest AEC
+corpus is the by-product; the deliverable is a loop that gets there without a human in it.
 
 **Grow on autopilot.** [`dig`](.claude/skills/dig/SKILL.md) runs one full growth round (find_sources +
 find_github + web-search a new vein → append → load → prune → **commit locally, never push**).
@@ -80,8 +147,10 @@ new sources land as local commits for you to review + push. Remove with
 
 ## Hard rules
 
-- **Never commit `raw/` or `text/`** — copyrighted content under mixed licenses. Only the registry,
-  manifest, code, and docs are tracked.
+- **Never commit `raw/`, `text/`, or `corpus/`** — copyrighted content under mixed licenses. Only the
+  registry, manifest, code, and docs are tracked.
+- **`text/` is verbatim — never clean it in place.** Cleaning writes `corpus/`. Editing `text/` throws
+  away the ability to re-clean, and `raw/` is the only way back.
 - **Respect each source's `license`:** `public-domain` (US gov) · `cc-by` / `cc-by-sa` (attribute) ·
   `open` (arXiv / OA — check per-source terms) · `proprietary-internal` (vendor / standards —
   **pointers only, never add the bytes**).

@@ -104,7 +104,7 @@ def main() -> None:
     removed = registry.remove_ids(set(drop))  # validate/rewrite the registry BEFORE touching files
     for r in manifest:
         if r["id"] in drop:
-            for p in (r.get("raw_path"), r.get("text_path")):
+            for p in (r.get("raw_path"), r.get("text_path"), r.get("corpus_path")):
                 if p and (HERE / p).exists():
                     (HERE / p).unlink()
     keep = [r for r in manifest if r["id"] not in drop]

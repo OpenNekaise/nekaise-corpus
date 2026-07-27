@@ -20,6 +20,9 @@ their own copy.
    into `text/<id>.md`, dedups by sha256, and writes the sharded manifest (`manifest/*.jsonl`). Idempotent — re-running only
    fetches what is missing. `--force` re-fetches everything; `--only <topic>` limits scope.
 
+   `text/` is the **verbatim** extraction and must stay that way — never clean or edit it in place.
+   The cleaned copy is a separate stage ([`clean-corpus`](../clean-corpus/SKILL.md), step 3 below).
+
 2. **Verify** (your job, not the script's):
    - Read the printed summary: how many `ok` vs `failed`, by topic.
    - Investigate every failure. A 404 = a moved/dead URL → fix it in the registry. A DNS error may
@@ -29,7 +32,20 @@ their own copy.
    - Optionally re-hash a downloaded file and confirm it matches its `sha256` in the manifest
      (`python scripts/build_corpus.py --verify` re-hashes everything).
 
-3. **Summarize** what was fetched (doc count, MB, topics) and any license caveats.
+3. **Build `corpus/`** — the cleaned, training-ready stage:
+   ```
+   python scripts/clean_corpus.py && python scripts/clean_corpus.py --check
+   ```
+   Writes `corpus/<id>.md` from each manifest row's `text/` file and records `corpus_path` /
+   `corpus_chars`. Incremental; `--check` must pass. Run it after every load and every prune so
+   `corpus/` mirrors the manifest.
+
+   **Do not change the cleaning ruleset here** — it is `none` (pass-through) by the maintainer's
+   decision. The [`clean-corpus`](../clean-corpus/SKILL.md) skill is the full playbook: measuring
+   rules, proposing changes, and the traps (numeric tables are content; never write a
+   letters-per-character rule).
+
+4. **Summarize** what was fetched (doc count, MB, topics) and any license caveats.
 
 ## To grow the corpus
 
@@ -39,7 +55,7 @@ vendor/standards material `proprietary-internal` and do NOT add or redistribute 
 
 ## License discipline (important)
 
-`raw/` and `text/` are git-ignored and must NEVER be committed — they hold copyrighted content under
-mixed licenses (`public-domain` / `cc-by-sa` / `open` / `proprietary-internal`). This repo publishes
-only the registry, the loader, and the provenance manifest. Respect each source's `license` field
-before any downstream use that leaves this machine.
+`raw/`, `text/` and `corpus/` are git-ignored and must NEVER be committed — they hold copyrighted
+content under mixed licenses (`public-domain` / `cc-by-sa` / `open` / `proprietary-internal`). This
+repo publishes only the registry, the loader, the cleaner, and the provenance manifest. Respect each
+source's `license` field before any downstream use that leaves this machine.
