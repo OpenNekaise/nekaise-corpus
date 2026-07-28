@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.metadata
 import io
 import re
 import shutil
@@ -76,6 +77,33 @@ HOST_DELAY: dict[str, float] = {
     "www.boverket.se": 10.0,      # robots.txt Crawl-delay: 10 — respect it
 }
 HOST_UA: dict[str, str] = {}
+
+
+def _version(package: str) -> str:
+    try:
+        return importlib.metadata.version(package)
+    except importlib.metadata.PackageNotFoundError:
+        return "missing"
+
+
+def _binary_version(name: str) -> str:
+    if not shutil.which(name):
+        return "missing"
+    try:
+        out = subprocess.run(
+            [name, "-v"], capture_output=True, text=True, timeout=5,
+        )
+        line = (out.stdout or out.stderr).splitlines()[0]
+        return line.strip().replace(";", ",")
+    except Exception:
+        return "unknown"
+
+
+# Stored on newly extracted rows. Old rows remain valid and gain it only when re-extracted.
+EXTRACTOR_VERSION = (
+    f"build_corpus/2;pypdf={_version('pypdf')};beautifulsoup4={_version('beautifulsoup4')};"
+    f"pdftotext={_binary_version('pdftotext')}"
+)
 
 _host_sems: dict[str, threading.BoundedSemaphore] = {}
 _host_sems_lock = threading.Lock()
@@ -267,6 +295,9 @@ def fetch_one(src: dict) -> dict:
         "corpus_path": None, "corpus_chars": 0,
         "error": None, "fetched_at": None,
     }
+    for key in registry.OPTIONAL_FIELDS:
+        if src.get(key) not in (None, ""):
+            rec[key] = src[key]
     ua = HOST_UA.get(urlparse(src["url"]).netloc.lower(), UA)
     try:
         if "ec.europa.eu/research/participants/documents/downloadPublic" in src["url"]:
@@ -327,9 +358,12 @@ def fetch_one(src: dict) -> dict:
                       f"source: {rec['url']}\nlicense: {rec['license']}\n"
                       f"topic: {rec['topic']}\n\n---\n\n")
             tp = TEXT / f"{sid}.md"
-            tp.write_text(header + txt)
+            rendered = header + txt
+            tp.write_text(rendered)
             rec["text_path"] = str(tp.relative_to(HERE))
             rec["text_chars"] = len(txt)
+            rec["text_sha256"] = sha256_bytes(rendered.encode())
+            rec["extractor_version"] = EXTRACTOR_VERSION
             rec["quality"] = quality.metrics(txt)  # prune verdicts read this, not the file
 
         rec["status"] = "ok"
@@ -387,6 +421,8 @@ def main() -> None:
                 (TEXT / f"{r['id']}.md").write_text(header + txt)
                 r["text_path"] = f"text/{r['id']}.md"
                 r["text_chars"] = len(txt)
+                r["text_sha256"] = sha256_bytes((header + txt).encode())
+                r["extractor_version"] = EXTRACTOR_VERSION
                 r["quality"] = quality.metrics(txt)
             done += 1
         write_manifest(manifest)

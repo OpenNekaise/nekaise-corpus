@@ -13,10 +13,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install pyyaml pytest
+      - run: pip install -r requirements.txt pytest
       - name: compile all scripts
         run: python -m py_compile scripts/*.py
       - name: lint registry + manifest
         run: python scripts/lint_registry.py
+      - name: architecture contracts
+        run: python scripts/check_contracts.py
       - name: golden tests (quality gate + registry I/O)
         run: pytest tests/ -q

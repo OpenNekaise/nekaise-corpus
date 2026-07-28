@@ -13,6 +13,7 @@ from collections import Counter
 from pathlib import Path
 
 import registry
+import ops
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 README = HERE / "README.md"
@@ -69,7 +70,7 @@ shipped; run the loader to fetch your own copy. The corpus grows as sources are 
         return
     new = text[:i] + block + text[j + len(END):]
     if new != text:
-        README.write_text(new)
+        ops.atomic_write_text(README, new)
         print(f"update_readme_stats: {len(ok):,} docs / ~{tok/1e6:.0f}M tokens")
     else:
         print("update_readme_stats: no change")

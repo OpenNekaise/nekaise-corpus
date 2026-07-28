@@ -16,14 +16,52 @@ Dropped URLs land in pruned_urls.txt so discovery never re-churns them.
 from __future__ import annotations
 
 import argparse
+import os
+import time
 from collections import Counter
 from pathlib import Path
 
 import blocklist
+import ops
 import quality
 import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
+
+
+def write_prune_ledger(manifest: list[dict], drop: dict[str, str],
+                       blocklisted_urls: set[str]) -> int:
+    """Persist the quality decision, not just its URL side effect.
+
+    pruned_urls.txt remains the fast compatibility blocklist.  This JSONL ledger preserves why a
+    source was rejected so discovery quality can be measured by backend/query over time.
+    """
+    if not drop:
+        return 0
+    path = registry.REG_DIR / "pruned.jsonl"
+    now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    run_id = os.environ.get("NEKAISE_RUN_ID")
+    by_id = {r["id"]: r for r in manifest}
+    with ops.named_lock("prune-ledger", timeout=30):
+        for sid in sorted(drop):
+            r = by_id[sid]
+            ops.append_jsonl(path, {
+                "id": sid,
+                "url": r.get("url"),
+                "title": r.get("title"),
+                "reason": drop[sid],
+                "source": r.get("source"),
+                "topic": r.get("topic"),
+                "license": r.get("license"),
+                "http_status": r.get("http_status"),
+                "error": r.get("error"),
+                "sha256": r.get("sha256"),
+                "quality": r.get("quality"),
+                "blocklisted": blocklist.normalize(r.get("url")) in blocklisted_urls,
+                "pruned_at": now,
+                **({"run_id": run_id} if run_id else {}),
+            })
+    return len(drop)
 
 
 def main() -> None:
@@ -100,7 +138,12 @@ def main() -> None:
         if "certificate" in err or "ssl" in err:
             return True  # cert mismatch = decommissioned/re-pointed host, permanently dead
         return not any(k in err for k in ("timeout", "timed out", "connection", "too many requests"))
-    blocked = blocklist.add(r.get("url") for r in manifest if r["id"] in drop and _blocklistable(r))
+    block_urls = {
+        blocklist.normalize(r.get("url")) for r in manifest
+        if r["id"] in drop and _blocklistable(r) and r.get("url")
+    }
+    blocked = blocklist.add(block_urls)
+    write_prune_ledger(manifest, drop, block_urls)
     removed = registry.remove_ids(set(drop))  # validate/rewrite the registry BEFORE touching files
     for r in manifest:
         if r["id"] in drop:

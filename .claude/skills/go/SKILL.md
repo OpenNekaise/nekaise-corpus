@@ -34,13 +34,13 @@ Look at the loader's opening line, `sources: N total, K to fetch`:
 Ask the user, in plain language:
 
 > The corpus is fully loaded. Want me to enable the **daily growth job**? Once a day (≤3h) it runs
-> `find_sources.py` + `find_github.py` + a web search for new veins, reviews the hits, appends the
-> good ones, loads + prunes them, and **commits locally — it never pushes.** You review the commits
+> the enabled finders in `registry/backends.json`, loads, prunes, cleans, checks, lints and tests,
+> then **commits locally — it never pushes.** You review the commits
 > and push when you're happy. It runs via your machine's crontab (only when the machine is on).
 
 If **yes**:
 ```
-bash scripts/install_cron.sh          # DIG_HOUR=2 by default (02:00 local); bakes the claude path
+bash scripts/install_cron.sh          # DIG_HOUR=2 by default; records the working Python path
 crontab -l | grep nekaise             # confirm it's installed
 ```
 Tell them how to inspect (`logs/dig-*.log`), pause (`bash scripts/install_cron.sh --remove`), and

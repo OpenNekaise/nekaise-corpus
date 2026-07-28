@@ -4,6 +4,8 @@ Each seed is a real line class the audit found in text/. The KEEP cases matter m
 DROP cases: this stage runs over 104k docs, and a rule that eats real content is far more
 expensive than one that leaves junk behind. If you widen a rule, these tell you what you broke.
 """
+import hashlib
+
 import clean_corpus as cc
 
 
@@ -158,6 +160,22 @@ def test_header_is_always_preserved():
     cleaned, _ = cc.clean_body(body, ["page_markers"])
     assert "real body text here" in cleaned
     assert "\n7" not in cleaned
+
+
+def test_clean_worker_returns_hash_for_written_output(tmp_path, monkeypatch):
+    text = tmp_path / "text"
+    corpus = tmp_path / "corpus"
+    text.mkdir()
+    corpus.mkdir()
+    doc = "# T\n\nsource: https://e.org\n\n---\n\nreal body\n"
+    (text / "x.md").write_text(doc)
+    monkeypatch.setattr(cc, "HERE", tmp_path)
+    monkeypatch.setattr(cc, "CORPUS", corpus)
+
+    sid, chars, _, status, digest = cc._clean_one(("x", "text/x.md", [], False))
+
+    assert (sid, chars, status) == ("x", len("real body\n"), "written")
+    assert digest == hashlib.sha256((corpus / "x.md").read_bytes()).hexdigest()
 
 
 def test_pass_through_is_byte_identical():

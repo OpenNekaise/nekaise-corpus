@@ -28,8 +28,8 @@ for you:
   `corpus/` on your machine, verifies the failures, and reports what you got. Once you're caught up it
   can enable a **daily growth job** (crontab, ≤3h/day) that keeps discovering new open data —
   committing locally, never pushing.
-- *“**Find more sources and grow it.**”* — one growth round: the agent sweeps 14 discovery backends
-  (papers, patents, books, multilingual repositories), judges relevance and license, loads what
+- *“**Find more sources and grow it.**”* — one growth round: the agent sweeps 24 configured discovery
+  backends, 20 currently enabled (papers, patents, books, multilingual repositories), loads what
   survives, and prunes the junk. The excavation state is committed (`registry/rotation.json`), so
   any agent on any machine resumes exactly where the last one stopped.
 - *“**Add the EnergyPlus docs.**”* / *“重点挖一些中文的暖通资料”* — point it at anything specific:
@@ -40,16 +40,16 @@ for you:
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **105,424** |
+| **Documents** | **105,635** |
 | **Raw originals** | **~289G** (PDF / HTML / source code) |
-| **Extracted text** | **~13G** (~13.260B chars, **≈3.315B tokens**) |
+| **Extracted text** | **~13G** (~13.269B chars, **≈3.317B tokens**) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): building_energy 40,199 · equipment_systems 22,207 · construction 15,469 · structures_civil 9,569 · materials 4,948 · infrastructure 3,794 · architecture 3,237 · standards_protocols 2,666 · urban 1,568 · controls_bas 1,394 · commissioning_fdd 373.
+**By topic** (a source gets one at registration): building_energy 40,200 · equipment_systems 22,207 · construction 15,493 · structures_civil 9,637 · materials 4,969 · infrastructure 3,853 · architecture 3,237 · standards_protocols 2,666 · urban 1,606 · controls_bas 1,394 · commissioning_fdd 373.
 
-**By license:** open 39,358 · public-domain 50,267 · cc-by-sa 1,610 · cc-by 14,184 · proprietary-internal 5.
+**By license:** open 39,358 · public-domain 50,268 · cc-by-sa 1,610 · cc-by 14,394 · proprietary-internal 5.
 
-_Snapshot of the live registry (2026-07-27) — auto-generated from the manifest. The bytes are not
+_Snapshot of the live registry (2026-07-28) — auto-generated from the manifest. The bytes are not
 shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._
 <!-- STATS:END -->
 
@@ -65,21 +65,21 @@ structural/FEA `.py`).
 
 ```mermaid
 flowchart LR
-    subgraph FINDERS ["14 discovery backends (scripts/find_*.py)"]
+    subgraph FINDERS ["24 configured discovery backends (scripts/find_*.py)"]
         direction TB
         F1["papers & reports<br/>OpenAlex · OSTI · arXiv · NIST(Crossref) · Zenodo · OpenAIRE"]
         F2["books & heritage<br/>OAPEN (all languages) · Internet Archive (pre-1929)"]
         F3["patents<br/>Google Patents sitemap, 1900→now"]
         F4["multilingual<br/>Wikipedia ×9 · KIT (de) · Austria (de) · ADEME (fr) · BRI/NILIM (ja)"]
     end
-    FINDERS -->|"propose entries<br/>(dedup vs manifest + blocklist)"| R
-    R["registry/*.yaml — sharded registry<br/>+ rotation.json (committed excavation state)"]
+    FINDERS -->|"propose entries<br/>(dedup via rebuildable SQLite index)"| R
+    R["registry/*.yaml — sharded registry<br/>+ backends.json + rotation.json"]
     R --> B["build_corpus.py — the loader<br/>parallel, ≤2 req/host, WAF/TLS fallback,<br/>pypdf→pdftotext rescue, sha256 + quality metrics"]
     B --> D["raw/ + text/<br/>(your machine only — git-ignored)"]
     B --> M["manifest/*.jsonl — sharded manifest<br/>provenance: url · license · sha256 · metrics"]
     M --> P["prune_corpus.py — quality gate<br/>multilingual on-topic check, dedup,<br/>golden-tested (tests/)"]
     P -.->|"edits registry in place"| R
-    P -.->|"pruned_urls.txt — never re-churned"| FINDERS
+    P -.->|"pruned_urls.txt + pruned.jsonl<br/>blocklist + decision provenance"| FINDERS
     D --> C["clean_corpus.py — cleaning stage<br/>strips headers/footers, TOC leaders, OCR debris<br/>structural rules only (CJK-safe), golden-tested"]
     C --> O["corpus/<br/>cleaned, training-ready — git-ignored"]
 ```
@@ -90,10 +90,10 @@ The gate decides *which documents* survive; the cleaner decides *which lines wit
 
 | Path | What it is |
 |---|---|
-| `registry/` | The **registry** — one YAML shard per vein (`curated.yaml` is the hand-picked seed; 15+ machine shards) + `rotation.json`, the committed excavation state that makes the growth loop resumable by anyone. |
+| `registry/` | The **registry** — one YAML shard per vein, `backends.json` control-plane config, `rotation.json` resumable excavation state, and the structured prune-decision ledger. |
 | `manifest/` | **Provenance** — id, url, license, topic, sha256, bytes, quality metrics for every fetched doc; one `.jsonl` shard per vein (patents split by country) so no file nears GitHub push limits. |
 | `pruned_urls.txt` | **Blocklist** of everything the quality gate dropped — discovery never re-churns it. |
-| `scripts/` | The **machinery** — the loader, 14 discovery backends, the quality gate, the cleaning stage, shared registry/quality libs, cron runners. |
+| `scripts/` | The **machinery** — `run_round.py` is the fail-closed control plane; finders, loader, quality gate, cleaner, local SQLite index and cron runners sit behind it. |
 | `.claude/skills/` | The **playbooks** the agent follows (`go` · `load-corpus` · `find-sources` · `crawl-docs` · `clean-corpus` · `dig`). |
 | `tests/` | **Golden tests** pinning the quality gate's verdicts per document class and the cleaner's keep/drop rules, wired to CI. |
 | `workspace/` | The agent's **scratch space** (git-ignored). |
@@ -106,10 +106,25 @@ A clone gets the **same corpus** we have (`git clone --depth 1` — history not 
 the loader compares each download against it and reports `reproduced / drifted / new`. Stable hosts
 (arXiv, `*.gov`) reproduce reliably; any dead or changed source is reported, never silently dropped.
 The raw bytes + sha256 are the reproducibility anchor; the extracted text in `text/` is derived and
-can vary slightly across parser versions (pin exact versions in `requirements.txt` if you need
-byte-identical text). `corpus/` is derived again, from `text/` plus the cleaning ruleset recorded in
+can vary slightly across parser versions (use the exact versions in `requirements.lock` if you need
+byte-identical text; install `requirements.lock` for the extraction versions used by this checkout).
+Newly extracted rows record the extractor version and text hash. `corpus/` is derived again, from
+`text/` plus the cleaning ruleset recorded in
 `corpus/.ruleset` — quote that ruleset alongside the manifest if you publish results, since it is
 part of what produced your training text. Ask your agent to *"verify the corpus"* any time.
+
+## Reliable operation
+
+`python scripts/run_round.py --commit` is the canonical autonomous round. It holds a repository
+lock and runs discovery → fetch → prune → clean → check → README stats → index refresh → lint →
+tests. Any non-zero required step prevents commit and push. `dig.sh` and `marathon.sh` are thin
+wrappers around this same state machine; local run events are written under `logs/`. Normal failures
+roll tracked state back. A hard kill leaves a snapshot recoverable with
+`python scripts/run_round.py --recover latest`.
+
+The Git-tracked YAML/JSONL files remain the source of truth. `workspace/corpus-index.sqlite3` is a
+git-ignored acceleration index, automatically invalidated by source-file signatures and safe to
+delete or rebuild with `python scripts/corpus_index.py rebuild`.
 
 ## Licensing
 

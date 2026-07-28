@@ -18,15 +18,16 @@ if [ "${1:-}" = "--remove" ]; then
 fi
 
 HOUR="${DIG_HOUR:-2}"
-CLAUDE_BIN="${CLAUDE_BIN:-$(command -v claude || true)}"
-if [ -z "$CLAUDE_BIN" ]; then
-  echo "ERROR: claude CLI not found on PATH. Re-run as: CLAUDE_BIN=/path/to/claude bash scripts/install_cron.sh" >&2
+if [ -z "${PYTHON_BIN:-}" ]; then
+  if [ -x "$REPO/.venv/bin/python" ]; then PYTHON_BIN="$REPO/.venv/bin/python"
+  else PYTHON_BIN="$(command -v python3 || command -v python || true)"; fi
+fi
+if [ -z "$PYTHON_BIN" ] || ! "$PYTHON_BIN" -c "import requests,yaml,pypdf,bs4" 2>/dev/null; then
+  echo "ERROR: corpus Python dependencies are missing. Create .venv or pass PYTHON_BIN=/path/to/python." >&2
   exit 1
 fi
-
 chmod +x "$REPO/scripts/dig.sh"
-# bake the resolved claude path into the line — cron's PATH is minimal and won't find it otherwise.
-LINE="0 $HOUR * * * CLAUDE_BIN='$CLAUDE_BIN' '$REPO/scripts/dig.sh'  $TAG"
+LINE="0 $HOUR * * * PYTHON_BIN='$PYTHON_BIN' '$REPO/scripts/dig.sh'  $TAG"
 
 # drop any prior nekaise line, then add ours
 ( crontab -l 2>/dev/null | grep -vF "$TAG" || true; echo "$LINE" ) | crontab -

@@ -21,6 +21,8 @@ import re
 import sys
 from pathlib import Path
 
+import ops
+
 ROOT = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 PATH = ROOT / "registry" / "rotation.json"
 
@@ -30,7 +32,7 @@ def load() -> dict:
 
 
 def save(state: dict) -> None:
-    PATH.write_text(json.dumps(state, indent=2, ensure_ascii=False) + "\n")
+    ops.atomic_write_text(PATH, json.dumps(state, indent=2, ensure_ascii=False) + "\n")
 
 
 def next_arg(name: str) -> str:
@@ -49,14 +51,17 @@ def _prev_week(bucket: str) -> str:
 
 
 def advance(name: str) -> str:
-    state = load()
-    e = state[name]
-    if isinstance(e["next"], int):
-        e["next"] += e.get("step", 1)
-    else:
-        e["next"] = _prev_week(e["next"])
-    save(state)
-    return f"{e['flag']} {e['next']}"
+    # Standalone operators may advance a pointer while another process is doing the same.  Keep
+    # the read-modify-write under its own lock; run_round's broader repo lock also prevents this.
+    with ops.named_lock("rotation", timeout=30):
+        state = load()
+        e = state[name]
+        if isinstance(e["next"], int):
+            e["next"] += e.get("step", 1)
+        else:
+            e["next"] = _prev_week(e["next"])
+        save(state)
+        return f"{e['flag']} {e['next']}"
 
 
 def main() -> None:

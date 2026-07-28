@@ -1,6 +1,7 @@
 """Focused tests for host-specific download handshakes."""
 
 from types import SimpleNamespace
+import hashlib
 
 import build_corpus
 
@@ -54,3 +55,36 @@ def test_publications_gc_direct_pdf_needs_no_second_request(monkeypatch):
 
     assert got.content.startswith(b"%PDF-")
     assert len(session.calls) == 1
+
+
+def test_fetch_records_optional_provenance_and_text_hash(tmp_path, monkeypatch):
+    body = b"Building ventilation and structural design guidance."
+    got = SimpleNamespace(
+        status_code=200,
+        content=body,
+        raise_for_status=lambda: None,
+    )
+    monkeypatch.setattr(build_corpus.requests, "get", lambda *args, **kwargs: got)
+    monkeypatch.setattr(build_corpus, "HERE", tmp_path)
+    monkeypatch.setattr(build_corpus, "RAW", tmp_path / "raw")
+    monkeypatch.setattr(build_corpus, "TEXT", tmp_path / "text")
+    src = {
+        "id": "test-doc",
+        "title": "Test document",
+        "url": "https://example.org/test.txt",
+        "source": "test",
+        "license": "cc-by",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "language": "en",
+        "topic": "construction",
+        "format": "txt",
+    }
+
+    row = build_corpus.fetch_one(src)
+
+    rendered = (tmp_path / row["text_path"]).read_bytes()
+    assert row["status"] == "ok"
+    assert row["language"] == "en"
+    assert row["license_url"].startswith("https://creativecommons.org/")
+    assert row["text_sha256"] == hashlib.sha256(rendered).hexdigest()
+    assert row["extractor_version"].startswith("build_corpus/2;")

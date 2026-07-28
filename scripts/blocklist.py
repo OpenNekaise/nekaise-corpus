@@ -10,26 +10,29 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import ops
+
 ROOT = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 PATH = ROOT / "pruned_urls.txt"
 
 
-def _norm(u: str) -> str:
+def normalize(u: str) -> str:
     return (u or "").strip().rstrip("/")
 
 
 def load() -> set[str]:
     if not PATH.exists():
         return set()
-    return {_norm(l) for l in PATH.read_text().splitlines() if l.strip()}
+    return {normalize(l) for l in PATH.read_text().splitlines() if l.strip()}
 
 
 def add(urls) -> int:
     """Append new URLs (deduped, sorted) to the blocklist file. Returns how many were new."""
     cur = load()
-    new = {_norm(u) for u in urls if u and _norm(u)} - cur
+    new = {normalize(u) for u in urls if u and normalize(u)} - cur
     if new:
-        with PATH.open("a") as f:
-            for u in sorted(new):
-                f.write(u + "\n")
+        old = PATH.read_text() if PATH.exists() else ""
+        if old and not old.endswith("\n"):
+            old += "\n"
+        ops.atomic_write_text(PATH, old + "".join(f"{u}\n" for u in sorted(new)))
     return len(new)

@@ -1,0 +1,13 @@
+# Direct extraction dependencies used for the current provenance fingerprint.
+# Install this file when byte-stable text extraction matters; requirements.txt intentionally
+# accepts compatible updates for ordinary corpus operation.
+requests==2.32.5
+PyYAML==6.0.3
+pypdf==6.5.0
+beautifulsoup4==4.14.2
+certifi==2026.1.4
+charset-normalizer==3.4.3
+idna==3.10
+soupsieve==2.8
+typing-extensions==4.15.0
+urllib3==2.6.3

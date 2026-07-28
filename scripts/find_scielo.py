@@ -187,9 +187,18 @@ def main() -> None:
                 continue
             seen.add(u)
             titles.add(t)
+            language = ((_vals(rec.get("article") or {}, "v40") or [{}])[0].get("_") or "")
             out.append({"id": sid, "title": title.strip()[:150], "url": url,
                         "source": f"scielo_{collection}", "license": "cc-by",
-                        "topic": topic, "format": "pdf"})
+                        "topic": topic, "format": "pdf",
+                        "language": language,
+                        "document_type": "journal-article",
+                        "persistent_id": pid,
+                        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+                        "license_evidence": (
+                            f"{API}/article/?collection={collection}&code={pid}&format=json"
+                        ),
+                        "rights_verified_at": "2026-07-28"})
             time.sleep(0.15)
 
     registry.uniquify_ids(out, reg_ids)

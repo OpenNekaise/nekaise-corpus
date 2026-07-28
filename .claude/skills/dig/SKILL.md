@@ -12,22 +12,22 @@ hand as `/dig` any time you want to grow the corpus in one shot.
 
 ## The round (run outside any sandbox — needs network)
 
-1. **Discover — every backend. Page/offset/bucket pointers come from the COMMITTED excavation
-   state** (`registry/rotation.json` via `scripts/rotation.py`) so any agent on any machine resumes
-   where the last one stopped. Pattern per backend: read the pointer → run → advance on success:
+1. **Run the canonical fail-closed round and commit locally:**
    ```
-   python scripts/find_osti.py --rows 50 --pages 2 $(python scripts/rotation.py next find_osti) --max 400 --append \
-     && python scripts/rotation.py advance find_osti
+   python scripts/run_round.py --commit
    ```
-   Backends (same pattern): `find_osti` (deep OSTI) · `find_archive` (pre-1929 PD texts) ·
-   `find_books` (OAPEN books, ALL languages) · `find_openaire` (EU deliverables) · `find_nist`
-   (NIST/NBS via Crossref) · `find_zenodo` (CC records; keep `--max 100`) · `find_patents`
-   (US patents via Google sitemap — the biggest open vein) · `find_wiki` (multilingual Wikipedia).
-   Plus non-rotating: `find_sources.py --per 20 --append`, `find_github.py --append` (head mostly
-   mined out). `find_ibpsa` is PAUSED (see rotation.json note). All backends dedup against
-   the manifest + the registry + `pruned_urls.txt` before appending — re-running is safe.
+   `registry/backends.json` is the sole list of finder scripts, fixed arguments, and enabled/paused
+   state; `registry/rotation.json` supplies their committed pointers. The runner holds the repo lock,
+   advances each pointer only after that finder exits successfully, then performs fetch → prune →
+   clean → check → README stats → index refresh → lint → tests. Any required failure rolls tracked
+   state back and prevents commit/push. **Never change the cleaning ruleset as part of a dig.**
+   **Never `git push`** — the maintainer reviews the commit and pushes.
 
-2. **Widen (judgment — the part a human/agent adds over the scripts):** spend a little of the budget
+2. **Review and summarize** what landed (docs by source/topic, new total, failures) so the commit
+   log and `logs/run_history.jsonl` tell the story.
+
+3. **Widen separately (judgment — the part a human/agent adds over the scripts):** after the
+   mechanical round is committed, spend some budget
    looking for *new veins*, not just more of the head:
    - Web-search for open built-environment collections we don't tap yet (new gov programs, datasets,
      standards bodies, doc sites) and add them — a single PDF/HTML source goes straight into
@@ -36,40 +36,8 @@ hand as `/dig` any time you want to grow the corpus in one shot.
    - Tune `find_sources.py`'s `QUERIES` toward gaps (we're paper-heavy; thin on equipment depth,
      codes, datasets, international).
 
-3. **Load the new bytes:**
-   ```
-   python scripts/build_corpus.py                # fetch only the newly-appended sources
-   ```
-   Read the summary; investigate failures (fix or drop dead URLs — never leave a known-404 entry).
-
-4. **Prune (the quality gate):**
-   ```
-   python scripts/prune_corpus.py --apply        # drop thin / garbage / non-English / off-topic
-   ```
-   The pruner only touches *machine-discovered* docs (id prefixes `oa-`/`ope-`/`ost-`/`arx-`/
-   `crawl-`/`gh-`/`oer-`), never hand-curated ones; it edits the registry shards in place and validates
-   the result before writing.
-
-5. **Clean** — rebuild the training-ready stage so it mirrors the post-prune manifest
-   ([`clean-corpus`](../clean-corpus/SKILL.md)):
-   ```
-   python scripts/clean_corpus.py && python scripts/clean_corpus.py --check
-   ```
-   Incremental; only new/changed docs are rewritten. `--check` must pass before you commit — it
-   exits non-zero if `corpus/` and the manifest disagree. **Never change the ruleset as part of a
-   dig** — cleaning policy is the maintainer's call, not a growth-round decision.
-
-6. **Commit locally — do NOT push:**
-   ```
-   git add registry/ manifest/ pruned_urls.txt
-   git commit -m "dig: +<N> docs -> <total> docs / <tokens> tokens (<what landed>)"
-   ```
-   Only `registry/` + `manifest/` + `pruned_urls.txt` are committed (pointers + provenance). `raw/`,
-   `text/` and `corpus/` are git-ignored and must never be committed. **Never `git push`** — the
-   maintainer reviews the commits and pushes.
-
-7. **Summarize** what landed this round (docs added by source/topic, new total, any failures) so the
-   commit log and `logs/dig-*.log` tell the story.
+   Treat a new finder or query family as its own reviewed code/config change; add it to
+   `registry/backends.json`, add/update its rotation entry, and run the architecture contracts.
 
 ## Notes
 - Respect each source's `license`; prefer `public-domain` / `cc-by` / `cc-by-sa` / permissive-`open`.

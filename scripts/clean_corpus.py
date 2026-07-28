@@ -29,6 +29,7 @@ docs that have a provenance row. corpus/ is git-ignored — like raw/ and text/,
 from __future__ import annotations
 
 import argparse
+import hashlib
 import os
 import random
 import re
@@ -38,6 +39,7 @@ from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
 import registry
+import ops
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 TEXT = HERE / "text"
@@ -194,19 +196,19 @@ def clean_body(body: str, rules: list[str]) -> tuple[str, Counter]:
     return "\n".join(collapse_blanks(kept)), attribution
 
 
-def _clean_one(task: tuple) -> tuple[str, int, dict, str]:
+def _clean_one(task: tuple) -> tuple[str, int, dict, str, str | None]:
     """Clean one doc. Module-level and returning plain data so it can run in a process pool.
 
-    Returns (id, corpus_chars, per-rule attribution, status)."""
+    Returns (id, corpus_chars, per-rule attribution, status, sha256-if-written)."""
     sid, text_path, rules, rebuild = task
     src = HERE / text_path
     dst = CORPUS / f"{sid}.md"
     if not src.exists():
-        return sid, 0, {}, "missing-text"
+        return sid, 0, {}, "missing-text", None
     # Canonical name corpus/<id>.md regardless of what text_path is called — this normalizes rows
     # whose text_path drifted from their id (the iea- -> iag- rename left 33 of them).
     if not rebuild and dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime:
-        return sid, len(split_header(dst.read_text(errors="replace"))[1]), {}, "up-to-date"
+        return sid, len(split_header(dst.read_text(errors="replace"))[1]), {}, "up-to-date", None
     header, body = split_header(src.read_text(errors="replace"))
     if rules:
         cleaned, attr = clean_body(body, rules)
@@ -220,7 +222,8 @@ def _clean_one(task: tuple) -> tuple[str, int, dict, str]:
         dst.write_text(header + cleaned)
     else:
         shutil.copyfile(src, dst)  # byte-identical pass-through
-    return sid, len(cleaned), dict(attr), "written"
+    digest = hashlib.sha256(dst.read_bytes()).hexdigest()
+    return sid, len(cleaned), dict(attr), "written", digest
 
 
 def parse_rules(spec: str) -> list[str]:
@@ -326,6 +329,7 @@ def main() -> None:
         # This is what catches a partially-applied ruleset (disk cleaned, manifest still says
         # pass-through), which is otherwise completely invisible.
         drift = 0
+        hash_drift = 0
         checked = 0
         for r in todo:
             p = CORPUS / f"{r['id']}.md"
@@ -338,12 +342,20 @@ def main() -> None:
                 if drift <= 5:
                     problems.append(f"corpus_chars drift {r['id']}: manifest="
                                     f"{r.get('corpus_chars')} disk={actual}")
+            expected_hash = r.get("corpus_sha256")
+            if expected_hash and hashlib.sha256(p.read_bytes()).hexdigest() != expected_hash:
+                hash_drift += 1
+                if hash_drift <= 5:
+                    problems.append(f"corpus_sha256 drift {r['id']}")
         print(f"checked {checked} docs | ruleset stamp: {stamp}")
         if drift > 5:
             problems.append(f"... and {drift - 5} more rows with corpus_chars drift")
+        if hash_drift > 5:
+            problems.append(f"... and {hash_drift - 5} more rows with corpus_sha256 drift")
         if problems:
             print(f"\nDRIFT — {len(expect - on_disk)} missing, {len(on_disk - expect)} "
-                  f"unprovenanced, {drift} char-count mismatches:")
+                  f"unprovenanced, {drift} char-count mismatches, "
+                  f"{hash_drift} hash mismatches:")
             for p_ in problems:
                 print(f"  {p_}")
             print("\nfix: python scripts/clean_corpus.py --force --rules <the ruleset you want>")
@@ -367,7 +379,7 @@ def main() -> None:
     # Mark the stamp in-progress BEFORE writing anything. A killed run leaves cleaned files whose
     # mtime is newer than their text/ source, which the incremental check would happily accept as
     # up-to-date — so an interrupted run must never leave a stamp that any later run can match.
-    STAMP.write_text(f"IN-PROGRESS {stamp_now}\n")
+    ops.atomic_write_text(STAMP, f"IN-PROGRESS {stamp_now}\n")
 
     attribution: Counter = Counter()
     stats: Counter = Counter()
@@ -377,13 +389,16 @@ def main() -> None:
     # Processes, not threads: the rules are regex-bound, so a thread pool stays pinned at ~1 core
     # (measured 108% CPU on 12 threads). Chunked to amortize pickling over 104k tiny tasks.
     with ProcessPoolExecutor(max_workers=max(1, args.workers)) as pool:
-        for sid, chars, attr, status in pool.map(_clean_one, tasks, chunksize=64):
+        for sid, chars, attr, status, digest in pool.map(_clean_one, tasks, chunksize=64):
             stats[status] += 1
             if status == "missing-text":
                 continue
             row = by_id[sid]
             row["corpus_path"] = f"corpus/{sid}.md"
             row["corpus_chars"] = chars
+            if digest:
+                row["corpus_sha256"] = digest
+                row["cleaner_version"] = f"clean_corpus/2;rules={stamp_now}"
             attribution.update(attr)
 
     # drop corpus files with no manifest row (pruned docs, renamed ids) — corpus/ mirrors the
@@ -394,7 +409,8 @@ def main() -> None:
         p.unlink()
 
     registry.write_manifest_rows(rows)
-    STAMP.write_text(stamp_now + "\n")  # last: only a fully-finished run may claim its ruleset
+    # last: only a fully-finished run may claim its ruleset
+    ops.atomic_write_text(STAMP, stamp_now + "\n")
 
     kept = sum(r.get("corpus_chars", 0) for r in todo)
     print(f"corpus/: {stats['written']} written | {stats['up-to-date']} up-to-date | "

@@ -14,12 +14,15 @@ touches the registry goes through here.
 from __future__ import annotations
 
 import json
+import os
 import re
+import sys
 from pathlib import Path
 
 import yaml
 
 import blocklist
+import ops
 
 ROOT = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 REG_DIR = ROOT / "registry"
@@ -63,7 +66,14 @@ SHARDS = {
     "arx-": "papers.yaml",     # find_sources arXiv backend
 }
 DISCOVERED_PREFIXES = tuple(SHARDS)  # the pruner's gate: machine-discovered ids
-FIELDS = ("id", "title", "url", "source", "license", "topic", "format")
+REQUIRED_FIELDS = ("id", "title", "url", "source", "license", "topic", "format")
+# Optional metadata is appended gradually by new/updated finders. Existing 100k+ entries stay valid
+# and are not mass-rewritten merely because the schema learned a new field.
+OPTIONAL_FIELDS = (
+    "language", "published_at", "jurisdiction", "document_type", "persistent_id",
+    "license_url", "license_evidence", "rights_verified_at",
+)
+FIELDS = REQUIRED_FIELDS + OPTIONAL_FIELDS
 ENTRY_RE = re.compile(r"^  - id:\s*['\"]?(.+?)['\"]?\s*$")
 _FIELD_RE = re.compile(r"^    \s*\S")  # continuation lines of one entry
 
@@ -154,7 +164,7 @@ def write_manifest_rows(rows) -> None:
                        for r in sorted(group, key=lambda x: (x.get("topic", ""), x["id"])))
         p = MAN_DIR / f"{stem}.jsonl"
         if not p.exists() or p.read_text() != text:
-            p.write_text(text)
+            ops.atomic_write_text(p, text)
     for p in manifest_files():
         if p.name not in live:
             p.unlink()
@@ -163,6 +173,15 @@ def write_manifest_rows(rows) -> None:
 def existing_keys(include_blocklist: bool = True):
     """(urls, titles, ids) already known to the corpus — what every finder dedups against.
     urls includes the pruned-URL blocklist by default so discovery never re-churns."""
+    if include_blocklist and os.environ.get("NEKAISE_DISABLE_INDEX") != "1":
+        try:
+            import corpus_index
+            return corpus_index.existing_keys(REG_DIR, MAN_DIR, blocklist.PATH)
+        except Exception as exc:
+            # The index is an acceleration layer, never a correctness dependency. A corrupt DB,
+            # unsupported filesystem, or interrupted rebuild falls back to canonical files.
+            if os.environ.get("NEKAISE_INDEX_DEBUG") == "1":
+                print(f"index fallback: {exc}", file=sys.stderr)
     urls, titles, ids = set(), set(), set()
     for r in load_manifest_rows():
         urls.add((r.get("url") or "").rstrip("/"))
@@ -190,13 +209,23 @@ def uniquify_ids(entries: list[dict], reserved: set) -> None:
 
 
 def emit_entry(e: dict) -> str:
-    d = yaml.safe_dump([{k: e[k] for k in FIELDS}], sort_keys=False, allow_unicode=True)
+    d = yaml.safe_dump(
+        [{k: e[k] for k in FIELDS if k in e and e[k] not in (None, "")}],
+        sort_keys=False,
+        allow_unicode=True,
+    )
     return "".join(("  " + ln + "\n") if ln else "\n" for ln in d.splitlines())
 
 
 def append_entries(entries: list[dict]) -> dict[str, int]:
     """Route entries to their shards by id prefix and append, validating each shard afterwards
     (parses + count grew by exactly the group size). Returns {shard filename: appended}."""
+    prior_signature = None
+    try:
+        import corpus_index
+        prior_signature = corpus_index.source_signature(REG_DIR, MAN_DIR, blocklist.PATH)
+    except Exception:
+        pass
     groups: dict[Path, list[dict]] = {}
     for e in entries:
         groups.setdefault(shard_path(e["id"]), []).append(e)
@@ -206,15 +235,25 @@ def append_entries(entries: list[dict]) -> dict[str, int]:
         before = len(yaml.safe_load(path.read_text()).get("sources") or []) if path.exists() else 0
         block = "".join(emit_entry(e) for e in group)
         if path.exists():
-            with path.open("a") as f:
-                f.write(block)
+            old_text = path.read_text()
+            ops.atomic_write_text(path, old_text + block)
         else:
-            path.write_text(f"# {path.stem} — machine-appended shard (see AGENTS.md); "
-                            f"prune_corpus edits it in place\nsources:\n" + block)
+            ops.atomic_write_text(
+                path,
+                f"# {path.stem} — machine-appended shard (see AGENTS.md); "
+                f"prune_corpus edits it in place\nsources:\n" + block,
+            )
         after = yaml.safe_load(path.read_text()).get("sources") or []
         if len(after) != before + len(group):
             raise RuntimeError(f"append corrupted {path.name}: {before}+{len(group)} != {len(after)}")
         counts[path.name] = len(group)
+    if prior_signature is not None:
+        try:
+            corpus_index.record_appended_entries(
+                REG_DIR, MAN_DIR, blocklist.PATH, entries, prior_signature,
+            )
+        except Exception:
+            pass  # cache only; the next lookup safely rebuilds
     return counts
 
 
@@ -253,6 +292,6 @@ def remove_ids(drop: set) -> int:
                                f"e.g. {sorted(leftover)[:3]}")
         if len(entries) != old_count - removed:
             raise RuntimeError(f"{path.name}: count mismatch {old_count} - {removed} != {len(entries)}")
-        path.write_text(new_text)
+        ops.atomic_write_text(path, new_text)
         removed_total += removed
     return removed_total

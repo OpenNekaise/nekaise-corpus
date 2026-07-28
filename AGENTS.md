@@ -19,11 +19,17 @@ machine resumes exactly where the last one stopped.
 | `manifest/` | The **provenance + reproducibility record** — url, license, topic, sha256, bytes for every fetched doc. Sharded like the registry (`manifest/<shard>.jsonl`, patents split by country) so no file nears GitHub's 100MB push limit; all I/O via `registry.py` (`load_manifest_rows` / `write_manifest_rows`). |
 | `pruned_urls.txt` | **Blocklist** of URLs the quality gate dropped — finders dedup against it so discovery never re-churns pruned material. |
 | `registry/rotation.json` | **Excavation state** — the next page/offset/bucket per backend, advanced by `scripts/rotation.py` after each successful run. Committed, so the growth loop is resumable by anyone. |
+| `registry/backends.json` | **Control-plane config** — finder script, fixed arguments, enabled/paused state. `run_round.py` validates it against `rotation.json`, so new backends cannot silently miss automation. |
+| `registry/pruned.jsonl` | **Decision provenance** for future prunes — id/url/reason/metrics/run id. `pruned_urls.txt` remains the fast compatibility blocklist. |
 | `scripts/` | The **machinery** — loader, discovery backends, quality gate, cron/marathon runners. All run from the repo root: `python scripts/<x>.py`. |
 | `.claude/skills/` | The **skills** — step-by-step playbooks for each loop (`go` · `load-corpus` · `find-sources` · `crawl-docs` · `clean-corpus` · `dig`). Claude Code picks them up natively; Codex: read the `SKILL.md` files directly. |
 | `workspace/` | **Your scratch space** (git-ignored). One-off helper scripts, notes, dumps go here — never the repo root. Promote durable tools into `scripts/`. |
 | `raw/` · `text/` · `corpus/` | Your local copy, in three stages: original bytes → verbatim extraction → **cleaned, training-ready text**. **All git-ignored. Never committed.** See *The three stages* below. |
 | `logs/` | Headless dig/marathon run logs (git-ignored). |
+
+`workspace/corpus-index.sqlite3` is a git-ignored, automatically invalidated acceleration index
+over registry + manifest + blocklist. It is never authoritative and can always be rebuilt with
+`python scripts/corpus_index.py rebuild`.
 
 **Keep the root clean.** The root holds docs + the registry + the manifest, nothing else. New
 durable code goes in `scripts/`; experiments go in `workspace/`.
@@ -109,6 +115,19 @@ equations it must never touch. **Numeric tables are content, not noise** — `As
 ## The operating loop
 
 Run in a network-enabled shell (outside any sandbox). Each step has a skill that drives it.
+
+**Canonical automation:** `python scripts/run_round.py --commit`. It holds a repo-level advisory
+lock and fail-closes the entire required pipeline:
+
+```
+discover → fetch → prune → clean → check → README stats → index → lint → tests → commit
+```
+
+Cron and marathon call this same runner. A required step failure never commits, pushes, or advances
+that failing backend's rotation pointer. Normal failures roll tracked state back; state files are
+replaced atomically. Local run events live in `logs/run_history.jsonl`. A hard kill leaves a durable
+pre-round snapshot and the next operator restores it explicitly with
+`python scripts/run_round.py --recover latest`.
 
 **Cloning: use `git clone --depth 1`.** The full history carries every past manifest/registry
 revision (~1.7GB); the recipe never needs it to operate — a shallow clone is ~10× smaller and

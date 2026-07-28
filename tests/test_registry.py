@@ -40,6 +40,19 @@ def test_append_routes_by_prefix(tmp_registry):
     assert "# hand comment that must survive" in (tmp_registry / registry.CURATED).read_text()
 
 
+def test_emit_preserves_optional_provenance_fields():
+    enriched = {
+        **entry("ost-enriched"),
+        "language": "pt",
+        "document_type": "journal-article",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    }
+    text = registry.emit_entry(enriched)
+    assert "language: pt" in text
+    assert "document_type: journal-article" in text
+    assert "license_url: https://creativecommons.org/licenses/by/4.0/" in text
+
+
 def test_uniquify_vs_registry_and_batch(tmp_registry):
     registry.append_entries([entry("oer-same-slug", "https://e.org/1.pdf")])
     _, _, ids = registry.existing_keys()
