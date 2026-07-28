@@ -60,6 +60,17 @@ PER_HOST = 2
 # a host here to work around its wall, check its ToS/robots.txt — a wall is sometimes the host
 # enforcing terms we must respect (nrc-publications.canada.ca, 07-12: "systematic downloading is
 # not permitted" — that vein was reverted, NO-GO).
+#
+# Same verdict, 07-28 — NO-GO, do not rebuild these:
+#   erdc-library.erdc.dren.mil  US Army Corps ERDC Library. Content is public-domain and a
+#     find_erdc.py backend worked (400 entries appended, then REVERTED). But the 403 it serves a
+#     python UA is a wall, and robots.txt names the AI/dataset crawlers — ClaudeBot, Claude-Web,
+#     GPTBot, PerplexityBot, img2dataset, Google-Extended — with `Disallow: /`. An LLM-training
+#     corpus is precisely what that opts out of; public-domain content does not override the
+#     operator's stated access policy.
+#   www.scielo.cl · www.scielo.org.pe  SciELO Chile / Peru: robots.txt `User-agent: * Disallow: /`
+#     (Peru additionally names anthropic-ai and Claude-Web). www.scielo.br is `Allow: /` and IS
+#     mined — check each SciELO national host separately, they do not share a policy.
 HOST_DELAY: dict[str, float] = {
     "www.jstage.jst.go.jp": 2.0,  # J-STAGE throttles bulk fetches; nightly ~00:00 JST 503 window
     "www.boverket.se": 10.0,      # robots.txt Crawl-delay: 10 — respect it

@@ -57,6 +57,7 @@ SHARDS = {
                                # NOT "iea-": that prefix shadows hand-curated iea-ebc-* ids in
                                # curated.yaml and the pruner ate 15 of them (2026-07-24, repaired).
     "bov-": "nordic.yaml",     # find_boverket (Swedish building authority; shard shared by Nordic sources)
+    "sci-": "scielo.yaml",     # find_scielo (SciELO Brazil AEC journals, Portuguese, cc-by)
     "ope-": "papers.yaml",     # find_sources OpenAlex backend
     "oa-": "papers.yaml",
     "arx-": "papers.yaml",     # find_sources arXiv backend

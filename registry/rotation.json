@@ -122,5 +122,11 @@
     "next": 120,
     "step": 40,
     "note": "NEW VEIN 2026-07-24: iea.org analysis reports, CC BY 4.0 only (licence-gated per page), blob PDFs. KEY_RE \\b fix same day (city matched electriCITY; 36 power-sector entries purged+blocklisted): universe now 175 slugs, offsets 0-40 mined under the FIXED regex equivalence. Run with --limit 40; EBC/INIVE annexes remain NO-GO (different channel, ARR)"
+  },
+  "find_scielo": {
+    "flag": "--offset",
+    "next": 25,
+    "step": 25,
+    "note": "NEW VEIN 2026-07-28: SciELO BRAZIL AEC journals via the ArticleMeta API — the biggest Portuguese built-environment vein on the open web. 11 journals (Ambiente Construído, IBRACON Estruturas e Materiais, Soils and Rocks, LAJSS, urbe, Cadernos Metrópole, RBRH, ...) picked by WoS subject category from a full 16-collection scan (workspace/scan_scielo_journals.py), CC-BY/BY-SA ONLY — NC and ND journals deliberately excluded; ~11.3k articles. PDF URL comes from fulltexts.pdf, else DERIVED from the v702 markup path — the acronym segment must be lowercased ('MR' -> /pdf/mr/) but the filename must NOT be. /j/<acron>/a/<pid>?format=pdf works ONLY on scielo.br, so the legacy /pdf/ path is what the finder builds. ROBOTS PER NATIONAL HOST, THEY DISAGREE: .br Allow /, but .cl and .org.pe are Disallow / (NO-GO, 150 entries reverted this round); .org.co + .edu.uy unreachable from this box; .org.ve does not resolve. Offset 0 mined 07-28; run --per 25 --max 400."
   }
 }

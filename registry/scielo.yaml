@@ -1,0 +1,1618 @@
+# scielo — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: sci-s1413-41522004000400010
+    title: 'Índice de impacto dos resíduos sólidos urbanos na saúde pública (IIRSP):
+      metodologia e aplicação'
+    url: https://www.scielo.br/pdf/esa/v9n4/v9n4a09.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s1413-41522004000400011
+    title: Fotocatálise heterogênea com TiO2 aplicada ao tratamento de esgoto sanitário
+      secundário
+    url: https://www.scielo.br/pdf/esa/v9n4/v9n4a10.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s1413-41522004000400009
+    title: 'Qualidade microbiológica da água em rios de áreas urbanas e periurbanas
+      no baixo Amazonas: o caso do Amapá'
+    url: https://www.scielo.br/pdf/esa/v9n4/v9n4a08.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s1413-41522004000400002
+    title: Indicadores para o monitoramento da sustentabilidade em sistemas urbanos
+      de abastecimento de água e esgotamento sanitário
+    url: https://www.scielo.br/pdf/esa/v9n4/v9n4a01.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s1413-41522004000400006
+    title: Fatores ambientais associados às helmintoses intestinais em áreas de assentamento
+      subnormal, Juiz de Fora, MG
+    url: https://www.scielo.br/pdf/esa/v9n4/v9n4a05.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s1413-41522004000400003
+    title: Tratamento anaeróbio de resíduos orgânicos com baixa concentração de sólidos
+    url: https://www.scielo.br/pdf/esa/v9n4/v9n4a02.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s1413-41522004000400008
+    title: Avaliação das perdas físicas de um setor da rede de abastecimento de Água
+      de Campo Grande-MS via modelo inverso
+    url: https://www.scielo.br/pdf/esa/v9n4/v9n4a07.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s1413-41522004000400004
+    title: Utilização de wetland construído no pós-tratamento de esgotos domésticos
+      pré-tratados em reator UASB
+    url: https://www.scielo.br/pdf/esa/v9n4/v9n4a03.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s1413-41522005000100009
+    title: Gestão dos serviços de água e esgoto nos municípios de Campinas, Santo André,
+      São José dos Campos e Santos, no período de 1996 a 2000
+    url: https://www.scielo.br/pdf/esa/v10n1/v10n01a08.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s1413-41522005000100003
+    title: Método respirométrico para o monitoramento de processos biológicos
+    url: https://www.scielo.br/pdf/esa/v10n1/v10n01a02.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s1413-41522005000100002
+    title: 'Desinfecção de efluentes com tratamento terciário utilizando energia solar
+      (SODIS): avaliação do uso do dispositivo para concentração dos raios solare'
+    url: https://www.scielo.br/pdf/esa/v10n1/v10n01a01.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s1413-41522005000100008
+    title: Geração de modelos de regionalização de vazões máximas, médias de longo período
+      e mínimas de sete dias para a bacia do rio do Carmo, Minas Gerais
+    url: https://www.scielo.br/pdf/esa/v10n1/v10n01a07.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s1413-41522005000100005
+    title: Ciência, tecnologia e inovação na interface entre as áreas de recursos hídricos
+      e saneamento
+    url: https://www.scielo.br/pdf/esa/v10n1/v10n01a04.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s1413-41522005000200009
+    title: 'Acúmulo de ácidos graxos voláteis (AGVs) em reatores anaeróbios sob estresse:
+      causas e estratégias de controle'
+    url: https://www.scielo.br/pdf/esa/v10n2/a09v10n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s1413-41522005000200012
+    title: Influência do tempo de detenção e da taxa de aplicação de lodo na hidrólise
+      e acidogênese de lodo primário
+    url: https://www.scielo.br/pdf/esa/v10n2/a12v10n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s1679-78252011000200001
+    title: The effect of support springs in ends welded gap hollow YT-joint
+    url: https://www.scielo.br/pdf/lajss/v8n2/a01v8n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000200003
+    title: Analytical study on the vibration frequencies of tapered beams
+    url: https://www.scielo.br/pdf/lajss/v8n2/a03v8n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000200004
+    title: Analysis of the steel braced frames equipped with ADAS devices under the
+      far field records
+    url: https://www.scielo.br/pdf/lajss/v8n2/a04v8n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000200005
+    title: A refined shear deformation theory for flexure of thick beams
+    url: https://www.scielo.br/pdf/lajss/v8n2/a05v8n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000200002
+    title: Non-linear vibration of Euler-Bernoulli beams
+    url: https://www.scielo.br/pdf/lajss/v8n2/a02v8n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000200006
+    title: An efficient C0 FE model for the analysis of composites and sandwich laminates
+      with general layup
+    url: https://www.scielo.br/pdf/lajss/v8n2/a06v8n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000100004
+    title: Effect of blast loading on CFRP-Retrofitted RC columns - a numerical study
+    url: https://www.scielo.br/pdf/lajss/v8n1/a04v8n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000100001
+    title: A study of microstructure and wear behaviour of TiB2/Al metal matrix composites
+    url: https://www.scielo.br/pdf/lajss/v8n1/a01v8n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000100002
+    title: Modal analysis of pre and post impacted nano composite laminates
+    url: https://www.scielo.br/pdf/lajss/v8n1/a02v8n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000100005
+    title: Structural stability concepts in medieval and renaissance mechanics
+    url: https://www.scielo.br/pdf/lajss/v8n1/a05v8n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000100006
+    title: The mechanical response of metallic sandwich beams under foam projectile
+      impact loading
+    url: https://www.scielo.br/pdf/lajss/v8n1/a06v8n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000100003
+    title: On asymptotic analysis of spectral problems in elasticity
+    url: https://www.scielo.br/pdf/lajss/v8n1/a03v8n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000300009
+    title: The natural frequencies of composite Profiled Steel Sheet Dry Board with
+      Concrete infill (PSSDBC) system
+    url: https://www.scielo.br/pdf/lajss/v8n3/a09v8n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000300004
+    title: A hybrid technique for residual stress analysis through stress function fitting
+    url: https://www.scielo.br/pdf/lajss/v8n3/a04v8n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000300003
+    title: Thermal effect on free vibration analysis of functionally graded arbitrary
+      straight-sided plates with different cutouts
+    url: https://www.scielo.br/pdf/lajss/v8n3/a03v8n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000300005
+    title: An extension of coupled beam method and its application to study ship's hull-superstructure
+      interaction problems
+    url: https://www.scielo.br/pdf/lajss/v8n3/a05v8n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000300006
+    title: A probabilistic capacity spectrum strategy for the reliability analysis of
+      bridge pile shafts considering soil structure interaction
+    url: https://www.scielo.br/pdf/lajss/v8n3/a06v8n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000300007
+    title: A FEM-BEM interactive coupling for modeling the piezoelectric health monitoring
+      systems
+    url: https://www.scielo.br/pdf/lajss/v8n3/a07v8n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000300008
+    title: A local-restart coupled strategy for simultaneous sizing and geometry truss
+      optimization
+    url: https://www.scielo.br/pdf/lajss/v8n3/a08v8n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000300001
+    title: Dynamic response analysis of single-span guideway caused by high speed maglev
+      train
+    url: https://www.scielo.br/pdf/lajss/v8n3/a01v8n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252011000300002
+    title: Free vibration of thick orthotropic plates using trigonometric shear deformation
+      theory
+    url: https://www.scielo.br/pdf/lajss/v8n3/a02v8n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252010000300003
+    title: A boundary element analysis on the influence of Krc and e/d on the performance
+      of cyclically loaded single pile in clay
+    url: https://www.scielo.br/pdf/lajss/v7n3/a03v7n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252010000300005
+    title: Power secant method applied to natural frequency extraction of Timoshenko
+      beam structures
+    url: https://www.scielo.br/pdf/lajss/v7n3/a05v7n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252010000400004
+    title: 'Eigenvalue based inverse model of beam for structural modification and diagnostics:
+      theoretical formulation'
+    url: https://www.scielo.br/pdf/lajss/v7n4/a04v7n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1679-78252010000400001
+    title: Behavior analysis of bar gaps in welded YT-joints for rolled-steel circular
+      hollow sections
+    url: https://www.scielo.br/pdf/lajss/v7n4/a01v7n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1678-86212011000100002
+    title: 'Determinação da exposição à chuva dirigida em Florianópolis, SC: índices
+      de chuva dirigida e métodos semi-empíricos'
+    url: https://www.scielo.br/pdf/ac/v11n1/a02v11n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212011000100006
+    title: Avaliação de empreendimentos habitacionais de interesse social com base na
+      hierarquia de valor percebido pelo usuário
+    url: https://www.scielo.br/pdf/ac/v11n1/a06v11n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212011000100009
+    title: Análise do efeito diurno do fator de visão do céu no microclima e nos níveis
+      de conforto térmico em ruas de pedestres em Curitiba
+    url: https://www.scielo.br/pdf/ac/v11n1/a09v11n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212011000100007
+    title: 'Avaliação de desempenho do processo de orçamento: estudo de caso em uma
+      obra de construção civil'
+    url: https://www.scielo.br/pdf/ac/v11n1/a07v11n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212011000100010
+    title: Aplicação de CFD para o cálculo de coeficientes de pressão externos nas aberturas
+      de um edifício
+    url: https://www.scielo.br/pdf/ac/v11n1/a10v11n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212011000100004
+    title: 'Desenvolvimento de um modelo para análise da acumulação de capacidades tecnológicas
+      na indústria da construção civil: subsetor de edificações'
+    url: https://www.scielo.br/pdf/ac/v11n1/a04v11n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212011000100005
+    title: 'O custeio-meta para o desenvolvimento de habitações de interesse social:
+      diretrizes a partir da comparação de duas modalidades de provisão'
+    url: https://www.scielo.br/pdf/ac/v11n1/a05v11n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212011000100008
+    title: A prototipagem virtual para o detalhamento de projetos na construção civil
+    url: https://www.scielo.br/pdf/ac/v11n1/a08v11n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212011000100003
+    title: Avaliação da resistência à compressão, resistência à tração e formação de
+      microfissuras em concretos produzidos com diferentes tipos de cimentos, quan
+    url: https://www.scielo.br/pdf/ac/v11n1/a03v11n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212010000400018
+    title: Tableros de partículas de bambú (Bambusa vulgaris Schrad) y resina poliuretana
+      a base de aceite de rícino (Ricinus communis L.)
+    url: https://www.scielo.br/pdf/ac/v10n4/a18v10n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212010000400009
+    title: Morfología forestal y confort térmico en "ciudades oasis" de zonas áridas
+    url: https://www.scielo.br/pdf/ac/v10n4/a09v10n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212010000400005
+    title: Aplicabilidade dos limites da velocidade do ar para efeito de conforto térmico
+      em climas quentes e úmidos
+    url: https://www.scielo.br/pdf/ac/v10n4/a05v10n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212010000400006
+    title: Avaliação de conforto térmico em ambientes cirúrgicos utilizando método de
+      Fanger e temperaturas equivalentes
+    url: https://www.scielo.br/pdf/ac/v10n4/a06v10n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212010000400001
+    title: Editorial
+    url: https://www.scielo.br/pdf/ac/v10n4/a01v10n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212010000400007
+    title: Comparação cruzada entre pesquisas laboratoriais e de campo em conforto térmico
+      em espaços abertos urbanos
+    url: https://www.scielo.br/pdf/ac/v10n4/a07v10n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212010000400013
+    title: Diretrizes para seleção de projetistas e avaliação da prestação do serviço
+      de projeto de edificações na visão do contratante
+    url: https://www.scielo.br/pdf/ac/v10n4/a13v10n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212010000400004
+    title: Métodos de aplicação da simulação computacional em edifícios naturalmente
+      ventilados no clima quente e úmido
+    url: https://www.scielo.br/pdf/ac/v10n4/a04v10n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212010000400011
+    title: Fator de visão do céu e intensidade de ilhas de calor na escala do pedestre
+    url: https://www.scielo.br/pdf/ac/v10n4/a11v10n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212010000400010
+    title: Simulação computacional integrada para a consideração da luz natural na avaliação
+      do desempenho energético de edificações
+    url: https://www.scielo.br/pdf/ac/v10n4/a10v10n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212010000400016
+    title: Carbonatação acelerada efetuada nas primeiras idades em compósitos cimentícios
+      reforçados com polpas celulósicas
+    url: https://www.scielo.br/pdf/ac/v10n4/a16v10n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212010000400008
+    title: 'Conforto térmico propiciado por algumas espécies arbóreas: avaliação do
+      raio de influência através de diferentes índices de conforto'
+    url: https://www.scielo.br/pdf/ac/v10n4/a08v10n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212010000400002
+    title: Análise da transferência de calor em paredes compostas por diferentes materiais
+    url: https://www.scielo.br/pdf/ac/v10n4/a02v10n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212010000400014
+    title: Diretrizes técnicas para locação de limites edificados em praias
+    url: https://www.scielo.br/pdf/ac/v10n4/a14v10n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1678-86212010000400012
+    title: 'Desempenho acústico de paredes de blocos e tijolos cerâmico: uma comparação
+      entre Brasil e Portugal'
+    url: https://www.scielo.br/pdf/ac/v10n4/a12v10n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: sci-s1983-41952012000400006
+    title: 'Self-compacting concretes (SCC): comparison of methods of dosage'
+    url: https://www.scielo.br/pdf/riem/v5n4/a06v5n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000400007
+    title: Short steel and concrete columns under high temperatures
+    url: https://www.scielo.br/pdf/riem/v5n4/a07v5n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000400005
+    title: Parametric study on the behaviour of bolted composite connections
+    url: https://www.scielo.br/pdf/riem/v5n4/a05v5n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000400002
+    title: 'Post-strengthening of reinforced concrete beams with prestressed CFRP strips:
+      part 2: analysis under cyclic loading'
+    url: https://www.scielo.br/pdf/riem/v5n4/a02v5n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000400004
+    title: Effect of red mud addition on the corrosion parameters of reinforced concrete
+      evaluated by electrochemical methods
+    url: https://www.scielo.br/pdf/riem/v5n4/a04v5n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000400003
+    title: Reliability algorithms applied to reinforced concrete structures durability
+      assessment
+    url: https://www.scielo.br/pdf/riem/v5n4/a03v5n4.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000300004
+    title: Experimental analysis of reinforced concrete columns strengthened with self-compacting
+      concrete and connectors
+    url: https://www.scielo.br/pdf/riem/v5n3/a04v5n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000300003
+    title: Behavior prediction models and control charts for safety control of concrete
+      dams
+    url: https://www.scielo.br/pdf/riem/v5n3/a03v5n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000300002
+    title: 'Nanotechnology and construction: use of nanoindentation measurements to
+      predict macroscale elastic properties of high strength cementitious composites'
+    url: https://www.scielo.br/pdf/riem/v5n3/a02v5n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000300006
+    title: 'Post-strengthening of reinforced concrete beams with prestressed CFRP strips.
+      Part 1: analysis under static loading'
+    url: https://www.scielo.br/pdf/riem/v5n3/a06v5n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000300008
+    title: 'Reinforced concrete bridges: effects due to corrosion and concrete young
+      modulus variation'
+    url: https://www.scielo.br/pdf/riem/v5n3/a08v5n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000300007
+    title: Probe penetration test applied for evaluating shotcrete compressive strength
+    url: https://www.scielo.br/pdf/riem/v5n3/a07v5n3.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000500001
+    title: Influence of the type of measuring device in determining the static modulus
+      of elasticity of concrete
+    url: https://www.scielo.br/pdf/riem/v5n5/a01v5n5.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000500006
+    title: Concrete produced with recycled aggregates
+    url: https://www.scielo.br/pdf/riem/v5n5/a06v5n5.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000500003
+    title: Flexural strengthening of reinforced concrete beams with carbon fibers reinforced
+      polymer (CFRP) sheet bonded to a transition layer of high performanc
+    url: https://www.scielo.br/pdf/riem/v5n5/a03v5n5.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000500005
+    title: Punching strength of reinforced concrete flat slabs without shear reinforcement
+    url: https://www.scielo.br/pdf/riem/v5n5/a05v5n5.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000500002
+    title: 'Shear force and torsion in reinforced concrete beam elements: theoretical
+      analysis based on Brazilian Standard Code ABNT NBR 6118:2007'
+    url: https://www.scielo.br/pdf/riem/v5n5/a02v5n5.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s1983-41952012000200003
+    title: Application of iron ore mud in powder form in posartland cement presence
+    url: https://www.scielo.br/pdf/riem/v5n2/a03.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2175-33692012000200007
+    title: 'A praça: intervenções contemporâneas em espaços de património'
+    url: https://www.scielo.br/pdf/urbe/v4n2/a07v4n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2175-33692012000200003
+    title: 'A cidade africana contemporânea de origem portuguesa: São Tomé pré e pós-independência'
+    url: https://www.scielo.br/pdf/urbe/v4n2/a03v4n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2175-33692012000200009
+    title: (Buscando) Os efeitos sociais da morfologia arquitetônica
+    url: https://www.scielo.br/pdf/urbe/v4n2/a09v4n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2175-33692012000200005
+    title: 'Das fintas ao tributo: a trajetória da Contribuição de Melhoria no Brasil'
+    url: https://www.scielo.br/pdf/urbe/v4n2/a05v4n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2175-33692012000200011
+    title: 'Análise econômica de sistemas de gestão de resíduos sólidos urbanos: o caso
+      da coleta de lixo seletiva em Palmas, TO'
+    url: https://www.scielo.br/pdf/urbe/v4n2/a11v4n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2175-33692012000200008
+    title: O modernismo e suas abordagens em Moçambique e Angola
+    url: https://www.scielo.br/pdf/urbe/v4n2/a08v4n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2175-33692012000200006
+    title: O Gabinete de Urbanização Colonial e o traçado das cidades luso-africanas
+      na última fase do período colonial português
+    url: https://www.scielo.br/pdf/urbe/v4n2/a06v4n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2175-33692012000200004
+    title: 'Luanda e Maputo: inflexões suburbanísticas da cidade socialista à cidade-metrópole
+      neoliberal'
+    url: https://www.scielo.br/pdf/urbe/v4n2/a04v4n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2175-33692012000200010
+    title: 'Infraestructuras urbanas sociotécnicas: vender o no vender la ETB - Empresa
+      de Telecomunicaciones de Bogotá'
+    url: https://www.scielo.br/pdf/urbe/v4n2/a10v4n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2175-33692012000200002
+    title: 'Editorial: seção especial'
+    url: https://www.scielo.br/pdf/urbe/v4n2/a02v4n2.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2175-33692013000100010
+    title: A Sociedade do Conhecimento realmente existente na perspectiva do desenvolvimento
+      desigual
+    url: https://www.scielo.br/pdf/urbe/v5n1/a10v5n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2175-33692013000100003
+    title: 'Cartografia da vulnerabilidade socioambiental: convergências e divergências
+      a partir de algumas experiências em Portugal e no Brasil'
+    url: https://www.scielo.br/pdf/urbe/v5n1/a03v5n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2175-33692013000100009
+    title: 'Interesses especulativos, atuação do Estado e direito à cidade: o caso do
+      programa "Minha Casa Minha Vida" em Uberaba (MG)'
+    url: https://www.scielo.br/pdf/urbe/v5n1/a09v5n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2175-33692013000100006
+    title: 'Urbanismo português na cidade de Maputo: passado, presente e futuro'
+    url: https://www.scielo.br/pdf/urbe/v5n1/a06v5n1.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2448-167x2016000300309
+    title: Application of optimization for improvement of the efficiency of louvered-fin
+      compact heat exchangers
+    url: https://www.scielo.br/pdf/remi/v69n3/2448-167X-remi-69-03-0309.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000300301
+    title: Recent mineral discoveries in the Coronel Murta, Taquaral, and Medina pegmatite
+      fields, northeastern Minas Gerais, Brazil
+    url: https://www.scielo.br/pdf/remi/v69n3/2448-167X-remi-69-03-0301.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000300355
+    title: Comminution circuits for compact itabirites
+    url: https://www.scielo.br/pdf/remi/v69n3/2448-167X-remi-69-03-0355.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000300281
+    title: 'Optimization of structures subjected to dynamic load: deterministic and
+      probabilistic methods'
+    url: https://www.scielo.br/pdf/remi/v69n3/2448-167X-remi-69-03-0281.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000300273
+    title: A general method for designing non-symmetrical composite steel and concrete
+      columns
+    url: https://www.scielo.br/pdf/remi/v69n3/2448-167X-remi-69-03-0273.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000300333
+    title: Copper tailings in stucco mortars
+    url: https://www.scielo.br/pdf/remi/v69n3/2448-167X-remi-69-03-0333.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000300265
+    title: Technical viability of self-compacting concretes with by-products from crushed
+      coarse aggregate production
+    url: https://www.scielo.br/pdf/remi/v69n3/2448-167X-remi-69-03-0265.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000300293
+    title: Geophysical modeling in gold deposit through DC Resistivity and Induced Polarization
+      methods
+    url: https://www.scielo.br/pdf/remi/v69n3/2448-167X-remi-69-03-0293.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000300325
+    title: Experimental evaluation of the wind effects on an operating power transmission
+      tower
+    url: https://www.scielo.br/pdf/remi/v69n3/2448-167X-remi-69-03-0325.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000300317
+    title: Analysis of combustion efficiency in a pelletizing furnace
+    url: https://www.scielo.br/pdf/remi/v69n3/2448-167X-remi-69-03-0317.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000300341
+    title: Mathematical method to characterize the inward solid state diffusion in cylindrical
+      parts
+    url: https://www.scielo.br/pdf/remi/v69n3/2448-167X-remi-69-03-0341.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000300287
+    title: 'Surface treatment systems for concrete in marine environment: Effect of
+      concrete cover thickness'
+    url: https://www.scielo.br/pdf/remi/v69n3/2448-167X-remi-69-03-0287.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000300361
+    title: Characterization of the unhealthy and hazardous situations under the forensic
+      expert survey and safety management in quarries
+    url: https://www.scielo.br/pdf/remi/v69n3/2448-167X-remi-69-03-0361.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000400397
+    title: Petrography and geochemistry of the Pedra Dourada Granulite, southeastern
+      Minas Gerais, Brazil
+    url: https://www.scielo.br/pdf/remi/v69n4/2448-167X-remi-69-04-0397.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000400445
+    title: Morro do Cruzeiro UFOP Campus evaluation of indoors climatic conditions
+    url: https://www.scielo.br/pdf/remi/v69n4/2448-167X-remi-69-04-0445.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000400465
+    title: Effects of Te additions and stirring in the In segregation in Ga1-xInxSb
+      alloys
+    url: https://www.scielo.br/pdf/remi/v69n4/2448-167X-remi-69-04-0465.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000400425
+    title: Influence of the type of fastening of multi-layered closing panels on the
+      estimate of the sound transmission loss
+    url: https://www.scielo.br/pdf/remi/v69n4/2448-167X-remi-69-04-0425.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000400473
+    title: Metallurgical characterization of kaolin from Atacama, Chile
+    url: https://www.scielo.br/pdf/remi/v69n4/2448-167X-remi-69-04-0473.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000400435
+    title: Analysis of reverse heat transfer for conventional and optimized lubri-cooling
+      methods during tangential surface grinding of ABNT 1020 steel
+    url: https://www.scielo.br/pdf/remi/v69n4/2448-167X-remi-69-04-0435.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000400409
+    title: '3-D Geological modelling: a siliciclastic reservoir case study from Campos
+      Basin, Brazil'
+    url: https://www.scielo.br/pdf/remi/v69n4/2448-167X-remi-69-04-0409.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2448-167x2016000400417
+    title: A gis-based tool for estimating soil loss in agricultural river basins
+    url: https://www.scielo.br/pdf/remi/v69n4/2448-167X-remi-69-04-0417.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: materials
+    format: pdf
+  - id: sci-s2236-99962013000200513
+    title: 'Acessibilidade e mobilidade espaciais da população na Região Metropolitana
+      de Belo Horizonte: análise com base no censo demográfico de 2010'
+    url: https://www.scielo.br/pdf/cm/v15n30/2236-9996-cm-15-30-0513.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962013000200377
+    title: 'Mobilidade urbana: os desafios do futuro'
+    url: https://www.scielo.br/pdf/cm/v15n30/2236-9996-cm-15-30-0377.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962013000200371
+    title: Apresentação
+    url: https://www.scielo.br/pdf/cm/v15n30/2236-9996-cm-15-30-0371.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962013000200411
+    title: A origem do caos ? a crise de mobilidade no Rio de Janeiro e a ameaça à saúde
+      urbana
+    url: https://www.scielo.br/pdf/cm/v15n30/2236-9996-cm-15-30-0411.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962013000200535
+    title: 'A via portuária de Salvador: mobilidade na capital baiana a partir de intervenções
+      viárias'
+    url: https://www.scielo.br/pdf/cm/v15n30/2236-9996-cm-15-30-0535.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962013000200605
+    title: 'Tensões e contradições na construção de futuros urbanos sustentáveis: o
+      caso de Lisboa'
+    url: https://www.scielo.br/pdf/cm/v15n30/2236-9996-cm-15-30-0605.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962013000200433
+    title: 'A mobilidade pendular na Macrometr&#243;pole Paulista: diferencia&#231;&#227;o
+      e complementaridade socioespacial'
+    url: https://www.scielo.br/pdf/cm/v15n30/2236-9996-cm-15-30-0433.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962013000200645
+    title: Restrição ambiental ou oportunidade para o desenvolvimento sustentável? Aquífero
+      Carste na Região Metropolitana de Curitiba
+    url: https://www.scielo.br/pdf/cm/v15n30/2236-9996-cm-15-30-0645.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962013000200627
+    title: 'Produ&#231;&#227;o do espa&#231;o urbano e processos espaciais em Natal:
+      o conjunto Ponta Negra em foco'
+    url: https://www.scielo.br/pdf/cm/v15n30/2236-9996-cm-15-30-0627.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962013000200389
+    title: 'Transporte, fluxo de mercadoria e desenvolvimento econômico urbano na Amazônia:
+      o caso de Belém e Manaus'
+    url: https://www.scielo.br/pdf/cm/v15n30/2236-9996-cm-15-30-0389.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962013000200583
+    title: 'Opera&#231;&#227;o Urbana Consorciada da Linha Verde: limites e oportunidades
+      &#224; luz da gest&#227;o social da valoriza&#231;&#227;o da terra'
+    url: https://www.scielo.br/pdf/cm/v15n30/2236-9996-cm-15-30-0583.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962013000200489
+    title: Índice de Mobilidade Urbana Sustentável em Goiânia como ferramenta para políticas
+      públicas
+    url: https://www.scielo.br/pdf/cm/v15n30/2236-9996-cm-15-30-0489.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962013000200461
+    title: O Aglomerado Urbano de Jundiaí (SP) e os desafios para a mobilidade metropolitana
+      paulista
+    url: https://www.scielo.br/pdf/cm/v15n30/2236-9996-cm-15-30-0461.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962013000200557
+    title: Infraestruturas nas Copas do Mundo da Alemanha, África do Sul e Brasil
+    url: https://www.scielo.br/pdf/cm/v15n30/2236-9996-cm-15-30-0557.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962014000100061
+    title: Las palabras y las cosas en la ciudad latinoamericana. Obst&#225;culos epistemol&#243;gicos
+      en pol&#237;ticas urbanas argentinas
+    url: https://www.scielo.br/pdf/cm/v16n31/2236-9996-cm-16-31-0061.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962014000100017
+    title: Una lectura de Polanyi desde la econom&#237;a social y solidaria en Am&#233;rica
+      Latina
+    url: https://www.scielo.br/pdf/cm/v16n31/2236-9996-cm-16-31-0017.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962014000100037
+    title: La ciudad capitalista en el patrón neoliberal de acumulación en América Latina
+    url: https://www.scielo.br/pdf/cm/v16n31/2236-9996-cm-16-31-0037.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962014000100221
+    title: 'Análise morfológica de espaços urbanos em bacias hidrográficas: um olhar
+      sobre o entorno do Arroio Dilúvio em Porto Alegre'
+    url: https://www.scielo.br/pdf/cm/v16n31/2236-9996-cm-16-31-0221.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962014000100113
+    title: Enfoques teóricos y usos políticos del concepto de espacio público bajo el
+      neoliberalismo en la ciudad de Cuernavaca, México
+    url: https://www.scielo.br/pdf/cm/v16n31/2236-9996-cm-16-31-0113.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962014000100171
+    title: As migra&#231;&#245;es internas e seu protagonismo contempor&#226;neo nos
+      imagin&#225;rios urbanos da metr&#243;pole de Lima, Peru
+    url: https://www.scielo.br/pdf/cm/v16n31/2236-9996-cm-16-31-0171.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962014000100241
+    title: Avaliação das metodologias brasileiras de vulnerabilidade socioambiental
+      como decorrência da problemática urbana no Brasil
+    url: https://www.scielo.br/pdf/cm/v16n31/2236-9996-cm-16-31-0241.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962014000100197
+    title: 'Polos regionais do Norte Fluminense e a Regi&#227;o Metropolitana: cultura
+      pol&#237;tica em perspectiva comparada'
+    url: https://www.scielo.br/pdf/cm/v16n31/2236-9996-cm-16-31-0197.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962014000100139
+    title: Pode-se falar, nestes anos 2000, de um modelo latino-americano de cidade
+      ou metrópole? Ponto de vista de uma europeia
+    url: https://www.scielo.br/pdf/cm/v16n31/2236-9996-cm-16-31-0139.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2236-99962014000100089
+    title: 'Urbanismo a la carta: teorías, políticas, programas y otras recetas urbanas
+      para ciudades latinoamericanas'
+    url: https://www.scielo.br/pdf/cm/v16n31/2236-9996-cm-16-31-0089.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: urban
+    format: pdf
+  - id: sci-s2318-03312016000200328
+    title: Rendimentos operacionais de barco removedor e escavadeira de braço longo
+      no controle de infestações de plantas aquáticas no reservatório Piraquara II,
+    url: https://www.scielo.br/pdf/rbrh/v21n2/2318-0331-rbrh-21-2-328.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000200391
+    title: Occurrence and mobility of antimicrobials and hormones in Oxisol with application
+      of swine slurry
+    url: https://www.scielo.br/pdf/rbrh/v21n2/2318-0331-rbrh-21-2-391.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000200466
+    title: 'Integração da gestão de recursos hídricos e da zona costeira em Santa Catarina:
+      a zona de influência costeira nas bacias dos rios Mampituba, Araranguá'
+    url: https://www.scielo.br/pdf/rbrh/v21n2/2318-0331-rbrh-21-2-466.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000200451
+    title: Avaliação da Recarga de Águas Subterrâneas em Ambiente de Cerrado com Base
+      em Modelagem Numérica do Fluxo em Meio Poroso Saturado
+    url: https://www.scielo.br/pdf/rbrh/v21n2/2318-0331-rbrh-21-2-451.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000200360
+    title: Modelagem Computacional Tridimensional de um Vertedouro de Baixa Queda
+    url: https://www.scielo.br/pdf/rbrh/v21n2/2318-0331-rbrh-21-2-360.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000200288
+    title: Avaliação das estimativas de chuva do satélite TRMM no Estado da Paraíba
+    url: https://www.scielo.br/pdf/rbrh/v21n2/2318-0331-rbrh-21-2-288.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000200401
+    title: Gestão qualitativa dos recursos hídricos. Proposta metodológica para o planejamento
+      de uma rede de estações para monitoramento da qualidade de águas s
+    url: https://www.scielo.br/pdf/rbrh/v21n2/2318-0331-rbrh-21-2-401.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000200439
+    title: Simulação de alterações numa ETA convencional de porte médio para a produção
+      de água segura
+    url: https://www.scielo.br/pdf/rbrh/v21n2/2318-0331-rbrh-21-2-439.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000200300
+    title: Development of a tool for hydroeletric reservoir operation with multiple
+      uses considering effects of climate changes. Case study of Furnas HPP
+    url: https://www.scielo.br/pdf/rbrh/v21n2/2318-0331-rbrh-21-2-300.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000200314
+    title: Training watershed committee members to aid on the decision-making process
+      for the execution program of the framework of water bodies
+    url: https://www.scielo.br/pdf/rbrh/v21n2/2318-0331-rbrh-21-2-314.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000200377
+    title: 'Methodologies for generation of hazard indicator maps and flood prone areas:
+      municipality of Ipojuca/PE.'
+    url: https://www.scielo.br/pdf/rbrh/v21n2/2318-0331-rbrh-21-2-377.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000100209
+    title: Sobre a Modelagem Computacional de Estruturas Imersas em Escoamentos em Escala
+      Subgrid
+    url: https://www.scielo.br/pdf/rbrh/v21n1/2318-0331-rbrh-21-1-209.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000100200
+    title: Desempenho do modelo HAND no mapeamento de áreas suscetíveis à inundação
+      usando dados de alta resolução espacial
+    url: https://www.scielo.br/pdf/rbrh/v21n1/2318-0331-rbrh-21-1-200.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000100188
+    title: O Uso da Geoestatística na Avaliação dos Parâmetros Hidrogeológicos para
+      Compor o Mapa de Vulnerabilidade Intrínseca de Aquíferos
+    url: https://www.scielo.br/pdf/rbrh/v21n1/2318-0331-rbrh-21-1-188.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000100222
+    title: Avaliação das Flutuações de Pressão em Ressalto Hidráulico pela Dissociação
+      de Esforços
+    url: https://www.scielo.br/pdf/rbrh/v21n1/2318-0331-rbrh-21-1-222.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000100251
+    title: Mecanismos poupadores de água como suporte ao planejamento urbano
+    url: https://www.scielo.br/pdf/rbrh/v21n1/2318-0331-rbrh-21-1-251.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000100105
+    title: Impactos de derramamentos de etanol em água subterrânea &#8211; Experimento
+      de campo
+    url: https://www.scielo.br/pdf/rbrh/v21n1/2318-0331-rbrh-21-1-105.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000100099
+    title: Acurácia do Modelo Hydrus na Predição da Lixiviação de Nitrato Resultante
+      da Aplicação de Lodo de Esgoto Tratado a Solos de Diferentes Texturas
+    url: https://www.scielo.br/pdf/rbrh/v21n1/2318-0331-rbrh-21-1-99.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2318-03312016000100011
+    title: 'Aquíferos com fluxos controlados simultaneamente por porosidade intergranular
+      e planar: aplicação a rochas metassedimentares do Alto Paraguai, MT'
+    url: https://www.scielo.br/pdf/rbrh/v21n1/2318-0331-rbrh-21-1-11.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2675-54752021000100406
+    title: Analysis of the failure modes and development of landslides using the material
+      point method
+    url: https://www.scielo.br/pdf/soiroc/v44n1/2675-5475-soiroc-44-1-e2021057820.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000100403
+    title: Validation of a 3D numerical model for piled raft systems founded in soft
+      soils undergoing regional subsidence
+    url: https://www.scielo.br/pdf/soiroc/v44n1/2675-5475-soiroc-44-1-e2021053620.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000100402
+    title: Geotechnical and other characteristics of cement-treated low plasticity clay
+    url: https://www.scielo.br/pdf/soiroc/v44n1/2675-5475-soiroc-44-1-e2021053120.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000100407
+    title: Soil-water characteristic curve and permeability coefficient prediction model
+      for unsaturated loess considering freeze-thaw and dry-wet
+    url: https://www.scielo.br/pdf/soiroc/v44n1/2675-5475-soiroc-44-1-e2021058320.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000100501
+    title: New modeling approach for tunnels under complex ground and loading conditions
+    url: https://www.scielo.br/pdf/soiroc/v44n1/2675-5475-soiroc-44-1-e2021052120.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000100502
+    title: Analysis of different failure criteria to evaluate bauxite tailings mechanical
+      behavior through numerical modelling
+    url: https://www.scielo.br/pdf/soiroc/v44n1/2675-5475-soiroc-44-1-e2021053720.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000100405
+    title: Effects of underground circular void on strip footing laid on the edge of
+      a cohesionless slope under eccentric loads
+    url: https://www.scielo.br/pdf/soiroc/v44n1/2675-5475-soiroc-44-1-e2021055920.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000100404
+    title: Prediction of maximum dry unit weight and optimum moisture content for coarse-grained
+      lateritic soils
+    url: https://www.scielo.br/pdf/soiroc/v44n1/2675-5475-soiroc-44-1-e2021054120.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000100600
+    title: Assessment of potential surface degradation resulting from erosion processes
+      in environmentally protected area
+    url: https://www.scielo.br/pdf/soiroc/v44n1/2675-5475-soiroc-44-1-e2021052420.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000100401
+    title: Unconfined compression strength of an artificially cemented aeolian dune
+      sand of Natal/Brazil
+    url: https://www.scielo.br/pdf/soiroc/v44n1/2675-5475-soiroc-44-1-e2021049920.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000100503
+    title: Numerical analysis of cyclic loading effect on progressive failure of an
+      earth dam upon a multi-laminate framework
+    url: https://www.scielo.br/pdf/soiroc/v44n1/2675-5475-soiroc-44-1-e2021056720.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000100500
+    title: Stiffness, compressibility, and hydraulic conductivity of compacted soil
+      mixtures submitted to acidic percolation
+    url: https://www.scielo.br/pdf/soiroc/v44n1/2675-5475-soiroc-44-1-e2021047720.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000100504
+    title: 'A proposal for static load tests on piles: the Equilibrium Method'
+    url: https://www.scielo.br/pdf/soiroc/v44n1/2675-5475-soiroc-44-1-e2021057920.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000100408
+    title: Analogy to the chaos theory applied to the study of rockfalls
+    url: https://www.scielo.br/pdf/soiroc/v44n1/2675-5475-soiroc-44-1-e2021059420.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000100400
+    title: Seismic zoning of Tabriz area by stochastic finite fault model considering
+      site-specific soil effects
+    url: https://www.scielo.br/pdf/soiroc/v44n1/2675-5475-soiroc-44-1-e2021047220.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000200401
+    title: Dynamic driving formulas and static loadings in the light of wave equation
+      solutions
+    url: https://www.scielo.br/pdf/soiroc/v44n2/2675-5475-soiroc-44-2-e2021061921.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000200400
+    title: Centrifuge modeling of normal faulting and underground tunnel in sandy soil
+      deposit
+    url: https://www.scielo.br/pdf/soiroc/v44n2/2675-5475-soiroc-44-2-e2021059520.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000200500
+    title: A simple approach to predict settlement due to constant rate loading in clays
+    url: https://www.scielo.br/pdf/soiroc/v44n2/2675-5475-soiroc-44-2-e2021057120.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000200600
+    title: Assessment of seismic vulnerability index of RAJUK area in Bangladesh using
+      microtremor observations
+    url: https://www.scielo.br/pdf/soiroc/v44n2/2675-5475-soiroc-44-2-e2021057420.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000200501
+    title: Limitations of the Danish driving formula for short piles
+    url: https://www.scielo.br/pdf/soiroc/v44n2/2675-5475-soiroc-44-2-e2021057320.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000200402
+    title: Soil-structure interaction analysis in reinforced concrete structures on
+      footing foundation
+    url: https://www.scielo.br/pdf/soiroc/v44n2/2675-5475-soiroc-44-2-e2021058020.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000200403
+    title: Reinforcing effect of recycled polypropylene fibers on a clayey lateritic
+      soil in different compaction degrees
+    url: https://www.scielo.br/pdf/soiroc/v44n2/2675-5475-soiroc-44-2-e2021061520.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000200300
+    title: Judgement in geotechnical engineering practice
+    url: https://www.scielo.br/pdf/soiroc/v44n2/2675-5475-soiroc-44-2-e2021063821.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000200601
+    title: Combined analysis of landslide susceptibility and soil water dynamics in
+      a metropolitan area, northeast Brazil
+    url: https://www.scielo.br/pdf/soiroc/v44n2/2675-5475-soiroc-44-2-e2021051420.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2675-54752021000200404
+    title: An experimental study on improvement of cohesive soil with eco-friendly guar
+      gum
+    url: https://www.scielo.br/pdf/soiroc/v44n2/2675-5475-soiroc-44-2-e2021060020.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: sci-s2238-10312013000200016
+    title: Intelligent transport systems and regional digital convergence in Greece
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a16.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200004
+    title: 'Mensuração do custo social subjacente à atual frota autônoma de caminhões
+      da agropecuária nacional - um estudo de caso: soja, café e boi em pé'
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a04.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200014
+    title: Aviation war risk insurance and its impacts on US passenger aviation
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a14.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200011
+    title: Modelo de quatro etapas aplicado ao planejamento de transporte de carga
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a11.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200020
+    title: Assessing the effects of the São Paulo's metropolitan beltway on residential
+      land prices
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a20.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200018
+    title: A supply-demand study of practice in rail logistics higher education
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a18.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200009
+    title: Seleção de uma aeronave para atividades de charter regional com utilização
+      do método multicritério de borda modificado com utilização de mediana
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a09.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200001
+    title: Introducing the volume 7, number 2 of JTL
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a01.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200017
+    title: A model for estimating airline passenger trip reliability metrics from system-wide
+      flight simulations
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a17.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200007
+    title: 'Investimentos em transportes terrestres causam crescimento econômico?: um
+      estudo quantitativo'
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a07.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200003
+    title: Otimização de rede intermodal para o transporte de soja do norte do Mato
+      Grosso ao porto de Santarém
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a03.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200015
+    title: Econometric analysis to estimate the impact of holidays on airfares
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a15.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200021
+    title: Driver and vehicle type parameters' contribution to traffic safety in UAE
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a21.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200012
+    title: Simulation modelling to analyse the current level of utilisation of sections
+      along a rail route
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a12.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200013
+    title: 'Price effects of airline alliances: design and modelling'
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a13.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200005
+    title: Análise de eficiência na gestão de portos públicos brasileiros em relação
+      ao papel das autoridades portuárias
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a05.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200019
+    title: Risk assessment in airlines stocks market
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a19.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200006
+    title: Acessibilidade na Região Amazônica através do transporte hidroviário
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a06.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200002
+    title: 'Effect of model specification on valuation of travel attributes: a case
+      study of rural feeder service to bus stop'
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a02.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200008
+    title: Análise do potencial de integração da bicicleta com o transporte coletivo
+      em Belo Horizonte
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a08.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000200010
+    title: The impact of thermal comfort in the perceived level of service and energy
+      costs of three Brazilian airports
+    url: https://www.scielo.br/pdf/jtl/v7n2/v7n2a10.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000300002
+    title: Wages and jobs in the Portuguese air transport industry
+    url: https://www.scielo.br/pdf/jtl/v7n3/02.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000300003
+    title: Bus route evaluation using a two-stage hybrid model of Fuzzy AHP and TOPSIS
+    url: https://www.scielo.br/pdf/jtl/v7n3/03.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000300008
+    title: 'Determinação do valor da tarifa-leilão do serviço de transporte de passageiros
+      por ônibus: um modelo alternativo'
+    url: https://www.scielo.br/pdf/jtl/v7n3/08.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+  - id: sci-s2238-10312013000300007
+    title: Estudo de viabilidade de implantação de um novo corredor urbano na região
+      do Igarapé da Lavanderia por meio de dinâmica de sistemas
+    url: https://www.scielo.br/pdf/jtl/v7n3/07.pdf
+    source: scielo_scl
+    license: cc-by
+    topic: infrastructure
+    format: pdf

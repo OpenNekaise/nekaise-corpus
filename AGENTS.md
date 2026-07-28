@@ -59,7 +59,8 @@ backends (`find_sources.py` OpenAlex/OSTI/arXiv · `find_github.py` curated repo
 public-domain texts (Internet Archive) · `find_openaire.py` EU project deliverables · `find_nist.py`
 NIST/NBS via Crossref · `find_zenodo.py` CC-licensed records · `find_patents.py` US patents via the
 Google Patents sitemap (the biggest open vein) · `find_wiki.py` multilingual Wikipedia ·
-`find_ibpsa.py` (paused — see rotation.json) · `crawl_docs.py` doc sites) propose registry entries;
+`find_scielo.py` SciELO Brazil's CC-BY AEC journals (the biggest Portuguese built-environment
+vein) · `find_ibpsa.py` (paused — see rotation.json) · `crawl_docs.py` doc sites) propose registry entries;
 `prune_corpus.py --apply` is the quality gate (logic in `scripts/quality.py`, golden-tested in
 `tests/`). URLs the pruner drops land in `pruned_urls.txt` (committed) and every finder skips them —
 rounds never re-churn pruned material.
