@@ -1237,3 +1237,144 @@ sources:
     license: open
     topic: urban
     format: pdf
+  - id: bov-boverkets-risk-och-s-rbarhetsanalys
+    title: Boverkets risk- och sårbarhetsanalys
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2019/boverkets-risk--och-sarbarhetsanalys.pdf
+    source: boverket
+    license: open
+    topic: urban
+    format: pdf
+  - id: bov-finansiering-av-ny-och-ombyggnad-av-bost-der-p-lan
+    title: Finansiering av ny- och ombyggnad av bostäder på landsbygden
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2019/finansiering-av-ny--och-ombyggnad-av-bostader-pa-landsbygden-slutrapport-n2018_03940_bb.pdf
+    source: boverket
+    license: open
+    topic: construction
+    format: pdf
+  - id: bov-inspektion-av-uppv-rmningssystem-och-luftkondition
+    title: Inspektion av uppvärmningssystem och luftkonditioneringssystem
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2019/inspektion-av-uppvarmningssystem-och-luftkonditioneringssystem.pdf
+    source: boverket
+    license: open
+    topic: urban
+    format: pdf
+  - id: bov-kompletterande-utredning-av-konsekvenser-till-bove
+    title: Kompletterande utredning av konsekvenser till Boverkets föreskrifter (2017:5)
+      om ändring av Boverkets byggregler (2011:6)
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2019/kompletterande-utredning-andring-av-boverkets-byggregler.pdf
+    source: boverket
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: bov-m-ngfunktionella-gator
+    title: Mångfunktionella gator
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2019/mangfunktionella-gator.pdf
+    source: boverket
+    license: open
+    topic: urban
+    format: pdf
+  - id: bov-nya-krav-p-laddinfrastruktur-f-r-laddfordon
+    title: Nya krav på laddinfrastruktur för laddfordon
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2019/nya-krav-pa-laddinfrastruktur-for-laddfordon.pdf
+    source: boverket
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: bov-rumsliga-f-ruts-ttningar-f-r-ekosystemtj-nster-i-d
+    title: Rumsliga förutsättningar för ekosystemtjänster i den byggda miljön
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2019/rumsliga-forutsattningar-for-ekosystemtjanster.pdf
+    source: boverket
+    license: open
+    topic: construction
+    format: pdf
+  - id: bov-skolans-nya-plats-i-staden
+    title: Skolans nya plats i staden
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2019/skolans-nya-plats-i-staden.pdf
+    source: boverket
+    license: open
+    topic: urban
+    format: pdf
+  - id: bov-strategi-f-r-boverkets-arbete-med-kulturmilj-fr-go
+    title: Strategi för Boverkets arbete med kulturmiljöfrågor
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2019/strategi-for-boverkets-arbete-med-kulturmiljofragor.pdf
+    source: boverket
+    license: open
+    topic: urban
+    format: pdf
+  - id: bov-tillsynsv-gledning-avseende-risken-f-r-skred-och-e
+    title: Tillsynsvägledning avseende risken för skred och erosion
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2019/tillsynsvagledning-avseende-risken-for-skred-och-erosion.pdf
+    source: boverket
+    license: open
+    topic: urban
+    format: pdf
+  - id: bov-byggemenskaper-i-bostadsf-rs-rjningen
+    title: Byggemenskaper i bostadsförsörjningen
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2018/byggemenskaper-i-bostadsforsorjningen.pdf
+    source: boverket
+    license: open
+    topic: construction
+    format: pdf
+  - id: bov-byggemenskaper-som-en-del-i-bostadsf-rs-rjningen
+    title: Byggemenskaper som en del i bostadsförsörjningen
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2018/byggemenskaper.pdf
+    source: boverket
+    license: open
+    topic: construction
+    format: pdf
+  - id: bov-dokumentationssystem-f-r-byggprodukter
+    title: Dokumentationssystem för byggprodukter
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2018/dokumentationssystem-for-byggprodukter.pdf
+    source: boverket
+    license: open
+    topic: construction
+    format: pdf
+  - id: bov-fysisk-planering-f-r-en-trygg-dricksvattenf-rs-rjn
+    title: Fysisk planering för en trygg dricksvattenförsörjning – behov och möjligheter
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2018/fysisk-planering-for-en-trygg-dricksvattenforsorjning.pdf
+    source: boverket
+    license: open
+    topic: urban
+    format: pdf
+  - id: bov-kartl-ggning-av-fel-brister-och-skador-inom-byggse
+    title: Kartläggning av fel, brister och skador inom byggsektorn
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2018/kartlaggning-av-fel-brister-och-skador-inom-byggsektorn.pdf
+    source: boverket
+    license: open
+    topic: construction
+    format: pdf
+  - id: bov-klimatdeklaration-av-byggnader
+    title: Klimatdeklaration av byggnader
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2018/klimatdeklaration-av-byggnader_slutrapport.pdf
+    source: boverket
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: bov-nordisk-harmonisering-och-tillg-nglighetsforskning
+    title: Nordisk harmonisering och tillgänglighetsforskning
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2018/nordisk-harmonisering-av-byggregler-dnr-5935-2017.pdf
+    source: boverket
+    license: open
+    topic: urban
+    format: pdf
+  - id: bov-smarta-st-der-och-regioner
+    title: Smarta städer och regioner
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2018/smarta-stader-och-regioner.pdf
+    source: boverket
+    license: open
+    topic: urban
+    format: pdf
+  - id: bov-bost-der-och-platser-f-r-ungdomar
+    title: Bostäder och platser för ungdomar
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2019/bostader-och-platser-for-ungdomar2.pdf
+    source: boverket
+    license: open
+    topic: urban
+    format: pdf
+  - id: bov-boverkets-konstruktionsregler-eks-11
+    title: Boverkets konstruktionsregler EKS 11
+    url: https://www.boverket.se/globalassets/publikationer/dokument/2019/eks-112.pdf
+    source: boverket
+    license: open
+    topic: standards_protocols
+    format: pdf
