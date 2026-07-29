@@ -7,6 +7,7 @@ never goes stale. No-op (leaves README untouched) if the sentinels are missing.
 """
 from __future__ import annotations
 
+import argparse
 import subprocess
 import time
 from collections import Counter
@@ -29,11 +30,23 @@ def du(path: str) -> str:
         return "?"
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument(
+        "--print-tokens",
+        action="store_true",
+        help="print the exact manifest-derived token estimate and do not update README",
+    )
+    args = ap.parse_args(argv)
+
     rows = registry.load_manifest_rows()
     ok = [r for r in rows if r.get("status") == "ok"]
     chars = sum(r.get("text_chars", 0) for r in ok)
     tok = chars // 4
+    if args.print_tokens:
+        print(tok)
+        return
+
     topics = Counter(r["topic"] for r in ok)
     lic = Counter(r["license"] for r in ok)
     date = time.strftime("%Y-%m-%d", time.gmtime())
