@@ -74,7 +74,7 @@ flowchart LR
     end
     FINDERS -->|"propose entries<br/>(dedup via rebuildable SQLite index)"| R
     R["registry/*.yaml — sharded registry<br/>+ backends.json + rotation.json"]
-    R --> B["build_corpus.py — the loader<br/>parallel, ≤2 req/host, WAF/TLS fallback,<br/>pypdf→pdftotext rescue, sha256 + quality metrics"]
+    R --> B["build_corpus.py — the loader<br/>fair host-aware downloads + process extraction,<br/>WAF/TLS fallback, pypdf→pdftotext rescue,<br/>sha256 + quality metrics"]
     B --> D["raw/ + text/<br/>(your machine only — git-ignored)"]
     B --> M["manifest/*.jsonl — sharded manifest<br/>provenance: url · license · sha256 · metrics"]
     M --> P["prune_corpus.py — quality gate<br/>multilingual on-topic check, dedup,<br/>golden-tested (tests/)"]
@@ -121,6 +121,13 @@ tests. Any non-zero required step prevents commit and push. `dig.sh` and `marath
 wrappers around this same state machine; local run events are written under `logs/`. Normal failures
 roll tracked state back. A hard kill leaves a snapshot recoverable with
 `python scripts/run_round.py --recover latest`.
+
+Discovery backends run concurrently, but never write shared YAML concurrently: each finder stages an
+isolated JSON proposal, then the control plane deterministically deduplicates and merges successful
+proposals before advancing rotation pointers. The loader separately schedules host-aware downloads
+(`--workers`, default 16) and process-parallel extraction (`--extract-workers`, default ≤8), so slow
+PDF parsing does not consume a network slot. Finder concurrency is configurable with
+`run_round.py --discovery-workers N` (default 6).
 
 The Git-tracked YAML/JSONL files remain the source of truth. `workspace/corpus-index.sqlite3` is a
 git-ignored acceleration index, automatically invalidated by source-file signatures and safe to

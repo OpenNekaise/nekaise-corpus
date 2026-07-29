@@ -17,8 +17,10 @@ import os
 import shlex
 import subprocess
 import sys
+import tempfile
 import time
 import uuid
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import ops
@@ -89,6 +91,136 @@ def run_command(step: str, cmd: list[str], env: dict, run_id: str) -> None:
     ops.run_event(run_id, "step_completed", step=step, elapsed_seconds=elapsed)
 
 
+def _finder_output(text: str) -> str:
+    """Keep finder summaries/errors in the round log without replaying their full YAML proposals."""
+    return "\n".join(line for line in text.splitlines() if line.startswith("#"))
+
+
+def merge_proposals(results: list[dict]) -> tuple[int, dict[str, int]]:
+    """Merge finder proposal files in backend order, deduplicating across concurrent finders."""
+    urls, titles, ids = registry.existing_keys()
+    merged = []
+    accepted: dict[str, int] = {}
+    for result in sorted(results, key=lambda r: r["index"]):
+        path = result["proposal"]
+        entries = json.loads(path.read_text()) if path.exists() else []
+        count = 0
+        for entry in entries:
+            missing = [field for field in registry.REQUIRED_FIELDS if not entry.get(field)]
+            if missing:
+                raise RuntimeError(
+                    f"{result['name']} proposed {entry.get('id', '<no id>')} without "
+                    f"{', '.join(missing)}"
+                )
+            url = entry["url"].rstrip("/")
+            title = registry.norm(entry["title"])
+            if url in urls or title in titles:
+                continue
+            registry.uniquify_ids([entry], ids)
+            urls.add(url)
+            titles.add(title)
+            merged.append(entry)
+            count += 1
+        accepted[result["name"]] = count
+    if merged:
+        registry.append_entries(merged)
+    return len(merged), accepted
+
+
+def run_finders_parallel(
+    selected: list[str],
+    backends: dict,
+    rotation_state: dict,
+    env: dict,
+    run_id: str,
+    workers: int,
+) -> None:
+    """Run finders concurrently against one immutable registry view, then merge serially."""
+    ops.WORKSPACE.mkdir(parents=True, exist_ok=True)
+    # Warm/rebuild the optional SQLite index once before children perform concurrent read-only
+    # lookups. Proposal mode prevents those children from mutating either the index or YAML.
+    registry.existing_keys()
+    with tempfile.TemporaryDirectory(
+        prefix=f"finder-proposals-{run_id}-",
+        dir=ops.WORKSPACE,
+    ) as temp_name:
+        temp = Path(temp_name)
+
+        def execute(index: int, name: str) -> dict:
+            cfg = backends[name]
+            command = finder_command(name, cfg, rotation_state)
+            shown = shlex.join(command)
+            proposal = temp / f"{index:03d}-{name}.json"
+            child_env = env.copy()
+            child_env["NEKAISE_PROPOSAL_FILE"] = str(proposal)
+            step = f"discover:{name}"
+            ops.run_event(run_id, "step_started", step=step, command=shown)
+            started = time.monotonic()
+            result = subprocess.run(
+                command,
+                cwd=ROOT,
+                env=child_env,
+                capture_output=True,
+                text=True,
+            )
+            elapsed = round(time.monotonic() - started, 3)
+            event = "step_completed" if result.returncode == 0 else "step_failed"
+            ops.run_event(
+                run_id,
+                event,
+                step=step,
+                returncode=result.returncode,
+                elapsed_seconds=elapsed,
+            )
+            return {
+                "index": index,
+                "name": name,
+                "command": shown,
+                "proposal": proposal,
+                "returncode": result.returncode,
+                "stdout": result.stdout,
+                "stderr": result.stderr,
+                "elapsed": elapsed,
+            }
+
+        print(
+            f"\n== discovery: {len(selected)} backends, "
+            f"{min(max(1, workers), max(1, len(selected)))} workers",
+            flush=True,
+        )
+        results = []
+        with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+            futures = {
+                pool.submit(execute, index, name): name
+                for index, name in enumerate(selected)
+            }
+            for future in as_completed(futures):
+                result = future.result()
+                results.append(result)
+                summary = _finder_output(result["stdout"])
+                print(
+                    f"  {result['name']}: exit {result['returncode']} "
+                    f"in {result['elapsed']:.1f}s",
+                    flush=True,
+                )
+                if summary:
+                    print(summary, flush=True)
+                if result["stderr"].strip():
+                    print(result["stderr"].rstrip(), file=sys.stderr, flush=True)
+
+        failed = [r for r in results if r["returncode"]]
+        if failed:
+            names = ", ".join(f"{r['name']} ({r['returncode']})" for r in failed)
+            raise RuntimeError(f"discovery failed: {names}")
+
+        total, accepted = merge_proposals(results)
+        print(f"discovery merge: {total} unique candidates | by backend: {accepted}")
+        for name in selected:
+            if backends[name].get("rotation", True):
+                new_pointer = rotation.advance(name)
+                ops.run_event(run_id, "rotation_advanced", backend=name, next=new_pointer)
+
+
 def git_clean() -> bool:
     return not subprocess.check_output(
         ["git", "status", "--porcelain"], cwd=ROOT, text=True,
@@ -124,6 +256,12 @@ def main() -> int:
     ap.add_argument("--backend", action="append", default=[],
                     help="run only this discovery backend (repeatable)")
     ap.add_argument("--skip-discovery", action="store_true")
+    ap.add_argument(
+        "--discovery-workers",
+        type=int,
+        default=6,
+        help="finder subprocesses run concurrently using isolated proposal files (default 6)",
+    )
     ap.add_argument("--skip-tests", action="store_true")
     ap.add_argument("--commit", action="store_true", help="commit the validated snapshot locally")
     ap.add_argument("--push", metavar="BRANCH",
@@ -205,13 +343,14 @@ def main() -> int:
             before, _ = doc_stats()
             snapshot = ops.StateSnapshot.capture(run_id, SNAPSHOT_PATHS, root=ROOT)
             if not args.skip_discovery:
-                for name in selected:
-                    cfg = backends[name]
-                    cmd = finder_command(name, cfg, rotation.load())
-                    run_command(f"discover:{name}", cmd, env, run_id)
-                    if cfg.get("rotation", True):
-                        new_pointer = rotation.advance(name)
-                        ops.run_event(run_id, "rotation_advanced", backend=name, next=new_pointer)
+                run_finders_parallel(
+                    selected,
+                    backends,
+                    rotation_state,
+                    env,
+                    run_id,
+                    args.discovery_workers,
+                )
 
             for step, script, fixed_args in PIPELINE:
                 run_command(step, [sys.executable, str(SCRIPTS / script), *fixed_args], env, run_id)

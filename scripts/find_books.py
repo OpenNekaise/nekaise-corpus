@@ -28,18 +28,20 @@ import argparse
 import json
 import re
 import sys
-import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import requests
 import yaml
 
+import ops
 import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 SEARCH = "https://library.oapen.org/rest/search"
 OAI = "https://library.oapen.org/oai/request"
 UA = {"User-Agent": "nekaise-corpus/find_books"}
+LICENSE_CACHE = HERE / "workspace" / "oapen-license-cache.json"
 
 # (OAPEN subject term -> our corpus topic). Broad built-environment coverage; pagination goes deep.
 QUERIES = [
@@ -142,6 +144,52 @@ def license_of(handle: str) -> str | None:
         return None
 
 
+def load_license_cache() -> dict[str, str | None]:
+    try:
+        return {
+            handle: license_name
+            for handle, license_name in json.loads(LICENSE_CACHE.read_text()).items()
+            if license_name
+        }
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+def save_license_cache(cache: dict[str, str | None]) -> None:
+    LICENSE_CACHE.parent.mkdir(parents=True, exist_ok=True)
+    ops.atomic_write_text(
+        LICENSE_CACHE,
+        json.dumps(cache, ensure_ascii=False, sort_keys=True) + "\n",
+    )
+
+
+def search_subject(term: str, topic: str, offset: int, depth: int, per: int) -> list[tuple]:
+    """Fetch one subject's pages sequentially; different subjects run concurrently."""
+    found = []
+    for page_offset in range(offset, offset + depth, per):
+        try:
+            r = requests.get(
+                SEARCH,
+                params={
+                    "query": term,
+                    "expand": "bitstreams,metadata",
+                    "limit": per,
+                    "offset": page_offset,
+                },
+                headers=UA,
+                timeout=45,
+            )
+            r.raise_for_status()
+            items = r.json()
+        except Exception as exc:
+            print(f"# search '{term}' @{page_offset} failed: {exc}", file=sys.stderr)
+            break
+        if not items:
+            break
+        found.extend((term, topic, item) for item in items)
+    return found
+
+
 def emit(e) -> str:
     e = {k: e[k] for k in ("id", "title", "url", "source", "license", "topic", "format")}
     d = yaml.safe_dump([e], sort_keys=False, allow_unicode=True)
@@ -153,57 +201,92 @@ def main() -> None:
     ap.add_argument("--per", type=int, default=25, help="OAPEN page size")
     ap.add_argument("--offset", type=int, default=0,
                     help="starting offset (marathon rotates this per round to harvest OAPEN deeper — "
-                         "the search endpoint is ~20s/call, so scan one page per subject per run)")
+                         "scan one page per subject per run unless doing a deliberate deep pass)")
     ap.add_argument("--depth", type=int, default=25, help="results scanned per subject from --offset")
     ap.add_argument("--max", type=int, default=200, help="cap new books appended per run")
+    ap.add_argument(
+        "--workers",
+        type=int,
+        default=4,
+        help="bounded concurrent OAPEN subjects/license lookups (default 4)",
+    )
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
 
     urls, titles, reg_ids = registry.existing_keys()
-    out, seen = [], set()
-    for term, topic in QUERIES:
+    workers = max(1, args.workers)
+    pages_by_query: list[list[tuple] | None] = [None] * len(QUERIES)
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = {
+            pool.submit(
+                search_subject,
+                term,
+                topic,
+                args.offset,
+                args.depth,
+                args.per,
+            ): index
+            for index, (term, topic) in enumerate(QUERIES)
+        }
+        for future in as_completed(futures):
+            pages_by_query[futures[future]] = future.result()
+
+    candidates, seen = [], set()
+    for pages in pages_by_query:
+        for _term, topic, item in pages or []:
+            title, url, handle = item.get("name"), pdf_link(item), item.get("handle")
+            if not (title and url and handle) or not is_book(item):
+                continue
+            u, t = url.rstrip("/"), registry.norm(title)
+            if u in urls or t in titles or u in seen:
+                continue
+            seen.add(u)
+            candidates.append((title, url, handle, topic))
+
+    cache = load_license_cache()
+    out = []
+    # Work in small deterministic waves: bounded concurrency without resolving hundreds of
+    # licenses after --max has already been reached.
+    wave_size = workers * 4
+    for start in range(0, len(candidates), wave_size):
         if len(out) >= args.max:
             break
-        for offset in range(args.offset, args.offset + args.depth, args.per):
-            if len(out) >= args.max:
-                break
-            try:
-                r = requests.get(SEARCH, params={"query": term, "expand": "bitstreams,metadata",
-                                                 "limit": args.per, "offset": offset},
-                                 headers=UA, timeout=45)
-                r.raise_for_status()
-                items = r.json()
-            except Exception as e:
-                print(f"# search '{term}' @{offset} failed: {e}", file=sys.stderr)
-                break
-            if not items:
-                break  # end of results for this subject
-            for it in items:
-                if len(out) >= args.max:
-                    break
-                title, url, handle = it.get("name"), pdf_link(it), it.get("handle")
-                if not (title and url and handle):
-                    continue
-                u, t = url.rstrip("/"), registry.norm(title)
-                if u in urls or t in titles or u in seen:
-                    continue  # dedup BEFORE the (costly) license lookup
-                if not is_book(it):
-                    continue
-                lic = license_of(handle)
-                time.sleep(0.2)  # be polite to the OAI-PMH endpoint
-                if not lic:
-                    continue
-                seen.add(u)
-                out.append({"id": f"oer-{registry.slug(title)[:52]}", "title": title.strip()[:150], "url": url,
-                            "source": "oapen", "license": lic, "topic": topic, "format": "pdf"})
-            time.sleep(0.2)
+        wave = candidates[start:start + wave_size]
+        resolved: list[str | None] = [None] * len(wave)
+        uncached = {}
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            for index, (_title, _url, handle, _topic) in enumerate(wave):
+                if handle in cache:
+                    resolved[index] = cache[handle]
+                else:
+                    uncached[pool.submit(license_of, handle)] = (index, handle)
+            for future in as_completed(uncached):
+                index, handle = uncached[future]
+                resolved[index] = future.result()
+                # Do not cache None: it can mean either incompatible rights or a transient request
+                # failure, and fail-closed must not turn an outage into a permanent exclusion.
+                if resolved[index]:
+                    cache[handle] = resolved[index]
+        save_license_cache(cache)
+        for (title, url, _handle, topic), lic in zip(wave, resolved):
+            if not lic or len(out) >= args.max:
+                continue
+            out.append({
+                "id": f"oer-{registry.slug(title)[:52]}",
+                "title": title.strip()[:150],
+                "url": url,
+                "source": "oapen",
+                "license": lic,
+                "topic": topic,
+                "format": "pdf",
+            })
 
     registry.uniquify_ids(out, reg_ids)
 
     by_lic: dict = {}
     for h in out:
         by_lic[h["license"]] = by_lic.get(h["license"], 0) + 1
-    print(f"# {len(out)} NEW OAPEN books (English, CC-BY/-SA/0, deduped vs manifest + registry)")
+    print(f"# {len(out)} NEW OAPEN books (all languages, CC-BY/-SA/0, deduped vs manifest + registry)")
     print(f"# by license: {by_lic}")
     print("# --- review, then --append (inserts ABOVE the discovered marker), then build_corpus.py ---")
     print(yaml.safe_dump(out, sort_keys=False, allow_unicode=True))

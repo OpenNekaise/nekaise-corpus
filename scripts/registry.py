@@ -219,7 +219,24 @@ def emit_entry(e: dict) -> str:
 
 def append_entries(entries: list[dict]) -> dict[str, int]:
     """Route entries to their shards by id prefix and append, validating each shard afterwards
-    (parses + count grew by exactly the group size). Returns {shard filename: appended}."""
+    (parses + count grew by exactly the group size). Returns {shard filename: appended}.
+
+    During a parallel discovery phase, run_round sets NEKAISE_PROPOSAL_FILE separately for each
+    finder. In that mode entries are atomically staged as JSON instead of mutating shared YAML;
+    the control plane later deduplicates and merges every successful proposal deterministically.
+    """
+    if proposal_name := os.environ.get("NEKAISE_PROPOSAL_FILE"):
+        proposal = Path(proposal_name)
+        staged = []
+        if proposal.exists():
+            staged = json.loads(proposal.read_text())
+        staged.extend(entries)
+        ops.atomic_write_text(
+            proposal,
+            json.dumps(staged, ensure_ascii=False, sort_keys=True) + "\n",
+        )
+        return {"proposal.json": len(entries)}
+
     prior_signature = None
     try:
         import corpus_index

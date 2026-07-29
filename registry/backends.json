@@ -22,6 +22,6 @@
   "find_boverket": {"script": "find_boverket.py", "args": ["--pages", "2", "--max", "40"], "enabled": true},
   "find_iea": {"script": "find_iea.py", "args": ["--limit", "40", "--max", "40"], "enabled": true},
   "find_scielo": {"script": "find_scielo.py", "args": ["--per", "25", "--max", "400"], "enabled": true},
-  "find_sources": {"script": "find_sources.py", "args": ["--per", "20"], "enabled": true, "rotation": false},
+  "find_sources": {"script": "find_sources.py", "args": ["--per", "20", "--backends", "openalex,arxiv"], "enabled": true, "rotation": false},
   "find_github": {"script": "find_github.py", "args": [], "enabled": true, "rotation": false}
 }

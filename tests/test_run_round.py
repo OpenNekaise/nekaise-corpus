@@ -1,5 +1,8 @@
 from types import SimpleNamespace
+import json
+import os
 import sys
+from pathlib import Path
 
 import pytest
 
@@ -34,6 +37,100 @@ def test_run_command_raises_on_nonzero(monkeypatch):
     monkeypatch.setattr(run_round.ops, "run_event", lambda *args, **kwargs: None)
     with pytest.raises(RuntimeError, match="failed with exit 9"):
         run_round.run_command("broken", ["false"], {}, "run-1")
+
+
+def test_merge_proposals_is_deterministic_and_deduplicates(tmp_path, monkeypatch):
+    first = tmp_path / "first.json"
+    second = tmp_path / "second.json"
+    first.write_text(json.dumps([
+        {
+            "id": "ost-same",
+            "title": "First",
+            "url": "https://e.org/first.pdf",
+            "source": "osti",
+            "license": "public-domain",
+            "topic": "construction",
+            "format": "pdf",
+        }
+    ]))
+    second.write_text(json.dumps([
+        {
+            "id": "ost-same",
+            "title": "Second",
+            "url": "https://e.org/second.pdf",
+            "source": "osti",
+            "license": "public-domain",
+            "topic": "construction",
+            "format": "pdf",
+        },
+        {
+            "id": "ost-duplicate",
+            "title": "Duplicate URL",
+            "url": "https://e.org/first.pdf",
+            "source": "osti",
+            "license": "public-domain",
+            "topic": "construction",
+            "format": "pdf",
+        },
+    ]))
+    appended = []
+    monkeypatch.setattr(run_round.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(
+        run_round.registry,
+        "append_entries",
+        lambda entries: appended.extend(entries),
+    )
+
+    total, accepted = run_round.merge_proposals([
+        {"index": 1, "name": "second", "proposal": second},
+        {"index": 0, "name": "first", "proposal": first},
+    ])
+
+    assert total == 2
+    assert accepted == {"first": 1, "second": 1}
+    assert [entry["title"] for entry in appended] == ["First", "Second"]
+    assert len({entry["id"] for entry in appended}) == 2
+
+
+def test_parallel_finders_stage_in_subprocesses_then_merge_once(tmp_path, monkeypatch):
+    fixtures = Path(__file__).parent / "fixtures"
+    monkeypatch.setattr(run_round, "SCRIPTS", fixtures)
+    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
+    monkeypatch.setattr(run_round.registry, "existing_keys", lambda: (set(), set(), set()))
+    appended = []
+    monkeypatch.setattr(
+        run_round.registry,
+        "append_entries",
+        lambda entries: appended.extend(entries),
+    )
+    monkeypatch.setattr(run_round.ops, "run_event", lambda *_args, **_kwargs: None)
+    backends = {
+        "one": {
+            "script": "fake_finder.py",
+            "args": [
+                "--id", "ost-one", "--title", "One", "--url", "https://e.org/one",
+            ],
+            "rotation": False,
+        },
+        "two": {
+            "script": "fake_finder.py",
+            "args": [
+                "--id", "ost-two", "--title", "Two", "--url", "https://e.org/two",
+            ],
+            "rotation": False,
+        },
+    }
+
+    run_round.run_finders_parallel(
+        ["one", "two"],
+        backends,
+        {},
+        os.environ.copy(),
+        "fixture-run",
+        workers=2,
+    )
+
+    assert [entry["id"] for entry in appended] == ["ost-one", "ost-two"]
 
 
 def test_main_rolls_back_tracked_state_when_pipeline_fails(tmp_path, monkeypatch):

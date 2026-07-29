@@ -10,12 +10,13 @@ reproduced exactly (sha256 matches the manifest) vs drifted (the source changed 
   python scripts/build_corpus.py            # fetch missing; report reproduced / drifted / new vs manifest
   python scripts/build_corpus.py --force    # re-fetch everything
   python scripts/build_corpus.py --only controls_bas
-  python scripts/build_corpus.py --workers 16   # more parallel downloads (default 8, ≤2 per host)
+  python scripts/build_corpus.py --workers 16 --extract-workers 8
   python scripts/build_corpus.py --verify   # no download: re-hash local raw files against the manifest
 
 Idempotent, dedups identical bytes by sha256, checkpoints the manifest every 25 fetches. Downloads
-run in parallel but politely: at most 2 in-flight requests per host regardless of --workers. raw/
-and text/ are git-ignored; respect each source's license (see README.md).
+are fairly interleaved across hosts with conservative host-specific request caps; extraction runs
+in a separate process pool so CPU work never holds a network slot. raw/ and text/ are git-ignored;
+respect each source's license (see README.md).
 
 text/ is the VERBATIM extraction and stays that way — the cleaned, training-ready copy is built
 from it by the next stage, scripts/clean_corpus.py, into corpus/. Keeping the two separate is what
@@ -27,12 +28,19 @@ import argparse
 import hashlib
 import importlib.metadata
 import io
+import os
 import re
 import shutil
 import subprocess
 import threading
 import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from collections import defaultdict, deque
+from concurrent.futures import (
+    FIRST_COMPLETED,
+    ProcessPoolExecutor,
+    ThreadPoolExecutor,
+    wait,
+)
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -52,8 +60,18 @@ UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
 TIMEOUT = 45
 # plain-text source formats (GitHub READMEs / docs, .rst, etc.): stored verbatim, no parsing.
 TEXT_FORMATS = {"md", "rst", "txt"}
-# politeness: never more than this many in-flight requests against one host, however many workers.
+# Politeness: never more than this many in-flight requests against one host, however many workers.
+# Hosts listed below have handled four concurrent public-document transfers reliably.  Parsing is
+# deliberately outside these limits: a 100MB PDF must not hold a network slot while pypdf works.
 PER_HOST = 2
+HOST_CONCURRENCY: dict[str, int] = {
+    "www.osti.gov": 4,
+    "library.oapen.org": 4,
+    "patents.google.com": 4,
+    "documents.worldbank.org": 4,
+    "documents1.worldbank.org": 4,
+    "www.scielo.br": 4,
+}
 # politeness overrides for hosts that need them (currently none). HOST_DELAY: minimum seconds
 # between request STARTS against a host, enforced under its semaphore — for hosts that tarpit at
 # volume. HOST_UA: per-host User-Agent override, applied to both the requests call and the curl
@@ -114,7 +132,8 @@ _host_next_lock = threading.Lock()
 def _host_sem(url: str) -> threading.BoundedSemaphore:
     host = urlparse(url).netloc.lower()
     with _host_sems_lock:
-        return _host_sems.setdefault(host, threading.BoundedSemaphore(PER_HOST))
+        limit = HOST_CONCURRENCY.get(host, PER_HOST)
+        return _host_sems.setdefault(host, threading.BoundedSemaphore(limit))
 
 
 def sha256_bytes(b: bytes) -> str:
@@ -280,7 +299,7 @@ def _fetch_publications_gc_ca(url: str) -> requests.Response:
                      timeout=TIMEOUT, allow_redirects=True)
 
 
-def fetch_one(src: dict) -> dict:
+def _new_record(src: dict) -> tuple[dict, str]:
     sid = src["id"]
     fmt = src.get("format", "pdf")
     source = src.get("source", "misc")
@@ -298,42 +317,73 @@ def fetch_one(src: dict) -> dict:
     for key in registry.OPTIONAL_FIELDS:
         if src.get(key) not in (None, ""):
             rec[key] = src[key]
+    return rec, ext
+
+
+def _wait_for_host(host: str) -> None:
+    delay = HOST_DELAY.get(host)
+    if not delay:
+        return
+    with _host_next_lock:
+        start = max(time.monotonic(), _host_next.get(host, 0.0))
+        _host_next[host] = start + delay
+    if (wait := start - time.monotonic()) > 0:
+        time.sleep(wait)
+
+
+def download_one(src: dict) -> dict:
+    """Download and persist original bytes, holding a host slot for network I/O only."""
+    rec, ext = _new_record(src)
+    sid = rec["id"]
+    fmt = rec["format"]
+    source = rec["source"]
+    host = urlparse(src["url"]).netloc.lower()
     ua = HOST_UA.get(urlparse(src["url"]).netloc.lower(), UA)
     try:
-        if "ec.europa.eu/research/participants/documents/downloadPublic" in src["url"]:
-            resp = _fetch_ec_deliverable(src["url"])
-        elif (urlparse(src["url"]).netloc.lower().removeprefix("www.") == "publications.gc.ca"
-              and "/collections/" in urlparse(src["url"]).path):
-            resp = _fetch_publications_gc_ca(src["url"])
-        else:
-            resp = requests.get(src["url"],
-                                headers={"User-Agent": ua,
-                                         "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8"},
-                                timeout=TIMEOUT, allow_redirects=True)
-        rec["http_status"] = resp.status_code
-        if resp.status_code in (403, 410, 429, 503):
-            # WAFs (Akamai/Cloudflare/Google) block the python client's TLS fingerprint but pass
-            # curl's (google patents 503s requests yet 200s curl with the SAME UA). Fall back to
-            # curl for openly-licensed docs we're entitled to fetch.
-            out = subprocess.run(["curl", "-sSL", "--max-time", str(TIMEOUT), "-A", ua, src["url"]],
-                                 capture_output=True, timeout=TIMEOUT + 15)
-            body = out.stdout if out.returncode == 0 else b""
-            # only trust the fallback if it returned the expected content — not a WAF challenge /
-            # "automated queries" block page that curl happily 200s
-            good = len(body) > 512 and (
-                body[:5] == b"%PDF-" if fmt == "pdf"
-                else (b"automated queries" not in body[:4000]
-                      and b"unusual traffic" not in body[:4000]
-                      and b"Too many requests" not in body[:4000]
-                      and b"too many requests" not in body[:4000]))
-            if good:
-                data, rec["http_status"] = body, 200
+        with _host_sem(src["url"]):
+            _wait_for_host(host)
+            if "ec.europa.eu/research/participants/documents/downloadPublic" in src["url"]:
+                resp = _fetch_ec_deliverable(src["url"])
+            elif (host.removeprefix("www.") == "publications.gc.ca"
+                  and "/collections/" in urlparse(src["url"]).path):
+                resp = _fetch_publications_gc_ca(src["url"])
+            else:
+                resp = requests.get(
+                    src["url"],
+                    headers={
+                        "User-Agent": ua,
+                        "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8",
+                    },
+                    timeout=TIMEOUT,
+                    allow_redirects=True,
+                )
+            rec["http_status"] = resp.status_code
+            if resp.status_code in (403, 410, 429, 503):
+                # WAFs (Akamai/Cloudflare/Google) block the python client's TLS fingerprint but
+                # pass curl's. Only accept a fallback with the expected content.
+                out = subprocess.run(
+                    ["curl", "-sSL", "--max-time", str(TIMEOUT), "-A", ua, src["url"]],
+                    capture_output=True,
+                    timeout=TIMEOUT + 15,
+                )
+                body = out.stdout if out.returncode == 0 else b""
+                good = len(body) > 512 and (
+                    body[:5] == b"%PDF-" if fmt == "pdf"
+                    else (
+                        b"automated queries" not in body[:4000]
+                        and b"unusual traffic" not in body[:4000]
+                        and b"Too many requests" not in body[:4000]
+                        and b"too many requests" not in body[:4000]
+                    )
+                )
+                if good:
+                    data, rec["http_status"] = body, 200
+                else:
+                    resp.raise_for_status()
+                    data = resp.content
             else:
                 resp.raise_for_status()
                 data = resp.content
-        else:
-            resp.raise_for_status()
-            data = resp.content
         if fmt == "pdf" and not data.startswith(b"%PDF-"):
             # a 200 that isn't a PDF is a WAF interstitial / captcha / error page — without this
             # check it lands in the corpus as an ok row with 0 text chars (IBPSA sgcaptcha, 07-09)
@@ -347,20 +397,37 @@ def fetch_one(src: dict) -> dict:
         raw_path = raw_dir / f"{sid}.{ext}"
         raw_path.write_bytes(data)
         rec["raw_path"] = str(raw_path.relative_to(HERE))
+        # Absolute process-local paths are removed by extract_downloaded before the row can reach
+        # the manifest. Carrying them makes the extraction stage safe under both fork and spawn.
+        rec["_raw_file"] = str(raw_path)
+        rec["_root"] = str(HERE)
+        rec["_text_dir"] = str(TEXT)
+    except Exception as e:
+        rec["error"] = str(e)
+    return rec
 
+
+def extract_downloaded(rec: dict) -> dict:
+    """Extract one already-downloaded record. Safe to run in a separate process."""
+    sid = rec["id"]
+    try:
+        root = Path(rec.pop("_root", HERE))
+        text_dir = Path(rec.pop("_text_dir", TEXT))
+        raw_path = Path(rec.pop("_raw_file", root / rec["raw_path"]))
+        data = raw_path.read_bytes()
         try:
-            txt = clean_text(extract_for(fmt, data))
+            txt = clean_text(extract_for(rec["format"], data))
         except Exception as e:
             txt, rec["error"] = "", f"text-extract: {e}"
         if txt:
-            TEXT.mkdir(parents=True, exist_ok=True)
+            text_dir.mkdir(parents=True, exist_ok=True)
             header = (f"# {rec['title']}\n\n"
                       f"source: {rec['url']}\nlicense: {rec['license']}\n"
                       f"topic: {rec['topic']}\n\n---\n\n")
-            tp = TEXT / f"{sid}.md"
+            tp = text_dir / f"{sid}.md"
             rendered = header + txt
             tp.write_text(rendered)
-            rec["text_path"] = str(tp.relative_to(HERE))
+            rec["text_path"] = str(tp.relative_to(root))
             rec["text_chars"] = len(txt)
             rec["text_sha256"] = sha256_bytes(rendered.encode())
             rec["extractor_version"] = EXTRACTOR_VERSION
@@ -373,24 +440,67 @@ def fetch_one(src: dict) -> dict:
     return rec
 
 
-def fetch_polite(src: dict) -> dict:
-    with _host_sem(src["url"]):
-        host = urlparse(src["url"]).netloc.lower()
-        delay = HOST_DELAY.get(host)
-        if delay:
-            with _host_next_lock:
-                start = max(time.monotonic(), _host_next.get(host, 0.0))
-                _host_next[host] = start + delay
-            if (wait := start - time.monotonic()) > 0:
-                time.sleep(wait)
-        return fetch_one(src)
+def reuse_extraction(rec: dict, template: dict) -> dict:
+    """Reuse text for identical bytes while rendering this record's own provenance header."""
+    root = Path(rec.pop("_root", HERE))
+    text_dir = Path(rec.pop("_text_dir", TEXT))
+    rec.pop("_raw_file", None)
+    template_path = template.get("text_path")
+    if template_path and (root / template_path).exists():
+        txt = quality.body((root / template_path).read_text())
+        if txt:
+            text_dir.mkdir(parents=True, exist_ok=True)
+            header = (
+                f"# {rec['title']}\n\n"
+                f"source: {rec['url']}\nlicense: {rec['license']}\n"
+                f"topic: {rec['topic']}\n\n---\n\n"
+            )
+            rendered = header + txt
+            target = text_dir / f"{rec['id']}.md"
+            target.write_text(rendered)
+            rec["text_path"] = str(target.relative_to(root))
+            rec["text_chars"] = len(txt)
+            rec["text_sha256"] = sha256_bytes(rendered.encode())
+            rec["quality"] = template.get("quality") or quality.metrics(txt)
+            if template.get("extractor_version"):
+                rec["extractor_version"] = template["extractor_version"]
+    rec["status"] = "ok"
+    rec["fetched_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    return rec
+
+
+def fetch_one(src: dict) -> dict:
+    """Compatibility path for callers/tests that fetch and extract one document synchronously."""
+    rec = download_one(src)
+    return extract_downloaded(rec) if rec.get("raw_path") else rec
+
+
+def fair_sources(srcs: list[dict]) -> list[dict]:
+    """Round-robin sources by host so semaphore waiters cannot starve unrelated hosts."""
+    queues: dict[str, deque] = defaultdict(deque)
+    for src in srcs:
+        queues[urlparse(src["url"]).netloc.lower()].append(src)
+    ordered = []
+    hosts = deque(queues)
+    while hosts:
+        host = hosts.popleft()
+        ordered.append(queues[host].popleft())
+        if queues[host]:
+            hosts.append(host)
+    return ordered
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--force", action="store_true", help="re-fetch everything")
-    ap.add_argument("--workers", type=int, default=8,
-                    help="parallel downloads (per-host capped at %d); 1 = sequential" % PER_HOST)
+    ap.add_argument("--workers", type=int, default=16,
+                    help="parallel downloads (host-specific caps still apply; default 16)")
+    ap.add_argument(
+        "--extract-workers",
+        type=int,
+        default=min(8, max(1, os.cpu_count() or 1)),
+        help="separate PDF/text extraction processes (default min(8, CPU count))",
+    )
     ap.add_argument("--only", default="", help="comma-separated topics to limit to")
     ap.add_argument("--reextract", action="store_true",
                     help="re-extract text from existing raw files; no download")
@@ -462,28 +572,87 @@ def main() -> None:
 
     # the committed manifest's sha256 = what WE fetched; compare to detect upstream drift.
     expected = {sid: r.get("sha256") for sid, r in manifest.items() if r.get("sha256")}
+    extraction_templates = {
+        row["sha256"]: row
+        for row in manifest.values()
+        if (
+            row.get("sha256")
+            and row.get("status") == "ok"
+            and row.get("text_path")
+            and (HERE / row["text_path"]).exists()
+        )
+    }
     repro = drift = new = done = 0
-    print(f"sources: {len(srcs)} total, {len(todo)} to fetch "
-          f"({'forced' if args.force else 'missing only'}, {args.workers} workers)")
-    with ThreadPoolExecutor(max_workers=max(1, args.workers)) as pool:
-        futures = {pool.submit(fetch_polite, s): s for s in todo}
-        for fut in as_completed(futures):
-            rec = fut.result()
-            done += 1
-            manifest[rec["id"]] = rec
-            if rec["status"] == "ok":
-                exp = expected.get(rec["id"])
-                tag = "reproduced" if exp == rec["sha256"] else ("DRIFTED" if exp else "new")
-                repro += exp == rec["sha256"]
-                drift += bool(exp) and exp != rec["sha256"]
-                new += not exp
-                print(f"[{done}/{len(todo)}] {rec['id']}  ok  {rec['bytes'] // 1024}KB  "
-                      f"{rec['text_chars']} chars  [{tag}]", flush=True)
-            else:
-                print(f"[{done}/{len(todo)}] {rec['id']}  FAIL http={rec['http_status']} "
-                      f"{rec.get('error')}", flush=True)
-            if done % 25 == 0:
-                write_manifest(manifest)  # checkpoint so an interrupted run loses <25 fetches
+    print(
+        f"sources: {len(srcs)} total, {len(todo)} to fetch "
+        f"({'forced' if args.force else 'missing only'}, {args.workers} download workers, "
+        f"{args.extract_workers} extract workers)"
+    )
+
+    def record_result(rec: dict) -> None:
+        nonlocal done, repro, drift, new
+        done += 1
+        manifest[rec["id"]] = rec
+        if rec["status"] == "ok":
+            exp = expected.get(rec["id"])
+            tag = "reproduced" if exp == rec["sha256"] else ("DRIFTED" if exp else "new")
+            repro += exp == rec["sha256"]
+            drift += bool(exp) and exp != rec["sha256"]
+            new += not exp
+            print(
+                f"[{done}/{len(todo)}] {rec['id']}  ok  {rec['bytes'] // 1024}KB  "
+                f"{rec['text_chars']} chars  [{tag}]",
+                flush=True,
+            )
+        else:
+            print(
+                f"[{done}/{len(todo)}] {rec['id']}  FAIL http={rec['http_status']} "
+                f"{rec.get('error')}",
+                flush=True,
+            )
+        if done % 25 == 0:
+            write_manifest(manifest)  # checkpoint so an interrupted run loses <25 extractions
+
+    ordered = fair_sources(todo)
+    with (
+        ThreadPoolExecutor(max_workers=max(1, args.workers)) as downloads,
+        ProcessPoolExecutor(max_workers=max(1, args.extract_workers)) as extractors,
+    ):
+        download_futures = {downloads.submit(download_one, src) for src in ordered}
+        extract_futures = set()
+        extract_sha = {}
+        waiting_by_sha: dict[str, list[dict]] = defaultdict(list)
+        # Drain both stages continuously: extraction overlaps downloads, progress remains visible,
+        # and the manifest checkpoint still bounds hard-kill rework to fewer than 25 completions.
+        while download_futures or extract_futures:
+            completed, _ = wait(
+                download_futures | extract_futures,
+                return_when=FIRST_COMPLETED,
+            )
+            for future in completed:
+                if future in download_futures:
+                    download_futures.remove(future)
+                    rec = future.result()
+                    if rec.get("raw_path"):
+                        digest = rec["sha256"]
+                        if digest in extraction_templates:
+                            record_result(reuse_extraction(rec, extraction_templates[digest]))
+                        elif digest in extract_sha.values():
+                            waiting_by_sha[digest].append(rec)
+                        else:
+                            extract_future = extractors.submit(extract_downloaded, rec)
+                            extract_futures.add(extract_future)
+                            extract_sha[extract_future] = digest
+                    else:
+                        record_result(rec)
+                else:
+                    extract_futures.remove(future)
+                    digest = extract_sha.pop(future)
+                    extracted = future.result()
+                    extraction_templates[digest] = extracted
+                    record_result(extracted)
+                    for duplicate in waiting_by_sha.pop(digest, []):
+                        record_result(reuse_extraction(duplicate, extracted))
     if todo:
         write_manifest(manifest)
 

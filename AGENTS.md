@@ -58,8 +58,10 @@ ids whose `text_path` drifted from their id get canonical `corpus/<id>.md` names
 
 `scripts/build_corpus.py` is the **loader**: reads the registry → downloads into `raw/<source>/` →
 extracts plain text into `text/<id>.md` → records sha256 + metadata in the manifest. Idempotent;
-dedups by sha256; parallel (`--workers`, ≤2 in-flight per host); PDF downloads are magic-byte
-checked, and a curl fallback rides over WAF/TLS-fingerprint walls (403/429/503). The discovery
+dedups by sha256; fairly interleaves hosts (`--workers`, conservative host-specific caps) and runs
+extraction in a separate process pool (`--extract-workers`), so parsing never holds a network slot.
+PDF downloads are magic-byte checked, and a curl fallback rides over WAF/TLS-fingerprint walls
+(403/429/503). The discovery
 backends (`find_sources.py` OpenAlex/OSTI/arXiv · `find_github.py` curated repos + source code ·
 `find_osti.py` deep OSTI · `find_books.py` OAPEN books, all languages · `find_archive.py` pre-1929
 public-domain texts (Internet Archive) · `find_openaire.py` EU project deliverables · `find_nist.py`
@@ -124,9 +126,11 @@ discover → fetch → prune → clean → check → README stats → index → 
 ```
 
 Cron and marathon call this same runner. A required step failure never commits, pushes, or advances
-that failing backend's rotation pointer. Normal failures roll tracked state back; state files are
-replaced atomically. Local run events live in `logs/run_history.jsonl`. A hard kill leaves a durable
-pre-round snapshot and the next operator restores it explicitly with
+rotation pointers. Finders run concurrently against one immutable registry view and stage isolated
+proposal files; only after every finder succeeds does the runner deduplicate, merge, and advance
+pointers serially. Normal failures roll tracked state back; state files are replaced atomically.
+Local run events live in `logs/run_history.jsonl`. A hard kill leaves a durable pre-round snapshot
+and the next operator restores it explicitly with
 `python scripts/run_round.py --recover latest`.
 
 **Cloning: use `git clone --depth 1`.** The full history carries every past manifest/registry

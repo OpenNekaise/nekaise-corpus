@@ -40,6 +40,20 @@ def test_append_routes_by_prefix(tmp_registry):
     assert "# hand comment that must survive" in (tmp_registry / registry.CURATED).read_text()
 
 
+def test_append_proposal_mode_stages_json_without_mutating_registry(
+    tmp_registry, tmp_path, monkeypatch
+):
+    proposal = tmp_path / "proposal.json"
+    before = (tmp_registry / registry.CURATED).read_text()
+    monkeypatch.setenv("NEKAISE_PROPOSAL_FILE", str(proposal))
+
+    counts = registry.append_entries([entry("oer-proposed", "https://e.org/proposed.pdf")])
+
+    assert counts == {"proposal.json": 1}
+    assert json.loads(proposal.read_text())[0]["id"] == "oer-proposed"
+    assert (tmp_registry / registry.CURATED).read_text() == before
+
+
 def test_emit_preserves_optional_provenance_fields():
     enriched = {
         **entry("ost-enriched"),

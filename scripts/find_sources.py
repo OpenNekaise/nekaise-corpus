@@ -224,6 +224,12 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--per", type=int, default=15, help="results per backend per topic query")
     ap.add_argument("--backends", default="openalex,osti,arxiv")
+    ap.add_argument(
+        "--circuit-threshold",
+        type=int,
+        default=3,
+        help="stop a backend for this round after this many consecutive 429/503 responses",
+    )
     ap.add_argument("--append", action="store_true",
                     help="append candidates into the registry shards (then load + prune)")
     args = ap.parse_args()
@@ -231,13 +237,33 @@ def main() -> None:
 
     urls, titles, reg_ids = registry.existing_keys()
     out, seen = [], set()
+    throttled: dict[str, int] = {backend: 0 for backend in backends}
+    disabled = set()
     for term, topic in QUERIES:
         for b in backends:
+            if b in disabled:
+                continue
             try:
                 hits = BACKENDS[b](term, topic, args.per)
             except Exception as e:
                 print(f"# {b} [{topic}] failed: {e}", file=sys.stderr)
+                response = getattr(e, "response", None)
+                status = getattr(response, "status_code", None)
+                if status in (429, 503):
+                    throttled[b] += 1
+                    if throttled[b] >= max(1, args.circuit_threshold):
+                        disabled.add(b)
+                        retry_after = (getattr(response, "headers", {}) or {}).get("Retry-After")
+                        suffix = f"; Retry-After={retry_after}" if retry_after else ""
+                        print(
+                            f"# {b} circuit open after {throttled[b]} throttled requests"
+                            f"{suffix}; skipping it for the rest of this round",
+                            file=sys.stderr,
+                        )
+                else:
+                    throttled[b] = 0
                 continue
+            throttled[b] = 0
             for h in hits:
                 u, t = h["url"].rstrip("/"), registry.norm(h["title"])
                 if not h["title"] or u in urls or t in titles or u in seen:
