@@ -8,6 +8,10 @@ from urllib.parse import urlparse
 import build_corpus
 
 
+def test_extraction_workers_use_spawn_context():
+    assert build_corpus.EXTRACTION_CONTEXT.get_start_method() == "spawn"
+
+
 class FakeSession:
     def __init__(self, responses):
         self.responses = iter(responses)

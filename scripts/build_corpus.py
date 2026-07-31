@@ -28,6 +28,7 @@ import argparse
 import hashlib
 import importlib.metadata
 import io
+import multiprocessing
 import os
 import re
 import shutil
@@ -59,6 +60,7 @@ TEXT = HERE / "text"
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/124.0.0.0 Safari/537.36")
 TIMEOUT = 45
+EXTRACTION_CONTEXT = multiprocessing.get_context("spawn")
 # plain-text source formats (GitHub READMEs / docs, .rst, etc.): stored verbatim, no parsing.
 TEXT_FORMATS = {"md", "rst", "txt"}
 # Politeness: never more than this many in-flight requests against one host, however many workers.
@@ -624,7 +626,13 @@ def main() -> None:
     ordered = fair_sources(todo)
     with (
         ThreadPoolExecutor(max_workers=max(1, args.workers)) as downloads,
-        ProcessPoolExecutor(max_workers=max(1, args.extract_workers)) as extractors,
+        # Spawned workers cannot inherit sockets or subprocess bookkeeping pipes from active
+        # download threads.  Forking the pool lazily while curl/requests work is in flight can
+        # otherwise keep an internal Popen pipe alive forever after its child exits.
+        ProcessPoolExecutor(
+            max_workers=max(1, args.extract_workers),
+            mp_context=EXTRACTION_CONTEXT,
+        ) as extractors,
     ):
         download_futures = {downloads.submit(download_one, src) for src in ordered}
         extract_futures = set()
