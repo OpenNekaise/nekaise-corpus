@@ -18990,14 +18990,6 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
-  - id: guk-consultation-on-implementing-home-area-network-9
-    title: Consultation on implementing Home Area Network (HAN) solutions and changes
-      to technical sub-committee (TSC) — Smart Energy Code
-    url: https://assets.publishing.service.gov.uk/media/5a7f9362ed915d74e33f747e/SEC_Sections_-_April_2016_Laying.PDF
-    source: gov_uk
-    license: open
-    topic: controls_bas
-    format: pdf
   - id: guk-determination-on-an-application-for-the-use-of
     title: Determination on an application for the use of a sealed radioactive source
       to measure gas flow in smart meters as an existing class or type of practice.
@@ -36603,38 +36595,6 @@ sources:
     title: 'Smart Meters: Stage 1 of the Smart Energy Code — Smart Meters Supplementary
       Consultation: Stage 1 of the Smart Energy Code'
     url: https://assets.publishing.service.gov.uk/media/5a7b011fed915d3ed90616d1/20130418_SEC_1_supplementary_consultation.pdf
-    source: gov_uk
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: guk-smart-meters-stage-1-of-the-smart-energy-code--2
-    title: 'Smart Meters: Stage 1 of the Smart Energy Code — Government’s conclusions
-      following supplementary consultation and proposal to designate final legal text'
-    url: https://assets.publishing.service.gov.uk/media/5a7cc56ee5274a38e5756a54/gov_response_sec1_consultations.pdf
-    source: gov_uk
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: guk-smart-meters-stage-1-of-the-smart-energy-code--3
-    title: 'Smart Meters: Stage 1 of the Smart Energy Code — Annex A: Legal text of
-      SEC 1 proposed designation draft'
-    url: https://assets.publishing.service.gov.uk/media/5a7c7062ed915d6969f44de5/annex_a_legal_text_sec_1_proposed_designation_draft.PDF
-    source: gov_uk
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: guk-smart-meters-stage-1-of-the-smart-energy-code--4
-    title: 'Smart Meters: Stage 1 of the Smart Energy Code — Annex B: Legal text of
-      SEC 1 proposed designation draft (change marked)'
-    url: https://assets.publishing.service.gov.uk/media/5a7ce6ac40f0b65b3de0bd67/annex_b_legal_text_sec_1_proposed_designation_draft_change_marked.PDF
-    source: gov_uk
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: guk-smart-meters-stage-1-of-the-smart-energy-code--5
-    title: 'Smart Meters: Stage 1 of the Smart Energy Code — Annex C: Development of
-      SEC content'
-    url: https://assets.publishing.service.gov.uk/media/5a7c130ce5274a25a91404bc/annex_c_development_sec_content.pdf
     source: gov_uk
     license: open
     topic: controls_bas
@@ -67506,4 +67466,1201 @@ sources:
     source: gov_uk
     license: open
     topic: equipment_systems
+    format: pdf
+  - id: guk-ai-insights-ai-insights-large-language-models-
+    title: 'AI Insights — AI Insights: Large language models (LLMs) Bias (PDF)'
+    url: https://assets.publishing.service.gov.uk/media/69a802f92e1f4fbda425226b/ai-insights-llm-bias.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ai-insights-ai-insights-generative-ai-pdf
+    title: 'AI Insights — AI Insights: Generative AI (PDF)'
+    url: https://assets.publishing.service.gov.uk/media/67ab16a0512f4bf16177c259/2._Generative_AI.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ai-insights-ai-insights-prompt-engineering-pdf
+    title: 'AI Insights — AI Insights: Prompt Engineering (PDF)'
+    url: https://assets.publishing.service.gov.uk/media/67ab175750788ff2252bf78a/4._Prompt_Engineering.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ai-insights-ai-insights-prompt-risks-pdf
+    title: 'AI Insights — AI Insights: Prompt Risks (PDF)'
+    url: https://assets.publishing.service.gov.uk/media/679cf901c496e5d3ddafb697/5._Prompt_Risks.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ai-insights-ai-insights-agentic-ai-pdf
+    title: 'AI Insights — AI Insights: Agentic AI (PDF)'
+    url: https://assets.publishing.service.gov.uk/media/68076cba8c1316be7978e6a8/AI_Insights_-_Agentic_AI.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ai-insights-ai-insights-agentic-workflow-pdf
+    title: 'AI Insights — AI Insights: Agentic Workflow (PDF)'
+    url: https://assets.publishing.service.gov.uk/media/68076db78c1316be7978e6a9/AI_Insights_-_Agentic_Workflow.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ai-insights-ai-insights-ai-coding-assistants-f
+    title: 'AI Insights — AI Insights: AI Coding Assistants for developers in HMG (PDF)'
+    url: https://assets.publishing.service.gov.uk/media/68419e8ffa0289a17a3e879d/V2_AI_coding_assistants_in_UK_Government.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ai-insights-ai-insights-using-ai-to-manage-the
+    title: 'AI Insights — AI Insights: Using AI to manage the digital heap (PDF)'
+    url: https://assets.publishing.service.gov.uk/media/68beed6bc771153e08e0dd51/ai-insights-using-ai-to-manage-the-digital-heap.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ai-insights-ai-insights-rag-systems-pdf
+    title: 'AI Insights — AI Insights: RAG Systems (PDF)'
+    url: https://assets.publishing.service.gov.uk/media/68ee30f7e7b6794c076bbe00/ai-insights-rag-systems.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ai-insights-ai-insights-model-distillation-pdf
+    title: 'AI Insights — AI Insights: Model Distillation (PDF)'
+    url: https://assets.publishing.service.gov.uk/media/69247abef2b88d41c7ba7ed6/ai-insights-model-distillation.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-progress-towards-environmentally-sustainable-b
+    title: 'Progress towards environmentally sustainable buildings: third Parliamentary
+      report — Progress towards the sustainability of the building stock in England
+      and Wales: third parliamen'
+    url: https://assets.publishing.service.gov.uk/media/5a795d55e5274a3864fd6624/1944728.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-g8-open-data-charter-national-action-plan-g8-o
+    title: 'G8 Open Data Charter National Action Plan — G8 Open Data Charter: UK Action
+      Plan 2013'
+    url: https://assets.publishing.service.gov.uk/media/5a7c40b3e5274a2041cf2c04/G8_National_Action_Plan.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-taxi-and-private-hire-vehicle-licensing-protec
+    title: 'Taxi and private hire vehicle licensing: protecting users — Taxi and private
+      hire vehicle licensing - protecting users: consultation document'
+    url: https://assets.publishing.service.gov.uk/media/5f85727a8fa8f561ac6afd72/taxi-phv-licensing-protecting-users-condoc.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-taxi-and-private-hire-vehicle-licensing-protec-2
+    title: 'Taxi and private hire vehicle licensing: protecting users — Taxi and private
+      hire vehicle licensing - protecting users: statutory guidance for licensing authorities
+      (consultation v'
+    url: https://assets.publishing.service.gov.uk/media/5f857a7c8fa8f561ade7a90b/taxi-phv-licensing-protecting-users-draft-stat-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-taxi-and-private-hire-vehicle-licensing-protec-3
+    title: 'Taxi and private hire vehicle licensing: protecting users — Taxi and private
+      hire vehicle licensing - protecting users: impact assessment (consultation version)'
+    url: https://assets.publishing.service.gov.uk/media/5c582439e5274a3158cea99c/taxi-phv-licensing-protecting-users-ia.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-anti-money-laundering-supervisory-review-draft
+    title: 'Anti-money laundering supervisory review — Draft regulations: Office for
+      Professional Body AML Supervision (OPBAS)'
+    url: https://assets.publishing.service.gov.uk/media/5a81f866e5274a2e8ab56cf3/OPBAS_Draft_Regulations.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-anti-money-laundering-supervisory-review-consu
+    title: 'Anti-money laundering supervisory review — Consultation Stage Impact Assessment:
+      Office for Professional Body AML Supervision (OPBAS)'
+    url: https://assets.publishing.service.gov.uk/media/5a82ec73ed915d74e6238507/Consultation_Stage_Impact_Assessment_OPBAS.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-anti-money-laundering-supervisory-review-anti-
+    title: 'Anti-money laundering supervisory review — Anti-money laundering supervisory
+      review: response to the consultation'
+    url: https://assets.publishing.service.gov.uk/media/5a821b66ed915d74e3401c2e/AMLSR_response_to_consultation_web.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ministerial-code-ministerial-code-pdf
+    title: Ministerial Code — Ministerial Code (PDF)
+    url: https://assets.publishing.service.gov.uk/media/68ecd9eaf159f887526bbd3c/The_Ministerial_Code.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-rural-flood-resilience-partnership-2024-to-202
+    title: 'Rural flood resilience partnership: 2024 to 2026 work plan — Rural Flood
+      Resilience Partnership Work Plan'
+    url: https://assets.publishing.service.gov.uk/media/66e9964a24c4f1826d81bca6/Final_Rural_Flood_Resilience_Partnership_Work_Plan.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-digital-identity-digital-identity-call-for-evi
+    title: 'Digital identity — Digital identity: call for evidence'
+    url: https://assets.publishing.service.gov.uk/media/6060970be90e071fc57afbcc/Digital_Identity_-_Call_for_Evidence_V2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-applying-the-fsma-2000-model-of-regulation-to--6
+    title: Applying the FSMA 2000 model of regulation to the Capital Requirements Regulation
+    url: https://assets.publishing.service.gov.uk/media/66e16b6ec428f0f0a6cb24c9/Applying_the_FSMA_2000_model_of_regulation_to_the_Capital_Requirements_Regulation.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-applying-the-fsma-2000-model-of-regulation-to--7
+    title: Applying the FSMA 2000 model of regulation to the Capital Requirements Regulation
+      — Revocation of CRR provisions to implement Basel 3.1 - draft regulations
+    url: https://assets.publishing.service.gov.uk/media/66e16b96ffd9de94d398eb0c/Revocation_of_CRR_provisions_to_implement_Basel_3.1_-_draft__commencement__regulations.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-applying-the-fsma-2000-model-of-regulation-to--8
+    title: Applying the FSMA 2000 model of regulation to the Capital Requirements Regulation
+      — Restatement of provisions on capital buffers - draft regulations
+    url: https://assets.publishing.service.gov.uk/media/66e16bb1caa02d92e72c8d31/Restatement_of_provisions_on_capital_buffers_-_draft_regulations.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-access-and-use-of-dna-samples-profiles-and-ass
+    title: 'Access and use of DNA samples, profiles and associated data — FINDS-SB-P-002:
+      Forensic Information Databases Strategy Board policy for access and use of DNA
+      samples, DNA profiles, '
+    url: https://assets.publishing.service.gov.uk/media/6985caa86da2dee8230a9b1f/FINDS-SB-P-002_-_Issue_5_-_Access___Use_policy.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-domestic-abuse-bill-2020-overarching-documents
+    title: 'Domestic Abuse Bill 2020: overarching documents — Supplementary ECHR memorandum'
+    url: https://assets.publishing.service.gov.uk/media/5efdb4ead3bf7f7695a34b17/Supplementary_ECHR_memo__002_.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-domestic-abuse-bill-2020-overarching-documents-4
+    title: 'Domestic Abuse Bill 2020: overarching documents — Delegated powers memorandum'
+    url: https://assets.publishing.service.gov.uk/media/5f185977d3bf7f596b135a94/Delegated_Powers_Memo_-_Domestic_Abuse_Bill_Lords_introduction_July_2020___002_.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-domestic-abuse-bill-2020-overarching-documents-5
+    title: 'Domestic Abuse Bill 2020: overarching documents — ECHR memorandum'
+    url: https://assets.publishing.service.gov.uk/media/5f6894608fa8f51069100659/ECHR_memorandum.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-domestic-abuse-bill-2020-overarching-documents-6
+    title: 'Domestic Abuse Bill 2020: overarching documents — Impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/6102c683d3bf7f0448719e5d/DA_Act_2021_Impact_Assessment.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-domestic-abuse-bill-2020-overarching-documents-7
+    title: 'Domestic Abuse Bill 2020: overarching documents — Policy equality statement'
+    url: https://assets.publishing.service.gov.uk/media/6102c8388fa8f50433efa8f1/DA_Act_2021_PES_.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-domestic-abuse-bill-2020-overarching-documents-8
+    title: 'Domestic Abuse Bill 2020: overarching documents — Keeling Schedule'
+    url: https://assets.publishing.service.gov.uk/media/5f185715d3bf7f5968d37da9/Keeling_Schedule_July_2020.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-domestic-abuse-bill-2020-overarching-documents-9
+    title: 'Domestic Abuse Bill 2020: overarching documents — Domestic Abuse Commissioner
+      draft framework document'
+    url: https://assets.publishing.service.gov.uk/media/5f68959bd3bf7f7231ac6561/Domestic_Abuse_Commissioner_Draft_Framework_Document.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-domestic-abuse-bill-2020-overarching-documents-10
+    title: 'Domestic Abuse Bill 2020: overarching documents — Domestic abuse protection
+      notices and domestic abuse protection orders – draft statutory guidance for the
+      police'
+    url: https://assets.publishing.service.gov.uk/media/600ed409e90e07143c6dafb5/Draft_statutory_guidance_for_police_on_domestic_abuse_protection_notices_and_orders.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-noise-amelioration-scheme-military-raf-valley-
+    title: 'Noise Amelioration Scheme (Military): RAF Valley and RAF Mona — A report
+      on an environmental noise survey of aircraft at RAF Valley and RAF Mona'
+    url: https://assets.publishing.service.gov.uk/media/5a7d7cffe5274a6b89a50612/20140131-DSEA-NASM-RAFValley-MONA-Report_2714-Redacted-U.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-right-to-work-checklist-employers-right-to-wor
+    title: Right to work checklist — Employers' right to work checklist
+    url: https://assets.publishing.service.gov.uk/media/68b6b7e7536d629f9c82a9a1/RTW+Checklist__final_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-domestic-green-deal-and-eco-statistics-methodo
+    title: Domestic Green Deal and ECO statistics methodology note — Domestic Green
+      Deal and ECO statistics methodology note (PDF)
+    url: https://assets.publishing.service.gov.uk/media/5a81a0e5e5274a2e8ab55044/Methodology_Note_Sept_2015_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-domestic-green-deal-and-eco-statistics-methodo-2
+    title: Domestic Green Deal and ECO statistics methodology note — Background quality
+      report
+    url: https://assets.publishing.service.gov.uk/media/5a7f73e1ed915d74e622a8b8/GD_ECO_Insulation_background_quality_report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-renewable-heat-incentive-rhi-and-renewable-hea-2
+    title: 'Renewable Heat Incentive (RHI) and Renewable Heat Premium Payments (RHPP):
+      quarterly statistics - December 2012 — Renewable Heat Incentive and Renewable
+      Heat Premium Payments: quar'
+    url: https://assets.publishing.service.gov.uk/media/5a78b970ed915d07d35b1ee7/Renewable_Heat_Incentive_and_Renewable_Heat_Premium_Payments_quarterly_statistics.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-renewable-heat-incentive-rhi-and-renewable-hea-3
+    title: 'Renewable Heat Incentive (RHI) and Renewable Heat Premium Payments (RHPP):
+      quarterly statistics - September 2013'
+    url: https://assets.publishing.service.gov.uk/media/5a7ba4f8e5274a7202e187e9/Renewable_Heat_Incentive_and_Renewable_Heat_Premium_Payments_quarterly_statistics_September.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-renewable-heat-incentive-rhi-and-renewable-hea-4
+    title: 'Renewable Heat Incentive (RHI) and Renewable Heat Premium Payments (RHPP):
+      quarterly statistics - June 2014'
+    url: https://assets.publishing.service.gov.uk/media/5a7e2275e5274a2e8ab460f3/140723__-_RHI__RHPP_quarterly_release__June_2014_data__.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-renewable-heat-incentive-rhi-and-renewable-hea-5
+    title: 'Renewable Heat Incentive (RHI) and Renewable Heat Premium Payments (RHPP):
+      quarterly statistics - June 2013'
+    url: https://assets.publishing.service.gov.uk/media/5a75700940f0b6360e4741b1/rhi_rhpp_quarterly_statistics_june_2013.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-renewable-heat-incentive-rhi-and-renewable-hea-6
+    title: 'Renewable Heat Incentive (RHI) and Renewable Heat Premium Payments (RHPP):
+      quarterly statistics - December 2013 — Renewable Heat Incentive (RHI) and Renewable
+      Heat Premium Payments'
+    url: https://assets.publishing.service.gov.uk/media/5a7b9bb8ed915d41476217c6/Renewable_Heat_Incentive_and_Renewable_Heat_Premium_Payments_quarterly_statistics_December_2013.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-renewable-heat-incentive-rhi-and-renewable-hea-7
+    title: 'Renewable Heat Incentive (RHI) and Renewable Heat Premium Payments (RHPP):
+      quarterly statistics - March 2014'
+    url: https://assets.publishing.service.gov.uk/media/5a7e2394ed915d74e33f04e3/Renewable_Heat_Incentive_and_Renewable_Heat_Premium_Payments_quarterly_statistics_March_2014.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-heat-decarbonisation-overview-of-current-evide
+    title: 'Heat decarbonisation: overview of current evidence base — Clean growth:
+      transforming heating - overview of current evidence'
+    url: https://assets.publishing.service.gov.uk/media/5c191c05ed915d0b9211b9c5/decarbonising-heating.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-renewable-heat-incentive-rhi-and-renewable-hea-8
+    title: 'Renewable Heat Incentive (RHI) and Renewable Heat Premium Payments (RHPP):
+      quarterly statistics -  September 2014'
+    url: https://assets.publishing.service.gov.uk/media/5a7ebfc6e5274a2e87db1a8f/RHI_quarterly_release__September_2014_data__FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-radioactive-and
+    title: '2010 to 2015 government policy: radioactive and nuclear substances and waste
+      — Justification case: safety toaster - application'
+    url: https://assets.publishing.service.gov.uk/media/5a7cd980ed915d7c849ad9d4/safetytoaster-justification.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-radioactive-and-3
+    title: '2010 to 2015 government policy: radioactive and nuclear substances and waste
+      — Justification case: safety toaster - statement'
+    url: https://assets.publishing.service.gov.uk/media/5a7c28fd40f0b645ba3c7135/safetytoaster-statement.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-radioactive-and-4
+    title: '2010 to 2015 government policy: radioactive and nuclear substances and waste
+      — Justification case: safety toaster - consultation report'
+    url: https://assets.publishing.service.gov.uk/media/5a7cc6a3e5274a38e5756ad2/safetytoaster-consultreport.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-radioactive-and-5
+    title: '2010 to 2015 government policy: radioactive and nuclear substances and waste
+      — Statutory Instruments: Atomic Energy and Radioactive Substances'
+    url: https://assets.publishing.service.gov.uk/media/5a7b862240f0b62826a04214/2008shipmentregscertcopy.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-radioactive-and-7
+    title: '2010 to 2015 government policy: radioactive and nuclear substances and waste
+      — Monitoring of radioactivity in air and rainwater in the UK: annual results report
+      2011'
+    url: https://assets.publishing.service.gov.uk/media/5a7c833fe5274a559005a620/monitoring-radioactivity-air-rainwtr-2011.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-radioactive-and-8
+    title: '2010 to 2015 government policy: radioactive and nuclear substances and waste
+      — Monitoring of radioactivity in air and rainwater in the UK: annual results report
+      2010'
+    url: https://assets.publishing.service.gov.uk/media/5a7ba5e440f0b645ba3c5acf/monitor-radioactivity-air-rain-2010.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-radioactive-and-9
+    title: '2010 to 2015 government policy: radioactive and nuclear substances and waste
+      — Monitoring of radioactivity in air and rainwater in the UK: annual results report
+      2009'
+    url: https://assets.publishing.service.gov.uk/media/5a7c7b1140f0b62aff6c1f94/monitor-of-radioactivity-air-rainwtr-2009.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-radioactive-and-10
+    title: '2010 to 2015 government policy: radioactive and nuclear substances and waste
+      — The United Kingdom’s fourth national report on compliance with the obligations
+      of the joint conventio'
+    url: https://assets.publishing.service.gov.uk/media/5a74d4d440f0b65c0e844d31/fourth-uk-joint-convention-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-radioactive-and-11
+    title: '2010 to 2015 government policy: radioactive and nuclear substances and waste
+      — UK strategy for radioactive discharges'
+    url: https://assets.publishing.service.gov.uk/media/5a7ccb49e5274a34d8d32fb2/uk_strategy_for_radioactive_discharges.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-radioactive-and-12
+    title: '2010 to 2015 government policy: radioactive and nuclear substances and waste
+      — Annex A: acronyms, abbreviations & radionuclides'
+    url: https://assets.publishing.service.gov.uk/media/5a75a6cf40f0b67f59fce8b9/annex_a_acronyms_abbreviations_radionuclides.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-radioactive-and-14
+    title: '2010 to 2015 government policy: radioactive and nuclear substances and waste
+      — Policy for the long term management of solid low level radioactive waste in
+      the United Kingdom'
+    url: https://assets.publishing.service.gov.uk/media/5a7cd9b7ed915d7c849ad9ec/Low_level_waste_policy.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-radioactive-and-15
+    title: '2010 to 2015 government policy: radioactive and nuclear substances and waste
+      — Data collection on solid low-level waste from the non-nuclear sector'
+    url: https://assets.publishing.service.gov.uk/media/5a7c954fe5274a0bb7cb804b/Data-collection-lowlevel-waste-nonnuclear.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-civil-service-reform-plan-progress-report
+    title: 'Civil Service Reform plan: progress report'
+    url: https://assets.publishing.service.gov.uk/media/5a7df0f1ed915d74e33ef045/Civil_Service_Reform_Plan_-_Progress_Report__web_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-civil-service-reform-plan-progress-report-anne
+    title: 'Civil Service Reform plan: progress report — Annex A: summary of progress
+      against actions'
+    url: https://assets.publishing.service.gov.uk/media/5a7db14b40f0b65d88633d68/Civil_Service_Reform_Plan_-_Progress_Report_-_Annex_A__web_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-civil-service-reform-plan-progress-report-anne-2
+    title: 'Civil Service Reform plan: progress report — Annex B: charting the functional
+      leadership journey, by function'
+    url: https://assets.publishing.service.gov.uk/media/5a7e2fba40f0b62305b8159d/Civil_Service_Reform_Plan_-_Progress_Report_-_Annex_B__web_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-disabled-people-s-rights-uk-2021-follow-up-rep
+    title: 'Disabled people''s rights: UK 2021 follow-up report to UNCRPD 2016 inquiry
+      — UN Committee on the Rights of Persons with Disabilities 2016 inquiry – UK 2021
+      follow-up report: large p'
+    url: https://assets.publishing.service.gov.uk/media/618d3b728fa8f50379269c0d/UN_Committee_on_the_Rights_of_Persons_with_Disabilities-20pt_Large_Print.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-disabled-people-s-rights-uk-2021-follow-up-rep-3
+    title: 'Disabled people''s rights: UK 2021 follow-up report to UNCRPD 2016 inquiry
+      — UN Committee on the Rights of Persons with Disabilities 2016 inquiry – UK 2021
+      follow-up report: Welsh t'
+    url: https://assets.publishing.service.gov.uk/media/618d3bf08fa8f5037778c084/WELSH_UK_UNCRPD_2021_Follow-up_Report_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-trend-deck-2021-demographics
+    title: 'Trend Deck 2021: Demographics'
+    url: https://assets.publishing.service.gov.uk/media/60c8818ee90e0743934f6ae8/GO-Science_Trend_Deck_-_Demographics_section_-_Spring_2021.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-saf-mandate-compliance-saf-mandate-compliance-
+    title: SAF Mandate compliance — SAF Mandate compliance guidance 2026
+    url: https://assets.publishing.service.gov.uk/media/69a80cb5a2495f2d259f1425/dft-saf-mandate-compliance-guidance-26.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-saf-mandate-compliance-saf-mandate-compliance--2
+    title: SAF Mandate compliance — SAF Mandate compliance guidance 2025
+    url: https://assets.publishing.service.gov.uk/media/6762717b26a2d1ff182534f7/saf-mandate-compliance-guidance-2025.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-biofuel-statistics-year-6-2013-to-2014-report--4
+    title: 'Biofuel statistics: Year 6 (2013 to 2014), report 1 — Renewable transport
+      fuel obligation statistics: year 6, report 1'
+    url: https://assets.publishing.service.gov.uk/media/5a7c3b5ae5274a2041cf29b3/rtfo-2013-14-year-6-report-1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-biofuel-statistics-year-7-2014-to-2015-report--2
+    title: 'Biofuel statistics: Year 7 (2014 to 2015), report 2 — Renewable transport
+      fuel obligation statistics: year 7, report 2'
+    url: https://assets.publishing.service.gov.uk/media/5a7f930e40f0b62305b87f87/rtfo-2014-15-year-7-report-2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-statistics-on-international-development-final--6
+    title: 'Statistics on International Development: final UK aid spend 2020 — Statistics
+      on International Development: annexes 1 to 3'
+    url: https://assets.publishing.service.gov.uk/media/615339d1e90e077a2e2adc9f/Final-SID-annexes-1-3.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-statistics-on-international-development-final--10
+    title: 'Statistics on International Development: final UK aid spend 2022 — Statistics
+      on International Development: annexes 1, 2 and 3'
+    url: https://assets.publishing.service.gov.uk/media/66102462eb8a1b001a05e28e/Statistics-on-International-Development-annexes-1-2-3.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-transport-and-environment-statistics-2021-2019
+    title: 'Transport and environment statistics: 2021 (2019 data) — Transport and environment
+      statistics: 2021 report (2019 data)'
+    url: https://assets.publishing.service.gov.uk/media/60992fe1e90e0735799d7ed3/transport-and-environment-statistics-2021.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-final-uk-greenhouse-gas-emissions-national-sta-18
+    title: 'Final UK greenhouse gas emissions national statistics: 1990-2014 — 2014
+      UK greenhouse gas emissions: final figures - statistical release'
+    url: https://assets.publishing.service.gov.uk/media/5a80188640f0b62305b8924a/2014_Final_Emissions_Statistics_Release.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-final-uk-greenhouse-gas-emissions-national-sta-19
+    title: 'Final UK greenhouse gas emissions national statistics: 1990-2014 — Annex:
+      1990-2014 UK GHG Emissions, final figures by end-user sector and uncertainties
+      estimates'
+    url: https://assets.publishing.service.gov.uk/media/5a7f9443ed915d74e33f74d9/20160331_1990-2014_UK_GHG_final_end_user_emissions_and_uncertainties.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-smart-energy-code-stage-1-draft-legal-text-ann-2
+    title: 'Smart Energy Code stage 1: draft legal text — Annex B - Further Consultation
+      Draft text of Stage 1 of the SEC'
+    url: https://assets.publishing.service.gov.uk/media/5a755dcbe5274a3cb2869de5/Annex_B_-_Further_Consultation_Draft_text_of_Stage_1_of_the_SEC.PDF
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-energy-code-stage-1-draft-legal-text-ann-4
+    title: 'Smart Energy Code stage 1: draft legal text — Annex E_SEC licence conditions'
+    url: https://assets.publishing.service.gov.uk/media/5a7b6db3ed915d429748efd6/Annex_E_SEC_licence_conditions.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-energy-code-stage-1-draft-legal-text-ann-5
+    title: 'Smart Energy Code stage 1: draft legal text — Annex C - Change Marked Draft
+      Text of Stage 1 of the SEC'
+    url: https://assets.publishing.service.gov.uk/media/5a7acf6340f0b66a2fc02f59/Annex_C_-_Change_Marked_Draft_Text_of_Stage_1_of_the_SEC.PDF
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-energy-code-stage-1-draft-legal-text-gov
+    title: 'Smart Energy Code stage 1: draft legal text — Government’s conclusions following
+      supplementary consultation and proposal to designate final legal text'
+    url: https://assets.publishing.service.gov.uk/media/5a7c963bed915d6969f45ede/gov_response_sec1_consultations.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-energy-code-stage-1-draft-legal-text-ann-6
+    title: 'Smart Energy Code stage 1: draft legal text — Annex A: Legal text of SEC
+      1 proposed designation draft'
+    url: https://assets.publishing.service.gov.uk/media/5a7cabc6e5274a2f304ef5ed/annex_a_legal_text_sec_1_proposed_designation_draft.PDF
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-energy-code-stage-1-draft-legal-text-ann-7
+    title: 'Smart Energy Code stage 1: draft legal text — Annex B: Legal text of SEC
+      1 proposed designation draft (change marked)'
+    url: https://assets.publishing.service.gov.uk/media/5a74d65940f0b65c0e844e02/annex_b_legal_text_sec_1_proposed_designation_draft_change_marked.PDF
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-smart-energy-code-stage-1-draft-legal-text-ann-8
+    title: 'Smart Energy Code stage 1: draft legal text — Annex C: Development of SEC
+      content'
+    url: https://assets.publishing.service.gov.uk/media/5a7ce552e5274a2c9a484c6a/annex_c_development_sec_content.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-consultation-on-alternative-home-area-network-
+    title: Consultation on alternative home area network (HAN) solutions — Consultation
+      on alternative HAN solutions
+    url: https://assets.publishing.service.gov.uk/media/5a80cf0540f0b62305b8d43b/Consultation_on_Alternative_HAN_Solutions.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-consultation-on-alternative-home-area-network--2
+    title: Consultation on alternative home area network (HAN) solutions — Annex B1
+      - DCC licence condition 22
+    url: https://assets.publishing.service.gov.uk/media/5a74b39140f0b61df4777c57/Annex_B1_-_DCC_Licence_Condition_22.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-consultation-on-alternative-home-area-network--4
+    title: Consultation on alternative home area network (HAN) solutions — Annex B3
+      - condition 55 licence
+    url: https://assets.publishing.service.gov.uk/media/5a809146e5274a2e87dba8c9/Annex_B3_-_Condition_55_Supply_Licence.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-consultation-on-alternative-home-area-network--6
+    title: Consultation on alternative home area network (HAN) solutions — Annex B5
+      - SEC section A
+    url: https://assets.publishing.service.gov.uk/media/5a757fe440f0b6360e474992/Annex_B5_-_SEC_Section_A.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-consultation-on-alternative-home-area-network--7
+    title: Consultation on alternative home area network (HAN) solutions — Annex B6
+      - SEC section C
+    url: https://assets.publishing.service.gov.uk/media/5a7f977540f0b6230269068d/Annex_B6_-_SEC_Section_C.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-consultation-on-alternative-home-area-network--8
+    title: Consultation on alternative home area network (HAN) solutions — Annex B7
+      - SEC section D
+    url: https://assets.publishing.service.gov.uk/media/5a80bc05e5274a2e87dbb840/Annex_B7_-_SEC_Section_D.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-consultation-on-alternative-home-area-network--9
+    title: Consultation on alternative home area network (HAN) solutions — Annex B8
+      - SEC section K
+    url: https://assets.publishing.service.gov.uk/media/5a80ee32e5274a2e87dbc9f9/Annex_B8_-_SEC_Section_K.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-consultation-on-alternative-home-area-network--10
+    title: Consultation on alternative home area network (HAN) solutions — Annex B9
+      - SEC section Z
+    url: https://assets.publishing.service.gov.uk/media/5a7f75f6e5274a2e87db5fe3/Annex_B9_-_SEC_Section_Z.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-consultation-on-alternative-home-area-network--11
+    title: Consultation on alternative home area network (HAN) solutions — Consultation
+      Response on Alternative HAN Solutions
+    url: https://assets.publishing.service.gov.uk/media/5a801b9fe5274a2e8ab4e3af/Alt_HAN_Response_27_April_2016.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-consultation-on-alternative-home-area-network--12
+    title: 'Consultation on alternative home area network (HAN) solutions — Annex B1:
+      DCC Licence Conditions'
+    url: https://assets.publishing.service.gov.uk/media/5a74b3dee5274a3cb28667df/DCC_Licence_Conditions_-_April_2016__2__Laying_-_Track_Changed_-_Combine....pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-consultation-on-alternative-home-area-network--15
+    title: 'Consultation on alternative home area network (HAN) solutions — Annex B4:
+      Smart Energy Code'
+    url: https://assets.publishing.service.gov.uk/media/5a809d9440f0b62305b8c2e5/SEC_Sections_-_April_2016_Laying__2nd_Round__Combined.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-bill-2010-to-2011-impact-assessments-en
+    title: 'Energy Bill 2010 to 2011: impact assessments — Energy Bill 2010-11: Summary
+      of Impact assessments'
+    url: https://assets.publishing.service.gov.uk/media/5a79812be5274a684690a103/1014-energy-bill-2010-ia-green-deal.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-bill-2010-to-2011-impact-assessments-en-2
+    title: 'Energy Bill 2010 to 2011: impact assessments — Energy Bill 2010-11 - smart
+      meters: Impact Assessment (final)'
+    url: https://assets.publishing.service.gov.uk/media/5a78acafed915d07d35b18ab/995-energy-bill-2011-ia-smart-meters.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-bill-2010-to-2011-impact-assessments-en-3
+    title: 'Energy Bill 2010 to 2011: impact assessments — Energy Bill 2010-11 - special
+      administration regime: Impact Assessment (final)'
+    url: https://assets.publishing.service.gov.uk/media/5a78a917ed915d04220645a4/996-energy-bill-2011-ia-sar.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-bill-2010-to-2011-impact-assessments-en-4
+    title: 'Energy Bill 2010 to 2011: impact assessments — Energy Bill 2010-11 - third-party
+      access to upstream oil and gas infrastructure: Impact Assessment (final)'
+    url: https://assets.publishing.service.gov.uk/media/5a799478ed915d042206984a/997-energy-bill-2011-ia-3rd-party-access-og.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-bill-2010-to-2011-impact-assessments-en-5
+    title: 'Energy Bill 2010 to 2011: impact assessments — Energy Bill 2010-11 - electricity
+      security: Impact Assessment (final)'
+    url: https://assets.publishing.service.gov.uk/media/5a78d7db40f0b62b22cbd3c2/998-energy-bill-2011-ia-electricity-security.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-bill-2010-to-2011-impact-assessments-en-6
+    title: 'Energy Bill 2010 to 2011: impact assessments — Energy Bill 2010-11 - making
+      better use of energy performance data: Impact Assessment (final)'
+    url: https://assets.publishing.service.gov.uk/media/5a75ad54ed915d6faf2b4d7b/999-energy-bill-2011-ia-better-use-performance.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-bill-2010-to-2011-impact-assessments-en-7
+    title: 'Energy Bill 2010 to 2011: impact assessments — Energy Bill 2010-11 - Making
+      better use of energy performance data: privacy Impact Assessment (development
+      stage)'
+    url: https://assets.publishing.service.gov.uk/media/5a78b557e5274a2acd1892e3/1000-energy-bill-2011-ia-performance-privacy-i.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-bill-2010-to-2011-impact-assessments-en-8
+    title: 'Energy Bill 2010 to 2011: impact assessments — Energy Bill 2010-11 - consolidated
+      Green Deal: Impact Assessment (final)'
+    url: https://assets.publishing.service.gov.uk/media/5a78b964ed915d0422064d6e/1002-energy-bill-2011-ia-green-deal.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-bill-2010-to-2011-impact-assessments-en-9
+    title: 'Energy Bill 2010 to 2011: impact assessments — Energy Bill 2010-11- gas
+      security: Impact Assessment (final)'
+    url: https://assets.publishing.service.gov.uk/media/5a79d4d940f0b66d161ae74b/1003-energy-bill-2011-ia-gas-security.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-bill-2010-to-2011-impact-assessments-en-10
+    title: 'Energy Bill 2010 to 2011: impact assessments — Energy Bill 2010-11 - UK
+      Continental Shelf: Impact Assessment (development stage)'
+    url: https://assets.publishing.service.gov.uk/media/5a7903a5e5274a2acd18b8a2/1004-energy-bill-2011-ia-ukcs.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-bill-2010-to-2011-impact-assessments-en-11
+    title: 'Energy Bill 2010 to 2011: impact assessments — Energy Bill 2010-11 - Home
+      Energy Conservation Act 1995: Impact Assessment (final)'
+    url: https://assets.publishing.service.gov.uk/media/5a74b91ded915d4d83b5e6e1/1005-energy-bill-2011-ia-heca.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-bill-2010-to-2011-impact-assessments-en-12
+    title: 'Energy Bill 2010 to 2011: impact assessments — Energy Bill 2010-11 - Nuclear-operators''
+      Funded Decommissioning Programme: Impact Assessment (final)'
+    url: https://assets.publishing.service.gov.uk/media/5a79708740f0b63d72fc5d2c/993-energy-bill-2011-ia-nuclear-operators.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-bill-2010-to-2011-impact-assessments-en-13
+    title: 'Energy Bill 2010 to 2011: impact assessments — Energy Bill 2010-11 - Coal
+      Authority vires: Impact Assessment (final)'
+    url: https://assets.publishing.service.gov.uk/media/5a79543240f0b676f4a7d8de/992-energy-bill-2011-ia-coal.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-safety-digest-05-2019-sundon-d052019-190514-su
+    title: 'Safety digest 05/2019: Sundon — D052019_190514_Sundon'
+    url: https://assets.publishing.service.gov.uk/media/5cd533da40f0b6605198b7e0/D052019_190514_Sundon.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-social-media-influencers-and-counterfeit-goods
+    title: Social media influencers and counterfeit goods
+    url: https://assets.publishing.service.gov.uk/media/619ccefe8fa8f50381640313/Social-media-Influencer.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-a-guide-to-using-artificial-intelligence-in-th
+    title: A guide to using artificial intelligence in the public sector — A guide to
+      using AI in the public sector (Print version)
+    url: https://assets.publishing.service.gov.uk/media/60828077d3bf7f013e451bc8/A_guide_to_using_AI_in_the_public_sector__Print_version_.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-a-guide-to-using-artificial-intelligence-in-th-2
+    title: A guide to using artificial intelligence in the public sector — A guide to
+      using AI in the public sector (Mobile version)
+    url: https://assets.publishing.service.gov.uk/media/6093f6bfe90e0726f7b69caf/A_guide_to_using_AI_in_the_public_sector__Mobile_version__V2.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-attending-the-royal-courts-of-justice-and-roll-2
+    title: Attending the Royal Courts of Justice and Rolls Building — Attending the
+      Rolls Building leaflet
+    url: https://assets.publishing.service.gov.uk/media/6a20269e31d692299df80cf5/HMCTS973_Rolls_Leaflets_-_accessibility_trifold_PRINT_June_2026.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-pre-announced-amendments-to-building-materials
+    title: Pre-announced amendments to 'Building materials and components monthly statistics'
+      — Pre-announcement of amendments to the monthly statistics of building materials
+      and components p
+    url: https://assets.publishing.service.gov.uk/media/5a7cff75e5274a2af0ae2bf4/Pre-Announcement-of-Amendments-to-the-Monthly-Statistics-of-Building-Materials-and-Components-Publication-2014_06.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-benchmarking-and-tracking-digital-engagement-i
+    title: 'Benchmarking and tracking digital engagement in the UK — Benchmarking and
+      tracking digital engagement in the UK: Building a standardised and shared set
+      of measures'
+    url: https://assets.publishing.service.gov.uk/media/5a8078f7ed915d74e622ea63/RWGDEStandardisedMeasuresFINAL.docx.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-benchmarking-and-tracking-digital-engagement-i-2
+    title: 'Benchmarking and tracking digital engagement in the UK — Survey Technical
+      Guidance: Samples, Design and Analysis'
+    url: https://assets.publishing.service.gov.uk/media/5a817e08e5274a2e87dbdeba/Surveytech_guide_FINAL.docx.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-building-control-by-approved-inspectors-under--2
+    title: 'Building control by approved inspectors under Part 2 of the Building Act
+      1984: insurance schemes for approved inspectors'
+    url: https://assets.publishing.service.gov.uk/media/5a7baad9e5274a7318b90241/100921-Dcl_about_building_control_by_approved_inspectors_under_Part_II_of_the_Building_Act_1984-_insurance_schemes_for_app.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-evaluation-of-building-capacity-to-use-researc
+    title: Evaluation of Building Capacity to Use Research Evidence — Building Capacity
+      to Use Research Evidence (BCURE)
+    url: https://assets.publishing.service.gov.uk/media/5afadb1f40f0b622d18b2eb8/Building-Capacity-to-Use-Research-Evidence.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-evaluation-of-building-capacity-to-use-researc-2
+    title: 'Evaluation of Building Capacity to Use Research Evidence — Management Response:
+      Building Capacity to Use Research Evidence (BCURE)'
+    url: https://assets.publishing.service.gov.uk/media/5afadbe040f0b622e060e2d3/Management-Response-Building-Capacity-to-Use-Research-Evidence.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-2012-building-prices-and-cost-indices-archive-
+    title: '2012 building prices and cost indices archive — Commentary 2012: Q1'
+    url: https://assets.publishing.service.gov.uk/media/5a78d39ded915d07d35b2bc5/12-p150a-construction-output-prices-commentary-2012-q1.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-nuclear-decommissioning-authority-draft-busine-6
+    title: 'Nuclear Decommissioning Authority: Draft Business Plan 2022 to 2025 for
+      consultation — NDA Draft Business Plan 2022 to 2025 for consultation'
+    url: https://assets.publishing.service.gov.uk/media/61ae2db88fa8f50382034ee5/Draft_Business_Plan_2022-2025_final.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-trend-deck-2021-climate-change
+    title: 'Trend Deck 2021: Climate change'
+    url: https://assets.publishing.service.gov.uk/media/60c87e18e90e07438ee57501/GO-Science_Trend_Deck_-_Climate_Change_section_-_Spring_2021.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-contracts-for-difference-cfd-allocation-round--12
+    title: 'Contracts for Difference (CfD) Allocation Round 8: Supply Chain Plan questionnaire
+      and guidance for solar and onshore wind applicants — Supply Chain Plan Allocation
+      Round 8: Guidan'
+    url: https://assets.publishing.service.gov.uk/media/69943ba40b6fa0acfdaaf0c6/ar8-supply-chain-plan-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-contracts-for-difference-cfd-allocation-round--13
+    title: 'Contracts for Difference (CfD) Allocation Round 8: Supply Chain Plan questionnaire
+      and guidance for solar and onshore wind applicants — Supply Chain Plan Allocation
+      Round 8: Solar '
+    url: https://assets.publishing.service.gov.uk/media/68fb5429e200d653d8b6377f/ar8-scp-solar-questionnaire.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-contracts-for-difference-cfd-allocation-round--14
+    title: 'Contracts for Difference (CfD) Allocation Round 8: Supply Chain Plan questionnaire
+      and guidance for solar and onshore wind applicants — Supply Chain Plan Allocation
+      Round 8: Onshor'
+    url: https://assets.publishing.service.gov.uk/media/69943bb6899b683e69aaf0c9/ar8-supply-chain-plan-guidance-onshore-wind-questionnaire.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-advanced-modular-reactor-amr-research-developm-2
+    title: 'Advanced Modular Reactor (AMR) Research, Development and Demonstration Programme:
+      Phase B competition (closed to applications) — Advanced Modular Reactor (AMR)
+      Research Development'
+    url: https://assets.publishing.service.gov.uk/media/66bb67040808eaf43b50e101/advanced-modular-reactor-rdd-competition-phase-b-guidance-issue-2.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-advanced-modular-reactor-amr-research-developm-3
+    title: 'Advanced Modular Reactor (AMR) Research, Development and Demonstration Programme:
+      Phase B competition (closed to applications) — AMR RD&D Phase B Briefing and Knowledge
+      Capture (KC'
+    url: https://assets.publishing.service.gov.uk/media/66bb7c8efc8e12ac3edb0ed4/combined-amr-phase-b-kc-slides.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-consult
+    title: Draft guidance on environmental claims — Consultation document (PDF, 275KB)
+    url: https://assets.publishing.service.gov.uk/media/63cff255d3bf7f3c48942508/MGC_-_Consultation_document-.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-literat
+    title: Draft guidance on environmental claims — Literature review (PDF, 1.15MB)
+    url: https://assets.publishing.service.gov.uk/media/63d01328d3bf7f3c3fa85a33/MGC_Literature_review_-__1_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-consult-2
+    title: Draft guidance on environmental claims — Consultation response (PDF, 390KB)
+    url: https://assets.publishing.service.gov.uk/media/63d012e3d3bf7f3c3e1c08aa/Consultation_response_on_guidance_for_businesses_making_environmental_claims.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-adverti
+    title: Draft guidance on environmental claims — Advertising Association
+    url: https://assets.publishing.service.gov.uk/media/63d0176be90e071ba9122311/Advertising_Association_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-bio-bas
+    title: Draft guidance on environmental claims — Bio-based and Biodegradable Industries
+      Association (BBIA)
+    url: https://assets.publishing.service.gov.uk/media/63d01830e90e071ba8dcecae/Bio-based_and_Biodegradable_Industries_Association__BBIA__response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-benders
+    title: Draft guidance on environmental claims — Benders Paper Cups
+    url: https://assets.publishing.service.gov.uk/media/63d0184ed3bf7f3c40d67256/Benders_Paper_Cups_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-british
+    title: Draft guidance on environmental claims — British Plastics Federation (BPF)
+    url: https://assets.publishing.service.gov.uk/media/63d018a9d3bf7f3c45bb4dc6/British__Plastics__Federation__BPF__response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-centric
+    title: Draft guidance on environmental claims — Centrica
+    url: https://assets.publishing.service.gov.uk/media/63d019fae90e071ba8dcecb1/Centrica_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-changin
+    title: Draft guidance on environmental claims — Changing Markets Foundation
+    url: https://assets.publishing.service.gov.uk/media/63d01a3fe90e071ba1c26828/Changing_Markets_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-citizen
+    title: Draft guidance on environmental claims — Citizens Advice
+    url: https://assets.publishing.service.gov.uk/media/63d01a728fa8f53fdff6a47b/Citizens_Advice_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-cliente
+    title: Draft guidance on environmental claims — ClientEarth
+    url: https://assets.publishing.service.gov.uk/media/63d01a93d3bf7f3c4a199591/Client_Earth_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-co-oper
+    title: Draft guidance on environmental claims — Co-operative Group
+    url: https://assets.publishing.service.gov.uk/media/63d1398fe90e071ba9122330/Co-operative_Group__Co-op__response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-cosmeti
+    title: Draft guidance on environmental claims — Cosmetics Toiletry and Perfumery
+      Association (CTPA)
+    url: https://assets.publishing.service.gov.uk/media/63d139a0e90e071ba9122331/Cosmetic_Toiletry_and_Perfumery_Association_Limited__CTPA__response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-danone-
+    title: Draft guidance on environmental claims — Danone UKI
+    url: https://assets.publishing.service.gov.uk/media/63d139e4d3bf7f3c4df599f1/Danone_UKI_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-ecosure
+    title: Draft guidance on environmental claims — Ecosurety
+    url: https://assets.publishing.service.gov.uk/media/63d13a2bd3bf7f3c4c4c8dfc/Ecosurety_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-edf
+    title: Draft guidance on environmental claims — EDF
+    url: https://assets.publishing.service.gov.uk/media/63d13a4ad3bf7f3c478cfc89/EDF_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-fibre-t
+    title: Draft guidance on environmental claims — Fibre Trace
+    url: https://assets.publishing.service.gov.uk/media/63d13a958fa8f53fde830710/FibreTrace_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-food-an
+    title: Draft guidance on environmental claims — Food and Drink Federation (FDF)
+    url: https://assets.publishing.service.gov.uk/media/63d13aa48fa8f53fe33ddddc/Food_and_Drink_Federation__FDF__response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-foodser
+    title: Draft guidance on environmental claims — Foodservice Packaging Association
+      (FPA)
+    url: https://assets.publishing.service.gov.uk/media/63d13aaf8fa8f53fe9e3d1de/Foodservice_Packaging_Asociation__FPA__response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-good-en
+    title: Draft guidance on environmental claims — Good Energy
+    url: https://assets.publishing.service.gov.uk/media/63d11cfa8fa8f53fe33dddcf/Good_Energy_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-highlan
+    title: Draft guidance on environmental claims — Highland Council Trading Standards
+    url: https://assets.publishing.service.gov.uk/media/63d11dc6d3bf7f3c3e1c08be/Highland_Council_Trading_Standards_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-industr
+    title: Draft guidance on environmental claims — Industry Council for Packaging and
+      the Environment
+    url: https://assets.publishing.service.gov.uk/media/63d11dfde90e071ba8dcecc0/Industry_Council_for_Packaging_and_the_Environment__INCPEN__response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-influen
+    title: Draft guidance on environmental claims — Influence Map
+    url: https://assets.publishing.service.gov.uk/media/63d11e3ad3bf7f3c48942521/Influence_map_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-james-c
+    title: Draft guidance on environmental claims — James Cropper PLC
+    url: https://assets.publishing.service.gov.uk/media/63d11ee8e90e071bafbab430/James_Cropper_Plc_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-lifesca
+    title: Draft guidance on environmental claims — Lifescape Project
+    url: https://assets.publishing.service.gov.uk/media/63d11f10d3bf7f3c40d67270/Lifescape_Project_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-marks-a
+    title: Draft guidance on environmental claims — Marks and Spencer
+    url: https://assets.publishing.service.gov.uk/media/63d11f4de90e071ba62d84f4/Marks_and_Spencer_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-metal-p
+    title: Draft guidance on environmental claims — Metal Packaging Manufacturers Association
+    url: https://assets.publishing.service.gov.uk/media/63d11f938fa8f53fe6b1b437/Metal_Packaging_Manufacturers_Association__MPMA__response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-nestle
+    title: Draft guidance on environmental claims — Nestle
+    url: https://assets.publishing.service.gov.uk/media/63d11fbce90e071ba2746997/Nestle_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-new-wea
+    title: Draft guidance on environmental claims — New Weather Institute
+    url: https://assets.publishing.service.gov.uk/media/63d12385e90e071ba62d84f6/New_Weather_Institute_and_Possible_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-oatly-u
+    title: Draft guidance on environmental claims — Oatly UK
+    url: https://assets.publishing.service.gov.uk/media/63d1245bd3bf7f3c4df599e7/Oatly_UK_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-ombudsm
+    title: Draft guidance on environmental claims — Ombudsman Services
+    url: https://assets.publishing.service.gov.uk/media/63d12497e90e071ba7b41d78/Ombudsman_Services_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-guidance-on-environmental-claims-on-pack
+    title: Draft guidance on environmental claims — On-Pack recycling Label (OPRL)
+    url: https://assets.publishing.service.gov.uk/media/63d124c0d3bf7f3c4a1995ac/On-Pack_recycling_label__OPRL__response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
     format: pdf
