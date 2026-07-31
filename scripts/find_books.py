@@ -122,26 +122,22 @@ def is_book(item) -> bool:
 
 
 def license_of(handle: str) -> str | None:
-    """cc-by / cc-by-sa / cc0 from the OAPEN xoai record, or None (fail-closed) — ANY nc/nd rejects."""
-    try:
-        r = requests.get(OAI, params={"verb": "GetRecord", "metadataPrefix": "xoai",
-                                      "identifier": f"oai:library.oapen.org:{handle}"},
-                         headers=UA, timeout=30)
-        if r.status_code != 200:
-            return None
-        t = r.text
-        if re.search(r"creativecommons\.org/publicdomain/zero", t):
-            return "cc0"
-        codes = set(re.findall(r"creativecommons\.org/licenses/([a-z-]+)", t))
-        if not codes or any(("nc" in c or "nd" in c) for c in codes):
-            return None
-        if "by-sa" in codes:
-            return "cc-by-sa"
-        if "by" in codes:
-            return "cc-by"
+    """Resolve an allowed license; incompatible rights return None, request failures propagate."""
+    r = requests.get(OAI, params={"verb": "GetRecord", "metadataPrefix": "xoai",
+                                  "identifier": f"oai:library.oapen.org:{handle}"},
+                     headers=UA, timeout=30)
+    r.raise_for_status()
+    t = r.text
+    if re.search(r"creativecommons\.org/publicdomain/zero", t):
+        return "cc0"
+    codes = set(re.findall(r"creativecommons\.org/licenses/([a-z-]+)", t))
+    if not codes or any(("nc" in c or "nd" in c) for c in codes):
         return None
-    except Exception:
-        return None
+    if "by-sa" in codes:
+        return "cc-by-sa"
+    if "by" in codes:
+        return "cc-by"
+    return None
 
 
 def load_license_cache() -> dict[str, str | None]:
@@ -163,8 +159,14 @@ def save_license_cache(cache: dict[str, str | None]) -> None:
     )
 
 
-def search_subject(term: str, topic: str, offset: int, depth: int, per: int) -> list[tuple]:
-    """Fetch one subject's pages sequentially; different subjects run concurrently."""
+def search_subject(
+    term: str,
+    topic: str,
+    offset: int,
+    depth: int,
+    per: int,
+) -> tuple[list[tuple], str | None]:
+    """Fetch one subject's pages, returning any request failure separately from a dry page."""
     found = []
     for page_offset in range(offset, offset + depth, per):
         try:
@@ -183,11 +185,11 @@ def search_subject(term: str, topic: str, offset: int, depth: int, per: int) -> 
             items = r.json()
         except Exception as exc:
             print(f"# search '{term}' @{page_offset} failed: {exc}", file=sys.stderr)
-            break
+            return found, f"'{term}' @{page_offset}"
         if not items:
             break
         found.extend((term, topic, item) for item in items)
-    return found
+    return found, None
 
 
 def emit(e) -> str:
@@ -216,6 +218,7 @@ def main() -> None:
     urls, titles, reg_ids = registry.existing_keys()
     workers = max(1, args.workers)
     pages_by_query: list[list[tuple] | None] = [None] * len(QUERIES)
+    failed_searches: list[str] = []
     with ThreadPoolExecutor(max_workers=workers) as pool:
         futures = {
             pool.submit(
@@ -229,7 +232,21 @@ def main() -> None:
             for index, (term, topic) in enumerate(QUERIES)
         }
         for future in as_completed(futures):
-            pages_by_query[futures[future]] = future.result()
+            pages, failure = future.result()
+            pages_by_query[futures[future]] = pages
+            if failure:
+                failed_searches.append(failure)
+
+    if failed_searches:
+        examples = ", ".join(sorted(failed_searches)[:3])
+        more = len(failed_searches) - min(3, len(failed_searches))
+        suffix = f" (+{more} more)" if more else ""
+        print(
+            f"# ERROR: OAPEN discovery incomplete at {examples}{suffix}; "
+            "refusing a partial append so rotation does not advance",
+            file=sys.stderr,
+        )
+        raise SystemExit(1)
 
     candidates, seen = [], set()
     for pages in pages_by_query:
