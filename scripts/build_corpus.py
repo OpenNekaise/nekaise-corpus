@@ -32,6 +32,7 @@ import os
 import re
 import shutil
 import subprocess
+import tempfile
 import threading
 import time
 from collections import defaultdict, deque
@@ -361,12 +362,19 @@ def download_one(src: dict) -> dict:
             if resp.status_code in (403, 410, 429, 503):
                 # WAFs (Akamai/Cloudflare/Google) block the python client's TLS fingerprint but
                 # pass curl's. Only accept a fallback with the expected content.
-                out = subprocess.run(
-                    ["curl", "-sSL", "--max-time", str(TIMEOUT), "-A", ua, src["url"]],
-                    capture_output=True,
-                    timeout=TIMEOUT + 15,
-                )
-                body = out.stdout if out.returncode == 0 else b""
+                # Do not capture curl stdout through a pipe.  Extraction workers are spawned
+                # while downloads are active, and a fork can inherit the pipe's write end; if
+                # that happens communicate() never observes EOF after curl exits.  A temporary
+                # file also avoids buffering large patent HTML responses in a pipe.
+                with tempfile.TemporaryFile() as curl_body:
+                    out = subprocess.run(
+                        ["curl", "-sSL", "--max-time", str(TIMEOUT), "-A", ua, src["url"]],
+                        stdout=curl_body,
+                        stderr=subprocess.DEVNULL,
+                        timeout=TIMEOUT + 15,
+                    )
+                    curl_body.seek(0)
+                    body = curl_body.read() if out.returncode == 0 else b""
                 good = len(body) > 512 and (
                     body[:5] == b"%PDF-" if fmt == "pdf"
                     else (

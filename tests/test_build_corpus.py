@@ -142,6 +142,40 @@ def test_download_and_extraction_are_separate_stages(tmp_path, monkeypatch):
     assert build_corpus.quality.body(rendered) == "Building envelope and ventilation guidance."
 
 
+def test_curl_fallback_uses_file_instead_of_inheritable_pipe(tmp_path, monkeypatch):
+    blocked = SimpleNamespace(
+        status_code=403,
+        content=b"blocked",
+        raise_for_status=lambda: (_ for _ in ()).throw(RuntimeError("blocked")),
+    )
+    monkeypatch.setattr(build_corpus.requests, "get", lambda *args, **kwargs: blocked)
+    monkeypatch.setattr(build_corpus, "HERE", tmp_path)
+    monkeypatch.setattr(build_corpus, "RAW", tmp_path / "raw")
+
+    def fake_run(_command, **kwargs):
+        assert "capture_output" not in kwargs
+        assert kwargs["stderr"] is build_corpus.subprocess.DEVNULL
+        kwargs["stdout"].write(b"fallback building guidance " * 30)
+        return SimpleNamespace(returncode=0)
+
+    monkeypatch.setattr(build_corpus.subprocess, "run", fake_run)
+    src = {
+        "id": "fallback",
+        "title": "Fallback",
+        "url": "https://example.org/fallback.txt",
+        "source": "test",
+        "license": "cc-by",
+        "topic": "construction",
+        "format": "txt",
+    }
+
+    downloaded = build_corpus.download_one(src)
+
+    assert downloaded["http_status"] == 200
+    assert downloaded["bytes"] > 512
+    assert (tmp_path / downloaded["raw_path"]).read_bytes().startswith(b"fallback")
+
+
 def test_fair_sources_round_robins_hosts():
     sources = [
         {"id": "a1", "url": "https://a.example/1"},
