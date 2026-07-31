@@ -70820,14 +70820,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-energy-trends-september-2019-special-feature-a-5
-    title: 'Energy Trends: September 2019, special feature articles — Competition in
-      UK electricity markets'
-    url: https://assets.publishing.service.gov.uk/media/5d8b63cfed915d036b86dc8c/Competition_in_UK_Electricity_Markets.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-energy-trends-september-2019-special-feature-a-6
     title: 'Energy Trends: September 2019, special feature articles — Aggregated energy
       balances showing proportion of renewables in supply and demand'
@@ -72821,14 +72813,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-energy-trends-september-2022-special-feature-a-4
-    title: 'Energy Trends: September 2022, special feature articles — Competition in
-      UK gas supply 2021'
-    url: https://assets.publishing.service.gov.uk/media/63343850d3bf7f34ef44f341/Competition_in_UK_gas_supply_2021.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-energy-trends-september-2022-special-feature-a-5
     title: 'Energy Trends: September 2022, special feature articles — Diversity of supply
       for oil and oil products in OECD countries in 2021'
@@ -74514,14 +74498,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-energy-trends-september-2023-special-feature-a-3
-    title: 'Energy Trends: September 2023, special feature articles — Competition in
-      UK gas supply, 2022'
-    url: https://assets.publishing.service.gov.uk/media/6512e351b23dad0012e706a2/Competition_in_UK_gas_supply_2022.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-energy-trends-september-2023-special-feature-a-4
     title: 'Energy Trends: September 2023, special feature articles — Diversity of supply
       for oil and oil products in OECD countries in 2022'
@@ -75960,4 +75936,1029 @@ sources:
     source: gov_uk
     license: open
     topic: equipment_systems
+    format: pdf
+  - id: guk-cut-eu-red-tape-report-from-the-business-taskf
+    title: 'Cut EU red tape: report from the Business Taskforce'
+    url: https://assets.publishing.service.gov.uk/media/5a7ba74ae5274a7318b900db/TaskForce-report-15-October.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-revisions-to-the-extradition-police-codes-of-p
+    title: Revisions to the extradition police codes of practice — Draft of the revised
+      Extradition Act 2003 codes of practice
+    url: https://assets.publishing.service.gov.uk/media/5fb27925e90e0709e118cb0c/Draft_revised_Extradition_Codes_of_Practice.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — FAQ document to find out more information about the Investment Facility for
+      Utilising UK Specialist Expert'
+    url: https://assets.publishing.service.gov.uk/media/5a7a1ac2ed915d6eaf153c95/IFUSE-FAQS.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-2
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — March to June 2012 report'
+    url: https://assets.publishing.service.gov.uk/media/5a75073140f0b6397f35d1b0/Quarter-One-Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-3
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — July to September 2012 report'
+    url: https://assets.publishing.service.gov.uk/media/5a7c0476ed915d01ba1ca9cf/Quarter-Two-Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-4
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — October to December 2012 report'
+    url: https://assets.publishing.service.gov.uk/media/5a7b902440f0b62826a04630/Quarter-Three-Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-5
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — January to March 2013 report'
+    url: https://assets.publishing.service.gov.uk/media/5a7c39e840f0b67d0b11fb77/Quarter-Four-Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-6
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — FAQs'
+    url: https://assets.publishing.service.gov.uk/media/5a749d74ed915d0e8e399a27/IFUSE-FAQs-July-2014.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-7
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — IFUSE Brochure 2013'
+    url: https://assets.publishing.service.gov.uk/media/5a7c6ab240f0b62aff6c1858/IFUSE-Brochure-2013.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-8
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — IFUSE Expertise'
+    url: https://assets.publishing.service.gov.uk/media/5a7e217eed915d74e62244cc/IFUSE-expertise-brochure-July2014.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-9
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — IFUSE flyer: paving the way for business'
+    url: https://assets.publishing.service.gov.uk/media/5a7e44c540f0b6230268a427/IFUSE-flyer-july2014.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-10
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — July to September 2013 report'
+    url: https://assets.publishing.service.gov.uk/media/5a7c1d29ed915d1c30daaa62/IFUSE-year2-quarter2-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-11
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — April to June 2013 report'
+    url: https://assets.publishing.service.gov.uk/media/5a7ca82b40f0b6629523af80/IFUSE-report-april-june2013.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-12
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — October to December 2013 report'
+    url: https://assets.publishing.service.gov.uk/media/5a7cdd29ed915d7c849adb3e/IFUSE-year2-quarter3-reporta.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-13
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — January to March 2014 report'
+    url: https://assets.publishing.service.gov.uk/media/5a7dde6aed915d2acb6ee9fa/IFUSE-year2-quarter4-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-16
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — October to December 2014 report'
+    url: https://assets.publishing.service.gov.uk/media/5a7f7e8640f0b6230268fd4f/IFUSE-Y3-Q3-Rep.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-17
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — Safe corridors: Rapid assessment - Somalia and UK banking'
+    url: https://assets.publishing.service.gov.uk/media/5a7c4e04ed915d3d0e87b799/SAFER_CORRIDORS_RAPID_ASSESSMENT__2013__SOMALIA___UK_BANKING.PDF
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-22
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — developing special measures for UK-Somali remittances that are uniquely impacted.'
+    url: https://assets.publishing.service.gov.uk/media/5a74dc24e5274a3cb2867c39/TOR_-_Somalia.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-24
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — Safe corridors: Remittance technology options'
+    url: https://assets.publishing.service.gov.uk/media/5a7e218940f0b62305b8100b/Safe-corridors-Remittance-technology-options.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2010-to-2015-government-policy-economic-growth-31
+    title: '2010 to 2015 government policy: economic growth in developing countries
+      — 12 August Speech from the Financial Crimes Enforcement Network'
+    url: https://assets.publishing.service.gov.uk/media/5a7e406eed915d74e33f10b2/FinCen_Statement_August_12_2014.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-strategic-lawsuits-against-public-participatio
+    title: Strategic Lawsuits Against Public Participation (SLAPPs) — Strategic Lawsuits
+      Against Public Participation (SLAPPs) - Call for Evidence
+    url: https://assets.publishing.service.gov.uk/media/623255d48fa8f56c226e6443/slapps-call-for-evidence-web.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-strategic-lawsuits-against-public-participatio-2
+    title: Strategic Lawsuits Against Public Participation (SLAPPs) — Strategic Lawsuits
+      Against Public Participation (SLAPPs) - Call for Evidence (print version)
+    url: https://assets.publishing.service.gov.uk/media/623255f0e90e070edd0ea24a/slapps-call-for-evidence-print.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-online-harms-white-paper
+    title: Online Harms White Paper
+    url: https://assets.publishing.service.gov.uk/media/605e60c6e90e07750810b439/Online_Harms_White_Paper_V2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-online-harms-white-paper-the-government-report
+    title: Online Harms White Paper — The government report on transparency reporting
+      in relation to online harms - PDF version
+    url: https://assets.publishing.service.gov.uk/media/5fd8b0d9e90e071be3500aa8/The_Government_Report_on_Transparency_Reporting_in_relation_to_Online_Harms.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-people-at-the-heart-of-care-adult-social-care--4
+    title: 'People at the Heart of Care: adult social care reform white paper — Adult
+      social care system reform: impact statement'
+    url: https://assets.publishing.service.gov.uk/media/6213b755d3bf7f4f04b2b5a4/adult_social_care_system_reform_impact_statement.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-firearm-and-shotgun-certificates-in-england-an-2
+    title: 'Firearm and shotgun certificates in England and Wales: financial year ending
+      March 2016 — Statistical news release: Firearm and shotgun certificates in England
+      and Wales financial '
+    url: https://assets.publishing.service.gov.uk/media/5a7f31a740f0b62305b85a8d/firearm-shotgun-certs-2016snr.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-transport-disability-and-accessibility-statist
+    title: 'Transport: disability and accessibility statistics, England: 2020 — Transport:
+      disability and accessibility statistics, England: 2020 report'
+    url: https://assets.publishing.service.gov.uk/media/614a16fad3bf7f05b7bcb6d4/transport-disability-and-accessibility-statistics-england-2020.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-anti-money-laundering-and-counter-terrorist-fi-2
+    title: Anti-money laundering and counter terrorist finance supervision reports 2010
+      - 2017 — Anti-money laundering and counter-terrorist financing supervision report
+      2015-17
+    url: https://assets.publishing.service.gov.uk/media/5a9983fbe5274a5b849d3e4d/PU2146_AML_web.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-anti-money-laundering-and-counter-terrorist-fi-3
+    title: Anti-money laundering and counter terrorist finance supervision reports 2010
+      - 2017 — Anti-money laundering and counter-terrorist finance supervision report
+      2014-15
+    url: https://assets.publishing.service.gov.uk/media/5a8056c6e5274a2e87db9401/anti-money-laundering-counter-terrorist-report-2014-15.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-anti-money-laundering-and-counter-terrorist-fi-4
+    title: Anti-money laundering and counter terrorist finance supervision reports 2010
+      - 2017 — Anti-money laundering and counter terrorist finance supervision report
+      2011-12
+    url: https://assets.publishing.service.gov.uk/media/5a7c0d5d40f0b645ba3c666f/amlctf_supervision_report_201112.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-outstanding-children-s-homes-outstanding-child
+    title: 'Outstanding children’s homes — Outstanding children''s homes: report summary'
+    url: https://assets.publishing.service.gov.uk/media/5a807ac040f0b62302693c0e/Summary_-_Outstanding_children_s_homes.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-inspection-of-children-s-homes-children-s-home
+    title: 'Inspection of children''s homes — Children''s home inspection framework:
+      a report on the responses to consultation'
+    url: https://assets.publishing.service.gov.uk/media/5a7ec5ed40f0b6230268b728/Childrens_home_inspection_framework_a_report_on_the_responses_to_consultation_1_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-children-s-homes-framework-bea-new-inspection-
+    title: Children's homes framework — BEA New inspection framework for children’s
+      homes
+    url: https://assets.publishing.service.gov.uk/media/5a7e2f1de5274a2e87db019b/BEA_New_inspection_framework_for_children_s_homes.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-starter-homes-design
+    title: Starter homes design
+    url: https://assets.publishing.service.gov.uk/media/5a74b13440f0b619c8659a81/150330_-_Starter_Homes_Design_FINAL_bc_lh_pdf.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-build-back-better-high-streets
+    title: Build Back Better High Streets
+    url: https://assets.publishing.service.gov.uk/media/60f935638fa8f50435634947/Build_Back_Better_High_Streets.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-accessible-railways-roadmap-our-roadmap-to-an-
+    title: Accessible railways roadmap — Our roadmap to an accessible railway (PDF version)
+    url: https://assets.publishing.service.gov.uk/media/6909e9a17a88fd270a95fd55/Our_roadmap_to_an_accessible_railway.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-accessible-railways-roadmap-our-roadmap-to-an--3
+    title: Accessible railways roadmap — Our roadmap to an accessible railway (large
+      print version)
+    url: https://assets.publishing.service.gov.uk/media/6909eb797a88fd270a95fd5c/our-roadmap-to-an-accessible-railway-large-print.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-consideration-of-social-risks-and-opportunitie
+    title: Consideration of social risks and opportunities by occupational pension schemes
+    url: https://assets.publishing.service.gov.uk/media/6059fc5ce90e0724cfff4492/consideration-of-social-risks-and-opportunities-by-occupational-pension-schemes.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-consideration-of-social-risks-and-opportunitie-2
+    title: 'Consideration of social risks and opportunities by occupational pension
+      schemes — Government response: Consideration of social risks and opportunities
+      by occupational pension schem'
+    url: https://assets.publishing.service.gov.uk/media/62d14534d3bf7f28661f0937/government-response-to-dwp-social-call-for-evidence.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-renewable-heat-incentive-rhi-quarterly-statist-4
+    title: 'Renewable Heat Incentive (RHI): quarterly statistics - September 2015'
+    url: https://assets.publishing.service.gov.uk/media/5a81512ee5274a2e87dbcf6b/RHI_quarterly_statistics_-_September_2015.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-renewable-heat-incentive-rhi-quarterly-statist-5
+    title: 'Renewable Heat Incentive (RHI): quarterly statistics - March 2015'
+    url: https://assets.publishing.service.gov.uk/media/5a7515b640f0b6360e4733a9/RHI_quarterly_release__March_2015_data___2_.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-atmospheric-impacts-of-hydrogen-literature-rev
+    title: 'Atmospheric impacts of hydrogen: literature review — Hydrogen for heating:
+      atmospheric impacts - a literature review'
+    url: https://assets.publishing.service.gov.uk/media/65aabac882fee900106f5fa8/hydrogen-atmospheric-impact-report.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-infrared-heating-investigations-from-literatur
+    title: 'Infrared heating: investigations from literature and user experience tests'
+    url: https://assets.publishing.service.gov.uk/media/69ca4fd8b66990e31f67e8f1/ir-heating-report.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-sl1-4tu-slough-heat-and-power-limited-environm
+    title: 'SL1 4TU, Slough Heat and Power Limited: environmental permit issued - EPR/CP3031SX/V008
+      — Variation Notice: Slough Heat and Power Limited'
+    url: https://assets.publishing.service.gov.uk/media/658be232fc07f300128d4739/Application_Variation_Notice_Issued_07122023.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-sl1-4tu-slough-heat-and-power-limited-environm-2
+    title: 'SL1 4TU, Slough Heat and Power Limited: environmental permit issued - EPR/CP3031SX/V008
+      — Decision Document: Slough Heat and Power Limited'
+    url: https://assets.publishing.service.gov.uk/media/658be24423b70a000d234eba/Application_Variation_Decision_Document_07122023.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-sr2010-no-2-discharge-to-surface-water-from-co
+    title: 'SR2010 No 2: discharge to surface water from cooling circuits and heat exchangers
+      — Standard rules SR2010 No 2: discharge to surface water'
+    url: https://assets.publishing.service.gov.uk/media/5cac850be5274a42a2a42b7e/SR2010_No2.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-the-government-s-response-to-the-adult-social-
+    title: The government's response to the Adult Social Care Committee report — The
+      government's response to the Adult Social Care Committee report (web accessible)
+    url: https://assets.publishing.service.gov.uk/media/64cb82d247915a000d2a91ef/Government-response-to-house-of-lords-adult-social-care-committee-accessible.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-government-s-response-to-the-adult-social--2
+    title: The government's response to the Adult Social Care Committee report
+    url: https://assets.publishing.service.gov.uk/media/64cb82f847915a00142a91ea/Government-response-to-house-of-lords-adult-social-care-committee-elay.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-workless-households-and-educational-attainment
+    title: Workless households and educational attainment statutory indicators, 2018
+      — Workless households and educational attainment statutory indicators
+    url: https://assets.publishing.service.gov.uk/media/5aba6829ed915d78bc234938/workless-households-and-educational-attainment-statutory-indicators-web-version.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-fuel-mix-data-methodology-uk-fuel-mix-metho
+    title: 'UK fuel mix data: methodology — UK fuel mix methodology (updated 2018)'
+    url: https://assets.publishing.service.gov.uk/media/5b60863140f0b6357026df58/fuel-mix-disclosure-methodology-2018.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-fossil-fuel-price-projections-2014-decc-fossil
+    title: 'Fossil fuel price projections: 2014 — DECC fossil fuel price projections'
+    url: https://assets.publishing.service.gov.uk/media/5a7cfc87e5274a33be6483d0/DECC_2014_fossil_fuel_price_projections.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-fossil-fuel-price-projections-2014-coal-price-
+    title: 'Fossil fuel price projections: 2014 — Coal price projections'
+    url: https://assets.publishing.service.gov.uk/media/5a7e0494e5274a2e8ab454ef/DECC_2014_Coal_price_projections_Peer_review_by_Sylvie_Cornot_for_publication.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-fossil-fuel-price-projections-2014-gas-price-p
+    title: 'Fossil fuel price projections: 2014 — Gas price projections'
+    url: https://assets.publishing.service.gov.uk/media/5a7ed14c40f0b62305b835da/2014_Gas_Price_Projections_Peer_Review_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-fossil-fuel-price-projections-2014-oil-price-p
+    title: 'Fossil fuel price projections: 2014 — Oil price projections'
+    url: https://assets.publishing.service.gov.uk/media/5a7df8b7e5274a2e8ab45012/DECC_2014_Oil_Price_Projections_Peer_Review_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-supporting-customers-who-may-not-be-able-to-ma-2
+    title: Supporting customers who may not be able to make their own decisions — Cefnogi
+      cwsmeriaid sydd efallai'n methu gwneud eu penderfyniadau eu hunain
+    url: https://assets.publishing.service.gov.uk/media/693ac2eac72b0f8ccf33d5f9/20250112_cefnogi-cwsmeriaid-UKRN-guide.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-humanitarian-aid-and-spend-in-syria-factshe
+    title: UK humanitarian aid and spend in Syria factsheet 2024 to 2025
+    url: https://assets.publishing.service.gov.uk/media/68ff3722a50917eae8b4833e/UK-Humanitarian-Aid-and-Spend-in-Syria-2024-to-2025.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-humanitarian-aid-and-spend-in-syria-factshe-2
+    title: 'UK humanitarian aid and spend in Syria factsheet 2024 to 2025 — Data sources
+      and methods: UK humanitarian aid and spend in Syria 2024 to 2025'
+    url: https://assets.publishing.service.gov.uk/media/68ff416249d08dd781b48341/UK-Humanitarian-Aid-and-Spend-in-Syria-2024-to-2025-Data-Sources-and-Methods.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2023-special-feature-a-2
+    title: 'Energy Trends: September 2023, special feature article - Competition in
+      UK gas supply, 2022'
+    url: https://assets.publishing.service.gov.uk/media/6512b4f9f6746b000da4b9f0/Competition_in_UK_gas_supply_2022.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2022-special-feature-a-3
+    title: 'Energy Trends: September 2022, special feature article - Competition in
+      UK gas supply 2021'
+    url: https://assets.publishing.service.gov.uk/media/633434f78fa8f5068a50e2bc/Competition_in_UK_gas_supply_2021.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2018-special-feature-a-2
+    title: 'Energy Trends: September 2018, special feature articles — Combined Heat
+      and Power in Scotland, Wales, Northern Ireland and the regions of England in 2017'
+    url: https://assets.publishing.service.gov.uk/media/5bab882840f0b607102cbe24/CHP.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2018-special-feature-a-4
+    title: 'Energy Trends: September 2018, special feature articles — Competition in
+      gas supply'
+    url: https://assets.publishing.service.gov.uk/media/5bab885ce5274a54a7e22160/Competition_in_Gas_Supply.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2018-special-feature-a-5
+    title: 'Energy Trends: September 2018, special feature articles — Competition in
+      UK electricity markets'
+    url: https://assets.publishing.service.gov.uk/media/5bab887540f0b6071970c296/Competition_in_UK_Electricity_Markets.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2016-special-feature-a-2
+    title: 'Energy Trends: September 2016, special feature articles — Combined Heat
+      and Power in Scotland, Wales, Northern Ireland and the regions of England in 2015'
+    url: https://assets.publishing.service.gov.uk/media/5a7f6f0ced915d74e622a6de/CHP.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2016-special-feature-a-4
+    title: 'Energy Trends: September 2016, special feature articles — Competition in
+      gas supply'
+    url: https://assets.publishing.service.gov.uk/media/5a7f475b40f0b6230268e890/Gas_competition.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2016-special-feature-a-5
+    title: 'Energy Trends: September 2016, special feature articles — Competition in
+      UK electricity markets'
+    url: https://assets.publishing.service.gov.uk/media/5a758cf1e5274a6faebebcf0/Electricity_competition.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2016-special-feature-a-6
+    title: 'Energy Trends: September 2016, special feature articles — New methodology
+      for estimating inland deliveries of road fuels and gas oil'
+    url: https://assets.publishing.service.gov.uk/media/5a818bf7ed915d74e33fecd1/Inland_deliveries_methodology.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2016-special-feature-a-7
+    title: 'Energy Trends: September 2016, special feature articles — Coal in 2015'
+    url: https://assets.publishing.service.gov.uk/media/5a75bd5de5274a545822dda9/Coal_in_2015.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2016-special-feature-a-8
+    title: 'Energy Trends: September 2016, special feature articles — International
+      energy price comparisons'
+    url: https://assets.publishing.service.gov.uk/media/5a818cbee5274a2e87dbe39d/International_energy_price_comparisons.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2019-special-feature-a-3
+    title: 'Energy Trends: September 2019, special feature article - Competition in
+      UK electricity markets'
+    url: https://assets.publishing.service.gov.uk/media/5d8b5bbc40f0b60991ddd3c3/Competition_in_UK_Electricity_Markets.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-march-2023-special-feature-artic
+    title: 'Energy Trends: March 2023, special feature article — Supply of Liquefied
+      Natural Gas in the UK, 2022'
+    url: https://assets.publishing.service.gov.uk/media/6424342b3d885d000cdade0e/Supply_of_Liquefied_Natural_Gas_in_the_UK__2022.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-mgn-410-m-f-amendment-4-work-at-height-regulat
+    title: MGN 410 (M+F) Amendment 4 work at height regulations 2010 — MGN 410 (M+F)
+      Amendment 4 The merchant shipping and fishing vessels (health and safety at work)
+      (work at height) regulat
+    url: https://assets.publishing.service.gov.uk/media/69037cad5c84b1206832a886/MGN_410_Amd_4_Work_at_Height_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-business-investment-analysis-business-investme
+    title: 'Business investment analysis — Business investment analysis: methodology
+      note'
+    url: https://assets.publishing.service.gov.uk/media/66d70d27701781e1b341dba4/business-investment-analysis-methodology-note.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-post-implementation-review-of-the-merchant-shi
+    title: 'Post-implementation review of the Merchant Shipping (Accident Reporting
+      and Investigation) Regulations 2012 — PIR: Printable PDF version'
+    url: https://assets.publishing.service.gov.uk/media/62e397bed3bf7f75b9121a46/PIR_of_the_Merchant_Shipping__Accident_Reporting_and_Investigation__Regulations_2012.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-independent-review-of-build-out-draft-analysis
+    title: 'Independent review of build out: draft analysis'
+    url: https://assets.publishing.service.gov.uk/media/5b2d1ab2ed915d58821b3dbc/Build_Out_Review_Draft_Analysis.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-independent-review-of-build-out-draft-analysis-2
+    title: 'Independent review of build out: draft analysis — Independent review of
+      build out: annexes'
+    url: https://assets.publishing.service.gov.uk/media/5b2d1b0640f0b67f7f306102/Build_Out_Review_Annexes.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-design-standards-employer-s-requirements-techn
+    title: 'Design standards: employer''s requirements — Technical manual'
+    url: https://assets.publishing.service.gov.uk/media/6971f649d8adeaf266040501/ER-DFE-XX-XX-T-X-0201-Technical_Manual-A-C01.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-design-standards-employer-s-requirements-patte
+    title: 'Design standards: employer''s requirements — Pattern book'
+    url: https://assets.publishing.service.gov.uk/media/6985d6826da2dee8230a9b2f/ER-DFE-XX-XX-T-X-0301-Pattern_Book-A-C01.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-design-standards-employer-s-requirements-gener
+    title: 'Design standards: employer''s requirements — General conditions'
+    url: https://assets.publishing.service.gov.uk/media/6972066451bd707cb10ed8ac/ER-DFE-XX-XX-T-X-0101-General_Conditions-A-C01.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-design-standards-employer-s-requirements-excha
+    title: 'Design standards: employer''s requirements — Exchange information requirements'
+    url: https://assets.publishing.service.gov.uk/media/697206e4a1311bdcfa0ed8a5/ER-DFE-XX-XX-T-X-0001-Exchange_Information_Requirements-A-C01.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-capital-allowances-for-structures-and-building
+    title: Capital allowances for structures and buildings technical note
+    url: https://assets.publishing.service.gov.uk/media/5bd6e327ed915d78ad8d4f00/Capital_allowances_for_structures_and_buildings_technical_note.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-building-materials-and-components-statistics-d-9
+    title: 'Building materials and components statistics: December 2018 — Construction
+      building materials: commentary, December 2018'
+    url: https://assets.publishing.service.gov.uk/media/5c3351e1ed915d7306763bcb/19-cs1_-_Construction_Building_Materials_-_Commentary_December_2018.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-building-materials-and-components-statistics-o-9
+    title: 'Building materials and components statistics: October 2015 — Construction
+      building materials - commentary October 2015'
+    url: https://assets.publishing.service.gov.uk/media/5a807c0fed915d74e33fab1b/15-125k_-_Construction_Building_Materials_-_Commentary_October_2015.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-building-materials-and-components-statistics-n-7
+    title: 'Building materials and components statistics: November 2012 — Building materials
+      and components commentary: November 2012'
+    url: https://assets.publishing.service.gov.uk/media/5a79734940f0b642860d8341/12-p125k-construction-building-materials-commentary-november-2012.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-building-materials-and-components-statistics-f-7
+    title: 'Building materials and components statistics: February 2016 — Construction
+      building materials - commentary February 2016'
+    url: https://assets.publishing.service.gov.uk/media/5a806591e5274a2e87db993b/15-P125o_-_Construction_Building_Materials_-_Commentary_February_2016.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-gcse-and-equivalent-results-2009-to-2010-revis
+    title: 'GCSE and equivalent results: 2009 to 2010 (revised) — Main text: SFR01/2011'
+    url: https://assets.publishing.service.gov.uk/media/5a7c9e36e5274a29d8363c15/sfr01-2011.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-english-housing-survey-2016-energy-efficiency
+    title: 'English Housing Survey 2016: energy efficiency'
+    url: https://assets.publishing.service.gov.uk/media/5b45cba340f0b678cbd676dd/Energy_efficiency_2016.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-travel-survey-2022-technical-report-n
+    title: 'National Travel Survey 2022 technical report — National Travel Survey 2022:
+      Technical report appendix B advance letter'
+    url: https://assets.publishing.service.gov.uk/media/64e784b01ff6f3000f70af44/Appendix_B_-_Advance_Letter.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-travel-survey-2022-technical-report-n-2
+    title: 'National Travel Survey 2022 technical report — National Travel Survey 2022:
+      Technical report appendix C non-contact letter'
+    url: https://assets.publishing.service.gov.uk/media/64e785031ff6f3000f70af45/Appendix_C_-_Non-contact_Letter.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-travel-survey-2022-technical-report-n-3
+    title: 'National Travel Survey 2022 technical report — National Travel Survey 2022:
+      Technical report appendix D NTS leaflet'
+    url: https://assets.publishing.service.gov.uk/media/64e785431ff6f3000d70af77/Appendix_D_-_NTS_Leaflet.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-travel-survey-2022-technical-report-n-5
+    title: 'National Travel Survey 2022 technical report — National Travel Survey 2022:
+      Technical report appendix E adult travel record interior'
+    url: https://assets.publishing.service.gov.uk/media/64e7857b1ff6f3000f70af48/Appendix_E_-_Adult_Travel_Record__interior_pages_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-travel-survey-2022-technical-report-n-7
+    title: 'National Travel Survey 2022 technical report — National Travel Survey 2022:
+      Technical report appendix E young persons travel record interior'
+    url: https://assets.publishing.service.gov.uk/media/64e785dadb1c07000d22b3e6/Appendix_E_-_Young_Person_Travel_Record__interior_pages_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-travel-survey-2022-technical-report-n-10
+    title: 'National Travel Survey 2022 technical report — National Travel Survey 2022:
+      Technical report appendix H P2T advance letter'
+    url: https://assets.publishing.service.gov.uk/media/64e786af20ae89000df26dbe/Appendix_H_-_P2T_Advance_Letter.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-travel-survey-2022-technical-report-n-11
+    title: 'National Travel Survey 2022 technical report — National Travel Survey 2022:
+      Technical report appendix I P2T reminder letter'
+    url: https://assets.publishing.service.gov.uk/media/64e786df1ff6f3000d70af7d/Appendix_I_-_P2T_Reminder_Letter.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-low-carbon-hydrogen-certification-scheme-uk
+    title: 'UK Low Carbon Hydrogen Certification Scheme — UK Low Carbon Hydrogen Certification
+      Scheme: consultation'
+    url: https://assets.publishing.service.gov.uk/media/63e4c736d3bf7f05c4a886d5/consultation_on_a_UK_low_carbon_hydrogen_certification_scheme.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-low-carbon-hydrogen-certification-scheme-uk-2
+    title: 'UK Low Carbon Hydrogen Certification Scheme — UK Low Carbon Hydrogen Certification
+      Scheme: De Minimis Assessment'
+    url: https://assets.publishing.service.gov.uk/media/63e2262fd3bf7f173778e04a/de_minimis_assessment_consultation_uk_low_carbon_hydrogen_certification_scheme.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-low-carbon-hydrogen-certification-scheme-lo
+    title: 'UK Low Carbon Hydrogen Certification Scheme — Low Carbon Hydrogen Certification
+      Scheme: government response'
+    url: https://assets.publishing.service.gov.uk/media/653b74e880884d000df71bf3/low-carbon-hydrogen-certification-scheme-consultation-response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-low-carbon-hydrogen-certification-scheme-lo-2
+    title: 'UK Low Carbon Hydrogen Certification Scheme — Low Carbon Hydrogen Certification
+      Scheme: impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/653b9a62d10f35000d9a6a8c/low-carbon-hydrogen-certification-scheme-impact-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-early-phase-out-of-unabated-coal-generation-in
+    title: Early phase out of unabated coal generation in Great Britain
+    url: https://assets.publishing.service.gov.uk/media/5fd74cc4d3bf7f305ffa7f10/consultation-coal-renewable.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-early-phase-out-of-unabated-coal-generation-in-2
+    title: Early phase out of unabated coal generation in Great Britain — Impact assessment
+    url: https://assets.publishing.service.gov.uk/media/5fd74d7c8fa8f54d564af0a9/early-coal-close-impact-assessment-.pdf.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-early-phase-out-of-unabated-coal-generation-in-3
+    title: 'Early phase out of unabated coal generation in Great Britain — Early phase
+      out of unabated coal generation in Great Britain: government response'
+    url: https://assets.publishing.service.gov.uk/media/60daec318fa8f50ac1ee8ab2/early-coal-closure-government-response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-windfarm-mitigation-for-uk-air-defence-stream-
+    title: Windfarm Mitigation for UK Air Defence Stream 2 Phase 3 — Terms and Conditions
+    url: https://assets.publishing.service.gov.uk/media/64e769d21ff6f3000f70af19/Windfarm_Mitigation_Stream2_Themed_Comp_ISC_Terms.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-lead-statement-on-the-effects-of-lead-on-mater
+    title: Lead — Statement on the effects of lead on maternal health
+    url: https://assets.publishing.service.gov.uk/media/6a1eb194b95db968c8f3bd3d/Statement_on_the_effects_of_lead_on_maternal_health_-_GOV.UK.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-lead-cot-statement-on-the-potential-risks-from
+    title: 'Lead — COT statement on the potential risks from lead in the maternal diet:
+      Lay summary'
+    url: https://assets.publishing.service.gov.uk/media/6a22b7f056960b0542c0b0b3/COT_statement_on_the_potential_risks_from_lead_in_the_maternal_diet__Lay_summary.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-changing-futures-changing-systems-to-support-a
+    title: 'Changing Futures: changing systems to support adults experiencing multiple
+      disadvantage - prospectus — Changing Futures: prospectus'
+    url: https://assets.publishing.service.gov.uk/media/5fd35420d3bf7f30641aa2fc/Changing_Futures_Programme_-_Prospectus_for_local_EOIs.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-final-investment-decision-enabling-for-renewab
+    title: 'Final Investment Decision Enabling for Renewables: Updates 1, 2 and 3 —
+      Update 1: Invitation to participate'
+    url: https://assets.publishing.service.gov.uk/media/5a7aaed2e5274a319e779fd1/FIDeR_update_doc_Invitation_to_Participate_2013_-_03_-_14_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-final-investment-decision-enabling-for-renewab-2
+    title: 'Final Investment Decision Enabling for Renewables: Updates 1, 2 and 3 —
+      Update 2: Investment Contract Allocation'
+    url: https://assets.publishing.service.gov.uk/media/5a7b7cc1ed915d131105f907/2013_-_06_-_27_FIDe_Update_2_Master_Draft__2_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-final-investment-decision-enabling-for-renewab-3
+    title: 'Final Investment Decision Enabling for Renewables: Updates 1, 2 and 3 —
+      Update 3: Contract Award Process'
+    url: https://assets.publishing.service.gov.uk/media/5a7c11a5e5274a7202e195a6/FID_Update_3_Contract_Award_Process.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-unregulated-legal-services-complying-with-cons
+    title: 'Unregulated legal services: complying with consumer law — Unregulated legal
+      services: Consumer protection law guidance (printable version)'
+    url: https://assets.publishing.service.gov.uk/media/697a245b3c71d838df6bd3de/Unregulated_legal_services___guidance_on_consumer_protection_law_1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-consumer-prepayments-on-retailer-insolvency-go
+    title: 'Consumer prepayments on retailer insolvency: government response to the
+      Law Commission report — Law Commission Report on consumer prepayments on retailer
+      insolvency: government res'
+    url: https://assets.publishing.service.gov.uk/media/5c24a263e5274a65cc0f5d08/law-commission-report-government-response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-storage-and-retention-of-original-will-documen
+    title: Storage and retention of original will documents
+    url: https://assets.publishing.service.gov.uk/media/65703e900f12ef070e3e02d5/storage-retention-original-will-documents.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-storage-and-retention-of-original-will-documen-2
+    title: Storage and retention of original will documents — Storage and retention
+      of original will documents (print)
+    url: https://assets.publishing.service.gov.uk/media/65703ecb0f12ef07a53e02b9/storage-retention-original-will-documents-print.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-storage-and-retention-of-original-will-documen-3
+    title: Storage and retention of original will documents — Storage and retention
+      of original will documents (large print)
+    url: https://assets.publishing.service.gov.uk/media/65703f319462260721c5698b/storage-retention-original-will-documents-large-print.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-storage-and-retention-of-original-will-documen-4
+    title: Storage and retention of original will documents — Storio a chadw dogfennau
+      ewyllys gwreiddiol
+    url: https://assets.publishing.service.gov.uk/media/657b19680467eb001355f871/storage-retention-original-will-documents-cy.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-storage-and-retention-of-original-will-documen-5
+    title: 'Storage and retention of original will documents — Storage and retention
+      of original will documents: consultation response'
+    url: https://assets.publishing.service.gov.uk/media/6780fd71d5422b88ec018416/will-storage-consultation-response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-food-and-you-2-technical-report-food-and-you-2
+    title: 'Food and You 2: Technical Report — Food and You 2: Technical reportas PDF
+      (386.66 KB)'
+    url: https://assets.publishing.service.gov.uk/media/69c3e42593cc6e8b87a6f650/FY2_All_Waves_Technical_report_2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-advanced-radio-frequency-sensing-integrated-ef
+    title: 'Advanced Radio Frequency Sensing, Integrated Effects and PNT — ISC Terms:
+      Advanced Radio Frequency Sensing, Integrated Effects and PNT'
+    url: https://assets.publishing.service.gov.uk/media/62175def8fa8f549102421b2/ADVANCED_RADIO_FREQUENCY_SENSING__ISC_Terms.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-advanced-radio-frequency-sensing-integrated-ef-2
+    title: 'Advanced Radio Frequency Sensing, Integrated Effects and PNT — ICS Schedules:
+      Advanced Radio Frequency Sensing, Integrated Effects and PNT'
+    url: https://assets.publishing.service.gov.uk/media/62166970d3bf7f4f0190937d/ADVANCED_RADIO_FREQUENCY_SENSING_ISC_Schedules.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-justice-data-lab-statistics-may-2016
+    title: 'Justice Data Lab statistics: May 2016'
+    url: https://assets.publishing.service.gov.uk/media/5a749954e5274a410efd0e55/justice-data-lab-statistics-may-2016.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-notice-26-20-quota-for-cheeses-for-export-to-d
+    title: Notice 26/20 - Quota for Cheeses for Export to Designated Importers in the
+      United States of America (USA) — Notice 26/20 - Quota for Cheeses for Export to
+      USA 2021
+    url: https://assets.publishing.service.gov.uk/media/600a9bace90e07479fe79e21/Notice_26-20_-_Quota_for_Cheeses_for_Export_to_USA_2021.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-general-housing-consents-the-general-housing-c
+    title: 'General housing consents — The General Housing Consents 2013: section 32
+      of the Housing Act 1985'
+    url: https://assets.publishing.service.gov.uk/media/5a7b6a20ed915d429748ee61/The_General_Housing_Consents_2013.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-vat-zero-rating-for-personal-protective-equipm
+    title: VAT zero rating for personal protective equipment — Copy of guidance published
+      by Public Health England on COVID-19 PPE (as at 24 April 2020)
+    url: https://assets.publishing.service.gov.uk/media/5ea81dd3d3bf7f6533efe3d9/COVID-19_personal_protective_equipment__PPE__-_GOV.UK.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-draft-solvency-ii-and-insurance-amendment-etc-
+    title: 'Draft Solvency II and Insurance (Amendment etc) (EU Exit) Regulations 2018
+      — Draft Solvency II and Insurance (Amendment etc) (EU Exit): draft statutory instrument'
+    url: https://assets.publishing.service.gov.uk/media/5bbf1b57ed915d734698682c/181010_Solvency_2_draft_SI.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-the-bereavement-benefits-remedial-order-2022-e
+    title: 'The Bereavement Benefits (Remedial) Order 2022: Explanatory memorandum —
+      Draft Statutory Instrument: The Bereavement Benefits (Remedial) Order 2022'
+    url: https://assets.publishing.service.gov.uk/media/6343e2bdd3bf7f587561bb61/draft-si-bereavement-benefits-remedial-order-2022.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-sexual-offences-act-2003-remedial-order-2012-r
+    title: Sexual Offences Act 2003 (Remedial) Order 2012 — Reviewing offenders subject
+      to indefinite notification requirements (Part 2 of Sexual Offences Act 2003) -
+      impact assessment (PDF f
+    url: https://assets.publishing.service.gov.uk/media/5a78dbcbe5274a2acd18a557/review-offender-ia-2012.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-environmental-assessment-and-evidence-southern
+    title: 'Environmental assessment and evidence: Southern North Sea and Eastern Channel
+      mixed flatfish FMP — Strategic environmental assessment environmental report'
+    url: https://assets.publishing.service.gov.uk/media/66fbd1cac71e42688b65ef41/Southern_North_Sea_and_Eastern_Channel_mixed_flatfish_FMP_Environmental_Report.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-rsh-stakeholder-survey-2024-2025-rsh-stakehold
+    title: RSH Stakeholder Survey 2024-2025 — RSH Stakeholder Survey 2024-2025 (PDF)
+    url: https://assets.publishing.service.gov.uk/media/684158aee550203c8209cd7e/stakeholder_survey_2024-2025.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-community-safety-partnerships-review-and-antis
+    title: Community safety partnerships review and antisocial behaviour powers — Consultation
+      document
+    url: https://assets.publishing.service.gov.uk/media/642d23b7ddf8ad000cac0de9/2023-03-28_CSP_Review_and_Anti-Social_Behaviour_Powers_Consultation.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-fighting-retail-crime-more-action
+    title: 'Fighting retail crime: more action'
+    url: https://assets.publishing.service.gov.uk/media/6618e468d76b513a45d1e9fd/Fighting+Retail+Crime_+More+Action+FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-government-response-to-the-house-of-lords-sele
+    title: Government response to the House of Lords Select Committee on Artificial
+      Intelligence — Government Response to the House of Lords Select Committee on Artiﬁcial
+      Intelligence - PDF
+    url: https://assets.publishing.service.gov.uk/media/6034da4bd3bf7f2659ecabf0/Government_Response_to_the_HoL_Select_Committee_on_AI_v2.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-border-security-minimum-service-levels-during--2
+    title: 'Border security: minimum service levels during strike action — Impact Assessment:
+      minimum service levels (MSL) border security consultation'
+    url: https://assets.publishing.service.gov.uk/media/64da421b60d123000d32c4be/Signed_MSL_Border_Security_Impact_Assessment.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-border-security-minimum-service-levels-during--4
+    title: 'Border security: minimum service levels during strike action — Border security
+      minimum service levels: economic impact assessment (revised)'
+    url: https://assets.publishing.service.gov.uk/media/654caf1bb9068c000d0e75ed/Economic_Impact_Assessment_Cleared_-_signed.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
     format: pdf
