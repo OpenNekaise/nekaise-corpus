@@ -85,6 +85,7 @@ def main() -> None:
 
     urls, titles, reg_ids = registry.existing_keys()
     out, seen = [], set()
+    failed_request = None
     for term, topic in QUERIES:
         if len(out) >= args.max:
             break
@@ -95,6 +96,7 @@ def main() -> None:
                 hits = from_osti(term, args.rows, p)
             except Exception as e:
                 print(f"# osti '{term}' p{p} failed: {e}", file=sys.stderr)
+                failed_request = (term, p)
                 break
             if not hits:
                 break  # no more pages for this subject
@@ -110,6 +112,17 @@ def main() -> None:
                 out.append({"id": f"ost-{registry.slug(title)[:46]}", "title": title.strip()[:150], "url": url,
                             "source": "osti", "license": "public-domain", "topic": topic, "format": "pdf"})
             time.sleep(0.3)
+        if failed_request:
+            break
+
+    if failed_request:
+        term, page = failed_request
+        print(
+            f"# ERROR: OSTI discovery incomplete at '{term}' p{page}; "
+            "refusing a partial append so rotation does not advance",
+            file=sys.stderr,
+        )
+        raise SystemExit(1)
 
     registry.uniquify_ids(out, reg_ids)
 

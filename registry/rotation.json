@@ -2,9 +2,9 @@
   "_readme": "Shared excavation state for the discovery loop — read/advance via scripts/rotation.py. Committed so any agent/machine resumes where the last one stopped. History of what is already mined lives in git log + manifest.jsonl.",
   "find_osti": {
     "flag": "--page",
-    "next": 171,
+    "next": 169,
     "step": 2,
-    "note": "run with --rows 50 --pages 2; ~200k records/query universe"
+    "note": "run with --rows 50 --pages 2; ~200k records/query universe. Page 169 retry retained after every OSTI request timed out 2026-07-31; finder now exits nonzero on any skipped query so rotation cannot silently advance."
   },
   "find_archive": {
     "flag": "--page",
