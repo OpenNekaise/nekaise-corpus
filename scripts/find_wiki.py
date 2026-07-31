@@ -163,7 +163,7 @@ def walk_categories(session: requests.Session, lang: str, seeds: list[tuple[str,
                         "cmtype": "page|subcat", "cmlimit": 500, **cont})
                 except Exception as e:
                     print(f"# categorymembers({lang}, {cat}) failed: {e}", file=sys.stderr)
-                    break
+                    raise SystemExit(1) from e
                 for m in data.get("query", {}).get("categorymembers", []):
                     t = m.get("title") or ""
                     if m.get("ns") == 0 and t and t not in seen_pages:
@@ -200,7 +200,7 @@ def walk_books(session: requests.Session, lang: str, seeds: list[tuple[str, str]
                     "aplimit": 500, **cont})
             except Exception as e:
                 print(f"# allpages({lang}wb, {prefix}) failed: {e}", file=sys.stderr)
-                break
+                raise SystemExit(1) from e
             for p in data.get("query", {}).get("allpages", []):
                 t = p.get("title") or ""
                 if t:
@@ -286,7 +286,7 @@ def main() -> None:
                 "lllimit": 500, "redirects": 1})
         except Exception as e:
             print(f"# langlinks query failed for batch {i}: {e}", file=sys.stderr)
-            continue
+            raise SystemExit(1) from e
         query = data.get("query", {})
         reverse = resolve_map(query)
         for page in query.get("pages", {}).values():

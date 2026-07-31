@@ -80,7 +80,7 @@
     "flag": "--depth",
     "next": 21,
     "step": 1,
-    "note": "category mode: depth 1 x cap 250 mined 07-09; depth 2 x cap 400 drained 07-12 (800 capped run + 825 uncapped run < --max 1500 = dry) — advanced to depth 3; expect heavier drift at d3, the gate handles it; langlinks mode saturated; --books zh done"
+    "note": "category mode: depth 1 x cap 250 mined 07-09; depth 2 x cap 400 drained 07-12 (800 capped run + 825 uncapped run < --max 1500 = dry) — advanced to depth 3; expect heavier drift at d3, the gate handles it; langlinks mode saturated; --books zh done. Depth 21 retained after multiple language APIs exhausted 429 retries on 2026-07-31; finder now exits nonzero on incomplete category/book/langlink calls."
   },
   "find_patents_cn": {
     "flag": "--bucket",
@@ -91,7 +91,7 @@
     "flag": "--page",
     "next": 23,
     "step": 1,
-    "note": "JRC Publications Repository via OpenAIRE datasource filter -> handle page -> OP-DOI (10.2760 etc, cc-by) + bitstream PDF; run with --rows 40 --max 250. First 15 QUERIES dry at p5; second-wave QUERIES added 07-17 (+61 at p1 rows40) — pointer restarted at p2 for the widened set"
+    "note": "JRC Publications Repository via OpenAIRE datasource filter -> handle page -> OP-DOI (10.2760 etc, cc-by) + bitstream PDF; run with --rows 40 --max 250. First 15 QUERIES dry at p5; second-wave QUERIES added 07-17 (+61 at p1 rows40) — pointer restarted at p2 for the widened set. Page 23 retained after a handle connection reset on 2026-07-31; finder now exits nonzero on incomplete OpenAIRE or handle requests."
   },
   "find_govuk": {
     "flag": "--page",

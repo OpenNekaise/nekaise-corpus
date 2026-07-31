@@ -102,14 +102,10 @@ def from_openaire(term: str, rows: int, page: int) -> list[tuple[str, str]]:
 
 def resolve_bitstream(session: requests.Session, handle_url: str) -> str | None:
     """Handle page -> direct bitstream PDF url, or None if the record is not a Commission-own
-    open report (no OP-prefix citation_doi, or no bitstream — e.g. journal postprints)."""
-    try:
-        r = session.get(handle_url, headers=UA, timeout=TIMEOUT)
-    except requests.RequestException as e:
-        print(f"# handle fetch failed {handle_url}: {e}", file=sys.stderr)
-        return None
-    if r.status_code != 200:
-        return None
+    open report (no OP-prefix citation_doi, or no bitstream — e.g. journal postprints).
+    Transport and HTTP failures propagate so the rotation pointer cannot advance past them."""
+    r = session.get(handle_url, headers=UA, timeout=TIMEOUT)
+    r.raise_for_status()
     dois = CITATION_DOI_RE.findall(r.text)
     if not any(d.startswith(OP_DOI_PREFIXES) for d in dois):
         return None
@@ -129,6 +125,7 @@ def main() -> None:
     urls, titles, reg_ids = registry.existing_keys()
     session = requests.Session()
     out, seen_handles = [], set()
+    failed_request = None
     for term, topic in QUERIES:
         if len(out) >= args.max:
             break
@@ -136,7 +133,8 @@ def main() -> None:
             hits = from_openaire(term, args.rows, args.page)
         except Exception as e:
             print(f"# openaire jrc '{term}' p{args.page} failed: {e}", file=sys.stderr)
-            continue
+            failed_request = f"OpenAIRE '{term}' p{args.page}"
+            break
         for title, handle in hits:
             if len(out) >= args.max:
                 break
@@ -144,7 +142,12 @@ def main() -> None:
             if t in titles or handle in seen_handles:
                 continue
             seen_handles.add(handle)
-            pdf = resolve_bitstream(session, handle)
+            try:
+                pdf = resolve_bitstream(session, handle)
+            except Exception as e:
+                print(f"# handle fetch failed {handle}: {e}", file=sys.stderr)
+                failed_request = f"handle {handle}"
+                break
             time.sleep(0.6)  # politeness on the handle host
             if not pdf or pdf.rstrip("/") in urls:
                 continue
@@ -153,7 +156,17 @@ def main() -> None:
             out.append({"id": f"jrc-{registry.slug(title)[:46]}", "title": title.strip()[:150],
                         "url": pdf, "source": "jrc", "license": "cc-by",
                         "topic": topic, "format": "pdf"})
+        if failed_request:
+            break
         time.sleep(1.0)
+
+    if failed_request:
+        print(
+            f"# ERROR: JRC discovery incomplete at {failed_request}; "
+            "refusing a partial append so rotation does not advance",
+            file=sys.stderr,
+        )
+        raise SystemExit(1)
 
     registry.uniquify_ids(out, reg_ids)
 
