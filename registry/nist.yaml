@@ -27719,13 +27719,6 @@ sources:
     license: public-domain
     topic: standards_protocols
     format: pdf
-  - id: nst-circular-of-the-bureau-of-standards-no-11-3rd-editio
-    title: 'Circular of the Bureau of Standards no. 11 3rd edition:'
-    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular11e3-1917.pdf
-    source: nist_crossref
-    license: public-domain
-    topic: standards_protocols
-    format: pdf
   - id: nst-circular-of-the-bureau-of-standards-no-9-6th-edition
     title: 'Circular of the Bureau of Standards no. 9 6th edition:'
     url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular9e6.pdf
@@ -47860,6 +47853,108 @@ sources:
   - id: nst-combined-buoyancy-and-pressure-driven-flow-through-a
     title: Combined buoyancy- and pressure-driven flow through a horizontal vent
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5384.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-book-cloths-buckrams-and-impregnated-fabrics-for-boo
+    title: '"Book cloths, buckrams, and impregnated fabrics for bookbinding purposes
+      except library bindings"'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/CS/cs57-36.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-letter-circular-540
+    title: 'Letter Circular 540:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular540.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-bureau-circular-no-11-3rd-edition
+    title: 'Bureau circular no. 11 3rd edition:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular11e3.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-letter-circular-521
+    title: 'Letter Circular 521:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular521.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-international-comparison-of-atomic-frequency-standar
+    title: International comparison of atomic frequency standards via VLF radio signals
+    url: https://nvlpubs.nist.gov/nistpubs/jres/69D/jresv69Dn7p905_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-letter-circular-256a
+    title: 'Letter Circular 256A:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular256Ar1930.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-letter-circular-491
+    title: 'Letter Circular 491:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular491.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-interim-performance-criteria-for-solar-heating-3
+    title: Interim performance criteria for solar heating and combined heatingcooling
+      systems and dwellings
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir75-636.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-letter-circular-594
+    title: 'Letter Circular 594:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular594r1940.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-modeling-and-simulation-for-emergency-response
+    title: 'Modeling and simulation for emergency response:'
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7071.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-circular-of-the-bureau-of-standards-no-544
+    title: 'Circular of the Bureau of Standards no. 544:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular544.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-research-at-the-national-bureau-of-standards-applica
+    title: Research at the National Bureau of Standards applicable to long-distance
+      location and direction-finding problems
+    url: https://nvlpubs.nist.gov/nistpubs/jres/65D/jresv65Dn3p233_A1b.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-letter-circular-179
+    title: 'Letter Circular 179:'
+    url: http://nvlpubs.nist.gov/nistpubs/Legacy/LC/nbslettercircular179.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-performance-of-electromagnetic-covermeters-for-nonde
+    title: Performance of electromagnetic covermeters for nondestructive assessment
+      of steel reinforcement
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4988.pdf
     source: nist_crossref
     license: public-domain
     topic: standards_protocols
