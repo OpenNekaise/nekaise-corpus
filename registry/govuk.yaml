@@ -55201,37 +55201,6 @@ sources:
     license: open
     topic: architecture
     format: pdf
-  - id: guk-standard-civil-contract-2013-contract-amendmen
-    title: 'Standard civil contract 2013 — Contract amendments notice: 25 April 2018'
-    url: https://assets.publishing.service.gov.uk/media/5ae065b340f0b60aa2374da1/contract-amendment-notices-gdpr-standard-civil-contracts-250418.pdf
-    source: gov_uk
-    license: open
-    topic: architecture
-    format: pdf
-  - id: guk-standard-civil-contract-2013-summary-of-amendm
-    title: Standard civil contract 2013 — Summary of amendments to the Standard Civil
-      Contracts (25 April 2018)
-    url: https://assets.publishing.service.gov.uk/media/5ae065a0e5274a0d85c1c616/summary-amendments-to-civil-cla-crime-standard-terms-250418.pdf
-    source: gov_uk
-    license: open
-    topic: architecture
-    format: pdf
-  - id: guk-standard-civil-contract-2013-contract-notice-a
-    title: Standard civil contract 2013 — Contract Notice Amendments to the 2013, 2014
-      and 2015 Standard Civil Contracts and 2013 CLA specification (26 May 2016)
-    url: https://assets.publishing.service.gov.uk/media/5a80035ced915d74e33f7eec/contract-amendment-notification.pdf
-    source: gov_uk
-    license: open
-    topic: architecture
-    format: pdf
-  - id: guk-standard-civil-contract-2013-table-of-amendmen
-    title: Standard civil contract 2013 — Table of Amendments for Standard Civil Contracts
-      and 2013 CLA specificaion (26 May 2016)
-    url: https://assets.publishing.service.gov.uk/media/5a751258e5274a3cb28696dd/summary-of-amendments-to-2013-2014-2015-standard-civil-contracts.pdf
-    source: gov_uk
-    license: open
-    topic: architecture
-    format: pdf
   - id: guk-standard-civil-contract-2013-category-definiti
     title: Standard civil contract 2013 — Category Definitions 2013 (July 2015 Amendment)
     url: https://assets.publishing.service.gov.uk/media/5a74d14a40f0b61df4778bd3/category-defenitions-2013.pdf
@@ -75464,14 +75433,6 @@ sources:
     license: open
     topic: construction
     format: pdf
-  - id: guk-building-materials-and-components-statistics-f-6
-    title: 'Building materials and components statistics: February 2012 — Building materials
-      and components commentary: February 2012'
-    url: https://assets.publishing.service.gov.uk/media/5a78d6ca40f0b6324769a8f7/Building_materials_and_components_commentary_-_February_2012.pdf
-    source: gov_uk
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: guk-independent-review-of-build-out-preliminary-up
     title: 'Independent review of build out: preliminary update'
     url: https://assets.publishing.service.gov.uk/media/5aa7aa0ded915d4f563b729e/Build_Out_Review_letter_to_Cx_and_Housing_SoS.pdf
@@ -78044,14 +78005,6 @@ sources:
     title: 'Building materials and components statistics: November 2019 — Construction
       building materials: commentary, November 2019'
     url: https://assets.publishing.service.gov.uk/media/5de51034ed915d015c548315/19-cs12_-_Construction_Building_Materials_-_Commentary_November_2019.pdf
-    source: gov_uk
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: guk-building-materials-and-components-statistics-j-33
-    title: 'Building materials and components statistics: June 2012 — Building materials
-      and components commentary: June 2012'
-    url: https://assets.publishing.service.gov.uk/media/5a795dcf40f0b642860d77de/Building_materials_and_components_commentary_-_June_2012.pdf
     source: gov_uk
     license: open
     topic: equipment_systems
@@ -84446,6 +84399,822 @@ sources:
     title: 'Third party bulk personal datasets: code of practice — Intelligence services''
       use of third party bulk personal datasets: code of practice'
     url: https://assets.publishing.service.gov.uk/media/6841a87241cb2525c1211cf5/Intelligence_Services__use_of_Third_Party_Bulk_Personal_Datasets_Code_of_Practice_-_June_2025.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-uk-public-survey-of-risk-perception-resilience
+    title: 'UK Public Survey of Risk Perception, Resilience and Preparedness: 2025 —
+      UK Public Survey of Risk Perception, Resilience and Preparedness: Full 2025 questionnaire
+      (PDF)'
+    url: https://assets.publishing.service.gov.uk/media/6878c9e3a52cca025ef5bdc6/2025_Public_survey_of_risk_perception__resilience_and_preparedness_-_full_question_set_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-digital-identity-and-attributes-digital-identi
+    title: Digital identity and attributes — Digital identity and attributes - De Minimis
+      Assessment
+    url: https://assets.publishing.service.gov.uk/media/6229f6b6e90e0747a822e57c/Copy_of_OFFSEN_-_Digital_identity_and_attributes_-_De_Minimis_Assessment__DI_DMA__-_LIVE.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-supporting-earlier-resolution-of-private-famil-4
+    title: Supporting earlier resolution of private family law arrangements — Impact
+      assessment
+    url: https://assets.publishing.service.gov.uk/media/6419dc21e90e0769ef905c09/private-family-law-consultation-impact-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-supporting-earlier-resolution-of-private-famil-6
+    title: Supporting earlier resolution of private family law arrangements — Family
+      Mediation Voucher Scheme Analysis
+    url: https://assets.publishing.service.gov.uk/media/6419cd288fa8f547c7ffd692/family-mediation-voucher-scheme-analysis.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-extending-the-right-to-work-scheme-prevention-
+    title: 'Extending the Right to Work Scheme — Prevention of illegal working: Extending
+      the Right to Work Scheme to other working arrangements: government response'
+    url: https://assets.publishing.service.gov.uk/media/6a43e089167a99cf0018d9a9/Consultation_Response_-_Extending_the_Right_to_Work_Scheme_to_Other_Working_Arrangements.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-domestic-abuse-act-2021-post-legislative-scrut
+    title: 'Domestic Abuse Act 2021: post-legislative scrutiny — Post-legislative scrutiny
+      of the Domestic Abuse Act 2021 (accessible PDF)'
+    url: https://assets.publishing.service.gov.uk/media/69f0d31ac42061e837e3abd7/E03597634_Post-Leg_Review_Accesssible.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-domestic-abuse-act-2021-post-legislative-scrut-2
+    title: 'Domestic Abuse Act 2021: post-legislative scrutiny — Post-legislative scrutiny
+      of the Domestic Abuse Act 2021'
+    url: https://assets.publishing.service.gov.uk/media/69f0d330b0c3a4023e5d6da1/E03597634_Post-Leg_Review_Elay.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-domestic-abuse-act-2021-post-legislative-scrut-3
+    title: 'Domestic Abuse Act 2021: post-legislative scrutiny — Post-legislative scrutiny
+      of the Domestic Abuse Act 2021 (large print)'
+    url: https://assets.publishing.service.gov.uk/media/6a0c809fc75cc34a8ff8f57f/E03597634_Post-Leg_Review_LP_Elay.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-civil-legal-aid-towards-a-sustainable-future
+    title: 'Civil legal aid: Towards a sustainable future'
+    url: https://assets.publishing.service.gov.uk/media/67a4a11e8259d52732f6adc0/civil-legal-aid-towards-sustainable-future.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-civil-legal-aid-towards-a-sustainable-future-c
+    title: 'Civil legal aid: Towards a sustainable future — Civil legal aid: Towards
+      a sustainable future (Easy read version)'
+    url: https://assets.publishing.service.gov.uk/media/67d2a9e54a7430093f11e037/civil-legal-aid-towards-sustainable-future-easy-read-web.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-civil-legal-aid-towards-a-sustainable-future-i
+    title: 'Civil legal aid: Towards a sustainable future — Impact Assessment'
+    url: https://assets.publishing.service.gov.uk/media/67923153de39a2da43572d10/civil-legal-aid-towards-sustainable-future-impact-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-civil-legal-aid-towards-a-sustainable-future-e
+    title: 'Civil legal aid: Towards a sustainable future — Equalities Statement'
+    url: https://assets.publishing.service.gov.uk/media/679231abde39a2da43572d11/civil-legal-aid-towards-sustainable-future-equalities-statement.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-civil-legal-aid-towards-a-sustainable-future-p
+    title: 'Civil legal aid: Towards a sustainable future — Privacy Notice'
+    url: https://assets.publishing.service.gov.uk/media/679231c59091065484572d1f/civil-legal-aid-towards-sustainable-future-privacy-notice.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-civil-legal-aid-towards-a-sustainable-future-c-2
+    title: 'Civil legal aid: Towards a sustainable future — Civil legal aid: Towards
+      a sustainable future (Welsh version)'
+    url: https://assets.publishing.service.gov.uk/media/67af0cd0a1d2c59f9ba29b29/civil-legal-aid-towards-sustainable-future-welsh.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-civil-legal-aid-towards-a-sustainable-future-c-3
+    title: 'Civil legal aid: Towards a sustainable future — Civil legal aid: Towards
+      a sustainable future, consultation response'
+    url: https://assets.publishing.service.gov.uk/media/6862677d08bf2f53761219ea/civil-legal-aid-towards-sustainable-future-response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-civil-legal-aid-towards-a-sustainable-future-c-4
+    title: 'Civil legal aid: Towards a sustainable future — Civil legal aid: Towards
+      a sustainable future, consultation response (print version)'
+    url: https://assets.publishing.service.gov.uk/media/6862619ab466cce1bb1219e6/Civil_legal_aid_-_towards_a_sustainable_future__print__-_final__1_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-civil-legal-aid-towards-a-sustainable-future-c-5
+    title: 'Civil legal aid: Towards a sustainable future — Civil legal aid: Towards
+      a sustainable future, consultation response (large print version)'
+    url: https://assets.publishing.service.gov.uk/media/686263f208bf2f53761219e6/Civil_legal_aid_-_Towards_a_sustainable_future__large_print___1_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-competition-space-to-innovate-campaign-bravo-d
+    title: 'Competition: Space to Innovate Campaign - Bravo Drop — Space to Innovate
+      Campaign - Bravo Drop: ISC Terms'
+    url: https://assets.publishing.service.gov.uk/media/613f5d778fa8f503ba3dc8ac/20210913_SPACE_BRAVO_-_ISC_terms_Edn0621_inc_LoCL.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-competition-space-to-innovate-campaign-bravo-d-2
+    title: 'Competition: Space to Innovate Campaign - Bravo Drop — Space to Innovate
+      Campaign - Bravo Drop: ISC Schedules'
+    url: https://assets.publishing.service.gov.uk/media/613f5d9a8fa8f503c0fa75dc/20210913_SPACE_BRAVO_-_ISC_Schedules_Edn0621.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-home-office-annual-report-and-accounts-2025-to
+    title: 'Home Office annual report and accounts: 2025 to 2026'
+    url: https://assets.publishing.service.gov.uk/media/6a58e9953ae256c99b702f50/36.54_HO_ARA_25-26_WEB.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-rpc-opinion-border-security-asylum-and-immigra
+    title: 'RPC opinion: Border Security, Asylum and Immigration Bill options assessment'
+    url: https://assets.publishing.service.gov.uk/media/67a492c28259d52732f6ada4/RPC-HO-24010-OA_1__Serious_crime.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-preliminary-screening-consultation-review-equa
+    title: 'Preliminary screening: consultation review — Equality impact assessment:
+      preliminary screening'
+    url: https://assets.publishing.service.gov.uk/media/5a74892ae5274a7f99028f9d/eia.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-refusing-entry-or-extensions-to-nhs-debtors-im
+    title: 'Refusing entry or extensions to NHS debtors: impact assessment — Impact
+      assessment of proposed amendments to the Immigration Rules: refusing entry or
+      extensions of stay to NHS debt'
+    url: https://assets.publishing.service.gov.uk/media/5a7c4a99ed915d338141dd40/ia-march-2011.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-interim-assessment-of-family-return-pilots-con
+    title: 'Interim assessment of family return pilots: consultation review — Child
+      detention review: interim assessment of family return pilots'
+    url: https://assets.publishing.service.gov.uk/media/5a7c6cea40f0b62aff6c1954/pilots-initial-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-review-to-end-the-immigration-detention-of-chi
+    title: 'Review to end the immigration detention of children: consultation conclusion
+      — Review into ending the detention of children for immigration purposes'
+    url: https://assets.publishing.service.gov.uk/media/5a7c710f40f0b626628ac15d/child-detention-conclusions.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-impact-assessment-refusing-entry-or-extensions
+    title: 'Impact assessment: refusing entry or extensions of stay to NHS debtors —
+      Impact assessment of proposed amendments to the Immigration Rules: refusing entry
+      or extensions of stay to '
+    url: https://assets.publishing.service.gov.uk/media/5a7ca45c40f0b65b3de0a39e/ria.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-infrastructure-technical-specification-for-int
+    title: 'Infrastructure technical specification for interoperability: implementation
+      plan — UK implementation plan for the infrastructure TSI'
+    url: https://assets.publishing.service.gov.uk/media/5a81dba040f0b62305b912e9/tsi-uk-infrastructure-implementation-plan.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-desk-based-review-of-performance-and-installat
+    title: Desk-based review of performance and installation practices of biomass boilers
+    url: https://assets.publishing.service.gov.uk/media/5a7d9285ed915d3fb95948dc/Review_of_biomass_performance_standards.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-eu-emissions-trading-system-benchmarking-as-an
+    title: 'EU Emissions Trading System: benchmarking as an allocation methodology for
+      heat from 2013'
+    url: https://assets.publishing.service.gov.uk/media/5a78ea8840f0b62b22cbdd16/568-euets-benchmarking-allocation-heat.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-chpqa-guidance-note-24-determination-of-scheme
+    title: 'CHPQA guidance note 24: Determination of scheme quality'
+    url: https://assets.publishing.service.gov.uk/media/699efdedc497bac082bc766d/chpqa-guidance-note-24-determination-scheme-quality.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-mk44-1fd-twinwoods-heat-and-power-limited-envi
+    title: 'MK44 1FD, Twinwoods Heat and Power Limited: environmental permit issued
+      — Variation notice: Twinwoods Heat and Power Limited'
+    url: https://assets.publishing.service.gov.uk/media/5c05394bed915d7469a45c92/Variation_Notice_SP3638KV_V006.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-mk44-1fd-twinwoods-heat-and-power-limited-envi-2
+    title: 'MK44 1FD, Twinwoods Heat and Power Limited: environmental permit issued
+      — Decision document: Twinwoods Heat and Power Limited'
+    url: https://assets.publishing.service.gov.uk/media/5c053967e5274a6a769a5747/Decision_Document_SP3638KV_V006.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-hu12-8tb-preston-sustainable-heat-and-power-li
+    title: 'HU12 8TB, Preston Sustainable Heat and Power Limited: environmental issued
+      — Permit: Preston Sustainable Heat and Power Limited'
+    url: https://assets.publishing.service.gov.uk/media/5bb72efde5274a2225a2226c/Permit_SP3437JT.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-hu12-8tb-preston-sustainable-heat-and-power-li-2
+    title: 'HU12 8TB, Preston Sustainable Heat and Power Limited: environmental issued
+      — Decision document: Preston Sustainable Heat and Power Limited'
+    url: https://assets.publishing.service.gov.uk/media/5bb72f4ce5274a2252092fac/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-accelerating-electricity-transmission-network-
+    title: 'Accelerating electricity transmission network deployment: Electricity Networks
+      Commissioner’s recommendations — Electricity Networks Commissioner''s principal
+      areas of recommendatio'
+    url: https://assets.publishing.service.gov.uk/media/64c8e96e19f5622360f3c0f0/electricity-networks-commissioner-letter-to-desnz-secretary.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-accelerating-electricity-transmission-network--2
+    title: 'Accelerating electricity transmission network deployment: Electricity Networks
+      Commissioner’s recommendations — Electricity Networks Commissioner: companion
+      report findings and rec'
+    url: https://assets.publishing.service.gov.uk/media/64c8e85219f5622360f3c0ee/electricity-networks-commissioner-companion-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-accelerating-electricity-transmission-network--3
+    title: 'Accelerating electricity transmission network deployment: Electricity Networks
+      Commissioner’s recommendations — Letter from Secretary of State for Energy Security
+      and Net Zero than'
+    url: https://assets.publishing.service.gov.uk/media/64cbe3c2ef14e60014178946/desnz-secretary-letter-to-electricity-networks-commissioner.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-child-poverty-in-workless-families-relative-ra
+    title: Child poverty in workless families — Relative rate of change in the incidence
+      of child poverty in workless families compared to working families
+    url: https://assets.publishing.service.gov.uk/media/5a75c14aed915d6faf2b56e5/rate_change_child_poverty.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-aviation-safety-amendment-regulations-2024
+    title: 'The Aviation Safety (Amendment) Regulations 2024: RPC opinion (green-rated)
+      — RPC Opinion: Fuel Planning and Management (Aviation)'
+    url: https://assets.publishing.service.gov.uk/media/6720cd3b3aa14203d06ef3d2/RPC_Opinion_Fuel_Planning_and_Management__Aviation_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-rtfo-and-saf-mandate-third-party-assurance-rtf
+    title: RTFO and SAF Mandate third party assurance — RTFO and SAF Mandate third party
+      assurance guidance 2026
+    url: https://assets.publishing.service.gov.uk/media/69a80f34a2495f2d259f142b/dft-rtfo-saf-mandate-third-party-assurance-26.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-rtfo-and-saf-mandate-third-party-assurance-rtf-2
+    title: RTFO and SAF Mandate third party assurance — RTFO and SAF Mandate third party
+      assurance guidance 2025
+    url: https://assets.publishing.service.gov.uk/media/67626ca7d20fc50099e1907f/rtfo-and-saf-mandate-third-party-assurance-guidance-2025.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-rtfo-and-saf-mandate-third-party-assurance-rtf-3
+    title: RTFO and SAF Mandate third party assurance — RTFO third party assurance guidance
+      2024
+    url: https://assets.publishing.service.gov.uk/media/67580239d89258d2868daef9/rtfo-third-party-assurance-guidance-2024.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ai-safety-summit-2023-chair-s-statement-2-nove
+    title: 'AI Safety Summit 2023: Chair’s statement, 2 November — Chair’s Summary of
+      the AI Safety Summit 2023, Bletchley Park'
+    url: https://assets.publishing.service.gov.uk/media/6543e0b61f1a60000d360d2b/aiss-chair-statement.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-statistics-notices-on-total-factor-
+    title: Historical statistics notices on total factor productivity of the agricultural
+      industry — Total factor productivity of the UK agricultural industry 2019, first
+      estimate - statistic
+    url: https://assets.publishing.service.gov.uk/media/60ae8040e90e071b512d2c0c/agriproductivity_statsnotice_07may20.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-statistics-notices-on-total-factor--2
+    title: Historical statistics notices on total factor productivity of the agricultural
+      industry — Total factor productivity of the UK agricultural industry 2018,second
+      estimate – statistic
+    url: https://assets.publishing.service.gov.uk/media/5eb2ecc6e90e07083a7f748a/agriproductivity_statsnotice_28nov19.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-statistics-notices-on-total-factor--3
+    title: Historical statistics notices on total factor productivity of the agricultural
+      industry — Total factor productivity of the UK agricultural industry 2018, first
+      estimate - statistic
+    url: https://assets.publishing.service.gov.uk/media/5dde9fc3ed915d016b654568/agriproductivity_statsnotice_10may19.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-statistics-notices-on-total-factor--4
+    title: Historical statistics notices on total factor productivity of the agricultural
+      industry — Total factor productivity of the UK agricultural industry 2017, second
+      estimate revision -
+    url: https://assets.publishing.service.gov.uk/media/5cd42de5e5274a3fcf0ff4e2/agriproductivity_statsnotice_26mar19.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-statistics-notices-on-total-factor--5
+    title: 'Historical statistics notices on total factor productivity of the agricultural
+      industry — Total factor productivity of the UK agricultural industry 2017, 1st
+      estimate - statistics '
+    url: https://assets.publishing.service.gov.uk/media/5bfe929740f0b65b0e6dad68/agriproductivity_statsnotice_03may2018.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-statistics-notices-on-total-factor--6
+    title: Historical statistics notices on total factor productivity of the agricultural
+      industry — Total factor productivity of the UK agricultural industry 2016, 2nd
+      estimate - statistical
+    url: https://assets.publishing.service.gov.uk/media/5ae9b28ded915d42f42b611a/agriproductivity-statsnotice-30nov17.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-statistics-notices-on-total-factor--7
+    title: Historical statistics notices on total factor productivity of the agricultural
+      industry — Total factor productivity of the UK agricultural industry 2016, 1st
+      estimate - statistical
+    url: https://assets.publishing.service.gov.uk/media/5a81c07240f0b62305b909e3/agriproductivity-statsnotice-25may17.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-statistics-notices-on-total-factor--8
+    title: Historical statistics notices on total factor productivity of the agricultural
+      industry — Total factor productivity of the UK agricultural industry 2015, 2nd
+      estimate - statistical
+    url: https://assets.publishing.service.gov.uk/media/5a755ddf40f0b6360e4738f9/agriproductivity-statsnotice-1dec16.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-statistics-notices-on-total-factor--9
+    title: Historical statistics notices on total factor productivity of the agricultural
+      industry — Total factor productivity of the UK agricultural industry 2015, 1st
+      estimate - statistical
+    url: https://assets.publishing.service.gov.uk/media/5a7f39cce5274a2e8ab4ae44/agriproductivity-statsnotice-28apr16.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-statistics-notices-on-total-factor--10
+    title: Historical statistics notices on total factor productivity of the agricultural
+      industry — Total factor productivity of the agriculture industry, 2nd estimate
+      (published 26 November
+    url: https://assets.publishing.service.gov.uk/media/5a8028bbed915d74e622cd05/agriproductivity-statsnotice-26nov15.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-statistics-notices-on-total-factor--11
+    title: Historical statistics notices on total factor productivity of the agricultural
+      industry — Total factor productivity of the agricultural industry 2014, 1st estimate
+      (published 30 Ap
+    url: https://assets.publishing.service.gov.uk/media/5a7ffd1340f0b62302690d6f/agriproductivity-statsnotice-30apr15.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-statistics-notices-on-total-factor--12
+    title: Historical statistics notices on total factor productivity of the agricultural
+      industry — Total factor productivity of the agricultural industry 2013, 2nd estimate
+      (published 27 No
+    url: https://assets.publishing.service.gov.uk/media/5a816914e5274a2e87dbd7a8/agriproductivity-statsnotice-27nov14.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-statistics-notices-on-total-factor--13
+    title: Historical statistics notices on total factor productivity of the agricultural
+      industry — Total factor productivity of the agricultural industry 2013, 1st estimate
+      (published 14 Ma
+    url: https://assets.publishing.service.gov.uk/media/5a7e361fe5274a2e8ab468ee/agriproductivity-statsnotice-14may14.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-statistics-notices-on-total-factor--14
+    title: Historical statistics notices on total factor productivity of the agricultural
+      industry — Total factor productivity of the agricultural industry 2012, 2nd estimate
+      (published 12 De
+    url: https://assets.publishing.service.gov.uk/media/5a7eaaaded915d74e33f1a76/agriproductivity-statsnotice-12dec13.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-statistics-notices-on-total-factor--15
+    title: Historical statistics notices on total factor productivity of the agricultural
+      industry — Total factor productivity of the agricultural industry 2012, 1st estimate
+      (published 15 Ma
+    url: https://assets.publishing.service.gov.uk/media/5a7ecad940f0b62305b83366/agriproductivity-statsnotice-15may13.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-mou-between-aaib-maib-copfs-and-acpos-air-and-
+    title: MOU between AAIB, MAIB, COPFS and ACPOS — Air and marine investigations in
+      Scotland
+    url: https://assets.publishing.service.gov.uk/media/5a7ed408e5274a2e87db229e/MOU-InvestigationsInScotland.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-achieving-design-quality-in-fire-and-rescue-se
+    title: Achieving design quality in fire and rescue service buildings
+    url: https://assets.publishing.service.gov.uk/media/5a79847940f0b63d72fc6789/FRS_design_guidance.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-building-materials-and-components-statistics-j-22
+    title: 'Building materials and components statistics: June 2012 commentary — Monthly
+      statistics of building materials and components. Commentary: June 2012.'
+    url: https://assets.publishing.service.gov.uk/media/5a796c9ee5274a2acd18cb83/12-p125f-construction-building-materials-commentary-june-2012.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-building-materials-and-components-statistics-f-5
+    title: 'Building materials and components statistics: February 2012 commentary —
+      Monthly statistics of building materials and components. Commentary: February
+      2012.'
+    url: https://assets.publishing.service.gov.uk/media/5a79ed3ded915d6b1deb45ab/12-p125b-construction-building-materials-commentary-february-2012.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-nitrate-source-apportionment-for-groundwater-d
+    title: 'Nitrate source apportionment for groundwater-dependent terrestrial ecosystems
+      — Nitrate source apportionment for groundwater-dependent terrestrial ecosystems:
+      report'
+    url: https://assets.publishing.service.gov.uk/media/61a0f3f08fa8f50382034de9/Nitrate_source_apportionment_for_groundwater-dependent_terrestrial_ecosystems_-_report.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-nitrate-source-apportionment-for-groundwater-d-2
+    title: Nitrate source apportionment for groundwater-dependent terrestrial ecosystems
+      — Nitrate modelling of Newbald Becksies SSSI wetland catchment
+    url: https://assets.publishing.service.gov.uk/media/61a0f432d3bf7f055c4b76c6/Nitrate_modelling_of_Newbald_Becksies_SSSI_wetland_catchment_-_report.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-nitrate-source-apportionment-for-groundwater-d-3
+    title: Nitrate source apportionment for groundwater-dependent terrestrial ecosystems
+      — Nitrate modelling of Wynbunbury Moss SSSI wetland catchment
+    url: https://assets.publishing.service.gov.uk/media/61a0f4aae90e07043d677d8e/Nitrate_modelling_of_Wybunbury_Moss_SSSI_wetland_catchment_-_report.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-uk-eu-trade-and-cooperation-agreement-trade-pa
+    title: 'UK-EU Trade and Cooperation Agreement: Trade Partnership Committee meeting
+      12 December 2024, minutes — UK-EU Trade and Cooperation Agreement: Trade Partnership
+      Committee meeting 12'
+    url: https://assets.publishing.service.gov.uk/media/6929ba93b3b9afff34e96225/EU-UK_TPC_Joint_Minutes_2024_28112025.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-privacy-notice-for-cyber-resilience-act-and-ai
+    title: Privacy notice for Cyber Resilience Act and AI Act survey — Privacy notice
+      for Cyber Resilience Act and AI Act survey (PDF)
+    url: https://assets.publishing.service.gov.uk/media/698c9e172f683cc788c287af/DSIT_Privacy_Notice_-_Cyber_Resilience_Act_and_AI_Act_survey_for_SMEs.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-waste-programme-blueprint-nwp-bluepri
+    title: National Waste Programme Blueprint — NWP Blueprint April 2020
+    url: https://assets.publishing.service.gov.uk/media/5f524373e90e071ec54ae282/NWPREP045_LLW_NWP_Blueprint_Issue_5_Apr_2020.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-automatic-enrolment-review-of-the-earnings-tri-3
+    title: 'Automatic enrolment: review of the earnings trigger and qualifying earnings
+      band for 2019/20 — Review of the automatic enrolment earnings trigger and qualifying
+      earnings band for 2'
+    url: https://assets.publishing.service.gov.uk/media/5c0659cbe5274a6a769a5751/review-of-the-automatic-enrolment-earnings-trigger-and-qualifying-earnings-band-2019-20.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-eligibility-guidance-for-enhanced-dbs-checks-o
+    title: Eligibility guidance for Enhanced DBS checks — Other workforce guide
+    url: https://assets.publishing.service.gov.uk/media/696f8b092b64f0e8c32e338a/Other_workforce_guide_20.01.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-eligibility-guidance-for-enhanced-dbs-checks-c
+    title: Eligibility guidance for Enhanced DBS checks — Child workforce guide
+    url: https://assets.publishing.service.gov.uk/media/6687d04d899a6f92e5d9cd66/Child_workforce_guide.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-civil-legal-advice-contract-2013-contract-amen
+    title: 'Civil legal advice contract 2013 — Contract amendments notice: 25 April
+      2018'
+    url: https://assets.publishing.service.gov.uk/media/5ae0637f40f0b60aa2374d98/contract-amendment-notices-gdpr-standard-civil-contracts-250418.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-civil-legal-advice-contract-2013-summary-of-am
+    title: Civil legal advice contract 2013 — Summary of amendments to the Standard
+      Civil Contracts (25 April 2018)
+    url: https://assets.publishing.service.gov.uk/media/5ae063d8ed915d0ba9289525/summary-amendments-to-civil-cla-crime-standard-terms-250418.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-civil-legal-advice-contract-2013-contract-noti
+    title: Civil legal advice contract 2013 — Contract Notice Amendments to the 2013
+      Civil Legal Aid Contract and 2013, 2014 and 2015 Standard Civil Contracts (26
+      May 2016)
+    url: https://assets.publishing.service.gov.uk/media/5a7513e8e5274a3cb28697ac/contract-amendment-notification.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-civil-legal-advice-contract-2013-table-of-amen
+    title: Civil legal advice contract 2013 — Table of amendments for Civil Legal Advice
+      Contracts and Standard Civil Contracts (26 May 2016)
+    url: https://assets.publishing.service.gov.uk/media/5a80e2c940f0b623026960dc/summary-of-amendments-to-2013-2014-2015-standard-civil-contracts.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-civil-legal-advice-contract-2013-civil-legal-a-4
+    title: Civil legal advice contract 2013 — Civil legal advice 2013 contract payment,
+      disbursements and reviewing your claims for payment
+    url: https://assets.publishing.service.gov.uk/media/5a7d9e1ae5274a6b89a5120d/LAA-cla-2013-payments-disbursements-claims.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-civil-legal-advice-contract-2013-civil-legal-a-6
+    title: Civil legal advice contract 2013 — Civil legal advice 2013 contract IT requirements,
+      CMS and business continuity
+    url: https://assets.publishing.service.gov.uk/media/5a7e026440f0b62305b80362/LAA-cla-2013-IT.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-discretionary-housing-payments-housing-benefit
+    title: 'Discretionary Housing Payments, Housing Benefit advice, and Local Housing
+      Allowance changes: Local Authority Insight Survey Wave 24 (RR847) — Local authority
+      insight survey: wave 2'
+    url: https://assets.publishing.service.gov.uk/media/5a74cb7de5274a3cb28673bd/847summ.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-examining-identity-documents-guidance-on-exami
+    title: Examining identity documents — Guidance on examining identity documents
+    url: https://assets.publishing.service.gov.uk/media/6876255188da2e5804bb6a26/2025_Guidance_on_examining_identity_documents_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-judicial-review-reform-judicial-review-reform-
+    title: Judicial Review Reform — Judicial Review Reform - consultation document
+    url: https://assets.publishing.service.gov.uk/media/60648247d3bf7f0c87f54815/judicial-review-reform-consultation-document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-supporting-documents-for-spring-statement-2025
+    title: 'Supporting documents for Spring Statement 2025 — Impact on households: distributional
+      analysis to accompany Spring Statement 2025'
+    url: https://assets.publishing.service.gov.uk/media/67e31bdadcd2d93561195bbb/Impact_on_households_-_SS25_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-supporting-documents-for-spring-statement-2025-2
+    title: 'Supporting documents for Spring Statement 2025 — Spring Statement 2025:
+      Policy Costings'
+    url: https://assets.publishing.service.gov.uk/media/67e562fc33afcd62e4ca4c9e/SS25_Published_Costing_Document.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-supporting-documents-for-spring-statement-2025-3
+    title: 'Supporting documents for Spring Statement 2025 — Spring Statement 2025:
+      Data Sources'
+    url: https://assets.publishing.service.gov.uk/media/67e2fb4e5698d84e39cfdb3f/Spring_Statement_2025_-_Data_Sources.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-reducing-crime-at-sites-handling-waste-and-int-2
+    title: Reducing crime at sites handling waste, and introducing fixed penalties for
+      waste duty of care — Annexes
+    url: https://assets.publishing.service.gov.uk/media/65201b3c2548ca0014ddeec0/waste_exemptions_government_response_annex.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-reducing-crime-at-sites-handling-waste-and-int-3
+    title: Reducing crime at sites handling waste, and introducing fixed penalties for
+      waste duty of care — Annexes (Welsh)
+    url: https://assets.publishing.service.gov.uk/media/65201b4b2548ca0014ddeec1/waste-exemptions-government-response-annex-welsh.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-police-covenant-for-england-and-wales
+    title: Police Covenant for England and Wales
+    url: https://assets.publishing.service.gov.uk/media/5e563c5dd3bf7f393e6182f0/20200225_Police_Covenant_Consultation_Final.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-police-covenant-for-england-and-wales-response
+    title: Police Covenant for England and Wales — Response to the consultation on a
+      Police Covenant for England and Wales
+    url: https://assets.publishing.service.gov.uk/media/5f575f64d3bf7f7235427d1b/Police_Covenant_Consultation_Government_Response_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-safety-digest-03-2025-south-wales-overspeeds-d
+    title: 'Safety digest 03/2025: South Wales overspeeds — D032025_250610_South Wales
+      overspeeds'
+    url: https://assets.publishing.service.gov.uk/media/6846de29e5a089417c80616f/D032025_250610_South_Wales_overspeeds.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-integrity-of-decommissioned-wells-studies-usin
+    title: 'Integrity of decommissioned wells: studies using integrity-related factors
+      and soil gas monitoring — Decommissioned wells using factors associated with integrity
+      to prioritise stew'
+    url: https://assets.publishing.service.gov.uk/media/61b9f4fad3bf7f0560be65e2/Decommissioned_wells_using_factors_associated_with_integrity_to_prioritise_stewardship_-_report.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-integrity-of-decommissioned-wells-studies-usin-2
+    title: 'Integrity of decommissioned wells: studies using integrity-related factors
+      and soil gas monitoring — Field assessment of decommissioned well integrity in
+      England - report'
+    url: https://assets.publishing.service.gov.uk/media/61b9f5178fa8f503764ed619/Field_assessment_of_decommissioned_well_integrity_in_England_-_report.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-quantifying-carbon-emissions-for-local-transpo
+    title: Quantifying carbon emissions for local transport planning — Local transport
+      quantifiable carbon guidance (QCG)
+    url: https://assets.publishing.service.gov.uk/media/68af13a12f185664821558c7/local-transport-quantifiable-carbon-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-quantifying-carbon-emissions-for-local-transpo-2
+    title: 'Quantifying carbon emissions for local transport planning — Local transport
+      quantifiable carbon guidance (QCG): high-level summary'
+    url: https://assets.publishing.service.gov.uk/media/68af2e3b960e2d135b4c8ebf/local-transport-quantifiable-carbon-guidance-qcg-high-level-summary.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-vehicle-emissions-carbon-tool-vecat-vehicle-em
+    title: Vehicle emissions carbon tool (VECAT) — Vehicle emissions carbon tool user
+      guide
+    url: https://assets.publishing.service.gov.uk/media/68ee1f2bf159f887526bbdf1/vehicle-emissions-carbon-tool-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-final-statement-for-the-third-carbon-budget-pe
+    title: Final statement for the third carbon budget period — Final statement for
+      the third carbon budget
+    url: https://assets.publishing.service.gov.uk/media/664356ef4f29e1d07fadc6e9/third-carbon-budget-statement.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-how-to-generate-carbon-units-in-england-how-to
+    title: How to generate carbon units in England — How to generate carbon units if
+      you want to retain management of your land
+    url: https://assets.publishing.service.gov.uk/media/6697f869fc8e12ac3edafef4/CFT_Carbon_route_manage_land_May_24.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-how-to-generate-carbon-units-in-england-how-to-2
+    title: How to generate carbon units in England — How to generate carbon units if
+      you are a tenant farmer
+    url: https://assets.publishing.service.gov.uk/media/6697f8b2ab418ab0555927a9/CFT_Carbon_route_tenant_farmer_May_24.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-road-congestion-and-travel-time-statistics-inf
+    title: Road congestion and travel time statistics information — Travel time historical
+      statistics background quality report
+    url: https://assets.publishing.service.gov.uk/media/5c76bd42e5274a0ec72b48f6/background-quality-report.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-carbon-tetrachloride-health-effects-incident-m
+    title: 'Carbon tetrachloride: health effects, incident management and toxicology
+      — Carbon tetrachloride: incident management'
+    url: https://assets.publishing.service.gov.uk/media/636e7cd5e90e071868e2d2f8/UKHSA-incident-management-Carbon_Tetrachloride.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-low-carbon-contracts-company-counterparty-for-
+    title: 'Low Carbon Contracts Company: counterparty for industrial carbon capture
+      revenue support contracts — Designation of Low Carbon Contracts Company Ltd as
+      a counterparty for industria'
+    url: https://assets.publishing.service.gov.uk/media/66c5ef5429be2af083dd27d6/lccc-designation-counterparty-industrial-carbon-capture-revenue-support-contracts.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-national-underground-asset-register-unlocking-
+    title: 'National Underground Asset Register: unlocking value for industry and the
+      wider economy — National Underground Asset Register (NUAR) - Economic Benefits
+      Paper'
+    url: https://assets.publishing.service.gov.uk/media/61a5fc71d3bf7f055eb9b737/2021-11-03_NUAR_Economics_Benefits_Paper.pdf
     source: gov_uk
     license: open
     topic: equipment_systems
