@@ -1,6 +1,6 @@
 {
   "_readme": "Control-plane configuration for scripts/run_round.py. rotation_key points into rotation.json; enabled=false documents exhausted or policy-blocked veins without deleting their resumable state.",
-  "find_osti": {"script": "find_osti.py", "args": ["--rows", "50", "--pages", "2", "--max", "400"], "enabled": true},
+  "find_osti": {"script": "find_osti.py", "args": ["--rows", "50", "--pages", "2", "--max", "400"], "enabled": false, "reason": "www.osti.gov connect-timeout outage since 2026-07-30; re-enable when API responds"},
   "find_archive": {"script": "find_archive.py", "args": ["--rows", "30", "--max", "300"], "enabled": true},
   "find_books": {"script": "find_books.py", "args": ["--per", "25", "--depth", "25", "--max", "200"], "enabled": true},
   "find_openaire": {"script": "find_openaire.py", "args": ["--rows", "50", "--max", "300"], "enabled": true},
