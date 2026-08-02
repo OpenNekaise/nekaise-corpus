@@ -102518,13 +102518,6 @@ sources:
     license: open
     topic: standards_protocols
     format: pdf
-  - id: guk-justice-data-lab-statistics-january-2024-justi
-    title: 'Justice data lab statistics: January 2024 — Justice Data Lab general annex'
-    url: https://assets.publishing.service.gov.uk/media/65b0e22d1702b1000dcb1159/Justice_Data_Lab_general_annex.pdf
-    source: gov_uk
-    license: open
-    topic: standards_protocols
-    format: pdf
   - id: guk-affordable-housing-supply-in-england-2011-to-2
     title: 'Affordable housing supply in England: 2011 to 2012 — Affordable Housing
       Supply, England, 2011-2012'
@@ -124542,6 +124535,465 @@ sources:
   - id: guk-capacity-market-location-of-provisional-result
     title: 'Capacity Market: location of provisional results — Provisional results report'
     url: https://assets.publishing.service.gov.uk/media/5a7dd9bde5274a5eb14e7913/Provisional_Results_Report-Ammendment.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-determination-by-the-secretary-of-state-of-the
+    title: Determination by the Secretary of State of the appeal of Criterion Capital
+      Ltd and the Environment Agency under the CRC Energy Efficiency Scheme Order 2010
+    url: https://assets.publishing.service.gov.uk/media/5a7b0440e5274a34770e8cd2/Determination_of_Criterion_Capital_-_DECC_website.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-business-regulation-business-perceptions-surve-8
+    title: 'Business Regulation: Business Perceptions Survey 2022 — Business perceptions
+      survey 2022: technical report'
+    url: https://assets.publishing.service.gov.uk/media/64b16e2c995900000d002b27/business-perceptions-survey-2022-technical-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-nhs-merger-review-guidance-draft-nhs-mer
+    title: 'Draft NHS merger review guidance — Draft NHS merger review guidance: CMA29con'
+    url: https://assets.publishing.service.gov.uk/media/5a7d8c5140f0b65084e75dbd/CMA29con.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-nhs-merger-review-guidance-cma-s-summary
+    title: 'Draft NHS merger review guidance — CMA''s summary of responses to consultation:
+      CMA29resp'
+    url: https://assets.publishing.service.gov.uk/media/5a7ebf2ee5274a2e8ab47f07/CMA_summary_of_responses_to_consultation.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-nhs-merger-review-guidance-clifford-chan
+    title: Draft NHS merger review guidance — Clifford Chance LLP response to consultation
+    url: https://assets.publishing.service.gov.uk/media/5a7d8689e5274a676d53293e/Clifford_Chance_LLP_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-nhs-merger-review-guidance-frontier-resp
+    title: Draft NHS merger review guidance — Frontier response to consultation
+    url: https://assets.publishing.service.gov.uk/media/5a7dad63e5274a5eb14e6850/Frontier_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-nhs-merger-review-guidance-foundation-tr
+    title: Draft NHS merger review guidance — Foundation Trust Network response to consultation
+    url: https://assets.publishing.service.gov.uk/media/5a7edbd2e5274a2e8ab48a74/FTN_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-nhs-merger-review-guidance-slaughter-and
+    title: Draft NHS merger review guidance — Slaughter and May response to consultation
+    url: https://assets.publishing.service.gov.uk/media/5a7df4b8e5274a2e87dae9c0/Slaughter_and_May_response.PDF
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-civil-service-diversity-and-inclusion-strategy
+    title: 'Civil Service Diversity and Inclusion Strategy: 2022 to 2025'
+    url: https://assets.publishing.service.gov.uk/media/6256c55ce90e0729fd14bcbd/civil-service-diversity-inclusion-strategy.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-resettlement-programmes-funding-instruction-12
+    title: 'UK resettlement programmes: funding instruction 2022 to 2023 — Funding instruction
+      for local authorities in support of the United Kingdom’s resettlement schemes:
+      2022 to 2023'
+    url: https://assets.publishing.service.gov.uk/media/62dfa93bd3bf7f2d81693d66/2022-07-19_UKRS_2022-23_LA_Funding_Instruction_-__Final_v1.0.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-uk-resettlement-programmes-funding-instruction-15
+    title: 'UK resettlement programmes: funding instruction 2022 to 2023 — Funding healthcare
+      in England in support of the United Kingdom’s resettlement schemes: 2022 to 2023'
+    url: https://assets.publishing.service.gov.uk/media/62dfa8dcd3bf7f2d81693d65/2022-05-16__2022-23_HEALTHCARE_FI_FOR_ENGLAND_v1.0.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-provenance-choice-of-native-trees-under-climat
+    title: Provenance choice of native trees under climate change in England - Policy
+      Advice Note — Policy Advice Note - Genetic considerations for provenance choice
+      of native trees under cli
+    url: https://assets.publishing.service.gov.uk/media/5d08d5fd40f0b62008a09e6f/Policy_Advice_Note_Final180619.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-an-inspection-of-the-home-office-s-afghan-rese
+    title: An inspection of the Home Office’s Afghan resettlement schemes (October 2022
+      – April 2023)
+    url: https://assets.publishing.service.gov.uk/media/65e081203f6945001d035fcd/An_inspection_of_the_Home_Office_s_Afghan_resettlement_schemes__October_2022_to_April_2023.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-8-severn-tidal-power-commercial-assessment-par
+    title: '8. Severn tidal power: commercial assessment - part 1 — Commercial assessment:
+      part 1'
+    url: https://assets.publishing.service.gov.uk/media/5a78b325e5274a2acd1891c5/8._Commercial_Assessment.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-2016-nbs-procurement-guidance-2016-nbs-state-a
+    title: 2016 NBS Procurement Guidance — 2016 NBS - State Aid Guidance - Procurement
+    url: https://assets.publishing.service.gov.uk/media/5a74a992ed915d7ab83b5861/2016_NBS_-_State_Aid_Guidance_-_Procurement.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-local-government-pension-scheme-funds-for-engl-2
+    title: 'Local government pension scheme funds for England and Wales: 2019 to 2020
+      — Local government pension scheme funds for England and Wales: 2019 to 2020 -
+      technical notes'
+    url: https://assets.publishing.service.gov.uk/media/60a526a6e90e071b54214b96/SF3_-__technical_notes_revised.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-2024-valuation-civil-service-pension-scheme-ov
+    title: 2024 Valuation - Civil Service Pension Scheme — Overview
+    url: https://assets.publishing.service.gov.uk/media/6a3aa1bfda47783d87723883/Civil_Service_Pension_Scheme_Great_Britain_2024_Actuarial_Valuation_Overview.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-2024-valuation-civil-service-pension-scheme-ap
+    title: 2024 Valuation - Civil Service Pension Scheme — Approach
+    url: https://assets.publishing.service.gov.uk/media/6a5f70e12c7d129a310bae04/Civil_Service_Pension_Scheme_Great_Britain_2024_Actuarial_Valuation_Approach.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-2024-valuation-civil-service-pension-scheme-as
+    title: 2024 Valuation - Civil Service Pension Scheme — Assumptions
+    url: https://assets.publishing.service.gov.uk/media/6a5f710552cfec0df765efef/Civil_Service_Pension_Scheme_Great_Britain_2024_Actuarial_Valuation_Assumptions.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-2024-valuation-civil-service-pension-scheme-re
+    title: 2024 Valuation - Civil Service Pension Scheme — Results
+    url: https://assets.publishing.service.gov.uk/media/6a3aa281eaee00074150f2ba/Civil_Service_Pension_Scheme_Great_Britain_2024_Actuarial_Valuation_Results.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-2024-valuation-civil-service-pension-scheme-cl
+    title: 2024 Valuation - Civil Service Pension Scheme — Climate Risk
+    url: https://assets.publishing.service.gov.uk/media/6a3aa31830b491f55b3c47e3/Civil_Service_Pension_Scheme_Great_Britain_2024_Actuarial_Valuation_Climate_Risk.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-2024-valuation-civil-service-pension-scheme-gl
+    title: 2024 Valuation - Civil Service Pension Scheme — Glossary
+    url: https://assets.publishing.service.gov.uk/media/6a3aa33630b491f55b3c47e4/Civil_Service_Pension_Scheme_Great_Britain_2024_Actuarial_Valuation_Glossary.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-reliability-of-journeys-on-the-highways-agency-6
+    title: 'Reliability of journeys on the Highways Agency''s motorway and A road network:
+      September 2012 — Reliability of journeys on Highways Agency’s motorway and ‘A’
+      road network: September'
+    url: https://assets.publishing.service.gov.uk/media/5a795d12e5274a2acd18c36f/nov-2012-congestion-ha-network-stats-release.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-reliability-of-journeys-on-the-highways-agency-7
+    title: 'Reliability of journeys on the Highways Agency''s motorway and A road network:
+      January 2013'
+    url: https://assets.publishing.service.gov.uk/media/5a74d2d5e5274a3cb2867798/congestion-ha-network-stats-release-jan-2013.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-big-energy-saving-network-2015-to-2016-worksho
+    title: 'Big Energy Saving Network 2015 to 2016: workshop assessment surveys — Big
+      Energy Saving Network 2015 to 2016: executive summary'
+    url: https://assets.publishing.service.gov.uk/media/5a7508d8ed915d502d6ccf8a/BESN_1516_Exec_Summary_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-big-energy-saving-network-2015-to-2016-worksho-2
+    title: 'Big Energy Saving Network 2015 to 2016: workshop assessment surveys — Big
+      Energy Saving Network 2015 to 2016: main report'
+    url: https://assets.publishing.service.gov.uk/media/5a75a47fed915d6faf2b491b/BESN_1516_Survey_Report_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-social-network-analysis-of-an-urban-street-gan
+    title: Social network analysis of an urban street gang using police intelligence
+      data
+    url: https://assets.publishing.service.gov.uk/media/5a80e27ae5274a2e87dbc5d0/horr89.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-economic-case-for-hs2-value-for-money-statemen
+    title: 'Economic case for HS2: value for money statement'
+    url: https://assets.publishing.service.gov.uk/media/5a796cd240f0b63d72fc5b36/hs2-economic-case-value-for-money.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-research-and-development-network-reports-schoo-2
+    title: 'Research and development network reports: school-based research in a self-improving
+      system — Three greats for a self-improving system: pedagogy and professional development
+      executi'
+    url: https://assets.publishing.service.gov.uk/media/5a7ffadf40f0b62305b8871f/Three_greats_for_a_self_improving_system_pedagogy_professional_development_and_leadership_executive_summary.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-collaborative-parenting-barriers-faced-by-sepa
+    title: 'Collaborative parenting: Barriers faced by separated fathers (RR815) — Collaborative
+      parenting: Barriers faced by separated fathers (RR815): report'
+    url: https://assets.publishing.service.gov.uk/media/5a7af5e4e5274a319e77bf5e/rrep815.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-universal-credit-claimant-survey-nov-to-dec-20
+    title: 'Universal Credit claimant survey: Nov to Dec 2014 interim findings — Universal
+      Credit Expanded Gateway Singles Survey: Wave 1 interim findings on attitudes,
+      behaviour and early lab'
+    url: https://assets.publishing.service.gov.uk/media/5a7f436de5274a2e8ab4b1e9/universal-credit-survey-report-final-ad-hoc-20.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-seaweed-transfer-of-radioactivity-to-foodstuff
+    title: 'Seaweed: transfer of radioactivity to foodstuffs — HPA-RPD-059: transfer
+      of radioactivity from seaweed to terrestrial foods and potential radiation exposures
+      to members of the publ'
+    url: https://assets.publishing.service.gov.uk/media/5a7ef0ceed915d74e62276ff/HPA-RPD-059_web_version_with_security.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-and-climate-change-public-attitudes-tra-5
+    title: 'Energy and Climate Change Public Attitudes Tracker: Wave 23 — Energy and
+      Climate Change Public Attitudes Tracker (PAT): Wave 23 - summary report'
+    url: https://assets.publishing.service.gov.uk/media/5a82d7b7ed915d74e3403d8d/Wave_23_Summary_Report.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-and-climate-change-public-attitudes-tra-6
+    title: 'Energy and Climate Change Public Attitudes Tracker: Wave 23 — Energy and
+      Climate Change Public Attitudes Tracker (PAT): Wave 23 - questionnaire'
+    url: https://assets.publishing.service.gov.uk/media/5a81c32a40f0b62305b90acd/Wave_23_questionnaire.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-loft-clearance-results-of-a-behavioural-trial-
+    title: 'Loft clearance: results of a behavioural trial — Removing the hassle factor
+      associated with loft insulation: Results of a behavioural trial'
+    url: https://assets.publishing.service.gov.uk/media/5a7c4f94ed915d3d0e87b850/DECC_loft_clearance_trial_report_final.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-international-climate-fund-business-case-and-i-2
+    title: International Climate Fund Business Case and Intervention Summary - International
+      2050 pathways partnerships and Global Calculator
+    url: https://assets.publishing.service.gov.uk/media/5a79d1d1ed915d6b1deb3935/ICF_Business_Case_-_International_2050_pathways_partnerships.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-and-climate-change-public-attitudes-tra-7
+    title: 'Energy and Climate Change Public Attitudes Tracker: Wave 22 — Energy and
+      Climate Change Public Attitudes Tracker (PAT): Wave 22 - summary report'
+    url: https://assets.publishing.service.gov.uk/media/5a82d0ede5274a2e87dc31f4/pat-wave-22-summary-report.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-and-climate-change-public-attitudes-tra-8
+    title: 'Energy and Climate Change Public Attitudes Tracker: Wave 22 — Energy and
+      Climate Change Public Attitudes Tracker (PAT): Wave 22 - questionnaire'
+    url: https://assets.publishing.service.gov.uk/media/5a82056de5274a2e87dc0bc3/pat-wave-22-questionnaire.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-phe-sars-cov-2-sars-cov-1-and-mers-cov-what-do
+    title: 'PHE: SARS-CoV-2, SARS-CoV-1 and MERS-CoV: What do we know about children?,
+      9 March 2020 — SARS-CoV-2, SARS-CoV-1 and MERS-CoV: What do we know about children?
+      - 9 March 20202'
+    url: https://assets.publishing.service.gov.uk/media/5ed91d5986650c4ab64fb344/s0045-sars-cov-2-sars-cov-1-mers-cov-what-do-we-know-about-children-090320-sage14.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-desnz-public-attitudes-tracker-technical-repor-4
+    title: 'DESNZ Public Attitudes Tracker: Technical Report, Autumn 2022 to Summer
+      2023'
+    url: https://assets.publishing.service.gov.uk/media/650ab4f1fbd7bc000dcb51b7/BEIS-DESNZ_PAT_Technical_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-international-climate-fund-business-case-and-i-3
+    title: 'International Climate Fund Business Case and Intervention Summary: Green
+      Africa Power (GAP)'
+    url: https://assets.publishing.service.gov.uk/media/5a789b56ed915d0422063ef0/ICFBusinessCaseGreenAfricaPower.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-competition-map-the-gap-autonomous-gap-crossin-3
+    title: 'Competition: Map the Gap: autonomous gap crossing survey — Innovation Standard
+      Contract - terms: map the gap'
+    url: https://assets.publishing.service.gov.uk/media/5e393a26e5274a08e5344c68/20200203-MaptheGap_Terms.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-competition-map-the-gap-autonomous-gap-crossin-4
+    title: 'Competition: Map the Gap: autonomous gap crossing survey — Innovation Standard
+      Contract - schedules: map the gap'
+    url: https://assets.publishing.service.gov.uk/media/5e393a3d40f0b609103eeb65/20200203-MaptheGap_Schedules.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-planning-inspectorate-statistical-release-23-s
+    title: Planning Inspectorate statistical release 23 September 2021
+    url: https://assets.publishing.service.gov.uk/media/614b2c818fa8f561127cf427/Planning_Inspectorate_Statistical_Release_September_2021_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-police-pensions-member-contribution-structure-
+    title: 'Police pensions: member contribution structure — Amendments to The Police
+      Pensions Regulations 2015 (S.I. 2015/445)'
+    url: https://assets.publishing.service.gov.uk/media/673deca159aab43310b95951/Consultation+on+proposed+updates+to+the+police+pensions+scheme+member+contribution+structure.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-police-pensions-member-contribution-structure--2
+    title: 'Police pensions: member contribution structure — Proposed updates to member
+      contribution structure: government response'
+    url: https://assets.publishing.service.gov.uk/media/691daad0513046b952c50053/Consultation+response+on+proposed+updates+to+the+police+pension+scheme_s+member+contribution+structure.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-police-pensions-member-contribution-structure--3
+    title: 'Police pensions: member contribution structure — Equality impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/692490f05f7777c304ba7f06/Equality+Impact+Assessment+Police+Pensions+Member+Contribution+Structure+_To+Publish_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-police-pensions-member-contribution-structure--4
+    title: 'Police pensions: member contribution structure — Analysis to support the
+      equality impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/691dafd4e39a085bda43ef83/Analysis+to+Support+the+Equality+Impact+Assessment+-+Police+Pensions+Member+Contribution+Structure.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-justice-data-lab-statistics-april-2024-steppin
+    title: 'Justice data lab statistics: April 2024 — Stepping Stones (Forward Trust)
+      report'
+    url: https://assets.publishing.service.gov.uk/media/6628f78db0ace32985a7e66d/Stepping_Stones__Forward_Trust__JDL_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-justice-data-lab-statistics-april-2024-justice
+    title: 'Justice data lab statistics: April 2024 — Justice Data Lab general annex'
+    url: https://assets.publishing.service.gov.uk/media/6628f8683b0122a378a7e5a0/Justice_Data_Lab_general_annex.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-housing-benefit-and-universal-credit-size--3
+    title: The Housing Benefit and Universal Credit (Size Criteria) (Miscellaneous Amendments)
+      Regulations 2013 — Equality Analysis for The Size Criteria and children with disabilities
+    url: https://assets.publishing.service.gov.uk/media/5a7e1965ed915d74e6224192/equality-analysis-oct-2013.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-local-authority-planning-capacity-and-skills-s
+    title: '​​Local authority planning capacity and skills survey: 2023 findings​'
+    url: https://assets.publishing.service.gov.uk/media/677d098fd721a08c006654e9/MHCLG_Local_Authority_Planning_Capacity_and_Skills_Survey_2023.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-guidance-on-applying-the-waste-hierarchy-pb135
+    title: Guidance on applying the waste hierarchy — pb13530-waste-hierarchy-guidance
+    url: https://assets.publishing.service.gov.uk/media/5a795abde5274a2acd18c223/pb13530-waste-hierarchy-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-private-hire-vehicle-licensing-guidance-note
+    title: 'Private hire vehicle licensing: guidance note'
+    url: https://assets.publishing.service.gov.uk/media/5a799b3340f0b642860d960d/phv-licensing-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hs2-phase-one-information-papers-route-develop
+    title: 'HS2 Phase One information papers: route development (series A) — Development
+      of the HS2 proposed scheme (A1)'
+    url: https://assets.publishing.service.gov.uk/media/5a82e50eed915d74e62382ab/A1_-_Development_of_the_HS2_Proposed_Scheme_v1.6.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-hs2-phase-one-information-papers-route-develop-2
+    title: 'HS2 Phase One information papers: route development (series A) — Future
+      train service patterns on the West Coast Main Line (A2)'
+    url: https://assets.publishing.service.gov.uk/media/5a82214eed915d74e3401e28/A2_-_Future_train_service_patterns_on_the_WCML_corridor_v1.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-uk-semiconductor-workforce-study
+    title: UK Semiconductor Workforce Study
+    url: https://assets.publishing.service.gov.uk/media/680f671211d566056bcae946/Semiconductor_Workforce_Research_Report_DSIT_F_AC_April_2025.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-safety-digest-08-2022-liverpool-street-station
+    title: 'Safety digest 08/2022: Liverpool Street Station — D082022_221222_Liverpool
+      Street v2'
+    url: https://assets.publishing.service.gov.uk/media/65e86f7a5b65240011f21a92/D082022_240307_Liverpool_Street_v2.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-apprenticeships-employer-participation-in-the-
+    title: 'Apprenticeships: employer participation in the health sector — Employer
+      investment in apprenticeships in the health sector'
+    url: https://assets.publishing.service.gov.uk/media/5a7db20ae5274a5eaea65c59/bis-14-789-employer-investment-in-apprenticeshipsi-in-the-health-sector.pdf
     source: gov_uk
     license: open
     topic: equipment_systems
