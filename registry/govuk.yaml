@@ -133383,14 +133383,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-practical-guides-for-using-the-2011-rural-urba-2
-    title: Practical guides for using the 2011 Rural Urban Classification — Guide to
-      applying the rural urban classification to data
-    url: https://assets.publishing.service.gov.uk/media/610d1f21e90e0706c71ed82d/Guide_to_applying_the_rural_urban_classification_to_data.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-domestic-energy-prices-data-sources-and-method
     title: 'Domestic energy prices: data sources and methodology'
     url: https://assets.publishing.service.gov.uk/media/69ca899fb111d64c49bb3d7c/domestic-energy-prices-methodology.pdf
@@ -134028,4 +134020,443 @@ sources:
     source: gov_uk
     license: open
     topic: equipment_systems
+    format: pdf
+  - id: guk-seroprevalence-survey-for-besnoitia-besnoiti-i
+    title: Seroprevalence survey for Besnoitia besnoiti in cattle and buffalo imported
+      to mainland UK from Europe in 2018
+    url: https://assets.publishing.service.gov.uk/media/67598b1cad4694c785b0ed6e/besnoitia-feb-2020.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-statement-of-administrative-sources-for-offici
+    title: 'Statement of administrative sources for official statistics published by
+      the Department for Transport — Statement of administrative sources: Driver Vehicle
+      Standards Agency'
+    url: https://assets.publishing.service.gov.uk/media/5a74eabce5274a59fa715f96/dft-statement-of-admin-sources-dvsa.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-statement-of-administrative-sources-for-offici-2
+    title: 'Statement of administrative sources for official statistics published by
+      the Department for Transport — Statement of administrative sources: Journey time
+      database, local authority '
+    url: https://assets.publishing.service.gov.uk/media/5a75a897e5274a545822d363/sas-la.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-statement-of-administrative-sources-for-offici-4
+    title: 'Statement of administrative sources for official statistics published by
+      the Department for Transport — Statement of administrative sources: Journey time
+      database, Highways Agency '
+    url: https://assets.publishing.service.gov.uk/media/5a79c33e40f0b66d161adf85/sas-ha.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-statement-of-administrative-sources-for-offici-6
+    title: 'Statement of administrative sources for official statistics published by
+      the Department for Transport — Statement of administrative sources: National Road
+      Condition Database'
+    url: https://assets.publishing.service.gov.uk/media/5a79956040f0b642860d936f/dft-statement-natinlroad-conddbase.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-statement-of-administrative-sources-for-offici-7
+    title: 'Statement of administrative sources for official statistics published by
+      the Department for Transport — Statement of administrative sources: DSA Testing
+      and Registration System (TA'
+    url: https://assets.publishing.service.gov.uk/media/5a7c0c34e5274a7202e19386/dft-statement-dsa.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-use-of-exemptions-by-dental-hygienists-and-den
+    title: Use of exemptions by dental hygienists and dental therapists — Impact assessment
+      on the proposal to enable dental hygienists and dental therapists to supply and
+      administer specific
+    url: https://assets.publishing.service.gov.uk/media/64db5a6960d123000d32c51e/dental-hygienist-and-therapist-impact-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-changes-to-dhsc-group-accounting-manual-2022-t
+    title: Changes to DHSC group accounting manual 2022 to 2023 — Department of Health
+      and Social Care group accounting manual 2022 to 2023 (draft)
+    url: https://assets.publishing.service.gov.uk/media/62012d578fa8f5388df28c4f/2022-to-2023-draft-dhsc-gam-7-february.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-identity-cards-act-2006-draft-code-of-practice
+    title: 'Identity Cards Act 2006: draft code of practice on civil penalties 2009
+      — Identity Cards Act 2006: draft code of practice on civil penalties 2009 - Full
+      Text'
+    url: https://assets.publishing.service.gov.uk/media/5a7c9a3440f0b6629523a956/7777147153.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-anthony-grainger-inquiry-report-into-the-death
+    title: 'Anthony Grainger Inquiry: report into the death of Anthony Grainger'
+    url: https://assets.publishing.service.gov.uk/media/5d27151a40f0b611b680982e/Anthony_Grainger_Inquiry.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-release-on-temporary-licence-release-on-tempor
+    title: Release on temporary licence — Release on temporary licence policy framework
+    url: https://assets.publishing.service.gov.uk/media/63650199e90e07345d89b09b/release-on-temporary-licence-policy-framework.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-climate-change-agreements-technical-annex
+    title: 'Climate Change Agreements: technical annex'
+    url: https://assets.publishing.service.gov.uk/media/69e0dc2620b52e4144868909/cca-technical-annex.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-domestic-abuse-sanctuary-schemes-process-evalu
+    title: 'Domestic abuse sanctuary schemes: process evaluation findings — Sanctuary
+      schemes: process evaluation report'
+    url: https://assets.publishing.service.gov.uk/media/6a4e28ee6a73e62ba10299f3/Sanctuary_Schemes_Process_Evaluation_Report.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-understanding-and-responding-to-blasphemy-extr
+    title: Understanding and responding to blasphemy extremism — Understanding and Responding
+      to Blasphemy Extremism in the UK
+    url: https://assets.publishing.service.gov.uk/media/65e9ba875b65240011f21b9a/Understanding+and+Responding+to+Blasphemy+Extremism+in+the+UK.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-appropriate-adult-provision-in-england-and-wal
+    title: Appropriate adult provision in England and Wales — Appropriate Adult Provision
+      in England and Wales (PDF file - 464kb)
+    url: https://assets.publishing.service.gov.uk/media/5a7adad0e5274a34770e7921/appropriate-adult-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-road-traffic-estimates-in-great-britain-2013-r
+    title: 'Road traffic estimates in Great Britain: 2013 — Road traffic estimates in
+      Great Britain: 2013 report'
+    url: https://assets.publishing.service.gov.uk/media/5a7dbf3ae5274a5eb14e6f0f/annual-road-traffic-estimates-2013.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-new-threshold-for-businesses-accessing-the-ene
+    title: New threshold for businesses accessing the Energy Ombudsman — Introduction
+      of a new threshold for bringing cases to the Energy Ombudsman to include small
+      business consumers
+    url: https://assets.publishing.service.gov.uk/media/65709e5b746930000d48893b/non-domestic-consumer-redress-consultation.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-new-threshold-for-businesses-accessing-the-ene-2
+    title: 'New threshold for businesses accessing the Energy Ombudsman — A new threshold
+      for businesses accessing the Energy Ombudsman: summary of consultation responses
+      and next steps'
+    url: https://assets.publishing.service.gov.uk/media/660d95df0616d0001a1cb103/new-threshold-for-businesses-accessing-energy-ombudsman-summary-consultation-responses.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-guide-to-applying-the-2011-rural-urban-classif
+    title: Guide to applying the 2011 Rural Urban Classification to data — Guide to
+      applying the Rural Urban Classification to data
+    url: https://assets.publishing.service.gov.uk/media/5a808fba40f0b62305b8bdf5/Guide_to_applying_the_rural_urban_classification_to_data.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-farm-practices-survey-february-2016-greenhouse
+    title: Farm practices survey February 2016 - greenhouse gas mitigation practices
+      — FPS - February 2016 - greenhouse gas mitigation - statistics notice
+    url: https://assets.publishing.service.gov.uk/media/5a802fbee5274a2e87db85bf/fps-ghg2016-statsnotice-19may16.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ip26-4du-warren-energy-limited-environmental-p
+    title: 'IP26 4DU, Warren Energy Limited: environmental permit issued - EPR/ZP3436AU/V002
+      — Permit: Warren Energy Limited'
+    url: https://assets.publishing.service.gov.uk/media/64958faf9e7a8b0013932ac5/Variation_Notice_ZP3436AU-V002.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ip26-4du-warren-energy-limited-environmental-p-2
+    title: 'IP26 4DU, Warren Energy Limited: environmental permit issued - EPR/ZP3436AU/V002
+      — Decision Document: Warren Energy Limited'
+    url: https://assets.publishing.service.gov.uk/media/64958fc9de86820013bc8d2f/Decision_Document_ZP3436AU-V002.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-pe28-0ae-energy-10-huntingdon-limited-environm
+    title: 'PE28 0AE, Energy 10 Huntingdon Limited: environmental permit issued — Variation
+      notice: Energy 10 Huntingdon Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7f9ce8e5274a2e87db6e86/CP3034CD_V003_-_Notice_of_variation_and_consolidation_-_Final.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-pe28-0ae-energy-10-huntingdon-limited-environm-2
+    title: 'PE28 0AE, Energy 10 Huntingdon Limited: environmental permit issued — Decision
+      document: Energy 10 Huntingdon Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a74decfed915d502d6cba76/CP3034CD_V003_DD_-_Final.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-cw9-7nu-lostock-sustainable-energy-plant-limit
+    title: 'CW9 7NU, Lostock Sustainable Energy Plant Limited: environmental permit
+      issued - EPR/WP3934AK/V004 — Variation notice: Lostock Sustainable Energy Plant
+      Limited'
+    url: https://assets.publishing.service.gov.uk/media/66cf0a180b53069322597beb/Variation_Notice_WP3934AK-V004.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-cw9-7nu-lostock-sustainable-energy-plant-limit-2
+    title: 'CW9 7NU, Lostock Sustainable Energy Plant Limited: environmental permit
+      issued - EPR/WP3934AK/V004 — Decision document: Lostock Sustainable Energy Plant
+      Limited'
+    url: https://assets.publishing.service.gov.uk/media/66cf0a390b53069322597bec/Decision_Document_WP3934AK-V004.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-ex5-1dr-exeter-waste-to-energy-limited-environ
+    title: 'EX5 1DR, Exeter Waste to Energy Limited: environmental permit issued - EPR/EP3105BJ/A001
+      — Permit:Exeter Waste to Energy Limited'
+    url: https://assets.publishing.service.gov.uk/media/60ed8e058fa8f50c7745822a/EPR-EP3105BJ_Permit_final.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-ex5-1dr-exeter-waste-to-energy-limited-environ-2
+    title: 'EX5 1DR, Exeter Waste to Energy Limited: environmental permit issued - EPR/EP3105BJ/A001
+      — Decision document:Exeter Waste to Energy Limited'
+    url: https://assets.publishing.service.gov.uk/media/60ed8e29e90e0764c9ee4699/EPR-EP3105BJ-A001_Decision_document_final.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-sk10-4tg-veolia-energy-utility-services-uk-plc
+    title: 'SK10 4TG, Veolia Energy & Utility Services UK PLC: permit partial surrender
+      issued - EPR/XP3139BM/S007 — Partial surrender notice: Veolia Energy & Utility
+      Services UK PLC'
+    url: https://assets.publishing.service.gov.uk/media/61015249e90e0703ac012c39/Partial_Surrender_Notice_XP3139BM-S007.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-depuration-rate-constant-growth-correction-and
+    title: 'Depuration rate constant: growth correction and use as an indicator of bioaccumulation
+      potential'
+    url: https://assets.publishing.service.gov.uk/media/5a7c778de5274a559005a103/LIT_7371_44228a.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-robustness-and-provision-against-accidental-ac
+    title: Robustness and provision against accidental actions
+    url: https://assets.publishing.service.gov.uk/media/5a75b835ed915d506ee80fb5/robustness_and_provision_against_accidental_actions.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-co-benefits-and-trade-offs-of-uk-climate-actio
+    title: Co-benefits and trade-offs of UK climate actions
+    url: https://assets.publishing.service.gov.uk/media/677d13168ef66f3f5ea3975b/cs-now-co-benefits-and-trade-offs-of-uk-climate-actions.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-tonnage-tax-minimum-training-commitment-overvi
+    title: 'Tonnage tax minimum training commitment: overview'
+    url: https://assets.publishing.service.gov.uk/media/5f27d4e2e90e071a54ff1a5a/Tonnage_tax_minimum_training_document.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-legal-obligations-issue-4-april-2016-to-august
+    title: 'Legal obligations: issue 4, April 2016 to August 2017'
+    url: https://assets.publishing.service.gov.uk/media/5a8032efed915d74e33f908d/FSR_Legal_Obligations_-_Issue_4.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-winter-economy-plan-winter-economy-plan-web
+    title: Winter Economy Plan — Winter Economy Plan (web)
+    url: https://assets.publishing.service.gov.uk/media/5f6c5405e90e076c1cec1953/CCS207_CCS0920237970-001_Winter_Economy_Plan_Web_Accessible.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-winter-economy-plan-winter-economy-plan-print
+    title: Winter Economy Plan — Winter Economy Plan (print)
+    url: https://assets.publishing.service.gov.uk/media/5f6c5471e90e076c1a8126d6/CCS207_CCS0920237970-001_Winter_Economy_Plan_print.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-consultation-on-reform-of-the-civil-service-co
+    title: Consultation on reform of the Civil Service Compensation Scheme 2017 — Consultation
+      document
+    url: https://assets.publishing.service.gov.uk/media/5a81c08540f0b62305b909ea/Consultation_CSCS_2017.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-consultation-on-reform-of-the-civil-service-co-2
+    title: Consultation on reform of the Civil Service Compensation Scheme 2017 — Supplementary
+      Consultation Document
+    url: https://assets.publishing.service.gov.uk/media/62f9fd3fe90e076cf27fcb7f/Supplementary_Consultation_Document.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-evaluation-report-colalife-operational-report-
+    title: 'Evaluation report: COLALIFE operational report Zambia'
+    url: https://assets.publishing.service.gov.uk/media/5a75ab97ed915d506ee80994/Evaluation-Cola-Life-Trial-Zambia.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-mod-byelaws-greater-london-northwood-headquart
+    title: 'MOD byelaws: Greater London — Northwood Headquarters Byelaws 2011: reviewed'
+    url: https://assets.publishing.service.gov.uk/media/5a79617aed915d0422067f6b/nothwood_byelaws.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2011-rural-urban-classification-for-local-auth
+    title: '2011 Rural Urban Classification for Local Authorities — Rural Urban Classification
+      Leaflet: The 2011 Rural-Urban Classification for Local Authority Districts in
+      England'
+    url: https://assets.publishing.service.gov.uk/media/5a81bb49ed915d74e33ffc8e/RUCLAD_leaflet_Jan2017.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2011-rural-urban-classification-for-local-auth-2
+    title: '2011 Rural Urban Classification for Local Authorities — 2011 Rural-Urban
+      Classification of Local Authority Districts in England: User Guide'
+    url: https://assets.publishing.service.gov.uk/media/5a80351ce5274a2e8ab4ecfb/RUCLAD2011_User_Guide__January_2017_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2011-rural-urban-classification-for-local-auth-3
+    title: '2011 Rural Urban Classification for Local Authorities — 2011 Rural-Urban
+      Classification of Local Authority Districts in England: Methodology'
+    url: https://assets.publishing.service.gov.uk/media/5a808109e5274a2e87dba2f7/RUCLAD_Method__Apr_2016_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2011-rural-urban-classification-for-local-auth-5
+    title: 2011 Rural Urban Classification for Local Authorities — Interim results identifying
+      rural hub towns to be used in the 2011 Local Authority Classification
+    url: https://assets.publishing.service.gov.uk/media/5a7d66dded915d2d2ac08bf4/2011_Rural-urban_statistical_classification_for_local_authorities__interim_results_-_hub_towns_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-updating-the-costs-of-housing-and-council-tax-
+    title: 'Updating the costs of Housing and Council Tax Benefit administration (RR705)
+      — Updating the costs of Housing and Council Tax Benefit administration (RR705):
+      report'
+    url: https://assets.publishing.service.gov.uk/media/5a7cdb77e5274a2c9a4848a2/rrep705.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-updating-the-costs-of-housing-and-council-tax--2
+    title: 'Updating the costs of Housing and Council Tax Benefit administration (RR705)
+      — Updating the costs of Housing and Council Tax Benefit administration (RR705):
+      summary'
+    url: https://assets.publishing.service.gov.uk/media/5a7a2e0be5274a319e7786a6/705summ.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-support-for-the-bereaved-what-to-do-when-someo-18
+    title: Support for the bereaved — What to do when someone dies during the COVID-19
+      pandemic (French language version)
+    url: https://assets.publishing.service.gov.uk/media/5ee74d05d3bf7f1eb96464a9/What_to_do_when_someone_dies_during_the_COVID-19_pandemic__French_language_version_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-support-for-the-bereaved-what-to-do-when-someo-19
+    title: Support for the bereaved — What to do when someone dies during the COVID-19
+      pandemic (French printable version)
+    url: https://assets.publishing.service.gov.uk/media/5ee74d17e90e0704346b07ae/What_to_do_when_someone_dies_during_the_COVID-19_pandemic__French_printable_version_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-support-for-the-bereaved-what-to-do-when-someo-24
+    title: Support for the bereaved — What to do when someone dies during the COVID-19
+      pandemic (Italian language version)
+    url: https://assets.publishing.service.gov.uk/media/5ee74dc4e90e070426b3a073/What_to_do_when_someone_dies_during_the_COVID-19_pandemic__Italian_language_version_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-support-for-the-bereaved-what-to-do-when-someo-25
+    title: Support for the bereaved — What to do when someone dies during the COVID-19
+      pandemic (Italian printable version)
+    url: https://assets.publishing.service.gov.uk/media/5ee74dd7e90e070425c4c529/What_to_do_when_someone_dies_during_the_COVID-19_pandemic__Italian_printable_version_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-london-2012-legacy-sustainable-procurement-for
+    title: 'London 2012 legacy: Sustainable procurement for construction projects —
+      Guide: Sustainable procurement for construction projects'
+    url: https://assets.publishing.service.gov.uk/media/5a75b8fbe5274a43682997a3/pb13977-sustainable-procurement-construction.PDF
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-proposals-on-the-treatment-of-aggregate-remove
+    title: 'Proposals on the treatment of aggregate removed during construction works
+      — Aggregates Levy: Proposals on the treatment of aggregate removed during construction
+      works - consultatio'
+    url: https://assets.publishing.service.gov.uk/media/6059dbe3e90e0724c592f72b/Aggregates_Levy_proposals_on_the_treatment_of_aggregate_removed_during_construction_works_-_consultation.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-proposals-on-the-treatment-of-aggregate-remove-2
+    title: Proposals on the treatment of aggregate removed during construction works
+      — Proposals on the treatment of aggregate removed during construction works -
+      summary of responses
+    url: https://assets.publishing.service.gov.uk/media/61a4eaaa8fa8f50385f7ec83/Proposals_on_the_treatment_of_aggregate_removed_during_construction_works_-_summary_of_responses.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-msn-1699-passenger-ship-construction-classes-i
+    title: 'MSN 1699 Passenger ship construction classes III to VI — MSN 1699 The merchant
+      shipping (passenger ship construction: ships of classes III to VI(A)) regulations
+      1998'
+    url: https://assets.publishing.service.gov.uk/media/5a7c72b3e5274a5590059eec/msn1699.pdf
+    source: gov_uk
+    license: open
+    topic: materials
     format: pdf
