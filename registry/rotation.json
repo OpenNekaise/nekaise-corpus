@@ -8,7 +8,7 @@
   },
   "find_archive": {
     "flag": "--page",
-    "next": 142,
+    "next": 143,
     "step": 1,
     "note": "pre-1929 public-domain texts; rows 30"
   },
@@ -20,13 +20,13 @@
   },
   "find_openaire": {
     "flag": "--page",
-    "next": 123,
+    "next": 124,
     "step": 1,
     "note": "vein nearly dry: p1=300, p2=109, p3=52, p4=22"
   },
   "find_nist": {
     "flag": "--page",
-    "next": 137,
+    "next": 138,
     "step": 1,
     "note": "Crossref DOI prefix 10.6028; ~2k on-topic docs"
   },
@@ -38,7 +38,7 @@
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "2012-W12",
+    "next": "2012-W11",
     "note": "weekly buckets 1900..now, walked backwards; mined: 2017-2020 W01, 1925-1940 W01s, 2015-W52..W08 (49 buckets). --countries flag NEW (default US): CN/EP/DE work, sitemap titles are English for all countries; CN buckets 2018-2020 W03 mined 07-10 (license=open for non-US)"
   },
   "find_purdue": {
@@ -54,13 +54,13 @@
   },
   "find_sdz": {
     "flag": "--page",
-    "next": 546,
+    "next": 551,
     "step": 5,
     "note": "sdz+hdz pages 1-5 mined 07-10 (165 kept), 6-10 mined 07-12 (35+72), 11-15 mined 07-12 (43 sdz; hdz p11 came back EMPTY — series ended earlier than the ~p25 estimate). sdz ends ~p16 — next run p16 likely the last"
   },
   "find_ademe": {
     "flag": "--page",
-    "next": 445,
+    "next": 449,
     "step": 4,
     "note": "run with --pages 4; categories: 3153-batiment (504 results, mined p1-12), 3149-energies (p1-8), 3509-urbanisme (p1-8); all three still yielding ~80-95/round on 07-12; license=open (non-commercial reuse w/ attribution)"
   },
@@ -72,60 +72,60 @@
   },
   "find_japan": {
     "flag": "--start",
-    "next": 1382,
+    "next": 1376,
     "step": -6,
     "note": "nilim 2012-2025 mined (floor 2012); bri reports 139-158 done (new numbers appear at top); --series data (建築研究資料, data.html) walked No.1-217 on 07-17 (+141 appended, ~105 live folders) — re-walk the top numbers occasionally for new releases"
   },
   "find_wiki": {
     "flag": "--depth",
-    "next": 92,
+    "next": 93,
     "step": 1,
     "note": "category mode: depth 1 x cap 250 mined 07-09; depth 2 x cap 400 drained 07-12 (800 capped run + 825 uncapped run < --max 1500 = dry) — advanced to depth 3; expect heavier drift at d3, the gate handles it; langlinks mode saturated; --books zh done. Depth 21 retained after multiple language APIs exhausted 429 retries on 2026-07-31; finder now exits nonzero on incomplete category/book/langlink calls."
   },
   "find_patents_cn": {
     "flag": "--bucket",
-    "next": "2016-W44",
+    "next": "2016-W43",
     "note": "CN patents (Chinese full text; license=open). Same weekly-bucket walk as find_patents but separate pointer; marathon runs it with --countries CN. Mined: 2018/2019/2020-W03, 2019-W46+W45 (+800 on 07-12)."
   },
   "find_jrc": {
     "flag": "--page",
-    "next": 94,
+    "next": 95,
     "step": 1,
     "note": "JRC Publications Repository via OpenAIRE datasource filter -> handle page -> OP-DOI (10.2760 etc, cc-by) + bitstream PDF; run with --rows 40 --max 250. First 15 QUERIES dry at p5; second-wave QUERIES added 07-17 (+61 at p1 rows40) — pointer restarted at p2 for the widened set. Page 23 retained after a handle connection reset on 2026-07-31; finder now exits nonzero on incomplete OpenAIRE or handle requests."
   },
   "find_govuk": {
     "flag": "--page",
-    "next": 125,
+    "next": 126,
     "step": 1,
     "note": "gov.uk Search API (q + filter_content_store_document_type multi-value OR) -> Content API attachments -> assets.publishing.service.gov.uk PDFs; OGL v3 = open; run with --rows 20 --max 250. Wave-1 (18 queries) mined p1-27, thinning (101/250 pruned at p27); wave-2 +14 UK-policy queries added 2026-07-20, pointer RESET to p1 (dedup makes re-walk safe)"
   },
   "find_worldbank": {
     "flag": "--os",
-    "next": 42400,
+    "next": 42800,
     "step": 400,
     "note": "World Bank WDS API. Q SWITCHED 07-24 to 'building commissioning' (4,308 records; os0-400 mined 07-23 +174) — main q 'building energy efficiency' thinned to +112 at os16700 (os0-16700 mined). Run --q \"building commissioning\" --rows 50 --pages 8 --max 250. Next q candidates when thin: 'district heating' / 'building code' / 'thermal insulation' / 'green building construction' (reset next=0 per q). cc-by."
   },
   "find_jstage": {
     "flag": "--start",
-    "next": 21801,
+    "next": 22001,
     "step": 200,
     "note": "AIJ via J-STAGE API with pubyearfrom=2014 (pre-2014 PDFs lack ToUnicode -> mojibake; API sort is NOT chronological — backward-walk assumption was wrong, kouzou tail was 1999). Filtered totals: kouzou 2,129 (NOW, --series kouzou, forward from 1); kankyo mined unfiltered 07-23 (+424 net) — RE-SWEEP with filter after kouzou (dedup-safe); then keikaku/gijutsu (probe filtered totals). Stop a series at >50% prune."
   },
   "find_boverket": {
     "flag": "--page",
-    "next": 221,
+    "next": 223,
     "step": 2,
     "note": "Swedish building authority, ~35 listing pages x ~10 pubs; run with --pages 2 --max 40. Crawl-delay 10s (finder sleeps + build HOST_DELAY). NEW 2026-07-23, Nordic-gap vein."
   },
   "find_iea": {
     "flag": "--offset",
-    "next": 4240,
+    "next": 4280,
     "step": 40,
     "note": "NEW VEIN 2026-07-24: iea.org analysis reports, CC BY 4.0 only (licence-gated per page), blob PDFs. KEY_RE \\b fix same day (city matched electriCITY; 36 power-sector entries purged+blocklisted): universe now 175 slugs, offsets 0-40 mined under the FIXED regex equivalence. Run with --limit 40; EBC/INIVE annexes remain NO-GO (different channel, ARR)"
   },
   "find_scielo": {
     "flag": "--offset",
-    "next": 2600,
+    "next": 2625,
     "step": 25,
     "note": "NEW VEIN 2026-07-28: SciELO BRAZIL AEC journals via the ArticleMeta API — the biggest Portuguese built-environment vein on the open web. 11 journals (Ambiente Construído, IBRACON Estruturas e Materiais, Soils and Rocks, LAJSS, urbe, Cadernos Metrópole, RBRH, ...) picked by WoS subject category from a full 16-collection scan (workspace/scan_scielo_journals.py), CC-BY/BY-SA ONLY — NC and ND journals deliberately excluded; ~11.3k articles. PDF URL comes from fulltexts.pdf, else DERIVED from the v702 markup path — the acronym segment must be lowercased ('MR' -> /pdf/mr/) but the filename must NOT be. /j/<acron>/a/<pid>?format=pdf works ONLY on scielo.br, so the legacy /pdf/ path is what the finder builds. ROBOTS PER NATIONAL HOST, THEY DISAGREE: .br Allow /, but .cl and .org.pe are Disallow / (NO-GO, 150 entries reverted this round); .org.co + .edu.uy unreachable from this box; .org.ve does not resolve. Offset 0 mined 07-28; run --per 25 --max 400."
   }
