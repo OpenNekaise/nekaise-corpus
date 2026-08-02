@@ -72637,14 +72637,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-energy-trends-september-2022-special-feature-a-7
-    title: 'Energy Trends: September 2022, special feature articles — Proposed changes
-      to Energy Trends tables 3.6 and 3.11'
-    url: https://assets.publishing.service.gov.uk/media/6334386fe90e0772e1c7b83b/Proposed_changes_to_Energy_Trends_tables_3.6_and_3.11.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-energy-trends-june-2023-special-feature-articl
     title: 'Energy Trends: June 2023, special feature article — UK Electricity capacity
       and generation by fuel between 1920 and 2020'
@@ -141027,4 +141019,836 @@ sources:
     source: gov_uk
     license: open
     topic: materials
+    format: pdf
+  - id: guk-fixed-costs-and-remuneration-of-professional-d
+    title: Fixed costs and remuneration of professional deputies — Fixed costs and remuneration
+      of professional and public authority court appointed deputies
+    url: https://assets.publishing.service.gov.uk/media/6892fdc0486754ec288784aa/Guidance_on_fixed_costs_08.25.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-railway-closures-guidance-railways-closures-gu
+    title: Railway closures guidance — Railways closures guidance
+    url: https://assets.publishing.service.gov.uk/media/5a7cb5aced915d63cc65c60a/railwaysclosuresguidance.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-perceptions-of-vocational-and-technical-qualif-5
+    title: 'Perceptions of vocational and technical qualifications - wave 5 — Background
+      Information for: Perceptions of Vocational and Technical Qualifications in England
+      – wave 5'
+    url: https://assets.publishing.service.gov.uk/media/62c556268fa8f54e8972bd90/Background_notes_for_Perceptions_of_Vocational_and_Technical_Qualifications_in_England_-_wave_5.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-spi-b-policing-and-security-sub-group-assessin
+    title: 'SPI-B Policing and Security Sub-Group: Assessing the value of an enforcement-based
+      approach to COVID-19, 21 September 2020'
+    url: https://assets.publishing.service.gov.uk/media/61eab38b8fa8f505893f1dec/SPI-B_PS_Assessing_the_value_of_an_enforcement-based_approach_21_September_2020.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-mytholmroyd-flood-alleviation-scheme-action-pl
+    title: Mytholmroyd Flood Alleviation Scheme Action Plan
+    url: https://assets.publishing.service.gov.uk/media/5a8008daed915d74e622c152/Mytholmroyd_Action_Plan_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-mytholmroyd-flood-alleviation-scheme-action-pl-2
+    title: Mytholmroyd Flood Alleviation Scheme Action Plan — Mytholmroyd Flood Alleviation
+      Scheme - Your questions answered
+    url: https://assets.publishing.service.gov.uk/media/5a80173ced915d74e622c692/Mytholmroyd_Action_Plan-questions_answers.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-introducing-a-compensation-scheme-for-suspende
+    title: Introducing a compensation scheme for suspended driving instructors — Comments
+    url: https://assets.publishing.service.gov.uk/media/5a74af7a40f0b619c86599ab/dsa-2010-01-comments.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-introducing-a-compensation-scheme-for-suspende-2
+    title: Introducing a compensation scheme for suspended driving instructors — Comments
+      on proposals
+    url: https://assets.publishing.service.gov.uk/media/5a79949540f0b642860d9314/dsa-2010-01-response-proposals.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-introducing-a-compensation-scheme-for-suspende-3
+    title: Introducing a compensation scheme for suspended driving instructors — Consultation
+      paper
+    url: https://assets.publishing.service.gov.uk/media/5a797a74e5274a3864fd75b7/dsa-2010-01-consultation-paper.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-introducing-a-compensation-scheme-for-suspende-4
+    title: Introducing a compensation scheme for suspended driving instructors — Impact
+      assessment
+    url: https://assets.publishing.service.gov.uk/media/5a75a884e5274a4368298f7d/dsa-2010-01-ia.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-introducing-a-compensation-scheme-for-suspende-5
+    title: Introducing a compensation scheme for suspended driving instructors — Response
+      to consultation report
+    url: https://assets.publishing.service.gov.uk/media/5a78fe4640f0b676f4a7d052/dsa-2010-01-response.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-noise-amelioration-scheme-military-raf-conings
+    title: 'Noise Amelioration Scheme (Military): RAF Coningsby — RAF Coningsby survey
+      report'
+    url: https://assets.publishing.service.gov.uk/media/5a7f494fed915d74e622988b/20141216_Coningsby_NASM_Report_OEM_81_14.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-eu-settlement-scheme-statistics-january-2020
+    title: EU Settlement Scheme statistics, January 2020
+    url: https://assets.publishing.service.gov.uk/media/5e44089fed915d4ffed119ab/eu-settlement-scheme-statistics-january-2020.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-desg-graduate-scheme-engineering-system-anchor
+    title: 'DESG graduate scheme: engineering system anchors — Making your engineering
+      system anchor choice (revised October 2014)'
+    url: https://assets.publishing.service.gov.uk/media/5a7d651aed915d269ba8a662/making_your_esa_choiceV2_1-U.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-15b-severn-tidal-power-annex-b-new-site-design
+    title: '15b. Severn tidal power: annex B - new site designation — Annex B - new
+      site designation'
+    url: https://assets.publishing.service.gov.uk/media/5a74bb2ced915d502d6ca890/15b._Annex_B_New_Site_Designation.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-virtual-branches-at-unison-a-union-modernisati
+    title: 'Virtual branches at Unison: a Union Modernisation Fund project — Unison:
+      virtual branches.'
+    url: https://assets.publishing.service.gov.uk/media/5a79c09ce5274a18ba50e919/10-1253-umf-2-unison-virtual-branches.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-14-severn-tidal-power-compensation-measures-fo
+    title: '14. Severn tidal power: compensation measures for impacts on habitats —
+      Equal value: can a major Severn tidal power scheme be compatible with enhancing
+      the Natura 2000 biodiversity'
+    url: https://assets.publishing.service.gov.uk/media/5a748548ed915d0e8bf18f1d/14._Compensation_-_Equal_Value.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-national-risk-assessment-on-security-of-gas
+    title: UK national risk assessment on security of gas supply 2022
+    url: https://assets.publishing.service.gov.uk/media/633d1cf0d3bf7f1882807a91/uk-national-risk-assessment-on-security-of-gas-supply-2022.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      28 December 2025 week 52'
+    url: https://assets.publishing.service.gov.uk/media/695512e153866d6cdff21a51/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-52.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-2
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      21 December 2025 week 51'
+    url: https://assets.publishing.service.gov.uk/media/694bcef0ecb1863cca9d30e8/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-51.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-3
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      14 December 2025 week 50'
+    url: https://assets.publishing.service.gov.uk/media/6942a64b8f4636fa2c547da2/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-50.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-4
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      7 December 2025 week 49'
+    url: https://assets.publishing.service.gov.uk/media/69398cdb6a12691d48491d4c/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-49.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-5
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      30 November 2025 week 48'
+    url: https://assets.publishing.service.gov.uk/media/693053400cf0b7e681ff41af/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-48.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-6
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      23 November 2025 week 47'
+    url: https://assets.publishing.service.gov.uk/media/692710559c1eda2cdf0340d8/UKHSA-emergency-department-bulletin-2025-week-47.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-7
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      16 November 2025 week 46'
+    url: https://assets.publishing.service.gov.uk/media/691edba0ee5aaf516084d41f/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-46.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-8
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      9 November 2025 week 45'
+    url: https://assets.publishing.service.gov.uk/media/6914c144493305b49ce6e6e4/UKHSA-emergency-department-bulletin-2025-week-45.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-9
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      2 November 2025 week 44'
+    url: https://assets.publishing.service.gov.uk/media/690b403514b040dfe829230d/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-44.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-10
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      30 October 2025 week 43'
+    url: https://assets.publishing.service.gov.uk/media/690200d2bdb1ef2270a1d0e8/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-43.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-11
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      23 October 2025 week 42'
+    url: https://assets.publishing.service.gov.uk/media/68f8fdec6a52e8a2726dc2f3/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-42.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-12
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      16 October 2025 week 41'
+    url: https://assets.publishing.service.gov.uk/media/68efa2c4f159f887526bbebb/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-41.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-13
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      9 October 2025 week 40'
+    url: https://assets.publishing.service.gov.uk/media/68e6778aef1c2f72bc1e4f33/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-40.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-14
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      2 October 2025 week 39'
+    url: https://assets.publishing.service.gov.uk/media/68dd51a649e17d00a56ffcb7/UKHSA-emergency-department-bulletin-2025-week-39.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-15
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      25 September 2025 week 38'
+    url: https://assets.publishing.service.gov.uk/media/68d41917ca266424b221b2bb/UKHSA-emergency-department-bulletin-2025-week-38.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-16
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      18 September 2025 week 37'
+    url: https://assets.publishing.service.gov.uk/media/68cad4f905e625519a6ca014/UKHSA-emergency-department-bulletin-2025-week-37.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-17
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      11 September 2025 week 36'
+    url: https://assets.publishing.service.gov.uk/media/68c1572d838e7712ea2bfdf5/UKHSA-emergency-department-bulletin-2025-week-36.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-18
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      4 September 2025 week 35'
+    url: https://assets.publishing.service.gov.uk/media/68b962ccd723ba6f74dba9b5/UKHSA-emergency-department-bulletin-2025-week-35.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-19
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      28 August 2025 week 34'
+    url: https://assets.publishing.service.gov.uk/media/68af08749e1cebdd2c96a20a/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-34.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-20
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      21 August 2025 week 33'
+    url: https://assets.publishing.service.gov.uk/media/68a5ac9f8e2cb87576994d2f/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-33.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-21
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      14 August 2025 week 32'
+    url: https://assets.publishing.service.gov.uk/media/689c9fab1c63de6de5bb1295/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-32.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-22
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      7 August 2025 week 31'
+    url: https://assets.publishing.service.gov.uk/media/6893789a89faa662f1e8967a/UKHSA-emergency-department-bulletin-2025-week-31.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-23
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      31 July 2025 week 30'
+    url: https://assets.publishing.service.gov.uk/media/688c8644dc6688ed508782d9/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-30.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-24
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      24 July 2025 week 29'
+    url: https://assets.publishing.service.gov.uk/media/6880f88df47abf78ca1d359b/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-29.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-25
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      17 July 2025 week 28'
+    url: https://assets.publishing.service.gov.uk/media/6877b58e2bad77c3dae4dcbe/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-28.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-26
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      10 July 2025 week 27'
+    url: https://assets.publishing.service.gov.uk/media/686e920d81dd8f70f5de3d5d/UKHSA-emergency-department-bulletin-2025-week-27.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-27
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      3 July 2025 week 26'
+    url: https://assets.publishing.service.gov.uk/media/686551316569be0acf74db77/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-26.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-28
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      26 June 2025 week 25'
+    url: https://assets.publishing.service.gov.uk/media/685c254dc779b80d9a0e1041/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-25.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-29
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      19 June 2025 week 24'
+    url: https://assets.publishing.service.gov.uk/media/6853d8a9f812712f845814d3/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-24.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-30
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      12 June 2025 week 23'
+    url: https://assets.publishing.service.gov.uk/media/68498a93b575706ea223d229/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-23.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-31
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:  5
+      June 2025 week 22'
+    url: https://assets.publishing.service.gov.uk/media/6840505c1d85c6606009cd2c/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-22.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-32
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      29 May 2025 week 21'
+    url: https://assets.publishing.service.gov.uk/media/6837265adc6ebc5eca0cbb16/UKHSA-emergency-department-bulletin-2025-week-21.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-33
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      22 May 2025 week 20'
+    url: https://assets.publishing.service.gov.uk/media/682dee4ce9440506ee953934/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-20.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-34
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      15 May 2025 week 19'
+    url: https://assets.publishing.service.gov.uk/media/68249bf7ab96d4ed0b262f12/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-19.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-35
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      8 May 2025 week 18'
+    url: https://assets.publishing.service.gov.uk/media/681b79d1e26cd2f713d8704c/UKHSA-emergency-department-bulletin-2025-week-18.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-36
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      1 May 2025 week 17'
+    url: https://assets.publishing.service.gov.uk/media/68134e77ee9d78cbe6011804/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-17.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-37
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      24 April 2025 week 16'
+    url: https://assets.publishing.service.gov.uk/media/6808dd5e92d50839757a620f/UKHSA-emergency-department-bulletin-2025-week-16.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-38
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      17 April 2025 week 15'
+    url: https://assets.publishing.service.gov.uk/media/67ffbc77694d57c6b1cf8e20/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-15.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-39
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      10 April 2025 week 14'
+    url: https://assets.publishing.service.gov.uk/media/67f67646555773bbf109e222/UKHSA-emergency-department-bulletin-2025-week-14.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-40
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      3 April 2025 week 13'
+    url: https://assets.publishing.service.gov.uk/media/67ed360c199d1cd55b48c675/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-13.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-41
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      27 March 2025 week 12'
+    url: https://assets.publishing.service.gov.uk/media/67e3f1f94038ca2e94411fcd/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-12.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-42
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      20 March 2025 week 11'
+    url: https://assets.publishing.service.gov.uk/media/67dadabd3306a7b486d70a93/UKHSA-emergency-department-bulletin-2025-week-11.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-43
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      13 March 2025 week 10'
+    url: https://assets.publishing.service.gov.uk/media/67d2a2a14702aacd2251cb6f/UKHSA-emergency-department-bulletin-2025-week-10.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-44
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      6 March 2025 week 9'
+    url: https://assets.publishing.service.gov.uk/media/67c993bb75d7505462fc6642/UKHSA_EDSSSBulletin2025wk09.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-45
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      27 February 2025 week 8'
+    url: https://assets.publishing.service.gov.uk/media/67c0414268a61757838d2036/UKHSA-emergency-department-syndromic-surveillance-week-8-2025.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-46
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      20 February 2025 week 7'
+    url: https://assets.publishing.service.gov.uk/media/67b5fcb4ae5d020b0914bbd8/UKHSA-emergency-department-bulletin-2025-week-7.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-47
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      13 February 2025 week 6'
+    url: https://assets.publishing.service.gov.uk/media/67accb1f37726e9056af60b8/UKHSA-emergency-department-bulletin-2025-week-6.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-48
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      6 February 2025 week 5'
+    url: https://assets.publishing.service.gov.uk/media/67a36e40039d059a1fe5feee/UKHSA-emergency-department-bulletin-week-5-2025.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-49
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      30 January 2025 week 4'
+    url: https://assets.publishing.service.gov.uk/media/679a3c5b6907bee181d3146f/UKHSA-emergency-department-bulletin-2025-week-4.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-50
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      23 January 2025 week 3'
+    url: https://assets.publishing.service.gov.uk/media/6790c207119e3470fd1e2648/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-3.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-51
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      16 January 2025 week 2'
+    url: https://assets.publishing.service.gov.uk/media/6787a4575a1adfc79556df26/UKHSA-emergency-department-syndromic-surveillance-bulletin-2025-week-2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-emergency-department-weekly-bulletins-for-2025-52
+    title: 'Emergency department: weekly bulletins for 2025 — Emergency department bulletin:
+      9 January 2025 week 1'
+    url: https://assets.publishing.service.gov.uk/media/677eb5a722a085c5ff5c04ea/UKHSA_emergency_department_bulletin_2025_week_1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-statutory-guidance-for-local-duties-on-c
+    title: 'Draft statutory guidance for local duties on child poverty: response — Report
+      on and response to formal consultation on draft statutory guidance for local duties
+      on child poverty'
+    url: https://assets.publishing.service.gov.uk/media/5a7eafc640f0b62305b82856/Draft_statutory_guidance_for_local_duties_on_child_poverty_-_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2022-special-feature-a-6
+    title: 'Energy Trends: September 2022, special feature article - Proposed changes
+      to Energy Trends tables 3.6 and 3.11'
+    url: https://assets.publishing.service.gov.uk/media/633433d68fa8f50650100a1b/Proposed_changes_to_Energy_Trends_tables_3.6_and_3.11.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-dn21-1ay-igas-energy-production-limited-enviro
+    title: 'DN21 1AY, IGas Energy Production Limited: environmental permit issued —
+      Variation notice: IGas Energy Production Limited, EPR/RP3937YT/V002'
+    url: https://assets.publishing.service.gov.uk/media/5c93450140f0b633f24d047b/Variation_notice.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-dn21-1ay-igas-energy-production-limited-enviro-2
+    title: 'DN21 1AY, IGas Energy Production Limited: environmental permit issued —
+      Decision document: IGas Energy Production Limited, EPR/RP3937YT/V002'
+    url: https://assets.publishing.service.gov.uk/media/5c8f5a7fe5274a4c369eeacf/EPR.RP3937YT.V002_Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-electricity-generation-licence-requirement-pro
+    title: 'Electricity generation licence requirement: proposals for exemptions for
+      Ferrybridge and Wheelabrator Kemsley stations — Exemption from the requirement
+      for a licence to generate el'
+    url: https://assets.publishing.service.gov.uk/media/5b51fda8e5274a3fe0da32d6/Exemption_notice.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-electricity-licence-exemptions-for-clocaenog-f
+    title: 'Electricity licence exemptions for Clocaenog Forest and Blackcraig windfarms
+      — Exemption from the requirement for a licence to generate electricity: Clocaenog
+      Forest and Blackcraig'
+    url: https://assets.publishing.service.gov.uk/media/5c9dfdd940f0b633fa7161d8/exemption-from-the-requirement-for-a-licence-to-generate-electricity-notice-2019.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-sub-national-total-final-energy-consumption-st
+    title: 'Sub-national total final energy consumption statistics: factsheet — Sep
+      2015 - Sub-national total fuel consumption factsheet FINAL (publication version)'
+    url: https://assets.publishing.service.gov.uk/media/5a74aebce5274a5294069531/Sep_2015_-_Sub-national_total_fuel_consumption_factsheet_FINAL__publication_version_.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-trends-march-2014-special-feature-artic-2
+    title: 'Energy Trends: March 2014, special feature articles - Domestic energy bills
+      in 2013: The impact of variable consumption'
+    url: https://assets.publishing.service.gov.uk/media/5a7c8ae1e5274a0bb7cb7baa/Domestic_energy_bills_in_2013.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-raising-the-participation-age-local-delivery-p
+    title: 'Raising the participation age local delivery projects: case studies — The
+      evaluation of the raising the participation age locally-led delivery projects
+      (RPA) 2011 to 2012: case stu'
+    url: https://assets.publishing.service.gov.uk/media/5a74e810e5274a3cb2868225/DfE-RR236.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-raising-the-participation-age-local-delivery-p-2
+    title: 'Raising the participation age local delivery projects: case studies — The
+      evaluation of the raising the participation age locally-led delivery projects
+      (RPA) 2011 to 2012: survey f'
+    url: https://assets.publishing.service.gov.uk/media/5a7a18c140f0b66a2fbffddf/DfE-RR236b.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-raising-the-participation-age-local-delivery-p-3
+    title: 'Raising the participation age local delivery projects: case studies — The
+      evaluation of the raising the participation age locally-led delivery projects
+      (RPA) 2011 to 2012: survey a'
+    url: https://assets.publishing.service.gov.uk/media/5a7a3f2be5274a319e778e59/DFE-RB236.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-housing-supply-indicators-of-new-supply-englan-16
+    title: 'Housing supply: indicators of new supply, England: January to March 2021'
+    url: https://assets.publishing.service.gov.uk/media/60db1287e90e077171968092/Housing_Supply_Indicators_Release_March_2021.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-housing-supply-indicators-of-new-supply-englan-17
+    title: 'Housing supply: indicators of new supply, England: January to March 2021
+      — Housing supply: indicators of new supply, England - technical notes'
+    url: https://assets.publishing.service.gov.uk/media/60db15abd3bf7f7c34dff4da/Housing_Supply_Indicators_technical_notes.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-making-tax-digital-reforms-affecting-businesse
+    title: Making Tax Digital reforms affecting businesses — The Income Tax (Digital
+      Requirement) regulations
+    url: https://assets.publishing.service.gov.uk/media/5a81e5e5e5274a2e87dc010e/Making_Tax_Digital_Regulations_YYYY__030817_.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-consultation-on-the-merchant-shipping-epirb-an-4
+    title: Consultation on the merchant shipping (EPIRB and PLB registration) regulations
+      2025 — ANNEX A - DRAFT - Merchant Shipping (EPIRB and PLB Registration) (Radiocommunications)
+      (Amendm
+    url: https://assets.publishing.service.gov.uk/media/67502869b9847955e1632a14/ANNEX_A_-_DRAFT_-_Merchant_Shipping__EPIRB_and_PLB_Registration___Radiocommunications___Amendment__Regulations_2025__MP010824_.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-consultation-on-the-merchant-shipping-epirb-an-7
+    title: Consultation on the merchant shipping (EPIRB and PLB registration) regulations
+      2025 — ANNEX D - DRAFT - EPIRBs DMOA - BRU cleared
+    url: https://assets.publishing.service.gov.uk/media/675028bab9847955e1632a19/ANNEX_D_-_DRAFT_-_EPIRBs_DMOA_-_BRU_cleared.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-mgn-698-m-the-carriage-of-military-and-commerc
+    title: 'MGN 698 (M): The carriage of military and commercial explosives'
+    url: https://assets.publishing.service.gov.uk/media/665039e78f4cb8fef9f64f58/MGN698__1_.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-consultation-on-changes-to-the-intervention-en
+    title: Consultation on changes to the intervention, enforcement and use of powers
+      guidance — Consultation on changes to the guidance on the Regulator's approach
+      to intervention, enforceme
+    url: https://assets.publishing.service.gov.uk/media/5d0b8fd7ed915d0936ba5fcd/Consultation_on_changes_to_the_guidance_on_the_Regulator_s_approach_to_intervention__enforcement_and_use_of_powers.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-consultation-on-changes-to-the-intervention-en-3
+    title: 'Consultation on changes to the intervention, enforcement and use of powers
+      guidance — Decision Statement: Guidance on the regulator’s approach to intervention,
+      enforcement and use '
+    url: https://assets.publishing.service.gov.uk/media/5df2507240f0b609574bc9ec/Decision_Statement_Guidance_on_the_regulator_s_approach_to_intervention__enforcement_and_use_of_powers_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-roadstone-coating-process-guidance-note-3-15
+    title: 'Roadstone coating: process guidance note 3/15'
+    url: https://assets.publishing.service.gov.uk/media/697b941d2ff8d10a830d5d7a/Statutory_guidance_for_roadstone_coating.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-manufacture-of-heavy-clay-goods-and-refractory
+    title: 'Manufacture of heavy clay goods and refractory goods: process guidance note
+      3/02 — Manufacturing heavy clay goods and refractory goods: process guidance note
+      3/02 (12)'
+    url: https://assets.publishing.service.gov.uk/media/5a756954ed915d6faf2b2c72/manufacture-of-heavy-clay-goods-and-refractory-good-process-guidance-note-3-02__12_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-english-housing-survey-2014-to-2015-technical-
+    title: 'English Housing Survey 2014 to 2015: technical report'
+    url: https://assets.publishing.service.gov.uk/media/5a818befed915d74e6232da7/2014-15_EHS_Technical_Report_-_all_chapters_and_annexes.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-english-housing-survey-2014-to-2015-technical--2
+    title: 'English Housing Survey 2014 to 2015: technical report — Chapter 1: sampling'
+    url: https://assets.publishing.service.gov.uk/media/5a80ddade5274a2e87dbc412/2014-15_EHS_Technical_Report_-_chapter_1.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-english-housing-survey-2014-to-2015-technical--3
+    title: 'English Housing Survey 2014 to 2015: technical report — Chapter 2: questionnaires'
+    url: https://assets.publishing.service.gov.uk/media/5a808dd0ed915d74e33fb166/2014-15_EHS_Technical_Report_-_chapter_2.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-english-housing-survey-2014-to-2015-technical--4
+    title: 'English Housing Survey 2014 to 2015: technical report — Chapter 3: fieldwork'
+    url: https://assets.publishing.service.gov.uk/media/5a8040d140f0b623026926c2/2014-15_EHS_Technical_Report_-_chapter_3.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-english-housing-survey-2014-to-2015-technical--5
+    title: 'English Housing Survey 2014 to 2015: technical report — Chapter 4: response
+      rates'
+    url: https://assets.publishing.service.gov.uk/media/5a80c7ca40f0b6230269575b/2014-15_EHS_Technical_Report_-_chapter_4.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-english-housing-survey-2014-to-2015-technical--6
+    title: 'English Housing Survey 2014 to 2015: technical report — Chapter 5: data
+      processing'
+    url: https://assets.publishing.service.gov.uk/media/5a81b0a740f0b62302698a94/2014-15_EHS_Technical_Report_-_chapter_5.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-english-housing-survey-2014-to-2015-technical--7
+    title: 'English Housing Survey 2014 to 2015: technical report — Chapter 6: weighting'
+    url: https://assets.publishing.service.gov.uk/media/5a80abaee5274a2e8ab517eb/2014-15_EHS_Technical_Report_-_chapter_6.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-english-housing-survey-2014-to-2015-technical--8
+    title: 'English Housing Survey 2014 to 2015: technical report — Chapter 7: standard
+      errors'
+    url: https://assets.publishing.service.gov.uk/media/5a80abd840f0b62302694d8f/2014-15_EHS_Technical_Report_-_chapter_7.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-carbon-capture-usage-and-storage-ccus-deployme-2
+    title: 'Carbon capture, usage and storage (CCUS) deployment: Track-1 expansion:  HyNet
+      cluster — CCUS Track-1 expansion: HyNet application guidance'
+    url: https://assets.publishing.service.gov.uk/media/659e8ba6e96df5000df843e0/ccus-track-1-expansion-hynet-application-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-carbon-capture-usage-and-storage-ccus-deployme-3
+    title: 'Carbon capture, usage and storage (CCUS) deployment: Track-1 expansion:  HyNet
+      cluster — Environment Agency (EA) Guidance'
+    url: https://assets.publishing.service.gov.uk/media/65787334095987000d95def1/annex-e-environment-agency-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-kings-college-london-construction-site-dust-mo
+    title: Kings College London construction site dust monitoring study — Testing PM10
+      trigger values at construction sites
+    url: https://assets.publishing.service.gov.uk/media/5a750e9640f0b6360e473009/construction_site_dust_monitoring_report.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-mk44-1fd-b-w-waste-management-services-limited
+    title: 'MK44 1FD, B & W Waste Management Services Limited: environmental permit
+      issued EPR/KP3196NL/V004 — Permit: B & W Waste Management Services Limited'
+    url: https://assets.publishing.service.gov.uk/media/67c0358da0f0c95a498d2022/Application_Variation_V004_Notice_Issued-_20022025_.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-mk44-1fd-b-w-waste-management-services-limited-2
+    title: 'MK44 1FD, B & W Waste Management Services Limited: environmental permit
+      issued EPR/KP3196NL/V004 — Decision Document: B & W Waste Management Services
+      Limited'
+    url: https://assets.publishing.service.gov.uk/media/67c0359d72e83aab48866b76/Application_Variation_V004_Decision_Document_-_Word-_20022025_.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
     format: pdf
