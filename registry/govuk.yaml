@@ -74314,14 +74314,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-energy-trends-september-2020-special-feature-a-7
-    title: 'Energy Trends: September 2020, special feature articles — Supply and demand
-      of transport fuels during COVID-19'
-    url: https://assets.publishing.service.gov.uk/media/5f6b336ee90e077ca1a2ca08/Supply_and_demand_of_transport_fuels_during_COVID-19.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-environment-agency-business-impact-target-non-
     title: 'Environment Agency: business impact target — Non-qualifying regulatory provisions
       under the business impact target: 2015 to 2017'
@@ -134459,4 +134451,587 @@ sources:
     source: gov_uk
     license: open
     topic: materials
+    format: pdf
+  - id: guk-planning-inspectorate-statistical-release-21-d
+    title: Planning Inspectorate statistical release 21 December 2023
+    url: https://assets.publishing.service.gov.uk/media/6581be2ffc07f300128d44da/Planning_Inspectorate_Statistical_Release_December_2023.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-planning-inspectorate-statistical-release-21-d-2
+    title: Planning Inspectorate statistical release 21 December 2023 — Monthly official
+      statistics - background quality report 21 December 2023
+    url: https://assets.publishing.service.gov.uk/media/6581be8bfc07f300128d44dc/Planning_Inspectorate_Stats_Release_December_2023_BQR.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-criminal-court-statistics-quarterly-april-to-j-2
+    title: 'Criminal court statistics quarterly: April to June 2021'
+    url: https://assets.publishing.service.gov.uk/media/61545339d3bf7f55f947941a/ccsq_bulletin_apr_jun_2021.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-criminal-court-statistics-quarterly-april-to-j-5
+    title: 'Criminal court statistics quarterly: April to June 2021 — Criminal court
+      statistics quarterly: data quality statement'
+    url: https://assets.publishing.service.gov.uk/media/6154548cd3bf7f5604d83af8/ccsq_data_quality_statement.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-homicides-firearm-offences-and-intimate-violen-2
+    title: 'Homicides, firearm offences and intimate violence 2010 to 2011: supplementary
+      volume 2 to crime in England and Wales 2010 to 2011 — Statistical News Release
+      Homicides, Firearm Offe'
+    url: https://assets.publishing.service.gov.uk/media/5a7b1726e5274a319e77cf44/hosb0212snr.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-allegations-of-child-sexual-abuse-in-rotherham
+    title: 'Allegations of child sexual abuse in Rotherham: Wanless and Whittam QC review
+      — The Rotherham Independent Review'
+    url: https://assets.publishing.service.gov.uk/media/5b4dc39e40f0b61875c8383e/CCS207_CCS0318259762-1_The_Rotherham_Review_Part1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-research-and-development-in-forensic-science-r
+    title: 'Research and development in forensic science: review — Research and development
+      in forensic science: a review'
+    url: https://assets.publishing.service.gov.uk/media/5a75a634e5274a545822d230/forensic-science-review-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-disabled-facilities-grant-and-other-adaptation
+    title: 'Disabled Facilities Grant and other adaptations: external review — Disabled
+      Facilities Grant (DFG) and other adaptations: external review - summary'
+    url: https://assets.publishing.service.gov.uk/media/5c0e443440f0b60c2c1c78b7/DFG_Review_2018_Summary.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-a-short-inspection-of-reporting-events-at-beck
+    title: A short inspection of reporting events at Becket House Immigration Reporting
+      Centre based on onsite observations. October 2021
+    url: https://assets.publishing.service.gov.uk/media/616fd4cfd3bf7f5606fccfc1/A_short_inspection_of_reporting_events_at_Becket_House_Immigration_Reporting_Centre_based_on_onsite_observations_October_2021.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-defined-ambition-pensions-consumer-perspective-2
+    title: 'Defined Ambition pensions: consumer perspectives — Summary: Defined Ambition:
+      consumer perspectives'
+    url: https://assets.publishing.service.gov.uk/media/5a7eb9b2e5274a2e87db180f/rr866-defined-ambition-consumer-perspectives-summary.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-2020-valuation-civil-service-pension-scheme-ac
+    title: 2020 Valuation - Civil Service Pension Scheme — Actuarial valuation report
+      as at 31 March 2020
+    url: https://assets.publishing.service.gov.uk/media/662ba8affddcc9e7ab2252bc/Civil_Service_Pension_Scheme_2020_Valuation_Valuation_Report.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-2020-valuation-civil-service-pension-scheme-ad
+    title: 2020 Valuation - Civil Service Pension Scheme — Advice on assumptions
+    url: https://assets.publishing.service.gov.uk/media/662ba90e5b89e6a356bf935b/Civil_Service_Pension_Scheme_2020_Valuation_Assumptions_Report.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-youth-engagement-fund-prospectus
+    title: 'Youth Engagement Fund: prospectus'
+    url: https://assets.publishing.service.gov.uk/media/5a7d59b840f0b60a7f1a9fc0/Youth_Engagement_Fund_prospectus.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-pope-of-lnms-m18-j1-signals
+    title: 'POPE of LNMS: M18 J1 Signals'
+    url: https://assets.publishing.service.gov.uk/media/5a7f836740f0b62305b8799d/POPE_LNMS___M18_J1_Signalisation_Report___Final.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-pope-of-lnms-a303-countess-roundabout-lnms-eva
+    title: 'POPE of LNMS: A303 Countess Roundabout LNMS Evaluation Report'
+    url: https://assets.publishing.service.gov.uk/media/5a815db840f0b62305b8e906/POPE_LNMS___A303_Countess_Roundabout_Improvements_Report___Final.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-state-aid-guidance-new-wholesale-access-reques
+    title: State aid - Guidance - New Wholesale Access Requests
+    url: https://assets.publishing.service.gov.uk/media/5a7d5294ed915d321c2de5a7/State_aid_-_Guidance_-_New_Wholesale_Access_Requests.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-pope-of-lnms-m6-to-m62-eastbound-merges-evalua
+    title: 'POPE of LNMS: M6 to M62 Eastbound Merges Evaluation Report — POPE of LNMS:
+      POPE of LNMS M6 to M62 Eastbound Merges Evaluation Report'
+    url: https://assets.publishing.service.gov.uk/media/5c781527e5274a0ec9a1dc18/POPE_LNMS_M6-M62_EB_Merges.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2020-special-feature-a-3
+    title: 'Energy Trends: September 2020, special feature article - Supply and demand
+      of transport fuels during COVID-19'
+    url: https://assets.publishing.service.gov.uk/media/5f6b3b09e90e077c9b87dfd7/Supply_and_demand_of_transport_fuels_during_COVID-19.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-dbt-national-survey-of-registered-businesses-e
+    title: DBT national survey of registered businesses’ exporting behaviours, attitudes
+      and needs 2024 — DBT national survey of registered businesses’ exporting behaviours,
+      attitudes and nee
+    url: https://assets.publishing.service.gov.uk/media/6895f256a6eb81a3f9b2e2b8/dbt-national-survey-of-uk-registered-businesses-2024-wave-9-technical-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-farm-practices-survey-january-2012-greenhouse-
+    title: Farm practices survey January 2012 - greenhouse gas mitigation measures —
+      FPS January 2012 - greenhouse gas mitigation - statistics notice
+    url: https://assets.publishing.service.gov.uk/media/5a7ab9eee5274a34770e6b15/defra-stats-foodfarm-environ-fps-statsrelease2012-120531.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-dn14-7ng-r100-energy-limited-environmental-per
+    title: 'DN14 7NG, R100 Energy Limited: environmental permit issued - EPR/GP3439QK/A001
+      — Permit: R100 Energy Limited'
+    url: https://assets.publishing.service.gov.uk/media/5dc2e090e5274a4f2286fc4e/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-dn14-7ng-r100-energy-limited-environmental-per-2
+    title: 'DN14 7NG, R100 Energy Limited: environmental permit issued - EPR/GP3439QK/A001
+      — Decision document: R100 Energy Limited'
+    url: https://assets.publishing.service.gov.uk/media/5dc2e0a740f0b62ff24e0b38/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-nr17-1ae-eco-verde-energy-limited-environmenta
+    title: 'NR17 1AE, Eco Verde Energy Limited: environmental permit issued – EPR/XP3102MJ/V002
+      — Variation notice: Eco Verde Energy Limited'
+    url: https://assets.publishing.service.gov.uk/media/633ee87c8fa8f52a5f87137f/EPR-XP3102MJ-V002_Variation_Notice.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-nr17-1ae-eco-verde-energy-limited-environmenta-2
+    title: 'NR17 1AE, Eco Verde Energy Limited: environmental permit issued – EPR/XP3102MJ/V002
+      — Decision document: Eco Verde Energy Limited'
+    url: https://assets.publishing.service.gov.uk/media/633ee8898fa8f52a66c28af6/EPR-XP3102MJ-V002_Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-farm-practices-survey-february-2014-greenhouse
+    title: Farm practices survey February 2014 - greenhouse gas mitigation practices
+      — FPS February 2014 - greenhouse gas mitigation - statistics notice
+    url: https://assets.publishing.service.gov.uk/media/5a7dc70440f0b65d8b4e3704/fps-ghg2014-statsnotice-24jul14.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ng22-9hb-rainworth-energy-limited-environmenta
+    title: 'NG22 9HB, Rainworth Energy Limited: environmental permit issued - EPR/NP3233DH/V004
+      — Variation notice: Rainworth Energy Limited'
+    url: https://assets.publishing.service.gov.uk/media/64366c9fcc9980000cb8937f/Variation_Notice_NP3233DH-V004.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ng22-9hb-rainworth-energy-limited-environmenta-2
+    title: 'NG22 9HB, Rainworth Energy Limited: environmental permit issued - EPR/NP3233DH/V004
+      — Decision document: Rainworth Energy Limited'
+    url: https://assets.publishing.service.gov.uk/media/64366cb289f19f000c3cfb4d/Decision_Document_NP3233DH-V004.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-mexico-new-fund-to-support-investment-in-energ
+    title: 'Mexico: new fund to support investment in energy projects'
+    url: https://assets.publishing.service.gov.uk/media/5a7ec0e6e5274a2e8ab47fbd/MEXICO_NEW_FUND_TO_SUPPORT_INVESTMENT_IN_ENERGY_PROJECTS.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-energy-production-and-utilities-sector-skills-
+    title: 'Energy production and utilities sector: skills assessment — Energy production
+      and utilities sector skills assessment 2012'
+    url: https://assets.publishing.service.gov.uk/media/5a74b3f240f0b61df4777c8b/briefing-paper-ssa12-energy.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-me3-9nq-medway-energy-recovery-limited-environ
+    title: 'ME3 9NQ, Medway Energy Recovery Limited: environmental permit issued – EPR/DP3126SA/A001
+      — Permit: Medway Energy Recovery Limited'
+    url: https://assets.publishing.service.gov.uk/media/68aeddb5969253904d155892/Application_Bespoke_A001_Permit_Issued_-_19082025.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-me3-9nq-medway-energy-recovery-limited-environ-2
+    title: 'ME3 9NQ, Medway Energy Recovery Limited: environmental permit issued – EPR/DP3126SA/A001
+      — Decision Document: Medway Energy Recovery Limited'
+    url: https://assets.publishing.service.gov.uk/media/68aedde0969253904d155893/Application_Bespoke_A001_Decision_Document_-_19082025.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-open-aid-open-societies-a-vision-for-a-transpa
+    title: 'Open aid, open societies: a vision for a transparent world'
+    url: https://assets.publishing.service.gov.uk/media/5a86de3aed915d74e34048c7/Open-Aid-Open-Societies.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-the-economics-of-early-response-and-disaster-r
+    title: 'The Economics of Early Response and Disaster Resilience: Lessons from Kenya
+      and Ethiopia'
+    url: https://assets.publishing.service.gov.uk/media/5a748141e5274a7f99028b75/Econ-Ear-Rec-Res-Full-Report_20.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-nervtag-update-note-on-b-1-1-7-severity-11-feb
+    title: 'NERVTAG: Update note on B.1.1.7 severity, 11 February 2021'
+    url: https://assets.publishing.service.gov.uk/media/608ad5df8fa8f51b98b15109/Feb_NERVTAG_update_note_on_B.1.1.7_severity.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-ealing-brighter-futures-evaluation-ealing-brig
+    title: 'Ealing Brighter Futures: evaluation — Ealing Brighter Futures Intensive
+      Engagement Model: Working with adolescents in and on the edge of care'
+    url: https://assets.publishing.service.gov.uk/media/5a80393aed915d74e622d32a/Ealing_Brighter_Futures_Intensive_Engagement_Model.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-partnering-with-defence-employer-engagement-ha
+    title: Partnering with Defence — Employer Engagement Handbook (June 2020)
+    url: https://assets.publishing.service.gov.uk/media/5efb4503d3bf7f769866dc3c/200626-_EE-Handbook.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-legal-obligations-issue-1-november-2012-to-jan
+    title: 'Legal obligations, issue 1: November 2012 to January 2014'
+    url: https://assets.publishing.service.gov.uk/media/5a7ae863ed915d670dd7f6f7/legal-obligations-issue-1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-legal-obligations-issue-2-january-2014-to-janu
+    title: 'Legal obligations, issue 2: January 2014 to January 2015'
+    url: https://assets.publishing.service.gov.uk/media/5a7cc60c40f0b65b3de0b160/LegalObligationsIssue2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-legal-obligations-issue-5-august-2017-to-july-
+    title: 'Legal obligations: issue 5, August 2017 to July 2018 — Legal obligations:
+      issue 5'
+    url: https://assets.publishing.service.gov.uk/media/5b6854bced915d2b9ccdcd34/FSR_Legal_Obligations_-_Issue_5.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-legal-obligations-issue-3-january-2015-to-apri
+    title: 'Legal obligations, issue 3: January 2015 to April 2016'
+    url: https://assets.publishing.service.gov.uk/media/5a7e3510e5274a2e8ab4688c/FSR_Legal_Obligations_-_Issue_3.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2011-rural-urban-classification-for-census-geo
+    title: '2011 Rural Urban Classification for census geographies — Rural Urban Classification
+      leaflet: The 2011 Rural-Urban Classification for Output Areas in England'
+    url: https://assets.publishing.service.gov.uk/media/610c08e4d3bf7f044024465a/RUCOA_leaflet_Jan2017.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2011-rural-urban-classification-for-census-geo-2
+    title: 2011 Rural Urban Classification for census geographies — 2011 Rural Urban
+      Classification - User Guide
+    url: https://assets.publishing.service.gov.uk/media/5a7cab23e5274a38e5756044/RUC11user_guide_28_Aug.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2011-rural-urban-classification-for-census-geo-3
+    title: 2011 Rural Urban Classification for census geographies — 2011 Rural Urban
+      Classification - Methodology
+    url: https://assets.publishing.service.gov.uk/media/5a7c136e40f0b645ba3c68b0/RUC11methodologypaperaug_28_Aug.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-healthcare-and-pregnancy-caseworker-guidance-h
+    title: 'Healthcare and pregnancy: caseworker guidance — Healthcare needs and pregnancy
+      dispersal'
+    url: https://assets.publishing.service.gov.uk/media/5a8162a8e5274a2e8ab53b57/new_Healthcare_Needs_and_Pregnancy_Dispersal_Policy_EXTERNAL_v3_0.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-gumcad-clinical-coding-guidance
+    title: 'GUMCAD: clinical coding guidance'
+    url: https://assets.publishing.service.gov.uk/media/6a3ba1eaeaee00074150f313/GUMCAD-clinical-coding-guidance-2026.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-gumcad-clinical-coding-guidance-gumcad-minimum
+    title: 'GUMCAD: clinical coding guidance — GUMCAD: minimum reporting guidance for
+      online services'
+    url: https://assets.publishing.service.gov.uk/media/68c15ee27596dbfa052bfdf6/GUMCAD-minimum-reporting-guidance-for-online-services.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-directory-of-civil-service-guidance-civil-serv
+    title: Directory of civil service guidance — Civil Service Guidance Volume 1 in
+      PDF Format
+    url: https://assets.publishing.service.gov.uk/media/64b12c3c07d4b8000d3472bc/guide-civil-service-guidance-volume-1.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-directory-of-civil-service-guidance-civil-serv-2
+    title: Directory of civil service guidance — Civil Service Guidance Volume 2 in
+      PDF Format
+    url: https://assets.publishing.service.gov.uk/media/64b12c4548826b00103a9e31/guide-civil-service-guidance-volume-2_0.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Part 1:
+      plans, particulars and materials'
+    url: https://assets.publishing.service.gov.uk/media/5a7b9dc940f0b62826a04b7d/con1_2a_pt1.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-2
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Part 2:
+      strength, construction and watertight subdivision'
+    url: https://assets.publishing.service.gov.uk/media/5a7cd493ed915d63cc65d16e/con1_2a_pt2_1.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-3
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Part 3:
+      closing of openings in hulls'
+    url: https://assets.publishing.service.gov.uk/media/5a7c8af740f0b626628acccb/con1_2a_pt3.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-4
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Part 4:
+      closing of openings in enclosed superstructures and in bulkheads above the bulkhead
+      deck'
+    url: https://assets.publishing.service.gov.uk/media/5a7b836ced915d4147620dd0/con1_2a_pt4-2.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-5
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Part 5:
+      stability and shipside marking'
+    url: https://assets.publishing.service.gov.uk/media/5a7c50e8ed915d338141dff8/con1_2a_pt5_1-3.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-6
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Part 6:
+      bilge pumping arrangements'
+    url: https://assets.publishing.service.gov.uk/media/5a7c7c42ed915d48c24100da/con1_2a2pt6.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-7
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Part 7:
+      electrical equipment and installations'
+    url: https://assets.publishing.service.gov.uk/media/5a7c6454ed915d696ccfc775/con1_2a_pt7_1-2.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-8
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Part 8:
+      boilers and machinery'
+    url: https://assets.publishing.service.gov.uk/media/5a7c91afed915d6969f45cca/con1_2a_pt8.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-12
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Part 12:
+      passenger accommodation'
+    url: https://assets.publishing.service.gov.uk/media/5a7cc820ed915d6822362839/con1_2a_9as.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-13
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Part 13:
+      elderly, disabled and sick passengers'
+    url: https://assets.publishing.service.gov.uk/media/5a7cc709e5274a38e5756af7/con1_2a_p13-2.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-14
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Part 14:
+      merchant shipping (ro-ro passenger ship survivability) regulations 1997 (statutory
+      instrument 1997 no 647'
+    url: https://assets.publishing.service.gov.uk/media/5a7c37b5ed915d7d70d1d5dc/con1_2a_p14.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-17
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Appendix
+      2: determing the vertical centres of gravity and vertical moments of weight of
+      vehicle/cargo in the main '
+    url: https://assets.publishing.service.gov.uk/media/5a7c626540f0b62aff6c14c6/con1-2a-ap2.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-18
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Appendix
+      3: guidance notes on the Stockholm agreement'
+    url: https://assets.publishing.service.gov.uk/media/5a75a9e6e5274a436829902c/con1_2a_ap3_1-2.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-19
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Appendix
+      4: a/amax calculation procedure'
+    url: https://assets.publishing.service.gov.uk/media/5a7cb626e5274a2f304ef9ef/con1_2a_ap4_1-2.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-20
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Appendix
+      5: guidelines on approval of weathertight doors or similar closing appliances
+      to the openings leading to '
+    url: https://assets.publishing.service.gov.uk/media/5a7b9d3fe5274a7202e184ea/con1_2a_ap5.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-22
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Appendix
+      7: special notes regarding stability'
+    url: https://assets.publishing.service.gov.uk/media/5a7c83c5ed915d48c2410441/con1_2a_ap7.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-23
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Appendix
+      8: recommendation on the design and operation of passenger ships to respond to
+      elderly and disabled perso'
+    url: https://assets.publishing.service.gov.uk/media/5a7cd48be5274a2c9a4845f8/con1_2a_ap8.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-24
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Appendix
+      9: model instructions relating to the control of watertight doors'
+    url: https://assets.publishing.service.gov.uk/media/5a7cb85fed915d63cc65c70a/con1_2a_ap9.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-passenger-ship-construction-classes-i-ii-and-i-25
+    title: 'Passenger ship construction: classes I, II, and II (A) (MSIS 3) — Appendix
+      10: stability information booklet'
+    url: https://assets.publishing.service.gov.uk/media/5a757bc5ed915d6faf2b3588/con1_2a_a10.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-defence-contractors-guidance-notes
+    title: Defence contractors guidance notes
+    url: https://assets.publishing.service.gov.uk/media/5a80ecb4ed915d74e6231385/20150319-IVCO_Contractor_Guidance.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-designing-and-modifying-residential-streets-ma
+    title: 'Designing and modifying residential streets: Manual for streets — Manual
+      for streets'
+    url: https://assets.publishing.service.gov.uk/media/5a7e0035ed915d74e6223743/pdfmanforstreets.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-designing-and-modifying-residential-streets-ma-2
+    title: 'Designing and modifying residential streets: Manual for streets — Manual
+      for streets: a summary'
+    url: https://assets.publishing.service.gov.uk/media/5a74d26640f0b619c865ab5a/mfssummary.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-designing-and-modifying-residential-streets-ma-3
+    title: 'Designing and modifying residential streets: Manual for streets — Manual
+      for streets: evidence and research'
+    url: https://assets.publishing.service.gov.uk/media/5a79e60ced915d6b1deb426a/manualforstreetsevidence.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-uk-and-global-bioenergy-resource-model-biomass
+    title: 'UK and Global Bioenergy Resource Model — Biomass Feedstock Availability:
+      Final Report'
+    url: https://assets.publishing.service.gov.uk/media/5a7f9007e5274a2e87db69a8/Biomass_feedstock_availability_final_report_for_publication.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-uk-and-global-bioenergy-resource-model-user-gu
+    title: 'UK and Global Bioenergy Resource Model — User Guide: UK and Global Bioenergy
+      Resource Model'
+    url: https://assets.publishing.service.gov.uk/media/5a805e35e5274a2e8ab4fbec/Bioenergy_model_user_guide_for_v8.09_for_publication.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-understanding-the-uk-ai-labour-market-2020-und-2
+    title: 'Understanding the UK AI labour market: 2020 — Understanding the AI Labour
+      Market 2020 Technical Report'
+    url: https://assets.publishing.service.gov.uk/media/60992b66d3bf7f2887b642cb/DCMS_and_Ipsos_MORI_Understanding_the_AI_Labour_Market_2020_Technical_Report.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
     format: pdf
