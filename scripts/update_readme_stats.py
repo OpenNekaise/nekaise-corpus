@@ -37,14 +37,25 @@ def main(argv: list[str] | None = None) -> None:
         action="store_true",
         help="print the exact manifest-derived token estimate and do not update README",
     )
+    ap.add_argument(
+        "--print-corpus-tokens",
+        action="store_true",
+        help="print the CLEANED corpus/ token estimate (sum of corpus_chars; rows the cleaner "
+             "has not visited yet fall back to text_chars) and do not update README",
+    )
     args = ap.parse_args(argv)
 
     rows = registry.load_manifest_rows()
     ok = [r for r in rows if r.get("status") == "ok"]
     chars = sum(r.get("text_chars", 0) for r in ok)
     tok = chars // 4
+    cchars = sum(r.get("corpus_chars", r.get("text_chars", 0)) for r in ok)
+    ctok = cchars // 4
     if args.print_tokens:
         print(tok)
+        return
+    if args.print_corpus_tokens:
+        print(ctok)
         return
 
     topics = Counter(r["topic"] for r in ok)
@@ -66,6 +77,7 @@ def main(argv: list[str] | None = None) -> None:
 | **Documents** | **{len(ok):,}** |
 | **Raw originals** | **~{du('raw')}** (PDF / HTML / source code) |
 | **Extracted text** | **~{du('text')}** (~{big(chars)} chars, **≈{big(tok)} tokens**) |
+| **Cleaned corpus** | **~{du('corpus')}** (~{big(cchars)} chars, **≈{big(ctok)} tokens**, ruleset-cleaned) |
 | **Topics** | {len(topics)} |
 
 **By topic** (a source gets one at registration): {by_topic}.

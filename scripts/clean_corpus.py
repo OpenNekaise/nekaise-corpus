@@ -9,14 +9,18 @@ identifier blocks, Modelica graphical annotations. A 920-doc stratified audit pu
 can be re-applied in minutes without re-extracting 104k PDFs.
 
     python scripts/clean_corpus.py --report            # measure each rule; write nothing
-    python scripts/clean_corpus.py                     # populate corpus/ (pass-through, no rules)
+    python scripts/clean_corpus.py                     # refresh corpus/ with the ACTIVE ruleset
     python scripts/clean_corpus.py --rules all         # apply every rule below
     python scripts/clean_corpus.py --rules toc_leaders,page_markers
+    python scripts/clean_corpus.py --rules none        # faithful pass-through
     python scripts/clean_corpus.py --list-rules
 
-WHICH RULES RUN IS DELIBERATELY OPT-IN. The default is a faithful pass-through: corpus/ is
-complete and identical to text/ until a ruleset is chosen. Cleaning *policy* is a separate
-decision (the agentic cleaning pipeline) — this file is the machinery it will plug into.
+WHICH RULES RUN IS A POLICY DECISION, recorded in corpus/.ruleset. The default --rules=stamp
+reuses that recorded policy, so the round loop (run_round.py's argument-less clean step)
+preserves it; changing policy requires an explicit --rules. Before any ruleset was ever chosen
+the stamp reads 'none' and the default is a faithful pass-through. Rule changes go through the
+audit loop first: sample each rule's dropped lines with context, adversarially review, fix or
+defer (see tests/test_clean.py for the pinned verdicts).
 
 Every rule here is STRUCTURAL — repetition- or shape-based, never a letters-per-character
 threshold. That is deliberate: an alpha-fraction rule reads real Japanese prose interleaved
@@ -335,6 +339,17 @@ def _clean_one(task: tuple) -> tuple[str, int, dict, str, str | None]:
     return sid, len(cleaned), dict(attr), "written", digest
 
 
+def stamped_ruleset() -> str:
+    """The ruleset that produced the current corpus/ ('none' if never built). An IN-PROGRESS
+    stamp names the intended set — return it so a crashed run resumes the same policy."""
+    if not STAMP.exists():
+        return "none"
+    spec = STAMP.read_text().strip()
+    if spec.startswith("IN-PROGRESS"):
+        spec = spec.split(None, 1)[1].strip() if " " in spec else ""
+    return spec or "none"
+
+
 def parse_rules(spec: str) -> list[str]:
     spec = spec.strip()
     if not spec or spec == "none":
@@ -350,9 +365,11 @@ def parse_rules(spec: str) -> list[str]:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--rules", default="none",
-                    help="comma-separated rule names, or 'all' / 'none' (default: none = "
-                         "faithful pass-through)")
+    ap.add_argument("--rules", default="stamp",
+                    help="comma-separated rule names, 'all', 'none', or 'stamp' (default) = "
+                         "reuse the ruleset that produced the current corpus/ — so the round "
+                         "loop (run_round.py calls this with no args) preserves the active "
+                         "cleaning policy instead of silently resetting to pass-through")
     ap.add_argument("--report", action="store_true",
                     help="measure what each rule would remove; write nothing")
     ap.add_argument("--sample", type=int, default=0,
@@ -372,7 +389,7 @@ def main() -> None:
             print(f"  {name:22s} {RULE_DOC[name]}")
         return
 
-    rules = parse_rules(args.rules)
+    rules = parse_rules(stamped_ruleset() if args.rules == "stamp" else args.rules)
     rows = registry.load_manifest_rows()
     todo = [r for r in rows if r.get("status") == "ok" and r.get("text_path")]
 

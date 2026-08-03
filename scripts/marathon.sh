@@ -27,7 +27,9 @@ END=$(( $(date +%s) + HOURS*3600 ))
 mkdir -p "$REPO/logs"
 LOG="$REPO/logs/marathon-$(date +%Y%m%d-%H%M).log"
 say(){ echo "[$(date +%H:%M:%S)] $*" | tee -a "$LOG"; }
-current_tokens(){ "$PYTHON_BIN" scripts/update_readme_stats.py --print-tokens; }
+# TARGET_TOKENS is measured on the CLEANED corpus/ (manifest corpus_chars — what a training run
+# actually consumes), not the raw text/ stage; each round's clean step keeps it current.
+current_tokens(){ "$PYTHON_BIN" scripts/update_readme_stats.py --print-corpus-tokens; }
 
 say "marathon START — until $(date -d "@$END")"
 if [ "$TARGET_TOKENS" -gt 0 ]; then

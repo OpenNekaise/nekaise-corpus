@@ -256,6 +256,18 @@ def test_unmet_hours_metric_prose_survives():
 
 
 # ---------------------------------------------------------------------------- plumbing
+def test_stamp_default_preserves_active_ruleset(tmp_path, monkeypatch):
+    """run_round.py calls this stage with no arguments — the default must reuse the stamped
+    policy, never silently reset a cleaned corpus/ to pass-through."""
+    monkeypatch.setattr(cc, "STAMP", tmp_path / ".ruleset")
+    assert cc.stamped_ruleset() == "none"  # never built
+    (tmp_path / ".ruleset").write_text("toc_leaders,ocr_debris\n")
+    assert cc.stamped_ruleset() == "toc_leaders,ocr_debris"
+    (tmp_path / ".ruleset").write_text("IN-PROGRESS toc_leaders,ocr_debris\n")
+    assert cc.stamped_ruleset() == "toc_leaders,ocr_debris"  # crashed run resumes same policy
+
+
+
 def test_header_is_always_preserved():
     doc = ("# 2010 ADA Standards\n\nsource: https://example.gov/a.pdf\nlicense: public-domain\n"
            "topic: architecture\n\n---\n\nreal body text here\n7\n")
