@@ -63,15 +63,32 @@ TOC_LEADER = re.compile(r"\.{4,}\s*[ivxlcdm\d]{1,7}\s*$", re.I)
 PAGE_MARKER = re.compile(r"^[\s\-—–—]*(?:page\s+)?[ivxlcdm\d]{1,6}[\s\-—–—.]*$", re.I)
 # Google Patents identifier soup: the same number restated in every format variant.
 PATENT_ID = re.compile(r"^[A-Z]{2}\s?[\d/,.]{6,18}\s?[A-Z]?\d?$")
+# Shapes that fit PATENT_ID but are real content (the 2026-08 audit's false positives):
+# 'LS 700,000' is a lump-sum cost cell, 'HB2.16.1' an excavation locus / clause label.
+MONEY_BLOB = re.compile(r"^[A-Z]{2}\s?\d{1,3}(?:,\d{3})+$")
+CATALOG_BLOB = re.compile(r"^[A-Z]{2}\d*(?:\.\d+){2,}$")
 # OCR debris: not one letter or CJK character on the line, but several punctuation marks —
 # "‘ ; . " / "} . " / "1a} ". Digits alone do NOT qualify (a bare '1845' is a real date).
 LETTERLIKE = re.compile(r"[^\W\d_]", re.UNICODE)  # any letter incl. CJK/kana/Cyrillic
 PUNCT_RUN = re.compile(r"[^\w\s]")
-# Modelica graphical annotations + bare markup: 'extent={{-50,48},{50,-42}},' / '<td>0.33</td>'
-MODELICA_ANNOT = re.compile(r"^\s*(?:extent|fillColor|lineColor|pattern|fillPattern|origin|"
-                            r"rotation|points|textString|Rectangle|Polygon|Ellipse|Text|Line)\s*[=(]")
+# Modelica graphical annotations + bare markup: 'extent={{-50,48},{50,-42}},' / '<td>0.33</td>'.
+# The annotation shape is required EXACTLY ('extent={', 'Text(' — no space): with a space
+# allowed, English prose lines like 'points = 7, max. displacement ...' and nomenclature
+# entries like 'Text = external temperature' were deleted mid-sentence (2026-08 audit).
+MODELICA_ANNOT = re.compile(r"^\s*(?:(?:extent|fillColor|lineColor|origin|points)=\{"
+                            r"|(?:pattern|fillPattern)=(?:Line|Fill)Pattern"
+                            r"|rotation=-?\d|textString="
+                            r"|(?:Rectangle|Polygon|Ellipse|Text|Line)\()")
 COORD_BLOB = re.compile(r"^\s*[\[{(]?\s*[-\d]+\s*,[\s\-\d,.{}\[\]()]*[}\])]?\s*,?\s*$")
-TAG_ONLY = re.compile(r"^\s*</?[a-zA-Z][^>]*>\s*(?:[\d.,%\s]*)\s*(?:</[a-zA-Z][^>]*>)?\s*$")
+# Tag-only lines are dropped ONLY for known HTML table/layout tags. An unrestricted <...> match
+# ate '<https://...>' bibliography URLs, RDF '@prefix <iri>' lines in the Brick/223P docs,
+# EBNF placeholders like '<true-block-of-statements>', and doctest '<class ...>' outputs.
+# MathML tags (<mn>, <mi>, <mo>...) are deliberately NOT listed: dropping only some equation
+# tokens corrupts the equations that remain — keep formula markup whole instead.
+HTML_TAG = (r"(?:br|p|li|ul|ol|dl|dt|dd|td|tr|th|thead|tbody|table|div|span|pre|code|em|i|b|u|"
+            r"strong|small|hr|img|sub|sup|figure|figcaption|section|article|h[1-6])")
+TAG_ONLY = re.compile(rf"^\s*</?{HTML_TAG}(?:\s[^<>]*)?/?>\s*(?:[\d.,%\s]*)\s*"
+                      rf"(?:</{HTML_TAG}\s*>)?\s*$", re.I)
 
 
 def _rule_repeated_boilerplate(lines: list[str]) -> set[int]:
@@ -104,32 +121,120 @@ def _rule_orphan_chars(lines: list[str]) -> set[int]:
 
 def _rule_patent_id_soup(lines: list[str]) -> set[int]:
     """'US20150157190A1' / 'US 20150157190 A1' / 'US14/564,744' restated 8x per patent. Only
-    fires when the line is *nothing but* an identifier, so an in-sentence citation survives."""
-    return {i for i, ln in enumerate(lines) if PATENT_ID.match(ln.strip())}
+    fires when the line is *nothing but* an identifier, so an in-sentence citation survives.
+    Real soup always comes in runs, so a lone match (a DOE award number 'EE0008757', a World
+    Bank indicator id) survives unless its nearest non-blank neighbor is also an identifier."""
+    def is_id(ln: str) -> bool:
+        s = ln.strip()
+        return bool(PATENT_ID.match(s)) and not MONEY_BLOB.match(s) and not CATALOG_BLOB.match(s)
+
+    ids = [is_id(ln) for ln in lines]
+    out = set()
+    for i, hit in enumerate(ids):
+        if not hit:
+            continue
+        prev = next((j for j in range(i - 1, -1, -1) if lines[j].strip()), None)
+        nxt = next((j for j in range(i + 1, len(lines)) if lines[j].strip()), None)
+        if (prev is not None and ids[prev]) or (nxt is not None and ids[nxt]):
+            out.add(i)
+    return out
 
 
 def _rule_ocr_debris(lines: list[str]) -> set[int]:
+    """No letters, 2+ punctuation marks, AND digits under 10% of the line: the digit guard is
+    load-bearing. Without it this rule deleted every decimal-bearing numeric table row (NBS gas
+    properties, EnergyPlus PV coefficients, European comma-decimal tables), reference tails
+    ('2019;48(21):5310-49.') and equation numbers — the 2026-08 audit measured 78% of its hits
+    as real content, and re-measured ~0% with this guard."""
     out = set()
     for i, ln in enumerate(lines):
         s = ln.strip()
         if len(s) < 2 or LETTERLIKE.search(s):
+            continue
+        dense = s.replace(" ", "")
+        if dense and sum(c.isdigit() for c in dense) / len(dense) >= 0.10:
             continue
         if len(PUNCT_RUN.findall(s)) >= 2:
             out.add(i)
     return out
 
 
-def _rule_code_annotations(lines: list[str]) -> set[int]:
-    """Modelica diagram geometry and bare HTML tags from repo docs (the github shard measures
-    39.8% non-prose, nearly all of this). The physics equations in a .mo file are NOT touched."""
+# Google Patents page furniture. Every patent page (114k docs, 55% of the corpus) carries the
+# same scaffolding: navigation labels, three verbatim legal disclaimers, WIPO/CNIPA legal-event
+# codes, 12-digit substance identifiers, bare ISO dates from the events table. All exact-shape
+# matches; single common words ('granted', 'filed') are deliberately NOT listed — a wrapped
+# prose line could consist of exactly that word, and deleting it would corrupt a sentence.
+PATENT_FURNITURE = frozenset({
+    "Download PDF", "Global Dossier", "Espacenet", "Similar Documents", "Legal Events",
+    "Prior art keywords", "Prior art date", "Original Assignee", "legal-status", "not_active",
+    "Anticipated expiration", "Adjusted expiration", "Discuss", "Landscapes", "Classifications",
+    "Other languages", "Other versions", "Also Published As", "USPTO", "USPTO PatentCenter",
+    "USPTO Assignment", "Year of fee payment", "Fee payment procedure", "Maintenance fee payment",
+    "- Google Patents", "* Cited by examiner, † Cited by third party",
+    "Chemical & Material Sciences", "Engineering & Computer Science", "Physics & Mathematics",
+    "General Engineering & Computer Science", "Life Sciences & Earth Sciences",
+    "Information on status: patent grant", "PATENTED CASE",
+    "Entry into force of request for substantive examination",
+    "Entry into substantive examination",
+    "ASSIGNMENT OF ASSIGNORS INTEREST (SEE DOCUMENT FOR DETAILS).",
+    "Legal status (The legal status is an assumption and is not a legal conclusion. Google has "
+    "not performed a legal analysis and makes no representation as to the accuracy of the "
+    "status listed.)",
+    "Current Assignee (The listed assignees may be inaccurate. Google has not performed a legal "
+    "analysis and makes no representation or warranty as to the accuracy of the list.)",
+    "Priority date (The priority date is an assumption and is not a legal conclusion. Google "
+    "has not performed a legal analysis and makes no representation as to the accuracy of the "
+    "date listed.)",
+    "GR01", "PB01", "SE01", "STCF", "MAFP", "FEPP", "TA01", "CB02", "C06", "C10", "C14",
+})
+SUBSTANCE_CODE = re.compile(r"^\d{12}$")   # '238000000034' — Google Patents compound ids
+BARE_ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")  # events-table date cell alone on a line
+
+# Cross-doc site chrome from crawled Q&A/doc pages (Unmet Hours navigation and footer). These
+# repeat once per PAGE, so repeated_boilerplate (4+ per doc) can never see them.
+SITE_CHROME = frozenset({
+    "Site design and logo: Copyright © 2015 Big Ladder Software LLC. All rights reserved.",
+    "names and logos are trademarks of Big Ladder Software LLC.",
+    "Question-and-Answer Resource for the Building Energy Modeling Community",
+    "Hi there! Please sign in", "First time here? Check out the",
+    "Get started with the Help page", "Ask Your Question", "Sort by »", "UNANSWERED",
+    "User contributions licensed under the", "Powered by",
+    "Creative Commons Attribution Share Alike 3.0 License",
+})
+
+
+def _rule_patent_furniture(lines: list[str]) -> set[int]:
+    """Google Patents scaffolding: exact labels/disclaimers, legal-event codes, 12-digit
+    substance ids, bare ISO-date lines. Shape-exact so patent CLAIMS and descriptions — the
+    content we keep patents for — are never touched."""
     out = set()
     for i, ln in enumerate(lines):
         s = ln.strip()
-        if not s:
-            continue
-        if MODELICA_ANNOT.match(ln) or TAG_ONLY.match(s):
+        if s in PATENT_FURNITURE or SUBSTANCE_CODE.match(s) or BARE_ISO_DATE.match(s):
             out.add(i)
-        elif len(s) > 6 and COORD_BLOB.match(s) and s.count(",") >= 2:
+    return out
+
+
+def _rule_site_chrome(lines: list[str]) -> set[int]:
+    return {i for i, ln in enumerate(lines) if ln.strip() in SITE_CHROME}
+
+
+def _rule_code_annotations(lines: list[str]) -> set[int]:
+    """Modelica diagram geometry and bare HTML tags from repo docs (the github shard measures
+    39.8% non-prose, nearly all of this). The physics equations in a .mo file are NOT touched.
+
+    Coordinate blobs are claimed ONLY as continuations chained under an annotation line: a
+    standalone 4,000-doc sample found 3,883 free-floating COORD_BLOB matches and essentially
+    all were citation tails ('75, 1543-1545, 2004.'), index page runs, or money columns."""
+    out = set()
+    for i, ln in enumerate(lines):
+        s = ln.strip()
+        if s and (MODELICA_ANNOT.match(ln) or TAG_ONLY.match(s)):
+            out.add(i)
+    for i, ln in enumerate(lines):
+        s = ln.strip()
+        if i - 1 in out and i not in out and len(s) > 6 and COORD_BLOB.match(s) \
+                and s.count(",") >= 2:
             out.add(i)
     return out
 
@@ -140,6 +245,8 @@ RULES = {
     "page_markers": _rule_page_markers,
     "orphan_chars": _rule_orphan_chars,
     "patent_id_soup": _rule_patent_id_soup,
+    "patent_furniture": _rule_patent_furniture,
+    "site_chrome": _rule_site_chrome,
     "ocr_debris": _rule_ocr_debris,
     "code_annotations": _rule_code_annotations,
 }
@@ -150,6 +257,8 @@ RULE_DOC = {
     "page_markers":         "lines that are only a page number",
     "orphan_chars":         "1-2 character column-break debris",
     "patent_id_soup":       "patent numbers restated in every format variant",
+    "patent_furniture":     "Google Patents page scaffolding (labels, disclaimers, codes)",
+    "site_chrome":          "crawled-site navigation/footer chrome (Unmet Hours)",
     "ocr_debris":           "punctuation-only lines from scanned pages",
     "code_annotations":     "Modelica diagram geometry, bare HTML tags",
 }
