@@ -12330,3 +12330,19 @@ sources:
     license: open
     topic: construction
     format: pdf
+  - id: arx-development-of-fdd-on-an-ontology-for-vav-hvac
+    title: 'Development of FDD-ON: an Ontology for VAV HVAC System Fault Detection and
+      Diagnostics'
+    url: https://arxiv.org/pdf/2607.29657
+    source: arxiv
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: ope-artificial-intelligence-based-anomaly-detectio
+    title: 'Artificial intelligence based anomaly detection of energy consumption in
+      buildings: A review, current trends and new perspectives'
+    url: https://arxiv.org/pdf/2010.04560
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
