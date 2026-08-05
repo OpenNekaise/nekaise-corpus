@@ -3202,13 +3202,6 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
-  - id: mod-modeling-and-simulation-for-leg-wheel-mobile-robots-
-    title: Modeling and simulation for leg-wheel mobile robots using Modelica
-    url: https://ep.liu.se/ecp/124/008/ecp16124008.pdf
-    source: modelica_conf
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: mod-dynamics-modeling-of-the-arc-spring-for-powertrain-n
     title: Dynamics Modeling of the Arc Spring for Powertrain NVH Prediction
     url: https://ep.liu.se/ecp/124/001/ecp16124001.pdf
@@ -3648,13 +3641,6 @@ sources:
     title: An Advanced Environment for Hybrid Modeling and Parameter Identification
       of Biological Systems
     url: https://ep.liu.se/ecp/063/063/ecp11063063.pdf
-    source: modelica_conf
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: mod-a-modelica-model-of-thermal-and-mechanical-phenomena
-    title: A Modelica model of thermal and mechanical phenomena in bare overhead conductors
-    url: https://ep.liu.se/ecp/063/093/ecp11063093.pdf
     source: modelica_conf
     license: open
     topic: equipment_systems
@@ -5029,13 +5015,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: mod-a-new-modelica-electric-and-hybrid-power-trains-libr
-    title: A new Modelica Electric and Hybrid Power Trains library
-    url: https://ep.liu.se/ecp/118/084/ecp15118785.pdf
-    source: modelica_conf
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: mod-time-varying-mass-and-inertia-in-paper-winding-multi
     title: Time varying mass and inertia in paper winding multibody simulation
     url: https://ep.liu.se/ecp/076/087/ecp12076087.pdf
@@ -5171,14 +5150,6 @@ sources:
     source: modelica_conf
     license: open
     topic: controls_bas
-    format: pdf
-  - id: mod-a-novel-proposal-on-how-to-parameterize-models-in-dy
-    title: A Novel Proposal on how to Parameterize Models in Dymola Utilizing External
-      Files under Consideration of a Subsequent Model Export using the Functiona
-    url: https://ep.liu.se/ecp/118/002/ecp1511823.pdf
-    source: modelica_conf
-    license: open
-    topic: equipment_systems
     format: pdf
   - id: mod-simulation-of-large-scale-models-in-modelica-state-o
     title: 'Simulation of Large-Scale Models in Modelica: State of the Art and Future
