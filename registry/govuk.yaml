@@ -69730,46 +69730,6 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
-  - id: guk-road-safety-statistics-methodology-documents-d
-    title: 'Road safety statistics: methodology documents — Drink-drive statistics methodology
-      note'
-    url: https://assets.publishing.service.gov.uk/media/673f683f4a6dd5b06db95af2/methodology-notes-drink-drive.pdf
-    source: gov_uk
-    license: open
-    topic: construction
-    format: pdf
-  - id: guk-road-safety-statistics-methodology-documents-v
-    title: 'Road safety statistics: methodology documents — Valuation of road collisions
-      and casualties methodology note'
-    url: https://assets.publishing.service.gov.uk/media/673f687459aab43310b95af0/rrcgb-valuation-methodology.pdf
-    source: gov_uk
-    license: open
-    topic: construction
-    format: pdf
-  - id: guk-road-safety-statistics-methodology-documents-s
-    title: 'Road safety statistics: methodology documents — Survey data on road casulaties
-      methodology note'
-    url: https://assets.publishing.service.gov.uk/media/673f68d2b3f0df6d2ebaf0b8/rrcgb-total-estimates-including-unreported-methodology.pdf
-    source: gov_uk
-    license: open
-    topic: construction
-    format: pdf
-  - id: guk-road-safety-statistics-methodology-documents-m
-    title: 'Road safety statistics: methodology documents — Modelling the impact of
-      weather on road casualty statistics'
-    url: https://assets.publishing.service.gov.uk/media/673f6a1bad6a5d7d2b1b0a6f/weather-on-road-casualties.pdf
-    source: gov_uk
-    license: open
-    topic: construction
-    format: pdf
-  - id: guk-road-safety-statistics-methodology-documents-l
-    title: 'Road safety statistics: methodology documents — Linking police and hospital
-      data on road casualties in England'
-    url: https://assets.publishing.service.gov.uk/media/673f6a5eb3f0df6d2ebaf0b9/hes-linkage.pdf
-    source: gov_uk
-    license: open
-    topic: construction
-    format: pdf
   - id: guk-capital-gains-tax-for-land-and-buildings-toolk
     title: Capital Gains Tax for land and buildings toolkit — Capital Gains Tax for
       land and buildings toolkit — 2019 to 2020 Self Assessment Tax Returns (Revised)
@@ -105745,22 +105705,6 @@ sources:
   - id: guk-energy-trends-december-2012
     title: 'Energy Trends: December 2012'
     url: https://assets.publishing.service.gov.uk/media/5a78aca740f0b63247699443/7343-energy-trends-december-2012.pdf
-    source: gov_uk
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: guk-rules-and-guidance-for-energy-code-modificatio
-    title: Rules and guidance for energy code modification appeals — Energy code modification
-      appeals rules (CMA196)
-    url: https://assets.publishing.service.gov.uk/media/67868b07f0528401055d23de/Energy_code_modification_appeals_rules__CMA196_.pdf
-    source: gov_uk
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: guk-rules-and-guidance-for-energy-code-modificatio-2
-    title: Rules and guidance for energy code modification appeals — Energy code modification
-      appeals guide (CMA197)
-    url: https://assets.publishing.service.gov.uk/media/67868af8f029f40e50881789/Energy_code_modification_appeals_guide__CMA197_.pdf
     source: gov_uk
     license: open
     topic: controls_bas
@@ -164248,14 +164192,6 @@ sources:
     title: Updated rules and guide for energy code modification appeals — Draft energy
       code modification appeals, Competition and Markets Authority Guide
     url: https://assets.publishing.service.gov.uk/media/669f79eb49b9c0597fdb0236/Draft_energy_code_modification_appeals__Competition_and_Markets_Authority_Guide.pdf
-    source: gov_uk
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: guk-updated-rules-and-guide-for-energy-code-modifi-4
-    title: Updated rules and guide for energy code modification appeals — Energy code
-      modification appeals response to consultations
-    url: https://assets.publishing.service.gov.uk/media/67891e0493d4eae3088bd30d/Energy_code_modification_appeals_response_to_consultations.pdf
     source: gov_uk
     license: open
     topic: controls_bas
@@ -225450,6 +225386,470 @@ sources:
   - id: guk-office-for-students-independent-review-terms-o
     title: 'Office for Students independent review: terms of reference — Terms of reference'
     url: https://assets.publishing.service.gov.uk/media/6579b07a0467eb001355f70d/OfS_independent_review_terms_of_reference.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-weather-and-climate-information-services-wiser-2
+    title: 'Weather and Climate Information Services (WISER): a thematic evaluation
+      across 3 regions — Weather and Climate Information Services: a thematic evaluation
+      across 3 regions, annexes'
+    url: https://assets.publishing.service.gov.uk/media/685d4ab662b2e559cbd752c4/Weather-and-Climate-Information-Services-a-thematic-evaluation-across-3-regions-annexes-November-2024.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-disguised-remuneration-2019-independent-loan-c-4
+    title: 'Disguised remuneration: 2019 independent loan charge review — The Government’s
+      Response to the Independent Loan Charge Review (2019)'
+    url: https://assets.publishing.service.gov.uk/media/5dfcb94240f0b665df884a4f/20191219_Government_response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-feeding-young-children-aged-1-to-5-years-draft
+    title: 'Feeding young children aged 1 to 5 years: draft SACN report — Draft report:
+      Feeding young children aged 1 to 5 years'
+    url: https://assets.publishing.service.gov.uk/media/62d7cd78e90e071e7e59c986/draft-report-feeding-young-children-aged-1-to-5-years.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-revision-of-building-regulation-policy-on-rado
+    title: 'Revision of building regulation policy on radon — Revision of building regulation
+      policy on radon: impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/5a7c9fb2e5274a29d8363cc5/Radon_IA.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-use-of-human-and-animal-products-in-vaccines-g
+    title: Use of human and animal products in vaccines — Guide to the use of human
+      and animal products in vaccines (print version)
+    url: https://assets.publishing.service.gov.uk/media/640f4e8a8fa8f55606454f26/UKHSA_12462_Vaccines_and_porcine_gelatine.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-public-attitudes-tracking-survey-wave-9-wave-9
+    title: 'Public attitudes tracking survey: wave 9 — Wave 9: summary of key findings'
+    url: https://assets.publishing.service.gov.uk/media/5a7dd75d40f0b65d88634bc8/summary_of_key_findings_wave_9.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-attitudes-tracking-survey-wave-9-wave-9-2
+    title: 'Public attitudes tracking survey: wave 9 — Wave 9: questionnaire'
+    url: https://assets.publishing.service.gov.uk/media/5a7e284ced915d74e33f06c7/wave_9_questionnaire.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-seizures-of-drugs-in-england-and-wales-financi-3
+    title: Seizures of drugs in England and Wales, financial year ending 2018
+    url: https://assets.publishing.service.gov.uk/media/5be31646ed915d6a283ef985/seizures-drugs-mar2018-hosb2618.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-additional-airport-capacity-cost-and-commercia
+    title: 'Additional airport capacity: cost and commercial viability analysis — Literature
+      review'
+    url: https://assets.publishing.service.gov.uk/media/5a74e5c2e5274a3cb2868111/13-cost-and-commercial-viability--literature-review.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-additional-airport-capacity-cost-and-commercia-5
+    title: 'Additional airport capacity: cost and commercial viability analysis — Financial
+      modelling input costs'
+    url: https://assets.publishing.service.gov.uk/media/5a7ef742ed915d74e33f38c9/13-Cost-and-Commercial-Viability-Modelling-Input-Costs.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-additional-airport-capacity-cost-and-commercia-6
+    title: 'Additional airport capacity: cost and commercial viability analysis — Funding
+      and financing'
+    url: https://assets.publishing.service.gov.uk/media/5a7da61640f0b65d8863393b/funding-and-financing.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-national-non-domestic-rates-collected-by-counc-4
+    title: 'National non-domestic rates collected by councils in England: forecast for
+      2018 to 2019 — National non-domestic rates to be collected by local authorities
+      in England 2018 to 2019 -'
+    url: https://assets.publishing.service.gov.uk/media/5a97ed27ed915d57d4d0f217/NNDR1_2018-19_Stats_release_-_revised.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-further-updated-rules-and-guide-for-energy-cod
+    title: Further updated rules and guide for energy code modification appeals — Energy
+      code modification appeals rules
+    url: https://assets.publishing.service.gov.uk/media/69bc882927f2139508f73d43/Energy_code_modification_appeals_rules__CMA196_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-further-updated-rules-and-guide-for-energy-cod-2
+    title: Further updated rules and guide for energy code modification appeals — Energy
+      code modification appeals guide
+    url: https://assets.publishing.service.gov.uk/media/69bc8829106c68d7289b64f4/Energy_code_modification_appeals_guide__CMA197_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-further-updated-rules-and-guide-for-energy-cod-3
+    title: Further updated rules and guide for energy code modification appeals — Energy
+      code modification appeals response to consultations
+    url: https://assets.publishing.service.gov.uk/media/69bc88294b1db2e4ba9b64f8/Energy_code_modification_appeals_response_to_consultations.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-further-updated-rules-and-guide-for-energy-cod-5
+    title: Further updated rules and guide for energy code modification appeals — NESO
+      response
+    url: https://assets.publishing.service.gov.uk/media/67866b963a9388161c5d239c/NESO_15_January_2025.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-understanding-and-measuring-cross-border-digit
+    title: Understanding and measuring cross-border digital trade
+    url: https://assets.publishing.service.gov.uk/media/5ebd3aefe90e071e33ce8874/Understanding-and-measuring-cross-border-digital-trade.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-road-accidents-and-safety-statistics-quality-a
+    title: 'Road accidents and safety statistics: quality and methodology — In-year
+      provisional estimates methodology note'
+    url: https://assets.publishing.service.gov.uk/media/60cb2447e90e0743ad59fdb5/in-year-provisional-estimates-methodology-note.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-road-accidents-and-safety-statistics-quality-a-2
+    title: 'Road accidents and safety statistics: quality and methodology — Drink drive
+      accident and casualty estimates: methodology note'
+    url: https://assets.publishing.service.gov.uk/media/60cb24a38fa8f57ce3773ce3/methodology-notes-drink-drive.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-road-accidents-and-safety-statistics-quality-a-3
+    title: 'Road accidents and safety statistics: quality and methodology — Survey data
+      on road accidents: methodology note'
+    url: https://assets.publishing.service.gov.uk/media/60cb26b98fa8f57cecdab07b/rrcgb-total-estimates-including-unreported-methodology.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-road-accidents-and-safety-statistics-quality-a-4
+    title: 'Road accidents and safety statistics: quality and methodology — A valuation
+      of road accidents and casualties in Great Britain: methodology note'
+    url: https://assets.publishing.service.gov.uk/media/60d057fbd3bf7f4bd842e3de/rrcgb-valuation-methodology.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-road-accidents-and-safety-statistics-quality-a-6
+    title: 'Road accidents and safety statistics: quality and methodology — Modelling
+      the impact of weather on road casualty statistics'
+    url: https://assets.publishing.service.gov.uk/media/60d05632d3bf7f4bd842e3dd/weather-on-road-casualties.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-road-accidents-and-safety-statistics-quality-a-8
+    title: 'Road accidents and safety statistics: quality and methodology — Reported
+      road casualties – contributory factor accessibility project'
+    url: https://assets.publishing.service.gov.uk/media/60d05770d3bf7f4bd5345460/contributory-factors-sensitivity-report.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-road-accidents-and-safety-statistics-quality-a-9
+    title: 'Road accidents and safety statistics: quality and methodology — Linking
+      Police (STATS19) and Hospital data (HES) on road accidents in England'
+    url: https://assets.publishing.service.gov.uk/media/60d05871d3bf7f4bcfe765e7/hes-linkage.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-uk-state-safety-programme-for-aviation-aviatio
+    title: UK State Safety Programme for aviation — Aviation – state safety programme
+    url: https://assets.publishing.service.gov.uk/media/685eafe3f85b4b993fd753de/aviation-state-safety-programme.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-uk-downstream-oil-infrastructure-final-report-
+    title: 'UK downstream oil infrastructure: final report by Wood Mackenzie'
+    url: https://assets.publishing.service.gov.uk/media/5a796669e5274a2acd18c873/1_20091214104502_e____ukdownstreamoilinfrastructurewoodmackenzie.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hs2-phase-2a-west-midlands-to-crewe-safeguardi
+    title: HS2 Phase 2a (West Midlands to Crewe) safeguarding consultation — Phase Two
+      (Fradley to Crewe) safeguarding consultation document
+    url: https://assets.publishing.service.gov.uk/media/5a7e01e4ed915d74e62237fa/HS2_Phase_Two__Fradley_-_Crewe__safeguarding_consultation.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-hs2-phase-2a-west-midlands-to-crewe-safeguardi-2
+    title: HS2 Phase 2a (West Midlands to Crewe) safeguarding consultation — The Government
+      Response to the Consultation on Safeguarding High Speed Two Phase Two (Fradley
+      to Crewe)
+    url: https://assets.publishing.service.gov.uk/media/5a7f2b94e5274a2e87db4392/Phase_2a_Safeguarding_Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-hs2-phase-2a-west-midlands-to-crewe-safeguardi-3
+    title: HS2 Phase 2a (West Midlands to Crewe) safeguarding consultation — Phase Two
+      (Fradley to Crewe) safeguarding consultation summary report
+    url: https://assets.publishing.service.gov.uk/media/5a815a76e5274a2e87dbd2bb/Phase_Two_FC_Safeguarding_consultation_response_summary_report.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-governance-structures-and-the-devolved-deliver
+    title: 'Governance structures and the devolved delivery of employment outcomes (RR678)
+      — Governance structures and the devolved delivery of employment outcomes (RR678):
+      report'
+    url: https://assets.publishing.service.gov.uk/media/5a7ca314e5274a2f304ef1f2/rrep678.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-governance-structures-and-the-devolved-deliver-2
+    title: 'Governance structures and the devolved delivery of employment outcomes (RR678)
+      — Governance structures and the devolved delivery of employment outcomes (RR678):
+      summary'
+    url: https://assets.publishing.service.gov.uk/media/5a7a335440f0b66eab99a779/678summ.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-biodiversity-net-gain-updating-planning-requir
+    title: 'Biodiversity net gain: updating planning requirements — Net gain: summary
+      of responses and government response'
+    url: https://assets.publishing.service.gov.uk/media/5d36cf4340f0b604db9e7cc0/net-gain-consult-sum-resp.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-biodiversity-net-gain-updating-planning-requir-2
+    title: 'Biodiversity net gain: updating planning requirements — Biodiversity net
+      gain and local nature recovery strategies: impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/5da5d695ed915d17b4f13f63/net-gain-ia.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-harwi
+    title: 'King Charles III England Coast Path from Harwich to Shotley Gate: Natural
+      England''s proposals — Harwich to Shotley Gate overview'
+    url: https://assets.publishing.service.gov.uk/media/60548b948fa8f545d43cda0e/harwich-shotley-gate-overview.PDF
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-harwi-3
+    title: 'King Charles III England Coast Path from Harwich to Shotley Gate: Natural
+      England''s proposals — Harwich to Shotley Gate habitats regulations assessment'
+    url: https://assets.publishing.service.gov.uk/media/5de7edd3ed915d09d76220e0/harwich-shotley-gate-habitats-regulations-assessment.PDF
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-harwi-4
+    title: 'King Charles III England Coast Path from Harwich to Shotley Gate: Natural
+      England''s proposals — Harwich to Shotley Gate nature conservation assessment'
+    url: https://assets.publishing.service.gov.uk/media/5de7ee14ed915d09d909ab94/harwich-shotley-gate-nature-conservation-assessment.PDF
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-harwi-5
+    title: 'King Charles III England Coast Path from Harwich to Shotley Gate: Natural
+      England''s proposals — HSG 1: Harwich to Ray Lane, Ramsey'
+    url: https://assets.publishing.service.gov.uk/media/605491bbe90e0724cce0afd3/harwich-shotley-gate-report-1.PDF
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-harwi-6
+    title: 'King Charles III England Coast Path from Harwich to Shotley Gate: Natural
+      England''s proposals — HSG 2: Ray Lane, Ramsey to Stone Point, Wrabness'
+    url: https://assets.publishing.service.gov.uk/media/5de7eee3ed915d09cb560a26/harwich-shotley-gate-report-2.PDF
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-harwi-7
+    title: 'King Charles III England Coast Path from Harwich to Shotley Gate: Natural
+      England''s proposals — HSG 3: Stone Point, Wrabness to Hopping Bridge, Mistley'
+    url: https://assets.publishing.service.gov.uk/media/5de7ef38ed915d09cb560a27/harwich-shotley-gate-report-3.PDF
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-harwi-8
+    title: 'King Charles III England Coast Path from Harwich to Shotley Gate: Natural
+      England''s proposals — HSG 4: Hopping Bridge, Mistley to Brantham Hall Farm'
+    url: https://assets.publishing.service.gov.uk/media/5de7ef7ded915d09ceceebee/harwich-shotley-gate-report-4.PDF
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-harwi-9
+    title: 'King Charles III England Coast Path from Harwich to Shotley Gate: Natural
+      England''s proposals — HSG 5: Brantham Hall Farm to Lower Holbrook'
+    url: https://assets.publishing.service.gov.uk/media/5de7efb440f0b6089914c201/harwich-shotley-gate-report-5.PDF
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-harwi-10
+    title: 'King Charles III England Coast Path from Harwich to Shotley Gate: Natural
+      England''s proposals — HSG 6: Lower Holbrook to Shotley Gate'
+    url: https://assets.publishing.service.gov.uk/media/5de7efe8ed915d09c7274575/harwich-shotley-gate-report-6.PDF
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-chargeable-gains-for-companies-toolkit-chargea
+    title: Chargeable gains for companies toolkit — Chargeable gains for companies toolkit
+      2019 to 2020 Company Tax Returns
+    url: https://assets.publishing.service.gov.uk/media/5e7da7e986650c743c9bfd34/Chargeable_2019_2020.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-chargeable-gains-for-companies-toolkit-chargea-2
+    title: Chargeable gains for companies toolkit — Chargeable gains for companies toolkit
+      2018 to 2019 Company Tax Returns
+    url: https://assets.publishing.service.gov.uk/media/5cc6f8f840f0b6767c616e8e/Chargeable_2018_19.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-chargeable-gains-for-companies-toolkit-chargea-3
+    title: Chargeable gains for companies toolkit — Chargeable gains for companies toolkit
+      2017 to 2018 Company Tax Returns
+    url: https://assets.publishing.service.gov.uk/media/5b04153bed915d1d874fa333/Chargeable-2017-18.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-social-fund-a-new-approach
+    title: 'The Social Fund: a new approach'
+    url: https://assets.publishing.service.gov.uk/media/5a7cb004ed915d63cc65c3c1/social-fund-new-approach.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-dedicated-schools-grant-very-high-deficit-inte-12
+    title: 'Dedicated schools grant: very high deficit intervention — Darlington: dedicated
+      schools grant ‘safety valve’ agreement 2022-2023'
+    url: https://assets.publishing.service.gov.uk/media/64118d0dd3bf7f79d6487b87/Darlington_Safety_Valve_Agreement_2022-2023.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-dedicated-schools-grant-very-high-deficit-inte-33
+    title: 'Dedicated schools grant: very high deficit intervention — York: dedicated
+      schools grant ‘safety valve’ agreement 2021-2022'
+    url: https://assets.publishing.service.gov.uk/media/645e1d686539660011bd3e42/York_safety_valve_agreement_2021-2022_updated.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-sexual-and-reproductive-health-return-on-inves
+    title: 'Sexual and reproductive health: return on investment tool — Sexual and reproductive
+      health: return on investment tool -  user guide and technical report'
+    url: https://assets.publishing.service.gov.uk/media/5eda1e4d86650c4ac26bbb3a/PHE_SRH_Tool_User_Guide_and_Technical_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-good-commissioning-principles-and-practice
+    title: Good commissioning principles and practice
+    url: https://assets.publishing.service.gov.uk/media/5a7b3e41ed915d429748dc95/good_commissioning_principles_and_practice.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-indicator-8-interim-data-national-ind
+    title: 'National Indicator 8: Interim data — National Indicators 8: Interim progress'
+    url: https://assets.publishing.service.gov.uk/media/5a79720d40f0b63d72fc5e0b/NI8-NationalIndicator-June_StatisticalRelease.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-nottingham-city-council-improvement-and-assura
+    title: 'Nottingham City Council Improvement and Assurance Board: fourth report'
+    url: https://assets.publishing.service.gov.uk/media/622201ffe90e0710b73fd5ac/Notts_4th_report.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-nationally-significant-infrastructure-projects
+    title: 'Nationally significant infrastructure projects and housing: briefing note'
+    url: https://assets.publishing.service.gov.uk/media/5a81a5e7e5274a2e87dbec1e/151026__briefing_note_and_draft_guidance_-_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-declaration-of-maritime-labour-compliance-part
+    title: Declaration of maritime labour compliance part II and guidance — Example
+      of declaration of maritime labour compliance part II
+    url: https://assets.publishing.service.gov.uk/media/60f97bf6e90e0703b09ac43d/Guidance_on_DMLC_Part_II_-_updated_13.07.2021.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-improving-the-costing-of-nhs-services-proposal
+    title: 'Improving the costing of NHS services: proposals for 2015 to 2021'
+    url: https://assets.publishing.service.gov.uk/media/5a7db31ce5274a5eaea65cca/Improving_the_costing_of_NHS_services_-_final.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-improving-the-costing-of-nhs-services-proposal-2
+    title: 'Improving the costing of NHS services: proposals for 2015 to 2021 — Costing
+      Roadmap: summary report and findings from BDO LLP'
+    url: https://assets.publishing.service.gov.uk/media/5a7dae1140f0b65d88633c36/Costing_Roadmap_-_FINAL_Engagement_Summary_080914.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-improving-the-costing-of-nhs-services-proposal-3
+    title: 'Improving the costing of NHS services: proposals for 2015 to 2021 — Costing
+      direction of travel and PLICS 2013/14 collection feedback: webinar slides'
+    url: https://assets.publishing.service.gov.uk/media/5a7e00f040f0b62305b802cf/Costing_and_PLICS.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-improving-the-costing-of-nhs-services-proposal-4
+    title: 'Improving the costing of NHS services: proposals for 2015 to 2021 — Our
+      response to your feedback'
+    url: https://assets.publishing.service.gov.uk/media/5a8191c440f0b62305b8fa99/CTP_consultation_feedback_report_final__with_cover__2.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-updated-traded-carbon-values-used-for-modellin
+    title: 'Updated traded carbon values used for modelling purposes: 2012'
+    url: https://assets.publishing.service.gov.uk/media/5a747999ed915d0e8bf1896b/Updated_short-term_traded_carbon_values_used_for_modelling_purposes__2012_.pdf
     source: gov_uk
     license: open
     topic: materials
