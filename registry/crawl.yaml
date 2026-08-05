@@ -2499,20 +2499,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-index
-    title: 'energyplus-docs docs: index'
-    url: https://bigladdersoftware.com/epx/docs/26-1/
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-index-html
-    title: 'energyplus-docs docs: index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/index.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-input-output-reference
     title: 'energyplus-docs docs: input-output-reference'
     url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/
@@ -2541,30 +2527,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-essentials
-    title: 'energyplus-docs docs: essentials'
-    url: https://bigladdersoftware.com/epx/docs/26-1/essentials/
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-external-interfaces-application-guide
-    title: 'energyplus-docs docs: external-interfaces-application-guide'
-    url: https://bigladdersoftware.com/epx/docs/26-1/external-interfaces-application-guide/
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-getting-started
     title: 'energyplus-docs docs: getting-started'
     url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-interface-developer
-    title: 'energyplus-docs docs: interface-developer'
-    url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -2583,44 +2548,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-plant-application-guide
-    title: 'energyplus-docs docs: plant-application-guide'
-    url: https://bigladdersoftware.com/epx/docs/26-1/plant-application-guide/
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-quick-start
-    title: 'energyplus-docs docs: quick-start'
-    url: https://bigladdersoftware.com/epx/docs/26-1/quick-start/
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-tips-and-tricks
     title: 'energyplus-docs docs: tips-and-tricks'
     url: https://bigladdersoftware.com/epx/docs/26-1/tips-and-tricks/
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-using-energyplus-for-compliance
-    title: 'energyplus-docs docs: using-energyplus-for-compliance'
-    url: https://bigladdersoftware.com/epx/docs/26-1/using-energyplus-for-compliance/
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-acknowledgments
-    title: 'energyplus-docs docs: acknowledgments'
-    url: https://bigladdersoftware.com/epx/docs/26-1/acknowledgments/
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-index-html
-    title: 'energyplus-docs docs: input-output-reference/index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/index.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -2632,23 +2562,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-input-output-reference-overview-html
-    title: 'energyplus-docs docs: input-output-reference/overview.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/overview.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-input-output-reference-what-s-different-
     title: 'energyplus-docs docs: input-output-reference/what-s-different-about-energyplus-input.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/what-s-different-about-energyplus-input.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-idd-conventions-h
-    title: 'energyplus-docs docs: input-output-reference/idd-conventions.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/idd-conventions.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -2670,13 +2586,6 @@ sources:
   - id: crawl-energyplus-docs-input-output-reference-group-simulation-
     title: 'energyplus-docs docs: input-output-reference/group-simulation-parameters.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/group-simulation-parameters.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-group-compliance-
-    title: 'energyplus-docs docs: input-output-reference/group-compliance-objects.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/group-compliance-objects.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -3066,13 +2975,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-input-output-reference-hvac-template-obj
-    title: 'energyplus-docs docs: input-output-reference/hvac-template-objects.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/hvac-template-objects.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-input-output-reference-hvactemplate-proc
     title: 'energyplus-docs docs: input-output-reference/hvactemplate-processing.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/hvactemplate-processing.html
@@ -3083,20 +2985,6 @@ sources:
   - id: crawl-energyplus-docs-input-output-reference-group-hvac-templa
     title: 'energyplus-docs docs: input-output-reference/group-hvac-templates.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/group-hvac-templates.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-energyplus-econom
-    title: 'energyplus-docs docs: input-output-reference/energyplus-economics.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/energyplus-economics.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-group-economics-h
-    title: 'energyplus-docs docs: input-output-reference/group-economics.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/group-economics.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -3129,13 +3017,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-input-output-reference-utilitycost-charg
-    title: 'energyplus-docs docs: input-output-reference/utilitycost-charge-simple.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/utilitycost-charge-simple.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-input-output-reference-utili-2
     title: 'energyplus-docs docs: input-output-reference/utilitycost-charge-block.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/utilitycost-charge-block.html
@@ -3143,51 +3024,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-input-output-reference-utilitycost-ratch
-    title: 'energyplus-docs docs: input-output-reference/utilitycost-ratchet.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/utilitycost-ratchet.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-utilitycost-varia
-    title: 'energyplus-docs docs: input-output-reference/utilitycost-variable.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/utilitycost-variable.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-utilitycost-compu
-    title: 'energyplus-docs docs: input-output-reference/utilitycost-computation.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/utilitycost-computation.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-input-output-reference-utili-3
     title: 'energyplus-docs docs: input-output-reference/utilitycost-tariff-examples.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/utilitycost-tariff-examples.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-utili-4
-    title: 'energyplus-docs docs: input-output-reference/utilitycost-tariff-reporting.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/utilitycost-tariff-reporting.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-economic-results-
-    title: 'energyplus-docs docs: input-output-reference/economic-results-summary-report.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/economic-results-summary-report.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-complex-tariff-mo
-    title: 'energyplus-docs docs: input-output-reference/complex-tariff-modeling.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/complex-tariff-modeling.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -3241,13 +3080,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-input-output-reference-currencytype-html
-    title: 'energyplus-docs docs: input-output-reference/currencytype.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/currencytype.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-input-output-reference-parametric-object
     title: 'energyplus-docs docs: input-output-reference/parametric-objects.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/parametric-objects.html
@@ -3272,20 +3104,6 @@ sources:
   - id: crawl-energyplus-docs-input-output-reference-using-readvarseso
     title: 'energyplus-docs docs: input-output-reference/using-readvarseso.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/using-readvarseso.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-standard-output-r
-    title: 'energyplus-docs docs: input-output-reference/standard-output-reports.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/standard-output-reports.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-output-table-time
-    title: 'energyplus-docs docs: input-output-reference/output-table-timebins.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/output-table-timebins.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -3325,41 +3143,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-input-output-reference-weather-data-html
-    title: 'energyplus-docs docs: input-output-reference/weather-data.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/weather-data.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-missing-weather-f
-    title: 'energyplus-docs docs: input-output-reference/missing-weather-file-data.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/missing-weather-file-data.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-weather-data-hour
-    title: 'energyplus-docs docs: input-output-reference/weather-data-hourly-interpolation.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/weather-data-hourly-interpolation.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-weather-file-data
-    title: 'energyplus-docs docs: input-output-reference/weather-file-data-reporting-errors-during.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/weather-file-data-reporting-errors-during.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-running-energyplu
-    title: 'energyplus-docs docs: input-output-reference/running-energyplus.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/running-energyplus.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-input-output-reference-energy-ini-html
     title: 'energyplus-docs docs: input-output-reference/energy-ini.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/energy-ini.html
@@ -3381,20 +3164,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-input-output-reference-appendix-a-units-
-    title: 'energyplus-docs docs: input-output-reference/appendix-a-units-and-abbreviations.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/appendix-a-units-and-abbreviations.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-input-output-reference-standard-energypl
-    title: 'energyplus-docs docs: input-output-reference/standard-energyplus-conditions.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/standard-energyplus-conditions.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-input-output-reference-stand-2
     title: 'energyplus-docs docs: input-output-reference/standard-energyplus-units.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/input-output-reference/standard-energyplus-units.html
@@ -3402,37 +3171,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-engineering-reference-index-html
-    title: 'energyplus-docs docs: engineering-reference/index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/index.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-overview-html
-    title: 'energyplus-docs docs: engineering-reference/overview.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/overview.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-document-overview-
-    title: 'energyplus-docs docs: engineering-reference/document-overview.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/document-overview.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-engineering-reference-general-modeling-o
     title: 'energyplus-docs docs: engineering-reference/general-modeling-overview.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/general-modeling-overview.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-simulation-manager
-    title: 'energyplus-docs docs: engineering-reference/simulation-manager.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/simulation-manager.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -3454,13 +3195,6 @@ sources:
   - id: crawl-energyplus-docs-engineering-reference-basis-for-the-zone
     title: 'energyplus-docs docs: engineering-reference/basis-for-the-zone-and-air-system-integration.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/basis-for-the-zone-and-air-system-integration.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-summary-of-predict
-    title: 'energyplus-docs docs: engineering-reference/summary-of-predictor-corrector-procedure.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/summary-of-predictor-corrector-procedure.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -3507,13 +3241,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-engineering-reference-surface-heat-balan
-    title: 'energyplus-docs docs: engineering-reference/surface-heat-balance-manager-processes.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/surface-heat-balance-manager-processes.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-engineering-reference-conduction-through
     title: 'energyplus-docs docs: engineering-reference/conduction-through-the-walls.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/conduction-through-the-walls.html
@@ -3552,13 +3279,6 @@ sources:
   - id: crawl-energyplus-docs-engineering-reference-inside-heat-balanc
     title: 'energyplus-docs docs: engineering-reference/inside-heat-balance.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/inside-heat-balance.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-adiabatic-boundary
-    title: 'energyplus-docs docs: engineering-reference/adiabatic-boundary-conditions.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/adiabatic-boundary-conditions.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -3619,27 +3339,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-engineering-reference-undist-2
-    title: 'energyplus-docs docs: engineering-reference/undisturbed-ground-temperature-model-kusuda.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/undisturbed-ground-temperature-model-kusuda.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-undist-3
-    title: 'energyplus-docs docs: engineering-reference/undisturbed-ground-temperature-model-xing.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/undisturbed-ground-temperature-model-xing.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-advanced-surface-c
-    title: 'energyplus-docs docs: engineering-reference/advanced-surface-concepts.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/advanced-surface-concepts.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-engineering-reference-exterior-naturally
     title: 'energyplus-docs docs: engineering-reference/exterior-naturally-vented-cavity.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/exterior-naturally-vented-cavity.html
@@ -3654,30 +3353,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-engineering-reference-surfaceproperty-un
-    title: 'energyplus-docs docs: engineering-reference/surfaceproperty-underwater.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/surfaceproperty-underwater.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-climate-sky-and-so
-    title: 'energyplus-docs docs: engineering-reference/climate-sky-and-solar-shading-calculations.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/climate-sky-and-solar-shading-calculations.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-engineering-reference-climate-calculatio
     title: 'energyplus-docs docs: engineering-reference/climate-calculations.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/climate-calculations.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-design-week-specif
-    title: 'energyplus-docs docs: engineering-reference/design-week-specification.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/design-week-specification.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -3706,13 +3384,6 @@ sources:
   - id: crawl-energyplus-docs-engineering-reference-diffuse-reflection
     title: 'energyplus-docs docs: engineering-reference/diffuse-reflection-of-beam-solar-and-sky.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/diffuse-reflection-of-beam-solar-and-sky.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-daylighting-and-wi
-    title: 'energyplus-docs docs: engineering-reference/daylighting-and-window-calculations.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/daylighting-and-window-calculations.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -3773,27 +3444,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-engineering-reference-air-heat-balance-m
-    title: 'energyplus-docs docs: engineering-reference/air-heat-balance-manager-processes.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/air-heat-balance-manager-processes.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-convection-from-su
-    title: 'energyplus-docs docs: engineering-reference/convection-from-surfaces.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/convection-from-surfaces.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-convection-from-in
-    title: 'energyplus-docs docs: engineering-reference/convection-from-internal-sources.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/convection-from-internal-sources.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-engineering-reference-infiltration-venti
     title: 'energyplus-docs docs: engineering-reference/infiltration-ventilation.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/infiltration-ventilation.html
@@ -3804,20 +3454,6 @@ sources:
   - id: crawl-energyplus-docs-engineering-reference-air-exchange-html
     title: 'energyplus-docs docs: engineering-reference/air-exchange.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/air-exchange.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-calculation-of-zon
-    title: 'energyplus-docs docs: engineering-reference/calculation-of-zone-air-temperature.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/calculation-of-zone-air-temperature.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-building-system-si
-    title: 'energyplus-docs docs: engineering-reference/building-system-simulation-system-manager.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/building-system-simulation-system-manager.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -3846,13 +3482,6 @@ sources:
   - id: crawl-energyplus-docs-engineering-reference-outdoor-air-system
     title: 'energyplus-docs docs: engineering-reference/outdoor-air-system.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/outdoor-air-system.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-outdoor-air-mixer-
-    title: 'energyplus-docs docs: engineering-reference/outdoor-air-mixer.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/outdoor-air-mixer.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -3892,13 +3521,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-engineering-reference-loop-equipment-siz
-    title: 'energyplus-docs docs: engineering-reference/loop-equipment-sizing-and-other-design-data.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/loop-equipment-sizing-and-other-design-data.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-engineering-reference-sizing-manager-htm
     title: 'energyplus-docs docs: engineering-reference/sizing-manager.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/sizing-manager.html
@@ -3923,13 +3545,6 @@ sources:
   - id: crawl-energyplus-docs-engineering-reference-system-design-load
     title: 'energyplus-docs docs: engineering-reference/system-design-loads-and-air-flow-rates.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/system-design-loads-and-air-flow-rates.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-plant-loop-sizing-
-    title: 'energyplus-docs docs: engineering-reference/plant-loop-sizing.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/plant-loop-sizing.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -3969,13 +3584,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-engineering-reference-alternative-modeli
-    title: 'energyplus-docs docs: engineering-reference/alternative-modeling-processes.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/alternative-modeling-processes.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-engineering-reference-airflownetwork-mod
     title: 'energyplus-docs docs: engineering-reference/airflownetwork-model.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/airflownetwork-model.html
@@ -3997,13 +3605,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-engineering-reference-simulation-models-
-    title: 'energyplus-docs docs: engineering-reference/simulation-models-encyclopedic-reference.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/simulation-models-encyclopedic-reference.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-engineering-reference-air-system-distrib
     title: 'energyplus-docs docs: engineering-reference/air-system-distribution-terminals.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/air-system-distribution-terminals.html
@@ -4021,13 +3622,6 @@ sources:
   - id: crawl-energyplus-docs-engineering-reference-chillers-html
     title: 'energyplus-docs docs: engineering-reference/chillers.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/chillers.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-simula-2
-    title: 'energyplus-docs docs: engineering-reference/simulation-models-encyclopedic-reference-001.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/simulation-models-encyclopedic-reference-001.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -4063,13 +3657,6 @@ sources:
   - id: crawl-energyplus-docs-engineering-reference-electric-baseboard
     title: 'energyplus-docs docs: engineering-reference/electric-baseboard-heater-with-radiation.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/electric-baseboard-heater-with-radiation.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-simula-3
-    title: 'energyplus-docs docs: engineering-reference/simulation-models-encyclopedic-reference-002.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/simulation-models-encyclopedic-reference-002.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -4130,13 +3717,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-engineering-reference-simula-4
-    title: 'energyplus-docs docs: engineering-reference/simulation-models-encyclopedic-reference-003.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/simulation-models-encyclopedic-reference-003.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-engineering-reference-zone-internal-gain
     title: 'energyplus-docs docs: engineering-reference/zone-internal-gains.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/zone-internal-gains.html
@@ -4179,20 +3759,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-engineering-reference-district-cooling-h
-    title: 'energyplus-docs docs: engineering-reference/district-cooling.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/district-cooling.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-district-heating-h
-    title: 'energyplus-docs docs: engineering-reference/district-heating.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/district-heating.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-engineering-reference-centralheatpumpsys
     title: 'energyplus-docs docs: engineering-reference/centralheatpumpsystem.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/centralheatpumpsystem.html
@@ -4203,20 +3769,6 @@ sources:
   - id: crawl-energyplus-docs-engineering-reference-chillerheaterperfo
     title: 'energyplus-docs docs: engineering-reference/chillerheaterperformance-electric-eir.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/chillerheaterperformance-electric-eir.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-plant-temperature-
-    title: 'energyplus-docs docs: engineering-reference/plant-temperature-source-component.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/plant-temperature-source-component.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-simula-5
-    title: 'energyplus-docs docs: engineering-reference/simulation-models-encyclopedic-reference-004.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/simulation-models-encyclopedic-reference-004.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -4252,13 +3804,6 @@ sources:
   - id: crawl-energyplus-docs-engineering-reference-system-availabilit
     title: 'energyplus-docs docs: engineering-reference/system-availability-managers.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/system-availability-managers.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-simula-6
-    title: 'energyplus-docs docs: engineering-reference/simulation-models-encyclopedic-reference-005.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/simulation-models-encyclopedic-reference-005.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -4354,20 +3899,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-engineering-reference-performance-tables
-    title: 'energyplus-docs docs: engineering-reference/performance-tables.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/performance-tables.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-economics-calculat
-    title: 'energyplus-docs docs: engineering-reference/economics-calculations.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/economics-calculations.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-engineering-reference-component-costs-ht
     title: 'energyplus-docs docs: engineering-reference/component-costs.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/component-costs.html
@@ -4378,20 +3909,6 @@ sources:
   - id: crawl-energyplus-docs-engineering-reference-tariff-computation
     title: 'energyplus-docs docs: engineering-reference/tariff-computation.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/tariff-computation.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-life-cycle-cost-co
-    title: 'energyplus-docs docs: engineering-reference/life-cycle-cost-computations.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/life-cycle-cost-computations.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-engineering-reference-special-modules-re
-    title: 'energyplus-docs docs: engineering-reference/special-modules-reporting.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/special-modules-reporting.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -4410,13 +3927,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-engineering-reference-output-table-annua
-    title: 'energyplus-docs docs: engineering-reference/output-table-annual.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/output-table-annual.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-engineering-reference-heat-emissions-htm
     title: 'energyplus-docs docs: engineering-reference/heat-emissions.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/engineering-reference/heat-emissions.html
@@ -4431,23 +3941,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-auxiliary-programs-index-html
-    title: 'energyplus-docs docs: auxiliary-programs/index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/auxiliary-programs/index.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-auxiliary-programs-auxiliary-programs-ht
     title: 'energyplus-docs docs: auxiliary-programs/auxiliary-programs.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/auxiliary-programs/auxiliary-programs.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-ems-application-guide-index-html
-    title: 'energyplus-docs docs: ems-application-guide/index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/ems-application-guide/index.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -4459,44 +3955,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-essentials-index-html
-    title: 'energyplus-docs docs: essentials/index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/essentials/index.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-essentials-essentials-html
     title: 'energyplus-docs docs: essentials/essentials.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/essentials/essentials.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-external-interfaces-application-guide-in
-    title: 'energyplus-docs docs: external-interfaces-application-guide/index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/external-interfaces-application-guide/index.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-external-interfaces-application-guide-ex
-    title: 'energyplus-docs docs: external-interfaces-application-guide/external-interface-s.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/external-interfaces-application-guide/external-interface-s.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-external-interfaces-applicat-2
-    title: 'energyplus-docs docs: external-interfaces-application-guide/introduction.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/external-interfaces-application-guide/introduction.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-external-interfaces-application-guide-co
-    title: 'energyplus-docs docs: external-interfaces-application-guide/coupling-energyplus-with-the-building.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/external-interfaces-application-guide/coupling-energyplus-with-the-building.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -4518,34 +3979,6 @@ sources:
   - id: crawl-energyplus-docs-external-interfaces-application-guide-fm
     title: 'energyplus-docs docs: external-interfaces-application-guide/fmu-examples.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/external-interfaces-application-guide/fmu-examples.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-external-interfaces-applicat-4
-    title: 'energyplus-docs docs: external-interfaces-application-guide/exporting-energyplus-as-a-functional-mock-up.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/external-interfaces-application-guide/exporting-energyplus-as-a-functional-mock-up.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-external-interfaces-application-guide-re
-    title: 'energyplus-docs docs: external-interfaces-application-guide/references.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/external-interfaces-application-guide/references.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-index-html
-    title: 'energyplus-docs docs: getting-started/index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/index.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-energyplus-overview-html
-    title: 'energyplus-docs docs: getting-started/energyplus-overview.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/energyplus-overview.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -4578,13 +4011,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-getting-started-running-energyplus-html
-    title: 'energyplus-docs docs: getting-started/running-energyplus.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/running-energyplus.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-getting-started-introduction-html
     title: 'energyplus-docs docs: getting-started/introduction.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/introduction.html
@@ -4606,13 +4032,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-getting-started-tutorial-example-for-run
-    title: 'energyplus-docs docs: getting-started/tutorial-example-for-running-energyplus.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/tutorial-example-for-running-energyplus.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-getting-started-running-energyplus-build
     title: 'energyplus-docs docs: getting-started/running-energyplus-building-envelope-internal.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/running-energyplus-building-envelope-internal.html
@@ -4627,30 +4046,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-getting-started-overall-scheme-methodolo
-    title: 'energyplus-docs docs: getting-started/overall-scheme-methodology-for-running.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/overall-scheme-methodology-for-running.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-building-simulation-html
-    title: 'energyplus-docs docs: getting-started/building-simulation.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/building-simulation.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-getting-started-a-methodology-for-using-
     title: 'energyplus-docs docs: getting-started/a-methodology-for-using-energyplus.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/a-methodology-for-using-energyplus.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-tutorial-exercise-2-html
-    title: 'energyplus-docs docs: getting-started/tutorial-exercise-2.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/tutorial-exercise-2.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -4676,100 +4074,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-getting-started-other-useful-programs-in
-    title: 'energyplus-docs docs: getting-started/other-useful-programs-information.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/other-useful-programs-information.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-hvactemplate-objects-htm
-    title: 'energyplus-docs docs: getting-started/hvactemplate-objects.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/hvactemplate-objects.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-data-sets-html
-    title: 'energyplus-docs docs: getting-started/data-sets.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/data-sets.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-slab-and-basement-progra
-    title: 'energyplus-docs docs: getting-started/slab-and-basement-programs.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/slab-and-basement-programs.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-coefficient-curve-genera
-    title: 'energyplus-docs docs: getting-started/coefficient-curve-generation.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/coefficient-curve-generation.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-useful-programs-html
-    title: 'energyplus-docs docs: getting-started/useful-programs.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/useful-programs.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-weatherdata-html
-    title: 'energyplus-docs docs: getting-started/weatherdata.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/weatherdata.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-getting-started-results-processing-html
     title: 'energyplus-docs docs: getting-started/results-processing.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/results-processing.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-hvac-diagram-html
-    title: 'energyplus-docs docs: getting-started/hvac-diagram.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/hvac-diagram.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-csvproc-html
-    title: 'energyplus-docs docs: getting-started/csvproc.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/csvproc.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-convertesomtr-html
-    title: 'energyplus-docs docs: getting-started/convertesomtr.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/convertesomtr.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-datafiles-html
-    title: 'energyplus-docs docs: getting-started/datafiles.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/datafiles.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-library-files-html
-    title: 'energyplus-docs docs: getting-started/library-files.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/library-files.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-getting-started-energy-meters-html
-    title: 'energyplus-docs docs: getting-started/energy-meters.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/energy-meters.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -4781,13 +4088,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-getting-started-custom-meters-html
-    title: 'energyplus-docs docs: getting-started/custom-meters.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/custom-meters.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-getting-started-standard-energyplus-unit
     title: 'energyplus-docs docs: getting-started/standard-energyplus-units.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/getting-started/standard-energyplus-units.html
@@ -4795,23 +4095,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-interface-developer-index-html
-    title: 'energyplus-docs docs: interface-developer/index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/index.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-interface-developer-introduction-html
     title: 'energyplus-docs docs: interface-developer/introduction.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/introduction.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-interface-developer-interface-expectatio
-    title: 'energyplus-docs docs: interface-developer/interface-expectations.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/interface-expectations.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -4830,51 +4116,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-interface-developer-general-input-rules-
-    title: 'energyplus-docs docs: interface-developer/general-input-rules.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/general-input-rules.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-interface-developer-input-data-dictionar
-    title: 'energyplus-docs docs: interface-developer/input-data-dictionary.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/input-data-dictionary.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-interface-developer-input-data-file-html
-    title: 'energyplus-docs docs: interface-developer/input-data-file.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/input-data-file.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-interface-developer-input-details-html
-    title: 'energyplus-docs docs: interface-developer/input-details.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/input-details.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-interface-developer-idd-conventions-html
-    title: 'energyplus-docs docs: interface-developer/idd-conventions.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/idd-conventions.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-interface-developer-standard-energyplus-
     title: 'energyplus-docs docs: interface-developer/standard-energyplus-units.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/standard-energyplus-units.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-interface-developer-energyplus-reports-h
-    title: 'energyplus-docs docs: interface-developer/energyplus-reports.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/energyplus-reports.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -4886,37 +4130,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-interface-developer-weather-data-html
-    title: 'energyplus-docs docs: interface-developer/weather-data.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/weather-data.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-interface-developer-running-energyplus-h
     title: 'energyplus-docs docs: interface-developer/running-energyplus.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/running-energyplus.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-interface-developer-licensing-html
-    title: 'energyplus-docs docs: interface-developer/licensing.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/licensing.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-interface-developer-appendix-a-simple-id
-    title: 'energyplus-docs docs: interface-developer/appendix-a-simple-idf-file.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/appendix-a-simple-idf-file.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-index-html
-    title: 'energyplus-docs docs: module-developer/index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/index.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -4928,13 +4144,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-module-developer-modules-in-energyplus-h
-    title: 'energyplus-docs docs: module-developer/modules-in-energyplus.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/modules-in-energyplus.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-module-developer-what-is-a-module-anyway
     title: 'energyplus-docs docs: module-developer/what-is-a-module-anyway.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/what-is-a-module-anyway.html
@@ -4942,37 +4151,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-module-developer-what-is-a-module-develo
-    title: 'energyplus-docs docs: module-developer/what-is-a-module-developer.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/what-is-a-module-developer.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-adding-new-features-htm
-    title: 'energyplus-docs docs: module-developer/adding-new-features.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/adding-new-features.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-input-concepts-html
-    title: 'energyplus-docs docs: module-developer/input-concepts.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/input-concepts.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-module-developer-input-data-dictionary-h
     title: 'energyplus-docs docs: module-developer/input-data-dictionary.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/input-data-dictionary.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-data-dictionary-naming-
-    title: 'energyplus-docs docs: module-developer/data-dictionary-naming-conventions.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/data-dictionary-naming-conventions.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -4998,20 +4179,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-module-developer-datasets-html
-    title: 'energyplus-docs docs: module-developer/datasets.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/datasets.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-module-structure-html
-    title: 'energyplus-docs docs: module-developer/module-structure.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/module-structure.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-module-developer-module-outline-html
     title: 'energyplus-docs docs: module-developer/module-outline.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/module-outline.html
@@ -5022,69 +4189,6 @@ sources:
   - id: crawl-energyplus-docs-module-developer-module-example-html
     title: 'energyplus-docs docs: module-developer/module-example.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/module-example.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-changing-existing-code-
-    title: 'energyplus-docs docs: module-developer/changing-existing-code.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/changing-existing-code.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-considerations-for-lega
-    title: 'energyplus-docs docs: module-developer/considerations-for-legacy-codes.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/considerations-for-legacy-codes.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-code-readability-vs-spe
-    title: 'energyplus-docs docs: module-developer/code-readability-vs-speed-of-execution.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/code-readability-vs-speed-of-execution.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-how-it-fits-together-ht
-    title: 'energyplus-docs docs: module-developer/how-it-fits-together.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/how-it-fits-together.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-energyplus-calling-stru
-    title: 'energyplus-docs docs: module-developer/energyplus-calling-structure.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/energyplus-calling-structure.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-top-level-calling-tree-
-    title: 'energyplus-docs docs: module-developer/top-level-calling-tree.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/top-level-calling-tree.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-high-level-hvac-calling
-    title: 'energyplus-docs docs: module-developer/high-level-hvac-calling-tree-schematic-not.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/high-level-hvac-calling-tree-schematic-not.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-air-system-calling-tree
-    title: 'energyplus-docs docs: module-developer/air-system-calling-tree-schematic-not-all.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/air-system-calling-tree-schematic-not-all.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-plant-calling-tree-sche
-    title: 'energyplus-docs docs: module-developer/plant-calling-tree-schematic-not-all-routines.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/plant-calling-tree-schematic-not-all-routines.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -5103,13 +4207,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-module-developer-hvac-network-html
-    title: 'energyplus-docs docs: module-developer/hvac-network.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/hvac-network.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-module-developer-branches-connectors-and
     title: 'energyplus-docs docs: module-developer/branches-connectors-and-nodes.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/branches-connectors-and-nodes.html
@@ -5124,13 +4221,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-module-developer-getting-nodes-html
-    title: 'energyplus-docs docs: module-developer/getting-nodes.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/getting-nodes.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-module-developer-data-flow-in-an-hvac-co
     title: 'energyplus-docs docs: module-developer/data-flow-in-an-hvac-component-module.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/data-flow-in-an-hvac-component-module.html
@@ -5141,27 +4231,6 @@ sources:
   - id: crawl-energyplus-docs-module-developer-interfacing-with-plant-
     title: 'energyplus-docs docs: module-developer/interfacing-with-plant.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/interfacing-with-plant.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-node-mass-flow-variable
-    title: 'energyplus-docs docs: module-developer/node-mass-flow-variables.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/node-mass-flow-variables.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-energyplus-services-htm
-    title: 'energyplus-docs docs: module-developer/energyplus-services.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/energyplus-services.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-utility-routines-functi
-    title: 'energyplus-docs docs: module-developer/utility-routines-functions.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/utility-routines-functions.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -5194,13 +4263,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-module-developer-data-services-html
-    title: 'energyplus-docs docs: module-developer/data-services.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/data-services.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-module-developer-other-useful-utilities-
     title: 'energyplus-docs docs: module-developer/other-useful-utilities.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/other-useful-utilities.html
@@ -5215,13 +4277,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-module-developer-display-strings-html
-    title: 'energyplus-docs docs: module-developer/display-strings.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/display-strings.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-module-developer-performance-curve-servi
     title: 'energyplus-docs docs: module-developer/performance-curve-services.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/performance-curve-services.html
@@ -5232,13 +4287,6 @@ sources:
   - id: crawl-energyplus-docs-module-developer-fluid-property-services
     title: 'energyplus-docs docs: module-developer/fluid-property-services.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/fluid-property-services.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-weather-services-html
-    title: 'energyplus-docs docs: module-developer/weather-services.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/weather-services.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -5271,13 +4319,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-module-developer-output-html
-    title: 'energyplus-docs docs: module-developer/output.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/output.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-module-developer-how-do-i-output-my-vari
     title: 'energyplus-docs docs: module-developer/how-do-i-output-my-variables.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/how-do-i-output-my-variables.html
@@ -5288,13 +4329,6 @@ sources:
   - id: crawl-energyplus-docs-module-developer-output-variable-dos-and
     title: 'energyplus-docs docs: module-developer/output-variable-dos-and-don-ts.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/output-variable-dos-and-don-ts.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-energy-management-syste
-    title: 'energyplus-docs docs: module-developer/energy-management-system.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/energy-management-system.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -5341,27 +4375,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-module-developer-appendix-a-dataglobals-
-    title: 'energyplus-docs docs: module-developer/appendix-a-dataglobals-and-dataenvironments.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/appendix-a-dataglobals-and-dataenvironments.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-dataglobals-html
-    title: 'energyplus-docs docs: module-developer/dataglobals.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/dataglobals.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-dataenvironment-html
-    title: 'energyplus-docs docs: module-developer/dataenvironment.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/dataenvironment.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-module-developer-appendix-b-submissions-
     title: 'energyplus-docs docs: module-developer/appendix-b-submissions-and-check-ins.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/appendix-b-submissions-and-check-ins.html
@@ -5376,51 +4389,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-module-developer-appendix-d-module-subro
-    title: 'energyplus-docs docs: module-developer/appendix-d-module-subroutine-function.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/appendix-d-module-subroutine-function.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-module-developer-appendix-e-test-file-do
     title: 'energyplus-docs docs: module-developer/appendix-e-test-file-documentation.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/appendix-e-test-file-documentation.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-appendix-f-new-or-chang
-    title: 'energyplus-docs docs: module-developer/appendix-f-new-or-changed-proposal-feature.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/appendix-f-new-or-changed-proposal-feature.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-appendix-g-html
-    title: 'energyplus-docs docs: module-developer/appendix-g.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/appendix-g.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-index-html
-    title: 'energyplus-docs docs: output-details-and-examples/index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/index.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-introduction
-    title: 'energyplus-docs docs: output-details-and-examples/introduction.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/introduction.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-output-files
-    title: 'energyplus-docs docs: output-details-and-examples/output-files.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/output-files.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -5446,13 +4417,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-eplusout-dbg
-    title: 'energyplus-docs docs: output-details-and-examples/eplusout-dbg.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusout-dbg.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-output-details-and-examples-eplusout-dxf
     title: 'energyplus-docs docs: output-details-and-examples/eplusout-dxf.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusout-dxf.html
@@ -5474,34 +4438,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-eplusout-end
-    title: 'energyplus-docs docs: output-details-and-examples/eplusout-end.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusout-end.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-eplusout-epm
-    title: 'energyplus-docs docs: output-details-and-examples/eplusout-epmidf.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusout-epmidf.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples--2
-    title: 'energyplus-docs docs: output-details-and-examples/eplusout-epmdet.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusout-epmdet.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-eplusout-err
-    title: 'energyplus-docs docs: output-details-and-examples/eplusout-err.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusout-err.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-output-details-and-examples-eplusout-eso
     title: 'energyplus-docs docs: output-details-and-examples/eplusout-eso.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusout-eso.html
@@ -5512,13 +4448,6 @@ sources:
   - id: crawl-energyplus-docs-output-details-and-examples-eplusout-mtd
     title: 'energyplus-docs docs: output-details-and-examples/eplusout-mtd.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusout-mtd.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-eplusout-mtr
-    title: 'energyplus-docs docs: output-details-and-examples/eplusout-mtr.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusout-mtr.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -5544,72 +4473,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-eplusout-shd
-    title: 'energyplus-docs docs: output-details-and-examples/eplusout-shd.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusout-shd.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-eplusout-sln
-    title: 'energyplus-docs docs: output-details-and-examples/eplusout-sln.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusout-sln.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-output-details-and-examples-eplusout-sql
     title: 'energyplus-docs docs: output-details-and-examples/eplusout-sql.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusout-sql.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-eplusssz-lt-
-    title: 'energyplus-docs docs: output-details-and-examples/eplusssz-lt-ext-gt.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusssz-lt-ext-gt.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-epluszsz-lt-
-    title: 'energyplus-docs docs: output-details-and-examples/epluszsz-lt-ext-gt.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/epluszsz-lt-ext-gt.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-eplusout-lt-
-    title: 'energyplus-docs docs: output-details-and-examples/eplusout-lt-ext-gt.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusout-lt-ext-gt.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-eplusmtr-lt-
-    title: 'energyplus-docs docs: output-details-and-examples/eplusmtr-lt-ext-gt.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusmtr-lt-ext-gt.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-eplusmap-lt-
-    title: 'energyplus-docs docs: output-details-and-examples/eplusmap-lt-ext-gt.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusmap-lt-ext-gt.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-eplusout-dfs
-    title: 'energyplus-docs docs: output-details-and-examples/eplusout-dfs.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusout-dfs.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-eplusscreen-
-    title: 'energyplus-docs docs: output-details-and-examples/eplusscreen-csv.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusscreen-csv.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -5624,13 +4490,6 @@ sources:
   - id: crawl-energyplus-docs-output-details-and-examples-readvars-rva
     title: 'energyplus-docs docs: output-details-and-examples/readvars-rvaudit.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/readvars-rvaudit.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-eplusout-svg
-    title: 'energyplus-docs docs: output-details-and-examples/eplusout-svg.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/eplusout-svg.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -5656,20 +4515,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-example-inpu
-    title: 'energyplus-docs docs: output-details-and-examples/example-input-files.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/example-input-files.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-data-sets-ht
-    title: 'energyplus-docs docs: output-details-and-examples/data-sets.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/data-sets.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-output-details-and-examples-simple-list-
     title: 'energyplus-docs docs: output-details-and-examples/simple-list-data-sets.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/simple-list-data-sets.html
@@ -5680,27 +4525,6 @@ sources:
   - id: crawl-energyplus-docs-output-details-and-examples-macro-data-s
     title: 'energyplus-docs docs: output-details-and-examples/macro-data-sets.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/macro-data-sets.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-plant-application-guide-index-html
-    title: 'energyplus-docs docs: plant-application-guide/index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/plant-application-guide/index.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-plant-application-guide-introduction-htm
-    title: 'energyplus-docs docs: plant-application-guide/introduction.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/plant-application-guide/introduction.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-plant-application-guide-organization-htm
-    title: 'energyplus-docs docs: plant-application-guide/organization.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/plant-application-guide/organization.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -5729,13 +4553,6 @@ sources:
   - id: crawl-energyplus-docs-plant-application-guide-example-for-ener
     title: 'energyplus-docs docs: plant-application-guide/example-for-energyplus-line-diagram.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/plant-application-guide/example-for-energyplus-line-diagram.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-plant-application-guide-inputting-the-sy
-    title: 'energyplus-docs docs: plant-application-guide/inputting-the-system-into-the-idf-file.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/plant-application-guide/inputting-the-system-into-the-idf-file.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -5810,30 +4627,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-plant-application-guide-primary-secondar
-    title: 'energyplus-docs docs: plant-application-guide/primary-secondary-pumping.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/plant-application-guide/primary-secondary-pumping.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-plant-application-guide-cond-2
     title: 'energyplus-docs docs: plant-application-guide/condenser-loop-cooling-tower.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/plant-application-guide/condenser-loop-cooling-tower.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-plant-application-guide-references-html
-    title: 'energyplus-docs docs: plant-application-guide/references.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/plant-application-guide/references.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-quick-start-index-html
-    title: 'energyplus-docs docs: quick-start/index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/quick-start/index.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -5845,51 +4641,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-tips-and-tricks-index-html
-    title: 'energyplus-docs docs: tips-and-tricks/index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/tips-and-tricks/index.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-tips-and-tricks-tips-and-tricks-html
     title: 'energyplus-docs docs: tips-and-tricks/tips_and_tricks.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/tips-and-tricks/tips_and_tricks.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-using-energyplus-for-compliance-index-ht
-    title: 'energyplus-docs docs: using-energyplus-for-compliance/index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/using-energyplus-for-compliance/index.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-using-energyplus-for-compliance-introduc
-    title: 'energyplus-docs docs: using-energyplus-for-compliance/introduction.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/using-energyplus-for-compliance/introduction.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-using-energyplus-for-compliance-backgrou
-    title: 'energyplus-docs docs: using-energyplus-for-compliance/background.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/using-energyplus-for-compliance/background.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-using-energyplus-for-compliance-complian
-    title: 'energyplus-docs docs: using-energyplus-for-compliance/compliance-objects.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/using-energyplus-for-compliance/compliance-objects.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-using-energyplus-for-compliance-tabular-
-    title: 'energyplus-docs docs: using-energyplus-for-compliance/tabular-summary-reports.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/using-energyplus-for-compliance/tabular-summary-reports.html
     source: energyplus-docs
     license: open
     topic: building_energy
@@ -5901,58 +4655,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-energyplus-docs-using-energyplus-for-complia-2
-    title: 'energyplus-docs docs: using-energyplus-for-compliance/features-related-to-california-title-24.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/using-energyplus-for-compliance/features-related-to-california-title-24.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-acknowledgments-index-html
-    title: 'energyplus-docs docs: acknowledgments/index.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/acknowledgments/index.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-energyplus-docs-acknowledgments-acknowledgments-html
     title: 'energyplus-docs docs: acknowledgments/acknowledgments.html'
     url: https://bigladdersoftware.com/epx/docs/26-1/acknowledgments/acknowledgments.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-external-interfaces-applicat-5
-    title: 'energyplus-docs docs: external-interfaces-application-guide/external-interfaces-application-guide.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/external-interfaces-application-guide/external-interfaces-application-guide.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-interface-developer-guide-for-interface-
-    title: 'energyplus-docs docs: interface-developer/guide-for-interface-developers.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/interface-developer/guide-for-interface-developers.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-module-developer-guide-for-module-develo
-    title: 'energyplus-docs docs: module-developer/guide-for-module-developers.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/module-developer/guide-for-module-developers.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-output-details-and-examples-output-detai
-    title: 'energyplus-docs docs: output-details-and-examples/output-details-and-examples.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/output-details-and-examples/output-details-and-examples.html
-    source: energyplus-docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-energyplus-docs-using-energyplus-for-compliance-using-en
-    title: 'energyplus-docs docs: using-energyplus-for-compliance/using-energyplus-for-compliance.html'
-    url: https://bigladdersoftware.com/epx/docs/26-1/using-energyplus-for-compliance/using-energyplus-for-compliance.html
     source: energyplus-docs
     license: open
     topic: building_energy
