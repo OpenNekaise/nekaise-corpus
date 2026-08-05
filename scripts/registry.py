@@ -17,6 +17,7 @@ import json
 import os
 import re
 import sys
+import zlib
 from pathlib import Path
 
 import yaml
@@ -126,14 +127,25 @@ def load_entries() -> list[dict]:
     return out
 
 
+# Countries whose patent manifest outgrows a single file get split into stable hash buckets:
+# patents-cn.jsonl alone crossed GitHub's 100MB limit at 152MB (2026-08-05) and blocked every
+# push. crc32 keeps the id -> bucket mapping stable across runs and platforms.
+PATENT_BUCKETS = {"cn": 8, "us": 4}
+
+
 def manifest_shard(sid: str) -> str:
     """Manifest shard stem for an id: mirrors the registry shard, except patents split further
-    by publication country (pat-us…/pat-cn…) — the patents vein alone is ~25MB and growing."""
+    by publication country (pat-us…/pat-cn…), and heavy countries split again into hash
+    buckets (patents-cn-0…7) so no shard approaches GitHub's 100MB file limit."""
     stem = shard_path(sid).stem
     if stem == "patents":
         m = re.match(r"pat-([a-z]{2})", sid)
         if m:
-            return f"patents-{m.group(1)}"
+            country = m.group(1)
+            n = PATENT_BUCKETS.get(country)
+            if n:
+                return f"patents-{country}-{zlib.crc32(sid.encode()) % n}"
+            return f"patents-{country}"
     return stem
 
 

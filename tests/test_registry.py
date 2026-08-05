@@ -129,16 +129,23 @@ def manrow(sid, topic="building_energy"):
 def test_manifest_shard_routing():
     assert registry.manifest_shard("ost-some-report") == "reports"
     assert registry.manifest_shard("hand-curated-doc") == "curated"
-    # patents split by publication country — the one registry shard too big for one file
-    assert registry.manifest_shard("pat-us10519664b1") == "patents-us"
-    assert registry.manifest_shard("pat-cn105789298b") == "patents-cn"
+    # patents split by publication country, heavy countries again into stable crc32 buckets —
+    # patents-cn.jsonl alone crossed GitHub's 100MB file limit (2026-08-05)
+    import zlib
+    for sid, country, n in [("pat-us10519664b1", "us", 4), ("pat-cn105789298b", "cn", 8)]:
+        want = f"patents-{country}-{zlib.crc32(sid.encode()) % n}"
+        assert registry.manifest_shard(sid) == want
+    # a country without a bucket entry keeps the plain per-country shard
+    assert registry.manifest_shard("pat-ep1234567a1") == "patents-ep"
 
 
 def test_manifest_round_trip_and_shard_files(tmp_registry):
     rows = [manrow("ost-a"), manrow("pat-us1"), manrow("pat-cn1"), manrow("hand-x")]
     registry.write_manifest_rows(rows)
     names = {p.name for p in registry.manifest_files()}
-    assert names == {"reports.jsonl", "patents-us.jsonl", "patents-cn.jsonl", "curated.jsonl"}
+    assert names == {"reports.jsonl", "curated.jsonl",
+                     f"{registry.manifest_shard('pat-us1')}.jsonl",
+                     f"{registry.manifest_shard('pat-cn1')}.jsonl"}
     got = {r["id"] for r in registry.load_manifest_rows()}
     assert got == {"ost-a", "pat-us1", "pat-cn1", "hand-x"}
 
