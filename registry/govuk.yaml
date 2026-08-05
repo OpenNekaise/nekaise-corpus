@@ -189108,43 +189108,6 @@ sources:
     license: open
     topic: construction
     format: pdf
-  - id: guk-equality-impact-assessment-report
-    title: Equality Impact Assessment Report
-    url: https://assets.publishing.service.gov.uk/media/61eefa948fa8f50586678435/M349.pdf
-    source: gov_uk
-    license: open
-    topic: materials
-    format: pdf
-  - id: guk-equality-impact-assessment-report-equality-imp
-    title: Equality Impact Assessment Report — Equality Impact Assessment summary document
-      for HS2 Phase 2b Crewe – Manchester
-    url: https://assets.publishing.service.gov.uk/media/61eefae6e90e0703796dd039/M350.pdf
-    source: gov_uk
-    license: open
-    topic: materials
-    format: pdf
-  - id: guk-equality-impact-assessment-report-equality-imp-2
-    title: Equality Impact Assessment Report — Equality Impact Assessment scope and
-      methodology report
-    url: https://assets.publishing.service.gov.uk/media/61eefb25d3bf7f054db93909/M351.pdf
-    source: gov_uk
-    license: open
-    topic: materials
-    format: pdf
-  - id: guk-equality-impact-assessment-report-equality-imp-3
-    title: Equality Impact Assessment Report — Equality Impact Assessment Map Book
-    url: https://assets.publishing.service.gov.uk/media/61eefb53e90e07037ff2767c/M352.pdf
-    source: gov_uk
-    license: open
-    topic: materials
-    format: pdf
-  - id: guk-equality-impact-assessment-report-equality-imp-4
-    title: Equality Impact Assessment Report — Equality Impact Assessment Easy Read
-    url: https://assets.publishing.service.gov.uk/media/61eefba4d3bf7f054fcc2597/M353.pdf
-    source: gov_uk
-    license: open
-    topic: materials
-    format: pdf
   - id: guk-musculoskeletal-conditions-return-on-investmen
     title: 'Musculoskeletal conditions: return on investment tool — Return on investment
       of interventions for the prevention and treatment of musculoskeletal conditions:
@@ -225853,4 +225816,404 @@ sources:
     source: gov_uk
     license: open
     topic: materials
+    format: pdf
+  - id: guk-occupational-certificate-early-years-practitio
+    title: 'Occupational certificate: early years practitioner — Early years practitioner:
+      level 2 occupational certificate subject content'
+    url: https://assets.publishing.service.gov.uk/media/6a5789396d6d5c7e2845ca05/Early_Years_Practitioner_L2_Occ_Cert_subject_content.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-firearm-and-shotgun-certificates-in-england-an-7
+    title: Firearm and shotgun certificates in England and Wales, financial year ending
+      2011 — Firearm Certificates in England and Wales 2010/11
+    url: https://assets.publishing.service.gov.uk/media/5a7b6c9540f0b6425d5930ea/hosb0512.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-firearm-and-shotgun-certificates-in-england-an-8
+    title: Firearm and shotgun certificates in England and Wales, financial year ending
+      2011 — Statistical news release for Firearm Certificates in England and Wales
+      2010/11
+    url: https://assets.publishing.service.gov.uk/media/5a7b1eaaed915d429748cf8e/hosb0512snr.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-nhs-constitution-10-year-review-easy-read-chec
+    title: 'NHS Constitution: 10 year review (easy read) — Checking the NHS Constitution:
+      10 year review (easy read)'
+    url: https://assets.publishing.service.gov.uk/media/664f5e3f8f4cb8fef9f64f39/checking-the-nhs-constitution-10-year-review-easy-read.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-road-and-rail-networks-draft-national
+    title: 'National road and rail networks: draft national policy statement — Draft
+      national policy statement for the national road and rail networks: summary and
+      consultation'
+    url: https://assets.publishing.service.gov.uk/media/5a7ca4f240f0b65b3de0a3e2/executive-summary-consultation-document.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-road-and-rail-networks-draft-national-2
+    title: 'National road and rail networks: draft national policy statement — Draft
+      national policy statement for national networks: annex A'
+    url: https://assets.publishing.service.gov.uk/media/5a7c154aed915d210ade1791/consultation-document-draft-national-policy-statement.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-road-and-rail-networks-draft-national-3
+    title: 'National road and rail networks: draft national policy statement — Appraisal
+      of sustainability: annex B'
+    url: https://assets.publishing.service.gov.uk/media/5a7c4dcee5274a2041cf3195/annex-b-appraisal-sustainability-main-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-road-and-rail-networks-draft-national-4
+    title: 'National road and rail networks: draft national policy statement — National
+      network national policy statement baseline: annex C'
+    url: https://assets.publishing.service.gov.uk/media/5a7cd836ed915d71e1e4dfc1/annex-c-nnnps-baseline.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-road-and-rail-networks-draft-national-5
+    title: 'National road and rail networks: draft national policy statement — Review
+      of plans, policies and programmes: annex D'
+    url: https://assets.publishing.service.gov.uk/media/5a7c14baed915d1c30daa729/annex-d-review-plans-policies-programmes.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-road-and-rail-networks-draft-national-6
+    title: 'National road and rail networks: draft national policy statement — Scoping
+      report: annex E'
+    url: https://assets.publishing.service.gov.uk/media/5a747def40f0b604dd7ae573/annex-e-scoping-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-road-and-rail-networks-draft-national-7
+    title: 'National road and rail networks: draft national policy statement — Appraisal
+      of sustainability non-technical summary: annex F'
+    url: https://assets.publishing.service.gov.uk/media/5a7c86b440f0b62aff6c24a5/annex-f-appraisal-sustainability-non-technical-summary.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-road-and-rail-networks-draft-national-8
+    title: 'National road and rail networks: draft national policy statement — Habitats
+      regulation assessment: annex G'
+    url: https://assets.publishing.service.gov.uk/media/5a7c3b58e5274a2041cf29b2/annex-g-nnnps-habitats-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-road-and-rail-networks-draft-national-9
+    title: 'National road and rail networks: draft national policy statement — National
+      networks: national policy statement frequently asked questions'
+    url: https://assets.publishing.service.gov.uk/media/5a7ca95240f0b65b3de0a5d5/national-networks-faqs.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-climate-resilient-infrastructure-preparing-for
+    title: 'Climate resilient infrastructure, preparing for a changing climate: summary
+      document — Climate resilient infrastructure - summary document'
+    url: https://assets.publishing.service.gov.uk/media/5a799268e5274a3864fd80b0/summary-report-final-version2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-strategic-road-network-and-the-delivery-of-sus-3
+    title: 'Strategic road network and the delivery of sustainable development: impact
+      assessment'
+    url: https://assets.publishing.service.gov.uk/media/5a7f06caed915d74e33f3ee7/impact-assessment-strategic-road.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-sea-fisheries-annual-statistics-report-2014-3
+    title: UK sea fisheries annual statistics report 2014 — End user survey – results
+    url: https://assets.publishing.service.gov.uk/media/5a8178ce40f0b623026977db/End_user_survey___results.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-plug-in-solar-electrical-safety-study
+    title: Plug-in solar electrical safety study
+    url: https://assets.publishing.service.gov.uk/media/6a32bfea0bea238415c9a1c0/Plug-in-solar-PV-study.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-sector-guidance-note-s5-06-recovery-and-dispos
+    title: 'Sector Guidance Note S5.06: recovery and disposal of hazardous and non-hazardous
+      waste'
+    url: https://assets.publishing.service.gov.uk/media/5a7ca4ae40f0b6629523adf8/LIT_8199_dd704c.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-sector-guidance-note-s5-06-recovery-and-dispos-2
+    title: 'Sector Guidance Note S5.06: recovery and disposal of hazardous and non-hazardous
+      waste — Treating waste by thermal desorption: addendum to S5.06'
+    url: https://assets.publishing.service.gov.uk/media/5a7eedf240f0b62305b8410f/geho0512bwir-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-sector-guidance-note-s5-06-recovery-and-dispos-3
+    title: 'Sector Guidance Note S5.06: recovery and disposal of hazardous and non-hazardous
+      waste — Guidance for the storage and treatment of aerosol canisters and similar
+      packaged wastes: ad'
+    url: https://assets.publishing.service.gov.uk/media/5a74b898e5274a3f93b48440/geho1111bved-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-equality-impact-assessment-for-hs2-phase-2b-cr
+    title: Equality impact assessment for HS2 Phase 2b Crewe – Manchester — Equality
+      Impact Assessment Report for HS2 Phase 2b Crewe – Manchester
+    url: https://assets.publishing.service.gov.uk/media/61e15734e90e07037ac9e086/M349.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-equality-impact-assessment-for-hs2-phase-2b-cr-2
+    title: Equality impact assessment for HS2 Phase 2b Crewe – Manchester — Equality
+      Impact Assessment summary document for HS2 Phase 2b Crewe – Manchester
+    url: https://assets.publishing.service.gov.uk/media/61e15774e90e070375c22f7d/M350.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-equality-impact-assessment-for-hs2-phase-2b-cr-3
+    title: Equality impact assessment for HS2 Phase 2b Crewe – Manchester — Equality
+      Impact Assessment scope and methodology report for HS2 Phase 2b Crewe – Manchester
+    url: https://assets.publishing.service.gov.uk/media/61e157998fa8f50594b5937b/M351.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-equality-impact-assessment-for-hs2-phase-2b-cr-4
+    title: Equality impact assessment for HS2 Phase 2b Crewe – Manchester — Equality
+      Impact Assessment Map Book for HS2 Phase 2b Crewe – Manchester
+    url: https://assets.publishing.service.gov.uk/media/61e157cdd3bf7f0543162f97/M352.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-equality-impact-assessment-for-hs2-phase-2b-cr-5
+    title: Equality impact assessment for HS2 Phase 2b Crewe – Manchester — Equality
+      Impact Assessment Easy Read for HS2 Phase 2b Crewe – Manchester
+    url: https://assets.publishing.service.gov.uk/media/61e155f1d3bf7f0548ec13a7/M353.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-equality-impact-assessment-for-hs2-phase-2b-cr-6
+    title: Equality impact assessment for HS2 Phase 2b Crewe – Manchester — Working
+      Draft Equality Impact Assessment Consultation Summary Report  for Phase 2b Crewe
+      – Manchester
+    url: https://assets.publishing.service.gov.uk/media/61f128098fa8f50585ecbc0a/M354.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-made-smarter-review
+    title: Made Smarter Review
+    url: https://assets.publishing.service.gov.uk/media/5a74fceced915d502d6cc9dd/20171027_MadeSmarter_FINAL_DIGITAL.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-a-new-approach-to-financial-regulation-buildin
+    title: 'A new approach to financial regulation: building a stronger system — A new
+      approach to financial regulation: building a stronger system (PDF 1.3MB)'
+    url: https://assets.publishing.service.gov.uk/media/5a78da20ed915d07d35b2ee7/consult_newfinancial_regulation170211.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-a-new-approach-to-financial-regulation-buildin-8
+    title: 'A new approach to financial regulation: building a stronger system — Responses
+      N - O (PDF 10MB)'
+    url: https://assets.publishing.service.gov.uk/media/5a78e52040f0b6324769b013/consult_finregresponses_no.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-a-new-approach-to-financial-regulation-buildin-10
+    title: 'A new approach to financial regulation: building a stronger system — Responses
+      S (9MB)'
+    url: https://assets.publishing.service.gov.uk/media/5a799896e5274a3864fd8368/consult_finregresponses_s.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-a-new-approach-to-financial-regulation-buildin-11
+    title: 'A new approach to financial regulation: building a stronger system — Responses
+      T (1.2MB)'
+    url: https://assets.publishing.service.gov.uk/media/5a79dda640f0b670a8026003/consult_finregresponses_t.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-advanced-manufacturing-sector-plan-advanced-ma
+    title: Advanced Manufacturing Sector Plan — Advanced Manufacturing Sector Plan (accessible
+      version)
+    url: https://assets.publishing.service.gov.uk/media/68920a3366bdd4490c61098f/industrial_strategy_advanced_manufacturing_sector_plan_accessible.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-cic-regulator-mou-with-the-charity-commission-
+    title: 'CIC Regulator: MoU with the Charity Commission — Memorandum of understanding
+      between the Charity Commission and the Regulator of Community Interest Companies'
+    url: https://assets.publishing.service.gov.uk/media/5a7c1b3740f0b645ba3c6bb1/05-2184-community_-interest-companies-and-charity-commission-memorandam-of-understanding.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-children-s-social-work-workforce-2018-children-2
+    title: Children's social work workforce 2018 — Children's social work workforce
+      2017 to 2018 technical document
+    url: https://assets.publishing.service.gov.uk/media/5c766b2bed915d355218b8e9/Children_s_social_work_workforce_2018_technical_document.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-planning-inspectorate-staff-diversity-statisti-5
+    title: Planning Inspectorate Staff Diversity Statistics 15 December 2022 — Planning
+      Inspectorate staff diversity  official statistics 15 December 2022
+    url: https://assets.publishing.service.gov.uk/media/6399d24c8fa8f50dd9541e39/Planning_Inspectorate_Statistical_Release_Diversity_2022.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-planning-inspectorate-staff-diversity-statisti-6
+    title: Planning Inspectorate Staff Diversity Statistics 15 December 2022 — Staff
+      diversity official statistics background quality report 15 December 2022
+    url: https://assets.publishing.service.gov.uk/media/6399d764d3bf7f7b7013137b/Plannning_Inspectorate_Diversity_Stats_December_22_BQR.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-decision-makers-guide-vols-4-5-6-and-7-jobseek-13
+    title: 'Decision makers’ guide: Vols 4, 5, 6 and 7: Jobseeker''s Allowance and Income
+      Support: staff guide — DMG Vol 4: Amendment 55, June 2018'
+    url: https://assets.publishing.service.gov.uk/media/5b3b3f2d40f0b6460f1056aa/v4am55.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-decision-makers-guide-vols-4-5-6-and-7-jobseek-29
+    title: 'Decision makers’ guide: Vols 4, 5, 6 and 7: Jobseeker''s Allowance and Income
+      Support: staff guide — DMG Vol 5: Amendment 58, October 2019'
+    url: https://assets.publishing.service.gov.uk/media/5dbac70640f0b63799f219fc/vol-5-amd-58-oct-2019.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-decision-makers-guide-vols-4-5-6-and-7-jobseek-32
+    title: 'Decision makers’ guide: Vols 4, 5, 6 and 7: Jobseeker''s Allowance and Income
+      Support: staff guide — DMG Vol 5: Amendment 55, October 2018'
+    url: https://assets.publishing.service.gov.uk/media/5c4aef75e5274a6e4614fb09/v05am55.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-decision-makers-guide-vols-4-5-6-and-7-jobseek-35
+    title: 'Decision makers’ guide: Vols 4, 5, 6 and 7: Jobseeker''s Allowance and Income
+      Support: staff guide — DMG Vol 5: Amendment 52, October 2017'
+    url: https://assets.publishing.service.gov.uk/media/5a82acc5e5274a2e87dc267b/v5am52.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-decision-makers-guide-vols-4-5-6-and-7-jobseek-40
+    title: 'Decision makers’ guide: Vols 4, 5, 6 and 7: Jobseeker''s Allowance and Income
+      Support: staff guide — DMG Vol 5: Amendment 47, February 2016'
+    url: https://assets.publishing.service.gov.uk/media/5a74e228ed915d3c7d528b14/v5am47.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-decision-makers-guide-vols-4-5-6-and-7-jobseek-61
+    title: 'Decision makers’ guide: Vols 4, 5, 6 and 7: Jobseeker''s Allowance and Income
+      Support: staff guide — DMG Vol 7 Ch 39: Social Fund payments'
+    url: https://assets.publishing.service.gov.uk/media/6a68da370d360fa159c37c47/dmg-v-7-ch-39.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-legal-aid-statistics-quarterly-april-to-june-2
+    title: 'Legal aid statistics quarterly: April to June 2020 — Legal aid statistics
+      England and Wales bulletin April to June 2020'
+    url: https://assets.publishing.service.gov.uk/media/5f6b677fd3bf7f72306ab73d/legal-aid-statistics-bulletin-apr-jun-2020.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-use-of-cctv-overt-closed-circuit-television-sy
+    title: Use of CCTV (Overt Closed-Circuit Television system) Policy Framework
+    url: https://assets.publishing.service.gov.uk/media/619b90a8d3bf7f055c4b7632/cctv-policy-framework-requirements.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-use-of-cctv-overt-closed-circuit-television-sy-2
+    title: Use of CCTV (Overt Closed-Circuit Television system) Policy Framework — Use
+      of CCTV (Overt Closed-Circuit Television system) prisons guidance
+    url: https://assets.publishing.service.gov.uk/media/619b90dd8fa8f5038358bff8/cctv-pf-prison-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-use-of-cctv-overt-closed-circuit-television-sy-6
+    title: 'Use of CCTV (Overt Closed-Circuit Television system) Policy Framework —
+      Annex E: GDPR Privacy notice for employees, workers and contractors (UK)'
+    url: https://assets.publishing.service.gov.uk/media/619b923b8fa8f5037778c15d/annex-e-gdpr-privacy-notice-for-employees-workers-and-contractors-uk-1.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-green-book-supplementary-guidance-valuing-infr
+    title: 'Green Book supplementary guidance: valuing infrastructure spend — Valuing
+      infrastructure spend - March 2015'
+    url: https://assets.publishing.service.gov.uk/media/5a75bdc3e5274a545822dde0/PU1798_Valuing_Infrastructure_Spend_-_lastest_draft.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-green-book-supplementary-guidance-valuing-infr-2
+    title: 'Green Book supplementary guidance: valuing infrastructure spend — Valuing
+      infrastructure spend - November 2011'
+    url: https://assets.publishing.service.gov.uk/media/5a7a22f040f0b66a2fc00272/Valuing_infrastructure_spend.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-depolluting-end-of-life-vehicles-guidance-for-
+    title: 'Depolluting end-of-life vehicles: guidance for treatment facilities — Depolluting
+      end-of-life vehicles (cars and light goods vehicles): guidance for authorised
+      treatment facilities'
+    url: https://assets.publishing.service.gov.uk/media/5a79716840f0b63d72fc5dac/11-528-depolluting-end-of-life-vehicles-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-contracted-fire-watch-services
+    title: Contracted Fire Watch Services
+    url: https://assets.publishing.service.gov.uk/media/5fa272eed3bf7f03a841cf0c/sia-guidance-firewatch-services.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
     format: pdf
