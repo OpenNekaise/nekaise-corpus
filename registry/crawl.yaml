@@ -1680,3 +1680,927 @@ sources:
     license: open
     topic: standards_protocols
     format: html
+  - id: crawl-modelica-spec-preface-html
+    title: 'modelica-spec docs: preface.html'
+    url: https://specification.modelica.org/maint/3.7/preface.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-introduction1-html
+    title: 'modelica-spec docs: introduction1.html'
+    url: https://specification.modelica.org/maint/3.7/introduction1.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-lexical-structure-html
+    title: 'modelica-spec docs: lexical-structure.html'
+    url: https://specification.modelica.org/maint/3.7/lexical-structure.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-operators-and-expressions-html
+    title: 'modelica-spec docs: operators-and-expressions.html'
+    url: https://specification.modelica.org/maint/3.7/operators-and-expressions.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-class-predefined-types-and-declarations-ht
+    title: 'modelica-spec docs: class-predefined-types-and-declarations.html'
+    url: https://specification.modelica.org/maint/3.7/class-predefined-types-and-declarations.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-scoping-name-lookup-and-flattening-html
+    title: 'modelica-spec docs: scoping-name-lookup-and-flattening.html'
+    url: https://specification.modelica.org/maint/3.7/scoping-name-lookup-and-flattening.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-interface-or-type-relationships-html
+    title: 'modelica-spec docs: interface-or-type-relationships.html'
+    url: https://specification.modelica.org/maint/3.7/interface-or-type-relationships.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-inheritance-modification-and-redeclaration
+    title: 'modelica-spec docs: inheritance-modification-and-redeclaration.html'
+    url: https://specification.modelica.org/maint/3.7/inheritance-modification-and-redeclaration.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-equations-html
+    title: 'modelica-spec docs: equations.html'
+    url: https://specification.modelica.org/maint/3.7/equations.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-connectors-and-connections-html
+    title: 'modelica-spec docs: connectors-and-connections.html'
+    url: https://specification.modelica.org/maint/3.7/connectors-and-connections.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-arrays-html
+    title: 'modelica-spec docs: arrays.html'
+    url: https://specification.modelica.org/maint/3.7/arrays.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-statements-and-algorithm-sections-html
+    title: 'modelica-spec docs: statements-and-algorithm-sections.html'
+    url: https://specification.modelica.org/maint/3.7/statements-and-algorithm-sections.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-functions-html
+    title: 'modelica-spec docs: functions.html'
+    url: https://specification.modelica.org/maint/3.7/functions.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-packages-html
+    title: 'modelica-spec docs: packages.html'
+    url: https://specification.modelica.org/maint/3.7/packages.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-overloaded-operators-html
+    title: 'modelica-spec docs: overloaded-operators.html'
+    url: https://specification.modelica.org/maint/3.7/overloaded-operators.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-stream-connectors-html
+    title: 'modelica-spec docs: stream-connectors.html'
+    url: https://specification.modelica.org/maint/3.7/stream-connectors.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-synchronous-language-elements-html
+    title: 'modelica-spec docs: synchronous-language-elements.html'
+    url: https://specification.modelica.org/maint/3.7/synchronous-language-elements.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-state-machines-html
+    title: 'modelica-spec docs: state-machines.html'
+    url: https://specification.modelica.org/maint/3.7/state-machines.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-annotations-html
+    title: 'modelica-spec docs: annotations.html'
+    url: https://specification.modelica.org/maint/3.7/annotations.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-modelica-concrete-syntax-html
+    title: 'modelica-spec docs: modelica-concrete-syntax.html'
+    url: https://specification.modelica.org/maint/3.7/modelica-concrete-syntax.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-modelica-dae-representation-html
+    title: 'modelica-spec docs: modelica-dae-representation.html'
+    url: https://specification.modelica.org/maint/3.7/modelica-dae-representation.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-derivation-of-stream-equations-html
+    title: 'modelica-spec docs: derivation-of-stream-equations.html'
+    url: https://specification.modelica.org/maint/3.7/derivation-of-stream-equations.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-modelica-spec-idx-html
+    title: 'modelica-spec docs: idx.html'
+    url: https://specification.modelica.org/maint/3.7/idx.html
+    source: modelica-spec
+    license: open
+    topic: standards_protocols
+    format: html
+  - id: crawl-openmodelica-docs-introduction-html
+    title: 'openmodelica-docs docs: introduction.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/introduction.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-packagemanager-html
+    title: 'openmodelica-docs docs: packagemanager.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/packagemanager.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-omedit-html
+    title: 'openmodelica-docs docs: omedit.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/omedit.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-solving-html
+    title: 'openmodelica-docs docs: solving.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/solving.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-parmodauto-html
+    title: 'openmodelica-docs docs: parmodauto.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/parmodauto.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-basemodelica-html
+    title: 'openmodelica-docs docs: basemodelica.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/basemodelica.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-porting-html
+    title: 'openmodelica-docs docs: porting.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/porting.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-backwardscompatibility-html
+    title: 'openmodelica-docs docs: backwardscompatibility.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/backwardscompatibility.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-fmitlm-html
+    title: 'openmodelica-docs docs: fmitlm.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/fmitlm.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-omsimulator-html
+    title: 'openmodelica-docs docs: omsimulator.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/omsimulator.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-systemidentification-html
+    title: 'openmodelica-docs docs: systemidentification.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/systemidentification.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-encryption-html
+    title: 'openmodelica-docs docs: encryption.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/encryption.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-omnotebook-html
+    title: 'openmodelica-docs docs: omnotebook.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/omnotebook.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-optimization-html
+    title: 'openmodelica-docs docs: optimization.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/optimization.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-parametersensitivity-html
+    title: 'openmodelica-docs docs: parametersensitivity.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/parametersensitivity.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-pdemodelica-html
+    title: 'openmodelica-docs docs: pdemodelica.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/pdemodelica.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-mdt-html
+    title: 'openmodelica-docs docs: mdt.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/mdt.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-mdtdebugger-html
+    title: 'openmodelica-docs docs: mdtdebugger.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/mdtdebugger.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-interop-c-python-html
+    title: 'openmodelica-docs docs: interop_c_python.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/interop_c_python.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-ompython-html
+    title: 'openmodelica-docs docs: ompython.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/ompython.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-ommatlab-html
+    title: 'openmodelica-docs docs: ommatlab.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/ommatlab.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-scripting-api-html
+    title: 'openmodelica-docs docs: scripting_api.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/scripting_api.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-omchelptext-html
+    title: 'openmodelica-docs docs: omchelptext.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/omchelptext.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-simulationflags-html
+    title: 'openmodelica-docs docs: simulationflags.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/simulationflags.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-technical-details-html
+    title: 'openmodelica-docs docs: technical_details.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/technical_details.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-datareconciliation-html
+    title: 'openmodelica-docs docs: dataReconciliation.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/dataReconciliation.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-githubreleases-html
+    title: 'openmodelica-docs docs: githubreleases.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/githubreleases.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-openmodelica-docs-contributors-html
+    title: 'openmodelica-docs docs: contributors.html'
+    url: https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/contributors.html
+    source: openmodelica-docs
+    license: cc-by
+    topic: equipment_systems
+    format: html
+  - id: crawl-soep-requirements-html
+    title: 'soep docs: requirements.html'
+    url: https://lbl-srg.github.io/soep/requirements.html
+    source: soep
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-soep-softwarearchitecture-html
+    title: 'soep docs: softwareArchitecture.html'
+    url: https://lbl-srg.github.io/soep/softwareArchitecture.html
+    source: soep
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-soep-numericalmethods-html
+    title: 'soep docs: numericalMethods.html'
+    url: https://lbl-srg.github.io/soep/numericalMethods.html
+    source: soep
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-main-tutorial-html
+    title: 'eppy docs: Main_Tutorial.html'
+    url: https://eppy.readthedocs.io/en/latest/Main_Tutorial.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-hvac-tutorial-html
+    title: 'eppy docs: HVAC_Tutorial.html'
+    url: https://eppy.readthedocs.io/en/latest/HVAC_Tutorial.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-outputs-tutorial-html
+    title: 'eppy docs: Outputs_Tutorial.html'
+    url: https://eppy.readthedocs.io/en/latest/Outputs_Tutorial.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-newfunctions-html
+    title: 'eppy docs: newfunctions.html'
+    url: https://eppy.readthedocs.io/en/latest/newfunctions.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-runningeplus-html
+    title: 'eppy docs: runningeplus.html'
+    url: https://eppy.readthedocs.io/en/latest/runningeplus.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-useful-scripts-html
+    title: 'eppy docs: useful_scripts.html'
+    url: https://eppy.readthedocs.io/en/latest/useful_scripts.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-eppy-html
+    title: 'eppy docs: eppy.html'
+    url: https://eppy.readthedocs.io/en/latest/eppy.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-history-html
+    title: 'eppy docs: history.html'
+    url: https://eppy.readthedocs.io/en/latest/history.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-genindex-html
+    title: 'eppy docs: genindex.html'
+    url: https://eppy.readthedocs.io/en/latest/genindex.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-eppy-eplusinterfacefunctions-html
+    title: 'eppy docs: eppy.EPlusInterfaceFunctions.html'
+    url: https://eppy.readthedocs.io/en/latest/eppy.EPlusInterfaceFunctions.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-eppy-runner-html
+    title: 'eppy docs: eppy.runner.html'
+    url: https://eppy.readthedocs.io/en/latest/eppy.runner.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-modules-eppy-bunch-subclass-html
+    title: 'eppy docs: _modules/eppy/bunch_subclass.html'
+    url: https://eppy.readthedocs.io/en/latest/_modules/eppy/bunch_subclass.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-modules-eppy-function-helpers-html
+    title: 'eppy docs: _modules/eppy/function_helpers.html'
+    url: https://eppy.readthedocs.io/en/latest/_modules/eppy/function_helpers.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-modules-eppy-hvacbuilder-html
+    title: 'eppy docs: _modules/eppy/hvacbuilder.html'
+    url: https://eppy.readthedocs.io/en/latest/_modules/eppy/hvacbuilder.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-modules-eppy-idfreader-html
+    title: 'eppy docs: _modules/eppy/idfreader.html'
+    url: https://eppy.readthedocs.io/en/latest/_modules/eppy/idfreader.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-modules-eppy-modeleditor-html
+    title: 'eppy docs: _modules/eppy/modeleditor.html'
+    url: https://eppy.readthedocs.io/en/latest/_modules/eppy/modeleditor.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-modules-eppy-simplesurface-html
+    title: 'eppy docs: _modules/eppy/simplesurface.html'
+    url: https://eppy.readthedocs.io/en/latest/_modules/eppy/simplesurface.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-modules-eppy-runner-run-functions-html
+    title: 'eppy docs: _modules/eppy/runner/run_functions.html'
+    url: https://eppy.readthedocs.io/en/latest/_modules/eppy/runner/run_functions.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-modules-eppy-eplusinterfacefunctions-id-3
+    title: 'eppy docs: _modules/eppy/EPlusInterfaceFunctions/iddindex.html'
+    url: http://eppy.readthedocs.io/en/latest/_modules/eppy/EPlusInterfaceFunctions/iddindex.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-modules-eppy-eplusinterfacefunctions-re-2
+    title: 'eppy docs: _modules/eppy/EPlusInterfaceFunctions/readidf.html'
+    url: http://eppy.readthedocs.io/en/latest/_modules/eppy/EPlusInterfaceFunctions/readidf.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-modules-eppy-constructions-thermal-prop-2
+    title: 'eppy docs: _modules/eppy/constructions/thermal_properties.html'
+    url: http://eppy.readthedocs.io/en/latest/_modules/eppy/constructions/thermal_properties.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-eppy-modules-eppy-useful-scripts-loopdiagram-2
+    title: 'eppy docs: _modules/eppy/useful_scripts/loopdiagram.html'
+    url: http://eppy.readthedocs.io/en/latest/_modules/eppy/useful_scripts/loopdiagram.html
+    source: eppy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-about-openstudio-coalition
+    title: 'openstudio-docs docs: about/openstudio_coalition'
+    url: https://openstudiocoalition.org/about/openstudio_coalition/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-about-features
+    title: 'openstudio-docs docs: about/features'
+    url: https://openstudiocoalition.org/about/features/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-about-roadmap
+    title: 'openstudio-docs docs: about/roadmap'
+    url: https://openstudiocoalition.org/about/roadmap/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-about-privacy-policy
+    title: 'openstudio-docs docs: about/privacy_policy'
+    url: https://openstudiocoalition.org/about/privacy_policy/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-getting-started-getting-started
+    title: 'openstudio-docs docs: getting_started/getting_started'
+    url: https://openstudiocoalition.org/getting_started/getting_started/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-getting-started-creating-your-model
+    title: 'openstudio-docs docs: getting_started/creating_your_model'
+    url: https://openstudiocoalition.org/getting_started/creating_your_model/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-getting-started-best-practices
+    title: 'openstudio-docs docs: getting_started/best_practices'
+    url: https://openstudiocoalition.org/getting_started/best_practices/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-getting-started-running-your-simulation
+    title: 'openstudio-docs docs: getting_started/running_your_simulation'
+    url: https://openstudiocoalition.org/getting_started/running_your_simulation/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-getting-started-large-scale-analysis
+    title: 'openstudio-docs docs: getting_started/large_scale_analysis'
+    url: https://openstudiocoalition.org/getting_started/large_scale_analysis/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-getting-started-troubleshooting
+    title: 'openstudio-docs docs: getting_started/troubleshooting'
+    url: https://openstudiocoalition.org/getting_started/troubleshooting/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-tutorials-utility-rate-tariffs
+    title: 'openstudio-docs docs: tutorials/utility_rate_tariffs'
+    url: https://openstudiocoalition.org/tutorials/utility_rate_tariffs/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-tutorials-tutorial-gbxmlimport
+    title: 'openstudio-docs docs: tutorials/tutorial_gbxmlimport'
+    url: https://openstudiocoalition.org/tutorials/tutorial_gbxmlimport/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-tutorials-tutorial-windowproperty-framea
+    title: 'openstudio-docs docs: tutorials/tutorial_windowproperty_frameanddivider'
+    url: https://openstudiocoalition.org/tutorials/tutorial_windowproperty_frameanddivider/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-reference-openstudio-application-interfa
+    title: 'openstudio-docs docs: reference/openstudio_application_interface'
+    url: https://openstudiocoalition.org/reference/openstudio_application_interface/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-reference-sketchup-plugin-interface
+    title: 'openstudio-docs docs: reference/sketchup_plugin_interface'
+    url: https://openstudiocoalition.org/reference/sketchup_plugin_interface/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-reference-geometry-editor
+    title: 'openstudio-docs docs: reference/geometry_editor'
+    url: https://openstudiocoalition.org/reference/geometry_editor/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-openstudio-docs-reference-openstudio-results-measure
+    title: 'openstudio-docs docs: reference/openstudio_results_measure'
+    url: https://openstudiocoalition.org/reference/openstudio_results_measure/
+    source: openstudio-docs
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-index
+    title: 'energyplus-api docs: index'
+    url: https://energyplus.readthedocs.io/en/latest/
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-quick-start-quick-start-html
+    title: 'energyplus-api docs: quick_start/quick_start.html'
+    url: https://energyplus.readthedocs.io/en/latest/quick_start/quick_start.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-tips-and-tricks-tips-and-tricks-html
+    title: 'energyplus-api docs: tips_and_tricks/tips_and_tricks.html'
+    url: https://energyplus.readthedocs.io/en/latest/tips_and_tricks/tips_and_tricks.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-essentials-essentials-html
+    title: 'energyplus-api docs: essentials/essentials.html'
+    url: https://energyplus.readthedocs.io/en/latest/essentials/essentials.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-schema-html
+    title: 'energyplus-api docs: schema.html'
+    url: https://energyplus.readthedocs.io/en/latest/schema.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-c-html
+    title: 'energyplus-api docs: c.html'
+    url: https://energyplus.readthedocs.io/en/latest/c.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-api-html
+    title: 'energyplus-api docs: api.html'
+    url: https://energyplus.readthedocs.io/en/latest/api.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-auxiliary-programs-auxiliary-programs-htm
+    title: 'energyplus-api docs: auxiliary-programs/auxiliary-programs.html'
+    url: https://energyplus.readthedocs.io/en/latest/auxiliary-programs/auxiliary-programs.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-ems-application-guide-ems-application-gui
+    title: 'energyplus-api docs: ems-application-guide/ems-application-guide.html'
+    url: https://energyplus.readthedocs.io/en/latest/ems-application-guide/ems-application-guide.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-acknowledgments-acknowledgments-html
+    title: 'energyplus-api docs: acknowledgments/acknowledgments.html'
+    url: https://energyplus.readthedocs.io/en/latest/acknowledgments/acknowledgments.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-genindex-html
+    title: 'energyplus-api docs: genindex.html'
+    url: https://energyplus.readthedocs.io/en/latest/genindex.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-py-modindex-html
+    title: 'energyplus-api docs: py-modindex.html'
+    url: https://energyplus.readthedocs.io/en/latest/py-modindex.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-search-html
+    title: 'energyplus-api docs: search.html'
+    url: https://energyplus.readthedocs.io/en/latest/search.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-index-html
+    title: 'energyplus-api docs: index.html'
+    url: https://energyplus.readthedocs.io/en/latest/index.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-index-c-html
+    title: 'energyplus-api docs: index_c.html'
+    url: https://energyplus.readthedocs.io/en/latest/index_c.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-state-html
+    title: 'energyplus-api docs: state.html'
+    url: https://energyplus.readthedocs.io/en/latest/state.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-func-html
+    title: 'energyplus-api docs: func.html'
+    url: https://energyplus.readthedocs.io/en/latest/func.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-runtime-html
+    title: 'energyplus-api docs: runtime.html'
+    url: https://energyplus.readthedocs.io/en/latest/runtime.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-datatransfer-html
+    title: 'energyplus-api docs: datatransfer.html'
+    url: https://energyplus.readthedocs.io/en/latest/datatransfer.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-modules-api-html
+    title: 'energyplus-api docs: _modules/api.html'
+    url: https://energyplus.readthedocs.io/en/latest/_modules/api.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-modules-state-html
+    title: 'energyplus-api docs: _modules/state.html'
+    url: https://energyplus.readthedocs.io/en/latest/_modules/state.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-modules-func-html
+    title: 'energyplus-api docs: _modules/func.html'
+    url: https://energyplus.readthedocs.io/en/latest/_modules/func.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-modules-runtime-html
+    title: 'energyplus-api docs: _modules/runtime.html'
+    url: https://energyplus.readthedocs.io/en/latest/_modules/runtime.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-modules-datatransfer-html
+    title: 'energyplus-api docs: _modules/datatransfer.html'
+    url: https://energyplus.readthedocs.io/en/latest/_modules/datatransfer.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-energyplus-api-modules-index-html
+    title: 'energyplus-api docs: _modules/index.html'
+    url: https://energyplus.readthedocs.io/en/latest/_modules/index.html
+    source: energyplus-api
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-buildingspy-index
+    title: 'buildingspy docs: index'
+    url: https://simulationresearch.lbl.gov/modelica/buildingspy/
+    source: buildingspy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-buildingspy-genindex-html
+    title: 'buildingspy docs: genindex.html'
+    url: https://simulationresearch.lbl.gov/modelica/buildingspy/genindex.html
+    source: buildingspy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-buildingspy-py-modindex-html
+    title: 'buildingspy docs: py-modindex.html'
+    url: https://simulationresearch.lbl.gov/modelica/buildingspy/py-modindex.html
+    source: buildingspy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-buildingspy-install-html
+    title: 'buildingspy docs: install.html'
+    url: https://simulationresearch.lbl.gov/modelica/buildingspy/install.html
+    source: buildingspy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-buildingspy-simulate-html
+    title: 'buildingspy docs: simulate.html'
+    url: https://simulationresearch.lbl.gov/modelica/buildingspy/simulate.html
+    source: buildingspy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-buildingspy-io-html
+    title: 'buildingspy docs: io.html'
+    url: https://simulationresearch.lbl.gov/modelica/buildingspy/io.html
+    source: buildingspy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-buildingspy-fmi-html
+    title: 'buildingspy docs: fmi.html'
+    url: https://simulationresearch.lbl.gov/modelica/buildingspy/fmi.html
+    source: buildingspy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-buildingspy-examples-html
+    title: 'buildingspy docs: examples.html'
+    url: https://simulationresearch.lbl.gov/modelica/buildingspy/examples.html
+    source: buildingspy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-buildingspy-development-html
+    title: 'buildingspy docs: development.html'
+    url: https://simulationresearch.lbl.gov/modelica/buildingspy/development.html
+    source: buildingspy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-buildingspy-legal-html
+    title: 'buildingspy docs: legal.html'
+    url: https://simulationresearch.lbl.gov/modelica/buildingspy/legal.html
+    source: buildingspy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-buildingspy-acknowledgments-html
+    title: 'buildingspy docs: acknowledgments.html'
+    url: https://simulationresearch.lbl.gov/modelica/buildingspy/acknowledgments.html
+    source: buildingspy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-buildingspy-revisions-html
+    title: 'buildingspy docs: revisions.html'
+    url: https://simulationresearch.lbl.gov/modelica/buildingspy/revisions.html
+    source: buildingspy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-buildingspy-search-html
+    title: 'buildingspy docs: search.html'
+    url: https://simulationresearch.lbl.gov/modelica/buildingspy/search.html
+    source: buildingspy
+    license: open
+    topic: building_energy
+    format: html
+  - id: crawl-buildingspy-index-html
+    title: 'buildingspy docs: index.html'
+    url: https://simulationresearch.lbl.gov/modelica/buildingspy/index.html
+    source: buildingspy
+    license: open
+    topic: building_energy
+    format: html

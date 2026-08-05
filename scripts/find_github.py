@@ -41,10 +41,13 @@ API = "https://api.github.com"
 #   topic    one of our five corpus topics
 #   include  (optional) only keep paths under these prefixes — bounds huge repos like EnergyPlus
 REPOS = [
+    # caps raised 2026-08-05 (EnergyPlus/Modelica vein): the .mo libraries carry the richest
+    # embedded HTML documentation in building simulation — collect them in full, bounded only
+    # against runaway repo growth.
     {"repo": "lbl-srg/modelica-buildings", "license": "open", "topic": "building_energy",
-     "include": ["Buildings/"], "code": ["mo"], "cap": 140},
+     "include": ["Buildings/"], "code": ["mo"], "cap": 5000},
     {"repo": "ibpsa/modelica-ibpsa", "license": "open", "topic": "building_energy",
-     "include": ["IBPSA/"], "code": ["mo"], "cap": 140},
+     "include": ["IBPSA/"], "code": ["mo"], "cap": 2200},
     {"repo": "lbl-srg/BuildingsPy", "license": "open", "topic": "building_energy"},
     {"repo": "NREL/EnergyPlus", "license": "open", "topic": "building_energy",
      "include": ["doc/", "design/", "README"]},
@@ -65,12 +68,19 @@ REPOS = [
      "include": ["ssc/", "shared/", "README"]},
     # --- round 7: Modelica building/HVAC/thermal libraries (pull .mo domain code, bounded) ---
     {"repo": "open-ideas/IDEAS", "license": "open", "topic": "building_energy",
-     "include": ["IDEAS/", "docs/", "README"], "code": ["mo"], "cap": 140},
+     "include": ["IDEAS/", "docs/", "README"], "code": ["mo"], "cap": 3000},
     {"repo": "RWTH-EBC/AixLib", "license": "open", "topic": "equipment_systems",
-     "include": ["AixLib/", "docs/", "README"], "code": ["mo"], "cap": 140},
+     "include": ["AixLib/", "docs/", "README"], "code": ["mo"], "cap": 4000},
     {"repo": "modelica/ModelicaStandardLibrary", "license": "open", "topic": "equipment_systems",
-     "include": ["Modelica/Thermal/", "Modelica/Fluid/", "Modelica/Media/", "README"],
-     "code": ["mo"], "cap": 140},
+     "include": ["Modelica/", "README"], "code": ["mo"], "cap": 2000},
+    {"repo": "UdK-VPT/BuildingSystems", "license": "open", "topic": "building_energy",
+     "include": ["BuildingSystems/", "README"], "code": ["mo"], "cap": 2200},
+    # --- 2026-08-05 EnergyPlus/Modelica/OpenModelica vein ---
+    # OpenModelica User's Guide comes in via the rendered-site crawl (crawl_docs), not the repo's
+    # .rst sources, so the corpus doesn't hold the same text twice.
+    {"repo": "OpenModelica/OMPython", "license": "open", "topic": "controls_bas"},
+    {"repo": "modelica/fmi-standard", "license": "cc-by-sa", "topic": "standards_protocols",
+     "include": ["docs/", "README"], "code": ["adoc"], "cap": 80},
     {"repo": "queraltab/Greenhouses-Library", "license": "open", "topic": "equipment_systems",
      "code": ["mo"], "cap": 120},
     # --- round 7: whole-building / urban building energy modeling ---

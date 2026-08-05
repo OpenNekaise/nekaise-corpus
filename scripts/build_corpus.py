@@ -96,6 +96,9 @@ HOST_CONCURRENCY: dict[str, int] = {
 HOST_DELAY: dict[str, float] = {
     "www.jstage.jst.go.jp": 2.0,  # J-STAGE throttles bulk fetches; nightly ~00:00 JST 503 window
     "www.boverket.se": 10.0,      # robots.txt Crawl-delay: 10 — respect it
+    "publications.ibpsa.org": 2.5,  # rate-triggered sgcaptcha poisons bulk fetches (07-xx pause);
+                                    # ~1 req/2-3s keeps it off — the fix that un-paused find_ibpsa
+    "bigladdersoftware.com": 10.0,  # robots.txt Crawl-delay: 10 — respect it
 }
 HOST_UA: dict[str, str] = {}
 

@@ -15,7 +15,7 @@
   "find_kitopen": {"script": "find_kitopen.py", "args": [], "enabled": false, "reason": "exhausted"},
   "find_japan": {"script": "find_japan.py", "args": ["--series", "nilim", "--count", "6", "--max", "300"], "enabled": true},
   "find_wiki": {"script": "find_wiki.py", "args": ["--categories", "--lang-cap", "250", "--max", "1500"], "enabled": true},
-  "find_jrc": {"script": "find_jrc.py", "args": ["--rows", "40", "--max", "250"], "enabled": true},
+  "find_jrc": {"script": "find_jrc.py", "args": ["--rows", "40", "--max", "250"], "enabled": false, "reason": "OpenAIRE deep-pagination wall at p251 (2026-08-05): every query page refuses, failing 36/48 marathon rounds; vein likely exhausted — investigate pointer reset before re-enabling"},
   "find_govuk": {"script": "find_govuk.py", "args": ["--rows", "20", "--max", "250"], "enabled": true},
   "find_worldbank": {"script": "find_worldbank.py", "args": ["--q", "building commissioning", "--rows", "50", "--pages", "8", "--max", "250"], "enabled": true},
   "find_jstage": {"script": "find_jstage.py", "args": ["--series", "kouzou", "--count", "200", "--from-year", "2014"], "enabled": true},

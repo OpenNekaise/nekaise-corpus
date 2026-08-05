@@ -14,6 +14,9 @@ DOMAIN = re.compile(
     r"build|hvac|energy|thermal|heat|cool|ventil|chiller|boiler|refriger|damper|ahu|vav|setpoint|"
     r"occupan|comfort|retrofit|envelope|commission|controller|sensor|actuator|bacnet|ashrae|kwh|"
     r"carbon|emission|psychrometr|economizer|fault|diagnos|efficien|insulat|"
+    # building-simulation tool names (vein added 2026-08-05): unambiguous — text naming these is
+    # in-domain even when it's compiler/tooling prose with few physical-vocabulary hits
+    r"modelica|energyplus|openstudio|"
     # AEC / built-environment: architecture, engineering, construction, infrastructure, materials
     r"struct|concret|cement|reinforc|rebar|masonr|timber|lumber|steel|weld|beam|column|"
     r"truss|girder|slab|foundation|footing|bearing|geotech|soil|slope|retain|excavat|"

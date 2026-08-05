@@ -51,6 +51,7 @@ SHARDS = {
     "adm-": "ademe.yaml",      # find_ademe (French energy-agency reports, librairie.ademe.fr)
     "jpn-": "japan.yaml",      # find_japan (BRI kenken.go.jp + NILIM research reports, Japanese)
     "ibp-": "ibpsa.yaml",      # find_ibpsa (Building Simulation proceedings)
+    "mod-": "modelica.yaml",   # find_modelica_conf (Modelica Conference proceedings, LiU E-Press 10.3384)
     "pur-": "purdue.yaml",     # find_purdue (Purdue e-Pubs Herrick conferences: icec/iracc/ihpbc)
     "zen-": "zenodo.yaml",     # find_zenodo (open CC-licensed records)
     "wbd-": "worldbank.yaml",  # find_worldbank (World Bank Documents & Reports API, cc-by)

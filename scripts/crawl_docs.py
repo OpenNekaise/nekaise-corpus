@@ -34,7 +34,7 @@ UA = "nekaise-studio-hvac-corpus/0.1 (research)"
 SKIP_EXT = re.compile(r"\.(pdf|zip|png|jpe?g|gif|svg|js|css|woff2?|ico|tar|gz|whl|epub|json|xml)$", re.I)
 
 
-def crawl(seed: str, prefix: str, maxp: int) -> list[str]:
+def crawl(seed: str, prefix: str, maxp: int, delay: float = 0.3) -> list[str]:
     host = urlparse(seed).netloc
     seen: set[str] = set()
     pages: list[str] = []
@@ -60,7 +60,7 @@ def crawl(seed: str, prefix: str, maxp: int) -> list[str]:
                 continue
             if nu not in seen:
                 q.append(nu)
-        time.sleep(0.3)  # be polite
+        time.sleep(delay)  # be polite; raise via --delay for sites with a robots Crawl-delay
     return pages
 
 
@@ -72,10 +72,12 @@ def main() -> None:
     ap.add_argument("--topic", required=True)
     ap.add_argument("--license", default="open")
     ap.add_argument("--max", type=int, default=80)
+    ap.add_argument("--delay", type=float, default=0.3,
+                    help="seconds between requests (set to the site's robots Crawl-delay)")
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
 
-    pages = crawl(args.seed, args.prefix, args.max)
+    pages = crawl(args.seed, args.prefix, args.max, args.delay)
     print(f"# crawled {len(pages)} pages from {args.seed}", file=sys.stderr)
 
     urls_known, _titles, reg_ids = registry.existing_keys()
