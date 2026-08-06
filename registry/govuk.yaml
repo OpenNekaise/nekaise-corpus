@@ -73270,14 +73270,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-energy-trends-september-2017-special-feature-a-5
-    title: 'Energy Trends: September 2017, special feature articles — Competition in
-      UK electricity markets'
-    url: https://assets.publishing.service.gov.uk/media/5a8200b8ed915d74e3401348/Competition_in_UK_Electricity_Markets.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-energy-trends-march-2016-special-feature-artic
     title: 'Energy Trends: March 2016, special feature articles — Domestic energy bills
       in 2015: The impact of variable consumption'
@@ -74080,14 +74072,6 @@ sources:
     title: 'Energy Trends: September 2020, special feature articles — Combined Heat
       and Power in Scotland, Wales, Northern Ireland and the regions of England in 2019'
     url: https://assets.publishing.service.gov.uk/media/5f6b3315e90e077c9cc6813d/CHP_Regional_2019.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
-  - id: guk-energy-trends-september-2020-special-feature-a-5
-    title: 'Energy Trends: September 2020, special feature articles — Competition in
-      UK electricity markets'
-    url: https://assets.publishing.service.gov.uk/media/5f6b3339e90e077c9a61d5a0/Competition_in_UK_Electricity_Markets.pdf
     source: gov_uk
     license: open
     topic: building_energy
@@ -75924,14 +75908,6 @@ sources:
     title: 'Energy Trends: September 2022, special feature article - Competition in
       UK gas supply 2021'
     url: https://assets.publishing.service.gov.uk/media/633434f78fa8f5068a50e2bc/Competition_in_UK_gas_supply_2021.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
-  - id: guk-energy-trends-september-2018-special-feature-a-5
-    title: 'Energy Trends: September 2018, special feature articles — Competition in
-      UK electricity markets'
-    url: https://assets.publishing.service.gov.uk/media/5bab887540f0b6071970c296/Competition_in_UK_Electricity_Markets.pdf
     source: gov_uk
     license: open
     topic: building_energy
@@ -244176,4 +244152,854 @@ sources:
     source: gov_uk
     license: open
     topic: equipment_systems
+    format: pdf
+  - id: guk-northern-transport-strategy-the-northern-power
+    title: 'Northern transport strategy — The northern powerhouse: one agenda, one economy,
+      one north – a report on the northern transport strategy'
+    url: https://assets.publishing.service.gov.uk/media/5a817e6ce5274a2e87dbdedc/the-northern-powerhouse-tagged.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-third-uk-open-government-national-action-plan-
+    title: Third UK Open Government National Action Plan 2016-2018 - Northern Ireland
+      self-assessment report
+    url: https://assets.publishing.service.gov.uk/media/5ffc5e93d3bf7f65d4220a47/Self_Assesment_-_Northern_Ireland_V2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-preventive-action-plan-gas-national-p
+    title: 'National preventive action plan: gas — National preventive action plan:
+      gas (revised July 2023)'
+    url: https://assets.publishing.service.gov.uk/media/64c8f3325c2e6f0013e8d85a/national-preventive-action-plan-gas.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-government-lead-non-executive-s-annual-report--3
+    title: Government Lead Non-Executive’s annual report 2018 to 2019 — Government Lead
+      Non-Executive annual report 2018 to 2019
+    url: https://assets.publishing.service.gov.uk/media/5ece6cae86650c76b148ace4/Government_Lead_Non-Exec_annual_report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-chronic-wasting-disease-risk-assessments-defra
+    title: 'Chronic wasting disease: risk assessments — DEFRA risk assessment'
+    url: https://assets.publishing.service.gov.uk/media/5b715955e5274a1d16fa0494/DEFRA_QRA_TSE_in_cervids_June2018_v1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-chronic-wasting-disease-risk-assessments-fsa-r
+    title: 'Chronic wasting disease: risk assessments — FSA risk assessment'
+    url: https://assets.publishing.service.gov.uk/media/5b715793e5274a1d053d0eaa/FSA_CWD_RA_for_publication_with_logo_July_2018.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-chronic-wasting-disease-risk-assessments-phe-r
+    title: 'Chronic wasting disease: risk assessments — PHE risk assessment'
+    url: https://assets.publishing.service.gov.uk/media/5b6d71e3ed915d30f76f8a82/PHE_CWD__risk_assessment_July_2018.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-empowering-households-research-on-presenting-e
+    title: 'Empowering households: research on presenting energy consumption benchmarks
+      on energy bills'
+    url: https://assets.publishing.service.gov.uk/media/5a79a0c940f0b642860d98ab/2136-empowering-households-research.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-health-and-safety-for-major-road-schemes-plant
+    title: 'Health and safety for major road schemes: plant and equipment — Raising
+      the bar 1: plant and equipment (February 2019)'
+    url: https://assets.publishing.service.gov.uk/media/5cc708a7e5274a5a06e9db62/RtB_1_Plant_and_Equipment_Apr_19.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ln2-1qa-happy-days-farming-company-limited-env
+    title: 'LN2 1QA, Happy Days Farming Company Limited: environmental permit issued
+      - EPR/BP3506LE/A001 — Permit: Happy Days Farming Company Limited'
+    url: https://assets.publishing.service.gov.uk/media/62ac3270e90e0765da021317/Application_Bespoke_Permit-_16062022_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ln2-1qa-happy-days-farming-company-limited-env-2
+    title: 'LN2 1QA, Happy Days Farming Company Limited: environmental permit issued
+      - EPR/BP3506LE/A001 — Decision document: Happy Days Farming Company Limited'
+    url: https://assets.publishing.service.gov.uk/media/62ac32868fa8f53579842368/Application_Bespoke_Decision_Document_-_16062022_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-b61-9al-mr-raa-pinfield-environmental-permit-i
+    title: 'B61 9AL, Mr RAA Pinfield: environmental permit issued — Permit: Mr RAA Pinfield'
+    url: https://assets.publishing.service.gov.uk/media/5a80a1c4ed915d74e622f92d/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-b61-9al-mr-raa-pinfield-environmental-permit-i-2
+    title: 'B61 9AL, Mr RAA Pinfield: environmental permit issued — Decision document:
+      Mr RAA Pinfield'
+    url: https://assets.publishing.service.gov.uk/media/5a8099b5ed915d74e622f63d/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-so45-3yy-npower-cogen-hythe-limited-environmen
+    title: 'SO45 3YY, Npower Cogen (Hythe) Limited: environmental permit issued — Variation
+      notice: Npower Cogen (Hythe) Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a74d561e5274a59fa7154bd/Variation_Notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-so45-3yy-npower-cogen-hythe-limited-environmen-2
+    title: 'SO45 3YY, Npower Cogen (Hythe) Limited: environmental permit issued — Decision
+      document:  Npower Cogen (Hythe) Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a750114ed915d502d6ccbd2/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hr2-9tr-environmental-permit-issued-variation-
+    title: 'HR2 9TR: Environmental permit issued — Variation notice: Mr William Watkins'
+    url: https://assets.publishing.service.gov.uk/media/5a75b6d940f0b67f59fcf0b4/EP3236ZU_V003_Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hr2-9tr-environmental-permit-issued-decision-d
+    title: 'HR2 9TR: Environmental permit issued — Decision document: Mr William Watkins'
+    url: https://assets.publishing.service.gov.uk/media/5a7ef03540f0b6230268c7b4/EP3236ZU_V003_Dec_Doc.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ex17-1bp-mr-william-ayre-ms-fiona-ayre-and-mr-
+    title: 'EX17 1BP, Mr William Ayre, Ms Fiona Ayre and Mr Jeremy Ayre (JD Ayre and
+      Partners): environmental permit issued – EPR/BP3821SD/A001 — Permit: Mr William
+      Ayre, Ms Fiona Ayre and Mr '
+    url: https://assets.publishing.service.gov.uk/media/67c9a2a38247839c255ae3be/Application_Bespoke_A001_Permit_Issued_-_27022025.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ex17-1bp-mr-william-ayre-ms-fiona-ayre-and-mr--2
+    title: 'EX17 1BP, Mr William Ayre, Ms Fiona Ayre and Mr Jeremy Ayre (JD Ayre and
+      Partners): environmental permit issued – EPR/BP3821SD/A001 — Decision document:
+      Mr William Ayre, Ms Fiona A'
+    url: https://assets.publishing.service.gov.uk/media/67c9a2c1696e4984ea4cf317/Application_Bespoke_A001_Decision_Document_-_27022025.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hp2-4zb-amazon-data-services-uk-limited-enviro
+    title: 'HP2 4ZB, Amazon Data Services UK Limited: environmental permit issued -
+      EPR/BP3546QP/A001 — Permit Issued: Amazon Data Services UK Limited'
+    url: https://assets.publishing.service.gov.uk/media/6582d78023b70a000d234cea/Application_Bespoke_Issued_-_19122023.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hp2-4zb-amazon-data-services-uk-limited-enviro-2
+    title: 'HP2 4ZB, Amazon Data Services UK Limited: environmental permit issued -
+      EPR/BP3546QP/A001 — Decision Document: Amazon Data Services UK Limited'
+    url: https://assets.publishing.service.gov.uk/media/6582d797fc07f300128d456a/Application_Bespoke_Decision_Document_-_19122023.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ws10-8jr-ecobat-resources-uk-limited-environme
+    title: 'WS10 8JR, Ecobat Resources UK Limited: environmental permit issued - EPR/DB3704FG/V006
+      — Permit: Ecobat Resources UK Limited'
+    url: https://assets.publishing.service.gov.uk/media/63920622d3bf7f1bcd58285a/EPRDB3704FG_-_Variation_Notice__.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ws10-8jr-ecobat-resources-uk-limited-environme-2
+    title: 'WS10 8JR, Ecobat Resources UK Limited: environmental permit issued - EPR/DB3704FG/V006
+      — Decision Document: Ecobat Resources UK Limited'
+    url: https://assets.publishing.service.gov.uk/media/639206318fa8f53baa1f3f5c/EPRDB3704FG_-_Decision_document_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-tn27-8bh-fridays-limited-environmental-permit-
+    title: 'TN27 8BH, Fridays Limited: environmental permit issued — Permit: Fridays
+      Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a817d9bed915d74e62328d6/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-tn27-8bh-fridays-limited-environmental-permit--2
+    title: 'TN27 8BH, Fridays Limited: environmental permit issued — Decision document:
+      Fridays Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7f4ddd40f0b62305b86541/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-de73-7gb-environmental-permit-issued-permit-e-
+    title: 'DE73 7GB: Environmental permit issued — Permit: E and S Mayman Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a800d45e5274a2e87db7907/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-de73-7gb-environmental-permit-issued-decision-
+    title: 'DE73 7GB: Environmental permit issued — Decision document: E and S Mayman
+      Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a806a3c40f0b62305b8b040/Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-yo17-6xe-r-s-marton-limited-environmental-perm
+    title: 'YO17 6XE, R & S Marton Limited: environmental permit issued - EPR/YP3433UA/V004
+      — Variation Notice: R & S Marton Limited'
+    url: https://assets.publishing.service.gov.uk/media/6481a5235f7bb700127fa6ba/Application_Variation_variation_notice_YP3433UA_V004_06.06.2023.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-yo17-6xe-r-s-marton-limited-environmental-perm-2
+    title: 'YO17 6XE, R & S Marton Limited: environmental permit issued - EPR/YP3433UA/V004
+      — Decision Document: R & S Marton Limited'
+    url: https://assets.publishing.service.gov.uk/media/6481a533b32b9e000ca963e5/Application_Variation_Decision_Document_YP3433UA_V004_06.06.2023.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ws11-1sg-range-farm-limited-environmental-perm
+    title: 'WS11 1SG, Range Farm Limited: environmental permit issued — Permit: Range
+      Farm Limited'
+    url: https://assets.publishing.service.gov.uk/media/5b07b7d4e5274a175e0c2ce4/Permit_Issued.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ws11-1sg-range-farm-limited-environmental-perm-2
+    title: 'WS11 1SG, Range Farm Limited: environmental permit issued — Decision document:
+      Range Farm Limited'
+    url: https://assets.publishing.service.gov.uk/media/5b07b7e8e5274a63a50b567b/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hp22-5wj-olleco-environmental-permit-issued-ep
+    title: 'HP22 5WJ, Olleco: environmental permit issued - EPR/EP3335RY/V004 — Permit:
+      Olleco'
+    url: https://assets.publishing.service.gov.uk/media/63b6cfb4d3bf7f6137688be4/EP3335RY_-_Permit_-_Final.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hp22-5wj-olleco-environmental-permit-issued-ep-2
+    title: 'HP22 5WJ, Olleco: environmental permit issued - EPR/EP3335RY/V004 — Decision
+      document: Olleco'
+    url: https://assets.publishing.service.gov.uk/media/63b6cfd2d3bf7f612cb63be5/EP3335RY_-_Decision_Document_-_Final.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-cv7-7lh-berkswell-recycling-limited-environmen
+    title: 'CV7 7LH, Berkswell Recycling Limited: environmental permit issued - EPR/DB3508MA/V005
+      — Permit: Berkswell Recycling Limited'
+    url: https://assets.publishing.service.gov.uk/media/61c0865fe90e070449d4a03f/Variation_Notice_DB3508MA-V005.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-cv7-7lh-berkswell-recycling-limited-environmen-2
+    title: 'CV7 7LH, Berkswell Recycling Limited: environmental permit issued - EPR/DB3508MA/V005
+      — Decision document: Berkswell Recycling Limited'
+    url: https://assets.publishing.service.gov.uk/media/61c086748fa8f503780c1e71/Decision_Document_DB3508MA-V005.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-gl16-8jr-noble-foods-co-environmental-permit-i
+    title: 'GL16 8JR, Noble Foods Co: environmental permit issued — Permit: Noble Foods
+      Co'
+    url: https://assets.publishing.service.gov.uk/media/5a82d267ed915d74e6237cde/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-gl16-8jr-noble-foods-co-environmental-permit-i-2
+    title: 'GL16 8JR, Noble Foods Co: environmental permit issued — Decision document:
+      Noble Foods Co'
+    url: https://assets.publishing.service.gov.uk/media/5a751234ed915d5c544654f9/Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-sy15-6bt-environmental-permit-issued-permit-mr
+    title: 'SY15 6BT: Environmental permit issued — Permit: Mr Thomas Gittins'
+    url: https://assets.publishing.service.gov.uk/media/5a75b07a40f0b67f59fced7f/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-sy15-6bt-environmental-permit-issued-decision-
+    title: 'SY15 6BT: Environmental permit issued — Decision document: Mr Thomas Gittins'
+    url: https://assets.publishing.service.gov.uk/media/5a7d53c840f0b60a7f1a9d72/Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-me16-0le-kent-enviropower-limited-environmenta
+    title: 'ME16 0LE, Kent Enviropower Limited: environmental permit issued – EPR/BR4551IC/V012
+      — Variation notice: Kent Enviropower Limited'
+    url: https://assets.publishing.service.gov.uk/media/62beaab1d3bf7f046859bcbc/Variation_Notice_BR4551IC-V012.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-me16-0le-kent-enviropower-limited-environmenta-2
+    title: 'ME16 0LE, Kent Enviropower Limited: environmental permit issued – EPR/BR4551IC/V012
+      — Decision document: Kent Enviropower Limited'
+    url: https://assets.publishing.service.gov.uk/media/62beaad6e90e073f5bcff86f/Decision_Document_BR4551IC-V012.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-nn10-9lu-ancillary-components-limited-environm
+    title: 'NN10 9LU, Ancillary Components Limited: environmental permit issued — Variation
+      notice: Ancillary Components Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a82de4ce5274a2e87dc3620/Variation_notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-nn10-9lu-ancillary-components-limited-environm-2
+    title: 'NN10 9LU, Ancillary Components Limited: environmental permit issued — Decision
+      document: Ancillary Components Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a8213b3e5274a2e8ab57608/Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-spi-m-mass-testing-of-the-whole-population-25-
+    title: 'SPI-M: Mass testing of the whole population, 25 November 2020'
+    url: https://assets.publishing.service.gov.uk/media/5fdb81808fa8f51490fce7e8/S0924_7a._201125_UPDATED_SPI-M_note_on_mass_testing_of_the_whole_populatio.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-community-centred-public-health-taking-a-whole
+    title: 'Community-centred public health: taking a whole system approach'
+    url: https://assets.publishing.service.gov.uk/media/5e184c78e5274a06b1c3c5f9/WSA_Briefing.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2017-special-feature-a-3
+    title: 'Energy Trends: September 2017, special feature article - Competition in
+      UK electricity markets'
+    url: https://assets.publishing.service.gov.uk/media/5a82b31f40f0b6230269c3e0/Competition_in_UK_Electricity_Markets.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2018-special-feature-a-2
+    title: 'Energy Trends: September 2018, special feature article - Competition in
+      UK electricity markets'
+    url: https://assets.publishing.service.gov.uk/media/5bab7fe7ed915d2c21eecaeb/Competition_in_UK_Electricity_Markets.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-energy-trends-september-2020-special-feature-a-4
+    title: 'Energy Trends: September 2020, special feature article - Competition in
+      UK electricity markets'
+    url: https://assets.publishing.service.gov.uk/media/5f6b3c45e90e077ca74b2a09/Competition_in_UK_Electricity_Markets.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-analysis-for-conflict-and-stabilisation-interv
+    title: Analysis for Conflict and Stabilisation Interventions
+    url: https://assets.publishing.service.gov.uk/media/5c17ca1940f0b60c30131c9d/What_Works_-_Analysis_for_Conflict_and_Stabilisation_Interventions.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-employer-investment-fund-phase-1-qualitative-e-2
+    title: 'Employer Investment Fund phase 1: qualitative evaluation — Employer Investment
+      Fund phase 1: qualitative evaluation executive summary'
+    url: https://assets.publishing.service.gov.uk/media/5a7debc6e5274a2e8ab44ae3/evidence-report-69-eif1-evaluation-exec.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-child-trust-fund-study-wave-2-results-appendic
+    title: 'Child Trust Fund study: wave 2 results — Appendices - Child Trust Fund:
+      findings from the wave 2 evaluation'
+    url: https://assets.publishing.service.gov.uk/media/5a7d7dfe40f0b64fe6c240a9/report143-appendices.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-statistics-on-firearm-and-shotgun-certificates-2
+    title: 'Statistics on firearm and shotgun certificates, England and Wales: April
+      2018 to March 2019'
+    url: https://assets.publishing.service.gov.uk/media/5d1372f940f0b6350572aae9/statistics-firearm-shotgun-certificates-england-wales-2018-2019-hosb0919.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-congestion-on-local-a-roads-england-october-to-2
+    title: 'Congestion on local ''A'' roads, England: October to December 2015 — Congestion
+      on local ''A'' roads, England: October to December 2015 report'
+    url: https://assets.publishing.service.gov.uk/media/5a80358be5274a2e87db87dd/congestion-local-a-stats-release-dec-15.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-congestion-on-local-a-roads-england-july-to-se
+    title: 'Congestion on local ‘A’ roads, England: July to September 2014 — Congestion
+      on local ‘A’ roads, England: July to September 2014 report'
+    url: https://assets.publishing.service.gov.uk/media/5a7d77abed915d2d2ac09214/congestion-local-a-stats-release-sep-14.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-sector-internal-audit-standards-good-pr-2
+    title: 'Public Sector Internal Audit Standards: good practice guidance — Internal
+      Audit Records Management'
+    url: https://assets.publishing.service.gov.uk/media/5a74cd1140f0b619c865a8bc/Internal_Audit_Records_Management.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-public-sector-internal-audit-standards-good-pr-5
+    title: 'Public Sector Internal Audit Standards: good practice guidance — Audit strategy'
+    url: https://assets.publishing.service.gov.uk/media/5a7c1e48ed915d210ade1b12/Good_practice_guidance_audit_strategy.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-public-sector-internal-audit-standards-good-pr-6
+    title: 'Public Sector Internal Audit Standards: good practice guidance — The consultancy
+      role of internal audit'
+    url: https://assets.publishing.service.gov.uk/media/5a74893fed915d0e8bf19169/Good_practice_guidance_-_the_consultancy_role_of_internal_audit.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-public-sector-internal-audit-standards-good-pr-7
+    title: 'Public Sector Internal Audit Standards: good practice guidance — Reporting'
+    url: https://assets.publishing.service.gov.uk/media/5a7c6d53ed915d696ccfcb4f/Good_practice_guidance_reporting.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-public-sector-internal-audit-standards-good-pr-11
+    title: 'Public Sector Internal Audit Standards: good practice guidance — Core brief
+      for the recruitment of HIA posts in central government - expectations of the HIA
+      role'
+    url: https://assets.publishing.service.gov.uk/media/5a7c51c240f0b62dffde14f2/Core_brief_for_the_recruitment_of_HIA_posts_in_central_government_-_expectations_of_the_HIA_role.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-public-sector-internal-audit-standards-good-pr-13
+    title: 'Public Sector Internal Audit Standards: good practice guidance — The lead
+      government department and its role - guidance and best practice'
+    url: https://assets.publishing.service.gov.uk/media/5a7c9f4840f0b65b3de0a16b/the_lead_Government_department_and_its_role_-_guidance_and_best_practice.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-regulations-for-the-mobilisation-of-uk-reserve
+    title: 'Regulations for the mobilisation of UK reserve forces (JSP 753) — JSP 753:
+      regulations for the mobilisation of UK reserve forces, part 1 directive (version
+      5)'
+    url: https://assets.publishing.service.gov.uk/media/6477698d5f7bb7000c7fa2b3/JSP_753_Part_1_V5.0_Mar_2023.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-regulations-for-the-mobilisation-of-uk-reserve-2
+    title: 'Regulations for the mobilisation of UK reserve forces (JSP 753) — JSP 753:
+      regulations for the mobilisation of UK reserve forces, part 2 guidance (version
+      5)'
+    url: https://assets.publishing.service.gov.uk/media/6477699db32b9e000ca95fb6/JSP_753_Part_2_V5.0_Mar_2023.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-hotpoint-fridge-freezer-ff175b-independent-inv
+    title: 'Hotpoint Fridge Freezer (FF175B): independent investigation — Hotpoint fridge
+      freezer (FF175B): summary of test results'
+    url: https://assets.publishing.service.gov.uk/media/5af9c3bd40f0b622dae8de45/hotpoint-FF175B-summary-of-testing-results.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-hotpoint-fridge-freezer-ff175b-independent-inv-2
+    title: 'Hotpoint Fridge Freezer (FF175B): independent investigation — Hotpoint fridge
+      freezer (FF175B): test report'
+    url: https://assets.publishing.service.gov.uk/media/5af9c43e40f0b622d7cc6e97/hotpoint-FF175B-test-report.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-hotpoint-fridge-freezer-ff175b-independent-inv-3
+    title: 'Hotpoint Fridge Freezer (FF175B): independent investigation — Hotpoint fridge
+      freezer (FF175B): risk statement'
+    url: https://assets.publishing.service.gov.uk/media/5af9c4cbe5274a25de49317c/hotpoint-FF175B-risk-statement.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-asbestos-data-collections-asbestos-management-
+    title: Asbestos data collections — Asbestos management assurance process (AMAP)
+      report
+    url: https://assets.publishing.service.gov.uk/media/67cad1033f8b61c757fa0021/Asbestos_Management_Assurance_Process__AMAP__report_2019.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-asbestos-data-collections-2017-data-collection
+    title: Asbestos data collections — 2017 data collection on asbestos
+    url: https://assets.publishing.service.gov.uk/media/5f281580d3bf7f1b1593c193/Asbestos_management_in_schools_data_collection_report.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-regulating-independent-schools-independent-sch-2
+    title: 'Regulating independent schools — Independent schools: regulatory and enforcement
+      action policy statement'
+    url: https://assets.publishing.service.gov.uk/media/695e737e8ab0677c14afdfdb/Independent_schools_regulatory_and_enforcement_action_policy_statement.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-technical-consultation-the-individual-savings-
+    title: 'Technical consultation: The Individual Savings Account (Amendment) Regulations
+      2016 — Statutory instrument: The Individual Savings Account (Amendment) Regulations
+      2016'
+    url: https://assets.publishing.service.gov.uk/media/5a74f6e5e5274a3cb28689af/SI_ISA_Amendment_Regulations_2016.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-review-of-the-use-of-haloperidol-in-elderly-pa
+    title: Review of the use of haloperidol in elderly patients with acute delirium
+    url: https://assets.publishing.service.gov.uk/media/61b20ee08fa8f50385f7eda1/Review_of_the_use_of_haloperidol_in_elderly_patients_with_acute_delirium_-_MHRA_Public_Assessment_Report_December_2021.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-armed-forces-pension-scheme-1975-regulations-n-4
+    title: Armed Forces Pension Scheme 1975 Regulations — Naval and Marine Pensions
+      (AFPS 1975 and Attributable Benefits Scheme) (Amendment) Order 2012
+    url: https://assets.publishing.service.gov.uk/media/5a7cd269e5274a34d8d33260/20120130-Naval_and_Marine_Pensions__AFPS_1975_and_Attributable_Benefits_Scheme__Amendment__Order_2012.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-armed-forces-pension-scheme-1975-regulations-a-5
+    title: Armed Forces Pension Scheme 1975 Regulations — Army Pensions (AFPS 1975 and
+      Attributable Benefits Scheme) (Amendment) Warrant 2012
+    url: https://assets.publishing.service.gov.uk/media/5a7c10c140f0b645ba3c67b9/20120130-Army_Pensions__AFPS_1975_and_Attributable_Benefits_Scheme__Amendment__Warrant_2012.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-armed-forces-pension-scheme-1975-regulations-a-12
+    title: Armed Forces Pension Scheme 1975 Regulations — Air Force Pensions (AFPS 1975
+      and Attributable Benefits Scheme) (Amendment) Order 2012
+    url: https://assets.publishing.service.gov.uk/media/5a7c0ff7ed915d4147622888/20120130-Air_Force_Pensions__AFPS_1975_and_Attributable_Benefits_Scheme__Amendment__Order_2012.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-teaching-schools-evaluation-final-research-rep-2
+    title: 'Teaching schools evaluation: final research report — Teaching schools evaluation:
+      research brief'
+    url: https://assets.publishing.service.gov.uk/media/5a800fbde5274a2e8ab4df40/Research_Brief_FINAL_FOR_PUB.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-teaching-schools-evaluation-final-research-rep-4
+    title: 'Teaching schools evaluation: final research report — Teaching Schools evaluation:
+      interim report research brief'
+    url: https://assets.publishing.service.gov.uk/media/5a816b0d40f0b6230269732d/Teaching_Schools_evaluation_research_brief.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hydrological-modelling-using-convective-scale-
+    title: Hydrological modelling using convective scale rainfall modelling — Hydrological
+      modelling using convective scale rainfall modelling - phase 1
+    url: https://assets.publishing.service.gov.uk/media/5a7b977740f0b645ba3c54ef/scho0210bryr-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hydrological-modelling-using-convective-scale--2
+    title: Hydrological modelling using convective scale rainfall modelling — Hydrological
+      modelling using convective scale rainfall modelling - phase 1 & 2
+    url: https://assets.publishing.service.gov.uk/media/5a7c77beed915d48c240fef9/scho0210brys-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hydrological-modelling-using-convective-scale--3
+    title: Hydrological modelling using convective scale rainfall modelling — Hydrological
+      modelling using convective scale rainfall modelling - phase 2
+    url: https://assets.publishing.service.gov.uk/media/5a7cd682ed915d6b29fa8f6a/scho0210bryq-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hydrological-modelling-using-convective-scale--4
+    title: Hydrological modelling using convective scale rainfall modelling — Hydrological
+      modelling using convective scale rainfall modelling - phase 3
+    url: https://assets.publishing.service.gov.uk/media/5a7c16a240f0b645ba3c6a04/scho0210bryt-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-evaluation-of-the-generations-together-program
+    title: 'Evaluation of the Generations Together programme: learning so far'
+    url: https://assets.publishing.service.gov.uk/media/5a7afbf740f0b66eab99e142/DFE-RR082.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-uk-and-england-soil-nutrient-balances-2019-soi
+    title: UK and England soil nutrient balances, 2019 — Soil nutrient balances UK,
+      2019 - statistics notice (accessible format)
+    url: https://assets.publishing.service.gov.uk/media/5f3a367ae90e0732d865d81a/soilnutrientbalances-UK-17aug20.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-uk-and-england-soil-nutrient-balances-2019-soi-2
+    title: UK and England soil nutrient balances, 2019 — Soil nutrient balances England,
+      2019 - statistics notice (accessible format)
+    url: https://assets.publishing.service.gov.uk/media/5f3a368be90e0732d9008df7/soilnutrientbalances-England-17aug20.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-noise-and-vibration-on-the-hs2-phas-1074
+    title: Monitoring noise and vibration on the HS2 Phase One route (February 2021)
+      — Birmingham noise monitoring report (February 2021)
+    url: https://assets.publishing.service.gov.uk/media/6076ecdde90e076f4cfc8534/Birmingham_Noise_Monthly_Report_February2021.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-noise-and-vibration-on-the-hs2-phas-1075
+    title: Monitoring noise and vibration on the HS2 Phase One route (February 2021)
+      — Brent noise monitoring report (February 2021)
+    url: https://assets.publishing.service.gov.uk/media/6076ecf9d3bf7f400e10b011/Brent_Noise_Monthly_Report_February2021.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-noise-and-vibration-on-the-hs2-phas-1076
+    title: Monitoring noise and vibration on the HS2 Phase One route (February 2021)
+      — Buckinghamshire noise monitoring report (February 2021)
+    url: https://assets.publishing.service.gov.uk/media/6076ed40e90e076f50419632/Buckinghamshire_Noise_Monthly_Report_February2021.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-noise-and-vibration-on-the-hs2-phas-1077
+    title: Monitoring noise and vibration on the HS2 Phase One route (February 2021)
+      — Camden noise monitoring report (February 2021)
+    url: https://assets.publishing.service.gov.uk/media/6076ed9b8fa8f5735497003e/Camden_Noise_Monthly_Report_February2021.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-noise-and-vibration-on-the-hs2-phas-1078
+    title: Monitoring noise and vibration on the HS2 Phase One route (February 2021)
+      — Ealing noise monitoring report (February 2021)
+    url: https://assets.publishing.service.gov.uk/media/6076ee11d3bf7f400a6b3040/Ealing_Noise_Monthly_Report_February_2021.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-noise-and-vibration-on-the-hs2-phas-1079
+    title: Monitoring noise and vibration on the HS2 Phase One route (February 2021)
+      — Hillingdon noise monitoring report (February 2021)
+    url: https://assets.publishing.service.gov.uk/media/6076ee408fa8f57354970040/Hillingdon_Noise_Monthly_Report_February_2021.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-noise-and-vibration-on-the-hs2-phas-1080
+    title: Monitoring noise and vibration on the HS2 Phase One route (February 2021)
+      — North Warwickshire noise monitoring report (February 2021)
+    url: https://assets.publishing.service.gov.uk/media/6076ee5e8fa8f5735d3b39ab/North_Warwickshire_Noise_Monthly_Report_February2021.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-noise-and-vibration-on-the-hs2-phas-1081
+    title: Monitoring noise and vibration on the HS2 Phase One route (February 2021)
+      — Solihull noise monitoring report (February 2021)
+    url: https://assets.publishing.service.gov.uk/media/6076ef20e90e076f5589bbda/Solihull_Noise_Monthly_Report_February2021.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-noise-and-vibration-on-the-hs2-phas-1082
+    title: Monitoring noise and vibration on the HS2 Phase One route (February 2021)
+      — Stratford-on-Avon noise monitoring report (February 2021)
+    url: https://assets.publishing.service.gov.uk/media/6076ef3b8fa8f57359cf43f2/Stratford_On_Avon_Noise_Monthly_Report_February2021.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-noise-and-vibration-on-the-hs2-phas-1083
+    title: Monitoring noise and vibration on the HS2 Phase One route (February 2021)
+      — Three Rivers noise monitoring report (February 2021)
+    url: https://assets.publishing.service.gov.uk/media/6076ef67d3bf7f4009d3ec43/Three_Rivers_Noise_Monthly_Report_February2021.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-1122
+    title: Monitoring air quality and dust on the HS2 Phase One and 2a route (August
+      2023) — Buckinghamshire Council air quality monthly report (August 2023)
+    url: https://assets.publishing.service.gov.uk/media/6530eb1ed06662000d1b7d2c/BC_AirQuality_Monthly_Report_Aug_2023_PE.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-1123
+    title: Monitoring air quality and dust on the HS2 Phase One and 2a route (August
+      2023) — Birmingham City Council air quality monthly report (August 2023)
+    url: https://assets.publishing.service.gov.uk/media/6530eb1dd0666200131b7d06/BCC_AirQuality_Monthly_Report_Aug_2023_PE.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-1124
+    title: Monitoring air quality and dust on the HS2 Phase One and 2a route (August
+      2023) — Cherwell District Council air quality monthly report (August 2023)
+    url: https://assets.publishing.service.gov.uk/media/6530eb25d0666200131b7d07/CDC_AirQuality_Monthly_Report_Aug_2023_PE.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-1126
+    title: Monitoring air quality and dust on the HS2 Phase One and 2a route (August
+      2023) — London Borough of Brent air quality monthly report (August 2023)
+    url: https://assets.publishing.service.gov.uk/media/6530eb9d927459000df959d5/LBB_AirQuality_Monthly_Report_Aug_2023_PE.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-1127
+    title: Monitoring air quality and dust on the HS2 Phase One and 2a route (August
+      2023) — London Borough of Camden air quality monthly report (August 2023)
+    url: https://assets.publishing.service.gov.uk/media/6530ebc992895c0010dcba1d/LBC_AirQuality_Monthly_Report_Aug_2023_PE.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-1128
+    title: Monitoring air quality and dust on the HS2 Phase One and 2a route (August
+      2023) — London Borough of Ealing air quality monthly report (August 2023)
+    url: https://assets.publishing.service.gov.uk/media/6530ebf89274590013f959dd/LBE_AirQuality_Monthly_Report_Aug_2023_v2.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-1129
+    title: Monitoring air quality and dust on the HS2 Phase One and 2a route (August
+      2023) — London Borough of Hillingdon air quality monthly report (August 2023)
+    url: https://assets.publishing.service.gov.uk/media/6530ec2f92895c000ddcba26/LBH_AirQuality_Monthly_Report_Aug_2023_PE.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-1130
+    title: Monitoring air quality and dust on the HS2 Phase One and 2a route (August
+      2023) — London Borough of Hammersmith and Fulham air quality monthly report (August
+      2023)
+    url: https://assets.publishing.service.gov.uk/media/6530ec5c92895c0010dcba1f/LBHF_AirQuality_Monthly_Report_Aug_2023_v2.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-1131
+    title: Monitoring air quality and dust on the HS2 Phase One and 2a route (August
+      2023) — Lichfield District Council air quality monthly report (August 2023)
+    url: https://assets.publishing.service.gov.uk/media/6530f09dd06662000d1b7d36/LDC_AirQuality_Monthly_Report_Aug_2023_PE.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-1132
+    title: Monitoring air quality and dust on the HS2 Phase One and 2a route (August
+      2023) — North Warwickshire Borough Council air quality monthly report (August
+      2023)
+    url: https://assets.publishing.service.gov.uk/media/6530f0c992895c0010dcba25/NWBC_AirQuality_Monthly_Report_Aug_2023_PE.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-1134
+    title: Monitoring air quality and dust on the HS2 Phase One and 2a route (August
+      2023) — Solihull Metropolitan Borough Council air quality monthly report (August
+      2023)
+    url: https://assets.publishing.service.gov.uk/media/6530f12392895c000ddcba2d/SMBC_AirQuality_Monthly_Report_Aug_2023_PE.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-1135
+    title: Monitoring air quality and dust on the HS2 Phase One and 2a route (August
+      2023) — Stratford-on-Avon District Council air quality monthly report (August
+      2023)
+    url: https://assets.publishing.service.gov.uk/media/6530f1459274590013f959e8/SoADC_AirQuality_Monthly_Report_Aug_2023_PE.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-1136
+    title: Monitoring air quality and dust on the HS2 Phase One and 2a route (August
+      2023) — Three Rivers District Council air quality monthly report (August 2023)
+    url: https://assets.publishing.service.gov.uk/media/6530f16dd06662000d1b7d38/TRDC_AirQuality_Monthly_Report_Aug_2023_PE.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-1137
+    title: Monitoring air quality and dust on the HS2 Phase One and 2a route (August
+      2023) — Warwick District Council air quality monthly report (August 2023)
+    url: https://assets.publishing.service.gov.uk/media/6530f19492895c0010dcba2c/WDC_AirQuality_Monthly_Report_Aug_2023_PE.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-1138
+    title: Monitoring air quality and dust on the HS2 Phase One and 2a route (August
+      2023) — West Northamptonshire District Council air quality monthly report (August
+      2023)
+    url: https://assets.publishing.service.gov.uk/media/6530f1c192895c000ddcba2f/WNDC_AirQuality_Monthly_Report_Aug_2023_PE.pdf
+    source: gov_uk
+    license: open
+    topic: construction
     format: pdf
