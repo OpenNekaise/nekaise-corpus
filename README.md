@@ -40,15 +40,15 @@ for you:
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **298,121** |
+| **Documents** | **298,698** |
 | **Raw originals** | **~427G** (PDF / HTML / source code) |
-| **Extracted text** | **~25G** (~24.381B chars, **≈6.095B tokens**) |
-| **Cleaned corpus** | **~24G** (~23.600B chars, **≈5.900B tokens**, ruleset-cleaned) |
+| **Extracted text** | **~25G** (~24.410B chars, **≈6.103B tokens**) |
+| **Cleaned corpus** | **~24G** (~23.627B chars, **≈5.907B tokens**, ruleset-cleaned) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): equipment_systems 84,917 · building_energy 74,483 · construction 55,011 · structures_civil 28,013 · materials 20,545 · infrastructure 11,665 · architecture 9,239 · standards_protocols 7,951 · urban 2,973 · controls_bas 2,950 · commissioning_fdd 374.
+**By topic** (a source gets one at registration): equipment_systems 85,189 · building_energy 74,563 · construction 55,127 · structures_civil 28,060 · materials 20,574 · infrastructure 11,679 · architecture 9,254 · standards_protocols 7,955 · urban 2,973 · controls_bas 2,950 · commissioning_fdd 374.
 
-**By license:** open 179,799 · public-domain 88,790 · cc-by-sa 1,659 · cc-by 27,868 · proprietary-internal 5.
+**By license:** open 180,259 · public-domain 88,906 · cc-by-sa 1,660 · cc-by 27,868 · proprietary-internal 5.
 
 _Snapshot of the live registry (2026-08-06) — auto-generated from the manifest. The bytes are not
 shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._
