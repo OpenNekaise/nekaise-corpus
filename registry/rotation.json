@@ -101,15 +101,15 @@
   },
   "find_worldbank": {
     "flag": "--os",
-    "next": 113600,
+    "next": 0,
     "step": 400,
-    "note": "World Bank WDS API. Q SWITCHED 07-24 to 'building commissioning' (4,308 records; os0-400 mined 07-23 +174) — main q 'building energy efficiency' thinned to +112 at os16700 (os0-16700 mined). Run --q \"building commissioning\" --rows 50 --pages 8 --max 250. Next q candidates when thin: 'district heating' / 'building code' / 'thermal insulation' / 'green building construction' (reset next=0 per q). cc-by."
+    "note": "World Bank WDS API. Q ROTATED 08-06 to 'district heating' (reset next=0) — 'building commissioning' dry at os113200 ('of 0 total'); prior 'building energy efficiency' mined os0-16700. Next q candidates when thin: 'building code' / 'thermal insulation' / 'green building construction' (reset next=0 per q). cc-by."
   },
   "find_jstage": {
     "flag": "--start",
-    "next": 57401,
+    "next": 1,
     "step": 200,
-    "note": "AIJ via J-STAGE API with pubyearfrom=2014 (pre-2014 PDFs lack ToUnicode -> mojibake; API sort is NOT chronological — backward-walk assumption was wrong, kouzou tail was 1999). Filtered totals: kouzou 2,129 (NOW, --series kouzou, forward from 1); kankyo mined unfiltered 07-23 (+424 net) — RE-SWEEP with filter after kouzou (dedup-safe); then keikaku/gijutsu (probe filtered totals). Stop a series at >50% prune."
+    "note": "AIJ via J-STAGE API, pubyearfrom=2014 (pre-2014 = mojibake, no ToUnicode). NOW: kankyo FILTERED RE-SWEEP from 1 (08-06) — kankyo was mined UNfiltered 07-23 (+424), dedup makes the re-sweep safe; kouzou DONE at 57201 (93% survival era). After kankyo: probe keikaku/gijutsu filtered totals. Stop a series at >50% prune."
   },
   "find_boverket": {
     "flag": "--page",
