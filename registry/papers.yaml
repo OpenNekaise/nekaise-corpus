@@ -12392,3 +12392,32 @@ sources:
     license: open
     topic: architecture
     format: pdf
+  - id: ope-the-2-5-m-telescope-of-the-sloan-digital-sky-s
+    title: The 2.5 m Telescope of the Sloan Digital Sky Survey
+    url: https://arxiv.org/pdf/astro-ph/0602326
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: ope-maps-of-dust-infrared-emission-for-use-in-esti
+    title: Maps of Dust Infrared Emission for Use in Estimation of Reddening and Cosmic
+      Microwave Background Radiation Foregrounds
+    url: https://arxiv.org/pdf/astro-ph/9710327
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: ope-the-infrared-array-camera-irac-for-the-i-spitz
+    title: The Infrared Array Camera (IRAC) for the <i>Spitzer Space Telescope</i>
+    url: https://arxiv.org/pdf/astro-ph/0405616
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: ope-stochastic-thermodynamics-fluctuation-theorems
+    title: Stochastic thermodynamics, fluctuation theorems and molecular machines
+    url: https://arxiv.org/pdf/1205.4176
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
