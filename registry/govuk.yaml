@@ -202849,13 +202849,6 @@ sources:
     license: open
     topic: architecture
     format: pdf
-  - id: guk-safe-catering
-    title: Safe catering
-    url: https://assets.publishing.service.gov.uk/media/69b3f32ffdbfc4d58fc8cf2e/safe-catering_0_0.pdf
-    source: gov_uk
-    license: open
-    topic: standards_protocols
-    format: pdf
   - id: guk-safe-catering-safe-catering-food-donations
     title: Safe catering — Safe Catering - Food Donations
     url: https://assets.publishing.service.gov.uk/media/6a44dc29167a99cf0018da24/FSAI_Safe_Catering_NI_Food_Donations_-_Final_Web__1_.pdf
@@ -230728,14 +230721,6 @@ sources:
     license: open
     topic: materials
     format: pdf
-  - id: guk-freedom-of-information-statistics-october-to-d-2
-    title: 'Freedom of Information statistics: October to December 2016 — Freedom of
-      Information statistics:  October to December 2016 and annual tables V2 (PDF)'
-    url: https://assets.publishing.service.gov.uk/media/6082c3f7e90e076aaeb64980/foi-statistics-q4-2016-and-annual-statistical-tables_-_V2.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-renters-reform-bill-ia-rpc-opinion-green-rated
     title: 'Renters (Reform) Bill IA: RPC Opinion (Green-rated) — RPC Opinion: Renters
       (Reform) Bill'
@@ -233811,6 +233796,542 @@ sources:
   - id: guk-city-deal-liverpool-liverpool-city-region-deal
     title: 'City Deal: Liverpool — Liverpool City Region Deal with Government'
     url: https://assets.publishing.service.gov.uk/media/5a7fa105e5274a2e8ab4d556/Liverpool-City-Region-Deal-final.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-criminal-justice-system-statistics-quarterly-d-3
+    title: 'Criminal Justice System statistics quarterly: December 2018 — Criminal Justice
+      Statistics quarterly: December 2018'
+    url: https://assets.publishing.service.gov.uk/media/5cdc2e37e5274a1790b58e98/criminal-justice-statistics-quarterly-december-2018.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-quality-managers-conference-march-2013-quality
+    title: 'Quality managers conference, March 2013 — Quality managers conference: quality
+      standards for fingerprint comparison activities, March 2013'
+    url: https://assets.publishing.service.gov.uk/media/5a7c34d4e5274a25a91412be/fsr-quality-managers-conference-2013.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-payment-by-results-statistics-october-2015-to--8
+    title: 'Payment by Results statistics: October 2015 to December 2018 — Guide to
+      Proven Reoffending Statistics'
+    url: https://assets.publishing.service.gov.uk/media/5de79c8ded915d09d909ab8a/guide-to-proven-reoffending-dec19.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-violence-against-women-and-girls-economic-deve
+    title: 'Violence against women and girls: Economic Development and Women''s Economic
+      Empowerment — Addressing Violence Against Women and Girls Through Economic Development
+      and Women’s Econo'
+    url: https://assets.publishing.service.gov.uk/media/5a815c1d40f0b62302696e1c/Economic-Development-Part-A_2_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-impact-of-digital-technology-in-health-and-soc
+    title: Impact of digital technology in health and social care — A review of the
+      potential benefits from the better use of information and technology in health
+      and social care
+    url: https://assets.publishing.service.gov.uk/media/5a7cc2ad40f0b6629523ba62/DoH-Review-of-Information-and-Technology-Use-Final-Report-V2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-road-investment-strategy-for-the-2015-to-2020--2
+    title: Road investment strategy for the 2015 to 2020 road period — Road investment
+      strategy for the 2015/16 to 2019/20 road period (web version)
+    url: https://assets.publishing.service.gov.uk/media/5a80ef47e5274a2e8ab52fed/ris-for-2015-16-road-period-web-version.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-road-investment-strategy-for-the-2015-to-2020--3
+    title: Road investment strategy for the 2015 to 2020 road period — Road investment
+      strategy for the 2015/16 to 2019/20 road period (print version)
+    url: https://assets.publishing.service.gov.uk/media/5a80ceaf40f0b623026959b1/ris-for-2015-16-road-period-print-version.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-broadband-deployment-and-sharing-other-utiliti
+    title: 'Broadband deployment and sharing other utilities'' infrastructure: a discussion
+      paper'
+    url: https://assets.publishing.service.gov.uk/media/5a78ddf1e5274a277e690160/10-1046-broadband-deployment-discussion-paper.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-connected-and-automated-vehicles-market-foreca
+    title: 'Connected and Automated Vehicles: market forecast 2020 — Connected Places
+      Catapult: market forecast for connected and autonomous vehicles'
+    url: https://assets.publishing.service.gov.uk/media/5f64af8fd3bf7f7238f230a3/connected-places-catapult-market-forecast-for-connected-and-autonomous-vehicles.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-freedom-of-information-statistics-annual-2016--2
+    title: 'Freedom of Information statistics: annual 2016 — Freedom of Information
+      statistics:  October to December 2016 and annual tables V2 (PDF)'
+    url: https://assets.publishing.service.gov.uk/media/6082c4748fa8f51b94010084/foi-statistics-q4-2016-and-annual-statistical-tables_-_V2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-port-freight-statistics-july-to-september-2015
+    title: 'Port freight statistics: July to September 2015 — Port freight statistics:
+      July to September 2015 report'
+    url: https://assets.publishing.service.gov.uk/media/5a7f2bd0ed915d74e6228d1e/port-freight-statistics-july-to-september-2015.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-improvised-explosive-device-events-involving-u
+    title: Improvised Explosive Device events involving UK personnel on Op Herrick in
+      Helmand Province, Afghanistan — Improvised Explosive Device (IED) events involving
+      UK personnel on Op Her
+    url: https://assets.publishing.service.gov.uk/media/5a81b52b40f0b62302698c16/20160823__IED__events_involving_UK_personnel_on_Op_HERRICK_in_Helmand_Province__Afghanistan_O.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-maib-safety-digests-10-14-safety-digest-volume
+    title: 'MAIB safety digests 10-14 — Safety digest: volume 2, 2014'
+    url: https://assets.publishing.service.gov.uk/media/5e81e172d3bf7f133bdbe859/2014-SD2-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-10-14-safety-digest-volume-2
+    title: 'MAIB safety digests 10-14 — Safety digest: volume 1, 2014'
+    url: https://assets.publishing.service.gov.uk/media/5e81e17286650c7443ab6188/2014-SD1-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-10-14-safety-digest-volume-3
+    title: 'MAIB safety digests 10-14 — Safety digest: volume 2, 2013'
+    url: https://assets.publishing.service.gov.uk/media/5e81e171e90e0706f3896701/2013-SD2-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-10-14-safety-digest-volume-4
+    title: 'MAIB safety digests 10-14 — Safety digest: volume 1, 2013'
+    url: https://assets.publishing.service.gov.uk/media/5e81e171e90e0706f8976d0c/2013-SD1-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-10-14-safety-digest-volume-5
+    title: 'MAIB safety digests 10-14 — Safety digest: volume 2, 2012'
+    url: https://assets.publishing.service.gov.uk/media/5e81e171e90e0706f3896700/2012-SD2-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-10-14-safety-digest-volume-6
+    title: 'MAIB safety digests 10-14 — Safety digest: volume 1, 2012'
+    url: https://assets.publishing.service.gov.uk/media/5e81e170d3bf7f133f84938b/2012-SD1-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-10-14-safety-digest-volume-7
+    title: 'MAIB safety digests 10-14 — Safety digest: volume 2, 2011'
+    url: https://assets.publishing.service.gov.uk/media/5e81e170e90e0706ecc693da/2011-SD2-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-10-14-safety-digest-volume-8
+    title: 'MAIB safety digests 10-14 — Safety digest: volume 1, 2011'
+    url: https://assets.publishing.service.gov.uk/media/5e81e170e90e0706f6832813/2011-SD1-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-10-14-safety-digest-volume-9
+    title: 'MAIB safety digests 10-14 — Safety digest: volume 2, 2010'
+    url: https://assets.publishing.service.gov.uk/media/5e81e17086650c743d2f6d44/2010-SD2-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-10-14-safety-digest-volume-10
+    title: 'MAIB safety digests 10-14 — Safety digest: volume 1, 2010'
+    url: https://assets.publishing.service.gov.uk/media/5e81e16f86650c7439bb05de/2010-SD1-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-05-09-safety-digest-volume
+    title: 'MAIB safety digests 05-09 — Safety digest: volume 3, 2009'
+    url: https://assets.publishing.service.gov.uk/media/5e81d605e90e0706ef2db574/2009-SD3-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-05-09-safety-digest-volume-2
+    title: 'MAIB safety digests 05-09 — Safety digest: volume 2, 2009'
+    url: https://assets.publishing.service.gov.uk/media/5e81d605d3bf7f1348a73397/2009-SD2-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-05-09-safety-digest-volume-3
+    title: 'MAIB safety digests 05-09 — Safety digest: volume 1, 2009'
+    url: https://assets.publishing.service.gov.uk/media/5e81d60586650c743e9c7b21/2009-SD1-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-05-09-safety-digest-volume-4
+    title: 'MAIB safety digests 05-09 — Safety digest: volume 3, 2008'
+    url: https://assets.publishing.service.gov.uk/media/5e81d604e90e0706ed8a2b86/2008-SD3-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-05-09-safety-digest-volume-5
+    title: 'MAIB safety digests 05-09 — Safety digest: volume 2, 2008'
+    url: https://assets.publishing.service.gov.uk/media/5e81d60486650c743d2f6d42/2008-SD2-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-05-09-safety-digest-volume-6
+    title: 'MAIB safety digests 05-09 — Safety digest: volume 1, 2008'
+    url: https://assets.publishing.service.gov.uk/media/5e81d60486650c743c9bfd5c/2008-SD1-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-05-09-safety-digest-volume-7
+    title: 'MAIB safety digests 05-09 — Safety digest: volume 3, 2007'
+    url: https://assets.publishing.service.gov.uk/media/5e81d604d3bf7f133f849387/2007-SD3-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-05-09-safety-digest-volume-8
+    title: 'MAIB safety digests 05-09 — Safety digest: volume 2, 2007'
+    url: https://assets.publishing.service.gov.uk/media/5e81d604d3bf7f134688b7a0/2007-SD2-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-05-09-safety-digest-volume-9
+    title: 'MAIB safety digests 05-09 — Safety digest: volume 1, 2007'
+    url: https://assets.publishing.service.gov.uk/media/5e81d603e90e0706ecc693d8/2007-SD1-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-05-09-safety-digest-volume-10
+    title: 'MAIB safety digests 05-09 — Safety digest: volume 3, 2006'
+    url: https://assets.publishing.service.gov.uk/media/5e81d60386650c7439bb05db/2006-SD3-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-05-09-safety-digest-volume-11
+    title: 'MAIB safety digests 05-09 — Safety digest: volume 2, 2006'
+    url: https://assets.publishing.service.gov.uk/media/5e81d603e90e0706f24fdf97/2006-SD2-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-05-09-safety-digest-volume-12
+    title: 'MAIB safety digests 05-09 — Safety digest: volume 1, 2006'
+    url: https://assets.publishing.service.gov.uk/media/5e81d603d3bf7f1347146327/2006-SD1-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-05-09-safety-digest-volume-13
+    title: 'MAIB safety digests 05-09 — Safety digest: volume 3, 2005'
+    url: https://assets.publishing.service.gov.uk/media/5e81d60286650c74472ce232/2005-SD3-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-05-09-safety-digest-volume-14
+    title: 'MAIB safety digests 05-09 — Safety digest: volume 2, 2005'
+    url: https://assets.publishing.service.gov.uk/media/5e81d60286650c7443ab6184/2005-SD2-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-maib-safety-digests-05-09-safety-digest-volume-15
+    title: 'MAIB safety digests 05-09 — Safety digest: volume 1, 2005'
+    url: https://assets.publishing.service.gov.uk/media/5e81d602d3bf7f133c923497/2005-SD1-MAIBSafetyDigest.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-l36-6jf-fcc-recycling-uk-limited-epr-jb3633rp-
+    title: 'L36 6JF, FCC Recycling (UK) Limited, EPR/JB3633RP/S004: environmental permit
+      issued — Partial surrender notice: FCC Recycling (UK) Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a816f96ed915d74e33fe32f/Partial_Surrender_Notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-l36-6jf-fcc-recycling-uk-limited-epr-jb3633rp--2
+    title: 'L36 6JF, FCC Recycling (UK) Limited, EPR/JB3633RP/S004: environmental permit
+      issued — Decision document: FCC Recycling (UK) Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a81b59040f0b62305b90698/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-business-rates-new-build-empty-property-techni
+    title: 'Business rates: new build empty property technical consultation'
+    url: https://assets.publishing.service.gov.uk/media/5a7c96b240f0b65b3de09dc5/130611_Type_set_Business_Rates_New_Build_Empty_Property.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-business-rates-new-build-empty-property-techni-2
+    title: 'Business rates: new build empty property technical consultation — Business
+      rates new build empty property relief: summary of consultation responses and government
+      response'
+    url: https://assets.publishing.service.gov.uk/media/5a7c69abe5274a5255bce783/Business_Rates_-_New_Build_Empty_Property_Relief_-_Statement_of_Responses.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-government-response-to-the-s4c-independent-rev-2
+    title: 'Government response to the S4C independent review: ‘Building an S4C for
+      the future’'
+    url: https://assets.publishing.service.gov.uk/media/5abb9c17e5274a1aa5933a53/Government_response_to_the_S4C_indep_English_Accessible.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-local-authority-trading-standards-a-review-the
+    title: 'Local authority trading standards: a review — The impact of local authority
+      trading standards in challenging times'
+    url: https://assets.publishing.service.gov.uk/media/5a80d3e9ed915d74e33fca31/bis-15-139-the-impact-of-local-authority-trading-standards-in-challenging-times-r2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-financial-efficiency-in-schools
+    title: Financial efficiency in schools
+    url: https://assets.publishing.service.gov.uk/media/5a7a3db4e5274a319e778db8/DFE-RR007.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-national-minimum-wage-in-2025-lpc-2025-upr
+    title: The National Minimum Wage in 2025 — LPC 2025 Uprating Report
+    url: https://assets.publishing.service.gov.uk/media/67e6b6b296745eff958ca027/LPC_2025_Uprating_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-forced-marriage-guidance-for-members-of-parlia
+    title: Forced marriage - Guidance for Members of Parliament and constituency offices
+      — Forced Marriage Case Handling Guide for MPs and Constituency Officers
+    url: https://assets.publishing.service.gov.uk/media/5a78d773e5274a2acd18a354/fmu-guide-mps.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-childhood-flu-vaccination-programme-data-colle
+    title: 'Childhood flu vaccination programme: data collection guidance — Childhood
+      flu vaccination programme: 2015 to 2016 ImmForm data collection guidance'
+    url: https://assets.publishing.service.gov.uk/media/5a80443940f0b62305b8a271/Childhood_Flu_Vaccination_Programme_ImmForm_User_Guide_2015_to_2016_Final.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-large-commercial-yachts-inclining-test-guidanc
+    title: 'Large commercial yachts: inclining test guidance notes — Large commercial
+      yachts: guidance notes for carrying out an inclining test'
+    url: https://assets.publishing.service.gov.uk/media/5a749e55e5274a44083b820a/guidance_inclining_test_procedure-6.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-pandemic-flu-infection-control-guidance-for-he
+    title: 'Pandemic flu infection control: guidance for healthcare settings — Pandemic
+      (H1N1) 2009 influenza: a summary of guidance for infection control in healthcare
+      settings'
+    url: https://assets.publishing.service.gov.uk/media/5a7efc2740f0b6230268cc5f/Infection_control_in_healthcare_settings.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-planning-and-travellers-proposed-changes-to-pl-2
+    title: 'Planning and travellers: proposed changes to planning policy and guidance
+      — Consultation: easy read version'
+    url: https://assets.publishing.service.gov.uk/media/5a7efd7040f0b62305b84719/140917_Easy_Read_Consultation_Document__final_draft_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-planning-and-travellers-proposed-changes-to-pl-3
+    title: 'Planning and travellers: proposed changes to planning policy and guidance
+      — Consultation: planning and travellers - equalities statement'
+    url: https://assets.publishing.service.gov.uk/media/5a7ee45240f0b6230268c320/Equalities_Statement__publication_format_140905.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-planning-and-travellers-proposed-changes-to-pl-4
+    title: 'Planning and travellers: proposed changes to planning policy and guidance
+      — Planning and travellers: proposed changes to planning policy and guidance: consultation
+      response'
+    url: https://assets.publishing.service.gov.uk/media/5a805c0040f0b62305b8ab05/Final_planning_and_travellers_govt_response.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-forensic-science-codes-of-practice-guidance-on
+    title: 'Forensic Science Codes of Practice: Guidance on validation consultation
+      — Guidance: Validation Consultation draft'
+    url: https://assets.publishing.service.gov.uk/media/5a7c2d3c40f0b674ed20f51a/fsr-validation-guidance-consulation-2013.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-fitness-to-work-safe-catering
+    title: Fitness to work — Safe Catering
+    url: https://assets.publishing.service.gov.uk/media/69f3224fab602a88957eef1a/safe-catering_0_0.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-workplace-supervisor-wps-course-radioactive-ma
+    title: 'Workplace supervisor (WPS) course: radioactive materials — Workplace supervisor
+      course radioactive materials'
+    url: https://assets.publishing.service.gov.uk/media/5a747c8e40f0b604dd7ae4c3/20120521Distance_learingWPSRadioactive_MaterialsU.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-greenhouse-gas-emissions-from-agriculture-indi
+    title: Greenhouse gas emissions from agriculture indicators — framework overview
+    url: https://assets.publishing.service.gov.uk/media/5fdb4958d3bf7f40cdbfc4aa/ghgindicator-summary-18dec20.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-greenhouse-gas-emissions-from-agriculture-indi-2
+    title: Greenhouse gas emissions from agriculture indicators — Attitudes and awareness
+      (December 2020)
+    url: https://assets.publishing.service.gov.uk/media/5fdb4994d3bf7f40d665d6b1/ghgindicator-1attitudes-18dec20.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-greenhouse-gas-emissions-from-agriculture-indi-3
+    title: Greenhouse gas emissions from agriculture indicators — Uptake of mitigation
+      methods (December 2020)
+    url: https://assets.publishing.service.gov.uk/media/5fdb4a4c8fa8f54d6346182a/ghgindicator-2mitigation-18dec20.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-greenhouse-gas-emissions-from-agriculture-indi-4
+    title: Greenhouse gas emissions from agriculture indicators — Soil nitrogen balance
+      (December 2020)
+    url: https://assets.publishing.service.gov.uk/media/5fdb4a67e90e071be1015718/ghgindicator-3soilnitrogen-18dec20.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-greenhouse-gas-emissions-from-agriculture-indi-5
+    title: 'Greenhouse gas emissions from agriculture indicators — Pig sector: feed
+      conversion ratio for fattening herd (December 2020)'
+    url: https://assets.publishing.service.gov.uk/media/5fdb4a7cd3bf7f40cfeda386/ghgindicator-4pigs-18dec20.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-greenhouse-gas-emissions-from-agriculture-indi-6
+    title: 'Greenhouse gas emissions from agriculture indicators — Grazing livestock
+      sector: beef and sheep breeding regimes (December 2020)'
+    url: https://assets.publishing.service.gov.uk/media/5fdb4a95d3bf7f40ccb33618/ghgindicator-5grazing-18dec20.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-greenhouse-gas-emissions-from-agriculture-indi-7
+    title: 'Greenhouse gas emissions from agriculture indicators — Dairy sector: ratio
+      of dairy cow feed production to milk production (December 2020)'
+    url: https://assets.publishing.service.gov.uk/media/5fdb4aaa8fa8f54d58640dce/ghgindicator-6dairycow-18dec20.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-greenhouse-gas-emissions-from-agriculture-indi-8
+    title: 'Greenhouse gas emissions from agriculture indicators — Poultry sector: feed
+      conversion ratio for table birds (December 2020)'
+    url: https://assets.publishing.service.gov.uk/media/5fdb4ac0d3bf7f40cede1126/ghgindicator-7poultrysector-18dec20.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-greenhouse-gas-emissions-from-agriculture-indi-9
+    title: 'Greenhouse gas emissions from agriculture indicators — Cereals and other
+      crops: manufactured fertiliser application (December 2020)'
+    url: https://assets.publishing.service.gov.uk/media/5fdb4ae1e90e071becef2438/ghgindicator-8cereals-18dec20.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-greenhouse-gas-emissions-from-agriculture-indi-10
+    title: Greenhouse gas emissions from agriculture indicators — Slurry and manure
+      (December 2020)
+    url: https://assets.publishing.service.gov.uk/media/5fdb4afbe90e071bdc56f76a/ghgindicator-9slurry-18dec20.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-greenhouse-gas-emissions-from-agriculture-indi-11
+    title: Greenhouse gas emissions from agriculture indicators — Organic fertiliser
+      application (December 2020)
+    url: https://assets.publishing.service.gov.uk/media/5fdb4b13d3bf7f40ccb33619/ghgindicator-10fertiliser-18dec20.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-comeap-statement-on-airborne-nano-and-micropla
+    title: 'COMEAP: Statement on airborne nano- and microplastic particles and fibres
+      — Statement on airborne nano- and microplastic particles and fibres'
+    url: https://assets.publishing.service.gov.uk/media/68e3ddec49e17d00a56ffe47/COMEAP_Nano_microplastic_statement.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-comeap-statement-on-airborne-nano-and-micropla-2
+    title: 'COMEAP: Statement on airborne nano- and microplastic particles and fibres
+      — Interim assessment for the Synthesis and Integration of Epidemiological and
+      Toxicological Evidence (SETE'
+    url: https://assets.publishing.service.gov.uk/media/68e3c0a4c487360cc70ca158/COMEAP_statement_on_NMP_SETE_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hs2-air-quality-annual-report-2019
+    title: HS2 Air Quality Annual Report 2019
+    url: https://assets.publishing.service.gov.uk/media/5f4e2f2cd3bf7f0a2f2e5033/HS2_Air_Quality_Annual_Report_2019.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vehicle-excise-duty-call-for-evidence-vehicle-
+    title: 'Vehicle Excise Duty: call for evidence — Vehicle Excise Duty:  A Call for
+      Evidence'
+    url: https://assets.publishing.service.gov.uk/media/5e68bdff86650c727054695c/VED_final.pdf
     source: gov_uk
     license: open
     topic: materials
