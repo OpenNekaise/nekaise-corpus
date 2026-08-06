@@ -222402,13 +222402,6 @@ sources:
     license: open
     topic: construction
     format: pdf
-  - id: guk-fisheries-observers-charter
-    title: Fisheries Observers Charter
-    url: https://assets.publishing.service.gov.uk/media/5a7f8653e5274a2e87db65eb/AFST_Fisheries_Observer_Charter.pdf
-    source: gov_uk
-    license: open
-    topic: construction
-    format: pdf
   - id: guk-local-authority-capital-expenditure-and-receip-8
     title: 'Local authority capital expenditure and receipts in England: 2011 to 2012
       forecast revision — Local authority capital expenditure and receipts, England:
@@ -231565,6 +231558,308 @@ sources:
     title: 'CCUS transport and storage Revenue Support Agreement counterparty — CCUS
       transport and storage business model revenue support: government response'
     url: https://assets.publishing.service.gov.uk/media/65ddb986cf7eb10015f57f85/ccus-revenue-support-regulations-counterparty-government-response.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-spaceport-operations-and-certification-emergin-2
+    title: 'Spaceport operations and certification: emerging requirements — Emerging
+      technical requirements for a UK spaceport'
+    url: https://assets.publishing.service.gov.uk/media/5a74bc8740f0b619c865a043/emerging-technical-requirements-for-a-uk-spaceport.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-proceeds-of-crime-act-section-2a
+    title: The Proceeds of Crime Act, Section 2a
+    url: https://assets.publishing.service.gov.uk/media/60ec44e78fa8f50c716bcc38/June_2021_amended_s.2A_guidance_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-review-of-the-national-leaders-of-education-nl
+    title: Review of the National Leaders of Education (NLE) programme — National Leaders
+      of Education (NLE) advisory group recommendations on NLE reform
+    url: https://assets.publishing.service.gov.uk/media/5e54fb9186650c10eb9bc1b1/National_Leaders_of_Education__NLE__advisory_group_recommendations_on_NLE_reform.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-review-of-the-national-leaders-of-education-nl-2
+    title: Review of the National Leaders of Education (NLE) programme — National Leaders
+      of Education (NLE) standards with research commentary
+    url: https://assets.publishing.service.gov.uk/media/5e50000d86650c10f29ebb46/National_Leaders_of_Education__NLE__Standards_with_research_commentary.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-key-route-networks-devolving-more-powers-and-r
+    title: 'Key Route Networks: devolving more powers and responsibilities for locally
+      important roads to mayors and their combined authorities — Key Route Network Consultation:
+      powers and res'
+    url: https://assets.publishing.service.gov.uk/media/6103bc04e90e0703b77c9c31/key-route-network-consultation-powers-and-responsibilities-for-locally-important-roads.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-charities-and-social-investment-rs30
+    title: Charities and social investment (RS30)
+    url: https://assets.publishing.service.gov.uk/media/5a7c9c8440f0b65b3de0a01f/social_investment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-business-rates-relief-for-new-fibre-on-telecom
+    title: 'Business rates relief for new fibre on telecommunication hereditaments —
+      Business rates relief for new fibre on telecommunication hereditaments: consultation
+      on draft regulations'
+    url: https://assets.publishing.service.gov.uk/media/5a75bce140f0b67f59fcf398/Consultation_on_Business_Rates_Relief_for_New_Fibre_on_Telecommunication_Hereditaments.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-seafarer-statistics-2015-seafarer-statistics-u
+    title: 'Seafarer statistics: 2015 — Seafarer statistics: user engagement exercise'
+    url: https://assets.publishing.service.gov.uk/media/5a81a8f9e5274a2e8ab552d1/seafarers-user-engagement-exercise.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-seafarer-statistics-2015-seafarer-statistics-2
+    title: 'Seafarer statistics: 2015 — Seafarer statistics: 2015 report'
+    url: https://assets.publishing.service.gov.uk/media/5a7f684240f0b62305b86f61/seafarer-statistics-2015.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-taking-part-2017-18-quarter-4-statistical-rele
+    title: 'Taking Part 2017/18: quarter 4 statistical release — Taking Part 2017/18
+      Quarter 4: Report'
+    url: https://assets.publishing.service.gov.uk/media/5b99320640f0b67866ffbd3f/180911_Taking_Part_Adult_Annual_Report_-_Revised.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-tsgb-2011-aviation-aviation
+    title: 'TSGB 2011: Aviation — Aviation'
+    url: https://assets.publishing.service.gov.uk/media/5a78b105ed915d07d35b1ac2/aviation-summary.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-personal-incomes-statistics-for-the-tax-year-2
+    title: 'Personal Incomes Statistics for the tax year 2010 to 2011 — Personal incomes
+      statistics: 2010 to 2011: introduction, commentary and tables 3.1 - 3.10'
+    url: https://assets.publishing.service.gov.uk/media/5a7b8a2740f0b62826a043bd/tables3-1_3-10.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-farming-statistics-2018-uk-wheat-and-barley-pr
+    title: Farming Statistics – 2018, UK wheat and barley production first estimate
+      — Farming statistics - 2018 wheat and barley production in the United Kingdom
+    url: https://assets.publishing.service.gov.uk/media/5bb7034de5274a225d681376/structure_jun18_wheatandbarleyUK_08oct18.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-farming-statistics-2017-uk-wheat-and-barley-pr
+    title: Farming Statistics – 2017, UK wheat and barley production first estimate
+      — Farming statistics – 2017 wheat and barley production in the United Kingdom
+    url: https://assets.publishing.service.gov.uk/media/5a821c03ed915d74e3401c64/structure_jun17_wheatandbarleyUK_05oct17.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-farming-statistics-2019-uk-wheat-and-barley-pr
+    title: Farming Statistics – 2019, UK wheat and barley production first estimate
+    url: https://assets.publishing.service.gov.uk/media/5e57c8a2e90e071112705838/structure_jun19_wheatandbarleyUK_28feb20.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-fisheries-observer-charter
+    title: Fisheries Observer Charter
+    url: https://assets.publishing.service.gov.uk/media/5a7f139ce5274a2e87db3a63/AFST_Fisheries_Observer_Charter.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-reported-road-casualties-great-britain-july-to
+    title: 'Reported road casualties Great Britain: July to September 2012 — Reported
+      road casualties Great Britain: July to September 2012 report'
+    url: https://assets.publishing.service.gov.uk/media/5a748f9ae5274a410efd093b/road-accidents-and-safety-quarterly-estimates-q3-2012.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-census-information-on-livestock-breeds-numbers
+    title: 'Census information on livestock breeds — Numbers of females in livestock
+      breeds: census predictions'
+    url: https://assets.publishing.service.gov.uk/media/5a7c150de5274a1f5cc75acf/hall-anm110811.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-m19-2sd-united-biscuits-uk-limited-environment
+    title: 'M19 2SD, United Biscuits UK Limited: environmental permit issued — Variation
+      notice: United Biscuits UK Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a757832ed915d731495a349/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-m19-2sd-united-biscuits-uk-limited-environment-2
+    title: 'M19 2SD, United Biscuits UK Limited: environmental permit issued — Decision
+      document: United Biscuits UK Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7f22faed915d74e62289ca/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-decision-no-3-2025-of-the-joint-committee-esta
+    title: 'DECISION No 3/2025 of the Joint Committee established by the Agreement on
+      the withdrawal of the UK from the EU: adding 2 newly adopted Union acts to Annex
+      2 to the Windsor Framewor'
+    url: https://assets.publishing.service.gov.uk/media/680ba83811d566056bcae8f2/JC_decision_3.2025_clean_for_signature_UK_EU.docx.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-flexible-learning-fund-pilot-evaluation-evalua
+    title: 'Flexible learning fund pilot evaluation — Evaluation of career learning
+      pilots: flexible learning fund'
+    url: https://assets.publishing.service.gov.uk/media/60533be0e90e075285c58247/Flexible_Learning_Fund_evaluation_report_March_2021.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-guatemala-energy-sector-opportunities-for-uk-c
+    title: 'Guatemala: Energy Sector Opportunities for UK Companies — Energy Report
+      Guatemala 2013'
+    url: https://assets.publishing.service.gov.uk/media/5a7c77f240f0b62aff6c1e21/GUATEMALA_-_Energy_Sector_Report_2013.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-central-rating-list-2017-central-rating-li
+    title: The central rating list - 2017 — Central rating list - England
+    url: https://assets.publishing.service.gov.uk/media/66056952f9ab41001aeea4bc/2017_Central_List_Current_Pages_England.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-central-rating-list-2017-crl-superseded-pa
+    title: The central rating list - 2017 — CRL - superseded pages 2017 (England)
+    url: https://assets.publishing.service.gov.uk/media/66056962f9ab41001aeea4bd/2017_Central_List_Superseded_Pages_England.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-central-rating-list-2017-central-rating-li-2
+    title: The central rating list - 2017 — Central rating list - Wales
+    url: https://assets.publishing.service.gov.uk/media/66056973e8c4420011220478/2017_Central_List_Wales_Current.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-central-rating-list-2017-crl-superseded-pa-2
+    title: The central rating list - 2017 — CRL - superseded pages 2017 (Wales)
+    url: https://assets.publishing.service.gov.uk/media/66056988f9ab410011eea4e5/2017_Central_list_Wales_Superseded_Pages_Current.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-tag-unit-a5-2-aviation-appraisal
+    title: TAG unit A5-2 aviation appraisal
+    url: https://assets.publishing.service.gov.uk/media/6899e2b43080e72710b2e34f/tag-unit-a5-2-aviation-appraisal.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-tackling-violence-at-work-guidance-for-fire-an
+    title: 'Tackling violence at work: guidance for fire and rescue authorities — Tackling
+      violence at work: Good practice guidance document for Fire and Rescue Services'
+    url: https://assets.publishing.service.gov.uk/media/5a7897f0ed915d07d35b0e80/381435.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-groceries-market-investigation-controlled-land-2
+    title: Groceries Market Investigation (Controlled Land) Procedures Guidance — CLO
+      Procedures Guidance
+    url: https://assets.publishing.service.gov.uk/media/60632c3f8fa8f515ae2ac524/CLO_Procedures_Guidance_30.3.21.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-changing-how-healthcare-education-is-funded-eq
+    title: 'Changing how healthcare education is funded — Equality analysis: Reforming
+      healthcare education funding'
+    url: https://assets.publishing.service.gov.uk/media/5a7f38ae40f0b62305b85d38/EANHS_bursary.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-changing-how-healthcare-education-is-funded-im
+    title: 'Changing how healthcare education is funded — Impact assessment: Reforming
+      healthcare education funding'
+    url: https://assets.publishing.service.gov.uk/media/5a7f4837ed915d74e622981c/NHS_Bursary_IA.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-changing-how-healthcare-education-is-funded-re
+    title: 'Changing how healthcare education is funded — Reforming healthcare education
+      funding: creating a sustainable future workforce: government response to public
+      consultation'
+    url: https://assets.publishing.service.gov.uk/media/5a80558fe5274a2e8ab4f8cd/health-education-funding-response.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-changing-how-healthcare-education-is-funded-eq-2
+    title: 'Changing how healthcare education is funded — Equality analysis: Reforming
+      healthcare education funding (consultation response)'
+    url: https://assets.publishing.service.gov.uk/media/5a7f2ad1ed915d74e6228cbf/health-ed-ea.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-changing-how-healthcare-education-is-funded-im-2
+    title: Changing how healthcare education is funded — Impact assessment
+    url: https://assets.publishing.service.gov.uk/media/5a80212140f0b62302691b0a/NHS_Bursary_EIA.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-emg-processing-methods-to-facilitate-the-re-us
+    title: 'EMG: Processing methods to facilitate the re-use of personal protective
+      equipment (PPE), 8 September 2020 — EMG: Processing methods to facilitate the
+      re-use of PPE - 8 September 20'
+    url: https://assets.publishing.service.gov.uk/media/5f7eec6d8fa8f51e821a692b/S0746_EMG_Processing_Methods_to_Facilitate_the_Re-use_of_Personal_Protective_Equipment__PPE_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-multiple-benefits-of-nature-based-solutions-an
+    title: 'Multiple benefits of nature-based solutions: an evidence synthesis — Multiple
+      benefits of nature-based solutions: an evidence synthesis - report'
+    url: https://assets.publishing.service.gov.uk/media/67ab5f525d27cee6cccec485/Multiple_benefits_of_nature-based_solutions_-_report.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-procurement-policy-note-09-20-the-construction
+    title: 'Procurement Policy Note 09/20: The Construction Playbook'
+    url: https://assets.publishing.service.gov.uk/media/5fcf58288fa8f54d5733f470/PPN_The_Construction_Playbook.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-investing-in-renewable-technologies-cfd-contra
+    title: Investing in renewable technologies – CfD contract terms and strike prices
+    url: https://assets.publishing.service.gov.uk/media/5a7b9a5bed915d1311060521/Final_Document_-_Investing_in_renewable_technologies_-_CfD_contract_terms_and_strike_prices_UPDATED_6_DEC.pdf
     source: gov_uk
     license: open
     topic: materials
