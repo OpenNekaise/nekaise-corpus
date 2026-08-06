@@ -228720,15 +228720,6 @@ sources:
     license: open
     topic: standards_protocols
     format: pdf
-  - id: guk-nera-economic-consulting-report-changes-in-hur
-    title: 'NERA Economic Consulting report: Changes in Hurdle Rates for Low Carbon
-      Generation Technologies — Changes in Hurdle Rates for Low Carbon Generation Technologies
-      due to the Shift fr'
-    url: https://assets.publishing.service.gov.uk/media/5a7c5500ed915d3d0e87bac0/NERA_Report_Assessment_of_Change_in_Hurdle_Rates_-_FINAL.pdf
-    source: gov_uk
-    license: open
-    topic: materials
-    format: pdf
   - id: guk-responsibility-deal-between-the-uk-scottish-an
     title: Responsibility deal between the UK, Scottish and Welsh Governments and the
       direct marketing sector
@@ -237199,6 +237190,449 @@ sources:
   - id: guk-second-cfd-allocation-round-statutory-notices--5
     title: Second CFD Allocation Round – Statutory Notices — Standard Terms Notice
     url: https://assets.publishing.service.gov.uk/media/5a80613940f0b62302693297/CFD_STANDARD_TERMS_NOTICE.pdf
+    source: gov_uk
+    license: open
+    topic: materials
+    format: pdf
+  - id: guk-uk-gigabit-programme-cornwall-and-isles-of-sci
+    title: 'UK Gigabit Programme: Cornwall and Isles of Scilly Public Review — Cornwall
+      and Isles of Scilly Public Review: Request for information'
+    url: https://assets.publishing.service.gov.uk/media/60f05996e90e0764ca406555/Cornwall_Public_Review_RFI_Launch_v2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-gigabit-programme-cornwall-and-isles-of-sci-2
+    title: 'UK Gigabit Programme: Cornwall and Isles of Scilly Public Review — Cornwall
+      and Isles of Scilly Public Review: Privacy Notice'
+    url: https://assets.publishing.service.gov.uk/media/60eef05e8fa8f50c7ba9b4cd/Cornwall_PR_Privacy_Notice.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-referencing-of-british-standards-based-on-euro
+    title: 'Referencing of British Standards based on Eurocodes — Changes to Parts A
+      and C of the Building Regulations - referencing of British Standards based on
+      Eurocodes: impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/5a7c7e12e5274a2674eab048/Eurocodes_IA.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-authorisation-of-new-extended-competent-person
+    title: 'Authorisation of new extended competent person schemes — The Building, Approved
+      Inspectors and Charges (Amendment) Regulations 2012: authorisation of new extended
+      competent person '
+    url: https://assets.publishing.service.gov.uk/media/5a78cda3ed915d07d35b28bc/121217_-_CPS_IA_-_to_publish_for_Web.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-migrant-journey-2020-report
+    title: 'Migrant journey: 2020 report'
+    url: https://assets.publishing.service.gov.uk/media/60ae37258fa8f520bb898271/migrant-journey-report2020.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-redress-for-purchasers-of-new-build-homes-and-
+    title: 'Redress for purchasers of new build homes and the New Homes Ombudsman —
+      Redress for purchasers of new build homes and the New Homes Ombudsman: a technical
+      consultation'
+    url: https://assets.publishing.service.gov.uk/media/5d133d4c40f0b63522d16b9d/Redress_for_Purchasers_of_New_Build_Homes_and_the_New_Homes_Ombudsman_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-redress-for-purchasers-of-new-build-homes-and--2
+    title: 'Redress for purchasers of new build homes and the New Homes Ombudsman —
+      Redress for purchasers of new build homes and the New Homes Ombudsman: summary
+      of responses to the consultat'
+    url: https://assets.publishing.service.gov.uk/media/5e4fdf37d3bf7f393f3057aa/New_Homes_Ombudsman_Consultation_Response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-optional-key-stage-1-tests-2025-english-readin-4
+    title: 'Optional key stage 1 tests: 2025 English reading test materials — 2025 key
+      stage 1 English reading – administering Paper 1: reading prompt and answer booklet'
+    url: https://assets.publishing.service.gov.uk/media/683582b2a15ee66ab43c8591/2025_KS1_English_reading_administering_Paper1_reading_prompt_and_answer_booklet.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-optional-key-stage-1-tests-2025-english-readin-5
+    title: 'Optional key stage 1 tests: 2025 English reading test materials — 2025 key
+      stage 1 English reading – administering Paper 2: reading booklet and reading answer
+      booklet'
+    url: https://assets.publishing.service.gov.uk/media/6835834dd6d2692c9bdb02cf/2025_KS1_English_reading_administering_Paper2_reading_booklet_and_reading_answer_booklet.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-how-ash-dieback-affects-grants-felling-licence
+    title: 'How ash dieback affects grants/felling licences: operations note 30 — Operations
+      note 30'
+    url: https://assets.publishing.service.gov.uk/media/5d70fa1b40f0b6093090f09a/ON030_How_ash_dieback_may_affect_your_grant_application_v2.0_issued_050919.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-environment-agency-charging-proposals-2014-ea-
+    title: Environment Agency charging proposals 2014 — EA Charges Consultation 2014
+    url: https://assets.publishing.service.gov.uk/media/5a755875e5274a59fa7176cd/Charges_Consultation_2014_-_response_document.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-freedom-of-information-statistics-april-to-jun-3
+    title: 'Freedom of Information statistics: April to June 2016 — Freedom of Information
+      statistics:  April to June 2016 tables (PDF)'
+    url: https://assets.publishing.service.gov.uk/media/5a81b99d40f0b62305b907e9/foi_statistics_q2_2016_statistical_tables.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-farming-statistics-livestock-populations-at-1-
+    title: 'Farming statistics: livestock populations at 1 December 2012 – UK and England'
+    url: https://assets.publishing.service.gov.uk/media/5a7a3035e5274a319e77879e/defra-stats-foodfarm-landuselivestock-farmstats-dec2012-130314.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-non-domestic-rating-challenges-and-changes-eng-4
+    title: 'Non-domestic rating: challenges and changes, England and Wales, June 2017
+      (non-Check, Challenge and Appeal (CCA)) — Data information and methodology'
+    url: https://assets.publishing.service.gov.uk/media/5a82c71ae5274a2e8ab594ce/Data_Information.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-getting-smart-about-intellectual-property-and-
+    title: 'Getting smart about intellectual property and intangible assets — Getting
+      smart about intellectual property and other intangibles in the public sector:
+      Budget 2018'
+    url: https://assets.publishing.service.gov.uk/media/5bd4391140f0b604cbff22e5/Getting_smart_about_intellectual_property_and_other_intangibles_in_the_public_sector_-_Budget_2018.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-m1-junctions-28-to-35a-maximum-mandatory-speed
+    title: 'M1 junctions 28 to 35a: maximum mandatory speed limit — M1 junctions 28
+      to 35a: maximum mandatory speed limit consultation document'
+    url: https://assets.publishing.service.gov.uk/media/5a7ce84ae5274a724f0be3dc/M1_J28_to_J35a_MSL_Consultation_Document.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-m1-junctions-28-to-35a-maximum-mandatory-speed-2
+    title: 'M1 junctions 28 to 35a: maximum mandatory speed limit — M1 Junctions 28
+      to 35a Air Quality Mitigation Summary of Consultation Responses'
+    url: https://assets.publishing.service.gov.uk/media/5a7ebe9ee5274a2e8ab47ecf/M1_J28-35a_Summary_of_Consulation_Responses.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-safety-lessons-ensuring-safe-mooring-operation
+    title: 'Safety lessons: ensuring safe mooring operations — MAIB safety flyer issued
+      July 2013'
+    url: https://assets.publishing.service.gov.uk/media/5a7ec6c2e5274a2e87db1d60/Flyer.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-safety-lessons-securing-freight-vehicles-on-sh
+    title: 'Safety lessons: securing freight vehicles on ships — MAIB safety flyer issued
+      October 2009'
+    url: https://assets.publishing.service.gov.uk/media/5a7d5b72ed915d321c2de8f4/StenaVoyagerSafetyFlyer.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-safety-lessons-checking-a-vessel-for-watertigh
+    title: 'Safety lessons: checking a vessel for watertight integrity — MAIB safety
+      flyer issued November 2007'
+    url: https://assets.publishing.service.gov.uk/media/5a7d8aabe5274a6b89a50ae8/EllieMaySafetyFlyer.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-review-of-differential-absorption-lidar-flare-
+    title: 'Review of differential absorption LiDAR flare emission and performance data
+      — Review of differential absorption LiDAR flare emission and performance data:
+      report'
+    url: https://assets.publishing.service.gov.uk/media/61a0daa8d3bf7f0558fdc208/Review_of_differential_absorption_LiDAR_flare_emission_and_performance_data_-_report.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-engineering-skills-perkins-review-professor-jo
+    title: 'Engineering skills: Perkins review — Professor John Perkins’ review of engineering
+      skills'
+    url: https://assets.publishing.service.gov.uk/media/5a74941240f0b616bcb179e2/bis-13-1269-professor-john-perkins-review-of-engineering-skills.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-future-of-farming-review-2013-report-future-of
+    title: 'Future of farming review: 2013 report — Future of farming review'
+    url: https://assets.publishing.service.gov.uk/media/5a7c5249ed915d3d0e87b97e/pb13982-future-farming-review-20130709.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-annual-qualifying-defence-contract-statistics--7
+    title: 'Annual qualifying defence contract statistics: 2018/19'
+    url: https://assets.publishing.service.gov.uk/media/5f59fbf78fa8f5106c6c425c/Annual_qualifying_defence_contract_statistics_2018-19_Feb_20A.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-electricity-market-reform-delivery-plan-emr-de
+    title: Electricity Market Reform Delivery Plan — EMR Delivery Plan
+    url: https://assets.publishing.service.gov.uk/media/5a7b9fe0e5274a7318b8fdfa/181213_2013_EMR_Delivery_Plan_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-electricity-market-reform-delivery-plan-annex--2
+    title: 'Electricity Market Reform Delivery Plan — Annex B: Strike Price Methodology'
+    url: https://assets.publishing.service.gov.uk/media/5a7c03bee5274a7202e19014/Annex_B_-_Strike_Price_Methodology.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-electricity-market-reform-delivery-plan-annex--3
+    title: 'Electricity Market Reform Delivery Plan — Annex C: Reliability standard'
+    url: https://assets.publishing.service.gov.uk/media/5a7c4a16ed915d338141dd0a/Annex_C_-_reliability_standard_methodology.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-electricity-market-reform-delivery-plan-annex--4
+    title: 'Electricity Market Reform Delivery Plan — Annex D: Report from the System
+      Operator National Grid'
+    url: https://assets.publishing.service.gov.uk/media/5a7c2bdfed915d1d1741c90a/Annex_D_-_National_Grid_EMR_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-electricity-market-reform-delivery-plan-annex--5
+    title: 'Electricity Market Reform Delivery Plan — Annex E: Report from the Panel
+      of Technical experts'
+    url: https://assets.publishing.service.gov.uk/media/5a7c858ced915d48c2410513/Annex_E_-_PTE_draft_report_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-electricity-market-reform-delivery-plan-annex--6
+    title: 'Electricity Market Reform Delivery Plan — Annex F: CFD Policy position on
+      the Contract terms'
+    url: https://assets.publishing.service.gov.uk/media/5a7c9430e5274a0bb7cb7fca/Annex_F_-_CFD_Summary_of_Key_Contract_Terms.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-electricity-market-reform-delivery-plan-annex--7
+    title: 'Electricity Market Reform Delivery Plan — Annex G: Modelling Quality Assurance'
+    url: https://assets.publishing.service.gov.uk/media/5a7c6336e5274a7ee501a9fc/Annex_G_-_Modelling_Quality_Assurance.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-electricity-market-reform-delivery-plan-annex--8
+    title: 'Electricity Market Reform Delivery Plan — Annex H: Changes to the modelling
+      assumptions'
+    url: https://assets.publishing.service.gov.uk/media/5a7c4f8b40f0b6321db38554/Annex_H_-_Modelling_Assumptions.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-electricity-market-reform-delivery-plan-delive
+    title: Electricity Market Reform Delivery Plan — Delivery Plan Impact Assessment
+    url: https://assets.publishing.service.gov.uk/media/5a7ca49ded915d12ab4bc2be/Delivery_Plan_IA.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-electricity-market-reform-delivery-plan-update
+    title: Electricity Market Reform Delivery Plan — Updated Delivery Plan Impact Assessment
+    url: https://assets.publishing.service.gov.uk/media/5a7b9295e5274a7318b8f8a8/final_delivery_plan_ia.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-electricity-market-reform-delivery-plan-nera-r
+    title: Electricity Market Reform Delivery Plan — NERA report
+    url: https://assets.publishing.service.gov.uk/media/5a7c7dd9ed915d6969f453f3/NERA_Report_Assessment_of_Change_in_Hurdle_Rates_-_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-prosperity-fund-evaluation-and-learning-incept-2
+    title: 'Prosperity Fund: evaluation and learning inception reports — Annex 1: evaluation
+      and learning contract terms of reference'
+    url: https://assets.publishing.service.gov.uk/media/5c82a6d1ed915d07d6206acc/Annex_1_E_L_Contract_Terms_of_Reference.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-prosperity-fund-evaluation-and-learning-incept-5
+    title: 'Prosperity Fund: evaluation and learning inception reports — Annex 4: Prosperity
+      Fund evaluation framework'
+    url: https://assets.publishing.service.gov.uk/media/5c82a752e5274a2a5f69054e/Annex_4_Evaluation_Framework.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-prosperity-fund-evaluation-and-learning-incept-6
+    title: 'Prosperity Fund: evaluation and learning inception reports — Annex 5: fund
+      methodology'
+    url: https://assets.publishing.service.gov.uk/media/5c82a770ed915d07cf4c2f16/Annex_5_Methodology.PDF
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-prosperity-fund-evaluation-and-learning-incept-7
+    title: 'Prosperity Fund: evaluation and learning inception reports — Annex 6: generic
+      programme terms of reference'
+    url: https://assets.publishing.service.gov.uk/media/5c82a79440f0b636981e0b48/Annex_6_Generic_Programme_ToRs.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-prosperity-fund-evaluation-and-learning-incept-8
+    title: 'Prosperity Fund: evaluation and learning inception reports — Annex 7: secondary
+      data quality and availability'
+    url: https://assets.publishing.service.gov.uk/media/5c82a7daed915d07d06db6f2/Annex_7_Secondary_Data_Quality_and_Availability.PDF
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-prosperity-fund-evaluation-and-learning-incept-9
+    title: 'Prosperity Fund: evaluation and learning inception reports — Annex 8: gender
+      and inclusion conceptual and approach paper'
+    url: https://assets.publishing.service.gov.uk/media/5c82a7f9e5274a2a5c81e6b3/Annex_8_Gender_Combined_paper.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-prosperity-fund-evaluation-and-learning-incept-10
+    title: 'Prosperity Fund: evaluation and learning inception reports — Annex 9: synthesis
+      strategy'
+    url: https://assets.publishing.service.gov.uk/media/5c82a81fed915d07d79dcf63/Annex_9_Synthesis_Strategy.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-prosperity-fund-evaluation-and-learning-incept-11
+    title: 'Prosperity Fund: evaluation and learning inception reports — Annex 10: initial
+      portfolio analysis and mapping paper'
+    url: https://assets.publishing.service.gov.uk/media/5c82a846ed915d07c9e363fb/Annex_10_Initial_Analysis_of_Families_of_Projects.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-prosperity-fund-evaluation-and-learning-incept-12
+    title: 'Prosperity Fund: evaluation and learning inception reports — Annex 11: secondary
+      benefits approach paper'
+    url: https://assets.publishing.service.gov.uk/media/5c82a86eed915d07d5dd1b6f/Annex_11_Secondary_Benefits.PDF
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-prosperity-fund-evaluation-and-learning-incept-13
+    title: 'Prosperity Fund: evaluation and learning inception reports — Annex 12: value
+      for money approach paper'
+    url: https://assets.publishing.service.gov.uk/media/5c82a88ded915d07c7958374/Annex_12_Value_for_Money.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-prosperity-fund-evaluation-and-learning-incept-16
+    title: 'Prosperity Fund: evaluation and learning inception reports — Annex 15: communications
+      strategy and plan'
+    url: https://assets.publishing.service.gov.uk/media/5c82a8f2ed915d07d211cb57/Annex_15_Communications_Strategy_and_Plan.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-prosperity-fund-evaluation-and-learning-incept-17
+    title: 'Prosperity Fund: evaluation and learning inception reports — Annex 16: context
+      mapping report'
+    url: https://assets.publishing.service.gov.uk/media/5c82a93de5274a2a5ae48879/Annex_16_Context_Mapping_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-prosperity-fund-evaluation-and-learning-incept-18
+    title: 'Prosperity Fund: evaluation and learning inception reports — Annex 17: stakeholder
+      map briefing note'
+    url: https://assets.publishing.service.gov.uk/media/5c82a974e5274a2a5f69054f/Annex_17_Stakeholder_Mapping_Briefing_Note_redacted.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-prosperity-fund-evaluation-and-learning-incept-20
+    title: 'Prosperity Fund: evaluation and learning inception reports — Annex 19: standard
+      operating procedures'
+    url: https://assets.publishing.service.gov.uk/media/5c82a9eded915d07c9e363fe/Annex_19_SOPs.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-direct-payment-demonstration-projects-learning
+    title: 'Direct Payment Demonstration Projects: learning and payment figures: May
+      2013 — Withdrawn: Direct Payment Demonstration Project: Learning and Payment figures
+      – May 2013'
+    url: https://assets.publishing.service.gov.uk/media/5be2f861e5274a08595e4ea5/direct-payment-demo-figures-may-2013.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-tanks-below-the-minimum-thickness-authorisatio
+    title: Tanks below the minimum thickness — Authorisation 839 (Revision 3)
+    url: https://assets.publishing.service.gov.uk/media/610a6ad28fa8f506c4d83ffd/authorisation-839-for-tanks-below-minimum-thickness-revision-3.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-noise-standards-for-highways-england-delivery-
+    title: 'Noise standards for Highways England delivery partners — Raising the Bar
+      19: Noise - revised April 2017'
+    url: https://assets.publishing.service.gov.uk/media/5a81e77040f0b62302699ca5/B19_Noise_April_2017.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-human-health-toxicological-assessment-of-conta
+    title: Human health toxicological assessment of contaminants in soil (SR2) — Human
+      health toxicological assessment of contaminants in soil
+    url: https://assets.publishing.service.gov.uk/media/5a7b96a6ed915d131106039e/scho0508bnqy-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-residues-of-veterinary-medicines-in-food-2026-
+    title: 'Residues of veterinary medicines in food: 2026 — Residues detected above
+      the reference point to date: 30 June 2026'
+    url: https://assets.publishing.service.gov.uk/media/6a6739b0f02dfa8e780938fb/2026_Published_Results_Paper.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-sampling-littoral-diatoms-in-lakes-or-ecologic
+    title: 'Sampling littoral diatoms in lakes or ecological status assessments: a literature
+      review — Sampling littoral diatoms in lakes or ecological status assessments:
+      a literature review '
+    url: https://assets.publishing.service.gov.uk/media/5a7c708a40f0b626628ac120/scho0505bjec-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-industrial-energy-transformation-fund-ietf-pha-12
+    title: Industrial Energy Transformation Fund (IETF) Phase 2 policy statement
+    url: https://assets.publishing.service.gov.uk/media/614a3919e90e07044064113f/IETF_Phase_2_Policy_Statement.pdf
     source: gov_uk
     license: open
     topic: materials
