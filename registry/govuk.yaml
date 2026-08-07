@@ -264032,15 +264032,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-zero-hours-employment-contracts-exclusivity-cl-2
-    title: 'Zero hours employment contracts: exclusivity clause ban avoidance — Consultation
-      on tackling avoidance of ban on exclusivity clauses in zero hours contracts: impact
-      assessment'
-    url: https://assets.publishing.service.gov.uk/media/5a7dd36240f0b65d8b4e3bc0/bis-14-1015-zero-hours-contracts-tackling-avoidance-of-an-exclusivity-ban-consultation-final-impact.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-self-employment-the-gig-economy-and-the-nation
     title: Self-employment, the gig economy and the National Minimum Wage
     url: https://assets.publishing.service.gov.uk/media/663b5a144d8bb7378fb6c390/Self-employment__the_gig_economy_and_the_National_Minimum_Wage___1_.pdf
@@ -270255,6 +270246,539 @@ sources:
     title: 'Seatbelt and mobile phone use surveys: 2021 — Seatbelt and mobile phone
       use comparison of survey methods'
     url: https://assets.publishing.service.gov.uk/media/646b7818382a5100139fc52a/seatbelt-and-mobile-phone-use-comparison-of-methods.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-civil-service-leadership-statement-inspiring-c
+    title: Civil Service Leadership statement — Inspiring, confident and empowering
+      wallet cards
+    url: https://assets.publishing.service.gov.uk/media/5a80589ded915d74e33f9e58/Wallet_cards_A7_wallet_cards__3_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-civil-service-leadership-statement-leadership--4
+    title: Civil Service Leadership statement — Leadership statement wallet card
+    url: https://assets.publishing.service.gov.uk/media/5a80afbae5274a2e8ab51960/Leadership_statement_pocket_guide_A5__4_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-fair-and-effective-markets-review-s-benchmarks-2
+    title: Fair and Effective Markets Review’s benchmarks to bring into UK regulatory
+      scope — Recommendations on additional financial benchmarks to be brought into
+      UK regulatory scope
+    url: https://assets.publishing.service.gov.uk/media/5a7ee7d5ed915d74e33f327c/FEMR_Recommendations_on_additional_financial_benchmarks_to_be_brought_into_UK_regulatory_scope_logo.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-fair-and-effective-markets-review-s-benchmarks-4
+    title: Fair and Effective Markets Review’s benchmarks to bring into UK regulatory
+      scope — Impact assessment
+    url: https://assets.publishing.service.gov.uk/media/5a7ec9a4ed915d74e6226752/FEMR_benchmarks_impact_assessment_final.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-child-support-agency-quarterly-summary-statist-10
+    title: 'Child Support Agency quarterly summary statistics: June 2012 — Child Support
+      Agency quarterly summary of statistics June 2012'
+    url: https://assets.publishing.service.gov.uk/media/5a755d7740f0b6397f35ddd4/csa_qtr_summ_stats_jun2012.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-child-support-agency-quarterly-summary-statist-11
+    title: 'Child Support Agency quarterly summary statistics: June 2012 — Child Support
+      Agency quarterly summary of statistics first release June 2012'
+    url: https://assets.publishing.service.gov.uk/media/5a7c07daed915d4147622553/csa_qtr_summ_stats_first_release_jun2012.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-child-support-agency-quarterly-summary-statist-12
+    title: 'Child Support Agency quarterly summary statistics: September 2012 — Child
+      Support Agency quarterly summary of statistics September 2012'
+    url: https://assets.publishing.service.gov.uk/media/5a7c9059ed915d48c24109ca/csa_qtr_summ_stats_sep2012.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-child-support-agency-quarterly-summary-statist-13
+    title: 'Child Support Agency quarterly summary statistics: September 2012 — Child
+      Support Agency quarterly summary of statistics first release September 2012'
+    url: https://assets.publishing.service.gov.uk/media/5a7c9751ed915d6969f45f48/csa_qtr_summ_stats_first_release_sep2012.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-port-freight-annual-statistics-2017-final-figu
+    title: 'Port freight annual statistics: 2017 final figures — Port freight annual
+      statistics: 2017 final figures report'
+    url: https://assets.publishing.service.gov.uk/media/5c080750e5274a6a643479ae/port-freight-statistics-2017.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-armed-forces-mental-health-quarterly-statis-5
+    title: 'UK armed forces mental health quarterly statistics: financial year 2010/11
+      — UK armed forces mental health: 31 March 2010'
+    url: https://assets.publishing.service.gov.uk/media/5a7c65e3e5274a7ee501ab23/31_march_2010.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-armed-forces-mental-health-quarterly-statis-6
+    title: 'UK armed forces mental health quarterly statistics: financial year 2010/11
+      — UK armed forces mental health: 30 June 2010'
+    url: https://assets.publishing.service.gov.uk/media/5a7575a9e5274a1242c9e7c1/30_june_2010.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-armed-forces-mental-health-quarterly-statis-8
+    title: 'UK armed forces mental health quarterly statistics: financial year 2010/11
+      — UK armed forces mental health: 31 December 2010'
+    url: https://assets.publishing.service.gov.uk/media/5a7cbbf540f0b65b3de0ad76/31_december_2010.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-organic-farming-statistics-2020-organic-farmin
+    title: Organic farming statistics 2020 — Organic farming statistics 2020, statistical
+      notice (PDF)
+    url: https://assets.publishing.service.gov.uk/media/60d3486de90e07439ba751d5/Organic_Farming_2020_stats_notice-24jun21.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-uk-low-carbon-transition-plan-national-str
+    title: 'The UK low carbon transition plan: national strategy for climate and energy
+      — The UK low carbon transition plan: national strategy for climate and energy
+      - Full Text'
+    url: https://assets.publishing.service.gov.uk/media/5a74b4b1e5274a3cb2866852/9780108508394.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-uk-offshore-energy-strategic-environmental-ass-79
+    title: 'UK Offshore Energy Strategic Environmental Assessment 3: supporting documents
+      — Contaminants characterisation of the Mid-North Sea High Seismic Area'
+    url: https://assets.publishing.service.gov.uk/media/5a82bf3ced915d74e34035cb/Cefas_-_Contaminants_characterisation_of_the_Mid-North_Sea_High_Seismic_Area.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-uk-offshore-energy-strategic-environmental-ass-80
+    title: 'UK Offshore Energy Strategic Environmental Assessment 3: supporting documents
+      — Influence of UK Offshore Wind Farm Installation on Commercial Vessel Navigation:
+      A Review of Evidenc'
+    url: https://assets.publishing.service.gov.uk/media/5a81ca52e5274a2e87dbf7e9/Anatec_-_Influence_of_UK_Offshore_Wind_Farm_Installation_on_Commercial_Vessel_Navigation.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-la1-3qy-carrs-billington-agriculture-operation
+    title: 'LA1 3QY, Carrs Billington Agriculture (Operations) Limited: environmental
+      permit issued – EPR/UP3630LL/V006 — Variation notice: Carrs Billington Agriculture
+      (Operations) Limited'
+    url: https://assets.publishing.service.gov.uk/media/62ac334ed3bf7f0af648069e/Application_Variation_Notice_-_31032022.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-la1-3qy-carrs-billington-agriculture-operation-2
+    title: 'LA1 3QY, Carrs Billington Agriculture (Operations) Limited: environmental
+      permit issued – EPR/UP3630LL/V006 — Decision document: Carrs Billington Agriculture
+      (Operations) Limited'
+    url: https://assets.publishing.service.gov.uk/media/62ac335dd3bf7f0af7e9afc0/Application_Variation_Decision_Document_-_31032022.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-wa3-6ey-national-grid-gas-plc-environmental-pe
+    title: 'WA3 6EY, National Grid Gas Plc: environmental permit issued - EPR/TP3234LS/V004
+      — Variation notice: National Grid Gas Plc'
+    url: https://assets.publishing.service.gov.uk/media/5edf8c98e90e071abab5550a/Variation_Notice_TP3234LS-V004.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-wa3-6ey-national-grid-gas-plc-environmental-pe-2
+    title: 'WA3 6EY, National Grid Gas Plc: environmental permit issued - EPR/TP3234LS/V004
+      — Decision document: National Grid Gas Plc'
+    url: https://assets.publishing.service.gov.uk/media/5edf8cb1e90e071aac240df1/Decision_Document_TP3234LS-V004.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ng33-5ay-mccain-foods-g-b-limited-permit-surre
+    title: 'NG33 5AY, MCCAIN FOODS (G.B.) Limited: permit surrender issued – EPR/ZP3737YZ/S006
+      — Decision Document: MCCAIN FOODS (G.B.) Limited'
+    url: https://assets.publishing.service.gov.uk/media/6773cae46c34906cc84c9427/Application_Surrender_S006_-_Decision_Document_-_18122024.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-cv7-7hn-environmental-permit-issued-variation-
+    title: 'CV7 7HN: Environmental permit issued — Variation and consolidation notice:
+      SITA UK Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7d8b5940f0b65084e75d5f/Variation_and_consolidation_notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-cv7-7hn-environmental-permit-issued-decision-d
+    title: 'CV7 7HN: Environmental permit issued — Decision document: SITA UK Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7eb6bbed915d74e622601f/Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-s9-1tz-harsco-metals-group-limited-environment
+    title: 'S9 1TZ, Harsco Metals Group Limited: environmental permit issued — Variation
+      and consolidation notice: Harsco Metals Group Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7f3eb8e5274a2e87db4adf/Variation_and_consolidation_notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-s9-1tz-harsco-metals-group-limited-environment-2
+    title: 'S9 1TZ, Harsco Metals Group Limited: environmental permit issued — Decision
+      document: Harsco Metals Group Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a75c80440f0b66b2a0b026f/Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ox11-9dr-g-w-allen-c-t-allen-s-e-allen-and-e-p
+    title: 'OX11 9DR, G W Allen, C T Allen, S E Allen, and E P Allen (Trading as Allen
+      (Lower Hill Farm): environmental permit issued — Variation notice: G W Allen,
+      C T Allen, S E Allen, and E'
+    url: https://assets.publishing.service.gov.uk/media/5a80cbe3ed915d74e62307e3/Variation_notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ox11-9dr-g-w-allen-c-t-allen-s-e-allen-and-e-p-2
+    title: 'OX11 9DR, G W Allen, C T Allen, S E Allen, and E P Allen (Trading as Allen
+      (Lower Hill Farm): environmental permit issued — Decision document: G W Allen,
+      C T Allen, S E Allen, and '
+    url: https://assets.publishing.service.gov.uk/media/5a819d1bed915d74e33ff270/Decision_document__2_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-e15-2pw-city-oils-limited-permit-surrender-iss-3
+    title: 'E15 2PW, City Oils Limited: permit surrender issued - EPR/SP3330NY/S004
+      — Site condition report evaluation template: City Oils Limited'
+    url: https://assets.publishing.service.gov.uk/media/606e9f908fa8f5735e5a5b56/Site_Condition_Report_SP3330NY-S004.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hr9-7tf-environmental-permit-issued-site-condi
+    title: 'HR9 7TF: Environmental permit issued — Site condition report evaluation
+      template: Mr Eric Drummond, Mrs Susanna Drummond and Mr Eric Benjamin Drummond'
+    url: https://assets.publishing.service.gov.uk/media/5a7f8d5a40f0b62305b87d69/Site_Condition_Report_Evaluation_Template.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-wf10-2jt-e-on-uk-cogeneration-limited-permit-s-3
+    title: 'WF10 2JT, E.ON UK Cogeneration Limited: permit surrender issued - EPR/BK1627IX/S009
+      — SCRET: E.ON UK Cogeneration Limited'
+    url: https://assets.publishing.service.gov.uk/media/600eb0b38fa8f56555919176/SCRET.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-civil-society-strategy-have-your-say-civil-soc
+    title: 'Civil society strategy: have your say — Civil society strategy: questions'
+    url: https://assets.publishing.service.gov.uk/media/5a96838340f0b67aa272522d/OCS_consultation_PDFversion.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-civil-society-strategy-have-your-say-civil-soc-2
+    title: 'Civil society strategy: have your say — Civil society strategy: workshop
+      toolkit'
+    url: https://assets.publishing.service.gov.uk/media/5ac4eb59ed915d0b7ffac932/Civil_society_strategy_workshop_toolkit.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-the-uk-government-s-humanitarian-policy-septem
+    title: The UK Government's Humanitarian Policy - September 2011 - Final
+    url: https://assets.publishing.service.gov.uk/media/5a79bb7140f0b642860da514/The_20UK_20Government_s_20Humanitarian_20Policy_20-_20September_202011_20-_20Final.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-zero-hours-contracts-exclusivity-clause-ban-av
+    title: 'Zero hours contracts: exclusivity clause ban avoidance — Zero hours contracts:
+      tackling avoidance of a ban on exclusivity clauses - consultation impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/5a75a256ed915d6faf2b4803/bis-14-1015-zero-hours-contracts-tackling-avoidanceof-an-exclusivity-ban-consultation-final-impact.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-green-deal-customer-journey-survey-summary-rep
+    title: 'Green Deal customer journey survey: summary report - quantitative survey
+      wave 2'
+    url: https://assets.publishing.service.gov.uk/media/5a74d90b40f0b65c0e844f58/green_deal_customer_journey_wave_2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-green-deal-customer-journey-survey-summary-rep-2
+    title: 'Green Deal customer journey survey: summary report - quantitative survey
+      wave 2 — Questionnaire'
+    url: https://assets.publishing.service.gov.uk/media/5a7d5718e5274a2af0ae304e/green_deal_customer_journey_research_wave_2_questionnaire.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-green-deal-customer-journey-survey-summary-rep-4
+    title: 'Green Deal customer journey survey: summary report - quantitative survey
+      wave 2 — Technical report'
+    url: https://assets.publishing.service.gov.uk/media/5a7ee07eed915d74e33f2f99/GD_wave_2_technical_report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-green-deal-customer-journey-survey-summary-rep-5
+    title: 'Green Deal customer journey survey: summary report - quantitative survey
+      wave 3'
+    url: https://assets.publishing.service.gov.uk/media/5a7de36f40f0b65d8b4e41be/green_deal_customer_journey_wave_3_report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-green-deal-customer-journey-survey-summary-rep-6
+    title: 'Green Deal customer journey survey: summary report - quantitative survey
+      wave 3 — Questionnaire'
+    url: https://assets.publishing.service.gov.uk/media/5a7ec00940f0b62305b82f1c/green_deal_customer_journey_p3_wave_3_questionnaire_for_publication.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-green-deal-customer-journey-survey-summary-rep-7
+    title: 'Green Deal customer journey survey: summary report - quantitative survey
+      wave 3 — Technical report'
+    url: https://assets.publishing.service.gov.uk/media/5a7cfbaded915d321c2de1b6/green_deal_customer_journey_technical_report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-taking-part-2010-11-quarter-4-statistical-rele
+    title: 'Taking Part 2010/11 quarter 4: Statistical release — Taking Part: The National
+      Survey of Culture, Leisure and Sport 2010/11'
+    url: https://assets.publishing.service.gov.uk/media/5a797e9a40f0b642860d8945/Taking_Part_Y6_Release.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-taking-part-2009-10-annual-adult-and-child-rel
+    title: 'Taking Part: 2009/10: annual adult and child release — Taking Part: The
+      National Survey of Culture, Leisure and Sport Adult and Child Report 2009/10'
+    url: https://assets.publishing.service.gov.uk/media/5a79c0e740f0b670a80252c2/TakingPart_AdultChild2009-10_StatisticalRelease.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-taking-part-2010-11-quarter-3-statistical-rele
+    title: 'Taking Part: 2010/11 quarter 3: Statistical release — Taking Part: The National
+      Survey of Culture, Leisure and Sport, January – December 2010'
+    url: https://assets.publishing.service.gov.uk/media/5a78e17440f0b6324769ae54/Taking_Part_Y6_Q3_Jan-Dec10.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-minimum-wage-impact-on-low-paying-com
+    title: 'National Minimum Wage: impact on low-paying companies. Bondibene, Riley
+      — The impact of the National Minimum Wage on firm behaviour during recession'
+    url: https://assets.publishing.service.gov.uk/media/5a7c8566e5274a2674eab393/NIESR_RileyRosazza_finalreport_22March2013_LPC12.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-standard-crime-contract-2017-tables-of-amendme
+    title: Standard Crime Contract 2017 — Tables of amendments to 2017 standard crime
+      contract
+    url: https://assets.publishing.service.gov.uk/media/6332af68d3bf7f567eeb5c7d/Tables_of_amendments_to_2017_standard_crime_contract.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-standard-crime-contract-2017-category-definiti
+    title: Standard Crime Contract 2017 — Category definitions
+    url: https://assets.publishing.service.gov.uk/media/5fa024d4d3bf7f03b249a988/CATEGORY_DEFINITIONS_-_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-attributes-specification-for-person-standard-a
+    title: 'Attributes Specification for Person Standard — Alpha: Attributes Specification
+      for Person Entity (Tranche 1)'
+    url: https://assets.publishing.service.gov.uk/media/6a429ca6db380b085e94ab64/Attributes_Specification_for_Person_Entity__Tranche_1__v3.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-minsmere-flood-risk-management-study-january-2
+    title: Minsmere Flood Risk Management Study January 2009
+    url: https://assets.publishing.service.gov.uk/media/5a7c8c5fed915d6969f45a7a/gean0109bpfi-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-condom-distribution-schemes-in-england-condom-
+    title: Condom distribution schemes in England — Condom distribution schemes in England
+      2015 to 2016
+    url: https://assets.publishing.service.gov.uk/media/5a82bc84e5274a2e8ab59163/Condom_Distribution_Schemes_in_England_2015.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-commissioning-high-quality-trusts
+    title: Commissioning high-quality trusts
+    url: https://assets.publishing.service.gov.uk/media/64a676e1c531eb000c64ff2c/Commissioning_High-Quality-Trusts_July_2023.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-commissioning-high-quality-trusts-annex-a-trus
+    title: 'Commissioning high-quality trusts — Annex A: trust quality descriptions'
+    url: https://assets.publishing.service.gov.uk/media/64a68ab94dd8b3000f7fa566/Annex_A_-_Trust_Quality_Descriptions_July_2023_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-commissioning-high-quality-trusts-annex-b-trus
+    title: 'Commissioning high-quality trusts — Annex B: trust quality evidence'
+    url: https://assets.publishing.service.gov.uk/media/64a676f0c531eb000c64ff2d/Annex_B_-_Trust_Quality_Evidence_July_2023.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-uk-ets-technical-guidance-monitoring-and-repor
+    title: 'UK ETS technical guidance: Monitoring and Reporting Regulation (MRR) 2018
+      — UKETS01 MRR: General guidance for installations'
+    url: https://assets.publishing.service.gov.uk/media/6889f51c76f68cc8414d5b67/ukets01-mrr-general-guidance-for-installations.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-uk-ets-technical-guidance-monitoring-and-repor-2
+    title: 'UK ETS technical guidance: Monitoring and Reporting Regulation (MRR) 2018
+      — UKETS02 MRR/FAR: Uncertainty assessments for installations'
+    url: https://assets.publishing.service.gov.uk/media/6889f9e276f68cc8414d5b73/ukets02-mrr-far-uncertainty-assessments-for-installations.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-uk-ets-technical-guidance-monitoring-and-repor-3
+    title: 'UK ETS technical guidance: Monitoring and Reporting Regulation (MRR) 2018
+      — UKETS03 MRR: Reporting biomass in installations'
+    url: https://assets.publishing.service.gov.uk/media/6889fc14a11f859994409216/ukets03-mrr-reporting-biomass-in-installations.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-uk-ets-technical-guidance-monitoring-and-repor-4
+    title: 'UK ETS technical guidance: Monitoring and Reporting Regulation (MRR) 2018
+      — UKETS04 MRR: Data flow activities and control system'
+    url: https://assets.publishing.service.gov.uk/media/6889fc4a8b3a37b63e739003/ukets04-mrr-data-flow-activities-and-control-system.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-uk-ets-technical-guidance-monitoring-and-repor-5
+    title: 'UK ETS technical guidance: Monitoring and Reporting Regulation (MRR) 2018
+      — UKETS07 MRR: Sampling and analysis'
+    url: https://assets.publishing.service.gov.uk/media/6889fc8d8b3a37b63e739004/ukets07-mrr-sampling-and-analysis.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-uk-ets-technical-guidance-monitoring-and-repor-6
+    title: 'UK ETS technical guidance: Monitoring and Reporting Regulation (MRR) 2018
+      — VMRVP01: Waste installations in the voluntary MRV period'
+    url: https://assets.publishing.service.gov.uk/media/69f4c1d35c1bc131b7d1ec4a/vmrvp01-waste-activities-voluntary-mrv-only-period-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-her-majesty-s-prison-and-probation-service-wor-2
+    title: 'Her Majesty’s Prison and Probation Service workforce quarterly: March 2020
+      — Workforce statistics guide'
+    url: https://assets.publishing.service.gov.uk/media/5ec40858e90e071e2e06800b/guide-to-workforce-statistics-31-March-2020.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-mca-deck-safety-examination-syllabuses-034-84-
+    title: MCA Deck Safety Examination Syllabuses — 034-84 OOW Stability and Operations
+      Syllabus (Used from March 2025 exams onwards)
+    url: https://assets.publishing.service.gov.uk/media/679a064d1c041dcc469daeab/034-84_OOW_Stability_and_Operations_Syllabus__Version_-_June_2024_.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-mca-deck-safety-examination-syllabuses-032-73-
+    title: MCA Deck Safety Examination Syllabuses — 032-73 Chief Mate - Master Unlimited
+      MCA-SQA Navigation Exam Syllabus (Used from March 2025 exams onwards)
+    url: https://assets.publishing.service.gov.uk/media/6773cd52e8ca4d66bc4c9429/032-73___Chief_Mate_-_Master_Unlimited_MCA-SQA_Navigation_-_exam_syllabus-__1_.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-mca-deck-safety-examination-syllabuses-032-74-
+    title: MCA Deck Safety Examination Syllabuses — 032-74 Chief Mate - Master Unlimited
+      Stability and Structure Syllabus (Used from March 2025 exams onwards)
+    url: https://assets.publishing.service.gov.uk/media/6773ccf66a79200ddfa21b27/032-74_-_Chief_Mate_Master_Unlimited_Stability_and_Structure_Syllabus__Version_-_September_2020_.doc__1_.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-mca-deck-safety-examination-syllabuses-oow-500
+    title: MCA Deck Safety Examination Syllabuses — OOW 500GT Near Coastal MCA/SQA Chartwork
+      and Practical Navigation Exam Syllabus (Used from March 2026 exam onwards)
+    url: https://assets.publishing.service.gov.uk/media/69973732bfdab2546272c016/OOW_-_500GT_NC_-_Chart-work_and_Practical_Navigation_-_Revised_Nov_24.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-mca-deck-safety-examination-syllabuses-oow-500-2
+    title: MCA Deck Safety Examination Syllabuses — OOW 500GT Near Coastal MCA/SQA General
+      Ship Knowledge Exam Syllabus (Used from March 2026 exam onwards)
+    url: https://assets.publishing.service.gov.uk/media/69982e76339ee33f3ad0b9b8/OOW_-_500GT_NC_-_GSK-_Revised_Nov_24_corrected.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-estate-regeneration-finance-and-delivery
+    title: 'Estate regeneration: finance and delivery'
+    url: https://assets.publishing.service.gov.uk/media/5a7f4b9aed915d74e33f58d2/Estate_Regeneration_National_Strategy_-_Financing_and_Delivering_Estate_Regeneration.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-lone-parent-obligations-supporting-the-journey
+    title: 'Lone Parent Obligations: supporting the journey into work (RR736) — Lone
+      Parent Obligations: supporting the journey into work (RR736): report'
+    url: https://assets.publishing.service.gov.uk/media/5a7b846ce5274a7318b8f2d1/rrep736.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-lone-parent-obligations-supporting-the-journey-2
+    title: 'Lone Parent Obligations: supporting the journey into work (RR736) — Lone
+      Parent Obligations: supporting the journey into work (RR736): summary'
+    url: https://assets.publishing.service.gov.uk/media/5a7ada3ced915d71db8b2eda/736summ.pdf
     source: gov_uk
     license: open
     topic: construction
