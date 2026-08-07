@@ -58702,14 +58702,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-solar-pv-cost-controls-comprehensive-review-ph-3
-    title: Solar PV cost controls comprehensive review (phase 1) — REAL email to solar
-      PV installers
-    url: https://assets.publishing.service.gov.uk/media/5a79bfe1e5274a684690bd3d/REAL_email_to_solar_PV_installers.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-raising-accessibility-standards-for-new-homes
     title: Raising accessibility standards for new homes
     url: https://assets.publishing.service.gov.uk/media/5f99684ae90e07407d850cee/200813_con_doc_-_final__1_.pdf
@@ -266394,14 +266386,6 @@ sources:
     license: open
     topic: materials
     format: pdf
-  - id: guk-equality-strategy-large-print-version-equality
-    title: Equality strategy - large print version — Equality strategy - large print
-      version (PDF file - 713kb)
-    url: https://assets.publishing.service.gov.uk/media/5a79568fed915d07d35b4a13/equality-strategy-large-print.pdf
-    source: gov_uk
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: guk-acre-advice-increasing-photosynthetic-efficien
     title: 'ACRE advice: increasing photosynthetic efficiency in wheat trial — ACRE
       advice on GM wheat (16/R08/02)'
@@ -271750,4 +271734,587 @@ sources:
     source: gov_uk
     license: open
     topic: construction
+    format: pdf
+  - id: guk-national-planning-policy-consultation-on-propo
+    title: 'National Planning Policy: consultation on proposed changes — Consultation
+      on proposed changes to National Planning Policy'
+    url: https://assets.publishing.service.gov.uk/media/5a7ffa88e5274a2e8ab4d744/151207_Consultation_document.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-planning-policy-consultation-on-propo-2
+    title: 'National Planning Policy: consultation on proposed changes — Equalities
+      statement: consultation on proposed changes to National Planning Policy'
+    url: https://assets.publishing.service.gov.uk/media/5a7f6d2f40f0b6230268f6e6/Equalities_statement_NPPF_fin.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-planning-policy-consultation-on-propo-3
+    title: 'National Planning Policy: consultation on proposed changes — Proposed changes
+      to National Planning Policy: summary of responses and government response'
+    url: https://assets.publishing.service.gov.uk/media/5a7f5744ed915d74e6229dec/Proposed_Changes_to_NPPF__Dec_2015__-_Summary_of_consultation_responses.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-legal-aid-statistics-quarterly-july-to-septemb
+    title: 'Legal aid statistics quarterly: July to September 2015 — Legal aid statistics:
+      July to September 2015'
+    url: https://assets.publishing.service.gov.uk/media/5a749bd240f0b61938c7ed7d/legal-aid-statistics-bulletin-jul-to-sep-15.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-hs2-phase-2b-working-draft-environmental-state-57
+    title: 'HS2 Phase 2b working draft Environmental Statement volume 2: map books —
+      HS2 Phase 2b WDES volume 2 map book: Manchester Piccadilly Station'
+    url: https://assets.publishing.service.gov.uk/media/5bb48adbed915d077c9a18f6/HS2_Phase_2b_WDES_Volume_2_MA08_Manchester_Piccadilly_Station.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-the-tobacco-products-traceability-and-security
+    title: The Tobacco Products (Traceability and Security Features) Regulations 2019
+      — (Draft) Tobacco Products (Traceability and Security Features) Regulations 2019
+    url: https://assets.publishing.service.gov.uk/media/5c5ab51ce5274a3167341378/draft_Traceability_and_Security_Feature_Regulations.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-the-tobacco-products-traceability-and-security-3
+    title: The Tobacco Products (Traceability and Security Features) Regulations 2019
+      — (Draft) transposition note
+    url: https://assets.publishing.service.gov.uk/media/5c5ab4ffe5274a31522b1428/draft_transposition_note.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-uk-armed-forces-mental-health-quarterly-statis-7
+    title: 'UK armed forces mental health quarterly statistics: financial year 2013/14
+      — UK armed forces mental health: presenting complaints at MOD Departments of Community
+      Mental Health Janu'
+    url: https://assets.publishing.service.gov.uk/media/5a748d9de5274a44083b7960/Mental_Health_Report_Q4_2013-2014.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-armed-forces-mental-health-quarterly-statis-9
+    title: 'UK armed forces mental health quarterly statistics: financial year 2013/14
+      — UK armed forces mental health: presenting complaints at MOD Departments of Community
+      Mental Health Octo'
+    url: https://assets.publishing.service.gov.uk/media/5a7eeb72e5274a2e87db2bc6/20131224-Mental_Health_Report_Q3_2013-2014_amended-U.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-armed-forces-mental-health-quarterly-statis-10
+    title: 'UK armed forces mental health quarterly statistics: financial year 2013/14
+      — UK armed forces mental health: presenting complaints at MOD Departments of Community
+      Mental Health: Jul'
+    url: https://assets.publishing.service.gov.uk/media/5a7c5609ed915d338141e242/30-september-2013.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-armed-forces-mental-health-quarterly-statis-11
+    title: 'UK armed forces mental health quarterly statistics: financial year 2013/14
+      — UK armed forces mental health: presenting complaints at MOD Departments of Community
+      Mental Health: Apr'
+    url: https://assets.publishing.service.gov.uk/media/5a7bac2eed915d4147621e52/30_june_2013.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-electricity-market-reform-emr-annual-update-20
+    title: Electricity Market Reform (EMR) annual update 2015 — EMR annual update 2015
+    url: https://assets.publishing.service.gov.uk/media/5a7f0c8bed915d74e33f4054/EMR_Annual_Update_2015_web_accessible_version.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-real-email-to-solar-pv-installers-2-november-2
+    title: REAL email to solar PV installers - 2 November 2011
+    url: https://assets.publishing.service.gov.uk/media/5a79dfc5ed915d6b1deb3f8b/3417-real-email-to-solar-pv-installers-21111.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-electricity-market-reform-emr-annual-update-20-2
+    title: Electricity Market Reform (EMR) Annual Update 2014 — Electricity Market Reform
+      Annual Update 2014
+    url: https://assets.publishing.service.gov.uk/media/5a7d82c040f0b64fe6c2427e/Annual_Update_Print.pdf
+    source: gov_uk
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-rye-h
+    title: 'King Charles III England Coast Path from Rye Harbour to Camber Sands (EBC8):
+      Natural England''s proposals — Rye Harbour to Camber Sands overview'
+    url: https://assets.publishing.service.gov.uk/media/66a75bdfa3c2a28abb50d84c/rye-harbour-camber-sands-ebc8-overview.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-rye-h-3
+    title: 'King Charles III England Coast Path from Rye Harbour to Camber Sands (EBC8):
+      Natural England''s proposals — EBC 8: Rye Harbour to Camber Sands'
+    url: https://assets.publishing.service.gov.uk/media/66a8e9f3a3c2a28abb50d9cf/rye-harbour-camber-sands-ebc8.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-rye-h-4
+    title: 'King Charles III England Coast Path from Rye Harbour to Camber Sands (EBC8):
+      Natural England''s proposals — Rye Harbour to Camber Sands habitats regulations
+      assessment'
+    url: https://assets.publishing.service.gov.uk/media/66a8e82aab418ab055592fcd/rye-harbour-camber-sands-habitats-regulations-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-rye-h-5
+    title: 'King Charles III England Coast Path from Rye Harbour to Camber Sands (EBC8):
+      Natural England''s proposals — Rye Harbour to Camber Sands nature conservation
+      assessment'
+    url: https://assets.publishing.service.gov.uk/media/66a79687fc8e12ac3edb061b/rye-harbour-camber-sands-nature-conservation-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vacuum-packaging-the-safety-and-shelf-life-of-
+    title: Vacuum packaging — The safety and shelf-life of vacuum and modified atmosphere
+      packed chilled foods - Additional Q&A
+    url: https://assets.publishing.service.gov.uk/media/69aea803671a8a924c83ee86/the-safety-and-shelf-life-of-vacuum-and-modified-atmosphere-packed-chilled-foods-additional-qa_0.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-vacuum-packaging-the-safety-and-shelf-life-of--2
+    title: Vacuum packaging — The safety and shelf-life of vacuum and modified atmosphere
+      packed chilled foods regarding non-proteolytic Clostridium botulinum
+    url: https://assets.publishing.service.gov.uk/media/69aea81a671a8a924c83ee87/the-safety-and-shelf-life-of-vacuum-and-modified-atmosphere-packed-chilled-foods-with-respect-to-non-proteolytic-clostridium-botulinum_1.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-tf10-8bn-m-e-furniss-sons-farms-environmental-
+    title: 'TF10 8BN, M.E. Furniss & Sons (Farms): environmental permit issued - EPR/XP3539XH/V003
+      — Variation Notice: M.E. Furniss & Sons (Farms)'
+    url: https://assets.publishing.service.gov.uk/media/654cc467b9068c00130e761f/Variation_Notice_XP3539XH-V003.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-tf10-8bn-m-e-furniss-sons-farms-environmental--2
+    title: 'TF10 8BN, M.E. Furniss & Sons (Farms): environmental permit issued - EPR/XP3539XH/V003
+      — Decision Document: M.E. Furniss & Sons (Farms)'
+    url: https://assets.publishing.service.gov.uk/media/654cc519e70413000dfc4aaf/Decision_Document_XP3539XH-V003.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-sk16-4sd-environmental-permit-issued-permit-la
+    title: 'SK16 4SD: environmental permit issued — Permit: Lankem Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7d635540f0b60a7f1aa33b/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ca7-2ar-the-first-milk-cheese-company-limited--3
+    title: 'CA7 2AR, The First Milk Cheese Company Limited: environmental permit issued
+      — Variation notice: The First Milk Cheese Company Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a74a64bed915d0e8e399e85/Application_Variation_-_Variation_Notice_Issued__pdf_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ca7-2ar-the-first-milk-cheese-company-limited--4
+    title: 'CA7 2AR, The First Milk Cheese Company Limited: environmental permit issued
+      — Decision document: The First Milk Cheese Company Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a80719940f0b623026938a5/Application_Variation_-_Decision_Document__pdf_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hr4-8ep-mr-james-verdin-environmental-permit-i
+    title: 'HR4 8EP, Mr James Verdin: environmental permit issued — Variation notice:
+      Mr James Verdin'
+    url: https://assets.publishing.service.gov.uk/media/5a800cf640f0b62305b88e0b/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hr4-8ep-mr-james-verdin-environmental-permit-i-2
+    title: 'HR4 8EP, Mr James Verdin: environmental permit issued — Decision document:
+      Mr James Verdin'
+    url: https://assets.publishing.service.gov.uk/media/5a80f33c40f0b623026966b1/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ha0-1el-veolia-es-uk-limited-environmental-per
+    title: 'HA0 1EL, Veolia ES (UK) Limited: environmental permit issued — Variation
+      and consolidation notice: Veolia ES (UK) Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a8009ffed915d74e33f8153/Variation_and_consolidation_notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ha0-1el-veolia-es-uk-limited-environmental-per-2
+    title: 'HA0 1EL, Veolia ES (UK) Limited: environmental permit issued — Decision
+      document: Veolia ES (UK) Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a80a893e5274a2e8ab516c6/Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-nr32-1xq-birds-eye-limited-environmental-permi
+    title: 'NR32 1XQ, Birds Eye Limited: environmental permit issued – EPR/NP3333UU/V006
+      — Variation Notice: Birds Eye Limited'
+    url: https://assets.publishing.service.gov.uk/media/65e6fe457bc329020bb8c289/Application_Variation_Notice_Issued_-_26022024.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-nr32-1xq-birds-eye-limited-environmental-permi-2
+    title: 'NR32 1XQ, Birds Eye Limited: environmental permit issued – EPR/NP3333UU/V006
+      — Decision Document: Birds Eye Limited'
+    url: https://assets.publishing.service.gov.uk/media/65e6fe5c2f2b3be8b07cd7b2/Application_Variation_Decision_Document_-_26022024.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hu12-9bx-boarcross-limited-environmental-permi
+    title: 'HU12 9BX, Boarcross Limited: environmental permit issued — Permit: Boarcross
+      Limited'
+    url: https://assets.publishing.service.gov.uk/media/5cc1880fed915d056676a79c/Permit_VP3935YT.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hu12-9bx-boarcross-limited-environmental-permi-2
+    title: 'HU12 9BX, Boarcross Limited: environmental permit issued — Decision document:
+      Boarcross Limited'
+    url: https://assets.publishing.service.gov.uk/media/5cc18821ed915d056efcbe53/Decision_Document_VP3935YT.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-pe13-2rg-nestle-purina-uk-manufacturing-operat
+    title: 'PE13 2RG, Nestle Purina UK Manufacturing Operations Limited: environmental
+      permit issued - EPR BT3714IY/V013 — Permit: Nestle Purina UK Manufacturing Operations
+      Limited'
+    url: https://assets.publishing.service.gov.uk/media/6495bd93831311000c2962cd/Variation_Notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-pe13-2rg-nestle-purina-uk-manufacturing-operat-2
+    title: 'PE13 2RG, Nestle Purina UK Manufacturing Operations Limited: environmental
+      permit issued - EPR BT3714IY/V013 — Decision Document: Nestle Purina UK Manufacturing
+      Operations Limited'
+    url: https://assets.publishing.service.gov.uk/media/6495bdafde86820013bc8d68/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-da1-5pt-rwe-generation-uk-plc-environmental-pe
+    title: 'DA1 5PT, RWE Generation UK PLC: environmental permit issued — Variation
+      notice: RWE Generation UK PLC'
+    url: https://assets.publishing.service.gov.uk/media/5a74c53d40f0b61df47785bf/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-bl0-0ae-kay-s-ramsbottom-limited-environmental-2
+    title: 'BL0 0AE, Kay’s (Ramsbottom) Limited: environmental permit issued — Decision
+      document: Kay’s (Ramsbottom) Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a82ea65e5274a2e8ab59ff4/Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-yo25-9af-jsr-farms-limited-environmental-permi
+    title: 'YO25 9AF, JSR Farms Limited: environmental permit issued - EPR/CP3404SW/A001
+      — Issued permit: JSR Farms Limited'
+    url: https://assets.publishing.service.gov.uk/media/60fad427d3bf7f0448719dbb/Permit_Bespoke.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-yo25-9af-jsr-farms-limited-environmental-permi-2
+    title: 'YO25 9AF, JSR Farms Limited: environmental permit issued - EPR/CP3404SW/A001
+      — Decision document: JSR Farms Limited'
+    url: https://assets.publishing.service.gov.uk/media/60fad454d3bf7f0452a7a8f5/Decision_Document_-_Word.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-gl17-0jn-environmental-permit-issued-mr-j-howa
+    title: 'GL17 0JN: Environmental permit issued — Mr J Howat, Mr I Howat and Mrs C
+      Howat (Trading as I and J Howat): Variation notice'
+    url: https://assets.publishing.service.gov.uk/media/5a7f6aafed915d74e33f64c5/Variation_and_consolidation_notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-gl17-0jn-environmental-permit-issued-mr-j-howa-2
+    title: 'GL17 0JN: Environmental permit issued — Mr J Howat, Mr I Howat and Mrs C
+      Howat (Trading as I and J Howat): Decision document'
+    url: https://assets.publishing.service.gov.uk/media/5a80b20ce5274a2e87dbb4d0/Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ng34-0dt-hinch-enterprises-limited-environment
+    title: 'NG34 0DT, Hinch Enterprises Limited: environmental permit issued – EPR/EP3820LN/A001
+      — Permit Issued: Hinch Enterprises Limited'
+    url: https://assets.publishing.service.gov.uk/media/68badb5ed723ba6f74dbaa68/Application_Bespoke_A001_Permit_Issued_-_26082025.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ng34-0dt-hinch-enterprises-limited-environment-2
+    title: 'NG34 0DT, Hinch Enterprises Limited: environmental permit issued – EPR/EP3820LN/A001
+      — Decision Document: Hinch Enterprises Limited'
+    url: https://assets.publishing.service.gov.uk/media/68badb7311b4ded2da19feb8/Application_Bespoke_A001_Decision_Document_-_26082025.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-sk12-2hw-northwood-tissue-disley-limited-envir
+    title: 'SK12 2HW, Northwood Tissue (Disley) Limited: environmental permit issued
+      — Notice of variation and consolidation: Northwood Tissue (Disley) Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a80ea6be5274a2e8ab52e2e/Variation_Notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-sk12-2hw-northwood-tissue-disley-limited-envir-2
+    title: 'SK12 2HW, Northwood Tissue (Disley) Limited: environmental permit issued
+      — Decision document: Northwood Tissue (Disley) Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a818127e5274a2e8ab54588/Application_-_Paper___Pulp_BAT_Review_Variation_-_Decision_Document__PDF_copy_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-l36-6hy-langdawe-limited-environmental-permit-
+    title: 'L36 6HY, Langdawe Limited: environmental permit issued - EPR/AP3704BM/A001
+      — Permit: Langdawe Limited'
+    url: https://assets.publishing.service.gov.uk/media/600af56fe90e0714325ec3c5/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-l36-6hy-langdawe-limited-environmental-permit--2
+    title: 'L36 6HY, Langdawe Limited: environmental permit issued - EPR/AP3704BM/A001
+      — Decision document: Langdawe Limited'
+    url: https://assets.publishing.service.gov.uk/media/600af5878fa8f565429412a7/Decison_Document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-bs10-7sp-seabank-power-limited-environmental-p
+    title: 'BS10 7SP, Seabank Power Limited: environmental permit issued — Variation
+      notice: Seabank Power Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7f9cf940f0b62305b8835b/Variation_and_consolidation_notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-bs10-7sp-seabank-power-limited-environmental-p-2
+    title: 'BS10 7SP, Seabank Power Limited: environmental permit issued — Decision
+      document: Seabank Power Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a805142e5274a2e8ab4f74d/Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-school-rebuilding-programme-equalities-impact-
+    title: 'School rebuilding programme: equalities impact assessments — School rebuilding
+      programme: equalities impact assessment February 2022'
+    url: https://assets.publishing.service.gov.uk/media/61fba2a6e90e0768a5adf2b5/School_rebuilding_programme_equalities_impact_assessment.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-school-rebuilding-programme-equalities-impact--2
+    title: 'School rebuilding programme: equalities impact assessments — School rebuilding
+      programme: equalities impact assessment December 2022'
+    url: https://assets.publishing.service.gov.uk/media/639b19c0e90e072186e18038/Equalities_Impact_Assessment_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-health-behaviours-through-lifecourse-baseline-
+    title: 'Health behaviours through lifecourse: baseline report — Lifecourse tracker'
+    url: https://assets.publishing.service.gov.uk/media/5a75afbc40f0b67f59fced1a/lifecourse-final.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-companies-house-information-pack-for-director-
+    title: Companies House Information Pack for Director of Digital Services — Candidate
+      Information Pack for Director of Digital Services
+    url: https://assets.publishing.service.gov.uk/media/5a82020440f0b6230269a581/Director_of_Digital_Nov_2017-ver0.1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-environmental-protection-expenditure-epe-surve
+    title: Environmental Protection Expenditure (EPE) Survey 2010 — Environmental Protection
+      Expenditure by Industry 2010 - Statistical Release
+    url: https://assets.publishing.service.gov.uk/media/5a7979b540f0b642860d86bd/EPE_2010_statistical_release.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-environmental-protection-expenditure-epe-surve-2
+    title: Environmental Protection Expenditure (EPE) Survey 2010 — Environmental Protection
+      Expenditure in industry 2010 Survey -  Full report
+    url: https://assets.publishing.service.gov.uk/media/5a79cc2a40f0b66d161ae356/EPE_Survey_2010_Final_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-environmental-protection-expenditure-epe-surve-3
+    title: Environmental Protection Expenditure (EPE) Survey 2010 — Environmental Protection
+      Expenditure survey - Executive summary
+    url: https://assets.publishing.service.gov.uk/media/5a79ccca40f0b670a8025838/Executive_summary_EPE_2010.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-environmental-protection-expenditure-epe-surve-4
+    title: 'Environmental Protection Expenditure (EPE) Survey 2010 — Annex 1: Cover
+      letters and technical guidance notes'
+    url: https://assets.publishing.service.gov.uk/media/5a79a0fde5274a3864fd8731/Annex_1_cover_letters_and_guidance.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-environmental-protection-expenditure-epe-surve-7
+    title: 'Environmental Protection Expenditure (EPE) Survey 2010 — Annex 4: Drivers
+      behind participation'
+    url: https://assets.publishing.service.gov.uk/media/5a79540ded915d07d35b48b0/Annex_4_drivers.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-environmental-protection-expenditure-epe-surve-9
+    title: 'Environmental Protection Expenditure (EPE) Survey 2010 — Annex 6: Grossing
+      up procedure'
+    url: https://assets.publishing.service.gov.uk/media/5a78b7bd40f0b632476999e5/Annex_6_grossing_procedure.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-environmental-protection-expenditure-epe-surve-11
+    title: Environmental Protection Expenditure (EPE) Survey 2010 — What is the UK Environmental
+      Protection Expenditure Survey ?
+    url: https://assets.publishing.service.gov.uk/media/5a7a5468ed915d1a6421cb3f/What-is-the-UK-Environmental-Protection-Expenditure-Survey-2011.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-environmental-protection-expenditure-epe-surve-12
+    title: Environmental Protection Expenditure (EPE) Survey 2010 — Technical guidance
+      note - 2011
+    url: https://assets.publishing.service.gov.uk/media/5a7b5c18ed915d429748e8b3/2011-Tech-Guidance-Note-.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-environmental-protection-expenditure-epe-surve-13
+    title: Environmental Protection Expenditure (EPE) Survey 2010 — Frequently Asked
+      Questions
+    url: https://assets.publishing.service.gov.uk/media/5a7b52f040f0b6425d59263c/Frequently-Asked-Questions-2011.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-impact-of-tertiary-education-on-developmen-2
+    title: 'The Impact of Tertiary Education on Development — Evidence brief: The Impact
+      of Tertiary Education on Development'
+    url: https://assets.publishing.service.gov.uk/media/5a7ea437ed915d74e62258a7/Tertiary-education-2014-evidence-brief2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-civil-partnership-registration-philippines
+    title: Civil partnership registration Philippines
+    url: https://assets.publishing.service.gov.uk/media/5f4f012de90e071c6bc53533/CIVIL_PARTNERSHIP_Info_2020_September.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-an-inspection-of-the-eu-settlement-scheme-the-
+    title: An inspection of the EU Settlement Scheme — The Chief Inspector's report
+      on the Home Office’s preparations for the launch of the EU Settlement Scheme
+    url: https://assets.publishing.service.gov.uk/media/5ccad1e040f0b64c24ecfb0b/An_inspection_of_the_EU_Settlement_Scheme_May_WEB.PDF
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-marine-conservation-zones-january-2016-update
+    title: 'Marine conservation zones: January 2016 update'
+    url: https://assets.publishing.service.gov.uk/media/5a7f33aced915d74e33f4f5c/mcz-update-jan-2016.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-2027-peer-reviewer-contract-procurement-proces-3
+    title: 2027 Peer Reviewer Contract Procurement Process — 2027 Peer Reviewer Contract
+      Application Guide
+    url: https://assets.publishing.service.gov.uk/media/6a1935e4c7335e2ca6daacd5/2027_Peer_Reviewer_Contract_Application_Guide_V.2.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-senior-civil-service-pay-award-2021-22-practit
+    title: Senior Civil Service Pay Award 2021/22 – practitioner guidance
+    url: https://assets.publishing.service.gov.uk/media/60f81957e90e0764d4c68c45/SCS_2021_Practitioners_Guide__1_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-operational-guidance-for-the-fire-and-rescue-a-2
+    title: 'Operational guidance for the fire and rescue authorities: incidents in tunnels
+      and underground structures — Fire and Rescue Service Operational guidance - Incidents
+      in Tunnels and '
+    url: https://assets.publishing.service.gov.uk/media/5a797614e5274a2acd18d0aa/2112377.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-ilr-standard-file-specifications-and-reference-6
+    title: ILR standard file specifications and reference data — SFA terms and conditions
+    url: https://assets.publishing.service.gov.uk/media/5a7f9771ed915d74e622b662/SFA_Terms_and_Conditions_201516.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-equality-strategy-equality-strategy-pdf-file-5
+    title: Equality strategy — Equality strategy (PDF file - 594kb)
+    url: https://assets.publishing.service.gov.uk/media/5a78a5a6ed915d07d35b1531/equality-strategy.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-equality-strategy-equality-strategy-easy-read-
+    title: 'Equality strategy — Equality strategy - easy read version (PDF file - 2mb
+      - Warning: large file)'
+    url: https://assets.publishing.service.gov.uk/media/5a79e37740f0b66d161aee13/equality-strategy-easy-read.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-equality-strategy-equality-strategy-large-prin
+    title: Equality strategy — Equality strategy - large print version (PDF file - 713kb)
+    url: https://assets.publishing.service.gov.uk/media/5a79beeded915d07d35b7ca0/equality-strategy-large-print.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
     format: pdf
