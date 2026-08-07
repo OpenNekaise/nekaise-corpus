@@ -8,7 +8,7 @@
   },
   "find_archive": {
     "flag": "--page",
-    "next": 369,
+    "next": 370,
     "step": 1,
     "note": "pre-1929 public-domain texts; rows 30"
   },
@@ -20,7 +20,7 @@
   },
   "find_openaire": {
     "flag": "--page",
-    "next": 350,
+    "next": 351,
     "step": 1,
     "note": "vein nearly dry: p1=300, p2=109, p3=52, p4=22"
   },
@@ -38,7 +38,7 @@
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "2007-W45",
+    "next": "2007-W44",
     "note": "weekly buckets 1900..now, walked backwards; mined: 2017-2020 W01, 1925-1940 W01s, 2015-W52..W08 (49 buckets). --countries flag NEW (default US): CN/EP/DE work, sitemap titles are English for all countries; CN buckets 2018-2020 W03 mined 07-10 (license=open for non-US)"
   },
   "find_purdue": {
@@ -54,7 +54,7 @@
   },
   "find_sdz": {
     "flag": "--page",
-    "next": 1681,
+    "next": 1686,
     "step": 5,
     "note": "sdz+hdz pages 1-5 mined 07-10 (165 kept), 6-10 mined 07-12 (35+72), 11-15 mined 07-12 (43 sdz; hdz p11 came back EMPTY — series ended earlier than the ~p25 estimate). sdz ends ~p16 — next run p16 likely the last"
   },
@@ -84,7 +84,7 @@
   },
   "find_patents_cn": {
     "flag": "--bucket",
-    "next": "2012-W25",
+    "next": "2012-W24",
     "note": "CN patents (Chinese full text; license=open). Same weekly-bucket walk as find_patents but separate pointer; marathon runs it with --countries CN. Mined: 2018/2019/2020-W03, 2019-W46+W45 (+800 on 07-12)."
   },
   "find_jrc": {
@@ -95,19 +95,19 @@
   },
   "find_govuk": {
     "flag": "--page",
-    "next": 352,
+    "next": 353,
     "step": 1,
     "note": "gov.uk Search API (q + filter_content_store_document_type multi-value OR) -> Content API attachments -> assets.publishing.service.gov.uk PDFs; OGL v3 = open; run with --rows 20 --max 250. Wave-1 (18 queries) mined p1-27, thinning (101/250 pruned at p27); wave-2 +14 UK-policy queries added 2026-07-20, pointer RESET to p1 (dedup makes re-walk safe)"
   },
   "find_worldbank": {
     "flag": "--os",
-    "next": 19600,
+    "next": 20000,
     "step": 400,
     "note": "World Bank WDS API. Q ROTATED 08-06 to 'district heating' (reset next=0) — 'building commissioning' dry at os113200 ('of 0 total'); prior 'building energy efficiency' mined os0-16700. Next q candidates when thin: 'building code' / 'thermal insulation' / 'green building construction' (reset next=0 per q). cc-by."
   },
   "find_jstage": {
     "flag": "--start",
-    "next": 9801,
+    "next": 10001,
     "step": 200,
     "note": "AIJ via J-STAGE API, pubyearfrom=2014 (pre-2014 = mojibake, no ToUnicode). NOW: kankyo FILTERED RE-SWEEP from 1 (08-06) — kankyo was mined UNfiltered 07-23 (+424), dedup makes the re-sweep safe; kouzou DONE at 57201 (93% survival era). After kankyo: probe keikaku/gijutsu filtered totals. Stop a series at >50% prune."
   },
@@ -119,13 +119,13 @@
   },
   "find_iea": {
     "flag": "--offset",
-    "next": 13320,
+    "next": 13360,
     "step": 40,
     "note": "NEW VEIN 2026-07-24: iea.org analysis reports, CC BY 4.0 only (licence-gated per page), blob PDFs. KEY_RE \\b fix same day (city matched electriCITY; 36 power-sector entries purged+blocklisted): universe now 175 slugs, offsets 0-40 mined under the FIXED regex equivalence. Run with --limit 40; EBC/INIVE annexes remain NO-GO (different channel, ARR)"
   },
   "find_scielo": {
     "flag": "--offset",
-    "next": 8275,
+    "next": 8300,
     "step": 25,
     "note": "NEW VEIN 2026-07-28: SciELO BRAZIL AEC journals via the ArticleMeta API — the biggest Portuguese built-environment vein on the open web. 11 journals (Ambiente Construído, IBRACON Estruturas e Materiais, Soils and Rocks, LAJSS, urbe, Cadernos Metrópole, RBRH, ...) picked by WoS subject category from a full 16-collection scan (workspace/scan_scielo_journals.py), CC-BY/BY-SA ONLY — NC and ND journals deliberately excluded; ~11.3k articles. PDF URL comes from fulltexts.pdf, else DERIVED from the v702 markup path — the acronym segment must be lowercased ('MR' -> /pdf/mr/) but the filename must NOT be. /j/<acron>/a/<pid>?format=pdf works ONLY on scielo.br, so the legacy /pdf/ path is what the finder builds. ROBOTS PER NATIONAL HOST, THEY DISAGREE: .br Allow /, but .cl and .org.pe are Disallow / (NO-GO, 150 entries reverted this round); .org.co + .edu.uy unreachable from this box; .org.ve does not resolve. Offset 0 mined 07-28; run --per 25 --max 400."
   }
