@@ -85899,26 +85899,10 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-draft-revised-national-networks-national-polic-5
-    title: 'Draft revised National Networks National Policy Statement — Appraisal of
-      sustainability appendix 1: development of alternatives'
-    url: https://assets.publishing.service.gov.uk/media/640a2c4f8fa8f55611a84c89/nnnps-aos-appendix-1.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-draft-revised-national-networks-national-polic-6
     title: 'Draft revised National Networks National Policy Statement — Appraisal of
       sustainability appendix 2: scoping report'
     url: https://assets.publishing.service.gov.uk/media/640a2c64d3bf7f02f6e38024/nnnps-aos-appendix-2.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
-  - id: guk-draft-revised-national-networks-national-polic-7
-    title: 'Draft revised National Networks National Policy Statement — Appraisal of
-      sustainability appendix 3: assessment of consultation draft NNNPS'
-    url: https://assets.publishing.service.gov.uk/media/640a2c78e90e076cc92d6309/nnnps-aos-appendix-3.pdf
     source: gov_uk
     license: open
     topic: building_energy
@@ -229001,14 +228985,6 @@ sources:
     license: open
     topic: construction
     format: pdf
-  - id: guk-ad-hoc-statistical-analysis-2015-quarter-2-gva
-    title: 'Ad-hoc statistical analysis 2015: quarter 2 - GVA of DCMS Sectors — GVA
-      of DCMS Sectors'
-    url: https://assets.publishing.service.gov.uk/media/5a7f5a9d40f0b62305b86a25/DCMS_GVA_Estimate_-_September_2015.pdf
-    source: gov_uk
-    license: open
-    topic: construction
-    format: pdf
   - id: guk-uk-offshore-wind-supply-chain-capabilities-and
     title: 'UK offshore wind supply chain: capabilities and opportunities'
     url: https://assets.publishing.service.gov.uk/media/5a75984c40f0b67f59fce1c4/bis-14-578-offshore-wind-supply-chain-capabilities-and-opportunities.pdf
@@ -293486,6 +293462,563 @@ sources:
   - id: guk-sheffield-devolution-deal-sheffield-city-regio
     title: Sheffield devolution deal — Sheffield City region devolution agreement
     url: https://assets.publishing.service.gov.uk/media/5a7f6217ed915d74e33f6173/Sheffield_devolution_deal_October_2015_with_signatures.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-small-businesses-understanding-growth-understa
+    title: 'Small businesses: understanding growth — Understanding growth in small businesses:
+      BIS research paper 216'
+    url: https://assets.publishing.service.gov.uk/media/5a7569ae40f0b6397f35e3d5/bis-15-154-Understanding-growth-small-businesses.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-nhs-foundation-trusts-quarterly-performance-re-3
+    title: 'NHS foundation trusts: quarterly performance report (quarter 1, 2014/15)
+      — Performance of the foundation trust sector: 3 months ended 30 June 2014'
+    url: https://assets.publishing.service.gov.uk/media/5a7d8df140f0b64fe6c24675/BM1492_NHSFT_quarterly_performance.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-nhs-foundation-trusts-quarterly-performance-re-7
+    title: 'NHS foundation trusts: quarterly performance report (quarter 4, 2013/14)
+      — Performance of the NHS foundation trust sector - 12 months ended 31 March 2014'
+    url: https://assets.publishing.service.gov.uk/media/5a7d50b5ed915d28e9f398d4/Foundation_trust_performance_report_-_Q4_2013-14.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-determination-of-folate-in-food
+    title: The determination of folate in food
+    url: https://assets.publishing.service.gov.uk/media/5a7d844aed915d497af6feb7/Folate_report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-proven-reoffending-statistics-january-to-march-4
+    title: 'Proven reoffending statistics: January to March 2021 — Guide to proven reoffending
+      statistics'
+    url: https://assets.publishing.service.gov.uk/media/63d110d28fa8f53fe70e08a2/Guide-to-proven-reoffending-Jan23.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-stepping-onto-the-property-ladder-stepping-ont
+    title: 'Stepping onto the property ladder — Stepping onto the property ladder: enabling
+      high quality starter homes for first time buyers – a consultation'
+    url: https://assets.publishing.service.gov.uk/media/5a7dfdb1e5274a2e87daed4c/141215_starter_homes_final_formatted_with_signatures.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-stepping-onto-the-property-ladder-stepping-on-
+    title: 'Stepping onto the property ladder — Stepping on the ladder: high quality
+      starter homes for first time buyers - consultation response'
+    url: https://assets.publishing.service.gov.uk/media/5a748183e5274a7f9c58686b/150302_-_Gov_response_Starter_Homes.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-extending-permitted-development-rights-for-hom-2
+    title: 'Extending permitted development rights for homeowners and businesses: technical
+      consultation'
+    url: https://assets.publishing.service.gov.uk/media/5a78e14be5274a277e690305/permitted.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-extending-permitted-development-rights-for-hom-3
+    title: 'Extending permitted development rights for homeowners and businesses: technical
+      consultation — Extending permitted development rights for homeowners and businesses:
+      summary of resp'
+    url: https://assets.publishing.service.gov.uk/media/5a7a3f65e5274a34770e54d5/Extending_permitted_development_rights_for_homeowners_and_businesses_-_summary_of_responses.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-post-legislative-scrutiny-of-the-terrorism-pre
+    title: 'Post-legislative scrutiny of the Terrorism Prevention and Investigation
+      Measures Act 2011 — Memorandum to the Home Affairs Committee: post-legislative
+      scrutiny of the Terrorism Pre'
+    url: https://assets.publishing.service.gov.uk/media/5a7f121fe5274a2e87db39d3/TPIMs_act_2011_Print.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-post-legislative-scrutiny-of-the-identity-docu
+    title: 'Post-legislative scrutiny of the Identity Documents Act 2010 — Memorandum
+      to the Home Affairs Committee: post-legislative scrutiny of the Identity Documents
+      Act 2010'
+    url: https://assets.publishing.service.gov.uk/media/5a79ecb6e5274a684690d14d/cm-9561-post-leg-scrutiny-id-act-accessible.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-post-legislative-scrutiny-of-the-identity-docu-2
+    title: 'Post-legislative scrutiny of the Identity Documents Act 2010 — Memorandum
+      to the Home Affairs Committee: post-legislative scrutiny of the Identity Documents
+      Act 2010 (print)'
+    url: https://assets.publishing.service.gov.uk/media/5a79ec37ed915d6b1deb453b/cm-9561-post-leg-scrutiny-id-act-print.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-police-grant-report-2009-to-2010
+    title: Police Grant Report 2009 to 2010
+    url: https://assets.publishing.service.gov.uk/media/5a79bdfded915d042206ab22/police-grant-report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-military-search-and-rescue-quarterly-statistic
+    title: 'Military search and rescue quarterly statistics: 2012 — Search and rescue
+      quarterly: 2012 Q1'
+    url: https://assets.publishing.service.gov.uk/media/5a7cdd00e5274a2ae6eeb3c1/2012-q1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-military-search-and-rescue-quarterly-statistic-2
+    title: 'Military search and rescue quarterly statistics: 2012 — Search and rescue
+      quarterly: 2012 Q2'
+    url: https://assets.publishing.service.gov.uk/media/5a7c96afe5274a0bb7cb80d9/2012-q2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-military-search-and-rescue-quarterly-statistic-3
+    title: 'Military search and rescue quarterly statistics: 2012 — Search and rescue
+      quarterly: 2012 Q3'
+    url: https://assets.publishing.service.gov.uk/media/5a7b96a940f0b645ba3c5491/2012-q3.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-military-search-and-rescue-quarterly-statistic-13
+    title: 'Military search and rescue quarterly statistics: 2014 — Military search
+      and rescue quarterly statistics: 2014 Q3'
+    url: https://assets.publishing.service.gov.uk/media/5a74c77de5274a3cb28671e7/SAR_Quarterly_Report_2014_Q3.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-military-search-and-rescue-quarterly-statistic-14
+    title: 'Military search and rescue quarterly statistics: 2014 — Military search
+      and rescue quarterly statistics: 2014 Q2'
+    url: https://assets.publishing.service.gov.uk/media/5a7588f940f0b6397f35f2cc/SAR_Q2_Report_2014.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-military-search-and-rescue-quarterly-statistic-15
+    title: 'Military search and rescue quarterly statistics: 2014 — Military search
+      and rescue quarterly statistics: 2014 Q1'
+    url: https://assets.publishing.service.gov.uk/media/5a7de0dc40f0b65d8b4e40de/sar_quarterly_report_14_Q1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-armed-forces-mental-health-annual-statistic-11
+    title: 'UK armed forces mental health annual statistics: 2010 — UK armed forces
+      mental health: annual summary 2010'
+    url: https://assets.publishing.service.gov.uk/media/5a7c92f3e5274a0bb7cb7f52/2010.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-evaluation-of-ati-aerospace-r-d-programme-proc
+    title: Evaluation of ATI Aerospace R&D Programme - process and implementation review
+      — Executive summary
+    url: https://assets.publishing.service.gov.uk/media/5a81c278e5274a2e8ab55abd/2017-07_ATI_Process_Evaluation_-_Exec_Sum_Published.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-la6-1bq-restarigg-farm-limited-environmental-p
+    title: 'LA6 1BQ, Restarigg Farm Limited: environmental permit issued - EPR/FP3730QR/A001
+      — Permit:Restarigg Farm Limited'
+    url: https://assets.publishing.service.gov.uk/media/605c5707d3bf7f2f0fb70225/Permit_notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-la6-1bq-restarigg-farm-limited-environmental-p-2
+    title: 'LA6 1BQ, Restarigg Farm Limited: environmental permit issued - EPR/FP3730QR/A001
+      — Decision document: Restarigg Farm Limited'
+    url: https://assets.publishing.service.gov.uk/media/605c571ce90e0724cce0b096/Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ss13-1db-environmental-permit-issued-variation
+    title: 'SS13 1DB: Environmental permit issued — Variation notice: Alpheus Environmental
+      Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7df2e840f0b62305b7fce9/Variation_Notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ss13-1db-environmental-permit-issued-decision-
+    title: 'SS13 1DB: Environmental permit issued — Decision document: Alpheus Environmental
+      Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7dff6de5274a2e87daedff/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-st4-4ey-e-on-chp-uk-limited-environmental-perm-3
+    title: 'ST4 4EY, E.ON CHP UK Limited: environmental permit issued — E.ON CHP UK
+      Limited: Site condition report evaluation template'
+    url: https://assets.publishing.service.gov.uk/media/5a8086a340f0b6230269404d/SCRET_E_ON_UK_CHP_Ltd.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-sy4-2jg-environmental-permit-issued-variation-
+    title: 'SY4 2JG: Environmental permit issued — Variation notice: Mr Richard Gough,
+      Mrs Sandra Gough and Mr Leonard Gough  (trading as L. W. Gough and Son)'
+    url: https://assets.publishing.service.gov.uk/media/5a7e3608ed915d74e6224d3b/Variation_and_consolidation_notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-sy4-2jg-environmental-permit-issued-decision-d
+    title: 'SY4 2JG: Environmental permit issued — Decision document: Mr Richard Gough,
+      Mrs Sandra Gough and Mr Leonard Gough  (trading as L. W. Gough and Son)'
+    url: https://assets.publishing.service.gov.uk/media/5a7d8a07e5274a676d532a81/Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-safety-lessons-effective-communication-between
+    title: 'Safety lessons: effective communication between ship''s bridge team and
+      pilot — MAIB safety flyer issued October 2008'
+    url: https://assets.publishing.service.gov.uk/media/5a7e1b5fe5274a2e87daf965/SichemMelbourneSafetyFlyer.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-s80-3lj-steetley-dolomite-limited-issued-varia
+    title: 'S80 3LJ, Steetley Dolomite Limited: issued — Variation notice: Steetley
+      Dolomite Limited'
+    url: https://assets.publishing.service.gov.uk/media/5cab4861ed915d564f2821cb/Variation_Notice_BL3269IH-V007.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-s80-3lj-steetley-dolomite-limited-issued-decis
+    title: 'S80 3LJ, Steetley Dolomite Limited: issued — Decision document: Steetley
+      Dolomite Limited'
+    url: https://assets.publishing.service.gov.uk/media/5cab487ae5274a78da54d009/Decision_Document_BL3269IH-V007.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-rm18-8qr-thurrock-power-limited-environmental-
+    title: 'RM18 8QR, Thurrock Power Limited: environmental permit issued – EPR/MP3526SF/A001
+      — Permit Issued: Thurrock Power Limited'
+    url: https://assets.publishing.service.gov.uk/media/6966502b96e60a090ce2001a/Application_Bespoke_A001_Permit_Issue_-_30122025.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-rm18-8qr-thurrock-power-limited-environmental--2
+    title: 'RM18 8QR, Thurrock Power Limited: environmental permit issued – EPR/MP3526SF/A001
+      — Decision Document: Thurrock Power Limited'
+    url: https://assets.publishing.service.gov.uk/media/696650625534c732221e0e21/Application_Bespoke_A001_Decision_Document_-_30122025.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-tf7-4le-the-recycling-group-limited-environmen
+    title: 'TF7 4LE, The Recycling Group Limited: environmental permit issued — Permit:
+      The Recycling Group Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a80d92fe5274a2e87dbc27a/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-tf7-4le-the-recycling-group-limited-environmen-2
+    title: 'TF7 4LE, The Recycling Group Limited: environmental permit issued — Decision
+      document: The Recycling Group Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7f7ff640f0b62305b87852/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-yo25-6xl-e-b-bradshaw-sons-limited-environment
+    title: 'YO25 6XL, E.B.Bradshaw & Sons Limited: environmental permit issued - EPR/YP3330BE/V004
+      — Variation notice: E.B.Bradshaw & Sons Limited'
+    url: https://assets.publishing.service.gov.uk/media/646cd563a726f6000ccebc94/Variation_Notice_YP3330BE-V004.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-yo25-6xl-e-b-bradshaw-sons-limited-environment-2
+    title: 'YO25 6XL, E.B.Bradshaw & Sons Limited: environmental permit issued - EPR/YP3330BE/V004
+      — Decision document: E.B.Bradshaw & Sons Limited'
+    url: https://assets.publishing.service.gov.uk/media/646cd573382a5100139fc5fc/Decision_Document_YP3330BE-V004.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-yo25-4ld-nafferton-wold-farms-ltd-permit-surre-3
+    title: 'YO25 4LD, Nafferton Wold Farms Ltd: permit surrender issued - EPR/EP3538CV/S004
+      — Nafferton Wold Farms Ltd: Surrender site condition report evaluation template'
+    url: https://assets.publishing.service.gov.uk/media/5fd09e9cd3bf7f5d04ca1330/Application_Surrender_Site_Condition_Report_Evaluation_Template.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-yo25-9dr-gwe-biogas-ltd-permit-partial-surrend
+    title: 'YO25 9DR, GWE Biogas Ltd: permit partial surrender issued - EPR/TP3835KE/V012
+      — Variation Notice: GWE Biogas Ltd'
+    url: https://assets.publishing.service.gov.uk/media/699c34758eef11b95e49bff4/Application_Variation_V012_Notice_Issued_-_20_02_2026.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-yo25-9dr-gwe-biogas-ltd-permit-partial-surrend-2
+    title: 'YO25 9DR, GWE Biogas Ltd: permit partial surrender issued - EPR/TP3835KE/V012
+      — Decision Document: GWE Biogas Ltd'
+    url: https://assets.publishing.service.gov.uk/media/699c347fcd3d70e6c2f1270b/Application_Variation_V012_Decision_Document_-_20_02_2026.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ws11-8nq-environmental-permit-issued-permit-bi
+    title: 'WS11 8NQ: Environmental permit issued — Permit: Biffa Waste Services Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7507f9e5274a59fa716dc8/EPR_BP3436VS_Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ws11-8nq-environmental-permit-issued-decision-
+    title: 'WS11 8NQ: Environmental permit issued — Decision document: Biffa Waste Services
+      Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7dfba340f0b62305b800a2/EPR_BP3436VS_Decision_doc.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-dn14-6bz-kemira-chemicals-uk-limited-environme
+    title: 'DN14 6BZ, Kemira Chemicals (UK) Limited: environmental permit issued - EPR/TP3135PX/V005
+      — Permit: Kemira Chemicals (UK) Limited'
+    url: https://assets.publishing.service.gov.uk/media/68515f94f2ccfcfd2f823f72/Kemira_Chemicals_-_Permit_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-dn14-6bz-kemira-chemicals-uk-limited-environme-2
+    title: 'DN14 6BZ, Kemira Chemicals (UK) Limited: environmental permit issued - EPR/TP3135PX/V005
+      — Decision Document: Kemira Chemicals (UK) Limited'
+    url: https://assets.publishing.service.gov.uk/media/68515fa4d6806a88ce045481/Kemira_Chemicals_-_Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-uk-gigabit-programme-cumbria-public-review-uk-
+    title: 'UK Gigabit Programme: Cumbria Public Review — UK Gigabit Programme: request
+      for information'
+    url: https://assets.publishing.service.gov.uk/media/60227e78d3bf7f70bb9b0192/Public_Review_Document_v2.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-uk-gigabit-programme-cumbria-public-review-cum
+    title: 'UK Gigabit Programme: Cumbria Public Review — Cumbria Public Review Closure
+      Note'
+    url: https://assets.publishing.service.gov.uk/media/616849028fa8f5297b643f52/Cumbria_Public_Review_Closure_Note_.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-competition-regime-draft-secondary-legislation
+    title: 'Competition regime: draft secondary legislation – part 2 — Competition regime:
+      draft secondary legislation – part two'
+    url: https://assets.publishing.service.gov.uk/media/5a751565e5274a59fa717450/Competition-regime-draft-secondary-legislation-part-two.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-competition-regime-draft-secondary-legislation-2
+    title: 'Competition regime: draft secondary legislation – part 2 — Competition regime:
+      response to consultation on draft secondary legislation - part 2'
+    url: https://assets.publishing.service.gov.uk/media/5a7c5c60ed915d6969f4457b/bis-14-659-competition-regime-response-to-consultation-on-draft-secondary-legislation-part-two.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-social-fund-reform-debt-credit-and-low-income-
+    title: 'Social Fund reform: debt, credit and low income households — Social Fund
+      reform: debt, credit and low income households - Full Text'
+    url: https://assets.publishing.service.gov.uk/media/5a7b9ecaed915d414762190c/7750.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-appraisal-of-sustainability-for-national-netwo
+    title: Appraisal of sustainability for National Networks National Policy Statement
+      — National Networks National Policy Statement appraisal of sustainability
+    url: https://assets.publishing.service.gov.uk/media/66279715d29479e036a7e5e1/nnnps-aos.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-appraisal-of-sustainability-for-national-netwo-2
+    title: Appraisal of sustainability for National Networks National Policy Statement
+      — National Networks National Policy Statement appraisal of sustainability non-technical
+      summary
+    url: https://assets.publishing.service.gov.uk/media/66279733d29479e036a7e5e3/nnnps-aos-non-technical-summary.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-appraisal-of-sustainability-for-national-netwo-3
+    title: Appraisal of sustainability for National Networks National Policy Statement
+      — National Networks National Policy Statement appraisal of sustainability appendix
+      1 – development of al
+    url: https://assets.publishing.service.gov.uk/media/65e6d5ee7bc3290adab8c188/nnnps-aos-appendix-1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-appraisal-of-sustainability-for-national-netwo-4
+    title: Appraisal of sustainability for National Networks National Policy Statement
+      — National Networks National Policy Statement appraisal of sustainability appendix
+      2 – scoping report
+    url: https://assets.publishing.service.gov.uk/media/66279763838212a903a7e5dd/nnnps-aos-appendix-2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-appraisal-of-sustainability-for-national-netwo-5
+    title: Appraisal of sustainability for National Networks National Policy Statement
+      — National Networks National Policy Statement appraisal of sustainability appendix
+      3 – assessment of con
+    url: https://assets.publishing.service.gov.uk/media/65e6d5fd2f2b3be8b07cd765/nnnps-aos-appendix-3.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-appraisal-of-sustainability-for-national-netwo-6
+    title: Appraisal of sustainability for National Networks National Policy Statement
+      — National Networks National Policy Statement appraisal of sustainability post
+      adoption statement
+    url: https://assets.publishing.service.gov.uk/media/66a1ff7dce1fd0da7b592caf/nnnps-aos-post-adoption-statement.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-voting-consular-and-statistics-review-of-the-b
+    title: 'Voting, consular and statistics: review of the balance of competences —
+      Voting, Consular and Statistics Joint Call for Evidence'
+    url: https://assets.publishing.service.gov.uk/media/5a7b84aeed915d4147620e55/Voting_Consular_and_Statistics_Joint_Call_for_Evidence_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-voting-consular-and-statistics-review-of-the-b-5
+    title: 'Voting, consular and statistics: review of the balance of competences —
+      Statistics evidence'
+    url: https://assets.publishing.service.gov.uk/media/5a7ef124e5274a2e87db2de6/Statistics_Evidence.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ad-hoc-statistical-analysis-2015-16-quarter-2-
+    title: 'Ad-hoc statistical analysis: 2015/16 Quarter 2 — DCMS GVA Estimate'
+    url: https://assets.publishing.service.gov.uk/media/5a755c9eed915d73149595ef/DCMS_GVA_Estimate_-_September_2015.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-public-attitudes-survey-2006-public-attitude-s
+    title: Public Attitudes Survey 2006 — Public Attitude Survey 2006
+    url: https://assets.publishing.service.gov.uk/media/5a7d6a8fe5274a02dcdf4641/Public_Attitude_Survey_2006.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-pupil-behaviour-in-schools-in-england-an-evalu
+    title: 'Pupil behaviour in schools in England: an evaluation — Pupil behaviour in
+      schools in England'
+    url: https://assets.publishing.service.gov.uk/media/5a7a515240f0b66a2fc01787/DFE-RR218.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-public-attitudes-survey-2010
+    title: Public Attitudes Survey 2010
+    url: https://assets.publishing.service.gov.uk/media/5a7edac1e5274a2e8ab48a04/Public_Attitude_Survey_2010.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-heavy-rail-fleet-accessibility-compliance-port-5
+    title: 'Heavy rail fleet accessibility compliance: Porterbrook Class 170 — Porterbrook
+      Class 170 compliance matrix: 25 March 2024'
+    url: https://assets.publishing.service.gov.uk/media/68948f5c586f9c936065697f/porterbrook-class-170-compliance-matrix-25-march-2024.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-heavy-rail-fleet-accessibility-compliance-port-6
+    title: 'Heavy rail fleet accessibility compliance: Porterbrook Class 170 — Porterbrook
+      Class 170/2 compliance matrix 25 March 2024'
+    url: https://assets.publishing.service.gov.uk/media/68948ffae7be62b4f0643100/porterbrook-class-1702-compliance-matrix-25-march-2024.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-modern-workplaces-consultation-impact-assessme
+    title: Modern workplaces consultation - impact assessment — Modern workplaces consultation
+      - impact assessment (PDF file - 418kb)
+    url: https://assets.publishing.service.gov.uk/media/5a79ea5ae5274a18ba50fbc9/impact-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-armed-forces-continuous-working-patterns-surve
+    title: 'Armed forces continuous working patterns survey 2023/24 — Royal Navy continuous
+      working patterns survey 2023/24: questionnaire'
+    url: https://assets.publishing.service.gov.uk/media/669e3135ce1fd0da7b5929b9/Royal_Navy_continuous_working_patterns_survey_2023_24_questionnaire.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-armed-forces-continuous-working-patterns-surve-2
+    title: 'Armed forces continuous working patterns survey 2023/24 — British Army continuous
+      working patterns survey 2023/24: questionnaire'
+    url: https://assets.publishing.service.gov.uk/media/669e315bce1fd0da7b5929ba/Army_continuous_working_patterns_survey_2023_24_questionnaire.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-armed-forces-continuous-working-patterns-surve-3
+    title: 'Armed forces continuous working patterns survey 2023/24 — Royal Air Force
+      continuous working patterns survey 2023/24: questionnaire'
+    url: https://assets.publishing.service.gov.uk/media/669e317649b9c0597fdb0150/Royal_Air_Force_continuous_working_patterns_survey_2023_24_questionnaire.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-obtaining-better-value-for-money-from-police-p-3
+    title: 'Obtaining better value for money from police procurement — Obtaining better
+      value for money from police procurement - summary of consultation: responses and
+      next steps (PDF file - '
+    url: https://assets.publishing.service.gov.uk/media/5a7b12f6e5274a34770e93f9/police-procurement-responses.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-obtaining-better-value-for-money-from-police-p-4
+    title: 'Obtaining better value for money from police procurement — The Police Act
+      1996 (equipment) regulations 2011 and the Police Act 1996 (services) regulations
+      2011: impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/5a7aabaeed915d71db8b1ad7/police-act-ia.pdf
     source: gov_uk
     license: open
     topic: equipment_systems
