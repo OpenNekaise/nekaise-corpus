@@ -71400,14 +71400,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-forensic-early-warning-system-fews-annual-repo-6
-    title: Forensic early warning system (FEWS) annual report — Annual report on the
-      Home Office forensic early warning system (FEWS) - May 2012
-    url: https://assets.publishing.service.gov.uk/media/5a7cca72e5274a34d8d32f63/fews.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-biofuel-statistics-year-5-2012-to-2013-report--3
     title: 'Biofuel statistics: Year 5 (2012 to 2013), report 3 — Renewable Transport
       Fuel Obligation statistics: year 5, report 3, 2012/13'
@@ -303400,6 +303392,483 @@ sources:
       — A toolkit for the design and planning of locally-led VOICES end of life care
       surveys (replaced 18 October
     url: https://assets.publishing.service.gov.uk/media/5a7b9933e5274a7202e18357/dh_130569.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-driver-cpc-changes-to-the-scope-of-exemptions-
+    title: 'Driver CPC: changes to the scope of exemptions — Possible changes to the
+      scope of exemptions to Driver Certificate of Professional Competence'
+    url: https://assets.publishing.service.gov.uk/media/5a7c5b9d40f0b6601cef5721/driver-cpc-changes-to-the-scope-of-exemptions.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-driver-cpc-changes-to-the-scope-of-exemptions--2
+    title: 'Driver CPC: changes to the scope of exemptions — Response to consultation
+      report'
+    url: https://assets.publishing.service.gov.uk/media/5a7ce103e5274a2c9a484ac8/driver-cpc-changes-to-the-scope-of-exemptions-response.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-business-population-estimates-2016-business-po
+    title: 'Business population estimates 2016 — Business population estimate for the
+      UK and regions: 2016 statistical release'
+    url: https://assets.publishing.service.gov.uk/media/5a8164c6e5274a2e87dbd640/bpe_2016_statistical_release.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-business-population-estimates-2016-business-po-2
+    title: 'Business population estimates 2016 — Business population estimates for the
+      UK and regions 2016: methodology note'
+    url: https://assets.publishing.service.gov.uk/media/5a818d47e5274a2e8ab54999/bpe_2016__methodology_note.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-gretn
+    title: 'King Charles III England Coast Path from Gretna to Allonby: outcome of objections
+      to proposals — Objection notice: Angerton House Farm'
+    url: https://assets.publishing.service.gov.uk/media/5a82cad1ed915d74e6237a8f/angerton-house-farm-objection-notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-gretn-2
+    title: 'King Charles III England Coast Path from Gretna to Allonby: outcome of objections
+      to proposals — Objection notice: North View Farm, Beaumont'
+    url: https://assets.publishing.service.gov.uk/media/5a82c613e5274a2e87dc2e95/north-view-farm-objection-notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-gretn-3
+    title: 'King Charles III England Coast Path from Gretna to Allonby: outcome of objections
+      to proposals — Objection notice: Raby Grange'
+    url: https://assets.publishing.service.gov.uk/media/5a82d716ed915d74e6237e56/raby-grange-objection-notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-gretn-4
+    title: 'King Charles III England Coast Path from Gretna to Allonby: outcome of objections
+      to proposals — Objection notice: Longcroft Farm'
+    url: https://assets.publishing.service.gov.uk/media/5a829fc1e5274a2e8ab587ea/longcroft-farm-objection-notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-gretn-5
+    title: 'King Charles III England Coast Path from Gretna to Allonby: outcome of objections
+      to proposals — Objection notice: Arlosh House'
+    url: https://assets.publishing.service.gov.uk/media/5a748724e5274a7f9c586b4c/arlosh-house-objection-notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-gretn-6
+    title: 'King Charles III England Coast Path from Gretna to Allonby: outcome of objections
+      to proposals — Objection notice: Beck Brow Marsh'
+    url: https://assets.publishing.service.gov.uk/media/5a82c95c40f0b62305b9456c/beck-brow-marsh-objection-notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-gretn-7
+    title: 'King Charles III England Coast Path from Gretna to Allonby: outcome of objections
+      to proposals — Objection notice: Burgh Marsh'
+    url: https://assets.publishing.service.gov.uk/media/5a82ea58ed915d74e6238464/burgh-marsh-objection-notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-gretn-8
+    title: 'King Charles III England Coast Path from Gretna to Allonby: outcome of objections
+      to proposals — Objection notice: Eden Bank Farm, Beaumont'
+    url: https://assets.publishing.service.gov.uk/media/5a82124ded915d74e340191f/eden-bank-farm-objection-notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-gretn-9
+    title: 'King Charles III England Coast Path from Gretna to Allonby: outcome of objections
+      to proposals — Objection notice: land adjacent to River Wampool and Angerton Marsh'
+    url: https://assets.publishing.service.gov.uk/media/5a81c9d0ed915d74e34000fc/river-wampool-angerton-marsh-objection-notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hs2-phase-2a-promoter-s-response-to-select-com
+    title: 'HS2 Phase 2a: promoter’s response to select committee interim report'
+    url: https://assets.publishing.service.gov.uk/media/5ef21c8ee90e075c5b5ec897/house-of-commons-select-committee-response-to-the-first-special-report.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-reported-road-casualties-in-great-britain-prov-9
+    title: 'Reported road casualties in Great Britain, provisional estimates involving
+      illegal alcohol levels: 2013 — Reported road casualties in Great Britain illegal
+      alcohol levels: 2013 rep'
+    url: https://assets.publishing.service.gov.uk/media/5a803304ed915d74e33f9095/rrcgb-drink-drive-2013-prov.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-bl5-1dg-viridor-waste-greater-manchester-limit
+    title: 'BL5 1DG, Viridor Waste (Greater Manchester) Limited: environmental permit
+      issued — Variation notice: Viridor Waste (Greater Manchester) Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7f94e040f0b62302690595/Variation_notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-bl5-1dg-viridor-waste-greater-manchester-limit-2
+    title: 'BL5 1DG, Viridor Waste (Greater Manchester) Limited: environmental permit
+      issued — Decision document: Viridor Waste (Greater Manchester) Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a819223ed915d74e33feedf/Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-pe13-3dg-princes-limited-environmental-permit-
+    title: 'PE13 3DG, Princes Limited: environmental permit issued - EPR/AP3634FT/V005
+      — Variation Notice: Princes Limited'
+    url: https://assets.publishing.service.gov.uk/media/6571ad7d33b7f20012b72023/Variation_Notice_AP3634FT-V005.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-pe13-3dg-princes-limited-environmental-permit--2
+    title: 'PE13 3DG, Princes Limited: environmental permit issued - EPR/AP3634FT/V005
+      — Decision Document: Princes Limited'
+    url: https://assets.publishing.service.gov.uk/media/6571ad9133b7f20012b72024/Decision_Document_AP3634FT-V005.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ip6-0ag-binder-limited-environmental-permit-is
+    title: 'IP6 0AG, Binder Limited: environmental permit issued — Variation notice:
+      Binder Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a8223a0ed915d74e3401efd/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ip6-0ag-binder-limited-environmental-permit-is-2
+    title: 'IP6 0AG, Binder Limited: environmental permit issued — Decision document:
+      Binder Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a75c0f4e5274a545822df5b/Decision_doc_RP3536SW.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ct18-7eg-hope-farm-limited-environmental-permi-3
+    title: 'CT18 7EG, Hope Farm Limited: environmental permit issued - EPR/EB3805UL/V003
+      — Variation notice: Hope Farm Limited'
+    url: https://assets.publishing.service.gov.uk/media/62d7ab10d3bf7f285d97548c/EB3805UL_final_permit_28062022.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ct18-7eg-hope-farm-limited-environmental-permi-4
+    title: 'CT18 7EG, Hope Farm Limited: environmental permit issued - EPR/EB3805UL/V003
+      — Decision document: Hope Farm Limited'
+    url: https://assets.publishing.service.gov.uk/media/62d7ab1fe90e071e772445b6/EB3805UL_final_decision_document_28062022.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-tr21-0jy-environmental-permit-issued-partial-s
+    title: 'TR21 0JY: environmental permit issued — Partial surrender notice: Council
+      of The Isles of Scilly'
+    url: https://assets.publishing.service.gov.uk/media/5a7d9c0240f0b65084e763d0/Partial_Surrender_Notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-yo23-3rr-yorwaste-limited-environmental-permit
+    title: 'YO23 3RR, Yorwaste Limited: environmental permit issued - EPR/LP3990NK/V010
+      — Permit: Yorwaste Limited'
+    url: https://assets.publishing.service.gov.uk/media/62da746fd3bf7f170dbe4e03/LP3990NK_Yorwaste_Permit_Notice_04072022.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-yo23-3rr-yorwaste-limited-environmental-permit-2
+    title: 'YO23 3RR, Yorwaste Limited: environmental permit issued - EPR/LP3990NK/V010
+      — Decision Document: Yorwaste Limited'
+    url: https://assets.publishing.service.gov.uk/media/62da748ad3bf7f1711b8ac0c/LP3990NK_Yorwaste_Decision_Document_04072022.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-bb10-3lb-lancashire-county-council-environment
+    title: 'BB10 3LB, Lancashire County Council: environmental permit issued — Variation
+      and consolidation notice: Lancashire County Council'
+    url: https://assets.publishing.service.gov.uk/media/5a824023ed915d74e3402877/Variation_and_consolidation_notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-sr1-2es-tradebe-solvent-recycling-limited-envi
+    title: 'SR1 2ES, Tradebe Solvent Recycling Limited: environmental permit issued
+      – EPR/BV4673IM/V011 — Variation notice: Tradebe Solvent Recycling Limited'
+    url: https://assets.publishing.service.gov.uk/media/660ffb9d9f92ac001a516d61/Application_Variation_Notice_Issued_-_26032024.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-sr1-2es-tradebe-solvent-recycling-limited-envi-2
+    title: 'SR1 2ES, Tradebe Solvent Recycling Limited: environmental permit issued
+      – EPR/BV4673IM/V011 — Decision document: Tradebe Solvent Recycling Limited'
+    url: https://assets.publishing.service.gov.uk/media/660ffbb89f92ac0011516d6b/Application_Variation_Decision_Document_-_26032024.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-e15-2ph-regional-waste-recycling-commercial-li
+    title: 'E15 2PH, Regional Waste Recycling (Commercial) Limited: environmental permit
+      issued — Notice of variation and consolidation: Regional Waste Recycling (Commercial)
+      Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7566d640f0b6397f35e25c/Notice_of_Variation_and_Consolidation_Issued__pdf_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-e15-2ph-regional-waste-recycling-commercial-li-2
+    title: 'E15 2PH, Regional Waste Recycling (Commercial) Limited: environmental permit
+      issued — Decision document: Regional Waste Recycling (Commercial) Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a81fc06e5274a2e8ab56e1d/Application_IED_NPA_Variation_-_Decision_Document__pdf_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-wv9-5eu-sun-valley-foods-limited-environmental
+    title: 'WV9 5EU, Sun Valley Foods Limited: environmental permit issued – EPR/FP3930PJ/V006
+      — Permit: Sun Valley Foods Limited'
+    url: https://assets.publishing.service.gov.uk/media/66829e6faec8650b100901dc/Application_Variation_Permit_Issued_-_21062024.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-wv9-5eu-sun-valley-foods-limited-environmental-2
+    title: 'WV9 5EU, Sun Valley Foods Limited: environmental permit issued – EPR/FP3930PJ/V006
+      — Decision document: Sun Valley Foods Limited'
+    url: https://assets.publishing.service.gov.uk/media/66829e8d7d26b2be17a4b4f7/Application_VAriation_Decision_Document_-_21062024.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-me10-2qb-sweeep-kuusakoski-limited-environment
+    title: 'ME10 2QB, Sweeep Kuusakoski Limited: environmental permit issued — Variation
+      notice: Sweeep Kuusakoski Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7f2b9340f0b62305b8581f/Variation_Notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-me10-2qb-sweeep-kuusakoski-limited-environment-2
+    title: 'ME10 2QB, Sweeep Kuusakoski Limited: environmental permit issued — Decision
+      document: Sweeep Kuusakoski Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a80ddbe40f0b62305b8d979/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-dl17-0sd-veolia-biopower-one-uk-limited-permit
+    title: 'DL17 0SD, Veolia Biopower One UK Limited: Permit variation issued – EPR/LP3206SS/V003
+      — Permit'
+    url: https://assets.publishing.service.gov.uk/media/62a071318fa8f50390d4506c/Application_Variation_notice__-_15032022.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-dl17-0sd-veolia-biopower-one-uk-limited-permit-2
+    title: 'DL17 0SD, Veolia Biopower One UK Limited: Permit variation issued – EPR/LP3206SS/V003
+      — Decision Document'
+    url: https://assets.publishing.service.gov.uk/media/62a071438fa8f5039a1bd733/Application_Variation_Decision_document_-_15032022.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-b24-9fq-rolls-royce-power-development-limited-
+    title: 'B24 9FQ, Rolls-Royce Power Development Limited: environmental permit issued
+      — Variation notice: Rolls-Royce Power Development Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a8195f1ed915d74e62330fa/Application_Variation_-_Variation_Notice_Issued__pdf_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-b24-9fq-rolls-royce-power-development-limited--2
+    title: 'B24 9FQ, Rolls-Royce Power Development Limited: environmental permit issued
+      — Decision document: Rolls-Royce Power Development Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7f0ea6e5274a2e8ab49d76/Application_Variation_-_Decision_Document__pdf_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-b76-0bb-ksd-recycled-aggregates-limited-enviro
+    title: 'B76 0BB, KSD Recycled Aggregates Limited: environmental permit issued —
+      Variation and consolidation notice: KSD Recycled Aggregates Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a806cb9ed915d74e33fa596/Variation_and_consolidation_notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-b76-0bb-ksd-recycled-aggregates-limited-enviro-2
+    title: 'B76 0BB, KSD Recycled Aggregates Limited: environmental permit issued —
+      Decision document: KSD Recycled Aggregates Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7f30fde5274a2e87db45ab/Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-dn22-0he-jeremy-william-ellis-and-richard-thom
+    title: 'DN22 0HE, Jeremy William Ellis and Richard Thomas Ellis: environmental permit
+      issued — Permit: Jeremy William Ellis and Richard Thomas Ellis'
+    url: https://assets.publishing.service.gov.uk/media/5a803b6a40f0b623026924c1/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-dn22-0he-jeremy-william-ellis-and-richard-thom-2
+    title: 'DN22 0HE, Jeremy William Ellis and Richard Thomas Ellis: environmental permit
+      issued — Decision document: Jeremy William Ellis and Richard Thomas Ellis'
+    url: https://assets.publishing.service.gov.uk/media/5a7f3d4eed915d74e33f5326/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-drug-strategy-2010
+    title: Drug strategy 2010
+    url: https://assets.publishing.service.gov.uk/media/5a78a35d40f0b63247698f9a/drug-strategy-2010.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-drug-strategy-2010-equality-screening-document
+    title: Drug strategy 2010 — Equality screening document
+    url: https://assets.publishing.service.gov.uk/media/5a78ca55e5274a2acd189cf6/equality-screening.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-drug-strategy-2010-impact-assessment
+    title: Drug strategy 2010 — Impact assessment
+    url: https://assets.publishing.service.gov.uk/media/5a79e3a5e5274a684690cd30/impact-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-drug-strategy-2010-home-office-forensic-early-
+    title: 'Drug strategy 2010 — Home Office forensic early warning system (FEWS): annual
+      report'
+    url: https://assets.publishing.service.gov.uk/media/5a79927aed915d042206976c/fews.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-hs2-phase-one-full-business-case-full-business
+    title: HS2 Phase One full business case — Full business case High Speed 2 Phase
+      One
+    url: https://assets.publishing.service.gov.uk/media/5fc51d7b8fa8f54755392863/full-business-case-hs2-phase-one.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-private-intermittent-securities-and-capital-ex-2
+    title: 'Private Intermittent Securities and Capital Exchange System (PISCES): Consultation
+      — Private Intermittent Securities and Capital Exchange System (PISCES): Consultation
+      response'
+    url: https://assets.publishing.service.gov.uk/media/67374daf12f25d730812722c/PISCES_consultation_response_November_2024_vf.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-process-evaluation-transport-data-projects-pro
+    title: 'Process evaluation: transport data projects — Process evaluation of transport
+      data projects'
+    url: https://assets.publishing.service.gov.uk/media/630e413f8fa8f5536009bb82/process-evaluation-of-transport-data-projects.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-ai-assisted-patent-prior-art-searching-feasibi
+    title: AI-assisted patent prior art searching – feasibility study
+    url: https://assets.publishing.service.gov.uk/media/5ecf524286650c76ab17fc43/aI-assisted-patent-prior-art-searching-feasibility-study.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-social-security-work-focused-interviews-am
+    title: 'The Social Security (Work-focused Interviews) Amendment Regulations 2005:
+      SSAC report'
+    url: https://assets.publishing.service.gov.uk/media/5a7b922e40f0b62826a046f9/6669.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-minimum-wage-final-government-evidenc-5
+    title: 'National minimum wage: final government evidence for the Low Pay Commission
+      2014 report — National minimum wage: final government evidence for the Low Pay
+      Commission''s 2014 report'
+    url: https://assets.publishing.service.gov.uk/media/5a7c76b2e5274a5255bced2f/bis-14-533-national-minimum-wage-government-evidence-for-the-low-pay-commission-2014.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-mgn-267-f-location-stowage-of-liferafts-and-ra
+    title: MGN 267 (F) Location, stowage of liferafts and radio beacons on fishing vessels
+      — MGN 267 (F) The location and stowage of liferafts and emergency positioning
+      radio beacons (EPIRBs)
+    url: https://assets.publishing.service.gov.uk/media/5a7b94a440f0b645ba3c53d1/mgn267.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-delivering-neighbourhood-policing-in-partnersh
+    title: Delivering neighbourhood policing in partnership
+    url: https://assets.publishing.service.gov.uk/media/5a7a52d8e5274a34770e5d9e/horr61.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-crime-in-england-and-wales-2009-to-2010-findin
+    title: 'Crime in England and Wales 2009 to 2010: findings from the British crime
+      survey and police recorded crime — Crime in England and Wales 2009/10: Findings
+      from the British Crime Surv'
+    url: https://assets.publishing.service.gov.uk/media/5a7a0475e5274a34770e3a78/hosb1210.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-an-inspection-on-learning-from-immigration-lit
+    title: An inspection on learning from immigration litigation — An inspection of
+      the Home Office’s mechanisms for learning from immigration litigation
+    url: https://assets.publishing.service.gov.uk/media/5a823011e5274a2e8ab57f4b/An_inspection_of_the_Home_Office_s_mechanisms_for_learning_from_litigation.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-assessments-in-lieu-of-tests-consultation-impa
+    title: 'Assessments in lieu of tests consultation: impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/5c1810a0e5274a467e563e71/Assessments_in_lieu_of_tests_-_Impact_Assessment.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-rare-diseases-strategy-uk-strategy-for-rare-di
+    title: Rare diseases strategy — UK Strategy for Rare Diseases
+    url: https://assets.publishing.service.gov.uk/media/5a7c61d540f0b626628abaaa/UK_Strategy_for_Rare_Diseases.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-rare-diseases-strategy-uk-strategy-for-rare-di-2
+    title: Rare diseases strategy — UK Strategy for Rare Diseases - commitments
+    url: https://assets.publishing.service.gov.uk/media/5a7c837ce5274a2674eab2b1/rare-disease-commitments.pdf
     source: gov_uk
     license: open
     topic: equipment_systems
