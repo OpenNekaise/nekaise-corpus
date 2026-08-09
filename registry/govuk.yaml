@@ -58631,15 +58631,6 @@ sources:
     license: open
     topic: standards_protocols
     format: pdf
-  - id: guk-equality-act-2010-how-it-might-affect-you-age-
-    title: 'Equality Act 2010: how it might affect you — Age discrimination ban in services
-      and public functions: An overview for service providers and customers. (PDF file
-      - 162kb)'
-    url: https://assets.publishing.service.gov.uk/media/5a7970a640f0b642860d81bc/age-discrimination-ban.pdf
-    source: gov_uk
-    license: open
-    topic: standards_protocols
-    format: pdf
   - id: guk-equality-act-2010-how-it-might-affect-you-volu-7
     title: 'Equality Act 2010: how it might affect you — Voluntary and community sector:
       summary guide for service providers (PDF file - 643kb)'
@@ -316139,6 +316130,223 @@ sources:
     title: 'Hazard screening and UK risk prioritisation for tyre additives — Hazard
       screening and UK risk prioritisation for tyre additives: report'
     url: https://assets.publishing.service.gov.uk/media/6874d10f92691289bdb7d358/Hazard_screening_and_UK_risk_prioritisation_for_tyre_additives_-_report.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-dft-continuous-improvement-strategy-continuous
+    title: DfT continuous improvement strategy — Continuous improvement strategy
+    url: https://assets.publishing.service.gov.uk/media/5a758e97ed915d6faf2b3e98/ci-strategy.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-drone-flyover-surveys-for-identifying-methane-
+    title: 'Drone flyover surveys for identifying methane emission sources at landfills
+      — Drone flyover surveys for identifying methane emission sources at landfills:
+      report'
+    url: https://assets.publishing.service.gov.uk/media/6a6b59e78319ab05f7caa23f/Drone_flyover_surveys_for_identifying_methane_emission_sources_at_landfills_-_report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-human-rights-common-core-document
+    title: 'Human rights: common core document'
+    url: https://assets.publishing.service.gov.uk/media/62861de8e90e071f69f225e3/uk-common-core-document-2022.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-the-north-west-marine-plans-documents-north-we
+    title: The North West Marine Plans Documents — North West Inshore and North West
+      Offshore Marine Plan
+    url: https://assets.publishing.service.gov.uk/media/60f6f5a1d3bf7f56824cc628/FINAL_North_West_Marine_Plan__1_.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-the-north-west-marine-plans-documents-north-we-2
+    title: The North West Marine Plans Documents — North West Inshore and North West
+      Offshore Technical Annex
+    url: https://assets.publishing.service.gov.uk/media/60d1fff98fa8f57ce461513f/FINAL_North_West_Technical_Annex.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-the-north-west-marine-plans-documents-non-tech
+    title: The North West Marine Plans Documents — Non-Technical Summary. Final Report
+    url: https://assets.publishing.service.gov.uk/media/60d205e3d3bf7f4bd6a9bd8b/SA_Report_North_West_NTS.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-the-north-west-marine-plans-documents-part-1-i
+    title: 'The North West Marine Plans Documents — Part 1: Introduction and Methodology.
+      Final Report'
+    url: https://assets.publishing.service.gov.uk/media/60d205efe90e07438f7af7ce/SA_Report_North_West_Part_1.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-the-north-west-marine-plans-documents-part-2-s
+    title: 'The North West Marine Plans Documents — Part 2: Scoping Information. Final
+      Report'
+    url: https://assets.publishing.service.gov.uk/media/60d205fbd3bf7f4bcfe7662a/SA_Report_North_West_Part_2.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-the-north-west-marine-plans-documents-part-3-r
+    title: 'The North West Marine Plans Documents — Part 3: Results of the Assessment.
+      Final Report'
+    url: https://assets.publishing.service.gov.uk/media/60d2061ae90e07438a92df2e/SA_Report_North_West_Part_3.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-the-north-west-marine-plans-documents-north-we-3
+    title: The North West Marine Plans Documents — North West Inshore Marine Plan Sustainability
+      Appraisal
+    url: https://assets.publishing.service.gov.uk/media/60d200128fa8f57cf29cdb14/MMO02_Report_North_West_SA_Statement.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-the-north-west-marine-plans-documents-north-we-4
+    title: The North West Marine Plans Documents — North West Marine Plan Modifications
+      Report
+    url: https://assets.publishing.service.gov.uk/media/60d2006c8fa8f57ce63f1a2b/NW_Mods_clean.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-iran-s-nuclear-programme-a-collection-of-docum
+    title: 'Iran''s nuclear programme: a collection of documents — Iran''s nuclear programme:
+      a collection of documents - Full Text'
+    url: https://assets.publishing.service.gov.uk/media/5a7cab3ee5274a2f304ef5a9/7421.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-hs2-phase-one-environmental-statement-volume-5-17
+    title: 'HS2 Phase One environmental statement volume 5: planning data — Planning
+      data'
+    url: https://assets.publishing.service.gov.uk/media/5a7c3393e5274a1f5cc76785/Vol5_CrossTopic_Planning_Data_CT-004-000.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-contracts-for-difference-cfd-allocation-round--93
+    title: 'Contracts for Difference (CfD) Allocation Round 3: Allocation Framework
+      — CfD Allocation Round 3: Allocation Framework (May 2019)'
+    url: https://assets.publishing.service.gov.uk/media/5cc9753ced915d5dcd3f1a1d/Allocation_Round_3_Allocation_Framework__2019.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-contracts-for-difference-cfd-allocation-round--94
+    title: 'Contracts for Difference (CfD) Allocation Round 3: Allocation Framework
+      — DRAFT: Allocation Framework for the Third Allocation Round (January 2019)'
+    url: https://assets.publishing.service.gov.uk/media/5c45988640f0b6171937cc9c/draft-allocation-framework-third-allocation-round-2019.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-post-legislative-assessment-of-the-immigration
+    title: 'Post-legislative assessment of the Immigration, Asylum and Nationality Act
+      2006 — Memorandum to the Home Affairs Committee: post-legislative assessment of
+      the Immigration, Asylum a'
+    url: https://assets.publishing.service.gov.uk/media/5a7c19a1ed915d210ade194e/8154.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-hs2-phase-two-commercial-case-high-speed-two-p
+    title: HS2 Phase Two commercial case — High Speed Two Phase Two commercial case
+    url: https://assets.publishing.service.gov.uk/media/5f579ded8fa8f51068e0bd7a/high-speed-two-phase-two-commercial-case-document.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-developing-decc-s-evidence-base
+    title: Developing DECC’s Evidence Base
+    url: https://assets.publishing.service.gov.uk/media/5a7c2864ed915d1b3a307cac/FINALDeveloping_DECCs_Evidence_Base.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-hs2-phase-two-management-case-high-speed-two-p
+    title: HS2 Phase Two management case — High Speed Two Phase Two management case
+    url: https://assets.publishing.service.gov.uk/media/5ef4a747d3bf7f713e8203df/HS2-phase-two-management-case.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-civil-nuclear-cyber-security-strategy-2022-202
+    title: Civil nuclear cyber security strategy 2022 — 2022 Civil Nuclear Cyber Security
+      Strategy
+    url: https://assets.publishing.service.gov.uk/media/627df8658fa8f53f9a15c1d5/civil-nuclear-cyber-security-strategy-2022.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-objectives-and-conditions-for-highways-england
+    title: 'Objectives and conditions for Highways England — Highways England: licence'
+    url: https://assets.publishing.service.gov.uk/media/5a80c317ed915d74e33fc43c/strategic-highways-licence.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-business-travel-during-covid-19-a-survey-of-uk
+    title: 'Business travel during COVID-19: a survey of UK businesses — COVID-19 business
+      travel survey: December 2021'
+    url: https://assets.publishing.service.gov.uk/media/6308caaf8fa8f55369e744c4/covid-19-business-travel-survey-dec-2021.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-uk-science-and-innovation-impact-story-czech-r
+    title: 'UK Science and Innovation impact story Czech Republic: extreme light infrastructure'
+    url: https://assets.publishing.service.gov.uk/media/5a7f609440f0b6230268f21c/Nov_2015_Impact_story_ELI_Czech_Republic_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-passenger-rail-public-service-obligation-l-2
+    title: 'The passenger rail public service obligation levy — Putting passengers at
+      the heart of the railway: supporting sustainable competition'
+    url: https://assets.publishing.service.gov.uk/media/5acb424c40f0b64ff0e69319/putting-passengers-at-the-heart-of-the-railway-supporting-sustainable-competition.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-eu-settlement-scheme-statistics-october-2019
+    title: EU Settlement Scheme statistics, October 2019
+    url: https://assets.publishing.service.gov.uk/media/5dcc0af5e5274a5c4ff9eb74/eu-settlement-scheme-statistics-october-2019.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-transparency-and-disclosure-statement-of-cma-s
+    title: 'Transparency and disclosure - statement of CMA’s policy and approach: CMA6
+      — Transparency and disclosure the CMA’s policy and approach'
+    url: https://assets.publishing.service.gov.uk/media/6a60c51747af652afa0c8a12/_Transparency_and_disclosure_the_CMA_s_policy_and_approach_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-age-discrimination-ban-in-services-and-public-
+    title: 'Age discrimination ban in services and public functions: An overview for
+      service providers and customers. — Age discrimination ban in services and public
+      functions: An overview for'
+    url: https://assets.publishing.service.gov.uk/media/5a78a125e5274a2acd1888fe/age-discrimination-ban.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-joint-statement-of-the-inter-departmental-mini
+    title: Joint statement of the inter-departmental ministerial group on modern slavery
+    url: https://assets.publishing.service.gov.uk/media/5a7eb9ac40f0b6230268b24c/IDMG_statement_v5_WEB.PDF
     source: gov_uk
     license: open
     topic: construction
