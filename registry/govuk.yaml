@@ -206057,22 +206057,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-simplifying-the-climate-change-agreements-sche-4
-    title: 'Simplifying the Climate Change Agreements Scheme — Climate Change Agreements:
-      Government response to the September 2011 consultation'
-    url: https://assets.publishing.service.gov.uk/media/5a75c345ed915d6faf2b57d4/4175-cca-cons-gov-response.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
-  - id: guk-simplifying-the-climate-change-agreements-sche-5
-    title: 'Simplifying the Climate Change Agreements Scheme — Consultation on the simplification
-      of the Climate Change Agreements Scheme: analysis of consultation responses'
-    url: https://assets.publishing.service.gov.uk/media/5a799c0de5274a684690acc2/4178-cc-regs-2012-scheme-admin-comment.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-environmental-permitting-standard-rules-consul-2
     title: 'Environmental permitting: standard rules consultation No 23 — Standard rules
       consultation no 23: proposals for healthcare waste permits'
@@ -232063,26 +232047,10 @@ sources:
     license: open
     topic: materials
     format: pdf
-  - id: guk-simplifying-our-climate-change-agreements-clim
-    title: 'Simplifying our Climate Change Agreements — Climate Change Agreements: analysis
-      of January and March 2012 consultation responses'
-    url: https://assets.publishing.service.gov.uk/media/5a79034ced915d07d35b42dc/5892-cca-cons-response-analysis.pdf
-    source: gov_uk
-    license: open
-    topic: materials
-    format: pdf
   - id: guk-simplifying-our-climate-change-agreements-the--2
     title: Simplifying our Climate Change Agreements — The Climate Change Agreements
       draft (Eligible Facilities) Regulations 2012
     url: https://assets.publishing.service.gov.uk/media/5a79750ded915d07d35b5a8d/5897-cca-eligible-facilities-regs-si.pdf
-    source: gov_uk
-    license: open
-    topic: materials
-    format: pdf
-  - id: guk-simplifying-our-climate-change-agreements-clim-2
-    title: 'Simplifying our Climate Change Agreements — Climate Change Agreements: government
-      response to the January and March 2012 consultations'
-    url: https://assets.publishing.service.gov.uk/media/5a789a89ed915d07d35b0fba/5890-cca-cons-response.pdf
     source: gov_uk
     license: open
     topic: materials
@@ -330873,6 +330841,242 @@ sources:
   - id: guk-korea-s-growth-engines-for-the-future
     title: Korea's Growth Engines for the Future
     url: https://assets.publishing.service.gov.uk/media/5a7ec8da40f0b6230268b85c/Korea_s_Growth_Engines_for_the_Future.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-immigration-assistance-practice-note-immigrati
+    title: 'Immigration assistance: practice note — Immigration assistance: practice
+      note - July 2025'
+    url: https://assets.publishing.service.gov.uk/media/68a5a2378e2cb87576994d1e/IAA_Immigration_Assistance_practice_note_August_2025.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-strengthening-tax-avoidance-sanctions-and-dete
+    title: 'Strengthening tax avoidance sanctions and deterrents: discussion document'
+    url: https://assets.publishing.service.gov.uk/media/5a74c90e40f0b619c865a6ac/Strengthening_Tax_Avoidance_Sanctions_and_Deterrents-discussion_document.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-ukces-employer-skills-survey-2013-supplementar
+    title: 'UKCES Employer Skills Survey 2013: supplementary documents — Employer skills
+      survey 2013: questionnaire'
+    url: https://assets.publishing.service.gov.uk/media/5a7ef840ed915d74e6227a00/ukcess-2013-questionnaire.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-child-and-family-social-worker-workforce-child
+    title: 'Child and family social worker workforce — Child and family social worker
+      workforce: consultation response'
+    url: https://assets.publishing.service.gov.uk/media/65364e940b53920013a92b5e/Child_and_family_social_worker_workforce_consultation_response_2023.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-new-armed-forces-pension-scheme-final-stag
+    title: 'The new Armed Forces Pension Scheme: final stage — Outline scheme design
+      document'
+    url: https://assets.publishing.service.gov.uk/media/5a789cfde5274a277e68e16d/20120817_afps_outline_scheme_design.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-penalties-for-non-compliance-with-the-climate-
+    title: 'Penalties for non compliance with the Climate Change Agreement — Climate
+      Change Regulations 2012 and the Scheme Administration Charges: opportunity to
+      comment'
+    url: https://assets.publishing.service.gov.uk/media/5a758d6240f0b6397f35f4cb/4178-cc-regs-2012-scheme-admin-comment.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-penalties-for-non-compliance-with-the-climate--2
+    title: 'Penalties for non compliance with the Climate Change Agreement — The Climate
+      Change Agreements Regulations 2012: Statutory Instruments'
+    url: https://assets.publishing.service.gov.uk/media/5a789a5ced915d0422063e7a/4179-climate-change-agreements-reg-2012.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-penalties-for-non-compliance-with-the-climate--3
+    title: 'Penalties for non compliance with the Climate Change Agreement — Climate
+      Change Agreements: Analysis of January and March 2012 consultation responses'
+    url: https://assets.publishing.service.gov.uk/media/5a79537eed915d07d35b485b/5892-cca-cons-response-analysis.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-penalties-for-non-compliance-with-the-climate--4
+    title: 'Penalties for non compliance with the Climate Change Agreement — Climate
+      Change Agreements: Government response to the September 2011 consultation'
+    url: https://assets.publishing.service.gov.uk/media/5a75b18140f0b67b3d5c87ab/4175-cca-cons-gov-response.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-penalties-for-non-compliance-with-the-climate--5
+    title: 'Penalties for non compliance with the Climate Change Agreement — Climate
+      Change Agreements: Government response to the January and March 2012 consultations'
+    url: https://assets.publishing.service.gov.uk/media/5a79e070ed915d6b1deb3fd5/5890-cca-cons-response.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-lane-rental-schemes-for-roadworks-removal-of-s
+    title: 'Lane rental schemes for roadworks: removal of sunset clause — Road works:
+      interim solution for  lane rental'
+    url: https://assets.publishing.service.gov.uk/media/5a74bb8b40f0b619c8659fc2/road-works-interim-solution-for-lane-rental.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-lane-rental-schemes-for-roadworks-removal-of-s-2
+    title: 'Lane rental schemes for roadworks: removal of sunset clause — Summary of
+      responses to consultation on an interim solution for lane rental and government
+      response'
+    url: https://assets.publishing.service.gov.uk/media/5a822b11ed915d74e6236266/lane-rental-interim-response-and_summary.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-historical-notices-on-uk-milk-prices-and-compo
+    title: Historical notices on UK milk prices and composition of milk – not National
+      Statistics — Figures to February 2016 - no badge (first published 1 April 2016)
+    url: https://assets.publishing.service.gov.uk/media/5a7f1291e5274a2e8ab49f0d/milk_prices-nobadge-Feb_16-22jul16.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-notices-on-uk-milk-prices-and-compo-2
+    title: Historical notices on UK milk prices and composition of milk – not National
+      Statistics — Figures to February 2015 - no badge (first published 26 March 2015)
+    url: https://assets.publishing.service.gov.uk/media/5a7f74c8e5274a2e8ab4c4ad/milk_prices-nobadge-Feb_15-22jul16.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-location-of-uk-regular-service-and-civilian-pe-3
+    title: 'Location of UK regular service and civilian personnel quarterly statistics:
+      2012 — Quarterly location statistics: 1 January 2012'
+    url: https://assets.publishing.service.gov.uk/media/5a7bad9eed915d4147621eeb/1_january_2012.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-location-of-uk-regular-service-and-civilian-pe-11
+    title: 'Location of UK regular service and civilian personnel quarterly statistics:
+      2015 — Quarterly location statistics: 1 October 2015'
+    url: https://assets.publishing.service.gov.uk/media/5a7f185540f0b6230268d67b/QLS_October15.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-location-of-uk-regular-service-and-civilian-pe-12
+    title: 'Location of UK regular service and civilian personnel quarterly statistics:
+      2015 — Quarterly location statistics: 1 July 2015'
+    url: https://assets.publishing.service.gov.uk/media/5a7f8da7e5274a2e8ab4cdf4/QLS_July15_v2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-sea-passenger-statistics-all-routes-2019-sea-p
+    title: 'Sea passenger statistics, all routes: 2019 — Sea passenger statistics, all
+      routes: 2019 report'
+    url: https://assets.publishing.service.gov.uk/media/5faaa73e8fa8f5789445b397/sea-passenger-statistics-all-routes-2019.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-russia-sanctions-eu-exit-amendment-no-3-re
+    title: 'The Russia (Sanctions) (EU Exit) (Amendment) (No.3) Regulations 2022: RPC
+      Opinion — RPC Opinion: The Russia (Sanctions) (EU Exit) (Amendment) (No.3) Regulations
+      2022'
+    url: https://assets.publishing.service.gov.uk/media/624ac1d6e90e075f1088f684/2022-04-01-RPC-FCDO-5167_1__-_Russia_Sanctions__no.3__-_Trade.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ots-evaluation-and-stock-take-note
+    title: OTS evaluation and stock take note
+    url: https://assets.publishing.service.gov.uk/media/6009b0158fa8f5296b9ebbd1/OTS_evaluation_and_stock_take_July_2020.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-research-with-small-businesses-to-explore-thei
+    title: Research with small businesses to explore their perceptions of tax administration
+      burden — Qualitative research with small businesses to explore their perceptions
+      of tax administra
+    url: https://assets.publishing.service.gov.uk/media/6181041ad3bf7f55fe946e1a/211101_Report_621_Tax_Admin_Burden_FINAL.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-survey-published-on-public-perceptions-of-the-
+    title: Survey published on public perceptions of the NHS — Public Perceptions of
+      the NHS Tracker Survey
+    url: https://assets.publishing.service.gov.uk/media/5a7c7db7ed915d48c2410187/Public-Perceptions-of-the-NHS-Tracker-Spring-2012-Report-FINAL-v1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-sr2014-no-2-management-of-extractive-waste-sr2
+    title: 'SR2014 No 2: management of extractive waste — SR2014 No 2: managing extractive
+      waste [existing permits]'
+    url: https://assets.publishing.service.gov.uk/media/5caf2ff840f0b615c6add85f/SR2014_No2_the_management_of_extractive_waste.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-sr2014-no-2-management-of-extractive-waste-wmp
+    title: 'SR2014 No 2: management of extractive waste — WMP1: waste management plan
+      for managing extractive waste (using only water based drilling mud) [existing
+      permits only]'
+    url: https://assets.publishing.service.gov.uk/media/5a748a57ed915d0e8bf191fd/LIT_10064.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-sr2014-no-2-management-of-extractive-waste-wmp-2
+    title: 'SR2014 No 2: management of extractive waste — WMP2: waste management plan
+      for managing extractive waste (using oil and water based drilling mud) [existing
+      permits only]'
+    url: https://assets.publishing.service.gov.uk/media/5a7de747e5274a2e87dae448/LIT_10065.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-report-of-the-spoliation-advisory-panel-14-clo
+    title: 'Report of the Spoliation Advisory Panel: 14 clocks and watches in the British
+      Museum — Report of the Spoliation Advisory Panel in respect of fourteen clocks
+      and watches now in the '
+    url: https://assets.publishing.service.gov.uk/media/5a78bbc1e5274a2acd1895ff/SAP-report-BM-HC1839.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-consultation-on-the-proposed-variation-to-the--2
+    title: Consultation on the proposed variation to the commitments in respect of Meta’s
+      use of advertising data — Annexes to the NIAV (a consolidated document)
+    url: https://assets.publishing.service.gov.uk/media/6650aa35dc15efdddf1a83fb/Consultation_on_a_variation_of_commitments.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-how-to-address-regeneration-in-your-neighbourh
+    title: How to address regeneration in your neighbourhood plan
+    url: https://assets.publishing.service.gov.uk/media/6a61e20391d54bc7d5127e73/How_to_address_regeneration_in_your_neighbourhood_plan.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-government-science-and-engineering-profession--11
+    title: 'Government science and engineering profession: writing guide — Getting heard:
+      a writing guide for scientists and engineers in government'
+    url: https://assets.publishing.service.gov.uk/media/5a759e4040f0b67b3d5c7e52/09-1625-gse-writing-guide.pdf
     source: gov_uk
     license: open
     topic: equipment_systems
