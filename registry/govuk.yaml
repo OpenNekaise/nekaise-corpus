@@ -176981,14 +176981,6 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
-  - id: guk-pprs-dispute-resolution-panel-decisions-depart-4
-    title: 'PPRS Dispute Resolution Panel decisions — Department of Health and Bayer
-      PLC: decision 20 May 2013'
-    url: https://assets.publishing.service.gov.uk/media/5a747f8b40f0b604dd7ae65a/PPRS_decision_20_May_2013.pdf
-    source: gov_uk
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: guk-transport-incident-cost-benefit-assessment-inc
     title: Transport incident cost-benefit assessment (INCA) user manuals — A guide
       for project managers
@@ -325532,4 +325524,438 @@ sources:
     source: gov_uk
     license: open
     topic: architecture
+    format: pdf
+  - id: guk-notice-09-20-rice-import-quota-notice-to-trade
+    title: Notice 09/20 - Rice Import Quota — Notice to Traders 09/20 - Imports of rice
+      under Commission Implementing Regulation (EU) no. 1273/2011
+    url: https://assets.publishing.service.gov.uk/media/6006b0628fa8f55f67ba96e9/Imports_of_rice_under_Commission_Implementing_Regulation__EU__no._1273-2011.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-implementing-the-plan-to-make-work-pay-and-emp
+    title: 'Implementing the Plan to Make Work Pay and Employment Rights Act — Implementing
+      the Employment Rights Bill: roadmap'
+    url: https://assets.publishing.service.gov.uk/media/6981e6e4e833d031a3158f87/implementing-the-employment-rights-bill-roadmap.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-shore
+    title: 'King Charles III England Coast Path from Shoreham-by-Sea to Eastbourne:
+      Natural England''s proposals — Shoreham-by-Sea to Eastbourne overview'
+    url: https://assets.publishing.service.gov.uk/media/5f11c687d3bf7f5bb2fd2764/shoreham-by-sea-eastbourne-overview.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-shore-3
+    title: 'King Charles III England Coast Path from Shoreham-by-Sea to Eastbourne:
+      Natural England''s proposals — Shoreham-by-Sea to Eastbourne proposals: chapter
+      1 with map annexes'
+    url: https://assets.publishing.service.gov.uk/media/5b9283d3ed915d4d6e093873/shoreham-by-sea-eastbourne-chapter-1.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-shore-4
+    title: 'King Charles III England Coast Path from Shoreham-by-Sea to Eastbourne:
+      Natural England''s proposals — Shoreham-by-Sea to Eastbourne proposals: chapter
+      2 with map annexes'
+    url: https://assets.publishing.service.gov.uk/media/5b928412e5274a42754015d5/shoreham-by-sea-eastbourne-chapter-2.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-shore-5
+    title: 'King Charles III England Coast Path from Shoreham-by-Sea to Eastbourne:
+      Natural England''s proposals — Shoreham-by-Sea to Eastbourne proposals: chapter
+      3 with map annexes'
+    url: https://assets.publishing.service.gov.uk/media/5b92848be5274a426a640486/shoreham-by-sea-eastbourne-chapter-3.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-shore-6
+    title: 'King Charles III England Coast Path from Shoreham-by-Sea to Eastbourne:
+      Natural England''s proposals — Shoreham-by-Sea to Eastbourne proposals: chapter
+      4 with map annexes'
+    url: https://assets.publishing.service.gov.uk/media/5b9284ece5274a426a640487/shoreham-by-sea-eastbourne-chapter-4.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-shore-7
+    title: 'King Charles III England Coast Path from Shoreham-by-Sea to Eastbourne:
+      Natural England''s proposals — Shoreham-by-Sea to Eastbourne sensitive features
+      report'
+    url: https://assets.publishing.service.gov.uk/media/5baa482440f0b6070d161519/shoreham-by-sea-eastbourne-sensitive-features-report.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-draft-commonhold-and-leasehold-reform-bill-add
+    title: 'Draft Commonhold and Leasehold Reform Bill — Addressing unregulated and
+      unaffordable ground rent: policy statement'
+    url: https://assets.publishing.service.gov.uk/media/698cb666bb6023ea0f7123d5/Policy_statement_on_ground_rents.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-commonhold-and-leasehold-reform-bill-gui
+    title: Draft Commonhold and Leasehold Reform Bill — Guide to the Draft Commonhold
+      and Leasehold Reform Bill
+    url: https://assets.publishing.service.gov.uk/media/69779a943fd50ac304b79778/Guide_to_the_draft_Commonhold_and_Leasehold_Reform_Bill.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-commonhold-and-leasehold-reform-bill-dra-4
+    title: 'Draft Commonhold and Leasehold Reform Bill — Draft Commonhold and Leasehold
+      Reform Bill: Impact Assessment'
+    url: https://assets.publishing.service.gov.uk/media/69bc2d924c478213a823ce9d/Draft_Commonhold_and_Leasehold_Reform_Bill_-_Impact_Assessment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-commonhold-and-leasehold-reform-bill-ann
+    title: 'Draft Commonhold and Leasehold Reform Bill — Annex 1: Reforming the commonhold
+      framework and prohibiting the use of leasehold for new flats'
+    url: https://assets.publishing.service.gov.uk/media/69bc232ff7b1c24d8e23ce99/Annex_1_-_Reforming_the_commonhold_framework_and_prohibiting_the_sale_of_new_leasehold_flats.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-commonhold-and-leasehold-reform-bill-ann-2
+    title: 'Draft Commonhold and Leasehold Reform Bill — Annex 2: Commonhold conversions'
+    url: https://assets.publishing.service.gov.uk/media/69bc2383f7b1c24d8e23ce9a/Annex_2_-_Commonhold_Conversions.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-commonhold-and-leasehold-reform-bill-ann-3
+    title: 'Draft Commonhold and Leasehold Reform Bill — Annex 3: Enforcement of long
+      residential leases'
+    url: https://assets.publishing.service.gov.uk/media/69bc2df1f7b1c24d8e23cea8/Annex_3_-_Enforcement_of_Long_Residential_Leases.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-commonhold-and-leasehold-reform-bill-ann-4
+    title: 'Draft Commonhold and Leasehold Reform Bill — Annex 4: Estate rentcharges
+      - Regulation of remedies for arrears'
+    url: https://assets.publishing.service.gov.uk/media/69bc242c8006048065f73d39/Annex_4_-_Estate_rentcharges_-_Regulation_of_remedies_for_arrears_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-commonhold-and-leasehold-reform-bill-ann-5
+    title: 'Draft Commonhold and Leasehold Reform Bill — Annex 5: Ground rents reform'
+    url: https://assets.publishing.service.gov.uk/media/69bd30bf7e02b81c0d1c7576/Annex_5_-_Ground_Rents.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-draft-commonhold-and-leasehold-reform-bill-tec
+    title: Draft Commonhold and Leasehold Reform Bill — Technical annex
+    url: https://assets.publishing.service.gov.uk/media/69bd317e7e02b81c0d1c7577/Technical_Annex.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-short-term-use-of-residential-property-in-lond
+    title: Short-term use of residential property in London — Promoting the sharing
+      economy in London
+    url: https://assets.publishing.service.gov.uk/media/5a80db69e5274a2e8ab528e2/Promoting_the_sharing_economy_in_London.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-fourth-report-of-the-independent-reviewer-purs
+    title: 'Fourth report of the Independent Reviewer pursuant to section 14(3) of the
+      Prevention of Terrorism Act 2005: May 2009 — Fourth report of the Independent
+      Reviewer pursuant to sectio'
+    url: https://assets.publishing.service.gov.uk/media/5a7b99b5ed915d13110604e5/7624.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-government-response-to-the-joint-committee-on--3
+    title: 'Government response to the Joint Committee on Human Rights'' thirty-second
+      report of session 2005 to 2006 — The Human Rights Act: the DCA and Home Office
+      reviews Government response'
+    url: https://assets.publishing.service.gov.uk/media/5a7cc18ced915d68223625b4/7011.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-introduction-of-a-deposit-return-scheme-in-eng
+    title: Introduction of a deposit return scheme in England, Wales and Northern Ireland
+      — Deposit Return Scheme consultation - government response
+    url: https://assets.publishing.service.gov.uk/media/63c96864d3bf7f24b033500b/DRS_Government_response_Jan_2023.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-payments-for-ecosystem-services-pes-best-pract
+    title: 'Payments for Ecosystem Services (PES): best practice guide — Payments for
+      Ecosystem Services: best practice guide'
+    url: https://assets.publishing.service.gov.uk/media/5a74bf89ed915d502d6caac0/pb13932-pes-bestpractice-20130522.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-payments-for-ecosystem-services-pes-best-pract-2
+    title: 'Payments for Ecosystem Services (PES): best practice guide — Annex: Case
+      studies'
+    url: https://assets.publishing.service.gov.uk/media/5a7ce0a9ed915d7c849adc7b/pb13932a-pes-bestpractice-annexa-20130522.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-scotland-labour-market-projections-2010-to-202
+    title: 'Scotland labour market projections: 2010 to 2020 — Working Futures 2010-2020:  Summary
+      report for Scotland'
+    url: https://assets.publishing.service.gov.uk/media/5a7d571a40f0b60aaa293d87/working-futures-scotland-final-report.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-labour-market-projections-for-wales-2010-to-20
+    title: 'Labour market projections for Wales: 2010 to 2020 — Working Futures: Report
+      for Wales'
+    url: https://assets.publishing.service.gov.uk/media/5a7d7f0340f0b64fe6c24113/working-futures-2010-2020-wales-final-report.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-pe8-6xx-augean-south-limited-environmental-per
+    title: 'PE8 6XX, Augean South Limited: environmental permit issued - EPR/TP3430GW/V007
+      — Permit: Augean South Limited'
+    url: https://assets.publishing.service.gov.uk/media/6493049db32b9e0012a96c24/Variation_Notice_TP3430GW-V007.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-pe8-6xx-augean-south-limited-environmental-per-2
+    title: 'PE8 6XX, Augean South Limited: environmental permit issued - EPR/TP3430GW/V007
+      — Decision Document: Augean South Limited'
+    url: https://assets.publishing.service.gov.uk/media/649304b8b32b9e0012a96c25/Decision_Document_TP3430GW-V007.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-me16-9nt-gallagher-aggregates-limited-environm
+    title: 'ME16 9NT, Gallagher Aggregates Limited: environmental permit issued — Permit:
+      Gallagher Aggregates Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a9906a2e5274a5b87c30161/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-me16-9nt-gallagher-aggregates-limited-environm-2
+    title: 'ME16 9NT, Gallagher Aggregates Limited: environmental permit issued — Decision
+      document: Gallagher Aggregates Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a9906b040f0b67aa5087d10/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-ls25-5fp-environmental-permit-issued-variation
+    title: 'LS25 5FP: Environmental permit issued — Variation and consolidation notice:
+      The Maltings Organic Treatment Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a81a86740f0b62305b90241/Variation_and_consolidation_notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-response-to-an-inspection-of-the-home-office-s
+    title: Response to an inspection of the Home Office’s approach to illegal working
+      — Response to the report on an inspection of the Home Office’s approach to illegal
+      working
+    url: https://assets.publishing.service.gov.uk/media/5cd2f93ced915d788966d2e2/Formal_response_Illegal_Working_ICIBI.PDF
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-courts-and-tribunals-bill-criminal-court-refor
+    title: 'Courts and Tribunals Bill — Criminal court reform: Impacts factsheet'
+    url: https://assets.publishing.service.gov.uk/media/69aee170671a8a924c83eed3/ct-bill-criminal-court-reform-impacts-factsheet.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-courts-and-tribunals-bill-courts-and-tribunals-2
+    title: 'Courts and Tribunals Bill — Courts and Tribunals Bill: (IRCC) Impact Assessment'
+    url: https://assets.publishing.service.gov.uk/media/699dfa5a07d7bff3604d6c76/courts-tribunals-bill-ircc-impact-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-courts-and-tribunals-bill-courts-and-tribunals-3
+    title: 'Courts and Tribunals Bill — Courts and Tribunals Bill: (Non-IRCC) Impact
+      Assessment'
+    url: https://assets.publishing.service.gov.uk/media/699dfa42db2401de164d6c91/courts-tribunals-bill-non-ircc-impact-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-conditions-for-payments-between-the-nhs-and-lo
+    title: 'Conditions for payments between the NHS and local authorities — The National
+      Health Service (Conditions Relating to Payments by NHS Bodies to Local Authorities)
+      Directions 2013: s2'
+    url: https://assets.publishing.service.gov.uk/media/5a7c314040f0b67d0b11f780/s256_257_conditions_-_Payments_by_NHS_bodies_to_LAs.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-conditions-for-payments-between-the-nhs-and-lo-2
+    title: 'Conditions for payments between the NHS and local authorities — The National
+      Health Service (Conditions Relating to Payments by Local Authorities to NHS bodies)
+      Directions 2013: s7'
+    url: https://assets.publishing.service.gov.uk/media/5a7c9a9140f0b65b3de09f5e/s76_conditions_-_Payments_by_LAs_to_NHS_bodies_directions_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-early-years-foundation-stage-profile-results-2-2
+    title: 'Early years foundation stage profile results: 2017 to 2018 — EYFSP 2018:
+      text'
+    url: https://assets.publishing.service.gov.uk/media/5bc5eac440f0b6385187959f/EYFSP_2018_Main_Text.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-insurance-changes-for-entertainers-fr
+    title: National Insurance changes for entertainers from 6 April 2014
+    url: https://assets.publishing.service.gov.uk/media/5a7559d240f0b6360e4736d7/NICs-Entertainers_Draft_TIIN.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-education-provision-children-under-5-years-of--8
+    title: 'Education provision: children under 5 years of age, January 2014 — Main
+      text: SFR20/2014'
+    url: https://assets.publishing.service.gov.uk/media/5a7dba12ed915d2acb6edc6d/SFR20-2014_Text1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-expenditure-statistical-analyses-2010-p
+    title: Public Expenditure Statistical Analyses 2010 — Public Expenditure Statistical
+      Analyses (PESA) 2010 complete document, including Annexes
+    url: https://assets.publishing.service.gov.uk/media/5a7b9f68ed915d131106072a/pesa_2010_complete.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-expenditure-statistical-analyses-2010-c
+    title: Public Expenditure Statistical Analyses 2010 — Chapter 1 Departmental budgets
+    url: https://assets.publishing.service.gov.uk/media/5a7cdf59e5274a2c9a484a19/pesa_2010_chapter1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-expenditure-statistical-analyses-2010-c-2
+    title: Public Expenditure Statistical Analyses 2010 — Chapter 2 Economic analyses
+      of budgets
+    url: https://assets.publishing.service.gov.uk/media/5a757cc1ed915d731495a589/pesa_2010_chapter2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-expenditure-statistical-analyses-2010-c-3
+    title: Public Expenditure Statistical Analyses 2010 — Chapter 3 Changes in departmental
+      budgets
+    url: https://assets.publishing.service.gov.uk/media/5a7c5cc640f0b6601cef57b4/pesa_2010_chapter3.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-expenditure-statistical-analyses-2010-c-5
+    title: Public Expenditure Statistical Analyses 2010 — Chapter 5 Public sector expenditure
+      by function, sub-function and economic category
+    url: https://assets.publishing.service.gov.uk/media/5a7c4b72ed915d3d0e87b694/pesa_2010_chapter5.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-expenditure-statistical-analyses-2010-c-7
+    title: Public Expenditure Statistical Analyses 2010 — Chapter 7 Local government
+      financing and expenditure
+    url: https://assets.publishing.service.gov.uk/media/5a7ce02440f0b6629523c559/pesa_2010_chapter7.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-expenditure-statistical-analyses-2010-c-8
+    title: Public Expenditure Statistical Analyses 2010 — Chapter 8 Public corporations
+    url: https://assets.publishing.service.gov.uk/media/5a7cdf3eed915d7c849adc07/pesa_2010_chapter8.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-expenditure-statistical-analyses-2010-c-9
+    title: Public Expenditure Statistical Analyses 2010 — Chapter 9 Analyses of public
+      expenditure by country, region and function
+    url: https://assets.publishing.service.gov.uk/media/5a747f69ed915d0e8bf18c4d/pesa_2010_chapter9.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-comparison-of-rainfall-runoff-models-for-flood
+    title: Comparison of rainfall-runoff models for flood forecasting
+    url: https://assets.publishing.service.gov.uk/media/5a7b8e4ae5274a7318b8f6d3/stsws231-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-comparison-of-rainfall-runoff-models-for-flood-3
+    title: 'Comparison of rainfall-runoff models for flood forecasting — Comparison
+      of rainfall-runoff models for flood forecasting. Part 2: Calibration and evaluation
+      of models'
+    url: https://assets.publishing.service.gov.uk/media/5a7c6dab40f0b62aff6c19a2/geho1010btds-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-information-to-intelligence-local-labour-marke
+    title: 'Information to intelligence: Local labour market assessments — Information
+      to intelligence: Guidance on local labour market assessments'
+    url: https://assets.publishing.service.gov.uk/media/5a74814fe5274a7f99028b7c/Local_LMI_Guidance_Aug14_FINAL_with_covers_v3.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-information-to-intelligence-local-labour-marke-2
+    title: 'Information to intelligence: Local labour market assessments — Local Data
+      Workshops'
+    url: https://assets.publishing.service.gov.uk/media/5a74e3bf40f0b65c0e8454f6/Local_LMI_Workshop_Slides.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-rgn-rsr-2-regulation-of-radioactive-substances
+    title: 'RGN RSR 2: regulation of radioactive substances activities on nuclear licensed
+      sites — Regulatory Guidance Series RSR 2: The regulation of radioactive substances
+      activities on nucl'
+    url: https://assets.publishing.service.gov.uk/media/5a7c3371e5274a25a9141226/geho0310bsgf-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-pprs-dispute-resolution-panel-decisions-2013-d-2
+    title: 'PPRS Dispute Resolution Panel decisions 2013 — Department of Health and
+      Bayer PLC: decision 20 May 2013'
+    url: https://assets.publishing.service.gov.uk/media/5a74b90ce5274a3f93b48481/Department_of_Health_and_Bayer_dispute_resolution.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-msn-1829-m-ship-to-ship-transfer-regulations-2
+    title: MSN 1829 (M) Ship to ship transfer regulations 2020
+    url: https://assets.publishing.service.gov.uk/media/61854445e90e07197b571e2d/MSN_1829_-_Revised_Industry_guidance-Final-June21.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
     format: pdf
