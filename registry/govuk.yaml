@@ -316861,14 +316861,6 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
-  - id: guk-business-rates-retention-technical-details-bus-3
-    title: 'Business rates retention: technical details — Business rates retention:
-      Policy statement (21 November 2012)'
-    url: https://assets.publishing.service.gov.uk/media/5a74cb5eed915d3c7d528025/Business_rates_retention_policy_statement.pdf
-    source: gov_uk
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: guk-business-rates-retention-technical-details-dra
     title: 'Business rates retention: technical details — Draft Local Government Finance
       Report (England) 2013 to 2014'
@@ -334983,4 +334975,366 @@ sources:
     source: gov_uk
     license: open
     topic: construction
+    format: pdf
+  - id: guk-business-rates-retention-policy-statement
+    title: 'Business rates retention: policy statement'
+    url: https://assets.publishing.service.gov.uk/media/5a79e68bed915d6b1deb42a1/Business_rates_retention_policy_statement.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-hs2-property-price-support-scheme-government-r
+    title: HS2 property price support scheme government response — HS2 property price
+      support scheme government response (web version)
+    url: https://assets.publishing.service.gov.uk/media/5f994be8d3bf7f1688132e34/hs2-ppss-consultation-response-web-document.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-hs2-property-price-support-scheme-government-r-2
+    title: HS2 property price support scheme government response — HS2 property price
+      support scheme government response (print version)
+    url: https://assets.publishing.service.gov.uk/media/5be9686e40f0b667ce67076d/hs2-ppss-consultation-response-print.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-explanatory-note-on-business-rates-pilots-2017
+    title: Explanatory note on business rates pilots 2017 to 2018 — Explanatory note
+      on business rates pilots
+    url: https://assets.publishing.service.gov.uk/media/5a81f842e5274a2e87dc074e/100__Pilots_-_Explanatory_Note.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-local-government-resource-review-technical-pap
+    title: 'Local government resource review: technical papers — Local government resource
+      review: proposals for business rates retention: technical papers – an overview'
+    url: https://assets.publishing.service.gov.uk/media/5a755e9fed915d73149596cc/19696061.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-local-government-resource-review-technical-pap-2
+    title: 'Local government resource review: technical papers — Local government resource
+      review: proposals for business rates retention: technical paper 1 - establishing
+      the baseline'
+    url: https://assets.publishing.service.gov.uk/media/5a7895ebe5274a386c1ae117/19695701.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-local-government-resource-review-technical-pap-3
+    title: 'Local government resource review: technical papers — Local government resource
+      review: proposals for business rates retention: technical paper 2 - measuring
+      business rates'
+    url: https://assets.publishing.service.gov.uk/media/5a78d6f8e5274a2acd18a316/196957311.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-local-government-resource-review-technical-pap-4
+    title: 'Local government resource review: technical papers — Local government resource
+      review: proposals for business rates retention: technical paper 3 - non-billing
+      authorities'
+    url: https://assets.publishing.service.gov.uk/media/5a7975af40f0b642860d8491/196957710.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-local-government-resource-review-technical-pap-5
+    title: 'Local government resource review: technical papers — Local government resource
+      review: proposals for business rates retention: technical paper 4 - business rates
+      administration'
+    url: https://assets.publishing.service.gov.uk/media/5a79c4c1ed915d07d35b7f6a/19695831.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-local-government-resource-review-technical-pap-7
+    title: 'Local government resource review: technical papers — Local government resource
+      review: proposals for business rates retention: technical paper 6 - technical
+      paper 6 - volatility'
+    url: https://assets.publishing.service.gov.uk/media/5a78ed9ae5274a277e6908e2/19695951.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-local-government-resource-review-technical-pap-8
+    title: 'Local government resource review: technical papers — Local government resource
+      review: proposals for business rates retention: technical paper 7 - revaluation
+      and transition'
+    url: https://assets.publishing.service.gov.uk/media/5a79af17ed915d042206a432/19695981.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-local-government-resource-review-technical-pap-9
+    title: 'Local government resource review: technical papers — Local government resource
+      review: proposals for business rates retention: technical paper 8 - renewable
+      energy'
+    url: https://assets.publishing.service.gov.uk/media/5a7962ad40f0b63d72fc5623/1969601.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-migration-advisory-committee-mac-report-intern-2
+    title: 'Migration Advisory Committee (MAC) report: international students — Impact
+      of international students in the UK: annexes'
+    url: https://assets.publishing.service.gov.uk/media/5b928d73ed915d4d56171efb/Impact_intl_students_annexes.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-migration-advisory-committee-mac-report-intern-5
+    title: 'Migration Advisory Committee (MAC) report: international students — Impact
+      of international students in the UK: call for evidence responses (3 of 3)'
+    url: https://assets.publishing.service.gov.uk/media/5b978edaed915d66720a706c/Impact_intl_students_CfE_3of3.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-department-of-health-response-to-the-legal-opi
+    title: Department of Health response to the legal opinion published by 38 degrees
+      on the application of procurement and competition law — Download Department of
+      Health response
+    url: https://assets.publishing.service.gov.uk/media/5a74e57ced915d3c7d528cda/dh_129883.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-pe29-6ye-seachill-uk-limited-environmental-per
+    title: 'PE29 6YE, Seachill UK Limited: environmental permit issued - EPR/JP3830WG/V005
+      — Permit: Seachill UK Limited'
+    url: https://assets.publishing.service.gov.uk/media/62c465f1d3bf7f3008697a3e/Variation_notice_JP3830WG_V005.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-nw10-8jp-uniper-uk-limited-environmental-permi-3
+    title: 'NW10 8JP, Uniper UK Limited: environmental permit issued - EPR/EP3333RW/V004
+      — Variation notice: Uniper UK Limited'
+    url: https://assets.publishing.service.gov.uk/media/5ef5f526d3bf7f7690b33a0d/Variation_Notice_EP3333RW-V004.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-nw10-8jp-uniper-uk-limited-environmental-permi-4
+    title: 'NW10 8JP, Uniper UK Limited: environmental permit issued - EPR/EP3333RW/V004
+      — Decision document: Uniper UK Limited'
+    url: https://assets.publishing.service.gov.uk/media/5ef5f535e90e075c53dfce40/Decision_Document_EP3333RW-V004.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-pl30-5hw-cornwall-council-environmental-permit
+    title: 'PL30 5HW, Cornwall Council: environmental permit issued — Notice of transfer
+      and variation: Cornwall Council'
+    url: https://assets.publishing.service.gov.uk/media/5c790c4140f0b603d660be87/Partial_Transfer_Notice_-_Transferee.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-lifeboats-and-launching-systems-accidents-revi
+    title: Lifeboats and launching systems accidents review — Review of lifeboats and
+      launching systems accidents
+    url: https://assets.publishing.service.gov.uk/media/5a7d8042ed915d2d2ac0954a/Lifeboat_Study.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-a-review-of-the-toxicity-and-environmental-beh
+    title: A review of the toxicity and environmental behaviour on bromine, bromide,
+      hydrogen fluoride, hydrogen iodide, aresnic and beryllium. — A Review of the Toxicity
+      and Environmental Be
+    url: https://assets.publishing.service.gov.uk/media/5a7c79dd40f0b62aff6c1f06/scho0105bimu-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-a-review-of-the-toxicity-and-environmental-beh-5
+    title: A review of the toxicity and environmental behaviour on bromine, bromide,
+      hydrogen fluoride, hydrogen iodide, aresnic and beryllium. — A review of the toxicity
+      of arsenic in air
+    url: https://assets.publishing.service.gov.uk/media/5a7c7eebed915d6969f45475/scho0508bodr-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-a-review-of-the-toxicity-and-environmental-beh-6
+    title: A review of the toxicity and environmental behaviour on bromine, bromide,
+      hydrogen fluoride, hydrogen iodide, aresnic and beryllium. — A review of the toxicity
+      of beryllium in air
+    url: https://assets.publishing.service.gov.uk/media/5a7c6f8ded915d696ccfcc2f/scho0508bobo-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-me19-4pn-new-earth-solutions-kent-limited-envi
+    title: 'ME19 4PN, New Earth Solutions (Kent) Limited: environmental permit issued
+      - EPR/CP3298LQ/V005 — Permit: New Earth Solutions (Kent) Limited'
+    url: https://assets.publishing.service.gov.uk/media/5f7487c4e90e0740caae75ad/Variation_Notice_CP3298LQ-V005.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-me19-4pn-new-earth-solutions-kent-limited-envi-2
+    title: 'ME19 4PN, New Earth Solutions (Kent) Limited: environmental permit issued
+      - EPR/CP3298LQ/V005 — Decision document: New Earth Solutions (Kent) Limited'
+    url: https://assets.publishing.service.gov.uk/media/5f7487dc8fa8f5188f48d611/Decision_Document_CP3298LQ-V005.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-nn6-0je-davis-commercial-services-limited-envi
+    title: 'NN6 0JE, Davis Commercial Services Limited: environmental permit issued
+      - EPR/EB3100HN/V002 — Variation notice: Davis Commercial Services Limited'
+    url: https://assets.publishing.service.gov.uk/media/5f2801c98fa8f57ac14f6947/Variation_Notice_EB3100HN-V002.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-nn6-0je-davis-commercial-services-limited-envi-2
+    title: 'NN6 0JE, Davis Commercial Services Limited: environmental permit issued
+      - EPR/EB3100HN/V002 — Decision document: Davis Commercial Services Limited'
+    url: https://assets.publishing.service.gov.uk/media/5f2801dfe90e0732e2d7c962/Decision_Document_EB3100HN-V002.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-s65-3sr-harsco-metals-group-limited-environmen
+    title: 'S65 3SR, Harsco Metals Group Limited: environmental permit issued — Variation
+      and consolidation notice: Harsco Metals Group Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a818917ed915d74e33febde/Variation_and_consolidation_notice.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-s65-3sr-harsco-metals-group-limited-environmen-2
+    title: 'S65 3SR, Harsco Metals Group Limited: environmental permit issued — Decision
+      document: Harsco Metals Group Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a80c9dc40f0b62305b8d27c/Decision_document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-b70-0eb-2-sisters-food-group-limited-environme
+    title: 'B70 0EB, 2 Sisters Food Group Limited: environmental permit issued — Permit:
+      2 Sisters Food Group Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a7f8839e5274a2e8ab4cbe2/Permit.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-b70-0eb-2-sisters-food-group-limited-environme-2
+    title: 'B70 0EB, 2 Sisters Food Group Limited: environmental permit issued — Decision
+      document: 2 Sisters Food Group Limited'
+    url: https://assets.publishing.service.gov.uk/media/5a804c68e5274a2e8ab4f588/Decision_Document.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-public-emergency-alerts-reviews-and-guidance-e
+    title: 'Public emergency alerts: reviews and guidance — Effective civil alert systems
+      – literature review'
+    url: https://assets.publishing.service.gov.uk/media/5a79d759e5274a684690c7dc/Effective-Civil-Alert-Sytems-summary-guidance.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-emergency-alerts-reviews-and-guidance-u
+    title: 'Public emergency alerts: reviews and guidance — Using social media in emergencies
+      - smart practices'
+    url: https://assets.publishing.service.gov.uk/media/5a78e0ff40f0b6324769ae1b/Using-social-media-in-emergencies-smart-tips.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-emergency-alerts-reviews-and-guidance-c
+    title: 'Public emergency alerts: reviews and guidance — Civil alerting workshops
+      – summary report'
+    url: https://assets.publishing.service.gov.uk/media/5a7bfa21e5274a7318b90470/20130617Civil_Alerting_Workshops-_Report__FINAL_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-emergency-alerts-reviews-and-guidance-e-2
+    title: 'Public emergency alerts: reviews and guidance — Extended Floodline Warnings
+      Direct trial – summary report'
+    url: https://assets.publishing.service.gov.uk/media/5a78f14bed915d07d35b3a2a/EFWD-report-summary.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-expenditure-statistical-analyses-2005-p
+    title: Public Expenditure Statistical Analyses 2005 — Public Expenditure Statistical
+      Analyses 2005 - Full  Text(PDF)
+    url: https://assets.publishing.service.gov.uk/media/5a7cc16840f0b6629523b9e1/6521.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-mod-byelaws-public-consultation-records-awe-bl
+    title: 'MOD byelaws public consultation records — AWE Blacknest: public consultation
+      record'
+    url: https://assets.publishing.service.gov.uk/media/5a8213c2ed915d74e6235a9a/AWE_Blacknest_-_Public_Consultation_Record.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-mod-byelaws-public-consultation-records-the-br
+    title: 'MOD byelaws public consultation records — The British Underwater Test and
+      Evaluation Centre: public consultation record'
+    url: https://assets.publishing.service.gov.uk/media/5a81a296ed915d74e33ff44c/20160621_BUTEC_Public_Consultation_Record.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-stamp-duty-land-tax-reform-of-structure-rates-
+    title: 'Stamp Duty Land Tax: reform of structure, rates and thresholds'
+    url: https://assets.publishing.service.gov.uk/media/5a7d98c340f0b6606e240f01/sdlt-guidance-note.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-allied-joint-doctrine-for-the-military-contrib
+    title: Allied Joint Doctrine for the Military Contribution to Stabilization (AJP-3.28)
+      — Allied Joint Publication-3.28, Allied Joint Doctrine for the Military Contribution
+      to Stabilizatio
+    url: https://assets.publishing.service.gov.uk/media/63d7b111e90e0773d50c7530/AJP-3.28_web_accessible.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-surveillance-camera-commissioner-s-buyer-s-too
+    title: Surveillance Camera Commissioner's buyer's toolkit
+    url: https://assets.publishing.service.gov.uk/media/5b080850ed915d5f767b868a/MVP_v5.1_for_SCC_sign_off.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-natural-capital-committee-advice-on-the-green-
+    title: 'Natural Capital Committee advice on the Green Book guidance: embedding natural
+      capital into public policy appraisal — The Green Book guidance: embedding natural
+      capital into public'
+    url: https://assets.publishing.service.gov.uk/media/5fbcd3ec8fa8f559e21539a8/ncc-green-book-advice.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-an-inspection-of-the-home-office-s-response-to
+    title: An inspection of the Home Office’s response to in-country clandestine arrivals
+      (‘lorry drops’) and to irregular migrants arriving via ‘small boats’
+    url: https://assets.publishing.service.gov.uk/media/5faa649de90e0730699fde5f/An_inspection_of_the_Home_Office_s_response_to_in-country_clandestine_arrivals___lorry_drops___and_to_irregular_migrants_arriving_via__small_boats_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-phe-investigation-of-sars-cov-2-outbreaks-in-6
+    title: 'PHE: Investigation of SARS-CoV-2 outbreaks in 6 care homes in London (April
+      2020), 2 July 2020'
+    url: https://assets.publishing.service.gov.uk/media/611e71388fa8f53dcd3ae86e/S0585_Carehome_Supplement_Investigation_of_SARS-CoV-2_outbreaks.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
     format: pdf
