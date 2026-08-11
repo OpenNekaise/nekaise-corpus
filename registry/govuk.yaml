@@ -90565,22 +90565,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-migration-interim-limits-tier-1-and-2-pbs-cons
-    title: 'Migration interim limits: tier 1 and 2 PBS: consultation review — Migration
-      interim limits: PBS tier 1 and tier 2'
-    url: https://assets.publishing.service.gov.uk/media/5a7c4d2e40f0b6321db38457/ia-migration-interim-limit.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
-  - id: guk-points-based-system-immigration-limits-consult
-    title: 'Points-based system: immigration limits: consultation review — Consultation
-      on the points-based system: immigration limits'
-    url: https://assets.publishing.service.gov.uk/media/5a7cc0c6e5274a38e575689e/ia-pbs-immigration-limit.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-consultation-on-limits-on-non-eu-economic-migr
     title: 'Consultation on limits on non-EU economic migration: questionnaire results
       — Consultation on limits on Non-EU Economic Migration: consultation questionnaire
@@ -344075,6 +344059,223 @@ sources:
   - id: guk-air-accident-monthly-bulletin-march-2019-aaib-
     title: Air accident monthly bulletin March 2019 — AAIB Bulletin 3/2019
     url: https://assets.publishing.service.gov.uk/media/5f6893dbe90e072b963d2770/AAIB_Bulletin_3-2019_Hi_Res.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-small-business-survey-2019-panel-report-longit
+    title: 'Small Business Survey 2019: panel report — Longitudinal Small Business Survey
+      2019: panel report'
+    url: https://assets.publishing.service.gov.uk/media/5ef5c51c86650c12a0c778bf/LSBS_2019_panel_rev.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-consultation-on-preventing-the-supply-of-highl
+    title: Consultation on preventing the supply of highly specialist printing equipment
+      to fraudsters — Printing consultation impact assessment
+    url: https://assets.publishing.service.gov.uk/media/5a7aff4c40f0b66a2fc045ad/consultation-impact-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-consultation-on-preventing-the-supply-of-highl-2
+    title: 'Consultation on preventing the supply of highly specialist printing equipment
+      to fraudsters — Specialist printing equipment and materials: government response'
+    url: https://assets.publishing.service.gov.uk/media/5a7cd2d140f0b65b3de0b62f/Specialist_Printing_Equipment_And_Materials_Consultation_Response_Sept_1....pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-consultation-on-preventing-the-supply-of-highl-3
+    title: Consultation on preventing the supply of highly specialist printing equipment
+      to fraudsters — Voluntary guidance for businesses on procedures for supplying
+      specialist printing equi
+    url: https://assets.publishing.service.gov.uk/media/5a74df4d40f0b65f61322ec3/Voluntary_Guidance_for_Businesses_-_Specialist_Printing_Equipment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-discount-rate-used-to-set-unfunded-public-
+    title: The discount rate used to set unfunded public service pension contributions
+      — Consultation on the discount rate used to set unfunded public service pension
+      contributions (PDF 325KB
+    url: https://assets.publishing.service.gov.uk/media/5a78f874e5274a277e690e2b/consult_unfunded_pension_condoc.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-import-demand-long-run-income-elasticities-lon
+    title: 'Import demand: long run income elasticities — Long run income elasticities
+      of import demand'
+    url: https://assets.publishing.service.gov.uk/media/5a7c0195ed915d01ba1ca8a5/bis-13-1262-long-run-income-elasticities-REVISED-1.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-agriculture-sector-skills-assessment-agricultu
+    title: 'Agriculture sector: skills assessment — Agriculture, forestry and fishing:
+      sector skills assessment 2012'
+    url: https://assets.publishing.service.gov.uk/media/5a7e04eeed915d74e33ef862/briefing-paper-ssa12-agriculture.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-cadmium-and-genito-urinary-cancers-iiac-positi
+    title: 'Cadmium and genito-urinary cancers: IIAC position paper 24 — Cadmium and
+      genito-urinary cancers'
+    url: https://assets.publishing.service.gov.uk/media/5a7d6b31ed915d2d2ac08db0/iiac-pp24.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-overshoot-briefing-note
+    title: Overshoot briefing note
+    url: https://assets.publishing.service.gov.uk/media/66a2499149b9c0597fdb04e0/cs-now-overshoot-briefing__1_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-mhra-business-engagement-assessment-variations
+    title: MHRA business engagement assessment - variations processing review — Variations
+      processing review - Composite Coordination Collection
+    url: https://assets.publishing.service.gov.uk/media/69e50ed42570f65c2716d9bc/Variations_processing_review_-_Composite_Coordination_Collection_1.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-mhra-business-engagement-assessment-variations-2
+    title: MHRA business engagement assessment - variations processing review — Final
+      business engagement assessment - composite coordination collection
+    url: https://assets.publishing.service.gov.uk/media/5a747f9d40f0b604dd7ae666/Variations_processing_review_-_Composite_Coordination_Collection_final.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-limits-on-non-eu-economic-migration-impact-ass
+    title: 'Limits on non-EU economic migration — Impact assessment: Migration interim
+      limits points based system, tier 1 and tier 2'
+    url: https://assets.publishing.service.gov.uk/media/5a7c735b40f0b62aff6c1c19/ia-migration-interim-limit.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-limits-on-non-eu-economic-migration-impact-ass-2
+    title: 'Limits on non-EU economic migration — Impact assessment: consultation on
+      the points-based system immigration limits'
+    url: https://assets.publishing.service.gov.uk/media/5a7cc84740f0b6629523bc9c/ia-pbs-immigration-limit.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-permanent-and-fixed-period-exclusions-in-engla
+    title: 'Permanent and fixed-period exclusions in England: 2008 to 2009 — Main text:
+      SFR22/2010'
+    url: https://assets.publishing.service.gov.uk/media/5a7c546ded915d338141e190/sfr22-2010.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-localising-support-for-council-tax-transitiona
+    title: 'Localising support for Council Tax: transitional grant scheme'
+    url: https://assets.publishing.service.gov.uk/media/5a79a6fae5274a684690b1cc/trans_grant_scheme.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-localising-support-for-council-tax-transitiona-2
+    title: 'Localising support for Council Tax: transitional grant scheme — Localising
+      support for Council Tax: transitional grant scheme FAQs'
+    url: https://assets.publishing.service.gov.uk/media/5a78b44840f0b62b22cbc1e9/Transitional_grant_scheme_FAQs.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-localising-support-for-council-tax-transitiona-4
+    title: 'Localising support for Council Tax: transitional grant scheme — Actual allocations
+      of the transition grant for Council Tax reduction schemes'
+    url: https://assets.publishing.service.gov.uk/media/5a7b184bed915d3ed9062212/130515_Transitional_Funding_Schemes_Final.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-early-access-to-pension-savings-call-for-evide
+    title: Early access to pension savings — Call for evidence on early access to pension
+      savings (PDF 349KB)
+    url: https://assets.publishing.service.gov.uk/media/5a78fa0240f0b6324769ba40/call_for_evidence_on_early_access_to_pension_savings.PDF
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-housing-benefit-cpi-uprating-of-local-housing-
+    title: 'Housing Benefit: CPI uprating of Local Housing Allowance impact assessment
+      — Housing Benefit: CPI uprating of Local Housing Allowance'
+    url: https://assets.publishing.service.gov.uk/media/5a75c4d1e5274a545822e12e/hb-lha-cpi-uprating-wr2011-ia.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-support-after-a-suicide-a-guide-to-providing-l
+    title: 'Support after a suicide: a guide to providing local services'
+    url: https://assets.publishing.service.gov.uk/media/5a7f3db6ed915d74e6229407/support_after_a_suicide.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-the-republic-of-belarus-sanctions-eu-exit-amen
+    title: 'The Republic of Belarus (Sanctions) (EU Exit) (Amendment) Regulations 2022:
+      RPC Opinion — RPC Opinion: The Republic of Belarus (Sanctions) (EU Exit) (Amendment)
+      Regulations 2022'
+    url: https://assets.publishing.service.gov.uk/media/62f26c9de90e07714efcf38e/RPC-FCDO-5214_1__Belarus_Sanctions_IA_.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-fisheries-consultations-between-the-eu-norway--2
+    title: 'Fisheries: consultations between the EU, Norway and the UK from March 2021
+      to June 2024 — Agreed record of fisheries consultations between the European Union,
+      Norway and the United'
+    url: https://assets.publishing.service.gov.uk/media/6573270158fa300013b1416e/fisheries-agreed-record-EU-Norway-UK-2024.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-fisheries-consultations-between-the-eu-norway--6
+    title: 'Fisheries: consultations between the EU, Norway and the UK from March 2021
+      to June 2024 — Agreed record of fisheries consultations between the EU, Norway
+      and the UK for 2022'
+    url: https://assets.publishing.service.gov.uk/media/61b732338fa8f5037ffaa313/fisheries-trilateral-agreed-record-211210.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-fisheries-consultations-between-the-eu-norway--7
+    title: 'Fisheries: consultations between the EU, Norway and the UK from March 2021
+      to June 2024 — Agreed record of fisheries consultations between the EU, Norway
+      and the UK for 2021'
+    url: https://assets.publishing.service.gov.uk/media/6050ee728fa8f55d38ea3455/fisheries-agreed-record-trilateral-EU-NO-UK-210316.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-future-combat-air-system-digital-strategy
+    title: Future Combat Air System Digital Strategy
+    url: https://assets.publishing.service.gov.uk/media/6a622d6f243ee000f7127ee9/Future_Combat_Air_System_Digital_Strategy.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-air-accident-monthly-bulletin-march-2016-aaib-
+    title: Air accident monthly bulletin March 2016 — AAIB Bulletin 3/2016
+    url: https://assets.publishing.service.gov.uk/media/5a7f306de5274a2e87db456f/AAIB_Bulletin_3-2016.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-proposal-for-an-extension-north-of-the-hs2-nor
+    title: Proposal for an extension north of the HS2 Northolt tunnel — Proposal for
+      northern extension of Northolt tunnel SIFT report
+    url: https://assets.publishing.service.gov.uk/media/5a80315be5274a2e87db865b/C222-ATK-DS-REP-020-000034_P06_with_drawings.pdf
     source: gov_uk
     license: open
     topic: equipment_systems
