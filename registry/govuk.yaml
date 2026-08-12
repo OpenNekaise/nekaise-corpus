@@ -347075,14 +347075,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-public-health-outcomes-framework-indicator-upd-14
-    title: 'Public Health Outcomes Framework: indicator updates — Public Health Outcome
-      Framework: indicator updates, February 2019'
-    url: https://assets.publishing.service.gov.uk/media/5c4efb08ed915d7d361c862c/Table_of_PHOF_updates_February_2019.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-public-health-outcomes-framework-indicator-upd-18
     title: 'Public Health Outcomes Framework: indicator updates — Public Health Outcomes
       Framework: indicator updates, February 2018'
@@ -355426,4 +355418,219 @@ sources:
     source: gov_uk
     license: open
     topic: equipment_systems
+    format: pdf
+  - id: guk-providing-a-proportionate-assessment-of-the-im
+    title: Providing a proportionate assessment of the impact of regulation — RPC proportionality
+      guidance
+    url: https://assets.publishing.service.gov.uk/media/5cd3fa0de5274a3fce8274c6/Final_proportionality_.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-sugar-reduction-from-evidence-into-action-suga
+    title: 'Sugar reduction: from evidence into action — Sugar reduction: the evidence
+      for action'
+    url: https://assets.publishing.service.gov.uk/media/5a7f928c40f0b623026904b7/Sugar_reduction_The_evidence_for_action.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-sugar-reduction-from-evidence-into-action-suga-2
+    title: 'Sugar reduction: from evidence into action — Sugar reduction: the evidence
+      for action, annexe 1, background'
+    url: https://assets.publishing.service.gov.uk/media/5a8077fbe5274a2e8ab50520/Annexe_1._Background.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-sugar-reduction-from-evidence-into-action-suga-6
+    title: 'Sugar reduction: from evidence into action — Sugar reduction: the evidence
+      for action, annexe 5, food supply'
+    url: https://assets.publishing.service.gov.uk/media/5a809cc0ed915d74e33fb6c3/Annexe_5._Food_Supply.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-sugar-reduction-from-evidence-into-action-suga-7
+    title: 'Sugar reduction: from evidence into action — Sugar reduction: the evidence
+      for action, annexe 6, knowledge, education, training and tools'
+    url: https://assets.publishing.service.gov.uk/media/5a7f6dcfed915d74e33f65f9/Annexe_6._Knowledge__education__training_and_tools.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-sugar-reduction-from-evidence-into-action-suga-8
+    title: 'Sugar reduction: from evidence into action — Sugar reduction: the evidence
+      for action, annexe 7, local activity'
+    url: https://assets.publishing.service.gov.uk/media/5a80c8d5ed915d74e62306c6/Annexe_7._Local_activity.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-justice-data-lab-statistics-october-2020-justi
+    title: 'Justice Data Lab statistics: October 2020 — Justice Data Lab general annex'
+    url: https://assets.publishing.service.gov.uk/media/5f7ddb00e90e070de3071c15/justice-data-lab-general-annex-oct-2020.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-acrylamide-properties-and-incident-management-
+    title: 'Acrylamide: properties and incident management — Acrylamide: incident management'
+    url: https://assets.publishing.service.gov.uk/media/67a34afe567402152f553c6b/UKHSA_Incident_Management_Acrylamide.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-level-of-penalty-code-of-practice
+    title: 'Level of penalty: code of practice'
+    url: https://assets.publishing.service.gov.uk/media/63e5264e8fa8f5050f292697/Level_of_Penalty_Code_of_Practice_January_2023.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-level-of-penalty-code-of-practice-level-of-pen
+    title: 'Level of penalty: code of practice — Level of penalty: code of practice
+      (Albanian)'
+    url: https://assets.publishing.service.gov.uk/media/6463a8a20b72d3000c3445a8/Level_of_Penalty_Web_Accessible_Albanian.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-level-of-penalty-code-of-practice-level-of-pen-4
+    title: 'Level of penalty: code of practice — Level of penalty: code of practice
+      (Czech)'
+    url: https://assets.publishing.service.gov.uk/media/6463a7f9d3231e001332da95/Level_of_Penalty_Web_Accessible_Czech.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-level-of-penalty-code-of-practice-level-of-pen-5
+    title: 'Level of penalty: code of practice — Level of penalty: code of practice
+      (Danish)'
+    url: https://assets.publishing.service.gov.uk/media/6479d60b5f7bb7000c7fa3c5/Level_of_Penalty_Web_Accessible_Danish.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-level-of-penalty-code-of-practice-level-of-pen-8
+    title: 'Level of penalty: code of practice — Level of penalty: code of practice
+      (French)'
+    url: https://assets.publishing.service.gov.uk/media/6463a81ae140700013b6e044/Level_of_Penalty_Web_Accessible_French.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-level-of-penalty-code-of-practice-level-of-pen-9
+    title: 'Level of penalty: code of practice — Level of penalty: code of practice
+      (German)'
+    url: https://assets.publishing.service.gov.uk/media/6463a5bde140700013b6e03f/Level_of_Penalty_Web_Accessible_German.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-level-of-penalty-code-of-practice-level-of-pen-11
+    title: 'Level of penalty: code of practice — Level of penalty: code of practice
+      (Italian)'
+    url: https://assets.publishing.service.gov.uk/media/6479d634103ca6001303987c/Level_of_Penalty_Web_Accessible_Italian.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-level-of-penalty-code-of-practice-level-of-pen-12
+    title: 'Level of penalty: code of practice — Level of penalty: code of practice
+      (Lithuanian)'
+    url: https://assets.publishing.service.gov.uk/media/6479d644b32b9e0012a960fb/Level_of_Penalty_Web_Accessible_Lithuanian.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-level-of-penalty-code-of-practice-level-of-pen-15
+    title: 'Level of penalty: code of practice — Level of penalty: code of practice
+      (Romanian)'
+    url: https://assets.publishing.service.gov.uk/media/6479d678103ca6001303987e/Level_of_Penalty_Web_Accessible_Romanian.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-level-of-penalty-code-of-practice-level-of-pen-17
+    title: 'Level of penalty: code of practice — Level of penalty: code of practice
+      (Swedish)'
+    url: https://assets.publishing.service.gov.uk/media/6479d6c2103ca60013039880/Level_of_Penalty_Web_Accessible_Swedish.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-south-east-strategic-reservoir-option-project--2
+    title: 'South East Strategic Reservoir Option Project: Section 35 Direction, Planning
+      Act 2008 — SESRO Project Section 35 direction'
+    url: https://assets.publishing.service.gov.uk/media/6852cc6fff16d05c5e6aa6c1/SESRO_Project_Section_35_Direction.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-south-east-strategic-reservoir-option-project--3
+    title: 'South East Strategic Reservoir Option Project: Section 35 Direction, Planning
+      Act 2008 — Direction request for Thames Water Utilities Limited'
+    url: https://assets.publishing.service.gov.uk/media/6852cc7c99b009dcdcb73629/Direction_request_for_Thames_Water_Utilities_Limited.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-improving-outcomes-through-legal-support-grant
+    title: 'Improving outcomes through legal support grant: interim evaluation report'
+    url: https://assets.publishing.service.gov.uk/media/6a0dd76f40a9c699fd826efd/Improving_Outcomes_Through_Legal_Support_Grant__Interim_Report__WEB.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-space-programmes-2014-to-2015
+    title: National space programmes 2014 to 2015
+    url: https://assets.publishing.service.gov.uk/media/5a7e1595e5274a2e87daf713/National_Space_Programmes_2014_to_2015.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-national-space-programmes-2012-to-2013
+    title: National space programmes 2012 to 2013
+    url: https://assets.publishing.service.gov.uk/media/5a7c566d40f0b6321db3884b/national-space-programmes-nov-2012.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-health-outcomes-framework-february-2019
+    title: 'Public health outcomes framework: February 2019 data update — Public Health
+      Outcome Framework: indicator updates, 5 February 2019'
+    url: https://assets.publishing.service.gov.uk/media/5c4f0891ed915d7d4b57191f/Table_of_PHOF_updates_February_2019.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-an-inspection-of-juxtaposed-controls-may-june-
+    title: An inspection of juxtaposed controls May - June 2022
+    url: https://assets.publishing.service.gov.uk/media/634d4fc5d3bf7f618d8f88ae/An_inspection_of_juxtaposed_controls__May_June_2022.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-an-interim-evaluation-of-exam-boards-events-fo
+    title: 'An interim evaluation of exam boards'' events for teachers — New GCSEs,
+      AS and A levels: an interim evaluation of exam boards’ events for teachers'
+    url: https://assets.publishing.service.gov.uk/media/5a74850a40f0b616bcb17227/New_GCSEs_AS_and_A_levels_-_an_interim_evaluation_of_exam_boards_events_for_teachers.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-air-accident-monthly-bulletin-november-2017-aa
+    title: Air accident monthly bulletin November 2017 — AAIB Bulletin 11/2017
+    url: https://assets.publishing.service.gov.uk/media/5a81ce7040f0b6230269943a/AAIB_Bulletin_11-2017.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-brucella-canis-testing-faq-frequently-asked-br
+    title: Brucella canis testing FAQ — Frequently asked Brucella canis testing questions
+    url: https://assets.publishing.service.gov.uk/media/67976ff14686aac1586062fe/FAQ-Brucella-canis-v5b1.pdf
+    source: gov_uk
+    license: open
+    topic: construction
     format: pdf
