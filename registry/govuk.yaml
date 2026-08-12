@@ -198673,14 +198673,6 @@ sources:
     license: open
     topic: materials
     format: pdf
-  - id: guk-hs2-phase-one-impact-assessments-equality-impa
-    title: 'HS2 Phase One impact assessments: Equality impact assessment update (December
-      2015) — Equality impact assessment update for AP5 (December 2015)'
-    url: https://assets.publishing.service.gov.uk/media/5a80b8d5ed915d74e623011f/CS439A_Final_Routewide_EqIA_Update_web.pdf
-    source: gov_uk
-    license: open
-    topic: materials
-    format: pdf
   - id: guk-sr2010-no-3-discharge-to-surface-water-of-seco
     title: 'SR2010 No 3: discharge to surface water of secondary treated domestic sewage
       with a maximum daily volume between 5 and 20 cubic metres per day — SR2010 No
@@ -354307,4 +354299,338 @@ sources:
     source: gov_uk
     license: open
     topic: standards_protocols
+    format: pdf
+  - id: guk-the-commissioning-strategy-provider-survey-on-
+    title: 'The Commissioning Strategy: Provider survey on early implementation (RR704)
+      — The Commissioning Strategy: Provider survey on early implementation (RR704):
+      report'
+    url: https://assets.publishing.service.gov.uk/media/5a7cd039e5274a2c9a484441/rrep704.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-commissioning-strategy-provider-survey-on--2
+    title: 'The Commissioning Strategy: Provider survey on early implementation (RR704)
+      — The Commissioning Strategy: Provider survey on early implementation (RR704):
+      summary'
+    url: https://assets.publishing.service.gov.uk/media/5a79ffdfe5274a319e777208/704summ.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-marine-licensing-top-tips-practical-guidance-f
+    title: 'Marine Licensing Top Tips: Practical Guidance from the Ports Sandbox — Marine
+      Licensing Top Tips'
+    url: https://assets.publishing.service.gov.uk/media/69f46f16ab602a88957eefa2/20260408_Ports_Sandbox_Top_Tips_v3_Final.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-government-response-to-treasury-committee-busi
+    title: Government response to Treasury Committee business rates inquiry
+    url: https://assets.publishing.service.gov.uk/media/5e56605486650c53a20237af/TSC_response_26-02.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-brazil-economic-focus-march-2016
+    title: Brazil - economic focus March 2016
+    url: https://assets.publishing.service.gov.uk/media/5a750b2f40f0b6360e472e3a/Brazil_Economic_Focus_March_2016.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-national-strategy-space-environments-and-human
+    title: 'National strategy: space environments and human spaceflight — Consultation:
+      draft national strategy for space environments and human spaceflight'
+    url: https://assets.publishing.service.gov.uk/media/5a7e3c73ed915d74e6224ff1/Consultation_-_Draft_National_Strategy_for_Space_Environments_and_Human_Spaceflight.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-national-strategy-space-environments-and-human-2
+    title: 'National strategy: space environments and human spaceflight — Draft national
+      strategy: space environments and human spaceflight'
+    url: https://assets.publishing.service.gov.uk/media/5a7eccf040f0b6230268b9fa/Draft_National_Strategy_for_SE_and_HSF_v_4__for_publishing_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-landfill-sites-disposal-of-very-low-level-radi
+    title: 'Landfill sites: disposal of very low level radioactive waste — HPA-RPD-020:
+      radiological assessment of disposal of large quantities of very low level waste
+      in landfill sites'
+    url: https://assets.publishing.service.gov.uk/media/5a7d601640f0b60a7f1aa208/HpaRpd020.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-hs2-equality-impact-assessment-update-camden-t
+    title: 'HS2 Equality impact assessment update: Camden Town and Washwood Heath to
+      Curzon Street — Equality impact assessment update'
+    url: https://assets.publishing.service.gov.uk/media/5a7f4550ed915d74e33f5652/CS439A_Final_Routewide_EqIA_Update_web.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-hs2-equality-impact-assessment-update-camden-t-2
+    title: 'HS2 Equality impact assessment update: Camden Town and Washwood Heath to
+      Curzon Street — Summary document'
+    url: https://assets.publishing.service.gov.uk/media/5a815a7c40f0b62302696d8c/CS439D_Routewide_EqIA_summary_-_ONLINE.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-hs2-equality-impact-assessment-update-camden-t-4
+    title: 'HS2 Equality impact assessment update: Camden Town and Washwood Heath to
+      Curzon Street — Deposit locations'
+    url: https://assets.publishing.service.gov.uk/media/5a759147ed915d506ee7fd1e/deposit_list_V2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-hs2-equality-impact-assessment-update-camden-t-5
+    title: 'HS2 Equality impact assessment update: Camden Town and Washwood Heath to
+      Curzon Street — Easy Read guide to the EqIA - London Corridor'
+    url: https://assets.publishing.service.gov.uk/media/5a80d24ae5274a2e87dbc027/CS439F1_Easy_Read_London_Corridor_web_-_Copy.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-hs2-equality-impact-assessment-update-camden-t-6
+    title: 'HS2 Equality impact assessment update: Camden Town and Washwood Heath to
+      Curzon Street — Easy Read guide to the EqIA - Country South'
+    url: https://assets.publishing.service.gov.uk/media/5a80e879ed915d74e6231206/CS439F3_Easy_Read_Country_South_web.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-hs2-equality-impact-assessment-update-camden-t-7
+    title: 'HS2 Equality impact assessment update: Camden Town and Washwood Heath to
+      Curzon Street — Easy Read guide to the EqIA - Country North'
+    url: https://assets.publishing.service.gov.uk/media/5a8085b140f0b62305b8ba3f/CS439F2_Easy_Read_Country_North_web.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-hs2-equality-impact-assessment-update-camden-t-8
+    title: 'HS2 Equality impact assessment update: Camden Town and Washwood Heath to
+      Curzon Street — Easy Read guide to the EqIA - West Midlands'
+    url: https://assets.publishing.service.gov.uk/media/5a80f262ed915d74e33fd4ca/CS439F4_Easy_Read_West_Midlands_web.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-hs2-equality-impact-assessment-update-camden-t-9
+    title: 'HS2 Equality impact assessment update: Camden Town and Washwood Heath to
+      Curzon Street — Easy Read guide to the EqIA - Washwood Heath to Curzon Street'
+    url: https://assets.publishing.service.gov.uk/media/5a806a8a40f0b62305b8b05d/CS439F5_Easy_Read_Washwood_to_Curzon_web.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-hs2-equality-impact-assessment-update-camden-t-10
+    title: 'HS2 Equality impact assessment update: Camden Town and Washwood Heath to
+      Curzon Street — EQIA summary of responses report'
+    url: https://assets.publishing.service.gov.uk/media/5a809111e5274a2e8ab50e16/EQIA_summary_of_responses_CFA2_to_26.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-hs2-equality-impact-assessment-update-camden-t-11
+    title: 'HS2 Equality impact assessment update: Camden Town and Washwood Heath to
+      Curzon Street — EQIA Updates - Response to Consultations'
+    url: https://assets.publishing.service.gov.uk/media/5a7f87aded915d74e622b06b/EQIA_Updates_-_Response_to_Consultations.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-levelling-up-round-2-thematic-and-geographic-a
+    title: 'Levelling Up Round 2: thematic and geographic analysis'
+    url: https://assets.publishing.service.gov.uk/media/646b89b58a71840012ae4ef6/Levelling_Up_Fund_Round_2_-_thematic_and_geographic_analysis.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-cycling-and-walking-evidence-review
+    title: Cycling and walking evidence review
+    url: https://assets.publishing.service.gov.uk/media/5ffb3fb9e90e07639fd8d496/Cycling_and_Walking_Evidence_Review_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-cycling-and-walking-evidence-review-cycling-an
+    title: 'Cycling and walking evidence review — Cycling and walking evidence review:
+      addendum 2016 to 2019'
+    url: https://assets.publishing.service.gov.uk/media/5ffb402be90e07639fd8d497/Cycling_and_Walking_Evidence_Review_Report_addendum.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-using-disability-data-part-1-data-making-disab
+    title: 'Using disability data — Part 1 (data): Making disability data work for you:
+      a community data toolkit'
+    url: https://assets.publishing.service.gov.uk/media/5a7e418ee5274a2e8ab46d6d/Comm-Data-Toolkit-P1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-regulatory-fees-for-e-cigarettes-regulatory-fe
+    title: 'Regulatory fees for e-cigarettes — Regulatory fees for e-cigarettes: consultation
+      document'
+    url: https://assets.publishing.service.gov.uk/media/5a817db8e5274a2e87dbdea0/Regulatory_fees_for_e-cigarettes_-_consultation_document.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-regulatory-fees-for-e-cigarettes-regulatory-fe-2
+    title: 'Regulatory fees for e-cigarettes — Regulatory fees for e-cigarettes: regulatory
+      triage assessment'
+    url: https://assets.publishing.service.gov.uk/media/5a7f35d6e5274a2e8ab4acb3/Regulatory_fees_for_e-cigarettes_-_regulatory_triage_assessment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-regulatory-fees-for-e-cigarettes-government-re
+    title: Regulatory fees for e-cigarettes — Government response to the consultation
+      on statutory fees for producers of e-cigarette products
+    url: https://assets.publishing.service.gov.uk/media/5a80c529ed915d74e33fc4ee/160415_Government_response_to_the_consultation_on_e-cigarette_fees_-FINA...__2_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-regulatory-fees-for-e-cigarettes-fees-for-e-ci
+    title: Regulatory fees for e-cigarettes — Fees for e-cigarette notifications
+    url: https://assets.publishing.service.gov.uk/media/5a80086640f0b62305b88c3e/E-cigarette_IA_Final_version.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-southern-rail-link-to-heathrow-market-sounding
+    title: 'Southern Rail Link to Heathrow: market sounding'
+    url: https://assets.publishing.service.gov.uk/media/6004ac5cd3bf7f33b78097d7/southern-rail-link-to-heathrow-market-sounding.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-child-support-agency-quarterly-summary-statist-17
+    title: 'Child Support Agency quarterly summary statistics: December 2013 — Child
+      Support Agency quarterly summary of statistics first release December 2013'
+    url: https://assets.publishing.service.gov.uk/media/5a7db9aded915d2ac884d2cc/CSA_First_Release_dec13.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-protecting-our-water-soil-and-air
+    title: Protecting our water, soil and air
+    url: https://assets.publishing.service.gov.uk/media/5a7cbb27ed915d6822362336/pb13558-cogap-131223.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-signal-controlled-roundabouts-ltn-1-09-ltn-1-0
+    title: Signal controlled roundabouts (LTN 1/09) — LTN 1/09 Signal controlled roundabouts
+    url: https://assets.publishing.service.gov.uk/media/5e81b669e90e0706f8976d09/ltn-1-09_Signal_controlled_roundabouts.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-olive-oil-updated-eu-marketing-standards-propo
+    title: 'Olive oil updated EU marketing standards: proposed enforcement arrangements
+      — Summary of responses'
+    url: https://assets.publishing.service.gov.uk/media/5a74fbca40f0b6399b2afbd8/olive-oil-sum-resp.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-transport-hazard-summary-volcanic-eruptions
+    title: 'Transport hazard summary: volcanic eruptions'
+    url: https://assets.publishing.service.gov.uk/media/69369fd770840a535475d3ee/transport-hazard-summary-volcanic-eruptions.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-making-automatic-enrolment-work-a-review-for-t
+    title: Making automatic enrolment work – a  review for the Department for Work and
+      Pensions
+    url: https://assets.publishing.service.gov.uk/media/5a759f05e5274a545822ceec/cp-oct10-full-document.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-making-automatic-enrolment-work-a-review-for-t-3
+    title: Making automatic enrolment work – a  review for the Department for Work and
+      Pensions — Executive summary and summary of recommendations – Making automatic
+      enrolment work – a  revie
+    url: https://assets.publishing.service.gov.uk/media/5a74ee76e5274a3cb2868577/cp-oct10-exec-summ.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-making-automatic-enrolment-work-a-review-for-t-4
+    title: "Making automatic enrolment work – a  review for the Department for Work\
+      \ and Pensions — Making automatic enrolment work â\x80\x93 Chapter 1  Background\
+      \ to the review"
+    url: https://assets.publishing.service.gov.uk/media/5a7c9b4fe5274a29d8363ac6/cp-oct10-chap01.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-making-automatic-enrolment-work-a-review-for-t-5
+    title: "Making automatic enrolment work – a  review for the Department for Work\
+      \ and Pensions — Making automatic enrolment work â\x80\x93 Chapter 2  Individuals"
+    url: https://assets.publishing.service.gov.uk/media/5a7c82a1e5274a2674eab24a/cp-oct10-chap02.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-making-automatic-enrolment-work-a-review-for-t-7
+    title: "Making automatic enrolment work – a  review for the Department for Work\
+      \ and Pensions — Making automatic enrolment work â\x80\x93 Chapter 4 The role\
+      \  of NEST in the pensions market under "
+    url: https://assets.publishing.service.gov.uk/media/5a7c193640f0b61a825d670c/cp-oct10-chap04.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-making-automatic-enrolment-work-a-review-for-t-8
+    title: "Making automatic enrolment work – a  review for the Department for Work\
+      \ and Pensions — Making automatic enrolment work â\x80\x93 Chapter 5 Target  group"
+    url: https://assets.publishing.service.gov.uk/media/5a74e73de5274a59fa715dc7/cp-oct10-chap05.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-making-automatic-enrolment-work-a-review-for-t-10
+    title: "Making automatic enrolment work – a  review for the Department for Work\
+      \ and Pensions — Making automatic enrolment work â\x80\x93 Chapter 7 Private pension\
+      \ provision under changes to the "
+    url: https://assets.publishing.service.gov.uk/media/5a7baae7ed915d1311060b9d/cp-oct10-chap07.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-making-automatic-enrolment-work-a-review-for-t-11
+    title: "Making automatic enrolment work – a  review for the Department for Work\
+      \ and Pensions — Making automatic enrolment work â\x80\x93 Chapter 8 Trade-offs\
+      \  and recommendations"
+    url: https://assets.publishing.service.gov.uk/media/5a7b8cb6ed915d414762119a/cp-oct10-chap08.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-making-automatic-enrolment-work-a-review-for-t-14
+    title: "Making automatic enrolment work – a  review for the Department for Work\
+      \ and Pensions — Making automatic enrolment work â\x80\x93 Annex C"
+    url: https://assets.publishing.service.gov.uk/media/5a7b8c43e5274a7318b8f5f9/cp-oct10-annex-c.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-research-and-development-r-d-pipeline-the-r-d-
+    title: Research and development (R&D) pipeline — The R&D Pipeline
+    url: https://assets.publishing.service.gov.uk/media/60f819cce90e0764d0ab7dd5/r_d-pipeline-report.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
     format: pdf
