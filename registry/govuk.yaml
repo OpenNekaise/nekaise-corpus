@@ -356964,14 +356964,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-english-business-survey-statistical-first-rele-2
-    title: 'English Business Survey — Statistical First Release English Business Survey:
-      Q2 2012'
-    url: https://assets.publishing.service.gov.uk/media/5a79a2d7ed915d0422069ecb/12-p159a-english-business-survey-quarter-2.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-english-business-survey-english-business-surve
     title: 'English Business Survey — English Business Survey: User Guide for reading
       the tables'
@@ -369924,4 +369916,122 @@ sources:
     source: gov_uk
     license: open
     topic: equipment_systems
+    format: pdf
+  - id: guk-easter-1998-floods-review-1998-easter-floods-f
+    title: 'Easter 1998 floods: review — 1998 Easter Floods: Final assessment by the
+      Independent Review Team – Volume 1'
+    url: https://assets.publishing.service.gov.uk/media/5a7b83f5e5274a7202e17aae/geho0807bnay-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-easter-1998-floods-review-1998-easter-floods-f-2
+    title: 'Easter 1998 floods: review — 1998 Easter Floods: Final assessment by the
+      Independent Review Team – Volume 2'
+    url: https://assets.publishing.service.gov.uk/media/5a7c3b10e5274a1f5cc76ae6/geho0807bnaz-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-small-business-survey-2014-businesses-with-emp
+    title: 'Small Business Survey 2014: businesses with employees — Small Business Survey
+      2014: employers - BIS research paper 214'
+    url: https://assets.publishing.service.gov.uk/media/5a7563f4e5274a467f7e426c/bis-15-151-small-business-survey-2014-sme-employers_v1.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-adoption-of-rooftop-solar-photovoltaic-panels-
+    title: Adoption of rooftop solar photovoltaic panels in the UK — UK rooftop solar
+      behavioural research
+    url: https://assets.publishing.service.gov.uk/media/60edea3b8fa8f50c7f08ae1e/uk-rooftop-solar-panel-behavioural-research.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-local-area-walking-and-cycling-in-england-2011
+    title: 'Local area walking and cycling in England: 2011 to 2012 — Local area walking
+      and cycling in England: 2011 to 2012 report'
+    url: https://assets.publishing.service.gov.uk/media/5a748b56e5274a7f9c586d7a/local-area-walking-and-cycling-england-2011-12.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-family-court-statistics-quarterly-april-to-jun-3
+    title: 'Family Court Statistics Quarterly: April to June 2019 — Guide to Family
+      Court Statistics'
+    url: https://assets.publishing.service.gov.uk/media/5d8b4632e5274a08c8cc0d03/Guide_to_Family_Court_Statistics.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-baseline-profit-rate-activities-review-baselin
+    title: Baseline Profit Rate Activities Review — Baseline Profit Rate Activities
+      Review consultation
+    url: https://assets.publishing.service.gov.uk/media/649302645f7bb700127fae44/BPR_Activities_Review_consultation_June_2023.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-baseline-profit-rate-activities-review-bpr-act
+    title: Baseline Profit Rate Activities Review — BPR activites review consultation
+      responses
+    url: https://assets.publishing.service.gov.uk/media/651e81a57309a1000db0a874/BPR_activites_review_consultation_responses.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-efficiency-by-design-making-public-bodies-more
+    title: 'Efficiency by Design: making public bodies more efficient — Efficiency by
+      Design: stories of best practice in public bodies'
+    url: https://assets.publishing.service.gov.uk/media/5a7c372ded915d7d70d1d59f/pcf_efficiency_report_10_Jan.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-a-review-into-the-development-and-use-of-suppl
+    title: A review into the development and use of Supply Chain Finance in government
+      — A report by Nigel Boardman into the Development and Use of Supply Chain Finance
+      (and associated scheme
+    url: https://assets.publishing.service.gov.uk/media/61430bc6d3bf7f05b5a9035c/A_report_by_Nigel_Boardman_into_the_Development_and_Use_of_Supply_Chain_Finance__and_associated_schemes__related_to_Greensill_Capital_in_Government_-_Recommendations_and_Suggestions.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-probation-service-management-of-young-adults-p
+    title: Probation Service Management of Young Adults Policy Framework
+    url: https://assets.publishing.service.gov.uk/media/61fba1478fa8f5388a7ccd0f/probation-service-management-young-adults.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-leptospirosis-enhanced-surveillance-protocol
+    title: 'Leptospirosis: enhanced surveillance protocol'
+    url: https://assets.publishing.service.gov.uk/media/5a819cba40f0b62305b8fe54/Leptospirosis_Enhanced_Surveillance_Protocol.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-mgn-83-specifications-for-hyperbaric-evacuatio
+    title: MGN 83 Specifications for hyperbaric evacuation systems — MGN 83 Guidelines
+      and specifications for hyperbaric evacuation systems
+    url: https://assets.publishing.service.gov.uk/media/5a7c2ec4e5274a1f5cc76549/mgn083.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-english-business-survey-quarterly-statistical-
+    title: 'English business survey quarterly statistical release: quarter 2 2012'
+    url: https://assets.publishing.service.gov.uk/media/5a79bc3aed915d042206aa68/12-P159A-English-Business-Survey-Quarter-2.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-evidence-gathering-hybrid-solar-photovoltaic-t
+    title: Evidence gathering - Hybrid solar photovoltaic thermal panels (PVT) — Hybrid
+      Solar Photovoltaic Thermal Panels report
+    url: https://assets.publishing.service.gov.uk/media/5a7f2bf240f0b62305b85843/Solar_PVT_FINAL__1_.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
     format: pdf
