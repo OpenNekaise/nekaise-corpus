@@ -361494,14 +361494,6 @@ sources:
     license: open
     topic: standards_protocols
     format: pdf
-  - id: guk-em-supplementing-eu-regulation-2019-1009-c-202
-    title: EM supplementing EU regulation 2019/1009 (C(2022)1437) — EM on EU regulation
-      2019/1009
-    url: https://assets.publishing.service.gov.uk/media/62b08d338fa8f53577129748/EM_1437_1422_2882_-_signed_version.pdf
-    source: gov_uk
-    license: open
-    topic: standards_protocols
-    format: pdf
   - id: guk-air-accident-monthly-bulletin-june-2013
     title: Air accident monthly bulletin June 2013
     url: https://assets.publishing.service.gov.uk/media/5a7e450640f0b62305b81e71/AAIB_Bulletin_6-2013_v2.pdf
@@ -380013,6 +380005,403 @@ sources:
   - id: guk-ghana-civil-service-reform-programme-ev546s
     title: Ghana Civil Service Reform Programme (ev546s)
     url: https://assets.publishing.service.gov.uk/media/5a790838e5274a3864fd5d86/ev546s.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-community-mental-health-survey-2016
+    title: Community mental health survey 2016
+    url: https://assets.publishing.service.gov.uk/media/5a74b1a440f0b619c8659ab2/MH16_statistical_release.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-wetland-functional-mechanisms-a-synopsis-of-we
+    title: 'Wetland functional mechanisms: a synopsis of Wetland Water Supply Mechanisms
+      (WETMECS) — Wetland functional mechanisms: a synopsis of WETMECs'
+    url: https://assets.publishing.service.gov.uk/media/5a74e8afed915d3c7d528e38/scho0309bpof-e-e.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-tax-opinions-panel-survey-2012
+    title: Tax Opinions Panel Survey 2012
+    url: https://assets.publishing.service.gov.uk/media/5a7dbc72ed915d2ac884d3d5/report262.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-future-of-cities-uk-china-city-relationships-u
+    title: 'Future of cities: UK-China city relationships — UK-China city region partnerships
+      and network development'
+    url: https://assets.publishing.service.gov.uk/media/5a80be0f40f0b623026953fa/gs-16-12-future-of-cities-uk-china-relationship.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-future-of-cities-uk-china-city-relationships-c
+    title: 'Future of cities: UK-China city relationships — ‘City diplomacy’ and twinning:
+      lessons from the UK, China and globally'
+    url: https://assets.publishing.service.gov.uk/media/5a7f583240f0b62305b86931/gs-16-13-future-of-cities-diplomacy-uk-china-twinning.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-proposed-revision-of-fees-for-statutory-servic-2
+    title: Proposed revision of fees for statutory services delivered by the Animal
+      Health and Veterinary Laboratories Agency (AHVLA) — Consultation document
+    url: https://assets.publishing.service.gov.uk/media/5a7480e8ed915d0e8e398b87/ahvla-fee-consult-doc.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-proposed-revision-of-fees-for-statutory-servic-4
+    title: Proposed revision of fees for statutory services delivered by the Animal
+      Health and Veterinary Laboratories Agency (AHVLA) — Consultee list
+    url: https://assets.publishing.service.gov.uk/media/5a78995440f0b63247698a89/ahvla-fee-consult-list.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-proposed-revision-of-fees-for-statutory-servic-5
+    title: Proposed revision of fees for statutory services delivered by the Animal
+      Health and Veterinary Laboratories Agency (AHVLA) — Annex A – The Bovine Embryo
+      (Collection, Production and
+    url: https://assets.publishing.service.gov.uk/media/5a79e37340f0b66d161aee11/ahvla-fee-consult-annexa-bovine-embryos-ia.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-proposed-revision-of-fees-for-statutory-servic-6
+    title: 'Proposed revision of fees for statutory services delivered by the Animal
+      Health and Veterinary Laboratories Agency (AHVLA) — Annex B – Revision of Fees:
+      Amendment of the Bovine Sem'
+    url: https://assets.publishing.service.gov.uk/media/5a78b612ed915d07d35b1d3e/ahvla-fee-consult-annexb-bovine-semen-ia.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-proposed-revision-of-fees-for-statutory-servic-7
+    title: 'Proposed revision of fees for statutory services delivered by the Animal
+      Health and Veterinary Laboratories Agency (AHVLA) — Annex C – Revision of Fees:
+      Amendment of the Porcine Se'
+    url: https://assets.publishing.service.gov.uk/media/5a78e707ed915d0422066407/ahvla-fee-consult-annexc-porcine-semen-ia.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-proposed-revision-of-fees-for-statutory-servic-9
+    title: Proposed revision of fees for statutory services delivered by the Animal
+      Health and Veterinary Laboratories Agency (AHVLA) — Annex E – Revision of Fees
+      for Salmonella National Cont
+    url: https://assets.publishing.service.gov.uk/media/5a78e3c7ed915d07d35b33aa/ahvla-fee-consult-annexe-salmonella-ncp-ia.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-proposed-revision-of-fees-for-statutory-servic-10
+    title: Proposed revision of fees for statutory services delivered by the Animal
+      Health and Veterinary Laboratories Agency (AHVLA) — Annex F – Regulation 882/2004
+      (EC) on official controls
+    url: https://assets.publishing.service.gov.uk/media/5a78ed7840f0b62b22cbde91/ahvla-fee-consult-annexf-bip-ia.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-proposed-revision-of-fees-for-statutory-servic-11
+    title: Proposed revision of fees for statutory services delivered by the Animal
+      Health and Veterinary Laboratories Agency (AHVLA) — Annex G – Introduction of
+      a full cost recovery charging
+    url: https://assets.publishing.service.gov.uk/media/5a79a32740f0b63d72fc757e/ahvla-fee-consult-annexg-cites-ia.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-implementation-of-the-sustainable-drainage-pro
+    title: 'Implementation of the Sustainable Drainage Provisions in Schedule 3 to the
+      Flood and Water Management Act (2010) — Annex A: Draft National Standards for
+      Sustainable Drainage'
+    url: https://assets.publishing.service.gov.uk/media/5a79d1a240f0b66d161ae5d2/suds-consult-annexa-national-standards-111221.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-implementation-of-the-sustainable-drainage-pro-2
+    title: Implementation of the Sustainable Drainage Provisions in Schedule 3 to the
+      Flood and Water Management Act (2010) — Consultation letter
+    url: https://assets.publishing.service.gov.uk/media/5a797b6aed915d0422068d05/suds-consult-letter-111220.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-implementation-of-the-sustainable-drainage-pro-4
+    title: 'Implementation of the Sustainable Drainage Provisions in Schedule 3 to the
+      Flood and Water Management Act (2010) — Annex B: Draft Sustainable Drainage (Approval
+      and Adoption) (Engl'
+    url: https://assets.publishing.service.gov.uk/media/5a79c00de5274a18ba50e8d2/suds-consult-annexb-order-111220.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-implementation-of-the-sustainable-drainage-pro-5
+    title: 'Implementation of the Sustainable Drainage Provisions in Schedule 3 to the
+      Flood and Water Management Act (2010) — Annex C: Draft Sustainable Drainage (Enforcement)
+      (England) Order'
+    url: https://assets.publishing.service.gov.uk/media/5a789cf3e5274a2acd1886d3/suds-consult-annexc-enforcement-111220.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-implementation-of-the-sustainable-drainage-pro-6
+    title: 'Implementation of the Sustainable Drainage Provisions in Schedule 3 to the
+      Flood and Water Management Act (2010) — Annex D: Draft Sustainable Drainage (Procedure)
+      (England) Regulat'
+    url: https://assets.publishing.service.gov.uk/media/5a78fce840f0b676f4a7cf9e/suds-consult-annexd-regs-111220.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-implementation-of-the-sustainable-drainage-pro-7
+    title: 'Implementation of the Sustainable Drainage Provisions in Schedule 3 to the
+      Flood and Water Management Act (2010) — Annex E: Draft Sustainable Drainage (Appeals)
+      (England) Regulatio'
+    url: https://assets.publishing.service.gov.uk/media/5a78c7c0ed915d042206548b/suds-consult-annexe-appeals-reg-111220.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-implementation-of-the-sustainable-drainage-pro-8
+    title: 'Implementation of the Sustainable Drainage Provisions in Schedule 3 to the
+      Flood and Water Management Act (2010) — Annex F: Impact Assessment'
+    url: https://assets.publishing.service.gov.uk/media/5a78ca2bed915d07d35b272a/suds-consult-annexf-ia-111220.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-implementation-of-the-sustainable-drainage-pro-9
+    title: 'Implementation of the Sustainable Drainage Provisions in Schedule 3 to the
+      Flood and Water Management Act (2010) — Annex F: Impact Assessment (Annex 1)'
+    url: https://assets.publishing.service.gov.uk/media/5a78f914ed915d07d35b3dec/suds-consult-annexf-ia-annex1-111220.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-implementation-of-the-sustainable-drainage-pro-10
+    title: 'Implementation of the Sustainable Drainage Provisions in Schedule 3 to the
+      Flood and Water Management Act (2010) — Annex G: Full list of Consultation Questions'
+    url: https://assets.publishing.service.gov.uk/media/5a79e115e5274a18ba50f7b1/suds-consult-annexg-consultation-questions-111220.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-implementation-of-the-sustainable-drainage-pro-11
+    title: 'Implementation of the Sustainable Drainage Provisions in Schedule 3 to the
+      Flood and Water Management Act (2010) — Annex H: List of consultees'
+    url: https://assets.publishing.service.gov.uk/media/5a7594d8ed915d6faf2b41c2/suds-consult-annexh-consultee-list-111220.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-implementation-of-the-sustainable-drainage-pro-13
+    title: 'Implementation of the Sustainable Drainage Provisions in Schedule 3 to the
+      Flood and Water Management Act (2010) — Annex J: Glossary'
+    url: https://assets.publishing.service.gov.uk/media/5a758a80e5274a4f4677ef0a/suds-consult-annexj-glossary-111220.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-implementation-of-the-sustainable-drainage-pro-14
+    title: 'Implementation of the Sustainable Drainage Provisions in Schedule 3 to the
+      Flood and Water Management Act (2010) — Annex K: Regulatory Framework'
+    url: https://assets.publishing.service.gov.uk/media/5a749e8b40f0b61938c7eedf/suds-consult-annexk-regulatory-framework-111220.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-implementation-of-the-sustainable-drainage-pro-15
+    title: Implementation of the Sustainable Drainage Provisions in Schedule 3 to the
+      Flood and Water Management Act (2010) — Frequently Asked Questions
+    url: https://assets.publishing.service.gov.uk/media/5a7996d340f0b63d72fc6fd7/suds-consult-faqs-111220.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-implementation-of-the-sustainable-drainage-pro-16
+    title: Implementation of the Sustainable Drainage Provisions in Schedule 3 to the
+      Flood and Water Management Act (2010) — Summary of responses
+    url: https://assets.publishing.service.gov.uk/media/5a7a0a4c40f0b66eab9994d9/suds-consult-sum-resp.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-participation-in-education-training-and-employ-2
+    title: 'Participation in education, training and employment: 2015 — Technical document:
+      SFR22/2016'
+    url: https://assets.publishing.service.gov.uk/media/5a804864e5274a2e87db8eac/Technical_Document_SFR22_2016.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-neet-statistics-quarterly-brief-july-to-septem
+    title: 'NEET statistics quarterly brief: July to September 2016 — Main text: SFR59/2016'
+    url: https://assets.publishing.service.gov.uk/media/5a80bf82e5274a2e8ab51efb/SFR59-2016_NEET_Statistics_Quarterly_Brief_Q3-2016.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-neet-statistics-quarterly-brief-july-to-septem-2
+    title: 'NEET statistics quarterly brief: July to September 2016 — Technical Document:
+      SFR59/2016'
+    url: https://assets.publishing.service.gov.uk/media/5a7f5b94e5274a2e87db55e4/SFR59-2016_NEET_Statistics_Quarterly_Brief_-_Technical_Document.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-quarterly-qualifying-defence-contract-statisti-10
+    title: 'Quarterly qualifying defence contract statistics: Q2 2023/24'
+    url: https://assets.publishing.service.gov.uk/media/6564a70562180b000dce823c/Q2_2023-24_Quarterly_statistical_bulletin.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-a-new-approach-to-fighting-crime
+    title: A new approach to fighting crime
+    url: https://assets.publishing.service.gov.uk/media/5a75a233ed915d506ee80510/new-approach-fighting-crime.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-em-on-eu-regulation-2019-1009-8838-22-c-2022-2
+    title: EM on EU regulation 2019/1009 (8838/22, C(2022)2882) — EM on  EU regulation
+      2019/1009
+    url: https://assets.publishing.service.gov.uk/media/62b1b42e8fa8f53572e3dada/EM_1437_1422_2882_-_signed_version__1_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-mental-health-act-2007-response-to-health-sele
+    title: 'Mental Health Act 2007: response to Health Select Committee — Post-legislative
+      secrutiny of the Mental Health Act 2007: response to the report of the Health
+      Committee of the House '
+    url: https://assets.publishing.service.gov.uk/media/5a7ca9b0e5274a2f304ef4fd/33736_Cm_8735_Web_Accessible.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-industrial-injuries-benefits-simplification-eq
+    title: Industrial injuries benefits simplification – equality impact assessment
+    url: https://assets.publishing.service.gov.uk/media/5a7ce695ed915d7c849adec3/eia-industrial-injuries-benefit-simplification-wr2011.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-water-industry-changing-the-specified-infrastr
+    title: 'Water Industry: changing the Specified Infrastructure Projects Regulations
+      — Summary of responses and next steps'
+    url: https://assets.publishing.service.gov.uk/media/5a74e420e5274a3cb2868032/sip-regs-consult-sum-resp.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-tay-cities-region-deal
+    title: Tay Cities Region Deal
+    url: https://assets.publishing.service.gov.uk/media/5fda6bdd8fa8f54d6249eaef/Tay_Cities_Deal_Doc_Dec14_FULL_SIGNATURES.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-hs2-phase-one-safeguarding-consultation-hs2-ph
+    title: HS2 Phase One safeguarding consultation — HS2 Phase One safeguarding consultation
+      - Summary of responses (July 2013)
+    url: https://assets.publishing.service.gov.uk/media/5a7d569be5274a33be64894a/Phase_One_Safeguarding_Consultation_Summary.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-hs2-phase-one-safeguarding-consultation-the-go
+    title: HS2 Phase One safeguarding consultation — The Government response to the
+      consultation on safeguarding HS2 London – West Midlands
+    url: https://assets.publishing.service.gov.uk/media/5a7eb18de5274a2e87db14eb/Government_response_to_the_Consultation_on_Safeguarding.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-bovine-tb-new-control-measures-tackling-transm
+    title: 'Bovine TB: new control measures, tackling transmission between cattle herds
+      — Summary of responses and way forward'
+    url: https://assets.publishing.service.gov.uk/media/5a7e3fbded915d74e33f1067/bovine-tb-sum-resp.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-dental-reform-next-step-dental-contract-reform
+    title: 'Dental reform: next step — Dental contract reform: prototypes'
+    url: https://assets.publishing.service.gov.uk/media/5a7cfcdf40f0b60a7f1a9961/Reform_Document.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-gate-review-2-delivery-strategy
+    title: 'Gate Review 2: Delivery Strategy'
+    url: https://assets.publishing.service.gov.uk/media/60f018b3e90e0764ce826745/1174-APS-2-CCS0521656666-001_IPA_Gateway_Web1.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-what-methods-work-for-evaluating-the-impact-of
+    title: What methods work for evaluating the impact of public investments in Research,
+      Development and Innovation — What methods work for evaluating the impact of public
+      investments in RD&
+    url: https://assets.publishing.service.gov.uk/media/66f56baa30536cb9274827fe/what_works_rdi_evaluations_report.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-what-methods-work-for-evaluating-the-impact-of-2
+    title: What methods work for evaluating the impact of public investments in Research,
+      Development and Innovation — What methods work for evaluating the impact of public
+      investment in RD&I
+    url: https://assets.publishing.service.gov.uk/media/66f56bb430536cb9274827ff/what_works_rdi_evaluations_annex.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-liverpool-care-pathway-review-response-to-reco-2
+    title: 'Liverpool Care Pathway review: response to recommendations — Commitment
+      statements'
+    url: https://assets.publishing.service.gov.uk/media/5a7e13fced915d74e33efe9c/Commitment_statements.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-liverpool-care-pathway-review-response-to-reco-3
+    title: 'Liverpool Care Pathway review: response to recommendations — Summary of
+      engagement on proposed outcomes and guiding principles for care in the last days
+      of life'
+    url: https://assets.publishing.service.gov.uk/media/5a7ddbe7e5274a5eaea66c3d/Engagement_summary.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-implementing-evidence-based-programmes-in-chil
+    title: 'Implementing evidence-based programmes in children''s services — Implementing
+      evidence-based programmes in children''s services: key issues for success'
+    url: https://assets.publishing.service.gov.uk/media/5a7afe0c40f0b66eab99e24c/DFE-RR245.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-hmrc-customer-service-survey-2007-results-hmrc
+    title: 'HMRC Customer Service Survey 2007: results — HMRC Customer Service Survey
+      2007'
+    url: https://assets.publishing.service.gov.uk/media/5a7d7ff1e5274a676d5326ed/customer-service-survey-2007.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-transaction-monitoring-for-hmg-online-service-
+    title: Transaction monitoring for HMG online service providers
+    url: https://assets.publishing.service.gov.uk/media/5a7c361b40f0b674ed20f917/GPG_53_Transaction_Monitoring_issue_1-1_April_2013.pdf
     source: gov_uk
     license: open
     topic: equipment_systems
