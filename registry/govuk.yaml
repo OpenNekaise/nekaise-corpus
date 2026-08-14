@@ -196404,14 +196404,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-latest-statistics-on-milk-utilisation-by-dairi
-    title: Latest statistics on milk utilisation by dairies - official statistics —
-      Milk utilisation – official statistics notice (data to October 2017)
-    url: https://assets.publishing.service.gov.uk/media/62724726e90e0746c4313793/milkutil-statsnotice-07dec17.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-the-national-reference-test-in-2021-national-r
     title: The National Reference Test in 2021 — National Reference Test Results Digest
       2021
@@ -312610,14 +312602,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-historical-official-statistics-notices-on-uk-m
-    title: Historical official statistics notices on UK milk prices and composition
-      of milk, 2017 — Figures to March 2017 (published 11 May 2017)
-    url: https://assets.publishing.service.gov.uk/media/5a75898be5274a545822c484/milkutil-statsnotice-11may17.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-justice-data-lab-statistics-january-2017
     title: 'Justice Data Lab statistics: January 2017'
     url: https://assets.publishing.service.gov.uk/media/5a7f9c2b40f0b62305b88311/justice-data-lab-statistics-january-2017.pdf
@@ -378932,6 +378916,732 @@ sources:
     title: 'UK armed forces deaths in service: 2013 — Deaths in the UK regular armed
       forces: 2013'
     url: https://assets.publishing.service.gov.uk/media/5a7c5bed40f0b660183b6d61/20140327_UKAF_deaths_National_Statistic_2013.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-strategies-to-support-local-shops-parades-to-b
+    title: 'Strategies to support local shops — Parades to be proud of: Strategies to
+      support local shops'
+    url: https://assets.publishing.service.gov.uk/media/5a78ad42e5274a277e68e97e/21568651.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-armed-forces-pay-review-body-43rd-report-2014
+    title: 'Armed Forces’ Pay Review Body 43rd report: 2014'
+    url: https://assets.publishing.service.gov.uk/media/5a7c1d30ed915d1c30daaa65/AFPRB_Report_43rd_2014.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-armed-forces-pay-review-body-43rd-report-2014-
+    title: 'Armed Forces’ Pay Review Body 43rd report: 2014 — Armed Forces’ Pay Review
+      Body 43rd report: 2014 print PDF'
+    url: https://assets.publishing.service.gov.uk/media/5a7480a140f0b646cbc4056a/AFPRB_Report_2014_-_Print_Final.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-apc-aspi-review-of-cumulative-severity-terms-o
+    title: 'APC-ASPI review of cumulative severity: terms of reference and papers —
+      APC-ASPI joint review of cumulative severity terms of reference (PDF file - 57kb)'
+    url: https://assets.publishing.service.gov.uk/media/5f452f458fa8f51f7b0167b5/review-cumulative-severity-tor.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-future-of-mobility-the-uk-passenger-rail-syste
+    title: 'Future of mobility: the UK passenger rail system — The UK passenger rail
+      system: how and why is it changing?'
+    url: https://assets.publishing.service.gov.uk/media/5c07d2cde5274a6a842bdfdb/Passengerrailtransport.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-future-of-mobility-the-history-of-transport-sy
+    title: 'Future of mobility: the history of transport systems in the UK — The history
+      of transport systems in the UK'
+    url: https://assets.publishing.service.gov.uk/media/5c07d08240f0b670656346e3/Historyoftransport.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-official-statistics-notices-on-milk
+    title: Historical official statistics notices on milk utilisation by dairies, 2017
+      — Figures to October 2017 (published 7 December 2017)
+    url: https://assets.publishing.service.gov.uk/media/6272437ae90e0746ccd54e61/milkutil-statsnotice-07dec17.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-official-statistics-notices-on-milk-2
+    title: Historical official statistics notices on milk utilisation by dairies, 2017
+      — Figures to September 2017 (published 9 November 2017)
+    url: https://assets.publishing.service.gov.uk/media/5a81d55ce5274a2e87dbfb91/milkutil-statsnotice-09nov17.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-official-statistics-notices-on-milk-3
+    title: Historical official statistics notices on milk utilisation by dairies, 2017
+      — Figures to August 2017 (published 7 October 2017)
+    url: https://assets.publishing.service.gov.uk/media/5a821ccb40f0b62305b928c9/milkutil-statsnotice-07oct17.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-official-statistics-notices-on-milk-5
+    title: Historical official statistics notices on milk utilisation by dairies, 2017
+      — Figures to June 2017 (published 10 August 2017)
+    url: https://assets.publishing.service.gov.uk/media/5a82025e40f0b62305b91fe5/milkutil_statsnotice_10aug17.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-official-statistics-notices-on-milk-6
+    title: Historical official statistics notices on milk utilisation by dairies, 2017
+      — Figures to May 2017 (published 6 July 2017)
+    url: https://assets.publishing.service.gov.uk/media/5a8206ebe5274a2e87dc0c37/milkutil-statsnotice-06jul17i.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-official-statistics-notices-on-milk-7
+    title: Historical official statistics notices on milk utilisation by dairies, 2017
+      — Figures to April 2017 (published 8 June 2017)
+    url: https://assets.publishing.service.gov.uk/media/5a81c6ed40f0b62305b90c0b/milkutil-statsnotice-08jun17.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-official-statistics-notices-on-milk-8
+    title: Historical official statistics notices on milk utilisation by dairies, 2017
+      — Figures to March 2017 (published 11 May 2017)
+    url: https://assets.publishing.service.gov.uk/media/5a82375c40f0b6230269b754/milkutil-statsnotice-11may17.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-historical-official-statistics-notices-on-milk-9
+    title: Historical official statistics notices on milk utilisation by dairies, 2017
+      — Figures to February 2017 (published 6 April 2017)
+    url: https://assets.publishing.service.gov.uk/media/5a82b0eb40f0b62305b93d6e/milkutil-statsnotice-06apr17.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-children-s-services-spending-and-delivery-chil
+    title: 'Children’s services: spending and delivery — Children''s services: spending
+      and delivery July 2016'
+    url: https://assets.publishing.service.gov.uk/media/5a75c03be5274a4368299aff/Childrens_services_spending_delivery_report_Aldaba_EIF_July_2016.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-children-s-services-spending-and-delivery-chil-2
+    title: 'Children’s services: spending and delivery — Children''s services spending
+      update November 2017'
+    url: https://assets.publishing.service.gov.uk/media/5a8224bfed915d74e6236043/LA_expenditure_Childrens_Services_Update.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-criminal-court-statistics-quarterly-july-to-se-9
+    title: 'Criminal court statistics (quarterly): July to September 2014 — Bulletin
+      July to September 2014'
+    url: https://assets.publishing.service.gov.uk/media/5a7f004ae5274a2e87db33a8/bulletin-july-to-september-2014.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-criminal-court-statistics-quarterly-july-to-se-10
+    title: 'Criminal court statistics (quarterly): July to September 2014 — Consultation
+      changes to criminal court timeliness statistics'
+    url: https://assets.publishing.service.gov.uk/media/5a7d5ef0ed915d28e9f39e0a/consultation-changes-to-criminal-court-timeliness-statistics.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-quarterly-qualifying-defence-contract-statisti-9
+    title: 'Quarterly qualifying defence contract statistics: Q1 2023/24'
+    url: https://assets.publishing.service.gov.uk/media/6523ff81aea2d00013219a05/Q1_2023-24_Quarterly_statistical_bulletin_Oct_23.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-government-response-to-the-joint-committee-on--4
+    title: Government response to the Joint Committee on Human Rights 7th and 12th reports
+    url: https://assets.publishing.service.gov.uk/media/5ca2064ae5274a77e1b48d5e/Government_Response_to_JCHR_7th_and_12th_Reports.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-fire-kills-campaign-annual-report-2010-to-2011
+    title: Fire Kills campaign annual report 2010 to 2011 — Fire Kills Campaign Annual
+      Report 2010-11
+    url: https://assets.publishing.service.gov.uk/media/5a79e796e5274a18ba50fa84/1992322.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-prior-qualifications-of-learners-on-train-to-g
+    title: Prior qualifications of learners on train to gain provision at level 2 and
+      level 3 in 2010 to 2011 — Prior qualifications of learners on train to gain provision
+      at level 2 and leve
+    url: https://assets.publishing.service.gov.uk/media/5a78ea72ed915d0422066599/12-p171-prior-qualifications-of-learners-train-to-gain-2010-2011.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-school-snapshot-survey-winter-2019-school-snap
+    title: 'School snapshot survey: winter 2019 — School snapshot survey - curriculum:
+      winter 2019'
+    url: https://assets.publishing.service.gov.uk/media/5f0eecd7e90e07031cfbeaf1/1._Curriculum__6104.01_Winter_2019_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-school-snapshot-survey-winter-2019-school-snap-2
+    title: 'School snapshot survey: winter 2019 — School snapshot survey - workforce:
+      winter 2019'
+    url: https://assets.publishing.service.gov.uk/media/5f1ac36e3a6f40727ae8fa42/2._Workforce__6104.01_Winter_2019_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-school-snapshot-survey-winter-2019-school-snap-3
+    title: 'School snapshot survey: winter 2019 — School snapshot survey - support for
+      pupils: winter 2019'
+    url: https://assets.publishing.service.gov.uk/media/5f1ac3a53a6f407277d3d76d/3._Support_for_Pupils__6104.01_Winter_2019_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-school-snapshot-survey-winter-2019-technical-r
+    title: 'School snapshot survey: winter 2019 — Technical report for school snapshot
+      survey: winter 2019'
+    url: https://assets.publishing.service.gov.uk/media/5f1ac3c7e90e074567f1f825/6104.01_Winter_2019_Technical_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-small-charities-fundraising-training-programme
+    title: 'Small Charities Fundraising Training Programme: provider application form
+      — Small Charities Fundraising Training Programme 2015 to 2016: guidance notes'
+    url: https://assets.publishing.service.gov.uk/media/5a7f74e440f0b62305b87423/SCFTP_applicationguidance_FINAL2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-the-high-street-report
+    title: The High Street Report
+    url: https://assets.publishing.service.gov.uk/media/5c1a7322e5274a4685bfbb28/The_High_Street_Report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-evaluation-of-virtual-school-heads-vshs-and-pu
+    title: 'Evaluation of virtual school heads (VSHs) and pupil premium — Pupil Premium
+      Plus post-16 evaluation: final report'
+    url: https://assets.publishing.service.gov.uk/media/69c25d3613101e9908704b29/Pupil_premium_plus_post_16_evaluation_report_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-evaluation-of-virtual-school-heads-vshs-and-pu-2
+    title: Evaluation of virtual school heads (VSHs) and pupil premium — Evaluation
+      of the extension of virtual school heads’ duties to children with a social worker
+      (final report)
+    url: https://assets.publishing.service.gov.uk/media/68a466ee246cc964c53d29cd/Evaluation_of_the_Extension_of_Virtual_School_Heads_Duties_to_Children_with_a_Social_Worker.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-evaluation-of-virtual-school-heads-vshs-and-pu-3
+    title: 'Evaluation of virtual school heads (VSHs) and pupil premium — Phase two:
+      Pupil Premium Plus post-16 evaluation (interim report)'
+    url: https://assets.publishing.service.gov.uk/media/66f2adb386ba7c46c40c6e90/pupil_premium_plus_post-16_evaluation_interim_report.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-evaluation-of-virtual-school-heads-vshs-and-pu-4
+    title: 'Evaluation of virtual school heads (VSHs) and pupil premium — Phase two:
+      evaluation of the extension of virtual school heads’ duties to children with a
+      social worker (interim repor'
+    url: https://assets.publishing.service.gov.uk/media/663b61984d8bb7378fb6c3a4/Evaluation_of_the_extension_of_virtual_school_heads__duties_to_children_with_a_social_worker_-_phase_two.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-evaluation-of-virtual-school-heads-vshs-and-pu-5
+    title: 'Evaluation of virtual school heads (VSHs) and pupil premium — Phase one:
+      evaluation of the virtual school head’s extension of duties to children with a
+      social worker and the post-1'
+    url: https://assets.publishing.service.gov.uk/media/6396fe808fa8f55303f6e2a8/VSH_extension_evaluation_December_2022.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-tag-uncertainty-toolkit
+    title: TAG uncertainty toolkit
+    url: https://assets.publishing.service.gov.uk/media/6a7096412d9e185c82e5b448/tag-uncertainty-toolkit-May-2026.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-escalating-the-closure-or-diversion-of-level-c
+    title: Escalating the closure or diversion of level crossing applications under
+      the Highways Act
+    url: https://assets.publishing.service.gov.uk/media/62fe686bd3bf7f06ecc913bb/escalating-closure-diversion-level-crossing-applications.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-key-stage-2-tests-2024-english-grammar-punctua-5
+    title: 'Key stage 2 tests: 2024 English grammar, punctuation and spelling test modified
+      materials — 2024 key stage 2 English grammar, punctuation and spelling - braille
+      transcript Paper 1:'
+    url: https://assets.publishing.service.gov.uk/media/664dc0fcae748c43d3793ff0/STA248814BTe_2024_ks2_English_GPS_braille_transcript_Paper1_questions.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-key-stage-2-tests-2024-english-grammar-punctua-6
+    title: 'Key stage 2 tests: 2024 English grammar, punctuation and spelling test modified
+      materials — 2024 key stage 2 English grammar, punctuation and spelling - administering
+      braille Paper'
+    url: https://assets.publishing.service.gov.uk/media/664dc10ef34f9b5a56adcc1f/STA248857e_2024_ks2_English_GPS_Administering_braille_Paper1_questions.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-key-stage-2-tests-2024-english-grammar-punctua-7
+    title: 'Key stage 2 tests: 2024 English grammar, punctuation and spelling test modified
+      materials — 2024 key stage 2 English grammar, punctuation and spelling MLP A4
+      24pt Paper 1: question'
+    url: https://assets.publishing.service.gov.uk/media/664dc12bbd01f5ed32794013/STA248814Mle_2024_ks2_English_GPS_MLP_Paper1_questions.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-key-stage-2-tests-2024-english-grammar-punctua-8
+    title: 'Key stage 2 tests: 2024 English grammar, punctuation and spelling test modified
+      materials — 2024 key stage 2 English grammar, punctuation and spelling MLP A4
+      24pt Paper 2: spelling'
+    url: https://assets.publishing.service.gov.uk/media/664dc159993111924d9d3981/STA248815Mle_2024_ks2_English_GPS_MLP_Paper2_spelling.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-key-stage-2-tests-2024-english-grammar-punctua-9
+    title: 'Key stage 2 tests: 2024 English grammar, punctuation and spelling test modified
+      materials — 2024 key stage 2 English grammar, punctuation and spelling - administering
+      the MLP versi'
+    url: https://assets.publishing.service.gov.uk/media/664dc1424f29e1d07fadcc59/STA248846MLe_2024_ks2_English_GPS_Administering_MLP_Paper1_questions.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-key-stage-2-tests-2024-english-grammar-punctua-11
+    title: 'Key stage 2 tests: 2024 English grammar, punctuation and spelling test modified
+      materials — 2024 key stage 2 English grammar, punctuation and spelling mark scheme
+      amendments: modif'
+    url: https://assets.publishing.service.gov.uk/media/664dc0ddb7249a4c6e9d3926/STA248865e_2024_ks2_English_GPS_Mark_scheme_amendments_MLP_and_braille.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-market-access-arrangements-for-financial-servi
+    title: 'Market access arrangements for financial services between the UK and Gibraltar:
+      a consultation'
+    url: https://assets.publishing.service.gov.uk/media/5e68b2e286650c7279860b9e/Consultation_for_publication_-_Market_access_between_UK_and_Gibraltar.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-universal-send-services-process-and-impact-eva
+    title: Universal SEND Services process and impact evaluation
+    url: https://assets.publishing.service.gov.uk/media/697a0aaf3c71d838df6bd3bb/universal-send-services-evaluation-process-and-impact-evaluation.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-service-line-management-self-assessment-checkl
+    title: 'Service-line management: self-assessment checklist — Service-line management
+      framework'
+    url: https://assets.publishing.service.gov.uk/media/5a7de40140f0b62302687c79/SLM_framework-1.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-5
+    title: 'Google’s general search services: proposed conduct requirements — User Choice
+      conduct requirement'
+    url: https://assets.publishing.service.gov.uk/media/6979cec91c24881f40a4d6de/_User_choice_conduct_requirement_v2.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-6
+    title: 'Google’s general search services: proposed conduct requirements — Affiliate
+      and Partner Marketing Association'
+    url: https://assets.publishing.service.gov.uk/media/69b970d8635612b767a4665f/Affiliate_and_Partner_Marketing_Association.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-10
+    title: 'Google’s general search services: proposed conduct requirements — Anonymous
+      4'
+    url: https://assets.publishing.service.gov.uk/media/69b970d8a564b64fbe35ab58/Anonymous_4.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-11
+    title: 'Google’s general search services: proposed conduct requirements — Anonymous
+      5'
+    url: https://assets.publishing.service.gov.uk/media/69b970d8c06ba9576435ab51/Anonymous_5.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-12
+    title: 'Google’s general search services: proposed conduct requirements — Anonymous
+      6'
+    url: https://assets.publishing.service.gov.uk/media/69b970d8a564b64fbe35ab59/Anonymous_6.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-13
+    title: 'Google’s general search services: proposed conduct requirements — Anonymous
+      7'
+    url: https://assets.publishing.service.gov.uk/media/69b970d826909a1423961288/Anonymous_7.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-16
+    title: 'Google’s general search services: proposed conduct requirements — Anonymous
+      10'
+    url: https://assets.publishing.service.gov.uk/media/69c39442a661abbaa1cf9e18/Anonymous_10.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-17
+    title: 'Google’s general search services: proposed conduct requirements — Anonymous
+      11'
+    url: https://assets.publishing.service.gov.uk/media/69c3944213f1436476e443c8/Anonymous_11.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-20
+    title: 'Google’s general search services: proposed conduct requirements — BBC'
+    url: https://assets.publishing.service.gov.uk/media/69b970d9c06ba9576435ab53/BBC.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-22
+    title: 'Google’s general search services: proposed conduct requirements — Chamber
+      of Progress'
+    url: https://assets.publishing.service.gov.uk/media/69b970d926909a142396128a/Chamber_of_Progress.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-23
+    title: 'Google’s general search services: proposed conduct requirements — Cloudflare'
+    url: https://assets.publishing.service.gov.uk/media/69b970d9f6acd3f43e96129b/Cloudflare.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-27
+    title: 'Google’s general search services: proposed conduct requirements — Computer
+      and Communications Industry Association - Publisher Controls CR'
+    url: https://assets.publishing.service.gov.uk/media/69b970d9f6acd3f43e96129d/Computer_and_Communications_Industry_Association_-_Publisher_Controls_CR.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-28
+    title: 'Google’s general search services: proposed conduct requirements — Computer
+      and Communications Industry Association - User Choice CR'
+    url: https://assets.publishing.service.gov.uk/media/69b970d926909a142396128c/Computer_and_Communications_Industry_Association_-_User_Choice_CR.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-36
+    title: 'Google’s general search services: proposed conduct requirements — DuckDuckGo'
+    url: https://assets.publishing.service.gov.uk/media/69b970da635612b767a46662/DuckDuckGo.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-37
+    title: 'Google’s general search services: proposed conduct requirements — easyJet'
+    url: https://assets.publishing.service.gov.uk/media/69b970da6736ec37c8a46654/easyJet.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-38
+    title: 'Google’s general search services: proposed conduct requirements — Emerge'
+    url: https://assets.publishing.service.gov.uk/media/69b970daa564b64fbe35ab5d/Emerge.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-39
+    title: 'Google’s general search services: proposed conduct requirements — European
+      Publishers Council'
+    url: https://assets.publishing.service.gov.uk/media/69c39442a661abbaa1cf9e19/European_Publishers_Council.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-42
+    title: 'Google’s general search services: proposed conduct requirements — Foxglove'
+    url: https://assets.publishing.service.gov.uk/media/6a311b5b15f2a70fac7e602a/Foxglove_.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-44
+    title: 'Google’s general search services: proposed conduct requirements — Genie
+      Ventures'
+    url: https://assets.publishing.service.gov.uk/media/69c3944213f1436476e443c9/Genie_Ventures.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-45
+    title: 'Google’s general search services: proposed conduct requirements — Google'
+    url: https://assets.publishing.service.gov.uk/media/69b970dba564b64fbe35ab5e/Google.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-46
+    title: 'Google’s general search services: proposed conduct requirements — Google
+      - Annex 1'
+    url: https://assets.publishing.service.gov.uk/media/6a69ccf4f23ff62c51c1a805/Google_-_Annex_1.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-47
+    title: 'Google’s general search services: proposed conduct requirements — Google
+      - Annex 2'
+    url: https://assets.publishing.service.gov.uk/media/6a69f41a9a3fb159a95b9420/Google_-_Annex_2__1_.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-48
+    title: 'Google’s general search services: proposed conduct requirements — Google
+      - Annex 3'
+    url: https://assets.publishing.service.gov.uk/media/6a69ccf5229c578debc1a818/Google_-_Annex_3.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-49
+    title: 'Google’s general search services: proposed conduct requirements — Guardian
+      Media Group'
+    url: https://assets.publishing.service.gov.uk/media/69b970dba564b64fbe35ab5f/Guardian_Media_Group.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-53
+    title: 'Google’s general search services: proposed conduct requirements — International
+      Center for Law & Economics'
+    url: https://assets.publishing.service.gov.uk/media/69b970db26909a142396128f/International_Center_for_Law___Economics.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-56
+    title: 'Google’s general search services: proposed conduct requirements — Knight-Georgetown
+      Institute'
+    url: https://assets.publishing.service.gov.uk/media/69b970dbc06ba9576435ab56/Knight-Georgetown_Institute.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-57
+    title: 'Google’s general search services: proposed conduct requirements — LoveHoney
+      Group'
+    url: https://assets.publishing.service.gov.uk/media/69b970dba564b64fbe35ab60/LoveHoney_Group.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-58
+    title: 'Google’s general search services: proposed conduct requirements — Microsoft'
+    url: https://assets.publishing.service.gov.uk/media/69b970dbc06ba9576435ab57/Microsoft.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-60
+    title: 'Google’s general search services: proposed conduct requirements — Movement
+      for an Open Web'
+    url: https://assets.publishing.service.gov.uk/media/6a0d7077c510c3913d8268e6/Movement_for_an_Open_Web.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-61
+    title: 'Google’s general search services: proposed conduct requirements — Mozilla'
+    url: https://assets.publishing.service.gov.uk/media/69b970db26909a1423961290/Mozilla.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-62
+    title: 'Google’s general search services: proposed conduct requirements — Music
+      Publishers Association'
+    url: https://assets.publishing.service.gov.uk/media/69b970dbc06ba9576435ab58/Music_Publishers_Association.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-63
+    title: 'Google’s general search services: proposed conduct requirements — News Media
+      Association - Fair Ranking CR'
+    url: https://assets.publishing.service.gov.uk/media/69b970dcf6acd3f43e9612a1/News_Media_Association_-_Fair_Ranking_CR.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-64
+    title: 'Google’s general search services: proposed conduct requirements — News Media
+      Association - Publisher Controls CR'
+    url: https://assets.publishing.service.gov.uk/media/69b970dca564b64fbe35ab61/News_Media_Association_-_Publisher_Controls_CR.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-66
+    title: 'Google’s general search services: proposed conduct requirements — News Media
+      Alliance'
+    url: https://assets.publishing.service.gov.uk/media/69c39442380a2a73a7cf9e1a/News_Media_Alliance.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-69
+    title: 'Google’s general search services: proposed conduct requirements — Open Data
+      Institute'
+    url: https://assets.publishing.service.gov.uk/media/69b970dc26909a1423961291/Open_Data_Institute.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-70
+    title: 'Google’s general search services: proposed conduct requirements — OpenAI'
+    url: https://assets.publishing.service.gov.uk/media/69b970dcc06ba9576435ab5a/OpenAI.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-71
+    title: 'Google’s general search services: proposed conduct requirements — OpenAttribution.org
+      -  Fair Ranking CR'
+    url: https://assets.publishing.service.gov.uk/media/69b970dc6736ec37c8a46657/OpenAttribution.org_-__Fair_Ranking_CR.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-72
+    title: 'Google’s general search services: proposed conduct requirements — OpenAttribution.org
+      - Publisher Controls CR'
+    url: https://assets.publishing.service.gov.uk/media/69b970dc635612b767a46667/OpenAttribution.org_-_Publisher_Controls_CR.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-73
+    title: 'Google’s general search services: proposed conduct requirements — Platform
+      Leaders'
+    url: https://assets.publishing.service.gov.uk/media/69b970dcc06ba9576435ab5b/Platform_Leaders.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-78
+    title: 'Google’s general search services: proposed conduct requirements — Samsung'
+    url: https://assets.publishing.service.gov.uk/media/69b970dd26909a1423961292/Samsung.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-79
+    title: 'Google’s general search services: proposed conduct requirements — Shaping
+      Competition in the Digital Age'
+    url: https://assets.publishing.service.gov.uk/media/69b970dd6736ec37c8a46659/Shaping_Competition_in_the_Digital_Age.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-80
+    title: 'Google’s general search services: proposed conduct requirements — Siinda
+      - Fair Ranking CR'
+    url: https://assets.publishing.service.gov.uk/media/69b970ddf6acd3f43e9612a2/Siinda_-_Fair_Ranking_CR.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-81
+    title: 'Google’s general search services: proposed conduct requirements — Siinda
+      - Publisher CR'
+    url: https://assets.publishing.service.gov.uk/media/69b970dd26909a1423961294/Siinda_-_Publisher_CR.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-83
+    title: 'Google’s general search services: proposed conduct requirements — Skyscanner
+      - Publisher Controls CR'
+    url: https://assets.publishing.service.gov.uk/media/69b970ddc06ba9576435ab5f/Skyscanner_-_Publisher_Controls_CR.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-85
+    title: 'Google’s general search services: proposed conduct requirements — Todd Davies
+      and Spencer Cohen'
+    url: https://assets.publishing.service.gov.uk/media/69b970dda564b64fbe35ab64/Todd_Davies_and_Spencer_Cohen.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-86
+    title: 'Google’s general search services: proposed conduct requirements — Trainline'
+    url: https://assets.publishing.service.gov.uk/media/69c39442a661abbaa1cf9e1b/Trainline.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-89
+    title: 'Google’s general search services: proposed conduct requirements — Which'
+    url: https://assets.publishing.service.gov.uk/media/69b970dd635612b767a4666b/Which.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-google-s-general-search-services-proposed-cond-90
+    title: 'Google’s general search services: proposed conduct requirements — Yelp'
+    url: https://assets.publishing.service.gov.uk/media/69b970dd635612b767a4666c/Yelp.pdf
     source: gov_uk
     license: open
     topic: equipment_systems
