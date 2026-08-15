@@ -247293,15 +247293,6 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
-  - id: guk-government-s-proposed-approach-to-the-second-r-6
-    title: Government’s proposed approach to the second round of the Adaptation Reporting
-      Power — Annex C – Government Report on the First Round of the Adaptation Reporting
-      Power
-    url: https://assets.publishing.service.gov.uk/media/5a796050e5274a2acd18c550/annex-c-gov-summary-adapt-reports.pdf
-    source: gov_uk
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: guk-government-s-proposed-approach-to-the-second-r-7
     title: Government’s proposed approach to the second round of the Adaptation Reporting
       Power — Summary of responses
@@ -387033,6 +387024,315 @@ sources:
     title: 'Tri-service families continuous attitude survey: 2022 — Tri-service families
       continuous attitude survey 2022: background quality report (PDF)'
     url: https://assets.publishing.service.gov.uk/media/62d52c418fa8f50c0391880f/FAMCAS_2022_Background_Quality_Report.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-pension-wise-service-evaluation-wave-1-interim
+    title: 'Pension Wise service evaluation: wave 1 interim findings — Pension Wise
+      service evaluation: wave 1 interim findings on customer experiences'
+    url: https://assets.publishing.service.gov.uk/media/5a7f0d80e5274a2e87db37fe/pension-wise-service-evaluation-wave-1-interim-findings.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-synopsis-of-causation-mesothelioma
+    title: 'Synopsis of causation: mesothelioma'
+    url: https://assets.publishing.service.gov.uk/media/5a7505dbed915d3c7d529c67/mesothelioma.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-synopsis-of-causation-spondylolisthesis
+    title: 'Synopsis of causation: Spondylolisthesis'
+    url: https://assets.publishing.service.gov.uk/media/5a7e4a78ed915d74e33f1493/spondylolisthesis.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-level-crossings-level-crossings-full-text-pdf
+    title: Level crossings — Level crossings - Full Text (PDF)
+    url: https://assets.publishing.service.gov.uk/media/5a7b86d4e5274a7202e17bc2/8711.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-participation-in-education-training-and-employ-5
+    title: 'Participation in education, training and employment: 2016 — Main text: SFR29/2017'
+    url: https://assets.publishing.service.gov.uk/media/5a81e414ed915d74e6234ab8/SFR29_2017_Main_text_.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-participation-in-education-training-and-employ-6
+    title: 'Participation in education, training and employment: 2016 — Technical document:
+      SFR29/2017'
+    url: https://assets.publishing.service.gov.uk/media/5a82b736ed915d74e6237444/SFR29_2017_Technical_Document.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-neet-statistics-quarterly-brief-october-to-dec-5
+    title: 'NEET statistics quarterly brief: October to December 2013 — Main text: SFR07/2014'
+    url: https://assets.publishing.service.gov.uk/media/5a7cba3fed915d63cc65c7d5/Quarterly_Brief_NEET_October-December_2013.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-public-sector-apprenticeships-in-england-2017-
+    title: 'Public sector apprenticeships in England: 2017 to 2018 — Public sector apprenticeships
+      in England, 2017 to 2018: main commentary'
+    url: https://assets.publishing.service.gov.uk/media/5bf57175e5274a2b05d2ea8c/Public-sector-apprenticeships-in-England_2017-to-2018_commentary-2.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-trichloroethylene-properties-incident-manageme
+    title: 'Trichloroethylene: properties, incident management and toxicology — Trichloroethylene:
+      incident management'
+    url: https://assets.publishing.service.gov.uk/media/6759ccbf3bb681ccb0d3472b/Trichloroethylene_UKHSA_IM_.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-independence-of-the-advanced-research-and-inve
+    title: Independence of the Advanced Research and Invention Agency (ARIA) — Agreement
+      on the independence of the Advanced Research and Invention Agency (ARIA)
+    url: https://assets.publishing.service.gov.uk/media/6358dd93d3bf7f0bd3fe5cc4/aria-independence-agreement.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-adapting-to-climate-change-helping-key-sectors
+    title: 'Adapting to climate change: Helping key sectors to adapt to climate change
+      — Government summary of adaptation reports'
+    url: https://assets.publishing.service.gov.uk/media/5a7973da40f0b63d72fc5f12/pb13740gov-summary-adapt-reports.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-at-nethert
+    title: 'King Charles III England Coast Path at Nethertown and Sellafield: comment
+      on proposals to change the approved route — Nethertown and Sellafield variation
+      report'
+    url: https://assets.publishing.service.gov.uk/media/5f1aff54e90e074567f1f82e/variation-report-nethertown-and-sellafield.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-at-esk-boa
+    title: 'King Charles III England Coast Path at Esk Boathouse, Castletown, Cumbria:
+      proposals to change the approved route — Esk Boathouse variation report (VR10)'
+    url: https://assets.publishing.service.gov.uk/media/62728c988fa8f57a37b7b352/variation-report-vr10-esk-boathouse-castletown.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-at-minehea
+    title: 'King Charles III England Coast Path at Minehead to Combe Martin: comment
+      on changes to the proposed route — Hurlstone Point and Glenthorne, Exmoor modification
+      report'
+    url: https://assets.publishing.service.gov.uk/media/5ef5d610e90e075c5d587bdf/modification-report-hurlstone-point-glenthorne-exmoor.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-england-coast-path-on-walney-island-consultati
+    title: 'England Coast Path on Walney Island: consultation outcome — Walney Island
+      overview'
+    url: https://assets.publishing.service.gov.uk/media/5a749a9be5274a44083b8022/walney-island-overview.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-england-coast-path-on-walney-island-consultati-3
+    title: 'England Coast Path on Walney Island: consultation outcome — Walney Island
+      proposals: chapter 1 with map annexes'
+    url: https://assets.publishing.service.gov.uk/media/5a80c981ed915d74e33fc66e/walney-island-report-chapter-1.PDF
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-england-coast-path-on-walney-island-consultati-4
+    title: 'England Coast Path on Walney Island: consultation outcome — Walney Island
+      proposals: chapter 2 with map annexes'
+    url: https://assets.publishing.service.gov.uk/media/5a80e91d40f0b62305b8dd73/walney-island-report-chapter-2.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-england-coast-path-on-walney-island-consultati-5
+    title: 'England Coast Path on Walney Island: consultation outcome — Walney Island
+      sensitive features report'
+    url: https://assets.publishing.service.gov.uk/media/5a74f400ed915d502d6cc539/walney-sensitive-features-report.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-whits
+    title: 'King Charles III England Coast Path from Whitstable to Iwade: comment on
+      proposals — Whitstable to Iwade overview'
+    url: https://assets.publishing.service.gov.uk/media/5a81cc19e5274a2e8ab55e0e/whitstable-iwade-overview.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-whits-3
+    title: 'King Charles III England Coast Path from Whitstable to Iwade: comment on
+      proposals — Whitstable to Iwade proposals: chapter 1 with map annexes'
+    url: https://assets.publishing.service.gov.uk/media/5a81f091ed915d74e6234eda/whitstable-iwade-chapter-1.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-whits-4
+    title: 'King Charles III England Coast Path from Whitstable to Iwade: comment on
+      proposals — Whitstable to Iwade proposals: chapter 2 with map annexes'
+    url: https://assets.publishing.service.gov.uk/media/5a8212cee5274a2e8ab575b9/whitstable-iwade-chapter-2.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-whits-5
+    title: 'King Charles III England Coast Path from Whitstable to Iwade: comment on
+      proposals — Whitstable to Iwade proposals: chapter 3 with map annexes'
+    url: https://assets.publishing.service.gov.uk/media/5a81ffdce5274a2e8ab56f70/whitstable-iwade-chapter-3.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-whits-6
+    title: 'King Charles III England Coast Path from Whitstable to Iwade: comment on
+      proposals — Whitstable to Iwade proposals: chapter 4 with map annexes'
+    url: https://assets.publishing.service.gov.uk/media/5a82bc4840f0b62305b94126/whitstable-iwade-chapter-4.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-king-charles-iii-england-coast-path-from-whits-7
+    title: 'King Charles III England Coast Path from Whitstable to Iwade: comment on
+      proposals — Whitstable to Iwade sensitive features report'
+    url: https://assets.publishing.service.gov.uk/media/5a75721e40f0b6397f35e7ce/whitstable-iwade-sensitive-features-report.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-depleted-uranium-du-uncertainty-analysis-hpa-r
+    title: 'Depleted uranium (DU): uncertainty analysis — HPA-RPD-023: uncertainty analysis
+      of the ICRP human respiratory tract model applied to interpretation of bioassay
+      data for depleted ur'
+    url: https://assets.publishing.service.gov.uk/media/5a7e0faded915d74e33efcd6/HpaRpd023.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-congestion-on-local-authority-managed-a-roads-
+    title: 'Congestion on local authority managed ''A'' roads: April to June 2013'
+    url: https://assets.publishing.service.gov.uk/media/5a7c9c8a40f0b6629523aa43/congestion-local-a-stats-release-jun-13.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-sacn-cot-statements-on-potassium-based-sodium-
+    title: 'SACN-COT statements on potassium-based sodium replacers — SACN-COT statement
+      on potassium-based sodium replacers: assessment of the health benefits and risks
+      of using potassium-bas'
+    url: https://assets.publishing.service.gov.uk/media/5a82b61bed915d74e34032cc/SACN_COT_-_Potassium-based_sodium_replacers.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-epidemiological-assessment-on-proposed-cess-se
+    title: Epidemiological assessment on proposed CESS service specification changes
+      — Epidemiological assessment on proposed change to England’s CESS specification
+    url: https://assets.publishing.service.gov.uk/media/5a8039d640f0b62302692420/childrens_epilepsy_surgery_assessment.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-mental-health-services-and-schools-link-pilot-
+    title: 'Mental health services and schools link pilot: evaluation'
+    url: https://assets.publishing.service.gov.uk/media/5a747a08e5274a7f990287b7/Evaluation_of_the_MH_services_and_schools_link_pilots-RR.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-mental-health-services-and-schools-link-pilot--2
+    title: 'Mental health services and schools link pilot: evaluation — Mental health
+      services and schools link pilot: evaluation - brief'
+    url: https://assets.publishing.service.gov.uk/media/5a817dfaed915d74e33fe812/Evaluation_of_the_MH_services_and_schools_link_pilots-RB.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-plans-to-improve-digital-services-for-the-heal
+    title: 'Plans to improve digital services for the health and care sector — Work
+      stream 1.1: Enable me to make the right health and care choices'
+    url: https://assets.publishing.service.gov.uk/media/5a814d43e5274a2e8ab533c2/Work_Stream_1_1.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-plans-to-improve-digital-services-for-the-heal-2
+    title: 'Plans to improve digital services for the health and care sector — Work
+      stream 1.2: Enable me to make the right health and care choices'
+    url: https://assets.publishing.service.gov.uk/media/5a80b63e40f0b62305b8cb87/Work_Stream_1_2.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-plans-to-improve-digital-services-for-the-heal-3
+    title: 'Plans to improve digital services for the health and care sector — Work
+      stream 2.1: Give care professionals and carers access to all the data they need'
+    url: https://assets.publishing.service.gov.uk/media/5a8173d2e5274a2e8ab54126/Work_Stream_2_1.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-plans-to-improve-digital-services-for-the-heal-4
+    title: 'Plans to improve digital services for the health and care sector — Work
+      stream 2.2: Give care professionals and carers access to all the data they need'
+    url: https://assets.publishing.service.gov.uk/media/5a80baee40f0b62305b8cd36/Work_Stream_2_2.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-plans-to-improve-digital-services-for-the-heal-5
+    title: 'Plans to improve digital services for the health and care sector — Work
+      stream 3: Make the quality of care transparent'
+    url: https://assets.publishing.service.gov.uk/media/5a81568ced915d74e6231b58/Work_Stream_3.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-plans-to-improve-digital-services-for-the-heal-6
+    title: 'Plans to improve digital services for the health and care sector — Work
+      stream 4: Build and sustain public trust'
+    url: https://assets.publishing.service.gov.uk/media/5a756892e5274a1baf95e570/Work_Stream_4.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-plans-to-improve-digital-services-for-the-heal-7
+    title: 'Plans to improve digital services for the health and care sector — Work
+      stream 5: Bring forward life-saving treatments and support innovation and growth'
+    url: https://assets.publishing.service.gov.uk/media/5a80f4afe5274a2e8ab531e9/Work_Stream_5.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-plans-to-improve-digital-services-for-the-heal-8
+    title: 'Plans to improve digital services for the health and care sector — Work
+      stream 6: Support care professionals to make the best use of data and technology'
+    url: https://assets.publishing.service.gov.uk/media/5a819d0bed915d74e623334e/Work_Stream_6.pdf
+    source: gov_uk
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: guk-plans-to-improve-digital-services-for-the-heal-9
+    title: 'Plans to improve digital services for the health and care sector — Work
+      stream 8: Enabling information standards'
+    url: https://assets.publishing.service.gov.uk/media/5a81a2b940f0b62305b9005a/Work_Stream_8.pdf
     source: gov_uk
     license: open
     topic: equipment_systems
