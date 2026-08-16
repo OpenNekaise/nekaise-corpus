@@ -377242,13 +377242,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-vocational-qualifications-archive-vocational-q
-    title: Vocational qualifications archive — Vocational qualifications commentary
-    url: https://assets.publishing.service.gov.uk/media/5ba89ae240f0b6071970c255/VocationalQualificationsNote2016.pdf
-    source: gov_uk
-    license: open
-    topic: architecture
-    format: pdf
   - id: guk-weight-management-services-insights-into-user-
     title: 'Weight management services: insights into user experiences — Qualitative
       opportunities into user experiences of tier 2 and tier 3 weight management services'
@@ -395169,4 +395162,92 @@ sources:
     source: gov_uk
     license: open
     topic: equipment_systems
+    format: pdf
+  - id: guk-further-education-and-skills-november-2016-fur-2
+    title: 'Further education and skills: November 2016 — Further education and skills:
+      SFA/SFR36 technical document'
+    url: https://assets.publishing.service.gov.uk/media/5a80969fe5274a2e87dbaab2/SFA_SFR36_2016_QualityandMethodology.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-space-exploration-review-space-exploration-rev
+    title: 'Space exploration review — Space exploration review: economic analysis'
+    url: https://assets.publishing.service.gov.uk/media/5a80de1f40f0b62302695f3b/Space_Exploration_Review_Economic_Analysis_March_2009.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-regulatory-horizons-council-report-on-genetic--2
+    title: 'Regulatory Horizons Council report on genetic technologies — Annex A: optimising
+      the governance of genetic technologies'
+    url: https://assets.publishing.service.gov.uk/media/612df69fd3bf7f0387e8aa07/rhc-genetic-technologies-annex-a.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-regulatory-horizons-council-report-on-genetic--3
+    title: Regulatory Horizons Council report on genetic technologies — Regulatory Horizons
+      Council policy brief on genetic technologies
+    url: https://assets.publishing.service.gov.uk/media/62bef4068fa8f578be2f7b71/regulatory_horizons_council_policy_brief_on_genetic_technologies.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-forestry-commission-key-performance-indicators-17
+    title: 'Forestry Commission Key Performance Indicators: Headline Performance Update
+      at 30 September 2021'
+    url: https://assets.publishing.service.gov.uk/media/619506918fa8f503816402a2/FC_Headline_Key_Performance_Indicators_30Sep21.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-immigration-act-part-5-support-for-certain-cat-4
+    title: 'Immigration Act: part 5 - support for certain categories of migrants — Home
+      Office policy equality statement (PES): reforming support for failed asylum seekers
+      and other illegal mi'
+    url: https://assets.publishing.service.gov.uk/media/5a7f8b35e5274a2e87db67bf/Policy_Equality_Statement.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-social-investment-a-force-for-social-change-uk
+    title: 'Social investment: a force for social change - UK strategy 2016 — Social
+      investment: a force for social change - 2016 strategy'
+    url: https://assets.publishing.service.gov.uk/media/5a805a5440f0b62305b8aa67/6.1804_SIFT_Strategy_260216_FINAL_web.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-university-of-bristol-and-university-of-exeter
+    title: 'University of Bristol and University of Exeter: Impact of opening schools
+      on the effective reproduction number – analysis of the Social Contact Survey,
+      30 April 2020 — University o'
+    url: https://assets.publishing.service.gov.uk/media/624d6a04e90e075f0e144859/S0295_TFC_Schools_and_impact_on_Reff.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-mgn-634-m-f-navigation-long-range-identificati
+    title: 'MGN 634 (M+F) Navigation: Long-range identification and tracking – survey,
+      certification and compliance — MGN 634 (M+F)'
+    url: https://assets.publishing.service.gov.uk/media/5f9bfc3ed3bf7f03ab24def4/MGN634.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-allied-joint-doctrine-for-medical-support-ajp-
+    title: Allied Joint Doctrine for Medical Support (AJP-4.2) — Allied Joint Publication-4.2,
+      Allied Joint Doctrine for Medical Support (Edition A Version 1)
+    url: https://assets.publishing.service.gov.uk/media/6a5e04dba3c718d2556d08b3/AJP_4_2_EdA_V1_NATO.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-fe-data-library-vocational-qualifications-voca
+    title: 'FE data library: vocational qualifications — Vocational qualifications commentary'
+    url: https://assets.publishing.service.gov.uk/media/5a81a195ed915d74e62334db/VocationalQualificationsNote2016.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
     format: pdf
