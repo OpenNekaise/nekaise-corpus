@@ -265122,30 +265122,6 @@ sources:
     license: open
     topic: construction
     format: pdf
-  - id: guk-keeping-the-country-running-natural-hazards-an-3
-    title: 'Keeping the country running: natural hazards and infrastructure — Section
-      B: Keeping the Country Running: Natural Hazards and Infrastructure in PDF Format'
-    url: https://assets.publishing.service.gov.uk/media/5a79a931ed915d042206a178/section-b-natural-hazards-infrastructure.pdf
-    source: gov_uk
-    license: open
-    topic: construction
-    format: pdf
-  - id: guk-keeping-the-country-running-natural-hazards-an-4
-    title: 'Keeping the country running: natural hazards and infrastructure — Section
-      C: Keeping the Country Running: Natural Hazards and Infrastructure in PDF Format'
-    url: https://assets.publishing.service.gov.uk/media/5a79d0dbed915d042206b3d1/section-c-natural-hazards-infrastructure.pdf
-    source: gov_uk
-    license: open
-    topic: construction
-    format: pdf
-  - id: guk-keeping-the-country-running-natural-hazards-an-5
-    title: 'Keeping the country running: natural hazards and infrastructure — Section
-      D:Keeping the Country Running: Natural Hazards and Infrastructure in PDF Format'
-    url: https://assets.publishing.service.gov.uk/media/5a78d34ae5274a277e68fc25/section-d-natural-hazards-infrastructure.pdf
-    source: gov_uk
-    license: open
-    topic: construction
-    format: pdf
   - id: guk-keeping-the-country-running-natural-hazards-an-6
     title: 'Keeping the country running: natural hazards and infrastructure — Keeping
       the Country Running: Natural Hazards and Infrastructure: Summary Consultation
@@ -394182,6 +394158,74 @@ sources:
     title: 'Households below average income: 1994/95 to 2018/19 — Households below average
       income (HBAI): quality and methodology information report 2018/19'
     url: https://assets.publishing.service.gov.uk/media/5e7b3b3986650c743e9c7abe/households-below-average-income-quality-methodology-2018-2019.pdf
+    source: gov_uk
+    license: open
+    topic: architecture
+    format: pdf
+  - id: guk-greening-government-ict-strategy
+    title: Greening government ICT strategy
+    url: https://assets.publishing.service.gov.uk/media/5a7af5c340f0b66eab99de3a/greening-government-ict-strategy.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-report-on-the-pay-of-police-and-crime-commissi
+    title: Report on the pay of Police and Crime Commissioners 2011
+    url: https://assets.publishing.service.gov.uk/media/68501d339d538361ad2da741/Report_on_the_pay_of_Police_and_Crime_Commissioners_2011.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-british-survey-of-fertiliser-practice-2014-bri
+    title: British survey of fertiliser practice 2014 — British survey of fertiliser
+      practice 2014 - statistical notice
+    url: https://assets.publishing.service.gov.uk/media/5a7f2573e5274a2e8ab4a65c/fertiliseruse-statsnotice-01apr15.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-british-survey-of-fertiliser-practice-2014-bri-2
+    title: British survey of fertiliser practice 2014 — British survey of fertiliser
+      practice 2014 - annual report
+    url: https://assets.publishing.service.gov.uk/media/5a7f4396ed915d74e6229657/fertiliseruse-report-27may15.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-keeping-the-country-running-natural-hazards-an-7
+    title: 'Keeping the country running: natural hazards and infrastructure'
+    url: https://assets.publishing.service.gov.uk/media/5a79b937ed915d07d35b7a27/Guide-NaturalHazards-Infrastructure-2011-consultation.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-keeping-the-country-running-natural-hazards-an-10
+    title: 'Keeping the country running: natural hazards and infrastructure — Section
+      B - Keeping the country running: natural hazards and infrastructure'
+    url: https://assets.publishing.service.gov.uk/media/5a79b6c7e5274a18ba50e4a2/section-b-natural-hazards-infrastructure.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-keeping-the-country-running-natural-hazards-an-11
+    title: 'Keeping the country running: natural hazards and infrastructure — Section
+      C - Keeping the country running: natural hazards and infrastructure'
+    url: https://assets.publishing.service.gov.uk/media/5a78df4c40f0b6324769ad42/section-c-natural-hazards-infrastructure.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-keeping-the-country-running-natural-hazards-an-12
+    title: 'Keeping the country running: natural hazards and infrastructure — Section
+      D - Keeping the country running: natural hazards and infrastructure'
+    url: https://assets.publishing.service.gov.uk/media/5a78ebeee5274a2acd18ad21/section-d-natural-hazards-infrastructure.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-raising-standards-and-upholding-integrity-the-
+    title: 'Raising standards and upholding integrity: the prevention of corruption'
+    url: https://assets.publishing.service.gov.uk/media/5a7b9f98e5274a7202e185df/4759.pdf
     source: gov_uk
     license: open
     topic: architecture
