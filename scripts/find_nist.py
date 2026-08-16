@@ -31,26 +31,30 @@ API = "https://api.crossref.org/works"
 MAILTO = "nekaise-corpus@example.org"
 
 # (bibliographic search term -> topic). Crossref full-text-searches title/subject/abstract.
+# Wave-1 terms (fire/structural/building/HVAC/...) were mined to the Crossref 10k-offset
+# ceiling by 2026-08 (~2k docs kept). Wave 2 below targets untouched NBS/NIST veins
+# (Building Materials and Structures series, acoustics, moisture, component-level HVAC);
+# rotation pointer was reset to p1 with this swap (2026-08-13).
 QUERIES = [
-    ("fire", "architecture"), ("fire resistance", "architecture"),
-    ("fire safety", "architecture"), ("smoke control", "architecture"),
-    ("structural", "structures_civil"), ("seismic", "structures_civil"),
-    ("earthquake", "structures_civil"), ("wind load structures", "structures_civil"),
-    ("bridge", "structures_civil"), ("foundation engineering", "structures_civil"),
-    ("building", "building_energy"), ("building envelope", "building_energy"),
-    ("energy efficiency buildings", "building_energy"), ("indoor air quality", "building_energy"),
-    ("thermal insulation", "materials"), ("concrete", "materials"),
-    ("building materials", "materials"), ("corrosion", "materials"),
-    ("ventilation", "equipment_systems"), ("HVAC", "equipment_systems"),
-    ("plumbing", "equipment_systems"), ("lighting", "equipment_systems"),
-    ("smart grid", "controls_bas"), ("cybersecurity building", "controls_bas"),
-    ("building automation", "controls_bas"), ("sensors buildings", "controls_bas"),
-    ("building commissioning", "commissioning_fdd"), ("fault detection", "commissioning_fdd"),
-    ("building codes standards", "standards_protocols"), ("measurement uncertainty", "standards_protocols"),
-    ("construction", "construction"), ("housing", "construction"),
-    ("architecture", "architecture"), ("accessibility buildings", "architecture"),
-    ("infrastructure resilience", "infrastructure"), ("water supply", "infrastructure"),
-    ("urban", "urban"), ("smart cities", "urban"),
+    ("acoustics", "architecture"), ("sound insulation", "architecture"),
+    ("flammability", "architecture"), ("smoke detector", "architecture"),
+    ("sprinkler suppression", "architecture"), ("egress evacuation", "architecture"),
+    ("masonry", "structures_civil"), ("steel frame", "structures_civil"),
+    ("timber wood structures", "structures_civil"), ("snow load", "structures_civil"),
+    ("hurricane tornado", "structures_civil"),
+    ("roofing", "materials"), ("glazing fenestration", "materials"),
+    ("moisture buildings", "materials"), ("coatings paint", "materials"),
+    ("sealants adhesives", "materials"), ("gypsum plaster", "materials"),
+    ("cement hydration", "materials"), ("concrete aggregate", "materials"),
+    ("weathering durability", "materials"), ("thermal conductivity", "materials"),
+    ("heat pump", "equipment_systems"), ("refrigeration", "equipment_systems"),
+    ("boiler furnace", "equipment_systems"), ("chimney flue", "equipment_systems"),
+    ("duct air distribution", "equipment_systems"), ("solar heating cooling", "equipment_systems"),
+    ("air infiltration leakage", "building_energy"), ("weatherization retrofit", "building_energy"),
+    ("radon indoor", "building_energy"), ("photovoltaic buildings", "building_energy"),
+    ("flood", "infrastructure"), ("water distribution pipes", "infrastructure"),
+    ("earthquake lifelines", "infrastructure"),
+    ("nondestructive evaluation", "standards_protocols"),
 ]
 
 
