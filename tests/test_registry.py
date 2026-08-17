@@ -139,6 +139,17 @@ def test_manifest_shard_routing():
     assert registry.manifest_shard("pat-ep1234567a1") == "patents-ep"
 
 
+def test_registry_shard_bucketing_matches_manifest():
+    # registry/patents.yaml hit 89MB (2026-08-17): the patent REGISTRY shards now use the same
+    # crc32 buckets as the manifest, so one id's YAML and JSONL shards always pair up
+    for sid in ["pat-us10519664b1", "pat-cn105789298b", "pat-ep1234567a1", "ost-some-report"]:
+        assert registry.shard_path(sid).name == f"{registry.manifest_shard(sid)}.yaml"
+    assert registry.shard_path("pat-cn105789298b").name.startswith("patents-cn-")
+    assert registry.shard_path("pat-us10519664b1").name.startswith("patents-us-")
+    assert registry.shard_path("hand-curated-doc").name == "curated.yaml"
+    assert registry.manifest_shard("hand-curated-doc") == "curated"
+
+
 def test_manifest_round_trip_and_shard_files(tmp_registry):
     rows = [manrow("ost-a"), manrow("pat-us1"), manrow("pat-cn1"), manrow("hand-x")]
     registry.write_manifest_rows(rows)

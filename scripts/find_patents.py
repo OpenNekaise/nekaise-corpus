@@ -22,7 +22,7 @@ build_corpus.py strips the boilerplate (classification codes, cited-by tables, c
 index) around the actual description/claims prose — always load + prune after appending.
 
 Dedups against the registry / manifest / pruned-URL blocklist and appends `pat-` entries to
-registry/patents.yaml (routed there by scripts/registry.py). Publication numbers are already
+registry/patents-<country>-<bucket>.yaml shards (routed by scripts/registry.py). Publication numbers are already
 globally unique, so the id is derived straight from the pub number (e.g. `pat-us11013822b1`), not
 a truncated title slug.
 
@@ -119,7 +119,7 @@ def main() -> None:
     ap.add_argument("--countries", default="US",
                     help='publication-country prefixes, e.g. "US" or "US,CN,EP,DE"')
     ap.add_argument("--max", type=int, default=400, help="cap on new entries this run")
-    ap.add_argument("--append", action="store_true", help="append into the registry (registry/patents.yaml)")
+    ap.add_argument("--append", action="store_true", help="append into the registry (registry/patents-*.yaml)")
     args = ap.parse_args()
     rx = entry_re(args.countries)
 

@@ -179,7 +179,9 @@ def search_subject(
                     "offset": page_offset,
                 },
                 headers=UA,
-                timeout=45,
+                # OAPEN deep-offset pages (expand=bitstreams,metadata @1600+) measured ~26-45s
+                # in 2026-08; 45s timed out whole rounds (marathon rounds 36-40 on 08-17)
+                timeout=120,
             )
             r.raise_for_status()
             items = r.json()
