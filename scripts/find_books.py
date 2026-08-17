@@ -169,25 +169,31 @@ def search_subject(
     """Fetch one subject's pages, returning any request failure separately from a dry page."""
     found = []
     for page_offset in range(offset, offset + depth, per):
-        try:
-            r = requests.get(
-                SEARCH,
-                params={
-                    "query": term,
-                    "expand": "bitstreams,metadata",
-                    "limit": per,
-                    "offset": page_offset,
-                },
-                headers=UA,
-                # OAPEN deep-offset pages (expand=bitstreams,metadata @1600+) measured ~26-45s
-                # in 2026-08; 45s timed out whole rounds (marathon rounds 36-40 on 08-17)
-                timeout=120,
-            )
-            r.raise_for_status()
-            items = r.json()
-        except Exception as exc:
-            print(f"# search '{term}' @{page_offset} failed: {exc}", file=sys.stderr)
-            return found, f"'{term}' @{page_offset}"
+        # OAPEN deep-offset pages (expand=bitstreams,metadata @1600+) measured 26-45s in
+        # 2026-08 and occasionally hang past any timeout; one flaky page used to abort the
+        # whole finder (partial appends are refused), failing marathon rounds — so each page
+        # gets a second attempt before giving up.
+        items = None
+        for attempt in (1, 2):
+            try:
+                r = requests.get(
+                    SEARCH,
+                    params={
+                        "query": term,
+                        "expand": "bitstreams,metadata",
+                        "limit": per,
+                        "offset": page_offset,
+                    },
+                    headers=UA,
+                    timeout=120,
+                )
+                r.raise_for_status()
+                items = r.json()
+                break
+            except Exception as exc:
+                if attempt == 2:
+                    print(f"# search '{term}' @{page_offset} failed twice: {exc}", file=sys.stderr)
+                    return found, f"'{term}' @{page_offset}"
         if not items:
             break
         found.extend((term, topic, item) for item in items)

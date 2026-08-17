@@ -182,8 +182,9 @@ def main() -> None:
     for h in out:
         by_topic[h["topic"]] = by_topic.get(h["topic"], 0) + 1
     npages = len(page_specs)
-    print(f"# {len(out)} NEW built-environment US patents (bucket {args.bucket}, {npages} "
-          f"sitemap page(s), {us_scanned} US entries scanned; deduped vs manifest + registry + blocklist)")
+    print(f"# {len(out)} NEW built-environment {args.countries} patents (bucket {args.bucket}, {npages} "
+          f"sitemap page(s), {us_scanned} {args.countries} entries scanned; "
+          f"deduped vs manifest + registry + blocklist)")
     print(f"# by topic: {by_topic}")
     print("# --- review, then --append, then scripts/build_corpus.py ---")
     print(yaml.safe_dump(out, sort_keys=False, allow_unicode=True))
