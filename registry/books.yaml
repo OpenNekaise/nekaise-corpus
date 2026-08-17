@@ -20642,3 +20642,31 @@ sources:
     license: cc-by
     topic: standards_protocols
     format: pdf
+  - id: oer-the-wheat-genome
+    title: The Wheat Genome
+    url: https://library.oapen.org/rest/bitstreams/95e2ff91-9974-4182-8248-052e937fac2b/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+  - id: oer-beyond-nuclear-ambiguity
+    title: Beyond Nuclear Ambiguity
+    url: https://library.oapen.org/rest/bitstreams/04a9dc9f-a74c-41a3-bfbb-2c2fac2f6251/retrieve
+    source: oapen
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+  - id: oer-taking-sides
+    title: Taking Sides
+    url: https://library.oapen.org/rest/bitstreams/d21e4e93-9cc3-46b6-9c69-8a47ea017702/retrieve
+    source: oapen
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+  - id: oer-le-biomasse-lignocellulosiche
+    title: Le biomasse lignocellulosiche
+    url: https://library.oapen.org/rest/bitstreams/c66063c2-4b8f-4228-a0bf-22ceaed1e83b/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
