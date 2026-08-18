@@ -104,6 +104,31 @@ failure advances nothing and creates no commit. A hard interruption leaves a rec
 python scripts/run_round.py --recover latest
 ```
 
+## Kept alive
+
+Growth does not depend on one long-lived agent session. The deterministic dig runner wakes on a
+schedule, advances the excavation state, validates the entire round, and commits only a healthy
+snapshot. A separate maintainer can wake every six hours to look beyond the happy path.
+
+```text
+Codex inspects → Claude challenges → Codex decides, repairs, validates, and publishes
+```
+
+Codex always moves first. Claude Code is invited only when Codex finds concrete work: a failed or
+stalled backend, interrupted state, unpublished growth, a coverage gap, or a worthwhile improvement
+to the machinery. Claude remains a read-only second opinion; Codex owns the final action. Usage
+limits defer that participant cleanly instead of stopping the corpus or repeatedly consuming a dead
+quota window.
+
+```bash
+bash scripts/install_cron.sh
+bash scripts/install_maintainer_cron.sh
+```
+
+The two loops share a lock, so maintenance begins between corpus rounds. If a repair cannot leave
+the tracked repository safe, growth pauses explicitly for the next maintainer wake rather than
+continuing over uncertain state.
+
 ## Three views of every document
 
 | Stage | Purpose |

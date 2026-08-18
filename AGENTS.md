@@ -169,6 +169,16 @@ find_github + web-search a new vein → append → load → prune → **commit l
 new sources land as local commits for you to review + push. Remove with
 `bash scripts/install_cron.sh --remove`.
 
+**Maintain on autopilot.** `bash scripts/install_maintainer_cron.sh` adds a six-hour, Codex-first
+maintenance pass. It requests the next gap between dig rounds, then runs read-only Codex triage. If
+Codex finds concrete work, Claude Code reviews the proposal read-only and Codex makes the final
+decision with permission to repair, validate, commit, and push `main`. This explicit maintainer
+authorization is separate from `dig`'s never-push rule: a mechanical round still never publishes
+itself. Provider usage limits create independent local cooldowns; Claude is never silently promoted
+over an unavailable Codex. Logs live under `logs/maintainer-*`; unsafe tracked state creates
+`workspace/.maintenance-blocked`, which prevents more dig rounds until a maintainer leaves the repo
+clean. Remove the schedule with `bash scripts/install_maintainer_cron.sh --remove`.
+
 ## Hard rules
 
 - **Never commit `raw/`, `text/`, or `corpus/`** — copyrighted content under mixed licenses. Only the

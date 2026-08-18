@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "needs_action": {
+      "type": "boolean"
+    },
+    "urgency": {
+      "type": "string",
+      "enum": ["none", "routine", "urgent"]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "proposed_actions": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "required": ["needs_action", "urgency", "summary", "evidence", "proposed_actions"],
+  "additionalProperties": false
+}

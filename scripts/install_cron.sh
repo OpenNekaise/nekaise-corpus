@@ -27,7 +27,7 @@ if [ -z "$PYTHON_BIN" ] || ! "$PYTHON_BIN" -c "import requests,yaml,pypdf,bs4" 2
   exit 1
 fi
 chmod +x "$REPO/scripts/dig.sh"
-LINE="0 $HOUR * * * PYTHON_BIN='$PYTHON_BIN' '$REPO/scripts/dig.sh'  $TAG"
+LINE="0 $HOUR * * * /usr/bin/flock -n '$REPO/workspace/.continuous-dig.lock' /usr/bin/env PYTHON_BIN='$PYTHON_BIN' '$REPO/scripts/dig.sh'  $TAG"
 
 # drop any prior nekaise line, then add ours
 ( crontab -l 2>/dev/null | grep -vF "$TAG" || true; echo "$LINE" ) | crontab -

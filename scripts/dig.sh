@@ -14,6 +14,18 @@ mkdir -p "$REPO/logs"
 LOG="$REPO/logs/dig-$(date +%Y%m%d-%H%M%S).log"
 MAX="${DIG_MAX_SECONDS:-10800}"
 
+# The six-hour AI maintainer requests the gap between rounds by creating this flag, then takes
+# the outer continuous-dig lock.  A persistent block means its last action left tracked state that
+# is not safe for another corpus round; only the next maintainer pass should clear it.
+if [ -e "$REPO/workspace/.maintenance-requested" ]; then
+  echo "[$(date -Is)] dig deferred: maintainer requested the next between-round window"
+  exit 0
+fi
+if [ -e "$REPO/workspace/.maintenance-blocked" ]; then
+  echo "[$(date -Is)] dig blocked: $(tr '\n' ' ' < "$REPO/workspace/.maintenance-blocked")"
+  exit 0
+fi
+
 echo "[$(date -Is)] dig start (cap ${MAX}s) -> $LOG"
 set +e
 timeout "${MAX}s" "$PYTHON_BIN" scripts/run_round.py --commit --lock-timeout 30 >>"$LOG" 2>&1
