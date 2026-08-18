@@ -10,6 +10,10 @@ if [ -z "${PYTHON_BIN:-}" ]; then
   else PYTHON_BIN="$(command -v python3 || command -v python)"; fi
 fi
 TARGET_TOKENS="${TARGET_TOKENS:-0}"
+CONTINUOUS_LOCK="$REPO/workspace/.continuous-dig.lock"
+MAINTENANCE_REQUEST="$REPO/workspace/.maintenance-requested"
+MAINTENANCE_BLOCK="$REPO/workspace/.maintenance-blocked"
+WINDOW_WAIT="${MARATHON_WINDOW_WAIT_SECONDS:-14400}"
 case "$TARGET_TOKENS" in
   ''|*[!0-9]*)
     echo "TARGET_TOKENS must be a non-negative integer" >&2
@@ -24,7 +28,7 @@ fi
 SLEEP="${SLEEP:-90}"
 MIN_FREE_KB="${MIN_FREE_KB:-31457280}"
 END=$(( $(date +%s) + HOURS*3600 ))
-mkdir -p "$REPO/logs"
+mkdir -p "$REPO/logs" "$REPO/workspace"
 LOG="$REPO/logs/marathon-$(date +%Y%m%d-%H%M).log"
 say(){ echo "[$(date +%H:%M:%S)] $*" | tee -a "$LOG"; }
 # TARGET_TOKENS is measured on the CLEANED corpus/ (manifest corpus_chars — what a training run
@@ -37,6 +41,7 @@ if [ "$TARGET_TOKENS" -gt 0 ]; then
 fi
 round=0
 failures=0
+exec 8>"$CONTINUOUS_LOCK"
 while [ "$(date +%s)" -lt "$END" ]; do
   if [ "$TARGET_TOKENS" -gt 0 ]; then
     tokens=$(current_tokens)
@@ -55,6 +60,24 @@ while [ "$(date +%s)" -lt "$END" ]; do
     say "LOW DISK (${avail_kb}KB free < ${MIN_FREE_KB}KB) — stopping"
     break
   fi
+  if ! flock -w "$WINDOW_WAIT" 8; then
+    failures=$((failures+1))
+    say "growth window unavailable for ${WINDOW_WAIT}s — stopping"
+    break
+  fi
+  if [ -e "$MAINTENANCE_REQUEST" ]; then
+    flock -u 8
+    say "maintenance requested the next between-round window — yielding"
+    sleep "$SLEEP"
+    continue
+  fi
+  if [ -e "$MAINTENANCE_BLOCK" ]; then
+    reason=$(tr '\n' ' ' < "$MAINTENANCE_BLOCK")
+    flock -u 8
+    say "maintenance blocked growth: $reason"
+    break
+  fi
+
   round=$((round+1))
   say "round $round start"
   if "$PYTHON_BIN" scripts/run_round.py --commit --push main --lock-timeout 30 >>"$LOG" 2>&1; then
@@ -71,6 +94,7 @@ while [ "$(date +%s)" -lt "$END" ]; do
     failures=$((failures+1))
     say "round $round FAILED — nothing committed or pushed"
   fi
+  flock -u 8
   sleep "$SLEEP"
 done
 say "marathon DONE — $round rounds / $failures failures"

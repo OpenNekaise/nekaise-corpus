@@ -10,9 +10,14 @@ set -euo pipefail
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TAG="# nekaise-corpus daily dig"
+LEGACY_TAG="# nekaise-corpus continuous dig"
+
+without_dig_cron() {
+  grep -vF -e "$TAG" -e "$LEGACY_TAG" || true
+}
 
 if [ "${1:-}" = "--remove" ]; then
-  crontab -l 2>/dev/null | grep -vF "$TAG" | crontab - || true
+  (crontab -l 2>/dev/null || true) | without_dig_cron | crontab -
   echo "removed the nekaise-corpus dig cron (if it was installed)"
   exit 0
 fi
@@ -30,7 +35,7 @@ chmod +x "$REPO/scripts/dig.sh"
 LINE="0 $HOUR * * * /usr/bin/flock -n '$REPO/workspace/.continuous-dig.lock' /usr/bin/env PYTHON_BIN='$PYTHON_BIN' '$REPO/scripts/dig.sh'  $TAG"
 
 # drop any prior nekaise line, then add ours
-( crontab -l 2>/dev/null | grep -vF "$TAG" || true; echo "$LINE" ) | crontab -
+( (crontab -l 2>/dev/null || true) | without_dig_cron; echo "$LINE" ) | crontab -
 
 echo "installed daily dig cron (${HOUR}:00 local):"
 crontab -l | grep -F "$TAG"

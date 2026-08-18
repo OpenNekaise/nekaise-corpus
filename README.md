@@ -125,9 +125,10 @@ bash scripts/install_cron.sh
 bash scripts/install_maintainer_cron.sh
 ```
 
-The two loops share a lock, so maintenance begins between corpus rounds. If a repair cannot leave
-the tracked repository safe, growth pauses explicitly for the next maintainer wake rather than
-continuing over uncertain state.
+The scheduled loops share an outer lock, and maintenance also takes the canonical corpus-round
+lock used by every manual and automated entrypoint. Maintenance therefore begins between corpus
+rounds. If a repair cannot leave the tracked repository safe, growth pauses explicitly for the
+next maintainer wake rather than continuing over uncertain state.
 
 ## Three views of every document
 

@@ -174,8 +174,10 @@ maintenance pass. It requests the next gap between dig rounds, then runs read-on
 Codex finds concrete work, Claude Code reviews the proposal read-only and Codex makes the final
 decision with permission to repair, validate, commit, and push `main`. This explicit maintainer
 authorization is separate from `dig`'s never-push rule: a mechanical round still never publishes
-itself. Provider usage limits create independent local cooldowns; Claude is never silently promoted
-over an unavailable Codex. Logs live under `logs/maintainer-*`; unsafe tracked state creates
+itself. The maintainer holds both the scheduled-growth lock and the canonical corpus-round lock, so
+manual and automated entrypoints cannot overlap its action phase. Provider usage limits create
+independent local cooldowns; Claude is never silently promoted over an unavailable Codex. Logs live
+under `logs/maintainer-*`; unsafe tracked state creates
 `workspace/.maintenance-blocked`, which prevents more dig rounds until a maintainer leaves the repo
 clean. Remove the schedule with `bash scripts/install_maintainer_cron.sh --remove`.
 

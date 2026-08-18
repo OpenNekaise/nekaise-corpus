@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Codex-first, Claude-reviewed autonomous maintenance for nekaise-corpus.
 
-The caller must hold workspace/.continuous-dig.lock, so this process always sees a between-round
-repository state.  Codex triages read-only.  When it finds actionable work, Claude Code reviews
-that assessment read-only and a second Codex run makes the final decision and may edit/commit/push.
-Provider exhaustion is a deferred run, not a reason to hammer the same account or silently promote
-Claude to primary maintainer.
+The caller must hold workspace/.continuous-dig.lock and workspace/.corpus-round.lock, so this
+process always sees a between-round repository state regardless of which round entrypoint was used.
+Codex triages read-only.  When it finds actionable work, Claude Code reviews that assessment
+read-only and a second Codex run makes the final decision and may edit/commit/push.  Provider
+exhaustion is a deferred run, not a reason to hammer the same account or silently promote Claude to
+primary maintainer.
 """
 
 from __future__ import annotations
