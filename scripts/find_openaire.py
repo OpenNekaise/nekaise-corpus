@@ -74,6 +74,7 @@ def main() -> None:
 
     urls, titles, reg_ids = registry.existing_keys()
     out, seen = [], set()
+    failed_request = None
     for term, topic in QUERIES:
         if len(out) >= args.max:
             break
@@ -81,7 +82,8 @@ def main() -> None:
             hits = from_openaire(term, args.rows, args.page)
         except Exception as e:
             print(f"# openaire '{term}' p{args.page} failed: {e}", file=sys.stderr)
-            continue
+            failed_request = f"OpenAIRE '{term}' p{args.page}"
+            break
         for title, url in hits:
             if len(out) >= args.max:
                 break
@@ -94,6 +96,14 @@ def main() -> None:
                         "url": url, "source": "openaire_deliverable", "license": "open",
                         "topic": topic, "format": "pdf"})
         time.sleep(1.0)
+
+    if failed_request:
+        print(
+            f"# ERROR: deliverable discovery incomplete at {failed_request}; "
+            "refusing a partial append so rotation does not advance",
+            file=sys.stderr,
+        )
+        raise SystemExit(1)
 
     registry.uniquify_ids(out, reg_ids)
 

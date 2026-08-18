@@ -22,6 +22,7 @@ Rotate --page deeper each round (per-query offset into the search results).
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 import time
 
@@ -76,6 +77,42 @@ QUERIES = [
     ("embodied carbon construction", "materials"),
     ("building services engineering", "equipment_systems"),
 ]
+
+# gov.uk search becomes aggressively fuzzy on deep pages: at p905, for example, the query
+# "building regulations Part L conservation fuel power" returns workplace, social-care and ISA
+# publications.  Full-text DOMAIN scoring cannot reliably recover from that because generic
+# government prose contains polysemous words such as structure, construction and commission.
+# Require an explicit built-environment anchor in the publication/attachment title before spending
+# a fetch slot.  This is intentionally English-specific: gov.uk is an English-language source,
+# while the corpus-wide quality gate remains multilingual.
+TITLE_RELEVANCE = re.compile(
+    r"\b(?:"
+    r"buildings?|built environment|construction|architectur(?:e|al)|"
+    r"housing|dwellings?|residential|landlords?|mortgage|"
+    r"energy (?:efficien|performance|consumption|saving)|decarbonis|retrofit|insulat|"
+    r"energy company obligation|display energy certificates?|digest of uk energy statistics|"
+    r"heat pumps?|heat networks?|district heat|heating|cooling|ventilat|overheating|"
+    r"boilers?|fuel poverty|smart meters?|"
+    r"building regulations?|approved documents?|standard assessment procedure|"
+    r"future homes standard|decent homes standard|cladding|"
+    r"development sites?|sites? for development|site (?:assessment|allocation)|"
+    r"land quality|land use|brownfield|town planning|local plans?|"
+    r"air mobility|transport|railways?|road (?:construction|maintenance|network|scheme|design)|"
+    r"bridges?|tunnels?|pavements?|tactile paving|"
+    r"canals?|waterways?|water (?:supply|resources?|pollution|networks?|infrastructure|code)|"
+    r"sewerage|wastewater|drainage|flood|river restoration|coastal|"
+    r"fire(?: and rescue)?|"
+    r"concrete|cement|masonry|structural|geotechnical|asphalt|construction materials?|"
+    r"construction and demolition waste|"
+    r"urban environment|urban planning|public realm"
+    r")\b|\b(?:SAP|RdSAP|EPCs?|ESOS)\b",
+    re.I,
+)
+
+
+def title_relevant(title: str) -> bool:
+    """Whether a gov.uk publication title contains high-precision AEC evidence."""
+    return bool(TITLE_RELEVANCE.search(title or ""))
 
 
 def search(term: str, rows: int, page: int) -> list[dict]:
@@ -139,6 +176,8 @@ def main() -> None:
                 title = (f"{page_title} — {att_title}"
                          if att_title and registry.norm(att_title) != registry.norm(page_title)
                          else page_title or att_title)
+                if not title_relevant(title):
+                    continue
                 u, t = url.rstrip("/"), registry.norm(title)
                 if not title or u in urls or t in titles:
                     continue

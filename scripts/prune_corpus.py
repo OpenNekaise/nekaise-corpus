@@ -12,11 +12,13 @@ Dropped URLs land in pruned_urls.txt so discovery never re-churns them.
 
     python scripts/prune_corpus.py            # dry run -- report what would be pruned
     python scripts/prune_corpus.py --apply    # prune (delete files, rewrite manifest + registry)
+    python scripts/prune_corpus.py --drop-ids-from reviewed.txt --apply
 """
 from __future__ import annotations
 
 import argparse
 import os
+import sys
 import time
 from collections import Counter
 from pathlib import Path
@@ -27,6 +29,30 @@ import quality
 import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
+
+
+def reviewed_title_drops(spec: str | None, manifest: list[dict]) -> dict[str, str]:
+    """Load explicitly reviewed off-topic ids from a file (or stdin for ``-``).
+
+    This gives maintenance reviews a provenance-preserving path through the normal prune ledger
+    without teaching the global text gate a source-specific exception. Fail closed on unknown or
+    hand-curated ids: a stale review list must not silently target a different corpus state, and
+    explicit title review never overrides the curated-source protection boundary.
+    """
+    if not spec:
+        return {}
+    lines = sys.stdin.read().splitlines() if spec == "-" else Path(spec).read_text().splitlines()
+    ids = {line.strip() for line in lines if line.strip() and not line.lstrip().startswith("#")}
+    if not ids:
+        raise ValueError("reviewed id list is empty")
+    by_id = {r["id"]: r for r in manifest}
+    unknown = sorted(ids - set(by_id))
+    if unknown:
+        raise ValueError(f"reviewed id list contains unknown ids: {', '.join(unknown[:5])}")
+    protected = sorted(sid for sid in ids if not registry.discovered(sid))
+    if protected:
+        raise ValueError(f"reviewed id list contains hand-curated ids: {', '.join(protected[:5])}")
+    return {sid: "off-topic-title" for sid in ids}
 
 
 def write_prune_ledger(manifest: list[dict], drop: dict[str, str],
@@ -67,16 +93,27 @@ def write_prune_ledger(manifest: list[dict], drop: dict[str, str],
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument(
+        "--drop-ids-from",
+        metavar="PATH",
+        help="newline-delimited, reviewed discovered ids to prune as off-topic-title; '-' = stdin",
+    )
     args = ap.parse_args()
 
     manifest = registry.load_manifest_rows()
+    try:
+        reviewed_drop = reviewed_title_drops(args.drop_ids_from, manifest)
+    except (OSError, ValueError) as exc:
+        ap.error(str(exc))
     # near-dup gate: seed titles are always kept; a discovered doc whose normalized title already
     # exists (same paper from another source, v1/v2, etc.) is dropped so CPT doesn't over-weight it.
     seen_titles = {registry.norm(r.get("title")) for r in manifest
                    if not registry.discovered(r["id"]) and r.get("status") == "ok"}
-    drop: dict[str, str] = {}
+    drop: dict[str, str] = dict(reviewed_drop)
     for r in manifest:
         if not registry.discovered(r["id"]):
+            continue
+        if r["id"] in reviewed_drop:
             continue
         if r["status"] != "ok":
             drop[r["id"]] = "failed"
