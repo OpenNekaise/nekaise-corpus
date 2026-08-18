@@ -21,6 +21,9 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
+import ops
+import run_round
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
@@ -135,7 +138,37 @@ def git(*args: str, timeout: int = 300) -> tuple[int, str]:
         return 124, f"{partial.strip()}\ngit command timed out after {timeout}s".strip()
 
 
-def repo_snapshot(fetch_result: str) -> dict[str, Any]:
+def recover_pending_round() -> str | None:
+    """Restore one interrupted round while the caller owns the canonical round lock."""
+    pending = ops.StateSnapshot.pending()
+    if not pending:
+        return None
+    if len(pending) != 1:
+        raise RuntimeError(f"refusing ambiguous recovery of {len(pending)} snapshots: {pending}")
+    run_id = pending[0]
+    snapshot = ops.StateSnapshot.open(run_id, root=ROOT)
+    result = subprocess.run(
+        ["git", "restore", "--staged", "--", *run_round.SNAPSHOT_PATHS],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        timeout=300,
+        check=False,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(f"could not unstage interrupted round state: {result.stderr.strip()}")
+    snapshot.restore()
+    snapshot.discard()
+    ops.run_event(run_id, "run_recovered", recovered_by="ai_maintainer")
+    return run_id
+
+
+def repo_snapshot(
+    fetch_result: str,
+    *,
+    automatic_recovery: str | None = None,
+    automatic_recovery_error: str | None = None,
+) -> dict[str, Any]:
     _, branch = git("branch", "--show-current")
     _, status = git("status", "--short", "--branch")
     rc, counts = git("rev-list", "--left-right", "--count", "origin/main...HEAD")
@@ -158,6 +191,8 @@ def repo_snapshot(fetch_result: str) -> dict[str, Any]:
         "behind_origin_main": behind,
         "ahead_of_origin_main": ahead,
         "pending_round_snapshots": snapshots,
+        "automatic_recovery": automatic_recovery,
+        "automatic_recovery_error": automatic_recovery_error,
         "fetch_result": fetch_result[-2000:],
         "recent_run_events": recent_events,
         "recent_dig_logs": [str(path.relative_to(ROOT)) for path in recent_logs],
@@ -237,9 +272,23 @@ def main() -> int:
     run_dir.mkdir()
     print(f"[{utc_now().isoformat()}] maintainer start {run_id}", flush=True)
 
+    recovered = None
+    recovery_error = None
+    try:
+        recovered = recover_pending_round()
+        if recovered:
+            print(f"Recovered interrupted corpus round {recovered} before agent triage.", flush=True)
+    except Exception as exc:
+        recovery_error = str(exc)
+        print(f"Automatic round recovery needs agent attention: {recovery_error}", flush=True)
+
     fetch_rc, fetch_output = git("fetch", "--prune", "origin", timeout=600)
     fetch_result = f"exit={fetch_rc}\n{fetch_output}" if fetch_output else f"exit={fetch_rc}"
-    snapshot = repo_snapshot(fetch_result)
+    snapshot = repo_snapshot(
+        fetch_result,
+        automatic_recovery=recovered,
+        automatic_recovery_error=recovery_error,
+    )
     (run_dir / "repo-snapshot.json").write_text(json.dumps(snapshot, indent=2) + "\n")
 
     codex = resolve_agent("codex", os.environ.get("CODEX_BIN"))

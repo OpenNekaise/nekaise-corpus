@@ -15,7 +15,9 @@ inflate counts, expose credentials, or hide failures.
 Use this order:
 
 1. Re-check the live state; another fact may invalidate the earlier proposal.
-2. Recover a pending round snapshot before unrelated edits when recovery is required.
+2. The lock-owning maintainer automatically recovers one valid pending round snapshot before
+   triage. If `automatic_recovery_error` is present, inspect and repair it directly; do not invoke
+   `run_round.py --recover` because this action correctly inherits the already-held corpus lock.
 3. Choose the smallest high-value repair or improvement. It is valid to reject both proposals and
    make no changes when current evidence says that is safer.
 4. Preserve unrelated/user changes. Add or update tests for durable behavior.
