@@ -101,9 +101,9 @@
   },
   "find_worldbank": {
     "flag": "--os",
-    "next": 243600,
+    "next": 0,
     "step": 400,
-    "note": "World Bank WDS API. Q ROTATED 08-06 to 'district heating' (reset next=0) — 'building commissioning' dry at os113200 ('of 0 total'); prior 'building energy efficiency' mined os0-16700. Next q candidates when thin: 'building code' / 'thermal insulation' / 'green building construction' (reset next=0 per q). cc-by."
+    "note": "World Bank WDS API. Q ROTATED 2026-08-19 to exact phrase '\"building code\"' (2190 results in live probe; reset next=0). Prior 'district heating' had 2060 results, was mined out by 2026-08-06, and later returned HTTP 400 at extreme offsets; finder now exits nonzero on incomplete API requests. Earlier 'building energy efficiency' mined os0-16700. Next exact-phrase candidates when thin: '\"built environment\"' / '\"thermal insulation\"' (reset next=0 per q). cc-by."
   },
   "find_jstage": {
     "flag": "--start",

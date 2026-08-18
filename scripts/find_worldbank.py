@@ -108,7 +108,8 @@ def main() -> None:
             total, docs = fetch_page(args.q, args.rows, offset)
         except Exception as e:
             print(f"# os={offset} fetch failed: {e}", file=sys.stderr)
-            break
+            print("ERROR: refusing a partial append so rotation does not advance", file=sys.stderr)
+            raise SystemExit(1)
         if offset >= total or not docs and offset > total - args.rows:
             break  # past the end of this query's results
         for d in docs:
