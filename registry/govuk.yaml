@@ -206900,14 +206900,6 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
-  - id: guk-national-minimum-wage-low-pay-commission-2018--2
-    title: 'National Minimum Wage: Low Pay Commission 2018 Report — Low Pay Commission
-      2018 Report - Summary of Findings'
-    url: https://assets.publishing.service.gov.uk/media/5c377adae5274a70ca3c3cd3/LPC_2018_Report_Summary_of_findings.pdf
-    source: gov_uk
-    license: open
-    topic: controls_bas
-    format: pdf
   - id: guk-monitoring-air-quality-and-dust-on-the-hs2-pha-526
     title: Monitoring air quality and dust on the HS2 Phase One route (February 2026)
       — Buckinghamshire Council air quality monthly report (February 2026)
@@ -404036,6 +404028,100 @@ sources:
     title: 'DWP equality information 2015: customer data — DWP equality information
       2015: customer data report'
     url: https://assets.publishing.service.gov.uk/media/5a81a2ffe5274a2e8ab550e9/dwp-equality-information-2015-customer-data-200715.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-strategic-partners-transition-programme-equali
+    title: 'Strategic partners transition programme: equality impact assessment'
+    url: https://assets.publishing.service.gov.uk/media/5a79c484ed915d042206ae2d/strategic-partners-transition-fund-equality-impact-assessment.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-supply-chain-plan-guidance-contracts-for-diffe
+    title: 'Supply chain plan guidance: Contracts for Difference allocation round 2
+      — Supply chain guidance'
+    url: https://assets.publishing.service.gov.uk/media/5a7f905bed915d74e622b39b/162211_Updated_Final_SCP_Guidance_2016_20161102.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-review-of-monitor-s-regulatory-procedure-at-mi
+    title: 'Review of Monitor’s regulatory procedure at Mid Staffs: lessons learned
+      — Review of the contingency planning team/trust special administration procedure
+      at Mid Staffordshire NHS Fo'
+    url: https://assets.publishing.service.gov.uk/media/5a81ba9de5274a2e8ab558b2/mid_staffs_lessons_learned.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-low-pay-commission-2018-report-summary-of-find
+    title: Low Pay Commission 2018 Report - Summary of findings — LPC 2018 Report -
+      Summary of findings
+    url: https://assets.publishing.service.gov.uk/media/5c1ccd82ed915d731c146479/LPC_2018_Report_Summary_of_findings.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-making-tax-digital-voluntary-pay-as-you-go
+    title: 'Making Tax Digital: Voluntary pay as you go'
+    url: https://assets.publishing.service.gov.uk/media/5a80b27eed915d74e622fed3/Making_Tax_Digital-Voluntary_pay_as_you_go-consultation.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-making-tax-digital-voluntary-pay-as-you-go-mak
+    title: 'Making Tax Digital: Voluntary pay as you go — Making Tax Digital: Voluntary
+      pay as you go - Summary of responses'
+    url: https://assets.publishing.service.gov.uk/media/5a8007b340f0b62305b88bfa/Making_Tax_Digital_-_Voluntary_pay_as_you_go_-_Summary_of_responses.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-zoonotic-diseases-investigation-guidelines-gui
+    title: 'Zoonotic diseases: investigation guidelines — Guidelines for the Investigation
+      of Zoonotic Disease in England and Wales'
+    url: https://assets.publishing.service.gov.uk/media/5a7f522340f0b6230268ec99/Guidelines_for_Investigation_of_Zoonotic_Disease.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-common-transfer-file-25-specification
+    title: 'Common transfer file 25: specification'
+    url: https://assets.publishing.service.gov.uk/media/6914b1eddb01ecfcf96fc880/CTF_25_technical_specification_v1.1.pdf
+    source: gov_uk
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: guk-english-and-maths-for-16-to-18-year-olds-effec
+    title: 'English and maths for 16 to 18 year olds: effective teaching — Effective
+      practice in the delivery and teaching of English and mathematics to 16 to 18 year
+      olds'
+    url: https://assets.publishing.service.gov.uk/media/5a81d316e5274a2e87dbfad7/English_and_Mathematics_to_16-18_year_olds.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-english-and-maths-for-16-to-18-year-olds-effec-2
+    title: 'English and maths for 16 to 18 year olds: effective teaching — Effective
+      practice in the delivery and teaching of English and mathematics to 16 to 18 year
+      olds: case studies'
+    url: https://assets.publishing.service.gov.uk/media/5a8215f540f0b62305b9266e/English_and_Mathematics_to_16-18_year_olds_-_Case_Studies.pdf
+    source: gov_uk
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: guk-wholesale-digital-markets-champion-first-repor
+    title: Wholesale Digital Markets Champion – first report
+    url: https://assets.publishing.service.gov.uk/media/6a510e8b2467584757371d58/Digital_Markets_Champion_Report.pdf
+    source: gov_uk
+    license: open
+    topic: construction
+    format: pdf
+  - id: guk-abolition-of-assessed-income-periods-for-pensi
+    title: Abolition of Assessed Income Periods for Pension Credit - Impact Assessment
+    url: https://assets.publishing.service.gov.uk/media/5a7c5c2040f0b660183b6d7b/ia-abolition-assessed-income-periods-pension-credit.pdf
     source: gov_uk
     license: open
     topic: building_energy
