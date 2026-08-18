@@ -1,41 +1,52 @@
 # nekaise-corpus
 
-[![code: MIT](https://img.shields.io/badge/code-MIT-blue)](#license)
-[![data: fetch your own](https://img.shields.io/badge/data-fetch%20your%20own-orange)](#licensing)
-[![built for: Claude Code · Codex](https://img.shields.io/badge/built%20for-Claude%20Code%20%C2%B7%20Codex-8A2BE2)](AGENTS.md)
-[![part of: OpenNekaise](https://img.shields.io/badge/part%20of-OpenNekaise-0aa)](https://github.com/OpenNekaise)
+_An [OpenNekaise](https://github.com/OpenNekaise) project._
 
-**An agent-operated, continuously growing corpus of open built-environment / AEC knowledge —
-architecture, engineering & construction, structures, building energy & HVAC, materials,
-infrastructure, urban systems — in every language — for LLM training & evaluation.**
+A continuously growing, multilingual corpus of open knowledge for architecture, engineering,
+construction, and the systems that make cities work. It brings together structures, materials,
+building energy, HVAC, transportation, water, fire, geotechnical engineering, and urban knowledge
+for language-model training and evaluation.
 
-> ### ⚠️ We do not redistribute the data
-> The sources in this corpus carry many different licenses — US-government public domain, CC-BY,
-> CC-BY-SA, open access with per-paper terms, and some copyrighted material we index as pointers
-> only. Shipping the bytes would violate several of them, so **this repo never contains the
-> documents themselves**. What it ships is the *recipe*: a *registry* of every source (URL, license,
-> topic, sha256), a *loader* that fetches your own copy onto your own machine, and the *provenance*
-> to verify it. This is the same model RedPajama and The Pile use. Every document's license is
-> recorded per-source — respect it in whatever you do downstream.
+Much of this knowledge is already public. It is simply scattered—across agencies, repositories,
+patent offices, archives, and source trees. This project turns that fragmentation into one navigable,
+auditable system.
 
-## Use it
+It is not a data dump. It is a reproducible way to discover, fetch, verify, and refine open
+knowledge—then continue from exactly where the last operator stopped.
 
-There are no commands to learn. Clone the repo, open it in **Claude Code** or **Codex**, and tell
-the agent what you want — it reads [`AGENTS.md`](AGENTS.md) and the skills, and operates the corpus
-for you:
+> **This repository never redistributes source documents.**
+>
+> Every source keeps its own license. This repository contains the registry, provenance, and
+> machinery needed to build your own local copy. The downloaded bytes remain on your machine.
 
-- *“**Get me the corpus.**”* — the agent fetches every indexed source into `raw/` → `text/` →
-  `corpus/` on your machine, verifies the failures, and reports what you got. Once you're caught up it
-  can enable a **daily growth job** (crontab, ≤3h/day) that keeps discovering new open data —
-  committing locally, never pushing.
-- *“**Find more sources and grow it.**”* — one growth round: the agent sweeps 24 configured discovery
-  backends, 20 currently enabled (papers, patents, books, multilingual repositories), loads what
-  survives, and prunes the junk. The excavation state is committed (`registry/rotation.json`), so
-  any agent on any machine resumes exactly where the last one stopped.
-- *“**Add the EnergyPlus docs.**”* / *“重点挖一些中文的暖通资料”* — point it at anything specific:
-  a doc site to crawl, a language to prioritize, a vein to dig deeper.
+## Begin with a sentence
 
-## At a glance
+Clone the repository, open it in Claude Code or Codex, and say what you want:
+
+```bash
+git clone --depth 1 https://github.com/OpenNekaise/nekaise-corpus.git
+cd nekaise-corpus
+```
+
+- “Get me the corpus.”
+- “Grow it with more open sources.”
+- “Go deeper on Japanese structural engineering.”
+- “Add the EnergyPlus documentation.”
+- “Verify my local corpus.”
+
+The agent reads [`AGENTS.md`](AGENTS.md), follows the repository playbooks, and runs the appropriate
+workflow. You can operate the same machinery directly from the command line.
+
+To build a local copy yourself:
+
+```bash
+pip install -r requirements.txt
+python scripts/build_corpus.py
+python scripts/clean_corpus.py
+python scripts/clean_corpus.py --check
+```
+
+## The corpus, today
 
 <!-- STATS:START -->
 | | |
@@ -54,110 +65,109 @@ _Snapshot of the live registry (2026-08-18) — auto-generated from the manifest
 shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._
 <!-- STATS:END -->
 
-**Where it comes from:** US patents (Google Patents, public domain) · OSTI / NIST / NBS national-lab
-reports · arXiv · OpenAlex · Zenodo · EU Horizon project deliverables (OpenAIRE) · OAPEN open-access
-books (all languages) · Internet Archive pre-1929 engineering handbooks · Wikipedia in 9 languages ·
-German building research (KIT, Austria's Stadt/Haus der Zukunft) · France's ADEME · Japan's BRI &
-NILIM · dozens of curated public-domain manuals (DOE · FHWA · FEMA · USGS · OSHA · GSA · HUD ·
-WBDG UFC · NASA) · permissive GitHub repos including **source code** (Modelica `.mo` physics models,
-structural/FEA `.py`).
+The corpus spans public institutions and national laboratories, open scholarship and books,
+historical engineering archives, patents, multilingual repositories, documentation sites, and
+permissively licensed technical source code. Its sources include Google Patents, OSTI, NIST, NBS,
+arXiv, OpenAlex, Zenodo, OpenAIRE, OAPEN, the Internet Archive, SciELO, J-STAGE, ADEME, GOV.UK,
+World Bank, and the Modelica ecosystem.
 
-## How it works
+## A corpus that remembers how it was made
+
+Every document begins as a registered source and ends as verified, training-ready text. The path
+between them is recorded.
 
 ```mermaid
 flowchart LR
-    subgraph FINDERS ["24 configured discovery backends (scripts/find_*.py)"]
-        direction TB
-        F1["papers & reports<br/>OpenAlex · OSTI · arXiv · NIST(Crossref) · Zenodo · OpenAIRE"]
-        F2["books & heritage<br/>OAPEN (all languages) · Internet Archive (pre-1929)"]
-        F3["patents<br/>Google Patents sitemap, 1900→now"]
-        F4["multilingual<br/>Wikipedia ×9 · KIT (de) · Austria (de) · ADEME (fr) · BRI/NILIM (ja)"]
-    end
-    FINDERS -->|"propose entries<br/>(dedup via rebuildable SQLite index)"| R
-    R["registry/*.yaml — sharded registry<br/>+ backends.json + rotation.json"]
-    R --> B["build_corpus.py — the loader<br/>fair host-aware downloads + process extraction,<br/>WAF/TLS fallback, pypdf→pdftotext rescue,<br/>sha256 + quality metrics"]
-    B --> D["raw/ + text/<br/>(your machine only — git-ignored)"]
-    B --> M["manifest/*.jsonl — sharded manifest<br/>provenance: url · license · sha256 · metrics"]
-    M --> P["prune_corpus.py — quality gate<br/>multilingual on-topic check, dedup,<br/>golden-tested (tests/)"]
-    P -.->|"edits registry in place"| R
-    P -.->|"pruned_urls.txt + pruned.jsonl<br/>blocklist + decision provenance"| FINDERS
-    D --> C["clean_corpus.py — cleaning stage<br/>strips headers/footers, TOC leaders, OCR debris<br/>structural rules only (CJK-safe), golden-tested"]
-    C --> O["corpus/<br/>cleaned, training-ready — git-ignored"]
+    D[Discover] --> R[Register]
+    R --> F[Fetch]
+    F --> G[Quality gate]
+    G --> C[Clean]
+    C --> V[Verify]
+    V --> D
 ```
 
-**discover → register → fetch → gate → clean → repeat.** The agent runs this loop and keeps widening
-it — new backends are ~100-line scripts on top of the shared `registry.py`/`quality.py` machinery.
-The gate decides *which documents* survive; the cleaner decides *which lines within them* do.
+Discovery state lives in `registry/rotation.json`. Source metadata lives in `registry/`. Fetch
+results and hashes live in `manifest/`. Decisions made by the quality gate remain in
+`registry/pruned.jsonl` and `pruned_urls.txt`. Another operator—or another machine—can resume the
+same excavation without starting over.
 
-| Path | What it is |
+The canonical round is deliberately fail-closed:
+
+```bash
+python scripts/run_round.py --commit
+```
+
+It runs discovery → fetch → prune → clean → check → statistics → index → lint → tests. A required
+failure advances nothing and creates no commit. A hard interruption leaves a recoverable snapshot:
+
+```bash
+python scripts/run_round.py --recover latest
+```
+
+## Three views of every document
+
+| Stage | Purpose |
 |---|---|
-| `registry/` | The **registry** — one YAML shard per vein, `backends.json` control-plane config, `rotation.json` resumable excavation state, and the structured prune-decision ledger. |
-| `manifest/` | **Provenance** — id, url, license, topic, sha256, bytes, quality metrics for every fetched doc; one `.jsonl` shard per vein (patents split by country) so no file nears GitHub push limits. |
-| `pruned_urls.txt` | **Blocklist** of everything the quality gate dropped — discovery never re-churns it. |
-| `scripts/` | The **machinery** — `run_round.py` is the fail-closed control plane; finders, loader, quality gate, cleaner, local SQLite index and cron runners sit behind it. |
-| `.claude/skills/` | The **playbooks** the agent follows (`go` · `load-corpus` · `find-sources` · `crawl-docs` · `clean-corpus` · `dig`). |
-| `tests/` | **Golden tests** pinning the quality gate's verdicts per document class and the cleaner's keep/drop rules, wired to CI. |
-| `workspace/` | The agent's **scratch space** (git-ignored). |
-| [`AGENTS.md`](AGENTS.md) | The **operating manual** your coding agent reads first. |
-| `raw/`, `text/`, `corpus/` | **Git-ignored.** Your local copy in three stages: original bytes → verbatim extraction → cleaned, training-ready text. Never committed. |
+| `raw/` | Original bytes. The reproducibility anchor. |
+| `text/` | Verbatim extraction with provenance. Never cleaned in place. |
+| `corpus/` | Cleaned, training-ready text derived from the manifest. |
 
-## Reproducibility
+All three directories are local and git-ignored. The repository never commits document bytes.
+`corpus/` is built from manifest rows rather than a directory listing, so unprovenanced files cannot
+silently enter a training run.
 
-A clone gets the **same corpus** we have (`git clone --depth 1` — history not needed). The manifest records every doc's `url` and `sha256`;
-the loader compares each download against it and reports `reproduced / drifted / new`. Stable hosts
-(arXiv, `*.gov`) reproduce reliably; any dead or changed source is reported, never silently dropped.
-The raw bytes + sha256 are the reproducibility anchor; the extracted text in `text/` is derived and
-can vary slightly across parser versions (use the exact versions in `requirements.lock` if you need
-byte-identical text; install `requirements.lock` for the extraction versions used by this checkout).
-Newly extracted rows record the extractor version and text hash. `corpus/` is derived again, from
-`text/` plus the cleaning ruleset recorded in
-`corpus/.ruleset` — quote that ruleset alongside the manifest if you publish results, since it is
-part of what produced your training text. Ask your agent to *"verify the corpus"* any time.
+Cleaning is structural and language-safe. It removes repeated furniture, page markers, contents
+leaders, OCR debris, patent identifier blocks, and similar artifacts without treating non-Latin
+scripts or numeric engineering tables as noise. The active ruleset is recorded in
+`corpus/.ruleset` and pinned by golden tests.
 
-## Reliable operation
+## Reproducible by design
 
-`python scripts/run_round.py --commit` is the canonical autonomous round. It holds a repository
-lock and runs discovery → fetch → prune → clean → check → README stats → index refresh → lint →
-tests. Any non-zero required step prevents commit and push. `dig.sh` and `marathon.sh` are thin
-wrappers around this same state machine; local run events are written under `logs/`. Normal failures
-roll tracked state back. A hard kill leaves a snapshot recoverable with
-`python scripts/run_round.py --recover latest`.
+The manifest records each source URL, license, byte count, SHA-256 hash, extraction metadata, and
+quality metrics. On a later fetch, the loader reports whether the source was reproduced, changed,
+or newly discovered. Nothing dead or different is silently ignored.
 
-Discovery backends run concurrently, but never write shared YAML concurrently: each finder stages an
-isolated JSON proposal, then the control plane deterministically deduplicates and merges successful
-proposals before advancing rotation pointers. The loader separately schedules host-aware downloads
-(`--workers`, default 16) and process-parallel extraction (`--extract-workers`, default ≤8), so slow
-PDF parsing does not consume a network slot. Finder concurrency is configurable with
-`run_round.py --discovery-workers N` (default 6).
+For a published dataset or evaluation, keep the manifest revision, `requirements.lock`, and the
+cleaning ruleset together. They describe which bytes were fetched and how those bytes became the
+text you used.
 
-The Git-tracked YAML/JSONL files remain the source of truth. `workspace/corpus-index.sqlite3` is a
-git-ignored acceleration index, automatically invalidated by source-file signatures and safe to
-delete or rebuild with `python scripts/corpus_index.py rebuild`.
+## What lives in this repository
 
-## Licensing
+| Path | Role |
+|---|---|
+| `registry/` | Source catalog, backend configuration, rotation state, and prune decisions. |
+| `manifest/` | Provenance and reproducibility record for every fetched document. |
+| `scripts/` | Discovery, loading, extraction, quality, cleaning, verification, and automation. |
+| `tests/` | Golden judgments for document quality and cleaning behavior. |
+| `.claude/skills/` | Agent playbooks for loading, finding, crawling, cleaning, and digging. |
+| `workspace/` | Rebuildable local indexes and agent scratch space. |
+| [`AGENTS.md`](AGENTS.md) | The complete operating manual. |
 
-Every source carries a `license` in the registry / manifest — **read it before you
-redistribute anything**:
+The tracked YAML and JSONL files are authoritative. `workspace/corpus-index.sqlite3` is only an
+acceleration layer; it can always be rebuilt.
 
-- **`public-domain`** — US government / national-lab work and expired-copyright texts (patents,
-  DOE · NIST · FHWA · FEMA · pre-1929 books). Free to use.
-- **`cc-by` / `cc-by-sa`** — Wikipedia, CC-licensed papers and books (OAPEN, IntechOpen, KIT).
-  Attribution required (+ share-alike for `-sa`).
-- **`open`** — arXiv / OA papers / government sites that allow downloading but not blanket
-  redistribution. Check each source's individual terms.
-- **`proprietary-internal`** — copyrighted vendor/standards material (e.g. ASHRAE). Pointers for
-  your own access only; **never redistribute the bytes.**
+## Licenses stay attached
 
-`raw/`, `text/` and `corpus/` are git-ignored for exactly this reason: this project publishes the
-registry, manifest, loader and cleaner (our curation) — never the documents themselves.
+“Open” is not one license. `nekaise-corpus` records the terms source by source:
 
-## Contributing
+- `public-domain` — US federal works and expired-copyright material.
+- `cc-by` / `cc-by-sa` — reusable with attribution, and share-alike where applicable.
+- `open` — available to fetch, but governed by the source's individual terms.
+- `proprietary-internal` — a pointer for authorized access only. The bytes are never added.
 
-Add an entry to `registry/curated.yaml` and open a PR — or clone it, tell your agent to dig a new
-vein, and PR what it finds. Prefer openly-licensed material (public-domain gov reports, CC, arXiv);
-tag copyrighted material `proprietary-internal` and never add its bytes.
+Read the recorded license before redistributing or publishing derived material. This project publishes
+the curation and the method, not a claim over the documents it references.
+
+## Extend the map
+
+Add a source to `registry/curated.yaml`, point an agent at a new collection, or build a discovery
+backend for an untapped archive. Prefer public-domain and clearly licensed material. Every new vein
+should be resumable, deduplicated, provenance-rich, and subject to the same quality gate.
+
+Pull requests are welcome.
 
 ## License
 
-The code, registry, and manifest in this repo are MIT. The referenced source documents retain their
-own licenses (see above). Part of the [OpenNekaise](https://github.com/OpenNekaise) ecosystem.
+The code, registry, and manifest are MIT licensed. Referenced documents retain their original
+licenses. `nekaise-corpus` is one project in the wider
+[OpenNekaise ecosystem](https://github.com/orgs/OpenNekaise/repositories).
