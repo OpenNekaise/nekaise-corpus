@@ -16,7 +16,9 @@ ready-to-paste registry entries. Review, then `--append` and run the loader.
 from __future__ import annotations
 
 import argparse
+import email.utils
 import json
+import math
 import re
 import sys
 import time
@@ -26,10 +28,12 @@ from urllib.parse import urlparse
 import requests
 import yaml
 
+import ops
 import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 MAILTO = "corpus@opennekaise.org"
+COOLDOWN_FILE = HERE / "workspace" / "find-sources-cooldowns.json"
 
 # (search term -> our corpus topic). Many specific sub-topic queries -> more unique results.
 QUERIES = [
@@ -220,7 +224,45 @@ def from_arxiv(term, topic, per):
 BACKENDS = {"openalex": from_openalex, "osti": from_osti, "arxiv": from_arxiv}
 
 
-def main() -> None:
+def load_cooldowns(now: float, path: Path | None = None) -> dict[str, float]:
+    """Load unexpired local API cooldowns; malformed scratch state never blocks discovery."""
+    path = path or COOLDOWN_FILE
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text())
+        if not isinstance(data, dict):
+            raise ValueError("expected a JSON object")
+        return {
+            str(backend): float(until)
+            for backend, until in data.items()
+            if float(until) > now
+        }
+    except (OSError, TypeError, ValueError, json.JSONDecodeError) as exc:
+        print(f"# ignoring invalid cooldown state {path}: {exc}", file=sys.stderr)
+        return {}
+
+
+def save_cooldowns(cooldowns: dict[str, float], path: Path | None = None) -> None:
+    path = path or COOLDOWN_FILE
+    ops.atomic_write_text(path, json.dumps(cooldowns, sort_keys=True) + "\n")
+
+
+def retry_after_deadline(value: str | None, now: float) -> float | None:
+    """Convert an HTTP Retry-After delay or date into an epoch deadline."""
+    if not value:
+        return None
+    try:
+        return now + max(0, int(value))
+    except ValueError:
+        try:
+            parsed = email.utils.parsedate_to_datetime(value)
+            return max(now, parsed.timestamp())
+        except (TypeError, ValueError, OverflowError):
+            return None
+
+
+def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--per", type=int, default=15, help="results per backend per topic query")
     ap.add_argument("--backends", default="openalex,osti,arxiv")
@@ -234,11 +276,22 @@ def main() -> None:
                     help="append candidates into the registry shards (then load + prune)")
     args = ap.parse_args()
     backends = [b.strip() for b in args.backends.split(",") if b.strip() in BACKENDS]
+    if not backends:
+        ap.error("--backends did not select any known backend")
 
     urls, titles, reg_ids = registry.existing_keys()
     out, seen = [], set()
     throttled: dict[str, int] = {backend: 0 for backend in backends}
-    disabled = set()
+    successful_requests: dict[str, int] = {backend: 0 for backend in backends}
+    now = time.time()
+    cooldowns = load_cooldowns(now)
+    disabled = {backend for backend in backends if cooldowns.get(backend, 0) > now}
+    for backend in sorted(disabled):
+        remaining = math.ceil(cooldowns[backend] - now)
+        print(
+            f"# {backend} cooldown active for {remaining}s; skipping it for this round",
+            file=sys.stderr,
+        )
     for term, topic in QUERIES:
         for b in backends:
             if b in disabled:
@@ -255,6 +308,9 @@ def main() -> None:
                         disabled.add(b)
                         retry_after = (getattr(response, "headers", {}) or {}).get("Retry-After")
                         suffix = f"; Retry-After={retry_after}" if retry_after else ""
+                        if deadline := retry_after_deadline(retry_after, time.time()):
+                            cooldowns[b] = max(cooldowns.get(b, 0), deadline)
+                            save_cooldowns(cooldowns)
                         print(
                             f"# {b} circuit open after {throttled[b]} throttled requests"
                             f"{suffix}; skipping it for the rest of this round",
@@ -263,6 +319,7 @@ def main() -> None:
                 else:
                     throttled[b] = 0
                 continue
+            successful_requests[b] += 1
             throttled[b] = 0
             for h in hits:
                 u, t = h["url"].rstrip("/"), registry.norm(h["title"])
@@ -270,6 +327,15 @@ def main() -> None:
                     continue
                 seen.add(u)
                 out.append(h)
+
+    if not any(successful_requests.values()):
+        unavailable = ", ".join(backends)
+        print(
+            f"# ERROR: all selected upstreams were unavailable ({unavailable}); "
+            "refusing a false-success discovery run",
+            file=sys.stderr,
+        )
+        return 1
 
     # de-collide ids: truncated title slugs clash across runs; the manifest is id-keyed, so a
     # clash silently overwrites a doc. registry.uniquify_ids guards vs the whole registry.
@@ -290,7 +356,8 @@ def main() -> None:
     if args.append and out:
         counts = registry.append_entries(out)
         print(f"# appended {len(out)} entries to the registry: {counts}", file=sys.stderr)
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
