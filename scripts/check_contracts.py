@@ -13,6 +13,24 @@ import rotation
 import run_round
 
 ROOT = Path(__file__).resolve().parents[1]
+MAX_CONTROL_FILE_BYTES = 80 * 1024 * 1024
+
+
+def oversized_control_files(root: Path = ROOT) -> list[tuple[Path, int]]:
+    """Return registry/manifest files too large to publish safely.
+
+    GitHub rejects individual files above 100 MiB. Fail rounds at 80 MiB so growing shards can be
+    split while ordinary commits are still publishable.
+    """
+    files = [
+        *(root / "registry").glob("*.yaml"),
+        *(root / "manifest").glob("*.jsonl"),
+    ]
+    return sorted(
+        ((path, path.stat().st_size) for path in files
+         if path.stat().st_size > MAX_CONTROL_FILE_BYTES),
+        key=lambda item: str(item[0]),
+    )
 
 
 def main() -> int:
@@ -39,9 +57,17 @@ def main() -> int:
         errors.append(f"{script}: finder is missing from registry/backends.json")
 
     steps = [step for step, _, _ in run_round.PIPELINE]
-    required_order = ["fetch", "prune", "clean", "check", "stats", "index", "lint"]
+    required_order = [
+        "fetch", "prune", "clean", "check", "stats", "index", "lint", "contracts",
+    ]
     if steps != required_order:
         errors.append(f"pipeline order {steps!r}, expected {required_order!r}")
+
+    for path, size in oversized_control_files():
+        errors.append(
+            f"{path.relative_to(ROOT)} is {size / 1024 / 1024:.1f} MiB; "
+            f"split before {MAX_CONTROL_FILE_BYTES / 1024 / 1024:.0f} MiB"
+        )
 
     ledger = registry.REG_DIR / "pruned.jsonl"
     if ledger.exists():

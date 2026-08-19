@@ -97,8 +97,9 @@ The canonical round is deliberately fail-closed:
 python scripts/run_round.py --commit
 ```
 
-It runs discovery → fetch → prune → clean → check → statistics → index → lint → tests. A required
-failure advances nothing and creates no commit. A hard interruption leaves a recoverable snapshot:
+It runs discovery → fetch → prune → clean → check → statistics → index → lint → architecture
+contracts → tests. A required failure advances nothing and creates no commit. A hard interruption
+leaves a recoverable snapshot:
 
 ```bash
 python scripts/run_round.py --recover latest

@@ -25,7 +25,7 @@ def test_finder_command_combines_fixed_args_pointer_and_append():
 
 def test_required_pipeline_is_fail_closed_and_complete():
     assert [step for step, _, _ in run_round.PIPELINE] == [
-        "fetch", "prune", "clean", "check", "stats", "index", "lint",
+        "fetch", "prune", "clean", "check", "stats", "index", "lint", "contracts",
     ]
 
 

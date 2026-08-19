@@ -34,8 +34,8 @@ Look at the loader's opening line, `sources: N total, K to fetch`:
 Ask the user, in plain language:
 
 > The corpus is fully loaded. Want me to enable the **daily growth job**? Once a day (≤3h) it runs
-> the enabled finders in `registry/backends.json`, loads, prunes, cleans, checks, lints and tests,
-> then **commits locally — it never pushes.** You review the commits
+> the enabled finders in `registry/backends.json`, loads, prunes, cleans, checks, lints, validates
+> architecture contracts, and tests, then **commits locally — it never pushes.** You review the commits
 > and push when you're happy. It runs via your machine's crontab (only when the machine is on).
 
 If **yes**:

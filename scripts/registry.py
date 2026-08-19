@@ -44,8 +44,8 @@ SHARDS = {
     "eud-": "deliverables.yaml",  # find_openaire (EU Horizon/H2020 project deliverables)
     "nst-": "nist.yaml",       # find_nist (NIST/NBS technical series via Crossref DOI prefix)
     "pat-": "patents.yaml",    # find_patents (Google Patents sitemap, building/HVAC CPC classes);
-                               # base name only — _shard_stem buckets it into patents-cn-0…7 /
-                               # patents-us-0…3 (89MB single file 2026-08-17)
+                               # base name only — _shard_stem buckets it into patents-cn-0…15 /
+                               # patents-us-0…7 (89MB single file 2026-08-17)
     "wik-": "wiki.yaml",       # find_wiki (multilingual Wikipedia articles via langlinks/categories)
     "doa-": "doaj.yaml",       # find_doaj (DOAJ open-access articles, all languages)
     "sdz-": "austria.yaml",    # find_sdz (Austrian Stadt/Haus der Zukunft building-research reports, German)
@@ -106,13 +106,13 @@ def discovered(sid: str) -> bool:
 # push; registry/patents.yaml hit 89MB (2026-08-17) and got the same treatment. crc32 keeps the
 # id -> bucket mapping stable across runs and platforms, and identical between one id's
 # registry YAML shard and its manifest JSONL shard.
-PATENT_BUCKETS = {"cn": 8, "us": 4}
+PATENT_BUCKETS = {"cn": 16, "us": 8}
 
 
 def _shard_stem(sid: str) -> str | None:
     """Shard stem for a machine-discovered id (None = hand-curated): the SHARDS route, except
     patents split further by publication country (pat-us…/pat-cn…), and heavy countries split
-    again into hash buckets (patents-cn-0…7) so no file approaches GitHub's 100MB limit."""
+    again into hash buckets (patents-cn-0…15) so no file approaches GitHub's 100MB limit."""
     for prefix, fname in SHARDS.items():
         if sid.startswith(prefix):
             stem = fname.rsplit(".", 1)[0]

@@ -3,7 +3,7 @@
 
 This is the single control plane used by humans, cron, and marathon:
 
-    discover -> fetch -> prune -> clean -> check -> stats -> lint/tests -> commit [-> push]
+    discover -> fetch -> prune -> clean -> check -> stats -> lint -> contracts -> tests -> commit
 
 The repository lock prevents concurrent operators. Every required command is fail-closed: a failed
 step records a run-ledger event, exits non-zero, and never commits or pushes. Successful finder
@@ -38,6 +38,7 @@ PIPELINE = (
     ("stats", "update_readme_stats.py", ()),
     ("index", "corpus_index.py", ("status",)),
     ("lint", "lint_registry.py", ()),
+    ("contracts", "check_contracts.py", ()),
 )
 COMMIT_PATHS = ("README.md", "registry", "manifest", "pruned_urls.txt")
 SNAPSHOT_PATHS = COMMIT_PATHS

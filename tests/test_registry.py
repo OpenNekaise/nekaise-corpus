@@ -132,7 +132,7 @@ def test_manifest_shard_routing():
     # patents split by publication country, heavy countries again into stable crc32 buckets —
     # patents-cn.jsonl alone crossed GitHub's 100MB file limit (2026-08-05)
     import zlib
-    for sid, country, n in [("pat-us10519664b1", "us", 4), ("pat-cn105789298b", "cn", 8)]:
+    for sid, country, n in [("pat-us10519664b1", "us", 8), ("pat-cn105789298b", "cn", 16)]:
         want = f"patents-{country}-{zlib.crc32(sid.encode()) % n}"
         assert registry.manifest_shard(sid) == want
     # a country without a bucket entry keeps the plain per-country shard
