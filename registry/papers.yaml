@@ -12521,3 +12521,32 @@ sources:
     license: open
     topic: standards_protocols
     format: pdf
+  - id: arx-safe-deep-reinforcement-learning-for-energy-ef
+    title: Safe Deep Reinforcement Learning for Energy-Efficient HVAC Control in Multi-Zone
+      Residential Buildings
+    url: https://arxiv.org/pdf/2608.17235
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-global-optimization-of-flexible-district-heati
+    title: Global Optimization of Flexible District Heating Networks
+    url: https://arxiv.org/pdf/2608.18046
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arx-extending-behavior-trees-for-robotic-missions-
+    title: Extending Behavior Trees for Robotic Missions with Quality Requirements
+    url: https://arxiv.org/pdf/2503.16969
+    source: arxiv
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: arx-a-generic-nonparametric-value-at-risk-estimato
+    title: A generic nonparametric value-at-risk estimator for high dimensions
+    url: https://arxiv.org/pdf/2608.17481
+    source: arxiv
+    license: open
+    topic: infrastructure
+    format: pdf
