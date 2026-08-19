@@ -21565,3 +21565,24 @@ sources:
     license: cc-by-sa
     topic: structures_civil
     format: pdf
+  - id: oer-rocklands
+    title: Rocklands
+    url: https://library.oapen.org/rest/bitstreams/ea017b66-ae5e-4211-b761-1adcf68cb219/retrieve
+    source: oapen
+    license: cc-by
+    topic: architecture
+    format: pdf
+  - id: oer-integration-des-rechnungswesens-als-erfolgsfaktor-fu
+    title: Integration des Rechnungswesens als Erfolgsfaktor fuer die Controllerarbeit
+    url: https://library.oapen.org/rest/bitstreams/dc828e7d-c640-4073-ae0c-c1d34778a9e4/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-nutzen-der-labormedizin-in-der-schweiz
+    title: Nutzen der Labormedizin in der Schweiz
+    url: https://library.oapen.org/rest/bitstreams/1c922d8d-09b2-4825-b8ea-f0c06afe7e85/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
