@@ -8,13 +8,13 @@
   },
   "find_archive": {
     "flag": "--page",
-    "next": 951,
+    "next": 952,
     "step": 1,
     "note": "pre-1929 public-domain texts; rows 30"
   },
   "find_books": {
     "flag": "--offset",
-    "next": 3425,
+    "next": 3450,
     "step": 25,
     "note": "OAPEN all-language + native-language queries (de/it/fr/es/pt/nl added 07-10); offsets 0-50 mined multilingual, 0-375 English-era. NOT HUNG, just SLOW: 117 QUERIES x ~15-20s/search + a 30s OAI license lookup per candidate = ~45-60min/run, and it prints only at the end. Two rounds mistook that for a hang at offset 375 and skipped it; a 3600s cap ran it fine (offset 375 -> +153 books on 07-16). Give it >=3600s; do NOT retire the English queries. Offset 925 retained after 59 search requests failed on 2026-07-31; finder now exits nonzero on any incomplete search so rotation cannot silently advance."
   },
@@ -26,7 +26,7 @@
   },
   "find_nist": {
     "flag": "--page",
-    "next": 101,
+    "next": 102,
     "step": 1,
     "note": "wave-2 QUERIES 2026-08-13 (wave 1 mined to 10k-offset ceiling); Crossref DOI prefix 10.6028"
   },
@@ -38,7 +38,7 @@
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "2019-W47",
+    "next": "2019-W46",
     "note": "weekly buckets 1900..now, walked backwards; RE-AIMED 2026-08-17 from 1998-W19 to 2020-W52: 2016-2020 W02+ are virgin (only W01s mined), probe 2018-W30 gave +174 vs ~60/bucket in the 1998 era. Earlier mined: 2017-2020 W01, 1925-1940 W01s, 2015-W52..W08, 2014 whole, 2013..1998-W19 (8B/10B marathons). --countries flag (default US): CN/EP/DE work, sitemap titles are English for all countries"
   },
   "find_purdue": {
@@ -54,13 +54,13 @@
   },
   "find_sdz": {
     "flag": "--page",
-    "next": 4591,
+    "next": 4596,
     "step": 5,
     "note": "sdz+hdz pages 1-5 mined 07-10 (165 kept), 6-10 mined 07-12 (35+72), 11-15 mined 07-12 (43 sdz; hdz p11 came back EMPTY — series ended earlier than the ~p25 estimate). sdz ends ~p16 — next run p16 likely the last"
   },
   "find_ademe": {
     "flag": "--page",
-    "next": 401,
+    "next": 405,
     "step": 4,
     "note": "run with --pages 4; categories: 3153-batiment (504 results, mined p1-12), 3149-energies (p1-8), 3509-urbanisme (p1-8); all three still yielding ~80-95/round on 07-12; license=open (non-commercial reuse w/ attribution)"
   },
@@ -84,7 +84,7 @@
   },
   "find_patents_cn": {
     "flag": "--bucket",
-    "next": "2024-W47",
+    "next": "2024-W46",
     "note": "CN patents via Google Patents' /en view (English sitemap titles and Google machine-translated English text, not official Chinese full text; license=open). Same weekly-bucket walk as find_patents, separate pointer; marathon runs it with --countries CN. RE-AIMED 2026-08-17 from 2002-W51 to 2025-W52: 2021-2025 all virgin, probes 2025-W52/2024-W20/2021-W30 each +400 CAPPED (vs ~120 in 2002-2003 era); sitemap top is ~2026-W20 (2026-W24+ 404, W20 empty — re-probe the 2026 weeks when the walk reaches them). Earlier mined: 2018/2019/2020-W03, 2019 whole, 2018-W48.., 2003..2002-W51"
   },
   "find_jrc": {
@@ -101,31 +101,31 @@
   },
   "find_worldbank": {
     "flag": "--os",
-    "next": 6400,
+    "next": 6800,
     "step": 400,
     "note": "World Bank WDS API. Q ROTATED 2026-08-19 to exact phrase '\"urban planning\"' (18,705 results in live probe; reset next=0). Prior '\"building code\"' yielded 913 kept docs from 2,190 results over os0-2400. Earlier 'district heating' had 2,060 results and 'building energy efficiency' was mined os0-16700. Live alternatives: '\"construction industry\"' 15,914; '\"water infrastructure\"' 1,946; '\"sustainable cities\"' 1,298; '\"built environment\"' 585; '\"thermal insulation\"' 195. Finder exits nonzero on incomplete API requests. cc-by."
   },
   "find_jstage": {
     "flag": "--start",
-    "next": 126201,
+    "next": 126401,
     "step": 200,
     "note": "AIJ via J-STAGE API, pubyearfrom=2014 (pre-2014 = mojibake, no ToUnicode). NOW: kankyo FILTERED RE-SWEEP from 1 (08-06) — kankyo was mined UNfiltered 07-23 (+424), dedup makes the re-sweep safe; kouzou DONE at 57201 (93% survival era). After kankyo: probe keikaku/gijutsu filtered totals. Stop a series at >50% prune."
   },
   "find_boverket": {
     "flag": "--page",
-    "next": 201,
+    "next": 203,
     "step": 2,
     "note": "Swedish building authority, ~35 listing pages x ~10 pubs; run with --pages 2 --max 40. Crawl-delay 10s (finder sleeps + build HOST_DELAY). NEW 2026-07-23, Nordic-gap vein."
   },
   "find_iea": {
     "flag": "--offset",
-    "next": 36600,
+    "next": 36640,
     "step": 40,
     "note": "NEW VEIN 2026-07-24: iea.org analysis reports, CC BY 4.0 only (licence-gated per page), blob PDFs. KEY_RE \\b fix same day (city matched electriCITY; 36 power-sector entries purged+blocklisted): universe now 175 slugs, offsets 0-40 mined under the FIXED regex equivalence. Run with --limit 40; EBC/INIVE annexes remain NO-GO (different channel, ARR)"
   },
   "find_scielo": {
     "flag": "--offset",
-    "next": 22825,
+    "next": 22850,
     "step": 25,
     "note": "NEW VEIN 2026-07-28: SciELO BRAZIL AEC journals via the ArticleMeta API — the biggest Portuguese built-environment vein on the open web. 11 journals (Ambiente Construído, IBRACON Estruturas e Materiais, Soils and Rocks, LAJSS, urbe, Cadernos Metrópole, RBRH, ...) picked by WoS subject category from a full 16-collection scan (workspace/scan_scielo_journals.py), CC-BY/BY-SA ONLY — NC and ND journals deliberately excluded; ~11.3k articles. PDF URL comes from fulltexts.pdf, else DERIVED from the v702 markup path — the acronym segment must be lowercased ('MR' -> /pdf/mr/) but the filename must NOT be. /j/<acron>/a/<pid>?format=pdf works ONLY on scielo.br, so the legacy /pdf/ path is what the finder builds. ROBOTS PER NATIONAL HOST, THEY DISAGREE: .br Allow /, but .cl and .org.pe are Disallow / (NO-GO, 150 entries reverted this round); .org.co + .edu.uy unreachable from this box; .org.ve does not resolve. Offset 0 mined 07-28; run --per 25 --max 400."
   }

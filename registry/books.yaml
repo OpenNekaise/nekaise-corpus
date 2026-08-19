@@ -21649,3 +21649,17 @@ sources:
     license: cc-by
     topic: architecture
     format: pdf
+  - id: oer-aries-netwerk
+    title: Aries netwerk
+    url: https://library.oapen.org/rest/bitstreams/4ab61bf9-82b6-46e4-8d27-c32ed070f4bd/retrieve
+    source: oapen
+    license: cc-by
+    topic: construction
+    format: pdf
+  - id: oer-investor-state-dispute-settlement-and-national-court
+    title: Investor-State Dispute Settlement and National Courts
+    url: https://library.oapen.org/rest/bitstreams/fbfe1028-385f-4e53-93ec-f566d8eb4714/retrieve
+    source: oapen
+    license: cc-by
+    topic: structures_civil
+    format: pdf
