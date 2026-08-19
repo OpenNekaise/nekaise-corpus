@@ -216,6 +216,12 @@ def run_finders_parallel(
 
         total, accepted = merge_proposals(results)
         print(f"discovery merge: {total} unique candidates | by backend: {accepted}")
+        ops.run_event(
+            run_id,
+            "discovery_merged",
+            candidates=total,
+            accepted=accepted,
+        )
         for name in selected:
             if backends[name].get("rotation", True):
                 new_pointer = rotation.advance(name)

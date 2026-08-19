@@ -10,8 +10,8 @@
   "find_patents_cn": {"script": "find_patents.py", "args": ["--countries", "CN", "--max", "400"], "enabled": true},
   "find_purdue": {"script": "find_purdue.py", "args": [], "enabled": false, "reason": "202 challenge"},
   "find_ibpsa": {"script": "find_ibpsa.py", "args": [], "enabled": false, "reason": "rate captcha"},
-  "find_sdz": {"script": "find_sdz.py", "args": ["--pages", "5", "--max", "200"], "enabled": true},
-  "find_ademe": {"script": "find_ademe.py", "args": ["--pages", "4", "--max", "200"], "enabled": true},
+  "find_sdz": {"script": "find_sdz.py", "args": ["--pages", "5", "--max", "200"], "enabled": false, "reason": "exhausted: sdz ends near page 16; pointer reached page 4636 after repeated zero-yield runs"},
+  "find_ademe": {"script": "find_ademe.py", "args": ["--pages", "4", "--max", "200"], "enabled": false, "reason": "exhausted default building category: 504 products (~21 pages); pointer reached page 437 after repeated last-page responses; re-aim category and resolve non-commercial licensing before re-enabling"},
   "find_kitopen": {"script": "find_kitopen.py", "args": [], "enabled": false, "reason": "exhausted"},
   "find_japan": {"script": "find_japan.py", "args": ["--series", "nilim", "--count", "6", "--max", "300"], "enabled": false, "reason": "nilim floor 2012 reached (start 320, step -6 walks below floor); bri/data top-number re-walk = occasional manual run"},
   "find_modelica_conf": {"script": "find_modelica_conf.py", "args": ["--rows", "200", "--max", "2000"], "enabled": false, "rotation": false, "reason": "full Crossref proceedings sweep harvested in 2026-07; re-run manually for newly published conference papers"},
@@ -20,9 +20,9 @@
   "find_govuk": {"script": "find_govuk.py", "args": ["--rows", "20", "--max", "250"], "enabled": false, "reason": "deep search p905 is dominated by fuzzy off-topic results; title relevance gate added, but queries/pointer must be re-aimed before re-enabling"},
   "find_worldbank": {"script": "find_worldbank.py", "args": ["--q", "\"urban planning\"", "--rows", "50", "--pages", "8", "--max", "250"], "enabled": true},
   "find_jstage": {"script": "find_jstage.py", "args": ["--series", "kankyo", "--count", "200", "--from-year", "2014"], "enabled": true},
-  "find_boverket": {"script": "find_boverket.py", "args": ["--pages", "2", "--max", "40"], "enabled": true},
-  "find_iea": {"script": "find_iea.py", "args": ["--limit", "40", "--max", "40"], "enabled": true},
-  "find_scielo": {"script": "find_scielo.py", "args": ["--per", "25", "--max", "400"], "enabled": true},
+  "find_boverket": {"script": "find_boverket.py", "args": ["--pages", "2", "--max", "40"], "enabled": false, "reason": "exhausted: archive has ~35 listing pages; pointer reached page 219 after repeated zero-yield runs"},
+  "find_iea": {"script": "find_iea.py", "args": ["--limit", "40", "--max", "40"], "enabled": false, "reason": "exhausted: finder reports a 176-slug universe; pointer reached offset 36960 and self-reports vein dry"},
+  "find_scielo": {"script": "find_scielo.py", "args": ["--per", "25", "--max", "400"], "enabled": false, "reason": "exhausted: largest configured journal has 4368 articles; per-journal offset reached 23050 and all configured Brazil journals repeatedly yield zero"},
   "find_sources": {"script": "find_sources.py", "args": ["--per", "20", "--backends", "openalex,arxiv"], "enabled": true, "rotation": false},
   "find_github": {"script": "find_github.py", "args": [], "enabled": true, "rotation": false}
 }

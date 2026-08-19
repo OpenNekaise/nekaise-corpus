@@ -103,7 +103,12 @@ def test_parallel_finders_stage_in_subprocesses_then_merge_once(tmp_path, monkey
         "append_entries",
         lambda entries: appended.extend(entries),
     )
-    monkeypatch.setattr(run_round.ops, "run_event", lambda *_args, **_kwargs: None)
+    events = []
+    monkeypatch.setattr(
+        run_round.ops,
+        "run_event",
+        lambda run_id, event, **fields: events.append((run_id, event, fields)),
+    )
     backends = {
         "one": {
             "script": "fake_finder.py",
@@ -131,6 +136,10 @@ def test_parallel_finders_stage_in_subprocesses_then_merge_once(tmp_path, monkey
     )
 
     assert [entry["id"] for entry in appended] == ["ost-one", "ost-two"]
+    assert ("fixture-run", "discovery_merged", {
+        "candidates": 2,
+        "accepted": {"one": 1, "two": 1},
+    }) in events
 
 
 def test_main_rolls_back_tracked_state_when_pipeline_fails(tmp_path, monkeypatch):
