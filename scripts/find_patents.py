@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""find_patents.py — enumerate US built-environment patents from the Google Patents sitemap.
+"""find_patents.py — enumerate built-environment patents from the Google Patents sitemap.
 
 patents.google.com publishes a full crawlable sitemap (`/sitemap/`) with no API key and no
 rate-limit gate: a top-level index of weekly buckets (`2026-W20.html` … back to ~1900) plus yearly
@@ -171,8 +171,8 @@ def main() -> None:
             titles.add(t)
             out.append({"id": f"pat-{registry.slug(pubnum)}", "title": title[:150],
                         "url": url, "source": "google_patents",
-                        # US patent text is unambiguously public domain; other jurisdictions'
-                        # specifications are official documents but terms vary -> tag open
+                        # US patent text is unambiguously public domain. Other jurisdictions use
+                        # Google's /en view (which may be machine-translated); terms vary -> open.
                         "license": "public-domain" if pubnum.startswith("US") else "open",
                         "topic": topic, "format": "html"})
 
