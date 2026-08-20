@@ -18,7 +18,7 @@
   "find_wiki": {"script": "find_wiki.py", "args": ["--categories", "--lang-cap", "250", "--max", "1500"], "enabled": false, "reason": "drained (depth 269; d2 already dry 07-12) + Wikimedia 429 backoffs made it the round critical path (505s for 0 docs)"},
   "find_jrc": {"script": "find_jrc.py", "args": ["--rows", "40", "--max", "250"], "enabled": false, "reason": "OpenAIRE deep-pagination wall at p251 (2026-08-05): every query page refuses, failing 36/48 marathon rounds; vein likely exhausted — investigate pointer reset before re-enabling"},
   "find_govuk": {"script": "find_govuk.py", "args": ["--rows", "20", "--max", "250"], "enabled": false, "reason": "deep search p905 is dominated by fuzzy off-topic results; title relevance gate added, but queries/pointer must be re-aimed before re-enabling"},
-  "find_worldbank": {"script": "find_worldbank.py", "args": ["--q", "\"urban planning\"", "--rows", "50", "--pages", "8", "--max", "250"], "enabled": true},
+  "find_worldbank": {"script": "find_worldbank.py", "args": ["--q", "\"construction industry\"", "--rows", "50", "--pages", "8", "--max", "250"], "enabled": true},
   "find_jstage": {"script": "find_jstage.py", "args": ["--series", "keikaku", "--count", "200", "--from-year", "2014"], "enabled": true},
   "find_boverket": {"script": "find_boverket.py", "args": ["--pages", "2", "--max", "40"], "enabled": false, "reason": "exhausted: archive has ~35 listing pages; pointer reached page 219 after repeated zero-yield runs"},
   "find_iea": {"script": "find_iea.py", "args": ["--limit", "40", "--max", "40"], "enabled": false, "reason": "exhausted: finder reports a 176-slug universe; pointer reached offset 36960 and self-reports vein dry"},

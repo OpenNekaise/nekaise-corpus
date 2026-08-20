@@ -101,9 +101,9 @@
   },
   "find_worldbank": {
     "flag": "--os",
-    "next": 16400,
+    "next": 0,
     "step": 400,
-    "note": "World Bank WDS API. Q ROTATED 2026-08-19 to exact phrase '\"urban planning\"' (18,705 results in live probe; reset next=0). Prior '\"building code\"' yielded 913 kept docs from 2,190 results over os0-2400. Earlier 'district heating' had 2,060 results and 'building energy efficiency' was mined os0-16700. Live alternatives: '\"construction industry\"' 15,914; '\"water infrastructure\"' 1,946; '\"sustainable cities\"' 1,298; '\"built environment\"' 585; '\"thermal insulation\"' 195. Finder exits nonzero on incomplete API requests. cc-by."
+    "note": "World Bank WDS API. NOW: exact phrase '\"construction industry\"' (15,914 results in live probe 2026-08-20; reset next=0). Resume unfinished '\"urban planning\"' at os=16400 later; it had 18,716 results in the 2026-08-20 probe, but the deep tail was dominated by project-status paperwork and would hit the API's past-end HTTP 400 before the next maintainer window. Prior '\"building code\"' yielded 913 kept docs from 2,190 results over os0-2400. Earlier 'district heating' had 2,060 results and 'building energy efficiency' was mined os0-16700. Later alternatives: '\"water infrastructure\"' 1,946; '\"sustainable cities\"' 1,298; '\"built environment\"' 585; '\"thermal insulation\"' 195. Finder exits nonzero on incomplete API requests. cc-by."
   },
   "find_jstage": {
     "flag": "--start",
