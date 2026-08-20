@@ -28,6 +28,7 @@ import argparse
 import json
 import re
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -42,6 +43,7 @@ SEARCH = "https://library.oapen.org/rest/search"
 OAI = "https://library.oapen.org/oai/request"
 UA = {"User-Agent": "nekaise-corpus/find_books"}
 LICENSE_CACHE = HERE / "workspace" / "oapen-license-cache.json"
+SEARCH_RETRY_DELAYS = (2.0, 4.0, 8.0)
 
 # (OAPEN subject term -> our corpus topic). Broad built-environment coverage; pagination goes deep.
 QUERIES = [
@@ -170,11 +172,12 @@ def search_subject(
     found = []
     for page_offset in range(offset, offset + depth, per):
         # OAPEN deep-offset pages (expand=bitstreams,metadata @1600+) measured 26-45s in
-        # 2026-08 and occasionally hang past any timeout; one flaky page used to abort the
-        # whole finder (partial appends are refused), failing marathon rounds — so each page
-        # gets a second attempt before giving up.
+        # 2026-08 and occasionally hang past any timeout. Transient 5xx responses also caused
+        # repeated whole-round failures, so retry those boundedly while permanent failures still
+        # fail immediately. Partial appends remain refused if every attempt is exhausted.
         items = None
-        for attempt in (1, 2):
+        attempts = len(SEARCH_RETRY_DELAYS) + 1
+        for attempt in range(1, attempts + 1):
             try:
                 r = requests.get(
                     SEARCH,
@@ -191,9 +194,24 @@ def search_subject(
                 items = r.json()
                 break
             except Exception as exc:
-                if attempt == 2:
-                    print(f"# search '{term}' @{page_offset} failed twice: {exc}", file=sys.stderr)
+                response = getattr(exc, "response", None)
+                status = getattr(response, "status_code", None)
+                retryable = (
+                    isinstance(exc, (requests.Timeout, requests.ConnectionError))
+                    or (
+                        isinstance(exc, requests.HTTPError)
+                        and status is not None
+                        and 500 <= status < 600
+                    )
+                )
+                if not retryable or attempt == attempts:
+                    print(
+                        f"# search '{term}' @{page_offset} failed after {attempt} "
+                        f"attempt{'s' if attempt != 1 else ''}: {exc}",
+                        file=sys.stderr,
+                    )
                     return found, f"'{term}' @{page_offset}"
+                time.sleep(SEARCH_RETRY_DELAYS[attempt - 1])
         if not items:
             break
         found.extend((term, topic, item) for item in items)
