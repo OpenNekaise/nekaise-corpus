@@ -55,6 +55,26 @@ QUERIES = [
 ]
 
 
+def search_archive(term: str, rows: int, page: int) -> list[dict]:
+    """Fetch one query page, rejecting Archive API error envelopes as failures."""
+    q = (f'(subject:"{term}" OR title:"{term}") AND mediatype:texts '
+         f'AND date:[1800-01-01 TO 1928-12-31] AND language:(eng OR English)')
+    r = requests.get(SEARCH, params={
+        "q": q, "fl[]": ["identifier", "title", "year"], "rows": rows,
+        "page": page, "output": "json", "sort[]": "downloads desc"},
+        headers=UA, timeout=45)
+    r.raise_for_status()
+    payload = r.json()
+    if not isinstance(payload, dict):
+        raise ValueError("Archive API returned a non-object response")
+    if "error" in payload:
+        raise RuntimeError(f"Archive API error: {payload['error']}")
+    response = payload.get("response")
+    if not isinstance(response, dict) or not isinstance(response.get("docs"), list):
+        raise ValueError("Archive API response is missing response.docs")
+    return response["docs"]
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--rows", type=int, default=50, help="results per query page")
@@ -65,21 +85,16 @@ def main() -> None:
 
     urls, titles, reg_ids = registry.existing_keys()
     out = []
+    failed_query = None
     for term, topic in QUERIES:
         if len(out) >= args.max:
             break
-        q = (f'(subject:"{term}" OR title:"{term}") AND mediatype:texts '
-             f'AND date:[1800-01-01 TO 1928-12-31] AND language:(eng OR English)')
         try:
-            r = requests.get(SEARCH, params={
-                "q": q, "fl[]": ["identifier", "title", "year"], "rows": args.rows,
-                "page": args.page, "output": "json", "sort[]": "downloads desc"},
-                headers=UA, timeout=45)
-            r.raise_for_status()
-            docs = r.json().get("response", {}).get("docs", [])
+            docs = search_archive(term, args.rows, args.page)
         except Exception as e:
             print(f"# search '{term}' failed: {e}", file=sys.stderr)
-            continue
+            failed_query = term
+            break
         for d in docs:
             if len(out) >= args.max:
                 break
@@ -104,6 +119,14 @@ def main() -> None:
                         "url": url, "source": "internet_archive", "license": "public-domain",
                         "topic": topic, "format": "txt"})
         time.sleep(1)  # politeness between queries
+
+    if failed_query:
+        print(
+            f"# ERROR: Internet Archive discovery incomplete at {failed_query!r}; "
+            "refusing a partial append so rotation does not advance",
+            file=sys.stderr,
+        )
+        raise SystemExit(1)
 
     registry.uniquify_ids(out, reg_ids)
     by_topic: dict = {}
