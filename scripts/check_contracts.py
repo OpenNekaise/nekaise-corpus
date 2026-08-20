@@ -24,6 +24,7 @@ def oversized_control_files(root: Path = ROOT) -> list[tuple[Path, int]]:
     """
     files = [
         *(root / "registry").glob("*.yaml"),
+        *(root / "registry").glob("*.jsonl"),
         *(root / "manifest").glob("*.jsonl"),
     ]
     return sorted(

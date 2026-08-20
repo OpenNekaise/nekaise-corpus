@@ -107,9 +107,9 @@
   },
   "find_jstage": {
     "flag": "--start",
-    "next": 129401,
+    "next": 1,
     "step": 200,
-    "note": "AIJ via J-STAGE API, pubyearfrom=2014 (pre-2014 = mojibake, no ToUnicode). NOW: kankyo FILTERED RE-SWEEP from 1 (08-06) — kankyo was mined UNfiltered 07-23 (+424), dedup makes the re-sweep safe; kouzou DONE at 57201 (93% survival era). After kankyo: probe keikaku/gijutsu filtered totals. Stop a series at >50% prune."
+    "note": "AIJ via J-STAGE API, pubyearfrom=2014 (pre-2014 = mojibake, no ToUnicode). NOW: keikaku filtered sweep from 1; live probe 2026-08-20 found 3,588 results and 20/20 new at start 1. Previous kankyo pointer ran to 129401 despite only 1,284 filtered results because the API returns non-article sentinel entries past exhaustion; kouzou's old DONE-at-57201 note was likewise invalid (live filtered total 2,139). Queue gijutsu after keikaku. Stop a series at >50% prune."
   },
   "find_boverket": {
     "flag": "--page",
