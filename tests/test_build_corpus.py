@@ -3,6 +3,7 @@
 from types import SimpleNamespace
 import hashlib
 from concurrent.futures import ProcessPoolExecutor
+import sys
 from urllib.parse import urlparse
 
 import build_corpus
@@ -10,6 +11,32 @@ import build_corpus
 
 def test_extraction_workers_use_spawn_context():
     assert build_corpus.EXTRACTION_CONTEXT.get_start_method() == "spawn"
+
+
+def test_main_never_downloads_pointer_only_sources(monkeypatch, capsys):
+    pointer = {
+        "id": "vendor-standard",
+        "title": "Vendor standard",
+        "url": "https://example.org/standard.pdf",
+        "source": "vendor",
+        "license": "proprietary-internal",
+        "topic": "standards_protocols",
+        "format": "pdf",
+    }
+    monkeypatch.setattr(build_corpus.registry, "load_entries", lambda: [pointer])
+    monkeypatch.setattr(build_corpus, "load_manifest", lambda: {})
+    monkeypatch.setattr(
+        build_corpus,
+        "download_one",
+        lambda _source: (_ for _ in ()).throw(AssertionError("pointer-only source downloaded")),
+    )
+    monkeypatch.setattr(sys, "argv", ["build_corpus.py"])
+
+    build_corpus.main()
+
+    output = capsys.readouterr().out
+    assert "pointer-only sources: 1 skipped by license policy" in output
+    assert "sources: 0 total, 0 to fetch" in output
 
 
 class FakeSession:

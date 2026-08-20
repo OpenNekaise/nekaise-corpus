@@ -73,6 +73,10 @@ def main() -> int:
     for r in registry.load_manifest_rows():
         n_rows += 1
         sid = r.get("id")
+        if r.get("license") in registry.POINTER_ONLY_LICENSES:
+            errors.append(
+                f"manifest {sid}: pointer-only license {r.get('license')!r} has a payload row"
+            )
         if sid not in all_ids:
             errors.append(f"manifest row orphaned from registry: {r.get('id')}")
             continue

@@ -78,6 +78,9 @@ OPTIONAL_FIELDS = (
     "license_url", "license_evidence", "rights_verified_at",
 )
 FIELDS = REQUIRED_FIELDS + OPTIONAL_FIELDS
+# Licenses in this set are registry pointers only: their metadata is useful for authorized users,
+# but the loader must never fetch their bytes and the manifest must never describe a local payload.
+POINTER_ONLY_LICENSES = frozenset({"proprietary-internal"})
 ENTRY_RE = re.compile(r"^  - id:\s*['\"]?(.+?)['\"]?\s*$")
 _FIELD_RE = re.compile(r"^    \s*\S")  # continuation lines of one entry
 
@@ -99,6 +102,11 @@ def _entry_span(lines: list[str], i: int) -> int:
 
 def discovered(sid: str) -> bool:
     return sid.startswith(DISCOVERED_PREFIXES)
+
+
+def is_fetchable(entry: dict) -> bool:
+    """Whether a registry entry is allowed to produce raw/text/corpus payload bytes."""
+    return entry.get("license") not in POINTER_ONLY_LICENSES
 
 
 # Countries whose patent shards outgrow a single file get split into stable hash buckets:

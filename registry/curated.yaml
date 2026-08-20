@@ -141,7 +141,7 @@ sources:
     topic: commissioning_fdd
     format: html
 
-  # ---------- vendor / web explainers (copyrighted — internal research only) ----------
+  # ---------- vendor / web explainers (copyrighted — pointers only, never fetch) ----------
   - id: ccontrols-bacnet-intro
     title: "BACnet — Building Automation and Control Network (Contemporary Controls)"
     url: https://www.ccontrols.com/tech/bacnet.htm
@@ -945,7 +945,7 @@ sources:
     topic: controls_bas
     format: pdf
 
-  # ---- ASHRAE free addenda (copyrighted — internal only) ----
+  # ---- ASHRAE free addenda (copyrighted — pointers only, never fetch) ----
   - id: ashrae-901-2022-addendum-u
     title: "ASHRAE Addendum u to Standard 90.1-2022 (Energy Standard)"
     url: https://www.ashrae.org/file%20library/technical%20resources/standards%20and%20guidelines/standards%20addenda/90_1_2022_u_20241231.pdf

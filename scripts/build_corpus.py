@@ -522,7 +522,11 @@ def main() -> None:
     args = ap.parse_args()
     only = {t.strip() for t in args.only.split(",") if t.strip()}
 
-    srcs = registry.load_entries()
+    all_srcs = registry.load_entries()
+    srcs = [source for source in all_srcs if registry.is_fetchable(source)]
+    pointer_only = len(all_srcs) - len(srcs)
+    if pointer_only:
+        print(f"pointer-only sources: {pointer_only} skipped by license policy")
     manifest = load_manifest()
 
     if args.reextract:

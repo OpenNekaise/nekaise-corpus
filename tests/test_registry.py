@@ -6,6 +6,7 @@ import json
 import pytest
 
 import blocklist
+import lint_registry
 import registry
 
 
@@ -38,6 +39,18 @@ def test_append_routes_by_prefix(tmp_registry):
     assert ids == {"hand-one", "oer-book-a", "arc-old-text", "hand-two"}
     # hand comment untouched by the curated append
     assert "# hand comment that must survive" in (tmp_registry / registry.CURATED).read_text()
+
+
+def test_proprietary_internal_entries_are_pointer_only(tmp_registry, capsys):
+    pointer = {**entry("vendor-standard"), "license": "proprietary-internal"}
+    registry.append_entries([pointer])
+
+    assert not registry.is_fetchable(pointer)
+    assert registry.is_fetchable(entry("open-report"))
+
+    registry.write_manifest_rows([{**pointer, "status": "ok"}])
+    assert lint_registry.main() == 1
+    assert "pointer-only license 'proprietary-internal' has a payload row" in capsys.readouterr().out
 
 
 def test_append_proposal_mode_stages_json_without_mutating_registry(
