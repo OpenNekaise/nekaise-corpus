@@ -12566,3 +12566,17 @@ sources:
     license: open
     topic: structures_civil
     format: pdf
+  - id: arx-towards-formalizing-reinforcement-learning-the
+    title: 'Towards Formalizing Reinforcement Learning Theory: A Robbins-Siegmund Approach'
+    url: https://arxiv.org/pdf/2511.03618
+    source: arxiv
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: arx-scientific-visualization-as-a-collaborative-da
+    title: Scientific Visualization as a Collaborative Data Infrastructure
+    url: https://arxiv.org/pdf/2608.19413
+    source: arxiv
+    license: open
+    topic: infrastructure
+    format: pdf
