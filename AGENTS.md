@@ -47,8 +47,9 @@ all three are git-ignored:
 
 **Why `text/` and `corpus/` are separate rather than one cleaned directory:** a cleaning ruleset is
 never right the first time. Re-running an improved cleaner over `corpus/` reads `text/` and takes
-minutes; folding cleaning into extraction would mean re-parsing 104k PDFs (CPU-hours) for every rule
-tweak and would make `raw/` permanently undeletable. The extra ~11GB buys cheap iteration.
+minutes; folding cleaning into extraction would mean re-parsing hundreds of thousands of PDFs
+(CPU-hours) for every rule tweak and would make `raw/` permanently undeletable. The additional local
+storage buys cheap iteration.
 
 `corpus/` is built **from the manifest**, never from a directory listing, so it can only contain docs
 that have a provenance row — a training run over `corpus/*` cannot pick up unprovenanced text, and
@@ -77,12 +78,14 @@ rounds never re-churn pruned material.
 *document-level* gate (keep or drop a whole doc); the cleaner works *within* a document, stripping
 PDF artefacts that survive any doc-level test — running headers, contents dot-leaders, bare page
 numbers, OCR punctuation debris, patent identifier blocks, Modelica diagram geometry. Measured over
-the **full 103,931-doc corpus**: all rules together remove **966.9M of 13,089.4M chars (7.39%)**,
-`repeated_boilerplate` alone accounting for 529.4M.
+a historical **103,931-doc full-corpus benchmark**: all rules together removed **966.9M of
+13,089.4M chars (7.39%)**, `repeated_boilerplate` alone accounting for 529.4M.
 
-Which rules run is **opt-in and currently `none`** — the default is a faithful pass-through, so
-`corpus/` is complete and byte-identical to `text/` until a ruleset is chosen. Cleaning *policy* is a
-separate decision from this machinery.
+Which rules run is **opt-in policy**, recorded in `corpus/.ruleset`. The maintained corpus currently
+uses `toc_leaders,patent_id_soup,patent_furniture,site_chrome,ocr_debris,code_annotations`; an
+argument-less refresh reuses that stamp. On a fresh checkout with no selected ruleset, the default is
+a faithful pass-through. Cleaning *policy* is a separate decision from this machinery and is never
+changed during a routine dig.
 
 ```
 python scripts/clean_corpus.py --list-rules          # what's available
@@ -92,9 +95,9 @@ python scripts/clean_corpus.py --rules all           # apply everything
 python scripts/clean_corpus.py --rules toc_leaders,page_markers
 ```
 
-Timings on a 40-core box: pass-through rebuild **6s**, full ruleset **46s** (11 min CPU), `--check`
-**14s**. Process-parallel, not thread-parallel — the rules are regex-bound and a thread pool pins at
-~1 core.
+Historical timings on the 103,931-doc benchmark and a 40-core box: pass-through rebuild **6s**, full
+ruleset **46s** (11 min CPU), `--check` **14s**. Process-parallel, not thread-parallel — the rules are
+regex-bound and a thread pool pins at ~1 core.
 
 **Operational hazards, both hit while building this:**
 
