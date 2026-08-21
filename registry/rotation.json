@@ -103,13 +103,13 @@
     "flag": "--os",
     "next": 8000,
     "step": 400,
-    "note": "World Bank WDS API. NOW: exact phrase '\"construction industry\"' (15,914 results in live probe 2026-08-20; reset next=0). Resume unfinished '\"urban planning\"' at os=16400 later; it had 18,716 results in the 2026-08-20 probe, but the deep tail was dominated by project-status paperwork and would hit the API's past-end HTTP 400 before the next maintainer window. Prior '\"building code\"' yielded 913 kept docs from 2,190 results over os0-2400. Earlier 'district heating' had 2,060 results and 'building energy efficiency' was mined os0-16700. Later alternatives: '\"water infrastructure\"' 1,946; '\"sustainable cities\"' 1,298; '\"built environment\"' 585; '\"thermal insulation\"' 195. Finder exits nonzero on incomplete API requests. cc-by."
+    "note": "PAUSED 2026-08-21 at construction-industry os=8000: broad full-text phrase search retained mostly non-AEC development-economics reports, while project-cycle documents exposed through WDS are not uniformly CC-BY. Re-enable only after adding a calibrated multilingual title/type relevance gate and per-document license mapping; prefer bounded AEC queries such as '\"water infrastructure\"' (1,946), '\"sustainable cities\"' (1,298), '\"built environment\"' (585), or '\"thermal insulation\"' (195). Resume unfinished '\"urban planning\"' at os=16400 only after the same repair."
   },
   "find_jstage": {
     "flag": "--start",
-    "next": 5801,
+    "next": 1,
     "step": 200,
-    "note": "AIJ via J-STAGE API, pubyearfrom=2014 (pre-2014 = mojibake, no ToUnicode). NOW: keikaku filtered sweep from 1; live probe 2026-08-20 found 3,588 results and 20/20 new at start 1. Previous kankyo pointer ran to 129401 despite only 1,284 filtered results because the API returns non-article sentinel entries past exhaustion; kouzou's old DONE-at-57201 note was likewise invalid (live filtered total 2,139). Queue gijutsu after keikaku. Stop a series at >50% prune."
+    "note": "AIJ via J-STAGE API, pubyearfrom=2014 (pre-2014 = mojibake, no ToUnicode). NOW: gijutsu filtered sweep from 1; official API live probe 2026-08-21 reports 3,171 results and highly relevant concrete/seismic/timber articles at the head. Keikaku is exhausted at 3,588 results after the pointer reached 5,801. Finder now detects the API's blank-total/empty-entry past-end sentinel and exits nonzero rather than silently advancing rotation. Previous kankyo pointer burned to 129401 past 1,284 results; kouzou has 2,139 filtered results. Stop a series at >50% prune."
   },
   "find_boverket": {
     "flag": "--page",

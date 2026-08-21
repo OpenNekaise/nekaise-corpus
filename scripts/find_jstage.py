@@ -47,16 +47,30 @@ SERIES = {
     "gijutsu": ("日本建築学会技術報告集", "construction"),
 }
 ATOM = "{http://www.w3.org/2005/Atom}"
+OPENSEARCH = "{http://a9.com/-/spec/opensearch/1.1/}"
 
 
-def fetch_page(material: str, start: int, count: int, from_year: int = 2014) -> list[ET.Element]:
+def fetch_page(
+    material: str,
+    start: int,
+    count: int,
+    from_year: int = 2014,
+) -> tuple[int | None, list[ET.Element]]:
+    """Return the reported result total and entries for one API page.
+
+    J-STAGE returns HTTP 200 with one empty sentinel entry and blank OpenSearch metadata when
+    ``start`` is past the filtered result universe.  Preserve the missing total so callers can
+    distinguish exhaustion from a legitimate empty page and refuse to advance rotation.
+    """
     r = requests.get(API, params={"service": 3, "material": material,
                                   "start": start, "count": count,
                                   "pubyearfrom": from_year},
                      headers=UA, timeout=60)
     r.raise_for_status()
     root = ET.fromstring(r.content)
-    return root.findall(f"{ATOM}entry")
+    total_text = (root.findtext(f"{OPENSEARCH}totalResults") or "").strip()
+    total = int(total_text) if total_text else None
+    return total, root.findall(f"{ATOM}entry")
 
 
 def parse(entry: ET.Element) -> tuple[str, str, str] | None:
@@ -100,15 +114,24 @@ def main() -> None:
     urls, titles, reg_ids = registry.existing_keys()
     out: list[dict] = []
     scanned = 0
+    total: int | None = None
     for start in range(args.start, args.start + args.count, PAGE):
         n = min(PAGE, args.start + args.count - start)
         try:
-            entries = fetch_page(material, start, n, args.from_year)
+            page_total, entries = fetch_page(material, start, n, args.from_year)
         except Exception as e:
             print(f"# API fetch failed at start={start}: {e}", file=sys.stderr)
             sys.exit(1)  # throttle/maintenance window — abort WITHOUT advancing rotation
+        if page_total is None:
+            print(
+                f"ERROR: start={start} is past the J-STAGE result universe; "
+                "refusing rotation advance — pause or retarget the series",
+                file=sys.stderr,
+            )
+            raise SystemExit(1)
+        total = page_total
         if not entries:
-            print(f"# no entries at start={start} — series exhausted?", file=sys.stderr)
+            print(f"# no entries at start={start} of {total}", file=sys.stderr)
             break
         for entry in entries:
             scanned += 1
@@ -129,7 +152,8 @@ def main() -> None:
         time.sleep(2.0)  # politeness between API pages
 
     registry.uniquify_ids(out, reg_ids)
-    print(f"# {len(out)} NEW AIJ {args.series} articles (start {args.start}, {scanned} scanned; "
+    print(f"# {len(out)} NEW AIJ {args.series} articles (start {args.start}, {scanned} scanned "
+          f"of {total if total is not None else 'unknown'} total; "
           f"deduped vs manifest + registry + blocklist)")
     print(f"# topic: {topic}, license: open (AIJ free full-text archive)")
     if args.append and out:
