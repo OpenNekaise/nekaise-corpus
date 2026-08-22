@@ -28,7 +28,7 @@
     "flag": "--page",
     "next": 182,
     "step": 1,
-    "note": "wave-2 QUERIES 2026-08-13 (wave 1 mined to 10k-offset ceiling); Crossref DOI prefix 10.6028"
+    "note": "PAUSED 2026-08-22 after 72 recorded zero-yield merges. Pointer 182 is offset 9050 at rows=50, 19 pages from Crossref's ~10000 offset ceiling; finder now exits nonzero on any incomplete query. Preserve pointer until a reviewed wave-3 query set resets page to 1. Crossref DOI prefix 10.6028."
   },
   "find_zenodo": {
     "flag": "--page",

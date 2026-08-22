@@ -86,6 +86,7 @@ def main() -> None:
 
     urls, titles, reg_ids = registry.existing_keys()
     out, seen = [], set()
+    failed_request = None
     for term, topic in QUERIES:
         if len(out) >= args.max:
             break
@@ -94,7 +95,8 @@ def main() -> None:
             hits = from_crossref(term, args.rows, offset)
         except Exception as e:
             print(f"# crossref '{term}' p{args.page} failed: {e}", file=sys.stderr)
-            continue
+            failed_request = (term, args.page)
+            break
         for title, url in hits:
             if len(out) >= args.max:
                 break
@@ -107,6 +109,15 @@ def main() -> None:
                         "url": url, "source": "nist_crossref", "license": "public-domain",
                         "topic": topic, "format": "pdf"})
         time.sleep(0.5)
+
+    if failed_request:
+        term, page = failed_request
+        print(
+            f"# ERROR: NIST discovery incomplete at '{term}' p{page}; "
+            "refusing a partial append so rotation does not advance",
+            file=sys.stderr,
+        )
+        raise SystemExit(1)
 
     registry.uniquify_ids(out, reg_ids)
 

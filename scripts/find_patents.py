@@ -139,6 +139,7 @@ def main() -> None:
 
     out: list[dict] = []
     us_scanned = 0
+    failed_page = None
     for i, (label, purl) in enumerate(page_specs):
         if len(out) >= args.max:
             break
@@ -151,7 +152,8 @@ def main() -> None:
                 text = fetch(purl)
             except Exception as e:
                 print(f"# fetch failed {purl}: {e}", file=sys.stderr)
-                continue
+                failed_page = label
+                break
         for pubnum, title in parse_entries(text, rx):
             us_scanned += 1
             if len(out) >= args.max:
@@ -175,6 +177,14 @@ def main() -> None:
                         # Google's /en view (which may be machine-translated); terms vary -> open.
                         "license": "public-domain" if pubnum.startswith("US") else "open",
                         "topic": topic, "format": "html"})
+
+    if failed_page:
+        print(
+            f"# ERROR: patent discovery incomplete at {failed_page}; "
+            "refusing a partial append so rotation does not advance",
+            file=sys.stderr,
+        )
+        raise SystemExit(1)
 
     registry.uniquify_ids(out, reg_ids)
 
