@@ -26,7 +26,7 @@
   },
   "find_nist": {
     "flag": "--page",
-    "next": 172,
+    "next": 173,
     "step": 1,
     "note": "wave-2 QUERIES 2026-08-13 (wave 1 mined to 10k-offset ceiling); Crossref DOI prefix 10.6028"
   },
@@ -38,7 +38,7 @@
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "2018-W28",
+    "next": "2018-W27",
     "note": "weekly buckets 1900..now, walked backwards; RE-AIMED 2026-08-17 from 1998-W19 to 2020-W52: 2016-2020 W02+ are virgin (only W01s mined), probe 2018-W30 gave +174 vs ~60/bucket in the 1998 era. Earlier mined: 2017-2020 W01, 1925-1940 W01s, 2015-W52..W08, 2014 whole, 2013..1998-W19 (8B/10B marathons). --countries flag (default US): CN/EP/DE work, sitemap titles are English for all countries"
   },
   "find_purdue": {
@@ -84,7 +84,7 @@
   },
   "find_patents_cn": {
     "flag": "--bucket",
-    "next": "2023-W28",
+    "next": "2023-W27",
     "note": "CN patents via Google Patents' /en view (English sitemap titles and Google machine-translated English text, not official Chinese full text; license=open). Same weekly-bucket walk as find_patents, separate pointer; marathon runs it with --countries CN. RE-AIMED 2026-08-17 from 2002-W51 to 2025-W52: 2021-2025 all virgin, probes 2025-W52/2024-W20/2021-W30 each +400 CAPPED (vs ~120 in 2002-2003 era); sitemap top is ~2026-W20 (2026-W24+ 404, W20 empty — re-probe the 2026 weeks when the walk reaches them). Earlier mined: 2018/2019/2020-W03, 2019 whole, 2018-W48.., 2003..2002-W51"
   },
   "find_jrc": {
