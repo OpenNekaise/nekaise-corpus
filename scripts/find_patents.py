@@ -45,6 +45,7 @@ import registry
 
 SITEMAP = "https://patents.google.com/sitemap"
 UA = {"User-Agent": "nekaise-corpus/find_patents"}
+FETCH_RETRY_DELAYS = (2.0, 4.0, 8.0)
 
 # one <li> line per publication: "US10520091B2 - Double direction seal with locking :"
 # followed by one <a href='.../patent/<pub>/<lang>'>lang</a> per available language — we only need
@@ -87,9 +88,28 @@ def topic_for(title: str) -> str | None:
 
 
 def fetch(url: str) -> str:
-    r = requests.get(url, headers=UA, timeout=60)
-    r.raise_for_status()
-    return r.text
+    attempts = len(FETCH_RETRY_DELAYS) + 1
+    for attempt in range(1, attempts + 1):
+        try:
+            r = requests.get(url, headers=UA, timeout=60)
+            r.raise_for_status()
+            return r.text
+        except Exception as exc:
+            response = getattr(exc, "response", None)
+            status = getattr(response, "status_code", None)
+            retryable = (
+                isinstance(exc, (requests.Timeout, requests.ConnectionError))
+                or (
+                    isinstance(exc, requests.HTTPError)
+                    and status is not None
+                    and 500 <= status < 600
+                )
+            )
+            if not retryable or attempt == attempts:
+                raise
+            time.sleep(FETCH_RETRY_DELAYS[attempt - 1])
+
+    raise AssertionError("unreachable")
 
 
 def subpages(bucket: str, index_html: str) -> list[str]:
