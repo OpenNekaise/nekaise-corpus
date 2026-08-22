@@ -14,8 +14,12 @@ def main() -> None:
     parser.add_argument("--id", required=True)
     parser.add_argument("--title", required=True)
     parser.add_argument("--url", required=True)
+    parser.add_argument("--exit-code", type=int, default=0)
     parser.add_argument("--append", action="store_true")
     args = parser.parse_args()
+    if args.exit_code:
+        print(f"fixture failure {args.exit_code}", file=sys.stderr)
+        raise SystemExit(args.exit_code)
     entries = [{
         "id": args.id,
         "title": args.title,

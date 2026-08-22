@@ -1,5 +1,5 @@
 {
-  "_readme": "Control-plane configuration for scripts/run_round.py. rotation_key points into rotation.json; enabled=false documents exhausted or policy-blocked veins without deleting their resumable state.",
+  "_readme": "Control-plane configuration for scripts/run_round.py. rotation_key points into rotation.json; enabled=false documents exhausted or policy-blocked veins without deleting their resumable state; required=false keeps a volatile, non-rotating finder visible while allowing healthy veins to complete when it reports an outage.",
   "find_osti": {"script": "find_osti.py", "args": ["--rows", "50", "--pages", "2", "--max", "400"], "enabled": false, "reason": "www.osti.gov connect-timeout outage since 2026-07-30; re-enable when API responds"},
   "find_archive": {"script": "find_archive.py", "args": ["--rows", "30", "--max", "300"], "enabled": false, "reason": "archive.org advancedsearch caps deep paging at 10,000 results (HTTP 200 DEEP_PAGING at page 334 with rows=30); last yield 2026-08-06, pointer 980 preserved; re-aim through the cursor-based Scraping API before re-enabling"},
   "find_books": {"script": "find_books.py", "args": ["--per", "25", "--depth", "25", "--max", "200"], "enabled": false, "reason": "OAPEN /rest/search returns HTTP 500 at deep global offsets beyond individual query result counts; find_books caused 19 of 20 failed rounds since 2026-08-19 while supplying 1.9% of the last 25 rounds' accepted candidates; pointer 4275 preserved; re-aim to per-query offsets or reset the query universe before re-enabling"},
@@ -23,6 +23,6 @@
   "find_boverket": {"script": "find_boverket.py", "args": ["--pages", "2", "--max", "40"], "enabled": false, "reason": "exhausted: archive has ~35 listing pages; pointer reached page 219 after repeated zero-yield runs"},
   "find_iea": {"script": "find_iea.py", "args": ["--limit", "40", "--max", "40"], "enabled": false, "reason": "exhausted: finder reports a 176-slug universe; pointer reached offset 36960 and self-reports vein dry"},
   "find_scielo": {"script": "find_scielo.py", "args": ["--per", "25", "--max", "400"], "enabled": false, "reason": "exhausted: largest configured journal has 4368 articles; per-journal offset reached 23050 and all configured Brazil journals repeatedly yield zero"},
-  "find_sources": {"script": "find_sources.py", "args": ["--per", "20", "--backends", "openalex,arxiv"], "enabled": true, "rotation": false},
+  "find_sources": {"script": "find_sources.py", "args": ["--per", "20", "--backends", "openalex,arxiv"], "enabled": true, "rotation": false, "required": false},
   "find_github": {"script": "find_github.py", "args": [], "enabled": true, "rotation": false}
 }

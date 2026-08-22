@@ -14,6 +14,18 @@ def test_real_backend_config_covers_rotation_and_finders():
     assert run_round.validate_backends(run_round.load_backends(), rotation.load()) == []
 
 
+def test_backend_required_flag_must_be_boolean(monkeypatch):
+    monkeypatch.setattr(run_round, "SCRIPTS", Path(__file__).parent / "fixtures")
+    errors = run_round.validate_backends({
+        "bad": {
+            "script": "fake_finder.py",
+            "rotation": False,
+            "required": "sometimes",
+        }
+    }, {})
+    assert errors == ["bad: required must be true or false"]
+
+
 def test_finder_command_combines_fixed_args_pointer_and_append():
     cfg = {"script": "find_osti.py", "args": ["--rows", "50"]}
     state = {"find_osti": {"flag": "--page", "next": 7}}
@@ -140,6 +152,102 @@ def test_parallel_finders_stage_in_subprocesses_then_merge_once(tmp_path, monkey
         "candidates": 2,
         "accepted": {"one": 1, "two": 1},
     }) in events
+
+
+def test_optional_finder_failure_is_reported_without_blocking_merge(tmp_path, monkeypatch):
+    fixtures = Path(__file__).parent / "fixtures"
+    monkeypatch.setattr(run_round, "SCRIPTS", fixtures)
+    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
+    monkeypatch.setattr(run_round.registry, "existing_keys", lambda: (set(), set(), set()))
+    appended = []
+    monkeypatch.setattr(
+        run_round.registry,
+        "append_entries",
+        lambda entries: appended.extend(entries),
+    )
+    events = []
+    monkeypatch.setattr(
+        run_round.ops,
+        "run_event",
+        lambda run_id, event, **fields: events.append((run_id, event, fields)),
+    )
+    backends = {
+        "good": {
+            "script": "fake_finder.py",
+            "args": [
+                "--id", "ost-good", "--title", "Good", "--url", "https://e.org/good",
+            ],
+            "rotation": False,
+        },
+        "volatile": {
+            "script": "fake_finder.py",
+            "args": [
+                "--id", "ost-bad", "--title", "Bad", "--url", "https://e.org/bad",
+                "--exit-code", "7",
+            ],
+            "rotation": False,
+            "required": False,
+        },
+    }
+
+    run_round.run_finders_parallel(
+        ["good", "volatile"],
+        backends,
+        {},
+        os.environ.copy(),
+        "fixture-run",
+        workers=2,
+    )
+
+    assert [entry["id"] for entry in appended] == ["ost-good"]
+    assert ("fixture-run", "discovery_degraded", {"failures": {"volatile": 7}}) in events
+    assert ("fixture-run", "discovery_merged", {
+        "candidates": 1,
+        "accepted": {"good": 1, "volatile": 0},
+    }) in events
+
+
+def test_required_finder_failure_still_blocks_merge(tmp_path, monkeypatch):
+    fixtures = Path(__file__).parent / "fixtures"
+    monkeypatch.setattr(run_round, "SCRIPTS", fixtures)
+    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
+    monkeypatch.setattr(run_round.registry, "existing_keys", lambda: (set(), set(), set()))
+    appended = []
+    monkeypatch.setattr(
+        run_round.registry,
+        "append_entries",
+        lambda entries: appended.extend(entries),
+    )
+    monkeypatch.setattr(run_round.ops, "run_event", lambda *_args, **_kwargs: None)
+    backends = {
+        "good": {
+            "script": "fake_finder.py",
+            "args": [
+                "--id", "ost-good", "--title", "Good", "--url", "https://e.org/good",
+            ],
+            "rotation": False,
+        },
+        "required": {
+            "script": "fake_finder.py",
+            "args": [
+                "--id", "ost-bad", "--title", "Bad", "--url", "https://e.org/bad",
+                "--exit-code", "7",
+            ],
+            "rotation": False,
+        },
+    }
+
+    with pytest.raises(RuntimeError, match=r"discovery failed: required \(7\)"):
+        run_round.run_finders_parallel(
+            ["good", "required"],
+            backends,
+            {},
+            os.environ.copy(),
+            "fixture-run",
+            workers=2,
+        )
+
+    assert appended == []
 
 
 def test_main_rolls_back_tracked_state_when_pipeline_fails(tmp_path, monkeypatch):

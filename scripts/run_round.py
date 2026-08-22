@@ -5,8 +5,9 @@ This is the single control plane used by humans, cron, and marathon:
 
     discover -> fetch -> prune -> clean -> check -> stats -> lint -> contracts -> tests -> commit
 
-The repository lock prevents concurrent operators. Every required command is fail-closed: a failed
-step records a run-ledger event, exits non-zero, and never commits or pushes. Successful finder
+The repository lock prevents concurrent operators. Every required command and finder is fail-closed:
+a failure records a run-ledger event, exits non-zero, and never commits or pushes. Backends marked
+``required: false`` report degraded discovery without blocking healthy veins. Successful finder
 pointers advance only after that finder exits zero.
 """
 from __future__ import annotations
@@ -54,6 +55,8 @@ def validate_backends(backends: dict, rotation_state: dict) -> list[str]:
         script = SCRIPTS / cfg.get("script", "")
         if not script.is_file():
             errors.append(f"{name}: missing script {script.name}")
+        if "required" in cfg and not isinstance(cfg["required"], bool):
+            errors.append(f"{name}: required must be true or false")
         rotates = cfg.get("rotation", True)
         if rotates and name not in rotation_state:
             errors.append(f"{name}: missing rotation entry")
@@ -210,11 +213,25 @@ def run_finders_parallel(
                     print(result["stderr"].rstrip(), file=sys.stderr, flush=True)
 
         failed = [r for r in results if r["returncode"]]
-        if failed:
-            names = ", ".join(f"{r['name']} ({r['returncode']})" for r in failed)
+        required_failed = [
+            r for r in failed if backends[r["name"]].get("required", True)
+        ]
+        if required_failed:
+            names = ", ".join(
+                f"{r['name']} ({r['returncode']})" for r in required_failed
+            )
             raise RuntimeError(f"discovery failed: {names}")
 
-        total, accepted = merge_proposals(results)
+        optional_failed = [r for r in failed if r not in required_failed]
+        if optional_failed:
+            failures = {r["name"]: r["returncode"] for r in optional_failed}
+            shown = ", ".join(f"{name} ({code})" for name, code in failures.items())
+            print(f"discovery degraded: optional finder failure(s): {shown}", flush=True)
+            ops.run_event(run_id, "discovery_degraded", failures=failures)
+
+        successful = [r for r in results if not r["returncode"]]
+        total, accepted = merge_proposals(successful)
+        accepted = {name: accepted.get(name, 0) for name in selected}
         print(f"discovery merge: {total} unique candidates | by backend: {accepted}")
         ops.run_event(
             run_id,
@@ -222,8 +239,9 @@ def run_finders_parallel(
             candidates=total,
             accepted=accepted,
         )
+        successful_names = {r["name"] for r in successful}
         for name in selected:
-            if backends[name].get("rotation", True):
+            if name in successful_names and backends[name].get("rotation", True):
                 new_pointer = rotation.advance(name)
                 ops.run_event(run_id, "rotation_advanced", backend=name, next=new_pointer)
 
