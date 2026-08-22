@@ -127,3 +127,37 @@ def test_successful_empty_bucket_is_not_a_fetch_failure(monkeypatch, capsys):
     find_patents.main()
 
     assert "0 NEW built-environment US patents" in capsys.readouterr().out
+
+
+def test_candidate_cap_requests_rotation_hold(tmp_path, monkeypatch, capsys):
+    _empty_registry(monkeypatch)
+    monkeypatch.setattr(
+        find_patents,
+        "fetch",
+        lambda _url: "\n".join([
+            "<li>CN100A - Concrete foundation :",
+            "<li>CN101A - Bridge foundation :",
+        ]),
+    )
+    appended = []
+    monkeypatch.setattr(
+        find_patents.registry,
+        "append_entries",
+        lambda entries: appended.extend(entries),
+    )
+    hold = tmp_path / "rotation-hold"
+    monkeypatch.setenv("NEKAISE_ROTATION_HOLD_FILE", str(hold))
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "find_patents.py", "--countries", "CN", "--bucket", "2022-W48",
+            "--max", "1", "--append",
+        ],
+    )
+
+    find_patents.main()
+
+    assert [entry["id"] for entry in appended] == ["pat-cn100a"]
+    assert hold.read_text() == "candidate cap reached\n"
+    assert "rotation hold requested" in capsys.readouterr().out

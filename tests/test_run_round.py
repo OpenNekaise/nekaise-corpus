@@ -154,6 +154,51 @@ def test_parallel_finders_stage_in_subprocesses_then_merge_once(tmp_path, monkey
     }) in events
 
 
+def test_successful_finder_can_hold_rotation_at_a_capped_pointer(tmp_path, monkeypatch):
+    fixtures = Path(__file__).parent / "fixtures"
+    monkeypatch.setattr(run_round, "SCRIPTS", fixtures)
+    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
+    monkeypatch.setattr(run_round.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(run_round.registry, "append_entries", lambda _entries: None)
+    events = []
+    monkeypatch.setattr(
+        run_round.ops,
+        "run_event",
+        lambda run_id, event, **fields: events.append((run_id, event, fields)),
+    )
+    advanced = []
+    monkeypatch.setattr(
+        run_round.rotation,
+        "advance",
+        lambda name: advanced.append(name),
+    )
+    backends = {
+        "capped": {
+            "script": "fake_finder.py",
+            "args": [
+                "--id", "pat-cn100a", "--title", "Concrete foundation",
+                "--url", "https://e.org/cn100a", "--hold-rotation",
+            ],
+        },
+    }
+    state = {"capped": {"flag": "--bucket", "next": "2022-W48"}}
+
+    run_round.run_finders_parallel(
+        ["capped"],
+        backends,
+        state,
+        os.environ.copy(),
+        "fixture-run",
+        workers=1,
+    )
+
+    assert advanced == []
+    assert ("fixture-run", "rotation_held", {
+        "backend": "capped",
+        "reason": "finder_requested",
+    }) in events
+
+
 def test_optional_finder_failure_is_reported_without_blocking_merge(tmp_path, monkeypatch):
     fixtures = Path(__file__).parent / "fixtures"
     monkeypatch.setattr(run_round, "SCRIPTS", fixtures)

@@ -155,8 +155,10 @@ def run_finders_parallel(
             command = finder_command(name, cfg, rotation_state)
             shown = shlex.join(command)
             proposal = temp / f"{index:03d}-{name}.json"
+            rotation_hold = temp / f"{index:03d}-{name}.rotation-hold"
             child_env = env.copy()
             child_env["NEKAISE_PROPOSAL_FILE"] = str(proposal)
+            child_env["NEKAISE_ROTATION_HOLD_FILE"] = str(rotation_hold)
             step = f"discover:{name}"
             ops.run_event(run_id, "step_started", step=step, command=shown)
             started = time.monotonic()
@@ -181,6 +183,7 @@ def run_finders_parallel(
                 "name": name,
                 "command": shown,
                 "proposal": proposal,
+                "rotation_hold": rotation_hold.exists(),
                 "returncode": result.returncode,
                 "stdout": result.stdout,
                 "stderr": result.stderr,
@@ -240,8 +243,18 @@ def run_finders_parallel(
             accepted=accepted,
         )
         successful_names = {r["name"] for r in successful}
+        results_by_name = {r["name"]: r for r in successful}
         for name in selected:
             if name in successful_names and backends[name].get("rotation", True):
+                if results_by_name[name]["rotation_hold"]:
+                    print(f"rotation held for {name}: finder reported more candidates at this pointer")
+                    ops.run_event(
+                        run_id,
+                        "rotation_held",
+                        backend=name,
+                        reason="finder_requested",
+                    )
+                    continue
                 new_pointer = rotation.advance(name)
                 ops.run_event(run_id, "rotation_advanced", backend=name, next=new_pointer)
 

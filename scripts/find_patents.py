@@ -33,9 +33,11 @@ from __future__ import annotations
 
 import argparse
 import html
+import os
 import re
 import sys
 import time
+from pathlib import Path
 
 import requests
 import yaml
@@ -205,6 +207,18 @@ def main() -> None:
             file=sys.stderr,
         )
         raise SystemExit(1)
+
+    capped = args.max > 0 and len(out) >= args.max
+    if capped:
+        # run_round gives every finder an isolated hold file.  A capped bucket must be revisited:
+        # registry/blocklist dedup makes the next run skip what was already accepted and continue
+        # deeper into the same sitemap pages without requiring a second committed page pointer.
+        if hold_path := os.environ.get("NEKAISE_ROTATION_HOLD_FILE"):
+            Path(hold_path).write_text("candidate cap reached\n")
+        print(
+            f"# rotation hold requested: --max {args.max} reached; "
+            f"revisit bucket {args.bucket} for remaining candidates"
+        )
 
     registry.uniquify_ids(out, reg_ids)
 
