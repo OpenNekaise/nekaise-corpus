@@ -30,6 +30,7 @@ from pathlib import Path
 import requests
 import yaml
 
+import blocklist
 import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
@@ -194,10 +195,13 @@ def wanted(path: str, include, code_exts=()) -> bool:
 
 
 def done_sources():
-    """gh_ source buckets already ingested (manifest or registry). Returns (all_done, code_done)
-    where code_done = buckets that already have a txt (source-code) entry. Lets repeated runs skip
-    finished repos — and skip code repos whose code is already pulled — spending the 60/hr API budget
-    only on repos not yet walked."""
+    """Return GitHub source buckets already ingested or pruned.
+
+    Only read the GitHub shards rather than parsing the entire 600k+ document corpus.  A pruned raw
+    GitHub URL is durable evidence that the repo was walked; a blocklisted non-prose extension also
+    proves that an opted-in code harvest was attempted.  This keeps fully-pruned repos from being
+    walked forever while still allowing a docs-only code repo to return once for its source files.
+    """
     all_done, code_done = set(), set()
 
     def note(s, fmt):
@@ -206,11 +210,65 @@ def done_sources():
             if fmt == "txt":
                 code_done.add(s)
 
-    for r in registry.load_manifest_rows():
-        note(r.get("source", ""), r.get("format"))
-    for e in registry.load_entries():
-        note(e.get("source", ""), e.get("format"))
+    manifest_path = registry.MAN_DIR / "github.jsonl"
+    if manifest_path.exists():
+        for line in manifest_path.read_text().splitlines():
+            if line.strip():
+                row = json.loads(line)
+                note(row.get("source", ""), row.get("format"))
+
+    registry_path = registry.REG_DIR / "github.yaml"
+    if registry_path.exists():
+        for entry in yaml.safe_load(registry_path.read_text()).get("sources") or []:
+            note(entry.get("source", ""), entry.get("format"))
+
+    raw_prefix = "https://raw.githubusercontent.com/"
+    for url in blocklist.load():
+        if not url.startswith(raw_prefix):
+            continue
+        parts = url[len(raw_prefix):].split("/")
+        if len(parts) < 4:
+            continue
+        source = f"gh_{registry.slug(parts[1])}"
+        suffix = parts[-1].lower().rsplit(".", 1)
+        fmt = suffix[-1] if len(suffix) == 2 else ""
+        note(source, fmt if fmt in ("md", "rst") else "txt")
     return all_done, code_done
+
+
+def pending_repos(repos: list[dict], done: set[str], code_done: set[str]) -> list[dict]:
+    """Keep unwalked repos and code repos whose source-file pass has not completed."""
+    out = []
+    for spec in repos:
+        bucket = f"gh_{registry.slug(spec['repo'].split('/')[-1])}"
+        if bucket not in done or (spec.get("code") and bucket not in code_done):
+            out.append(spec)
+    return out
+
+
+def capped_paths(paths: list[str], code_exts: tuple[str, ...], cap: int) -> list[str]:
+    """Cap deterministically while reserving up to half the slots for opted-in source code."""
+    paths = sorted(paths)
+    if len(paths) <= cap:
+        return paths
+    if cap <= 0 or not code_exts:
+        return paths[:max(0, cap)]
+
+    def is_code(path: str) -> bool:
+        base = path.lower().rsplit("/", 1)[-1]
+        return "." in base and base.rsplit(".", 1)[-1] in code_exts
+
+    code = [path for path in paths if is_code(path)]
+    prose = [path for path in paths if not is_code(path)]
+    reserve = min(len(code), (cap + 1) // 2)
+    selected = prose[:cap - reserve] + code[:reserve]
+    remaining = cap - len(selected)
+    if remaining:
+        selected.extend(code[reserve:reserve + remaining])
+        remaining = cap - len(selected)
+    if remaining:
+        selected.extend(prose[cap - reserve:cap - reserve + remaining])
+    return sorted(selected)
 
 
 def from_repo(spec: dict) -> list:
@@ -232,7 +290,7 @@ def from_repo(spec: dict) -> list:
     if len(paths) > cap:
         print(f"# NOTE {repo}: {len(paths)} files, capping at {cap} "
               f"(dropped {len(paths) - cap})", file=sys.stderr)
-        paths = paths[:cap]
+        paths = capped_paths(paths, code_exts, cap)
     out = []
     for p in paths:
         low = p.lower()
@@ -259,12 +317,7 @@ def main() -> None:
 
     if not args.repo:  # skip repos already ingested; re-walk a code repo only until its code lands
         done, code_done = done_sources()
-        def pending(r):
-            b = f"gh_{registry.slug(r['repo'].split('/')[-1])}"
-            if b not in done:
-                return True                       # never walked
-            return bool(r.get("code")) and b not in code_done  # walked docs, code still to pull
-        keep = [r for r in repos if pending(r)]
+        keep = pending_repos(repos, done, code_done)
         if len(keep) < len(repos):
             print(f"# skipping {len(repos) - len(keep)} already-ingested repos; "
                   f"walking {len(keep)} (60/hr API budget)", file=sys.stderr)
