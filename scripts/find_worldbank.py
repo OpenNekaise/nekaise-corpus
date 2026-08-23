@@ -11,9 +11,9 @@ programmatic access — no scraping, no wall. "building energy efficiency" alone
 (2026-07), so the vein is deep; rotate `--os` via registry/rotation.json and switch `--q` between
 rounds (see the rotation note).
 
-License: World Bank Open Access Policy — formal publications and research are CC-BY (3.0 IGO).
-Operational project documents carry the Bank's open Access-to-Information terms; tagged cc-by like
-the existing curated worldbank entries.
+License: Documents & Reports mixes formal publications with operational/project-cycle documents,
+including borrower-authored material.  Public disclosure is not a blanket CC-BY grant, so WDS
+results are tagged ``open`` unless a future per-document rights check proves a narrower license.
 
 Junk control: bulk operational paperwork (procurement plans, disbursement letters, agreements,
 audits) is skipped by docty/title before it ever hits the registry; the prune gate catches the
@@ -122,7 +122,7 @@ def main() -> None:
             titles.add(t)
             sid = f"wbd-{registry.slug(d['title'])[:52]}"
             out.append({"id": sid, "title": d["title"][:150], "url": d["pdf_url"],
-                        "source": "worldbank_wds", "license": "cc-by",
+                        "source": "worldbank_wds", "license": "open",
                         "topic": classify(d["title"]), "format": "pdf"})
         time.sleep(1.0)  # politeness between API pages
 

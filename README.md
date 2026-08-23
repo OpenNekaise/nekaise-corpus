@@ -59,7 +59,7 @@ python scripts/clean_corpus.py --check
 
 **By topic** (a source gets one at registration): equipment_systems 213,693 · construction 123,278 · building_energy 121,963 · structures_civil 57,349 · materials 37,843 · infrastructure 25,084 · architecture 22,179 · standards_protocols 10,878 · urban 5,886 · controls_bas 3,398 · commissioning_fdd 376.
 
-**By license:** open 429,225 · public-domain 153,409 · cc-by-sa 1,723 · cc-by 37,570.
+**By license:** open 448,611 · public-domain 153,409 · cc-by-sa 1,723 · cc-by 18,184.
 
 _Snapshot of the live registry (2026-08-23) — auto-generated from the manifest. The bytes are not
 shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._

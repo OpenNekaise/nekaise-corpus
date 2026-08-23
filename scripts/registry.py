@@ -56,7 +56,7 @@ SHARDS = {
     "mod-": "modelica.yaml",   # find_modelica_conf (Modelica Conference proceedings, LiU E-Press 10.3384)
     "pur-": "purdue.yaml",     # find_purdue (Purdue e-Pubs Herrick conferences: icec/iracc/ihpbc)
     "zen-": "zenodo.yaml",     # find_zenodo (open CC-licensed records)
-    "wbd-": "worldbank.yaml",  # find_worldbank (World Bank Documents & Reports API, cc-by)
+    "wbd-": "worldbank.yaml",  # find_worldbank (World Bank Documents & Reports API, open)
     "jrc-": "jrc.yaml",        # find_jrc (EU JRC science-for-policy reports via OpenAIRE, cc-by)
     "guk-": "govuk.yaml",      # find_govuk (UK gov.uk publications via Search/Content APIs, OGL v3)
     "jst-": "jstage.yaml",     # find_jstage (AIJ journals via the J-STAGE search API, Japanese)

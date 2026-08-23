@@ -55,3 +55,30 @@ def test_successful_empty_page_is_not_an_api_failure(monkeypatch, capsys):
     find_worldbank.main()
 
     assert "0 NEW World Bank docs" in capsys.readouterr().out
+
+
+def test_wds_results_are_not_blanket_labeled_cc_by(monkeypatch):
+    _empty_registry(monkeypatch)
+    captured = []
+    monkeypatch.setattr(
+        find_worldbank,
+        "fetch_page",
+        lambda *_args: (1, [{
+            "title": "Urban Water Infrastructure Assessment",
+            "pdf_url": "https://documents.worldbank.org/example.pdf",
+            "docty": "Environmental Assessment",
+        }]),
+    )
+    monkeypatch.setattr(find_worldbank.registry, "append_entries", captured.extend)
+    monkeypatch.setattr(find_worldbank.time, "sleep", lambda _seconds: None)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["find_worldbank.py", "--append", "--pages", "1"],
+    )
+
+    find_worldbank.main()
+
+    assert len(captured) == 1
+    assert captured[0]["source"] == "worldbank_wds"
+    assert captured[0]["license"] == "open"
