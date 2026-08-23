@@ -133,6 +133,6 @@
     "flag": "--page",
     "next": 8,
     "step": 1,
-    "note": "arXiv relevance pages, 20 results/query. Page 1 was repeatedly mined by the former combined find_sources backend; a 2026-08-23 non-appending page-5 probe found 194 unseen candidates among 220 results across 11 representative AEC topics. Partial upstream runs request a hold so a page is never burned."
+    "note": "PAUSED 2026-08-23: independent pagination exposed severe off-AEC drift by page 8, while 108 serial API queries per round triggered repeated 429s. Pointer 8 is preserved; before re-enabling, capture primary category and abstract metadata, calibrate a structured relevance filter, re-aim to reviewed shallower pages, and reduce request volume. Partial upstream runs request a hold so a page is never burned."
   }
 }
