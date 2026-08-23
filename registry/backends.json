@@ -23,6 +23,7 @@
   "find_boverket": {"script": "find_boverket.py", "args": ["--pages", "2", "--max", "40"], "enabled": false, "reason": "exhausted: archive has ~35 listing pages; pointer reached page 219 after repeated zero-yield runs"},
   "find_iea": {"script": "find_iea.py", "args": ["--limit", "40", "--max", "40"], "enabled": false, "reason": "exhausted: finder reports a 176-slug universe; pointer reached offset 36960 and self-reports vein dry"},
   "find_scielo": {"script": "find_scielo.py", "args": ["--per", "25", "--max", "400"], "enabled": false, "reason": "exhausted: largest configured journal has 4368 articles; per-journal offset reached 23050 and all configured Brazil journals repeatedly yield zero"},
-  "find_sources": {"script": "find_sources.py", "args": ["--per", "20", "--backends", "openalex,arxiv"], "enabled": true, "rotation": false, "required": false},
+  "find_openalex": {"script": "find_sources.py", "args": ["--per", "20", "--backends", "openalex"], "enabled": true, "rotation": false, "required": false, "reason": "head search remains non-rotating until a throttling-free depth probe validates deeper OpenAlex yield"},
+  "find_arxiv": {"script": "find_sources.py", "args": ["--per", "20", "--backends", "arxiv"], "enabled": true, "required": false},
   "find_github": {"script": "find_github.py", "args": [], "enabled": true, "rotation": false}
 }

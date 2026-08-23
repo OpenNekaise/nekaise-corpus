@@ -79,3 +79,60 @@ def test_persisted_cooldown_with_other_backend_dry_success_is_ok(tmp_path, monke
     assert result == 0
     assert openalex_calls == []
     assert len(arxiv_calls) == 2
+
+
+def test_openalex_and_arxiv_receive_requested_page(monkeypatch):
+    requests = []
+
+    class Response:
+        text = ""
+
+        def raise_for_status(self):
+            return None
+
+        def json(self):
+            return {"results": []}
+
+    def get(url, *, params, timeout):
+        requests.append((url, params, timeout))
+        return Response()
+
+    monkeypatch.setattr(find_sources.requests, "get", get)
+    monkeypatch.setattr(find_sources.time, "sleep", lambda _seconds: None)
+
+    find_sources.from_openalex("concrete", "materials", 20, page=5)
+    find_sources.from_arxiv("concrete", "materials", 20, page=5)
+
+    assert requests[0][1]["page"] == 5
+    assert requests[1][1]["start"] == 80
+
+
+def test_partial_upstream_run_requests_rotation_hold(tmp_path, monkeypatch, capsys):
+    calls = []
+
+    def partly_available(*_args):
+        calls.append(1)
+        if len(calls) == 1:
+            raise TimeoutError("temporary outage")
+        return []
+
+    monkeypatch.setattr(find_sources, "QUERIES", [
+        ("one", "construction"),
+        ("two", "construction"),
+    ])
+    monkeypatch.setattr(find_sources, "BACKENDS", {"arxiv": partly_available})
+    monkeypatch.setattr(find_sources, "COOLDOWN_FILE", tmp_path / "cooldowns.json")
+    hold = tmp_path / "rotation-hold"
+    monkeypatch.setenv("NEKAISE_ROTATION_HOLD_FILE", str(hold))
+    stub_registry(monkeypatch)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["find_sources.py", "--backends", "arxiv", "--page", "7"],
+    )
+
+    result = find_sources.main()
+
+    assert result == 0
+    assert hold.read_text() == "incomplete upstream request(s): arxiv\n"
+    assert "rotation hold requested" in capsys.readouterr().err

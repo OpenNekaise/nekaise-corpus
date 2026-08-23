@@ -10,8 +10,8 @@ Three backends, all free / no key:
 Keeps candidates with a fetchable PDF, dedups against the current manifest + registry, and PROPOSES
 ready-to-paste registry entries. Review, then `--append` and run the loader.
 
-    python scripts/find_sources.py --per 20            # propose
-    python scripts/find_sources.py --per 20 --append   # append into the registry, then load + prune
+    python scripts/find_sources.py --per 20 --page 2            # propose the next result page
+    python scripts/find_sources.py --per 20 --page 2 --append   # append, then load + prune
 """
 from __future__ import annotations
 
@@ -19,6 +19,7 @@ import argparse
 import email.utils
 import json
 import math
+import os
 import re
 import sys
 import time
@@ -168,9 +169,10 @@ def entry(title, url, source, license, topic):
             "url": url, "source": source, "license": license, "topic": topic, "format": "pdf"}
 
 
-def from_openalex(term, topic, per):
+def from_openalex(term, topic, per, page=1):
     p = {"search": term, "filter": "open_access.is_oa:true,type:article",
-         "per-page": per, "sort": "cited_by_count:desc", "mailto": MAILTO}
+         "per-page": per, "page": page,
+         "sort": "cited_by_count:desc", "mailto": MAILTO}
     r = requests.get("https://api.openalex.org/works", params=p, timeout=30)
     r.raise_for_status()
     out = []
@@ -187,7 +189,7 @@ def from_openalex(term, topic, per):
     return out
 
 
-def from_osti(term, topic, per):
+def from_osti(term, topic, per, page=1):
     r = requests.get("https://www.osti.gov/api/v1/records",
                      params={"q": term, "rows": per}, timeout=30)
     r.raise_for_status()
@@ -203,10 +205,11 @@ def from_osti(term, topic, per):
     return out
 
 
-def from_arxiv(term, topic, per):
+def from_arxiv(term, topic, per, page=1):
     time.sleep(3.1)  # arXiv API asks for >=3s between requests (429 otherwise)
     r = requests.get("https://export.arxiv.org/api/query",
                      params={"search_query": f"all:{term}", "max_results": per,
+                             "start": (page - 1) * per,
                              "sortBy": "relevance"}, timeout=30)
     r.raise_for_status()
     out = []
@@ -262,9 +265,17 @@ def retry_after_deadline(value: str | None, now: float) -> float | None:
             return None
 
 
+def request_rotation_hold(reason: str) -> None:
+    """Ask run_round to revisit this page after a partial upstream run."""
+    if hold_name := os.environ.get("NEKAISE_ROTATION_HOLD_FILE"):
+        ops.atomic_write_text(Path(hold_name), reason + "\n")
+    print(f"# rotation hold requested: {reason}", file=sys.stderr)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--per", type=int, default=15, help="results per backend per topic query")
+    ap.add_argument("--page", type=int, default=1, help="result page (rotate deeper each round)")
     ap.add_argument("--backends", default="openalex,osti,arxiv")
     ap.add_argument(
         "--circuit-threshold",
@@ -275,6 +286,8 @@ def main() -> int:
     ap.add_argument("--append", action="store_true",
                     help="append candidates into the registry shards (then load + prune)")
     args = ap.parse_args()
+    if args.page < 1:
+        ap.error("--page must be at least 1")
     backends = [b.strip() for b in args.backends.split(",") if b.strip() in BACKENDS]
     if not backends:
         ap.error("--backends did not select any known backend")
@@ -286,6 +299,7 @@ def main() -> int:
     now = time.time()
     cooldowns = load_cooldowns(now)
     disabled = {backend for backend in backends if cooldowns.get(backend, 0) > now}
+    incomplete = set(disabled)
     for backend in sorted(disabled):
         remaining = math.ceil(cooldowns[backend] - now)
         print(
@@ -297,8 +311,9 @@ def main() -> int:
             if b in disabled:
                 continue
             try:
-                hits = BACKENDS[b](term, topic, args.per)
+                hits = BACKENDS[b](term, topic, args.per, args.page)
             except Exception as e:
+                incomplete.add(b)
                 print(f"# {b} [{topic}] failed: {e}", file=sys.stderr)
                 response = getattr(e, "response", None)
                 status = getattr(response, "status_code", None)
@@ -337,6 +352,11 @@ def main() -> int:
         )
         return 1
 
+    if incomplete:
+        request_rotation_hold(
+            "incomplete upstream request(s): " + ", ".join(sorted(incomplete))
+        )
+
     # de-collide ids: truncated title slugs clash across runs; the manifest is id-keyed, so a
     # clash silently overwrites a doc. registry.uniquify_ids guards vs the whole registry.
     registry.uniquify_ids(out, reg_ids)
@@ -346,7 +366,10 @@ def main() -> int:
         by_topic[h["topic"]] = by_topic.get(h["topic"], 0) + 1
         by_src[h["source"]] = by_src.get(h["source"], 0) + 1
         by_lic[h["license"]] = by_lic.get(h["license"], 0) + 1
-    print(f"# {len(out)} NEW candidates on download-friendly hosts (deduped vs manifest + registry)")
+    print(
+        f"# {len(out)} NEW candidates on download-friendly hosts "
+        f"(page {args.page}; deduped vs manifest + registry)"
+    )
     print(f"# by topic:   {by_topic}")
     print(f"# by source:  {by_src}")
     print(f"# by license: {by_lic}")
