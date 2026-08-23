@@ -38,7 +38,7 @@
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "2025-W32",
+    "next": "2025-W31",
     "note": "weekly buckets 1900..now, walked backwards; RE-AIMED 2026-08-23 from 2017-W49 to verified-live frontier 2026-W19 (probe hit cap immediately): 2021-2026 and 2017-W48..2016-W02 remain virgin, with the older interval reserved for a later pass. Earlier mined: 2017-2020 W01, 2020-W52..2017-W49, 1925-1940 W01s, 2015-W52..W08, 2014 whole, 2013..1998-W19 (8B/10B marathons). --countries flag (default US): CN/EP/DE work, sitemap titles are English for all countries"
   },
   "find_purdue": {
