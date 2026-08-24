@@ -6,9 +6,10 @@ Frontiers / hundreds of publishers, HOSTING the PDFs itself (unlike DOAB, whose 
 external; MDPI Books are Cloudflare-blocked from most hosts). Built-environment / AEC subjects are a
 dense, cleanly-licensed vein (whole books, hundreds of pages of prose = CPT gold).
 
-This backend PAGINATES the OAPEN REST search across many built-env subjects (offset 0, per, 2·per, …
-up to --depth), keeps books (ANY language since 2026-07-09) with a direct PDF bitstream whose license is
-CC-BY / CC-BY-SA / CC0, and inserts ready-to-load registry entries.
+This backend PAGINATES the OAPEN REST search across many built-env subjects, keeps books (ANY
+language since 2026-07-09) with a direct PDF bitstream whose license is CC-BY / CC-BY-SA / CC0,
+and inserts ready-to-load registry entries.  The automated loop uses a stable integer cursor that
+selects one (query, page) pair per round; this avoids bursting every deep query at OAPEN together.
 
 License is NOT in the REST metadata — it lives in the OAI-PMH `xoai` record as a
 creativecommons.org/licenses/<code> URL. We keep ONLY `by` / `by-sa` / `publicdomain/zero`; ANY `nc`
@@ -21,6 +22,7 @@ them (length-scaled density rule) like every machine-discovered source.
     python scripts/find_books.py                                   # propose
     python scripts/find_books.py --append                          # insert (then load + prune)
     python scripts/find_books.py --per 25 --depth 150 --max 200 --append
+    python scripts/find_books.py --per 25 --cursor 21888 --max 25 --append
 """
 from __future__ import annotations
 
@@ -105,6 +107,29 @@ QUERIES = [
     ("arquitectura", "architecture"), ("urbanismo", "urban"), ("construcción", "construction"),
     ("arquitetura", "architecture"), ("stedenbouw", "urban"), ("architectuur", "architecture"),
 ]
+
+# Cursor coordinates use fixed-width rows so appending queries does not remap already-committed
+# excavation state.  Keep existing queries in place and append new ones; widening beyond 128 terms
+# requires a reviewed cursor migration.
+CURSOR_STRIDE = 128
+
+
+def cursor_target(cursor: int, per: int) -> tuple[str, str, int] | None:
+    """Map a stable cursor to one query and page; spare slots intentionally return no work."""
+    if len(QUERIES) > CURSOR_STRIDE:
+        raise RuntimeError(
+            f"{len(QUERIES)} OAPEN queries exceed the {CURSOR_STRIDE}-slot cursor; "
+            "perform a reviewed cursor migration"
+        )
+    if cursor < 0:
+        raise ValueError("cursor must be non-negative")
+    if per <= 0:
+        raise ValueError("per must be positive")
+    page, query_index = divmod(cursor, CURSOR_STRIDE)
+    if query_index >= len(QUERIES):
+        return None
+    term, topic = QUERIES[query_index]
+    return term, topic, page * per
 
 
 def pdf_link(item) -> str | None:
@@ -227,9 +252,17 @@ def emit(e) -> str:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--per", type=int, default=25, help="OAPEN page size")
-    ap.add_argument("--offset", type=int, default=0,
-                    help="starting offset (marathon rotates this per round to harvest OAPEN deeper — "
-                         "scan one page per subject per run unless doing a deliberate deep pass)")
+    position = ap.add_mutually_exclusive_group()
+    position.add_argument(
+        "--offset",
+        type=int,
+        help="starting offset for a manual all-query scan (default 0)",
+    )
+    position.add_argument(
+        "--cursor",
+        type=int,
+        help="stable automated cursor selecting exactly one query/page pair",
+    )
     ap.add_argument("--depth", type=int, default=25, help="results scanned per subject from --offset")
     ap.add_argument("--max", type=int, default=200, help="cap new books appended per run")
     ap.add_argument(
@@ -243,7 +276,17 @@ def main() -> None:
 
     urls, titles, reg_ids = registry.existing_keys()
     workers = max(1, args.workers)
-    pages_by_query: list[list[tuple] | None] = [None] * len(QUERIES)
+    if args.cursor is None:
+        offset = args.offset or 0
+        searches = [
+            (index, term, topic, offset, args.depth)
+            for index, (term, topic) in enumerate(QUERIES)
+        ]
+    else:
+        target = cursor_target(args.cursor, args.per)
+        searches = [] if target is None else [(0, *target, args.per)]
+
+    pages_by_query: list[list[tuple] | None] = [None] * len(searches)
     failed_searches: list[str] = []
     with ThreadPoolExecutor(max_workers=workers) as pool:
         futures = {
@@ -251,11 +294,11 @@ def main() -> None:
                 search_subject,
                 term,
                 topic,
-                args.offset,
-                args.depth,
+                offset,
+                depth,
                 args.per,
             ): index
-            for index, (term, topic) in enumerate(QUERIES)
+            for index, term, topic, offset, depth in searches
         }
         for future in as_completed(futures):
             pages, failure = future.result()

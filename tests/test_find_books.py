@@ -14,6 +14,56 @@ def test_oapen_license_cache_ignores_transient_negative_entries(tmp_path, monkey
     assert find_books.load_license_cache() == {"good": "cc-by"}
 
 
+def test_cursor_target_keeps_query_coordinates_stable(monkeypatch):
+    monkeypatch.setattr(
+        find_books,
+        "QUERIES",
+        [("first", "architecture"), ("second", "materials")],
+    )
+
+    assert find_books.cursor_target(0, 25) == ("first", "architecture", 0)
+    assert find_books.cursor_target(1, 25) == ("second", "materials", 0)
+    assert find_books.cursor_target(find_books.CURSOR_STRIDE, 25) == (
+        "first",
+        "architecture",
+        25,
+    )
+    assert find_books.cursor_target(2, 25) is None
+
+
+def test_cursor_fails_closed_when_query_slots_are_exhausted(monkeypatch):
+    monkeypatch.setattr(
+        find_books,
+        "QUERIES",
+        [(str(index), "architecture") for index in range(find_books.CURSOR_STRIDE + 1)],
+    )
+
+    with pytest.raises(RuntimeError, match="perform a reviewed cursor migration"):
+        find_books.cursor_target(0, 25)
+
+
+def test_cursor_mode_searches_exactly_one_query_page(monkeypatch, capsys):
+    _empty_registry(monkeypatch)
+    monkeypatch.setattr(
+        find_books,
+        "QUERIES",
+        [("first", "architecture"), ("second", "materials")],
+    )
+    calls = []
+
+    def search(term, topic, offset, depth, per):
+        calls.append((term, topic, offset, depth, per))
+        return [], None
+
+    monkeypatch.setattr(find_books, "search_subject", search)
+    monkeypatch.setattr(sys, "argv", ["find_books.py", "--cursor", "1", "--per", "25"])
+
+    find_books.main()
+
+    assert calls == [("second", "materials", 0, 25, 25)]
+    assert "0 NEW OAPEN books" in capsys.readouterr().out
+
+
 def _empty_registry(monkeypatch):
     monkeypatch.setattr(
         find_books.registry,
