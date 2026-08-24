@@ -129,6 +129,34 @@ def test_successful_empty_bucket_is_not_a_fetch_failure(monkeypatch, capsys):
     assert "0 NEW built-environment US patents" in capsys.readouterr().out
 
 
+def test_us_design_patents_are_skipped_before_append(monkeypatch, capsys):
+    _empty_registry(monkeypatch)
+    monkeypatch.setattr(
+        find_patents,
+        "fetch",
+        lambda _url: "\n".join([
+            "<li>USD1074974S1 - Roof fan :",
+            "<li>US12345678B2 - Concrete roof connection :",
+        ]),
+    )
+    appended = []
+    monkeypatch.setattr(
+        find_patents.registry,
+        "append_entries",
+        lambda entries: appended.extend(entries),
+    )
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["find_patents.py", "--bucket", "2025-W17", "--append"],
+    )
+
+    find_patents.main()
+
+    assert [entry["id"] for entry in appended] == ["pat-us12345678b2"]
+    assert "1 US design publications skipped" in capsys.readouterr().out
+
+
 def test_candidate_cap_requests_rotation_hold(tmp_path, monkeypatch, capsys):
     _empty_registry(monkeypatch)
     monkeypatch.setattr(

@@ -20,6 +20,8 @@ the first keyword group the title matches (see TOPIC_RULES); the real relevance 
 `prune_corpus.py`'s DOMAIN regex over the fetched full text, and the html extractor in
 build_corpus.py strips the boilerplate (classification codes, cited-by tables, chemical-compound
 index) around the actual description/claims prose — always load + prune after appending.
+US design patents (`USD…S1`) are excluded before title matching: they contain drawings rather than
+the technical description/claims prose this corpus is meant to collect.
 
 Dedups against the registry / manifest / pruned-URL blocklist and appends `pat-` entries to
 registry/patents-<country>-<bucket>.yaml shards (routed by scripts/registry.py). Publication numbers are already
@@ -161,6 +163,7 @@ def main() -> None:
 
     out: list[dict] = []
     us_scanned = 0
+    design_skipped = 0
     failed_page = None
     for i, (label, purl) in enumerate(page_specs):
         if len(out) >= args.max:
@@ -180,6 +183,12 @@ def main() -> None:
             us_scanned += 1
             if len(out) >= args.max:
                 break
+            # US design patents are drawing-focused and consistently extract as thin/garbage.
+            # Their Google Patents publication numbers are unambiguous (USD<number>S<kind>), so
+            # skip them before title matching instead of downloading and pruning them later.
+            if pubnum.startswith("USD"):
+                design_skipped += 1
+                continue
             if not title:
                 continue
             topic = topic_for(title)
@@ -228,6 +237,7 @@ def main() -> None:
     npages = len(page_specs)
     print(f"# {len(out)} NEW built-environment {args.countries} patents (bucket {args.bucket}, {npages} "
           f"sitemap page(s), {us_scanned} {args.countries} entries scanned; "
+          f"{design_skipped} US design publications skipped; "
           f"deduped vs manifest + registry + blocklist)")
     print(f"# by topic: {by_topic}")
     print("# --- review, then --append, then scripts/build_corpus.py ---")
