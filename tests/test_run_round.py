@@ -11,7 +11,9 @@ import run_round
 
 
 def test_real_backend_config_covers_rotation_and_finders():
-    assert run_round.validate_backends(run_round.load_backends(), rotation.load()) == []
+    backends = run_round.load_backends()
+    assert run_round.validate_backends(backends, rotation.load()) == []
+    assert backends["find_books"]["required"] is False
 
 
 def test_backend_required_flag_must_be_boolean(monkeypatch):
@@ -216,6 +218,12 @@ def test_optional_finder_failure_is_reported_without_blocking_merge(tmp_path, mo
         "run_event",
         lambda run_id, event, **fields: events.append((run_id, event, fields)),
     )
+    advanced = []
+    monkeypatch.setattr(
+        run_round.rotation,
+        "advance",
+        lambda name: advanced.append(name),
+    )
     backends = {
         "good": {
             "script": "fake_finder.py",
@@ -230,7 +238,6 @@ def test_optional_finder_failure_is_reported_without_blocking_merge(tmp_path, mo
                 "--id", "ost-bad", "--title", "Bad", "--url", "https://e.org/bad",
                 "--exit-code", "7",
             ],
-            "rotation": False,
             "required": False,
         },
     }
@@ -238,7 +245,7 @@ def test_optional_finder_failure_is_reported_without_blocking_merge(tmp_path, mo
     run_round.run_finders_parallel(
         ["good", "volatile"],
         backends,
-        {},
+        {"volatile": {"flag": "--bucket", "next": "2022-W48"}},
         os.environ.copy(),
         "fixture-run",
         workers=2,
@@ -250,6 +257,7 @@ def test_optional_finder_failure_is_reported_without_blocking_merge(tmp_path, mo
         "candidates": 1,
         "accepted": {"good": 1, "volatile": 0},
     }) in events
+    assert advanced == []
 
 
 def test_required_finder_failure_still_blocks_merge(tmp_path, monkeypatch):
