@@ -8,8 +8,18 @@ publication entries or — once a bucket is large — an index of paginated sub-
 (`2020-W01-p1.html` … `-p5.html`, ~6MB each). `robots.txt` explicitly `Allow`s both `/sitemap/`
 and `/patent/`, so this is a robots-compliant, key-free way to reach the ~100 years of US patent
 full text that OpenAlex/OSTI/arXiv never index: HVAC, building envelope, structural, and
-construction engineering has been patented continuously since the 1800s and every patent is public
-domain the moment it's granted.
+construction engineering has been patented continuously since the 1800s. USPTO says U.S. patent
+text and drawings are typically not subject to copyright restrictions, subject to the limited
+copyright-notice exceptions in 37 CFR 1.71(d)-(e) and 1.84(s):
+https://www.uspto.gov/terms-use-uspto-websites
+
+Only U.S. publications are accepted. Google Patents describes its international corpus as
+translated, and `/en` pages for non-English publications explicitly say "Translated from ...".
+Google's terms effective 2026-07-30 prohibit using AI-generated service content to develop machine
+learning models, so those translated pages are not eligible for this training corpus. The
+2026-08-25 review also confirmed that robots.txt explicitly allows `/patent/` and `/sitemap/`, but
+crawl permission does not override that downstream-use restriction. A future non-U.S. backend must
+use original-language text from a source with separately verified reuse terms.
 
 Fetches one bucket (`--bucket`, e.g. "2020-W01" weekly or "1900" yearly), walks its sub-pages if
 it's paginated, regex-parses each `<li>US<number><kind> - <title> :` entry (title + language
@@ -50,6 +60,8 @@ import registry
 SITEMAP = "https://patents.google.com/sitemap"
 UA = {"User-Agent": "nekaise-corpus/find_patents"}
 FETCH_RETRY_DELAYS = (2.0, 4.0, 8.0)
+SUPPORTED_COUNTRIES = {"US"}
+USPTO_TERMS = "https://www.uspto.gov/terms-use-uspto-websites"
 
 # one <li> line per publication: "US10520091B2 - Double direction seal with locking :"
 # followed by one <a href='.../patent/<pub>/<lang>'>lang</a> per available language — we only need
@@ -141,11 +153,19 @@ def main() -> None:
     ap.add_argument("--bucket", default="2020-W01",
                      help="sitemap bucket name: weekly 'YYYY-WNN' or yearly 'YYYY' (pre-1900)")
     ap.add_argument("--countries", default="US",
-                    help='publication-country prefixes, e.g. "US" or "US,CN,EP,DE"')
+                    help='publication-country prefixes (currently only "US" is policy-approved)')
     ap.add_argument("--max", type=int, default=400, help="cap on new entries this run")
     ap.add_argument("--append", action="store_true", help="append into the registry (registry/patents-*.yaml)")
     args = ap.parse_args()
-    rx = entry_re(args.countries)
+    countries = {c.strip().upper() for c in args.countries.split(",") if c.strip()}
+    unsupported = sorted(countries - SUPPORTED_COUNTRIES)
+    if not countries or unsupported:
+        blocked = ", ".join(unsupported) if unsupported else "empty country list"
+        ap.error(
+            f"policy-blocked patent source: {blocked}; only original U.S. patent text is "
+            "approved (non-U.S. /en pages may be Google machine translations)"
+        )
+    rx = entry_re(",".join(sorted(countries)))
 
     urls, titles, reg_ids = registry.existing_keys()
 
@@ -204,9 +224,14 @@ def main() -> None:
             titles.add(t)
             out.append({"id": f"pat-{registry.slug(pubnum)}", "title": title[:150],
                         "url": url, "source": "google_patents",
-                        # US patent text is unambiguously public domain. Other jurisdictions use
-                        # Google's /en view (which may be machine-translated); terms vary -> open.
-                        "license": "public-domain" if pubnum.startswith("US") else "open",
+                        # USPTO says U.S. patent text is typically unrestricted, subject to the
+                        # limited copyright-notice exceptions documented at USPTO_TERMS.
+                        "license": "public-domain",
+                        "license_url": USPTO_TERMS,
+                        "license_evidence": (
+                            "USPTO: patent text and drawings are typically not subject to "
+                            "copyright restrictions, with limited 37 CFR exceptions"
+                        ),
                         "topic": topic, "format": "html"})
 
     if failed_page:

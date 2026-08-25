@@ -154,7 +154,28 @@ def test_us_design_patents_are_skipped_before_append(monkeypatch, capsys):
     find_patents.main()
 
     assert [entry["id"] for entry in appended] == ["pat-us12345678b2"]
+    assert appended[0]["license_url"] == find_patents.USPTO_TERMS
+    assert "37 CFR exceptions" in appended[0]["license_evidence"]
     assert "1 US design publications skipped" in capsys.readouterr().out
+
+
+def test_non_us_machine_translations_are_policy_blocked_before_fetch(monkeypatch, capsys):
+    monkeypatch.setattr(
+        find_patents,
+        "fetch",
+        lambda _url: pytest.fail("a policy-blocked source must not be fetched"),
+    )
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["find_patents.py", "--countries", "CN", "--bucket", "2022-W48"],
+    )
+
+    with pytest.raises(SystemExit) as exc:
+        find_patents.main()
+
+    assert exc.value.code == 2
+    assert "policy-blocked patent source: CN" in capsys.readouterr().err
 
 
 def test_candidate_cap_requests_rotation_hold(tmp_path, monkeypatch, capsys):
@@ -163,8 +184,8 @@ def test_candidate_cap_requests_rotation_hold(tmp_path, monkeypatch, capsys):
         find_patents,
         "fetch",
         lambda _url: "\n".join([
-            "<li>CN100A - Concrete foundation :",
-            "<li>CN101A - Bridge foundation :",
+            "<li>US100A - Concrete foundation :",
+            "<li>US101A - Bridge foundation :",
         ]),
     )
     appended = []
@@ -179,13 +200,13 @@ def test_candidate_cap_requests_rotation_hold(tmp_path, monkeypatch, capsys):
         sys,
         "argv",
         [
-            "find_patents.py", "--countries", "CN", "--bucket", "2022-W48",
+            "find_patents.py", "--countries", "US", "--bucket", "2022-W48",
             "--max", "1", "--append",
         ],
     )
 
     find_patents.main()
 
-    assert [entry["id"] for entry in appended] == ["pat-cn100a"]
+    assert [entry["id"] for entry in appended] == ["pat-us100a"]
     assert hold.read_text() == "candidate cap reached\n"
     assert "rotation hold requested" in capsys.readouterr().out

@@ -7,7 +7,7 @@
   "find_nist": {"script": "find_nist.py", "args": ["--rows", "50", "--max", "300"], "enabled": false, "reason": "paused 2026-08-22 after 72 recorded zero-yield merges; pointer 182 is offset 9050 at rows=50 and near Crossref's ~10000 offset ceiling; finder now fails closed, preserve pointer until a reviewed wave-3 query set resets page to 1"},
   "find_zenodo": {"script": "find_zenodo.py", "args": ["--max", "100"], "enabled": false, "reason": "exhausted"},
   "find_patents": {"script": "find_patents.py", "args": ["--max", "400"], "enabled": true},
-  "find_patents_cn": {"script": "find_patents.py", "args": ["--countries", "CN", "--max", "400"], "enabled": true},
+  "find_patents_cn": {"script": "find_patents.py", "args": ["--countries", "CN", "--max", "400"], "enabled": false, "reason": "policy-blocked 2026-08-25: Google marks non-English /en patent pages as translated, and its terms effective 2026-07-30 prohibit using AI-generated service content to develop ML models; migrate to original-language text with verified reuse terms before re-enabling"},
   "find_purdue": {"script": "find_purdue.py", "args": [], "enabled": false, "reason": "202 challenge"},
   "find_ibpsa": {"script": "find_ibpsa.py", "args": [], "enabled": false, "reason": "rate captcha"},
   "find_sdz": {"script": "find_sdz.py", "args": ["--pages", "5", "--max", "200"], "enabled": false, "reason": "exhausted: sdz ends near page 16; pointer reached page 4636 after repeated zero-yield runs"},
