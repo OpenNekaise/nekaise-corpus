@@ -109,7 +109,7 @@
     "flag": "--start",
     "next": 3201,
     "step": 200,
-    "note": "AIJ via J-STAGE API, pubyearfrom=2014 (pre-2014 = mojibake, no ToUnicode). NOW: gijutsu filtered sweep from 1; official API live probe 2026-08-21 reports 3,171 results and highly relevant concrete/seismic/timber articles at the head. Keikaku is exhausted at 3,588 results after the pointer reached 5,801. Finder now detects the API's blank-total/empty-entry past-end sentinel and exits nonzero rather than silently advancing rotation. Previous kankyo pointer burned to 129401 past 1,284 results; kouzou has 2,139 filtered results. Stop a series at >50% prune."
+    "note": "AIJ via J-STAGE API, pubyearfrom=2014 (pre-2014 = mojibake, no ToUnicode). Preserved gijutsu pointer 3,201 is past its 3,171-result filtered universe; keikaku exhausted at 3,588 results, kankyo previously ran past its 1,284-result universe, and kouzou was swept before the filtered-series rotation. POLICY-BLOCKED 2026-08-25: J-STAGE Terms for individuals section I articles 2 and 3(5) require a reuse-rights decision before any pointer reset or mechanical bulk download; audit the existing jstage_aij rows before re-enabling."
   },
   "find_boverket": {
     "flag": "--page",
