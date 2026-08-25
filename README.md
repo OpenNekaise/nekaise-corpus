@@ -51,15 +51,15 @@ python scripts/clean_corpus.py --check
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **682,682** |
+| **Documents** | **682,793** |
 | **Raw originals** | **~580G** (PDF / HTML / source code) |
-| **Extracted text** | **~45G** (~44.733B chars, **≈11.183B tokens**) |
-| **Cleaned corpus** | **~44G** (~42.956B chars, **≈10.739B tokens**, ruleset-cleaned) |
+| **Extracted text** | **~45G** (~44.746B chars, **≈11.186B tokens**) |
+| **Cleaned corpus** | **~44G** (~42.968B chars, **≈10.742B tokens**, ruleset-cleaned) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): equipment_systems 233,407 · construction 140,039 · building_energy 128,359 · structures_civil 64,827 · materials 41,687 · infrastructure 27,846 · architecture 24,070 · standards_protocols 11,508 · urban 5,982 · controls_bas 4,137 · commissioning_fdd 820.
+**By topic** (a source gets one at registration): equipment_systems 233,459 · construction 140,062 · building_energy 128,374 · structures_civil 64,837 · materials 41,693 · infrastructure 27,847 · architecture 24,074 · standards_protocols 11,508 · urban 5,982 · controls_bas 4,137 · commissioning_fdd 820.
 
-**By license:** open 491,455 · public-domain 171,321 · cc-by-sa 1,723 · cc-by 18,183.
+**By license:** open 491,455 · public-domain 171,432 · cc-by-sa 1,723 · cc-by 18,183.
 
 _Snapshot of the live registry (2026-08-25) — auto-generated from the manifest. The bytes are not
 shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._
