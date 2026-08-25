@@ -14,7 +14,7 @@
   },
   "find_books": {
     "flag": "--cursor",
-    "next": 21953,
+    "next": 21954,
     "step": 1,
     "note": "RE-AIMED 2026-08-24 from global offset 4275 to a stable 128-slot per-query cursor (page 171, query 0). One query/page runs per round, avoiding the 117-request deep-search burst that caused 19 of 20 failures since 2026-08-19. Existing query positions are immutable; append within the 128-slot stride or perform a reviewed cursor migration. OAPEN-hosted PDFs only; per-record OAI license gate keeps CC-BY/BY-SA/CC0."
   },
@@ -38,7 +38,7 @@
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "2023-W42",
+    "next": "2023-W41",
     "note": "weekly buckets 1900..now, walked backwards; RE-AIMED 2026-08-23 from 2017-W49 to verified-live frontier 2026-W19 (probe hit cap immediately): 2021-2026 and 2017-W48..2016-W02 remain virgin, with the older interval reserved for a later pass. Earlier mined: 2017-2020 W01, 2020-W52..2017-W49, 1925-1940 W01s, 2015-W52..W08, 2014 whole, 2013..1998-W19 (8B/10B marathons). --countries flag (default US): CN/EP/DE work, sitemap titles are English for all countries"
   },
   "find_purdue": {
