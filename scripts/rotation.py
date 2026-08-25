@@ -19,6 +19,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+from datetime import date, timedelta
 from pathlib import Path
 
 import ops
@@ -45,9 +46,12 @@ def _prev_week(bucket: str) -> str:
     if not m:
         raise ValueError(f"not a weekly bucket: {bucket}")
     year, week = int(m.group(1)), int(m.group(2))
-    if week > 1:
-        return f"{year}-W{week - 1:02d}"
-    return f"{year - 1}-W52"
+    try:
+        current = date.fromisocalendar(year, week, 1)
+    except ValueError as exc:
+        raise ValueError(f"not a valid ISO weekly bucket: {bucket}") from exc
+    previous = (current - timedelta(weeks=1)).isocalendar()
+    return f"{previous.year}-W{previous.week:02d}"
 
 
 def advance(name: str) -> str:
