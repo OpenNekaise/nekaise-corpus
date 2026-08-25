@@ -166,6 +166,14 @@ def test_patent_title_kill_hard_beats_guard():
     # "ventilated" would rescue via PATENT_GUARD, but a smoking article is never AEC
     assert quality.off_domain_title("Smoking article with a ventilated mouthpiece")
     assert quality.off_domain_title("Electronic cigarette with prolonged heating protection")
+    assert quality.off_domain_title("Hair conditioner compositions with a preservative system")
+
+
+def test_patent_title_kill_non_aec_polysemes():
+    assert quality.off_domain_title("Packet tunneling and decapsulation with split-horizon attributes")
+    assert quality.off_domain_title(
+        "Block placing tool for building a user-defined algorithm for electronic trading"
+    )
 
 
 def test_patent_title_guard_rescues_real_aec():
@@ -178,6 +186,7 @@ def test_patent_title_on_topic_untouched():
     assert not quality.off_domain_title("Method and system for ensuring leak-free roof installation")
     assert not quality.off_domain_title("Heat pump with variable speed compressor")
     assert not quality.off_domain_title("Silicone roof edge accessory for foam roof")
+    assert not quality.off_domain_title("Packet radio monitoring in a concrete tunnel")
 
 
 SWEDISH_PLANNING = (  # Boverket-style planning/energy prose — regression for the 07-23 Nordic

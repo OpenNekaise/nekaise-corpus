@@ -159,6 +159,35 @@ def test_us_design_patents_are_skipped_before_append(monkeypatch, capsys):
     assert "1 US design publications skipped" in capsys.readouterr().out
 
 
+def test_polysemous_off_domain_titles_are_skipped_before_append(monkeypatch):
+    _empty_registry(monkeypatch)
+    monkeypatch.setattr(
+        find_patents,
+        "fetch",
+        lambda _url: "\n".join([
+            "<li>US100A - Packet tunneling and decapsulation with split-horizon attributes :",
+            "<li>US101A - Hair conditioner compositions with a preservative system :",
+            "<li>US102A - Block placing tool for building a user-defined algorithm :",
+            "<li>US103A - Concrete tunnel ventilation system :",
+        ]),
+    )
+    appended = []
+    monkeypatch.setattr(
+        find_patents.registry,
+        "append_entries",
+        lambda entries: appended.extend(entries),
+    )
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["find_patents.py", "--bucket", "2025-W17", "--append"],
+    )
+
+    find_patents.main()
+
+    assert [entry["id"] for entry in appended] == ["pat-us103a"]
+
+
 def test_non_us_machine_translations_are_policy_blocked_before_fetch(monkeypatch, capsys):
     monkeypatch.setattr(
         find_patents,

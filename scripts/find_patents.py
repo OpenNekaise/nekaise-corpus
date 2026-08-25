@@ -78,7 +78,7 @@ def entry_re(countries: str):
 # would swamp discovery with unrelated (furniture, vehicle, picture-frame) hits.
 TOPIC_RULES = [
     # HVAC / refrigeration / vertical-transport machinery + wet trades
-    (re.compile(r"heat pump|heating|ventilat|air condition|\bHVAC\b|refrigerat|boiler|furnace"
+    (re.compile(r"heat pump|heating|ventilat|\bair condition|\bHVAC\b|refrigerat|boiler|furnace"
                 r"|chiller|elevator|escalator|smoke damper|plumbing", re.I), "equipment_systems"),
     # envelope thermal performance, controls, on-building renewables
     (re.compile(r"thermostat|insulat|solar collector|photovoltaic roof", re.I), "building_energy"),

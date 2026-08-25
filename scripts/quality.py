@@ -60,12 +60,13 @@ CJK = re.compile(r"[一-鿿㐀-䶿぀-ヿ가-힯]")
 # prune_corpus.py drops already-ingested ones (reason "off-topic-title"). Calibrated 2026-07-19
 # on the 29k-patent corpus: ~800 kills, sampled for collateral.
 PATENT_KILL_HARD = re.compile(  # never rescued — "ventilated smoking article" is still a vape
-    r"electronic cigarette|e-cigarette|smoking article|nicotine", re.I)
+    r"electronic cigarette|e-cigarette|smoking article|nicotine|hair condition(?:er|ing)", re.I)
 PATENT_KILL = re.compile(
     r"transistor|semiconductor|field[- ]effect|insulated[- ]gate bipolar|\bwafer\b|"
     r"photolithograph|integrated circuit|memory cell|\bdram\b|\bcmos\b|\bmosfet\b|\bigbt\b|"
     r"silicon[- ]on[- ]insulator|epitaxial|atomizer|"
     r"magnetic tunnel|tunnel junction|tunnel(?:ing)? (?:junction|magnetoresist|barrier|diode)|"
+    r"packet tunnel(?:ing)?|user[- ]defined algorithm|"
     r"quantum tunnel|bridge (?:circuit|rectifier)|wheatstone|dental bridge|"
     r"pile fabric|pile yarn|carpet pile|"
     r"(?:cosmetic|makeup|make-up).{0,30}foundation|foundation.{0,30}(?:cosmetic|makeup|concealer)|"
