@@ -12,7 +12,8 @@ exactly where the last one stopped.
     python scripts/rotation.py show                # dump the whole state
 
 Pointer kinds: integers advance by `step`; Google-Patents buckets ("YYYY-WNN") advance to the
-PREVIOUS ISO week, walking history backwards. Edit registry/rotation.json by hand to re-aim a vein.
+PREVIOUS ISO week, walking history backwards. Weekly entries may declare inclusive `skip` ranges
+for buckets already mined. Edit registry/rotation.json by hand to re-aim a vein.
 """
 from __future__ import annotations
 
@@ -54,6 +55,54 @@ def _prev_week(bucket: str) -> str:
     return f"{previous.year}-W{previous.week:02d}"
 
 
+def _week_date(bucket: str) -> date:
+    """Return the Monday represented by an ISO-week bucket."""
+    m = re.fullmatch(r"(\d{4})-W(\d{2})", bucket)
+    if not m:
+        raise ValueError(f"not a weekly bucket: {bucket}")
+    try:
+        return date.fromisocalendar(int(m.group(1)), int(m.group(2)), 1)
+    except ValueError as exc:
+        raise ValueError(f"not a valid ISO weekly bucket: {bucket}") from exc
+
+
+def _skip_ranges(value: object) -> list[tuple[date, date]]:
+    """Validate inclusive [newest, oldest] ISO-week ranges."""
+    if not isinstance(value, list):
+        raise ValueError("skip must be a list of [newest, oldest] weekly buckets")
+    ranges = []
+    for index, item in enumerate(value):
+        if (not isinstance(item, list) or len(item) != 2
+                or not all(isinstance(bucket, str) for bucket in item)):
+            raise ValueError(f"skip[{index}] must be [newest, oldest] weekly buckets")
+        newest, oldest = map(_week_date, item)
+        if newest < oldest:
+            raise ValueError(f"skip[{index}] newest bucket must not precede oldest bucket")
+        ranges.append((newest, oldest))
+    return ranges
+
+
+def _prev_unskipped_week(bucket: str, skip: object) -> str:
+    ranges = _skip_ranges(skip)
+    candidate = _prev_week(bucket)
+    while any(oldest <= _week_date(candidate) <= newest for newest, oldest in ranges):
+        candidate = _prev_week(candidate)
+    return candidate
+
+
+def validate_entry(name: str, entry: dict) -> list[str]:
+    """Return control-plane errors for optional rotation features."""
+    if "skip" not in entry:
+        return []
+    if isinstance(entry.get("next"), int):
+        return [f"{name}: skip ranges require a weekly rotation pointer"]
+    try:
+        _skip_ranges(entry["skip"])
+    except ValueError as exc:
+        return [f"{name}: {exc}"]
+    return []
+
+
 def advance(name: str) -> str:
     # Standalone operators may advance a pointer while another process is doing the same.  Keep
     # the read-modify-write under its own lock; run_round's broader repo lock also prevents this.
@@ -61,9 +110,11 @@ def advance(name: str) -> str:
         state = load()
         e = state[name]
         if isinstance(e["next"], int):
+            if "skip" in e:
+                raise ValueError(f"{name}: skip ranges require a weekly rotation pointer")
             e["next"] += e.get("step", 1)
         else:
-            e["next"] = _prev_week(e["next"])
+            e["next"] = _prev_unskipped_week(e["next"], e.get("skip", []))
         save(state)
         return f"{e['flag']} {e['next']}"
 

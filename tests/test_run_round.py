@@ -28,6 +28,20 @@ def test_backend_required_flag_must_be_boolean(monkeypatch):
     assert errors == ["bad: required must be true or false"]
 
 
+def test_backend_rejects_malformed_rotation_skip(monkeypatch):
+    monkeypatch.setattr(run_round, "SCRIPTS", Path(__file__).parent / "fixtures")
+    errors = run_round.validate_backends({
+        "bad": {"script": "fake_finder.py"},
+    }, {
+        "bad": {
+            "flag": "--bucket",
+            "next": "2020-W53",
+            "skip": [["2017-W49", "2020-W52"]],
+        }
+    })
+    assert errors == ["bad: skip[0] newest bucket must not precede oldest bucket"]
+
+
 def test_finder_command_combines_fixed_args_pointer_and_append():
     cfg = {"script": "find_osti.py", "args": ["--rows", "50"]}
     state = {"find_osti": {"flag": "--page", "next": 7}}

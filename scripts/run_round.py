@@ -60,6 +60,8 @@ def validate_backends(backends: dict, rotation_state: dict) -> list[str]:
         rotates = cfg.get("rotation", True)
         if rotates and name not in rotation_state:
             errors.append(f"{name}: missing rotation entry")
+        if rotates and name in rotation_state:
+            errors.extend(rotation.validate_entry(name, rotation_state[name]))
         if not rotates and name in rotation_state:
             errors.append(f"{name}: rotation entry exists but config says rotation=false")
     for name in rotation_state:
