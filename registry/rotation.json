@@ -14,7 +14,7 @@
   },
   "find_books": {
     "flag": "--cursor",
-    "next": 21996,
+    "next": 21997,
     "step": 1,
     "note": "RE-AIMED 2026-08-24 from global offset 4275 to a stable 128-slot per-query cursor (page 171, query 0). One query/page runs per round, avoiding the 117-request deep-search burst that caused 19 of 20 failures since 2026-08-19. Existing query positions are immutable; append within the 128-slot stride or perform a reviewed cursor migration. OAPEN-hosted PDFs only; per-record OAI license gate keeps CC-BY/BY-SA/CC0."
   },
@@ -38,7 +38,7 @@
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "2022-W47",
+    "next": "2022-W46",
     "skip": [
       [
         "2020-W52",
