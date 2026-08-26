@@ -107,6 +107,52 @@ def test_openalex_and_arxiv_receive_requested_page(monkeypatch):
     assert requests[1][1]["start"] == 80
 
 
+def test_query_cursor_walks_queries_then_advances_page():
+    queries = [
+        ("one", "construction"),
+        ("two", "materials"),
+        ("three", "architecture"),
+    ]
+    assert find_sources.query_window(queries, page=1, cursor=2, count=3) == [
+        ("three", "architecture", 1),
+        ("one", "construction", 2),
+        ("two", "materials", 2),
+    ]
+
+
+def test_openalex_query_cursor_width_is_pinned_for_reproducibility():
+    assert len(find_sources.QUERIES) == find_sources.QUERY_CURSOR_WIDTH == 105
+
+
+def test_query_count_bounds_requests_in_main(tmp_path, monkeypatch):
+    calls = []
+
+    def available(term, topic, per, page):
+        calls.append((term, topic, per, page))
+        return []
+
+    monkeypatch.setattr(find_sources, "QUERIES", [
+        ("one", "construction"),
+        ("two", "materials"),
+        ("three", "architecture"),
+    ])
+    monkeypatch.setattr(find_sources, "QUERY_CURSOR_WIDTH", 3)
+    monkeypatch.setattr(find_sources, "BACKENDS", {"openalex": available})
+    monkeypatch.setattr(find_sources, "COOLDOWN_FILE", tmp_path / "cooldowns.json")
+    stub_registry(monkeypatch)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "find_sources.py", "--backends", "openalex", "--per", "100",
+            "--query-cursor", "4", "--query-count", "1",
+        ],
+    )
+
+    assert find_sources.main() == 0
+    assert calls == [("two", "materials", 100, 2)]
+
+
 def test_partial_upstream_run_requests_rotation_hold(tmp_path, monkeypatch, capsys):
     calls = []
 

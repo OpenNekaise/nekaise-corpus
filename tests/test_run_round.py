@@ -16,6 +16,19 @@ def test_real_backend_config_covers_rotation_and_finders():
     assert backends["find_books"]["required"] is False
 
 
+def test_real_openalex_backend_uses_one_rotating_query_per_round():
+    backends = run_round.load_backends()
+    state = rotation.load()
+
+    assert run_round.finder_command(
+        "find_openalex", backends["find_openalex"], state, python="python"
+    ) == [
+        "python", str(run_round.SCRIPTS / "find_sources.py"),
+        "--per", "100", "--backends", "openalex", "--query-count", "1",
+        "--query-cursor", "0", "--append",
+    ]
+
+
 def test_backend_required_flag_must_be_boolean(monkeypatch):
     monkeypatch.setattr(run_round, "SCRIPTS", Path(__file__).parent / "fixtures")
     errors = run_round.validate_backends({

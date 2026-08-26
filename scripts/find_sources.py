@@ -1,17 +1,21 @@
 #!/usr/bin/env python3
 """find_sources.py — discover open-access building-energy sources (corpus growth).
 
-Three backends, all free / no key:
-  - OpenAlex  : scholarly works; we scan ALL OA locations and keep a PDF on a download-friendly host
-                (publisher pages 403 bots, so we prefer repository / gov / arXiv / PMC / MDPI copies).
+Three keyless backends:
+  - OpenAlex  : metered scholarly search; we scan ALL OA locations and keep a PDF on a
+                download-friendly host (publisher pages 403 bots, so we prefer repository / gov /
+                arXiv / PMC / MDPI copies). Anonymous access allows 100 search calls/day, so the
+                automated backend advances one query/page cursor position per round.
   - OSTI      : US DOE / national-lab reports (public-domain, downloadable via /servlets/purl).
   - arXiv API : open preprints (always downloadable at arxiv.org/pdf).
 
 Keeps candidates with a fetchable PDF, dedups against the current manifest + registry, and PROPOSES
 ready-to-paste registry entries. Review, then `--append` and run the loader.
 
-    python scripts/find_sources.py --per 20 --page 2            # propose the next result page
-    python scripts/find_sources.py --per 20 --page 2 --append   # append, then load + prune
+    python scripts/find_sources.py --per 100 --backends openalex \
+      --query-cursor 0 --query-count 1                          # query 0 on page 1
+    python scripts/find_sources.py --per 100 --backends openalex \
+      --query-cursor 105 --query-count 1                        # query 0 on page 2
 """
 from __future__ import annotations
 
@@ -152,6 +156,7 @@ QUERIES = [
     ("flood risk resilience coastal infrastructure", "infrastructure"),
     ("geospatial GIS surveying mapping built environment", "infrastructure"),
 ]
+QUERY_CURSOR_WIDTH = 105  # Changing this query universe requires a reviewed cursor migration.
 
 # hosts that reliably serve a direct PDF to a bot (publisher pages 403, so we whitelist).
 WHITELIST = ("arxiv.org", ".gov", "escholarship.org", "ncbi.nlm.nih.gov", "europepmc.org",
@@ -227,6 +232,30 @@ def from_arxiv(term, topic, per, page=1):
 BACKENDS = {"openalex": from_openalex, "osti": from_osti, "arxiv": from_arxiv}
 
 
+def query_window(
+    queries: list[tuple[str, str]],
+    page: int,
+    cursor: int | None,
+    count: int | None,
+) -> list[tuple[str, str, int]]:
+    """Return query/topic/page work for either a fixed page or a rotating cursor.
+
+    The cursor flattens pages across the immutable query list: positions 0..N-1 are page 1,
+    N..2N-1 are page 2, and so on.  This lets the control plane spend a bounded number of API
+    calls per round without repeatedly mining only the head page.
+    """
+    if not queries:
+        return []
+    if cursor is None:
+        selected = queries if count is None else queries[:count]
+        return [(term, topic, page) for term, topic in selected]
+    width = len(queries)
+    return [
+        (*queries[position % width], page + position // width)
+        for position in range(cursor, cursor + (count if count is not None else 1))
+    ]
+
+
 def load_cooldowns(now: float, path: Path | None = None) -> dict[str, float]:
     """Load unexpired local API cooldowns; malformed scratch state never blocks discovery."""
     path = path or COOLDOWN_FILE
@@ -276,6 +305,16 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--per", type=int, default=15, help="results per backend per topic query")
     ap.add_argument("--page", type=int, default=1, help="result page (rotate deeper each round)")
+    ap.add_argument(
+        "--query-cursor",
+        type=int,
+        help="flattened query/page cursor for budgeted rotation (requires --query-count)",
+    )
+    ap.add_argument(
+        "--query-count",
+        type=int,
+        help="number of consecutive queries to request (default: every query)",
+    )
     ap.add_argument("--backends", default="openalex,osti,arxiv")
     ap.add_argument(
         "--circuit-threshold",
@@ -288,6 +327,17 @@ def main() -> int:
     args = ap.parse_args()
     if args.page < 1:
         ap.error("--page must be at least 1")
+    if args.query_cursor is not None and args.query_cursor < 0:
+        ap.error("--query-cursor must be at least 0")
+    if args.query_cursor is not None and args.query_count is None:
+        ap.error("--query-cursor requires --query-count")
+    if args.query_cursor is not None and len(QUERIES) != QUERY_CURSOR_WIDTH:
+        ap.error(
+            f"query cursor expects {QUERY_CURSOR_WIDTH} queries, found {len(QUERIES)}; "
+            "migrate the committed cursor before changing the query universe"
+        )
+    if args.query_count is not None and not 1 <= args.query_count <= len(QUERIES):
+        ap.error(f"--query-count must be between 1 and {len(QUERIES)}")
     backends = [b.strip() for b in args.backends.split(",") if b.strip() in BACKENDS]
     if not backends:
         ap.error("--backends did not select any known backend")
@@ -306,12 +356,15 @@ def main() -> int:
             f"# {backend} cooldown active for {remaining}s; skipping it for this round",
             file=sys.stderr,
         )
-    for term, topic in QUERIES:
+    query_requests = query_window(
+        QUERIES, args.page, args.query_cursor, args.query_count
+    )
+    for term, topic, query_page in query_requests:
         for b in backends:
             if b in disabled:
                 continue
             try:
-                hits = BACKENDS[b](term, topic, args.per, args.page)
+                hits = BACKENDS[b](term, topic, args.per, query_page)
             except Exception as e:
                 incomplete.add(b)
                 print(f"# {b} [{topic}] failed: {e}", file=sys.stderr)
@@ -366,9 +419,14 @@ def main() -> int:
         by_topic[h["topic"]] = by_topic.get(h["topic"], 0) + 1
         by_src[h["source"]] = by_src.get(h["source"], 0) + 1
         by_lic[h["license"]] = by_lic.get(h["license"], 0) + 1
+    position = (
+        f"query cursor {args.query_cursor} ({len(query_requests)} request(s))"
+        if args.query_cursor is not None
+        else f"page {args.page}"
+    )
     print(
         f"# {len(out)} NEW candidates on download-friendly hosts "
-        f"(page {args.page}; deduped vs manifest + registry)"
+        f"({position}; deduped vs manifest + registry)"
     )
     print(f"# by topic:   {by_topic}")
     print(f"# by source:  {by_src}")

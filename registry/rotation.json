@@ -135,6 +135,12 @@
     "step": 25,
     "note": "NEW VEIN 2026-07-28: SciELO BRAZIL AEC journals via the ArticleMeta API — the biggest Portuguese built-environment vein on the open web. 11 journals (Ambiente Construído, IBRACON Estruturas e Materiais, Soils and Rocks, LAJSS, urbe, Cadernos Metrópole, RBRH, ...) picked by WoS subject category from a full 16-collection scan (workspace/scan_scielo_journals.py), CC-BY/BY-SA ONLY — NC and ND journals deliberately excluded; ~11.3k articles. PDF URL comes from fulltexts.pdf, else DERIVED from the v702 markup path — the acronym segment must be lowercased ('MR' -> /pdf/mr/) but the filename must NOT be. /j/<acron>/a/<pid>?format=pdf works ONLY on scielo.br, so the legacy /pdf/ path is what the finder builds. ROBOTS PER NATIONAL HOST, THEY DISAGREE: .br Allow /, but .cl and .org.pe are Disallow / (NO-GO, 150 entries reverted this round); .org.co + .edu.uy unreachable from this box; .org.ve does not resolve. Offset 0 mined 07-28; run --per 25 --max 400."
   },
+  "find_openalex": {
+    "flag": "--query-cursor",
+    "next": 0,
+    "step": 1,
+    "note": "RE-AIMED 2026-08-26 after OpenAlex introduced usage pricing: anonymous access has 100 search requests/day, while the old all-query run made 105 requests and exhausted the budget. One query per round stays below the limit at the live ~72-round/day maximum; the flattened cursor advances across the frozen 105-query list, then continues at page 2 and deeper. Any query-list change requires a reviewed cursor migration."
+  },
   "find_arxiv": {
     "flag": "--page",
     "next": 8,

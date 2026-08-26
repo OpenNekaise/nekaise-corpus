@@ -13,14 +13,18 @@ you (the agent) judge relevance + license and decide what to keep.
 
 1. **Discover** (needs network; run outside a sandbox):
    ```
-   python scripts/find_sources.py --per 20            # propose
-   python scripts/find_sources.py --per 20 --append   # append straight into the registry
+   python scripts/find_sources.py --per 100 --backends openalex \
+     --query-cursor 0 --query-count 1                 # propose one budgeted query
+   python scripts/find_sources.py --per 100 --backends openalex \
+     --query-cursor 0 --query-count 1 --append        # append after review
    ```
-   It queries three free backends -- **OpenAlex** (filtered to repository / gov / arXiv / PMC PDF
+   It queries three keyless backends -- **OpenAlex** (filtered to repository / gov / arXiv / PMC PDF
    copies, NOT publisher pages that 403 bots), **OSTI** (US DOE / national-lab reports,
    public-domain), and the **arXiv API** -- across the topics, keeps candidates whose PDF is on
    a download-friendly host, dedups against the manifest + the registry + `pruned_urls.txt`, and prints
-   ready-to-paste entries. `--backends openalex,osti,arxiv` selects which to use.
+   ready-to-paste entries. `--backends openalex,osti,arxiv` selects which to use. OpenAlex anonymous
+   access is metered at 100 search calls/day; the 105-query universe therefore must use the committed
+   one-query `--query-cursor` rotation in routine rounds. Do not run all OpenAlex queries at once.
 
 2. **Review** (your judgment, not the script's):
    - **Relevance:** is it really built-environment / AEC / building-energy, and on-topic for its
