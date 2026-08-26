@@ -81,6 +81,7 @@ FIELDS = REQUIRED_FIELDS + OPTIONAL_FIELDS
 # Licenses in this set are registry pointers only: their metadata is useful for authorized users,
 # but the loader must never fetch their bytes and the manifest must never describe a local payload.
 POINTER_ONLY_LICENSES = frozenset({"proprietary-internal"})
+CORPUS_FIELDS = ("corpus_path", "corpus_chars", "corpus_sha256", "cleaner_version")
 ENTRY_RE = re.compile(r"^  - id:\s*['\"]?(.+?)['\"]?\s*$")
 _FIELD_RE = re.compile(r"^    \s*\S")  # continuation lines of one entry
 
@@ -104,9 +105,88 @@ def discovered(sid: str) -> bool:
     return sid.startswith(DISCOVERED_PREFIXES)
 
 
-def is_fetchable(entry: dict) -> bool:
-    """Whether a registry entry is allowed to produce raw/text/corpus payload bytes."""
-    return entry.get("license") not in POINTER_ONLY_LICENSES
+def load_eligibility(path: Path | None = None) -> dict[str, dict]:
+    """Load committed training/fetch restrictions.
+
+    Restrictions are an overlay, not a destructive registry rewrite: provenance and any existing
+    raw/text cache remain intact while policy-blocked material is kept out of future fetches and
+    the training-ready corpus.  Missing or malformed policy must fail closed for every consumer.
+    """
+    path = Path(path) if path is not None else REG_DIR / "eligibility.json"
+    data = json.loads(path.read_text())
+    errors = validate_eligibility(data)
+    if errors:
+        raise ValueError(f"invalid {path}: {'; '.join(errors)}")
+    return data["restrictions"]
+
+
+def validate_eligibility(data: object) -> list[str]:
+    """Return schema errors for registry/eligibility.json."""
+    if not isinstance(data, dict):
+        return ["top level must be an object"]
+    errors: list[str] = []
+    if data.get("version") != 1:
+        errors.append("version must be 1")
+    restrictions = data.get("restrictions")
+    if not isinstance(restrictions, dict):
+        errors.append("restrictions must be an object")
+        return errors
+    for name, rule in restrictions.items():
+        label = f"restrictions.{name}"
+        if not name:
+            errors.append("restriction names must be non-empty")
+        if not isinstance(rule, dict):
+            errors.append(f"{label} must be an object")
+            continue
+        if rule.get("status") != "restricted":
+            errors.append(f"{label}.status must be 'restricted'")
+        match = rule.get("match")
+        if not isinstance(match, dict) or not match:
+            errors.append(f"{label}.match must be a non-empty object")
+        else:
+            unknown = sorted(set(match) - {"id_prefix", "source"})
+            if unknown:
+                errors.append(f"{label}.match has unknown selector(s): {', '.join(unknown)}")
+            for key, value in match.items():
+                if not isinstance(value, str) or not value:
+                    errors.append(f"{label}.match.{key} must be a non-empty string")
+        backends = rule.get("backends")
+        if (not isinstance(backends, list) or not backends
+                or any(not isinstance(v, str) or not v for v in backends)):
+            errors.append(f"{label}.backends must be a non-empty string list")
+        for key in ("reason", "decided_at"):
+            if not isinstance(rule.get(key), str) or not rule[key]:
+                errors.append(f"{label}.{key} must be a non-empty string")
+        urls = rule.get("evidence_urls")
+        if (not isinstance(urls, list) or not urls
+                or any(not isinstance(url, str) or not url.startswith("https://") for url in urls)):
+            errors.append(f"{label}.evidence_urls must be a non-empty HTTPS URL list")
+    return errors
+
+
+def restriction_for(entry: dict, restrictions: dict[str, dict]) -> tuple[str, dict] | None:
+    """Return the first committed restriction matching a registry or manifest record."""
+    for name, rule in restrictions.items():
+        match = rule["match"]
+        if "id_prefix" in match and not str(entry.get("id", "")).startswith(match["id_prefix"]):
+            continue
+        if "source" in match and entry.get("source") != match["source"]:
+            continue
+        return name, rule
+    return None
+
+
+def is_training_eligible(entry: dict, restrictions: dict[str, dict]) -> bool:
+    """Whether an entry may produce fetched and training-ready payload bytes."""
+    return (entry.get("license") not in POINTER_ONLY_LICENSES
+            and restriction_for(entry, restrictions) is None)
+
+
+def is_fetchable(entry: dict, restrictions: dict[str, dict] | None = None) -> bool:
+    """Compatibility name for the loader's license + eligibility decision."""
+    if restrictions is None:
+        restrictions = load_eligibility()
+    return is_training_eligible(entry, restrictions)
 
 
 # Countries whose patent shards outgrow a single file get split into stable hash buckets:

@@ -33,6 +33,13 @@ def main() -> int:
     by_id: dict[str, dict] = {}
     n_entries = 0
 
+    try:
+        restrictions = registry.load_eligibility()
+    except (OSError, ValueError) as exc:
+        print(f"LINT: {exc}")
+        return 1
+    restriction_hits: Counter = Counter()
+
     if not registry.REG_DIR.is_dir():
         print("LINT: registry/ directory missing")
         return 1
@@ -64,10 +71,15 @@ def main() -> int:
             want = registry.shard_path(eid).name
             if want != path.name:
                 errors.append(f"{path.name}: {eid}: belongs in {want} (prefix routing)")
+            if restricted := registry.restriction_for(e, restrictions):
+                restriction_hits[restricted[0]] += 1
 
     for i, n in all_ids.items():
         if n > 1:
             errors.append(f"duplicate id ({n}x): {i}")
+    for name in restrictions:
+        if not restriction_hits[name]:
+            errors.append(f"eligibility restriction {name!r} matches no registry entries")
 
     n_rows = 0
     for r in registry.load_manifest_rows():

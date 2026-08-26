@@ -7,6 +7,7 @@ expensive than one that leaves junk behind. If you widen a rule, these tell you 
 import hashlib
 
 import clean_corpus as cc
+import registry
 
 
 def dropped(rule: str, lines: list[str]) -> set[str]:
@@ -265,6 +266,41 @@ def test_stamp_default_preserves_active_ruleset(tmp_path, monkeypatch):
     assert cc.stamped_ruleset() == "toc_leaders,ocr_debris"
     (tmp_path / ".ruleset").write_text("IN-PROGRESS toc_leaders,ocr_debris\n")
     assert cc.stamped_ruleset() == "toc_leaders,ocr_debris"  # crashed run resumes same policy
+
+
+def test_policy_restricted_rows_are_excluded_and_corpus_metadata_is_cleared():
+    eligible = {"id": "pat-us1", "status": "ok", "text_path": "text/pat-us1.md"}
+    restricted = {
+        "id": "pat-cn1",
+        "status": "ok",
+        "text_path": "text/pat-cn1.md",
+        "corpus_path": "corpus/pat-cn1.md",
+        "corpus_chars": 12,
+        "corpus_sha256": "a" * 64,
+        "cleaner_version": "clean_corpus/2;rules=none",
+    }
+    rules = {"translated": {"match": {"id_prefix": "pat-cn"}}}
+
+    todo, excluded = cc.partition_training_rows([eligible, restricted], rules)
+
+    assert todo == [eligible]
+    assert excluded == [restricted]
+    assert cc.clear_corpus_metadata(excluded) == 1
+    assert not set(registry.CORPUS_FIELDS) & set(restricted)
+
+
+def test_policy_restricted_corpus_file_is_moved_not_deleted(tmp_path, monkeypatch):
+    corpus = tmp_path / "corpus"
+    quarantine = tmp_path / "workspace" / "policy-excluded-corpus"
+    corpus.mkdir()
+    original = corpus / "pat-cn1.md"
+    original.write_text("retained derived text")
+    monkeypatch.setattr(cc, "CORPUS", corpus)
+    monkeypatch.setattr(cc, "POLICY_QUARANTINE", quarantine)
+
+    assert cc.quarantine_policy_files([{"id": "pat-cn1"}]) == 1
+    assert not original.exists()
+    assert (quarantine / "pat-cn1.md").read_text() == "retained derived text"
 
 
 

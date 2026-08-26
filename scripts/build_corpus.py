@@ -522,17 +522,34 @@ def main() -> None:
     args = ap.parse_args()
     only = {t.strip() for t in args.only.split(",") if t.strip()}
 
+    restrictions = registry.load_eligibility()
     all_srcs = registry.load_entries()
-    srcs = [source for source in all_srcs if registry.is_fetchable(source)]
-    pointer_only = len(all_srcs) - len(srcs)
+    pointer_only = sum(
+        source.get("license") in registry.POINTER_ONLY_LICENSES for source in all_srcs
+    )
+    policy_restricted = sum(
+        source.get("license") not in registry.POINTER_ONLY_LICENSES
+        and registry.restriction_for(source, restrictions) is not None
+        for source in all_srcs
+    )
+    srcs = [
+        source for source in all_srcs
+        if registry.is_training_eligible(source, restrictions)
+    ]
     if pointer_only:
         print(f"pointer-only sources: {pointer_only} skipped by license policy")
+    if policy_restricted:
+        print(f"policy-restricted sources: {policy_restricted} skipped by eligibility policy")
     manifest = load_manifest()
 
     if args.reextract:
         TEXT.mkdir(parents=True, exist_ok=True)
         done = 0
-        for r in sorted(manifest.values(), key=lambda x: x["id"]):
+        eligible_manifest = [
+            r for r in manifest.values()
+            if registry.is_training_eligible(r, restrictions)
+        ]
+        for r in sorted(eligible_manifest, key=lambda x: x["id"]):
             rp = r.get("raw_path")
             if not rp or not (HERE / rp).exists():
                 continue
@@ -553,7 +570,7 @@ def main() -> None:
                 r["quality"] = quality.metrics(txt)
             done += 1
         write_manifest(manifest)
-        tot = sum(r["text_chars"] for r in manifest.values() if r["status"] == "ok")
+        tot = sum(r["text_chars"] for r in eligible_manifest if r["status"] == "ok")
         print(f"re-extracted {done} docs | total text {tot / 1e6:.2f} M chars")
         return
 
@@ -686,12 +703,16 @@ def main() -> None:
     dups = {h: ids for h, ids in seen.items() if len(ids) > 1}
 
     ok = sum(1 for r in manifest.values() if r["status"] == "ok")
+    eligible_ok = [
+        r for r in manifest.values()
+        if r["status"] == "ok" and registry.is_training_eligible(r, restrictions)
+    ]
     by_topic: dict = {}
-    for r in manifest.values():
-        if r["status"] == "ok":
-            by_topic[r["topic"]] = by_topic.get(r["topic"], 0) + 1
+    for r in eligible_ok:
+        by_topic[r["topic"]] = by_topic.get(r["topic"], 0) + 1
     print(f"\nmanifest: {len(manifest)} rows | {ok} ok | {len(manifest) - ok} failed")
-    print("ok by topic:", by_topic)
+    print(f"training eligible: {len(eligible_ok)} | policy restricted: {policy_restricted}")
+    print("eligible by topic:", by_topic)
     if repro or drift or new:
         print(f"reproducibility vs manifest: {repro} reproduced (sha256 match) | "
               f"{drift} DRIFTED (source changed) | {new} new")

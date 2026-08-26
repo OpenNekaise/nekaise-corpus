@@ -45,8 +45,11 @@ def main(argv: list[str] | None = None) -> None:
     )
     args = ap.parse_args(argv)
 
+    restrictions = registry.load_eligibility()
     rows = registry.load_manifest_rows()
-    ok = [r for r in rows if r.get("status") == "ok"]
+    all_ok = [r for r in rows if r.get("status") == "ok"]
+    excluded = [r for r in all_ok if registry.restriction_for(r, restrictions) is not None]
+    ok = [r for r in all_ok if registry.is_training_eligible(r, restrictions)]
     chars = sum(r.get("text_chars", 0) for r in ok)
     tok = chars // 4
     cchars = sum(r.get("corpus_chars", r.get("text_chars", 0)) for r in ok)
@@ -75,6 +78,7 @@ def main(argv: list[str] | None = None) -> None:
 | | |
 |---|---|
 | **Documents** | **{len(ok):,}** |
+| **Policy-excluded provenance** | **{len(excluded):,}** rows (not fetched or training-ready) |
 | **Raw originals** | **~{du('raw')}** (PDF / HTML / source code) |
 | **Extracted text** | **~{du('text')}** (~{big(chars)} chars, **≈{big(tok)} tokens**) |
 | **Cleaned corpus** | **~{du('corpus')}** (~{big(cchars)} chars, **≈{big(ctok)} tokens**, ruleset-cleaned) |
@@ -84,8 +88,9 @@ def main(argv: list[str] | None = None) -> None:
 
 **By license:** {by_lic}.
 
-_Snapshot of the live registry ({date}) — auto-generated from the manifest. The bytes are not
-shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._
+_Snapshot of the eligible live registry ({date}) — auto-generated from the manifest. Local raw/text
+disk sizes may include retained policy-excluded cache; excluded bytes are not in `corpus/` and are
+not fetched again. The bytes are not shipped; run the loader to fetch your own eligible copy._
 {END}"""
 
     text = README.read_text()

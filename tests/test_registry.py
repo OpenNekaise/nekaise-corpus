@@ -41,16 +41,61 @@ def test_append_routes_by_prefix(tmp_registry):
     assert "# hand comment that must survive" in (tmp_registry / registry.CURATED).read_text()
 
 
-def test_proprietary_internal_entries_are_pointer_only(tmp_registry, capsys):
+def test_proprietary_internal_entries_are_pointer_only(tmp_registry, capsys, monkeypatch):
     pointer = {**entry("vendor-standard"), "license": "proprietary-internal"}
     registry.append_entries([pointer])
+    monkeypatch.setattr(lint_registry.registry, "load_eligibility", lambda: {})
 
-    assert not registry.is_fetchable(pointer)
-    assert registry.is_fetchable(entry("open-report"))
+    assert not registry.is_fetchable(pointer, {})
+    assert registry.is_fetchable(entry("open-report"), {})
 
     registry.write_manifest_rows([{**pointer, "status": "ok"}])
     assert lint_registry.main() == 1
     assert "pointer-only license 'proprietary-internal' has a payload row" in capsys.readouterr().out
+
+
+def test_eligibility_restrictions_are_reversible_policy_overlays(tmp_path):
+    policy = tmp_path / "eligibility.json"
+    policy.write_text(json.dumps({
+        "version": 1,
+        "restrictions": {
+            "translated": {
+                "status": "restricted",
+                "match": {"id_prefix": "pat-cn"},
+                "backends": ["find_patents_cn"],
+                "reason": "translated service content is not approved for training",
+                "evidence_urls": ["https://example.org/terms"],
+                "decided_at": "2026-08-25",
+            },
+        },
+    }))
+    restrictions = registry.load_eligibility(policy)
+    blocked = {**entry("pat-cn123"), "license": "open"}
+
+    assert registry.restriction_for(blocked, restrictions)[0] == "translated"
+    assert not registry.is_training_eligible(blocked, restrictions)
+    assert registry.is_training_eligible(entry("pat-us123"), restrictions)
+    assert "sha256" not in blocked  # the policy decision does not rewrite provenance records
+
+
+def test_eligibility_schema_rejects_unknown_or_insecure_selectors():
+    errors = registry.validate_eligibility({
+        "version": 1,
+        "restrictions": {
+            "bad": {
+                "status": "restricted",
+                "match": {"license": "open"},
+                "backends": [],
+                "reason": "bad fixture",
+                "evidence_urls": ["http://example.org/terms"],
+                "decided_at": "2026-08-25",
+            },
+        },
+    })
+
+    assert any("unknown selector" in error for error in errors)
+    assert any("backends" in error for error in errors)
+    assert any("HTTPS" in error for error in errors)
 
 
 def test_append_proposal_mode_stages_json_without_mutating_registry(

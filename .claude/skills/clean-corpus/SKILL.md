@@ -26,9 +26,10 @@ python scripts/clean_corpus.py
 python scripts/clean_corpus.py --check
 ```
 
-Reads each manifest row's `text/` file, applies the enabled rules, writes `corpus/<id>.md`, records
-`corpus_path` / `corpus_chars` in the manifest. Incremental — only new/changed docs are rewritten,
-unless the ruleset changed, in which case it rebuilds everything.
+Reads each eligible manifest row's `text/` file, applies the enabled rules, writes `corpus/<id>.md`,
+and records `corpus_path` / `corpus_chars` in the manifest. `registry/eligibility.json` exclusions
+retain registry/manifest plus raw/text provenance but are moved out of the training directory.
+Incremental — only new/changed docs are rewritten, unless the ruleset changed.
 
 Run this **after every load and after every prune**, so `corpus/` mirrors the manifest. `--check` must
 pass before you commit; it exits non-zero and names the drift.
@@ -78,9 +79,9 @@ what it drops, *and* the CJK prose / data tables / Modelica equations it must no
 
 ## Notes
 
-- `corpus/` is built **from the manifest**, never from a directory listing, so it can only contain docs
-  with a provenance row. Files in `text/` that no row references are excluded by design, and ids whose
-  `text_path` drifted get canonical `corpus/<id>.md` names.
+- `corpus/` is built **from eligible manifest rows**, never from a directory listing, so it can only
+  contain docs with provenance and current policy approval. Files in `text/` that no row references
+  are excluded by design, and ids whose `text_path` drifted get canonical `corpus/<id>.md` names.
 - **License discipline:** `corpus/` is git-ignored like `raw/` and `text/` and must NEVER be committed.
   Commit only the manifest changes (`corpus_path` / `corpus_chars`), the code, and the docs.
 - The pruner's quality thresholds were tuned on **uncleaned** `text/`. If a ruleset is ever enabled,

@@ -20,6 +20,7 @@ machine resumes exactly where the last one stopped.
 | `pruned_urls.txt` | **Blocklist** of URLs the quality gate dropped — finders dedup against it so discovery never re-churns pruned material. |
 | `registry/rotation.json` | **Excavation state** — the next page/offset/bucket per backend, advanced by `scripts/rotation.py` after each successful run. Committed, so the growth loop is resumable by anyone. |
 | `registry/backends.json` | **Control-plane config** — finder script, fixed arguments, enabled/paused state. `run_round.py` validates it against `rotation.json`, so new backends cannot silently miss automation. |
+| `registry/eligibility.json` | **Reversible policy exclusions** — source/id selectors whose provenance stays registered but whose bytes must not be fetched or placed in `corpus/`. Loader, cleaner, stats, lint, and contracts all consume it. |
 | `registry/pruned.jsonl` | **Decision provenance** for future prunes — id/url/reason/metrics/run id. `pruned_urls.txt` remains the fast compatibility blocklist. |
 | `scripts/` | The **machinery** — loader, discovery backends, quality gate, cron/marathon runners. All run from the repo root: `python scripts/<x>.py`. |
 | `.claude/skills/` | The **skills** — step-by-step playbooks for each loop (`go` · `load-corpus` · `find-sources` · `crawl-docs` · `clean-corpus` · `dig`). Claude Code picks them up natively; Codex: read the `SKILL.md` files directly. |
@@ -51,13 +52,15 @@ minutes; folding cleaning into extraction would mean re-parsing hundreds of thou
 (CPU-hours) for every rule tweak and would make `raw/` permanently undeletable. The additional local
 storage buys cheap iteration.
 
-`corpus/` is built **from the manifest**, never from a directory listing, so it can only contain docs
-that have a provenance row — a training run over `corpus/*` cannot pick up unprovenanced text, and
-ids whose `text_path` drifted from their id get canonical `corpus/<id>.md` names automatically.
+`corpus/` is built **from eligible manifest rows**, never from a directory listing, so it can only
+contain docs that have a provenance row and pass `registry/eligibility.json` — a training run over
+`corpus/*` cannot pick up unprovenanced or policy-restricted text, and ids whose `text_path` drifted
+from their id get canonical `corpus/<id>.md` names automatically. Existing restricted `raw/` and
+`text/` remain as provenance; their derived corpus copies move to a git-ignored workspace quarantine.
 
 ## The machinery
 
-`scripts/build_corpus.py` is the **loader**: reads the registry → downloads into `raw/<source>/` →
+`scripts/build_corpus.py` is the **loader**: reads the eligible registry → downloads into `raw/<source>/` →
 extracts plain text into `text/<id>.md` → records sha256 + metadata in the manifest. Idempotent;
 dedups by sha256; fairly interleaves hosts (`--workers`, conservative host-specific caps) and runs
 extraction in a separate process pool (`--extract-workers`), so parsing never holds a network slot.
@@ -193,6 +196,9 @@ clean. Remove the schedule with `bash scripts/install_maintainer_cron.sh --remov
 - **Respect each source's `license`:** `public-domain` (US gov) · `cc-by` / `cc-by-sa` (attribute) ·
   `open` (arXiv / OA — check per-source terms) · `proprietary-internal` (vendor / standards —
   **pointers only, never add the bytes**).
+- **Respect `registry/eligibility.json`:** restrictions override an otherwise fetchable license.
+  Preserve their registry/manifest and raw/text provenance; never restore them to `corpus/` without
+  a reviewed rights decision and matching control-plane change.
 - **Prefer openly-licensed sources.** Grow the corpus by editing `registry/curated.yaml`; high-value paywalled
   items go in as pointers only.
 - **Report failures, never hide them.** A 404 = fix or drop the entry; never leave a known-dead URL

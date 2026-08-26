@@ -49,6 +49,7 @@ HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scri
 TEXT = HERE / "text"
 CORPUS = HERE / "corpus"
 STAMP = CORPUS / ".ruleset"  # which rules produced the current corpus/; a change forces rebuild
+POLICY_QUARANTINE = HERE / "workspace" / "policy-excluded-corpus"
 
 HEADER_SEP = "\n---\n\n"  # build_corpus's provenance header terminator (quality.body splits here)
 # CPU-bound (regex over 13GB), so scale with cores but leave headroom: this stage runs inside the
@@ -363,6 +364,47 @@ def parse_rules(spec: str) -> list[str]:
     return [n for n in RULES if n in names]  # canonical order -> stable attribution
 
 
+def partition_training_rows(
+    rows: list[dict], restrictions: dict[str, dict]
+) -> tuple[list[dict], list[dict]]:
+    """Split cleaner inputs from policy-restricted rows whose provenance must remain."""
+    restricted = [r for r in rows if registry.restriction_for(r, restrictions) is not None]
+    todo = [
+        r for r in rows
+        if r.get("status") == "ok" and r.get("text_path")
+        and registry.is_training_eligible(r, restrictions)
+    ]
+    return todo, restricted
+
+
+def clear_corpus_metadata(rows: list[dict]) -> int:
+    """Remove training-artifact claims while preserving fetch/extraction provenance."""
+    changed = 0
+    for row in rows:
+        if any(field in row for field in registry.CORPUS_FIELDS):
+            changed += 1
+        for field in registry.CORPUS_FIELDS:
+            row.pop(field, None)
+    return changed
+
+
+def quarantine_policy_files(rows: list[dict]) -> int:
+    """Move existing restricted corpus copies aside without deleting derived data."""
+    names = {f"{r['id']}.md" for r in rows}
+    files = [p for p in CORPUS.glob("*.md") if p.name in names]
+    if not files:
+        return 0
+    POLICY_QUARANTINE.mkdir(parents=True, exist_ok=True)
+    collisions = [p.name for p in files if (POLICY_QUARANTINE / p.name).exists()]
+    if collisions:
+        raise RuntimeError(
+            "policy quarantine already contains target(s): " + ", ".join(collisions[:5])
+        )
+    for path in files:
+        path.replace(POLICY_QUARANTINE / path.name)
+    return len(files)
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--rules", default="stamp",
@@ -390,8 +432,9 @@ def main() -> None:
         return
 
     rules = parse_rules(stamped_ruleset() if args.rules == "stamp" else args.rules)
+    restrictions = registry.load_eligibility()
     rows = registry.load_manifest_rows()
-    todo = [r for r in rows if r.get("status") == "ok" and r.get("text_path")]
+    todo, restricted = partition_training_rows(rows, restrictions)
 
     # --------------------------------------------------------------------- report mode
     if args.report:
@@ -441,6 +484,15 @@ def main() -> None:
         problems: list[str] = []
         if stamp.startswith("IN-PROGRESS"):
             problems.append(f"stamp says a run never finished: {stamp!r} — re-run to rebuild")
+        restricted_with_metadata = [
+            r for r in restricted if any(field in r for field in registry.CORPUS_FIELDS)
+        ]
+        for r in restricted_with_metadata[:10]:
+            problems.append(f"policy-restricted row has corpus metadata: {r['id']}")
+        if len(restricted_with_metadata) > 10:
+            problems.append(
+                f"... and {len(restricted_with_metadata) - 10} more restricted metadata rows"
+            )
         expect = {f"{r['id']}.md" for r in todo}
         on_disk = {p.name for p in CORPUS.glob("*.md")}
         for name in sorted(expect - on_disk)[:10]:
@@ -509,6 +561,7 @@ def main() -> None:
 
     attribution: Counter = Counter()
     stats: Counter = Counter()
+    cleared = clear_corpus_metadata(restricted)
     by_id = {r["id"]: r for r in todo}
     tasks = [(r["id"], r["text_path"], rules, rebuild) for r in todo]
 
@@ -527,10 +580,18 @@ def main() -> None:
                 row["cleaner_version"] = f"clean_corpus/2;rules={stamp_now}"
             attribution.update(attr)
 
-    # drop corpus files with no manifest row (pruned docs, renamed ids) — corpus/ mirrors the
-    # provenance record exactly, so a training run over corpus/* can't read unprovenanced text.
+    # Policy exclusions are broad and reversible: move their derived corpus copy out of the
+    # training directory instead of deleting it. raw/ and verbatim text/ are never touched.
+    restricted_names = {f"{r['id']}.md" for r in restricted}
+    quarantined = quarantine_policy_files(restricted)
+
+    # Drop other corpus files with no manifest row (pruned docs, renamed ids) — corpus/ mirrors
+    # the provenance record exactly, so a training run over corpus/* can't read unprovenanced text.
     live = {f"{r['id']}.md" for r in todo}
-    orphans = [p for p in CORPUS.glob("*.md") if p.name not in live]
+    orphans = [
+        p for p in CORPUS.glob("*.md")
+        if p.name not in live and p.name not in restricted_names
+    ]
     for p in orphans:
         p.unlink()
 
@@ -541,6 +602,8 @@ def main() -> None:
     kept = sum(r.get("corpus_chars", 0) for r in todo)
     print(f"corpus/: {stats['written']} written | {stats['up-to-date']} up-to-date | "
           f"{stats['missing-text']} missing text | {len(orphans)} orphans removed")
+    print(f"policy restricted: {len(restricted)} rows | {cleared} manifest rows cleared | "
+          f"{quarantined} corpus files quarantined")
     print(f"ruleset: {stamp_now}")
     print(f"corpus chars: {kept/1e6:.1f}M ({kept//4/1e6:.0f}M tokens)")
     if attribution:

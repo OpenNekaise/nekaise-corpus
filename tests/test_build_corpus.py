@@ -24,6 +24,7 @@ def test_main_never_downloads_pointer_only_sources(monkeypatch, capsys):
         "format": "pdf",
     }
     monkeypatch.setattr(build_corpus.registry, "load_entries", lambda: [pointer])
+    monkeypatch.setattr(build_corpus.registry, "load_eligibility", lambda: {})
     monkeypatch.setattr(build_corpus, "load_manifest", lambda: {})
     monkeypatch.setattr(
         build_corpus,
@@ -36,6 +37,38 @@ def test_main_never_downloads_pointer_only_sources(monkeypatch, capsys):
 
     output = capsys.readouterr().out
     assert "pointer-only sources: 1 skipped by license policy" in output
+    assert "sources: 0 total, 0 to fetch" in output
+
+
+def test_main_never_downloads_policy_restricted_sources(monkeypatch, capsys):
+    restricted = {
+        "id": "pat-cn123",
+        "title": "Translated patent",
+        "url": "https://patents.example/patent/CN123/en",
+        "source": "google_patents",
+        "license": "open",
+        "topic": "materials",
+        "format": "html",
+    }
+    rules = {
+        "translated": {
+            "match": {"id_prefix": "pat-cn"},
+        },
+    }
+    monkeypatch.setattr(build_corpus.registry, "load_entries", lambda: [restricted])
+    monkeypatch.setattr(build_corpus.registry, "load_eligibility", lambda: rules)
+    monkeypatch.setattr(build_corpus, "load_manifest", lambda: {})
+    monkeypatch.setattr(
+        build_corpus,
+        "download_one",
+        lambda _source: (_ for _ in ()).throw(AssertionError("restricted source downloaded")),
+    )
+    monkeypatch.setattr(sys, "argv", ["build_corpus.py"])
+
+    build_corpus.main()
+
+    output = capsys.readouterr().out
+    assert "policy-restricted sources: 1 skipped by eligibility policy" in output
     assert "sources: 0 total, 0 to fetch" in output
 
 

@@ -1,0 +1,35 @@
+{
+  "_readme": "Reversible policy overlay for material that remains in registry/manifest provenance but must not be fetched or placed in the training-ready corpus. A restriction stays in force until a reviewed rights decision changes this file.",
+  "version": 1,
+  "restrictions": {
+    "google_patents_cn_translations": {
+      "status": "restricted",
+      "match": {
+        "id_prefix": "pat-cn"
+      },
+      "backends": [
+        "find_patents_cn"
+      ],
+      "reason": "Google identifies non-English Google Patents /en content as translated, and its terms effective 2026-07-30 prohibit using AI-generated service content to develop machine-learning models. Preserve provenance, but use neither the translated payload nor future fetches for training.",
+      "evidence_urls": [
+        "https://support.google.com/faqs/answer/6390996?hl=en",
+        "https://policies.google.com/terms?hl=en-US"
+      ],
+      "decided_at": "2026-08-25"
+    },
+    "jstage_aij_reuse_rights": {
+      "status": "restricted",
+      "match": {
+        "source": "jstage_aij"
+      },
+      "backends": [
+        "find_jstage"
+      ],
+      "reason": "J-STAGE free access is not a blanket reuse license. Its terms require copyright-holder approval for duplication or derivative databases and prohibit mechanical large-volume download. Exclude existing rows pending verified per-article reuse rights.",
+      "evidence_urls": [
+        "https://www.jstage.jst.go.jp/static/pages/TermsAndPolicies/ForIndividuals/-char/en"
+      ],
+      "decided_at": "2026-08-25"
+    }
+  }
+}

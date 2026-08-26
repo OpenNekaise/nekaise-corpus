@@ -51,25 +51,28 @@ python scripts/clean_corpus.py --check
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **691,060** |
+| **Documents** | **288,302** |
+| **Policy-excluded provenance** | **402,758** rows (not fetched or training-ready) |
 | **Raw originals** | **~583G** (PDF / HTML / source code) |
-| **Extracted text** | **~46G** (~45.707B chars, **≈11.427B tokens**) |
-| **Cleaned corpus** | **~44G** (~43.900B chars, **≈10.975B tokens**, ruleset-cleaned) |
+| **Extracted text** | **~46G** (~32.640B chars, **≈8.160B tokens**) |
+| **Cleaned corpus** | **~31G** (~31.775B chars, **≈7.944B tokens**, ruleset-cleaned) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): equipment_systems 237,090 · construction 141,911 · building_energy 129,395 · structures_civil 65,638 · materials 42,046 · infrastructure 28,152 · architecture 24,380 · standards_protocols 11,509 · urban 5,982 · controls_bas 4,137 · commissioning_fdd 820.
+**By topic** (a source gets one at registration): building_energy 85,709 · equipment_systems 70,683 · construction 49,590 · structures_civil 20,593 · materials 17,044 · architecture 12,282 · standards_protocols 11,509 · infrastructure 9,953 · urban 5,982 · controls_bas 4,137 · commissioning_fdd 820.
 
-**By license:** open 491,456 · public-domain 179,698 · cc-by-sa 1,723 · cc-by 18,183.
+**By license:** open 88,698 · public-domain 179,698 · cc-by-sa 1,723 · cc-by 18,183.
 
-_Snapshot of the live registry (2026-08-26) — auto-generated from the manifest. The bytes are not
-shipped; run the loader to fetch your own copy. The corpus grows as sources are added to the registry._
+_Snapshot of the eligible live registry (2026-08-26) — auto-generated from the manifest. Local raw/text
+disk sizes may include retained policy-excluded cache; excluded bytes are not in `corpus/` and are
+not fetched again. The bytes are not shipped; run the loader to fetch your own eligible copy._
 <!-- STATS:END -->
 
-The corpus spans public institutions and national laboratories, open scholarship and books,
-historical engineering archives, patents, multilingual repositories, documentation sites, and
-permissively licensed technical source code. Its sources include Google Patents, OSTI, NIST, NBS,
-arXiv, OpenAlex, Zenodo, OpenAIRE, OAPEN, the Internet Archive, SciELO, J-STAGE, ADEME, GOV.UK,
-World Bank, and the Modelica ecosystem.
+The eligible corpus spans public institutions and national laboratories, open scholarship and
+books, historical engineering archives, patents, multilingual repositories, documentation sites,
+and permissively licensed technical source code. Its sources include Google Patents, OSTI, NIST,
+NBS, arXiv, OpenAlex, Zenodo, OpenAIRE, OAPEN, the Internet Archive, SciELO, ADEME, GOV.UK, World
+Bank, and the Modelica ecosystem. The provenance registry also retains reviewed policy exclusions,
+including J-STAGE material, without presenting those bytes as training-ready.
 
 ## A corpus that remembers how it was made
 
@@ -87,7 +90,9 @@ flowchart LR
 ```
 
 Discovery state lives in `registry/rotation.json`. Source metadata lives in `registry/`. Fetch
-results and hashes live in `manifest/`. Decisions made by the quality gate remain in
+results and hashes live in `manifest/`. Reversible rights/policy exclusions live in
+`registry/eligibility.json`; they preserve provenance while preventing future fetches and keeping
+the affected text out of `corpus/`. Decisions made by the quality gate remain in
 `registry/pruned.jsonl` and `pruned_urls.txt`. Another operator—or another machine—can resume the
 same excavation without starting over.
 
@@ -140,8 +145,9 @@ next maintainer wake rather than continuing over uncertain state.
 | `corpus/` | Cleaned, training-ready text derived from the manifest. |
 
 All three directories are local and git-ignored. The repository never commits document bytes.
-`corpus/` is built from manifest rows rather than a directory listing, so unprovenanced files cannot
-silently enter a training run.
+`corpus/` is built from eligible manifest rows rather than a directory listing, so unprovenanced or
+policy-restricted files cannot silently enter a training run. Existing restricted `raw/` and
+verbatim `text/` cache is retained for provenance and future rights review.
 
 Cleaning is structural and language-safe. It removes repeated furniture, page markers, contents
 leaders, OCR debris, patent identifier blocks, and similar artifacts without treating non-Latin
@@ -162,7 +168,7 @@ text you used.
 
 | Path | Role |
 |---|---|
-| `registry/` | Source catalog, backend configuration, rotation state, and prune decisions. |
+| `registry/` | Source catalog, eligibility policy, backend configuration, rotation state, and prune decisions. |
 | `manifest/` | Provenance and reproducibility record for every fetched document. |
 | `scripts/` | Discovery, loading, extraction, quality, cleaning, verification, and automation. |
 | `tests/` | Golden judgments for document quality and cleaning behavior. |

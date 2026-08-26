@@ -16,9 +16,10 @@ their own copy.
    ```
    python scripts/build_corpus.py
    ```
-   It reads the registry (`registry/*.yaml`), downloads any missing source into `raw/<source>/`, extracts plain text
-   into `text/<id>.md`, dedups by sha256, and writes the sharded manifest (`manifest/*.jsonl`). Idempotent — re-running only
-   fetches what is missing. `--force` re-fetches everything; `--only <topic>` limits scope.
+   It reads the registry (`registry/*.yaml`) plus `registry/eligibility.json`, downloads any missing
+   eligible source into `raw/<source>/`, extracts plain text into `text/<id>.md`, dedups by sha256,
+   and writes the sharded manifest (`manifest/*.jsonl`). Idempotent — re-running only fetches what
+   is missing. `--force` re-fetches everything; `--only <topic>` limits scope.
 
    `text/` is the **verbatim** extraction and must stay that way — never clean or edit it in place.
    The cleaned copy is a separate stage ([`clean-corpus`](../clean-corpus/SKILL.md), step 3 below).
@@ -36,9 +37,9 @@ their own copy.
    ```
    python scripts/clean_corpus.py && python scripts/clean_corpus.py --check
    ```
-   Writes `corpus/<id>.md` from each manifest row's `text/` file and records `corpus_path` /
-   `corpus_chars`. Incremental; `--check` must pass. Run it after every load and every prune so
-   `corpus/` mirrors the manifest.
+   Writes `corpus/<id>.md` from each eligible manifest row's `text/` file and records `corpus_path` /
+   `corpus_chars`. Policy-restricted provenance remains in registry/manifest and raw/text, while its
+   derived corpus copy is kept outside the training directory. Incremental; `--check` must pass.
 
    **Do not change the cleaning ruleset here** — it is `none` (pass-through) by the maintainer's
    decision. The [`clean-corpus`](../clean-corpus/SKILL.md) skill is the full playbook: measuring
