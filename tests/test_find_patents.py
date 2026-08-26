@@ -168,6 +168,9 @@ def test_polysemous_off_domain_titles_are_skipped_before_append(monkeypatch):
             "<li>US100A - Packet tunneling and decapsulation with split-horizon attributes :",
             "<li>US101A - Hair conditioner compositions with a preservative system :",
             "<li>US102A - Block placing tool for building a user-defined algorithm :",
+            "<li>US104A - Aerosol-generating system with ventilation airflow :",
+            "<li>US105A - End-to-end map building from a video sequence :",
+            "<li>US106A - Metal-insulator-metal capacitor and integrated chip :",
             "<li>US103A - Concrete tunnel ventilation system :",
         ]),
     )

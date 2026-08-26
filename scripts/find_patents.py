@@ -214,7 +214,7 @@ def main() -> None:
             topic = topic_for(title)
             if topic is None:
                 continue
-            if quality.off_domain_title(title):  # semiconductor/vape/quantum false positives
+            if quality.off_domain_discovery_title(title):  # calibrated title-only false positives
                 continue
             url = f"https://patents.google.com/patent/{pubnum}/en"
             u, t = url.rstrip("/"), registry.norm(title)

@@ -189,6 +189,43 @@ def test_patent_title_on_topic_untouched():
     assert not quality.off_domain_title("Packet radio monitoring in a concrete tunnel")
 
 
+def test_patent_discovery_title_kills_reviewed_false_positive_classes():
+    assert quality.off_domain_discovery_title("Aerosol-generating system with ventilation airflow")
+    assert quality.off_domain_discovery_title(
+        "Aerosol medicament delivery adapter for dispensing medicament into a ventilation circuit"
+    )
+    assert quality.off_domain_discovery_title(
+        "Methods to reduce microbridge defects in EUV patterning for microelectronic workpieces"
+    )
+    assert quality.off_domain_discovery_title(
+        "Systems and methods for end-to-end map building from a video sequence"
+    )
+    assert quality.off_domain_discovery_title(
+        "Three-dimensional printed bone cement composite scaffolds for bone regeneration"
+    )
+    assert quality.off_domain_discovery_title("Metal-insulator-metal capacitor and integrated chip")
+
+
+def test_patent_discovery_extensions_are_not_implicit_retroactive_prunes():
+    # Existing bytes/URLs need an explicit reviewed-id cleanup; prune_corpus intentionally uses
+    # the narrower historical predicate because applying a new regex corpus-wide is destructive.
+    assert not quality.off_domain_title("Aerosol-generating system with ventilation airflow")
+    assert not quality.off_domain_title("End-to-end map building from a video sequence")
+    assert not quality.off_domain_title("Biocompatible bone scaffold for cell regeneration")
+    assert not quality.off_domain_title("Metal-insulator-metal capacitor and integrated chip")
+
+
+def test_patent_discovery_title_preserves_aec_rescues():
+    assert not quality.off_domain_discovery_title("Generation of a building information model")
+    assert not quality.off_domain_discovery_title("Tunnel ventilation system for smoke extraction")
+    assert not quality.off_domain_discovery_title("Energy recovery ventilator for a building roof")
+    assert not quality.off_domain_discovery_title("Monitoring fatigue of a steel bridge deck")
+    assert not quality.off_domain_discovery_title(
+        "A kind of UHPC wafer board composite beam bridge shear connector"
+    )
+    assert not quality.off_domain_discovery_title("A semiconductor refrigerator")
+
+
 SWEDISH_PLANNING = (  # Boverket-style planning/energy prose — regression for the 07-23 Nordic
     "Boverket redovisar ett ramverk för nationell planering. Kommunernas översiktsplan och "
     "detaljplan styr var bostäder och byggnader får uppföras. Rapporten beskriver "

@@ -77,6 +77,46 @@ PATENT_GUARD = re.compile(
     r"wafer ?board|ventilat|dehumidif|heat pump|air.?condition|\bhvac\b|chiller|refrigerat|"
     r"formwork|concrete|masonry|girder|abutment|asphalt|pavement|curtain wall", re.I)
 
+# Discovery can reject additional title-only false-positive classes before their bytes exist.
+# Keep this separate from PATENT_KILL: prune_corpus applies that older gate retroactively, where a
+# regex mistake deletes local bytes and blocklists thousands of already-fetched URLs.  These
+# patterns therefore protect future patent rounds while historical cleanup remains an explicit,
+# reviewed-id operation.  Calibrated 2026-08-26 against 1,350 newly fetched US patents and the
+# existing US/CN title inventory.
+PATENT_DISCOVERY_KILL_HARD = re.compile(
+    r"aerosol[- ]generat(?:ing|ion)|vaporizer (?:cartridge|utilizing)|"
+    r"(?=[^\n]*ventilat)(?=[^\n]*(?:patient|medicament|oropharyngeal|anesthes|respiratory|"
+    r"pneumonia|end-expiratory|medical gas|airway|pulmonary|neonatal|resuscitat|intubat|"
+    r"trache|breathing assist|culture media|bioreactor))",
+    re.I,
+)
+PATENT_DISCOVERY_KILL = re.compile(
+    # Microelectronics, power electronics and computer/network senses of "bridge".
+    r"microbridge|nanobridge|airbridge|bridge die|interconnect bridges?|embedded bridge|"
+    r"\bEMIB\b|EUV pattern|lithograph.{0,40}bridge|bridge.{0,40}lithograph|"
+    r"printed circuit.{0,40}bridge|bridge.{0,40}(?:chip|circuit|capacitor|memory)|"
+    r"(?:chip|die|circuit|memory).{0,40}bridge|superconduct.{0,40}(?:bridge|airbridge)|"
+    r"magnetoresist.{0,40}bridge|quantum.{0,40}bridge|bridge.{0,40}resonator|"
+    r"half[- ]bridge switching|host bridge controller|time[- ](?:aware|sensitive).{0,30}bridge|"
+    # Computer-vision/robotics/data-model construction, not buildings.
+    r"(?:map|velocity model|industrial flow model) building|"
+    # Biomedical uses of construction scaffolds.
+    r"(?=[^\n]*scaffold)(?=[^\n]*(?:bone|cell|tissue|cartilage|biolog|protein|molecular|"
+    r"therapeutic|blood|wound|regenerat|nidogen|calcium phosphate|adipose|extracellular|"
+    r"monomer|nanoconjugate|biocompat|implant))|"
+    # Insulation terminology in display/memory/capacitor and spintronic fabrication.
+    r"metal[- ]insulator[- ]metal|\bMIM\b.{0,20}capacitor|"
+    r"(?:display panel|memory device|integrated chip|spin-orbit|superlattice).{0,60}insulat|"
+    r"insulat.{0,60}(?:display panel|memory device|integrated chip|spin-orbit|superlattice)",
+    re.I,
+)
+PATENT_DISCOVERY_GUARD = re.compile(
+    r"building information model|\bBIM\b|tunnel ventilation|energy recovery ventilator|"
+    r"roof ventilator|bridge (?:deck|bearing|beam|girder|abutment|pier|foundation)|"
+    r"(?:concrete|masonry|timber|steel|structural) bridge",
+    re.I,
+)
+
 
 def off_domain_title(title: str) -> bool:
     """True if a patent TITLE alone marks the doc off-domain (see PATENT_KILL above)."""
@@ -84,6 +124,16 @@ def off_domain_title(title: str) -> bool:
     if PATENT_KILL_HARD.search(t):
         return True
     return bool(PATENT_KILL.search(t)) and not PATENT_GUARD.search(t)
+
+
+def off_domain_discovery_title(title: str) -> bool:
+    """Stronger, non-retroactive title gate for not-yet-fetched patent candidates."""
+    t = title or ""
+    if off_domain_title(t) or PATENT_DISCOVERY_KILL_HARD.search(t):
+        return True
+    return bool(PATENT_DISCOVERY_KILL.search(t)) and not (
+        PATENT_GUARD.search(t) or PATENT_DISCOVERY_GUARD.search(t)
+    )
 
 # Long book-like docs are judged over a 100k-char window: their first 20k chars are front matter
 # (title pages, TOC dot-leaders, OCR noise) that fails alpha-ratio checks and under-represents the
