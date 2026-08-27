@@ -173,7 +173,10 @@ def main() -> None:
     ap.add_argument("--json", default="", help="dump aggregate counts to this file")
     args = ap.parse_args()
 
-    rows = [r for r in registry.load_manifest_rows() if r.get("status") == "ok"]
+    restrictions = registry.load_eligibility()
+    rows, excluded = registry.partition_manifest_ok_rows(
+        registry.load_manifest_rows(), restrictions
+    )
     if args.sample:
         rows = random.Random(7).sample(rows, min(args.sample, len(rows)))
 
@@ -205,8 +208,9 @@ def main() -> None:
                 cross_dr[dom][rg] += 1
 
     n = len(rows)
-    print(f"coverage matrix — {n:,} ok docs / {total_tok/1e6:,.0f}M tokens "
+    print(f"coverage matrix — {n:,} training-eligible docs / {total_tok/1e6:,.0f}M tokens "
           f"(facets are multi-label; a doc counts in every matching cell)\n")
+    print(f"  {len(excluded):,} training-excluded provenance rows omitted\n")
     GAP = 0.01  # <1% of docs in a dimension key = flagged
     for d, c in dims.items():
         print(f"── {d}")
@@ -239,7 +243,8 @@ def main() -> None:
             {d: dict(c) for d, c in dims.items()} |
             {"cross_domain_lifecycle": {k: dict(v) for k, v in cross_dl.items()},
              "cross_domain_region": {k: dict(v) for k, v in cross_dr.items()},
-             "docs": n, "tokens_M": round(total_tok / 1e6)}, ensure_ascii=False, indent=1))
+             "docs": n, "tokens_M": round(total_tok / 1e6),
+             "training_excluded_docs": len(excluded)}, ensure_ascii=False, indent=1))
         print(f"aggregates -> {args.json}")
 
 

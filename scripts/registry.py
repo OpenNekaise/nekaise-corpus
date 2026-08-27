@@ -182,6 +182,20 @@ def is_training_eligible(entry: dict, restrictions: dict[str, dict]) -> bool:
             and restriction_for(entry, restrictions) is None)
 
 
+def partition_manifest_ok_rows(
+    rows: list[dict], restrictions: dict[str, dict]
+) -> tuple[list[dict], list[dict]]:
+    """Split successful provenance rows into training-eligible and excluded records."""
+    eligible: list[dict] = []
+    excluded: list[dict] = []
+    for row in rows:
+        if row.get("status") != "ok":
+            continue
+        target = eligible if is_training_eligible(row, restrictions) else excluded
+        target.append(row)
+    return eligible, excluded
+
+
 def is_fetchable(entry: dict, restrictions: dict[str, dict] | None = None) -> bool:
     """Compatibility name for the loader's license + eligibility decision."""
     if restrictions is None:

@@ -101,7 +101,8 @@ def main() -> None:
     args = ap.parse_args()
 
     rows = registry.load_manifest_rows()
-    ok = [r for r in rows if r.get("status") == "ok"]
+    restrictions = registry.load_eligibility()
+    ok, excluded = registry.partition_manifest_ok_rows(rows, restrictions)
     by_source = Counter(r.get("source") for r in ok)
 
     counts = {g: 0 for g, _ in GENRES}
@@ -113,7 +114,9 @@ def main() -> None:
         else:
             uncategorized[src] += n
 
-    print(f"corpus coverage — {len(ok)} docs across {len(GENRES)} target genres\n")
+    print(f"corpus coverage — {len(ok)} training-eligible docs "
+          f"across {len(GENRES)} target genres")
+    print(f"  {len(excluded)} training-excluded provenance rows omitted\n")
     print(f"  {'genre':22} {'have':>5}  {'status':14} where it lives")
     print("  " + "-" * 92)
     # gaps first: NONE, then thin, then the well-covered ones

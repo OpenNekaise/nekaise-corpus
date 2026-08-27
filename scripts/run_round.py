@@ -267,10 +267,13 @@ def git_clean() -> bool:
     ).strip()
 
 
-def doc_stats() -> tuple[int, int]:
+def doc_stats() -> tuple[int, int, int]:
+    """Return training-eligible docs/tokens and successful but excluded provenance rows."""
     rows = registry.load_manifest_rows()
-    ok = [r for r in rows if r.get("status") == "ok"]
-    return len(ok), sum(r.get("text_chars", 0) for r in ok) // 4
+    restrictions = registry.load_eligibility()
+    eligible, excluded = registry.partition_manifest_ok_rows(rows, restrictions)
+    tokens = sum(int(r.get("text_chars") or 0) for r in eligible) // 4
+    return len(eligible), tokens, len(excluded)
 
 
 def commit_snapshot(before: int, after: int, tokens: int, run_id: str) -> bool:
@@ -380,7 +383,7 @@ def main() -> int:
             ]
             selected = [name for name in selected if name not in disabled]
 
-            before, _ = doc_stats()
+            before, _, _ = doc_stats()
             snapshot = ops.StateSnapshot.capture(run_id, SNAPSHOT_PATHS, root=ROOT)
             if not args.skip_discovery:
                 run_finders_parallel(
@@ -396,7 +399,7 @@ def main() -> int:
                 run_command(step, [sys.executable, str(SCRIPTS / script), *fixed_args], env, run_id)
             if not args.skip_tests:
                 run_command("tests", [sys.executable, "-m", "pytest", "-q"], env, run_id)
-            after, tokens = doc_stats()
+            after, tokens, excluded = doc_stats()
             committed = commit_snapshot(before, after, tokens, run_id) if args.commit else False
             if args.push:
                 run_command(
@@ -404,9 +407,11 @@ def main() -> int:
                 )
             ops.run_event(
                 run_id, "run_completed", before_docs=before, after_docs=after,
-                tokens=tokens, committed=committed, pushed_to=args.push,
+                tokens=tokens, excluded_docs=excluded,
+                committed=committed, pushed_to=args.push,
             )
-            print(f"\nround {run_id}: {before} -> {after} docs / {tokens // 1_000_000}M tokens")
+            print(f"\nround {run_id}: {before} -> {after} training-eligible docs / "
+                  f"{tokens // 1_000_000}M tokens ({excluded} provenance rows excluded)")
             snapshot.discard()
             return 0
     except Exception as exc:

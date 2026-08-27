@@ -82,6 +82,24 @@ def test_run_command_raises_on_nonzero(monkeypatch):
         run_round.run_command("broken", ["false"], {}, "run-1")
 
 
+def test_doc_stats_counts_only_training_eligible_rows(monkeypatch):
+    rows = [
+        {"id": "pat-us1", "status": "ok", "license": "public-domain", "text_chars": 100},
+        {"id": "pat-cn1", "status": "ok", "license": "open", "text_chars": 800},
+        {"id": "jst-1", "status": "ok", "source": "jstage_aij", "license": "open",
+         "text_chars": 400},
+        {"id": "pat-us2", "status": "failed", "license": "public-domain", "text_chars": 40},
+    ]
+    restrictions = {
+        "cn": {"match": {"id_prefix": "pat-cn"}},
+        "jstage": {"match": {"source": "jstage_aij"}},
+    }
+    monkeypatch.setattr(run_round.registry, "load_manifest_rows", lambda: rows)
+    monkeypatch.setattr(run_round.registry, "load_eligibility", lambda: restrictions)
+
+    assert run_round.doc_stats() == (1, 25, 2)
+
+
 def test_merge_proposals_is_deterministic_and_deduplicates(tmp_path, monkeypatch):
     first = tmp_path / "first.json"
     second = tmp_path / "second.json"
@@ -345,7 +363,7 @@ def test_main_rolls_back_tracked_state_when_pipeline_fails(tmp_path, monkeypatch
     monkeypatch.setattr(run_round, "git_clean", lambda: True)
     monkeypatch.setattr(run_round, "load_backends", lambda: {})
     monkeypatch.setattr(run_round.rotation, "load", lambda: {})
-    monkeypatch.setattr(run_round, "doc_stats", lambda: (1, 10))
+    monkeypatch.setattr(run_round, "doc_stats", lambda: (1, 10, 0))
     monkeypatch.setattr(run_round.ops, "run_event", lambda *args, **kwargs: None)
 
     def fail_after_mutation(*_args, **_kwargs):
