@@ -63552,3 +63552,19 @@ sources:
     license: cc-by
     topic: equipment_systems
     format: pdf
+  - id: ope-experimental-investigation-of-a-hybrid-configu
+    title: Experimental investigation of a hybrid configuration of solar thermal collectors
+      and desiccant indirect evaporative cooling system
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2022.979942/pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-formaldehyde-transfer-in-residential-energy-re
+    title: Formaldehyde transfer in residential energy recovery ventilators
+    url: https://escholarship.org/content/qt9437581q/qt9437581q.pdf
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
