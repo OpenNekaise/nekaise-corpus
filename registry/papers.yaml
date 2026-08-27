@@ -63602,3 +63602,12 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
+  - id: ope-holistic-management-of-a-smart-city-thermal-en
+    title: Holistic management of a smart city thermal energy plant with sewage heat
+      pumps, solar heating, and grey water recycling
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2023.1078603/pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
