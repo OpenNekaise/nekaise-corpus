@@ -498,22 +498,6 @@ sources:
     license: open
     topic: architecture
     format: pdf
-  - id: ope-pilon-an-integrated-tool-for-comprehensive-mic
-    title: 'Pilon: An Integrated Tool for Comprehensive Microbial Variant Detection
-      and Genome Assembly Improvement'
-    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0112963&type=printable
-    source: openalex
-    license: cc-by
-    topic: architecture
-    format: pdf
-  - id: ope-the-seed-and-the-rapid-annotation-of-microbial
-    title: The SEED and the Rapid Annotation of microbial genomes using Subsystems Technology
-      (RAST)
-    url: https://www.osti.gov/servlets/purl/1625520
-    source: openalex
-    license: open
-    topic: architecture
-    format: pdf
   - id: arx-a-comparative-assessment-of-deep-learning-mode
     title: 'A comparative assessment of deep learning models for day-ahead load forecasting:
       Investigating key accuracy drivers'
@@ -2243,21 +2227,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: ope-coral-reef-ecosystems-under-climate-change-and
-    title: Coral Reef Ecosystems under Climate Change and Ocean Acidification
-    url: https://www.frontiersin.org/articles/10.3389/fmars.2017.00158/pdf
-    source: openalex
-    license: cc-by
-    topic: building_energy
-    format: pdf
-  - id: ope-environmental-impacts-of-the-u-s-health-care-s
-    title: Environmental Impacts of the U.S. Health Care System and Effects on Public
-      Health
-    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0157014&type=printable
-    source: openalex
-    license: cc-by
-    topic: building_energy
-    format: pdf
   - id: ope-heat-pumps-for-all-distributions-of-the-costs-
     title: Heat pumps for all? Distributions of the costs and benefits of residential
       air-source heat pumps in the United States
@@ -2282,25 +2251,10 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: ope-las-cumbres-observatory-global-telescope-netwo
-    title: Las Cumbres Observatory Global Telescope Network
-    url: https://arxiv.org/pdf/1305.2437
-    source: openalex
-    license: open
-    topic: building_energy
-    format: pdf
   - id: ope-leveraging-nrel-s-resstock-amp-comstock-datase
     title: 'Leveraging NREL''s ResStock &amp; ComStock Dataset to Evaluate Building
       Stock Electrification: Preprint'
     url: https://www.osti.gov/servlets/purl/2438452
-    source: openalex
-    license: open
-    topic: building_energy
-    format: pdf
-  - id: ope-lignocellulosic-biomass-a-sustainable-platform
-    title: 'Lignocellulosic biomass: a sustainable platform for the production of bio-based
-      chemicals and polymers'
-    url: https://arxiv.org/pdf/1602.01684
     source: openalex
     license: open
     topic: building_energy
@@ -2324,14 +2278,6 @@ sources:
   - id: ope-mesoscale-texture-of-cement-hydrates
     title: Mesoscale texture of cement hydrates
     url: https://escholarship.org/content/qt1c27h9n8/qt1c27h9n8.pdf
-    source: openalex
-    license: open
-    topic: building_energy
-    format: pdf
-  - id: ope-remote-patient-monitoring-using-artificial-int
-    title: 'Remote patient monitoring using artificial intelligence: Current state,
-      applications, and challenges'
-    url: https://arxiv.org/pdf/2301.10009
     source: openalex
     license: open
     topic: building_energy
@@ -2386,13 +2332,6 @@ sources:
     title: 'The Shared Socioeconomic Pathways and their energy, land use, and greenhouse
       gas emissions implications: An overview'
     url: https://www.osti.gov/servlets/purl/1358497
-    source: openalex
-    license: open
-    topic: building_energy
-    format: pdf
-  - id: ope-two-dimensional-hybrid-halide-perovskites-prin
-    title: 'Two-Dimensional Hybrid Halide Perovskites: Principles and Promises'
-    url: https://www.osti.gov/servlets/purl/1599730
     source: openalex
     license: open
     topic: building_energy
@@ -3159,14 +3098,6 @@ sources:
     license: open
     topic: commissioning_fdd
     format: pdf
-  - id: oa-challenges-with-developing-and-deploying-ai-mode
-    title: Challenges with developing and deploying AI models and applications in industrial
-      systems
-    url: https://link.springer.com/content/pdf/10.1007/s44163-024-00151-2.pdf
-    source: openalex
-    license: cc-by
-    topic: commissioning_fdd
-    format: pdf
   - id: oa-opportunistic-occupancy-count-estimation-using-s
     title: 'Opportunistic occupancy-count estimation using sensor fusion: A case study'
     url: https://nrc-publications.canada.ca/eng/view/accepted/?id=8e77d138-bc74-4c71-bc41-c81df25cbfb6
@@ -3186,20 +3117,6 @@ sources:
     title: A labeled dataset for building HVAC systems operating in faulted and fault-free
       states
     url: https://escholarship.org/content/qt07q164zx/qt07q164zx.pdf
-    source: openalex
-    license: cc-by
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-advanced-monitoring-of-machining-operations
-    title: Advanced monitoring of machining operations
-    url: https://escholarship.org/content/qt4h56k1ch/qt4h56k1ch.pdf?t=lfa55o
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-ai-agents-vs-agentic-ai-a-conceptual-taxonomy-
-    title: 'AI Agents vs. Agentic AI: A Conceptual taxonomy, applications and challenges'
-    url: https://arxiv.org/pdf/2505.10468
     source: openalex
     license: cc-by
     topic: commissioning_fdd
@@ -3251,13 +3168,6 @@ sources:
     license: open
     topic: commissioning_fdd
     format: pdf
-  - id: ope-deep-learning-algorithms-for-bearing-fault-dia
-    title: Deep Learning Algorithms for Bearing Fault Diagnostics—A Comprehensive Review
-    url: https://arxiv.org/pdf/1901.08247
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
   - id: ope-design-of-machine-learning-models-with-domain-
     title: Design of machine learning models with domain experts for automated sensor
       selection for energy fault detection
@@ -3277,14 +3187,6 @@ sources:
     title: Effects of multiple simultaneous faults on characteristic fault detection
       features of a heat pump in cooling mode
     url: https://www.osti.gov/servlets/purl/1977079
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-efficient-multi-scale-3d-cnn-with-fully-connec
-    title: Efficient multi-scale 3D CNN with fully connected CRF for accurate brain
-      lesion segmentation
-    url: https://arxiv.org/pdf/1603.05959
     source: openalex
     license: open
     topic: commissioning_fdd
@@ -3312,77 +3214,10 @@ sources:
     license: public-domain
     topic: commissioning_fdd
     format: pdf
-  - id: ope-fostering-implementation-of-health-services-re
-    title: 'Fostering implementation of health services research findings into practice:
-      a consolidated framework for advancing implementation science'
-    url: https://implementationscience.biomedcentral.com/counter/pdf/10.1186/1748-5908-4-50
-    source: openalex
-    license: cc-by
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-global-regional-and-national-burden-of-diabete
-    title: 'Global, regional, and national burden of diabetes from 1990 to 2021, with
-      projections of prevalence to 2050: a systematic analysis for the Global Burd'
-    url: https://escholarship.org/content/qt7zg7w704/qt7zg7w704.pdf
-    source: openalex
-    license: cc-by
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-i-colloquium-i-topological-band-theory
-    title: '<i>Colloquium</i>: Topological band theory'
-    url: https://arxiv.org/pdf/1603.03576
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-i-phenix-i-a-comprehensive-python-based-system
-    title: '<i>PHENIX</i>: a comprehensive Python-based system for macromolecular structure
-      solution'
-    url: https://www.osti.gov/servlets/purl/1625666
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-i-planck-i-2013-results-i-overview-of-products
-    title: <i>Planck</i>2013 results. I. Overview of products and scientific results
-    url: http://arxiv.org/pdf/1303.5062v2.pdf
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
   - id: ope-impacts-of-simultaneous-operating-faults-on-co
     title: Impacts of simultaneous operating faults on cooling performance of a high
       efficiency residential heat pump
     url: https://www.osti.gov/servlets/purl/2432619
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-joint-optimization-of-radio-and-computational-
-    title: Joint Optimization of Radio and Computational Resources for Multicell Mobile-Edge
-      Computing
-    url: https://arxiv.org/pdf/1412.8416
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-lofar-the-low-frequency-array
-    title: 'LOFAR: The LOw-Frequency ARray'
-    url: https://arxiv.org/pdf/1305.3550
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-lorentz-violating-extension-of-the-standard-mo
-    title: Lorentz-violating extension of the standard model
-    url: https://arxiv.org/pdf/hep-ph/9809521
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-madgraph-5-going-beyond
-    title: 'MadGraph 5: going beyond'
-    url: https://arxiv.org/pdf/1106.0522
     source: openalex
     license: open
     topic: commissioning_fdd
@@ -3398,21 +3233,6 @@ sources:
     title: Multiple simultaneous faults’ impacts on air-conditioner behavior and performance
       of a charge diagnostic method
     url: https://www.osti.gov/servlets/purl/2418653
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-the-supernova-legacy-survey-measurement-of-ome
-    title: 'The Supernova Legacy Survey: measurement of $\Omega_{\mathsf{M}}$, $\Omega_\mathsf{\Lambda}$
-      and<i>w</i>from the first year data set'
-    url: https://arxiv.org/pdf/astro-ph/0510447
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-xgboost
-    title: XGBoost
-    url: https://arxiv.org/pdf/1603.02754
     source: openalex
     license: open
     topic: commissioning_fdd
@@ -3950,13 +3770,6 @@ sources:
     url: https://arxiv.org/pdf/2504.09083
     source: arxiv
     license: open
-    topic: construction
-    format: pdf
-  - id: ope-biodiversity-loss-threatens-human-well-being
-    title: Biodiversity Loss Threatens Human Well-Being
-    url: https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.0040277&type=printable
-    source: openalex
-    license: cc-by
     topic: construction
     format: pdf
   - id: arx-a-3d-human-body-blockage-model-for-outdoor-mil
@@ -5320,13 +5133,6 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
-  - id: oa-monitoring-of-the-daily-living-activities-in-sma
-    title: Monitoring of the daily living activities in smart home care
-    url: https://hcis-journal.springeropen.com/track/pdf/10.1186/s13673-017-0113-6
-    source: openalex
-    license: cc-by
-    topic: controls_bas
-    format: pdf
   - id: oa-recent-developments-of-the-modelica-buildings-li
     title: Recent Developments of the Modelica "Buildings" Library for Building Energy
       and Control Systems
@@ -5361,13 +5167,6 @@ sources:
     title: A portable application framework for energy management and information systems
       (EMIS) solutions using Brick semantic schema
     url: https://escholarship.org/content/qt25h62482/qt25h62482.pdf
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: ope-a-variational-eigenvalue-solver-on-a-photonic-
-    title: A variational eigenvalue solver on a photonic quantum processor
-    url: https://arxiv.org/pdf/1304.3061
     source: openalex
     license: open
     topic: controls_bas
@@ -5437,14 +5236,6 @@ sources:
     title: 'Digital and Interoperable: The future of building automation is on the horizon.
       What''s in it for me?'
     url: https://escholarship.org/content/qt191333wd/qt191333wd.pdf
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: ope-efficient-and-stable-emission-of-warm-white-li
-    title: Efficient and stable emission of warm-white light from lead-free halide double
-      perovskites
-    url: https://www.osti.gov/servlets/purl/1543773
     source: openalex
     license: open
     topic: controls_bas
@@ -5541,22 +5332,6 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
-  - id: ope-modules-for-experiments-in-stellar-astro-2
-    title: 'Modules for Experiments in Stellar Astrophysics (MESA): Pulsating Variable
-      Stars, Rotation, Convective Boundaries, and Energy Conservation'
-    url: https://arxiv.org/pdf/1903.01426
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: ope-modules-for-experiments-in-stellar-astrophysic
-    title: 'MODULES FOR EXPERIMENTS IN STELLAR ASTROPHYSICS (MESA): BINARIES, PULSATIONS,
-      AND EXPLOSIONS'
-    url: https://arxiv.org/pdf/1506.03146
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
   - id: ope-non-destructive-testing-and-evaluation-of-comp
     title: 'Non-destructive testing and evaluation of composite materials/structures:
       A state-of-the-art review'
@@ -5576,14 +5351,6 @@ sources:
     title: 'PANDEMIC: Occupancy driven predictive ventilation control to minimize energy
       consumption and infection risk'
     url: https://www.osti.gov/servlets/purl/2422361
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: ope-physics-beyond-colliders-at-cern-beyond-the-st
-    title: 'Physics beyond colliders at CERN: beyond the Standard Model working group
-      report'
-    url: https://arxiv.org/pdf/1901.09966
     source: openalex
     license: open
     topic: controls_bas
@@ -5616,13 +5383,6 @@ sources:
     url: https://energsustainsoc.biomedcentral.com/track/pdf/10.1186/s13705-019-0232-1
     source: openalex
     license: cc-by
-    topic: controls_bas
-    format: pdf
-  - id: ope-sensing-computing-and-communications-for-energ
-    title: 'Sensing, Computing, and Communications for Energy Harvesting IoTs: A Survey'
-    url: https://arxiv.org/pdf/1905.03949
-    source: openalex
-    license: open
     topic: controls_bas
     format: pdf
   - id: ope-ten-questions-concerning-occupant-behavior-in-
@@ -5662,13 +5422,6 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
-  - id: ope-the-james-webb-space-telescope
-    title: The James Webb Space Telescope
-    url: https://arxiv.org/pdf/astro-ph/0606175
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
   - id: ope-the-uk-dale-dataset-domestic-appliance-level-e
     title: The UK-DALE dataset, domestic appliance-level electricity demand and whole-house
       demand from five UK homes
@@ -5681,20 +5434,6 @@ sources:
     title: 'Transforming Energy Networks via Peer-to-Peer Energy Trading: The Potential
       of Game-Theoretic Approaches'
     url: https://arxiv.org/pdf/1804.00962
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: ope-transiting-exoplanet-survey-satellite
-    title: Transiting Exoplanet Survey Satellite
-    url: https://arxiv.org/pdf/1406.0151
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: ope-trap-controlled-mechanoluminescent-materials
-    title: Trap-controlled mechanoluminescent materials
-    url: https://escholarship.org/content/qt7x21z1gr/qt7x21z1gr.pdf?t=ptp6hu
     source: openalex
     license: open
     topic: controls_bas
@@ -7887,50 +7626,6 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
-  - id: ope-ai-based-drone-assisted-human-rescue-in-disast
-    title: 'AI-Based Drone Assisted Human Rescue in Disaster Environments: Challenges
-      and Opportunities'
-    url: https://arxiv.org/pdf/2406.15875
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-an-improved-prediction-of-residual-stresses-an
-    title: An improved prediction of residual stresses and distortion in additive manufacturing
-    url: https://www.osti.gov/servlets/purl/1533667
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-an-overview-of-enhanced-massive-mimo-with-arra
-    title: An Overview of Enhanced Massive MIMO With Array Signal Processing Techniques
-    url: https://arxiv.org/pdf/1907.09944
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-arc-a-compact-high-field-fusion-nuclear-scienc
-    title: 'ARC: A compact, high-field, fusion nuclear science facility and demonstration
-      power plant with demountable magnets'
-    url: https://arxiv.org/pdf/1409.3540
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-artificial-brownian-motors-controlling-transpo
-    title: 'Artificial Brownian motors: Controlling transport on the nanoscale'
-    url: https://arxiv.org/pdf/0807.1283
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-cavity-optomechanics
-    title: Cavity optomechanics
-    url: https://arxiv.org/pdf/1303.0733
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: ope-combined-photovoltaic-and-thermal-hybrid-colle
     title: Combined photovoltaic and thermal hybrid collector systems
     url: https://www.osti.gov/servlets/purl/6352146
@@ -7942,28 +7637,6 @@ sources:
     title: Comparative study of the cooling energy performance of variable refrigerant
       flow systems and variable air volume systems in office buildings
     url: https://www.osti.gov/servlets/purl/1532210
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-contactless-steam-generation-and-superheating-
-    title: Contactless steam generation and superheating under one sun illumination
-    url: https://www.osti.gov/servlets/purl/1566606
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-cp2k-an-electronic-structure-and-molecular-dyn
-    title: 'CP2K: An electronic structure and molecular dynamics software package -
-      Quickstep: Efficient and accurate electronic structure calculations'
-    url: https://arxiv.org/pdf/2003.03868
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-data-driven-prediction-of-battery-cycle-life-b
-    title: Data-driven prediction of battery cycle life before capacity degradation
-    url: https://www.osti.gov/servlets/purl/1526566
     source: openalex
     license: open
     topic: equipment_systems
@@ -7987,13 +7660,6 @@ sources:
     title: Energy, cost, and CO 2 emission comparison between radiant wall panel\n systems
       and radiator systems
     url: https://arxiv.org/pdf/1212.5249
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-energy-dissipation-and-transport-in-nanoscale-
-    title: Energy dissipation and transport in nanoscale devices
-    url: https://arxiv.org/pdf/1003.4058
     source: openalex
     license: open
     topic: equipment_systems
@@ -8026,39 +7692,9 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
-  - id: ope-global-observing-needs-in-the-deep-ocean
-    title: Global Observing Needs in the Deep Ocean
-    url: https://www.frontiersin.org/articles/10.3389/fmars.2019.00241/pdf
-    source: openalex
-    license: cc-by
-    topic: equipment_systems
-    format: pdf
   - id: ope-humidity-s-impact-on-greenhouse-gas-emissions-
     title: Humidity’s impact on greenhouse gas emissions from air conditioning
     url: https://www.osti.gov/servlets/purl/1855786
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-hybrid-precoding-for-multiuser-millimeter-wave
-    title: 'Hybrid Precoding for Multiuser Millimeter Wave Massive MIMO Systems: A Deep
-      Learning Approach'
-    url: https://arxiv.org/pdf/1911.04239
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-influence-of-bubbles-on-the-energy-conversion-
-    title: Influence of Bubbles on the Energy Conversion Efficiency of Electrochemical
-      Reactors
-    url: https://arxiv.org/pdf/2002.08167
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-integrated-photonics-on-thin-film-lithium-niob
-    title: Integrated photonics on thin-film lithium niobate
-    url: https://arxiv.org/pdf/2102.11956
     source: openalex
     license: open
     topic: equipment_systems
@@ -8071,33 +7707,11 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
-  - id: ope-laser-powder-bed-fusion-additive-manufacturing
-    title: 'Laser powder-bed fusion additive manufacturing: Physics of complex melt
-      flow and formation mechanisms of pores, spatter, and denudation zones'
-    url: https://arxiv.org/pdf/1512.02593
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-micropower-generation-using-combustion-issues-
-    title: 'Micropower generation using combustion: Issues and approaches'
-    url: https://escholarship.org/content/qt1q2284dj/qt1q2284dj.pdf?t=lnoson
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: ope-optical-properties-of-soda-lime-silica-glasses
     title: Optical properties of soda lime silica glasses
     url: https://escholarship.org/content/qt8vm0x7jd/qt8vm0x7jd.pdf?t=p0wsns
     source: openalex
     license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-process-advantages-of-direct-co2-to-methanol-s
-    title: Process Advantages of Direct CO2 to Methanol Synthesis
-    url: https://www.frontiersin.org/articles/10.3389/fchem.2018.00446/pdf
-    source: openalex
-    license: cc-by
     topic: equipment_systems
     format: pdf
   - id: ope-quantifying-the-benefits-of-a-building-retrofi
@@ -8108,46 +7722,9 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
-  - id: ope-quantum-enhanced-absorption-refrigerators
-    title: Quantum-enhanced absorption refrigerators
-    url: https://arxiv.org/pdf/1308.4174
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: ope-reference-correlation-for-the-viscosity-of-car
     title: Reference Correlation for the Viscosity of Carbon Dioxide
     url: https://www.osti.gov/servlets/purl/1463125
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-roadmap-on-structured-light
-    title: Roadmap on structured light
-    url: https://arxiv.org/pdf/1612.06474
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-scuba-2-the-10-000-pixel-bolometer-camera-on-t
-    title: 'SCUBA-2: the 10 000 pixel bolometer camera on the James Clerk Maxwell Telescope'
-    url: https://arxiv.org/pdf/1301.3650
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-tailored-interfaces-of-unencapsulated-perovski
-    title: Tailored interfaces of unencapsulated perovskite solar cells for &gt;1,000
-      hour operational stability
-    url: https://www.osti.gov/servlets/purl/1419410
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-technical-and-economic-analysis-of-solvent-bas
-    title: Technical and economic analysis of solvent-based lithium-ion electrode drying
-      with water and NMP
-    url: https://www.osti.gov/servlets/purl/1394420
     source: openalex
     license: open
     topic: equipment_systems
@@ -8168,53 +7745,9 @@ sources:
     license: cc-by
     topic: equipment_systems
     format: pdf
-  - id: ope-the-2017-terahertz-science-and-technology-road
-    title: The 2017 terahertz science and technology roadmap
-    url: https://www.osti.gov/servlets/purl/1347553
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-the-eagle-project-simulating-the-evolution-and
-    title: 'The EAGLE project: simulating the evolution and assembly of galaxies and
-      their environments'
-    url: https://arxiv.org/pdf/1407.7040
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-the-flow-physics-of-covid-19
-    title: The flow physics of COVID-19
-    url: https://arxiv.org/pdf/2004.09354
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-the-icecube-neutrino-observatory-instrumentati
-    title: 'The IceCube Neutrino Observatory: instrumentation and online systems'
-    url: https://arxiv.org/pdf/1612.05093
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-the-murchison-widefield-array-the-square-kilom
-    title: 'The Murchison Widefield Array: The Square Kilometre Array Precursor at Low
-      Radio Frequencies'
-    url: https://arxiv.org/pdf/1206.6945
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: ope-the-path-towards-sustainable-energy
     title: The path towards sustainable energy
     url: https://www.osti.gov/servlets/purl/1361156
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-the-sudbury-neutrino-observatory
-    title: The Sudbury Neutrino Observatory
-    url: https://arxiv.org/pdf/nucl-ex/9910016
     source: openalex
     license: open
     topic: equipment_systems
@@ -8223,13 +7756,6 @@ sources:
     title: 'Thermal comfort in buildings using radiant vs. all-air systems: A critical
       literature review'
     url: https://escholarship.org/content/qt1vb3d1j8/qt1vb3d1j8.pdf
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-topological-photonics
-    title: Topological photonics
-    url: https://arxiv.org/pdf/1802.04173
     source: openalex
     license: open
     topic: equipment_systems
@@ -10138,24 +9664,10 @@ sources:
     license: public-domain
     topic: standards_protocols
     format: pdf
-  - id: ope-abinit-overview-and-focus-on-selected-capabili
-    title: 'ABINIT: Overview and focus on selected capabilities'
-    url: https://www.osti.gov/servlets/purl/1802853
-    source: openalex
-    license: open
-    topic: standards_protocols
-    format: pdf
   - id: ope-adopting-occupancy-based-hvac-controls-in-comm
     title: 'Adopting occupancy-based HVAC controls in commercial building energy codes:
       Analysis of cost-effectiveness and decarbonization potential'
     url: https://www.osti.gov/servlets/purl/2201287
-    source: openalex
-    license: open
-    topic: standards_protocols
-    format: pdf
-  - id: ope-advanced-capabilities-for-materials-modelling-
-    title: Advanced capabilities for materials modelling with Quantum ESPRESSO
-    url: https://arxiv.org/pdf/1709.10010
     source: openalex
     license: open
     topic: standards_protocols
@@ -10172,13 +9684,6 @@ sources:
     title: An international review of occupant-related aspects of building energy codes
       and standards
     url: https://www.osti.gov/servlets/purl/1766498
-    source: openalex
-    license: open
-    topic: standards_protocols
-    format: pdf
-  - id: ope-an-investigation-of-the-therac-25-accidents
-    title: An investigation of the Therac-25 accidents
-    url: https://escholarship.org/content/qt5dr206s3/qt5dr206s3.pdf?t=qeyo8c
     source: openalex
     license: open
     topic: standards_protocols
@@ -10222,13 +9727,6 @@ sources:
     license: cc-by
     topic: standards_protocols
     format: pdf
-  - id: ope-digital-twin-enabling-technologies-challenges-
-    title: 'Digital Twin: Enabling Technologies, Challenges and Open Research'
-    url: https://arxiv.org/pdf/1911.01276
-    source: openalex
-    license: open
-    topic: standards_protocols
-    format: pdf
   - id: ope-digitalization-of-urban-multi-energy-systems-a
     title: Digitalization of urban multi-energy systems – Advances in digital twin applications
       across life-cycle phases
@@ -10269,30 +9767,9 @@ sources:
     license: open
     topic: standards_protocols
     format: pdf
-  - id: ope-event-based-vision-a-survey
-    title: 'Event-Based Vision: A Survey'
-    url: https://arxiv.org/pdf/1904.08405
-    source: openalex
-    license: open
-    topic: standards_protocols
-    format: pdf
-  - id: ope-fastjet-user-manual
-    title: FastJet user manual
-    url: https://arxiv.org/pdf/1111.6097
-    source: openalex
-    license: open
-    topic: standards_protocols
-    format: pdf
   - id: ope-formalizing-tag-based-metadata-with-the-brick-
     title: Formalizing Tag-Based Metadata With the Brick Ontology
     url: https://www.frontiersin.org/articles/10.3389/fbuil.2020.558034/pdf
-    source: openalex
-    license: cc-by
-    topic: standards_protocols
-    format: pdf
-  - id: ope-functional-brain-networks-develop-from-a-local
-    title: Functional Brain Networks Develop from a “Local to Distributed” Organization
-    url: https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1000381&type=printable
     source: openalex
     license: cc-by
     topic: standards_protocols
@@ -10303,27 +9780,6 @@ sources:
     url: https://www.osti.gov/servlets/purl/2540502
     source: openalex
     license: open
-    topic: standards_protocols
-    format: pdf
-  - id: ope-gate-a-simulation-toolkit-for-pet-and-spect
-    title: 'GATE: a simulation toolkit for PET and SPECT'
-    url: https://arxiv.org/pdf/physics/0408109
-    source: openalex
-    license: open
-    topic: standards_protocols
-    format: pdf
-  - id: ope-generative-ai
-    title: Generative AI
-    url: https://arxiv.org/pdf/2309.07930
-    source: openalex
-    license: open
-    topic: standards_protocols
-    format: pdf
-  - id: ope-globally-consistent-quantitative-observations-
-    title: Globally Consistent Quantitative Observations of Planktonic Ecosystems
-    url: https://www.frontiersin.org/articles/10.3389/fmars.2019.00196/pdf
-    source: openalex
-    license: cc-by
     topic: standards_protocols
     format: pdf
   - id: ope-insulation-materials-for-commercial-buildings-
@@ -10350,13 +9806,6 @@ sources:
     license: open
     topic: standards_protocols
     format: pdf
-  - id: ope-meg-and-eeg-data-analysis-with-mne-python
-    title: MEG and EEG data analysis with MNE-Python
-    url: https://www.frontiersin.org/articles/10.3389/fnins.2013.00267/pdf
-    source: openalex
-    license: cc-by
-    topic: standards_protocols
-    format: pdf
   - id: ope-model-predictive-control-for-active-insulation
     title: Model predictive control for active insulation in building envelopes
     url: https://www.osti.gov/servlets/purl/1869113
@@ -10376,21 +9825,6 @@ sources:
     title: 'Ontologies at Work: Analyzing Information Requirements for Model Predictive
       Control in Buildings'
     url: https://escholarship.org/content/qt63f4d6b5/qt63f4d6b5.pdf
-    source: openalex
-    license: open
-    topic: standards_protocols
-    format: pdf
-  - id: ope-open-babel-an-open-chemical-toolbox
-    title: 'Open Babel: An open chemical toolbox'
-    url: https://jcheminf.biomedcentral.com/counter/pdf/10.1186/1758-2946-3-33
-    source: openalex
-    license: cc-by
-    topic: standards_protocols
-    format: pdf
-  - id: ope-overview-of-the-coupled-model-intercomparison-
-    title: Overview of the Coupled Model Intercomparison Project Phase 6 (CMIP6) experimental
-      design and organization
-    url: https://www.osti.gov/servlets/purl/1408987
     source: openalex
     license: open
     topic: standards_protocols
@@ -10434,24 +9868,10 @@ sources:
     license: open
     topic: standards_protocols
     format: pdf
-  - id: ope-the-ethics-of-ai-ethics-an-evaluation-of-guide
-    title: 'The Ethics of AI Ethics: An Evaluation of Guidelines'
-    url: https://arxiv.org/pdf/1903.03425
-    source: openalex
-    license: open
-    topic: standards_protocols
-    format: pdf
   - id: ope-the-public-health-benefits-of-insulation-retro
     title: The public health benefits of insulation retrofits in existing housing in
       the United States
     url: https://ehjournal.biomedcentral.com/counter/pdf/10.1186/1476-069X-2-4
-    source: openalex
-    license: open
-    topic: standards_protocols
-    format: pdf
-  - id: ope-the-road-towards-6g-a-comprehensive-survey
-    title: 'The Road Towards 6G: A Comprehensive Survey'
-    url: https://arxiv.org/pdf/2102.01420
     source: openalex
     license: open
     topic: standards_protocols
@@ -11688,21 +11108,6 @@ sources:
     license: open
     topic: structures_civil
     format: pdf
-  - id: ope-a-rapid-advice-guideline-for-the-diagnosis-and
-    title: A rapid advice guideline for the diagnosis and treatment of 2019 novel coronavirus
-      (2019-nCoV) infected pneumonia (standard version)
-    url: https://mmrjournal.biomedcentral.com/counter/pdf/10.1186/s40779-020-0233-6
-    source: openalex
-    license: cc-by
-    topic: structures_civil
-    format: pdf
-  - id: ope-antiferromagnetic-spintronics
-    title: Antiferromagnetic spintronics
-    url: https://arxiv.org/pdf/1606.04284
-    source: openalex
-    license: open
-    topic: structures_civil
-    format: pdf
   - id: ope-discontinuous-micro-fibers-as-intrinsic-reinfo
     title: Discontinuous micro-fibers as intrinsic reinforcement for ductile Engineered
       Cementitious Composites (ECC)
@@ -11719,45 +11124,9 @@ sources:
     license: cc-by
     topic: structures_civil
     format: pdf
-  - id: ope-improvements-to-the-scp-apbs-scp-biomolecular-
-    title: Improvements to the <scp>APBS</scp> biomolecular solvation software suite
-    url: https://arxiv.org/pdf/1707.00027
-    source: openalex
-    license: open
-    topic: structures_civil
-    format: pdf
   - id: ope-land-subsidence-in-the-united-states
     title: Land subsidence in the United States
     url: https://pubs.usgs.gov/circ/1999/1182/report.pdf
-    source: openalex
-    license: open
-    topic: structures_civil
-    format: pdf
-  - id: ope-least-angle-regression
-    title: Least angle regression
-    url: https://arxiv.org/pdf/math/0406456
-    source: openalex
-    license: open
-    topic: structures_civil
-    format: pdf
-  - id: ope-ligo-the-laser-interferometer-gravitational-wa
-    title: 'LIGO: the Laser Interferometer Gravitational-Wave Observatory'
-    url: https://arxiv.org/pdf/0711.3041
-    source: openalex
-    license: open
-    topic: structures_civil
-    format: pdf
-  - id: ope-serial-block-face-scanning-electron-microscopy
-    title: Serial Block-Face Scanning Electron Microscopy to Reconstruct Three-Dimensional
-      Tissue Nanostructure
-    url: https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.0020329&type=printable
-    source: openalex
-    license: cc-by
-    topic: structures_civil
-    format: pdf
-  - id: ope-the-emulation-theory-of-representation-motor-c
-    title: 'The emulation theory of representation: Motor control, imagery, and perception'
-    url: https://escholarship.org/content/qt15t2595z/qt15t2595z.pdf
     source: openalex
     license: open
     topic: structures_civil
@@ -11869,14 +11238,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: ope-global-incidence-prevalence-years-lived-with-d
-    title: Global incidence, prevalence, years lived with disability (YLDs), disability-adjusted
-      life-years (DALYs), and healthy life expectancy (HALE) for 371 d
-    url: https://escholarship.org/content/qt92c1r2fp/qt92c1r2fp.pdf
-    source: openalex
-    license: cc-by
-    topic: commissioning_fdd
-    format: pdf
   - id: arx-embodied-carbon-accounting-through-spatial-tem
     title: Embodied Carbon Accounting through Spatial-Temporal Embodied Carbon Models
     url: https://arxiv.org/pdf/2312.06364
@@ -11907,25 +11268,11 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: ope-blockchain-for-5g-and-beyond-networks-a-state-
-    title: 'Blockchain for 5G and beyond networks: A state of the art survey'
-    url: https://arxiv.org/pdf/1912.05062
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
   - id: arx-hydro-mechanical-model-for-slope-stability-ass
     title: 'Hydro-mechanical Model for Slope Stability Assessment: A polygonal stabilization-free
       discretization'
     url: https://arxiv.org/pdf/2607.04778
     source: arxiv
-    license: open
-    topic: structures_civil
-    format: pdf
-  - id: ope-convergence-of-edge-computing-and-deep-learnin
-    title: 'Convergence of Edge Computing and Deep Learning: A Comprehensive Survey'
-    url: https://arxiv.org/pdf/1907.08349
-    source: openalex
     license: open
     topic: structures_civil
     format: pdf
@@ -12003,13 +11350,6 @@ sources:
     license: cc-by
     topic: equipment_systems
     format: pdf
-  - id: ope-luminescent-metal-organic-frameworks
-    title: Luminescent metal–organic frameworks
-    url: https://www.osti.gov/servlets/purl/1675297
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: ope-response-to-burden-of-proof-a-comprehensive-re
     title: 'Response to ‘Burden of proof: A comprehensive review of the feasibility
       of 100% renewable-electricity systems’'
@@ -12030,13 +11370,6 @@ sources:
     title: A review of the corrective power of personal comfort systems in non-neutral
       ambient environments
     url: https://escholarship.org/content/qt4kv4f2mk/qt4kv4f2mk.pdf?t=nrh8in
-    source: openalex
-    license: open
-    topic: building_energy
-    format: pdf
-  - id: ope-a-survey-of-large-language-models
-    title: A Survey of Large Language Models
-    url: https://arxiv.org/pdf/2303.18223
     source: openalex
     license: open
     topic: building_energy
@@ -12064,13 +11397,6 @@ sources:
     license: cc-by
     topic: commissioning_fdd
     format: pdf
-  - id: ope-a-review-of-metasurfaces-physics-and-applicati
-    title: 'A review of metasurfaces: physics and applications'
-    url: https://arxiv.org/pdf/1605.07672
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: ope-a-global-review-of-the-state-of-the-evidence-o
     title: A global review of the state of the evidence of household air pollution's
       contribution to ambient fine particulate matter and their related health imp
@@ -12087,24 +11413,9 @@ sources:
     license: cc-by
     topic: building_energy
     format: pdf
-  - id: ope-combining-theory-and-experiment-in-electrocata
-    title: 'Combining theory and experiment in electrocatalysis: Insights into materials
-      design'
-    url: https://www.osti.gov/servlets/purl/1349286
-    source: openalex
-    license: open
-    topic: building_energy
-    format: pdf
   - id: ope-net-zero-emissions-energy-systems
     title: Net-zero emissions energy systems
     url: https://www.osti.gov/servlets/purl/1460617
-    source: openalex
-    license: open
-    topic: building_energy
-    format: pdf
-  - id: ope-ensemble-deep-learning-a-review
-    title: 'Ensemble deep learning: A review'
-    url: https://arxiv.org/pdf/2104.02395
     source: openalex
     license: open
     topic: building_energy
@@ -12115,21 +11426,6 @@ sources:
     source: openalex
     license: cc-by
     topic: building_energy
-    format: pdf
-  - id: ope-the-role-of-artificial-intelligence-in-achievi
-    title: The role of artificial intelligence in achieving the Sustainable Development
-      Goals
-    url: https://arxiv.org/pdf/1905.00501
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: ope-medical-image-analysis-using-deep-learning-alg
-    title: Medical image analysis using deep learning algorithms
-    url: https://www.frontiersin.org/articles/10.3389/fpubh.2023.1273253/pdf?isPublishedV2=False
-    source: openalex
-    license: cc-by
-    topic: commissioning_fdd
     format: pdf
   - id: ope-grand-challenges-in-the-science-of-wind-energy
     title: Grand challenges in the science of wind energy
@@ -12172,22 +11468,6 @@ sources:
     title: 'Biomineralization of calcium carbonates and their engineered applications:
       a review'
     url: https://www.frontiersin.org/articles/10.3389/fmicb.2013.00314/pdf
-    source: openalex
-    license: cc-by
-    topic: materials
-    format: pdf
-  - id: ope-short-chain-fatty-acids-scfas-mediated-gut-epi
-    title: Short Chain Fatty Acids (SCFAs)-Mediated Gut Epithelial and Immune Regulation
-      and Its Relevance for Inflammatory Bowel Diseases
-    url: https://www.frontiersin.org/articles/10.3389/fimmu.2019.00277/pdf
-    source: openalex
-    license: cc-by
-    topic: materials
-    format: pdf
-  - id: ope-brain-derived-neurotrophic-factor-a-key-molecu
-    title: 'Brain-Derived Neurotrophic Factor: A Key Molecule for Memory in the Healthy
-      and the Pathological Brain'
-    url: https://www.frontiersin.org/articles/10.3389/fncel.2019.00363/pdf
     source: openalex
     license: cc-by
     topic: materials
@@ -12298,14 +11578,6 @@ sources:
     license: open
     topic: structures_civil
     format: pdf
-  - id: ope-the-alice-tpc-a-large-3-dimensional-tracking-d
-    title: The ALICE TPC, a large 3-dimensional tracking device with fast readout for
-      ultra-high multiplicity events
-    url: https://arxiv.org/pdf/1001.1950
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
   - id: ope-a-review-of-assessment-methods-for-the-urban-e
     title: A review of assessment methods for the urban environment and its energy sustainability
       to guarantee climate adaptation of future cities
@@ -12313,22 +11585,6 @@ sources:
     source: openalex
     license: open
     topic: building_energy
-    format: pdf
-  - id: ope-all-one-needs-to-know-about-fog-computing-and-
-    title: 'All one needs to know about fog computing and related edge computing paradigms:
-      A complete survey'
-    url: https://arxiv.org/pdf/1808.05283
-    source: openalex
-    license: open
-    topic: structures_civil
-    format: pdf
-  - id: ope-formation-of-dense-partonic-matter-in-relativi
-    title: 'Formation of dense partonic matter in relativistic nucleus–nucleus collisions
-      at RHIC: Experimental evaluation by the PHENIX Collaboration'
-    url: https://arxiv.org/pdf/nucl-ex/0410003
-    source: openalex
-    license: open
-    topic: construction
     format: pdf
   - id: arx-development-of-fdd-on-an-ontology-for-vav-hvac
     title: 'Development of FDD-ON: an Ontology for VAV HVAC System Fault Detection and
@@ -12369,13 +11625,6 @@ sources:
     license: open
     topic: structures_civil
     format: pdf
-  - id: ope-magnetic-nanoparticles-in-nanomedicine-a-revie
-    title: 'Magnetic nanoparticles in nanomedicine: a review of recent advances'
-    url: https://arxiv.org/pdf/1811.01418
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: arx-safety-in-batches-understanding-and-mitigating
     title: Safety in Batches? Understanding and Mitigating Safety Failures in Batch
       Prompting
@@ -12392,35 +11641,6 @@ sources:
     license: open
     topic: architecture
     format: pdf
-  - id: ope-the-2-5-m-telescope-of-the-sloan-digital-sky-s
-    title: The 2.5 m Telescope of the Sloan Digital Sky Survey
-    url: https://arxiv.org/pdf/astro-ph/0602326
-    source: openalex
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: ope-maps-of-dust-infrared-emission-for-use-in-esti
-    title: Maps of Dust Infrared Emission for Use in Estimation of Reddening and Cosmic
-      Microwave Background Radiation Foregrounds
-    url: https://arxiv.org/pdf/astro-ph/9710327
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: ope-the-infrared-array-camera-irac-for-the-i-spitz
-    title: The Infrared Array Camera (IRAC) for the <i>Spitzer Space Telescope</i>
-    url: https://arxiv.org/pdf/astro-ph/0405616
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: ope-stochastic-thermodynamics-fluctuation-theorems
-    title: Stochastic thermodynamics, fluctuation theorems and molecular machines
-    url: https://arxiv.org/pdf/1205.4176
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
   - id: arx-survey-descent-a-multipoint-generalization-of-
     title: 'Survey Descent: A Multipoint Generalization of Gradient Descent for Nonsmooth
       Optimization'
@@ -12429,35 +11649,12 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
-  - id: ope-modules-for-experiments-in-stellar-astrophysic-2
-    title: MODULES FOR EXPERIMENTS IN STELLAR ASTROPHYSICS (MESA)
-    url: https://arxiv.org/pdf/1009.1622
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: ope-modules-for-experiments-in-stellar-astrophysic-3
-    title: 'MODULES FOR EXPERIMENTS IN STELLAR ASTROPHYSICS (MESA): PLANETS, OSCILLATIONS,
-      ROTATION, AND MASSIVE STARS'
-    url: https://arxiv.org/pdf/1301.0319
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
   - id: arx-co-design-optimization-for-data-center-cooling
     title: Co-Design Optimization for Data Center Cooling System via Digital Twin
     url: https://arxiv.org/pdf/2605.15516
     source: arxiv
     license: open
     topic: controls_bas
-    format: pdf
-  - id: ope-uk-biobank-an-open-access-resource-for-identif
-    title: 'UK Biobank: An Open Access Resource for Identifying the Causes of a Wide
-      Range of Complex Diseases of Middle and Old Age'
-    url: https://journals.plos.org/plosmedicine/article/file?id=10.1371/journal.pmed.1001779&type=printable
-    source: openalex
-    license: cc-by
-    topic: commissioning_fdd
     format: pdf
   - id: arx-benefits-of-shifting-passenger-traffic-from-ai
     title: 'Benefits of Shifting Passenger Traffic from Air to Rail: A Case Study of
@@ -12536,27 +11733,12 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: ope-phenix-a-comprehensive-python-based-system-for
-    title: 'PHENIX : a comprehensive Python-based system for macromolecular structure
-      solution'
-    url: https://escholarship.org/content/qt8jg141tk/qt8jg141tk.pdf
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
   - id: ope-systems-integration-for-global-sustainability
     title: Systems integration for global sustainability
     url: https://escholarship.org/content/qt27f002c7/qt27f002c7.pdf?t=nkzyib
     source: openalex
     license: open
     topic: building_energy
-    format: pdf
-  - id: ope-weyl-and-dirac-semimetals-in-three-dimensional
-    title: Weyl and Dirac semimetals in three-dimensional solids
-    url: https://arxiv.org/pdf/1705.01111
-    source: openalex
-    license: open
-    topic: structures_civil
     format: pdf
   - id: arx-a-metamorphic-artificial-age-score-decision-su
     title: A Metamorphic Artificial Age Score Decision-Support Prototype for Flight-Log-Based
@@ -12579,13 +11761,6 @@ sources:
     source: arxiv
     license: open
     topic: infrastructure
-    format: pdf
-  - id: ope-experimental-test-of-local-hidden-variable-the
-    title: Experimental Test of Local Hidden-Variable Theories
-    url: https://escholarship.org/content/qt2f18n5nk/qt2f18n5nk.pdf
-    source: openalex
-    license: open
-    topic: equipment_systems
     format: pdf
   - id: arx-identification-of-minimally-restrictive-assemb
     title: Identification of Minimally Restrictive Assembly Sequences using Supervisory
@@ -64292,13 +63467,6 @@ sources:
     license: open
     topic: infrastructure
     format: pdf
-  - id: ope-deep-learning-in-agriculture-a-survey
-    title: 'Deep learning in agriculture: A survey'
-    url: https://arxiv.org/pdf/1807.11809
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
   - id: ope-openbuildingcontrol-digitizing-the-control-del
     title: 'OpenBuildingControl: Digitizing the control delivery from building energy
       modeling to specification, implementation and formal verification'
@@ -64323,13 +63491,6 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
-  - id: ope-energy-aware-operation-of-hpc-systems-in-germa
-    title: Energy-aware operation of HPC systems in Germany
-    url: https://www.frontiersin.org/journals/high-performance-computing/articles/10.3389/fhpcp.2025.1520207/pdf
-    source: openalex
-    license: cc-by
-    topic: controls_bas
-    format: pdf
   - id: ope-energy-and-water-monitoring-for-a-large-social
     title: Energy and Water Monitoring for a Large Social Housing Intervention in Northern
       Italy
@@ -64348,50 +63509,6 @@ sources:
   - id: ope-how-people-use-thermostats-in-homes-a-review
     title: 'How people use thermostats in homes: A review'
     url: https://escholarship.org/content/qt9p95z5m6/qt9p95z5m6.pdf
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: ope-fractional-order-agc-for-distributed-energy-re
-    title: Fractional Order AGC for Distributed Energy Resources Using Robust Optimization
-    url: https://arxiv.org/pdf/1611.09755
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: ope-the-polarimetric-and-helioseismic-imager-on-so
-    title: The Polarimetric and Helioseismic Imager on Solar Orbiter
-    url: https://arxiv.org/pdf/1903.11061
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: ope-two-dimensional-perovskite-templates-for-durab
-    title: Two-dimensional perovskite templates for durable, efficient formamidinium
-      perovskite solar cells
-    url: https://escholarship.org/content/qt05d359b4/qt05d359b4.pdf
-    source: openalex
-    license: cc-by
-    topic: controls_bas
-    format: pdf
-  - id: ope-comet-phase-i-technical-design-report
-    title: COMET Phase-I technical design report
-    url: https://arxiv.org/pdf/1812.09018
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: ope-in-situ-process-monitoring-and-adaptive-qualit
-    title: 'In-situ process monitoring and adaptive quality enhancement in laser additive
-      manufacturing: A critical review'
-    url: https://arxiv.org/pdf/2404.13673
-    source: openalex
-    license: open
-    topic: controls_bas
-    format: pdf
-  - id: ope-cascaded-incremental-nonlinear-dynamic-inversi
-    title: Cascaded incremental nonlinear dynamic inversion for MAV disturbance rejection
-    url: https://arxiv.org/pdf/1701.07254
     source: openalex
     license: open
     topic: controls_bas
@@ -64419,94 +63536,12 @@ sources:
     license: open
     topic: commissioning_fdd
     format: pdf
-  - id: ope-the-internet-of-things-for-smart-manufacturing
-    title: 'The internet of things for smart manufacturing: A review'
-    url: https://arxiv.org/pdf/2607.16172
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-compact-ion-trap-quantum-computing-demonstrato
-    title: Compact Ion-Trap Quantum Computing Demonstrator
-    url: https://arxiv.org/pdf/2101.11390
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-nine-year-wilkinson-microwave-anisotropy-probe
-    title: 'NINE-YEAR WILKINSON MICROWAVE ANISOTROPY PROBE ( WMAP ) OBSERVATIONS: FINAL
-      MAPS AND RESULTS'
-    url: https://arxiv.org/pdf/1212.5225
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-tensor-decomposition-for-signal-processing-and
-    title: Tensor Decomposition for Signal Processing and Machine Learning
-    url: https://arxiv.org/pdf/1607.01668
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-the-prep-pipeline-standardized-preprocessing-f
-    title: 'The PREP pipeline: standardized preprocessing for large-scale EEG analysis'
-    url: https://www.frontiersin.org/articles/10.3389/fninf.2015.00016/pdf
-    source: openalex
-    license: cc-by
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-majorana-zero-modes-and-topological-quantum-co
-    title: Majorana zero modes and topological quantum computation
-    url: https://arxiv.org/pdf/1501.02813
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-opportunities-for-mesoscopics-in-thermometry-a
-    title: 'Opportunities for mesoscopics in thermometry and refrigeration: Physics
-      and applications'
-    url: https://arxiv.org/pdf/cond-mat/0508093
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-a-review-of-deep-learning-in-medical-imaging-i
-    title: 'A Review of Deep Learning in Medical Imaging: Imaging Traits, Technology
-      Trends, Case Studies With Progress Highlights, and Future Promises'
-    url: https://arxiv.org/pdf/2008.09104
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-the-photodetector-array-camera-and-spectromete
-    title: The Photodetector Array Camera and Spectrometer (PACS) on the HerschelSpace
-      Observatory
-    url: https://arxiv.org/pdf/1005.1487
-    source: openalex
-    license: open
-    topic: commissioning_fdd
-    format: pdf
-  - id: ope-interplay-between-exercise-and-gut-microbiome-
-    title: Interplay Between Exercise and Gut Microbiome in the Context of Human Health
-      and Performance
-    url: https://www.frontiersin.org/articles/10.3389/fnut.2021.637010/pdf
-    source: openalex
-    license: cc-by
-    topic: equipment_systems
-    format: pdf
   - id: ope-a-review-on-occurrence-and-spread-of-antibioti
     title: 'A Review on Occurrence and Spread of Antibiotic Resistance in Wastewaters
       and in Wastewater Treatment Plants: Mechanisms and Perspectives'
     url: https://www.frontiersin.org/articles/10.3389/fmicb.2021.717809/pdf
     source: openalex
     license: cc-by
-    topic: equipment_systems
-    format: pdf
-  - id: ope-the-sloan-digital-sky-survey-photometric-camer
-    title: The Sloan Digital Sky Survey Photometric Camera
-    url: https://arxiv.org/pdf/astro-ph/9809085
-    source: openalex
-    license: open
     topic: equipment_systems
     format: pdf
   - id: ope-building-schools-for-the-future-lessons-learne

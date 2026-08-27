@@ -107,6 +107,68 @@ def test_openalex_and_arxiv_receive_requested_page(monkeypatch):
     assert requests[1][1]["start"] == 80
 
 
+def test_openalex_relevance_and_license_gate(monkeypatch):
+    def location(url, license_name):
+        return {"pdf_url": url, "license": license_name}
+
+    def work(title, subfield, license_name="cc-by", *, locations=None):
+        best = location(f"https://arxiv.org/pdf/{len(title)}", license_name)
+        return {
+            "display_name": title,
+            "primary_topic": {
+                "subfield": {"id": f"https://openalex.org/subfields/{subfield}"}
+            },
+            "topics": [],
+            "best_oa_location": best,
+            "locations": locations or [],
+        }
+
+    results = [
+        work("Computational intelligence techniques for HVAC systems", "2215"),
+        # OpenAlex sometimes classifies building metadata work as computer vision; the title rescue
+        # protects explicit AEC material without admitting generic computer-science results.
+        work("Brick metadata schema for portable smart building applications", "1707", "other-oa"),
+        work("Gebäudeenergie und Lüftung im Bestand", "1707"),
+        work("A Review of Antibiotic Resistance in Wastewater Treatment Plants", "2404"),
+        work("The Polarimetric and Helioseismic Imager on Solar Orbiter", "3103"),
+        work("NINE-YEAR WMAP OBSERVATIONS", "3103"),
+        work("Standardized preprocessing for large-scale EEG analysis", "2805"),
+        work("The internet of things for smart manufacturing", "2209"),
+        work("Deep learning in medical imaging", "2707"),
+        work("Livestock thermal comfort during road transportation", "1103"),
+        work("Building energy optimization", "2215", "cc-by-nc-nd"),
+        work(
+            "Ventilation control in office buildings",
+            "2215",
+            "cc-by-nc",
+            locations=[location("https://escholarship.org/permissive.pdf", "cc-by")],
+        ),
+    ]
+
+    class Response:
+        def raise_for_status(self):
+            return None
+
+        def json(self):
+            return {"results": results}
+
+    monkeypatch.setattr(find_sources.requests, "get", lambda *_args, **_kwargs: Response())
+
+    got = find_sources.from_openalex("building controls", "controls_bas", 100)
+
+    assert [row["title"] for row in got] == [
+        "Computational intelligence techniques for HVAC systems",
+        "Brick metadata schema for portable smart building applications",
+        "Gebäudeenergie und Lüftung im Bestand",
+        "A Review of Antibiotic Resistance in Wastewater Treatment Plants",
+        "Ventilation control in office buildings",
+    ]
+    assert got[1]["license"] == "open"
+    assert got[1]["license_evidence"] == "OpenAlex OA location license: other-oa"
+    assert got[-1]["url"] == "https://escholarship.org/permissive.pdf"
+    assert got[-1]["license"] == "cc-by"
+
+
 def test_query_cursor_walks_queries_then_advances_page():
     queries = [
         ("one", "construction"),

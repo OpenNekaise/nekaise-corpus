@@ -163,15 +163,97 @@ WHITELIST = ("arxiv.org", ".gov", "escholarship.org", "ncbi.nlm.nih.gov", "europ
              "mdpi.com", "plos.org", "frontiersin.org", "biomedcentral.com")
 PERMISSIVE = {"cc-by", "cc-by-sa", "cc0", "public-domain"}
 
+# OpenAlex's `search` covers full text, so even a specific HVAC query can rank astronomy
+# instruments, particle detectors, and medical imaging papers highly because they discuss sensors,
+# cooling, or fault detection.  Keep the metadata gate deliberately narrow, then rescue works whose
+# titles carry an unambiguous built-environment anchor.  Subfield ids are OpenAlex's stable ASJC ids.
+OPENALEX_AEC_SUBFIELDS = frozenset({
+    "2205",  # Civil and Structural Engineering
+    "2213",  # Safety, Risk, Reliability and Quality
+    "2215",  # Building and Construction
+    "2216",  # Architecture
+    "2305",  # Environmental Engineering
+    "2311",  # Waste Management and Disposal
+    "2312",  # Water Science and Technology
+    "3305",  # Geography, Planning and Development
+})
+OPENALEX_TITLE_RELEVANCE = re.compile(
+    r"\b(?:"
+    r"built environment|buildings|smart buildings?|building schools?|"
+    r"building[- ](?:energy|automation|control|envelope|information|"
+    r"management|operation|performance|retrofit|simulation|stock|systems?)|"
+    r"hvac|air[- ]condition|ventilat|heat pump|chiller|boiler|thermostat|refrigerant|f-gases|"
+    r"(?:occupant|indoor|human) thermal comfort|thermal comfort (?:in|for) buildings|"
+    r"occupant[- ](?:centric|behavior|comfort|related)|indoor air|daylight|glazing|"
+    r"district heat|district cool|"
+    r"architectur|civil engineering|construction|contractor|scaffold|formwork|"
+    r"reinforced concrete|cementitious|cement hydrates?|masonry|structural steel|mass timber|"
+    r"pavement|asphalt|bridge (?:deck|inspection|load|design|bearing|girder)|"
+    r"geotechn|foundation|soil mechanics|slope stability|retaining wall|land subsidence|"
+    r"infrastructur|urban|housing|land use|zoning|traffic|highway|railway|"
+    r"transportation (?:infrastructur|planning|network|system|engineering|demand)|"
+    r"public transportation|urban transportation|"
+    r"water distribution|water treatment|wastewater|stormwater|sewer|drainage|"
+    r"fire protection|fire detection|egress|smoke control"
+    r")\b|"
+    r"gebäude|bauwesen|bâtiment|génie civil|edifici[oo]|construcci[oó]n|construção|"
+    r"建築|建筑|暖通|空調|空调|건축|공조|здани|строительств",
+    re.I,
+)
+
 
 def downloadable(url: str) -> bool:
     host = (urlparse(url).hostname or "").lower()
     return any(w in host for w in WHITELIST)
 
 
-def entry(title, url, source, license, topic):
+def entry(title, url, source, license, topic, **metadata):
     return {"id": f"{source[:3]}-{registry.slug(title)[:46]}", "title": (title or "").strip()[:150],
-            "url": url, "source": source, "license": license, "topic": topic, "format": "pdf"}
+            "url": url, "source": source, "license": license, "topic": topic, "format": "pdf",
+            **metadata}
+
+
+def _openalex_subfield_ids(work: dict) -> set[str]:
+    topics = [work.get("primary_topic"), *(work.get("topics") or [])]
+    return {
+        str(topic.get("subfield", {}).get("id", "")).rstrip("/").rsplit("/", 1)[-1]
+        for topic in topics
+        if topic and topic.get("subfield", {}).get("id")
+    }
+
+
+def openalex_relevant(work: dict, title: str) -> bool:
+    """Admit structured AEC topics or an unambiguous multilingual AEC title."""
+    return bool(_openalex_subfield_ids(work) & OPENALEX_AEC_SUBFIELDS) or bool(
+        OPENALEX_TITLE_RELEVANCE.search(title or "")
+    )
+
+
+def _restricted_oa_license(value: str) -> bool:
+    """Non-commercial/no-derivatives locations are not training-corpus candidates."""
+    return "-nc" in value or "-nd" in value
+
+
+def _openalex_location(work: dict) -> tuple[dict, str] | None:
+    """Choose a download-friendly OA location, preferring a known permissive license."""
+    locations = [work.get("best_oa_location"), *(work.get("locations") or [])]
+    candidates = []
+    seen = set()
+    for location in locations:
+        if not location or not location.get("pdf_url") or not downloadable(location["pdf_url"]):
+            continue
+        url = location["pdf_url"]
+        license_name = (location.get("license") or "").lower()
+        key = (url, license_name)
+        if key in seen:
+            continue
+        seen.add(key)
+        if _restricted_oa_license(license_name):
+            continue
+        candidates.append((location, license_name))
+    return next((item for item in candidates if item[1] in PERMISSIVE), None) or (
+        candidates[0] if candidates else None
+    )
 
 
 def from_openalex(term, topic, per, page=1):
@@ -182,15 +264,16 @@ def from_openalex(term, topic, per, page=1):
     r.raise_for_status()
     out = []
     for w in r.json().get("results", []):
-        locs = [w.get("best_oa_location")] + (w.get("locations") or [])
-        pick = next((l for l in locs if l and l.get("pdf_url") and downloadable(l["pdf_url"])), None)
-        if not pick:
-            continue
-        lic = (pick.get("license") or "").lower()
-        tag = lic if lic in PERMISSIVE else "open"
         title = w.get("title") or w.get("display_name")
-        if title:
-            out.append(entry(title, pick["pdf_url"], "openalex", tag, topic))
+        if not title or not openalex_relevant(w, title):
+            continue
+        selected = _openalex_location(w)
+        if not selected:
+            continue
+        pick, lic = selected
+        tag = lic if lic in PERMISSIVE else "open"
+        metadata = {"license_evidence": f"OpenAlex OA location license: {lic}"} if lic else {}
+        out.append(entry(title, pick["pdf_url"], "openalex", tag, topic, **metadata))
     return out
 
 
