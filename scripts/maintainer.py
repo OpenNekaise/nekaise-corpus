@@ -163,6 +163,25 @@ def recover_pending_round() -> str | None:
     return run_id
 
 
+def verify_recovered_corpus() -> None:
+    """Fail closed when restored tracked state disagrees with derived corpus files."""
+    result = subprocess.run(
+        [sys.executable, str(SCRIPTS / "clean_corpus.py"), "--check"],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        timeout=900,
+        check=False,
+    )
+    if result.returncode == 0:
+        return
+    diagnostics = (result.stdout + result.stderr).strip()
+    if len(diagnostics) > 4000:
+        diagnostics = diagnostics[-4000:]
+    detail = f": {diagnostics}" if diagnostics else ""
+    raise RuntimeError(f"post-recovery corpus check failed (exit {result.returncode}){detail}")
+
+
 def repo_snapshot(
     fetch_result: str,
     *,
@@ -277,6 +296,7 @@ def main() -> int:
     try:
         recovered = recover_pending_round()
         if recovered:
+            verify_recovered_corpus()
             print(f"Recovered interrupted corpus round {recovered} before agent triage.", flush=True)
     except Exception as exc:
         recovery_error = str(exc)

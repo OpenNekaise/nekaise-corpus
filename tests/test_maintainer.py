@@ -1,6 +1,8 @@
 import json
 import subprocess
+import sys
 from datetime import datetime, timedelta, timezone
+from types import SimpleNamespace
 
 import maintainer
 
@@ -75,3 +77,50 @@ def test_lock_owning_maintainer_recovers_one_pending_round(tmp_path, monkeypatch
     assert subprocess.run(
         ["git", "diff", "--cached", "--quiet"], cwd=tmp_path, check=False
     ).returncode == 0
+
+
+def test_post_recovery_corpus_check_uses_current_python(tmp_path, monkeypatch):
+    calls = []
+
+    def fake_run(command, **kwargs):
+        calls.append((command, kwargs))
+        return SimpleNamespace(returncode=0, stdout="OK\n", stderr="")
+
+    monkeypatch.setattr(maintainer, "ROOT", tmp_path)
+    monkeypatch.setattr(maintainer, "SCRIPTS", tmp_path / "scripts")
+    monkeypatch.setattr(maintainer.subprocess, "run", fake_run)
+
+    maintainer.verify_recovered_corpus()
+
+    assert calls == [
+        (
+            [sys.executable, str(tmp_path / "scripts" / "clean_corpus.py"), "--check"],
+            {
+                "cwd": tmp_path,
+                "text": True,
+                "capture_output": True,
+                "timeout": 900,
+                "check": False,
+            },
+        )
+    ]
+
+
+def test_post_recovery_corpus_check_reports_drift(monkeypatch):
+    monkeypatch.setattr(
+        maintainer.subprocess,
+        "run",
+        lambda *args, **kwargs: SimpleNamespace(
+            returncode=1,
+            stdout="DRIFT — 1 unprovenanced file\n",
+            stderr="",
+        ),
+    )
+
+    try:
+        maintainer.verify_recovered_corpus()
+    except RuntimeError as exc:
+        assert "post-recovery corpus check failed (exit 1)" in str(exc)
+        assert "1 unprovenanced file" in str(exc)
+    else:
+        raise AssertionError("post-recovery corpus drift was accepted")
