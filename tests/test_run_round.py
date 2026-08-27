@@ -18,14 +18,16 @@ def test_real_backend_config_covers_rotation_and_finders():
 
 def test_real_openalex_backend_uses_one_rotating_query_per_round():
     backends = run_round.load_backends()
-    state = rotation.load()
+    # The suite runs after discovery has advanced the live pointer.  Use an
+    # isolated nonzero pointer so this contract never depends on mutable state.
+    state = {"find_openalex": {"flag": "--query-cursor", "next": 7}}
 
     assert run_round.finder_command(
         "find_openalex", backends["find_openalex"], state, python="python"
     ) == [
         "python", str(run_round.SCRIPTS / "find_sources.py"),
         "--per", "100", "--backends", "openalex", "--query-count", "1",
-        "--query-cursor", "0", "--append",
+        "--query-cursor", "7", "--append",
     ]
 
 
