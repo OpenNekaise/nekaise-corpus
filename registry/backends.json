@@ -197,7 +197,7 @@
       "250"
     ],
     "enabled": false,
-    "reason": "paused 2026-08-21: broad full-text phrase search retained mostly non-AEC development-economics reports, and WDS project-cycle documents cannot all be labeled CC-BY; preserve offset 8000 until a calibrated multilingual title/type gate and license mapping are in place"
+    "reason": "paused 2026-08-21: broad full-text phrase search retained mostly non-AEC development-economics reports. A conservative multilingual title gate plus Publications & Research / Economic & Sector Work allowlist landed 2026-08-28, but per-document license mapping and sampled precision still require review; preserve offset 8000"
   },
   "find_jstage": {
     "script": "find_jstage.py",

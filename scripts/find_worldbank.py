@@ -15,9 +15,10 @@ License: Documents & Reports mixes formal publications with operational/project-
 including borrower-authored material.  Public disclosure is not a blanket CC-BY grant, so WDS
 results are tagged ``open`` unless a future per-document rights check proves a narrower license.
 
-Junk control: bulk operational paperwork (procurement plans, disbursement letters, agreements,
-audits) is skipped by docty/title before it ever hits the registry; the prune gate catches the
-rest.
+Junk control: only research/sector-work major document types with an explicit multilingual AEC
+title anchor are eligible.  Bulk operational paperwork (procurement plans, project documents,
+disbursement letters, agreements, audits) is skipped before it ever hits the registry; the prune
+gate catches the rest.
 
     python scripts/find_worldbank.py --q "building energy efficiency" --os 0 --pages 4   # propose
     python scripts/find_worldbank.py --os 200 --max 200 --append
@@ -37,12 +38,78 @@ import registry
 API = "https://search.worldbank.org/api/v3/wds"
 UA = {"User-Agent": "nekaise-corpus/find_worldbank"}
 
-# document types that are operational paperwork, not prose worth CPT tokens
+# Major document types centered on publications, research, and sector analysis. Borrower-authored
+# safeguards and other project-cycle paperwork live under Project Documents, so fail closed on
+# missing or unknown values. Some API values are semicolon-separated (for example
+# "Publications; Publications & Research").
+ALLOWED_MAJOR_TYPES = frozenset({"Publications & Research", "Economic & Sector Work"})
+
+# Document types that remain low-value operational/institutional furniture even when WDS places
+# them under an allowed major type.  The live API calls the president memo "Memorandum &
+# Recommendation of the President", not the older denylist's "memorandum of the president".
 JUNK_DOCTY = re.compile(
     r"procurement plan|disbursement|agreement|auditing document|audit report|agenda|"
     r"month(ly)? operational summary|statement of loans|notice|contract|invitation|"
-    r"letter|memorandum of the president|chairman summary|board summary", re.I)
-JUNK_TITLE = re.compile(r"procurement plan|disbursement|audit(ed)? report", re.I)
+    r"letter|memorandum\s*(?:&|and)\s*recommendation of the president|"
+    r"staff appraisal report|project information document|implementation status (?:and|&) "
+    r"results report|\bISR\b|environmental and social review summary|\bESRS\b|"
+    r"stakeholder engagement plan|announcement|newsletter|project completion report|"
+    r"chairman summary|board summary", re.I)
+JUNK_TITLE = re.compile(
+    r"procurement plan|disbursement|audit(ed)? report|board meeting calendar|"
+    r"memorandum\s*(?:&|and)\s*recommendation of the president", re.I)
+
+# WDS full-text search becomes very fuzzy at depth: generic country-economic reports can rank for
+# an AEC query because a phrase appears somewhere in the body.  Require title-level evidence that
+# is specific enough to survive this source's development-economics background.  Unlike the
+# English-only gov.uk finder, WDS is multilingual, so the anchors cover the same major language
+# families as the corpus quality gate.
+TITLE_RELEVANCE = re.compile(
+    r"\b(?:"
+    r"built environment|buildings?|construction(?: industry| sector| materials?| technology)?|"
+    r"architectur(?:e|al)|housing|dwellings?|slum upgrading|"
+    r"urban (?:planning|design|development|infrastructure|transport|mobility|water|sanitation|"
+    r"housing|regeneration)|cities? (?:planning|infrastructure|transport|water|sanitation|housing)|"
+    r"building energy|energy efficien(?:cy|t)|energy performance|retrofit|insulat|"
+    r"district heat|heat pumps?|heating|cooling|ventilat|air conditioning|hvac|"
+    r"roads?|highways?|bridges?|tunnels?|railways?|railroads?|mass transit|public transport|"
+    r"pavements?|ports? infrastructure|water supply|water infrastructure|water networks?|"
+    r"sanitation|sewerage|wastewater|drainage|stormwater|flood|irrigation|"
+    r"concrete|cement|masonry|timber construction|structural engineering|geotechnical|"
+    r"fire safety|building codes?|construction standards?|"
+    # French
+    r"bâtiments?|génie civil|\bBTP\b|travaux publics|secteur routier|logements?|urbanisme|"
+    r"infrastructures?|routes?|ponts?|"
+    r"assainissement|eau potable|béton|chauffage|isolation|efficacité énergétique|"
+    # Spanish / Portuguese / Italian
+    r"edificios?|edifícios?|construcción|construção|viviendas?|habitação|urbanización|urbanismo|"
+    r"infraestructuras?|infraestruturas?|carreteras?|rodovias?|puentes?|pontes?|saneamiento|"
+    r"saneamento|agua potable|abastecimento de água|hormigón|calefacción|aislamiento|"
+    r"eficiencia energética|efficienza energetica|edilizia|calcestruzzo|riscaldamento|"
+    # German / Dutch / Nordic
+    r"gebäude|bauwesen|baustoff|heizung|lüftung|dämmung|tragwerk|brandschutz|"
+    r"gebouw|bouwkunde|verwarming|byggnad|bygning|rakennus|uppvärmning|"
+    # Russian / Ukrainian
+    r"здания?|строительство|гражданское строительство|инфраструктура|дороги|мосты|"
+    r"водоснабжение|канализация|бетон|отопление|вентиляция|энергоэффективность"
+    r")\b|"
+    # CJK and Arabic scripts do not use Latin word boundaries.
+    r"建筑|建築|结构|構造|混凝土|暖通|空调|空調|通风|換気|節能|节能|断熱|桥梁|橋梁|隧道|"
+    r"施工|城市规划|都市計画|コンクリート|건축|구조|공조|난방|단열|콘크리트|"
+    r"المباني|البناء|العمارة|الهندسة المدنية|الخرسانة|كفاءة الطاقة|الطرق|الجسور|"
+    r"المياه|الصرف الصحي|التخطيط الحضري",
+    re.I,
+)
+
+
+def relevant(title: str, docty: str, majdocty: str) -> bool:
+    """Whether one WDS result has a research-like type and explicit AEC title evidence."""
+    major_types = {part.strip() for part in (majdocty or "").split(";") if part.strip()}
+    if not major_types.intersection(ALLOWED_MAJOR_TYPES):
+        return False
+    if JUNK_DOCTY.search(docty or "") or JUNK_TITLE.search(title or ""):
+        return False
+    return bool(TITLE_RELEVANCE.search(title or ""))
 
 # (title regex -> topic), first match wins; default building_energy.
 TOPIC_RULES = [
@@ -64,10 +131,10 @@ def classify(title: str) -> str:
 
 
 def fetch_page(query: str, rows: int, offset: int) -> tuple[int, list[dict]]:
-    """One API page -> (total, [{title, pdf_url, docty}, ...])."""
+    """One API page -> (total, filtered document metadata)."""
     r = requests.get(API, params={
         "format": "json", "qterm": query, "rows": rows, "os": offset,
-        "fl": "display_title,docdt,pdfurl,docty"}, headers=UA, timeout=30)
+        "fl": "display_title,docdt,pdfurl,docty,majdocty,lang"}, headers=UA, timeout=30)
     r.raise_for_status()
     js = r.json()
     docs = []
@@ -77,12 +144,14 @@ def fetch_page(query: str, rows: int, offset: int) -> tuple[int, list[dict]]:
         title = (d.get("display_title") or "").strip()
         pdf = (d.get("pdfurl") or "").strip()
         docty = (d.get("docty") or "").strip()
+        majdocty = (d.get("majdocty") or "").strip()
+        lang = (d.get("lang") or "").strip()
         if not title or not pdf:
             continue
-        if JUNK_DOCTY.search(docty) or JUNK_TITLE.search(title):
+        if not relevant(title, docty, majdocty):
             continue
         docs.append({"title": title, "pdf_url": pdf.replace("http://", "https://", 1),
-                     "docty": docty})
+                     "docty": docty, "majdocty": majdocty, "lang": lang})
     return int(js.get("total", 0)), docs
 
 
