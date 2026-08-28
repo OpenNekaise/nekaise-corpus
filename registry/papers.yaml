@@ -63911,3 +63911,19 @@ sources:
     topic: infrastructure
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-outdoor-indoor-air-pollution-in-urban-environm
+    title: 'Outdoor-indoor air pollution in urban environment: challenges and opportunity'
+    url: https://www.frontiersin.org/articles/10.3389/fenvs.2014.00069/pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-partial-and-whole-body-thermal-sensation-and-c
+    title: 'Partial- and whole-body thermal sensation and comfort— Part I: Uniform environmental
+      conditions'
+    url: https://escholarship.org/content/qt4n93j8d8/qt4n93j8d8.pdf?t=lnp115
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
