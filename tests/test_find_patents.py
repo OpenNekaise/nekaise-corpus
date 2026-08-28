@@ -191,7 +191,8 @@ def test_polysemous_off_domain_titles_are_skipped_before_append(monkeypatch):
     assert [entry["id"] for entry in appended] == ["pat-us103a"]
 
 
-def test_non_us_machine_translations_are_policy_blocked_before_fetch(monkeypatch, capsys):
+def test_unreviewed_jurisdictions_are_policy_blocked_before_fetch(monkeypatch, capsys):
+    """US and CN are approved; every other jurisdiction stays gated until rights-reviewed."""
     monkeypatch.setattr(
         find_patents,
         "fetch",
@@ -200,14 +201,40 @@ def test_non_us_machine_translations_are_policy_blocked_before_fetch(monkeypatch
     monkeypatch.setattr(
         sys,
         "argv",
-        ["find_patents.py", "--countries", "CN", "--bucket", "2022-W48"],
+        ["find_patents.py", "--countries", "EP", "--bucket", "2022-W48"],
     )
 
     with pytest.raises(SystemExit) as exc:
         find_patents.main()
 
     assert exc.value.code == 2
-    assert "policy-blocked patent source: CN" in capsys.readouterr().err
+    assert "policy-blocked patent source: EP" in capsys.readouterr().err
+
+
+def test_cn_rows_are_open_licensed_not_uspto_public_domain(tmp_path, monkeypatch, capsys):
+    """CN publications carry no USPTO statement — they must not claim public-domain/USPTO terms."""
+    _empty_registry(monkeypatch)
+    monkeypatch.setattr(
+        find_patents,
+        "fetch",
+        lambda _url: "<li>CN100333646C - Concrete floor heating structure :",
+    )
+    appended = []
+    monkeypatch.setattr(
+        find_patents.registry, "append_entries",
+        lambda entries, **kw: (appended.extend(entries), {"patents-cn-0.yaml": len(entries)})[1],
+    )
+    monkeypatch.setattr(
+        sys, "argv",
+        ["find_patents.py", "--countries", "CN", "--bucket", "2022-W48", "--append"],
+    )
+
+    find_patents.main()
+
+    assert [e["id"] for e in appended] == ["pat-cn100333646c"]
+    assert appended[0]["license"] == "open"
+    assert "license_url" not in appended[0]
+    assert "license_evidence" not in appended[0]
 
 
 def test_candidate_cap_requests_rotation_hold(tmp_path, monkeypatch, capsys):

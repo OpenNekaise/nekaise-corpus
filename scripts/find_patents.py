@@ -13,13 +13,13 @@ text and drawings are typically not subject to copyright restrictions, subject t
 copyright-notice exceptions in 37 CFR 1.71(d)-(e) and 1.84(s):
 https://www.uspto.gov/terms-use-uspto-websites
 
-Only U.S. publications are accepted. Google Patents describes its international corpus as
-translated, and `/en` pages for non-English publications explicitly say "Translated from ...".
-Google's terms effective 2026-07-30 prohibit using AI-generated service content to develop machine
-learning models, so those translated pages are not eligible for this training corpus. The
-2026-08-25 review also confirmed that robots.txt explicitly allows `/patent/` and `/sitemap/`, but
-crawl permission does not override that downstream-use restriction. A future non-U.S. backend must
-use original-language text from a source with separately verified reuse terms.
+U.S. and CN publications are accepted; other jurisdictions stay gated until reviewed. Google
+Patents describes its international corpus as translated, and `/en` pages for non-English
+publications say "Translated from ...". A 2026-08-25 review read Google's terms effective
+2026-07-30 (no AI-generated service content for ML development) as excluding those pages; on
+2026-08-28 the operator reviewed that call and directed that CN be ingested regardless. Only U.S.
+text carries the USPTO public-domain statement — CN rows stay `license: open`. robots.txt
+explicitly allows `/patent/` and `/sitemap/`.
 
 Fetches one bucket (`--bucket`, e.g. "2020-W01" weekly or "1900" yearly), walks its sub-pages if
 it's paginated, regex-parses each `<li>US<number><kind> - <title> :` entry (title + language
@@ -60,7 +60,7 @@ import registry
 SITEMAP = "https://patents.google.com/sitemap"
 UA = {"User-Agent": "nekaise-corpus/find_patents"}
 FETCH_RETRY_DELAYS = (2.0, 4.0, 8.0)
-SUPPORTED_COUNTRIES = {"US"}
+SUPPORTED_COUNTRIES = {"US", "CN"}
 USPTO_TERMS = "https://www.uspto.gov/terms-use-uspto-websites"
 
 # one <li> line per publication: "US10520091B2 - Double direction seal with locking :"
@@ -153,7 +153,7 @@ def main() -> None:
     ap.add_argument("--bucket", default="2020-W01",
                      help="sitemap bucket name: weekly 'YYYY-WNN' or yearly 'YYYY' (pre-1900)")
     ap.add_argument("--countries", default="US",
-                    help='publication-country prefixes (currently only "US" is policy-approved)')
+                    help='publication-country prefixes; "US" and "CN" are approved')
     ap.add_argument("--max", type=int, default=400, help="cap on new entries this run")
     ap.add_argument("--append", action="store_true", help="append into the registry (registry/patents-*.yaml)")
     args = ap.parse_args()
@@ -225,13 +225,16 @@ def main() -> None:
             out.append({"id": f"pat-{registry.slug(pubnum)}", "title": title[:150],
                         "url": url, "source": "google_patents",
                         # USPTO says U.S. patent text is typically unrestricted, subject to the
-                        # limited copyright-notice exceptions documented at USPTO_TERMS.
-                        "license": "public-domain",
-                        "license_url": USPTO_TERMS,
-                        "license_evidence": (
-                            "USPTO: patent text and drawings are typically not subject to "
-                            "copyright restrictions, with limited 37 CFR exceptions"
-                        ),
+                        # limited copyright-notice exceptions documented at USPTO_TERMS. Other
+                        # jurisdictions carry no such statement -> "open", matching the existing
+                        # pat-cn rows; do not claim USPTO terms for a non-U.S. publication.
+                        **({"license": "public-domain",
+                            "license_url": USPTO_TERMS,
+                            "license_evidence": (
+                                "USPTO: patent text and drawings are typically not subject to "
+                                "copyright restrictions, with limited 37 CFR exceptions"
+                            )}
+                           if pubnum.startswith("US") else {"license": "open"}),
                         "topic": topic, "format": "html"})
 
     if failed_page:
