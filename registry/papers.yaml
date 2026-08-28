@@ -63628,3 +63628,26 @@ sources:
     topic: equipment_systems
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-do-energy-efficiency-investments-deliver-at-th
+    title: Do Energy Efficiency Investments Deliver at the Right Time?
+    url: https://escholarship.org/content/qt8jn20088/qt8jn20088.pdf
+    source: openalex
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: ope-time-averaged-ventilation-for-optimized-contro
+    title: Time-averaged ventilation for optimized control of variable-air-volume systems
+    url: https://escholarship.org/content/qt5jq443p4/qt5jq443p4.pdf?t=ok8e6x
+    source: openalex
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: ope-analysis-of-human-building-interactions-in-off
+    title: 'Analysis of Human-Building Interactions in Office Environments: to What
+      Extent Energy Saving Boundaries can be Displaced?'
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2021.715478/pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
