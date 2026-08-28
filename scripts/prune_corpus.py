@@ -22,6 +22,7 @@ import sys
 import time
 from collections import Counter
 from pathlib import Path
+from urllib.parse import urlparse
 
 import blocklist
 import ops
@@ -29,6 +30,32 @@ import quality
 import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
+TRANSIENT_FETCH_STATUSES = frozenset({202, 429, 503})
+# MDPI's Akamai edge returns a host-wide 403 to both requests and curl from this operator's
+# network (site root and article PDFs, re-probed 2026-08-28).  That is not evidence that an
+# individual CC-BY article URL is dead.  Keep this narrow: other hosts can use 403 for a durable
+# access-policy decision and need their own reviewed classification.
+TRANSIENT_403_HOSTS = frozenset({"mdpi.com"})
+
+
+def _host_matches(url: str | None, domains: set[str] | frozenset[str]) -> bool:
+    host = (urlparse(url or "").hostname or "").lower()
+    return any(host == domain or host.endswith(f".{domain}") for domain in domains)
+
+
+def _blocklistable(row: dict, reason: str) -> bool:
+    """Return whether a prune verdict is durable enough for the URL blocklist."""
+    if reason != "failed":
+        return True
+    status = row.get("http_status")
+    if status in TRANSIENT_FETCH_STATUSES:
+        return False
+    if status == 403 and _host_matches(row.get("url"), TRANSIENT_403_HOSTS):
+        return False
+    err = (row.get("error") or "").lower()
+    if "certificate" in err or "ssl" in err:
+        return True  # cert mismatch = decommissioned/re-pointed host, permanently dead
+    return not any(k in err for k in ("timeout", "timed out", "connection", "too many requests"))
 
 
 def reviewed_title_drops(spec: str | None, manifest: list[dict]) -> dict[str, str]:
@@ -162,22 +189,12 @@ def main() -> None:
         return
 
     # Blocklist policy: quality-fails and HARD fetch failures (404/410, fake PDFs) never return.
-    # TRANSIENT walls (429/202/503, timeouts, connection errors) are NOT blocklisted — the entry
-    # leaves the registry but a later finder run may rediscover it once the wall lifts
+    # TRANSIENT walls (429/202/503, reviewed host-wide 403s, timeouts, connection errors) are NOT
+    # blocklisted — the entry leaves the registry but may be rediscovered once the wall lifts
     # (IBPSA's sgcaptcha and Wikimedia rate limits taught us this the hard way).
-    TRANSIENT = (202, 429, 503)
-    def _blocklistable(r) -> bool:
-        if drop.get(r["id"]) != "failed":
-            return True
-        if r.get("http_status") in TRANSIENT:
-            return False
-        err = (r.get("error") or "").lower()
-        if "certificate" in err or "ssl" in err:
-            return True  # cert mismatch = decommissioned/re-pointed host, permanently dead
-        return not any(k in err for k in ("timeout", "timed out", "connection", "too many requests"))
     block_urls = {
         blocklist.normalize(r.get("url")) for r in manifest
-        if r["id"] in drop and _blocklistable(r) and r.get("url")
+        if r["id"] in drop and _blocklistable(r, drop[r["id"]]) and r.get("url")
     }
     blocked = blocklist.add(block_urls)
     write_prune_ledger(manifest, drop, block_urls)

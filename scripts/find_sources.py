@@ -4,7 +4,7 @@
 Three keyless backends:
   - OpenAlex  : metered scholarly search; we scan ALL OA locations and keep a PDF on a
                 download-friendly host (publisher pages 403 bots, so we prefer repository / gov /
-                arXiv / PMC / MDPI copies). Anonymous access allows 100 search calls/day, so the
+                arXiv / PMC / publisher copies). Anonymous access allows 100 search calls/day, so the
                 automated backend advances one query/page cursor position per round.
   - OSTI      : US DOE / national-lab reports (public-domain, downloadable via /servlets/purl).
   - arXiv API : open preprints (always downloadable at arxiv.org/pdf).
@@ -161,6 +161,13 @@ QUERY_CURSOR_WIDTH = 105  # Changing this query universe requires a reviewed cur
 # hosts that reliably serve a direct PDF to a bot (publisher pages 403, so we whitelist).
 WHITELIST = ("arxiv.org", ".gov", "escholarship.org", "ncbi.nlm.nih.gov", "europepmc.org",
              "mdpi.com", "plos.org", "frontiersin.org", "biomedcentral.com")
+# A host can remain license-compatible while being temporarily unsuitable for reproducible bulk
+# fetches.  MDPI returns a host-wide 403 to both requests and curl from this operator's network
+# (re-probed 2026-08-28).  Pause selection before registry append so new CC-BY URLs are neither
+# wasted nor repeatedly pruned; existing blocklist decisions remain untouched for separate review.
+PAUSED_PDF_HOSTS = {
+    "mdpi.com": "host-wide HTTP 403; re-probe requests and curl before re-enabling",
+}
 PERMISSIVE = {"cc-by", "cc-by-sa", "cc0", "public-domain"}
 
 # OpenAlex's `search` covers full text, so even a specific HVAC query can rank astronomy
@@ -204,6 +211,8 @@ OPENALEX_TITLE_RELEVANCE = re.compile(
 
 def downloadable(url: str) -> bool:
     host = (urlparse(url).hostname or "").lower()
+    if any(host == domain or host.endswith(f".{domain}") for domain in PAUSED_PDF_HOSTS):
+        return False
     return any(w in host for w in WHITELIST)
 
 

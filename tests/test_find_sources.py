@@ -169,6 +169,22 @@ def test_openalex_relevance_and_license_gate(monkeypatch):
     assert got[-1]["license"] == "cc-by"
 
 
+def test_openalex_skips_paused_mdpi_host_for_fetchable_alternative():
+    work = {
+        "best_oa_location": {
+            "pdf_url": "https://www.mdpi.com/2075-5309/13/6/1388/pdf",
+            "license": "cc-by",
+        },
+        "locations": [{
+            "pdf_url": "https://escholarship.org/uc/item/abc123.pdf",
+            "license": "cc-by",
+        }],
+    }
+
+    assert not find_sources.downloadable(work["best_oa_location"]["pdf_url"])
+    assert find_sources._openalex_location(work) == (work["locations"][0], "cc-by")
+
+
 def test_query_cursor_walks_queries_then_advances_page():
     queries = [
         ("one", "construction"),

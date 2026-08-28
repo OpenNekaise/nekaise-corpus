@@ -51,3 +51,21 @@ def test_reviewed_title_drops_fail_closed_on_stale_or_curated_ids(tmp_path):
     reviewed.write_text("hand-curated\n")
     with pytest.raises(ValueError, match="hand-curated ids"):
         prune_corpus.reviewed_title_drops(str(reviewed), rows)
+
+
+@pytest.mark.parametrize(
+    ("row", "reason", "expected"),
+    [
+        ({"url": "https://www.mdpi.com/article.pdf", "http_status": 403}, "failed", False),
+        ({"url": "https://files.mdpi.com/article.pdf", "http_status": 403}, "failed", False),
+        ({"url": "https://example.org/forbidden.pdf", "http_status": 403}, "failed", True),
+        ({"url": "https://example.org/busy.pdf", "http_status": 429}, "failed", False),
+        ({"url": "https://example.org/slow.pdf", "error": "connection timed out"}, "failed", False),
+        ({"url": "https://example.org/old.pdf", "error": "SSL certificate mismatch"}, "failed", True),
+        ({"url": "https://www.mdpi.com/thin.pdf", "http_status": 403}, "thin", True),
+    ],
+)
+def test_blocklist_policy_distinguishes_mdpi_wall_from_durable_failures(
+    row, reason, expected,
+):
+    assert prune_corpus._blocklistable(row, reason) is expected
