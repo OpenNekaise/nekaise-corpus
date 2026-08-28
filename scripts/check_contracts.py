@@ -100,11 +100,14 @@ def main() -> int:
         errors.append(f"{script}: finder is missing from registry/backends.json")
 
     steps = [step for step, _, _ in run_round.PIPELINE]
-    required_order = [
-        "fetch", "prune", "clean", "check", "stats", "index", "lint", "contracts",
-    ]
-    if steps != required_order:
-        errors.append(f"pipeline order {steps!r}, expected {required_order!r}")
+    if steps != ["fetch", "prune", "clean", "stats"]:
+        errors.append(f"serial pipeline {steps!r}, expected ['fetch', 'prune', 'clean', 'stats']")
+    gates = [step for step, _, _ in run_round.VERIFY]
+    if sorted(gates) != ["check", "contracts", "index", "lint"] or set(gates) & set(steps):
+        errors.append(
+            f"verify gates {gates!r}, expected check/index/lint/contracts, disjoint from the "
+            "serial pipeline"
+        )
 
     for path, size in oversized_control_files():
         errors.append(

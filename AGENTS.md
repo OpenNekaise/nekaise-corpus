@@ -128,8 +128,11 @@ Run in a network-enabled shell (outside any sandbox). Each step has a skill that
 lock and fail-closes the entire required pipeline:
 
 ```
-discover → fetch → prune → clean → check → README stats → index → lint → contracts → tests → commit
+discover → fetch → prune → clean → README stats → [check ‖ index ‖ lint ‖ contracts ‖ tests] → commit
 ```
+
+The bracketed gates are read-only over the settled state, so they run concurrently: every one is
+awaited, output is replayed in declared order, and any failure fails the round.
 
 Cron and marathon call this same runner. A required step failure never commits, pushes, or advances
 rotation pointers. Finders run concurrently against one immutable registry view and stage isolated

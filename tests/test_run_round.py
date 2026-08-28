@@ -67,9 +67,45 @@ def test_finder_command_combines_fixed_args_pointer_and_append():
 
 
 def test_required_pipeline_is_fail_closed_and_complete():
-    assert [step for step, _, _ in run_round.PIPELINE] == [
-        "fetch", "prune", "clean", "check", "stats", "index", "lint", "contracts",
+    serial = [step for step, _, _ in run_round.PIPELINE]
+    gates = [step for step, _, _ in run_round.VERIFY]
+    assert serial == ["fetch", "prune", "clean", "stats"]
+    assert sorted(gates) == ["check", "contracts", "index", "lint"]
+    assert not set(serial) & set(gates)
+    # contracts checks the README counts that stats writes -> stats must be in the serial prefix
+    assert "stats" in serial and "contracts" in gates
+
+
+def test_run_verify_parallel_awaits_every_gate_and_aggregates_failures(monkeypatch, capsys):
+    import time as _time
+
+    seen = []
+
+    def fake_run(cmd, **kwargs):
+        step = cmd[-1]
+        seen.append(step)
+        _time.sleep(0.05 if step == "slow-ok" else 0)
+        rc = {"fail-a": 2, "fail-b": 3}.get(step, 0)
+        return SimpleNamespace(returncode=rc, stdout=f"out {step}\n", stderr="")
+
+    events = []
+    monkeypatch.setattr(run_round.subprocess, "run", fake_run)
+    monkeypatch.setattr(
+        run_round.ops, "run_event",
+        lambda run_id, event, **kw: events.append((event, kw.get("step"))),
+    )
+    gates = [
+        ("fail-a", ["x", "fail-a"]), ("slow-ok", ["x", "slow-ok"]),
+        ("fail-b", ["x", "fail-b"]), ("ok", ["x", "ok"]),
     ]
+
+    with pytest.raises(RuntimeError, match=r"fail-a \(exit 2\), fail-b \(exit 3\)"):
+        run_round.run_verify_parallel(gates, {}, "run-1")
+
+    assert sorted(seen) == sorted(step for step, _ in gates)  # nothing skipped after a failure
+    assert ("step_failed", "fail-a") in events and ("step_completed", "slow-ok") in events
+    out = capsys.readouterr().out  # replayed in declared order, not completion order
+    assert out.index("out fail-a") < out.index("out slow-ok") < out.index("out fail-b") < out.index("out ok")
 
 
 def test_run_command_raises_on_nonzero(monkeypatch):

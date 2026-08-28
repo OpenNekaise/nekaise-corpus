@@ -3,7 +3,10 @@
 
 This is the single control plane used by humans, cron, and marathon:
 
-    discover -> fetch -> prune -> clean -> check -> stats -> lint -> contracts -> tests -> commit
+    discover -> fetch -> prune -> clean -> stats -> [check | index | lint | contracts | tests] -> commit
+
+The bracketed gates are read-only over the settled round state, so they run concurrently: every
+one is awaited, their output is replayed in declared order, and any failure fails the round.
 
 The repository lock prevents concurrent operators. Every required command and finder is fail-closed:
 a failure records a run-ledger event, exits non-zero, and never commits or pushes. Backends marked
@@ -31,12 +34,18 @@ import rotation
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
 BACKENDS = ROOT / "registry" / "backends.json"
+# Serial prefix: each step mutates state the next one reads.
 PIPELINE = (
     ("fetch", "build_corpus.py", ()),
     ("prune", "prune_corpus.py", ("--apply",)),
     ("clean", "clean_corpus.py", ()),
-    ("check", "clean_corpus.py", ("--check",)),
     ("stats", "update_readme_stats.py", ()),
+)
+# Read-only gates over the settled state (index writes only workspace/corpus-index.sqlite3, under
+# its own named lock). They run concurrently via run_verify_parallel; contracts must follow stats
+# because it checks the README counts stats just wrote.
+VERIFY = (
+    ("check", "clean_corpus.py", ("--check",)),
     ("index", "corpus_index.py", ("status",)),
     ("lint", "lint_registry.py", ()),
     ("contracts", "check_contracts.py", ()),
@@ -95,6 +104,51 @@ def run_command(step: str, cmd: list[str], env: dict, run_id: str) -> None:
         )
         raise RuntimeError(f"{step} failed with exit {result.returncode}: {shown}")
     ops.run_event(run_id, "step_completed", step=step, elapsed_seconds=elapsed)
+
+
+def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: str) -> None:
+    """Run the read-only gates concurrently over the settled round state.
+
+    Same fail-closed contract as run_command, minus the serial wall time: every gate is awaited even
+    after another has failed, each records its own ledger events, output is replayed in declared
+    order (never interleaved), and the round fails if any gate did. Measured 2026-08-28: check 86 s
+    + index 57 s + lint 63 s + contracts 13 s + tests 78 s serially, vs the slowest one together.
+    """
+    if not gates:
+        return
+    shown = {step: shlex.join(cmd) for step, cmd in gates}
+    print("\n== verify (concurrent): " + " | ".join(step for step, _ in gates), flush=True)
+
+    def execute(step: str, cmd: list[str]) -> tuple[str, subprocess.CompletedProcess, float]:
+        ops.run_event(run_id, "step_started", step=step, command=shown[step])
+        started = time.monotonic()
+        result = subprocess.run(cmd, cwd=ROOT, env=env, capture_output=True, text=True)
+        elapsed = round(time.monotonic() - started, 3)
+        if result.returncode:
+            ops.run_event(
+                run_id, "step_failed", step=step, returncode=result.returncode,
+                elapsed_seconds=elapsed,
+            )
+        else:
+            ops.run_event(run_id, "step_completed", step=step, elapsed_seconds=elapsed)
+        return step, result, elapsed
+
+    with ThreadPoolExecutor(max_workers=len(gates)) as pool:
+        futures = [pool.submit(execute, step, cmd) for step, cmd in gates]
+        results = [future.result() for future in futures]  # declared order; waits for every gate
+
+    failed = []
+    for step, result, elapsed in results:
+        print(f"\n== {step}: {shown[step]}  [{elapsed:.0f}s, exit {result.returncode}]", flush=True)
+        if result.stdout:
+            print(result.stdout, end="" if result.stdout.endswith("\n") else "\n", flush=True)
+        if result.stderr:
+            print(result.stderr, end="" if result.stderr.endswith("\n") else "\n",
+                  file=sys.stderr, flush=True)
+        if result.returncode:
+            failed.append(f"{step} (exit {result.returncode})")
+    if failed:
+        raise RuntimeError("verification failed: " + ", ".join(failed))
 
 
 def _finder_output(text: str) -> str:
@@ -397,8 +451,13 @@ def main() -> int:
 
             for step, script, fixed_args in PIPELINE:
                 run_command(step, [sys.executable, str(SCRIPTS / script), *fixed_args], env, run_id)
+            gates = [
+                (step, [sys.executable, str(SCRIPTS / script), *fixed_args])
+                for step, script, fixed_args in VERIFY
+            ]
             if not args.skip_tests:
-                run_command("tests", [sys.executable, "-m", "pytest", "-q"], env, run_id)
+                gates.append(("tests", [sys.executable, "-m", "pytest", "-q"]))
+            run_verify_parallel(gates, env, run_id)
             after, tokens, excluded = doc_stats()
             committed = commit_snapshot(before, after, tokens, run_id) if args.commit else False
             if args.push:

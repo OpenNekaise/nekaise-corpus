@@ -19,7 +19,8 @@ hand as `/dig` any time you want to grow the corpus in one shot.
    `registry/backends.json` is the sole list of finder scripts, fixed arguments, and enabled/paused
    state; `registry/rotation.json` supplies their committed pointers. The runner holds the repo lock,
    advances each pointer only after that finder exits successfully, then performs fetch → prune →
-   clean → check → README stats → index refresh → lint → architecture contracts → tests. Any
+   clean → README stats, and finally the read-only gates concurrently (check ‖ index refresh ‖ lint
+   ‖ architecture contracts ‖ tests — all awaited, any failure fails the round). Any
    required failure rolls tracked state back and prevents commit/push. **Never change the cleaning
    ruleset as part of a dig.**
    **Never `git push`** — the maintainer reviews the commit and pushes.
