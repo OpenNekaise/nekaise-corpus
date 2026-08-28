@@ -1,6 +1,8 @@
 import json
 import sys
 
+import pytest
+
 import coverage as coverage_report
 import coverage_matrix
 
@@ -73,6 +75,53 @@ def test_vendor_sources_are_manufacturer_literature(monkeypatch, capsys):
     source_line = next(line for line in output.splitlines() if "vendor_sika" in line)
     assert "-> equipment_mfr_docs" in source_line
     assert coverage_report.genre_of("vendor_example") == "equipment_mfr_docs"
+
+
+@pytest.mark.parametrize(
+    ("genre", "sources"),
+    [
+        ("research_papers", ("jstage_aij", "modelica_conf", "scielo_scl")),
+        (
+            "international_bodies",
+            (
+                "jrc", "worldbank", "worldbank_wds", "boverket", "nrcan_oee",
+                "canada_publications", "nz_mbie", "seai", "aivc",
+            ),
+        ),
+        (
+            "software_sim_docs",
+            (
+                "buildingspy", "energyplus-api", "energyplus-docs", "eppy",
+                "openstudio-docs", "soep", "openmodelica-docs", "modelica-spec",
+            ),
+        ),
+        ("us_gov_lab_reports", ("cec",)),
+    ],
+)
+def test_known_source_genres(genre, sources):
+    assert {source: coverage_report.genre_of(source) for source in sources} == {
+        source: genre for source in sources
+    }
+
+
+@pytest.mark.parametrize(
+    ("source", "region"),
+    [
+        ("openaire_deliverable", "EU"), ("sdz_at", "EU"), ("hdz_at", "EU"),
+        ("bri_jp", "JP"), ("nilim_jp", "JP"), ("worldbank_wds", "Global"),
+        ("modelica_conf", "Global"), ("scielo_scl", "LatAm"),
+        ("boverket", "Nordic"), ("nrcan_oee", "Canada"),
+        ("canada_publications", "Canada"), ("nz_mbie", "NZ"),
+    ],
+)
+def test_live_source_regions(source, region):
+    row = {"id": "doc-1", "source": source}
+    assert coverage_matrix.region_of(row, "") == [region]
+
+
+def test_stale_region_source_names_are_removed():
+    stale = {"nrel", "openaire", "sdz_hdz", "bri_japan", "nilim_japan"}
+    assert stale.isdisjoint(coverage_matrix.REGION_SOURCE)
 
 
 def test_coverage_matrix_omits_restricted_regions_and_languages(

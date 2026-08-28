@@ -94,10 +94,14 @@ BLDGTYPE = [
 ]
 # region: primarily by source; title cues can ADD (e.g. a World Bank report about China)
 REGION_SOURCE = {
-    "osti": "US", "nist_crossref": "US", "gov_cec": "US", "gov_nyserda": "US", "nrel": "US",
+    "osti": "US", "nist_crossref": "US", "gov_cec": "US", "gov_nyserda": "US", "cec": "US",
     "google_patents": None,  # split by pat- country prefix below
-    "gov_uk": "UK", "jrc": "EU", "openaire": "EU", "kitopen": "EU", "sdz_hdz": "EU",
-    "ademe": "EU", "bri_japan": "JP", "nilim_japan": "JP", "worldbank": "Global",
+    "gov_uk": "UK", "jrc": "EU", "openaire_deliverable": "EU", "kitopen": "EU",
+    "sdz_at": "EU", "hdz_at": "EU", "seai": "EU", "ademe": "EU",
+    "bri_jp": "JP", "nilim_jp": "JP", "worldbank": "Global",
+    "worldbank_wds": "Global", "modelica_conf": "Global", "aivc": "Global",
+    "scielo_scl": "LatAm", "boverket": "Nordic",
+    "nrcan_oee": "Canada", "canada_publications": "Canada", "nz_mbie": "NZ",
     "iea": "Global", "oapen": "Global", "zenodo": "Global", "internet_archive": "US/UK-hist",
 }
 REGION_TITLE = [
@@ -236,7 +240,8 @@ def main() -> None:
 
     matrix("domain × lifecycle", cross_dl, LIFECYCLE)
     matrix("domain × region", cross_dr,
-           [(k, None) for k in ("US", "CN", "EU", "UK", "JP", "Global", "Nordic")])
+           [(k, None) for k in
+            ("US", "CN", "EU", "UK", "JP", "Global", "Nordic", "Canada", "NZ", "LatAm")])
 
     if args.json:
         Path(args.json).write_text(json.dumps(
