@@ -53,6 +53,25 @@ def test_policy_blocked_backends_and_manifest_rows_fail_closed():
     assert any("still claim corpus data" in error for error in errors)
 
 
+def test_enabled_patent_backends_only_request_finder_approved_countries():
+    backends = {
+        "find_patents": {"script": "find_patents.py", "args": ["--max", "400"], "enabled": True},
+        "find_patents_cn": {"script": "find_patents.py",
+                            "args": ["--countries", "CN", "--max", "400"], "enabled": True},
+        "find_patents_ep": {"script": "find_patents.py",
+                            "args": ["--countries", "EP,de"], "enabled": True},
+        "find_patents_jp": {"script": "find_patents.py",
+                            "args": ["--countries", "JP"], "enabled": False},
+        "find_books": {"script": "find_books.py", "args": ["--countries", "XX"], "enabled": True},
+    }
+
+    errors = check_contracts.patent_country_contract_errors(backends)
+
+    assert errors == [
+        "find_patents_ep: requests DE, EP but find_patents.py approves only CN, US",
+    ]
+
+
 def test_eligibility_restricted_backend_cannot_be_reenabled_silently():
     restrictions = {
         "translated": {

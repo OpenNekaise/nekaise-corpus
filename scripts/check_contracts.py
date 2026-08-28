@@ -34,6 +34,34 @@ def oversized_control_files(root: Path = ROOT) -> list[tuple[Path, int]]:
     )
 
 
+def patent_country_contract_errors(backends: dict) -> list[str]:
+    """An enabled patent backend may only request jurisdictions the finder itself accepts.
+
+    Patent policy lives in three places — registry/eligibility.json, registry/backends.json and the
+    SUPPORTED_COUNTRIES guard in find_patents.py. On 2026-08-28 the first two were lifted while the
+    finder still refused CN, and every round died at discovery. Catch that drift at the contracts
+    gate, before commit, instead of in the next cron round.
+    """
+    import find_patents
+
+    approved = set(find_patents.SUPPORTED_COUNTRIES)
+    errors: list[str] = []
+    for name, cfg in sorted(backends.items()):
+        if cfg.get("script") != "find_patents.py" or not cfg.get("enabled", True):
+            continue
+        args = [str(a) for a in cfg.get("args", [])]
+        countries = {"US"}
+        if "--countries" in args and args.index("--countries") + 1 < len(args):
+            raw = args[args.index("--countries") + 1]
+            countries = {c.strip().upper() for c in raw.split(",") if c.strip()}
+        if unsupported := sorted(countries - approved):
+            errors.append(
+                f"{name}: requests {', '.join(unsupported)} but find_patents.py approves only "
+                f"{', '.join(sorted(approved))}"
+            )
+    return errors
+
+
 def eligibility_contract_errors(
     rows: list[dict], backends: dict, restrictions: dict[str, dict]
 ) -> list[str]:
@@ -94,6 +122,7 @@ def main() -> int:
     backends = run_round.load_backends()
     errors.extend(run_round.validate_backends(backends, rotation.load()))
     errors.extend(eligibility_contract_errors(manifest_rows, backends, restrictions))
+    errors.extend(patent_country_contract_errors(backends))
     configured_scripts = {cfg["script"] for cfg in backends.values()}
     actual_finders = {p.name for p in (ROOT / "scripts").glob("find_*.py")}
     for script in sorted(actual_finders - configured_scripts):
