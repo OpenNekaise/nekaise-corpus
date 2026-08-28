@@ -30,7 +30,9 @@ GENRES = [
     ("international_bodies",  "IEA EBC · EU JRC · IPEEC · REHVA"),
     ("codes_standards",      "IECC · ASHRAE 90.1 / G36 · Title 24 · ISO/EN"),
     ("public_datasets",      "ResStock/ComStock · OpenEI · EIA CBECS/RECS · Bldg Data Genome"),
-    ("equipment_mfr_docs",   "Carrier / Trane / Daikin / JCI manuals (proprietary → pointer-only)"),
+    ("equipment_mfr_docs",
+     "manufacturer product literature (HVAC/controls equipment + construction products; "
+     "open per operator 2026-08-28)"),
     ("software_sim_docs",    "EnergyPlus · OpenStudio · Modelica · DOE-2 · VOLTTRON"),
     ("ontology_dataspec",    "Brick · Haystack · ASHRAE 223P · BACnet · gbXML · IFC"),
     ("practitioner_qa",      "Unmet Hours · HVAC-Talk · StackExchange"),
@@ -65,6 +67,7 @@ SOURCE_GENRE = {
 # prefix fallback for the long tail of source buckets (an exact SOURCE_GENRE match wins).
 # Order matters: first hit applies.
 PREFIX_GENRE = [
+    (("vendor_",), "equipment_mfr_docs"),
     (("gh_",), "software_sim_docs"),
     (("oapen", "intechopen", "textbook", "oer", "internet_archive", "wikibooks"), "books_textbooks"),
     (("wikipedia",), "encyclopedic"),
@@ -137,7 +140,7 @@ def main() -> None:
     if args.sources:
         print("\nby source:")
         for s, n in by_source.most_common():
-            print(f"  {s:20} {n:>4}  -> {SOURCE_GENRE.get(s, '??')}")
+            print(f"  {s:20} {n:>4}  -> {genre_of(s) or '??'}")
 
 
 if __name__ == "__main__":

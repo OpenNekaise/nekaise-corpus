@@ -52,6 +52,29 @@ def test_genre_coverage_omits_training_excluded_rows(monkeypatch, capsys):
     assert "jstage_aij" not in output
 
 
+def test_vendor_sources_are_manufacturer_literature(monkeypatch, capsys):
+    row = {
+        "id": "vnd-sika-1", "title": "Construction product manual", "status": "ok",
+        "source": "vendor_sika", "license": "open", "text_chars": 100,
+    }
+    monkeypatch.setattr(coverage_report.registry, "load_manifest_rows", lambda: [row])
+    monkeypatch.setattr(coverage_report.registry, "load_eligibility", lambda: {})
+    monkeypatch.setattr(sys, "argv", ["coverage.py", "--sources"])
+
+    coverage_report.main()
+
+    output = capsys.readouterr().out
+    manufacturer_line = next(
+        line for line in output.splitlines()
+        if line.strip().startswith("equipment_mfr_docs ")
+    )
+    assert manufacturer_line.split()[:2] == ["equipment_mfr_docs", "1"]
+    assert "uncategorized sources" not in output
+    source_line = next(line for line in output.splitlines() if "vendor_sika" in line)
+    assert "-> equipment_mfr_docs" in source_line
+    assert coverage_report.genre_of("vendor_example") == "equipment_mfr_docs"
+
+
 def test_coverage_matrix_omits_restricted_regions_and_languages(
     tmp_path, monkeypatch, capsys
 ):
