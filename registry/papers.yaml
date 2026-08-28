@@ -63859,3 +63859,20 @@ sources:
     license: open
     topic: urban
     format: pdf
+  - id: ope-urban-stormwater-runoff-a-new-class-of-environ
+    title: 'Urban Stormwater Runoff: A New Class of Environmental Flow Problem'
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0045814&type=printable
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-walkability-and-its-relationships-with-health-
+    title: 'Walkability and Its Relationships With Health, Sustainability, and Livability:
+      Elements of Physical Environment and Evaluation Frameworks'
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2021.721218/pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
