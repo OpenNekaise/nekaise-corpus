@@ -65,6 +65,8 @@ SHARDS = {
                                # curated.yaml and the pruner ate 15 of them (2026-07-24, repaired).
     "bov-": "nordic.yaml",     # find_boverket (Swedish building authority; shard shared by Nordic sources)
     "sci-": "scielo.yaml",     # find_scielo (SciELO Brazil AEC journals, Portuguese, cc-by)
+    "vnd-": "vendor.yaml",     # find_vendor (manufacturer product literature via sitemaps/listings;
+                               # config registry/vendors.json, license=open by operator decision 2026-08-28)
     "ope-": "papers.yaml",     # find_sources OpenAlex backend
     "oa-": "papers.yaml",
     "arx-": "papers.yaml",     # find_sources arXiv backend

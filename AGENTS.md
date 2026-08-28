@@ -201,8 +201,14 @@ instead. Remove the schedule with `bash scripts/install_maintainer_cron.sh --rem
 - **`text/` is verbatim — never clean it in place.** Cleaning writes `corpus/`. Editing `text/` throws
   away the ability to re-clean, and `raw/` is the only way back.
 - **Respect each source's `license`:** `public-domain` (US gov) · `cc-by` / `cc-by-sa` (attribute) ·
-  `open` (arXiv / OA — check per-source terms) · `proprietary-internal` (vendor / standards —
-  **pointers only, never add the bytes**).
+  `open` (arXiv / OA — check per-source terms) · `proprietary-internal` (paywalled vendor material /
+  standards — **pointers only, never add the bytes**).
+- **Manufacturer product literature (operator decision 2026-08-28):** freely downloadable, login-free
+  catalogs, data sheets, IOM manuals, engineering/selection guides and specification texts are
+  ingested as `license: open` via `scripts/find_vendor.py` + `registry/vendors.json` (per-vendor
+  rights review recorded there). A robots.txt Disallow on the literature paths, an AI/dataset-crawler
+  opt-out, or terms that forbid automated access / systematic downloading make that vendor
+  `rights.decision: no-go` — never work around such a wall.
 - **Respect `registry/eligibility.json`:** restrictions override an otherwise fetchable license.
   Preserve their registry/manifest and raw/text provenance; never restore them to `corpus/` without
   a reviewed rights decision and matching control-plane change.

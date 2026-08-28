@@ -101,6 +101,11 @@ HOST_DELAY: dict[str, float] = {
     "bigladdersoftware.com": 10.0,  # robots.txt Crawl-delay: 10 — respect it
 }
 HOST_UA: dict[str, str] = {}
+try:  # vendor-literature hosts declare their politeness delay once, in registry/vendors.json
+    import find_vendor
+    HOST_DELAY.update(find_vendor.host_delays(find_vendor.load_vendors()))
+except Exception as exc:  # a broken vendors.json fails the contracts gate; fetching stays usable
+    print(f"vendors.json host delays not applied: {exc}", file=sys.stderr)
 
 
 def _version(package: str) -> str:

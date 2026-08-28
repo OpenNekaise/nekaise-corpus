@@ -123,6 +123,11 @@ def main() -> int:
     errors.extend(run_round.validate_backends(backends, rotation.load()))
     errors.extend(eligibility_contract_errors(manifest_rows, backends, restrictions))
     errors.extend(patent_country_contract_errors(backends))
+    try:  # vendor-literature config is control plane: schema errors must fail the round, not a fetch
+        import find_vendor
+        find_vendor.load_vendors()
+    except Exception as exc:
+        errors.append(f"registry/vendors.json: {exc}")
     configured_scripts = {cfg["script"] for cfg in backends.values()}
     actual_finders = {p.name for p in (ROOT / "scripts").glob("find_*.py")}
     for script in sorted(actual_finders - configured_scripts):
