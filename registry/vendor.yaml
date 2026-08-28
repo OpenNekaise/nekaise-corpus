@@ -1,0 +1,237 @@
+# vendor — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: vnd-wienerberger-uk-uk-mkt-doc-tec-wal-eurocode-6-part-1-introduction-001
+    title: 'Wienerberger UK: technical — UK MKT DOC TEC WAL Eurocode 6  Part 1  Introduction
+      001'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/technical/UK_MKT_DOC_TEC_WAL_Eurocode_6
+      _Part_1 _Introduction_001.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-uk-mkt-doc-wal-por-use-of-precast-concrete-floors-with-the-porotherm-b
+    title: 'Wienerberger UK: instruction guidelines — UK MKT DOC WAL POR Use of Precast
+      Concrete Floors with the Porotherm Building system'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/instruction-guidelines/UK_MKT_DOC_WAL_POR_Use_of_Precast_Concrete_Floors_with_the_Porotherm_Building_system.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-uk-mkt-doc-wienerberger-specials-brochure
+    title: 'Wienerberger UK: brochures — UK MKT DOC Wienerberger Specials Brochure'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/brochures/UK_MKT_DOC_Wienerberger_Specials_Brochure.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-uk-mkt-doc-the-clay-paver-book
+    title: 'Wienerberger UK: brochures — UK MKT DOC The Clay Paver Book'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/brochures/UK_MKT_DOC_The_Clay_Paver_Book.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-07-wbr-ptn-365-cladding
+    title: 'Wienerberger UK: ptn 365 — 07   WBR PTN 365   Cladding'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/technical/porotherm-and-poroton-typical-details/ptn-365/07
+      - WBR-PTN-365 - Cladding.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-uk-mkt-doc-tec-rof-san-installation-guide-roll-ridge
+    title: 'Wienerberger UK: technical — UK MKT DOC TEC ROF SAN Installation Guide Roll
+      Ridge'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/technical/UK_MKT_DOC_TEC_ROF_SAN_Installation_Guide_Roll_Ridge.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-wbr-pls-100-uv05
+    title: 'Wienerberger UK: technical — WBR PLS 100 UV05'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/technical/WBR-PLS-100-UV05.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-uk-mkt-doc-wienerberger-e4-brick-house-brochure
+    title: 'Wienerberger UK: brochures — UK MKT DOC Wienerberger e4 Brick House Brochure'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/brochures/UK_MKT_DOC_Wienerberger_e4_Brick_House_Brochure.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-uk-mkt-rof-doc-new-gen-dry-verge-installation-guide
+    title: 'Wienerberger UK: instruction guidelines — UK MKT ROF DOC New Gen Dry Verge
+      Installation Guide'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/instruction-guidelines/UK_MKT_ROF_DOC_New_Gen_Dry_Verge_Installation_Guide.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-uk-mkt-doc-tec-wal-por-porotherm-thermal-bridgings-handbook-001
+    title: 'Wienerberger UK: technical — UK MKT DOC TEC WAL POR Porotherm Thermal Bridgings
+      Handbook 001'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/technical/UK_MKT_DOC_TEC_WAL_POR_Porotherm_Thermal_Bridgings_Handbook_001.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-triple-power-3-0-user-manual
+    title: 'Wienerberger UK: technical — Triple Power 3 0 User Manual'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/technical/Triple
+      Power 3.0 User Manual.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-uk-mkt-doc-installation-guide-sandtoft-multiclip-tile
+    title: 'Wienerberger UK: instruction guidelines — UK MKT DOC Installation Guide
+      Sandtoft MultiClip Tile'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/instruction-guidelines/UK_MKT_DOC_Installation_Guide_Sandtoft_MultiClip_Tile.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-uk-mkt-doc-tec-wal-lucideon-lime-in-mortars-guidance-document-001
+    title: 'Wienerberger UK: technical — UK MKT DOC TEC WAL Lucideon Lime in Mortars
+      Guidance Document 001'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/technical/UK_MKT_DOC_TEC_WAL_Lucideon_Lime_in_Mortars_Guidance_Document_001.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-uk-mkt-doc-tec-rof-san-dr-john-notes-over-under-til-001
+    title: 'Wienerberger UK: technical — UK MKT DOC TEC ROF SAN Dr John notes Over under
+      til 001'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/technical/UK_MKT_DOC_TEC_ROF_SAN_Dr_John_notes_Over__under_til_001.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-uk-mkt-doc-tec-wal-housing-the-digital-revolution-oct-2015-001
+    title: 'Wienerberger UK: technical — UK MKT DOC TEC WAL Housing The Digital Revolution
+      Oct 2015 001'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/technical/UK_MKT_DOC_TEC_WAL_Housing_The_Digital_Revolution_Oct_2015_001.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-uk-mkt-doc-tec-wal-bda-good-site-practice-and-workmanship-001
+    title: 'Wienerberger UK: technical — UK MKT DOC TEC WAL BDA Good Site Practice and
+      Workmanship 001'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/technical/UK_MKT_DOC_TEC_WAL_BDA_Good_Site_Practice_and_Workmanship_001.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-wienerberger-uk-uk-mkt-doc-por-porotherm-cavity-best-practice-guide
+    title: 'Wienerberger UK: brochures — UK MKT DOC POR Porotherm Cavity Best Practice
+      Guide'
+    url: https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/documents-magazines/brochures/UK_MKT_DOC_POR_Porotherm_Cavity_Best_Practice_Guide.pdf
+    source: vendor_wienerberger
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.wienerberger.com/en/terms-of-use.html
+    license_evidence: content protected by copyright and may not be duplicated or circulated
+      without written permission — standard all-rights-reserved, no automation clause
+    rights_verified_at: '2026-08-28'
