@@ -188,7 +188,9 @@ manual and automated entrypoints cannot overlap its action phase. Provider usage
 independent local cooldowns; Claude is never silently promoted over an unavailable Codex. Logs live
 under `logs/maintainer-*`; unsafe tracked state creates
 `workspace/.maintenance-blocked`, which prevents more dig rounds until a maintainer leaves the repo
-clean. Remove the schedule with `bash scripts/install_maintainer_cron.sh --remove`.
+clean. The maintainer never executes a restriction, prune, or policy change that would remove more
+than 1% of training-eligible docs/tokens — it writes a proposal to `workspace/` for the operator
+instead. Remove the schedule with `bash scripts/install_maintainer_cron.sh --remove`.
 
 ## Hard rules
 

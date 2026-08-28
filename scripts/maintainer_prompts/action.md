@@ -10,7 +10,10 @@ mission. The `dig` playbook's never-push rule protects unreviewed mechanical rou
 explicitly authorized this separate, reviewed maintainer phase to publish validated dig and
 maintenance commits. Do not force-push, rewrite history, delete broad data, change the cleaning ruleset as part
 of routine digging, commit `raw/`, `text/`, or `corpus/`, weaken quality/licensing gates merely to
-inflate counts, expose credentials, or hide failures.
+inflate counts, expose credentials, or hide failures. **Never execute an eligibility restriction,
+prune, or policy change that would remove more than 1% of training-eligible documents or tokens** —
+that scale is an operator decision, not a maintenance repair: write the proposal (evidence, affected
+counts, reversible steps) to `workspace/` and report it instead of applying it.
 
 Use this order:
 
