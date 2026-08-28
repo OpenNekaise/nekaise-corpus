@@ -92,6 +92,49 @@ def test_marathon_waits_for_shared_growth_window(tmp_path, monkeypatch):
     assert "round 1 start" not in log
 
 
+def _fake_crontab(tmp_path, content):
+    fake_bin = tmp_path / "bin"
+    fake_bin.mkdir()
+    state = tmp_path / "crontab"
+    state.write_text(content)
+    crontab = fake_bin / "crontab"
+    crontab.write_text(
+        "#!/bin/sh\n"
+        "if [ \"${1:-}\" = -l ]; then cat \"$FAKE_CRONTAB\"; "
+        "else next=\"$FAKE_CRONTAB.new\"; cat > \"$next\"; mv \"$next\" \"$FAKE_CRONTAB\"; fi\n"
+    )
+    crontab.chmod(0o755)
+    env = {
+        **os.environ,
+        "FAKE_CRONTAB": str(state),
+        "PATH": str(fake_bin) + os.pathsep + os.environ["PATH"],
+    }
+    return state, env
+
+
+def test_install_cron_continuous_mode_replaces_the_legacy_line(tmp_path):
+    state, env = _fake_crontab(
+        tmp_path,
+        "*/5 * * * * old-command # nekaise-corpus continuous dig\n"
+        "17 */6 * * * maintainer # nekaise-corpus ai maintainer\n",
+    )
+    env.update({"DIG_CONTINUOUS": "1", "PYTHON_BIN": sys.executable})
+
+    result = subprocess.run(
+        ["bash", str(ROOT / "scripts" / "install_cron.sh")],
+        cwd=ROOT, env=env, text=True, capture_output=True, timeout=30, check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
+    lines = state.read_text().splitlines()
+    continuous = [line for line in lines if line.endswith("# nekaise-corpus continuous dig")]
+    assert len(continuous) == 1
+    assert continuous[0].startswith("* * * * * ")
+    assert "flock -n" in continuous[0] and "DIG_MAX_SECONDS=10800" in continuous[0]
+    assert "old-command" not in continuous[0]
+    assert any(line.endswith("# nekaise-corpus ai maintainer") for line in lines)
+
+
 def test_cron_removal_recognizes_legacy_continuous_tag(tmp_path):
     fake_bin = tmp_path / "bin"
     fake_bin.mkdir()

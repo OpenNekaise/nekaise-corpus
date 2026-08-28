@@ -175,7 +175,9 @@ corpus is the by-product; the deliverable is a loop that gets there without a hu
 **Grow on autopilot.** [`dig`](.claude/skills/dig/SKILL.md) runs one full growth round (find_sources +
 find_github + web-search a new vein → append → load → prune → **commit locally, never push**).
 `bash scripts/install_cron.sh` wires it to a daily crontab entry (≤3h, only when the machine is on);
-new sources land as local commits for you to review + push. Remove with
+`DIG_CONTINUOUS=1 bash scripts/install_cron.sh` runs rounds back-to-back instead (a one-minute tick,
+`flock -n` keeps one round at a time, dig.sh steps aside for the maintainer's window). New sources
+land as local commits for you (or the maintainer) to review + push. Remove either mode with
 `bash scripts/install_cron.sh --remove`.
 
 **Maintain on autopilot.** `bash scripts/install_maintainer_cron.sh` adds a six-hour, Codex-first
