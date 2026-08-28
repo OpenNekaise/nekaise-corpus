@@ -63967,3 +63967,20 @@ sources:
     topic: commissioning_fdd
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-markov-chain-monte-carlo-simulation-using-the-
+    title: 'Markov chain Monte Carlo simulation using the DREAM software package: Theory,
+      concepts, and MATLAB implementation'
+    url: https://escholarship.org/content/qt6j55p5kh/qt6j55p5kh.pdf
+    source: openalex
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: ope-intrusion-detection-system-using-deep-neural-n
+    title: Intrusion Detection System Using Deep Neural Network for In-Vehicle Network
+      Security
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0155781&type=printable
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
