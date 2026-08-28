@@ -248,11 +248,23 @@ def norm(s: str) -> str:
     return re.sub(r"\W+", " ", (s or "").lower()).strip()
 
 
+# PyYAML's pure-Python SafeLoader parses the 251MB registry in ~210 s; libyaml's CSafeLoader does
+# the same in ~42 s (measured 2026-08-28 over all 49 shards, resulting objects identical). Every
+# registry-shard parse goes through here so the whole loop shares that one decision; the fallback
+# keeps hosts without the C extension correct, only slower.
+_YAML_LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+
+
+def parse_yaml(text: str):
+    """yaml.safe_load semantics, C-accelerated when libyaml is available."""
+    return yaml.load(text, Loader=_YAML_LOADER)
+
+
 def load_entries() -> list[dict]:
     """Every registry entry, curated shard first."""
     out: list[dict] = []
     for p in shard_files():
-        out.extend(yaml.safe_load(p.read_text()).get("sources") or [])
+        out.extend(parse_yaml(p.read_text()).get("sources") or [])
     return out
 
 
@@ -374,7 +386,7 @@ def append_entries(entries: list[dict]) -> dict[str, int]:
     REG_DIR.mkdir(exist_ok=True)
     counts: dict[str, int] = {}
     for path, group in sorted(groups.items()):
-        before = len(yaml.safe_load(path.read_text()).get("sources") or []) if path.exists() else 0
+        before = len(parse_yaml(path.read_text()).get("sources") or []) if path.exists() else 0
         block = "".join(emit_entry(e) for e in group)
         if path.exists():
             old_text = path.read_text()
@@ -385,7 +397,7 @@ def append_entries(entries: list[dict]) -> dict[str, int]:
                 f"# {path.stem} — machine-appended shard (see AGENTS.md); "
                 f"prune_corpus edits it in place\nsources:\n" + block,
             )
-        after = yaml.safe_load(path.read_text()).get("sources") or []
+        after = parse_yaml(path.read_text()).get("sources") or []
         if len(after) != before + len(group):
             raise RuntimeError(f"append corrupted {path.name}: {before}+{len(group)} != {len(after)}")
         counts[path.name] = len(group)
@@ -426,8 +438,8 @@ def remove_ids(drop: set) -> int:
         if not removed:
             continue
         new_text = "".join(out)
-        entries = yaml.safe_load(new_text).get("sources") or []
-        old_count = len(yaml.safe_load(old_text).get("sources") or [])
+        entries = parse_yaml(new_text).get("sources") or []
+        old_count = len(parse_yaml(old_text).get("sources") or [])
         leftover = {e["id"] for e in entries} & drop
         if leftover:
             raise RuntimeError(f"{path.name}: failed to remove {len(leftover)} ids, "

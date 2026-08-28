@@ -15,7 +15,6 @@ import re
 from collections import Counter
 from pathlib import Path
 
-import yaml
 
 import registry
 
@@ -45,7 +44,7 @@ def main() -> int:
         return 1
     for path in registry.shard_files():
         try:
-            entries = yaml.safe_load(path.read_text()).get("sources") or []
+            entries = registry.parse_yaml(path.read_text()).get("sources") or []
         except Exception as e:
             errors.append(f"{path.name}: does not parse: {e}")
             continue

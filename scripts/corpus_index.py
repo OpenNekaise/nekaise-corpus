@@ -20,6 +20,9 @@ import yaml
 
 import ops
 
+# same choice as registry.parse_yaml — libyaml when present (5x faster on the big shards)
+_YAML_LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DB = ROOT / "workspace" / "corpus-index.sqlite3"
 
@@ -111,7 +114,7 @@ def rebuild(reg_dir: Path, man_dir: Path, blocklist_path: Path,
                     known_batch.append(("title", title))
 
             for path in sorted(reg_dir.glob("*.yaml")):
-                for entry in (yaml.safe_load(path.read_text()) or {}).get("sources") or []:
+                for entry in (yaml.load(path.read_text(), Loader=_YAML_LOADER) or {}).get("sources") or []:
                     add_known(entry)
                     if len(known_batch) >= 10_000:
                         conn.executemany("INSERT OR IGNORE INTO known VALUES (?,?)", known_batch)

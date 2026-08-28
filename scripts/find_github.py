@@ -219,7 +219,7 @@ def done_sources():
 
     registry_path = registry.REG_DIR / "github.yaml"
     if registry_path.exists():
-        for entry in yaml.safe_load(registry_path.read_text()).get("sources") or []:
+        for entry in registry.parse_yaml(registry_path.read_text()).get("sources") or []:
             note(entry.get("source", ""), entry.get("format"))
 
     raw_prefix = "https://raw.githubusercontent.com/"

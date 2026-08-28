@@ -237,3 +237,29 @@ def test_manifest_shard_sorted_by_topic_then_id(tmp_registry):
     ids = [json.loads(l)["id"] for l in
            (registry.MAN_DIR / "reports.jsonl").read_text().splitlines()]
     assert ids == ["ost-c", "ost-a", "ost-b"]
+
+
+def test_parse_yaml_matches_pure_loader_on_awkward_scalars(monkeypatch):
+    """The C loader must agree with SafeLoader on everything emit_entry can produce: unicode,
+    YAML-1.1 boolean/date/number look-alikes, colons and quotes in titles, multi-line text."""
+    import yaml
+    awkward = [
+        entry("pat-cn1", title="混凝土 基础 — Ｆｕｌｌ‑ｗｉｄｔｈ ＆ emoji 🏗"),
+        entry("bool-like", title="yes"),
+        entry("date-like", title="2020-01-01"),
+        entry("num-like", title="1e3"),
+        entry("octal-like", title="0755"),
+        entry("colon", title="Title: with colon # and hash"),
+        entry("quotes", title="He said \"it's\" fine"),
+        entry("multiline", title="line one\nline two\n"),
+        entry("null-like", title="~"),
+    ]
+    awkward[0]["license_evidence"] = "USPTO: text — see 37 CFR 1.71(d)-(e)"
+    text = "sources:\n" + "".join(registry.emit_entry(e) for e in awkward)
+    fast = registry.parse_yaml(text)
+    pure = yaml.load(text, Loader=yaml.SafeLoader)
+    assert fast == pure
+    assert [e["title"] for e in fast["sources"]] == [e["title"] for e in awkward]
+    # forced fallback (host without libyaml) must be a no-op semantically
+    monkeypatch.setattr(registry, "_YAML_LOADER", yaml.SafeLoader)
+    assert registry.parse_yaml(text) == fast
