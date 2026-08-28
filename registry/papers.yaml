@@ -63943,3 +63943,27 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
+  - id: ope-development-of-a-unified-taxonomy-for-hvac-sys
+    title: Development of a Unified Taxonomy for HVAC System Faults
+    url: https://escholarship.org/content/qt1572g2mm/qt1572g2mm.pdf
+    source: openalex
+    license: open
+    topic: commissioning_fdd
+    format: pdf
+  - id: ope-chiller-fault-diagnosis-based-on-automatic-mac
+    title: Chiller Fault Diagnosis Based on Automatic Machine Learning
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2021.753732/pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-incipient-chiller-fault-diagnosis-using-an-opt
+    title: Incipient Chiller Fault Diagnosis Using an Optimized Least Squares Support
+      Vector Machine With Gravitational Search Algorithm
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2021.755649/pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
