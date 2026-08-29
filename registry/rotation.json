@@ -14,7 +14,7 @@
   },
   "find_books": {
     "flag": "--cursor",
-    "next": 22217,
+    "next": 22218,
     "step": 1,
     "note": "RE-AIMED 2026-08-24 from global offset 4275 to a stable 128-slot per-query cursor (page 171, query 0). One query/page runs per round, avoiding the 117-request deep-search burst that caused 19 of 20 failures since 2026-08-19. Existing query positions are immutable; append within the 128-slot stride or perform a reviewed cursor migration. OAPEN-hosted PDFs only; per-record OAI license gate keeps CC-BY/BY-SA/CC0."
   },
@@ -38,7 +38,7 @@
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "1998-W10",
+    "next": "1998-W09",
     "skip": [
       [
         "2026-W19",
@@ -90,7 +90,7 @@
   },
   "find_patents_cn": {
     "flag": "--bucket",
-    "next": "2022-W38",
+    "next": "2022-W37",
     "note": "CN patents via Google Patents' /en view (English sitemap titles and Google machine-translated English text, not official Chinese full text; license=open). Same weekly-bucket walk as find_patents, separate pointer; marathon runs it with --countries CN. RE-AIMED 2026-08-17 from 2002-W51 to 2025-W52: 2021-2025 all virgin, probes 2025-W52/2024-W20/2021-W30 each +400 CAPPED (vs ~120 in 2002-2003 era); sitemap top is ~2026-W20 (2026-W24+ 404, W20 empty — re-probe the 2026 weeks when the walk reaches them). Earlier mined: 2018/2019/2020-W03, 2019 whole, 2018-W48.., 2003..2002-W51"
   },
   "find_jrc": {
@@ -137,7 +137,7 @@
   },
   "find_openalex": {
     "flag": "--query-cursor",
-    "next": 202,
+    "next": 203,
     "step": 1,
     "note": "RE-AIMED 2026-08-26 after OpenAlex introduced usage pricing: anonymous access has 100 search requests/day, while the old all-query run made 105 requests and exhausted the budget. One query per round stays below the limit at the live ~72-round/day maximum; the flattened cursor advances across the frozen 105-query list, then continues at page 2 and deeper. Any query-list change requires a reviewed cursor migration."
   },
@@ -149,7 +149,7 @@
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 112,
+    "next": 113,
     "step": 1,
     "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature)."
   }
