@@ -64178,3 +64178,19 @@ sources:
     topic: building_energy
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-balancing-daylight-glare-and-energy-efficiency
+    title: 'Balancing daylight, glare, and energy-efficiency goals: An evaluation of
+      exterior coplanar shading systems using complex fenestration modeling tools'
+    url: https://escholarship.org/content/qt6jn6644z/qt6jn6644z.pdf
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: ope-predicting-visual-comfort-in-side-lit-open-pla
+    title: 'Predicting visual comfort in side-lit open-plan core zones: Results of a
+      field study pairing high dynamic range images with subjective responses'
+    url: https://escholarship.org/content/qt4ss6f8rw/qt4ss6f8rw.pdf?t=obl7yq
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
