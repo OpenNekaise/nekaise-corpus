@@ -64280,3 +64280,12 @@ sources:
     license: open
     topic: structures_civil
     format: pdf
+  - id: ope-embodied-ghg-emissions-of-wooden-buildings-cha
+    title: Embodied GHG Emissions of Wooden Buildings—Challenges of Biogenic Carbon
+      Accounting in Current LCA Methods
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2021.729096/pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
