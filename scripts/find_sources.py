@@ -184,6 +184,14 @@ OPENALEX_AEC_SUBFIELDS = frozenset({
     "2312",  # Water Science and Technology
     "3305",  # Geography, Planning and Development
 })
+# OpenAlex occasionally assigns an AEC-adjacent subfield to papers whose title makes their actual
+# domain unambiguous.  Reject these narrow false-positive classes before the subfield rescue; the
+# full-text quality gate cannot distinguish them because they are rich in construction/materials
+# vocabulary.
+OPENALEX_TITLE_KILL = re.compile(
+    r"\b(?:crop phenotyp\w*|dark matter (?:detector|experiment|search))\b",
+    re.I,
+)
 OPENALEX_TITLE_RELEVANCE = re.compile(
     r"\b(?:"
     r"built environment|buildings|smart buildings?|building schools?|"
@@ -233,6 +241,8 @@ def _openalex_subfield_ids(work: dict) -> set[str]:
 
 def openalex_relevant(work: dict, title: str) -> bool:
     """Admit structured AEC topics or an unambiguous multilingual AEC title."""
+    if OPENALEX_TITLE_KILL.search(title or ""):
+        return False
     return bool(_openalex_subfield_ids(work) & OPENALEX_AEC_SUBFIELDS) or bool(
         OPENALEX_TITLE_RELEVANCE.search(title or "")
     )

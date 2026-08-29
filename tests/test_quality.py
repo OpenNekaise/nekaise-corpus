@@ -204,6 +204,17 @@ def test_patent_discovery_title_kills_reviewed_false_positive_classes():
         "Three-dimensional printed bone cement composite scaffolds for bone regeneration"
     )
     assert quality.off_domain_discovery_title("Metal-insulator-metal capacitor and integrated chip")
+    assert quality.off_domain_discovery_title("Roof top automobile ventilation system")
+    assert quality.off_domain_discovery_title(
+        "Method for controlling an air-conditioning system of a vehicle"
+    )
+    assert quality.off_domain_discovery_title("Heating control method for electric steamer")
+    assert quality.off_domain_discovery_title(
+        "Methods for building regression trees in a distributed computing environment"
+    )
+    assert quality.off_domain_discovery_title(
+        "Refrigerator and control method for aging of meat"
+    )
 
 
 def test_patent_discovery_extensions_are_not_implicit_retroactive_prunes():
@@ -224,6 +235,15 @@ def test_patent_discovery_title_preserves_aec_rescues():
         "A kind of UHPC wafer board composite beam bridge shear connector"
     )
     assert not quality.off_domain_discovery_title("A semiconductor refrigerator")
+    assert not quality.off_domain_discovery_title(
+        "Bridge vibration suppression under earthquake, wind, and vehicle loading"
+    )
+    assert not quality.off_domain_discovery_title(
+        "Underground ventilation system for an automobile factory building"
+    )
+    assert not quality.off_domain_discovery_title(
+        "Temperature control for an automobile plant energy storage station"
+    )
 
 
 SWEDISH_PLANNING = (  # Boverket-style planning/energy prose — regression for the 07-23 Nordic

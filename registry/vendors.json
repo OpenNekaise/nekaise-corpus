@@ -127,7 +127,7 @@
    "rights": {
     "tos_url": "https://climatecontrol.imiplc.com/gb-en/legal-notice",
     "tos_excerpt": "permits downloading, copying and/or printing of pages for strictly personal and non-commercial use; no automation clause",
-    "robots": "imi-hydronic.com Crawl-delay 10 (honoured); climatecontrol.imiplc.com Drupal defaults",
+        "robots": "imi-hydronic.com Crawl-delay 10 (honoured); climatecontrol.imiplc.com Drupal defaults; PDF CDN cdn.tessa.imihy.eimed-project.de robots.txt 404 (no directives)",
     "reviewed_at": "2026-08-28",
     "decision": "go"
    }
@@ -252,7 +252,7 @@
    "rights": {
     "tos_url": "https://www.dormakaba.com/us-en/legal-notice",
     "tos_excerpt": "(c) dormakaba, all rights reserved; no explicit download/redistribution/automation clause found",
-    "robots": "No Disallow at all; 54 locale sitemap indexes; no Crawl-delay",
+        "robots": "www.dormakaba.com has no Disallow and no Crawl-delay; PDF host dormakaba-res.cloudinary.com has only commented example directives (no active Disallow)",
     "reviewed_at": "2026-08-28",
     "decision": "go"
    }

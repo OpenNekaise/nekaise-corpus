@@ -171,6 +171,9 @@ def test_polysemous_off_domain_titles_are_skipped_before_append(monkeypatch):
             "<li>US104A - Aerosol-generating system with ventilation airflow :",
             "<li>US105A - End-to-end map building from a video sequence :",
             "<li>US106A - Metal-insulator-metal capacitor and integrated chip :",
+            "<li>US107A - Roof top automobile ventilation system :",
+            "<li>US108A - Heating control method for electric steamer :",
+            "<li>US109A - Methods for building regression trees in a distributed environment :",
             "<li>US103A - Concrete tunnel ventilation system :",
         ]),
     )

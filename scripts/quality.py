@@ -85,6 +85,15 @@ PATENT_GUARD = re.compile(
 # existing US/CN title inventory.
 PATENT_DISCOVERY_KILL_HARD = re.compile(
     r"aerosol[- ]generat(?:ing|ion)|vaporizer (?:cartridge|utilizing)|"
+    # Vehicle climate-control and battery-heating patents share nearly all HVAC vocabulary but
+    # are not built-environment equipment.  Require both sides so infrastructure papers that only
+    # mention traffic/vehicles remain discoverable.
+    r"(?![^\n]*(?:factory building|energy storage station))"
+    r"(?=[^\n]*\b(?:automobile|automotive|motorcycle|vehicle)\b)"
+    r"(?=[^\n]*(?:air.?condition|ventilat|heat pump|heating|thermal management))|"
+    r"electric steamer|refrigerator.{0,60}(?:aging of meat|meat aging)|"
+    r"decision tree model construction and application method|"
+    r"methods? for building (?:regression|decision|classification) trees?|"
     r"(?=[^\n]*ventilat)(?=[^\n]*(?:patient|medicament|oropharyngeal|anesthes|respiratory|"
     r"pneumonia|end-expiratory|medical gas|airway|pulmonary|neonatal|resuscitat|intubat|"
     r"trache|breathing assist|culture media|bioreactor))",

@@ -125,6 +125,10 @@ def test_openalex_relevance_and_license_gate(monkeypatch):
 
     results = [
         work("Computational intelligence techniques for HVAC systems", "2215"),
+        # Narrow title kills beat an erroneous AEC subfield assignment.  Their full text is rich
+        # in generic construction/material vocabulary, so the downstream density gate keeps them.
+        work("Design and construction of the DEAP-3600 dark matter detector", "2215"),
+        work("UAV remote sensing for field-based crop phenotyping", "2305"),
         # OpenAlex sometimes classifies building metadata work as computer vision; the title rescue
         # protects explicit AEC material without admitting generic computer-science results.
         work("Brick metadata schema for portable smart building applications", "1707", "other-oa"),
