@@ -64394,3 +64394,19 @@ sources:
     license: open
     topic: infrastructure
     format: pdf
+  - id: ope-rivers-as-plastic-reservoirs
+    title: Rivers as Plastic Reservoirs
+    url: https://www.frontiersin.org/articles/10.3389/frwa.2021.786936/pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-water-reuse-from-ancient-to-modern-times-and-t
+    title: 'Water Reuse: From Ancient to Modern Times and the Future'
+    url: https://www.frontiersin.org/articles/10.3389/fenvs.2018.00026/pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
