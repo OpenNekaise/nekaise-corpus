@@ -64580,3 +64580,20 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
+  - id: ope-gnu-rl-a-practical-and-scalable-reinforcement-
+    title: 'Gnu-RL: A Practical and Scalable Reinforcement Learning Solution for Building
+      HVAC Control Using a Differentiable MPC Policy'
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2020.562239/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-passive-design-strategies-for-energy-efficient
+    title: Passive Design Strategies for Energy Efficient Buildings in the Arabian Desert
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2021.805603/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
