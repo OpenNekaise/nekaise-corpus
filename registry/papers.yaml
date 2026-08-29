@@ -64219,3 +64219,26 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-prediction-equations-for-significant-duration-
+    title: Prediction Equations for Significant Duration of Earthquake Ground Motions
+      considering Site and Near‐Source Effects
+    url: https://escholarship.org/content/qt1gz7c50w/qt1gz7c50w.pdf
+    source: openalex
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: ope-the-2015-gorkha-nepal-earthquake-insights-from
+    title: 'The 2015 Gorkha Nepal Earthquake: Insights from Earthquake Damage Survey'
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2015.00008/pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-operational-resilience-concepts-design-and-ana
+    title: 'Operational resilience: concepts, design and analysis'
+    url: https://arxiv.org/pdf/1508.01230
+    source: openalex
+    license: open
+    topic: structures_civil
+    format: pdf
