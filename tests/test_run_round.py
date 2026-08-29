@@ -27,6 +27,7 @@ def test_real_openalex_backend_uses_one_rotating_query_per_round():
     ) == [
         "python", str(run_round.SCRIPTS / "find_sources.py"),
         "--per", "100", "--backends", "openalex", "--query-count", "1",
+        "--circuit-threshold", "1",
         "--query-cursor", "7", "--append",
     ]
 

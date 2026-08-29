@@ -253,11 +253,13 @@
       "--backends",
       "openalex",
       "--query-count",
+      "1",
+      "--circuit-threshold",
       "1"
     ],
     "enabled": true,
     "required": false,
-    "reason": "budgeted 2026-08-26 for OpenAlex's anonymous 100-search/day allowance: one query per ~20-minute round is ~72/day; the cursor walks all 105 queries and then deeper pages without requiring credentials"
+    "reason": "budgeted 2026-08-26 for OpenAlex's anonymous 100-search/day allowance: continuous rounds now run every ~10-11 minutes, so a one-request circuit persists Retry-After on the first 429 and holds the cursor during the upstream cooldown; the cursor walks all 105 queries and then deeper pages without requiring credentials"
   },
   "find_arxiv": {
     "script": "find_sources.py",
