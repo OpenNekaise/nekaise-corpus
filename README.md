@@ -93,7 +93,7 @@ Discovery state lives in `registry/rotation.json`. Source metadata lives in `reg
 results and hashes live in `manifest/`. Reversible rights/policy exclusions live in
 `registry/eligibility.json`; they preserve provenance while preventing future fetches and keeping
 the affected text out of `corpus/`. Decisions made by the quality gate remain in
-`registry/pruned.jsonl` and `pruned_urls.txt`. Another operator—or another machine—can resume the
+`registry/pruned-*.jsonl` and `pruned_urls.txt`. Another operator—or another machine—can resume the
 same excavation without starting over.
 
 The canonical round is deliberately fail-closed:

@@ -14,7 +14,7 @@ def test_oversized_control_files_enforces_headroom(tmp_path, monkeypatch):
     (registry_dir / "safe.yaml").write_bytes(b"x" * limit)
     oversized = manifest_dir / "too-large.jsonl"
     oversized.write_bytes(b"x" * (limit + 1))
-    oversized_ledger = registry_dir / "pruned.jsonl"
+    oversized_ledger = registry_dir / "pruned-7.jsonl"
     oversized_ledger.write_bytes(b"x" * (limit + 2))
     (tmp_path / "untracked.bin").write_bytes(b"x" * (limit + 1))
 
@@ -22,6 +22,29 @@ def test_oversized_control_files_enforces_headroom(tmp_path, monkeypatch):
         (oversized, limit + 1),
         (oversized_ledger, limit + 2),
     ]
+
+
+def test_prune_ledger_contract_checks_layout_fields_and_bucket(tmp_path, monkeypatch):
+    registry_dir = tmp_path / "registry"
+    registry_dir.mkdir()
+    monkeypatch.setattr(check_contracts.registry, "REG_DIR", registry_dir)
+    sid = "ost-example"
+    wrong = next(
+        registry_dir / f"pruned-{bucket}.jsonl"
+        for bucket in range(check_contracts.registry.PRUNE_LEDGER_BUCKETS)
+        if registry_dir / f"pruned-{bucket}.jsonl"
+        != check_contracts.registry.prune_ledger_path(sid)
+    )
+    wrong.write_text(
+        '{"id":"ost-example","url":"https://example.org/a.pdf",'
+        '"reason":"thin","pruned_at":"2026-08-29T00:00:00Z"}\n'
+    )
+    (registry_dir / "pruned.jsonl").write_text("{}\n")
+
+    errors = check_contracts.prune_ledger_contract_errors(tmp_path)
+
+    assert any("legacy monolith" in error for error in errors)
+    assert any("id belongs in" in error for error in errors)
 
 
 def test_real_control_files_have_publication_headroom():

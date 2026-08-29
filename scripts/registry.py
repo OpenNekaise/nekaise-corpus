@@ -32,6 +32,11 @@ REG_DIR = ROOT / "registry"
 # hit 61MB at 75k docs (2026-07-20). All manifest I/O goes through load_manifest_rows /
 # write_manifest_rows below; nothing else may open these files.
 MAN_DIR = ROOT / "manifest"
+# Quality decisions grow independently of the live registry because pruned sources can be
+# rediscovered after transient failures. Keep that append-only provenance in stable hash buckets,
+# just like the heavy patent veins, so no single publication file approaches GitHub's 100 MiB
+# hard limit. The original registry/pruned.jsonl is migration input only.
+PRUNE_LEDGER_BUCKETS = 16
 
 CURATED = "curated.yaml"
 # id prefix -> shard file. Anything not matching is hand-curated (curated.yaml).
@@ -307,6 +312,63 @@ def write_manifest_rows(rows) -> None:
     for p in manifest_files():
         if p.name not in live:
             p.unlink()
+
+
+def prune_ledger_path(sid: str) -> Path:
+    """Stable decision-ledger shard for a pruned source id."""
+    if not sid:
+        raise ValueError("prune ledger row requires a non-empty id")
+    bucket = zlib.crc32(sid.encode()) % PRUNE_LEDGER_BUCKETS
+    return REG_DIR / f"pruned-{bucket}.jsonl"
+
+
+def prune_ledger_files() -> list[Path]:
+    """Canonical sharded prune-ledger files in numeric bucket order."""
+    paths = []
+    for path in REG_DIR.glob("pruned-*.jsonl"):
+        match = re.fullmatch(r"pruned-(\d+)\.jsonl", path.name)
+        if match:
+            paths.append((int(match.group(1)), path))
+    return [path for _, path in sorted(paths)]
+
+
+def load_prune_ledger_rows() -> list[dict]:
+    """Load all prune decisions, accepting the legacy monolith only as migration input.
+
+    If an interrupted migration leaves both layouts, the monolith remains authoritative until it
+    is removed by write_prune_ledger_rows(), so rerunning the migration cannot duplicate rows.
+    """
+    legacy = REG_DIR / "pruned.jsonl"
+    paths = [legacy] if legacy.exists() else prune_ledger_files()
+    out: list[dict] = []
+    for path in paths:
+        out.extend(json.loads(line) for line in path.read_text().splitlines() if line.strip())
+    return out
+
+
+def write_prune_ledger_rows(rows) -> dict[str, int]:
+    """Rewrite prune decision provenance into stable shards and retire the legacy monolith.
+
+    New shards are atomically replaced before obsolete files are removed. This is principally the
+    migration/recovery path; routine pruning appends directly through prune_ledger_path().
+    """
+    groups: dict[Path, list[dict]] = {}
+    for row in rows:
+        groups.setdefault(prune_ledger_path(row.get("id")), []).append(row)
+    REG_DIR.mkdir(exist_ok=True)
+    live = set(groups)
+    for path, group in sorted(groups.items()):
+        text = "".join(
+            json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n" for row in group
+        )
+        ops.atomic_write_text(path, text)
+    for path in prune_ledger_files():
+        if path not in live:
+            path.unlink()
+    legacy = REG_DIR / "pruned.jsonl"
+    if legacy.exists():
+        legacy.unlink()
+    return {path.name: len(group) for path, group in sorted(groups.items())}
 
 
 def existing_keys(include_blocklist: bool = True):

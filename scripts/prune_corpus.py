@@ -86,19 +86,18 @@ def write_prune_ledger(manifest: list[dict], drop: dict[str, str],
                        blocklisted_urls: set[str]) -> int:
     """Persist the quality decision, not just its URL side effect.
 
-    pruned_urls.txt remains the fast compatibility blocklist.  This JSONL ledger preserves why a
-    source was rejected so discovery quality can be measured by backend/query over time.
+    pruned_urls.txt remains the fast compatibility blocklist.  The sharded JSONL ledger preserves
+    why a source was rejected so discovery quality can be measured by backend/query over time.
     """
     if not drop:
         return 0
-    path = registry.REG_DIR / "pruned.jsonl"
     now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
     run_id = os.environ.get("NEKAISE_RUN_ID")
     by_id = {r["id"]: r for r in manifest}
     with ops.named_lock("prune-ledger", timeout=30):
         for sid in sorted(drop):
             r = by_id[sid]
-            ops.append_jsonl(path, {
+            ops.append_jsonl(registry.prune_ledger_path(sid), {
                 "id": sid,
                 "url": r.get("url"),
                 "title": r.get("title"),

@@ -21,7 +21,7 @@ machine resumes exactly where the last one stopped.
 | `registry/rotation.json` | **Excavation state** — the next page/offset/bucket per backend, advanced by `scripts/rotation.py` after each successful run. Committed, so the growth loop is resumable by anyone. |
 | `registry/backends.json` | **Control-plane config** — finder script, fixed arguments, enabled/paused state. `run_round.py` validates it against `rotation.json`, so new backends cannot silently miss automation. |
 | `registry/eligibility.json` | **Reversible policy exclusions** — source/id selectors whose provenance stays registered but whose bytes must not be fetched or placed in `corpus/`. Loader, cleaner, stats, lint, and contracts all consume it. |
-| `registry/pruned.jsonl` | **Decision provenance** for future prunes — id/url/reason/metrics/run id. `pruned_urls.txt` remains the fast compatibility blocklist. |
+| `registry/pruned-*.jsonl` | Sharded **decision provenance** for future prunes — id/url/reason/metrics/run id. `pruned_urls.txt` remains the fast compatibility blocklist. |
 | `scripts/` | The **machinery** — loader, discovery backends, quality gate, cron/marathon runners. All run from the repo root: `python scripts/<x>.py`. |
 | `.claude/skills/` | The **skills** — step-by-step playbooks for each loop (`go` · `load-corpus` · `find-sources` · `crawl-docs` · `clean-corpus` · `dig`). Claude Code picks them up natively; Codex: read the `SKILL.md` files directly. |
 | `workspace/` | **Your scratch space** (git-ignored). One-off helper scripts, notes, dumps go here — never the repo root. Promote durable tools into `scripts/`. |

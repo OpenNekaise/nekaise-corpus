@@ -34,6 +34,35 @@ def oversized_control_files(root: Path = ROOT) -> list[tuple[Path, int]]:
     )
 
 
+def prune_ledger_contract_errors(root: Path = ROOT) -> list[str]:
+    """Validate every decision-provenance shard and reject the retired monolithic layout."""
+    errors: list[str] = []
+    legacy = root / "registry" / "pruned.jsonl"
+    if legacy.exists():
+        errors.append("registry/pruned.jsonl: legacy monolith must be migrated to pruned-*.jsonl")
+    files = sorted((root / "registry").glob("pruned-*.jsonl"))
+    valid_names = {
+        f"pruned-{bucket}.jsonl" for bucket in range(registry.PRUNE_LEDGER_BUCKETS)
+    }
+    for path in files:
+        rel = path.relative_to(root)
+        if path.name not in valid_names:
+            errors.append(f"{rel}: unexpected prune-ledger shard name")
+        for lineno, line in enumerate(path.read_text().splitlines(), 1):
+            try:
+                row = json.loads(line)
+                if not all(row.get(k) for k in ("id", "url", "reason", "pruned_at")):
+                    errors.append(f"{rel}:{lineno}: missing required field")
+                elif path.name != registry.prune_ledger_path(row["id"]).name:
+                    expected = registry.prune_ledger_path(row["id"]).name
+                    errors.append(f"{rel}:{lineno}: id belongs in registry/{expected}")
+            except json.JSONDecodeError as exc:
+                errors.append(f"{rel}:{lineno}: {exc}")
+            if len(errors) >= 50:
+                return errors
+    return errors
+
+
 def patent_country_contract_errors(backends: dict) -> list[str]:
     """An enabled patent backend may only request jurisdictions the finder itself accepts.
 
@@ -149,17 +178,7 @@ def main() -> int:
             f"split before {MAX_CONTROL_FILE_BYTES / 1024 / 1024:.0f} MiB"
         )
 
-    ledger = registry.REG_DIR / "pruned.jsonl"
-    if ledger.exists():
-        for lineno, line in enumerate(ledger.read_text().splitlines(), 1):
-            try:
-                row = json.loads(line)
-                if not all(row.get(k) for k in ("id", "url", "reason", "pruned_at")):
-                    errors.append(f"pruned.jsonl:{lineno}: missing required field")
-            except json.JSONDecodeError as exc:
-                errors.append(f"pruned.jsonl:{lineno}: {exc}")
-            if len(errors) >= 50:
-                break
+    errors.extend(prune_ledger_contract_errors())
 
     if errors:
         for error in errors:

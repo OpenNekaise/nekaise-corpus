@@ -9,7 +9,7 @@ agent, cron, and marathon) can mutate them.  This module provides:
 * a local append-only run ledger under logs/ for diagnosing interrupted automation.
 
 The run ledger is deliberately git-ignored operational state.  Durable corpus provenance remains
-in registry/, manifest/, and registry/pruned.jsonl.
+in registry/, manifest/, and registry/pruned-*.jsonl.
 """
 from __future__ import annotations
 
