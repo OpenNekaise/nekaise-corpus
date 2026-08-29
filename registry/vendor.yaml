@@ -36836,3 +36836,45 @@ sources:
     license_evidence: permits downloading, copying and/or printing of pages for strictly
       personal and non-commercial use; no automation clause
     rights_verified_at: '2026-08-28'
+  - id: vnd-sensirion-sensirion-differential-pressure-datasheet-sdp600series
+    title: 'Sensirion: Datasheet SDP600 series 07/2015 • PDF • 469.8 KB (6166CF0E —
+      Sensirion Differential Pressure Datasheet SDP600Series)'
+    url: https://sensirion.com/media/documents/63859DD0/6166CF0E/Sensirion_Differential_Pressure_Datasheet_SDP600Series.pdf
+    source: vendor_sensirion
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://sensirion.com/legal-notice
+    license_evidence: no website terms-of-use page found (legal notice links privacy/cookies
+      and T&C of sale only); copyright status of datasheets unstated
+    rights_verified_at: '2026-08-28'
+  - id: vnd-sensirion-sensirion-differential-pressure-appnotes-sdp600series-changing-measu
+    title: 'Sensirion: Changing measurement resolution SDP600 05/2010 • PDF • 93.4 KB
+      (6166C545 — Sensirion Differential Pressure AppNotes SDP600Series Changing M'
+    url: https://sensirion.com/media/documents/1BA19F23/6166C545/Sensirion_Differential_Pressure_AppNotes_SDP600Series_Changing_Measu.pdf
+    source: vendor_sensirion
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://sensirion.com/legal-notice
+    license_evidence: no website terms-of-use page found (legal notice links privacy/cookies
+      and T&C of sale only); copyright status of datasheets unstated
+    rights_verified_at: '2026-08-28'
+  - id: vnd-sensirion-sensirion-differential-pressure-appnotes-sdp600-sdp1000
+    title: 'Sensirion: Handling instructions SDP600 and SDP1000 series 02/2012 • PDF
+      • 107.3 KB (6166C5B7 — Sensirion Differential Pressure AppNotes SDP600 SDP100'
+    url: https://sensirion.com/media/documents/2B00DCF7/6166C5B7/Sensirion_Differential_Pressure_AppNotes_SDP600_SDP1000.pdf
+    source: vendor_sensirion
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://sensirion.com/legal-notice
+    license_evidence: no website terms-of-use page found (legal notice links privacy/cookies
+      and T&C of sale only); copyright status of datasheets unstated
+    rights_verified_at: '2026-08-28'
