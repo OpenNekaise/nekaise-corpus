@@ -64071,3 +64071,19 @@ sources:
     license: open
     topic: commissioning_fdd
     format: pdf
+  - id: ope-toward-carbon-free-by-2060-a-decarbonization-r
+    title: 'Toward carbon free by 2060: A decarbonization roadmap of operational residential
+      buildings in China'
+    url: https://escholarship.org/content/qt7c53d8t6/qt7c53d8t6.pdf?t=s4ix23
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-china-s-building-stock-estimation-and-energy-i
+    title: China's building stock estimation and energy intensity analysis
+    url: https://escholarship.org/content/qt1hs537xx/qt1hs537xx.pdf
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
