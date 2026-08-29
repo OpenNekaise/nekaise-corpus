@@ -64525,3 +64525,18 @@ sources:
     topic: commissioning_fdd
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-review-on-the-conversion-of-thermoacoustic-pow
+    title: Review on the conversion of thermoacoustic power into electricity
+    url: https://arxiv.org/pdf/1802.03975
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: ope-total-and-peak-energy-consumption-minimization
+    title: Total and Peak Energy Consumption Minimization of Building HVAC Systems Using
+      Model Predictive Control
+    url: https://escholarship.org/content/qt81m4p0g8/qt81m4p0g8.pdf
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
