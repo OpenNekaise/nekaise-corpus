@@ -25088,3 +25088,27 @@ sources:
       published here: each copy must include a copyright notice; not for commercial
       purposes'
     rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-ta-6-way-valve-en-low
+    title: 'IMI Hydronic: Technical Specifications (TA 6 way valve EN low)'
+    url: https://cdn.tessa.imihy.eimed-project.de/555412/TA-6-way_valve_EN_low.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-ta-tri-en-low
+    title: 'IMI Hydronic: Technical Specifications (TA TRI EN low)'
+    url: https://cdn.tessa.imihy.eimed-project.de/614344/TA-TRI_EN_low.pdf
+    source: vendor_imi
+    license: open
+    topic: construction
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
