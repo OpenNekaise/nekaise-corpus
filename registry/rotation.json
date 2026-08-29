@@ -38,14 +38,14 @@
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "2015-W29",
+    "next": "2026-W21",
     "skip": [
       [
-        "2020-W52",
-        "2017-W49"
+        "2026-W19",
+        "1998-W19"
       ]
     ],
-    "note": "weekly buckets 1900..now, walked backwards; RE-AIMED 2026-08-23 from 2017-W49 to verified-live frontier 2026-W19 (probe hit cap immediately): 2021-2026, 2020-W53, and 2017-W48..2016-W02 remain virgin, with the older interval reserved for a later pass. The inclusive skip range records the already-mined 2020-W52..2017-W49 interval; W01 probes were also mined for 2017-2020. Earlier mined: 1925-1940 W01s, 2015-W52..W08, 2014 whole, 2013..1998-W19 (8B/10B marathons). --countries flag (default US): CN/EP/DE work, sitemap titles are English for all countries"
+    "note": "weekly buckets 1900..now, walked backwards. Local run history records a successful US attempt for every valid ISO week from 1998-W19 through 2026-W19; many pre-hold buckets ended at the 400-candidate cap, so this skip records the completed excavation pass rather than proof of exhaustion. Re-aimed 2026-08-29 to live, unmined W21 then W20; W22 was still a direct filling page with zero US entries. After W20 the skip jumps to W18. The backwards-only frontier needs periodic live re-probing. Earlier 1925-1940 W01 probes may be harmlessly revisited. Supported --countries values are US (default) and CN."
   },
   "find_purdue": {
     "flag": "--token",

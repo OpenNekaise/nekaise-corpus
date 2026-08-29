@@ -62,6 +62,22 @@ def test_skip_range_can_cross_a_53_week_year(tmp_path, monkeypatch):
     assert rotation.advance("find_patents") == "--bucket 2019-W51"
 
 
+def test_skip_range_can_jump_a_completed_multi_decade_patent_span(tmp_path, monkeypatch):
+    path = tmp_path / "rotation.json"
+    path.write_text(json.dumps({
+        "find_patents": {
+            "flag": "--bucket",
+            "next": "2026-W20",
+            "skip": [["2026-W19", "1998-W19"]],
+        }
+    }))
+    monkeypatch.setattr(rotation, "PATH", path)
+    monkeypatch.setattr(rotation.ops, "WORKSPACE", tmp_path)
+
+    assert rotation.advance("find_patents") == "--bucket 1998-W18"
+    assert rotation.load()["find_patents"]["next"] == "1998-W18"
+
+
 @pytest.mark.parametrize(
     ("value", "message"),
     [
