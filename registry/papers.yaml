@@ -64722,3 +64722,21 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-assessment-of-indoor-air-quality-and-comfort-b
+    title: Assessment of indoor air quality and comfort by comparing an energy simulation
+      and actual data in Native American shelters
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2023.1202965/pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-determining-the-difference-between-predicted-v
+    title: Determining the Difference between Predicted vs. Actual Lighting Use in Higher
+      Education Corridors
+    url: https://www.frontiersin.org/articles/10.3389/fmech.2017.00011/pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
