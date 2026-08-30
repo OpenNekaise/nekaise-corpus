@@ -64789,3 +64789,11 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
+  - id: ope-microbial-and-enzymatic-degradation-of-synthet
+    title: Microbial and Enzymatic Degradation of Synthetic Plastics
+    url: https://www.frontiersin.org/articles/10.3389/fmicb.2020.580709/pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
