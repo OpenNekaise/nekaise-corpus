@@ -52487,3 +52487,51 @@ sources:
       published here: each copy must include a copyright notice; not for commercial
       purposes'
     rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-duolux-50-en-lq
+    title: 'IMI Hydronic: Technical Specifications (Duolux 50 EN lq)'
+    url: https://cdn.tessa.imihy.eimed-project.de/558224/Duolux-50_EN_lq.pdf
+    source: vendor_imi
+    license: open
+    topic: construction
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-multilux-en-lq
+    title: 'IMI Hydronic: Technical Specifications (Multilux EN lq)'
+    url: https://cdn.tessa.imihy.eimed-project.de/609664/Multilux_EN_lq.pdf
+    source: vendor_imi
+    license: open
+    topic: construction
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-multilux-v-eclipse-en-lq
+    title: 'IMI Hydronic: Technical Specifications (Multilux V Eclipse EN lq)'
+    url: https://cdn.tessa.imihy.eimed-project.de/558137/Multilux-V-Eclipse_EN_lq.pdf
+    source: vendor_imi
+    license: open
+    topic: construction
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-thermostatic-valve-1-pipe-en-lq
+    title: 'IMI Hydronic: Technical Specifications (Thermostatic valve 1 pipe EN lq)'
+    url: https://cdn.tessa.imihy.eimed-project.de/558257/Thermostatic_valve_1-pipe_EN_lq.pdf
+    source: vendor_imi
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
