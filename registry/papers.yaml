@@ -65062,3 +65062,20 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
+  - id: ope-adaptive-lift-chiller-units-fault-diagnosis-mo
+    title: Adaptive lift chiller units fault diagnosis model based on machine learning
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0320563&type=printable
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-integration-of-digital-twins-and-machine-learn
+    title: Integration of digital twins and machine learning for predictive maintenance
+      using APAR method rules in non-residential buildings
+    url: https://public-pages-files-2025.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2025.1734945/pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
