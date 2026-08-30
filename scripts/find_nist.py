@@ -19,6 +19,7 @@ blocklist and appends `nst-` entries to registry/nist.yaml (routed there by scri
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 import time
 
@@ -30,32 +31,46 @@ import registry
 API = "https://api.crossref.org/works"
 MAILTO = "nekaise-corpus@example.org"
 
-# (bibliographic search term -> topic). Crossref full-text-searches title/subject/abstract.
-# Wave-1 terms (fire/structural/building/HVAC/...) were mined to the Crossref 10k-offset
-# ceiling by 2026-08 (~2k docs kept). Wave 2 below targets untouched NBS/NIST veins
-# (Building Materials and Structures series, acoustics, moisture, component-level HVAC);
-# rotation pointer was reset to p1 with this swap (2026-08-13).
+# (bibliographic search term -> topic). Crossref full-text-searches title/subject/abstract, but
+# treats multi-word searches fuzzily: even "building code" can return character-encoding reports.
+# Wave 3 therefore combines building-anchored queries with a conservative title gate below.
+# Wave 1 covered broad fire/structural/building/HVAC terms; wave 2 covered materials, acoustics,
+# moisture, and component-level HVAC. Both reached the deep-offset/dry tail by 2026-08.
+QUERY_WAVE = 3
 QUERIES = [
-    ("acoustics", "architecture"), ("sound insulation", "architecture"),
-    ("flammability", "architecture"), ("smoke detector", "architecture"),
-    ("sprinkler suppression", "architecture"), ("egress evacuation", "architecture"),
-    ("masonry", "structures_civil"), ("steel frame", "structures_civil"),
-    ("timber wood structures", "structures_civil"), ("snow load", "structures_civil"),
-    ("hurricane tornado", "structures_civil"),
-    ("roofing", "materials"), ("glazing fenestration", "materials"),
-    ("moisture buildings", "materials"), ("coatings paint", "materials"),
-    ("sealants adhesives", "materials"), ("gypsum plaster", "materials"),
-    ("cement hydration", "materials"), ("concrete aggregate", "materials"),
-    ("weathering durability", "materials"), ("thermal conductivity", "materials"),
-    ("heat pump", "equipment_systems"), ("refrigeration", "equipment_systems"),
-    ("boiler furnace", "equipment_systems"), ("chimney flue", "equipment_systems"),
-    ("duct air distribution", "equipment_systems"), ("solar heating cooling", "equipment_systems"),
-    ("air infiltration leakage", "building_energy"), ("weatherization retrofit", "building_energy"),
-    ("radon indoor", "building_energy"), ("photovoltaic buildings", "building_energy"),
-    ("flood", "infrastructure"), ("water distribution pipes", "infrastructure"),
-    ("earthquake lifelines", "infrastructure"),
-    ("nondestructive evaluation", "standards_protocols"),
+    ("building commissioning", "commissioning_fdd"),
+    ("HVAC commissioning", "commissioning_fdd"),
+    ("fault detection diagnosis HVAC", "commissioning_fdd"),
+    ("air handling unit fault detection", "commissioning_fdd"),
+    ("BACnet building automation", "standards_protocols"),
+    ("building controls interoperability", "standards_protocols"),
+    ("building automation controls", "controls_bas"),
+    ("commercial building HVAC controls", "controls_bas"),
+    ("ventilation control buildings", "building_energy"),
+    ("indoor air quality buildings ventilation", "building_energy"),
+    ("building code compliance", "standards_protocols"),
+    ("seismic building code", "standards_protocols"),
+    ("heat pump controls building", "equipment_systems"),
+    ("grid interactive efficient buildings", "controls_bas"),
+    ("smart building sensors", "controls_bas"),
 ]
+
+# Crossref's relevance ranking alone is not a domain boundary. Require a title to name an
+# unambiguous wave-3 concept (or a meaningful conjunction) before spending a download slot.
+# The conjunctions avoid false positives observed in the page-1 review: stochastic "continuous"
+# processes, generic IT interoperability/security reports, and punched-card character codes.
+TITLE_ANCHOR = re.compile(
+    r"commission|\bhvac\b|\bbacnet\b|heat[ -]?pump|"
+    r"(?=.*(?:fault|diagnos))(?=.*(?:\bhvac\b|air[ -]?handl|build))|"
+    r"(?=.*ventilat)(?=.*(?:build|house|attic|indoor|smoke|fire|pressure|natural|manufactur))|"
+    r"(?=.*(?:code|standard))(?=.*(?:build|seismic|structur|fire|energy))|"
+    r"(?=.*build)(?=.*(?:automation|control|interoperab|sensor|grid[ -]?interactive|cyber))",
+    re.I,
+)
+
+
+def title_in_scope(title: str) -> bool:
+    return bool(TITLE_ANCHOR.search(title or ""))
 
 
 def from_crossref(term: str, rows: int, offset: int):
@@ -71,6 +86,8 @@ def from_crossref(term: str, rows: int, offset: int):
         if not title or not url:
             continue
         if "nvlpubs.nist.gov" not in url.lower() or not url.lower().endswith(".pdf"):
+            continue
+        if not title_in_scope(title):
             continue
         out.append((title.strip(), url))
     return out

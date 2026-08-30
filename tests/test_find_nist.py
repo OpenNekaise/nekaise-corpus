@@ -3,6 +3,66 @@ import sys
 import pytest
 
 import find_nist
+import lint_registry
+
+
+def test_wave_3_query_universe_is_pinned_and_topics_are_valid():
+    assert find_nist.QUERY_WAVE == 3
+    assert len(find_nist.QUERIES) == 15
+    assert {topic for _term, topic in find_nist.QUERIES} <= lint_registry.TOPICS
+
+
+@pytest.mark.parametrize(
+    "title",
+    [
+        "Annex 47 Report 1: Commissioning Overview",
+        "A simulation study of fault detection in HVAC systems",
+        "Programmers guide to the BACnet communications DLL",
+        "Summer attic and whole-house ventilation",
+        "Sensitivity analysis of installation faults on heat pump performance",
+        "Seismic provisions for structural building codes",
+    ],
+)
+def test_wave_3_title_gate_accepts_aec_titles(title):
+    assert find_nist.title_in_scope(title)
+
+
+@pytest.mark.parametrize(
+    "title",
+    [
+        "On strongly continuous stochastic processes",
+        "Message handling systems interoperability tests",
+        "Guidelines for smart grid cybersecurity",
+        "Code extension techniques for the 7-bit coded character set",
+        "Material Handling Workstation implementation",
+    ],
+)
+def test_wave_3_title_gate_rejects_observed_crossref_false_positives(title):
+    assert not find_nist.title_in_scope(title)
+
+
+def test_crossref_applies_title_gate_before_returning_hits(monkeypatch):
+    class Response:
+        def raise_for_status(self):
+            pass
+
+        def json(self):
+            return {"message": {"items": [
+                {
+                    "title": ["HVAC functional inspection and testing guide"],
+                    "resource": {"primary": {"URL": "https://nvlpubs.nist.gov/hvac.pdf"}},
+                },
+                {
+                    "title": ["Message handling systems interoperability tests"],
+                    "resource": {"primary": {"URL": "https://nvlpubs.nist.gov/it.pdf"}},
+                },
+            ]}}
+
+    monkeypatch.setattr(find_nist.requests, "get", lambda *_args, **_kwargs: Response())
+
+    assert find_nist.from_crossref("building controls interoperability", 50, 0) == [
+        ("HVAC functional inspection and testing guide", "https://nvlpubs.nist.gov/hvac.pdf")
+    ]
 
 
 def _empty_registry(monkeypatch):

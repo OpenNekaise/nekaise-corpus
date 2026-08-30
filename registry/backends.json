@@ -55,8 +55,8 @@
       "--max",
       "300"
     ],
-    "enabled": false,
-    "reason": "paused 2026-08-22 after 72 recorded zero-yield merges; pointer 182 is offset 9050 at rows=50 and near Crossref's ~10000 offset ceiling; finder now fails closed, preserve pointer until a reviewed wave-3 query set resets page to 1"
+    "enabled": true,
+    "required": false
   },
   "find_zenodo": {
     "script": "find_zenodo.py",
