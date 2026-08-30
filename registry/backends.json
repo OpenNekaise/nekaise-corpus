@@ -32,9 +32,9 @@
       "--max",
       "25"
     ],
-    "enabled": true,
+    "enabled": false,
     "required": false,
-    "reason": "volatile late-depth OAPEN pages yielded 0 books in 21 of 23 recent successes and transient failures aborted 3 of 26 attempts; retry the preserved pointer without blocking healthy veins"
+    "reason": "paused 2026-08-30 at cursor 22289 after three consecutive 496-second timeouts on the same building-information-modeling request; only 22 books landed across 434 merged attempts since 2026-08-24; pointer preserved for a separately reviewed query re-aim"
   },
   "find_openaire": {
     "script": "find_openaire.py",

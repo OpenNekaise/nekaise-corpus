@@ -13,6 +13,7 @@ import run_round
 def test_real_backend_config_covers_rotation_and_finders():
     backends = run_round.load_backends()
     assert run_round.validate_backends(backends, rotation.load()) == []
+    assert backends["find_books"]["enabled"] is False
     assert backends["find_books"]["required"] is False
 
 
