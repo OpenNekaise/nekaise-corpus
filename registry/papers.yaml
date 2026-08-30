@@ -65030,3 +65030,12 @@ sources:
     license: open
     topic: infrastructure
     format: pdf
+  - id: ope-practical-indicators-for-risk-of-airborne-tran
+    title: Practical Indicators for Risk of Airborne Transmission in Shared Indoor Environments
+      and Their Application to COVID-19 Outbreaks
+    url: https://escholarship.org/content/qt3kr7n3x8/qt3kr7n3x8.pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
