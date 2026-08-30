@@ -64656,3 +64656,21 @@ sources:
     topic: equipment_systems
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-remote-health-monitoring-of-wind-turbines-empl
+    title: Remote Health Monitoring of Wind Turbines Employing Vibroacoustic Transducers
+      and Autoencoders
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2022.858958/pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-localization-of-mechanical-and-electrical-defe
+    title: Localization of mechanical and electrical defects in dry-type transformers
+      using an optimized acoustic imaging approach
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0294674&type=printable
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
