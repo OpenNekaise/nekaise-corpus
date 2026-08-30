@@ -26,7 +26,7 @@
   },
   "find_nist": {
     "flag": "--page",
-    "next": 52,
+    "next": 53,
     "step": 1,
     "note": "Wave 3 began 2026-08-30 at page 1 with 15 building-anchored commissioning, controls/BACnet, HVAC FDD, ventilation, code-adjacent, and heat-pump queries plus a title precision gate; its reviewed page-1 sample was 29/29 relevant. Waves 1-2 reached the deep-offset/dry tail. Crossref DOI prefix 10.6028; optional backend retains its pointer on API failure."
   },
@@ -38,7 +38,7 @@
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "1995-W08",
+    "next": "1995-W07",
     "skip": [
       [
         "2026-W19",
@@ -137,7 +137,7 @@
   },
   "find_openalex": {
     "flag": "--query-cursor",
-    "next": 334,
+    "next": 335,
     "step": 1,
     "note": "RE-AIMED 2026-08-26 after OpenAlex introduced usage pricing: anonymous access has 100 search requests/day, while the old all-query run made 105 requests and exhausted the budget. One query per round stays below the limit at the live ~72-round/day maximum; the flattened cursor advances across the frozen 105-query list, then continues at page 2 and deeper. Any query-list change requires a reviewed cursor migration."
   },
@@ -149,7 +149,7 @@
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 270,
+    "next": 271,
     "step": 1,
     "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature)."
   }
