@@ -64629,3 +64629,12 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-building-information-modeling-based-building-e
+    title: 'Building Information Modeling-Based Building Energy Modeling: Investigation
+      of Interoperability and Simulation Results'
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2020.573971/pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
