@@ -70,7 +70,7 @@ def test_sitemap_index_and_urlset_are_walked_with_filter():
 def test_html_index_links_are_absolutized_and_unescaped():
     page = b'<a href="/lit/a%20b.pdf?x=1&amp;y=2">A</a><a href="https://cdn.example/c.PDF">C</a>'
     cfg = vendor(mechanism="html_index", index_urls=["https://acme.example/literature/"])
-    urls = find_vendor.enumerate_html_index(cfg, lambda url, delay=0.0: page)
+    urls = find_vendor.enumerate_html_index(cfg, lambda url, *a, **k: page)
     assert urls == ["https://acme.example/lit/a%20b.pdf?x=1&y=2", "https://cdn.example/c.PDF"]
 
 
@@ -125,7 +125,7 @@ def test_sitemap_pages_scans_a_budget_remembers_visits_and_accumulates_docs(tmp_
     }
     fetched = []
 
-    def fetcher(url, delay=0.0):
+    def fetcher(url, delay=0.0, method="GET", data=None):
         fetched.append(url)
         return html[url]
 
@@ -146,7 +146,7 @@ def test_sitemap_pages_fails_only_when_every_page_fails(tmp_path, monkeypatch):
     cfg = vendor(mechanism="sitemap_pages", page_pattern=r"/product/")
     pages = ["https://acme.example/product/p1", "https://acme.example/product/p2"]
 
-    def flaky(url, delay=0.0):
+    def flaky(url, delay=0.0, method="GET", data=None):
         if url.endswith("p1"):
             raise RuntimeError("503")
         return b'<a href="/files/p2.pdf">d</a>'
@@ -155,7 +155,7 @@ def test_sitemap_pages_fails_only_when_every_page_fails(tmp_path, monkeypatch):
         "https://acme.example/files/p2.pdf"]
     with pytest.raises(RuntimeError, match="all 1 page fetches failed"):
         find_vendor.candidate_documents("acme", cfg, ["https://acme.example/product/p9"], 40,
-                                        lambda u, delay=0.0: (_ for _ in ()).throw(RuntimeError("x")))
+                                        lambda u, *a, **k: (_ for _ in ()).throw(RuntimeError("x")))
 
 
 def test_pdf_links_reads_anchors_bare_hrefs_and_json_embedded_urls():
@@ -167,6 +167,104 @@ def test_pdf_links_reads_anchors_bare_hrefs_and_json_embedded_urls():
         ("https://acme.example/d/b.pdf", ""),
         ("https://cdn.example/d/c.pdf?f=1", ""),
     ]
+
+
+def test_json_api_pages_until_short_page_and_keeps_titles(tmp_path, monkeypatch):
+    import json as _json
+    monkeypatch.setattr(find_vendor, "CACHE_DIR", tmp_path / "cache")
+    cfg = vendor(mechanism="json_api", sitemaps=None,
+                 api_url_template="https://docs.example/bas/api/khub/documents?per-page=2&page={page}",
+                 doc_url_template="https://docs.example/bas/api/khub/documents/{id}/content",
+                 pdf_pattern="/documents/", title_field="title",
+                 filter_field="mimeType", filter_value="application/pdf")
+    pages = {
+        1: [{"id": "a", "title": "Metasys IOM", "mimeType": "application/pdf"},
+            {"id": "b", "title": "Video", "mimeType": "video/mp4"}],
+        2: [{"id": "c", "title": "Chiller catalog", "mimeType": "application/pdf"}],
+    }
+    calls = []
+
+    def fetcher(url, delay=0.0, method="GET", data=None):
+        page = int(url.rsplit("page=", 1)[1]); calls.append(page)
+        return _json.dumps(pages.get(page, [])).encode()
+
+    urls = find_vendor.enumerate_json_api(cfg, fetcher, key="jci")
+    assert urls == ["https://docs.example/bas/api/khub/documents/a/content",
+                    "https://docs.example/bas/api/khub/documents/c/content"]
+    assert calls == [1, 2]  # page 2 was short -> stop without a third request
+    assert find_vendor.known_titles_for("jci", cfg)[urls[1]] == "Chiller catalog"
+
+
+def test_html_index_post_and_pagination_template(tmp_path, monkeypatch):
+    monkeypatch.setattr(find_vendor, "CACHE_DIR", tmp_path / "cache")
+    cfg = vendor(mechanism="html_index", sitemaps=None, method="POST", data={"model": ""},
+                 index_url_template="https://acme.example/docs?page={page}", index_pages=2)
+    seen = []
+
+    def fetcher(url, delay=0.0, method="GET", data=None):
+        seen.append((url, method, data))
+        n = url[-1]
+        return f'<a href="https://cdn.example/d{n}.pdf">Doc {n}</a>'.encode()
+
+    urls = find_vendor.enumerate_html_index(cfg, fetcher, key="acme")
+    assert urls == ["https://cdn.example/d1.pdf", "https://cdn.example/d2.pdf"]
+    assert seen[0] == ("https://acme.example/docs?page=1", "POST", {"model": ""})
+    assert find_vendor.known_titles_for("acme")["https://cdn.example/d2.pdf"] == "Doc 2"
+
+
+def test_url_rewrite_turns_document_pages_into_download_urls():
+    cfg = vendor(url_rewrite=[[r"^https://www\.se\.com/ww/en/download/document/([^/]+)/?$",
+                               r"https://download.se.com/files?p_Doc_Ref=\1"]],
+                 pdf_pattern=r"p_Doc_Ref=")
+    docs = find_vendor.select_documents(cfg, ["https://www.se.com/ww/en/download/document/SPD_ABC/",
+                                              "https://www.se.com/ww/en/download/"])
+    assert docs == ["https://download.se.com/files?p_Doc_Ref=SPD_ABC"]
+    e = find_vendor.entries_for("se", cfg, docs, set(), set(), cap=5)[0]
+    assert e["id"] == "vnd-se-spd-abc" and e["title"].endswith("files — SPD ABC")   # query value, not 'files'
+    assert find_vendor.select_documents(cfg, ["https://x/privacy-policy.pdf", "https://x/terms-of-use.pdf"]) == []
+
+
+def test_json_api_stops_when_the_api_ignores_pagination(tmp_path, monkeypatch):
+    import json as _json
+    monkeypatch.setattr(find_vendor, "CACHE_DIR", tmp_path / "cache")
+    cfg = vendor(mechanism="json_api", sitemaps=None,
+                 api_url_template="https://d/api?page={page}", doc_url_template="https://d/{id}",
+                 pdf_pattern="https://d/")
+    calls = []
+    same = [{"id": "a", "title": "A"}, {"id": "b", "title": "B"}]
+    urls = find_vendor.enumerate_json_api(
+        cfg, lambda url, *a, **k: (calls.append(url), _json.dumps(same).encode())[1], key="k")
+    assert urls == ["https://d/a", "https://d/b"] and len(calls) == 2  # page 2 added nothing -> stop
+
+
+def test_paginated_listing_is_scanned_with_a_budget_and_raw_links(tmp_path, monkeypatch):
+    monkeypatch.setattr(find_vendor, "CACHE_DIR", tmp_path / "cache")
+    cfg = vendor(mechanism="html_index", sitemaps=None,
+                 index_url_template="https://v/document-search/?page={page}", index_pages=3,
+                 pages_per_run=2, raw_link_pattern=r'"downloadLink":"([^"]+\.pdf)"', pdf_pattern=r"\.pdf")
+    seen = []
+
+    def fetcher(url, *a, **k):
+        seen.append(url); n = url[-1]
+        return ('{"documents":[{"downloadLink":"/globalassets/doc%s.pdf"}]}' % n).encode()
+
+    universe = find_vendor.universe_for("v", cfg, refresh=True, fetcher=fetcher)
+    assert universe == [f"https://v/document-search/?page={n}" for n in (1, 2, 3)] and seen == []
+    docs = find_vendor.candidate_documents("v", cfg, universe, 40, fetcher)
+    assert docs == ["https://v/globalassets/doc1.pdf", "https://v/globalassets/doc2.pdf"]
+    assert seen == ["https://v/document-search/?page=1", "https://v/document-search/?page=2"]
+    docs = find_vendor.candidate_documents("v", cfg, universe, 40, fetcher)
+    assert seen[-1] == "https://v/document-search/?page=3" and len(docs) == 3
+
+
+def test_validate_json_api_and_template_shapes():
+    errors = find_vendor.validate_vendors({"vendors": {
+        "x": vendor(mechanism="json_api", api_url_template="https://a/x", doc_url_template="https://a/{id}"),
+        "y": vendor(mechanism="html_index", sitemaps=None, index_url_template="https://a/?p={page}"),
+        "z": vendor(method="PUT"),
+    }})
+    text = "\n".join(errors)
+    assert "'{page}'" in text and "index_pages" in text and "method must be GET or POST" in text
 
 
 def test_validate_requires_page_pattern_for_sitemap_pages():

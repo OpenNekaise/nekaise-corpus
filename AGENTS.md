@@ -203,12 +203,13 @@ instead. Remove the schedule with `bash scripts/install_maintainer_cron.sh --rem
 - **Respect each source's `license`:** `public-domain` (US gov) · `cc-by` / `cc-by-sa` (attribute) ·
   `open` (arXiv / OA — check per-source terms) · `proprietary-internal` (paywalled vendor material /
   standards — **pointers only, never add the bytes**).
-- **Manufacturer product literature (operator decision 2026-08-28):** freely downloadable, login-free
-  catalogs, data sheets, IOM manuals, engineering/selection guides and specification texts are
-  ingested as `license: open` via `scripts/find_vendor.py` + `registry/vendors.json` (per-vendor
-  rights review recorded there). A robots.txt Disallow on the literature paths, an AI/dataset-crawler
-  opt-out, or terms that forbid automated access / systematic downloading make that vendor
-  `rights.decision: no-go` — never work around such a wall.
+- **Manufacturer product literature (operator decision 2026-08-30, supersedes 08-28):** catalogs,
+  data sheets, IOM manuals, engineering/selection guides and specification texts are ingested as
+  `license: open` via `scripts/find_vendor.py` + `registry/vendors.json` for local training use — the
+  corpus never redistributes bytes. Declared prohibitions (website terms, robots.txt Disallow,
+  AI-crawler opt-outs) are recorded per vendor in `rights.tos_excerpt` for the audit trail but are
+  **not blockers**. What still bounds "obtainable": never bypass logins, paywalls or WAF/JS
+  challenges; honour Crawl-delay and the per-host caps in `build_corpus.py`.
 - **Respect `registry/eligibility.json`:** restrictions override an otherwise fetchable license.
   Preserve their registry/manifest and raw/text provenance; never restore them to `corpus/` without
   a reviewed rights decision and matching control-plane change.

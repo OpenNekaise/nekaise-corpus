@@ -6,7 +6,9 @@ vendor's literature portal — how its documents are enumerated (`sitemap`: XML 
 index listing the documents themselves; `sitemap_pages`: the sitemap lists product/document PAGES
 and each page carries the PDF links — the common case — scanned a bounded number of pages per
 round with a visited-page memory under workspace/; `html_index`: one or more listing pages carrying
-direct PDF links), which URLs count
+direct PDF links — optionally POSTed, optionally a paginated `index_url_template`; `json_api`: a paginated
+JSON listing such as Fluid Topics' khub API, giving ids + titles), `url_rewrite` regex pairs that turn
+listed page/reference URLs into fetchable document URLs, which URLs count
 (`pdf_pattern` / `exclude_pattern`), the default topic and keyword→topic rules, the per-host
 politeness delay, and the rights review (terms-of-use excerpt, robots verdict, reviewed_at). The
 finder itself only fetches sitemaps / listing pages (a handful of requests per vendor, cached for
@@ -40,7 +42,7 @@ import re
 import sys
 import time
 from pathlib import Path
-from urllib.parse import unquote, urljoin, urlsplit
+from urllib.parse import parse_qsl, unquote, urljoin, urlsplit
 from xml.etree import ElementTree
 
 import requests
@@ -53,11 +55,14 @@ VENDORS_PATH = registry.REG_DIR / "vendors.json"
 CACHE_DIR = ops.WORKSPACE / "vendor-sitemaps"
 SITEMAP_TTL_DAYS = 7
 UA = {"User-Agent": "nekaise-corpus/find_vendor (research corpus; sitemap/listing discovery only)"}
-MECHANISMS = {"sitemap", "sitemap_pages", "html_index"}
+MECHANISMS = {"sitemap", "sitemap_pages", "html_index", "json_api"}
+MAX_API_PAGES = 400
 DEFAULT_PAGES_PER_RUN = 40
 VISITED_TTL_DAYS = 90
 MAX_CHILD_SITEMAPS = 300
 DEFAULT_PDF_PATTERN = r"\.pdf(?:$|[?#])"
+# never worth a fetch, whatever the vendor: legal boilerplate PDFs that every portal lists
+DEFAULT_EXCLUDE = re.compile(r"privacy|cookie[-_ ]?polic|terms[-_ ]?(of[-_ ]?)?(use|service)|impressum|gdpr", re.I)
 HREF_RE = re.compile(r"""href=["']([^"'#]+)["']""", re.I)
 ANCHOR_RE = re.compile(r"""<a\s[^>]*?href=["']([^"'#]+)["'][^>]*>(.*?)</a>""", re.I | re.S)
 TAG_RE = re.compile(r"<[^>]+>")
@@ -75,8 +80,7 @@ TOPIC_RULES_DEFAULT = [  # URL/title keyword -> registry topic; vendor rules are
      r"anchor|fastener|steel|timber|wood|brick|block|glass|glazing|facade|façade|cladding", "materials"),
     (r"structural|\bbeam|\bcolumn|\bslab|\bloads?\b|seismic|\bbridge", "structures_civil"),
     (r"elevator|escalator|\bdoors?\b|\blocks?\b|\bwindows?\b|\bfire\b|acoustic|lighting|luminaire", "architecture"),
-    (r"install|\biom\b|manual|catalog|catalogue|datasheet|data sheet|submittal|\bspec", "construction"),
-]
+]  # no document-type catch-all: 'datasheet/manual/catalog' say nothing about the subject -> vendor topic
 
 
 # ------------------------------------------------------------------------------------ config
@@ -112,11 +116,30 @@ def validate_vendors(data: object) -> list[str]:
             errors.append(f"{label}: mechanism must be one of {sorted(MECHANISMS)}")
         urls_key = {"sitemap": "sitemaps", "sitemap_pages": "sitemaps",
                     "html_index": "index_urls"}.get(mech)
-        if urls_key:
+        if urls_key and not (mech == "html_index" and cfg.get("index_url_template")):
             urls = cfg.get(urls_key)
             if (not isinstance(urls, list) or not urls
                     or any(not isinstance(u, str) or not u.startswith("https://") for u in urls)):
                 errors.append(f"{label}: {urls_key} must be a non-empty HTTPS URL list")
+        if mech == "html_index" and cfg.get("index_url_template"):
+            if "{page}" not in cfg["index_url_template"] or not isinstance(cfg.get("index_pages"), int):
+                errors.append(f"{label}: index_url_template needs '{{page}}' and an integer index_pages")
+        if cfg.get("method", "GET") not in ("GET", "POST"):
+            errors.append(f"{label}: method must be GET or POST")
+        if mech == "json_api":
+            tpl = cfg.get("api_url_template") or ""
+            if not tpl.startswith("https://") or "{page}" not in tpl:
+                errors.append(f"{label}: json_api needs api_url_template with '{{page}}'")
+            if not cfg.get("doc_url_template") or "{" not in cfg["doc_url_template"]:
+                errors.append(f"{label}: json_api needs doc_url_template using item fields, e.g. {{id}}")
+        for pair in cfg.get("url_rewrite") or []:
+            if not isinstance(pair, list) or len(pair) != 2 or not all(isinstance(x, str) for x in pair):
+                errors.append(f"{label}: url_rewrite entries must be [regex, replacement]")
+            else:
+                try:
+                    re.compile(pair[0])
+                except re.error as exc:
+                    errors.append(f"{label}: url_rewrite regex does not compile: {exc}")
         if cfg.get("topic") and cfg["topic"] not in registry_topics():
             errors.append(f"{label}: unknown topic {cfg['topic']!r}")
         if mech == "sitemap_pages" and not cfg.get("page_pattern"):
@@ -124,7 +147,8 @@ def validate_vendors(data: object) -> list[str]:
         ppr = cfg.get("pages_per_run", DEFAULT_PAGES_PER_RUN)
         if not isinstance(ppr, int) or ppr < 1:
             errors.append(f"{label}: pages_per_run must be a positive integer")
-        for pat_key in ("pdf_pattern", "exclude_pattern", "lang_pattern", "page_pattern", "sitemap_filter"):
+        for pat_key in ("pdf_pattern", "exclude_pattern", "lang_pattern", "page_pattern", "sitemap_filter",
+                        "raw_link_pattern"):
             if pat := cfg.get(pat_key):
                 try:
                     re.compile(pat)
@@ -167,7 +191,8 @@ def host_delays(vendors: dict[str, dict]) -> dict[str, float]:
         delay = float(cfg.get("crawl_delay", 0) or 0)
         if delay <= 0:
             continue
-        for u in (cfg.get("sitemaps") or []) + (cfg.get("index_urls") or []):
+        for u in ((cfg.get("sitemaps") or []) + (cfg.get("index_urls") or [])
+                  + [x for x in (cfg.get("index_url_template"), cfg.get("api_url_template")) if x]):
             out[urlsplit(u).netloc] = max(out.get(urlsplit(u).netloc, 0), delay)
         for h in cfg.get("hosts") or []:
             out[h] = max(out.get(h, 0), delay)
@@ -175,10 +200,13 @@ def host_delays(vendors: dict[str, dict]) -> dict[str, float]:
 
 
 # ------------------------------------------------------------------------------------ fetch
-def fetch(url: str, delay: float = 0.0) -> bytes:
+def fetch(url: str, delay: float = 0.0, method: str = "GET", data: dict | None = None) -> bytes:
     if delay:
         time.sleep(delay)
-    r = requests.get(url, headers=UA, timeout=60)
+    if method == "POST":
+        r = requests.post(url, headers=UA, data=data or {}, timeout=90)
+    else:
+        r = requests.get(url, headers=UA, timeout=60)
     r.raise_for_status()
     data = r.content
     if data[:2] == b"\x1f\x8b":  # by magic, not suffix: some hosts serve *.xml.gz already inflated
@@ -263,17 +291,43 @@ def enumerate_sitemap(cfg: dict, fetcher=fetch) -> list[str]:
     return seen
 
 
-def enumerate_html_index(cfg: dict, fetcher=fetch) -> list[str]:
+def index_pages_for(cfg: dict) -> list[str]:
+    if cfg.get("index_url_template"):
+        return [cfg["index_url_template"].format(page=n)
+                for n in range(int(cfg.get("index_page_start", 1)),
+                               int(cfg.get("index_page_start", 1)) + int(cfg["index_pages"]))]
+    return list(cfg["index_urls"])
+
+
+def enumerate_html_index(cfg: dict, fetcher=fetch, key: str | None = None) -> list[str]:
+    """Listing pages (GET, or POST with `data`) carrying document links; anchor text is kept as
+    the title memory when a vendor key is given. A paginated listing is `index_url_template`
+    ('...?page={page}') x `index_pages`; a page that fails is skipped, an all-failed run raises."""
     delay = float(cfg.get("crawl_delay", 0) or 0)
+    method = cfg.get("method", "GET")
     out: list[str] = []
-    for page in cfg["index_urls"]:
-        text = fetcher(page, delay).decode("utf-8", errors="replace")
-        for href in HREF_RE.findall(text):
-            out.append(urljoin(page, htmllib.unescape(href)))
+    labels = load_state(key, "docs") if key else {}
+    fetched = failed = 0
+    for page in index_pages_for(cfg):
+        try:
+            text = fetcher(page, delay, method, cfg.get("data")).decode("utf-8", errors="replace")
+        except Exception as exc:
+            failed += 1
+            print(f"# index fetch failed {page}: {exc}", file=sys.stderr)
+            continue
+        fetched += 1
+        for url, label in pdf_links(page, text, cfg):
+            out.append(url)
+            if key and label and url not in labels:
+                labels[url] = {"t": time.time(), "title": label, "page": page}
+    if failed and not fetched:
+        raise RuntimeError(f"all {failed} index page fetches failed")
+    if key:
+        store_state(key, "docs", labels)
     return out
 
 
-def pdf_links(page_url: str, text: str) -> list[tuple[str, str]]:
+def pdf_links(page_url: str, text: str, cfg: dict | None = None) -> list[tuple[str, str]]:
     """(absolute url, anchor text) for every link on a page; the anchor text is usually the
     document's own title ('Product data sheet EN'), far better than a slug."""
     out: list[tuple[str, str]] = []
@@ -294,6 +348,12 @@ def pdf_links(page_url: str, text: str) -> list[tuple[str, str]]:
         if url not in seen:
             seen.add(url)
             out.append((url, ""))
+    if cfg and cfg.get("raw_link_pattern"):  # vendor-specific: relative links inside page JSON
+        for m in re.finditer(cfg["raw_link_pattern"], text.replace("\\/", "/")):
+            url = urljoin(page_url, htmllib.unescape(m.group(1)))
+            if url not in seen:
+                seen.add(url)
+                out.append((url, ""))
     return out
 
 
@@ -303,7 +363,7 @@ def scan_pages(key: str, cfg: dict, pages: list[str], budget: int, fetcher=fetch
     run capped by --max proposes the remainder next time without re-fetching pages, and a wiped
     workspace merely costs a re-scan (dedup makes that harmless)."""
     delay = float(cfg.get("crawl_delay", 0) or 0)
-    page_re = re.compile(cfg["page_pattern"], re.I)
+    page_re = re.compile(cfg.get("page_pattern") or ".", re.I)
     visited = load_state(key, "visited")
     docs = load_state(key, "docs")
     now = time.time()
@@ -312,14 +372,14 @@ def scan_pages(key: str, cfg: dict, pages: list[str], budget: int, fetcher=fetch
     fetched = failed = 0
     for page in todo:
         try:
-            text = fetcher(page, delay).decode("utf-8", errors="replace")
+            text = fetcher(page, delay, cfg.get("method", "GET"), cfg.get("data")).decode("utf-8", errors="replace")
         except Exception as exc:
             failed += 1
             print(f"# page fetch failed {page}: {exc}", file=sys.stderr)
             continue
         fetched += 1
         visited[page] = now
-        for link, label in pdf_links(page, text):
+        for link, label in pdf_links(page, text, cfg):
             docs.setdefault(link, {"t": now, "title": label, "page": page})
     if todo and fetched == 0:
         raise RuntimeError(f"all {len(todo)} page fetches failed")
@@ -331,10 +391,80 @@ def scan_pages(key: str, cfg: dict, pages: list[str], budget: int, fetcher=fetch
     return list(docs)
 
 
-def known_titles_for(key: str) -> dict[str, str]:
-    """url -> anchor text remembered by scan_pages (empty for sitemap/html_index vendors)."""
-    return {u: (v.get("title") or "") for u, v in load_state(key, "docs").items()
-            if isinstance(v, dict)}
+def known_titles_for(key: str, cfg: dict | None = None) -> dict[str, str]:
+    """url -> title remembered by scan_pages / html_index / json_api (keyed by the fetchable URL,
+    so url_rewrite is applied to the remembered keys)."""
+    mem = {u: (v.get("title") or "") for u, v in load_state(key, "docs").items() if isinstance(v, dict)}
+    if cfg and cfg.get("url_rewrite"):
+        mem = dict(zip(rewrite_urls(cfg, list(mem)), mem.values()))
+    return mem
+
+
+def _dig(obj, path: str):
+    """Dotted lookup into parsed JSON ('' = the object itself)."""
+    for part in [p for p in path.split(".") if p]:
+        obj = obj[int(part)] if isinstance(obj, list) else obj.get(part)
+        if obj is None:
+            return None
+    return obj
+
+
+def enumerate_json_api(cfg: dict, fetcher=fetch, key: str | None = None) -> list[str]:
+    """Paginated JSON listing -> document URLs (+ titles into the docs memory). Pages run from
+    `api_page_start` until an empty page, a page shorter than the previous one, or MAX_API_PAGES.
+    Fluid Topics khub example: api_url_template
+    'https://docs.example/bas/api/khub/documents?per-page=200&page={page}', items_path '',
+    doc_url_template 'https://docs.example/bas/api/khub/documents/{id}/content', title_field 'title'."""
+    delay = float(cfg.get("crawl_delay", 0) or 0)
+    labels = load_state(key, "docs") if key else {}
+    out: list[str] = []
+    seen: set[str] = set()
+    page = int(cfg.get("api_page_start", 1))
+    last_n = None
+    for _ in range(MAX_API_PAGES):
+        raw = fetcher(cfg["api_url_template"].format(page=page), delay)
+        items = _dig(json.loads(raw.decode("utf-8", errors="replace")), cfg.get("items_path", ""))
+        if not items:
+            break
+        new_here = 0
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            if (f := cfg.get("filter_field")) and str(item.get(f, "")) != str(cfg.get("filter_value", "")):
+                continue
+            try:
+                url = cfg["doc_url_template"].format(**{k: v for k, v in item.items()
+                                                        if isinstance(v, (str, int))})
+            except KeyError:
+                continue
+            if url in seen:
+                continue
+            seen.add(url)
+            out.append(url)
+            new_here += 1
+            title = item.get(cfg.get("title_field", "title")) or item.get(cfg.get("filename_field", "filename")) or ""
+            if key and title and url not in labels:
+                labels[url] = {"t": time.time(), "title": str(title)[:120], "page": page}
+        if new_here == 0 or (last_n is not None and len(items) < last_n):
+            break  # nothing new (API ignored page=) or a short last page
+        last_n = len(items)
+        page += 1
+    if key:
+        store_state(key, "docs", labels)
+    return out
+
+
+def rewrite_urls(cfg: dict, urls: list[str]) -> list[str]:
+    """Apply the vendor's [regex, replacement] pairs (document pages -> download URLs, view flags)."""
+    pairs = [(re.compile(a), b) for a, b in (cfg.get("url_rewrite") or [])]
+    if not pairs:
+        return urls
+    out = []
+    for u in urls:
+        for rx, repl in pairs:
+            u = rx.sub(repl, u)
+        out.append(u)
+    return out
 
 
 def select_documents(cfg: dict, universe: list[str]) -> list[str]:
@@ -344,11 +474,11 @@ def select_documents(cfg: dict, universe: list[str]) -> list[str]:
     lang = re.compile(cfg["lang_pattern"], re.I) if cfg.get("lang_pattern") else None
     out: list[str] = []
     seen: set[str] = set()
-    for u in universe:
+    for u in rewrite_urls(cfg, universe):
         u = u.strip()
         if not u.startswith("http") or not keep.search(u):
             continue
-        if drop and drop.search(u):
+        if DEFAULT_EXCLUDE.search(u) or (drop and drop.search(u)):
             continue
         if lang and not lang.search(u):
             continue
@@ -364,7 +494,10 @@ def title_for(cfg: dict, url: str, label: str = "") -> str:
     """Vendor name + (anchor text if a page gave us one) + de-slugged path tail. The parent
     segment keeps same-named files ('datasheet.pdf') from colliding in title dedup; opaque
     ids (uuids, hex, bare numbers) are dropped from the text but still make the id unique."""
-    parts = [unquote(p) for p in urlsplit(url).path.split("/") if p]
+    split = urlsplit(url)
+    parts = [unquote(p) for p in split.path.split("/") if p]
+    parts += [v for _, v in parse_qsl(split.query) if v and not v.isdigit() and len(v) > 2
+              and v.lower() not in ("true", "false", "pdf", "en", "us")]
     tail = parts[-2:] if len(parts) >= 2 else parts
     words = []
     for seg in tail:
@@ -387,7 +520,10 @@ def topic_for(cfg: dict, url: str, title: str) -> str:
 
 
 def doc_id(key: str, url: str) -> str:
-    parts = [p for p in urlsplit(url).path.split("/") if p]
+    split = urlsplit(url)
+    parts = [p for p in split.path.split("/") if p]
+    parts += [v for _, v in parse_qsl(split.query) if v and not v.isdigit() and len(v) > 2
+              and v.lower() not in ("true", "false", "pdf", "en", "us")]
     tail = re.sub(r"\.(pdf|html?)$", "", parts[-1], flags=re.I) if parts else "doc"
     return f"vnd-{key}-{registry.slug(tail)}"[:90]
 
@@ -430,8 +566,12 @@ def universe_for(key: str, cfg: dict, refresh: bool = False, fetcher=fetch) -> l
     """Document URLs (sitemap / html_index) or page URLs (sitemap_pages), cached SITEMAP_TTL_DAYS."""
     urls = None if refresh else cached_universe(key)
     if urls is None:
-        if cfg["mechanism"] == "html_index":
-            urls = enumerate_html_index(cfg, fetcher)
+        if cfg["mechanism"] == "html_index" and cfg.get("index_url_template"):
+            urls = index_pages_for(cfg)  # the listing pages themselves; scan_pages walks them
+        elif cfg["mechanism"] == "html_index":
+            urls = enumerate_html_index(cfg, fetcher, key)
+        elif cfg["mechanism"] == "json_api":
+            urls = enumerate_json_api(cfg, fetcher, key)
         else:
             urls = enumerate_sitemap(cfg, fetcher)
         store_universe(key, urls)
@@ -440,7 +580,9 @@ def universe_for(key: str, cfg: dict, refresh: bool = False, fetcher=fetch) -> l
 
 def candidate_documents(key: str, cfg: dict, universe: list[str], pages: int,
                         fetcher=fetch) -> list[str]:
-    if cfg["mechanism"] == "sitemap_pages":
+    if cfg["mechanism"] == "sitemap_pages" or (
+            cfg["mechanism"] == "html_index" and cfg.get("index_url_template")):
+        # a paginated listing is scanned like product pages: bounded per run, visited pages remembered
         budget = int(cfg.get("pages_per_run") or pages)
         return select_documents(cfg, scan_pages(key, cfg, universe, budget, fetcher))
     return select_documents(cfg, universe)
@@ -485,7 +627,7 @@ def main() -> None:
     except Exception as exc:
         print(f"# ERROR: {cfg['name']}: enumeration failed: {exc}", file=sys.stderr)
         raise SystemExit(1)  # abort WITHOUT advancing rotation
-    out = entries_for(key, cfg, docs, urls, titles, args.max, known_titles_for(key))
+    out = entries_for(key, cfg, docs, urls, titles, args.max, known_titles_for(key, cfg))
     registry.uniquify_ids(out, reg_ids)
 
     by_topic: dict[str, int] = {}

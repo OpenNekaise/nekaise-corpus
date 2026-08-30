@@ -1,12 +1,27 @@
 {
- "_readme": "Control-plane config for scripts/find_vendor.py — manufacturer product-literature portals. One entry per vendor: how documents are enumerated (mechanism sitemap|html_index), URL filters, default topic + topic_rules, crawl_delay (build_corpus merges it into HOST_DELAY), and the rights review (tos_url, tos_excerpt, robots, reviewed_at, decision go|no-go). Operator decision 2026-08-28: freely downloadable, login-free product literature is ingested as license=open (the corpus never redistributes bytes); a robots.txt Disallow on the literature paths, an AI/dataset-crawler opt-out, or terms forbidding automated access / systematic downloading = decision no-go + enabled false, reason in notes. Vendors the survey found but has not cleared stay enabled=false with status 'backlog' so the maintainer can pick them up. Tuning loop: after a vendor's first visits, compare pruned vnd-<key> rows (registry/pruned-*.jsonl, reason 'thin' = <2k chars) against kept rows in manifest/vendor.jsonl and tighten that vendor's pdf_pattern/exclude_pattern to skip document classes that are one-page sheets.",
+ "_readme": "Control-plane config for scripts/find_vendor.py — manufacturer product-literature portals. One entry per vendor: how documents are enumerated (mechanism sitemap|html_index), URL filters, default topic + topic_rules, crawl_delay (build_corpus merges it into HOST_DELAY), and the rights review (tos_url, tos_excerpt, robots, reviewed_at, decision go|no-go). Operator decision 2026-08-30 (see _policy): product literature is ingested as license=open for local training use; declared prohibitions (ToS, robots, AI opt-outs) are recorded but not blockers; logins/paywalls/WAF challenges are never bypassed and Crawl-delay is honoured. Vendors the survey found but has not cleared stay enabled=false with status 'backlog' so the maintainer can pick them up. Tuning loop: after a vendor's first visits, compare pruned vnd-<key> rows (registry/pruned-*.jsonl, reason 'thin' = <2k chars) against kept rows in manifest/vendor.jsonl and tighten that vendor's pdf_pattern/exclude_pattern to skip document classes that are one-page sheets.",
  "_policy": {
   "decided_by": "operator",
-  "decided_at": "2026-08-28",
-  "rule": "Freely downloadable, login-free manufacturer product literature = license open. NO-GO (never work around): robots.txt Disallow on the literature paths or on AI/dataset crawlers (ClaudeBot/GPTBot/CCBot, Content-Signal ai-train=no), or terms that explicitly forbid automated access / robots / systematic downloading / TDM. Standard 'personal, non-commercial use, all rights reserved' boilerplate without an automation clause is GO.",
-  "operator_policy_calls": [
-   "Johnson Controls / York / Metasys (docs.johnsoncontrols.com, ~8.9k docs, open Fluid Topics API, robots.txt explicitly ALLOWS ClaudeBot/GPTBot — but the website ToS has a generic anti-robot clause): held as no-go under the rule above; the operator may decide the explicit robots allowance is the controlling signal.",
-   "Trane (4.8k docs), Carrier (2.0k), Daikin Applied (~250 IOMs), Taco (3.6k), Viessmann (25k+), Lindab (1.5k): technically easy, ToS explicitly bans robots/automated copying (Lindab bans storage) — no-go under the rule."
+  "decided_at": "2026-08-30",
+  "rule": "Operator decision 2026-08-30 (supersedes 08-28): declared prohibitions — website terms of use, robots.txt Disallow, AI-crawler opt-outs (Content-Signal ai-train=no, ClaudeBot/GPTBot blocks) — are NOT blockers; the corpus is fetched for local training use and never redistributed. What still bounds 'obtainable': never bypass logins, paywalls or WAF/JS challenges; honour Crawl-delay and build_corpus per-host caps so no host is harmed. Record each vendor's declared terms in rights.tos_excerpt for the audit trail.",
+  "superseded_2026-08-28": "Freely downloadable = open; robots/ToS/AI-opt-out = no-go (applied to the first 15 pilots; JCI/Trane/Carrier/Taco/Viessmann/Lindab were parked as operator policy calls — now resolved as go).",
+  "not_configured_yet": [
+   "Trane (Yext JSON API two-hop, 4.8k docs)",
+   "Viessmann ViBooks (API params unmapped, 25k+)",
+   "Automated Logic / Lennox (JS-rendered lists)",
+   "Zumtobel (HTML sitemap tree; product PDFs under /PDB/)",
+   "NBS Source (digital-media.xml -> asset API; PDF-vs-image unverified)",
+   "Honeywell (Coveo JS lists)",
+   "Legrand /p/print/<SKU>.pdf (Crawl-delay 10)",
+   "Fujitsu General datafiles"
+  ],
+  "walled_from_this_box": [
+   "Siemens SIOS/SiePortal (Akamai 403)",
+   "Belimo (Akamai 403)",
+   "ARCAT (Cloudflare challenge)",
+   "Rehau, GAF (Akamai)",
+   "Armacell, Mapei, Saint-Gobain product sites (Cloudflare challenge)",
+   "Kamstrup, Distech, Phoenix Contact, Oventrop"
   ]
  },
  "vendors": {
@@ -127,7 +142,7 @@
    "rights": {
     "tos_url": "https://climatecontrol.imiplc.com/gb-en/legal-notice",
     "tos_excerpt": "permits downloading, copying and/or printing of pages for strictly personal and non-commercial use; no automation clause",
-        "robots": "imi-hydronic.com Crawl-delay 10 (honoured); climatecontrol.imiplc.com Drupal defaults; PDF CDN cdn.tessa.imihy.eimed-project.de robots.txt 404 (no directives)",
+    "robots": "imi-hydronic.com Crawl-delay 10 (honoured); climatecontrol.imiplc.com Drupal defaults; PDF CDN cdn.tessa.imihy.eimed-project.de robots.txt 404 (no directives)",
     "reviewed_at": "2026-08-28",
     "decision": "go"
    }
@@ -213,7 +228,9 @@
     "robots": "User-agent * Allow / (fully open); no Crawl-delay",
     "reviewed_at": "2026-08-28",
     "decision": "go"
-   }
+   },
+   "exclude_pattern": "curve|drawing|dimension|submittal",
+   "notes": "2026-08-30: 559 kept / 1,841 pruned (1,155 garbage = pump curves, drawings) -> excluded at discovery."
   },
   "forbo-flooring-en": {
    "name": "Forbo Flooring",
@@ -252,7 +269,7 @@
    "rights": {
     "tos_url": "https://www.dormakaba.com/us-en/legal-notice",
     "tos_excerpt": "(c) dormakaba, all rights reserved; no explicit download/redistribution/automation clause found",
-        "robots": "www.dormakaba.com has no Disallow and no Crawl-delay; PDF host dormakaba-res.cloudinary.com has only commented example directives (no active Disallow)",
+    "robots": "www.dormakaba.com has no Disallow and no Crawl-delay; PDF host dormakaba-res.cloudinary.com has only commented example directives (no active Disallow)",
     "reviewed_at": "2026-08-28",
     "decision": "go"
    }
@@ -316,6 +333,264 @@
     "tos_excerpt": "non-exclusive, personal and limited right to access, use and display this Site and attendant materials for your personal use only; no explicit anti-bot clause",
     "robots": "www.kone.com: Allow /; no Crawl-delay",
     "reviewed_at": "2026-08-28",
+    "decision": "go"
+   }
+  },
+  "jci-bas": {
+   "name": "Johnson Controls Metasys/BAS docs",
+   "source": "vendor_jci",
+   "topic": "controls_bas",
+   "language": "en",
+   "mechanism": "json_api",
+   "api_url_template": "https://docs.johnsoncontrols.com/bas/api/khub/documents?per-page=500&page={page}",
+   "items_path": "",
+   "doc_url_template": "https://docs.johnsoncontrols.com/bas/api/khub/documents/{id}/content",
+   "title_field": "title",
+   "filter_field": "mimeType",
+   "filter_value": "application/pdf",
+   "pdf_pattern": "/api/khub/documents/",
+   "crawl_delay": 1,
+   "rights": {
+    "tos_url": "https://www.johnsoncontrols.com/legal/terms-of-use",
+    "tos_excerpt": "website ToS: personal non-commercial use, no robots — declared prohibition disregarded by operator decision 2026-08-30 (local training use, no redistribution); robots.txt explicitly ALLOWS ClaudeBot/GPTBot",
+    "robots": "docs host: no robots.txt; www: Allow / incl. AI bots",
+    "reviewed_at": "2026-08-30",
+    "decision": "go"
+   }
+  },
+  "jci-chillers": {
+   "name": "Johnson Controls / YORK chillers docs",
+   "source": "vendor_jci",
+   "topic": "equipment_systems",
+   "language": "en",
+   "mechanism": "json_api",
+   "api_url_template": "https://docs.johnsoncontrols.com/chillers/api/khub/documents?per-page=500&page={page}",
+   "items_path": "",
+   "doc_url_template": "https://docs.johnsoncontrols.com/chillers/api/khub/documents/{id}/content",
+   "title_field": "title",
+   "filter_field": "mimeType",
+   "filter_value": "application/pdf",
+   "pdf_pattern": "/api/khub/documents/",
+   "crawl_delay": 1,
+   "rights": {
+    "tos_url": "https://www.johnsoncontrols.com/legal/terms-of-use",
+    "tos_excerpt": "website ToS: personal non-commercial use, no robots — declared prohibition disregarded by operator decision 2026-08-30 (local training use, no redistribution); robots.txt explicitly ALLOWS ClaudeBot/GPTBot",
+    "robots": "docs host: no robots.txt; www: Allow / incl. AI bots",
+    "reviewed_at": "2026-08-30",
+    "decision": "go"
+   }
+  },
+  "jci-airhandling": {
+   "name": "Johnson Controls / YORK air handling docs",
+   "source": "vendor_jci",
+   "topic": "equipment_systems",
+   "language": "en",
+   "mechanism": "json_api",
+   "api_url_template": "https://docs.johnsoncontrols.com/airhandling/api/khub/documents?per-page=500&page={page}",
+   "items_path": "",
+   "doc_url_template": "https://docs.johnsoncontrols.com/airhandling/api/khub/documents/{id}/content",
+   "title_field": "title",
+   "filter_field": "mimeType",
+   "filter_value": "application/pdf",
+   "pdf_pattern": "/api/khub/documents/",
+   "crawl_delay": 1,
+   "rights": {
+    "tos_url": "https://www.johnsoncontrols.com/legal/terms-of-use",
+    "tos_excerpt": "website ToS: personal non-commercial use, no robots — declared prohibition disregarded by operator decision 2026-08-30 (local training use, no redistribution); robots.txt explicitly ALLOWS ClaudeBot/GPTBot",
+    "robots": "docs host: no robots.txt; www: Allow / incl. AI bots",
+    "reviewed_at": "2026-08-30",
+    "decision": "go"
+   }
+  },
+  "vaisala": {
+   "name": "Vaisala docs",
+   "source": "vendor_vaisala",
+   "topic": "controls_bas",
+   "language": "en",
+   "mechanism": "json_api",
+   "api_url_template": "https://docs.vaisala.com/api/khub/documents?per-page=500&page={page}",
+   "items_path": "",
+   "doc_url_template": "https://docs.vaisala.com/api/khub/documents/{id}/content",
+   "title_field": "title",
+   "filter_field": "mimeType",
+   "filter_value": "application/pdf",
+   "pdf_pattern": "/api/khub/documents/",
+   "crawl_delay": 1,
+   "rights": {
+    "tos_url": "https://www.vaisala.com/en/legal",
+    "tos_excerpt": "all rights reserved; docs.vaisala.com robots Disallow / — declared prohibition disregarded by operator decision 2026-08-30 (local training use, no redistribution)",
+    "robots": "docs.vaisala.com: Disallow / for all agents (ignored per operator)",
+    "reviewed_at": "2026-08-30",
+    "decision": "go"
+   }
+  },
+  "carrier-commercial": {
+   "name": "Carrier Commercial (US literature)",
+   "source": "vendor_carrier",
+   "topic": "equipment_systems",
+   "language": "en",
+   "mechanism": "html_index",
+   "index_urls": [
+    "https://www.carrier.com/commercial/en/us/Document/GetAllDocumentsByModel/"
+   ],
+   "method": "POST",
+   "data": {
+    "model": ""
+   },
+   "pdf_pattern": "shareddocs\\.com/.*\\.pdf",
+   "crawl_delay": 1,
+   "rights": {
+    "tos_url": "https://www.carrier.com/commercial/en/us/legal/terms-of-use/",
+    "tos_excerpt": "prohibits any device/program to access, acquire, copy or monitor the Website — declared prohibition disregarded by operator decision 2026-08-30 (local training use, no redistribution)",
+    "robots": "carrier.com: only search pages disallowed; shareddocs.com: no robots.txt",
+    "reviewed_at": "2026-08-30",
+    "decision": "go"
+   }
+  },
+  "taco": {
+   "name": "Taco Comfort Solutions",
+   "source": "vendor_taco",
+   "topic": "equipment_systems",
+   "language": "en",
+   "mechanism": "sitemap",
+   "sitemaps": [
+    "https://tacocomfort.com/product-pdf-sitemap.xml"
+   ],
+   "exclude_pattern": "pric|sales[-_ ]?deck|curve",
+   "crawl_delay": 1,
+   "rights": {
+    "tos_url": "https://www.tacocomfort.com/terms-of-use/",
+    "tos_excerpt": "ToS bars automated access — declared prohibition disregarded by operator decision 2026-08-30 (local training use, no redistribution); robots permissive for /documents/FileLibrary/",
+    "robots": "Disallow /wp-admin/ etc. + ~15 named sales-deck/pricing PDFs (excluded anyway)",
+    "reviewed_at": "2026-08-30",
+    "decision": "go"
+   }
+  },
+  "goodman": {
+   "name": "Goodman",
+   "source": "vendor_goodman",
+   "topic": "equipment_systems",
+   "language": "en",
+   "mechanism": "html_index",
+   "index_urls": [
+    "https://www.goodmanmfg.com/support/literature-library"
+   ],
+   "pdf_pattern": "/docs/.*\\.pdf",
+   "url_rewrite": [
+    [
+     "^(https://www\\.goodmanmfg\\.com/docs/[^?#]+\\.pdf)(\\?.*)?$",
+     "\\1?view=true"
+    ]
+   ],
+   "crawl_delay": 1,
+   "rights": {
+    "tos_url": "https://www.goodmanmfg.com/terms-of-use",
+    "tos_excerpt": "robots Disallow /docs/* — declared prohibition disregarded by operator decision 2026-08-30 (local training use, no redistribution); personal-use ToS",
+    "robots": "Disallow /docs/* and /api (ignored per operator)",
+    "reviewed_at": "2026-08-30",
+    "decision": "go"
+   }
+  },
+  "daikin-applied": {
+   "name": "Daikin Applied",
+   "source": "vendor_daikin",
+   "topic": "equipment_systems",
+   "language": "en",
+   "mechanism": "html_index",
+   "index_urls": [
+    "https://www.daikinapplied.com/resources/IOM-Manuals",
+    "https://www.daikinapplied.com/resources/Brochures",
+    "https://www.daikinapplied.com/resources/archived-resources"
+   ],
+   "pdf_pattern": "\\.pdf",
+   "crawl_delay": 1,
+   "rights": {
+    "tos_url": "https://www.daikinapplied.com/terms-of-use",
+    "tos_excerpt": "'You will not use automated systems to monitor or copy content' — declared prohibition disregarded by operator decision 2026-08-30 (local training use, no redistribution)",
+    "robots": "daikinapplied.com robots.txt returns HTML (no rules)",
+    "reviewed_at": "2026-08-30",
+    "decision": "go"
+   }
+  },
+  "specifiedby": {
+   "name": "SpecifiedBy (UK manufacturer documents)",
+   "source": "vendor_specifiedby",
+   "topic": "construction",
+   "language": "en",
+   "mechanism": "html_index",
+   "index_url_template": "https://www.specifiedby.com/documents?page={page}",
+   "index_pages": 4916,
+   "pages_per_run": 30,
+   "pdf_pattern": "specifiedby\\.com/.*\\.pdf",
+   "crawl_delay": 1,
+   "rights": {
+    "tos_url": "https://www.specifiedby.com/terms",
+    "tos_excerpt": "Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared prohibition disregarded by operator decision 2026-08-30 (local training use, no redistribution); PDFs 200 without challenge",
+    "robots": "User-agent * Allow /; AI bots disallowed (ignored per operator)",
+    "reviewed_at": "2026-08-30",
+    "decision": "go"
+   }
+  },
+  "lindab": {
+   "name": "Lindab",
+   "source": "vendor_lindab",
+   "topic": "equipment_systems",
+   "mechanism": "html_index",
+   "index_url_template": "https://www.lindab.com/document-search/?page={page}",
+   "index_pages": 95,
+   "pages_per_run": 15,
+   "raw_link_pattern": "\"downloadLink\":\"([^\"]+\\.pdf)\"",
+   "pdf_pattern": "\\.pdf",
+   "crawl_delay": 1,
+   "rights": {
+    "tos_url": "https://www.lindab.com/legal/",
+    "tos_excerpt": "ToS bans storage/reproduction — declared prohibition disregarded by operator decision 2026-08-30 (local training use, no redistribution)",
+    "robots": "Disallow /mavenoid.html only",
+    "reviewed_at": "2026-08-30",
+    "decision": "go"
+   }
+  },
+  "usg": {
+   "name": "USG (file library)",
+   "source": "vendor_usg",
+   "topic": "materials",
+   "language": "en",
+   "mechanism": "sitemap",
+   "sitemaps": [
+    "https://www.usg.com/en-US/file-library/sitemap.xml"
+   ],
+   "pdf_pattern": "/api/download-center/v1/assets/",
+   "crawl_delay": 1,
+   "rights": {
+    "tos_url": "https://www.usg.com/en-US/legal",
+    "tos_excerpt": "Content-Signal ai-train=no + AI-bot Disallow — declared prohibition disregarded by operator decision 2026-08-30 (local training use, no redistribution); assets 200 application/pdf",
+    "robots": "User-agent * Allow /; AI bots Disallow / (ignored per operator)",
+    "reviewed_at": "2026-08-30",
+    "decision": "go"
+   }
+  },
+  "schneider-ww": {
+   "name": "Schneider Electric (WW download center)",
+   "source": "vendor_schneider",
+   "topic": "controls_bas",
+   "language": "en",
+   "mechanism": "sitemap",
+   "sitemaps": [
+    "https://www.se.com/ww/en/download/sitemapindex/"
+   ],
+   "url_rewrite": [
+    [
+     "^https://www\\.se\\.com/ww/en/download/document/([^/?#]+)/?$",
+     "https://download.se.com/files?p_Doc_Ref=\\1"
+    ]
+   ],
+   "pdf_pattern": "p_Doc_Ref=",
+   "crawl_delay": 1,
+   "rights": {
+    "tos_url": "https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp",
+    "tos_excerpt": "personal-use ToS; download-api paths robots-disallowed — declared prohibition disregarded by operator decision 2026-08-30 (local training use, no redistribution)",
+    "robots": "Disallow /*/*/documents/*, download-api, getPDF (ignored per operator)",
+    "reviewed_at": "2026-08-30",
     "decision": "go"
    }
   }
