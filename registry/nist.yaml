@@ -79037,3 +79037,191 @@ sources:
     license: public-domain
     topic: standards_protocols
     format: pdf
+  - id: nst-annex-47-report-1-commissioning-overview
+    title: 'Annex 47 Report 1: Commissioning Overview'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1725.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: nst-benefits-and-costs-of-commissioning-a-case-study-ana
+    title: 'Benefits and Costs of Commissioning: A Case Study Analysis'
+    url: https://nvlpubs.nist.gov/nistpubs/ir/2013/NIST.IR.7964.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: nst-annex-47-report-3-commissioning-cost-benefit-and-per
+    title: 'Annex 47 Report 3: Commissioning Cost-Benefit and Persistence of Savings'
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1727.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: nst-hvac-functional-inspection-and-testing-guide
+    title: HVAC functional inspection and testing guide
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4758.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: nst-a-simulation-study-of-a-hierarchical-rule-based-meth
+    title: A simulation study of a hierarchical, rule-based method for system-level
+      fault detection and diagnostics in HVAC systems
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7216.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: commissioning_fdd
+    format: pdf
+  - id: nst-programmers-guide-to-the-bacnet-communications-dll
+    title: Programmers guide to the BACnet communications DLL
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2023.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-bacnet-wide-area-network-security-threat-assessment
+    title: BACnet wide area network security threat assessment
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7009.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-using-the-bacnet-data-source-v1-7
+    title: Using the BACnet data source v1.7
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7825.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-a-draft-abstract-test-suite-for-determining-conforma
+    title: "A draft abstract test suite for determining conformance to the BACnet\n\
+      \                        protocol"
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4563.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-a-simulation-analysis-of-bacnet-local-area-networks
+    title: A simulation analysis of BACnet local area networks
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7038.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-summer-attic-and-whole-house-ventilation
+    title: Summer attic and whole-house ventilation
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nbsspecialpublication548.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: nst-loopda-natural-ventilation-design-and-analysis-softw
+    title: LoopDA - natural ventilation design and analysis software
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6967.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: nst-characterizing-positive-pressure-ventilation-using-c
+    title: Characterizing positive pressure ventilation using computational fluid dynamics
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7065.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: nst-modeling-of-a-heat-pump-charged-with-a-non-azeotropi
+    title: Modeling of a heat pump charged with a non-azeotropic refrigerant mixture
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote1218.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: nst-a-model-of-the-steady-state-performance-of-an-absorp
+    title: A model of the steady-state performance of an absorption heat pump
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir82-2606.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: nst-revised-unitary-heat-pump-specification-for-military
+    title: Revised unitary heat pump specification for military family housing
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir88-3805.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: nst-capacity-tests-of-a-mathes-heat-pump-model-38har-veb
+    title: Capacity tests of a Mathes heat pump model 38HAR-VEB-HP
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport5908.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: nst-unitary-heat-pump-specification-for-military-family-
+    title: Unitary heat pump specification for military family housing
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir76-1029.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: nst-capacity-tests-of-a-mathes-heat-pump-model-27har-reb
+    title: Capacity tests of a Mathes heat pump, model 27HAR-REB-HP
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport5885.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: nst-procedures-for-testing-rating-and-estimating-the-sea
+    title: Procedures for testing, rating, and estimating the seasonal performance of
+      engine-driven heat pump systems
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir79-1911.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: nst-sensitivity-analysis-of-installation-faults-on-heat-
+    title: Sensitivity Analysis of Installation Faults on Heat Pump Performance
+    url: https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1848.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: nst-the-performance-of-chlorine-free-binary-zeotropic-re
+    title: "The performance of chlorine-free binary zeotropic refrigerant mixtures in\n\
+      \                        a heat pump"
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4748.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: nst-capacity-tests-of-general-electric-heat-pump-model-2
+    title: Capacity tests of General Electric heat pump model 21 WT33G1
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport6403.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: nst-capacity-tests-of-a-mathes-heat-pump-model-38har-leb
+    title: Capacity tests of a Mathes heat pump model 38HAR-LEB-HP
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/RPT/nbsreport5818.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: nst-the-performance-of-a-conventional-residential-sized-
+    title: The performance of a conventional residential sized heat pump operating with
+      a nonazeotropic binary refrigerant mixture
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nbsir86-3422.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+  - id: nst-a-simple-method-of-composition-shifting-with-a-disti
+    title: "A simple method of composition shifting with a distillation column for a\n\
+      \                        heat pump employing a zeotropic refrigerant mixture"
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir5689.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
