@@ -81233,3 +81233,51 @@ sources:
       published here: each copy must include a copyright notice; not for commercial
       purposes'
     rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-tbv-cm-en-low
+    title: 'IMI Hydronic: Technical Specifications (TBV CM EN low)'
+    url: https://cdn.tessa.imihy.eimed-project.de/554659/TBV-CM_EN_low.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-tbv-cm-npt-us-low
+    title: 'IMI Hydronic: Technical Specifications (TBV CM NPT US low)'
+    url: https://cdn.tessa.imihy.eimed-project.de/613886/TBV-CM_NPT_US_low.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-ta-compact-p-en-low
+    title: 'IMI Hydronic: Technical Specifications (TA COMPACT P EN low)'
+    url: https://cdn.tessa.imihy.eimed-project.de/554576/TA-COMPACT-P_EN_low.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-ta-compact-dp-en-low
+    title: 'IMI Hydronic: Technical Specifications (TA COMPACT DP EN low)'
+    url: https://cdn.tessa.imihy.eimed-project.de/556108/TA-COMPACT-DP_EN_low.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
