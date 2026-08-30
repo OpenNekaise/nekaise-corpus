@@ -64757,3 +64757,27 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
+  - id: ope-smart-desks-to-promote-comfort-health-and-prod
+    title: 'Smart Desks to Promote Comfort, Health, and Productivity in Offices: A Vision
+      for Future Workplaces'
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2019.00076/pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-performance-prediction-optimization-and-user-b
+    title: Performance, prediction, optimization, and user behavior of night ventilation
+    url: https://escholarship.org/content/qt9jk1d795/qt9jk1d795.pdf?t=p6yyvl
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: ope-effect-of-acoustical-clouds-coverage-and-air-m
+    title: Effect of acoustical clouds coverage and air movement on radiant chilled
+      ceiling cooling capacity
+    url: https://escholarship.org/content/qt80h2t038/qt80h2t038.pdf?t=p59ywa
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
