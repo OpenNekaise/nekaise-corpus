@@ -64955,3 +64955,18 @@ sources:
     topic: construction
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-structural-health-monitoring-system-with-narro
+    title: Structural Health Monitoring System With Narrowband IoT and MEMS Sensors
+    url: https://arxiv.org/pdf/2104.13029
+    source: openalex
+    license: open
+    topic: materials
+    format: pdf
+  - id: ope-building-materials-could-store-more-than-16-bi
+    title: Building materials could store more than 16 billion tonnes of CO 2 annually
+    url: https://escholarship.org/content/qt47c0j1dh/qt47c0j1dh.pdf
+    source: openalex
+    license: cc-by
+    topic: materials
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
