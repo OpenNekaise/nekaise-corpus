@@ -64683,3 +64683,34 @@ sources:
     topic: equipment_systems
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-positive-energy-district-a-model-for-historic-
+    title: 'Positive Energy District: A Model for Historic Districts to Address Energy
+      Poverty'
+    url: https://www.frontiersin.org/articles/10.3389/frsc.2021.648473/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-design-automation-for-smart-building-systems
+    title: Design Automation for Smart Building Systems
+    url: https://escholarship.org/content/qt1dp8149r/qt1dp8149r.pdf?t=poc34b
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: ope-commercial-office-plug-load-energy-consumption
+    title: Commercial office plug load energy consumption trends and the role of occupant
+      behavior
+    url: https://escholarship.org/content/qt2c76d4nw/qt2c76d4nw.pdf?t=nv18mw
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: ope-the-effectiveness-of-us-energy-efficiency-buil
+    title: The effectiveness of US energy efficiency building labels
+    url: https://escholarship.org/content/qt2kx1h4ps/qt2kx1h4ps.pdf?t=qng91h
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
