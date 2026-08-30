@@ -79248,3 +79248,27 @@ sources:
     license: public-domain
     topic: standards_protocols
     format: pdf
+  - id: nst-impact-of-natural-ventilation-strategies-and-design-
+    title: Impact of natural ventilation strategies and design issues for California
+      applications, including input to ASHRAE Standard 62 and California Title 24
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7062.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: building_energy
+    format: pdf
+  - id: nst-character-structure-and-character-parity-sense-2
+    title: Character structure and character parity sense for serial-by-bit data communication
+      in the American national standard code for information interchange
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub17-1.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
+  - id: nst-character-structure-and-character-parity-sense-3
+    title: Character structure and character parity sense for parallel-by-bit data communication
+      in the American national standard code for information interchan
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub18-1.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
