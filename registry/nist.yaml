@@ -79240,3 +79240,11 @@ sources:
     license: public-domain
     topic: standards_protocols
     format: pdf
+  - id: nst-character-structure-and-character-parity-sense-for-s
+    title: Character structure and character parity sense for serial-by-bit data communication
+      in the code for information interchange
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub17-1-1977.pdf
+    source: nist_crossref
+    license: public-domain
+    topic: standards_protocols
+    format: pdf
