@@ -65451,3 +65451,30 @@ sources:
     license: open
     topic: materials
     format: pdf
+  - id: ope-analysis-and-optimization-of-fire-evacuation-s
+    title: Analysis and optimization of fire evacuation safety performance in large
+      urban complexes
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0336964&type=printable
+    source: openalex
+    license: cc-by
+    topic: architecture
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-subjective-individuals-perception-during-evacu
+    title: 'Subjective individuals’ perception during evacuation in road tunnels: Post-experiment
+      survey results'
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0283461&type=printable
+    source: openalex
+    license: cc-by
+    topic: architecture
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-simulated-fire-video-collection-for-advancing-
+    title: Simulated fire video collection for advancing understanding of human behavior
+      in building fires
+    url: https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1438020/pdf
+    source: openalex
+    license: cc-by
+    topic: architecture
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
