@@ -6,25 +6,22 @@ import find_nist
 import lint_registry
 
 
-def test_wave_3_query_universe_is_pinned_and_topics_are_valid():
-    assert find_nist.QUERY_WAVE == 3
-    assert len(find_nist.QUERIES) == 15
-    assert {topic for _term, topic in find_nist.QUERIES} <= lint_registry.TOPICS
-
-
 @pytest.mark.parametrize(
-    "title",
+    ("title", "topic"),
     [
-        "Annex 47 Report 1: Commissioning Overview",
-        "A simulation study of fault detection in HVAC systems",
-        "Programmers guide to the BACnet communications DLL",
-        "Summer attic and whole-house ventilation",
-        "Sensitivity analysis of installation faults on heat pump performance",
-        "Seismic provisions for structural building codes",
+        ("Annex 47 Report 1: Commissioning Overview", "commissioning_fdd"),
+        ("A simulation study of fault detection in HVAC systems", "commissioning_fdd"),
+        ("Programmers guide to the BACnet communications DLL", "standards_protocols"),
+        ("Summer attic and whole-house ventilation", "building_energy"),
+        ("Sensitivity of heat pump performance", "equipment_systems"),
+        ("Seismic provisions for structural building codes", "standards_protocols"),
+        ("Building automation sensor controls", "controls_bas"),
     ],
 )
-def test_wave_3_title_gate_accepts_aec_titles(title):
+def test_title_gate_accepts_aec_titles_and_assigns_valid_topics(title, topic):
     assert find_nist.title_in_scope(title)
+    assert find_nist.classify_topic(title) == topic
+    assert topic in lint_registry.TOPICS
 
 
 @pytest.mark.parametrize(
@@ -35,59 +32,141 @@ def test_wave_3_title_gate_accepts_aec_titles(title):
         "Guidelines for smart grid cybersecurity",
         "Code extension techniques for the 7-bit coded character set",
         "Material Handling Workstation implementation",
+        "Nuclear Regulatory Commission annual report",
     ],
 )
-def test_wave_3_title_gate_rejects_observed_crossref_false_positives(title):
+def test_title_gate_rejects_observed_crossref_false_positives(title):
     assert not find_nist.title_in_scope(title)
+    assert find_nist.classify_topic(title) is None
 
 
-def test_crossref_applies_title_gate_before_returning_hits(monkeypatch):
-    class Response:
-        def raise_for_status(self):
-            pass
+def test_month_index_is_stable_and_uses_real_calendar_boundaries():
+    assert find_nist.FIRST_MONTH_INDEX == 24143
+    assert find_nist.month_bounds(24143) == ("2011-12-01", "2011-12-31")
+    assert find_nist.month_bounds(2012 * 12 + 1) == ("2012-02-01", "2012-02-29")
+    with pytest.raises(ValueError, match="predates"):
+        find_nist.month_bounds(24142)
 
-        def json(self):
-            return {"message": {"items": [
+
+def _item(title, url="https://nvlpubs.nist.gov/report.pdf"):
+    return {"title": [title], "resource": {"primary": {"URL": url}}}
+
+
+class _Response:
+    def __init__(self, message):
+        self.message = message
+
+    def raise_for_status(self):
+        pass
+
+    def json(self):
+        return {"message": self.message}
+
+
+def test_crossref_cursor_enumerates_month_and_applies_title_gate(monkeypatch):
+    calls = []
+    responses = iter(
+        [
+            _Response(
                 {
-                    "title": ["HVAC functional inspection and testing guide"],
-                    "resource": {"primary": {"URL": "https://nvlpubs.nist.gov/hvac.pdf"}},
-                },
+                    "total-results": 3,
+                    "next-cursor": "second",
+                    "items": [
+                        _item("HVAC functional inspection and testing guide"),
+                        _item("Message handling systems interoperability tests"),
+                    ],
+                }
+            ),
+            _Response(
                 {
-                    "title": ["Message handling systems interoperability tests"],
-                    "resource": {"primary": {"URL": "https://nvlpubs.nist.gov/it.pdf"}},
-                },
-            ]}}
+                    "total-results": 3,
+                    "next-cursor": "unused",
+                    "items": [_item("Heat pump field performance", "https://example.org/x.pdf")],
+                }
+            ),
+        ]
+    )
 
-    monkeypatch.setattr(find_nist.requests, "get", lambda *_args, **_kwargs: Response())
+    def get(_url, **kwargs):
+        calls.append(kwargs["params"])
+        return next(responses)
 
-    assert find_nist.from_crossref("building controls interoperability", 50, 0) == [
-        ("HVAC functional inspection and testing guide", "https://nvlpubs.nist.gov/hvac.pdf")
+    monkeypatch.setattr(find_nist.requests, "get", get)
+    monkeypatch.setattr(find_nist.time, "sleep", lambda _seconds: None)
+
+    assert find_nist.from_crossref(24143, 2) == [
+        (
+            "HVAC functional inspection and testing guide",
+            "https://nvlpubs.nist.gov/report.pdf",
+            "equipment_systems",
+        )
     ]
+    assert [call["cursor"] for call in calls] == ["*", "second"]
+    assert all(call["mailto"] == find_nist.MAILTO for call in calls)
+    assert calls[0]["filter"] == (
+        "prefix:10.6028,from-created-date:2011-12-01,until-created-date:2011-12-31"
+    )
+
+
+def test_cursor_expiry_fails_closed(monkeypatch):
+    responses = iter(
+        [
+            _Response(
+                {
+                    "total-results": 2,
+                    "next-cursor": "expired-token",
+                    "items": [_item("HVAC field test")],
+                }
+            ),
+            TimeoutError("cursor expired"),
+        ]
+    )
+
+    def get(*_args, **_kwargs):
+        response = next(responses)
+        if isinstance(response, Exception):
+            raise response
+        return response
+
+    monkeypatch.setattr(find_nist.requests, "get", get)
+    monkeypatch.setattr(find_nist.time, "sleep", lambda _seconds: None)
+
+    with pytest.raises(TimeoutError, match="expired"):
+        find_nist.from_crossref(24143, 1)
+
+
+@pytest.mark.parametrize(
+    "message, match",
+    [
+        ({"total-results": 2, "items": []}, "ended early"),
+        ({"total-results": 2, "items": [_item("HVAC field test")]}, "omitted next-cursor"),
+        (
+            {
+                "total-results": 2,
+                "next-cursor": "*",
+                "items": [_item("HVAC field test")],
+            },
+            "repeated a cursor",
+        ),
+    ],
+)
+def test_incomplete_cursor_shapes_fail_closed(monkeypatch, message, match):
+    monkeypatch.setattr(find_nist.requests, "get", lambda *_args, **_kwargs: _Response(message))
+    with pytest.raises(RuntimeError, match=match):
+        find_nist.from_crossref(24143, 1)
 
 
 def _empty_registry(monkeypatch):
-    monkeypatch.setattr(
-        find_nist.registry,
-        "existing_keys",
-        lambda: (set(), set(), set()),
-    )
+    monkeypatch.setattr(find_nist.registry, "existing_keys", lambda: (set(), set(), set()))
 
 
 def test_api_failure_exits_nonzero_before_partial_append(monkeypatch, capsys):
     _empty_registry(monkeypatch)
     monkeypatch.setattr(
         find_nist,
-        "QUERIES",
-        [("first", "building_energy"), ("second", "materials")],
+        "from_crossref",
+        lambda *_args: (_ for _ in ()).throw(TimeoutError("offline")),
     )
-
-    def from_crossref(term, _rows, _offset):
-        if term == "second":
-            raise TimeoutError("offline")
-        return [("Concrete envelope report", "https://nvlpubs.nist.gov/a.pdf")]
-
-    monkeypatch.setattr(find_nist, "from_crossref", from_crossref)
-    monkeypatch.setattr(find_nist.time, "sleep", lambda _seconds: None)
     monkeypatch.setattr(
         find_nist.registry,
         "append_entries",
@@ -102,11 +181,33 @@ def test_api_failure_exits_nonzero_before_partial_append(monkeypatch, capsys):
     assert "refusing a partial append so rotation does not advance" in capsys.readouterr().err
 
 
-def test_successful_empty_page_is_not_an_api_failure(monkeypatch, capsys):
+def test_candidate_cap_emits_batch_and_requests_rotation_hold(monkeypatch, tmp_path, capsys):
     _empty_registry(monkeypatch)
-    monkeypatch.setattr(find_nist, "QUERIES", [("dry", "building_energy")])
+    monkeypatch.setattr(
+        find_nist,
+        "from_crossref",
+        lambda *_args: [
+            (f"HVAC report {index}", f"https://nvlpubs.nist.gov/{index}.pdf", "equipment_systems")
+            for index in range(3)
+        ],
+    )
+    appended = []
+    monkeypatch.setattr(find_nist.registry, "append_entries", lambda entries: appended.extend(entries))
+    hold = tmp_path / "rotation-hold"
+    monkeypatch.setenv("NEKAISE_ROTATION_HOLD_FILE", str(hold))
+    monkeypatch.setattr(sys, "argv", ["find_nist.py", "--max", "2", "--append"])
+
+    find_nist.main()
+
+    assert len(appended) == 2
+    assert hold.exists()
+    assert "has 3 new candidates; emitted 2" in hold.read_text()
+    assert "rotation hold requested" in capsys.readouterr().err
+
+
+def test_successful_empty_month_is_not_an_api_failure(monkeypatch, capsys):
+    _empty_registry(monkeypatch)
     monkeypatch.setattr(find_nist, "from_crossref", lambda *_args: [])
-    monkeypatch.setattr(find_nist.time, "sleep", lambda _seconds: None)
     monkeypatch.setattr(
         find_nist.registry,
         "append_entries",

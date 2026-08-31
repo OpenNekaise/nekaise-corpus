@@ -25,10 +25,10 @@
     "note": "PAUSED 2026-08-18: OpenAIRE enforces page*pageSize <= 10000 and rejects p903 with HTTP 400. Finder now exits nonzero on any incomplete query. Preserve pointer until the query universe is reset/re-aimed. Earlier vein was nearly dry: p1=300, p2=109, p3=52, p4=22."
   },
   "find_nist": {
-    "flag": "--page",
-    "next": 112,
+    "flag": "--month-index",
+    "next": 24143,
     "step": 1,
-    "note": "Wave 3 began 2026-08-30 at page 1 with 15 building-anchored commissioning, controls/BACnet, HVAC FDD, ventilation, code-adjacent, and heat-pump queries plus a title precision gate; its reviewed page-1 sample was 29/29 relevant. Waves 1-2 reached the deep-offset/dry tail. Crossref DOI prefix 10.6028; optional backend retains its pointer on API failure."
+    "note": "RE-AIMED 2026-08-31 after relevance-ranked query pages 7-111 were dry: cursor-enumerate DOI prefix 10.6028 in creation-month segments. Pointer is year*12+month-1 (24143 = 2011-12, the earliest prefix record); ephemeral Crossref cursors live only within a run, so failure retains and replays the re-derivable month. A reviewed four-month sample passed the conservative title gate at 44/44 AEC-relevant titles. Candidate-cap runs request a rotation hold until month dedup drains. Optional backend retains its pointer on API failure."
   },
   "find_zenodo": {
     "flag": "--page",

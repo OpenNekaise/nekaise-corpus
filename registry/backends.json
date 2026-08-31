@@ -51,13 +51,12 @@
     "script": "find_nist.py",
     "args": [
       "--rows",
-      "50",
+      "1000",
       "--max",
       "300"
     ],
-    "enabled": false,
-    "required": false,
-    "reason": "paused 2026-08-31 after pages 7-111 yielded zero documents (105 consecutive dry pages); pointer 112 preserved. Re-aim with Crossref cursor-based enumeration of DOI prefix 10.6028 without bibliographic queries, then apply the existing title and quality gates, rather than adding another relevance-ranked query wave"
+    "enabled": true,
+    "required": false
   },
   "find_zenodo": {
     "script": "find_zenodo.py",
