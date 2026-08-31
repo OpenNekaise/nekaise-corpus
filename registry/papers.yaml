@@ -65213,3 +65213,11 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
+  - id: ope-the-impact-of-building-orientation-on-resident
+    title: The impact of building orientation on residential heating and cooling
+    url: https://escholarship.org/content/qt0dz623wf/qt0dz623wf.pdf
+    source: openalex
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: public-domain'
