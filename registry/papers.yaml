@@ -65340,3 +65340,37 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-a-kirchhoff-like-theory-for-hard-magnetic-rods
+    title: A Kirchhoff-like theory for hard magnetic rods under geometrically nonlinear
+      deformation in three dimensions
+    url: https://arxiv.org/pdf/2106.15189
+    source: openalex
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: ope-use-of-recycled-coal-bottom-ash-in-reinforced-
+    title: Use of recycled coal bottom ash in reinforced concrete beams as replacement
+      for aggregate
+    url: https://www.frontiersin.org/articles/10.3389/fmats.2022.1064604/pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-flexural-behavior-of-reinforced-concrete-beams
+    title: Flexural behavior of reinforced concrete beams using waste marble powder
+      towards application of sustainable concrete
+    url: https://www.frontiersin.org/articles/10.3389/fmats.2022.1068791/pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-seismic-response-analysis-of-a-highway-overcro
+    title: Seismic Response Analysis of a Highway Overcrossing Equipped with Elastomeric
+      Bearings and Fluid Dampers
+    url: https://escholarship.org/content/qt4kw3j391/qt4kw3j391.pdf
+    source: openalex
+    license: open
+    topic: structures_civil
+    format: pdf
