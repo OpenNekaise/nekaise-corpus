@@ -58,6 +58,8 @@ SOURCE_GENRE = {
     "nz_mbie": "international_bodies", "seai": "international_bodies",
     "aivc": "international_bodies",
     "ashrae": "codes_standards", "energycodes": "codes_standards",
+    "doe_energycodes": "codes_standards", "wbdg_ufc": "codes_standards",
+    "access_board": "codes_standards",
     "eia": "public_datasets", "openei": "public_datasets", "datasets": "public_datasets",
     "volttron": "software_sim_docs", "modelica_buildings": "software_sim_docs", "docs": "software_sim_docs",
     "buildingspy": "software_sim_docs", "energyplus-api": "software_sim_docs",

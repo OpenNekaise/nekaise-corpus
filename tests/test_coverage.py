@@ -95,6 +95,7 @@ def test_vendor_sources_are_manufacturer_literature(monkeypatch, capsys):
                 "openstudio-docs", "soep", "openmodelica-docs", "modelica-spec",
             ),
         ),
+        ("codes_standards", ("doe_energycodes", "wbdg_ufc", "access_board")),
         ("us_gov_lab_reports", ("cec",)),
     ],
 )
