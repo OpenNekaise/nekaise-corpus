@@ -65121,3 +65121,12 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-decarbonization-in-complex-energy-systems-a-st
+    title: 'Decarbonization in Complex Energy Systems: A Study on the Feasibility of
+      Carbon Neutrality for Switzerland in 2050'
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2020.549615/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
