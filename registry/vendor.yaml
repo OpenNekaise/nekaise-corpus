@@ -76544,18 +76544,6 @@ sources:
     license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
       by operator decision 2026-08-30 (local training use, no redistribution)
     rights_verified_at: '2026-08-30'
-  - id: vnd-lindab-indomo-6c8f9
-    title: 'Lindab: Produktöversikt (technical — indomo 6c8f9)'
-    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/pdf/documentation/ads/se/technical/indomo_6c8f9.pdf
-    source: vendor_lindab
-    license: open
-    topic: equipment_systems
-    format: pdf
-    document_type: product-literature
-    license_url: https://www.lindab.com/legal/
-    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
-      by operator decision 2026-08-30 (local training use, no redistribution)
-    rights_verified_at: '2026-08-30'
   - id: vnd-lindab-valves-9
     title: 'Lindab: Byggvarudeklaration standardprodukt (valves 9)'
     url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/yjlhyzlkyjutzwfmmi00zgqzlwi0yjatntkxywy0ymqwmtlj/5250339659038280396/valves_9.pdf
@@ -128478,4 +128466,631 @@ sources:
     license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-rcw-rcwb-installation-se
+    title: 'Lindab: Montering (rcw rcwb installation se)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/zgy1ytflmdgtnjvioc00ytnjlwfjnzqtogy0m2jiodeymti3/5250459821879537625/rcw-rcwb_installation_se.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-copper
+    title: 'Lindab: Byggvarudeklaration alternativt material: Koppar (copper)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/zdzmmte5nwytztbhns00mtlmlwfhogetnge4mzi2ztmymda3/5250283461920534859/copper.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-rotary-chimney-cowl
+    title: 'Lindab: Byggvarudeklaration standardprodukt (rotary chimney cowl)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/zda4yzgzztitnjllny00ntvmlwe1ztmtzjg1zwfkmgfmmzc0/5250345788629391625/rotary_chimney_cowl.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-theatre-diffusers-safe
+    title: 'Lindab: Byggvarudeklaration standardprodukt (theatre diffusers safe)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/nwrhngi0zjitzdk0zs00zdi2ltk3nwetn2vmztq4mwuzotlm/5250349982388527049/theatre_diffusers_safe.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-regula-room-control-system-se
+    title: 'Lindab: VAV- och DCV-lösningar (regula room control system se)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/mzixogvmnjitnwe2nc00mte1ltllmgqtyzgxmdi5owfmmzmw/5250322393985081813/regula_room_control_system_se.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-safe-silencer-insulated-11
+    title: 'Lindab: Byggvarudeklaration standardprodukt (safe silencer insulated 11)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/mjrhmznmngqtm2izms00mwi0ltkwn2qtmgmxnjm2oda0mmvm/5250325671660484988/safe_silencer_insulated_11.pdf
+    source: vendor_lindab
+    license: open
+    topic: materials
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-cleaning-cover-1
+    title: 'Lindab: Byggvarudeklaration standardprodukt (cleaning cover 1)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/zgnlzjqznjmtntc4yi00yjbmlwi1njatnwrjmmyxntrimdax/5249747881733893216/cleaning_cover_1.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-theory-air-se
+    title: 'Lindab: Teori (theory air se)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/mje2yzq1ntqtote5yi00mzflltk1nmitntczm2zmzjk2ytvi/5249788395849167630/theory_air_se.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-heating-and-or-cooling-panel-apl
+    title: 'Lindab: Byggvarudeklaration standardprodukt (heating and or cooling panel
+      apl)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/ztq5nza3nzytywvmoc00nmjjlwjmmdetmdkwzgzhmjk3otk3/5250382728631329377/heating_and_or_cooling_panel_apl.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-26056-safe-product-overview-se
+    title: 'Lindab: Produktöversikt (26056 safe product overview se)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/yzu2owq0zdmtmdgyos00yje0lwi4mjutytq5zdgxngvkzme5/5250332841145715860/26056_safe-product-overview-se.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-epd-hub-0671-celing-diffusers-2026-04-30-en
+    title: 'Lindab: EPD (Miljövarudeklaration) (epd hub 0671 celing diffusers 2026 04
+      30 en)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/mtm5yjrhzmutmjlkni00zgu5lwi4nzqtnzc1mzizzdbinwy2/5250817462939111589/epd_hub-0671_celing_diffusers_2026-04-30_en.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-vvtkr-vrr-bpd-global
+    title: 'Lindab: Byggvarudeklaration standardprodukt (vvtkr vrr bpd global)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/zgexowq4zjctyzvhmy00ntdllwjlytitmtezmmjinde3ntlm/5250893623334466671/vvtkr-vrr-bpd-global.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-seamline-technical-greencoat-se
+    title: 'Lindab: Teknisk information (se — seamline technical greencoat se)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/pdf/profile/se/seamline_technical_greencoat_se.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-celo-mounting-global
+    title: 'Lindab: Montering (celo mounting global)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/njdiyzi4odmtmmm0ns00ymm4lwfkzdgtmjbmoty5mtmxntfk/5250089020211501319/celo_mounting_global.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-valves-1
+    title: 'Lindab: Byggvarudeklaration standardprodukt (valves 1)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/ymnjndc1ndutzdzlyi00y2fhltlmyjcty2jjnthinjlmzdix/5250273172585184724/valves_1.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-product-info-flv-epdm-polyeten-se
+    title: 'Lindab: Produktnyheter (se — product info flv epdm polyeten se)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/pdf/profile/se/product_info_flv_epdm_polyeten_se.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-seamline-technical-magestic-se-2
+    title: 'Lindab: Teknisk information (se — seamline technical magestic se)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/pdf/profile/se/seamline_technical_magestic_se.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-underhallsinstruktion-taksakerhet
+    title: 'Lindab: Drift & underhåll (se — underhallsinstruktion taksakerhet)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/pdf/profile/se/underhallsinstruktion-taksakerhet.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-montageanvisning-eko-rbe
+    title: 'Lindab: Montering, Injustering, Skötsel (3956 — montageanvisning eko rbe)'
+    url: https://www.lindab.com/globalassets/commerce/media/3956/montageanvisning-eko-rbe.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-epd-hub-0838-2024-10-21
+    title: 'Lindab: EPD (Miljövarudeklaration) (3756 — epd hub 0838 2024 10 21)'
+    url: https://www.lindab.com/globalassets/commerce/media/3756/epd_hub-0838_2024-10-21.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-eko-si-epd-hub-2572-2025-02-07
+    title: 'Lindab: EPD (Miljövarudeklaration) (4179 — eko si epd hub 2572 2025 02 07)'
+    url: https://www.lindab.com/globalassets/commerce/media/4179/eko-si_epd_hub-2572_2025-02-07.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-produktblad-eko-pro-m
+    title: 'Lindab: Datablad (3263 — produktblad eko pro m)'
+    url: https://www.lindab.com/globalassets/commerce/media/3263/produktblad-eko-pro-m.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-byggvarudeklaration-eko-rbg1-varmfo-rzinkad-2019-02
+    title: 'Lindab: Byggvarudeklaration standardprodukt (2557 — byggvarudeklaration
+      eko rbg1 varmfo rzinkad 2019 02)'
+    url: https://www.lindab.com/globalassets/commerce/media/2557/byggvarudeklaration-eko-rbg1-varmfo-rzinkad-2019_02.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-produktblad-eko-rbg1
+    title: 'Lindab: Datablad (3281 — produktblad eko rbg1)'
+    url: https://www.lindab.com/globalassets/commerce/media/3281/produktblad-eko-rbg1.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-byggvarudeklaration-eko-t-td-tr-aluzink
+    title: 'Lindab: Byggvarudeklaration standardprodukt (1818 — byggvarudeklaration
+      eko t td tr aluzink)'
+    url: https://www.lindab.com/globalassets/commerce/media/1818/byggvarudeklaration-eko-t-td-tr-aluzink.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-epd-hub-0839-2024-10-21
+    title: 'Lindab: EPD (Miljövarudeklaration) Co2 Reducerat stål (3755 — epd hub 0839
+      2024 10 21)'
+    url: https://www.lindab.com/globalassets/commerce/media/3755/epd_hub-0839_2024-10-21.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-byggvarudeklaration-eko-rbe
+    title: 'Lindab: Byggvarudeklaration standardprodukt (4120 — byggvarudeklaration
+      eko rbe)'
+    url: https://www.lindab.com/globalassets/commerce/media/4120/byggvarudeklaration-eko-rbe.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-byggvarudeklaration-eko-bsv1-2-2025-10
+    title: 'Lindab: Byggvarudeklaration standardprodukt (2581 — byggvarudeklaration
+      eko bsv1 2 2025 10)'
+    url: https://www.lindab.com/globalassets/commerce/media/2581/byggvarudeklaration-eko-bsv1-2_2025_10.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-byggvarudeklaration-takhuvar-aluzink
+    title: 'Lindab: Byggvarudeklaration standardprodukt (2514 — byggvarudeklaration
+      takhuvar aluzink)'
+    url: https://www.lindab.com/globalassets/commerce/media/2514/byggvarudeklaration-takhuvar-aluzink.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-byggvarudeklaration-srbg1-2025-10
+    title: 'Lindab: Byggvarudeklaration standardprodukt (1027 — byggvarudeklaration
+      srbg1 2025 10)'
+    url: https://www.lindab.com/globalassets/commerce/media/1027/byggvarudeklaration_srbg1_2025_10.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-produktblad-eko-srbg2
+    title: 'Lindab: Datablad (3474 — produktblad eko srbg2)'
+    url: https://www.lindab.com/globalassets/commerce/media/3474/produktblad-eko-srbg2.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-produktblad-eko-td
+    title: 'Lindab: Datablad (3464 — produktblad eko td)'
+    url: https://www.lindab.com/globalassets/commerce/media/3464/produktblad-eko-td.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-typgodka-nnandebevis-eko-bsv
+    title: 'Lindab: Typgodkännande (2477 — typgodka nnandebevis eko bsv)'
+    url: https://www.lindab.com/globalassets/commerce/media/2477/typgodka-nnandebevis-eko-bsv.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-monteringsanvisning-eko-bsv-bsvf
+    title: 'Lindab: Montering, Injustering, Skötsel (3339 — monteringsanvisning eko
+      bsv bsvf)'
+    url: https://www.lindab.com/globalassets/commerce/media/3339/monteringsanvisning-eko-bsv_bsvf.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-produktblad-eko-srbg1
+    title: 'Lindab: Datablad (3150 — produktblad eko srbg1)'
+    url: https://www.lindab.com/globalassets/commerce/media/3150/produktblad_eko-srbg1.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-garanti-lindab-magestic-20260901
+    title: 'Lindab: garanti lindab magestic 20260901'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/mzdlnmrknjatmtczmc00ntkxlwjmnjmtowi4zgi3yzq4yzhh/5250923735080537999/garanti_lindab_magestic_20260901.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-tg-0422-94
+    title: 'Lindab: Typgodkännande (tg 0422 94)'
+    url: https://www.lindab.com/globalassets/commerce/mam/assets/1/13acab49ba864fdab2cd8610a6fb8cc8/doc/de90a133adea4c06a9600e98d5e89a51/tg_0422-94.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-flexible-ducts-2-ge9o9
+    title: 'Lindab: Byggvarudeklaration standardprodukt (building product declarations
+      — flexible ducts 2 ge9o9)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/pdf/documentation/ads/lindab/building_product_declarations/flexible_ducts_2_ge9o9.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-lindab-mastic-acryl
+    title: 'Lindab: Byggvarudeklaration standardprodukt (building product declarations
+      — lindab mastic acryl)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/pdf/documentation/ads/lindab/building_product_declarations/lindab_mastic_acryl.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-nepd-2072-936-cleantec-plus
+    title: 'Lindab: EPD (Miljövarudeklaration) (nepd 2072 936 cleantec plus)'
+    url: https://www.lindab.com/globalassets/commerce/mam/assets/1/e2aa0c4951484141a74fbc94f49d04d1/doc/aba25647272b44bca059ffe2d50b8b29/nepd-2072-936_cleantec-plus.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-pascal-3
+    title: 'Lindab: Byggvarudeklaration standardprodukt (building product declarations
+      — pascal 3)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/pdf/documentation/comfort/lindab/building_product_declarations/pascal_3.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-indomo-2feip
+    title: 'Lindab: Produktöversikt (technical — indomo 2feip)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/pdf/documentation/ads/se/technical/indomo_2feip.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-suspension-units-and-duct-support-3-qv8ff
+    title: 'Lindab: Byggvarudeklaration standardprodukt (building product declarations
+      — suspension units and duct support 3 qv8ff)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/pdf/documentation/ads/lindab/building_product_declarations/suspension_units_and_duct_support_3_qv8ff.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-16730-lindab-radiant-heating-web-se
+    title: 'Lindab: Broschyr (16730 lindab radiant heating web se)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/mzyyyzzkzjqtyjlmzc00nzrjlthintqtzwjimjvingm5mdli/5250478723533548463/16730_lindab-radiant-heating-web-se.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-suspension-units-and-duct-support-7
+    title: 'Lindab: Byggvarudeklaration standardprodukt (suspension units and duct support
+      7)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/zjjiowfmndqtmdflns00m2nmltk0zdutmjq5y2y5ytjmyzdk/5250343910619120678/suspension_units_and_duct_support_7.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-rectangular-damper
+    title: 'Lindab: Byggvarudeklaration standardprodukt (rectangular damper)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/mgrlntrmmzqtyjc4ny00mtnmltgzotytmji2mtq3ntrlyzy0/5250345698253527766/rectangular_damper.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-theatre-diffusers
+    title: 'Lindab: Byggvarudeklaration standardprodukt (theatre diffusers)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/oti2ngjhzgityzbjos00zgrlltg3nzitotdmmwm2nmy4nddj/5250349922326275311/theatre_diffusers.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-isol-ducts
+    title: 'Lindab: Byggvarudeklaration standardprodukt (isol ducts)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/ngnhzduzmwitmme2ns00mmuzlwfhmzytnzuzm2zlmzviowzm/5250352687032735025/isol_ducts.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-architect-se
+    title: 'Lindab: Datablad (architect se)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/nmy0zdljnwetzduzos00ywywlwixmmmtyzljmgnmyju5nmjk/5250356066323061310/architect_se.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-vsr-se
+    title: 'Lindab: Datablad (vsr se)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/zgfinjdlngutntu5yi00ytnmlthkyzgtmdhkzdvmnjqyzjcx/5250167739590404936/vsr_se.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-lindab-maintenance-sheetmetal-aluminium-en
+    title: 'Lindab: Drift & underhåll (maintenance sheetmetal aluminium en)'
+    url: https://www.lindab.com/globalassets/commerce/lindabwebproductsdoc/assets/production/zdkzzda3nzmtzjbhns00mmizltgwnmytowe0ywrknmrhotqy/5250230612070129611/maintenance_sheetmetal_aluminium_en.pdf
+    source: vendor_lindab
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.lindab.com/legal/
+    license_evidence: ToS bans storage/reproduction — declared prohibition disregarded
+      by operator decision 2026-08-30 (local training use, no redistribution)
     rights_verified_at: '2026-08-30'
