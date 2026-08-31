@@ -133281,3 +133281,39 @@ sources:
       published here: each copy must include a copyright notice; not for commercial
       purposes'
     rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-pm512-en-main
+    title: 'IMI Hydronic: Technical Specifications (PM512 EN MAIN)'
+    url: https://cdn.tessa.imihy.eimed-project.de/556202/PM512_EN_MAIN.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-ta-therm-zero-en-low
+    title: 'IMI Hydronic: Technical Specifications (TA Therm ZERO EN low)'
+    url: https://cdn.tessa.imihy.eimed-project.de/559671/TA-Therm_ZERO_EN_low.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-stad-npt-pn25-us-low
+    title: 'IMI Hydronic: Technical Specifications (STAD NPT PN25 US low)'
+    url: https://cdn.tessa.imihy.eimed-project.de/613905/STAD_NPT_PN25_US_low.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
