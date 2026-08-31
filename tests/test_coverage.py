@@ -125,6 +125,25 @@ def test_stale_region_source_names_are_removed():
     assert stale.isdisjoint(coverage_matrix.REGION_SOURCE)
 
 
+def test_language_of_prefers_declared_language_for_bilingual_document():
+    text = (
+        "Influência do ligante na retração por secagem em fibrocimento\n"
+        "The study evaluates the material and the results of the tests for the building "
+        "with the methods that are described in this English abstract. " * 8
+    )
+    assert coverage_matrix.detect_lang(text) == "en"
+    assert coverage_matrix.language_of({"language": "pt"}, text) == "pt"
+
+
+def test_language_of_keeps_heuristic_fallback_for_english_document():
+    text = (
+        "Building ventilation study\n"
+        "The study evaluates the system and the results for the building with the methods "
+        "that are described in this technical report."
+    )
+    assert coverage_matrix.language_of({}, text) == "en"
+
+
 def test_coverage_matrix_omits_restricted_regions_and_languages(
     tmp_path, monkeypatch, capsys
 ):

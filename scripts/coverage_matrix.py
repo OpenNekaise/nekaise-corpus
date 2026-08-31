@@ -5,7 +5,8 @@ The registry `topic` is a single routing label assigned at discovery — good fo
 too coarse to answer "which parts of the built environment are still uncovered?". This script
 derives a MULTI-LABEL facet vector per document at analysis time (nothing is stored, no
 migration): domain × lifecycle stage × data type × region × language × building type × license,
-classified from the title + the first few KB of extracted text with multilingual keyword rules.
+classified from source metadata plus the title + the first few KB of extracted text with
+multilingual keyword rules.
 Every rule set is a curated list below — extend a dimension by adding one line, then re-run.
 
 Marginals are printed per dimension plus the two decision-driving cross sections
@@ -141,6 +142,14 @@ def detect_lang(text: str) -> str:
     return best if best != "en" and votes[best] > votes["en"] * 1.2 else "en"
 
 
+def language_of(row: dict, text: str) -> str:
+    """Prefer declared provenance; heuristics are only a fallback for older rows."""
+    declared = row.get("language")
+    if isinstance(declared, str) and declared.strip():
+        return declared.strip().lower()
+    return detect_lang(text)
+
+
 def facet(rules, text: str) -> list[str]:
     return [k for k, p in rules if p.search(text)] or ["(none)"]
 
@@ -198,7 +207,7 @@ def main() -> None:
         f = {
             "domain": facet(DOMAIN, text), "lifecycle": facet(LIFECYCLE, text),
             "datatype": facet(DATATYPE, text), "bldgtype": facet(BLDGTYPE, text),
-            "region": region_of(r, text), "language": [detect_lang(text)],
+            "region": region_of(r, text), "language": [language_of(r, text)],
             "license": [r.get("license", "unknown")],
         }
         for d, keys in f.items():
