@@ -65308,3 +65308,35 @@ sources:
     topic: building_energy
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-hygrothermal-performance-of-cool-roofs-subject
+    title: Hygrothermal Performance of Cool Roofs Subjected to Saudi Climates
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2019.00039/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-the-impact-of-evaporation-from-porous-tile-on-
+    title: 'The impact of evaporation from porous tile on roof thermal performance:
+      A case study of Guangzhou’s climatic conditions'
+    url: https://escholarship.org/content/qt0p5784p5/qt0p5784p5.pdf
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: ope-energy-performance-of-cool-roofs-followed-by-d
+    title: Energy Performance of Cool Roofs Followed by Development of Practical Design
+      Tool
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2019.00122/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-on-the-optimal-experiment-design-for-heat-and-
+    title: On the optimal experiment design for heat and moisture parameter estimation
+    url: https://arxiv.org/pdf/1610.03688
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
