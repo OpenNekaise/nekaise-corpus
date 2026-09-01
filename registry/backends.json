@@ -127,7 +127,8 @@
       "--max",
       "300"
     ],
-    "enabled": true
+    "enabled": false,
+    "reason": "exhausted: KITopen set ddc:720 fully harvested"
   },
   "find_japan": {
     "script": "find_japan.py",
