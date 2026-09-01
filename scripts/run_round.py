@@ -58,6 +58,17 @@ def load_backends(path: Path = BACKENDS) -> dict:
     return {k: v for k, v in json.loads(path.read_text()).items() if not k.startswith("_")}
 
 
+def disable_backend(name: str, reason: str, path: Path | None = None) -> None:
+    """Persist finder-reported exhaustion without discarding its resumable rotation state."""
+    path = path or BACKENDS
+    raw = json.loads(path.read_text())
+    if name not in raw:
+        raise KeyError(f"unknown backend {name}")
+    raw[name]["enabled"] = False
+    raw[name]["reason"] = f"exhausted: {reason}"
+    ops.atomic_write_text(path, json.dumps(raw, indent=2, ensure_ascii=False) + "\n")
+
+
 def validate_backends(backends: dict, rotation_state: dict) -> list[str]:
     errors = []
     for name, cfg in backends.items():
@@ -212,9 +223,13 @@ def run_finders_parallel(
             shown = shlex.join(command)
             proposal = temp / f"{index:03d}-{name}.json"
             rotation_hold = temp / f"{index:03d}-{name}.rotation-hold"
+            rotation_next = temp / f"{index:03d}-{name}.rotation-next"
+            backend_exhausted = temp / f"{index:03d}-{name}.backend-exhausted"
             child_env = env.copy()
             child_env["NEKAISE_PROPOSAL_FILE"] = str(proposal)
             child_env["NEKAISE_ROTATION_HOLD_FILE"] = str(rotation_hold)
+            child_env["NEKAISE_ROTATION_NEXT_FILE"] = str(rotation_next)
+            child_env["NEKAISE_BACKEND_EXHAUSTED_FILE"] = str(backend_exhausted)
             step = f"discover:{name}"
             ops.run_event(run_id, "step_started", step=step, command=shown)
             started = time.monotonic()
@@ -240,6 +255,8 @@ def run_finders_parallel(
                 "command": shown,
                 "proposal": proposal,
                 "rotation_hold": rotation_hold.exists(),
+                "rotation_next": rotation_next,
+                "backend_exhausted": backend_exhausted,
                 "returncode": result.returncode,
                 "stdout": result.stdout,
                 "stderr": result.stderr,
@@ -289,6 +306,30 @@ def run_finders_parallel(
             ops.run_event(run_id, "discovery_degraded", failures=failures)
 
         successful = [r for r in results if not r["returncode"]]
+        for result in successful:
+            name = result["name"]
+            rotates = backends[name].get("rotation", True)
+            dynamic = rotates and rotation_state[name].get("dynamic", False)
+            has_next = result["rotation_next"].exists()
+            has_exhausted = result["backend_exhausted"].exists()
+            if result["rotation_hold"] and (has_next or has_exhausted):
+                raise RuntimeError(
+                    f"{name}: finder reported both a rotation hold and a next/exhausted cursor"
+                )
+            if dynamic and not result["rotation_hold"] and not has_next:
+                raise RuntimeError(f"{name}: dynamic finder did not report its next cursor")
+            if not dynamic and has_next:
+                raise RuntimeError(f"{name}: non-dynamic finder reported a next cursor")
+            for label, path in (
+                ("next cursor", result["rotation_next"]),
+                ("exhaustion reason", result["backend_exhausted"]),
+            ):
+                if not path.exists():
+                    continue
+                value = path.read_text().strip()
+                if not value or "\n" in value or "\r" in value or len(value) > 4096:
+                    raise RuntimeError(f"{name}: invalid {label} control value")
+
         total, accepted = merge_proposals(successful)
         accepted = {name: accepted.get(name, 0) for name in selected}
         print(f"discovery merge: {total} unique candidates | by backend: {accepted}")
@@ -301,7 +342,9 @@ def run_finders_parallel(
         successful_names = {r["name"] for r in successful}
         results_by_name = {r["name"]: r for r in successful}
         for name in selected:
-            if name in successful_names and backends[name].get("rotation", True):
+            if name not in successful_names:
+                continue
+            if backends[name].get("rotation", True):
                 if results_by_name[name]["rotation_hold"]:
                     print(f"rotation held for {name}: finder reported more candidates at this pointer")
                     ops.run_event(
@@ -311,8 +354,20 @@ def run_finders_parallel(
                         reason="finder_requested",
                     )
                     continue
-                new_pointer = rotation.advance(name)
+                next_path = results_by_name[name]["rotation_next"]
+                if rotation_state[name].get("dynamic"):
+                    new_pointer = rotation.set_next(name, next_path.read_text().strip())
+                else:
+                    new_pointer = rotation.advance(name)
                 ops.run_event(run_id, "rotation_advanced", backend=name, next=new_pointer)
+            exhausted_path = results_by_name[name]["backend_exhausted"]
+            if exhausted_path.exists():
+                reason = exhausted_path.read_text().strip()
+                disable_backend(name, reason)
+                backends[name]["enabled"] = False
+                backends[name]["reason"] = f"exhausted: {reason}"
+                print(f"backend disabled for {name}: exhausted: {reason}")
+                ops.run_event(run_id, "backend_disabled", backend=name, reason=reason)
 
 
 def git_clean() -> bool:

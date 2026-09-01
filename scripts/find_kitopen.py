@@ -2,14 +2,13 @@
 """find_kitopen.py — harvest KIT's open repository (KITopen) via OAI-PMH.
 
 publikationen.bibliothek.kit.edu exposes KIT's institutional repository over OAI-PMH
-(`/oai`). Set `ddc:690` (Bauwesen/construction) alone holds ~9,300 records — German- and
-English-language theses, reports, and articles spanning structures, materials, urban
-planning, and building energy/HVAC. The corpus takes all languages, so this backend keeps
-both.
+(`/oai`). The `ddc:690` Bauwesen/construction set yielded ~700 redistributable documents before
+it was exhausted; `ddc:720` (architecture) is the current bounded re-aim. The corpus takes all
+languages, so this backend keeps both German and English work.
 
 Pages ListRecords with metadataPrefix=oai_dc via the OAI resumptionToken (pass `--token` to
-continue a prior run; the script prints the NEXT token at the end so a caller — a human or
-rotation.py — can persist it). Each record's `dc:rights` values are scanned for a
+continue a prior run; the script reports the NEXT token through the run-round control protocol).
+Each record's `dc:rights` values are scanned for a
 redistributable Creative Commons grant: `cc-by[-sa]` or `cc0` are kept; `by-nc*`/`by-nd*`,
 the custom "KITopen License", `info:eu-repo/semantics/openAccess` alone (an access-rights
 flag, not a license), or absent rights are all skipped — FAIL-CLOSED, since KITopen mixes
@@ -18,16 +17,18 @@ open and all-rights-reserved deposits in the same set. A record is only kept if 
 (`/{recordId}/{fulltextId}` — the direct-PDF link); the bare record-landing URL (depth 1)
 and DOI-only identifiers are not fulltext and are skipped.
 
-    python scripts/find_kitopen.py --max 15                          # propose, page 1
-    python scripts/find_kitopen.py --token EenPRXLJ7MdbRHrr --max 300 --append
+    python scripts/find_kitopen.py --set ddc:720 --max 15
+    python scripts/find_kitopen.py --set ddc:720 --token EenPRXLJ7MdbRHrr --max 300 --append
 """
 from __future__ import annotations
 
 import argparse
+import os
 import re
 import sys
 import time
 import xml.etree.ElementTree as ET
+from pathlib import Path
 from urllib.parse import urlparse
 
 import requests
@@ -127,17 +128,20 @@ def parse_page(xml_text: str):
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--set", default="ddc:690", help="OAI set (default: ddc:690, Bauwesen/construction)")
+    ap.add_argument("--set", default="ddc:720", help="OAI set (default: ddc:720, architecture)")
     ap.add_argument("--token", default="", help="resumptionToken to continue from (default: start fresh)")
-    ap.add_argument("--max", type=int, default=300, help="cap on new entries this run")
+    ap.add_argument(
+        "--max", type=int, default=300,
+        help="page-granular target for new entries this run (the final page may exceed it)",
+    )
     ap.add_argument("--append", action="store_true", help="append into the registry (registry/kitopen.yaml)")
     args = ap.parse_args()
 
     urls, titles, reg_ids = registry.existing_keys()
     out = []
     scanned = 0
-    token = args.token
-    first = True
+    token = "" if args.token == "START" else args.token
+    first = args.token != "END"
 
     while len(out) < args.max and (first or token):
         first = False
@@ -146,11 +150,10 @@ def main() -> None:
             records, token = parse_page(xml_text)
         except Exception as e:
             print(f"# OAI page failed (token={token!r}): {e}", file=sys.stderr)
-            break
+            print("# refusing a partial append so rotation does not advance", file=sys.stderr)
+            raise SystemExit(1)
 
         for rec in records:
-            if len(out) >= args.max:
-                break
             scanned += 1
             title = rec["title"]
             tag = license_for(rec["rights"])
@@ -186,7 +189,14 @@ def main() -> None:
         counts = registry.append_entries(out)
         print(f"# appended {len(out)} entries to the registry: {counts}", file=sys.stderr)
 
-    print(f"# next-token: {token or 'END'}")
+    next_token = token or "END"
+    if next_name := os.environ.get("NEKAISE_ROTATION_NEXT_FILE"):
+        Path(next_name).write_text(next_token + "\n")
+    if next_token == "END" and (
+        exhausted_name := os.environ.get("NEKAISE_BACKEND_EXHAUSTED_FILE")
+    ):
+        Path(exhausted_name).write_text(f"KITopen set {args.set} fully harvested\n")
+    print(f"# next-token: {next_token}")
 
 
 if __name__ == "__main__":

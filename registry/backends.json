@@ -121,9 +121,13 @@
   },
   "find_kitopen": {
     "script": "find_kitopen.py",
-    "args": [],
-    "enabled": false,
-    "reason": "exhausted"
+    "args": [
+      "--set",
+      "ddc:720",
+      "--max",
+      "300"
+    ],
+    "enabled": true
   },
   "find_japan": {
     "script": "find_japan.py",

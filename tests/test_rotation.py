@@ -89,3 +89,43 @@ def test_skip_range_can_jump_a_completed_multi_decade_patent_span(tmp_path, monk
 def test_malformed_skip_range_is_rejected(value, message):
     with pytest.raises(ValueError, match=message):
         rotation._skip_ranges(value)
+
+
+def test_dynamic_pointer_is_replaced_atomically(tmp_path, monkeypatch):
+    path = tmp_path / "rotation.json"
+    path.write_text(json.dumps({
+        "find_kitopen": {
+            "flag": "--token",
+            "next": "START",
+            "dynamic": True,
+        }
+    }))
+    monkeypatch.setattr(rotation, "PATH", path)
+    monkeypatch.setattr(rotation.ops, "WORKSPACE", tmp_path)
+
+    assert rotation.set_next("find_kitopen", "opaque-token") == "--token opaque-token"
+    assert rotation.load()["find_kitopen"]["next"] == "opaque-token"
+    with pytest.raises(ValueError, match="must be replaced"):
+        rotation.advance("find_kitopen")
+
+
+def test_dynamic_rotation_contract_requires_a_string_and_forbids_weekly_skips():
+    assert rotation.validate_entry(
+        "find_kitopen", {"next": 1, "dynamic": True}
+    ) == ["find_kitopen: dynamic rotation requires a non-empty string pointer"]
+    assert rotation.validate_entry(
+        "find_kitopen", {"next": "START", "dynamic": True, "skip": []}
+    ) == ["find_kitopen: dynamic rotation cannot use weekly skip ranges"]
+
+
+@pytest.mark.parametrize("value", ["", "two\nlines"])
+def test_dynamic_pointer_rejects_invalid_control_values(value, tmp_path, monkeypatch):
+    path = tmp_path / "rotation.json"
+    path.write_text(json.dumps({
+        "find_kitopen": {"flag": "--token", "next": "START", "dynamic": True}
+    }))
+    monkeypatch.setattr(rotation, "PATH", path)
+    monkeypatch.setattr(rotation.ops, "WORKSPACE", tmp_path)
+
+    with pytest.raises(ValueError, match="one non-empty line"):
+        rotation.set_next("find_kitopen", value)

@@ -13,7 +13,9 @@ exactly where the last one stopped.
 
 Pointer kinds: integers advance by `step`; Google-Patents buckets ("YYYY-WNN") advance to the
 PREVIOUS ISO week, walking history backwards. Weekly entries may declare inclusive `skip` ranges
-for buckets already mined. Edit registry/rotation.json by hand to re-aim a vein.
+for buckets already mined. Opaque API cursors declare `dynamic: true` and are replaced with the
+successful finder's reported next value via `set_next`. Edit registry/rotation.json by hand to
+re-aim a vein.
 """
 from __future__ import annotations
 
@@ -92,6 +94,14 @@ def _prev_unskipped_week(bucket: str, skip: object) -> str:
 
 def validate_entry(name: str, entry: dict) -> list[str]:
     """Return control-plane errors for optional rotation features."""
+    if "dynamic" in entry and not isinstance(entry["dynamic"], bool):
+        return [f"{name}: dynamic must be true or false"]
+    if entry.get("dynamic"):
+        if not isinstance(entry.get("next"), str) or not entry["next"].strip():
+            return [f"{name}: dynamic rotation requires a non-empty string pointer"]
+        if "skip" in entry:
+            return [f"{name}: dynamic rotation cannot use weekly skip ranges"]
+        return []
     if "skip" not in entry:
         return []
     if isinstance(entry.get("next"), int):
@@ -109,12 +119,31 @@ def advance(name: str) -> str:
     with ops.named_lock("rotation", timeout=30):
         state = load()
         e = state[name]
+        if e.get("dynamic"):
+            raise ValueError(f"{name}: dynamic pointer must be replaced with set_next()")
         if isinstance(e["next"], int):
             if "skip" in e:
                 raise ValueError(f"{name}: skip ranges require a weekly rotation pointer")
             e["next"] += e.get("step", 1)
         else:
             e["next"] = _prev_unskipped_week(e["next"], e.get("skip", []))
+        save(state)
+        return f"{e['flag']} {e['next']}"
+
+
+def set_next(name: str, value: str) -> str:
+    """Replace an opaque dynamic cursor after its finder completed successfully."""
+    if not isinstance(value, str) or not value.strip() or "\n" in value or "\r" in value:
+        raise ValueError(f"{name}: dynamic pointer must be one non-empty line")
+    value = value.strip()
+    if len(value) > 4096:
+        raise ValueError(f"{name}: dynamic pointer exceeds 4096 characters")
+    with ops.named_lock("rotation", timeout=30):
+        state = load()
+        e = state[name]
+        if not e.get("dynamic"):
+            raise ValueError(f"{name}: set_next() requires dynamic rotation")
+        e["next"] = value
         save(state)
         return f"{e['flag']} {e['next']}"
 

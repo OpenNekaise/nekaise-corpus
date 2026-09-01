@@ -286,6 +286,101 @@ def test_successful_finder_can_hold_rotation_at_a_capped_pointer(tmp_path, monke
     }) in events
 
 
+def test_dynamic_finder_replaces_cursor_and_disables_itself_at_exhaustion(
+    tmp_path, monkeypatch
+):
+    fixtures = Path(__file__).parent / "fixtures"
+    monkeypatch.setattr(run_round, "SCRIPTS", fixtures)
+    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
+    monkeypatch.setattr(run_round.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(run_round.registry, "append_entries", lambda _entries: None)
+    events = []
+    monkeypatch.setattr(
+        run_round.ops,
+        "run_event",
+        lambda run_id, event, **fields: events.append((run_id, event, fields)),
+    )
+    pointers = []
+    monkeypatch.setattr(
+        run_round.rotation,
+        "set_next",
+        lambda name, value: pointers.append((name, value)) or f"--token {value}",
+    )
+    disabled = []
+    monkeypatch.setattr(
+        run_round,
+        "disable_backend",
+        lambda name, reason: disabled.append((name, reason)),
+    )
+    backends = {
+        "dynamic": {
+            "script": "fake_finder.py",
+            "args": [
+                "--id", "kit-one", "--title", "Architecture",
+                "--url", "https://e.org/kit-one", "--next-pointer", "END",
+                "--exhausted", "set fully harvested",
+            ],
+        },
+    }
+    state = {"dynamic": {"flag": "--token", "next": "START", "dynamic": True}}
+
+    run_round.run_finders_parallel(
+        ["dynamic"], backends, state, os.environ.copy(), "fixture-run", workers=1
+    )
+
+    assert pointers == [("dynamic", "END")]
+    assert disabled == [("dynamic", "set fully harvested")]
+    assert backends["dynamic"]["enabled"] is False
+    assert ("fixture-run", "backend_disabled", {
+        "backend": "dynamic", "reason": "set fully harvested",
+    }) in events
+
+
+def test_dynamic_finder_missing_next_cursor_fails_before_merge(tmp_path, monkeypatch):
+    fixtures = Path(__file__).parent / "fixtures"
+    monkeypatch.setattr(run_round, "SCRIPTS", fixtures)
+    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
+    monkeypatch.setattr(run_round.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(
+        run_round.registry,
+        "append_entries",
+        lambda _entries: pytest.fail("protocol failure must precede proposal merge"),
+    )
+    monkeypatch.setattr(run_round.ops, "run_event", lambda *_args, **_kwargs: None)
+    backends = {
+        "dynamic": {
+            "script": "fake_finder.py",
+            "args": [
+                "--id", "kit-one", "--title", "Architecture",
+                "--url", "https://e.org/kit-one",
+            ],
+        },
+    }
+    state = {"dynamic": {"flag": "--token", "next": "START", "dynamic": True}}
+
+    with pytest.raises(RuntimeError, match="did not report its next cursor"):
+        run_round.run_finders_parallel(
+            ["dynamic"], backends, state, os.environ.copy(), "fixture-run", workers=1
+        )
+
+
+def test_disable_backend_preserves_control_metadata(tmp_path):
+    path = tmp_path / "backends.json"
+    path.write_text(json.dumps({
+        "_readme": "control plane",
+        "dynamic": {"script": "fake_finder.py", "enabled": True},
+        "other": {"script": "other.py", "enabled": True},
+    }))
+
+    run_round.disable_backend("dynamic", "set fully harvested", path)
+
+    saved = json.loads(path.read_text())
+    assert saved["_readme"] == "control plane"
+    assert saved["other"]["enabled"] is True
+    assert saved["dynamic"]["enabled"] is False
+    assert saved["dynamic"]["reason"] == "exhausted: set fully harvested"
+
+
 def test_optional_finder_failure_is_reported_without_blocking_merge(tmp_path, monkeypatch):
     fixtures = Path(__file__).parent / "fixtures"
     monkeypatch.setattr(run_round, "SCRIPTS", fixtures)

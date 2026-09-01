@@ -72,9 +72,10 @@
   },
   "find_kitopen": {
     "flag": "--token",
-    "next": "END",
+    "next": "START",
     "step": 0,
-    "note": "EXHAUSTED 07-10: ddc:690 set fully harvested (9,346 records, ~700 passed CC filter). Other ddc sets (620 engineering?) unexplored."
+    "dynamic": true,
+    "note": "RE-AIMED 2026-09-02 to ddc:720 architecture (1,452 records; live sample 30/90 redistributable fulltexts). ddc:690 remains EXHAUSTED 07-10 after 9,346 records (~700 passed CC filter). ddc:620 was sampled 2026-09-02 and rejected as too broad: batteries, biomedical, electronics, and generic materials dominated."
   },
   "find_japan": {
     "flag": "--start",

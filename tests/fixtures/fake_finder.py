@@ -16,8 +16,11 @@ def main() -> None:
     parser.add_argument("--title", required=True)
     parser.add_argument("--url", required=True)
     parser.add_argument("--bucket")
+    parser.add_argument("--token")
     parser.add_argument("--exit-code", type=int, default=0)
     parser.add_argument("--hold-rotation", action="store_true")
+    parser.add_argument("--next-pointer")
+    parser.add_argument("--exhausted")
     parser.add_argument("--append", action="store_true")
     args = parser.parse_args()
     if args.exit_code:
@@ -35,6 +38,10 @@ def main() -> None:
     print("# 1 fixture proposal")
     if args.hold_rotation:
         Path(os.environ["NEKAISE_ROTATION_HOLD_FILE"]).write_text("fixture hold\n")
+    if args.next_pointer:
+        Path(os.environ["NEKAISE_ROTATION_NEXT_FILE"]).write_text(args.next_pointer + "\n")
+    if args.exhausted:
+        Path(os.environ["NEKAISE_BACKEND_EXHAUSTED_FILE"]).write_text(args.exhausted + "\n")
     if args.append:
         registry.append_entries(entries)
 
