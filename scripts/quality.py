@@ -87,10 +87,38 @@ PATENT_DISCOVERY_KILL_HARD = re.compile(
     r"aerosol[- ]generat(?:ing|ion)|vaporizer (?:cartridge|utilizing)|"
     # Vehicle climate-control and battery-heating patents share nearly all HVAC vocabulary but
     # are not built-environment equipment.  Require both sides so infrastructure papers that only
-    # mention traffic/vehicles remain discoverable.
-    r"(?![^\n]*(?:factory building|energy storage station))"
-    r"(?=[^\n]*\b(?:automobile|automotive|motorcycle|vehicle)\b)"
-    r"(?=[^\n]*(?:air.?condition|ventilat|heat pump|heating|thermal management))|"
+    # mention traffic/vehicles remain discoverable.  ``car`` and ``truck`` matter for translated
+    # CN titles; concrete/asphalt/tunnel equipment is explicitly kept as AEC machinery.
+    r"\A(?![^\n]*(?:factory building|energy storage station|concrete|cement|asphalt|pavement|"
+    r"bridge|tunnel))"
+    r"(?=[^\n]*\b(?:automobile|automotive|motorcycle|vehicle|"
+    r"(?:passenger|railway|recreational|refrigerator) car|"
+    r"(?:mining |dump |commercial )?truck)\b)"
+    r"(?=[^\n]*(?:air.?condition|ventilat|heat pump|heating|thermal management|refrigerat|"
+    r"heat dissipation))|"
+    # Vehicle roofs enter through the architectural ``roof`` keyword.  Elevator cars are real
+    # building equipment and are deliberately outside this product-sense exclusion.
+    r"\A(?![^\n]*\belevator\b)(?=[^\n]*\b(?:automobile|automotive|motorcycle|vehicle|car|truck)\b)"
+    r"(?=[^\n]*\broof\b)|"
+    # Clinical drainage and respiratory equipment enter through civil ``drainage`` and building
+    # ``ventilation``.  Compound clinical anchors avoid hospital plumbing/room ventilation.
+    r"\A(?=[^\n]*drain)(?=[^\n]*(?:surgery|surgical|patient|wound|clinical|bladder|neurosurg|"
+    r"cardiovascular|thyroid|hepatobiliary|thoracic|ovarian|cirrhosis|abscess|"
+    r"medical negative pressure))|"
+    r"(?:medical|patient|lung|respiratory|invasive|noninvasive|breathing)[^\n]{0,50}ventilat|"
+    r"ventilat[^\n]{0,50}(?:medical|patient|lung|respiratory|invasive|noninvasive|breathing)|"
+    # Data/model senses of ``construction`` in medical titles.  Preserve BIM/medical-building
+    # and piped-medical-gas systems, which are genuine healthcare built-environment knowledge.
+    r"\A(?![^\n]*(?:\bBIM\b|medical buildings?|hospital buildings?|medical liquid oxygen))"
+    r"(?=[^\n]*(?:medical|coronavirus|diagnos|wound formation|biological tissue))"
+    r"(?=[^\n]*(?:model|network|index|library|system))(?=[^\n]*construct)|"
+    # Battery product/material titles are not building-energy knowledge unless the title itself
+    # identifies stationary/building storage or a coke-oven battery.
+    r"\A(?![^\n]*(?:energy storage (?:system|station)|building energy storage|coke oven|"
+    r"battery room|factory building|expansion valves?|thermostats?))"
+    r"(?=[^\n]*\bbatter(?:y|ies)\b)(?=[^\n]*(?:lithium|battery pack|battery module|vehicle|"
+    r"automobile|motorcycle|heating|heat dissipation|insulat|thermal runaway|"
+    r"remaining capacity|residual life|overheating))|"
     r"electric steamer|refrigerator.{0,60}(?:aging of meat|meat aging)|"
     r"decision tree model construction and application method|"
     r"methods? for building (?:regression|decision|classification) trees?|"
@@ -116,7 +144,13 @@ PATENT_DISCOVERY_KILL = re.compile(
     # Insulation terminology in display/memory/capacitor and spintronic fabrication.
     r"metal[- ]insulator[- ]metal|\bMIM\b.{0,20}capacitor|"
     r"(?:display panel|memory device|integrated chip|spin-orbit|superlattice).{0,60}insulat|"
-    r"insulat.{0,60}(?:display panel|memory device|integrated chip|spin-orbit|superlattice)",
+    r"insulat.{0,60}(?:display panel|memory device|integrated chip|spin-orbit|superlattice)|"
+    # Electronics/manufacturing senses that enter through heating/insulation.  These are soft
+    # kills so the ordinary concrete/masonry/HVAC guards can rescue hybrid AEC titles.
+    r"\A(?=[^\n]*substrate)(?=[^\n]*(?:thin film|semiconductor|silicon|optoelectronic|"
+    r"circuit board|vacuum[- ]deposit|thermal printing|chip))|"
+    r"\A(?=[^\n]*(?:print(?:er|ing|head)))(?=[^\n]*(?:label|bath towel|printing head|"
+    r"medical film|printing ink|metal 3d printer|substrate))",
     re.I,
 )
 PATENT_DISCOVERY_GUARD = re.compile(

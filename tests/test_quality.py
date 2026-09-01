@@ -215,6 +215,28 @@ def test_patent_discovery_title_kills_reviewed_false_positive_classes():
     assert quality.off_domain_discovery_title(
         "Refrigerator and control method for aging of meat"
     )
+    assert quality.off_domain_discovery_title(
+        "Air conditioner and battery heat dissipation system of a mining dump truck"
+    )
+    assert quality.off_domain_discovery_title("Roof structure for a toy vehicle")
+    assert quality.off_domain_discovery_title(
+        "Drainage device for pediatric neurosurgery"
+    )
+    assert quality.off_domain_discovery_title(
+        "Big data-based medical ventilator air pressure compensation system"
+    )
+    assert quality.off_domain_discovery_title(
+        "Medical service entry network construction method based on cloud computing"
+    )
+    assert quality.off_domain_discovery_title(
+        "Lithium battery module fireproof insulation product for thermal runaway"
+    )
+    assert quality.off_domain_discovery_title(
+        "Substrate heating apparatus for forming thin films"
+    )
+    assert quality.off_domain_discovery_title(
+        "Heating substrate for a thin film thermal printing head"
+    )
 
 
 def test_patent_discovery_extensions_are_not_implicit_retroactive_prunes():
@@ -243,6 +265,27 @@ def test_patent_discovery_title_preserves_aec_rescues():
     )
     assert not quality.off_domain_discovery_title(
         "Temperature control for an automobile plant energy storage station"
+    )
+    assert not quality.off_domain_discovery_title(
+        "Insulated concrete pouring truck for external-wall construction"
+    )
+    assert not quality.off_domain_discovery_title(
+        "Hospital water supply and drainage sewage treatment equipment"
+    )
+    assert not quality.off_domain_discovery_title(
+        "Construction method of centralized medical liquid oxygen supply system"
+    )
+    assert not quality.off_domain_discovery_title(
+        "BIM model for rapid construction of clustered medical buildings"
+    )
+    assert not quality.off_domain_discovery_title(
+        "Expansion valves, thermostats and battery packs for building HVAC"
+    )
+    assert not quality.off_domain_discovery_title(
+        "Thin film curing on a concrete substrate"
+    )
+    assert not quality.off_domain_discovery_title(
+        "Concrete 3D printing material and printing method"
     )
 
 
