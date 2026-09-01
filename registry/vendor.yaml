@@ -153733,3 +153733,1328 @@ sources:
       disregarded by operator decision 2026-08-30 (local training use, no redistribution);
       assets 200 application/pdf
     rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-fb-sust-energysourcing
+    title: 'Schneider Electric (WW download center): files — FB Sust EnergySourcing'
+    url: https://download.se.com/files?p_Doc_Ref=FB_Sust_EnergySourcing
+    source: vendor_schneider
+    license: open
+    topic: building_energy
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-fb-sust-coldchain
+    title: 'Schneider Electric (WW download center): files — FB Sust ColdChain'
+    url: https://download.se.com/files?p_Doc_Ref=FB_Sust_ColdChain
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-fb-sust-agriculture
+    title: 'Schneider Electric (WW download center): files — FB Sust Agriculture'
+    url: https://download.se.com/files?p_Doc_Ref=FB_Sust_Agriculture
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-fb-supplychain-warehouse
+    title: 'Schneider Electric (WW download center): files — FB SupplyChain Warehouse'
+    url: https://download.se.com/files?p_Doc_Ref=FB_SupplyChain_Warehouse
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-fb-supplychain-agriculture
+    title: 'Schneider Electric (WW download center): files — FB SupplyChain Agriculture'
+    url: https://download.se.com/files?p_Doc_Ref=FB_SupplyChain_Agriculture
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-fb-supplychain-coldchain
+    title: 'Schneider Electric (WW download center): files — FB SupplyChain ColdChain'
+    url: https://download.se.com/files?p_Doc_Ref=FB_SupplyChain_ColdChain
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-fb-manufacturingops
+    title: 'Schneider Electric (WW download center): files — FB ManufacturingOps'
+    url: https://download.se.com/files?p_Doc_Ref=FB_ManufacturingOps
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-fb-hmidataintegration
+    title: 'Schneider Electric (WW download center): files — FB HMIDataIntegration'
+    url: https://download.se.com/files?p_Doc_Ref=FB_HMIDataIntegration
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-fb-agilemanufacturing-intro
+    title: 'Schneider Electric (WW download center): files — FB AgileManufacturing Intro'
+    url: https://download.se.com/files?p_Doc_Ref=FB_AgileManufacturing_Intro
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-fb-fst-coolersmanagement
+    title: 'Schneider Electric (WW download center): files — FB FST CoolersManagement'
+    url: https://download.se.com/files?p_Doc_Ref=FB_FST_CoolersManagement
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-fb-fst-labelassurance
+    title: 'Schneider Electric (WW download center): files — FB FST LabelAssurance'
+    url: https://download.se.com/files?p_Doc_Ref=FB_FST_LabelAssurance
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-21342193
+    title: 'Schneider Electric (WW download center): files — 998 21342193'
+    url: https://download.se.com/files?p_Doc_Ref=998-21342193
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22235208-life-sciences-efficient-manufacturing-gma-en-external
+    title: 'Schneider Electric (WW download center): files — 998 22235208 Life Sciences
+      Efficient Manufacturing GMA EN External'
+    url: https://download.se.com/files?p_Doc_Ref=998-22235208_Life-Sciences-Efficient-Manufacturing_GMA_EN_External
+    source: vendor_schneider
+    license: open
+    topic: building_energy
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22126200
+    title: 'Schneider Electric (WW download center): files — 998 22126200'
+    url: https://download.se.com/files?p_Doc_Ref=998-22126200
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-webinararcflashdeck052020
+    title: 'Schneider Electric (WW download center): files — WebinarArcFlashDeck052020'
+    url: https://download.se.com/files?p_Doc_Ref=WebinarArcFlashDeck052020
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-se-whistleblowing-policy
+    title: 'Schneider Electric (WW download center): files — SE Whistleblowing Policy'
+    url: https://download.se.com/files?p_Doc_Ref=SE-Whistleblowing-Policy
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-se-net-zero-commitment-fr
+    title: 'Schneider Electric (WW download center): files — SE Net Zero Commitment
+      FR'
+    url: https://download.se.com/files?p_Doc_Ref=SE-Net-Zero-Commitment-FR
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-se-net-zero-commitment
+    title: 'Schneider Electric (WW download center): files — SE Net Zero Commitment'
+    url: https://download.se.com/files?p_Doc_Ref=SE-Net-Zero-Commitment
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-se-modern-slavery-statement
+    title: 'Schneider Electric (WW download center): files — SE Modern Slavery Statement'
+    url: https://download.se.com/files?p_Doc_Ref=SE-Modern-Slavery-Statement
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-se-group-modern-slavery
+    title: 'Schneider Electric (WW download center): files — SE Group Modern Slavery'
+    url: https://download.se.com/files?p_Doc_Ref=SE-Group-Modern-Slavery
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-seeapitch
+    title: 'Schneider Electric (WW download center): files — SEEAPitch'
+    url: https://download.se.com/files?p_Doc_Ref=SEEAPitch
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-seeaa-fr
+    title: 'Schneider Electric (WW download center): files — SEEAA FR'
+    url: https://download.se.com/files?p_Doc_Ref=SEEAA_FR
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-seeaapitch
+    title: 'Schneider Electric (WW download center): files — SEEAAPitch'
+    url: https://download.se.com/files?p_Doc_Ref=SEEAAPitch
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-seea-fr
+    title: 'Schneider Electric (WW download center): files — SEEA FR'
+    url: https://download.se.com/files?p_Doc_Ref=SEEA_FR
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-se-circularity
+    title: 'Schneider Electric (WW download center): files — SE Circularity'
+    url: https://download.se.com/files?p_Doc_Ref=SE-Circularity
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-omoc-a2e-cambodia
+    title: 'Schneider Electric (WW download center): files — OMOC A2E Cambodia'
+    url: https://download.se.com/files?p_Doc_Ref=OMOC_A2E_Cambodia
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-omoc-a2e-southernafrica
+    title: 'Schneider Electric (WW download center): files — OMOC A2E SouthernAfrica'
+    url: https://download.se.com/files?p_Doc_Ref=OMOC_A2E_SouthernAfrica
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-omoc-a2e-nigeria
+    title: 'Schneider Electric (WW download center): files — OMOC A2E Nigeria'
+    url: https://download.se.com/files?p_Doc_Ref=OMOC_A2E_Nigeria
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-esx-hc-segment-overview
+    title: 'Schneider Electric (WW download center): files — ESX HC Segment overview'
+    url: https://download.se.com/files?p_Doc_Ref=ESX_HC_Segment-overview
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-human-rights-policy
+    title: 'Schneider Electric (WW download center): files — Human Rights Policy'
+    url: https://download.se.com/files?p_Doc_Ref=Human_Rights_Policy
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-buildings-reno-web-07-06-2022
+    title: 'Schneider Electric (WW download center): files — buildings reno web 07 06
+      2022'
+    url: https://download.se.com/files?p_Doc_Ref=buildings_reno_web_07-06-2022
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-for-life-sciences
+    title: 'Schneider Electric (WW download center): files — Ecostruxure for Life Sciences'
+    url: https://download.se.com/files?p_Doc_Ref=Ecostruxure-for-Life-Sciences
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-asc-webinar-25-5-2022
+    title: 'Schneider Electric (WW download center): files — ASC WEBINAR 25 5 2022'
+    url: https://download.se.com/files?p_Doc_Ref=ASC-WEBINAR-25-5-2022
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-sustainability-is-business
+    title: 'Schneider Electric (WW download center): files — Sustainability is Business'
+    url: https://download.se.com/files?p_Doc_Ref=Sustainability_is_Business
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-supplier-quality-ssqm-2017
+    title: 'Schneider Electric (WW download center): files — Supplier Quality SSQM 2017'
+    url: https://download.se.com/files?p_Doc_Ref=Supplier_Quality_SSQM_2017
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-power-distribution-redefined
+    title: 'Schneider Electric (WW download center): files — Power Distribution Redefined'
+    url: https://download.se.com/files?p_Doc_Ref=Power_Distribution_Redefined
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-omoc-a2e-kenya
+    title: 'Schneider Electric (WW download center): files — OMOC A2E Kenya'
+    url: https://download.se.com/files?p_Doc_Ref=OMOC_A2E_Kenya
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-water-wastewater
+    title: 'Schneider Electric (WW download center): files — EcoStruxure Water Wastewater'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxure_Water_Wastewater
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-cybersecurity
+    title: 'Schneider Electric (WW download center): files — EcoStruxure CyberSecurity'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxure_CyberSecurity
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-power-day-2
+    title: 'Schneider Electric (WW download center): files — EcoStruxure Power Day 2'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxure_Power_Day_2
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-power-day-1
+    title: 'Schneider Electric (WW download center): files — EcoStruxure Power Day 1'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxure_Power_Day_1
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-plant
+    title: 'Schneider Electric (WW download center): files — EcoStruxure Plant'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxure_Plant
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-machine
+    title: 'Schneider Electric (WW download center): files — EcoStruxure Machine'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxure_Machine
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-microgrids-bnef
+    title: 'Schneider Electric (WW download center): files — EcoStruxure Microgrids
+      bnef'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxure_Microgrids_bnef
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-for-real-estate
+    title: 'Schneider Electric (WW download center): files — EcoStruxure for Real Estate'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxure_for_Real_Estate
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-for-microgrids
+    title: 'Schneider Electric (WW download center): files — EcoStruxure for Microgrids'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxure_for_Microgrids
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-for-hotels
+    title: 'Schneider Electric (WW download center): files — EcoStruxure for Hotels'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxure_for_Hotels
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-for-healthcare
+    title: 'Schneider Electric (WW download center): files — EcoStruxure for Healthcare'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxure_for_Healthcare
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-cloud-service
+    title: 'Schneider Electric (WW download center): files — EcoStruxure Cloud Service'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxure_Cloud_Service
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-building-day-2
+    title: 'Schneider Electric (WW download center): files — EcoStruxure Building Day
+      2'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxure_Building_Day_2
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-building-day-1
+    title: 'Schneider Electric (WW download center): files — EcoStruxure Building Day
+      1'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxure_Building_Day_1
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-datacenters-cloud-at-the-edge
+    title: 'Schneider Electric (WW download center): files — DataCenters Cloud at the
+      Edge'
+    url: https://download.se.com/files?p_Doc_Ref=DataCenters_Cloud_at_the_Edge
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-active-energy-management
+    title: 'Schneider Electric (WW download center): files — Active Energy Management'
+    url: https://download.se.com/files?p_Doc_Ref=Active_Energy_Management
+    source: vendor_schneider
+    license: open
+    topic: building_energy
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-buildings-re-invented
+    title: 'Schneider Electric (WW download center): files — Buildings Re invented'
+    url: https://download.se.com/files?p_Doc_Ref=Buildings_Re-invented
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-digiplex-fr
+    title: 'Schneider Electric (WW download center): files — DigiPlex FR'
+    url: https://download.se.com/files?p_Doc_Ref=DigiPlex_FR
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-tesebro000017fr
+    title: 'Schneider Electric (WW download center): files — TESEBRO000017FR'
+    url: https://download.se.com/files?p_Doc_Ref=TESEBRO000017FR
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22920153-eae-eguide-si
+    title: 'Schneider Electric (WW download center): files — 998 22920153 EAE eGuide
+      SI'
+    url: https://download.se.com/files?p_Doc_Ref=998-22920153_EAE_eGuide_SI
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-software-defined-automation
+    title: 'Schneider Electric (WW download center): files — Software defined Automation'
+    url: https://download.se.com/files?p_Doc_Ref=Software_defined_Automation
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-renewable-electricity-guide
+    title: 'Schneider Electric (WW download center): files — Renewable Electricity Guide'
+    url: https://download.se.com/files?p_Doc_Ref=Renewable_Electricity_Guide
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-glass-international-brochure
+    title: 'Schneider Electric (WW download center): files — Glass international brochure'
+    url: https://download.se.com/files?p_Doc_Ref=Glass_international_brochure
+    source: vendor_schneider
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-clo-egypt-pb
+    title: 'Schneider Electric (WW download center): files — CLO EGYPT PB'
+    url: https://download.se.com/files?p_Doc_Ref=CLO_EGYPT_PB
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-23395829
+    title: 'Schneider Electric (WW download center): files — 998 23395829'
+    url: https://download.se.com/files?p_Doc_Ref=998-23395829
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-regulated-ind-compliance-pack
+    title: 'Schneider Electric (WW download center): files — Regulated Ind Compliance
+      Pack'
+    url: https://download.se.com/files?p_Doc_Ref=Regulated_Ind_Compliance_Pack
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-life-sciences-premium-brochure
+    title: 'Schneider Electric (WW download center): files — Life Sciences Premium Brochure'
+    url: https://download.se.com/files?p_Doc_Ref=Life_Sciences_Premium_Brochure
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-pas-63680-cpm16103
+    title: 'Schneider Electric (WW download center): files — PAS 63680 CPM16103'
+    url: https://download.se.com/files?p_Doc_Ref=PAS_63680_CPM16103
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-23312818
+    title: 'Schneider Electric (WW download center): files — 998 23312818'
+    url: https://download.se.com/files?p_Doc_Ref=998-23312818
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-20912173
+    title: 'Schneider Electric (WW download center): files — 998 20912173'
+    url: https://download.se.com/files?p_Doc_Ref=998-20912173
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxure-dc-impact
+    title: 'Schneider Electric (WW download center): files — EcoStruxure DC Impact'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxure_DC_Impact
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-avevaunifiedoperations
+    title: 'Schneider Electric (WW download center): files — AVEVAUnifiedOperations'
+    url: https://download.se.com/files?p_Doc_Ref=AVEVAUnifiedOperations
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-aveva-uoc-brochure-systems
+    title: 'Schneider Electric (WW download center): files — AVEVA UOC Brochure systems'
+    url: https://download.se.com/files?p_Doc_Ref=AVEVA_UOC_Brochure_systems
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-23346267
+    title: 'Schneider Electric (WW download center): files — 998 23346267'
+    url: https://download.se.com/files?p_Doc_Ref=998-23346267
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22931059-workforce
+    title: 'Schneider Electric (WW download center): files — 998 22931059 Workforce'
+    url: https://download.se.com/files?p_Doc_Ref=998-22931059_Workforce
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-23275676
+    title: 'Schneider Electric (WW download center): files — 998 23275676'
+    url: https://download.se.com/files?p_Doc_Ref=998-23275676
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-23183150-pq
+    title: 'Schneider Electric (WW download center): files — 998 23183150 PQ'
+    url: https://download.se.com/files?p_Doc_Ref=998-23183150_PQ
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22931059-smart-operations
+    title: 'Schneider Electric (WW download center): files — 998 22931059 Smart Operations'
+    url: https://download.se.com/files?p_Doc_Ref=998-22931059_Smart_Operations
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22931059-smart-design
+    title: 'Schneider Electric (WW download center): files — 998 22931059 Smart Design'
+    url: https://download.se.com/files?p_Doc_Ref=998-22931059_Smart_Design
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22931059-safety
+    title: 'Schneider Electric (WW download center): files — 998 22931059 Safety'
+    url: https://download.se.com/files?p_Doc_Ref=998-22931059_Safety
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22931059-sustainability
+    title: 'Schneider Electric (WW download center): files — 998 22931059 Sustainability'
+    url: https://download.se.com/files?p_Doc_Ref=998-22931059_Sustainability
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22931059-profitability
+    title: 'Schneider Electric (WW download center): files — 998 22931059 Profitability'
+    url: https://download.se.com/files?p_Doc_Ref=998-22931059_Profitability
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22931059-investment
+    title: 'Schneider Electric (WW download center): files — 998 22931059 Investment'
+    url: https://download.se.com/files?p_Doc_Ref=998-22931059_Investment
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22931059-regulatory
+    title: 'Schneider Electric (WW download center): files — 998 22931059 Regulatory'
+    url: https://download.se.com/files?p_Doc_Ref=998-22931059_Regulatory
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22931059-performance
+    title: 'Schneider Electric (WW download center): files — 998 22931059 Performance'
+    url: https://download.se.com/files?p_Doc_Ref=998-22931059_Performance
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22931059-efficiency
+    title: 'Schneider Electric (WW download center): files — 998 22931059 Efficiency'
+    url: https://download.se.com/files?p_Doc_Ref=998-22931059_Efficiency
+    source: vendor_schneider
+    license: open
+    topic: building_energy
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22931059-cybersecurity
+    title: 'Schneider Electric (WW download center): files — 998 22931059 Cybersecurity'
+    url: https://download.se.com/files?p_Doc_Ref=998-22931059_Cybersecurity
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22931059-business
+    title: 'Schneider Electric (WW download center): files — 998 22931059 Business'
+    url: https://download.se.com/files?p_Doc_Ref=998-22931059_Business
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-guidehouse-insights-apr2020
+    title: 'Schneider Electric (WW download center): files — Guidehouse Insights Apr2020'
+    url: https://download.se.com/files?p_Doc_Ref=Guidehouse_Insights_Apr2020
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-green-cement-handout
+    title: 'Schneider Electric (WW download center): files — Green Cement Handout'
+    url: https://download.se.com/files?p_Doc_Ref=Green_Cement_Handout
+    source: vendor_schneider
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-green-glass-handout
+    title: 'Schneider Electric (WW download center): files — Green Glass Handout'
+    url: https://download.se.com/files?p_Doc_Ref=Green_Glass_Handout
+    source: vendor_schneider
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-green-steel-handout
+    title: 'Schneider Electric (WW download center): files — Green Steel Handout'
+    url: https://download.se.com/files?p_Doc_Ref=Green_Steel_Handout
+    source: vendor_schneider
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-green-glass-2
+    title: 'Schneider Electric (WW download center): files — Green Glass 2'
+    url: https://download.se.com/files?p_Doc_Ref=Green_Glass_2
+    source: vendor_schneider
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-green-glass
+    title: 'Schneider Electric (WW download center): files — Green Glass'
+    url: https://download.se.com/files?p_Doc_Ref=Green_Glass
+    source: vendor_schneider
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-green-cement
+    title: 'Schneider Electric (WW download center): files — Green Cement'
+    url: https://download.se.com/files?p_Doc_Ref=Green_Cement
+    source: vendor_schneider
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-glass-international
+    title: 'Schneider Electric (WW download center): files — Glass International'
+    url: https://download.se.com/files?p_Doc_Ref=Glass_International
+    source: vendor_schneider
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-mgt-power-opportunity
+    title: 'Schneider Electric (WW download center): files — Mgt Power Opportunity'
+    url: https://download.se.com/files?p_Doc_Ref=Mgt_Power_Opportunity
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
