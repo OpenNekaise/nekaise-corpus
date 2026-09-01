@@ -81702,21 +81702,6 @@ sources:
     license_evidence: (c) dormakaba, all rights reserved; no explicit download/redistribution/automation
       clause found
     rights_verified_at: '2026-08-28'
-  - id: vnd-rockwool-uk-technical-bulletin-3-performance-gap
-    title: 'ROCKWOOL UK: Download (technical bulletins — technical bulletin 3 performance
-      gap)'
-    url: https://www.rockwool.com/siteassets/rw-uk/downloads/technical-bulletins/technical-bulletin-3---performance-gap.pdf?f=20240807150808
-    source: vendor_rockwool
-    license: open
-    topic: materials
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.rockwool.com/uk/legal-notice/
-    license_evidence: permission to use documents is granted provided the copyright
-      notice appears in all copies, use is informational and non-commercial, no modifications;
-      no scraping clause
-    rights_verified_at: '2026-08-28'
   - id: vnd-rockwool-uk-technical-bulletin-2-flood-resilience
     title: 'ROCKWOOL UK: Download (technical bulletins — technical bulletin 2 flood
       resilience)'
@@ -157949,4 +157934,19 @@ sources:
     license_url: https://armstrongfluidtechnology.com/en/legal
     license_evidence: protected material may not be copied, reproduced, published, distributed
       ... without the express written consent of its owner (no automated-access clause)
+    rights_verified_at: '2026-08-28'
+  - id: vnd-rockwool-uk-technical-bulletin-3-performance-g-2
+    title: 'ROCKWOOL UK: 1. Thermal Performance Gap - Technical bulletin (technical
+      bulletins — technical bulletin 3 performance gap)'
+    url: https://p-cdn.rockwool.com/syssiteassets/rw-uk/downloads/technical-bulletins/technical-bulletin-3---performance-gap.pdf?f=20240807150808
+    source: vendor_rockwool
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.rockwool.com/uk/legal-notice/
+    license_evidence: permission to use documents is granted provided the copyright
+      notice appears in all copies, use is informational and non-commercial, no modifications;
+      no scraping clause
     rights_verified_at: '2026-08-28'

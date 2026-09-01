@@ -65724,3 +65724,30 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
+  - id: ope-investigating-the-role-of-biophilic-design-to-
+    title: 'Investigating the role of biophilic design to enhance comfort in residential
+      spaces: human physiological response in immersive virtual environment'
+    url: https://www.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2025.1411425/pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-a-review-of-the-use-of-wearables-in-indoor-env
+    title: A Review of the Use of Wearables in Indoor Environmental Quality Studies
+      and an Evaluation of Data Accessibility from a Wearable Device
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2022.787289/pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-effects-of-indoor-lighting-environments-on-pap
+    title: 'Effects of indoor lighting environments on paper reading efficiency and
+      brain fatigue: an experimental study'
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2023.1303028/pdf?isPublishedV2=False
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
