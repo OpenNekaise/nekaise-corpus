@@ -26,7 +26,7 @@
   },
   "find_nist": {
     "flag": "--month-index",
-    "next": 24249,
+    "next": 24250,
     "step": 1,
     "note": "RE-AIMED 2026-08-31 after relevance-ranked query pages 7-111 were dry: cursor-enumerate DOI prefix 10.6028 in creation-month segments. Pointer is year*12+month-1 (24143 = 2011-12, the earliest prefix record); ephemeral Crossref cursors live only within a run, so failure retains and replays the re-derivable month. A reviewed four-month sample passed the conservative title gate at 44/44 AEC-relevant titles. Candidate-cap runs request a rotation hold until month dedup drains. Optional backend retains its pointer on API failure."
   },
@@ -38,7 +38,7 @@
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "1991-W27",
+    "next": "1991-W26",
     "skip": [
       [
         "2026-W19",
@@ -137,7 +137,7 @@
   },
   "find_openalex": {
     "flag": "--query-cursor",
-    "next": 503,
+    "next": 504,
     "step": 1,
     "note": "RE-AIMED 2026-08-26 after OpenAlex introduced usage pricing: anonymous access has 100 search requests/day, while the old all-query run made 105 requests and exhausted the budget. One query per round stays below the limit at the live ~72-round/day maximum; the flattened cursor advances across the frozen 105-query list, then continues at page 2 and deeper. Any query-list change requires a reviewed cursor migration."
   },
@@ -149,7 +149,7 @@
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 460,
+    "next": 461,
     "step": 1,
     "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature)."
   }
