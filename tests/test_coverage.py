@@ -77,6 +77,55 @@ def test_vendor_sources_are_manufacturer_literature(monkeypatch, capsys):
     assert coverage_report.genre_of("vendor_example") == "equipment_mfr_docs"
 
 
+def test_cross_published_globalabc_rows_use_originating_genre(monkeypatch, capsys):
+    rows = [
+        {
+            "id": "iag-globalabc-regional-roadmap-for-buildings",
+            "title": "GlobalABC Regional Roadmap",
+            "status": "ok",
+            "source": "iea",
+            "license": "cc-by",
+            "text_chars": 100,
+        },
+        {
+            "id": "iag-global-status-report-for-buildings-and-constructio",
+            "title": "Global Status Report for Buildings and Construction 2019",
+            "status": "ok",
+            "source": "iea",
+            "license": "cc-by",
+            "text_chars": 100,
+        },
+        {
+            "id": "iea-energy-efficiency-2025",
+            "title": "Energy Efficiency 2025",
+            "status": "ok",
+            "source": "iea",
+            "license": "cc-by",
+            "text_chars": 100,
+        },
+    ]
+    monkeypatch.setattr(coverage_report.registry, "load_manifest_rows", lambda: rows)
+    monkeypatch.setattr(coverage_report.registry, "load_eligibility", lambda: {})
+    monkeypatch.setattr(sys, "argv", ["coverage.py", "--sources"])
+
+    coverage_report.main()
+
+    output = capsys.readouterr().out
+    ngo_line = next(
+        line for line in output.splitlines()
+        if line.strip().startswith("industry_ngo_utility ")
+    )
+    international_line = next(
+        line for line in output.splitlines()
+        if line.strip().startswith("international_bodies ")
+    )
+    assert ngo_line.split()[:2] == ["industry_ngo_utility", "2"]
+    assert international_line.split()[:2] == ["international_bodies", "1"]
+    source_line = next(line for line in output.splitlines() if line.strip().startswith("iea "))
+    assert "international_bodies:1" in source_line
+    assert "industry_ngo_utility:2" in source_line
+
+
 @pytest.mark.parametrize(
     ("genre", "sources"),
     [

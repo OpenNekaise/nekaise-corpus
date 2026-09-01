@@ -78,6 +78,14 @@ SOURCE_GENRE = {
     "google_patents": "patents",
 }
 
+# Some registry sources describe the acquisition channel rather than the document's originating
+# collection. Keep narrowly reviewed id-prefix overrides here so those documents do not disappear
+# into the channel's broader genre. These run before SOURCE_GENRE/PREFIX_GENRE.
+ID_PREFIX_GENRE = [
+    (("iag-globalabc-", "iag-global-status-report-for-buildings-and-constructio"),
+     "industry_ngo_utility"),
+]
+
 # prefix fallback for the long tail of source buckets (an exact SOURCE_GENRE match wins).
 # Order matters: first hit applies.
 PREFIX_GENRE = [
@@ -102,6 +110,14 @@ def genre_of(src: str) -> str | None:
     return None
 
 
+def genre_of_row(row: dict) -> str | None:
+    doc_id = str(row.get("id") or "")
+    for prefixes, genre in ID_PREFIX_GENRE:
+        if doc_id.startswith(prefixes):
+            return genre
+    return genre_of(str(row.get("source") or ""))
+
+
 def status(n: int) -> str:
     if n == 0:
         return "NONE  ← gap"
@@ -124,12 +140,15 @@ def main() -> None:
 
     counts = {g: 0 for g, _ in GENRES}
     uncategorized: Counter = Counter()
-    for src, n in by_source.items():
-        g = genre_of(src or "")
+    by_source_genre: dict[str | None, Counter] = {}
+    for row in ok:
+        src = row.get("source")
+        g = genre_of_row(row)
+        by_source_genre.setdefault(src, Counter())[g or "??"] += 1
         if g:
-            counts[g] += n
+            counts[g] += 1
         else:
-            uncategorized[src] += n
+            uncategorized[src] += 1
 
     print(f"corpus coverage — {len(ok)} training-eligible docs "
           f"across {len(GENRES)} target genres")
@@ -154,7 +173,12 @@ def main() -> None:
     if args.sources:
         print("\nby source:")
         for s, n in by_source.most_common():
-            print(f"  {s:20} {n:>4}  -> {genre_of(s) or '??'}")
+            split = by_source_genre[s]
+            labels = ", ".join(
+                genre if count == n else f"{genre}:{count}"
+                for genre, count in split.most_common()
+            )
+            print(f"  {s:20} {n:>4}  -> {labels}")
 
 
 if __name__ == "__main__":
