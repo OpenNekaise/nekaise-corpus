@@ -65858,3 +65858,28 @@ sources:
     license: open
     topic: structures_civil
     format: pdf
+  - id: ope-the-inception-of-oma-in-the-development-of-mod
+    title: The inception of OMA in the development of modal testing technology for wind
+      turbines
+    url: https://ntrs.nasa.gov/api/citations/20090026442/downloads/20090026442.pdf
+    source: openalex
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: ope-a-cloud-enabled-application-framework-for-simu
+    title: A Cloud-Enabled Application Framework for Simulating Regional-Scale Impacts
+      of Natural Hazards on the Built Environment
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2020.558706/pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-applications-of-machine-learning-to-wind-engin
+    title: Applications of Machine Learning to Wind Engineering
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2022.811460/pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
