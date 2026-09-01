@@ -65571,3 +65571,18 @@ sources:
     topic: equipment_systems
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-data-analytics-for-simplifying-thermal-efficie
+    title: Data analytics for simplifying thermal efficiency planning in cities
+    url: https://escholarship.org/content/qt6h3521dp/qt6h3521dp.pdf
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: ope-adaptation-of-buildings-to-climate-change-an-o
+    title: 'Adaptation of buildings to climate change: an overview'
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2024.1327747/pdf?isPublishedV2=False
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
