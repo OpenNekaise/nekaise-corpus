@@ -177113,3 +177113,31 @@ sources:
       disregarded by operator decision 2026-08-30 (local training use, no redistribution);
       assets 200 application/pdf
     rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-iso9k-em-grenoble1
+    title: 'Schneider Electric (WW download center): files — ISO9K EM Grenoble1'
+    url: https://download.se.com/files?p_Doc_Ref=ISO9K-EM-Grenoble1
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-iso9k-ecuadoroperation
+    title: 'Schneider Electric (WW download center): files — ISO9K EcuadorOperation'
+    url: https://download.se.com/files?p_Doc_Ref=ISO9K-EcuadorOperation
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
