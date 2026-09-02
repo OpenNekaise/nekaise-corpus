@@ -66223,3 +66223,21 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
+  - id: ope-the-gender-and-age-differences-in-the-passenge
+    title: The gender and age differences in the passengers’ thermal comfort during
+      cooling and heating conditions in vehicles
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0294027&type=printable
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-non-invasive-methods-for-energy-and-seismic-re
+    title: Non-invasive Methods for Energy and Seismic Retrofit in Historical Building
+      in Italy
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2019.00125/pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
