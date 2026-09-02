@@ -187651,3 +187651,31 @@ sources:
       disregarded by operator decision 2026-08-30 (local training use, no redistribution);
       assets 200 application/pdf
     rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-iso50k-gscims-men
+    title: 'Schneider Electric (WW download center): files — ISO50K GSCIMS MEn'
+    url: https://download.se.com/files?p_Doc_Ref=ISO50K-GSCIMS-MEn
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-iso45k-gscims-ms
+    title: 'Schneider Electric (WW download center): files — ISO45K GSCIMS MS'
+    url: https://download.se.com/files?p_Doc_Ref=ISO45K-GSCIMS-MS
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
