@@ -187,7 +187,7 @@
       "250"
     ],
     "enabled": false,
-    "reason": "deep search p905 is dominated by fuzzy off-topic results; title relevance gate added, but queries/pointer must be re-aimed and the 74.9 MiB govuk manifest shard must be bucketed before re-enabling"
+    "reason": "deep search p905 is dominated by fuzzy off-topic results; title relevance gate added, but queries/pointer must be re-aimed and the 71.4 MiB govuk manifest shard must be bucketed before re-enabling"
   },
   "find_worldbank": {
     "script": "find_worldbank.py",
