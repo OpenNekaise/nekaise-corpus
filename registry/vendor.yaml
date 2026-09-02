@@ -175160,21 +175160,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-cetco-voltex-case-studies-access-self-storage
-    title: 'SpecifiedBy (UK manufacturer documents): CETCO_Voltex_Case-Studies_Access-Self-Storage.pdf
-      (voltex damp proof membranes dpm — CETCO Voltex Case Studie'
-    url: https://www.specifiedby.com/cetco/voltex-damp-proof-membranes-dpm/CETCO_Voltex_Case-Studies_Access-Self-Storage.pdf
-    source: vendor_specifiedby
-    license: open
-    topic: materials
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.specifiedby.com/terms
-    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); PDFs 200 without challenge
-    rights_verified_at: '2026-08-30'
   - id: vnd-specifiedby-cetco-voltex-certifications-bba
     title: 'SpecifiedBy (UK manufacturer documents): CETCO_Voltex_Certifications_BBA.pdf
       (voltex damp proof membranes dpm — CETCO Voltex Certifications BBA)'
@@ -185554,4 +185539,533 @@ sources:
     license_evidence: ToS bars automated access — declared prohibition disregarded by
       operator decision 2026-08-30 (local training use, no redistribution); robots permissive
       for /documents/FileLibrary/
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-cetco-volseal-250-case-studies-access-self-storage
+    title: 'SpecifiedBy (UK manufacturer documents): CETCO_Volseal-250_Case-Studies_Access-Self-Storage.pdf
+      (volseal 250 — CETCO Volseal 250 Case Studies Access S'
+    url: https://www.specifiedby.com/cetco/volseal-250/CETCO_Volseal-250_Case-Studies_Access-Self-Storage.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-cetco-voltex-technical-pds
+    title: 'SpecifiedBy (UK manufacturer documents): CETCO_Voltex_Technical_PDS.pdf
+      (voltex damp proof membranes dpm — CETCO Voltex Technical PDS)'
+    url: https://www.specifiedby.com/cetco/voltex-damp-proof-membranes-dpm/CETCO_Voltex_Technical_PDS.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-cetco-ultraseal-xp-brochures-information-sheet
+    title: 'SpecifiedBy (UK manufacturer documents): CETCO_Ultraseal-XP_Brochures_Information-Sheet.pdf
+      (ultraseal xp — CETCO Ultraseal XP Brochures Information S'
+    url: https://www.specifiedby.com/cetco/ultraseal-xp/CETCO_Ultraseal-XP_Brochures_Information-Sheet.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-cetco-ultraseal-xp-technical-pds
+    title: 'SpecifiedBy (UK manufacturer documents): CETCO_Ultraseal-XP_Technical_PDS.pdf
+      (ultraseal xp — CETCO Ultraseal XP Technical PDS)'
+    url: https://www.specifiedby.com/cetco/ultraseal-xp/CETCO_Ultraseal-XP_Technical_PDS.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-cetco-ultraseal-xp-technical-sds
+    title: 'SpecifiedBy (UK manufacturer documents): CETCO_Ultraseal-XP_Technical_SDS.pdf
+      (ultraseal xp — CETCO Ultraseal XP Technical SDS)'
+    url: https://www.specifiedby.com/cetco/ultraseal-xp/CETCO_Ultraseal-XP_Technical_SDS.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-cetco-seal-x-xp-technical-pds
+    title: 'SpecifiedBy (UK manufacturer documents): CETCO_Seal-X-XP_Technical_PDS.pdf
+      (seal x xp joint sealants — CETCO Seal X XP Technical PDS)'
+    url: https://www.specifiedby.com/cetco/seal-x-xp-joint-sealants/CETCO_Seal-X-XP_Technical_PDS.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-cetco-seal-x-xp-technical-sds
+    title: 'SpecifiedBy (UK manufacturer documents): CETCO_Seal-X-XP_Technical_SDS.pdf
+      (seal x xp joint sealants — CETCO Seal X XP Technical SDS)'
+    url: https://www.specifiedby.com/cetco/seal-x-xp-joint-sealants/CETCO_Seal-X-XP_Technical_SDS.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-cetco-bentomat-ss100-specifications
+    title: 'SpecifiedBy (UK manufacturer documents): CETCO_Bentomat-SS100_Specifications.pdf
+      (bentomat ss100 — CETCO Bentomat SS100 Specifications)'
+    url: https://www.specifiedby.com/cetco/bentomat-ss100/CETCO_Bentomat-SS100_Specifications.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-cetco-bentomat-cl-specifications
+    title: 'SpecifiedBy (UK manufacturer documents): CETCO_Bentomat-CL_Specifications.pdf
+      (bentomat cl — CETCO Bentomat CL Specifications)'
+    url: https://www.specifiedby.com/cetco/bentomat-cl/CETCO_Bentomat-CL_Specifications.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-enewall-external-wall-insulation
+    title: 'SpecifiedBy (UK manufacturer documents): Enewall - External Wall Insulation.pdf
+      (render rendering — Enewall   External Wall Insulation)'
+    url: https://www.specifiedby.com/enewall/render-rendering/Enewall - External Wall
+      Insulation.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-enewall-data-sheet-render-render-finishes-c
+    title: 'SpecifiedBy (UK manufacturer documents): Enewall Data Sheet - Render & Render
+      Finishes (c).pdf (render rendering — Enewall Data Sheet   Render & Rende'
+    url: https://www.specifiedby.com/enewall/render-rendering/Enewall Data Sheet - Render
+      & Render Finishes (c).pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-bba-cert-render
+    title: 'SpecifiedBy (UK manufacturer documents): BBA Cert Render.pdf (render rendering
+      — BBA Cert Render)'
+    url: https://www.specifiedby.com/enewall/render-rendering/BBA Cert Render.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-brett-martin-daylight-systems-mardome-circular-other-designing-with-roofli
+    title: 'SpecifiedBy (UK manufacturer documents): brett-martin-daylight-systems_Mardome-Circular_Other_Designing-with-Rooflights.pdf
+      (mardome circular — brett '
+    url: https://www.specifiedby.com/brett-martin-daylight-systems/mardome-circular/brett-martin-daylight-systems_Mardome-Circular_Other_Designing-with-Rooflights.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-brett-martin-daylight-systems-mardome-circular-specifications-tb201-mardom
+    title: 'SpecifiedBy (UK manufacturer documents): brett-martin-daylight-systems_Mardome-Circular_Specifications_TB201-Mardome-Reflex-and-Circular-Data-Sheet.pd'
+    url: https://www.specifiedby.com/brett-martin-daylight-systems/mardome-circular/brett-martin-daylight-systems_Mardome-Circular_Specifications_TB201-Mardome-Reflex-and-Circular-Data-Sheet.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-brett-martin-daylight-systems-mardome-reflex-brochures-mardome-dome-roofli
+    title: 'SpecifiedBy (UK manufacturer documents): brett-martin-daylight-systems_Mardome-Reflex_Brochures_Mardome-Dome-Rooflights.pdf
+      (mardome reflex — brett ma'
+    url: https://www.specifiedby.com/brett-martin-daylight-systems/mardome-reflex/brett-martin-daylight-systems_Mardome-Reflex_Brochures_Mardome-Dome-Rooflights.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-brett-martin-daylight-systems-mardome-reflex-brochures-marlonfs-brochure-e
+    title: 'SpecifiedBy (UK manufacturer documents): brett-martin-daylight-systems_Mardome-Reflex_Brochures_marlonfs-brochure-eng.pdf
+      (mardome reflex — brett mart'
+    url: https://www.specifiedby.com/brett-martin-daylight-systems/mardome-reflex/brett-martin-daylight-systems_Mardome-Reflex_Brochures_marlonfs-brochure-eng.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-brett-martin-daylight-systems-mardome-reflex-certifications-bba-certificat
+    title: 'SpecifiedBy (UK manufacturer documents): brett-martin-daylight-systems_Mardome-Reflex_Certifications_BBA-certificate-06-4385-PS4---Mardome-Reflex.pdf '
+    url: https://www.specifiedby.com/brett-martin-daylight-systems/mardome-reflex/brett-martin-daylight-systems_Mardome-Reflex_Certifications_BBA-certificate-06-4385-PS4---Mardome-Reflex.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-brett-martin-daylight-systems-mardome-reflex-operations-tb185-mardome-refl
+    title: 'SpecifiedBy (UK manufacturer documents): brett-martin-daylight-systems_Mardome-Reflex_Operations_TB185-Mardome-Reflex-or-Circular-Installation.pdf
+      (ma'
+    url: https://www.specifiedby.com/brett-martin-daylight-systems/mardome-reflex/brett-martin-daylight-systems_Mardome-Reflex_Operations_TB185-Mardome-Reflex-or-Circular-Installation.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-brett-martin-daylight-systems-mardome-reflex-specifications-nbs-125-mardom
+    title: 'SpecifiedBy (UK manufacturer documents): brett-martin-daylight-systems_Mardome-Reflex_Specifications_NBS-125-Mardome-Reflex-Specification.pdf
+      (mardome'
+    url: https://www.specifiedby.com/brett-martin-daylight-systems/mardome-reflex/brett-martin-daylight-systems_Mardome-Reflex_Specifications_NBS-125-Mardome-Reflex-Specification.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-airvent-thermal-break-product-brochure-4bd1a397
+    title: 'SpecifiedBy (UK manufacturer documents): airvent-thermal-break-product-brochure_4bd1a397.pdf
+      (airvent thermal break glazed in window vent — airvent th'
+    url: https://www.specifiedby.com/brookvent/airvent-thermal-break-glazed-in-window-vent/airvent-thermal-break-product-brochure_4bd1a397.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-window-ventilation-brochure-0450dfd1
+    title: 'SpecifiedBy (UK manufacturer documents): window-ventilation-brochure_0450dfd1.pdf
+      (airvent thermal break glazed in window vent — window ventilation br'
+    url: https://www.specifiedby.com/brookvent/airvent-thermal-break-glazed-in-window-vent/window-ventilation-brochure_0450dfd1.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-brookvent-tunal-range-brochure-1-d2845d60
+    title: 'SpecifiedBy (UK manufacturer documents): brookvent-tunal-range-brochure-1_d2845d60.pdf
+      (airvent tunal top neo specialist acoustic window vent — brookv'
+    url: https://www.specifiedby.com/brookvent/airvent-tunal-top-neo-specialist-acoustic-window-vent/brookvent-tunal-range-brochure-1_d2845d60.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-hufcor-brochure-en-1-518fa8bf
+    title: 'SpecifiedBy (UK manufacturer documents): hufcor-brochure-en-1_518fa8bf.pdf
+      (g3000 frameless glass wall with maximum transparency — hufcor brochure en '
+    url: https://www.specifiedby.com/hufcor/g3000-frameless-glass-wall-with-maximum-transparency/hufcor-brochure-en-1_518fa8bf.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-hufcor-architektenkatalog-4dd99aa5
+    title: 'SpecifiedBy (UK manufacturer documents): hufcor-architektenkatalog_4dd99aa5.pdf
+      (g3000 frameless glass wall with maximum transparency — hufcor archite'
+    url: https://www.specifiedby.com/hufcor/g3000-frameless-glass-wall-with-maximum-transparency/hufcor-architektenkatalog_4dd99aa5.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-operation-and-maintenance-manual-type-g3000-glasswall-double-point-a92ea4e
+    title: 'SpecifiedBy (UK manufacturer documents): operation-and-maintenance-manual-type-g3000-glasswall-double-point_a92ea4ef.pdf
+      (g3000 frameless glass wall w'
+    url: https://www.specifiedby.com/hufcor/g3000-frameless-glass-wall-with-maximum-transparency/operation-and-maintenance-manual-type-g3000-glasswall-double-point_a92ea4ef.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-door-closer-sales-brochure-low-res
+    title: 'SpecifiedBy (UK manufacturer documents): Door closer sales brochure_low
+      res.pdf (door controls — Door closer sales brochure low res)'
+    url: https://www.specifiedby.com/assa-abloy-uk/door-controls/Door closer sales brochure_low
+      res.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-assa-abloy-door-closer-technical-brochure
+    title: 'SpecifiedBy (UK manufacturer documents): ASSA ABLOY Door Closer Technical
+      Brochure.pdf (door controls — ASSA ABLOY Door Closer Technical Brochure)'
+    url: https://www.specifiedby.com/assa-abloy-uk/door-controls/ASSA ABLOY Door Closer
+      Technical Brochure.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-assa-cylinders
+    title: 'SpecifiedBy (UK manufacturer documents): assa-cylinders.pdf (cylinder keys
+      — assa cylinders)'
+    url: https://www.specifiedby.com/assa-abloy-uk/cylinder-keys/assa-cylinders.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-certificate-dc200
+    title: 'SpecifiedBy (UK manufacturer documents): Certificate-DC200.pdf (dc200a rack
+      pinion door closer — Certificate DC200)'
+    url: https://www.specifiedby.com/assa-abloy-uk/dc200a-rack-pinion-door-closer/Certificate-DC200.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-epd-door-closer-dc300da
+    title: 'SpecifiedBy (UK manufacturer documents): EPD Door Closer DC300DA.pdf (dc200a
+      rack pinion door closer — EPD Door Closer DC300DA)'
+    url: https://www.specifiedby.com/assa-abloy-uk/dc200a-rack-pinion-door-closer/EPD
+      Door Closer DC300DA.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-epd-door-closer-dc500-dc700
+    title: 'SpecifiedBy (UK manufacturer documents): EPD Door Closer DC500 DC700.pdf
+      (dc500a cam motion door closer — EPD Door Closer DC500 DC700)'
+    url: https://www.specifiedby.com/assa-abloy-uk/dc500a-cam-motion-door-closer/EPD
+      Door Closer DC500 DC700.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-epd-door-closer-dc300da-80282b24
+    title: 'SpecifiedBy (UK manufacturer documents): epd-door-closer-dc300da_80282b24.pdf
+      (dc300 rack pinion door closer — epd door closer dc300da 80282b24)'
+    url: https://www.specifiedby.com/assa-abloy-uk/dc300-rack-pinion-door-closer/epd-door-closer-dc300da_80282b24.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-epd-door-closer-dc860-series-c7132765
+    title: 'SpecifiedBy (UK manufacturer documents): epd-door-closer-dc860-series_c7132765.pdf
+      (dc860a concealed cam motion door closer — epd door closer dc860 se'
+    url: https://www.specifiedby.com/assa-abloy-uk/dc860a-concealed-cam-motion-door-closer/epd-door-closer-dc860-series_c7132765.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-sales-brochure-permaban-eclipse-v3
+    title: 'SpecifiedBy (UK manufacturer documents): sales-brochure-permaban-eclipse-v3.pdf
+      (permaban eclipse — sales brochure permaban eclipse v3)'
+    url: https://www.specifiedby.com/rcr-flooring-products-limited/permaban-eclipse/sales-brochure-permaban-eclipse-v3.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-spec-sheet-permaban-eclipse-v1-4
+    title: 'SpecifiedBy (UK manufacturer documents): spec-sheet-permaban-eclipse-v1.4.pdf
+      (permaban eclipse — spec sheet permaban eclipse v1 4)'
+    url: https://www.specifiedby.com/rcr-flooring-products-limited/permaban-eclipse/spec-sheet-permaban-eclipse-v1.4.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
