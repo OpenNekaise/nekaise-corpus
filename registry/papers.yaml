@@ -66132,3 +66132,29 @@ sources:
     topic: equipment_systems
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-spatial-temporal-analysis-of-the-heat-and-elec
+    title: Spatial–Temporal Analysis of the Heat and Electricity Demand of the Swiss
+      Building Stock
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2017.00053/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-best-practices-for-crash-modeling-and-simulati
+    title: Best Practices for Crash Modeling and Simulation
+    url: https://ntrs.nasa.gov/api/citations/20020085101/downloads/20020085101.pdf
+    source: openalex
+    license: public-domain
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: public-domain'
+  - id: ope-stormwater-ponds-in-the-southeastern-u-s-coast
+    title: 'Stormwater Ponds in the Southeastern U.S. Coastal Plain: Hydrogeology, Contaminant
+      Fate, and the Need for a Social-Ecological Framework'
+    url: https://www.frontiersin.org/articles/10.3389/fenvs.2019.00117/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
