@@ -327,33 +327,41 @@ def enumerate_html_index(cfg: dict, fetcher=fetch, key: str | None = None) -> li
     return out
 
 
+def normalize_document_url(url: str) -> str | None:
+    """Canonicalize HTML-escaped links and reject page markup swallowed by PDF queries."""
+    url = url.strip()
+    for _ in range(5):  # portals sometimes serialize an already HTML-escaped URL into another layer
+        decoded = htmllib.unescape(url)
+        if decoded == url:
+            break
+        url = decoded
+    if any(char in unquote(urlsplit(url).query) for char in "<>"):
+        return None
+    return url
+
+
 def pdf_links(page_url: str, text: str, cfg: dict | None = None) -> list[tuple[str, str]]:
     """(absolute url, anchor text) for every link on a page; the anchor text is usually the
     document's own title ('Product data sheet EN'), far better than a slug."""
     out: list[tuple[str, str]] = []
     seen: set[str] = set()
-    for href, inner in ANCHOR_RE.findall(text):
-        url = urljoin(page_url, htmllib.unescape(href))
-        label = re.sub(r"\s+", " ", htmllib.unescape(TAG_RE.sub(" ", inner))).strip()[:120]
-        if url not in seen:
+
+    def add(candidate: str, label: str = "") -> None:
+        url = normalize_document_url(candidate)
+        if url and url not in seen:
             seen.add(url)
             out.append((url, label))
+
+    for href, inner in ANCHOR_RE.findall(text):
+        label = re.sub(r"\s+", " ", htmllib.unescape(TAG_RE.sub(" ", inner))).strip()[:120]
+        add(urljoin(page_url, href), label)
     for href in HREF_RE.findall(text):  # links without an <a> wrapper we could parse
-        url = urljoin(page_url, htmllib.unescape(href))
-        if url not in seen:
-            seen.add(url)
-            out.append((url, ""))
+        add(urljoin(page_url, href))
     for url in RAW_URL_RE.findall(text.replace("\\/", "/")):  # JSON-embedded document URLs
-        url = htmllib.unescape(url)
-        if url not in seen:
-            seen.add(url)
-            out.append((url, ""))
+        add(url)
     if cfg and cfg.get("raw_link_pattern"):  # vendor-specific: relative links inside page JSON
         for m in re.finditer(cfg["raw_link_pattern"], text.replace("\\/", "/")):
-            url = urljoin(page_url, htmllib.unescape(m.group(1)))
-            if url not in seen:
-                seen.add(url)
-                out.append((url, ""))
+            add(urljoin(page_url, m.group(1)))
     return out
 
 
@@ -397,7 +405,8 @@ def known_titles_for(key: str, cfg: dict | None = None) -> dict[str, str]:
     mem = {u: (v.get("title") or "") for u, v in load_state(key, "docs").items() if isinstance(v, dict)}
     if cfg and cfg.get("url_rewrite"):
         mem = dict(zip(rewrite_urls(cfg, list(mem)), mem.values()))
-    return mem
+    return {cleaned: title for url, title in mem.items()
+            if (cleaned := normalize_document_url(url)) is not None}
 
 
 def _dig(obj, path: str):
@@ -474,9 +483,9 @@ def select_documents(cfg: dict, universe: list[str]) -> list[str]:
     lang = re.compile(cfg["lang_pattern"], re.I) if cfg.get("lang_pattern") else None
     out: list[str] = []
     seen: set[str] = set()
-    for u in rewrite_urls(cfg, universe):
-        u = u.strip()
-        if not u.startswith("http") or not keep.search(u):
+    for candidate in rewrite_urls(cfg, universe):
+        u = normalize_document_url(candidate)
+        if not u or not u.startswith("http") or not keep.search(u):
             continue
         if DEFAULT_EXCLUDE.search(u) or (drop and drop.search(u)):
             continue

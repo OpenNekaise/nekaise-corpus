@@ -169,6 +169,31 @@ def test_pdf_links_reads_anchors_bare_hrefs_and_json_embedded_urls():
     ]
 
 
+def test_pdf_links_normalizes_escaped_queries_and_rejects_swallowed_markup(tmp_path, monkeypatch):
+    monkeypatch.setattr(find_vendor, "CACHE_DIR", tmp_path / "cache")
+    good = ("https://cdn01.rockwoolgroup.com/siteassets/reference-cases/"
+            "renovation.pdf?f=20200619063212&dl=1")
+    escaped = good.replace("&", "&amp;amp;")
+    page = (
+        '<script>{"good":"https:\\/\\/cdn01.rockwoolgroup.com\\/siteassets\\/reference-cases\\/'
+        'renovation.pdf?f=20200619063212&amp;amp;dl=1",'
+        '"bad":"https:\\/\\/www.rockwool.com\\/rockzero\\/guide.pdf?f=20190327111051'
+        '%3C/span%3E%3C/a%3E%3C/sub%3E"}</script>'
+        f'<a href="{good}">duplicate</a>'
+    )
+    assert find_vendor.pdf_links("https://www.rockwool.com/products/", page) == [
+        (good, "duplicate"),
+    ]
+    assert find_vendor.select_documents(vendor(), [
+        "https://www.rockwool.com/rockzero/guide.pdf?f=1</a></p>",
+        "https://www.rockwool.com/rockzero/guide.pdf?f=1%3C/a%3E",
+    ]) == []
+    find_vendor.store_state("rockwool", "docs", {
+        escaped: {"title": "Renovation case study", "page": "https://www.rockwool.com/p"},
+    })
+    assert find_vendor.known_titles_for("rockwool") == {good: "Renovation case study"}
+
+
 def test_json_api_pages_until_short_page_and_keeps_titles(tmp_path, monkeypatch):
     import json as _json
     monkeypatch.setattr(find_vendor, "CACHE_DIR", tmp_path / "cache")
