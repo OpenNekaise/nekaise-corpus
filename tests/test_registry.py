@@ -187,12 +187,16 @@ def manrow(sid, topic="building_energy"):
 def test_manifest_shard_routing():
     assert registry.manifest_shard("ost-some-report") == "reports"
     assert registry.manifest_shard("hand-curated-doc") == "curated"
-    # patents split by publication country, heavy countries again into stable crc32 buckets —
+    # patents split by publication country, heavy families again into stable crc32 buckets —
     # patents-cn.jsonl alone crossed GitHub's 100MB file limit (2026-08-05)
     import zlib
-    for sid, country, n in [("pat-us10519664b1", "us", 8), ("pat-cn105789298b", "cn", 16)]:
+    for sid, country in [("pat-us10519664b1", "us"), ("pat-cn105789298b", "cn")]:
+        n = registry.HASH_BUCKETS[f"patents-{country}"]
         want = f"patents-{country}-{zlib.crc32(sid.encode()) % n}"
         assert registry.manifest_shard(sid) == want
+    vendor_id = "vnd-acme-air-handler"
+    vendor_bucket = zlib.crc32(vendor_id.encode()) % registry.HASH_BUCKETS["vendor"]
+    assert registry.manifest_shard(vendor_id) == f"vendor-{vendor_bucket}"
     # a country without a bucket entry keeps the plain per-country shard
     assert registry.manifest_shard("pat-ep1234567a1") == "patents-ep"
 
@@ -206,6 +210,15 @@ def test_registry_shard_bucketing_matches_manifest():
     assert registry.shard_path("pat-us10519664b1").name.startswith("patents-us-")
     assert registry.shard_path("hand-curated-doc").name == "curated.yaml"
     assert registry.manifest_shard("hand-curated-doc") == "curated"
+
+
+def test_hash_bucket_counts_support_clean_power_of_two_refinement():
+    """Future bucket increases can split old files rather than reshuffling every shard."""
+    import zlib
+    checksum = zlib.crc32(b"routing-contract-example")
+    for buckets in registry.HASH_BUCKETS.values():
+        assert buckets >= 2 and buckets & (buckets - 1) == 0
+        assert checksum % buckets % (buckets // 2) == checksum % (buckets // 2)
 
 
 def test_manifest_round_trip_and_shard_files(tmp_registry):

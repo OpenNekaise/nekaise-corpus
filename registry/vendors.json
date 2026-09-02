@@ -1,5 +1,5 @@
 {
- "_readme": "Control-plane config for scripts/find_vendor.py — manufacturer product-literature portals. One entry per vendor: how documents are enumerated (mechanism sitemap|html_index), URL filters, default topic + topic_rules, crawl_delay (build_corpus merges it into HOST_DELAY), and the rights review (tos_url, tos_excerpt, robots, reviewed_at, decision go|no-go). Operator decision 2026-08-30 (see _policy): product literature is ingested as license=open for local training use; declared prohibitions (ToS, robots, AI opt-outs) are recorded but not blockers; logins/paywalls/WAF challenges are never bypassed and Crawl-delay is honoured. Vendors the survey found but has not cleared stay enabled=false with status 'backlog' so the maintainer can pick them up. Tuning loop: after a vendor's first visits, compare pruned vnd-<key> rows (registry/pruned-*.jsonl, reason 'thin' = <2k chars) against kept rows in manifest/vendor.jsonl and tighten that vendor's pdf_pattern/exclude_pattern to skip document classes that are one-page sheets.",
+ "_readme": "Control-plane config for scripts/find_vendor.py — manufacturer product-literature portals. One entry per vendor: how documents are enumerated (mechanism sitemap|html_index), URL filters, default topic + topic_rules, crawl_delay (build_corpus merges it into HOST_DELAY), and the rights review (tos_url, tos_excerpt, robots, reviewed_at, decision go|no-go). Operator decision 2026-08-30 (see _policy): product literature is ingested as license=open for local training use; declared prohibitions (ToS, robots, AI opt-outs) are recorded but not blockers; logins/paywalls/WAF challenges are never bypassed and Crawl-delay is honoured. Vendors the survey found but has not cleared stay enabled=false with status 'backlog' so the maintainer can pick them up. Tuning loop: after a vendor's first visits, compare pruned vnd-<key> rows (registry/pruned-*.jsonl, reason 'thin' = <2k chars) against kept rows in manifest/vendor-*.jsonl and tighten that vendor's pdf_pattern/exclude_pattern to skip document classes that are one-page sheets.",
  "_policy": {
   "decided_by": "operator",
   "decided_at": "2026-08-30",
@@ -45,7 +45,7 @@
     "reviewed_at": "2026-08-28",
     "decision": "go"
    },
-   "notes": "2026-08-28 first visit: 150 fetched, 17 kept, 125 'thin' — product-data-sheets are single-page brick/paver sheets (<2k chars); excluded at discovery. Per-vendor keep rate: grep -h '\"vnd-<key>' registry/pruned-*.jsonl | wc -l vs manifest/vendor.jsonl."
+   "notes": "2026-08-28 first visit: 150 fetched, 17 kept, 125 'thin' — product-data-sheets are single-page brick/paver sheets (<2k chars); excluded at discovery. Per-vendor keep rate: grep -h '\"vnd-<key>' registry/pruned-*.jsonl | wc -l vs manifest/vendor-*.jsonl."
   },
   "sika-gb": {
    "name": "Sika GB",

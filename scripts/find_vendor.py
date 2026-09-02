@@ -606,7 +606,7 @@ def main() -> None:
                     help="sitemap_pages: pages to scan this run (vendor pages_per_run overrides)")
     ap.add_argument("--refresh", action="store_true", help="ignore the cached sitemap universe")
     ap.add_argument("--list", action="store_true")
-    ap.add_argument("--append", action="store_true", help="append into the registry (vendor.yaml)")
+    ap.add_argument("--append", action="store_true", help="append into the sharded vendor registry")
     args = ap.parse_args()
 
     vendors = load_vendors()

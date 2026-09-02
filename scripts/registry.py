@@ -49,8 +49,7 @@ SHARDS = {
     "eud-": "deliverables.yaml",  # find_openaire (EU Horizon/H2020 project deliverables)
     "nst-": "nist.yaml",       # find_nist (NIST/NBS technical series via Crossref DOI prefix)
     "pat-": "patents.yaml",    # find_patents (Google Patents sitemap, building/HVAC CPC classes);
-                               # base name only — _shard_stem buckets it into patents-cn-0…15 /
-                               # patents-us-0…7 (89MB single file 2026-08-17)
+                               # base name only — _shard_stem adds country + hash buckets
     "wik-": "wiki.yaml",       # find_wiki (multilingual Wikipedia articles via langlinks/categories)
     "doa-": "doaj.yaml",       # find_doaj (DOAJ open-access articles, all languages)
     "sdz-": "austria.yaml",    # find_sdz (Austrian Stadt/Haus der Zukunft building-research reports, German)
@@ -210,29 +209,36 @@ def is_fetchable(entry: dict, restrictions: dict[str, dict] | None = None) -> bo
     return is_training_eligible(entry, restrictions)
 
 
-# Countries whose patent shards outgrow a single file get split into stable hash buckets:
-# patents-cn.jsonl alone crossed GitHub's 100MB limit at 152MB (2026-08-05) and blocked every
-# push; registry/patents.yaml hit 89MB (2026-08-17) and got the same treatment. crc32 keeps the
-# id -> bucket mapping stable across runs and platforms, and identical between one id's
-# registry YAML shard and its manifest JSONL shard.
-PATENT_BUCKETS = {"cn": 16, "us": 8}
+# Growing shard families use stable hash buckets. patents-cn.jsonl crossed GitHub's 100MB limit
+# at 152MB (2026-08-05), registry/patents.yaml later hit 89MB (2026-08-17), and the first 16-way
+# CN split plus the vendor monolith were both on course to cross the 80 MiB safety gate in
+# September 2026. crc32 keeps routing stable across runs and platforms and identical between one
+# id's registry YAML shard and manifest JSONL shard. Power-of-two refinements split every old
+# bucket cleanly, which makes future migrations deterministic.
+HASH_BUCKETS = {
+    "patents-cn": 64,
+    "patents-us": 8,
+    "vendor": 16,
+}
+
+
+def _bucketed_stem(stem: str, sid: str) -> str:
+    n = HASH_BUCKETS.get(stem)
+    return f"{stem}-{zlib.crc32(sid.encode()) % n}" if n else stem
 
 
 def _shard_stem(sid: str) -> str | None:
     """Shard stem for a machine-discovered id (None = hand-curated): the SHARDS route, except
-    patents split further by publication country (pat-us…/pat-cn…), and heavy countries split
-    again into hash buckets (patents-cn-0…15) so no file approaches GitHub's 100MB limit."""
+    patents split further by publication country (pat-us…/pat-cn…), then any growing family in
+    HASH_BUCKETS is split again so no file approaches GitHub's 100MB limit."""
     for prefix, fname in SHARDS.items():
         if sid.startswith(prefix):
             stem = fname.rsplit(".", 1)[0]
             if stem == "patents":
                 m = re.match(r"pat-([a-z]{2})", sid)
                 if m:
-                    n = PATENT_BUCKETS.get(m.group(1))
-                    if n:
-                        return f"patents-{m.group(1)}-{zlib.crc32(sid.encode()) % n}"
-                    return f"patents-{m.group(1)}"
-            return stem
+                    stem = f"patents-{m.group(1)}"
+            return _bucketed_stem(stem, sid)
     return None
 
 
