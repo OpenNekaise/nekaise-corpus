@@ -26,9 +26,9 @@
   },
   "find_nist": {
     "flag": "--month-index",
-    "next": 24338,
+    "next": 24320,
     "step": 1,
-    "note": "RE-AIMED 2026-08-31 after relevance-ranked query pages 7-111 were dry: cursor-enumerate DOI prefix 10.6028 in creation-month segments. Pointer is year*12+month-1 (24143 = 2011-12, the earliest prefix record); ephemeral Crossref cursors live only within a run, so failure retains and replays the re-derivable month. A reviewed four-month sample passed the conservative title gate at 44/44 AEC-relevant titles. Candidate-cap runs request a rotation hold until month dedup drains. Optional backend retains its pointer on API failure."
+    "note": "RE-AIMED 2026-08-31 after relevance-ranked query pages 7-111 were dry: cursor-enumerate DOI prefix 10.6028 in creation-month segments. Pointer is year*12+month-1 (24143 = 2011-12, the earliest prefix record); ephemeral Crossref cursors live only within a run, so failure retains and replays the re-derivable month. A reviewed four-month sample passed the conservative title gate at 44/44 AEC-relevant titles. Candidate-cap runs request a rotation hold until month dedup drains. Optional backend retains its pointer on API failure. FRONTIER RESET 2026-09-02 from 24338 (2028-03) to 24320 (2026-09): future months are skipped and held; the open current UTC month is scanned and held for periodic re-probes until it closes."
   },
   "find_zenodo": {
     "flag": "--page",

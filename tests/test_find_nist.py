@@ -1,4 +1,5 @@
 import sys
+from datetime import datetime, timezone
 
 import pytest
 
@@ -46,6 +47,11 @@ def test_month_index_is_stable_and_uses_real_calendar_boundaries():
     assert find_nist.month_bounds(2012 * 12 + 1) == ("2012-02-01", "2012-02-29")
     with pytest.raises(ValueError, match="predates"):
         find_nist.month_bounds(24142)
+
+
+def test_current_utc_month_index_uses_rotation_encoding():
+    now = datetime(2026, 9, 30, 23, 59, tzinfo=timezone.utc)
+    assert find_nist.current_utc_month_index(now) == 24320
 
 
 def _item(title, url="https://nvlpubs.nist.gov/report.pdf"):
@@ -205,16 +211,56 @@ def test_candidate_cap_emits_batch_and_requests_rotation_hold(monkeypatch, tmp_p
     assert "rotation hold requested" in capsys.readouterr().err
 
 
-def test_successful_empty_month_is_not_an_api_failure(monkeypatch, capsys):
+def test_past_empty_month_advances_without_hold(monkeypatch, tmp_path, capsys):
     _empty_registry(monkeypatch)
+    monkeypatch.setattr(find_nist, "current_utc_month_index", lambda: 24144)
     monkeypatch.setattr(find_nist, "from_crossref", lambda *_args: [])
     monkeypatch.setattr(
         find_nist.registry,
         "append_entries",
         lambda _entries: pytest.fail("an empty result must not append"),
     )
+    hold = tmp_path / "rotation-hold"
+    monkeypatch.setenv("NEKAISE_ROTATION_HOLD_FILE", str(hold))
     monkeypatch.setattr(sys, "argv", ["find_nist.py", "--append"])
 
     find_nist.main()
 
+    assert not hold.exists()
     assert "0 NEW NIST/NBS technical series PDFs" in capsys.readouterr().out
+
+
+def test_current_month_is_scanned_and_held_for_reprobe(monkeypatch, tmp_path):
+    _empty_registry(monkeypatch)
+    scanned = []
+    monkeypatch.setattr(find_nist, "current_utc_month_index", lambda: 24320)
+    monkeypatch.setattr(
+        find_nist,
+        "from_crossref",
+        lambda month_index, _rows: scanned.append(month_index) or [],
+    )
+    hold = tmp_path / "rotation-hold"
+    monkeypatch.setenv("NEKAISE_ROTATION_HOLD_FILE", str(hold))
+    monkeypatch.setattr(sys, "argv", ["find_nist.py", "--month-index", "24320"])
+
+    find_nist.main()
+
+    assert scanned == [24320]
+    assert "open UTC month; re-probe until it closes" in hold.read_text()
+
+
+def test_future_month_is_not_queried_and_requests_hold(monkeypatch, tmp_path):
+    _empty_registry(monkeypatch)
+    monkeypatch.setattr(find_nist, "current_utc_month_index", lambda: 24320)
+    monkeypatch.setattr(
+        find_nist,
+        "from_crossref",
+        lambda *_args: pytest.fail("future months must not query Crossref"),
+    )
+    hold = tmp_path / "rotation-hold"
+    monkeypatch.setenv("NEKAISE_ROTATION_HOLD_FILE", str(hold))
+    monkeypatch.setattr(sys, "argv", ["find_nist.py", "--month-index", "24321"])
+
+    find_nist.main()
+
+    assert "beyond the current UTC month" in hold.read_text()

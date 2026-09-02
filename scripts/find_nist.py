@@ -6,10 +6,11 @@ under prefix 10.6028. The prefix includes public-domain US-government building s
 structures, materials, and building-systems reports, but also a large amount of non-AEC work.
 
 The old finder issued relevance-ranked bibliographic queries and eventually walked into dry
-deep-result tails. This version cursor-enumerates the prefix exactly once in re-derivable
-creation-month segments. Crossref cursor tokens live only for this process; committed rotation
-state is the numeric month index ``year * 12 + month - 1``. A retry therefore starts the small
-month again, and registry/blocklist dedup makes that harmless.
+deep-result tails. This version cursor-enumerates the prefix in re-derivable creation-month
+segments: closed months advance once, while the open UTC month is periodically re-probed and
+future months are never queried. Crossref cursor tokens live only for this process; committed
+rotation state is the numeric month index ``year * 12 + month - 1``. A retry therefore starts the
+small month again, and registry/blocklist dedup makes that harmless.
 
 Only direct nvlpubs.nist.gov PDFs whose titles pass the conservative AEC title gate are proposed.
 The normal loader and quality gate remain downstream safeguards.
@@ -21,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import calendar
+from datetime import datetime, timezone
 import os
 import re
 import sys
@@ -84,6 +86,12 @@ def month_bounds(month_index: int) -> tuple[str, str]:
     month = zero_based_month + 1
     last_day = calendar.monthrange(year, month)[1]
     return f"{year:04d}-{month:02d}-01", f"{year:04d}-{month:02d}-{last_day:02d}"
+
+
+def current_utc_month_index(now: datetime | None = None) -> int:
+    """Return the open creation-month frontier in the committed cursor encoding."""
+    current = now or datetime.now(timezone.utc)
+    return current.year * 12 + current.month - 1
 
 
 def from_crossref(month_index: int, rows: int) -> list[tuple[str, str, str]]:
@@ -183,15 +191,24 @@ def main() -> None:
         ap.error("--max must be positive")
 
     start, _end = month_bounds(args.month_index)
-    try:
-        hits = from_crossref(args.month_index, args.rows)
-    except Exception as exc:
-        print(
-            f"# ERROR: NIST discovery incomplete for {start[:7]}: {exc}; "
-            "refusing a partial append so rotation does not advance",
-            file=sys.stderr,
+    frontier = current_utc_month_index()
+    hold_reason = None
+    if args.month_index > frontier:
+        hits = []
+        hold_reason = (
+            f"{start[:7]} is beyond the current UTC month; "
+            "holding until the calendar frontier catches up"
         )
-        raise SystemExit(1)
+    else:
+        try:
+            hits = from_crossref(args.month_index, args.rows)
+        except Exception as exc:
+            print(
+                f"# ERROR: NIST discovery incomplete for {start[:7]}: {exc}; "
+                "refusing a partial append so rotation does not advance",
+                file=sys.stderr,
+            )
+            raise SystemExit(1)
 
     urls, titles, reg_ids = registry.existing_keys()
     candidates, seen = [], set()
@@ -216,10 +233,12 @@ def main() -> None:
 
     overflow = len(candidates) > args.max
     out = candidates[: args.max]
-    if overflow:
-        request_rotation_hold(
-            f"{start[:7]} has {len(candidates)} new candidates; emitted {len(out)}"
-        )
+    if args.month_index == frontier:
+        hold_reason = f"{start[:7]} is the open UTC month; re-probe until it closes"
+    elif overflow:
+        hold_reason = f"{start[:7]} has {len(candidates)} new candidates; emitted {len(out)}"
+    if hold_reason:
+        request_rotation_hold(hold_reason)
     registry.uniquify_ids(out, reg_ids)
 
     by_topic: dict[str, int] = {}
