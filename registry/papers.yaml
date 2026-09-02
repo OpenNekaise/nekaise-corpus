@@ -66176,3 +66176,43 @@ sources:
     topic: building_energy
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-the-ventilation-of-buildings-and-other-mitigat
+    title: 'The ventilation of buildings and other mitigating measures for COVID-19:
+      a focus on wintertime'
+    url: https://arxiv.org/pdf/2009.12781
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: ope-urban-climate-informatics-an-emerging-research
+    title: 'Urban Climate Informatics: An Emerging Research Field'
+    url: https://www.frontiersin.org/articles/10.3389/fenvs.2022.867434/pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-assessing-the-use-of-portable-air-cleaners-for
+    title: Assessing the use of portable air cleaners for reducing exposure to airborne
+      diseases in a conference room with thermal stratification
+    url: https://escholarship.org/content/qt2xr5353p/qt2xr5353p.pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-fugitive-emissions-and-health-implications-of-
+    title: Fugitive Emissions and Health Implications of Plancha-Type Stoves
+    url: https://escholarship.org/content/qt4qf8j2f0/qt4qf8j2f0.pdf?t=pe6046
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: ope-applicability-of-whole-body-heat-balance-model
+    title: Applicability of whole-body heat balance models for evaluating thermal sensation
+      under non-uniform air movement in warm environments
+    url: https://escholarship.org/content/qt49q4r4jv/qt49q4r4jv.pdf?t=nt9w78
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
