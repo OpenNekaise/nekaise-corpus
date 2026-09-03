@@ -13644,3 +13644,31 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-22572653
+    title: 'Schneider Electric (WW download center): files — 998 22572653'
+    url: https://download.se.com/files?p_Doc_Ref=998-22572653
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-20976310
+    title: 'Schneider Electric (WW download center): files — 998 20976310'
+    url: https://download.se.com/files?p_Doc_Ref=998-20976310
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'

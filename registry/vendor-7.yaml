@@ -13952,3 +13952,60 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-artificiallift
+    title: 'Schneider Electric (WW download center): files — ArtificialLift'
+    url: https://download.se.com/files?p_Doc_Ref=ArtificialLift
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-20976271
+    title: 'Schneider Electric (WW download center): files — 998 20976271'
+    url: https://download.se.com/files?p_Doc_Ref=998-20976271
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-998-20710038-eliwell
+    title: 'Schneider Electric (WW download center): files — 998 20710038 Eliwell'
+    url: https://download.se.com/files?p_Doc_Ref=998-20710038_Eliwell
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-755lpsma4-brochure-smoke-alarm
+    title: 'Schneider Electric (WW download center): files — 755LPSMA4 Brochure Smoke
+      Alarm'
+    url: https://download.se.com/files?p_Doc_Ref=755LPSMA4_Brochure_Smoke_Alarm
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
