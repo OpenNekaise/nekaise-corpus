@@ -214,6 +214,15 @@ def fetch(url: str, delay: float = 0.0, method: str = "GET", data: dict | None =
     return data
 
 
+def terminal_http_status(exc: Exception) -> int | None:
+    """Return a permanently absent HTTP status, keeping WAF/transient failures retryable."""
+    if isinstance(exc, requests.HTTPError) and exc.response is not None:
+        status = exc.response.status_code
+        if status in (404, 410):
+            return status
+    return None
+
+
 def _cache_path(key: str) -> Path:
     return CACHE_DIR / f"{key}.json"
 
@@ -302,16 +311,26 @@ def index_pages_for(cfg: dict) -> list[str]:
 def enumerate_html_index(cfg: dict, fetcher=fetch, key: str | None = None) -> list[str]:
     """Listing pages (GET, or POST with `data`) carrying document links; anchor text is kept as
     the title memory when a vendor key is given. A paginated listing is `index_url_template`
-    ('...?page={page}') x `index_pages`; a page that fails is skipped, an all-failed run raises."""
+    ('...?page={page}') x `index_pages`; 404/410 pages are remembered for VISITED_TTL_DAYS, while
+    transient failures are skipped and an all-transient-failed run raises."""
     delay = float(cfg.get("crawl_delay", 0) or 0)
     method = cfg.get("method", "GET")
     out: list[str] = []
     labels = load_state(key, "docs") if key else {}
-    fetched = failed = 0
-    for page in index_pages_for(cfg):
+    visited = load_state(key, "visited") if key else {}
+    now = time.time()
+    fresh = now - VISITED_TTL_DAYS * 86400
+    todo = [page for page in index_pages_for(cfg) if visited.get(page, 0) < fresh]
+    fetched = failed = dead = 0
+    for page in todo:
         try:
             text = fetcher(page, delay, method, cfg.get("data")).decode("utf-8", errors="replace")
         except Exception as exc:
+            if status := terminal_http_status(exc):
+                dead += 1
+                visited[page] = now
+                print(f"# index page dead ({status}) {page}", file=sys.stderr)
+                continue
             failed += 1
             print(f"# index fetch failed {page}: {exc}", file=sys.stderr)
             continue
@@ -319,10 +338,11 @@ def enumerate_html_index(cfg: dict, fetcher=fetch, key: str | None = None) -> li
         for url, label in pdf_links(page, text, cfg):
             out.append(url)
             if key and label and url not in labels:
-                labels[url] = {"t": time.time(), "title": label, "page": page}
-    if failed and not fetched:
+                labels[url] = {"t": now, "title": label, "page": page}
+    if todo and fetched == 0 and dead == 0:
         raise RuntimeError(f"all {failed} index page fetches failed")
     if key:
+        store_state(key, "visited", visited)
         store_state(key, "docs", labels)
     return out
 
@@ -366,10 +386,10 @@ def pdf_links(page_url: str, text: str, cfg: dict | None = None) -> list[tuple[s
 
 
 def scan_pages(key: str, cfg: dict, pages: list[str], budget: int, fetcher=fetch) -> list[str]:
-    """sitemap_pages: visit up to `budget` not-yet-visited pages, remember them (successful fetches
-    only), and accumulate every document link ever seen for this vendor in a docs memory — so a
-    run capped by --max proposes the remainder next time without re-fetching pages, and a wiped
-    workspace merely costs a re-scan (dedup makes that harmless)."""
+    """sitemap_pages: visit up to `budget` not-yet-visited pages, remember successful or terminal
+    404/410 fetches, and accumulate every document link ever seen for this vendor in a docs memory
+    — so a run capped by --max proposes the remainder next time without re-fetching pages, and a
+    wiped workspace merely costs a re-scan (dedup makes that harmless)."""
     delay = float(cfg.get("crawl_delay", 0) or 0)
     page_re = re.compile(cfg.get("page_pattern") or ".", re.I)
     visited = load_state(key, "visited")
@@ -377,11 +397,16 @@ def scan_pages(key: str, cfg: dict, pages: list[str], budget: int, fetcher=fetch
     now = time.time()
     fresh = now - VISITED_TTL_DAYS * 86400
     todo = [p for p in pages if page_re.search(p) and visited.get(p, 0) < fresh][:budget]
-    fetched = failed = 0
+    fetched = failed = dead = 0
     for page in todo:
         try:
             text = fetcher(page, delay, cfg.get("method", "GET"), cfg.get("data")).decode("utf-8", errors="replace")
         except Exception as exc:
+            if status := terminal_http_status(exc):
+                dead += 1
+                visited[page] = now
+                print(f"# page dead ({status}) {page}", file=sys.stderr)
+                continue
             failed += 1
             print(f"# page fetch failed {page}: {exc}", file=sys.stderr)
             continue
@@ -389,13 +414,13 @@ def scan_pages(key: str, cfg: dict, pages: list[str], budget: int, fetcher=fetch
         visited[page] = now
         for link, label in pdf_links(page, text, cfg):
             docs.setdefault(link, {"t": now, "title": label, "page": page})
-    if todo and fetched == 0:
+    if todo and fetched == 0 and dead == 0:
         raise RuntimeError(f"all {len(todo)} page fetches failed")
     store_state(key, "visited", visited)
     store_state(key, "docs", docs)
     remaining = sum(1 for p in pages if page_re.search(p) and visited.get(p, 0) < fresh)
-    print(f"# {cfg['name']}: scanned {fetched} pages ({failed} failed), {remaining} pages still "
-          f"unvisited, {len(docs)} document links known")
+    print(f"# {cfg['name']}: scanned {fetched} pages ({dead} dead, {failed} failed), {remaining} "
+          f"pages still unvisited, {len(docs)} document links known")
     return list(docs)
 
 

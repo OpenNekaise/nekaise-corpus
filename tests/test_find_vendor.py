@@ -3,6 +3,7 @@ import json
 import sys
 
 import pytest
+import requests
 
 import find_vendor
 import registry
@@ -17,6 +18,13 @@ def vendor(**over):
     }
     cfg.update(over)
     return cfg
+
+
+def http_error(status):
+    response = requests.Response()
+    response.status_code = status
+    response.url = f"https://acme.example/status/{status}"
+    return requests.HTTPError(str(status), response=response)
 
 
 def test_validate_vendors_rejects_bad_configs():
@@ -158,6 +166,57 @@ def test_sitemap_pages_fails_only_when_every_page_fails(tmp_path, monkeypatch):
     with pytest.raises(RuntimeError, match="all 1 page fetches failed"):
         find_vendor.candidate_documents("acme", cfg, ["https://acme.example/product/p9"], 40,
                                         lambda u, *a, **k: (_ for _ in ()).throw(RuntimeError("x")))
+
+
+def test_sitemap_pages_remembers_terminal_http_errors_only(tmp_path, monkeypatch):
+    monkeypatch.setattr(find_vendor, "CACHE_DIR", tmp_path / "cache")
+    cfg = vendor(mechanism="sitemap_pages", page_pattern=r"/product/")
+    dead = ["https://acme.example/product/gone", "https://acme.example/product/missing"]
+    statuses = {dead[0]: 410, dead[1]: 404}
+    fetched = []
+
+    def all_dead(url, *args, **kwargs):
+        fetched.append(url)
+        raise http_error(statuses[url])
+
+    assert find_vendor.candidate_documents("acme", cfg, dead, 40, all_dead) == []
+    assert fetched == dead
+    assert set(find_vendor.load_state("acme", "visited")) == set(dead)
+    assert find_vendor.candidate_documents(
+        "acme", cfg, dead, 40, lambda *a, **k: pytest.fail("dead pages must stay excluded")) == []
+
+    transient = "https://acme.example/product/transient"
+    with pytest.raises(RuntimeError, match="all 1 page fetches failed"):
+        find_vendor.candidate_documents(
+            "other", cfg, [transient], 40, lambda *a, **k: (_ for _ in ()).throw(http_error(503)))
+    assert find_vendor.load_state("other", "visited") == {}
+
+
+def test_sitemap_pages_mixed_dead_and_transient_marks_only_dead(tmp_path, monkeypatch):
+    monkeypatch.setattr(find_vendor, "CACHE_DIR", tmp_path / "cache")
+    cfg = vendor(mechanism="sitemap_pages", page_pattern=r"/product/")
+    dead = "https://acme.example/product/dead"
+    transient = "https://acme.example/product/transient"
+
+    def mixed(url, *args, **kwargs):
+        raise http_error(404 if url == dead else 403)
+
+    assert find_vendor.candidate_documents("acme", cfg, [dead, transient], 40, mixed) == []
+    assert set(find_vendor.load_state("acme", "visited")) == {dead}
+    with pytest.raises(RuntimeError, match="all 1 page fetches failed"):
+        find_vendor.candidate_documents("acme", cfg, [dead, transient], 40, mixed)
+
+
+def test_html_index_remembers_terminal_pages(tmp_path, monkeypatch):
+    monkeypatch.setattr(find_vendor, "CACHE_DIR", tmp_path / "cache")
+    pages = ["https://acme.example/index/old", "https://acme.example/index/gone"]
+    cfg = vendor(mechanism="html_index", sitemaps=None, index_urls=pages)
+
+    assert find_vendor.enumerate_html_index(
+        cfg, lambda url, *a, **k: (_ for _ in ()).throw(http_error(410)), key="acme") == []
+    assert set(find_vendor.load_state("acme", "visited")) == set(pages)
+    assert find_vendor.enumerate_html_index(
+        cfg, lambda *a, **k: pytest.fail("dead index pages must stay excluded"), key="acme") == []
 
 
 def test_pdf_links_reads_anchors_bare_hrefs_and_json_embedded_urls():

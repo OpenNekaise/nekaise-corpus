@@ -294,6 +294,6 @@
     ],
     "enabled": true,
     "required": false,
-    "reason": "NEW 2026-08-28: manufacturer product literature (HVAC / controls / construction products) — one config-driven finder over registry/vendors.json (16 surveyed pilot vendors, rights reviewed per vendor); required=false because vendor portals are volatile"
+    "reason": "NEW 2026-08-28: manufacturer product literature (HVAC / controls / construction products) — one config-driven finder over registry/vendors.json (27 enabled vendors, rights reviewed per vendor); required=false because vendor portals are volatile"
   }
 }
