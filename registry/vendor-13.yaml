@@ -13763,3 +13763,47 @@ sources:
       disregarded by operator decision 2026-08-30 (local training use, no redistribution);
       assets 200 application/pdf
     rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-premier-elite-brochure-caribe
+    title: 'Schneider Electric (WW download center): files — Premier Elite Brochure
+      Caribe'
+    url: https://download.se.com/files?p_Doc_Ref=Premier_Elite_Brochure_Caribe_
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-nrjcat21011en
+    title: 'Schneider Electric (WW download center): files — NRJCAT21011EN'
+    url: https://download.se.com/files?p_Doc_Ref=NRJCAT21011EN
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-innovation-talks-1-galaxy-vs
+    title: 'Schneider Electric (WW download center): files — Innovation talks 1 Galaxy
+      VS'
+    url: https://download.se.com/files?p_Doc_Ref=Innovation_talks_1_Galaxy_VS
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'

@@ -13572,3 +13572,87 @@ sources:
       disregarded by operator decision 2026-08-30 (local training use, no redistribution);
       assets 200 application/pdf
     rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-services-for-cpg-ebrochure
+    title: 'Schneider Electric (WW download center): files — Services for CPG ebrochure'
+    url: https://download.se.com/files?p_Doc_Ref=Services_for_CPG_ebrochure
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-product-eol-galaxyvs-instr
+    title: 'Schneider Electric (WW download center): files — Product EOL GalaxyVS Instr'
+    url: https://download.se.com/files?p_Doc_Ref=Product_EOL_GalaxyVS_Instr
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-prismaflow-brochure
+    title: 'Schneider Electric (WW download center): files — PrismaFlow Brochure'
+    url: https://download.se.com/files?p_Doc_Ref=PrismaFlow_Brochure
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-pas-63680-cpm16119
+    title: 'Schneider Electric (WW download center): files — PAS 63680 CPM16119'
+    url: https://download.se.com/files?p_Doc_Ref=PAS_63680_CPM16119
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-pas-63680-cpm16106
+    title: 'Schneider Electric (WW download center): files — PAS 63680 CPM16106'
+    url: https://download.se.com/files?p_Doc_Ref=PAS_63680_CPM16106
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-modbus-map-galaxy-vs-px
+    title: 'Schneider Electric (WW download center): files — Modbus Map Galaxy VS PX'
+    url: https://download.se.com/files?p_Doc_Ref=Modbus_Map_Galaxy_VS_PX
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'

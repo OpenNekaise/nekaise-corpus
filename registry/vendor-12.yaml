@@ -12824,3 +12824,62 @@ sources:
       disregarded by operator decision 2026-08-30 (local training use, no redistribution);
       assets 200 application/pdf
     rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-se-edge-it-healthcare-dell
+    title: 'Schneider Electric (WW download center): files — SE Edge IT Healthcare DELL'
+    url: https://download.se.com/files?p_Doc_Ref=SE-Edge-IT-Healthcare_DELL
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-modbus-register-symmetra-px
+    title: 'Schneider Electric (WW download center): files — Modbus Register Symmetra
+      PX'
+    url: https://download.se.com/files?p_Doc_Ref=Modbus_Register_Symmetra_PX
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-modbus-register-map-inrow-acs
+    title: 'Schneider Electric (WW download center): files — Modbus Register Map InRow
+      ACS'
+    url: https://download.se.com/files?p_Doc_Ref=Modbus_Register_Map_InRow_ACS
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-innovation-talks-7-indust-edge
+    title: 'Schneider Electric (WW download center): files — Innovation talks 7 Indust
+      Edge'
+    url: https://download.se.com/files?p_Doc_Ref=Innovation_talks_7_Indust_Edge
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
