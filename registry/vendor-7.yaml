@@ -13750,3 +13750,32 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-allgood-plc-3502d-modric-lever-han-3
+    title: 'SpecifiedBy (UK manufacturer documents): allgood-plc_3502d-modric-lever-handles-on-concealed-quadaxial-fixing-roses_operations_5_34babe38-ea9e-4330-9f'
+    url: https://www.specifiedby.com/allgood-plc/3502d-modric-lever-handles-on-concealed-quadaxial-fixing-roses/allgood-plc_3502d-modric-lever-handles-on-concealed-quadaxial-fixing-roses_operations_5_34babe38-ea9e-4330-9fd9-89a42dc6c48f.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-nbs-spec-for-soundblock-acoustic-doorsets
+    title: 'SpecifiedBy (UK manufacturer documents): nbs-spec-for-soundblock-acoustic-doorsets.pdf
+      (ahmarra soundcore acoustic doorsets — nbs spec for soundblock '
+    url: https://www.specifiedby.com/ahmarra-door-solutions-ltd/ahmarra-soundcore-acoustic-doorsets/nbs-spec-for-soundblock-acoustic-doorsets.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
