@@ -13221,3 +13221,63 @@ sources:
     license_evidence: permits downloading, copying and/or printing of pages for strictly
       personal and non-commercial use; no automation clause
     rights_verified_at: '2026-08-28'
+  - id: vnd-jci-bas-content-1254
+    title: 'Johnson Controls Metasys/BAS docs: VMS-1655M Fume Hood Monitor Product Bulletin
+      (S1XENJdQ6XcON7GElmu6sw — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/S1XENJdQ6XcON7GElmu6sw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-1372
+    title: 'Johnson Controls Metasys/BAS docs: PEAK Economizer Advanced Model Product
+      Data and Installation Guide PK-ECO1011-0 (RI3gwDPA7~cMpFKyaz3PgA — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/RI3gwDPA7~cMpFKyaz3PgA/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-1533
+    title: 'Johnson Controls Metasys/BAS docs: HE-69xx Surface-Mount Duct Humidity/Temperature
+      Sensors Installation Guide (fHa 6CsRlHFPiXnOzv~tGw — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/fHa_6CsRlHFPiXnOzv~tGw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-1565
+    title: 'Johnson Controls Metasys/BAS docs: Metasys Integrator Cummins/Onan Application
+      Application Note (~7 Dwr0pQHm9mVkk3npWWQ — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/~7_Dwr0pQHm9mVkk3npWWQ/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
