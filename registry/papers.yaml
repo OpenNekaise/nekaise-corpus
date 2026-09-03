@@ -66792,3 +66792,12 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-hydro-wind-and-solar-power-as-a-base-for-a-100
+    title: Hydro, wind and solar power as a base for a 100% renewable energy supply
+      for South and Central America
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0173820&type=printable
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
