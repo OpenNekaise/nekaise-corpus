@@ -13475,3 +13475,31 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-taco-301-005-1635-1750
+    title: 'Taco Comfort Solutions: FileLibrary — 301 005 1635 1750'
+    url: https://www.tacocomfort.com/documents/FileLibrary/301-005_1635-1750.pdf
+    source: vendor_taco
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.tacocomfort.com/terms-of-use/
+    license_evidence: ToS bars automated access — declared prohibition disregarded by
+      operator decision 2026-08-30 (local training use, no redistribution); robots permissive
+      for /documents/FileLibrary/
+    rights_verified_at: '2026-08-30'
+  - id: vnd-taco-100-100
+    title: 'Taco Comfort Solutions: FileLibrary — 100 100'
+    url: https://www.tacocomfort.com/documents/FileLibrary/100-100.pdf
+    source: vendor_taco
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.tacocomfort.com/terms-of-use/
+    license_evidence: ToS bars automated access — declared prohibition disregarded by
+      operator decision 2026-08-30 (local training use, no redistribution); robots permissive
+      for /documents/FileLibrary/
+    rights_verified_at: '2026-08-30'
