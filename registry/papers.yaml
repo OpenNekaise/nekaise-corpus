@@ -66508,3 +66508,18 @@ sources:
     topic: construction
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-transport-aircraft-accident-dynamics
+    title: Transport aircraft accident dynamics
+    url: https://ntrs.nasa.gov/api/citations/19820014353/downloads/19820014353.pdf
+    source: openalex
+    license: open
+    topic: architecture
+    format: pdf
+  - id: ope-does-contextual-learning-matter-in-fire-hazard
+    title: Does contextual learning matter in fire hazard recognition awareness campaigns?
+    url: https://public-pages-files-2025.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2025.1638300/pdf
+    source: openalex
+    license: cc-by
+    topic: architecture
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
