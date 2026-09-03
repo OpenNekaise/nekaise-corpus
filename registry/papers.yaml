@@ -66810,3 +66810,27 @@ sources:
     topic: building_energy
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-soil-thermal-response-to-temperature-cycles-an
+    title: Soil Thermal Response to Temperature Cycles and End Boundary Conditions of
+      Energy Piles
+    url: https://escholarship.org/content/qt8b54n4v0/qt8b54n4v0.pdf?t=r9k33k
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: ope-novel-energy-system-design-workflow-for-zero-c
+    title: Novel Energy System Design Workflow for Zero-Carbon Energy District Development
+    url: https://www.frontiersin.org/articles/10.3389/frsc.2021.662822/pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-outcomes-from-international-workshop-on-thermo
+    title: 'Outcomes from international workshop on thermoactive geotechnical systems
+      for near-surface geothermal energy: from research to practice'
+    url: https://escholarship.org/content/qt0z50m4mq/qt0z50m4mq.pdf
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
