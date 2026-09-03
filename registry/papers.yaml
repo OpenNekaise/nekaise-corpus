@@ -66614,3 +66614,29 @@ sources:
     license: open
     topic: infrastructure
     format: pdf
+  - id: ope-global-water-transfer-megaprojects-a-potential
+    title: 'Global Water Transfer Megaprojects: A Potential Solution for the Water-Food-Energy
+      Nexus?'
+    url: https://www.frontiersin.org/articles/10.3389/fenvs.2018.00150/pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-a-heat-vulnerability-index-spatial-patterns-of
+    title: 'A Heat Vulnerability Index: Spatial Patterns of Exposure, Sensitivity and
+      Adaptive Capacity for Santiago de Chile'
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0162464&type=printable
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-nature-based-solutions-in-the-urban-context-te
+    title: 'Nature-based solutions in the urban context: terminology, classification
+      and scoring for urban challenges and ecosystem services'
+    url: https://arxiv.org/pdf/2105.07814
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf

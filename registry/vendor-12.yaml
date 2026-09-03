@@ -12737,3 +12737,17 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-taco-301-s403-sks-1507d-1760-2hp
+    title: 'Taco Comfort Solutions: FileLibrary — 301 S403 SKS 1507D 1760 2HP'
+    url: https://www.tacocomfort.com/documents/FileLibrary/301-S403_SKS_1507D_1760_2HP.pdf
+    source: vendor_taco
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.tacocomfort.com/terms-of-use/
+    license_evidence: ToS bars automated access — declared prohibition disregarded by
+      operator decision 2026-08-30 (local training use, no redistribution); robots permissive
+      for /documents/FileLibrary/
+    rights_verified_at: '2026-08-30'
