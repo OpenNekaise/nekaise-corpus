@@ -13780,3 +13780,33 @@ sources:
       operator decision 2026-08-30 (local training use, no redistribution); robots permissive
       for /documents/FileLibrary/
     rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-dti-type-3
+    title: 'SpecifiedBy (UK manufacturer documents): dti-type-3.pdf (dti pendant lights
+      — dti type 3)'
+    url: https://www.specifiedby.com/fagerhult/dti-pendant-lights/dti-type-3.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-installation-instruction-qri-qro-led-09-3719fa81
+    title: 'SpecifiedBy (UK manufacturer documents): installation-instruction-qri-qro-led-09_3719fa81.pdf
+      (qri359 led wall luminaires recessed ip55 class i ik10 m'
+    url: https://www.specifiedby.com/fagerhult/qri359-led-wall-luminaires-recessed-ip55-class-i-ik10-marine-grade-die-cast-aluminium-alloy/installation-instruction-qri-qro-led-09_3719fa81.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
