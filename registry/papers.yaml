@@ -66558,3 +66558,27 @@ sources:
     license: open
     topic: architecture
     format: pdf
+  - id: ope-insurgent-citizenship-in-an-era-of-global-urba
+    title: Insurgent Citizenship in an Era of Global Urban Peripheries
+    url: https://escholarship.org/content/qt1vw9w4cn/qt1vw9w4cn.pdf?t=qmoeug
+    source: openalex
+    license: open
+    topic: architecture
+    format: pdf
+  - id: ope-large-eddy-simulation-current-capabilities-rec
+    title: 'Large-Eddy Simulation: Current Capabilities, Recommended Practices, and
+      Future Research'
+    url: https://ntrs.nasa.gov/api/citations/20090027875/downloads/20090027875.pdf
+    source: openalex
+    license: open
+    topic: architecture
+    format: pdf
+  - id: ope-gas-fermentation-a-flexible-platform-for-comme
+    title: Gas Fermentation—A Flexible Platform for Commercial Scale Production of Low-Carbon-Fuels
+      and Chemicals from Waste and Renewable Feedstocks
+    url: https://www.frontiersin.org/articles/10.3389/fmicb.2016.00694/pdf
+    source: openalex
+    license: cc-by
+    topic: architecture
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
