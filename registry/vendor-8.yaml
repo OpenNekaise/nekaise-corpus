@@ -13540,3 +13540,17 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-taco-0026e-iom-102-566
+    title: 'Taco Comfort Solutions: FileLibrary — 0026e IOM 102 566'
+    url: https://www.tacocomfort.com/documents/FileLibrary/0026e_IOM_102-566.pdf
+    source: vendor_taco
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.tacocomfort.com/terms-of-use/
+    license_evidence: ToS bars automated access — declared prohibition disregarded by
+      operator decision 2026-08-30 (local training use, no redistribution); robots permissive
+      for /documents/FileLibrary/
+    rights_verified_at: '2026-08-30'
