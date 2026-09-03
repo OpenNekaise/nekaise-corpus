@@ -124,3 +124,153 @@ def test_post_recovery_corpus_check_reports_drift(monkeypatch):
         assert "1 unprovenanced file" in str(exc)
     else:
         raise AssertionError("post-recovery corpus drift was accepted")
+
+
+def write_history(path, *rows):
+    path.write_text("".join(
+        row + "\n" if isinstance(row, str) else json.dumps(row) + "\n"
+        for row in rows
+    ))
+
+
+def test_backend_health_handles_empty_history(tmp_path):
+    summary = maintainer.summarize_backend_health(
+        tmp_path / "missing.jsonl",
+        {"finder": {"enabled": True}},
+    )
+
+    assert summary == {
+        "window_limit": 40,
+        "completed_rounds": 0,
+        "total_accepted": 0,
+        "streaks_scope": "all_completed_rounds",
+        "backends": {
+            "finder": {
+                "observed_rounds": 0,
+                "accepted": 0,
+                "accepted_share": None,
+                "consecutive_degraded_rounds": 0,
+                "consecutive_zero_accepted_rounds": 0,
+                "last_nonzero_at": None,
+                "rotates": True,
+                "pointer_advanced_in_window": False,
+                "last_rotation": None,
+                "last_hold_reason": None,
+            }
+        },
+    }
+
+
+def test_backend_health_streaks_reset_on_success(tmp_path):
+    history = tmp_path / "history.jsonl"
+    write_history(
+        history,
+        {"run_id": "one", "event": "discovery_degraded", "failures": {"finder": 1}},
+        {"run_id": "one", "event": "discovery_merged", "at": "2026-09-01T00:01:00Z", "accepted": {"finder": 0}},
+        {"run_id": "one", "event": "rotation_held", "at": "2026-09-01T00:01:00Z", "backend": "finder", "reason": "finder_requested"},
+        {"run_id": "one", "event": "run_completed", "at": "2026-09-01T00:02:00Z"},
+        {"run_id": "two", "event": "discovery_merged", "at": "2026-09-01T01:01:00Z", "accepted": {"finder": 7}},
+        {"run_id": "two", "event": "rotation_advanced", "at": "2026-09-01T01:01:00Z", "backend": "finder"},
+        {"run_id": "two", "event": "run_completed", "at": "2026-09-01T01:02:00Z"},
+    )
+
+    finder = maintainer.summarize_backend_health(
+        history, {"finder": {"enabled": True}}
+    )["backends"]["finder"]
+
+    assert finder["consecutive_degraded_rounds"] == 0
+    assert finder["consecutive_zero_accepted_rounds"] == 0
+    assert finder["last_nonzero_at"] == "2026-09-01T01:01:00Z"
+    assert finder["pointer_advanced_in_window"] is True
+    assert finder["last_rotation"]["status"] == "advanced"
+    assert finder["last_hold_reason"] == "finder_requested"
+
+
+def test_backend_health_skips_malformed_lines(tmp_path):
+    history = tmp_path / "history.jsonl"
+    write_history(
+        history,
+        "not json",
+        "[]",
+        {"run_id": "one", "event": "discovery_merged", "accepted": {"finder": 0}},
+        {"run_id": "one", "event": "run_completed", "at": "2026-09-01T00:02:00Z"},
+    )
+
+    summary = maintainer.summarize_backend_health(
+        history, {"finder": {"enabled": True}}
+    )
+
+    assert summary["completed_rounds"] == 1
+    assert summary["backends"]["finder"]["consecutive_zero_accepted_rounds"] == 1
+
+
+def test_backend_health_ignores_unselected_and_reports_unobserved_backend(tmp_path):
+    history = tmp_path / "history.jsonl"
+    write_history(
+        history,
+        {"run_id": "one", "event": "discovery_merged", "accepted": {"disabled": 9}},
+        {"run_id": "one", "event": "run_completed", "at": "2026-09-01T00:02:00Z"},
+    )
+
+    summary = maintainer.summarize_backend_health(
+        history,
+        {"disabled": {"enabled": False}, "new": {"enabled": True, "rotation": False}},
+    )
+
+    assert set(summary["backends"]) == {"new"}
+    assert summary["total_accepted"] == 9
+    assert summary["backends"]["new"]["observed_rounds"] == 0
+    assert summary["backends"]["new"]["rotates"] is False
+
+
+def test_backend_health_retains_last_nonzero_before_concentration_window(tmp_path):
+    history = tmp_path / "history.jsonl"
+    write_history(
+        history,
+        {"run_id": "one", "event": "discovery_merged", "at": "2026-09-01T00:01:00Z", "accepted": {"finder": 4}},
+        {"run_id": "one", "event": "run_completed", "at": "2026-09-01T00:02:00Z"},
+        {"run_id": "two", "event": "discovery_merged", "accepted": {"finder": 0}},
+        {"run_id": "two", "event": "run_completed", "at": "2026-09-01T01:02:00Z"},
+        {"run_id": "three", "event": "discovery_merged", "accepted": {"finder": 0}},
+        {"run_id": "three", "event": "run_completed", "at": "2026-09-01T02:02:00Z"},
+    )
+
+    summary = maintainer.summarize_backend_health(
+        history, {"finder": {"enabled": True}}, window=1
+    )
+    finder = summary["backends"]["finder"]
+
+    assert summary["completed_rounds"] == 1
+    assert summary["total_accepted"] == 0
+    assert finder["consecutive_zero_accepted_rounds"] == 2
+    assert finder["last_nonzero_at"] == "2026-09-01T00:01:00Z"
+
+
+def test_repo_snapshot_includes_backend_health(tmp_path, monkeypatch):
+    registry_dir = tmp_path / "registry"
+    logs = tmp_path / "logs"
+    workspace = tmp_path / "workspace"
+    registry_dir.mkdir()
+    logs.mkdir()
+    workspace.mkdir()
+    (registry_dir / "backends.json").write_text(json.dumps({
+        "finder": {"enabled": True},
+    }))
+    write_history(
+        logs / "run_history.jsonl",
+        {"run_id": "one", "event": "discovery_merged", "accepted": {"finder": 3}},
+        {"run_id": "one", "event": "run_completed", "at": "2026-09-01T00:02:00Z"},
+    )
+    monkeypatch.setattr(maintainer, "ROOT", tmp_path)
+    monkeypatch.setattr(maintainer, "LOGS", logs)
+    monkeypatch.setattr(maintainer, "WORKSPACE", workspace)
+    monkeypatch.setattr(
+        maintainer,
+        "git",
+        lambda *args: (0, "0 0" if args[0] == "rev-list" else "main"),
+    )
+
+    snapshot = maintainer.repo_snapshot("exit=0")
+
+    assert snapshot["backend_health"]["total_accepted"] == 3
+    assert snapshot["backend_health"]["backends"]["finder"]["accepted_share"] == 1.0

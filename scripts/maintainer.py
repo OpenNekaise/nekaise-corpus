@@ -17,6 +17,8 @@ import re
 import shutil
 import subprocess
 import sys
+from collections import deque
+from contextlib import nullcontext
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -182,6 +184,173 @@ def verify_recovered_corpus() -> None:
     raise RuntimeError(f"post-recovery corpus check failed (exit {result.returncode}){detail}")
 
 
+def summarize_backend_health(
+    history: Path,
+    backend_config: dict[str, Any],
+    *,
+    window: int = 40,
+) -> dict[str, Any]:
+    """Summarize recent completed discovery rounds without scanning corpus metadata.
+
+    This is observation only: the result is included in the maintainer prompt and never feeds
+    backend enablement, rotation, or growth-block decisions. Malformed local ledger lines are
+    ignored so one damaged diagnostic event cannot prevent maintenance triage.
+    """
+    window = max(1, window)
+    completed: deque[dict[str, Any]] = deque(maxlen=window)
+    pending: dict[str, dict[str, Any]] = {}
+    lifetime: dict[str, dict[str, Any]] = {}
+    try:
+        lines = history.open(errors="replace")
+    except OSError:
+        lines = nullcontext(())
+    with lines as handle:
+        for line in handle:
+            try:
+                row = json.loads(line)
+            except (json.JSONDecodeError, TypeError):
+                continue
+            if not isinstance(row, dict):
+                continue
+            run_id = row.get("run_id")
+            event = row.get("event")
+            if not isinstance(run_id, str) or not isinstance(event, str):
+                continue
+            if event not in {
+                "discovery_merged",
+                "discovery_degraded",
+                "rotation_advanced",
+                "rotation_held",
+                "run_completed",
+                "run_failed",
+                "run_recovered",
+            }:
+                continue
+            state = pending.setdefault(run_id, {
+                "accepted": {},
+                "degraded": set(),
+                "rotations": [],
+                "merged_at": None,
+                "completed_at": None,
+            })
+            if event == "discovery_merged":
+                accepted = row.get("accepted")
+                if isinstance(accepted, dict):
+                    state["accepted"] = {
+                        name: count
+                        for name, count in accepted.items()
+                        if isinstance(name, str)
+                        and isinstance(count, int)
+                        and not isinstance(count, bool)
+                        and count >= 0
+                    }
+                if isinstance(row.get("at"), str):
+                    state["merged_at"] = row["at"]
+            elif event == "discovery_degraded":
+                failures = row.get("failures")
+                if isinstance(failures, dict):
+                    state["degraded"].update(name for name in failures if isinstance(name, str))
+            elif event in {"rotation_advanced", "rotation_held"}:
+                backend = row.get("backend")
+                if isinstance(backend, str):
+                    rotation = {
+                        "status": "advanced" if event == "rotation_advanced" else "held",
+                        "at": row.get("at") if isinstance(row.get("at"), str) else None,
+                    }
+                    if event == "rotation_held" and isinstance(row.get("reason"), str):
+                        rotation["reason"] = row["reason"]
+                    state["rotations"].append((backend, rotation))
+            elif event == "run_completed":
+                state["completed_at"] = row.get("at") if isinstance(row.get("at"), str) else None
+                for backend in state["accepted"].keys() | state["degraded"]:
+                    health = lifetime.setdefault(backend, {
+                        "degraded_streak": 0,
+                        "zero_streak": 0,
+                        "last_nonzero_at": None,
+                        "last_rotation": None,
+                        "last_hold_reason": None,
+                    })
+                    if backend in state["degraded"]:
+                        health["degraded_streak"] += 1
+                    else:
+                        health["degraded_streak"] = 0
+                    if backend in state["accepted"]:
+                        count = state["accepted"][backend]
+                        health["zero_streak"] = health["zero_streak"] + 1 if count == 0 else 0
+                        if count > 0:
+                            health["last_nonzero_at"] = (
+                                state["merged_at"] or state["completed_at"]
+                            )
+                for backend, rotation in state["rotations"]:
+                    health = lifetime.setdefault(backend, {
+                        "degraded_streak": 0,
+                        "zero_streak": 0,
+                        "last_nonzero_at": None,
+                        "last_rotation": None,
+                        "last_hold_reason": None,
+                    })
+                    health["last_rotation"] = rotation
+                    if rotation["status"] == "held":
+                        health["last_hold_reason"] = rotation.get("reason")
+                completed.append(state)
+                pending.pop(run_id, None)
+            elif event in {"run_failed", "run_recovered"}:
+                pending.pop(run_id, None)
+
+    selected = {
+        name: config
+        for name, config in backend_config.items()
+        if isinstance(name, str) and isinstance(config, dict) and config.get("enabled") is True
+    }
+    total_accepted = sum(
+        count
+        for run in completed
+        for count in run["accepted"].values()
+    )
+    backends: dict[str, dict[str, Any]] = {}
+    for name in sorted(selected):
+        observed = [
+            run for run in completed
+            if name in run["accepted"] or name in run["degraded"]
+        ]
+        rotations = [
+            rotation
+            for run in completed
+            for backend, rotation in run["rotations"]
+            if backend == name
+        ]
+        accepted_count = sum(run["accepted"].get(name, 0) for run in completed)
+        config = selected[name]
+        health = lifetime.get(name, {
+            "degraded_streak": 0,
+            "zero_streak": 0,
+            "last_nonzero_at": None,
+            "last_rotation": None,
+            "last_hold_reason": None,
+        })
+        backends[name] = {
+            "observed_rounds": len(observed),
+            "accepted": accepted_count,
+            "accepted_share": round(accepted_count / total_accepted, 4) if total_accepted else None,
+            "consecutive_degraded_rounds": health["degraded_streak"],
+            "consecutive_zero_accepted_rounds": health["zero_streak"],
+            "last_nonzero_at": health["last_nonzero_at"],
+            "rotates": config.get("rotation", True) is not False,
+            "pointer_advanced_in_window": any(
+                rotation["status"] == "advanced" for rotation in rotations
+            ),
+            "last_rotation": health["last_rotation"],
+            "last_hold_reason": health["last_hold_reason"],
+        }
+    return {
+        "window_limit": window,
+        "completed_rounds": len(completed),
+        "total_accepted": total_accepted,
+        "streaks_scope": "all_completed_rounds",
+        "backends": backends,
+    }
+
+
 def repo_snapshot(
     fetch_result: str,
     *,
@@ -203,6 +372,11 @@ def repo_snapshot(
     history = LOGS / "run_history.jsonl"
     recent_events = history.read_text(errors="replace").splitlines()[-30:] if history.exists() else []
     recent_logs = sorted(LOGS.glob("dig-*.log"), key=lambda path: path.stat().st_mtime)[-3:]
+    try:
+        backend_config = json.loads((ROOT / "registry" / "backends.json").read_text())
+        backend_health = summarize_backend_health(history, backend_config)
+    except (OSError, TypeError, ValueError, json.JSONDecodeError) as exc:
+        backend_health = {"error": f"could not summarize backend health: {exc}"}
     return {
         "checked_at": utc_now().isoformat(),
         "branch": branch,
@@ -213,6 +387,7 @@ def repo_snapshot(
         "automatic_recovery": automatic_recovery,
         "automatic_recovery_error": automatic_recovery_error,
         "fetch_result": fetch_result[-2000:],
+        "backend_health": backend_health,
         "recent_run_events": recent_events,
         "recent_dig_logs": [str(path.relative_to(ROOT)) for path in recent_logs],
     }
