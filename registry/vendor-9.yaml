@@ -8439,21 +8439,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
-  - id: vnd-jci-chillers-content-403
-    title: 'Johnson Controls / YORK chillers docs: YK Style E Replacement Microboards
-      - OptiView Control Center Literature Supplement, Control Panel (icbeaMa7WyYG'
-    url: https://docs.johnsoncontrols.com/chillers/api/khub/documents/icbeaMa7WyYGXSRLOzAcGA/content
-    source: vendor_jci
-    license: open
-    topic: equipment_systems
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
-    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
-    rights_verified_at: '2026-08-30'
   - id: vnd-jci-chillers-content-434
     title: 'Johnson Controls / YORK chillers docs: YZ Style A Field Connections Water
       Starter Pumps, Control Panel (WPKQ3HJSx9CwmUUbN7slaQ — content)'
@@ -14133,6 +14118,21 @@ sources:
     source: vendor_jci
     license: open
     topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-chillers-content-1035
+    title: 'Johnson Controls / YORK chillers docs: YCAV, YCIV Software Version V12 (BPFvStvS~ovV1RX5
+      d9Rgg — content)'
+    url: https://docs.johnsoncontrols.com/chillers/api/khub/documents/BPFvStvS~ovV1RX5_d9Rgg/content
+    source: vendor_jci
+    license: open
+    topic: equipment_systems
     format: pdf
     language: en
     document_type: product-literature

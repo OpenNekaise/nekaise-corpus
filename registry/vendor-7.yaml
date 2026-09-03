@@ -8669,21 +8669,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
-  - id: vnd-jci-chillers-content-384
-    title: 'Johnson Controls / YORK chillers docs: YT Style J Software Enhancement,
-      Control Panel (2 JWIEeTKJ05k7Dyg88zFw — content)'
-    url: https://docs.johnsoncontrols.com/chillers/api/khub/documents/2_JWIEeTKJ05k7Dyg88zFw/content
-    source: vendor_jci
-    license: open
-    topic: equipment_systems
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
-    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
-    rights_verified_at: '2026-08-30'
   - id: vnd-jci-chillers-content-477
     title: 'Johnson Controls / YORK chillers docs: YK Style E Field Control Modifications
       - Includes P Compressors, Control Panel (SYqfMS9syjF2mhnnIv2j5A — conten'
@@ -13915,6 +13900,21 @@ sources:
     source: vendor_jci
     license: open
     topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-chillers-content-1041
+    title: 'Johnson Controls / YORK chillers docs: Failure to Perform Long-Term Storage
+      Requirements (A5GhvRtfG7beqJ9VjgmBqQ — content)'
+    url: https://docs.johnsoncontrols.com/chillers/api/khub/documents/A5GhvRtfG7beqJ9VjgmBqQ/content
+    source: vendor_jci
+    license: open
+    topic: equipment_systems
     format: pdf
     language: en
     document_type: product-literature
