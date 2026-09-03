@@ -38,7 +38,7 @@
   },
   "find_patents": {
     "flag": "--bucket",
-    "next": "1988-W24",
+    "next": "1988-W23",
     "skip": [
       [
         "2026-W19",
@@ -138,7 +138,7 @@
   },
   "find_openalex": {
     "flag": "--query-cursor",
-    "next": 659,
+    "next": 660,
     "step": 1,
     "note": "RE-AIMED 2026-08-26 after OpenAlex introduced usage pricing: anonymous access has 100 search requests/day, while the old all-query run made 105 requests and exhausted the budget. One query per round stays below the limit at the live ~72-round/day maximum; the flattened cursor advances across the frozen 105-query list, then continues at page 2 and deeper. Any query-list change requires a reviewed cursor migration."
   },
