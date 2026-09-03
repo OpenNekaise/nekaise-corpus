@@ -13093,3 +13093,31 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-usg-6fd7ba05-5713-5b05-9c69-ef62d44f40df
+    title: 'USG (file library): assets — 6fd7ba05 5713 5b05 9c69 ef62d44f40df'
+    url: https://www.usg.com/api/download-center/v1/assets/6fd7ba05-5713-5b05-9c69-ef62d44f40df?download=true&country=us
+    source: vendor_usg
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.usg.com/en-US/legal
+    license_evidence: Content-Signal ai-train=no + AI-bot Disallow — declared prohibition
+      disregarded by operator decision 2026-08-30 (local training use, no redistribution);
+      assets 200 application/pdf
+    rights_verified_at: '2026-08-30'
+  - id: vnd-usg-bcc0a04d-2997-5149-aede-8cdb54ac2a82
+    title: 'USG (file library): assets — bcc0a04d 2997 5149 aede 8cdb54ac2a82'
+    url: https://www.usg.com/api/download-center/v1/assets/bcc0a04d-2997-5149-aede-8cdb54ac2a82?download=true&country=us
+    source: vendor_usg
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.usg.com/en-US/legal
+    license_evidence: Content-Signal ai-train=no + AI-bot Disallow — declared prohibition
+      disregarded by operator decision 2026-08-30 (local training use, no redistribution);
+      assets 200 application/pdf
+    rights_verified_at: '2026-08-30'

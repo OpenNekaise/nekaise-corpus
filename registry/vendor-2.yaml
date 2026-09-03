@@ -13628,3 +13628,17 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-usg-bb5f23aa-05b0-52f7-ac77-79ebb31ac489
+    title: 'USG (file library): assets — bb5f23aa 05b0 52f7 ac77 79ebb31ac489'
+    url: https://www.usg.com/api/download-center/v1/assets/bb5f23aa-05b0-52f7-ac77-79ebb31ac489?download=true&country=us
+    source: vendor_usg
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.usg.com/en-US/legal
+    license_evidence: Content-Signal ai-train=no + AI-bot Disallow — declared prohibition
+      disregarded by operator decision 2026-08-30 (local training use, no redistribution);
+      assets 200 application/pdf
+    rights_verified_at: '2026-08-30'
