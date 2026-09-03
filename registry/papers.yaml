@@ -66843,3 +66843,29 @@ sources:
     topic: building_energy
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-biologically-relevant-lighting-an-industry-per
+    title: 'Biologically Relevant Lighting: An Industry Perspective'
+    url: https://www.frontiersin.org/articles/10.3389/fnins.2021.637221/pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-on-optimal-and-near-optimal-shapes-of-external
+    title: On optimal and near-optimal shapes of external shading of windows in apartment
+      buildings
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0212710&type=printable
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-occupant-centered-optimization-framework-to-ev
+    title: Occupant-centered optimization framework to evaluate and design new dynamic
+      shading typologies
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0231554&type=printable
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
