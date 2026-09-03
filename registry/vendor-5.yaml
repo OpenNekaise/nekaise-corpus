@@ -7373,20 +7373,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution)
     rights_verified_at: '2026-08-30'
-  - id: vnd-schneider-ww-spd-wp100-en
-    title: 'Schneider Electric (WW download center): files — SPD WP100 EN'
-    url: https://download.se.com/files?p_Doc_Ref=SPD_WP100_EN
-    source: vendor_schneider
-    license: open
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
-    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution)
-    rights_verified_at: '2026-08-30'
   - id: vnd-schneider-ww-sewpseniortalentprogram
     title: 'Schneider Electric (WW download center): files — SEWPSeniorTalentProgram'
     url: https://download.se.com/files?p_Doc_Ref=SEWPSeniorTalentProgram
@@ -13603,4 +13589,75 @@ sources:
     license_evidence: ToS bars automated access — declared prohibition disregarded by
       operator decision 2026-08-30 (local training use, no redistribution); robots permissive
       for /documents/FileLibrary/
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-calculate-itengery-consumption
+    title: 'Schneider Electric (WW download center): files — Calculate ITEngery Consumption'
+    url: https://download.se.com/files?p_Doc_Ref=Calculate_ITEngery_Consumption
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxurepowerprocess
+    title: 'Schneider Electric (WW download center): files — EcoStruxurePowerProcess'
+    url: https://download.se.com/files?p_Doc_Ref=EcoStruxurePowerProcess
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-ecostruxuregridadvisor-ss
+    title: 'Schneider Electric (WW download center): files — EcostruxureGridAdvisor
+      SS'
+    url: https://download.se.com/files?p_Doc_Ref=EcostruxureGridAdvisor_SS
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-cpp-nam
+    title: 'Schneider Electric (WW download center): files — CPP NAM'
+    url: https://download.se.com/files?p_Doc_Ref=CPP_NAM
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-schneider-ww-co2-methodology-guide
+    title: 'Schneider Electric (WW download center): files — CO2 methodology guide'
+    url: https://download.se.com/files?p_Doc_Ref=CO2_methodology_guide
+    source: vendor_schneider
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.se.com/ww/en/about-us/legal/terms-of-use.jsp
+    license_evidence: personal-use ToS; download-api paths robots-disallowed — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution)
     rights_verified_at: '2026-08-30'
