@@ -67388,3 +67388,12 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
+  - id: ope-biohydrogen-production-from-biomass-sources-me
+    title: 'Biohydrogen Production From Biomass Sources: Metabolic Pathways and Economic
+      Analysis'
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2021.753878/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
