@@ -67137,3 +67137,18 @@ sources:
     topic: architecture
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-urban-spatial-order-street-network-orientation
+    title: 'Urban spatial order: street network orientation, configuration, and entropy'
+    url: https://arxiv.org/pdf/1808.00600
+    source: openalex
+    license: open
+    topic: urban
+    format: pdf
+  - id: ope-does-size-matter-scaling-of-co2-emissions-and-
+    title: Does Size Matter? Scaling of CO2 Emissions and U.S. Urban Areas
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0064727&type=printable
+    source: openalex
+    license: cc-by
+    topic: urban
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
