@@ -15058,3 +15058,32 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-taco-sci1509d-3500rpm-15hp-odp-submittal-301-s600
+    title: 'Taco Comfort Solutions: FileLibrary — SCI1509D 3500RPM 15HP ODP Submittal
+      301 S600'
+    url: https://www.tacocomfort.com/documents/FileLibrary/SCI1509D_3500RPM_15HP_ODP_Submittal_301-S600.pdf
+    source: vendor_taco
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.tacocomfort.com/terms-of-use/
+    license_evidence: ToS bars automated access — declared prohibition disregarded by
+      operator decision 2026-08-30 (local training use, no redistribution); robots permissive
+      for /documents/FileLibrary/
+    rights_verified_at: '2026-08-30'
+  - id: vnd-taco-atv12-bbv28581
+    title: 'Taco Comfort Solutions: FileLibrary — ATV12 bbv28581'
+    url: https://www.tacocomfort.com/documents/FileLibrary/ATV12_bbv28581.pdf
+    source: vendor_taco
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.tacocomfort.com/terms-of-use/
+    license_evidence: ToS bars automated access — declared prohibition disregarded by
+      operator decision 2026-08-30 (local training use, no redistribution); robots permissive
+      for /documents/FileLibrary/
+    rights_verified_at: '2026-08-30'
