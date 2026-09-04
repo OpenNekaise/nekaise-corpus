@@ -67120,3 +67120,20 @@ sources:
     topic: architecture
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-osmnx-new-methods-for-acquiring-constructing-a
+    title: 'OSMnx: New Methods for Acquiring, Constructing, Analyzing, and Visualizing
+      Complex Street Networks'
+    url: https://escholarship.org/content/qt4720r36p/qt4720r36p.pdf?t=p0llq6
+    source: openalex
+    license: open
+    topic: architecture
+    format: pdf
+  - id: ope-prediction-of-soil-organic-carbon-at-the-europ
+    title: Prediction of Soil Organic Carbon at the European Scale by Visible and Near
+      InfraRed Reflectance Spectroscopy
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0066409&type=printable
+    source: openalex
+    license: cc-by
+    topic: architecture
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'

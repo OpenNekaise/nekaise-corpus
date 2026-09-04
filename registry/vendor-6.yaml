@@ -14367,21 +14367,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-atkinson-kirby-brochure-66159255
-    title: 'SpecifiedBy (UK manufacturer documents): atkinson-kirby-brochure_66159255.pdf
-      (harrow oak engineered parquet flooring par3005 — atkinson kirby brochur'
-    url: https://www.specifiedby.com/atkinson-kirby/harrow-oak-engineered-parquet-flooring-par3005/atkinson-kirby-brochure_66159255.pdf
-    source: vendor_specifiedby
-    license: open
-    topic: building_energy
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.specifiedby.com/terms
-    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); PDFs 200 without challenge
-    rights_verified_at: '2026-08-30'
   - id: vnd-schneider-ww-apc-ds-health-assessment
     title: 'Schneider Electric (WW download center): files — APC DS Health Assessment'
     url: https://download.se.com/files?p_Doc_Ref=APC_DS_Health_Assessment
@@ -14773,4 +14758,19 @@ sources:
     license_evidence: ToS bars automated access — declared prohibition disregarded by
       operator decision 2026-08-30 (local training use, no redistribution); robots permissive
       for /documents/FileLibrary/
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-winter-issue-19-slow-connections-liberton-barns-ldn-design-fe293bb5
+    title: 'SpecifiedBy (UK manufacturer documents): winter-issue-19-slow-connections-liberton-barns-ldn-design_fe293bb5.pdf
+      (manoa oak engineered oak plank con20'
+    url: https://www.specifiedby.com/atkinson-kirby/manoa-oak-engineered-oak-plank-con2001/winter-issue-19-slow-connections-liberton-barns-ldn-design_fe293bb5.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: building_energy
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
