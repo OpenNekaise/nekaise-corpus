@@ -14,6 +14,7 @@ that source to SOURCE_GENRE (one line) when it shows up.
 from __future__ import annotations
 
 import argparse
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -82,8 +83,25 @@ SOURCE_GENRE = {
 # collection. Keep narrowly reviewed id-prefix overrides here so those documents do not disappear
 # into the channel's broader genre. These run before SOURCE_GENRE/PREFIX_GENRE.
 ID_PREFIX_GENRE = [
+    (("doc-ufc-", "doc-ufgs-", "ufc-", "ufgs-"), "codes_standards"),
     (("iag-globalabc-", "iag-global-status-report-for-buildings-and-constructio"),
      "industry_ngo_utility"),
+]
+
+# Some broad government sources also publish the regulations themselves. Match only reviewed,
+# source-specific title families: generic terms such as "building regulations" also occur in
+# consultations, impact assessments, and guidance that belong in the source's broader genre.
+TITLE_GENRE = [
+    (("gov_uk",), re.compile(r"\bApproved Documents?\b", re.IGNORECASE), "codes_standards"),
+    (
+        ("boverket",),
+        re.compile(
+            r"^(?:Boverkets (?:byggregler|konstruktionsregler|föreskrifter)|"
+            r"Allmänna råd|Regelsamling)\b",
+            re.IGNORECASE,
+        ),
+        "codes_standards",
+    ),
 ]
 
 # prefix fallback for the long tail of source buckets (an exact SOURCE_GENRE match wins).
@@ -115,7 +133,12 @@ def genre_of_row(row: dict) -> str | None:
     for prefixes, genre in ID_PREFIX_GENRE:
         if doc_id.startswith(prefixes):
             return genre
-    return genre_of(str(row.get("source") or ""))
+    source = str(row.get("source") or "")
+    title = str(row.get("title") or "")
+    for sources, pattern, genre in TITLE_GENRE:
+        if source in sources and pattern.search(title):
+            return genre
+    return genre_of(source)
 
 
 def status(n: int) -> str:

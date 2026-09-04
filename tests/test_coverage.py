@@ -127,6 +127,59 @@ def test_cross_published_globalabc_rows_use_originating_genre(monkeypatch, capsy
 
 
 @pytest.mark.parametrize(
+    "row",
+    [
+        {
+            "id": "doc-ufc-3-410-01-hvac",
+            "title": "UFC 3-410-01 Heating, Ventilating, and Air Conditioning Systems",
+            "source": "wbdg",
+        },
+        {
+            "id": "guk-fire-safety-approved-document-b",
+            "title": "Fire safety: Approved Document B — Approved Document B, volume 1",
+            "source": "gov_uk",
+        },
+        {
+            "id": "bov-boverkets-byggregler-bbr",
+            "title": "Boverkets byggregler, BBR",
+            "source": "boverket",
+        },
+        {
+            "id": "bov-allmanna-rad-om-andring",
+            "title": "Allmänna råd om ändring av byggnad, BÄR",
+            "source": "boverket",
+        },
+    ],
+)
+def test_reviewed_regulatory_documents_are_codes_and_standards(row):
+    assert coverage_report.genre_of_row(row) == "codes_standards"
+
+
+@pytest.mark.parametrize(
+    "row",
+    [
+        {
+            "id": "guk-future-buildings-standard-consultation",
+            "title": "The Future Buildings Standard consultation document",
+            "source": "gov_uk",
+        },
+        {
+            "id": "bov-budgetunderlag-2026-2028",
+            "title": "Boverkets budgetunderlag 2026–2028",
+            "source": "boverket",
+        },
+        {
+            "id": "other-approved-document",
+            "title": "Approved Document for an unrelated collection",
+            "source": "iea",
+        },
+    ],
+)
+def test_broad_government_material_is_not_misclassified_as_codes(row):
+    assert coverage_report.genre_of_row(row) == "international_bodies"
+
+
+@pytest.mark.parametrize(
     ("genre", "sources"),
     [
         ("research_papers", ("jstage_aij", "modelica_conf", "scielo_scl")),
