@@ -15151,3 +15151,63 @@ sources:
     license_url: https://www.greenheck.com/privacy-statement
     license_evidence: no site Terms of Use found; Privacy Statement only
     rights_verified_at: '2026-08-28'
+  - id: vnd-jci-bas-content-1953
+    title: 'Johnson Controls Metasys/BAS docs: Optimal Start Time: Precool and Preheat
+      Technical Bulletin (9WoVUzEigk5LHY8GZ4TKUQ — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/9WoVUzEigk5LHY8GZ4TKUQ/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2015
+    title: 'Johnson Controls Metasys/BAS docs: Universal Packaging Module (UPM) Product
+      Bulletin (OPF2vAllLWDxp8JlKHB~Nw — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/OPF2vAllLWDxp8JlKHB~Nw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2022
+    title: 'Johnson Controls Metasys/BAS docs: Metasys Integrator Notifier AFP-200 Fire
+      Panel Application Application Note (9Qfj3SlFYfHjj8yJXayVCw — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/9Qfj3SlFYfHjj8yJXayVCw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2104
+    title: 'Johnson Controls Metasys/BAS docs: BACnet System Integrator 2.0 Software
+      Installation Bulletin (qkqVNrYZBzsnIJ2I10bz2g — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/qkqVNrYZBzsnIJ2I10bz2g/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
