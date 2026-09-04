@@ -67152,3 +67152,26 @@ sources:
     topic: urban
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-analyzing-factors-associated-with-fatal-road-c
+    title: 'Analyzing Factors Associated with Fatal Road Crashes: A Machine Learning
+      Approach'
+    url: https://arxiv.org/pdf/2001.10440
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
+  - id: ope-from-traffic-conflict-simulation-to-traffic-cr
+    title: 'From traffic conflict simulation to traffic crash simulation: Introducing
+      traffic safety indicators based on the explicit simulation of potential driv'
+    url: https://arxiv.org/pdf/1808.01878
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
+  - id: ope-enabling-future-sustainability-transitions
+    title: Enabling Future Sustainability Transitions
+    url: https://escholarship.org/content/qt0260s8bv/qt0260s8bv.pdf?t=q9ypmu
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
