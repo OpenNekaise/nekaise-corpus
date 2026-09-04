@@ -14488,3 +14488,48 @@ sources:
     license_evidence: permits downloading, copying and/or printing of pages for strictly
       personal and non-commercial use; no automation clause
     rights_verified_at: '2026-08-28'
+  - id: vnd-jci-bas-content-1717
+    title: 'Johnson Controls Metasys/BAS docs: CO2 Sensor Autozero Process Application
+      Note (j7z~5b5LZSfW6GCCCvyHHw — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/j7z~5b5LZSfW6GCCCvyHHw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-1805
+    title: 'Johnson Controls Metasys/BAS docs: 06 MCL Tool 5.3 User Guide Section 5:
+      Operations (kSWjvFvk2KarWKhVK1TVkw — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/kSWjvFvk2KarWKhVK1TVkw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-1832
+    title: 'Johnson Controls Metasys/BAS docs: Johnson Controls Validated Environments
+      Product Bulletin (SQ0kXplc hRAnTv7zLcq~A — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/SQ0kXplc_hRAnTv7zLcq~A/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
