@@ -15250,3 +15250,57 @@ sources:
       operator decision 2026-08-30 (local training use, no redistribution); robots permissive
       for /documents/FileLibrary/
     rights_verified_at: '2026-08-30'
+  - id: vnd-sauter-859616
+    title: 'SAUTER: TSHK 670...672: Fan-coil room-temperature controller, heating-cooling
+      sequence pdf : 1 MB pdf (ImportPDM)'
+    url: https://www.sauter-controls.com/wp-content/uploads/ImportPDM/859616.pdf
+    source: vendor_sauter
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.sauter-controls.com/en/legal-notice/
+    license_evidence: 'it is permitted to use, copy or distribute the documentation
+      published here: each copy must include a copyright notice; not for commercial
+      purposes'
+    rights_verified_at: '2026-08-28'
+  - id: vnd-sauter-1026907
+    title: 'SAUTER: AVP 242...244: Pneumatic valve drives pdf : 3 MB pdf (ImportPDM)'
+    url: https://www.sauter-controls.com/wp-content/uploads/ImportPDM/1026907.pdf
+    source: vendor_sauter
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.sauter-controls.com/en/legal-notice/
+    license_evidence: 'it is permitted to use, copy or distribute the documentation
+      published here: each copy must include a copyright notice; not for commercial
+      purposes'
+    rights_verified_at: '2026-08-28'
+  - id: vnd-sauter-1020111
+    title: 'SAUTER: EY-RU310 F001 ... EY-RU316 F001: Room operating unit PDF : 91 KB
+      PDF (ImportPDM)'
+    url: https://www.sauter-controls.com/wp-content/uploads/ImportPDM/1020111.PDF
+    source: vendor_sauter
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.sauter-controls.com/en/legal-notice/
+    license_evidence: 'it is permitted to use, copy or distribute the documentation
+      published here: each copy must include a copyright notice; not for commercial
+      purposes'
+    rights_verified_at: '2026-08-28'
+  - id: vnd-sauter-672137
+    title: 'SAUTER: 0450573001 Power supply unit, 230V/24V 42VA PDF : 123 KB PDF (ImportPDM)'
+    url: https://www.sauter-controls.com/wp-content/uploads/ImportPDM/672137.PDF
+    source: vendor_sauter
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.sauter-controls.com/en/legal-notice/
+    license_evidence: 'it is permitted to use, copy or distribute the documentation
+      published here: each copy must include a copyright notice; not for commercial
+      purposes'
+    rights_verified_at: '2026-08-28'

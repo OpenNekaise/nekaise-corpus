@@ -15060,3 +15060,29 @@ sources:
       operator decision 2026-08-30 (local training use, no redistribution); robots permissive
       for /documents/FileLibrary/
     rights_verified_at: '2026-08-30'
+  - id: vnd-sauter-1019804
+    title: 'SAUTER: AVP242...244 PDF : 92 KB PDF (ImportPDM)'
+    url: https://www.sauter-controls.com/wp-content/uploads/ImportPDM/1019804.PDF
+    source: vendor_sauter
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.sauter-controls.com/en/legal-notice/
+    license_evidence: 'it is permitted to use, copy or distribute the documentation
+      published here: each copy must include a copyright notice; not for commercial
+      purposes'
+    rights_verified_at: '2026-08-28'
+  - id: vnd-sauter-1166803
+    title: 'SAUTER: YCS: Mobile Building Services - E pdf : 1 MB pdf (ImportPDM)'
+    url: https://www.sauter-controls.com/wp-content/uploads/ImportPDM/1166803.pdf
+    source: vendor_sauter
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: product-literature
+    license_url: https://www.sauter-controls.com/en/legal-notice/
+    license_evidence: 'it is permitted to use, copy or distribute the documentation
+      published here: each copy must include a copyright notice; not for commercial
+      purposes'
+    rights_verified_at: '2026-08-28'
