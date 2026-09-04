@@ -14,10 +14,12 @@ it, verify it, and — when the numbers justify it — **propose** a ruleset cha
 
 ## The one rule that matters
 
-**Do not enable or disable cleaning rules on your own initiative.** The ruleset is currently `none`
-(faithful pass-through) *by the maintainer's explicit decision* — the agentic cleaning pipeline is a
-pending design discussion. If you think a rule should change, run `--report`, bring the numbers, and
-ask. Silently changing what enters the training set is the most damaging thing this stage can do.
+**Do not enable or disable cleaning rules on your own initiative.** The maintained corpus currently
+uses `toc_leaders,patent_id_soup,patent_furniture,site_chrome,ocr_debris,code_annotations`, recorded
+in `corpus/.ruleset`; an argument-less refresh reuses that stamp. A fresh checkout with no selected
+ruleset defaults to faithful pass-through. If you think the maintained policy should change, run
+`--report`, bring the numbers, and ask. Silently changing what enters the training set is the most
+damaging thing this stage can do.
 
 ## To rebuild `corpus/` (the normal case)
 

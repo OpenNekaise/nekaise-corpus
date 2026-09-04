@@ -41,10 +41,12 @@ their own copy.
    `corpus_chars`. Policy-restricted provenance remains in registry/manifest and raw/text, while its
    derived corpus copy is kept outside the training directory. Incremental; `--check` must pass.
 
-   **Do not change the cleaning ruleset here** — it is `none` (pass-through) by the maintainer's
-   decision. The [`clean-corpus`](../clean-corpus/SKILL.md) skill is the full playbook: measuring
-   rules, proposing changes, and the traps (numeric tables are content; never write a
-   letters-per-character rule).
+   **Do not change the cleaning ruleset here.** An argument-less refresh reuses the ruleset recorded
+   in `corpus/.ruleset`; the maintained corpus currently uses
+   `toc_leaders,patent_id_soup,patent_furniture,site_chrome,ocr_debris,code_annotations`. A fresh
+   checkout with no stamp defaults to faithful pass-through. The
+   [`clean-corpus`](../clean-corpus/SKILL.md) skill is the full playbook: measuring rules, proposing
+   changes, and the traps (numeric tables are content; never write a letters-per-character rule).
 
 4. **Summarize** what was fetched (doc count, MB, topics) and any license caveats.
 
