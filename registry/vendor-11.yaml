@@ -14481,20 +14481,6 @@ sources:
     license_evidence: (c) dormakaba, all rights reserved; no explicit download/redistribution/automation
       clause found
     rights_verified_at: '2026-08-28'
-  - id: vnd-dormakaba-us-1704219280-crane-automatic-revolving-door-al-1000-2000-3000
-    title: 'dormakaba US: Crane AL1000 Automatic Revolving Door EPD (dormakaba prod
-      — 1704219280 crane automatic revolving door al 1000 2000 3000)'
-    url: https://dormakaba-res.cloudinary.com/image/upload/v1745409016/dormakaba-prod/1704219280-crane-automatic-revolving-door---al-1000-2000-3000.pdf
-    source: vendor_dormakaba
-    license: open
-    topic: architecture
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.dormakaba.com/us-en/legal-notice
-    license_evidence: (c) dormakaba, all rights reserved; no explicit download/redistribution/automation
-      clause found
-    rights_verified_at: '2026-08-28'
   - id: vnd-jci-bas-content-1884
     title: 'Johnson Controls Metasys/BAS docs: Comfort Chart User Guide (K43mF6Sf4fH~z01mEjN4sw
       — content)'
@@ -14733,4 +14719,32 @@ sources:
     document_type: product-literature
     license_url: https://www.greenheck.com/privacy-statement
     license_evidence: no site Terms of Use found; Privacy Statement only
+    rights_verified_at: '2026-08-28'
+  - id: vnd-dormakaba-us-120000031888-dormakaba-ens-1216-fs-en-3000-a-01292025-1
+    title: 'dormakaba US: Crane 3000-A Series Automatic Revolving Door - Fact Sheet
+      (dormakaba prod — 120000031888 dormakaba ens 1216 fs en 3000 a 01292025 1)'
+    url: https://dormakaba-res.cloudinary.com/image/upload/v1745409044/dormakaba-prod/120000031888-dormakaba-ens-1216-fs-en-3000-a-01292025-1.pdf
+    source: vendor_dormakaba
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.dormakaba.com/us-en/legal-notice
+    license_evidence: (c) dormakaba, all rights reserved; no explicit download/redistribution/automation
+      clause found
+    rights_verified_at: '2026-08-28'
+  - id: vnd-dormakaba-us-120000031889-dormakaba-ens-1217-fs-en-3000-s-01292025
+    title: 'dormakaba US: 3000 Series Security Revolving Door - Fact Sheet (dormakaba
+      prod — 120000031889 dormakaba ens 1217 fs en 3000 s 01292025)'
+    url: https://dormakaba-res.cloudinary.com/image/upload/v1753164367/dormakaba-prod/120000031889-dormakaba-ens-1217-fs-en-3000-s-01292025.pdf
+    source: vendor_dormakaba
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.dormakaba.com/us-en/legal-notice
+    license_evidence: (c) dormakaba, all rights reserved; no explicit download/redistribution/automation
+      clause found
     rights_verified_at: '2026-08-28'
