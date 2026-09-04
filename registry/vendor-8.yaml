@@ -14477,3 +14477,16 @@ sources:
       operator decision 2026-08-30 (local training use, no redistribution); robots permissive
       for /documents/FileLibrary/
     rights_verified_at: '2026-08-30'
+  - id: vnd-vaillant-de-installationsanleitung-ecocompact-vsc-1512898
+    title: 'Vaillant DE: de — installationsanleitung ecocompact vsc 1512898'
+    url: https://www.vaillant.de/api/download/product/de/installationsanleitung_ecocompact-vsc_1512898.pdf
+    source: vendor_vaillant
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: de
+    document_type: product-literature
+    license_url: https://www.vaillant.de/impressum/
+    license_evidence: für Ihren privaten, nicht-geschäftlichen Gebrauch ansehen, ausdrucken
+      und speichern; keine Vervielfältigung ohne Genehmigung; no robot clause
+    rights_verified_at: '2026-08-28'
