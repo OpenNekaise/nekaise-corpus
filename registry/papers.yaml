@@ -67276,3 +67276,20 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-reference-study-of-citygml-software-support-th
+    title: 'Reference study of CityGML software support: The GeoBIM benchmark 2019—Part
+      II'
+    url: https://arxiv.org/pdf/2007.10938
+    source: openalex
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: ope-city-information-models-cims-as-precursors-for
+    title: 'City Information Models (CIMs) as precursors for Urban Digital Twins (UDTs):
+      A case study of Lancaster'
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2023.1048510/pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
