@@ -14913,3 +14913,15 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-imi-hydronic-thermostatic-head-vk-en-lq
+    title: 'IMI Hydronic: Technical Specifications (Thermostatic head VK EN lq)'
+    url: https://cdn.tessa.imihy.eimed-project.de/557181/Thermostatic_head_VK_EN_lq.pdf
+    source: vendor_imi
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
