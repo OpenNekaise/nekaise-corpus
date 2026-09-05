@@ -522,14 +522,15 @@
    "index_pages": 4916,
    "pages_per_run": 30,
    "pdf_pattern": "specifiedby\\.com/.*\\.pdf",
-   "crawl_delay": 1,
+   "crawl_delay": 3,
    "rights": {
     "tos_url": "https://www.specifiedby.com/terms",
     "tos_excerpt": "Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared prohibition disregarded by operator decision 2026-08-30 (local training use, no redistribution); PDFs 200 without challenge",
     "robots": "User-agent * Allow /; AI bots disallowed (ignored per operator)",
     "reviewed_at": "2026-08-30",
     "decision": "go"
-   }
+   },
+   "notes": "2026-09-05: raised crawl_delay from 1s to 3s after 12 of 151 fetches in the latest SpecifiedBy batch returned HTTP 429; the loader reuses this delay for specifiedby.com downloads."
   },
   "lindab": {
    "name": "Lindab",
