@@ -67526,3 +67526,20 @@ sources:
     topic: structures_civil
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-a-two-level-kriging-based-approach-with-active
+    title: A Two-Level Kriging-Based Approach with Active Learning for Solving Time-Variant
+      Risk Optimization Problems
+    url: http://arxiv.org/pdf/2007.03942
+    source: openalex
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: ope-designer-s-approach-for-scene-selection-in-tes
+    title: Designer's approach for scene selection in tests of preference and restoration
+      along a continuum of natural to manmade environments
+    url: https://www.frontiersin.org/articles/10.3389/fpsyg.2015.01228/pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
