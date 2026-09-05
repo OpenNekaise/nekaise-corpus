@@ -15305,3 +15305,33 @@ sources:
       operator decision 2026-08-30 (local training use, no redistribution); robots permissive
       for /documents/FileLibrary/
     rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-electric-heating-brochure-issue-2-1-19a7d4e1
+    title: 'SpecifiedBy (UK manufacturer documents): electric-heating-brochure-issue-2-1_19a7d4e1.pdf
+      (electromax electric flow boiler — electric heating brochure'
+    url: https://www.specifiedby.com/baxi/electromax-electric-flow-boiler/electric-heating-brochure-issue-2-1_19a7d4e1.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-multipoint-instantaneous-installation-manual-4344c586
+    title: 'SpecifiedBy (UK manufacturer documents): multipoint-instantaneous-installation-manual_4344c586.pdf
+      (multipoint instantaneous instant water heater — mu'
+    url: https://www.specifiedby.com/baxi/multipoint-instantaneous-instant-water-heater/multipoint-instantaneous-installation-manual_4344c586.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
