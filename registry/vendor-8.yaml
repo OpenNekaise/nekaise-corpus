@@ -15666,3 +15666,15 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-imi-hydronic-ta-slider-160-ul-us-low
+    title: 'IMI Hydronic: Technical Specifications (TA Slider 160 UL US low)'
+    url: https://cdn.tessa.imihy.eimed-project.de/613937/TA-Slider_160_UL_US_low.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
