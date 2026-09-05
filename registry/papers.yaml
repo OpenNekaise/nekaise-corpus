@@ -67732,3 +67732,37 @@ sources:
     topic: infrastructure
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-community-scale-big-data-reveals-disparate-imp
+    title: Community-scale big data reveals disparate impacts of the Texas winter storm
+      of 2021 and its managed power outage
+    url: https://arxiv.org/pdf/2108.06046
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
+  - id: ope-a-cloud-based-environment-for-generating-yield
+    title: A Cloud-Based Environment for Generating Yield Estimation Maps From Apple
+      Orchards Using UAV Imagery and a Deep Learning Technique
+    url: https://www.frontiersin.org/articles/10.3389/fpls.2020.01086/pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-identification-and-analysis-of-urban-functiona
+    title: Identification and analysis of urban functional area in Hangzhou based on
+      OSM and POI data
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0251988&type=printable
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-rapid-rise-in-urban-sprawl-global-hotspots-and
+    title: 'Rapid rise in urban sprawl: Global hotspots and trends since 1990'
+    url: https://journals.plos.org/sustainabilitytransformation/article/file?id=10.1371/journal.pstr.0000034&type=printable
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
