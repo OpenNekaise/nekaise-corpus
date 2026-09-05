@@ -15258,3 +15258,15 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-imi-hydronic-ta-fast-fit-npt-us-low
+    title: 'IMI Hydronic: Technical Specifications (TA Fast Fit NPT US low)'
+    url: https://cdn.tessa.imihy.eimed-project.de/613877/TA_Fast-Fit_NPT_US_low.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
