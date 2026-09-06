@@ -163,10 +163,13 @@ WHITELIST = ("arxiv.org", ".gov", "escholarship.org", "ncbi.nlm.nih.gov", "europ
              "mdpi.com", "plos.org", "frontiersin.org", "biomedcentral.com")
 # A host can remain license-compatible while being temporarily unsuitable for reproducible bulk
 # fetches.  MDPI returns a host-wide 403 to both requests and curl from this operator's network
-# (re-probed 2026-08-28).  Pause selection before registry append so new CC-BY URLs are neither
-# wasted nor repeatedly pruned; existing blocklist decisions remain untouched for separate review.
+# (re-probed 2026-08-28).  PMC's apparent PDF URLs return a JavaScript interstitial as HTTP 200
+# (re-probed 2026-09-06), so the loader correctly rejects them as HTML.  Pause selection before
+# registry append so open URLs are neither wasted nor permanently blocklisted as fake PDFs;
+# existing blocklist decisions remain untouched for separate review.
 PAUSED_PDF_HOSTS = {
     "mdpi.com": "host-wide HTTP 403; re-probe requests and curl before re-enabling",
+    "pmc.ncbi.nlm.nih.gov": "PDF paths return an HTTP 200 JavaScript download interstitial",
 }
 PERMISSIVE = {"cc-by", "cc-by-sa", "cc0", "public-domain"}
 

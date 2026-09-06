@@ -189,6 +189,22 @@ def test_openalex_skips_paused_mdpi_host_for_fetchable_alternative():
     assert find_sources._openalex_location(work) == (work["locations"][0], "cc-by")
 
 
+def test_openalex_skips_paused_pmc_host_for_fetchable_alternative():
+    work = {
+        "best_oa_location": {
+            "pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC123/pdf/article.pdf",
+            "license": "cc-by",
+        },
+        "locations": [{
+            "pdf_url": "https://escholarship.org/uc/item/abc123.pdf",
+            "license": "cc-by",
+        }],
+    }
+
+    assert not find_sources.downloadable(work["best_oa_location"]["pdf_url"])
+    assert find_sources._openalex_location(work) == (work["locations"][0], "cc-by")
+
+
 def test_query_cursor_walks_queries_then_advances_page():
     queries = [
         ("one", "construction"),
