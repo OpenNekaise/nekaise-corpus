@@ -16876,3 +16876,18 @@ sources:
     license_evidence: (c) dormakaba, all rights reserved; no explicit download/redistribution/automation
       clause found
     rights_verified_at: '2026-08-28'
+  - id: vnd-jci-bas-content-2665
+    title: 'Johnson Controls Metasys/BAS docs: F240EA Pneumatic Liquid Flow Switch Installation
+      Guide (~9Z7l853iOxeKJ32pLOJMg — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/~9Z7l853iOxeKJ32pLOJMg/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'

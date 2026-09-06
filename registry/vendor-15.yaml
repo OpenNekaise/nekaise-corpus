@@ -17053,3 +17053,33 @@ sources:
     license_evidence: (c) dormakaba, all rights reserved; no explicit download/redistribution/automation
       clause found
     rights_verified_at: '2026-08-28'
+  - id: vnd-jci-bas-content-2355
+    title: 'Johnson Controls Metasys/BAS docs: Series P315PR Controllers (Rp3R6tHHGeFzvZ9PtfXuQw
+      — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/Rp3R6tHHGeFzvZ9PtfXuQw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2659
+    title: 'Johnson Controls Metasys/BAS docs: Electronic Temperature Reset Control
+      (with Relay) (uVm2FDIZYWTMor5hVnza9A — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/uVm2FDIZYWTMor5hVnza9A/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'

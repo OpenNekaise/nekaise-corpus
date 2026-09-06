@@ -16561,21 +16561,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
-  - id: vnd-jci-bas-content-2410
-    title: 'Johnson Controls Metasys/BAS docs: P78 Control for Hazardous Location Applications
-      Global Safety Data Sheet (h1FI15 rRt7A1860Ny2JvA — content)'
-    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/h1FI15_rRt7A1860Ny2JvA/content
-    source: vendor_jci
-    license: open
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
-    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
-    rights_verified_at: '2026-08-30'
   - id: vnd-dormakaba-us-1577735262-install-sheet-kim-swipe-reader-installed-with-rac-3-5-pk2879
     title: 'dormakaba US: Install Sheet KIM Swipe Reader Installed with RAC 3.5 [PK2879]
       (dormakaba prod — 1577735262 install sheet kim swipe reader installed wit'
@@ -16604,3 +16589,48 @@ sources:
     license_evidence: (c) dormakaba, all rights reserved; no explicit download/redistribution/automation
       clause found
     rights_verified_at: '2026-08-28'
+  - id: vnd-jci-bas-content-2459
+    title: 'Johnson Controls Metasys/BAS docs: A19 Series Utility Thermostats for Farm,
+      Industrial and Commercial Use (Sja5Ay9JDg~uV8tA2SSW0g — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/Sja5Ay9JDg~uV8tA2SSW0g/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2529
+    title: 'Johnson Controls Metasys/BAS docs: P78 Series Control for Dual Pressure
+      and Hazardous Location Applications Installation Guide (t01ssGl3OINGdhqX6LG8pA'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/t01ssGl3OINGdhqX6LG8pA/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2595
+    title: 'Johnson Controls Metasys/BAS docs: System 450 Modular Electronic Controls
+      (Knd4Q~Fap0gbNJXXiWz1FQ — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/Knd4Q~Fap0gbNJXXiWz1FQ/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
