@@ -16207,3 +16207,31 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-taco-301-s424-sks-3009d-3500-60hp
+    title: 'Taco Comfort Solutions: FileLibrary — 301 S424 SKS 3009D 3500 60HP'
+    url: https://www.tacocomfort.com/documents/FileLibrary/301-S424_SKS_3009D_3500_60HP.pdf
+    source: vendor_taco
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.tacocomfort.com/terms-of-use/
+    license_evidence: ToS bars automated access — declared prohibition disregarded by
+      operator decision 2026-08-30 (local training use, no redistribution); robots permissive
+      for /documents/FileLibrary/
+    rights_verified_at: '2026-08-30'
+  - id: vnd-taco-301-s425-sks-3009d-3500-75hp
+    title: 'Taco Comfort Solutions: FileLibrary — 301 S425 SKS 3009D 3500 75HP'
+    url: https://www.tacocomfort.com/documents/FileLibrary/301-S425_SKS_3009D_3500_75HP.pdf
+    source: vendor_taco
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.tacocomfort.com/terms-of-use/
+    license_evidence: ToS bars automated access — declared prohibition disregarded by
+      operator decision 2026-08-30 (local training use, no redistribution); robots permissive
+      for /documents/FileLibrary/
+    rights_verified_at: '2026-08-30'
