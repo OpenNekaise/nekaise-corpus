@@ -68330,3 +68330,12 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
+  - id: ope-review-and-perspectives-of-machine-learning-me
+    title: Review and Perspectives of Machine Learning Methods for Wind Turbine Fault
+      Diagnosis
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2021.751066/pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
