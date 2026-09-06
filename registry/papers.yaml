@@ -68167,3 +68167,20 @@ sources:
     license: open
     topic: materials
     format: pdf
+  - id: ope-hydration-of-binary-portland-cement-blends-con
+    title: 'Hydration of Binary Portland Cement Blends Containing Silica Fume: A Decoupling
+      Method to Estimate Degrees of Hydration and Pozzolanic Reaction'
+    url: https://www.frontiersin.org/articles/10.3389/fmats.2019.00078/pdf
+    source: openalex
+    license: cc-by
+    topic: materials
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-geochemical-negative-emissions-technologies-pa
+    title: 'Geochemical Negative Emissions Technologies: Part I. Review'
+    url: https://www.frontiersin.org/articles/10.3389/fclim.2022.879133/pdf
+    source: openalex
+    license: cc-by
+    topic: materials
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
