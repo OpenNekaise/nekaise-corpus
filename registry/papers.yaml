@@ -68260,3 +68260,42 @@ sources:
     license: open
     topic: infrastructure
     format: pdf
+  - id: ope-historic-redlining-and-the-siting-of-oil-and-g
+    title: Historic redlining and the siting of oil and gas wells in the United States
+    url: https://escholarship.org/content/qt4mf101xv/qt4mf101xv.pdf?t=rjsr9r
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
+  - id: ope-pipeline-leak-detection-systems-and-data-fusio
+    title: 'Pipeline Leak Detection Systems and Data Fusion: A Survey'
+    url: https://arxiv.org/pdf/1902.03927
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
+  - id: ope-a-comprehensive-review-of-landfill-leachate-tr
+    title: A comprehensive review of landfill leachate treatment technologies
+    url: https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2024.1439128/pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-additives-as-a-support-structure-for-specific-
+    title: 'Additives as a Support Structure for Specific Biochemical Activity Boosts
+      in Anaerobic Digestion: A Review'
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2020.00088/pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-anomalous-transport-in-disordered-fracture-net
+    title: 'Anomalous transport in disordered fracture networks: Spatial Markov model
+      for dispersion with variable injection modes'
+    url: https://arxiv.org/pdf/1704.02762
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
