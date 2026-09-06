@@ -68385,3 +68385,17 @@ sources:
     topic: standards_protocols
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-application-of-information-technologies-in-bui
+    title: Application of information technologies in building design decisions
+    url: https://escholarship.org/content/qt3b85w653/qt3b85w653.pdf
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: ope-the-effect-of-venetian-blinds-on-daylight-phot
+    title: The Effect of Venetian Blinds on Daylight Photoelectric Control Performance
+    url: https://escholarship.org/content/qt9448f04g/qt9448f04g.pdf?t=p21nan
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
