@@ -16893,3 +16893,33 @@ sources:
     license_url: https://www.greenheck.com/privacy-statement
     license_evidence: no site Terms of Use found; Privacy Statement only
     rights_verified_at: '2026-08-28'
+  - id: vnd-jci-bas-content-2523
+    title: 'Johnson Controls Metasys/BAS docs: V248 Series 3-Way Pressure-Actuated Water-Regulating
+      Valves for High-Pressure Refrigerants (so5tTqy8fCUN0p7Fc4FGtA '
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/so5tTqy8fCUN0p7Fc4FGtA/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2580
+    title: 'Johnson Controls Metasys/BAS docs: Series P45 Oil Pressure Cutout Control
+      With Built-In Time Delay Relay (1WZHvgAM7aFdWHXCNhNanA — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/1WZHvgAM7aFdWHXCNhNanA/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'

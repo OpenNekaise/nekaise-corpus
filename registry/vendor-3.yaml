@@ -16151,21 +16151,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
-  - id: vnd-jci-bas-content-2418
-    title: 'Johnson Controls Metasys/BAS docs: F261 Global Safety Data Sheet (gh45NWCIR~mDDUH9S5Y0FA
-      — content)'
-    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/gh45NWCIR~mDDUH9S5Y0FA/content
-    source: vendor_jci
-    license: open
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
-    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
-    rights_verified_at: '2026-08-30'
   - id: vnd-jci-bas-content-2451
     title: 'Johnson Controls Metasys/BAS docs: Proportional Plus Integral Temperature
       Stage Module (4p7hzHP2 YdqtyjJfgAPeQ — content)'
@@ -16391,3 +16376,63 @@ sources:
     license_evidence: (c) dormakaba, all rights reserved; no explicit download/redistribution/automation
       clause found
     rights_verified_at: '2026-08-28'
+  - id: vnd-jci-bas-content-2407
+    title: 'Johnson Controls Metasys/BAS docs: P470 Electronic Pressure Control with
+      Display Product/Technical Bulletin (wvKMFJIJ3QsSTM0bPnJhgw — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/wvKMFJIJ3QsSTM0bPnJhgw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2466
+    title: 'Johnson Controls Metasys/BAS docs: P74 Series Differential Pressure Control
+      Product Bulletin and Part List (BZQDZE26PSXvXMMKkDTQvQ — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/BZQDZE26PSXvXMMKkDTQvQ/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2493
+    title: 'Johnson Controls Metasys/BAS docs: P32 Series Sensitive Differential Pressure
+      Switch For Combustion Air Applications (cpRqw 4oa6~MxAy5yzAPxg — content'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/cpRqw_4oa6~MxAy5yzAPxg/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2521
+    title: 'Johnson Controls Metasys/BAS docs: A40 Series Pneumatic Cutout Controls
+      Temperature Actuated Product Bulletin (39XBDNvvBZIyCQ SI pUQw — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/39XBDNvvBZIyCQ_SI_pUQw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
