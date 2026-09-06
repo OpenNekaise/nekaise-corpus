@@ -16763,3 +16763,17 @@ sources:
       the Website — declared prohibition disregarded by operator decision 2026-08-30
       (local training use, no redistribution)
     rights_verified_at: '2026-08-30'
+  - id: vnd-usg-2ee1444b-1b56-5d8b-929d-a88f780c5b8c
+    title: 'USG (file library): assets — 2ee1444b 1b56 5d8b 929d a88f780c5b8c'
+    url: https://www.usg.com/api/download-center/v1/assets/2ee1444b-1b56-5d8b-929d-a88f780c5b8c?download=true&country=us
+    source: vendor_usg
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.usg.com/en-US/legal
+    license_evidence: Content-Signal ai-train=no + AI-bot Disallow — declared prohibition
+      disregarded by operator decision 2026-08-30 (local training use, no redistribution);
+      assets 200 application/pdf
+    rights_verified_at: '2026-08-30'
