@@ -16493,3 +16493,33 @@ sources:
       operator decision 2026-08-30 (local training use, no redistribution); robots permissive
       for /documents/FileLibrary/
     rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-catnic-a4lintelbrochure-april2014--10
+    title: 'SpecifiedBy (UK manufacturer documents): CATNIC_A4LintelBrochure_April2014_CCP0242.1.pdf
+      (steel lintel cx110 100 — CATNIC A4LintelBrochure April2014 C'
+    url: https://www.specifiedby.com/catnic/steel-lintel-cx110-100/CATNIC_A4LintelBrochure_April2014_CCP0242.1.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-cn71a
+    title: 'SpecifiedBy (UK manufacturer documents): CN71A.pdf (steel lintel cn71a —
+      CN71A)'
+    url: https://www.specifiedby.com/catnic/steel-lintel-cn71a/CN71A.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'

@@ -16063,21 +16063,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-catnic-a4lintelbrochure-april2014--2
-    title: 'SpecifiedBy (UK manufacturer documents): CATNIC_A4LintelBrochure_April2014_CCP0242.1.pdf
-      (steel lintel cn100 — CATNIC A4LintelBrochure April2014 CCP02'
-    url: https://www.specifiedby.com/catnic/steel-lintel-cn100/CATNIC_A4LintelBrochure_April2014_CCP0242.1.pdf
-    source: vendor_specifiedby
-    license: open
-    topic: materials
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.specifiedby.com/terms
-    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); PDFs 200 without challenge
-    rights_verified_at: '2026-08-30'
   - id: vnd-specifiedby-cx70-100
     title: 'SpecifiedBy (UK manufacturer documents): CX70_100.pdf (steel lintel cx70
       100 — CX70 100)'
@@ -16318,4 +16303,48 @@ sources:
     license_evidence: ToS bars automated access — declared prohibition disregarded by
       operator decision 2026-08-30 (local training use, no redistribution); robots permissive
       for /documents/FileLibrary/
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-cx90-100
+    title: 'SpecifiedBy (UK manufacturer documents): CX90_100.pdf (steel lintel cx90
+      100 — CX90 100)'
+    url: https://www.specifiedby.com/catnic/steel-lintel-cx90-100/CX90_100.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-cn42c
+    title: 'SpecifiedBy (UK manufacturer documents): CN42C.pdf (steel lintel cn42c —
+      CN42C)'
+    url: https://www.specifiedby.com/catnic/steel-lintel-cn42c/CN42C.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-ccs
+    title: 'SpecifiedBy (UK manufacturer documents): CCS.pdf (steel lintel ccs — CCS)'
+    url: https://www.specifiedby.com/catnic/steel-lintel-ccs/CCS.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'

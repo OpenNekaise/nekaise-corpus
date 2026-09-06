@@ -16630,3 +16630,33 @@ sources:
       operator decision 2026-08-30 (local training use, no redistribution); robots permissive
       for /documents/FileLibrary/
     rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-cx110-100
+    title: 'SpecifiedBy (UK manufacturer documents): CX110_100.pdf (steel lintel cx110
+      100 — CX110 100)'
+    url: https://www.specifiedby.com/catnic/steel-lintel-cx110-100/CX110_100.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-ch130-100
+    title: 'SpecifiedBy (UK manufacturer documents): CH130_100.pdf (steel lintel ch130
+      100 — CH130 100)'
+    url: https://www.specifiedby.com/catnic/steel-lintel-ch130-100/CH130_100.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
