@@ -151,6 +151,23 @@ def test_sitemap_pages_scans_a_budget_remembers_visits_and_accumulates_docs(tmp_
     assert len(fetched) == 3 and len(third) == 3               # nothing left to scan, docs kept
 
 
+def test_sensirion_page_pattern_excludes_localized_duplicate_pages(tmp_path, monkeypatch, capsys):
+    monkeypatch.setattr(find_vendor, "CACHE_DIR", tmp_path / "cache")
+    cfg = find_vendor.load_vendors()["sensirion"]
+    root = "https://sensirion.com/products/catalog/SCD30/"
+    pages = [root, root.replace(".com/", ".com/jp/"), root.replace(".com/", ".com/cn/")]
+    fetched = []
+
+    def fetcher(url, delay=0.0, method="GET", data=None):
+        fetched.append(url)
+        return b'<a href="/media/documents/1234ABCD/5678EF90/scd30.pdf">data sheet</a>'
+
+    assert find_vendor.candidate_documents("sensirion", cfg, pages, 40, fetcher) == [
+        "https://sensirion.com/media/documents/1234ABCD/5678EF90/scd30.pdf"]
+    assert fetched == [root]
+    assert "0 pages still unvisited" in capsys.readouterr().out
+
+
 def test_sitemap_pages_fails_only_when_every_page_fails(tmp_path, monkeypatch):
     monkeypatch.setattr(find_vendor, "CACHE_DIR", tmp_path / "cache")
     cfg = vendor(mechanism="sitemap_pages", page_pattern=r"/product/")

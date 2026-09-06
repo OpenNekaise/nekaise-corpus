@@ -154,7 +154,7 @@
    "sitemaps": [
     "https://sensirion.com/sitemap.xml"
    ],
-   "page_pattern": "/products/catalog/",
+   "page_pattern": "^https://sensirion\\.com/products/catalog/",
    "pdf_pattern": "sensirion\\.com/media/documents/.*\\.pdf",
    "topic": "controls_bas",
    "language": "en",
