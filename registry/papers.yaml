@@ -68084,3 +68084,12 @@ sources:
     license: open
     topic: structures_civil
     format: pdf
+  - id: ope-predicting-roof-pressures-on-a-low-rise-struct
+    title: Predicting Roof Pressures on a Low-Rise Structure From Freestream Turbulence
+      Using Artificial Neural Networks
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2018.00068/pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
