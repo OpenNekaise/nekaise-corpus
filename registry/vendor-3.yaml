@@ -16436,3 +16436,33 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-hambleside-danelaw-dryseal-commercial-certifications-bba
+    title: 'SpecifiedBy (UK manufacturer documents): Hambleside-Danelaw_Dryseal-Commercial_Certifications_BBA.pdf
+      (dryseal roofing system commercial — Hambleside '
+    url: https://www.specifiedby.com/hambleside-danelaw/dryseal-roofing-system-commercial/Hambleside-Danelaw_Dryseal-Commercial_Certifications_BBA.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-hambleside-danelaw-dryseal-commercial-technical-pds
+    title: 'SpecifiedBy (UK manufacturer documents): Hambleside-Danelaw_Dryseal-Commercial_Technical_PDS.pdf
+      (dryseal roofing system commercial — Hambleside Danel'
+    url: https://www.specifiedby.com/hambleside-danelaw/dryseal-roofing-system-commercial/Hambleside-Danelaw_Dryseal-Commercial_Technical_PDS.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
