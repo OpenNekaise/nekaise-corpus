@@ -68299,3 +68299,19 @@ sources:
     license: open
     topic: infrastructure
     format: pdf
+  - id: ope-street-network-models-and-indicators-for-every
+    title: Street Network Models and Indicators for Every Urban Area in the World
+    url: https://arxiv.org/pdf/2009.09106
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
+  - id: ope-mapping-past-human-land-use-using-archaeologic
+    title: 'Mapping past human land use using archaeological data: A new classification
+      for global land use synthesis and data harmonization'
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0246662&type=printable
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
