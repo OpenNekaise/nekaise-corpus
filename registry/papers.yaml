@@ -68118,3 +68118,20 @@ sources:
     license: open
     topic: structures_civil
     format: pdf
+  - id: ope-water-supply-and-health
+    title: Water Supply and Health
+    url: https://journals.plos.org/plosmedicine/article/file?id=10.1371/journal.pmed.1000361&type=printable
+    source: openalex
+    license: cc-by
+    topic: construction
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-high-resolution-mapping-of-soil-properties-usi
+    title: 'High Resolution Mapping of Soil Properties Using Remote Sensing Variables
+      in South-Western Burkina Faso: A Comparison of Machine Learning and Multiple'
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0170478&type=printable
+    source: openalex
+    license: cc-by
+    topic: construction
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
