@@ -68369,3 +68369,19 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-product-modeling-for-computer-aided-decision-m
+    title: Product modeling for computer-aided decision-making
+    url: https://escholarship.org/content/qt2zw414k2/qt2zw414k2.pdf
+    source: openalex
+    license: open
+    topic: standards_protocols
+    format: pdf
+  - id: ope-applicability-of-bim-iot-gis-integrated-digita
+    title: Applicability of BIM-IoT-GIS integrated digital twins for post occupancy
+      evaluations
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2023.1103743/pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
