@@ -68315,3 +68315,18 @@ sources:
     topic: infrastructure
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-physics-informed-modularized-neural-network-fo
+    title: Physics-informed modularized neural network for advanced building control
+      by deep reinforcement learning
+    url: https://arxiv.org/pdf/2504.05397
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: ope-digital-twins-and-civil-engineering-phases-reo
+    title: 'Digital Twins and Civil Engineering Phases: Reorienting Adoption Strategies'
+    url: https://arxiv.org/pdf/2403.02426
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
