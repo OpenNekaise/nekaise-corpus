@@ -17282,3 +17282,46 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-casestudy97
+    title: 'Carrier Commercial (US literature): evolv1 building (05 — CASESTUDY97)'
+    url: https://www.shareddocs.com/hvac/docs/1001/Public/05/CASESTUDY97.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-casestudy55
+    title: 'Carrier Commercial (US literature): Shopko (00 — CASESTUDY55)'
+    url: https://www.shareddocs.com/hvac/docs/1001/Public/00/CASESTUDY55.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-casestudy88
+    title: 'Carrier Commercial (US literature): University Hospitals Ashtabula Health
+      Center (04 — CASESTUDY88)'
+    url: https://www.shareddocs.com/hvac/docs/1001/Public/04/CASESTUDY88.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
