@@ -68558,3 +68558,11 @@ sources:
     topic: equipment_systems
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-net-solar-generation-potential-from-urban-roof
+    title: Net solar generation potential from urban rooftops in Los Angeles
+    url: https://escholarship.org/content/qt7vv7h4dx/qt7vv7h4dx.pdf
+    source: openalex
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: public-domain'
