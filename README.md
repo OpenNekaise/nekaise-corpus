@@ -51,16 +51,16 @@ python scripts/clean_corpus.py --check
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **1,142,931** |
+| **Documents** | **1,143,380** |
 | **Policy-excluded provenance** | **8,039** rows (not fetched or training-ready) |
 | **Raw originals** | **~676G** (PDF / HTML / source code) |
-| **Extracted text** | **~64G** (~63.093B chars, **≈15.773B tokens**) |
-| **Cleaned corpus** | **~61G** (~60.219B chars, **≈15.055B tokens**, ruleset-cleaned) |
+| **Extracted text** | **~64G** (~63.108B chars, **≈15.777B tokens**) |
+| **Cleaned corpus** | **~61G** (~60.233B chars, **≈15.058B tokens**, ruleset-cleaned) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): equipment_systems 382,031 · construction 282,941 · building_energy 168,274 · structures_civil 117,197 · materials 78,405 · infrastructure 51,708 · architecture 34,085 · standards_protocols 11,529 · controls_bas 9,934 · urban 6,001 · commissioning_fdd 826.
+**By topic** (a source gets one at registration): equipment_systems 382,172 · construction 283,079 · building_energy 168,311 · structures_civil 117,254 · materials 78,442 · infrastructure 51,733 · architecture 34,099 · standards_protocols 11,529 · controls_bas 9,934 · urban 6,001 · commissioning_fdd 826.
 
-**By license:** open 898,588 · public-domain 224,019 · cc-by-sa 1,732 · cc-by 18,592.
+**By license:** open 898,988 · public-domain 224,068 · cc-by-sa 1,732 · cc-by 18,592.
 
 _Snapshot of the eligible live registry (2026-09-07) — auto-generated from the manifest. Local raw/text
 disk sizes may include retained policy-excluded cache; excluded bytes are not in `corpus/` and are
