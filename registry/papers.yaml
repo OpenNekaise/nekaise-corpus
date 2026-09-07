@@ -68615,3 +68615,19 @@ sources:
     license: open
     topic: structures_civil
     format: pdf
+  - id: ope-statistical-damage-shear-constitutive-model-of
+    title: Statistical Damage Shear Constitutive Model of Rock Joints Under Seepage
+      Pressure
+    url: https://www.frontiersin.org/articles/10.3389/feart.2020.00232/pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-strategies-for-numerical-simulation-of-cast-in
+    title: Strategies for numerical simulation of cast-in-place piles under axial loading
+    url: https://escholarship.org/content/qt2p4529hr/qt2p4529hr.pdf
+    source: openalex
+    license: open
+    topic: structures_civil
+    format: pdf
