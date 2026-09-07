@@ -21,6 +21,7 @@ import os
 import sys
 import time
 from collections import Counter
+from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -31,6 +32,17 @@ import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 TRANSIENT_FETCH_STATUSES = frozenset({202, 429, 503})
+DNS_ERROR_MARKERS = (
+    "nameresolutionerror",
+    "failed to resolve",
+    "name or service not known",
+    "temporary failure in name resolution",
+    "getaddrinfo failed",
+    "nodename nor servname provided",
+    "no address associated with hostname",
+)
+REPEATED_DNS_MIN_RUNS = 3
+REPEATED_DNS_MIN_DAYS = 3
 # MDPI's Akamai edge returns a host-wide 403 to both requests and curl from this operator's
 # network (site root and article PDFs, re-probed 2026-08-28).  That is not evidence that an
 # individual CC-BY article URL is dead.  Keep this narrow: other hosts can use 403 for a durable
@@ -43,7 +55,42 @@ def _host_matches(url: str | None, domains: set[str] | frozenset[str]) -> bool:
     return any(host == domain or host.endswith(f".{domain}") for domain in domains)
 
 
-def _blocklistable(row: dict, reason: str) -> bool:
+def _is_dns_resolution_error(error: str | None) -> bool:
+    err = (error or "").lower()
+    return any(marker in err for marker in DNS_ERROR_MARKERS)
+
+
+def repeated_dns_failure_urls(ledger: list[dict]) -> set[str]:
+    """Return URLs whose DNS failures span enough independent runs and days to be durable.
+
+    Both guards matter: retries inside one run do not create separate ledger rows, but a local or
+    provider-wide DNS incident can still affect many rounds on one day.  Rows without the modern
+    run/date provenance do not count toward permanent suppression.
+    """
+    evidence: dict[str, tuple[set[str], set[date]]] = {}
+    for row in ledger:
+        if row.get("reason") != "failed" or not _is_dns_resolution_error(row.get("error")):
+            continue
+        url = blocklist.normalize(row.get("url"))
+        run_id = row.get("run_id")
+        stamp = row.get("pruned_at")
+        if not url or not isinstance(run_id, str) or not run_id or not isinstance(stamp, str):
+            continue
+        try:
+            day = date.fromisoformat(stamp[:10])
+        except ValueError:
+            continue
+        runs, days = evidence.setdefault(url, (set(), set()))
+        runs.add(run_id)
+        days.add(day)
+    return {
+        url for url, (runs, days) in evidence.items()
+        if len(runs) >= REPEATED_DNS_MIN_RUNS and len(days) >= REPEATED_DNS_MIN_DAYS
+    }
+
+
+def _blocklistable(row: dict, reason: str,
+                   repeated_dns_urls: set[str] | frozenset[str] = frozenset()) -> bool:
     """Return whether a prune verdict is durable enough for the URL blocklist."""
     if reason != "failed":
         return True
@@ -53,6 +100,8 @@ def _blocklistable(row: dict, reason: str) -> bool:
     if status == 403 and _host_matches(row.get("url"), TRANSIENT_403_HOSTS):
         return False
     err = (row.get("error") or "").lower()
+    if _is_dns_resolution_error(err):
+        return blocklist.normalize(row.get("url")) in repeated_dns_urls
     if "certificate" in err or "ssl" in err:
         return True  # cert mismatch = decommissioned/re-pointed host, permanently dead
     return not any(k in err for k in ("timeout", "timed out", "connection", "too many requests"))
@@ -190,10 +239,15 @@ def main() -> None:
     # Blocklist policy: quality-fails and HARD fetch failures (404/410, fake PDFs) never return.
     # TRANSIENT walls (429/202/503, reviewed host-wide 403s, timeouts, connection errors) are NOT
     # blocklisted — the entry leaves the registry but may be rediscovered once the wall lifts
-    # (IBPSA's sgcaptcha and Wikimedia rate limits taught us this the hard way).
+    # (IBPSA's sgcaptcha and Wikimedia rate limits taught us this the hard way). DNS resolution
+    # failures become durable only after three prior runs across three days, avoiding endless churn
+    # on retired hosts without turning a same-day resolver outage into permanent policy.
+    repeated_dns_urls = repeated_dns_failure_urls(registry.load_prune_ledger_rows())
     block_urls = {
         blocklist.normalize(r.get("url")) for r in manifest
-        if r["id"] in drop and _blocklistable(r, drop[r["id"]]) and r.get("url")
+        if r["id"] in drop
+        and _blocklistable(r, drop[r["id"]], repeated_dns_urls)
+        and r.get("url")
     }
     blocked = blocklist.add(block_urls)
     write_prune_ledger(manifest, drop, block_urls)
