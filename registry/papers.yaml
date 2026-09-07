@@ -68910,3 +68910,19 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
+  - id: ope-reduction-in-energy-consumption-and-co2-emissi
+    title: 'Reduction in energy consumption and CO2 emissions by retrofitting an existing
+      building to a net zero energy building for the implementation of SDGs 7 '
+    url: https://www.frontiersin.org/articles/10.3389/fenvs.2022.1028793/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-measures-to-enforce-mandatory-civil-building-e
+    title: Measures to enforce mandatory civil building energy efficiency codes in China
+    url: https://escholarship.org/content/qt31q949kh/qt31q949kh.pdf
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf

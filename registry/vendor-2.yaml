@@ -17747,3 +17747,48 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-35eb-8272
+    title: 'Carrier Commercial (US literature): 35EB-8272: BACnet VVT Damper Control
+      with Proportional Electric Heat Pressure Dependent Carrier Control Package No'
+    url: https://www.shareddocs.com/hvac/docs/1001/Public/03/35EB-8272.pdf
+    source: vendor_carrier
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-35ed-4243
+    title: 'Carrier Commercial (US literature): 35ED-4243: BACnet Variable Air Volume
+      Cooling with On/Off Hot Water Heat Control Package No. 4243 (04 — 35ED 4243)'
+    url: https://www.shareddocs.com/hvac/docs/1001/Public/04/35ED-4243.pdf
+    source: vendor_carrier
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-45jkq-p-1311
+    title: 'Carrier Commercial (US literature): 45J/K/Q-P-1311: Constant Volume Fan
+      Powered Terminal Unit Pneumatic Control Sequence 1311: DANC, Multi-Function Co'
+    url: https://www.shareddocs.com/hvac/docs/1001/Public/05/45JKQ-P-1311.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
