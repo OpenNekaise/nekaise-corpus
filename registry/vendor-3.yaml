@@ -16511,21 +16511,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-hambleside-danelaw-roofing-and-ven-102
-    title: 'SpecifiedBy (UK manufacturer documents): Hambleside-Danelaw_Roofing-and-Ventilation-Range_Brochures_WRAP-Products.pdf
-      (hd ilsrv10 20 flush fit slate r'
-    url: https://www.specifiedby.com/hambleside-danelaw/hd-ilsrv10-20-flush-fit-slate-roof-ventilator/Hambleside-Danelaw_Roofing-and-Ventilation-Range_Brochures_WRAP-Products.pdf
-    source: vendor_specifiedby
-    license: open
-    topic: equipment_systems
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.specifiedby.com/terms
-    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); PDFs 200 without challenge
-    rights_verified_at: '2026-08-30'
   - id: vnd-imi-hydronic-heatmiser-neostat-v2-datasheet
     title: 'IMI Hydronic: Technical Specifications (Heatmiser neoStat v2 Datasheet)'
     url: https://cdn.tessa.imihy.eimed-project.de/701061/Heatmiser_neoStat_v2-Datasheet.pdf
@@ -16952,4 +16937,19 @@ sources:
     license_evidence: prohibits any device/program to access, acquire, copy or monitor
       the Website — declared prohibition disregarded by operator decision 2026-08-30
       (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-lead-replacement-products-brochure-oct19-d6d5ff2e
+    title: 'SpecifiedBy (UK manufacturer documents): lead-replacement-products-brochure-oct19_d6d5ff2e.pdf
+      (hd ss500 slates — lead replacement products brochure o'
+    url: https://www.specifiedby.com/hambleside-danelaw/hd-ss500-slates/lead-replacement-products-brochure-oct19_d6d5ff2e.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
