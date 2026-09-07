@@ -16954,21 +16954,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
-  - id: vnd-jci-bas-content-2420
-    title: 'Johnson Controls Metasys/BAS docs: P499 Pressure Transducer Global Safety
-      Data Sheet (mP67a608w2ikgUCip40 A — content)'
-    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/mP67a608w2ikgUCip40__A/content
-    source: vendor_jci
-    license: open
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
-    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
-    rights_verified_at: '2026-08-30'
   - id: vnd-jci-bas-content-2483
     title: 'Johnson Controls Metasys/BAS docs: P45 Series Oil Pressure Cutout Control
       With Built-In Time Delay Relay Product Bulletin (1LKwNHhpigt09S8PIfABjw — co'
@@ -17266,4 +17251,109 @@ sources:
     license_evidence: prohibits any device/program to access, acquire, copy or monitor
       the Website — declared prohibition disregarded by operator decision 2026-08-30
       (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2441
+    title: 'Johnson Controls Metasys/BAS docs: RLD-H10PRO Refrigerant Leak Detector
+      Installation Guide (58UBO33q6fvlTJqaUJbAQg — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/58UBO33q6fvlTJqaUJbAQg/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2578
+    title: 'Johnson Controls Metasys/BAS docs: Electronic Proportional Plus Integral
+      Pressure Control: Static Pressure (W.C.) and PSI Series (fwpTT0nLgyXbEV7fvPSV'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/fwpTT0nLgyXbEV7fvPSVAw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2592
+    title: 'Johnson Controls Metasys/BAS docs: Electronic Temperature Reset Module (Without
+      Relay) (NgcWmzcCoG0VFZAtz9TVEA — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/NgcWmzcCoG0VFZAtz9TVEA/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2602
+    title: 'Johnson Controls Metasys/BAS docs: TC3221 Defrost Controller Installation
+      Guide for North America (cY6wuagy85oR6uNboZg9rg — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/cY6wuagy85oR6uNboZg9rg/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2654
+    title: 'Johnson Controls Metasys/BAS docs: P399 Electronic Pressure Transducer (9nupJNt5SJarbOVeJVFPMQ
+      — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/9nupJNt5SJarbOVeJVFPMQ/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2689
+    title: 'Johnson Controls Metasys/BAS docs: FX10 Advanced Programmable Electronic
+      Controller for HVAC and Refrigeration Applications Product Bulletin (AnmT9UmJ'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/AnmT9UmJhJ0WU1snI6L4ww/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2696
+    title: 'Johnson Controls Metasys/BAS docs: A419 Series Electronic Temperature Controls
+      with NEMA 1 or NEMA 4X Watertight Enclosures Product Bulletin (YQ25~5qY'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/YQ25~5qYbp6Ca5rzR82z1w/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'

@@ -17799,3 +17799,33 @@ sources:
     license_evidence: permits downloading, copying and/or printing of pages for strictly
       personal and non-commercial use; no automation clause
     rights_verified_at: '2026-08-28'
+  - id: vnd-jci-bas-content-2573
+    title: 'Johnson Controls Metasys/BAS docs: P545 Series Electronic Lube Oil Control
+      Product/Technical Bulletin (hZabNCEX60CnwR8 2XG5Kw — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/hZabNCEX60CnwR8_2XG5Kw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2718
+    title: 'Johnson Controls Metasys/BAS docs: VEC100 Generic RTU Controller, Modulated
+      Heating and Staged Cooling Application Note (HRkXqkar~UGfQYaDLNyt9g — cont'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/HRkXqkar~UGfQYaDLNyt9g/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
