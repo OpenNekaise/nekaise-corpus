@@ -68933,3 +68933,21 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-spatiotemporal-planning-of-construction-projec
+    title: 'Spatiotemporal Planning of Construction Projects: A Literature Review and
+      Assessment of the State of the Art'
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2020.00128/pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-a-guide-for-construction-practitioners-to-inte
+    title: A guide for construction practitioners to integrate robotic systems in their
+      construction applications
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2024.1307728/pdf?isPublishedV2=False
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
