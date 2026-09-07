@@ -129,6 +129,10 @@ def test_openalex_relevance_and_license_gate(monkeypatch):
         # in generic construction/material vocabulary, so the downstream density gate keeps them.
         work("Design and construction of the DEAP-3600 dark matter detector", "2215"),
         work("UAV remote sensing for field-based crop phenotyping", "2305"),
+        work(
+            "Allometric Trophic Networks From Individuals to Socio-Ecosystems",
+            "2305",
+        ),
         # OpenAlex sometimes classifies building metadata work as computer vision; the title rescue
         # protects explicit AEC material without admitting generic computer-science results.
         work("Brick metadata schema for portable smart building applications", "1707", "other-oa"),
@@ -180,7 +184,7 @@ def test_openalex_skips_paused_mdpi_host_for_fetchable_alternative():
             "license": "cc-by",
         },
         "locations": [{
-            "pdf_url": "https://escholarship.org/uc/item/abc123.pdf",
+            "pdf_url": "https://escholarship.org/content/qt123/qt123.pdf",
             "license": "cc-by",
         }],
     }
@@ -196,7 +200,7 @@ def test_openalex_skips_paused_pmc_host_for_fetchable_alternative():
             "license": "cc-by",
         },
         "locations": [{
-            "pdf_url": "https://escholarship.org/uc/item/abc123.pdf",
+            "pdf_url": "https://escholarship.org/content/qt123/qt123.pdf",
             "license": "cc-by",
         }],
     }
@@ -212,12 +216,29 @@ def test_openalex_skips_paused_osti_host_for_fetchable_alternative():
             "license": "cc-by",
         },
         "locations": [{
-            "pdf_url": "https://escholarship.org/uc/item/abc123.pdf",
+            "pdf_url": "https://escholarship.org/content/qt123/qt123.pdf",
             "license": "cc-by",
         }],
     }
 
     assert not find_sources.downloadable(work["best_oa_location"]["pdf_url"])
+    assert find_sources._openalex_location(work) == (work["locations"][0], "cc-by")
+
+
+def test_openalex_skips_escholarship_landing_page_for_pdf_alternative():
+    work = {
+        "best_oa_location": {
+            "pdf_url": "https://escholarship.org/uc/item/abc123",
+            "license": "cc-by",
+        },
+        "locations": [{
+            "pdf_url": "https://escholarship.org/content/qt123/qt123.pdf?t=abc",
+            "license": "cc-by",
+        }],
+    }
+
+    assert not find_sources.downloadable(work["best_oa_location"]["pdf_url"])
+    assert find_sources.downloadable(work["locations"][0]["pdf_url"])
     assert find_sources._openalex_location(work) == (work["locations"][0], "cc-by")
 
 

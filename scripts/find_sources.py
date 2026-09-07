@@ -194,7 +194,7 @@ OPENALEX_AEC_SUBFIELDS = frozenset({
 # full-text quality gate cannot distinguish them because they are rich in construction/materials
 # vocabulary.
 OPENALEX_TITLE_KILL = re.compile(
-    r"\b(?:crop phenotyp\w*|dark matter (?:detector|experiment|search))\b",
+    r"\b(?:crop phenotyp\w*|dark matter (?:detector|experiment|search)|trophic networks?)\b",
     re.I,
 )
 OPENALEX_TITLE_RELEVANCE = re.compile(
@@ -223,8 +223,13 @@ OPENALEX_TITLE_RELEVANCE = re.compile(
 
 
 def downloadable(url: str) -> bool:
-    host = (urlparse(url).hostname or "").lower()
+    parsed = urlparse(url)
+    host = (parsed.hostname or "").lower()
     if any(host == domain or host.endswith(f".{domain}") for domain in PAUSED_PDF_HOSTS):
+        return False
+    # OpenAlex labels eScholarship's /uc/item/<id> landing pages as pdf_url values.  They return
+    # HTTP 202 HTML rather than document bytes; only /content/... PDF paths are fetchable.
+    if host == "escholarship.org" and re.fullmatch(r"/uc/item/[^/]+/?", parsed.path):
         return False
     return any(w in host for w in WHITELIST)
 
