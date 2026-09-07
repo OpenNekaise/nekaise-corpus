@@ -17175,3 +17175,27 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-imi-hydronic-heatmiser-touch-e-v2-datasheet
+    title: 'IMI Hydronic: Technical Specifications (Heatmiser Touch E v2 Datasheet)'
+    url: https://cdn.tessa.imihy.eimed-project.de/701131/Heatmiser_Touch-E_v2-Datasheet.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-heatmiser-uh8-n-datasheet
+    title: 'IMI Hydronic: Technical Specifications (Heatmiser UH8 N Datasheet)'
+    url: https://cdn.tessa.imihy.eimed-project.de/701158/Heatmiser_UH8-N-Datasheet.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
