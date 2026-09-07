@@ -68590,3 +68590,12 @@ sources:
     license: open
     topic: structures_civil
     format: pdf
+  - id: ope-classification-of-truck-involved-crash-severit
+    title: 'Classification of truck-involved crash severity: Dealing with missing, imbalanced,
+      and high dimensional safety data'
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0281901&type=printable
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
