@@ -19060,3 +19060,29 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-dormakaba-us-13719721550798379614-675832
+    title: 'dormakaba US: Kaba InSync Brochure - KAA1245 (dormakaba prod)'
+    url: https://dormakaba-res.cloudinary.com/image/upload/v1745408578/dormakaba-prod/13719721550798379614-675832.pdf
+    source: vendor_dormakaba
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.dormakaba.com/us-en/legal-notice
+    license_evidence: (c) dormakaba, all rights reserved; no explicit download/redistribution/automation
+      clause found
+    rights_verified_at: '2026-08-28'
+  - id: vnd-dormakaba-us-13699781580909693984-633766
+    title: 'dormakaba US: InSync M Data Sheet - KAA1230 (dormakaba prod)'
+    url: https://dormakaba-res.cloudinary.com/image/upload/v1745409622/dormakaba-prod/13699781580909693984-633766.pdf
+    source: vendor_dormakaba
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.dormakaba.com/us-en/legal-notice
+    license_evidence: (c) dormakaba, all rights reserved; no explicit download/redistribution/automation
+      clause found
+    rights_verified_at: '2026-08-28'
