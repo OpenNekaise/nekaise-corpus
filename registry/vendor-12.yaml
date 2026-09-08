@@ -17731,3 +17731,27 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-imi-hydronic-e-z-system-en-lq
+    title: 'IMI Hydronic: Technical Specifications (E Z System EN lq)'
+    url: https://cdn.tessa.imihy.eimed-project.de/558326/E-Z_System_EN_lq.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-cy-f406-us-low
+    title: 'IMI Hydronic: Technical Specifications (CY F406 US low)'
+    url: https://cdn.tessa.imihy.eimed-project.de/728421/CY_F406_US_low.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
