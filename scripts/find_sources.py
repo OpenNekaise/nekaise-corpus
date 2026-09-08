@@ -229,7 +229,9 @@ def downloadable(url: str) -> bool:
         return False
     # OpenAlex labels eScholarship's /uc/item/<id> landing pages as pdf_url values.  They return
     # HTTP 202 HTML rather than document bytes; only /content/... PDF paths are fetchable.
-    if host == "escholarship.org" and re.fullmatch(r"/uc/item/[^/]+/?", parsed.path):
+    if (host == "escholarship.org" or host.endswith(".escholarship.org")) and re.fullmatch(
+        r"/uc/item/[^/]+/?", parsed.path
+    ):
         return False
     return any(w in host for w in WHITELIST)
 

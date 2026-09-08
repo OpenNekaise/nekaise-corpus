@@ -3,6 +3,7 @@ from types import SimpleNamespace
 import sys
 
 import find_sources
+import pytest
 
 
 def stub_registry(monkeypatch):
@@ -225,10 +226,11 @@ def test_openalex_skips_paused_osti_host_for_fetchable_alternative():
     assert find_sources._openalex_location(work) == (work["locations"][0], "cc-by")
 
 
-def test_openalex_skips_escholarship_landing_page_for_pdf_alternative():
+@pytest.mark.parametrize("host", ["escholarship.org", "www.escholarship.org"])
+def test_openalex_skips_escholarship_landing_page_for_pdf_alternative(host):
     work = {
         "best_oa_location": {
-            "pdf_url": "https://escholarship.org/uc/item/abc123",
+            "pdf_url": f"https://{host}/uc/item/abc123",
             "license": "cc-by",
         },
         "locations": [{
@@ -240,6 +242,12 @@ def test_openalex_skips_escholarship_landing_page_for_pdf_alternative():
     assert not find_sources.downloadable(work["best_oa_location"]["pdf_url"])
     assert find_sources.downloadable(work["locations"][0]["pdf_url"])
     assert find_sources._openalex_location(work) == (work["locations"][0], "cc-by")
+
+
+def test_openalex_accepts_escholarship_subdomain_content_pdf():
+    assert find_sources.downloadable(
+        "https://www.escholarship.org/content/qt123/qt123.pdf?t=abc"
+    )
 
 
 def test_query_cursor_walks_queries_then_advances_page():
