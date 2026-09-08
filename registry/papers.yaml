@@ -69095,3 +69095,17 @@ sources:
     topic: structures_civil
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-cdpm2-a-damage-plasticity-approach-to-modellin
+    title: 'CDPM2: A damage-plasticity approach to modelling the failure of concrete'
+    url: https://arxiv.org/pdf/1307.6998
+    source: openalex
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: ope-expanding-the-role-of-reactive-transport-model
+    title: Expanding the role of reactive transport models in critical zone processes
+    url: https://escholarship.org/content/qt81f302jz/qt81f302jz.pdf
+    source: openalex
+    license: open
+    topic: structures_civil
+    format: pdf
