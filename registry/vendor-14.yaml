@@ -17712,3 +17712,63 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-45jkq-a-2313
+    title: 'Carrier Commercial (US literature): 45JKQ-A-2313: Constant Volume Fan Powered
+      Terminal Unit Control, Carrier Control Package No. 2313 (0B — 45JKQ A 23'
+    url: https://www.shareddocs.com/hvac/docs/1001/Public/0B/45JKQ-A-2313.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-45jkq-d-4484
+    title: 'Carrier Commercial (US literature): 45JKQ-D-4484: BACnet Constant Volume
+      Fan with Proportional (Floating) Hot Water Heat Carrier Control Package No. 4'
+    url: https://www.shareddocs.com/hvac/docs/1001/Public/05/45JKQ-D-4484.pdf
+    source: vendor_carrier
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-45m-n-p-v-8819
+    title: 'Carrier Commercial (US literature): 45M/N/P/V-8819: 3V-VVT Parallel (Intermittent)
+      Fan Terminal Control with Up to 3 Stages of Electric Heat, Pressure'
+    url: https://www.shareddocs.com/hvac/docs/1001/Public/00/45M_N_P-V-8819.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-45m-n-p-v-8806
+    title: 'Carrier Commercial (US literature): 45M/N/P-V-8806: VVT Parallel (Intermittent)
+      Fan Powered Terminal Control On/Off Hot Water Heat Pressure Independen'
+    url: https://www.shareddocs.com/hvac/docs/1001/Public/02/45M_N_P-V-8806.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'

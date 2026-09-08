@@ -69002,3 +69002,18 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
+  - id: ope-evaluating-project-level-investment-trends-for
+    title: 'Evaluating project level investment trends for the U.S. ESCO industry: 1990–2017'
+    url: https://escholarship.org/content/qt3286w75d/qt3286w75d.pdf
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: ope-real-time-recommendations-for-energy-efficient
+    title: Real-time recommendations for energy-efficient appliance usage in households
+    url: https://www.frontiersin.org/articles/10.3389/fdata.2022.972206/pdf?isPublishedV2=False
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'

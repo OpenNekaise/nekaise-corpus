@@ -17942,3 +17942,123 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-45mnr-a-2308
+    title: 'Carrier Commercial (US literature): 45M/N/R-A-2308: Variable Volume Fan
+      Powered Terminal Unit Analog Control Sequence 2308: Cooling with Sequenced Fan'
+    url: https://www.shareddocs.com/hvac/docs/1001/Public/02/45MNR-A-2308.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-45m-n-r-v-8809
+    title: 'Carrier Commercial (US literature): 45M/N/R-V-8809: VVT Parallel (Intermittent)
+      Fan Terminal Control with Up to 2 Stages of Electric Heat Pressure Dep'
+    url: https://www.shareddocs.com/hvac/docs/1001/Public/00/45M_N_R-V-8809.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-45mnr-v-8809
+    title: 'Carrier Commercial (US literature): 45M/N/R-V-8809: VVT Parallel Intermittent)
+      Fan Terminal Control with Up to 2 Stages Of Electric Heat Pressure Depe'
+    url: https://www.shareddocs.com/hvac/docs/1001/Public/04/45MNR-V-8809.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-45mnr-b-8865
+    title: 'Carrier Commercial (US literature): 45MNR-B-8865: BACnet VVT Parallel (Intermittent)
+      Fan Powered Terminal Control with Combination Baseboard and Duct '
+    url: https://www.shareddocs.com/hvac/docs/1001/Public/02/45MNR-B-8865.pdf
+    source: vendor_carrier
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-45mnr-d-4784
+    title: 'Carrier Commercial (US literature): 45MNR-D-4784: BACnet Intermittent Fan
+      Powered Proportional (Floating) Hot Water Heat Carrier Control Package No. 4'
+    url: https://www.shareddocs.com/hvac/docs/1001/Public/0B/45MNR-D-4784.pdf
+    source: vendor_carrier
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-19xr-xrv-clt-10si
+    title: 'Carrier Commercial (US literature): 19XR,XRV AquaEdge™ Two-Stage Semi-Hermetic
+      Centrifugal Liquid Chillers with PIC II or PIC III Controls and HFC-134'
+    url: https://www.shareddocs.com/hvac/docs/1005/Public/03/19XR_XRV-CLT-10SI.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-33cs-48si
+    title: 'Carrier Commercial (US literature): 33CS Accessory Enthalpy Switch/Receiver
+      Accessory Enthalpy Sensor (0F — 33CS 48SI)'
+    url: https://www.shareddocs.com/hvac/docs/1005/Public/0F/33CS-48SI.pdf
+    source: vendor_carrier
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-33zc-14si
+    title: 'Carrier Commercial (US literature): 33ZCBC-01 3V Control System VVT Bypass
+      Controller (09 — 33ZC 14SI)'
+    url: https://www.shareddocs.com/hvac/docs/1005/Public/09/33ZC-14SI.pdf
+    source: vendor_carrier
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
