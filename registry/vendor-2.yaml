@@ -8446,21 +8446,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
-  - id: vnd-jci-bas-content-678
-    title: 'Johnson Controls Metasys/BAS docs: RPC1611 Room Pressure Controller Installation
-      Guide (rKwr80 bowmEGO76pBl5qA — content)'
-    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/rKwr80_bowmEGO76pBl5qA/content
-    source: vendor_jci
-    license: open
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
-    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
-    rights_verified_at: '2026-08-30'
   - id: vnd-jci-chillers-content-218
     title: 'Johnson Controls / YORK chillers docs: YKEP Mod A Chiller with Economizer
       Compressor (tGeiBhzxwvjZUxsi2QXh6g — content)'
@@ -17806,4 +17791,154 @@ sources:
     license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2798
+    title: 'Johnson Controls Metasys/BAS docs: NS Series Network Sensors Catalog Page
+      (yabXeagTuZshQsIUowJtEA — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/yabXeagTuZshQsIUowJtEA/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2829
+    title: 'Johnson Controls Metasys/BAS docs: VG12F5 Installation Guide 安装手册 (WRBFsFVtqMVLsYyy70kn2A
+      — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/WRBFsFVtqMVLsYyy70kn2A/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2836
+    title: 'Johnson Controls Metasys/BAS docs: Johnson Controls Companion Release Note
+      (NpsFXmYrSXxzxusEGPwQ g — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/NpsFXmYrSXxzxusEGPwQ_g/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2848
+    title: 'Johnson Controls Metasys/BAS docs: EIO-NSA-7000 Flush Mount Network Sensors
+      Installation Guide (fwIgWGwtkRyzSj9ABwnxaQ — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/fwIgWGwtkRyzSj9ABwnxaQ/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2857
+    title: 'Johnson Controls Metasys/BAS docs: CMS-2000 Central Monitoring Station Product
+      Bulletin (5eOdmnlW58fp1oMHmbfOCg — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/5eOdmnlW58fp1oMHmbfOCg/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2860
+    title: 'Johnson Controls Metasys/BAS docs: NSD1380 Nurses Station Display Installation
+      Guide (OHI43M4VftFCLDXcj9S1Ng — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/OHI43M4VftFCLDXcj9S1Ng/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2895
+    title: 'Johnson Controls Metasys/BAS docs: Quick Response Expansion Valve (QREV)
+      and Precision Superheat Controller (PSHC) Catalog Page (lGpBduNNvHxEXG4AAn8jN'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/lGpBduNNvHxEXG4AAn8jNw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2910
+    title: 'Johnson Controls Metasys/BAS docs: M9203-GGx-2(Z) Series Proportional Electric
+      Spring Return Actuators Installation Guide (AjyOOZf1asKg7e8 nDhOIw — co'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/AjyOOZf1asKg7e8_nDhOIw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2938
+    title: 'Johnson Controls Metasys/BAS docs: Smart Flow Control Series Product Bulletin
+      (fXdoFyvwi1rO Mntzsw4Bw — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/fXdoFyvwi1rO_Mntzsw4Bw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2959
+    title: 'Johnson Controls Metasys/BAS docs: FS-20 Catalog Page (DlUHo7~9Nyh3Hwtsxkj5MQ
+      — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/DlUHo7~9Nyh3Hwtsxkj5MQ/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'

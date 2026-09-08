@@ -17754,21 +17754,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
-  - id: vnd-jci-bas-content-2902
-    title: 'Johnson Controls Metasys/BAS docs: RS-7000 Flush Mount Analog Sensors Installation
-      Guide (eT1wB4fBWKTSnjS3BiAShw — content)'
-    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/eT1wB4fBWKTSnjS3BiAShw/content
-    source: vendor_jci
-    license: open
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
-    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
-    rights_verified_at: '2026-08-30'
   - id: vnd-carrier-commercial-35ed-4251
     title: 'Carrier Commercial (US literature): 35ED-4251: BACnet Variable Air Volume
       Cooling with Field-Installed Electric Heat Carrier Control Package No. 4251 '
@@ -17903,4 +17888,94 @@ sources:
     license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2638
+    title: 'Johnson Controls Metasys/BAS docs: PUBL-6123EN(1120) VAP Electric Actuator
+      (vYLcXkdLncnEzJmZ Ic3aQ — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/vYLcXkdLncnEzJmZ_Ic3aQ/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2845
+    title: 'Johnson Controls Metasys/BAS docs: TC3222 Guide d’installation du régulateur
+      de dégivrage pour l’Amérique du Nord (D9w9T~yPan~zoStkm4gfng — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/D9w9T~yPan~zoStkm4gfng/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2872
+    title: 'Johnson Controls Metasys/BAS docs: SNC Series Standard Control Panel and
+      Sub-panel Assemblies Catalog Page (vhhqAVofaHRttf5rKOEEVA — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/vhhqAVofaHRttf5rKOEEVA/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2887
+    title: 'Johnson Controls Metasys/BAS docs: M9204-Bxx-2(Z) Series On/Off Electric
+      Spring Return Actuators Installation Guide (ljGtJa3Qi5RnIxuMg86dvg — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/ljGtJa3Qi5RnIxuMg86dvg/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2935
+    title: 'Johnson Controls Metasys/BAS docs: VA9903 Actuator and VG1600 Series Six-Way
+      Valves (vUzF45gCKLg9tKLNJ4JFcA — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/vUzF45gCKLg9tKLNJ4JFcA/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2954
+    title: 'Johnson Controls Metasys/BAS docs: FS Series Firmware Upgrade Guide (jfflOSb~4lIBg2czGVUxzA
+      — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/jfflOSb~4lIBg2czGVUxzA/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'

@@ -9153,21 +9153,6 @@ sources:
     license_evidence: protected material may not be copied, reproduced, published, distributed
       ... without the express written consent of its owner (no automated-access clause)
     rights_verified_at: '2026-08-28'
-  - id: vnd-jci-bas-content-573
-    title: 'Johnson Controls Metasys/BAS docs: NSD1380 Nurses Station Display Installation
-      Guide (Urk3jBj5xY0lJHqBuhPaQg — content)'
-    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/Urk3jBj5xY0lJHqBuhPaQg/content
-    source: vendor_jci
-    license: open
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
-    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
-    rights_verified_at: '2026-08-30'
   - id: vnd-jci-bas-content-677
     title: 'Johnson Controls Metasys/BAS docs: TEP/TEA Series Platinum Temperature Sensors
       and TQ-6000-1 Accessory Transmitter Installation Guide (1VCe31c8u12o9Oq'
@@ -17483,4 +17468,124 @@ sources:
     license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2839
+    title: 'Johnson Controls Metasys/BAS docs: TC3B54N9V Guide d’installation du régulateur
+      de dégivrage de base pour l’Amérique du Nord (LcHsSKUsKqK06Yo4k Cj0g —'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/LcHsSKUsKqK06Yo4k_Cj0g/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2847
+    title: 'Johnson Controls Metasys/BAS docs: TC3223 Guide d’installation du régulateur
+      de dégivrage pour l’Amérique du Nord (n0t84Y7BvoCV8wKAEkt6Hg — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/n0t84Y7BvoCV8wKAEkt6Hg/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2858
+    title: 'Johnson Controls Metasys/BAS docs: CD-Px0xx-00-00 Series Duct Mount CO2
+      Transmitters Supplemental Installation Guide for North America (uxBENbYyYGWiEc'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/uxBENbYyYGWiEcjhRpr2jw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2870
+    title: 'Johnson Controls Metasys/BAS docs: SNE Series Standard Control Panel and
+      Sub-panel Assemblies Catalog Page (3NgyqyCJQwrqPHD3HpURyw — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/3NgyqyCJQwrqPHD3HpURyw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2928
+    title: 'Johnson Controls Metasys/BAS docs: PUBL-9242EN RLBC SERIES ULTRASONIC BTU
+      METER EN (xojMAZmsiScONR8MhM1AuQ — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/xojMAZmsiScONR8MhM1AuQ/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2937
+    title: 'Johnson Controls Metasys/BAS docs: Mobile Access Portal Gateway Installation
+      Guide (TkVr7rWlBgDFv20qMIAZZQ — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/TkVr7rWlBgDFv20qMIAZZQ/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2949
+    title: 'Johnson Controls Metasys/BAS docs: FW Series Backup and Restore Application
+      Note (B36xJJbQ0LV2Z1RM24qN g — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/B36xJJbQ0LV2Z1RM24qN_g/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2956
+    title: 'Johnson Controls Metasys/BAS docs: FW-08V Catalog Page (e8pk5KaDs6Fg4 N8yItlbA
+      — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/e8pk5KaDs6Fg4_N8yItlbA/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
