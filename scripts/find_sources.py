@@ -194,7 +194,8 @@ OPENALEX_AEC_SUBFIELDS = frozenset({
 # full-text quality gate cannot distinguish them because they are rich in construction/materials
 # vocabulary.
 OPENALEX_TITLE_KILL = re.compile(
-    r"\b(?:crop phenotyp\w*|dark matter (?:detector|experiment|search)|trophic networks?)\b",
+    r"\b(?:crop phenotyp\w*|dark matter (?:detector|experiment|search)|"
+    r"trophic networks?|leptospir\w*)\b",
     re.I,
 )
 OPENALEX_TITLE_RELEVANCE = re.compile(

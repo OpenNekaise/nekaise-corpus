@@ -134,6 +134,13 @@ def test_openalex_relevance_and_license_gate(monkeypatch):
             "Allometric Trophic Networks From Individuals to Socio-Ecosystems",
             "2305",
         ),
+        work(
+            "Influence of Household Rat Infestation on Leptospira Transmission "
+            "in the Urban Slum Environment",
+            "3305",
+        ),
+        # Do not turn one epidemiology rejection into a broad rodent/pest exclusion.
+        work("Rodent-proofing of buildings", "3305"),
         # OpenAlex sometimes classifies building metadata work as computer vision; the title rescue
         # protects explicit AEC material without admitting generic computer-science results.
         work("Brick metadata schema for portable smart building applications", "1707", "other-oa"),
@@ -167,13 +174,14 @@ def test_openalex_relevance_and_license_gate(monkeypatch):
 
     assert [row["title"] for row in got] == [
         "Computational intelligence techniques for HVAC systems",
+        "Rodent-proofing of buildings",
         "Brick metadata schema for portable smart building applications",
         "Gebäudeenergie und Lüftung im Bestand",
         "A Review of Antibiotic Resistance in Wastewater Treatment Plants",
         "Ventilation control in office buildings",
     ]
-    assert got[1]["license"] == "open"
-    assert got[1]["license_evidence"] == "OpenAlex OA location license: other-oa"
+    assert got[2]["license"] == "open"
+    assert got[2]["license_evidence"] == "OpenAlex OA location license: other-oa"
     assert got[-1]["url"] == "https://escholarship.org/permissive.pdf"
     assert got[-1]["license"] == "cc-by"
 
