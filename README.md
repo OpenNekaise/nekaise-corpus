@@ -51,16 +51,16 @@ python scripts/clean_corpus.py --check
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **1,200,831** |
+| **Documents** | **1,200,830** |
 | **Policy-excluded provenance** | **8,039** rows (not fetched or training-ready) |
 | **Raw originals** | **~684G** (PDF / HTML / source code) |
 | **Extracted text** | **~66G** (~65.083B chars, **≈16.271B tokens**) |
 | **Cleaned corpus** | **~63G** (~62.077B chars, **≈15.519B tokens**, ruleset-cleaned) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): equipment_systems 400,365 · construction 301,477 · building_energy 173,419 · structures_civil 124,018 · materials 82,614 · infrastructure 54,668 · architecture 35,439 · standards_protocols 11,531 · controls_bas 10,471 · urban 6,003 · commissioning_fdd 826.
+**By topic** (a source gets one at registration): equipment_systems 400,365 · construction 301,477 · building_energy 173,419 · structures_civil 124,018 · materials 82,614 · infrastructure 54,667 · architecture 35,439 · standards_protocols 11,531 · controls_bas 10,471 · urban 6,003 · commissioning_fdd 826.
 
-**By license:** open 952,097 · public-domain 228,364 · cc-by-sa 1,732 · cc-by 18,638.
+**By license:** open 952,097 · public-domain 228,364 · cc-by-sa 1,732 · cc-by 18,637.
 
 _Snapshot of the eligible live registry (2026-09-08) — auto-generated from the manifest. Local raw/text
 disk sizes may include retained policy-excluded cache; excluded bytes are not in `corpus/` and are
