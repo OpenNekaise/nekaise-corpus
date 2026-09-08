@@ -18679,3 +18679,63 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-eh99881101-1
+    title: 'Carrier Commercial (US literature): BMS-LSV6UL BACnet Intelligent Server
+      Installation Manual (03 — EH99881101 1)'
+    url: https://www.shareddocs.com/hvac/docs/1009/Public/03/EH99881101-1.pdf
+    source: vendor_carrier
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-11-808-578-01
+    title: 'Carrier Commercial (US literature): Carrier® ChillerVu™ 23XRV Series Counterflow
+      Application Guide (08 — 11 808 578 01)'
+    url: https://www.shareddocs.com/hvac/docs/1000/Public/08/11-808-578-01.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-11-808-1188-01
+    title: 'Carrier Commercial (US literature): Dynamic Bindings and DHCP - TV-ISO-E2
+      (0A — 11 808 1188 01)'
+    url: https://www.shareddocs.com/hvac/docs/1000/Public/0A/11-808-1188-01.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-11-808-508-01
+    title: 'Carrier Commercial (US literature): Fan Coil for AppController Installation
+      and Start-up Guide (08 — 11 808 508 01)'
+    url: https://www.shareddocs.com/hvac/docs/1000/Public/08/11-808-508-01.pdf
+    source: vendor_carrier
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
