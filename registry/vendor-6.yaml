@@ -19176,3 +19176,48 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-11-808-494-01
+    title: 'Carrier Commercial (US literature): i-Vu® Standard/Plus v6.0 Installation
+      and Start-up Guide (05 — 11 808 494 01)'
+    url: https://www.shareddocs.com/hvac/docs/1000/Public/05/11-808-494-01.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-11-808-398-01
+    title: 'Carrier Commercial (US literature): Modbus EIA-232/485 Integration Guide
+      (0E — 11 808 398 01)'
+    url: https://www.shareddocs.com/hvac/docs/1000/Public/0E/11-808-398-01.pdf
+    source: vendor_carrier
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-im-40mbdq-08fr
+    title: 'Carrier Commercial (US literature): Système mince de type conduit sans conduit
+      Capacités 09 à 58 - Instructions d’installation (03 — IM 40MBDQ 08FR)'
+    url: https://www.shareddocs.com/hvac/docs/1009/Public/03/IM-40MBDQ-08FR.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
