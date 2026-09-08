@@ -17826,3 +17826,48 @@ sources:
     license_evidence: (c) dormakaba, all rights reserved; no explicit download/redistribution/automation
       clause found
     rights_verified_at: '2026-08-28'
+  - id: vnd-jci-bas-content-573
+    title: 'Johnson Controls Metasys/BAS docs: FG-32+ Catalog Page (NCVP7NkI6KwNC9IFzf8SRA
+      — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/NCVP7NkI6KwNC9IFzf8SRA/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2826
+    title: 'Johnson Controls Metasys/BAS docs: FD-20i Modbus Register Reference Guide
+      (Bz WkLnCH9dZEWoxYARSPA — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/Bz_WkLnCH9dZEWoxYARSPA/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-2961
+    title: 'Johnson Controls Metasys/BAS docs: MQTT Manager User Guide (W9JLazypC5bwFe3U2aNgnA
+      — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/W9JLazypC5bwFe3U2aNgnA/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
