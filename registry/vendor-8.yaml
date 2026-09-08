@@ -7107,36 +7107,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
-  - id: vnd-jci-bas-content-529
-    title: 'Johnson Controls Metasys/BAS docs: T8600-TB21 -9JR0/S0-M0 Series Touch Screen
-      Fan Coil Thermostat - Installation Instructions (Y2dSoIZHdk6W1fHHpHaaQQ '
-    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/Y2dSoIZHdk6W1fHHpHaaQQ/content
-    source: vendor_jci
-    license: open
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
-    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
-    rights_verified_at: '2026-08-30'
-  - id: vnd-jci-bas-content-536
-    title: 'Johnson Controls Metasys/BAS docs: T2000 Series AAC FCU Thermostat Installation
-      Instructions (jT2wT6er9VN A9UN8PSobQ — content)'
-    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/jT2wT6er9VN_A9UN8PSobQ/content
-    source: vendor_jci
-    license: open
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
-    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
-    rights_verified_at: '2026-08-30'
   - id: vnd-jci-bas-content-548
     title: 'Johnson Controls Metasys/BAS docs: IOM Standard Control Panel Assembly Mounted
       in a 16 in. x 20 in. Enclosure Catalog Page (T4vJoqxocrbhswevF~apkw — c'
@@ -17806,4 +17776,94 @@ sources:
     license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-653
+    title: 'Johnson Controls Metasys/BAS docs: FCU16：FCUコントローラー (IAXfbUZhxk9B1gFfyWDm1w
+      — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/IAXfbUZhxk9B1gFfyWDm1w/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-3059
+    title: 'Johnson Controls Metasys/BAS docs: TC3223 Defrost Controller Parameter Reference
+      Guide for Europe (ZJWbkZi35Vuu4kvYktbXdw — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/ZJWbkZi35Vuu4kvYktbXdw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-3071
+    title: 'Johnson Controls Metasys/BAS docs: TC3B23 Defrost Controller Parameter Reference
+      Guide for Europe (9MZSVCPg~U5gPgdb0BYoiQ — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/9MZSVCPg~U5gPgdb0BYoiQ/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-3101
+    title: 'Johnson Controls Metasys/BAS docs: ACTSA7004 Actuator Specification and
+      Installation Instructions (15gTFsnyNAZFtwUxM302Qw — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/15gTFsnyNAZFtwUxM302Qw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-3129
+    title: 'Johnson Controls Metasys/BAS docs: Flush-Mounted RS7000 Series Sensor Product
+      Bulletin (1o7zmReUyaNb34GDQJcmmA — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/1o7zmReUyaNb34GDQJcmmA/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-3136
+    title: 'Johnson Controls Metasys/BAS docs: NSA-FTB7000 Product Bulletin (VYx2zS7cPEPSpRcx86mVMw
+      — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/VYx2zS7cPEPSpRcx86mVMw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
