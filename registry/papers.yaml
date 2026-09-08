@@ -69102,13 +69102,6 @@ sources:
     license: open
     topic: structures_civil
     format: pdf
-  - id: ope-expanding-the-role-of-reactive-transport-model
-    title: Expanding the role of reactive transport models in critical zone processes
-    url: https://escholarship.org/content/qt81f302jz/qt81f302jz.pdf
-    source: openalex
-    license: open
-    topic: structures_civil
-    format: pdf
   - id: ope-performance-of-geosynthetics-reinforced-subgra
     title: 'Performance of Geosynthetics Reinforced Subgrade Subjected to Repeated Vehicle
       Loads: Experimental and Numerical Studies'
@@ -69118,28 +69111,10 @@ sources:
     topic: structures_civil
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
-  - id: ope-monitoring-atmospheric-soil-and-dissolved-co2-
-    title: 'Monitoring Atmospheric, Soil, and Dissolved CO2 Using a Low-Cost, Arduino
-      Monitoring Platform (CO2-LAMP): Theory, Fabrication, and Operation'
-    url: https://www.frontiersin.org/articles/10.3389/feart.2019.00313/pdf
-    source: openalex
-    license: cc-by
-    topic: structures_civil
-    format: pdf
-    license_evidence: 'OpenAlex OA location license: cc-by'
   - id: ope-modeling-error-estimation-and-response-predict
     title: Modeling Error Estimation and Response Prediction of a 10-Story Building
       Model Through a Hierarchical Bayesian Model Updating Framework
     url: https://www.frontiersin.org/articles/10.3389/fbuil.2019.00007/pdf
-    source: openalex
-    license: cc-by
-    topic: structures_civil
-    format: pdf
-    license_evidence: 'OpenAlex OA location license: cc-by'
-  - id: ope-influence-of-household-rat-infestation-on-lept
-    title: Influence of Household Rat Infestation on Leptospira Transmission in the
-      Urban Slum Environment
-    url: https://journals.plos.org/plosntds/article/file?id=10.1371/journal.pntd.0003338&type=printable
     source: openalex
     license: cc-by
     topic: structures_civil
