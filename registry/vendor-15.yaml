@@ -19095,3 +19095,48 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-11-808-1189-01
+    title: 'Carrier Commercial (US literature): ClimaVision Smart Node 2.0 Product Data
+      (05 — 11 808 1189 01)'
+    url: https://www.shareddocs.com/hvac/docs/1000/Public/05/11-808-1189-01.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-11-808-483-01
+    title: 'Carrier Commercial (US literature): i-Vu Open MPC Open XP Controller Product
+      Data Sheet (09 — 11 808 483 01)'
+    url: https://www.shareddocs.com/hvac/docs/1000/Public/09/11-808-483-01.pdf
+    source: vendor_carrier
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-11-808-1122-01
+    title: 'Carrier Commercial (US literature): i-Vu Version Comparison (03 — 11 808
+      1122 01)'
+    url: https://www.shareddocs.com/hvac/docs/1000/Public/03/11-808-1122-01.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
