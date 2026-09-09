@@ -69595,3 +69595,21 @@ sources:
     license: open
     topic: structures_civil
     format: pdf
+  - id: ope-influence-of-the-moisture-content-on-the-fract
+    title: Influence of the moisture content on the fracture energy and tensile strength
+      of hardwood spotted gum sawn timber and adhesive bonds (gluelines)
+    url: https://era.dpi.qld.gov.au/id/eprint/15001/1/s00107-023-01999-4.pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-it-all-depends-on-the-project-a-business-ecosy
+    title: “It all depends on the project”—A business ecosystem in residential wooden
+      multistory construction in Finland
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2022.1046954/pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
