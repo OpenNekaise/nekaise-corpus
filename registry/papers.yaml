@@ -69401,3 +69401,20 @@ sources:
     topic: controls_bas
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-the-research-on-the-particle-concentration-dis
+    title: The research on the particle concentration distribution of directed airflow
+      in cleanrooms for operators
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0296803&type=printable
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-controlled-air-exchange-rate-method-to-evaluat
+    title: Controlled air exchange rate method to evaluate reduction of volatile organic
+      compounds by indoor air cleaners
+    url: https://escholarship.org/content/qt7d5304nw/qt7d5304nw.pdf?t=s8h9ge
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
