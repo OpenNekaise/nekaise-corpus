@@ -94,9 +94,9 @@ def test_select_documents_applies_patterns_and_dedups():
     ]
 
 
-def test_entries_are_shaped_titled_topiced_and_deduped():
+def test_entries_are_shaped_titled_topiced_language_tagged_and_deduped():
     import zlib
-    cfg = vendor(topic_rules=[[r"desigo", "controls_bas"]])
+    cfg = vendor(topic_rules=[[r"desigo", "controls_bas"]], language="fr")
     docs = [
         "https://acme.example/lit/chillers/30xa-product-data.pdf",
         "https://acme.example/lit/controls/desigo-cc-datasheet.pdf",
@@ -117,6 +117,7 @@ def test_entries_are_shaped_titled_topiced_and_deduped():
     assert out[0]["license_url"] == "https://acme.example/terms"
     assert out[0]["rights_verified_at"] == "2026-08-28"
     assert out[0]["document_type"] == "product-literature"
+    assert out[0]["language"] == "fr"
     bucket = zlib.crc32(out[0]["id"].encode()) % registry.HASH_BUCKETS["vendor"]
     assert registry.shard_path(out[0]["id"]).name == f"vendor-{bucket}.yaml"
     assert registry.manifest_shard(out[0]["id"]) == f"vendor-{bucket}"

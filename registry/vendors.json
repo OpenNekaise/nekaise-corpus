@@ -253,6 +253,34 @@
     "decision": "go"
    }
   },
+  "forbo-flooring-fr": {
+   "name": "Forbo Flooring France",
+   "source": "vendor_forbo",
+   "mechanism": "sitemap_pages",
+   "sitemaps": [
+    "https://forbo.blob.core.windows.net/sitemaps/sitemap_flooring_fr-fr.xml.gz"
+   ],
+   "page_pattern": "/documentation-technique/",
+   "pdf_pattern": "forbo\\.blob\\.core\\.windows\\.net/forbodocuments/.*\\.pdf",
+   "topic": "materials",
+   "topic_rules": [
+    [
+     ".",
+     "materials"
+    ]
+   ],
+   "language": "fr",
+   "pages_per_run": 4,
+   "crawl_delay": 1,
+   "notes": "The catch-all topic rule keeps flooring literature in materials; otherwise the generic URL classifier reads Azure's windows.net hostname as the architecture keyword 'windows'.",
+   "rights": {
+    "tos_url": "https://www.forbo.com/flooring/fr-fr/mentions-legales-conditions-d-utilisation/plbt2y",
+    "tos_excerpt": "la reproduction, transmission ou toute autre utilisation ... est interdite, sans l'accord préalable écrit de Forbo Corporate Communications (aucune clause d'accès automatisé)",
+    "robots": "www.forbo.com: User-agent * no Disallow; no Crawl-delay",
+    "reviewed_at": "2026-09-09",
+    "decision": "go"
+   }
+  },
   "dormakaba-us": {
    "name": "dormakaba US",
    "source": "vendor_dormakaba",
