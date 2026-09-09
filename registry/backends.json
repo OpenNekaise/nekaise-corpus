@@ -282,7 +282,8 @@
     "script": "find_github.py",
     "args": [],
     "enabled": true,
-    "rotation": false
+    "rotation": false,
+    "reason": "revisit cursor deferred twice on 2026-09-09 and reaffirmed 2026-09-10: review found only PyFEM capped (~114 uncollected paths); keep new curated repos auto-walking. Before revisiting, preserve lifetime per-repo caps and URL/title/blocklist dedup, retain cursor on API failure, and test wraparound, unwalked and all-fetch-failed repos; review code/tests/backends/rotation together. Local evidence: workspace/maintainer-record-20260909-1827.md"
   },
   "find_vendor": {
     "script": "find_vendor.py",
