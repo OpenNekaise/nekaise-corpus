@@ -7480,21 +7480,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
-  - id: vnd-jci-bas-content-531
-    title: 'Johnson Controls Metasys/BAS docs: T8800 Series BACnet MS/TP Networked Thermostat
-      Controller Technical Bulletin (PIGe3jav7ZDIZJecfZS20g — content)'
-    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/PIGe3jav7ZDIZJecfZS20g/content
-    source: vendor_jci
-    license: open
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
-    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
-    rights_verified_at: '2026-08-30'
   - id: vnd-jci-bas-content-550
     title: 'Johnson Controls Metasys/BAS docs: NAE Standard Control Panel Subassembly
       for a 16 in. x 20 in. Enclosure Product Bulletin (tgS48JzYHMdxOjbiUVtcxg — c'
@@ -17918,4 +17903,109 @@ sources:
     license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-3041
+    title: 'Johnson Controls Metasys/BAS docs: VA9204-AGx-2Z Series On/Off and Floating
+      Point Electric Spring Return Valve Actuators Installation Guide (LAb 7JvpE'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/LAb_7JvpEF1cbPVVGjvlJg/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-3069
+    title: 'Johnson Controls Metasys/BAS docs: VG7000 Series Bronze Control Valves Installation
+      Instructions (4FS6Iw1m1aI9GtrfeJYNwg — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/4FS6Iw1m1aI9GtrfeJYNwg/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-3150
+    title: 'Johnson Controls Metasys/BAS docs: VA-4233-BGx Series Electric Valve Actuators
+      Installation Instructions (t8yI92DmCQxOPxmp 94uZg — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/t8yI92DmCQxOPxmp_94uZg/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-3167
+    title: 'Johnson Controls Metasys/BAS docs: VA7800 Series Electric Valve Actuators
+      Product Bulletin (uoTmiBfaeXGPUkAYbafngw — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/uoTmiBfaeXGPUkAYbafngw/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-3178
+    title: 'Johnson Controls Metasys/BAS docs: VA2202-xxx-2 Series Electric Spring Return
+      Valve Actuators Product Bulletin (pkckHXwcsaboDR3ZmwboKQ — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/pkckHXwcsaboDR3ZmwboKQ/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-3192
+    title: 'Johnson Controls Metasys/BAS docs: VA9109-xGx-4 Series Electric Non-Spring
+      Return Valve Actuators Product Bulletin (l5icqmWa5daulscgj~zkkQ — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/l5icqmWa5daulscgj~zkkQ/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-jci-bas-content-3202
+    title: 'Johnson Controls Metasys/BAS docs: M9208-xxx-x Series Electric Spring Return
+      Actuators Product Bulletin (dHyL1PyPiXavPRtodMzy~g — content)'
+    url: https://docs.johnsoncontrols.com/bas/api/khub/documents/dHyL1PyPiXavPRtodMzy~g/content
+    source: vendor_jci
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.johnsoncontrols.com/legal/terms-of-use
+    license_evidence: 'website ToS: personal non-commercial use, no robots — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
