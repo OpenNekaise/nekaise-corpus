@@ -69426,3 +69426,12 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-bio-based-fiber-reinforced-cementitious-compos
+    title: 'Bio-based fiber–reinforced cementitious composites: durability mechanisms,
+      fungal susceptibility and research gaps'
+    url: https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2026.1903429/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
