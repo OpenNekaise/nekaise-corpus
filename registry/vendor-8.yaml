@@ -7555,21 +7555,6 @@ sources:
       the Website — declared prohibition disregarded by operator decision 2026-08-30
       (local training use, no redistribution)
     rights_verified_at: '2026-08-30'
-  - id: vnd-carrier-commercial-om-1127699207-00-m-t
-    title: 'Carrier Commercial (US literature): Occupancy Sensor (TCB-SIR41UYP-UL) Operation
-      Manual (09 — OM 1127699207 00 M T)'
-    url: https://www.shareddocs.com/hvac/docs/1001/Public/09/OM_1127699207_00_M_T.pdf
-    source: vendor_carrier
-    license: open
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
-    license_evidence: prohibits any device/program to access, acquire, copy or monitor
-      the Website — declared prohibition disregarded by operator decision 2026-08-30
-      (local training use, no redistribution)
-    rights_verified_at: '2026-08-30'
   - id: vnd-taco-301-s375-skv-2007d-1760-3hp
     title: 'Taco Comfort Solutions: FileLibrary — 301 S375 SKV 2007D 1760 3HP'
     url: https://www.tacocomfort.com/documents/FileLibrary/301-S375_SKV_2007D_1760_3HP.pdf
@@ -18117,4 +18102,64 @@ sources:
     license_evidence: 'website ToS: personal non-commercial use, no robots — declared
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-11-808-885-01
+    title: 'Carrier Commercial (US literature): TruVu Chilled Water System Optimizer
+      Installation and Start-up Guide (00 — 11 808 885 01)'
+    url: https://www.shareddocs.com/hvac/docs/1000/Public/00/11-808-885-01.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-19xr-xrv-clt-10ss
+    title: 'Carrier Commercial (US literature): 19XR,XRV AquaEdge® Single-Stage or Two-Stage
+      Semi-Hermetic Centrifugal Liquid Chillers with PIC II Controls and HF'
+    url: https://www.shareddocs.com/hvac/docs/1005/Public/05/19XR_XRV-CLT-10SS.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-om-fn1aaf-05fr
+    title: 'Carrier Commercial (US literature): FN1AAF Machine à air négatif OptiClean™
+      et épurateur d’air Guide d’utilisation et d’entretien (0B — OM FN1AAF 05FR'
+    url: https://www.shareddocs.com/hvac/docs/1009/Public/0B/OM-FN1AAF-05FR.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-33cs-25so
+    title: 'Carrier Commercial (US literature): 33CSCNACHP-FC Comfort™ Pro Non-Programmable
+      Fan Coil Commercial Thermostat (09 — 33CS 25SO)'
+    url: https://www.shareddocs.com/hvac/docs/1005/Public/09/33CS-25SO.pdf
+    source: vendor_carrier
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
     rights_verified_at: '2026-08-30'
