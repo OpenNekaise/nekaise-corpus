@@ -19612,3 +19612,33 @@ sources:
     license_evidence: (c) dormakaba, all rights reserved; no explicit download/redistribution/automation
       clause found
     rights_verified_at: '2026-08-28'
+  - id: vnd-carrier-commercial-38aks-2w
+    title: 'Carrier Commercial (US literature): 38AKS013-024 Air-Cooled Condensing Units
+      50/60 Hz (0A — 38AKS 2W)'
+    url: https://www.shareddocs.com/hvac/docs/1005/Public/0A/38AKS-2W.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-48-50a-1w
+    title: 'Carrier Commercial (US literature): 48/50AJ,AK,AW,AY020-060 Single Package
+      Rooftop Gas Heating/Electric Cooling and Electric Cooling Units with Comfor'
+    url: https://www.shareddocs.com/hvac/docs/1005/Public/04/48_50A-1W.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
