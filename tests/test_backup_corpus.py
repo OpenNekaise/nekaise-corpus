@@ -25,7 +25,11 @@ def source(tmp_path, monkeypatch):
     return root, mount
 
 
-def test_roundtrip_and_repeated_backup_preserve_previous_copy(source):
+@pytest.mark.parametrize("gzip_fallback", [False, True])
+def test_roundtrip_and_repeated_backup_preserve_previous_copy(source, monkeypatch, gzip_fallback):
+    if gzip_fallback:
+        which = backup.shutil.which
+        monkeypatch.setattr(backup.shutil, "which", lambda name: None if name == "pigz" else which(name))
     root, mount = source
     first = backup.backup(root, mount)
     archive = first / "corpus.tar.gz"

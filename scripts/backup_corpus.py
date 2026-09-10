@@ -72,9 +72,11 @@ def write_archive(root: Path, path: Path) -> str:
     env = dict(os.environ)
     env.pop("TAR_OPTIONS", None)
     env.pop("GZIP", None)
+    env.pop("PIGZ", None)
+    compressor = "pigz -1 -p 8" if shutil.which("pigz") else "gzip -1"
     with path.open("xb") as output:
         with subprocess.Popen(
-            ["tar", "--create", "--format=posix", "--use-compress-program=gzip -1",
+            ["tar", "--create", "--format=posix", f"--use-compress-program={compressor}",
              "--file=-", "--", *CONTENTS],
             cwd=root, env=env, stdout=subprocess.PIPE,
         ) as process:
