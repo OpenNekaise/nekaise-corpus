@@ -69821,3 +69821,12 @@ sources:
     license: open
     topic: commissioning_fdd
     format: pdf
+  - id: ope-climate-change-impacts-on-the-upper-indus-hydr
+    title: 'Climate Change Impacts on the Upper Indus Hydrology: Sources, Shifts and
+      Extremes'
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0165630&type=printable
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
