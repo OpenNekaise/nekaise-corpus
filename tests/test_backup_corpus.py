@@ -28,9 +28,9 @@ def source(tmp_path, monkeypatch):
 def test_roundtrip_and_repeated_backup_preserve_previous_copy(source):
     root, mount = source
     first = backup.backup(root, mount)
-    archive = first / "corpus.tar"
+    archive = first / "corpus.tar.gz"
     expected = hashlib.sha256(archive.read_bytes()).hexdigest()
-    assert (first / "SHA256SUMS").read_text() == f"{expected}  corpus.tar\n"
+    assert (first / "SHA256SUMS").read_text() == f"{expected}  corpus.tar.gz\n"
     with tarfile.open(archive) as stream:
         assert stream.extractfile("corpus/sample.md").read() == (root / "corpus/sample.md").read_bytes()
         assert stream.extractfile("corpus/.ruleset").read() == b"none\n"

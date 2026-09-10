@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write a verified, dated corpus + provenance tar archive to a mounted backup drive."""
+"""Write a verified, dated corpus + provenance tar.gz archive to a mounted backup drive."""
 from __future__ import annotations
 
 import argparse
@@ -71,9 +71,11 @@ def write_archive(root: Path, path: Path) -> str:
     last = time.monotonic()
     env = dict(os.environ)
     env.pop("TAR_OPTIONS", None)
+    env.pop("GZIP", None)
     with path.open("xb") as output:
         with subprocess.Popen(
-            ["tar", "--create", "--format=posix", "--file=-", "--", *CONTENTS],
+            ["tar", "--create", "--format=posix", "--use-compress-program=gzip -1",
+             "--file=-", "--", *CONTENTS],
             cwd=root, env=env, stdout=subprocess.PIPE,
         ) as process:
             try:
@@ -98,8 +100,8 @@ def write_archive(root: Path, path: Path) -> str:
 
 def backup(root: Path, mount: Path, *, dry_run: bool = False) -> Path | None:
     require_mount(mount)
-    if not shutil.which("tar"):
-        raise RuntimeError("tar is required")
+    if not shutil.which("tar") or not shutil.which("gzip"):
+        raise RuntimeError("tar and gzip are required")
     stamp = root / "corpus" / ".ruleset"
     ruleset = stamp.read_text()
     if ruleset.startswith("IN-PROGRESS"):
@@ -126,7 +128,7 @@ def backup(root: Path, mount: Path, *, dry_run: bool = False) -> Path | None:
     partial = destination / (name + ".partial")
     final = destination / name
     partial.mkdir()
-    archive = partial / "corpus.tar"
+    archive = partial / "corpus.tar.gz"
     print(f"Writing {archive}", flush=True)
     expected = write_archive(root, archive)
     if stamp.read_text() != ruleset:
@@ -134,10 +136,10 @@ def backup(root: Path, mount: Path, *, dry_run: bool = False) -> Path | None:
     print("Reading the archive back to verify SHA-256…", flush=True)
     if hash_file(archive) != expected:
         raise RuntimeError("Backup checksum mismatch; backup remains incomplete")
-    ops.atomic_write_text(partial / "SHA256SUMS", f"{expected}  corpus.tar\n")
+    ops.atomic_write_text(partial / "SHA256SUMS", f"{expected}  corpus.tar.gz\n")
     ops.atomic_write_text(partial / "RESTORE.txt",
                           "Verify from this directory: sha256sum -c SHA256SUMS\n"
-                          "Restore into an empty directory: tar -xf corpus.tar -C /path/to/restore\n"
+                          "Restore into an empty directory: tar -xzf corpus.tar.gz -C /path/to/restore\n"
                           "Contains corpus/ (including .ruleset), manifest/, registry/, "
                           "pruned_urls.txt and requirements.lock.\n"
                           "Before training, review the restored eligibility policy against "
