@@ -156,6 +156,7 @@ def test_backend_health_handles_empty_history(tmp_path):
                 "pointer_advanced_in_window": False,
                 "last_rotation": None,
                 "last_hold_reason": None,
+                "last_hold_detail": None,
             }
         },
     }
@@ -184,6 +185,34 @@ def test_backend_health_streaks_reset_on_success(tmp_path):
     assert finder["pointer_advanced_in_window"] is True
     assert finder["last_rotation"]["status"] == "advanced"
     assert finder["last_hold_reason"] == "finder_requested"
+    assert finder["last_hold_detail"] is None
+
+
+def test_backend_health_retains_hold_detail_after_advance_and_resets_on_legacy_hold(tmp_path):
+    history = tmp_path / "history.jsonl"
+    rows = []
+    for run_id, event, fields, expected in [
+        ("cap", "rotation_held", {"detail": "candidate cap reached"}, "candidate cap reached"),
+        ("month", "rotation_held", {"detail": "open UTC month"}, "open UTC month"),
+        ("advance", "rotation_advanced", {}, "open UTC month"),
+        ("legacy", "rotation_held", {}, None),
+        ("malformed", "rotation_held", {"detail": ["bad"]}, None),
+    ]:
+        rows.extend([
+            {"run_id": run_id, "event": "discovery_merged", "accepted": {"finder": 0}},
+            {"run_id": run_id, "event": event, "backend": "finder",
+             "reason": "finder_requested", **fields},
+            {"run_id": run_id, "event": "run_completed"},
+        ])
+        write_history(history, *rows)
+        finder = maintainer.summarize_backend_health(
+            history, {"finder": {"enabled": True}}
+        )["backends"]["finder"]
+        assert finder["last_hold_reason"] == "finder_requested"
+        assert finder["last_hold_detail"] == expected
+        assert finder["last_rotation"].get("detail") == (
+            expected if event == "rotation_held" else None
+        )
 
 
 def test_backend_health_skips_malformed_lines(tmp_path):

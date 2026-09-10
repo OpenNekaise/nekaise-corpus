@@ -167,6 +167,16 @@ def _finder_output(text: str) -> str:
     return "\n".join(line for line in text.splitlines() if line.startswith("#"))
 
 
+def _rotation_hold_detail(path: Path) -> str:
+    """Read a bounded display note; missing or unreadable notes never invalidate a hold."""
+    try:
+        with path.open(encoding="utf-8", errors="replace") as handle:
+            line = handle.readline(4096)
+    except OSError:
+        return ""
+    return "".join(char for char in line if char.isprintable()).strip()[:512]
+
+
 def merge_proposals(results: list[dict]) -> tuple[int, dict[str, int]]:
     """Merge finder proposal files in backend order, deduplicating across concurrent finders."""
     urls, titles, ids = registry.existing_keys()
@@ -255,6 +265,7 @@ def run_finders_parallel(
                 "command": shown,
                 "proposal": proposal,
                 "rotation_hold": rotation_hold.exists(),
+                "rotation_hold_detail": _rotation_hold_detail(rotation_hold),
                 "rotation_next": rotation_next,
                 "backend_exhausted": backend_exhausted,
                 "returncode": result.returncode,
@@ -346,12 +357,14 @@ def run_finders_parallel(
                 continue
             if backends[name].get("rotation", True):
                 if results_by_name[name]["rotation_hold"]:
-                    print(f"rotation held for {name}: finder reported more candidates at this pointer")
+                    detail = results_by_name[name]["rotation_hold_detail"]
+                    print(f"rotation held for {name}: {detail or 'finder requested hold'}")
                     ops.run_event(
                         run_id,
                         "rotation_held",
                         backend=name,
                         reason="finder_requested",
+                        **({"detail": detail} if detail else {}),
                     )
                     continue
                 next_path = results_by_name[name]["rotation_next"]

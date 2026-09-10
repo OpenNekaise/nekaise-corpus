@@ -259,6 +259,8 @@ def summarize_backend_health(
                     }
                     if event == "rotation_held" and isinstance(row.get("reason"), str):
                         rotation["reason"] = row["reason"]
+                    if event == "rotation_held" and isinstance(row.get("detail"), str):
+                        rotation["detail"] = row["detail"]
                     state["rotations"].append((backend, rotation))
             elif event == "run_completed":
                 state["completed_at"] = row.get("at") if isinstance(row.get("at"), str) else None
@@ -269,6 +271,7 @@ def summarize_backend_health(
                         "last_nonzero_at": None,
                         "last_rotation": None,
                         "last_hold_reason": None,
+                        "last_hold_detail": None,
                     })
                     if backend in state["degraded"]:
                         health["degraded_streak"] += 1
@@ -288,10 +291,12 @@ def summarize_backend_health(
                         "last_nonzero_at": None,
                         "last_rotation": None,
                         "last_hold_reason": None,
+                        "last_hold_detail": None,
                     })
                     health["last_rotation"] = rotation
                     if rotation["status"] == "held":
                         health["last_hold_reason"] = rotation.get("reason")
+                        health["last_hold_detail"] = rotation.get("detail")
                 completed.append(state)
                 pending.pop(run_id, None)
             elif event in {"run_failed", "run_recovered"}:
@@ -327,6 +332,7 @@ def summarize_backend_health(
             "last_nonzero_at": None,
             "last_rotation": None,
             "last_hold_reason": None,
+            "last_hold_detail": None,
         })
         backends[name] = {
             "observed_rounds": len(observed),
@@ -341,6 +347,7 @@ def summarize_backend_health(
             ),
             "last_rotation": health["last_rotation"],
             "last_hold_reason": health["last_hold_reason"],
+            "last_hold_detail": health["last_hold_detail"],
         }
     return {
         "window_limit": window,

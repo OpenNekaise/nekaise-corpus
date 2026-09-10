@@ -19,6 +19,7 @@ def main() -> None:
     parser.add_argument("--token")
     parser.add_argument("--exit-code", type=int, default=0)
     parser.add_argument("--hold-rotation", action="store_true")
+    parser.add_argument("--hold-note", default="fixture hold")
     parser.add_argument("--next-pointer")
     parser.add_argument("--exhausted")
     parser.add_argument("--append", action="store_true")
@@ -37,7 +38,7 @@ def main() -> None:
     }]
     print("# 1 fixture proposal")
     if args.hold_rotation:
-        Path(os.environ["NEKAISE_ROTATION_HOLD_FILE"]).write_text("fixture hold\n")
+        Path(os.environ["NEKAISE_ROTATION_HOLD_FILE"]).write_text(args.hold_note + "\n")
     if args.next_pointer:
         Path(os.environ["NEKAISE_ROTATION_NEXT_FILE"]).write_text(args.next_pointer + "\n")
     if args.exhausted:

@@ -241,7 +241,16 @@ def test_parallel_finders_stage_in_subprocesses_then_merge_once(tmp_path, monkey
     }) in events
 
 
-def test_successful_finder_can_hold_rotation_at_a_capped_pointer(tmp_path, monkeypatch):
+@pytest.mark.parametrize("note, detail", [
+    ("candidate cap reached", "candidate cap reached"),
+    ("2026-09 is the open UTC month; re-probe until it closes",
+     "2026-09 is the open UTC month; re-probe until it closes"),
+    ("", ""),
+    ("  capped\t\x1b\u202e 月  \nignored second line", "capped 月"),
+])
+def test_successful_finder_can_hold_rotation_with_optional_detail(
+    tmp_path, monkeypatch, capsys, note, detail
+):
     fixtures = Path(__file__).parent / "fixtures"
     monkeypatch.setattr(run_round, "SCRIPTS", fixtures)
     monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
@@ -265,6 +274,7 @@ def test_successful_finder_can_hold_rotation_at_a_capped_pointer(tmp_path, monke
             "args": [
                 "--id", "pat-cn100a", "--title", "Concrete foundation",
                 "--url", "https://e.org/cn100a", "--hold-rotation",
+                "--hold-note", note,
             ],
         },
     }
@@ -283,7 +293,28 @@ def test_successful_finder_can_hold_rotation_at_a_capped_pointer(tmp_path, monke
     assert ("fixture-run", "rotation_held", {
         "backend": "capped",
         "reason": "finder_requested",
+        **({"detail": detail} if detail else {}),
     }) in events
+    assert f"rotation held for capped: {detail or 'finder requested hold'}" in capsys.readouterr().out
+
+
+@pytest.mark.parametrize("payload, expected", [
+    (b"x" * 10000, "x" * 512),
+    (b"\nsecond line", ""),
+    (b"\xff\x00\x1f\x7f cap\r\nignored", "\ufffd cap"),
+])
+def test_rotation_hold_note_is_bounded_and_tolerates_malformed_text(tmp_path, payload, expected):
+    note = tmp_path / "hold"
+    note.write_bytes(payload)
+    assert run_round._rotation_hold_detail(note) == expected
+
+
+def test_unreadable_rotation_hold_note_is_only_missing_detail(tmp_path, monkeypatch):
+    def denied(*args, **kwargs):
+        raise PermissionError("unreadable hold note")
+
+    monkeypatch.setattr(Path, "open", denied)
+    assert run_round._rotation_hold_detail(tmp_path / "hold") == ""
 
 
 def test_dynamic_finder_replaces_cursor_and_disables_itself_at_exhaustion(
