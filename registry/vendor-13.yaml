@@ -19887,3 +19887,27 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-imi-hydronic-versaflow-kit-a-f156-us-low
+    title: 'IMI Hydronic: Technical Specifications (VersaFlow Kit A F156 US low)'
+    url: https://cdn.tessa.imihy.eimed-project.de/728332/VersaFlow_Kit-A_F156_US_low.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
+  - id: vnd-imi-hydronic-versaflow-kit-b-f157-us-low
+    title: 'IMI Hydronic: Technical Specifications (VersaFlow Kit B F157 US low)'
+    url: https://cdn.tessa.imihy.eimed-project.de/728329/VersaFlow_Kit-B_F157_US_low.pdf
+    source: vendor_imi
+    license: open
+    topic: equipment_systems
+    format: pdf
+    document_type: product-literature
+    license_url: https://climatecontrol.imiplc.com/gb-en/legal-notice
+    license_evidence: permits downloading, copying and/or printing of pages for strictly
+      personal and non-commercial use; no automation clause
+    rights_verified_at: '2026-08-28'
