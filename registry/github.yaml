@@ -44326,3 +44326,31 @@ sources:
     license: open
     topic: building_energy
     format: txt
+  - id: gh-schema-readme
+    title: 'schema: README.md'
+    url: https://raw.githubusercontent.com/BuildingSync/schema/develop-v2/README.md
+    source: gh_schema
+    license: open
+    topic: standards_protocols
+    format: md
+  - id: gh-schema-docs-notebooks-bsync-examples-primary-school-levels1-
+    title: 'schema: docs/notebooks/bsync_examples/Primary-School-Levels1-2.md'
+    url: https://raw.githubusercontent.com/BuildingSync/schema/develop-v2/docs/notebooks/bsync_examples/Primary-School-Levels1-2.md
+    source: gh_schema
+    license: open
+    topic: standards_protocols
+    format: md
+  - id: gh-schema-docs-notebooks-bsync-examples-small-office-level-1
+    title: 'schema: docs/notebooks/bsync_examples/Small-Office-Level-1.md'
+    url: https://raw.githubusercontent.com/BuildingSync/schema/develop-v2/docs/notebooks/bsync_examples/Small-Office-Level-1.md
+    source: gh_schema
+    license: open
+    topic: standards_protocols
+    format: md
+  - id: gh-schema-docs-notebooks-bsync-examples-small-office-level-2
+    title: 'schema: docs/notebooks/bsync_examples/Small-Office-Level-2.md'
+    url: https://raw.githubusercontent.com/BuildingSync/schema/develop-v2/docs/notebooks/bsync_examples/Small-Office-Level-2.md
+    source: gh_schema
+    license: open
+    topic: standards_protocols
+    format: md
