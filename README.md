@@ -51,16 +51,16 @@ python scripts/clean_corpus.py --check
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **1,252,197** |
+| **Documents** | **1,252,630** |
 | **Policy-excluded provenance** | **8,039** rows (not fetched or training-ready) |
 | **Raw originals** | **~692G** (PDF / HTML / source code) |
-| **Extracted text** | **~68G** (~66.889B chars, **≈16.722B tokens**) |
-| **Cleaned corpus** | **~65G** (~63.766B chars, **≈15.941B tokens**, ruleset-cleaned) |
+| **Extracted text** | **~68G** (~66.904B chars, **≈16.726B tokens**) |
+| **Cleaned corpus** | **~65G** (~63.779B chars, **≈15.945B tokens**, ruleset-cleaned) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): equipment_systems 416,689 · construction 317,597 · building_energy 178,117 · structures_civil 130,090 · materials 86,487 · infrastructure 57,202 · architecture 36,654 · standards_protocols 11,538 · controls_bas 10,988 · urban 6,005 · commissioning_fdd 830.
+**By topic** (a source gets one at registration): equipment_systems 416,822 · construction 317,725 · building_energy 178,166 · structures_civil 130,147 · materials 86,524 · infrastructure 57,226 · architecture 36,659 · standards_protocols 11,538 · controls_bas 10,988 · urban 6,005 · commissioning_fdd 830.
 
-**By license:** open 999,043 · public-domain 232,736 · cc-by-sa 1,732 · cc-by 18,686.
+**By license:** open 999,442 · public-domain 232,770 · cc-by-sa 1,732 · cc-by 18,686.
 
 _Snapshot of the eligible live registry (2026-09-10) — auto-generated from the manifest. Local raw/text
 disk sizes may include retained policy-excluded cache; excluded bytes are not in `corpus/` and are
@@ -153,6 +153,38 @@ Cleaning is structural and language-safe. It removes repeated furniture, page ma
 leaders, OCR debris, patent identifier blocks, and similar artifacts without treating non-Latin
 scripts or numeric engineering tables as noise. The active ruleset is recorded in
 `corpus/.ruleset` and pinned by golden tests.
+
+## Back up to an external SSD
+
+```bash
+python scripts/backup_corpus.py --dry-run
+python scripts/backup_corpus.py --lock-timeout 10800
+```
+
+The default drive is `/media/zengp/ssd`; use `--mount /another/mounted/drive` to change it.
+The command refuses an unmounted destination, waits up to the requested number of seconds for
+the corpus-round lock, and runs the corpus consistency check before copying. Do not run standalone
+loaders, pruners, or cleaners during a backup; scheduled rounds coordinate through the lock.
+
+Each run creates a full, uncompressed `corpus.tar` in a dated directory under
+`/media/zengp/ssd/nekaise-corpus-backups/`. It includes `corpus/` with its `.ruleset`, `manifest/`,
+`registry/`, `pruned_urls.txt`, and `requirements.lock`. Previous backups are retained; each run
+needs space for another full copy. `raw/` and `text/` are not included.
+
+The archive is flushed and read back to verify SHA-256 before the directory loses its `.partial`
+suffix. A failed or interrupted backup remains `.partial` and must not be used as a complete copy;
+rerunning creates a new backup. Completed backups include `SHA256SUMS` and `RESTORE.txt`.
+
+From a completed backup directory, verify and restore into an empty destination:
+
+```bash
+sha256sum -c SHA256SUMS
+mkdir -p /path/to/restored-corpus
+tar -xf corpus.tar -C /path/to/restored-corpus
+```
+
+Review the restored eligibility policy against the current `registry/eligibility.json` before
+using an older backup for training. Safely eject the SSD after the backup completes.
 
 ## Reproducible by design
 
