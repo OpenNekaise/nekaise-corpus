@@ -69847,3 +69847,11 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-global-transcontinental-power-pools-for-low-ca
+    title: Global transcontinental power pools for low-carbon electricity
+    url: https://escholarship.org/content/qt6xg758dc/qt6xg758dc.pdf?t=sg3io4
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
