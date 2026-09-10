@@ -108,6 +108,10 @@ REPOS = [
     {"repo": "bsl546/energym", "license": "open", "topic": "controls_bas"},
     # --- round 7: standards / metadata schemas ---
     {"repo": "BrickSchema/Brick", "license": "open", "topic": "standards_protocols"},
+    # BSD-style terms: retain notices; no endorsement. Clause 4 restricts BuildingSync trademark
+    # use in derivative distributions: https://github.com/BuildingSync/schema/blob/develop-v2/LICENSE.md
+    {"repo": "BuildingSync/schema", "license": "open", "topic": "standards_protocols",
+     "include": ["docs/", "README"], "cap": 20},
     # --- round 7 built-environment: structural analysis / FEA (some pull pedagogical .py code) ---
     {"repo": "JWock82/Pynite", "license": "open", "topic": "structures_civil",
      "include": ["Pynite/", "docs/", "README"], "code": ["py"], "cap": 60},

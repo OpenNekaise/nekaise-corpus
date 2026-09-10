@@ -5,6 +5,16 @@ import yaml
 import find_github
 
 
+def test_curated_repos_have_distinct_source_buckets():
+    # Completion is keyed by repo name alone; two owners sharing a name would silently
+    # suppress one another's discovery once either repository has been ingested.
+    owners = {}
+    for spec in find_github.REPOS:
+        bucket = "gh_" + find_github.registry.slug(spec["repo"].split("/")[-1])
+        assert bucket not in owners, (bucket, owners.get(bucket), spec["repo"])
+        owners[bucket] = spec["repo"]
+
+
 def test_blocklisted_repo_counts_as_durably_done(tmp_path, monkeypatch):
     registry_dir = tmp_path / "registry"
     manifest_dir = tmp_path / "manifest"
