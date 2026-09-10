@@ -69790,3 +69790,19 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
+  - id: ope-analysis-of-social-psychological-factors-and-f
+    title: Analysis of social–Psychological factors and financial incentives in demand
+      response and residential energy behavior
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2023.932134/pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-a-review-of-reinforcement-learning-for-autonom
+    title: A review of reinforcement learning for autonomous building energy management
+    url: https://arxiv.org/pdf/1903.05196
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
