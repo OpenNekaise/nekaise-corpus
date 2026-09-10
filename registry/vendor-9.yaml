@@ -20208,22 +20208,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-noberne-doors-series-1-solidcore-doors-brochures-noberne-doors-brochure
-    title: 'SpecifiedBy (UK manufacturer documents): Noberne Doors*Series 1 - Solidcore
-      Doors*Brochures*noberne_doors_brochure.pdf (series 1 solidcore doors — Nob'
-    url: https://www.specifiedby.com/noberne-doors/series-1-solidcore-doors/Noberne
-      Doors*Series 1 - Solidcore Doors*Brochures*noberne_doors_brochure.pdf
-    source: vendor_specifiedby
-    license: open
-    topic: architecture
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.specifiedby.com/terms
-    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); PDFs 200 without challenge
-    rights_verified_at: '2026-08-30'
   - id: vnd-forbo-flooring-fr-brochure-bulletinboard
     title: 'Forbo Flooring France: Brochure Bulletin Board (Brochure  BulletinBoard)'
     url: https://forbo.blob.core.windows.net/forbodocuments/820306/Brochure- BulletinBoard.pdf
@@ -20282,4 +20266,19 @@ sources:
     license_evidence: prohibits any device/program to access, acquire, copy or monitor
       the Website — declared prohibition disregarded by operator decision 2026-08-30
       (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-decor-370-premier-roller-blind-product-brochure-dc301fcc
+    title: 'SpecifiedBy (UK manufacturer documents): decor-370-premier-roller-blind-product-brochure_dc301fcc.pdf
+      (decor 370 premier roller blind — decor 370 prem'
+    url: https://www.specifiedby.com/decor-systems/decor-370-premier-roller-blind/decor-370-premier-roller-blind-product-brochure_dc301fcc.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'

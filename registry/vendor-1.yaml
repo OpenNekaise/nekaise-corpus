@@ -19166,3 +19166,33 @@ sources:
       interdite, sans l'accord préalable écrit de Forbo Corporate Communications (aucune
       clause d'accès automatisé)
     rights_verified_at: '2026-09-09'
+  - id: vnd-specifiedby-noberne-acoustic-brochure
+    title: 'SpecifiedBy (UK manufacturer documents): Noberne_Acoustic_Brochure.pdf (series
+      3 30 min fire rated doors — Noberne Acoustic Brochure)'
+    url: https://www.specifiedby.com/noberne-doors/series-3-30-min-fire-rated-doors/Noberne_Acoustic_Brochure.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-series-6-fd90-fire-door-instructio-2
+    title: 'SpecifiedBy (UK manufacturer documents): Series_6_FD90_Fire_Door_Instructions.pdf
+      (series 6 90 min fire rated doors — Series 6 FD90 Fire Door Instruct'
+    url: https://www.specifiedby.com/noberne-doors/series-6-90-min-fire-rated-doors/Series_6_FD90_Fire_Door_Instructions.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
