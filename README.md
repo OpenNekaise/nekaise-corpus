@@ -51,16 +51,16 @@ python scripts/clean_corpus.py --check
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **1,253,053** |
+| **Documents** | **1,253,493** |
 | **Policy-excluded provenance** | **8,039** rows (not fetched or training-ready) |
 | **Raw originals** | **~692G** (PDF / HTML / source code) |
-| **Extracted text** | **~68G** (~66.919B chars, **≈16.730B tokens**) |
-| **Cleaned corpus** | **~65G** (~63.794B chars, **≈15.948B tokens**, ruleset-cleaned) |
+| **Extracted text** | **~68G** (~66.934B chars, **≈16.734B tokens**) |
+| **Cleaned corpus** | **~65G** (~63.808B chars, **≈15.952B tokens**, ruleset-cleaned) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): equipment_systems 416,957 · construction 317,855 · building_energy 178,205 · structures_civil 130,209 · materials 86,551 · infrastructure 57,241 · architecture 36,674 · standards_protocols 11,538 · controls_bas 10,988 · urban 6,005 · commissioning_fdd 830.
+**By topic** (a source gets one at registration): equipment_systems 417,090 · construction 317,980 · building_energy 178,259 · structures_civil 130,269 · materials 86,586 · infrastructure 57,262 · architecture 36,686 · standards_protocols 11,538 · controls_bas 10,988 · urban 6,005 · commissioning_fdd 830.
 
-**By license:** open 999,813 · public-domain 232,822 · cc-by-sa 1,732 · cc-by 18,686.
+**By license:** open 1,000,215 · public-domain 232,860 · cc-by-sa 1,732 · cc-by 18,686.
 
 _Snapshot of the eligible live registry (2026-09-10) — auto-generated from the manifest. Local raw/text
 disk sizes may include retained policy-excluded cache; excluded bytes are not in `corpus/` and are
@@ -170,7 +170,8 @@ Each run creates a full, gzip-compressed `corpus.tar.gz` in a dated directory un
 `/media/zengp/ssd/nekaise-corpus-backups/`. It includes `corpus/` with its `.ruleset`, `manifest/`,
 `registry/`, `pruned_urls.txt`, and `requirements.lock`. Previous backups are retained; each run
 needs space for another full copy (the preflight conservatively budgets for uncompressed size).
-`tar` and `gzip` are required. `raw/` and `text/` are not included.
+`tar` and `gzip` are required; when installed, `pigz` speeds up compression using eight workers.
+`raw/` and `text/` are not included.
 
 The archive is flushed and read back to verify SHA-256 before the directory loses its `.partial`
 suffix. A failed or interrupted backup remains `.partial` and must not be used as a complete copy;
