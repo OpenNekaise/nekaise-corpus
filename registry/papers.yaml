@@ -69731,3 +69731,28 @@ sources:
     license: open
     topic: infrastructure
     format: pdf
+  - id: ope-graph-neural-network-based-surrogate-modelling
+    title: Graph neural network-based surrogate modelling for real-time hydraulic prediction
+      of urban drainage networks
+    url: https://arxiv.org/pdf/2404.10324
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: other-oa'
+  - id: ope-water-supply-analysis-for-restoring-the-colora
+    title: Water Supply Analysis for Restoring the Colorado River Delta, Mexico
+    url: https://escholarship.org/content/qt70m7w9rb/qt70m7w9rb.pdf?t=lms9v4
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
+  - id: ope-phase-separation-in-anaerobic-digestion-a-pote
+    title: 'Phase Separation in Anaerobic Digestion: A Potential for Easier Process
+      Combination?'
+    url: https://www.frontiersin.org/articles/10.3389/fceng.2021.711971/pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
