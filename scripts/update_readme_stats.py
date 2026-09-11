@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import argparse
 import subprocess
-import time
 from collections import Counter
 from pathlib import Path
 
@@ -63,7 +62,6 @@ def main(argv: list[str] | None = None) -> None:
 
     topics = Counter(r["topic"] for r in ok)
     lic = Counter(r["license"] for r in ok)
-    date = time.strftime("%Y-%m-%d", time.gmtime())
 
     by_topic = " · ".join(f"{t} {n:,}" for t, n in topics.most_common())
     lic_order = ["open", "public-domain", "cc-by-sa", "cc-by", "cc0", "proprietary-internal"]
@@ -87,10 +85,6 @@ def main(argv: list[str] | None = None) -> None:
 **By topic** (a source gets one at registration): {by_topic}.
 
 **By license:** {by_lic}.
-
-_Snapshot of the eligible live registry ({date}) — auto-generated from the manifest. Local raw/text
-disk sizes may include retained policy-excluded cache; excluded bytes are not in `corpus/` and are
-not fetched again. The bytes are not shipped; run the loader to fetch your own eligible copy._
 {END}"""
 
     text = README.read_text()
