@@ -70244,3 +70244,11 @@ sources:
     topic: infrastructure
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-rae-the-rainforest-automation-energy-dataset-f
+    title: 'RAE: The Rainforest Automation Energy Dataset for Smart Grid Meter Data
+      Analysis'
+    url: https://arxiv.org/pdf/1705.05767
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
