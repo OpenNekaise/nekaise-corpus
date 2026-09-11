@@ -22,10 +22,6 @@ locally and retain their original licenses.
 **By topic** (a source gets one at registration): equipment_systems 423,521 · construction 324,711 · building_energy 180,212 · structures_civil 132,692 · materials 88,212 · infrastructure 58,268 · architecture 37,170 · standards_protocols 11,540 · controls_bas 10,990 · urban 6,005 · commissioning_fdd 830.
 
 **By license:** open 1,019,180 · public-domain 234,546 · cc-by-sa 1,732 · cc-by 18,693.
-
-_Snapshot of the eligible live registry (2026-09-11) — auto-generated from the manifest. Local raw/text
-disk sizes may include retained policy-excluded cache; excluded bytes are not in `corpus/` and are
-not fetched again. The bytes are not shipped; run the loader to fetch your own eligible copy._
 <!-- STATS:END -->
 
 ## Quick start
