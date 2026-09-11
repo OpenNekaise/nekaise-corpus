@@ -1,24 +1,25 @@
 #!/usr/bin/env python3
-"""Codex-first, Claude-reviewed autonomous maintenance for nekaise-corpus.
+"""Bounded Codex-first maintenance with optional independent Claude review.
 
-The caller must hold workspace/.continuous-dig.lock and workspace/.corpus-round.lock, so this
-process always sees a between-round repository state regardless of which round entrypoint was used.
-Codex triages read-only.  When it finds actionable work, Claude Code reviews that assessment
-read-only and a second Codex run makes the final decision and may edit/commit/push.  Provider
-exhaustion is a deferred run, not a reason to hammer the same account or silently promote Claude to
-primary maintainer.
+Take settled snapshots and perform mutations between rounds. Release growth locks during
+read-only deliberation; reacquire and refresh evidence before any action. Provider exhaustion
+defers that participant without silently promoting another model.
 """
 
 from __future__ import annotations
 
+import ctypes
 import json
 import os
 import re
 import shutil
+import signal
 import subprocess
 import sys
+import tempfile
+import time
 from collections import deque
-from contextlib import nullcontext
+from contextlib import ExitStack, contextmanager, nullcontext
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -101,6 +102,103 @@ def set_cooldown(provider: str, hours: int = 2, now: datetime | None = None) -> 
     path.write_text(str(int(until.timestamp())) + "\n")
 
 
+class MaintenanceBusy(RuntimeError):
+    pass
+
+
+@contextmanager
+def maintenance_window(phase: str):
+    """Only the single maintainer owner may request a gap; lock order matches dig."""
+    request = WORKSPACE / ".maintenance-requested"
+    started = time.monotonic()
+    wait = float(os.environ.get("MAINTAINER_LOCK_WAIT_SECONDS", "11700"))
+    request.write_text(f"{os.getpid()} {phase} {utc_now().isoformat()}\n")
+    try:
+        with ExitStack() as locks:
+            try:
+                locks.enter_context(ops.named_lock("continuous-dig", timeout=wait))
+                remaining = max(0, wait - (time.monotonic() - started))
+                locks.enter_context(ops.named_lock("corpus-round", timeout=remaining))
+            except RuntimeError as exc:
+                raise MaintenanceBusy(str(exc)) from exc
+            request.unlink(missing_ok=True)
+            acquired = time.monotonic()
+            print(f"Maintenance {phase}: acquired growth locks after {acquired - started:.1f}s", flush=True)
+            try:
+                yield
+            finally:
+                print(f"Maintenance {phase}: released growth locks after {time.monotonic() - acquired:.1f}s", flush=True)
+    finally:
+        request.unlink(missing_ok=True)
+
+
+@contextmanager
+def adopt_agent_children():
+    """Linux: keep orphaned tool sessions owned here even if the agent CLI exits first."""
+    libc = ctypes.CDLL(None, use_errno=True)
+    previous = ctypes.c_int()
+    if libc.prctl(37, ctypes.byref(previous), 0, 0, 0) != 0:
+        raise OSError(ctypes.get_errno(), "cannot inspect child-subreaper state")
+    if libc.prctl(36, 1, 0, 0, 0) != 0:
+        raise OSError(ctypes.get_errno(), "cannot supervise orphaned agent children")
+    try:
+        yield
+    finally:
+        libc.prctl(36, previous.value, 0, 0, 0)
+
+
+def descendants(parent: int) -> set[int]:
+    children: dict[int, list[int]] = {}
+    for stat in Path("/proc").glob("[0-9]*/stat"):
+        try:
+            fields = stat.read_text().rsplit(") ", 1)[1].split()
+            children.setdefault(int(fields[1]), []).append(int(stat.parent.name))
+        except (OSError, ValueError, IndexError):
+            continue  # Processes can exit during enumeration.
+    found: set[int] = set()
+    pending = list(children.get(parent, []))
+    while pending:
+        pid = pending.pop()
+        if pid not in found:
+            found.add(pid)
+            pending.extend(children.get(pid, []))
+    return found
+
+
+def stop_process_group(process: subprocess.Popen, *, existing: set[int], grace: float = 2) -> None:
+    """Stop and reap the owned tree, including tool sessions that called setsid()."""
+    def stop(sig: int) -> set[int]:
+        # Adopted orphans are now our children, so the CLI exiting cannot hide them.
+        owned = descendants(os.getpid()) - existing
+        try:
+            os.killpg(process.pid, sig)
+        except ProcessLookupError:
+            pass
+        for pid in owned:
+            try:
+                os.kill(pid, sig)
+            except ProcessLookupError:
+                pass
+        return owned
+
+    stop(signal.SIGTERM)
+    deadline = time.monotonic() + grace
+    while True:
+        process.poll()
+        owned = descendants(os.getpid()) - existing
+        for pid in owned - {process.pid}:
+            try:
+                os.waitpid(pid, os.WNOHANG)
+            except ChildProcessError:
+                pass  # Still a grandchild until its immediate parent exits.
+        if not (descendants(os.getpid()) - existing):
+            break
+        if time.monotonic() >= deadline:
+            stop(signal.SIGKILL)
+        time.sleep(0.05)
+    process.wait()
+
+
 def run_command(
     command: list[str],
     *,
@@ -110,34 +208,51 @@ def run_command(
     stderr_path: Path,
     env: dict[str, str] | None = None,
 ) -> int:
-    with stdout_path.open("w") as stdout, stderr_path.open("w") as stderr:
+    with adopt_agent_children(), stdout_path.open("w") as stdout, stderr_path.open("w") as stderr:
+        existing = descendants(os.getpid())
+        process = subprocess.Popen(
+            command, cwd=ROOT, stdin=subprocess.PIPE if prompt is not None else subprocess.DEVNULL,
+            text=True, stdout=stdout, stderr=stderr, env=env, start_new_session=True,
+        )
         try:
-            result = subprocess.run(
-                command,
-                cwd=ROOT,
-                input=prompt,
-                text=True,
-                stdout=stdout,
-                stderr=stderr,
-                env=env,
-                timeout=timeout,
-                check=False,
-            )
-            return result.returncode
+            process.communicate(input=prompt, timeout=timeout)
+            return process.returncode
         except subprocess.TimeoutExpired:
             stderr.write(f"\nmaintainer timeout after {timeout}s\n")
             return 124
+        finally:
+            stop_process_group(process, existing=existing)
+
+
+def provider_quota(exit_code: int, stderr: Path, events: Path | None = None) -> bool:
+    """Tool output and model prose are not provider errors; timeouts are never quota."""
+    if exit_code in (0, 124):
+        return False
+    messages = [stderr.read_text(errors="replace")]
+    if events is not None:
+        with events.open(errors="replace") as handle:
+            for line in handle:
+                try:
+                    event = json.loads(line)
+                except ValueError:
+                    continue
+                if not isinstance(event, dict):
+                    continue
+                if event.get("type") in {"error", "turn.failed"}:
+                    messages.append(json.dumps(event))
+                elif event.get("type") == "result" and event.get("is_error") is True:
+                    messages.append(str(event.get("result", "")))
+    return is_quota_error("\n".join(messages))
 
 
 def git(*args: str, timeout: int = 300) -> tuple[int, str]:
-    try:
-        result = subprocess.run(
-            ["git", *args], cwd=ROOT, text=True, capture_output=True, timeout=timeout, check=False
+    with tempfile.TemporaryDirectory(prefix="maintainer-git-") as directory:
+        stdout = Path(directory) / "stdout"
+        stderr = Path(directory) / "stderr"
+        code = run_command(
+            ["git", *args], prompt=None, timeout=timeout, stdout_path=stdout, stderr_path=stderr,
         )
-        return result.returncode, (result.stdout + result.stderr).strip()
-    except subprocess.TimeoutExpired as exc:
-        partial = (exc.stdout or "") + (exc.stderr or "")
-        return 124, f"{partial.strip()}\ngit command timed out after {timeout}s".strip()
+        return code, (stdout.read_text(errors="replace") + stderr.read_text(errors="replace")).strip()
 
 
 def recover_pending_round() -> str | None:
@@ -149,16 +264,9 @@ def recover_pending_round() -> str | None:
         raise RuntimeError(f"refusing ambiguous recovery of {len(pending)} snapshots: {pending}")
     run_id = pending[0]
     snapshot = ops.StateSnapshot.open(run_id, root=ROOT)
-    result = subprocess.run(
-        ["git", "restore", "--staged", "--", *run_round.SNAPSHOT_PATHS],
-        cwd=ROOT,
-        text=True,
-        capture_output=True,
-        timeout=300,
-        check=False,
-    )
-    if result.returncode != 0:
-        raise RuntimeError(f"could not unstage interrupted round state: {result.stderr.strip()}")
+    code, diagnostics = git("restore", "--staged", "--", *run_round.SNAPSHOT_PATHS)
+    if code != 0:
+        raise RuntimeError(f"could not unstage interrupted round state: {diagnostics}")
     snapshot.restore()
     snapshot.discard()
     ops.run_event(run_id, "run_recovered", recovered_by="ai_maintainer")
@@ -167,21 +275,18 @@ def recover_pending_round() -> str | None:
 
 def verify_recovered_corpus() -> None:
     """Fail closed when restored tracked state disagrees with derived corpus files."""
-    result = subprocess.run(
-        [sys.executable, str(SCRIPTS / "clean_corpus.py"), "--check"],
-        cwd=ROOT,
-        text=True,
-        capture_output=True,
-        timeout=900,
-        check=False,
-    )
-    if result.returncode == 0:
-        return
-    diagnostics = (result.stdout + result.stderr).strip()
-    if len(diagnostics) > 4000:
-        diagnostics = diagnostics[-4000:]
+    with tempfile.TemporaryDirectory(prefix="maintainer-check-") as directory:
+        stdout = Path(directory) / "stdout"
+        stderr = Path(directory) / "stderr"
+        code = run_command(
+            [sys.executable, str(SCRIPTS / "clean_corpus.py"), "--check"],
+            prompt=None, timeout=900, stdout_path=stdout, stderr_path=stderr,
+        )
+        if code == 0:
+            return
+        diagnostics = (stdout.read_text(errors="replace") + stderr.read_text(errors="replace")).strip()[-4000:]
     detail = f": {diagnostics}" if diagnostics else ""
-    raise RuntimeError(f"post-recovery corpus check failed (exit {result.returncode}){detail}")
+    raise RuntimeError(f"post-recovery corpus check failed (exit {code}){detail}")
 
 
 def summarize_backend_health(
@@ -364,6 +469,7 @@ def repo_snapshot(
     automatic_recovery: str | None = None,
     automatic_recovery_error: str | None = None,
 ) -> dict[str, Any]:
+    _, head = git("rev-parse", "HEAD")
     _, branch = git("branch", "--show-current")
     _, status = git("status", "--short", "--branch")
     rc, counts = git("rev-list", "--left-right", "--count", "origin/main...HEAD")
@@ -377,7 +483,10 @@ def repo_snapshot(
         path.name for path in (WORKSPACE / "round-snapshots").glob("*") if path.is_dir()
     )
     history = LOGS / "run_history.jsonl"
-    recent_events = history.read_text(errors="replace").splitlines()[-30:] if history.exists() else []
+    recent_events = []
+    if history.exists():
+        with history.open(errors="replace") as handle:
+            recent_events = [line.rstrip() for line in deque(handle, maxlen=30)]
     recent_logs = sorted(LOGS.glob("dig-*.log"), key=lambda path: path.stat().st_mtime)[-3:]
     try:
         backend_config = json.loads((ROOT / "registry" / "backends.json").read_text())
@@ -386,6 +495,7 @@ def repo_snapshot(
         backend_health = {"error": f"could not summarize backend health: {exc}"}
     return {
         "checked_at": utc_now().isoformat(),
+        "head": head,
         "branch": branch,
         "git_status": status,
         "behind_origin_main": behind,
@@ -443,13 +553,17 @@ def record(event: dict[str, Any]) -> None:
 
 def load_triage(path: Path) -> dict[str, Any]:
     value = json.loads(path.read_text())
-    required = {"needs_action", "urgency", "summary", "evidence", "proposed_actions"}
+    required = {"needs_action", "action_kind", "urgency", "summary", "evidence", "proposed_actions"}
     if not isinstance(value, dict) or set(value) != required:
         raise ValueError("Codex triage did not match the required schema")
     if not isinstance(value["needs_action"], bool):
         raise ValueError("Codex triage needs_action is not boolean")
     if value["urgency"] not in {"none", "routine", "urgent"}:
         raise ValueError("Codex triage urgency is invalid")
+    if value["action_kind"] not in {"none", "publish", "repair", "improve"}:
+        raise ValueError("Codex triage action_kind is invalid")
+    if value["needs_action"] != (value["action_kind"] != "none"):
+        raise ValueError("Codex triage action_kind contradicts needs_action")
     if not isinstance(value["summary"], str):
         raise ValueError("Codex triage summary is not text")
     for key in ("evidence", "proposed_actions"):
@@ -465,7 +579,7 @@ def render(name: str, **replacements: str) -> str:
     return text
 
 
-def main() -> int:
+def run_maintenance() -> int:
     WORKSPACE.mkdir(exist_ok=True)
     LOGS.mkdir(exist_ok=True)
     run_id = stamp()
@@ -473,37 +587,35 @@ def main() -> int:
     run_dir.mkdir()
     print(f"[{utc_now().isoformat()}] maintainer start {run_id}", flush=True)
 
-    recovered = None
-    recovery_error = None
-    try:
-        recovered = recover_pending_round()
-        if recovered:
-            verify_recovered_corpus()
-            print(f"Recovered interrupted corpus round {recovered} before agent triage.", flush=True)
-    except Exception as exc:
-        recovery_error = str(exc)
-        print(f"Automatic round recovery needs agent attention: {recovery_error}", flush=True)
-
-    fetch_rc, fetch_output = git("fetch", "--prune", "origin", timeout=600)
-    fetch_result = f"exit={fetch_rc}\n{fetch_output}" if fetch_output else f"exit={fetch_rc}"
-    snapshot = repo_snapshot(
-        fetch_result,
-        automatic_recovery=recovered,
-        automatic_recovery_error=recovery_error,
-    )
-    (run_dir / "repo-snapshot.json").write_text(json.dumps(snapshot, indent=2) + "\n")
-
     codex = resolve_agent("codex", os.environ.get("CODEX_BIN"))
     if codex is None:
-        reasons = update_growth_block()
-        record({"run_id": run_id, "status": "codex_missing", "growth_blocked": reasons})
+        record({"run_id": run_id, "status": "codex_missing"})
         print("Codex CLI is unavailable; Claude was not promoted over the primary maintainer.")
         return 1
     if read_cooldown("codex"):
-        reasons = update_growth_block()
-        record({"run_id": run_id, "status": "codex_cooldown", "growth_blocked": reasons})
-        print("Codex cooldown is still active; deferred without calling Claude.")
+        record({"run_id": run_id, "status": "codex_cooldown"})
+        print("Codex cooldown is still active; deferred without pausing growth or calling Claude.")
         return 0
+
+    # Ref updates do not touch the growing corpus; do not hold growth locks during network I/O.
+    fetch_rc, fetch_output = git("fetch", "--prune", "origin", timeout=120)
+    fetch_result = f"exit={fetch_rc}\n{fetch_output}" if fetch_output else f"exit={fetch_rc}"
+    with maintenance_window("snapshot"):
+        recovered = None
+        recovery_error = None
+        try:
+            recovered = recover_pending_round()
+            if recovered:
+                verify_recovered_corpus()
+                print(f"Recovered interrupted corpus round {recovered} before agent triage.", flush=True)
+        except Exception as exc:
+            recovery_error = str(exc)
+            print(f"Automatic round recovery needs agent attention: {recovery_error}", flush=True)
+        snapshot = repo_snapshot(
+            fetch_result, automatic_recovery=recovered, automatic_recovery_error=recovery_error,
+        )
+        reasons = update_growth_block()
+    (run_dir / "repo-snapshot.json").write_text(json.dumps(snapshot, indent=2) + "\n")
 
     triage_prompt = render("triage.md") + "\n\n<repository_snapshot>\n" + json.dumps(snapshot, indent=2) + "\n</repository_snapshot>\n"
     triage_out = run_dir / "codex-triage.json"
@@ -515,15 +627,13 @@ def main() -> int:
         "-C", str(ROOT), "-",
     ]
     triage_rc = run_command(
-        triage_cmd, prompt=triage_prompt, timeout=int(os.environ.get("CODEX_TRIAGE_TIMEOUT", "2700")),
+        triage_cmd, prompt=triage_prompt, timeout=int(os.environ.get("CODEX_TRIAGE_TIMEOUT", "600")),
         stdout_path=triage_events, stderr_path=triage_errors, env=agent_env(codex),
     )
-    triage_diagnostics = triage_errors.read_text(errors="replace") + triage_events.read_text(errors="replace")[-10000:]
     if triage_rc != 0 or not triage_out.exists():
-        status = "codex_quota" if is_quota_error(triage_diagnostics) else "codex_triage_failed"
+        status = "codex_quota" if provider_quota(triage_rc, triage_errors, triage_events) else "codex_triage_failed"
         if status == "codex_quota":
             set_cooldown("codex")
-        reasons = update_growth_block()
         record({"run_id": run_id, "status": status, "exit": triage_rc, "growth_blocked": reasons})
         print(f"Codex triage deferred: {status} (exit {triage_rc}); Claude was not called.")
         return 0 if status == "codex_quota" else 1
@@ -531,13 +641,11 @@ def main() -> int:
     try:
         triage = load_triage(triage_out)
     except (OSError, ValueError, json.JSONDecodeError) as exc:
-        reasons = update_growth_block()
         record({"run_id": run_id, "status": "invalid_triage", "error": str(exc), "growth_blocked": reasons})
         print(f"Invalid Codex triage: {exc}")
         return 1
 
     if not triage["needs_action"]:
-        reasons = update_growth_block()
         record({"run_id": run_id, "status": "healthy_no_action", "triage": triage, "growth_blocked": reasons})
         print(f"Codex found no action: {triage['summary']}")
         return 0
@@ -545,23 +653,34 @@ def main() -> int:
     claude = resolve_agent("claude", os.environ.get("CLAUDE_BIN"))
     claude_review = "Claude Code was unavailable; Codex must proceed from its own evidence."
     claude_status = "missing"
-    if claude is not None and not read_cooldown("claude"):
-        review_prompt = render("claude_review.md", CODEX_TRIAGE=json.dumps(triage, indent=2))
-        review_out = run_dir / "claude-review.txt"
+    if triage["action_kind"] == "publish":
+        claude_status = "not_needed"
+        claude_review = "Publication-only pass: Codex reviews the complete outgoing range under the action lock. No machinery or policy edits are authorized by this proposal."
+    elif claude is not None and not read_cooldown("claude"):
+        review_prompt = render("claude_review.md", CODEX_TRIAGE=json.dumps(triage, indent=2),
+                               REPOSITORY_SNAPSHOT=json.dumps(snapshot, indent=2))
+        review_out = run_dir / "claude-review.json"
         review_errors = run_dir / "claude-review.stderr.log"
         claude_cmd = [
-            str(claude), "--print", "--permission-mode", "plan", "--no-session-persistence",
-            "--output-format", "text",
+            str(claude), "--print", "--no-session-persistence", "--tools", "",
+            "--disable-slash-commands", "--output-format", "json",
+            "--model", os.environ.get("CLAUDE_REVIEW_MODEL", "claude-opus-5"),
+            "--effort", os.environ.get("CLAUDE_REVIEW_EFFORT", "xhigh"),
         ]
         review_rc = run_command(
-            claude_cmd, prompt=review_prompt, timeout=int(os.environ.get("CLAUDE_REVIEW_TIMEOUT", "2700")),
+            claude_cmd, prompt=review_prompt, timeout=int(os.environ.get("CLAUDE_REVIEW_TIMEOUT", "300")),
             stdout_path=review_out, stderr_path=review_errors, env=agent_env(claude),
         )
-        review_diagnostics = review_errors.read_text(errors="replace") + review_out.read_text(errors="replace")
-        if review_rc == 0 and review_out.stat().st_size:
-            claude_review = review_out.read_text(errors="replace")[-30000:]
+        try:
+            review = json.loads(review_out.read_text())
+            valid_review = (isinstance(review, dict) and review.get("is_error") is not True
+                            and isinstance(review.get("result"), str) and bool(review["result"].strip()))
+        except (ValueError, OSError):
+            valid_review = False
+        if review_rc == 0 and valid_review:
+            claude_review = review["result"][-12000:]
             claude_status = "reviewed"
-        elif is_quota_error(review_diagnostics):
+        elif provider_quota(review_rc or 1, review_errors, review_out):
             set_cooldown("claude")
             claude_status = "quota"
             claude_review = "Claude Code hit its usage limit. Codex remains primary and may proceed cautiously."
@@ -572,41 +691,81 @@ def main() -> int:
         claude_status = "cooldown"
         claude_review = "Claude Code is in a usage cooldown. Codex remains primary and may proceed cautiously."
 
-    action_prompt = render(
-        "action.md",
-        CODEX_TRIAGE=json.dumps(triage, indent=2),
-        CLAUDE_REVIEW=claude_review,
-    )
-    action_out = run_dir / "codex-action.txt"
-    action_events = run_dir / "codex-action.events.jsonl"
-    action_errors = run_dir / "codex-action.stderr.log"
-    action_cmd = [
-        str(codex), "exec", "--ephemeral", "--sandbox", "danger-full-access", "--color", "never",
-        "--output-last-message", str(action_out), "--json", "-C", str(ROOT), "-",
-    ]
-    action_rc = run_command(
-        action_cmd, prompt=action_prompt, timeout=int(os.environ.get("CODEX_ACTION_TIMEOUT", "7200")),
-        stdout_path=action_events, stderr_path=action_errors, env=agent_env(codex),
-    )
-    action_diagnostics = action_errors.read_text(errors="replace") + action_events.read_text(errors="replace")[-10000:]
-    if action_rc != 0 and is_quota_error(action_diagnostics):
-        set_cooldown("codex")
-        status = "codex_action_quota"
-    else:
-        status = "action_completed" if action_rc == 0 else "codex_action_failed"
-    reasons = update_growth_block()
-    record({
-        "run_id": run_id,
-        "status": status,
-        "exit": action_rc,
-        "triage": triage,
-        "claude_status": claude_status,
-        "growth_blocked": reasons,
-    })
-    print(f"Codex action: {status}; Claude: {claude_status}; growth block: {reasons or 'none'}")
-    if action_out.exists():
-        print(action_out.read_text(errors="replace")[-8000:])
-    return 0 if action_rc == 0 or status == "codex_action_quota" else 1
+    with maintenance_window("action"):
+        # A round may have completed or failed while models deliberated. Never recover or
+        # act on the earlier snapshot without refreshing state under both locks.
+        action_snapshot = repo_snapshot(fetch_result, automatic_recovery=recovered,
+                                        automatic_recovery_error=recovery_error)
+        action_snapshot["triage_head"] = snapshot["head"]
+        action_snapshot["changed_since_triage"] = action_snapshot["head"] != snapshot["head"]
+        (run_dir / "action-snapshot.json").write_text(json.dumps(action_snapshot, indent=2) + "\n")
+        action_prompt = render(
+            "action.md",
+            CODEX_TRIAGE=json.dumps(triage, indent=2),
+            CLAUDE_REVIEW=claude_review,
+            ACTION_SNAPSHOT=json.dumps(action_snapshot, indent=2),
+        )
+        action_out = run_dir / "codex-action.txt"
+        action_events = run_dir / "codex-action.events.jsonl"
+        action_errors = run_dir / "codex-action.stderr.log"
+        action_cmd = [
+            str(codex), "exec", "--ephemeral", "--sandbox", "danger-full-access", "--color", "never",
+            "--output-last-message", str(action_out), "--json", "-C", str(ROOT), "-",
+        ]
+        try:
+            action_rc = run_command(
+                action_cmd, prompt=action_prompt, timeout=int(os.environ.get("CODEX_ACTION_TIMEOUT", "1800")),
+                stdout_path=action_events, stderr_path=action_errors, env=agent_env(codex),
+            )
+            if action_rc != 0 and provider_quota(action_rc, action_errors, action_events):
+                set_cooldown("codex")
+                status = "codex_action_quota"
+            else:
+                status = "action_completed" if action_rc == 0 else "codex_action_failed"
+        finally:
+            reasons = update_growth_block()
+        record({
+            "run_id": run_id,
+            "status": status,
+            "exit": action_rc,
+            "triage": triage,
+            "claude_status": claude_status,
+            "growth_blocked": reasons,
+        })
+        print(f"Codex action: {status}; Claude: {claude_status}; growth block: {reasons or 'none'}")
+        if action_out.exists():
+            print(action_out.read_text(errors="replace")[-8000:])
+        return 0 if action_rc == 0 or status == "codex_action_quota" else 1
+
+
+def main() -> int:
+    WORKSPACE.mkdir(exist_ok=True)
+    LOGS.mkdir(exist_ok=True)
+    previous = signal.getsignal(signal.SIGTERM)
+
+    def terminate(signum, frame):
+        # Raise through run_command/finally before releasing any action lock.
+        raise KeyboardInterrupt("maintenance terminated")
+
+    signal.signal(signal.SIGTERM, terminate)
+    try:
+        with ExitStack() as owner:
+            try:
+                owner.enter_context(ops.named_lock("maintainer"))
+            except RuntimeError:
+                print("Another maintainer is active; deferred.")
+                return 0
+            try:
+                return run_maintenance()
+            except MaintenanceBusy as exc:
+                record({"status": "window_unavailable", "error": str(exc)})
+                print(f"Maintenance deferred: {exc}")
+                return 0
+    except KeyboardInterrupt:
+        print("Maintenance stopped; owned agent processes were terminated.", flush=True)
+        return 130
+    finally:
+        signal.signal(signal.SIGTERM, previous)
 
 
 if __name__ == "__main__":

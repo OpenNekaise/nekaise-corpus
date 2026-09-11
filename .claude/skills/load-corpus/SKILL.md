@@ -6,9 +6,13 @@ description: Download / refresh the corpus on this machine from the registry (re
 # Skill: load-corpus
 
 Assemble (or refresh) the corpus on this machine from the curated registry. You (the agent) drive
-the download and **verify** it; the mechanical fetch/clean/dedup lives in `scripts/build_corpus.py`.
+the download and **verify** it; fetch/extract/dedup lives in `scripts/build_corpus.py`; cleaning is a separate stage.
 This repo ships the RECIPE (registry + loader), never the copyrighted bytes — each user fetches
 their own copy.
+
+For a routine complete refresh, prefer `python scripts/run_round.py --skip-discovery --commit`:
+it owns the lock, rollback, quality gate, cleaning and all checks. The individual stages below are
+for targeted diagnosis; hold the canonical round lock across any manual mutation sequence.
 
 ## To load / refresh the corpus
 
@@ -53,8 +57,8 @@ their own copy.
 ## To grow the corpus
 
 Add entries to `registry/curated.yaml` (`id` / `title` / `url` / `source` / `license` / `topic` / `format`),
-then re-run. Prefer openly-licensed sources (public-domain gov reports, CC, arXiv). Tag copyrighted
-vendor/standards material `proprietary-internal` and do NOT add or redistribute its bytes.
+then re-run. Prefer openly-licensed sources (public-domain gov reports, CC, arXiv). Follow AGENTS.md for manufacturer literature (locally ingestible as `open` under the operator
+policy); paywalled standards and other `proprietary-internal` sources remain pointers only.
 
 ## License discipline (important)
 

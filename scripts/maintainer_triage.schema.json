@@ -7,20 +7,44 @@
     },
     "urgency": {
       "type": "string",
-      "enum": ["none", "routine", "urgent"]
+      "enum": [
+        "none",
+        "routine",
+        "urgent"
+      ]
     },
     "summary": {
       "type": "string"
     },
     "evidence": {
       "type": "array",
-      "items": {"type": "string"}
+      "items": {
+        "type": "string"
+      }
     },
     "proposed_actions": {
       "type": "array",
-      "items": {"type": "string"}
+      "items": {
+        "type": "string"
+      }
+    },
+    "action_kind": {
+      "type": "string",
+      "enum": [
+        "none",
+        "publish",
+        "repair",
+        "improve"
+      ]
     }
   },
-  "required": ["needs_action", "urgency", "summary", "evidence", "proposed_actions"],
+  "required": [
+    "needs_action",
+    "urgency",
+    "summary",
+    "evidence",
+    "proposed_actions",
+    "action_kind"
+  ],
   "additionalProperties": false
 }

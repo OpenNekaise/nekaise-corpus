@@ -10,6 +10,8 @@ discovers all the content pages of a doc site and registers them, so the loader 
 for software docs (EnergyPlus, VOLTTRON, Modelica), ontology docs (Brick, Haystack, ASHRAE 223P /
 open223), and similar references that aren't a single PDF.
 
+Use the canonical round lock for registry/manifest/corpus mutations, including manual appends.
+
 ## Steps
 
 1. **Find the seed + path prefix.** Open the doc site; note the domain and the path the doc pages
@@ -29,15 +31,14 @@ open223), and similar references that aren't a single PDF.
 
 3. **Load + gate + clean:** run the **`load-corpus`** skill (`python scripts/build_corpus.py`) to fetch
    each page, then `python scripts/prune_corpus.py --apply` to drop thin nav / stub / off-topic pages
-   (it gates `crawl-` pages too), then `python scripts/clean_corpus.py` to rebuild `corpus/`.
+   (it gates `crawl-` pages too), then `python scripts/clean_corpus.py` and `--check` to rebuild and verify `corpus/`.
    Spot-check a few `text/crawl-*.md`. Crawled HTML is the junkiest class in the corpus (the `crawl`
    shard measured ~45% non-prose), so it is worth a closer look than a PDF vein.
 
 ## Reproducibility
 
 The crawl runs ONCE (by us). The registry freezes the page list, and each page keeps its own
-sha256 in the manifest, so a clone fetches that frozen list -- it does NOT re-crawl -- and the corpus
-can't drift from a changing site. Re-run the crawl only to intentionally refresh a site.
+sha256 in the manifest, so a clone fetches that frozen list -- it does NOT re-crawl -- and detects drift if a page changes; freezing a URL list does not freeze remote bytes. Re-run the crawl only to intentionally refresh a site.
 
 ## Notes
 

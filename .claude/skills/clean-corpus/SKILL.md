@@ -8,18 +8,20 @@ description: Build the cleaned, training-ready corpus/ from the verbatim text/ v
 Turn the **verbatim** extraction in `text/` into the **cleaned, training-ready** text in `corpus/`.
 This is the curation half of the loop: the pruner decides *which documents* survive, this stage
 decides *which lines within them* do. Mechanics live in `scripts/clean_corpus.py`; your job is to run
-it, verify it, and — when the numbers justify it — **propose** a ruleset change rather than make one.
+it, verify it, and measure candidate improvements within the authorized task.
 
-`text/` is never edited in place. `corpus/` is derived, disposable, and rebuildable in seconds.
+`text/` is never edited in place. `corpus/` is derived and rebuildable from text/; runtime depends on current corpus size and hardware.
 
 ## The one rule that matters
 
-**Do not enable or disable cleaning rules on your own initiative.** The maintained corpus currently
+**Keep the selected ruleset unchanged during routine loading or digging.** The maintained corpus currently
 uses `toc_leaders,patent_id_soup,patent_furniture,site_chrome,ocr_debris,code_annotations`, recorded
 in `corpus/.ruleset`; an argument-less refresh reuses that stamp. A fresh checkout with no selected
 ruleset defaults to faithful pass-through. If you think the maintained policy should change, run
-`--report`, bring the numbers, and ask. Silently changing what enters the training set is the most
-damaging thing this stage can do.
+`--report` and measure representative drop/retain examples. Implement and test candidate rules
+within an authorized improvement task; promotion to the maintained ruleset must be explicit and
+within that authorization. Do not repeat permission questions already resolved by the user.
+Headless maintainers stage out-of-scope policy proposals without waiting for an interactive reply.
 
 ## To rebuild `corpus/` (the normal case)
 
@@ -36,8 +38,9 @@ Incremental — only new/changed docs are rewritten, unless the ruleset changed.
 Run this **after every load and after every prune**, so `corpus/` mirrors the manifest. `--check` must
 pass before you commit; it exits non-zero and names the drift.
 
-Timings on a 40-core box: pass-through rebuild **6s**, full ruleset **46s**, `--check` **14s**. If it
-seems to hang, it isn't — the rules are regex-bound over 13GB.
+Historical timings on a 103,931-document / 13GB benchmark were 6s/46s/14s for pass-through/full
+rules/check. They are not current deadlines. Use recent run timings and process progress to
+distinguish expected work from a stall; do not declare a hung run healthy without evidence.
 
 ## To investigate junk ("the corpus still has meaningless text")
 
@@ -48,7 +51,7 @@ python scripts/clean_corpus.py --report               # full corpus, slower
 ```
 
 `--report` attributes removal per rule (first rule to claim a line owns it, so the numbers sum to the
-real total). Current full-corpus measurement: **966.9M of 13,089.4M chars = 7.39%**, of which
+real total). Historical 103,931-document measurement: **966.9M of 13,089.4M chars = 7.39%**, of which
 `repeated_boilerplate` alone is 529.4M. Report *that* kind of number, not an impression.
 
 **Before proposing any new rule, read real examples of what it would remove.** Sample lines from
@@ -73,9 +76,10 @@ what it drops, *and* the CJK prose / data tables / Modelica equations it must no
 - **`--check` reports drift** → `python scripts/clean_corpus.py --force` rebuilds from scratch.
   Drift means `corpus/` and the manifest disagree (missing files, unprovenanced files, `corpus_chars`
   mismatches) — never leave it, a training run would read text the provenance record doesn't describe.
-- **You need to stop a run** → `pkill -9 -f clean_corpus.py`. Plain `kill` on the parent **orphans its
-  worker processes**, which keep writing to `corpus/` after the parent is gone; that is exactly how a
-  disk-vs-manifest mismatch gets created.
+- **You need to stop a run** → identify that run's owned process group/descendants and terminate
+  them together (TERM, then KILL only if necessary). Verify workers have exited before releasing
+  its lock or starting another cleaner. Never kill every process matching a shared script name;
+  killing only the parent can leave workers writing after the lock is released.
 - **A run was interrupted** → the stamp reads `IN-PROGRESS <ruleset>` and the next run rebuilds
   everything automatically. Never hand-edit `corpus/.ruleset`.
 
@@ -86,6 +90,6 @@ what it drops, *and* the CJK prose / data tables / Modelica equations it must no
   are excluded by design, and ids whose `text_path` drifted get canonical `corpus/<id>.md` names.
 - **License discipline:** `corpus/` is git-ignored like `raw/` and `text/` and must NEVER be committed.
   Commit only the manifest changes (`corpus_path` / `corpus_chars`), the code, and the docs.
-- The pruner's quality thresholds were tuned on **uncleaned** `text/`. If a ruleset is ever enabled,
-  those thresholds need re-deriving against `corpus/` — otherwise cleaning silently shifts every gate
-  verdict. Raise this, don't quietly work around it.
+- The pruner consumes **uncleaned** `text/`; the cleaner writes the later `corpus/` stage. A cleaning
+  change does not move the pruner's input. Recalibrate thresholds only as an explicit, measured
+  quality-gate change, never as an incidental consequence of enabling a cleaning rule.

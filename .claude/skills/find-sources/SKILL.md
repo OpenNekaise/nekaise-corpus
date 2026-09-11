@@ -9,6 +9,11 @@ Grow the corpus programmatically: discover new open-access built-environment sou
 and add the good ones to the registry. The mechanical discovery lives in `scripts/find_sources.py`;
 you (the agent) judge relevance + license and decide what to keep.
 
+For routine growth use `python scripts/run_round.py --commit`; it advances the committed backend
+rotation and runs the entire verified pipeline under the round lock. The examples below illustrate
+a bounded source investigation, not a replacement scheduler. Use current rotation and configured
+budgets; never reset a live cursor to zero or append while another round owns the lock.
+
 ## Steps
 
 1. **Discover** (needs network; run outside a sandbox):
@@ -38,12 +43,12 @@ you (the agent) judge relevance + license and decide what to keep.
 3. **Add + fetch:** use `--append` (routes entries to their registry shard), then run the
    **`load-corpus`** skill (`python scripts/build_corpus.py`) to download + verify. Inspect the new
    `text/*.md` for quality; drop any source that extracts to junk. Finish with
-   `python scripts/clean_corpus.py` so the new docs reach `corpus/`, the training-ready stage.
+   `python scripts/clean_corpus.py` followed by `--check` so the new docs reach `corpus/`, the training-ready stage.
 
 ## Notes
 
-- Tune `find_sources.py`'s `QUERIES` to target gaps. We are paper-heavy; thin on equipment depth,
-  commissioning checklists, codes, and manufacturer application data.
+- Tune `find_sources.py`'s `QUERIES` to target gaps. Use current coverage/yield evidence; equipment depth,
+  commissioning checklists, codes and application data are examples to measure, not assumed gaps.
 - **GitHub has its own backend:** `python scripts/find_github.py` walks a curated list of permissive
   building-sim repos (Modelica Buildings, EnergyPlus, OpenStudio, ResStock, …) and registers their
   README / `docs/*.md` / `*.rst` as raw-text entries (same propose -> `--append` -> load flow). The

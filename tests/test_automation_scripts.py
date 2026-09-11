@@ -18,32 +18,18 @@ def copy_script(root: Path, name: str) -> Path:
     return target
 
 
-def test_maintainer_waits_for_canonical_round_lock(tmp_path, monkeypatch):
+def test_maintainer_wrapper_preserves_python_exit_and_logs(tmp_path):
     script = copy_script(tmp_path, "run_maintainer.sh")
-    workspace = tmp_path / "workspace"
-    workspace.mkdir()
     (tmp_path / "scripts" / "maintainer.py").write_text(
-        "from pathlib import Path\nPath('maintainer-ran').write_text('yes')\n"
+        "print('maintainer test output', flush=True)\nraise SystemExit(7)\n"
     )
-    monkeypatch.setattr(ops, "WORKSPACE", workspace)
-    env = {
-        **os.environ,
-        "MAINTAINER_LOCK_WAIT_SECONDS": "0.1",
-        "PYTHON_BIN": sys.executable,
-    }
-
-    with ops.named_lock("corpus-round"):
-        owner = (workspace / ".corpus-round.lock").read_text()
-        result = subprocess.run(
-            ["bash", str(script)], cwd=tmp_path, env=env, timeout=5, check=False
-        )
-        assert (workspace / ".corpus-round.lock").read_text() == owner
-
-    assert result.returncode == 0
-    assert not (tmp_path / "maintainer-ran").exists()
-    assert not (workspace / ".maintenance-requested").exists()
+    result = subprocess.run(
+        ["bash", str(script)], cwd=tmp_path,
+        env={**os.environ, "PYTHON_BIN": sys.executable}, timeout=5, check=False,
+    )
+    assert result.returncode == 7
     log = next((tmp_path / "logs").glob("maintainer-*.log")).read_text()
-    assert "corpus round remained active" in log
+    assert "maintainer test output" in log
 
 
 def test_marathon_stops_cleanly_on_maintenance_block(tmp_path):

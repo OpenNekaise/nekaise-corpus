@@ -117,24 +117,33 @@ schedule, advances the excavation state, validates the entire round, and commits
 snapshot. A separate maintainer can wake every six hours to look beyond the happy path.
 
 ```text
-Codex inspects → Claude challenges → Codex decides, repairs, validates, and publishes
+Settled snapshot → Codex triage → [Claude review for repairs/improvements] → locked action
 ```
 
-Codex always moves first. Claude Code is invited only when Codex finds concrete work: a failed or
-stalled backend, interrupted state, unpublished growth, a coverage gap, or a worthwhile improvement
-to the machinery. Claude remains a read-only second opinion; Codex owns the final action. Usage
-limits defer that participant cleanly instead of stopping the corpus or repeatedly consuming a dead
-quota window.
+Codex always moves first. A healthy pass can end without edits. Publication-only work skips the
+second model; repairs and measured improvements receive a bounded Claude Opus 5 review (`xhigh`).
+Claude gets the settled snapshot and proposal with tools disabled, so it challenges the reasoning
+without duplicating repository exploration. Codex owns the final decision. Independent provider
+cooldowns prevent repeated calls to exhausted accounts; Claude never replaces an unavailable Codex.
 
 ```bash
 bash scripts/install_cron.sh
 bash scripts/install_maintainer_cron.sh
 ```
 
-The scheduled loops share an outer lock, and maintenance also takes the canonical corpus-round
-lock used by every manual and automated entrypoint. Maintenance therefore begins between corpus
-rounds. If a repair cannot leave the tracked repository safe, growth pauses explicitly for the
-next maintainer wake rather than continuing over uncertain state.
+Maintenance takes the scheduled-growth and canonical corpus-round locks for a settled snapshot,
+releases them while models deliberate, then reacquires both and refreshes the snapshot before any
+edits or publishing. Collection continues during read-only review. Active-round intermediate files
+are never classified as corruption from an unlocked view. If an action leaves unsafe tracked state,
+growth pauses explicitly until repaired. Timeout/cancellation stops the agent process group before
+the action lock is released; the next pass can recover interrupted state.
+
+Default budgets are 10 minutes for Codex triage, 5 for Claude review, and 30 for Codex action.
+Override with `CODEX_TRIAGE_TIMEOUT`, `CLAUDE_REVIEW_TIMEOUT`, and `CODEX_ACTION_TIMEOUT` (seconds).
+Codex uses its installed CLI model configuration. `CLAUDE_REVIEW_MODEL` and `CLAUDE_REVIEW_EFFORT`
+override the reviewer; `MAINTAINER_LOCK_WAIT_SECONDS` bounds the combined wait for both locks
+(default 11700 seconds). Set overrides in the scheduler environment to persist them. Logs record
+lock wait/hold times, both snapshots and model results under `logs/maintainer-*`.
 
 ## Three views of every document
 
