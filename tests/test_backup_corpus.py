@@ -21,7 +21,7 @@ def source(tmp_path, monkeypatch):
     (root / "scripts" / "clean_corpus.py").write_text("raise SystemExit(0)\n")
     mount = tmp_path / "ssd"
     mount.mkdir()
-    monkeypatch.setattr(backup, "require_mount", lambda path: None)
+    monkeypatch.setattr(backup, "require_mount", lambda path, expected_uuid=None: None)
     return root, mount
 
 

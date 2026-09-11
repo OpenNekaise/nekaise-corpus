@@ -156,6 +156,46 @@ scripts or numeric engineering tables as noise. The active ruleset is recorded i
 
 ## Back up to an external SSD
 
+Enable automatic backups with:
+
+```bash
+python scripts/backup_schedule.py install
+python scripts/backup_schedule.py run
+python scripts/backup_schedule.py status
+```
+
+The installer adds an hourly check at minute 15 to your existing crontab. It creates a new
+verified backup when the latest completed copy is at least 24 hours old, waiting for the
+corpus-round lock so growth and maintenance cannot overlap the copy. Missed runs catch up on
+the next hourly check while the machine is on. The SSD is pinned by filesystem UUID; a missing
+or different drive never causes a backup to be written into the local mount-point directory.
+
+Scheduled runs keep the **seven newest successful backups**, deleting older copies only after
+a replacement passes checksum verification. Abandoned `.partial` archives older than 48 hours
+are cleaned under the same lock; unrelated files and symlinks are left alone. Copy/check failures
+are logged and retried after six hours; an unavailable SSD is checked again hourly. Install with
+`--interval-hours 24 --keep 7` to customize these defaults. Configuration and status live in
+`workspace/backup-config.json` and `workspace/backup-status.json`; logs are in
+`logs/backup-scheduled.log`.
+
+For unattended remounting after reboot or reconnect, run this **one-time administrator step**
+while the configured ext4 SSD is mounted:
+
+```bash
+sudo .venv/bin/python scripts/backup_schedule.py mount-setup
+```
+
+It preserves existing `/etc/fstab` entries and adds a UUID-pinned, `nofail,user` mount for this
+SSD, allowing boot without the drive and later mounting without a password. It never formats
+the drive. Without this step, unattended mounting depends on desktop permissions; if those
+require authentication, mount the SSD manually and the next hourly check resumes backups.
+
+Use `python scripts/backup_schedule.py run --force` for an immediate scheduled backup, or
+`python scripts/backup_schedule.py remove` to remove only the backup cron entry. Existing
+archives and the optional mount configuration remain.
+
+For a manual backup without automatic retention:
+
 ```bash
 python scripts/backup_corpus.py --dry-run
 python scripts/backup_corpus.py --lock-timeout 10800
@@ -168,7 +208,7 @@ loaders, pruners, or cleaners during a backup; scheduled rounds coordinate throu
 
 Each run creates a full, gzip-compressed `corpus.tar.gz` in a dated directory under
 `/media/zengp/ssd/nekaise-corpus-backups/`. It includes `corpus/` with its `.ruleset`, `manifest/`,
-`registry/`, `pruned_urls.txt`, and `requirements.lock`. Previous backups are retained; each run
+`registry/`, `pruned_urls.txt`, and `requirements.lock`. Manual runs retain previous backups; each run
 needs space for another full copy (the preflight conservatively budgets for uncompressed size).
 `tar` and `gzip` are required; when installed, `pigz` speeds up compression using eight workers.
 `raw/` and `text/` are not included.

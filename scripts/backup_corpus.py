@@ -22,9 +22,15 @@ CONTENTS = ("corpus", "manifest", "registry", "pruned_urls.txt", "requirements.l
 CHUNK = 4 * 1024 * 1024
 
 
-def require_mount(mount: Path) -> None:
+def require_mount(mount: Path, expected_uuid: str | None = None) -> None:
     if not mount.is_mount():
         raise RuntimeError(f"Backup drive is not mounted at {mount}; refusing to write locally")
+    if expected_uuid:
+        actual = subprocess.check_output(
+            ["findmnt", "-rn", "-o", "UUID", "--mountpoint", str(mount)], text=True,
+        ).strip()
+        if actual != expected_uuid:
+            raise RuntimeError(f"Wrong drive at {mount}; expected UUID {expected_uuid}, found {actual}")
 
 
 def inventory(root: Path) -> tuple[int, int]:
@@ -100,8 +106,9 @@ def write_archive(root: Path, path: Path) -> str:
     return digest.hexdigest()
 
 
-def backup(root: Path, mount: Path, *, dry_run: bool = False) -> Path | None:
-    require_mount(mount)
+def backup(root: Path, mount: Path, *, dry_run: bool = False,
+           expected_uuid: str | None = None) -> Path | None:
+    require_mount(mount, expected_uuid)
     if not shutil.which("tar") or not shutil.which("gzip"):
         raise RuntimeError("tar and gzip are required")
     stamp = root / "corpus" / ".ruleset"
@@ -121,7 +128,7 @@ def backup(root: Path, mount: Path, *, dry_run: bool = False) -> Path | None:
     # Validate training eligibility and provenance before copying, under the round lock.
     subprocess.run([sys.executable, str(root / "scripts" / "clean_corpus.py"), "--check"],
                    cwd=root, check=True)
-    require_mount(mount)
+    require_mount(mount, expected_uuid)
     destination = mount / "nekaise-corpus-backups"
     if destination.is_symlink():
         raise RuntimeError(f"Backup directory must not be a symlink: {destination}")
