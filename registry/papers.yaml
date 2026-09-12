@@ -70505,3 +70505,21 @@ sources:
     topic: controls_bas
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-modelling-indoor-airborne-transmission-combini
+    title: Modelling indoor airborne transmission combining architectural design and
+      people movement using the VIRIS simulator and web app
+    url: https://arxiv.org/pdf/2408.11772
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-personalized-displacement-ventilation-as-an-en
+    title: Personalized displacement ventilation as an energy-efficient solution for
+      airborne disease transmission control in offices
+    url: https://www.frontiersin.org/articles/10.3389/fmech.2023.1148276/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
