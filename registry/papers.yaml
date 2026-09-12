@@ -70393,3 +70393,20 @@ sources:
     topic: controls_bas
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-data-driven-control-of-room-temperature-and-bi
+    title: 'Data-driven control of room temperature and bidirectional EV charging using
+      deep reinforcement learning: Simulations and experiments'
+    url: https://arxiv.org/pdf/2103.01886
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
+  - id: ope-insights-from-mapping-electrification-of-exist
+    title: Insights from Mapping Electrification of Existing Commercial and Multifamily
+      Buildings Across the US and Canada
+    url: https://escholarship.org/content/qt6fq1j1w6/qt6fq1j1w6.pdf
+    source: openalex
+    license: open
+    topic: equipment_systems
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: other-oa'
