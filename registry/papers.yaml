@@ -70426,3 +70426,12 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
+  - id: ope-commercial-fiber-products-derived-free-standin
+    title: Commercial Fiber Products Derived Free-Standing Porous Carbonized-Membranes
+      for Highly Efficient Solar Steam Generation
+    url: https://www.frontiersin.org/articles/10.3389/fmats.2018.00074/pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
