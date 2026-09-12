@@ -70410,3 +70410,12 @@ sources:
     topic: equipment_systems
     format: pdf
     license_evidence: 'OpenAlex OA location license: other-oa'
+  - id: ope-exploratory-analysis-of-energy-use-across-buil
+    title: Exploratory Analysis of Energy Use Across Building Types and Geographic Regions
+      in the United States
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2019.00105/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
