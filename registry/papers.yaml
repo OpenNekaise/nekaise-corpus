@@ -70790,3 +70790,19 @@ sources:
     topic: infrastructure
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-advancing-hybrid-ventilation-in-hot-climates-a
+    title: 'Advancing hybrid ventilation in hot climates: a review of current research
+      and limitations'
+    url: https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2024.1502941/pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-window-opening-model-using-deep-learning-metho
+    title: Window opening model using deep learning methods
+    url: https://arxiv.org/pdf/1807.03610
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
