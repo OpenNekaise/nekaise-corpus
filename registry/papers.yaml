@@ -70832,3 +70832,20 @@ sources:
     topic: standards_protocols
     format: pdf
     license_evidence: 'OpenAlex OA location license: public-domain'
+  - id: ope-optimization-of-window-positions-for-wind-driv
+    title: Optimization of Window Positions for Wind-Driven Natural Ventilation Performance
+    url: https://escholarship.org/content/qt0gz6q8md/qt0gz6q8md.pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-reduction-of-the-energy-demand-with-passive-ap
+    title: Reduction of the Energy Demand With Passive Approaches in Multifamily Nearly
+      Zero-Energy Buildings Under Different Climate Conditions
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2020.545272/pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
