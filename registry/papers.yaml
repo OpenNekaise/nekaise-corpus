@@ -70806,3 +70806,12 @@ sources:
     license: open
     topic: controls_bas
     format: pdf
+  - id: ope-research-advances-in-energy-management-and-har
+    title: Research advances in energy management and harvesting technologies for autonomous
+      profiling floats
+    url: https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2025.1598701/pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
