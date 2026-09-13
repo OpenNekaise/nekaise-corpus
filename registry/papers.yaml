@@ -70746,3 +70746,30 @@ sources:
     license: open
     topic: urban
     format: pdf
+  - id: ope-quantitative-assessment-of-fecal-contamination
+    title: Quantitative assessment of fecal contamination in multiple environmental
+      sample types in urban communities in Dhaka, Bangladesh using SaniPath microbi
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0221193&type=printable
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-a-design-for-a-data-and-information-service-to
+    title: A Design for a Data and Information Service to Address the Knowledge Needs
+      of the Water-Energy-Food (W-E-F) Nexus and Strategies to Facilitate Its Imp
+    url: https://www.frontiersin.org/articles/10.3389/fenvs.2019.00056/pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-urban-microplastics-emissions-effectiveness-of
+    title: 'Urban Microplastics Emissions: Effectiveness of Retention Measures and Consequences
+      for the Baltic Sea'
+    url: https://www.frontiersin.org/articles/10.3389/fmars.2021.594415/pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
