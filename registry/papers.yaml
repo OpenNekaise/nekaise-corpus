@@ -71630,3 +71630,19 @@ sources:
     topic: equipment_systems
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-estimation-of-the-relationship-between-remotel
+    title: Estimation of the relationship between remotely sensed anthropogenic heat
+      discharge and building energy use
+    url: https://ntrs.nasa.gov/api/citations/20140011018/downloads/20140011018.pdf
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: ope-the-impact-of-climate-change-on-a-cost-optimal
+    title: The impact of climate change on a cost-optimal highly renewable European
+      electricity network
+    url: https://arxiv.org/pdf/1805.11673
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
