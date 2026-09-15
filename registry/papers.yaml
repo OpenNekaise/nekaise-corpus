@@ -71563,3 +71563,21 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-4d-bim-simulation-guideline-for-construction-v
+    title: '4D BIM Simulation Guideline for Construction Visualization and Analysis
+      of Renovation Projects: A Case Study'
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2021.617031/pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-using-3d-citygml-for-the-modeling-of-the-food-
+    title: Using 3D CityGML for the Modeling of the Food Waste and Wastewater Generation—A
+      Case Study for the City of Montréal
+    url: https://www.frontiersin.org/articles/10.3389/fdata.2021.662011/pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
