@@ -20805,21 +20805,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-jerwood-gallery-case-study-altro-terrazzolite-ep-altroflow-pum-altro-white
-    title: 'SpecifiedBy (UK manufacturer documents): Jerwood-Gallery-Case-Study-Altro-Terrazzolite-EP-AltroFlow-PUM-Altro-Whiterock.pdf
-      (altroflow pum excel — Jer'
-    url: https://www.specifiedby.com/altro/altroflow-pum-excel/Jerwood-Gallery-Case-Study-Altro-Terrazzolite-EP-AltroFlow-PUM-Altro-Whiterock.pdf
-    source: vendor_specifiedby
-    license: open
-    topic: materials
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.specifiedby.com/terms
-    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); PDFs 200 without challenge
-    rights_verified_at: '2026-08-30'
   - id: vnd-specifiedby-altro-case-study-res-wal-altroscreed-quartz-altro-whiterock-llanwern-high-
     title: 'SpecifiedBy (UK manufacturer documents): Altro-Case-Study-RES-WAL-AltroScreed-Quartz-Altro-Whiterock-Llanwern-high-School.pdf
       (altroscreed quartz ep a'
@@ -20854,6 +20839,21 @@ sources:
     title: 'SpecifiedBy (UK manufacturer documents): AltroSmooth-Cleaning-Card.pdf.pdf
       (altrosmooth chrysalis — AltroSmooth Cleaning Card pdf)'
     url: https://www.specifiedby.com/altro/altrosmooth-chrysalis/AltroSmooth-Cleaning-Card.pdf.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-altrostat-sd-flow-base-msds
+    title: 'SpecifiedBy (UK manufacturer documents): AltroStat-SD-Flow-Base-MSDS.pdf
+      (altrostat sd — AltroStat SD Flow Base MSDS)'
+    url: https://www.specifiedby.com/altro/altrostat-sd/AltroStat-SD-Flow-Base-MSDS.pdf
     source: vendor_specifiedby
     license: open
     topic: construction
