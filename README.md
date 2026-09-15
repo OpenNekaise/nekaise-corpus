@@ -12,16 +12,16 @@ locally and retain their original licenses.
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **1,412,226** |
+| **Documents** | **1,412,661** |
 | **Policy-excluded provenance** | **8,039** rows (not fetched or training-ready) |
 | **Raw originals** | **~712G** (PDF / HTML / source code) |
-| **Extracted text** | **~74G** (~72.502B chars, **≈18.125B tokens**) |
-| **Cleaned corpus** | **~70G** (~69.008B chars, **≈17.252B tokens**, ruleset-cleaned) |
+| **Extracted text** | **~74G** (~72.518B chars, **≈18.129B tokens**) |
+| **Cleaned corpus** | **~70G** (~69.024B chars, **≈17.256B tokens**, ruleset-cleaned) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): equipment_systems 468,766 · construction 368,787 · building_energy 192,940 · structures_civil 148,616 · materials 97,913 · infrastructure 65,576 · architecture 40,215 · standards_protocols 11,550 · controls_bas 11,023 · urban 6,009 · commissioning_fdd 831.
+**By topic** (a source gets one at registration): equipment_systems 468,899 · construction 368,953 · building_energy 192,981 · structures_civil 148,657 · materials 97,943 · infrastructure 65,593 · architecture 40,222 · standards_protocols 11,550 · controls_bas 11,023 · urban 6,009 · commissioning_fdd 831.
 
-**By license:** open 1,144,058 · public-domain 247,587 · cc-by-sa 1,734 · cc-by 18,847.
+**By license:** open 1,144,457 · public-domain 247,623 · cc-by-sa 1,734 · cc-by 18,847.
 <!-- STATS:END -->
 
 ## Quick start
