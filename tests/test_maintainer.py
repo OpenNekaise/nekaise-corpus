@@ -86,6 +86,42 @@ def test_lock_owning_maintainer_recovers_one_pending_round(tmp_path, monkeypatch
     ).returncode == 0
 
 
+def test_incomplete_capture_does_not_block_or_trigger_recovery(tmp_path, monkeypatch):
+    workspace = tmp_path / "workspace"
+    snapshots = workspace / "round-snapshots"
+    fragment = snapshots / "killed" / "state"
+    fragment.mkdir(parents=True)
+    (fragment / "partial.txt").write_text("partial")
+    monkeypatch.setattr(maintainer, "ROOT", tmp_path)
+    monkeypatch.setattr(maintainer, "WORKSPACE", workspace)
+    monkeypatch.setattr(maintainer, "LOGS", tmp_path / "logs")
+    monkeypatch.setattr(maintainer, "BLOCKED", workspace / ".maintenance-blocked")
+    monkeypatch.setattr(maintainer.ops, "SNAPSHOTS", snapshots)
+
+    def git(*args):
+        assert args[0] != "restore", "an incomplete capture must never be recovered"
+        return 0, {"branch": "main", "rev-list": "0 0"}.get(args[0], "")
+
+    monkeypatch.setattr(maintainer, "git", git)
+    maintainer.BLOCKED.write_text("1 interrupted round snapshot(s) pending\n")
+
+    assert maintainer.recover_pending_round() is None
+    assert maintainer.block_reasons() == []
+    assert maintainer.update_growth_block() == []
+    assert not maintainer.BLOCKED.exists()
+    snapshot = maintainer.repo_snapshot("exit=0")
+    assert snapshot["pending_round_snapshots"] == maintainer.ops.StateSnapshot.pending() == []
+    assert snapshot["incomplete_captures"] == ["killed"]
+    assert (fragment / "partial.txt").read_text() == "partial"
+
+    maintainer.ops.StateSnapshot.capture("complete", (), root=tmp_path)
+    snapshot = maintainer.repo_snapshot("exit=0")
+    assert snapshot["pending_round_snapshots"] == maintainer.ops.StateSnapshot.pending() == ["complete"]
+    assert snapshot["incomplete_captures"] == ["killed"]
+    assert maintainer.update_growth_block() == ["1 interrupted round snapshot(s) pending"]
+    assert maintainer.BLOCKED.exists()
+
+
 @pytest.mark.parametrize("code, expected", [(0, None), (1, "1 unprovenanced file"), (124, "exit 124")])
 def test_post_recovery_check_is_supervised(tmp_path, monkeypatch, code, expected):
     def fake_run(command, **kwargs):
@@ -272,6 +308,7 @@ def test_repo_snapshot_includes_backend_health(tmp_path, monkeypatch):
     monkeypatch.setattr(maintainer, "ROOT", tmp_path)
     monkeypatch.setattr(maintainer, "LOGS", logs)
     monkeypatch.setattr(maintainer, "WORKSPACE", workspace)
+    monkeypatch.setattr(maintainer.ops, "SNAPSHOTS", workspace / "round-snapshots")
     monkeypatch.setattr(
         maintainer,
         "git",

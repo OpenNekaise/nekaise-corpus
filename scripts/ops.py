@@ -136,25 +136,37 @@ class StateSnapshot:
         snap = cls(run_id, root)
         if snap.path.exists():
             raise RuntimeError(f"snapshot already exists for {run_id}")
+        # Keep exclusive creation outside the cleanup guard: never remove an existing snapshot.
         snap.path.mkdir(parents=True)
-        present = []
-        for rel in paths:
-            src = snap.root / rel
-            if not src.exists():
-                continue
-            present.append(rel)
-            dst = snap.path / "state" / rel
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            if src.is_dir():
-                shutil.copytree(src, dst)
-            else:
-                shutil.copy2(src, dst)
-        atomic_write_text(snap.meta_path, json.dumps({
-            "run_id": run_id,
-            "root": str(snap.root),
-            "paths": list(paths),
-            "present": present,
-        }, indent=2) + "\n")
+        try:
+            present = []
+            for rel in paths:
+                src = snap.root / rel
+                if not src.exists():
+                    continue
+                present.append(rel)
+                dst = snap.path / "state" / rel
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                if src.is_dir():
+                    shutil.copytree(src, dst)
+                else:
+                    shutil.copy2(src, dst)
+            # Publish the recovery marker last. Callers must not mutate state until we return.
+            atomic_write_text(snap.meta_path, json.dumps({
+                "run_id": run_id,
+                "root": str(snap.root),
+                "paths": list(paths),
+                "present": present,
+            }, indent=2) + "\n")
+        except BaseException:
+            try:
+                # A metadata fsync can fail after rename. Unpublish before deleting saved state
+                # so a cleanup failure cannot leave a partial copy marked as recoverable.
+                snap.meta_path.unlink(missing_ok=True)
+                shutil.rmtree(snap.path)
+            except OSError as cleanup_error:
+                run_event(run_id, "snapshot_cleanup_failed", error=str(cleanup_error))
+            raise
         return snap
 
     @classmethod
@@ -169,6 +181,18 @@ class StateSnapshot:
         if not SNAPSHOTS.exists():
             return []
         return sorted(p.name for p in SNAPSHOTS.iterdir() if (p / "snapshot.json").exists())
+
+    @classmethod
+    def incomplete_captures(cls) -> list[str]:
+        """Report captures interrupted before the recovery marker; inspect under the round lock.
+
+        SIGKILL can bypass capture's cleanup. Without metadata these directories cannot be
+        restored, and no round mutation has begun, so they do not block later rounds.
+        """
+        if not SNAPSHOTS.exists():
+            return []
+        pending = set(cls.pending())
+        return sorted(p.name for p in SNAPSHOTS.iterdir() if p.is_dir() and p.name not in pending)
 
     def restore(self) -> None:
         meta = json.loads(self.meta_path.read_text())

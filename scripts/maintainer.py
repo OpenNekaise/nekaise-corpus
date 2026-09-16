@@ -479,9 +479,7 @@ def repo_snapshot(
             behind, ahead = (int(value) for value in counts.split())
         except (TypeError, ValueError):
             pass
-    snapshots = sorted(
-        path.name for path in (WORKSPACE / "round-snapshots").glob("*") if path.is_dir()
-    )
+    snapshots = ops.StateSnapshot.pending()
     history = LOGS / "run_history.jsonl"
     recent_events = []
     if history.exists():
@@ -501,6 +499,7 @@ def repo_snapshot(
         "behind_origin_main": behind,
         "ahead_of_origin_main": ahead,
         "pending_round_snapshots": snapshots,
+        "incomplete_captures": ops.StateSnapshot.incomplete_captures(),
         "automatic_recovery": automatic_recovery,
         "automatic_recovery_error": automatic_recovery_error,
         "fetch_result": fetch_result[-2000:],
@@ -518,7 +517,7 @@ def block_reasons() -> list[str]:
     rc, porcelain = git("status", "--porcelain", "--untracked-files=no")
     if rc != 0 or porcelain:
         reasons.append("tracked worktree is not clean")
-    snapshots = [path for path in (WORKSPACE / "round-snapshots").glob("*") if path.is_dir()]
+    snapshots = ops.StateSnapshot.pending()
     if snapshots:
         reasons.append(f"{len(snapshots)} interrupted round snapshot(s) pending")
     git_dir = ROOT / ".git"

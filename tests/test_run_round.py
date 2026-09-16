@@ -543,3 +543,40 @@ def test_main_rolls_back_tracked_state_when_pipeline_fails(tmp_path, monkeypatch
     assert run_round.main() == 1
     assert state.read_text() == "before"
     assert not run_round.ops.StateSnapshot.pending()
+
+
+def test_capture_failure_stops_round_before_mutation(tmp_path, monkeypatch, capsys):
+    import errno
+
+    state = tmp_path / "README.md"
+    state.write_bytes(b"before\n")
+    snapshots = tmp_path / "workspace" / "round-snapshots"
+    monkeypatch.setattr(run_round, "ROOT", tmp_path)
+    monkeypatch.setattr(run_round.ops, "SNAPSHOTS", snapshots)
+    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
+    monkeypatch.setattr(run_round, "git_clean", lambda: True)
+    monkeypatch.setattr(run_round, "load_backends", lambda: {})
+    monkeypatch.setattr(run_round.rotation, "load", lambda: {})
+    monkeypatch.setattr(run_round, "doc_stats", lambda: (1, 10, 0))
+    events = []
+    monkeypatch.setattr(run_round.ops, "run_event",
+                        lambda run_id, event, **fields: events.append(event))
+
+    def fail_copy(src, dst):
+        dst.write_bytes(b"partial")
+        raise OSError(errno.ENOSPC, "No space left on device")
+
+    def unexpected_mutation(*args, **kwargs):
+        pytest.fail("capture failed, so no discovery, pipeline or commit may run")
+
+    monkeypatch.setattr(run_round.ops.shutil, "copy2", fail_copy)
+    for name in ("run_finders_parallel", "run_command", "commit_snapshot"):
+        monkeypatch.setattr(run_round, name, unexpected_mutation)
+    monkeypatch.setattr(sys, "argv", ["run_round.py", "--commit", "--run-id", "capture-failed"])
+
+    assert run_round.main() == 1
+    assert "No space left on device" in capsys.readouterr().err
+    assert events == ["run_started", "run_failed"]
+    assert state.read_bytes() == b"before\n"
+    assert not run_round.ops.StateSnapshot.pending()
+    assert not (snapshots / "capture-failed").exists()
