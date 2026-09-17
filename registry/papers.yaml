@@ -72009,3 +72009,19 @@ sources:
     license: open
     topic: standards_protocols
     format: pdf
+  - id: ope-traffic-flow-and-vehicle-speed-monitoring-with
+    title: Traffic flow and vehicle speed monitoring with the object detection method
+      from the roadside distributed acoustic sensing array
+    url: https://www.frontiersin.org/articles/10.3389/feart.2022.992571/pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-predicting-window-view-preferences-using-the-e
+    title: Predicting Window View Preferences Using the Environmental Information Criteria
+    url: https://escholarship.org/content/qt7rv6936v/qt7rv6936v.pdf?t=rgtbft
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
