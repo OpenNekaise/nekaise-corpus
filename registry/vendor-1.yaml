@@ -20215,10 +20215,10 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-drithermr-cavity-slab-32-framethermr-slab-32-omnifitr-slab-32-ecobatt-slab
-    title: 'SpecifiedBy (UK manufacturer documents): drithermr-cavity-slab-32-framethermr-slab-32-omnifitr-slab-32-ecobatt-slab-32-epd-5_7ae62446.pdf
-      (knauf insul'
-    url: https://www.specifiedby.com/knauf-insulation/knauf-insulation-dritherm-cavity-slab-32-glass-mineral-wool-insulation/drithermr-cavity-slab-32-framethermr-slab-32-omnifitr-slab-32-ecobatt-slab-32-epd-5_7ae62446.pdf
+  - id: vnd-specifiedby-loft-roll-40-and-44-datasheet-73f68964
+    title: 'SpecifiedBy (UK manufacturer documents): loft-roll-40-and-44-datasheet_73f68964.pdf
+      (knauf insulation loft roll 44 glass mineral wool insulation — lof'
+    url: https://www.specifiedby.com/knauf-insulation/knauf-insulation-loft-roll-44-glass-mineral-wool-insulation/loft-roll-40-and-44-datasheet_73f68964.pdf
     source: vendor_specifiedby
     license: open
     topic: materials
@@ -20230,10 +20230,40 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-knauf-insulation-drithermr-cavity-slab-37-masonry-party-wall-slab-epd-en-u
-    title: 'SpecifiedBy (UK manufacturer documents): knauf-insulation-drithermr-cavity-slab-37-masonry-party-wall-slab-epd-en-uki-2_f6985005.pdf
-      (knauf insulation'
-    url: https://www.specifiedby.com/knauf-insulation/knauf-insulation-dritherm-cavity-slab-37-glass-mineral-wool-insulation/knauf-insulation-drithermr-cavity-slab-37-masonry-party-wall-slab-epd-en-uki-2_f6985005.pdf
+  - id: vnd-specifiedby-rafter-roll-datasheet-97d9c5b4
+    title: 'SpecifiedBy (UK manufacturer documents): rafter-roll-datasheet_97d9c5b4.pdf
+      (knauf insulation rafter roll glass mineral wool insulation — rafter roll '
+    url: https://www.specifiedby.com/knauf-insulation/knauf-insulation-rafter-roll-glass-mineral-wool-insulation/rafter-roll-datasheet_97d9c5b4.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-knauf-insulation-soffit-linerboard-installation-guide-en-uk-1f7da867
+    title: 'SpecifiedBy (UK manufacturer documents): knauf-insulation-soffit-linerboard-installation-guide-en-uk_1f7da867.pdf
+      (knauf insulation rocksilk soffit li'
+    url: https://www.specifiedby.com/knauf-insulation/knauf-insulation-rocksilk-soffit-linerboard-standard-rock-mineral-wool-insulation/knauf-insulation-soffit-linerboard-installation-guide-en-uk_1f7da867.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-knauf-insulation-timber-frame-party-wall-slab-epd-ies-0019497-2-fb3fc102
+    title: 'SpecifiedBy (UK manufacturer documents): knauf-insulation-timber-frame-party-wall-slab-epd-ies-0019497-2_fb3fc102.pdf
+      (knauf insulation timber frame p'
+    url: https://www.specifiedby.com/knauf-insulation/knauf-insulation-timber-frame-party-wall-slab-glass-mineral-wool-insulation/knauf-insulation-timber-frame-party-wall-slab-epd-ies-0019497-2_fb3fc102.pdf
     source: vendor_specifiedby
     license: open
     topic: materials
