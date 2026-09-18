@@ -72333,3 +72333,28 @@ sources:
     topic: architecture
     format: pdf
     license_evidence: 'OpenAlex OA location license: public-domain'
+  - id: ope-using-open-data-and-open-source-software-to-de
+    title: Using open data and open-source software to develop spatial indicators of
+      urban design and transport features for achieving healthy and sustainable ci
+    url: http://arxiv.org/pdf/2205.05240
+    source: openalex
+    license: open
+    topic: urban
+    format: pdf
+  - id: ope-modelling-the-impact-of-urban-growth-on-agricu
+    title: Modelling the impact of urban growth on agriculture and natural land in Italy
+      to 2030
+    url: https://escholarship.org/content/qt5tp0d3n9/qt5tp0d3n9.pdf?t=pbaobz
+    source: openalex
+    license: open
+    topic: urban
+    format: pdf
+  - id: ope-concentrations-of-criteria-pollutants-in-the-c
+    title: 'Concentrations of criteria pollutants in the contiguous U.S., 1979 – 2015:
+      Role of prediction model parsimony in integrated empirical geographic regre'
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0228535&type=printable
+    source: openalex
+    license: cc-by
+    topic: urban
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
