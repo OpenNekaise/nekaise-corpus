@@ -72142,3 +72142,12 @@ sources:
     license: open
     topic: standards_protocols
     format: pdf
+  - id: ope-behaviors-of-large-rupture-strain-fiber-reinfo
+    title: Behaviors of Large-Rupture-Strain Fiber-Reinforced Polymer Strengthened Reinforced
+      Concrete Beams Under Static and Impact Loads
+    url: https://www.frontiersin.org/articles/10.3389/fmats.2020.578749/pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
