@@ -72202,3 +72202,21 @@ sources:
     license: open
     topic: structures_civil
     format: pdf
+  - id: ope-physics-based-simulation-of-heat-load-on-struc
+    title: Physics-Based Simulation of Heat Load on Structures for Improving Construction
+      Standards for Bushfire Prone Areas
+    url: https://www.frontiersin.org/articles/10.3389/fmech.2019.00035/pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-physics-guided-real-time-full-field-vibration-
+    title: Physics-Guided Real-Time Full-Field Vibration Response Estimation from Sparse
+      Measurements Using Compressive Sensing
+    url: https://escholarship.org/content/qt7tn6n4w9/qt7tn6n4w9.pdf?t=rxqo2n
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
