@@ -72695,3 +72695,12 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-indoor-air-pollution-from-cooking-emission-cha
+    title: 'Indoor air pollution from cooking: emission characteristics, exposure risks,
+      and health implications'
+    url: https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2026.1925033/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
