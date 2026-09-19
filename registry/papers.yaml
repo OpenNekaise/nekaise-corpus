@@ -72575,3 +72575,29 @@ sources:
     license: open
     topic: building_energy
     format: pdf
+  - id: ope-experimental-analysis-of-energy-consumption-of
+    title: Experimental analysis of energy consumption of building roof energy-saving
+      technologies based on time difference comparison test
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2023.1291213/pdf?isPublishedV2=False
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-achieving-integrated-daylighting-and-electric-
+    title: 'Achieving Integrated Daylighting and Electric Lighting Systems: Current
+      State of the Art and Needed Research'
+    url: https://escholarship.org/content/qt9vm9139h/qt9vm9139h.pdf
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
+  - id: ope-optimizing-educational-environments-microclima
+    title: 'Optimizing educational environments: microclimate analysis and energy efficiency
+      through courtyard orientation in UAE schools'
+    url: https://public-pages-files-2025.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2024.1448743/pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
