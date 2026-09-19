@@ -72532,3 +72532,20 @@ sources:
     topic: building_energy
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-a-graph-based-explanatory-model-for-room-based
+    title: A graph-based explanatory model for room-based energy efficiency analysis
+      based on BIM data
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2023.1256921/pdf?isPublishedV2=False
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-a-review-of-graphical-user-interfaces-of-opens
+    title: A review of graphical user interfaces of OpenSees software framework
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2023.1233116/pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
