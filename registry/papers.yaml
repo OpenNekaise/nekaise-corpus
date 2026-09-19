@@ -72670,3 +72670,28 @@ sources:
     topic: equipment_systems
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-international-database-of-hot-sedimentary-aqui
+    title: 'International database of hot sedimentary aquifer geothermal projects: de-risking
+      future projects by identifying key success and failure criteria'
+    url: https://eartharxiv.org/repository/object/7994/download/19433/
+    source: openalex
+    license: public-domain
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: public-domain'
+  - id: ope-retracted-machine-vision-model-for-drip-leakag
+    title: 'RETRACTED: Machine vision model for drip leakage detection of pipeline'
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0316951&type=printable
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-the-role-of-low-temperature-waste-heat-recover
+    title: 'The Role of Low Temperature Waste Heat Recovery in Achieving 2050 Goals:
+      A Policy Positioning Paper'
+    url: http://arxiv.org/pdf/1912.06558
+    source: openalex
+    license: open
+    topic: building_energy
+    format: pdf
