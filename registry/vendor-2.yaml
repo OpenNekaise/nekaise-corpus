@@ -15647,19 +15647,6 @@ sources:
     license_url: https://www.greenheck.com/privacy-statement
     license_evidence: no site Terms of Use found; Privacy Statement only
     rights_verified_at: '2026-08-28'
-  - id: vnd-greenheck-1eb49dee-c9bb-4132-a4d0-0b7e8ad7ae63-82
-    title: 'Greenheck: 1eff2e3a 1 — 1eb49dee c9bb 4132 a4d0 0b7e8ad7ae63","linkType":"Documents","linkTarget":"
-      blank","tags":["Catalog","Catalog"]}'
-    url: https://webcontent.greenheck.com/atg-cms-v2-prod/docs/default-source/resource-library/catalogs/fumejetexhaustsystems_catalog.pdf?sfvrsn=1eff2e3a_1&sf_site_temp=true&sf_site=1eb49dee-c9bb-4132-a4d0-0b7e8ad7ae63","linkType":"Documents","linkTarget":"_blank","tags":["Catalog","Catalog"]}
-    source: vendor_greenheck
-    license: open
-    topic: equipment_systems
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.greenheck.com/privacy-statement
-    license_evidence: no site Terms of Use found; Privacy Statement only
-    rights_verified_at: '2026-08-28'
   - id: vnd-greenheck-1eb49dee-c9bb-4132-a4d0-0b7e8ad7ae63-194
     title: 'Greenheck: 33046238 1 — 1eb49dee c9bb 4132 a4d0 0b7e8ad7ae63","linkType":"Documents","linkTarget":"
       blank","tags":["Installation'
@@ -16069,19 +16056,6 @@ sources:
     title: 'Greenheck: 42142e5e 1 — 1eb49dee c9bb 4132 a4d0 0b7e8ad7ae63","linkType":"Documents","linkTarget":"
       blank","tags":["Installation'
     url: https://webcontent.greenheck.com/atg-cms-v2-prod/docs/default-source/resource-library/installation-manuals/dampers/463548mp100a_iom.pdf?sfvrsn=42142e5e_1&sf_site_temp=true&sf_site=1eb49dee-c9bb-4132-a4d0-0b7e8ad7ae63","linkType":"Documents","linkTarget":"_blank","tags":["Installation
-    source: vendor_greenheck
-    license: open
-    topic: equipment_systems
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.greenheck.com/privacy-statement
-    license_evidence: no site Terms of Use found; Privacy Statement only
-    rights_verified_at: '2026-08-28'
-  - id: vnd-greenheck-1071ef09-1-linktype-documents-linktarget-blank-tags-catalog-catalog
-    title: 'Greenheck: msx catalog — 1071ef09 1","linkType":"Documents","linkTarget":"
-      blank","tags":["Catalog","Catalog"]}'
-    url: https://webcontent.greenheck.com/atg-cms-v2-prod/docs/default-source/resource-library/catalogs/msx_catalog.pdf?sfvrsn=1071ef09_1","linkType":"Documents","linkTarget":"_blank","tags":["Catalog","Catalog"]}
     source: vendor_greenheck
     license: open
     topic: equipment_systems
@@ -16506,19 +16480,6 @@ sources:
     title: 'Greenheck: 72a29b2f 1 — 1eb49dee c9bb 4132 a4d0 0b7e8ad7ae63","linkType":"Documents","linkTarget":"
       blank","tags":["White'
     url: https://webcontent.greenheck.com/atg-cms-v2-prod/docs/default-source/resource-library/white-papers/perf_basics.pdf?sfvrsn=72a29b2f_1&sf_site_temp=true&sf_site=1eb49dee-c9bb-4132-a4d0-0b7e8ad7ae63","linkType":"Documents","linkTarget":"_blank","tags":["White
-    source: vendor_greenheck
-    license: open
-    topic: equipment_systems
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.greenheck.com/privacy-statement
-    license_evidence: no site Terms of Use found; Privacy Statement only
-    rights_verified_at: '2026-08-28'
-  - id: vnd-greenheck-7eeba5df-1-linktype-documents-linktarget-blank-tags-catalog-catalog
-    title: 'Greenheck: kvsoptions autoscrubber — 7eeba5df 1","linkType":"Documents","linkTarget":"
-      blank","tags":["Catalog","Catalog"]}'
-    url: https://webcontent.greenheck.com/atg-cms-v2-prod/docs/default-source/resource-library/catalogs/kvsoptions_autoscrubber.pdf?sfvrsn=7eeba5df_1","linkType":"Documents","linkTarget":"_blank","tags":["Catalog","Catalog"]}
     source: vendor_greenheck
     license: open
     topic: equipment_systems
@@ -20982,3 +20943,29 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-greenheck-1eb49dee-c9bb-4132-a4d0-0b7e8ad7ae63-596
+    title: 'Greenheck: 286f5c16 1 — 1eb49dee c9bb 4132 a4d0 0b7e8ad7ae63","linkType":"Documents","linkTarget":"
+      blank","tags":["Catalog"]}'
+    url: https://webcontent.greenheck.com/atg-cms-v2-prod/docs/default-source/resource-library/catalogs/kvshoods_catalog.pdf?sfvrsn=286f5c16_1&sf_site_temp=true&sf_site=1eb49dee-c9bb-4132-a4d0-0b7e8ad7ae63","linkType":"Documents","linkTarget":"_blank","tags":["Catalog"]}
+    source: vendor_greenheck
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.greenheck.com/privacy-statement
+    license_evidence: no site Terms of Use found; Privacy Statement only
+    rights_verified_at: '2026-08-28'
+  - id: vnd-greenheck-1071ef09-1-linktype-documents-linktarget-blank-tags-catalog
+    title: 'Greenheck: msx catalog — 1071ef09 1","linkType":"Documents","linkTarget":"
+      blank","tags":["Catalog"]}'
+    url: https://webcontent.greenheck.com/atg-cms-v2-prod/docs/default-source/resource-library/catalogs/msx_catalog.pdf?sfvrsn=1071ef09_1","linkType":"Documents","linkTarget":"_blank","tags":["Catalog"]}
+    source: vendor_greenheck
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.greenheck.com/privacy-statement
+    license_evidence: no site Terms of Use found; Privacy Statement only
+    rights_verified_at: '2026-08-28'

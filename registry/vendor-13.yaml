@@ -15401,19 +15401,6 @@ sources:
     license_url: https://www.greenheck.com/privacy-statement
     license_evidence: no site Terms of Use found; Privacy Statement only
     rights_verified_at: '2026-08-28'
-  - id: vnd-greenheck-1eb49dee-c9bb-4132-a4d0-0b7e8ad7ae63-98
-    title: 'Greenheck: 286f5c16 1 — 1eb49dee c9bb 4132 a4d0 0b7e8ad7ae63","linkType":"Documents","linkTarget":"
-      blank","tags":["Catalog","Catalog"]}'
-    url: https://webcontent.greenheck.com/atg-cms-v2-prod/docs/default-source/resource-library/catalogs/kvshoods_catalog.pdf?sfvrsn=286f5c16_1&sf_site_temp=true&sf_site=1eb49dee-c9bb-4132-a4d0-0b7e8ad7ae63","linkType":"Documents","linkTarget":"_blank","tags":["Catalog","Catalog"]}
-    source: vendor_greenheck
-    license: open
-    topic: equipment_systems
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.greenheck.com/privacy-statement
-    license_evidence: no site Terms of Use found; Privacy Statement only
-    rights_verified_at: '2026-08-28'
   - id: vnd-greenheck-1eb49dee-c9bb-4132-a4d0-0b7e8ad7ae63-105
     title: 'Greenheck: 4f3c5663 1 — 1eb49dee c9bb 4132 a4d0 0b7e8ad7ae63","linkType":"Documents","linkTarget":"
       blank","tags":["Flyer"]}'
@@ -21012,3 +20999,29 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-greenheck-51cb6e49-1-linktype-documents-linktarget-blank-tags-catalog
+    title: 'Greenheck: aer baer catalog — 51cb6e49 1","linkType":"Documents","linkTarget":"
+      blank","tags":["Catalog"]}'
+    url: https://webcontent.greenheck.com/atg-cms-v2-prod/docs/default-source/resource-library/catalogs/aer_baer_catalog.pdf?sfvrsn=51cb6e49_1","linkType":"Documents","linkTarget":"_blank","tags":["Catalog"]}
+    source: vendor_greenheck
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.greenheck.com/privacy-statement
+    license_evidence: no site Terms of Use found; Privacy Statement only
+    rights_verified_at: '2026-08-28'
+  - id: vnd-greenheck-1eb49dee-c9bb-4132-a4d0-0b7e8ad7ae63-655
+    title: 'Greenheck: 3d59d1a6 3 — 1eb49dee c9bb 4132 a4d0 0b7e8ad7ae63","linkType":"Documents","linkTarget":"
+      blank","tags":["Catalog"]}'
+    url: https://webcontent.greenheck.com/atg-cms-v2-prod/docs/default-source/resource-library/catalogs/spcsp_catalog.pdf?sfvrsn=3d59d1a6_3&sf_site_temp=true&sf_site=1eb49dee-c9bb-4132-a4d0-0b7e8ad7ae63","linkType":"Documents","linkTarget":"_blank","tags":["Catalog"]}
+    source: vendor_greenheck
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.greenheck.com/privacy-statement
+    license_evidence: no site Terms of Use found; Privacy Statement only
+    rights_verified_at: '2026-08-28'
