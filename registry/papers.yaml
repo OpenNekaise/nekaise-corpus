@@ -72887,3 +72887,12 @@ sources:
     license: open
     topic: construction
     format: pdf
+  - id: ope-rockfall-susceptibility-and-network-ranked-sus
+    title: Rockfall susceptibility and network-ranked susceptibility along the Italian
+      railway
+    url: https://arxiv.org/pdf/2103.14876
+    source: openalex
+    license: cc-by
+    topic: construction
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
