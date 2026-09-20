@@ -72903,3 +72903,30 @@ sources:
     license: open
     topic: construction
     format: pdf
+  - id: ope-performance-of-cementitious-systems-containing
+    title: 'Performance of cementitious systems containing calcined clay in a chloride-rich
+      environment: a review by TC-282 CCL'
+    url: https://escholarship.org/content/qt21k3v6p3/qt21k3v6p3.pdf
+    source: openalex
+    license: cc-by
+    topic: materials
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-finite-element-and-analytical-modelling-of-pvc
+    title: Finite element and analytical modelling of PVC-confined concrete columns
+      under axial compression
+    url: https://www.frontiersin.org/articles/10.3389/fmats.2022.1011675/pdf
+    source: openalex
+    license: cc-by
+    topic: materials
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-the-application-of-lysinibacillus-sphaericus-f
+    title: The Application of Lysinibacillus sphaericus for Surface Treatment and Crack
+      Healing in Mortar
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2019.00062/pdf
+    source: openalex
+    license: cc-by
+    topic: materials
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
