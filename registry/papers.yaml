@@ -73015,3 +73015,44 @@ sources:
     license: open
     topic: urban
     format: pdf
+  - id: ope-transportation-market-distortions
+    title: Transportation Market Distortions
+    url: https://cloudfront.escholarship.org/dist/prd/content/qt7s57r2j3/qt7s57r2j3.pdf?t=poqm7w
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
+  - id: ope-impact-of-climate-change-on-the-integrity-of-t
+    title: Impact of climate change on the integrity of the superstructure of deteriorated
+      U.S. bridges
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0223307&type=printable
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-waste-management-and-circular-economy-in-the-f
+    title: Waste Management and Circular Economy in the French Building and Construction
+      Sector
+    url: https://www.frontiersin.org/articles/10.3389/frsus.2022.840091/pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-toward-more-resilient-urban-stormwater-managem
+    title: Toward More Resilient Urban Stormwater Management Systems—Bridging the Gap
+      From Theory to Implementation
+    url: https://www.frontiersin.org/articles/10.3389/frwa.2021.671059/pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-multi-system-intervention-optimization-for-int
+    title: Multi-system intervention optimization for interdependent infrastructure
+    url: https://arxiv.org/pdf/2203.01411
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
