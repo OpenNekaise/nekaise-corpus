@@ -73269,3 +73269,20 @@ sources:
     license: open
     topic: standards_protocols
     format: pdf
+  - id: ope-leveraging-ubiquitous-computing-as-a-platform-
+    title: Leveraging ubiquitous computing as a platform for collecting real-time occupant
+      feedback in buildings
+    url: https://escholarship.org/content/qt0cg493gv/qt0cg493gv.pdf
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: ope-a-clustering-framework-for-monitoring-circadia
+    title: A Clustering Framework for Monitoring Circadian Rhythm in Structural Dynamics
+      in Plants From Terrestrial Laser Scanning Time Series
+    url: https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2019.00486/pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
