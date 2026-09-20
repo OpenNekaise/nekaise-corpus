@@ -73056,3 +73056,28 @@ sources:
     license: open
     topic: infrastructure
     format: pdf
+  - id: ope-soil-water-and-salinity-dynamics-under-sprinkl
+    title: Soil water and salinity dynamics under sprinkler irrigated almond exposed
+      to a varied salinity stress at different growth stages
+    url: https://escholarship.org/content/qt3r29q8tr/qt3r29q8tr.pdf?t=p8ekmz
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
+  - id: ope-high-resolution-river-hydraulic-and-water-qual
+    title: High-Resolution River Hydraulic and Water Quality Characterization Using
+      Rapidly Deployable Networked Infomechanical Systems (NIMS RD)
+    url: https://escholarship.org/content/qt5pt8v7b2/qt5pt8v7b2.pdf?t=krni7j
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
+  - id: ope-microbial-contributions-to-coupled-arsenic-and
+    title: Microbial contributions to coupled arsenic and sulfur cycling in the acid-sulfide
+      hot spring Champagne Pool, New Zealand
+    url: https://www.frontiersin.org/articles/10.3389/fmicb.2014.00569/pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
