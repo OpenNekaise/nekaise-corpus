@@ -73301,3 +73301,21 @@ sources:
     license: open
     topic: standards_protocols
     format: pdf
+  - id: ope-analysis-of-the-spread-of-sars-cov-2-in-a-hosp
+    title: Analysis of the spread of SARS-CoV-2 in a hospital isolation room using CFD
+      and Lagrangian Coherent Structures
+    url: https://arxiv.org/pdf/2401.16053
+    source: openalex
+    license: public-domain
+    topic: equipment_systems
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: public-domain'
+  - id: ope-review-of-contemporary-energy-harvesting-techn
+    title: Review of contemporary energy harvesting techniques and their feasibility
+      in wireless geophones
+    url: https://arxiv.org/pdf/2308.04110
+    source: openalex
+    license: cc-by-sa
+    topic: equipment_systems
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by-sa'
