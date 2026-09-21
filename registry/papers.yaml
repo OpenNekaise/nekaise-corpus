@@ -73467,3 +73467,11 @@ sources:
     license: open
     topic: structures_civil
     format: pdf
+  - id: ope-gaussian-process-time-series-models-for-struct
+    title: Gaussian Process Time-Series Models for Structures under Operational Variability
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2017.00069/pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
