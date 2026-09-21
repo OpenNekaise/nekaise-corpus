@@ -20507,3 +20507,18 @@ sources:
       operator decision 2026-08-30 (local training use, no redistribution); robots permissive
       for /documents/FileLibrary/
     rights_verified_at: '2026-08-30'
+  - id: vnd-goodman-pf-d24v-g
+    title: 'Goodman: Goodman D24V Gateway - Product Flyer (default document library
+      — pf d24v g)'
+    url: https://www.goodmanmfg.com/docs/librariesprovider6/default-document-library/pf-d24v-g.pdf?view=true
+    source: vendor_goodman
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.goodmanmfg.com/terms-of-use
+    license_evidence: robots Disallow /docs/* — declared prohibition disregarded by
+      operator decision 2026-08-30 (local training use, no redistribution); personal-use
+      ToS
+    rights_verified_at: '2026-08-30'
