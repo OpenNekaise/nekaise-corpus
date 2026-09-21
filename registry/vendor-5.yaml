@@ -20522,3 +20522,18 @@ sources:
       operator decision 2026-08-30 (local training use, no redistribution); personal-use
       ToS
     rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-flex7occupancysensorheads
+    title: 'SpecifiedBy (UK manufacturer documents): Flex7OccupancySensorHeads.pdf (flex7
+      lighting controls — Flex7OccupancySensorHeads)'
+    url: https://www.specifiedby.com/flex7-ltd/flex7-lighting-controls/Flex7OccupancySensorHeads.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
