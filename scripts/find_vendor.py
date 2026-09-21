@@ -68,6 +68,10 @@ ANCHOR_RE = re.compile(r"""<a\s[^>]*?href=["']([^"'#]+)["'][^>]*>(.*?)</a>""", r
 TAG_RE = re.compile(r"<[^>]+>")
 # document URLs embedded in page JSON/scripts (Episerver/React pages carry them as "url":"https:\/\/..."):
 RAW_URL_RE = re.compile(r"""https?://[^\s"'<>\\]+?\.pdf(?:\?[^\s"'<>\\]*)?""", re.I)
+DATA_ITEM_RE = re.compile(r"""\bdata-item\s*=\s*(["'])(.*?)\1""", re.I | re.S)
+# Sitefinity routing/version values identify a CMS site, not a document name.
+CMS_QUERY_KEYS = {"sfvrsn", "sf_site", "sf_site_temp"}
+JSON_LINK_TAIL_RE = re.compile(r'"\s*,\s*"linkType"\s*:')
 HEXID_RE = re.compile(r"^[0-9a-f]{8}(?:-?[0-9a-f]{4}){3,}|^[0-9a-f]{16,}$|^\d{5,}$", re.I)
 
 TOPIC_RULES_DEFAULT = [  # URL/title keyword -> registry topic; vendor rules are tried first
@@ -347,14 +351,24 @@ def enumerate_html_index(cfg: dict, fetcher=fetch, key: str | None = None) -> li
     return out
 
 
-def normalize_document_url(url: str) -> str | None:
-    """Canonicalize HTML-escaped links and reject page markup swallowed by PDF queries."""
-    url = url.strip()
-    for _ in range(5):  # portals sometimes serialize an already HTML-escaped URL into another layer
-        decoded = htmllib.unescape(url)
-        if decoded == url:
+def unescape_html(value: str) -> str:
+    """Decode bounded nested entity escaping used by JSON in HTML attributes."""
+    for _ in range(5):
+        decoded = htmllib.unescape(value)
+        if decoded == value:
             break
-        url = decoded
+        value = decoded
+    return value
+
+
+def normalize_document_url(url: str) -> str | None:
+    """Canonicalize links, including legacy cached URLs with serialized link metadata."""
+    url = unescape_html(url.strip())
+    # Old raw-URL discovery swallowed HTML-escaped JSON after the linkUrl string.
+    # Match the literal JSON boundary only: percent-encoded query values stay intact.
+    tail = JSON_LINK_TAIL_RE.search(url)
+    if tail and '"' not in url[:tail.start()]:
+        url = url[:tail.start()]
     if any(char in unquote(urlsplit(url).query) for char in "<>"):
         return None
     return url
@@ -377,10 +391,22 @@ def pdf_links(page_url: str, text: str, cfg: dict | None = None) -> list[tuple[s
         add(urljoin(page_url, href), label)
     for href in HREF_RE.findall(text):  # links without an <a> wrapper we could parse
         add(urljoin(page_url, href))
-    for url in RAW_URL_RE.findall(text.replace("\\/", "/")):  # JSON-embedded document URLs
+    # Parse structured cards before falling back to raw URLs, retaining their real titles.
+    for _, encoded in DATA_ITEM_RE.findall(text):
+        try:
+            item = json.loads(unescape_html(encoded))
+        except (ValueError, TypeError):
+            continue
+        if isinstance(item, dict) and isinstance(item.get("linkUrl"), str):
+            label = item.get("title")
+            label = re.sub(r"\s+", " ", label).strip()[:120] if isinstance(label, str) else ""
+            add(urljoin(page_url, item["linkUrl"]), label)
+    # Decode before matching: an escaped closing JSON quote must delimit the URL.
+    raw_text = unescape_html(text).replace("\\/", "/")
+    for url in RAW_URL_RE.findall(raw_text):
         add(url)
     if cfg and cfg.get("raw_link_pattern"):  # vendor-specific: relative links inside page JSON
-        for m in re.finditer(cfg["raw_link_pattern"], text.replace("\\/", "/")):
+        for m in re.finditer(cfg["raw_link_pattern"], raw_text):
             add(urljoin(page_url, m.group(1)))
     return out
 
@@ -530,7 +556,8 @@ def title_for(cfg: dict, url: str, label: str = "") -> str:
     ids (uuids, hex, bare numbers) are dropped from the text but still make the id unique."""
     split = urlsplit(url)
     parts = [unquote(p) for p in split.path.split("/") if p]
-    parts += [v for _, v in parse_qsl(split.query) if v and not v.isdigit() and len(v) > 2
+    parts += [v for k, v in parse_qsl(split.query)
+              if k.lower() not in CMS_QUERY_KEYS and v and not v.isdigit() and len(v) > 2
               and v.lower() not in ("true", "false", "pdf", "en", "us")]
     tail = parts[-2:] if len(parts) >= 2 else parts
     words = []
@@ -541,7 +568,10 @@ def title_for(cfg: dict, url: str, label: str = "") -> str:
         words.append(re.sub(r"[-_+.]+", " ", seg).strip())
     slug = " — ".join(w for w in words if w)
     label = re.sub(r"\s+", " ", label).strip()
-    text = f"{label} ({slug})" if label and label.lower() not in slug.lower() else slug
+    text = slug
+    if label and label.lower() not in slug.lower():
+        combined = f"{label} ({slug})"
+        text = combined if len(f"{cfg['name']}: {combined}") <= 150 else label
     return f"{cfg['name']}: {text}"[:150]
 
 
@@ -556,7 +586,8 @@ def topic_for(cfg: dict, url: str, title: str) -> str:
 def doc_id(key: str, url: str) -> str:
     split = urlsplit(url)
     parts = [p for p in split.path.split("/") if p]
-    parts += [v for _, v in parse_qsl(split.query) if v and not v.isdigit() and len(v) > 2
+    parts += [v for k, v in parse_qsl(split.query)
+              if k.lower() not in CMS_QUERY_KEYS and v and not v.isdigit() and len(v) > 2
               and v.lower() not in ("true", "false", "pdf", "en", "us")]
     tail = re.sub(r"\.(pdf|html?)$", "", parts[-1], flags=re.I) if parts else "doc"
     return f"vnd-{key}-{registry.slug(tail)}"[:90]

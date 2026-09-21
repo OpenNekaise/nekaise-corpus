@@ -1,12 +1,81 @@
 """find_vendor: config validation, sitemap/listing enumeration, URL filters, entry shaping, cursor."""
 import json
 import sys
+import html
 
 import pytest
 import requests
 
 import find_vendor
 import registry
+
+
+@pytest.mark.parametrize("layers", [1, 2, 3])
+def test_pdf_links_decodes_structured_cards_without_swallowing_json(layers):
+    url = ("https://cdn.example/docs/hbr050_submittal.pdf?sfvrsn=c294d4a2_4"
+           "&sf_site_temp=true&sf_site=1eb49dee-c9bb-4132-a4d0-0b7e8ad7ae63"
+           "&download=1&filter=%7B%22linkType%22%3A%22Documents%22%7D")
+    item = {"title": "HBR-050 圆形止回风阀", "linkUrl": url,
+            "linkType": "Documents", "linkTarget": "_blank", "tags": ["Submittal"]}
+    encoded = json.dumps(item, ensure_ascii=False)
+    for _ in range(layers):
+        encoded = html.escape(encoded, quote=True)
+    page = f'<div data-item="{encoded}"></div>'
+    assert find_vendor.pdf_links("https://example.org/resources", page) == [
+        (url, item["title"]),
+    ]
+
+
+def test_escaped_script_url_preserves_query_and_stops_at_json_boundary():
+    url = "https://cdn.example/guide.pdf?revision=v2&lang=pt&token=a%2Fb%26c%22d"
+    encoded = html.escape(html.escape(json.dumps({"url": url, "linkType": "Documents"})))
+    assert find_vendor.pdf_links("https://example.org", f"<script>{encoded}</script>") == [
+        (url, ""),
+    ]
+
+
+def test_legacy_cached_json_suffix_is_repaired_before_dedup(tmp_path, monkeypatch):
+    monkeypatch.setattr(find_vendor, "CACHE_DIR", tmp_path)
+    url = "https://cdn.example/damper.pdf?sfvrsn=abc123_2&sf_site=site-id"
+    polluted = url + '\",\"linkType\":\"Documents\",\"linkTarget\":\"_blank\",\"tags\":[\"Submittal\"]}'
+    find_vendor.store_state("acme", "docs", {polluted: {"title": "Damper submittal"}})
+    cfg = vendor()
+    assert find_vendor.select_documents(cfg, [polluted, url]) == [url]
+    assert find_vendor.known_titles_for("acme") == {url: "Damper submittal"}
+    assert find_vendor.entries_for("acme", cfg, [url], {url}, set(), 10) == []
+    encoded_value = url + "&filter=%22%2C%22linkType%22%3A%22Documents%22"
+    assert find_vendor.normalize_document_url(encoded_value) == encoded_value
+    json_value = url + '&filter={"kind":"manual","linkType":"Documents"}'
+    assert find_vendor.normalize_document_url(json_value) == json_value
+
+
+def test_sitefinity_routing_does_not_replace_document_title_or_id():
+    cfg = vendor(name="Greenheck")
+    query = "?sfvrsn=c294d4a2_4&sf_site_temp=true&sf_site=1eb49dee-c9bb-4132-a4d0-0b7e8ad7ae63"
+    first = "https://cdn.example/dampers/hbr050_submittal.pdf" + query
+    second = "https://cdn.example/dampers/hbr150_submittal.pdf" + query
+    assert find_vendor.doc_id("greenheck", first) == "vnd-greenheck-hbr050-submittal"
+    assert find_vendor.doc_id("greenheck", second) == "vnd-greenheck-hbr150-submittal"
+    title = find_vendor.title_for(cfg, first, "HBR-050 Backdraft Damper")
+    assert "HBR-050 Backdraft Damper" in title and "hbr050 submittal" in title
+    assert "c294d4a2" not in title and "1eb49dee" not in title
+    assert find_vendor.doc_id("acme", "https://cdn.example/files?p_Doc_Ref=Manual_EN") == "vnd-acme-manual-en"
+
+
+def test_long_document_label_is_not_truncated_to_make_room_for_a_slug():
+    label = "Energy Recovery Ventilators Microprocessor Controller v2.00 (#474894 IOM - Nov 2011)"
+    url = "https://cdn.example/energy-recovery-ventilators/474894ddccontroller_iom.pdf"
+    assert find_vendor.title_for(vendor(name="Greenheck"), url, label) == "Greenheck: " + label
+
+
+def test_malformed_structured_cards_leave_other_links_usable():
+    page = ('<div data-item="not json"></div>'
+            "<div data-item='[]'></div>"
+            "<div data-item='{\"linkUrl\":42,\"title\":[]}'></div>"
+            '<a href="/manual.pdf">Manual</a>')
+    assert find_vendor.pdf_links("https://example.org", page) == [
+        ("https://example.org/manual.pdf", "Manual"),
+    ]
 
 
 def vendor(**over):
