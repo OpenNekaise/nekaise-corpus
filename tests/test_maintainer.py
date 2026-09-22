@@ -411,7 +411,7 @@ def test_maintenance_phases_refresh_state_and_hold_only_mutation_locks(tmp_path,
             assert kwargs['timeout'] == 300
             assert '--permission-mode' not in command
             assert command[command.index('--tools') + 1] == ''
-            assert command[command.index('--model') + 1] == 'claude-opus-5'
+            assert command[command.index('--model') + 1] == 'claude-opus-5-5'
             assert command[command.index('--effort') + 1] == 'xhigh'
             assert 'before' in prompt and '{{' not in prompt
             kwargs['stdout_path'].write_text(json.dumps({'type': 'result', 'is_error': False, 'result': 'Check stale evidence.'}))

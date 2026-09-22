@@ -209,7 +209,7 @@ land as local commits for you (or the maintainer) to review + push. Remove eithe
 
 **Maintain on autopilot.** `bash scripts/install_maintainer_cron.sh` adds a six-hour, Codex-first
 maintenance pass. It takes a settled snapshot between rounds, releases growth locks during
-read-only triage, and requests Claude Opus 5 (`xhigh`) review for repairs or improvements. A
+read-only triage, and requests Claude Opus 5.5 (`xhigh`) review for repairs or improvements. A
 publication-only pass skips that second-model review. Codex reacquires both the scheduled-growth
 and canonical corpus-round locks, refreshes state, then may repair, validate, commit and push
 `main`. This explicit maintainer authorization is separate from a mechanical dig's never-push rule.

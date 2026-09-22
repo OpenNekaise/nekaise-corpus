@@ -663,7 +663,7 @@ def run_maintenance() -> int:
         claude_cmd = [
             str(claude), "--print", "--no-session-persistence", "--tools", "",
             "--disable-slash-commands", "--output-format", "json",
-            "--model", os.environ.get("CLAUDE_REVIEW_MODEL", "claude-opus-5"),
+            "--model", os.environ.get("CLAUDE_REVIEW_MODEL", "claude-opus-5-5"),
             "--effort", os.environ.get("CLAUDE_REVIEW_EFFORT", "xhigh"),
         ]
         review_rc = run_command(
