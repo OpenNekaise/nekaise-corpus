@@ -21599,3 +21599,32 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-kalzip-systems
+    title: 'SpecifiedBy (UK manufacturer documents): Kalzip-Systems.pdf (kalzip acoustic
+      deck roof system high humidity u value 0 18 — Kalzip Systems)'
+    url: https://www.specifiedby.com/kalzip/kalzip-acoustic-deck-roof-system-high-humidity-u-value-0-18/Kalzip-Systems.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-spec-kalzip-purlin-roof-construction-018-uvalue
+    title: 'SpecifiedBy (UK manufacturer documents): Spec_Kalzip_Purlin_Roof_Construction_018_uvalue.pdf'
+    url: https://www.specifiedby.com/kalzip/kalzip-ribbed-liner-roof-system-u-value-0-18/Spec_Kalzip_Purlin_Roof_Construction_018_uvalue.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'

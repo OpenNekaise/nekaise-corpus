@@ -21421,3 +21421,33 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-bam-durability-and-corrosion-testing
+    title: 'SpecifiedBy (UK manufacturer documents): BAM Durability and corrosion testing.pdf'
+    url: https://www.specifiedby.com/kalzip/kalzip-acoustic-deck-roof-system-high-humidity-u-value-0-18/BAM
+      Durability and corrosion testing.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-bim-objectguide-5
+    title: 'SpecifiedBy (UK manufacturer documents): BIM_ObjectGuide_5.pdf (kalzip acoustic
+      liner roof system u value 0 18 — BIM ObjectGuide 5)'
+    url: https://www.specifiedby.com/kalzip/kalzip-acoustic-liner-roof-system-u-value-0-18/BIM_ObjectGuide_5.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
