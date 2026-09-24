@@ -73882,3 +73882,20 @@ sources:
     license: open
     topic: structures_civil
     format: pdf
+  - id: ope-numerical-modeling-of-liquefaction-induced-dow
+    title: 'Numerical Modeling of Liquefaction-Induced Downdrag: Validation against
+      Centrifuge Model Tests'
+    url: https://escholarship.org/content/qt3273n636/qt3273n636.pdf?t=rkutkn
+    source: openalex
+    license: open
+    topic: structures_civil
+    format: pdf
+  - id: ope-integral-bridge-abutments-in-response-to-seaso
+    title: 'Integral bridge abutments in response to seasonal temperature changes: State
+      of knowledge and recent advances'
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2022.916782/pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
