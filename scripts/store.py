@@ -79,8 +79,11 @@ ROUND_LOCK = "corpus-round"
 # snapshot does not count as unsettled state for it.
 INHERITED_LOCK_ENV = "NEKAISE_STORE_LOCK_INHERITED"
 # Git-owned configuration and policy documents; a store never writes them.
-CONFIG_FILES = ("backends.json", "eligibility.json", "vendors.json")
+CONFIG_FILES = ("backends.json", "eligibility.json", "vendors.json", "host_policy.json")
 BACKEND_STATE_FILE = "backend_state.json"
+# Runtime control documents: whole JSON objects that the loop maintains (not configuration, not
+# rows), stored and replicated as-is. github_passes.json records find_github's completed passes.
+CONTROL_FILES = ("github_passes.json",)
 
 
 class Table(str, Enum):
@@ -601,6 +604,7 @@ class _State:
     events: list = field(default_factory=list)         # journal rows in seq order
     rotation: dict = field(default_factory=dict)
     backend_state: dict = field(default_factory=dict)  # name -> {"enabled", "reason"}
+    control: dict = field(default_factory=dict)        # CONTROL_FILES name -> document
 
 
 # Transactions in progress in this process, per store root: they must not nest.
@@ -750,6 +754,10 @@ class FileStore:
         elif table == "backend_state":
             if self.backend_state_path.exists():
                 state.backend_state = json.loads(self.backend_state_path.read_text())
+        elif table == "control":
+            for name in CONTROL_FILES:
+                if (self.reg / name).exists():
+                    state.control[name] = json.loads((self.reg / name).read_text())
         else:
             raise StoreError(f"unknown table {table}")
 
@@ -1024,6 +1032,12 @@ class FileStore:
         if "backend_state" in view._dirty:
             writes[self.backend_state_path] = (json.dumps(
                 state.backend_state, indent=2, ensure_ascii=False, sort_keys=True) + "\n").encode()
+        if "control" in view._dirty:
+            for name in CONTROL_FILES:
+                if not same_row(base.control.get(name), state.control.get(name)):
+                    doc = state.control.get(name)
+                    writes[self.reg / name] = None if doc is None else (json.dumps(
+                        doc, indent=2, ensure_ascii=False, sort_keys=True) + "\n").encode()
 
     def _render_journal(self, view: "WriteView", digest: str, writes: dict) -> None:
         state = _State()
@@ -1102,6 +1116,8 @@ def export(directory: Path, *, view: "ReadView") -> ExportReport:
     singles = {
         "rotation.json": view.rotation_get(),
         "backend_state.json": {k: _plain(v) for k, v in view.backend_state_get().items()},
+        **{f"control/{name}": doc for name in CONTROL_FILES
+           if (doc := view.control_get(name)) is not None},
         **{f"config/{name}": doc for name, doc in config.documents.items()},
     }
     for name, obj in singles.items():
@@ -1310,6 +1326,12 @@ class ReadView:
         rotation = self._get("rotation").rotation
         return copy.deepcopy(rotation if name is None else rotation[name])
 
+    def control_get(self, name: str) -> dict | None:
+        """A runtime control document (CONTROL_FILES), or None when it does not exist."""
+        if name not in CONTROL_FILES:
+            raise StoreError(f"unknown control document {name!r}")
+        return copy.deepcopy(self._get("control").control.get(name))
+
     def config_get(self) -> ConfigSnapshot:
         self._check_open()
         if self._config_cache is None:  # write views pin it on first use, generation-checked
@@ -1360,7 +1382,7 @@ def _mutation(fn):
         kwargs = {k: _materialize(v) for k, v in kwargs.items()}
         self._requests.append({"call": fn.__name__, "args": _plain(args), "kwargs": _plain(kwargs)})
         if self._replay:
-            return None if fn.__name__ in ("rotation_set", "backend_state_set") else 0
+            return None if fn.__name__ in ("rotation_set", "backend_state_set", "control_set") else 0
         mark = len(self._ops)
         try:
             return fn(self, *args, **kwargs)
@@ -1595,6 +1617,28 @@ class WriteView(ReadView):
         state.rotation[name] = after
         self._record("rotation", "upsert", name, before=before, after=after)
         self._touch("rotation")
+
+    @_mutation
+    def control_set(self, name: str, doc: Mapping | None) -> None:
+        """Replace (or with None delete) a runtime control document."""
+        if name not in CONTROL_FILES:
+            raise StoreError(f"unknown control document {name!r}")
+        if doc is not None:
+            if not isinstance(doc, Mapping):
+                raise StoreError("a control document must be a JSON object")
+            doc = copy.deepcopy(dict(doc))
+            validate_json(doc, f"control {name}")
+        state = self._get("control")
+        before = state.control.get(name)
+        if same_row(before, doc):
+            return
+        if doc is None:
+            del state.control[name]
+        else:
+            state.control[name] = doc
+        self._record("control", "upsert" if doc is not None else "delete", name, before=before,
+                     after=doc)
+        self._touch("control")
 
     @_mutation
     def backend_state_set(self, name: str, value: BackendState) -> None:

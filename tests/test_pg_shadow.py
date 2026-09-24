@@ -229,3 +229,34 @@ def test_enable_requires_committed_state_under_the_round_lock(env):
     repo.commit("commit it")
     pg_shadow.enable("dsn", "s", repo.path)
     assert (repo.path / "workspace" / ".pg-shadow").read_text() == "dsn\ns\n"
+
+
+def test_control_documents_and_host_policy_replicate(env):
+    pg_shadow, st, repo, c1 = env
+    pg_shadow.do_import(st, c1, repo.path, log=lambda *_: None)
+    repo.write("registry/github_passes.json", json.dumps({"o/r": {"docs": ["md"]}}))
+    repo.write("registry/host_policy.json", json.dumps({"escholarship.org": {"status": "suspended"}}))
+    c2 = repo.commit("control + host policy")
+    pg_shadow.do_sync(st, c2, repo.path, log=lambda *_: None)
+    assert pg_shadow.do_verify(st, repo.path, log=lambda *_: None)
+    with st.read() as v:
+        assert v.control_get("github_passes.json") == {"o/r": {"docs": ["md"]}}
+        assert "host_policy.json" in v.config_get().documents
+    repo.rm("registry/github_passes.json")
+    c3 = repo.commit("control removed")
+    pg_shadow.do_sync(st, c3, repo.path, log=lambda *_: None)
+    assert pg_shadow.do_verify(st, repo.path, log=lambda *_: None)
+    with st.read() as v:
+        assert v.control_get("github_passes.json") is None
+
+
+def test_schema_v1_migrates_to_v2(env):
+    pg_shadow, st, repo, c1 = env
+    import store_pg
+    with st._connect(autocommit=True) as conn:
+        conn.execute("DROP TABLE control_docs")
+        conn.execute("UPDATE state SET schema_version = 1")
+    again = store_pg.PgStore(repo.path, dsn=st.dsn, schema=st.schema)
+    with again._connect(autocommit=True) as conn:
+        assert conn.execute("SELECT schema_version FROM state").fetchone()[0] == 2
+        assert conn.execute("SELECT count(*) FROM control_docs").fetchone()[0] == 0

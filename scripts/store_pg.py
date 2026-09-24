@@ -43,7 +43,7 @@ from store import (BackendState, ConfigSnapshot, Cursor, KnownHits, Page, Stage,
                    StoreError, Table, Version, VersionConflict, WriteView, WriterError,
                    WriterToken, canonical_row, key_digest, norm_title, norm_url)
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 DEFAULT_DSN = "host=/home/zengp/.local/share/nekaise-pg/run dbname=nekaise"
 
 DDL = """
@@ -102,6 +102,10 @@ CREATE TABLE IF NOT EXISTS {s}.backend_state (
     enabled boolean NOT NULL,
     reason text
 );
+CREATE TABLE IF NOT EXISTS {s}.control_docs (
+    name text COLLATE "C" PRIMARY KEY,
+    doc_text text NOT NULL
+);
 CREATE TABLE IF NOT EXISTS {s}.config (
     name text COLLATE "C" PRIMARY KEY,
     doc_text text NOT NULL,
@@ -115,6 +119,11 @@ CREATE TABLE IF NOT EXISTS {s}.replication_receipts (
 );
 INSERT INTO {s}.state (schema_version) VALUES ({v}) ON CONFLICT DO NOTHING;
 """
+# Schema migrations: version -> SQL bringing the previous version up to it. The DDL above is
+# idempotent and already creates every table, so a migration only has to record the new version.
+MIGRATIONS = {
+    2: "UPDATE {s}.state SET schema_version = 2 WHERE schema_version = 1",  # + control_docs
+}
 
 ROW_TABLES = {Table.ENTRIES: "entries", Table.MANIFEST: "manifest", Table.LEDGER: "ledger"}
 
@@ -191,6 +200,9 @@ class PgStore:
                 conn.execute(DDL.format(s=schema, v=SCHEMA_VERSION))
                 got = conn.execute(sql.SQL("SELECT schema_version FROM {}.state").format(
                     self._s)).fetchone()[0]
+                for version in range(got + 1, SCHEMA_VERSION + 1):
+                    conn.execute(MIGRATIONS[version].format(s=schema))
+                    got = version
                 if got != SCHEMA_VERSION:
                     raise StoreError(f"schema {schema} is version {got}, code expects "
                                      f"{SCHEMA_VERSION}")
@@ -531,6 +543,12 @@ class PgReadView:
         rows = {n: json.loads(t) for n, t in self._q("SELECT name, value_text FROM rotation")}
         return rows if name is None else rows[name]
 
+    def control_get(self, name: str) -> dict | None:
+        if name not in store.CONTROL_FILES:
+            raise StoreError(f"unknown control document {name!r}")
+        row = self._q("SELECT doc_text FROM control_docs WHERE name = %s", [name]).fetchone()
+        return json.loads(row[0]) if row else None
+
     def config_get(self) -> ConfigSnapshot:
         self._check_open()
         return ConfigSnapshot(json.loads(json.dumps(self._config.documents)),
@@ -751,6 +769,28 @@ class PgWriteView(PgReadView):
         self._q("INSERT INTO rotation (name, value_text) VALUES (%s, %s) ON CONFLICT (name) "
                 "DO UPDATE SET value_text = EXCLUDED.value_text", [name, canonical_row(after)])
         self._record("rotation", "upsert", name, before=before, after=after)
+
+    @_mutation
+    def control_set(self, name: str, doc: Mapping | None) -> None:
+        if name not in store.CONTROL_FILES:
+            raise StoreError(f"unknown control document {name!r}")
+        if doc is not None:
+            if not isinstance(doc, Mapping):
+                raise StoreError("a control document must be a JSON object")
+            store.validate_json(dict(doc), f"control {name}")
+            doc = json.loads(canonical_row(dict(doc)))
+        row = self._q("SELECT doc_text FROM control_docs WHERE name = %s FOR UPDATE",
+                      [name]).fetchone()
+        before = json.loads(row[0]) if row else None
+        if store.same_row(before, doc):
+            return
+        if doc is None:
+            self._q("DELETE FROM control_docs WHERE name = %s", [name])
+        else:
+            self._q("INSERT INTO control_docs (name, doc_text) VALUES (%s, %s) ON CONFLICT (name) "
+                    "DO UPDATE SET doc_text = EXCLUDED.doc_text", [name, canonical_row(doc)])
+        self._record("control", "upsert" if doc is not None else "delete", name, before=before,
+                     after=doc)
 
     @_mutation
     def backend_state_set(self, name: str, value: BackendState) -> None:

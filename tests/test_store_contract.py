@@ -414,3 +414,19 @@ def test_invalid_json_values_are_rejected_everywhere(st):
     with st.read() as v:
         events = [e for e in v.scan(Table.EVENTS, limit=1000).rows if e["run_id"] == "r1"]
         assert [e["op"] for e in events] == ["update", "commit"]  # failed batches left no trace
+
+
+def test_control_documents_roundtrip_journal_and_export(st, tmp_path):
+    doc = {"NatLabRockies/ResStock": {"docs": ["md", "tex"], "at": "2026-09-24"}}
+    write(st, "r1", lambda tx: tx.control_set("github_passes.json", doc))
+    with st.read() as v:
+        assert v.control_get("github_passes.json") == doc
+        with pytest.raises(store.StoreError, match="unknown control"):
+            v.control_get("nope.json")
+        assert "control/github_passes.json" in st.export(tmp_path / "e", view=v).files
+    write(st, "r2", lambda tx: tx.control_set("github_passes.json", None))
+    with st.read() as v:
+        assert v.control_get("github_passes.json") is None
+        ops = [(e["table"], e["op"]) for e in v.scan(Table.EVENTS, limit=1000).rows
+               if e["run_id"] in ("r1", "r2") and e["op"] != "commit"]
+    assert ops == [("control", "upsert"), ("control", "delete")]

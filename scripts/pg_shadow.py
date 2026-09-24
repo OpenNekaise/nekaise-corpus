@@ -101,12 +101,16 @@ def kind_of(path: str) -> str | None:
         return "backend_state"
     if name in store.CONFIG_FILES:
         return "config"
+    if name in store.CONTROL_FILES:
+        return "control"
     return None
 
 
 def parse(kind: str, data: bytes | None):
     """Rows of one tracked file (empty when the file is absent at that revision)."""
     if data is None:
+        if kind == "control":
+            return None
         return {} if kind in ("entries", "manifest", "rotation", "backend_state") else []
     text = data.decode()
     if kind == "entries":
@@ -117,7 +121,7 @@ def parse(kind: str, data: bytes | None):
         return [json.loads(l) for l in text.splitlines() if l.strip()]
     if kind == "blocklist":
         return [u for u in (norm_url(l) for l in text.splitlines() if l.strip()) if u]
-    if kind in ("rotation", "backend_state"):
+    if kind in ("rotation", "backend_state", "control"):
         return json.loads(text)
     raise ValueError(kind)
 
@@ -266,6 +270,14 @@ def replay(conn, st: store_pg.PgStore, parent: str | None, commit: str, paths: l
             cur.executemany("INSERT INTO rotation (name, value_text) VALUES (%s, %s)",
                             [(k, canonical_row(v)) for k, v in sorted(rot.items())])
             stats["rotation"] += 1
+        for p in by_kind.get("control", []):
+            doc = new(p, "control")
+            cur.execute("DELETE FROM control_docs WHERE name = %s", [Path(p).name])
+            if doc is not None:
+                store.validate_json(doc, f"control {p}")
+                cur.execute("INSERT INTO control_docs (name, doc_text) VALUES (%s, %s)",
+                            [Path(p).name, canonical_row(doc)])
+            stats["control"] += 1
         if "backend_state" in by_kind:
             bs = new(f"registry/{store.BACKEND_STATE_FILE}", "backend_state")
             cur.execute("DELETE FROM backend_state")
@@ -302,7 +314,7 @@ def do_import(st: store_pg.PgStore, rev: str, repo: Path = ROOT, log=print) -> N
                 "SELECT EXISTS (SELECT 1 FROM entries UNION ALL SELECT 1 FROM manifest UNION ALL "
                 "SELECT 1 FROM blocklist UNION ALL SELECT 1 FROM ledger UNION ALL SELECT 1 FROM "
                 "events UNION ALL SELECT 1 FROM rotation UNION ALL SELECT 1 FROM backend_state "
-                "UNION ALL SELECT 1 FROM replication_receipts)").fetchone()[0]
+                "UNION ALL SELECT 1 FROM control_docs UNION ALL SELECT 1 FROM replication_receipts)").fetchone()[0]
             if _watermark(conn) is not None or occupied or conn.execute(
                     "SELECT generation FROM state").fetchone()[0] != 0:
                 raise SystemExit("schema is not empty; import only into a fresh schema")
@@ -372,7 +384,7 @@ class MultisetDigest:
 def git_digests(rev: str, repo: Path = ROOT) -> dict[str, str]:
     """Per-table digests of the tracked files at `rev`, streamed file by file."""
     d = {t: MultisetDigest() for t in ("entries", "manifest", "blocklist", "ledger", "events")}
-    rotation, backend_state, config = {}, {}, {}
+    rotation, backend_state, config, control = {}, {}, {}, {}
     paths = tracked_paths(rev, repo)
     ledger_paths = [p for p in paths if kind_of(p) == "ledger"]
     if "registry/pruned.jsonl" in ledger_paths:  # the legacy monolith wins, as in FileStore
@@ -395,6 +407,8 @@ def git_digests(rev: str, repo: Path = ROOT) -> dict[str, str]:
             rotation = parse(kind, git_bytes(rev, p, repo))
         elif kind == "backend_state":
             backend_state = parse(kind, git_bytes(rev, p, repo))
+        elif kind == "control":
+            control[Path(p).name] = parse(kind, git_bytes(rev, p, repo))
         elif kind == "config":
             config[Path(p).name] = hashlib.sha256(git_bytes(rev, p, repo)).hexdigest()
     out = {k: v.value() for k, v in d.items()}
@@ -402,6 +416,7 @@ def git_digests(rev: str, repo: Path = ROOT) -> dict[str, str]:
     out["backend_state"] = store._digest({k: {"enabled": bool(v["enabled"]), "reason": v.get("reason")}
                                           for k, v in backend_state.items()})
     out["config"] = store._digest(config)
+    out["control"] = store._digest(control)
     return out
 
 
@@ -430,6 +445,8 @@ def pg_digests(st: store_pg.PgStore) -> tuple[str | None, dict[str, str]]:
             actual = hashlib.sha256(text.encode()).hexdigest()
             config[name] = actual if actual == digest else f"stored digest {digest} != {actual}"
         out["config"] = store._digest(config)
+        out["control"] = store._digest({n: json.loads(t) for n, t in
+                                        conn.execute("SELECT name, doc_text FROM control_docs")})
         conn.rollback()
     return watermark, out
 
