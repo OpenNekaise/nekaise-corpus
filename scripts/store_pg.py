@@ -396,6 +396,16 @@ class PgStore:
             conn.rollback()
             conn.close()
 
+    def validate_layout(self) -> tuple[list[str], dict]:
+        """Physical checks: the schema matches this code. (Row-level consistency of derived
+        columns is pg_shadow verify's job while the shadow exists.)"""
+        with self._connect(autocommit=True) as conn:
+            version = conn.execute("SELECT schema_version FROM state").fetchone()[0]
+            entries = conn.execute("SELECT count(*) FROM entries").fetchone()[0]
+        errors = [] if version == SCHEMA_VERSION else [
+            f"schema {self.schema} is version {version}, code expects {SCHEMA_VERSION}"]
+        return errors, {"shards": None, "entries": entries}
+
     def pending_transactions(self) -> list:
         return []  # a committed-store transaction is atomic; interrupted rounds are tracked apart
 
@@ -540,6 +550,11 @@ class PgReadView:
     def get_manifest(self, ids: Iterable[str]) -> dict[str, dict]:
         ids = list(dict.fromkeys(ids))
         found = dict(self._q("SELECT id, row_text FROM manifest WHERE id = ANY(%s)", [ids]).fetchall())
+        return {i: json.loads(found[i]) for i in ids if i in found}
+
+    def get_entries(self, ids: Iterable[str]) -> dict[str, dict]:
+        ids = list(dict.fromkeys(ids))
+        found = dict(self._q("SELECT id, row_text FROM entries WHERE id = ANY(%s)", [ids]).fetchall())
         return {i: json.loads(found[i]) for i in ids if i in found}
 
     def known(self, *, urls: Iterable[str] = (), titles: Iterable[str] = (),

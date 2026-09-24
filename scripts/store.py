@@ -342,6 +342,16 @@ def _plain(value: Any) -> Any:
     return value
 
 
+def copy_json(value: Any) -> Any:
+    """Deep copy of a JSON value (dict/list/scalars) — what copy.deepcopy does for rows, several
+    times faster because it needs no memo (rows are trees, never cyclic or shared)."""
+    if isinstance(value, dict):
+        return {k: copy_json(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [copy_json(v) for v in value]
+    return value
+
+
 def _canonical(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
@@ -808,11 +818,54 @@ class FileStore:
 
     # -- loading -------------------------------------------------------------------------------
 
+    def _shard_names(self) -> list[str]:
+        return [registry.CURATED] + sorted(
+            p.name for p in self.reg.glob("*.yaml") if p.name != registry.CURATED)
+
+    def validate_layout(self) -> tuple[list[str], dict]:
+        """Physical checks of the file layout that keyed store reads cannot see: shards that do
+        not parse, entries outside their routed shard, ids repeated across or within shards.
+        Returns (errors, facts). When clean, the parsed entries are cached for this version so a
+        view opened next does not parse every shard again."""
+        version = self.version()
+        errors: list[str] = []
+        seen: dict[str, int] = {}
+        entries: dict[str, dict] = {}
+        entry_file: dict[str, str] = {}
+        names = self._shard_names()
+        for name in names:
+            path = self.reg / name
+            if not path.exists():
+                continue
+            try:
+                parsed = registry.parse_yaml(path.read_text()).get("sources") or []
+            except Exception as exc:
+                errors.append(f"{name}: does not parse: {exc}")
+                continue
+            for e in parsed:
+                eid = e.get("id", "<no id>")
+                seen[eid] = seen.get(eid, 0) + 1
+                want = registry.shard_path(eid).name if isinstance(eid, str) else None
+                if want != name:
+                    errors.append(f"{name}: {eid}: belongs in {want} (prefix routing)")
+                entries[eid] = e
+                entry_file[eid] = name
+        for eid, n in seen.items():
+            if n > 1:
+                errors.append(f"duplicate id ({n}x): {eid}")
+        if not errors:
+            self._entries_cache = (version, entries, entry_file)
+        return errors, {"shards": sum((self.reg / n).exists() for n in names),
+                        "entries": sum(seen.values())}
+
     def _load(self, state: _State, table: str) -> None:
         if table == "entries":
-            names = [registry.CURATED] + sorted(
-                p.name for p in self.reg.glob("*.yaml") if p.name != registry.CURATED)
-            for name in names:
+            cached = getattr(self, "_entries_cache", None)
+            if cached is not None and cached[0] == self.version():
+                state.entries.update(cached[1])
+                state.entry_file.update(cached[2])
+                return
+            for name in self._shard_names():
                 path = self.reg / name
                 if not path.exists():
                     continue
@@ -1393,13 +1446,17 @@ class ReadView:
                 continue
             if len(rows) == limit:
                 return Page(rows, Cursor(self._cursor_scope(), query, last))
-            rows.append(copy.deepcopy({f: row[f] for f in fields if f in row} if fields else row))
+            rows.append(copy_json({f: row[f] for f in fields if f in row} if fields else row))
             last = key
         return Page(rows, None)
 
     def get_manifest(self, ids: Iterable[str]) -> dict[str, dict]:
         rows = self._get("manifest").manifest
-        return {sid: copy.deepcopy(rows[sid]) for sid in dict.fromkeys(ids) if sid in rows}
+        return {sid: copy_json(rows[sid]) for sid in dict.fromkeys(ids) if sid in rows}
+
+    def get_entries(self, ids: Iterable[str]) -> dict[str, dict]:
+        rows = self._get("entries").entries
+        return {sid: copy_json(rows[sid]) for sid in dict.fromkeys(ids) if sid in rows}
 
     def _known_sets(self) -> tuple[set, set, set]:
         if self._known_cache is None:
@@ -1493,7 +1550,7 @@ class ReadView:
         for sha in sorted(by_sha):
             if len(by_sha[sha]) > 1:
                 for sid in sorted(by_sha[sha]):
-                    yield copy.deepcopy(rows[sid])
+                    yield copy_json(rows[sid])
 
     def rotation_get(self, name: str | None = None) -> dict:
         rotation = self._get("rotation").rotation
@@ -1615,8 +1672,8 @@ class WriteView(ReadView):
         self.__dict__.pop("_keyed_cache", None)
 
     def _record(self, table: str, op: str, sid, before=None, after=None, reason=None) -> None:
-        self._ops.append({"table": table, "op": op, "id": sid, "before": copy.deepcopy(before),
-                          "after": copy.deepcopy(after), "reason": reason})
+        self._ops.append({"table": table, "op": op, "id": sid, "before": copy_json(before),
+                          "after": copy_json(after), "reason": reason})
 
     @staticmethod
     def _unique_ids(rows: Sequence[Mapping], what: str) -> None:
