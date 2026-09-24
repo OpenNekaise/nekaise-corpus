@@ -238,8 +238,15 @@ def test_legacy_round_snapshot_blocks_views_and_transactions(st):
         with pytest.raises(store.PendingTransaction, match="round snapshot"):
             with st.read(writer=w):  # a fresh lock holder does not own an abandoned round
                 pass
-    with st.writer(round_id="20260924T000000Z-abc") as w:
-        with st.read(writer=w) as v:  # the round's own writer may read its in-flight state
+    with pytest.raises(store.PendingTransaction, match="must be recovered"):
+        with st.writer(round_id="20260924T000000Z-abc"):  # cannot claim an abandoned round
+            pass
+    shutil.rmtree(snap)
+    with st.writer(round_id="20260924T010000Z-new") as w:
+        live = st.round_snapshots / "20260924T010000Z-new"  # the round starts under this lock
+        live.mkdir(parents=True)
+        (live / "snapshot.json").write_text("{}")
+        with st.read(writer=w) as v:  # its own writer may read its in-flight state
             v.scan(Table.ENTRIES)
 
 
@@ -279,3 +286,25 @@ def test_crash_during_rollback_cleanup_is_still_recoverable(st, monkeypatch):
     with st.writer() as w:
         assert st.recover("r1", writer=w).action == "rolled_back"
     assert st.pending_transactions() == []
+
+
+def test_interrupted_preparation_does_not_strand_the_run(st, monkeypatch):
+    before = files(st.root)
+    real = store._write_durable
+    monkeypatch.setattr(store, "_write_durable", lambda p, d: (_ for _ in ()).throw(
+        KeyboardInterrupt()) if p.name.endswith(".bin") else real(p, d))
+    monkeypatch.setattr(store, "_rmtree_durable", lambda p: None)  # the crash skips cleanup too
+    with pytest.raises(KeyboardInterrupt):
+        write(st, "r1", big_change)
+    monkeypatch.undo()
+    assert (st.txn_dir / "r1").exists() and st.pending_transactions() == []
+    assert files(st.root) == before
+    write(st, "r1", big_change)  # the same run commits normally afterwards
+    assert st.pending_transactions() == [] and not (st.txn_dir / "r1").exists()
+
+
+def test_recover_discards_an_unmarked_preparation(st):
+    (st.txn_dir / "r9" / "state").mkdir(parents=True)
+    with st.writer() as w:
+        assert st.recover("r9", writer=w).action == "discarded"
+    assert not (st.txn_dir / "r9").exists()

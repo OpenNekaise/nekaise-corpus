@@ -476,8 +476,12 @@ class FileStore:
     def writer(self, timeout: float = 0, *, round_id: str | None = None) -> Iterator[WriterToken]:
         """Hold the canonical round lock and yield the token that proves it. The token dies with
         this context, even if the same process takes the lock again later. `round_id` declares
-        the round this writer is running; only that round's snapshot counts as its own state."""
+        the round this writer is about to run: its snapshot must not exist yet, so ownership is
+        only ever granted for a round started under this lock, never for an abandoned one."""
         with ops.named_lock(ROUND_LOCK, timeout=timeout, workspace=self.workspace) as path:
+            if round_id is not None and round_id in self._legacy_snapshots():
+                raise PendingTransaction(f"round {round_id} already has a snapshot: it was "
+                                         "interrupted and must be recovered, not resumed")
             token = WriterToken("file-lock", str(os.getpid()), 0, str(path), uuid.uuid4().hex,
                                 round_id)
             self._live_tokens.add(token.nonce)
@@ -681,6 +685,9 @@ class FileStore:
         path = self.txn_dir / run_id
         meta_path = path / "meta.json"
         if not meta_path.exists():
+            if path.exists():  # preparation died before publishing its marker: nothing applied
+                _rmtree_durable(path)
+                return RecoveryResult(run_id, "discarded")
             raise StoreError(f"no pending store transaction {run_id}")
         meta = json.loads(meta_path.read_text())
         if meta["state"] == "committed":
@@ -729,20 +736,32 @@ class FileStore:
 
         # 1. prepare: durable backups of every file we will touch, then the recovery marker
         txn = self.txn_dir / view.run_id
+        if (txn / "meta.json").exists():
+            raise PendingTransaction(f"transaction {view.run_id} is pending recovery")
+        # A directory without a published marker is an interrupted preparation: no data file was
+        # touched before the marker, so it is always safe to discard.
         if txn.exists():
-            raise PendingTransaction(f"stale transaction directory {txn}")
-        _mkdir_durable(txn / "state")
-        files = []
-        for n, path in enumerate(sorted(writes)):
-            pre = path.read_bytes() if path.exists() else None
-            item = {"rel": str(path.relative_to(self.root)), "pre_sha": _sha(pre),
-                    "post_sha": _sha(writes[path]), "backup": None}
-            if pre is not None:
-                item["backup"] = f"{n}.bin"
-                _write_durable(txn / "state" / item["backup"], pre)
-            files.append(item)
-        meta = {"run_id": view.run_id, "state": "prepared", "files": files}
-        _write_durable(txn / "meta.json", (json.dumps(meta, indent=2) + "\n").encode())
+            _rmtree_durable(txn)
+        try:
+            _mkdir_durable(txn / "state")
+            files = []
+            for n, path in enumerate(sorted(writes)):
+                pre = path.read_bytes() if path.exists() else None
+                item = {"rel": str(path.relative_to(self.root)), "pre_sha": _sha(pre),
+                        "post_sha": _sha(writes[path]), "backup": None}
+                if pre is not None:
+                    item["backup"] = f"{n}.bin"
+                    _write_durable(txn / "state" / item["backup"], pre)
+                files.append(item)
+            meta = {"run_id": view.run_id, "state": "prepared", "files": files}
+            _write_durable(txn / "meta.json", (json.dumps(meta, indent=2) + "\n").encode())
+        except BaseException:
+            if not (txn / "meta.json").exists():
+                try:
+                    _rmtree_durable(txn)
+                except Exception:
+                    pass  # an unmarked directory is discarded by the next commit or recover()
+            raise
         # 2. apply; an ordinary failure rolls back at once, a crash leaves "prepared" for recover()
         try:
             for path, data in sorted(writes.items()):
