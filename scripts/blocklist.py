@@ -8,9 +8,8 @@ finder dedups against blocklist.load(); prune_corpus --apply calls blocklist.add
 """
 from __future__ import annotations
 
+import uuid
 from pathlib import Path
-
-import ops
 
 ROOT = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 PATH = ROOT / "pruned_urls.txt"
@@ -27,12 +26,22 @@ def load() -> set[str]:
 
 
 def add(urls) -> int:
-    """Append new URLs (deduped, sorted) to the blocklist file. Returns how many were new."""
-    cur = load()
-    new = {normalize(u) for u in urls if u and normalize(u)} - cur
-    if new:
-        old = PATH.read_text() if PATH.exists() else ""
-        if old and not old.endswith("\n"):
-            old += "\n"
-        ops.atomic_write_text(PATH, old + "".join(f"{u}\n" for u in sorted(new)))
-    return len(new)
+    """Record new URLs (deduped, sorted) in the blocklist through the store (ADR 0001 stage 3):
+    inside a round through the round's broker, otherwise in one standalone store transaction.
+    The file store appends them to pruned_urls.txt exactly as the legacy writer did. Returns how
+    many were new; nothing is written (no transaction) when none are."""
+    import store  # store imports this module
+    import store_broker
+
+    new = sorted({normalize(u) for u in urls if u and normalize(u)} - load())
+    if not new:
+        return 0
+    st = store.open(root=PATH.parent)
+    if (client := store_broker.client()) is not None:
+        with st.read() as view:  # the round's inherited read access
+            version = view.version()
+        return client.submit("blocklist", f"add-{uuid.uuid4().hex[:12]}",
+                             [{"call": "blocklist_add", "args": [new], "kwargs": {}}],
+                             version)[0]
+    with store.standalone_transaction(st, "blocklist") as tx:
+        return tx.blocklist_add(new)

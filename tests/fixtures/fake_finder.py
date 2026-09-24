@@ -17,6 +17,7 @@ def main() -> None:
     parser.add_argument("--url", required=True)
     parser.add_argument("--bucket")
     parser.add_argument("--token")
+    parser.add_argument("--page")
     parser.add_argument("--exit-code", type=int, default=0)
     parser.add_argument("--hold-rotation", action="store_true")
     parser.add_argument("--hold-note", default="fixture hold")

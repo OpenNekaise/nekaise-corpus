@@ -10,7 +10,6 @@ from pathlib import Path
 
 import corpus_stats
 import registry
-import rotation
 import run_round
 import store
 
@@ -27,6 +26,8 @@ def oversized_control_files(root: Path = ROOT) -> list[tuple[Path, int]]:
     files = [
         *(root / "registry").glob("*.yaml"),
         *(root / "registry").glob("*.jsonl"),
+        *(root / "registry").glob("*.json"),
+        *(root / "registry" / "journal").glob("*.jsonl"),
         *(root / "manifest").glob("*.jsonl"),
     ]
     return sorted(
@@ -144,6 +145,22 @@ def host_policy_contract_errors(backends: dict, path: Path | None = None) -> lis
     return errors
 
 
+def runtime_backend_state(view) -> tuple[dict, list[str]]:
+    """The view's runtime backend state, or ({}, [error]) when it cannot be read as BackendState
+    records (e.g. a hand-edited registry/backend_state.json with unknown fields)."""
+    try:
+        return view.backend_state_get(), []
+    except Exception as exc:
+        return {}, [f"registry/{store.BACKEND_STATE_FILE}: unreadable runtime state: {exc}"]
+
+
+def effective_backends(backends: dict, runtime: dict) -> dict:
+    """Backend configs whose `enabled` is the effective enablement: configuration AND runtime."""
+    return {name: {**cfg, "enabled": bool(cfg.get("enabled", True))
+                   and runtime.get(name, store.BackendState()).enabled is not False}
+            for name, cfg in backends.items()}
+
+
 def readme_stats_errors(readme: str, stats) -> list[str]:
     """Validate every README statistic against ONE manifest-derived view (corpus_stats of one
     store view). Local file availability never enters it, so the committed numbers are identical
@@ -172,22 +189,29 @@ def main() -> int:
         stats = corpus_stats.compute(view, restrictions)
         restricted_metadata = corpus_stats.restricted_with_corpus_data(view, restrictions)
         unavailable = corpus_stats.local_unavailable(view, ROOT, restrictions)
+        backends = {k: v for k, v in view.config_get().backends.items() if not k.startswith("_")}
+        rotation_state = view.rotation_get()
+        runtime, runtime_errors = runtime_backend_state(view)
     readme = (ROOT / "README.md").read_text()
     errors.extend(readme_stats_errors(readme, stats))
     if unavailable:
         print(f"local availability: {unavailable:,} eligible rows on a fetch-suspended host "
               "have no local payload here (README counts are manifest-based)")
 
-    backends = run_round.load_backends()
-    errors.extend(run_round.validate_backends(backends, rotation.load()))
+    errors.extend(runtime_errors)
+    errors.extend(run_round.validate_backends(backends, rotation_state, runtime))
+    # Policy lives in configuration: an eligibility-restricted backend must be DISABLED IN CONFIG
+    # with a policy-blocked reason; runtime exhaustion never satisfies it.
     errors.extend(eligibility_contract_errors(restricted_metadata, backends, restrictions))
-    errors.extend(patent_country_contract_errors(backends))
+    # What may run is the effective enablement (configuration AND runtime state).
+    effective = effective_backends(backends, runtime)
+    errors.extend(patent_country_contract_errors(effective))
     try:  # vendor-literature config is control plane: schema errors must fail the round, not a fetch
         import find_vendor
         find_vendor.load_vendors()
     except Exception as exc:
         errors.append(f"registry/vendors.json: {exc}")
-    errors.extend(host_policy_contract_errors(backends))
+    errors.extend(host_policy_contract_errors(effective))
     configured_scripts = {cfg["script"] for cfg in backends.values()}
     actual_finders = {p.name for p in (ROOT / "scripts").glob("find_*.py")}
     for script in sorted(actual_finders - configured_scripts):

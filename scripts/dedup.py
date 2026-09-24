@@ -91,6 +91,24 @@ def scan_all(view, table: "store.Table", *, where=None, fields=None,
         cursor = result.next_cursor
 
 
+def _wanted(urls: list, titles: list, ids: list) -> tuple[list, list, list]:
+    # Only a value that is its own normal form can equal a stored (normalized) key.
+    return ([u for u in urls if store.norm_url(u) == u],
+            [t for t in titles if store.norm_title(t) == t], list(ids))
+
+
+def _known(view, wanted: tuple[list, list, list]) -> tuple[set, set, set]:
+    hits: tuple[set, set, set] = (set(), set(), set())
+    n = store.MAX_KNOWN
+    for i in range(0, max(map(len, wanted)), n):
+        got = view.known(urls=wanted[0][i:i + n], titles=wanted[1][i:i + n],
+                         ids=wanted[2][i:i + n])
+        hits[0].update(got.urls)
+        hits[1].update(got.titles)
+        hits[2].update(got.ids)
+    return hits
+
+
 class _StoreBackend:
     """Membership from the store's known(), one read view per lookup batch."""
 
@@ -99,22 +117,24 @@ class _StoreBackend:
         self.round_trips = 0  # read views opened
 
     def lookup(self, urls: list, titles: list, ids: list) -> tuple[set, set, set]:
-        # Only a value that is its own normal form can equal a stored (normalized) key.
-        wanted = ([u for u in urls if store.norm_url(u) == u],
-                  [t for t in titles if store.norm_title(t) == t], list(ids))
-        hits: tuple[set, set, set] = (set(), set(), set())
+        wanted = _wanted(urls, titles, ids)
         if not any(wanted):
-            return hits
-        n = store.MAX_KNOWN
+            return set(), set(), set()
         self.round_trips += 1
         with read_view(st=self.st) as view:
-            for i in range(0, max(map(len, wanted)), n):
-                got = view.known(urls=wanted[0][i:i + n], titles=wanted[1][i:i + n],
-                                 ids=wanted[2][i:i + n])
-                hits[0].update(got.urls)
-                hits[1].update(got.titles)
-                hits[2].update(got.ids)
-        return hits
+            return _known(view, wanted)
+
+
+class _ViewBackend:
+    """Membership from one open view — e.g. run_round's discovery transaction, asked before it
+    writes anything, so the file store still answers from its index."""
+
+    def __init__(self, view):
+        self.view = view
+
+    def lookup(self, urls: list, titles: list, ids: list) -> tuple[set, set, set]:
+        wanted = _wanted(urls, titles, ids)
+        return _known(self.view, wanted) if any(wanted) else (set(), set(), set())
 
 
 class _SetBackend:
@@ -194,6 +214,11 @@ class Keys:
 def open_keys(root: Path | None = None) -> Keys:
     """A dedup session against the configured store (NEKAISE_STORE) at `root`."""
     return Keys(_StoreBackend(_open(root)))
+
+
+def from_view(view) -> Keys:
+    """A dedup session answered by one already-open store view (no view per lookup)."""
+    return Keys(_ViewBackend(view))
 
 
 def from_sets(urls: set, titles: set, ids: set) -> Keys:

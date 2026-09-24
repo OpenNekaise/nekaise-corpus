@@ -17,7 +17,8 @@ hand as `/dig` any time you want to grow the corpus in one shot.
    python scripts/run_round.py --commit
    ```
    `registry/backends.json` is the sole list of finder scripts, fixed arguments, and enabled/paused
-   state; `registry/rotation.json` supplies their committed pointers. The runner holds the repo lock,
+   state; `registry/rotation.json` supplies their committed pointers; `registry/backend_state.json`
+   holds runtime exhaustion reported by finders (a backend runs only if both enable it). The runner holds the repo lock,
    advances each pointer only after that finder exits successfully, then performs fetch → prune →
    clean → README stats, and finally the read-only gates concurrently (check ‖ index status ‖ lint
    ‖ architecture contracts ‖ tests — all awaited, any failure fails the round). Any

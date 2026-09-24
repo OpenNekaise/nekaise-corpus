@@ -593,6 +593,19 @@ def open(*, root: Path = ROOT, backend: str | None = None) -> "FileStore":  # no
     raise StoreError(f"storage backend {name!r} is not available (known: file, postgres)")
 
 
+@contextmanager
+def standalone_transaction(st, label: str, *, timeout: float = 30) -> Iterator["WriteView"]:
+    """One transaction under its own writer, for a command run outside a round (rotation.py,
+    blocklist.add, migrations). It waits at most `timeout` seconds for the writer (the round lock
+    for FileStore), so it never interleaves with a round; inside a round, write through the
+    round's broker instead (store_broker.client())."""
+    run_id = _check_run_id(
+        f"{label}-{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}-{uuid.uuid4().hex[:8]}")
+    with st.writer(timeout=timeout) as w:
+        with st.transaction(run_id, expected_version=st.version(), writer=w) as tx:
+            yield tx
+
+
 def norm_url(url: str | None) -> str:
     return blocklist_mod.normalize(url or "")
 
@@ -1067,13 +1080,29 @@ class FileStore:
             view._closed = True
             _ACTIVE_TRANSACTIONS.discard(key)
 
+    def _journal_files(self) -> list[Path]:
+        return sorted(self.journal_dir.glob("*.jsonl")) if self.journal_dir.exists() else []
+
     def _commit_digest(self, run_id: str) -> str | None:
-        state = _State()
-        self._load(state, "events")
-        for event in state.events:
-            if event.get("run_id") == run_id and event.get("op") == "commit":
-                return event.get("digest")
+        # Every transaction asks this, so only commit rows naming the run are parsed (the journal
+        # holds whole before/after rows and grows with every round).
+        for path in self._journal_files():
+            for line in path.read_text().splitlines():
+                if '"op": "commit"' in line and run_id in line:
+                    event = json.loads(line)
+                    if event.get("run_id") == run_id and event.get("op") == "commit":
+                        return event.get("digest")
         return None
+
+    def _last_seq(self) -> int:
+        """Highest journal sequence number: files are appended in seq order, so each file's last
+        row holds its maximum."""
+        seq = 0
+        for path in self._journal_files():
+            last = path.read_bytes().rstrip().rsplit(b"\n", 1)[-1]
+            if last.strip():
+                seq = max(seq, json.loads(last)["seq"])
+        return seq
 
     def recover(self, run_id: str, *, writer: WriterToken) -> RecoveryResult:
         """Finish an interrupted transaction: finalize it if it committed, otherwise restore its
@@ -1183,6 +1212,16 @@ class FileStore:
     def _render_entries(self, view: "WriteView", writes: dict) -> None:
         if "entries" not in view._dirty:
             return
+        if "entries" not in view._loaded_tables:  # routed inserts only: append to their shards
+            for name, rows in view._routed_inserts.items():
+                path = self.reg / name
+                text = (path.read_text() if path.exists() else registry.shard_header(
+                    Path(name).stem)) + "".join(registry.emit_entry(r) for r in rows.values())
+                got = sorted(e["id"] for e in registry.parse_yaml(text).get("sources") or [])
+                if got != sorted([*view._routed_base[name], *rows]):
+                    raise StoreError(f"{name}: rendered shard does not match the transaction state")
+                writes[path] = text.encode()
+            return
         base, state = view._base, view._state
         removed = {sid for sid in base.entries
                    if sid not in state.entries or not same_row(state.entries[sid], base.entries[sid])}
@@ -1259,9 +1298,7 @@ class FileStore:
                         doc, indent=2, ensure_ascii=False, sort_keys=True) + "\n").encode()
 
     def _render_journal(self, view: "WriteView", digest: str, writes: dict) -> None:
-        state = _State()
-        self._load(state, "events")
-        seq = state.events[-1]["seq"] if state.events else 0
+        seq = self._last_seq()
         at = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
         rows = []
         for n, op in enumerate(view._ops, 1):
@@ -1270,7 +1307,9 @@ class FileStore:
                          "at": at, **op})
         rows.append({"seq": seq + 1, "event_id": f"{view.run_id}:commit", "run_id": view.run_id,
                      "at": at, "table": None, "op": "commit", "id": None, "digest": digest})
-        path = self.journal_dir / f"{at[:7]}.jsonl"
+        # One file per UTC day: the journal carries whole rows, so a monthly file would outgrow
+        # what a git host accepts per file (check_contracts.oversized_control_files guards it).
+        path = self.journal_dir / f"{at[:10]}.jsonl"
         old = path.read_bytes() if path.exists() else b""
         writes[path] = old + "".join(
             json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n" for r in rows).encode()
@@ -1689,6 +1728,12 @@ class WriteView(ReadView):
         self._dirty: set[str] = set()
         self._ops: list[dict] = []
         self._requests: list[dict] = []
+        # Routed inserts: while the entries table is not loaded, insert_entries reads only the
+        # shard each new id routes to (registry.shard_filename) and buffers the rows here, like
+        # registry.append_entries. Parsing every shard costs ~2 minutes and ~2 GB at 1.6M entries
+        # (measured 2026-09-24); a round's discovery merge must not pay that.
+        self._routed_base: dict[str, dict[str, dict]] = {}     # shard -> its rows before
+        self._routed_inserts: dict[str, dict[str, dict]] = {}  # shard -> inserted rows, in order
 
     def _get(self, table: str) -> _State:
         self._check_open()
@@ -1700,8 +1745,22 @@ class WriteView(ReadView):
             setattr(self._state, table, copy.copy(getattr(self._base, table)))
             if table == "entries":
                 self._state.entry_file = dict(self._base.entry_file)
+                # Routed inserts join the full state as ordinary additions.
+                pending, self._routed_inserts = self._routed_inserts, {}
+                for rows in pending.values():
+                    for sid, row in rows.items():
+                        if sid in self._state.entries:  # an existing id outside its routed shard
+                            raise StoreError(f"insert_entries: id(s) already exist: {sid}")
+                        self._state.entries[sid] = row
             self._loaded_tables.add(table)
         return self._state
+
+    def _routed_shard(self, name: str) -> dict[str, dict]:
+        if name not in self._routed_base:
+            self._check_generation()
+            self._routed_base[name] = self._store._load_files(Table.ENTRIES,
+                                                              [self._store.reg / name])
+        return self._routed_base[name]
 
     def _cursor_scope(self) -> str:
         return f"{self._id}:{len(self._ops)}"
@@ -1753,11 +1812,28 @@ class WriteView(ReadView):
     def insert_entries(self, entries: Iterable[Mapping]) -> int:
         rows = [self._entry_row(e) for e in entries]
         self._unique_ids(rows, "insert_entries")
+        if "entries" not in self._loaded_tables:
+            return self._insert_routed(rows)
         state = self._get("entries")
         if clash := sorted(r["id"] for r in rows if r["id"] in state.entries):
             raise StoreError(f"insert_entries: id(s) already exist: {', '.join(clash[:5])}")
         for r in rows:
             state.entries[r["id"]] = r
+            self._record("entries", "insert", r["id"], after=r)
+        if rows:
+            self._touch("entries")
+        return len(rows)
+
+    def _insert_routed(self, rows: list[dict]) -> int:
+        """insert_entries against the routed shards only. Registry routing is linted every round
+        (FileStore.validate_layout), so an existing id lives in the shard its id routes to."""
+        routed = [(registry.shard_filename(r["id"]), r) for r in rows]
+        if clash := sorted(r["id"] for name, r in routed
+                           if r["id"] in self._routed_shard(name)
+                           or r["id"] in self._routed_inserts.get(name, {})):
+            raise StoreError(f"insert_entries: id(s) already exist: {', '.join(clash[:5])}")
+        for name, r in routed:
+            self._routed_inserts.setdefault(name, {})[r["id"]] = r
             self._record("entries", "insert", r["id"], after=r)
         if rows:
             self._touch("entries")

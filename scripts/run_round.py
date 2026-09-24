@@ -12,6 +12,11 @@ The repository lock prevents concurrent operators. Every required command and fi
 a failure records a run-ledger event, exits non-zero, and never commits or pushes. Backends marked
 ``required: false`` report degraded discovery without blocking healthy veins. Successful finder
 pointers advance only after that finder exits zero.
+
+Discovery ends in ONE store transaction (ADR 0001 stage 3, step 5): the merged accepted entries,
+rotation pointer moves, find_github's completed passes and finder-reported exhaustion (runtime
+backend state, registry/backend_state.json — never registry/backends.json). A backend runs when
+its configuration AND its runtime state enable it.
 """
 from __future__ import annotations
 
@@ -31,12 +36,16 @@ import ops
 import registry
 import rotation
 import corpus_stats
+import dedup
 import store
 import store_broker
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
 BACKENDS = ROOT / "registry" / "backends.json"
+GITHUB_PASSES = "github_passes.json"
+# Runtime reason prefix for finder-reported exhaustion (registry/backend_state.json).
+EXHAUSTED = "exhausted: "
 # Serial prefix: each step mutates state the next one reads.
 PIPELINE = (
     ("fetch", "build_corpus.py", ()),
@@ -61,19 +70,35 @@ def load_backends(path: Path = BACKENDS) -> dict:
     return {k: v for k, v in json.loads(path.read_text()).items() if not k.startswith("_")}
 
 
-def disable_backend(name: str, reason: str, path: Path | None = None) -> None:
-    """Persist finder-reported exhaustion without discarding its resumable rotation state."""
-    path = path or BACKENDS
-    raw = json.loads(path.read_text())
-    if name not in raw:
-        raise KeyError(f"unknown backend {name}")
-    raw[name]["enabled"] = False
-    raw[name]["reason"] = f"exhausted: {reason}"
-    ops.atomic_write_text(path, json.dumps(raw, indent=2, ensure_ascii=False) + "\n")
-
-
-def validate_backends(backends: dict, rotation_state: dict) -> list[str]:
+def runtime_state_errors(backends: dict, runtime: dict) -> list[str]:
+    """Runtime backend state (registry/backend_state.json via the store) may only describe
+    configured backends, must be well-formed, and never carries policy: a policy block belongs in
+    the git-owned configuration, where check_contracts requires it."""
     errors = []
+    for name, state in sorted(runtime.items()):
+        if name not in backends:
+            errors.append(f"{name}: runtime backend state names an unknown backend")
+        if not isinstance(state, store.BackendState):
+            errors.append(f"{name}: runtime backend state is malformed: {state!r}")
+            continue
+        if not isinstance(state.enabled, bool):
+            errors.append(f"{name}: runtime enabled must be true or false")
+        if state.reason is not None and (not isinstance(state.reason, str)
+                                         or not state.reason.strip()):
+            errors.append(f"{name}: runtime reason must be a non-empty string or null")
+        elif state.enabled is False and state.reason is None:
+            errors.append(f"{name}: runtime-disabled backend lacks a reason")
+        elif isinstance(state.reason, str) and state.reason.startswith("policy-blocked"):
+            errors.append(f"{name}: policy blocks belong in registry/backends.json, not runtime "
+                          "state")
+    return errors
+
+
+def validate_backends(backends: dict, rotation_state: dict,
+                      runtime: dict | None = None) -> list[str]:
+    """Control-plane errors of the backend configuration, its rotation entries and (when given)
+    its runtime state ({name: store.BackendState}, e.g. ReadView.backend_state_get())."""
+    errors = runtime_state_errors(backends, runtime) if runtime is not None else []
     for name, cfg in backends.items():
         script = SCRIPTS / cfg.get("script", "")
         if not script.is_file():
@@ -182,19 +207,21 @@ def _rotation_hold_detail(path: Path) -> str:
     return "".join(char for char in line if char.isprintable()).strip()[:512]
 
 
-def merge_proposals(results: list[dict], apply_passes=None) -> tuple[int, dict[str, int]]:
-    """Merge finder proposal files in backend order, deduplicating across concurrent finders.
+def merge_proposals(view, results: list[dict]) -> tuple[list[dict], dict[str, int], dict]:
+    """Merge successful finders' proposal files in backend order, deduplicating across concurrent
+    finders and against the store.
 
-    A proposal may also stage find_github's completed passes ({bucket: {kind: date}}); they are
-    recorded only for these (successful) finders, through `apply_passes(records)` — run_round's
-    store writer — after the entries are appended."""
-    urls, titles, ids = registry.existing_keys()
-    merged = []
+    `view` is the round's discovery transaction, asked before it writes anything (so the file
+    store answers from its index). Membership and id suffixing are exactly the legacy
+    existing_keys()/uniquify_ids() semantics (see scripts/dedup.py). Returns the accepted entries
+    (ids made unique), the accepted count per finder, and the github passes find_github staged
+    ({bucket: {kind: date}}), merged in the same order."""
+    keys = dedup.from_view(view)
+    merged: list[dict] = []
     accepted: dict[str, int] = {}
     passes: dict = {}
     for result in sorted(results, key=lambda r: r["index"]):
-        path = result["proposal"]
-        doc = registry.read_proposal(path)
+        doc = registry.read_proposal(result["proposal"])
         entries = doc["entries"]
         passes = registry.merge_github_passes(passes, doc.get("github_passes") or {})
         count = 0
@@ -205,39 +232,77 @@ def merge_proposals(results: list[dict], apply_passes=None) -> tuple[int, dict[s
                     f"{result['name']} proposed {entry.get('id', '<no id>')} without "
                     f"{', '.join(missing)}"
                 )
+        keys.prefetch(**dedup.page_keys(entries), ids=[e["id"] for e in entries])
+        for entry in entries:
             url = entry["url"].rstrip("/")
             title = registry.norm(entry["title"])
-            if url in urls or title in titles:
+            if url in keys.urls or title in keys.titles:
                 continue
-            registry.uniquify_ids([entry], ids)
-            urls.add(url)
-            titles.add(title)
+            keys.uniquify_ids([entry])
+            keys.urls.add(url)
+            keys.titles.add(title)
             merged.append(entry)
             count += 1
         accepted[result["name"]] = count
+    return merged, accepted, passes
+
+
+def apply_discovery(tx, successful: list[dict], selected: list[str],
+                    backends: dict) -> tuple[int, dict[str, int], list[tuple]]:
+    """Record one discovery phase in the round's discovery transaction `tx`: the merged accepted
+    entries, find_github's staged passes, every successful rotating finder's pointer move (holds
+    keep theirs; failed finders are not in `successful`, so they keep theirs too) and
+    finder-reported exhaustion as runtime backend state. Returns (accepted total, accepted per
+    finder, [(message or None, run event, fields)]) for the caller to report after commit."""
+    merged, accepted, passes = merge_proposals(tx, successful)
     if merged:
-        registry.append_entries(merged)
+        tx.insert_entries(merged)
     if passes:
-        if apply_passes is None:
-            raise RuntimeError("a finder staged github passes but no store writer can record them")
-        apply_passes(passes)
-    return len(merged), accepted
+        current = tx.control_get(GITHUB_PASSES) or {}
+        recorded = registry.merge_github_passes(current, passes)
+        if recorded != current:
+            tx.control_set(GITHUB_PASSES, recorded)
+    notes: list[tuple] = []
+    by_name = {r["name"]: r for r in successful}
+    for name in selected:
+        if name not in by_name:
+            continue
+        result = by_name[name]
+        if backends[name].get("rotation", True):
+            if result["rotation_hold"]:
+                detail = result["rotation_hold_detail"]
+                notes.append((
+                    f"rotation held for {name}: {detail or 'finder requested hold'}",
+                    "rotation_held",
+                    {"backend": name, "reason": "finder_requested",
+                     **({"detail": detail} if detail else {})},
+                ))
+                continue
+            entry = tx.rotation_get(name)
+            if entry.get("dynamic"):
+                entry = rotation.with_next(name, entry,
+                                           result["rotation_next"].read_text().strip())
+            else:
+                entry = rotation.advanced(name, entry)
+            tx.rotation_set(name, entry)
+            notes.append((None, "rotation_advanced",
+                          {"backend": name, "next": rotation.pointer_arg(entry)}))
+        exhausted_path = result["backend_exhausted"]
+        if exhausted_path.exists():
+            reason = exhausted_path.read_text().strip()
+            # Runtime state, never the git-owned configuration (ADR 0001 section 2).
+            tx.backend_state_set(name, store.BackendState(False, f"{EXHAUSTED}{reason}"))
+            notes.append((f"backend disabled for {name}: {EXHAUSTED}{reason}",
+                          "backend_disabled", {"backend": name, "reason": reason}))
+    return len(merged), accepted, notes
 
 
-def github_passes_applier(broker: "store_broker.Broker"):
-    """Record staged github passes in the store's github_passes.json control document (one
-    transaction per round, and none when every staged pass is already recorded)."""
-    def apply(records: dict) -> None:
-        with broker.st.read(writer=broker.writer) as view:
-            current = view.control_get("github_passes.json") or {}
-        if registry.merge_github_passes(current, records) == current:
-            return
-        with broker.local_batch("discover", "github-passes") as tx:
-            current = tx.control_get("github_passes.json") or {}
-            merged = registry.merge_github_passes(current, records)
-            if merged != current:
-                tx.control_set("github_passes.json", merged)
-    return apply
+def warm_index(st, writer) -> None:
+    """Build or refresh the file store's membership index once, before the finders' concurrent
+    read-only lookups and the discovery merge, so none of them rebuilds it (or, if it is
+    unavailable, parses every shard) on its own."""
+    with st.read(writer=writer) as view:
+        view.known(urls=["https://index-warmup.invalid"])
 
 
 def run_finders_parallel(
@@ -247,13 +312,12 @@ def run_finders_parallel(
     env: dict,
     run_id: str,
     workers: int,
-    apply_passes=None,
+    transaction,
 ) -> None:
-    """Run finders concurrently against one immutable registry view, then merge serially."""
+    """Run finders concurrently against one immutable store generation, then record the whole
+    discovery phase in ONE store transaction: `transaction()` returns a context manager yielding
+    the round's write view (run_round: broker.local_batch("discover", "merge"))."""
     ops.WORKSPACE.mkdir(parents=True, exist_ok=True)
-    # Warm/rebuild the optional SQLite index once before children perform concurrent read-only
-    # lookups. Proposal mode prevents those children from mutating either the index or YAML.
-    registry.existing_keys()
     with tempfile.TemporaryDirectory(
         prefix=f"finder-proposals-{run_id}-",
         dir=ops.WORKSPACE,
@@ -332,49 +396,9 @@ def run_finders_parallel(
                 if result["stderr"].strip():
                     print(result["stderr"].rstrip(), file=sys.stderr, flush=True)
 
-        failed = [r for r in results if r["returncode"]]
-        required_failed = [
-            r for r in failed if backends[r["name"]].get("required", True)
-        ]
-        if required_failed:
-            names = ", ".join(
-                f"{r['name']} ({r['returncode']})" for r in required_failed
-            )
-            raise RuntimeError(f"discovery failed: {names}")
-
-        optional_failed = [r for r in failed if r not in required_failed]
-        if optional_failed:
-            failures = {r["name"]: r["returncode"] for r in optional_failed}
-            shown = ", ".join(f"{name} ({code})" for name, code in failures.items())
-            print(f"discovery degraded: optional finder failure(s): {shown}", flush=True)
-            ops.run_event(run_id, "discovery_degraded", failures=failures)
-
-        successful = [r for r in results if not r["returncode"]]
-        for result in successful:
-            name = result["name"]
-            rotates = backends[name].get("rotation", True)
-            dynamic = rotates and rotation_state[name].get("dynamic", False)
-            has_next = result["rotation_next"].exists()
-            has_exhausted = result["backend_exhausted"].exists()
-            if result["rotation_hold"] and (has_next or has_exhausted):
-                raise RuntimeError(
-                    f"{name}: finder reported both a rotation hold and a next/exhausted cursor"
-                )
-            if dynamic and not result["rotation_hold"] and not has_next:
-                raise RuntimeError(f"{name}: dynamic finder did not report its next cursor")
-            if not dynamic and has_next:
-                raise RuntimeError(f"{name}: non-dynamic finder reported a next cursor")
-            for label, path in (
-                ("next cursor", result["rotation_next"]),
-                ("exhaustion reason", result["backend_exhausted"]),
-            ):
-                if not path.exists():
-                    continue
-                value = path.read_text().strip()
-                if not value or "\n" in value or "\r" in value or len(value) > 4096:
-                    raise RuntimeError(f"{name}: invalid {label} control value")
-
-        total, accepted = merge_proposals(successful, apply_passes)
+        successful = check_finder_results(results, backends, rotation_state, run_id)
+        with transaction() as tx:
+            total, accepted, notes = apply_discovery(tx, successful, selected, backends)
         accepted = {name: accepted.get(name, 0) for name in selected}
         print(f"discovery merge: {total} unique candidates | by backend: {accepted}")
         ops.run_event(
@@ -383,37 +407,58 @@ def run_finders_parallel(
             candidates=total,
             accepted=accepted,
         )
-        successful_names = {r["name"] for r in successful}
-        results_by_name = {r["name"]: r for r in successful}
-        for name in selected:
-            if name not in successful_names:
+        for message, event, fields in notes:
+            if message:
+                print(message)
+            ops.run_event(run_id, event, **fields)
+
+
+def check_finder_results(results: list[dict], backends: dict, rotation_state: dict,
+                         run_id: str) -> list[dict]:
+    """Fail on required finder failures and side-channel protocol violations; report optional
+    failures as degraded discovery. Returns the successful results."""
+    failed = [r for r in results if r["returncode"]]
+    required_failed = [
+        r for r in failed if backends[r["name"]].get("required", True)
+    ]
+    if required_failed:
+        names = ", ".join(
+            f"{r['name']} ({r['returncode']})" for r in required_failed
+        )
+        raise RuntimeError(f"discovery failed: {names}")
+
+    optional_failed = [r for r in failed if r not in required_failed]
+    if optional_failed:
+        failures = {r["name"]: r["returncode"] for r in optional_failed}
+        shown = ", ".join(f"{name} ({code})" for name, code in failures.items())
+        print(f"discovery degraded: optional finder failure(s): {shown}", flush=True)
+        ops.run_event(run_id, "discovery_degraded", failures=failures)
+
+    successful = [r for r in results if not r["returncode"]]
+    for result in successful:
+        name = result["name"]
+        rotates = backends[name].get("rotation", True)
+        dynamic = rotates and rotation_state[name].get("dynamic", False)
+        has_next = result["rotation_next"].exists()
+        has_exhausted = result["backend_exhausted"].exists()
+        if result["rotation_hold"] and (has_next or has_exhausted):
+            raise RuntimeError(
+                f"{name}: finder reported both a rotation hold and a next/exhausted cursor"
+            )
+        if dynamic and not result["rotation_hold"] and not has_next:
+            raise RuntimeError(f"{name}: dynamic finder did not report its next cursor")
+        if not dynamic and has_next:
+            raise RuntimeError(f"{name}: non-dynamic finder reported a next cursor")
+        for label, path in (
+            ("next cursor", result["rotation_next"]),
+            ("exhaustion reason", result["backend_exhausted"]),
+        ):
+            if not path.exists():
                 continue
-            if backends[name].get("rotation", True):
-                if results_by_name[name]["rotation_hold"]:
-                    detail = results_by_name[name]["rotation_hold_detail"]
-                    print(f"rotation held for {name}: {detail or 'finder requested hold'}")
-                    ops.run_event(
-                        run_id,
-                        "rotation_held",
-                        backend=name,
-                        reason="finder_requested",
-                        **({"detail": detail} if detail else {}),
-                    )
-                    continue
-                next_path = results_by_name[name]["rotation_next"]
-                if rotation_state[name].get("dynamic"):
-                    new_pointer = rotation.set_next(name, next_path.read_text().strip())
-                else:
-                    new_pointer = rotation.advance(name)
-                ops.run_event(run_id, "rotation_advanced", backend=name, next=new_pointer)
-            exhausted_path = results_by_name[name]["backend_exhausted"]
-            if exhausted_path.exists():
-                reason = exhausted_path.read_text().strip()
-                disable_backend(name, reason)
-                backends[name]["enabled"] = False
-                backends[name]["reason"] = f"exhausted: {reason}"
-                print(f"backend disabled for {name}: exhausted: {reason}")
-                ops.run_event(run_id, "backend_disabled", backend=name, reason=reason)
+            value = path.read_text().strip()
+            if not value or "\n" in value or "\r" in value or len(value) > 4096:
+                raise RuntimeError(f"{name}: invalid {label} control value")
+    return successful
 
 
 def git_clean() -> bool:
@@ -548,19 +593,22 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
             )
         if not args.allow_dirty and not git_clean():
             raise RuntimeError("working tree is dirty; review/commit it before starting a round")
-        backends = load_backends()
-        rotation_state = rotation.load()
-        if errors := validate_backends(backends, rotation_state):
-            raise RuntimeError("backend configuration invalid:\n  " + "\n  ".join(errors))
-        selected = args.backend or [
-            name for name, cfg in backends.items() if cfg.get("enabled", True)
-        ]
+        with st.read(writer=writer) as view:
+            backends = {k: v for k, v in view.config_get().backends.items()
+                        if not k.startswith("_")}
+            rotation_state = view.rotation_get()
+            runtime = view.backend_state_get()
+            if errors := validate_backends(backends, rotation_state, runtime):
+                raise RuntimeError("backend configuration invalid:\n  " + "\n  ".join(errors))
+            # Effective enablement: the git-owned configuration AND the runtime state.
+            enabled = {name: view.backend_enabled(name) for name in backends}
+        selected = args.backend or [name for name in backends if enabled[name]]
         unknown = [name for name in selected if name not in backends]
         if unknown:
             raise RuntimeError(f"unknown backend(s): {', '.join(unknown)}")
         disabled = [
             name for name in selected
-            if not backends[name].get("enabled", True) and name not in args.backend
+            if not enabled[name] and name not in args.backend
         ]
         selected = [name for name in selected if name not in disabled]
 
@@ -572,6 +620,7 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
         with broker.serving():
             write_env = {**read_env, **broker.env()}
             if not args.skip_discovery:
+                warm_index(st, writer)
                 run_finders_parallel(
                     selected,
                     backends,
@@ -579,7 +628,7 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
                     read_env,
                     run_id,
                     args.discovery_workers,
-                    github_passes_applier(broker),
+                    lambda: broker.local_batch("discover", "merge"),
                 )
 
             for step, script, fixed_args in PIPELINE:

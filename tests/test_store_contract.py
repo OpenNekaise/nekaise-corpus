@@ -270,6 +270,43 @@ def test_runtime_backend_state_is_separate_from_config(st):
         assert not v.backend_enabled("find_paused")  # runtime can never override operator pause
 
 
+def test_runtime_state_accepts_only_configured_backends_and_reads_back_exactly(st):
+    with pytest.raises(store.StoreError, match="unknown backend"):
+        write(st, "r1", lambda tx: tx.backend_state_set("find_nobody", store.BackendState(False,
+                                                                                          "x")))
+    write(st, "r2", lambda tx: tx.backend_state_set(
+        "find_books", store.BackendState(False, "exhausted: all offsets")))
+    write(st, "r3", lambda tx: tx.backend_state_set(  # identical value: a no-op change
+        "find_books", store.BackendState(False, "exhausted: all offsets")))
+    with st.read() as v:
+        assert v.backend_state_get() == {
+            "find_books": store.BackendState(False, "exhausted: all offsets"),
+            "find_paused": store.BackendState()}
+        changes = [e for e in v.scan(Table.EVENTS, limit=1000).rows
+                   if e["table"] == "backend_state"]
+    assert [(e["run_id"], e["before"], e["after"]) for e in changes] == [
+        ("r2", None, {"enabled": False, "reason": "exhausted: all offsets"})]
+
+
+def test_inserts_are_visible_to_later_reads_and_writes_of_the_transaction(st):
+    def body(tx):
+        assert tx.insert_entries([entry("oer-c"), entry("ost-new"), entry("vnd-x1")]) == 3
+        assert set(tx.get_entries(["oer-c", "vnd-x1"])) == {"oer-c", "vnd-x1"}
+        assert tx.upsert_entries([entry("oer-c", title="Changed")]) == 1
+        return [r["id"] for r in tx.scan(Table.ENTRIES, limit=100).rows]
+    assert write(st, "r1", body) == ["hand-one", "hand-two", "oer-a", "oer-b", "oer-c",
+                                     "ost-new", "vnd-x1"]
+    with st.read() as v:
+        assert v.get_entries(["oer-c"])["oer-c"]["title"] == "Changed"
+    for run, fn in (("r2", lambda tx: tx.insert_entries([entry("oer-a")])),
+                    ("r3", lambda tx: (tx.insert_entries([entry("oer-z")]),
+                                       tx.insert_entries([entry("oer-z")])))):
+        with pytest.raises(store.StoreError, match="already exist"):
+            write(st, run, fn)
+    with st.read() as v:
+        assert v.get_entries(["oer-z"]) == {}
+
+
 def test_exception_rolls_back_everything(st, tmp_path):
     with st.read() as v:
         before = st.export(tmp_path / "before", view=v).files

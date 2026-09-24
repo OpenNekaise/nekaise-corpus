@@ -250,6 +250,32 @@ def test_control_documents_and_host_policy_replicate(env):
         assert v.control_get("github_passes.json") is None
 
 
+def test_runtime_backend_state_replicates_separately_from_config(env):
+    """Stage 3 step 5: exhaustion is registry/backend_state.json (runtime), config untouched."""
+    pg_shadow, st, repo, c1 = env
+    pg_shadow.do_import(st, c1, repo.path, log=lambda *_: None)
+    state = {"find_x": {"enabled": False, "reason": "exhausted: walked to the end"}}
+    repo.write("registry/backend_state.json", json.dumps(state, indent=2, sort_keys=True) + "\n")
+    repo.write("registry/journal/2026-09-24.jsonl", json.dumps(
+        {"seq": 1, "run_id": "rnd.discover.merge", "op": "upsert", "table": "backend_state",
+         "id": "find_x", "before": None, "after": state["find_x"]}) + "\n")
+    c2 = repo.commit("exhausted at runtime")
+    assert pg_shadow.do_sync(st, c2, repo.path, log=lambda *_: None) == 1
+    assert pg_shadow.do_verify(st, repo.path, log=lambda *_: None)
+    import store
+    with st.read() as v:
+        assert v.backend_state_get("find_x") == store.BackendState(
+            False, "exhausted: walked to the end")
+        assert v.config_get().backends["find_x"].get("enabled", True) is True
+        assert not v.backend_enabled("find_x")
+    repo.write("registry/backend_state.json", "{}\n")  # an operator reset re-enables it
+    c3 = repo.commit("reset")
+    pg_shadow.do_sync(st, c3, repo.path, log=lambda *_: None)
+    assert pg_shadow.do_verify(st, repo.path, log=lambda *_: None)
+    with st.read() as v:
+        assert v.backend_enabled("find_x")
+
+
 def test_schema_v1_migrates_to_v2(env):
     pg_shadow, st, repo, c1 = env
     import store_pg

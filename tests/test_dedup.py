@@ -405,39 +405,53 @@ def test_wiki_origin_titles_come_from_a_filtered_scan(corpus):
 
 # --- github passes: staged in proposal mode, written by run_round through the store -----------------
 
-def test_merge_applies_staged_passes_only_from_successful_finders(tmp_path, monkeypatch):
-    monkeypatch.setattr(run_round.registry, "existing_keys", lambda: (set(), set(), set()))
-    monkeypatch.setattr(run_round.registry, "append_entries", lambda _e: {})
+def test_merge_collects_staged_passes_and_rejects_unknown_sections(tmp_path):
+    from test_store_contract import file_store
+    st = file_store(tmp_path / "repo")
     ok = tmp_path / "ok.json"
     ok.write_text(json.dumps({"entries": [], "github_passes": {"gh_a": {"tex": "2026-09-24"}}}))
-    applied = []
-    run_round.merge_proposals([{"index": 0, "name": "find_github", "proposal": ok}],
-                              applied.append)
-    assert applied == [{"gh_a": {"tex": "2026-09-24"}}]
-    with pytest.raises(RuntimeError, match="no store writer"):
-        run_round.merge_proposals([{"index": 0, "name": "find_github", "proposal": ok}])
+    with st.read() as view:
+        merged, accepted, passes = run_round.merge_proposals(
+            view, [{"index": 0, "name": "find_github", "proposal": ok}])
+    assert (merged, accepted, passes) == ([], {"find_github": 0},
+                                          {"gh_a": {"tex": "2026-09-24"}})
     bad = tmp_path / "bad.json"
     bad.write_text(json.dumps({"entries": [], "surprise": 1}))
-    with pytest.raises(ValueError, match="unknown proposal section"):
-        run_round.merge_proposals([{"index": 0, "name": "x", "proposal": bad}], applied.append)
+    with st.read() as view:
+        with pytest.raises(ValueError, match="unknown proposal section"):
+            run_round.merge_proposals(view, [{"index": 0, "name": "x", "proposal": bad}])
 
 
-def test_round_writes_staged_passes_through_the_store(tmp_path):
+def _gh_result(tmp_path, name, passes):
+    proposal = tmp_path / f"{name}.json"
+    proposal.write_text(json.dumps({"entries": [], "github_passes": passes}))
+    return {"index": 0, "name": "find_books", "proposal": proposal, "rotation_hold": False,
+            "rotation_hold_detail": "", "rotation_next": tmp_path / f"{name}.next",
+            "backend_exhausted": tmp_path / f"{name}.exhausted", "returncode": 0}
+
+
+def test_round_writes_staged_passes_in_its_discovery_transaction(tmp_path):
     import store_broker
     from test_store_contract import file_store
     st = file_store(tmp_path / "repo")
     (st.reg / "github_passes.json").write_text(json.dumps({"gh_a": {"tex": "2026-01-01"}}))
-    with st.writer(round_id="rnd1") as w:
-        broker = store_broker.Broker(st, w, "rnd1")
-        with broker.serving():
-            apply = run_round.github_passes_applier(broker)
-            apply({"gh_a": {"tex": "2026-09-24", "man": "2026-09-24"}, "gh_b": {"tex": "2026-09-24"}})
-            apply({"gh_a": {"tex": "2026-09-24"}})  # nothing new: no transaction is recorded
+    backends = {"find_books": {"script": "find_books.py", "rotation": False}}
+    for rnd, passes in (
+        ("rnd1", {"gh_a": {"tex": "2026-09-24", "man": "2026-09-24"},
+                  "gh_b": {"tex": "2026-09-24"}}),
+        ("rnd2", {"gh_a": {"tex": "2026-09-24"}}),  # nothing new: no transaction is recorded
+    ):
+        with st.writer(round_id=rnd) as w:
+            broker = store_broker.Broker(st, w, rnd)
+            with broker.serving():
+                with broker.local_batch("discover", "merge") as tx:
+                    run_round.apply_discovery(tx, [_gh_result(tmp_path, rnd, passes)],
+                                              ["find_books"], backends)
     assert json.loads((st.reg / "github_passes.json").read_text()) == {
         "gh_a": {"man": "2026-09-24", "tex": "2026-01-01"}, "gh_b": {"tex": "2026-09-24"}}
     with st.read() as v:
         runs = {e["run_id"] for e in dedup.scan_all(v, Table.EVENTS)}
-    assert runs == {"rnd1.discover.github-passes"}
+    assert runs == {"rnd1.discover.merge"}
 
 
 def test_registry_proposal_format_stays_a_list_without_passes(tmp_path, monkeypatch):

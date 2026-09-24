@@ -1,3 +1,4 @@
+from contextlib import contextmanager
 from types import SimpleNamespace
 import json
 import os
@@ -8,6 +9,8 @@ import pytest
 
 import rotation
 import run_round
+import store
+import store_broker
 
 
 def test_real_backend_config_covers_rotation_and_finders():
@@ -143,6 +146,42 @@ def test_doc_stats_counts_only_training_eligible_rows(monkeypatch, tmp_path):
         assert run_round.doc_stats(view) == (1, 25, 2)
 
 
+def fixture_store(tmp_path, backends, rotation_state=None):
+    """A throwaway repository whose store the discovery transaction writes."""
+    reg = tmp_path / "repo" / "registry"
+    reg.mkdir(parents=True)
+    (reg / "backends.json").write_text(json.dumps({"_readme": "control plane", **backends},
+                                                  indent=2) + "\n")
+    (reg / "rotation.json").write_text(json.dumps(rotation_state or {}, indent=2) + "\n")
+    return store.FileStore(tmp_path / "repo")
+
+
+@contextmanager
+def discovery_transaction(st, run_id="fixture-run"):
+    """run_round's discovery transaction factory: the round broker's local batch."""
+    with st.writer(round_id=run_id) as w:
+        broker = store_broker.Broker(st, w, run_id)
+        with broker.serving():
+            yield lambda: broker.local_batch("discover", "merge")
+
+
+def registry_ids(st):
+    with st.read() as view:
+        return [e["id"] for e in view.scan(store.Table.ENTRIES).rows]
+
+
+def finder_env(tmp_path, monkeypatch):
+    monkeypatch.setattr(run_round, "SCRIPTS", Path(__file__).parent / "fixtures")
+    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
+    events = []
+    monkeypatch.setattr(
+        run_round.ops,
+        "run_event",
+        lambda run_id, event, **fields: events.append((run_id, event, fields)),
+    )
+    return events
+
+
 def test_merge_proposals_is_deterministic_and_deduplicates(tmp_path, monkeypatch):
     first = tmp_path / "first.json"
     second = tmp_path / "second.json"
@@ -177,42 +216,22 @@ def test_merge_proposals_is_deterministic_and_deduplicates(tmp_path, monkeypatch
             "format": "pdf",
         },
     ]))
-    appended = []
-    monkeypatch.setattr(run_round.registry, "existing_keys", lambda: (set(), set(), set()))
-    monkeypatch.setattr(
-        run_round.registry,
-        "append_entries",
-        lambda entries: appended.extend(entries),
-    )
+    st = fixture_store(tmp_path, {})
 
-    total, accepted = run_round.merge_proposals([
-        {"index": 1, "name": "second", "proposal": second},
-        {"index": 0, "name": "first", "proposal": first},
-    ])
+    with st.read() as view:
+        merged, accepted, passes = run_round.merge_proposals(view, [
+            {"index": 1, "name": "second", "proposal": second},
+            {"index": 0, "name": "first", "proposal": first},
+        ])
 
-    assert total == 2
     assert accepted == {"first": 1, "second": 1}
-    assert [entry["title"] for entry in appended] == ["First", "Second"]
-    assert len({entry["id"] for entry in appended}) == 2
+    assert [entry["title"] for entry in merged] == ["First", "Second"]
+    assert [entry["id"] for entry in merged] == ["ost-same", "ost-same-2"]
+    assert passes == {}
 
 
 def test_parallel_finders_stage_in_subprocesses_then_merge_once(tmp_path, monkeypatch):
-    fixtures = Path(__file__).parent / "fixtures"
-    monkeypatch.setattr(run_round, "SCRIPTS", fixtures)
-    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
-    monkeypatch.setattr(run_round.registry, "existing_keys", lambda: (set(), set(), set()))
-    appended = []
-    monkeypatch.setattr(
-        run_round.registry,
-        "append_entries",
-        lambda entries: appended.extend(entries),
-    )
-    events = []
-    monkeypatch.setattr(
-        run_round.ops,
-        "run_event",
-        lambda run_id, event, **fields: events.append((run_id, event, fields)),
-    )
+    events = finder_env(tmp_path, monkeypatch)
     backends = {
         "one": {
             "script": "fake_finder.py",
@@ -229,21 +248,27 @@ def test_parallel_finders_stage_in_subprocesses_then_merge_once(tmp_path, monkey
             "rotation": False,
         },
     }
+    st = fixture_store(tmp_path, backends)
 
-    run_round.run_finders_parallel(
-        ["one", "two"],
-        backends,
-        {},
-        os.environ.copy(),
-        "fixture-run",
-        workers=2,
-    )
+    with discovery_transaction(st) as transaction:
+        run_round.run_finders_parallel(
+            ["one", "two"],
+            backends,
+            {},
+            os.environ.copy(),
+            "fixture-run",
+            2,
+            transaction,
+        )
 
-    assert [entry["id"] for entry in appended] == ["ost-one", "ost-two"]
+    assert registry_ids(st) == ["ost-one", "ost-two"]
     assert ("fixture-run", "discovery_merged", {
         "candidates": 2,
         "accepted": {"one": 1, "two": 1},
     }) in events
+    with st.read() as view:  # one discovery transaction
+        assert {e["run_id"] for e in view.scan(store.Table.EVENTS).rows} == {
+            "fixture-run.discover.merge"}
 
 
 @pytest.mark.parametrize("note, detail", [
@@ -251,28 +276,12 @@ def test_parallel_finders_stage_in_subprocesses_then_merge_once(tmp_path, monkey
     ("2026-09 is the open UTC month; re-probe until it closes",
      "2026-09 is the open UTC month; re-probe until it closes"),
     ("", ""),
-    ("  capped\t\x1b\u202e 月  \nignored second line", "capped 月"),
+    ("  capped\t\x1b‮ 月  \nignored second line", "capped 月"),
 ])
 def test_successful_finder_can_hold_rotation_with_optional_detail(
     tmp_path, monkeypatch, capsys, note, detail
 ):
-    fixtures = Path(__file__).parent / "fixtures"
-    monkeypatch.setattr(run_round, "SCRIPTS", fixtures)
-    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
-    monkeypatch.setattr(run_round.registry, "existing_keys", lambda: (set(), set(), set()))
-    monkeypatch.setattr(run_round.registry, "append_entries", lambda _entries: None)
-    events = []
-    monkeypatch.setattr(
-        run_round.ops,
-        "run_event",
-        lambda run_id, event, **fields: events.append((run_id, event, fields)),
-    )
-    advanced = []
-    monkeypatch.setattr(
-        run_round.rotation,
-        "advance",
-        lambda name: advanced.append(name),
-    )
+    events = finder_env(tmp_path, monkeypatch)
     backends = {
         "capped": {
             "script": "fake_finder.py",
@@ -284,22 +293,28 @@ def test_successful_finder_can_hold_rotation_with_optional_detail(
         },
     }
     state = {"capped": {"flag": "--bucket", "next": "2022-W48"}}
+    st = fixture_store(tmp_path, backends, state)
 
-    run_round.run_finders_parallel(
-        ["capped"],
-        backends,
-        state,
-        os.environ.copy(),
-        "fixture-run",
-        workers=1,
-    )
+    with discovery_transaction(st) as transaction:
+        run_round.run_finders_parallel(
+            ["capped"],
+            backends,
+            state,
+            os.environ.copy(),
+            "fixture-run",
+            1,
+            transaction,
+        )
 
-    assert advanced == []
+    with st.read() as view:
+        assert view.rotation_get("capped")["next"] == "2022-W48"  # held: pointer kept
+    assert registry_ids(st) == ["pat-cn100a"]
     assert ("fixture-run", "rotation_held", {
         "backend": "capped",
         "reason": "finder_requested",
         **({"detail": detail} if detail else {}),
     }) in events
+    assert not [e for e in events if e[1] == "rotation_advanced"]
     assert f"rotation held for capped: {detail or 'finder requested hold'}" in capsys.readouterr().out
 
 
@@ -323,31 +338,9 @@ def test_unreadable_rotation_hold_note_is_only_missing_detail(tmp_path, monkeypa
 
 
 def test_dynamic_finder_replaces_cursor_and_disables_itself_at_exhaustion(
-    tmp_path, monkeypatch
+    tmp_path, monkeypatch, capsys
 ):
-    fixtures = Path(__file__).parent / "fixtures"
-    monkeypatch.setattr(run_round, "SCRIPTS", fixtures)
-    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
-    monkeypatch.setattr(run_round.registry, "existing_keys", lambda: (set(), set(), set()))
-    monkeypatch.setattr(run_round.registry, "append_entries", lambda _entries: None)
-    events = []
-    monkeypatch.setattr(
-        run_round.ops,
-        "run_event",
-        lambda run_id, event, **fields: events.append((run_id, event, fields)),
-    )
-    pointers = []
-    monkeypatch.setattr(
-        run_round.rotation,
-        "set_next",
-        lambda name, value: pointers.append((name, value)) or f"--token {value}",
-    )
-    disabled = []
-    monkeypatch.setattr(
-        run_round,
-        "disable_backend",
-        lambda name, reason: disabled.append((name, reason)),
-    )
+    events = finder_env(tmp_path, monkeypatch)
     backends = {
         "dynamic": {
             "script": "fake_finder.py",
@@ -359,30 +352,32 @@ def test_dynamic_finder_replaces_cursor_and_disables_itself_at_exhaustion(
         },
     }
     state = {"dynamic": {"flag": "--token", "next": "START", "dynamic": True}}
+    st = fixture_store(tmp_path, backends, state)
+    config_before = (st.reg / "backends.json").read_bytes()
 
-    run_round.run_finders_parallel(
-        ["dynamic"], backends, state, os.environ.copy(), "fixture-run", workers=1
-    )
+    with discovery_transaction(st) as transaction:
+        run_round.run_finders_parallel(
+            ["dynamic"], backends, state, os.environ.copy(), "fixture-run", 1, transaction
+        )
 
-    assert pointers == [("dynamic", "END")]
-    assert disabled == [("dynamic", "set fully harvested")]
-    assert backends["dynamic"]["enabled"] is False
+    with st.read() as view:
+        assert view.rotation_get("dynamic")["next"] == "END"
+        assert view.backend_state_get("dynamic") == store.BackendState(
+            False, "exhausted: set fully harvested")
+        assert not view.backend_enabled("dynamic")
+    # runtime state, never the git-owned configuration
+    assert (st.reg / "backends.json").read_bytes() == config_before
+    assert ("fixture-run", "rotation_advanced", {
+        "backend": "dynamic", "next": "--token END",
+    }) in events
     assert ("fixture-run", "backend_disabled", {
         "backend": "dynamic", "reason": "set fully harvested",
     }) in events
+    assert "backend disabled for dynamic: exhausted: set fully harvested" in capsys.readouterr().out
 
 
 def test_dynamic_finder_missing_next_cursor_fails_before_merge(tmp_path, monkeypatch):
-    fixtures = Path(__file__).parent / "fixtures"
-    monkeypatch.setattr(run_round, "SCRIPTS", fixtures)
-    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
-    monkeypatch.setattr(run_round.registry, "existing_keys", lambda: (set(), set(), set()))
-    monkeypatch.setattr(
-        run_round.registry,
-        "append_entries",
-        lambda _entries: pytest.fail("protocol failure must precede proposal merge"),
-    )
-    monkeypatch.setattr(run_round.ops, "run_event", lambda *_args, **_kwargs: None)
+    finder_env(tmp_path, monkeypatch)
     backends = {
         "dynamic": {
             "script": "fake_finder.py",
@@ -393,53 +388,20 @@ def test_dynamic_finder_missing_next_cursor_fails_before_merge(tmp_path, monkeyp
         },
     }
     state = {"dynamic": {"flag": "--token", "next": "START", "dynamic": True}}
+    st = fixture_store(tmp_path, backends, state)
+    version = st.version()
 
-    with pytest.raises(RuntimeError, match="did not report its next cursor"):
-        run_round.run_finders_parallel(
-            ["dynamic"], backends, state, os.environ.copy(), "fixture-run", workers=1
-        )
+    with discovery_transaction(st) as transaction:
+        with pytest.raises(RuntimeError, match="did not report its next cursor"):
+            run_round.run_finders_parallel(
+                ["dynamic"], backends, state, os.environ.copy(), "fixture-run", 1, transaction
+            )
 
-
-def test_disable_backend_preserves_control_metadata(tmp_path):
-    path = tmp_path / "backends.json"
-    path.write_text(json.dumps({
-        "_readme": "control plane",
-        "dynamic": {"script": "fake_finder.py", "enabled": True},
-        "other": {"script": "other.py", "enabled": True},
-    }))
-
-    run_round.disable_backend("dynamic", "set fully harvested", path)
-
-    saved = json.loads(path.read_text())
-    assert saved["_readme"] == "control plane"
-    assert saved["other"]["enabled"] is True
-    assert saved["dynamic"]["enabled"] is False
-    assert saved["dynamic"]["reason"] == "exhausted: set fully harvested"
+    assert st.version() == version  # protocol failure precedes the discovery transaction
 
 
 def test_optional_finder_failure_is_reported_without_blocking_merge(tmp_path, monkeypatch):
-    fixtures = Path(__file__).parent / "fixtures"
-    monkeypatch.setattr(run_round, "SCRIPTS", fixtures)
-    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
-    monkeypatch.setattr(run_round.registry, "existing_keys", lambda: (set(), set(), set()))
-    appended = []
-    monkeypatch.setattr(
-        run_round.registry,
-        "append_entries",
-        lambda entries: appended.extend(entries),
-    )
-    events = []
-    monkeypatch.setattr(
-        run_round.ops,
-        "run_event",
-        lambda run_id, event, **fields: events.append((run_id, event, fields)),
-    )
-    advanced = []
-    monkeypatch.setattr(
-        run_round.rotation,
-        "advance",
-        lambda name: advanced.append(name),
-    )
+    events = finder_env(tmp_path, monkeypatch)
     backends = {
         "good": {
             "script": "fake_finder.py",
@@ -457,37 +419,32 @@ def test_optional_finder_failure_is_reported_without_blocking_merge(tmp_path, mo
             "required": False,
         },
     }
+    state = {"volatile": {"flag": "--bucket", "next": "2022-W48"}}
+    st = fixture_store(tmp_path, backends, state)
 
-    run_round.run_finders_parallel(
-        ["good", "volatile"],
-        backends,
-        {"volatile": {"flag": "--bucket", "next": "2022-W48"}},
-        os.environ.copy(),
-        "fixture-run",
-        workers=2,
-    )
+    with discovery_transaction(st) as transaction:
+        run_round.run_finders_parallel(
+            ["good", "volatile"],
+            backends,
+            state,
+            os.environ.copy(),
+            "fixture-run",
+            2,
+            transaction,
+        )
 
-    assert [entry["id"] for entry in appended] == ["ost-good"]
+    assert registry_ids(st) == ["ost-good"]
     assert ("fixture-run", "discovery_degraded", {"failures": {"volatile": 7}}) in events
     assert ("fixture-run", "discovery_merged", {
         "candidates": 1,
         "accepted": {"good": 1, "volatile": 0},
     }) in events
-    assert advanced == []
+    with st.read() as view:
+        assert view.rotation_get("volatile")["next"] == "2022-W48"  # failed: pointer kept
 
 
 def test_required_finder_failure_still_blocks_merge(tmp_path, monkeypatch):
-    fixtures = Path(__file__).parent / "fixtures"
-    monkeypatch.setattr(run_round, "SCRIPTS", fixtures)
-    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
-    monkeypatch.setattr(run_round.registry, "existing_keys", lambda: (set(), set(), set()))
-    appended = []
-    monkeypatch.setattr(
-        run_round.registry,
-        "append_entries",
-        lambda entries: appended.extend(entries),
-    )
-    monkeypatch.setattr(run_round.ops, "run_event", lambda *_args, **_kwargs: None)
+    finder_env(tmp_path, monkeypatch)
     backends = {
         "good": {
             "script": "fake_finder.py",
@@ -505,18 +462,23 @@ def test_required_finder_failure_still_blocks_merge(tmp_path, monkeypatch):
             "rotation": False,
         },
     }
+    st = fixture_store(tmp_path, backends)
+    version = st.version()
 
-    with pytest.raises(RuntimeError, match=r"discovery failed: required \(7\)"):
-        run_round.run_finders_parallel(
-            ["good", "required"],
-            backends,
-            {},
-            os.environ.copy(),
-            "fixture-run",
-            workers=2,
-        )
+    with discovery_transaction(st) as transaction:
+        with pytest.raises(RuntimeError, match=r"discovery failed: required \(7\)"):
+            run_round.run_finders_parallel(
+                ["good", "required"],
+                backends,
+                {},
+                os.environ.copy(),
+                "fixture-run",
+                2,
+                transaction,
+            )
 
-    assert appended == []
+    assert st.version() == version
+    assert registry_ids(st) == []
 
 
 def test_main_rolls_back_tracked_state_when_pipeline_fails(tmp_path, monkeypatch):

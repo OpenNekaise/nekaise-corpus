@@ -16,6 +16,12 @@ PREVIOUS ISO week, walking history backwards. Weekly entries may declare inclusi
 for buckets already mined. Opaque API cursors declare `dynamic: true` and are replaced with the
 successful finder's reported next value via `set_next`. Edit registry/rotation.json by hand to
 re-aim a vein.
+
+Writes go through the store (ADR 0001 stage 3, step 5): a round records its pointer moves inside
+its discovery transaction (run_round, using `advanced` / `with_next`), and the standalone
+`advance` / `set_next` below run one store transaction under their own writer, which waits at most
+LOCK_TIMEOUT seconds for a running round instead of interleaving with it. Reads (`load`, `next`,
+`show`) stay plain file reads so they never wait for a round.
 """
 from __future__ import annotations
 
@@ -25,23 +31,24 @@ import sys
 from datetime import date, timedelta
 from pathlib import Path
 
-import ops
+import store
 
 ROOT = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 PATH = ROOT / "registry" / "rotation.json"
+LOCK_TIMEOUT = 30.0
+MAX_POINTER = 4096
 
 
 def load() -> dict:
     return json.loads(PATH.read_text()) if PATH.exists() else {}
 
 
-def save(state: dict) -> None:
-    ops.atomic_write_text(PATH, json.dumps(state, indent=2, ensure_ascii=False) + "\n")
+def pointer_arg(entry: dict) -> str:
+    return f"{entry['flag']} {entry['next']}"
 
 
 def next_arg(name: str) -> str:
-    e = load()[name]
-    return f"{e['flag']} {e['next']}"
+    return pointer_arg(load()[name])
 
 
 def _prev_week(bucket: str) -> str:
@@ -113,39 +120,55 @@ def validate_entry(name: str, entry: dict) -> list[str]:
     return []
 
 
+def advanced(name: str, entry: dict) -> dict:
+    """The entry after one successful run: integers step, weekly buckets walk back past skips."""
+    e = dict(entry)
+    if e.get("dynamic"):
+        raise ValueError(f"{name}: dynamic pointer must be replaced with set_next()")
+    if isinstance(e["next"], int):
+        if "skip" in e:
+            raise ValueError(f"{name}: skip ranges require a weekly rotation pointer")
+        e["next"] += e.get("step", 1)
+    else:
+        e["next"] = _prev_unskipped_week(e["next"], e.get("skip", []))
+    return e
+
+
+def check_pointer(name: str, value: str) -> str:
+    """A reported dynamic cursor, validated and stripped."""
+    if not isinstance(value, str) or not value.strip() or "\n" in value or "\r" in value:
+        raise ValueError(f"{name}: dynamic pointer must be one non-empty line")
+    value = value.strip()
+    if len(value) > MAX_POINTER:
+        raise ValueError(f"{name}: dynamic pointer exceeds {MAX_POINTER} characters")
+    return value
+
+
+def with_next(name: str, entry: dict, value: str) -> dict:
+    """The dynamic entry with its opaque cursor replaced by a successful finder's report."""
+    value = check_pointer(name, value)
+    if not entry.get("dynamic"):
+        raise ValueError(f"{name}: set_next() requires dynamic rotation")
+    return {**entry, "next": value}
+
+
+def _update(name: str, change) -> str:
+    """Apply change(name, entry) -> entry in one standalone store transaction."""
+    st = store.open(root=PATH.parent.parent)
+    with store.standalone_transaction(st, "rotation", timeout=LOCK_TIMEOUT) as tx:
+        entry = change(name, tx.rotation_get(name))
+        tx.rotation_set(name, entry)
+    return pointer_arg(entry)
+
+
 def advance(name: str) -> str:
-    # Standalone operators may advance a pointer while another process is doing the same.  Keep
-    # the read-modify-write under its own lock; run_round's broader repo lock also prevents this.
-    with ops.named_lock("rotation", timeout=30):
-        state = load()
-        e = state[name]
-        if e.get("dynamic"):
-            raise ValueError(f"{name}: dynamic pointer must be replaced with set_next()")
-        if isinstance(e["next"], int):
-            if "skip" in e:
-                raise ValueError(f"{name}: skip ranges require a weekly rotation pointer")
-            e["next"] += e.get("step", 1)
-        else:
-            e["next"] = _prev_unskipped_week(e["next"], e.get("skip", []))
-        save(state)
-        return f"{e['flag']} {e['next']}"
+    return _update(name, advanced)
 
 
 def set_next(name: str, value: str) -> str:
     """Replace an opaque dynamic cursor after its finder completed successfully."""
-    if not isinstance(value, str) or not value.strip() or "\n" in value or "\r" in value:
-        raise ValueError(f"{name}: dynamic pointer must be one non-empty line")
-    value = value.strip()
-    if len(value) > 4096:
-        raise ValueError(f"{name}: dynamic pointer exceeds 4096 characters")
-    with ops.named_lock("rotation", timeout=30):
-        state = load()
-        e = state[name]
-        if not e.get("dynamic"):
-            raise ValueError(f"{name}: set_next() requires dynamic rotation")
-        e["next"] = value
-        save(state)
-        return f"{e['flag']} {e['next']}"
+    value = check_pointer(name, value)
+    return _update(name, lambda n, e: with_next(n, e, value))
 
 
 def main() -> None:

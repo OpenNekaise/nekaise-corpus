@@ -195,10 +195,11 @@ build on the same facts.
   not a store property), which can reorder its langlinks batches.
 - A proposal file is a JSON list of entries, or `{"entries": [...], "github_passes": {...}}`
   when `find_github` staged completed passes; `run_round` records them through the store
-  (`control_set("github_passes.json")`, transaction `<round>.discover.github-passes`) only for
+  (`control_set("github_passes.json")`, since step 5 inside `<round>.discover.merge`) only for
   successful finders. A standalone `--append` still writes the file directly, like
   `registry.append_entries`.
-- Still materializing: `run_round.merge_proposals` and its index warm-up call `existing_keys()`.
+- Still materializing: `run_round.merge_proposals` and its index warm-up call `existing_keys()`
+  (resolved in step 5: both ask the store).
 
 ## Stage 3 progress record (2026-09-24)
 
@@ -220,3 +221,68 @@ commits and the commit-replay shadow continue until stage 4.
   outside the view (they must be validated against the view's pinned configuration before
   stage 4); backend-owned ledger and size validation; steps 5–7 (discovery writes and control state,
   cleaner/loader/pruner through the broker, shared recovery and retiring legacy access).
+
+## Stage 3, step 5 record: discovery writes and control state (2026-09-24)
+
+Decided by Codex: the coordinator merges successful proposals in backend order and records the
+whole discovery phase in one transaction; runtime exhaustion is separated from configuration.
+
+- **One discovery transaction.** After the finders exit and the side-channel protocol checks pass,
+  `run_round` opens `broker.local_batch("discover", "merge")` (transaction
+  `<round>.discover.merge`, serialized with broker batches) and `apply_discovery` records, in this
+  order: the merged accepted entries (`insert_entries`), find_github's staged passes
+  (`control_set("github_passes.json")`, only when something new), each successful rotating
+  finder's pointer move (`rotation_set`: integer step, weekly walk past skip ranges, or the dynamic
+  cursor it reported; holds and failed finders keep theirs), and finder-reported exhaustion
+  (`backend_state_set(name, BackendState(False, "exhausted: <reason>"))`). Required/optional
+  failure and hold semantics are unchanged (`check_finder_results` runs before the transaction).
+  Dedup asks the transaction itself, before it writes, through `dedup.from_view` — the legacy
+  `existing_keys()`/`uniquify_ids()` membership and suffixes, answered by the index — so no
+  finder or coordinator materializes key sets any more; the index warm-up is a `known()` call.
+  A discovery phase that changes nothing (empty successful passes, no rotating finder) records no
+  transaction at all. Events and summaries are reported after the commit, in the legacy order.
+- **Files a round writes in discovery:** the routed `registry/*.yaml` shards (appended exactly as
+  `registry.append_entries` did), `registry/rotation.json`, `registry/github_passes.json`,
+  `registry/backend_state.json` (only on exhaustion) and `registry/journal/<UTC day>.jsonl`.
+  `registry/backends.json` is never written by a round. Equivalence tests
+  (`tests/test_discovery_store.py` against `tests/legacy_discovery.py`, the pre-step-5 path) prove
+  byte-identical tracked files apart from the journal and that one exhaustion difference, for
+  cross-finder collisions, empty passes, integer/weekly/dynamic cursors, holds, optional failures,
+  github passes and exhaustion; the same discovery against PostgreSQL yields the same state.
+- **Routed inserts.** A FileStore write view whose entries table is not loaded inserts by reading
+  only the shard each id routes to (like `append_entries`; routing is linted every round). Parsing
+  every shard instead costs ~127 s and ~2.2 GB at 1.62M entries (measured 2026-09-24). A later full
+  load in the same transaction absorbs the routed inserts (and catches a mis-routed clash).
+- **Journal per UTC day.** The journal carries whole before/after rows; a round's merge now writes
+  hundreds of entry rows, so a monthly file would outgrow a git host's per-file limit. Files are
+  `registry/journal/YYYY-MM-DD.jsonl` (older names stay valid: order is by `seq`), the commit
+  lookup parses only commit rows naming the run, and `oversized_control_files` covers the journal
+  and `registry/*.json`. The whole journal is still read per transaction; stage 4 removes it.
+- **Effective enablement.** Selection uses the view: configuration (`backends.json`) AND runtime
+  state (`backend_state.json`); an explicit `--backend` still overrides both, as it overrode
+  configuration before. `validate_backends` also validates runtime state (unknown backend names,
+  malformed values, a disabled state without a reason, and policy reasons, which belong in
+  configuration). Contracts: eligibility rules still require the configuration itself to disable a
+  restricted backend with a policy-blocked reason (runtime exhaustion never satisfies policy);
+  patent-country and suspended-host rules check the effective enablement, i.e. what may run.
+- **Standalone writers.** `rotation.py advance|next|show` keep their CLI and output; `advance` and
+  `set_next` run one standalone store transaction (`store.standalone_transaction`, run id
+  `rotation-…`), waiting at most 30 s for a running round instead of interleaving with it (the old
+  private `rotation` lock did not exclude rounds). `blocklist.add` writes through the round's broker
+  inside a round (prune) and through a standalone transaction outside one; no new URL means no
+  transaction. Reads (`rotation.load`, `blocklist.load`) stay plain file reads.
+- **Representation migration (decision).** `scripts/migrate_backend_state.py NAME… --apply` moves a
+  named backend's config pause `enabled=false, reason="exhausted: …"` to runtime state with the
+  reason verbatim (runtime first, then config `enabled=true` without a reason, under the round lock;
+  idempotent, resumable). The `exhausted:` prefix does NOT prove the loop wrote a pause: of the five
+  such entries on 2026-09-24 only `find_kitopen` was written by `disable_backend` (dig commit
+  2a317cff44); `find_sdz`, `find_boverket`, `find_iea` and `find_scielo` were retired by hand in
+  ops commit 8c6c03bd3f and stay configuration, like `find_zenodo` ("exhausted") and `find_ademe`.
+  So nothing migrates implicitly and no contract rejects `exhausted:` in configuration: every
+  existing pause keeps its effective state and reason. The branch ships the tool but does not run
+  it, because a migration transaction journals on the branch while main keeps committing rounds
+  (and would duplicate journal sequence numbers on merge). After merging, the maintainer runs
+  `python scripts/migrate_backend_state.py find_kitopen --apply` under the drained loop and
+  commits `registry/backends.json`, `registry/backend_state.json` and the journal together.
+- **Rollback.** A failed round still restores every tracked byte from the round snapshot
+  (journal and runtime state included; tested). A failed discovery transaction writes nothing.

@@ -94,9 +94,56 @@ def test_replace_manifest_matches_legacy_write_manifest_rows(st, legacy):
 def test_blocklist_and_ledger_match_legacy_appends(st, legacy):
     write(st, "r1", lambda tx: (tx.blocklist_add(["https://b.org/2/", "https://b.org/1"]),
                                 tx.ledger_append([{"id": "oer-a", "reason": "junk"}])))
-    blocklist.add(["https://b.org/2/", "https://b.org/1"])
+    legacy_blocklist_add(["https://b.org/2/", "https://b.org/1"])
     ops.append_jsonl(registry.prune_ledger_path("oer-a"), {"id": "oer-a", "reason": "junk"})
     assert data_files(st.root) == files(legacy)
+
+
+def legacy_blocklist_add(urls) -> int:
+    """blocklist.add() before it wrote through the store (ADR 0001 stage 3, step 5), verbatim."""
+    cur = blocklist.load()
+    new = {blocklist.normalize(u) for u in urls if u and blocklist.normalize(u)} - cur
+    if new:
+        old = blocklist.PATH.read_text() if blocklist.PATH.exists() else ""
+        if old and not old.endswith("\n"):
+            old += "\n"
+        ops.atomic_write_text(blocklist.PATH, old + "".join(f"{u}\n" for u in sorted(new)))
+    return len(new)
+
+
+def test_blocklist_add_writes_through_the_store_with_legacy_bytes(st, legacy, monkeypatch):
+    """Standalone blocklist.add is one store transaction (journaled) whose file bytes equal the
+    legacy writer's, including a missing final newline; nothing new means no transaction."""
+    (st.root / "pruned_urls.txt").write_text("https://e.org/blocked")  # no final newline
+    (legacy / "pruned_urls.txt").write_text("https://e.org/blocked")
+    urls = ["https://b.org/2/", " https://b.org/1 ", "https://e.org/blocked/", ""]
+    assert legacy_blocklist_add(urls) == 2
+    monkeypatch.setattr(blocklist, "PATH", st.blocklist_path)
+    assert blocklist.add(urls) == 2
+    assert data_files(st.root) == data_files(legacy)
+    with st.read() as v:
+        runs = {e["run_id"] for e in v.scan(Table.EVENTS).rows}
+    assert len(runs) == 1 and runs.pop().startswith("blocklist-")
+    before = files(st.root)
+    assert blocklist.add(["https://b.org/1"]) == 0
+    assert files(st.root) == before  # no journal row either
+
+
+def test_blocklist_add_inside_a_round_goes_through_the_broker(st, monkeypatch):
+    import store_broker
+    monkeypatch.setattr(blocklist, "PATH", st.blocklist_path)
+    with st.writer(round_id="rnd-bl") as w:
+        broker = store_broker.Broker(st, w, "rnd-bl")
+        with broker.serving():
+            for k, v in broker.env().items():
+                monkeypatch.setenv(k, v)
+            monkeypatch.setenv(store.INHERITED_LOCK_ENV, f"{os.getpid()}:rnd-bl")
+            assert blocklist.add(["https://b.org/9"]) == 1
+    assert st.blocklist_path.read_text().endswith("https://b.org/9\n")
+    monkeypatch.delenv(store.INHERITED_LOCK_ENV)
+    with st.read() as v:
+        runs = {e["run_id"] for e in v.scan(Table.EVENTS).rows}
+    assert len(runs) == 1 and runs.pop().startswith("rnd-bl.blocklist.add-")
 
 
 # --- normalization: index and canonical paths agree ----------------------------------------------
@@ -441,3 +488,75 @@ def test_threads_holding_different_locks_do_not_remove_each_other(st, tmp_path):
     assert result["out"].returncode == 0, result["out"].stderr
     assert result["out"].stdout.strip() == "1"
     assert store.INHERITED_LOCK_ENV not in os.environ
+
+
+# --- routed inserts (ADR 0001 stage 3, step 5: the discovery merge must not parse every shard) ---
+
+def test_insert_reads_only_the_routed_shards(st, legacy, monkeypatch):
+    loads, files_read = [], []
+    real_load, real_files = store.FileStore._load, store.FileStore._load_files
+    monkeypatch.setattr(store.FileStore, "_load",
+                        lambda self, state, table: (loads.append(table),
+                                                    real_load(self, state, table)))
+    monkeypatch.setattr(store.FileStore, "_load_files",
+                        lambda self, table, paths: (files_read.extend(p.name for p in paths),
+                                                    real_files(self, table, paths))[1])
+    new = [entry("oer-c"), entry("vnd-x1"), entry("kit-first"), entry("oer-d")]
+    assert write(st, "r1", lambda tx: tx.insert_entries(new)) == 4
+    assert "entries" not in loads
+    assert sorted(set(files_read)) == sorted({"books.yaml", "kitopen.yaml",
+                                              registry.shard_filename("vnd-x1")})
+    registry.append_entries(new)
+    assert data_files(st.root) == files(legacy)
+
+
+def test_routed_inserts_join_a_later_full_load_in_the_same_transaction(st):
+    def body(tx):
+        tx.insert_entries([entry("oer-c")])
+        tx.upsert_entries([entry("oer-c", title="Changed"), entry("hand-one", title="Also")])
+        tx.delete_entries(["oer-a"], reason="test")
+        return [e["id"] for e in tx.scan(Table.ENTRIES).rows]
+    assert write(st, "r1", body) == ["hand-one", "hand-two", "oer-b", "oer-c"]
+    with st.read() as v:
+        got = v.get_entries(["oer-c", "hand-one", "oer-a"])
+    assert got["oer-c"]["title"] == "Changed" and got["hand-one"]["title"] == "Also"
+    assert "oer-a" not in got
+    assert "# inline hand note" in (st.reg / "curated.yaml").read_text()
+
+
+def test_routed_insert_clashes_are_refused(st):
+    before = files(st.root)
+    with pytest.raises(store.StoreError, match="already exist: oer-a"):
+        write(st, "r1", lambda tx: tx.insert_entries([entry("oer-a")]))
+    with pytest.raises(store.StoreError, match="already exist: oer-z"):
+        write(st, "r2", lambda tx: (tx.insert_entries([entry("oer-z")]),
+                                    tx.insert_entries([entry("oer-z")])))
+    # an existing id outside its routed shard is caught once the table is loaded
+    (st.reg / "curated.yaml").write_text((st.reg / "curated.yaml").read_text()
+                                         + registry.emit_entry(entry("oer-misplaced")))
+    before = files(st.root)
+    with pytest.raises(store.StoreError, match="already exist: oer-misplaced"):
+        write(st, "r3", lambda tx: (tx.insert_entries([entry("oer-misplaced")]),
+                                    tx.get_entries(["oer-misplaced"])))
+    assert files(st.root) == before
+
+
+# --- journal files -------------------------------------------------------------------------------
+
+def test_journal_is_daily_and_sequences_continue_across_files(st):
+    st.journal_dir.mkdir(parents=True)
+    (st.journal_dir / "2026-08.jsonl").write_text(json.dumps(  # a legacy monthly file
+        {"seq": 41, "event_id": "old:commit", "run_id": "old", "op": "commit", "digest": "d",
+         "table": None, "id": None, "at": "2026-08-01T00:00:00Z"}) + "\n")
+    write(st, "r-daily", lambda tx: tx.blocklist_add(["https://j.org/1"]))
+    with st.read() as v:
+        mine = [e for e in v.scan(Table.EVENTS).rows if e["run_id"] == "r-daily"]
+    assert [e["seq"] for e in mine] == [42, 43]
+    day = mine[0]["at"][:10]
+    assert (st.journal_dir / f"{day}.jsonl").exists()
+    assert st._commit_digest("r-daily") == mine[-1]["digest"]
+    assert st._commit_digest("old") == "d" and st._commit_digest("r-none") is None
+    # a retry of the committed run is still recognized as one
+    write(st, "r-daily", lambda tx: tx.blocklist_add(["https://j.org/1"]))
+    with st.read() as v:
+        assert len([e for e in v.scan(Table.EVENTS).rows if e["run_id"] == "r-daily"]) == 2
