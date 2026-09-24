@@ -473,3 +473,21 @@ def test_streaming_exact_sum_matches_exact_sum():
             acc.add(v)
         assert acc.value() == store.exact_sum(values) and \
             type(acc.value()) is type(store.exact_sum(values)), values
+
+
+@pytest.mark.parametrize("table,kwargs", [
+    (Table.ENTRIES, {}),
+    (Table.ENTRIES, {"where": Prefix("id", "oer-")}),
+    (Table.MANIFEST, {"order": "legacy"}),
+    (Table.BLOCKLIST, {}),
+])
+def test_a_warmed_view_still_refuses_after_close(st, table, kwargs):
+    # found by the maintainer's publication review (2026-09-24): cached scans bypassed the check
+    with st.read() as view:
+        first = view.scan(table, limit=1, **kwargs)
+        assert first.rows
+    with pytest.raises(store.StaleView):
+        view.scan(table, **kwargs)
+    if first.next_cursor is not None:
+        with pytest.raises(store.StaleView):
+            view.scan(table, cursor=first.next_cursor, limit=1, **kwargs)

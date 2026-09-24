@@ -52,6 +52,7 @@ import yaml
 
 import bes_relevance
 import dedup
+import licenses
 import registry
 
 API = "https://escholarship.org/graphql"
@@ -89,11 +90,11 @@ class Challenge(RuntimeError):
 
 
 def license_for(rights: str | None) -> str | None:
-    """Redistributable tag for an item's rights URL, else None (NC/ND/unknown/missing)."""
-    for pattern, tag in LICENSE_RULES:
-        if rights and pattern.search(rights):
-            return tag
-    return None
+    """Redistributable tag for an item's rights URL, else None (NC/ND/unknown/missing). Strict:
+    only a canonical creativecommons.org URL counts (licenses.cc_license, shared with find_ojs);
+    lookalike hosts and negated or prose statements fail closed."""
+    tag, _ = licenses.cc_license([rights]) if rights else (None, None)
+    return tag
 
 
 def pdf_link(node: dict) -> str | None:

@@ -1455,6 +1455,7 @@ class ReadView:
              limit: int = DEFAULT_PAGE, order: str = "key") -> Page:
         """order="key" (default) is the table's scan key; order="legacy" (manifest only) is
         registry.load_manifest_rows' order, see legacy_manifest_key."""
+        self._check_open()  # before any cache: a closed view never answers, warmed or not
         table = Table(table)
         self._validate(table, where, fields)
         check_order(table, order)

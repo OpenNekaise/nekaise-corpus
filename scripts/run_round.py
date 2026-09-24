@@ -590,7 +590,9 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
             for step, script, fixed_args in VERIFY
         ]
         if not args.skip_tests:
-            gates.append(("tests", [sys.executable, "-m", "pytest", "-q"]))
+            # tests/ only: stray files elsewhere (e.g. review scratch in workspace/) must never
+            # decide a round
+            gates.append(("tests", [sys.executable, "-m", "pytest", "-q", "tests/"]))
         # pytest builds throwaway stores of its own; the round's inherited lock is not theirs, so
         # the test gate runs with the plain environment (no inherited lock, no broker).
         run_verify_parallel(gates, read_env, run_id, envs={"tests": env})

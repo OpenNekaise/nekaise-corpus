@@ -256,3 +256,19 @@ def test_relevance_loose_mode_and_fields_of_research():
     assert not bes_relevance.relevant(
         "Feeder sets", keywords=["33 Built Environment and Design (for-2020)"]
     )
+
+
+@pytest.mark.parametrize("rights,expected", [
+    ("https://creativecommons.org/licenses/by/4.0/", "cc-by"),
+    ("https://creativecommons.org/licenses/by-sa/4.0/", "cc-by-sa"),
+    ("https://creativecommons.org/publicdomain/zero/1.0/", "cc0"),
+    ("https://creativecommons.org/publicdomain/mark/1.0/", "public-domain"),
+    # found by the maintainer's publication review: substring matching accepted these
+    ("https://example.invalid/creativecommons.org/licenses/by/4.0/", None),
+    ("Not licensed under https://creativecommons.org/licenses/by/4.0/", None),
+    ("https://creativecommons.org/licenses/by-nc/4.0/", None),
+    (None, None),
+])
+def test_rights_are_parsed_strictly(rights, expected):
+    import find_escholarship
+    assert find_escholarship.license_for(rights) == expected
