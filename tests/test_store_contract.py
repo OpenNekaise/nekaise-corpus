@@ -6,6 +6,7 @@ transactions. Stage 2 adds the PostgreSQL store to STORES. FileStore-specific be
 parity, crash injection, lock semantics) lives in tests/test_filestore.py.
 """
 import json
+import os
 
 import pytest
 
@@ -48,7 +49,20 @@ def file_store(root):
     return store.FileStore(root)
 
 
-STORES = [file_store]
+def pg_store(root):
+    import uuid
+
+    import store_pg
+    write_config(root)
+    st = store_pg.PgStore(root, dsn=os.environ["NEKAISE_PG_TEST_DSN"],
+                          schema=f"t_{uuid.uuid4().hex[:12]}")
+    st.pin_config_from_files()
+    return st
+
+
+# The PostgreSQL store joins the suite when a test database is configured (opt-in, so the dig
+# round's pytest gate never depends on a running server).
+STORES = [file_store] + ([pg_store] if os.environ.get("NEKAISE_PG_TEST_DSN") else [])
 
 
 def write(st, run_id, fn):
@@ -71,6 +85,8 @@ def seed(tx):
 @pytest.fixture(params=STORES, ids=lambda f: f.__name__)
 def st(request, tmp_path):
     s = request.param(tmp_path / "repo")
+    if hasattr(s, "drop"):
+        request.addfinalizer(s.drop)
     write(s, "seed", seed)
     return s
 
@@ -144,7 +160,8 @@ def test_returned_values_are_isolated(st):
             got = tx.scan(Table.MANIFEST, fields=("quality",), where=Eq("id", "oer-a")).rows[0]
             got["quality"]["total"] = -1
             tx.get_manifest(["oer-a"])["oer-a"]["quality"]["w20"]["domain"] = -1
-            next(iter(tx.aggregate_manifest(group_by=("quality",))))["quality"]["total"] = -1
+            with pytest.raises(store.StoreError, match="cannot group by 'quality'"):
+                list(tx.aggregate_manifest(group_by=("quality",)))
             assert tx.get_manifest(["oer-a"])["oer-a"]["quality"] == {"total": 100,
                                                                        "w20": {"domain": 3}}
             tx.update_manifest_fields({"oer-a": {"topic": "x"}})
@@ -282,14 +299,20 @@ def test_version_conflict_stale_writer_and_nesting(st):
             pass
 
 
-def test_view_expires_when_its_generation_moves(st):
+def test_views_never_mix_generations(st):
+    """A view serves one snapshot: after a later commit it either keeps returning its original
+    snapshot (PostgreSQL) or raises StaleView (FileStore) — it never mixes generations."""
     with st.writer() as w:
         with st.read(writer=w) as v:
-            v.scan(Table.ENTRIES)
+            before = [r["url"] for r in v.scan(Table.BLOCKLIST).rows]
             with st.transaction("r1", expected_version=st.version(), writer=w) as tx:
                 tx.blocklist_add(["https://x.org/new"])
-            with pytest.raises(store.StaleView):
-                v.scan(Table.BLOCKLIST)  # would lazily load the newer generation
+            try:
+                again = [r["url"] for r in v.scan(Table.BLOCKLIST).rows]
+                hits = v.known(urls=["https://x.org/new"]).urls
+            except store.StaleView:
+                return
+            assert again == before and "https://x.org/new" not in hits
 
 
 def test_retry_of_a_committed_run_is_a_noop_and_different_requests_fail(st, tmp_path):
@@ -322,7 +345,7 @@ def test_export_is_deterministic_and_complete(st, tmp_path):
 
 def test_unknown_backend_fails_explicitly(tmp_path):
     with pytest.raises(store.StoreError, match="not available"):
-        store.open(root=tmp_path, backend="postgres")
+        store.open(root=tmp_path, backend="nope")
 
 
 def test_noop_run_still_records_its_identity(st):
@@ -343,3 +366,18 @@ def test_one_shot_iterables_are_accepted_positionally_and_by_keyword(st):
     with st.read() as v:
         assert v.known(urls=["https://g.org/1", "https://g.org/2"]).urls == {
             "https://g.org/1", "https://g.org/2"}
+
+
+def test_aggregate_sums_are_exact_and_typed(st):
+    def body(tx):
+        tx.upsert_manifest([mrow("x-1", text_chars=0.1, status="s"),
+                            mrow("x-2", text_chars=0.2, status="s"),
+                            mrow("x-3", text_chars=True, status="s"),  # bools never sum
+                            mrow("x-4", text_chars=7, status="t")])
+    write(st, "r1", body)
+    with st.read() as v:
+        got = {g["status"]: g["sum_text_chars"]
+               for g in v.aggregate_manifest(group_by=("status",), sums=("text_chars",),
+                                             where=Prefix("id", "x-"))}
+    assert got == {"s": 0.3, "t": 7}  # exact: 0.1 + 0.2 == 0.3, not 0.30000000000000004
+    assert isinstance(got["t"], int)

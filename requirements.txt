@@ -5,3 +5,4 @@ requests>=2.31
 pyyaml>=6.0
 pypdf>=6.0,<7
 beautifulsoup4>=4.12
+psycopg[binary]>=3.2  # PostgreSQL store (ADR 0001); imported only when NEKAISE_STORE=postgres

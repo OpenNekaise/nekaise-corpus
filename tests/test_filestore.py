@@ -326,3 +326,13 @@ def test_invalid_run_ids_never_touch_transaction_storage(st, monkeypatch, bad):
     with pytest.raises(store.StoreError, match="invalid run id"):
         with st.writer(round_id=bad):
             pass
+
+
+def test_view_expires_when_its_generation_moves(st):
+    with st.writer() as w:
+        with st.read(writer=w) as v:
+            v.scan(Table.ENTRIES)
+            with st.transaction("r1", expected_version=st.version(), writer=w) as tx:
+                tx.blocklist_add(["https://x.org/new"])
+            with pytest.raises(store.StaleView):
+                v.scan(Table.BLOCKLIST)  # would lazily load the newer generation

@@ -200,13 +200,27 @@ def predicate_fields(pred: Predicate) -> set[str]:
     raise StoreError(f"unsupported predicate {type(pred).__name__}")
 
 
+def json_equal(a: Any, b: Any) -> bool:
+    """Equality of JSON values as PostgreSQL jsonb defines it: numbers compare by value (1 == 1.0),
+    but a boolean never equals a number and containers compare element-wise."""
+    if isinstance(a, bool) or isinstance(b, bool):
+        return isinstance(a, bool) and isinstance(b, bool) and a == b
+    if isinstance(a, (int, float)) and isinstance(b, (int, float)):
+        return a == b
+    if isinstance(a, Mapping) and isinstance(b, Mapping):
+        return a.keys() == b.keys() and all(json_equal(a[k], b[k]) for k in a)
+    if isinstance(a, (list, tuple)) and isinstance(b, (list, tuple)):
+        return len(a) == len(b) and all(json_equal(x, y) for x, y in zip(a, b))
+    return type(a) is type(b) and a == b
+
+
 def evaluate(pred: Predicate | None, row: Mapping) -> bool:
     if pred is None:
         return True
     if isinstance(pred, Eq):
-        return pred.field in row and row[pred.field] == pred.value
+        return pred.field in row and json_equal(row[pred.field], pred.value)
     if isinstance(pred, In):
-        return pred.field in row and row[pred.field] in pred.values
+        return pred.field in row and any(json_equal(row[pred.field], v) for v in pred.values)
     if isinstance(pred, Prefix):
         value = row.get(pred.field)
         return isinstance(value, str) and value.startswith(pred.prefix)
@@ -258,6 +272,68 @@ def _canonical(value: Any) -> str:
 
 def _digest(value: Any) -> str:
     return hashlib.sha256(_canonical(value).encode()).hexdigest()
+
+
+def key_digest(text: str) -> str:
+    """Scan key for unbounded values (URLs, ledger rows): their sha256, because the values
+    themselves can exceed a B-tree index entry. Blocklist and ledger scans are ordered by it."""
+    return hashlib.sha256(text.encode()).hexdigest()
+
+
+def canonical_row(row: Mapping) -> str:
+    """The one serialization of a row every backend stores and exports."""
+    return _canonical(row)
+
+
+def check_group_value(field: str, value: Any) -> Any:
+    """Aggregation groups by strings, booleans and None only (missing and null are both None), so
+    grouping is identical in every backend; numbers and containers are rejected."""
+    if value is None or isinstance(value, (str, bool)):
+        return value
+    raise StoreError(f"aggregate_manifest cannot group by {field!r}: value {value!r} is not a "
+                     "string, boolean or null")
+
+
+def exact_sum(values: Iterable[Any]) -> int | float:
+    """Sum of the int/float values (bools and everything else ignored), computed exactly from each
+    value's shortest repr and then rounded once: an int if every value is an int, else a float.
+    PostgreSQL's numeric SUM over the same JSON text yields the same result."""
+    import decimal
+    total, is_float = decimal.Decimal(0), False
+    for v in values:
+        if isinstance(v, bool) or not isinstance(v, (int, float)):
+            continue
+        is_float |= isinstance(v, float)
+        total += decimal.Decimal(repr(v)) if isinstance(v, float) else decimal.Decimal(v)
+    return float(total) if is_float else int(total)
+
+
+def validate_patch(updates: Mapping[str, Mapping], unset: Sequence[str], existing) -> None:
+    """update_manifest_fields' batch validation, shared by every backend. `existing(ids)` returns
+    the subset of ids that exist."""
+    allowed = TABLE_FIELDS[Table.MANIFEST]
+    if missing := sorted(set(updates) - set(existing(list(updates)))):
+        raise StoreError(f"update_manifest_fields: unknown id(s): {', '.join(missing[:5])}")
+    if "id" in unset:
+        raise StoreError("update_manifest_fields cannot unset id")
+    if unknown := sorted(set(unset) - allowed):
+        raise StoreError(f"unknown manifest field(s): {', '.join(unknown)}")
+    for sid, patch in updates.items():
+        if "id" in patch:
+            raise StoreError("update_manifest_fields cannot change id")
+        if overlap := sorted(set(patch) & set(unset)):
+            raise StoreError(f"{sid}: field(s) both set and unset: {', '.join(overlap)}")
+        if unknown := sorted(set(patch) - allowed):
+            raise StoreError(f"unknown manifest field(s): {', '.join(unknown)}")
+
+
+def validate_ledger_rows(rows: Sequence[Mapping]) -> None:
+    allowed = TABLE_FIELDS[Table.LEDGER]
+    for r in rows:
+        if not isinstance(r.get("id"), str) or not r["id"]:
+            raise StoreError("ledger rows need a non-empty id")
+        if unknown := sorted(set(r) - allowed):
+            raise StoreError(f"unknown ledger field(s): {', '.join(unknown)}")
 
 
 def _sha(data: bytes | None) -> str | None:
@@ -356,7 +432,13 @@ def open(*, root: Path = ROOT, backend: str | None = None) -> "FileStore":  # no
     name = backend or os.environ.get("NEKAISE_STORE") or "file"
     if name == "file":
         return FileStore(root)
-    raise StoreError(f"storage backend {name!r} is not available (known: file)")
+    if name == "postgres":
+        dsn = os.environ.get("NEKAISE_PG_DSN")
+        if not dsn:
+            raise StoreError("storage backend 'postgres' needs NEKAISE_PG_DSN")
+        import store_pg
+        return store_pg.PgStore(root, dsn=dsn, schema=os.environ.get("NEKAISE_PG_SCHEMA", "nekaise"))
+    raise StoreError(f"storage backend {name!r} is not available (known: file, postgres)")
 
 
 def norm_url(url: str | None) -> str:
@@ -414,6 +496,35 @@ def _check_run_id(run_id: str) -> str:
     if not isinstance(run_id, str) or not _RUN_ID.fullmatch(run_id) or ".." in run_id:
         raise StoreError(f"invalid run id {run_id!r}")
     return run_id
+
+
+def uniquify(entries: Sequence[Mapping], is_taken) -> list[dict]:
+    """registry.uniquify_ids' suffixing (-2, -3, … on a 50-char base) against `is_taken(id)` and
+    the batch itself, without materializing every existing id."""
+    out, batch = [copy.deepcopy(dict(e)) for e in entries], set()
+    for h in out:
+        base, i = h["id"], 2
+        while h["id"] in batch or is_taken(h["id"]):
+            h["id"] = f"{base[:50]}-{i}"
+            i += 1
+        batch.add(h["id"])
+    return out
+
+
+def artifact_ref(row: Mapping | None, id: str, stage: "Stage") -> "ArtifactRef | None":  # noqa: A002
+    """Where a document's stage payload lives, from its manifest row (shared by every backend)."""
+    if row is None:
+        return None
+    stage = Stage(stage)
+    path, sha, size = {
+        Stage.RAW: ("raw_path", "sha256", "bytes"),
+        Stage.TEXT: ("text_path", "text_sha256", None),
+        Stage.CORPUS: ("corpus_path", "corpus_sha256", None),
+    }[stage]
+    if not row.get(path):
+        return None
+    return ArtifactRef(id, stage, f"file:{row[path]}", row.get(sha),
+                       row.get(size) if size else None)
 
 
 def _is_ancestor(pid: int) -> bool:
@@ -634,6 +745,7 @@ class FileStore:
 
     def _view(self) -> Iterator["ReadView"]:
         view = ReadView(self, self.version())
+        view._config_cache = self._config()  # pinned when the view opens, like its data
         try:
             yield view
         finally:
@@ -659,9 +771,11 @@ class FileStore:
         self._check_writer(writer)
         self._require_settled()
         current = self.version()
-        if current != expected_version:
-            raise VersionConflict("store changed since the expected version was read")
         committed = self._commit_digest(run_id)
+        # A retry of a committed run (e.g. after a lost commit response) cannot know the newer
+        # version, so the replay check, not the version check, governs it.
+        if committed is None and current != expected_version:
+            raise VersionConflict("store changed since the expected version was read")
         view = WriteView(self, current, run_id, replay=committed is not None)
         _ACTIVE_TRANSACTIONS.add(key)
         try:
@@ -989,7 +1103,14 @@ class ReadView:
         return self._version
 
     def _keyed(self, table: Table) -> list[tuple[tuple, dict]]:
-        """Each table's scan key and order — the single definition every backend matches."""
+        """Each table's scan key and order — the single definition every backend matches. Cached
+        per view (a write view drops the cache on every mutation) so paging stays linear."""
+        cache = self.__dict__.setdefault("_keyed_cache", {})
+        if table not in cache:
+            cache[table] = self._keyed_uncached(table)
+        return cache[table]
+
+    def _keyed_uncached(self, table: Table) -> list[tuple[tuple, dict]]:
         if table is Table.ENTRIES:
             rows = self._get("entries").entries
             return [((sid,), rows[sid]) for sid in sorted(rows)]
@@ -997,12 +1118,13 @@ class ReadView:
             rows = self._get("manifest").manifest
             return [((sid,), rows[sid]) for sid in sorted(rows)]
         if table is Table.BLOCKLIST:
-            return [((u,), {"url": u}) for u in sorted(self._get("blocklist").blocklist)]
+            return sorted(((key_digest(u),), {"url": u}) for u in self._get("blocklist").blocklist)
         if table is Table.LEDGER:
             out, seen = [], {}
-            for text, row in sorted((_canonical(r), r) for r in self._get("ledger").ledger):
-                n = seen[text] = seen.get(text, -1) + 1  # identical rows stay distinct
-                out.append(((text, n), row))
+            for digest, row in sorted(((key_digest(_canonical(r)), r)
+                                       for r in self._get("ledger").ledger), key=lambda t: t[0]):
+                n = seen[digest] = seen.get(digest, -1) + 1  # identical rows stay distinct
+                out.append(((digest, n), row))
             return out
         if table is Table.EVENTS:
             return [((e["seq"],), e) for e in self._get("events").events]
@@ -1028,9 +1150,12 @@ class ReadView:
         if cursor is not None and (cursor.view != self._cursor_scope() or cursor.query != query):
             raise StoreError("cursor belongs to a different view, generation or query")
         rows, last = [], None
-        for key, row in self._keyed(table):
-            if cursor is not None and key <= cursor.last_key:
-                continue
+        keyed = self._keyed(table)
+        start = 0
+        if cursor is not None:
+            import bisect
+            start = bisect.bisect_right(keyed, cursor.last_key, key=lambda kr: kr[0])
+        for key, row in keyed[start:] if start else keyed:
             if not evaluate(where, row):
                 continue
             if len(rows) == limit:
@@ -1098,29 +1223,24 @@ class ReadView:
 
     def aggregate_manifest(self, *, group_by: tuple[str, ...], where: Predicate | None = None,
                            sums: tuple[str, ...] = (), count: bool = True) -> Iterator[dict]:
-        """Group manifest rows (contract: None groups missing+null; sums add int/float only and
-        are 0 for no values). Output: the group_by fields, then "count" and "sum_<field>",
-        ordered by the canonical JSON of the group key."""
+        """Group manifest rows by string/boolean/None fields (missing and null are both None; any
+        other value raises). Sums follow exact_sum. Output: the group_by fields, then "count" and
+        "sum_<field>", ordered by the canonical JSON of the group key."""
         self._validate(Table.MANIFEST, where, tuple(group_by) + tuple(sums))
-        groups: dict[str, dict] = {}
+        groups: dict[str, tuple[tuple, int, dict]] = {}
         for row in self._get("manifest").manifest.values():
             if not evaluate(where, row):
                 continue
-            key = tuple(row.get(f) for f in group_by)
+            key = tuple(check_group_value(f, row.get(f)) for f in group_by)
             k = _canonical(key)
-            g = groups.get(k)
-            if g is None:
-                g = groups[k] = {**copy.deepcopy(dict(zip(group_by, key))),
-                                 **({"count": 0} if count else {}),
-                                 **{f"sum_{f}": 0 for f in sums}}
-            if count:
-                g["count"] += 1
+            _, n, values = groups.get(k) or (key, 0, {f: [] for f in sums})
             for f in sums:
-                v = row.get(f)
-                if isinstance(v, (int, float)) and not isinstance(v, bool):
-                    g[f"sum_{f}"] += v
+                values[f].append(row.get(f))
+            groups[k] = (key, n + 1, values)
         for k in sorted(groups):
-            yield groups[k]
+            key, n, values = groups[k]
+            yield {**dict(zip(group_by, key)), **({"count": n} if count else {}),
+                   **{f"sum_{f}": exact_sum(values[f]) for f in sums}}
 
     def iter_duplicate_sha256(self, *, where: Predicate | None = None,
                               batch_size: int = DEFAULT_PAGE) -> Iterator[dict]:
@@ -1145,7 +1265,7 @@ class ReadView:
 
     def config_get(self) -> ConfigSnapshot:
         self._check_open()
-        if self._config_cache is None:
+        if self._config_cache is None:  # write views pin it on first use, generation-checked
             self._check_generation()
             self._config_cache = self._store._config()
         return copy.deepcopy(self._config_cache)
@@ -1169,19 +1289,7 @@ class ReadView:
     def resolve_artifact(self, id: str, stage: Stage) -> ArtifactRef | None:  # noqa: A002
         """Where a document's stage payload lives, from its manifest row. Reads no payload and
         grants no eligibility."""
-        row = self._get("manifest").manifest.get(id)
-        if row is None:
-            return None
-        stage = Stage(stage)
-        path, sha, size = {
-            Stage.RAW: ("raw_path", "sha256", "bytes"),
-            Stage.TEXT: ("text_path", "text_sha256", None),
-            Stage.CORPUS: ("corpus_path", "corpus_sha256", None),
-        }[stage]
-        if not row.get(path):
-            return None
-        return ArtifactRef(id, stage, f"file:{row[path]}", row.get(sha),
-                           row.get(size) if size else None)
+        return artifact_ref(self._get("manifest").manifest.get(id), id, stage)
 
 
 # --- write view -----------------------------------------------------------------------------------
@@ -1253,6 +1361,7 @@ class WriteView(ReadView):
     def _touch(self, table: str) -> None:
         self._dirty.add(table)
         self._known_cache = None
+        self.__dict__.pop("_keyed_cache", None)
 
     def _record(self, table: str, op: str, sid, before=None, after=None, reason=None) -> None:
         self._ops.append({"table": table, "op": op, "id": sid, "before": copy.deepcopy(before),
@@ -1276,9 +1385,8 @@ class WriteView(ReadView):
     def uniquify_ids(self, entries: Sequence[Mapping]) -> list[dict]:
         """Copies of `entries` with registry.uniquify_ids' suffixing against every known id and the
         batch itself. Computes names only; insert_entries remains the collision authority."""
-        out = [copy.deepcopy(dict(e)) for e in entries]
-        registry.uniquify_ids(out, set(self._known_sets()[2]))
-        return out
+        taken = self._known_sets()[2]
+        return uniquify(entries, taken.__contains__)
 
     @_mutation
     def insert_entries(self, entries: Iterable[Mapping]) -> int:
@@ -1373,20 +1481,7 @@ class WriteView(ReadView):
     def update_manifest_fields(self, updates: Mapping[str, Mapping[str, Any]], *,
                                unset: tuple[str, ...] = ()) -> int:
         state = self._get("manifest")
-        allowed = TABLE_FIELDS[Table.MANIFEST]
-        if missing := sorted(sid for sid in updates if sid not in state.manifest):
-            raise StoreError(f"update_manifest_fields: unknown id(s): {', '.join(missing[:5])}")
-        if "id" in unset:
-            raise StoreError("update_manifest_fields cannot unset id")
-        if unknown := sorted(set(unset) - allowed):
-            raise StoreError(f"unknown manifest field(s): {', '.join(unknown)}")
-        for sid, patch in updates.items():
-            if "id" in patch:
-                raise StoreError("update_manifest_fields cannot change id")
-            if overlap := sorted(set(patch) & set(unset)):
-                raise StoreError(f"{sid}: field(s) both set and unset: {', '.join(overlap)}")
-            if unknown := sorted(set(patch) - allowed):
-                raise StoreError(f"unknown manifest field(s): {', '.join(unknown)}")
+        validate_patch(updates, unset, lambda ids: [i for i in ids if i in state.manifest])
         changed = 0
         for sid, patch in updates.items():
             before = state.manifest[sid]
@@ -1419,12 +1514,7 @@ class WriteView(ReadView):
     @_mutation
     def ledger_append(self, rows: Iterable[Mapping]) -> int:
         rows = [copy.deepcopy(dict(r)) for r in rows]
-        allowed = TABLE_FIELDS[Table.LEDGER]
-        for r in rows:
-            if not isinstance(r.get("id"), str) or not r["id"]:
-                raise StoreError("ledger rows need a non-empty id")
-            if unknown := sorted(set(r) - allowed):
-                raise StoreError(f"unknown ledger field(s): {', '.join(unknown)}")
+        validate_ledger_rows(rows)
         state = self._get("ledger")
         for r in rows:
             state.ledger.append(r)
