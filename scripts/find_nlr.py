@@ -35,6 +35,7 @@ come back up: re-aim the pointer to the current year occasionally to pick up new
 from __future__ import annotations
 
 import argparse
+import html
 import os
 import re
 import sys
@@ -122,7 +123,9 @@ def parse_page(xml_text: str) -> tuple[list[dict], str | None]:
             continue
         subjects = [(e.text or "").strip() for e in dc.findall("dc:subject", NS)]
         records.append({
-            "title": " ".join((dc.findtext("dc:title", default="", namespaces=NS) or "").split()),
+            # Pure double-escapes some entities ("&amp;apos;"): unescape once more.
+            "title": " ".join(html.unescape(
+                dc.findtext("dc:title", default="", namespaces=NS) or "").split()),
             "subjects": subjects,
             "links": [(e.text or "").strip() for e in dc.findall("dc:identifier", NS)
                       if e.get("type") == "link"],

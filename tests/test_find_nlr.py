@@ -224,3 +224,11 @@ def test_non_200_answer_is_unexpected(monkeypatch, status):
     )
     with pytest.raises(find_nlr.Unexpected, match=f"HTTP {status}"):
         find_nlr.fetch_page(2024, None)
+
+
+def test_double_escaped_entities_in_titles_are_unescaped():
+    record = find_nlr.parse_page(_page([_record(
+        "Household Energy Use in Pennsylvania&amp;apos;s Delaware Valley", "NREL/TP-5500-2",
+        "https://www.nlr.gov/docs/fy24osti/2.pdf",
+    )]))[0][0]
+    assert record["title"] == "Household Energy Use in Pennsylvania's Delaware Valley"
