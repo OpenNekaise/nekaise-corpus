@@ -1418,6 +1418,7 @@ def _mutation(fn):
             raise
     wrapper.__name__ = fn.__name__
     wrapper.__doc__ = fn.__doc__
+    wrapper.__wrapped__ = fn  # inspect.signature (the round broker binds requests) sees fn's
     return wrapper
 
 

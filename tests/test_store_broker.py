@@ -116,3 +116,41 @@ def test_broker_is_gone_after_the_round(tmp_path):
             path, cap = broker.path, broker.cap
     with pytest.raises(store_broker.BrokerError, match="unavailable"):
         store_broker.Client(str(path), cap, "rnd2").submit("fetch", "b1", [], st.version())
+
+
+def test_positional_and_keyword_dataclass_arguments_cross_the_broker(round_):
+    st, broker, env, w = round_
+    client = store_broker.Client(broker.path, broker.cap, "rnd1")
+    with client.batch("fetch", "pos", expected_version=st.version()) as tx:
+        tx.backend_state_set("find_books", store.BackendState(False, "exhausted: p"))
+    with client.batch("fetch", "kw", expected_version=client.last_version) as tx:
+        tx.backend_state_set(name="find_paused", value=store.BackendState(True, None))
+    with st.read(writer=w) as v:
+        assert v.backend_state_get("find_books") == store.BackendState(False, "exhausted: p")
+
+
+def test_a_stalled_client_cannot_block_shutdown(tmp_path):
+    import socket as _socket
+    import time
+    st = file_store(tmp_path / "repo")
+    write(st, "seed", seed)
+    with st.writer(round_id="rnd3") as w:
+        broker = store_broker.Broker(st, w, "rnd3")
+        with broker.serving():
+            s = _socket.socket(_socket.AF_UNIX, _socket.SOCK_STREAM)
+            s.connect(str(broker.path))
+            s.sendall(b'{"cap": "partial')  # never finishes its line
+            time.sleep(0.2)
+            started = time.monotonic()
+        assert time.monotonic() - started < 5
+        s.close()
+
+
+def test_gate_environment_for_pytest_is_clean(tmp_path, monkeypatch):
+    # the round passes the plain environment to the pytest gate; the store tests themselves open
+    # read views that must not inherit the round's lock
+    monkeypatch.delenv(store.INHERITED_LOCK_ENV, raising=False)
+    st = file_store(tmp_path / "repo")
+    write(st, "seed", seed)
+    with st.read() as v:
+        assert v.version()

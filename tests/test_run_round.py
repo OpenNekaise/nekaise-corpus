@@ -652,8 +652,11 @@ def test_only_mutating_steps_receive_the_store_broker(tmp_path, monkeypatch):
         seen[step] = env
 
     monkeypatch.setattr(run_round, "run_command", record)
-    monkeypatch.setattr(run_round, "run_verify_parallel",
-                        lambda gates, env, run_id: seen.setdefault("gates", env))
+    def gates(gates, env, run_id, envs=None):
+        seen["gates"] = env
+        seen["tests_gate"] = (envs or {}).get("tests")
+
+    monkeypatch.setattr(run_round, "run_verify_parallel", gates)
     monkeypatch.setattr(sys, "argv", ["run_round.py", "--skip-discovery", "--skip-tests",
                                       "--allow-dirty", "--run-id", "r-env"])
     assert run_round.main() == 0
@@ -661,5 +664,9 @@ def test_only_mutating_steps_receive_the_store_broker(tmp_path, monkeypatch):
         assert seen[step][store_broker.BROKER_ENV] and seen[step][store_broker.ROUND_ENV] == "r-env"
     for step in ("stats", "gates"):
         assert store_broker.BROKER_ENV not in seen[step]
+    tests_env = seen.pop("tests_gate")
     assert all(e[run_round.store.INHERITED_LOCK_ENV] == f"{os.getpid()}:r-env"
                for e in seen.values())
+    # pytest builds its own throwaway stores: it must not inherit the round's lock or broker
+    assert run_round.store.INHERITED_LOCK_ENV not in tests_env
+    assert store_broker.BROKER_ENV not in tests_env

@@ -276,3 +276,12 @@ def test_schema_v2_migrates_to_v3_with_legacy_order_backfill(env):
         ids = [r["id"] for r in v.scan("manifest", order="legacy").rows]
     assert ids == ["oer-a", "oer-b", "hand-1"]  # books.jsonl before curated.jsonl
     assert pg_shadow.do_verify(again, repo.path, log=lambda *_: None)
+
+
+def test_verify_checks_derived_columns(env):
+    pg_shadow, st, repo, c1 = env
+    pg_shadow.do_import(st, c1, repo.path, log=lambda *_: None)
+    assert pg_shadow.do_verify(st, repo.path, log=lambda *_: None)
+    with st._connect(autocommit=True) as conn:  # rows intact, one derived column stale
+        conn.execute("UPDATE manifest SET shard = NULL WHERE id = 'oer-a'")
+    assert not pg_shadow.do_verify(st, repo.path, log=lambda *_: None)

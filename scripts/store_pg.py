@@ -258,6 +258,13 @@ class PgStore:
                 conn.execute(DDL.format(s=schema, v=SCHEMA_VERSION))
                 got = conn.execute(sql.SQL("SELECT schema_version FROM {}.state").format(
                     self._s)).fetchone()[0]
+                if got < SCHEMA_VERSION:
+                    # Migrate as the writer: an older-version replicator holds this lock while it
+                    # writes, so it cannot interleave rows lacking the new derived columns; once
+                    # migrated, older code refuses the newer schema at construction.
+                    conn.execute("SELECT pg_advisory_lock(hashtext(%s))", [self._lock_name()])
+                    got = conn.execute(sql.SQL("SELECT schema_version FROM {}.state").format(
+                        self._s)).fetchone()[0]
                 for version in range(got + 1, SCHEMA_VERSION + 1):
                     with conn.transaction():
                         MIGRATIONS[version](conn, schema)
@@ -265,6 +272,7 @@ class PgStore:
                             self._s), [version])
                     got = version
                 conn.execute(POST_DDL.format(s=schema))
+                conn.execute("SELECT pg_advisory_unlock_all()")
                 if got != SCHEMA_VERSION:
                     raise StoreError(f"schema {schema} is version {got}, code expects "
                                      f"{SCHEMA_VERSION}")

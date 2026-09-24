@@ -119,7 +119,8 @@ def run_command(step: str, cmd: list[str], env: dict, run_id: str) -> None:
     ops.run_event(run_id, "step_completed", step=step, elapsed_seconds=elapsed)
 
 
-def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: str) -> None:
+def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: str,
+                        envs: dict[str, dict] | None = None) -> None:
     """Run the read-only gates concurrently over the settled round state.
 
     Same fail-closed contract as run_command, minus the serial wall time: every gate is awaited even
@@ -135,7 +136,8 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
     def execute(step: str, cmd: list[str]) -> tuple[str, subprocess.CompletedProcess, float]:
         ops.run_event(run_id, "step_started", step=step, command=shown[step])
         started = time.monotonic()
-        result = subprocess.run(cmd, cwd=ROOT, env=env, capture_output=True, text=True)
+        result = subprocess.run(cmd, cwd=ROOT, env=(envs or {}).get(step, env),
+                                capture_output=True, text=True)
         elapsed = round(time.monotonic() - started, 3)
         if result.returncode:
             ops.run_event(
@@ -561,7 +563,9 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
         ]
         if not args.skip_tests:
             gates.append(("tests", [sys.executable, "-m", "pytest", "-q"]))
-        run_verify_parallel(gates, read_env, run_id)
+        # pytest builds throwaway stores of its own; the round's inherited lock is not theirs, so
+        # the test gate runs with the plain environment (no inherited lock, no broker).
+        run_verify_parallel(gates, read_env, run_id, envs={"tests": env})
         after, tokens, excluded = doc_stats()
         committed = commit_snapshot(before, after, tokens, run_id) if args.commit else False
         if args.push:

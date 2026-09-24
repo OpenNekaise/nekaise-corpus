@@ -49,6 +49,8 @@ MUTATIONS = frozenset({
     "backend_state_set", "control_set",
 })
 MAX_REQUEST_BYTES = 256 * 1024 * 1024
+REQUEST_DEADLINE = 120.0   # seconds a client may take to send its request
+MAX_CONNECTIONS = 8
 _BATCH_ID = store._RUN_ID  # same shape as run ids: plain, bounded names
 
 
@@ -56,10 +58,16 @@ class BrokerError(store.StoreError):
     """The broker refused or failed a batch."""
 
 
-def _decode_value(call: str, kwargs: dict) -> dict:
-    if call == "backend_state_set" and isinstance(kwargs.get("value"), dict):
-        kwargs["value"] = store.BackendState(**kwargs["value"])
-    return kwargs
+def _bind(call: str, args: list, kwargs: dict) -> dict:
+    """Bind a request to the store method's signature (so positional and keyword forms decode the
+    same way) and rebuild the dataclass arguments JSON flattened."""
+    import inspect
+    bound = inspect.signature(getattr(store.WriteView, call)).bind(None, *args, **kwargs)
+    arguments = dict(bound.arguments)
+    arguments.pop("self")
+    if call == "backend_state_set" and isinstance(arguments.get("value"), dict):
+        arguments["value"] = store.BackendState(**arguments["value"])
+    return arguments
 
 
 class Broker:
@@ -73,20 +81,47 @@ class Broker:
         os.chmod(self._dir, 0o700)
         self.path = self._dir / "sock"
         self._lock = threading.Lock()  # one transaction at a time: transactions do not nest
+        self._slots = threading.BoundedSemaphore(MAX_CONNECTIONS)
+        self._conns: set[socket.socket] = set()
+        self._conns_lock = threading.Lock()
+        self._closing = False
         broker = self
 
         class Handler(socketserver.StreamRequestHandler):
-            def handle(self):
-                line = self.rfile.readline(MAX_REQUEST_BYTES + 1)
-                try:
-                    if len(line) > MAX_REQUEST_BYTES:
-                        raise BrokerError("batch too large")
-                    reply = broker._execute(json.loads(line))
-                except Exception as exc:  # every failure is reported, never swallowed
-                    reply = {"ok": False, "error": f"{type(exc).__name__}: {exc}"}
-                self.wfile.write((json.dumps(reply) + "\n").encode())
+            def setup(self):
+                self.request.settimeout(REQUEST_DEADLINE)  # a stalled client cannot hold us
+                super().setup()
 
-        self._server = socketserver.ThreadingUnixStreamServer(str(self.path), Handler)
+            def handle(self):
+                if not broker._slots.acquire(blocking=False):
+                    self.wfile.write(b'{"ok": false, "error": "BrokerError: too many connections"}\n')
+                    return
+                with broker._conns_lock:
+                    broker._conns.add(self.request)
+                try:
+                    try:
+                        line = self.rfile.readline(MAX_REQUEST_BYTES + 1)
+                        if broker._closing:
+                            raise BrokerError("broker is shutting down")
+                        if len(line) > MAX_REQUEST_BYTES:
+                            raise BrokerError("batch too large")
+                        reply = broker._execute(json.loads(line))
+                    except Exception as exc:  # every failure is reported, never swallowed
+                        reply = {"ok": False, "error": f"{type(exc).__name__}: {exc}"}
+                    try:
+                        self.wfile.write((json.dumps(reply) + "\n").encode())
+                    except OSError:
+                        pass  # the client went away; its batch outcome stands
+                finally:
+                    with broker._conns_lock:
+                        broker._conns.discard(self.request)
+                    broker._slots.release()
+
+        class Server(socketserver.ThreadingUnixStreamServer):
+            daemon_threads = True          # never join a stuck handler on shutdown
+            block_on_close = False
+
+        self._server = Server(str(self.path), Handler)
         self._thread = threading.Thread(target=self._server.serve_forever, daemon=True)
 
     def env(self) -> dict[str, str]:
@@ -111,8 +146,9 @@ class Broker:
             results = []
             with self.st.transaction(run_id, expected_version=expected, writer=self.writer) as tx:
                 for r in requests:
-                    kwargs = _decode_value(r["call"], dict(r.get("kwargs") or {}))
-                    results.append(getattr(tx, r["call"])(*(r.get("args") or []), **kwargs))
+                    arguments = _bind(r["call"], list(r.get("args") or []),
+                                      dict(r.get("kwargs") or {}))
+                    results.append(getattr(tx, r["call"])(**arguments))
             return {"ok": True, "results": results, "version": self.st.version().token}
 
     @contextmanager
@@ -121,7 +157,19 @@ class Broker:
         try:
             yield self
         finally:
+            # Stop accepting, cut every open connection (a half-sent request must not keep the
+            # round alive), then wait for an executing transaction before the caller may restore
+            # state or release the lock.
+            self._closing = True
             self._server.shutdown()
+            with self._conns_lock:
+                for conn in list(self._conns):
+                    try:
+                        conn.shutdown(socket.SHUT_RDWR)
+                    except OSError:
+                        pass
+            with self._lock:
+                pass
             self._server.server_close()
             self.path.unlink(missing_ok=True)
             os.rmdir(self._dir)

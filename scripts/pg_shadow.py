@@ -404,7 +404,33 @@ def git_digests(rev: str, repo: Path = ROOT) -> dict[str, str]:
                                           for k, v in backend_state.items()})
     out["config"] = store._digest(config)
     out["control"] = store._digest(control)
+    out["derived"] = "mismatches=0"
     return out
+
+
+DERIVED = {
+    "entries": ", id, url_norm, url_key, title_norm, title_key",
+    "manifest": ", id, url_norm, url_key, title_norm, title_key, sha256, shard, topic_key",
+    "blocklist": ", key",
+    "ledger": ", key",
+}
+
+
+def derived_ok(table: str, rec) -> bool:
+    if table == "blocklist":
+        return rec[1] == key_digest(rec[0])
+    if table == "ledger":
+        return rec[1] == key_digest(rec[0])
+    row = json.loads(rec[0])
+    want = [row["id"], *store_pg._keys_for(row)]
+    if table == "manifest":
+        sha = row.get("sha256")
+        shard, topic, _ = store.legacy_manifest_key(row)
+        want += [sha if isinstance(sha, str) and sha else None, shard, topic]
+    got = list(rec[1:])
+    got[2] = bytes(got[2]) if got[2] is not None else None
+    got[4] = bytes(got[4]) if got[4] is not None else None
+    return got == want
 
 
 def pg_digests(st: store_pg.PgStore) -> tuple[str | None, dict[str, str]]:
@@ -413,15 +439,22 @@ def pg_digests(st: store_pg.PgStore) -> tuple[str | None, dict[str, str]]:
         conn.execute("BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY")
         watermark = (conn.execute("SELECT replication FROM state").fetchone()[0] or {}).get("watermark")
         out = {}
+        derived_bad = 0
         for table, expr in (("entries", "row_text"), ("manifest", "row_text"), ("blocklist", "url"),
                             ("ledger", "row_text"), ("events", "row_text")):
             dig = MultisetDigest()
+            cols = DERIVED.get(table, "")
             with conn.cursor(name=f"verify_{table}") as cur:
                 cur.itersize = 20000
-                cur.execute(f"SELECT {expr} FROM {table}")
-                for (text,) in cur:
-                    dig.add(text)
+                cur.execute(f"SELECT {expr}{cols} FROM {table}")
+                for rec in cur:
+                    dig.add(rec[0])
+                    if cols and not derived_ok(table, rec):
+                        derived_bad += 1
             out[table] = dig.value()
+        # derived lookup/order columns must agree with the rows they are computed from; the
+        # canonical rows alone would not catch a stale url_key or a missing shard
+        out["derived"] = f"mismatches={derived_bad}"
         out["rotation"] = store._digest({n: json.loads(t) for n, t in
                                          conn.execute("SELECT name, value_text FROM rotation")})
         out["backend_state"] = store._digest({n: {"enabled": e, "reason": r} for n, e, r in
