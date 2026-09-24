@@ -598,3 +598,35 @@ def test_round_refuses_to_start_over_an_interrupted_store_transaction(tmp_path, 
 
     assert run_round.main() == 1
     assert "interrupted store transaction(s) pending: r1" in capsys.readouterr().err
+
+
+def test_round_refuses_to_run_uncommitted_while_a_shadow_is_enabled(tmp_path, monkeypatch, capsys):
+    (tmp_path / "workspace").mkdir()
+    (tmp_path / "workspace" / ".pg-shadow").write_text("dsn\nschema\n")
+    monkeypatch.setattr(run_round, "ROOT", tmp_path)
+    monkeypatch.setattr(run_round.ops, "SNAPSHOTS", tmp_path / "workspace" / "round-snapshots")
+    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
+    monkeypatch.setattr(run_round.ops, "run_event", lambda *args, **kwargs: None)
+    for name in ("run_finders_parallel", "run_command", "commit_snapshot", "doc_stats"):
+        monkeypatch.setattr(run_round, name,
+                            lambda *a, **k: pytest.fail("no round step may run"))
+    monkeypatch.setattr(sys, "argv", ["run_round.py", "--skip-discovery", "--allow-dirty"])
+
+    assert run_round.main() == 1
+    assert "rounds must --commit" in capsys.readouterr().err
+
+
+def test_round_refuses_to_run_uncommitted_while_a_shadow_is_enabled(tmp_path, monkeypatch, capsys):
+    (tmp_path / "workspace").mkdir()
+    (tmp_path / "workspace" / ".pg-shadow").write_text("dsn\nschema\n")
+    monkeypatch.setattr(run_round, "ROOT", tmp_path)
+    monkeypatch.setattr(run_round.ops, "SNAPSHOTS", tmp_path / "workspace" / "round-snapshots")
+    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
+    monkeypatch.setattr(run_round.ops, "run_event", lambda *args, **kwargs: None)
+    for name in ("run_finders_parallel", "run_command", "commit_snapshot", "doc_stats"):
+        monkeypatch.setattr(run_round, name,
+                            lambda *a, **k: pytest.fail("no round step may run"))
+    monkeypatch.setattr(sys, "argv", ["run_round.py", "--skip-discovery", "--allow-dirty"])
+
+    assert run_round.main() == 1
+    assert "rounds must --commit" in capsys.readouterr().err

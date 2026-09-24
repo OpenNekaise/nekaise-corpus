@@ -9,6 +9,7 @@ a durable git commit, so the shadow replays COMMITS, never the working tree:
     python scripts/pg_shadow.py sync                    # replay first-parent commits since the watermark
     python scripts/pg_shadow.py verify [--commit REV]   # compare the shadow with git at its watermark
     python scripts/pg_shadow.py status
+    python scripts/pg_shadow.py enable                  # under the round lock: require --commit rounds
 
 * Only git objects are read (`git show REV:path`), so no round lock is needed and a round in
   progress is invisible until it commits.
@@ -163,21 +164,25 @@ def replay(conn, st: store_pg.PgStore, parent: str | None, commit: str, paths: l
     with conn.cursor() as cur:
         for kind in ("entries", "manifest"):
             files = by_kind.get(kind, [])
-            new_ids: set[str] = set()
-            for p in files:
-                new_ids.update(new(p, kind))
+            # Only ids that leave or enter a file are remembered across files, so memory is
+            # bounded by one file plus the size of the change: a row that moves between shards
+            # both departs and arrives and is therefore updated, never deleted.
+            departed: set[str] = set()
+            arrived: set[str] = set()
             for n, p in enumerate(files, 1):
                 before, after = old(p, kind), new(p, kind)
-                gone = sorted(i for i in before if i not in new_ids)
-                if gone:
-                    cur.execute(f"DELETE FROM {kind} WHERE id = ANY(%s)", [gone])
+                departed.update(i for i in before if i not in after)
+                arrived.update(i for i in after if i not in before)
                 puts = [r for i, r in after.items() if not store.same_row(before.get(i), r)]
                 for i in range(0, len(puts), 5000):
                     _put_rows(cur, kind, puts[i:i + 5000])
                 stats[f"{kind}_put"] += len(puts)
-                stats[f"{kind}_del"] += len(gone)
                 if log and n % 25 == 0:
                     log(f"  {kind}: {n}/{len(files)} files")
+            gone = sorted(departed - arrived)
+            if gone:
+                cur.execute(f"DELETE FROM {kind} WHERE id = ANY(%s)", [gone])
+            stats[f"{kind}_del"] += len(gone)
         for p in by_kind.get("blocklist", []):
             b, a = set(old(p, "blocklist")), set(new(p, "blocklist"))
             if b - a:
@@ -201,9 +206,10 @@ def replay(conn, st: store_pg.PgStore, parent: str | None, commit: str, paths: l
                     counts.update(canonical_row(r) for r in new(p, "ledger"))
             else:
                 counts = Counter()
-                for p in ledger_files:
-                    counts.update(canonical_row(r) for r in new(p, "ledger"))
-                    counts.subtract(canonical_row(r) for r in old(p, "ledger"))
+                for p in ledger_files:  # keep only each file's net change
+                    diff = Counter(canonical_row(r) for r in new(p, "ledger"))
+                    diff.subtract(canonical_row(r) for r in old(p, "ledger"))
+                    counts.update({t: n for t, n in diff.items() if n})
             for text, n in sorted(counts.items()):
                 key = key_digest(text)
                 if n > 0:
@@ -217,15 +223,17 @@ def replay(conn, st: store_pg.PgStore, parent: str | None, commit: str, paths: l
                 stats["ledger"] += abs(n)
         journal = by_kind.get("events", [])
         if journal:
-            before_ev, after_ev = {}, {}
-            for p in journal:
-                before_ev.update({e["seq"]: e for e in old(p, "events")})
-                after_ev.update({e["seq"]: e for e in new(p, "events")})
-            for seq, e in before_ev.items():
-                if seq not in after_ev or not store.same_row(e, after_ev[seq]):
+            removed, appeared = {}, {}
+            for p in journal:  # per file, remembering only events that left or entered it
+                b = {e["seq"]: e for e in old(p, "events")}
+                a = {e["seq"]: e for e in new(p, "events")}
+                removed.update({q: e for q, e in b.items() if not store.same_row(e, a.get(q))})
+                appeared.update({q: e for q, e in a.items() if not store.same_row(e, b.get(q))})
+            for seq, e in removed.items():  # an event may only move between files unchanged
+                if not store.same_row(e, appeared.get(seq)):
                     raise SystemExit(f"{commit[:10]} rewrites or removes journal event {seq}; the "
                                      "journal is append-only, re-import required")
-            added = [after_ev[s] for s in sorted(set(after_ev) - set(before_ev))]
+            added = [appeared[q] for q in sorted(set(appeared) - set(removed))]
             cur.executemany("INSERT INTO events (seq, run_id, op, row_text) VALUES (%s,%s,%s,%s)",
                             [(e["seq"], e["run_id"], e["op"], canonical_row(e)) for e in added])
             stats["events"] += len(added)
@@ -267,8 +275,13 @@ def do_import(st: store_pg.PgStore, rev: str, repo: Path = ROOT, log=print) -> N
     with st.writer(timeout=60) as w:
         conn = st._writer_conn(w)
         with conn.transaction():
-            if _watermark(conn) is not None or conn.execute(
-                    "SELECT EXISTS (SELECT 1 FROM entries UNION ALL SELECT 1 FROM manifest)").fetchone()[0]:
+            occupied = conn.execute(
+                "SELECT EXISTS (SELECT 1 FROM entries UNION ALL SELECT 1 FROM manifest UNION ALL "
+                "SELECT 1 FROM blocklist UNION ALL SELECT 1 FROM ledger UNION ALL SELECT 1 FROM "
+                "events UNION ALL SELECT 1 FROM rotation UNION ALL SELECT 1 FROM backend_state "
+                "UNION ALL SELECT 1 FROM replication_receipts)").fetchone()[0]
+            if _watermark(conn) is not None or occupied or conn.execute(
+                    "SELECT generation FROM state").fetchone()[0] != 0:
                 raise SystemExit("schema is not empty; import only into a fresh schema")
             stats = replay(conn, st, None, commit, tracked_paths(commit, repo), repo, log)
             _advance(conn, None, commit, stats,
@@ -410,9 +423,25 @@ def do_verify(st: store_pg.PgStore, repo: Path = ROOT, log=print) -> bool:
     return not bad
 
 
+def enable(dsn: str, schema: str, repo: Path = ROOT) -> None:
+    """Activate capture: under the canonical round lock, with every tracked change committed,
+    write the marker that makes run_round refuse uncommitted rounds. Everything before this point
+    is in git, so import + sync cover it; everything after is committed by construction."""
+    import ops
+    with ops.named_lock("corpus-round", timeout=600, workspace=repo / "workspace"):
+        if dirty := [l for l in git("status", "--porcelain", "--", *TRACKED, repo=repo)
+                     .splitlines() if l]:
+            raise SystemExit(f"{len(dirty)} uncommitted tracked change(s); commit or recover "
+                             "them before enabling the shadow")
+        marker = repo / "workspace" / ".pg-shadow"
+        marker.parent.mkdir(parents=True, exist_ok=True)
+        ops.atomic_write_text(marker, f"{dsn}\n{schema}\n")
+    print(f"shadow capture enabled at {rev_parse('HEAD', repo)[:10]}")
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    ap.add_argument("command", choices=("import", "sync", "verify", "status"))
+    ap.add_argument("command", choices=("import", "sync", "verify", "status", "enable"))
     ap.add_argument("--commit", default="HEAD")
     ap.add_argument("--limit", type=int, help="sync at most N commits")
     ap.add_argument("--dsn", default=os.environ.get("NEKAISE_PG_DSN", store_pg.DEFAULT_DSN))
@@ -421,8 +450,8 @@ def main(argv=None) -> int:
     st = store_pg.PgStore(ROOT, dsn=args.dsn, schema=args.schema)
     if args.command == "import":
         do_import(st, args.commit)
-        SHADOW_MARKER.parent.mkdir(parents=True, exist_ok=True)
-        SHADOW_MARKER.write_text(f"{args.dsn}\n{args.schema}\n")
+    elif args.command == "enable":
+        enable(args.dsn, args.schema)
     elif args.command == "sync":
         do_sync(st, args.commit, limit=args.limit)
     elif args.command == "verify":

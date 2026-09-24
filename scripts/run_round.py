@@ -462,9 +462,6 @@ def main() -> int:
         return 0
     if args.push and not args.commit:
         ap.error("--push requires --commit")
-    if (ROOT / "workspace" / ".pg-shadow").exists() and not args.commit and not args.recover:
-        ap.error("a PostgreSQL shadow replicates commits (workspace/.pg-shadow): rounds must "
-                 "--commit, or the shadow silently misses their changes")
     if (args.commit or args.push) and args.allow_dirty:
         ap.error("--allow-dirty cannot be combined with --commit/--push")
     if args.push:
@@ -485,6 +482,11 @@ def main() -> int:
     committed = False
     try:
         with ops.named_lock("corpus-round", timeout=args.lock_timeout):
+            if (ROOT / "workspace" / ".pg-shadow").exists() and not args.commit:
+                raise RuntimeError(
+                    "a PostgreSQL shadow replicates commits (workspace/.pg-shadow): rounds must "
+                    "--commit, or the shadow silently misses their changes"
+                )
             if store_pending := store.FileStore(ROOT).pending_transactions():
                 raise RuntimeError(
                     "interrupted store transaction(s) pending: "

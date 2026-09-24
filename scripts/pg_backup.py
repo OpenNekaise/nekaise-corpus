@@ -59,14 +59,30 @@ def base() -> Path:
     return dest
 
 
+def pin_recovery_point() -> tuple[str, str]:
+    """Sample the live state and create a named restore point at the same instant: both happen
+    while holding the store's writer lock, so no shadow sync or store writer commits between
+    them. Returns (restore point name, expected counts)."""
+    import psycopg
+    name = "drill-" + time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
+    with psycopg.connect(f"host={SOCKET} dbname=nekaise", autocommit=True) as conn:
+        conn.execute("SELECT pg_advisory_lock(hashtext('nekaise-writer:nekaise'))")
+        try:
+            live = "|".join("" if v is None else str(v) for v in conn.execute(COUNTS).fetchone())
+            conn.execute("SELECT pg_create_restore_point(%s)", [name])
+            conn.execute("SELECT pg_switch_wal()")  # make the segment holding it archivable
+        finally:
+            conn.execute("SELECT pg_advisory_unlock(hashtext('nekaise-writer:nekaise'))")
+    return name, live
+
+
 def restore_test() -> bool:
     bases = sorted(p for p in BASES.iterdir() if p.is_dir() and not p.name.startswith("."))
     if not bases:
         raise SystemExit("no base backup to restore")
     latest = bases[-1]
     run(PGBIN / "pg_verifybackup", "-n", "-m", latest / "backup_manifest", latest)
-    psql(SOCKET, "SELECT pg_switch_wal()", "postgres")  # make the live tail archivable
-    live = psql(SOCKET, COUNTS)
+    target, live = pin_recovery_point()
     time.sleep(5)
     work = Path(tempfile.mkdtemp(prefix="restore-test-", dir=SCRATCH))
     data, sock = work / "data", work / "run"
@@ -77,7 +93,7 @@ def restore_test() -> bool:
         with (data / "postgresql.conf").open("a") as f:
             f.write(f"\n# restore drill\nunix_socket_directories = '{sock}'\narchive_mode = off\n"
                     f"shared_buffers = 1GB\nrestore_command = 'cp {WAL}/%f %p'\n"
-                    "recovery_target_action = 'promote'\n")
+                    f"recovery_target_name = '{target}'\nrecovery_target_action = 'promote'\n")
         (data / "recovery.signal").touch()
         run(PGBIN / "pg_ctl", "-D", data, "-l", work / "log", "-w", "-t", "900", "start")
         for _ in range(450):

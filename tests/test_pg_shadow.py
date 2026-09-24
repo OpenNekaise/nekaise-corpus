@@ -189,3 +189,43 @@ def test_verify_hashes_the_pinned_config_documents_themselves(env):
         conn.execute("UPDATE config SET doc_text = '{\"version\": 1, \"restrictions\": {\"x\": 1}}' "
                      "WHERE name = 'eligibility.json'")
     assert not pg_shadow.do_verify(st, repo.path, log=lambda *_: None)
+
+
+def test_import_refuses_any_prior_operational_state(env):
+    pg_shadow, st, repo, c1 = env
+    with st.writer() as w:  # an earlier store transaction that only touched the blocklist
+        with st.transaction("r0", expected_version=st.version(), writer=w) as tx:
+            tx.blocklist_add(["https://stale.example"])
+    with pytest.raises(SystemExit, match="not empty"):
+        pg_shadow.do_import(st, c1, repo.path, log=lambda *_: None)
+
+
+def test_enable_requires_committed_state_under_the_round_lock(env):
+    pg_shadow, st, repo, c1 = env
+    repo.write("pruned_urls.txt", "https://uncommitted\n")
+    with pytest.raises(SystemExit, match="uncommitted tracked change"):
+        pg_shadow.enable("dsn", "s", repo.path)
+    assert not (repo.path / "workspace" / ".pg-shadow").exists()
+    repo.commit("commit it")
+    pg_shadow.enable("dsn", "s", repo.path)
+    assert (repo.path / "workspace" / ".pg-shadow").read_text() == "dsn\ns\n"
+
+
+def test_import_refuses_any_prior_operational_state(env):
+    pg_shadow, st, repo, c1 = env
+    with st.writer() as w:  # an earlier store transaction that only touched the blocklist
+        with st.transaction("r0", expected_version=st.version(), writer=w) as tx:
+            tx.blocklist_add(["https://stale.example"])
+    with pytest.raises(SystemExit, match="not empty"):
+        pg_shadow.do_import(st, c1, repo.path, log=lambda *_: None)
+
+
+def test_enable_requires_committed_state_under_the_round_lock(env):
+    pg_shadow, st, repo, c1 = env
+    repo.write("pruned_urls.txt", "https://uncommitted\n")
+    with pytest.raises(SystemExit, match="uncommitted tracked change"):
+        pg_shadow.enable("dsn", "s", repo.path)
+    assert not (repo.path / "workspace" / ".pg-shadow").exists()
+    repo.commit("commit it")
+    pg_shadow.enable("dsn", "s", repo.path)
+    assert (repo.path / "workspace" / ".pg-shadow").read_text() == "dsn\ns\n"
