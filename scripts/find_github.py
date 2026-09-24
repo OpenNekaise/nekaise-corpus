@@ -175,16 +175,14 @@ REPOS = [
     # Bibliography/ is BibTeX-in-.tex and FIGURES/ holds TikZ drawings: excluded.
     {"repo": "firemodels/fds", "license": "public-domain", "topic": "architecture",
      "include": ["Manuals/", "README"], "docs": ["tex"],
-     "exclude": ["Manuals/Bibliography/", "/FIGURES/", "/SCRIPT_FIGURES/"], "cap": 80},
+     "exclude": ["Manuals/Bibliography/", "/FIGURES/", "/SCRIPT_FIGURES/", "Appendix_Graphs",
+                 "Appendix_Only"], "cap": 80},
     {"repo": "firemodels/cfast", "license": "public-domain", "topic": "architecture",
      "include": ["Manuals/", "README"], "docs": ["tex"],
      "exclude": ["Manuals/Bibliography/", "/FIGURES/", "/SCRIPT_FIGURES/", "Appendix_Graphs",
                  "Appendix_Only"], "cap": 60},
-    # BSD-3 (LICENSE.md, "URBANopt ... Alliance for Energy Innovation"): the Jekyll/Markdown
-    # sources of docs.urbanopt.net — take these instead of crawling the rendered site.
-    {"repo": "urbanopt/urbanopt.github.io", "license": "open", "topic": "urban", "cap": 150},
-    # MIT: RL building-control environments on EnergyPlus (docs/source/*.rst).
-    {"repo": "ugr-sail/sinergym", "license": "open", "topic": "controls_bas"},
+    # MIT: RL building-control environments on EnergyPlus (docs/source/pages/*.rst, ~132 files).
+    {"repo": "ugr-sail/sinergym", "license": "open", "topic": "controls_bas", "cap": 150},
     # MIT (moved from intelligent-environments-lab/CityLearn): demand-response RL environment.
     {"repo": "citylearn-project/CityLearn", "license": "open", "topic": "controls_bas"},
     # MIT: EnergyPlus IDF scripting (eppy), geometry (geomeppy), UMI/archetype templates.
@@ -195,7 +193,8 @@ REPOS = [
     {"repo": "ladybug-tools/honeybee-energy", "license": "open", "topic": "building_energy"},
     {"repo": "ladybug-tools/honeybee-radiance", "license": "open", "topic": "building_energy"},
     # NOT listed (checked 2026-09-24): lbl-srg/obc has no LICENSE file; mosaik lives on GitLab
-    # (LGPL-2.1, crawl mosaik.readthedocs.io instead); BESOS lives on GitLab.
+    # (LGPL-2.1, crawl mosaik.readthedocs.io instead); BESOS lives on GitLab; urbanopt.github.io
+    # keeps its Jekyll pages outside doc/ dirs (a walk yields 3 files) -> crawl docs.urbanopt.net.
 ]
 
 # Extra documentation kinds a repo may opt into with `docs: [...]` (beyond md/rst prose). They
