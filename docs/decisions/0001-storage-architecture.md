@@ -286,12 +286,18 @@ whole discovery phase in one transaction; runtime exhaustion is separated from c
   exit, idempotent) stops accepting, cuts connections, waits for an executing transaction and
   removes the socket. On the main thread it swaps the Python handlers of SIGTERM/SIGINT/
   SIGALRM/SIGHUP for one that only records the signal for the whole drain (third review: a
-  per-step retry still let a signal delivered between steps escape), then restores the handlers
-  with those signals blocked and re-raises the recorded ones, which propagate once the broker is
-  drained — so neither the round nor the maintainer releases its writer or locks while a
-  transaction runs. Off the main thread no handler can run in the draining thread (Python runs
-  handlers on the main thread only); brokers are served and drained on their owner's thread.
-  Regression: a signal delivered before and after each drain step. A cut connection loses
+  per-step retry still let a signal delivered between steps escape), then restores every
+  original handler and replays the recorded signals, re-raising the first interrupt once the
+  broker is drained — so neither the round nor the maintainer releases its writer or locks while
+  a transaction runs. Restoration does not rely on a thread mask (fourth review: a signal landing
+  on an unblocked worker thread still runs the restored SIGTERM handler on the main thread and
+  aborted the remaining restores, leaving later signals swallowed by the recorder):
+  `_SignalDeferral.finish()` is a resumable state machine that retries each restore until it is
+  recorded as done, consumes each replay before raising it, catches every exception and keeps the
+  first, and `drain()` resumes it until done. Off the main thread no handler can run in the
+  draining thread (Python runs handlers on the main thread only); brokers are served and drained
+  on their owner's thread. Regressions: a signal before and after each drain step, and a SIGTERM
+  sent to a live worker thread right after each handler restore. A cut connection loses
   only the reply; the transaction's outcome stands and an identical retry is a no-op.
 - **Settled state is judged after draining (second review, P2).** Both maintenance phases drain
   their broker before `update_growth_block()` and before recording the outcome, still under both

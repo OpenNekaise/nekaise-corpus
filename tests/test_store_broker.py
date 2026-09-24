@@ -287,6 +287,74 @@ def test_a_signal_at_every_drain_boundary_is_deferred_until_drained(tmp_path, mo
     assert st.blocklist_path.read_text().endswith("https://s.org/2\n")
 
 
+@pytest.mark.parametrize("after", store_broker.DEFERRED_SIGNALS,
+                         ids=lambda s: __import__("signal").Signals(s).name)
+def test_a_signal_right_after_a_handler_restore_cannot_abort_restoration(tmp_path, monkeypatch,
+                                                                         after):
+    """Codex fourth review P2: with a live worker thread, a real process-directed SIGTERM
+    injected immediately after any one handler is restored (SIGTERM's own handler is restored
+    first, so it raises) must not leave the other handlers pointing at the recorder. Every
+    handler ends up original, the drain completes, and the interrupt propagates once."""
+    import signal
+    import threading
+    import time
+    st = file_store(tmp_path / "repo")
+    write(st, "seed", seed)
+    raised = []
+
+    def on_term(signum, frame):
+        raised.append(signum)
+        raise KeyboardInterrupt("terminated")
+    before = {s: signal.getsignal(s) for s in store_broker.DEFERRED_SIGNALS}
+    real_signal = signal.signal
+    real_signal(signal.SIGTERM, on_term)
+    originals = {s: signal.getsignal(s) for s in store_broker.DEFERRED_SIGNALS}
+    fired = []
+
+    def spy(sig, handler):
+        old = real_signal(sig, handler)
+        if sig == after and handler is originals[after] and not fired:
+            fired.append(sig)
+            # the signal lands on the live worker thread (whose mask is unblocked); Python then
+            # runs the now-restored SIGTERM handler on the main thread, right here
+            signal.pthread_kill(worker.ident, signal.SIGTERM)
+            time.sleep(0.05)
+        return old
+    stop = threading.Event()
+    worker = threading.Thread(target=lambda: stop.wait(10), daemon=True)  # a live other thread
+    worker.start()
+    state = {}
+    try:
+        monkeypatch.setattr(signal, "signal", spy)
+        with st.writer(round_id="rnd-restore") as w:
+            broker = store_broker.Broker(st, w, "rnd-restore")
+            real_wait = broker._wait_idle
+
+            def wait_and_signal():  # a SIGTERM during the drain is recorded, then replayed
+                os.kill(os.getpid(), signal.SIGTERM)
+                time.sleep(0.05)
+                real_wait()
+            broker._wait_idle = wait_and_signal
+            with pytest.raises(KeyboardInterrupt) as caught:
+                with broker.serving():
+                    pass
+            state.update(drained=broker._drained, socket_gone=not broker._dir.exists(),
+                         writer_live=w.nonce in st._live_tokens)
+        monkeypatch.setattr(signal, "signal", real_signal)
+        time.sleep(0.05)  # nothing may still be pending and swallowed
+        handlers = {s: signal.getsignal(s) for s in store_broker.DEFERRED_SIGNALS}
+    finally:
+        stop.set()
+        signal.signal = real_signal
+        for s, h in before.items():
+            real_signal(s, h if h is not None else signal.SIG_DFL)
+    assert fired == [after]
+    assert handlers == originals  # none left pointing at the recorder
+    assert state == {"drained": True, "socket_gone": True, "writer_live": True}
+    assert str(caught.value) == "terminated"
+    assert 1 <= len(raised) <= 2 and set(raised) == {signal.SIGTERM}  # replayed and injected
+
+
 def test_drain_off_the_main_thread_needs_no_signal_handlers(tmp_path):
     import threading
     st = file_store(tmp_path / "repo")

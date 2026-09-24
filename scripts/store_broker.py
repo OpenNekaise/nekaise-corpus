@@ -66,33 +66,54 @@ DEFERRED_SIGNALS = tuple(getattr(signal, n) for n in ("SIGTERM", "SIGINT", "SIGA
                          if hasattr(signal, n))
 
 
-@contextmanager
-def _deferred_signals():
-    """Record DEFERRED_SIGNALS instead of handling them while the block runs (main thread only),
-    then restore the handlers and re-raise each recorded signal to them."""
-    if threading.current_thread() is not threading.main_thread():
-        yield
-        return
-    pending: list[int] = []
-    previous = {}
-    try:
-        # inside the try: an interrupt between two swaps still restores the swapped ones
+class _SignalDeferral:
+    """Record DEFERRED_SIGNALS instead of handling them (main thread only), then restore every
+    original handler and replay the recorded signals to them.
+
+    Restoration must complete whatever happens: once a handler is restored, a signal delivered
+    to ANY thread (a thread mask protects only its own thread) makes Python run that handler on
+    the main thread, raising anywhere in this code. So finish() is a resumable state machine —
+    each restore is retried until recorded as done, each replay is consumed before it is raised
+    (so a raising handler cannot make it loop), every exception is caught and only the first is
+    kept — and it is idempotent, so a caller retrying after an escape resumes where it stopped.
+    """
+
+    def __init__(self):
+        self.previous: dict[int, object] = {}  # signal -> its original handler
+        self.pending: list[int] = []
+        self._restored: set[int] = set()
+        self._replay: list[int] | None = None
+        self.done = False
+
+    def _record(self, signum, frame) -> None:
+        self.pending.append(signum)
+
+    def start(self) -> None:
+        """Swap every handler for the recorder (resumable: the original is saved first)."""
         for sig in DEFERRED_SIGNALS:
-            previous[sig] = signal.getsignal(sig)  # recorded before the swap: never lost
-            signal.signal(sig, lambda signum, frame: pending.append(signum))
-        yield
-    finally:
-        # Restore and re-raise with the signals blocked for this thread, so a fresh signal can
-        # neither interrupt the restore half-way nor overtake the recorded ones; unblocking
-        # delivers them all to the restored handlers.
-        mask = signal.pthread_sigmask(signal.SIG_BLOCK, DEFERRED_SIGNALS)
-        try:
-            for sig, handler in previous.items():
-                signal.signal(sig, handler if handler is not None else signal.SIG_DFL)
-            for sig in dict.fromkeys(pending):
-                signal.raise_signal(sig)  # pending until the mask is restored
-        finally:
-            signal.pthread_sigmask(signal.SIG_SETMASK, mask)
+            if sig not in self.previous:
+                self.previous[sig] = signal.getsignal(sig)
+            signal.signal(sig, self._record)
+
+    def finish(self) -> BaseException | None:
+        """Restore all handlers, then replay the recorded signals. Returns the first exception a
+        restored handler raised meanwhile (to be re-raised by the caller), else None."""
+        first: BaseException | None = None
+        while not self.done:
+            try:
+                for sig, handler in self.previous.items():
+                    if sig not in self._restored:
+                        signal.signal(sig, handler if handler is not None else signal.SIG_DFL)
+                        self._restored.add(sig)
+                if self._replay is None:  # every recorder is gone: nothing more is recorded
+                    self._replay = list(dict.fromkeys(self.pending))
+                while self._replay:
+                    signal.raise_signal(self._replay.pop(0))  # its handler runs here
+                self.done = True
+            except BaseException as exc:  # noqa: B036 - a restored handler's interrupt
+                if first is None:
+                    first = exc
+        return first
 
 
 def _bind(call: str, args: list, kwargs: dict) -> dict:
@@ -123,6 +144,7 @@ class Broker:
         self._conns_lock = threading.Lock()
         self._closing = False
         self._drained = False
+        self._deferral: _SignalDeferral | None = None
         broker = self
 
         class Handler(socketserver.StreamRequestHandler):
@@ -221,34 +243,47 @@ class Broker:
         no Python-level interrupt may surface anywhere inside it. On the main thread the handlers
         of DEFERRED_SIGNALS are swapped for one that only records the signal (a C-level handler
         on any thread just sets a flag; the Python handler then runs on the main thread, and it
-        is ours), so nothing is raised inside or between the steps; afterwards the previous
-        handlers are restored and each recorded signal is re-raised to them, so it propagates
-        normally once the broker is drained. A KeyboardInterrupt/SystemExit raised in the
-        instant before the swap is caught by the retry loop and re-raised at the end.
+        is ours), so nothing is raised inside or between the steps; afterwards every original
+        handler is restored and each recorded signal replayed to it (_SignalDeferral.finish:
+        complete even when a restored handler raises part-way), and the first interrupt is
+        re-raised once the broker is drained. One raised in the instant before the swap is
+        caught by the retry loop and re-raised at the end.
 
         Off the main thread no handler can be swapped (signal.signal is main-thread only) and
         none is needed: Python runs signal handlers on the main thread only, so they cannot
         unwind a stack owned by another thread. Serve and drain a broker on the thread that owns
         its writer (run_round and the maintainer both do so on the main thread)."""
         interrupted: BaseException | None = None
-        while True:
-            try:
-                self._drain_deferred()
-                break
-            except (KeyboardInterrupt, SystemExit) as exc:
-                interrupted = interrupted or exc
+        try:
+            while True:
+                try:
+                    self._drain_steps()
+                    break
+                except (KeyboardInterrupt, SystemExit) as exc:  # only before the swap
+                    interrupted = interrupted or exc
+        finally:
+            # Restoration completes even if a step failed; finish() catches what restored
+            # handlers raise, and the loop resumes it if something escaped in between.
+            while self._deferral is not None and not self._deferral.done:
+                try:
+                    first = self._deferral.finish()
+                    interrupted = interrupted or first
+                except (KeyboardInterrupt, SystemExit) as exc:
+                    interrupted = interrupted or exc
         if interrupted is not None:
             raise interrupted
 
-    def _drain_deferred(self) -> None:
+    def _drain_steps(self) -> None:
         if self._drained:
             return
-        with _deferred_signals():
-            self._closing = True
-            for step in (self._stop_server, self._cut_connections, self._wait_idle,
-                         self._cleanup):
-                step()
-            self._drained = True
+        if threading.current_thread() is threading.main_thread():
+            if self._deferral is None:
+                self._deferral = _SignalDeferral()
+            self._deferral.start()
+        self._closing = True
+        for step in (self._stop_server, self._cut_connections, self._wait_idle, self._cleanup):
+            step()
+        self._drained = True
 
     def _stop_server(self) -> None:
         if self._thread.is_alive():
