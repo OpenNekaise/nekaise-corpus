@@ -389,7 +389,12 @@ def pending_repos(repos: list[dict], done: set[str], code_done: set[str],
     out = []
     for spec in repos:
         bucket = _bucket(spec)
-        if (bucket not in done or (spec.get("code") and bucket not in code_done)
+        kinds = spec.get("docs") or ()
+        # A recorded pass for EVERY requested doc kind proves a successful walk even when the
+        # repo yielded zero files (no registry/manifest/blocklist row can exist to say so).
+        walked = bucket in done or (bool(kinds) and all(k in passes.get(bucket, {})
+                                                        for k in kinds))
+        if (not walked or (spec.get("code") and bucket not in code_done)
                 or missing_doc_kinds(spec, formats, passes)):
             out.append(spec)
     return out

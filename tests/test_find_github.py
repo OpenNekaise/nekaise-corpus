@@ -236,6 +236,24 @@ def test_successfully_empty_pass_is_recorded_and_not_rewalked(tmp_path):
     assert find_github.pending_repos([spec], set(formats), set(), formats, passes) == []
 
 
+def test_fully_empty_repo_with_recorded_passes_is_done(tmp_path):
+    # Nothing at all was ever registered, manifested or blocklisted for this repo: only the
+    # recorded passes can prove the walk succeeded.
+    passes_path = tmp_path / "github_passes.json"
+    spec = {"repo": "example/empty", "docs": ["tex", "man"]}
+
+    assert find_github.pending_repos([spec], set(), set(), {}, {}) == [spec]
+    find_github.record_passes([spec], "2026-09-24", passes_path)
+    passes = find_github.load_passes(passes_path)
+    assert find_github.pending_repos([spec], set(), set(), {}, passes) == []
+    # a pass recorded for only SOME requested kinds is not a completed walk
+    partial = {"gh_empty": {"tex": "2026-09-24"}}
+    assert find_github.pending_repos([spec], set(), set(), {}, partial) == [spec]
+    # an opted-in code pass still needs its own evidence
+    code_spec = {"repo": "example/empty", "docs": ["tex", "man"], "code": ["py"]}
+    assert find_github.pending_repos([code_spec], set(), set(), {}, passes) == [code_spec]
+
+
 def test_main_records_passes_only_for_walked_repos_with_append(tmp_path, monkeypatch):
     specs = [{"repo": "ok/walked", "docs": ["tex"], "license": "open", "topic": "urban"},
              {"repo": "bad/failed", "docs": ["tex"], "license": "open", "topic": "urban"}]
