@@ -84,6 +84,10 @@ BACKEND_STATE_FILE = "backend_state.json"
 # Runtime control documents: whole JSON objects that the loop maintains (not configuration, not
 # rows), stored and replicated as-is. github_passes.json records find_github's completed passes.
 CONTROL_FILES = ("github_passes.json",)
+# A journal file rolls over to the next one of the same UTC day beyond this size, so no file nears
+# the 80 MiB publication gate (check_contracts.MAX_CONTROL_FILE_BYTES) and no transaction rewrites
+# a large file. Callers keep single transactions far below it (bounded batches).
+JOURNAL_ROLL_BYTES = 32 * 1024 * 1024
 
 
 class Table(str, Enum):
@@ -640,6 +644,23 @@ def _write_durable(path: Path, data: bytes) -> None:
     ops.atomic_write_bytes(path, data)  # fsyncs the file and its directory entry
 
 
+def _last_line(path: Path, chunk: int = 1 << 16) -> bytes:
+    """The last non-empty line of a file, read from its end (journal files grow by the day)."""
+    with path.open("rb") as f:
+        end = f.seek(0, os.SEEK_END)
+        buf = b""
+        pos = end
+        while pos > 0:
+            step = min(chunk, pos)
+            pos -= step
+            f.seek(pos)
+            buf = f.read(step) + buf
+            stripped = buf.rstrip()
+            if b"\n" in stripped:
+                return stripped.rsplit(b"\n", 1)[-1]
+        return buf.rstrip()
+
+
 _RUN_ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]{0,127}")
 
 
@@ -692,6 +713,219 @@ def _is_ancestor(pid: int) -> bool:
         if cur <= 1:
             return pid == cur
     return False
+
+
+# --- routed manifest shards (stage 3, step 6) ------------------------------------------------------
+
+def _manifest_key(row: Mapping) -> tuple:
+    """registry.manifest_shard_text's order within a shard."""
+    return (row.get("topic", ""), row["id"])
+
+
+class _ManifestShard:
+    """One manifest shard file, read as text and parsed only where asked.
+
+    Keyed reads and targeted writes of a few rows must not parse (or re-serialize) whole shards:
+    25 rows of a loader checkpoint touch ~25 shards and ~600 MB (CN patents, 2026-09-24), which
+    costs ~14 s to parse and render in full. A shard file is always registry.manifest_shard_text
+    output — one canonical json.dumps(row, ensure_ascii=False) line per row, sorted by (topic, id),
+    every row routed to the file; FileStore.validate_layout (lint, every round) checks order and
+    routing. So a row is found by its canonical `"id": <json>` pair, and a change is spliced in:
+    changed rows' lines are removed, new lines are inserted at their sorted position (binary
+    search parses O(log n) lines), and every other line is kept byte for byte — exactly the text a
+    full re-render would produce."""
+
+    SPLICE_FRACTION = 32  # changes above 1/32 of a shard's lines re-render it in full
+
+    def __init__(self, path: Path, stem: str):
+        self.path, self.stem = path, stem
+        self.text = path.read_text() if path.exists() else ""
+        self._found: dict[str, tuple[dict, int] | None] = {}  # id -> (row, line start offset)
+        self._rows: dict[str, dict] | None = None
+        self._offsets: dict[str, int] | None = None  # id -> line start, once lookups add up
+        self._lookups = 0
+
+    INDEX_AFTER = 8  # lookups before one pass indexes every line (a find per id is O(file))
+
+    def _index(self) -> dict[str, int]:
+        """id -> line start offset of every row: read from the id pair a canonical line starts
+        with, else from the parsed line."""
+        if self._offsets is None:
+            offsets: dict[str, int] = {}
+            pos = 0
+            for line in self.text.splitlines(keepends=True):
+                sid = None
+                if line.startswith('{"id": "'):
+                    end = line.find('"', 8)
+                    if end > 8 and "\\" not in line[8:end]:
+                        sid = line[8:end]
+                if sid is None and line.strip():
+                    sid = json.loads(line).get("id")
+                if sid is not None:
+                    offsets[sid] = pos
+                pos += len(line)
+            self._offsets = offsets
+        return self._offsets
+
+    def _locate(self, sid: str) -> tuple[dict, int] | None:
+        if sid in self._found:
+            return self._found[sid]
+        self._lookups += 1
+        if self._offsets is not None or self._lookups > self.INDEX_AFTER:
+            start = self._index().get(sid)
+            hit = None
+            if start is not None:
+                end = self.text.find("\n", start)
+                row = json.loads(self.text[start:end if end >= 0 else len(self.text)])
+                if row.get("id") != sid:
+                    raise StoreError(f"manifest/{self.stem}.jsonl: row index is corrupt")
+                hit = (row, start)
+            self._found[sid] = hit
+            return hit
+        if sid not in self._found:
+            needle = f'"id": {json.dumps(sid, ensure_ascii=False)}'
+            hit, pos = None, self.text.find(needle)
+            while pos >= 0:
+                start = self.text.rfind("\n", 0, pos) + 1
+                end = self.text.find("\n", pos)
+                row = json.loads(self.text[start:end if end >= 0 else len(self.text)])
+                if row.get("id") == sid:  # not the same text inside a nested object
+                    hit = (row, start)
+                    break
+                pos = self.text.find(needle, pos + 1)
+            self._found[sid] = hit
+        return self._found[sid]
+
+    def get(self, sid: str) -> dict | None:
+        if self._rows is not None:
+            return self._rows.get(sid)
+        hit = self._locate(sid)
+        return None if hit is None else hit[0]
+
+    def rows(self) -> dict[str, dict]:
+        """Every row of the shard (parses it all; the fallback for large changes)."""
+        if self._rows is None:
+            rows = {}
+            for line in self.text.splitlines():
+                if line.strip():
+                    row = json.loads(line)
+                    rows[row["id"]] = row
+            self._rows = rows
+        return self._rows
+
+    def render(self, changes: Mapping[str, dict | None]) -> str | None:
+        """The shard's text after `changes` (id -> new row, or None to delete); None when the
+        shard becomes empty (its file is deleted, like registry.write_manifest_rows)."""
+        lines = self.text.splitlines(keepends=True)
+        if not lines or len(changes) * self.SPLICE_FRACTION > len(lines):
+            rows = dict(self.rows())
+            for sid, row in changes.items():
+                if row is None:
+                    rows.pop(sid, None)
+                else:
+                    rows[sid] = row
+            return registry.manifest_shard_text(rows.values()) if rows else None
+        import bisect
+        import itertools
+        starts = [0, *itertools.accumulate(len(line) for line in lines)]
+        drop = set()
+        for sid in changes:
+            if (hit := self._locate(sid)) is not None:
+                drop.add(bisect.bisect_right(starts, hit[1]) - 1)
+        kept = [line for n, line in enumerate(lines) if n not in drop]
+        keys: dict[int, tuple] = {}
+
+        def key_at(n: int) -> tuple:
+            if n not in keys:
+                keys[n] = _manifest_key(json.loads(kept[n]))
+            return keys[n]
+
+        new = sorted(((_manifest_key(row), json.dumps(row, ensure_ascii=False) + "\n")
+                      for row in changes.values() if row is not None), key=lambda kl: kl[0])
+        out, at = [], 0
+        for key, line in new:
+            pos = bisect.bisect_left(range(len(kept)), key, lo=at, key=key_at)
+            if pos < len(kept) and key_at(pos) == key:
+                raise StoreError(f"manifest/{self.stem}.jsonl: row {key[1]} is not where its "
+                                 "id says (non-canonical shard)")
+            out.extend(kept[at:pos])
+            out.append(line)
+            at = pos
+        out.extend(kept[at:])
+        if out and not out[-1].endswith("\n"):
+            raise StoreError(f"manifest/{self.stem}.jsonl does not end with a newline")
+        return "".join(out) or None
+
+
+class _RegistryShard:
+    """One registry YAML shard, indexed by its `  - id:` lines and parsed only where asked.
+
+    Parsing a whole shard costs ~0.8 s (the YAML constructor is pure Python even with libyaml),
+    and a prune touches dozens of shards: 400 drops over 52 shards took 268 s parsing each
+    three times (measured 2026-09-24). Entries are located exactly as registry.remove_ids_from_text
+    walks them (ENTRY_RE + _entry_span); an entry's block is parsed on its own (and must yield
+    exactly that id); removals cut those blocks and keep every other byte; additions are appended
+    like registry.append_entries and their block is parsed back as a check. Whole-shard validity
+    (parsing, routing, duplicates) is FileStore.validate_layout's job, every round."""
+
+    def __init__(self, path: Path, name: str):
+        self.path, self.name = path, name
+        self.text = path.read_text() if path.exists() else ""
+        self._lines: list[str] = []
+        self._spans: dict[str, tuple[int, int]] | None = None
+        self._rows: dict[str, dict | None] = {}
+
+    def _index(self) -> dict[str, tuple[int, int]]:
+        if self._spans is None:
+            lines = self.text.splitlines(keepends=True)
+            spans: dict[str, tuple[int, int]] = {}
+            i = 0
+            while i < len(lines):
+                m = registry.ENTRY_RE.match(lines[i])
+                if not m:
+                    i += 1
+                    continue
+                j = registry._entry_span(lines, i)
+                if m.group(1) in spans:
+                    raise StoreError(f"duplicate registry id {m.group(1)} in {self.name}")
+                spans[m.group(1)] = (i, j)
+                i = j
+            self._lines, self._spans = lines, spans
+        return self._spans
+
+    def get(self, sid: str) -> dict | None:
+        if sid not in self._rows:
+            span = self._index().get(sid)
+            row = None
+            if span is not None:
+                block = "".join(self._lines[span[0]:span[1]])
+                try:
+                    parsed = registry.parse_yaml("sources:\n" + block).get("sources") or []
+                except Exception as exc:  # the line walk cut the entry (remove_ids fails too)
+                    raise StoreError(f"{self.name}: entry block of {sid} does not parse: "
+                                     f"{exc}") from exc
+                if len(parsed) != 1 or parsed[0].get("id") != sid:
+                    raise StoreError(f"{self.name}: entry block of {sid} does not parse as it")
+                row = parsed[0]
+            self._rows[sid] = row
+        return self._rows[sid]
+
+    def render(self, removed: set[str], added: list[dict]) -> str:
+        spans = self._index()
+        if removed:
+            cut = set()
+            for sid in removed:
+                cut.update(range(*spans[sid]))
+            text = "".join(line for n, line in enumerate(self._lines) if n not in cut)
+        else:
+            text = self.text or registry.shard_header(Path(self.name).stem)
+        if added:
+            block = "".join(registry.emit_entry(r) for r in added)
+            got = [e.get("id") for e in registry.parse_yaml("sources:\n" + block)["sources"]]
+            if got != [r["id"] for r in added]:
+                raise StoreError(f"{self.name}: appended entries do not parse back as themselves")
+            text += block
+        return text
 
 
 # --- in-memory state ---------------------------------------------------------------------------
@@ -860,9 +1094,12 @@ class FileStore:
                 errors.append(f"duplicate id ({n}x): {eid}")
         # The manifest has the same blind spot: a keyed load keeps only the last row of an id, so a
         # duplicated (possibly corrupt) row would be invisible to every logical check.
+        # Routed manifest writes (_ManifestShard) also rely on every shard being canonical: rows
+        # routed to their file, sorted by (topic, id), each carrying its canonical "id" pair.
         manifest: dict[str, dict] = {}
         mseen: dict[str, int] = {}
         for path in sorted(self.man.glob("*.jsonl")) if self.man.exists() else []:
+            prev = None
             for n, line in enumerate(path.read_text().splitlines(), 1):
                 if not line.strip():
                     continue
@@ -874,6 +1111,22 @@ class FileStore:
                     continue
                 mseen[sid] = mseen.get(sid, 0) + 1
                 manifest[sid] = row
+                if not isinstance(sid, str):
+                    errors.append(f"manifest/{path.name}:{n}: id is not a string")
+                    continue
+                if registry.manifest_shard(sid) != path.stem:
+                    errors.append(f"manifest/{path.name}:{n}: {sid} belongs in "
+                                  f"{registry.manifest_shard(sid)}.jsonl (prefix routing)")
+                if f'"id": {json.dumps(sid, ensure_ascii=False)}' not in line:
+                    errors.append(f"manifest/{path.name}:{n}: {sid}: not canonical JSON")
+                try:
+                    key = _manifest_key(row)
+                    if prev is not None and not prev < key:
+                        errors.append(f"manifest/{path.name}:{n}: {sid}: out of (topic, id) order")
+                    prev = key
+                except TypeError:
+                    errors.append(f"manifest/{path.name}:{n}: {sid}: topic is not comparable")
+                    prev = None
         for sid, n in mseen.items():
             if n > 1:
                 errors.append(f"duplicate manifest id ({n}x): {sid}")
@@ -986,6 +1239,9 @@ class FileStore:
                         rows[row["id"]] = row
         return rows
 
+    def _manifest_shard(self, stem: str) -> "_ManifestShard":
+        return _ManifestShard(self.man / f"{stem}.jsonl", stem)
+
     def _config(self) -> ConfigSnapshot:
         documents, digests = {}, {}
         for name in CONFIG_FILES:
@@ -1071,14 +1327,25 @@ class FileStore:
         return sorted(self.journal_dir.glob("*.jsonl")) if self.journal_dir.exists() else []
 
     def _commit_digest(self, run_id: str) -> str | None:
-        # Every transaction asks this, so only commit rows naming the run are parsed (the journal
-        # holds whole before/after rows and grows with every round).
+        # Every transaction asks this (a loader checkpoint every 25 documents), so each journal
+        # file's commit rows are parsed once and cached by the file's identity (size, mtime,
+        # inode): the journal holds whole before/after rows and grows with every round.
+        cache = self.__dict__.setdefault("_commit_cache", {})
         for path in self._journal_files():
-            for line in path.read_text().splitlines():
-                if '"op": "commit"' in line and run_id in line:
-                    event = json.loads(line)
-                    if event.get("run_id") == run_id and event.get("op") == "commit":
-                        return event.get("digest")
+            st = path.stat()
+            key = (st.st_size, st.st_mtime_ns, st.st_ino)
+            hit = cache.get(path)
+            if hit is None or hit[0] != key:
+                commits = {}
+                with path.open("rb") as f:
+                    for line in f:
+                        if b'"op": "commit"' in line:
+                            event = json.loads(line)
+                            if event.get("op") == "commit":
+                                commits.setdefault(event.get("run_id"), event.get("digest"))
+                cache[path] = hit = (key, commits)
+            if run_id in hit[1]:
+                return hit[1][run_id]
         return None
 
     def _last_seq(self) -> int:
@@ -1086,7 +1353,7 @@ class FileStore:
         row holds its maximum."""
         seq = 0
         for path in self._journal_files():
-            last = path.read_bytes().rstrip().rsplit(b"\n", 1)[-1]
+            last = _last_line(path)
             if last.strip():
                 seq = max(seq, json.loads(last)["seq"])
         return seq
@@ -1199,15 +1466,20 @@ class FileStore:
     def _render_entries(self, view: "WriteView", writes: dict) -> None:
         if "entries" not in view._dirty:
             return
-        if "entries" not in view._loaded_tables:  # routed inserts only: append to their shards
-            for name, rows in view._routed_inserts.items():
-                path = self.reg / name
-                text = (path.read_text() if path.exists() else registry.shard_header(
-                    Path(name).stem)) + "".join(registry.emit_entry(r) for r in rows.values())
-                got = sorted(e["id"] for e in registry.parse_yaml(text).get("sources") or [])
-                if got != sorted([*view._routed_base[name], *rows]):
-                    raise StoreError(f"{name}: rendered shard does not match the transaction state")
-                writes[path] = text.encode()
+        if "entries" not in view._loaded_tables:  # routed changes: edit only their shards
+            for name, changes in view._rchanges.items():
+                shard = view._rshards[name]
+                removed, added = set(), []
+                for sid, row in changes.items():
+                    before = shard.get(sid)
+                    if row is not None and same_row(before, row):
+                        continue  # deleted and inserted again unchanged: stays in place
+                    if before is not None:
+                        removed.add(sid)
+                    if row is not None:
+                        added.append(row)
+                if removed or added:
+                    writes[self.reg / name] = shard.render(removed, added).encode()
             return
         base, state = view._base, view._state
         removed = {sid for sid in base.entries
@@ -1242,6 +1514,15 @@ class FileStore:
 
     def _render_manifest(self, view: "WriteView", writes: dict) -> None:
         if "manifest" not in view._dirty:
+            return
+        if "manifest" not in view._loaded_tables:  # routed changes: rewrite only their shards
+            for stem, changes in view._mchanges.items():
+                base = view._manifest_base(stem)
+                real = {sid: row for sid, row in changes.items()
+                        if not same_row(base.get(sid), row)}
+                if real:
+                    text = base.render(real)
+                    writes[self.man / f"{stem}.jsonl"] = None if text is None else text.encode()
             return
         base, state = view._base, view._state
         changed = {sid for sid in set(base.manifest) | set(state.manifest)
@@ -1294,12 +1575,31 @@ class FileStore:
                          "at": at, **op})
         rows.append({"seq": seq + 1, "event_id": f"{view.run_id}:commit", "run_id": view.run_id,
                      "at": at, "table": None, "op": "commit", "id": None, "digest": digest})
-        # One file per UTC day: the journal carries whole rows, so a monthly file would outgrow
-        # what a git host accepts per file (check_contracts.oversized_control_files guards it).
-        path = self.journal_dir / f"{at[:10]}.jsonl"
-        old = path.read_bytes() if path.exists() else b""
-        writes[path] = old + "".join(
-            json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n" for r in rows).encode()
+        # Files per UTC day, rolled by size: the journal carries whole rows, and since step 6 every
+        # loader checkpoint, cleaner batch and prune journals its manifest rows, so one file per
+        # day would outgrow the per-file publication limit (check_contracts'
+        # oversized_control_files guards it) and every transaction would rewrite (and back up) it.
+        # A day's files are <day>.jsonl, <day>.001.jsonl, <day>.002.jsonl, ...; order is by seq.
+        day = at[:10]
+        index = 0
+        for p in self._journal_files():
+            m = re.fullmatch(re.escape(day) + r"(?:\.(\d{3,}))?\.jsonl", p.name)
+            if m:
+                index = max(index, int(m.group(1) or 0))
+        path = self._journal_path(day, index)
+        data = bytearray(path.read_bytes() if path.exists() else b"")
+        for r in rows:
+            line = (json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n").encode()
+            if data and len(data) + len(line) > JOURNAL_ROLL_BYTES:
+                writes[path] = bytes(data)
+                index += 1
+                path = self._journal_path(day, index)
+                data = bytearray(path.read_bytes() if path.exists() else b"")
+            data += line
+        writes[path] = bytes(data)
+
+    def _journal_path(self, day: str, index: int) -> Path:
+        return self.journal_dir / (f"{day}.jsonl" if index == 0 else f"{day}.{index:03d}.jsonl")
 
     def export(self, directory: Path, *, view: "ReadView") -> ExportReport:
         return export(directory, view=view)
@@ -1387,6 +1687,7 @@ class ReadView:
         self._loaded_tables: set[str] = set()
         self._known_cache: tuple[set, set, set] | None = None
         self._config_cache: ConfigSnapshot | None = None
+        self._mbase: dict[str, _ManifestShard] = {}  # manifest shard stem -> committed shard
 
     def _check_open(self) -> None:
         if self._closed:
@@ -1506,9 +1807,31 @@ class ReadView:
             last = key
         return Page(rows, None)
 
+    def _manifest_base(self, stem: str) -> _ManifestShard:
+        """One committed manifest shard, read on its own (FileStore: keyed lookups need not parse
+        the whole 2 GB manifest)."""
+        if stem not in self._mbase:
+            self._check_open()
+            self._check_generation()
+            self._mbase[stem] = self._store._manifest_shard(stem)
+        return self._mbase[stem]
+
+    def _manifest_row(self, sid: str) -> dict | None:
+        """The view's current row for `sid` (not a copy), from the whole table when it is loaded,
+        else from the one shard the id routes to."""
+        if "manifest" in self._loaded_tables:
+            return self._state.manifest.get(sid)
+        if not isinstance(sid, str) or not sid:
+            return None
+        return self._manifest_base(registry.manifest_shard(sid)).get(sid)
+
     def get_manifest(self, ids: Iterable[str]) -> dict[str, dict]:
-        rows = self._get("manifest").manifest
-        return {sid: copy_json(rows[sid]) for sid in dict.fromkeys(ids) if sid in rows}
+        self._check_open()
+        out = {}
+        for sid in dict.fromkeys(ids):
+            if (row := self._manifest_row(sid)) is not None:
+                out[sid] = copy_json(row)
+        return out
 
     def get_entries(self, ids: Iterable[str]) -> dict[str, dict]:
         rows = self._get("entries").entries
@@ -1664,7 +1987,8 @@ class ReadView:
     def resolve_artifact(self, id: str, stage: Stage) -> ArtifactRef | None:  # noqa: A002
         """Where a document's stage payload lives, from its manifest row. Reads no payload and
         grants no eligibility."""
-        return artifact_ref(self._get("manifest").manifest.get(id), id, stage)
+        self._check_open()
+        return artifact_ref(self._manifest_row(id), id, stage)
 
 
 # --- write view -----------------------------------------------------------------------------------
@@ -1715,12 +2039,17 @@ class WriteView(ReadView):
         self._dirty: set[str] = set()
         self._ops: list[dict] = []
         self._requests: list[dict] = []
-        # Routed inserts: while the entries table is not loaded, insert_entries reads only the
-        # shard each new id routes to (registry.shard_filename) and buffers the rows here, like
+        # Routed entries: while the entries table is not loaded, insert_entries and delete_entries
+        # read only the shard each id routes to (registry.shard_filename), like
         # registry.append_entries. Parsing every shard costs ~2 minutes and ~2 GB at 1.6M entries
-        # (measured 2026-09-24); a round's discovery merge must not pay that.
-        self._routed_base: dict[str, dict[str, dict]] = {}     # shard -> its rows before
-        self._routed_inserts: dict[str, dict[str, dict]] = {}  # shard -> inserted rows, in order
+        # (measured 2026-09-24); a round's discovery merge or prune must not pay that.
+        self._rshards: dict[str, _RegistryShard] = {}              # shard -> committed shard
+        self._rchanges: dict[str, dict[str, dict | None]] = {}   # shard -> id -> row / None
+        # Routed manifest (stage 3, step 6): upsert/update/delete of manifest rows read only the
+        # manifest shards their ids route to (registry.manifest_shard) while the table is not
+        # loaded. self._mbase (ReadView) holds each committed shard, this the changed rows
+        # (stem -> id -> row, or None for a deletion).
+        self._mchanges: dict[str, dict[str, dict | None]] = {}
 
     def _get(self, table: str) -> _State:
         self._check_open()
@@ -1732,22 +2061,62 @@ class WriteView(ReadView):
             setattr(self._state, table, copy.copy(getattr(self._base, table)))
             if table == "entries":
                 self._state.entry_file = dict(self._base.entry_file)
-                # Routed inserts join the full state as ordinary additions.
-                pending, self._routed_inserts = self._routed_inserts, {}
-                for rows in pending.values():
-                    for sid, row in rows.items():
-                        if sid in self._state.entries:  # an existing id outside its routed shard
+                # Routed changes join the full state as ordinary additions and deletions.
+                pending, self._rchanges = self._rchanges, {}
+                for name, changes in pending.items():
+                    shard = self._rshards[name]
+                    for sid, row in changes.items():
+                        if row is None:
+                            self._state.entries.pop(sid, None)
+                            continue
+                        if shard.get(sid) is None and sid in self._state.entries:
+                            # an existing id outside its routed shard
                             raise StoreError(f"insert_entries: id(s) already exist: {sid}")
                         self._state.entries[sid] = row
+            elif table == "manifest":
+                pending, self._mchanges = self._mchanges, {}
+                for changes in pending.values():
+                    for sid, row in changes.items():
+                        if row is None:
+                            self._state.manifest.pop(sid, None)
+                        else:
+                            self._state.manifest[sid] = row
             self._loaded_tables.add(table)
         return self._state
 
-    def _routed_shard(self, name: str) -> dict[str, dict]:
-        if name not in self._routed_base:
+    def _routed_shard(self, name: str) -> _RegistryShard:
+        if name not in self._rshards:
             self._check_generation()
-            self._routed_base[name] = self._store._load_files(Table.ENTRIES,
-                                                              [self._store.reg / name])
-        return self._routed_base[name]
+            self._rshards[name] = _RegistryShard(self._store.reg / name, name)
+        return self._rshards[name]
+
+    def _routed_entry(self, sid: str) -> dict | None:
+        """The transaction's current entry `sid` from its routed shard (entries not loaded)."""
+        name = registry.shard_filename(sid)
+        changes = self._rchanges.get(name, {})
+        return changes[sid] if sid in changes else self._routed_shard(name).get(sid)
+
+    def _routed_put(self, sid: str, row: dict | None) -> None:
+        changes = self._rchanges.setdefault(registry.shard_filename(sid), {})
+        changes.pop(sid, None)  # a re-insert goes last, like an append
+        changes[sid] = row
+
+    def _manifest_row(self, sid: str) -> dict | None:
+        if "manifest" not in self._loaded_tables and isinstance(sid, str) and sid:
+            changes = self._mchanges.get(registry.manifest_shard(sid))
+            if changes is not None and sid in changes:
+                return changes[sid]
+        return super()._manifest_row(sid)
+
+    def _manifest_put(self, sid: str, row: dict | None) -> None:
+        """Replace (or with None delete) one manifest row in the transaction state."""
+        if "manifest" in self._loaded_tables:
+            if row is None:
+                self._state.manifest.pop(sid, None)
+            else:
+                self._state.manifest[sid] = row
+        else:
+            self._mchanges.setdefault(registry.manifest_shard(sid), {})[sid] = row
 
     def _cursor_scope(self) -> str:
         return f"{self._id}:{len(self._ops)}"
@@ -1814,17 +2183,30 @@ class WriteView(ReadView):
     def _insert_routed(self, rows: list[dict]) -> int:
         """insert_entries against the routed shards only. Registry routing is linted every round
         (FileStore.validate_layout), so an existing id lives in the shard its id routes to."""
-        routed = [(registry.shard_filename(r["id"]), r) for r in rows]
-        if clash := sorted(r["id"] for name, r in routed
-                           if r["id"] in self._routed_shard(name)
-                           or r["id"] in self._routed_inserts.get(name, {})):
+        if clash := sorted(r["id"] for r in rows if self._routed_entry(r["id"]) is not None):
             raise StoreError(f"insert_entries: id(s) already exist: {', '.join(clash[:5])}")
-        for name, r in routed:
-            self._routed_inserts.setdefault(name, {})[r["id"]] = r
+        for r in rows:
+            self._routed_put(r["id"], r)
             self._record("entries", "insert", r["id"], after=r)
         if rows:
             self._touch("entries")
         return len(rows)
+
+    def _delete_routed(self, ids: Iterable[str], reason: str) -> int:
+        """delete_entries against the routed shards only (like _insert_routed; routing is linted
+        every round, so an existing id lives in the shard its id routes to)."""
+        changed = 0
+        for sid in dict.fromkeys(ids):
+            if not isinstance(sid, str) or not sid:
+                continue  # no such entry (the full path ignores it the same way)
+            before = self._routed_entry(sid)
+            if before is not None:
+                self._routed_put(sid, None)
+                self._record("entries", "delete", sid, before=before, reason=reason)
+                changed += 1
+        if changed:
+            self._touch("entries")
+        return changed
 
     @_mutation
     def upsert_entries(self, entries: Iterable[Mapping]) -> int:
@@ -1847,6 +2229,8 @@ class WriteView(ReadView):
     def delete_entries(self, ids: Iterable[str], *, reason: str) -> int:
         if not reason:
             raise StoreError("delete_entries requires a reason")
+        if "entries" not in self._loaded_tables:
+            return self._delete_routed(ids, reason)
         state = self._get("entries")
         changed = 0
         for sid in dict.fromkeys(ids):
@@ -1857,15 +2241,17 @@ class WriteView(ReadView):
             self._touch("entries")
         return changed
 
+    # Manifest mutations touch only the shards their ids route to until something needs the whole
+    # table (replace_manifest, scans, aggregates, membership), which then absorbs them.
+
     def _upsert_manifest(self, rows: list[dict]) -> int:
         self._unique_ids(rows, "upsert_manifest")
-        state = self._get("manifest")
         changed = 0
         for r in rows:
-            before = state.manifest.get(r["id"])
+            before = self._manifest_row(r["id"])
             if same_row(before, r):
                 continue
-            state.manifest[r["id"]] = r
+            self._manifest_put(r["id"], r)
             self._record("manifest", "upsert", r["id"], before=before, after=r)
             changed += 1
         if changed:
@@ -1875,11 +2261,14 @@ class WriteView(ReadView):
     def _delete_manifest(self, ids: Iterable[str], reason: str) -> int:
         if not reason:
             raise StoreError("delete_manifest requires a reason")
-        state = self._get("manifest")
         changed = 0
         for sid in dict.fromkeys(ids):
-            if sid in state.manifest:
-                self._record("manifest", "delete", sid, before=state.manifest.pop(sid), reason=reason)
+            if not isinstance(sid, str) or not sid:
+                continue
+            before = self._manifest_row(sid)
+            if before is not None:
+                self._manifest_put(sid, None)
+                self._record("manifest", "delete", sid, before=before, reason=reason)
                 changed += 1
         if changed:
             self._touch("manifest")
@@ -1892,7 +2281,10 @@ class WriteView(ReadView):
     @_mutation
     def replace_manifest(self, rows: Iterable[Mapping], *, reason: str) -> int:
         """write_manifest_rows semantics: `rows` becomes the whole manifest; omitted ids are
-        deleted with tombstones carrying `reason`."""
+        deleted with tombstones carrying `reason`. On the file store this loads (and may rewrite)
+        every manifest shard — ~30-40 s at 1.6M rows; targeted callers use upsert_manifest,
+        update_manifest_fields and delete_manifest, which read only the shards their ids route
+        to."""
         if not reason:
             raise StoreError("replace_manifest requires a reason")
         rows = [copy.deepcopy(dict(r)) for r in rows]
@@ -1904,16 +2296,16 @@ class WriteView(ReadView):
     @_mutation
     def update_manifest_fields(self, updates: Mapping[str, Mapping[str, Any]], *,
                                unset: tuple[str, ...] = ()) -> int:
-        state = self._get("manifest")
-        validate_patch(updates, unset, lambda ids: [i for i in ids if i in state.manifest])
+        validate_patch(updates, unset, lambda ids: [
+            i for i in ids if isinstance(i, str) and i and self._manifest_row(i) is not None])
         changed = 0
         for sid, patch in updates.items():
-            before = state.manifest[sid]
+            before = self._manifest_row(sid)
             after = {k: v for k, v in before.items() if k not in unset}
             after.update(copy.deepcopy(dict(patch)))
             if same_row(after, before):
                 continue
-            state.manifest[sid] = after
+            self._manifest_put(sid, after)
             self._record("manifest", "update", sid, before=before, after=after)
             changed += 1
         if changed:

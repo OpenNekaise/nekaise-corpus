@@ -498,13 +498,14 @@ def test_threads_holding_different_locks_do_not_remove_each_other(st, tmp_path):
 
 def test_insert_reads_only_the_routed_shards(st, legacy, monkeypatch):
     loads, files_read = [], []
-    real_load, real_files = store.FileStore._load, store.FileStore._load_files
+    real_load = store.FileStore._load
     monkeypatch.setattr(store.FileStore, "_load",
                         lambda self, state, table: (loads.append(table),
                                                     real_load(self, state, table)))
-    monkeypatch.setattr(store.FileStore, "_load_files",
-                        lambda self, table, paths: (files_read.extend(p.name for p in paths),
-                                                    real_files(self, table, paths))[1])
+    real_shard = store._RegistryShard.__init__
+    monkeypatch.setattr(store._RegistryShard, "__init__",
+                        lambda self, path, name: (files_read.append(path.name),
+                                                  real_shard(self, path, name))[1])
     new = [entry("oer-c"), entry("vnd-x1"), entry("kit-first"), entry("oer-d")]
     assert write(st, "r1", lambda tx: tx.insert_entries(new)) == 4
     assert "entries" not in loads
@@ -564,3 +565,220 @@ def test_journal_is_daily_and_sequences_continue_across_files(st):
     write(st, "r-daily", lambda tx: tx.blocklist_add(["https://j.org/1"]))
     with st.read() as v:
         assert len([e for e in v.scan(Table.EVENTS).rows if e["run_id"] == "r-daily"]) == 2
+
+
+# --- routed manifest mutations (stage 3, step 6: a loader checkpoint must not parse 2 GB) --------
+
+def _manifest_reads(monkeypatch):
+    """Record every manifest shard file the store reads, and every whole-table load."""
+    read, loads = [], []
+    real_shard, real_load = store.FileStore._manifest_shard, store.FileStore._load
+    monkeypatch.setattr(store.FileStore, "_manifest_shard",
+                        lambda self, stem: (read.append(stem), real_shard(self, stem))[1])
+    monkeypatch.setattr(store.FileStore, "_load",
+                        lambda self, state, table: (loads.append(table),
+                                                    real_load(self, state, table)))
+    return read, loads
+
+
+def test_manifest_mutations_read_only_the_routed_shards(st, legacy, monkeypatch):
+    read, loads = _manifest_reads(monkeypatch)
+    changed = mrow("oer-a", sha256="new", error="drift")
+
+    def body(tx):
+        tx.upsert_manifest([changed, mrow("vnd-x1"), mrow("kit-first")])
+        tx.update_manifest_fields({"hand-one": {"corpus_path": "corpus/hand-one.md",
+                                                "corpus_chars": 7}})
+        tx.delete_manifest(["oer-b", "zen-missing"], reason="prune: dup-bytes")
+        return tx.get_manifest(["oer-a", "oer-b", "vnd-x1"])  # read-your-writes, still routed
+    got = write(st, "r1", body)
+    assert "manifest" not in loads
+    assert sorted(set(read)) == sorted({"books", "curated", "kitopen", "zenodo",
+                                        registry.manifest_shard("vnd-x1")})
+    assert got["oer-a"]["error"] == "drift" and "oer-b" not in got and "vnd-x1" in got
+    # the same change through the legacy whole-manifest writer: identical bytes
+    rows = {r["id"]: r for r in registry.load_manifest_rows()}
+    rows["oer-a"] = changed
+    rows["vnd-x1"], rows["kit-first"] = mrow("vnd-x1"), mrow("kit-first")
+    rows["hand-one"] = {**rows["hand-one"], "corpus_path": "corpus/hand-one.md", "corpus_chars": 7}
+    del rows["oer-b"]
+    registry.write_manifest_rows(rows.values())
+    assert data_files(st.root) == files(legacy)
+    with st.read() as v:  # tombstones carry the reason and the whole before-image
+        events = [e for e in v.scan(Table.EVENTS).rows if e["run_id"] == "r1"]
+    delete = next(e for e in events if e["op"] == "delete")
+    assert delete["reason"] == "prune: dup-bytes" and delete["before"]["id"] == "oer-b"
+    update = next(e for e in events if e["op"] == "update")
+    assert update["before"]["id"] == "hand-one" and "corpus_path" not in update["before"]
+
+
+def test_routed_manifest_changes_join_a_later_full_load(st):
+    def body(tx):
+        tx.upsert_manifest([mrow("oer-c")])
+        tx.delete_manifest(["oer-a"], reason="x")
+        tx.update_manifest_fields({"oer-b": {"error": "e"}})
+        return {r["id"]: r.get("error") for r in tx.scan(Table.MANIFEST).rows}
+    got = write(st, "r1", body)
+    assert got == {"hand-one": None, "hand-two": None, "oer-b": "e", "oer-c": None}
+    with st.read() as v:
+        assert sorted(r["id"] for r in v.scan(Table.MANIFEST).rows) == sorted(got)
+
+
+def test_a_shard_emptied_by_routed_deletes_is_removed(st, legacy):
+    write(st, "r1", lambda tx: tx.delete_manifest(["oer-a", "oer-b"], reason="prune"))
+    assert not (st.man / "books.jsonl").exists()
+    rows = [r for r in registry.load_manifest_rows() if r["id"] not in ("oer-a", "oer-b")]
+    registry.write_manifest_rows(rows)
+    assert data_files(st.root) == files(legacy)
+
+
+@pytest.mark.parametrize("n_rows,n_changes", [(200, 1), (200, 5), (2000, 40), (200, 40), (3, 3)])
+def test_spliced_shards_equal_a_full_rerender(tmp_path, n_rows, n_changes):
+    """The splice (few changes) and the full re-render (many) give the legacy bytes: rows keep
+    (topic, id) order whatever their topic moves to, deletions and insertions included."""
+    import random
+    rng = random.Random(n_rows * 1000 + n_changes)
+    topics = ["a_topic", "building_energy", "hvac", "zz"]
+    rows = {f"oer-{n:04d}": mrow(f"oer-{n:04d}", topic=rng.choice(topics),
+                                 title=f'T {n} é漢 "q"')
+            for n in range(n_rows)}
+    root = tmp_path / "r"
+    write_config(root)
+    (root / "manifest").mkdir()
+    (root / "manifest" / "books.jsonl").write_text(registry.manifest_shard_text(rows.values()))
+    st2 = store.FileStore(root)
+    changes = {}
+    for sid in rng.sample(sorted(rows), n_changes):
+        kind = rng.choice(["move", "delete", "edit"])
+        if kind == "delete":
+            changes[sid] = None
+        elif kind == "move":
+            changes[sid] = {**rows[sid], "topic": rng.choice(topics)}
+        else:
+            changes[sid] = {**rows[sid], "error": "edited"}
+    for n in range(max(1, n_changes // 2)):
+        changes[f"oer-new-{n}"] = mrow(f"oer-new-{n}", topic=rng.choice(topics))
+
+    def body(tx):
+        tx.delete_manifest([s for s, r in changes.items() if r is None], reason="x")
+        tx.upsert_manifest([r for r in changes.values() if r is not None])
+    write(st2, "r1", body)
+    expect = dict(rows)
+    for sid, r in changes.items():
+        if r is None:
+            expect.pop(sid, None)
+        else:
+            expect[sid] = r
+    assert (root / "manifest" / "books.jsonl").read_text() == \
+        registry.manifest_shard_text(expect.values())
+
+
+def test_a_non_canonical_shard_fails_closed_and_is_linted(st):
+    path = st.man / "books.jsonl"
+    path.write_text(registry.manifest_shard_text(
+        [mrow("oer-a"), mrow("oer-b")] + [mrow(f"oer-z{n:03d}") for n in range(100)]))
+    lines = path.read_text().splitlines(keepends=True)
+    path.write_text("".join(reversed(lines)))  # out of (topic, id) order
+    errors, _ = st.validate_layout()
+    assert any("out of (topic, id) order" in e for e in errors)
+    path.write_text("".join(lines).replace('"id": "oer-a"', '"id":"oer-a"'))
+    errors, _ = st.validate_layout()
+    assert any("oer-a: not canonical JSON" in e for e in errors)
+    # the splice cannot find the non-canonical row, so re-inserting its id is refused
+    with pytest.raises(store.StoreError, match="non-canonical"):
+        write(st, "r1", lambda tx: tx.upsert_manifest([mrow("oer-a", error="x")]))
+
+
+def test_a_stray_manifest_row_is_linted(st):
+    (st.man / "books.jsonl").write_text((st.man / "books.jsonl").read_text()
+                                        + json.dumps(mrow("zen-stray")) + "\n")
+    errors, _ = st.validate_layout()
+    assert any("zen-stray belongs in zenodo.jsonl" in e for e in errors)
+
+
+def test_read_views_answer_keyed_manifest_reads_from_routed_shards(st, monkeypatch):
+    read, loads = _manifest_reads(monkeypatch)
+    with st.read() as v:
+        assert set(v.get_manifest(["oer-a", "hand-one", "zzz-none"])) == {"oer-a", "hand-one"}
+        assert v.resolve_artifact("oer-a", store.Stage.TEXT).locator == "file:text/oer-a.md"
+    assert "manifest" not in loads and set(read) <= {"books", "curated"}
+
+
+# --- journal size rolling and the commit index ---------------------------------------------------
+
+def test_the_journal_rolls_by_size_and_keeps_sequence_and_replay(st, monkeypatch):
+    monkeypatch.setattr(store, "JOURNAL_ROLL_BYTES", 3000)
+    for n in range(4):
+        write(st, f"r{n}", lambda tx, n=n: tx.upsert_manifest(
+            [mrow(f"oer-j{n}-{k}", title="x" * 300) for k in range(3)]))
+    paths = sorted(st.journal_dir.glob("*.jsonl"))
+    assert len(paths) > 2
+    for p in paths:  # a file only exceeds the limit when a single event does
+        assert p.stat().st_size <= 3000 or len(p.read_text().splitlines()) == 1
+    day = paths[0].name[:10]
+    assert {f"{day}.jsonl", f"{day}.001.jsonl", f"{day}.002.jsonl"} <= {p.name for p in paths}
+    with st.read() as v:
+        seqs = [e["seq"] for e in v.scan(Table.EVENTS).rows]
+    assert seqs == list(range(1, len(seqs) + 1))
+    for n in range(4):  # every commit is still found, so identical retries stay no-ops
+        assert st._commit_digest(f"r{n}") is not None
+    before = files(st.root)
+    write(st, "r2", lambda tx: tx.upsert_manifest(
+        [mrow(f"oer-j2-{k}", title="x" * 300) for k in range(3)]))
+    assert files(st.root) == before
+
+
+def test_the_commit_index_rereads_only_changed_journal_files(st, monkeypatch):
+    write(st, "a", lambda tx: tx.blocklist_add(["https://j.org/a"]))
+    assert st._commit_digest("a")
+    opened = []
+    real_open = store.Path.open
+    monkeypatch.setattr(store.Path, "open", lambda self, *a, **k: (
+        opened.append(self.name), real_open(self, *a, **k))[1])
+    assert st._commit_digest("a") and st._commit_digest("zzz") is None
+    assert not [n for n in opened if n.endswith(".jsonl")]  # cached: nothing re-parsed
+
+
+def test_entry_deletes_read_only_the_routed_shards(st, legacy, monkeypatch):
+    loads, files_read = [], []
+    real_load = store.FileStore._load
+    monkeypatch.setattr(store.FileStore, "_load",
+                        lambda self, state, table: (loads.append(table),
+                                                    real_load(self, state, table)))
+    real_shard = store._RegistryShard.__init__
+    monkeypatch.setattr(store._RegistryShard, "__init__",
+                        lambda self, path, name: (files_read.append(path.name),
+                                                  real_shard(self, path, name))[1])
+
+    def body(tx):
+        n = tx.delete_entries(["oer-a", "hand-two", "kit-none"], reason="prune: failed")
+        tx.insert_entries([entry("oer-c"), entry("oer-a", title="Back again")])
+        return n
+    assert write(st, "r1", body) == 2
+    assert "entries" not in loads
+    assert sorted(set(files_read)) == ["books.yaml", "curated.yaml", "kitopen.yaml"]
+    registry.remove_ids({"oer-a", "hand-two"})
+    registry.append_entries([entry("oer-c"), entry("oer-a", title="Back again")])
+    assert data_files(st.root) == files(legacy)
+    assert "# inline hand note" in (st.reg / "curated.yaml").read_text()
+
+
+@pytest.mark.parametrize("drop", [{"oer-multi"}, {"oer-after"}, {"oer-multi", "oer-after"}])
+def test_routed_entry_deletes_cut_multiline_entries_like_remove_ids(st, legacy, drop):
+    """A quoted title with blank lines inside spans several lines (the OSTI case remove_ids
+    handles); the routed cut must find exactly the same entry blocks."""
+    multi = entry("oer-multi", title="First line\nafter a blank line: " + "long words " * 12)
+    for root in (st.root, legacy):
+        path = root / "registry" / "books.yaml"
+        path.write_text(path.read_text() + registry.emit_entry(multi)
+                        + registry.emit_entry(entry("oer-after")))
+    assert "\n\n" in (st.reg / "books.yaml").read_text().split("oer-multi", 1)[1]
+    got = write(st, "r1", lambda tx: (tx.get_manifest([]),
+                                      tx.delete_entries(sorted(drop), reason="prune"))[1])
+    assert got == len(drop)
+    registry.remove_ids(drop)
+    assert data_files(st.root) == files(legacy)
+    with st.read() as v:
+        before = [e["before"] for e in v.scan(Table.EVENTS).rows if e["op"] == "delete"]
+    assert sorted(b["id"] for b in before) == sorted(drop)
+    assert all(b == (multi if b["id"] == "oer-multi" else entry("oer-after")) for b in before)
