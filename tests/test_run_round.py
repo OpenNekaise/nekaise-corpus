@@ -630,3 +630,36 @@ def test_round_refuses_to_run_uncommitted_while_a_shadow_is_enabled(tmp_path, mo
 
     assert run_round.main() == 1
     assert "rounds must --commit" in capsys.readouterr().err
+
+
+def test_only_mutating_steps_receive_the_store_broker(tmp_path, monkeypatch):
+    import store_broker
+    for d in ("registry", "manifest"):
+        (tmp_path / d).mkdir()
+    (tmp_path / "README.md").write_text("x")
+    (tmp_path / "pruned_urls.txt").write_text("")
+    monkeypatch.setattr(run_round, "ROOT", tmp_path)
+    monkeypatch.setattr(run_round.ops, "SNAPSHOTS", tmp_path / "workspace" / "round-snapshots")
+    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
+    monkeypatch.setattr(run_round, "git_clean", lambda: True)
+    monkeypatch.setattr(run_round, "load_backends", lambda: {})
+    monkeypatch.setattr(run_round.rotation, "load", lambda: {})
+    monkeypatch.setattr(run_round, "doc_stats", lambda: (1, 10, 0))
+    monkeypatch.setattr(run_round.ops, "run_event", lambda *args, **kwargs: None)
+    seen = {}
+
+    def record(step, cmd, env, run_id):
+        seen[step] = env
+
+    monkeypatch.setattr(run_round, "run_command", record)
+    monkeypatch.setattr(run_round, "run_verify_parallel",
+                        lambda gates, env, run_id: seen.setdefault("gates", env))
+    monkeypatch.setattr(sys, "argv", ["run_round.py", "--skip-discovery", "--skip-tests",
+                                      "--allow-dirty", "--run-id", "r-env"])
+    assert run_round.main() == 0
+    for step in ("fetch", "prune", "clean"):
+        assert seen[step][store_broker.BROKER_ENV] and seen[step][store_broker.ROUND_ENV] == "r-env"
+    for step in ("stats", "gates"):
+        assert store_broker.BROKER_ENV not in seen[step]
+    assert all(e[run_round.store.INHERITED_LOCK_ENV] == f"{os.getpid()}:r-env"
+               for e in seen.values())

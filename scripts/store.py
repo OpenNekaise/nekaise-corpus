@@ -838,7 +838,8 @@ class FileStore:
         if key in _ACTIVE_TRANSACTIONS:
             raise StoreError("transactions do not nest")
         self._check_writer(writer)
-        self._require_settled()
+        # the writer's own in-flight round (declared when it took the lock) is not unsettled state
+        self._require_settled(allow_rounds=[writer.round_id] if writer.round_id else [])
         current = self.version()
         committed = self._commit_digest(run_id)
         # A retry of a committed run (e.g. after a lost commit response) cannot know the newer

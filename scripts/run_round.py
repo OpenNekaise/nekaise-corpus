@@ -31,6 +31,7 @@ import ops
 import registry
 import rotation
 import store
+import store_broker
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
@@ -478,82 +479,105 @@ def main() -> int:
     env = os.environ.copy()
     env.update({"NEKAISE_RUN_ID": run_id, "PYTHONUNBUFFERED": "1"})
     ops.run_event(run_id, "run_started", argv=sys.argv[1:])
+    st = store.FileStore(ROOT)
+    try:
+        # The round's single store writer: the canonical round lock plus the token proving it,
+        # declaring this round so its own snapshot is not "unsettled" state (ADR 0001 stage 3).
+        # Failure rollback happens inside this scope, i.e. still under the lock.
+        with st.writer(timeout=args.lock_timeout, round_id=run_id) as writer:
+            return _locked_round(args, st, writer, run_id, env)
+    except Exception as exc:
+        ops.run_event(run_id, "run_failed", error=str(exc))
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
+
+
+# Pipeline steps that may write tracked state receive the round's store broker; verification gates
+# and discovery workers only get inherited read access.
+MUTATING_STEPS = frozenset({"fetch", "prune", "clean"})
+
+
+def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
     snapshot = None
     committed = False
     try:
-        with ops.named_lock("corpus-round", timeout=args.lock_timeout):
-            if (ROOT / "workspace" / ".pg-shadow").exists() and not args.commit:
-                raise RuntimeError(
-                    "a PostgreSQL shadow replicates commits (workspace/.pg-shadow): rounds must "
-                    "--commit, or the shadow silently misses their changes"
-                )
-            if store_pending := store.FileStore(ROOT).pending_transactions():
-                raise RuntimeError(
-                    "interrupted store transaction(s) pending: "
-                    + ", ".join(t.run_id for t in store_pending)
-                    + "; recover them with FileStore.recover() before starting a round"
-                )
-            pending = ops.StateSnapshot.pending()
-            if pending:
-                raise RuntimeError(
-                    "interrupted run snapshot(s) pending: "
-                    f"{', '.join(pending)}; recover with --recover latest"
-                )
-            if not args.allow_dirty and not git_clean():
-                raise RuntimeError("working tree is dirty; review/commit it before starting a round")
-            backends = load_backends()
-            rotation_state = rotation.load()
-            if errors := validate_backends(backends, rotation_state):
-                raise RuntimeError("backend configuration invalid:\n  " + "\n  ".join(errors))
-            selected = args.backend or [
-                name for name, cfg in backends.items() if cfg.get("enabled", True)
-            ]
-            unknown = [name for name in selected if name not in backends]
-            if unknown:
-                raise RuntimeError(f"unknown backend(s): {', '.join(unknown)}")
-            disabled = [
-                name for name in selected
-                if not backends[name].get("enabled", True) and name not in args.backend
-            ]
-            selected = [name for name in selected if name not in disabled]
+        if (ROOT / "workspace" / ".pg-shadow").exists() and not args.commit:
+            raise RuntimeError(
+                "a PostgreSQL shadow replicates commits (workspace/.pg-shadow): rounds must "
+                "--commit, or the shadow silently misses their changes"
+            )
+        if store_pending := st.pending_transactions():
+            raise RuntimeError(
+                "interrupted store transaction(s) pending: "
+                + ", ".join(t.run_id for t in store_pending)
+                + "; recover them with FileStore.recover() before starting a round"
+            )
+        pending = ops.StateSnapshot.pending()
+        if pending:
+            raise RuntimeError(
+                "interrupted run snapshot(s) pending: "
+                f"{', '.join(pending)}; recover with --recover latest"
+            )
+        if not args.allow_dirty and not git_clean():
+            raise RuntimeError("working tree is dirty; review/commit it before starting a round")
+        backends = load_backends()
+        rotation_state = rotation.load()
+        if errors := validate_backends(backends, rotation_state):
+            raise RuntimeError("backend configuration invalid:\n  " + "\n  ".join(errors))
+        selected = args.backend or [
+            name for name, cfg in backends.items() if cfg.get("enabled", True)
+        ]
+        unknown = [name for name in selected if name not in backends]
+        if unknown:
+            raise RuntimeError(f"unknown backend(s): {', '.join(unknown)}")
+        disabled = [
+            name for name in selected
+            if not backends[name].get("enabled", True) and name not in args.backend
+        ]
+        selected = [name for name in selected if name not in disabled]
 
-            before, _, _ = doc_stats()
-            snapshot = ops.StateSnapshot.capture(run_id, SNAPSHOT_PATHS, root=ROOT)
+        before, _, _ = doc_stats()
+        snapshot = ops.StateSnapshot.capture(run_id, SNAPSHOT_PATHS, root=ROOT)
+        read_env = {**env, store.INHERITED_LOCK_ENV: f"{os.getpid()}:{run_id}"}
+        broker = store_broker.Broker(st, writer, run_id)
+        with broker.serving():
+            write_env = {**read_env, **broker.env()}
             if not args.skip_discovery:
                 run_finders_parallel(
                     selected,
                     backends,
                     rotation_state,
-                    env,
+                    read_env,
                     run_id,
                     args.discovery_workers,
                 )
 
             for step, script, fixed_args in PIPELINE:
-                run_command(step, [sys.executable, str(SCRIPTS / script), *fixed_args], env, run_id)
-            gates = [
-                (step, [sys.executable, str(SCRIPTS / script), *fixed_args])
-                for step, script, fixed_args in VERIFY
-            ]
-            if not args.skip_tests:
-                gates.append(("tests", [sys.executable, "-m", "pytest", "-q"]))
-            run_verify_parallel(gates, env, run_id)
-            after, tokens, excluded = doc_stats()
-            committed = commit_snapshot(before, after, tokens, run_id) if args.commit else False
-            if args.push:
-                run_command(
-                    "push", ["git", "push", "origin", f"HEAD:{args.push}"], env, run_id,
-                )
-            ops.run_event(
-                run_id, "run_completed", before_docs=before, after_docs=after,
-                tokens=tokens, excluded_docs=excluded,
-                committed=committed, pushed_to=args.push,
+                run_command(step, [sys.executable, str(SCRIPTS / script), *fixed_args],
+                            write_env if step in MUTATING_STEPS else read_env, run_id)
+        gates = [
+            (step, [sys.executable, str(SCRIPTS / script), *fixed_args])
+            for step, script, fixed_args in VERIFY
+        ]
+        if not args.skip_tests:
+            gates.append(("tests", [sys.executable, "-m", "pytest", "-q"]))
+        run_verify_parallel(gates, read_env, run_id)
+        after, tokens, excluded = doc_stats()
+        committed = commit_snapshot(before, after, tokens, run_id) if args.commit else False
+        if args.push:
+            run_command(
+                "push", ["git", "push", "origin", f"HEAD:{args.push}"], env, run_id,
             )
-            print(f"\nround {run_id}: {before} -> {after} training-eligible docs / "
-                  f"{tokens // 1_000_000}M tokens ({excluded} provenance rows excluded)")
-            snapshot.discard()
-            return 0
-    except Exception as exc:
+        ops.run_event(
+            run_id, "run_completed", before_docs=before, after_docs=after,
+            tokens=tokens, excluded_docs=excluded,
+            committed=committed, pushed_to=args.push,
+        )
+        print(f"\nround {run_id}: {before} -> {after} training-eligible docs / "
+              f"{tokens // 1_000_000}M tokens ({excluded} provenance rows excluded)")
+        snapshot.discard()
+        return 0
+    except Exception:
         if snapshot is not None and not committed:
             try:
                 subprocess.run(
@@ -569,9 +593,7 @@ def main() -> int:
             # A push failure after a successful commit is recoverable with a later git push. The
             # committed state is authoritative; retaining the pre-round snapshot would be harmful.
             snapshot.discard()
-        ops.run_event(run_id, "run_failed", error=str(exc))
-        print(f"ERROR: {exc}", file=sys.stderr)
-        return 1
+        raise
 
 
 if __name__ == "__main__":
