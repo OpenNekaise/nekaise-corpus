@@ -60,14 +60,15 @@ def atomic_write_text(path: Path, text: str) -> None:
 
 
 @contextmanager
-def named_lock(name: str, timeout: float = 0):
-    """Hold an advisory lock in workspace/.
+def named_lock(name: str, timeout: float = 0, workspace: Path | None = None):
+    """Hold an advisory lock in workspace/ (or another repo root's workspace/).
 
     timeout=0 fails immediately; a positive timeout waits that many seconds; timeout<0 waits
     forever.  The lock file contains the owning PID for useful error messages.
     """
-    WORKSPACE.mkdir(parents=True, exist_ok=True)
-    path = WORKSPACE / f".{name}.lock"
+    workspace = Path(workspace) if workspace is not None else WORKSPACE
+    workspace.mkdir(parents=True, exist_ok=True)
+    path = workspace / f".{name}.lock"
     f = path.open("a+")
     deadline = None if timeout < 0 else time.monotonic() + timeout
     while True:

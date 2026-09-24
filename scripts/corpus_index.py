@@ -190,6 +190,24 @@ def existing_keys(reg_dir: Path, man_dir: Path, blocklist_path: Path,
     return values["url"], values["title"], values["id"]
 
 
+def lookup(reg_dir: Path, man_dir: Path, blocklist_path: Path, kind: str, values,
+           db_path: Path | None = None) -> set[str]:
+    """The subset of `values` already known as `kind` (url/title/id), via indexed IN queries.
+    Membership only — never materializes the whole key set."""
+    if kind not in ("url", "title", "id"):
+        raise ValueError(f"unknown key kind {kind}")
+    values = list(dict.fromkeys(v for v in values if v))
+    db = ensure(reg_dir, man_dir, blocklist_path, db_path)
+    hits: set[str] = set()
+    with sqlite3.connect(db) as conn:
+        for i in range(0, len(values), 900):  # stay under SQLite's host-parameter limit
+            chunk = values[i:i + 900]
+            hits.update(row[0] for row in conn.execute(
+                f"SELECT value FROM known WHERE kind=? AND value IN ({','.join('?' * len(chunk))})",
+                [kind, *chunk]))
+    return hits
+
+
 def record_appended_entries(reg_dir: Path, man_dir: Path, blocklist_path: Path,
                             entries: list[dict], prior_signature: str,
                             db_path: Path | None = None) -> bool:

@@ -53,6 +53,14 @@ not require a code change at every maintenance wake.
 | `raw/` · `text/` · `corpus/` | Your local copy, in three stages: original bytes → verbatim extraction → **cleaned, training-ready text**. **All git-ignored. Never committed.** See *The three stages* below. |
 | `logs/` | Headless dig/marathon run logs (git-ignored). |
 
+**Storage is migrating (ADR 0001, `docs/decisions/0001-storage-architecture.md`).** Tracked state
+is moving out of git into PostgreSQL in six stages. `scripts/store.py` is the storage interface
+every reader and writer will use: consistent read views, all-or-nothing transactions guarded by a
+version and a writer token, a tombstone journal (`registry/journal/`), and a canonical export.
+`FileStore` implements it over the files above and stays authoritative until the stage-4 cutover;
+`tests/test_store_contract.py` is the conformance suite every backend must pass. New code that
+reads or writes tracked state should use `store.py`, not the files directly.
+
 `workspace/corpus-index.sqlite3` is a git-ignored, automatically invalidated acceleration index
 over registry + manifest + blocklist. It is never authoritative and can always be rebuilt with
 `python scripts/corpus_index.py rebuild`.

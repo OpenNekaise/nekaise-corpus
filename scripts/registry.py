@@ -242,9 +242,13 @@ def _shard_stem(sid: str) -> str | None:
     return None
 
 
-def shard_path(sid: str) -> Path:
+def shard_filename(sid: str) -> str:
     stem = _shard_stem(sid)
-    return REG_DIR / (f"{stem}.yaml" if stem else CURATED)
+    return f"{stem}.yaml" if stem else CURATED
+
+
+def shard_path(sid: str) -> Path:
+    return REG_DIR / shard_filename(sid)
 
 
 def shard_files() -> list[Path]:
@@ -310,8 +314,7 @@ def write_manifest_rows(rows) -> None:
     MAN_DIR.mkdir(exist_ok=True)
     live = {f"{stem}.jsonl" for stem in groups}
     for stem, group in groups.items():
-        text = "".join(json.dumps(r, ensure_ascii=False) + "\n"
-                       for r in sorted(group, key=lambda x: (x.get("topic", ""), x["id"])))
+        text = manifest_shard_text(group)
         p = MAN_DIR / f"{stem}.jsonl"
         if not p.exists() or p.read_text() != text:
             ops.atomic_write_text(p, text)
@@ -320,12 +323,22 @@ def write_manifest_rows(rows) -> None:
             p.unlink()
 
 
-def prune_ledger_path(sid: str) -> Path:
-    """Stable decision-ledger shard for a pruned source id."""
+def manifest_shard_text(group) -> str:
+    """Canonical text of one manifest shard: rows sorted by (topic, id) for stable diffs."""
+    return "".join(json.dumps(r, ensure_ascii=False) + "\n"
+                   for r in sorted(group, key=lambda x: (x.get("topic", ""), x["id"])))
+
+
+def prune_ledger_name(sid: str) -> str:
+    """Stable decision-ledger shard filename for a pruned source id."""
     if not sid:
         raise ValueError("prune ledger row requires a non-empty id")
-    bucket = zlib.crc32(sid.encode()) % PRUNE_LEDGER_BUCKETS
-    return REG_DIR / f"pruned-{bucket}.jsonl"
+    return f"pruned-{zlib.crc32(sid.encode()) % PRUNE_LEDGER_BUCKETS}.jsonl"
+
+
+def prune_ledger_path(sid: str) -> Path:
+    """Stable decision-ledger shard for a pruned source id."""
+    return REG_DIR / prune_ledger_name(sid)
 
 
 def prune_ledger_files() -> list[Path]:
@@ -424,6 +437,12 @@ def emit_entry(e: dict) -> str:
     return "".join(("  " + ln + "\n") if ln else "\n" for ln in d.splitlines())
 
 
+def shard_header(stem: str) -> str:
+    """Opening lines of a newly created machine shard."""
+    return (f"# {stem} — machine-appended shard (see AGENTS.md); "
+            f"prune_corpus edits it in place\nsources:\n")
+
+
 def append_entries(entries: list[dict]) -> dict[str, int]:
     """Route entries to their shards by id prefix and append, validating each shard afterwards
     (parses + count grew by exactly the group size). Returns {shard filename: appended}.
@@ -462,11 +481,7 @@ def append_entries(entries: list[dict]) -> dict[str, int]:
             old_text = path.read_text()
             ops.atomic_write_text(path, old_text + block)
         else:
-            ops.atomic_write_text(
-                path,
-                f"# {path.stem} — machine-appended shard (see AGENTS.md); "
-                f"prune_corpus edits it in place\nsources:\n" + block,
-            )
+            ops.atomic_write_text(path, shard_header(path.stem) + block)
         after = parse_yaml(path.read_text()).get("sources") or []
         if len(after) != before + len(group):
             raise RuntimeError(f"append corrupted {path.name}: {before}+{len(group)} != {len(after)}")
@@ -488,34 +503,41 @@ def remove_ids(drop: set) -> int:
     dropped ids gone, count arithmetic holds) BEFORE writing; raises on any mismatch."""
     removed_total = 0
     for path in shard_files():
-        old_text = path.read_text()
-        lines = old_text.splitlines(keepends=True)
-        out: list[str] = []
-        removed = 0
-        i = 0
-        while i < len(lines):
-            m = ENTRY_RE.match(lines[i])
-            if not m:
-                out.append(lines[i])
-                i += 1
-                continue
-            j = _entry_span(lines, i)
-            if m.group(1) in drop:
-                removed += 1
-            else:
-                out.extend(lines[i:j])
-            i = j
+        new_text, removed = remove_ids_from_text(path.read_text(), drop, path.name)
         if not removed:
             continue
-        new_text = "".join(out)
-        entries = parse_yaml(new_text).get("sources") or []
-        old_count = len(parse_yaml(old_text).get("sources") or [])
-        leftover = {e["id"] for e in entries} & drop
-        if leftover:
-            raise RuntimeError(f"{path.name}: failed to remove {len(leftover)} ids, "
-                               f"e.g. {sorted(leftover)[:3]}")
-        if len(entries) != old_count - removed:
-            raise RuntimeError(f"{path.name}: count mismatch {old_count} - {removed} != {len(entries)}")
         ops.atomic_write_text(path, new_text)
         removed_total += removed
     return removed_total
+
+
+def remove_ids_from_text(old_text: str, drop: set, label: str = "shard") -> tuple[str, int]:
+    """remove_ids for one shard's text: (validated new text, removed count). Pure — no I/O."""
+    lines = old_text.splitlines(keepends=True)
+    out: list[str] = []
+    removed = 0
+    i = 0
+    while i < len(lines):
+        m = ENTRY_RE.match(lines[i])
+        if not m:
+            out.append(lines[i])
+            i += 1
+            continue
+        j = _entry_span(lines, i)
+        if m.group(1) in drop:
+            removed += 1
+        else:
+            out.extend(lines[i:j])
+        i = j
+    if not removed:
+        return old_text, 0
+    new_text = "".join(out)
+    entries = parse_yaml(new_text).get("sources") or []
+    old_count = len(parse_yaml(old_text).get("sources") or [])
+    leftover = {e["id"] for e in entries} & drop
+    if leftover:
+        raise RuntimeError(f"{label}: failed to remove {len(leftover)} ids, "
+                           f"e.g. {sorted(leftover)[:3]}")
+    if len(entries) != old_count - removed:
+        raise RuntimeError(f"{label}: count mismatch {old_count} - {removed} != {len(entries)}")
+    return new_text, removed
