@@ -74101,3 +74101,30 @@ sources:
     topic: infrastructure
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-edge-intelligence-enabled-optimal-scheduling-w
+    title: Edge intelligence enabled optimal scheduling with distributed price-responsive
+      load for regenerative electric boilers
+    url: https://www.frontiersin.org/articles/10.3389/fenrg.2022.976294/pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-distributed-deep-reinforcement-learning-for-in
+    title: Distributed Deep Reinforcement Learning for Intelligent Load Scheduling in
+      Residential Smart Grids
+    url: https://arxiv.org/pdf/2006.16100
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-estimation-of-the-air-conditioning-energy-cons
+    title: Estimation of the air conditioning energy consumption of a classroom using
+      machine learning in a tropical climate
+    url: https://www.frontiersin.org/journals/big-data/articles/10.3389/fdata.2025.1520574/pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
