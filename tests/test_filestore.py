@@ -147,7 +147,7 @@ def test_blocklist_add_inside_a_round_goes_through_the_broker(st, monkeypatch):
     assert st.blocklist_path.read_text().endswith("https://b.org/9\n")
     with st.read() as v:
         runs = {e["run_id"] for e in v.scan(Table.EVENTS).rows}
-    assert len(runs) == 1 and runs.pop().startswith("rnd-bl.blocklist.add-")
+    assert len(runs) == 1 and runs.pop().startswith("rnd-bl.blocklist.blocklist-")
 
 
 # --- normalization: index and canonical paths agree ----------------------------------------------

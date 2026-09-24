@@ -593,19 +593,6 @@ def open(*, root: Path = ROOT, backend: str | None = None) -> "FileStore":  # no
     raise StoreError(f"storage backend {name!r} is not available (known: file, postgres)")
 
 
-@contextmanager
-def standalone_transaction(st, label: str, *, timeout: float = 30) -> Iterator["WriteView"]:
-    """One transaction under its own writer, for a command run outside a round (rotation.py,
-    blocklist.add, migrations). It waits at most `timeout` seconds for the writer (the round lock
-    for FileStore), so it never interleaves with a round; inside a round, write through the
-    round's broker instead (store_broker.client())."""
-    run_id = _check_run_id(
-        f"{label}-{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}-{uuid.uuid4().hex[:8]}")
-    with st.writer(timeout=timeout) as w:
-        with st.transaction(run_id, expected_version=st.version(), writer=w) as tx:
-            yield tx
-
-
 def norm_url(url: str | None) -> str:
     return blocklist_mod.normalize(url or "")
 

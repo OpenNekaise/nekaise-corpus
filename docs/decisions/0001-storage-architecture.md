@@ -265,12 +265,28 @@ whole discovery phase in one transaction; runtime exhaustion is separated from c
   configuration). Contracts: eligibility rules still require the configuration itself to disable a
   restricted backend with a policy-blocked reason (runtime exhaustion never satisfies policy);
   patent-country and suspended-host rules check the effective enablement, i.e. what may run.
-- **Standalone writers.** `rotation.py advance|next|show` keep their CLI and output; `advance` and
-  `set_next` run one standalone store transaction (`store.standalone_transaction`, run id
-  `rotation-…`), waiting at most 30 s for a running round instead of interleaving with it (the old
-  private `rotation` lock did not exclude rounds). `blocklist.add` writes through the round's broker
-  inside a round (prune) and through a standalone transaction outside one; no new URL means no
-  transaction. Reads (`rotation.load`, `blocklist.load`) stay plain file reads.
+- **Standalone writers.** `rotation.py advance|next|show` keep their CLI and output. Every
+  converted standalone mutation — `rotation.advance`/`set_next`, `blocklist.add`,
+  `migrate_backend_state` — goes through `store_broker.run_batch(st, step, body)`: `body(view,
+  batch)` reads a view and records mutations; under a broker (a round's mutating step, or a child
+  of the maintainer's window) the view is the inherited read view and the batch is submitted with
+  its version (a concurrent change refuses it); otherwise the command takes its own writer for one
+  transaction (`<step>-<UTC stamp>-<hex>`), waiting at most 30 s for a running round instead of
+  interleaving with it (the old private `rotation` lock did not exclude rounds). Nothing recorded
+  means no transaction. Reads (`rotation.load`, `blocklist.load`) stay plain file reads.
+- **Maintenance window (Codex review, P2).** `maintainer.maintenance_window` takes the canonical
+  round lock as a store writer (`FileStore.writer`), serves a `store_broker.Broker` for the window
+  (round id `maint-<UTC stamp>-<phase>`) and exports its environment, next to the inherited read
+  entry `ops.named_lock` already exports, to every child it launches, for the window only. So an
+  agent's `prune_corpus --apply` (its blocklist), `rotation.py advance` or
+  `migrate_backend_state.py` in the action window runs as a store transaction instead of waiting
+  on its own coordinator's lock and failing (regression test: real child processes under a real
+  window, and the same child without the broker refused).
+- **Backend health (Codex review, P3).** The maintainer's snapshot reads configuration and runtime
+  state through one store view (the window's writer token; files only if no view can open, and
+  `state_source` says which), reports backends by effective enablement, lists configured backends
+  paused at runtime under `runtime_paused` with their reason, and parses `backend_disabled`
+  events (from completed rounds only) to name the round that disabled them.
 - **Representation migration (decision).** `scripts/migrate_backend_state.py NAME… --apply` moves a
   named backend's config pause `enabled=false, reason="exhausted: …"` to runtime state with the
   reason verbatim (runtime first, then config `enabled=true` without a reason, under the round lock;
@@ -286,3 +302,11 @@ whole discovery phase in one transaction; runtime exhaustion is separated from c
   commits `registry/backends.json`, `registry/backend_state.json` and the journal together.
 - **Rollback.** A failed round still restores every tracked byte from the round snapshot
   (journal and runtime state included; tested). A failed discovery transaction writes nothing.
+- **Stage-4 note (Codex): the discovery transaction is not replayable after commit.**
+  `<round>.discover.merge` records requests computed against the state it read (membership, id
+  suffixes, cursors); replaying the round after the commit recomputes them against the new state,
+  so the request digest differs and the store refuses the run id as "already committed different
+  requests". That is fine for today's runner, which rolls a failed round back and restarts it
+  under a new round id. Stage-4 staging recovery must either preserve the computed batch as an
+  immutable staged artifact and replay exactly it, or explicitly recognize a completed discovery
+  step (its commit row) and skip to the next step.

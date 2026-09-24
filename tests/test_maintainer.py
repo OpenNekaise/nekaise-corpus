@@ -174,6 +174,7 @@ def test_backend_health_handles_empty_history(tmp_path):
                 "last_hold_detail": None,
             }
         },
+        "runtime_paused": {},
     }
 
 
@@ -574,3 +575,135 @@ def test_second_maintainer_leaves_owner_request_alone(tmp_path, monkeypatch):
     with maintainer.ops.named_lock('maintainer'):
         assert maintainer.main() == 0
     assert request.read_text() == 'existing owner request'
+
+
+# --- the maintenance window writes through its own broker (ADR 0001 stage 3, step 5 review) -------
+
+def maintenance_repo(tmp_path):
+    reg = tmp_path / 'registry'
+    reg.mkdir()
+    (reg / 'backends.json').write_text(json.dumps({
+        '_readme': 'control plane',
+        'find_x': {'script': 'find_x.py', 'enabled': True},
+        'find_kit': {'script': 'find_kit.py', 'enabled': False,
+                     'reason': 'exhausted: KIT set fully harvested'},
+        'find_dry': {'script': 'find_dry.py', 'enabled': True},
+    }, indent=2) + '\n')
+    (reg / 'rotation.json').write_text(json.dumps(
+        {'find_x': {'flag': '--page', 'next': 3}}, indent=2) + '\n')
+    (reg / 'backend_state.json').write_text(json.dumps(
+        {'find_dry': {'enabled': False, 'reason': 'exhausted: walked to the end'}}) + '\n')
+    (tmp_path / 'pruned_urls.txt').write_text('https://e.org/old\n')
+
+
+CHILD = '''
+import json, sys
+from pathlib import Path
+sys.path.insert(0, {scripts!r})
+root = Path({root!r})
+import blocklist, rotation, migrate_backend_state
+blocklist.PATH = root / 'pruned_urls.txt'
+rotation.PATH = root / 'registry' / 'rotation.json'
+rotation.LOCK_TIMEOUT = 0.5
+print(json.dumps({{
+    'blocklist': blocklist.add(['https://e.org/new/']),
+    'rotation': rotation.advance('find_x'),
+    'migrate': migrate_backend_state.migrate(root, ['find_kit'], apply=True, timeout=0.5,
+                                             log=lambda *_: None),
+}}))
+'''
+
+
+def run_child(tmp_path, env):
+    code = CHILD.format(scripts=str(Path(maintainer.__file__).parent), root=str(tmp_path))
+    return subprocess.run([sys.executable, '-c', code], env=env, capture_output=True, text=True,
+                          cwd=tmp_path, timeout=60)
+
+
+def test_window_children_mutate_through_the_window_broker(tmp_path, monkeypatch):
+    """A maintenance agent's mutations (blocklist, rotation CLI, backend-state migration) run as
+    store transactions through the window's broker while the parent holds the round lock."""
+    configure_maintenance(tmp_path, monkeypatch)
+    maintenance_repo(tmp_path)
+    with maintainer.maintenance_window('action'):
+        env = maintainer.agent_env(Path(sys.executable))
+        assert maintainer.store_broker.BROKER_ENV in env
+        assert maintainer.ops.inherited_holders(env[maintainer.ops.INHERITED_LOCK_ENV])
+        done = run_child(tmp_path, env)
+        # the same child without the broker would wait on the parent's lock and fail
+        bare = {k: v for k, v in env.items() if not k.startswith('NEKAISE_STORE_')}
+        refused = run_child(tmp_path, bare)
+    assert done.returncode == 0, done.stderr
+    assert json.loads(done.stdout) == {'blocklist': 1, 'rotation': '--page 4', 'migrate': 0}
+    assert refused.returncode != 0 and 'corpus-round' in refused.stderr
+    assert (tmp_path / 'pruned_urls.txt').read_text() == 'https://e.org/old\nhttps://e.org/new\n'
+    assert json.loads((tmp_path / 'registry/rotation.json').read_text())['find_x']['next'] == 4
+    config = json.loads((tmp_path / 'registry/backends.json').read_text())
+    assert config['find_kit'] == {'script': 'find_kit.py', 'enabled': True}
+    st = maintainer.store.FileStore(tmp_path)
+    with st.read() as view:
+        assert view.backend_state_get('find_kit') == maintainer.store.BackendState(
+            False, 'exhausted: KIT set fully harvested')
+        assert not view.backend_enabled('find_kit')
+        runs = {e['run_id'] for e in view.scan(maintainer.store.Table.EVENTS).rows}
+    assert len(runs) == 3 and all(r.startswith('maint-') and '-action.' in r for r in runs)
+    # the window's broker and its environment are gone afterwards
+    assert maintainer.store_broker.BROKER_ENV not in os.environ
+    assert_growth_unlocked()
+
+
+def test_window_exports_nothing_after_a_busy_lock(tmp_path, monkeypatch):
+    configure_maintenance(tmp_path, monkeypatch)
+    with maintainer.ops.named_lock('corpus-round'):
+        with pytest.raises(maintainer.MaintenanceBusy):
+            with maintainer.maintenance_window('test'):
+                pass
+    assert maintainer.store_broker.BROKER_ENV not in os.environ
+
+
+def test_backend_health_uses_effective_enablement_and_reports_runtime_pauses(tmp_path):
+    history = tmp_path / 'history.jsonl'
+    write_history(
+        history,
+        {'run_id': 'fail', 'event': 'backend_disabled', 'backend': 'finder', 'reason': 'rolled back'},
+        {'run_id': 'fail', 'event': 'run_failed'},
+        {'run_id': 'one', 'event': 'discovery_merged', 'accepted': {'finder': 2, 'other': 1}},
+        {'run_id': 'one', 'event': 'backend_disabled', 'at': '2026-09-24T10:00:00Z',
+         'backend': 'finder', 'reason': 'walked to the end'},
+        {'run_id': 'one', 'event': 'run_completed', 'at': '2026-09-24T10:01:00Z'},
+    )
+    summary = maintainer.summarize_backend_health(
+        history,
+        {'finder': {'enabled': True}, 'other': {'enabled': True},
+         'paused': {'enabled': False, 'reason': 'operator'}},
+        {'finder': {'enabled': False, 'reason': 'exhausted: walked to the end'},
+         'paused': {'enabled': False, 'reason': 'exhausted: old'}},
+    )
+    assert set(summary['backends']) == {'other'}
+    assert summary['runtime_paused'] == {'finder': {
+        'reason': 'exhausted: walked to the end',
+        'disabled_by_round': {'run_id': 'one', 'at': '2026-09-24T10:00:00Z',
+                              'reason': 'walked to the end'},
+    }}
+    assert summary['total_accepted'] == 3
+
+
+def test_repo_snapshot_reads_backend_state_through_the_window_view(tmp_path, monkeypatch):
+    configure_maintenance(tmp_path, monkeypatch)
+    maintenance_repo(tmp_path)
+    monkeypatch.setattr(maintainer.ops, 'SNAPSHOTS', tmp_path / 'workspace' / 'round-snapshots')
+    monkeypatch.setattr(maintainer, 'git',
+                        lambda *args, **kwargs: (0, '0 0' if args[0] == 'rev-list' else 'main'))
+    with maintainer.maintenance_window('snapshot'):
+        health = maintainer.repo_snapshot('exit=0')['backend_health']
+    assert health['state_source'] == 'store_view'
+    assert set(health['backends']) == {'find_x'}
+    assert health['runtime_paused'] == {'find_dry': {
+        'reason': 'exhausted: walked to the end', 'disabled_by_round': None}}
+    # an unrecovered round snapshot blocks store views: the same documents are read as files
+    (tmp_path / 'workspace' / 'round-snapshots' / 'r1').mkdir(parents=True)
+    (tmp_path / 'workspace' / 'round-snapshots' / 'r1' / 'snapshot.json').write_text('{}')
+    with maintainer.maintenance_window('snapshot'):
+        health = maintainer.repo_snapshot('exit=0')['backend_health']
+    assert health['state_source'].startswith('files (PendingTransaction')
+    assert set(health['runtime_paused']) == {'find_dry'}

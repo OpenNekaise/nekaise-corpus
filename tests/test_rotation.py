@@ -196,7 +196,8 @@ def test_cli_output_is_unchanged(tmp_path):
     repo = tmp_path / "repo"
     (repo / "scripts").mkdir(parents=True)
     scripts = Path(rotation.__file__).parent
-    for name in ("rotation.py", "store.py", "registry.py", "blocklist.py", "ops.py"):
+    for name in ("rotation.py", "store.py", "store_broker.py", "registry.py", "blocklist.py",
+                 "ops.py"):
         (repo / "scripts" / name).write_bytes((scripts / name).read_bytes())
     path = _rotation_file(repo)
     path.write_text(_legacy_bytes(STATE))

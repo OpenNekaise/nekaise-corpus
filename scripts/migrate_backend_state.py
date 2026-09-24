@@ -25,12 +25,12 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-import time
-import uuid
+from contextlib import ExitStack
 from pathlib import Path
 
 import ops
 import store
+import store_broker
 
 ROOT = Path(__file__).resolve().parents[1]
 PREFIX = "exhausted: "
@@ -75,10 +75,22 @@ def migrate(root: Path, names: list[str], *, apply: bool, timeout: float = 60,
             log=print) -> int:
     st = store.open(root=root)
     config_path = Path(root) / "registry" / "backends.json"
-    with st.writer(timeout=timeout) as writer:
-        with st.read(writer=writer) as view:
+    with ExitStack() as stack:
+        # Under the round lock throughout: a maintenance window's child writes through its
+        # parent's broker (the parent holds the lock); a standalone run holds its own writer.
+        writer = (None if store_broker.client() is not None
+                  else stack.enter_context(st.writer(timeout=timeout)))
+
+        def body(view, batch):
             raw = json.loads(config_path.read_text())
             moves, done, errors = plan(raw, view.backend_state_get(), names)
+            if apply and not errors:
+                for name, reason in moves.items():
+                    batch.backend_state_set(name, store.BackendState(False, reason))
+            return raw, moves, done, errors
+
+        (raw, moves, done, errors), _ = store_broker.run_batch(
+            st, "migrate-backend-state", body, writer=writer)
         for name in done:
             log(f"{name}: already migrated")
         if errors:
@@ -92,15 +104,12 @@ def migrate(root: Path, names: list[str], *, apply: bool, timeout: float = 60,
             if moves:
                 log("dry run -- pass --apply to migrate")
             return 0
-        run_id = f"migrate-backend-state-{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}-" \
-                 f"{uuid.uuid4().hex[:8]}"
-        with st.transaction(run_id, expected_version=st.version(), writer=writer) as tx:
-            for name, reason in moves.items():
-                tx.backend_state_set(name, store.BackendState(False, reason))
-        # Git-owned configuration: the store never writes it; same format as the old writer.
+        # Configuration is owned by the repository: the store never writes it; same format as
+        # the old writer. Runtime state was recorded first, so an interruption here leaves the
+        # backend paused in both places.
         ops.atomic_write_text(config_path, json.dumps(
             migrated_config(raw, moves), indent=2, ensure_ascii=False) + "\n")
-        with st.read(writer=writer) as view:
+        with st.read(writer=writer) if writer is not None else st.read() as view:
             still = [n for n in moves if view.backend_enabled(n)]
         if still:  # cannot happen unless the store lost the runtime write
             log(f"ERROR effective enablement changed for {', '.join(still)}")

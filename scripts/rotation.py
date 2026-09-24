@@ -19,8 +19,9 @@ re-aim a vein.
 
 Writes go through the store (ADR 0001 stage 3, step 5): a round records its pointer moves inside
 its discovery transaction (run_round, using `advanced` / `with_next`), and the standalone
-`advance` / `set_next` below run one store transaction under their own writer, which waits at most
-LOCK_TIMEOUT seconds for a running round instead of interleaving with it. Reads (`load`, `next`,
+`advance` / `set_next` below run one store transaction (store_broker.run_batch): through the
+broker of the round or maintenance window they run in, otherwise under their own writer, which
+waits at most LOCK_TIMEOUT seconds for a running round instead of interleaving with it. Reads (`load`, `next`,
 `show`) stay plain file reads so they never wait for a round.
 """
 from __future__ import annotations
@@ -153,11 +154,17 @@ def with_next(name: str, entry: dict, value: str) -> dict:
 
 
 def _update(name: str, change) -> str:
-    """Apply change(name, entry) -> entry in one standalone store transaction."""
-    st = store.open(root=PATH.parent.parent)
-    with store.standalone_transaction(st, "rotation", timeout=LOCK_TIMEOUT) as tx:
-        entry = change(name, tx.rotation_get(name))
-        tx.rotation_set(name, entry)
+    """Apply change(name, entry) -> entry as one store transaction: through the broker of the
+    round or maintenance window this runs in, else under its own writer (run_batch)."""
+    import store_broker
+
+    def body(view, batch):
+        entry = change(name, view.rotation_get(name))
+        batch.rotation_set(name, entry)
+        return entry
+
+    entry, _ = store_broker.run_batch(store.open(root=PATH.parent.parent), "rotation", body,
+                                      timeout=LOCK_TIMEOUT)
     return pointer_arg(entry)
 
 

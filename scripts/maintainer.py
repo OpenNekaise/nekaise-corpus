@@ -26,6 +26,8 @@ from typing import Any
 
 import ops
 import run_round
+import store
+import store_broker
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -106,6 +108,36 @@ class MaintenanceBusy(RuntimeError):
     pass
 
 
+# The store writer of the open maintenance window (this process holds the round lock), if any.
+_WINDOW_WRITER = None  # (store, writer token) while a window is open
+
+
+@contextmanager
+def window_writer(st, writer):
+    global _WINDOW_WRITER
+    previous, _WINDOW_WRITER = _WINDOW_WRITER, (st, writer)
+    try:
+        yield writer
+    finally:
+        _WINDOW_WRITER = previous
+
+
+@contextmanager
+def exported_env(values: dict[str, str]):
+    """Export `values` to every child started while the context is open (agent_env copies
+    os.environ), restoring the previous values afterwards."""
+    previous = {k: os.environ.get(k) for k in values}
+    os.environ.update(values)
+    try:
+        yield
+    finally:
+        for key, value in previous.items():
+            if value is None:
+                os.environ.pop(key, None)
+            else:
+                os.environ[key] = value
+
+
 @contextmanager
 def maintenance_window(phase: str):
     """Only the single maintainer owner may request a gap; lock order matches dig."""
@@ -115,12 +147,22 @@ def maintenance_window(phase: str):
     request.write_text(f"{os.getpid()} {phase} {utc_now().isoformat()}\n")
     try:
         with ExitStack() as locks:
+            st = store.FileStore(ROOT)
             try:
                 locks.enter_context(ops.named_lock("continuous-dig", timeout=wait))
                 remaining = max(0, wait - (time.monotonic() - started))
-                locks.enter_context(ops.named_lock("corpus-round", timeout=remaining))
+                # The canonical round lock, held as the store's writer: while it is held every
+                # child inherits read access (ops.named_lock exports it), and the window's broker
+                # below gives children write access, so an agent's prune/rotation/blocklist
+                # mutation runs as a store transaction instead of waiting on this very lock.
+                writer = locks.enter_context(st.writer(timeout=remaining))
             except RuntimeError as exc:
                 raise MaintenanceBusy(str(exc)) from exc
+            locks.enter_context(window_writer(st, writer))
+            window_id = f"maint-{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}-{phase}"
+            broker = store_broker.Broker(st, writer, window_id)
+            locks.enter_context(broker.serving())
+            locks.enter_context(exported_env(broker.env()))
             request.unlink(missing_ok=True)
             acquired = time.monotonic()
             print(f"Maintenance {phase}: acquired growth locks after {acquired - started:.1f}s", flush=True)
@@ -289,18 +331,35 @@ def verify_recovered_corpus() -> None:
     raise RuntimeError(f"post-recovery corpus check failed (exit {code}){detail}")
 
 
+def _runtime_fields(state: Any) -> tuple[bool, str | None]:
+    """(enabled, reason) of one runtime backend state (store.BackendState or its JSON dict)."""
+    if isinstance(state, dict):
+        enabled, reason = state.get("enabled", True), state.get("reason")
+    else:
+        enabled, reason = getattr(state, "enabled", True), getattr(state, "reason", None)
+    return enabled is not False, reason if isinstance(reason, str) else None
+
+
 def summarize_backend_health(
     history: Path,
     backend_config: dict[str, Any],
+    runtime: dict[str, Any] | None = None,
     *,
     window: int = 40,
 ) -> dict[str, Any]:
     """Summarize recent completed discovery rounds without scanning corpus metadata.
 
+    Backends are reported by EFFECTIVE enablement: enabled in the configuration AND in the
+    runtime state (`runtime`, name -> store.BackendState or {"enabled", "reason"}; ADR 0001 stage
+    3, step 5). Configured backends that runtime state pauses (finder-reported exhaustion) are
+    listed under "runtime_paused" with their reason and the completed round that disabled them.
+
     This is observation only: the result is included in the maintainer prompt and never feeds
     backend enablement, rotation, or growth-block decisions. Malformed local ledger lines are
     ignored so one damaged diagnostic event cannot prevent maintenance triage.
     """
+    runtime = runtime or {}
+    disabled_by: dict[str, dict[str, Any]] = {}
     window = max(1, window)
     completed: deque[dict[str, Any]] = deque(maxlen=window)
     pending: dict[str, dict[str, Any]] = {}
@@ -326,6 +385,7 @@ def summarize_backend_health(
                 "discovery_degraded",
                 "rotation_advanced",
                 "rotation_held",
+                "backend_disabled",
                 "run_completed",
                 "run_failed",
                 "run_recovered",
@@ -335,6 +395,7 @@ def summarize_backend_health(
                 "accepted": {},
                 "degraded": set(),
                 "rotations": [],
+                "disabled": [],
                 "merged_at": None,
                 "completed_at": None,
             })
@@ -367,8 +428,19 @@ def summarize_backend_health(
                     if event == "rotation_held" and isinstance(row.get("detail"), str):
                         rotation["detail"] = row["detail"]
                     state["rotations"].append((backend, rotation))
+            elif event == "backend_disabled":
+                backend = row.get("backend")
+                if isinstance(backend, str):
+                    state["disabled"].append((backend, {
+                        "run_id": run_id,
+                        "at": row.get("at") if isinstance(row.get("at"), str) else None,
+                        "reason": row.get("reason") if isinstance(row.get("reason"), str) else None,
+                    }))
             elif event == "run_completed":
                 state["completed_at"] = row.get("at") if isinstance(row.get("at"), str) else None
+                # Only a committed round's exhaustion took effect (failed rounds roll back).
+                for backend, disabled in state["disabled"]:
+                    disabled_by[backend] = disabled
                 for backend in state["accepted"].keys() | state["degraded"]:
                     health = lifetime.setdefault(backend, {
                         "degraded_streak": 0,
@@ -407,10 +479,21 @@ def summarize_backend_health(
             elif event in {"run_failed", "run_recovered"}:
                 pending.pop(run_id, None)
 
-    selected = {
+    configured = {
         name: config
         for name, config in backend_config.items()
         if isinstance(name, str) and isinstance(config, dict) and config.get("enabled") is True
+    }
+    selected = {
+        name: config for name, config in configured.items()
+        if _runtime_fields(runtime.get(name, {}))[0]
+    }
+    runtime_paused = {
+        name: {
+            "reason": _runtime_fields(runtime[name])[1],
+            "disabled_by_round": disabled_by.get(name),
+        }
+        for name in sorted(set(configured) - set(selected))
     }
     total_accepted = sum(
         count
@@ -460,7 +543,33 @@ def summarize_backend_health(
         "total_accepted": total_accepted,
         "streaks_scope": "all_completed_rounds",
         "backends": backends,
+        "runtime_paused": runtime_paused,
     }
+
+
+def backend_control_state() -> tuple[dict[str, Any], dict[str, Any], str]:
+    """(backend configuration, runtime backend state, source) for the health snapshot.
+
+    Read through one store view — inside a maintenance window with the window's writer token (this
+    process holds the round lock, so it may not wait for it). When no view can be opened (e.g. an
+    unrecovered round snapshot) the same two documents are read as files, and the source says so.
+    """
+    try:
+        with ExitStack() as stack:
+            if _WINDOW_WRITER is not None:
+                st, writer = _WINDOW_WRITER
+                view = stack.enter_context(st.read(writer=writer))
+            else:
+                view = stack.enter_context(store.FileStore(ROOT).read(timeout=0))
+            config = view.config_get().backends
+            runtime = {name: {"enabled": state.enabled, "reason": state.reason}
+                       for name, state in view.backend_state_get().items()}
+            return config, runtime, "store_view"
+    except (RuntimeError, OSError, ValueError, TypeError) as exc:
+        config = json.loads((ROOT / "registry" / "backends.json").read_text())
+        path = ROOT / "registry" / store.BACKEND_STATE_FILE
+        runtime = json.loads(path.read_text()) if path.exists() else {}
+        return config, runtime, f"files ({type(exc).__name__}: {exc})"[:300]
 
 
 def repo_snapshot(
@@ -487,8 +596,9 @@ def repo_snapshot(
             recent_events = [line.rstrip() for line in deque(handle, maxlen=30)]
     recent_logs = sorted(LOGS.glob("dig-*.log"), key=lambda path: path.stat().st_mtime)[-3:]
     try:
-        backend_config = json.loads((ROOT / "registry" / "backends.json").read_text())
-        backend_health = summarize_backend_health(history, backend_config)
+        backend_config, runtime, source = backend_control_state()
+        backend_health = summarize_backend_health(history, backend_config, runtime)
+        backend_health["state_source"] = source
     except (OSError, TypeError, ValueError, json.JSONDecodeError) as exc:
         backend_health = {"error": f"could not summarize backend health: {exc}"}
     return {

@@ -34,7 +34,8 @@ import socket
 import socketserver
 import tempfile
 import threading
-from contextlib import contextmanager
+import time
+from contextlib import ExitStack, contextmanager
 from pathlib import Path
 from typing import Iterator
 
@@ -246,9 +247,40 @@ class Client:
 
 
 def client() -> Client | None:
-    """The round's broker client, or None outside a round (standalone commands then take their
-    own writer)."""
+    """The broker client of the round or maintenance window this process runs in, or None
+    (standalone commands then take their own writer)."""
     path, cap, rnd = (os.environ.get(k) for k in (BROKER_ENV, CAP_ENV, ROUND_ENV))
     if not (path and cap and rnd):
         return None
     return Client(path, cap, rnd)
+
+
+def run_batch(st, step: str, body, *, writer: "store.WriterToken | None" = None,
+              timeout: float = 30.0):
+    """Run a standalone command's read-compute-write as ONE store transaction, wherever it runs.
+
+    body(view, batch) reads only from `view` and records its mutations on `batch` (store
+    mutation names and signatures). Under a broker (a round's mutating step, or a child of the
+    maintainer's window, whose parent holds the round lock) the view is the inherited read view
+    and the batch is submitted with that view's version, so a concurrent change refuses it.
+    Otherwise the command takes its own writer — or uses `writer`, when it already holds one —
+    for one transaction; `timeout` bounds the wait for a running round. Nothing recorded means no
+    transaction. Returns (body's result, [each mutation's result])."""
+    batch = _Batch()
+    if (c := client()) is not None:
+        with st.read() as view:
+            out = body(view, batch)
+            version = view.version()
+        results = (c.submit(step, f"{step}-{secrets.token_hex(6)}", batch.requests, version)
+                   if batch.requests else [])
+        return out, results
+    run_id = store._check_run_id(
+        f"{step}-{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}-{secrets.token_hex(4)}")
+    with ExitStack() as stack:
+        if writer is None:
+            writer = stack.enter_context(st.writer(timeout=timeout))
+        with st.transaction(run_id, expected_version=st.version(), writer=writer) as tx:
+            out = body(tx, batch)
+            results = [getattr(tx, r["call"])(**_bind(r["call"], r["args"], r["kwargs"]))
+                       for r in batch.requests]
+    return out, results
