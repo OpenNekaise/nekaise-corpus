@@ -23,7 +23,7 @@ LICENSES = {"public-domain", "cc-by", "cc-by-sa", "cc0", "open", "proprietary-in
 TOPICS = {"controls_bas", "equipment_systems", "building_energy", "commissioning_fdd",
           "standards_protocols", "structures_civil", "construction", "materials",
           "architecture", "infrastructure", "urban"}
-FORMATS = {"pdf", "html", "md", "rst", "txt"}
+FORMATS = {"pdf", "html", "md", "rst", "txt", "tex", "troff"}
 
 
 def main() -> int:

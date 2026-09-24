@@ -48,6 +48,7 @@ from urllib.parse import urlparse
 
 import requests
 
+import markup_text
 import quality
 import registry
 
@@ -63,6 +64,9 @@ TIMEOUT = 45
 EXTRACTION_CONTEXT = multiprocessing.get_context("spawn")
 # plain-text source formats (GitHub READMEs / docs, .rst, etc.): stored verbatim, no parsing.
 TEXT_FORMATS = {"md", "rst", "txt"}
+# documentation markup converted to readable text by conservative strippers (scripts/markup_text.py):
+# LaTeX manuals (NIST FDS / CFAST) and troff man/ms pages (Radiance). Raw bytes keep the markup.
+MARKUP_FORMATS = {"tex": markup_text.tex_to_text, "troff": markup_text.troff_to_text}
 # Politeness: never more than this many in-flight requests against one host, however many workers.
 # Hosts listed below have handled four concurrent public-document transfers reliably.  Parsing is
 # deliberately outside these limits: a 100MB PDF must not hold a network slot while pypdf works.
@@ -130,7 +134,7 @@ def _binary_version(name: str) -> str:
 
 # Stored on newly extracted rows. Old rows remain valid and gain it only when re-extracted.
 EXTRACTOR_VERSION = (
-    f"build_corpus/2;pypdf={_version('pypdf')};beautifulsoup4={_version('beautifulsoup4')};"
+    f"build_corpus/3;pypdf={_version('pypdf')};beautifulsoup4={_version('beautifulsoup4')};"
     f"pdftotext={_binary_version('pdftotext')}"
 )
 
@@ -168,6 +172,8 @@ def extract_for(fmt: str, data: bytes) -> str:
         return extract_html(data)
     if fmt in TEXT_FORMATS:
         return extract_text_plain(data)
+    if fmt in MARKUP_FORMATS:
+        return MARKUP_FORMATS[fmt](extract_text_plain(data)).strip()
     return ""
 
 
@@ -239,7 +245,10 @@ def extract_html(data: bytes) -> str:
             or soup.select_one("div.body") or soup.select_one("div.document")
             or soup.select_one(".md-content") or soup.select_one(".rst-content")
             or soup.body or soup)
-    drop = (".reference", ".mw-editsection", "table.navbox", ".navbox",
+    # MediaWiki citation markers are <sup class="reference">. A bare ".reference" also matched
+    # every Sphinx hyperlink (<a class="reference internal">), silently deleting link text from
+    # readthedocs pages ("See <Running a Project> for ..." -> "See for ...").
+    drop = ("sup.reference", ".mw-editsection", "table.navbox", ".navbox",
             ".vertical-navbox", ".reflist", "#toc", ".toc",
             ".navigation-not-searchable", ".hatnote", ".ambox", "table.ambox",
             ".mbox-small", ".metadata", ".sistersitebox", ".shortdescription",
@@ -314,7 +323,8 @@ def _new_record(src: dict) -> tuple[dict, str]:
     sid = src["id"]
     fmt = src.get("format", "pdf")
     source = src.get("source", "misc")
-    ext = {"pdf": "pdf", "html": "html"}.get(fmt, fmt if fmt in TEXT_FORMATS else "bin")
+    ext = {"pdf": "pdf", "html": "html"}.get(
+        fmt, fmt if fmt in TEXT_FORMATS or fmt in MARKUP_FORMATS else "bin")
     rec = {
         "id": sid, "title": src.get("title", sid), "url": src["url"],
         "source": source, "license": src.get("license", "unknown"),

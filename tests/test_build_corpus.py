@@ -153,7 +153,7 @@ def test_fetch_records_optional_provenance_and_text_hash(tmp_path, monkeypatch):
     assert row["language"] == "en"
     assert row["license_url"].startswith("https://creativecommons.org/")
     assert row["text_sha256"] == hashlib.sha256(rendered).hexdigest()
-    assert row["extractor_version"].startswith("build_corpus/2;")
+    assert row["extractor_version"].startswith("build_corpus/3;")
 
 
 def test_download_and_extraction_are_separate_stages(tmp_path, monkeypatch):
