@@ -29,8 +29,10 @@ answers with a challenge instead of content.
 Rotation walks the fixed (conf, year) UNIVERSE below by index (`--slot`), newest editions first.
 The list is APPEND-ONLY: existing positions are committed rotation state, so new editions go at
 the end. A listing with more new papers than `--max` requests a hold, so the same slot is
-drained over several rounds before the pointer moves. After the last slot the backend reports
-itself exhausted. bscairo is hosted off-site (iopscience) and is not part of the universe.
+drained over several rounds before the pointer moves. When the LAST slot is drained the backend
+reports itself exhausted; the runner then advances the pointer to len(UNIVERSE), the first
+unvisited index, so an edition appended later is the next slot after re-enabling. A pointer past
+the end only holds. bscairo is hosted off-site (iopscience) and is not part of the universe.
 
     python scripts/find_ibpsa.py --slot 0 --max 20            # propose from bs2025
     python scripts/find_ibpsa.py --conf esim --year 2018      # one explicit listing
@@ -168,7 +170,12 @@ def main() -> None:
         if args.slot < 0:
             ap.error("--slot must be >= 0")
         if args.slot >= len(UNIVERSE):
-            report_exhausted(f"all {len(UNIVERSE)} IBPSA (conf, year) listings walked")
+            # Hold, never advance: this index is the first unvisited slot, where the next
+            # appended edition will land.
+            request_rotation_hold(
+                f"slot {args.slot} is past the {len(UNIVERSE)}-listing universe; "
+                "append new editions to UNIVERSE"
+            )
             print(f"# slot {args.slot} is past the {len(UNIVERSE)}-listing universe")
             return
         conf, year = UNIVERSE[args.slot]
@@ -209,6 +216,10 @@ def main() -> None:
             f"{conf}{year} has {len(candidates)} new papers; emitted {len(out)}, "
             "draining the same listing next round"
         )
+    elif args.slot == len(UNIVERSE) - 1:
+        # The runner advances the pointer by one before disabling, which leaves it on the first
+        # unvisited index (len(UNIVERSE)) - exactly where a newly appended edition goes.
+        report_exhausted(f"all {len(UNIVERSE)} IBPSA (conf, year) listings walked")
     registry.uniquify_ids(out, reg_ids)
     by_topic: dict = {}
     for h in out:

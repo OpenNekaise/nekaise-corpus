@@ -85,7 +85,8 @@ def test_no_records_match_is_an_empty_finished_set_and_bad_token_is_distinct():
         find_nlr.parse_page(_error("badArgument"))
 
 
-def _setup(monkeypatch, tmp_path, pages, known=(set(), set(), set())):
+def _setup(monkeypatch, tmp_path, pages, known=None):
+    known = known or (set(), set(), set())
     calls = []
     queue = iter(pages)
 
@@ -94,7 +95,7 @@ def _setup(monkeypatch, tmp_path, pages, known=(set(), set(), set())):
         item = next(queue)
         if isinstance(item, Exception):
             raise item
-        return SimpleNamespace(text=item, raise_for_status=lambda: None)
+        return SimpleNamespace(status_code=200, text=item, raise_for_status=lambda: None)
 
     monkeypatch.setattr(find_nlr.requests, "get", get)
     monkeypatch.setattr(find_nlr.time, "sleep", lambda _s: calls.append("sleep"))
@@ -178,3 +179,48 @@ def test_pure_article_number_suffix_is_stripped_for_title_dedup():
         "https://www.nlr.gov/docs/fy24osti/87665.pdf",
     )]))[0][0]
     assert find_nlr.candidate(record)["title"] == "Carbon Intensity of Mass Timber Materials"
+
+
+XHTML_CHALLENGE = (
+    '<?xml version="1.0"?><html xmlns="http://www.w3.org/1999/xhtml"><head>'
+    "<title>Just a moment...</title></head><body>challenge</body></html>"
+)
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        XHTML_CHALLENGE,
+        "<html><body>maintenance</body>",  # not even XML
+        '<?xml version="1.0"?><OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">'
+        "<responseDate>x</responseDate></OAI-PMH>",  # OAI root without ListRecords/error
+    ],
+)
+def test_non_oai_content_is_unexpected_not_an_empty_year(text):
+    with pytest.raises(find_nlr.Unexpected):
+        find_nlr.parse_page(text)
+
+
+def test_unexpected_page_holds_rotation_and_proposes_nothing(monkeypatch, tmp_path, capsys):
+    pages = [_page([BUILDINGS], "tok-2"), XHTML_CHALLENGE]
+    _, appended, files = _setup(monkeypatch, tmp_path, pages)
+    hold = tmp_path / "hold"
+    monkeypatch.setenv("NEKAISE_ROTATION_HOLD_FILE", str(hold))
+    monkeypatch.setattr(sys, "argv", ["find_nlr.py", "--cursor", "2024:START", "--pages", "3",
+                                      "--append"])
+
+    find_nlr.main()
+
+    assert appended == []
+    assert "root element" in hold.read_text()
+    assert not files["next"].exists()  # the year is not advanced
+
+
+@pytest.mark.parametrize("status", [202, 403, 429, 503])
+def test_non_200_answer_is_unexpected(monkeypatch, status):
+    monkeypatch.setattr(
+        find_nlr.requests, "get",
+        lambda *_a, **_k: SimpleNamespace(status_code=status, text="<html/>"),
+    )
+    with pytest.raises(find_nlr.Unexpected, match=f"HTTP {status}"):
+        find_nlr.fetch_page(2024, None)

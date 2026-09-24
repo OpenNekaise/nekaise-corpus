@@ -76,19 +76,31 @@ def parse_cursor(cursor: str) -> tuple[int, str | None]:
     return int(year), (None if token == START else token)
 
 
+class Unexpected(RuntimeError):
+    """Not an OAI-PMH answer: a challenge, refusal, maintenance or error page."""
+
+
 def fetch_page(year: int, token: str | None) -> str:
     params = ({"verb": "ListRecords", "resumptionToken": token} if token else
               {"verb": "ListRecords", "metadataPrefix": "oai_dc",
                "set": f"publications:year{year}"})
     response = requests.get(OAI, params=params, headers=UA, timeout=90)
-    response.raise_for_status()
+    if response.status_code != 200:
+        raise Unexpected(f"OAI answered HTTP {response.status_code}")
     return response.text
 
 
 def parse_page(xml_text: str) -> tuple[list[dict], str | None]:
     """OAI page -> (records, next token or None). noRecordsMatch is an empty, finished set;
-    badResumptionToken raises LookupError so the caller can restart the year."""
-    root = ET.fromstring(xml_text)
+    badResumptionToken raises LookupError so the caller can restart the year. Anything that is
+    not an OAI-PMH ListRecords answer (an XHTML challenge page parses as valid XML too) raises
+    Unexpected, so an unexpected page can never read as "year finished"."""
+    try:
+        root = ET.fromstring(xml_text)
+    except ET.ParseError as exc:
+        raise Unexpected(f"OAI answer is not XML: {exc}") from exc
+    if root.tag != f"{{{NS['oai']}}}OAI-PMH":
+        raise Unexpected(f"OAI answer has root element {root.tag!r}, not OAI-PMH")
     error = root.find("oai:error", NS)
     if error is not None:
         code = error.get("code")
@@ -97,6 +109,8 @@ def parse_page(xml_text: str) -> tuple[list[dict], str | None]:
         if code == "badResumptionToken":
             raise LookupError(f"OAI badResumptionToken: {error.text}")
         raise RuntimeError(f"OAI error {code}: {error.text}")
+    if root.find("oai:ListRecords", NS) is None:
+        raise Unexpected("OAI-PMH answer has neither ListRecords nor error")
     records = []
     for record in root.findall(".//oai:record", NS):
         header = record.find("oai:header", NS)
@@ -157,6 +171,12 @@ def candidate(record: dict) -> dict | None:
     return entry
 
 
+def request_rotation_hold(reason: str) -> None:
+    if hold_name := os.environ.get("NEKAISE_ROTATION_HOLD_FILE"):
+        Path(hold_name).write_text(reason + "\n", encoding="utf-8")
+    print(f"# rotation hold requested: {reason}", file=sys.stderr)
+
+
 def report_exhausted(reason: str) -> None:
     if name := os.environ.get("NEKAISE_BACKEND_EXHAUSTED_FILE"):
         Path(name).write_text(reason + "\n", encoding="utf-8")
@@ -202,6 +222,11 @@ def main() -> None:
             restarted, token = True, None
             pages += 1
             continue
+        except Unexpected as exc:
+            request_rotation_hold(f"{exc} at {year}:{token or START}; nothing proposed, "
+                                  "retrying this cursor next round")
+            print("# 0 NEW NLR reports (unexpected OAI answer)")
+            return
         except Exception as exc:
             print(f"# ERROR: NLR OAI page failed at {year}:{token or START}: {exc}; "
                   "refusing a partial append so rotation does not advance", file=sys.stderr)

@@ -31,7 +31,8 @@ def _response(status=200, content=LISTING):
     )
 
 
-def _setup(monkeypatch, tmp_path, response, known=(set(), set(), set())):
+def _setup(monkeypatch, tmp_path, response, known=None):
+    known = known or (set(), set(), set())
     calls = []
 
     def get(url, **kwargs):
@@ -137,7 +138,7 @@ def test_network_failure_exits_nonzero_so_pointer_is_retained(monkeypatch, tmp_p
     assert exc.value.code == 1
 
 
-def test_slot_past_universe_reports_exhausted_without_request(monkeypatch, tmp_path):
+def test_slot_past_universe_holds_without_request_or_exhaustion(monkeypatch, tmp_path):
     calls, _, hold, exhausted = _setup(monkeypatch, tmp_path, _response())
     monkeypatch.setattr(
         sys, "argv", ["find_ibpsa.py", "--slot", str(len(find_ibpsa.UNIVERSE))]
@@ -146,5 +147,30 @@ def test_slot_past_universe_reports_exhausted_without_request(monkeypatch, tmp_p
     find_ibpsa.main()
 
     assert calls == []
+    assert "past the 76-listing universe" in hold.read_text()
+    assert not exhausted.exists()  # the pointer must stay on the first unvisited index
+
+
+def test_draining_the_last_slot_reports_exhausted_so_pointer_lands_on_first_unvisited(
+    monkeypatch, tmp_path
+):
+    _, _, hold, exhausted = _setup(monkeypatch, tmp_path, _response())
+    last = len(find_ibpsa.UNIVERSE) - 1
+    monkeypatch.setattr(sys, "argv", ["find_ibpsa.py", "--slot", str(last)])
+
+    find_ibpsa.main()
+
     assert "76 IBPSA" in exhausted.read_text()
     assert not hold.exists()
+    # run_round advances a non-dynamic pointer by `step` before disabling the backend:
+    assert last + 1 == len(find_ibpsa.UNIVERSE)  # = index of the next appended edition
+
+
+def test_last_slot_overflow_holds_instead_of_exhausting(monkeypatch, tmp_path):
+    _, _, hold, exhausted = _setup(monkeypatch, tmp_path, _response())
+    last = len(find_ibpsa.UNIVERSE) - 1
+    monkeypatch.setattr(sys, "argv", ["find_ibpsa.py", "--slot", str(last), "--max", "1"])
+
+    find_ibpsa.main()
+
+    assert hold.exists() and not exhausted.exists()
