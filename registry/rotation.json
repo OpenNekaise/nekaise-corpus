@@ -55,7 +55,7 @@
   },
   "find_ibpsa": {
     "flag": "--slot",
-    "next": 1,
+    "next": 2,
     "step": 1,
     "note": "RE-AIMED 2026-09-24 from --year 2023 to an index into find_ibpsa.UNIVERSE (76 append-only (conf, year) listings verified on the series index pages, newest first: esim2026, simbuild2026, bs2025, ...). Nothing was ever kept: the 2026-08-05 bs2023/bs2025 attempt lost 881 of 917 fetches to the rate captcha (not blocklisted; 36 hard-403 URLs were). A listing with more new papers than --max, or a captcha answer, holds the slot; past the last slot the backend reports exhausted."
   },
@@ -68,7 +68,7 @@
   },
   "find_nlr": {
     "flag": "--cursor",
-    "next": "2025:oai_dc/2076/246024886/1800/0/212086432/publications:year2025/x/x",
+    "next": "2024:oai_dc/2344/246024886/500/0/112084086/publications:year2024/x/x",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-24: '<year>:<OAI resumptionToken|START>' over research-hub.nlr.gov Pure sets publications:yearYYYY, newest year first down to 1975 (53,919 records total; 2024 alone has 2,344). A rejected token restarts its year. Walk does not come back up: re-aim to the current year occasionally."
@@ -153,7 +153,7 @@
   },
   "find_openalex": {
     "flag": "--query-cursor",
-    "next": 2092,
+    "next": 2093,
     "step": 1,
     "note": "RE-AIMED 2026-08-26 after OpenAlex introduced usage pricing: anonymous access has 100 search requests/day, while the old all-query run made 105 requests and exhausted the budget. One query per round stays below the limit at the live ~72-round/day maximum; the flattened cursor advances across the frozen 105-query list, then continues at page 2 and deeper. Any query-list change requires a reviewed cursor migration."
   },
@@ -165,13 +165,13 @@
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 2103,
+    "next": 2104,
     "step": 1,
     "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature)."
   },
   "find_ojs": {
     "flag": "--site",
-    "next": 5,
+    "next": 6,
     "step": 1,
     "note": "Index into find_ojs.SITES (append-only list). One venue per round, harvested completely; a --max-capped run requests a rotation hold so the venue drains next round; an index past the end disables the backend as exhausted. Re-enable with a reset only to pick up new issues (dedup makes a re-walk idempotent). NEW 2026-09-24."
   }
