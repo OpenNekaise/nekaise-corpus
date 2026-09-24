@@ -44354,3 +44354,1157 @@ sources:
     license: open
     topic: standards_protocols
     format: md
+  - id: gh-radiance-doc-filefmts
+    title: 'Radiance: doc/filefmts.md'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/filefmts.md
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: md
+  - id: gh-radiance-doc-man-man1-arch2rad
+    title: 'Radiance: doc/man/man1/arch2rad.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/arch2rad.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-bsdf2ttree
+    title: 'Radiance: doc/man/man1/bsdf2ttree.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/bsdf2ttree.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-dcglare
+    title: 'Radiance: doc/man/man1/dcglare.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/dcglare.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-evalglare
+    title: 'Radiance: doc/man/man1/evalglare.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/evalglare.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-falsecolor
+    title: 'Radiance: doc/man/man1/falsecolor.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/falsecolor.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-gendaylit
+    title: 'Radiance: doc/man/man1/gendaylit.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/gendaylit.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-gendaymtx
+    title: 'Radiance: doc/man/man1/gendaymtx.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/gendaymtx.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-genssky
+    title: 'Radiance: doc/man/man1/genssky.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/genssky.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-ies2rad
+    title: 'Radiance: doc/man/man1/ies2rad.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/ies2rad.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-mgf2rad
+    title: 'Radiance: doc/man/man1/mgf2rad.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/mgf2rad.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-mkillum
+    title: 'Radiance: doc/man/man1/mkillum.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/mkillum.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-mkpmap
+    title: 'Radiance: doc/man/man1/mkpmap.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/mkpmap.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-obj2mesh
+    title: 'Radiance: doc/man/man1/obj2mesh.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/obj2mesh.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-obj2rad
+    title: 'Radiance: doc/man/man1/obj2rad.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/obj2rad.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-pfilt
+    title: 'Radiance: doc/man/man1/pfilt.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/pfilt.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-pmapdump
+    title: 'Radiance: doc/man/man1/pmapdump.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/pmapdump.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-pvalue
+    title: 'Radiance: doc/man/man1/pvalue.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/pvalue.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-rad
+    title: 'Radiance: doc/man/man1/rad.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/rad.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-rad2mgf
+    title: 'Radiance: doc/man/man1/rad2mgf.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/rad2mgf.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-ranimate
+    title: 'Radiance: doc/man/man1/ranimate.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/ranimate.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-ranimove
+    title: 'Radiance: doc/man/man1/ranimove.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/ranimove.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-rcalc
+    title: 'Radiance: doc/man/man1/rcalc.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/rcalc.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-rcollate
+    title: 'Radiance: doc/man/man1/rcollate.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/rcollate.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-rcomb
+    title: 'Radiance: doc/man/man1/rcomb.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/rcomb.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-rcontrib
+    title: 'Radiance: doc/man/man1/rcontrib.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/rcontrib.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-rcrop
+    title: 'Radiance: doc/man/man1/rcrop.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/rcrop.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-rhcopy
+    title: 'Radiance: doc/man/man1/rhcopy.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/rhcopy.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-rholo
+    title: 'Radiance: doc/man/man1/rholo.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/rholo.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-rmtxop
+    title: 'Radiance: doc/man/man1/rmtxop.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/rmtxop.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-robjutil
+    title: 'Radiance: doc/man/man1/robjutil.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/robjutil.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-rpict
+    title: 'Radiance: doc/man/man1/rpict.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/rpict.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-rsensor
+    title: 'Radiance: doc/man/man1/rsensor.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/rsensor.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-rtrace
+    title: 'Radiance: doc/man/man1/rtrace.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/rtrace.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-rvu
+    title: 'Radiance: doc/man/man1/rvu.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/rvu.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-tmesh2rad
+    title: 'Radiance: doc/man/man1/tmesh2rad.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/tmesh2rad.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man1-total
+    title: 'Radiance: doc/man/man1/total.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man1/total.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-man5-metafile
+    title: 'Radiance: doc/man/man5/metafile.5'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/man5/metafile.5
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-man-whatis
+    title: 'Radiance: doc/man/whatis.txt'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/man/whatis.txt
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: txt
+  - id: gh-radiance-doc-materials
+    title: 'Radiance: doc/materials.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/materials.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-radiance-doc-notes-releasenotes
+    title: 'Radiance: doc/notes/ReleaseNotes'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/notes/ReleaseNotes
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: txt
+  - id: gh-radiance-doc-notes-compile-switches
+    title: 'Radiance: doc/notes/compile_switches'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/notes/compile_switches
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: txt
+  - id: gh-radiance-doc-notes-translators
+    title: 'Radiance: doc/notes/translators'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/notes/translators
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: txt
+  - id: gh-radiance-doc-ray
+    title: 'Radiance: doc/ray.1'
+    url: https://raw.githubusercontent.com/LBNL-ETA/Radiance/master/doc/ray.1
+    source: gh_radiance
+    license: open
+    topic: building_energy
+    format: troff
+  - id: gh-fds-manuals-fds-config-management-plan-fds-config-management
+    title: 'fds: Manuals/FDS_Config_Management_Plan/FDS_Config_Management_Plan.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Config_Management_Plan/FDS_Config_Management_Plan.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-technical-reference-guide-aerosol-chapter
+    title: 'fds: Manuals/FDS_Technical_Reference_Guide/Aerosol_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Technical_Reference_Guide/Aerosol_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-technical-reference-guide-appendices
+    title: 'fds: Manuals/FDS_Technical_Reference_Guide/Appendices.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Technical_Reference_Guide/Appendices.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-technical-reference-guide-combustion-chapter
+    title: 'fds: Manuals/FDS_Technical_Reference_Guide/Combustion_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Technical_Reference_Guide/Combustion_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-technical-reference-guide-complex-geometry-c
+    title: 'fds: Manuals/FDS_Technical_Reference_Guide/Complex_Geometry_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Technical_Reference_Guide/Complex_Geometry_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-technical-reference-guide-device-chapter
+    title: 'fds: Manuals/FDS_Technical_Reference_Guide/Device_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Technical_Reference_Guide/Device_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-technical-reference-guide-equation-chapter
+    title: 'fds: Manuals/FDS_Technical_Reference_Guide/Equation_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Technical_Reference_Guide/Equation_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-technical-reference-guide-fds-technical-refe
+    title: 'fds: Manuals/FDS_Technical_Reference_Guide/FDS_Technical_Reference_Guide.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Technical_Reference_Guide/FDS_Technical_Reference_Guide.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-technical-reference-guide-hvac-chapter
+    title: 'fds: Manuals/FDS_Technical_Reference_Guide/HVAC_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Technical_Reference_Guide/HVAC_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-technical-reference-guide-introduction-chapt
+    title: 'fds: Manuals/FDS_Technical_Reference_Guide/Introduction_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Technical_Reference_Guide/Introduction_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-technical-reference-guide-mass-chapter
+    title: 'fds: Manuals/FDS_Technical_Reference_Guide/Mass_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Technical_Reference_Guide/Mass_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-technical-reference-guide-momentum-chapter
+    title: 'fds: Manuals/FDS_Technical_Reference_Guide/Momentum_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Technical_Reference_Guide/Momentum_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-technical-reference-guide-particle-chapter
+    title: 'fds: Manuals/FDS_Technical_Reference_Guide/Particle_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Technical_Reference_Guide/Particle_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-technical-reference-guide-radiation-chapter
+    title: 'fds: Manuals/FDS_Technical_Reference_Guide/Radiation_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Technical_Reference_Guide/Radiation_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-technical-reference-guide-solid-chapter
+    title: 'fds: Manuals/FDS_Technical_Reference_Guide/Solid_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Technical_Reference_Guide/Solid_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-technical-reference-guide-wildland-chapter
+    title: 'fds: Manuals/FDS_Technical_Reference_Guide/Wildland_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Technical_Reference_Guide/Wildland_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-user-guide-fds-user-guide
+    title: 'fds: Manuals/FDS_User_Guide/FDS_User_Guide.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_User_Guide/FDS_User_Guide.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-user-guide-smv-objects
+    title: 'fds: Manuals/FDS_User_Guide/smv_objects.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_User_Guide/smv_objects.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-burning-rate-chapter
+    title: 'fds: Manuals/FDS_Validation_Guide/Burning_Rate_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/Burning_Rate_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-ceiling-jet-chapter
+    title: 'fds: Manuals/FDS_Validation_Guide/Ceiling_Jet_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/Ceiling_Jet_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-error-chapter
+    title: 'fds: Manuals/FDS_Validation_Guide/Error_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/Error_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-experiment-chapter
+    title: 'fds: Manuals/FDS_Validation_Guide/Experiment_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/Experiment_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-fds-validation-guide
+    title: 'fds: Manuals/FDS_Validation_Guide/FDS_Validation_Guide.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/FDS_Validation_Guide.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-hgl-chapter
+    title: 'fds: Manuals/FDS_Validation_Guide/HGL_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/HGL_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-heat-flux-chapter
+    title: 'fds: Manuals/FDS_Validation_Guide/Heat_Flux_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/Heat_Flux_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-overview-chapter
+    title: 'fds: Manuals/FDS_Validation_Guide/Overview_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/Overview_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-plume-chapter
+    title: 'fds: Manuals/FDS_Validation_Guide/Plume_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/Plume_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-pressure-chapter
+    title: 'fds: Manuals/FDS_Validation_Guide/Pressure_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/Pressure_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-species-chapter
+    title: 'fds: Manuals/FDS_Validation_Guide/Species_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/Species_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-suppression-chapter
+    title: 'fds: Manuals/FDS_Validation_Guide/Suppression_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/Suppression_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-surface-temperature-chapter
+    title: 'fds: Manuals/FDS_Validation_Guide/Surface_Temperature_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/Surface_Temperature_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-survey-chapter
+    title: 'fds: Manuals/FDS_Validation_Guide/Survey_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/Survey_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-velocity-chapter
+    title: 'fds: Manuals/FDS_Validation_Guide/Velocity_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/Velocity_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-validation-guide-wind-chapter
+    title: 'fds: Manuals/FDS_Validation_Guide/Wind_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Validation_Guide/Wind_Chapter.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-manuals-fds-verification-guide-fds-verification-guide
+    title: 'fds: Manuals/FDS_Verification_Guide/FDS_Verification_Guide.tex'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Manuals/FDS_Verification_Guide/FDS_Verification_Guide.tex
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-fds-verification-readme
+    title: 'fds: Verification/README.md'
+    url: https://raw.githubusercontent.com/firemodels/fds/master/Verification/README.md
+    source: gh_fds
+    license: public-domain
+    topic: architecture
+    format: md
+  - id: gh-cfast-build-bundle-readme
+    title: 'cfast: Build/bundle/README.md'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Build/bundle/README.md
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: md
+  - id: gh-cfast-manuals-cfast-configuration-guide-cfast-configuration-
+    title: 'cfast: Manuals/CFAST_Configuration_Guide/CFAST_Configuration_Guide.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Configuration_Guide/CFAST_Configuration_Guide.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-configuration-guide-sqa-chapter
+    title: 'cfast: Manuals/CFAST_Configuration_Guide/SQA_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Configuration_Guide/SQA_Chapter.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-tech-ref-cfast-tech-ref
+    title: 'cfast: Manuals/CFAST_Tech_Ref/CFAST_Tech_Ref.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Tech_Ref/CFAST_Tech_Ref.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-users-guide-appendix-cfast-keywords
+    title: 'cfast: Manuals/CFAST_Users_Guide/Appendix_CFAST_Keywords.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Users_Guide/Appendix_CFAST_Keywords.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-users-guide-cfast-users-guide
+    title: 'cfast: Manuals/CFAST_Users_Guide/CFAST_Users_Guide.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Users_Guide/CFAST_Users_Guide.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-users-guide-getting-started-chapter
+    title: 'cfast: Manuals/CFAST_Users_Guide/Getting_Started_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Users_Guide/Getting_Started_Chapter.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-users-guide-input-file-chapter
+    title: 'cfast: Manuals/CFAST_Users_Guide/Input_File_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Users_Guide/Input_File_Chapter.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-validation-guide-cfast-validation-guide
+    title: 'cfast: Manuals/CFAST_Validation_Guide/CFAST_Validation_Guide.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Validation_Guide/CFAST_Validation_Guide.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-validation-guide-experiment-chapter
+    title: 'cfast: Manuals/CFAST_Validation_Guide/Experiment_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Validation_Guide/Experiment_Chapter.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-validation-guide-hgl-chapter
+    title: 'cfast: Manuals/CFAST_Validation_Guide/HGL_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Validation_Guide/HGL_Chapter.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-validation-guide-heat-flux-chapter
+    title: 'cfast: Manuals/CFAST_Validation_Guide/Heat_Flux_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Validation_Guide/Heat_Flux_Chapter.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-validation-guide-overview-chapter
+    title: 'cfast: Manuals/CFAST_Validation_Guide/Overview_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Validation_Guide/Overview_Chapter.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-validation-guide-plume-chapter
+    title: 'cfast: Manuals/CFAST_Validation_Guide/Plume_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Validation_Guide/Plume_Chapter.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-validation-guide-species-chapter
+    title: 'cfast: Manuals/CFAST_Validation_Guide/Species_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Validation_Guide/Species_Chapter.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-validation-guide-surface-temperature-cha
+    title: 'cfast: Manuals/CFAST_Validation_Guide/Surface_Temperature_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Validation_Guide/Surface_Temperature_Chapter.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-validation-guide-survey-chapter
+    title: 'cfast: Manuals/CFAST_Validation_Guide/Survey_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Validation_Guide/Survey_Chapter.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-manuals-cfast-validation-guide-verification-chapter
+    title: 'cfast: Manuals/CFAST_Validation_Guide/Verification_Chapter.tex'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Manuals/CFAST_Validation_Guide/Verification_Chapter.tex
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: tex
+  - id: gh-cfast-source-ceditqt-readme
+    title: 'cfast: Source/CeditQt/README.md'
+    url: https://raw.githubusercontent.com/firemodels/cfast/master/Source/CeditQt/README.md
+    source: gh_cfast
+    license: public-domain
+    topic: architecture
+    format: md
+  - id: gh-sinergym-install
+    title: 'sinergym: INSTALL.md'
+    url: https://raw.githubusercontent.com/ugr-sail/sinergym/main/INSTALL.md
+    source: gh_sinergym
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-sinergym-readme
+    title: 'sinergym: README.md'
+    url: https://raw.githubusercontent.com/ugr-sail/sinergym/main/README.md
+    source: gh_sinergym
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-sinergym-docs-source-index
+    title: 'sinergym: docs/source/index.rst'
+    url: https://raw.githubusercontent.com/ugr-sail/sinergym/main/docs/source/index.rst
+    source: gh_sinergym
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-sinergym-docs-source-pages-architecture
+    title: 'sinergym: docs/source/pages/architecture.rst'
+    url: https://raw.githubusercontent.com/ugr-sail/sinergym/main/docs/source/pages/architecture.rst
+    source: gh_sinergym
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-sinergym-docs-source-pages-custom-callbacks
+    title: 'sinergym: docs/source/pages/custom_callbacks.rst'
+    url: https://raw.githubusercontent.com/ugr-sail/sinergym/main/docs/source/pages/custom_callbacks.rst
+    source: gh_sinergym
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-sinergym-docs-source-pages-deep-reinforcement-learning
+    title: 'sinergym: docs/source/pages/deep-reinforcement-learning.rst'
+    url: https://raw.githubusercontent.com/ugr-sail/sinergym/main/docs/source/pages/deep-reinforcement-learning.rst
+    source: gh_sinergym
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-sinergym-docs-source-pages-environments
+    title: 'sinergym: docs/source/pages/environments.rst'
+    url: https://raw.githubusercontent.com/ugr-sail/sinergym/main/docs/source/pages/environments.rst
+    source: gh_sinergym
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-sinergym-docs-source-pages-gcloudapi
+    title: 'sinergym: docs/source/pages/gcloudAPI.rst'
+    url: https://raw.githubusercontent.com/ugr-sail/sinergym/main/docs/source/pages/gcloudAPI.rst
+    source: gh_sinergym
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-sinergym-docs-source-pages-installation
+    title: 'sinergym: docs/source/pages/installation.rst'
+    url: https://raw.githubusercontent.com/ugr-sail/sinergym/main/docs/source/pages/installation.rst
+    source: gh_sinergym
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-sinergym-docs-source-pages-introduction
+    title: 'sinergym: docs/source/pages/introduction.rst'
+    url: https://raw.githubusercontent.com/ugr-sail/sinergym/main/docs/source/pages/introduction.rst
+    source: gh_sinergym
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-sinergym-docs-source-pages-output
+    title: 'sinergym: docs/source/pages/output.rst'
+    url: https://raw.githubusercontent.com/ugr-sail/sinergym/main/docs/source/pages/output.rst
+    source: gh_sinergym
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-sinergym-docs-source-pages-rewards
+    title: 'sinergym: docs/source/pages/rewards.rst'
+    url: https://raw.githubusercontent.com/ugr-sail/sinergym/main/docs/source/pages/rewards.rst
+    source: gh_sinergym
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-sinergym-docs-source-pages-wrappers
+    title: 'sinergym: docs/source/pages/wrappers.rst'
+    url: https://raw.githubusercontent.com/ugr-sail/sinergym/main/docs/source/pages/wrappers.rst
+    source: gh_sinergym
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-citylearn-readme
+    title: 'CityLearn: README.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/README.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-release-notes-1-7-0
+    title: 'CityLearn: RELEASE_NOTES_1.7.0.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/RELEASE_NOTES_1.7.0.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-release-notes-1-8-0
+    title: 'CityLearn: RELEASE_NOTES_1.8.0.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/RELEASE_NOTES_1.8.0.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-kpi-v2-tree
+    title: 'CityLearn: docs/KPI_V2_TREE.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/KPI_V2_TREE.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-actions-reference
+    title: 'CityLearn: docs/actions_reference.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/actions_reference.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-baselines
+    title: 'CityLearn: docs/baselines.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/baselines.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-data-unit-contract
+    title: 'CityLearn: docs/data_unit_contract.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/data_unit_contract.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-dataset-reference
+    title: 'CityLearn: docs/dataset_reference.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/dataset_reference.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-developer-guide
+    title: 'CityLearn: docs/developer_guide.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/developer_guide.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-features
+    title: 'CityLearn: docs/features.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/features.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-interfaces-flat-entity
+    title: 'CityLearn: docs/interfaces_flat_entity.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/interfaces_flat_entity.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-kpis-reference
+    title: 'CityLearn: docs/kpis_reference.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/kpis_reference.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-migration
+    title: 'CityLearn: docs/migration.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/migration.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-multi-community-reference
+    title: 'CityLearn: docs/multi_community_reference.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/multi_community_reference.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-observations-reference
+    title: 'CityLearn: docs/observations_reference.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/observations_reference.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-pt-actions-reference
+    title: 'CityLearn: docs/pt/actions_reference.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/pt/actions_reference.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-pt-data-unit-contract
+    title: 'CityLearn: docs/pt/data_unit_contract.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/pt/data_unit_contract.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-pt-dataset-reference
+    title: 'CityLearn: docs/pt/dataset_reference.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/pt/dataset_reference.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-pt-developer-guide
+    title: 'CityLearn: docs/pt/developer_guide.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/pt/developer_guide.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-pt-features
+    title: 'CityLearn: docs/pt/features.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/pt/features.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-pt-interfaces-flat-entity
+    title: 'CityLearn: docs/pt/interfaces_flat_entity.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/pt/interfaces_flat_entity.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-pt-kpis-reference
+    title: 'CityLearn: docs/pt/kpis_reference.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/pt/kpis_reference.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-pt-observations-reference
+    title: 'CityLearn: docs/pt/observations_reference.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/pt/observations_reference.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-pt-releases
+    title: 'CityLearn: docs/pt/releases.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/pt/releases.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-pt-robustness-reference
+    title: 'CityLearn: docs/pt/robustness_reference.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/pt/robustness_reference.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-pt-running-simulations
+    title: 'CityLearn: docs/pt/running_simulations.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/pt/running_simulations.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-pt-schema-reference
+    title: 'CityLearn: docs/pt/schema_reference.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/pt/schema_reference.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-releases
+    title: 'CityLearn: docs/releases.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/releases.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-retired-datasets
+    title: 'CityLearn: docs/retired_datasets.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/retired_datasets.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-robustness-reference
+    title: 'CityLearn: docs/robustness_reference.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/robustness_reference.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-running-simulations
+    title: 'CityLearn: docs/running_simulations.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/running_simulations.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-schema-reference
+    title: 'CityLearn: docs/schema_reference.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/schema_reference.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-scorecard
+    title: 'CityLearn: docs/scorecard.md'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/scorecard.md
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: md
+  - id: gh-citylearn-docs-source-citylearn-challenge-2020
+    title: 'CityLearn: docs/source/citylearn_challenge/2020.rst'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/source/citylearn_challenge/2020.rst
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-citylearn-docs-source-citylearn-challenge-2021
+    title: 'CityLearn: docs/source/citylearn_challenge/2021.rst'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/source/citylearn_challenge/2021.rst
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-citylearn-docs-source-index
+    title: 'CityLearn: docs/source/index.rst'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/source/index.rst
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-citylearn-docs-source-kpis
+    title: 'CityLearn: docs/source/kpis.rst'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/source/kpis.rst
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-citylearn-docs-source-overview-dataset
+    title: 'CityLearn: docs/source/overview/dataset.rst'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/source/overview/dataset.rst
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-citylearn-docs-source-overview-entity-v1-contract
+    title: 'CityLearn: docs/source/overview/entity_v1_contract.rst'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/source/overview/entity_v1_contract.rst
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-citylearn-docs-source-overview-environment
+    title: 'CityLearn: docs/source/overview/environment.rst'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/source/overview/environment.rst
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-citylearn-docs-source-ui
+    title: 'CityLearn: docs/source/ui.rst'
+    url: https://raw.githubusercontent.com/citylearn-project/CityLearn/master/docs/source/ui.rst
+    source: gh_citylearn
+    license: open
+    topic: controls_bas
+    format: rst
+  - id: gh-geomeppy-docs-source-basics
+    title: 'geomeppy: docs/source/Basics.rst'
+    url: https://raw.githubusercontent.com/jamiebull1/geomeppy/master/docs/source/Basics.rst
+    source: gh_geomeppy
+    license: open
+    topic: building_energy
+    format: rst
+  - id: gh-geomeppy-docs-source-next-steps
+    title: 'geomeppy: docs/source/Next steps.rst'
+    url: https://raw.githubusercontent.com/jamiebull1/geomeppy/master/docs/source/Next
+      steps.rst
+    source: gh_geomeppy
+    license: open
+    topic: building_energy
+    format: rst
+  - id: gh-geomeppy-docs-source-start-here
+    title: 'geomeppy: docs/source/Start here.rst'
+    url: https://raw.githubusercontent.com/jamiebull1/geomeppy/master/docs/source/Start
+      here.rst
+    source: gh_geomeppy
+    license: open
+    topic: building_energy
+    format: rst
+  - id: gh-archetypal-readme
+    title: 'archetypal: README.md'
+    url: https://raw.githubusercontent.com/samuelduchesne/archetypal/main/README.md
+    source: gh_archetypal
+    license: open
+    topic: building_energy
+    format: md
+  - id: gh-archetypal-docs-converter-umi
+    title: 'archetypal: docs/converter_umi.rst'
+    url: https://raw.githubusercontent.com/samuelduchesne/archetypal/main/docs/converter_umi.rst
+    source: gh_archetypal
+    license: open
+    topic: building_energy
+    format: rst
+  - id: gh-archetypal-docs-creating-umi-template
+    title: 'archetypal: docs/creating_umi_template.rst'
+    url: https://raw.githubusercontent.com/samuelduchesne/archetypal/main/docs/creating_umi_template.rst
+    source: gh_archetypal
+    license: open
+    topic: building_energy
+    format: rst
+  - id: gh-archetypal-docs-index
+    title: 'archetypal: docs/index.rst'
+    url: https://raw.githubusercontent.com/samuelduchesne/archetypal/main/docs/index.rst
+    source: gh_archetypal
+    license: open
+    topic: building_energy
+    format: rst
+  - id: gh-archetypal-docs-install
+    title: 'archetypal: docs/install.rst'
+    url: https://raw.githubusercontent.com/samuelduchesne/archetypal/main/docs/install.rst
+    source: gh_archetypal
+    license: open
+    topic: building_energy
+    format: rst
+  - id: gh-archetypal-docs-package-modules
+    title: 'archetypal: docs/package_modules.rst'
+    url: https://raw.githubusercontent.com/samuelduchesne/archetypal/main/docs/package_modules.rst
+    source: gh_archetypal
+    license: open
+    topic: building_energy
+    format: rst
+  - id: gh-archetypal-docs-troubleshooting
+    title: 'archetypal: docs/troubleshooting.rst'
+    url: https://raw.githubusercontent.com/samuelduchesne/archetypal/main/docs/troubleshooting.rst
+    source: gh_archetypal
+    license: open
+    topic: building_energy
+    format: rst
+  - id: gh-honeybee-energy-readme
+    title: 'honeybee-energy: README.md'
+    url: https://raw.githubusercontent.com/ladybug-tools/honeybee-energy/master/README.md
+    source: gh_honeybee-energy
+    license: open
+    topic: building_energy
+    format: md
+    license_url: https://www.gnu.org/licenses/agpl-3.0.html
+    license_evidence: 'SPDX AGPL-3.0 (GNU Affero GPL v3, copyleft; not permissive):
+      https://github.com/ladybug-tools/honeybee-energy/blob/master/LICENSE'
+    rights_verified_at: '2026-09-24'
