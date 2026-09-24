@@ -4662,62 +4662,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-resstock_docs-index
-    title: 'resstock_docs docs: index'
-    url: https://resstock.readthedocs.io/en/latest/
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-basic-tutorial-index-html
-    title: 'resstock_docs docs: basic_tutorial/index.html'
-    url: https://resstock.readthedocs.io/en/latest/basic_tutorial/index.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-advanced-tutorial-index-html
-    title: 'resstock_docs docs: advanced_tutorial/index.html'
-    url: https://resstock.readthedocs.io/en/latest/advanced_tutorial/index.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-workflow-inputs-index-html
-    title: 'resstock_docs docs: workflow_inputs/index.html'
-    url: https://resstock.readthedocs.io/en/latest/workflow_inputs/index.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-workflow-outputs-index-html
-    title: 'resstock_docs docs: workflow_outputs/index.html'
-    url: https://resstock.readthedocs.io/en/latest/workflow_outputs/index.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-resource-files-index-html
-    title: 'resstock_docs docs: resource_files/index.html'
-    url: https://resstock.readthedocs.io/en/latest/resource_files/index.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-changelog-index-html
-    title: 'resstock_docs docs: changelog/index.html'
-    url: https://resstock.readthedocs.io/en/latest/changelog/index.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-basic-tutorial-installing-resstock-html
-    title: 'resstock_docs docs: basic_tutorial/installing_resstock.html'
-    url: https://resstock.readthedocs.io/en/latest/basic_tutorial/installing_resstock.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-resstock_docs-basic-tutorial-resstock-architecture-html
     title: 'resstock_docs docs: basic_tutorial/resstock_architecture.html'
     url: https://resstock.readthedocs.io/en/latest/basic_tutorial/resstock_architecture.html
@@ -4742,13 +4686,6 @@ sources:
   - id: crawl-resstock_docs-advanced-tutorial-upgrade-scenario-config-
     title: 'resstock_docs docs: advanced_tutorial/upgrade_scenario_config.html'
     url: https://resstock.readthedocs.io/en/latest/advanced_tutorial/upgrade_scenario_config.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-advanced-tutorial-increasing-upgrade-optio
-    title: 'resstock_docs docs: advanced_tutorial/increasing_upgrade_options.html'
-    url: https://resstock.readthedocs.io/en/latest/advanced_tutorial/increasing_upgrade_options.html
     source: resstock_docs
     license: open
     topic: building_energy
@@ -4788,13 +4725,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-resstock_docs-workflow-inputs-writing-housing-characteri
-    title: 'resstock_docs docs: workflow_inputs/writing_housing_characteristics.html'
-    url: https://resstock.readthedocs.io/en/latest/workflow_inputs/writing_housing_characteristics.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-resstock_docs-workflow-outputs-default-outputs-html
     title: 'resstock_docs docs: workflow_outputs/default_outputs.html'
     url: https://resstock.readthedocs.io/en/latest/workflow_outputs/default_outputs.html
@@ -4805,20 +4735,6 @@ sources:
   - id: crawl-resstock_docs-workflow-outputs-optional-outputs-html
     title: 'resstock_docs docs: workflow_outputs/optional_outputs.html'
     url: https://resstock.readthedocs.io/en/latest/workflow_outputs/optional_outputs.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-resource-files-options-saturations-html
-    title: 'resstock_docs docs: resource_files/options_saturations.html'
-    url: https://resstock.readthedocs.io/en/latest/resource_files/options_saturations.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-resource-files-source-report-html
-    title: 'resstock_docs docs: resource_files/source_report.html'
-    url: https://resstock.readthedocs.io/en/latest/resource_files/source_report.html
     source: resstock_docs
     license: open
     topic: building_energy
@@ -4872,13 +4788,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-resstock_docs-changelog-changelog-3-1-1-html
-    title: 'resstock_docs docs: changelog/changelog_3_1_1.html'
-    url: https://resstock.readthedocs.io/en/latest/changelog/changelog_3_1_1.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-resstock_docs-changelog-changelog-3-1-0-html
     title: 'resstock_docs docs: changelog/changelog_3_1_0.html'
     url: https://resstock.readthedocs.io/en/latest/changelog/changelog_3_1_0.html
@@ -4914,41 +4823,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-resstock_docs-changelog-changelog-2-2-5-html
-    title: 'resstock_docs docs: changelog/changelog_2_2_5.html'
-    url: https://resstock.readthedocs.io/en/latest/changelog/changelog_2_2_5.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-changelog-changelog-2-2-4-html
-    title: 'resstock_docs docs: changelog/changelog_2_2_4.html'
-    url: https://resstock.readthedocs.io/en/latest/changelog/changelog_2_2_4.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-changelog-changelog-2-2-3-html
-    title: 'resstock_docs docs: changelog/changelog_2_2_3.html'
-    url: https://resstock.readthedocs.io/en/latest/changelog/changelog_2_2_3.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-changelog-changelog-2-2-2-html
-    title: 'resstock_docs docs: changelog/changelog_2_2_2.html'
-    url: https://resstock.readthedocs.io/en/latest/changelog/changelog_2_2_2.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-changelog-changelog-2-2-1-html
-    title: 'resstock_docs docs: changelog/changelog_2_2_1.html'
-    url: https://resstock.readthedocs.io/en/latest/changelog/changelog_2_2_1.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-resstock_docs-changelog-changelog-2-2-0-html
     title: 'resstock_docs docs: changelog/changelog_2_2_0.html'
     url: https://resstock.readthedocs.io/en/latest/changelog/changelog_2_2_0.html
@@ -4970,37 +4844,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-resstock_docs-changelog-changelog-1-0-0-html
-    title: 'resstock_docs docs: changelog/changelog_1_0_0.html'
-    url: https://resstock.readthedocs.io/en/latest/changelog/changelog_1_0_0.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-resstock_docs-changelog-changelog-dev-html
     title: 'resstock_docs docs: changelog/changelog_dev.html'
     url: https://resstock.readthedocs.io/en/latest/changelog/changelog_dev.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-genindex-html
-    title: 'resstock_docs docs: genindex.html'
-    url: https://resstock.readthedocs.io/en/latest/genindex.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-search-html
-    title: 'resstock_docs docs: search.html'
-    url: https://resstock.readthedocs.io/en/latest/search.html
-    source: resstock_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-resstock_docs-index-html
-    title: 'resstock_docs docs: index.html'
-    url: https://resstock.readthedocs.io/en/latest/index.html
     source: resstock_docs
     license: open
     topic: building_energy
@@ -5040,13 +4886,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-openstudio_hpxml_docs-index
-    title: 'openstudio_hpxml_docs docs: index'
-    url: https://openstudio-hpxml.readthedocs.io/en/latest/
-    source: openstudio_hpxml_docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-openstudio_hpxml_docs-intro-html
     title: 'openstudio_hpxml_docs docs: intro.html'
     url: https://openstudio-hpxml.readthedocs.io/en/latest/intro.html
@@ -5082,83 +4921,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-openstudio_hpxml_docs-testing-framework-html
-    title: 'openstudio_hpxml_docs docs: testing_framework.html'
-    url: https://openstudio-hpxml.readthedocs.io/en/latest/testing_framework.html
-    source: openstudio_hpxml_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-openstudio_hpxml_docs-resources-html
-    title: 'openstudio_hpxml_docs docs: resources.html'
-    url: https://openstudio-hpxml.readthedocs.io/en/latest/resources.html
-    source: openstudio_hpxml_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-openstudio_hpxml_docs-genindex-html
-    title: 'openstudio_hpxml_docs docs: genindex.html'
-    url: https://openstudio-hpxml.readthedocs.io/en/latest/genindex.html
-    source: openstudio_hpxml_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-openstudio_hpxml_docs-search-html
-    title: 'openstudio_hpxml_docs docs: search.html'
-    url: https://openstudio-hpxml.readthedocs.io/en/latest/search.html
-    source: openstudio_hpxml_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-openstudio_hpxml_docs-index-html
-    title: 'openstudio_hpxml_docs docs: index.html'
-    url: https://openstudio-hpxml.readthedocs.io/en/latest/index.html
-    source: openstudio_hpxml_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-boptest_docs-index
-    title: 'boptest_docs docs: index'
-    url: https://ibpsa.github.io/project1-boptest/
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-software-index-html
-    title: 'boptest_docs docs: software/index.html'
-    url: https://ibpsa.github.io/project1-boptest/software/index.html
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-testcases-index-html
-    title: 'boptest_docs docs: testcases/index.html'
-    url: https://ibpsa.github.io/project1-boptest/testcases/index.html
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-dashboard-index-html
-    title: 'boptest_docs docs: dashboard/index.html'
-    url: https://ibpsa.github.io/project1-boptest/dashboard/index.html
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-docs-userguide-index-html
-    title: 'boptest_docs docs: docs-userguide/index.html'
-    url: https://ibpsa.github.io/project1-boptest/docs-userguide/index.html
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-docs-design-index-html
-    title: 'boptest_docs docs: docs-design/index.html'
-    url: https://ibpsa.github.io/project1-boptest/docs-design/index.html
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
   - id: crawl-boptest_docs-training-index-html
     title: 'boptest_docs docs: training/index.html'
     url: https://ibpsa.github.io/project1-boptest/training/index.html
@@ -5173,93 +4935,9 @@ sources:
     license: open
     topic: controls_bas
     format: html
-  - id: crawl-boptest_docs-relatedprojects-index-html
-    title: 'boptest_docs docs: relatedProjects/index.html'
-    url: https://ibpsa.github.io/project1-boptest/relatedProjects/index.html
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-ibpsa-index-html
-    title: 'boptest_docs docs: ibpsa/index.html'
-    url: https://ibpsa.github.io/project1-boptest/ibpsa/index.html
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-blog-index-html
-    title: 'boptest_docs docs: blog/index.html'
-    url: https://ibpsa.github.io/project1-boptest/blog/index.html
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
   - id: crawl-boptest_docs-contributors-index-html
     title: 'boptest_docs docs: contributors/index.html'
     url: https://ibpsa.github.io/project1-boptest/contributors/index.html
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-docs-userguide
-    title: 'boptest_docs docs: docs-userguide'
-    url: https://ibpsa.github.io/project1-boptest/docs-userguide/
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-testcases-ibpsa-testcases-ibpsa-bestest-air
-    title: 'boptest_docs docs: testcases/ibpsa/testcases_ibpsa_bestest_air'
-    url: https://ibpsa.github.io/project1-boptest/testcases/ibpsa/testcases_ibpsa_bestest_air/
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-testcases-ibpsa-testcases-ibpsa-bestest-hyd
-    title: 'boptest_docs docs: testcases/ibpsa/testcases_ibpsa_bestest_hydronic'
-    url: https://ibpsa.github.io/project1-boptest/testcases/ibpsa/testcases_ibpsa_bestest_hydronic/
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-testcases-ibpsa-testcases-ibpsa-2
-    title: 'boptest_docs docs: testcases/ibpsa/testcases_ibpsa_bestest_hydronic_heat_pump'
-    url: https://ibpsa.github.io/project1-boptest/testcases/ibpsa/testcases_ibpsa_bestest_hydronic_heat_pump/
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-testcases-ibpsa-testcases-ibpsa-singlezone-
-    title: 'boptest_docs docs: testcases/ibpsa/testcases_ibpsa_singlezone_commercial_hydronic'
-    url: https://ibpsa.github.io/project1-boptest/testcases/ibpsa/testcases_ibpsa_singlezone_commercial_hydronic/
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-testcases-ibpsa-testcases-ibpsa-twozone-apa
-    title: 'boptest_docs docs: testcases/ibpsa/testcases_ibpsa_twozone_apartment_hydronic'
-    url: https://ibpsa.github.io/project1-boptest/testcases/ibpsa/testcases_ibpsa_twozone_apartment_hydronic/
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-testcases-ibpsa-testcases-ibpsa-multizone-r
-    title: 'boptest_docs docs: testcases/ibpsa/testcases_ibpsa_multizone_residential_hydronic'
-    url: https://ibpsa.github.io/project1-boptest/testcases/ibpsa/testcases_ibpsa_multizone_residential_hydronic/
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-testcases-ibpsa-testcases-ibpsa-multizone-o
-    title: 'boptest_docs docs: testcases/ibpsa/testcases_ibpsa_multizone_office_simple_air'
-    url: https://ibpsa.github.io/project1-boptest/testcases/ibpsa/testcases_ibpsa_multizone_office_simple_air/
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-testcases-ibpsa-testcases-ibpsa-3
-    title: 'boptest_docs docs: testcases/ibpsa/testcases_ibpsa_multizone_office_simple_hydronic'
-    url: https://ibpsa.github.io/project1-boptest/testcases/ibpsa/testcases_ibpsa_multizone_office_simple_hydronic/
     source: boptest_docs
     license: open
     topic: controls_bas
@@ -5271,27 +4949,6 @@ sources:
     license: open
     topic: controls_bas
     format: html
-  - id: crawl-boptest_docs-testcases-ibpsa-testcases-ibpsa-5
-    title: 'boptest_docs docs: testcases/ibpsa/testcases_ibpsa_singlezone_commercial_air'
-    url: https://ibpsa.github.io/project1-boptest/testcases/ibpsa/testcases_ibpsa_singlezone_commercial_air/
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-testcases-ibpsa-testcases-ibpsa-flexible-re
-    title: 'boptest_docs docs: testcases/ibpsa/testcases_ibpsa_flexible_research_platform'
-    url: https://ibpsa.github.io/project1-boptest/testcases/ibpsa/testcases_ibpsa_flexible_research_platform/
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-index-html
-    title: 'boptest_docs docs: index.html'
-    url: https://ibpsa.github.io/project1-boptest/index.html
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
   - id: crawl-boptest_docs-docs-userguide-introduction-html
     title: 'boptest_docs docs: docs-userguide/introduction.html'
     url: https://ibpsa.github.io/project1-boptest/docs-userguide/introduction.html
@@ -5299,23 +4956,9 @@ sources:
     license: open
     topic: controls_bas
     format: html
-  - id: crawl-boptest_docs-docs-userguide-getting-started-html
-    title: 'boptest_docs docs: docs-userguide/getting_started.html'
-    url: https://ibpsa.github.io/project1-boptest/docs-userguide/getting_started.html
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
   - id: crawl-boptest_docs-docs-userguide-api-html
     title: 'boptest_docs docs: docs-userguide/api.html'
     url: https://ibpsa.github.io/project1-boptest/docs-userguide/api.html
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-docs-design-goal-html
-    title: 'boptest_docs docs: docs-design/goal.html'
-    url: https://ibpsa.github.io/project1-boptest/docs-design/goal.html
     source: boptest_docs
     license: open
     topic: controls_bas
@@ -5376,37 +5019,9 @@ sources:
     license: open
     topic: controls_bas
     format: html
-  - id: crawl-boptest_docs-ibpsa-project-participation
-    title: 'boptest_docs docs: ibpsa/project/participation'
-    url: https://ibpsa.github.io/project1-boptest/ibpsa/project/participation/
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
   - id: crawl-boptest_docs-ibpsa-project-meetings-general
     title: 'boptest_docs docs: ibpsa/project/meetings/general'
     url: https://ibpsa.github.io/project1-boptest/ibpsa/project/meetings/general/
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-ibpsa-project-meetings-task1
-    title: 'boptest_docs docs: ibpsa/project/meetings/task1'
-    url: https://ibpsa.github.io/project1-boptest/ibpsa/project/meetings/task1/
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-ibpsa-project-meetings-task2
-    title: 'boptest_docs docs: ibpsa/project/meetings/task2'
-    url: https://ibpsa.github.io/project1-boptest/ibpsa/project/meetings/task2/
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-boptest_docs-ibpsa-project-meetings-task3
-    title: 'boptest_docs docs: ibpsa/project/meetings/task3'
-    url: https://ibpsa.github.io/project1-boptest/ibpsa/project/meetings/task3/
     source: boptest_docs
     license: open
     topic: controls_bas
@@ -5481,83 +5096,6 @@ sources:
     license: open
     topic: controls_bas
     format: html
-  - id: crawl-boptest_docs-ibpsa-project-workplan-2
-    title: 'boptest_docs docs: ibpsa/project/workplan'
-    url: https://ibpsa.github.io/project1-boptest/ibpsa/project/workplan
-    source: boptest_docs
-    license: open
-    topic: controls_bas
-    format: html
-  - id: crawl-mosaik_docs-index
-    title: 'mosaik_docs docs: index'
-    url: https://mosaik.readthedocs.io/en/latest/
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-overview-html
-    title: 'mosaik_docs docs: overview.html'
-    url: https://mosaik.readthedocs.io/en/latest/overview.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-installation-html
-    title: 'mosaik_docs docs: installation.html'
-    url: https://mosaik.readthedocs.io/en/latest/installation.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-tutorials-index-html
-    title: 'mosaik_docs docs: tutorials/index.html'
-    url: https://mosaik.readthedocs.io/en/latest/tutorials/index.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-tutorials-a-first-scenario-html
-    title: 'mosaik_docs docs: tutorials/a-first-scenario.html'
-    url: https://mosaik.readthedocs.io/en/latest/tutorials/a-first-scenario.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-tutorials-writing-a-simulator-html
-    title: 'mosaik_docs docs: tutorials/writing-a-simulator.html'
-    url: https://mosaik.readthedocs.io/en/latest/tutorials/writing-a-simulator.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-tutorials-tutorial-api-java-html
-    title: 'mosaik_docs docs: tutorials/tutorial_api-java.html'
-    url: https://mosaik.readthedocs.io/en/latest/tutorials/tutorial_api-java.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
   - id: crawl-mosaik_docs-tutorials-tutorial-api-java-generics-html
     title: 'mosaik_docs docs: tutorials/tutorial_api-java-generics.html'
     url: https://mosaik.readthedocs.io/en/latest/tutorials/tutorial_api-java-generics.html
@@ -5568,129 +5106,9 @@ sources:
     license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
     license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
     rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-tutorials-graphs-html
-    title: 'mosaik_docs docs: tutorials/graphs.html'
-    url: https://mosaik.readthedocs.io/en/latest/tutorials/graphs.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-how-tos-index-html
-    title: 'mosaik_docs docs: how-tos/index.html'
-    url: https://mosaik.readthedocs.io/en/latest/how-tos/index.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
   - id: crawl-mosaik_docs-scenario-definition-html
     title: 'mosaik_docs docs: scenario-definition.html'
     url: https://mosaik.readthedocs.io/en/latest/scenario-definition.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-tutorials-sametimeloops-html
-    title: 'mosaik_docs docs: tutorials/sametimeloops.html'
-    url: https://mosaik.readthedocs.io/en/latest/tutorials/sametimeloops.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-tutorials-jupyter-notebook-html
-    title: 'mosaik_docs docs: tutorials/jupyter_notebook.html'
-    url: https://mosaik.readthedocs.io/en/latest/tutorials/jupyter_notebook.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-tutorials-apache-superset-html
-    title: 'mosaik_docs docs: tutorials/apache-superset.html'
-    url: https://mosaik.readthedocs.io/en/latest/tutorials/apache-superset.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-upgrade-to-v3-html
-    title: 'mosaik_docs docs: upgrade_to_v3.html'
-    url: https://mosaik.readthedocs.io/en/latest/upgrade_to_v3.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-how-tos-pause-resume-html
-    title: 'mosaik_docs docs: how-tos/pause-resume.html'
-    url: https://mosaik.readthedocs.io/en/latest/how-tos/pause-resume.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-how-tos-simulator-tracing-html
-    title: 'mosaik_docs docs: how-tos/simulator-tracing.html'
-    url: https://mosaik.readthedocs.io/en/latest/how-tos/simulator-tracing.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-how-tos-transform-functions-html
-    title: 'mosaik_docs docs: how-tos/transform-functions.html'
-    url: https://mosaik.readthedocs.io/en/latest/how-tos/transform-functions.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-tutorials-odysseus-html
-    title: 'mosaik_docs docs: tutorials/odysseus.html'
-    url: https://mosaik.readthedocs.io/en/latest/tutorials/odysseus.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-how-tos-existing-topologies-html
-    title: 'mosaik_docs docs: how-tos/existing-topologies.html'
-    url: https://mosaik.readthedocs.io/en/latest/how-tos/existing-topologies.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-how-tos-max-advance-html
-    title: 'mosaik_docs docs: how-tos/max-advance.html'
-    url: https://mosaik.readthedocs.io/en/latest/how-tos/max-advance.html
     source: mosaik_docs
     license: open
     topic: controls_bas
@@ -5718,49 +5136,9 @@ sources:
     license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
     license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
     rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-api-reference-index-html
-    title: 'mosaik_docs docs: api_reference/index.html'
-    url: https://mosaik.readthedocs.io/en/latest/api_reference/index.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
   - id: crawl-mosaik_docs-api-reference-mosaik-html
     title: 'mosaik_docs docs: api_reference/mosaik.html'
     url: https://mosaik.readthedocs.io/en/latest/api_reference/mosaik.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-api-reference-mosaik-util-html
-    title: 'mosaik_docs docs: api_reference/mosaik.util.html'
-    url: https://mosaik.readthedocs.io/en/latest/api_reference/mosaik.util.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-api-reference-mosaik-exceptions-html
-    title: 'mosaik_docs docs: api_reference/mosaik.exceptions.html'
-    url: https://mosaik.readthedocs.io/en/latest/api_reference/mosaik.exceptions.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-api-reference-mosaik-scenario-html
-    title: 'mosaik_docs docs: api_reference/mosaik.scenario.html'
-    url: https://mosaik.readthedocs.io/en/latest/api_reference/mosaik.scenario.html
     source: mosaik_docs
     license: open
     topic: controls_bas
@@ -5788,406 +5166,9 @@ sources:
     license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
     license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
     rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-api-reference-mosaik-basic-simulators-html
-    title: 'mosaik_docs docs: api_reference/mosaik.basic_simulators.html'
-    url: https://mosaik.readthedocs.io/en/latest/api_reference/mosaik.basic_simulators.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-api-reference-mosaik-in-or-out-set-html
-    title: 'mosaik_docs docs: api_reference/mosaik.in_or_out_set.html'
-    url: https://mosaik.readthedocs.io/en/latest/api_reference/mosaik.in_or_out_set.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-api-reference-mosaik-process-termination-man
-    title: 'mosaik_docs docs: api_reference/mosaik.process_termination_managers.html'
-    url: https://mosaik.readthedocs.io/en/latest/api_reference/mosaik.process_termination_managers.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-mosaik-api-index-html
-    title: 'mosaik_docs docs: mosaik-api/index.html'
-    url: https://mosaik.readthedocs.io/en/latest/mosaik-api/index.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-mosaik-api-overview-html
-    title: 'mosaik_docs docs: mosaik-api/overview.html'
-    url: https://mosaik.readthedocs.io/en/latest/mosaik-api/overview.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-mosaik-api-high-level-other-languages-html
-    title: 'mosaik_docs docs: mosaik-api/high-level-other-languages.html'
-    url: https://mosaik.readthedocs.io/en/latest/mosaik-api/high-level-other-languages.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-mosaik-api-high-level-html
-    title: 'mosaik_docs docs: mosaik-api/high-level.html'
-    url: https://mosaik.readthedocs.io/en/latest/mosaik-api/high-level.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-mosaik-api-low-level-html
-    title: 'mosaik_docs docs: mosaik-api/low-level.html'
-    url: https://mosaik.readthedocs.io/en/latest/mosaik-api/low-level.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-explanations-index-html
-    title: 'mosaik_docs docs: explanations/index.html'
-    url: https://mosaik.readthedocs.io/en/latest/explanations/index.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-scheduler-html
-    title: 'mosaik_docs docs: scheduler.html'
-    url: https://mosaik.readthedocs.io/en/latest/scheduler.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-explanations-measurements-and-events-html
-    title: 'mosaik_docs docs: explanations/measurements-and-events.html'
-    url: https://mosaik.readthedocs.io/en/latest/explanations/measurements-and-events.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-explanations-tiered-time-html
-    title: 'mosaik_docs docs: explanations/tiered-time.html'
-    url: https://mosaik.readthedocs.io/en/latest/explanations/tiered-time.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-troubleshooting-index-html
-    title: 'mosaik_docs docs: troubleshooting/index.html'
-    url: https://mosaik.readthedocs.io/en/latest/troubleshooting/index.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-faq-html
-    title: 'mosaik_docs docs: faq.html'
-    url: https://mosaik.readthedocs.io/en/latest/faq.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-dev-index-html
-    title: 'mosaik_docs docs: dev/index.html'
-    url: https://mosaik.readthedocs.io/en/latest/dev/index.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-simmanager-html
-    title: 'mosaik_docs docs: simmanager.html'
-    url: https://mosaik.readthedocs.io/en/latest/simmanager.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-dev-design-decisions-html
-    title: 'mosaik_docs docs: dev/design-decisions.html'
-    url: https://mosaik.readthedocs.io/en/latest/dev/design-decisions.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-dev-logo-ci-html
-    title: 'mosaik_docs docs: dev/logo-ci.html'
-    url: https://mosaik.readthedocs.io/en/latest/dev/logo-ci.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-api-reference-mosaik-proxies-html
-    title: 'mosaik_docs docs: api_reference/mosaik.proxies.html'
-    url: https://mosaik.readthedocs.io/en/latest/api_reference/mosaik.proxies.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-api-reference-mosaik-tiered-time-html
-    title: 'mosaik_docs docs: api_reference/mosaik.tiered_time.html'
-    url: https://mosaik.readthedocs.io/en/latest/api_reference/mosaik.tiered_time.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-api-reference-mosaik-progress-html
-    title: 'mosaik_docs docs: api_reference/mosaik.progress.html'
-    url: https://mosaik.readthedocs.io/en/latest/api_reference/mosaik.progress.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-api-reference-mosaik-simmanager-html
-    title: 'mosaik_docs docs: api_reference/mosaik.simmanager.html'
-    url: https://mosaik.readthedocs.io/en/latest/api_reference/mosaik.simmanager.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-api-reference-mosaik-scheduler-html
-    title: 'mosaik_docs docs: api_reference/mosaik.scheduler.html'
-    url: https://mosaik.readthedocs.io/en/latest/api_reference/mosaik.scheduler.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-about-index-html
-    title: 'mosaik_docs docs: about/index.html'
-    url: https://mosaik.readthedocs.io/en/latest/about/index.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-about-acknowledgements-html
-    title: 'mosaik_docs docs: about/acknowledgements.html'
-    url: https://mosaik.readthedocs.io/en/latest/about/acknowledgements.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-about-history-html
-    title: 'mosaik_docs docs: about/history.html'
-    url: https://mosaik.readthedocs.io/en/latest/about/history.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-privacy-html
-    title: 'mosaik_docs docs: privacy.html'
-    url: https://mosaik.readthedocs.io/en/latest/privacy.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-legals-html
-    title: 'mosaik_docs docs: legals.html'
-    url: https://mosaik.readthedocs.io/en/latest/legals.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-datenschutz-html
-    title: 'mosaik_docs docs: datenschutz.html'
-    url: https://mosaik.readthedocs.io/en/latest/datenschutz.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-impressum-html
-    title: 'mosaik_docs docs: impressum.html'
-    url: https://mosaik.readthedocs.io/en/latest/impressum.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-glossary-html
-    title: 'mosaik_docs docs: glossary.html'
-    url: https://mosaik.readthedocs.io/en/latest/glossary.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-genindex-html
-    title: 'mosaik_docs docs: genindex.html'
-    url: https://mosaik.readthedocs.io/en/latest/genindex.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-py-modindex-html
-    title: 'mosaik_docs docs: py-modindex.html'
-    url: https://mosaik.readthedocs.io/en/latest/py-modindex.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-search-html
-    title: 'mosaik_docs docs: search.html'
-    url: https://mosaik.readthedocs.io/en/latest/search.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-index-html
-    title: 'mosaik_docs docs: index.html'
-    url: https://mosaik.readthedocs.io/en/latest/index.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-tutorials-examplesim-html
-    title: 'mosaik_docs docs: tutorials/examplesim.html'
-    url: https://mosaik.readthedocs.io/en/latest/tutorials/examplesim.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-tutorials-demo1-html
-    title: 'mosaik_docs docs: tutorials/demo1.html'
-    url: https://mosaik.readthedocs.io/en/latest/tutorials/demo1.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-tutorials-odysseus2-html
-    title: 'mosaik_docs docs: tutorials/odysseus2.html'
-    url: https://mosaik.readthedocs.io/en/latest/tutorials/odysseus2.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
-  - id: crawl-mosaik_docs-ecosystem-basic-simulators-html
-    title: 'mosaik_docs docs: ecosystem/basic_simulators.html'
-    url: https://mosaik.readthedocs.io/en/latest/ecosystem/basic_simulators.html
-    source: mosaik_docs
-    license: open
-    topic: controls_bas
-    format: html
-    license_url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-    license_evidence: 'SPDX LGPL-2.1 (copyleft; (c) OFFIS): https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt'
-    rights_verified_at: '2026-09-24'
   - id: crawl-urbanopt_docs-index
     title: 'urbanopt_docs docs: index'
     url: https://docs.urbanopt.net/
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-workflows-html
-    title: 'urbanopt_docs docs: workflows.html'
-    url: https://docs.urbanopt.net/workflows/workflows.html
     source: urbanopt_docs
     license: open
     topic: building_energy
@@ -6248,13 +5229,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-urbanopt_docs-reopt-run-reopt-html
-    title: 'urbanopt_docs docs: reopt/run_reopt.html'
-    url: https://docs.urbanopt.net/workflows/reopt/run_reopt.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-urbanopt_docs-reopt-reopt-post-processing-html
     title: 'urbanopt_docs docs: reopt/reopt_post_processing.html'
     url: https://docs.urbanopt.net/workflows/reopt/reopt_post_processing.html
@@ -6283,13 +5257,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-urbanopt_docs-residential-workflows-residential-workflow
-    title: 'urbanopt_docs docs: residential_workflows/residential_workflows.html'
-    url: https://docs.urbanopt.net/workflows/residential_workflows/residential_workflows.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-urbanopt_docs-residential-workflows-building-types-html
     title: 'urbanopt_docs docs: residential_workflows/building_types.html'
     url: https://docs.urbanopt.net/workflows/residential_workflows/building_types.html
@@ -6304,23 +5271,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-urbanopt_docs-residential-workflows-building-occupancy-h
-    title: 'urbanopt_docs docs: residential_workflows/building_occupancy.html'
-    url: https://docs.urbanopt.net/workflows/residential_workflows/building_occupancy.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-urbanopt_docs-residential-workflows-usg-html
     title: 'urbanopt_docs docs: residential_workflows/usg.html'
     url: https://docs.urbanopt.net/workflows/residential_workflows/usg.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-residential-workflows-other-details-html
-    title: 'urbanopt_docs docs: residential_workflows/other_details.html'
-    url: https://docs.urbanopt.net/workflows/residential_workflows/other_details.html
     source: urbanopt_docs
     license: open
     topic: building_energy
@@ -6353,20 +5306,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-urbanopt_docs-about-html
-    title: 'urbanopt_docs docs: about.html'
-    url: https://docs.urbanopt.net/resources/about.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-definitions-html
-    title: 'urbanopt_docs docs: definitions.html'
-    url: https://docs.urbanopt.net/resources/definitions.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-urbanopt_docs-structure-html
     title: 'urbanopt_docs docs: structure.html'
     url: https://docs.urbanopt.net/resources/structure.html
@@ -6374,30 +5313,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-urbanopt_docs-example-html
-    title: 'urbanopt_docs docs: example.html'
-    url: https://docs.urbanopt.net/resources/example.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-scenarios-scenarios-html
-    title: 'urbanopt_docs docs: scenarios/scenarios.html'
-    url: https://docs.urbanopt.net/resources/scenarios/scenarios.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-urbanopt_docs-scenarios-baseline-html
     title: 'urbanopt_docs docs: scenarios/baseline.html'
     url: https://docs.urbanopt.net/resources/scenarios/baseline.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-scenarios-highefficiency-html
-    title: 'urbanopt_docs docs: scenarios/highefficiency.html'
-    url: https://docs.urbanopt.net/resources/scenarios/highefficiency.html
     source: urbanopt_docs
     license: open
     topic: building_energy
@@ -6423,13 +5341,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-urbanopt_docs-scenarios-peakhoursmelsshedding-html
-    title: 'urbanopt_docs docs: scenarios/peakhoursmelsshedding.html'
-    url: https://docs.urbanopt.net/resources/scenarios/peakhoursmelsshedding.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-urbanopt_docs-scenarios-peakhoursthermostatadjust-html
     title: 'urbanopt_docs docs: scenarios/peakhoursthermostatadjust.html'
     url: https://docs.urbanopt.net/resources/scenarios/peakhoursthermostatadjust.html
@@ -6440,13 +5351,6 @@ sources:
   - id: crawl-urbanopt_docs-scenarios-chilledwaterstorage-html
     title: 'urbanopt_docs docs: scenarios/chilledwaterstorage.html'
     url: https://docs.urbanopt.net/resources/scenarios/chilledwaterstorage.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-customization-customization-html
-    title: 'urbanopt_docs docs: customization/customization.html'
-    url: https://docs.urbanopt.net/resources/customization/customization.html
     source: urbanopt_docs
     license: open
     topic: building_energy
@@ -6468,13 +5372,6 @@ sources:
   - id: crawl-urbanopt_docs-customization-modifying-mapper-html
     title: 'urbanopt_docs docs: customization/modifying_mapper.html'
     url: https://docs.urbanopt.net/resources/customization/modifying_mapper.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-customization-new-mapper-class-html
-    title: 'urbanopt_docs docs: customization/new_mapper_class.html'
-    url: https://docs.urbanopt.net/resources/customization/new_mapper_class.html
     source: urbanopt_docs
     license: open
     topic: building_energy
@@ -6514,48 +5411,6 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-urbanopt_docs-tutorials-tutorials-html
-    title: 'urbanopt_docs docs: tutorials/tutorials.html'
-    url: https://docs.urbanopt.net/resources/tutorials/tutorials.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-technical-documentation-html
-    title: 'urbanopt_docs docs: technical_documentation.html'
-    url: https://docs.urbanopt.net/resources/technical_documentation.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-tutorials-tutorials
-    title: 'urbanopt_docs docs: tutorials/tutorials'
-    url: https://docs.urbanopt.net/resources/tutorials/tutorials
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-about
-    title: 'urbanopt_docs docs: about'
-    url: https://docs.urbanopt.net/resources/about
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-technical-documentation
-    title: 'urbanopt_docs docs: technical_documentation'
-    url: https://docs.urbanopt.net/resources/technical_documentation
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-installation-html
-    title: 'urbanopt_docs docs: installation.html'
-    url: https://docs.urbanopt.net/installation/installation.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-urbanopt_docs-mac-html
     title: 'urbanopt_docs docs: mac.html'
     url: https://docs.urbanopt.net/installation/mac.html
@@ -6577,37 +5432,9 @@ sources:
     license: open
     topic: building_energy
     format: html
-  - id: crawl-urbanopt_docs-disco-html
-    title: 'urbanopt_docs docs: disco.html'
-    url: https://docs.urbanopt.net/installation/disco.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-des-installation-html
-    title: 'urbanopt_docs docs: des_installation.html'
-    url: https://docs.urbanopt.net/installation/des_installation.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
   - id: crawl-urbanopt_docs-cloud-html
     title: 'urbanopt_docs docs: cloud.html'
     url: https://docs.urbanopt.net/installation/cloud.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-troubleshooting-html
-    title: 'urbanopt_docs docs: troubleshooting.html'
-    url: https://docs.urbanopt.net/installation/troubleshooting.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-getting-started-html
-    title: 'urbanopt_docs docs: getting_started.html'
-    url: https://docs.urbanopt.net/getting_started/getting_started.html
     source: urbanopt_docs
     license: open
     topic: building_energy
@@ -6629,27 +5456,6 @@ sources:
   - id: crawl-urbanopt_docs-overview-html
     title: 'urbanopt_docs docs: overview.html'
     url: https://docs.urbanopt.net/class_projects/overview.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-student-guide-html
-    title: 'urbanopt_docs docs: student_guide.html'
-    url: https://docs.urbanopt.net/class_projects/student_guide.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-developer-resources-html
-    title: 'urbanopt_docs docs: developer_resources.html'
-    url: https://docs.urbanopt.net/developer_resources/developer_resources.html
-    source: urbanopt_docs
-    license: open
-    topic: building_energy
-    format: html
-  - id: crawl-urbanopt_docs-compatibility-matrix-html
-    title: 'urbanopt_docs docs: compatibility_matrix.html'
-    url: https://docs.urbanopt.net/developer_resources/compatibility_matrix.html
     source: urbanopt_docs
     license: open
     topic: building_energy
