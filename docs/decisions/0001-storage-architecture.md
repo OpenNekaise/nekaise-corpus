@@ -859,3 +859,24 @@ second host writes.
   (5) `backup_corpus` keeps refusing under PostgreSQL authority until step 5.
 - **Gates re-run**: full suite 1147 passed / 41 skipped (PG skipped), with PostgreSQL
   (`nekaise_test`) 1218 passed; `py_compile` clean.
+
+### Step 1, Codex re-review (2026-09-25): all four fixed; two outbox P2s fixed
+
+- **A skipped insert allocates nothing.** The BEFORE INSERT trigger still takes the
+  `outbox_state` row lock and checks `seq = allocated + 1`, but `allocated` now advances in an
+  AFTER INSERT trigger (`nk_outbox_allocated`, conditional on `allocated = seq - 1`), which runs
+  only for rows actually inserted — an `INSERT … ON CONFLICT DO NOTHING` that is skipped (e.g.
+  seq 2 for an existing generation) no longer leaves a permanent gap that would block compaction.
+  Regression: the skipped insert, then a promotion, full compaction, another promotion (seq 3) and
+  its compaction.
+- **Consumer registration serializes with compaction in the database.** Registration reads
+  `compacted` with `SELECT … FOR UPDATE` on the `outbox_state` row, the same row lock compaction
+  (the outbox DELETE trigger) takes; whichever waits re-reads the other's committed effect
+  (READ COMMITTED: each trigger statement takes a fresh snapshot), so a registration never
+  commits alongside a compaction it did not see. It does not rely on callers sharing the
+  advisory writer lock. Regressions on two connections to `nekaise_test`, in both orders:
+  compaction first → the waiting registration is refused; registration first → the waiting
+  compaction is refused and the row stays due to the new consumer. All three regressions fail
+  on the previous code.
+- **Gates**: full suite 1147 passed / 44 skipped (PG skipped), with PostgreSQL 1221 passed;
+  `py_compile` clean.

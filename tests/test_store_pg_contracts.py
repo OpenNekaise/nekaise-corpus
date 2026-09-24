@@ -599,3 +599,113 @@ def test_init_file_binds_a_file_mode_shadow(pg, tmp_path):
     rec = store_authority.record_for(root)
     assert (rec.mode, rec.dataset_uuid, rec.schema) == ("file", pg.authority()["dataset_uuid"],
                                                         pg.schema)
+
+
+def _ack_all(pg, w, seqs):
+    with pg.contracts(w) as c:
+        for consumer in ("review", "publication", "index"):
+            for seq in seqs:
+                c.ack(consumer, seq, "ok")
+            c.advance(consumer)
+
+
+def test_a_conflict_skipped_outbox_insert_allocates_nothing(pg):
+    """Codex re-review P2: an INSERT ... ON CONFLICT DO NOTHING that is skipped must not
+    advance the allocation (a gap would block compaction forever)."""
+    with pg.writer() as w:
+        _generations(pg, w, 1)                                   # seq 1 -> generation 0
+        with pg._connect(autocommit=True) as conn:
+            cur = conn.execute("INSERT INTO outbox (seq, generation, payload_text) VALUES "
+                               "(2, 0, '{}') ON CONFLICT (generation) DO NOTHING")
+            assert cur.rowcount == 0
+            assert conn.execute("SELECT allocated, compacted FROM outbox_state").fetchone() \
+                == (1, 0)
+        _generations(pg, w, 1, first=1)                          # seq 2 -> generation 1
+        _ack_all(pg, w, (1, 2))
+        with pg._connect(autocommit=True) as conn:              # full compaction
+            conn.execute("DELETE FROM outbox WHERE seq = 1")
+            conn.execute("DELETE FROM outbox WHERE seq = 2")
+        _generations(pg, w, 1, first=2)                          # then a promotion
+        with pg.contracts(w) as c:
+            assert c.outbox_marks() == (3, 2)
+            assert c._q("SELECT seq, generation FROM outbox").fetchall() == [(3, 2)]
+        _ack_all(pg, w, (3,))
+    with pg._connect(autocommit=True) as conn:
+        conn.execute("DELETE FROM outbox WHERE seq = 3")         # compaction still proceeds
+        assert conn.execute("SELECT allocated, compacted FROM outbox_state").fetchone() == (3, 3)
+
+
+def _blocked_then(fn, release):
+    """Run fn in a thread; assert it blocks until release() runs; return its exception."""
+    import threading
+    out = {}
+
+    def run():
+        try:
+            fn()
+        except Exception as exc:  # noqa: BLE001
+            out["exc"] = exc
+    t = threading.Thread(target=run)
+    t.start()
+    t.join(1.0)
+    assert t.is_alive(), "the second transaction did not wait for the first"
+    release()
+    t.join(30)
+    assert not t.is_alive()
+    return out.get("exc")
+
+
+def _compactable(pg):
+    with pg.writer() as w:
+        _generations(pg, w, 1)
+        _ack_all(pg, w, (1,))
+
+
+def test_registration_waiting_for_compaction_is_refused(pg):
+    """Codex re-review P2 (two connections): compaction first, registration waits for its row
+    lock and then sees the compaction."""
+    import psycopg
+    _compactable(pg)
+    compactor = pg._connect()
+    registrar = pg._connect()
+    try:
+        compactor.execute("DELETE FROM outbox WHERE seq = 1")    # uncommitted, holds the lock
+        exc = _blocked_then(
+            lambda: (registrar.execute("INSERT INTO outbox_consumers (consumer) VALUES "
+                                       "('late')"), registrar.commit()),
+            compactor.commit)
+        assert isinstance(exc, psycopg.IntegrityError)
+        registrar.rollback()
+    finally:
+        compactor.close()
+        registrar.close()
+    with pg._connect(autocommit=True) as conn:
+        assert conn.execute("SELECT count(*) FROM outbox_consumers WHERE consumer = 'late'"
+                            ).fetchone()[0] == 0
+        assert conn.execute("SELECT compacted FROM outbox_state").fetchone()[0] == 1
+
+
+def test_compaction_waiting_for_registration_is_refused(pg):
+    """Codex re-review P2 (two connections): registration first, compaction waits for its row
+    lock and then sees the new consumer at watermark 0, so the row is kept for it."""
+    import psycopg
+    _compactable(pg)
+    registrar = pg._connect()
+    compactor = pg._connect()
+    try:
+        registrar.execute("INSERT INTO outbox_consumers (consumer) VALUES ('late')")
+        exc = _blocked_then(
+            lambda: (compactor.execute("DELETE FROM outbox WHERE seq = 1"), compactor.commit()),
+            registrar.commit)
+        assert isinstance(exc, psycopg.IntegrityError)
+        compactor.rollback()
+    finally:
+        registrar.close()
+        compactor.close()
+    with pg._connect(autocommit=True) as conn:
+        assert conn.execute("SELECT count(*) FROM outbox").fetchone()[0] == 1
+        assert conn.execute("SELECT compacted FROM outbox_state").fetchone()[0] == 0
+    with pg.writer() as w, pg.contracts(w) as c:
+        assert c.advance("late") == 0                            # row 1 is still due to it
+        c.ack("late", 1, "ok")
+        assert c.advance("late") == 1

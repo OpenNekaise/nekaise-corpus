@@ -618,13 +618,15 @@ CREATE OR REPLACE TRIGGER outbox_acks_guard BEFORE UPDATE OR DELETE ON {s}.outbo
 CREATE OR REPLACE FUNCTION {s}.nk_outbox_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
 DECLARE st record;
 BEGIN
+    -- the state row lock serializes allocation, compaction and consumer registration
     SELECT * INTO st FROM {s}.outbox_state FOR UPDATE;
     IF TG_OP = 'INSERT' THEN
         IF NEW.seq <> st.allocated + 1 THEN
             RAISE EXCEPTION 'nekaise: the next outbox sequence is % (got %)', st.allocated + 1,
                 NEW.seq USING ERRCODE = 'integrity_constraint_violation';
         END IF;
-        UPDATE {s}.outbox_state SET allocated = NEW.seq;
+        -- `allocated` advances in the AFTER trigger: only for a row actually inserted (a
+        -- BEFORE trigger also runs for an INSERT ... ON CONFLICT DO NOTHING that is skipped)
         RETURN NEW;
     END IF;
     IF TG_OP = 'DELETE' AND OLD.seq = st.compacted + 1
@@ -637,6 +639,17 @@ BEGIN
 END $f$;
 CREATE OR REPLACE TRIGGER outbox_guard BEFORE INSERT OR UPDATE OR DELETE ON {s}.outbox
     FOR EACH ROW EXECUTE FUNCTION {s}.nk_outbox_guard();
+CREATE OR REPLACE FUNCTION {s}.nk_outbox_allocated() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    UPDATE {s}.outbox_state SET allocated = NEW.seq WHERE allocated = NEW.seq - 1;
+    IF NOT FOUND THEN
+        RAISE EXCEPTION 'nekaise: outbox sequence % is not the next allocation', NEW.seq
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NULL;
+END $f$;
+CREATE OR REPLACE TRIGGER outbox_allocated AFTER INSERT ON {s}.outbox
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_outbox_allocated();
 CREATE OR REPLACE FUNCTION {s}.nk_consumers_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
 BEGIN
     IF TG_OP = 'DELETE' THEN
@@ -644,7 +657,10 @@ BEGIN
             USING ERRCODE = 'integrity_constraint_violation';
     END IF;
     IF TG_OP = 'INSERT' THEN
-        IF NEW.watermark <> 0 OR (SELECT compacted FROM {s}.outbox_state) > 0 THEN
+        -- FOR UPDATE: the same row lock compaction takes, so a registration and a compaction
+        -- serialize in the database (whichever waits re-reads the other's committed effect)
+        IF NEW.watermark <> 0
+                OR (SELECT compacted FROM {s}.outbox_state FOR UPDATE) > 0 THEN
             RAISE EXCEPTION 'nekaise: a new consumer starts at watermark 0, before any '
                 'compaction (it would miss compacted history)'
                 USING ERRCODE = 'integrity_constraint_violation';
