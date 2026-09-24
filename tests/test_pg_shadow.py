@@ -133,3 +133,59 @@ def test_import_refuses_a_non_empty_schema_and_sync_refuses_rewritten_history(en
     repo.git("commit", "-q", "--amend", "-m", "rewritten c1")
     with pytest.raises(SystemExit, match="re-import required"):
         pg_shadow.do_sync(st, "HEAD", repo.path, log=lambda *_: None)
+
+
+def test_representation_only_changes_replicate(env):
+    pg_shadow, st, repo, c1 = env
+    pg_shadow.do_import(st, c1, repo.path, log=lambda *_: None)
+    repo.write("manifest/books.jsonl", manifest([mrow("oer-a", bytes=1.0), mrow("oer-b", bytes=True)]))
+    head = repo.commit("1 -> 1.0 and 1 -> true")
+    pg_shadow.do_sync(st, head, repo.path, log=lambda *_: None)
+    assert pg_shadow.do_verify(st, repo.path, log=lambda *_: None)
+    with st.read() as v:
+        got = v.get_manifest(["oer-a", "oer-b"])
+    assert repr(got["oer-a"]["bytes"]) == "1.0" and got["oer-b"]["bytes"] is True
+
+
+def test_journal_rename_replays_and_rewrite_is_rejected(env):
+    pg_shadow, st, repo, c1 = env
+    ev = lambda seq, d="d": json.dumps({"seq": seq, "run_id": f"r{seq}", "op": "commit",  # noqa: E731
+                                        "digest": d, "table": None, "id": None}) + "\n"
+    repo.write("registry/journal/2026-09.jsonl", ev(1))
+    c2 = repo.commit("journal")
+    pg_shadow.do_import(st, c2, repo.path, log=lambda *_: None)
+    repo.rm("registry/journal/2026-09.jsonl")
+    repo.write("registry/journal/2026-10.jsonl", ev(1) + ev(2))  # renamed + appended
+    c3 = repo.commit("rename")
+    assert pg_shadow.do_sync(st, c3, repo.path, log=lambda *_: None) == 1
+    assert pg_shadow.do_verify(st, repo.path, log=lambda *_: None)
+    repo.write("registry/journal/2026-10.jsonl", ev(1, "changed") + ev(2))
+    c4 = repo.commit("rewrite")
+    with pytest.raises(SystemExit, match="append-only"):
+        pg_shadow.do_sync(st, c4, repo.path, log=lambda *_: None)
+    assert pg_shadow.pg_digests(st)[0] == c3  # watermark did not move
+
+
+def test_legacy_ledger_monolith_takes_precedence(env):
+    pg_shadow, st, repo, c1 = env
+    repo.write("registry/pruned.jsonl", json.dumps({"id": "legacy", "reason": "old"}) + "\n")
+    c2 = repo.commit("legacy ledger present alongside shards")
+    pg_shadow.do_import(st, c2, repo.path, log=lambda *_: None)
+    assert pg_shadow.do_verify(st, repo.path, log=lambda *_: None)
+    with st.read() as v:
+        assert [r["id"] for r in v.scan("ledger").rows] == ["legacy"]
+    repo.rm("registry/pruned.jsonl")
+    c3 = repo.commit("migrated to shards")
+    pg_shadow.do_sync(st, c3, repo.path, log=lambda *_: None)
+    assert pg_shadow.do_verify(st, repo.path, log=lambda *_: None)
+    with st.read() as v:
+        assert [r["id"] for r in v.scan("ledger").rows] == ["oer-z"]
+
+
+def test_verify_hashes_the_pinned_config_documents_themselves(env):
+    pg_shadow, st, repo, c1 = env
+    pg_shadow.do_import(st, c1, repo.path, log=lambda *_: None)
+    with st._connect(autocommit=True) as conn:  # corrupt the document, keep its stored digest
+        conn.execute("UPDATE config SET doc_text = '{\"version\": 1, \"restrictions\": {\"x\": 1}}' "
+                     "WHERE name = 'eligibility.json'")
+    assert not pg_shadow.do_verify(st, repo.path, log=lambda *_: None)

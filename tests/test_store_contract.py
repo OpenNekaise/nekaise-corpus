@@ -381,3 +381,36 @@ def test_aggregate_sums_are_exact_and_typed(st):
                                              where=Prefix("id", "x-"))}
     assert got == {"s": 0.3, "t": 7}  # exact: 0.1 + 0.2 == 0.3, not 0.30000000000000004
     assert isinstance(got["t"], int)
+
+
+def test_lost_commit_response_retry_is_a_noop(st, tmp_path):
+    stale = st.version()  # the client never learns the version its commit produced
+
+    def body(tx):
+        tx.insert_entries([entry("oer-lost")])
+        tx.blocklist_add(["https://lost.example"])
+    write(st, "r1", body)
+    with st.read() as v:
+        before = st.export(tmp_path / "a", view=v).files
+    with st.writer() as w:
+        with st.transaction("r1", expected_version=stale, writer=w) as tx:
+            body(tx)
+    with st.read() as v:
+        assert st.export(tmp_path / "b", view=v).files == before
+
+
+def test_invalid_json_values_are_rejected_everywhere(st):
+    with st.writer() as w:
+        with st.transaction("r1", expected_version=st.version(), writer=w) as tx:
+            with pytest.raises(store.StoreError, match="NaN"):
+                tx.upsert_manifest([mrow("n", text_chars=float("nan"))])
+            with pytest.raises(store.StoreError, match="NUL"):
+                tx.insert_entries([entry("z", title="bad\x00title")])
+            with pytest.raises(store.StoreError, match="NUL"):
+                tx.update_manifest_fields({"oer-a": {"error": "x\x00y"}})
+            with pytest.raises(store.StoreError, match="NUL"):
+                tx.ledger_append([{"id": "q", "reason": "\x00"}])
+            assert tx.update_manifest_fields({"oer-a": {"text_chars": 100.0}}) == 1  # 100 -> 100.0
+    with st.read() as v:
+        events = [e for e in v.scan(Table.EVENTS, limit=1000).rows if e["run_id"] == "r1"]
+        assert [e["op"] for e in events] == ["update", "commit"]  # failed batches left no trace

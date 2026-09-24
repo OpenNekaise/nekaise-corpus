@@ -642,7 +642,7 @@ class PgWriteView(PgReadView):
         rows = [WriteView._entry_row(e) for e in entries]
         WriteView._unique_ids(rows, "upsert_entries")
         before = self._rows("entries", [r["id"] for r in rows])
-        changed = [r for r in rows if before.get(r["id"]) != r]
+        changed = [r for r in rows if not store.same_row(before.get(r["id"]), r)]
         self._put("entries", changed)
         for r in changed:
             self._record("entries", "upsert", r["id"], before=before.get(r["id"]), after=r)
@@ -657,7 +657,7 @@ class PgWriteView(PgReadView):
     def _upsert_manifest(self, rows: list[dict]) -> int:
         WriteView._unique_ids(rows, "upsert_manifest")
         before = self._rows("manifest", [r["id"] for r in rows])
-        changed = [r for r in rows if before.get(r["id"]) != r]
+        changed = [r for r in rows if not store.same_row(before.get(r["id"]), r)]
         self._put("manifest", changed)
         for r in changed:
             self._record("manifest", "upsert", r["id"], before=before.get(r["id"]), after=r)
@@ -665,14 +665,17 @@ class PgWriteView(PgReadView):
 
     @_mutation
     def upsert_manifest(self, rows: Iterable[Mapping]) -> int:
+        rows = [dict(r) for r in rows]
+        WriteView._unique_ids(rows, "upsert_manifest")
         return self._upsert_manifest([json.loads(canonical_row(r)) for r in rows])
 
     @_mutation
     def replace_manifest(self, rows: Iterable[Mapping], *, reason: str) -> int:
         if not reason:
             raise StoreError("replace_manifest requires a reason")
-        rows = [json.loads(canonical_row(r)) for r in rows]
+        rows = [dict(r) for r in rows]
         WriteView._unique_ids(rows, "replace_manifest")
+        rows = [json.loads(canonical_row(r)) for r in rows]
         keep = [r["id"] for r in rows]
         gone = [i for (i,) in self._q("SELECT id FROM manifest WHERE NOT (id = ANY(%s)) ORDER BY id",
                                       [keep]).fetchall()]
@@ -687,7 +690,7 @@ class PgWriteView(PgReadView):
         for sid, patch in updates.items():
             after = {k: v for k, v in before[sid].items() if k not in unset}
             after.update(json.loads(json.dumps(dict(patch))))
-            if after != before[sid]:
+            if not store.same_row(after, before[sid]):
                 changed.append(after)
                 self._record("manifest", "update", sid, before=before[sid], after=after)
         self._put("manifest", changed)
@@ -702,6 +705,8 @@ class PgWriteView(PgReadView):
     @_mutation
     def blocklist_add(self, urls: Iterable[str]) -> int:
         cands = {u for u in map(norm_url, urls) if u}
+        for u in cands:
+            store.validate_json(u, "blocklist url")
         have = {r[0] for r in self._q("SELECT url FROM blocklist WHERE key = ANY(%s)",
                                       [[key_digest(u) for u in cands]])}
         new = sorted(cands - have)
@@ -714,8 +719,9 @@ class PgWriteView(PgReadView):
 
     @_mutation
     def ledger_append(self, rows: Iterable[Mapping]) -> int:
-        rows = [json.loads(canonical_row(r)) for r in rows]
+        rows = [dict(r) for r in rows]
         store.validate_ledger_rows(rows)
+        rows = [json.loads(canonical_row(r)) for r in rows]
         next_n: dict[str, int] = {}
         params = []
         for r in rows:
@@ -736,10 +742,11 @@ class PgWriteView(PgReadView):
     def rotation_set(self, name: str, value: Mapping) -> None:
         if not isinstance(value, Mapping):
             raise StoreError("rotation value must be a mapping")
+        store.validate_json(dict(value), f"rotation {name}")
         after = json.loads(canonical_row(dict(value)))
         row = self._q("SELECT value_text FROM rotation WHERE name = %s FOR UPDATE", [name]).fetchone()
         before = json.loads(row[0]) if row else None
-        if before == after:
+        if store.same_row(before, after):
             return
         self._q("INSERT INTO rotation (name, value_text) VALUES (%s, %s) ON CONFLICT (name) "
                 "DO UPDATE SET value_text = EXCLUDED.value_text", [name, canonical_row(after)])

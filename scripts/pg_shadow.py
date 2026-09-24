@@ -45,6 +45,9 @@ from store import canonical_row, key_digest, norm_url
 
 ROOT = Path(__file__).resolve().parents[1]
 TRACKED = ("registry", "manifest", "pruned_urls.txt")
+# Present while a shadow replicates this checkout: run_round then refuses uncommitted rounds, since
+# the shadow only sees commits. Delete it to retire the shadow.
+SHADOW_MARKER = ROOT / "workspace" / ".pg-shadow"
 MOD = 1 << 256
 
 
@@ -118,62 +121,7 @@ def parse(kind: str, data: bytes | None):
     raise ValueError(kind)
 
 
-# --- deltas ---------------------------------------------------------------------------------------
-
-def empty_delta() -> dict:
-    return {"entries_put": {}, "entries_del": set(), "manifest_put": {}, "manifest_del": set(),
-            "blocklist_add": set(), "blocklist_del": set(), "ledger": Counter(),
-            "events": [], "rotation": None, "backend_state": None, "config": None}
-
-
-def commit_delta(parent: str | None, commit: str, paths: list[str], repo: Path = ROOT) -> dict:
-    """Row-level changes between two revisions, restricted to `paths`. Keyed tables are diffed over
-    the UNION of the changed files, so a row that moves between shards is an update, not a loss."""
-    delta = empty_delta()
-    by_kind: dict[str, list[str]] = {}
-    for p in paths:
-        if (k := kind_of(p)) is not None:
-            by_kind.setdefault(k, []).append(p)
-    for kind in ("entries", "manifest"):
-        old, new = {}, {}
-        for p in by_kind.get(kind, []):
-            old.update(parse(kind, git_bytes(parent, p, repo)) if parent else {})
-            new.update(parse(kind, git_bytes(commit, p, repo)))
-        delta[f"{kind}_put"] = {i: r for i, r in new.items() if old.get(i) != r}
-        delta[f"{kind}_del"] = set(old) - set(new)
-    old_b, new_b = set(), set()
-    for p in by_kind.get("blocklist", []):
-        old_b |= set(parse("blocklist", git_bytes(parent, p, repo)) if parent else [])
-        new_b |= set(parse("blocklist", git_bytes(commit, p, repo)))
-    delta["blocklist_add"], delta["blocklist_del"] = new_b - old_b, old_b - new_b
-    for p in by_kind.get("ledger", []):
-        old_rows = parse("ledger", git_bytes(parent, p, repo)) if parent else []
-        delta["ledger"].update(canonical_row(r) for r in parse("ledger", git_bytes(commit, p, repo)))
-        delta["ledger"].subtract(canonical_row(r) for r in old_rows)
-    for p in by_kind.get("events", []):
-        old_seq = {e["seq"] for e in (parse("events", git_bytes(parent, p, repo)) if parent else [])}
-        delta["events"] += [e for e in parse("events", git_bytes(commit, p, repo))
-                            if e["seq"] not in old_seq]
-    if "rotation" in by_kind:
-        delta["rotation"] = parse("rotation", git_bytes(commit, "registry/rotation.json", repo))
-    if "backend_state" in by_kind:
-        delta["backend_state"] = parse(
-            "backend_state", git_bytes(commit, f"registry/{store.BACKEND_STATE_FILE}", repo))
-    if "config" in by_kind:
-        delta["config"] = {name: data for name in store.CONFIG_FILES
-                           if (data := git_bytes(commit, f"registry/{name}", repo)) is not None}
-    return delta
-
-
-def delta_stats(delta: dict) -> dict:
-    return {"entries_put": len(delta["entries_put"]), "entries_del": len(delta["entries_del"]),
-            "manifest_put": len(delta["manifest_put"]), "manifest_del": len(delta["manifest_del"]),
-            "blocklist_add": len(delta["blocklist_add"]), "blocklist_del": len(delta["blocklist_del"]),
-            "ledger": sum(abs(v) for v in delta["ledger"].values()), "events": len(delta["events"]),
-            "rotation": delta["rotation"] is not None, "config": delta["config"] is not None}
-
-
-# --- applying deltas ------------------------------------------------------------------------------
+# --- replaying one revision step ------------------------------------------------------------------
 
 def _put_rows(cur, table: str, rows) -> None:
     extra = table == "manifest"
@@ -182,8 +130,8 @@ def _put_rows(cur, table: str, rows) -> None:
     sets = ", ".join(f"{c} = EXCLUDED.{c}" for c in cols.split(", ")[1:])
     params = []
     for r in rows:
-        rec = [r["id"], store_pg._check_text(canonical_row(r), f"{table} row {r['id']}"),
-               *store_pg._keys_for(r)]
+        store.validate_json(r, f"{table} row {r.get('id')!r}")
+        rec = [r["id"], canonical_row(r), *store_pg._keys_for(r)]
         if extra:
             sha = r.get("sha256")
             rec.append(sha if isinstance(sha, str) and sha else None)
@@ -192,45 +140,111 @@ def _put_rows(cur, table: str, rows) -> None:
                     f"{sets}", params)
 
 
-def apply_delta(conn, st: store_pg.PgStore, delta: dict) -> None:
+def effective_ledger_paths(paths: list[str]) -> list[str]:
+    """FileStore's precedence: the legacy monolith, when present, is the whole ledger."""
+    ledger = [p for p in paths if kind_of(p) == "ledger"]
+    return ["registry/pruned.jsonl"] if "registry/pruned.jsonl" in ledger else ledger
+
+
+def replay(conn, st: store_pg.PgStore, parent: str | None, commit: str, paths: list[str],
+           repo: Path = ROOT, log=None) -> dict:
+    """Apply the row-level difference between `parent` (None = empty) and `commit`, restricted to
+    the changed `paths`, inside the caller's transaction. Memory is bounded by one file plus the
+    id set of the changed keyed files: a row that moves between shards is found through that id
+    set, so it is updated rather than deleted."""
+    stats = Counter()
+    by_kind: dict[str, list[str]] = {}
+    for p in paths:
+        if (k := kind_of(p)) is not None:
+            by_kind.setdefault(k, []).append(p)
+    old = (lambda p, k: parse(k, git_bytes(parent, p, repo))) if parent else \
+        (lambda p, k: parse(k, None))
+    new = lambda p, k: parse(k, git_bytes(commit, p, repo))  # noqa: E731
     with conn.cursor() as cur:
-        for table in ("entries", "manifest"):
-            if delta[f"{table}_del"]:
-                cur.execute(f"DELETE FROM {table} WHERE id = ANY(%s)", [sorted(delta[f"{table}_del"])])
-            rows = list(delta[f"{table}_put"].values())
-            for i in range(0, len(rows), 5000):
-                _put_rows(cur, table, rows[i:i + 5000])
-        if delta["blocklist_del"]:
-            cur.execute("DELETE FROM blocklist WHERE key = ANY(%s)",
-                        [[key_digest(u) for u in delta["blocklist_del"]]])
-        cur.executemany("INSERT INTO blocklist (key, url) VALUES (%s, %s) ON CONFLICT DO NOTHING",
-                        [(key_digest(u), store_pg._check_text(u, "blocklist url"))
-                         for u in sorted(delta["blocklist_add"])])
-        for text, n in sorted(delta["ledger"].items()):
-            key = key_digest(text)
-            if n > 0:
-                base = cur.execute("SELECT COALESCE(max(n) + 1, 0) FROM ledger WHERE key = %s",
-                                   [key]).fetchone()[0]
-                cur.executemany("INSERT INTO ledger (key, n, row_text) VALUES (%s, %s, %s)",
-                                [(key, base + k, store_pg._check_text(text, "ledger row"))
-                                 for k in range(n)])
-            elif n < 0:
-                cur.execute("DELETE FROM ledger WHERE key = %s AND n IN (SELECT n FROM ledger "
-                            "WHERE key = %s ORDER BY n DESC LIMIT %s)", [key, key, -n])
-        cur.executemany("INSERT INTO events (seq, run_id, op, row_text) VALUES (%s, %s, %s, %s)",
-                        [(e["seq"], e["run_id"], e["op"], canonical_row(e))
-                         for e in sorted(delta["events"], key=lambda e: e["seq"])])
-        if delta["rotation"] is not None:
+        for kind in ("entries", "manifest"):
+            files = by_kind.get(kind, [])
+            new_ids: set[str] = set()
+            for p in files:
+                new_ids.update(new(p, kind))
+            for n, p in enumerate(files, 1):
+                before, after = old(p, kind), new(p, kind)
+                gone = sorted(i for i in before if i not in new_ids)
+                if gone:
+                    cur.execute(f"DELETE FROM {kind} WHERE id = ANY(%s)", [gone])
+                puts = [r for i, r in after.items() if not store.same_row(before.get(i), r)]
+                for i in range(0, len(puts), 5000):
+                    _put_rows(cur, kind, puts[i:i + 5000])
+                stats[f"{kind}_put"] += len(puts)
+                stats[f"{kind}_del"] += len(gone)
+                if log and n % 25 == 0:
+                    log(f"  {kind}: {n}/{len(files)} files")
+        for p in by_kind.get("blocklist", []):
+            b, a = set(old(p, "blocklist")), set(new(p, "blocklist"))
+            if b - a:
+                cur.execute("DELETE FROM blocklist WHERE key = ANY(%s)",
+                            [[key_digest(u) for u in b - a]])
+            for u in a - b:
+                store.validate_json(u, "blocklist url")
+            cur.executemany("INSERT INTO blocklist (key, url) VALUES (%s, %s) ON CONFLICT DO "
+                            "NOTHING", [(key_digest(u), u) for u in sorted(a - b)])
+            stats["blocklist_add"] += len(a - b)
+            stats["blocklist_del"] += len(b - a)
+        ledger_files = by_kind.get("ledger", [])
+        if ledger_files:
+            legacy = "registry/pruned.jsonl"
+            if legacy in ledger_files or (parent and git_bytes(parent, legacy, repo) is not None) \
+                    or git_bytes(commit, legacy, repo) is not None:
+                # the monolith appeared, changed or disappeared: rebuild the ledger from scratch
+                cur.execute("DELETE FROM ledger")
+                counts = Counter()
+                for p in effective_ledger_paths(tracked_paths(commit, repo)):
+                    counts.update(canonical_row(r) for r in new(p, "ledger"))
+            else:
+                counts = Counter()
+                for p in ledger_files:
+                    counts.update(canonical_row(r) for r in new(p, "ledger"))
+                    counts.subtract(canonical_row(r) for r in old(p, "ledger"))
+            for text, n in sorted(counts.items()):
+                key = key_digest(text)
+                if n > 0:
+                    base = cur.execute("SELECT COALESCE(max(n) + 1, 0) FROM ledger WHERE key = %s",
+                                       [key]).fetchone()[0]
+                    cur.executemany("INSERT INTO ledger (key, n, row_text) VALUES (%s, %s, %s)",
+                                    [(key, base + k, text) for k in range(n)])
+                elif n < 0:
+                    cur.execute("DELETE FROM ledger WHERE key = %s AND n IN (SELECT n FROM ledger "
+                                "WHERE key = %s ORDER BY n DESC LIMIT %s)", [key, key, -n])
+                stats["ledger"] += abs(n)
+        journal = by_kind.get("events", [])
+        if journal:
+            before_ev, after_ev = {}, {}
+            for p in journal:
+                before_ev.update({e["seq"]: e for e in old(p, "events")})
+                after_ev.update({e["seq"]: e for e in new(p, "events")})
+            for seq, e in before_ev.items():
+                if seq not in after_ev or not store.same_row(e, after_ev[seq]):
+                    raise SystemExit(f"{commit[:10]} rewrites or removes journal event {seq}; the "
+                                     "journal is append-only, re-import required")
+            added = [after_ev[s] for s in sorted(set(after_ev) - set(before_ev))]
+            cur.executemany("INSERT INTO events (seq, run_id, op, row_text) VALUES (%s,%s,%s,%s)",
+                            [(e["seq"], e["run_id"], e["op"], canonical_row(e)) for e in added])
+            stats["events"] += len(added)
+        if "rotation" in by_kind:
+            rot = new("registry/rotation.json", "rotation")
             cur.execute("DELETE FROM rotation")
             cur.executemany("INSERT INTO rotation (name, value_text) VALUES (%s, %s)",
-                            [(k, canonical_row(v)) for k, v in sorted(delta["rotation"].items())])
-        if delta["backend_state"] is not None:
+                            [(k, canonical_row(v)) for k, v in sorted(rot.items())])
+            stats["rotation"] += 1
+        if "backend_state" in by_kind:
+            bs = new(f"registry/{store.BACKEND_STATE_FILE}", "backend_state")
             cur.execute("DELETE FROM backend_state")
             cur.executemany("INSERT INTO backend_state (name, enabled, reason) VALUES (%s,%s,%s)",
-                            [(k, bool(v["enabled"]), v.get("reason"))
-                             for k, v in sorted(delta["backend_state"].items())])
-    if delta["config"] is not None:
-        st.pin_config(delta["config"], conn)
+                            [(k, bool(v["enabled"]), v.get("reason")) for k, v in sorted(bs.items())])
+    if "config" in by_kind or parent is None:
+        st.pin_config({name: data for name in store.CONFIG_FILES
+                       if (data := git_bytes(commit, f"registry/{name}", repo)) is not None}, conn)
+        stats["config"] += 1
+    return dict(stats)
 
 
 def _watermark(conn) -> str | None:
@@ -249,27 +263,18 @@ def _advance(conn, parent: str | None, commit: str, stats: dict, extra: dict | N
 
 def do_import(st: store_pg.PgStore, rev: str, repo: Path = ROOT, log=print) -> None:
     commit = rev_parse(rev, repo)
+    t0 = time.time()
     with st.writer(timeout=60) as w:
         conn = st._writer_conn(w)
         with conn.transaction():
             if _watermark(conn) is not None or conn.execute(
                     "SELECT EXISTS (SELECT 1 FROM entries UNION ALL SELECT 1 FROM manifest)").fetchone()[0]:
                 raise SystemExit("schema is not empty; import only into a fresh schema")
-            totals = Counter()
-            paths = tracked_paths(commit, repo)
-            t0 = time.time()
-            for n, p in enumerate(paths, 1):  # one file at a time: memory bounded by the largest
-                d = commit_delta(None, commit, [p], repo)
-                apply_delta(conn, st, d)
-                totals.update({k: v for k, v in delta_stats(d).items() if isinstance(v, int)})
-                if n % 25 == 0:
-                    log(f"  {n}/{len(paths)} files, {time.time() - t0:.0f}s")
-            if not any(kind_of(p) == "config" for p in paths):
-                st.pin_config({}, conn)
-            _advance(conn, None, commit, dict(totals),
+            stats = replay(conn, st, None, commit, tracked_paths(commit, repo), repo, log)
+            _advance(conn, None, commit, stats,
                      {"imported_from": {"commit": commit, "at": time.strftime("%Y-%m-%dT%H:%M:%SZ",
                                                                              time.gmtime())}})
-    log(f"imported {commit[:10]}: {dict(totals)} in {time.time() - t0:.0f}s")
+    log(f"imported {commit[:10]}: {stats} in {time.time() - t0:.0f}s")
 
 
 def first_parent_chain(watermark: str, target: str, repo: Path = ROOT) -> list[str]:
@@ -307,9 +312,8 @@ def do_sync(st: store_pg.PgStore, target: str = "HEAD", repo: Path = ROOT, log=p
                     continue
                 if _watermark(conn) != parent:
                     raise SystemExit(f"watermark moved concurrently; expected {parent[:10]}")
-                d = commit_delta(parent, commit, changed_paths(parent, commit, repo), repo)
-                apply_delta(conn, st, d)
-                _advance(conn, parent, commit, delta_stats(d))
+                stats = replay(conn, st, parent, commit, changed_paths(parent, commit, repo), repo)
+                _advance(conn, parent, commit, stats)
             applied += 1
     log(f"synced {applied} commit(s); watermark {target[:10] if applied else watermark[:10]}")
     return applied
@@ -385,7 +389,11 @@ def pg_digests(st: store_pg.PgStore) -> tuple[str | None, dict[str, str]]:
         out["backend_state"] = store._digest({n: {"enabled": e, "reason": r} for n, e, r in
                                               conn.execute("SELECT name, enabled, reason FROM "
                                                            "backend_state")})
-        out["config"] = store._digest(dict(conn.execute("SELECT name, digest FROM config")))
+        config = {}
+        for name, text, digest in conn.execute("SELECT name, doc_text, digest FROM config"):
+            actual = hashlib.sha256(text.encode()).hexdigest()
+            config[name] = actual if actual == digest else f"stored digest {digest} != {actual}"
+        out["config"] = store._digest(config)
         conn.rollback()
     return watermark, out
 
@@ -413,6 +421,8 @@ def main(argv=None) -> int:
     st = store_pg.PgStore(ROOT, dsn=args.dsn, schema=args.schema)
     if args.command == "import":
         do_import(st, args.commit)
+        SHADOW_MARKER.parent.mkdir(parents=True, exist_ok=True)
+        SHADOW_MARKER.write_text(f"{args.dsn}\n{args.schema}\n")
     elif args.command == "sync":
         do_sync(st, args.commit, limit=args.limit)
     elif args.command == "verify":
@@ -423,8 +433,13 @@ def main(argv=None) -> int:
             receipts = conn.execute("SELECT count(*), max(applied_at) FROM replication_receipts").fetchone()
         wm = (rep or {}).get("watermark")
         lag = len(git("rev-list", "--first-parent", f"{wm}..HEAD").split()) if wm else None
+        dirty = [l for l in git("status", "--porcelain", "--", *TRACKED).splitlines() if l]
         print(json.dumps({"generation": gen, "watermark": wm, "commits_behind_head": lag,
+                          "uncommitted_tracked_changes": len(dirty),
                           "receipts": receipts[0], "last_applied": str(receipts[1])}, indent=2))
+        if dirty:
+            print("WARNING: tracked state has uncommitted changes the shadow cannot see",
+                  file=sys.stderr)
     return 0
 
 

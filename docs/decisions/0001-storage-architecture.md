@@ -139,3 +139,44 @@ Archive the existing history as a checksummed Git bundle in two locations. Then 
 This requires database operations, object-storage funding, export compaction, and index monitoring. Capacity remains an acceptance test, not a promise inferred from engine choice.
 
 No active-active writers, Kubernetes requirement, vector database, corpus bytes in public exports, or cleaning-policy change accompanies this migration. Pausing patents changes backend configuration only.
+
+---
+
+## Stage 2 implementation record (2026-09-24)
+
+Decided with Codex in the stage-2 design and implementation reviews; recorded here so stages 3–6
+build on the same facts.
+
+- **Server.** PostgreSQL 18.6 from conda-forge (`~/miniconda3/envs/nekaise-pg`), run as the
+  systemd user service `nekaise-postgres` (linger enabled, so it starts at boot), unix socket only
+  (`~/.local/share/nekaise-pg/run`), peer authentication, no TCP listener. Docker needed root on
+  this host; the conda build is the same server and its data directory can move into a container
+  later unchanged.
+- **Backups.** `archive_command` copies every WAL segment to `/media/zengp/ssd/nekaise-pg-wal`
+  (atomic, never overwrites; a missing SSD makes the server retain WAL and retry).
+  `scripts/pg_backup.py base` writes verified compressed base backups to
+  `/media/zengp/ssd/nekaise-pg-base`; `restore-test` restores the newest base plus archived WAL into
+  a scratch instance and compares counts and watermark with the live server (first drill
+  2026-09-24: identical, `pg_verifybackup` clean).
+- **Representation.** Rows are stored as canonical JSON text (`store.canonical_row`), with a
+  generated `jsonb` column for predicates only; long lookup values are indexed by sha256 and
+  checked against the full value. Both backends reject NaN/Infinity, NUL and non-JSON values, treat
+  `1`, `1.0` and `true` as different rows, group aggregates only by string/boolean/null values and
+  sum exactly.
+- **Temporary ADR exception: advisory lock instead of a lease.** A writer holds a session advisory
+  lock and fences every transaction on a writer epoch; all its mutations run on that session, so
+  a token dies with the session. This is safe on one host. The lease with heartbeat and fencing
+  epoch from section 4 is **required before any second host writes**.
+- **Shadow replication.** `scripts/pg_shadow.py` imports a commit and then replays each
+  first-parent commit (git objects only, never the working tree) in one transaction that checks
+  and advances the watermark and writes a replication receipt. It writes rows verbatim and creates
+  no store events, so both stores export byte-identically. `verify` compares order-independent
+  per-table multiset digests of git at the watermark with one PostgreSQL snapshot. While
+  `workspace/.pg-shadow` exists, `run_round.py` refuses rounds without `--commit`, because the
+  shadow only sees commits. First real import (1.62M entries and manifest rows) took 326 s;
+  verify 178 s, all tables identical; one dig commit syncs in about 2 s.
+- **Still open for stages 3–4.** Converting callers must preserve replacement semantics and
+  deletions (the store API has both). A round is not one database transaction: stage 4 stages a
+  round's metadata in run-scoped tables while downloads, cleaning and gates run, then promotes it
+  in one short transaction that also bumps the generation and writes the publication outbox row.
+  Until then a store transaction's atomicity does not make a whole round atomic.

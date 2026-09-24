@@ -200,13 +200,22 @@ def predicate_fields(pred: Predicate) -> set[str]:
     raise StoreError(f"unsupported predicate {type(pred).__name__}")
 
 
+def _exact(v: int | float):
+    """The exact rational value of a JSON number as its text states it (a float's shortest repr,
+    which is what the canonical JSON and PostgreSQL's numeric both see)."""
+    import decimal
+    import fractions
+    return fractions.Fraction(decimal.Decimal(repr(v))) if isinstance(v, float) else \
+        fractions.Fraction(v)
+
+
 def json_equal(a: Any, b: Any) -> bool:
-    """Equality of JSON values as PostgreSQL jsonb defines it: numbers compare by value (1 == 1.0),
-    but a boolean never equals a number and containers compare element-wise."""
+    """Equality of JSON values as PostgreSQL jsonb defines it: numbers compare by their decimal
+    value (1 == 1.0), a boolean never equals a number, containers compare element-wise."""
     if isinstance(a, bool) or isinstance(b, bool):
         return isinstance(a, bool) and isinstance(b, bool) and a == b
     if isinstance(a, (int, float)) and isinstance(b, (int, float)):
-        return a == b
+        return _exact(a) == _exact(b)
     if isinstance(a, Mapping) and isinstance(b, Mapping):
         return a.keys() == b.keys() and all(json_equal(a[k], b[k]) for k in a)
     if isinstance(a, (list, tuple)) and isinstance(b, (list, tuple)):
@@ -280,9 +289,45 @@ def key_digest(text: str) -> str:
     return hashlib.sha256(text.encode()).hexdigest()
 
 
+def validate_json(value: Any, what: str = "value") -> None:
+    """Reject what either backend cannot store identically: non-JSON types, non-string keys,
+    NaN/Infinity, and NUL characters (PostgreSQL text and jsonb refuse them)."""
+    if value is None or isinstance(value, bool) or isinstance(value, int):
+        return
+    if isinstance(value, float):
+        if value != value or value in (float("inf"), float("-inf")):
+            raise StoreError(f"{what}: NaN/Infinity is not valid JSON")
+        return
+    if isinstance(value, str):
+        if "\x00" in value:
+            raise StoreError(f"{what}: contains a NUL character")
+        return
+    if isinstance(value, Mapping):
+        for k, v in value.items():
+            if not isinstance(k, str):
+                raise StoreError(f"{what}: object keys must be strings, got {k!r}")
+            validate_json(k, what)
+            validate_json(v, f"{what}.{k}")
+        return
+    if isinstance(value, (list, tuple)):
+        for i, v in enumerate(value):
+            validate_json(v, f"{what}[{i}]")
+        return
+    raise StoreError(f"{what}: {type(value).__name__} is not a JSON value")
+
+
 def canonical_row(row: Mapping) -> str:
     """The one serialization of a row every backend stores and exports."""
-    return _canonical(row)
+    return json.dumps(row, ensure_ascii=False, sort_keys=True, separators=(",", ":"),
+                      allow_nan=False)
+
+
+def same_row(a: Mapping | None, b: Mapping | None) -> bool:
+    """Whether two rows are the same stored value: equal canonical text, so 1 vs 1.0 vs true are
+    all different rows (Python's == would call them equal and silently skip the update)."""
+    if a is None or b is None:
+        return a is b
+    return canonical_row(a) == canonical_row(b)
 
 
 def check_group_value(field: str, value: Any) -> Any:
@@ -298,13 +343,13 @@ def exact_sum(values: Iterable[Any]) -> int | float:
     """Sum of the int/float values (bools and everything else ignored), computed exactly from each
     value's shortest repr and then rounded once: an int if every value is an int, else a float.
     PostgreSQL's numeric SUM over the same JSON text yields the same result."""
-    import decimal
-    total, is_float = decimal.Decimal(0), False
+    import fractions
+    total, is_float = fractions.Fraction(0), False
     for v in values:
         if isinstance(v, bool) or not isinstance(v, (int, float)):
             continue
         is_float |= isinstance(v, float)
-        total += decimal.Decimal(repr(v)) if isinstance(v, float) else decimal.Decimal(v)
+        total += _exact(v)
     return float(total) if is_float else int(total)
 
 
@@ -319,6 +364,7 @@ def validate_patch(updates: Mapping[str, Mapping], unset: Sequence[str], existin
     if unknown := sorted(set(unset) - allowed):
         raise StoreError(f"unknown manifest field(s): {', '.join(unknown)}")
     for sid, patch in updates.items():
+        validate_json(dict(patch), f"patch for {sid!r}")
         if "id" in patch:
             raise StoreError("update_manifest_fields cannot change id")
         if overlap := sorted(set(patch) & set(unset)):
@@ -330,6 +376,7 @@ def validate_patch(updates: Mapping[str, Mapping], unset: Sequence[str], existin
 def validate_ledger_rows(rows: Sequence[Mapping]) -> None:
     allowed = TABLE_FIELDS[Table.LEDGER]
     for r in rows:
+        validate_json(r, f"ledger row {r.get('id')!r}")
         if not isinstance(r.get("id"), str) or not r["id"]:
             raise StoreError("ledger rows need a non-empty id")
         if unknown := sorted(set(r) - allowed):
@@ -912,9 +959,9 @@ class FileStore:
             return
         base, state = view._base, view._state
         removed = {sid for sid in base.entries
-                   if sid not in state.entries or state.entries[sid] != base.entries[sid]}
+                   if sid not in state.entries or not same_row(state.entries[sid], base.entries[sid])}
         added = [state.entries[sid] for sid in sorted(state.entries)
-                 if sid not in base.entries or state.entries[sid] != base.entries[sid]]
+                 if sid not in base.entries or not same_row(state.entries[sid], base.entries[sid])]
         texts: dict[str, str] = {}
         drop_by_file: dict[str, set] = {}
         for sid in removed:
@@ -945,7 +992,7 @@ class FileStore:
             return
         base, state = view._base, view._state
         changed = {sid for sid in set(base.manifest) | set(state.manifest)
-                   if base.manifest.get(sid) != state.manifest.get(sid)}
+                   if not same_row(base.manifest.get(sid), state.manifest.get(sid))}
         groups: dict[str, list] = {registry.manifest_shard(sid): [] for sid in changed}
         for sid, row in state.manifest.items():
             stem = registry.manifest_shard(sid)
@@ -1314,7 +1361,12 @@ def _mutation(fn):
         self._requests.append({"call": fn.__name__, "args": _plain(args), "kwargs": _plain(kwargs)})
         if self._replay:
             return None if fn.__name__ in ("rotation_set", "backend_state_set") else 0
-        return fn(self, *args, **kwargs)
+        mark = len(self._ops)
+        try:
+            return fn(self, *args, **kwargs)
+        except BaseException:
+            del self._ops[mark:]  # a failed batch leaves no journal trace (its data is undone too)
+            raise
     wrapper.__name__ = fn.__name__
     wrapper.__doc__ = fn.__doc__
     return wrapper
@@ -1355,7 +1407,8 @@ class WriteView(ReadView):
     def _entry_files(self) -> dict[str, str]:
         state = self._state  # commit-time only: entries are loaded whenever they are dirty
         return {sid: registry.shard_filename(sid) if (
-                    sid not in self._base.entries or state.entries[sid] != self._base.entries[sid])
+                    sid not in self._base.entries
+                    or not same_row(state.entries[sid], self._base.entries[sid]))
                 else self._base.entry_file[sid] for sid in state.entries}
 
     def _touch(self, table: str) -> None:
@@ -1369,6 +1422,8 @@ class WriteView(ReadView):
 
     @staticmethod
     def _unique_ids(rows: Sequence[Mapping], what: str) -> None:
+        for r in rows:
+            validate_json(r, f"{what} row {r.get('id')!r}")
         ids = [r.get("id") for r in rows]
         if any(not isinstance(i, str) or not i for i in ids):
             raise StoreError(f"{what}: every row needs a non-empty string id")
@@ -1380,6 +1435,7 @@ class WriteView(ReadView):
         missing = [f for f in registry.REQUIRED_FIELDS if not e.get(f)]
         if missing:
             raise StoreError(f"entry {e.get('id')!r} lacks {', '.join(missing)}")
+        validate_json(dict(e), f"entry {e.get('id')!r}")
         return copy.deepcopy({k: e[k] for k in registry.FIELDS if k in e and e[k] not in (None, "")})
 
     def uniquify_ids(self, entries: Sequence[Mapping]) -> list[dict]:
@@ -1410,7 +1466,7 @@ class WriteView(ReadView):
         changed = 0
         for r in rows:
             before = state.entries.get(r["id"])
-            if before == r:
+            if same_row(before, r):
                 continue
             state.entries[r["id"]] = r
             self._record("entries", "upsert", r["id"], before=before, after=r)
@@ -1439,7 +1495,7 @@ class WriteView(ReadView):
         changed = 0
         for r in rows:
             before = state.manifest.get(r["id"])
-            if before == r:
+            if same_row(before, r):
                 continue
             state.manifest[r["id"]] = r
             self._record("manifest", "upsert", r["id"], before=before, after=r)
@@ -1487,7 +1543,7 @@ class WriteView(ReadView):
             before = state.manifest[sid]
             after = {k: v for k, v in before.items() if k not in unset}
             after.update(copy.deepcopy(dict(patch)))
-            if after == before:
+            if same_row(after, before):
                 continue
             state.manifest[sid] = after
             self._record("manifest", "update", sid, before=before, after=after)
@@ -1503,7 +1559,10 @@ class WriteView(ReadView):
     @_mutation
     def blocklist_add(self, urls: Iterable[str]) -> int:
         state = self._get("blocklist")
-        new = sorted({u for u in map(norm_url, urls) if u} - state.blocklist)
+        cands = {u for u in map(norm_url, urls) if u}
+        for u in cands:
+            validate_json(u, "blocklist url")
+        new = sorted(cands - state.blocklist)
         for u in new:
             state.blocklist.add(u)
             self._record("blocklist", "insert", u, after={"url": u})
@@ -1530,7 +1589,8 @@ class WriteView(ReadView):
         state = self._get("rotation")
         before = state.rotation.get(name)
         after = copy.deepcopy(dict(value))
-        if before == after:
+        validate_json(after, f"rotation {name}")
+        if same_row(before, after):
             return
         state.rotation[name] = after
         self._record("rotation", "upsert", name, before=before, after=after)
