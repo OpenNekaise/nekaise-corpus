@@ -164,25 +164,34 @@ def replay(conn, st: store_pg.PgStore, parent: str | None, commit: str, paths: l
     with conn.cursor() as cur:
         for kind in ("entries", "manifest"):
             files = by_kind.get(kind, [])
-            # Only ids that leave or enter a file are remembered across files, so memory is
-            # bounded by one file plus the size of the change: a row that moves between shards
-            # both departs and arrives and is therefore updated, never deleted.
-            departed: set[str] = set()
-            arrived: set[str] = set()
+            # Ids that leave or enter a file are staged in transaction-local tables, so Python
+            # holds one file at a time whatever the size of the change: a row that moves between
+            # shards both departs and arrives and is therefore updated, never deleted. An import
+            # (no parent) has no departures, so it stages nothing.
+            cur.execute("CREATE TEMP TABLE IF NOT EXISTS departed (id text) ON COMMIT DROP")
+            cur.execute("CREATE TEMP TABLE IF NOT EXISTS arrived (id text) ON COMMIT DROP")
+            cur.execute("TRUNCATE departed, arrived")
             for n, p in enumerate(files, 1):
                 before, after = old(p, kind), new(p, kind)
-                departed.update(i for i in before if i not in after)
-                arrived.update(i for i in after if i not in before)
+                if parent:
+                    with cur.copy("COPY departed (id) FROM STDIN") as cp:
+                        for i in before:
+                            if i not in after:
+                                cp.write_row((i,))
+                    with cur.copy("COPY arrived (id) FROM STDIN") as cp:
+                        for i in after:
+                            if i not in before:
+                                cp.write_row((i,))
                 puts = [r for i, r in after.items() if not store.same_row(before.get(i), r)]
                 for i in range(0, len(puts), 5000):
                     _put_rows(cur, kind, puts[i:i + 5000])
                 stats[f"{kind}_put"] += len(puts)
+                del before, after, puts
                 if log and n % 25 == 0:
                     log(f"  {kind}: {n}/{len(files)} files")
-            gone = sorted(departed - arrived)
-            if gone:
-                cur.execute(f"DELETE FROM {kind} WHERE id = ANY(%s)", [gone])
-            stats[f"{kind}_del"] += len(gone)
+            cur.execute(f"DELETE FROM {kind} WHERE id IN (SELECT id FROM departed EXCEPT "
+                        "SELECT id FROM arrived)")
+            stats[f"{kind}_del"] += cur.rowcount
         for p in by_kind.get("blocklist", []):
             b, a = set(old(p, "blocklist")), set(new(p, "blocklist"))
             if b - a:
@@ -197,46 +206,60 @@ def replay(conn, st: store_pg.PgStore, parent: str | None, commit: str, paths: l
         ledger_files = by_kind.get("ledger", [])
         if ledger_files:
             legacy = "registry/pruned.jsonl"
-            if legacy in ledger_files or (parent and git_bytes(parent, legacy, repo) is not None) \
-                    or git_bytes(commit, legacy, repo) is not None:
-                # the monolith appeared, changed or disappeared: rebuild the ledger from scratch
+            rebuild = legacy in ledger_files or (parent and git_bytes(parent, legacy, repo) is not
+                                                 None) or git_bytes(commit, legacy, repo) is not None
+            if rebuild:  # the monolith appeared, changed or disappeared: rebuild from scratch
                 cur.execute("DELETE FROM ledger")
-                counts = Counter()
-                for p in effective_ledger_paths(tracked_paths(commit, repo)):
-                    counts.update(canonical_row(r) for r in new(p, "ledger"))
+                steps = [(p, False) for p in effective_ledger_paths(tracked_paths(commit, repo))]
             else:
-                counts = Counter()
-                for p in ledger_files:  # keep only each file's net change
-                    diff = Counter(canonical_row(r) for r in new(p, "ledger"))
+                steps = [(p, True) for p in ledger_files]
+            for p, diff_old in steps:  # the ledger is a multiset, so each file's net change can
+                diff = Counter(canonical_row(r) for r in new(p, "ledger"))  # apply immediately
+                if diff_old:
                     diff.subtract(canonical_row(r) for r in old(p, "ledger"))
-                    counts.update({t: n for t, n in diff.items() if n})
-            for text, n in sorted(counts.items()):
-                key = key_digest(text)
-                if n > 0:
-                    base = cur.execute("SELECT COALESCE(max(n) + 1, 0) FROM ledger WHERE key = %s",
-                                       [key]).fetchone()[0]
-                    cur.executemany("INSERT INTO ledger (key, n, row_text) VALUES (%s, %s, %s)",
-                                    [(key, base + k, text) for k in range(n)])
-                elif n < 0:
-                    cur.execute("DELETE FROM ledger WHERE key = %s AND n IN (SELECT n FROM ledger "
-                                "WHERE key = %s ORDER BY n DESC LIMIT %s)", [key, key, -n])
-                stats["ledger"] += abs(n)
+                for text, n in sorted(diff.items()):
+                    key = key_digest(text)
+                    if n > 0:
+                        base = cur.execute("SELECT COALESCE(max(n) + 1, 0) FROM ledger WHERE "
+                                           "key = %s", [key]).fetchone()[0]
+                        cur.executemany("INSERT INTO ledger (key, n, row_text) VALUES (%s, %s, %s)",
+                                        [(key, base + k, text) for k in range(n)])
+                    elif n < 0:
+                        cur.execute("DELETE FROM ledger WHERE key = %s AND n IN (SELECT n FROM "
+                                    "ledger WHERE key = %s ORDER BY n DESC LIMIT %s)",
+                                    [key, key, -n])
+                    stats["ledger"] += abs(n)
         journal = by_kind.get("events", [])
         if journal:
-            removed, appeared = {}, {}
-            for p in journal:  # per file, remembering only events that left or entered it
+            # Events that leave or enter a journal file are staged in the database; an event may
+            # only move between files unchanged, anything else is a rewrite and stops the sync.
+            cur.execute("CREATE TEMP TABLE IF NOT EXISTS ev_removed (seq bigint, row_text text) "
+                        "ON COMMIT DROP")
+            cur.execute("CREATE TEMP TABLE IF NOT EXISTS ev_appeared (seq bigint, run_id text, "
+                        "op text, row_text text) ON COMMIT DROP")
+            cur.execute("TRUNCATE ev_removed, ev_appeared")
+            for p in journal:
                 b = {e["seq"]: e for e in old(p, "events")}
                 a = {e["seq"]: e for e in new(p, "events")}
-                removed.update({q: e for q, e in b.items() if not store.same_row(e, a.get(q))})
-                appeared.update({q: e for q, e in a.items() if not store.same_row(e, b.get(q))})
-            for seq, e in removed.items():  # an event may only move between files unchanged
-                if not store.same_row(e, appeared.get(seq)):
-                    raise SystemExit(f"{commit[:10]} rewrites or removes journal event {seq}; the "
-                                     "journal is append-only, re-import required")
-            added = [appeared[q] for q in sorted(set(appeared) - set(removed))]
-            cur.executemany("INSERT INTO events (seq, run_id, op, row_text) VALUES (%s,%s,%s,%s)",
-                            [(e["seq"], e["run_id"], e["op"], canonical_row(e)) for e in added])
-            stats["events"] += len(added)
+                with cur.copy("COPY ev_removed (seq, row_text) FROM STDIN") as cp:
+                    for q, e in b.items():
+                        if not store.same_row(e, a.get(q)):
+                            cp.write_row((q, canonical_row(e)))
+                with cur.copy("COPY ev_appeared (seq, run_id, op, row_text) FROM STDIN") as cp:
+                    for q, e in a.items():
+                        if not store.same_row(e, b.get(q)):
+                            cp.write_row((q, e["run_id"], e["op"], canonical_row(e)))
+                del a, b
+            bad = cur.execute("SELECT r.seq FROM ev_removed r LEFT JOIN ev_appeared a ON "
+                              "a.seq = r.seq AND a.row_text = r.row_text WHERE a.seq IS NULL "
+                              "LIMIT 1").fetchone()
+            if bad:
+                raise SystemExit(f"{commit[:10]} rewrites or removes journal event {bad[0]}; the "
+                                 "journal is append-only, re-import required")
+            cur.execute("INSERT INTO events (seq, run_id, op, row_text) SELECT seq, run_id, op, "
+                        "row_text FROM ev_appeared WHERE seq NOT IN (SELECT seq FROM ev_removed) "
+                        "ORDER BY seq")
+            stats["events"] += cur.rowcount
         if "rotation" in by_kind:
             rot = new("registry/rotation.json", "rotation")
             cur.execute("DELETE FROM rotation")
