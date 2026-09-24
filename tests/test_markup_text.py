@@ -126,3 +126,47 @@ def test_extract_html_keeps_sphinx_link_text_but_drops_wiki_citation_markers():
     out = build_corpus.extract_html(html)
     assert "Running a Project" in out
     assert "[1]" not in out
+
+
+# --- review regressions (2026-09-24) ------------------------------------------------------------
+
+def test_box_wrappers_keep_their_content_argument():
+    src = (r"\resizebox{\textwidth}{!}{\begin{tabular}{lr}Concrete & 2400 \\ Steel & 7850"
+           r"\end{tabular}}" "\n"
+           r"\scalebox{0.8}[1]{Scaled note.} \raisebox{2pt}[0pt][0pt]{Raised.} "
+           r"\textcolor{red}{Warning text} \label{tab:x}{Kept after label.}")
+    out = markup_text.tex_to_text(src)
+    assert "Concrete | 2400" in out and "Steel | 7850" in out
+    assert "Scaled note." in out and "Raised." in out
+    assert "Warning text" in out and "red" not in out
+    assert "Kept after label." in out and "tab:x" not in out
+    assert "textwidth" not in out and "[1]" not in out and "0pt" not in out
+
+
+def test_inline_verbatim_is_protected_before_comment_stripping():
+    out = markup_text.tex_to_text("Use \\verb|50%| for the limit. % real comment\n"
+                                  "Also \\lstinline{&REAC FUEL='X' /} here.\n")
+    assert "Use 50% for the limit." in out
+    assert "real comment" not in out
+    assert "Also &REAC FUEL='X' / here." in out
+
+
+def test_listing_body_starting_with_a_brace_is_not_eaten_as_an_argument():
+    src = ("\\begin{lstlisting}\n{\"zone\": \"Office\", \"area\": 50}\n% keep me\n"
+           "\\end{lstlisting}\n\\begin{lstlisting}[language=Python]\nx = 1\n\\end{lstlisting}\n"
+           "\\begin{minted}{python}\ny = 2\n\\end{minted}\n")
+    out = markup_text.tex_to_text(src)
+    assert '{"zone": "Office", "area": 50}' in out
+    assert "% keep me" in out
+    assert "x = 1" in out and "language=Python" not in out
+    assert "y = 2" in out and "python" not in out
+
+
+def test_troff_decodes_greek_and_keeps_unresolved_escapes_visible():
+    out = markup_text.troff_to_text(
+        ".PP\nThe ratio \\(*g = 3 and \\(*h, \\(*q, \\(*W, \\[*a] with \\(zz and \\*(ZZ kept;"
+        " a \\\\ backslash.\n")
+    assert "\u03b3 = 3" in out
+    assert "\u03b8, \u03c8, \u03a9, \u03b1" in out
+    assert "\\(zz" in out and "\\*(ZZ" in out
+    assert "a \\ backslash." in out
