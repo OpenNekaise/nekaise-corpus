@@ -880,3 +880,27 @@ second host writes.
   on the previous code.
 - **Gates**: full suite 1147 passed / 44 skipped (PG skipped), with PostgreSQL 1221 passed;
   `py_compile` clean.
+
+### Step 1, Codex third review (2026-09-25): allocation fixed; registration race closed for every isolation level
+
+- **Registration writes the state row.** Locking alone did not help a REPEATABLE READ compactor:
+  its snapshot predates the registrar's commit, so after the lock wait it still did not see the
+  new consumer and deleted row 1 under it. Registration now UPDATEs `outbox_state`
+  (`consumers_registered + 1`, a mark that only grows), and compaction already UPDATEs it
+  (`compacted`). Two concurrent ones therefore conflict on one row under any isolation level:
+  READ COMMITTED re-reads the committed effect; REPEATABLE READ and SERIALIZABLE raise a
+  serialization failure instead of acting on a stale snapshot. No isolation level needs to be
+  enforced. Regressions (two connections, `nekaise_test`, RR and SERIALIZABLE): Codex's exact
+  schedule — registrar holds `late` uncommitted, the compactor takes its snapshot with
+  `DELETE … seq = 1` and waits, the registrar commits — fails the compactor and keeps row 1 due
+  to `late` (both fail on the previous code); and the reverse order fails the registrar.
+- **Multi-row outbox inserts fail closed.** The second row's BEFORE trigger runs before the
+  first row's AFTER trigger advances `allocated`, so it sees the wrong next sequence and the
+  whole statement is refused with nothing changed (the conditional AFTER update could not
+  corrupt the mark either). Rows are allocated one statement at a time; a test pins this.
+- **Revising the contract DDL after deployment.** `V4_DDL` runs once per schema (at creation or
+  in migration 4), not on every open. Live is still v3, so these revisions reach it with the
+  migration. Once any schema is v4, a revised trigger, function or column must ship as a new
+  migration (v5, …); editing `V4_DDL` alone would not reach it (noted at `_migrate_4`).
+- **Gates**: full suite 1147 passed / 49 skipped (PG skipped), with PostgreSQL 1226 passed;
+  `py_compile` clean.

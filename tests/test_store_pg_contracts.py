@@ -709,3 +709,90 @@ def test_compaction_waiting_for_registration_is_refused(pg):
         assert c.advance("late") == 0                            # row 1 is still due to it
         c.ack("late", 1, "ok")
         assert c.advance("late") == 1
+
+
+@pytest.mark.parametrize("level", ["REPEATABLE_READ", "SERIALIZABLE"])
+def test_a_stale_snapshot_compactor_cannot_skip_a_new_consumer(pg, level):
+    """Codex third review P2, the exact schedule: row 1 acknowledged by every consumer; the
+    registrar inserts `late` and holds it uncommitted; a REPEATABLE READ (or SERIALIZABLE)
+    compactor takes its snapshot with DELETE seq 1 and waits; the registrar commits. The
+    compactor must fail (serialization) and history must be kept for `late`."""
+    import psycopg
+    _compactable(pg)
+    registrar = pg._connect()
+    compactor = pg._connect()
+    compactor.commit()  # end the search_path transaction _connect() opened
+    compactor.isolation_level = getattr(psycopg.IsolationLevel, level)
+    try:
+        registrar.execute("INSERT INTO outbox_consumers (consumer) VALUES ('late')")
+        exc = _blocked_then(
+            lambda: (compactor.execute("DELETE FROM outbox WHERE seq = 1"), compactor.commit()),
+            registrar.commit)
+        assert isinstance(exc, (psycopg.errors.SerializationFailure, psycopg.IntegrityError)), exc
+        compactor.rollback()
+    finally:
+        registrar.close()
+        compactor.close()
+    with pg._connect(autocommit=True) as conn:
+        assert conn.execute("SELECT seq FROM outbox").fetchall() == [(1,)]
+        assert conn.execute("SELECT compacted FROM outbox_state").fetchone()[0] == 0
+        assert conn.execute("SELECT watermark FROM outbox_consumers WHERE consumer = 'late'"
+                            ).fetchone()[0] == 0
+    with pg.writer() as w, pg.contracts(w) as c:
+        assert c.advance("late") == 0                            # still due to it
+
+
+@pytest.mark.parametrize("level", ["REPEATABLE_READ", "SERIALIZABLE"])
+def test_a_stale_snapshot_registrar_cannot_miss_a_compaction(pg, level):
+    """The reverse order under REPEATABLE READ / SERIALIZABLE: the compaction commits while the
+    registrar waits; the registrar fails and no consumer is registered after compaction."""
+    import psycopg
+    _compactable(pg)
+    compactor = pg._connect()
+    registrar = pg._connect()
+    registrar.commit()
+    registrar.isolation_level = getattr(psycopg.IsolationLevel, level)
+    try:
+        registrar.execute("SELECT 1 FROM outbox_consumers LIMIT 1")  # snapshot taken now
+        compactor.execute("DELETE FROM outbox WHERE seq = 1")
+        exc = _blocked_then(
+            lambda: (registrar.execute("INSERT INTO outbox_consumers (consumer) VALUES "
+                                       "('late')"), registrar.commit()),
+            compactor.commit)
+        assert isinstance(exc, (psycopg.errors.SerializationFailure, psycopg.IntegrityError)), exc
+        registrar.rollback()
+    finally:
+        compactor.close()
+        registrar.close()
+    with pg._connect(autocommit=True) as conn:
+        assert conn.execute("SELECT count(*) FROM outbox_consumers WHERE consumer = 'late'"
+                            ).fetchone()[0] == 0
+        assert conn.execute("SELECT compacted FROM outbox_state").fetchone()[0] == 1
+
+
+def test_a_multi_row_outbox_insert_fails_closed(pg):
+    """Codex third review (minor): rows are allocated one statement at a time. A multi-row
+    INSERT is refused (the second row's BEFORE trigger runs before the first row's AFTER
+    trigger advances the allocation) and changes nothing."""
+    with pg.writer() as w:
+        _generations(pg, w, 1)                                   # seq 1 -> generation 0
+        with pg.contracts(w) as c:                               # two more generations
+            _open(c, "m1", parent=0)
+            c.request_batch("m1", "fetch", "b", [{"call": "x"}])
+            _apply(c._conn, "m1", "fetch", "b", 1, [("manifest", "m", "put", {"id": "m"}, None)])
+            c._q("UPDATE runs SET status = 'frozen', frozen_seq = 1, frozen_digest = %s "
+                 "WHERE run_id = 'm1'", ["f" * 64])
+            c._q("INSERT INTO generations (generation, parent, run_id, producer_commit, "
+                 "config_digest, extractor_version, cleaning_ruleset, frozen_seq, frozen_digest, "
+                 "counts_text) SELECT 1, 0, run_id, producer_commit, config_digest, "
+                 "extractor_version, cleaning_ruleset, frozen_seq, frozen_digest, '{}' FROM runs "
+                 "WHERE run_id = 'm1'")
+    _expect_refused(pg, "INSERT INTO outbox (seq, generation, payload_text) VALUES "
+                        "(2, 1, '{}'), (3, 0, '{}')")
+    _expect_refused(pg, "INSERT INTO outbox (seq, generation, payload_text) "
+                        "SELECT 2, 1, '{}' UNION ALL SELECT 3, 1, '{}'")
+    with pg._connect(autocommit=True) as conn:
+        assert conn.execute("SELECT allocated, compacted FROM outbox_state").fetchone() == (1, 0)
+        assert conn.execute("SELECT seq FROM outbox ORDER BY seq").fetchall() == [(1,)]
+        conn.execute("INSERT INTO outbox (seq, generation, payload_text) VALUES (2, 1, '{}')")
+        assert conn.execute("SELECT allocated FROM outbox_state").fetchone()[0] == 2

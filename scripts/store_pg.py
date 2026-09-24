@@ -568,12 +568,18 @@ CREATE OR REPLACE TRIGGER dataset_guard BEFORE UPDATE OR DELETE ON {s}.dataset
 CREATE TABLE IF NOT EXISTS {s}.outbox_state (
     one boolean PRIMARY KEY DEFAULT true CHECK (one),
     allocated bigint NOT NULL DEFAULT 0 CHECK (allocated >= 0),
-    compacted bigint NOT NULL DEFAULT 0 CHECK (compacted >= 0 AND compacted <= allocated)
+    compacted bigint NOT NULL DEFAULT 0 CHECK (compacted >= 0 AND compacted <= allocated),
+    -- bumped by every consumer registration: registration and compaction both WRITE this row,
+    -- so under any isolation level one of two concurrent ones waits and then either re-reads
+    -- the other's effect (READ COMMITTED) or fails with a serialization error (REPEATABLE READ,
+    -- SERIALIZABLE) — a stale snapshot can never act on the row
+    consumers_registered bigint NOT NULL DEFAULT 0 CHECK (consumers_registered >= 0)
 );
 INSERT INTO {s}.outbox_state DEFAULT VALUES ON CONFLICT DO NOTHING;
 CREATE OR REPLACE FUNCTION {s}.nk_outbox_state_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
 BEGIN
-    IF TG_OP = 'DELETE' OR NEW.allocated < OLD.allocated OR NEW.compacted < OLD.compacted THEN
+    IF TG_OP = 'DELETE' OR NEW.allocated < OLD.allocated OR NEW.compacted < OLD.compacted
+            OR NEW.consumers_registered < OLD.consumers_registered THEN
         RAISE EXCEPTION 'nekaise: the outbox allocation and compaction marks only grow'
             USING ERRCODE = 'integrity_constraint_violation';
     END IF;
@@ -657,10 +663,10 @@ BEGIN
             USING ERRCODE = 'integrity_constraint_violation';
     END IF;
     IF TG_OP = 'INSERT' THEN
-        -- FOR UPDATE: the same row lock compaction takes, so a registration and a compaction
-        -- serialize in the database (whichever waits re-reads the other's committed effect)
-        IF NEW.watermark <> 0
-                OR (SELECT compacted FROM {s}.outbox_state FOR UPDATE) > 0 THEN
+        -- UPDATE the state row compaction also updates (see outbox_state): the two serialize
+        -- in the database whatever the isolation level; a stale snapshot fails instead
+        UPDATE {s}.outbox_state SET consumers_registered = consumers_registered + 1;
+        IF NEW.watermark <> 0 OR (SELECT compacted FROM {s}.outbox_state) > 0 THEN
             RAISE EXCEPTION 'nekaise: a new consumer starts at watermark 0, before any '
                 'compaction (it would miss compacted history)'
                 USING ERRCODE = 'integrity_constraint_violation';
@@ -716,6 +722,10 @@ V4_TABLES = ("dataset", "authority_log", "config_blobs", "config_sets", "config_
 
 
 def _migrate_4(conn, schema):  # stage 4 step 1 contracts: new tables only, nothing rewritten
+    # V4_DDL runs once per schema (here or at creation), not on every open. Once any schema has
+    # reached version 4 — i.e. after this step is deployed — a revised trigger, function or
+    # column must ship as a NEW migration (version 5, ...) that applies the change; editing
+    # V4_DDL alone would not reach existing v4 schemas.
     conn.execute(V4_DDL.format(s=schema))
 
 
