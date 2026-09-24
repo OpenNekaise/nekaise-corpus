@@ -55,7 +55,7 @@ def main(argv: list[str] | None = None) -> None:
         stats = corpus_stats.compute(view, restrictions)
         # README numbers are manifest-derived and identical on every machine; local availability
         # of suspended-host payloads is reported here only, never in the committed statistics.
-        unavailable = corpus_stats.local_unavailable(view, HERE)
+        unavailable = corpus_stats.local_unavailable(view, HERE, restrictions)
     if unavailable:
         print(f"local availability: {unavailable:,} eligible rows on a fetch-suspended host "
               "have no local payload (counted in README; not in local corpus/)", file=sys.stderr)

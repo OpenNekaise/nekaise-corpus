@@ -82,15 +82,16 @@ def restricted_with_corpus_data(view, restrictions: dict) -> tuple[int, str | No
     return count, (first[0]["id"] if first else None)
 
 
-def local_unavailable(view, root: Path) -> int:
-    """Successful rows on a fetch-suspended host with no payload on this machine (a local report,
-    never an input to committed statistics)."""
+def local_unavailable(view, root: Path, restrictions: dict) -> int:
+    """ELIGIBLE successful rows on a fetch-suspended host with no payload on this machine (a
+    local report, never an input to committed statistics)."""
     policy = registry.load_host_policy()
     if not policy:
         return 0
+    eligible = And(Eq("status", "ok"), store.eligibility_where(restrictions))
     n, cursor = 0, None
     while True:
-        page = view.scan(store.Table.MANIFEST, where=Eq("status", "ok"),
+        page = view.scan(store.Table.MANIFEST, where=eligible,
                          fields=("status", "url", "text_path"), cursor=cursor,
                          limit=store.MAX_PAGE)
         n += len(registry.locally_unavailable_rows(page.rows, policy, root))

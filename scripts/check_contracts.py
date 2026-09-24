@@ -171,7 +171,7 @@ def main() -> int:
     with store.open(root=ROOT).read(timeout=60) as view:
         stats = corpus_stats.compute(view, restrictions)
         restricted_metadata = corpus_stats.restricted_with_corpus_data(view, restrictions)
-        unavailable = corpus_stats.local_unavailable(view, ROOT)
+        unavailable = corpus_stats.local_unavailable(view, ROOT, restrictions)
     readme = (ROOT / "README.md").read_text()
     errors.extend(readme_stats_errors(readme, stats))
     if unavailable:

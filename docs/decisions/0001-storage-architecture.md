@@ -199,3 +199,24 @@ build on the same facts.
   successful finders. A standalone `--append` still writes the file directly, like
   `registry.append_entries`.
 - Still materializing: `run_round.merge_proposals` and its index warm-up call `existing_keys()`.
+
+## Stage 3 progress record (2026-09-24)
+
+Plan decided by Codex: convert access, not authority — FileStore stays authoritative, per-round git
+commits and the commit-replay shadow continue until stage 4.
+
+- **Done:** legacy manifest ordering (`scan(order="legacy")`, PG schema v3); the round broker
+  (`scripts/store_broker.py`: run_round holds `store.writer(round_id=…)`; fetch/prune/clean submit
+  batches through it; every child gets verified inherited read access; the pytest gate runs with
+  the plain environment); finders ask the store (`scripts/dedup.py` over `known()`, github passes
+  staged in proposals and applied by the coordinator); headline statistics (`scripts/corpus_stats.py`)
+  for README, round summaries and contracts; `lint_registry` through the store with per-backend
+  `validate_layout()` (FileStore: unparsable shards, routing, duplicate registry AND manifest ids).
+- **Intentional deviation:** `find_wiki` reads its origin titles in entry-id order (the store does
+  not keep registry file order). This can change which titles share a langlinks request and which
+  candidates survive `--max`; accepted because file order was never a meaningful priority.
+- **Deferred within stage 3:** coverage/coverage_matrix and the cleaner's check/report modes still
+  read legacy files; eligibility and host/vendor/backend contracts are still read from files
+  outside the view (they must be validated against the view's pinned configuration before
+  stage 4); backend-owned ledger and size validation; steps 5–7 (discovery writes and control state,
+  cleaner/loader/pruner through the broker, shared recovery and retiring legacy access).

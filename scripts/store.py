@@ -853,10 +853,30 @@ class FileStore:
         for eid, n in seen.items():
             if n > 1:
                 errors.append(f"duplicate id ({n}x): {eid}")
+        # The manifest has the same blind spot: a keyed load keeps only the last row of an id, so a
+        # duplicated (possibly corrupt) row would be invisible to every logical check.
+        manifest: dict[str, dict] = {}
+        mseen: dict[str, int] = {}
+        for path in sorted(self.man.glob("*.jsonl")) if self.man.exists() else []:
+            for n, line in enumerate(path.read_text().splitlines(), 1):
+                if not line.strip():
+                    continue
+                try:
+                    row = json.loads(line)
+                    sid = row["id"]
+                except (ValueError, KeyError, TypeError) as exc:
+                    errors.append(f"manifest/{path.name}:{n}: unreadable row: {exc}")
+                    continue
+                mseen[sid] = mseen.get(sid, 0) + 1
+                manifest[sid] = row
+        for sid, n in mseen.items():
+            if n > 1:
+                errors.append(f"duplicate manifest id ({n}x): {sid}")
         if not errors:
             self._entries_cache = (version, entries, entry_file)
+            self._manifest_cache = (version, manifest)
         return errors, {"shards": sum((self.reg / n).exists() for n in names),
-                        "entries": sum(seen.values())}
+                        "entries": sum(seen.values()), "manifest_rows": sum(mseen.values())}
 
     def _load(self, state: _State, table: str) -> None:
         if table == "entries":
@@ -875,6 +895,10 @@ class FileStore:
                     state.entries[e["id"]] = e
                     state.entry_file[e["id"]] = name
         elif table == "manifest":
+            cached = getattr(self, "_manifest_cache", None)
+            if cached is not None and cached[0] == self.version():
+                state.manifest.update(cached[1])
+                return
             for path in sorted(self.man.glob("*.jsonl")) if self.man.exists() else []:
                 for line in path.read_text().splitlines():
                     if line.strip():
@@ -1458,7 +1482,25 @@ class ReadView:
         rows = self._get("entries").entries
         return {sid: copy_json(rows[sid]) for sid in dict.fromkeys(ids) if sid in rows}
 
+    def _blocklist_set(self) -> set:
+        if type(self) is ReadView:  # committed state: share it like _known_sets
+            cached = getattr(self._store, "_blocklist_shared", None)
+            if cached is not None and cached[0] == self._version:
+                return cached[1]
+            bl = self._get("blocklist").blocklist
+            self._store._blocklist_shared = (self._version, bl)
+            return bl
+        return self._get("blocklist").blocklist
+
     def _known_sets(self) -> tuple[set, set, set]:
+        # Committed membership is shared by every read view of the same generation on this store
+        # instance, so callers that open a view per lookup (dedup) build it once, not per batch.
+        # Write views have transaction-local additions and always build their own.
+        shared = type(self) is ReadView
+        if self._known_cache is None and shared:
+            cached = getattr(self._store, "_membership", None)
+            if cached is not None and cached[0] == self._version:
+                self._known_cache = cached[1]
         if self._known_cache is None:
             urls, titles, ids = set(), set(), set()
             for rows in (self._get("manifest").manifest, self._get("entries").entries):
@@ -1470,6 +1512,8 @@ class ReadView:
                     if row.get("id"):
                         ids.add(row["id"])
             self._known_cache = (urls, titles, ids)
+            if shared:
+                self._store._membership = (self._version, self._known_cache)
         return self._known_cache
 
     def known(self, *, urls: Iterable[str] = (), titles: Iterable[str] = (),
@@ -1488,7 +1532,7 @@ class ReadView:
         known_u, known_t, known_i = self._known_sets()
         hit_u = cand_u & known_u
         if include_blocklist:
-            hit_u |= cand_u & self._get("blocklist").blocklist
+            hit_u |= cand_u & self._blocklist_set()
         return KnownHits(frozenset(hit_u), frozenset(cand_t & known_t), frozenset(cand_i & known_i))
 
     def _known_indexed(self, urls, titles, ids, include_blocklist) -> KnownHits | None:

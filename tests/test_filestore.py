@@ -343,3 +343,27 @@ def test_insert_order_within_one_shard_matches_legacy_append(st, legacy):
     write(st, "r1", lambda tx: tx.insert_entries(new))
     registry.append_entries(new)
     assert data_files(st.root) == files(legacy)
+
+
+def test_lint_sees_a_duplicated_corrupt_manifest_row(st, monkeypatch, capsys):
+    import lint_registry
+    shard = st.man / f"{registry.manifest_shard('oer-a')}.jsonl"
+    bad = json.dumps({**mrow("oer-a", sha256="INVALID")})
+    shard.write_text(bad + "\n" + shard.read_text())  # same id twice: corrupt first, valid last
+    monkeypatch.setattr(registry, "REG_DIR", st.reg)
+    monkeypatch.setattr(registry, "MAN_DIR", st.man)
+    assert lint_registry.main(st.root) == 1
+    assert "duplicate manifest id (2x): oer-a" in capsys.readouterr().out
+
+
+def test_membership_fallback_loads_the_corpus_once_per_generation(st, monkeypatch):
+    monkeypatch.setenv("NEKAISE_DISABLE_INDEX", "1")
+    loads = []
+    real = store.FileStore._load
+    monkeypatch.setattr(store.FileStore, "_load",
+                        lambda self, state, table: (loads.append(table), real(self, state, table)))
+    for batch in (["https://e.org/dup"], ["https://nope"], ["https://e.org/blocked"]):
+        with st.read() as v:  # a fresh view per lookup, as dedup opens them
+            v.known(urls=batch, titles=["x"], ids=["oer-a"])
+    assert loads.count("manifest") == 1 and loads.count("entries") == 1
+    assert loads.count("blocklist") == 1
