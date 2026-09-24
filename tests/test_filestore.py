@@ -132,15 +132,19 @@ def test_blocklist_add_writes_through_the_store_with_legacy_bytes(st, legacy, mo
 def test_blocklist_add_inside_a_round_goes_through_the_broker(st, monkeypatch):
     import store_broker
     monkeypatch.setattr(blocklist, "PATH", st.blocklist_path)
+    code = ("import sys; sys.path.insert(0, 'scripts'); import blocklist\n"
+            f"from pathlib import Path; blocklist.PATH = Path({str(st.blocklist_path)!r})\n"
+            "print(blocklist.add(['https://b.org/9']))\n")
     with st.writer(round_id="rnd-bl") as w:
         broker = store_broker.Broker(st, w, "rnd-bl")
-        with broker.serving():
-            for k, v in broker.env().items():
-                monkeypatch.setenv(k, v)
-            monkeypatch.setenv(store.INHERITED_LOCK_ENV, f"{os.getpid()}:rnd-bl")
-            assert blocklist.add(["https://b.org/9"]) == 1
+        with broker.serving():  # the prune step is a child of the round: it writes via the broker
+            env = ops.with_holder(dict(os.environ, **broker.env()), os.getpid(),
+                                  st.workspace / ".corpus-round.lock", "rnd-bl")
+            out = subprocess.run([sys.executable, "-c", code], env=env, capture_output=True,
+                                 text=True, cwd=store.ROOT)
+    assert out.returncode == 0, out.stderr
+    assert out.stdout.strip() == "1"
     assert st.blocklist_path.read_text().endswith("https://b.org/9\n")
-    monkeypatch.delenv(store.INHERITED_LOCK_ENV)
     with st.read() as v:
         runs = {e["run_id"] for e in v.scan(Table.EVENTS).rows}
     assert len(runs) == 1 and runs.pop().startswith("rnd-bl.blocklist.add-")
