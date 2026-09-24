@@ -86,6 +86,7 @@ class Broker:
         self._conns: set[socket.socket] = set()
         self._conns_lock = threading.Lock()
         self._closing = False
+        self._drained = False
         broker = self
 
         class Handler(socketserver.StreamRequestHandler):
@@ -174,21 +175,50 @@ class Broker:
         try:
             yield self
         finally:
-            # Stop accepting, cut every open connection (a half-sent request must not keep the
-            # round alive), then wait for an executing transaction before the caller may restore
-            # state or release the lock.
-            self._closing = True
+            self.drain()
+
+    def drain(self) -> None:
+        """Stop accepting, cut every open connection (a half-sent request must not keep the owner
+        alive), wait until no transaction is executing, and remove the socket. Idempotent.
+
+        Cancellation-safe: the caller releases its writer and locks right after this returns, so
+        an interrupt (KeyboardInterrupt from a SIGTERM handler, SystemExit) arriving while it
+        waits is held back until the broker is fully drained and cleaned up, then re-raised."""
+        if self._drained:
+            return
+        self._closing = True
+        interrupted: BaseException | None = None
+        for step in (self._stop_server, self._cut_connections, self._wait_idle, self._cleanup):
+            while True:
+                try:
+                    step()
+                    break
+                except (KeyboardInterrupt, SystemExit) as exc:
+                    interrupted = interrupted or exc  # finish this step, then the rest
+        self._drained = True
+        if interrupted is not None:
+            raise interrupted
+
+    def _stop_server(self) -> None:
+        if self._thread.is_alive():
             self._server.shutdown()
-            with self._conns_lock:
-                for conn in list(self._conns):
-                    try:
-                        conn.shutdown(socket.SHUT_RDWR)
-                    except OSError:
-                        pass
-            with self._lock:
-                pass
-            self._server.server_close()
-            self.path.unlink(missing_ok=True)
+
+    def _cut_connections(self) -> None:
+        with self._conns_lock:
+            for conn in list(self._conns):
+                try:
+                    conn.shutdown(socket.SHUT_RDWR)
+                except OSError:
+                    pass
+
+    def _wait_idle(self) -> None:
+        with self._lock:  # held by an executing transaction; _closing refuses any later one
+            pass
+
+    def _cleanup(self) -> None:
+        self._server.server_close()
+        self.path.unlink(missing_ok=True)
+        if self._dir.exists():
             os.rmdir(self._dir)
 
 

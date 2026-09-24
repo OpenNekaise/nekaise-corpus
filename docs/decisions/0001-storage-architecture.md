@@ -282,6 +282,20 @@ whole discovery phase in one transaction; runtime exhaustion is separated from c
   `migrate_backend_state.py` in the action window runs as a store transaction instead of waiting
   on its own coordinator's lock and failing (regression test: real child processes under a real
   window, and the same child without the broker refused).
+- **Draining is cancellation-safe (second review, P1).** `Broker.drain()` (run by `serving()` on
+  exit, idempotent) stops accepting, cuts connections, waits for an executing transaction and
+  removes the socket; an interrupt arriving meanwhile (the maintainer's SIGTERM handler raises
+  KeyboardInterrupt) is held until all of that is done, then re-raised — so neither the round nor
+  the maintainer releases its writer or locks while a transaction runs. A cut connection loses
+  only the reply; the transaction's outcome stands and an identical retry is a no-op.
+- **Settled state is judged after draining (second review, P2).** Both maintenance phases drain
+  their broker before `update_growth_block()` and before recording the outcome, still under both
+  locks: killing a timed-out agent does not stop a batch the parent's broker is executing for it.
+- **No nested rounds (second review, P2).** `run_round.py` (including `--recover`) exits 2 at once
+  when an ancestor holds the corpus-round lock it would need (a verified inherited entry for that
+  lock, or a broker in the environment), naming the read-only gates to validate with instead
+  (`clean_corpus.py --check`, `lint_registry.py`, `check_contracts.py`, `pytest tests/`).
+  Documented in AGENTS.md and the maintainer's action prompt.
 - **Backend health (Codex review, P3).** The maintainer's snapshot reads configuration and runtime
   state through one store view (the window's writer token; files only if no view can open, and
   `state_source` says which), reports backends by effective enablement, lists configured backends

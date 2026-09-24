@@ -707,3 +707,102 @@ def test_repo_snapshot_reads_backend_state_through_the_window_view(tmp_path, mon
         health = maintainer.repo_snapshot('exit=0')['backend_health']
     assert health['state_source'].startswith('files (PendingTransaction')
     assert set(health['runtime_paused']) == {'find_dry'}
+
+
+def test_timed_out_action_is_judged_only_after_its_broker_batch_finished(tmp_path, monkeypatch):
+    """Codex review P2: the agent is killed on timeout while the window's broker still executes
+    its batch; the growth-block check and the recorded outcome must see the settled result, with
+    both locks still held."""
+    import threading
+    configure_maintenance(tmp_path, monkeypatch)
+    maintenance_repo(tmp_path)
+    started, finished = threading.Event(), threading.Event()
+    real = maintainer.store.WriteView.blocklist_add
+
+    def slow(self, urls):
+        started.set()
+        time.sleep(1.0)
+        out = real(self, urls)
+        finished.set()
+        return out
+    monkeypatch.setattr(maintainer.store.WriteView, 'blocklist_add', slow)
+    monkeypatch.setattr(maintainer, 'resolve_agent', lambda name, override=None: Path('/bin') / name)
+    monkeypatch.setattr(maintainer, 'git', lambda *args, **kwargs: (0, ''))
+    monkeypatch.setattr(maintainer, 'recover_pending_round', lambda: None)
+    monkeypatch.setattr(maintainer, 'repo_snapshot', lambda *a, **k: {'head': 'h'})
+    checks = []
+
+    def check_block():
+        if checks or 'action' in calls:  # the action's check
+            assert_growth_locked()
+            assert finished.is_set(), 'growth block judged while a broker batch was running'
+            assert (tmp_path / 'pruned_urls.txt').read_text().endswith('https://e.org/late\n')
+        checks.append(finished.is_set())
+        return []
+    monkeypatch.setattr(maintainer, 'update_growth_block', check_block)
+    calls = []
+
+    def run(command, **kwargs):
+        kwargs['stdout_path'].write_text('')
+        kwargs['stderr_path'].write_text('')
+        if '--output-schema' in command:
+            out = Path(command[command.index('--output-last-message') + 1])
+            out.write_text(json.dumps({
+                'needs_action': True, 'action_kind': 'publish', 'urgency': 'routine',
+                'summary': 's', 'evidence': ['e'], 'proposed_actions': ['a']}))
+            return 0
+        calls.append('action')
+        code = ('import sys; sys.path.insert(0, %r); import blocklist; from pathlib import Path\n'
+                'blocklist.PATH = Path(%r)\nblocklist.add(["https://e.org/late"])\n'
+                % (str(Path(maintainer.__file__).parent), str(tmp_path / 'pruned_urls.txt')))
+        agent = subprocess.Popen([sys.executable, '-c', code], env=kwargs['env'])
+        assert started.wait(10)
+        agent.kill()  # the action timed out: its process group is stopped
+        agent.wait()
+        assert not finished.is_set()
+        return 124
+    monkeypatch.setattr(maintainer, 'run_command', run)
+
+    assert maintainer.main() == 1
+    assert checks == [False, True]
+    history = [json.loads(l) for l in (tmp_path / 'logs' / 'history.jsonl').read_text().splitlines()]
+    assert history[-1]['status'] == 'codex_action_failed'
+    assert_growth_unlocked()
+
+
+def test_a_round_started_inside_the_window_is_refused_at_once(tmp_path, monkeypatch):
+    """Codex review P2: an agent running the canonical round inside the window must not wait on
+    its own parent's lock; it is refused immediately and told which gates to run."""
+    configure_maintenance(tmp_path, monkeypatch)
+    maintenance_repo(tmp_path)
+    code = ('import sys; sys.path.insert(0, %r); import run_round; from pathlib import Path\n'
+            'run_round.ROOT = Path(%r)\nsys.argv = ["run_round.py", "--commit"]\n'
+            'sys.exit(run_round.main())\n' % (str(Path(maintainer.__file__).parent), str(tmp_path)))
+    with maintainer.maintenance_window('action'):
+        env = maintainer.agent_env(Path(sys.executable))
+        started = time.monotonic()
+        nested = subprocess.run([sys.executable, '-c', code], env=env, capture_output=True,
+                                text=True, timeout=60)
+        elapsed = time.monotonic() - started
+        recover = subprocess.run([sys.executable, '-c', code.replace('"--commit"', '"--recover", "latest"')],
+                                 env=env, capture_output=True, text=True, timeout=60)
+    assert nested.returncode == 2 and elapsed < 10
+    assert 'cannot run nested' in nested.stderr
+    for gate in ('clean_corpus.py --check', 'lint_registry.py', 'check_contracts.py',
+                 'pytest -q tests/'):
+        assert gate in nested.stderr
+    assert recover.returncode == 2 and 'cannot run nested' in recover.stderr
+    assert not (tmp_path / 'logs' / 'run_history.jsonl').exists()  # refused before any event
+
+
+def test_nested_round_detection_ignores_stale_or_foreign_entries(tmp_path, monkeypatch):
+    st = maintainer.store.FileStore(tmp_path)
+    assert maintainer.run_round.nested_round_owner(st) is None
+    lock = tmp_path / 'workspace' / '.corpus-round.lock'
+    env = maintainer.ops.with_holder({}, 1, lock, 'old')  # nobody holds it any more
+    monkeypatch.setenv(maintainer.ops.INHERITED_LOCK_ENV, env[maintainer.ops.INHERITED_LOCK_ENV])
+    (tmp_path / 'workspace').mkdir()
+    assert maintainer.run_round.nested_round_owner(st) is None
+    other = maintainer.ops.with_holder({}, os.getppid(), tmp_path / 'elsewhere.lock', 'x')
+    monkeypatch.setenv(maintainer.ops.INHERITED_LOCK_ENV, other[maintainer.ops.INHERITED_LOCK_ENV])
+    assert maintainer.run_round.nested_round_owner(st) is None

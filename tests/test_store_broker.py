@@ -163,3 +163,77 @@ def test_no_transaction_starts_once_shutdown_has_begun(round_):
         broker._execute({"cap": broker.cap, "step": "fetch", "batch": "late", "requests": [],
                          "expected_version": st.version().token})
     broker._closing = False
+
+
+def _slow_blocklist(monkeypatch, seconds):
+    """Make the broker's blocklist mutation slow; returns (started, finished) events."""
+    import threading
+    import time
+    started, finished = threading.Event(), threading.Event()
+    real = store.WriteView.blocklist_add
+
+    def slow(self, urls):
+        started.set()
+        time.sleep(seconds)
+        out = real(self, urls)
+        finished.set()
+        return out
+    monkeypatch.setattr(store.WriteView, "blocklist_add", slow)
+    return started, finished
+
+
+def test_an_interrupt_during_drain_waits_for_the_running_transaction(tmp_path, monkeypatch):
+    """Codex review P1: a SIGTERM-style KeyboardInterrupt while serving() drains must not unwind
+    the owner (and release its writer) before the executing transaction finished; the socket is
+    cleaned up and the interrupt is re-raised afterwards."""
+    import signal
+    import threading
+    st = file_store(tmp_path / "repo")
+    write(st, "seed", seed)
+    started, finished = _slow_blocklist(monkeypatch, 1.0)
+
+    def interrupt(signum, frame):
+        raise KeyboardInterrupt("terminated")
+    previous = signal.signal(signal.SIGALRM, interrupt)
+    state = {}
+    try:
+        with st.writer(round_id="rnd-int") as w:
+            broker = store_broker.Broker(st, w, "rnd-int")
+            client = store_broker.Client(broker.path, broker.cap, "rnd-int")
+            def submit():
+                try:
+                    state["result"] = client.submit("prune", "slow", [
+                        {"call": "blocklist_add", "args": [["https://s.org/1"]], "kwargs": {}}],
+                        st.version())
+                except store_broker.BrokerError as exc:  # drain cuts connections: the reply
+                    state["result"] = str(exc)           # is lost, the transaction is not
+            worker = threading.Thread(target=submit)
+            with pytest.raises(KeyboardInterrupt):
+                with broker.serving():
+                    worker.start()
+                    assert started.wait(5)
+                    signal.setitimer(signal.ITIMER_REAL, 0.2)  # fires while drain waits
+            # still inside the writer: the transaction must be over before ownership ends
+            state["finished_before_release"] = finished.is_set()
+            state["socket_gone"] = not broker._dir.exists()
+        worker.join(5)
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        signal.signal(signal.SIGALRM, previous)
+    assert state["finished_before_release"] and state["socket_gone"]
+    assert state.get("result") in ([1], "store broker closed the connection")
+    assert st.blocklist_path.read_text().endswith("https://s.org/1\n")
+    assert st.pending_transactions() == []
+
+
+def test_drain_is_idempotent_and_refuses_later_batches(tmp_path):
+    st = file_store(tmp_path / "repo")
+    write(st, "seed", seed)
+    with st.writer(round_id="rnd-dr") as w:
+        broker = store_broker.Broker(st, w, "rnd-dr")
+        with broker.serving():
+            broker.drain()
+            with pytest.raises(store_broker.BrokerError, match="unavailable"):
+                store_broker.Client(broker.path, broker.cap, "rnd-dr").submit(
+                    "prune", "late", [], st.version())
+        broker.drain()

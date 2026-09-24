@@ -226,7 +226,13 @@ publication-only pass skips that second-model review. Codex reacquires both the 
 and canonical corpus-round locks, refreshes state, then may repair, validate, commit and push
 `main`. This explicit maintainer authorization is separate from a mechanical dig's never-push rule.
 Default model time budgets are 10 minutes for triage, 5 for review, and 30 for action; process groups
-are stopped on timeout/cancellation before releasing the action lock. Codex uses the installed CLI
+are stopped on timeout/cancellation before releasing the action lock. The window holds the
+corpus-round lock as the store's writer and serves a store broker to its children: their store
+mutations (prune's blocklist, `rotation.py advance`, `migrate_backend_state.py`) run as
+transactions through it, and it is drained before settled state is judged or the locks released.
+A round cannot nest inside the window: `run_round.py` refuses at once and names the read-only
+gates to validate with instead (`clean_corpus.py --check`, `lint_registry.py`,
+`check_contracts.py`, `pytest tests/`). Codex uses the installed CLI
 model configuration; review model/effort and all timeouts have environment overrides documented in
 README. Provider cooldowns are independent; Claude is never promoted over unavailable Codex.
 Logs live under `logs/maintainer-*`. Unsafe settled tracked state creates

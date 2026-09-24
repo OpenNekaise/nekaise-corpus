@@ -32,6 +32,13 @@ Use this order:
    regression tests for failure behavior; cleaning changes need retained-content counterexamples.
    Do not change the maintained ruleset or eligibility policy as an incidental optimization.
 5. Run proportionate validation, including registry/control-plane contracts and tests when relevant.
+   This window already holds the corpus-round lock, so `run_round.py` (a growth round, or
+   `--recover`) refuses to run nested inside it. Validate with the read-only gates instead:
+   `python scripts/clean_corpus.py --check`, `python scripts/lint_registry.py`,
+   `python scripts/check_contracts.py`, `python -m pytest -q tests/`; growth resumes with the
+   next scheduled round. Store mutations you make here (e.g. `prune_corpus.py --apply`,
+   `rotation.py advance`, `migrate_backend_state.py`) are applied through this window's store
+   broker automatically.
    Reuse recorded successful gates only for the exact state they validated. Do not repeat full-corpus
    scans or entire test suites without a changed input, failure or uncovered risk that justifies them.
 6. Review the full outgoing range: inspect commit summaries and the aggregate diff, classify code,

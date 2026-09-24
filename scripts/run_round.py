@@ -491,6 +491,32 @@ def commit_snapshot(before: int, after: int, tokens: int, run_id: str) -> bool:
     return True
 
 
+NESTED_ROUND_HELP = (
+    "validate with the read-only gates instead — python scripts/clean_corpus.py --check; "
+    "python scripts/lint_registry.py; python scripts/check_contracts.py; "
+    "python -m pytest -q tests/ — and leave growth to the next scheduled round"
+)
+
+
+def nested_round_owner(st) -> str | None:
+    """Why this process must not start a round, or None. A round needs the canonical round lock
+    as its writer; a process whose ancestor already holds it (a maintenance window's agent, a
+    round's own step) would only wait on its own parent, so it is refused at once. A stale
+    inherited entry (no ancestor holds the lock any more) does not count."""
+    try:
+        run = st._inherited_run()
+    except store.WriterError:
+        run = None
+    holders = [h for h in ops.inherited_holders()
+               if h.get("lock") == str((st.workspace / f".{store.ROUND_LOCK}.lock").resolve())]
+    if run is None and store_broker.client() is None:
+        return None
+    owner = next((f"pid {h.get('pid')}" for h in holders), "the parent process")
+    return ("run_round.py cannot run nested: the corpus-round lock is already held by an ancestor "
+            f"({owner}{', round ' + run if run else ''}; e.g. the maintainer's window) and a round "
+            f"needs it as its own writer. {NESTED_ROUND_HELP}.")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--backend", action="append", default=[],
@@ -514,6 +540,9 @@ def main() -> int:
     ap.add_argument("--recover", metavar="RUN_ID",
                     help="restore tracked state from an interrupted run snapshot and exit")
     args = ap.parse_args()
+    if nested := nested_round_owner(store.FileStore(ROOT)):
+        print(f"ERROR: {nested}", file=sys.stderr)
+        return 2
     if args.recover:
         run_id = (
             ops.StateSnapshot.pending()[-1]

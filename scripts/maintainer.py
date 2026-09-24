@@ -167,7 +167,7 @@ def maintenance_window(phase: str):
             acquired = time.monotonic()
             print(f"Maintenance {phase}: acquired growth locks after {acquired - started:.1f}s", flush=True)
             try:
-                yield
+                yield broker
             finally:
                 print(f"Maintenance {phase}: released growth locks after {time.monotonic() - acquired:.1f}s", flush=True)
     finally:
@@ -709,7 +709,7 @@ def run_maintenance() -> int:
     # Ref updates do not touch the growing corpus; do not hold growth locks during network I/O.
     fetch_rc, fetch_output = git("fetch", "--prune", "origin", timeout=120)
     fetch_result = f"exit={fetch_rc}\n{fetch_output}" if fetch_output else f"exit={fetch_rc}"
-    with maintenance_window("snapshot"):
+    with maintenance_window("snapshot") as window:
         recovered = None
         recovery_error = None
         try:
@@ -720,6 +720,7 @@ def run_maintenance() -> int:
         except Exception as exc:
             recovery_error = str(exc)
             print(f"Automatic round recovery needs agent attention: {recovery_error}", flush=True)
+        window.drain()  # nothing may still be writing when settled state is judged
         snapshot = repo_snapshot(
             fetch_result, automatic_recovery=recovered, automatic_recovery_error=recovery_error,
         )
@@ -800,7 +801,7 @@ def run_maintenance() -> int:
         claude_status = "cooldown"
         claude_review = "Claude Code is in a usage cooldown. Codex remains primary and may proceed cautiously."
 
-    with maintenance_window("action"):
+    with maintenance_window("action") as window:
         # A round may have completed or failed while models deliberated. Never recover or
         # act on the earlier snapshot without refreshing state under both locks.
         action_snapshot = repo_snapshot(fetch_result, automatic_recovery=recovered,
@@ -832,7 +833,13 @@ def run_maintenance() -> int:
             else:
                 status = "action_completed" if action_rc == 0 else "codex_action_failed"
         finally:
-            reasons = update_growth_block()
+            # Killing a timed-out agent does not stop a transaction the window's broker is
+            # executing for it: stop accepting and drain BEFORE judging settled state, still under
+            # both locks (drain defers an interrupt until it is done).
+            try:
+                window.drain()
+            finally:
+                reasons = update_growth_block()
         record({
             "run_id": run_id,
             "status": status,
