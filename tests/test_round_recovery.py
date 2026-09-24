@@ -303,3 +303,75 @@ def test_a_tracked_path_deleted_after_the_commit_keeps_the_snapshot(repo, events
     assert not (repo / "pruned_urls.txt").exists()
     assert ops.StateSnapshot.pending() == ["rnd-x"]
     assert not any(e == "round_already_committed" for e, _ in events)
+
+
+# --- only POSITIVELY established absence means "no repository" (Codex second review, P1) ------
+
+def test_an_io_error_during_repository_discovery_keeps_the_committed_round(repo, events,
+                                                                         monkeypatch):
+    import errno
+    interrupted_round(repo, "rnd-e", commit=True)
+    committed = tracked(repo, journal=True)
+    real = round_recovery._os_stat
+
+    def stat(path):
+        if Path(path).name == ".git":
+            raise OSError(errno.EIO, "Input/output error", str(path))
+        return real(path)
+    monkeypatch.setattr(round_recovery, "_os_stat", stat)
+    with pytest.raises(round_recovery.RecoveryError, match="Input/output error"):
+        round_recovery.repo_state(repo)
+    assert recover("recover", repo, "rnd-e", monkeypatch) == 1
+    assert tracked(repo, journal=True) == committed
+    assert ops.StateSnapshot.pending() == ["rnd-e"]
+
+
+def _scripted_git(outcomes: dict, real=None):
+    def run(root, *args):
+        if args[0] not in outcomes:
+            return real(root, *args)
+        code, out, err = outcomes[args[0]]
+        return subprocess.CompletedProcess(["git", *args], code, out, err)
+    return run
+
+
+@pytest.mark.parametrize("head", [
+    (128, "", "fatal: bad object HEAD"),   # a fatal error, not an unborn HEAD
+    (128, "", ""),                          # a fatal exit even without a message
+    (1, "", "error: something odd"),        # the right code with unexpected stderr
+    (1, "junk", ""),                        # the right code with output
+])
+def test_only_the_exact_unborn_outcome_counts_as_unborn(repo, events, monkeypatch, head):
+    """rev-parse failing for any other reason, followed by a symbolic branch and an empty ref
+    listing (as a broken git could answer), is NOT an unborn repository."""
+    interrupted_round(repo, "rnd-f", commit=True)
+    committed = tracked(repo, journal=True)
+    monkeypatch.setattr(round_recovery, "_git", _scripted_git(
+        {"rev-parse": head, "symbolic-ref": (0, "refs/heads/main\n", ""),
+         "for-each-ref": (0, "", "")}, real=round_recovery._git))
+    with pytest.raises(round_recovery.RecoveryError):
+        round_recovery.repo_state(repo)
+    with pytest.raises(round_recovery.RecoveryError):
+        round_recovery.committed_round(repo, "rnd-f")
+    assert recover("maintainer", repo, "rnd-f", monkeypatch) == 1
+    assert tracked(repo, journal=True) == committed
+    assert ops.StateSnapshot.pending() == ["rnd-f"]
+
+
+def test_an_unborn_looking_answer_is_refused_while_refs_exist_on_disk(repo, monkeypatch):
+    """git answering exactly as for an unborn repository while refs exist on disk: refuse."""
+    monkeypatch.setattr(round_recovery, "_git", _scripted_git({
+        "rev-parse": (1, "", ""), "symbolic-ref": (0, "refs/heads/main\n", ""),
+        "for-each-ref": (0, "", "")}, real=round_recovery._git))
+    with pytest.raises(round_recovery.RecoveryError):
+        round_recovery.repo_state(repo)
+
+
+def test_a_genuine_unborn_repository_still_answers_unborn(tmp_path):
+    root = tmp_path / "fresh"
+    root.mkdir()
+    git(root, "init", "-q")
+    assert round_recovery.repo_state(root) == "unborn"
+    assert round_recovery.committed_round(root, "rnd-any") is None
+    (root / ".git" / "packed-refs").write_text("# pack-refs with: peeled\n")  # header only
+    assert round_recovery.repo_state(root) == "unborn"

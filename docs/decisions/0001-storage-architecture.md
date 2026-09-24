@@ -601,6 +601,25 @@ validators and git-shadow/import/export tooling, enforced by an architectural te
   the commit (`round_already_committed`, `committed_round_kept`), kept it and left a clean tree;
   `pg_shadow sync` + `verify` OK after every commit.
 
+### Step 7, Codex second review (2026-09-25): P2 and policy pinning fixed; P1 closed
+
+- **Discovery is fail-closed.** `_enclosing_git` establishes absence only positively: each
+  level is stat'ed and only ENOENT means "not here"; any other error (EIO, EACCES, a vanished
+  directory, a `.git` that is neither directory nor file) raises `RecoveryError`, as does a
+  failure listing loose refs or reading packed-refs.
+- **"unborn" is the exact unborn outcome only**: `rev-parse --verify -q HEAD^{commit}` exits 1
+  with no stdout and no stderr, `symbolic-ref -q HEAD` names a branch with no stderr,
+  `for-each-ref` exits 0 silently with no ref, `.git` is a directory, and neither loose refs
+  nor packed-refs (header lines aside) hold a ref. Any other exit code, output or stderr raises.
+- **Regressions**: EIO injected into discovery's stat (recovery fails, committed state and
+  snapshot kept); rev-parse exit 128 with and without a message, exit 1 with stderr, exit 1 with
+  output — each followed by a symbolic branch and an empty ref listing — all raise and keep the
+  snapshot; an unborn-looking git answer while refs exist on disk raises; a genuine unborn
+  repository (also with a header-only packed-refs) still answers "unborn".
+- **Gates**: full suite 1041 passed / 21 skipped, with PostgreSQL 1092 passed; `py_compile`
+  clean; the throwaway end-to-end run (steps 1–5) passed again, `pg_shadow verify` OK after
+  every commit.
+
 ## Stage 3 complete — what stage 4 needs
 
 Stage 3 converted access, not authority: every production reader and writer of tracked state goes

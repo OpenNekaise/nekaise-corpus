@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import os
 import signal
+import stat as stat_mod
 import subprocess
 import time
 from dataclasses import dataclass, field
@@ -41,6 +42,7 @@ import store
 COMMIT_SEARCH_DEPTH = 200
 TRAILER = "Corpus run: "
 RUN_ENV = "NEKAISE_RUN_ID"
+_os_stat = os.stat  # repository discovery stats (tests inject I/O errors here)
 
 
 class RecoveryError(RuntimeError):
@@ -179,45 +181,98 @@ def _git(root: Path, *args: str) -> subprocess.CompletedProcess:
 def _enclosing_git(root: Path) -> Path | None:
     """The nearest `.git` (directory or gitfile) at or above `root`, found WITHOUT asking git:
     whether a repository exists must not depend on git answering. Like git's own discovery it
-    stops at a filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM unset)."""
+    stops at a filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM unset).
+    Absence is only ever POSITIVELY established: a stat that fails with ENOENT. Any other error
+    (EIO, EACCES, …) while discovering raises RecoveryError — it must not read as "no
+    repository"."""
     here = Path(root).resolve()
-    device = here.stat().st_dev
+    device = _stat(here).st_dev
     for d in (here, *here.parents):
-        try:
-            if d.stat().st_dev != device:
-                return None
-        except OSError:
-            return None
+        if _stat(d).st_dev != device:
+            return None  # a filesystem boundary: git's discovery stops here too
         dot = d / ".git"
-        # a gitfile, or a directory with ANY repository part (a corrupt repository still counts;
-        # only an empty stray `.git` directory, which git ignores too, does not)
-        if dot.is_file() or (dot.is_dir() and any(
-                (dot / part).exists() for part in ("HEAD", "objects", "refs", "config"))):
-            return dot
+        st = _stat(dot, missing_ok=True)
+        if st is None:
+            continue
+        if stat_mod.S_ISREG(st.st_mode):
+            return dot  # a gitfile (worktree / submodule)
+        if stat_mod.S_ISDIR(st.st_mode):
+            # ANY repository part makes it a repository (a corrupt one still counts); only an
+            # empty stray `.git` directory, which git ignores too, does not
+            if any(_stat(dot / part, missing_ok=True) is not None
+                   for part in ("HEAD", "objects", "refs", "config")):
+                return dot
+            continue
+        raise RecoveryError(f"{dot} is neither a directory nor a gitfile; refusing to guess")
     return None
+
+
+def _stat(path: Path, *, missing_ok: bool = False) -> os.stat_result | None:
+    """os.stat that returns None ONLY for ENOENT (when `missing_ok`) and turns every other error
+    into RecoveryError."""
+    try:
+        return _os_stat(path)
+    except FileNotFoundError:
+        if missing_ok:
+            return None
+        raise RecoveryError(f"{path} vanished during repository discovery") from None
+    except OSError as exc:
+        raise RecoveryError(f"cannot stat {path} during repository discovery ({exc}); "
+                            "refusing to decide whether the round committed") from exc
+
+
+def _no_refs_on_disk(gitdir: Path) -> bool:
+    """No loose ref file under refs/ and no ref line in packed-refs (errors raise)."""
+    packed = gitdir / "packed-refs"
+    if _stat(packed, missing_ok=True) is not None:
+        try:
+            lines = packed.read_text().splitlines()
+        except OSError as exc:
+            raise RecoveryError(f"cannot read {packed}: {exc}") from exc
+        if any(line and not line.startswith(("#", "^")) for line in lines):
+            return False
+    refs = gitdir / "refs"
+    if _stat(refs, missing_ok=True) is None:
+        return True
+
+    def onerror(exc):
+        raise RecoveryError(f"cannot list {refs}: {exc}") from exc
+    for _, _, files in os.walk(refs, onerror=onerror):
+        if files:
+            return False
+    return True
 
 
 def repo_state(root: Path) -> str:
     """"none" (no repository encloses `root`: nothing can have been committed), "unborn" (a
     repository without any commit or ref: likewise), or "head" (HEAD names a commit). Every other
-    outcome — git failing, a corrupt or dangling HEAD, a missing branch while other refs exist —
-    raises RecoveryError: an unknown answer must never lead to a restore."""
-    if _enclosing_git(root) is None:
+    outcome raises RecoveryError — git failing in any other way, a corrupt or dangling HEAD, a
+    missing branch while refs exist: an unknown answer must never lead to a restore.
+
+    "unborn" requires the exact outcome of an unborn branch and nothing else: `rev-parse
+    --verify -q HEAD` exits 1 with no output at all, `symbolic-ref -q HEAD` names a branch with
+    no stderr, `for-each-ref` succeeds silently with no ref, `.git` is a directory, and neither
+    loose refs nor packed-refs hold any ref."""
+    gitdir = _enclosing_git(root)
+    if gitdir is None:
         return "none"
     head = _git(root, "rev-parse", "--verify", "-q", "HEAD^{commit}")
-    if head.returncode == 0 and head.stdout.strip():
+    if head.returncode == 0 and head.stdout.strip() and not head.stderr.strip():
         return "head"
-    # No resolvable HEAD: legitimate only for an unborn branch in a repository with no refs.
     sym = _git(root, "symbolic-ref", "-q", "HEAD")
     refs = _git(root, "for-each-ref", "--count=1", "--format=%(refname)")
-    if (sym.returncode == 0 and sym.stdout.strip().startswith("refs/heads/")
-            and refs.returncode == 0 and not refs.stdout.strip()):
+    unborn = (head.returncode == 1 and not head.stdout.strip() and not head.stderr.strip()
+              and sym.returncode == 0 and sym.stdout.strip().startswith("refs/heads/")
+              and not sym.stderr.strip()
+              and refs.returncode == 0 and not refs.stdout.strip() and not refs.stderr.strip()
+              and stat_mod.S_ISDIR(_stat(gitdir).st_mode) and _no_refs_on_disk(gitdir))
+    if unborn:
         return "unborn"
-    detail = " / ".join(x for x in (head.stderr.strip(), sym.stderr.strip(),
-                                    refs.stderr.strip()) if x) \
-        or "HEAD does not resolve to a commit"
-    raise RecoveryError(f"cannot inspect git at {root} ({detail}); refusing to decide whether "
-                        "the round committed — the snapshot is kept")
+    detail = " / ".join(f"{name} exit {r.returncode}{': ' + r.stderr.strip() if r.stderr.strip() else ''}"
+                        for name, r in (("rev-parse", head), ("symbolic-ref", sym),
+                                        ("for-each-ref", refs)))
+    raise RecoveryError(f"cannot establish git state at {root} ({detail}); refusing to decide "
+                        "whether the round committed — the snapshot is kept")
 
 
 def committed_round(root: Path, run_id: str) -> str | None:
