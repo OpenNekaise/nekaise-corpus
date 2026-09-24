@@ -77,7 +77,7 @@ ROUND_LOCK = "corpus-round"
 # the children it spawns. A child may then open read views without the lock, but only after
 # verifying that <pid> is its ancestor and really holds the lock; <run_id>'s own in-flight round
 # snapshot does not count as unsettled state for it.
-INHERITED_LOCK_ENV = "NEKAISE_STORE_LOCK_INHERITED"
+INHERITED_LOCK_ENV = ops.INHERITED_LOCK_ENV
 # Git-owned configuration and policy documents; a store never writes them.
 CONFIG_FILES = ("backends.json", "eligibility.json", "vendors.json", "host_policy.json")
 BACKEND_STATE_FILE = "backend_state.json"
@@ -796,6 +796,8 @@ class FileStore:
         if not value:
             return None
         pid, _, run_id = value.partition(":")
+        if pid == str(os.getpid()):
+            return None  # inheritance is for children; the holder itself reads via its token
         if not pid.isdigit() or not _is_ancestor(int(pid)) or self._lock_holder() != pid:
             raise WriterError(f"{INHERITED_LOCK_ENV}={value!r} does not name an ancestor holding "
                               "the round lock")

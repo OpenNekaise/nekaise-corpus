@@ -27,6 +27,8 @@ WORKSPACE = ROOT / "workspace"
 LOGS = ROOT / "logs"
 RUN_LEDGER = LOGS / "run_history.jsonl"
 SNAPSHOTS = WORKSPACE / "round-snapshots"
+ROUND_LOCK = "corpus-round"
+INHERITED_LOCK_ENV = "NEKAISE_STORE_LOCK_INHERITED"  # store.py reads it (see store.INHERITED_LOCK_ENV)
 
 
 def atomic_write_bytes(path: Path, data: bytes) -> None:
@@ -86,9 +88,18 @@ def named_lock(name: str, timeout: float = 0, workspace: Path | None = None):
     f.truncate()
     f.write(str(os.getpid()))
     f.flush()
+    # While this process holds the canonical round lock, every child it starts inherits verified
+    # READ access to the store (it checks this PID is its ancestor and holds the lock). Without
+    # it, a child that opens a store view (e.g. clean_corpus --check run by a backup or by the
+    # maintainer) would wait for the lock its own parent holds.
+    exported = name == ROUND_LOCK and INHERITED_LOCK_ENV not in os.environ
+    if exported:
+        os.environ[INHERITED_LOCK_ENV] = f"{os.getpid()}:"
     try:
         yield path
     finally:
+        if exported:
+            os.environ.pop(INHERITED_LOCK_ENV, None)
         fcntl.flock(f.fileno(), fcntl.LOCK_UN)
         f.close()
 

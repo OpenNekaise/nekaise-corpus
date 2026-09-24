@@ -35,3 +35,12 @@ def _no_live_store(monkeypatch, request):
                                  "tmp_path and point the code under test at it")
         real_init(self, root)
     monkeypatch.setattr(store.FileStore, "__init__", guarded)
+
+
+@pytest.fixture(autouse=True)
+def _no_inherited_round_access(monkeypatch):
+    """Tests build their own stores; a round lock inherited from whatever launched pytest (a
+    round's gate, the maintainer, a backup) is never theirs."""
+    for name in ("NEKAISE_STORE_LOCK_INHERITED", "NEKAISE_STORE_BROKER", "NEKAISE_STORE_CAP",
+                 "NEKAISE_STORE_ROUND"):
+        monkeypatch.delenv(name, raising=False)

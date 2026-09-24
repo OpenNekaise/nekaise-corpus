@@ -251,9 +251,9 @@ def test_legacy_round_snapshot_blocks_views_and_transactions(st):
 
 
 def test_inherited_lock_must_be_verified(st, monkeypatch):
-    monkeypatch.setenv(store.INHERITED_LOCK_ENV, f"{os.getpid()}:run")
+    monkeypatch.setenv(store.INHERITED_LOCK_ENV, f"{os.getppid()}:run")
     with pytest.raises(store.WriterError, match="does not name"):
-        with st.read():  # we are our own ancestor, but nobody holds the lock
+        with st.read():  # a real ancestor, but it does not hold the lock
             pass
     code = (
         "import sys; sys.path.insert(0, 'scripts'); import store\n"
@@ -367,3 +367,18 @@ def test_membership_fallback_loads_the_corpus_once_per_generation(st, monkeypatc
             v.known(urls=batch, titles=["x"], ids=["oer-a"])
     assert loads.count("manifest") == 1 and loads.count("entries") == 1
     assert loads.count("blocklist") == 1
+
+
+def test_a_lock_holder_s_children_can_read_the_store(st):
+    # backup_corpus / the maintainer hold the round lock and run clean_corpus --check as a child
+    code = (
+        "import sys; sys.path.insert(0, 'scripts'); import store\n"
+        f"st = store.FileStore({str(st.root)!r})\n"
+        "with st.read(timeout=0) as v:\n    print(len(v.scan(store.Table.ENTRIES).rows))\n"
+    )
+    with ops.named_lock("corpus-round", workspace=st.workspace):
+        out = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True,
+                             cwd=store.ROOT)
+    assert out.returncode == 0, out.stderr
+    assert out.stdout.strip() == "4"
+    assert store.INHERITED_LOCK_ENV not in os.environ  # restored on release
