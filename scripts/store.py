@@ -212,6 +212,15 @@ def _exact(v: int | float):
         fractions.Fraction(v)
 
 
+def legacy_manifest_key(row: Mapping) -> tuple[str, str, str]:
+    """registry.load_manifest_rows' order: shard files by name, then (topic, id) within a shard.
+    First-seen rules (the pruner's title-duplicate winner, sampling ties) depend on it, so scans
+    can request it explicitly with order="legacy"."""
+    topic = row.get("topic")
+    return (f"{registry.manifest_shard(row['id'])}.jsonl", "" if topic is None else str(topic),
+            row["id"])
+
+
 def json_equal(a: Any, b: Any) -> bool:
     """Equality of JSON values as PostgreSQL jsonb defines it: numbers compare by their decimal
     value (1 == 1.0), a boolean never equals a number, containers compare element-wise."""
@@ -340,6 +349,11 @@ def check_group_value(field: str, value: Any) -> Any:
         return value
     raise StoreError(f"aggregate_manifest cannot group by {field!r}: value {value!r} is not a "
                      "string, boolean or null")
+
+
+def check_order(table: "Table", order: str) -> None:
+    if order not in ("key", "legacy") or (order == "legacy" and Table(table) is not Table.MANIFEST):
+        raise StoreError(f"unsupported scan order {order!r} for {Table(table).value}")
 
 
 def exact_sum(values: Iterable[Any]) -> int | float:
@@ -968,7 +982,8 @@ class FileStore:
         base, state = view._base, view._state
         removed = {sid for sid in base.entries
                    if sid not in state.entries or not same_row(state.entries[sid], base.entries[sid])}
-        added = [state.entries[sid] for sid in sorted(state.entries)
+        # insertion order, exactly like registry.append_entries appends its batch
+        added = [state.entries[sid] for sid in state.entries
                  if sid not in base.entries or not same_row(state.entries[sid], base.entries[sid])]
         texts: dict[str, str] = {}
         drop_by_file: dict[str, set] = {}
@@ -1173,6 +1188,14 @@ class ReadView:
             cache[table] = self._keyed_uncached(table)
         return cache[table]
 
+    def _keyed_legacy(self) -> list[tuple[tuple, dict]]:
+        cache = self.__dict__.setdefault("_keyed_cache", {})
+        if "legacy" not in cache:
+            rows = self._get("manifest").manifest
+            cache["legacy"] = sorted(((legacy_manifest_key(r), r) for r in rows.values()),
+                                     key=lambda kr: kr[0])
+        return cache["legacy"]
+
     def _keyed_uncached(self, table: Table) -> list[tuple[tuple, dict]]:
         if table is Table.ENTRIES:
             rows = self._get("entries").entries
@@ -1204,16 +1227,19 @@ class ReadView:
 
     def scan(self, table: Table, *, where: Predicate | None = None,
              fields: tuple[str, ...] | None = None, cursor: Cursor | None = None,
-             limit: int = DEFAULT_PAGE) -> Page:
+             limit: int = DEFAULT_PAGE, order: str = "key") -> Page:
+        """order="key" (default) is the table's scan key; order="legacy" (manifest only) is
+        registry.load_manifest_rows' order, see legacy_manifest_key."""
         table = Table(table)
         self._validate(table, where, fields)
+        check_order(table, order)
         if not 1 <= limit <= MAX_PAGE:
             raise StoreError(f"limit must be within 1..{MAX_PAGE}")
-        query = _digest([table.value, repr(where), list(fields) if fields else None])
+        query = _digest([table.value, repr(where), list(fields) if fields else None, order])
         if cursor is not None and (cursor.view != self._cursor_scope() or cursor.query != query):
             raise StoreError("cursor belongs to a different view, generation or query")
         rows, last = [], None
-        keyed = self._keyed(table)
+        keyed = self._keyed_legacy() if order == "legacy" else self._keyed(table)
         start = 0
         if cursor is not None:
             import bisect

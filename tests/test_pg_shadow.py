@@ -258,5 +258,21 @@ def test_schema_v1_migrates_to_v2(env):
         conn.execute("UPDATE state SET schema_version = 1")
     again = store_pg.PgStore(repo.path, dsn=st.dsn, schema=st.schema)
     with again._connect(autocommit=True) as conn:
-        assert conn.execute("SELECT schema_version FROM state").fetchone()[0] == 2
+        assert conn.execute("SELECT schema_version FROM state").fetchone()[0] == \
+            store_pg.SCHEMA_VERSION
         assert conn.execute("SELECT count(*) FROM control_docs").fetchone()[0] == 0
+
+
+def test_schema_v2_migrates_to_v3_with_legacy_order_backfill(env):
+    pg_shadow, st, repo, c1 = env
+    import store_pg
+    pg_shadow.do_import(st, c1, repo.path, log=lambda *_: None)
+    with st._connect(autocommit=True) as conn:
+        conn.execute("DROP INDEX manifest_legacy_order")
+        conn.execute("ALTER TABLE manifest DROP COLUMN shard, DROP COLUMN topic_key")
+        conn.execute("UPDATE state SET schema_version = 2")
+    again = store_pg.PgStore(repo.path, dsn=st.dsn, schema=st.schema)
+    with again.read() as v:
+        ids = [r["id"] for r in v.scan("manifest", order="legacy").rows]
+    assert ids == ["oer-a", "oer-b", "hand-1"]  # books.jsonl before curated.jsonl
+    assert pg_shadow.do_verify(again, repo.path, log=lambda *_: None)

@@ -43,7 +43,7 @@ from store import (BackendState, ConfigSnapshot, Cursor, KnownHits, Page, Stage,
                    StoreError, Table, Version, VersionConflict, WriteView, WriterError,
                    WriterToken, canonical_row, key_digest, norm_title, norm_url)
 
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 DEFAULT_DSN = "host=/home/zengp/.local/share/nekaise-pg/run dbname=nekaise"
 
 DDL = """
@@ -70,7 +70,9 @@ CREATE TABLE IF NOT EXISTS {s}.manifest (
     row jsonb GENERATED ALWAYS AS (row_text::jsonb) STORED,
     url_norm text, url_key bytea,
     title_norm text, title_key bytea,
-    sha256 text COLLATE "C"
+    sha256 text COLLATE "C",
+    shard text COLLATE "C",
+    topic_key text COLLATE "C"
 );
 CREATE INDEX IF NOT EXISTS manifest_url_key ON {s}.manifest (url_key);
 CREATE INDEX IF NOT EXISTS manifest_title_key ON {s}.manifest (title_key);
@@ -119,11 +121,67 @@ CREATE TABLE IF NOT EXISTS {s}.replication_receipts (
 );
 INSERT INTO {s}.state (schema_version) VALUES ({v}) ON CONFLICT DO NOTHING;
 """
-# Schema migrations: version -> SQL bringing the previous version up to it. The DDL above is
-# idempotent and already creates every table, so a migration only has to record the new version.
-MIGRATIONS = {
-    2: "UPDATE {s}.state SET schema_version = 2 WHERE schema_version = 1",  # + control_docs
-}
+# Schema migrations: version -> function(conn, schema) bringing the previous version up to it. The
+# DDL above is idempotent and already creates every table and column for NEW schemas; migrations
+# add what an older schema lacks and backfill it.
+
+
+def _migrate_2(conn, schema):  # control_docs (created by the DDL)
+    pass
+
+
+def _migrate_3(conn, schema):  # manifest legacy-order columns, backfilled from the rows
+    s = sql.Identifier(schema)
+    conn.execute(sql.SQL("ALTER TABLE {}.manifest ADD COLUMN IF NOT EXISTS shard text COLLATE \"C\", "
+                         "ADD COLUMN IF NOT EXISTS topic_key text COLLATE \"C\"").format(s))
+    with conn.cursor(name="migrate3") as cur, conn.cursor() as up:
+        cur.itersize = 20000
+        cur.execute(sql.SQL("SELECT id, row_text FROM {}.manifest").format(s))
+        batch = []
+        for sid, text in cur:
+            shard, topic, _ = store.legacy_manifest_key(json.loads(text))
+            batch.append((shard, topic, sid))
+            if len(batch) >= 20000:
+                up.executemany(sql.SQL("UPDATE {}.manifest SET shard = %s, topic_key = %s "
+                                       "WHERE id = %s").format(s), batch)
+                batch.clear()
+        if batch:
+            up.executemany(sql.SQL("UPDATE {}.manifest SET shard = %s, topic_key = %s "
+                                   "WHERE id = %s").format(s), batch)
+    conn.execute(sql.SQL("CREATE INDEX IF NOT EXISTS manifest_legacy_order ON {}.manifest "
+                         "(shard, topic_key, id)").format(s))
+
+
+MIGRATIONS = {2: _migrate_2, 3: _migrate_3}
+# Indexes on columns that migrations may have just added: created after migrating.
+POST_DDL = "CREATE INDEX IF NOT EXISTS manifest_legacy_order ON {s}.manifest (shard, topic_key, id);"
+
+
+def put_rows(cur, table: str, rows: list[dict]) -> None:
+    """Upsert entries/manifest rows with every derived column (the one writer both the store and
+    the shadow replicator use)."""
+    if not rows:
+        return
+    manifest = table == "manifest"
+    cols = ["id", "row_text", "url_norm", "url_key", "title_norm", "title_key"]
+    if manifest:
+        cols += ["sha256", "shard", "topic_key"]
+    q = sql.SQL("INSERT INTO {t} ({c}) VALUES ({v}) ON CONFLICT (id) DO UPDATE SET {u}").format(
+        t=sql.Identifier(table), c=sql.SQL(", ").join(map(sql.Identifier, cols)),
+        v=sql.SQL(", ").join(sql.Placeholder() for _ in cols),
+        u=sql.SQL(", ").join(sql.SQL("{c} = EXCLUDED.{c}").format(c=sql.Identifier(c))
+                             for c in cols[1:]))
+    params = []
+    for r in rows:
+        store.validate_json(r, f"{table} row {r.get('id')!r}")
+        rec = [r["id"], canonical_row(r), *_keys_for(r)]
+        if manifest:
+            sha = r.get("sha256")
+            shard, topic, _ = store.legacy_manifest_key(r)
+            rec += [sha if isinstance(sha, str) and sha else None, shard, topic]
+        params.append(rec)
+    cur.executemany(q, params)
+
 
 ROW_TABLES = {Table.ENTRIES: "entries", Table.MANIFEST: "manifest", Table.LEDGER: "ledger"}
 
@@ -201,8 +259,12 @@ class PgStore:
                 got = conn.execute(sql.SQL("SELECT schema_version FROM {}.state").format(
                     self._s)).fetchone()[0]
                 for version in range(got + 1, SCHEMA_VERSION + 1):
-                    conn.execute(MIGRATIONS[version].format(s=schema))
+                    with conn.transaction():
+                        MIGRATIONS[version](conn, schema)
+                        conn.execute(sql.SQL("UPDATE {}.state SET schema_version = %s").format(
+                            self._s), [version])
                     got = version
+                conn.execute(POST_DDL.format(s=schema))
                 if got != SCHEMA_VERSION:
                     raise StoreError(f"schema {schema} is version {got}, code expects "
                                      f"{SCHEMA_VERSION}")
@@ -425,15 +487,20 @@ class PgReadView:
     }
 
     def scan(self, table: Table, *, where=None, fields: tuple[str, ...] | None = None,
-             cursor: Cursor | None = None, limit: int = store.DEFAULT_PAGE) -> Page:
+             cursor: Cursor | None = None, limit: int = store.DEFAULT_PAGE,
+             order: str = "key") -> Page:
         table = Table(table)
         self._validate(table, where, fields)
+        store.check_order(table, order)
         if not 1 <= limit <= store.MAX_PAGE:
             raise StoreError(f"limit must be within 1..{store.MAX_PAGE}")
-        query_id = store._digest([table.value, repr(where), list(fields) if fields else None])
+        query_id = store._digest([table.value, repr(where), list(fields) if fields else None,
+                                  order])
         if cursor is not None and (cursor.view != self._cursor_scope() or cursor.query != query_id):
             raise StoreError("cursor belongs to a different view, generation or query")
         keys, rowexpr, textexpr, name = self._SCAN[table]
+        if order == "legacy":
+            keys = ("shard", "topic_key", "id")
         cond, params = compile_predicate(where, sql.SQL(rowexpr))
         keycols = sql.SQL(", ").join(sql.Identifier(k) for k in keys)
         after = sql.SQL("true")
@@ -609,25 +676,8 @@ class PgWriteView(PgReadView):
         return {i: json.loads(t) for i, t in self._q(q, [ids]).fetchall()}
 
     def _put(self, table: str, rows: list[dict]) -> None:
-        if not rows:
-            return
-        extra = ", sha256" if table == "manifest" else ""
-        n = 7 if table == "manifest" else 6
-        q = sql.SQL(
-            "INSERT INTO {t} (id, row_text, url_norm, url_key, title_norm, title_key" + extra
-            + ") VALUES (" + ", ".join(["%s"] * n) + ") ON CONFLICT (id) DO UPDATE SET "
-            "row_text = EXCLUDED.row_text, url_norm = EXCLUDED.url_norm, url_key = EXCLUDED.url_key, "
-            "title_norm = EXCLUDED.title_norm, title_key = EXCLUDED.title_key"
-            + (", sha256 = EXCLUDED.sha256" if extra else "")).format(t=sql.Identifier(table))
-        params = []
-        for r in rows:
-            rec = [r["id"], _check_text(canonical_row(r), f"{table} row {r['id']}"), *_keys_for(r)]
-            if extra:
-                sha = r.get("sha256")
-                rec.append(sha if isinstance(sha, str) and sha else None)
-            params.append(rec)
         with self._conn.cursor() as cur:
-            cur.executemany(q, params)
+            put_rows(cur, table, rows)
 
     def _delete(self, table: str, ids: Iterable[str], reason: str) -> int:
         ids = list(dict.fromkeys(ids))

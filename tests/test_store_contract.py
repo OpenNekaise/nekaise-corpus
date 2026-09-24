@@ -430,3 +430,24 @@ def test_control_documents_roundtrip_journal_and_export(st, tmp_path):
         ops = [(e["table"], e["op"]) for e in v.scan(Table.EVENTS, limit=1000).rows
                if e["run_id"] in ("r1", "r2") and e["op"] != "commit"]
     assert ops == [("control", "upsert"), ("control", "delete")]
+
+
+def test_legacy_manifest_order_matches_load_manifest_rows(st):
+    rows = [mrow("oer-z", topic="a"), mrow("oer-y", topic="b"), mrow("zen-1", topic="a"),
+            mrow("pat-us123", topic="c"), mrow("hand-x", topic="z")]
+    write(st, "r1", lambda tx: tx.upsert_manifest(rows))
+    with st.read() as v:
+        got, cursor = [], None
+        while True:
+            page = v.scan(Table.MANIFEST, fields=("id",), cursor=cursor, limit=2, order="legacy")
+            got += [r["id"] for r in page.rows]
+            if page.next_cursor is None:
+                break
+            cursor = page.next_cursor
+        everything = v.scan(Table.MANIFEST, limit=100).rows
+        with pytest.raises(store.StoreError, match="unsupported scan order"):
+            v.scan(Table.ENTRIES, order="legacy")
+    assert got == [r["id"] for r in sorted(everything, key=store.legacy_manifest_key)]
+    # the legacy order really is registry's: shard file name, then (topic, id) inside a shard
+    assert got.index("oer-z") < got.index("oer-y") < got.index("hand-x")  # books < curated
+    assert got.index("oer-z") < got.index("oer-y") < got.index("oer-a")  # topics a < b < building_energy

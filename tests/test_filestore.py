@@ -336,3 +336,10 @@ def test_view_expires_when_its_generation_moves(st):
                 tx.blocklist_add(["https://x.org/new"])
             with pytest.raises(store.StaleView):
                 v.scan(Table.BLOCKLIST)  # would lazily load the newer generation
+
+
+def test_insert_order_within_one_shard_matches_legacy_append(st, legacy):
+    new = [entry("oer-zz"), entry("oer-aa"), entry("oer-mm")]  # deliberately unsorted
+    write(st, "r1", lambda tx: tx.insert_entries(new))
+    registry.append_entries(new)
+    assert data_files(st.root) == files(legacy)

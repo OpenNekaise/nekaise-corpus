@@ -129,20 +129,7 @@ def parse(kind: str, data: bytes | None):
 # --- replaying one revision step ------------------------------------------------------------------
 
 def _put_rows(cur, table: str, rows) -> None:
-    extra = table == "manifest"
-    cols = "id, row_text, url_norm, url_key, title_norm, title_key" + (", sha256" if extra else "")
-    ph = ", ".join(["%s"] * (7 if extra else 6))
-    sets = ", ".join(f"{c} = EXCLUDED.{c}" for c in cols.split(", ")[1:])
-    params = []
-    for r in rows:
-        store.validate_json(r, f"{table} row {r.get('id')!r}")
-        rec = [r["id"], canonical_row(r), *store_pg._keys_for(r)]
-        if extra:
-            sha = r.get("sha256")
-            rec.append(sha if isinstance(sha, str) and sha else None)
-        params.append(rec)
-    cur.executemany(f"INSERT INTO {table} ({cols}) VALUES ({ph}) ON CONFLICT (id) DO UPDATE SET "
-                    f"{sets}", params)
+    store_pg.put_rows(cur, table, list(rows))
 
 
 def effective_ledger_paths(paths: list[str]) -> list[str]:
