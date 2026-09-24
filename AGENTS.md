@@ -181,7 +181,12 @@ proposal files; only after every finder succeeds does the runner deduplicate, me
 pointers serially. Normal failures roll tracked state back; state files are replaced atomically.
 Local run events live in `logs/run_history.jsonl`. A hard kill leaves a durable pre-round snapshot
 and the next operator restores it explicitly with
-`python scripts/run_round.py --recover latest`.
+`python scripts/run_round.py --recover latest` (the maintainer does the same automatically). The
+rollback, `--recover` and the maintainer share one routine (`scripts/round_recovery.py`): stop the
+round's leftover processes, resolve store transactions, keep a round that had already committed
+(its snapshot is discarded, never restored over the commit) or restore the snapshot, settle the
+prune quarantine, and only then discard the snapshot; any failure keeps it for another attempt.
+Tracked state is read and written only through `scripts/store.py` (`tests/test_architecture.py`).
 
 **Cloning: use `git clone --depth 1`.** The full history carries every past manifest/registry
 revision (~1.7GB); the recipe never needs it to operate — a shallow clone is ~10× smaller and

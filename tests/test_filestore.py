@@ -9,6 +9,7 @@ import sys
 import pytest
 
 import blocklist
+import legacy_registry
 import ops
 import registry
 import store
@@ -46,12 +47,11 @@ def st(tmp_path):
 
 @pytest.fixture
 def legacy(st, tmp_path, monkeypatch):
-    """A byte-identical copy of the store's files, driven through the legacy registry.py API."""
+    """A byte-identical copy of the store's files, driven through the legacy registry.py API
+    (tests/legacy_registry.py: registry.py's file writers before they became store adapters)."""
     root = tmp_path / "legacy"
     shutil.copytree(st.root, root)
-    monkeypatch.setattr(registry, "REG_DIR", root / "registry")
-    monkeypatch.setattr(registry, "MAN_DIR", root / "manifest")
-    monkeypatch.setattr(blocklist, "PATH", root / "pruned_urls.txt")
+    monkeypatch.setattr(registry, "ROOT", root)  # tests/legacy_registry.py follows it
     monkeypatch.setenv("NEKAISE_DISABLE_INDEX", "1")
     return root
 
@@ -70,7 +70,7 @@ def data_files(root):
 def test_insert_entries_matches_legacy_append_bytes(st, legacy):
     new = [entry("oer-c"), entry("arc-old"), entry("hand-three")]
     assert write(st, "r1", lambda tx: tx.insert_entries(new)) == 3
-    registry.append_entries(sorted(new, key=lambda e: e["id"]))
+    legacy_registry.append_entries(sorted(new, key=lambda e: e["id"]))
     assert data_files(st.root) == files(legacy)
     assert "# inline hand note" in (st.reg / "curated.yaml").read_text()
 
@@ -78,7 +78,7 @@ def test_insert_entries_matches_legacy_append_bytes(st, legacy):
 def test_delete_entries_matches_legacy_remove_ids(st, legacy):
     assert write(st, "r1", lambda tx: tx.delete_entries(["hand-one", "oer-b", "none"],
                                                         reason="prune")) == 2
-    registry.remove_ids({"hand-one", "oer-b"})
+    legacy_registry.remove_ids({"hand-one", "oer-b"})
     assert data_files(st.root) == files(legacy)
 
 
@@ -86,7 +86,7 @@ def test_replace_manifest_matches_legacy_write_manifest_rows(st, legacy):
     rows = [mrow("hand-one"), mrow("hand-two", status="failed", sha256=None, text_chars=None),
             mrow("zen-new")]
     write(st, "r1", lambda tx: tx.replace_manifest(rows, reason="prune"))
-    registry.write_manifest_rows(rows)
+    legacy_registry.write_manifest_rows(rows)
     assert data_files(st.root) == files(legacy)
     assert not (st.man / "books.jsonl").exists()
 
@@ -95,19 +95,20 @@ def test_blocklist_and_ledger_match_legacy_appends(st, legacy):
     write(st, "r1", lambda tx: (tx.blocklist_add(["https://b.org/2/", "https://b.org/1"]),
                                 tx.ledger_append([{"id": "oer-a", "reason": "junk"}])))
     legacy_blocklist_add(["https://b.org/2/", "https://b.org/1"])
-    ops.append_jsonl(registry.prune_ledger_path("oer-a"), {"id": "oer-a", "reason": "junk"})
+    ops.append_jsonl(legacy_registry.prune_ledger_path("oer-a"), {"id": "oer-a", "reason": "junk"})
     assert data_files(st.root) == files(legacy)
 
 
 def legacy_blocklist_add(urls) -> int:
     """blocklist.add() before it wrote through the store (ADR 0001 stage 3, step 5), verbatim."""
-    cur = blocklist.load()
+    cur = legacy_registry.blocklist_load()
     new = {blocklist.normalize(u) for u in urls if u and blocklist.normalize(u)} - cur
     if new:
-        old = blocklist.PATH.read_text() if blocklist.PATH.exists() else ""
+        path = legacy_registry.blocklist_path()
+        old = path.read_text() if path.exists() else ""
         if old and not old.endswith("\n"):
             old += "\n"
-        ops.atomic_write_text(blocklist.PATH, old + "".join(f"{u}\n" for u in sorted(new)))
+        ops.atomic_write_text(path, old + "".join(f"{u}\n" for u in sorted(new)))
     return len(new)
 
 
@@ -118,7 +119,7 @@ def test_blocklist_add_writes_through_the_store_with_legacy_bytes(st, legacy, mo
     (legacy / "pruned_urls.txt").write_text("https://e.org/blocked")
     urls = ["https://b.org/2/", " https://b.org/1 ", "https://e.org/blocked/", ""]
     assert legacy_blocklist_add(urls) == 2
-    monkeypatch.setattr(blocklist, "PATH", st.blocklist_path)
+    monkeypatch.setattr(blocklist, "ROOT", st.root)
     assert blocklist.add(urls) == 2
     assert data_files(st.root) == data_files(legacy)
     with st.read() as v:
@@ -131,9 +132,8 @@ def test_blocklist_add_writes_through_the_store_with_legacy_bytes(st, legacy, mo
 
 def test_blocklist_add_inside_a_round_goes_through_the_broker(st, monkeypatch):
     import store_broker
-    monkeypatch.setattr(blocklist, "PATH", st.blocklist_path)
     code = ("import sys; sys.path.insert(0, 'scripts'); import blocklist\n"
-            f"from pathlib import Path; blocklist.PATH = Path({str(st.blocklist_path)!r})\n"
+            f"from pathlib import Path; blocklist.ROOT = Path({str(st.root)!r})\n"
             "print(blocklist.add(['https://b.org/9']))\n")
     with st.writer(round_id="rnd-bl") as w:
         broker = store_broker.Broker(st, w, "rnd-bl")
@@ -165,10 +165,10 @@ def test_indexed_and_canonical_known_agree_including_whitespace(st, monkeypatch)
     with st.read() as v:
         assert v.known(**probe) == indexed
     assert indexed.urls == {"https://e.org/dup", "https://e.org/blocked", "https://w.org/x"}
-    # and the legacy canonical existing_keys agrees
-    monkeypatch.setattr(registry, "REG_DIR", st.reg)
-    monkeypatch.setattr(registry, "MAN_DIR", st.man)
-    monkeypatch.setattr(blocklist, "PATH", st.blocklist_path)
+    # and the legacy canonical existing_keys agrees, and so does its deprecated store adapter
+    monkeypatch.setattr(registry, "ROOT", st.root)
+    urls, _, _ = legacy_registry.existing_keys()
+    assert "https://w.org/x" in urls
     urls, _, _ = registry.existing_keys()
     assert "https://w.org/x" in urls
 
@@ -394,7 +394,7 @@ def test_view_expires_when_its_generation_moves(st):
 def test_insert_order_within_one_shard_matches_legacy_append(st, legacy):
     new = [entry("oer-zz"), entry("oer-aa"), entry("oer-mm")]  # deliberately unsorted
     write(st, "r1", lambda tx: tx.insert_entries(new))
-    registry.append_entries(new)
+    legacy_registry.append_entries(new)
     assert data_files(st.root) == files(legacy)
 
 
@@ -403,8 +403,7 @@ def test_lint_sees_a_duplicated_corrupt_manifest_row(st, monkeypatch, capsys):
     shard = st.man / f"{registry.manifest_shard('oer-a')}.jsonl"
     bad = json.dumps({**mrow("oer-a", sha256="INVALID")})
     shard.write_text(bad + "\n" + shard.read_text())  # same id twice: corrupt first, valid last
-    monkeypatch.setattr(registry, "REG_DIR", st.reg)
-    monkeypatch.setattr(registry, "MAN_DIR", st.man)
+    monkeypatch.setattr(registry, "ROOT", st.root)  # its eligibility policy
     assert lint_registry.main(st.root) == 1
     assert "duplicate manifest id (2x): oer-a" in capsys.readouterr().out
 
@@ -511,7 +510,7 @@ def test_insert_reads_only_the_routed_shards(st, legacy, monkeypatch):
     assert "entries" not in loads
     assert sorted(set(files_read)) == sorted({"books.yaml", "kitopen.yaml",
                                               registry.shard_filename("vnd-x1")})
-    registry.append_entries(new)
+    legacy_registry.append_entries(new)
     assert data_files(st.root) == files(legacy)
 
 
@@ -597,12 +596,12 @@ def test_manifest_mutations_read_only_the_routed_shards(st, legacy, monkeypatch)
                                         registry.manifest_shard("vnd-x1")})
     assert got["oer-a"]["error"] == "drift" and "oer-b" not in got and "vnd-x1" in got
     # the same change through the legacy whole-manifest writer: identical bytes
-    rows = {r["id"]: r for r in registry.load_manifest_rows()}
+    rows = {r["id"]: r for r in legacy_registry.load_manifest_rows()}
     rows["oer-a"] = changed
     rows["vnd-x1"], rows["kit-first"] = mrow("vnd-x1"), mrow("kit-first")
     rows["hand-one"] = {**rows["hand-one"], "corpus_path": "corpus/hand-one.md", "corpus_chars": 7}
     del rows["oer-b"]
-    registry.write_manifest_rows(rows.values())
+    legacy_registry.write_manifest_rows(rows.values())
     assert data_files(st.root) == files(legacy)
     with st.read() as v:  # the tombstone carries the reason and the deleted row's digest
         events = [e for e in v.scan(Table.EVENTS).rows if e["run_id"] == "r1"]
@@ -628,8 +627,8 @@ def test_routed_manifest_changes_join_a_later_full_load(st):
 def test_a_shard_emptied_by_routed_deletes_is_removed(st, legacy):
     write(st, "r1", lambda tx: tx.delete_manifest(["oer-a", "oer-b"], reason="prune"))
     assert not (st.man / "books.jsonl").exists()
-    rows = [r for r in registry.load_manifest_rows() if r["id"] not in ("oer-a", "oer-b")]
-    registry.write_manifest_rows(rows)
+    rows = [r for r in legacy_registry.load_manifest_rows() if r["id"] not in ("oer-a", "oer-b")]
+    legacy_registry.write_manifest_rows(rows)
     assert data_files(st.root) == files(legacy)
 
 
@@ -758,8 +757,8 @@ def test_entry_deletes_read_only_the_routed_shards(st, legacy, monkeypatch):
     assert write(st, "r1", body) == 2
     assert "entries" not in loads
     assert sorted(set(files_read)) == ["books.yaml", "curated.yaml", "kitopen.yaml"]
-    registry.remove_ids({"oer-a", "hand-two"})
-    registry.append_entries([entry("oer-c"), entry("oer-a", title="Back again")])
+    legacy_registry.remove_ids({"oer-a", "hand-two"})
+    legacy_registry.append_entries([entry("oer-c"), entry("oer-a", title="Back again")])
     assert data_files(st.root) == files(legacy)
     assert "# inline hand note" in (st.reg / "curated.yaml").read_text()
 
@@ -777,7 +776,7 @@ def test_routed_entry_deletes_cut_multiline_entries_like_remove_ids(st, legacy, 
     got = write(st, "r1", lambda tx: (tx.get_manifest([]),
                                       tx.delete_entries(sorted(drop), reason="prune"))[1])
     assert got == len(drop)
-    registry.remove_ids(drop)
+    legacy_registry.remove_ids(drop)
     assert data_files(st.root) == files(legacy)
     with st.read() as v:
         tombs = [e for e in v.scan(Table.EVENTS).rows if e["op"] == "delete"]

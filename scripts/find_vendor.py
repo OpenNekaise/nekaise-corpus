@@ -50,9 +50,10 @@ import requests
 import ops
 import dedup
 import registry
+import store
 
 HERE = Path(__file__).resolve().parents[1]
-VENDORS_PATH = registry.REG_DIR / "vendors.json"
+VENDORS_PATH = store.config_path("vendors.json", registry.ROOT)
 CACHE_DIR = ops.WORKSPACE / "vendor-sitemaps"
 SITEMAP_TTL_DAYS = 7
 UA = {"User-Agent": "nekaise-corpus/find_vendor (research corpus; sitemap/listing discovery only)"}

@@ -602,8 +602,8 @@ from pathlib import Path
 sys.path.insert(0, {scripts!r})
 root = Path({root!r})
 import blocklist, rotation, migrate_backend_state
-blocklist.PATH = root / 'pruned_urls.txt'
-rotation.PATH = root / 'registry' / 'rotation.json'
+blocklist.ROOT = root
+rotation.ROOT = root
 rotation.LOCK_TIMEOUT = 0.5
 print(json.dumps({{
     'blocklist': blocklist.add(['https://e.org/new/']),
@@ -753,8 +753,8 @@ def test_timed_out_action_is_judged_only_after_its_broker_batch_finished(tmp_pat
             return 0
         calls.append('action')
         code = ('import sys; sys.path.insert(0, %r); import blocklist; from pathlib import Path\n'
-                'blocklist.PATH = Path(%r)\nblocklist.add(["https://e.org/late"])\n'
-                % (str(Path(maintainer.__file__).parent), str(tmp_path / 'pruned_urls.txt')))
+                'blocklist.ROOT = Path(%r)\nblocklist.add(["https://e.org/late"])\n'
+                % (str(Path(maintainer.__file__).parent), str(tmp_path)))
         agent = subprocess.Popen([sys.executable, '-c', code], env=kwargs['env'])
         assert started.wait(10)
         agent.kill()  # the action timed out: its process group is stopped

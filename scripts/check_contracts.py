@@ -56,8 +56,8 @@ def prune_ledger_contract_errors(root: Path = ROOT) -> list[str]:
                 row = json.loads(line)
                 if not all(row.get(k) for k in ("id", "url", "reason", "pruned_at")):
                     errors.append(f"{rel}:{lineno}: missing required field")
-                elif path.name != registry.prune_ledger_path(row["id"]).name:
-                    expected = registry.prune_ledger_path(row["id"]).name
+                elif path.name != registry.prune_ledger_name(row["id"]):
+                    expected = registry.prune_ledger_name(row["id"])
                     errors.append(f"{rel}:{lineno}: id belongs in registry/{expected}")
             except json.JSONDecodeError as exc:
                 errors.append(f"{rel}:{lineno}: {exc}")

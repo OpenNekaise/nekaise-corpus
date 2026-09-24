@@ -18,7 +18,7 @@ from pathlib import Path
 
 import yaml
 
-import blocklist
+import state_codec
 import ops
 
 # same choice as registry.parse_yaml — libyaml when present (5x faster on the big shards)
@@ -110,7 +110,7 @@ def rebuild(reg_dir: Path, man_dir: Path, blocklist_path: Path,
 
             def add_known(entry: dict) -> None:
                 sid = entry.get("id") or ""
-                url = blocklist.normalize(entry.get("url") or "")
+                url = state_codec.normalize_url(entry.get("url") or "")
                 title = _norm(entry.get("title") or "")
                 if sid:
                     known_batch.append(("id", sid))
@@ -155,7 +155,7 @@ def rebuild(reg_dir: Path, man_dir: Path, blocklist_path: Path,
 
             if blocklist_path.exists():
                 for line in blocklist_path.read_text().splitlines():
-                    if value := blocklist.normalize(line):
+                    if value := state_codec.normalize_url(line):
                         known_batch.append(("url", value))
             if known_batch:
                 conn.executemany("INSERT OR IGNORE INTO known VALUES (?,?)", known_batch)
@@ -229,7 +229,7 @@ def record_appended_entries(reg_dir: Path, man_dir: Path, blocklist_path: Path,
         batch = []
         for entry in entries:
             sid = entry.get("id") or ""
-            url = blocklist.normalize(entry.get("url") or "")
+            url = state_codec.normalize_url(entry.get("url") or "")
             title = _norm(entry.get("title") or "")
             batch.extend(
                 (kind, value) for kind, value in (("id", sid), ("url", url), ("title", title))

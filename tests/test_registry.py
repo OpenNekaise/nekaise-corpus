@@ -21,9 +21,9 @@ def tmp_registry(tmp_path, monkeypatch):
     reg.mkdir()
     (reg / registry.CURATED).write_text(
         "# hand comment that must survive\nsources:\n" + registry.emit_entry(entry("hand-one")))
-    monkeypatch.setattr(registry, "REG_DIR", reg)
-    monkeypatch.setattr(registry, "MAN_DIR", tmp_path / "manifest")
-    monkeypatch.setattr(blocklist, "PATH", tmp_path / "pruned_urls.txt")
+    # registry's list/set API is a deprecated adapter over the store rooted here
+    monkeypatch.setattr(registry, "ROOT", tmp_path)
+    monkeypatch.setattr(blocklist, "ROOT", tmp_path)
     return reg
 
 
@@ -205,10 +205,10 @@ def test_registry_shard_bucketing_matches_manifest():
     # registry/patents.yaml hit 89MB (2026-08-17): the patent REGISTRY shards now use the same
     # crc32 buckets as the manifest, so one id's YAML and JSONL shards always pair up
     for sid in ["pat-us10519664b1", "pat-cn105789298b", "pat-ep1234567a1", "ost-some-report"]:
-        assert registry.shard_path(sid).name == f"{registry.manifest_shard(sid)}.yaml"
-    assert registry.shard_path("pat-cn105789298b").name.startswith("patents-cn-")
-    assert registry.shard_path("pat-us10519664b1").name.startswith("patents-us-")
-    assert registry.shard_path("hand-curated-doc").name == "curated.yaml"
+        assert registry.shard_filename(sid) == f"{registry.manifest_shard(sid)}.yaml"
+    assert registry.shard_filename("pat-cn105789298b").startswith("patents-cn-")
+    assert registry.shard_filename("pat-us10519664b1").startswith("patents-us-")
+    assert registry.shard_filename("hand-curated-doc") == "curated.yaml"
     assert registry.manifest_shard("hand-curated-doc") == "curated"
 
 
@@ -224,7 +224,7 @@ def test_hash_bucket_counts_support_clean_power_of_two_refinement():
 def test_manifest_round_trip_and_shard_files(tmp_registry):
     rows = [manrow("ost-a"), manrow("pat-us1"), manrow("pat-cn1"), manrow("hand-x")]
     registry.write_manifest_rows(rows)
-    names = {p.name for p in registry.manifest_files()}
+    names = {p.name for p in (tmp_registry.parent / "manifest").glob("*.jsonl")}
     assert names == {"reports.jsonl", "curated.jsonl",
                      f"{registry.manifest_shard('pat-us1')}.jsonl",
                      f"{registry.manifest_shard('pat-cn1')}.jsonl"}
@@ -234,12 +234,12 @@ def test_manifest_round_trip_and_shard_files(tmp_registry):
 
 def test_manifest_rewrite_drops_emptied_shard_and_skips_unchanged(tmp_registry):
     registry.write_manifest_rows([manrow("ost-a"), manrow("zen-b")])
-    reports = registry.MAN_DIR / "reports.jsonl"
+    reports = tmp_registry.parent / "manifest" / "reports.jsonl"
     stamp = reports.stat().st_mtime_ns
     # rewrite without the zen- row: zenodo.jsonl must disappear, untouched reports.jsonl must
     # not be rewritten (the per-shard skip keeps checkpoints/diffs cheap)
     registry.write_manifest_rows([manrow("ost-a")])
-    assert not (registry.MAN_DIR / "zenodo.jsonl").exists()
+    assert not (tmp_registry.parent / "manifest" / "zenodo.jsonl").exists()
     assert reports.stat().st_mtime_ns == stamp
     assert [r["id"] for r in registry.load_manifest_rows()] == ["ost-a"]
 
@@ -248,7 +248,7 @@ def test_manifest_shard_sorted_by_topic_then_id(tmp_registry):
     registry.write_manifest_rows([manrow("ost-b", topic="urban"), manrow("ost-c", "construction"),
                                   manrow("ost-a", topic="urban")])
     ids = [json.loads(l)["id"] for l in
-           (registry.MAN_DIR / "reports.jsonl").read_text().splitlines()]
+           (tmp_registry.parent / "manifest" / "reports.jsonl").read_text().splitlines()]
     assert ids == ["ost-c", "ost-a", "ost-b"]
 
 
@@ -274,5 +274,6 @@ def test_parse_yaml_matches_pure_loader_on_awkward_scalars(monkeypatch):
     assert fast == pure
     assert [e["title"] for e in fast["sources"]] == [e["title"] for e in awkward]
     # forced fallback (host without libyaml) must be a no-op semantically
-    monkeypatch.setattr(registry, "_YAML_LOADER", yaml.SafeLoader)
+    import state_codec
+    monkeypatch.setattr(state_codec, "YAML_LOADER", yaml.SafeLoader)
     assert registry.parse_yaml(text) == fast

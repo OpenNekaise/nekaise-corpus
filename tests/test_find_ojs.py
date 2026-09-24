@@ -100,7 +100,7 @@ def test_harvest_pages_gates_and_dedups(monkeypatch):
     assert first["language"] == "en" and first["published_at"] == "2022-04-21"
     assert "verb=GetRecord" in first["license_evidence"]
     assert second["license"] == "cc0" and second["language"] == "nl"
-    assert find_ojs.registry.shard_path(first["id"]).name == "ojs.yaml"
+    assert find_ojs.registry.shard_filename(first["id"]) == "ojs.yaml"
 
 
 def test_capped_run_requests_rotation_hold(monkeypatch, tmp_path, capsys):

@@ -51,7 +51,7 @@ def test_advance_preserves_virgin_week_before_skipping_mined_range(
             "skip": [["2020-W52", "2017-W49"]],
         }
     }))
-    monkeypatch.setattr(rotation, "PATH", path)
+    monkeypatch.setattr(rotation, "ROOT", path.parents[1])
 
     assert rotation.advance("find_patents") == f"--bucket {expected}"
     assert rotation.load()["find_patents"]["next"] == expected
@@ -66,7 +66,7 @@ def test_skip_range_can_cross_a_53_week_year(tmp_path, monkeypatch):
             "skip": [["2020-W53", "2019-W52"]],
         }
     }))
-    monkeypatch.setattr(rotation, "PATH", path)
+    monkeypatch.setattr(rotation, "ROOT", path.parents[1])
 
     assert rotation.advance("find_patents") == "--bucket 2019-W51"
 
@@ -80,7 +80,7 @@ def test_skip_range_can_jump_a_completed_multi_decade_patent_span(tmp_path, monk
             "skip": [["2026-W19", "1998-W19"]],
         }
     }))
-    monkeypatch.setattr(rotation, "PATH", path)
+    monkeypatch.setattr(rotation, "ROOT", path.parents[1])
 
     assert rotation.advance("find_patents") == "--bucket 1998-W18"
     assert rotation.load()["find_patents"]["next"] == "1998-W18"
@@ -108,7 +108,7 @@ def test_dynamic_pointer_is_replaced_atomically(tmp_path, monkeypatch):
             "dynamic": True,
         }
     }))
-    monkeypatch.setattr(rotation, "PATH", path)
+    monkeypatch.setattr(rotation, "ROOT", path.parents[1])
 
     assert rotation.set_next("find_kitopen", "opaque-token") == "--token opaque-token"
     assert rotation.load()["find_kitopen"]["next"] == "opaque-token"
@@ -131,7 +131,7 @@ def test_dynamic_pointer_rejects_invalid_control_values(value, tmp_path, monkeyp
     path.write_text(json.dumps({
         "find_kitopen": {"flag": "--token", "next": "START", "dynamic": True}
     }))
-    monkeypatch.setattr(rotation, "PATH", path)
+    monkeypatch.setattr(rotation, "ROOT", path.parents[1])
 
     with pytest.raises(ValueError, match="one non-empty line"):
         rotation.set_next("find_kitopen", value)
@@ -153,7 +153,7 @@ def _legacy_bytes(state):
 def test_standalone_advance_is_one_journaled_store_transaction(tmp_path, monkeypatch):
     path = _rotation_file(tmp_path)
     path.write_text(_legacy_bytes(STATE))
-    monkeypatch.setattr(rotation, "PATH", path)
+    monkeypatch.setattr(rotation, "ROOT", path.parents[1])
 
     assert rotation.advance("find_osti") == "--page 9"
     assert rotation.set_next("find_kitopen", " tok-2 ") == "--token tok-2"
@@ -170,7 +170,7 @@ def test_standalone_advance_is_one_journaled_store_transaction(tmp_path, monkeyp
 def test_standalone_advance_failure_writes_nothing(tmp_path, monkeypatch):
     path = _rotation_file(tmp_path)
     path.write_text(_legacy_bytes(STATE))
-    monkeypatch.setattr(rotation, "PATH", path)
+    monkeypatch.setattr(rotation, "ROOT", path.parents[1])
     with pytest.raises(KeyError):
         rotation.advance("find_unknown")
     with pytest.raises(ValueError, match="must be replaced"):
@@ -182,7 +182,7 @@ def test_standalone_advance_failure_writes_nothing(tmp_path, monkeypatch):
 def test_standalone_advance_waits_for_a_running_round_then_fails(tmp_path, monkeypatch):
     path = _rotation_file(tmp_path)
     path.write_text(_legacy_bytes(STATE))
-    monkeypatch.setattr(rotation, "PATH", path)
+    monkeypatch.setattr(rotation, "ROOT", path.parents[1])
     monkeypatch.setattr(rotation, "LOCK_TIMEOUT", 0.2)
     with store.FileStore(tmp_path).writer(round_id="live-round"):
         with pytest.raises(RuntimeError, match="corpus-round"):
@@ -197,7 +197,7 @@ def test_cli_output_is_unchanged(tmp_path):
     (repo / "scripts").mkdir(parents=True)
     scripts = Path(rotation.__file__).parent
     for name in ("rotation.py", "store.py", "store_broker.py", "registry.py", "blocklist.py",
-                 "ops.py"):
+                 "ops.py", "state_codec.py"):
         (repo / "scripts" / name).write_bytes((scripts / name).read_bytes())
     path = _rotation_file(repo)
     path.write_text(_legacy_bytes(STATE))

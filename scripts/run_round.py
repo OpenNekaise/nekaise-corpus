@@ -35,6 +35,7 @@ from pathlib import Path
 import ops
 import registry
 import rotation
+import round_recovery
 import corpus_stats
 import dedup
 import store
@@ -42,7 +43,7 @@ import store_broker
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
-BACKENDS = ROOT / "registry" / "backends.json"
+BACKENDS = store.config_path("backends.json", ROOT)
 GITHUB_PASSES = "github_passes.json"
 # Runtime reason prefix for finder-reported exhaustion (registry/backend_state.json).
 EXHAUSTED = "exhausted: "
@@ -62,7 +63,7 @@ VERIFY = (
     ("lint", "lint_registry.py", ()),
     ("contracts", "check_contracts.py", ()),
 )
-COMMIT_PATHS = ("README.md", "registry", "manifest", "pruned_urls.txt")
+COMMIT_PATHS = ("README.md", *store.TRACKED_PATHS)
 SNAPSHOT_PATHS = COMMIT_PATHS
 
 
@@ -553,30 +554,26 @@ def main() -> int:
             print("ERROR: no pending snapshots", file=sys.stderr)
             return 1
         st = store.FileStore(ROOT)
-        # The recovering writer is the round lock plus a token that may read the restored state
-        # while the round's snapshot still exists: the snapshot is discarded only after the
-        # prune quarantine is settled against that state, so a failure leaves it recoverable.
+        # The recovering writer is the round lock plus a token that may read the recovered state
+        # while the round's snapshot still exists: the shared routine discards the snapshot only
+        # after the prune quarantine is settled, so a failure leaves it recoverable.
         with st.writer(timeout=args.lock_timeout, round_id=run_id, recovering=True) as writer:
-            snap = ops.StateSnapshot.open(run_id, root=ROOT)
-            subprocess.run(
-                ["git", "restore", "--staged", "--", *SNAPSHOT_PATHS],
-                cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-            )
             try:
-                # interrupted store transactions first, while the files still hold their pre-
-                # or post-images; the snapshot restore would leave them matching neither
-                recover_store_transactions(st, writer, run_id)
-                snap.restore()
-                settle_prune_quarantine(ROOT, st, writer, run_id)
+                outcome = round_recovery.recover_round(
+                    st, writer, run_id, root=ROOT, snapshot_paths=SNAPSHOT_PATHS)
             except Exception as exc:
                 ops.run_event(run_id, "recover_failed", error=str(exc))
-                print(f"ERROR: could not recover {run_id} completely (store transactions, "
-                      f"snapshot restore, prune quarantine): {exc}; the snapshot is kept — fix "
-                      "and re-run --recover", file=sys.stderr)
+                print(f"ERROR: could not recover {run_id} completely (owned processes, store "
+                      f"transactions, snapshot restore, prune quarantine): {exc}; the snapshot "
+                      "is kept — fix and re-run --recover", file=sys.stderr)
                 return 1
-            snap.discard()
-            ops.run_event(run_id, "run_recovered")
-            print(f"restored tracked state from interrupted run {run_id}")
+            if outcome.action == "kept_committed":
+                ops.run_event(run_id, "run_recovered", committed=outcome.commit)
+                print(f"interrupted run {run_id} had already committed ({outcome.commit[:12]}): "
+                      "kept its committed state and discarded its snapshot")
+            else:
+                ops.run_event(run_id, "run_recovered")
+                print(f"restored tracked state from interrupted run {run_id}")
         return 0
     if args.push and not args.commit:
         ap.error("--push requires --commit")
@@ -609,20 +606,6 @@ def main() -> int:
         return 1
 
 
-def recover_store_transactions(st, writer, run_id: str) -> list:
-    """Resolve every interrupted store transaction (finalize a committed one, roll back a
-    prepared one) BEFORE a round snapshot is restored: FileStore recovery restores a file only
-    while it still holds the transaction's pre- or post-image, which the restored pre-round
-    state (e.g. after an earlier checkpoint of the same round changed the shard) does not."""
-    done = []
-    for t in st.pending_transactions():
-        result = st.recover(t.run_id, writer=writer)
-        ops.run_event(run_id, "store_transaction_recovered", transaction=t.run_id,
-                      action=result.action)
-        done.append(result)
-    return done
-
-
 def settle_prune_quarantine(root: Path, st, writer, run_id: str | None = None) -> dict:
     """Settle the bytes pruned documents left in workspace/prune-quarantine/ (all, or round
     `run_id`'s) against the store state the writer now reads — the round's final state after
@@ -646,6 +629,8 @@ MUTATING_STEPS = frozenset({"fetch", "prune", "clean"})
 def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
     snapshot = None
     committed = False
+    # every process this one owns from here on belongs to the round (rollback stops them)
+    existing = round_recovery.descendants(os.getpid())
     try:
         if (ROOT / "workspace" / ".pg-shadow").exists() and not args.commit:
             raise RuntimeError(
@@ -742,25 +727,19 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
             print(f"WARNING: prune quarantine of {run_id} not settled: {exc}", file=sys.stderr)
         return 0
     except Exception:
-        if snapshot is not None and not committed:
+        if snapshot is not None:
+            # the shared recovery routine (scripts/round_recovery.py), still under the lock: stop
+            # the round's processes, resolve store transactions, restore the snapshot unless the
+            # round already committed (a push failure after the commit: the commit stands),
+            # settle the prune quarantine, and only then discard the snapshot
             try:
-                subprocess.run(
-                    ["git", "restore", "--staged", "--", *SNAPSHOT_PATHS],
-                    cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-                )
-                recover_store_transactions(st, writer, run_id)
-                snapshot.restore()
-                # settle against the restored state BEFORE discarding the snapshot: a failure
-                # keeps the round recoverable (run_round --recover) instead of stranding bytes
-                settle_prune_quarantine(ROOT, st, writer, run_id)
-                snapshot.discard()
-                ops.run_event(run_id, "state_rolled_back")
+                outcome = round_recovery.recover_round(
+                    st, writer, run_id, root=ROOT, snapshot_paths=SNAPSHOT_PATHS,
+                    existing_descendants=existing, known_committed=committed)
+                ops.run_event(run_id, "state_rolled_back" if outcome.action == "restored"
+                              else "committed_round_kept")
             except Exception as rollback_exc:
                 ops.run_event(run_id, "rollback_failed", error=str(rollback_exc))
-        elif snapshot is not None:
-            # A push failure after a successful commit is recoverable with a later git push. The
-            # committed state is authoritative; retaining the pre-round snapshot would be harmful.
-            snapshot.discard()
         raise
 
 

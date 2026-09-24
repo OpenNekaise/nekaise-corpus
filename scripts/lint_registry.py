@@ -77,14 +77,11 @@ def pages(view, table):
 
 
 def main(root: Path | None = None) -> int:
-    root = Path(root) if root is not None else registry.REG_DIR.parent
+    root = Path(root) if root is not None else registry.ROOT
     try:
         restrictions = registry.load_eligibility()
-    except (OSError, ValueError) as exc:
+    except (OSError, ValueError) as exc:  # includes a missing registry/ (no eligibility.json)
         print(f"LINT: {exc}")
-        return 1
-    if not (root / "registry").is_dir():
-        print("LINT: registry/ directory missing")
         return 1
     st = store.open(root=root)
     # Physical layout first (unparsable shards, routing drift, duplicate ids): keyed store reads

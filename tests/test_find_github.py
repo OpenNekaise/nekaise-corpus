@@ -228,13 +228,13 @@ def test_doc_completion_is_per_kind_not_any_format():
 
 
 def test_successfully_empty_pass_is_recorded_and_not_rewalked(tmp_path):
-    passes_path = tmp_path / "github_passes.json"
     spec = {"repo": "example/manuals", "docs": ["tex", "man"]}
     formats = {"gh_manuals": {"md", "tex"}}  # no man page exists in the repo at all
 
     assert find_github.pending_repos([spec], set(formats), set(), formats, {}) == [spec]
-    find_github.record_passes([spec], "2026-09-24", passes_path)
-    passes = find_github.load_passes(passes_path)
+    find_github.record_passes([spec], "2026-09-24", tmp_path)  # one store transaction
+    passes = find_github.load_passes(root=tmp_path)
+    assert json.loads((tmp_path / "registry" / "github_passes.json").read_text()) == passes
 
     assert passes == {"gh_manuals": {"man": "2026-09-24", "tex": "2026-09-24"}}
     assert find_github.pending_repos([spec], set(formats), set(), formats, passes) == []
@@ -243,12 +243,11 @@ def test_successfully_empty_pass_is_recorded_and_not_rewalked(tmp_path):
 def test_fully_empty_repo_with_recorded_passes_is_done(tmp_path):
     # Nothing at all was ever registered, manifested or blocklisted for this repo: only the
     # recorded passes can prove the walk succeeded.
-    passes_path = tmp_path / "github_passes.json"
     spec = {"repo": "example/empty", "docs": ["tex", "man"]}
 
     assert find_github.pending_repos([spec], set(), set(), {}, {}) == [spec]
-    find_github.record_passes([spec], "2026-09-24", passes_path)
-    passes = find_github.load_passes(passes_path)
+    find_github.record_passes([spec], "2026-09-24", tmp_path)
+    passes = find_github.load_passes(root=tmp_path)
     assert find_github.pending_repos([spec], set(), set(), {}, passes) == []
     # a pass recorded for only SOME requested kinds is not a completed walk
     partial = {"gh_empty": {"tex": "2026-09-24"}}
@@ -267,7 +266,7 @@ class NoPassesView:
 def test_proposal_mode_stages_passes_instead_of_writing_shared_state(tmp_path, monkeypatch):
     specs = [{"repo": "ok/walked", "docs": ["tex", "man"], "license": "open", "topic": "urban"}]
     monkeypatch.setattr(find_github, "REPOS", specs)
-    monkeypatch.setattr(find_github, "PASSES", tmp_path / "passes.json")
+    monkeypatch.setattr(find_github, "ROOT", tmp_path)
     monkeypatch.setattr(find_github, "source_formats", lambda _view: {})
     monkeypatch.setattr(find_github.dedup, "read_view",
                         lambda: contextlib.nullcontext(NoPassesView()))
@@ -283,7 +282,7 @@ def test_proposal_mode_stages_passes_instead_of_writing_shared_state(tmp_path, m
 
     find_github.main()
 
-    assert not (tmp_path / "passes.json").exists()  # nothing shared is written in a round
+    assert not (tmp_path / "registry").exists()  # nothing shared is written in a round
     today = find_github.date.today().isoformat()
     staged = find_github.registry.read_proposal(proposal)
     assert staged == {"entries": [entry],
@@ -294,7 +293,7 @@ def test_main_records_passes_only_for_walked_repos_with_append(tmp_path, monkeyp
     specs = [{"repo": "ok/walked", "docs": ["tex"], "license": "open", "topic": "urban"},
              {"repo": "bad/failed", "docs": ["tex"], "license": "open", "topic": "urban"}]
     monkeypatch.setattr(find_github, "REPOS", specs)
-    monkeypatch.setattr(find_github, "PASSES", tmp_path / "passes.json")
+    monkeypatch.setattr(find_github, "ROOT", tmp_path)
     monkeypatch.setattr(find_github, "source_formats", lambda _view: {})
     monkeypatch.setattr(find_github.dedup, "read_view",
                         lambda: contextlib.nullcontext(NoPassesView()))
@@ -309,11 +308,11 @@ def test_main_records_passes_only_for_walked_repos_with_append(tmp_path, monkeyp
     monkeypatch.setattr(find_github, "from_repo", from_repo)
     monkeypatch.setattr(find_github.sys, "argv", ["find_github.py"])
     find_github.main()
-    assert not (tmp_path / "passes.json").exists()  # dry run records nothing
+    assert not (tmp_path / "registry").exists()  # dry run records nothing
 
     monkeypatch.setattr(find_github.sys, "argv", ["find_github.py", "--append"])
     find_github.main()
-    assert set(find_github.load_passes(tmp_path / "passes.json")) == {"gh_walked"}
+    assert set(find_github.load_passes(root=tmp_path)) == {"gh_walked"}
 
 
 def test_copyleft_repos_carry_exact_license_evidence(monkeypatch):

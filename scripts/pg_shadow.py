@@ -39,7 +39,7 @@ from pathlib import Path
 
 import psycopg
 
-import registry
+import state_codec
 import store
 import store_pg
 from store import canonical_row, key_digest, norm_url
@@ -114,7 +114,7 @@ def parse(kind: str, data: bytes | None):
         return {} if kind in ("entries", "manifest", "rotation", "backend_state") else []
     text = data.decode()
     if kind == "entries":
-        return {e["id"]: e for e in (registry.parse_yaml(text) or {}).get("sources") or []}
+        return {e["id"]: e for e in (state_codec.parse_yaml(text) or {}).get("sources") or []}
     if kind == "manifest":
         return {r["id"]: r for r in map(json.loads, filter(str.strip, text.splitlines()))}
     if kind in ("ledger", "events"):

@@ -15,10 +15,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import ops
+import store
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MOUNT = Path("/media/zengp/ssd")
-CONTENTS = ("corpus", "manifest", "registry", "pruned_urls.txt", "requirements.lock")
+# corpus/ plus the tracked provenance layout the file store owns, and the dependency lock
+CONTENTS = ("corpus", *store.TRACKED_PATHS, "requirements.lock")
 CHUNK = 4 * 1024 * 1024
 
 

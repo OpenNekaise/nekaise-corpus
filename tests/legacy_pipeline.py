@@ -17,6 +17,7 @@ import blocklist
 import build_corpus as bc
 import clean_corpus as cc
 import host_policy
+import legacy_registry
 import ops
 import prune_corpus as pc
 import quality
@@ -30,12 +31,12 @@ def legacy_load(*, force=False, workers=16, extract_workers=1, only="", reextrac
     only = {t.strip() for t in only.split(",") if t.strip()}
     selection = bc.reextract_selector(source, fmt, ids_from)
     restrictions = registry.load_eligibility()
-    all_srcs = registry.load_entries()
+    all_srcs = legacy_registry.load_entries()
     srcs = [s for s in all_srcs if registry.is_training_eligible(s, restrictions)]
-    manifest = {r["id"]: r for r in registry.load_manifest_rows()}
+    manifest = {r["id"]: r for r in legacy_registry.load_manifest_rows()}
 
     def write_manifest(rows):
-        registry.write_manifest_rows(rows.values())
+        legacy_registry.write_manifest_rows(rows.values())
 
     if reextract:
         bc.reextract(manifest, restrictions, selection, only)
@@ -119,7 +120,7 @@ def legacy_write_prune_ledger(manifest, drop, blocklisted_urls) -> int:
     with ops.named_lock("prune-ledger", timeout=30):
         for sid in sorted(drop):
             r = by_id[sid]
-            ops.append_jsonl(registry.prune_ledger_path(sid), {
+            ops.append_jsonl(legacy_registry.prune_ledger_path(sid), {
                 "id": sid, "url": r.get("url"), "title": r.get("title"), "reason": drop[sid],
                 "source": r.get("source"), "topic": r.get("topic"), "license": r.get("license"),
                 "http_status": r.get("http_status"), "error": r.get("error"),
@@ -134,7 +135,7 @@ def legacy_write_prune_ledger(manifest, drop, blocklisted_urls) -> int:
 def legacy_prune(*, apply=True, drop_ids_from=None) -> dict[str, str]:
     """Returns the drop decisions (id -> reason)."""
     HERE = pc.HERE
-    manifest = registry.load_manifest_rows()
+    manifest = legacy_registry.load_manifest_rows()
     reviewed_drop = pc.reviewed_title_drops(drop_ids_from, manifest)
     policy = host_policy.load()
     deferred = pc.deferred_ids()
@@ -193,22 +194,22 @@ def legacy_prune(*, apply=True, drop_ids_from=None) -> dict[str, str]:
                 drop[r["id"]] = "dup-bytes"
     if not apply:
         return drop
-    repeated_dns_urls = pc.repeated_dns_failure_urls(registry.load_prune_ledger_rows())
+    repeated_dns_urls = pc.repeated_dns_failure_urls(legacy_registry.load_prune_ledger_rows())
     block_urls = {
         blocklist.normalize(r.get("url")) for r in manifest
         if r["id"] in drop and pc._blocklistable(r, drop[r["id"]], repeated_dns_urls)
         and r.get("url")
     }
-    blocklist.add(block_urls)
+    legacy_registry.blocklist_add(block_urls)
     legacy_write_prune_ledger(manifest, drop, block_urls)
-    registry.remove_ids(set(drop))
+    legacy_registry.remove_ids(set(drop))
     for r in manifest:
         if r["id"] in drop:
             for p in (r.get("raw_path"), r.get("text_path"), r.get("corpus_path")):
                 if p and (HERE / p).exists():
                     (HERE / p).unlink()
     keep = [r for r in manifest if r["id"] not in drop]
-    registry.write_manifest_rows(keep)
+    legacy_registry.write_manifest_rows(keep)
     return drop
 
 
@@ -217,7 +218,7 @@ def legacy_prune(*, apply=True, drop_ids_from=None) -> dict[str, str]:
 def legacy_clean(*, rules_spec="stamp", force=False, workers=1) -> None:
     rules = cc.parse_rules(cc.stamped_ruleset() if rules_spec == "stamp" else rules_spec)
     restrictions = registry.load_eligibility()
-    rows = registry.load_manifest_rows()
+    rows = legacy_registry.load_manifest_rows()
     todo, restricted = cc.partition_training_rows(rows, restrictions)
     CORPUS, STAMP = cc.CORPUS, cc.STAMP
     CORPUS.mkdir(parents=True, exist_ok=True)
@@ -246,5 +247,5 @@ def legacy_clean(*, rules_spec="stamp", force=False, workers=1) -> None:
     for p in [p for p in CORPUS.glob("*.md")
               if p.name not in live and p.name not in restricted_names]:
         p.unlink()
-    registry.write_manifest_rows(rows)
+    legacy_registry.write_manifest_rows(rows)
     ops.atomic_write_text(STAMP, stamp_now + "\n")

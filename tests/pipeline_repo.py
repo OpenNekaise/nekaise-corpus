@@ -109,9 +109,7 @@ def point(monkeypatch, root: Path, *, policy: dict | None = None) -> None:
     put(clean_corpus, "STAMP", root / "corpus" / ".ruleset")
     put(clean_corpus, "POLICY_QUARANTINE", root / "workspace" / "policy-excluded-corpus")
     put(registry, "ROOT", root)
-    put(registry, "REG_DIR", root / "registry")
-    put(registry, "MAN_DIR", root / "manifest")
-    put(blocklist, "PATH", root / "pruned_urls.txt")
+    put(blocklist, "ROOT", root)
     put(ops, "WORKSPACE", root / "workspace")
     put(host_policy, "PATH", root / "registry" / "host_policy.json")
     if policy is not None:

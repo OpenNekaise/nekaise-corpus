@@ -1,15 +1,16 @@
 """The discovery write path as it was before ADR 0001 stage 3, step 5 (run_round at c841503eb0),
 kept verbatim in logic as the reference for the store path's equivalence tests: merge through
-registry.existing_keys()/append_entries(), github passes through a store transaction, rotation
+legacy_registry.existing_keys()/append_entries(), github passes through a store transaction, rotation
 pointers through rotation.json read-modify-writes, exhaustion by editing backends.json.
 
 `root` is a repository copy; registry/blocklist module paths must point into it (the caller
-monkeypatches registry.REG_DIR / MAN_DIR / blocklist.PATH)."""
+points registry.ROOT at it: tests/legacy_registry.py follows it)."""
 from __future__ import annotations
 
 import json
 from pathlib import Path
 
+import legacy_registry
 import ops
 import registry
 import rotation
@@ -65,7 +66,7 @@ def legacy_apply(root: Path, successful: list[dict], selected: list[str], backen
     (total, accepted, [(event, fields)])."""
     root = Path(root)
     events: list[tuple] = []
-    urls, titles, ids = registry.existing_keys()
+    urls, titles, ids = legacy_registry.existing_keys()
     merged = []
     accepted: dict[str, int] = {}
     passes: dict = {}
@@ -92,7 +93,7 @@ def legacy_apply(root: Path, successful: list[dict], selected: list[str], backen
             count += 1
         accepted[result["name"]] = count
     if merged:
-        registry.append_entries(merged)
+        legacy_registry.append_entries(merged)
     if passes:
         st = store.FileStore(root)
         with st.read() as view:

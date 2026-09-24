@@ -74,7 +74,7 @@ def migrated_config(raw: dict, moves: dict) -> dict:
 def migrate(root: Path, names: list[str], *, apply: bool, timeout: float = 60,
             log=print) -> int:
     st = store.open(root=root)
-    config_path = Path(root) / "registry" / "backends.json"
+    config_path = store.config_path("backends.json", root)
     with ExitStack() as stack:
         # Under the round lock throughout: a maintenance window's child writes through its
         # parent's broker (the parent holds the lock); a standalone run holds its own writer.

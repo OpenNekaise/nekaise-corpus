@@ -1,121 +1,47 @@
 #!/usr/bin/env python3
-"""registry.py — shared registry I/O for the loader, the pruner, and every discovery backend.
+"""registry.py — registry vocabulary, policy helpers, the finder proposal protocol, and the
+DEPRECATED list/set adapters over the store (ADR 0001 stage 3, step 7).
 
-The registry is a directory of YAML shards (registry/*.yaml), each holding a `sources:` list of
-entries (id · title · url · source · license · topic · format). Hand-curated entries live in
-curated.yaml; every machine backend's output is routed to its own shard by id prefix (SHARDS).
+Tracked state (registry shards, manifest, prune ledger, blocklist, control documents, journal) is
+read and written through scripts/store.py only. This module keeps:
 
-This module is the single home for logic that used to be copy-pasted across five finders — and
-bred the same id-truncation-collision bug three times: known-key dedup sets (existing_keys),
-id uniquification (uniquify_ids), entry emission/appending (append_entries), and validated
-in-place removal (remove_ids). A finder should only contain its query/API logic; everything that
-touches the registry goes through here.
+* the layout vocabulary every caller shares, re-exported from scripts/state_codec.py (routing,
+  normalization, YAML/manifest shard text, eligibility schema) — pure functions, no I/O;
+* git-owned policy loaders (eligibility, host policy; located by store.config_path);
+* the finder proposal protocol: append_entries() stages a finder's entries (and find_github's
+  passes) in NEKAISE_PROPOSAL_FILE during a round's discovery phase, which run_round merges in
+  its discovery transaction;
+* deprecated compatibility adapters with the old list/set API — load_entries, load_manifest_rows,
+  write_manifest_rows, existing_keys, remove_ids, load_prune_ledger_rows, and append_entries
+  outside proposal mode — each one store view or one store transaction (store_broker.run_batch:
+  through the broker of the round or maintenance window it runs in, else under its own writer).
+  No production caller uses the read/rewrite adapters (tests/test_architecture.py); they exist
+  for ad-hoc operator scripts and go away with the stage-4 cutover.
 """
 from __future__ import annotations
 
 import json
 import os
-import re
-import sys
-import zlib
+import warnings
 from pathlib import Path
 
-import yaml
-
-import blocklist
 import ops
+import store
+from state_codec import (  # noqa: F401 — the shared vocabulary, re-exported for callers
+    CORPUS_FIELDS, CURATED, DISCOVERED_PREFIXES, ENTRY_RE, FIELDS, HASH_BUCKETS, OPTIONAL_FIELDS,
+    POINTER_ONLY_LICENSES, PRUNE_LEDGER_BUCKETS, REQUIRED_FIELDS, SHARDS, discovered, emit_entry,
+    is_training_eligible, manifest_shard, manifest_shard_text, norm, parse_yaml,
+    prune_ledger_name, remove_ids_from_text, restriction_for, shard_filename, shard_header, slug,
+    uniquify_ids, validate_eligibility,
+)
 
 ROOT = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
-REG_DIR = ROOT / "registry"
-# The manifest is sharded like the registry (manifest/<shard>.jsonl, patents further split by
-# country) so no single file approaches GitHub's 100MB push limit — the monolithic manifest.jsonl
-# hit 61MB at 75k docs (2026-07-20). All manifest I/O goes through load_manifest_rows /
-# write_manifest_rows below; nothing else may open these files.
-MAN_DIR = ROOT / "manifest"
-# Quality decisions grow independently of the live registry because pruned sources can be
-# rediscovered after transient failures. Keep that append-only provenance in stable hash buckets,
-# just like the heavy patent veins, so no single publication file approaches GitHub's 100 MiB
-# hard limit. The original registry/pruned.jsonl is migration input only.
-PRUNE_LEDGER_BUCKETS = 16
-
-CURATED = "curated.yaml"
-# id prefix -> shard file. Anything not matching is hand-curated (curated.yaml).
-SHARDS = {
-    "oer-": "books.yaml",      # find_books (OAPEN CC-BY books)
-    "arc-": "archive.yaml",    # find_archive (pre-1929 public-domain texts)
-    "gh-": "github.yaml",      # find_github (repo docs + source code)
-    "crawl-": "crawl.yaml",    # crawl_docs (doc-site pages)
-    "ost-": "reports.yaml",    # find_osti + find_sources OSTI backend
-    "eud-": "deliverables.yaml",  # find_openaire (EU Horizon/H2020 project deliverables)
-    "nst-": "nist.yaml",       # find_nist (NIST/NBS technical series via Crossref DOI prefix)
-    "pat-": "patents.yaml",    # find_patents (Google Patents sitemap, building/HVAC CPC classes);
-                               # base name only — _shard_stem adds country + hash buckets
-    "wik-": "wiki.yaml",       # find_wiki (multilingual Wikipedia articles via langlinks/categories)
-    "doa-": "doaj.yaml",       # find_doaj (DOAJ open-access articles, all languages)
-    "sdz-": "austria.yaml",    # find_sdz (Austrian Stadt/Haus der Zukunft building-research reports, German)
-    "kit-": "kitopen.yaml",    # find_kitopen (KIT OAI repository, ddc:690 Bauwesen, German+English)
-    "adm-": "ademe.yaml",      # find_ademe (French energy-agency reports, librairie.ademe.fr)
-    "jpn-": "japan.yaml",      # find_japan (BRI kenken.go.jp + NILIM research reports, Japanese)
-    "ibp-": "ibpsa.yaml",      # find_ibpsa (Building Simulation proceedings)
-    "mod-": "modelica.yaml",   # find_modelica_conf (Modelica Conference proceedings, LiU E-Press 10.3384)
-    "pur-": "purdue.yaml",     # find_purdue (Purdue e-Pubs Herrick conferences: icec/iracc/ihpbc)
-    "zen-": "zenodo.yaml",     # find_zenodo (open CC-licensed records)
-    "wbd-": "worldbank.yaml",  # find_worldbank (World Bank Documents & Reports API, open)
-    "jrc-": "jrc.yaml",        # find_jrc (EU JRC science-for-policy reports via OpenAIRE, cc-by)
-    "guk-": "govuk.yaml",      # find_govuk (UK gov.uk publications via Search/Content APIs, OGL v3)
-    "jst-": "jstage.yaml",     # find_jstage (AIJ journals via the J-STAGE search API, Japanese)
-    "iag-": "iea.yaml",        # find_iea (IEA agency analysis reports, CC BY 4.0, Azure-blob PDFs).
-                               # NOT "iea-": that prefix shadows hand-curated iea-ebc-* ids in
-                               # curated.yaml and the pruner ate 15 of them (2026-07-24, repaired).
-    "bov-": "nordic.yaml",     # find_boverket (Swedish building authority; shard shared by Nordic sources)
-    "sci-": "scielo.yaml",     # find_scielo (SciELO Brazil AEC journals, Portuguese, cc-by)
-    "vnd-": "vendor.yaml",     # find_vendor (manufacturer product literature via sitemaps/listings;
-                               # config registry/vendors.json, license=open by operator decision 2026-08-28)
-    "ojs-": "ojs.yaml",        # find_ojs (CC-BY journals/proceedings on Open Journal Systems, OAI-PMH)
-    "esc-": "escholarship.yaml",  # find_escholarship (LBNL + UC Berkeley CBE via eScholarship GraphQL, CC BY/BY-SA/CC0)
-    "nlr-": "nlr.yaml",        # find_nlr (National Laboratory of the Rockies, ex-NREL, reports via Pure OAI)
-    "ope-": "papers.yaml",     # find_sources OpenAlex backend
-    "oa-": "papers.yaml",
-    "arx-": "papers.yaml",     # find_sources arXiv backend
-}
-DISCOVERED_PREFIXES = tuple(SHARDS)  # the pruner's gate: machine-discovered ids
-REQUIRED_FIELDS = ("id", "title", "url", "source", "license", "topic", "format")
-# Optional metadata is appended gradually by new/updated finders. Existing 100k+ entries stay valid
-# and are not mass-rewritten merely because the schema learned a new field.
-OPTIONAL_FIELDS = (
-    "language", "published_at", "jurisdiction", "document_type", "persistent_id",
-    "license_url", "license_evidence", "rights_verified_at",
-)
-FIELDS = REQUIRED_FIELDS + OPTIONAL_FIELDS
-# Licenses in this set are registry pointers only: their metadata is useful for authorized users,
-# but the loader must never fetch their bytes and the manifest must never describe a local payload.
-POINTER_ONLY_LICENSES = frozenset({"proprietary-internal"})
 # One-shot registration tools that an eligibility restriction may name in `backends` although
 # they have no registry/backends.json entry (they never run in rounds). crawl_docs refuses to
 # register pages whose source a restriction covers.
 MANUAL_TOOLS = frozenset({"crawl_docs"})
-CORPUS_FIELDS = ("corpus_path", "corpus_chars", "corpus_sha256", "cleaner_version")
-ENTRY_RE = re.compile(r"^  - id:\s*['\"]?(.+?)['\"]?\s*$")
-_FIELD_RE = re.compile(r"^    \s*\S")  # continuation lines of one entry
-
-
-def _entry_span(lines: list[str], i: int) -> int:
-    """lines[i] is an entry's `  - id:` line; return one past the entry's last line. Blank lines
-    are part of the entry when more field lines follow — yaml allows blank lines INSIDE a quoted
-    multi-line scalar (a real OSTI title bit us: the naive parser cut the entry in half)."""
-    j = i + 1
-    while j < len(lines):
-        if _FIELD_RE.match(lines[j]):
-            j += 1
-        elif lines[j].strip() == "" and j + 1 < len(lines) and _FIELD_RE.match(lines[j + 1]):
-            j += 1
-        else:
-            break
-    return j
-
-
-def discovered(sid: str) -> bool:
-    return sid.startswith(DISCOVERED_PREFIXES)
+# How long a deprecated adapter waits for a running round (its own writer or read lock).
+LOCK_TIMEOUT = 30.0
 
 
 def load_eligibility(path: Path | None = None) -> dict[str, dict]:
@@ -124,75 +50,14 @@ def load_eligibility(path: Path | None = None) -> dict[str, dict]:
     Restrictions are an overlay, not a destructive registry rewrite: provenance and any existing
     raw/text cache remain intact while policy-blocked material is kept out of future fetches and
     the training-ready corpus.  Missing or malformed policy must fail closed for every consumer.
+    Steps that read data through a view use store.pinned_policy(view) instead.
     """
-    path = Path(path) if path is not None else REG_DIR / "eligibility.json"
+    path = Path(path) if path is not None else store.config_path("eligibility.json", ROOT)
     data = json.loads(path.read_text())
     errors = validate_eligibility(data)
     if errors:
         raise ValueError(f"invalid {path}: {'; '.join(errors)}")
     return data["restrictions"]
-
-
-def validate_eligibility(data: object) -> list[str]:
-    """Return schema errors for registry/eligibility.json."""
-    if not isinstance(data, dict):
-        return ["top level must be an object"]
-    errors: list[str] = []
-    if data.get("version") != 1:
-        errors.append("version must be 1")
-    restrictions = data.get("restrictions")
-    if not isinstance(restrictions, dict):
-        errors.append("restrictions must be an object")
-        return errors
-    for name, rule in restrictions.items():
-        label = f"restrictions.{name}"
-        if not name:
-            errors.append("restriction names must be non-empty")
-        if not isinstance(rule, dict):
-            errors.append(f"{label} must be an object")
-            continue
-        if rule.get("status") != "restricted":
-            errors.append(f"{label}.status must be 'restricted'")
-        match = rule.get("match")
-        if not isinstance(match, dict) or not match:
-            errors.append(f"{label}.match must be a non-empty object")
-        else:
-            unknown = sorted(set(match) - {"id_prefix", "source"})
-            if unknown:
-                errors.append(f"{label}.match has unknown selector(s): {', '.join(unknown)}")
-            for key, value in match.items():
-                if not isinstance(value, str) or not value:
-                    errors.append(f"{label}.match.{key} must be a non-empty string")
-        backends = rule.get("backends")
-        if (not isinstance(backends, list) or not backends
-                or any(not isinstance(v, str) or not v for v in backends)):
-            errors.append(f"{label}.backends must be a non-empty string list")
-        for key in ("reason", "decided_at"):
-            if not isinstance(rule.get(key), str) or not rule[key]:
-                errors.append(f"{label}.{key} must be a non-empty string")
-        urls = rule.get("evidence_urls")
-        if (not isinstance(urls, list) or not urls
-                or any(not isinstance(url, str) or not url.startswith("https://") for url in urls)):
-            errors.append(f"{label}.evidence_urls must be a non-empty HTTPS URL list")
-    return errors
-
-
-def restriction_for(entry: dict, restrictions: dict[str, dict]) -> tuple[str, dict] | None:
-    """Return the first committed restriction matching a registry or manifest record."""
-    for name, rule in restrictions.items():
-        match = rule["match"]
-        if "id_prefix" in match and not str(entry.get("id", "")).startswith(match["id_prefix"]):
-            continue
-        if "source" in match and entry.get("source") != match["source"]:
-            continue
-        return name, rule
-    return None
-
-
-def is_training_eligible(entry: dict, restrictions: dict[str, dict]) -> bool:
-    """Whether an entry may produce fetched and training-ready payload bytes."""
-    return (entry.get("license") not in POINTER_ONLY_LICENSES
-            and restriction_for(entry, restrictions) is None)
 
 
 def load_host_policy() -> dict[str, dict]:
@@ -257,244 +122,6 @@ def is_fetchable(entry: dict, restrictions: dict[str, dict] | None = None) -> bo
     return is_training_eligible(entry, restrictions)
 
 
-# Growing shard families use stable hash buckets. patents-cn.jsonl crossed GitHub's 100MB limit
-# at 152MB (2026-08-05), registry/patents.yaml later hit 89MB (2026-08-17), and the first 16-way
-# CN split plus the vendor monolith were both on course to cross the 80 MiB safety gate in
-# September 2026. crc32 keeps routing stable across runs and platforms and identical between one
-# id's registry YAML shard and manifest JSONL shard. Power-of-two refinements split every old
-# bucket cleanly, which makes future migrations deterministic.
-HASH_BUCKETS = {
-    "patents-cn": 64,
-    "patents-us": 8,
-    "vendor": 16,
-}
-
-
-def _bucketed_stem(stem: str, sid: str) -> str:
-    n = HASH_BUCKETS.get(stem)
-    return f"{stem}-{zlib.crc32(sid.encode()) % n}" if n else stem
-
-
-def _shard_stem(sid: str) -> str | None:
-    """Shard stem for a machine-discovered id (None = hand-curated): the SHARDS route, except
-    patents split further by publication country (pat-us…/pat-cn…), then any growing family in
-    HASH_BUCKETS is split again so no file approaches GitHub's 100MB limit."""
-    for prefix, fname in SHARDS.items():
-        if sid.startswith(prefix):
-            stem = fname.rsplit(".", 1)[0]
-            if stem == "patents":
-                m = re.match(r"pat-([a-z]{2})", sid)
-                if m:
-                    stem = f"patents-{m.group(1)}"
-            return _bucketed_stem(stem, sid)
-    return None
-
-
-def shard_filename(sid: str) -> str:
-    stem = _shard_stem(sid)
-    return f"{stem}.yaml" if stem else CURATED
-
-
-def shard_path(sid: str) -> Path:
-    return REG_DIR / shard_filename(sid)
-
-
-def shard_files() -> list[Path]:
-    cur = REG_DIR / CURATED
-    rest = sorted(p for p in REG_DIR.glob("*.yaml") if p.name != CURATED)
-    return ([cur] if cur.exists() else []) + rest
-
-
-def slug(s: str) -> str:
-    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", (s or "").lower())).strip("-")
-
-
-def norm(s: str) -> str:
-    return re.sub(r"\W+", " ", (s or "").lower()).strip()
-
-
-# PyYAML's pure-Python SafeLoader parses the 251MB registry in ~210 s; libyaml's CSafeLoader does
-# the same in ~42 s (measured 2026-08-28 over all 49 shards, resulting objects identical). Every
-# registry-shard parse goes through here so the whole loop shares that one decision; the fallback
-# keeps hosts without the C extension correct, only slower.
-_YAML_LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
-
-
-def parse_yaml(text: str):
-    """yaml.safe_load semantics, C-accelerated when libyaml is available."""
-    return yaml.load(text, Loader=_YAML_LOADER)
-
-
-def load_entries() -> list[dict]:
-    """Every registry entry, curated shard first."""
-    out: list[dict] = []
-    for p in shard_files():
-        out.extend(parse_yaml(p.read_text()).get("sources") or [])
-    return out
-
-
-def manifest_shard(sid: str) -> str:
-    """Manifest shard stem for an id — identical to the id's registry shard stem (curated.yaml
-    rows land in curated.jsonl), so one doc's YAML and JSONL shards always pair up."""
-    return _shard_stem(sid) or "curated"
-
-
-def manifest_files() -> list[Path]:
-    return sorted(MAN_DIR.glob("*.jsonl")) if MAN_DIR.exists() else []
-
-
-def load_manifest_rows() -> list[dict]:
-    out: list[dict] = []
-    for p in manifest_files():
-        out.extend(json.loads(l) for l in p.read_text().splitlines() if l.strip())
-    return out
-
-
-def write_manifest_rows(rows) -> None:
-    """Rewrite manifest/ from `rows` (any iterable of row dicts): group by shard, sort each shard
-    by (topic, id) for stable diffs, write only the files whose content changed, and delete shard
-    files whose rows are all gone (a fully-pruned vein). This per-shard skip is what keeps
-    build_corpus's every-25-fetches checkpoint cheap and a dig round's diff confined to the
-    shards it actually touched."""
-    groups: dict[str, list[dict]] = {}
-    for r in rows:
-        groups.setdefault(manifest_shard(r["id"]), []).append(r)
-    MAN_DIR.mkdir(exist_ok=True)
-    live = {f"{stem}.jsonl" for stem in groups}
-    for stem, group in groups.items():
-        text = manifest_shard_text(group)
-        p = MAN_DIR / f"{stem}.jsonl"
-        if not p.exists() or p.read_text() != text:
-            ops.atomic_write_text(p, text)
-    for p in manifest_files():
-        if p.name not in live:
-            p.unlink()
-
-
-def manifest_shard_text(group) -> str:
-    """Canonical text of one manifest shard: rows sorted by (topic, id) for stable diffs."""
-    return "".join(json.dumps(r, ensure_ascii=False) + "\n"
-                   for r in sorted(group, key=lambda x: (x.get("topic", ""), x["id"])))
-
-
-def prune_ledger_name(sid: str) -> str:
-    """Stable decision-ledger shard filename for a pruned source id."""
-    if not sid:
-        raise ValueError("prune ledger row requires a non-empty id")
-    return f"pruned-{zlib.crc32(sid.encode()) % PRUNE_LEDGER_BUCKETS}.jsonl"
-
-
-def prune_ledger_path(sid: str) -> Path:
-    """Stable decision-ledger shard for a pruned source id."""
-    return REG_DIR / prune_ledger_name(sid)
-
-
-def prune_ledger_files() -> list[Path]:
-    """Canonical sharded prune-ledger files in numeric bucket order."""
-    paths = []
-    for path in REG_DIR.glob("pruned-*.jsonl"):
-        match = re.fullmatch(r"pruned-(\d+)\.jsonl", path.name)
-        if match:
-            paths.append((int(match.group(1)), path))
-    return [path for _, path in sorted(paths)]
-
-
-def load_prune_ledger_rows() -> list[dict]:
-    """Load all prune decisions, accepting the legacy monolith only as migration input.
-
-    If an interrupted migration leaves both layouts, the monolith remains authoritative until it
-    is removed by write_prune_ledger_rows(), so rerunning the migration cannot duplicate rows.
-    """
-    legacy = REG_DIR / "pruned.jsonl"
-    paths = [legacy] if legacy.exists() else prune_ledger_files()
-    out: list[dict] = []
-    for path in paths:
-        out.extend(json.loads(line) for line in path.read_text().splitlines() if line.strip())
-    return out
-
-
-def write_prune_ledger_rows(rows) -> dict[str, int]:
-    """Rewrite prune decision provenance into stable shards and retire the legacy monolith.
-
-    New shards are atomically replaced before obsolete files are removed. This is principally the
-    migration/recovery path; routine pruning appends directly through prune_ledger_path().
-    """
-    groups: dict[Path, list[dict]] = {}
-    for row in rows:
-        groups.setdefault(prune_ledger_path(row.get("id")), []).append(row)
-    REG_DIR.mkdir(exist_ok=True)
-    live = set(groups)
-    for path, group in sorted(groups.items()):
-        text = "".join(
-            json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n" for row in group
-        )
-        ops.atomic_write_text(path, text)
-    for path in prune_ledger_files():
-        if path not in live:
-            path.unlink()
-    legacy = REG_DIR / "pruned.jsonl"
-    if legacy.exists():
-        legacy.unlink()
-    return {path.name: len(group) for path, group in sorted(groups.items())}
-
-
-def existing_keys(include_blocklist: bool = True):
-    """(urls, titles, ids) already known to the corpus, as whole in-memory sets.
-
-    DEPRECATED compatibility adapter (ADR 0001 stage 3): finders ask scripts/dedup.py instead,
-    which sends candidate batches to the store's known() and never materializes these sets
-    (tests/test_dedup.py forbids finders from calling this). urls includes the pruned-URL
-    blocklist by default so discovery never re-churns."""
-    if include_blocklist and os.environ.get("NEKAISE_DISABLE_INDEX") != "1":
-        try:
-            import corpus_index
-            return corpus_index.existing_keys(REG_DIR, MAN_DIR, blocklist.PATH)
-        except Exception as exc:
-            # The index is an acceleration layer, never a correctness dependency. A corrupt DB,
-            # unsupported filesystem, or interrupted rebuild falls back to canonical files.
-            if os.environ.get("NEKAISE_INDEX_DEBUG") == "1":
-                print(f"index fallback: {exc}", file=sys.stderr)
-    urls, titles, ids = set(), set(), set()
-    for r in load_manifest_rows():
-        urls.add(blocklist.normalize(r.get("url") or ""))
-        titles.add(norm(r.get("title")))
-        ids.add(r.get("id") or "")
-    for e in load_entries():
-        urls.add(blocklist.normalize(e.get("url") or ""))
-        titles.add(norm(e.get("title")))
-        ids.add(e.get("id") or "")
-    if include_blocklist:
-        urls |= blocklist.load()
-    return urls, titles, ids
-
-
-def uniquify_ids(entries: list[dict], reserved: set) -> None:
-    """Suffix -2/-3/… onto any id already in `reserved` (registry + manifest ids) or repeated
-    within the batch. Mutates entries and grows `reserved`. Truncated title slugs WILL collide
-    across runs — this is the guard that keeps a collision from silently overwriting a doc."""
-    for h in entries:
-        base, i = h["id"], 2
-        while h["id"] in reserved:
-            h["id"] = f"{base[:50]}-{i}"
-            i += 1
-        reserved.add(h["id"])
-
-
-def emit_entry(e: dict) -> str:
-    d = yaml.safe_dump(
-        [{k: e[k] for k in FIELDS if k in e and e[k] not in (None, "")}],
-        sort_keys=False,
-        allow_unicode=True,
-    )
-    return "".join(("  " + ln + "\n") if ln else "\n" for ln in d.splitlines())
-
-
-def shard_header(stem: str) -> str:
-    """Opening lines of a newly created machine shard."""
-    return (f"# {stem} — machine-appended shard (see AGENTS.md); "
-            f"prune_corpus edits it in place\nsources:\n")
-
-
 PROPOSAL_ENV = "NEKAISE_PROPOSAL_FILE"
 
 
@@ -546,95 +173,122 @@ def stage_github_passes(records: dict) -> bool:
 
 
 def append_entries(entries: list[dict]) -> dict[str, int]:
-    """Route entries to their shards by id prefix and append, validating each shard afterwards
-    (parses + count grew by exactly the group size). Returns {shard filename: appended}.
+    """A finder's output. During a round's discovery phase run_round sets NEKAISE_PROPOSAL_FILE
+    separately for each finder: entries are then atomically staged there as JSON and the round
+    merges every successful proposal in its discovery transaction (the protocol; not deprecated).
 
-    During a parallel discovery phase, run_round sets NEKAISE_PROPOSAL_FILE separately for each
-    finder. In that mode entries are atomically staged as JSON instead of mutating shared YAML;
-    the control plane later deduplicates and merges every successful proposal deterministically.
-    """
+    Outside proposal mode (a standalone `--append`) this is a deprecated adapter: ONE store
+    transaction inserting the entries (store insert_entries: routed, validated, appended exactly
+    as the legacy writer did; an id that already exists is refused). Returns {shard filename:
+    appended}."""
     if proposal_name := os.environ.get(PROPOSAL_ENV):
         proposal = Path(proposal_name)
         doc = read_proposal(proposal)
         doc["entries"].extend(entries)
         _write_proposal(proposal, doc)
         return {"proposal.json": len(entries)}
-
-    prior_signature = None
-    try:
-        import corpus_index
-        prior_signature = corpus_index.source_signature(REG_DIR, MAN_DIR, blocklist.PATH)
-    except Exception:
-        pass
-    groups: dict[Path, list[dict]] = {}
-    for e in entries:
-        groups.setdefault(shard_path(e["id"]), []).append(e)
-    REG_DIR.mkdir(exist_ok=True)
+    entries = [dict(e) for e in entries]
+    if entries:
+        _batch("append", lambda view, batch: batch.insert_entries(entries))
     counts: dict[str, int] = {}
-    for path, group in sorted(groups.items()):
-        before = len(parse_yaml(path.read_text()).get("sources") or []) if path.exists() else 0
-        block = "".join(emit_entry(e) for e in group)
-        if path.exists():
-            old_text = path.read_text()
-            ops.atomic_write_text(path, old_text + block)
-        else:
-            ops.atomic_write_text(path, shard_header(path.stem) + block)
-        after = parse_yaml(path.read_text()).get("sources") or []
-        if len(after) != before + len(group):
-            raise RuntimeError(f"append corrupted {path.name}: {before}+{len(group)} != {len(after)}")
-        counts[path.name] = len(group)
-    if prior_signature is not None:
-        try:
-            corpus_index.record_appended_entries(
-                REG_DIR, MAN_DIR, blocklist.PATH, entries, prior_signature,
-            )
-        except Exception:
-            pass  # cache only; the next lookup safely rebuilds
-    return counts
+    for e in entries:
+        name = shard_filename(e["id"])
+        counts[name] = counts.get(name, 0) + 1
+    return dict(sorted(counts.items()))
 
 
-def remove_ids(drop: set) -> int:
-    """Delete entries by id across all shards IN PLACE, preserving everything else byte-for-byte
-    (comments, hand formatting). Position-agnostic — an entry is removed because its id is in
-    `drop`, never because of where it sits. Validates each rewritten shard (parses, exactly the
-    dropped ids gone, count arithmetic holds) BEFORE writing; raises on any mismatch."""
-    removed_total = 0
-    for path in shard_files():
-        new_text, removed = remove_ids_from_text(path.read_text(), drop, path.name)
-        if not removed:
-            continue
-        ops.atomic_write_text(path, new_text)
-        removed_total += removed
-    return removed_total
+# --- deprecated list/set adapters over the store ---------------------------------------------------
+
+def _deprecated(name: str, instead: str) -> None:
+    warnings.warn(f"registry.{name} is a deprecated adapter over the store; use {instead}",
+                  DeprecationWarning, stacklevel=3)
 
 
-def remove_ids_from_text(old_text: str, drop: set, label: str = "shard") -> tuple[str, int]:
-    """remove_ids for one shard's text: (validated new text, removed count). Pure — no I/O."""
-    lines = old_text.splitlines(keepends=True)
-    out: list[str] = []
-    removed = 0
-    i = 0
-    while i < len(lines):
-        m = ENTRY_RE.match(lines[i])
-        if not m:
-            out.append(lines[i])
-            i += 1
-            continue
-        j = _entry_span(lines, i)
-        if m.group(1) in drop:
-            removed += 1
-        else:
-            out.extend(lines[i:j])
-        i = j
-    if not removed:
-        return old_text, 0
-    new_text = "".join(out)
-    entries = parse_yaml(new_text).get("sources") or []
-    old_count = len(parse_yaml(old_text).get("sources") or [])
-    leftover = {e["id"] for e in entries} & drop
-    if leftover:
-        raise RuntimeError(f"{label}: failed to remove {len(leftover)} ids, "
-                           f"e.g. {sorted(leftover)[:3]}")
-    if len(entries) != old_count - removed:
-        raise RuntimeError(f"{label}: count mismatch {old_count} - {removed} != {len(entries)}")
-    return new_text, removed
+def _store():
+    return store.open(root=ROOT)
+
+
+def _batch(step: str, body):
+    import store_broker  # store_broker imports store only; kept lazy for finder start-up time
+
+    return store_broker.run_batch(_store(), step, body, timeout=LOCK_TIMEOUT)
+
+
+def _scan_all(table: "store.Table", *, order: str = "key") -> list[dict]:
+    with _store().read(timeout=LOCK_TIMEOUT) as view:
+        out, cursor = [], None
+        while True:
+            page = view.scan(table, cursor=cursor, limit=store.MAX_PAGE, order=order)
+            out.extend(page.rows)
+            if (cursor := page.next_cursor) is None:
+                return out
+
+
+def load_entries() -> list[dict]:
+    """DEPRECATED: every registry entry, in id order (the store keeps no registry file order;
+    the legacy reader returned curated.yaml first, then shard files by name)."""
+    _deprecated("load_entries", "a store view's scan(Table.ENTRIES)")
+    return _scan_all(store.Table.ENTRIES)
+
+
+def load_manifest_rows() -> list[dict]:
+    """DEPRECATED: every manifest row in the legacy order (shard files by name, (topic, id)
+    within one) — scan(Table.MANIFEST, order="legacy")."""
+    _deprecated("load_manifest_rows", "a store view's scan(Table.MANIFEST, order='legacy')")
+    return _scan_all(store.Table.MANIFEST, order="legacy")
+
+
+def write_manifest_rows(rows, *, reason: str = "write_manifest_rows (deprecated adapter)") -> None:
+    """DEPRECATED: `rows` becomes the WHOLE manifest — replacement semantics, never an upsert
+    (ADR 0001 section 7, stage 3): one store transaction replace_manifest(rows, reason=reason);
+    rows left out are deleted with tombstones carrying `reason`."""
+    _deprecated("write_manifest_rows", "upsert_manifest / update_manifest_fields / "
+                "delete_manifest (or replace_manifest) in a store transaction")
+    rows = [dict(r) for r in rows]
+    _batch("manifest", lambda view, batch: batch.replace_manifest(rows, reason=reason))
+
+
+def remove_ids(drop: set, *, reason: str = "remove_ids (deprecated adapter)") -> int:
+    """DEPRECATED: delete registry entries by id (one store transaction delete_entries; the file
+    store cuts their blocks in place, every other byte kept). Returns how many existed."""
+    _deprecated("remove_ids", "delete_entries in a store transaction")
+    ids = sorted(i for i in drop if isinstance(i, str) and i)
+    if not ids:
+        return 0
+    _, results = _batch("remove", lambda view, batch: batch.delete_entries(ids, reason=reason))
+    return results[0] if results else 0
+
+
+def load_prune_ledger_rows() -> list[dict]:
+    """DEPRECATED: every prune decision (the store's ledger table in its scan order — canonical
+    JSON, not file order)."""
+    _deprecated("load_prune_ledger_rows", "a store view's scan(Table.LEDGER)")
+    return _scan_all(store.Table.LEDGER)
+
+
+def existing_keys(include_blocklist: bool = True):
+    """DEPRECATED: (urls, titles, ids) already known to the corpus, as whole in-memory sets —
+    normalized URLs and titles of every manifest row and registry entry, plus the pruned-URL
+    blocklist by default. Finders ask scripts/dedup.py (batched store known()) instead."""
+    _deprecated("existing_keys", "scripts/dedup.py (store known())")
+    urls, titles, ids = set(), set(), set()
+    with _store().read(timeout=LOCK_TIMEOUT) as view:
+        for table in (store.Table.MANIFEST, store.Table.ENTRIES):
+            cursor = None
+            while True:
+                page = view.scan(table, fields=("id", "url", "title"), cursor=cursor,
+                                 limit=store.MAX_PAGE)
+                for r in page.rows:
+                    urls.add(store.norm_url(r.get("url")))
+                    titles.add(norm(r.get("title")))
+                    ids.add(r.get("id") or "")
+                if (cursor := page.next_cursor) is None:
+                    break
+        if include_blocklist:
+            cursor = None
+            while True:
+                page = view.scan(store.Table.BLOCKLIST, cursor=cursor, limit=store.MAX_PAGE)
+                urls.update(r["url"] for r in page.rows)
+                if (cursor := page.next_cursor) is None:
+                    break
+    return urls, titles, ids

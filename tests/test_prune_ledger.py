@@ -40,7 +40,7 @@ def test_prune_ledger_rows_append_the_legacy_bytes(tmp_path, monkeypatch):
     legacy, new = tmp_path / "legacy", tmp_path / "new"
     for root in (legacy, new):
         (root / "registry").mkdir(parents=True)
-    monkeypatch.setattr(registry, "REG_DIR", legacy / "registry")
+    monkeypatch.setattr(registry, "ROOT", legacy)  # tests/legacy_registry.py follows it
     monkeypatch.setattr(ops, "WORKSPACE", legacy / "workspace")
     legacy_pipeline.legacy_write_prune_ledger(rows, drop, {"https://example.org/3.pdf"})
     st = store.FileStore(new)
@@ -58,9 +58,14 @@ def test_prune_ledger_rows_append_the_legacy_bytes(tmp_path, monkeypatch):
 def test_legacy_prune_ledger_migrates_without_losing_or_duplicating_rows(
     tmp_path, monkeypatch,
 ):
+    """The retired migration (tests/legacy_registry.py) and the store: the store reads the legacy
+    monolith and the sharded layout as the same ledger."""
+    import legacy_registry
+    import store
+
     reg = tmp_path / "registry"
     reg.mkdir()
-    monkeypatch.setattr(registry, "REG_DIR", reg)
+    monkeypatch.setattr(registry, "ROOT", tmp_path)
     rows = [
         {"id": f"vnd-test-{i}", "url": f"https://example.org/{i}.pdf", "reason": "thin"}
         for i in range(64)
@@ -68,17 +73,21 @@ def test_legacy_prune_ledger_migrates_without_losing_or_duplicating_rows(
     legacy = reg / "pruned.jsonl"
     legacy.write_text("".join(json.dumps(row) + "\n" for row in rows))
 
-    counts = registry.write_prune_ledger_rows(registry.load_prune_ledger_rows())
+    def ledger():
+        with store.FileStore(tmp_path).read() as view:
+            return sorted(view.scan(store.Table.LEDGER, limit=store.MAX_PAGE).rows,
+                          key=lambda row: row["id"])
+
+    assert ledger() == sorted(rows, key=lambda row: row["id"])  # the monolith, as migration input
+    counts = legacy_registry.write_prune_ledger_rows(legacy_registry.load_prune_ledger_rows())
 
     assert not legacy.exists()
     assert len(counts) > 1
     assert sum(counts.values()) == len(rows)
-    assert sorted(registry.load_prune_ledger_rows(), key=lambda row: row["id"]) == sorted(
-        rows, key=lambda row: row["id"]
-    )
-    for path in registry.prune_ledger_files():
+    assert ledger() == sorted(rows, key=lambda row: row["id"])
+    for path in legacy_registry.prune_ledger_files():
         assert all(
-            registry.prune_ledger_path(row["id"]) == path
+            legacy_registry.prune_ledger_path(row["id"]) == path
             for row in map(json.loads, path.read_text().splitlines())
         )
 

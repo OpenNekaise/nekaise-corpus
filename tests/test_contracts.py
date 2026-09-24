@@ -27,13 +27,12 @@ def test_oversized_control_files_enforces_headroom(tmp_path, monkeypatch):
 def test_prune_ledger_contract_checks_layout_fields_and_bucket(tmp_path, monkeypatch):
     registry_dir = tmp_path / "registry"
     registry_dir.mkdir()
-    monkeypatch.setattr(check_contracts.registry, "REG_DIR", registry_dir)
     sid = "ost-example"
     wrong = next(
         registry_dir / f"pruned-{bucket}.jsonl"
         for bucket in range(check_contracts.registry.PRUNE_LEDGER_BUCKETS)
         if registry_dir / f"pruned-{bucket}.jsonl"
-        != check_contracts.registry.prune_ledger_path(sid)
+        != registry_dir / check_contracts.registry.prune_ledger_name(sid)
     )
     wrong.write_text(
         '{"id":"ost-example","url":"https://example.org/a.pdf",'

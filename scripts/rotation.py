@@ -22,7 +22,7 @@ its discovery transaction (run_round, using `advanced` / `with_next`), and the s
 `advance` / `set_next` below run one store transaction (store_broker.run_batch): through the
 broker of the round or maintenance window they run in, otherwise under their own writer, which
 waits at most LOCK_TIMEOUT seconds for a running round instead of interleaving with it. Reads (`load`, `next`,
-`show`) stay plain file reads so they never wait for a round.
+`show`) are unfenced store reads (store.FileStore.peek) so they never wait for a round.
 """
 from __future__ import annotations
 
@@ -35,13 +35,14 @@ from pathlib import Path
 import store
 
 ROOT = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
-PATH = ROOT / "registry" / "rotation.json"
 LOCK_TIMEOUT = 30.0
 MAX_POINTER = 4096
 
 
 def load() -> dict:
-    return json.loads(PATH.read_text()) if PATH.exists() else {}
+    """Every rotation entry, read UNFENCED (store.FileStore.peek: no lock, may observe a round in
+    flight) — for display; pointer moves read their transaction's view."""
+    return store.open(root=ROOT).peek("rotation")
 
 
 def pointer_arg(entry: dict) -> str:
@@ -163,7 +164,7 @@ def _update(name: str, change) -> str:
         batch.rotation_set(name, entry)
         return entry
 
-    entry, _ = store_broker.run_batch(store.open(root=PATH.parent.parent), "rotation", body,
+    entry, _ = store_broker.run_batch(store.open(root=ROOT), "rotation", body,
                                       timeout=LOCK_TIMEOUT)
     return pointer_arg(entry)
 

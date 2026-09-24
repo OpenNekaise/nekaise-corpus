@@ -386,23 +386,42 @@ def test_round_rollback_settles_the_prune_quarantine_for_old_and_new_documents(
     assert ("state_rolled_back", {}) in events
 
 
+def _recover(entry: str, monkeypatch, root: Path, run_id: str) -> None:
+    """Recover an interrupted round through one of the shared routine's entrypoints:
+    `run_round --recover`, or the maintainer's automatic recovery inside a maintenance window
+    (its window writer; scripts/round_recovery.py either way)."""
+    if entry == "recover":
+        monkeypatch.setattr(sys, "argv", ["run_round.py", "--recover", run_id])
+        assert run_round.main() == 0
+        return
+    import maintainer
+    monkeypatch.setattr(maintainer, "ROOT", root)
+    st = store.FileStore(root)
+    with st.writer() as w, maintainer.window_writer(st, w):
+        assert maintainer.recover_pending_round() == run_id
+
+
+RECOVERED = {"recover": ("run_recovered", {}),
+             "maintainer": ("run_recovered", {"recovered_by": "ai_maintainer"})}
+
+
+@pytest.mark.parametrize("entry", ["recover", "maintainer"])
 @pytest.mark.parametrize("crash", [None, "moving", "moved", "after"],
                          ids=["committed", "moving", "moved", "after-commit"])
 def test_recover_settles_the_prune_quarantine_of_an_interrupted_round(tmp_path, monkeypatch,
-                                                                      crash):
+                                                                      crash, entry):
     root, meta, files, events = _pre_round(tmp_path, monkeypatch)
     with pytest.raises(KeyboardInterrupt):  # the round process itself dies: no rollback
         _round(monkeypatch, root, crash=crash, fail_with=KeyboardInterrupt)
     assert run_round.ops.StateSnapshot.pending() == ["rnd-p"]
     assert quarantined(root)
-    monkeypatch.setattr(sys, "argv", ["run_round.py", "--recover", "latest"])
-    assert run_round.main() == 0
+    _recover(entry, monkeypatch, root, "rnd-p")
     assert tracked(root) == meta
     assert {k: v for k, v in artifacts(root).items() if k in files} == files
     assert set(artifacts(root)) - set(files) <= ({"raw/osti/ost-new.pdf"}
                                                   if crash == "moving" else set())
     assert not quarantined(root) and not run_round.ops.StateSnapshot.pending()
-    assert ("run_recovered", {}) in events
+    assert RECOVERED[entry] in events
 
 
 def test_an_unfinished_settlement_keeps_the_round_recoverable(tmp_path, monkeypatch, capsys):
@@ -936,7 +955,7 @@ def _checkpoint_round(monkeypatch, root, fail_with):
     return run_round.main()
 
 
-@pytest.mark.parametrize("entry", ["rollback", "recover"])
+@pytest.mark.parametrize("entry", ["rollback", "recover", "maintainer"])
 def test_a_crash_inside_a_later_checkpoint_commit_is_recovered_before_the_snapshot(
         tmp_path, monkeypatch, entry):
     root, meta, files, events = _pre_round(tmp_path, monkeypatch)
@@ -947,8 +966,7 @@ def test_a_crash_inside_a_later_checkpoint_commit_is_recovered_before_the_snapsh
         with pytest.raises(KeyboardInterrupt):  # the round process itself dies
             _checkpoint_round(monkeypatch, root, KeyboardInterrupt)
         assert run_round.ops.StateSnapshot.pending() == ["rnd-c"]
-        monkeypatch.setattr(sys, "argv", ["run_round.py", "--recover", "rnd-c"])
-        assert run_round.main() == 0
+        _recover(entry, monkeypatch, root, "rnd-c")
     assert tracked(root) == meta
     assert not store.FileStore(root).pending_transactions()
     assert not run_round.ops.StateSnapshot.pending()

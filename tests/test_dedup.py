@@ -21,6 +21,7 @@ import find_github
 import find_ibpsa
 import find_osti
 import find_scielo
+import legacy_registry
 import registry
 import run_round
 import store
@@ -73,9 +74,7 @@ def corpus(tmp_path, monkeypatch):
             "".join(json.dumps({**r, "status": "ok"}) + "\n" for r in rows))
     (root / "pruned_urls.txt").write_text("".join(u + "\n" for u in BLOCKED))
     # the legacy path reads these module globals; the store path reads the root
-    monkeypatch.setattr(registry, "REG_DIR", root / "registry")
-    monkeypatch.setattr(registry, "MAN_DIR", root / "manifest")
-    monkeypatch.setattr(blocklist, "PATH", root / "pruned_urls.txt")
+    monkeypatch.setattr(registry, "ROOT", root)  # tests/legacy_registry.py follows it
     monkeypatch.setattr(dedup, "_default_root", lambda: root)
     return root
 
@@ -84,7 +83,7 @@ class LegacyKeys:
     """Exactly the pre-conversion finder code: existing_keys() sets + registry.uniquify_ids."""
 
     def __init__(self):
-        self.urls, self.titles, self.ids = registry.existing_keys()
+        self.urls, self.titles, self.ids = legacy_registry.existing_keys()
 
     def prefetch(self, **_candidates):
         pass
@@ -207,8 +206,9 @@ def run_github(monkeypatch, tmp_path, capsys):
         # its blocklisted .tex proves an earlier walk; the requested man-page pass is still due
         {"repo": "o/fresh", "license": "open", "topic": "urban", "docs": ["tex", "man"],
          "include": ["doc/"]}])
-    passes = tmp_path / f"passes-{len(list(tmp_path.glob('passes-*')))}.json"
-    monkeypatch.setattr(find_github, "PASSES", passes)
+    passes = tmp_path / f"passes-{len(list(tmp_path.glob('passes-*')))}"  # a store root per run
+    passes.mkdir()
+    monkeypatch.setattr(find_github, "ROOT", passes)
     walked = []
 
     def from_repo(spec):
@@ -229,7 +229,7 @@ def run_github(monkeypatch, tmp_path, capsys):
     monkeypatch.setattr(sys, "argv", ["find_github.py", "--append"])
     find_github.main()
     return {"appended": appended, "walked": walked, "out": capsys.readouterr().out,
-            "passes": find_github.load_passes(passes)}
+            "passes": find_github.load_passes(root=passes)}
 
 
 SCENARIOS = [run_osti, run_ibpsa, run_ibpsa_capped, run_scielo, run_crawl_docs, run_github]
@@ -290,7 +290,7 @@ def test_keys_membership_equals_legacy_sets(corpus, monkeypatch, index):
         monkeypatch.setenv("NEKAISE_DISABLE_INDEX", "1")
     urls, titles, ids = candidates()
     monkeypatch.delenv("NEKAISE_DISABLE_INDEX", raising=False)
-    legacy = registry.existing_keys()  # the production (indexed) legacy sets
+    legacy = legacy_registry.existing_keys()  # the production (indexed) legacy sets
     if not index:
         monkeypatch.setenv("NEKAISE_DISABLE_INDEX", "1")
     keys = dedup.open_keys(corpus)
@@ -337,7 +337,7 @@ def test_uniquify_matches_registry_uniquify_ids(corpus):
     batch = [{"id": "ost-heat-pump-study"}, {"id": "ost-heat-pump-study"},
              {"id": "ost-known-title"}, {"id": "x" * 60}, {"id": "x" * 60}, {"id": "fresh"}]
     legacy = [dict(e) for e in batch]
-    registry.uniquify_ids(legacy, registry.existing_keys()[2])
+    registry.uniquify_ids(legacy, legacy_registry.existing_keys()[2])
     keys = dedup.open_keys(corpus)
     ours = [dict(e) for e in batch]
     keys.uniquify_ids(ours)

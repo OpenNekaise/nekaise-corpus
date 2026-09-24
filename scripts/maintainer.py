@@ -25,6 +25,7 @@ from pathlib import Path
 from typing import Any
 
 import ops
+import round_recovery
 import run_round
 import store
 import store_broker
@@ -189,22 +190,7 @@ def adopt_agent_children():
         libc.prctl(36, previous.value, 0, 0, 0)
 
 
-def descendants(parent: int) -> set[int]:
-    children: dict[int, list[int]] = {}
-    for stat in Path("/proc").glob("[0-9]*/stat"):
-        try:
-            fields = stat.read_text().rsplit(") ", 1)[1].split()
-            children.setdefault(int(fields[1]), []).append(int(stat.parent.name))
-        except (OSError, ValueError, IndexError):
-            continue  # Processes can exit during enumeration.
-    found: set[int] = set()
-    pending = list(children.get(parent, []))
-    while pending:
-        pid = pending.pop()
-        if pid not in found:
-            found.add(pid)
-            pending.extend(children.get(pid, []))
-    return found
+descendants = round_recovery.descendants  # shared with the round recovery routine
 
 
 def stop_process_group(process: subprocess.Popen, *, existing: set[int], grace: float = 2) -> None:
@@ -298,20 +284,27 @@ def git(*args: str, timeout: int = 300) -> tuple[int, str]:
 
 
 def recover_pending_round() -> str | None:
-    """Restore one interrupted round while the caller owns the canonical round lock."""
+    """Recover one interrupted round with the shared routine (scripts/round_recovery.py) under
+    the canonical round lock: the open maintenance window's writer, or (outside a window) a
+    writer taken here. Stops the round's orphaned processes, resolves store transactions, keeps a
+    round that already committed (discarding its snapshot) or restores its snapshot, settles its
+    prune quarantine, then discards the snapshot. Raises, keeping the snapshot, on any failure."""
     pending = ops.StateSnapshot.pending()
     if not pending:
         return None
     if len(pending) != 1:
         raise RuntimeError(f"refusing ambiguous recovery of {len(pending)} snapshots: {pending}")
     run_id = pending[0]
-    snapshot = ops.StateSnapshot.open(run_id, root=ROOT)
-    code, diagnostics = git("restore", "--staged", "--", *run_round.SNAPSHOT_PATHS)
-    if code != 0:
-        raise RuntimeError(f"could not unstage interrupted round state: {diagnostics}")
-    snapshot.restore()
-    snapshot.discard()
-    ops.run_event(run_id, "run_recovered", recovered_by="ai_maintainer")
+    with ExitStack() as stack:
+        if _WINDOW_WRITER is not None:
+            st, writer = _WINDOW_WRITER
+        else:
+            st = store.FileStore(ROOT)
+            writer = stack.enter_context(st.writer(timeout=0))
+        outcome = round_recovery.recover_round(st, writer, run_id, root=ROOT,
+                                               snapshot_paths=run_round.SNAPSHOT_PATHS)
+    fields = {"committed": outcome.commit} if outcome.action == "kept_committed" else {}
+    ops.run_event(run_id, "run_recovered", recovered_by="ai_maintainer", **fields)
     return run_id
 
 
@@ -566,9 +559,10 @@ def backend_control_state() -> tuple[dict[str, Any], dict[str, Any], str]:
                        for name, state in view.backend_state_get().items()}
             return config, runtime, "store_view"
     except (RuntimeError, OSError, ValueError, TypeError) as exc:
-        config = json.loads((ROOT / "registry" / "backends.json").read_text())
-        path = ROOT / "registry" / store.BACKEND_STATE_FILE
-        runtime = json.loads(path.read_text()) if path.exists() else {}
+        # unfenced reads of the same two documents (store.FileStore.peek / config_documents)
+        st = store.FileStore(ROOT)
+        config = st.config_documents().get("backends.json", {})
+        runtime = st.peek("backend_state")
         return config, runtime, f"files ({type(exc).__name__}: {exc})"[:300]
 
 

@@ -21,7 +21,6 @@ raise the limit.
 from __future__ import annotations
 
 import argparse
-import json
 import os
 import re
 import sys
@@ -32,8 +31,8 @@ import requests
 import yaml
 
 import dedup
-import ops
 import registry
+import store
 from store import Prefix, Table
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
@@ -44,7 +43,7 @@ API = "https://api.github.com"
 # github_passes.json: in a round the finder stages it in its proposal and run_round writes it
 # through the store with the merge; a failed round's snapshot rolls it back with the proposals.
 PASSES_DOC = "github_passes.json"
-PASSES = registry.REG_DIR / PASSES_DOC
+ROOT = registry.ROOT  # the repository whose store a standalone --append records passes in
 
 # Curated, clearly-permissive (BSD / MIT / Apache) building-energy repos. Extend freely.
 #   repo     owner/name on github
@@ -343,12 +342,12 @@ def _bucket(spec: dict) -> str:
     return f"gh_{registry.slug(spec['repo'].split('/')[-1])}"
 
 
-def load_passes(path: Path | None = None, *, view=None) -> dict[str, dict[str, str]]:
-    """Completed passes: the store's control document when a view is given, else the file."""
+def load_passes(*, view=None, root: Path | None = None) -> dict[str, dict[str, str]]:
+    """Completed passes: the store's control document, from `view` when given, else read
+    unfenced from the store at `root` (default ROOT)."""
     if view is not None:
         return view.control_get(PASSES_DOC) or {}
-    path = path or PASSES
-    return json.loads(path.read_text()) if path.exists() else {}
+    return store.open(root=root or ROOT).peek("control").get(PASSES_DOC) or {}
 
 
 def pass_records(specs: list[dict], today: str) -> dict[str, dict[str, str]]:
@@ -360,20 +359,26 @@ def pass_records(specs: list[dict], today: str) -> dict[str, dict[str, str]]:
     return records
 
 
-def record_passes(specs: list[dict], today: str, path: Path | None = None) -> None:
+def record_passes(specs: list[dict], today: str, root: Path | None = None) -> None:
     """Mark every requested doc kind of successfully walked repos complete (empty or not).
 
     Inside a round's discovery phase (proposal mode) nothing shared is written: the records are
     staged in this finder's proposal and run_round applies them to the store only if the finder
-    succeeds. A standalone --append writes the passes file, like registry.append_entries."""
+    succeeds. A standalone --append records them in ONE store transaction (control_set; through
+    the broker of a round or maintenance window it runs in, else under its own writer), and
+    records nothing when every pass was already recorded."""
     records = pass_records(specs, today)
     if not records or registry.stage_github_passes(records):
         return
-    path = path or PASSES
-    current = load_passes(path)
-    passes = registry.merge_github_passes(current, records)
-    if passes != current:
-        ops.atomic_write_text(path, json.dumps(passes, indent=2, sort_keys=True) + "\n")
+    import store_broker
+
+    def body(view, batch):
+        current = view.control_get(PASSES_DOC) or {}
+        passes = registry.merge_github_passes(current, records)
+        if passes != current:
+            batch.control_set(PASSES_DOC, passes)
+
+    store_broker.run_batch(store.open(root=root or ROOT), "github-passes", body)
 
 
 def missing_doc_kinds(spec: dict, formats: dict[str, set[str]],

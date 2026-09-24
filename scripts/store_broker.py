@@ -454,7 +454,7 @@ class StepSession:
 def shard_batches(ids, size: int) -> list[list[str]]:
     """`ids` in manifest shard order (then id), cut into batches of at most `size`: bounded
     transactions that each touch few manifest shards."""
-    ordered = sorted(dict.fromkeys(ids), key=lambda sid: (store.registry.manifest_shard(sid), sid))
+    ordered = sorted(dict.fromkeys(ids), key=lambda sid: (store.codec.manifest_shard(sid), sid))
     return [ordered[i:i + size] for i in range(0, len(ordered), size)]
 
 

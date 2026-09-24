@@ -133,9 +133,7 @@ def store_discovery(st, results, selected, run_id="rnd"):
 
 
 def legacy_discovery_run(root, results, selected, monkeypatch):
-    monkeypatch.setattr(registry, "REG_DIR", root / "registry")
-    monkeypatch.setattr(registry, "MAN_DIR", root / "manifest")
-    monkeypatch.setattr(blocklist, "PATH", root / "pruned_urls.txt")
+    monkeypatch.setattr(registry, "ROOT", root)  # tests/legacy_registry.py follows it
     backends = {k: copy.deepcopy(v) for k, v in BACKENDS.items() if not k.startswith("_")}
     rotation_state = json.loads((root / "registry" / "rotation.json").read_text())
     successful = run_round.check_finder_results(results, backends, rotation_state, "legacy")

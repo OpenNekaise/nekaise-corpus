@@ -65,9 +65,8 @@ from enum import Enum
 from pathlib import Path
 from typing import Any, Iterable, Iterator, Mapping, Sequence
 
-import blocklist as blocklist_mod
 import ops
-import registry
+import state_codec as codec
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PAGE = 2000
@@ -85,6 +84,21 @@ BACKEND_STATE_FILE = "backend_state.json"
 # Runtime control documents: whole JSON objects that the loop maintains (not configuration, not
 # rows), stored and replicated as-is. github_passes.json records find_github's completed passes.
 CONTROL_FILES = ("github_passes.json",)
+# The tracked layout the file store owns, relative to the repository root: what a round's git
+# snapshot copies and its commit stages (run_round), and what backups archive. Nothing outside the
+# store and its import/export/backup tooling spells these paths (tests/test_architecture.py).
+TRACKED_PATHS = ("registry", "manifest", "pruned_urls.txt")
+# Tables small enough to read unfenced for display and diagnostics (FileStore.peek).
+PEEK_TABLES = ("rotation", "blocklist", "backend_state", "control")
+
+
+def config_path(name: str, root: Path = ROOT) -> Path:
+    """Where a git-owned configuration document (CONFIG_FILES) lives. Policy stays in git after
+    the stage-4 cutover (ADR 0001: "Git owns code and policy"), so its schema-owning loaders read
+    it directly; they locate it here and nowhere else. Mutable state never has a path here."""
+    if name not in CONFIG_FILES:
+        raise StoreError(f"{name!r} is not a configuration document")
+    return Path(root) / "registry" / name
 # A journal file rolls over to the next one of the same UTC day beyond this size, so no file nears
 # the 80 MiB publication gate (check_contracts.MAX_CONTROL_FILE_BYTES) and no transaction rewrites
 # a large file. Callers keep single transactions far below it (bounded batches).
@@ -108,7 +122,7 @@ class Stage(str, Enum):
 MANIFEST_ONLY_FIELDS = (
     "status", "http_status", "sha256", "bytes", "raw_path", "text_path", "text_chars", "error",
     "fetched_at", "text_sha256", "extractor_version", "quality",
-) + registry.CORPUS_FIELDS
+) + codec.CORPUS_FIELDS
 LEDGER_FIELDS = (
     "id", "url", "title", "reason", "source", "topic", "license", "http_status", "error",
     "sha256", "quality", "blocklisted", "pruned_at", "run_id",
@@ -156,8 +170,8 @@ def journal_events(ops: Sequence[Mapping], run_id: str, at: str, last_seq: int,
                  "digest": digest, "counts": counts})
     return rows
 TABLE_FIELDS: dict[Table, frozenset[str]] = {
-    Table.ENTRIES: frozenset(registry.FIELDS),
-    Table.MANIFEST: frozenset(registry.FIELDS + MANIFEST_ONLY_FIELDS),
+    Table.ENTRIES: frozenset(codec.FIELDS),
+    Table.MANIFEST: frozenset(codec.FIELDS + MANIFEST_ONLY_FIELDS),
     Table.BLOCKLIST: frozenset({"url"}),
     Table.LEDGER: frozenset(LEDGER_FIELDS),
     Table.EVENTS: frozenset(EVENT_FIELDS),
@@ -261,7 +275,7 @@ def legacy_manifest_key(row: Mapping) -> tuple[str, str, str]:
     First-seen rules (the pruner's title-duplicate winner, sampling ties) depend on it, so scans
     can request it explicitly with order="legacy"."""
     topic = row.get("topic")
-    return (f"{registry.manifest_shard(row['id'])}.jsonl", "" if topic is None else str(topic),
+    return (f"{codec.manifest_shard(row['id'])}.jsonl", "" if topic is None else str(topic),
             row["id"])
 
 
@@ -377,7 +391,7 @@ def pinned_policy(view) -> tuple[dict, dict]:
     for name in ("eligibility.json", "host_policy.json"):
         if name not in docs:
             raise StoreError(f"pinned configuration lacks registry/{name}")
-    if errors := registry.validate_eligibility(docs["eligibility.json"]):
+    if errors := codec.validate_eligibility(docs["eligibility.json"]):
         raise StoreError(f"invalid pinned eligibility.json: {'; '.join(errors)}")
     if errors := host_policy.validate(docs["host_policy.json"]):
         raise StoreError(f"invalid pinned host_policy.json: {'; '.join(errors)}")
@@ -386,7 +400,7 @@ def pinned_policy(view) -> tuple[dict, dict]:
 
 def eligibility_where(restrictions: Mapping[str, Mapping]) -> Predicate:
     """registry.is_training_eligible as a predicate: not pointer-only and no restriction matches."""
-    return Not(Or(In("license", sorted(registry.POINTER_ONLY_LICENSES)),
+    return Not(Or(In("license", sorted(codec.POINTER_ONLY_LICENSES)),
                   restriction_where(restrictions)))
 
 
@@ -656,11 +670,11 @@ def open(*, root: Path = ROOT, backend: str | None = None) -> "FileStore":  # no
 
 
 def norm_url(url: str | None) -> str:
-    return blocklist_mod.normalize(url or "")
+    return codec.normalize_url(url or "")
 
 
 def norm_title(title: str | None) -> str:
-    return registry.norm(title or "")
+    return codec.norm(title or "")
 
 
 # --- durable filesystem primitives ---------------------------------------------------------------
@@ -785,7 +799,7 @@ class _ManifestShard:
 
     Keyed reads and targeted writes of a few rows must not parse (or re-serialize) whole shards:
     25 rows of a loader checkpoint touch ~25 shards and ~600 MB (CN patents, 2026-09-24), which
-    costs ~14 s to parse and render in full. A shard file is always registry.manifest_shard_text
+    costs ~14 s to parse and render in full. A shard file is always codec.manifest_shard_text
     output — one canonical json.dumps(row, ensure_ascii=False) line per row, sorted by (topic, id),
     every row routed to the file; FileStore.validate_layout (lint, every round) checks order and
     routing. So a row is found by its canonical `"id": <json>` pair, and a change is spliced in:
@@ -882,7 +896,7 @@ class _ManifestShard:
                     rows.pop(sid, None)
                 else:
                     rows[sid] = row
-            return registry.manifest_shard_text(rows.values()) if rows else None
+            return codec.manifest_shard_text(rows.values()) if rows else None
         import bisect
         import itertools
         starts = [0, *itertools.accumulate(len(line) for line in lines)]
@@ -920,7 +934,7 @@ class _RegistryShard:
 
     Parsing a whole shard costs ~0.8 s (the YAML constructor is pure Python even with libyaml),
     and a prune touches dozens of shards: 400 drops over 52 shards took 268 s parsing each
-    three times (measured 2026-09-24). Entries are located exactly as registry.remove_ids_from_text
+    three times (measured 2026-09-24). Entries are located exactly as codec.remove_ids_from_text
     walks them (ENTRY_RE + _entry_span); an entry's block is parsed on its own (and must yield
     exactly that id); removals cut those blocks and keep every other byte; additions are appended
     like registry.append_entries and their block is parsed back as a check. Whole-shard validity
@@ -939,11 +953,11 @@ class _RegistryShard:
             spans: dict[str, tuple[int, int]] = {}
             i = 0
             while i < len(lines):
-                m = registry.ENTRY_RE.match(lines[i])
+                m = codec.ENTRY_RE.match(lines[i])
                 if not m:
                     i += 1
                     continue
-                j = registry._entry_span(lines, i)
+                j = codec.entry_span(lines, i)
                 if m.group(1) in spans:
                     raise StoreError(f"duplicate registry id {m.group(1)} in {self.name}")
                 spans[m.group(1)] = (i, j)
@@ -958,7 +972,7 @@ class _RegistryShard:
             if span is not None:
                 block = "".join(self._lines[span[0]:span[1]])
                 try:
-                    parsed = registry.parse_yaml("sources:\n" + block).get("sources") or []
+                    parsed = codec.parse_yaml("sources:\n" + block).get("sources") or []
                 except Exception as exc:  # the line walk cut the entry (remove_ids fails too)
                     raise StoreError(f"{self.name}: entry block of {sid} does not parse: "
                                      f"{exc}") from exc
@@ -976,10 +990,10 @@ class _RegistryShard:
                 cut.update(range(*spans[sid]))
             text = "".join(line for n, line in enumerate(self._lines) if n not in cut)
         else:
-            text = self.text or registry.shard_header(Path(self.name).stem)
+            text = self.text or codec.shard_header(Path(self.name).stem)
         if added:
-            block = "".join(registry.emit_entry(r) for r in added)
-            got = [e.get("id") for e in registry.parse_yaml("sources:\n" + block)["sources"]]
+            block = "".join(codec.emit_entry(r) for r in added)
+            got = [e.get("id") for e in codec.parse_yaml("sources:\n" + block)["sources"]]
             if got != [r["id"] for r in added]:
                 raise StoreError(f"{self.name}: appended entries do not parse back as themselves")
             text += block
@@ -1066,6 +1080,24 @@ class FileStore:
             finally:
                 self._live_tokens.discard(token.nonce)
 
+    @contextmanager
+    def recovering(self, writer: WriterToken, round_id: str) -> Iterator[WriterToken]:
+        """`writer` scoped to recovering interrupted round `round_id`: a token that may read while
+        that round's snapshot still exists (scripts/round_recovery.py settles the round's prune
+        quarantine against the recovered state before it discards the snapshot). The maintainer's
+        window writer declares no round; run_round's round and --recover writers already declare
+        this one. The scoped token lives no longer than `writer` (same lock, same nonce)."""
+        self._check_writer(writer)
+        _check_run_id(round_id)
+        if writer.round_id == round_id:
+            yield writer
+            return
+        if writer.round_id is not None:
+            raise WriterError(f"writer belongs to round {writer.round_id}, not {round_id}")
+        if round_id not in self._legacy_snapshots():
+            raise PendingTransaction(f"round {round_id} has no snapshot to recover")
+        yield dataclasses.replace(writer, round_id=round_id)
+
     def _lock_holder(self) -> str | None:
         """PID recorded in the round lock if the lock is currently held, else None."""
         lock = self.workspace / f".{ROUND_LOCK}.lock"
@@ -1124,8 +1156,8 @@ class FileStore:
     # -- loading -------------------------------------------------------------------------------
 
     def _shard_names(self) -> list[str]:
-        return [registry.CURATED] + sorted(
-            p.name for p in self.reg.glob("*.yaml") if p.name != registry.CURATED)
+        return [codec.CURATED] + sorted(
+            p.name for p in self.reg.glob("*.yaml") if p.name != codec.CURATED)
 
     def validate_layout(self) -> tuple[list[str], dict]:
         """Physical checks of the file layout that keyed store reads cannot see: shards that do
@@ -1143,14 +1175,14 @@ class FileStore:
             if not path.exists():
                 continue
             try:
-                parsed = registry.parse_yaml(path.read_text()).get("sources") or []
+                parsed = codec.parse_yaml(path.read_text()).get("sources") or []
             except Exception as exc:
                 errors.append(f"{name}: does not parse: {exc}")
                 continue
             for e in parsed:
                 eid = e.get("id", "<no id>")
                 seen[eid] = seen.get(eid, 0) + 1
-                want = registry.shard_path(eid).name if isinstance(eid, str) else None
+                want = codec.shard_filename(eid) if isinstance(eid, str) else None
                 if want != name:
                     errors.append(f"{name}: {eid}: belongs in {want} (prefix routing)")
                 entries[eid] = e
@@ -1180,9 +1212,9 @@ class FileStore:
                 if not isinstance(sid, str):
                     errors.append(f"manifest/{path.name}:{n}: id is not a string")
                     continue
-                if registry.manifest_shard(sid) != path.stem:
+                if codec.manifest_shard(sid) != path.stem:
                     errors.append(f"manifest/{path.name}:{n}: {sid} belongs in "
-                                  f"{registry.manifest_shard(sid)}.jsonl (prefix routing)")
+                                  f"{codec.manifest_shard(sid)}.jsonl (prefix routing)")
                 if f'"id": {json.dumps(sid, ensure_ascii=False)}' not in line:
                     errors.append(f"manifest/{path.name}:{n}: {sid}: not canonical JSON")
                 try:
@@ -1213,7 +1245,7 @@ class FileStore:
                 path = self.reg / name
                 if not path.exists():
                     continue
-                for e in registry.parse_yaml(path.read_text()).get("sources") or []:
+                for e in codec.parse_yaml(path.read_text()).get("sources") or []:
                     if e["id"] in state.entries:
                         raise StoreError(f"duplicate registry id {e['id']} in {name}")
                     state.entries[e["id"]] = e
@@ -1264,11 +1296,11 @@ class FileStore:
 
     def _routed_files(self, table: "Table", prefix: str) -> list[Path] | None:
         """The shard files that hold every entries/manifest row whose id starts with `prefix`,
-        when registry routing pins them (registry.shard_filename / manifest_shard; registry
+        when registry routing pins them (codec.shard_filename / manifest_shard; registry
         routing and manifest orphans are linted every round), else None. Patents (routed by
         country) and prefixes that a longer shard prefix could claim first are never pinned."""
         route = None
-        for key in registry.SHARDS:
+        for key in codec.SHARDS:
             if prefix.startswith(key):
                 route = key
                 break
@@ -1276,10 +1308,10 @@ class FileStore:
                 return None  # some ids with this prefix route to `key`, others elsewhere
         if route is None:
             return None
-        stem = registry.SHARDS[route].rsplit(".", 1)[0]
+        stem = codec.SHARDS[route].rsplit(".", 1)[0]
         if stem == "patents":
             return None
-        n = registry.HASH_BUCKETS.get(stem)
+        n = codec.HASH_BUCKETS.get(stem)
         stems = [f"{stem}-{i}" for i in range(n)] if n else [stem]
         if table is Table.ENTRIES:
             return [self.reg / f"{s}.yaml" for s in stems]
@@ -1294,7 +1326,7 @@ class FileStore:
             if not path.exists():
                 continue
             if table is Table.ENTRIES:
-                for e in registry.parse_yaml(path.read_text()).get("sources") or []:
+                for e in codec.parse_yaml(path.read_text()).get("sources") or []:
                     if e["id"] in rows:
                         raise StoreError(f"duplicate registry id {e['id']} in {path.name}")
                     rows[e["id"]] = e
@@ -1344,6 +1376,24 @@ class FileStore:
             yield view
         finally:
             view._closed = True
+
+    def peek(self, table: str):
+        """UNFENCED read of one small table (PEEK_TABLES) for display and diagnostics — e.g.
+        `rotation.py show`, the blocklist a finder's standalone --append filters, the maintainer's
+        health snapshot when no view can open. Takes no lock and checks no settledness, so it may
+        observe a round in flight or an unrecovered state: never base a mutation on it (mutations
+        read their view). Returns the table in its view shape: rotation {name: entry}, blocklist
+        {normalized url}, backend_state {name: {"enabled", "reason"}}, control {name: doc}."""
+        if table not in PEEK_TABLES:
+            raise StoreError(f"peek: {table!r} is not a small table ({', '.join(PEEK_TABLES)})")
+        state = _State()
+        self._load(state, table)
+        return copy.deepcopy(getattr(state, table))
+
+    def config_documents(self) -> dict:
+        """The git-owned configuration documents as parsed JSON, read unfenced from the working
+        tree (a diagnostic fallback when no view can open; views pin theirs)."""
+        return copy.deepcopy(self._config().documents)
 
     def pending_transactions(self) -> list[TransactionInfo]:
         if not self.txn_dir.exists():
@@ -1558,22 +1608,22 @@ class FileStore:
         for sid in removed:
             drop_by_file.setdefault(base.entry_file[sid], set()).add(sid)
         for name, drop in sorted(drop_by_file.items()):
-            texts[name], n = registry.remove_ids_from_text(
+            texts[name], n = codec.remove_ids_from_text(
                 (self.reg / name).read_text(), drop, name)
             if n != len(drop):
                 raise StoreError(f"{name}: removed {n} of {len(drop)} entries")
         for e in added:
-            name = registry.shard_filename(e["id"])
+            name = codec.shard_filename(e["id"])
             if name not in texts:
                 path = self.reg / name
-                texts[name] = path.read_text() if path.exists() else registry.shard_header(
+                texts[name] = path.read_text() if path.exists() else codec.shard_header(
                     Path(name).stem)
-            texts[name] += registry.emit_entry(e)
+            texts[name] += codec.emit_entry(e)
         targets: dict[str, list] = {}
         for sid, name in view._entry_files().items():
             targets.setdefault(name, []).append(sid)
         for name, text in texts.items():
-            got = sorted(e["id"] for e in registry.parse_yaml(text).get("sources") or [])
+            got = sorted(e["id"] for e in codec.parse_yaml(text).get("sources") or [])
             if got != sorted(targets.get(name, [])):
                 raise StoreError(f"{name}: rendered shard does not match the transaction state")
             writes[self.reg / name] = text.encode()
@@ -1593,14 +1643,14 @@ class FileStore:
         base, state = view._base, view._state
         changed = {sid for sid in set(base.manifest) | set(state.manifest)
                    if not same_row(base.manifest.get(sid), state.manifest.get(sid))}
-        groups: dict[str, list] = {registry.manifest_shard(sid): [] for sid in changed}
+        groups: dict[str, list] = {codec.manifest_shard(sid): [] for sid in changed}
         for sid, row in state.manifest.items():
-            stem = registry.manifest_shard(sid)
+            stem = codec.manifest_shard(sid)
             if stem in groups:
                 groups[stem].append(row)
         for stem, rows in groups.items():
             writes[self.man / f"{stem}.jsonl"] = (
-                registry.manifest_shard_text(rows).encode() if rows else None)
+                codec.manifest_shard_text(rows).encode() if rows else None)
 
     def _render_appends(self, view: "WriteView", writes: dict) -> None:
         base, state = view._base, view._state
@@ -1613,7 +1663,7 @@ class FileStore:
         if "ledger" in view._dirty:
             by_file: dict[Path, list] = {}
             for row in state.ledger[len(base.ledger):]:
-                by_file.setdefault(self.reg / registry.prune_ledger_name(row["id"]), []).append(row)
+                by_file.setdefault(self.reg / codec.prune_ledger_name(row["id"]), []).append(row)
             for path, rows in by_file.items():
                 old = path.read_bytes() if path.exists() else b""
                 writes[path] = old + "".join(
@@ -1882,7 +1932,7 @@ class ReadView:
             return self._state.manifest.get(sid)
         if not isinstance(sid, str) or not sid:
             return None
-        return self._manifest_base(registry.manifest_shard(sid)).get(sid)
+        return self._manifest_base(codec.manifest_shard(sid)).get(sid)
 
     def get_manifest(self, ids: Iterable[str]) -> dict[str, dict]:
         self._check_open()
@@ -2099,13 +2149,13 @@ class WriteView(ReadView):
         self._ops: list[dict] = []
         self._requests: list[dict] = []
         # Routed entries: while the entries table is not loaded, insert_entries and delete_entries
-        # read only the shard each id routes to (registry.shard_filename), like
+        # read only the shard each id routes to (codec.shard_filename), like
         # registry.append_entries. Parsing every shard costs ~2 minutes and ~2 GB at 1.6M entries
         # (measured 2026-09-24); a round's discovery merge or prune must not pay that.
         self._rshards: dict[str, _RegistryShard] = {}              # shard -> committed shard
         self._rchanges: dict[str, dict[str, dict | None]] = {}   # shard -> id -> row / None
         # Routed manifest (stage 3, step 6): upsert/update/delete of manifest rows read only the
-        # manifest shards their ids route to (registry.manifest_shard) while the table is not
+        # manifest shards their ids route to (codec.manifest_shard) while the table is not
         # loaded. self._mbase (ReadView) holds each committed shard, this the changed rows
         # (stem -> id -> row, or None for a deletion).
         self._mchanges: dict[str, dict[str, dict | None]] = {}
@@ -2151,18 +2201,18 @@ class WriteView(ReadView):
 
     def _routed_entry(self, sid: str) -> dict | None:
         """The transaction's current entry `sid` from its routed shard (entries not loaded)."""
-        name = registry.shard_filename(sid)
+        name = codec.shard_filename(sid)
         changes = self._rchanges.get(name, {})
         return changes[sid] if sid in changes else self._routed_shard(name).get(sid)
 
     def _routed_put(self, sid: str, row: dict | None) -> None:
-        changes = self._rchanges.setdefault(registry.shard_filename(sid), {})
+        changes = self._rchanges.setdefault(codec.shard_filename(sid), {})
         changes.pop(sid, None)  # a re-insert goes last, like an append
         changes[sid] = row
 
     def _manifest_row(self, sid: str) -> dict | None:
         if "manifest" not in self._loaded_tables and isinstance(sid, str) and sid:
-            changes = self._mchanges.get(registry.manifest_shard(sid))
+            changes = self._mchanges.get(codec.manifest_shard(sid))
             if changes is not None and sid in changes:
                 return changes[sid]
         return super()._manifest_row(sid)
@@ -2175,7 +2225,7 @@ class WriteView(ReadView):
             else:
                 self._state.manifest[sid] = row
         else:
-            self._mchanges.setdefault(registry.manifest_shard(sid), {})[sid] = row
+            self._mchanges.setdefault(codec.manifest_shard(sid), {})[sid] = row
 
     def _cursor_scope(self) -> str:
         return f"{self._id}:{len(self._ops)}"
@@ -2185,7 +2235,7 @@ class WriteView(ReadView):
 
     def _entry_files(self) -> dict[str, str]:
         state = self._state  # commit-time only: entries are loaded whenever they are dirty
-        return {sid: registry.shard_filename(sid) if (
+        return {sid: codec.shard_filename(sid) if (
                     sid not in self._base.entries
                     or not same_row(state.entries[sid], self._base.entries[sid]))
                 else self._base.entry_file[sid] for sid in state.entries}
@@ -2210,11 +2260,11 @@ class WriteView(ReadView):
 
     @staticmethod
     def _entry_row(e: Mapping) -> dict:
-        missing = [f for f in registry.REQUIRED_FIELDS if not e.get(f)]
+        missing = [f for f in codec.REQUIRED_FIELDS if not e.get(f)]
         if missing:
             raise StoreError(f"entry {e.get('id')!r} lacks {', '.join(missing)}")
         validate_json(dict(e), f"entry {e.get('id')!r}")
-        return copy.deepcopy({k: e[k] for k in registry.FIELDS if k in e and e[k] not in (None, "")})
+        return copy.deepcopy({k: e[k] for k in codec.FIELDS if k in e and e[k] not in (None, "")})
 
     def uniquify_ids(self, entries: Sequence[Mapping]) -> list[dict]:
         """Copies of `entries` with registry.uniquify_ids' suffixing against every known id and the

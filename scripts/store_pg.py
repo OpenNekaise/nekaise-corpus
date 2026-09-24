@@ -309,7 +309,7 @@ class PgStore:
     def pin_config_from_files(self) -> None:
         docs = {}
         for name in store.CONFIG_FILES:
-            path = self.root / "registry" / name
+            path = store.config_path(name, self.root)
             if path.exists():
                 docs[name] = path.read_bytes()
         self.pin_config(docs)
@@ -395,6 +395,30 @@ class PgStore:
         finally:
             conn.rollback()
             conn.close()
+
+    def peek(self, table: str):
+        """store.FileStore.peek: a committed snapshot needs no lock here."""
+        if table not in store.PEEK_TABLES:
+            raise store.StoreError(f"peek: {table!r} is not a small table")
+        with self.read() as view:
+            if table == "rotation":
+                return view.rotation_get()
+            if table == "control":
+                return {n: d for n in store.CONTROL_FILES if (d := view.control_get(n)) is not None}
+            if table == "backend_state":
+                return {n: {"enabled": s.enabled, "reason": s.reason}
+                        for n, s in view.backend_state_get().items()
+                        if (s.enabled, s.reason) != (True, None)}
+            out, cursor = set(), None
+            while True:
+                page = view.scan(store.Table.BLOCKLIST, cursor=cursor, limit=store.MAX_PAGE)
+                out.update(r["url"] for r in page.rows)
+                if (cursor := page.next_cursor) is None:
+                    return out
+
+    def config_documents(self) -> dict:
+        with self._connect(autocommit=True) as conn:
+            return self._config(conn).documents
 
     def validate_layout(self) -> tuple[list[str], dict]:
         """Physical checks: the schema matches this code. (Row-level consistency of derived

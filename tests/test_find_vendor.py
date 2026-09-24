@@ -188,7 +188,7 @@ def test_entries_are_shaped_titled_topiced_language_tagged_and_deduped():
     assert out[0]["document_type"] == "product-literature"
     assert out[0]["language"] == "fr"
     bucket = zlib.crc32(out[0]["id"].encode()) % registry.HASH_BUCKETS["vendor"]
-    assert registry.shard_path(out[0]["id"]).name == f"vendor-{bucket}.yaml"
+    assert registry.shard_filename(out[0]["id"]) == f"vendor-{bucket}.yaml"
     assert registry.manifest_shard(out[0]["id"]) == f"vendor-{bucket}"
     assert registry.discovered(out[0]["id"])
 
