@@ -44,7 +44,8 @@ def test_append_routes_by_prefix(tmp_registry):
 def test_proprietary_internal_entries_are_pointer_only(tmp_registry, capsys, monkeypatch):
     pointer = {**entry("vendor-standard"), "license": "proprietary-internal"}
     registry.append_entries([pointer])
-    monkeypatch.setattr(lint_registry.registry, "load_eligibility", lambda: {})
+    import pipeline_repo
+    pipeline_repo.pin_policy(tmp_registry.parent)  # lint reads its view's pinned policy
 
     assert not registry.is_fetchable(pointer, {})
     assert registry.is_fetchable(entry("open-report"), {})
@@ -69,7 +70,13 @@ def test_eligibility_restrictions_are_reversible_policy_overlays(tmp_path):
             },
         },
     }))
-    restrictions = registry.load_eligibility(policy)
+    import store
+    root = tmp_path
+    (root / "registry").mkdir()
+    policy.rename(root / "registry" / "eligibility.json")
+    (root / "registry" / "host_policy.json").write_text('{"version": 1, "hosts": {}}')
+    with store.FileStore(root).read() as view:
+        restrictions, _ = store.pinned_policy(view)
     blocked = {**entry("pat-cn123"), "license": "open"}
 
     assert registry.restriction_for(blocked, restrictions)[0] == "translated"

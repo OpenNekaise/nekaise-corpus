@@ -48,9 +48,9 @@ def _ordered(counts: dict) -> list:
 
 def compute(view, restrictions: dict | None = None) -> CorpusStats:
     """Statistics of one consistent store view. `restrictions` defaults to the view's pinned
-    eligibility policy."""
+    eligibility policy (validated, failing closed)."""
     if restrictions is None:
-        restrictions = view.config_get().eligibility.get("restrictions", {})
+        restrictions, _ = store.pinned_policy(view)
     eligible_rule = store.eligibility_where(restrictions)
     ok = Eq("status", "ok")
     eligible = And(ok, eligible_rule)
@@ -82,10 +82,10 @@ def restricted_with_corpus_data(view, restrictions: dict) -> tuple[int, str | No
     return count, (first[0]["id"] if first else None)
 
 
-def local_unavailable(view, root: Path, restrictions: dict) -> int:
+def local_unavailable(view, root: Path, restrictions: dict, policy: dict) -> int:
     """ELIGIBLE successful rows on a fetch-suspended host with no payload on this machine (a
-    local report, never an input to committed statistics)."""
-    policy = registry.load_host_policy()
+    local report, never an input to committed statistics). `restrictions` and `policy` come
+    from the same view (store.pinned_policy(view))."""
     if not policy:
         return 0
     eligible = And(Eq("status", "ok"), store.eligibility_where(restrictions))

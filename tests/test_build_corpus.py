@@ -3,7 +3,9 @@
 from types import SimpleNamespace
 import hashlib
 from concurrent.futures import ProcessPoolExecutor
+import json
 import sys
+from pathlib import Path
 from urllib.parse import urlparse
 
 import pytest
@@ -70,8 +72,6 @@ def test_main_never_downloads_policy_restricted_sources(monkeypatch, tmp_path, c
     rules = {"translated": pipeline_repo.restriction({"id_prefix": "pat-cn"})}
     # the loader takes eligibility from its view's pinned configuration, not the working tree
     _repo(monkeypatch, tmp_path, [restricted], restrictions=rules)
-    monkeypatch.setattr(build_corpus.registry, "load_eligibility",
-                        lambda: pytest.fail("eligibility must come from the pinned config"))
     monkeypatch.setattr(
         build_corpus,
         "download_one",
@@ -547,13 +547,15 @@ def test_escholarship_fetch_suspension_is_committed_policy():
     import check_contracts
     import host_policy
 
-    rule = host_policy.suspended("https://escholarship.org/content/qt1/qt1.pdf",
-                                 host_policy.load())
+    data = json.loads((Path(check_contracts.ROOT) / "registry" / "host_policy.json").read_text())
+    assert host_policy.validate(data) == []
+    policy = data["hosts"]
+    rule = host_policy.suspended("https://escholarship.org/content/qt1/qt1.pdf", policy)
     assert rule and rule["decided_at"] == "2026-09-24" and "WAF" in rule["reason"]
     assert "find_escholarship" in rule["backends"]
     backends = check_contracts.run_round.load_backends()
-    assert check_contracts.host_policy_contract_errors(backends) == []
+    assert check_contracts.host_policy_contract_errors(backends, policy) == []
     enabled = {name: {**cfg, "enabled": True} for name, cfg in backends.items()}
-    assert check_contracts.host_policy_contract_errors(enabled) == [
+    assert check_contracts.host_policy_contract_errors(enabled, policy) == [
         "find_escholarship: backend for suspended host escholarship.org must be disabled"
     ]

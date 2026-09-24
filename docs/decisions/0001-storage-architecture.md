@@ -221,7 +221,9 @@ commits and the commit-replay shadow continue until stage 4.
   outside the view (they must be validated against the view's pinned configuration before
   stage 4); backend-owned ledger and size validation; steps 5–7 (discovery writes and control state,
   cleaner/loader/pruner through the broker, shared recovery and retiring legacy access) — steps 5,
-  6 and 7 are done (records below; step 7 closes stage 3).
+  6 and 7 are done (records below; step 7 closes stage 3). Resolved since: coverage,
+  coverage_matrix and the cleaner read through views; eligibility and host policy come only from
+  the view's pinned configuration (step 7 review fixes).
 
 ## Stage 3, step 5 record: discovery writes and control state (2026-09-24)
 
@@ -555,6 +557,50 @@ validators and git-shadow/import/export tooling, enforced by an architectural te
   the reference) show byte-identical registry, manifest, blocklist and ledger files; only journal
   and runtime-state metadata differ, as before.
 
+### Step 7, Codex review fixes (2026-09-25; verdict MERGE AFTER FIXES)
+
+- **P1 — a git inspection failure never leads to a restore.** `round_recovery.repo_state(root)`
+  answers "none" only when no repository encloses the root (found by looking for `.git` without
+  asking git, stopping at a filesystem boundary like git; an empty stray `.git` directory does
+  not count, a gitfile or any directory with HEAD/objects/refs/config does), "unborn" only when
+  HEAD is a symbolic ref to a branch in a repository with no refs at all, and "head" when
+  `HEAD^{commit}` resolves. Everything else — `rev-parse`, `symbolic-ref`, `for-each-ref` or
+  `log` failing, a garbage or dangling HEAD, a missing branch while other refs exist — raises
+  `RecoveryError` before anything is unstaged or restored, and the snapshot is kept. Regression
+  tests: each git failure mode through `--recover` and the maintainer, three corrupt-HEAD
+  variants, the legitimate unborn repository (restores and unstages) and no repository.
+- **P2 — deletions count as changes.** The committed-state guard diffs EVERY snapshot path
+  against the round's commit (git diff reports a deleted tracked path); previously missing paths
+  were filtered out, so a deleted `pruned_urls.txt` let recovery discard the snapshot. Regression
+  test through both entrypoints.
+- **Policy pinning finished (step 4's deferral closed).** Eligibility restrictions and host
+  fetch policy reach production code only as `store.pinned_policy(view)` — validated, failing
+  closed, from the same view as the data: `run_round.doc_stats`, `update_readme_stats` (it
+  loaded eligibility BEFORE acquiring its view, so after waiting behind a writer it could pair
+  old restrictions with new state), `coverage`, `coverage_matrix`, `lint_registry` (after the
+  physical layout check, inside its view), `check_contracts` (restrictions and host policy from
+  its one view; `host_policy_contract_errors(backends, policy)`; invalid pinned policy is a
+  contract failure), `crawl_docs` (`pinned_restrictions()` from a dedup read view),
+  `corpus_stats.compute`'s default (was the unvalidated `ConfigSnapshot.eligibility`, failing
+  open to no restrictions) and `corpus_stats.local_unavailable(view, root, restrictions,
+  policy)`. Removed working-tree loaders: `registry.load_eligibility`,
+  `registry.load_host_policy`, `host_policy.load`/`PATH`; `registry.is_fetchable` and
+  `locally_unavailable_rows` now require the policy argument (no hidden file read). The
+  architectural test gained a policy rule: outside `store.py` (`CONFIG_FILES`, `ConfigSnapshot`,
+  `pinned_policy`) no module may name `eligibility.json`/`host_policy.json` in code, read
+  `.eligibility`, or call those loaders (a self-test covers each form). Other configuration
+  (`backends.json`, `vendors.json`) stays read through `view.config_get()` or `store.config_path`.
+  `tests/test_policy_pinning.py` pins a policy different from the working tree and shows every
+  tool follows the pinned one, and that invalid pinned policy fails lint, contracts and
+  `doc_stats` closed.
+- **Gates re-run**: full suite 1034 passed / 21 skipped, with PostgreSQL 1085 passed;
+  `py_compile` clean; `lint_registry` (1,620,820 entries, 1,620,815 manifest rows, no problems)
+  and `check_contracts` (1,612,754 documents / 30 backends) OK on the branch's data; the
+  throwaway end-to-end run repeated steps (1)–(4) above with the same results and added (5): a
+  round that committed and then failed its push (no remote) ran the shared routine, which found
+  the commit (`round_already_committed`, `committed_round_kept`), kept it and left a clean tree;
+  `pg_shadow sync` + `verify` OK after every commit.
+
 ## Stage 3 complete — what stage 4 needs
 
 Stage 3 converted access, not authority: every production reader and writer of tracked state goes
@@ -577,9 +623,8 @@ shadow continue). Stage 4 (cut over between rounds) needs:
   adapters, `FileStore.peek`, `corpus_index`, the journal-in-git (every transaction still reads
   the whole journal for commit lookup), and the per-round `git add`/commit of tracked state; keep
   verified legacy exports for seven days.
-- **Policy pinning**: configuration stays in git but must be validated against the view's pinned
-  configuration everywhere (loader/pruner/cleaner already do; `coverage`, `update_readme_stats`,
-  `lint_registry`, `check_contracts` and `crawl_docs` still call `registry.load_eligibility()`
-  from the working tree).
+- **Policy stays pinned**: eligibility and host policy are read only through
+  `store.pinned_policy(view)` (done in stage 3, enforced by the architectural test); under
+  PostgreSQL authority the pinned configuration must be the one promoted with the generation.
 - **Accepted debt carried forward**: whole-view reads (entries +13 s, manifest +28 s per step),
   whole-manifest `replace_manifest`, and the FileStore's in-memory tables; PostgreSQL removes them.

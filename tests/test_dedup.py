@@ -187,7 +187,7 @@ def run_scielo(monkeypatch, tmp_path, capsys):
 
 def run_crawl_docs(monkeypatch, tmp_path, capsys):
     base = "https://m.io/en/latest"
-    monkeypatch.setattr(crawl_docs.registry, "load_eligibility", lambda: {})
+    monkeypatch.setattr(crawl_docs, "pinned_restrictions", lambda: {})
     monkeypatch.setattr(crawl_docs, "crawl", lambda *_a: [
         f"{base}/known.html/", f"{base}/blocked.html", f"{base}/api.html", f"{base}/api.html"])
     appended = []

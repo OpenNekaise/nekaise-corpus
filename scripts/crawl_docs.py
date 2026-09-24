@@ -30,6 +30,7 @@ from bs4 import BeautifulSoup
 
 import dedup
 import registry
+import store
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 UA = "nekaise-studio-hvac-corpus/0.1 (research)"
@@ -66,6 +67,14 @@ def crawl(seed: str, prefix: str, maxp: int, delay: float = 0.3) -> list[str]:
     return pages
 
 
+def pinned_restrictions() -> dict:
+    """The eligibility restrictions pinned in a store read view (store.pinned_policy): the
+    committed, validated policy, failing closed."""
+    with dedup.read_view() as view:
+        restrictions, _ = store.pinned_policy(view)
+    return restrictions
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--seed", required=True)
@@ -86,7 +95,7 @@ def main() -> None:
     # A reviewed rights decision (registry/eligibility.json) outranks a one-shot crawl: refuse
     # before any request instead of registering pages the loader would never fetch.
     probe = {"id": f"crawl-{args.source}-", "source": args.source}
-    if hit := registry.restriction_for(probe, registry.load_eligibility()):
+    if hit := registry.restriction_for(probe, pinned_restrictions()):
         raise SystemExit(f"source {args.source!r} is restricted by eligibility rule "
                          f"{hit[0]!r} ({hit[1]['decided_at']}): {hit[1]['reason']}")
 

@@ -43,9 +43,9 @@ def test_eligibility_is_manifest_based_and_availability_is_reported_separately(t
 
 def test_doc_stats_count_suspended_rows_whatever_is_held(monkeypatch, tmp_path):
     import store
+    import pipeline_repo
     monkeypatch.setattr(registry, "ROOT", tmp_path)  # nothing held locally
-    monkeypatch.setattr(registry, "load_host_policy", lambda: POLICY)
-    monkeypatch.setattr(registry, "load_eligibility", lambda: {})
+    pipeline_repo.pin_policy(tmp_path, policy=POLICY)
     st = store.FileStore(tmp_path)
     with st.writer() as w:
         with st.transaction("seed", expected_version=st.version(), writer=w) as tx:
@@ -156,9 +156,8 @@ def _readme_for(monkeypatch, tmp_path, held: int) -> str:
         (root / "manifest" / f"{stem}.jsonl").write_text(registry.manifest_shard_text(group))
     monkeypatch.setattr(urs, "HERE", root)
     monkeypatch.setattr(registry, "ROOT", root)
-    monkeypatch.setattr(registry, "load_host_policy", lambda: POLICY)
-    monkeypatch.setattr(registry, "load_manifest_rows", lambda: [dict(r) for r in SUSPENDED + OTHER])
-    monkeypatch.setattr(registry, "load_eligibility", lambda: {})
+    import pipeline_repo
+    pipeline_repo.pin_policy(root, policy=POLICY)  # the stats read their view's pinned policy
     monkeypatch.setattr(urs, "README", readme)
     monkeypatch.setattr(urs, "du", lambda _path: "1G")  # disk usage is not a manifest statistic
     urs.main([])

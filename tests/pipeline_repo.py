@@ -30,6 +30,18 @@ def write_policy(root: Path, policy: dict | None) -> None:
         path.write_bytes(data)
 
 
+def pin_policy(root: Path, *, restrictions: dict | None = None,
+               policy: dict | None = None) -> None:
+    """Write root's registry/eligibility.json (`restrictions`, schema-valid via restriction())
+    and registry/host_policy.json (`policy` as in write_policy): the configuration a store view
+    pins and store.pinned_policy validates."""
+    reg = Path(root) / "registry"
+    reg.mkdir(parents=True, exist_ok=True)
+    (reg / "eligibility.json").write_text(json.dumps(
+        {"version": 1, "restrictions": restrictions or {}}, indent=2) + "\n")
+    write_policy(root, policy)
+
+
 def restriction(match: dict) -> dict:
     """A schema-valid eligibility restriction."""
     return {"status": "restricted", "match": match, "backends": ["find_x"], "reason": "test",
@@ -111,10 +123,9 @@ def point(monkeypatch, root: Path, *, policy: dict | None = None) -> None:
     put(registry, "ROOT", root)
     put(blocklist, "ROOT", root)
     put(ops, "WORKSPACE", root / "workspace")
-    put(host_policy, "PATH", root / "registry" / "host_policy.json")
     if policy is not None:
         write_policy(root, policy)
-    elif not host_policy.PATH.exists():
+    elif not (root / "registry" / "host_policy.json").exists():
         write_policy(root, None)
     put(build_corpus, "ProcessPoolExecutor", InlineProcessPool)
     put(clean_corpus, "ProcessPoolExecutor", InlineProcessPool)

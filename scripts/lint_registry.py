@@ -78,11 +78,6 @@ def pages(view, table):
 
 def main(root: Path | None = None) -> int:
     root = Path(root) if root is not None else registry.ROOT
-    try:
-        restrictions = registry.load_eligibility()
-    except (OSError, ValueError) as exc:  # includes a missing registry/ (no eligibility.json)
-        print(f"LINT: {exc}")
-        return 1
     st = store.open(root=root)
     # Physical layout first (unparsable shards, routing drift, duplicate ids): keyed store reads
     # cannot see these, and a duplicate id would make any logical check ambiguous.
@@ -91,6 +86,11 @@ def main(root: Path | None = None) -> int:
     if not errors:
         restriction_hits: Counter = Counter()
         with st.read(timeout=60) as view:
+            try:  # the eligibility policy pinned with the rows it is checked against
+                restrictions, _ = store.pinned_policy(view)
+            except store.StoreError as exc:
+                print(f"LINT: {exc}")
+                return 1
             for batch in pages(view, store.Table.ENTRIES):
                 for e in batch:
                     errors.extend(entry_errors(e, registry.shard_filename(e["id"])))

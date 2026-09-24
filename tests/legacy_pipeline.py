@@ -30,7 +30,7 @@ def legacy_load(*, force=False, workers=16, extract_workers=1, only="", reextrac
                 source="", fmt="", ids_from="") -> None:
     only = {t.strip() for t in only.split(",") if t.strip()}
     selection = bc.reextract_selector(source, fmt, ids_from)
-    restrictions = registry.load_eligibility()
+    restrictions = legacy_registry.load_eligibility()
     all_srcs = legacy_registry.load_entries()
     srcs = [s for s in all_srcs if registry.is_training_eligible(s, restrictions)]
     manifest = {r["id"]: r for r in legacy_registry.load_manifest_rows()}
@@ -42,7 +42,7 @@ def legacy_load(*, force=False, workers=16, extract_workers=1, only="", reextrac
         bc.reextract(manifest, restrictions, selection, only)
         write_manifest(manifest)
         return
-    policy = host_policy.load()
+    policy = legacy_registry.load_host_policy()
     todo = []
     for s in srcs:
         if only and s.get("topic") not in only:
@@ -137,7 +137,7 @@ def legacy_prune(*, apply=True, drop_ids_from=None) -> dict[str, str]:
     HERE = pc.HERE
     manifest = legacy_registry.load_manifest_rows()
     reviewed_drop = pc.reviewed_title_drops(drop_ids_from, manifest)
-    policy = host_policy.load()
+    policy = legacy_registry.load_host_policy()
     deferred = pc.deferred_ids()
     protected = pc.protected_ids(manifest, policy, deferred)
     seen_titles = {registry.norm(r.get("title")) for r in manifest
@@ -217,7 +217,7 @@ def legacy_prune(*, apply=True, drop_ids_from=None) -> dict[str, str]:
 
 def legacy_clean(*, rules_spec="stamp", force=False, workers=1) -> None:
     rules = cc.parse_rules(cc.stamped_ruleset() if rules_spec == "stamp" else rules_spec)
-    restrictions = registry.load_eligibility()
+    restrictions = legacy_registry.load_eligibility()
     rows = legacy_registry.load_manifest_rows()
     todo, restricted = cc.partition_training_rows(rows, restrictions)
     CORPUS, STAMP = cc.CORPUS, cc.STAMP

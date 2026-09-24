@@ -50,12 +50,13 @@ def main(argv: list[str] | None = None) -> None:
                          "read is inherited)")
     args = ap.parse_args(argv)
 
-    restrictions = registry.load_eligibility()
     with store.open(root=HERE).read(timeout=args.lock_timeout) as view:
+        # policy pinned with the data: a wait behind a writer cannot pair old rules with new rows
+        restrictions, policy = store.pinned_policy(view)
         stats = corpus_stats.compute(view, restrictions)
         # README numbers are manifest-derived and identical on every machine; local availability
         # of suspended-host payloads is reported here only, never in the committed statistics.
-        unavailable = corpus_stats.local_unavailable(view, HERE, restrictions)
+        unavailable = corpus_stats.local_unavailable(view, HERE, restrictions, policy)
     if unavailable:
         print(f"local availability: {unavailable:,} eligible rows on a fetch-suspended host "
               "have no local payload (counted in README; not in local corpus/)", file=sys.stderr)

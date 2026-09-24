@@ -7,6 +7,11 @@ No scripts/*.py outside ALLOWLIST may spell those paths in code (path joins, pat
 path constants), glob the tracked directories, use a store's private layout attributes, or call
 registry.py's deprecated list/set adapters. Git-owned configuration (backends/eligibility/
 vendors/host_policy JSON) is policy, not state: its loaders locate it with store.config_path.
+
+Eligibility restrictions and host fetch policy in particular reach production code ONLY as
+store.pinned_policy(view) — validated, failing closed, and pinned with the data the same view
+serves: no module outside POLICY_ALLOWLIST names those documents, reads the unvalidated
+ConfigSnapshot.eligibility, or calls a working-tree policy loader.
 """
 from __future__ import annotations
 
@@ -31,6 +36,16 @@ ALLOWLIST: dict[str, set[str] | str] = {
     # publication; the prune ledger's on-disk shard layout), which no logical store read sees.
     "check_contracts.py": {"oversized_control_files", "prune_ledger_contract_errors"},
 }
+
+# The config layer that turns pinned configuration into validated policy (store.pinned_policy).
+POLICY_ALLOWLIST: dict[str, set[str] | str] = {
+    # CONFIG_FILES (module level), the pinned-snapshot type, and the one validating reader
+    "store.py": {"<module>", "pinned_policy", "ConfigSnapshot"},
+}
+POLICY_DOCUMENTS = {"eligibility.json", "host_policy.json"}
+# Working-tree policy loaders (removed in step 7's review fix; never to return).
+POLICY_LOADERS = {("registry", "load_eligibility"), ("registry", "load_host_policy"),
+                  ("host_policy", "load"), ("host_policy", "PATH")}
 
 # Names that are tracked state paths wherever they appear in code positions.
 STATE_NAMES = {"registry", "manifest", "journal", "pruned_urls.txt", "pruned.jsonl",
@@ -122,6 +137,35 @@ def violations(path: Path) -> list[tuple[str, int, str]]:
     return found
 
 
+def policy_violations(path: Path) -> list[tuple[str, int, str]]:
+    """(enclosing top-level function/class or "<module>", line, what) for every way of obtaining
+    eligibility/host policy other than store.pinned_policy(view)."""
+    tree = ast.parse(path.read_text())
+    found: list[tuple[str, int, str]] = []
+    in_fstring = {id(v) for n in ast.walk(tree) if isinstance(n, ast.JoinedStr) for v in n.values}
+
+    def visit(node: ast.AST, scope: str) -> None:
+        for child in ast.iter_child_nodes(node):
+            inner = scope
+            if scope == "<module>" and isinstance(child, (ast.FunctionDef, ast.AsyncFunctionDef,
+                                                          ast.ClassDef)):
+                inner = child.name
+            line = getattr(child, "lineno", 0)
+            if isinstance(child, ast.Constant) and child.value in POLICY_DOCUMENTS \
+                    and id(child) not in in_fstring:
+                found.append((inner, line, f"names {child.value!r}"))
+            elif isinstance(child, ast.Attribute):
+                if isinstance(child.value, ast.Name) \
+                        and (child.value.id, child.attr) in POLICY_LOADERS:
+                    found.append((inner, line, f"{child.value.id}.{child.attr}"))
+                elif child.attr == "eligibility":
+                    found.append((inner, line, "unvalidated ConfigSnapshot.eligibility"))
+            visit(child, inner)
+
+    visit(tree, "<module>")
+    return found
+
+
 def _allowed(module: str, scope: str) -> bool:
     rule = ALLOWLIST.get(module)
     return rule == "*" or (isinstance(rule, set) and scope in rule)
@@ -137,6 +181,39 @@ def test_only_the_store_touches_tracked_state(module):
            if not _allowed(module, scope)]
     assert not bad, ("direct access to tracked state outside the store (use scripts/store.py; "
                      "see tests/test_architecture.py):\n  " + "\n  ".join(bad))
+
+
+@pytest.mark.parametrize("module", PRODUCTION)
+def test_policy_comes_only_from_the_pinned_view(module):
+    bad = [f"{module}:{line} in {scope}: {what}"
+           for scope, line, what in policy_violations(SCRIPTS / module)
+           if not (POLICY_ALLOWLIST.get(module) == "*"
+                   or scope in (POLICY_ALLOWLIST.get(module) or set()))]
+    assert not bad, ("eligibility/host policy obtained outside store.pinned_policy(view) "
+                     "(see tests/test_architecture.py):\n  " + "\n  ".join(bad))
+
+
+def test_policy_allowlist_is_minimal():
+    for module, rule in POLICY_ALLOWLIST.items():
+        scopes = {scope for scope, _, _ in policy_violations(SCRIPTS / module)}
+        assert (scopes if rule == "*" else rule <= scopes), f"{module}: stale policy exemption"
+
+
+def test_the_policy_detector_sees_every_kind_of_access(tmp_path):
+    probe = tmp_path / "probe.py"
+    probe.write_text(
+        'import json, registry, host_policy\n'
+        'def f(view, root):\n'
+        '    """eligibility.json in a docstring is fine"""\n'
+        '    print(f"registry/eligibility.json: message")\n'
+        '    registry.load_eligibility()\n'
+        '    host_policy.load()\n'
+        '    view.config_get().eligibility\n'
+        '    json.loads((root / "host_policy.json").read_text())\n'
+        '    return view.config_get().documents["eligibility.json"]\n')
+    assert sorted(what for _, _, what in policy_violations(probe)) == sorted([
+        "registry.load_eligibility", "host_policy.load", "unvalidated ConfigSnapshot.eligibility",
+        "names 'host_policy.json'", "names 'eligibility.json'"])
 
 
 def test_allowlist_is_minimal():

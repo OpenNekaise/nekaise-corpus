@@ -11,15 +11,9 @@ Malformed policy fails closed for the loader and the pruner, and check_contracts
 """
 from __future__ import annotations
 
-import json
 import re
-from pathlib import Path
 from urllib.parse import urlparse
 
-import store
-
-ROOT = Path(__file__).resolve().parents[1]
-PATH = store.config_path("host_policy.json", ROOT)
 STATUSES = frozenset({"suspended"})
 
 
@@ -49,13 +43,6 @@ def validate(data: object) -> list[str]:
         if not isinstance(backends, list) or any(not isinstance(b, str) for b in backends):
             errors.append(f"{label}.backends must be a list of backend names")
     return errors
-
-
-def load(path: Path | None = None) -> dict[str, dict]:
-    data = json.loads(Path(path or PATH).read_text())
-    if errors := validate(data):
-        raise ValueError(f"invalid host policy: {'; '.join(errors)}")
-    return data["hosts"]
 
 
 def suspended(url: str | None, policy: dict[str, dict]) -> dict | None:

@@ -2,6 +2,7 @@
 exact-licence provenance, manual-tool restrictions in the contracts, committed decisions."""
 
 import sys
+from pathlib import Path
 
 import pytest
 
@@ -61,7 +62,7 @@ def test_selection_flags_require_reextract(monkeypatch):
 
 
 def test_crawl_docs_refuses_restricted_source_before_any_request(monkeypatch):
-    monkeypatch.setattr(crawl_docs.registry, "load_eligibility", lambda: {
+    monkeypatch.setattr(crawl_docs, "pinned_restrictions", lambda: {
         "soep": {"match": {"source": "soep"}, "decided_at": "2026-09-24", "reason": "ARR"}})
     monkeypatch.setattr(crawl_docs, "crawl", lambda *_a: pytest.fail("must not crawl"))
     monkeypatch.setattr(sys, "argv", ["crawl_docs.py", "--seed", "https://x/", "--source",
@@ -71,7 +72,7 @@ def test_crawl_docs_refuses_restricted_source_before_any_request(monkeypatch):
 
 
 def test_crawl_docs_records_exact_license_evidence(monkeypatch, capsys):
-    monkeypatch.setattr(crawl_docs.registry, "load_eligibility", lambda: {})
+    monkeypatch.setattr(crawl_docs, "pinned_restrictions", lambda: {})
     monkeypatch.setattr(crawl_docs.dedup, "open_keys", lambda: crawl_docs.dedup.from_sets(set(), set(), set()))
     monkeypatch.setattr(crawl_docs, "crawl", lambda *_a: ["https://m.io/en/latest/api.html"])
     appended = []
@@ -99,7 +100,10 @@ def test_manual_tool_restrictions_need_no_backend_entry():
 
 
 def test_committed_rights_decisions_cover_only_ungranted_sources():
-    restrictions = registry.load_eligibility()
+    import json
+    data = json.loads((Path(registry.ROOT) / "registry" / "eligibility.json").read_text())
+    assert registry.validate_eligibility(data) == []
+    restrictions = data["restrictions"]
     for source in ("soep", "openstudio-docs"):
         assert registry.restriction_for({"id": "crawl-x", "source": source}, restrictions)
     # OpenStudio material with a real BSD-3 grant stays eligible

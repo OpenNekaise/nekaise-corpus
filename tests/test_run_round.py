@@ -132,17 +132,17 @@ def test_doc_stats_counts_only_training_eligible_rows(monkeypatch, tmp_path):
          "text_chars": 400},
         {"id": "pat-us2", "status": "failed", "license": "public-domain", "text_chars": 40},
     ]
-    restrictions = {
-        "cn": {"match": {"id_prefix": "pat-cn"}},
-        "jstage": {"match": {"source": "jstage_aij"}},
-    }
+    import pipeline_repo
     import store
+    restrictions = {
+        "cn": pipeline_repo.restriction({"id_prefix": "pat-cn"}),
+        "jstage": pipeline_repo.restriction({"source": "jstage_aij"}),
+    }
+    pipeline_repo.pin_policy(tmp_path, restrictions=restrictions)  # doc_stats pins it
     st = store.FileStore(tmp_path)
     with st.writer() as w:
         with st.transaction("seed", expected_version=st.version(), writer=w) as tx:
             tx.upsert_manifest(rows)
-    monkeypatch.setattr(run_round.registry, "load_eligibility", lambda: restrictions)
-
     with st.read() as view:
         assert run_round.doc_stats(view) == (1, 25, 2)
 

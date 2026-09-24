@@ -159,8 +159,8 @@ def main() -> None:
     ap.add_argument("--lock-timeout", type=float, default=60)
     args = ap.parse_args()
 
-    restrictions = registry.load_eligibility()
     with store.open(root=registry.ROOT).read(timeout=args.lock_timeout) as view:
+        restrictions, _ = store.pinned_policy(view)
         ok = list(corpus_stats.iter_eligible(view, restrictions, fields=("id", "source", "title")))
         excluded_count = corpus_stats.compute(view, restrictions).excluded
     by_source = Counter(r.get("source") for r in ok)

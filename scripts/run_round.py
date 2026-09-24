@@ -470,7 +470,8 @@ def git_clean() -> bool:
 
 def doc_stats(view) -> tuple[int, int, int]:
     """Return training-eligible docs/tokens and successful but excluded provenance rows."""
-    stats = corpus_stats.compute(view, registry.load_eligibility())
+    restrictions, _ = store.pinned_policy(view)  # the policy pinned with the data it counts
+    stats = corpus_stats.compute(view, restrictions)
     return stats.documents, stats.tokens, stats.excluded
 
 

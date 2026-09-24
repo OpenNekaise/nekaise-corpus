@@ -127,14 +127,9 @@ def eligibility_contract_errors(
     return errors
 
 
-def host_policy_contract_errors(backends: dict, path: Path | None = None) -> list[str]:
-    """registry/host_policy.json must be valid, and a suspended host's backends disabled."""
-    import host_policy
-
-    try:
-        policy = host_policy.load(path)
-    except (OSError, ValueError) as exc:
-        return [f"registry/host_policy.json: {exc}"]
+def host_policy_contract_errors(backends: dict, policy: dict) -> list[str]:
+    """A suspended host's backends must be disabled. `policy` is the validated host policy
+    pinned in the same view as `backends` (store.pinned_policy)."""
     errors = []
     for host, rule in sorted(policy.items()):
         for name in rule.get("backends", []):
@@ -184,11 +179,17 @@ def readme_stats_errors(readme: str, stats) -> list[str]:
 
 def main() -> int:
     errors: list[str] = []
-    restrictions = registry.load_eligibility()
     with store.open(root=ROOT).read(timeout=60) as view:
+        # eligibility and host policy pinned with the data they are checked against; invalid or
+        # missing policy is a contract failure (fail closed)
+        try:
+            restrictions, policy = store.pinned_policy(view)
+        except store.StoreError as exc:
+            print(f"CONTRACT: {exc}")
+            return 1
         stats = corpus_stats.compute(view, restrictions)
         restricted_metadata = corpus_stats.restricted_with_corpus_data(view, restrictions)
-        unavailable = corpus_stats.local_unavailable(view, ROOT, restrictions)
+        unavailable = corpus_stats.local_unavailable(view, ROOT, restrictions, policy)
         backends = {k: v for k, v in view.config_get().backends.items() if not k.startswith("_")}
         rotation_state = view.rotation_get()
         runtime, runtime_errors = runtime_backend_state(view)
@@ -211,7 +212,7 @@ def main() -> int:
         find_vendor.load_vendors()
     except Exception as exc:
         errors.append(f"registry/vendors.json: {exc}")
-    errors.extend(host_policy_contract_errors(effective))
+    errors.extend(host_policy_contract_errors(effective, policy))
     configured_scripts = {cfg["script"] for cfg in backends.values()}
     actual_finders = {p.name for p in (ROOT / "scripts").glob("find_*.py")}
     for script in sorted(actual_finders - configured_scripts):

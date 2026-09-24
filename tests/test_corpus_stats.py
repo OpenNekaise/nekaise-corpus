@@ -70,10 +70,9 @@ def test_local_unavailable_counts_only_eligible_rows(tmp_path, monkeypatch):
     write(st, "rows", lambda tx: tx.upsert_manifest([
         mrow("pat-cn1", url=esc, text_path="text/pat-cn1.md"),     # restricted, unavailable
         mrow("ope-1", url=esc.replace("qt1", "qt2"), text_path="text/ope-1.md")]))  # eligible
-    monkeypatch.setattr(registry, "load_host_policy",
-                        lambda: {"escholarship.org": {"status": "suspended"}})
+    policy = {"escholarship.org": {"status": "suspended"}}
     import host_policy
     monkeypatch.setattr(host_policy, "suspended", lambda url, policy: "escholarship.org" in url)
     restrictions = {"cn": {"match": {"id_prefix": "pat-cn"}}}
     with st.read() as v:
-        assert corpus_stats.local_unavailable(v, st.root, restrictions) == 1
+        assert corpus_stats.local_unavailable(v, st.root, restrictions, policy) == 1

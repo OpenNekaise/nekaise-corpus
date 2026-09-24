@@ -194,3 +194,22 @@ def remove_ids(drop: set) -> int:
         ops.atomic_write_text(path, new_text)
         removed_total += removed
     return removed_total
+
+
+def load_eligibility() -> dict:
+    """The retired working-tree eligibility loader (production reads store.pinned_policy)."""
+    import state_codec
+    path = reg_dir() / "eligibility.json"
+    data = json.loads(path.read_text())
+    if errors := state_codec.validate_eligibility(data):
+        raise ValueError(f"invalid {path}: {'; '.join(errors)}")
+    return data["restrictions"]
+
+
+def load_host_policy() -> dict:
+    """The retired working-tree host-policy loader (production reads store.pinned_policy)."""
+    import host_policy
+    data = json.loads((reg_dir() / "host_policy.json").read_text())
+    if errors := host_policy.validate(data):
+        raise ValueError(f"invalid host policy: {'; '.join(errors)}")
+    return data["hosts"]

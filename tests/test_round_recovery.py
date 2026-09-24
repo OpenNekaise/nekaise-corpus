@@ -221,3 +221,85 @@ def test_a_failed_uncommitted_round_is_rolled_back_by_the_same_routine(repo, eve
     assert git(repo, "log", "-1", "--format=%s") == "initial"
     assert not ops.StateSnapshot.pending()
     assert ("state_rolled_back", {}) in events
+
+
+# --- git inspection failures never lead to a restore (Codex review of step 7, P1) ---------------
+
+def _failing_git(real, *, fail: str):
+    """round_recovery._git with one git subcommand failing as a broken git would."""
+    def run(root, *args):
+        if args[0] == fail:
+            return subprocess.CompletedProcess(["git", *args], 128, "", f"fatal: {fail} broke")
+        return real(root, *args)
+    return run
+
+
+@pytest.mark.parametrize("fail", ["rev-parse", "log", "symbolic-ref", "for-each-ref"])
+@pytest.mark.parametrize("entry", ["recover", "maintainer"])
+def test_a_git_failure_keeps_the_committed_round_and_its_snapshot(repo, events, monkeypatch,
+                                                                    fail, entry):
+    interrupted_round(repo, "rnd-g", commit=True)
+    committed = tracked(repo, journal=True)
+    if fail in ("symbolic-ref", "for-each-ref"):  # reached only when HEAD does not resolve
+        monkeypatch.setattr(round_recovery, "_git", _failing_git(
+            _failing_git(round_recovery._git, fail="rev-parse"), fail=fail))
+    else:
+        monkeypatch.setattr(round_recovery, "_git", _failing_git(round_recovery._git, fail=fail))
+    assert recover(entry, repo, "rnd-g", monkeypatch) == 1
+    assert tracked(repo, journal=True) == committed  # never restored over the commit
+    assert ops.StateSnapshot.pending() == ["rnd-g"]
+
+
+@pytest.mark.parametrize("corruption", ["garbage", "dangling", "missing-branch"])
+def test_a_corrupt_head_keeps_the_committed_round_and_its_snapshot(repo, events, monkeypatch,
+                                                                     corruption):
+    interrupted_round(repo, "rnd-h", commit=True)
+    committed = tracked(repo, journal=True)
+    head = repo / ".git" / "HEAD"
+    if corruption == "garbage":
+        head.write_text("this is not a ref\n")
+    elif corruption == "dangling":
+        head.write_text("0123456789abcdef0123456789abcdef01234567\n")  # no such object
+    else:  # HEAD names a branch that does not exist, while the commits are on another
+        head.write_text("ref: refs/heads/no-such-branch\n")
+    assert recover("recover", repo, "rnd-h", monkeypatch) == 1
+    assert tracked(repo, journal=True) == committed
+    assert ops.StateSnapshot.pending() == ["rnd-h"]
+
+
+def test_an_unborn_repository_is_a_legitimate_no_commit(tmp_path, events, monkeypatch):
+    """A repository without any commit cannot hold a committed round: recovery restores."""
+    root = write_repo(tmp_path / "u", entries=[ENTRY], manifest=[ROW])
+    git(root, "init", "-q")
+    git(root, "add", "manifest")  # staged, never committed
+    monkeypatch.setattr(run_round, "ROOT", root)
+    monkeypatch.setattr(ops, "SNAPSHOTS", root / "workspace" / "round-snapshots")
+    monkeypatch.setattr(ops, "WORKSPACE", root / "workspace")
+    assert round_recovery.repo_state(root) == "unborn"
+    before = interrupted_round(root, "rnd-n", commit=False)
+    assert recover("recover", root, "rnd-n", monkeypatch) == 0
+    assert tracked(root, journal=True) == before
+    assert not ops.StateSnapshot.pending()
+    assert "manifest" not in git(root, "diff", "--cached", "--name-only")  # unstaged
+
+
+def test_no_repository_is_a_legitimate_no_commit(tmp_path):
+    root = tmp_path / "plain"
+    root.mkdir()
+    assert round_recovery.repo_state(root) == "none"
+    assert round_recovery.committed_round(root, "rnd-x") is None
+
+
+# --- a deleted tracked path is a change too (Codex review of step 7, P2) ----------------------
+
+@pytest.mark.parametrize("entry", ["recover", "maintainer"])
+def test_a_tracked_path_deleted_after_the_commit_keeps_the_snapshot(repo, events, monkeypatch,
+                                                                    entry):
+    interrupted_round(repo, "rnd-x", commit=True)
+    (repo / "pruned_urls.txt").unlink()
+    now = tracked(repo, journal=True)
+    assert recover(entry, repo, "rnd-x", monkeypatch) == 1
+    assert tracked(repo, journal=True) == now
+    assert not (repo / "pruned_urls.txt").exists()
+    assert ops.StateSnapshot.pending() == ["rnd-x"]
+    assert not any(e == "round_already_committed" for e, _ in events)

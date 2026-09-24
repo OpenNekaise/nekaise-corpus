@@ -44,27 +44,11 @@ MANUAL_TOOLS = frozenset({"crawl_docs"})
 LOCK_TIMEOUT = 30.0
 
 
-def load_eligibility(path: Path | None = None) -> dict[str, dict]:
-    """Load committed training/fetch restrictions.
-
-    Restrictions are an overlay, not a destructive registry rewrite: provenance and any existing
-    raw/text cache remain intact while policy-blocked material is kept out of future fetches and
-    the training-ready corpus.  Missing or malformed policy must fail closed for every consumer.
-    Steps that read data through a view use store.pinned_policy(view) instead.
-    """
-    path = Path(path) if path is not None else store.config_path("eligibility.json", ROOT)
-    data = json.loads(path.read_text())
-    errors = validate_eligibility(data)
-    if errors:
-        raise ValueError(f"invalid {path}: {'; '.join(errors)}")
-    return data["restrictions"]
-
-
-def load_host_policy() -> dict[str, dict]:
-    """registry/host_policy.json (fail-closed; see scripts/host_policy.py)."""
-    import host_policy
-
-    return host_policy.load()
+# Eligibility restrictions and host fetch policy are read ONLY from a store view's pinned
+# configuration — store.pinned_policy(view): validated, failing closed, and consistent with the
+# data the same view serves (tests/test_architecture.py). Restrictions are an overlay, not a
+# destructive registry rewrite: provenance stays intact while policy-blocked material is kept
+# out of fetches and the training-ready corpus. This module keeps the pure policy functions.
 
 
 def suspended_unavailable(row: dict, policy: dict[str, dict], root: Path | None = None) -> bool:
@@ -89,11 +73,11 @@ def suspended_unavailable(row: dict, policy: dict[str, dict], root: Path | None 
     return not text_path or not ((root or ROOT) / text_path).exists()
 
 
-def locally_unavailable_rows(rows: list[dict], policy: dict[str, dict] | None = None,
+def locally_unavailable_rows(rows: list[dict], policy: dict[str, dict],
                              root: Path | None = None) -> list[dict]:
     """Successful suspended-host rows whose payload is missing on THIS machine (a local
-    availability report; never an input to committed statistics)."""
-    policy = load_host_policy() if policy is None else policy
+    availability report; never an input to committed statistics). `policy`: the view-pinned
+    host policy."""
     return [row for row in rows if suspended_unavailable(row, policy, root)]
 
 
@@ -115,10 +99,9 @@ def partition_manifest_ok_rows(
     return eligible, excluded
 
 
-def is_fetchable(entry: dict, restrictions: dict[str, dict] | None = None) -> bool:
-    """Compatibility name for the loader's license + eligibility decision."""
-    if restrictions is None:
-        restrictions = load_eligibility()
+def is_fetchable(entry: dict, restrictions: dict[str, dict]) -> bool:
+    """Compatibility name for the loader's license + eligibility decision (`restrictions`: the
+    view-pinned eligibility policy)."""
     return is_training_eligible(entry, restrictions)
 
 

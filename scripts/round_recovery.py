@@ -9,7 +9,7 @@ already holds (its store writer). The order is fixed:
 1. stop the processes the round owns — the caller's own new descendants, and any live process
    whose environment carries the round's NEKAISE_RUN_ID (orphans of a killed round: a fetch or a
    prune still moving bytes would race everything below);
-2. unstage whatever the round staged in git (`git restore --staged` of the tracked paths);
+2. unstage whatever the round staged in git (`git reset -q -- <tracked paths>`);
 3. resolve interrupted store transactions (finalize committed, roll back prepared) while the
    files still hold their pre- or post-images — a snapshot restore would leave them matching
    neither;
@@ -176,21 +176,57 @@ def _git(root: Path, *args: str) -> subprocess.CompletedProcess:
     return subprocess.run(["git", *args], cwd=root, capture_output=True, text=True)
 
 
-def _in_repo_with_head(root: Path) -> bool:
-    """`root` is the top of a git work tree that has at least one commit."""
-    top = _git(root, "rev-parse", "--show-toplevel")
-    if top.returncode or Path(top.stdout.strip()).resolve() != Path(root).resolve():
-        return False
-    return _git(root, "rev-parse", "--verify", "-q", "HEAD").returncode == 0
+def _enclosing_git(root: Path) -> Path | None:
+    """The nearest `.git` (directory or gitfile) at or above `root`, found WITHOUT asking git:
+    whether a repository exists must not depend on git answering. Like git's own discovery it
+    stops at a filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM unset)."""
+    here = Path(root).resolve()
+    device = here.stat().st_dev
+    for d in (here, *here.parents):
+        try:
+            if d.stat().st_dev != device:
+                return None
+        except OSError:
+            return None
+        dot = d / ".git"
+        # a gitfile, or a directory with ANY repository part (a corrupt repository still counts;
+        # only an empty stray `.git` directory, which git ignores too, does not)
+        if dot.is_file() or (dot.is_dir() and any(
+                (dot / part).exists() for part in ("HEAD", "objects", "refs", "config"))):
+            return dot
+    return None
+
+
+def repo_state(root: Path) -> str:
+    """"none" (no repository encloses `root`: nothing can have been committed), "unborn" (a
+    repository without any commit or ref: likewise), or "head" (HEAD names a commit). Every other
+    outcome — git failing, a corrupt or dangling HEAD, a missing branch while other refs exist —
+    raises RecoveryError: an unknown answer must never lead to a restore."""
+    if _enclosing_git(root) is None:
+        return "none"
+    head = _git(root, "rev-parse", "--verify", "-q", "HEAD^{commit}")
+    if head.returncode == 0 and head.stdout.strip():
+        return "head"
+    # No resolvable HEAD: legitimate only for an unborn branch in a repository with no refs.
+    sym = _git(root, "symbolic-ref", "-q", "HEAD")
+    refs = _git(root, "for-each-ref", "--count=1", "--format=%(refname)")
+    if (sym.returncode == 0 and sym.stdout.strip().startswith("refs/heads/")
+            and refs.returncode == 0 and not refs.stdout.strip()):
+        return "unborn"
+    detail = " / ".join(x for x in (head.stderr.strip(), sym.stderr.strip(),
+                                    refs.stderr.strip()) if x) \
+        or "HEAD does not resolve to a commit"
+    raise RecoveryError(f"cannot inspect git at {root} ({detail}); refusing to decide whether "
+                        "the round committed — the snapshot is kept")
 
 
 def committed_round(root: Path, run_id: str) -> str | None:
     """The commit that recorded round `run_id` (its `Corpus run: <run_id>` trailer) on HEAD's
-    first-parent history within COMMIT_SEARCH_DEPTH, or None. A root that is not the top of a
-    git work tree, or has no commit yet, cannot hold a committed round. Raises when git cannot
-    answer — an unknown answer must never lead to a restore."""
+    first-parent history within COMMIT_SEARCH_DEPTH, or None. Only a root outside any
+    repository, or an unborn repository, answers None without history; any git failure raises
+    (repo_state) — an unknown answer must never lead to a restore."""
     root = Path(root)
-    if not _in_repo_with_head(root):
+    if repo_state(root) != "head":
         return None
     log = _git(root, "log", "--first-parent", f"--max-count={COMMIT_SEARCH_DEPTH}",
                "--format=%H%x00%B%x1e", "HEAD")
@@ -228,7 +264,7 @@ def recover_round(st, writer, run_id: str, *, root: Path, snapshot_paths,
     out.stopped = stop_owned(run_id, existing_descendants, grace)
     if out.stopped:
         ops.run_event(run_id, "round_processes_stopped", pids=out.stopped)
-    if _in_repo_with_head(root):
+    if repo_state(root) != "none":  # raises when git cannot be inspected
         # `git reset -- paths` (unlike `git restore --staged`) tolerates paths git does not know
         unstage = _git(root, "reset", "-q", "--", *snapshot_paths)
         if unstage.returncode:
@@ -244,8 +280,8 @@ def recover_round(st, writer, run_id: str, *, root: Path, snapshot_paths,
         raise RecoveryError(f"round {run_id} reports its commit but no commit near HEAD carries "
                             f"'{TRAILER}{run_id}': refusing to restore its snapshot")
     if out.commit is not None:
-        if _tracked_differ(root, out.commit, [p for p in snapshot_paths
-                                               if (root / p).exists()]):
+        # every snapshot path, present or not: git diff reports a deleted tracked path too
+        if _tracked_differ(root, out.commit, list(snapshot_paths)):
             raise RecoveryError(
                 f"round {run_id} committed as {out.commit[:12]}, but its tracked files have "
                 "changed since: refusing to restore its pre-round snapshot over a committed "

@@ -29,9 +29,10 @@ def fixture_rows():
 
 
 def fixture_restrictions():
+    import pipeline_repo
     return {
-        "cn": {"match": {"id_prefix": "pat-cn"}},
-        "jstage": {"match": {"source": "jstage_aij"}},
+        "cn": pipeline_repo.restriction({"id_prefix": "pat-cn"}),
+        "jstage": pipeline_repo.restriction({"source": "jstage_aij"}),
     }
 
 
@@ -45,8 +46,12 @@ def store_with(monkeypatch, tmp_path, module, rows, restrictions=None):
     for stem, group in shards.items():
         (tmp_path / "manifest" / f"{stem}.jsonl").write_text(registry.manifest_shard_text(group))
     monkeypatch.setattr(module.registry, "ROOT", tmp_path)
-    monkeypatch.setattr(module.registry, "load_eligibility",
-                        (lambda: restrictions) if restrictions is not None else (lambda: {}))
+    # the tools read eligibility from their view's pinned configuration
+    import pipeline_repo
+    (tmp_path / "registry").mkdir(exist_ok=True)
+    (tmp_path / "registry" / "eligibility.json").write_text(
+        json.dumps({"version": 1, "restrictions": restrictions or {}}))
+    pipeline_repo.write_policy(tmp_path, None)
 
 
 def patch_manifest(monkeypatch, module, tmp_path):
