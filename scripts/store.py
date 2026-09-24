@@ -1035,7 +1035,9 @@ class FileStore:
 
     def __init__(self, root: Path = ROOT):
         import store_authority
-        store_authority.check_file_access(root)  # never serve a PostgreSQL-authoritative root
+        # never serve a PostgreSQL-authoritative root; re-checked under the lock by writer(),
+        # every writer use (_check_writer) and every locked view, since authority can move later
+        store_authority.check_file_access(root)
         self.root = Path(root)
         self.reg = self.root / "registry"
         self.man = self.root / "manifest"
@@ -1079,6 +1081,8 @@ class FileStore:
         if recovering and round_id is None:
             raise StoreError("a recovering writer must name the round it recovers")
         with ops.named_lock(ROUND_LOCK, timeout=timeout, workspace=self.workspace) as path:
+            # authority may have moved since construction: re-check under the lock
+            self._check_authority()
             has_snapshot = round_id is not None and round_id in self._legacy_snapshots()
             if recovering and not has_snapshot:
                 raise PendingTransaction(f"round {round_id} has no snapshot to recover")
@@ -1134,6 +1138,13 @@ class FileStore:
             raise WriterError("writer token is stale: its lock context has ended")
         if self._lock_holder() != writer.owner or writer.owner != str(os.getpid()):
             raise WriterError("writer token is stale: this process no longer holds the round lock")
+        # every use of a writer (each transaction, before its commit, recovery, writer views)
+        # re-checks that the files are still authoritative
+        self._check_authority()
+
+    def _check_authority(self) -> None:
+        import store_authority
+        store_authority.check_file_access(self.root)
 
     def _inherited_run(self) -> str | None:
         """The round id inherited for THIS store's lock, verified: an entry naming this lock
@@ -1375,10 +1386,12 @@ class FileStore:
             self._require_settled(allow_rounds=[writer.round_id] if writer.round_id else [])
             yield from self._view()
         elif (run_id := self._inherited_run()) is not None:
+            self._check_authority()
             self._require_settled(allow_rounds=[run_id])
             yield from self._view()
         else:
             with ops.named_lock(ROUND_LOCK, timeout=timeout, workspace=self.workspace):
+                self._check_authority()
                 self._require_settled()
                 yield from self._view()
 

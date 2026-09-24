@@ -25,7 +25,8 @@ store.open() consults it before choosing a backend:
 Fence. Switching a root to "postgres" also writes `<root>/workspace/.store-authority-fence`
 (the dataset UUID and epoch). FileStore refuses a fenced root unless the host record says "file"
 with a newer epoch, so a lost or deleted host record fails closed rather than silently
-re-enabling the files. Switching back to "file" removes the fence after the record is written.
+re-enabling the files. Only verified rollback tooling (write_record(..., lift_fence=True)) may
+record "file" over a fence; it removes the fence after the record is written.
 
 The record is written atomically (fsync, rename) under an exclusive lock next to it. Records
 never disappear through this module: the epoch only grows, so a stale opener is detectable.
@@ -257,10 +258,13 @@ def _locked(path: Path) -> Iterator[None]:
 
 def write_record(root: Path | str, mode: str, *, reason: str, dataset_uuid: str | None = None,
                  dsn: str | None = None, schema: str | None = None, epoch: int | None = None,
-                 path: Path | None = None) -> Record:
+                 path: Path | None = None, lift_fence: bool = False) -> Record:
     """Record `mode` for `root` (epoch = previous + 1 unless given, never lower). A postgres
-    record also writes the root's fence before the record; a file record removes the fence
-    after it. The PostgreSQL side (store_pg.set_authority) must carry the same epoch."""
+    record also writes the root's fence before the record. A file record over an existing fence
+    is refused unless `lift_fence` — reserved for verified rollback tooling (stage 4 step 6: the
+    latest promoted generation exported and verified, the database moved back to file first),
+    which removes the fence after the record. The PostgreSQL side (store_pg.set_authority) must
+    carry the same epoch."""
     if mode not in MODES:
         raise AuthorityError(f"unknown mode {mode!r}")
     if not reason:
@@ -271,6 +275,10 @@ def write_record(root: Path | str, mode: str, *, reason: str, dataset_uuid: str 
         entries = load(p)
         prev = entries.get(key)
         fence = _read_fence(root)
+        if mode == "file" and fence is not None and not lift_fence:
+            raise AuthorityError(f"{fence_path(root)} fences {key} for PostgreSQL authority "
+                                 f"(epoch {fence['epoch']}): only verified rollback tooling may "
+                                 "return it to the files")
         # the epoch grows past both the record and the fence (a lost record cannot reset it)
         floor = max(prev.epoch if prev else 0, fence["epoch"] if fence else 0)
         new_epoch = epoch if epoch is not None else floor + 1
@@ -315,12 +323,24 @@ def main(argv=None) -> int:
         print(f"{root_key(root)} already has an authority record (mode {rec.mode}, epoch "
               f"{rec.epoch}); nothing changed", file=sys.stderr)
         return 1 if rec.mode != "file" else 0
+    if (fence := _read_fence(root)) is not None:
+        # the host record was lost after a cutover: never re-enable the files from here
+        print(f"{fence_path(root)} fences {root_key(root)} for PostgreSQL authority (epoch "
+              f"{fence['epoch']}): refusing init-file; only verified rollback tooling may lift "
+              "it", file=sys.stderr)
+        return 1
     dataset_uuid = None
     if args.dsn or args.schema:
         if not (args.dsn and args.schema):
             ap.error("--dsn and --schema go together")
         import store_pg
-        dataset_uuid = store_pg.PgStore(root, dsn=args.dsn, schema=args.schema).authority()["dataset_uuid"]
+        # an existing schema only (create=False: never create or migrate from here)
+        auth = store_pg.PgStore(root, dsn=args.dsn, schema=args.schema, create=False).authority()
+        if auth["mode"] != "file":
+            print(f"schema {args.schema} is PostgreSQL-authoritative (epoch {auth['epoch']}, root "
+                  f"{auth['root']}): refusing init-file", file=sys.stderr)
+            return 1
+        dataset_uuid = auth["dataset_uuid"]
     rec = write_record(root, "file", reason=args.reason, dataset_uuid=dataset_uuid,
                        dsn=args.dsn, schema=args.schema)
     print(json.dumps(rec.as_json(), indent=2))

@@ -166,6 +166,16 @@ def backup(root: Path, mount: Path, *, dry_run: bool = False,
     return final
 
 
+def locked_backup(root: Path, mount: Path, *, dry_run: bool = False) -> None:
+    """The backup itself, called with the corpus-round lock held. The archive holds the tracked
+    file layout as provenance: only meaningful while the files are authoritative
+    (scripts/store_authority.py), checked here under the lock, since authority can move while
+    this process waits for it. Under PostgreSQL authority the database backups (pg_backup.py)
+    replace it (until stage 4 step 5): refuse rather than archive frozen files."""
+    store_authority.require_file_mode(root, "backup_corpus.py")
+    backup(root, mount, dry_run=dry_run)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--mount", type=Path, default=DEFAULT_MOUNT,
@@ -175,15 +185,11 @@ def main() -> int:
                         help="seconds to wait for a corpus round (default: fail if busy; -1: forever)")
     args = parser.parse_args()
     try:
-        # The archive holds the tracked file layout as provenance: only meaningful while the
-        # files are authoritative (scripts/store_authority.py). Under PostgreSQL authority the
-        # database backups (pg_backup.py) replace it; refuse rather than archive frozen files.
-        store_authority.require_file_mode(ROOT, "backup_corpus.py")
         require_mount(args.mount)
         print("Acquiring corpus-round lock…", flush=True)
         with ops.named_lock("corpus-round", timeout=args.lock_timeout):
-            backup(ROOT, args.mount, dry_run=args.dry_run)
-    except (OSError, RuntimeError, subprocess.CalledProcessError) as error:
+            locked_backup(ROOT, args.mount, dry_run=args.dry_run)
+    except (OSError, RuntimeError, subprocess.CalledProcessError) as error:  # incl. AuthorityError
         print(f"Backup failed: {error}", file=sys.stderr)
         return 1
     except KeyboardInterrupt:

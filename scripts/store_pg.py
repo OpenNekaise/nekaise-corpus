@@ -212,22 +212,89 @@ CREATE TABLE IF NOT EXISTS {s}.config_blobs (
     bytes bytea NOT NULL,
     CHECK (sha256 = encode(sha256(bytes), 'hex'))
 );
+-- A config set is sealed when created: members_text is the canonical JSON {{name: sha256}}
+-- (store._canonical: sorted keys, no spaces) and digest = sha256(members_text), both checked
+-- here; its member rows must be exactly those names (each insert checked against members_text,
+-- completeness checked at commit by a deferred constraint trigger), so no member can be added
+-- to a set later, and nothing can be updated or deleted.
 CREATE TABLE IF NOT EXISTS {s}.config_sets (
     digest text COLLATE "C" PRIMARY KEY CHECK (digest ~ '^[0-9a-f]{{64}}$'),
-    created_at timestamptz NOT NULL DEFAULT now()
+    members_text text NOT NULL,
+    created_at timestamptz NOT NULL DEFAULT now(),
+    CHECK (digest = encode(sha256(convert_to(members_text, 'UTF8')), 'hex'))
 );
 CREATE TABLE IF NOT EXISTS {s}.config_set_members (
     digest text COLLATE "C" NOT NULL REFERENCES {s}.config_sets,
-    name text COLLATE "C" NOT NULL,
+    name text COLLATE "C" NOT NULL CHECK (name ~ '^[A-Za-z0-9][A-Za-z0-9._-]{{0,127}}$'),
     sha256 text COLLATE "C" NOT NULL REFERENCES {s}.config_blobs,
     PRIMARY KEY (digest, name)
 );
 CREATE OR REPLACE TRIGGER config_blobs_immutable BEFORE UPDATE OR DELETE ON {s}.config_blobs
     FOR EACH ROW EXECUTE FUNCTION {s}.nk_refuse();
-CREATE OR REPLACE TRIGGER config_sets_immutable BEFORE UPDATE OR DELETE ON {s}.config_sets
-    FOR EACH ROW EXECUTE FUNCTION {s}.nk_refuse();
-CREATE OR REPLACE TRIGGER config_set_members_immutable BEFORE UPDATE OR DELETE
-    ON {s}.config_set_members FOR EACH ROW EXECUTE FUNCTION {s}.nk_refuse();
+CREATE OR REPLACE FUNCTION {s}.nk_config_sets_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE doc jsonb; canon text;
+BEGIN
+    IF TG_OP <> 'INSERT' THEN
+        RAISE EXCEPTION 'nekaise: config set % is sealed', OLD.digest
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    BEGIN
+        doc := NEW.members_text::jsonb;
+    EXCEPTION WHEN others THEN
+        RAISE EXCEPTION 'nekaise: config set members are not JSON'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END;
+    IF jsonb_typeof(doc) <> 'object' OR EXISTS (
+            SELECT 1 FROM jsonb_each(doc) e WHERE jsonb_typeof(e.value) <> 'string'
+            OR NOT (e.value #>> '{{}}') ~ '^[0-9a-f]{{64}}$'
+            OR NOT e.key ~ '^[A-Za-z0-9][A-Za-z0-9._-]{{0,127}}$') THEN
+        RAISE EXCEPTION 'nekaise: config set members must map names to sha256 digests'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    SELECT '{{' || COALESCE(string_agg(to_json(e.key)::text || ':'
+                                      || to_json(e.value #>> '{{}}')::text,
+                                      ',' ORDER BY e.key COLLATE "C"), '') || '}}'
+        INTO canon FROM jsonb_each(doc) e;
+    IF canon <> NEW.members_text THEN
+        RAISE EXCEPTION 'nekaise: config set members_text is not canonical JSON'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER config_sets_guard BEFORE INSERT OR UPDATE OR DELETE ON {s}.config_sets
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_config_sets_guard();
+CREATE OR REPLACE FUNCTION {s}.nk_config_members_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF TG_OP <> 'INSERT' THEN
+        RAISE EXCEPTION 'nekaise: config set % is sealed', OLD.digest
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM {s}.config_sets c WHERE c.digest = NEW.digest
+                   AND (c.members_text::jsonb ->> NEW.name) = NEW.sha256) THEN
+        RAISE EXCEPTION 'nekaise: % is not a member of sealed config set %', NEW.name, NEW.digest
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER config_set_members_guard BEFORE INSERT OR UPDATE OR DELETE
+    ON {s}.config_set_members FOR EACH ROW EXECUTE FUNCTION {s}.nk_config_members_guard();
+CREATE OR REPLACE FUNCTION {s}.nk_config_set_complete() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF (SELECT count(*) FROM jsonb_object_keys(NEW.members_text::jsonb)) <>
+       (SELECT count(*) FROM {s}.config_set_members m WHERE m.digest = NEW.digest) THEN
+        RAISE EXCEPTION 'nekaise: config set % was not created with all its members', NEW.digest
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NULL;
+END $f$;
+DO $d$ BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_trigger WHERE tgname = 'config_sets_complete'
+                   AND tgrelid = '{s}.config_sets'::regclass) THEN
+        CREATE CONSTRAINT TRIGGER config_sets_complete AFTER INSERT ON {s}.config_sets
+            DEFERRABLE INITIALLY DEFERRED FOR EACH ROW
+            EXECUTE FUNCTION {s}.nk_config_set_complete();
+    END IF;
+END $d$;
 
 CREATE TABLE IF NOT EXISTS {s}.runs (
     run_id text COLLATE "C" PRIMARY KEY CHECK (run_id ~ '^[A-Za-z0-9][A-Za-z0-9._-]{{0,127}}$'),
@@ -494,6 +561,30 @@ END $f$;
 CREATE OR REPLACE TRIGGER dataset_guard BEFORE UPDATE OR DELETE ON {s}.dataset
     FOR EACH ROW EXECUTE FUNCTION {s}.nk_dataset_guard();
 
+-- Outbox sequence allocation is durable and independent of retained rows: `allocated` is the
+-- highest sequence ever issued (a new row takes allocated + 1), `compacted` the prefix removed
+-- (rows are compacted lowest first, only once every consumer is past them). So a sequence is
+-- never reused, even after every row was compacted.
+CREATE TABLE IF NOT EXISTS {s}.outbox_state (
+    one boolean PRIMARY KEY DEFAULT true CHECK (one),
+    allocated bigint NOT NULL DEFAULT 0 CHECK (allocated >= 0),
+    compacted bigint NOT NULL DEFAULT 0 CHECK (compacted >= 0 AND compacted <= allocated)
+);
+INSERT INTO {s}.outbox_state DEFAULT VALUES ON CONFLICT DO NOTHING;
+CREATE OR REPLACE FUNCTION {s}.nk_outbox_state_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF TG_OP = 'DELETE' OR NEW.allocated < OLD.allocated OR NEW.compacted < OLD.compacted THEN
+        RAISE EXCEPTION 'nekaise: the outbox allocation and compaction marks only grow'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF pg_trigger_depth() < 2 THEN  -- only the outbox's own trigger moves them
+        RAISE EXCEPTION 'nekaise: outbox_state is maintained by the outbox triggers'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER outbox_state_guard BEFORE UPDATE OR DELETE ON {s}.outbox_state
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_outbox_state_guard();
 CREATE TABLE IF NOT EXISTS {s}.outbox (
     seq bigint PRIMARY KEY CHECK (seq >= 1),
     generation bigint NOT NULL UNIQUE REFERENCES {s}.generations,
@@ -525,17 +616,21 @@ END $f$;
 CREATE OR REPLACE TRIGGER outbox_acks_guard BEFORE UPDATE OR DELETE ON {s}.outbox_acks
     FOR EACH ROW EXECUTE FUNCTION {s}.nk_acks_guard();
 CREATE OR REPLACE FUNCTION {s}.nk_outbox_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE st record;
 BEGIN
+    SELECT * INTO st FROM {s}.outbox_state FOR UPDATE;
     IF TG_OP = 'INSERT' THEN
-        IF NEW.seq <> (SELECT COALESCE(max(seq), 0) + 1 FROM {s}.outbox) THEN
-            RAISE EXCEPTION 'nekaise: the outbox sequence is gap-free (got %)', NEW.seq
-                USING ERRCODE = 'integrity_constraint_violation';
+        IF NEW.seq <> st.allocated + 1 THEN
+            RAISE EXCEPTION 'nekaise: the next outbox sequence is % (got %)', st.allocated + 1,
+                NEW.seq USING ERRCODE = 'integrity_constraint_violation';
         END IF;
+        UPDATE {s}.outbox_state SET allocated = NEW.seq;
         RETURN NEW;
     END IF;
-    IF TG_OP = 'DELETE' AND NOT EXISTS (SELECT 1 FROM {s}.outbox_consumers
-                                        WHERE watermark < OLD.seq) THEN
-        RETURN OLD;  -- every consumer acknowledged it: compaction may remove it
+    IF TG_OP = 'DELETE' AND OLD.seq = st.compacted + 1
+            AND NOT EXISTS (SELECT 1 FROM {s}.outbox_consumers WHERE watermark < OLD.seq) THEN
+        UPDATE {s}.outbox_state SET compacted = OLD.seq;
+        RETURN OLD;  -- the lowest row, acknowledged by every consumer: compaction removes it
     END IF;
     RAISE EXCEPTION 'nekaise: outbox row % is retained (% refused)', OLD.seq, TG_OP
         USING ERRCODE = 'integrity_constraint_violation';
@@ -549,14 +644,15 @@ BEGIN
             USING ERRCODE = 'integrity_constraint_violation';
     END IF;
     IF TG_OP = 'INSERT' THEN
-        IF NEW.watermark <> 0 THEN
-            RAISE EXCEPTION 'nekaise: a new consumer starts at watermark 0'
+        IF NEW.watermark <> 0 OR (SELECT compacted FROM {s}.outbox_state) > 0 THEN
+            RAISE EXCEPTION 'nekaise: a new consumer starts at watermark 0, before any '
+                'compaction (it would miss compacted history)'
                 USING ERRCODE = 'integrity_constraint_violation';
         END IF;
         RETURN NEW;
     END IF;
     IF NEW.consumer <> OLD.consumer OR NEW.watermark < OLD.watermark
-            OR NEW.watermark > (SELECT COALESCE(max(seq), 0) FROM {s}.outbox)
+            OR NEW.watermark > (SELECT allocated FROM {s}.outbox_state)
             OR EXISTS (SELECT 1 FROM {s}.outbox o WHERE o.seq > OLD.watermark
                        AND o.seq <= NEW.watermark AND NOT EXISTS (
                            SELECT 1 FROM {s}.outbox_acks a WHERE a.consumer = OLD.consumer
@@ -598,8 +694,9 @@ CREATE TABLE IF NOT EXISTS {s}.artifact_locators (
 """
 # Every table V4_DDL creates (tests and pg_shadow's emptiness check use it).
 V4_TABLES = ("dataset", "authority_log", "config_blobs", "config_sets", "config_set_members",
-             "runs", "batches", "revisions", "generations", "generation_retention", "outbox",
-             "outbox_consumers", "outbox_acks", "artifacts", "artifact_locators")
+             "runs", "batches", "revisions", "generations", "generation_retention",
+             "outbox_state", "outbox", "outbox_consumers", "outbox_acks", "artifacts",
+             "artifact_locators")
 
 
 def _migrate_4(conn, schema):  # stage 4 step 1 contracts: new tables only, nothing rewritten
@@ -1090,9 +1187,12 @@ class Contracts:
             members[name] = sha
             self._q("INSERT INTO config_blobs (sha256, bytes) VALUES (%s, %s) "
                     "ON CONFLICT DO NOTHING", [sha, bytes(data)])
-        digest = store._digest(members)
-        if self._q("INSERT INTO config_sets (digest) VALUES (%s) ON CONFLICT DO NOTHING",
-                   [digest]).rowcount:
+        text = store._canonical(members)
+        digest = hashlib.sha256(text.encode()).hexdigest()  # == store._digest(members)
+        # created and sealed here, in this one transaction (the database checks the digest, the
+        # canonical form and, at commit, that every member row exists)
+        if self._q("INSERT INTO config_sets (digest, members_text) VALUES (%s, %s) "
+                   "ON CONFLICT DO NOTHING", [digest, text]).rowcount:
             with self._conn.cursor() as cur:
                 cur.executemany("INSERT INTO config_set_members (digest, name, sha256) "
                                 "VALUES (%s, %s, %s)", [(digest, n, h) for n, h in members.items()])
@@ -1187,11 +1287,16 @@ class Contracts:
                       "FROM outbox_acks a WHERE a.consumer = %s AND a.seq = o.seq)",
                       [w[0], consumer]).fetchone()[0]
         top = gap - 1 if gap is not None else \
-            self._q("SELECT COALESCE(max(seq), 0) FROM outbox").fetchone()[0]
+            self._q("SELECT allocated FROM outbox_state").fetchone()[0]
         if top > w[0]:
             self._q("UPDATE outbox_consumers SET watermark = %s, updated_at = now() "
                     "WHERE consumer = %s", [top, consumer])
         return max(top, w[0])
+
+    def outbox_marks(self) -> tuple[int, int]:
+        """(allocated, compacted): the highest outbox sequence ever issued (the next row takes
+        allocated + 1) and the compacted prefix."""
+        return tuple(self._q("SELECT allocated, compacted FROM outbox_state").fetchone())
 
     def watermarks(self) -> dict[str, int]:
         return dict(self._q("SELECT consumer, watermark FROM outbox_consumers ORDER BY consumer"))

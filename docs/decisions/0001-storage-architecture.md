@@ -812,3 +812,50 @@ second host writes.
   the live root is then refused)? (4) Gate receipts bound to `(run, frozen_seq, frozen_digest)`
   and a `projection` outbox consumer are left to step 2. (5) `backup_corpus` fails closed under
   PostgreSQL authority until step 5 replaces it.
+
+### Step 1, Codex review fixes (2026-09-25; verdict MERGE AFTER FIXES)
+
+- **P1 — authority is re-checked under the lock, not only at construction.** `FileStore.writer()`
+  re-checks the host record and fence right after taking the canonical lock, `_check_writer()`
+  (every transaction's start and its pre-commit check, recovery, writer views) re-checks it, and
+  locked/inherited read views check it too; so a FileStore constructed before the cutover can
+  neither take a writer, open or commit a transaction, nor serve a view afterwards.
+  `backup_corpus` checks authority inside the corpus-round lock (`locked_backup`). Regressions:
+  store constructed then authority flipped → `writer()`, `transaction()` and `read()` refuse; a
+  transaction open at the cutover does not commit (no file written); the backup refuses under
+  the lock.
+- **P1 — nothing but verified rollback lifts a fence.** `write_record(root, "file")` over an
+  existing fence is refused unless `lift_fence=True` (reserved for step 6's verified rollback
+  tooling). `init-file` refuses when a fence exists (the lost-host-record case) and, with
+  `--dsn/--schema`, when the database's dataset row says `postgres`; it opens the schema with
+  `create=False`, so it never creates or migrates one. Regressions: both refusals, the
+  non-existent schema, and a successful binding of a file-mode shadow.
+- **P1 — outbox sequences are never reused.** `outbox_state (allocated, compacted)` is a durable
+  allocation high-water mark and compacted-prefix boundary, maintained only by the outbox
+  trigger (direct updates refused; both only grow): a new row must take `allocated + 1`;
+  compaction deletes only the lowest retained row (`compacted + 1`) and only once every
+  consumer's watermark is past it; watermarks are bounded by `allocated`; a new consumer may be
+  registered only before any compaction (it would miss compacted history). Regression: two
+  generations acknowledged and fully compacted, then a promotion gets sequence 3 and every
+  consumer still has it due.
+- **P2 — config sets are sealed and digest-checked.** `config_sets` carries `members_text`, the
+  canonical JSON `{name: sha256}` (rebuilt and compared by the trigger), with
+  `CHECK digest = sha256(members_text)`; a member row is accepted only if `members_text` lists
+  that name with that hash, and a deferred constraint trigger checks at commit that every listed
+  member exists — so a set is created and sealed in one transaction and nothing can be added,
+  changed or removed afterwards. `Contracts.put_config_set` writes it that way. Regressions:
+  wrong digest, non-canonical text, non-hash members, a late member, updates/deletes, and an
+  incomplete set failing at commit.
+- **Codex decisions on the open questions.** (1) Generation 0: copy the projection once into
+  the baseline run's revisions, outside the round path, verified against the canonical export —
+  a separate tool, **TODO (before step 6)**, never run against live by an agent. (2) **TODO (step
+  6):** at cutover make the frozen legacy data read-only — the tracked directories, the paths
+  atomic replacement writes through (temporary files and renames in those directories) and the
+  root-level data files (`pruned_urls.txt`) — so a pre-step-1 FileStore writer fails. (3) Yes:
+  after merge, migration and `pg_shadow verify`, Codex (not an agent) runs `store_authority.py
+  init-file --dsn … --schema nekaise` on the live checkout. (4) Gate receipts and the projection
+  consumer go to step 2; receipts must exist before any functional promotion, and the projection
+  consumer must be registered before any compaction (the database now enforces the latter).
+  (5) `backup_corpus` keeps refusing under PostgreSQL authority until step 5.
+- **Gates re-run**: full suite 1147 passed / 41 skipped (PG skipped), with PostgreSQL
+  (`nekaise_test`) 1218 passed; `py_compile` clean.

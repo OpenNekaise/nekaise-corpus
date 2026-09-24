@@ -123,13 +123,16 @@ def test_the_fence_survives_a_lost_host_record(tmp_path):
         store.FileStore(root)
     with pytest.raises(AuthorityError, match="fences"):
         store.open(root=root)
-    # a file record cannot be written at or below the fence's epoch (it would not lift it)
+    # a plain file record over the fence is refused (only verified rollback lifts it) ...
+    with pytest.raises(AuthorityError, match="only verified rollback"):
+        store_authority.write_record(root, "file", reason="stale")
+    # ... and rollback tooling cannot go at or below the fence's epoch either
     with pytest.raises(AuthorityError, match="must grow"):
-        store_authority.write_record(root, "file", reason="stale", epoch=1)
+        store_authority.write_record(root, "file", reason="stale", epoch=1, lift_fence=True)
     with pytest.raises(AuthorityError, match="fences"):
         store.FileStore(root)
-    # a newer file epoch (rollback to the files) lifts it and removes the fence
-    store_authority.write_record(root, "file", reason="rollback")
+    # a newer file epoch from rollback tooling lifts it and removes the fence
+    store_authority.write_record(root, "file", reason="rollback", lift_fence=True)
     assert not store_authority.fence_path(root).exists()
     assert type(store.open(root=root)) is store.FileStore
 
@@ -139,7 +142,7 @@ def test_rollback_to_file_authority_restores_the_file_store(tmp_path):
     write_config(root)
     rec = postgres(root)
     assert rec.epoch == 1
-    back = store_authority.write_record(root, "file", reason="rollback")
+    back = store_authority.write_record(root, "file", reason="rollback", lift_fence=True)
     assert back.epoch == 2
     assert type(store.open(root=root)) is store.FileStore
 
@@ -149,7 +152,7 @@ def test_epochs_only_grow(tmp_path):
     store_authority.write_record(root, "file", reason="a")
     postgres(root)
     with pytest.raises(AuthorityError, match="must grow"):
-        store_authority.write_record(root, "file", reason="b", epoch=2)
+        store_authority.write_record(root, "file", reason="b", epoch=2, lift_fence=True)
     with pytest.raises(AuthorityError):
         store_authority.write_record(root, "file", reason="")
 
@@ -260,3 +263,63 @@ def test_show_command_prints_the_selection(tmp_path, capsys):
     assert store_authority.main(["show", "--root", str(root)]) == 0
     assert json.loads(capsys.readouterr().out)["record"]["mode"] == "file"
     assert store_authority.main(["init-file", "--root", str(root)]) == 0  # idempotent
+
+
+def test_init_file_refuses_a_surviving_fence(tmp_path, capsys):
+    """Codex review P1: a lost host record plus init-file must not re-enable the files."""
+    root = tmp_path / "repo"
+    write_config(root)
+    postgres(root)
+    store_authority.HOST_RECORD.unlink()
+    assert store_authority.main(["init-file", "--root", str(root)]) == 1
+    assert "refusing init-file" in capsys.readouterr().err
+    assert store_authority.fence_path(root).exists()
+    assert store_authority.record_for(root) is None
+    with pytest.raises(AuthorityError, match="fences"):
+        store.FileStore(root)
+
+
+def test_a_store_built_before_cutover_cannot_write_after_it(tmp_path):
+    """Codex review P1: authority is re-checked under the lock, not only at construction."""
+    root = tmp_path / "repo"
+    write_config(root)
+    st = store.open(root=root)                     # constructed while the files are authoritative
+    with st.writer() as w:                         # a writer taken before the cutover ...
+        postgres(root)
+        with pytest.raises(AuthorityError):        # ... cannot open a transaction
+            with st.transaction("late", expected_version=st.version(), writer=w):
+                pass
+    with pytest.raises(AuthorityError):
+        with st.writer():                          # nor can the store take a new writer
+            pass
+    with pytest.raises(AuthorityError):
+        with st.read():                            # nor serve a locked view
+            pass
+
+
+def test_a_transaction_open_at_cutover_does_not_commit(tmp_path):
+    root = tmp_path / "repo"
+    write_config(root)
+    st = store.open(root=root)
+    before = sorted(p.name for p in (root / "registry").iterdir())
+    with st.writer() as w:
+        with pytest.raises(AuthorityError):
+            with st.transaction("late", expected_version=st.version(), writer=w) as tx:
+                tx.blocklist_add(["https://e.org/late"])
+                postgres(root)                     # cutover while the transaction is open
+    assert sorted(p.name for p in (root / "registry").iterdir()) == before
+    assert not (root / "pruned_urls.txt").exists()
+
+
+def test_backup_checks_authority_under_the_lock(tmp_path, monkeypatch):
+    """Codex review P1: backup_corpus re-checks after it holds the corpus-round lock."""
+    import backup_corpus
+    root = tmp_path / "repo"
+    called = []
+    monkeypatch.setattr(backup_corpus, "backup", lambda *a, **k: called.append(a))
+    backup_corpus.locked_backup(root, tmp_path / "mnt", dry_run=True)
+    assert called
+    postgres(root)
+    with pytest.raises(AuthorityError, match="backup_corpus.py needs file authority"):
+        backup_corpus.locked_backup(root, tmp_path / "mnt", dry_run=True)
+    assert len(called) == 1

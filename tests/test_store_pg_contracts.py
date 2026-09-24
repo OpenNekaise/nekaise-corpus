@@ -352,7 +352,7 @@ def _promote(conn, run_id, generation, parent):
     conn.execute("UPDATE runs SET status = 'promoted', promoted_generation = %s, ended_at = now() "
                  "WHERE run_id = %s", [generation, run_id])
     conn.execute("UPDATE dataset SET current_generation = %s", [generation])
-    seq = conn.execute("SELECT COALESCE(max(seq), 0) + 1 FROM outbox").fetchone()[0]
+    seq = conn.execute("SELECT allocated + 1 FROM outbox_state").fetchone()[0]
     conn.execute("INSERT INTO outbox (seq, generation, payload_text) VALUES (%s, %s, %s)",
                  [seq, generation, json.dumps({"run": run_id, "frozen_seq": staged})])
     return seq
@@ -495,3 +495,107 @@ def test_contracts_are_fenced_like_transactions(pg, monkeypatch):
     with pytest.raises(store.WriterError, match="stale"):
         with pg.contracts(w):
             pass
+
+
+def _generations(pg, w, n, first=0):
+    parent = first - 1 if first else None
+    for g in range(first, first + n):
+        with pg.contracts(w) as c:
+            _open(c, f"r{g}", parent=parent)
+            c.request_batch(f"r{g}", "fetch", "b", [{"call": "x", "g": g}])
+            _apply(c._conn, f"r{g}", "fetch", "b", 1,
+                   [("manifest", f"d{g}", "put", {"id": f"d{g}"}, None)])
+            _promote(c._conn, f"r{g}", g, parent)
+        parent = g
+
+
+def test_full_compaction_never_reuses_outbox_sequences(pg):
+    """Codex review P1: after every row is compacted the next promotion must take a NEW
+    sequence, so consumers whose watermark is past the old rows still receive it."""
+    with pg.writer() as w:
+        _generations(pg, w, 2)
+        with pg.contracts(w) as c:
+            for consumer in ("review", "publication", "index"):
+                for seq in (1, 2):
+                    c.ack(consumer, seq, "ok")
+                assert c.advance(consumer) == 2
+    _expect_refused(pg, "DELETE FROM outbox WHERE seq = 2")   # compaction goes lowest first
+    with pg._connect(autocommit=True) as conn:
+        conn.execute("DELETE FROM outbox WHERE seq = 1")
+        conn.execute("DELETE FROM outbox WHERE seq = 2")
+        assert conn.execute("SELECT count(*) FROM outbox").fetchone()[0] == 0
+    _expect_refused(pg, "UPDATE outbox_state SET allocated = 0")
+    _expect_refused(pg, "UPDATE outbox_state SET allocated = 7, compacted = 7")
+    _expect_refused(pg, "INSERT INTO outbox (seq, generation, payload_text) "
+                        "VALUES (1, 1, '{}')")                # a reused sequence
+    _expect_refused(pg, "INSERT INTO outbox_consumers (consumer) VALUES ('late')")
+    with pg.writer() as w:
+        _generations(pg, w, 1, first=2)                       # the next promotion
+        with pg.contracts(w) as c:
+            assert c.outbox_marks() == (3, 2)
+            assert c._q("SELECT seq, generation FROM outbox").fetchall() == [(3, 2)]
+            assert c.advance("review") == 2                   # not acknowledged yet: still due
+            c.ack("review", 3, "ok")
+            assert c.advance("review") == 3
+
+
+def test_config_sets_are_sealed_and_digest_checked(pg):
+    """Codex review P2: a config set is created and sealed in one transaction; its digest is
+    the canonical digest of its members; nothing can be added, changed or removed later."""
+    import psycopg
+    extra = hashlib.sha256(b"{}").hexdigest()
+    with pg.writer() as w, pg.contracts(w) as c:
+        digest = c.put_config_set(CONFIG)
+        assert digest == store._digest({n: hashlib.sha256(b).hexdigest()
+                                        for n, b in CONFIG.items()})
+        assert c.put_config_set(CONFIG) == digest             # exact retry
+        c._q("INSERT INTO config_blobs (sha256, bytes) VALUES (%s, %s)", [extra, b"{}"])
+    _expect_refused(pg, "INSERT INTO config_set_members (digest, name, sha256) VALUES "
+                        "(%s, 'vendors.json', %s)", [digest, extra])   # added after sealing
+    _expect_refused(pg, "UPDATE config_set_members SET sha256 = %s", [extra])
+    _expect_refused(pg, "DELETE FROM config_set_members")
+    _expect_refused(pg, "UPDATE config_sets SET created_at = now()")
+    _expect_refused(pg, "DELETE FROM config_sets")
+    good = store._canonical({"a.json": extra})
+    for text, dig in ((good, "0" * 64),                                # wrong digest
+                      ('{"a.json": "%s"}' % extra, None),              # not canonical
+                      ('{"a.json":"nothex"}', None),                   # not a sha256
+                      ("[]", None)):
+        dig = dig or hashlib.sha256(text.encode()).hexdigest()
+        _expect_refused(pg, "INSERT INTO config_sets (digest, members_text) VALUES (%s, %s)",
+                        [dig, text])
+    # a set committed without all its members fails at commit (deferred check)
+    with pg._connect() as conn, pytest.raises(psycopg.IntegrityError):
+        conn.execute("INSERT INTO config_sets (digest, members_text) VALUES (%s, %s)",
+                     [hashlib.sha256(good.encode()).hexdigest(), good])
+        conn.commit()
+    with pg._connect(autocommit=True) as conn:
+        assert conn.execute("SELECT count(*) FROM config_sets").fetchone()[0] == 1
+
+
+def test_init_file_refuses_an_authoritative_database(pg, tmp_path, capsys):
+    """Codex review P1: init-file binding a shadow must check the database's authority."""
+    root = tmp_path / "live"
+    write_config(root)
+    pg.set_authority("postgres", root=root, reason="test cutover")
+    assert store_authority.main(["init-file", "--root", str(root), "--dsn", pg.dsn,
+                                 "--schema", pg.schema]) == 1
+    assert "PostgreSQL-authoritative" in capsys.readouterr().err
+    assert store_authority.record_for(root) is None
+    other = tmp_path / "other"
+    fresh_schema = f"x_{uuid.uuid4().hex[:12]}"
+    with pytest.raises(Exception):   # never creates a schema that does not exist
+        store_authority.main(["init-file", "--root", str(other), "--dsn", pg.dsn,
+                              "--schema", fresh_schema])
+    with pg._connect(autocommit=True) as conn:
+        assert conn.execute("SELECT to_regnamespace(%s)", [fresh_schema]).fetchone()[0] is None
+
+
+def test_init_file_binds_a_file_mode_shadow(pg, tmp_path):
+    root = tmp_path / "live"
+    write_config(root)
+    assert store_authority.main(["init-file", "--root", str(root), "--dsn", pg.dsn,
+                                 "--schema", pg.schema]) == 0
+    rec = store_authority.record_for(root)
+    assert (rec.mode, rec.dataset_uuid, rec.schema) == ("file", pg.authority()["dataset_uuid"],
+                                                        pg.schema)
