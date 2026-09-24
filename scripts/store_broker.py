@@ -143,6 +143,8 @@ class Broker:
         expected = store.Version(str(msg.get("expected_version", "")))
         run_id = store._check_run_id(f"{self.round_id}.{step}.{batch}")
         with self._lock:
+            if self._closing:  # re-checked under the lock: shutdown may have begun meanwhile
+                raise BrokerError("broker is shutting down")
             results = []
             with self.st.transaction(run_id, expected_version=expected, writer=self.writer) as tx:
                 for r in requests:

@@ -71,3 +71,11 @@ def test_a_released_writer_token_is_rejected(pg):
     with pytest.raises(store.WriterError, match="stale"):
         with pg.transaction("r1", expected_version=pg.version(), writer=w):
             pass
+
+
+def test_a_writer_refuses_a_schema_newer_than_its_code(pg, monkeypatch):
+    import store_pg
+    monkeypatch.setattr(store_pg, "SCHEMA_VERSION", store_pg.SCHEMA_VERSION - 1)  # "old code"
+    with pytest.raises(store.WriterError, match="restart with matching code"):
+        with pg.writer():
+            pass

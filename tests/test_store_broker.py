@@ -154,3 +154,12 @@ def test_gate_environment_for_pytest_is_clean(tmp_path, monkeypatch):
     write(st, "seed", seed)
     with st.read() as v:
         assert v.version()
+
+
+def test_no_transaction_starts_once_shutdown_has_begun(round_):
+    st, broker, env, w = round_
+    broker._closing = True  # a handler that passed the early check, then resumed late
+    with pytest.raises(store_broker.BrokerError, match="shutting down"):
+        broker._execute({"cap": broker.cap, "step": "fetch", "batch": "late", "requests": [],
+                         "expected_version": st.version().token})
+    broker._closing = False

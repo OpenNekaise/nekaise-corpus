@@ -345,6 +345,12 @@ class PgStore:
                     raise WriterError(f"writer lock for schema {self.schema} is held by another "
                                       "session")
                 time.sleep(0.1)
+            # A process constructed before a migration may only now get the lock: it must not
+            # write with an outdated idea of the schema (derived columns it does not fill).
+            version = conn.execute("SELECT schema_version FROM state").fetchone()[0]
+            if version != SCHEMA_VERSION:
+                raise WriterError(f"schema {self.schema} is version {version}; this code writes "
+                                  f"version {SCHEMA_VERSION} — restart with matching code")
             epoch = conn.execute("UPDATE state SET writer_epoch = writer_epoch + 1 "
                                  "RETURNING writer_epoch").fetchone()[0]
             token = WriterToken("pg-lock", str(os.getpid()), epoch, f"pg:{self.schema}", nonce,
