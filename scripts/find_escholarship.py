@@ -24,9 +24,12 @@ in lbnl_et_btus and 22/226 CC-BY PDFs kept in a recent lbnl_rw sample, all build
 
 Access: robots.txt allows everything but /search with `Crawl-delay: 4`; this finder waits >= 4 s
 between API requests and build_corpus.HOST_DELAY spaces PDF fetches the same way. CloudFront
-403s self-identified bot UAs and answers bare clients with an HTTP 202 challenge, while the
-loader's standard browser UA gets the API and the PDFs (verified 2026-09-24: /content/qt*.pdf
-200 application/pdf). A 202/429/503 is treated as a challenge: rotation HOLD, nothing proposed.
+403s self-identified bot UAs and answers bare clients with an HTTP 202 challenge; only a
+browser-impersonating UA got through (2026-09-24). POLICY (Codex, 2026-09-24): browser
+impersonation where an identified bot is refused is WAF avoidance, so this finder uses an honest
+UA only and ships DISABLED in registry/backends.json. Re-enable only if an honest identity or an
+explicitly permitted API/download route works. A 202/403/429/503 is treated as a refusal:
+rotation HOLD, nothing proposed, no identity cycling.
 
 Rotation pointer (dynamic, `--cursor`): "<unit>:<more-token>" or "<unit>:START". When a unit
 ends the walk moves to the next unit; at the end of the last unit the pointer stays on the final
@@ -51,9 +54,8 @@ import bes_relevance
 import registry
 
 API = "https://escholarship.org/graphql"
-# The loader's browser UA (build_corpus.UA); CloudFront blocks declared bot UAs on this host.
-UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
-      "Chrome/124.0.0.0 Safari/537.36")
+# Honest identity only (policy above); never a browser UA, never a different UA after a refusal.
+UA = "nekaise-corpus/find_escholarship"
 CRAWL_DELAY = 4.0  # robots.txt Crawl-delay
 PAGE_SIZE = 100
 UNITS: tuple[tuple[str, bool], ...] = (  # (unit id, strict relevance gate)
@@ -126,7 +128,7 @@ def fetch_page(unit: str, token: str | None) -> tuple[list[dict], str | None]:
         headers={"User-Agent": UA, "Accept": "application/json"},
         timeout=60,
     )
-    if response.status_code in (202, 429, 503):
+    if response.status_code in (202, 403, 429, 503):
         raise Challenge(f"{unit} page answered HTTP {response.status_code}")
     response.raise_for_status()
     payload = response.json()

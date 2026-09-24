@@ -111,9 +111,9 @@
       "--max",
       "40"
     ],
-    "enabled": true,
+    "enabled": false,
     "required": false,
-    "reason": "NEW 2026-09-24: LBNL (lbnl_et_btus, lbnl_et, lbnl_rw) + UC Berkeley CBE (cedr_cbe) via eScholarship GraphQL; CC BY/BY-SA/CC0/PD PDFs only, bes_relevance gate; robots Crawl-delay 4 honoured by finder and loader; required=false because the CloudFront front end can answer with challenges"
+    "reason": "policy: CloudFront refuses an identified bot UA; browser impersonation is WAF avoidance (Codex 2026-09-24); re-enable only if an honest identity or an explicitly permitted API/download route works"
   },
   "find_nlr": {
     "script": "find_nlr.py",

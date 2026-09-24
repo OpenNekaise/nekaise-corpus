@@ -21,7 +21,7 @@ import os
 import sys
 import time
 from collections import Counter
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -48,6 +48,27 @@ REPEATED_DNS_MIN_DAYS = 3
 # individual CC-BY article URL is dead.  Keep this narrow: other hosts can use 403 for a durable
 # access-policy decision and need their own reviewed classification.
 TRANSIENT_403_HOSTS = frozenset({"mdpi.com"})
+# Durable retry window for rows the loader marked `transient` (polite-host challenges, circuit
+# skips, network timeouts — build_corpus.POLITE_HOSTS). Discovery cursors advance before the
+# fetch, so pruning such a row would lose it for good; instead it stays in registry + manifest and
+# every later round's loader retries it, until either bound below is reached. Then it is pruned
+# as "failed" but NEVER blocklisted, so a later re-walk can still rediscover it.
+RETRY_MAX_ATTEMPTS = 20
+RETRY_MAX_AGE_DAYS = 14
+
+
+def retry_pending(row: dict, now: datetime | None = None) -> bool:
+    """Whether a failed row is still inside its transient retry window."""
+    if row.get("status") == "ok" or not row.get("transient"):
+        return False
+    if int(row.get("retry_attempts") or 0) >= RETRY_MAX_ATTEMPTS:
+        return False
+    try:
+        first = datetime.strptime(str(row.get("first_failed_at")), "%Y-%m-%dT%H:%M:%SZ")
+    except ValueError:
+        return False
+    now = now or datetime.now(timezone.utc).replace(tzinfo=None)
+    return now - first < timedelta(days=RETRY_MAX_AGE_DAYS)
 
 
 def _host_matches(url: str | None, domains: set[str] | frozenset[str]) -> bool:
@@ -94,6 +115,8 @@ def _blocklistable(row: dict, reason: str,
     """Return whether a prune verdict is durable enough for the URL blocklist."""
     if reason != "failed":
         return True
+    if row.get("transient"):
+        return False  # loader-classified challenge / circuit skip / timeout on a polite host
     status = row.get("http_status")
     if status in TRANSIENT_FETCH_STATUSES:
         return False
@@ -185,12 +208,16 @@ def main() -> None:
     seen_titles = {registry.norm(r.get("title")) for r in manifest
                    if not registry.discovered(r["id"]) and r.get("status") == "ok"}
     drop: dict[str, str] = dict(reviewed_drop)
+    retrying = 0
     for r in manifest:
         if not registry.discovered(r["id"]):
             continue
         if r["id"] in reviewed_drop:
             continue
         if r["status"] != "ok":
+            if retry_pending(r):
+                retrying += 1
+                continue  # kept in registry + manifest; the next round's loader retries it
             drop[r["id"]] = "failed"
             continue
         if r["id"].startswith("pat-") and quality.off_domain_title(r.get("title", "")):
@@ -231,7 +258,7 @@ def main() -> None:
 
     disc_total = sum(1 for r in manifest if registry.discovered(r["id"]))
     print(f"discovered docs: {disc_total} | would prune: {dict(Counter(drop.values()))} "
-          f"(total {len(drop)})")
+          f"(total {len(drop)}); {retrying} transient failures kept for retry")
     if not args.apply:
         print("dry run -- pass --apply to prune")
         return

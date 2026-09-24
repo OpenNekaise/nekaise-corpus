@@ -82,6 +82,7 @@ HOST_CONCURRENCY: dict[str, int] = {
     # SiteGround's rate-triggered sgcaptcha (HTTP 202 + HTML) poisoned 881 of 917 IBPSA fetches
     # on 2026-08-05; one request at a time, spaced by HOST_DELAY, keeps it off.
     "publications.ibpsa.org": 1,
+    "escholarship.org": 1,  # robots Crawl-delay: 4 means serial
 }
 # politeness overrides for hosts that need them (currently none). HOST_DELAY: minimum seconds
 # between request STARTS against a host, enforced under its semaphore — for hosts that tarpit at
@@ -109,18 +110,34 @@ HOST_DELAY: dict[str, float] = {
     "escholarship.org": 4.0,      # robots.txt Crawl-delay: 4 — respect it (find_escholarship)
     "bigladdersoftware.com": 10.0,  # robots.txt Crawl-delay: 10 — respect it
 }
+HONEST_UA = "nekaise-corpus/build_corpus"
 HOST_UA: dict[str, str] = {
     # The SiteGround WAF 403s the spoofed-Chrome UA (75 KB block page) but serves the PDF to a
     # short honest tool UA (verified 2026-09-24; UAs with "(...)" comments were also 403'd).
-    "publications.ibpsa.org": "nekaise-corpus/build_corpus",
+    "publications.ibpsa.org": HONEST_UA,
+    # CloudFront refuses this identified UA (403, 2026-09-24). Presenting as a browser instead
+    # would be WAF avoidance (Codex policy decision 2026-09-24), so eScholarship rows fail
+    # transiently until an honest route works; they are retried, never blocklisted.
+    "escholarship.org": HONEST_UA,
 }
-# Hosts whose challenge page means "stop for this run": after the first captcha / WAF answer
-# (HTTP 202/429/503 without the expected content), every later download for that host in
-# the same run fails fast WITHOUT a request, recorded as a transient 202 so the pruner never
-# blocklists it and the finder can re-propose it. One tripped captcha must not turn into
-# hundreds of further hits that prolong the block.
-CHALLENGE_TRIP_HOSTS = frozenset({"publications.ibpsa.org", "escholarship.org"})
-CHALLENGE_STATUSES = frozenset({202, 429, 503})
+# POLITE hosts: a refusal or challenge means "stop and come back later", never "try another
+# identity". For these hosts the loader uses only HOST_UA, never the browser UA or the curl
+# fallback, classifies the answer BEFORE doing anything else, and after the first challenge
+# (HTTP 202/403/429/503, or a captcha page served as 200) opens a per-run circuit: every later
+# download for the host fails fast WITHOUT a request. Such failures and network timeouts are
+# marked `transient`, stay in the registry and are retried by later rounds (bounded by
+# prune_corpus.RETRY_MAX_*), and are never blocklisted.
+POLITE_HOSTS = frozenset({"publications.ibpsa.org", "escholarship.org"})
+CHALLENGE_STATUSES = frozenset({202, 403, 429, 503})
+CHALLENGE_BODY = re.compile(
+    rb"sgcaptcha|captcha|challenge-platform|cf-chl|awswaf|request blocked|access denied", re.I
+)
+# Per-run download cap for polite hosts, so a retry backlog paced at HOST_DELAY cannot stretch a
+# round's fetch step: the excess stays in the registry untouched (no manifest row) until later.
+HOST_RUN_CAP: dict[str, int] = {
+    "publications.ibpsa.org": 80,  # 80 x 3 s = 4 min
+    "escholarship.org": 60,        # 60 x 4 s = 4 min
+}
 try:  # vendor-literature hosts declare their politeness delay once, in registry/vendors.json
     import find_vendor
     HOST_DELAY.update(find_vendor.host_delays(find_vendor.load_vendors()))
@@ -163,7 +180,7 @@ _tripped_lock = threading.Lock()
 
 
 def _trip_host(host: str, why: str) -> None:
-    if host not in CHALLENGE_TRIP_HOSTS:
+    if host not in POLITE_HOSTS:
         return
     with _tripped_lock:
         if host in _tripped_hosts:
@@ -386,6 +403,48 @@ def _wait_for_host(host: str) -> None:
         time.sleep(wait)
 
 
+def is_challenge(status: int, body: bytes, fmt: str) -> bool:
+    """A polite host's refusal/captcha: challenge status, or a captcha page served as 200."""
+    if status in CHALLENGE_STATUSES:
+        return True
+    return (status == 200 and fmt == "pdf" and not body.startswith(b"%PDF-")
+            and bool(CHALLENGE_BODY.search(body[:4000])))
+
+
+def _circuit_open(rec: dict, host: str) -> bool:
+    if why := _tripped(host):
+        rec["error"] = f"challenge circuit open for {host} ({why}); not requested"
+        rec["transient"] = True
+        rec["_not_requested"] = True
+        return True
+    return False
+
+
+def _fetch_polite(url: str, fmt: str, ua: str, rec: dict, host: str) -> bytes | None:
+    """One honest request; a challenge trips the circuit (caller holds the host semaphore)."""
+    try:
+        resp = requests.get(
+            url,
+            headers={"User-Agent": ua, "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8"},
+            timeout=TIMEOUT,
+            allow_redirects=True,
+        )
+    except (requests.Timeout, requests.ConnectionError) as exc:
+        rec["error"] = f"network: {exc}"
+        rec["transient"] = True
+        return None
+    rec["http_status"] = resp.status_code
+    body = resp.content or b""
+    if is_challenge(resp.status_code, body, fmt):
+        why = f"HTTP {resp.status_code} challenge"
+        _trip_host(host, why)
+        rec["error"] = f"{why} (polite host: no fallback)"
+        rec["transient"] = True
+        return None
+    resp.raise_for_status()
+    return body
+
+
 def download_one(src: dict) -> dict:
     """Download and persist original bytes, holding a host slot for network I/O only."""
     rec, ext = _new_record(src)
@@ -393,69 +452,33 @@ def download_one(src: dict) -> dict:
     fmt = rec["format"]
     source = rec["source"]
     host = urlparse(src["url"]).netloc.lower()
-    ua = HOST_UA.get(urlparse(src["url"]).netloc.lower(), UA)
+    polite = host in POLITE_HOSTS
+    ua = HOST_UA.get(host, UA)
     try:
         with _host_sem(src["url"]):
-            if why := _tripped(host):
-                rec["http_status"] = 202
-                rec["error"] = f"challenge circuit open for {host} ({why}); not requested"
+            if _circuit_open(rec, host):
                 return rec
             _wait_for_host(host)
-            if "ec.europa.eu/research/participants/documents/downloadPublic" in src["url"]:
-                resp = _fetch_ec_deliverable(src["url"])
+            # Another worker may have opened the circuit while this one waited for its slot.
+            if _circuit_open(rec, host):
+                return rec
+            if polite:
+                data = _fetch_polite(src["url"], fmt, ua, rec, host)
+                if data is None:
+                    return rec
+            elif "ec.europa.eu/research/participants/documents/downloadPublic" in src["url"]:
+                data = _fetch_with_fallback(src["url"], fmt, ua, rec,
+                                            _fetch_ec_deliverable(src["url"]))
             elif (host.removeprefix("www.") == "publications.gc.ca"
                   and "/collections/" in urlparse(src["url"]).path):
-                resp = _fetch_publications_gc_ca(src["url"])
+                data = _fetch_with_fallback(src["url"], fmt, ua, rec,
+                                            _fetch_publications_gc_ca(src["url"]))
             else:
-                resp = requests.get(
-                    src["url"],
-                    headers={
-                        "User-Agent": ua,
-                        "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8",
-                    },
-                    timeout=TIMEOUT,
-                    allow_redirects=True,
-                )
-            rec["http_status"] = resp.status_code
-            if resp.status_code in (403, 410, 429, 503):
-                # WAFs (Akamai/Cloudflare/Google) block the python client's TLS fingerprint but
-                # pass curl's. Only accept a fallback with the expected content.
-                # Do not capture curl stdout through a pipe.  Extraction workers are spawned
-                # while downloads are active, and a fork can inherit the pipe's write end; if
-                # that happens communicate() never observes EOF after curl exits.  A temporary
-                # file also avoids buffering large patent HTML responses in a pipe.
-                with tempfile.TemporaryFile() as curl_body:
-                    out = subprocess.run(
-                        ["curl", "-sSL", "--max-time", str(TIMEOUT), "-A", ua, src["url"]],
-                        stdout=curl_body,
-                        stderr=subprocess.DEVNULL,
-                        timeout=TIMEOUT + 15,
-                    )
-                    curl_body.seek(0)
-                    body = curl_body.read() if out.returncode == 0 else b""
-                good = len(body) > 512 and (
-                    body[:5] == b"%PDF-" if fmt == "pdf"
-                    else (
-                        b"automated queries" not in body[:4000]
-                        and b"unusual traffic" not in body[:4000]
-                        and b"Too many requests" not in body[:4000]
-                        and b"too many requests" not in body[:4000]
-                    )
-                )
-                if good:
-                    data, rec["http_status"] = body, 200
-                else:
-                    resp.raise_for_status()
-                    data = resp.content
-            else:
-                resp.raise_for_status()
-                data = resp.content
+                data = _fetch_with_fallback(src["url"], fmt, ua, rec)
         if fmt == "pdf" and not data.startswith(b"%PDF-"):
             # a 200 that isn't a PDF is a WAF interstitial / captcha / error page — without this
             # check it lands in the corpus as an ok row with 0 text chars (IBPSA sgcaptcha, 07-09)
             rec["error"] = f"not-a-pdf (got {data[:12]!r})"
-            if rec["http_status"] in CHALLENGE_STATUSES:
-                _trip_host(host, f"HTTP {rec['http_status']} non-PDF body")
             return rec
         rec["sha256"] = sha256_bytes(data)
         rec["bytes"] = len(data)
@@ -472,9 +495,50 @@ def download_one(src: dict) -> dict:
         rec["_text_dir"] = str(TEXT)
     except Exception as e:
         rec["error"] = str(e)
-        if rec["http_status"] in CHALLENGE_STATUSES:
-            _trip_host(host, f"HTTP {rec['http_status']}")
     return rec
+
+
+def _fetch_with_fallback(url: str, fmt: str, ua: str, rec: dict, resp=None) -> bytes:
+    """Default (non-polite) hosts: requests, then a bounded curl retry on 403/410/429/503."""
+    if resp is None:
+        resp = requests.get(
+            url,
+            headers={"User-Agent": ua, "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8"},
+            timeout=TIMEOUT,
+            allow_redirects=True,
+        )
+    rec["http_status"] = resp.status_code
+    if resp.status_code not in (403, 410, 429, 503):
+        resp.raise_for_status()
+        return resp.content
+    # WAFs (Akamai/Cloudflare/Google) block the python client's TLS fingerprint but pass curl's.
+    # Only accept a fallback with the expected content. Do not capture curl stdout through a
+    # pipe: extraction workers are spawned while downloads are active, and a fork can inherit the
+    # pipe's write end, so communicate() would never observe EOF. A temporary file also avoids
+    # buffering large patent HTML responses in a pipe.
+    with tempfile.TemporaryFile() as curl_body:
+        out = subprocess.run(
+            ["curl", "-sSL", "--max-time", str(TIMEOUT), "-A", ua, url],
+            stdout=curl_body,
+            stderr=subprocess.DEVNULL,
+            timeout=TIMEOUT + 15,
+        )
+        curl_body.seek(0)
+        body = curl_body.read() if out.returncode == 0 else b""
+    good = len(body) > 512 and (
+        body[:5] == b"%PDF-" if fmt == "pdf"
+        else (
+            b"automated queries" not in body[:4000]
+            and b"unusual traffic" not in body[:4000]
+            and b"Too many requests" not in body[:4000]
+            and b"too many requests" not in body[:4000]
+        )
+    )
+    if good:
+        rec["http_status"] = 200
+        return body
+    resp.raise_for_status()
+    return resp.content
 
 
 def extract_downloaded(rec: dict) -> dict:
@@ -543,6 +607,37 @@ def fetch_one(src: dict) -> dict:
     """Compatibility path for callers/tests that fetch and extract one document synchronously."""
     rec = download_one(src)
     return extract_downloaded(rec) if rec.get("raw_path") else rec
+
+
+def note_retry(rec: dict, previous: dict | None) -> None:
+    """Carry transient-failure bookkeeping across rounds (read by prune_corpus's retry window).
+
+    Only real requests count as attempts; a download skipped by an open challenge circuit keeps
+    the previous count. Successful and hard-failed rows carry no retry state.
+    """
+    not_requested = rec.pop("_not_requested", False)
+    if rec.get("status") == "ok" or not rec.get("transient"):
+        rec.pop("transient", None)
+        return
+    previous = previous if previous and previous.get("transient") else {}
+    rec["retry_attempts"] = int(previous.get("retry_attempts") or 0) + (0 if not_requested else 1)
+    rec["first_failed_at"] = (previous.get("first_failed_at")
+                              or time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
+
+
+def cap_per_host(srcs: list[dict]) -> tuple[list[dict], dict[str, int]]:
+    """Apply HOST_RUN_CAP; return (kept, {host: deferred count})."""
+    counts: dict[str, int] = defaultdict(int)
+    kept, deferred = [], defaultdict(int)
+    for src in srcs:
+        host = urlparse(src["url"]).netloc.lower()
+        cap = HOST_RUN_CAP.get(host)
+        if cap is not None and counts[host] >= cap:
+            deferred[host] += 1
+            continue
+        counts[host] += 1
+        kept.append(src)
+    return kept, dict(deferred)
 
 
 def fair_sources(srcs: list[dict]) -> list[dict]:
@@ -724,6 +819,7 @@ def main() -> None:
     def record_result(rec: dict) -> None:
         nonlocal done, repro, drift, new
         done += 1
+        note_retry(rec, manifest.get(rec["id"]))
         manifest[rec["id"]] = rec
         if rec["status"] == "ok":
             exp = expected.get(rec["id"])
@@ -745,6 +841,9 @@ def main() -> None:
         if done % 25 == 0:
             write_manifest(manifest)  # checkpoint so an interrupted run loses <25 extractions
 
+    todo, deferred = cap_per_host(todo)
+    if deferred:
+        print(f"deferred by per-run host caps (left in the registry for later rounds): {deferred}")
     ordered = fair_sources(todo)
     with (
         ThreadPoolExecutor(max_workers=max(1, args.workers)) as downloads,

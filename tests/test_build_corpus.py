@@ -6,6 +6,8 @@ from concurrent.futures import ProcessPoolExecutor
 import sys
 from urllib.parse import urlparse
 
+import pytest
+
 import build_corpus
 
 
@@ -255,65 +257,172 @@ def test_fair_sources_round_robins_hosts():
     assert hosts == ["a.example", "b.example", "c.example", "a.example", "b.example"]
 
 
-def test_ibpsa_is_fetched_serially_slowly_with_an_honest_ua():
-    host = "publications.ibpsa.org"
-    assert build_corpus.HOST_CONCURRENCY[host] == 1
-    assert build_corpus.HOST_DELAY[host] >= 3.0
-    assert not build_corpus.HOST_UA[host].startswith("Mozilla")
-    assert build_corpus.HOST_DELAY["escholarship.org"] >= 4.0  # robots Crawl-delay: 4
+# --- polite hosts: honest identity, challenge classification, circuit, durable retry ---------
 
-
-def test_challenge_trips_host_circuit_for_the_rest_of_the_run(tmp_path, monkeypatch):
+def _polite_env(monkeypatch, tmp_path, answer):
+    """Route requests.get to `answer(url)`; forbid curl; reset the per-run circuit."""
     calls = []
-    captcha = SimpleNamespace(
-        status_code=202,
-        content=b"<html><head><meta http-equiv='refresh' content='0;/.well-known/sgcaptcha/'>",
-        raise_for_status=lambda: None,
-    )
 
     def get(url, **kwargs):
         calls.append((url, kwargs["headers"]["User-Agent"]))
-        return captcha
+        result = answer(url)
+        if isinstance(result, Exception):
+            raise result
+        return result
 
     monkeypatch.setattr(build_corpus.requests, "get", get)
+    monkeypatch.setattr(
+        build_corpus.subprocess, "run",
+        lambda *_a, **_k: pytest.fail("polite hosts must never use the curl fallback"),
+    )
     monkeypatch.setattr(build_corpus, "HERE", tmp_path)
     monkeypatch.setattr(build_corpus, "RAW", tmp_path / "raw")
     monkeypatch.setattr(build_corpus, "HOST_DELAY", {})
     monkeypatch.setattr(build_corpus, "_tripped_hosts", {})
+    return calls
 
-    def src(n):
-        return {
-            "id": f"ibp-{n}", "title": f"Paper {n}", "source": "ibpsa", "license": "open",
-            "url": f"https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_{n}.pdf",
-            "topic": "building_energy", "format": "pdf",
-        }
 
-    first = build_corpus.download_one(src(1))
-    second = build_corpus.download_one(src(2))
+def _ibpsa(n, host="publications.ibpsa.org"):
+    return {
+        "id": f"ibp-{n}", "title": f"Paper {n}", "source": "ibpsa", "license": "open",
+        "url": f"https://{host}/proceedings/bs/2025/papers/bs2025_{n}.pdf",
+        "topic": "building_energy", "format": "pdf",
+    }
 
-    assert first["http_status"] == 202 and first["error"].startswith("not-a-pdf")
-    assert second["http_status"] == 202  # transient: the pruner never blocklists it
-    assert "challenge circuit open" in second["error"]
-    assert len(calls) == 1  # the tripped host is not requested again this run
+
+def _answer(status, body):
+    return SimpleNamespace(
+        status_code=status, content=body,
+        raise_for_status=lambda: (_ for _ in ()).throw(RuntimeError(f"HTTP {status}"))
+        if status >= 400 else None,
+    )
+
+
+def test_polite_hosts_are_serial_paced_and_use_an_honest_ua_only():
+    for host in ("publications.ibpsa.org", "escholarship.org"):
+        assert host in build_corpus.POLITE_HOSTS
+        assert build_corpus.HOST_CONCURRENCY[host] == 1
+        assert not build_corpus.HOST_UA[host].startswith("Mozilla")
+    assert build_corpus.HOST_DELAY["publications.ibpsa.org"] >= 3.0
+    assert build_corpus.HOST_DELAY["escholarship.org"] >= 4.0  # robots Crawl-delay: 4
+
+
+@pytest.mark.parametrize(
+    ("status", "body"),
+    [
+        (202, b"<html><meta http-equiv='refresh' content='0;/.well-known/sgcaptcha/'>"),
+        (403, b"403 - Forbidden | Access to this page is forbidden."),
+        (429, b"slow down"),
+        (503, b"busy"),
+        (200, b"<html><script src='/.well-known/sgcaptcha/c.js'></script></html>"),
+    ],
+)
+def test_polite_challenge_trips_circuit_without_fallback(tmp_path, monkeypatch, status, body):
+    calls = _polite_env(monkeypatch, tmp_path, lambda _url: _answer(status, body))
+
+    first = build_corpus.download_one(_ibpsa(1))
+    second = build_corpus.download_one(_ibpsa(2))
+
+    assert first["transient"] is True and "challenge" in first["error"]
+    assert first["http_status"] == status
+    assert second["transient"] is True and "circuit open" in second["error"]
+    assert len(calls) == 1  # never requested again this run, never a second identity
     assert calls[0][1] == build_corpus.HOST_UA["publications.ibpsa.org"]
 
 
-def test_challenge_circuit_ignores_hosts_outside_the_trip_list(tmp_path, monkeypatch):
-    calls = []
-    captcha = SimpleNamespace(status_code=202, content=b"<html>", raise_for_status=lambda: None)
+def test_escholarship_refusal_is_transient_with_honest_ua(tmp_path, monkeypatch):
+    calls = _polite_env(monkeypatch, tmp_path, lambda _url: _answer(403, b"Request blocked."))
 
-    def get(url, **_kwargs):
-        calls.append(url)
-        return captcha
+    row = build_corpus.download_one(_ibpsa(1, host="escholarship.org"))
 
-    monkeypatch.setattr(build_corpus.requests, "get", get)
+    assert row["transient"] is True
+    assert calls[0][1] == build_corpus.HONEST_UA
+
+
+def test_circuit_is_rechecked_after_the_pacing_wait(tmp_path, monkeypatch):
+    calls = _polite_env(monkeypatch, tmp_path, lambda _url: pytest.fail("must not request"))
+    monkeypatch.setattr(
+        build_corpus, "_wait_for_host",
+        lambda host: build_corpus._trip_host(host, "opened by another worker"),
+    )
+
+    row = build_corpus.download_one(_ibpsa(1))
+
+    assert calls == []
+    assert "opened by another worker" in row["error"] and row["transient"] is True
+
+
+def test_polite_timeout_is_transient_but_hard_404_is_not(tmp_path, monkeypatch):
+    answers = {
+        "https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1.pdf":
+            build_corpus.requests.Timeout("read timed out"),
+        "https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_2.pdf":
+            _answer(404, b"not found"),
+    }
+    _polite_env(monkeypatch, tmp_path, answers.__getitem__)
+
+    timed_out = build_corpus.download_one(_ibpsa(1))
+    missing = build_corpus.download_one(_ibpsa(2))
+
+    assert timed_out["transient"] is True
+    assert "transient" not in missing and missing["http_status"] == 404
+
+
+def test_polite_pdf_is_downloaded_normally(tmp_path, monkeypatch):
+    _polite_env(monkeypatch, tmp_path, lambda _url: _answer(200, b"%PDF-1.7 building paper"))
+
+    row = build_corpus.download_one(_ibpsa(1))
+
+    assert row["raw_path"] and "transient" not in row
+
+
+def test_non_polite_hosts_keep_their_curl_fallback_and_no_circuit(tmp_path, monkeypatch):
+    requested = []
+    monkeypatch.setattr(
+        build_corpus.requests, "get",
+        lambda url, **_k: requested.append(url) or _answer(202, b"<html>"),
+    )
     monkeypatch.setattr(build_corpus, "HERE", tmp_path)
     monkeypatch.setattr(build_corpus, "RAW", tmp_path / "raw")
     monkeypatch.setattr(build_corpus, "_tripped_hosts", {})
     for n in (1, 2):
-        build_corpus.download_one({
+        row = build_corpus.download_one({
             "id": f"x-{n}", "title": "X", "source": "test", "license": "open",
             "url": f"https://example.org/{n}.pdf", "topic": "construction", "format": "pdf",
         })
+        assert "transient" not in row
 
-    assert len(calls) == 2
+    assert len(requested) == 2
+
+
+def test_retry_bookkeeping_counts_only_real_requests():
+    first = {"id": "ibp-1", "status": "failed", "transient": True}
+    build_corpus.note_retry(first, None)
+    assert first["retry_attempts"] == 1 and first["first_failed_at"]
+
+    skipped = {"id": "ibp-1", "status": "failed", "transient": True, "_not_requested": True}
+    build_corpus.note_retry(skipped, first)
+    assert skipped["retry_attempts"] == 1
+    assert skipped["first_failed_at"] == first["first_failed_at"]
+    assert "_not_requested" not in skipped
+
+    again = {"id": "ibp-1", "status": "failed", "transient": True}
+    build_corpus.note_retry(again, skipped)
+    assert again["retry_attempts"] == 2
+
+    ok = {"id": "ibp-1", "status": "ok"}
+    build_corpus.note_retry(ok, again)
+    assert "retry_attempts" not in ok and "transient" not in ok
+
+
+def test_host_run_cap_defers_the_excess_without_touching_it(monkeypatch):
+    monkeypatch.setattr(build_corpus, "HOST_RUN_CAP", {"publications.ibpsa.org": 2})
+    srcs = [_ibpsa(n) for n in range(4)] + [
+        {"id": "x", "url": "https://example.org/x.pdf"}
+    ]
+
+    kept, deferred = build_corpus.cap_per_host(srcs)
+
+    assert [s["id"] for s in kept] == ["ibp-0", "ibp-1", "x"]
+    assert deferred == {"publications.ibpsa.org": 2}
+

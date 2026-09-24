@@ -106,7 +106,7 @@ NIST/NBS via Crossref · `find_zenodo.py` CC-licensed records · `find_patents.p
 Google Patents sitemap (the biggest open vein) · `find_wiki.py` multilingual Wikipedia ·
 `find_scielo.py` SciELO Brazil's CC-BY AEC journals (the biggest Portuguese built-environment
 vein) · `find_ibpsa.py` IBPSA building-simulation proceedings (captcha-paced) ·
-`find_escholarship.py` LBNL + UC Berkeley CBE CC-licensed papers · `find_nlr.py` National
+`find_escholarship.py` LBNL + UC Berkeley CBE CC-licensed papers (disabled: WAF policy) · `find_nlr.py` National
 Laboratory of the Rockies (ex-NREL) building reports · `crawl_docs.py` doc sites) propose registry entries;
 `prune_corpus.py --apply` is the quality gate (logic in `scripts/quality.py`, golden-tested in
 `tests/`). URLs the pruner drops land in `pruned_urls.txt` (committed) and every finder skips them —
