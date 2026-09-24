@@ -26,7 +26,8 @@ again with the same requests is a no-op (mutations return 0) even though the eff
 differ; different requests under a committed run id raise.
 
 Mutations validate the whole batch before changing anything, return the number of rows actually
-changed, and are journaled with before/after rows, so every deletion leaves a tombstone.
+changed, and are journaled: every deletion leaves a tombstone (id, reason, digest of the deleted
+row) and every transaction a receipt (request digest, operation counts); see EVENT_VERSION.
 
 Values. Rows are JSON objects. Missing and null are distinct: predicates are two-valued and every
 leaf is False on a missing field except Exists. URLs normalize as strip() then trailing '/' removed
@@ -114,7 +115,46 @@ LEDGER_FIELDS = (
 )
 EVENT_FIELDS = (
     "seq", "event_id", "run_id", "at", "table", "op", "id", "before", "after", "reason", "digest",
+    "v", "counts", "before_sha256",
 )
+# The journal's event contract (ADR 0001 stage 3, step 6; shared by every backend). Version 1
+# events (no "v") carried whole before/after rows for every mutation; they stay valid as written.
+# Version 2 journals only (a) a tombstone per deleted row — table, id, reason and the sha256 of
+# the deleted row's canonical JSON — and (b) one receipt per transaction: the commit row with the
+# request digest (the replay identity) and the number of operations per table and op. Inserted
+# and updated rows are not imaged: their state is the tables themselves, and a full re-clean
+# would otherwise journal gigabytes.
+EVENT_VERSION = 2
+
+
+def journal_op(table: str, op: str, sid, before=None, reason=None) -> dict:
+    """The compact in-transaction record of one mutation (what journal_events needs)."""
+    rec = {"table": table, "op": op, "id": sid}
+    if op == "delete":
+        rec["reason"] = reason
+        rec["before_sha256"] = None if before is None else hashlib.sha256(
+            canonical_row(before).encode()).hexdigest()
+    return rec
+
+
+def journal_events(ops: Sequence[Mapping], run_id: str, at: str, last_seq: int,
+                   digest: str) -> list[dict]:
+    """A committed transaction's version-2 journal rows: its tombstones, then its receipt."""
+    rows, counts, n, seq = [], {}, 0, last_seq
+    for op in ops:
+        per = counts.setdefault(op["table"], {})
+        per[op["op"]] = per.get(op["op"], 0) + 1
+        if op["op"] == "delete":
+            n += 1
+            seq += 1
+            rows.append({"v": EVENT_VERSION, "seq": seq, "event_id": f"{run_id}:{n}",
+                         "run_id": run_id, "at": at, "table": op["table"], "op": "delete",
+                         "id": op["id"], "reason": op["reason"],
+                         "before_sha256": op["before_sha256"]})
+    rows.append({"v": EVENT_VERSION, "seq": seq + 1, "event_id": f"{run_id}:commit",
+                 "run_id": run_id, "at": at, "table": None, "op": "commit", "id": None,
+                 "digest": digest, "counts": counts})
+    return rows
 TABLE_FIELDS: dict[Table, frozenset[str]] = {
     Table.ENTRIES: frozenset(registry.FIELDS),
     Table.MANIFEST: frozenset(registry.FIELDS + MANIFEST_ONLY_FIELDS),
@@ -324,6 +364,24 @@ def restriction_where(restrictions: Mapping[str, Mapping]) -> Predicate:
                 raise StoreError(f"unsupported eligibility selector {key!r}")
         rules.append(And(*leaves))
     return Or(*rules)
+
+
+def pinned_policy(view) -> tuple[dict, dict]:
+    """(eligibility restrictions, host fetch policy) from the view's PINNED configuration,
+    validated and failing closed — what registry.load_eligibility() and host_policy.load() read
+    from the working tree, but consistent with the data the view serves (an operator editing the
+    files meanwhile cannot change a running step's policy)."""
+    import host_policy
+
+    docs = view.config_get().documents
+    for name in ("eligibility.json", "host_policy.json"):
+        if name not in docs:
+            raise StoreError(f"pinned configuration lacks registry/{name}")
+    if errors := registry.validate_eligibility(docs["eligibility.json"]):
+        raise StoreError(f"invalid pinned eligibility.json: {'; '.join(errors)}")
+    if errors := host_policy.validate(docs["host_policy.json"]):
+        raise StoreError(f"invalid pinned host_policy.json: {'; '.join(errors)}")
+    return docs["eligibility.json"]["restrictions"], docs["host_policy.json"]["hosts"]
 
 
 def eligibility_where(restrictions: Mapping[str, Mapping]) -> Predicate:
@@ -981,15 +1039,23 @@ class FileStore:
         return Version(_digest(rows))
 
     @contextmanager
-    def writer(self, timeout: float = 0, *, round_id: str | None = None) -> Iterator[WriterToken]:
+    def writer(self, timeout: float = 0, *, round_id: str | None = None,
+               recovering: bool = False) -> Iterator[WriterToken]:
         """Hold the canonical round lock and yield the token that proves it. The token dies with
         this context, even if the same process takes the lock again later. `round_id` declares
         the round this writer is about to run: its snapshot must not exist yet, so ownership is
-        only ever granted for a round started under this lock, never for an abandoned one."""
+        only ever granted for a round started under this lock, never for an abandoned one — or,
+        with `recovering`, the interrupted round it recovers: its snapshot must exist (run_round
+        --recover reads the restored state with it before discarding the snapshot)."""
         if round_id is not None:
             _check_run_id(round_id)
+        if recovering and round_id is None:
+            raise StoreError("a recovering writer must name the round it recovers")
         with ops.named_lock(ROUND_LOCK, timeout=timeout, workspace=self.workspace) as path:
-            if round_id is not None and round_id in self._legacy_snapshots():
+            has_snapshot = round_id is not None and round_id in self._legacy_snapshots()
+            if recovering and not has_snapshot:
+                raise PendingTransaction(f"round {round_id} has no snapshot to recover")
+            if has_snapshot and not recovering:
                 raise PendingTransaction(f"round {round_id} already has a snapshot: it was "
                                          "interrupted and must be recovered, not resumed")
             token = WriterToken("file-lock", str(os.getpid()), 0, str(path), uuid.uuid4().hex,
@@ -1566,15 +1632,8 @@ class FileStore:
                         doc, indent=2, ensure_ascii=False, sort_keys=True) + "\n").encode()
 
     def _render_journal(self, view: "WriteView", digest: str, writes: dict) -> None:
-        seq = self._last_seq()
         at = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-        rows = []
-        for n, op in enumerate(view._ops, 1):
-            seq += 1
-            rows.append({"seq": seq, "event_id": f"{view.run_id}:{n}", "run_id": view.run_id,
-                         "at": at, **op})
-        rows.append({"seq": seq + 1, "event_id": f"{view.run_id}:commit", "run_id": view.run_id,
-                     "at": at, "table": None, "op": "commit", "id": None, "digest": digest})
+        rows = journal_events(view._ops, view.run_id, at, self._last_seq(), digest)
         # Files per UTC day, rolled by size: the journal carries whole rows, and since step 6 every
         # loader checkpoint, cleaner batch and prune journals its manifest rows, so one file per
         # day would outgrow the per-file publication limit (check_contracts'
@@ -2137,8 +2196,7 @@ class WriteView(ReadView):
         self.__dict__.pop("_keyed_cache", None)
 
     def _record(self, table: str, op: str, sid, before=None, after=None, reason=None) -> None:
-        self._ops.append({"table": table, "op": op, "id": sid, "before": copy_json(before),
-                          "after": copy_json(after), "reason": reason})
+        self._ops.append(journal_op(table, op, sid, before, reason))
 
     @staticmethod
     def _unique_ids(rows: Sequence[Mapping], what: str) -> None:

@@ -380,12 +380,24 @@ class StepSession:
     standalone — and an immutable request list, so an identical retry after a lost reply is a
     no-op and a different batch under a used identity is refused. The first batch expects the
     view's version; each later one the version its predecessor committed, i.e. only this step
-    may have changed the store since it read. Batch names must be unique within a session."""
+    may have changed the store since it read. Batch names must be unique within a session.
+
+    Invocations. A broker outlives one command in a maintenance window, which may run the same
+    step several times: every invocation there carries its own random token
+    ("<window>.<step>.i<hex>-<batch>"), fixed for the invocation, so its batches still retry
+    exactly while a second invocation never reuses (and collides with) the first one's committed
+    identities. In run_round's own round (broker round == NEKAISE_RUN_ID) each step runs once and
+    keeps the deterministic "<round>.<step>.<batch>"."""
 
     def __init__(self, st, step: str, view, *, client: "Client | None" = None,
-                 writer: "store.WriterToken | None" = None, session_id: str | None = None):
+                 writer: "store.WriterToken | None" = None, session_id: str | None = None,
+                 invocation: str | None = None):
         self.st, self.step, self.view = st, step, view
         self._client, self._writer, self.session_id = client, writer, session_id
+        if client is not None and invocation is None \
+                and client.round_id != (os.environ.get("NEKAISE_RUN_ID") or None):
+            invocation = f"i{secrets.token_hex(4)}"
+        self.invocation = invocation
         self.version = view.version()
         self.transactions: list[str] = []  # identities of the batches committed, in order
 
@@ -398,10 +410,13 @@ class StepSession:
         """The round (or maintenance window) whose broker runs the batches, if any."""
         return self._client.round_id if self._client is not None else None
 
+    def _batch_name(self, batch: str) -> str:
+        return f"{self.invocation}-{batch}" if self.invocation else batch
+
     def identity(self, batch: str) -> str:
         """The store transaction id batch `batch` runs (or ran) as."""
         if self._client is not None:
-            return f"{self._client.round_id}.{self.step}.{batch}"
+            return f"{self._client.round_id}.{self.step}.{self._batch_name(batch)}"
         return f"{self.session_id}.{batch}"
 
     def submit(self, batch: str, requests: list[dict]) -> list:
@@ -413,7 +428,8 @@ class StepSession:
             return []
         requests = json.loads(json.dumps(requests))  # immutable: a private, plain-data copy
         if self._client is not None:
-            results = self._client.submit(self.step, batch, requests, self.version)
+            results = self._client.submit(self.step, self._batch_name(batch), requests,
+                                          self.version)
             self.version = self._client.last_version
             self.transactions.append(self.identity(batch))
             return results

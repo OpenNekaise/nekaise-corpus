@@ -69,9 +69,9 @@ def test_clean_check_passes_on_a_fresh_clone_and_reports_unavailable(
     monkeypatch.setattr(cc, "HERE", tmp_path)
     monkeypatch.setattr(cc, "CORPUS", corpus)
     monkeypatch.setattr(cc, "STAMP", corpus / ".ruleset")
-    monkeypatch.setattr(registry, "load_host_policy", lambda: POLICY)
-    monkeypatch.setattr(registry, "load_eligibility", lambda: {})
-    import store  # --check reads the manifest through the store
+    import pipeline_repo
+    import store  # --check reads the manifest and its pinned policy through the store
+    pipeline_repo.write_repo(tmp_path, policy=POLICY)
     st = store.FileStore(tmp_path)
     with st.writer() as w:
         with st.transaction("seed", expected_version=st.version(), writer=w) as tx:

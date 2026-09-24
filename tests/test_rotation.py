@@ -161,9 +161,9 @@ def test_standalone_advance_is_one_journaled_store_transaction(tmp_path, monkeyp
             "find_kitopen": {**STATE["find_kitopen"], "next": "tok-2"}}
     assert path.read_text() == _legacy_bytes(want)  # byte-identical to the legacy writer
     with store.FileStore(tmp_path).read() as v:
-        events = [e for e in v.scan(store.Table.EVENTS).rows if e["op"] != "commit"]
-    assert [(e["table"], e["id"], e["after"]["next"]) for e in events] == [
-        ("rotation", "find_osti", 9), ("rotation", "find_kitopen", "tok-2")]
+        events = v.scan(store.Table.EVENTS).rows
+    assert [(e["op"], e["counts"]) for e in events] == [  # one receipt per transaction
+        ("commit", {"rotation": {"upsert": 1}}), ("commit", {"rotation": {"upsert": 1}})]
     assert all(e["run_id"].startswith("rotation-") for e in events)
 
 

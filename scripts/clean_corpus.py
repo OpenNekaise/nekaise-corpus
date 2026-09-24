@@ -377,7 +377,7 @@ def parse_rules(spec: str) -> list[str]:
 
 
 def partition_training_rows(
-    rows: list[dict], restrictions: dict[str, dict]
+    rows: list[dict], restrictions: dict[str, dict], policy: dict[str, dict] | None = None,
 ) -> tuple[list[dict], list[dict]]:
     """Split cleaner inputs from policy-restricted rows whose provenance must remain.
 
@@ -387,14 +387,15 @@ def partition_training_rows(
     """
     restricted = [r for r in rows if registry.restriction_for(r, restrictions) is not None]
     eligible, _ = registry.partition_manifest_ok_rows(rows, restrictions)
-    missing = {r["id"] for r in locally_unavailable(eligible, restrictions)}
+    missing = {r["id"] for r in locally_unavailable(eligible, restrictions, policy)}
     todo = [r for r in eligible if r.get("text_path") and r["id"] not in missing]
     return todo, restricted
 
 
-def locally_unavailable(rows: list[dict], restrictions: dict[str, dict]) -> list[dict]:
+def locally_unavailable(rows: list[dict], restrictions: dict[str, dict],
+                        policy: dict[str, dict] | None = None) -> list[dict]:
     eligible, _ = registry.partition_manifest_ok_rows(rows, restrictions)
-    return registry.locally_unavailable_rows(eligible, root=HERE)
+    return registry.locally_unavailable_rows(eligible, policy, root=HERE)
 
 
 def clear_corpus_metadata(rows: list[dict]) -> int:
@@ -453,22 +454,25 @@ def main() -> None:
             print(f"  {name:22s} {RULE_DOC[name]}")
         return
 
-    rules = parse_rules(stamped_ruleset() if args.rules == "stamp" else args.rules)
-    restrictions = registry.load_eligibility()
     st = store.open(root=HERE)
     if not (args.report or args.check):
         # build mode: the round's inherited view and broker, or this command's own writer (the
-        # round lock) for the whole read-clean-patch sequence.
+        # round lock) for the whole read-clean-patch sequence. The ruleset stamp and the policy
+        # are read under it: eligibility and host policy from the view's pinned configuration.
         with store_broker.step_session(st, "clean", timeout=args.lock_timeout) as session:
+            rules = parse_rules(stamped_ruleset() if args.rules == "stamp" else args.rules)
+            restrictions, policy = store.pinned_policy(session.view)
             rows = list(corpus_stats.iter_manifest(session.view))
-            todo, restricted = partition_training_rows(rows, restrictions)
+            todo, restricted = partition_training_rows(rows, restrictions, policy)
             build(session, todo, restricted, rules, args)
         return
     # read-only modes: one consistent store view, rows in the legacy manifest order (the seeded
     # per-shard sample and first-N diagnostics depend on it).
     with st.read(timeout=args.lock_timeout) as view:
+        rules = parse_rules(stamped_ruleset() if args.rules == "stamp" else args.rules)
+        restrictions, policy = store.pinned_policy(view)
         rows = list(corpus_stats.iter_manifest(view))
-    todo, restricted = partition_training_rows(rows, restrictions)
+    todo, restricted = partition_training_rows(rows, restrictions, policy)
 
     # --------------------------------------------------------------------- report mode
     if args.report:
@@ -528,7 +532,7 @@ def main() -> None:
                 f"... and {len(restricted_with_metadata) - 10} more restricted metadata rows"
             )
         expect = {f"{r['id']}.md" for r in todo}
-        if unavailable := locally_unavailable(rows, restrictions):
+        if unavailable := locally_unavailable(rows, restrictions, policy):
             print(f"locally unavailable, suspended host (provenance kept, not expected in "
                   f"corpus/): {len(unavailable):,} rows, e.g. {unavailable[0]['id']}")
         on_disk = {p.name for p in CORPUS.glob("*.md")}

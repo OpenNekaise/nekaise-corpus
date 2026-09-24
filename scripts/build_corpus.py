@@ -869,7 +869,7 @@ def main() -> None:
 def run(view, session, args, only: set[str], selection: dict) -> None:
     """The loader over one read view; `session` (None for --verify) receives its writes. Every
     read happens before the first write."""
-    restrictions = registry.load_eligibility()
+    restrictions, policy = store.pinned_policy(view)  # the view's pinned configuration
     all_srcs = load_entries(view)
     pointer_only = sum(
         source.get("license") in registry.POINTER_ONLY_LICENSES for source in all_srcs
@@ -919,7 +919,6 @@ def run(view, session, args, only: set[str], selection: dict) -> None:
               f"(of {n_ok} ok docs in manifest)")
         return
 
-    policy = host_policy.load()
     todo = []
     suspended: dict[str, int] = defaultdict(int)
     for s in srcs:

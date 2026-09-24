@@ -347,14 +347,19 @@ def decide(manifest: list[dict], reviewed_drop: dict[str, str], policy: dict[str
 # A prune deletes metadata (registry entry, manifest row) in one store transaction and bytes
 # (raw/, text/, corpus/) that no transaction can restore. So the bytes of the dropped documents
 # are MOVED into workspace/prune-quarantine/<transaction>/ before the transaction runs, and only
-# deleted once its outcome is settled:
-#   * committed, standalone (or in the maintainer's window): purged right after the commit;
-#   * committed inside a round: kept until the round ends — run_round purges them when the round
-#     succeeds and moves them back when it rolls the round's metadata back;
-#   * unknown (the transaction failed or the process died): the next prune (or run_round
-#     --recover) settles it by the store's state — the dropped rows still present means the
-#     transaction did not commit (or was rolled back), so the bytes go back; all absent means it
-#     committed, so they are deleted. Settling is idempotent and resumable.
+# deleted once the store state they belong to is settled:
+#   * committed, standalone (or in the maintainer's window): deleted right after the commit (this
+#     very transaction deleted their rows);
+#   * committed inside a round: kept until the round ends, then settled by run_round against the
+#     round's final state (success) or its restored pre-round state (rollback, --recover);
+#   * anything left over (a failed transaction, a killed process) is settled by the next round
+#     before it fetches, and by the next prune before it decides.
+# Settling is one rule per file, whatever the record's state says: a file goes back to its path
+# when its document's manifest row exists in the settled state (a transaction that did not
+# commit, or a round rolled back to a state that held the document); otherwise it is deleted (the
+# row was pruned for good, or the document was new in a rolled-back round). A file whose path
+# has been taken meanwhile is deleted (the newer file wins). Idempotent and resumable: a crash
+# mid-settlement leaves the quarantine to be settled again.
 
 QUARANTINE_DIR = "prune-quarantine"
 
@@ -372,26 +377,27 @@ def quarantine_files(root: Path, txn: str, rows: list[dict], run: str | None) ->
     transaction `txn`. Returns its directory, or None when there is nothing to move."""
     root = Path(root)
     base = root.resolve()
-    files: list[str] = []
+    items: list[list[str]] = []  # [document id, repository-relative path]
+    seen: set[str] = set()
     for r in rows:
         for key in ("raw_path", "text_path", "corpus_path"):
             rel = r.get(key)
-            if not rel or rel in files or not (root / rel).exists():
+            if not rel or rel in seen or not (root / rel).exists():
                 continue
             if base not in (root / rel).resolve().parents:
                 print(f"  note: {r['id']}: {key} {rel!r} is outside the repository; left in place")
                 continue
-            files.append(rel)
-    if not files:
+            seen.add(rel)
+            items.append([r["id"], rel])
+    if not items:
         return None
     qdir = quarantine_root(root) / txn
     if qdir.exists():
         raise RuntimeError(f"prune quarantine {qdir} already exists; settle it first")
     qdir.mkdir(parents=True)
-    record = {"txn": txn, "run": run, "ids": sorted(r["id"] for r in rows), "files": files,
-              "state": "moving"}
+    record = {"txn": txn, "run": run, "items": items, "state": "moving"}
     _write_record(qdir, record)  # before any move: a crash leaves a record to settle
-    for rel in files:
+    for _sid, rel in items:
         target = qdir / "files" / rel
         target.parent.mkdir(parents=True, exist_ok=True)
         os.replace(root / rel, target)
@@ -401,68 +407,60 @@ def quarantine_files(root: Path, txn: str, rows: list[dict], run: str | None) ->
 
 
 def mark_committed(qdir: Path) -> None:
+    """Diagnostics only: settlement never trusts the state, it asks the store."""
     record = json.loads((qdir / "record.json").read_text())
     record["state"] = "committed"
     _write_record(qdir, record)
 
 
-def _restore(root: Path, qdir: Path, record: dict) -> int:
-    moved = 0
-    for rel in record.get("files") or []:
+def settle_quarantine(root: Path, qdir: Path, present) -> dict[str, int]:
+    """Settle one quarantine: `present(ids)` returns the ids whose manifest rows exist in the
+    settled state. Returns {"restored": files, "discarded": files}."""
+    counts = {"restored": 0, "discarded": 0}
+    record_path = qdir / "record.json"
+    if not record_path.exists():  # created, but nothing recorded, so nothing moved
+        shutil.rmtree(qdir)
+        return counts
+    record = json.loads(record_path.read_text())
+    items = record.get("items") or []
+    keep = set(present(sorted({sid for sid, _ in items})))
+    for sid, rel in items:
         src = qdir / "files" / rel
         if not src.exists():
-            continue  # never moved (the move was interrupted) or already back
+            continue  # never moved (the move was interrupted), or settled already
         target = Path(root) / rel
-        if target.exists():
-            src.unlink()  # something newer took the path; it wins
-            continue
-        target.parent.mkdir(parents=True, exist_ok=True)
-        os.replace(src, target)
-        moved += 1
-    return moved
-
-
-def settle_quarantines(root: Path, *, view=None, run: str | None = None,
-                       outcome: str | None = None) -> dict[str, int]:
-    """Finish pending prune quarantines (all, or those of round `run`): restore their files or
-    delete them. `outcome` ("committed" or "rolled_back", known to run_round) decides for
-    transactions recorded as committed; everything else is decided by `view` — the dropped rows
-    all present means restore, all absent means delete. Returns counts per action."""
-    counts = {"restored": 0, "purged": 0}
-    qroot = quarantine_root(root)
-    if not qroot.exists():
-        return counts
-    for qdir in sorted(p for p in qroot.iterdir() if p.is_dir()):
-        record_path = qdir / "record.json"
-        if not record_path.exists():  # created, but nothing recorded, so nothing moved
-            shutil.rmtree(qdir)
-            continue
-        record = json.loads(record_path.read_text())
-        if run is not None and record.get("run") != run:
-            continue
-        if record.get("state") == "committed" and outcome in ("committed", "rolled_back"):
-            action = "purge" if outcome == "committed" else "restore"
+        if sid in keep and not target.exists():
+            target.parent.mkdir(parents=True, exist_ok=True)
+            os.replace(src, target)
+            counts["restored"] += 1
         else:
-            if view is None:
-                raise RuntimeError(f"prune quarantine {qdir.name}: outcome unknown, needs a view")
-            ids = record.get("ids") or []
-            present = view.get_manifest(ids)
-            if len(present) == len(ids):
-                action = "restore"
-            elif not present:
-                action = "purge"
-            else:
-                raise RuntimeError(f"prune quarantine {qdir.name}: {len(present)} of {len(ids)} "
-                                   "dropped rows still exist; settle it by hand")
-        _settle(root, qdir, action, record)
-        counts["restored" if action == "restore" else "purged"] += 1
+            src.unlink()
+            counts["discarded"] += 1
+    shutil.rmtree(qdir)
     return counts
 
 
-def _settle(root: Path, qdir: Path, action: str, record: dict | None = None) -> None:
-    """Restore a quarantine's files ("restore") or delete them ("purge"), then drop it."""
-    if action == "restore":
-        _restore(root, qdir, record or json.loads((qdir / "record.json").read_text()))
+def settle_quarantines(root: Path, view, *, run: str | None = None) -> dict[str, int]:
+    """Settle every pending prune quarantine (or those of round `run`) against `view`, the
+    settled store state. Returns totals {"quarantines", "restored", "discarded"}."""
+    totals = {"quarantines": 0, "restored": 0, "discarded": 0}
+    qroot = quarantine_root(root)
+    if not qroot.exists():
+        return totals
+    present = lambda ids: view.get_manifest(ids).keys()  # noqa: E731
+    for qdir in sorted(p for p in qroot.iterdir() if p.is_dir()):
+        record_path = qdir / "record.json"
+        if run is not None and record_path.exists() \
+                and json.loads(record_path.read_text()).get("run") != run:
+            continue
+        for key, n in settle_quarantine(root, qdir, present).items():
+            totals[key] += n
+        totals["quarantines"] += 1
+    return totals
+
+
+def _purge(qdir: Path) -> None:
+    """Delete a quarantine whose documents this process's own committed transaction pruned."""
     shutil.rmtree(qdir)
 
 
@@ -478,7 +476,7 @@ def plan_prune(view, args, ap) -> Plan:
         reviewed_drop = reviewed_title_drops(args.drop_ids_from, manifest)
     except (OSError, ValueError) as exc:
         ap.error(str(exc))
-    policy = host_policy.load()
+    _, policy = store.pinned_policy(view)  # the view's pinned host policy
     try:
         deferred = deferred_ids()
     except HandoffError as exc:
@@ -559,7 +557,7 @@ def apply(session, plan: Plan) -> None:
     if qdir is not None:
         mark_committed(qdir)
         if not _retained_by_round(session):
-            _settle(HERE, qdir, "purge")
+            _purge(qdir)
     keep = len(manifest) - len(drop)
     good_disc = sum(1 for r in manifest
                     if r["id"] not in drop and registry.discovered(r["id"]) and r["status"] == "ok")
@@ -589,8 +587,8 @@ def main() -> None:
     # Inside a round: the inherited view and the round's broker; standalone: this command's own
     # writer (the round lock) for the whole read-decide-apply.
     with store_broker.step_session(st, "prune", timeout=args.lock_timeout) as session:
-        settled = settle_quarantines(HERE, view=session.view)
-        if any(settled.values()):
+        settled = settle_quarantines(HERE, session.view)
+        if settled["quarantines"]:
             print(f"settled earlier prune quarantines: {settled}")
         plan = plan_prune(session.view, args, ap)
         report(plan)

@@ -14,14 +14,39 @@ def entry_of(row: dict) -> dict:
     return {k: row[k] for k in registry.FIELDS if row.get(k) not in (None, "")}
 
 
+COMMITTED_HOST_POLICY = Path(__file__).resolve().parents[1] / "registry" / "host_policy.json"
+
+
+def write_policy(root: Path, policy: dict | None) -> None:
+    """registry/host_policy.json: `policy` ({host: rule}) or, for None, the committed one."""
+    path = Path(root) / "registry" / "host_policy.json"
+    if policy is None:
+        data = COMMITTED_HOST_POLICY.read_bytes()
+    else:
+        hosts = {h: {"status": "suspended", "reason": "test", "decided_at": "2026-09-24", **rule}
+                 for h, rule in policy.items()}
+        data = (json.dumps({"version": 1, "hosts": hosts}, indent=2) + "\n").encode()
+    if not path.exists() or path.read_bytes() != data:  # idempotent: same bytes, same version
+        path.write_bytes(data)
+
+
+def restriction(match: dict) -> dict:
+    """A schema-valid eligibility restriction."""
+    return {"status": "restricted", "match": match, "backends": ["find_x"], "reason": "test",
+            "decided_at": "2026-09-01", "evidence_urls": ["https://e.org/why"]}
+
+
 def write_repo(root: Path, *, entries=(), manifest=(), blocklist=(), ledger=(),
-               restrictions: dict | None = None) -> Path:
+               restrictions: dict | None = None, policy: dict | None = None) -> Path:
+    """A repository with configuration (eligibility `restrictions`, host `policy`; None = the
+    committed host policy) and the tracked files as the legacy writers leave them."""
     root = Path(root)
     reg = root / "registry"
     reg.mkdir(parents=True, exist_ok=True)
     (reg / "backends.json").write_text(json.dumps({"_readme": "test"}, indent=2) + "\n")
     (reg / "eligibility.json").write_text(json.dumps(
         {"version": 1, "restrictions": restrictions or {}}, indent=2) + "\n")
+    write_policy(root, policy)
     shards: dict[str, list] = {}
     for e in entries:
         shards.setdefault(registry.shard_filename(e["id"]), []).append(e)
@@ -55,9 +80,10 @@ class InlineProcessPool(ThreadPoolExecutor):
 
 
 def point(monkeypatch, root: Path, *, policy: dict | None = None) -> None:
-    """Point every pipeline module (and the registry/blocklist paths) at `root`; `policy`
-    replaces the host policy. With monkeypatch None the attributes are set for good (a child
-    process driving a step, see CHILD)."""
+    """Point every pipeline module (and the registry/blocklist/host-policy paths) at `root`;
+    `policy` ({host: rule}) rewrites root's registry/host_policy.json (the steps read the pinned
+    copy through their store view). With monkeypatch None the attributes are set for good (a
+    child process driving a step, see CHILD)."""
     import os
 
     import blocklist
@@ -87,8 +113,11 @@ def point(monkeypatch, root: Path, *, policy: dict | None = None) -> None:
     put(registry, "MAN_DIR", root / "manifest")
     put(blocklist, "PATH", root / "pruned_urls.txt")
     put(ops, "WORKSPACE", root / "workspace")
-    if policy is not None:  # else the committed registry/host_policy.json (read-only)
-        put(host_policy, "load", lambda *a, **k: dict(policy))
+    put(host_policy, "PATH", root / "registry" / "host_policy.json")
+    if policy is not None:
+        write_policy(root, policy)
+    elif not host_policy.PATH.exists():
+        write_policy(root, None)
     put(build_corpus, "ProcessPoolExecutor", InlineProcessPool)
     put(clean_corpus, "ProcessPoolExecutor", InlineProcessPool)
     if monkeypatch is None:

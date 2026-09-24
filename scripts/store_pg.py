@@ -455,13 +455,7 @@ class PgStore:
     def _journal(self, conn, view: "PgWriteView", digest: str) -> None:
         seq = conn.execute("SELECT COALESCE(max(seq), 0) FROM events").fetchone()[0]
         at = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-        rows = []
-        for n, op in enumerate(view._ops, 1):
-            seq += 1
-            rows.append({"seq": seq, "event_id": f"{view.run_id}:{n}", "run_id": view.run_id,
-                         "at": at, **op})
-        rows.append({"seq": seq + 1, "event_id": f"{view.run_id}:commit", "run_id": view.run_id,
-                     "at": at, "table": None, "op": "commit", "id": None, "digest": digest})
+        rows = store.journal_events(view._ops, view.run_id, at, seq, digest)
         with conn.cursor() as cur:
             cur.executemany("INSERT INTO events (seq, run_id, op, row_text) VALUES (%s,%s,%s,%s)",
                             [(r["seq"], r["run_id"], r["op"], _check_text(canonical_row(r), "event"))
@@ -696,8 +690,7 @@ class PgWriteView(PgReadView):
         return f"{self._id}:{len(self._ops)}"
 
     def _record(self, table, op, sid, before=None, after=None, reason=None) -> None:
-        self._ops.append({"table": table, "op": op, "id": sid, "before": before, "after": after,
-                          "reason": reason})
+        self._ops.append(store.journal_op(table, op, sid, before, reason))
 
     def _rows(self, table: str, ids: list[str], lock: bool = True) -> dict[str, dict]:
         q = sql.SQL("SELECT id, row_text FROM {} WHERE id = ANY(%s){}").format(

@@ -349,10 +349,18 @@ side effects kept explicitly recoverable.
   view is the inherited one and batch `b` runs as `<round>.<step>.<b>`; standalone the step takes
   its own writer (the round lock, `--lock-timeout`, default 30 s) for the whole run and batch `b`
   runs as `<step>-<UTC stamp>-<hex>.<b>`. The first batch expects the view's version, each later
-  one the version its predecessor committed. Every read happens before the first batch.
+  one the version its predecessor committed. Every read happens before the first batch. Under a
+  broker that is not run_round's own round (the maintainer's window serves several commands)
+  every invocation adds a random token, `<window>.<step>.i<hex>-<b>`, fixed for the invocation,
+  so its batches retry exactly while a second invocation never collides with the first's
+  committed identities (Codex review, P2); inside a round (broker round == `NEKAISE_RUN_ID`)
+  identities stay deterministic. Policy comes from the view's pinned configuration:
+  `store.pinned_policy(view)` returns the validated eligibility restrictions and host policy
+  (fail closed), and the cleaner reads its ruleset stamp under its writer (Codex review, P1) —
+  an operator editing the files meanwhile cannot change a running step's policy.
   None of the three scripts calls `registry.write_manifest_rows`/`remove_ids`/`append_entries`/
-  `load_manifest_rows`/`load_entries`, `blocklist.add` or `ops.append_jsonl` any more
-  (`tests/test_pipeline_store.py` guards it with an AST check).
+  `load_manifest_rows`/`load_entries`/`load_eligibility`, `host_policy.load`, `blocklist.add` or
+  `ops.append_jsonl` any more (`tests/test_pipeline_store.py` guards it with an AST check).
 - **Loader.** Reads entries (id order) and the manifest (legacy order: it picks extraction
   templates) through the view. Every 25 recorded results is one transaction `ckpt-NNNN` upserting
   exactly the rows recorded since the previous checkpoint (plus a final one); retry bookkeeping,
@@ -364,13 +372,22 @@ side effects kept explicitly recoverable.
   transaction `apply`: survivor metric updates (`update_manifest_fields`), registry and manifest
   deletions per reason (tombstones `prune: <reason>`), blocklist additions and ledger rows.
   **Bytes:** before the transaction the dropped documents' raw/text/corpus files are *moved* to
-  `workspace/prune-quarantine/<transaction>/` (with `record.json`: ids, files, state
-  moving → moved → committed). Standalone (and in the maintainer's window) they are deleted right
-  after the commit. Inside a round they are kept until the round ends: `run_round` deletes them
-  when the round succeeds and moves them back after restoring the round snapshot on rollback
-  (also `--recover`), so a failed round now restores bytes too. An unknown outcome (failed
-  transaction, killed process) is settled at the start of the next prune by the store's state —
-  every dropped row present: move back; none present: delete; idempotent and resumable.
+  `workspace/prune-quarantine/<transaction>/` (`record.json`: the (document id, path) items and a
+  diagnostic state moving → moved → committed). Standalone (and in the maintainer's window) they
+  are deleted right after the commit. Otherwise they are settled against a store state by ONE
+  rule per file, whatever the recorded state (Codex review, P1): a file goes back when its
+  document's manifest row exists in that state and its path is free, else it is deleted. Inside a
+  round the quarantine is kept until the round ends: after success it is settled against the
+  final state (all pruned rows gone: deleted); on rollback the snapshot is restored, the
+  quarantine settled against the restored pre-round state (pre-round documents come back,
+  documents new in the round are discarded) and only then is the snapshot discarded — if
+  settling fails, `rollback_failed` is reported and the snapshot kept. `run_round --recover` does
+  the same under a *recovering* writer (`FileStore.writer(round_id=…, recovering=True)`, which
+  may read while the round's snapshot exists), returns 1 and keeps the snapshot until settling
+  finishes. Leftovers of a killed standalone prune are settled by the next round before it
+  fetches and by the next prune before it decides. Tests drive the real entrypoints (rollback and
+  `--recover`) with a child prune killed while moving, after moving, after committing, and
+  after a later step failed, with a mix of pre-round and new-in-round documents.
 - **Cleaner.** corpus/ files are written first, outside transactions; then only the corpus fields
   that changed are patched (`meta-NNNN`) and restricted rows' corpus fields unset
   (`restricted-NNNN`), in batches of at most 20 000 rows in manifest shard order; the ruleset
@@ -393,17 +410,28 @@ side effects kept explicitly recoverable.
   `remove_ids` uses, only the affected entry blocks are parsed (the before-images), removals cut
   those blocks and appends are parsed back — instead of parsing whole shards (0.8 s each, three
   times per shard in the first cut: 268 s for a 400-document prune over 52 shards).
-- **Journal.** Files roll by size within a UTC day (`<day>.jsonl`, `<day>.001.jsonl`, … at
-  32 MiB), so checkpoints do not rewrite (and back up) a growing file and no file nears the 80 MiB
-  gate; the commit lookup caches each file's commit rows by file identity, and the last sequence
-  number is read from each file's tail.
+- **Journal: versioned compact events (Codex decision, review P1).** `store.journal_events` is the
+  one event contract both backends emit. Version 2 events (`"v": 2`) are (a) a tombstone per
+  deleted row — table, id, reason and `before_sha256` (sha256 of the deleted row's canonical
+  JSON) — and (b) one receipt per transaction, the commit row: run id, timestamp, request digest
+  (the replay identity, unchanged) and `counts` of operations per table and op. Inserted and
+  updated rows are no longer imaged (the tables and the prune ledger hold them; git keeps the
+  history of the tracked files until stage 4). Version 1 events already committed (whole
+  before/after rows, no `"v"`) stay valid and are read back unchanged; sequence numbers continue
+  across both. The PG shadow still copies journal files verbatim and verify still compares full
+  exports including events; PgStore emits byte-identical v2 events. Files still roll by size
+  within a UTC day (`<day>.jsonl`, `<day>.001.jsonl`, … at 32 MiB); the commit lookup caches each
+  file's commit rows by file identity, and the last sequence number is read from file tails.
+  Measured on the real-data copy: a typical round's metadata (16 loader checkpoints, a
+  100-document prune, 400 cleaner patches: 18 transactions) journals 73 KB (v1: several MB); a full
+  re-clean (1.62M patched rows, 81 transactions, 234 s) adds 27 KB (v1: 4.27 GB).
 - **Measured** on a copy of the committed data (1,620,815 manifest rows, 2.0 GB; 1.62M entries):
   a 25-row loader checkpoint touching 25 shards (~550 MB) commits in ~3 s (it took 14 s with
   whole-shard parsing and ~30-40 s as a whole-manifest rewrite; the first transaction of a process
   adds ~3 s to index the commit rows of a 4.3 GB journal, later ones use the cache); a 400-document
   prune over 52 manifest + 52 registry shards applies in 14.6 s including its ledger-evidence scan
   (268 s with whole-shard YAML parsing); a full re-clean patching every row takes 81
-  transactions of 20 000 rows, 324 s (4 s each), and journals 4.27 GB in 128 rolled files. Reading
+  transactions of 20 000 rows, 234 s with v2 events (324 s and 4.27 GB of journal with v1). Reading
   through a view costs more than the legacy readers: entries 143 s vs 130 s, the manifest in legacy
   order 54 s vs 26 s (sort + per-row copies); the loader no longer rewrites the whole manifest per
   checkpoint, which outweighs it. Lint (`validate_layout`) 175 s vs 164 s.
@@ -416,8 +444,6 @@ side effects kept explicitly recoverable.
   batch, a failed prune transaction and a prune killed after its commit each leave a consistent
   state that the next run completes to the uninterrupted result; a real child prune under a round
   broker; the same steps against PostgreSQL leave the same tables and artifacts.
-- **Open (for Codex).** The journal carries whole before/after rows, so a full re-clean (a
-  ruleset change patches every row) journals ~4.3 GB in rolled files and the loader/cleaner
-  now journal every row they change each round — the git footprint grows accordingly until
-  stage 4 moves the journal into PostgreSQL. Compact update events (changed fields only) would cut
-  it by an order of magnitude but change the event format both stores export; not done here.
+- **Accepted by Codex:** the id-order host cap is an explicit compatibility exception; the slower
+  full-view reads (entries +13 s, manifest +28 s per step) are accepted performance debt.
+- **Not done:** optional local (untracked, bounded) diagnostic journals with full row images.

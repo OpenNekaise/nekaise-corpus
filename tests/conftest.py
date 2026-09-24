@@ -36,6 +36,16 @@ def _no_live_store(monkeypatch, request):
         real_init(self, root)
     monkeypatch.setattr(store.FileStore, "__init__", guarded)
 
+    import ops
+
+    real_snapshot = ops.StateSnapshot.__init__
+
+    def guarded_snapshot(self, run_id, root=ops.ROOT):
+        if Path(root).resolve() == live:  # restore() would overwrite the live tracked files
+            raise AssertionError("test built a round snapshot over the live repository")
+        real_snapshot(self, run_id, root)
+    monkeypatch.setattr(ops.StateSnapshot, "__init__", guarded_snapshot)
+
 
 @pytest.fixture(autouse=True)
 def _no_inherited_round_access(monkeypatch):

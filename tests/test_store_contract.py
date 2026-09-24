@@ -167,7 +167,7 @@ def test_returned_values_are_isolated(st):
             tx.update_manifest_fields({"oer-a": {"topic": "x"}})
     with st.read() as v:
         events = [e for e in v.scan(Table.EVENTS, limit=1000).rows if e["run_id"] == "r1"]
-        assert events[0]["before"]["quality"] == {"total": 100, "w20": {"domain": 3}}
+        assert events[-1]["counts"] == {"manifest": {"update": 1}}  # receipt, no row images
         assert v.get_manifest(["oer-a"])["oer-a"]["quality"]["total"] == 100
 
 
@@ -249,7 +249,12 @@ def test_read_your_writes_journal_and_tombstones(st):
         assert [e["seq"] for e in events] == list(range(1, len(events) + 1))
         mine = [e for e in events if e["run_id"] == "r1"]
         tombs = {e["table"]: e for e in mine if e["op"] == "delete"}
-        assert tombs["manifest"]["before"]["sha256"] == "same"
+        assert tombs["manifest"]["id"] == tombs["entries"]["id"] == "oer-b"
+        assert len(tombs["manifest"]["before_sha256"]) == 64
+        assert all(e["v"] == store.EVENT_VERSION and "before" not in e and "after" not in e
+                   for e in mine)
+        assert mine[-1]["counts"]["manifest"]["delete"] == 1
+        assert mine[-1]["counts"]["blocklist"] == {"insert": 1}
         assert tombs["manifest"]["reason"] == tombs["entries"]["reason"] == "dup-bytes"
         assert mine[-1]["op"] == "commit" and mine[-1]["digest"]
         assert v.rotation_get("find_books")["next"] == 10
@@ -282,10 +287,9 @@ def test_runtime_state_accepts_only_configured_backends_and_reads_back_exactly(s
         assert v.backend_state_get() == {
             "find_books": store.BackendState(False, "exhausted: all offsets"),
             "find_paused": store.BackendState()}
-        changes = [e for e in v.scan(Table.EVENTS, limit=1000).rows
-                   if e["table"] == "backend_state"]
-    assert [(e["run_id"], e["before"], e["after"]) for e in changes] == [
-        ("r2", None, {"enabled": False, "reason": "exhausted: all offsets"})]
+        receipts = [e for e in v.scan(Table.EVENTS, limit=1000).rows if e["op"] == "commit"]
+    assert [(e["run_id"], e["counts"]) for e in receipts if e["run_id"] in ("r2", "r3")] == [
+        ("r2", {"backend_state": {"upsert": 1}}), ("r3", {})]
 
 
 def test_inserts_are_visible_to_later_reads_and_writes_of_the_transaction(st):
@@ -450,7 +454,8 @@ def test_invalid_json_values_are_rejected_everywhere(st):
             assert tx.update_manifest_fields({"oer-a": {"text_chars": 100.0}}) == 1  # 100 -> 100.0
     with st.read() as v:
         events = [e for e in v.scan(Table.EVENTS, limit=1000).rows if e["run_id"] == "r1"]
-        assert [e["op"] for e in events] == ["update", "commit"]  # failed batches left no trace
+        assert [e["op"] for e in events] == ["commit"]  # failed batches left no trace
+        assert events[0]["counts"] == {"manifest": {"update": 1}}
 
 
 def test_control_documents_roundtrip_journal_and_export(st, tmp_path):
@@ -464,9 +469,11 @@ def test_control_documents_roundtrip_journal_and_export(st, tmp_path):
     write(st, "r2", lambda tx: tx.control_set("github_passes.json", None))
     with st.read() as v:
         assert v.control_get("github_passes.json") is None
-        ops = [(e["table"], e["op"]) for e in v.scan(Table.EVENTS, limit=1000).rows
-               if e["run_id"] in ("r1", "r2") and e["op"] != "commit"]
-    assert ops == [("control", "upsert"), ("control", "delete")]
+        events = [e for e in v.scan(Table.EVENTS, limit=1000).rows if e["run_id"] in ("r1", "r2")]
+    assert [(e["run_id"], e["op"], e.get("counts")) for e in events] == [
+        ("r1", "commit", {"control": {"upsert": 1}}),
+        ("r2", "delete", None), ("r2", "commit", {"control": {"delete": 1}})]
+    assert events[1]["id"] == "github_passes.json"
 
 
 def test_legacy_manifest_order_matches_load_manifest_rows(st):

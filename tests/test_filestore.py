@@ -556,7 +556,7 @@ def test_journal_is_daily_and_sequences_continue_across_files(st):
     write(st, "r-daily", lambda tx: tx.blocklist_add(["https://j.org/1"]))
     with st.read() as v:
         mine = [e for e in v.scan(Table.EVENTS).rows if e["run_id"] == "r-daily"]
-    assert [e["seq"] for e in mine] == [42, 43]
+    assert [e["seq"] for e in mine] == [42]  # a v2 receipt only
     day = mine[0]["at"][:10]
     assert (st.journal_dir / f"{day}.jsonl").exists()
     assert st._commit_digest("r-daily") == mine[-1]["digest"]
@@ -564,7 +564,7 @@ def test_journal_is_daily_and_sequences_continue_across_files(st):
     # a retry of the committed run is still recognized as one
     write(st, "r-daily", lambda tx: tx.blocklist_add(["https://j.org/1"]))
     with st.read() as v:
-        assert len([e for e in v.scan(Table.EVENTS).rows if e["run_id"] == "r-daily"]) == 2
+        assert len([e for e in v.scan(Table.EVENTS).rows if e["run_id"] == "r-daily"]) == 1
 
 
 # --- routed manifest mutations (stage 3, step 6: a loader checkpoint must not parse 2 GB) --------
@@ -604,12 +604,13 @@ def test_manifest_mutations_read_only_the_routed_shards(st, legacy, monkeypatch)
     del rows["oer-b"]
     registry.write_manifest_rows(rows.values())
     assert data_files(st.root) == files(legacy)
-    with st.read() as v:  # tombstones carry the reason and the whole before-image
+    with st.read() as v:  # the tombstone carries the reason and the deleted row's digest
         events = [e for e in v.scan(Table.EVENTS).rows if e["run_id"] == "r1"]
-    delete = next(e for e in events if e["op"] == "delete")
-    assert delete["reason"] == "prune: dup-bytes" and delete["before"]["id"] == "oer-b"
-    update = next(e for e in events if e["op"] == "update")
-    assert update["before"]["id"] == "hand-one" and "corpus_path" not in update["before"]
+    [delete] = [e for e in events if e["op"] == "delete"]
+    assert delete["reason"] == "prune: dup-bytes" and delete["id"] == "oer-b"
+    assert delete["before_sha256"] == store.hashlib.sha256(
+        store.canonical_row(mrow("oer-b", sha256="same")).encode()).hexdigest()
+    assert events[-1]["counts"] == {"manifest": {"upsert": 3, "update": 1, "delete": 1}}
 
 
 def test_routed_manifest_changes_join_a_later_full_load(st):
@@ -707,14 +708,14 @@ def test_read_views_answer_keyed_manifest_reads_from_routed_shards(st, monkeypat
 # --- journal size rolling and the commit index ---------------------------------------------------
 
 def test_the_journal_rolls_by_size_and_keeps_sequence_and_replay(st, monkeypatch):
-    monkeypatch.setattr(store, "JOURNAL_ROLL_BYTES", 3000)
+    monkeypatch.setattr(store, "JOURNAL_ROLL_BYTES", 400)
     for n in range(4):
         write(st, f"r{n}", lambda tx, n=n: tx.upsert_manifest(
             [mrow(f"oer-j{n}-{k}", title="x" * 300) for k in range(3)]))
     paths = sorted(st.journal_dir.glob("*.jsonl"))
     assert len(paths) > 2
     for p in paths:  # a file only exceeds the limit when a single event does
-        assert p.stat().st_size <= 3000 or len(p.read_text().splitlines()) == 1
+        assert p.stat().st_size <= 400 or len(p.read_text().splitlines()) == 1
     day = paths[0].name[:10]
     assert {f"{day}.jsonl", f"{day}.001.jsonl", f"{day}.002.jsonl"} <= {p.name for p in paths}
     with st.read() as v:
@@ -779,6 +780,30 @@ def test_routed_entry_deletes_cut_multiline_entries_like_remove_ids(st, legacy, 
     registry.remove_ids(drop)
     assert data_files(st.root) == files(legacy)
     with st.read() as v:
-        before = [e["before"] for e in v.scan(Table.EVENTS).rows if e["op"] == "delete"]
-    assert sorted(b["id"] for b in before) == sorted(drop)
-    assert all(b == (multi if b["id"] == "oer-multi" else entry("oer-after")) for b in before)
+        tombs = [e for e in v.scan(Table.EVENTS).rows if e["op"] == "delete"]
+    assert sorted(e["id"] for e in tombs) == sorted(drop)
+    for e in tombs:  # the digest of exactly the entry that was cut (its parsed block)
+        row = multi if e["id"] == "oer-multi" else entry("oer-after")
+        assert e["before_sha256"] == store.hashlib.sha256(
+            store.canonical_row(row).encode()).hexdigest()
+
+
+def test_version_1_events_stay_valid_next_to_version_2(st):
+    """Journals already committed carry v1 events (whole before/after rows, no "v"); they are
+    read back unchanged, their commits still identify replays, and new transactions append v2
+    receipts and tombstones with continuing sequence numbers."""
+    st.journal_dir.mkdir(parents=True)
+    v1 = [{"seq": 1, "event_id": "old:1", "run_id": "old", "at": "2026-09-01T00:00:00Z",
+           "table": "manifest", "op": "upsert", "id": "oer-a", "before": None,
+           "after": mrow("oer-a"), "reason": None},
+          {"seq": 2, "event_id": "old:commit", "run_id": "old", "at": "2026-09-01T00:00:00Z",
+           "table": None, "op": "commit", "id": None, "digest": "d1"}]
+    (st.journal_dir / "2026-09-01.jsonl").write_text(
+        "".join(json.dumps(e, ensure_ascii=False, sort_keys=True) + "\n" for e in v1))
+    write(st, "new", lambda tx: tx.delete_manifest(["oer-a"], reason="prune: thin"))
+    with st.read() as v:
+        events = v.scan(Table.EVENTS).rows
+    assert events[:2] == v1
+    assert [(e["seq"], e["op"], e.get("v")) for e in events[2:]] == [
+        (3, "delete", 2), (4, "commit", 2)]
+    assert st._commit_digest("old") == "d1"

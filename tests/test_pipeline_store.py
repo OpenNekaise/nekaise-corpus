@@ -22,10 +22,10 @@ import pytest
 import build_corpus
 import clean_corpus
 import legacy_pipeline
-import ops
 import pipeline_repo
 import prune_corpus
 import quality
+import ops
 import run_round
 import store
 import store_broker
@@ -62,6 +62,8 @@ FORBIDDEN = {
     ("registry", "prune_ledger_path"), ("registry", "load_manifest_rows"),
     ("registry", "load_entries"), ("registry", "load_prune_ledger_rows"),
     ("blocklist", "add"), ("blocklist", "PATH"), ("ops", "append_jsonl"),
+    # policy comes from the view's pinned configuration (store.pinned_policy), not the tree
+    ("registry", "load_eligibility"), ("registry", "load_host_policy"), ("host_policy", "load"),
 }
 
 
@@ -126,7 +128,8 @@ DNS_LEDGER = [{"id": "ost-dns", "url": "https://gone.example/x.pdf", "reason": "
 
 def build_prune_repo(root: Path) -> None:
     write_repo(root, entries=[entry_of(r) for r in PRUNE_ROWS if r["id"] != "ost-manifest-only"],
-               manifest=PRUNE_ROWS, blocklist=["https://e.org/old"], ledger=DNS_LEDGER)
+               manifest=PRUNE_ROWS, blocklist=["https://e.org/old"], ledger=DNS_LEDGER,
+               policy=SUSPENDED)
     for r in PRUNE_ROWS:
         for key, body in (("raw_path", "%PDF raw"), ("text_path", HEADER + TEXT),
                           ("corpus_path", HEADER + TEXT)):
@@ -177,7 +180,8 @@ def test_prune_matches_the_legacy_pruner(tmp_path, monkeypatch, clock, capsys):
 
 def test_a_prune_that_changes_nothing_records_no_transaction(tmp_path, monkeypatch, clock):
     rows = [prow("ost-good")]
-    root = write_repo(tmp_path / "r", entries=[entry_of(r) for r in rows], manifest=rows)
+    root = write_repo(tmp_path / "r", entries=[entry_of(r) for r in rows], manifest=rows,
+                      policy=SUSPENDED)
     for key in ("raw_path", "text_path"):
         (root / rows[0][key]).parent.mkdir(parents=True, exist_ok=True)
         (root / rows[0][key]).write_text(HEADER + TEXT)
@@ -255,36 +259,212 @@ def _child(root: Path, env: dict, module: str, *args, policy=None):
                           env=env, capture_output=True, text=True, cwd=SCRIPTS.parent)
 
 
-@pytest.mark.parametrize("outcome", ["committed", "rolled_back"])
-def test_round_prune_runs_as_one_broker_batch_and_the_round_settles_its_bytes(
-        tmp_path, outcome):
+NEW_DOC = prow("ost-new", text_path="text/ost-new-missing.md", corpus_path=None)
+
+# A round's fetch, simulated: a new document (row, entry, raw bytes) written through the broker.
+FETCH_CHILD = """
+import json, sys
+sys.path[:0] = ["scripts", "tests"]
+import pipeline_repo, store, store_broker
+root, row = sys.argv[1], json.loads(sys.argv[2])
+pipeline_repo.point(None, root)
+(pipeline_repo.Path(root) / row["raw_path"]).write_bytes(b"%PDF new in round")
+with store_broker.step_session(store.FileStore(pipeline_repo.Path(root)), "fetch") as s:
+    with s.batch("ckpt-0001") as b:
+        b.insert_entries([pipeline_repo.entry_of(row)])
+        b.upsert_manifest([row])
+"""
+
+# The round's prune, optionally killed at one of the quarantine states (TEST_PRUNE_CRASH):
+#   moving   - after the first file moved, before the record says "moved"
+#   moved    - every file moved, the transaction not submitted
+#   after    - the transaction committed, the record still says "moved"
+PRUNE_CHILD = """
+import json, os, sys
+sys.path[:0] = ["scripts", "tests"]
+import pipeline_repo, prune_corpus, store_broker
+root, policy = sys.argv[1], json.loads(sys.argv[2])
+pipeline_repo.point(None, root, policy=policy)
+crash = os.environ.get("TEST_PRUNE_CRASH")
+if crash == "moving":
+    real = os.replace
+    def replace(src, dst):
+        real(src, dst)
+        if "prune-quarantine" in str(dst):
+            os._exit(9)
+    prune_corpus.os.replace = replace
+elif crash == "moved":
+    store_broker.StepSession.submit = lambda *a, **k: os._exit(9)
+elif crash == "after":
+    prune_corpus.mark_committed = lambda qdir: os._exit(9)
+sys.argv = ["prune_corpus.py", "--apply"]
+prune_corpus.main()
+"""
+
+
+def _round_env(monkeypatch, root: Path):
+    for d in ("README.md",):
+        (root / d).write_text("readme\n")
+    monkeypatch.setattr(run_round, "ROOT", root)
+    monkeypatch.setattr(run_round.ops, "SNAPSHOTS", root / "workspace" / "round-snapshots")
+    monkeypatch.setattr(run_round.ops, "WORKSPACE", root / "workspace")
+    monkeypatch.setattr(run_round, "git_clean", lambda: True)
+    monkeypatch.setattr(run_round, "doc_stats", lambda view: (1, 10, 0))
+    monkeypatch.setattr(run_round, "run_verify_parallel", lambda *a, **k: None)
+    events = []
+    monkeypatch.setattr(run_round.ops, "run_event",
+                        lambda run_id, event, **kw: events.append((event, kw)))
+    return events
+
+
+def _fake_pipeline(root: Path, crash: str | None, fail_with):
+    """run_command for the round: real children for fetch and prune; clean fails (or not)."""
+    def run(step, cmd, env, run_id):
+        if step == "fetch":
+            out = subprocess.run([sys.executable, "-c", FETCH_CHILD, str(root),
+                                  json.dumps(NEW_DOC)], env=env, capture_output=True, text=True,
+                                 cwd=SCRIPTS.parent)
+            assert out.returncode == 0, out.stderr
+        elif step == "prune":
+            out = subprocess.run([sys.executable, "-c", PRUNE_CHILD, str(root),
+                                  json.dumps(SUSPENDED)],
+                                 env={**env, "TEST_PRUNE_CRASH": crash or ""},
+                                 capture_output=True, text=True, cwd=SCRIPTS.parent)
+            if crash:
+                assert out.returncode == 9, out.stderr
+                raise fail_with("prune killed")
+            assert out.returncode == 0, out.stderr
+        elif step == "clean" and fail_with is not None:
+            raise fail_with("clean failed")
+    return run
+
+
+def _round(monkeypatch, root, crash=None, fail_with=RuntimeError):
+    monkeypatch.setattr(run_round, "run_command", _fake_pipeline(root, crash, fail_with))
+    monkeypatch.setattr(sys, "argv", ["run_round.py", "--skip-discovery", "--skip-tests",
+                                      "--allow-dirty", "--run-id", "rnd-p"])
+    return run_round.main()
+
+
+def _pre_round(tmp_path, monkeypatch):
     root = tmp_path / "r"
     build_prune_repo(root)
-    files, meta = artifacts(root), tracked(root)
-    st = store.FileStore(root)
-    with st.writer(round_id="rnd-p") as w:
-        broker = store_broker.Broker(st, w, "rnd-p")
-        with broker.serving():
-            env = ops.with_holder(dict(os.environ, **broker.env(), NEKAISE_RUN_ID="rnd-p"),
-                                  os.getpid(), st.workspace / ".corpus-round.lock", "rnd-p")
-            env.pop("NEKAISE_DISABLE_INDEX", None)
-            out = _child(root, env, "prune_corpus", "--apply", policy=SUSPENDED)
-        assert out.returncode == 0, out.stderr
-        assert journal_runs(root) == ["rnd-p.prune.apply"]
-        [qdir] = list(prune_corpus.quarantine_root(root).iterdir())
-        assert qdir.name == "rnd-p.prune.apply"  # kept: the round has not ended yet
-        assert json.loads((qdir / "record.json").read_text())["state"] == "committed"
-        if outcome == "rolled_back":  # run_round restores the round's snapshot, then settles
-            for rel in set(tracked(root, journal=True)) - set(meta):
-                (root / rel).unlink()
-            for rel, data in meta.items():
-                (root / rel).write_bytes(data)
-        run_round.settle_prune_quarantine(root, "rnd-p", outcome, st, w)
-    assert not quarantined(root)
-    if outcome == "rolled_back":
-        assert artifacts(root) == files and tracked(root) == meta
+    events = _round_env(monkeypatch, root)
+    return root, tracked(root), artifacts(root), events
+
+
+def test_a_successful_round_deletes_what_its_prune_quarantined(tmp_path, monkeypatch):
+    root, meta, files, _ = _pre_round(tmp_path, monkeypatch)
+    assert _round(monkeypatch, root, fail_with=None) == 0
+    assert not quarantined(root) and not run_round.ops.StateSnapshot.pending()
+    rows = manifest_rows(root)
+    assert "ost-404" not in rows and "ost-new" not in rows  # both pruned
+    gone = {rel for rel in files if "ost-dup-title" in rel or "ost-premetrics-thin" in rel}
+    assert gone and not gone & set(artifacts(root))
+    assert "raw/osti/ost-new.pdf" not in artifacts(root)  # pruned in the round that fetched it
+    assert [r.rsplit(".", 1)[1] for r in journal_runs(root)] == ["ckpt-0001", "apply"]
+
+
+@pytest.mark.parametrize("crash", [None, "moving", "moved", "after"],
+                         ids=["committed", "moving", "moved", "after-commit"])
+def test_round_rollback_settles_the_prune_quarantine_for_old_and_new_documents(
+        tmp_path, monkeypatch, crash):
+    """The round fails after (or while) its prune moved bytes aside, whatever the quarantine's
+    recorded state: rollback restores the pre-round metadata, puts back every file whose
+    document the restored state holds, discards the bytes of the document new in this round,
+    and only then discards the snapshot."""
+    root, meta, files, events = _pre_round(tmp_path, monkeypatch)
+    assert _round(monkeypatch, root, crash=crash) == 1
+    assert tracked(root) == meta
+    extra = set(artifacts(root)) - set(files)
+    if crash == "moving":  # the interrupted move never reached the new document's bytes
+        assert extra <= {"raw/osti/ost-new.pdf"}
     else:
-        assert "raw/osti/ost-404.pdf" not in artifacts(root) and "ost-404" not in manifest_rows(root)
+        assert not extra
+    assert {k: v for k, v in artifacts(root).items() if k in files} == files
+    assert not quarantined(root) and not run_round.ops.StateSnapshot.pending()
+    assert ("state_rolled_back", {}) in events
+
+
+@pytest.mark.parametrize("crash", [None, "moving", "moved", "after"],
+                         ids=["committed", "moving", "moved", "after-commit"])
+def test_recover_settles_the_prune_quarantine_of_an_interrupted_round(tmp_path, monkeypatch,
+                                                                      crash):
+    root, meta, files, events = _pre_round(tmp_path, monkeypatch)
+    with pytest.raises(KeyboardInterrupt):  # the round process itself dies: no rollback
+        _round(monkeypatch, root, crash=crash, fail_with=KeyboardInterrupt)
+    assert run_round.ops.StateSnapshot.pending() == ["rnd-p"]
+    assert quarantined(root)
+    monkeypatch.setattr(sys, "argv", ["run_round.py", "--recover", "latest"])
+    assert run_round.main() == 0
+    assert tracked(root) == meta
+    assert {k: v for k, v in artifacts(root).items() if k in files} == files
+    assert set(artifacts(root)) - set(files) <= ({"raw/osti/ost-new.pdf"}
+                                                  if crash == "moving" else set())
+    assert not quarantined(root) and not run_round.ops.StateSnapshot.pending()
+    assert ("run_recovered", {}) in events
+
+
+def test_an_unfinished_settlement_keeps_the_round_recoverable(tmp_path, monkeypatch, capsys):
+    root, meta, files, events = _pre_round(tmp_path, monkeypatch)
+    with monkeypatch.context() as m:
+        m.setattr(prune_corpus, "settle_quarantine",
+                  lambda *a, **k: (_ for _ in ()).throw(OSError("disk gone")))
+        assert _round(monkeypatch, root) == 1
+        assert run_round.ops.StateSnapshot.pending() == ["rnd-p"]  # not discarded
+        assert quarantined(root)
+        assert any(e == "rollback_failed" for e, _ in events)
+        monkeypatch.setattr(sys, "argv", ["run_round.py", "--recover", "rnd-p"])
+        assert run_round.main() == 1  # recover reports failure and keeps the snapshot too
+        assert "snapshot is kept" in capsys.readouterr().err
+        assert run_round.ops.StateSnapshot.pending() == ["rnd-p"]
+    assert run_round.main() == 0  # the cause is gone: recovery completes
+    assert tracked(root) == meta
+    assert {k: v for k, v in artifacts(root).items() if k in files} == files
+    assert not quarantined(root) and not run_round.ops.StateSnapshot.pending()
+
+
+def test_a_round_settles_a_standalone_prunes_leftover_before_fetching(tmp_path, monkeypatch,
+                                                                     clock):
+    """A standalone prune killed after its commit leaves its bytes aside; the next round deletes
+    them (their rows are gone) before its own fetch runs."""
+    root, _, _, _ = _pre_round(tmp_path, monkeypatch)
+    monkeypatch.setenv("NEKAISE_RUN_ID", "rnd-p")
+    with monkeypatch.context() as m:
+        m.setattr(prune_corpus, "mark_committed",
+                  lambda qdir: (_ for _ in ()).throw(KeyboardInterrupt("killed")))
+        with pytest.raises(KeyboardInterrupt):
+            run_prune(m, root)
+    monkeypatch.delenv("NEKAISE_RUN_ID")
+    assert quarantined(root)
+    seen = {}
+
+    def record(step, cmd, env, run_id):
+        seen.setdefault(step, quarantined(root))
+    monkeypatch.setattr(run_round, "run_command", record)
+    monkeypatch.setattr(sys, "argv", ["run_round.py", "--skip-discovery", "--skip-tests",
+                                      "--allow-dirty", "--run-id", "rnd-2"])
+    assert run_round.main() == 0
+    assert seen["fetch"] == []
+
+
+def test_the_settlement_rule_is_per_file(tmp_path):
+    """Restore a file when its document's row exists in the settled state and its path is free;
+    otherwise delete it (the row is gone, or a newer file took the path)."""
+    root = tmp_path / "r"
+    for rel in ("raw/a.pdf", "raw/b.pdf", "raw/c.pdf"):
+        (root / rel).parent.mkdir(parents=True, exist_ok=True)
+        (root / rel).write_text(rel)
+    rows = [{"id": "a", "raw_path": "raw/a.pdf"}, {"id": "b", "raw_path": "raw/b.pdf"},
+            {"id": "c", "raw_path": "raw/c.pdf"}]
+    qdir = prune_corpus.quarantine_files(root, "t1", rows, None)
+    (root / "raw" / "c.pdf").write_text("newer")
+    got = prune_corpus.settle_quarantine(root, qdir, lambda ids: {"a", "c"} & set(ids))
+    assert got == {"restored": 1, "discarded": 2}
+    assert (root / "raw" / "a.pdf").read_text() == "raw/a.pdf"
+    assert not (root / "raw" / "b.pdf").exists()
+    assert (root / "raw" / "c.pdf").read_text() == "newer"
+    assert not qdir.exists()
 
 
 def test_a_standalone_prune_waits_for_no_broker_and_takes_its_own_writer(tmp_path, monkeypatch,
@@ -346,11 +526,11 @@ def build_load_repo(root: Path, failures: bool = True) -> None:
                "error": "read timed out", "transient": True, "retry_attempts": 2,
                "first_failed_at": "2026-09-20T00:00:00Z"}
     if failures:
-        write_repo(root, entries=LOAD_ENTRIES, manifest=[have, drift, timeout])
+        write_repo(root, entries=LOAD_ENTRIES, manifest=[have, drift, timeout], policy={})
     else:  # every fetch succeeds: a re-run has nothing left to retry
         write_repo(root, entries=[e for e in LOAD_ENTRIES
                                   if e["id"] not in ("ost-l-timeout", "ost-l-404")],
-                   manifest=[have, drift])
+                   manifest=[have, drift], policy={})
     for rel, data in (("raw/osti/ost-l-have.md", template_body),
                       ("text/ost-l-have.md", HEADER.encode() + template_body)):
         (root / rel).parent.mkdir(parents=True, exist_ok=True)
@@ -371,7 +551,7 @@ def serve(monkeypatch):
 
 
 def run_load(monkeypatch, root, *args):
-    pipeline_repo.point(monkeypatch, root, policy={})
+    pipeline_repo.point(monkeypatch, root, policy=None)  # the repository's own host policy
     serve(monkeypatch)
     monkeypatch.setattr(sys, "argv", ["build_corpus.py", "--workers", "1", *args])
     build_corpus.main()
@@ -380,7 +560,7 @@ def run_load(monkeypatch, root, *args):
 def test_load_matches_the_legacy_loader(tmp_path, monkeypatch, clock, capsys):
     monkeypatch.setenv("NEKAISE_RUN_ID", "rnd-l")
     a, b = twins(tmp_path, build_load_repo)
-    pipeline_repo.point(monkeypatch, a, policy={})
+    pipeline_repo.point(monkeypatch, a, policy=None)
     serve(monkeypatch)
     legacy_pipeline.legacy_load(workers=1)
     run_load(monkeypatch, b)
@@ -414,7 +594,7 @@ def test_reextract_writes_bounded_batches_with_the_legacy_bytes(tmp_path, monkey
             (root / "raw" / "x" / f"{sid}.html").write_text(f"<main><p>Page {n} text</p></main>")
         write_repo(root, entries=[entry_of(r) for r in rows], manifest=rows)
     a, b = twins(tmp_path, build)
-    pipeline_repo.point(monkeypatch, a, policy={})
+    pipeline_repo.point(monkeypatch, a, policy=None)
     legacy_pipeline.legacy_load(reextract=True, fmt="html")
     monkeypatch.setattr(build_corpus, "REEXTRACT_BATCH_ROWS", 2)
     run_load(monkeypatch, b, "--reextract", "--format", "html")
@@ -453,7 +633,8 @@ def test_a_failed_checkpoint_leaves_committed_checkpoints_and_the_rerun_complete
     assert not st.pending_transactions()
     assert len(journal_runs(b)) == 1  # the first checkpoint stands: its 25 results
     with st.read() as v:
-        assert len([e for e in v.scan(store.Table.EVENTS).rows if e["op"] == "upsert"]) == 25
+        [receipt] = v.scan(store.Table.EVENTS).rows
+        assert receipt["counts"] == {"manifest": {"upsert": 25}}
     run_load(monkeypatch, b)  # fetches only what the failed run did not record
     assert tracked(b) == tracked(a) and artifacts(b) == artifacts(a)
 
@@ -490,14 +671,15 @@ def build_clean_repo(root: Path) -> None:
     rows.append({**entry_of(lentry("pat-cn1")), "status": "ok", "text_path": "text/pat-cn1.md",
                  "corpus_path": "corpus/pat-cn1.md", "corpus_chars": 10,
                  "corpus_sha256": "x", "cleaner_version": "clean_corpus/2;rules=none"})
-    write_repo(root, entries=[entry_of(r) for r in rows], manifest=rows, restrictions=RESTRICT)
+    write_repo(root, entries=[entry_of(r) for r in rows], manifest=rows, restrictions=RESTRICT,
+               policy={})
     (root / "corpus").mkdir()
     (root / "corpus" / "pat-cn1.md").write_text("old restricted copy")
     (root / "corpus" / "ost-gone.md").write_text("orphan")
 
 
 def run_clean(monkeypatch, root, *args):
-    pipeline_repo.point(monkeypatch, root, policy={})
+    pipeline_repo.point(monkeypatch, root, policy=None)  # the repository's own host policy
     monkeypatch.setattr(sys, "argv", ["clean_corpus.py", "--workers", "1", *args])
     clean_corpus.main()
 
@@ -506,7 +688,7 @@ def run_clean(monkeypatch, root, *args):
 def test_clean_matches_the_legacy_cleaner_then_patches_only_changes(tmp_path, monkeypatch, clock,
                                                                    rules):
     a, b = twins(tmp_path, build_clean_repo)
-    pipeline_repo.point(monkeypatch, a, policy={})
+    pipeline_repo.point(monkeypatch, a, policy=None)
     legacy_pipeline.legacy_clean(rules_spec=rules)
     run_clean(monkeypatch, b, "--rules", rules)
     assert tracked(a) == tracked(b)
@@ -522,7 +704,7 @@ def test_clean_matches_the_legacy_cleaner_then_patches_only_changes(tmp_path, mo
     for root in (a, b):
         (root / "text" / "ost-c-new.md").write_text(HEADER + "New prose.\n")
     for root, runner in ((a, None), (b, run_clean)):
-        pipeline_repo.point(monkeypatch, root, policy={})
+        pipeline_repo.point(monkeypatch, root, policy=None)
         st = store.FileStore(root)
         with st.writer() as w:
             with st.transaction("add-new", expected_version=st.version(), writer=w) as tx:
@@ -535,8 +717,8 @@ def test_clean_matches_the_legacy_cleaner_then_patches_only_changes(tmp_path, mo
             runner(monkeypatch, root)
     assert tracked(a) == tracked(b) and artifacts(a) == artifacts(b)
     with store.FileStore(b).read() as v:
-        last = [e for e in v.scan(store.Table.EVENTS).rows if e["op"] == "update"][-1]
-    assert last["id"] == "ost-c-new"
+        last = v.scan(store.Table.EVENTS).rows[-1]
+    assert last["op"] == "commit" and last["counts"] == {"manifest": {"update": 1}}
 
 
 def test_a_failed_metadata_batch_leaves_the_stamp_in_progress_and_the_rerun_repairs(
@@ -627,3 +809,67 @@ def test_the_steps_against_postgres_match_the_file_store(tmp_path, monkeypatch, 
         assert sorted(ops_a) == sorted(ops_b)
     finally:
         pg.drop()
+
+
+# --- policy and stamp are read under the step's writer, from the pinned configuration -------------
+
+def test_the_cleaner_reads_its_stamp_under_the_lock_and_policy_from_the_view(tmp_path,
+                                                                           monkeypatch):
+    root = tmp_path / "r"
+    build_clean_repo(root)
+    st = store.FileStore(root)
+    held = []
+    real = clean_corpus.stamped_ruleset
+    monkeypatch.setattr(clean_corpus, "stamped_ruleset",
+                        lambda: (held.append(st._lock_holder()), real())[1])
+    pinned = []
+    real_pinned = store.pinned_policy
+    monkeypatch.setattr(store, "pinned_policy",
+                        lambda view: (pinned.append(view), real_pinned(view))[1])
+    run_clean(monkeypatch, root)
+    assert held == [str(os.getpid())]  # the stamp was read while this run held the round lock
+    assert len(pinned) == 1
+
+
+@pytest.mark.parametrize("doc,bad", [
+    ("eligibility.json", {"version": 1, "restrictions": {"x": {"match": {"id_prefix": "a"}}}}),
+    ("host_policy.json", {"version": 1, "hosts": {"E.org": {"status": "suspended"}}}),
+    ("host_policy.json", None),
+])
+def test_pinned_policy_fails_closed(tmp_path, doc, bad):
+    root = write_repo(tmp_path / "r", policy={})
+    path = root / "registry" / doc
+    if bad is None:
+        path.unlink()
+    else:
+        path.write_text(json.dumps(bad))
+    with store.FileStore(root).read() as v:
+        with pytest.raises(store.StoreError, match=doc.split(".")[0]):
+            store.pinned_policy(v)
+
+
+# --- invocation identities inside one broker (a maintenance window) -------------------------------
+
+def test_two_invocations_in_one_window_never_collide(tmp_path, monkeypatch):
+    """A maintenance window's broker serves several commands: each invocation carries its own
+    token, so a second clean with different patches is not refused as a replay."""
+    root = tmp_path / "r"
+    build_clean_repo(root)
+    st = store.FileStore(root)
+    with st.writer(round_id="maint-w") as w:
+        broker = store_broker.Broker(st, w, "maint-w")
+        with broker.serving():
+            env = ops.with_holder(dict(os.environ, **broker.env()), os.getpid(),
+                                  st.workspace / ".corpus-round.lock", "maint-w")
+            env.pop("NEKAISE_RUN_ID", None)
+            for rules in ("none", "toc_leaders"):
+                out = _child(root, env, "clean_corpus", "--workers", "1", "--rules", rules,
+                             policy={})
+                assert out.returncode == 0, out.stderr
+    runs = journal_runs(root)
+    assert len(runs) == 3 and len(set(runs)) == 3  # the second has no restricted rows left
+    tokens = {r.split(".")[2].split("-")[0] for r in runs}
+    assert len(tokens) == 2 and all(t.startswith("i") for t in tokens)
+    assert all(r.startswith("maint-w.clean.i") for r in runs)
+    assert [r.rsplit("-", 2)[-2:] for r in runs] == [["restricted", "0001"], ["meta", "0001"],
+                                                     ["meta", "0001"]]

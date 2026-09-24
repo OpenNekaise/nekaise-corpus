@@ -552,15 +552,26 @@ def main() -> int:
         if not run_id:
             print("ERROR: no pending snapshots", file=sys.stderr)
             return 1
-        with ops.named_lock("corpus-round", timeout=args.lock_timeout):
-            snap = ops.StateSnapshot.open(run_id)
+        st = store.FileStore(ROOT)
+        # The recovering writer is the round lock plus a token that may read the restored state
+        # while the round's snapshot still exists: the snapshot is discarded only after the
+        # prune quarantine is settled against that state, so a failure leaves it recoverable.
+        with st.writer(timeout=args.lock_timeout, round_id=run_id, recovering=True) as writer:
+            snap = ops.StateSnapshot.open(run_id, root=ROOT)
             subprocess.run(
                 ["git", "restore", "--staged", "--", *SNAPSHOT_PATHS],
                 cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
             )
             snap.restore()
+            try:
+                settle_prune_quarantine(ROOT, st, writer, run_id)
+            except Exception as exc:
+                ops.run_event(run_id, "recover_failed", error=str(exc))
+                print(f"ERROR: restored {run_id}'s tracked state but could not settle its prune "
+                      f"quarantine: {exc}; the snapshot is kept — fix and re-run --recover",
+                      file=sys.stderr)
+                return 1
             snap.discard()
-            settle_prune_quarantine(ROOT, run_id, "rolled_back")
             ops.run_event(run_id, "run_recovered")
             print(f"restored tracked state from interrupted run {run_id}")
         return 0
@@ -595,28 +606,19 @@ def main() -> int:
         return 1
 
 
-def settle_prune_quarantine(root: Path, run_id: str, outcome: str, st=None, writer=None) -> None:
-    """Settle the bytes this round's prune quarantined (prune_corpus: moved aside before its
-    transaction, kept until the round ends): delete them when the round succeeded, move them back
-    when its metadata was rolled back. A quarantine whose transaction outcome is unknown is
-    decided by the store's current state (needs `st` and `writer`)."""
+def settle_prune_quarantine(root: Path, st, writer, run_id: str | None = None) -> dict:
+    """Settle the bytes pruned documents left in workspace/prune-quarantine/ (all, or round
+    `run_id`'s) against the store state the writer now reads — the round's final state after
+    success, its restored pre-round state after a rollback: a file goes back when its document's
+    row exists there, otherwise it is deleted (prune_corpus.settle_quarantine). Raises when it
+    cannot finish; callers keep their recovery state until it has."""
     import prune_corpus
 
-    def settle(view=None):
-        return prune_corpus.settle_quarantines(root, view=view, run=run_id, outcome=outcome)
-
-    try:
-        if st is not None and writer is not None:
-            with st.read(writer=writer) as view:
-                counts = settle(view)
-        else:
-            counts = settle()
-    except Exception as exc:  # the round's outcome stands; the next prune settles the rest
-        ops.run_event(run_id, "prune_quarantine_unsettled", error=str(exc))
-        print(f"WARNING: prune quarantine of {run_id} not settled: {exc}", file=sys.stderr)
-        return
-    if any(counts.values()):
-        ops.run_event(run_id, "prune_quarantine_settled", outcome=outcome, **counts)
+    with st.read(writer=writer) as view:
+        counts = prune_corpus.settle_quarantines(root, view, run=run_id)
+    if counts["quarantines"]:
+        ops.run_event(run_id or "-", "prune_quarantine_settled", **counts)
+    return counts
 
 
 # Pipeline steps that may write tracked state receive the round's store broker; verification gates
@@ -647,6 +649,8 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
             )
         if not args.allow_dirty and not git_clean():
             raise RuntimeError("working tree is dirty; review/commit it before starting a round")
+        # bytes an interrupted standalone prune left aside are settled before anything fetches
+        settle_prune_quarantine(ROOT, st, writer)
         with st.read(writer=writer) as view:
             backends = {k: v for k, v in view.config_get().backends.items()
                         if not k.startswith("_")}
@@ -714,7 +718,11 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
         print(f"\nround {run_id}: {before} -> {after} training-eligible docs / "
               f"{tokens // 1_000_000}M tokens ({excluded} provenance rows excluded)")
         snapshot.discard()
-        settle_prune_quarantine(ROOT, run_id, "committed", st, writer)
+        try:  # the round stands; a leftover quarantine is settled before the next round fetches
+            settle_prune_quarantine(ROOT, st, writer, run_id)
+        except Exception as exc:
+            ops.run_event(run_id, "prune_quarantine_unsettled", error=str(exc))
+            print(f"WARNING: prune quarantine of {run_id} not settled: {exc}", file=sys.stderr)
         return 0
     except Exception:
         if snapshot is not None and not committed:
@@ -724,8 +732,10 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
                     cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
                 )
                 snapshot.restore()
+                # settle against the restored state BEFORE discarding the snapshot: a failure
+                # keeps the round recoverable (run_round --recover) instead of stranding bytes
+                settle_prune_quarantine(ROOT, st, writer, run_id)
                 snapshot.discard()
-                settle_prune_quarantine(ROOT, run_id, "rolled_back", st, writer)
                 ops.run_event(run_id, "state_rolled_back")
             except Exception as rollback_exc:
                 ops.run_event(run_id, "rollback_failed", error=str(rollback_exc))

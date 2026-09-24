@@ -66,13 +66,12 @@ def test_main_never_downloads_policy_restricted_sources(monkeypatch, tmp_path, c
         "topic": "materials",
         "format": "html",
     }
-    rules = {
-        "translated": {
-            "match": {"id_prefix": "pat-cn"},
-        },
-    }
-    _repo(monkeypatch, tmp_path, [restricted])
-    monkeypatch.setattr(build_corpus.registry, "load_eligibility", lambda: rules)
+    import pipeline_repo
+    rules = {"translated": pipeline_repo.restriction({"id_prefix": "pat-cn"})}
+    # the loader takes eligibility from its view's pinned configuration, not the working tree
+    _repo(monkeypatch, tmp_path, [restricted], restrictions=rules)
+    monkeypatch.setattr(build_corpus.registry, "load_eligibility",
+                        lambda: pytest.fail("eligibility must come from the pinned config"))
     monkeypatch.setattr(
         build_corpus,
         "download_one",
