@@ -284,9 +284,14 @@ whole discovery phase in one transaction; runtime exhaustion is separated from c
   window, and the same child without the broker refused).
 - **Draining is cancellation-safe (second review, P1).** `Broker.drain()` (run by `serving()` on
   exit, idempotent) stops accepting, cuts connections, waits for an executing transaction and
-  removes the socket; an interrupt arriving meanwhile (the maintainer's SIGTERM handler raises
-  KeyboardInterrupt) is held until all of that is done, then re-raised — so neither the round nor
-  the maintainer releases its writer or locks while a transaction runs. A cut connection loses
+  removes the socket. On the main thread it swaps the Python handlers of SIGTERM/SIGINT/
+  SIGALRM/SIGHUP for one that only records the signal for the whole drain (third review: a
+  per-step retry still let a signal delivered between steps escape), then restores the handlers
+  with those signals blocked and re-raises the recorded ones, which propagate once the broker is
+  drained — so neither the round nor the maintainer releases its writer or locks while a
+  transaction runs. Off the main thread no handler can run in the draining thread (Python runs
+  handlers on the main thread only); brokers are served and drained on their owner's thread.
+  Regression: a signal delivered before and after each drain step. A cut connection loses
   only the reply; the transaction's outcome stands and an identical retry is a no-op.
 - **Settled state is judged after draining (second review, P2).** Both maintenance phases drain
   their broker before `update_growth_block()` and before recording the outcome, still under both

@@ -30,6 +30,7 @@ from __future__ import annotations
 import json
 import os
 import secrets
+import signal
 import socket
 import socketserver
 import tempfile
@@ -57,6 +58,41 @@ _BATCH_ID = store._RUN_ID  # same shape as run ids: plain, bounded names
 
 class BrokerError(store.StoreError):
     """The broker refused or failed a batch."""
+
+
+# Signals whose Python handlers could unwind a broker's owner mid-drain (SIGTERM is the
+# maintainer's cancellation, SIGINT is KeyboardInterrupt, SIGALRM/SIGHUP for completeness).
+DEFERRED_SIGNALS = tuple(getattr(signal, n) for n in ("SIGTERM", "SIGINT", "SIGALRM", "SIGHUP")
+                         if hasattr(signal, n))
+
+
+@contextmanager
+def _deferred_signals():
+    """Record DEFERRED_SIGNALS instead of handling them while the block runs (main thread only),
+    then restore the handlers and re-raise each recorded signal to them."""
+    if threading.current_thread() is not threading.main_thread():
+        yield
+        return
+    pending: list[int] = []
+    previous = {}
+    try:
+        # inside the try: an interrupt between two swaps still restores the swapped ones
+        for sig in DEFERRED_SIGNALS:
+            previous[sig] = signal.getsignal(sig)  # recorded before the swap: never lost
+            signal.signal(sig, lambda signum, frame: pending.append(signum))
+        yield
+    finally:
+        # Restore and re-raise with the signals blocked for this thread, so a fresh signal can
+        # neither interrupt the restore half-way nor overtake the recorded ones; unblocking
+        # delivers them all to the restored handlers.
+        mask = signal.pthread_sigmask(signal.SIG_BLOCK, DEFERRED_SIGNALS)
+        try:
+            for sig, handler in previous.items():
+                signal.signal(sig, handler if handler is not None else signal.SIG_DFL)
+            for sig in dict.fromkeys(pending):
+                signal.raise_signal(sig)  # pending until the mask is restored
+        finally:
+            signal.pthread_sigmask(signal.SIG_SETMASK, mask)
 
 
 def _bind(call: str, args: list, kwargs: dict) -> dict:
@@ -182,22 +218,37 @@ class Broker:
         alive), wait until no transaction is executing, and remove the socket. Idempotent.
 
         Cancellation-safe: the caller releases its writer and locks right after this returns, so
-        an interrupt (KeyboardInterrupt from a SIGTERM handler, SystemExit) arriving while it
-        waits is held back until the broker is fully drained and cleaned up, then re-raised."""
-        if self._drained:
-            return
-        self._closing = True
+        no Python-level interrupt may surface anywhere inside it. On the main thread the handlers
+        of DEFERRED_SIGNALS are swapped for one that only records the signal (a C-level handler
+        on any thread just sets a flag; the Python handler then runs on the main thread, and it
+        is ours), so nothing is raised inside or between the steps; afterwards the previous
+        handlers are restored and each recorded signal is re-raised to them, so it propagates
+        normally once the broker is drained. A KeyboardInterrupt/SystemExit raised in the
+        instant before the swap is caught by the retry loop and re-raised at the end.
+
+        Off the main thread no handler can be swapped (signal.signal is main-thread only) and
+        none is needed: Python runs signal handlers on the main thread only, so they cannot
+        unwind a stack owned by another thread. Serve and drain a broker on the thread that owns
+        its writer (run_round and the maintainer both do so on the main thread)."""
         interrupted: BaseException | None = None
-        for step in (self._stop_server, self._cut_connections, self._wait_idle, self._cleanup):
-            while True:
-                try:
-                    step()
-                    break
-                except (KeyboardInterrupt, SystemExit) as exc:
-                    interrupted = interrupted or exc  # finish this step, then the rest
-        self._drained = True
+        while True:
+            try:
+                self._drain_deferred()
+                break
+            except (KeyboardInterrupt, SystemExit) as exc:
+                interrupted = interrupted or exc
         if interrupted is not None:
             raise interrupted
+
+    def _drain_deferred(self) -> None:
+        if self._drained:
+            return
+        with _deferred_signals():
+            self._closing = True
+            for step in (self._stop_server, self._cut_connections, self._wait_idle,
+                         self._cleanup):
+                step()
+            self._drained = True
 
     def _stop_server(self) -> None:
         if self._thread.is_alive():

@@ -226,6 +226,81 @@ def test_an_interrupt_during_drain_waits_for_the_running_transaction(tmp_path, m
     assert st.pending_transactions() == []
 
 
+DRAIN_STEPS = ("_stop_server", "_cut_connections", "_wait_idle", "_cleanup")
+
+
+@pytest.mark.parametrize("step", DRAIN_STEPS)
+@pytest.mark.parametrize("when", ["before", "after"])
+def test_a_signal_at_every_drain_boundary_is_deferred_until_drained(tmp_path, monkeypatch,
+                                                                    step, when):
+    """Codex third review P1: a signal delivered before or after any drain step (i.e. at every
+    boundary, including between steps) must not unwind the owner early. When the interrupt
+    surfaces, the running transaction has finished, the socket is gone and cleanup ran, all
+    before the writer is released; the interrupt still propagates, exactly once."""
+    import signal
+    import threading
+    st = file_store(tmp_path / "repo")
+    write(st, "seed", seed)
+    started, finished = _slow_blocklist(monkeypatch, 0.5)
+    raised = []
+
+    def interrupt(signum, frame):
+        raised.append(signum)
+        raise KeyboardInterrupt("terminated")
+    previous = signal.signal(signal.SIGALRM, interrupt)
+    real = getattr(store_broker.Broker, step)
+
+    def wrapped(self):
+        if when == "before":
+            os.kill(os.getpid(), signal.SIGALRM)
+        real(self)
+        if when == "after":
+            os.kill(os.getpid(), signal.SIGALRM)
+    monkeypatch.setattr(store_broker.Broker, step, wrapped)
+    state = {}
+    try:
+        with st.writer(round_id="rnd-sig") as w:
+            broker = store_broker.Broker(st, w, "rnd-sig")
+            client = store_broker.Client(broker.path, broker.cap, "rnd-sig")
+
+            def submit():
+                try:
+                    client.submit("prune", "slow", [{"call": "blocklist_add",
+                                                     "args": [["https://s.org/2"]], "kwargs": {}}],
+                                  st.version())
+                except store_broker.BrokerError:
+                    pass  # the drain cut the connection; the transaction's outcome stands
+            worker = threading.Thread(target=submit)
+            with pytest.raises(KeyboardInterrupt):
+                with broker.serving():
+                    worker.start()
+                    assert started.wait(5)
+            state.update(finished=finished.is_set(), socket_gone=not broker._dir.exists(),
+                         drained=broker._drained, writer_live=w.nonce in st._live_tokens)
+        worker.join(5)
+    finally:
+        signal.signal(signal.SIGALRM, previous)
+    assert state == {"finished": True, "socket_gone": True, "drained": True, "writer_live": True}
+    assert raised == [signal.SIGALRM]
+    assert signal.getsignal(signal.SIGTERM) is not None
+    assert signal.getsignal(signal.SIGINT) is signal.default_int_handler  # handlers restored
+    assert st.blocklist_path.read_text().endswith("https://s.org/2\n")
+
+
+def test_drain_off_the_main_thread_needs_no_signal_handlers(tmp_path):
+    import threading
+    st = file_store(tmp_path / "repo")
+    write(st, "seed", seed)
+    with st.writer(round_id="rnd-thr") as w:
+        broker = store_broker.Broker(st, w, "rnd-thr")
+        broker._thread.start()
+        errors = []
+        t = threading.Thread(target=lambda: errors.append(None) if broker.drain() is None else None)
+        t.start()
+        t.join(10)
+    assert errors == [None] and broker._drained and not broker._dir.exists()
+
+
 def test_drain_is_idempotent_and_refuses_later_batches(tmp_path):
     st = file_store(tmp_path / "repo")
     write(st, "seed", seed)
