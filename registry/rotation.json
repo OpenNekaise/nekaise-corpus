@@ -68,7 +68,7 @@
   },
   "find_nlr": {
     "flag": "--cursor",
-    "next": "2026:START",
+    "next": "2026:oai_dc/1361/246024886/800/0/233000072/publications:year2026/x/x",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-24: '<year>:<OAI resumptionToken|START>' over research-hub.nlr.gov Pure sets publications:yearYYYY, newest year first down to 1975 (53,919 records total; 2024 alone has 2,344). A rejected token restarts its year. Walk does not come back up: re-aim to the current year occasionally."
@@ -165,13 +165,13 @@
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 2099,
+    "next": 2100,
     "step": 1,
     "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature)."
   },
   "find_ojs": {
     "flag": "--site",
-    "next": 1,
+    "next": 2,
     "step": 1,
     "note": "Index into find_ojs.SITES (append-only list). One venue per round, harvested completely; a --max-capped run requests a rotation hold so the venue drains next round; an index past the end disables the backend as exhausted. Re-enable with a reset only to pick up new issues (dedup makes a re-walk idempotent). NEW 2026-09-24."
   }

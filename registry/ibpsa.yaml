@@ -1,2 +1,529 @@
 # ibpsa — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
 sources:
+  - id: ibp-towards-greater-interoperability-between-bim-and-ene
+    title: 'Towards greater interoperability between BIM and energy simulation software:
+      A comparative analysis of exchange formats and processes'
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-semi-analytical-finite-line-source-modeling-of-horiz
+    title: Semi-Analytical Finite Line-Source Modeling of Horizontally Installed Geo-Exchange
+      Piles
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_10.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-assessing-indoor-exposures-to-wildfire-induced-fine-
+    title: Assessing Indoor Exposures to Wildfire-Induced Fine Particulate Matter in
+      the Greater Toronto Area
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_102.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-quantifying-the-cooling-potential-of-an-irrigated-go
+    title: Quantifying the Cooling Potential of an Irrigated Golf Course using Urban
+      Microclimate Simulations and Field Measurements
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_103.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-bayesian-building-modelling-for-hvac-control-using-s
+    title: Bayesian Building Modelling for HVAC Control Using Simulated and Operational
+      Data
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_104.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-low-order-modelica-model-for-latent-thermal-energy-s
+    title: Low-order Modelica model for latent thermal energy storage.
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_105.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-mod-lisation-d-une-serre-comparaison-de-deux-outils-
+    title: 'Modélisation d''une serre : comparaison de deux outils de simulation thermique
+      dynamique'
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_108.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-multiscale-modeling-of-the-greenhouse-indoor-environ
+    title: Multiscale modeling of the greenhouse indoor environment in Nordic climate
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_109.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-flume-fast-localized-urban-microclimate-emulator
+    title: 'FLUME: Fast localized urban microclimate emulator'
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_110.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-enhancing-building-climate-resilience-through-shelte
+    title: 'Enhancing Building Climate Resilience through Shelters: PV-Battery System
+      Sizing for Extreme Heat Events'
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_111.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-graph-based-data-fusion-for-high-resolution-mapping-
+    title: Graph-Based Data Fusion for High-Resolution Mapping of Urban Air Temperature
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_112.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-microclimatic-adaptation-strategies-in-a-semi-arid-c
+    title: 'Microclimatic Adaptation Strategies in a Semi-Arid City: A Living Lab Approach
+      in Oujda, Morocco'
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_113.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-optimizing-urban-temperature-monitoring-networks-thr
+    title: Optimizing Urban Temperature Monitoring Networks through Reduced-Order Reconstruction
+      and Constrained Sensor Placement
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_114.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-comparison-of-preliminary-cfd-simulations-of-novel-r
+    title: Comparison of Preliminary CFD Simulations of Novel Round House Designs for
+      Northern Canadian Housing
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_119.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-developing-and-calibrating-multi-unit-residential-bu
+    title: Developing and calibrating multi-unit residential building prototypes in
+      Québec in the framework of Archetype-QC
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_121.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-generalized-hvac-simulation-apparatus-for-building
+    title: 'A Generalized HVAC Simulation Apparatus for Building Performance Research:
+      Illustrative Study of Load Diversity and System Configuration'
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_122.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-where-does-the-energy-go-the-enbalance-model-for-dec
+    title: Where Does the Energy Go? The enBalance Model for Decomposing Energy Flows
+      and Tracing Uncertainty through Commercial Buildings
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_123.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-indoor-thermal-comfort-evaluation-in-hot-arid-zones-
+    title: Indoor thermal comfort evaluation in hot arid zones for different conditions
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_124.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-cross-shaped-and-8-lobes-jets-investigation-for-prev
+    title: Cross shaped and 8-lobes jets investigation for preventing the contamination
+      spread among the occupants in indoor environment
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_125.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-co-simulation-of-agent-based-modeling-and-building-p
+    title: Co-simulation of agent-based modeling and building performance simulation
+      for dynamic demand side management
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_126.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-advancing-integrated-assessment-of-energy-carbon-and
+    title: Advancing Integrated Assessment of Energy, Carbon, and Cost in Building Performance
+      Modelling
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_127.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-trees-impact-on-thermal-comfort-in-a-controlled-neig
+    title: Trees impact on thermal comfort in a controlled neighborhood using different
+      background conditions
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_132.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-inverse-surrogate-modelling-to-infer-unknown-buildin
+    title: Inverse Surrogate Modelling to Infer Unknown Building Features from Operational
+      Data
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_133.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-field-deployment-and-evaluation-of-model-based-predi
+    title: Field Deployment and Evaluation of Model-based Predictive Controls with Sequential
+      Parameter Estimation
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_134.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-optimized-borehole-configurations-for-reducing-drill
+    title: Optimized Borehole Configurations for Reducing Drilling Costs in Ground Source
+      Heat Pumps
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_136.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-optimizing-solar-thermal-energy-potential-on-fa-ades
+    title: Optimizing Solar Thermal Energy Potential on Façades and Roofs of Urban High-Rise
+      Residential Buildings
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_137.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-assessing-the-operational-performance-and-financial-
+    title: Assessing the operational performance and financial incentive of a large-scale
+      demand response program
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_138.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-wildfire-oriented-contam-framework-for-modeling-in
+    title: A wildfire-oriented CONTAM framework for modeling indoor air quality and
+      mitigation strategies in mechanically ventilated buildings
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_139.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-simulating-building-energy-systems-using-lti-blocks
+    title: Simulating Building Energy Systems Using LTI Blocks
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_140.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-evaluating-indoor-particulate-matter-and-volatile-or
+    title: Evaluating Indoor Particulate Matter and Volatile Organic Compound Concentrations
+      and Mitigation Using Portable Air Cleaners in Canadian Community Hou
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_141.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-climate-change-impacts-on-greenhouse-energy-consumpt
+    title: 'Climate Change Impacts on Greenhouse Energy Consumption Using a Transient
+      Model: A Winter Case Study in Quebec'
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_142.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-clustering-based-development-of-control-oriented-arc
+    title: Clustering-Based Development of Control-Oriented Archetypes for Predictive
+      Load Management in Québec School Buildings
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_143.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-agent-driven-generative-design-of-urban-public-space
+    title: Agent-Driven Generative Design of Urban Public Spaces via LLM-MCP Integration
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_145.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-development-and-validation-of-a-steady-state-openfoa
+    title: 'Development and Validation of a Steady-State OpenFOAM Solver for Multi-Component
+      Buoyant Flows: Application to Urban Anthropogenic Heat Dispersion'
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_147.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-cfd-based-evaluation-of-green-firebreak-design-for-w
+    title: CFD-based evaluation of green firebreak design for wildfire smoke dispersion
+      and building protections
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_148.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-wi-fi-based-demand-controlled-ventilation-for-airpor
+    title: Wi-Fi-based demand-controlled ventilation for airport terminals
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_15.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-thermal-anomaly-identification-and-energy-model-cons
+    title: Thermal Anomaly Identification and Energy Model Construction Methods for
+      Existing Sports Buildings in Cold Regions Using UAV-IRT
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_150.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-how-much-accuracy-do-we-lose-with-fewer-simulations-
+    title: How Much Accuracy Do We Lose with Fewer Simulations? Evaluating Reduced CFD
+      Training Datasets for Indoor Airflow Prediction
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_151.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-simulation-based-investigation-of-a-large-scale-he
+    title: A Simulation-based Investigation of a Large-Scale Heat Pump-Driven Dual Thermal
+      Storage System for Peak Load Management
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_152.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-transfer-learning-for-building-energy-prediction-acr
+    title: 'Transfer Learning for Building Energy Prediction Across Canadian Climate
+      Zones: A Deep Learning Approach'
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_154.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-proof-of-concept-framework-to-support-carbon-resil
+    title: A Proof-of-Concept Framework to Support Carbon-, Resilience-, and Cost-Informed
+      Retrofits
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_158.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-research-on-constructing-strategies-of-ice-sports-bu
+    title: 'Research on Constructing Strategies of Ice Sports Buildings from the Perspective
+      of Renewable Materials Utilization: A Case Study of Building Retrofit'
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_16.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-energy-audit-reporting-automation-with-artificial-in
+    title: Energy Audit Reporting Automation with Artificial Intelligence (AI) and Machine  Learning
+      (ML)
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_161.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-evaluation-of-air-change-rate-measuring-techniques-f
+    title: Evaluation of air change rate measuring techniques for CFD model validation
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_162.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-energy-efficient-industrial-building-model-for-relia
+    title: Energy-Efficient Industrial Building Model for Reliable Off-Grid Operation
+      in Cold Climates
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_163.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-sequential-identi-cation-of-inverse-models-for-super
+    title: Sequential Identiﬁcation of Inverse Models for Supervisory Control in Buildings
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_165.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-practical-approach-to-hvac-fault-detection-and-dia
+    title: A practical approach to HVAC Fault Detection and Diagnosis
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_166.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-multi-objective-optimization-of-building-retrofit-sc
+    title: 'Multi-Objective Optimization of Building Retrofit Scenarios Using Wallacei:
+      A Case Study for a Detached House in Winnipeg'
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_167.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-can-building-energy-graphs-help-studying-surrogate-p
+    title: Can Building Energy Graphs Help? Studying Surrogate Peak-Demand Prediction
+      Under Geographic and Climatic Shift
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_169.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-integrating-bim-based-energy-models-into-the-integra
+    title: 'Integrating BIM-Based Energy Models into the Integrated Design Process:
+      An Analytical Mapping of Performance Indicators and Information Requirements'
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_17.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-enriching-5th-generation-thermal-energy-network-feas
+    title: Enriching 5th generation thermal energy network feasibility studies with
+      solar thermal integration
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_170.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-inferred-energy-disaggregation-using-building-automa
+    title: Inferred energy disaggregation using building automation system data to support
+      portfolio-scale retrofit strategies
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_171.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-experimental-dataset-and-performance-impacts-of-sing
+    title: Experimental Dataset and Performance Impacts of Single and Multiple Faults
+      in an AHU-Air-Source Heat Pump System under Heating and Cooling Operation i
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_172.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-comparative-analysis-of-green-roof-and-conventional-
+    title: Comparative Analysis of Green Roof and Conventional Roof Thermal Performance
+      in Winter Conditions
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_173.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-development-of-heating-energy-flexibility-in-canadia
+    title: Development of Heating Energy Flexibility in Canadian Houses with PV-Battery
+      Systems Using Model Predictive Control under Weather Uncertainty
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_174.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-residential-building-stock-model-of-the-province-of-
+    title: 'Residential Building Stock Model of the Province of Quebec, Canada: Methodology
+      & Preliminary Results'
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_176.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-data-driven-framework-for-practical-hvac-system-cont
+    title: Data-driven framework for practical HVAC system control in commercial buildings
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_177.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-archetype-qc-prototype-building-models-for-the-provi
+    title: 'Archetype QC: Prototype Building Models for the Province of Québec'
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_178.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-twin4build-automating-building-digital-twins-from-se
+    title: 'Twin4Build: Automating Building Digital Twins from Semantic Models to Differentiable
+      Optimization'
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_183.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-comparative-study-of-field-measurements-and-manufa
+    title: A comparative study of field measurements and manufacturer technical specifications  of
+      a high-temperature heat pump performance
+    url: https://publications.ibpsa.org/proceedings/esim/2026/papers/esim2026_184.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper

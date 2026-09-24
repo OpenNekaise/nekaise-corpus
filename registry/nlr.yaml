@@ -1,0 +1,31 @@
+# nlr — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: nlr-solvari-sr-simplifying-residential-solar-to-1-sku-wi
+    title: 'Solvari SR, Simplifying Residential Solar to 1 SKU, with Extended Testing:
+      Cooperative Research and Development Final Report, CRADA Number CRD-22-2248'
+    url: https://docs.nlr.gov/docs/fy26osti/96840.pdf
+    source: nlr
+    license: public-domain
+    topic: building_energy
+    format: pdf
+    license_evidence: US DOE national laboratory report (NLR, formerly NREL); same policy
+      as OSTI full-text records
+  - id: nlr-colorado-residential-resiliency-and-managed-charging
+    title: 'Colorado Residential Resiliency and Managed Charging: Cooperative Research
+      and Development Final Report, CRADA Number CRD-05-00167 (Project 7)'
+    url: https://docs.nlr.gov/docs/fy26osti/95337.pdf
+    source: nlr
+    license: public-domain
+    topic: building_energy
+    format: pdf
+    license_evidence: US DOE national laboratory report (NLR, formerly NREL); same policy
+      as OSTI full-text records
+  - id: nlr-resstock-measure-documentation-energy-star-windows
+    title: 'ResStock Measure Documentation: ENERGY STAR Windows'
+    url: https://docs.nlr.gov/docs/fy26osti/96405.pdf
+    source: nlr
+    license: public-domain
+    topic: building_energy
+    format: pdf
+    license_evidence: US DOE national laboratory report (NLR, formerly NREL); same policy
+      as OSTI full-text records
