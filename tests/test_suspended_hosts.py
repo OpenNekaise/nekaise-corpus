@@ -26,31 +26,30 @@ def _row(sid, url, text_path=None, **extra):
             "text_chars": 1000, "text_path": text_path or f"text/{sid}.md", **extra}
 
 
-def test_missing_suspended_row_is_unavailable_not_eligible(tmp_path):
+def test_eligibility_is_manifest_based_and_availability_is_reported_separately(tmp_path):
     missing = _row("ope-missing", ESC)
     held = _row("ope-held", ESC.replace("qt1", "qt2"))
     other = _row("nlr-other", "https://docs.nlr.gov/docs/fy24osti/1.pdf")  # also missing
     (tmp_path / "text").mkdir()
     (tmp_path / "text" / "ope-held.md").write_text("held")
-    unavailable = []
 
-    eligible, excluded = registry.partition_manifest_ok_rows(
-        [missing, held, other], {}, unavailable, policy=POLICY, root=tmp_path)
+    eligible, excluded = registry.partition_manifest_ok_rows([missing, held, other], {})
+    unavailable = registry.locally_unavailable_rows(eligible, POLICY, tmp_path)
 
-    assert [r["id"] for r in eligible] == ["ope-held", "nlr-other"]  # other hosts unchanged
-    assert [r["id"] for r in unavailable] == ["ope-missing"]
+    assert [r["id"] for r in eligible] == ["ope-missing", "ope-held", "nlr-other"]
     assert excluded == []
+    assert [r["id"] for r in unavailable] == ["ope-missing"]  # only suspended hosts
 
 
-def test_doc_stats_do_not_count_locally_unavailable_rows(monkeypatch, tmp_path):
-    monkeypatch.setattr(registry, "ROOT", tmp_path)
+def test_doc_stats_count_suspended_rows_whatever_is_held(monkeypatch, tmp_path):
+    monkeypatch.setattr(registry, "ROOT", tmp_path)  # nothing held locally
     monkeypatch.setattr(registry, "load_host_policy", lambda: POLICY)
     monkeypatch.setattr(registry, "load_manifest_rows",
                         lambda: [_row("ope-missing", ESC),
                                  _row("nlr-1", "https://docs.nlr.gov/docs/fy24osti/1.pdf")])
     monkeypatch.setattr(registry, "load_eligibility", lambda: {})
 
-    assert run_round.doc_stats() == (1, 250, 0)
+    assert run_round.doc_stats() == (2, 500, 0)
 
 
 def test_clean_check_passes_on_a_fresh_clone_and_reports_unavailable(
@@ -131,20 +130,54 @@ def test_suspended_row_itself_is_never_pruned(monkeypatch, tmp_path, has_text):
     assert "ope-susp" not in removed
 
 
-def test_readme_contract_accepts_either_view_and_nothing_else():
+SUSPENDED = [_row(f"ope-s{n}", ESC.replace("qt1", f"qt{n}"), text_chars=1_000_000,
+                 topic="architecture") for n in range(2)]
+OTHER = [_row("nlr-1", "https://docs.nlr.gov/1.pdf", text_chars=1_000_000)]
+
+
+def _readme_for(monkeypatch, tmp_path, held: int) -> str:
+    """Run update_readme_stats on a machine holding `held` of the 2 suspended payloads."""
+    import update_readme_stats as urs
+
+    root = tmp_path / f"held-{held}"
+    (root / "text").mkdir(parents=True)
+    for row in SUSPENDED[:held] + OTHER:
+        (root / row["text_path"]).write_text("text")
+    readme = root / "README.md"
+    readme.write_text(f"head\n{urs.START}\nold\n{urs.END}\ntail\n")
+    monkeypatch.setattr(registry, "ROOT", root)
+    monkeypatch.setattr(registry, "load_host_policy", lambda: POLICY)
+    monkeypatch.setattr(registry, "load_manifest_rows", lambda: [dict(r) for r in SUSPENDED + OTHER])
+    monkeypatch.setattr(registry, "load_eligibility", lambda: {})
+    monkeypatch.setattr(urs, "README", readme)
+    monkeypatch.setattr(urs, "du", lambda _path: "1G")  # disk usage is not a manifest statistic
+    urs.main([])
+    return readme.read_text()
+
+
+def test_readme_statistics_are_identical_on_every_machine(monkeypatch, tmp_path, capsys):
+    fresh, partial, full = (_readme_for(monkeypatch, tmp_path, held) for held in (0, 1, 2))
+
+    assert fresh == partial == full
+    assert "| **Documents** | **3** |" in full and "~3M chars" in full
+    assert "local availability: 2 eligible rows" in capsys.readouterr().err  # fresh clone
+
+
+def test_readme_contract_uses_one_coherent_view(monkeypatch, tmp_path):
     import check_contracts
 
-    rows = [_row("nlr-1", "https://docs.nlr.gov/1.pdf", text_chars=1_000_000)]
-    unavailable = [_row("ope-missing", ESC, topic="architecture", text_chars=1_000_000)]
+    good = _readme_for(monkeypatch, tmp_path, 1)
+    rows = SUSPENDED + OTHER
+    assert check_contracts.readme_stats_errors(good, rows, 0) == []
 
     def readme(docs, chars, topics):
         return (f"| **Documents** | **{docs}** |\n~{chars} chars\n"
                 f"| **Policy-excluded provenance** | **0** rows (not fetched or training-ready) |\n"
                 f"| **Topics** | {topics}\n")
 
-    holder = readme(2, "2M", 2)  # written on the machine that holds the suspended payloads
-    fresh = readme(1, "1M", 1)   # written on a fresh clone / CI
-    assert check_contracts.readme_stats_errors(holder, rows, unavailable, 0) == []
-    assert check_contracts.readme_stats_errors(fresh, rows, unavailable, 0) == []
-    assert len(check_contracts.readme_stats_errors(readme(3, "3M", 3), rows, unavailable, 0)) == 3
-    assert check_contracts.readme_stats_errors(holder, rows, [], 0)  # no tolerance without cause
+    # the formerly tolerated "fresh-clone view" and inconsistent mixtures are all rejected
+    assert check_contracts.readme_stats_errors(readme(1, "1M", 1), rows, 0)
+    assert check_contracts.readme_stats_errors(readme(1, "3M", 2), rows, 0)
+    assert check_contracts.readme_stats_errors(readme(3, "1M", 2), rows, 0)
+    assert check_contracts.readme_stats_errors(readme(3, "3M", 1), rows, 0)
+    assert check_contracts.readme_stats_errors(readme(3, "3M", 2), rows, 0) == []

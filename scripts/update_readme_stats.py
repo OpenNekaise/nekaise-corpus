@@ -47,11 +47,12 @@ def main(argv: list[str] | None = None) -> None:
 
     restrictions = registry.load_eligibility()
     rows = registry.load_manifest_rows()
-    unavailable: list[dict] = []
-    ok, excluded = registry.partition_manifest_ok_rows(rows, restrictions, unavailable)
-    if unavailable:  # explicit, not silent: provenance kept, payload not on this machine
-        print(f"locally unavailable (suspended host, not counted): {len(unavailable):,} rows",
-              file=sys.stderr)
+    ok, excluded = registry.partition_manifest_ok_rows(rows, restrictions)
+    # README numbers are manifest-derived and identical on every machine; local availability of
+    # suspended-host payloads is reported here only, never in the committed statistics.
+    if unavailable := registry.locally_unavailable_rows(ok):
+        print(f"local availability: {len(unavailable):,} eligible rows on a fetch-suspended host "
+              "have no local payload (counted in README; not in local corpus/)", file=sys.stderr)
     chars = sum(r.get("text_chars", 0) for r in ok)
     tok = chars // 4
     cchars = sum(r.get("corpus_chars", r.get("text_chars", 0)) for r in ok)

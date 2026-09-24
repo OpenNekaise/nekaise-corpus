@@ -205,9 +205,11 @@ def load_host_policy() -> dict[str, dict]:
 def suspended_unavailable(row: dict, policy: dict[str, dict], root: Path | None = None) -> bool:
     """A successful row on a fetch-SUSPENDED host whose extracted text is not on this machine.
 
-    Its provenance stays committed, but the loader may not re-fetch it (e.g. on a fresh clone),
-    so it is "locally unavailable, suspended": not expected in corpus/, not counted as
-    training-eligible text, and never allowed to claim a title or bytes over an available copy.
+    Its provenance stays committed and it stays TRAINING-ELIGIBLE (a fetch suspension is not an
+    exclusion; committed statistics count it on every machine), but the loader may not re-fetch
+    it (e.g. on a fresh clone), so it is "locally unavailable, suspended": the cleaner does not
+    expect it in corpus/, local-availability reports list it, and it may never claim a title or
+    bytes over an available copy.
     """
     if row.get("status") != "ok" or not policy:
         return False
@@ -222,29 +224,29 @@ def suspended_unavailable(row: dict, policy: dict[str, dict], root: Path | None 
     return not text_path or not ((root or ROOT) / text_path).exists()
 
 
+def locally_unavailable_rows(rows: list[dict], policy: dict[str, dict] | None = None,
+                             root: Path | None = None) -> list[dict]:
+    """Successful suspended-host rows whose payload is missing on THIS machine (a local
+    availability report; never an input to committed statistics)."""
+    policy = load_host_policy() if policy is None else policy
+    return [row for row in rows if suspended_unavailable(row, policy, root)]
+
+
 def partition_manifest_ok_rows(
-    rows: list[dict], restrictions: dict[str, dict],
-    unavailable: list[dict] | None = None, policy: dict[str, dict] | None = None,
-    root: Path | None = None,
+    rows: list[dict], restrictions: dict[str, dict]
 ) -> tuple[list[dict], list[dict]]:
     """Split successful provenance rows into training-eligible and excluded records.
 
-    Rows that are locally unavailable on a suspended host (``suspended_unavailable``) belong to
-    neither list; they are appended to ``unavailable`` when given so callers can report them.
+    Purely manifest-based and therefore identical on every machine: local file availability
+    (see locally_unavailable_rows) never changes these counts.
     """
-    policy = load_host_policy() if policy is None else policy
     eligible: list[dict] = []
     excluded: list[dict] = []
     for row in rows:
         if row.get("status") != "ok":
             continue
-        if not is_training_eligible(row, restrictions):
-            excluded.append(row)
-        elif suspended_unavailable(row, policy, root):
-            if unavailable is not None:
-                unavailable.append(row)
-        else:
-            eligible.append(row)
+        target = eligible if is_training_eligible(row, restrictions) else excluded
+        target.append(row)
     return eligible, excluded
 
 

@@ -374,15 +374,15 @@ def partition_training_rows(
     registry.suspended_unavailable); ``locally_unavailable`` reports them explicitly.
     """
     restricted = [r for r in rows if registry.restriction_for(r, restrictions) is not None]
-    eligible, _ = registry.partition_manifest_ok_rows(rows, restrictions, root=HERE)
-    todo = [r for r in eligible if r.get("text_path")]
+    eligible, _ = registry.partition_manifest_ok_rows(rows, restrictions)
+    missing = {r["id"] for r in locally_unavailable(eligible, restrictions)}
+    todo = [r for r in eligible if r.get("text_path") and r["id"] not in missing]
     return todo, restricted
 
 
 def locally_unavailable(rows: list[dict], restrictions: dict[str, dict]) -> list[dict]:
-    unavailable: list[dict] = []
-    registry.partition_manifest_ok_rows(rows, restrictions, unavailable, root=HERE)
-    return unavailable
+    eligible, _ = registry.partition_manifest_ok_rows(rows, restrictions)
+    return registry.locally_unavailable_rows(eligible, root=HERE)
 
 
 def clear_corpus_metadata(rows: list[dict]) -> int:
