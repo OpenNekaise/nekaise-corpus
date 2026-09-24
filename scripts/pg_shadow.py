@@ -24,6 +24,11 @@ a durable git commit, so the shadow replays COMMITS, never the working tree:
   and is never repaired automatically.
 
 Imports and syncs hold the PgStore writer lock, so two syncs never interleave.
+
+Authority (ADR 0001 stage 4, step 1): replay fails closed once PostgreSQL is authoritative — the
+schema's dataset row is checked inside every replay transaction, and the host authority record
+(scripts/store_authority.py) before any work; a record binding a shadow schema/dataset must name
+this one. Older replicators are refused by the schema version.
 """
 from __future__ import annotations
 
@@ -279,7 +284,39 @@ def replay(conn, st: store_pg.PgStore, parent: str | None, commit: str, paths: l
 
 def _watermark(conn) -> str | None:
     rep = conn.execute("SELECT replication FROM state FOR UPDATE").fetchone()[0] or {}
+    _require_shadow(conn)
     return rep.get("watermark")
+
+
+def _require_shadow(conn) -> None:
+    """Replay only into a schema whose authority row says the files are authoritative (ADR 0001
+    stage 4 step 1): after the cutover the database is the source and replay must fail closed.
+    Called inside every replay transaction, after the state row lock."""
+    mode, epoch = conn.execute("SELECT authority_mode, authority_epoch FROM dataset").fetchone()
+    if mode != "file":
+        raise SystemExit(f"schema is PostgreSQL-authoritative (authority epoch {epoch}): shadow "
+                         "replay is refused")
+
+
+def check_host_authority(st: store_pg.PgStore, root: Path = ROOT) -> None:
+    """The host authority record for `root` must not say postgres, and when it binds a shadow
+    schema, this must be that schema and dataset."""
+    import store_authority
+    try:
+        rec = store_authority.record_for(root)
+    except store.AuthorityError as exc:
+        raise SystemExit(f"authority record unreadable: {exc}") from exc
+    if rec is None:
+        return
+    if rec.mode != "file":
+        raise SystemExit(f"{rec.root} is PostgreSQL-authoritative (epoch {rec.epoch}): shadow "
+                         "replay is refused")
+    if rec.schema is not None and (rec.schema, rec.dsn) != (st.schema, st.dsn):
+        raise SystemExit(f"the authority record binds the shadow {rec.schema!r} at {rec.dsn!r}, "
+                         f"not {st.schema!r} at {st.dsn!r}")
+    if rec.dataset_uuid is not None and st.authority()["dataset_uuid"] != rec.dataset_uuid:
+        raise SystemExit(f"schema {st.schema} holds another dataset than the authority record's "
+                         f"{rec.dataset_uuid}")
 
 
 def _advance(conn, parent: str | None, commit: str, stats: dict, extra: dict | None = None) -> None:
@@ -301,7 +338,8 @@ def do_import(st: store_pg.PgStore, rev: str, repo: Path = ROOT, log=print) -> N
                 "SELECT EXISTS (SELECT 1 FROM entries UNION ALL SELECT 1 FROM manifest UNION ALL "
                 "SELECT 1 FROM blocklist UNION ALL SELECT 1 FROM ledger UNION ALL SELECT 1 FROM "
                 "events UNION ALL SELECT 1 FROM rotation UNION ALL SELECT 1 FROM backend_state "
-                "UNION ALL SELECT 1 FROM control_docs UNION ALL SELECT 1 FROM replication_receipts)").fetchone()[0]
+                "UNION ALL SELECT 1 FROM control_docs UNION ALL SELECT 1 FROM replication_receipts "
+                "UNION ALL SELECT 1 FROM runs UNION ALL SELECT 1 FROM generations)").fetchone()[0]
             if _watermark(conn) is not None or occupied or conn.execute(
                     "SELECT generation FROM state").fetchone()[0] != 0:
                 raise SystemExit("schema is not empty; import only into a fresh schema")
@@ -488,6 +526,9 @@ def enable(dsn: str, schema: str, repo: Path = ROOT) -> None:
     write the marker that makes run_round refuse uncommitted rounds. Everything before this point
     is in git, so import + sync cover it; everything after is committed by construction."""
     import ops
+    import store_authority
+    if (rec := store_authority.record_for(repo)) is not None and rec.mode != "file":
+        raise SystemExit(f"{rec.root} is PostgreSQL-authoritative: no shadow to enable")
     with ops.named_lock("corpus-round", timeout=600, workspace=repo / "workspace"):
         if dirty := [l for l in git("status", "--porcelain", "--", *TRACKED, repo=repo)
                      .splitlines() if l]:
@@ -508,6 +549,8 @@ def main(argv=None) -> int:
     ap.add_argument("--schema", default=os.environ.get("NEKAISE_PG_SCHEMA", "nekaise"))
     args = ap.parse_args(argv)
     st = store_pg.PgStore(ROOT, dsn=args.dsn, schema=args.schema)
+    if args.command in ("import", "sync", "enable"):
+        check_host_authority(st)
     if args.command == "import":
         do_import(st, args.commit)
     elif args.command == "enable":

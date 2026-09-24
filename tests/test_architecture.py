@@ -275,3 +275,46 @@ def test_registry_adapters_are_deprecated_store_adapters(tmp_path, monkeypatch):
     tomb = [e for e in events if e["op"] == "delete"]
     assert [(e["id"], e["reason"]) for e in tomb] == [("ost-b", "test: replace")]
     assert [e["run_id"].split("-")[0] for e in events if e["op"] == "commit"] == ["manifest"]
+
+
+# --- store construction (ADR 0001 stage 4, step 1) -------------------------------------------------
+
+# Production code gets its store from store.open(), which consults the host authority record
+# (scripts/store_authority.py). Direct construction bypasses it, so it is confined to:
+CONSTRUCTION_ALLOWLIST = {
+    # store.open() itself
+    "FileStore": {"store.py"},
+    # store.open(); the git-shadow tooling (replays into a named schema, and checks the authority
+    # itself); the authority CLI binding a file-mode record to its shadow's dataset UUID
+    "PgStore": {"store.py", "pg_shadow.py", "store_authority.py"},
+}
+
+
+def constructions(path: Path) -> list[tuple[str, int]]:
+    found = []
+    for node in ast.walk(ast.parse(path.read_text())):
+        if isinstance(node, ast.Call):
+            name = _call_name(node.func)
+            if name in CONSTRUCTION_ALLOWLIST:
+                found.append((name, node.lineno))
+    return sorted(found, key=lambda f: f[1])
+
+
+@pytest.mark.parametrize("module", sorted(p.name for p in SCRIPTS.glob("*.py")))
+def test_stores_are_opened_through_the_authority_record(module):
+    bad = [f"{module}:{line} {name}(...)" for name, line in constructions(SCRIPTS / module)
+           if module not in CONSTRUCTION_ALLOWLIST[name]]
+    assert bad == [], "use store.open(root=...) so the authority record decides"
+
+
+def test_construction_allowlist_is_minimal():
+    for name, modules in CONSTRUCTION_ALLOWLIST.items():
+        for module in modules:
+            assert name in {n for n, _ in constructions(SCRIPTS / module)}, (name, module)
+
+
+def test_the_construction_detector_sees_direct_calls(tmp_path):
+    probe = tmp_path / "probe.py"
+    probe.write_text("import store, store_pg\nst = store.FileStore(root)\n"
+                     "pg = store_pg.PgStore(root)\nfs = FileStore()\n")
+    assert [n for n, _ in constructions(probe)] == ["FileStore", "PgStore", "FileStore"]

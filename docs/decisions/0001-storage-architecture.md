@@ -647,3 +647,168 @@ shadow continue). Stage 4 (cut over between rounds) needs:
   PostgreSQL authority the pinned configuration must be the one promoted with the generation.
 - **Accepted debt carried forward**: whole-view reads (entries +13 s, manifest +28 s per step),
   whole-manifest `replace_manifest`, and the FileStore's in-memory tables; PostgreSQL removes them.
+
+## Stage 4 plan (Codex, 2026-09-25)
+
+Decided by Codex: ship stage 4 in seven increments. Keep the single-host advisory-lock exception;
+PostgreSQL promotion becomes the commit boundary; public provenance releases and history
+rewriting stay in stage 6.
+
+1. **Authority and generation contracts.** Dataset UUID, authority mode, runs, generations, batch
+   receipts, immutable revisions, per-consumer outbox acknowledgements; canonical JSON text and
+   imported events preserved; producer commit, exact configuration bytes/digests, extractor
+   version and cleaning policy per generation. Runner, recovery, maintainer and diagnostics open
+   their store through `store.open()`; a host-wide authority record makes missing environment
+   settings, old writers and shadow replay fail closed after cutover; never fall back on a PG
+   failure. Rollback: disable the new path (FileStore stays authoritative throughout).
+2. **Staging with constant-size promotion.** Indexed run-scoped versioned tables, invisible to
+   ordinary readers; each batch atomically stores its immutable request, digest, receipt,
+   revisions and run overlay (discovery, loader checkpoints, prune decisions/tombstones, cleaner
+   patches, exact keys, cursors, runtime state). Ordinary views pin committed generation G;
+   pipeline children read G plus their run's overlay pinned at a staging sequence. Drain, freeze,
+   bind gate results to the frozen sequence; promotion checks ownership, parent G, frozen digest
+   and gates and, in one short transaction, marks the staged revisions committed and records G+1,
+   counters and outbox references — never copying staged rows. The computed
+   `<round>.discover.merge` request is persisted before application and replayed exactly (or its
+   completed receipt skipped).
+3. **Local artifacts compatible with atomic metadata.** Immutable local artifact versions for
+   changed bytes, written and fsynced before their references are staged; pruning changes
+   membership but keeps admitted originals and retained-generation artifacts; payloads stay
+   local; artifacts resolve through generation membership; `corpus/` becomes a generation-stamped
+   materialization; the global ruleset stamp stops being policy authority.
+4. **Recovery and operational review.** Shared recovery over durable run status (promoted runs
+   stand; unpromoted default to abort; explicit resume only with unchanged parent/config/code);
+   maintainer repairs use staged promotion; review becomes generation-range review with persisted
+   verdicts and a contiguous reviewed watermark; repairs are compensating generations.
+5. **Verification, backups and the rehearsal.** Generation-bound counters and ledger/derived-key/
+   eligibility/artifact checks; named-recovery-point restore drills; metadata RPO ≤ 15 min and
+   RTO ≤ 60 min demonstrated; alerts; a full throwaway PG-authoritative rehearsal including
+   rollback, and the 160M-row benchmark.
+6. **Production cutover between rounds.** Pause, lock in fixed order, drain/recover, pin commit C,
+   final shadow sync + verify, baseline generation and verified export; disable shadow timers and
+   reject replay through authority mode; `NEKAISE_STORE=postgres` + matching DSN/schema for every
+   entrypoint; one supervised round. Stop data snapshots, per-round commits, journal files and
+   README rewrites. Rollback: export the latest promoted generation into a fresh legacy layout
+   (a sharded FileStore materializer) and switch authority back.
+7. **Close the fallback window after seven healthy days**, then retire the production file
+   adapters (keeping explicit export/recovery tooling).
+
+Fix now for stages 5–6: stable identities, immutable revision/tombstone schemas, `(stage, hash)`
+artifact identities separate from locators, generation retention, independent review/
+publication/index watermarks, retained unpublished outbox history; heartbeat leases before any
+second host writes.
+
+## Stage 4, step 1 record: authority and generation contracts (2026-09-25)
+
+- **Host authority record** (`scripts/store_authority.py`). One JSON file per host,
+  `~/.config/nekaise/store-authority.json`, located through the passwd database (not `$HOME`, so
+  an entrypoint's environment cannot hide it), one entry per resolved data root: mode `file` |
+  `postgres`, a growing epoch, and for PostgreSQL the dataset UUID, DSN and schema. Written
+  atomically under a lock. `store.open()` consults it before choosing a backend and
+  `FileStore(...)` checks it on construction. Switching a root to `postgres` first writes
+  `<root>/workspace/.store-authority-fence` (UUID + epoch); FileStore refuses a fenced root unless
+  the record says `file` at a newer epoch, and no record may be written at or below the fence's
+  epoch, so a lost or deleted host record fails closed. An unreadable, corrupt or unknown-format
+  record raises. CLI: `show`, `init-file [--dsn --schema]` (explicit file authority, optionally
+  binding the shadow's dataset UUID). Switching to `postgres` is step 6's job
+  (`PgStore.set_authority` + `store_authority.write_record`, used by the tests).
+- **Database half.** Schema v4's `dataset` row holds the UUID (generated once, immutable), the
+  authority mode/epoch/root (each epoch appended to `authority_log`; a trigger refuses an
+  unlogged or same-epoch change) and the current promoted generation. A PgStore from
+  `store.open()` is bound: under a `postgres` record the schema must say `postgres` with the
+  record's UUID and epoch — checked when opened and again inside every write transaction (and
+  `contracts()`), so a writer opened before an authority change is fenced; for an unbound root
+  the schema must NOT be PostgreSQL-authoritative. `pg_shadow import`/`sync` check the dataset
+  row inside every replay transaction (refused once it says `postgres`) and the host record
+  before any work (refused under `postgres`; a file record that binds a shadow must name this
+  schema, DSN and dataset UUID); `enable` refuses under `postgres`.
+- **Fail-closed matrix** (`tests/test_store_authority.py`, `tests/test_store_pg_contracts.py`):
+
+  | record \ environment | nothing or `file` | `postgres` + DSN (+ schema) |
+  |---|---|---|
+  | none (tests, worktrees, the live checkout today) | FileStore, unchanged | PgStore; refused if that schema is authoritative |
+  | `file` | FileStore | AuthorityError: PgStore is never a production writer |
+  | `postgres` | AuthorityError (missing settings) | PgStore only if DSN and schema equal the record and the schema's UUID/mode/epoch match; otherwise AuthorityError |
+
+  Also refused: FileStore on a `postgres` or fenced root; shadow replay into an authoritative
+  schema; a PG connection failure raises (no fallback); `run_round` (rounds, `--recover`), the
+  maintainer's window/recovery/backend health and `backup_corpus` under any non-file authority —
+  they are still the legacy file path (`store_authority.require_file_authority` /
+  `require_file_mode`).
+- **Old clients.** v3 code refuses schema v4 at construction ("version 4, code expects 3"), and a
+  v3 instance built before the migration cannot take the writer. v4 code now also checks the
+  schema version inside every write transaction (`PgStore._fence`), so a later migration fences
+  writers mid-session. Pre-step-1 FileStore code cannot read the record; it exists only in
+  pre-deploy checkouts (open question 2).
+- **Schema v4** (`store_pg.V4_DDL`; migration 4 only adds tables — no row, event or column is
+  rewritten; created with a fresh schema, never re-run on every open). The contracts are
+  triggers, so no client — old, new or ad hoc SQL — can break them:
+  `dataset`, `authority_log`; `config_blobs` (exact bytes, sha256-checked) + `config_sets` /
+  `config_set_members` (digest = `store._digest({name: sha256})`); `runs` (kind, parent
+  generation, authority/writer epoch, producer commit, config set, extractor version, cleaning
+  ruleset; `open → frozen → promoted | aborted`; identity immutable; `staged_seq` grows only while
+  open; freezing binds `frozen_seq = staged_seq` and a digest; `promoted` exactly when its
+  generation exists); `batches` (identity `(run, step, batch)`, immutable canonical request text
+  and digest, `requested → applied(seq) | abandoned`, only in an open run); `revisions`
+  (immutable `put`/`tombstone` rows keyed by the stable identity `(tbl, key)`: row text + sha256,
+  the superseded row's digest, the tombstone reason, the batch that staged them; deletable only
+  for aborted runs); `generations` (a linear chain whose parent is the dataset's current
+  generation, bound to a frozen run and copying its provenance; immutable) and
+  `generation_retention` pins; `outbox` (gap-free, one reference row per generation, immutable,
+  deletable only once every consumer is past it), `outbox_consumers` (`review`, `publication`,
+  `index`; a watermark advances only over acknowledged rows) and `outbox_acks` (immutable
+  verdicts `ok`/`finding`/`integrity`); `artifacts` keyed `(stage, sha256)` with an immutable
+  size, apart from `artifact_locators` (local path, pack offset/length, object key).
+  `PgStore.contracts(writer)` gives fenced exact-retry helpers: config sets, `open_run`,
+  `request_batch` (same identity and digest returns the receipt, another digest raises),
+  `register_artifact`, `ack`/`advance`.
+- **How step 2 uses it without copying rows.** The existing tables (entries, manifest, …) become
+  the materialized projection of a generation P. A batch stores its request (`requested`) before
+  applying; applying is one transaction that marks it `applied` at the run's next staging
+  sequence, inserts its revisions and bumps `runs.staged_seq`. A child pinned at (G, run, k) reads
+  the projection, revisions of runs promoted in (P, G], and its own run's revisions with
+  `batch_seq ≤ k` (unique index `(run_id, tbl, key, batch_seq)`; history index `(tbl, key,
+  rev_id)`). Promotion writes a constant number of rows — freeze the run, insert generation G+1,
+  mark the run promoted, advance `dataset.current_generation`, insert the outbox row (exercised by
+  `test_a_run_stages_batches_and_promotes_without_copying`): a revision's visibility is its run's
+  `promoted_generation`, so no revision is rewritten. Folding promoted revisions into the
+  projection happens afterwards in bounded batches (a projection consumer); it changes where rows
+  live, not what any generation contains. Discovery recovery replays the persisted
+  `<round>.discover.merge` request text exactly, or skips it when its receipt is `applied`.
+- **Entrypoints rerouted.** `run_round` (rounds, `--recover`, the nested-round check) and
+  `maintainer` (window, pending-round recovery, backend health including its fallback read) open
+  their store through `store.open()` and refuse non-file authority; `round_recovery` gets that
+  store from them; `backup_corpus` calls `require_file_mode`; `update_readme_stats`,
+  `check_contracts`, `lint_registry`, `coverage`, `coverage_matrix`, `clean_corpus --check`,
+  dedup, rotation and blocklist already used `store.open()`; `pg_shadow` checks authority as
+  above. New architectural test: `FileStore(...)` is constructed only in `store.py`,
+  `PgStore(...)` only in `store.py`, `pg_shadow.py` and `store_authority.py` (minimal allowlist,
+  detector self-test). With no record or a `file` record every entrypoint gets exactly today's
+  FileStore.
+- **Tests.** Selection matrix (17 record × environment cases), fence, corrupt records, epochs,
+  per-root records, entrypoint refusals (run_round, maintainer, backup, shadow), architecture.
+  PostgreSQL: v3 → v4 in-place migration of an imported and synced shadow (every row, derived
+  column, event, receipt and the watermark identical; `pg_shadow verify` OK; sync continues); the
+  real stage-3 code (`git show b188e930bd:scripts/store_pg.py`) writing a v3 schema that v4
+  migrates with byte-identical exports; old-client rejection; newer-schema rejection inside
+  transactions; bound, unbound and mismatched authority; an authority change fencing an open
+  writer; PG failure without fallback; replay refusal after cutover; shadow binding; every
+  contract trigger. conftest gives each test a private empty host record and clears
+  `NEKAISE_STORE`/`NEKAISE_PG_DSN`/`NEKAISE_PG_SCHEMA`.
+- **Gates.** Full suite 1143 passed / 37 skipped (PG skipped), with PostgreSQL
+  (`NEKAISE_PG_TEST_DSN`) 1210 passed; `py_compile scripts/*.py` clean; on the branch's real data
+  `lint_registry` OK (1,620,820 entries in 115 shards, 1,620,815 manifest rows, 224 s) and
+  `check_contracts` OK (1,612,754 documents / 30 backends, 64 s).
+- **Deployment.** After the merge the shadow cron's next `pg_shadow sync` migrates the live schema
+  3 → 4 under the writer lock (new tables only); code older than this step is then refused, as
+  intended. The live checkout has no host record, i.e. today's selection.
+- **Open questions (for Codex).** (1) Generation 0 at cutover: record the projection once as the
+  baseline run's revisions (≈3.2M rows, off the round path) so every generation is
+  reconstructible from revisions alone, or anchor generation 0 on the projection plus a verified
+  export? (2) Pre-step-1 FileStore writers cannot read the record: should step 6 also make the
+  legacy tracked directories read-only so such a writer fails with EACCES? (3) Should the
+  maintainer now run `store_authority.py init-file --dsn … --schema nekaise` on the live checkout,
+  making file authority explicit and binding the shadow's UUID (`NEKAISE_STORE=postgres` against
+  the live root is then refused)? (4) Gate receipts bound to `(run, frozen_seq, frozen_digest)`
+  and a `projection` outbox consumer are left to step 2. (5) `backup_corpus` fails closed under
+  PostgreSQL authority until step 5 replaces it.

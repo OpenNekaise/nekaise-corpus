@@ -17,6 +17,12 @@ Representation (decided in the stage-2 review):
 * Git-owned configuration is pinned in the `config` table (replicated per commit), and a view pins
   it when it opens.
 
+Stage 4, step 1 (schema v4): the dataset UUID and the database half of the authority record, and
+the contract tables later steps stage and promote through (runs, batch receipts, immutable
+revisions, generations, outbox with per-consumer acknowledgements, artifact identities); see
+V4_DDL. A PgStore opened by store.open() is bound to the host record and re-checks the authority
+inside every write transaction; one addressed directly (pg_shadow, tests) is not.
+
 Concurrency: a writer holds a session advisory lock on a dedicated connection and bumps
 state.writer_epoch; every transaction runs on that same session and fences on the epoch, so a
 token dies with its session. This is a recorded ADR exception for single-host operation: the
@@ -31,6 +37,7 @@ import os
 import time
 import uuid
 from contextlib import contextmanager
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable, Iterator, Mapping, Sequence
 
@@ -43,7 +50,7 @@ from store import (BackendState, ConfigSnapshot, Cursor, KnownHits, Page, Stage,
                    StoreError, Table, Version, VersionConflict, WriteView, WriterError,
                    WriterToken, canonical_row, key_digest, norm_title, norm_url)
 
-SCHEMA_VERSION = 3
+SCHEMA_VERSION = 4
 DEFAULT_DSN = "host=/home/zengp/.local/share/nekaise-pg/run dbname=nekaise"
 
 DDL = """
@@ -152,9 +159,459 @@ def _migrate_3(conn, schema):  # manifest legacy-order columns, backfilled from 
                          "(shard, topic_key, id)").format(s))
 
 
-MIGRATIONS = {2: _migrate_2, 3: _migrate_3}
+# ADR 0001 stage 4, step 1: authority and generation contracts. Created with a fresh schema or by
+# migration 4, never re-run on every open (CREATE OR REPLACE TRIGGER locks its table). Adds tables
+# only: no existing row, event or column is rewritten. The contracts live in the database
+# (triggers), so no client — old, new or ad hoc SQL — can break them:
+#   dataset            one row: dataset UUID, authority mode/epoch (the database half of the
+#                      authority record), current promoted generation
+#   authority_log      every authority epoch, append-only
+#   config_blobs/_sets exact configuration bytes (content addressed) and the named sets pinned by
+#                      runs and generations
+#   runs               open -> frozen -> promoted | aborted; staged_seq = the run's staging sequence
+#   batches            immutable computed request + digest per (run, step, batch); requested ->
+#                      applied (with the staging seq it produced) | abandoned
+#   revisions          immutable puts/tombstones keyed by stable identity (tbl, key)
+#   generations        linear promoted chain with producer commit, config set, extractor version,
+#                      cleaning ruleset, frozen sequence/digest; generation_retention pins
+#   outbox (+consumers, acks)  gap-free per-generation references; independent watermarks
+#   artifacts / artifact_locators  (stage, sha256) identity apart from where the bytes live
+V4_DDL = r"""
+CREATE OR REPLACE FUNCTION {s}.nk_refuse() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    RAISE EXCEPTION 'nekaise: % on %.% is refused (immutable contract)', TG_OP, TG_TABLE_SCHEMA,
+        TG_TABLE_NAME USING ERRCODE = 'integrity_constraint_violation';
+END $f$;
+
+CREATE TABLE IF NOT EXISTS {s}.dataset (
+    one boolean PRIMARY KEY DEFAULT true CHECK (one),
+    dataset_uuid uuid NOT NULL,
+    created_at timestamptz NOT NULL DEFAULT now(),
+    authority_mode text NOT NULL DEFAULT 'file' CHECK (authority_mode IN ('file', 'postgres')),
+    authority_epoch bigint NOT NULL DEFAULT 1 CHECK (authority_epoch >= 1),
+    authority_root text,
+    authority_changed_at timestamptz NOT NULL DEFAULT now(),
+    current_generation bigint
+);
+INSERT INTO {s}.dataset (dataset_uuid) VALUES (gen_random_uuid()) ON CONFLICT DO NOTHING;
+CREATE TABLE IF NOT EXISTS {s}.authority_log (
+    epoch bigint PRIMARY KEY,
+    mode text NOT NULL CHECK (mode IN ('file', 'postgres')),
+    root text,
+    changed_at timestamptz NOT NULL DEFAULT now(),
+    reason text NOT NULL CHECK (reason <> '')
+);
+INSERT INTO {s}.authority_log (epoch, mode, reason)
+    SELECT authority_epoch, authority_mode, 'schema v4: FileStore authoritative; this schema is '
+           'not a production writer' FROM {s}.dataset ON CONFLICT DO NOTHING;
+CREATE OR REPLACE TRIGGER authority_log_immutable BEFORE UPDATE OR DELETE ON {s}.authority_log
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_refuse();
+
+CREATE TABLE IF NOT EXISTS {s}.config_blobs (
+    sha256 text COLLATE "C" PRIMARY KEY,
+    bytes bytea NOT NULL,
+    CHECK (sha256 = encode(sha256(bytes), 'hex'))
+);
+CREATE TABLE IF NOT EXISTS {s}.config_sets (
+    digest text COLLATE "C" PRIMARY KEY CHECK (digest ~ '^[0-9a-f]{{64}}$'),
+    created_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS {s}.config_set_members (
+    digest text COLLATE "C" NOT NULL REFERENCES {s}.config_sets,
+    name text COLLATE "C" NOT NULL,
+    sha256 text COLLATE "C" NOT NULL REFERENCES {s}.config_blobs,
+    PRIMARY KEY (digest, name)
+);
+CREATE OR REPLACE TRIGGER config_blobs_immutable BEFORE UPDATE OR DELETE ON {s}.config_blobs
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_refuse();
+CREATE OR REPLACE TRIGGER config_sets_immutable BEFORE UPDATE OR DELETE ON {s}.config_sets
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_refuse();
+CREATE OR REPLACE TRIGGER config_set_members_immutable BEFORE UPDATE OR DELETE
+    ON {s}.config_set_members FOR EACH ROW EXECUTE FUNCTION {s}.nk_refuse();
+
+CREATE TABLE IF NOT EXISTS {s}.runs (
+    run_id text COLLATE "C" PRIMARY KEY CHECK (run_id ~ '^[A-Za-z0-9][A-Za-z0-9._-]{{0,127}}$'),
+    kind text NOT NULL CHECK (kind IN ('round', 'maintenance', 'standalone', 'baseline')),
+    parent_generation bigint,
+    status text NOT NULL DEFAULT 'open'
+        CHECK (status IN ('open', 'frozen', 'promoted', 'aborted')),
+    authority_epoch bigint NOT NULL,
+    writer_epoch bigint NOT NULL,
+    producer_commit text COLLATE "C" NOT NULL CHECK (producer_commit ~ '^[0-9a-f]{{40,64}}$'),
+    config_digest text COLLATE "C" NOT NULL REFERENCES {s}.config_sets,
+    extractor_version text NOT NULL,
+    cleaning_ruleset text NOT NULL,
+    started_at timestamptz NOT NULL DEFAULT now(),
+    staged_seq int NOT NULL DEFAULT 0 CHECK (staged_seq >= 0),
+    frozen_seq int,
+    frozen_digest text COLLATE "C",
+    ended_at timestamptz,
+    promoted_generation bigint UNIQUE,
+    detail_text text NOT NULL DEFAULT '{{}}'
+);
+CREATE INDEX IF NOT EXISTS runs_unfinished ON {s}.runs (status) WHERE status IN ('open', 'frozen');
+CREATE OR REPLACE FUNCTION {s}.nk_runs_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF TG_OP = 'DELETE' THEN
+        RAISE EXCEPTION 'nekaise: runs are never deleted (run %)', OLD.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF TG_OP = 'INSERT' THEN
+        IF NEW.status <> 'open' OR NEW.staged_seq <> 0 OR NEW.frozen_seq IS NOT NULL
+                OR NEW.frozen_digest IS NOT NULL OR NEW.promoted_generation IS NOT NULL
+                OR NEW.ended_at IS NOT NULL THEN
+            RAISE EXCEPTION 'nekaise: a run starts open and empty (run %)', NEW.run_id
+                USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        RETURN NEW;
+    END IF;
+    IF OLD.status IN ('promoted', 'aborted') THEN
+        RAISE EXCEPTION 'nekaise: run % is %, final', OLD.run_id, OLD.status
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF (NEW.run_id, NEW.kind, NEW.parent_generation, NEW.authority_epoch, NEW.writer_epoch,
+        NEW.producer_commit, NEW.config_digest, NEW.extractor_version, NEW.cleaning_ruleset,
+        NEW.started_at) IS DISTINCT FROM
+       (OLD.run_id, OLD.kind, OLD.parent_generation, OLD.authority_epoch, OLD.writer_epoch,
+        OLD.producer_commit, OLD.config_digest, OLD.extractor_version, OLD.cleaning_ruleset,
+        OLD.started_at) THEN
+        RAISE EXCEPTION 'nekaise: run % identity is immutable', OLD.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.staged_seq < OLD.staged_seq
+            OR (OLD.status <> 'open' AND NEW.staged_seq <> OLD.staged_seq) THEN
+        RAISE EXCEPTION 'nekaise: run % staging sequence only grows while open', OLD.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.status <> OLD.status AND (OLD.status, NEW.status) NOT IN
+            (('open', 'frozen'), ('open', 'aborted'), ('frozen', 'promoted'), ('frozen', 'aborted'))
+    THEN
+        RAISE EXCEPTION 'nekaise: run % cannot go from % to %', OLD.run_id, OLD.status, NEW.status
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.status = 'open' AND (NEW.frozen_seq IS NOT NULL OR NEW.frozen_digest IS NOT NULL) THEN
+        RAISE EXCEPTION 'nekaise: open run % has no frozen sequence', OLD.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF OLD.status = 'open' AND NEW.status = 'frozen' AND (NEW.frozen_seq IS DISTINCT FROM
+            NEW.staged_seq OR NEW.frozen_digest IS NULL) THEN
+        RAISE EXCEPTION 'nekaise: run % must freeze at its staged sequence with a digest',
+            OLD.run_id USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF OLD.status = 'frozen' AND (NEW.frozen_seq, NEW.frozen_digest) IS DISTINCT FROM
+            (OLD.frozen_seq, OLD.frozen_digest) THEN
+        RAISE EXCEPTION 'nekaise: run % frozen sequence is immutable', OLD.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF (NEW.status = 'promoted') <> (NEW.promoted_generation IS NOT NULL)
+            OR (NEW.status = 'promoted' AND NOT EXISTS (
+                SELECT 1 FROM {s}.generations g WHERE g.generation = NEW.promoted_generation
+                AND g.run_id = NEW.run_id)) THEN
+        RAISE EXCEPTION 'nekaise: run % is promoted exactly when its generation exists',
+            OLD.run_id USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER runs_guard BEFORE INSERT OR UPDATE OR DELETE ON {s}.runs
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_runs_guard();
+
+CREATE TABLE IF NOT EXISTS {s}.batches (
+    run_id text COLLATE "C" NOT NULL REFERENCES {s}.runs,
+    step text COLLATE "C" NOT NULL CHECK (step ~ '^[A-Za-z0-9][A-Za-z0-9._-]{{0,127}}$'),
+    batch text COLLATE "C" NOT NULL CHECK (batch ~ '^[A-Za-z0-9][A-Za-z0-9._-]{{0,127}}$'),
+    request_digest text COLLATE "C" NOT NULL CHECK (request_digest ~ '^[0-9a-f]{{64}}$'),
+    request_text text NOT NULL,
+    status text NOT NULL DEFAULT 'requested'
+        CHECK (status IN ('requested', 'applied', 'abandoned')),
+    requested_at timestamptz NOT NULL DEFAULT now(),
+    applied_at timestamptz,
+    seq int CHECK (seq >= 1),
+    counts_text text,
+    PRIMARY KEY (run_id, step, batch),
+    UNIQUE (run_id, seq),
+    CHECK ((status = 'applied') = (seq IS NOT NULL AND applied_at IS NOT NULL))
+);
+CREATE OR REPLACE FUNCTION {s}.nk_batches_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE run_status text;
+BEGIN
+    IF TG_OP = 'DELETE' THEN
+        SELECT status INTO run_status FROM {s}.runs WHERE run_id = OLD.run_id;
+        IF run_status = 'aborted' THEN RETURN OLD; END IF;
+        RAISE EXCEPTION 'nekaise: batch receipts of run % (%) are retained', OLD.run_id,
+            run_status USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    SELECT status INTO run_status FROM {s}.runs WHERE run_id = NEW.run_id;
+    IF TG_OP = 'INSERT' THEN
+        IF run_status IS DISTINCT FROM 'open' OR NEW.status <> 'requested' THEN
+            RAISE EXCEPTION 'nekaise: batch %.%.% must be requested in an open run', NEW.run_id,
+                NEW.step, NEW.batch USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        RETURN NEW;
+    END IF;
+    IF (NEW.run_id, NEW.step, NEW.batch, NEW.request_digest, NEW.request_text, NEW.requested_at)
+            IS DISTINCT FROM
+       (OLD.run_id, OLD.step, OLD.batch, OLD.request_digest, OLD.request_text, OLD.requested_at)
+    THEN
+        RAISE EXCEPTION 'nekaise: batch request %.%.% is immutable', OLD.run_id, OLD.step,
+            OLD.batch USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF OLD.status <> 'requested' THEN
+        RAISE EXCEPTION 'nekaise: batch %.%.% is %, final', OLD.run_id, OLD.step, OLD.batch,
+            OLD.status USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.status = 'applied' AND run_status IS DISTINCT FROM 'open' THEN
+        RAISE EXCEPTION 'nekaise: batch %.%.% can only be applied in an open run', OLD.run_id,
+            OLD.step, OLD.batch USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER batches_guard BEFORE INSERT OR UPDATE OR DELETE ON {s}.batches
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_batches_guard();
+
+CREATE TABLE IF NOT EXISTS {s}.revisions (
+    rev_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    run_id text COLLATE "C" NOT NULL,
+    batch_seq int NOT NULL,
+    tbl text COLLATE "C" NOT NULL CHECK (tbl IN ('entries', 'manifest', 'blocklist', 'ledger',
+                                                 'rotation', 'control', 'backend_state')),
+    key text COLLATE "C" NOT NULL,
+    op text NOT NULL CHECK (op IN ('put', 'tombstone')),
+    row_text text,
+    row_sha256 text COLLATE "C",
+    before_sha256 text COLLATE "C",
+    reason text,
+    FOREIGN KEY (run_id, batch_seq) REFERENCES {s}.batches (run_id, seq),
+    UNIQUE (run_id, tbl, key, batch_seq),
+    CHECK ((op = 'put') = (row_text IS NOT NULL AND row_sha256 IS NOT NULL)),
+    CHECK (op = 'put' OR (reason IS NOT NULL AND reason <> ''))
+);
+CREATE INDEX IF NOT EXISTS revisions_history ON {s}.revisions (tbl, key, rev_id);
+CREATE OR REPLACE FUNCTION {s}.nk_revisions_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE run_status text;
+BEGIN
+    IF TG_OP = 'UPDATE' THEN
+        RAISE EXCEPTION 'nekaise: revision % is immutable', OLD.rev_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF TG_OP = 'DELETE' THEN
+        SELECT status INTO run_status FROM {s}.runs WHERE run_id = OLD.run_id;
+        IF run_status = 'aborted' THEN RETURN OLD; END IF;
+        RAISE EXCEPTION 'nekaise: revisions of run % (%) are retained', OLD.run_id, run_status
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    SELECT status INTO run_status FROM {s}.runs WHERE run_id = NEW.run_id;
+    IF run_status IS DISTINCT FROM 'open' THEN
+        RAISE EXCEPTION 'nekaise: run % is %, it stages no revisions', NEW.run_id, run_status
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.op = 'put' AND NEW.row_sha256 <> encode(sha256(convert_to(NEW.row_text, 'UTF8')), 'hex')
+    THEN
+        RAISE EXCEPTION 'nekaise: revision row_sha256 does not match its row text'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER revisions_guard BEFORE INSERT OR UPDATE OR DELETE ON {s}.revisions
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_revisions_guard();
+
+CREATE TABLE IF NOT EXISTS {s}.generations (
+    generation bigint PRIMARY KEY CHECK (generation >= 0),
+    parent bigint UNIQUE REFERENCES {s}.generations,
+    run_id text COLLATE "C" NOT NULL UNIQUE REFERENCES {s}.runs,
+    promoted_at timestamptz NOT NULL DEFAULT now(),
+    producer_commit text COLLATE "C" NOT NULL,
+    config_digest text COLLATE "C" NOT NULL REFERENCES {s}.config_sets,
+    extractor_version text NOT NULL,
+    cleaning_ruleset text NOT NULL,
+    frozen_seq int NOT NULL,
+    frozen_digest text COLLATE "C" NOT NULL,
+    counts_text text NOT NULL,
+    CHECK ((parent IS NULL) = (generation = 0)),
+    CHECK (parent IS NULL OR parent = generation - 1)
+);
+CREATE OR REPLACE FUNCTION {s}.nk_generations_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE r record; head bigint;
+BEGIN
+    IF TG_OP <> 'INSERT' THEN
+        RAISE EXCEPTION 'nekaise: generation % is immutable', OLD.generation
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    SELECT * INTO r FROM {s}.runs WHERE run_id = NEW.run_id;
+    SELECT current_generation INTO head FROM {s}.dataset;
+    IF r.status IS DISTINCT FROM 'frozen'
+            OR NEW.parent IS DISTINCT FROM head
+            OR r.parent_generation IS DISTINCT FROM head
+            OR (NEW.producer_commit, NEW.config_digest, NEW.extractor_version,
+                NEW.cleaning_ruleset, NEW.frozen_seq, NEW.frozen_digest) IS DISTINCT FROM
+               (r.producer_commit, r.config_digest, r.extractor_version, r.cleaning_ruleset,
+                r.frozen_seq, r.frozen_digest) THEN
+        RAISE EXCEPTION 'nekaise: generation % must promote a frozen run staged on the current '
+            'generation % with that run''s provenance', NEW.generation, head
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER generations_guard BEFORE INSERT OR UPDATE OR DELETE ON {s}.generations
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_generations_guard();
+CREATE TABLE IF NOT EXISTS {s}.generation_retention (
+    generation bigint NOT NULL REFERENCES {s}.generations,
+    holder text COLLATE "C" NOT NULL,
+    reason text NOT NULL CHECK (reason <> ''),
+    pinned_at timestamptz NOT NULL DEFAULT now(),
+    until timestamptz,
+    PRIMARY KEY (generation, holder)
+);
+
+CREATE OR REPLACE FUNCTION {s}.nk_dataset_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF TG_OP = 'DELETE' THEN
+        RAISE EXCEPTION 'nekaise: the dataset row is never deleted'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.dataset_uuid <> OLD.dataset_uuid OR NEW.created_at <> OLD.created_at THEN
+        RAISE EXCEPTION 'nekaise: the dataset identity is immutable'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.authority_epoch < OLD.authority_epoch
+            OR ((NEW.authority_mode, NEW.authority_root) IS DISTINCT FROM
+                (OLD.authority_mode, OLD.authority_root)
+                AND NEW.authority_epoch = OLD.authority_epoch)
+            OR (NEW.authority_epoch <> OLD.authority_epoch AND NOT EXISTS (
+                SELECT 1 FROM {s}.authority_log l WHERE l.epoch = NEW.authority_epoch
+                AND l.mode = NEW.authority_mode AND l.root IS NOT DISTINCT FROM NEW.authority_root))
+    THEN
+        RAISE EXCEPTION 'nekaise: an authority change needs a new, logged epoch'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.current_generation IS DISTINCT FROM OLD.current_generation AND NOT EXISTS (
+            SELECT 1 FROM {s}.generations g WHERE g.generation = NEW.current_generation
+            AND g.parent IS NOT DISTINCT FROM OLD.current_generation) THEN
+        RAISE EXCEPTION 'nekaise: the current generation only advances to its promoted child'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER dataset_guard BEFORE UPDATE OR DELETE ON {s}.dataset
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_dataset_guard();
+
+CREATE TABLE IF NOT EXISTS {s}.outbox (
+    seq bigint PRIMARY KEY CHECK (seq >= 1),
+    generation bigint NOT NULL UNIQUE REFERENCES {s}.generations,
+    created_at timestamptz NOT NULL DEFAULT now(),
+    payload_text text NOT NULL
+);
+CREATE TABLE IF NOT EXISTS {s}.outbox_consumers (
+    consumer text COLLATE "C" PRIMARY KEY CHECK (consumer ~ '^[a-z][a-z0-9_-]{{0,63}}$'),
+    watermark bigint NOT NULL DEFAULT 0 CHECK (watermark >= 0),
+    updated_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS {s}.outbox_acks (
+    consumer text COLLATE "C" NOT NULL REFERENCES {s}.outbox_consumers,
+    seq bigint NOT NULL REFERENCES {s}.outbox ON DELETE CASCADE,
+    acked_at timestamptz NOT NULL DEFAULT now(),
+    verdict text NOT NULL CHECK (verdict IN ('ok', 'finding', 'integrity')),
+    detail_text text NOT NULL DEFAULT '{{}}',
+    PRIMARY KEY (consumer, seq)
+);
+CREATE OR REPLACE FUNCTION {s}.nk_acks_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF TG_OP = 'DELETE' AND NOT EXISTS (SELECT 1 FROM {s}.outbox_consumers
+                                        WHERE watermark < OLD.seq) THEN
+        RETURN OLD;  -- compacted together with its outbox row
+    END IF;
+    RAISE EXCEPTION 'nekaise: acknowledgement %/% is immutable', OLD.consumer, OLD.seq
+        USING ERRCODE = 'integrity_constraint_violation';
+END $f$;
+CREATE OR REPLACE TRIGGER outbox_acks_guard BEFORE UPDATE OR DELETE ON {s}.outbox_acks
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_acks_guard();
+CREATE OR REPLACE FUNCTION {s}.nk_outbox_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF TG_OP = 'INSERT' THEN
+        IF NEW.seq <> (SELECT COALESCE(max(seq), 0) + 1 FROM {s}.outbox) THEN
+            RAISE EXCEPTION 'nekaise: the outbox sequence is gap-free (got %)', NEW.seq
+                USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        RETURN NEW;
+    END IF;
+    IF TG_OP = 'DELETE' AND NOT EXISTS (SELECT 1 FROM {s}.outbox_consumers
+                                        WHERE watermark < OLD.seq) THEN
+        RETURN OLD;  -- every consumer acknowledged it: compaction may remove it
+    END IF;
+    RAISE EXCEPTION 'nekaise: outbox row % is retained (% refused)', OLD.seq, TG_OP
+        USING ERRCODE = 'integrity_constraint_violation';
+END $f$;
+CREATE OR REPLACE TRIGGER outbox_guard BEFORE INSERT OR UPDATE OR DELETE ON {s}.outbox
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_outbox_guard();
+CREATE OR REPLACE FUNCTION {s}.nk_consumers_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF TG_OP = 'DELETE' THEN
+        RAISE EXCEPTION 'nekaise: outbox consumer % is retained', OLD.consumer
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF TG_OP = 'INSERT' THEN
+        IF NEW.watermark <> 0 THEN
+            RAISE EXCEPTION 'nekaise: a new consumer starts at watermark 0'
+                USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        RETURN NEW;
+    END IF;
+    IF NEW.consumer <> OLD.consumer OR NEW.watermark < OLD.watermark
+            OR NEW.watermark > (SELECT COALESCE(max(seq), 0) FROM {s}.outbox)
+            OR EXISTS (SELECT 1 FROM {s}.outbox o WHERE o.seq > OLD.watermark
+                       AND o.seq <= NEW.watermark AND NOT EXISTS (
+                           SELECT 1 FROM {s}.outbox_acks a WHERE a.consumer = OLD.consumer
+                           AND a.seq = o.seq)) THEN
+        RAISE EXCEPTION 'nekaise: the watermark of % only advances over acknowledged rows',
+            OLD.consumer USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER outbox_consumers_guard BEFORE INSERT OR UPDATE OR DELETE
+    ON {s}.outbox_consumers FOR EACH ROW EXECUTE FUNCTION {s}.nk_consumers_guard();
+INSERT INTO {s}.outbox_consumers (consumer) VALUES ('review'), ('publication'), ('index')
+    ON CONFLICT DO NOTHING;
+
+CREATE TABLE IF NOT EXISTS {s}.artifacts (
+    stage text COLLATE "C" NOT NULL CHECK (stage IN ('raw', 'text', 'corpus')),
+    sha256 text COLLATE "C" NOT NULL CHECK (sha256 ~ '^[0-9a-f]{{64}}$'),
+    size bigint NOT NULL CHECK (size >= 0),
+    first_run text COLLATE "C",
+    created_at timestamptz NOT NULL DEFAULT now(),
+    PRIMARY KEY (stage, sha256)
+);
+CREATE OR REPLACE TRIGGER artifacts_immutable BEFORE UPDATE OR DELETE ON {s}.artifacts
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_refuse();
+CREATE TABLE IF NOT EXISTS {s}.artifact_locators (
+    stage text COLLATE "C" NOT NULL,
+    sha256 text COLLATE "C" NOT NULL,
+    locator text COLLATE "C" NOT NULL,
+    kind text NOT NULL CHECK (kind IN ('local', 'pack', 'object')),
+    pack_offset bigint,
+    pack_length bigint,
+    codec text,
+    created_at timestamptz NOT NULL DEFAULT now(),
+    verified_at timestamptz,
+    PRIMARY KEY (stage, sha256, locator),
+    FOREIGN KEY (stage, sha256) REFERENCES {s}.artifacts,
+    CHECK ((kind = 'pack') = (pack_offset IS NOT NULL AND pack_length IS NOT NULL))
+);
+"""
+# Every table V4_DDL creates (tests and pg_shadow's emptiness check use it).
+V4_TABLES = ("dataset", "authority_log", "config_blobs", "config_sets", "config_set_members",
+             "runs", "batches", "revisions", "generations", "generation_retention", "outbox",
+             "outbox_consumers", "outbox_acks", "artifacts", "artifact_locators")
+
+
+def _migrate_4(conn, schema):  # stage 4 step 1 contracts: new tables only, nothing rewritten
+    conn.execute(V4_DDL.format(s=schema))
+
+
+MIGRATIONS = {2: _migrate_2, 3: _migrate_3, 4: _migrate_4}
 # Indexes on columns that migrations may have just added: created after migrating.
 POST_DDL = "CREATE INDEX IF NOT EXISTS manifest_legacy_order ON {s}.manifest (shard, topic_key, id);"
+# store.open()'s marker for a root without an authority record: the schema must not be
+# PostgreSQL-authoritative (it may be a shadow or a scratch schema).
+UNBOUND = "unbound"
 
 
 def put_rows(cur, table: str, rows: list[dict]) -> None:
@@ -244,7 +701,12 @@ def compile_predicate(pred, rowexpr: sql.Composable) -> tuple[sql.Composable, li
 
 class PgStore:
     def __init__(self, root: Path = store.ROOT, *, dsn: str = DEFAULT_DSN, schema: str = "nekaise",
-                 create: bool = True):
+                 create: bool = True, authority=None):
+        """`authority`: None for tools and tests that address a schema directly (pg_shadow,
+        conformance tests; the architectural test limits who may); UNBOUND when store.open()
+        serves a root without an authority record (the schema must not be PostgreSQL-
+        authoritative); or the root's store_authority.Record (the schema must be authoritative
+        for exactly that dataset and epoch — checked now and inside every write transaction)."""
         if not schema.isidentifier():
             raise StoreError(f"invalid schema name {schema!r}")
         self.root = Path(root)
@@ -253,9 +715,21 @@ class PgStore:
         self._s = sql.Identifier(schema)
         self._writers: dict[str, psycopg.Connection] = {}
         self._active = False
+        self._authority = authority
         if create:
             with self._connect(autocommit=True) as conn:
-                conn.execute(DDL.format(s=schema, v=SCHEMA_VERSION))
+                fresh = conn.execute("SELECT to_regclass(%s) IS NULL",
+                                     [f"{schema}.state"]).fetchone()[0]
+                if fresh:  # nobody can hold a writer on a schema that does not exist yet
+                    conn.execute("SELECT pg_advisory_lock(hashtext(%s))", [self._lock_name()])
+                    fresh = conn.execute("SELECT to_regclass(%s) IS NULL",
+                                         [f"{schema}.state"]).fetchone()[0]
+                if fresh:
+                    with conn.transaction():
+                        conn.execute(DDL.format(s=schema, v=SCHEMA_VERSION))
+                        conn.execute(V4_DDL.format(s=schema))
+                else:
+                    conn.execute(DDL.format(s=schema, v=SCHEMA_VERSION))
                 got = conn.execute(sql.SQL("SELECT schema_version FROM {}.state").format(
                     self._s)).fetchone()[0]
                 if got < SCHEMA_VERSION:
@@ -276,6 +750,91 @@ class PgStore:
                 if got != SCHEMA_VERSION:
                     raise StoreError(f"schema {schema} is version {got}, code expects "
                                      f"{SCHEMA_VERSION}")
+        if authority is not None:
+            with self._connect(autocommit=True) as conn:
+                self._check_authority(conn)
+
+    # -- authority (ADR 0001 stage 4 step 1; host half: scripts/store_authority.py) ----------------
+
+    def _check_authority(self, conn: psycopg.Connection) -> None:
+        """Raise AuthorityError unless this schema may serve this opener (see __init__)."""
+        if self._authority is None:
+            return
+        row = conn.execute("SELECT dataset_uuid::text, authority_mode, authority_epoch "
+                           "FROM dataset").fetchone()
+        if row is None:
+            raise store.AuthorityError(f"schema {self.schema} has no dataset row")
+        uuid_, mode, epoch = row
+        if self._authority == UNBOUND:
+            if mode != "file":
+                raise store.AuthorityError(
+                    f"schema {self.schema} is PostgreSQL-authoritative (epoch {epoch}) but "
+                    f"{self.root} has no authority record binding it: refusing")
+            return
+        rec = self._authority
+        if (mode, uuid_, epoch) != ("postgres", rec.dataset_uuid, rec.epoch):
+            raise store.AuthorityError(
+                f"schema {self.schema} says mode {mode!r}, dataset {uuid_}, epoch {epoch}; the "
+                f"authority record for {rec.root} says postgres, dataset {rec.dataset_uuid}, "
+                f"epoch {rec.epoch}: refusing")
+
+    def authority(self) -> dict:
+        """The dataset row: UUID, authority mode/epoch/root, current generation."""
+        with self._connect(autocommit=True) as conn:
+            row = conn.execute("SELECT dataset_uuid::text, authority_mode, authority_epoch, "
+                               "authority_root, current_generation FROM dataset").fetchone()
+        return dict(zip(("dataset_uuid", "mode", "epoch", "root", "current_generation"), row))
+
+    def set_authority(self, mode: str, *, root: Path | str | None, reason: str,
+                      timeout: float = 30) -> int:
+        """Move the database half of the authority record to `mode` under a new epoch (logged),
+        holding the writer lock so no write transaction straddles the change. Returns the new
+        epoch; the host record (store_authority.write_record) must then carry the same epoch.
+        Cutover tooling (stage 4 step 6) and tests only."""
+        if mode not in ("file", "postgres"):
+            raise StoreError(f"unknown authority mode {mode!r}")
+        if not reason:
+            raise StoreError("an authority change needs a reason")
+        root_s = str(Path(root).resolve()) if root is not None else None
+        with self.writer(timeout=timeout) as w:
+            conn = self._writer_conn(w)
+            with conn.transaction():
+                epoch = conn.execute("SELECT authority_epoch FROM dataset FOR UPDATE"
+                                     ).fetchone()[0] + 1
+                conn.execute("INSERT INTO authority_log (epoch, mode, root, reason) "
+                             "VALUES (%s, %s, %s, %s)", [epoch, mode, root_s, reason])
+                conn.execute("UPDATE dataset SET authority_mode = %s, authority_epoch = %s, "
+                             "authority_root = %s, authority_changed_at = now()",
+                             [mode, epoch, root_s])
+        return epoch
+
+    @contextmanager
+    def contracts(self, writer: WriterToken) -> Iterator["Contracts"]:
+        """One fenced transaction over the stage-4 contract tables (runs, batch receipts, config
+        sets, artifacts, outbox acknowledgements). Stage 4 step 2 builds staging on it."""
+        conn = self._writer_conn(writer)
+        if self._active:
+            raise StoreError("transactions do not nest")
+        self._active = True
+        try:
+            with conn.transaction():
+                self._fence(conn, writer)
+                yield Contracts(conn, writer)
+        finally:
+            self._active = False
+
+    def _fence(self, conn: psycopg.Connection, writer: WriterToken) -> int:
+        """Inside a write transaction: lock the state row, refuse a stale writer, a schema this
+        code does not write, and a changed authority. Returns the store generation counter."""
+        gen, epoch, version = conn.execute(
+            "SELECT generation, writer_epoch, schema_version FROM state FOR UPDATE").fetchone()
+        if epoch != writer.epoch:
+            raise WriterError("writer token is stale: a newer writer took over")
+        if version != SCHEMA_VERSION:
+            raise WriterError(f"schema {self.schema} is version {version}; this code writes "
+                              f"version {SCHEMA_VERSION} — restart with matching code")
+        self._check_authority(conn)
+        return gen
 
     def _connect(self, *, autocommit: bool = False) -> psycopg.Connection:
         conn = psycopg.connect(self.dsn, autocommit=autocommit)
@@ -449,10 +1008,7 @@ class PgStore:
         view = None
         try:
             with conn.transaction():
-                gen, epoch = conn.execute(
-                    "SELECT generation, writer_epoch FROM state FOR UPDATE").fetchone()
-                if epoch != writer.epoch:
-                    raise WriterError("writer token is stale: a newer writer took over")
+                gen = self._fence(conn, writer)
                 current = Version(f"pg:{gen}")
                 row = conn.execute("SELECT row_text FROM events WHERE run_id = %s AND op = 'commit'",
                                    [run_id]).fetchone()
@@ -487,6 +1043,158 @@ class PgStore:
 
     def export(self, directory: Path, *, view: "PgReadView"):
         return store.export(directory, view=view)
+
+
+# --- stage-4 contracts ---------------------------------------------------------------------------
+
+@dataclass(frozen=True)
+class BatchReceipt:
+    run_id: str
+    step: str
+    batch: str
+    request_digest: str
+    status: str          # requested | applied | abandoned
+    seq: int | None      # the run staging sequence it produced, once applied
+    retried: bool        # True: this identity was already requested with the same digest
+
+
+RUN_IDENTITY = ("kind", "parent_generation", "producer_commit", "config_digest",
+                "extractor_version", "cleaning_ruleset")
+
+
+class Contracts:
+    """Stage-4 contract operations inside one fenced PgStore transaction (PgStore.contracts).
+    Every rule the tables state is also enforced by triggers; these helpers add exact-retry
+    semantics: the same identity with the same content is a no-op, different content raises."""
+
+    def __init__(self, conn: psycopg.Connection, writer: WriterToken):
+        self._conn = conn
+        self._writer = writer
+
+    def _q(self, query, params=()):
+        return self._conn.execute(query, params)
+
+    def dataset(self) -> dict:
+        row = self._q("SELECT dataset_uuid::text, authority_mode, authority_epoch, "
+                      "current_generation FROM dataset").fetchone()
+        return dict(zip(("dataset_uuid", "mode", "epoch", "current_generation"), row))
+
+    def put_config_set(self, documents: Mapping[str, bytes]) -> str:
+        """Store configuration documents as exact bytes; returns the set digest
+        (store._digest of {name: sha256})."""
+        members = {}
+        for name, data in sorted(documents.items()):
+            if not isinstance(data, (bytes, bytearray)):
+                raise StoreError(f"config {name}: exact bytes required")
+            sha = hashlib.sha256(data).hexdigest()
+            members[name] = sha
+            self._q("INSERT INTO config_blobs (sha256, bytes) VALUES (%s, %s) "
+                    "ON CONFLICT DO NOTHING", [sha, bytes(data)])
+        digest = store._digest(members)
+        if self._q("INSERT INTO config_sets (digest) VALUES (%s) ON CONFLICT DO NOTHING",
+                   [digest]).rowcount:
+            with self._conn.cursor() as cur:
+                cur.executemany("INSERT INTO config_set_members (digest, name, sha256) "
+                                "VALUES (%s, %s, %s)", [(digest, n, h) for n, h in members.items()])
+        return digest
+
+    def config_set(self, digest: str) -> dict[str, bytes]:
+        return {n: bytes(b) for n, b in self._q(
+            "SELECT m.name, b.bytes FROM config_set_members m JOIN config_blobs b USING (sha256) "
+            "WHERE m.digest = %s ORDER BY m.name", [digest])}
+
+    def open_run(self, run_id: str, *, kind: str, parent_generation: int | None,
+                 producer_commit: str, config_digest: str, extractor_version: str,
+                 cleaning_ruleset: str) -> str:
+        """Open a run staged on the current generation. Returns its status; an existing run
+        with the same identity is returned as is (exact retry), a different one raises."""
+        store._check_run_id(run_id)
+        want = dict(zip(RUN_IDENTITY, (kind, parent_generation, producer_commit, config_digest,
+                                       extractor_version, cleaning_ruleset)))
+        cols = ", ".join(RUN_IDENTITY)
+        row = self._q(f"SELECT status, {cols} FROM runs WHERE run_id = %s FOR UPDATE",
+                      [run_id]).fetchone()
+        if row is not None:
+            if dict(zip(RUN_IDENTITY, row[1:])) != want:
+                raise StoreError(f"run {run_id} already exists with a different identity")
+            return row[0]
+        ds = self.dataset()
+        if parent_generation != ds["current_generation"]:
+            raise VersionConflict(f"run {run_id} would stage on generation {parent_generation}; "
+                                  f"the current generation is {ds['current_generation']}")
+        self._q(f"INSERT INTO runs (run_id, authority_epoch, writer_epoch, {cols}) VALUES "
+                "(%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                [run_id, ds["epoch"], self._writer.epoch, *want.values()])
+        return "open"
+
+    def request_batch(self, run_id: str, step: str, batch: str,
+                      requests: Sequence[Mapping]) -> BatchReceipt:
+        """Persist a batch's computed request (canonical JSON text) before it is applied. Same
+        identity + same digest: the existing receipt (exact retry, whatever its status); a
+        different digest: StoreError (conflicting retry)."""
+        store.validate_json(list(requests), f"batch {run_id}.{step}.{batch}")
+        text = _check_text(store._canonical(list(requests)), "batch request")
+        digest = hashlib.sha256(text.encode()).hexdigest()
+        row = self._q("SELECT request_digest, status, seq FROM batches WHERE run_id = %s AND "
+                      "step = %s AND batch = %s", [run_id, step, batch]).fetchone()
+        if row is not None:
+            if row[0] != digest:
+                raise StoreError(f"batch {run_id}.{step}.{batch} was requested with different "
+                                 "content (conflicting retry)")
+            return BatchReceipt(run_id, step, batch, digest, row[1], row[2], True)
+        self._q("INSERT INTO batches (run_id, step, batch, request_digest, request_text) "
+                "VALUES (%s, %s, %s, %s, %s)", [run_id, step, batch, digest, text])
+        return BatchReceipt(run_id, step, batch, digest, "requested", None, False)
+
+    def register_artifact(self, stage: Stage | str, sha256: str, size: int, *,
+                          locator: str | None = None, kind: str = "local",
+                          first_run: str | None = None) -> bool:
+        """Record artifact identity (stage, sha256) and optionally a locator; True if new. The
+        same identity with a different size raises (identity is immutable)."""
+        stage = Stage(stage).value
+        new = self._q("INSERT INTO artifacts (stage, sha256, size, first_run) VALUES "
+                      "(%s, %s, %s, %s) ON CONFLICT DO NOTHING",
+                      [stage, sha256, size, first_run]).rowcount == 1
+        if not new:
+            have = self._q("SELECT size FROM artifacts WHERE stage = %s AND sha256 = %s",
+                           [stage, sha256]).fetchone()[0]
+            if have != size:
+                raise StoreError(f"artifact {stage}:{sha256} has size {have}, not {size}")
+        if locator is not None:
+            self._q("INSERT INTO artifact_locators (stage, sha256, locator, kind) VALUES "
+                    "(%s, %s, %s, %s) ON CONFLICT DO NOTHING", [stage, sha256, locator, kind])
+        return new
+
+    def ack(self, consumer: str, seq: int, verdict: str, detail: Mapping | None = None) -> None:
+        """Acknowledge outbox row `seq` for `consumer` (exact retry is a no-op)."""
+        text = store._canonical(dict(detail or {}))
+        row = self._q("SELECT verdict, detail_text FROM outbox_acks WHERE consumer = %s AND "
+                      "seq = %s", [consumer, seq]).fetchone()
+        if row is not None:
+            if tuple(row) != (verdict, text):
+                raise StoreError(f"{consumer} already acknowledged outbox row {seq} differently")
+            return
+        self._q("INSERT INTO outbox_acks (consumer, seq, verdict, detail_text) VALUES "
+                "(%s, %s, %s, %s)", [consumer, seq, verdict, text])
+
+    def advance(self, consumer: str) -> int:
+        """Move `consumer`'s watermark over its contiguous acknowledged prefix; returns it."""
+        w = self._q("SELECT watermark FROM outbox_consumers WHERE consumer = %s FOR UPDATE",
+                    [consumer]).fetchone()
+        if w is None:
+            raise StoreError(f"unknown outbox consumer {consumer!r}")
+        gap = self._q("SELECT min(o.seq) FROM outbox o WHERE o.seq > %s AND NOT EXISTS (SELECT 1 "
+                      "FROM outbox_acks a WHERE a.consumer = %s AND a.seq = o.seq)",
+                      [w[0], consumer]).fetchone()[0]
+        top = gap - 1 if gap is not None else \
+            self._q("SELECT COALESCE(max(seq), 0) FROM outbox").fetchone()[0]
+        if top > w[0]:
+            self._q("UPDATE outbox_consumers SET watermark = %s, updated_at = now() "
+                    "WHERE consumer = %s", [top, consumer])
+        return max(top, w[0])
+
+    def watermarks(self) -> dict[str, int]:
+        return dict(self._q("SELECT consumer, watermark FROM outbox_consumers ORDER BY consumer"))
 
 
 # --- read view -----------------------------------------------------------------------------------

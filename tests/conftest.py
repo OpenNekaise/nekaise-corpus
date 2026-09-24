@@ -54,3 +54,16 @@ def _no_inherited_round_access(monkeypatch):
     for name in ("NEKAISE_STORE_LOCK_INHERITED", "NEKAISE_STORE_BROKER", "NEKAISE_STORE_CAP",
                  "NEKAISE_STORE_ROUND"):
         monkeypatch.delenv(name, raising=False)
+
+
+@pytest.fixture(autouse=True)
+def _private_authority_record(monkeypatch, tmp_path):
+    """The host authority record (scripts/store_authority.py) of the machine running the tests
+    never applies in-process: each test gets an empty private one, and the store selection
+    environment of whatever launched pytest is cleared (a test that wants PostgreSQL sets it)."""
+    import store_authority
+
+    monkeypatch.setattr(store_authority, "HOST_RECORD",
+                        tmp_path / ".host-config" / "store-authority.json")
+    for name in ("NEKAISE_STORE", "NEKAISE_PG_DSN", "NEKAISE_PG_SCHEMA"):
+        monkeypatch.delenv(name, raising=False)

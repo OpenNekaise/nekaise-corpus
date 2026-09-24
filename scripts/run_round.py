@@ -39,6 +39,7 @@ import round_recovery
 import corpus_stats
 import dedup
 import store
+import store_authority
 import store_broker
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -542,7 +543,15 @@ def main() -> int:
     ap.add_argument("--recover", metavar="RUN_ID",
                     help="restore tracked state from an interrupted run snapshot and exit")
     args = ap.parse_args()
-    if nested := nested_round_owner(store.FileStore(ROOT)):
+    try:
+        # The store the host authority record selects (scripts/store_authority.py); rounds are
+        # still the legacy file-store path, so any other authority is refused, never bypassed.
+        st = store.open(root=ROOT)
+        store_authority.require_file_authority(st, "run_round.py")
+    except store.StoreError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 2
+    if nested := nested_round_owner(st):
         print(f"ERROR: {nested}", file=sys.stderr)
         return 2
     if args.recover:
@@ -554,7 +563,6 @@ def main() -> int:
         if not run_id:
             print("ERROR: no pending snapshots", file=sys.stderr)
             return 1
-        st = store.FileStore(ROOT)
         # The recovering writer is the round lock plus a token that may read the recovered state
         # while the round's snapshot still exists: the shared routine discards the snapshot only
         # after the prune quarantine is settled, so a failure leaves it recoverable.
@@ -594,7 +602,6 @@ def main() -> int:
     env = os.environ.copy()
     env.update({"NEKAISE_RUN_ID": run_id, "PYTHONUNBUFFERED": "1"})
     ops.run_event(run_id, "run_started", argv=sys.argv[1:])
-    st = store.FileStore(ROOT)
     try:
         # The round's single store writer: the canonical round lock plus the token proving it,
         # declaring this round so its own snapshot is not "unsettled" state (ADR 0001 stage 3).

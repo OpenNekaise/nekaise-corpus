@@ -44,7 +44,12 @@ never override an operator's pause.
 FileStore limitation: it holds every table it touches in memory for a view's lifetime (24.5 GB and
 ~6 minutes at 1.6M documents, measured 2026-09-24). That is today's cost, not a scalable one; the
 PostgreSQL store removes it. known() avoids it through the SQLite index (30 ms per 10k candidates).
-Stage 1 converts no production caller.
+
+Authority (stage 4, step 1). open() is the only way production code gets a store: it asks the host
+authority record (scripts/store_authority.py) which backend is authoritative for the root, and
+every disagreement between that record, the environment and the database raises AuthorityError —
+nothing falls back from PostgreSQL to the files. FileStore itself refuses a root whose record (or
+fence) says PostgreSQL. tests/test_architecture.py forbids constructing stores anywhere else.
 """
 from __future__ import annotations
 
@@ -196,6 +201,11 @@ class PendingTransaction(StoreError):
 
 class StaleView(StoreError):
     """The view is closed or the store has moved past its generation."""
+
+
+class AuthorityError(StoreError):
+    """The host authority record forbids this backend here, or the environment, the record and
+    the database disagree (scripts/store_authority.py). Never answered by falling back."""
 
 
 # --- predicates --------------------------------------------------------------------------------
@@ -655,18 +665,19 @@ class ExportReport:
     files: dict
 
 
-def open(*, root: Path = ROOT, backend: str | None = None) -> "FileStore":  # noqa: A001
-    """Open the configured store. Unknown or unavailable backends fail explicitly."""
-    name = backend or os.environ.get("NEKAISE_STORE") or "file"
-    if name == "file":
+def open(*, root: Path = ROOT, backend: str | None = None):  # noqa: A001
+    """Open the store that is authoritative for `root` (scripts/store_authority.py): the host
+    authority record decides; an unbound root follows NEKAISE_STORE (default file) as before.
+    Unknown or unavailable backends, and any disagreement between the record, the environment
+    and the database, fail explicitly — there is no fallback from PostgreSQL to the files."""
+    import store_authority
+    sel = store_authority.select(root, backend)
+    if sel.backend == "file":
         return FileStore(root)
-    if name == "postgres":
-        dsn = os.environ.get("NEKAISE_PG_DSN")
-        if not dsn:
-            raise StoreError("storage backend 'postgres' needs NEKAISE_PG_DSN")
-        import store_pg
-        return store_pg.PgStore(root, dsn=dsn, schema=os.environ.get("NEKAISE_PG_SCHEMA", "nekaise"))
-    raise StoreError(f"storage backend {name!r} is not available (known: file, postgres)")
+    import store_pg
+    return store_pg.PgStore(root, dsn=sel.dsn, schema=sel.schema,
+                            authority=sel.record if sel.record is not None
+                            else store_pg.UNBOUND)
 
 
 def norm_url(url: str | None) -> str:
@@ -1023,6 +1034,8 @@ class FileStore:
     """Store over the git-tracked file layout. Authoritative until the stage-4 cutover."""
 
     def __init__(self, root: Path = ROOT):
+        import store_authority
+        store_authority.check_file_access(root)  # never serve a PostgreSQL-authoritative root
         self.root = Path(root)
         self.reg = self.root / "registry"
         self.man = self.root / "manifest"

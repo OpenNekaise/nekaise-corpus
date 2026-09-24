@@ -139,6 +139,16 @@ def exported_env(values: dict[str, str]):
                 os.environ[key] = value
 
 
+def open_file_store(what: str):
+    """The store the host authority record selects (scripts/store_authority.py), which must be
+    the file store: the window, its broker and round recovery are still the legacy file path.
+    Any other authority raises (AuthorityError), never falls back."""
+    import store_authority
+    st = store.open(root=ROOT)
+    store_authority.require_file_authority(st, f"maintainer ({what})")
+    return st
+
+
 @contextmanager
 def maintenance_window(phase: str):
     """Only the single maintainer owner may request a gap; lock order matches dig."""
@@ -148,7 +158,7 @@ def maintenance_window(phase: str):
     request.write_text(f"{os.getpid()} {phase} {utc_now().isoformat()}\n")
     try:
         with ExitStack() as locks:
-            st = store.FileStore(ROOT)
+            st = open_file_store("the maintenance window")
             try:
                 locks.enter_context(ops.named_lock("continuous-dig", timeout=wait))
                 remaining = max(0, wait - (time.monotonic() - started))
@@ -299,7 +309,7 @@ def recover_pending_round() -> str | None:
         if _WINDOW_WRITER is not None:
             st, writer = _WINDOW_WRITER
         else:
-            st = store.FileStore(ROOT)
+            st = open_file_store("round recovery")
             writer = stack.enter_context(st.writer(timeout=0))
         outcome = round_recovery.recover_round(st, writer, run_id, root=ROOT,
                                                snapshot_paths=run_round.SNAPSHOT_PATHS)
@@ -553,14 +563,16 @@ def backend_control_state() -> tuple[dict[str, Any], dict[str, Any], str]:
                 st, writer = _WINDOW_WRITER
                 view = stack.enter_context(st.read(writer=writer))
             else:
-                view = stack.enter_context(store.FileStore(ROOT).read(timeout=0))
+                view = stack.enter_context(store.open(root=ROOT).read(timeout=0))
             config = view.config_get().backends
             runtime = {name: {"enabled": state.enabled, "reason": state.reason}
                        for name, state in view.backend_state_get().items()}
             return config, runtime, "store_view"
     except (RuntimeError, OSError, ValueError, TypeError) as exc:
+        if isinstance(exc, store.AuthorityError):
+            raise  # never read around the authority record
         # unfenced reads of the same two documents (store.FileStore.peek / config_documents)
-        st = store.FileStore(ROOT)
+        st = store.open(root=ROOT)
         config = st.config_documents().get("backends.json", {})
         runtime = st.peek("backend_state")
         return config, runtime, f"files ({type(exc).__name__}: {exc})"[:300]

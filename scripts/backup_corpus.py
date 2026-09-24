@@ -16,6 +16,7 @@ from pathlib import Path
 
 import ops
 import store
+import store_authority
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MOUNT = Path("/media/zengp/ssd")
@@ -174,6 +175,10 @@ def main() -> int:
                         help="seconds to wait for a corpus round (default: fail if busy; -1: forever)")
     args = parser.parse_args()
     try:
+        # The archive holds the tracked file layout as provenance: only meaningful while the
+        # files are authoritative (scripts/store_authority.py). Under PostgreSQL authority the
+        # database backups (pg_backup.py) replace it; refuse rather than archive frozen files.
+        store_authority.require_file_mode(ROOT, "backup_corpus.py")
         require_mount(args.mount)
         print("Acquiring corpus-round lock…", flush=True)
         with ops.named_lock("corpus-round", timeout=args.lock_timeout):
