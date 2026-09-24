@@ -74084,3 +74084,20 @@ sources:
     topic: infrastructure
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-urban-growth-simulation-in-different-scenarios
+    title: 'Urban growth simulation in different scenarios using the SLEUTH model: A
+      case study of Hefei, East China'
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0224998&type=printable
+    source: openalex
+    license: open
+    topic: infrastructure
+    format: pdf
+  - id: ope-satellite-image-fusion-to-detect-changing-surf
+    title: Satellite image fusion to detect changing surface permeability and emerging
+      urban heat islands in a fast-growing city
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0208949&type=printable
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
