@@ -791,17 +791,20 @@ class FileStore:
             raise WriterError("writer token is stale: this process no longer holds the round lock")
 
     def _inherited_run(self) -> str | None:
-        """Verified INHERITED_LOCK_ENV run id, or None when unset. Raises if it is set but false."""
-        value = os.environ.get(INHERITED_LOCK_ENV)
-        if not value:
+        """The round id inherited for THIS store's lock, verified: an entry naming this lock
+        file whose holder is a strict ancestor currently holding it. None when no entry names
+        this lock (or the entry is this process's own); raises when an entry is false."""
+        lock = str((self.workspace / f".{ROUND_LOCK}.lock").resolve())
+        entry = next((h for h in ops.inherited_holders() if h.get("lock") == lock), None)
+        if entry is None:
             return None
-        pid, _, run_id = value.partition(":")
-        if pid == str(os.getpid()):
+        pid = entry.get("pid")
+        if pid == os.getpid():
             return None  # inheritance is for children; the holder itself reads via its token
-        if not pid.isdigit() or not _is_ancestor(int(pid)) or self._lock_holder() != pid:
-            raise WriterError(f"{INHERITED_LOCK_ENV}={value!r} does not name an ancestor holding "
-                              "the round lock")
-        return run_id
+        if not isinstance(pid, int) or not _is_ancestor(pid) or self._lock_holder() != str(pid):
+            raise WriterError(f"{INHERITED_LOCK_ENV} entry {entry!r} does not name an ancestor "
+                              "holding the round lock")
+        return str(entry.get("run") or "")
 
     def _legacy_snapshots(self) -> list[str]:
         if not self.round_snapshots.exists():

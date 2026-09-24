@@ -251,7 +251,8 @@ def test_legacy_round_snapshot_blocks_views_and_transactions(st):
 
 
 def test_inherited_lock_must_be_verified(st, monkeypatch):
-    monkeypatch.setenv(store.INHERITED_LOCK_ENV, f"{os.getppid()}:run")
+    monkeypatch.setenv(store.INHERITED_LOCK_ENV, json.dumps(
+        [{"pid": os.getppid(), "run": "run", "lock": str((st.workspace / ".corpus-round.lock").resolve())}]))
     with pytest.raises(store.WriterError, match="does not name"):
         with st.read():  # a real ancestor, but it does not hold the lock
             pass
@@ -261,7 +262,8 @@ def test_inherited_lock_must_be_verified(st, monkeypatch):
         "with st.read() as v:\n    print(len(v.scan(store.Table.ENTRIES).rows))\n"
     )
     with st.writer():
-        env = dict(os.environ, **{store.INHERITED_LOCK_ENV: f"{os.getpid()}:run"})
+        env = ops.with_holder(dict(os.environ), os.getpid(), st.workspace / ".corpus-round.lock",
+                              "run")
         out = subprocess.run([sys.executable, "-c", code], env=env, capture_output=True,
                              text=True, cwd=store.ROOT)
         assert out.returncode == 0, out.stderr
@@ -382,3 +384,60 @@ def test_a_lock_holder_s_children_can_read_the_store(st):
     assert out.returncode == 0, out.stderr
     assert out.stdout.strip() == "4"
     assert store.INHERITED_LOCK_ENV not in os.environ  # restored on release
+
+
+def _second_store(tmp_path):
+    root = tmp_path / "second"
+    write_config(root)
+    other = store.FileStore(root)
+    write(other, "seed", lambda tx: tx.insert_entries([entry("hand-z")]))
+    return other
+
+
+READER = ("import sys; sys.path.insert(0, 'scripts'); import store\n"
+          "with store.FileStore(sys.argv[1]).read(timeout=0) as v:\n"
+          "    print(len(v.scan(store.Table.ENTRIES).rows))\n")
+
+
+def test_nested_holders_of_different_locks_keep_their_own_inheritance(st, tmp_path):
+    other = _second_store(tmp_path)
+    middle = ("import subprocess, sys; sys.path.insert(0, 'scripts'); import ops\n"
+              f"with ops.named_lock('corpus-round', workspace={str(other.workspace)!r}):\n"
+              f"    out = subprocess.run([sys.executable, '-c', {READER!r}, {str(other.root)!r}],\n"
+              "                         capture_output=True, text=True)\n"
+              "    print(out.stdout.strip() or out.stderr[-400:])\n")
+    with ops.named_lock("corpus-round", workspace=st.workspace):   # holder A (this process)
+        out = subprocess.run([sys.executable, "-c", middle], capture_output=True, text=True,
+                             cwd=store.ROOT)                        # B holds the second lock
+    assert out.returncode == 0, out.stderr
+    assert out.stdout.strip() == "1", out.stdout                  # C read the second store
+
+
+def test_threads_holding_different_locks_do_not_remove_each_other(st, tmp_path):
+    import threading
+    other = _second_store(tmp_path)
+    first_done, second_held, finished = threading.Event(), threading.Event(), threading.Event()
+    result = {}
+
+    def hold_first():
+        with ops.named_lock("corpus-round", workspace=st.workspace):
+            second_held.wait(5)
+        first_done.set()
+
+    def hold_second():
+        with ops.named_lock("corpus-round", workspace=other.workspace):
+            second_held.set()
+            first_done.wait(5)  # the first holder has released: our entry must survive it
+            out = subprocess.run([sys.executable, "-c", READER, str(other.root)],
+                                 capture_output=True, text=True, cwd=store.ROOT, timeout=30)
+            result["out"] = out
+        finished.set()
+
+    threads = [threading.Thread(target=hold_first), threading.Thread(target=hold_second)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join(30)
+    assert result["out"].returncode == 0, result["out"].stderr
+    assert result["out"].stdout.strip() == "1"
+    assert store.INHERITED_LOCK_ENV not in os.environ

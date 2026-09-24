@@ -567,7 +567,7 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
         with st.read(writer=writer) as view:
             before, _, _ = doc_stats(view)
         snapshot = ops.StateSnapshot.capture(run_id, SNAPSHOT_PATHS, root=ROOT)
-        read_env = {**env, store.INHERITED_LOCK_ENV: f"{os.getpid()}:{run_id}"}
+        read_env = ops.with_holder(env, os.getpid(), st.workspace / ".corpus-round.lock", run_id)
         broker = store_broker.Broker(st, writer, run_id)
         with broker.serving():
             write_env = {**read_env, **broker.env()}

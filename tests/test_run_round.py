@@ -670,8 +670,9 @@ def test_only_mutating_steps_receive_the_store_broker(tmp_path, monkeypatch):
     for step in ("stats", "gates"):
         assert store_broker.BROKER_ENV not in seen[step]
     tests_env = seen.pop("tests_gate")
-    assert all(e[run_round.store.INHERITED_LOCK_ENV] == f"{os.getpid()}:r-env"
-               for e in seen.values())
+    for e in seen.values():
+        (holder,) = run_round.ops.inherited_holders(e[run_round.store.INHERITED_LOCK_ENV])
+        assert holder["pid"] == os.getpid() and holder["run"] == "r-env"
     # pytest builds its own throwaway stores: it must not inherit the round's lock or broker
     assert run_round.store.INHERITED_LOCK_ENV not in tests_env
     assert store_broker.BROKER_ENV not in tests_env

@@ -18,6 +18,7 @@ import json
 import os
 import shutil
 import tempfile
+import threading
 import time
 from contextlib import contextmanager
 from pathlib import Path
@@ -28,7 +29,36 @@ LOGS = ROOT / "logs"
 RUN_LEDGER = LOGS / "run_history.jsonl"
 SNAPSHOTS = WORKSPACE / "round-snapshots"
 ROUND_LOCK = "corpus-round"
-INHERITED_LOCK_ENV = "NEKAISE_STORE_LOCK_INHERITED"  # store.py reads it (see store.INHERITED_LOCK_ENV)
+# Inherited round-lock read access for child processes: a JSON list of holders, one per held
+# canonical round lock, each {"pid": holder pid, "run": round id or "", "lock": lock file path}.
+# A reader only honours the entry for the lock it needs, verified against the live lock file.
+INHERITED_LOCK_ENV = "NEKAISE_STORE_LOCK_INHERITED"
+_ENV_LOCK = threading.Lock()
+
+
+def inherited_holders(value: str | None = None) -> list[dict]:
+    value = os.environ.get(INHERITED_LOCK_ENV) if value is None else value
+    if not value:
+        return []
+    try:
+        holders = json.loads(value)
+    except ValueError:
+        return []
+    return [h for h in holders if isinstance(h, dict)] if isinstance(holders, list) else []
+
+
+def inherited_value(holders: list[dict]) -> str:
+    return json.dumps(holders, separators=(",", ":"), sort_keys=True)
+
+
+def with_holder(env: dict, pid: int, lock_path, run_id: str = "") -> dict:
+    """`env` plus an inherited-access entry for `lock_path` held by `pid` (replacing any entry
+    for the same lock)."""
+    lock = str(Path(lock_path).resolve())
+    holders = [h for h in inherited_holders(env.get(INHERITED_LOCK_ENV) or "")
+               if h.get("lock") != lock]
+    holders.append({"pid": pid, "run": run_id, "lock": lock})
+    return {**env, INHERITED_LOCK_ENV: inherited_value(holders)}
 
 
 def atomic_write_bytes(path: Path, data: bytes) -> None:
@@ -92,14 +122,23 @@ def named_lock(name: str, timeout: float = 0, workspace: Path | None = None):
     # READ access to the store (it checks this PID is its ancestor and holds the lock). Without
     # it, a child that opens a store view (e.g. clean_corpus --check run by a backup or by the
     # maintainer) would wait for the lock its own parent holds.
-    exported = name == ROUND_LOCK and INHERITED_LOCK_ENV not in os.environ
-    if exported:
-        os.environ[INHERITED_LOCK_ENV] = f"{os.getpid()}:"
+    # The entry names THIS lock file, so holders of different workspaces' locks (nested
+    # processes, or threads of one process) never shadow or remove each other's entries.
+    entry = {"pid": os.getpid(), "run": "", "lock": str(path.resolve())}
+    if name == ROUND_LOCK:
+        with _ENV_LOCK:
+            holders = [h for h in inherited_holders() if h.get("lock") != entry["lock"]]
+            os.environ[INHERITED_LOCK_ENV] = inherited_value(holders + [entry])
     try:
         yield path
     finally:
-        if exported:
-            os.environ.pop(INHERITED_LOCK_ENV, None)
+        if name == ROUND_LOCK:
+            with _ENV_LOCK:
+                holders = [h for h in inherited_holders() if h != entry]
+                if holders:
+                    os.environ[INHERITED_LOCK_ENV] = inherited_value(holders)
+                else:
+                    os.environ.pop(INHERITED_LOCK_ENV, None)
         fcntl.flock(f.fileno(), fcntl.LOCK_UN)
         f.close()
 

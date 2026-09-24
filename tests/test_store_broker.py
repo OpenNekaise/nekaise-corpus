@@ -38,8 +38,8 @@ def round_(tmp_path):
         (snap / "snapshot.json").write_text("{}")
         broker = store_broker.Broker(st, w, "rnd1")
         with broker.serving():
-            env = dict(os.environ, **broker.env(),
-                       **{store.INHERITED_LOCK_ENV: f"{os.getpid()}:rnd1"})
+            env = store.ops.with_holder(dict(os.environ, **broker.env()), os.getpid(),
+                                        st.workspace / ".corpus-round.lock", "rnd1")
             yield st, broker, env, w
         snap.joinpath("snapshot.json").unlink()
         snap.rmdir()
