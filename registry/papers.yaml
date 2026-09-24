@@ -2243,14 +2243,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: ope-leveraging-nrel-s-resstock-amp-comstock-datase
-    title: 'Leveraging NREL''s ResStock &amp; ComStock Dataset to Evaluate Building
-      Stock Electrification: Preprint'
-    url: https://www.osti.gov/servlets/purl/2438452
-    source: openalex
-    license: open
-    topic: building_energy
-    format: pdf
   - id: ope-machine-learning-surrogate-of-physics-based-bu
     title: Machine learning surrogate of physics-based building-stock simulator for
       end-use load forecasting
