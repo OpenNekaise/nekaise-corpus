@@ -15,6 +15,36 @@
         "https://www.jstage.jst.go.jp/static/pages/TermsAndPolicies/ForIndividuals/-char/en"
       ],
       "decided_at": "2026-08-25"
+    },
+    "soep_docs_all_rights_reserved": {
+      "status": "restricted",
+      "match": {
+        "source": "soep"
+      },
+      "backends": [
+        "crawl_docs"
+      ],
+      "reason": "Spawn of EnergyPlus (SOEP) design documentation at lbl-srg.github.io/soep is marked '© Copyright (c) All rights reserved' in its page footer and its source repository (lbl-srg/soep) carries no LICENSE file, so the three crawled pages registered as `open` have no open grant. Exclude them pending a rights grant from LBNL; provenance rows stay intact.",
+      "evidence_urls": [
+        "https://lbl-srg.github.io/soep/",
+        "https://github.com/lbl-srg/soep"
+      ],
+      "decided_at": "2026-09-24"
+    },
+    "openstudio_coalition_site_no_grant": {
+      "status": "restricted",
+      "match": {
+        "source": "openstudio-docs"
+      },
+      "backends": [
+        "crawl_docs"
+      ],
+      "reason": "The 17 openstudiocoalition.org pages (source openstudio-docs) were registered as `open`, but the site grants no licence for its authored documentation: its 'Software License' page licenses only the OpenStudio Application and SketchUp Plug-in software under BSD-3, and the site repository (openstudiocoalition/openstudiocoalition.github.io) has no LICENSE file. OpenStudio material with a real grant (BSD-3 repository docs under gh_openstudio, gh_openstudio-standards, gh_openstudio-hpxml) is NOT covered by this rule.",
+      "evidence_urls": [
+        "https://openstudiocoalition.org/about/software_license/",
+        "https://github.com/openstudiocoalition/openstudiocoalition.github.io"
+      ],
+      "decided_at": "2026-09-24"
     }
   },
   "_lifted": {

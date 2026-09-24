@@ -98,6 +98,7 @@ def eligibility_contract_errors(
     errors: list[str] = []
     covered_backends = {
         backend for rule in restrictions.values() for backend in rule["backends"]
+        if backend not in registry.MANUAL_TOOLS  # one-shot tools enforce restrictions themselves
     }
     for backend in sorted(covered_backends - set(backends)):
         errors.append(f"eligibility policy names unknown backend {backend}")

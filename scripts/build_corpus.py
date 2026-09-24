@@ -518,6 +518,64 @@ def fair_sources(srcs: list[dict]) -> list[dict]:
     return ordered
 
 
+def reextract_selector(sources: str = "", formats: str = "", ids_from: str = "") -> dict:
+    """Parse --reextract row filters into {"source": set, "format": set, "id": set} (only the
+    filters that were given). An empty dict selects every eligible row, as before."""
+    selection: dict[str, set[str]] = {}
+    if sources.strip():
+        selection["source"] = {v.strip() for v in sources.split(",") if v.strip()}
+    if formats.strip():
+        selection["format"] = {v.strip() for v in formats.split(",") if v.strip()}
+    if ids_from.strip():
+        ids = set()
+        for line in Path(ids_from).read_text().splitlines():
+            line = line.split("#", 1)[0].strip()
+            if line:
+                ids.add(line)
+        if not ids:
+            raise SystemExit(f"--ids-from {ids_from}: no ids")
+        selection["id"] = ids
+    return selection
+
+
+def reextract(manifest: dict, restrictions: dict, selection: dict | None = None,
+              topics: set[str] | None = None) -> tuple[int, int]:
+    """Re-extract text/ (and manifest text metadata) for SELECTED eligible rows from their raw
+    bytes. All given filters must match (AND). Returns (docs re-extracted, total ok chars over
+    the selected rows). Never downloads; rows without raw bytes are skipped."""
+    selection = selection or {}
+    TEXT.mkdir(parents=True, exist_ok=True)
+    chosen = [
+        r for r in manifest.values()
+        if registry.is_training_eligible(r, restrictions)
+        and all(r.get(key) in values for key, values in selection.items())
+        and (not topics or r.get("topic") in topics)
+    ]
+    done = 0
+    for r in sorted(chosen, key=lambda x: x["id"]):
+        rp = r.get("raw_path")
+        if not rp or not (HERE / rp).exists():
+            continue
+        data = (HERE / rp).read_bytes()
+        fmt = r.get("format", "pdf")
+        try:
+            txt = clean_text(extract_for(fmt, data))
+        except Exception as e:
+            txt, r["error"] = "", f"reextract: {e}"
+        if txt:
+            header = (f"# {r['title']}\n\nsource: {r['url']}\n"
+                      f"license: {r['license']}\ntopic: {r['topic']}\n\n---\n\n")
+            (TEXT / f"{r['id']}.md").write_text(header + txt)
+            r["text_path"] = f"text/{r['id']}.md"
+            r["text_chars"] = len(txt)
+            r["text_sha256"] = sha256_bytes((header + txt).encode())
+            r["extractor_version"] = EXTRACTOR_VERSION
+            r["quality"] = quality.metrics(txt)
+        done += 1
+    tot = sum(r["text_chars"] for r in chosen if r.get("status") == "ok")
+    return done, tot
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--force", action="store_true", help="re-fetch everything")
@@ -532,10 +590,19 @@ def main() -> None:
     ap.add_argument("--only", default="", help="comma-separated topics to limit to")
     ap.add_argument("--reextract", action="store_true",
                     help="re-extract text from existing raw files; no download")
+    ap.add_argument("--source", default="",
+                    help="with --reextract: comma-separated source tags to limit to")
+    ap.add_argument("--format", default="",
+                    help="with --reextract: comma-separated registry formats (e.g. html)")
+    ap.add_argument("--ids-from", default="",
+                    help="with --reextract: file of document ids, one per line ('#' comments)")
     ap.add_argument("--verify", action="store_true",
                     help="re-hash local raw files against the manifest sha256; no download")
     args = ap.parse_args()
     only = {t.strip() for t in args.only.split(",") if t.strip()}
+    selection = reextract_selector(args.source, args.format, args.ids_from)
+    if selection and not args.reextract:
+        ap.error("--source/--format/--ids-from select rows for --reextract only")
 
     restrictions = registry.load_eligibility()
     all_srcs = registry.load_entries()
@@ -558,34 +625,8 @@ def main() -> None:
     manifest = load_manifest()
 
     if args.reextract:
-        TEXT.mkdir(parents=True, exist_ok=True)
-        done = 0
-        eligible_manifest = [
-            r for r in manifest.values()
-            if registry.is_training_eligible(r, restrictions)
-        ]
-        for r in sorted(eligible_manifest, key=lambda x: x["id"]):
-            rp = r.get("raw_path")
-            if not rp or not (HERE / rp).exists():
-                continue
-            data = (HERE / rp).read_bytes()
-            fmt = r.get("format", "pdf")
-            try:
-                txt = clean_text(extract_for(fmt, data))
-            except Exception as e:
-                txt, r["error"] = "", f"reextract: {e}"
-            if txt:
-                header = (f"# {r['title']}\n\nsource: {r['url']}\n"
-                          f"license: {r['license']}\ntopic: {r['topic']}\n\n---\n\n")
-                (TEXT / f"{r['id']}.md").write_text(header + txt)
-                r["text_path"] = f"text/{r['id']}.md"
-                r["text_chars"] = len(txt)
-                r["text_sha256"] = sha256_bytes((header + txt).encode())
-                r["extractor_version"] = EXTRACTOR_VERSION
-                r["quality"] = quality.metrics(txt)
-            done += 1
+        done, tot = reextract(manifest, restrictions, selection, only)
         write_manifest(manifest)
-        tot = sum(r["text_chars"] for r in eligible_manifest if r["status"] == "ok")
         print(f"re-extracted {done} docs | total text {tot / 1e6:.2f} M chars")
         return
 

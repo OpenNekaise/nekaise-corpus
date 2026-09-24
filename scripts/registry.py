@@ -88,6 +88,10 @@ FIELDS = REQUIRED_FIELDS + OPTIONAL_FIELDS
 # Licenses in this set are registry pointers only: their metadata is useful for authorized users,
 # but the loader must never fetch their bytes and the manifest must never describe a local payload.
 POINTER_ONLY_LICENSES = frozenset({"proprietary-internal"})
+# One-shot registration tools that an eligibility restriction may name in `backends` although
+# they have no registry/backends.json entry (they never run in rounds). crawl_docs refuses to
+# register pages whose source a restriction covers.
+MANUAL_TOOLS = frozenset({"crawl_docs"})
 CORPUS_FIELDS = ("corpus_path", "corpus_chars", "corpus_sha256", "cleaner_version")
 ENTRY_RE = re.compile(r"^  - id:\s*['\"]?(.+?)['\"]?\s*$")
 _FIELD_RE = re.compile(r"^    \s*\S")  # continuation lines of one entry

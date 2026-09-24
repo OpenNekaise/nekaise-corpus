@@ -20,6 +20,7 @@ import re
 import sys
 import time
 from collections import deque
+from datetime import date
 from pathlib import Path
 from urllib.parse import urldefrag, urljoin, urlparse
 
@@ -74,8 +75,19 @@ def main() -> None:
     ap.add_argument("--max", type=int, default=80)
     ap.add_argument("--delay", type=float, default=0.3,
                     help="seconds between requests (set to the site's robots Crawl-delay)")
+    ap.add_argument("--license-url", default="",
+                    help="canonical URL of the exact licence (e.g. LGPL-2.1 text) for provenance")
+    ap.add_argument("--license-evidence", default="",
+                    help="where the grant is stated, e.g. 'SPDX LGPL-2.1: <LICENSE url>'")
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
+
+    # A reviewed rights decision (registry/eligibility.json) outranks a one-shot crawl: refuse
+    # before any request instead of registering pages the loader would never fetch.
+    probe = {"id": f"crawl-{args.source}-", "source": args.source}
+    if hit := registry.restriction_for(probe, registry.load_eligibility()):
+        raise SystemExit(f"source {args.source!r} is restricted by eligibility rule "
+                         f"{hit[0]!r} ({hit[1]['decided_at']}): {hit[1]['reason']}")
 
     pages = crawl(args.seed, args.prefix, args.max, args.delay)
     print(f"# crawled {len(pages)} pages from {args.seed}", file=sys.stderr)
@@ -89,9 +101,16 @@ def main() -> None:
         if args.prefix and rel.startswith(args.prefix):
             rel = rel[len(args.prefix):]
         sid = f"crawl-{args.source}-{registry.slug(rel) or 'index'}"[:62]
-        rows.append({"id": sid, "title": f"{args.source} docs: {rel.strip('/') or 'index'}"[:150],
-                     "url": u, "source": args.source, "license": args.license,
-                     "topic": args.topic, "format": "html"})
+        row = {"id": sid, "title": f"{args.source} docs: {rel.strip('/') or 'index'}"[:150],
+               "url": u, "source": args.source, "license": args.license,
+               "topic": args.topic, "format": "html"}
+        if args.license_url:
+            row["license_url"] = args.license_url
+        if args.license_evidence:
+            row["license_evidence"] = args.license_evidence
+        if args.license_url or args.license_evidence:
+            row["rights_verified_at"] = date.today().isoformat()
+        rows.append(row)
     registry.uniquify_ids(rows, reg_ids)
     print(yaml.safe_dump(rows, sort_keys=False, allow_unicode=True))
 
