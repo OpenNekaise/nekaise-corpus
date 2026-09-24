@@ -308,3 +308,21 @@ def test_recover_discards_an_unmarked_preparation(st):
     with st.writer() as w:
         assert st.recover("r9", writer=w).action == "discarded"
     assert not (st.txn_dir / "r9").exists()
+
+
+@pytest.mark.parametrize("bad", ["", ".", "..", "../x", "/tmp", "a/b", "a..b", " r1", "x" * 200])
+def test_invalid_run_ids_never_touch_transaction_storage(st, monkeypatch, bad):
+    crashing_writes(monkeypatch, 2)
+    with pytest.raises(KeyboardInterrupt):
+        write(st, "r1", big_change)
+    monkeypatch.undo()
+    with st.writer() as w:
+        with pytest.raises(store.StoreError, match="invalid run id"):
+            st.recover(bad, writer=w)
+        with pytest.raises(store.StoreError, match="invalid run id"):
+            with st.transaction(bad, expected_version=st.version(), writer=w):
+                pass
+    assert [t.run_id for t in st.pending_transactions()] == ["r1"]  # evidence preserved
+    with pytest.raises(store.StoreError, match="invalid run id"):
+        with st.writer(round_id=bad):
+            pass

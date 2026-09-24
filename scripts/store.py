@@ -406,6 +406,16 @@ def _write_durable(path: Path, data: bytes) -> None:
     ops.atomic_write_bytes(path, data)  # fsyncs the file and its directory entry
 
 
+_RUN_ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]{0,127}")
+
+
+def _check_run_id(run_id: str) -> str:
+    """Run ids become directory names; allow only a plain, bounded name (no '', '.', '..', '/')."""
+    if not isinstance(run_id, str) or not _RUN_ID.fullmatch(run_id) or ".." in run_id:
+        raise StoreError(f"invalid run id {run_id!r}")
+    return run_id
+
+
 def _is_ancestor(pid: int) -> bool:
     cur = os.getpid()
     for _ in range(64):
@@ -478,6 +488,8 @@ class FileStore:
         this context, even if the same process takes the lock again later. `round_id` declares
         the round this writer is about to run: its snapshot must not exist yet, so ownership is
         only ever granted for a round started under this lock, never for an abandoned one."""
+        if round_id is not None:
+            _check_run_id(round_id)
         with ops.named_lock(ROUND_LOCK, timeout=timeout, workspace=self.workspace) as path:
             if round_id is not None and round_id in self._legacy_snapshots():
                 raise PendingTransaction(f"round {round_id} already has a snapshot: it was "
@@ -640,8 +652,7 @@ class FileStore:
     @contextmanager
     def transaction(self, run_id: str, *, expected_version: Version,
                     writer: WriterToken) -> Iterator["WriteView"]:
-        if not run_id or "/" in run_id or run_id.startswith("."):
-            raise StoreError(f"invalid run id {run_id!r}")
+        _check_run_id(run_id)
         key = str(self.root.resolve())
         if key in _ACTIVE_TRANSACTIONS:
             raise StoreError("transactions do not nest")
@@ -681,6 +692,7 @@ class FileStore:
         """Finish an interrupted transaction: finalize it if it committed, otherwise restore its
         files — but only if nothing else has written them since (never restore an older generation
         over newer work)."""
+        _check_run_id(run_id)
         self._check_writer(writer)
         path = self.txn_dir / run_id
         meta_path = path / "meta.json"
