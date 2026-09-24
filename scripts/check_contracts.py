@@ -8,9 +8,11 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+import corpus_stats
 import registry
 import rotation
 import run_round
+import store
 
 ROOT = Path(__file__).resolve().parents[1]
 MAX_CONTROL_FILE_BYTES = 80 * 1024 * 1024
@@ -92,8 +94,9 @@ def patent_country_contract_errors(backends: dict) -> list[str]:
 
 
 def eligibility_contract_errors(
-    rows: list[dict], backends: dict, restrictions: dict[str, dict]
+    restricted_metadata: tuple[int, str | None], backends: dict, restrictions: dict[str, dict]
 ) -> list[str]:
+    """``restricted_metadata`` = corpus_stats.restricted_with_corpus_data(view, restrictions)."""
     """Cross-file guarantees that make policy restrictions effective, not documentary."""
     errors: list[str] = []
     covered_backends = {
@@ -115,14 +118,10 @@ def eligibility_contract_errors(
                 and name not in covered_backends:
             errors.append(f"{name}: policy-blocked backend has no eligibility restriction")
 
-    restricted = [r for r in rows if registry.restriction_for(r, restrictions) is not None]
-    with_metadata = [
-        r for r in restricted if any(field in r for field in registry.CORPUS_FIELDS)
-    ]
-    if with_metadata:
+    count, first = restricted_metadata
+    if count:
         errors.append(
-            f"{len(with_metadata):,} policy-restricted manifest rows still claim corpus data "
-            f"(first: {with_metadata[0]['id']})"
+            f"{count:,} policy-restricted manifest rows still claim corpus data (first: {first})"
         )
     return errors
 
@@ -145,23 +144,23 @@ def host_policy_contract_errors(backends: dict, path: Path | None = None) -> lis
     return errors
 
 
-def readme_stats_errors(readme: str, rows: list[dict], excluded: int) -> list[str]:
-    """Validate every README statistic against ONE manifest-derived view (``rows`` = eligible
-    successful rows). Local file availability never enters it, so the committed numbers are
-    identical on every machine and fields cannot be satisfied by different views."""
+def readme_stats_errors(readme: str, stats) -> list[str]:
+    """Validate every README statistic against ONE manifest-derived view (corpus_stats of one
+    store view). Local file availability never enters it, so the committed numbers are identical
+    on every machine and fields cannot be satisfied by different views."""
     errors = []
     match = re.search(r"\*\*Documents\*\* \| \*\*([\d,]+)\*\*", readme)
-    if not match or int(match.group(1).replace(",", "")) != len(rows):
+    if not match or int(match.group(1).replace(",", "")) != stats.documents:
         shown = match.group(1) if match else "missing"
-        errors.append(f"README documents={shown}, manifest={len(rows):,}")
-    chars = sum(r.get("text_chars", 0) for r in rows)
+        errors.append(f"README documents={shown}, manifest={stats.documents:,}")
+    chars = stats.text_chars
+    excluded = stats.excluded
     expected_chars = f"{chars / 1e9:.3f}B" if chars >= 1e9 else f"{chars / 1e6:.0f}M"
     if f"~{expected_chars} chars" not in readme:
         errors.append(f"README extracted chars is stale (want {expected_chars})")
     if f"**{excluded:,}** rows (not fetched or training-ready)" not in readme:
         errors.append(f"README policy-excluded count is stale (want {excluded:,})")
-    topics = Counter(r.get("topic") for r in rows)
-    if f"**Topics** | {len(topics)}" not in readme:
+    if f"**Topics** | {len(stats.topics)}" not in readme:
         errors.append("README topic count is stale")
     return errors
 
@@ -169,18 +168,19 @@ def readme_stats_errors(readme: str, rows: list[dict], excluded: int) -> list[st
 def main() -> int:
     errors: list[str] = []
     restrictions = registry.load_eligibility()
-    manifest_rows = registry.load_manifest_rows()
-    rows, excluded_rows = registry.partition_manifest_ok_rows(manifest_rows, restrictions)
-    excluded = len(excluded_rows)
+    with store.open(root=ROOT).read(timeout=60) as view:
+        stats = corpus_stats.compute(view, restrictions)
+        restricted_metadata = corpus_stats.restricted_with_corpus_data(view, restrictions)
+        unavailable = corpus_stats.local_unavailable(view, ROOT)
     readme = (ROOT / "README.md").read_text()
-    errors.extend(readme_stats_errors(readme, rows, excluded))
-    if unavailable := registry.locally_unavailable_rows(rows):
-        print(f"local availability: {len(unavailable):,} eligible rows on a fetch-suspended host "
+    errors.extend(readme_stats_errors(readme, stats))
+    if unavailable:
+        print(f"local availability: {unavailable:,} eligible rows on a fetch-suspended host "
               "have no local payload here (README counts are manifest-based)")
 
     backends = run_round.load_backends()
     errors.extend(run_round.validate_backends(backends, rotation.load()))
-    errors.extend(eligibility_contract_errors(manifest_rows, backends, restrictions))
+    errors.extend(eligibility_contract_errors(restricted_metadata, backends, restrictions))
     errors.extend(patent_country_contract_errors(backends))
     try:  # vendor-literature config is control plane: schema errors must fail the round, not a fetch
         import find_vendor
@@ -216,7 +216,7 @@ def main() -> int:
             print(f"CONTRACT: {error}")
         print(f"FAIL — {len(errors)} architecture contract violation(s)")
         return 1
-    print(f"OK — control-plane contracts hold for {len(rows):,} documents / "
+    print(f"OK — control-plane contracts hold for {stats.documents:,} documents / "
           f"{len(backends)} backends")
     return 0
 

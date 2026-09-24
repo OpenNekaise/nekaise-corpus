@@ -42,14 +42,17 @@ def test_eligibility_is_manifest_based_and_availability_is_reported_separately(t
 
 
 def test_doc_stats_count_suspended_rows_whatever_is_held(monkeypatch, tmp_path):
+    import store
     monkeypatch.setattr(registry, "ROOT", tmp_path)  # nothing held locally
     monkeypatch.setattr(registry, "load_host_policy", lambda: POLICY)
-    monkeypatch.setattr(registry, "load_manifest_rows",
-                        lambda: [_row("ope-missing", ESC),
-                                 _row("nlr-1", "https://docs.nlr.gov/docs/fy24osti/1.pdf")])
     monkeypatch.setattr(registry, "load_eligibility", lambda: {})
-
-    assert run_round.doc_stats() == (2, 500, 0)
+    st = store.FileStore(tmp_path)
+    with st.writer() as w:
+        with st.transaction("seed", expected_version=st.version(), writer=w) as tx:
+            tx.upsert_manifest([_row("ope-missing", ESC),
+                                _row("nlr-1", "https://docs.nlr.gov/docs/fy24osti/1.pdf")])
+    with st.read() as view:
+        assert run_round.doc_stats(view) == (2, 500, 0)
 
 
 def test_clean_check_passes_on_a_fresh_clone_and_reports_unavailable(
@@ -145,6 +148,13 @@ def _readme_for(monkeypatch, tmp_path, held: int) -> str:
         (root / row["text_path"]).write_text("text")
     readme = root / "README.md"
     readme.write_text(f"head\n{urs.START}\nold\n{urs.END}\ntail\n")
+    shards = {}
+    for row in SUSPENDED + OTHER:  # the stats now read the manifest through the store
+        shards.setdefault(registry.manifest_shard(row["id"]), []).append(dict(row))
+    (root / "manifest").mkdir()
+    for stem, group in shards.items():
+        (root / "manifest" / f"{stem}.jsonl").write_text(registry.manifest_shard_text(group))
+    monkeypatch.setattr(urs, "HERE", root)
     monkeypatch.setattr(registry, "ROOT", root)
     monkeypatch.setattr(registry, "load_host_policy", lambda: POLICY)
     monkeypatch.setattr(registry, "load_manifest_rows", lambda: [dict(r) for r in SUSPENDED + OTHER])
@@ -166,9 +176,14 @@ def test_readme_statistics_are_identical_on_every_machine(monkeypatch, tmp_path,
 def test_readme_contract_uses_one_coherent_view(monkeypatch, tmp_path):
     import check_contracts
 
+    import corpus_stats
+    from collections import Counter
     good = _readme_for(monkeypatch, tmp_path, 1)
     rows = SUSPENDED + OTHER
-    assert check_contracts.readme_stats_errors(good, rows, 0) == []
+    chars = sum(r["text_chars"] for r in rows)
+    stats = corpus_stats.CorpusStats(len(rows), 0, chars, chars,
+                                     list(Counter(r["topic"] for r in rows).items()), {})
+    assert check_contracts.readme_stats_errors(good, stats) == []
 
     def readme(docs, chars, topics):
         return (f"| **Documents** | **{docs}** |\n~{chars} chars\n"
@@ -176,8 +191,8 @@ def test_readme_contract_uses_one_coherent_view(monkeypatch, tmp_path):
                 f"| **Topics** | {topics}\n")
 
     # the formerly tolerated "fresh-clone view" and inconsistent mixtures are all rejected
-    assert check_contracts.readme_stats_errors(readme(1, "1M", 1), rows, 0)
-    assert check_contracts.readme_stats_errors(readme(1, "3M", 2), rows, 0)
-    assert check_contracts.readme_stats_errors(readme(3, "1M", 2), rows, 0)
-    assert check_contracts.readme_stats_errors(readme(3, "3M", 1), rows, 0)
-    assert check_contracts.readme_stats_errors(readme(3, "3M", 2), rows, 0) == []
+    assert check_contracts.readme_stats_errors(readme(1, "1M", 1), stats)
+    assert check_contracts.readme_stats_errors(readme(1, "3M", 2), stats)
+    assert check_contracts.readme_stats_errors(readme(3, "1M", 2), stats)
+    assert check_contracts.readme_stats_errors(readme(3, "3M", 1), stats)
+    assert check_contracts.readme_stats_errors(readme(3, "3M", 2), stats) == []

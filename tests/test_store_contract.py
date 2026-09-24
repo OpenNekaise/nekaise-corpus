@@ -451,3 +451,25 @@ def test_legacy_manifest_order_matches_load_manifest_rows(st):
     # the legacy order really is registry's: shard file name, then (topic, id) inside a shard
     assert got.index("oer-z") < got.index("oer-y") < got.index("hand-x")  # books < curated
     assert got.index("oer-z") < got.index("oer-y") < got.index("oer-a")  # topics a < b < building_energy
+
+
+def test_compiled_predicates_match_evaluate_exactly():
+    import itertools
+    values = [None, "a", "ab", 1, 1.0, True, {"k": 1}, [1]]
+    rows = [{}] + [{"f": v} for v in values]
+    preds = [Eq("f", v) for v in values] + [In("f", ["a", "b"]), In("f", [1, True, None]),
+             Prefix("f", "a"), Exists("f")]
+    preds += [Not(p) for p in preds[:4]] + [And(preds[1], Exists("f")), Or(preds[0], preds[1]),
+                                            And(), Or()]
+    for pred, row in itertools.product(preds, rows):
+        assert store.compile_python(pred)(row) == store.evaluate(pred, row), (pred, row)
+
+
+def test_streaming_exact_sum_matches_exact_sum():
+    cases = [[], [1, 2], [0.1, 0.2], [10**30, 1, -10**30], [1, 0.5, True, None, "x"], [1e20, 1]]
+    for values in cases:
+        acc = store.ExactSum()
+        for v in values:
+            acc.add(v)
+        assert acc.value() == store.exact_sum(values) and \
+            type(acc.value()) is type(store.exact_sum(values)), values

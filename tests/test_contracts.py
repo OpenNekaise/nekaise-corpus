@@ -68,9 +68,8 @@ def test_policy_blocked_backends_and_manifest_rows_fail_closed():
             "reason": "policy-blocked pending rights review",
         },
     }
-    rows = [{"id": "pat-cn1", "corpus_path": "corpus/pat-cn1.md"}]
-
-    errors = check_contracts.eligibility_contract_errors(rows, backends, restrictions)
+    # (count, first id) of restricted rows still claiming corpus data, as corpus_stats reports it
+    errors = check_contracts.eligibility_contract_errors((1, "pat-cn1"), backends, restrictions)
 
     assert any("find_jstage" in error for error in errors)
     assert any("still claim corpus data" in error for error in errors)
@@ -104,7 +103,7 @@ def test_eligibility_restricted_backend_cannot_be_reenabled_silently():
     }
     backends = {"find_patents_cn": {"enabled": True, "reason": "healthy"}}
 
-    errors = check_contracts.eligibility_contract_errors([], backends, restrictions)
+    errors = check_contracts.eligibility_contract_errors((0, None), backends, restrictions)
 
     assert any("must be disabled" in error for error in errors)
     assert any("lacks policy-blocked reason" in error for error in errors)

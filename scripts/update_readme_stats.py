@@ -13,8 +13,10 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-import registry
+import corpus_stats
 import ops
+import registry
+import store
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 README = HERE / "README.md"
@@ -43,20 +45,23 @@ def main(argv: list[str] | None = None) -> None:
         help="print the CLEANED corpus/ token estimate (sum of corpus_chars; rows the cleaner "
              "has not visited yet fall back to text_chars) and do not update README",
     )
+    ap.add_argument("--lock-timeout", type=float, default=60,
+                    help="standalone runs wait this long for the round lock (inside a round the "
+                         "read is inherited)")
     args = ap.parse_args(argv)
 
     restrictions = registry.load_eligibility()
-    rows = registry.load_manifest_rows()
-    ok, excluded = registry.partition_manifest_ok_rows(rows, restrictions)
-    # README numbers are manifest-derived and identical on every machine; local availability of
-    # suspended-host payloads is reported here only, never in the committed statistics.
-    if unavailable := registry.locally_unavailable_rows(ok):
-        print(f"local availability: {len(unavailable):,} eligible rows on a fetch-suspended host "
+    with store.open(root=HERE).read(timeout=args.lock_timeout) as view:
+        stats = corpus_stats.compute(view, restrictions)
+        # README numbers are manifest-derived and identical on every machine; local availability
+        # of suspended-host payloads is reported here only, never in the committed statistics.
+        unavailable = corpus_stats.local_unavailable(view, HERE)
+    if unavailable:
+        print(f"local availability: {unavailable:,} eligible rows on a fetch-suspended host "
               "have no local payload (counted in README; not in local corpus/)", file=sys.stderr)
-    chars = sum(r.get("text_chars", 0) for r in ok)
-    tok = chars // 4
-    cchars = sum(r.get("corpus_chars", r.get("text_chars", 0)) for r in ok)
-    ctok = cchars // 4
+    ok_count, excluded_count = stats.documents, stats.excluded
+    chars, tok = stats.text_chars, stats.tokens
+    cchars, ctok = stats.corpus_chars, stats.corpus_tokens
     if args.print_tokens:
         print(tok)
         return
@@ -64,10 +69,10 @@ def main(argv: list[str] | None = None) -> None:
         print(ctok)
         return
 
-    topics = Counter(r["topic"] for r in ok)
-    lic = Counter(r["license"] for r in ok)
+    topics = stats.topics
+    lic = Counter(stats.licenses)
 
-    by_topic = " · ".join(f"{t} {n:,}" for t, n in topics.most_common())
+    by_topic = " · ".join(f"{t} {n:,}" for t, n in topics)
     lic_order = ["open", "public-domain", "cc-by-sa", "cc-by", "cc0", "proprietary-internal"]
     by_lic = " · ".join(f"{k} {lic[k]:,}" for k in lic_order if lic.get(k)) or \
         " · ".join(f"{k} {n:,}" for k, n in lic.most_common())
@@ -79,8 +84,8 @@ def main(argv: list[str] | None = None) -> None:
     block = f"""{START}
 | | |
 |---|---|
-| **Documents** | **{len(ok):,}** |
-| **Policy-excluded provenance** | **{len(excluded):,}** rows (not fetched or training-ready) |
+| **Documents** | **{ok_count:,}** |
+| **Policy-excluded provenance** | **{excluded_count:,}** rows (not fetched or training-ready) |
 | **Raw originals** | **~{du('raw')}** (PDF / HTML / source code) |
 | **Extracted text** | **~{du('text')}** (~{big(chars)} chars, **≈{big(tok)} tokens**) |
 | **Cleaned corpus** | **~{du('corpus')}** (~{big(cchars)} chars, **≈{big(ctok)} tokens**, ruleset-cleaned) |
@@ -99,7 +104,7 @@ def main(argv: list[str] | None = None) -> None:
     new = text[:i] + block + text[j + len(END):]
     if new != text:
         ops.atomic_write_text(README, new)
-        print(f"update_readme_stats: {len(ok):,} docs / ~{tok/1e6:.0f}M tokens")
+        print(f"update_readme_stats: {ok_count:,} docs / ~{tok/1e6:.0f}M tokens")
     else:
         print("update_readme_stats: no change")
 

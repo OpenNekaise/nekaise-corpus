@@ -93,9 +93,8 @@ def test_crawl_docs_records_exact_license_evidence(monkeypatch, capsys):
 
 def test_manual_tool_restrictions_need_no_backend_entry():
     restrictions = {"soep": {"match": {"source": "soep"}, "backends": ["crawl_docs"]}}
-    assert check_contracts.eligibility_contract_errors([], {}, restrictions) == []
-    rows = [{"id": "crawl-soep-x", "source": "soep", "corpus_path": "corpus/crawl-soep-x.md"}]
-    errors = check_contracts.eligibility_contract_errors(rows, {}, restrictions)
+    assert check_contracts.eligibility_contract_errors((0, None), {}, restrictions) == []
+    errors = check_contracts.eligibility_contract_errors((1, "crawl-soep-x"), {}, restrictions)
     assert any("still claim corpus data" in e for e in errors)
 
 

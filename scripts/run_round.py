@@ -30,6 +30,7 @@ from pathlib import Path
 import ops
 import registry
 import rotation
+import corpus_stats
 import store
 import store_broker
 
@@ -421,13 +422,10 @@ def git_clean() -> bool:
     ).strip()
 
 
-def doc_stats() -> tuple[int, int, int]:
+def doc_stats(view) -> tuple[int, int, int]:
     """Return training-eligible docs/tokens and successful but excluded provenance rows."""
-    rows = registry.load_manifest_rows()
-    restrictions = registry.load_eligibility()
-    eligible, excluded = registry.partition_manifest_ok_rows(rows, restrictions)
-    tokens = sum(int(r.get("text_chars") or 0) for r in eligible) // 4
-    return len(eligible), tokens, len(excluded)
+    stats = corpus_stats.compute(view, registry.load_eligibility())
+    return stats.documents, stats.tokens, stats.excluded
 
 
 def commit_snapshot(before: int, after: int, tokens: int, run_id: str) -> bool:
@@ -566,7 +564,8 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
         ]
         selected = [name for name in selected if name not in disabled]
 
-        before, _, _ = doc_stats()
+        with st.read(writer=writer) as view:
+            before, _, _ = doc_stats(view)
         snapshot = ops.StateSnapshot.capture(run_id, SNAPSHOT_PATHS, root=ROOT)
         read_env = {**env, store.INHERITED_LOCK_ENV: f"{os.getpid()}:{run_id}"}
         broker = store_broker.Broker(st, writer, run_id)
@@ -595,7 +594,8 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
         # pytest builds throwaway stores of its own; the round's inherited lock is not theirs, so
         # the test gate runs with the plain environment (no inherited lock, no broker).
         run_verify_parallel(gates, read_env, run_id, envs={"tests": env})
-        after, tokens, excluded = doc_stats()
+        with st.read(writer=writer) as view:
+            after, tokens, excluded = doc_stats(view)
         committed = commit_snapshot(before, after, tokens, run_id) if args.commit else False
         if args.push:
             run_command(

@@ -268,10 +268,47 @@ def evaluate(pred: Predicate | None, row: Mapping) -> bool:
     raise StoreError(f"unsupported predicate {type(pred).__name__}")
 
 
-def eligibility_where(restrictions: Mapping[str, Mapping]) -> Predicate:
-    """registry.is_training_eligible as a predicate: not pointer-only and no restriction matches.
-    Selectors inside one restriction are ANDed; restrictions are ORed."""
-    blocked: list = [In("license", sorted(registry.POINTER_ONLY_LICENSES))]
+def compile_python(pred: Predicate | None):
+    """A fast row -> bool closure with exactly evaluate()'s semantics (FileStore evaluates
+    predicates over millions of in-memory rows; walking the tree per row costs minutes)."""
+    if pred is None:
+        return lambda row: True
+    if isinstance(pred, Eq):
+        f, v = pred.field, pred.value
+        if isinstance(v, str):  # the common case: plain string equality
+            return lambda row: row.get(f, _MISSING) == v and isinstance(row[f], str)
+        return lambda row: f in row and json_equal(row[f], v)
+    if isinstance(pred, In):
+        f, vals = pred.field, pred.values
+        if all(isinstance(v, str) for v in vals):
+            svals = frozenset(vals)
+            return lambda row: isinstance(row.get(f), str) and row[f] in svals
+        return lambda row: f in row and any(json_equal(row[f], v) for v in vals)
+    if isinstance(pred, Prefix):
+        f, pre = pred.field, pred.prefix
+        return lambda row: isinstance(row.get(f), str) and row[f].startswith(pre)
+    if isinstance(pred, Exists):
+        f = pred.field
+        return lambda row: f in row
+    if isinstance(pred, And):
+        parts = [compile_python(p) for p in pred.parts]
+        return lambda row: all(p(row) for p in parts)
+    if isinstance(pred, Or):
+        parts = [compile_python(p) for p in pred.parts]
+        return lambda row: any(p(row) for p in parts)
+    if isinstance(pred, Not):
+        inner = compile_python(pred.part)
+        return lambda row: not inner(row)
+    raise StoreError(f"unsupported predicate {type(pred).__name__}")
+
+
+_MISSING = object()
+
+
+def restriction_where(restrictions: Mapping[str, Mapping]) -> Predicate:
+    """registry.restriction_for(...) is not None, as a predicate: selectors inside one restriction
+    are ANDed; restrictions are ORed."""
+    rules = []
     for rule in restrictions.values():
         leaves = []
         for key, value in rule["match"].items():
@@ -281,8 +318,14 @@ def eligibility_where(restrictions: Mapping[str, Mapping]) -> Predicate:
                 leaves.append(Eq("source", value))
             else:
                 raise StoreError(f"unsupported eligibility selector {key!r}")
-        blocked.append(And(*leaves))
-    return Not(Or(*blocked))
+        rules.append(And(*leaves))
+    return Or(*rules)
+
+
+def eligibility_where(restrictions: Mapping[str, Mapping]) -> Predicate:
+    """registry.is_training_eligible as a predicate: not pointer-only and no restriction matches."""
+    return Not(Or(In("license", sorted(registry.POINTER_ONLY_LICENSES)),
+                  restriction_where(restrictions)))
 
 
 def _plain(value: Any) -> Any:
@@ -366,6 +409,29 @@ def check_group_value(field: str, value: Any) -> Any:
 def check_order(table: "Table", order: str) -> None:
     if order not in ("key", "legacy") or (order == "legacy" and Table(table) is not Table.MANIFEST):
         raise StoreError(f"unsupported scan order {order!r} for {Table(table).value}")
+
+
+class ExactSum:
+    """Streaming exact_sum: ints add as ints, floats as exact rationals; result as exact_sum."""
+    __slots__ = ("ints", "floats", "is_float")
+
+    def __init__(self):
+        self.ints, self.floats, self.is_float = 0, None, False
+
+    def add(self, v: Any) -> None:
+        if isinstance(v, bool) or not isinstance(v, (int, float)):
+            return
+        if isinstance(v, int):
+            self.ints += v
+        else:
+            self.is_float = True
+            x = _exact(v)
+            self.floats = x if self.floats is None else self.floats + x
+
+    def value(self) -> int | float:
+        if not self.is_float:
+            return self.ints
+        return float(self.floats + self.ints)
 
 
 def exact_sum(values: Iterable[Any]) -> int | float:
@@ -1321,8 +1387,9 @@ class ReadView:
         if cursor is not None:
             import bisect
             start = bisect.bisect_right(keyed, cursor.last_key, key=lambda kr: kr[0])
+        match = compile_python(where)
         for key, row in keyed[start:] if start else keyed:
-            if not evaluate(where, row):
+            if not match(row):
                 continue
             if len(rows) == limit:
                 return Page(rows, Cursor(self._cursor_scope(), query, last))
@@ -1393,20 +1460,22 @@ class ReadView:
         other value raises). Sums follow exact_sum. Output: the group_by fields, then "count" and
         "sum_<field>", ordered by the canonical JSON of the group key."""
         self._validate(Table.MANIFEST, where, tuple(group_by) + tuple(sums))
-        groups: dict[str, tuple[tuple, int, dict]] = {}
+        groups: dict[tuple, list] = {}  # group key -> [count, {field: ExactSum}]
+        match = compile_python(where)
         for row in self._get("manifest").manifest.values():
-            if not evaluate(where, row):
+            if not match(row):
                 continue
             key = tuple(check_group_value(f, row.get(f)) for f in group_by)
-            k = _canonical(key)
-            _, n, values = groups.get(k) or (key, 0, {f: [] for f in sums})
+            g = groups.get(key)
+            if g is None:
+                g = groups[key] = [0, {f: ExactSum() for f in sums}]
+            g[0] += 1
             for f in sums:
-                values[f].append(row.get(f))
-            groups[k] = (key, n + 1, values)
-        for k in sorted(groups):
-            key, n, values = groups[k]
+                g[1][f].add(row.get(f))
+        for k, key in sorted((_canonical(key), key) for key in groups):
+            n, acc = groups[key]
             yield {**dict(zip(group_by, key)), **({"count": n} if count else {}),
-                   **{f"sum_{f}": exact_sum(values[f]) for f in sums}}
+                   **{f"sum_{f}": acc[f].value() for f in sums}}
 
     def iter_duplicate_sha256(self, *, where: Predicate | None = None,
                               batch_size: int = DEFAULT_PAGE) -> Iterator[dict]:
@@ -1416,9 +1485,10 @@ class ReadView:
             raise StoreError(f"batch_size must be within 1..{MAX_PAGE}")
         rows = self._get("manifest").manifest
         by_sha: dict[str, list] = {}
+        match = compile_python(where)
         for sid, row in rows.items():
             sha = row.get("sha256")
-            if sha and evaluate(where, row):
+            if sha and match(row):
                 by_sha.setdefault(sha, []).append(sid)
         for sha in sorted(by_sha):
             if len(by_sha[sha]) > 1:

@@ -120,7 +120,7 @@ def test_run_command_raises_on_nonzero(monkeypatch):
         run_round.run_command("broken", ["false"], {}, "run-1")
 
 
-def test_doc_stats_counts_only_training_eligible_rows(monkeypatch):
+def test_doc_stats_counts_only_training_eligible_rows(monkeypatch, tmp_path):
     rows = [
         {"id": "pat-us1", "status": "ok", "license": "public-domain", "text_chars": 100},
         {"id": "pat-cn1", "status": "ok", "license": "open", "text_chars": 800},
@@ -132,10 +132,15 @@ def test_doc_stats_counts_only_training_eligible_rows(monkeypatch):
         "cn": {"match": {"id_prefix": "pat-cn"}},
         "jstage": {"match": {"source": "jstage_aij"}},
     }
-    monkeypatch.setattr(run_round.registry, "load_manifest_rows", lambda: rows)
+    import store
+    st = store.FileStore(tmp_path)
+    with st.writer() as w:
+        with st.transaction("seed", expected_version=st.version(), writer=w) as tx:
+            tx.upsert_manifest(rows)
     monkeypatch.setattr(run_round.registry, "load_eligibility", lambda: restrictions)
 
-    assert run_round.doc_stats() == (1, 25, 2)
+    with st.read() as view:
+        assert run_round.doc_stats(view) == (1, 25, 2)
 
 
 def test_merge_proposals_is_deterministic_and_deduplicates(tmp_path, monkeypatch):
@@ -527,7 +532,7 @@ def test_main_rolls_back_tracked_state_when_pipeline_fails(tmp_path, monkeypatch
     monkeypatch.setattr(run_round, "git_clean", lambda: True)
     monkeypatch.setattr(run_round, "load_backends", lambda: {})
     monkeypatch.setattr(run_round.rotation, "load", lambda: {})
-    monkeypatch.setattr(run_round, "doc_stats", lambda: (1, 10, 0))
+    monkeypatch.setattr(run_round, "doc_stats", lambda view: (1, 10, 0))
     monkeypatch.setattr(run_round.ops, "run_event", lambda *args, **kwargs: None)
 
     def fail_after_mutation(*_args, **_kwargs):
@@ -557,7 +562,7 @@ def test_capture_failure_stops_round_before_mutation(tmp_path, monkeypatch, caps
     monkeypatch.setattr(run_round, "git_clean", lambda: True)
     monkeypatch.setattr(run_round, "load_backends", lambda: {})
     monkeypatch.setattr(run_round.rotation, "load", lambda: {})
-    monkeypatch.setattr(run_round, "doc_stats", lambda: (1, 10, 0))
+    monkeypatch.setattr(run_round, "doc_stats", lambda view: (1, 10, 0))
     events = []
     monkeypatch.setattr(run_round.ops, "run_event",
                         lambda run_id, event, **fields: events.append(event))
@@ -644,7 +649,7 @@ def test_only_mutating_steps_receive_the_store_broker(tmp_path, monkeypatch):
     monkeypatch.setattr(run_round, "git_clean", lambda: True)
     monkeypatch.setattr(run_round, "load_backends", lambda: {})
     monkeypatch.setattr(run_round.rotation, "load", lambda: {})
-    monkeypatch.setattr(run_round, "doc_stats", lambda: (1, 10, 0))
+    monkeypatch.setattr(run_round, "doc_stats", lambda view: (1, 10, 0))
     monkeypatch.setattr(run_round.ops, "run_event", lambda *args, **kwargs: None)
     seen = {}
 
