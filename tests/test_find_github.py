@@ -209,3 +209,80 @@ def test_blocklisted_markup_urls_record_their_doc_format(tmp_path, monkeypatch):
     formats = find_github.source_formats()
 
     assert formats == {"gh_fds": {"tex"}, "gh_radiance": {"troff"}}
+
+
+def test_doc_completion_is_per_kind_not_any_format():
+    # Radiance requests man pages AND plain-text notes; a recorded notes file (txt) must not
+    # complete the man-page (troff) pass.
+    spec = {"repo": "LBNL-ETA/Radiance", "docs": ["man", "text"]}
+    formats = {"gh_radiance": {"md", "txt"}}
+
+    assert find_github.missing_doc_kinds(spec, formats, {}) == ["man"]
+    assert find_github.pending_repos([spec], set(formats), set(), formats, {}) == [spec]
+    formats["gh_radiance"].add("troff")
+    assert find_github.pending_repos([spec], set(formats), set(), formats, {}) == []
+
+
+def test_successfully_empty_pass_is_recorded_and_not_rewalked(tmp_path):
+    passes_path = tmp_path / "github_passes.json"
+    spec = {"repo": "example/manuals", "docs": ["tex", "man"]}
+    formats = {"gh_manuals": {"md", "tex"}}  # no man page exists in the repo at all
+
+    assert find_github.pending_repos([spec], set(formats), set(), formats, {}) == [spec]
+    find_github.record_passes([spec], "2026-09-24", passes_path)
+    passes = find_github.load_passes(passes_path)
+
+    assert passes == {"gh_manuals": {"man": "2026-09-24", "tex": "2026-09-24"}}
+    assert find_github.pending_repos([spec], set(formats), set(), formats, passes) == []
+
+
+def test_main_records_passes_only_for_walked_repos_with_append(tmp_path, monkeypatch):
+    specs = [{"repo": "ok/walked", "docs": ["tex"], "license": "open", "topic": "urban"},
+             {"repo": "bad/failed", "docs": ["tex"], "license": "open", "topic": "urban"}]
+    monkeypatch.setattr(find_github, "REPOS", specs)
+    monkeypatch.setattr(find_github, "PASSES", tmp_path / "passes.json")
+    monkeypatch.setattr(find_github, "source_formats", dict)
+    monkeypatch.setattr(find_github.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(find_github.registry, "append_entries", lambda _e: {})
+
+    def from_repo(spec):
+        if spec["repo"] == "bad/failed":
+            raise RuntimeError("API down")
+        return []
+
+    monkeypatch.setattr(find_github, "from_repo", from_repo)
+    monkeypatch.setattr(find_github.sys, "argv", ["find_github.py"])
+    find_github.main()
+    assert not (tmp_path / "passes.json").exists()  # dry run records nothing
+
+    monkeypatch.setattr(find_github.sys, "argv", ["find_github.py", "--append"])
+    find_github.main()
+    assert set(find_github.load_passes(tmp_path / "passes.json")) == {"gh_walked"}
+
+
+def test_copyleft_repos_carry_exact_license_evidence(monkeypatch):
+    spec = next(s for s in find_github.REPOS if s["repo"] == "ladybug-tools/honeybee-energy")
+
+    class Response:
+        def __init__(self, payload):
+            self.payload = payload
+
+        def raise_for_status(self):
+            return None
+
+        def json(self):
+            return self.payload
+
+    def get(url, **_kwargs):
+        if "/git/trees/" in url:
+            return Response({"tree": [{"type": "blob", "path": "docs/index.rst"}]})
+        return Response({"default_branch": "master"})
+
+    monkeypatch.setattr(find_github.requests, "get", get)
+    (entry,) = find_github.from_repo(spec)
+
+    assert entry["license"] == "open"
+    assert entry["license_evidence"].startswith("SPDX AGPL-3.0")
+    assert "not permissive" in entry["license_evidence"]
+    assert entry["license_url"] == "https://www.gnu.org/licenses/agpl-3.0.html"
+    assert entry["rights_verified_at"] == "2026-09-24"

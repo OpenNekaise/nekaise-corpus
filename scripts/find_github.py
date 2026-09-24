@@ -25,16 +25,23 @@ import json
 import os
 import re
 import sys
+from datetime import date
 from pathlib import Path
 
 import requests
 import yaml
 
 import blocklist
+import ops
 import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 API = "https://api.github.com"
+# Completed opt-in doc-markup passes, per source bucket and doc kind: {"gh_radiance": {"man":
+# "2026-09-24"}}. Written only by this finder on a successful --append walk, INCLUDING passes that
+# found no file of that kind, so an empty pass is never re-walked. Lives under registry/ so a
+# round commits it and a failed round's snapshot rolls it back with the proposals it covers.
+PASSES = registry.REG_DIR / "github_passes.json"
 
 # Curated, clearly-permissive (BSD / MIT / Apache) building-energy repos. Extend freely.
 #   repo     owner/name on github
@@ -185,13 +192,23 @@ REPOS = [
     {"repo": "ugr-sail/sinergym", "license": "open", "topic": "controls_bas", "cap": 150},
     # MIT (moved from intelligent-environments-lab/CityLearn): demand-response RL environment.
     {"repo": "citylearn-project/CityLearn", "license": "open", "topic": "controls_bas"},
-    # MIT: EnergyPlus IDF scripting (eppy), geometry (geomeppy), UMI/archetype templates.
-    {"repo": "santoshphilip/eppy", "license": "open", "topic": "building_energy"},
+    # MIT: EnergyPlus geometry (geomeppy), UMI/archetype templates. NOT santoshphilip/eppy: its
+    # rendered docs are already held via crawl_docs (source eppy, 22 pages) — no double copy.
     {"repo": "jamiebull1/geomeppy", "license": "open", "topic": "building_energy"},
     {"repo": "samuelduchesne/archetypal", "license": "open", "topic": "building_energy"},
-    # AGPL-3.0 (copyleft, OSI-open; local training use, no redistribution of bytes).
-    {"repo": "ladybug-tools/honeybee-energy", "license": "open", "topic": "building_energy"},
-    {"repo": "ladybug-tools/honeybee-radiance", "license": "open", "topic": "building_energy"},
+    # AGPL-3.0 — COPYLEFT, not permissive. Decision 2026-09-24 (project decision maker): GO for
+    # local training use, keeping the exact licence id + evidence on every entry, because the
+    # registry tag `open` alone must not read as "permissive" (license_url / license_evidence).
+    {"repo": "ladybug-tools/honeybee-energy", "license": "open", "topic": "building_energy",
+     "license_url": "https://www.gnu.org/licenses/agpl-3.0.html",
+     "license_evidence": ("SPDX AGPL-3.0 (GNU Affero GPL v3, copyleft; not permissive): "
+                          "https://github.com/ladybug-tools/honeybee-energy/blob/master/LICENSE"),
+     "rights_verified_at": "2026-09-24"},
+    {"repo": "ladybug-tools/honeybee-radiance", "license": "open", "topic": "building_energy",
+     "license_url": "https://www.gnu.org/licenses/agpl-3.0.html",
+     "license_evidence": ("SPDX AGPL-3.0 (GNU Affero GPL v3, copyleft; not permissive): "
+                          "https://github.com/ladybug-tools/honeybee-radiance/blob/master/LICENSE"),
+     "rights_verified_at": "2026-09-24"},
     # NOT listed (checked 2026-09-24): lbl-srg/obc has no LICENSE file; mosaik lives on GitLab
     # (LGPL-2.1, crawl mosaik.readthedocs.io instead); BESOS lives on GitLab; urbanopt.github.io
     # keeps its Jekyll pages outside doc/ dirs (a walk yields 3 files) -> crawl docs.urbanopt.net.
@@ -328,19 +345,52 @@ def _bucket(spec: dict) -> str:
     return f"gh_{registry.slug(spec['repo'].split('/')[-1])}"
 
 
+def load_passes(path: Path | None = None) -> dict[str, dict[str, str]]:
+    path = path or PASSES
+    return json.loads(path.read_text()) if path.exists() else {}
+
+
+def record_passes(specs: list[dict], today: str, path: Path | None = None) -> None:
+    """Mark every requested doc kind of successfully walked repos complete (empty or not)."""
+    path = path or PASSES
+    passes = load_passes(path)
+    changed = False
+    for spec in specs:
+        for kind in spec.get("docs") or ():
+            bucket = passes.setdefault(_bucket(spec), {})
+            if kind not in bucket:
+                bucket[kind] = today
+                changed = True
+    if changed:
+        ops.atomic_write_text(path, json.dumps(passes, indent=2, sort_keys=True) + "\n")
+
+
+def missing_doc_kinds(spec: dict, formats: dict[str, set[str]],
+                      passes: dict[str, dict[str, str]]) -> list[str]:
+    """Requested doc kinds with neither a recorded pass nor a file of that kind on record.
+
+    Completion is PER KIND: Radiance asks for `man` and `text`; a notes file (txt) on record
+    does not complete the man-page (troff) pass."""
+    bucket = _bucket(spec)
+    seen = formats.get(bucket, set())
+    done = passes.get(bucket, {})
+    return [kind for kind in spec.get("docs") or ()
+            if kind not in done and DOC_KINDS[kind][1] not in seen]
+
+
 def pending_repos(repos: list[dict], done: set[str], code_done: set[str],
-                  formats: dict[str, set[str]] | None = None) -> list[dict]:
-    """Keep unwalked repos, code repos whose source-file pass has not completed, and repos whose
-    opted-in doc-markup pass (`docs: [...]`, e.g. LaTeX manuals) has not landed any file yet —
-    a repo walked earlier for Markdown only (e.g. Radiance, whose README was pruned) must return
-    once for its man pages."""
+                  formats: dict[str, set[str]] | None = None,
+                  passes: dict[str, dict[str, str]] | None = None) -> list[dict]:
+    """Keep unwalked repos, code repos whose source-file pass has not completed, and repos with
+    an opted-in doc-markup kind (`docs: [...]`) whose pass has not completed — a repo walked
+    earlier for Markdown only (e.g. Radiance, whose README was pruned) returns for its man pages."""
     formats = formats or {}
+    passes = passes or {}
     out = []
     for spec in repos:
         bucket = _bucket(spec)
-        doc_fmts = set(doc_formats(spec.get("docs")).values())
         if (bucket not in done or (spec.get("code") and bucket not in code_done)
-                or (doc_fmts and not doc_fmts & formats.get(bucket, set()))):
+                or missing_doc_kinds(spec, formats, passes)):
             out.append(spec)
     return out
 
@@ -404,8 +454,13 @@ def from_repo(spec: dict) -> list:
         title = f"{name}: {p}"[:150]
         stem = p.rsplit(".", 1)[0] if ext else p
         sid = f"gh-{registry.slug(name)}-{registry.slug(stem)}"[:63]
-        out.append({"id": sid, "title": title, "url": url, "source": f"gh_{registry.slug(name)}",
-                    "license": spec["license"], "topic": spec["topic"], "format": fmt})
+        entry = {"id": sid, "title": title, "url": url, "source": f"gh_{registry.slug(name)}",
+                 "license": spec["license"], "topic": spec["topic"], "format": fmt}
+        # exact-licence provenance (e.g. copyleft repos filed under the generic `open` tag)
+        for key in ("license_url", "license_evidence", "rights_verified_at"):
+            if spec.get(key):
+                entry[key] = spec[key]
+        out.append(entry)
     return out
 
 
@@ -424,20 +479,21 @@ def main() -> None:
         formats = source_formats()
         done = set(formats)
         code_done = {s for s, fmts in formats.items() if "txt" in fmts}
-        keep = pending_repos(repos, done, code_done, formats)
+        keep = pending_repos(repos, done, code_done, formats, load_passes())
         if len(keep) < len(repos):
             print(f"# skipping {len(repos) - len(keep)} already-ingested repos; "
                   f"walking {len(keep)} (60/hr API budget)", file=sys.stderr)
         repos = keep
 
     urls, titles, reg_ids = registry.existing_keys()
-    out, seen = [], set()
+    out, seen, walked = [], set(), []
     for spec in repos:
         try:
             hits = from_repo(spec)
         except Exception as e:
             print(f"# {spec['repo']} failed: {e}", file=sys.stderr)
             continue
+        walked.append(spec)
         kept = 0
         for h in hits:
             u, t = h["url"].rstrip("/"), registry.norm(h["title"])
@@ -463,6 +519,8 @@ def main() -> None:
     if args.append and out:
         counts = registry.append_entries(out)
         print(f"# appended {len(out)} entries to the registry: {counts}", file=sys.stderr)
+    if args.append:
+        record_passes(walked, date.today().isoformat())
 
 
 if __name__ == "__main__":
