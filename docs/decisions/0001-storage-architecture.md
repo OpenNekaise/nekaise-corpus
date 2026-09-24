@@ -220,8 +220,8 @@ commits and the commit-replay shadow continue until stage 4.
   read legacy files; eligibility and host/vendor/backend contracts are still read from files
   outside the view (they must be validated against the view's pinned configuration before
   stage 4); backend-owned ledger and size validation; steps 5–7 (discovery writes and control state,
-  cleaner/loader/pruner through the broker, shared recovery and retiring legacy access) — steps 5
-  and 6 are done (records below).
+  cleaner/loader/pruner through the broker, shared recovery and retiring legacy access) — steps 5,
+  6 and 7 are done (records below; step 7 closes stage 3).
 
 ## Stage 3, step 5 record: discovery writes and control state (2026-09-24)
 
@@ -453,3 +453,133 @@ side effects kept explicitly recoverable.
 - **Accepted by Codex:** the id-order host cap is an explicit compatibility exception; the slower
   full-view reads (entries +13 s, manifest +28 s per step) are accepted performance debt.
 - **Not done:** optional local (untracked, bounded) diagnostic journals with full row images.
+
+## Stage 3, step 7 record: shared recovery, legacy access retired (2026-09-24)
+
+Decided by Codex: share recovery between the maintainer and the runner; keep registry.py's
+list/set APIs as deprecated store adapters (write_manifest_rows with replacement semantics);
+extract the shared codecs; allow direct state-file access only inside the store, physical
+validators and git-shadow/import/export tooling, enforced by an architectural test.
+
+- **One recovery routine** (`scripts/round_recovery.py`, `recover_round(st, writer, run_id, …)`),
+  used by run_round's failure rollback, `run_round --recover` and
+  `maintainer.recover_pending_round`, always under the round lock the caller holds (the round's
+  writer, the recovering writer, or the maintenance window's writer scoped to the round with the
+  new `FileStore.recovering(writer, run_id)`). Order: (1) stop the round's processes — the
+  runner's own descendants started during the round, plus every live process of this user whose
+  environment carries `NEKAISE_RUN_ID=<run id>` (orphans of a killed runner: a fetch still
+  downloading, a prune still moving bytes); SIGTERM, SIGKILL after 2 s, fail if any survives;
+  (2) unstage the tracked paths (`git reset -q -- <paths>`, which, unlike the former
+  `git restore --staged`, does not abort on a path git does not know); (3) resolve pending store
+  transactions; (4) detect an already-committed round BEFORE touching tracked state: a
+  first-parent commit within 200 of HEAD whose message has the round's `Corpus run: <run id>`
+  trailer. A committed round stands: its snapshot is discarded, never restored — and if its
+  tracked files changed since that commit, nothing is changed and the snapshot is kept for an
+  operator. The runner also passes what it knows (`known_committed`): a commit it made but git
+  cannot show refuses recovery. Otherwise the snapshot is restored; (5) settle the round's prune
+  quarantine against the state now served; (6) discard the snapshot last. Any failure raises and
+  keeps the snapshot (run_round: `rollback_failed` / `recover_failed`, exit 1; maintainer: the
+  recovery error goes to triage). Events: `round_processes_stopped`,
+  `store_transaction_recovered`, `round_already_committed`, `prune_quarantine_settled`, then the
+  entrypoint's `state_rolled_back` / `committed_round_kept` / `run_recovered` (with `committed`
+  when kept). A push failure after the commit now runs the same routine (the commit is detected
+  and kept, the quarantine settled at once) instead of a bare discard. The run ledger is not
+  used as commit evidence (it is per-checkout and git-ignored); a round that completed without
+  `--commit` and died before discarding its snapshot is restored, the conservative choice.
+  The maintainer's recovery now also resolves store transactions and settles quarantines, which
+  it did not before.
+- **Codecs** (`scripts/state_codec.py`, no I/O): routing (`shard_filename`, `manifest_shard`,
+  `prune_ledger_name`, SHARDS/HASH_BUCKETS), normalization (`norm`, `normalize_url`, `slug`,
+  `uniquify_ids`), YAML shard text (`parse_yaml` with the C loader, `emit_entry`, `shard_header`,
+  `remove_ids_from_text`), `manifest_shard_text`, and the eligibility schema. `store.py` imports
+  it instead of `registry`/`blocklist`; `pg_shadow`, `corpus_index`, `store_broker` too. The
+  import graph is acyclic (`registry → store → state_codec`, `blocklist → store`), so
+  `blocklist.add`'s lazy `import store` workaround is gone. Byte formats are unchanged.
+- **Deprecated adapters** (`registry.py`): `load_entries` (id order — the store keeps no file
+  order), `load_manifest_rows` (legacy order), `write_manifest_rows(rows, *, reason=…)` = ONE
+  transaction `replace_manifest(rows, reason)` (rows left out are tombstoned with the reason),
+  `remove_ids` = `delete_entries`, `load_prune_ledger_rows` (ledger scan order), `existing_keys`
+  (view scans) — each one view or one `store_broker.run_batch` transaction, emitting a
+  `DeprecationWarning`. `append_entries` keeps its proposal staging for finders; standalone
+  `--append` is one `insert_entries` transaction (an existing id is now refused rather than
+  appended twice). Removed: `REG_DIR`, `MAN_DIR`, `shard_path`, `shard_files`, `manifest_files`,
+  `prune_ledger_path`, `prune_ledger_files`, `write_prune_ledger_rows` (the retired monolith
+  migration; the store still reads `pruned.jsonl` as input). No production caller uses the
+  read/rewrite adapters. The pre-step-7 file implementations live on as the equivalence
+  reference in `tests/legacy_registry.py` (legacy_pipeline, legacy_discovery, test_filestore,
+  test_dedup compare against them).
+- **Remaining direct readers converted.** `blocklist.load()` and `rotation.load()` are unfenced
+  store reads (`FileStore.peek(table)`, small tables only: rotation, blocklist, backend_state,
+  control — no lock, may observe a round in flight, never a basis for a mutation; PgStore reads a
+  snapshot); `blocklist.add` decides newness inside its transaction; find_github's standalone
+  pass recording is one `control_set` transaction; the maintainer's no-view fallback uses
+  `peek("backend_state")` and `config_documents()`. Configuration stays git-owned policy (ADR:
+  "Git owns code and policy"): its loaders locate files only through `store.config_path(name)`,
+  which accepts CONFIG_FILES only. `store.TRACKED_PATHS` names the tracked layout for the round
+  snapshot/commit (run_round) and backups (backup_corpus).
+- **Architectural test** (`tests/test_architecture.py`): every `scripts/*.py` is parsed; outside
+  the allowlist it fails on a tracked-state path in code position (path joins, Path/open/glob/
+  copy/unlink calls, path constants; docstrings and f-string messages ignored), a glob of
+  `*.yaml`/`*.jsonl`/`pruned-*.jsonl`, the removed legacy names or deprecated adapters
+  (`registry.load_*`/`write_*`/`existing_keys`/`remove_ids`/…, `blocklist.PATH`,
+  `rotation.PATH`), a store's private layout attributes (`.reg`, `.man`, `.journal_dir`, …), or
+  an import of `legacy_registry`. Allowlist (each entry must still be needed —
+  `test_allowlist_is_minimal`): `store.py` (FileStore internals), `pg_shadow.py` (git-shadow
+  import/replay/verify from git objects), `corpus_index.py` (the FileStore's rebuildable SQLite
+  membership index), and two physical validators in `check_contracts.py`
+  (`oversized_control_files`, `prune_ledger_contract_errors`). `store_pg.py`, `backup_corpus.py`,
+  `migrate_backend_state.py`, `lint_registry.py` and `run_round.py` needed no exemption once they
+  used `config_path`/`TRACKED_PATHS`. A self-test proves the detector sees each kind of access.
+- **Tests**: recovery through every entrypoint (rollback, `--recover`, maintainer) for the
+  quarantine and mid-commit crash cases, and in real git repositories: an already-committed round
+  is kept (not restored) by `--recover` and the maintainer; a committed round changed since is
+  left alone with its snapshot; a claimed commit without its trailer is refused; an uncommitted
+  round is restored and unstaged; the round's orphaned processes are stopped and other rounds'
+  are not; a push failure after the commit keeps the commit; a failed uncommitted round is rolled
+  back by the same routine.
+- **Release gate evidence**: full suite 947 passed / 21 skipped (PG skipped), with PostgreSQL
+  (`NEKAISE_PG_TEST_DSN`) 998 passed; `py_compile scripts/*.py` clean; `lint_registry.py` and
+  `check_contracts.py` OK on the branch's real data (lint: 1,620,820 entries in 115 shards, 1,620,815 manifest rows, no problems, 229 s;
+  contracts: 1,612,754 documents / 30 backends, 67 s). End to end in a throwaway git
+  repository (this branch's code, a synthetic 11-entry registry, the branch's configuration),
+  inside `unshare -rn` (loopback only; payloads from a local HTTP server), with a PG shadow
+  (schema `e2e_step7` of `nekaise_test`) imported and enabled: (1) `run_round.py --skip-discovery
+  --commit` fetched 6 documents, pruned the thin and the missing one, cleaned, ran every gate
+  (check, index, lint, contracts, the full pytest suite) and committed; `pg_shadow sync` + `verify`
+  OK. (2) Two new entries, then a round with an injected failing test gate: `state_rolled_back`,
+  HEAD unchanged, clean tree. (3) A round with an 8 s-per-request payload server was SIGKILLed one
+  second into its fetch; its two fetch processes lived on as orphans; `run_round.py --recover
+  latest` stopped both (`round_processes_stopped`), resolved the store and restored the snapshot:
+  HEAD unchanged, clean tree. (4) A normal round then committed the two new documents, and
+  `pg_shadow sync` + `verify` were OK again. The equivalence tests (tests/legacy_registry.py as
+  the reference) show byte-identical registry, manifest, blocklist and ledger files; only journal
+  and runtime-state metadata differ, as before.
+
+## Stage 3 complete — what stage 4 needs
+
+Stage 3 converted access, not authority: every production reader and writer of tracked state goes
+through the store (FileStore still authoritative, per-round git commits and the commit-replay
+shadow continue). Stage 4 (cut over between rounds) needs:
+
+- **Run-scoped staging and generation promotion** in PostgreSQL: a round's metadata in staging
+  tables while downloads/cleaning/gates run, promoted in one short transaction that bumps the
+  generation and writes the outbox row; the discovery transaction must become replayable (keep
+  the computed batch as an immutable staged artifact, or recognize a completed step by its
+  commit row — step-5 note).
+- **Recovery without git snapshots**: `round_recovery` restores a git-era snapshot; under PG
+  authority recovery becomes "abort or resume the staged run" and "already committed" becomes
+  "its generation is promoted" (the same order: stop processes, resolve staging, detect
+  promotion, settle quarantine). The committed-round check by commit trailer goes away with the
+  per-round commits.
+- **The lease with heartbeat and fencing epoch** (section 4) before any second host writes; the
+  advisory-lock writer remains a one-host exception.
+- **Remove the adapters and the file backend's special paths**: `registry.py`'s deprecated
+  adapters, `FileStore.peek`, `corpus_index`, the journal-in-git (every transaction still reads
+  the whole journal for commit lookup), and the per-round `git add`/commit of tracked state; keep
+  verified legacy exports for seven days.
+- **Policy pinning**: configuration stays in git but must be validated against the view's pinned
+  configuration everywhere (loader/pruner/cleaner already do; `coverage`, `update_readme_stats`,
+  `lint_registry`, `check_contracts` and `crawl_docs` still call `registry.load_eligibility()`
+  from the working tree).
+- **Accepted debt carried forward**: whole-view reads (entries +13 s, manifest +28 s per step),
+  whole-manifest `replace_manifest`, and the FileStore's in-memory tables; PostgreSQL removes them.
