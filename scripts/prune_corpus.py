@@ -413,16 +413,49 @@ def mark_committed(qdir: Path) -> None:
     _write_record(qdir, record)
 
 
+class QuarantineError(RuntimeError):
+    """A quarantine this code cannot settle safely; it is kept for explicit handling."""
+
+
+def quarantine_items(qdir: Path, record: dict) -> list[list[str]]:
+    """The (document id, path) items of a quarantine record, in either format:
+    current — {"items": [[id, path], ...]};
+    first step-6 format (commit f1c77c0a66) — {"ids": [...], "files": [path, ...]}: each file is
+    attributed to the id its name carries (raw/<source>/<id>.<ext>, text/<id>.md,
+    corpus/<id>.md). Anything else, or a file no id claims unambiguously, raises
+    QuarantineError: an unrecognized record is never deleted."""
+    if isinstance(record.get("items"), list):
+        items = record["items"]
+        if all(isinstance(i, list) and len(i) == 2 and all(isinstance(x, str) for x in i)
+               for i in items):
+            return items
+    elif isinstance(record.get("ids"), list) and isinstance(record.get("files"), list):
+        ids = {sid for sid in record["ids"] if isinstance(sid, str)}
+        items = []
+        for rel in record["files"]:
+            owners = [sid for sid in ids if isinstance(rel, str) and Path(rel).stem == sid]
+            if len(owners) != 1:
+                raise QuarantineError(f"prune quarantine {qdir.name}: cannot attribute {rel!r} "
+                                      "to one document; settle it by hand")
+            items.append([owners[0], rel])
+        return items
+    raise QuarantineError(f"prune quarantine {qdir.name}: unrecognized record; settle it by hand")
+
+
 def settle_quarantine(root: Path, qdir: Path, present) -> dict[str, int]:
     """Settle one quarantine: `present(ids)` returns the ids whose manifest rows exist in the
     settled state. Returns {"restored": files, "discarded": files}."""
     counts = {"restored": 0, "discarded": 0}
     record_path = qdir / "record.json"
-    if not record_path.exists():  # created, but nothing recorded, so nothing moved
+    if not record_path.exists():
+        # The record is written before any move, so without one nothing moved — unless files
+        # are there anyway: never delete bytes whose record is missing.
+        if (qdir / "files").exists() and any(p.is_file() for p in (qdir / "files").rglob("*")):
+            raise QuarantineError(f"prune quarantine {qdir.name} holds files but no record; "
+                                  "settle it by hand")
         shutil.rmtree(qdir)
         return counts
-    record = json.loads(record_path.read_text())
-    items = record.get("items") or []
+    items = quarantine_items(qdir, json.loads(record_path.read_text()))
     keep = set(present(sorted({sid for sid, _ in items})))
     for sid, rel in items:
         src = qdir / "files" / rel

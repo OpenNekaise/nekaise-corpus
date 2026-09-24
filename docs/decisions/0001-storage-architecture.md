@@ -384,7 +384,13 @@ side effects kept explicitly recoverable.
   settling fails, `rollback_failed` is reported and the snapshot kept. `run_round --recover` does
   the same under a *recovering* writer (`FileStore.writer(round_id=…, recovering=True)`, which
   may read while the round's snapshot exists), returns 1 and keeps the snapshot until settling
-  finishes. Leftovers of a killed standalone prune are settled by the next round before it
+  finishes. Both paths first resolve interrupted store transactions (finalize committed, roll
+  back prepared) and only then restore the snapshot (second review, P1): a FileStore rollback
+  restores a file only while it holds the transaction's pre- or post-image, which the restored
+  pre-round shard does not once an earlier checkpoint changed it. Quarantine records of the first
+  step-6 format (`ids` + `files`) are settled by attributing each file to the id its name
+  carries; a record that is unrecognized, unattributable or missing while files exist raises and
+  is kept (second review, P1). Leftovers of a killed standalone prune are settled by the next round before it
   fetches and by the next prune before it decides. Tests drive the real entrypoints (rollback and
   `--recover`) with a child prune killed while moving, after moving, after committing, and
   after a later step failed, with a mix of pre-round and new-in-round documents.

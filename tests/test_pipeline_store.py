@@ -873,3 +873,134 @@ def test_two_invocations_in_one_window_never_collide(tmp_path, monkeypatch):
     assert all(r.startswith("maint-w.clean.i") for r in runs)
     assert [r.rsplit("-", 2)[-2:] for r in runs] == [["restricted", "0001"], ["meta", "0001"],
                                                      ["meta", "0001"]]
+
+
+# --- a crash inside a checkpoint's commit: store recovery precedes the snapshot restore ----------
+
+TWO_CHECKPOINTS = """
+import json, sys
+sys.path[:0] = ["scripts", "tests"]
+import pipeline_repo, store, store_broker
+root = sys.argv[1]
+pipeline_repo.point(None, root)
+st = store.FileStore(pipeline_repo.Path(root))
+with store_broker.step_session(st, "fetch") as s:
+    rows = s.view.get_manifest(["ost-good", "ost-premetrics"])
+    for n, sid in enumerate(["ost-good", "ost-premetrics"], 1):  # both in manifest/reports.jsonl
+        with s.batch(f"ckpt-{n:04d}") as b:
+            b.upsert_manifest([{**rows[sid], "error": f"checkpoint {n}"}])
+"""
+
+
+def _crash_second_commit(monkeypatch):
+    """The round process 'dies' inside the second transaction's commit: its first data write
+    fails after the recovery marker was published, and the immediate rollback is lost (power
+    loss), leaving the transaction prepared with the shard half-applied."""
+    real_commit, real_write = store.FileStore._commit, store._write_durable
+    real_rollback = store.FileStore._rollback
+    state = {"commits": 0, "armed": False, "lost": False}
+
+    def commit(self, view, digest):
+        state["commits"] += 1
+        state["armed"] = state["commits"] == 2
+        return real_commit(self, view, digest)
+
+    def write(path, data):
+        if state["armed"] and "store-transactions" not in str(path):
+            state["armed"] = False
+            real_write(path, data)  # atomic: the file holds the post-image
+            raise OSError("process died mid-commit")
+        return real_write(path, data)
+
+    def rollback(self, txn, meta):
+        if not state["lost"]:
+            state["lost"] = True
+            return None
+        return real_rollback(self, txn, meta)
+    monkeypatch.setattr(store.FileStore, "_commit", commit)
+    monkeypatch.setattr(store, "_write_durable", write)
+    monkeypatch.setattr(store.FileStore, "_rollback", rollback)
+
+
+def _checkpoint_round(monkeypatch, root, fail_with):
+    def run(step, cmd, env, run_id):
+        if step == "fetch":
+            out = subprocess.run([sys.executable, "-c", TWO_CHECKPOINTS, str(root)], env=env,
+                                 capture_output=True, text=True, cwd=SCRIPTS.parent)
+            assert out.returncode != 0 and "process died mid-commit" in out.stderr
+            assert [t.state for t in store.FileStore(root).pending_transactions()] == ["prepared"]
+            raise fail_with("fetch failed")
+    monkeypatch.setattr(run_round, "run_command", run)
+    monkeypatch.setattr(sys, "argv", ["run_round.py", "--skip-discovery", "--skip-tests",
+                                      "--allow-dirty", "--run-id", "rnd-c"])
+    return run_round.main()
+
+
+@pytest.mark.parametrize("entry", ["rollback", "recover"])
+def test_a_crash_inside_a_later_checkpoint_commit_is_recovered_before_the_snapshot(
+        tmp_path, monkeypatch, entry):
+    root, meta, files, events = _pre_round(tmp_path, monkeypatch)
+    _crash_second_commit(monkeypatch)
+    if entry == "rollback":
+        assert _checkpoint_round(monkeypatch, root, RuntimeError) == 1
+    else:
+        with pytest.raises(KeyboardInterrupt):  # the round process itself dies
+            _checkpoint_round(monkeypatch, root, KeyboardInterrupt)
+        assert run_round.ops.StateSnapshot.pending() == ["rnd-c"]
+        monkeypatch.setattr(sys, "argv", ["run_round.py", "--recover", "rnd-c"])
+        assert run_round.main() == 0
+    assert tracked(root) == meta
+    assert not store.FileStore(root).pending_transactions()
+    assert not run_round.ops.StateSnapshot.pending()
+    assert ("store_transaction_recovered",
+            {"transaction": "rnd-c.fetch.ckpt-0002", "action": "rolled_back"}) in events
+
+
+# --- quarantine record formats ---------------------------------------------------------------
+
+def _quarantine(root: Path, name: str, record: dict | None, files: dict[str, str]) -> Path:
+    qdir = prune_corpus.quarantine_root(root) / name
+    for rel, text in files.items():
+        (qdir / "files" / rel).parent.mkdir(parents=True, exist_ok=True)
+        (qdir / "files" / rel).write_text(text)
+    qdir.mkdir(parents=True, exist_ok=True)
+    if record is not None:
+        (qdir / "record.json").write_text(json.dumps(record))
+    return qdir
+
+
+def test_first_format_quarantines_are_settled_with_the_per_file_rule(tmp_path):
+    """Records written by f1c77c0a66 ({"ids", "files"}) are settled, not dropped: each file is
+    attributed to the id its name carries."""
+    root = tmp_path / "r"
+    files = {"raw/osti/ost-a.pdf": "a raw", "text/ost-a.md": "a text",
+             "raw/osti/ost-b.1.pdf": "b raw", "corpus/ost-b.1.md": "b corpus"}
+    qdir = _quarantine(root, "old", {"txn": "old", "run": None, "state": "moved",
+                                     "ids": ["ost-a", "ost-b.1"], "files": sorted(files)}, files)
+    got = prune_corpus.settle_quarantine(root, qdir, lambda ids: {"ost-a"} & set(ids))
+    assert got == {"restored": 2, "discarded": 2}
+    assert (root / "raw/osti/ost-a.pdf").read_text() == "a raw"
+    assert (root / "text/ost-a.md").read_text() == "a text"
+    assert not (root / "raw/osti/ost-b.1.pdf").exists() and not qdir.exists()
+
+
+@pytest.mark.parametrize("record", [
+    {"txn": "x", "state": "moved"},                                   # unknown format
+    {"items": "not a list"},
+    {"ids": ["ost-a"], "files": ["raw/osti/unrelated.pdf"]},          # unattributable file
+    None,                                                             # files but no record
+])
+def test_unrecognized_quarantines_are_kept(tmp_path, record):
+    root = tmp_path / "r"
+    qdir = _quarantine(root, "odd", record, {"raw/osti/unrelated.pdf": "bytes"})
+    with pytest.raises(prune_corpus.QuarantineError):
+        prune_corpus.settle_quarantine(root, qdir, lambda ids: set(ids))
+    assert (qdir / "files" / "raw/osti/unrelated.pdf").read_text() == "bytes"
+
+
+def test_an_empty_quarantine_without_a_record_is_removed(tmp_path):
+    root = tmp_path / "r"
+    qdir = _quarantine(root, "empty", None, {})
+    assert prune_corpus.settle_quarantine(root, qdir, lambda ids: set()) == {
+        "restored": 0, "discarded": 0}
+    assert not qdir.exists()

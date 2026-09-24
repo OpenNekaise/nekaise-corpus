@@ -562,14 +562,17 @@ def main() -> int:
                 ["git", "restore", "--staged", "--", *SNAPSHOT_PATHS],
                 cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
             )
-            snap.restore()
             try:
+                # interrupted store transactions first, while the files still hold their pre-
+                # or post-images; the snapshot restore would leave them matching neither
+                recover_store_transactions(st, writer, run_id)
+                snap.restore()
                 settle_prune_quarantine(ROOT, st, writer, run_id)
             except Exception as exc:
                 ops.run_event(run_id, "recover_failed", error=str(exc))
-                print(f"ERROR: restored {run_id}'s tracked state but could not settle its prune "
-                      f"quarantine: {exc}; the snapshot is kept — fix and re-run --recover",
-                      file=sys.stderr)
+                print(f"ERROR: could not recover {run_id} completely (store transactions, "
+                      f"snapshot restore, prune quarantine): {exc}; the snapshot is kept — fix "
+                      "and re-run --recover", file=sys.stderr)
                 return 1
             snap.discard()
             ops.run_event(run_id, "run_recovered")
@@ -604,6 +607,20 @@ def main() -> int:
         ops.run_event(run_id, "run_failed", error=str(exc))
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
+
+
+def recover_store_transactions(st, writer, run_id: str) -> list:
+    """Resolve every interrupted store transaction (finalize a committed one, roll back a
+    prepared one) BEFORE a round snapshot is restored: FileStore recovery restores a file only
+    while it still holds the transaction's pre- or post-image, which the restored pre-round
+    state (e.g. after an earlier checkpoint of the same round changed the shard) does not."""
+    done = []
+    for t in st.pending_transactions():
+        result = st.recover(t.run_id, writer=writer)
+        ops.run_event(run_id, "store_transaction_recovered", transaction=t.run_id,
+                      action=result.action)
+        done.append(result)
+    return done
 
 
 def settle_prune_quarantine(root: Path, st, writer, run_id: str | None = None) -> dict:
@@ -731,6 +748,7 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
                     ["git", "restore", "--staged", "--", *SNAPSHOT_PATHS],
                     cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
                 )
+                recover_store_transactions(st, writer, run_id)
                 snapshot.restore()
                 # settle against the restored state BEFORE discarding the snapshot: a failure
                 # keeps the round recoverable (run_round --recover) instead of stranding bytes
