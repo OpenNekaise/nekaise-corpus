@@ -70,25 +70,53 @@ SITES = [
      "name": "A+BE Architecture and the Built Environment (TU Delft theses)"},
 ]
 
-# rights URL -> licence tag, most specific first. Anything else (NC, ND, no URL) is rejected.
-LICENSE_RULES = [
-    (re.compile(r"creativecommons\.org/licenses/by-(?:nc|nd)", re.I), None),
-    (re.compile(r"creativecommons\.org/publicdomain/zero/", re.I), "cc0"),
-    (re.compile(r"creativecommons\.org/publicdomain/mark/", re.I), "public-domain"),
-    (re.compile(r"creativecommons\.org/licenses/by-sa/", re.I), "cc-by-sa"),
-    (re.compile(r"creativecommons\.org/licenses/by/", re.I), "cc-by"),
-]
+# Canonical Creative Commons licence / public-domain tool URLs. A rights value is DECISIVE only if
+# it is exactly one of these URLs (whitespace trimmed) — a CC-looking path on another host, or a
+# URL embedded in prose ("not licensed under https://creativecommons.org/...") never is.
+_CC_URL = re.compile(
+    r"https?://(?:www\.)?creativecommons\.org/"
+    r"(?:licenses/(?P<lic>by|by-sa|by-nc|by-nd|by-nc-sa|by-nc-nd)/(?P<ver>\d\.\d)"
+    r"(?:/[a-z]{2}(?:-[a-z]{2})?)?"
+    r"|publicdomain/(?P<pd>zero|mark)/1\.0)"
+    r"(?:/(?:legalcode(?:\.[a-z]{2})?|deed\.[a-z]{2}(?:-[a-z]{2})?)?)?/?", re.I)
+_OPEN_TAGS = {"by": "cc-by", "by-sa": "cc-by-sa", "zero": "cc0", "mark": "public-domain"}
+# Any of these anywhere in ANY rights value is conflicting evidence and rejects the record.
+_RESTRICTIVE = re.compile(
+    r"licenses/by-(?:nc|nd)|\bby-n[cd]\b|non-?commercial|no-?deriv|\bnc\b|\bnd\b"
+    r"|all rights reserved|not (?:be )?(?:licen[cs]ed|re-?used|redistribut)", re.I)
+# A free-text rights value that talks about licensing without being a canonical URL is
+# unverifiable (e.g. "CC BY-like terms", a negated statement): fail closed.
+_LICENSE_TALK = re.compile(r"creative\s*commons|creativecommons|licen[cs]|\bcc[ -]?(?:by|0)\b",
+                           re.I)
 _XML_ILLEGAL = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f]")
 LANG3 = {"eng": "en", "nld": "nl", "dut": "nl", "deu": "de", "ger": "de", "fra": "fr",
          "fre": "fr", "spa": "es", "por": "pt", "ita": "it"}
 
 
 def license_for(rights: list[str]) -> tuple[str, str] | tuple[None, None]:
-    """(licence tag, licence URL) for the first rights URL that decides, else (None, None)."""
+    """(licence tag, canonical licence URL) or (None, None) — FAIL-CLOSED, order-independent.
+
+    Accept only when (a) at least one rights value is exactly a canonical CC BY / BY-SA / CC0 /
+    PDM URL, (b) no rights value carries NC / ND / all-rights-reserved / negation evidence, and
+    (c) every other value is a plain copyright line, not unverifiable licence prose. Two
+    different open grants resolve to the more restrictive tag (BY-SA over BY)."""
+    decided: dict[str, str] = {}
     for value in rights:
-        for pat, tag in LICENSE_RULES:
-            if pat.search(value):
-                return (tag, value.strip()) if tag else (None, None)
+        value = value.strip()
+        if _RESTRICTIVE.search(value):
+            return None, None
+        m = _CC_URL.fullmatch(value)
+        if m:
+            key = m.group("lic") or m.group("pd")
+            tag = _OPEN_TAGS.get(key.lower())
+            if tag is None:
+                return None, None
+            decided.setdefault(tag, value)
+        elif _LICENSE_TALK.search(value):
+            return None, None
+    for tag in ("cc-by-sa", "cc-by", "cc0", "public-domain"):
+        if tag in decided:
+            return tag, decided[tag]
     return None, None
 
 
@@ -110,16 +138,29 @@ def fetch_page(base: str, token: str) -> str:
     return r.text
 
 
+class UnexpectedResponse(RuntimeError):
+    """The endpoint answered with something other than an OAI-PMH ListRecords page."""
+
+
 def parse_page(xml_text: str) -> tuple[list[dict], str]:
     """-> (live records, next resumption token or '' when the list is complete)."""
     # OJS copies abstracts verbatim from submissions; C0 control characters that XML 1.0 forbids
     # (CLIMA 2022 page 3 carries U+0002 in "step-by\x02step") would otherwise fail the whole page.
-    root = ET.fromstring(_XML_ILLEGAL.sub(" ", xml_text))
+    try:
+        root = ET.fromstring(_XML_ILLEGAL.sub(" ", xml_text))
+    except ET.ParseError as exc:
+        raise UnexpectedResponse(f"response is not XML: {exc}") from exc
+    # A well-formed HTML/XHTML page (maintenance notice, WAF, login) must never read as "zero
+    # records, list complete": require the OAI-PMH envelope and a ListRecords answer.
+    if root.tag != f"{{{NS['oai']}}}OAI-PMH":
+        raise UnexpectedResponse(f"not an OAI-PMH envelope (root element {root.tag!r})")
     err = root.find("oai:error", NS)
     if err is not None:
         if err.get("code") == "noRecordsMatch":
             return [], ""
         raise RuntimeError(f"OAI error {err.get('code')}: {err.text}")
+    if root.find("oai:ListRecords", NS) is None:
+        raise UnexpectedResponse("OAI-PMH response carries no ListRecords element")
     records = []
     for rec in root.findall(".//oai:record", NS):
         header = rec.find("oai:header", NS)
@@ -178,12 +219,16 @@ def harvest(site: dict, known_urls: set, known_titles: set, maxn: int,
     """-> (new entries, records scanned, site completed?). Finishes the page that crosses maxn."""
     out: list[dict] = []
     scanned, token, first = 0, "", True
+    seen_tokens: set[str] = set()
     today = date.today().isoformat()
     while first or token:
         if not first:
             time.sleep(delay)
         first = False
         records, token = parse_page(fetch_page(site["base"], token))
+        if token and token in seen_tokens:
+            raise UnexpectedResponse(f"repeated resumptionToken {token!r} (paging loop)")
+        seen_tokens.add(token)
         for rec in records:
             scanned += 1
             entry = entry_for(site, rec, today)

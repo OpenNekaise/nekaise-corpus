@@ -168,3 +168,66 @@ def test_control_characters_in_abstracts_do_not_fail_the_page():
     page = PAGE2.replace("Radiant Ceiling Panels", "Radiant step-by\x02step Panels")
     records, token = find_ojs.parse_page(page)
     assert records[0]["title"] == "Radiant step-by step Panels" and token == ""
+
+
+# --- review regressions (2026-09-24) ------------------------------------------------------------
+
+BY = "https://creativecommons.org/licenses/by/4.0/"
+
+
+@pytest.mark.parametrize("rights", [
+    ["https://example.org/creativecommons.org/licenses/by/4.0"],        # CC-looking path
+    ["https://creativecommons.org.evil.example/licenses/by/4.0"],
+    ["This article is not licensed under https://creativecommons.org/licenses/by/4.0"],
+    [BY, "https://creativecommons.org/licenses/by-nc/4.0/"],             # BY then conflicting NC
+    ["https://creativecommons.org/licenses/by-nc/4.0/", BY],             # ... in either order
+    [BY, "Non-commercial use only"],
+    [BY, "All rights reserved"],
+    [BY, "Licensed under CC BY-like terms"],                             # unverifiable prose
+    ["https://creativecommons.org/licenses/by/4.0/ and more"],
+])
+def test_license_gate_rejects_spoofed_negated_and_conflicting_evidence(rights):
+    assert find_ojs.license_for(rights) == (None, None)
+
+
+@pytest.mark.parametrize(("rights", "expected"), [
+    (["Copyright (c) 2022 J. Raposo", "https://creativecommons.org/licenses/by/4.0"], "cc-by"),
+    (["http://www.creativecommons.org/licenses/by/4.0/legalcode"], "cc-by"),
+    (["https://creativecommons.org/licenses/by/3.0/nl/"], "cc-by"),
+    ([BY, "https://creativecommons.org/licenses/by-sa/4.0/"], "cc-by-sa"),
+    (["https://creativecommons.org/publicdomain/zero/1.0/"], "cc0"),
+])
+def test_license_gate_accepts_canonical_urls(rights, expected):
+    assert find_ojs.license_for(rights)[0] == expected
+
+
+@pytest.mark.parametrize("body", [
+    "<html><head><title>Maintenance</title></head><body><p>Back soon</p></body></html>",
+    '<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"></feed>',
+    '<?xml version="1.0"?><OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">'
+    "<Identify/></OAI-PMH>",
+    "Service Unavailable",
+])
+def test_non_oai_responses_are_errors_not_empty_complete_lists(body):
+    with pytest.raises(find_ojs.UnexpectedResponse):
+        find_ojs.parse_page(body)
+
+
+def test_repeated_resumption_token_is_a_paging_loop(monkeypatch):
+    _mock_pages(monkeypatch, [PAGE1, PAGE1])
+    with pytest.raises(find_ojs.UnexpectedResponse, match="repeated resumptionToken"):
+        find_ojs.harvest(find_ojs.SITES[0], set(), set(), maxn=100)
+
+
+def test_unexpected_content_fails_run_so_rotation_holds(monkeypatch, tmp_path, capsys):
+    monkeypatch.setattr(find_ojs.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(find_ojs, "fetch_page", lambda *_a: "<html><body>login</body></html>")
+    monkeypatch.setattr(find_ojs.registry, "append_entries",
+                        lambda _e: pytest.fail("nothing may be appended"))
+    monkeypatch.setattr(sys, "argv", ["find_ojs.py", "--site", "0", "--append"])
+
+    with pytest.raises(SystemExit) as exc:
+        find_ojs.main()
+
+    assert exc.value.code == 1  # a failed finder never advances its rotation pointer
+    assert "not an OAI-PMH envelope" in capsys.readouterr().err
