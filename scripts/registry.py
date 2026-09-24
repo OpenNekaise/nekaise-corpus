@@ -404,11 +404,11 @@ def existing_keys(include_blocklist: bool = True):
                 print(f"index fallback: {exc}", file=sys.stderr)
     urls, titles, ids = set(), set(), set()
     for r in load_manifest_rows():
-        urls.add((r.get("url") or "").rstrip("/"))
+        urls.add(blocklist.normalize(r.get("url") or ""))
         titles.add(norm(r.get("title")))
         ids.add(r.get("id") or "")
     for e in load_entries():
-        urls.add((e.get("url") or "").rstrip("/"))
+        urls.add(blocklist.normalize(e.get("url") or ""))
         titles.add(norm(e.get("title")))
         ids.add(e.get("id") or "")
     if include_blocklist:
