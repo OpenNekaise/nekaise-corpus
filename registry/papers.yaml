@@ -74057,3 +74057,21 @@ sources:
     license: open
     topic: infrastructure
     format: pdf
+  - id: ope-modeling-urban-hydrology-and-green-infrastruct
+    title: Modeling Urban Hydrology and Green Infrastructure Using the AGWA Urban Tool
+      and the KINEROS2 Model
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2018.00058/pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-ultrahigh-pressure-compaction-resistant-thin-f
+    title: Ultrahigh pressure compaction-resistant thin film crosslinked composite reverse
+      osmosis membranes
+    url: https://escholarship.org/content/qt0nf558m4/qt0nf558m4.pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'

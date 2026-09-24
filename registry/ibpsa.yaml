@@ -4131,3 +4131,521 @@ sources:
     topic: building_energy
     format: pdf
     document_type: conference-paper
+  - id: ibp-enhancing-bipv-performance-through-fin-integration-a
+    title: 'Enhancing BIPV performance through fin integration: A co-simulation approach'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1796.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-finding-the-root-cause-of-a-control-issues-does-an-a
+    title: Finding the root cause of a control issues, does an artificial intelligence
+      optimise a building more effectively than automated fault detection?
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1800.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-dealing-with-corner-cases-in-occupant-centric-contro
+    title: 'Dealing with corner cases in occupant-centric control: do physics-informed
+      models help?'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1808.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-when-deterministic-models-fall-short-a-motivation-fo
+    title: 'When deterministic models fall short: A motivation for enriching building
+      simulations with data-driven stochasticity'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1812.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-assessing-the-impact-of-modelling-variability-on-bui
+    title: Assessing the impact of modelling variability on building performance simulation
+      results
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1816.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-pi-don-physics-informed-deep-operator-network-for-co
+    title: 'Pi-DON: Physics-Informed Deep Operator Network for Control-Oriented Modeling
+      of Thermal Systems in Cluster of Buildings'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1818.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-renewable-energy-communities-in-sweden-a-techno-econ
+    title: 'Renewable energy communities in Sweden: a techno-economic analysis of single-owner,
+      multiple-consumer building-level energy sharing'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1823.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-grey-box-room-modelling-for-thermal-mpc-insights-fro
+    title: 'Grey-Box Room Modelling for Thermal MPC: Insights from a Virtual Experiment'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1827.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-comparative-study-of-residential-building-energy-p
+    title: A comparative study of residential building energy performance in Belgium
+      utilizing three different solar panel configurations
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1829.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-optimal-control-of-building-integrated-rooftop-green
+    title: Optimal control of building integrated rooftop greenhouse for energy efficiency
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1831.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-quantifying-the-compound-impact-of-urban-heat-island
+    title: Quantifying the compound impact of urban heat island and climate change on
+      cuilding energy consumption in Nanjing’s traditional urban center
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1832.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-development-of-a-fast-dynamic-tank-thermal-energy-st
+    title: Development of a fast, dynamic tank thermal energy storage model for system
+      simulations.
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1842.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-towards-a-digital-shadow-methodology-development-for
+    title: 'Towards a digital shadow: Methodology development for continuous commissioning
+      of domestic hot water systems'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1846.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-differentiable-predictive-control-unlocks-latent-ene
+    title: Differentiable predictive control unlocks latent energy storage in bio-based
+      phase change material enhanced buildings
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1862.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-battery-storage-potential-in-meeting-nzeb-energy-per
+    title: Battery storage potential in meeting NZEB energy performance requirements
+      in Estonia
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1865.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-educational-building-retrofit-a-data-driven-modellin
+    title: 'Educational building retrofit: a data-driven modelling approach for optimized
+      energy efficiency'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1867.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-quantifying-the-influence-of-the-pool-cover-on-the-w
+    title: Quantifying the Influence of the Pool Cover on the Water Evaporation Rate
+      in Indoor Swimming Halls
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1871.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-performance-evaluation-of-the-efficient-cooling-and-
+    title: Performance evaluation of the efficient cooling and desiccant dehumidification
+      system for a plant factory
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1872.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-bridging-the-gap-between-reduced-and-full-scale-meth
+    title: Bridging the gap between reduced- and full-scale method of evaluating cooling
+      capacity of ceiling radiant cooling panels
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1896.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-optimizing-a-latent-heat-energy-storage-tank-for-a-s
+    title: 'Optimizing a latent heat energy storage tank for a solar collector system:
+      moving towards zero carbon.'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1899.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-energy-consumption-pattern-analysis-of-housing-in-wa
+    title: Energy consumption pattern analysis of housing in warm-humid climate
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1906.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-cooling-potential-of-transparent-roof-spray-on-publi
+    title: 'Cooling potential of transparent roof spray on public buildings: Evidence
+      from hot-humid areas'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1914.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-impact-of-occupancy-patterns-on-buildings-performanc
+    title: 'Impact of occupancy patterns on buildings performances gaps: how the gap
+      is sensitive to stochastic occupancy behavior?'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1921.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-unraveling-the-energy-performance-gap-understanding-
+    title: 'Unraveling the energy performance gap: Understanding user-related factors
+      affecting lighting energy consumption in office buildings'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1923.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-applicability-analysis-of-compressors-in-subway-stat
+    title: Applicability analysis of compressors in subway stations based on load characteristics
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1924.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-co-simulation-workflow-to-evaluate-the-building-le
+    title: 'A co-simulation workflow to evaluate the building level performance of Vertical
+      Greenery Wall Systems in climate change scenario for office buildings '
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1929.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-green-walls-for-solar-shading-a-novel-thermal-perfor
+    title: 'Green walls for solar shading: a novel thermal performance model applied
+      to a case study'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1930.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-evaluating-the-descriptive-and-predictive-ability-of
+    title: Evaluating the descriptive and predictive ability of the grey-box modelling
+      technique during summertime in a Passivhaus office building in the UK
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1932.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-exploring-the-potential-of-ashrae-guideline-36-in-di
+    title: Exploring the potential of ASHRAE Guideline 36 in district cooling systems
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1934.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-machine-learning-driven-optimal-control-method-for-h
+    title: Machine learning-driven optimal control method for HVAC systems
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1935.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-energy-flexibility-potential-of-transparent-responsi
+    title: Energy flexibility potential of transparent responsive building envelope
+      elements
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1936.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-thickness-dependent-coupled-thermo-optical-model-of-
+    title: 'Thickness-dependent coupled thermo-optical model of translucent material:
+      a case study of glazing unit filled with granular silica aerogel'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1937.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-the-influence-of-spatial-volume-on-building-performa
+    title: The influence of Spatial Volume on building performance in Sports Arenas
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1942.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-are-hourly-building-energy-simulations-underestimati
+    title: Are hourly building energy simulations underestimating peak demand? A case
+      for finer time resolutions.
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1947.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-design-guidance-for-net-zero-energy-mixed-use-buildi
+    title: Design guidance for net zero energy mixed-use buildings in Seoul
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1952.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-development-and-validation-of-rapid-building-energy-
+    title: Development and validation of rapid building energy simulation engine based
+      on novel multi-thermal-zone RC network modeling method
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1957.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-the-potential-of-live-data-streams-in-a-building-s-d
+    title: The potential of live data streams in a building’s digital twin to impact
+      its energy consumption
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1959.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-toward-urban-decarbonization-environmental-and-finan
+    title: 'Toward urban decarbonization: environmental and financial evaluation of
+      neighborhood-scale multifamily retrofit strategies'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1960.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-experimental-analysis-of-an-innovative-rc-mapping-mo
+    title: Experimental analysis of an innovative RC-Mapping model for flexibility quantification
+      of building air conditioning systems
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1963.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-evaluating-local-energy-sharing-potential-for-enabli
+    title: Evaluating local energy sharing potential for enabling net zero energy communities
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1965.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-research-on-energy-influence-factors-and-operational
+    title: 'Research on energy influence factors and operational optimization strategies
+      of subway station HVAC systems: A case study of Suzhou'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1966.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-synergistic-effects-of-phase-change-material-and-hyg
+    title: Synergistic effects of Phase Change Material and Hygroscopic Materials on
+      heat and moisture transfer in building envelopes
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1972.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-identification-of-key-influence-factors-of-energy-co
+    title: Identification of key influence factors of energy consumption based on dynamic
+      co-simulation in large spaces
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1978.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-validation-of-a-meso-scale-urban-building-energy-mod
+    title: Validation of a meso-scale Urban Building Energy Model of domestic peak heating
+      load and annual heat demand in England and Scotland
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1979.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-linking-thermal-risk-energy-performance-and-building
+    title: 'Linking thermal risk, energy performance, and building typology: a comparative
+      study of Walloon residential buildings under climate change'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_2101.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-comparative-analysis-of-daylight-view-and-visual-pri
+    title: 'Comparative analysis of daylight, view, and visual privacy: a New York City
+      case study'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1115.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-long-range-airborne-infection-analysis-of-a-universi
+    title: Long-range airborne infection analysis of a university classroom under different
+      occupancy scenarios
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1119.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-workflow-for-designing-vr-experiments-for-daylight
+    title: A workflow for designing VR experiments for daylight and view-out studies
+      using real-time stereoscopic videos
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1129.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-aleatoric-and-epistemic-uncertainties-in-occupant-be
+    title: 'Aleatoric and epistemic uncertainties in occupant behavior models for residential
+      buildings: real-life cases'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1132.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-toward-multi-domain-occupant-centric-indoor-environm
+    title: Toward multi-domain occupant-centric indoor-environmental quality indicators
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1146.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-exploring-the-consistency-of-ugr-calculations-measur
+    title: Exploring the consistency of UGR calculations, measurements, and evaluations
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1147.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-indoor-thermo-photometric-occupant-s-evaluation-what
+    title: 'Indoor thermo-photometric occupant’s evaluation: what lies beneath perception,
+      discomfort and preferences?'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1172.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-does-the-personality-of-the-occupant-influence-therm
+    title: Does the personality of the occupant influence thermal comfort? Demonstration
+      through individualized experimental analysis
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1174.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-ifc-based-setup-of-interior-spaces-for-thermal-comfo
+    title: IFC-based setup of interior spaces for thermal comfort simulations using
+      CFD
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1183.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-estimating-the-number-of-occupants-using-machine-lea
+    title: Estimating the number of occupants using machine learning based on carbon
+      dioxide concentration data from IoT sensors in two different spaces
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1195.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-an-iot-scheme-for-energy-efficiency-iaq-with-noise-c
+    title: An IoT Scheme for Energy Efficiency, IAQ with Noise Characterization and
+      Measurement in the Smart Building
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1196.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-including-households-comfort-elasticities-in-model-p
+    title: Including households’ comfort elasticities in model predictive controllers
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1225.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-improving-indoor-environment-quality-through-digital
+    title: Improving indoor environment quality through digital twin integration for
+      office spaces
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1243.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-personal-comfort-models-in-shared-spaces-a-review-of
+    title: 'Personal Comfort Models in shared spaces: a review of trends, challenges,
+      and future directions'
+    url: https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_1246.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
