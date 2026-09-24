@@ -52,17 +52,33 @@ ENERGY_CONTEXT = re.compile(
     re.I,
 )
 
-# Titles naming an obviously off-domain subject never pass, whatever else they mention.
-KILL = re.compile(
-    r"\bgenom|\bprotein|\bcells?\b(?! phones?)|tumou?r|cancer|neutrino|\bquarks?\b|hadron|"
-    r"\bbosons?\b|lepton|galax|cosmolog|supernova|\bplasmas?\b|\bmice\b|\bmouse\b|enzym|"
-    r"microb|bacteri|photosynth|\bcatalys|electrolyte|\bbatter(?:y|ies)\b|\bsoils?\b|"
-    r"crystal structure|x-ray diffraction|synchrotron|beamline|nanopartic|\bstomata|"
-    r"\bvaccin|\bviral\b|\bvirus|antibod|\bhiv\b|\bhsv\b|metabolic engineering|"
-    r"transportation (?:secure|sector|network|electrification)|\bvehicles?\b|\bfleets?\b|"
-    r"\bcations?\b|semiconductor|perovskite|\bwafers?\b",
+# Titles naming a subject with no building reading never pass, whatever else they mention.
+HARD_KILL = re.compile(
+    r"\bgenom|\bprotein|tumou?r|cancer|neutrino|\bquarks?\b|hadron|\bbosons?\b|lepton|galax|"
+    r"cosmolog|supernova|\bmice\b|\bmouse\b|enzym|photosynth|crystal structure|"
+    r"x-ray diffraction|synchrotron|beamline|\bstomata|\bvaccin|antibod|\bhiv\b|\bhsv\b|"
+    r"metabolic engineering|\bcations?\b|semiconductor|perovskite|\bwafers?\b",
     re.I,
 )
+# Subjects that are usually off-domain in a lab repository but have real building readings
+# ("battery storage for grid-interactive buildings", "airborne virus transmission indoors",
+# "soil thermal conductivity for ground-source heat pumps", "microbial growth on building
+# materials", "EV charging in residential buildings"): vetoed only when the TITLE carries no
+# unambiguous BUILT anchor.
+SOFT_KILL = re.compile(
+    r"\bcells?\b(?! phones?)|\bplasmas?\b|microb|bacteri|\bcatalys|electrolyte|"
+    r"\bbatter(?:y|ies)\b|\bsoils?\b|nanopartic|\bviral\b|\bvirus|"
+    r"transportation (?:secure|sector|network|electrification)|\bvehicles?\b|\bfleets?\b",
+    re.I,
+)
+
+
+def vetoed(title: str) -> bool:
+    """Off-domain title: a HARD_KILL term, or a SOFT_KILL term without a building anchor."""
+    return bool(HARD_KILL.search(title)) or (
+        bool(SOFT_KILL.search(title)) and not BUILT.search(title)
+    )
+
 
 # ANZSRC Fields-of-Research labels that eScholarship carries in `keywords`/`subjects`, e.g.
 # "3302 Building (for-2020)":
@@ -94,10 +110,10 @@ def relevant(title: str, keywords: list[str] | None = None,
     A Fields-of-Research architecture/building subject or an unambiguous BUILT concept passes. A
     BUILT_WEAK word passes alone only when ``strict`` is false (dedicated building units, which
     also consult keywords); in strict mode it needs an energy/thermal context in the title. A
-    KILL title never passes.
+    vetoed title (see ``vetoed``) never passes.
     """
     title = title or ""
-    if not title.strip() or KILL.search(title):
+    if not title.strip() or vetoed(title):
         return False
     if any(FOR_BUILT.match(s or "") for s in [*(subjects or ()), *(keywords or ())]):
         return True

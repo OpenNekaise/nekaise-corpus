@@ -31,7 +31,8 @@ def _page(nodes, more):
     )
 
 
-def _setup(monkeypatch, tmp_path, responses, known=(set(), set(), set())):
+def _setup(monkeypatch, tmp_path, responses, known=None):
+    known = known or (set(), set(), set())
     calls = []
     queue = iter(responses)
 
@@ -154,15 +155,22 @@ def test_strict_units_reject_ambiguous_titles(monkeypatch, tmp_path):
     assert [e["title"] for e in appended] == ["Energy performance of windows in homes"]
 
 
-def test_challenge_holds_rotation_without_proposals(monkeypatch, tmp_path):
-    challenge = SimpleNamespace(status_code=202, raise_for_status=lambda: None, json=lambda: {})
+def test_finder_identity_is_honest():
+    assert find_escholarship.UA.startswith("nekaise-corpus/")
+    assert "Mozilla" not in find_escholarship.UA
+
+
+@pytest.mark.parametrize("status", [202, 403, 429, 503])
+def test_challenge_holds_rotation_without_proposals(monkeypatch, tmp_path, status):
+    challenge = SimpleNamespace(status_code=status, raise_for_status=lambda: None,
+                                json=lambda: {})
     _, appended, files = _setup(monkeypatch, tmp_path, [challenge])
     monkeypatch.setattr(sys, "argv", ["find_escholarship.py", "--append"])
 
     find_escholarship.main()
 
     assert appended == []
-    assert "HTTP 202" in files["hold"].read_text()
+    assert f"HTTP {status}" in files["hold"].read_text()
     assert not files["next"].exists()
 
 
@@ -205,6 +213,38 @@ def test_relevance_gate_accepts_building_science(title):
     ],
 )
 def test_relevance_gate_rejects_observed_off_domain_titles(title):
+    assert not bes_relevance.relevant(title, strict=True)
+
+
+@pytest.mark.parametrize(
+    "title",
+    [
+        # measured 2026-09-24: all of these were vetoed by the old unconditional KILL list
+        "Battery storage for grid-interactive buildings",
+        "Indoor air quality and airborne virus transmission",
+        "Soil thermal conductivity for ground-source heat pumps",
+        "The Effects of Ventilation, Humidity, and Temperature on Bacterial Growth",
+        "iPlugie: Intelligent electric vehicle charging in buildings",
+        "SolarPlus Optimizer: Integrated Control of Solar, Batteries, and Flexible Loads for "
+        "Small Commercial Buildings",
+    ],
+)
+def test_soft_exclusions_are_rescued_by_a_building_anchor(title):
+    assert bes_relevance.relevant(title, strict=True)
+
+
+@pytest.mark.parametrize(
+    "title",
+    [
+        "Battery electrolyte degradation at high voltage",
+        "Airborne virus transmission in bats",
+        "Soil carbon under drought",
+        "Electric vehicle fleet charging economics",
+        "Genome of a bacterium isolated from building dust",  # hard veto beats the anchor
+        "Perovskite windows for buildings",
+    ],
+)
+def test_exclusions_without_anchor_or_hard_exclusions_still_veto(title):
     assert not bes_relevance.relevant(title, strict=True)
 
 
