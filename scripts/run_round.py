@@ -560,6 +560,7 @@ def main() -> int:
             )
             snap.restore()
             snap.discard()
+            settle_prune_quarantine(ROOT, run_id, "rolled_back")
             ops.run_event(run_id, "run_recovered")
             print(f"restored tracked state from interrupted run {run_id}")
         return 0
@@ -592,6 +593,30 @@ def main() -> int:
         ops.run_event(run_id, "run_failed", error=str(exc))
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
+
+
+def settle_prune_quarantine(root: Path, run_id: str, outcome: str, st=None, writer=None) -> None:
+    """Settle the bytes this round's prune quarantined (prune_corpus: moved aside before its
+    transaction, kept until the round ends): delete them when the round succeeded, move them back
+    when its metadata was rolled back. A quarantine whose transaction outcome is unknown is
+    decided by the store's current state (needs `st` and `writer`)."""
+    import prune_corpus
+
+    def settle(view=None):
+        return prune_corpus.settle_quarantines(root, view=view, run=run_id, outcome=outcome)
+
+    try:
+        if st is not None and writer is not None:
+            with st.read(writer=writer) as view:
+                counts = settle(view)
+        else:
+            counts = settle()
+    except Exception as exc:  # the round's outcome stands; the next prune settles the rest
+        ops.run_event(run_id, "prune_quarantine_unsettled", error=str(exc))
+        print(f"WARNING: prune quarantine of {run_id} not settled: {exc}", file=sys.stderr)
+        return
+    if any(counts.values()):
+        ops.run_event(run_id, "prune_quarantine_settled", outcome=outcome, **counts)
 
 
 # Pipeline steps that may write tracked state receive the round's store broker; verification gates
@@ -689,6 +714,7 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
         print(f"\nround {run_id}: {before} -> {after} training-eligible docs / "
               f"{tokens // 1_000_000}M tokens ({excluded} provenance rows excluded)")
         snapshot.discard()
+        settle_prune_quarantine(ROOT, run_id, "committed", st, writer)
         return 0
     except Exception:
         if snapshot is not None and not committed:
@@ -699,6 +725,7 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
                 )
                 snapshot.restore()
                 snapshot.discard()
+                settle_prune_quarantine(ROOT, run_id, "rolled_back", st, writer)
                 ops.run_event(run_id, "state_rolled_back")
             except Exception as rollback_exc:
                 ops.run_event(run_id, "rollback_failed", error=str(rollback_exc))

@@ -220,7 +220,8 @@ commits and the commit-replay shadow continue until stage 4.
   read legacy files; eligibility and host/vendor/backend contracts are still read from files
   outside the view (they must be validated against the view's pinned configuration before
   stage 4); backend-owned ledger and size validation; steps 5–7 (discovery writes and control state,
-  cleaner/loader/pruner through the broker, shared recovery and retiring legacy access).
+  cleaner/loader/pruner through the broker, shared recovery and retiring legacy access) — steps 5
+  and 6 are done (records below).
 
 ## Stage 3, step 5 record: discovery writes and control state (2026-09-24)
 
@@ -335,3 +336,88 @@ whole discovery phase in one transaction; runtime exhaustion is separated from c
   under a new round id. Stage-4 staging recovery must either preserve the computed batch as an
   immutable staged artifact and replay exactly it, or explicitly recognize a completed discovery
   step (its commit row) and skip to the next step.
+
+## Stage 3, step 6 record: loader, pruner and cleaner through the store (2026-09-24)
+
+Decided by Codex: one short transaction per logical metadata batch (usually one per step, several
+for loader checkpoints and bulk patches), never one across a round or across downloads;
+immutable request batches with distinct round/step/batch identities for exact retries; artifact
+side effects kept explicitly recoverable.
+
+- **Step sessions.** `store_broker.step_session(st, step)` gives a step its read view and ordered
+  batches. Under a broker (a round's mutating step, or a child of the maintainer's window) the
+  view is the inherited one and batch `b` runs as `<round>.<step>.<b>`; standalone the step takes
+  its own writer (the round lock, `--lock-timeout`, default 30 s) for the whole run and batch `b`
+  runs as `<step>-<UTC stamp>-<hex>.<b>`. The first batch expects the view's version, each later
+  one the version its predecessor committed. Every read happens before the first batch.
+  None of the three scripts calls `registry.write_manifest_rows`/`remove_ids`/`append_entries`/
+  `load_manifest_rows`/`load_entries`, `blocklist.add` or `ops.append_jsonl` any more
+  (`tests/test_pipeline_store.py` guards it with an AST check).
+- **Loader.** Reads entries (id order) and the manifest (legacy order: it picks extraction
+  templates) through the view. Every 25 recorded results is one transaction `ckpt-NNNN` upserting
+  exactly the rows recorded since the previous checkpoint (plus a final one); retry bookkeeping,
+  the per-run deferral handoff (`workspace/fetch-deferred.json`), drift reporting and extraction
+  reuse are unchanged; `--reextract` patches in bounded `reextract-NNNN` batches; `--verify` only
+  reads. **Intentional deviation:** a binding per-run host cap (`HOST_RUN_CAP`) now defers by
+  entry id instead of registry file order (the store keeps no file order), like find_wiki.
+- **Pruner.** Decisions are computed exactly as before over the legacy manifest order, then ONE
+  transaction `apply`: survivor metric updates (`update_manifest_fields`), registry and manifest
+  deletions per reason (tombstones `prune: <reason>`), blocklist additions and ledger rows.
+  **Bytes:** before the transaction the dropped documents' raw/text/corpus files are *moved* to
+  `workspace/prune-quarantine/<transaction>/` (with `record.json`: ids, files, state
+  moving → moved → committed). Standalone (and in the maintainer's window) they are deleted right
+  after the commit. Inside a round they are kept until the round ends: `run_round` deletes them
+  when the round succeeds and moves them back after restoring the round snapshot on rollback
+  (also `--recover`), so a failed round now restores bytes too. An unknown outcome (failed
+  transaction, killed process) is settled at the start of the next prune by the store's state —
+  every dropped row present: move back; none present: delete; idempotent and resumable.
+- **Cleaner.** corpus/ files are written first, outside transactions; then only the corpus fields
+  that changed are patched (`meta-NNNN`) and restricted rows' corpus fields unset
+  (`restricted-NNNN`), in batches of at most 20 000 rows in manifest shard order; the ruleset
+  stamp is published only after the last batch committed (IN-PROGRESS until then, so a crash
+  makes the next run rebuild and re-patch what did not commit; an unchanged ruleset reproduces
+  the same bytes, so an incremental run with nothing new commits no transaction).
+- **Routed manifest writes (performance).** A FileStore write view no longer loads the whole
+  manifest (~30-40 s, several GB) for targeted mutations: `upsert_manifest`,
+  `update_manifest_fields` and `delete_manifest` (and read views' `get_manifest` /
+  `resolve_artifact`) read only the shards their ids route to (`registry.manifest_shard`), and
+  `delete_entries` only the routed registry shards (like step 5's inserts). A shard is read as
+  text and parsed only where asked: rows are found by their canonical `"id": <json>` pair, and a
+  change is spliced in (changed lines removed, new lines inserted at their (topic, id) position by
+  binary search, every other line kept byte for byte), exactly the text a full re-render
+  produces; changes above 1/32 of a shard re-render it. `validate_layout` (lint, every round) now
+  checks what this relies on: every manifest row routed to its file, canonical, and in (topic, id)
+  order (+11 s on 164 s). Scans, aggregates, membership and `replace_manifest` still load the whole
+  table (documented), absorbing routed changes made earlier in the transaction. Routed registry
+  shards work the same way (`_RegistryShard`): entries are located by the `  - id:` walk
+  `remove_ids` uses, only the affected entry blocks are parsed (the before-images), removals cut
+  those blocks and appends are parsed back — instead of parsing whole shards (0.8 s each, three
+  times per shard in the first cut: 268 s for a 400-document prune over 52 shards).
+- **Journal.** Files roll by size within a UTC day (`<day>.jsonl`, `<day>.001.jsonl`, … at
+  32 MiB), so checkpoints do not rewrite (and back up) a growing file and no file nears the 80 MiB
+  gate; the commit lookup caches each file's commit rows by file identity, and the last sequence
+  number is read from each file's tail.
+- **Measured** on a copy of the committed data (1,620,815 manifest rows, 2.0 GB; 1.62M entries):
+  a 25-row loader checkpoint touching 25 shards (~550 MB) commits in ~3 s (it took 14 s with
+  whole-shard parsing and ~30-40 s as a whole-manifest rewrite; the first transaction of a process
+  adds ~3 s to index the commit rows of a 4.3 GB journal, later ones use the cache); a 400-document
+  prune over 52 manifest + 52 registry shards applies in 14.6 s including its ledger-evidence scan
+  (268 s with whole-shard YAML parsing); a full re-clean patching every row takes 81
+  transactions of 20 000 rows, 324 s (4 s each), and journals 4.27 GB in 128 rolled files. Reading
+  through a view costs more than the legacy readers: entries 143 s vs 130 s, the manifest in legacy
+  order 54 s vs 26 s (sort + per-row copies); the loader no longer rewrites the whole manifest per
+  checkpoint, which outweighs it. Lint (`validate_layout`) 175 s vs 164 s.
+- **Equivalence and recovery tests** (`tests/test_pipeline_store.py` against
+  `tests/legacy_pipeline.py`, the step-5 code): identical registry, manifest, blocklist and ledger
+  bytes (journal aside) and identical raw/text/corpus artifacts and hashes for the loader
+  (checkpoints, reuse, drift, retries, handoff, `--reextract`), the pruner (every drop reason,
+  DNS evidence, protected rows, survivor metrics) and the cleaner (pass-through and a ruleset
+  change, restricted rows, orphans, incremental re-runs); a failed checkpoint, a failed metadata
+  batch, a failed prune transaction and a prune killed after its commit each leave a consistent
+  state that the next run completes to the uninterrupted result; a real child prune under a round
+  broker; the same steps against PostgreSQL leave the same tables and artifacts.
+- **Open (for Codex).** The journal carries whole before/after rows, so a full re-clean (a
+  ruleset change patches every row) journals ~4.3 GB in rolled files and the loader/cleaner
+  now journal every row they change each round — the git footprint grows accordingly until
+  stage 4 moves the journal into PostgreSQL. Compact update events (changed fields only) would cut
+  it by an order of magnitude but change the event format both stores export; not done here.

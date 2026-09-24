@@ -41,7 +41,7 @@ not require a code change at every maintenance wake.
 | Path | What it is |
 |---|---|
 | `registry/` | The **registry** — one entry per source (`id` · `title` · `url` · `source` · `license` · `topic` · `format`), sharded per vein: `curated.yaml` (hand-picked — edit this to grow) + machine shards (`books` · `papers` · `reports` · `github` · `archive` · `crawl`), routed by id prefix (`scripts/registry.py`). |
-| `manifest/` | The **provenance + reproducibility record** — url, license, topic, sha256, bytes for every fetched doc. Sharded like the registry (`manifest/<shard>.jsonl`), with growing families split into stable hash buckets (currently CN/US patents and vendor literature) so no file nears GitHub's 100MB push limit; all I/O via `registry.py` (`load_manifest_rows` / `write_manifest_rows`). |
+| `manifest/` | The **provenance + reproducibility record** — url, license, topic, sha256, bytes for every fetched doc. Sharded like the registry (`manifest/<shard>.jsonl`), with growing families split into stable hash buckets (currently CN/US patents and vendor literature) so no file nears GitHub's 100MB push limit; written only through the store (`scripts/store.py`: the loader's checkpoints, the pruner's and cleaner's transactions), each change journaled in `registry/journal/`. |
 | `pruned_urls.txt` | **Blocklist** of URLs the quality gate dropped — finders dedup against it so discovery never re-churns pruned material. |
 | `registry/rotation.json` | **Excavation state** — the next page/offset/bucket per backend, advanced by `scripts/rotation.py` after each successful run. Committed, so the growth loop is resumable by anyone. |
 | `registry/backends.json` | **Control-plane config** — finder script, fixed arguments, enabled/paused state. `run_round.py` validates it against `rotation.json`, so new backends cannot silently miss automation. |
@@ -112,7 +112,9 @@ vein) · `find_ibpsa.py` IBPSA building-simulation proceedings (captcha-paced) �
 Laboratory of the Rockies (ex-NREL) building reports · `crawl_docs.py` doc sites) propose registry entries;
 `prune_corpus.py --apply` is the quality gate (logic in `scripts/quality.py`, golden-tested in
 `tests/`). URLs the pruner drops land in `pruned_urls.txt` (committed) and every finder skips them —
-rounds never re-churn pruned material.
+rounds never re-churn pruned material. A prune is one store transaction; the dropped documents'
+raw/text/corpus bytes wait in `workspace/prune-quarantine/<transaction>/` until it is settled
+(inside a round: until the round succeeds, or they move back when it rolls back).
 
 `scripts/clean_corpus.py` is the **cleaning stage**: `text/` → `corpus/`. The pruner is a
 *document-level* gate (keep or drop a whole doc); the cleaner works *within* a document, stripping

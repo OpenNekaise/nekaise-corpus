@@ -20,7 +20,16 @@ def test_extraction_workers_use_spawn_context():
     assert build_corpus.EXTRACTION_CONTEXT.get_start_method() == "spawn"
 
 
-def test_main_never_downloads_pointer_only_sources(monkeypatch, capsys):
+def _repo(monkeypatch, tmp_path, entries, manifest=(), restrictions=None):
+    import pipeline_repo
+    root = pipeline_repo.write_repo(tmp_path / "repo", entries=entries, manifest=manifest,
+                                    restrictions=restrictions)
+    pipeline_repo.point(monkeypatch, root)
+    return root
+
+
+def test_main_never_downloads_pointer_only_sources(monkeypatch, tmp_path, capsys):
+    import pipeline_repo
     pointer = {
         "id": "vendor-standard",
         "title": "Vendor standard",
@@ -30,9 +39,8 @@ def test_main_never_downloads_pointer_only_sources(monkeypatch, capsys):
         "topic": "standards_protocols",
         "format": "pdf",
     }
-    monkeypatch.setattr(build_corpus.registry, "load_entries", lambda: [pointer])
-    monkeypatch.setattr(build_corpus.registry, "load_eligibility", lambda: {})
-    monkeypatch.setattr(build_corpus, "load_manifest", lambda: {})
+    root = _repo(monkeypatch, tmp_path, [pointer])
+    before = pipeline_repo.tracked(root, journal=True)
     monkeypatch.setattr(
         build_corpus,
         "download_one",
@@ -45,9 +53,10 @@ def test_main_never_downloads_pointer_only_sources(monkeypatch, capsys):
     output = capsys.readouterr().out
     assert "pointer-only sources: 1 skipped by license policy" in output
     assert "sources: 0 total, 0 to fetch" in output
+    assert pipeline_repo.tracked(root, journal=True) == before  # no transaction at all
 
 
-def test_main_never_downloads_policy_restricted_sources(monkeypatch, capsys):
+def test_main_never_downloads_policy_restricted_sources(monkeypatch, tmp_path, capsys):
     restricted = {
         "id": "pat-cn123",
         "title": "Translated patent",
@@ -62,9 +71,8 @@ def test_main_never_downloads_policy_restricted_sources(monkeypatch, capsys):
             "match": {"id_prefix": "pat-cn"},
         },
     }
-    monkeypatch.setattr(build_corpus.registry, "load_entries", lambda: [restricted])
+    _repo(monkeypatch, tmp_path, [restricted])
     monkeypatch.setattr(build_corpus.registry, "load_eligibility", lambda: rules)
-    monkeypatch.setattr(build_corpus, "load_manifest", lambda: {})
     monkeypatch.setattr(
         build_corpus,
         "download_one",
@@ -515,17 +523,14 @@ def test_hard_failures_are_unchanged_and_recoverable_statuses_are_transient(
 
 
 def test_main_never_requests_or_records_suspended_hosts(tmp_path, monkeypatch, capsys):
+    import pipeline_repo
     src = {"id": "ope-lbnl", "title": "LBNL paper", "source": "openalex", "license": "cc-by",
            "url": "https://escholarship.org/content/qt1/qt1.pdf", "topic": "building_energy",
            "format": "pdf"}
     held = {**src, "id": "ope-held", "url": "https://escholarship.org/content/qt2/qt2.pdf",
             "status": "ok", "raw_path": "raw/openalex/ope-held.pdf"}
-    written = []
-    monkeypatch.setattr(build_corpus.registry, "load_entries", lambda: [src, dict(held)])
-    monkeypatch.setattr(build_corpus.registry, "load_eligibility", lambda: {})
-    monkeypatch.setattr(build_corpus, "load_manifest", lambda: {"ope-held": dict(held)})
-    monkeypatch.setattr(build_corpus, "write_manifest", written.append)
-    monkeypatch.setattr(build_corpus, "HERE", tmp_path)  # held doc's raw file is missing
+    root = _repo(monkeypatch, tmp_path, [src, pipeline_repo.entry_of(held)], manifest=[held])
+    before = pipeline_repo.tracked(root, journal=True)  # the held doc's raw file is missing
     monkeypatch.setattr(
         build_corpus, "download_one",
         lambda _s: (_ for _ in ()).throw(AssertionError("suspended host requested")),
@@ -535,7 +540,8 @@ def test_main_never_requests_or_records_suspended_hosts(tmp_path, monkeypatch, c
     build_corpus.main()
 
     assert "host fetch suspended" in capsys.readouterr().out
-    assert written == []  # no failure rows, nothing to age toward pruning
+    # no failure rows, nothing to age toward pruning: no transaction at all
+    assert pipeline_repo.tracked(root, journal=True) == before
 
 
 def test_escholarship_fetch_suspension_is_committed_policy():

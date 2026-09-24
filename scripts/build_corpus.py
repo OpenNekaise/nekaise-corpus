@@ -3,9 +3,10 @@
 
 Reads the registry (registry/*.yaml), downloads each source into raw/<source>/<id>.<ext>, extracts
 plain text into text/<id>.md, and records everything (incl. sha256 and quality metrics) in the
-sharded manifest (manifest/<shard>.jsonl, all I/O via registry.py). The committed manifest is the
-REPRODUCIBILITY record: a fresh clone runs this to fetch the SAME bytes, and the run reports how many
-reproduced exactly (sha256 matches the manifest) vs drifted (the source changed upstream) vs new.
+sharded manifest (manifest/<shard>.jsonl) through the store (scripts/store.py). The committed
+manifest is the REPRODUCIBILITY record: a fresh clone runs this to fetch the SAME bytes, and the
+run reports how many reproduced exactly (sha256 matches the manifest) vs drifted (the source
+changed upstream) vs new.
 
   python scripts/build_corpus.py            # fetch missing; report reproduced / drifted / new vs manifest
   python scripts/build_corpus.py --force    # re-fetch everything
@@ -13,7 +14,10 @@ reproduced exactly (sha256 matches the manifest) vs drifted (the source changed 
   python scripts/build_corpus.py --workers 16 --extract-workers 8
   python scripts/build_corpus.py --verify   # no download: re-hash local raw files against the manifest
 
-Idempotent, dedups identical bytes by sha256, checkpoints the manifest every 25 fetches. Downloads
+Idempotent, dedups identical bytes by sha256, checkpoints the manifest every 25 fetches — each
+checkpoint one short store transaction holding exactly the rows recorded since the previous one
+(ADR 0001 stage 3, step 6; through the round's broker inside a round, under this command's own
+writer standalone; downloads and extraction never run inside a transaction). Downloads
 are fairly interleaved across hosts with conservative host-specific request caps; extraction runs
 in a separate process pool so CPU work never holds a network slot. raw/ and text/ are git-ignored;
 respect each source's license (see README.md).
@@ -52,9 +56,12 @@ import requests
 
 import host_policy
 import ops
+import corpus_stats
 import markup_text
 import quality
 import registry
+import store
+import store_broker
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 RAW = HERE / "raw"
@@ -329,12 +336,53 @@ def extract_html(data: bytes) -> str:
     return "\n".join(out).strip()
 
 
-def load_manifest() -> dict:
-    return {r["id"]: r for r in registry.load_manifest_rows()}
+def load_entries(view) -> list[dict]:
+    """Every registry entry, in the store's order (by id). The legacy loader read shard files in
+    registry order; the store keeps no file order, so per-host caps now pick by id (see
+    cap_per_host)."""
+    out, cursor = [], None
+    while True:
+        page = view.scan(store.Table.ENTRIES, cursor=cursor, limit=store.MAX_PAGE)
+        out.extend(page.rows)
+        if page.next_cursor is None:
+            return out
+        cursor = page.next_cursor
 
 
-def write_manifest(rows: dict) -> None:
-    registry.write_manifest_rows(rows.values())
+def load_manifest(view) -> dict:
+    """Every manifest row by id, in the legacy manifest order (which row serves as the
+    extraction template for shared bytes depends on it)."""
+    return {r["id"]: r for r in corpus_stats.iter_manifest(view)}
+
+
+class Checkpoints:
+    """The loader's manifest writes: every CHECKPOINT_EVERY recorded results become ONE short
+    store transaction (upsert_manifest of exactly the rows recorded since the previous one), named
+    ckpt-0001, ckpt-0002, ... within the step — "<round>.fetch.ckpt-NNNN" through the round's
+    broker — so an interrupted run loses fewer than CHECKPOINT_EVERY results and a lost reply
+    can be retried exactly. Nothing is written when nothing was recorded."""
+
+    def __init__(self, session, prefix: str = "ckpt"):
+        self.session, self.prefix = session, prefix
+        self.pending: dict[str, dict] = {}
+        self.count = 0
+
+    def record(self, rec: dict) -> None:
+        self.pending[rec["id"]] = rec
+
+    def flush(self) -> None:
+        if not self.pending:
+            return
+        rows = [json.loads(json.dumps(r)) for r in self.pending.values()]  # immutable copies
+        self.count += 1
+        with self.session.batch(f"{self.prefix}-{self.count:04d}") as b:
+            b.upsert_manifest(rows)
+        self.pending.clear()
+
+
+CHECKPOINT_EVERY = 25
+# Rows per --reextract transaction (bounded, in manifest shard order).
+REEXTRACT_BATCH_ROWS = 5_000
 
 
 def _fetch_ec_deliverable(url: str) -> requests.Response:
@@ -657,7 +705,8 @@ def note_retry(rec: dict, previous: dict | None) -> None:
 
 
 def cap_per_host(srcs: list[dict], manifest: dict | None = None) -> tuple[list[dict], list[str]]:
-    """Apply HOST_RUN_CAP to NEW work; return (kept sources, deferred ids).
+    """Apply HOST_RUN_CAP to NEW work, in the order of `srcs` (the store's entry order, by id);
+    return (kept sources, deferred ids).
 
     Restoring a previously successful row (manifest status ok, local files missing, e.g. a fresh
     clone) is never capped: it would otherwise stay "ok without text" and be pruned as no-text.
@@ -734,10 +783,12 @@ def reextract_selector(sources: str = "", formats: str = "", ids_from: str = "")
 
 
 def reextract(manifest: dict, restrictions: dict, selection: dict | None = None,
-              topics: set[str] | None = None) -> tuple[int, int]:
+              topics: set[str] | None = None,
+              touched: list | None = None) -> tuple[int, int]:
     """Re-extract text/ (and manifest text metadata) for SELECTED eligible rows from their raw
     bytes. All given filters must match (AND). Returns (docs re-extracted, total ok chars over
-    the selected rows). Never downloads; rows without raw bytes are skipped."""
+    the selected rows). Never downloads; rows without raw bytes are skipped. The rows it changed
+    (in place) are appended to `touched`."""
     selection = selection or {}
     TEXT.mkdir(parents=True, exist_ok=True)
     chosen = [
@@ -767,6 +818,8 @@ def reextract(manifest: dict, restrictions: dict, selection: dict | None = None,
             r["extractor_version"] = EXTRACTOR_VERSION
             r["quality"] = quality.metrics(txt)
         done += 1
+        if touched is not None:
+            touched.append(r)
     tot = sum(r["text_chars"] for r in chosen if r.get("status") == "ok")
     return done, tot
 
@@ -793,14 +846,31 @@ def main() -> None:
                     help="with --reextract: file of document ids, one per line ('#' comments)")
     ap.add_argument("--verify", action="store_true",
                     help="re-hash local raw files against the manifest sha256; no download")
+    ap.add_argument("--lock-timeout", type=float, default=30,
+                    help="standalone runs wait this long for the round lock (default 30 s)")
     args = ap.parse_args()
     only = {t.strip() for t in args.only.split(",") if t.strip()}
     selection = reextract_selector(args.source, args.format, args.ids_from)
     if selection and not args.reextract:
         ap.error("--source/--format/--ids-from select rows for --reextract only")
 
+    st = store.open(root=HERE)
+    if args.verify and not args.reextract:  # read-only: a plain view (inherited in a round)
+        with st.read(timeout=args.lock_timeout) as view:
+            run(view, None, args, only, selection)
+        return
+    # Inside a round: the inherited view and the round's broker. Standalone: this command's own
+    # writer — the round lock, held for the whole run, so nothing else writes between its reads
+    # and its checkpoints (a round started meanwhile waits or fails, as it would on any writer).
+    with store_broker.step_session(st, "fetch", timeout=args.lock_timeout) as session:
+        run(session.view, session, args, only, selection)
+
+
+def run(view, session, args, only: set[str], selection: dict) -> None:
+    """The loader over one read view; `session` (None for --verify) receives its writes. Every
+    read happens before the first write."""
     restrictions = registry.load_eligibility()
-    all_srcs = registry.load_entries()
+    all_srcs = load_entries(view)
     pointer_only = sum(
         source.get("license") in registry.POINTER_ONLY_LICENSES for source in all_srcs
     )
@@ -817,11 +887,15 @@ def main() -> None:
         print(f"pointer-only sources: {pointer_only} skipped by license policy")
     if policy_restricted:
         print(f"policy-restricted sources: {policy_restricted} skipped by eligibility policy")
-    manifest = load_manifest()
+    manifest = load_manifest(view)
 
     if args.reextract:
-        done, tot = reextract(manifest, restrictions, selection, only)
-        write_manifest(manifest)
+        touched: list[dict] = []
+        done, tot = reextract(manifest, restrictions, selection, only, touched)
+        by_id = {r["id"]: r for r in touched}
+        for n, chunk in enumerate(store_broker.shard_batches(by_id, REEXTRACT_BATCH_ROWS), 1):
+            with session.batch(f"reextract-{n:04d}") as b:
+                b.upsert_manifest([by_id[sid] for sid in chunk])
         print(f"re-extracted {done} docs | total text {tot / 1e6:.2f} M chars")
         return
 
@@ -877,6 +951,7 @@ def main() -> None:
         )
     }
     repro = drift = new = done = 0
+    checkpoints = Checkpoints(session)
     print(
         f"sources: {len(srcs)} total, {len(todo)} to fetch "
         f"({'forced' if args.force else 'missing only'}, {args.workers} download workers, "
@@ -888,6 +963,7 @@ def main() -> None:
         done += 1
         note_retry(rec, manifest.get(rec["id"]))
         manifest[rec["id"]] = rec
+        checkpoints.record(rec)
         if rec["status"] == "ok":
             exp = expected.get(rec["id"])
             tag = "reproduced" if exp == rec["sha256"] else ("DRIFTED" if exp else "new")
@@ -905,8 +981,8 @@ def main() -> None:
                 f"{rec.get('error')}",
                 flush=True,
             )
-        if done % 25 == 0:
-            write_manifest(manifest)  # checkpoint so an interrupted run loses <25 extractions
+        if done % CHECKPOINT_EVERY == 0:
+            checkpoints.flush()  # an interrupted run loses <25 extractions
 
     todo, deferred_ids = cap_per_host(todo, manifest)
     write_deferred(deferred_ids)
@@ -959,8 +1035,7 @@ def main() -> None:
                     record_result(extracted)
                     for duplicate in waiting_by_sha.pop(digest, []):
                         record_result(reuse_extraction(duplicate, extracted))
-    if todo:
-        write_manifest(manifest)
+    checkpoints.flush()
 
     seen: dict = {}
     for r in manifest.values():

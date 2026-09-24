@@ -371,6 +371,99 @@ def client() -> Client | None:
     return Client(path, cap, rnd)
 
 
+class StepSession:
+    """A pipeline step's reads and its ordered metadata batches (ADR 0001 stage 3, step 6).
+
+    `view` is the step's read view: the inherited view of the round (or maintenance window) under
+    a broker, else a view under the step's own writer. Each batch is ONE short store transaction
+    with a distinct identity — "<round>.<step>.<batch>" through the broker, "<session>.<batch>"
+    standalone — and an immutable request list, so an identical retry after a lost reply is a
+    no-op and a different batch under a used identity is refused. The first batch expects the
+    view's version; each later one the version its predecessor committed, i.e. only this step
+    may have changed the store since it read. Batch names must be unique within a session."""
+
+    def __init__(self, st, step: str, view, *, client: "Client | None" = None,
+                 writer: "store.WriterToken | None" = None, session_id: str | None = None):
+        self.st, self.step, self.view = st, step, view
+        self._client, self._writer, self.session_id = client, writer, session_id
+        self.version = view.version()
+        self.transactions: list[str] = []  # identities of the batches committed, in order
+
+    @property
+    def brokered(self) -> bool:
+        return self._client is not None
+
+    @property
+    def round_id(self) -> str | None:
+        """The round (or maintenance window) whose broker runs the batches, if any."""
+        return self._client.round_id if self._client is not None else None
+
+    def identity(self, batch: str) -> str:
+        """The store transaction id batch `batch` runs (or ran) as."""
+        if self._client is not None:
+            return f"{self._client.round_id}.{self.step}.{batch}"
+        return f"{self.session_id}.{batch}"
+
+    def submit(self, batch: str, requests: list[dict]) -> list:
+        """Run `requests` (the _Batch/store request format) as one transaction; [] and no
+        transaction when there are none."""
+        if not _BATCH_ID.fullmatch(batch):
+            raise BrokerError("batch names must be plain names")
+        if not requests:
+            return []
+        requests = json.loads(json.dumps(requests))  # immutable: a private, plain-data copy
+        if self._client is not None:
+            results = self._client.submit(self.step, batch, requests, self.version)
+            self.version = self._client.last_version
+            self.transactions.append(self.identity(batch))
+            return results
+        run_id = store._check_run_id(self.identity(batch))
+        with self.st.transaction(run_id, expected_version=self.version,
+                                 writer=self._writer) as tx:
+            results = [getattr(tx, r["call"])(**_bind(r["call"], list(r.get("args") or []),
+                                                     dict(r.get("kwargs") or {})))
+                       for r in requests]
+        self.version = self.st.version()
+        self.transactions.append(run_id)
+        return results
+
+    @contextmanager
+    def batch(self, name: str) -> Iterator[_Batch]:
+        """Collect mutations; submit them as one transaction when the block exits cleanly."""
+        b = _Batch()
+        yield b
+        b.results = self.submit(name, b.requests)
+
+
+def shard_batches(ids, size: int) -> list[list[str]]:
+    """`ids` in manifest shard order (then id), cut into batches of at most `size`: bounded
+    transactions that each touch few manifest shards."""
+    ordered = sorted(dict.fromkeys(ids), key=lambda sid: (store.registry.manifest_shard(sid), sid))
+    return [ordered[i:i + size] for i in range(0, len(ordered), size)]
+
+
+@contextmanager
+def step_session(st, step: str, *, timeout: float = 30.0,
+                 writer: "store.WriterToken | None" = None) -> Iterator[StepSession]:
+    """Open a StepSession: under a broker (a round's mutating step, or a child of the maintenance
+    window) the inherited read view and the broker; otherwise the step's own writer — the round
+    lock, waited for at most `timeout` seconds, held for the whole session so nothing else writes
+    between its reads and its batches — or `writer` when the caller already holds one."""
+    if not _BATCH_ID.fullmatch(step):
+        raise BrokerError("step must be a plain name")
+    if (c := client()) is not None:
+        with st.read() as view:
+            yield StepSession(st, step, view, client=c)
+        return
+    session_id = store._check_run_id(
+        f"{step}-{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}-{secrets.token_hex(4)}")
+    with ExitStack() as stack:
+        if writer is None:
+            writer = stack.enter_context(st.writer(timeout=timeout))
+        with st.read(writer=writer) as view:
+            yield StepSession(st, step, view, writer=writer, session_id=session_id)
+
+
 def run_batch(st, step: str, body, *, writer: "store.WriterToken | None" = None,
               timeout: float = 30.0):
     """Run a standalone command's read-compute-write as ONE store transaction, wherever it runs.

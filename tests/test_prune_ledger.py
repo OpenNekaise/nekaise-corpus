@@ -7,10 +7,6 @@ import registry
 
 
 def test_prune_ledger_records_reason_and_blocklist_decision(tmp_path, monkeypatch):
-    reg = tmp_path / "registry"
-    reg.mkdir()
-    monkeypatch.setattr(registry, "REG_DIR", reg)
-    monkeypatch.setattr(ops, "WORKSPACE", tmp_path / "workspace")
     rows = [{
         "id": "ost-bad",
         "url": "https://example.org/bad.pdf",
@@ -21,17 +17,42 @@ def test_prune_ledger_records_reason_and_blocklist_decision(tmp_path, monkeypatc
         "status": "ok",
         "quality": {"chars": 3},
     }]
+    monkeypatch.setenv("NEKAISE_RUN_ID", "run-7")
 
-    assert prune_corpus.write_prune_ledger(
-        rows, {"ost-bad": "thin"}, {"https://example.org/bad.pdf"},
-    ) == 1
+    got = prune_corpus.prune_ledger_rows(
+        rows, {"ost-bad": "thin"}, {"https://example.org/bad.pdf"}, now="2026-09-24T00:00:00Z")
 
-    path = registry.prune_ledger_path("ost-bad")
-    assert path.parent == reg
-    got = json.loads(path.read_text())
-    assert got["id"] == "ost-bad"
-    assert got["reason"] == "thin"
-    assert got["blocklisted"] is True
+    assert len(got) == 1
+    assert got[0]["id"] == "ost-bad" and got[0]["reason"] == "thin"
+    assert got[0]["blocklisted"] is True and got[0]["run_id"] == "run-7"
+    assert set(got[0]) <= set(__import__("store").LEDGER_FIELDS)
+
+
+def test_prune_ledger_rows_append_the_legacy_bytes(tmp_path, monkeypatch):
+    """The store appends ledger rows to registry/pruned-<bucket>.jsonl exactly as the legacy
+    ops.append_jsonl writer did."""
+    import legacy_pipeline
+    import store
+    rows = [{"id": f"ost-{n}", "url": f"https://example.org/{n}.pdf", "title": f"T{n}",
+             "status": "failed", "error": "404"} for n in range(40)]
+    drop = {r["id"]: "failed" for r in rows}
+    monkeypatch.setattr(prune_corpus.time, "strftime", lambda *_a: "2026-09-24T00:00:00Z")
+    legacy, new = tmp_path / "legacy", tmp_path / "new"
+    for root in (legacy, new):
+        (root / "registry").mkdir(parents=True)
+    monkeypatch.setattr(registry, "REG_DIR", legacy / "registry")
+    monkeypatch.setattr(ops, "WORKSPACE", legacy / "workspace")
+    legacy_pipeline.legacy_write_prune_ledger(rows, drop, {"https://example.org/3.pdf"})
+    st = store.FileStore(new)
+    ledger = prune_corpus.prune_ledger_rows(rows, drop, {"https://example.org/3.pdf"})
+    with st.writer() as w:
+        with st.transaction("t", expected_version=st.version(), writer=w) as tx:
+            tx.ledger_append(ledger)
+    names = sorted(p.name for p in (legacy / "registry").glob("pruned-*.jsonl"))
+    assert len(names) > 1
+    assert names == sorted(p.name for p in (new / "registry").glob("pruned-*.jsonl"))
+    for name in names:
+        assert (legacy / "registry" / name).read_bytes() == (new / "registry" / name).read_bytes()
 
 
 def test_legacy_prune_ledger_migrates_without_losing_or_duplicating_rows(

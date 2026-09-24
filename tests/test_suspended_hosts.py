@@ -86,21 +86,17 @@ def test_clean_check_passes_on_a_fresh_clone_and_reports_unavailable(
 
 
 def _prune(monkeypatch, tmp_path, rows):
-    removed, blocked = [], []
-    monkeypatch.setattr(prune_corpus, "HERE", tmp_path)
+    """prune --apply over a store at tmp_path holding `rows`; returns (removed ids, blocked)."""
+    import pipeline_repo
+    pipeline_repo.write_repo(tmp_path, entries=[pipeline_repo.entry_of(r) for r in rows],
+                             manifest=rows)
+    pipeline_repo.point(monkeypatch, tmp_path, policy=POLICY)
     monkeypatch.setattr(prune_corpus, "deferred_ids", lambda: set())
-    monkeypatch.setattr(prune_corpus.host_policy, "load", lambda: POLICY)
-    monkeypatch.setattr(prune_corpus.registry, "load_manifest_rows", lambda: rows)
-    monkeypatch.setattr(prune_corpus.registry, "load_prune_ledger_rows", lambda: [])
-    monkeypatch.setattr(prune_corpus.registry, "remove_ids",
-                        lambda ids: removed.extend(ids) or len(ids))
-    monkeypatch.setattr(prune_corpus.registry, "write_manifest_rows", lambda _k: None)
-    monkeypatch.setattr(prune_corpus.blocklist, "add",
-                        lambda urls: blocked.extend(urls) or len(urls))
-    monkeypatch.setattr(prune_corpus, "write_prune_ledger", lambda *_a: 0)
+    before = pipeline_repo.entry_ids(tmp_path)
     monkeypatch.setattr(sys, "argv", ["prune_corpus.py", "--apply"])
     prune_corpus.main()
-    return set(removed), blocked
+    blocked = [u for u in (tmp_path / "pruned_urls.txt").read_text().splitlines() if u]
+    return before - pipeline_repo.entry_ids(tmp_path), blocked
 
 
 def _mirror_pair(tmp_path, suspended_has_text):

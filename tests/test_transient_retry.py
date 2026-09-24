@@ -5,6 +5,7 @@ removes is never rediscovered. The loader marks such rows `transient`; the prune
 a bounded retry window and never blocklists them.
 """
 import sys
+from pathlib import Path
 from datetime import datetime, timedelta, timezone
 
 import pytest
@@ -45,30 +46,34 @@ def test_transient_rows_are_never_blocklisted_even_with_403():
 
 
 def _run_prune(monkeypatch, rows, deferred=None, tmp_path=None):
-    removed, blocked, written = [], [], []
+    """prune --apply over a throwaway store holding `rows` (and their registry entries); returns
+    (registry entries removed, urls blocklisted, manifest ids kept)."""
+    import tempfile
+
+    import pipeline_repo
+    root = pipeline_repo.write_repo(
+        Path(tempfile.mkdtemp(dir=tmp_path)) if tmp_path else Path(tempfile.mkdtemp()),
+        entries=[pipeline_repo.entry_of(r) for r in rows], manifest=rows)
+    pipeline_repo.point(monkeypatch, root)
     if deferred is None:
         monkeypatch.setattr(prune_corpus, "deferred_ids", lambda: set())
     else:  # the real hand-off file, written by the loader of the same run
         monkeypatch.setenv("NEKAISE_RUN_ID", "run-1")
-        path = tmp_path / "fetch-deferred.json"
+        path = root / "fetch-deferred.json"
         monkeypatch.setattr(build_corpus, "deferred_path", lambda: path)
         build_corpus.write_deferred(deferred)
         monkeypatch.setattr(prune_corpus, "deferred_ids",
                             lambda real=prune_corpus.deferred_ids: real(path))
-    monkeypatch.setattr(prune_corpus.registry, "load_manifest_rows", lambda: rows)
-    monkeypatch.setattr(prune_corpus.registry, "load_prune_ledger_rows", lambda: [])
-    monkeypatch.setattr(prune_corpus.registry, "remove_ids",
-                        lambda ids: removed.extend(ids) or len(ids))
-    monkeypatch.setattr(prune_corpus.registry, "write_manifest_rows", written.extend)
-    monkeypatch.setattr(prune_corpus.blocklist, "add",
-                        lambda urls: blocked.extend(urls) or len(urls))
-    monkeypatch.setattr(prune_corpus, "write_prune_ledger", lambda *_a: 0)
+    before = pipeline_repo.entry_ids(root)
     monkeypatch.setattr(sys, "argv", ["prune_corpus.py", "--apply"])
     prune_corpus.main()
-    return set(removed), blocked, {r["id"] for r in written}
+    blocked = [u for u in (root / "pruned_urls.txt").read_text().splitlines() if u]
+    return (before - pipeline_repo.entry_ids(root), blocked,
+            set(pipeline_repo.manifest_rows(root)))
 
 
-def test_prune_keeps_pending_retries_and_expires_old_ones_without_blocklisting(monkeypatch):
+def test_prune_keeps_pending_retries_and_expires_old_ones_without_blocklisting(monkeypatch,
+                                                                                tmp_path):
     now = datetime.now(timezone.utc).replace(tzinfo=None)
     rows = [
         _failed("ibp-pending", transient=True, retry_attempts=1,
@@ -78,7 +83,7 @@ def test_prune_keeps_pending_retries_and_expires_old_ones_without_blocklisting(m
         _failed("ibp-hard", http_status=404, error="404 Client Error"),
     ]
 
-    removed, blocked, kept = _run_prune(monkeypatch, rows)
+    removed, blocked, kept = _run_prune(monkeypatch, rows, tmp_path=tmp_path)
 
     assert removed == {"ibp-expired", "ibp-hard"}
     assert kept == {"ibp-pending"}  # stays in registry + manifest for the next loader run
@@ -172,11 +177,12 @@ def test_round_prune_fails_closed_on_missing_or_corrupt_handoff(monkeypatch, tmp
 
 
 def test_prune_main_exits_nonzero_without_the_handoff(monkeypatch, tmp_path, capsys):
-    monkeypatch.setenv("NEKAISE_RUN_ID", "run-1")
-    monkeypatch.setattr(prune_corpus.ops, "WORKSPACE", tmp_path)  # no handoff written
-    monkeypatch.setattr(prune_corpus.registry, "load_manifest_rows", lambda: [])
-    monkeypatch.setattr(prune_corpus.registry, "remove_ids",
-                        lambda _ids: pytest.fail("must not prune without the handoff"))
+    import pipeline_repo
+    root = pipeline_repo.write_repo(tmp_path / "repo", manifest=[_failed("ibp-a")],
+                                    entries=[pipeline_repo.entry_of(_failed("ibp-a"))])
+    pipeline_repo.point(monkeypatch, root)
+    monkeypatch.setenv("NEKAISE_RUN_ID", "run-1")  # no handoff written
+    before = pipeline_repo.tracked(root)
     monkeypatch.setattr(sys, "argv", ["prune_corpus.py", "--apply"])
 
     with pytest.raises(SystemExit) as exc:
@@ -184,6 +190,7 @@ def test_prune_main_exits_nonzero_without_the_handoff(monkeypatch, tmp_path, cap
 
     assert exc.value.code == 1
     assert "refusing to prune" in capsys.readouterr().err
+    assert pipeline_repo.tracked(root, journal=True) == before  # nothing written
 
 
 def test_standalone_load_writes_no_handoff(monkeypatch, tmp_path):
@@ -193,27 +200,24 @@ def test_standalone_load_writes_no_handoff(monkeypatch, tmp_path):
     assert not path.exists()
 
 
-def test_suspended_host_rows_stay_as_they_are(monkeypatch):
+def test_suspended_host_rows_stay_as_they_are(monkeypatch, tmp_path):
     held = _ok_without_text("ope-held", "https://escholarship.org/content/qt2/qt2.pdf")
     failed = dict(_failed("ope-failed"), url="https://escholarship.org/content/qt3/qt3.pdf")
 
-    removed, blocked, kept = _run_prune(monkeypatch, [held, failed])
+    removed, blocked, kept = _run_prune(monkeypatch, [held, failed], tmp_path=tmp_path)
 
     assert removed == set() and blocked == []
     assert kept == {"ope-held", "ope-failed"}
 
 
 def test_81_ibpsa_restorations_are_all_fetched_despite_the_run_cap(tmp_path, monkeypatch):
+    import pipeline_repo
     rows = {f"ibp-{n}": {**_ok_without_text(f"ibp-{n}"), "format": "pdf",
                          "raw_path": f"raw/ibpsa/ibp-{n}.pdf"} for n in range(81)}
+    root = pipeline_repo.write_repo(tmp_path / "repo", manifest=list(rows.values()),
+                                    entries=[pipeline_repo.entry_of(r) for r in rows.values()])
+    pipeline_repo.point(monkeypatch, root)
     requested = []
-    monkeypatch.setattr(build_corpus.registry, "load_entries",
-                        lambda: [dict(r) for r in rows.values()])
-    monkeypatch.setattr(build_corpus.registry, "load_eligibility", lambda: {})
-    monkeypatch.setattr(build_corpus, "load_manifest",
-                        lambda: {k: dict(v) for k, v in rows.items()})
-    monkeypatch.setattr(build_corpus, "write_manifest", lambda _m: None)
-    monkeypatch.setattr(build_corpus, "HERE", tmp_path)
     monkeypatch.setattr(build_corpus, "deferred_path", lambda: tmp_path / "deferred.json")
     monkeypatch.setattr(build_corpus, "download_one",
                         lambda src: requested.append(src["id"]) or {
@@ -241,6 +245,6 @@ def test_nlr_timeout_survives_prune_for_retry(tmp_path, monkeypatch):
     })
     build_corpus.note_retry(row, None)
 
-    removed, blocked, kept = _run_prune(monkeypatch, [row])
+    removed, blocked, kept = _run_prune(monkeypatch, [row], tmp_path=tmp_path)
 
     assert kept == {"nlr-x"} and removed == set() and blocked == []

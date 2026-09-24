@@ -29,6 +29,11 @@ already hit once (MIN_ALPHA_CJK). Structural rules are script-agnostic by constr
 
 corpus/ is built FROM THE MANIFEST, never from a directory listing, so it can only ever contain
 docs that have a provenance row. corpus/ is git-ignored — like raw/ and text/, it never ships.
+
+The manifest is read and patched through the store (ADR 0001 stage 3, step 6): corpus/ files are
+written first, outside any transaction; then only the corpus fields that changed are patched (and
+restricted rows' corpus fields unset) in bounded batches, each one short transaction; the ruleset
+stamp is published only after the last batch committed.
 """
 from __future__ import annotations
 
@@ -43,9 +48,10 @@ from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
 import corpus_stats
+import ops
 import registry
 import store
-import ops
+import store_broker
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 TEXT = HERE / "text"
@@ -57,6 +63,10 @@ HEADER_SEP = "\n---\n\n"  # build_corpus's provenance header terminator (quality
 # CPU-bound (regex over 13GB), so scale with cores but leave headroom: this stage runs inside the
 # daily dig, which may be fetching at the same time.
 DEFAULT_WORKERS = max(1, min(16, (os.cpu_count() or 4) - 2))
+# Rows per metadata transaction. A full re-clean (a ruleset change) patches every row: bounded
+# batches keep each transaction's journal and memory small, in manifest shard order so each
+# shard is rewritten about once per batch that touches it.
+METADATA_BATCH_ROWS = 20_000
 
 # ---------------------------------------------------------------------------------------------
 # Rules. Each takes the body's lines and returns the SET OF INDICES to drop. Doc-level (not
@@ -432,7 +442,7 @@ def main() -> None:
                          "or missing files); exit 1 on drift. Writes nothing.")
     ap.add_argument("--force", action="store_true", help="rewrite every doc, ignore the stamp")
     ap.add_argument("--lock-timeout", type=float, default=60,
-                    help="standalone --check/--report wait this long for the round lock")
+                    help="standalone runs wait this long for the round lock")
     ap.add_argument("--workers", type=int, default=DEFAULT_WORKERS,
                     help=f"parallel worker processes (default {DEFAULT_WORKERS} on this machine)")
     args = ap.parse_args()
@@ -445,14 +455,19 @@ def main() -> None:
 
     rules = parse_rules(stamped_ruleset() if args.rules == "stamp" else args.rules)
     restrictions = registry.load_eligibility()
-    if args.report or args.check:
-        # read-only modes: one consistent store view, rows in the legacy manifest order (the
-        # seeded per-shard sample and first-N diagnostics depend on it). The build mode still
-        # rewrites the manifest through registry.py until its stage-3 step converts it.
-        with store.open(root=HERE).read(timeout=args.lock_timeout) as view:
-            rows = list(corpus_stats.iter_manifest(view))
-    else:
-        rows = registry.load_manifest_rows()
+    st = store.open(root=HERE)
+    if not (args.report or args.check):
+        # build mode: the round's inherited view and broker, or this command's own writer (the
+        # round lock) for the whole read-clean-patch sequence.
+        with store_broker.step_session(st, "clean", timeout=args.lock_timeout) as session:
+            rows = list(corpus_stats.iter_manifest(session.view))
+            todo, restricted = partition_training_rows(rows, restrictions)
+            build(session, todo, restricted, rules, args)
+        return
+    # read-only modes: one consistent store view, rows in the legacy manifest order (the seeded
+    # per-shard sample and first-N diagnostics depend on it).
+    with st.read(timeout=args.lock_timeout) as view:
+        rows = list(corpus_stats.iter_manifest(view))
     todo, restricted = partition_training_rows(rows, restrictions)
 
     # --------------------------------------------------------------------- report mode
@@ -563,7 +578,49 @@ def main() -> None:
         print("OK — corpus/ matches the manifest exactly")
         return
 
-    # --------------------------------------------------------------------- build corpus/
+
+def _same_value(a, b) -> bool:
+    """Whether two field values are the same stored JSON (1 vs 1.0 vs true differ)."""
+    return store.canonical_row({"v": a}) == store.canonical_row({"v": b})
+
+
+def corpus_patches(todo: list[dict], before: dict[str, dict]) -> dict[str, dict]:
+    """The corpus fields that changed per row (in CORPUS_FIELDS order, as the legacy writer
+    appended new keys), against `before` (id -> the row's corpus fields when read)."""
+    patches = {}
+    for r in todo:
+        old = before[r["id"]]
+        patch = {f: r[f] for f in registry.CORPUS_FIELDS
+                 if f in r and (f not in old or not _same_value(old[f], r[f]))}
+        if patch:
+            patches[r["id"]] = patch
+    return patches
+
+
+def commit_metadata(session, patches: dict[str, dict], cleared: list[str]) -> int:
+    """Patch the manifest in bounded batches, each one short store transaction: first unset the
+    corpus fields of policy-restricted rows, then set the changed corpus fields. Batches follow
+    manifest shard order, so a batch touches few shards. Returns the number of transactions."""
+    n = 0
+    for chunk in store_broker.shard_batches(cleared, METADATA_BATCH_ROWS):
+        n += 1
+        with session.batch(f"restricted-{n:04d}") as b:
+            b.update_manifest_fields({sid: {} for sid in chunk}, unset=registry.CORPUS_FIELDS)
+    m = 0
+    for chunk in store_broker.shard_batches(list(patches), METADATA_BATCH_ROWS):
+        m += 1
+        with session.batch(f"meta-{m:04d}") as b:
+            b.update_manifest_fields({sid: patches[sid] for sid in chunk})
+    return n + m
+
+
+def build(session, todo: list[dict], restricted: list[dict], rules: list[str], args) -> None:
+    """Refresh corpus/ and record it. Artifacts (corpus/*.md) are written first, outside any
+    transaction; then the changed corpus fields are patched in short transactions; the ruleset
+    stamp is published only after the last one committed. Until then the stamp reads
+    IN-PROGRESS, so a crash anywhere in between makes the next run rebuild every document and
+    re-patch whatever did not commit (a rebuild with an unchanged ruleset reproduces the same
+    bytes, hence no spurious patches)."""
     CORPUS.mkdir(parents=True, exist_ok=True)
     stamp_now = ",".join(rules) if rules else "none"
     stamp_was = STAMP.read_text().strip() if STAMP.exists() else None
@@ -583,7 +640,8 @@ def main() -> None:
 
     attribution: Counter = Counter()
     stats: Counter = Counter()
-    cleared = clear_corpus_metadata(restricted)
+    before = {r["id"]: {f: r[f] for f in registry.CORPUS_FIELDS if f in r} for r in todo}
+    cleared = [r["id"] for r in restricted if any(f in r for f in registry.CORPUS_FIELDS)]
     by_id = {r["id"]: r for r in todo}
     tasks = [(r["id"], r["text_path"], rules, rebuild) for r in todo]
 
@@ -609,6 +667,7 @@ def main() -> None:
 
     # Drop other corpus files with no manifest row (pruned docs, renamed ids) — corpus/ mirrors
     # the provenance record exactly, so a training run over corpus/* can't read unprovenanced text.
+    # Derived bytes only: text/ still holds every retained document's verbatim source.
     live = {f"{r['id']}.md" for r in todo}
     orphans = [
         p for p in CORPUS.glob("*.md")
@@ -617,15 +676,17 @@ def main() -> None:
     for p in orphans:
         p.unlink()
 
-    registry.write_manifest_rows(rows)
-    # last: only a fully-finished run may claim its ruleset
+    patches = corpus_patches(todo, before)
+    batches = commit_metadata(session, patches, cleared)
+    # last: only a fully-finished run (every metadata batch committed) may claim its ruleset
     ops.atomic_write_text(STAMP, stamp_now + "\n")
 
     kept = sum(r.get("corpus_chars", 0) for r in todo)
     print(f"corpus/: {stats['written']} written | {stats['up-to-date']} up-to-date | "
           f"{stats['missing-text']} missing text | {len(orphans)} orphans removed")
-    print(f"policy restricted: {len(restricted)} rows | {cleared} manifest rows cleared | "
+    print(f"policy restricted: {len(restricted)} rows | {len(cleared)} manifest rows cleared | "
           f"{quarantined} corpus files quarantined")
+    print(f"manifest: {len(patches)} rows patched in {batches} transaction(s)")
     print(f"ruleset: {stamp_now}")
     print(f"corpus chars: {kept/1e6:.1f}M ({kept//4/1e6:.0f}M tokens)")
     if attribution:
