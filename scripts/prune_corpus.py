@@ -80,20 +80,38 @@ def retry_pending(row: dict, now: datetime | None = None) -> bool:
     return now - first < timedelta(days=RETRY_MAX_AGE_DAYS)
 
 
+def _usable_text(row: dict) -> bool:
+    text_path = row.get("text_path")
+    return row.get("status") == "ok" and bool(text_path) and (HERE / text_path).exists()
+
+
+class HandoffError(RuntimeError):
+    """This run's loader deferral handoff is missing, corrupt or from another run."""
+
+
 def deferred_ids(path: Path | None = None) -> set[str]:
     """Ids this round's loader only deferred (build_corpus.write_deferred), never judged.
 
-    Honoured only when written by the same run (NEKAISE_RUN_ID), so a stale file from an older
-    run cannot shield anything.
+    The handoff is keyed by a non-empty shared run token (NEKAISE_RUN_ID, set by run_round for
+    both steps). Standalone prunes (no run id) ignore any handoff file entirely. Inside a round
+    the handoff is expected: missing, corrupt or mismatched fails closed with HandoffError rather
+    than silently dropping the protection.
     """
+    run_id = os.environ.get("NEKAISE_RUN_ID") or ""
+    if not run_id:
+        return set()
     path = path or ops.WORKSPACE / "fetch-deferred.json"
     try:
         data = json.loads(path.read_text())
-    except (OSError, ValueError):
-        return set()
-    if not isinstance(data, dict) or data.get("run_id") != os.environ.get("NEKAISE_RUN_ID"):
-        return set()
-    return {str(sid) for sid in data.get("ids") or []}
+    except (OSError, ValueError) as exc:
+        raise HandoffError(f"loader deferral handoff unreadable for run {run_id}: {exc}") from exc
+    ids = data.get("ids") if isinstance(data, dict) else None
+    if not isinstance(data, dict) or not data.get("run_id") or not isinstance(ids, list):
+        raise HandoffError(f"loader deferral handoff malformed for run {run_id}")
+    if data["run_id"] != run_id:
+        raise HandoffError(
+            f"loader deferral handoff belongs to run {data['run_id']!r}, not {run_id!r}")
+    return {str(sid) for sid in ids}
 
 
 def protected_ids(manifest: list[dict], policy: dict[str, dict],
@@ -240,18 +258,27 @@ def main() -> None:
         ap.error(str(exc))
     # near-dup gate: seed titles are always kept; a discovered doc whose normalized title already
     # exists (same paper from another source, v1/v2, etc.) is dropped so CPT doesn't over-weight it.
+    policy = host_policy.load()
+    try:
+        deferred = deferred_ids()
+    except HandoffError as exc:
+        print(f"ERROR: {exc}; refusing to prune without the loader handoff", file=sys.stderr)
+        raise SystemExit(1)
+    protected = protected_ids(manifest, policy, deferred)
+    # Only a copy whose text is actually retained here may claim a title or bytes and displace an
+    # alternative: a suspended-host row missing locally must never destroy an available mirror.
     seen_titles = {registry.norm(r.get("title")) for r in manifest
-                   if not registry.discovered(r["id"]) and r.get("status") == "ok"}
+                   if not registry.discovered(r["id"]) and r.get("status") == "ok"
+                   and not registry.suspended_unavailable(r, policy, HERE)}
     drop: dict[str, str] = dict(reviewed_drop)
     retrying = 0
-    protected = protected_ids(manifest, host_policy.load(), deferred_ids())
     for r in manifest:
         if not registry.discovered(r["id"]):
             continue
         if r["id"] in reviewed_drop:
             continue
         if r["id"] in protected:
-            if r.get("status") == "ok":  # a held protected doc still claims its title
+            if _usable_text(r):  # a held protected doc with retained text claims its title
                 seen_titles.add(registry.norm(r.get("title")))
             continue
         if r["status"] != "ok":
@@ -285,13 +312,17 @@ def main() -> None:
     by_sha: dict[str, list] = {}
     for r in manifest:
         if (r.get("status") == "ok" and r.get("sha256") and r["id"] not in drop
-                and r["id"] not in protected):
+                and (r["id"] not in protected or _usable_text(r))):
             by_sha.setdefault(r["sha256"], []).append(r)
     for twins in by_sha.values():
         if len(twins) < 2:
             continue
-        twins.sort(key=lambda r: (registry.discovered(r["id"]), r["id"]))  # curated first, stable
+        # curated first, then protected (never dropped here), stable by id
+        twins.sort(key=lambda r: (registry.discovered(r["id"]) and r["id"] not in protected,
+                                  r["id"]))
         for r in twins[1:]:
+            if r["id"] in protected:
+                continue
             if registry.discovered(r["id"]):
                 drop[r["id"]] = "dup-bytes"
             else:

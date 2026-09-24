@@ -683,11 +683,19 @@ def deferred_path() -> Path:
 
 
 def write_deferred(ids: list[str], path: Path | None = None) -> None:
-    """Tell this round's pruner which rows were only deferred (never judged this run)."""
+    """Tell this round's pruner which rows were only deferred (never judged this run).
+
+    Keyed by the round's non-empty NEKAISE_RUN_ID; a standalone load (no run id) writes nothing,
+    and its pruner ignores handoffs entirely.
+    """
+    run_id = os.environ.get("NEKAISE_RUN_ID") or ""
+    if not run_id:
+        if ids:
+            print(f"standalone load: {len(ids)} deferred rows (no run id, no pruner handoff)")
+        return
     path = path or deferred_path()
     path.parent.mkdir(parents=True, exist_ok=True)
-    ops.atomic_write_text(path, json.dumps(
-        {"run_id": os.environ.get("NEKAISE_RUN_ID"), "ids": sorted(ids)}) + "\n")
+    ops.atomic_write_text(path, json.dumps({"run_id": run_id, "ids": sorted(ids)}) + "\n")
 
 
 def fair_sources(srcs: list[dict]) -> list[dict]:

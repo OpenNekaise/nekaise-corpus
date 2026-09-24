@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import subprocess
+import sys
 from collections import Counter
 from pathlib import Path
 
@@ -46,9 +47,11 @@ def main(argv: list[str] | None = None) -> None:
 
     restrictions = registry.load_eligibility()
     rows = registry.load_manifest_rows()
-    all_ok = [r for r in rows if r.get("status") == "ok"]
-    excluded = [r for r in all_ok if registry.restriction_for(r, restrictions) is not None]
-    ok = [r for r in all_ok if registry.is_training_eligible(r, restrictions)]
+    unavailable: list[dict] = []
+    ok, excluded = registry.partition_manifest_ok_rows(rows, restrictions, unavailable)
+    if unavailable:  # explicit, not silent: provenance kept, payload not on this machine
+        print(f"locally unavailable (suspended host, not counted): {len(unavailable):,} rows",
+              file=sys.stderr)
     chars = sum(r.get("text_chars", 0) for r in ok)
     tok = chars // 4
     cchars = sum(r.get("corpus_chars", r.get("text_chars", 0)) for r in ok)

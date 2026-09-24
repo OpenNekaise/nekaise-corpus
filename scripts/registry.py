@@ -195,17 +195,56 @@ def is_training_eligible(entry: dict, restrictions: dict[str, dict]) -> bool:
             and restriction_for(entry, restrictions) is None)
 
 
+def load_host_policy() -> dict[str, dict]:
+    """registry/host_policy.json (fail-closed; see scripts/host_policy.py)."""
+    import host_policy
+
+    return host_policy.load()
+
+
+def suspended_unavailable(row: dict, policy: dict[str, dict], root: Path | None = None) -> bool:
+    """A successful row on a fetch-SUSPENDED host whose extracted text is not on this machine.
+
+    Its provenance stays committed, but the loader may not re-fetch it (e.g. on a fresh clone),
+    so it is "locally unavailable, suspended": not expected in corpus/, not counted as
+    training-eligible text, and never allowed to claim a title or bytes over an available copy.
+    """
+    if row.get("status") != "ok" or not policy:
+        return False
+    url = row.get("url") or ""
+    if not any(host in url for host in policy):  # cheap pre-filter over 1.6M rows
+        return False
+    import host_policy
+
+    if not host_policy.suspended(url, policy):
+        return False
+    text_path = row.get("text_path")
+    return not text_path or not ((root or ROOT) / text_path).exists()
+
+
 def partition_manifest_ok_rows(
-    rows: list[dict], restrictions: dict[str, dict]
+    rows: list[dict], restrictions: dict[str, dict],
+    unavailable: list[dict] | None = None, policy: dict[str, dict] | None = None,
+    root: Path | None = None,
 ) -> tuple[list[dict], list[dict]]:
-    """Split successful provenance rows into training-eligible and excluded records."""
+    """Split successful provenance rows into training-eligible and excluded records.
+
+    Rows that are locally unavailable on a suspended host (``suspended_unavailable``) belong to
+    neither list; they are appended to ``unavailable`` when given so callers can report them.
+    """
+    policy = load_host_policy() if policy is None else policy
     eligible: list[dict] = []
     excluded: list[dict] = []
     for row in rows:
         if row.get("status") != "ok":
             continue
-        target = eligible if is_training_eligible(row, restrictions) else excluded
-        target.append(row)
+        if not is_training_eligible(row, restrictions):
+            excluded.append(row)
+        elif suspended_unavailable(row, policy, root):
+            if unavailable is not None:
+                unavailable.append(row)
+        else:
+            eligible.append(row)
     return eligible, excluded
 
 

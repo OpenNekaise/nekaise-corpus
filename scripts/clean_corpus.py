@@ -367,14 +367,22 @@ def parse_rules(spec: str) -> list[str]:
 def partition_training_rows(
     rows: list[dict], restrictions: dict[str, dict]
 ) -> tuple[list[dict], list[dict]]:
-    """Split cleaner inputs from policy-restricted rows whose provenance must remain."""
+    """Split cleaner inputs from policy-restricted rows whose provenance must remain.
+
+    Successful rows on a fetch-suspended host whose text is not on this machine (e.g. a fresh
+    clone) are "locally unavailable, suspended": neither cleaned nor expected in corpus/ (see
+    registry.suspended_unavailable); ``locally_unavailable`` reports them explicitly.
+    """
     restricted = [r for r in rows if registry.restriction_for(r, restrictions) is not None]
-    todo = [
-        r for r in rows
-        if r.get("status") == "ok" and r.get("text_path")
-        and registry.is_training_eligible(r, restrictions)
-    ]
+    eligible, _ = registry.partition_manifest_ok_rows(rows, restrictions, root=HERE)
+    todo = [r for r in eligible if r.get("text_path")]
     return todo, restricted
+
+
+def locally_unavailable(rows: list[dict], restrictions: dict[str, dict]) -> list[dict]:
+    unavailable: list[dict] = []
+    registry.partition_manifest_ok_rows(rows, restrictions, unavailable, root=HERE)
+    return unavailable
 
 
 def clear_corpus_metadata(rows: list[dict]) -> int:
@@ -494,6 +502,9 @@ def main() -> None:
                 f"... and {len(restricted_with_metadata) - 10} more restricted metadata rows"
             )
         expect = {f"{r['id']}.md" for r in todo}
+        if unavailable := locally_unavailable(rows, restrictions):
+            print(f"locally unavailable, suspended host (provenance kept, not expected in "
+                  f"corpus/): {len(unavailable):,} rows, e.g. {unavailable[0]['id']}")
         on_disk = {p.name for p in CORPUS.glob("*.md")}
         for name in sorted(expect - on_disk)[:10]:
             problems.append(f"missing from corpus/: {name}")

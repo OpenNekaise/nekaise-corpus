@@ -7,6 +7,8 @@ a bounded retry window and never blocklists them.
 import sys
 from datetime import datetime, timedelta, timezone
 
+import pytest
+
 import build_corpus
 import prune_corpus
 
@@ -134,14 +136,61 @@ def test_deferred_rows_are_never_dropped_or_blocklisted(monkeypatch, tmp_path):
     assert removed == {"ibp-judged"}  # control: an undeferred no-text row is still pruned
 
 
-def test_stale_deferred_file_from_another_run_protects_nothing(monkeypatch, tmp_path):
+def test_stale_deferred_file_from_another_run_fails_closed(monkeypatch, tmp_path):
     path = tmp_path / "fetch-deferred.json"
     monkeypatch.setattr(build_corpus, "deferred_path", lambda: path)
     monkeypatch.setenv("NEKAISE_RUN_ID", "old-run")
     build_corpus.write_deferred(["ibp-x"])
     monkeypatch.setenv("NEKAISE_RUN_ID", "new-run")
 
+    with pytest.raises(prune_corpus.HandoffError, match="old-run"):
+        prune_corpus.deferred_ids(path)
+
+
+def test_standalone_prune_ignores_any_handoff_file(monkeypatch, tmp_path):
+    path = tmp_path / "fetch-deferred.json"
+    path.write_text('{"run_id": null, "ids": ["ibp-x"]}')  # an old standalone-era handoff
+    monkeypatch.delenv("NEKAISE_RUN_ID", raising=False)
     assert prune_corpus.deferred_ids(path) == set()
+    monkeypatch.setenv("NEKAISE_RUN_ID", "")
+    assert prune_corpus.deferred_ids(path) == set()
+
+
+@pytest.mark.parametrize(
+    "content",
+    [None, "not json", '{"run_id": null, "ids": []}', '{"run_id": "", "ids": []}',
+     '{"run_id": "run-1"}', '["run-1"]'],
+)
+def test_round_prune_fails_closed_on_missing_or_corrupt_handoff(monkeypatch, tmp_path, content):
+    path = tmp_path / "fetch-deferred.json"
+    if content is not None:
+        path.write_text(content)
+    monkeypatch.setenv("NEKAISE_RUN_ID", "run-1")
+
+    with pytest.raises(prune_corpus.HandoffError):
+        prune_corpus.deferred_ids(path)
+
+
+def test_prune_main_exits_nonzero_without_the_handoff(monkeypatch, tmp_path, capsys):
+    monkeypatch.setenv("NEKAISE_RUN_ID", "run-1")
+    monkeypatch.setattr(prune_corpus.ops, "WORKSPACE", tmp_path)  # no handoff written
+    monkeypatch.setattr(prune_corpus.registry, "load_manifest_rows", lambda: [])
+    monkeypatch.setattr(prune_corpus.registry, "remove_ids",
+                        lambda _ids: pytest.fail("must not prune without the handoff"))
+    monkeypatch.setattr(sys, "argv", ["prune_corpus.py", "--apply"])
+
+    with pytest.raises(SystemExit) as exc:
+        prune_corpus.main()
+
+    assert exc.value.code == 1
+    assert "refusing to prune" in capsys.readouterr().err
+
+
+def test_standalone_load_writes_no_handoff(monkeypatch, tmp_path):
+    path = tmp_path / "fetch-deferred.json"
+    monkeypatch.delenv("NEKAISE_RUN_ID", raising=False)
+    build_corpus.write_deferred(["ibp-x"], path)
+    assert not path.exists()
 
 
 def test_suspended_host_rows_stay_as_they_are(monkeypatch):
@@ -170,6 +219,7 @@ def test_81_ibpsa_restorations_are_all_fetched_despite_the_run_cap(tmp_path, mon
                         lambda src: requested.append(src["id"]) or {
                             **src, "status": "failed", "error": "x", "http_status": None,
                             "raw_path": None})
+    monkeypatch.setenv("NEKAISE_RUN_ID", "run-81")
     monkeypatch.setattr(sys, "argv", ["build_corpus.py", "--workers", "1"])
 
     build_corpus.main()

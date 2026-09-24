@@ -145,27 +145,51 @@ def host_policy_contract_errors(backends: dict, path: Path | None = None) -> lis
     return errors
 
 
+def readme_stats_errors(readme: str, rows: list[dict], unavailable: list[dict],
+                        excluded: int) -> list[str]:
+    """README counts must match the manifest.
+
+    Successful rows on a fetch-suspended host are "locally unavailable" on machines without
+    their payloads (fresh clones, CI) and are not counted there, while a machine that holds them
+    counts them. The README is accepted when it matches either view, and only that exact
+    difference is tolerated.
+    """
+    if unavailable:
+        print(f"locally unavailable, suspended host: {len(unavailable):,} successful rows "
+              "(provenance kept; not counted as local training text)")
+    views = [rows, rows + unavailable] if unavailable else [rows]
+    errors = []
+    match = re.search(r"\*\*Documents\*\* \| \*\*([\d,]+)\*\*", readme)
+    shown = int(match.group(1).replace(",", "")) if match else None
+    if shown not in {len(view) for view in views}:
+        errors.append(f"README documents={match.group(1) if match else 'missing'}, "
+                      f"manifest={len(rows):,}"
+                      + (f" (or {len(rows) + len(unavailable):,} with suspended-host payloads)"
+                         if unavailable else ""))
+    wanted = []
+    for view in views:
+        chars = sum(r.get("text_chars", 0) for r in view)
+        wanted.append(f"{chars / 1e9:.3f}B" if chars >= 1e9 else f"{chars / 1e6:.0f}M")
+    if not any(f"~{want} chars" in readme for want in wanted):
+        errors.append(f"README extracted chars is stale (want {' or '.join(wanted)})")
+    if f"**{excluded:,}** rows (not fetched or training-ready)" not in readme:
+        errors.append(f"README policy-excluded count is stale (want {excluded:,})")
+    if not any(f"**Topics** | {len(Counter(r.get('topic') for r in view))}" in readme
+               for view in views):
+        errors.append("README topic count is stale")
+    return errors
+
+
 def main() -> int:
     errors: list[str] = []
     restrictions = registry.load_eligibility()
     manifest_rows = registry.load_manifest_rows()
-    all_rows = [r for r in manifest_rows if r.get("status") == "ok"]
-    rows = [r for r in all_rows if registry.is_training_eligible(r, restrictions)]
-    excluded = len(all_rows) - len(rows)
+    unavailable: list[dict] = []
+    rows, excluded_rows = registry.partition_manifest_ok_rows(
+        manifest_rows, restrictions, unavailable)
+    excluded = len(excluded_rows)
     readme = (ROOT / "README.md").read_text()
-    match = re.search(r"\*\*Documents\*\* \| \*\*([\d,]+)\*\*", readme)
-    if not match or int(match.group(1).replace(",", "")) != len(rows):
-        shown = match.group(1) if match else "missing"
-        errors.append(f"README documents={shown}, manifest={len(rows):,}")
-    chars = sum(r.get("text_chars", 0) for r in rows)
-    expected_chars = f"{chars / 1e9:.3f}B" if chars >= 1e9 else f"{chars / 1e6:.0f}M"
-    if f"~{expected_chars} chars" not in readme:
-        errors.append(f"README extracted chars is stale (want {expected_chars})")
-    if f"**{excluded:,}** rows (not fetched or training-ready)" not in readme:
-        errors.append(f"README policy-excluded count is stale (want {excluded:,})")
-    topics = Counter(r.get("topic") for r in rows)
-    if f"**Topics** | {len(topics)}" not in readme:
-        errors.append("README topic count is stale")
+    errors.extend(readme_stats_errors(readme, rows, unavailable, excluded))
 
     backends = run_round.load_backends()
     errors.extend(run_round.validate_backends(backends, rotation.load()))
