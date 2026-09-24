@@ -1,8 +1,10 @@
+import contextlib
 import json
 
 import yaml
 
 import find_github
+import store
 
 
 def test_curated_repos_have_distinct_source_buckets():
@@ -15,41 +17,48 @@ def test_curated_repos_have_distinct_source_buckets():
         owners[bucket] = spec["repo"]
 
 
-def test_blocklisted_repo_counts_as_durably_done(tmp_path, monkeypatch):
-    registry_dir = tmp_path / "registry"
-    manifest_dir = tmp_path / "manifest"
-    registry_dir.mkdir()
-    manifest_dir.mkdir()
-    monkeypatch.setattr(find_github.registry, "REG_DIR", registry_dir)
-    monkeypatch.setattr(find_github.registry, "MAN_DIR", manifest_dir)
-    monkeypatch.setattr(find_github.blocklist, "load", lambda: {
+def github_store(tmp_path, *, manifest=(), entries=(), blocked=(), extra=None):
+    """A FileStore root holding just these GitHub rows (plus any extra, unrelated files)."""
+    root = tmp_path / "repo"
+    (root / "registry").mkdir(parents=True)
+    (root / "manifest").mkdir()
+    if manifest:
+        (root / "manifest" / "github.jsonl").write_text(
+            "".join(json.dumps(r) + "\n" for r in manifest))
+    if entries:
+        (root / "registry" / "github.yaml").write_text(yaml.safe_dump({"sources": list(entries)}))
+    (root / "pruned_urls.txt").write_text("".join(u + "\n" for u in blocked))
+    for rel, text in (extra or {}).items():
+        (root / rel).write_text(text)
+    return store.FileStore(root)
+
+
+def test_blocklisted_repo_counts_as_durably_done(tmp_path):
+    st = github_store(tmp_path, blocked=[
         "https://raw.githubusercontent.com/example/pruned/main/docs/guide.md",
         "https://raw.githubusercontent.com/example/pruned/main/src/model.py",
-    })
+    ])
 
-    done, code_done = find_github.done_sources()
+    with st.read() as view:
+        done, code_done = find_github.done_sources(view)
 
     assert "gh_pruned" in done
     assert "gh_pruned" in code_done
 
 
-def test_done_sources_reads_only_github_shards(tmp_path, monkeypatch):
-    registry_dir = tmp_path / "registry"
-    manifest_dir = tmp_path / "manifest"
-    registry_dir.mkdir()
-    manifest_dir.mkdir()
-    (manifest_dir / "github.jsonl").write_text(json.dumps({
-        "source": "gh_manifested", "format": "md",
-    }) + "\n")
-    (registry_dir / "github.yaml").write_text(yaml.safe_dump({"sources": [{
-        "source": "gh_registered", "format": "txt",
-    }]}))
-    (manifest_dir / "patents-us.jsonl").write_text("not json and must not be read\n")
-    monkeypatch.setattr(find_github.registry, "REG_DIR", registry_dir)
-    monkeypatch.setattr(find_github.registry, "MAN_DIR", manifest_dir)
-    monkeypatch.setattr(find_github.blocklist, "load", set)
+def test_done_sources_reads_only_github_shards(tmp_path):
+    st = github_store(
+        tmp_path,
+        manifest=[{"id": "gh-manifested-a", "source": "gh_manifested", "format": "md"}],
+        entries=[{"id": "gh-registered-a", "source": "gh_registered", "format": "txt"}],
+        blocked=["https://example.org/not-github.md"],
+        # the id-prefix scan must not even parse the other shards
+        extra={"manifest/patents-us.jsonl": "not json and must not be read\n",
+               "registry/books.yaml": "sources: [not: valid: yaml\n"},
+    )
 
-    done, code_done = find_github.done_sources()
+    with st.read() as view:
+        done, code_done = find_github.done_sources(view)
 
     assert done == {"gh_manifested", "gh_registered"}
     assert code_done == {"gh_registered"}
@@ -193,20 +202,15 @@ def test_repo_walked_for_markdown_only_returns_for_its_doc_markup_pass():
     assert [spec["repo"] for spec in pending] == ["LBNL-ETA/Radiance"]
 
 
-def test_blocklisted_markup_urls_record_their_doc_format(tmp_path, monkeypatch):
-    registry_dir = tmp_path / "registry"
-    manifest_dir = tmp_path / "manifest"
-    registry_dir.mkdir()
-    manifest_dir.mkdir()
-    monkeypatch.setattr(find_github.registry, "REG_DIR", registry_dir)
-    monkeypatch.setattr(find_github.registry, "MAN_DIR", manifest_dir)
+def test_blocklisted_markup_urls_record_their_doc_format(tmp_path):
     raw = "https://raw." + "githubusercontent.com"
-    monkeypatch.setattr(find_github.blocklist, "load", lambda: {
+    st = github_store(tmp_path, blocked=[
         f"{raw}/firemodels/fds/master/Manuals/A/B.tex",
         f"{raw}/LBNL-ETA/Radiance/master/doc/man/man1/rpict.1",
-    })
+    ])
 
-    formats = find_github.source_formats()
+    with st.read() as view:
+        formats = find_github.source_formats(view)
 
     assert formats == {"gh_fds": {"tex"}, "gh_radiance": {"troff"}}
 
@@ -254,13 +258,47 @@ def test_fully_empty_repo_with_recorded_passes_is_done(tmp_path):
     assert find_github.pending_repos([code_spec], set(), set(), {}, passes) == [code_spec]
 
 
+class NoPassesView:
+    def control_get(self, name):
+        assert name == "github_passes.json"
+        return None
+
+
+def test_proposal_mode_stages_passes_instead_of_writing_shared_state(tmp_path, monkeypatch):
+    specs = [{"repo": "ok/walked", "docs": ["tex", "man"], "license": "open", "topic": "urban"}]
+    monkeypatch.setattr(find_github, "REPOS", specs)
+    monkeypatch.setattr(find_github, "PASSES", tmp_path / "passes.json")
+    monkeypatch.setattr(find_github, "source_formats", lambda _view: {})
+    monkeypatch.setattr(find_github.dedup, "read_view",
+                        lambda: contextlib.nullcontext(NoPassesView()))
+    monkeypatch.setattr(find_github.dedup, "open_keys",
+                        lambda: find_github.dedup.from_sets(set(), set(), set()))
+    entry = {"id": "gh-walked-readme", "title": "walked: README.md", "source": "gh_walked",
+             "url": "https://raw.githubusercontent.com/ok/walked/main/README.md",
+             "license": "open", "topic": "urban", "format": "md"}
+    monkeypatch.setattr(find_github, "from_repo", lambda spec: [dict(entry)])
+    proposal = tmp_path / "proposal.json"
+    monkeypatch.setenv("NEKAISE_PROPOSAL_FILE", str(proposal))
+    monkeypatch.setattr(find_github.sys, "argv", ["find_github.py", "--append"])
+
+    find_github.main()
+
+    assert not (tmp_path / "passes.json").exists()  # nothing shared is written in a round
+    today = find_github.date.today().isoformat()
+    staged = find_github.registry.read_proposal(proposal)
+    assert staged == {"entries": [entry],
+                      "github_passes": {"gh_walked": {"man": today, "tex": today}}}
+
+
 def test_main_records_passes_only_for_walked_repos_with_append(tmp_path, monkeypatch):
     specs = [{"repo": "ok/walked", "docs": ["tex"], "license": "open", "topic": "urban"},
              {"repo": "bad/failed", "docs": ["tex"], "license": "open", "topic": "urban"}]
     monkeypatch.setattr(find_github, "REPOS", specs)
     monkeypatch.setattr(find_github, "PASSES", tmp_path / "passes.json")
-    monkeypatch.setattr(find_github, "source_formats", dict)
-    monkeypatch.setattr(find_github.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(find_github, "source_formats", lambda _view: {})
+    monkeypatch.setattr(find_github.dedup, "read_view",
+                        lambda: contextlib.nullcontext(NoPassesView()))
+    monkeypatch.setattr(find_github.dedup, "open_keys", lambda: find_github.dedup.from_sets(set(), set(), set()))
     monkeypatch.setattr(find_github.registry, "append_entries", lambda _e: {})
 
     def from_repo(spec):

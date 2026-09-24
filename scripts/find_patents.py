@@ -55,6 +55,7 @@ import requests
 import yaml
 
 import quality
+import dedup
 import registry
 
 SITEMAP = "https://patents.google.com/sitemap"
@@ -167,7 +168,8 @@ def main() -> None:
         )
     rx = entry_re(",".join(sorted(countries)))
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
 
     index_url = f"{SITEMAP}/{args.bucket}.html"
     try:
@@ -199,7 +201,11 @@ def main() -> None:
                 print(f"# fetch failed {purl}: {e}", file=sys.stderr)
                 failed_page = label
                 break
-        for pubnum, title in parse_entries(text, rx):
+        page = list(parse_entries(text, rx))
+        keys.prefetch(urls=[f"https://patents.google.com/patent/{pubnum}/en"
+                            for pubnum, _title in page],
+                      titles=[registry.norm(title) for _pubnum, title in page if title])
+        for pubnum, title in page:
             us_scanned += 1
             if len(out) >= args.max:
                 break
@@ -257,7 +263,7 @@ def main() -> None:
             f"revisit bucket {args.bucket} for remaining candidates"
         )
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
 
     by_topic: dict = {}
     for h in out:

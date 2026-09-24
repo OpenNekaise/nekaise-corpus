@@ -235,6 +235,18 @@ def json_equal(a: Any, b: Any) -> bool:
     return type(a) is type(b) and a == b
 
 
+def id_prefix(pred: Predicate | None) -> str | None:
+    """The id prefix every row matching `pred` must carry (a Prefix("id", p), possibly as a
+    conjunct of an And), or None."""
+    if isinstance(pred, Prefix) and pred.field == "id":
+        return pred.prefix
+    if isinstance(pred, And):
+        for part in pred.parts:
+            if (found := id_prefix(part)) is not None:
+                return found
+    return None
+
+
 def evaluate(pred: Predicate | None, row: Mapping) -> bool:
     if pred is None:
         return True
@@ -783,6 +795,49 @@ class FileStore:
                 found.append((int(m.group(1)), path))
         return [p for _, p in sorted(found)]
 
+    def _routed_files(self, table: "Table", prefix: str) -> list[Path] | None:
+        """The shard files that hold every entries/manifest row whose id starts with `prefix`,
+        when registry routing pins them (registry.shard_filename / manifest_shard; registry
+        routing and manifest orphans are linted every round), else None. Patents (routed by
+        country) and prefixes that a longer shard prefix could claim first are never pinned."""
+        route = None
+        for key in registry.SHARDS:
+            if prefix.startswith(key):
+                route = key
+                break
+            if key.startswith(prefix):
+                return None  # some ids with this prefix route to `key`, others elsewhere
+        if route is None:
+            return None
+        stem = registry.SHARDS[route].rsplit(".", 1)[0]
+        if stem == "patents":
+            return None
+        n = registry.HASH_BUCKETS.get(stem)
+        stems = [f"{stem}-{i}" for i in range(n)] if n else [stem]
+        if table is Table.ENTRIES:
+            return [self.reg / f"{s}.yaml" for s in stems]
+        if table is Table.MANIFEST:
+            return [self.man / f"{s}.jsonl" for s in stems]
+        return None
+
+    def _load_files(self, table: "Table", paths: list[Path]) -> dict[str, dict]:
+        """Rows of some entries/manifest shard files only (see _routed_files)."""
+        rows: dict[str, dict] = {}
+        for path in paths:
+            if not path.exists():
+                continue
+            if table is Table.ENTRIES:
+                for e in registry.parse_yaml(path.read_text()).get("sources") or []:
+                    if e["id"] in rows:
+                        raise StoreError(f"duplicate registry id {e['id']} in {path.name}")
+                    rows[e["id"]] = e
+            else:
+                for line in path.read_text().splitlines():
+                    if line.strip():
+                        row = json.loads(line)
+                        rows[row["id"]] = row
+        return rows
+
     def _config(self) -> ConfigSnapshot:
         documents, digests = {}, {}
         for name in CONFIG_FILES:
@@ -1189,6 +1244,27 @@ class ReadView:
             cache[table] = self._keyed_uncached(table)
         return cache[table]
 
+    # FileStore pushdown for id-prefix scans (e.g. find_github's gh- rows): read only the shard
+    # files the prefix routes to instead of parsing every shard. Write views never use it, so
+    # their buffered changes always participate.
+    _pushdown = True
+
+    def _keyed_scoped(self, table: Table, where: Predicate | None) -> list[tuple[tuple, dict]]:
+        """Same rows and order as _keyed(table) for every row `where` can match."""
+        name = {Table.ENTRIES: "entries", Table.MANIFEST: "manifest"}.get(table)
+        if (name is None or not self._pushdown or name in self._loaded_tables
+                or (prefix := id_prefix(where)) is None
+                or (paths := self._store._routed_files(table, prefix)) is None):
+            return self._keyed(table)
+        cache = self.__dict__.setdefault("_keyed_cache", {})
+        key = (table, tuple(str(p) for p in paths))
+        if key not in cache:
+            self._check_open()
+            self._check_generation()
+            rows = self._store._load_files(table, paths)
+            cache[key] = [((sid,), rows[sid]) for sid in sorted(rows)]
+        return cache[key]
+
     def _keyed_legacy(self) -> list[tuple[tuple, dict]]:
         cache = self.__dict__.setdefault("_keyed_cache", {})
         if "legacy" not in cache:
@@ -1240,7 +1316,7 @@ class ReadView:
         if cursor is not None and (cursor.view != self._cursor_scope() or cursor.query != query):
             raise StoreError("cursor belongs to a different view, generation or query")
         rows, last = [], None
-        keyed = self._keyed_legacy() if order == "legacy" else self._keyed(table)
+        keyed = self._keyed_legacy() if order == "legacy" else self._keyed_scoped(table, where)
         start = 0
         if cursor is not None:
             import bisect
@@ -1425,6 +1501,8 @@ def _mutation(fn):
 class WriteView(ReadView):
     """Buffered mutations over a copy of the loaded state; nothing touches disk until commit.
     A cursor from this view is invalidated by any later mutation in it."""
+
+    _pushdown = False
 
     def __init__(self, store: FileStore, version: Version, run_id: str, *, replay: bool = False):
         super().__init__(store, version)

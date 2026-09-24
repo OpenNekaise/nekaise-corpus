@@ -30,6 +30,7 @@ import time
 
 import requests
 
+import dedup
 import registry
 
 SITEMAP = "https://www.iea.org/sitemap.xml"
@@ -101,7 +102,8 @@ def main() -> None:
               file=sys.stderr)
         return
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out: list[dict] = []
     scanned = skipped_lic = 0
     for purl in window:
@@ -132,7 +134,7 @@ def main() -> None:
                     "url": pdf, "source": "iea", "license": "cc-by",
                     "topic": topic_for(slug_name), "format": "pdf"})
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
     print(f"# {len(out)} NEW IEA reports (offset {args.offset}, {scanned} pages scanned, "
           f"{skipped_lic} skipped non-CC-BY; universe {len(slugs)} keyword-matched slugs; "
           f"deduped vs manifest + registry + blocklist)")

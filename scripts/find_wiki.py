@@ -36,7 +36,9 @@ from urllib.parse import quote, unquote
 import requests
 import yaml
 
+import dedup
 import registry
+from store import Eq, Table
 
 EN_API = "https://en.wikipedia.org/w/api.php"
 UA = {"User-Agent": "nekaise-corpus/find_wiki (research)"}
@@ -90,12 +92,16 @@ def page_url(host: str, title: str) -> str:
     return f"https://{host}/wiki/{quote(title.replace(' ', '_'), safe='/#')}"
 
 
-def origin_titles() -> dict[str, str]:
-    """{english title (raw, underscore form) -> topic} for every curated source: wikipedia entry."""
+def origin_titles(view=None) -> dict[str, str]:
+    """{english title (raw, underscore form) -> topic} for every curated source: wikipedia entry,
+    from a filtered store scan, in entry-id order (the store's scan order; registry file order is
+    not a store property)."""
+    if view is None:
+        with dedup.read_view() as v:
+            return origin_titles(v)
     out: dict[str, str] = {}
-    for e in registry.load_entries():
-        if e.get("source") != "wikipedia":
-            continue
+    for e in dedup.scan_all(view, Table.ENTRIES, where=Eq("source", "wikipedia"),
+                            fields=("url", "topic")):
         url = e.get("url") or ""
         if "/wiki/" not in url:
             continue
@@ -230,7 +236,8 @@ def main() -> None:
     args = ap.parse_args()
 
     langs = [l.strip() for l in args.langs.split(",") if l.strip()]
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     session = requests.Session()
     session.headers.update(UA)
 
@@ -289,6 +296,10 @@ def main() -> None:
             raise SystemExit(1) from e
         query = data.get("query", {})
         reverse = resolve_map(query)
+        links = [(ll["lang"], ll["*"]) for page in query.get("pages", {}).values()
+                 for ll in page.get("langlinks", []) if ll.get("lang") in langs and ll.get("*")]
+        keys.prefetch(urls=[page_url(f"{lang}.wikipedia.org", t).rstrip("/") for lang, t in links],
+                      titles=[registry.norm(t) for _lang, t in links])
         for page in query.get("pages", {}).values():
             if "missing" in page:
                 continue
@@ -308,7 +319,7 @@ def main() -> None:
                 if len(out) > n_before:
                     hit_articles.add(orig_title)
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
     print(f"# {len(out)} NEW entries (langs={langs}, categories={args.categories}, "
           f"books={args.books}; deduped vs manifest + registry + blocklist)")
     if args.categories:

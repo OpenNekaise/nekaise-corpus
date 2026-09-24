@@ -40,7 +40,7 @@ def _setup(monkeypatch, tmp_path, response, known=None):
         return response
 
     monkeypatch.setattr(find_ibpsa.requests, "get", get)
-    monkeypatch.setattr(find_ibpsa.registry, "existing_keys", lambda: known)
+    monkeypatch.setattr(find_ibpsa.dedup, "open_keys", lambda: find_ibpsa.dedup.from_sets(*known))
     appended = []
     monkeypatch.setattr(find_ibpsa.registry, "append_entries", appended.extend)
     hold = tmp_path / "hold"

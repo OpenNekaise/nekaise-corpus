@@ -26,6 +26,7 @@ import time
 import requests
 import yaml
 
+import dedup
 import registry
 
 API = "https://api.crossref.org/works"
@@ -82,7 +83,8 @@ def main() -> None:
                     help="append into the registry (registry/modelica.yaml)")
     args = ap.parse_args()
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out, seen = [], set()
     offset, total = 0, 1
     while offset < total and len(out) < args.max:
@@ -112,7 +114,7 @@ def main() -> None:
         offset += args.rows
         time.sleep(1.0)
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
 
     by_topic: dict = {}
     for h in out:

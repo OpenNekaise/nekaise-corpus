@@ -105,7 +105,7 @@ def test_harvest_pages_gates_and_dedups(monkeypatch):
 
 def test_capped_run_requests_rotation_hold(monkeypatch, tmp_path, capsys):
     _mock_pages(monkeypatch, [PAGE1, PAGE2])
-    monkeypatch.setattr(find_ojs.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(find_ojs.dedup, "open_keys", lambda: find_ojs.dedup.from_sets(set(), set(), set()))
     appended = []
     monkeypatch.setattr(find_ojs.registry, "append_entries", appended.extend)
     hold = tmp_path / "hold"
@@ -120,7 +120,7 @@ def test_capped_run_requests_rotation_hold(monkeypatch, tmp_path, capsys):
 
 def test_completed_site_advances_without_hold(monkeypatch, tmp_path):
     _mock_pages(monkeypatch, [PAGE1, PAGE2])
-    monkeypatch.setattr(find_ojs.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(find_ojs.dedup, "open_keys", lambda: find_ojs.dedup.from_sets(set(), set(), set()))
     monkeypatch.setattr(find_ojs.registry, "append_entries", lambda _e: {})
     hold = tmp_path / "hold"
     monkeypatch.setenv("NEKAISE_ROTATION_HOLD_FILE", str(hold))
@@ -144,7 +144,7 @@ def test_index_past_the_end_reports_exhaustion(monkeypatch, tmp_path):
 
 
 def test_oai_failure_exits_nonzero_before_partial_append(monkeypatch, capsys):
-    monkeypatch.setattr(find_ojs.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(find_ojs.dedup, "open_keys", lambda: find_ojs.dedup.from_sets(set(), set(), set()))
     monkeypatch.setattr(find_ojs, "fetch_page",
                         lambda *_a: (_ for _ in ()).throw(TimeoutError("offline")))
     monkeypatch.setattr(find_ojs.registry, "append_entries",
@@ -220,7 +220,7 @@ def test_repeated_resumption_token_is_a_paging_loop(monkeypatch):
 
 
 def test_unexpected_content_fails_run_so_rotation_holds(monkeypatch, tmp_path, capsys):
-    monkeypatch.setattr(find_ojs.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(find_ojs.dedup, "open_keys", lambda: find_ojs.dedup.from_sets(set(), set(), set()))
     monkeypatch.setattr(find_ojs, "fetch_page", lambda *_a: "<html><body>login</body></html>")
     monkeypatch.setattr(find_ojs.registry, "append_entries",
                         lambda _e: pytest.fail("nothing may be appended"))

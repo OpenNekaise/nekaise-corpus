@@ -7,9 +7,9 @@ import find_archive
 
 def _empty_registry(monkeypatch):
     monkeypatch.setattr(
-        find_archive.registry,
-        "existing_keys",
-        lambda: (set(), set(), set()),
+        find_archive.dedup,
+        "open_keys",
+        lambda: find_archive.dedup.from_sets(set(), set(), set()),
     )
 
 

@@ -48,6 +48,7 @@ from xml.etree import ElementTree
 import requests
 
 import ops
+import dedup
 import registry
 
 HERE = Path(__file__).resolve().parents[1]
@@ -685,15 +686,17 @@ def main() -> None:
         ap.error("pass --vendor KEY or --cursor N")
     cfg = vendors[key]
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     try:
         universe = universe_for(key, cfg, refresh=args.refresh)
         docs = candidate_documents(key, cfg, universe, args.pages)
     except Exception as exc:
         print(f"# ERROR: {cfg['name']}: enumeration failed: {exc}", file=sys.stderr)
         raise SystemExit(1)  # abort WITHOUT advancing rotation
+    keys.prefetch(urls=[url.rstrip("/") for url in docs])
     out = entries_for(key, cfg, docs, urls, titles, args.max, known_titles_for(key, cfg))
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
 
     by_topic: dict[str, int] = {}
     for e in out:

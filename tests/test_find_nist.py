@@ -163,7 +163,7 @@ def test_incomplete_cursor_shapes_fail_closed(monkeypatch, message, match):
 
 
 def _empty_registry(monkeypatch):
-    monkeypatch.setattr(find_nist.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(find_nist.dedup, "open_keys", lambda: find_nist.dedup.from_sets(set(), set(), set()))
 
 
 def test_api_failure_exits_nonzero_before_partial_append(monkeypatch, capsys):

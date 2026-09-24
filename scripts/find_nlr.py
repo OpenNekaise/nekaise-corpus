@@ -48,6 +48,7 @@ import requests
 import yaml
 
 import bes_relevance
+import dedup
 import registry
 
 OAI = "https://research-hub.nlr.gov/ws/oai"
@@ -208,7 +209,8 @@ def main() -> None:
     except ValueError as exc:
         ap.error(str(exc))
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out: list[dict] = []
     scanned = pages = 0
     restarted = False
@@ -251,7 +253,7 @@ def main() -> None:
         else:
             year, token = year - 1, None
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
     next_cursor = f"{year}:{token or START}"
     by_topic: dict[str, int] = {}
     for entry in out:

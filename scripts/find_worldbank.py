@@ -33,6 +33,7 @@ import time
 import requests
 import yaml
 
+import dedup
 import registry
 
 API = "https://search.worldbank.org/api/v3/wds"
@@ -166,7 +167,8 @@ def main() -> None:
                     help="append into the registry (registry/worldbank.yaml)")
     args = ap.parse_args()
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out = []
     total = 0
     for page in range(args.pages):
@@ -195,7 +197,7 @@ def main() -> None:
                         "topic": classify(d["title"]), "format": "pdf"})
         time.sleep(1.0)  # politeness between API pages
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
     by_topic: dict = {}
     for h in out:
         by_topic[h["topic"]] = by_topic.get(h["topic"], 0) + 1

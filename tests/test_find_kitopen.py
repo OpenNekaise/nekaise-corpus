@@ -14,7 +14,7 @@ def _record(title, suffix="1"):
 
 
 def _empty_registry(monkeypatch):
-    monkeypatch.setattr(find_kitopen.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(find_kitopen.dedup, "open_keys", lambda: find_kitopen.dedup.from_sets(set(), set(), set()))
 
 
 @pytest.mark.parametrize(

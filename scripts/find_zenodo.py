@@ -27,6 +27,7 @@ import time
 import requests
 import yaml
 
+import dedup
 import registry
 
 API = "https://zenodo.org/api/records"
@@ -127,7 +128,8 @@ def main() -> None:
     args = ap.parse_args()
     args.rows = min(args.rows, 25)
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out = []
     session = requests.Session()
     for term, topic in QUERIES:
@@ -163,7 +165,7 @@ def main() -> None:
                         "url": url, "source": "zenodo", "license": tag,
                         "topic": topic, "format": "pdf"})
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
 
     by_lic: dict = {}
     for h in out:

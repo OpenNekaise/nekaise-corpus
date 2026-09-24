@@ -51,6 +51,7 @@ import requests
 import yaml
 
 import bes_relevance
+import dedup
 import registry
 
 API = "https://escholarship.org/graphql"
@@ -190,7 +191,8 @@ def main() -> None:
     except ValueError as exc:
         ap.error(str(exc))
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out: list[dict] = []
     scanned = pages = 0
     frontier = False
@@ -209,9 +211,10 @@ def main() -> None:
                   "refusing a partial append so rotation does not advance", file=sys.stderr)
             raise SystemExit(1)
         pages += 1
-        for node in nodes:
+        page = [candidate(node, strict) for node in nodes]
+        keys.prefetch(**dedup.page_keys(entry for entry in page if entry))
+        for entry in page:
             scanned += 1
-            entry = candidate(node, strict)
             if entry is None:
                 continue
             u, t = entry["url"].rstrip("/"), registry.norm(entry["title"])
@@ -228,7 +231,7 @@ def main() -> None:
             frontier = True  # re-probe this last page for new deposits in later rounds
             break
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
     next_cursor = format_cursor(index, token)
     by_license: dict[str, int] = {}
     for entry in out:

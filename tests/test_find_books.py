@@ -66,9 +66,9 @@ def test_cursor_mode_searches_exactly_one_query_page(monkeypatch, capsys):
 
 def _empty_registry(monkeypatch):
     monkeypatch.setattr(
-        find_books.registry,
-        "existing_keys",
-        lambda: (set(), set(), set()),
+        find_books.dedup,
+        "open_keys",
+        lambda: find_books.dedup.from_sets(set(), set(), set()),
     )
 
 

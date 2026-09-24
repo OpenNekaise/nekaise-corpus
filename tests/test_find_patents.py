@@ -8,9 +8,9 @@ import find_patents
 
 def _empty_registry(monkeypatch):
     monkeypatch.setattr(
-        find_patents.registry,
-        "existing_keys",
-        lambda: (set(), set(), set()),
+        find_patents.dedup,
+        "open_keys",
+        lambda: find_patents.dedup.from_sets(set(), set(), set()),
     )
 
 

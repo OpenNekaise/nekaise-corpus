@@ -439,8 +439,12 @@ def write_prune_ledger_rows(rows) -> dict[str, int]:
 
 
 def existing_keys(include_blocklist: bool = True):
-    """(urls, titles, ids) already known to the corpus — what every finder dedups against.
-    urls includes the pruned-URL blocklist by default so discovery never re-churns."""
+    """(urls, titles, ids) already known to the corpus, as whole in-memory sets.
+
+    DEPRECATED compatibility adapter (ADR 0001 stage 3): finders ask scripts/dedup.py instead,
+    which sends candidate batches to the store's known() and never materializes these sets
+    (tests/test_dedup.py forbids finders from calling this). urls includes the pruned-URL
+    blocklist by default so discovery never re-churns."""
     if include_blocklist and os.environ.get("NEKAISE_DISABLE_INDEX") != "1":
         try:
             import corpus_index
@@ -491,6 +495,56 @@ def shard_header(stem: str) -> str:
             f"prune_corpus edits it in place\nsources:\n")
 
 
+PROPOSAL_ENV = "NEKAISE_PROPOSAL_FILE"
+
+
+def read_proposal(path: Path) -> dict:
+    """A finder's staged proposal: {"entries": [...]} plus, when staged, "github_passes"
+    ({bucket: {doc kind: date}}, see stage_github_passes). The file is a plain JSON list of
+    entries when nothing else was staged, the format every earlier round wrote."""
+    data = json.loads(path.read_text()) if path.exists() else []
+    if isinstance(data, list):
+        return {"entries": data}
+    if not isinstance(data, dict) or not isinstance(data.get("entries"), list):
+        raise ValueError(f"{path}: not a finder proposal")
+    if unknown := set(data) - {"entries", "github_passes"}:
+        raise ValueError(f"{path}: unknown proposal section(s) {sorted(unknown)}")
+    return data
+
+
+def _write_proposal(path: Path, doc: dict) -> None:
+    payload = doc["entries"] if set(doc) == {"entries"} else doc
+    ops.atomic_write_text(path, json.dumps(payload, ensure_ascii=False, sort_keys=True) + "\n")
+
+
+def merge_github_passes(current: dict, records: dict) -> dict:
+    """find_github's completed doc-markup passes plus `records`; a recorded pass keeps its
+    first date. Both are {bucket: {doc kind: ISO date}}."""
+    merged = {bucket: dict(kinds) for bucket, kinds in (current or {}).items()}
+    for bucket, kinds in records.items():
+        if not isinstance(kinds, dict) or not all(
+                isinstance(k, str) and isinstance(v, str) for k, v in kinds.items()):
+            raise ValueError(f"malformed github pass record for {bucket!r}")
+        for kind, day in kinds.items():
+            merged.setdefault(bucket, {}).setdefault(kind, day)
+    return merged
+
+
+def stage_github_passes(records: dict) -> bool:
+    """In proposal mode (a round's discovery phase), stage find_github's completed passes next to
+    its proposed entries, so run_round records them only if the finder succeeded, and return
+    True. Outside proposal mode return False: the caller writes them itself."""
+    if not (proposal_name := os.environ.get(PROPOSAL_ENV)):
+        return False
+    proposal = Path(proposal_name)
+    doc = read_proposal(proposal)
+    staged = merge_github_passes(doc.get("github_passes") or {}, records)
+    if staged:
+        doc["github_passes"] = staged
+    _write_proposal(proposal, doc)
+    return True
+
+
 def append_entries(entries: list[dict]) -> dict[str, int]:
     """Route entries to their shards by id prefix and append, validating each shard afterwards
     (parses + count grew by exactly the group size). Returns {shard filename: appended}.
@@ -499,16 +553,11 @@ def append_entries(entries: list[dict]) -> dict[str, int]:
     finder. In that mode entries are atomically staged as JSON instead of mutating shared YAML;
     the control plane later deduplicates and merges every successful proposal deterministically.
     """
-    if proposal_name := os.environ.get("NEKAISE_PROPOSAL_FILE"):
+    if proposal_name := os.environ.get(PROPOSAL_ENV):
         proposal = Path(proposal_name)
-        staged = []
-        if proposal.exists():
-            staged = json.loads(proposal.read_text())
-        staged.extend(entries)
-        ops.atomic_write_text(
-            proposal,
-            json.dumps(staged, ensure_ascii=False, sort_keys=True) + "\n",
-        )
+        doc = read_proposal(proposal)
+        doc["entries"].extend(entries)
+        _write_proposal(proposal, doc)
         return {"proposal.json": len(entries)}
 
     prior_signature = None

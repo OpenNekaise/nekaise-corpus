@@ -7,7 +7,7 @@ import pytest
 
 
 def stub_registry(monkeypatch):
-    monkeypatch.setattr(find_sources.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(find_sources.dedup, "open_keys", lambda: find_sources.dedup.from_sets(set(), set(), set()))
     monkeypatch.setattr(find_sources.registry, "uniquify_ids", lambda *_args: None)
 
 

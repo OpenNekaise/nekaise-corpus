@@ -154,6 +154,20 @@ class Broker:
             return {"ok": True, "results": results, "version": self.st.version().token}
 
     @contextmanager
+    def local_batch(self, step: str, batch: str) -> Iterator["store.WriteView"]:
+        """A batch from the round's own process (e.g. run_round's discovery merge), run as
+        transaction "<round>.<step>.<batch>" and serialized with the children's batches."""
+        if not _BATCH_ID.fullmatch(step) or not _BATCH_ID.fullmatch(batch):
+            raise BrokerError("step and batch must be plain names")
+        run_id = store._check_run_id(f"{self.round_id}.{step}.{batch}")
+        with self._lock:
+            if self._closing:
+                raise BrokerError("broker is shutting down")
+            with self.st.transaction(run_id, expected_version=self.st.version(),
+                                     writer=self.writer) as tx:
+                yield tx
+
+    @contextmanager
     def serving(self) -> Iterator["Broker"]:
         self._thread.start()
         try:

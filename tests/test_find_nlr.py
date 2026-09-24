@@ -99,7 +99,7 @@ def _setup(monkeypatch, tmp_path, pages, known=None):
 
     monkeypatch.setattr(find_nlr.requests, "get", get)
     monkeypatch.setattr(find_nlr.time, "sleep", lambda _s: calls.append("sleep"))
-    monkeypatch.setattr(find_nlr.registry, "existing_keys", lambda: known)
+    monkeypatch.setattr(find_nlr.dedup, "open_keys", lambda: find_nlr.dedup.from_sets(*known))
     appended = []
     monkeypatch.setattr(find_nlr.registry, "append_entries", appended.extend)
     files = {name: tmp_path / name for name in ("next", "exhausted")}

@@ -45,7 +45,7 @@ def _setup(monkeypatch, tmp_path, responses, known=None):
 
     monkeypatch.setattr(find_escholarship.requests, "post", post)
     monkeypatch.setattr(find_escholarship.time, "sleep", lambda _s: calls.append("sleep"))
-    monkeypatch.setattr(find_escholarship.registry, "existing_keys", lambda: known)
+    monkeypatch.setattr(find_escholarship.dedup, "open_keys", lambda: find_escholarship.dedup.from_sets(*known))
     appended = []
     monkeypatch.setattr(find_escholarship.registry, "append_entries", appended.extend)
     files = {name: tmp_path / name for name in ("next", "hold")}

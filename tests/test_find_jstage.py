@@ -8,9 +8,9 @@ import find_jstage
 
 def _empty_registry(monkeypatch):
     monkeypatch.setattr(
-        find_jstage.registry,
-        "existing_keys",
-        lambda: (set(), set(), set()),
+        find_jstage.dedup,
+        "open_keys",
+        lambda: find_jstage.dedup.from_sets(set(), set(), set()),
     )
 
 

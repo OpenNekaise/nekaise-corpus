@@ -181,14 +181,21 @@ def _rotation_hold_detail(path: Path) -> str:
     return "".join(char for char in line if char.isprintable()).strip()[:512]
 
 
-def merge_proposals(results: list[dict]) -> tuple[int, dict[str, int]]:
-    """Merge finder proposal files in backend order, deduplicating across concurrent finders."""
+def merge_proposals(results: list[dict], apply_passes=None) -> tuple[int, dict[str, int]]:
+    """Merge finder proposal files in backend order, deduplicating across concurrent finders.
+
+    A proposal may also stage find_github's completed passes ({bucket: {kind: date}}); they are
+    recorded only for these (successful) finders, through `apply_passes(records)` — run_round's
+    store writer — after the entries are appended."""
     urls, titles, ids = registry.existing_keys()
     merged = []
     accepted: dict[str, int] = {}
+    passes: dict = {}
     for result in sorted(results, key=lambda r: r["index"]):
         path = result["proposal"]
-        entries = json.loads(path.read_text()) if path.exists() else []
+        doc = registry.read_proposal(path)
+        entries = doc["entries"]
+        passes = registry.merge_github_passes(passes, doc.get("github_passes") or {})
         count = 0
         for entry in entries:
             missing = [field for field in registry.REQUIRED_FIELDS if not entry.get(field)]
@@ -209,7 +216,27 @@ def merge_proposals(results: list[dict]) -> tuple[int, dict[str, int]]:
         accepted[result["name"]] = count
     if merged:
         registry.append_entries(merged)
+    if passes:
+        if apply_passes is None:
+            raise RuntimeError("a finder staged github passes but no store writer can record them")
+        apply_passes(passes)
     return len(merged), accepted
+
+
+def github_passes_applier(broker: "store_broker.Broker"):
+    """Record staged github passes in the store's github_passes.json control document (one
+    transaction per round, and none when every staged pass is already recorded)."""
+    def apply(records: dict) -> None:
+        with broker.st.read(writer=broker.writer) as view:
+            current = view.control_get("github_passes.json") or {}
+        if registry.merge_github_passes(current, records) == current:
+            return
+        with broker.local_batch("discover", "github-passes") as tx:
+            current = tx.control_get("github_passes.json") or {}
+            merged = registry.merge_github_passes(current, records)
+            if merged != current:
+                tx.control_set("github_passes.json", merged)
+    return apply
 
 
 def run_finders_parallel(
@@ -219,6 +246,7 @@ def run_finders_parallel(
     env: dict,
     run_id: str,
     workers: int,
+    apply_passes=None,
 ) -> None:
     """Run finders concurrently against one immutable registry view, then merge serially."""
     ops.WORKSPACE.mkdir(parents=True, exist_ok=True)
@@ -345,7 +373,7 @@ def run_finders_parallel(
                 if not value or "\n" in value or "\r" in value or len(value) > 4096:
                     raise RuntimeError(f"{name}: invalid {label} control value")
 
-        total, accepted = merge_proposals(successful)
+        total, accepted = merge_proposals(successful, apply_passes)
         accepted = {name: accepted.get(name, 0) for name in selected}
         print(f"discovery merge: {total} unique candidates | by backend: {accepted}")
         ops.run_event(
@@ -552,6 +580,7 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
                     read_env,
                     run_id,
                     args.discovery_workers,
+                    github_passes_applier(broker),
                 )
 
             for step, script, fixed_args in PIPELINE:

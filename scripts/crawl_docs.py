@@ -28,6 +28,7 @@ import requests
 import yaml
 from bs4 import BeautifulSoup
 
+import dedup
 import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
@@ -92,7 +93,9 @@ def main() -> None:
     pages = crawl(args.seed, args.prefix, args.max, args.delay)
     print(f"# crawled {len(pages)} pages from {args.seed}", file=sys.stderr)
 
-    urls_known, _titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls_known = keys.urls
+    keys.prefetch(urls=[u.rstrip("/") for u in pages])
     rows = []
     for u in pages:
         if u.rstrip("/") in urls_known:
@@ -111,7 +114,7 @@ def main() -> None:
         if args.license_url or args.license_evidence:
             row["rights_verified_at"] = date.today().isoformat()
         rows.append(row)
-    registry.uniquify_ids(rows, reg_ids)
+    keys.uniquify_ids(rows)
     print(yaml.safe_dump(rows, sort_keys=False, allow_unicode=True))
 
     if args.append and rows:

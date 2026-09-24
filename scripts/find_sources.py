@@ -34,6 +34,7 @@ import requests
 import yaml
 
 import ops
+import dedup
 import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
@@ -457,7 +458,8 @@ def main() -> int:
     if not backends:
         ap.error("--backends did not select any known backend")
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out, seen = [], set()
     throttled: dict[str, int] = {backend: 0 for backend in backends}
     successful_requests: dict[str, int] = {backend: 0 for backend in backends}
@@ -504,6 +506,8 @@ def main() -> int:
                 continue
             successful_requests[b] += 1
             throttled[b] = 0
+            hits = list(hits)
+            keys.prefetch(**dedup.page_keys(hits))
             for h in hits:
                 u, t = h["url"].rstrip("/"), registry.norm(h["title"])
                 if not h["title"] or u in urls or t in titles or u in seen:
@@ -527,7 +531,7 @@ def main() -> int:
 
     # de-collide ids: truncated title slugs clash across runs; the manifest is id-keyed, so a
     # clash silently overwrites a doc. registry.uniquify_ids guards vs the whole registry.
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
 
     by_topic, by_src, by_lic = {}, {}, {}
     for h in out:

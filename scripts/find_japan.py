@@ -51,6 +51,7 @@ from urllib.parse import urljoin
 import requests
 import yaml
 
+import dedup
 import registry
 
 UA = {"User-Agent": "nekaise-corpus/find_japan"}
@@ -220,7 +221,8 @@ def main() -> None:
                      help="append into the registry (registry/japan.yaml)")
     args = ap.parse_args()
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     session = requests.Session()
     out: list[dict] = []
     walked = 0
@@ -249,7 +251,7 @@ def main() -> None:
                         "license": "open", "topic": topic, "format": "pdf"})
         time.sleep(0.5)  # politeness between page fetches
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
 
     by_topic: dict = {}
     for h in out:

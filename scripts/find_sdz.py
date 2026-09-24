@@ -46,6 +46,7 @@ import requests
 import yaml
 from bs4 import BeautifulSoup
 
+import dedup
 import registry
 
 BASE = "https://nachhaltigwirtschaften.at"
@@ -97,7 +98,8 @@ def main() -> None:
     ap.add_argument("--append", action="store_true", help="append into the registry (registry/austria.yaml)")
     args = ap.parse_args()
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out = []
     pages_walked = 0
     for page in range(args.page, args.page + args.pages):
@@ -126,7 +128,7 @@ def main() -> None:
                         "topic": classify(title), "format": "pdf"})
         time.sleep(0.5)  # politeness between pages
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
     by_topic: dict = {}
     for h in out:
         by_topic[h["topic"]] = by_topic.get(h["topic"], 0) + 1

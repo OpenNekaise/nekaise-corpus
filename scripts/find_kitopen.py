@@ -34,6 +34,7 @@ from urllib.parse import urlparse
 import requests
 import yaml
 
+import dedup
 import registry
 
 OAI = "https://publikationen.bibliothek.kit.edu/oai"
@@ -137,7 +138,8 @@ def main() -> None:
     ap.add_argument("--append", action="store_true", help="append into the registry (registry/kitopen.yaml)")
     args = ap.parse_args()
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out = []
     scanned = 0
     token = "" if args.token == "START" else args.token
@@ -173,7 +175,7 @@ def main() -> None:
 
         time.sleep(1)  # politeness between OAI pages
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
 
     by_topic: dict = {}
     for h in out:

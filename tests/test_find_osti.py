@@ -7,9 +7,9 @@ import find_osti
 
 def _empty_registry(monkeypatch):
     monkeypatch.setattr(
-        find_osti.registry,
-        "existing_keys",
-        lambda: (set(), set(), set()),
+        find_osti.dedup,
+        "open_keys",
+        lambda: find_osti.dedup.from_sets(set(), set(), set()),
     )
 
 

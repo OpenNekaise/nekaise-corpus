@@ -40,6 +40,7 @@ import requests
 import yaml
 from bs4 import BeautifulSoup
 
+import dedup
 import registry
 
 BASE = "https://librairie.ademe.fr"
@@ -114,7 +115,8 @@ def main() -> None:
     ap.add_argument("--append", action="store_true", help="append into the registry (registry/ademe.yaml)")
     args = ap.parse_args()
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     session = requests.Session()
 
     product_urls: list[str] = []
@@ -134,6 +136,7 @@ def main() -> None:
           file=sys.stderr)
 
     out = []
+    keys.prefetch(urls=[purl.rstrip("/") for purl in product_urls])
     for purl in product_urls:
         if len(out) >= args.max:
             break
@@ -159,7 +162,7 @@ def main() -> None:
         out.append({"id": sid, "title": full_title[:150], "url": pdf_url, "source": "ademe",
                     "license": "open", "topic": topic_for(title), "format": "pdf"})
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
     by_topic: dict = {}
     for h in out:
         by_topic[h["topic"]] = by_topic.get(h["topic"], 0) + 1

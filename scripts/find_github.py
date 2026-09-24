@@ -31,17 +31,20 @@ from pathlib import Path
 import requests
 import yaml
 
-import blocklist
+import dedup
 import ops
 import registry
+from store import Prefix, Table
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 API = "https://api.github.com"
 # Completed opt-in doc-markup passes, per source bucket and doc kind: {"gh_radiance": {"man":
-# "2026-09-24"}}. Written only by this finder on a successful --append walk, INCLUDING passes that
-# found no file of that kind, so an empty pass is never re-walked. Lives under registry/ so a
-# round commits it and a failed round's snapshot rolls it back with the proposals it covers.
-PASSES = registry.REG_DIR / "github_passes.json"
+# "2026-09-24"}}. Recorded only for a successful --append walk, INCLUDING passes that found no file
+# of that kind, so an empty pass is never re-walked. It is the store's control document
+# github_passes.json: in a round the finder stages it in its proposal and run_round writes it
+# through the store with the merge; a failed round's snapshot rolls it back with the proposals.
+PASSES_DOC = "github_passes.json"
+PASSES = registry.REG_DIR / PASSES_DOC
 
 # Curated, clearly-permissive (BSD / MIT / Apache) building-energy repos. Extend freely.
 #   repo     owner/name on github
@@ -294,13 +297,17 @@ def _url_format(filename: str) -> str:
     return "txt"
 
 
-def source_formats() -> dict[str, set[str]]:
-    """Map each GitHub source bucket (gh_<repo>) to the registry formats already ingested or
-    pruned for it.
+RAW_PREFIX = "https://raw.githubusercontent.com/"
 
-    Only the GitHub shards are read, never the entire 600k+ document corpus. A pruned raw GitHub
-    URL is durable evidence that the repo was walked, and its extension proves which pass (prose,
-    opted-in code, opted-in doc markup) was attempted.
+
+def source_formats(view) -> dict[str, set[str]]:
+    """Map each GitHub source bucket (gh_<repo>) to the registry formats already ingested or
+    pruned for it, from filtered store scans over one read view.
+
+    Only gh- rows and raw-GitHub blocklist URLs are asked for, never the entire corpus (the file
+    store reads just the GitHub shards for an id-prefix scan). A pruned raw GitHub URL is durable
+    evidence that the repo was walked, and its extension proves which pass (prose, opted-in code,
+    opted-in doc markup) was attempted.
     """
     seen: dict[str, set[str]] = {}
 
@@ -308,36 +315,27 @@ def source_formats() -> dict[str, set[str]]:
         if s and s.startswith("gh_"):
             seen.setdefault(s, set()).add(fmt or "")
 
-    manifest_path = registry.MAN_DIR / "github.jsonl"
-    if manifest_path.exists():
-        for line in manifest_path.read_text().splitlines():
-            if line.strip():
-                row = json.loads(line)
-                note(row.get("source", ""), row.get("format"))
+    for table in (Table.MANIFEST, Table.ENTRIES):
+        for row in dedup.scan_all(view, table, where=Prefix("id", "gh-"),
+                                  fields=("source", "format")):
+            note(row.get("source", ""), row.get("format"))
 
-    registry_path = registry.REG_DIR / "github.yaml"
-    if registry_path.exists():
-        for entry in registry.parse_yaml(registry_path.read_text()).get("sources") or []:
-            note(entry.get("source", ""), entry.get("format"))
-
-    raw_prefix = "https://raw.githubusercontent.com/"
-    for url in blocklist.load():
-        if not url.startswith(raw_prefix):
-            continue
-        parts = url[len(raw_prefix):].split("/")
+    for row in dedup.scan_all(view, Table.BLOCKLIST, where=Prefix("url", RAW_PREFIX),
+                              fields=("url",)):
+        parts = row["url"][len(RAW_PREFIX):].split("/")
         if len(parts) < 4:
             continue
         note(f"gh_{registry.slug(parts[1])}", _url_format(parts[-1]))
     return seen
 
 
-def done_sources():
+def done_sources(view):
     """Return (buckets walked at all, buckets whose opted-in code pass completed).
 
     This keeps fully-pruned repos from being walked forever while still allowing a docs-only
     code repo to return once for its source files.
     """
-    seen = source_formats()
+    seen = source_formats(view)
     return set(seen), {s for s, fmts in seen.items() if "txt" in fmts}
 
 
@@ -345,23 +343,36 @@ def _bucket(spec: dict) -> str:
     return f"gh_{registry.slug(spec['repo'].split('/')[-1])}"
 
 
-def load_passes(path: Path | None = None) -> dict[str, dict[str, str]]:
+def load_passes(path: Path | None = None, *, view=None) -> dict[str, dict[str, str]]:
+    """Completed passes: the store's control document when a view is given, else the file."""
+    if view is not None:
+        return view.control_get(PASSES_DOC) or {}
     path = path or PASSES
     return json.loads(path.read_text()) if path.exists() else {}
 
 
-def record_passes(specs: list[dict], today: str, path: Path | None = None) -> None:
-    """Mark every requested doc kind of successfully walked repos complete (empty or not)."""
-    path = path or PASSES
-    passes = load_passes(path)
-    changed = False
+def pass_records(specs: list[dict], today: str) -> dict[str, dict[str, str]]:
+    """{bucket: {doc kind: today}} for every requested doc kind of these walked repos."""
+    records: dict[str, dict[str, str]] = {}
     for spec in specs:
         for kind in spec.get("docs") or ():
-            bucket = passes.setdefault(_bucket(spec), {})
-            if kind not in bucket:
-                bucket[kind] = today
-                changed = True
-    if changed:
+            records.setdefault(_bucket(spec), {})[kind] = today
+    return records
+
+
+def record_passes(specs: list[dict], today: str, path: Path | None = None) -> None:
+    """Mark every requested doc kind of successfully walked repos complete (empty or not).
+
+    Inside a round's discovery phase (proposal mode) nothing shared is written: the records are
+    staged in this finder's proposal and run_round applies them to the store only if the finder
+    succeeds. A standalone --append writes the passes file, like registry.append_entries."""
+    records = pass_records(specs, today)
+    if not records or registry.stage_github_passes(records):
+        return
+    path = path or PASSES
+    current = load_passes(path)
+    passes = registry.merge_github_passes(current, records)
+    if passes != current:
         ops.atomic_write_text(path, json.dumps(passes, indent=2, sort_keys=True) + "\n")
 
 
@@ -481,16 +492,19 @@ def main() -> None:
         return
 
     if not args.repo:  # skip repos already ingested; re-walk a code repo only until its code lands
-        formats = source_formats()
+        with dedup.read_view() as view:
+            formats = source_formats(view)
+            passes = load_passes(view=view)
         done = set(formats)
         code_done = {s for s, fmts in formats.items() if "txt" in fmts}
-        keep = pending_repos(repos, done, code_done, formats, load_passes())
+        keep = pending_repos(repos, done, code_done, formats, passes)
         if len(keep) < len(repos):
             print(f"# skipping {len(repos) - len(keep)} already-ingested repos; "
                   f"walking {len(keep)} (60/hr API budget)", file=sys.stderr)
         repos = keep
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out, seen, walked = [], set(), []
     for spec in repos:
         try:
@@ -500,6 +514,7 @@ def main() -> None:
             continue
         walked.append(spec)
         kept = 0
+        keys.prefetch(**dedup.page_keys(hits))
         for h in hits:
             u, t = h["url"].rstrip("/"), registry.norm(h["title"])
             if u in urls or t in titles or u in seen:
@@ -509,7 +524,7 @@ def main() -> None:
             kept += 1
         print(f"# {spec['repo']}: {kept} new", file=sys.stderr)
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
 
     by_src, by_fmt = {}, {}
     for h in out:

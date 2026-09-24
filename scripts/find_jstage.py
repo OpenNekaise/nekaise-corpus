@@ -33,6 +33,7 @@ import xml.etree.ElementTree as ET
 
 import requests
 
+import dedup
 import registry
 
 API = "https://api.jstage.jst.go.jp/searchapi/do"
@@ -111,7 +112,8 @@ def main() -> None:
     args = ap.parse_args()
     material, topic = SERIES[args.series]
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out: list[dict] = []
     scanned = 0
     total: int | None = None
@@ -151,7 +153,7 @@ def main() -> None:
                         "format": "pdf"})
         time.sleep(2.0)  # politeness between API pages
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
     print(f"# {len(out)} NEW AIJ {args.series} articles (start {args.start}, {scanned} scanned "
           f"of {total if total is not None else 'unknown'} total; "
           f"deduped vs manifest + registry + blocklist)")

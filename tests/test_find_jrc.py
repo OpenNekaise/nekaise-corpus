@@ -7,9 +7,9 @@ import find_jrc
 
 def _empty_registry(monkeypatch):
     monkeypatch.setattr(
-        find_jrc.registry,
-        "existing_keys",
-        lambda: (set(), set(), set()),
+        find_jrc.dedup,
+        "open_keys",
+        lambda: find_jrc.dedup.from_sets(set(), set(), set()),
     )
 
 

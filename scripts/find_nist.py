@@ -31,6 +31,7 @@ import time
 import requests
 import yaml
 
+import dedup
 import registry
 
 API = "https://api.crossref.org/works"
@@ -210,7 +211,10 @@ def main() -> None:
             )
             raise SystemExit(1)
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
+    keys.prefetch(urls=[url.rstrip("/") for _title, url, _topic in hits],
+                  titles=[registry.norm(title) for title, _url, _topic in hits])
     candidates, seen = [], set()
     for title, url, topic in hits:
         normalized_url = url.rstrip("/")
@@ -239,7 +243,7 @@ def main() -> None:
         hold_reason = f"{start[:7]} has {len(candidates)} new candidates; emitted {len(out)}"
     if hold_reason:
         request_rotation_hold(hold_reason)
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
 
     by_topic: dict[str, int] = {}
     for hit in out:

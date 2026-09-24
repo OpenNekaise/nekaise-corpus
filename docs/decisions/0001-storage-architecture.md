@@ -180,3 +180,22 @@ build on the same facts.
   round's metadata in run-scoped tables while downloads, cleaning and gates run, then promotes it
   in one short transaction that also bumps the generation and writes the publication outbox row.
   Until then a store transaction's atomicity does not make a whole round atomic.
+
+## Stage 3, step 3 record: finder membership (2026-09-24)
+
+- Every `find_*.py` and `crawl_docs.py` dedups through `scripts/dedup.py`: a `Keys` session sends
+  candidate pages to `known()` (MAX_KNOWN per call, one read view per batch) and keeps the run's
+  own additions and id reservations in small local sets. Membership equals the legacy
+  `value in existing_keys()` sets; a value that is not its own normal form is "unknown" without a
+  query (the one theoretical gap: a stored URL whose `strip().rstrip("/")` is not idempotent,
+  e.g. ending in `"/ /"`). `tests/test_dedup.py` forbids finders from materializing key sets.
+- `find_github` reads gh- rows and raw-GitHub blocklist URLs with filtered scans; the file store
+  answers an id-prefix scan from the shard files that prefix routes to (routing is linted).
+- `find_wiki` origin titles come from a filtered scan in entry-id order (registry file order is
+  not a store property), which can reorder its langlinks batches.
+- A proposal file is a JSON list of entries, or `{"entries": [...], "github_passes": {...}}`
+  when `find_github` staged completed passes; `run_round` records them through the store
+  (`control_set("github_passes.json")`, transaction `<round>.discover.github-passes`) only for
+  successful finders. A standalone `--append` still writes the file directly, like
+  `registry.append_entries`.
+- Still materializing: `run_round.merge_proposals` and its index warm-up call `existing_keys()`.

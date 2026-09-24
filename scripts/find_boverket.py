@@ -26,6 +26,7 @@ import time
 
 import requests
 
+import dedup
 import registry
 
 BASE = "https://www.boverket.se"
@@ -69,7 +70,8 @@ def main() -> None:
                     help="append into the registry (registry/nordic.yaml)")
     args = ap.parse_args()
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out: list[dict] = []
     scanned = 0
     for n in range(args.page, args.page + args.pages):
@@ -107,7 +109,7 @@ def main() -> None:
                         "url": pdf, "source": "boverket", "license": "open",
                         "topic": topic_for(title), "format": "pdf"})
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
     print(f"# {len(out)} NEW Boverket publications (listing p{args.page}..{args.page+args.pages-1}, "
           f"{scanned} pub pages scanned; deduped vs manifest + registry + blocklist)")
     by_topic: dict = {}

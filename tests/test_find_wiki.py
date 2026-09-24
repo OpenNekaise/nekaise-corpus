@@ -25,7 +25,7 @@ def test_category_failure_exits_nonzero(monkeypatch):
 
 
 def test_langlinks_failure_exits_nonzero_before_partial_append(monkeypatch):
-    monkeypatch.setattr(find_wiki.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(find_wiki.dedup, "open_keys", lambda: find_wiki.dedup.from_sets(set(), set(), set()))
     monkeypatch.setattr(find_wiki, "origin_titles", lambda: {"Building": "construction"})
     monkeypatch.setattr(
         find_wiki,

@@ -7,9 +7,9 @@ import find_worldbank
 
 def _empty_registry(monkeypatch):
     monkeypatch.setattr(
-        find_worldbank.registry,
-        "existing_keys",
-        lambda: (set(), set(), set()),
+        find_worldbank.dedup,
+        "open_keys",
+        lambda: find_worldbank.dedup.from_sets(set(), set(), set()),
     )
 
 

@@ -29,6 +29,7 @@ import time
 import requests
 import yaml
 
+import dedup
 import registry
 
 SEARCH = "https://www.gov.uk/api/search.json"
@@ -147,7 +148,8 @@ def main() -> None:
                     help="append into the registry (registry/govuk.yaml)")
     args = ap.parse_args()
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out, seen_paths = [], set()
     for term, topic in QUERIES:
         if len(out) >= args.max:
@@ -188,7 +190,7 @@ def main() -> None:
                             "topic": topic, "format": "pdf"})
         time.sleep(0.5)
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
 
     by_topic: dict = {}
     for h in out:

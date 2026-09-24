@@ -50,6 +50,7 @@ import requests
 import yaml
 from bs4 import BeautifulSoup
 
+import dedup
 import registry
 
 BASE = "https://publications.ibpsa.org"
@@ -193,7 +194,11 @@ def main() -> None:
               "refusing a partial append so rotation does not advance", file=sys.stderr)
         raise SystemExit(1)
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
+    keys.prefetch(urls=[(BASE + p["pdf_url"] if p["pdf_url"].startswith("/") else p["pdf_url"])
+                        .rstrip("/") for p in papers],
+                  titles=[registry.norm(p["title"]) for p in papers])
     candidates = []
     for p in papers:
         pdf_url = p["pdf_url"]
@@ -220,7 +225,7 @@ def main() -> None:
         # The runner advances the pointer by one before disabling, which leaves it on the first
         # unvisited index (len(UNIVERSE)) - exactly where a newly appended edition goes.
         report_exhausted(f"all {len(UNIVERSE)} IBPSA (conf, year) listings walked")
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
     by_topic: dict = {}
     for h in out:
         by_topic[h["topic"]] = by_topic.get(h["topic"], 0) + 1

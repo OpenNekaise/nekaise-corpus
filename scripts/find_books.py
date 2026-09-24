@@ -38,6 +38,7 @@ import requests
 import yaml
 
 import ops
+import dedup
 import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
@@ -274,7 +275,8 @@ def main() -> None:
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     workers = max(1, args.workers)
     if args.cursor is None:
         offset = args.offset or 0
@@ -317,17 +319,22 @@ def main() -> None:
         )
         raise SystemExit(1)
 
-    candidates, seen = [], set()
+    eligible = []
     for pages in pages_by_query:
         for _term, topic, item in pages or []:
             title, url, handle = item.get("name"), pdf_link(item), item.get("handle")
             if not (title and url and handle) or not is_book(item):
                 continue
-            u, t = url.rstrip("/"), registry.norm(title)
-            if u in urls or t in titles or u in seen:
-                continue
-            seen.add(u)
-            candidates.append((title, url, handle, topic))
+            eligible.append((title, url, handle, topic))
+    keys.prefetch(urls=[url.rstrip("/") for _title, url, _handle, _topic in eligible],
+                  titles=[registry.norm(title) for title, _url, _handle, _topic in eligible])
+    candidates, seen = [], set()
+    for title, url, handle, topic in eligible:
+        u, t = url.rstrip("/"), registry.norm(title)
+        if u in urls or t in titles or u in seen:
+            continue
+        seen.add(u)
+        candidates.append((title, url, handle, topic))
 
     cache = load_license_cache()
     out = []
@@ -367,7 +374,7 @@ def main() -> None:
                 "format": "pdf",
             })
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
 
     by_lic: dict = {}
     for h in out:

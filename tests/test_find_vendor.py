@@ -465,7 +465,7 @@ def test_cursor_round_robins_enabled_vendors_and_stages_a_proposal(tmp_path, mon
     path.write_text(json.dumps({"vendors": cfgs}))
     monkeypatch.setattr(find_vendor, "VENDORS_PATH", path)
     monkeypatch.setattr(find_vendor, "CACHE_DIR", tmp_path / "cache")
-    monkeypatch.setattr(registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(find_vendor.dedup, "open_keys", lambda: find_vendor.dedup.from_sets(set(), set(), set()))
     monkeypatch.setattr(
         find_vendor, "enumerate_sitemap",
         lambda cfg, fetcher=None: [f"https://acme.example/lit/{cfg['name']}-x.pdf"],
@@ -491,7 +491,7 @@ def test_enumeration_failure_aborts_without_proposal(tmp_path, monkeypatch):
     path.write_text(json.dumps({"vendors": {"a": vendor()}}))
     monkeypatch.setattr(find_vendor, "VENDORS_PATH", path)
     monkeypatch.setattr(find_vendor, "CACHE_DIR", tmp_path / "cache")
-    monkeypatch.setattr(registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(find_vendor.dedup, "open_keys", lambda: find_vendor.dedup.from_sets(set(), set(), set()))
 
     def boom(cfg, fetcher=None):
         raise RuntimeError("503")

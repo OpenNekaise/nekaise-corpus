@@ -31,6 +31,7 @@ import time
 import requests
 import yaml
 
+import dedup
 import registry
 
 API = "https://api.openaire.eu/graph/v1/researchProducts"
@@ -122,7 +123,8 @@ def main() -> None:
                     help="append into the registry (registry/jrc.yaml)")
     args = ap.parse_args()
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     session = requests.Session()
     out, seen_handles = [], set()
     failed_request = None
@@ -168,7 +170,7 @@ def main() -> None:
         )
         raise SystemExit(1)
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
 
     by_topic: dict = {}
     for h in out:

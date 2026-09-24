@@ -35,6 +35,7 @@ from pathlib import Path
 import requests
 import yaml
 
+import dedup
 import registry
 
 UA = {"User-Agent": "nekaise-corpus/find_ojs (research)"}
@@ -269,14 +270,15 @@ def main() -> None:
     else:
         site = SITES[args.site]
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     try:
         out, scanned, complete = harvest(site, urls, titles, args.max, args.delay)
     except Exception as exc:
         print(f"# {site['key']} OAI harvest failed: {exc}", file=sys.stderr)
         print("# refusing a partial append so rotation does not advance", file=sys.stderr)
         raise SystemExit(1)
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
 
     by_lic: dict[str, int] = {}
     for e in out:

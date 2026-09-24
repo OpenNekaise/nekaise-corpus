@@ -46,6 +46,7 @@ from urllib.parse import urlparse
 import requests
 import yaml
 
+import dedup
 import registry
 
 API = "https://articlemeta.scielo.org/api/v1"
@@ -154,7 +155,8 @@ def main() -> None:
     ap.add_argument("--append", action="store_true", help="append into the registry (registry/scielo.yaml)")
     args = ap.parse_args()
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out, seen = [], set()
     for collection, issn, topic in JOURNALS:
         if len(out) >= args.max:
@@ -166,12 +168,14 @@ def main() -> None:
             print(f"# scielo {collection}/{issn} identifiers @{args.offset} failed: {e}",
                   file=sys.stderr)
             continue
+        keys.prefetch(ids=[f"sci-{(obj.get('code') or '').lower()}"
+                           for obj in ids.get("objects", [])])
         for obj in ids.get("objects", []):
             if len(out) >= args.max:
                 break
             pid = obj.get("code") or ""
             sid = f"sci-{pid.lower()}"
-            if not pid or sid in reg_ids:      # already held — skip WITHOUT a metadata request
+            if not pid or sid in keys.ids:      # already held — skip WITHOUT a metadata request
                 continue
             try:
                 rec = _get("article/", collection=collection, code=pid, format="json")
@@ -201,7 +205,7 @@ def main() -> None:
                         "rights_verified_at": "2026-07-28"})
             time.sleep(0.15)
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
 
     by_topic: dict = {}
     for h in out:

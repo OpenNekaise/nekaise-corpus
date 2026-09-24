@@ -6,9 +6,9 @@ import pytest
 
 def _empty_registry(monkeypatch):
     monkeypatch.setattr(
-        find_openaire.registry,
-        "existing_keys",
-        lambda: (set(), set(), set()),
+        find_openaire.dedup,
+        "open_keys",
+        lambda: find_openaire.dedup.from_sets(set(), set(), set()),
     )
 
 

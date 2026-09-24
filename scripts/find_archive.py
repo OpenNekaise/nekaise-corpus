@@ -26,6 +26,7 @@ from pathlib import Path
 import requests
 import yaml
 
+import dedup
 import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
@@ -83,7 +84,8 @@ def main() -> None:
     ap.add_argument("--append", action="store_true", help="append into the registry (registry/archive.yaml)")
     args = ap.parse_args()
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out = []
     failed_query = None
     for term, topic in QUERIES:
@@ -95,6 +97,8 @@ def main() -> None:
             print(f"# search '{term}' failed: {e}", file=sys.stderr)
             failed_query = term
             break
+        keys.prefetch(urls=[f"https://archive.org/download/{i}/{i}_djvu.txt"
+                            for d in docs if isinstance(i := d.get("identifier"), str)])
         for d in docs:
             if len(out) >= args.max:
                 break
@@ -128,7 +132,7 @@ def main() -> None:
         )
         raise SystemExit(1)
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
     by_topic: dict = {}
     for h in out:
         by_topic[h["topic"]] = by_topic.get(h["topic"], 0) + 1

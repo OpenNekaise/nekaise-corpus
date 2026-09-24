@@ -25,6 +25,7 @@ from pathlib import Path
 import requests
 import yaml
 
+import dedup
 import registry
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
@@ -83,7 +84,8 @@ def main() -> None:
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
 
-    urls, titles, reg_ids = registry.existing_keys()
+    keys = dedup.open_keys()
+    urls, titles = keys.urls, keys.titles
     out, seen = [], set()
     failed_request = None
     for term, topic in QUERIES:
@@ -124,7 +126,7 @@ def main() -> None:
         )
         raise SystemExit(1)
 
-    registry.uniquify_ids(out, reg_ids)
+    keys.uniquify_ids(out)
 
     by_topic: dict = {}
     for h in out:

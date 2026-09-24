@@ -72,7 +72,7 @@ def test_crawl_docs_refuses_restricted_source_before_any_request(monkeypatch):
 
 def test_crawl_docs_records_exact_license_evidence(monkeypatch, capsys):
     monkeypatch.setattr(crawl_docs.registry, "load_eligibility", lambda: {})
-    monkeypatch.setattr(crawl_docs.registry, "existing_keys", lambda: (set(), set(), set()))
+    monkeypatch.setattr(crawl_docs.dedup, "open_keys", lambda: crawl_docs.dedup.from_sets(set(), set(), set()))
     monkeypatch.setattr(crawl_docs, "crawl", lambda *_a: ["https://m.io/en/latest/api.html"])
     appended = []
     monkeypatch.setattr(crawl_docs.registry, "append_entries", appended.extend)
