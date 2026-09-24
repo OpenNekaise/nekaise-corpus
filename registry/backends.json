@@ -73,7 +73,8 @@
       "--max",
       "400"
     ],
-    "enabled": true
+    "enabled": false,
+    "reason": "paused 2026-09-24 by operator decision: patents are 74% of corpus text (CN 50.5% as Google machine-translated /en pages, US 23.6%); growth pivots to non-patent source types. Pointer preserved. Do NOT re-enable without explicit operator approval."
   },
   "find_patents_cn": {
     "script": "find_patents.py",
@@ -83,7 +84,8 @@
       "--max",
       "400"
     ],
-    "enabled": true
+    "enabled": false,
+    "reason": "paused 2026-09-24 by operator decision: patents are 74% of corpus text (CN 50.5% as Google machine-translated /en pages, US 23.6%); growth pivots to non-patent source types. Pointer preserved. Do NOT re-enable without explicit operator approval."
   },
   "find_purdue": {
     "script": "find_purdue.py",
