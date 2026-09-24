@@ -28,6 +28,7 @@ import argparse
 import hashlib
 import importlib.metadata
 import io
+import json
 import multiprocessing
 import os
 import re
@@ -49,6 +50,8 @@ from urllib.parse import urlparse
 
 import requests
 
+import host_policy
+import ops
 import markup_text
 import quality
 import registry
@@ -431,7 +434,8 @@ def _fetch_polite(url: str, fmt: str, ua: str, rec: dict, host: str) -> bytes | 
         )
     except (requests.Timeout, requests.ConnectionError) as exc:
         rec["error"] = f"network: {exc}"
-        rec["transient"] = True
+        if recoverable_failure(exc, None):  # DNS failures keep the pruner's DNS evidence rule
+            rec["transient"] = True
         return None
     rec["http_status"] = resp.status_code
     body = resp.content or b""
@@ -479,6 +483,8 @@ def download_one(src: dict) -> dict:
             # a 200 that isn't a PDF is a WAF interstitial / captcha / error page — without this
             # check it lands in the corpus as an ok row with 0 text chars (IBPSA sgcaptcha, 07-09)
             rec["error"] = f"not-a-pdf (got {data[:12]!r})"
+            if rec["http_status"] in RECOVERABLE_STATUSES:
+                rec["transient"] = True  # a 202/429/503 interstitial, not a fake PDF
             return rec
         rec["sha256"] = sha256_bytes(data)
         rec["bytes"] = len(data)
@@ -495,7 +501,28 @@ def download_one(src: dict) -> dict:
         rec["_text_dir"] = str(TEXT)
     except Exception as e:
         rec["error"] = str(e)
+        if recoverable_failure(e, rec.get("http_status")):
+            rec["transient"] = True
     return rec
+
+
+# Recoverable failures on ANY host: the discovery cursor has usually advanced already, so these
+# rows are kept and retried (prune_corpus.retry_pending) instead of being pruned. Hard failures
+# (404/410, fake PDFs, non-polite 403s, TLS errors) and DNS failures (which have their own
+# repeated-evidence blocklist rule in prune_corpus) keep today's behaviour.
+RECOVERABLE_STATUSES = frozenset({202, 429, 503})
+
+
+def recoverable_failure(exc: BaseException, status: int | None) -> bool:
+    if status in RECOVERABLE_STATUSES:
+        return True
+    if isinstance(exc, requests.exceptions.SSLError):
+        return False
+    if isinstance(exc, (requests.Timeout, requests.ConnectionError, subprocess.TimeoutExpired)):
+        import prune_corpus  # lazy: the pruner owns the DNS-failure classification
+
+        return not prune_corpus._is_dns_resolution_error(str(exc))
+    return False
 
 
 def _fetch_with_fallback(url: str, fmt: str, ua: str, rec: dict, resp=None) -> bytes:
@@ -610,34 +637,57 @@ def fetch_one(src: dict) -> dict:
 
 
 def note_retry(rec: dict, previous: dict | None) -> None:
-    """Carry transient-failure bookkeeping across rounds (read by prune_corpus's retry window).
+    """Carry transient-failure bookkeeping across rounds (read by prune_corpus.retry_pending).
 
-    Only real requests count as attempts; a download skipped by an open challenge circuit keeps
-    the previous count. Successful and hard-failed rows carry no retry state.
+    Only a real request starts or extends the retry window: a download skipped by an open
+    challenge circuit keeps the previous count, and a candidate that was never requested keeps
+    retry_attempts 0 with no first_failed_at, so it is preserved until actually attempted.
+    Successful and hard-failed rows carry no retry state.
     """
     not_requested = rec.pop("_not_requested", False)
     if rec.get("status") == "ok" or not rec.get("transient"):
         rec.pop("transient", None)
         return
     previous = previous if previous and previous.get("transient") else {}
-    rec["retry_attempts"] = int(previous.get("retry_attempts") or 0) + (0 if not_requested else 1)
-    rec["first_failed_at"] = (previous.get("first_failed_at")
-                              or time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
+    attempts = int(previous.get("retry_attempts") or 0) + (0 if not_requested else 1)
+    rec["retry_attempts"] = attempts
+    if attempts:
+        rec["first_failed_at"] = (previous.get("first_failed_at")
+                                  or time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
 
 
-def cap_per_host(srcs: list[dict]) -> tuple[list[dict], dict[str, int]]:
-    """Apply HOST_RUN_CAP; return (kept, {host: deferred count})."""
+def cap_per_host(srcs: list[dict], manifest: dict | None = None) -> tuple[list[dict], list[str]]:
+    """Apply HOST_RUN_CAP to NEW work; return (kept sources, deferred ids).
+
+    Restoring a previously successful row (manifest status ok, local files missing, e.g. a fresh
+    clone) is never capped: it would otherwise stay "ok without text" and be pruned as no-text.
+    """
+    manifest = manifest or {}
     counts: dict[str, int] = defaultdict(int)
-    kept, deferred = [], defaultdict(int)
+    kept, deferred = [], []
     for src in srcs:
         host = urlparse(src["url"]).netloc.lower()
         cap = HOST_RUN_CAP.get(host)
-        if cap is not None and counts[host] >= cap:
-            deferred[host] += 1
-            continue
-        counts[host] += 1
+        restoring = (manifest.get(src["id"]) or {}).get("status") == "ok"
+        if cap is not None and not restoring:
+            if counts[host] >= cap:
+                deferred.append(src["id"])
+                continue
+            counts[host] += 1
         kept.append(src)
-    return kept, dict(deferred)
+    return kept, deferred
+
+
+def deferred_path() -> Path:
+    return HERE / "workspace" / "fetch-deferred.json"  # == ops.WORKSPACE; tests move HERE
+
+
+def write_deferred(ids: list[str], path: Path | None = None) -> None:
+    """Tell this round's pruner which rows were only deferred (never judged this run)."""
+    path = path or deferred_path()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    ops.atomic_write_text(path, json.dumps(
+        {"run_id": os.environ.get("NEKAISE_RUN_ID"), "ids": sorted(ids)}) + "\n")
 
 
 def fair_sources(srcs: list[dict]) -> list[dict]:
@@ -787,7 +837,9 @@ def main() -> None:
               f"(of {n_ok} ok docs in manifest)")
         return
 
+    policy = host_policy.load()
     todo = []
+    suspended: dict[str, int] = defaultdict(int)
     for s in srcs:
         if only and s.get("topic") not in only:
             continue
@@ -795,7 +847,14 @@ def main() -> None:
         if cur and cur.get("status") == "ok" and not args.force:
             if cur.get("raw_path") and (HERE / cur["raw_path"]).exists():
                 continue
+        if host_policy.suspended(s["url"], policy):
+            # Fetch suspension: never requested, no failure row, nothing ages toward pruning.
+            suspended[urlparse(s["url"]).hostname or ""] += 1
+            continue
         todo.append(s)
+    if suspended:
+        print(f"host fetch suspended by registry/host_policy.json (not requested): "
+              f"{dict(suspended)}")
 
     # the committed manifest's sha256 = what WE fetched; compare to detect upstream drift.
     expected = {sid: r.get("sha256") for sid, r in manifest.items() if r.get("sha256")}
@@ -841,9 +900,11 @@ def main() -> None:
         if done % 25 == 0:
             write_manifest(manifest)  # checkpoint so an interrupted run loses <25 extractions
 
-    todo, deferred = cap_per_host(todo)
-    if deferred:
-        print(f"deferred by per-run host caps (left in the registry for later rounds): {deferred}")
+    todo, deferred_ids = cap_per_host(todo, manifest)
+    write_deferred(deferred_ids)
+    if deferred_ids:
+        print(f"deferred by per-run host caps (left in the registry for later rounds): "
+              f"{len(deferred_ids)} sources")
     ordered = fair_sources(todo)
     with (
         ThreadPoolExecutor(max_workers=max(1, args.workers)) as downloads,

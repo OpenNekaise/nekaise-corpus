@@ -42,8 +42,17 @@ def test_transient_rows_are_never_blocklisted_even_with_403():
     assert prune_corpus._blocklistable(_failed("ibp-b", http_status=403), "failed") is True
 
 
-def _run_prune(monkeypatch, rows):
+def _run_prune(monkeypatch, rows, deferred=None, tmp_path=None):
     removed, blocked, written = [], [], []
+    if deferred is None:
+        monkeypatch.setattr(prune_corpus, "deferred_ids", lambda: set())
+    else:  # the real hand-off file, written by the loader of the same run
+        monkeypatch.setenv("NEKAISE_RUN_ID", "run-1")
+        path = tmp_path / "fetch-deferred.json"
+        monkeypatch.setattr(build_corpus, "deferred_path", lambda: path)
+        build_corpus.write_deferred(deferred)
+        monkeypatch.setattr(prune_corpus, "deferred_ids",
+                            lambda real=prune_corpus.deferred_ids: real(path))
     monkeypatch.setattr(prune_corpus.registry, "load_manifest_rows", lambda: rows)
     monkeypatch.setattr(prune_corpus.registry, "load_prune_ledger_rows", lambda: [])
     monkeypatch.setattr(prune_corpus.registry, "remove_ids",
@@ -102,3 +111,86 @@ def test_round_trip_loader_retries_a_kept_row_until_it_succeeds(tmp_path, monkey
 
 def test_ok_rows_are_never_in_a_retry_window():
     assert not prune_corpus.retry_pending({"status": "ok", "transient": True})
+
+
+def test_unattempted_rows_are_preserved_until_actually_attempted():
+    never = _failed("ibp-skip", transient=True, retry_attempts=0)  # circuit-skipped only
+    assert prune_corpus.retry_pending(never, NOW + timedelta(days=365))
+
+
+def _ok_without_text(sid, url=None):
+    return {"id": sid, "url": url or f"https://publications.ibpsa.org/{sid}.pdf", "title": sid,
+            "source": "ibpsa", "topic": "building_energy", "license": "open", "status": "ok",
+            "sha256": "0" * 64, "text_path": f"text/{sid}.md"}  # text file is missing
+
+
+def test_deferred_rows_are_never_dropped_or_blocklisted(monkeypatch, tmp_path):
+    rows = [_ok_without_text("ibp-deferred"), _ok_without_text("ibp-judged")]
+
+    removed, blocked, kept = _run_prune(monkeypatch, rows, ["ibp-deferred"], tmp_path)
+
+    assert "ibp-deferred" in kept and "ibp-deferred" not in removed
+    assert all("ibp-deferred" not in url for url in blocked)
+    assert removed == {"ibp-judged"}  # control: an undeferred no-text row is still pruned
+
+
+def test_stale_deferred_file_from_another_run_protects_nothing(monkeypatch, tmp_path):
+    path = tmp_path / "fetch-deferred.json"
+    monkeypatch.setattr(build_corpus, "deferred_path", lambda: path)
+    monkeypatch.setenv("NEKAISE_RUN_ID", "old-run")
+    build_corpus.write_deferred(["ibp-x"])
+    monkeypatch.setenv("NEKAISE_RUN_ID", "new-run")
+
+    assert prune_corpus.deferred_ids(path) == set()
+
+
+def test_suspended_host_rows_stay_as_they_are(monkeypatch):
+    held = _ok_without_text("ope-held", "https://escholarship.org/content/qt2/qt2.pdf")
+    failed = dict(_failed("ope-failed"), url="https://escholarship.org/content/qt3/qt3.pdf")
+
+    removed, blocked, kept = _run_prune(monkeypatch, [held, failed])
+
+    assert removed == set() and blocked == []
+    assert kept == {"ope-held", "ope-failed"}
+
+
+def test_81_ibpsa_restorations_are_all_fetched_despite_the_run_cap(tmp_path, monkeypatch):
+    rows = {f"ibp-{n}": {**_ok_without_text(f"ibp-{n}"), "format": "pdf",
+                         "raw_path": f"raw/ibpsa/ibp-{n}.pdf"} for n in range(81)}
+    requested = []
+    monkeypatch.setattr(build_corpus.registry, "load_entries",
+                        lambda: [dict(r) for r in rows.values()])
+    monkeypatch.setattr(build_corpus.registry, "load_eligibility", lambda: {})
+    monkeypatch.setattr(build_corpus, "load_manifest",
+                        lambda: {k: dict(v) for k, v in rows.items()})
+    monkeypatch.setattr(build_corpus, "write_manifest", lambda _m: None)
+    monkeypatch.setattr(build_corpus, "HERE", tmp_path)
+    monkeypatch.setattr(build_corpus, "deferred_path", lambda: tmp_path / "deferred.json")
+    monkeypatch.setattr(build_corpus, "download_one",
+                        lambda src: requested.append(src["id"]) or {
+                            **src, "status": "failed", "error": "x", "http_status": None,
+                            "raw_path": None})
+    monkeypatch.setattr(sys, "argv", ["build_corpus.py", "--workers", "1"])
+
+    build_corpus.main()
+
+    assert build_corpus.HOST_RUN_CAP["publications.ibpsa.org"] == 80
+    assert len(requested) == 81
+    assert '"ids": []' in (tmp_path / "deferred.json").read_text()
+
+
+def test_nlr_timeout_survives_prune_for_retry(tmp_path, monkeypatch):
+    """A non-polite host's timeout is kept for retry after its discovery cursor moved on."""
+    monkeypatch.setattr(build_corpus.requests, "get", lambda *_a, **_k: (_ for _ in ()).throw(
+        build_corpus.requests.Timeout("read timed out")))
+    monkeypatch.setattr(build_corpus, "HERE", tmp_path)
+    row = build_corpus.download_one({
+        "id": "nlr-x", "title": "X", "source": "nlr", "license": "public-domain",
+        "url": "https://docs.nlr.gov/docs/fy24osti/1.pdf", "topic": "building_energy",
+        "format": "pdf",
+    })
+    build_corpus.note_retry(row, None)
+
+    removed, blocked, kept = _run_prune(monkeypatch, [row])
+
+    assert kept == {"nlr-x"} and removed == set() and blocked == []

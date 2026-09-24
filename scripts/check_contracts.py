@@ -127,6 +127,24 @@ def eligibility_contract_errors(
     return errors
 
 
+def host_policy_contract_errors(backends: dict, path: Path | None = None) -> list[str]:
+    """registry/host_policy.json must be valid, and a suspended host's backends disabled."""
+    import host_policy
+
+    try:
+        policy = host_policy.load(path)
+    except (OSError, ValueError) as exc:
+        return [f"registry/host_policy.json: {exc}"]
+    errors = []
+    for host, rule in sorted(policy.items()):
+        for name in rule.get("backends", []):
+            if name not in backends:
+                errors.append(f"host policy {host} names unknown backend {name}")
+            elif rule["status"] == "suspended" and backends[name].get("enabled", True):
+                errors.append(f"{name}: backend for suspended host {host} must be disabled")
+    return errors
+
+
 def main() -> int:
     errors: list[str] = []
     restrictions = registry.load_eligibility()
@@ -158,6 +176,7 @@ def main() -> int:
         find_vendor.load_vendors()
     except Exception as exc:
         errors.append(f"registry/vendors.json: {exc}")
+    errors.extend(host_policy_contract_errors(backends))
     configured_scripts = {cfg["script"] for cfg in backends.values()}
     actual_finders = {p.name for p in (ROOT / "scripts").glob("find_*.py")}
     for script in sorted(actual_finders - configured_scripts):

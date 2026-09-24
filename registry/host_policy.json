@@ -1,0 +1,14 @@
+{
+  "_readme": "Per-host FETCH policy for scripts/build_corpus.py (read via scripts/host_policy.py). A 'suspended' host is never requested by the loader: its registry rows are skipped without a manifest failure row, do not age toward pruning, and prune_corpus leaves its existing rows (including documents already held) untouched. This is a fetch suspension, not a corpus exclusion — use registry/eligibility.json for that. Every backend listed must be disabled (check_contracts).",
+  "version": 1,
+  "hosts": {
+    "escholarship.org": {
+      "status": "suspended",
+      "reason": "policy: CloudFront refuses an identified bot UA; browser impersonation is WAF avoidance (Codex 2026-09-24); resume only if an honest identity or an explicitly permitted API/download route works",
+      "decided_at": "2026-09-24",
+      "backends": [
+        "find_escholarship"
+      ]
+    }
+  }
+}

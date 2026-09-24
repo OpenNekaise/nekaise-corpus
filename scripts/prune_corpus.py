@@ -17,6 +17,7 @@ Dropped URLs land in pruned_urls.txt so discovery never re-churns them.
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
 import time
@@ -26,6 +27,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 import blocklist
+import host_policy
 import ops
 import quality
 import registry
@@ -58,10 +60,17 @@ RETRY_MAX_AGE_DAYS = 14
 
 
 def retry_pending(row: dict, now: datetime | None = None) -> bool:
-    """Whether a failed row is still inside its transient retry window."""
+    """Whether a failed row is still inside its transient retry window.
+
+    A transient row that was never actually requested (retry_attempts 0: circuit-skipped) has no
+    window yet and is preserved until a real attempt starts one.
+    """
     if row.get("status") == "ok" or not row.get("transient"):
         return False
-    if int(row.get("retry_attempts") or 0) >= RETRY_MAX_ATTEMPTS:
+    attempts = int(row.get("retry_attempts") or 0)
+    if attempts == 0:
+        return True
+    if attempts >= RETRY_MAX_ATTEMPTS:
         return False
     try:
         first = datetime.strptime(str(row.get("first_failed_at")), "%Y-%m-%dT%H:%M:%SZ")
@@ -69,6 +78,32 @@ def retry_pending(row: dict, now: datetime | None = None) -> bool:
         return False
     now = now or datetime.now(timezone.utc).replace(tzinfo=None)
     return now - first < timedelta(days=RETRY_MAX_AGE_DAYS)
+
+
+def deferred_ids(path: Path | None = None) -> set[str]:
+    """Ids this round's loader only deferred (build_corpus.write_deferred), never judged.
+
+    Honoured only when written by the same run (NEKAISE_RUN_ID), so a stale file from an older
+    run cannot shield anything.
+    """
+    path = path or ops.WORKSPACE / "fetch-deferred.json"
+    try:
+        data = json.loads(path.read_text())
+    except (OSError, ValueError):
+        return set()
+    if not isinstance(data, dict) or data.get("run_id") != os.environ.get("NEKAISE_RUN_ID"):
+        return set()
+    return {str(sid) for sid in data.get("ids") or []}
+
+
+def protected_ids(manifest: list[dict], policy: dict[str, dict],
+                  deferred: set[str]) -> set[str]:
+    """Rows the pruner must not judge this run: suspended-host rows (a fetch suspension keeps
+    held documents as they are and never ages the rest) and rows the loader only deferred."""
+    return {
+        r["id"] for r in manifest
+        if r["id"] in deferred or host_policy.suspended(r.get("url"), policy)
+    }
 
 
 def _host_matches(url: str | None, domains: set[str] | frozenset[str]) -> bool:
@@ -209,10 +244,15 @@ def main() -> None:
                    if not registry.discovered(r["id"]) and r.get("status") == "ok"}
     drop: dict[str, str] = dict(reviewed_drop)
     retrying = 0
+    protected = protected_ids(manifest, host_policy.load(), deferred_ids())
     for r in manifest:
         if not registry.discovered(r["id"]):
             continue
         if r["id"] in reviewed_drop:
+            continue
+        if r["id"] in protected:
+            if r.get("status") == "ok":  # a held protected doc still claims its title
+                seen_titles.add(registry.norm(r.get("title")))
             continue
         if r["status"] != "ok":
             if retry_pending(r):
@@ -244,7 +284,8 @@ def main() -> None:
     # double-weighted by CPT. Drop the discovered copy, keep curated; curated==curated is reported.
     by_sha: dict[str, list] = {}
     for r in manifest:
-        if r.get("status") == "ok" and r.get("sha256") and r["id"] not in drop:
+        if (r.get("status") == "ok" and r.get("sha256") and r["id"] not in drop
+                and r["id"] not in protected):
             by_sha.setdefault(r["sha256"], []).append(r)
     for twins in by_sha.values():
         if len(twins) < 2:
@@ -258,7 +299,8 @@ def main() -> None:
 
     disc_total = sum(1 for r in manifest if registry.discovered(r["id"]))
     print(f"discovered docs: {disc_total} | would prune: {dict(Counter(drop.values()))} "
-          f"(total {len(drop)}); {retrying} transient failures kept for retry")
+          f"(total {len(drop)}); {retrying} transient failures kept for retry; "
+          f"{len(protected)} protected (suspended host / deferred)")
     if not args.apply:
         print("dry run -- pass --apply to prune")
         return

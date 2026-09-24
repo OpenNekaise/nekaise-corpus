@@ -11,6 +11,11 @@ import pytest
 import build_corpus
 
 
+@pytest.fixture(autouse=True)
+def _deferred_file_in_tmp(tmp_path, monkeypatch):
+    monkeypatch.setattr(build_corpus, "deferred_path", lambda: tmp_path / "fetch-deferred.json")
+
+
 def test_extraction_workers_use_spawn_context():
     assert build_corpus.EXTRACTION_CONTEXT.get_start_method() == "spawn"
 
@@ -376,7 +381,7 @@ def test_polite_pdf_is_downloaded_normally(tmp_path, monkeypatch):
     assert row["raw_path"] and "transient" not in row
 
 
-def test_non_polite_hosts_keep_their_curl_fallback_and_no_circuit(tmp_path, monkeypatch):
+def test_non_polite_hosts_keep_their_fallback_and_no_circuit(tmp_path, monkeypatch):
     requested = []
     monkeypatch.setattr(
         build_corpus.requests, "get",
@@ -390,7 +395,7 @@ def test_non_polite_hosts_keep_their_curl_fallback_and_no_circuit(tmp_path, monk
             "id": f"x-{n}", "title": "X", "source": "test", "license": "open",
             "url": f"https://example.org/{n}.pdf", "topic": "construction", "format": "pdf",
         })
-        assert "transient" not in row
+        assert row["transient"] is True  # recoverable, retried later; but no circuit
 
     assert len(requested) == 2
 
@@ -424,5 +429,126 @@ def test_host_run_cap_defers_the_excess_without_touching_it(monkeypatch):
     kept, deferred = build_corpus.cap_per_host(srcs)
 
     assert [s["id"] for s in kept] == ["ibp-0", "ibp-1", "x"]
-    assert deferred == {"publications.ibpsa.org": 2}
+    assert deferred == ["ibp-2", "ibp-3"]
 
+
+def test_host_run_cap_never_defers_restoration_of_previously_ok_rows(monkeypatch):
+    monkeypatch.setattr(build_corpus, "HOST_RUN_CAP", {"publications.ibpsa.org": 1})
+    srcs = [_ibpsa(n) for n in range(3)]
+    manifest = {"ibp-1": {"id": "ibp-1", "status": "ok"}, "ibp-2": {"id": "ibp-2", "status": "ok"}}
+
+    kept, deferred = build_corpus.cap_per_host(srcs, manifest)
+
+    assert [s["id"] for s in kept] == ["ibp-0", "ibp-1", "ibp-2"]
+    assert deferred == []
+
+
+
+def test_retry_window_starts_only_with_a_real_attempt():
+    skipped = {"id": "ibp-1", "status": "failed", "transient": True, "_not_requested": True}
+    build_corpus.note_retry(skipped, None)
+    assert skipped["retry_attempts"] == 0 and "first_failed_at" not in skipped
+
+    attempted = {"id": "ibp-1", "status": "failed", "transient": True}
+    build_corpus.note_retry(attempted, skipped)
+    assert attempted["retry_attempts"] == 1 and attempted["first_failed_at"]
+
+
+def _plain(url_suffix="1"):
+    return {"id": f"nlr-{url_suffix}", "title": "Report", "source": "nlr",
+            "license": "public-domain", "topic": "building_energy", "format": "pdf",
+            "url": f"https://docs.nlr.gov/docs/fy24osti/{url_suffix}.pdf"}
+
+
+@pytest.mark.parametrize(
+    "error",
+    [
+        build_corpus.requests.Timeout("read timed out"),
+        build_corpus.requests.ConnectionError("Connection reset by peer"),
+    ],
+)
+def test_recoverable_network_failures_are_transient_on_every_host(tmp_path, monkeypatch, error):
+    monkeypatch.setattr(build_corpus.requests, "get",
+                        lambda *_a, **_k: (_ for _ in ()).throw(error))
+    monkeypatch.setattr(build_corpus, "HERE", tmp_path)
+
+    row = build_corpus.download_one(_plain())
+
+    assert row["transient"] is True
+
+
+def test_dns_failures_keep_the_pruner_evidence_rule(tmp_path, monkeypatch):
+    error = build_corpus.requests.ConnectionError("NameResolutionError: Failed to resolve host")
+    monkeypatch.setattr(build_corpus.requests, "get",
+                        lambda *_a, **_k: (_ for _ in ()).throw(error))
+
+    assert "transient" not in build_corpus.download_one(_plain())
+
+
+@pytest.mark.parametrize(
+    ("status", "body", "transient"),
+    [
+        (404, b"missing", False),
+        (410, b"gone", False),
+        (403, b"forbidden", False),   # non-polite 403: unchanged, still blocklistable
+        (200, b"<html>not a pdf", False),  # fake PDF
+        (503, b"busy", True),
+        (429, b"slow down", True),
+    ],
+)
+def test_hard_failures_are_unchanged_and_recoverable_statuses_are_transient(
+    tmp_path, monkeypatch, status, body, transient
+):
+    import prune_corpus
+
+    monkeypatch.setattr(build_corpus.requests, "get", lambda *_a, **_k: _answer(status, body))
+    monkeypatch.setattr(  # the default-host curl fallback also fails
+        build_corpus.subprocess, "run", lambda *_a, **_k: SimpleNamespace(returncode=22),
+    )
+    monkeypatch.setattr(build_corpus, "HERE", tmp_path)
+    monkeypatch.setattr(build_corpus, "RAW", tmp_path / "raw")
+
+    row = build_corpus.download_one(_plain())
+
+    assert bool(row.get("transient")) is transient
+    assert prune_corpus._blocklistable(row, "failed") is (not transient)
+
+
+def test_main_never_requests_or_records_suspended_hosts(tmp_path, monkeypatch, capsys):
+    src = {"id": "ope-lbnl", "title": "LBNL paper", "source": "openalex", "license": "cc-by",
+           "url": "https://escholarship.org/content/qt1/qt1.pdf", "topic": "building_energy",
+           "format": "pdf"}
+    held = {**src, "id": "ope-held", "url": "https://escholarship.org/content/qt2/qt2.pdf",
+            "status": "ok", "raw_path": "raw/openalex/ope-held.pdf"}
+    written = []
+    monkeypatch.setattr(build_corpus.registry, "load_entries", lambda: [src, dict(held)])
+    monkeypatch.setattr(build_corpus.registry, "load_eligibility", lambda: {})
+    monkeypatch.setattr(build_corpus, "load_manifest", lambda: {"ope-held": dict(held)})
+    monkeypatch.setattr(build_corpus, "write_manifest", written.append)
+    monkeypatch.setattr(build_corpus, "HERE", tmp_path)  # held doc's raw file is missing
+    monkeypatch.setattr(
+        build_corpus, "download_one",
+        lambda _s: (_ for _ in ()).throw(AssertionError("suspended host requested")),
+    )
+    monkeypatch.setattr(sys, "argv", ["build_corpus.py"])
+
+    build_corpus.main()
+
+    assert "host fetch suspended" in capsys.readouterr().out
+    assert written == []  # no failure rows, nothing to age toward pruning
+
+
+def test_escholarship_fetch_suspension_is_committed_policy():
+    import check_contracts
+    import host_policy
+
+    rule = host_policy.suspended("https://escholarship.org/content/qt1/qt1.pdf",
+                                 host_policy.load())
+    assert rule and rule["decided_at"] == "2026-09-24" and "WAF" in rule["reason"]
+    assert "find_escholarship" in rule["backends"]
+    backends = check_contracts.run_round.load_backends()
+    assert check_contracts.host_policy_contract_errors(backends) == []
+    enabled = {name: {**cfg, "enabled": True} for name, cfg in backends.items()}
+    assert check_contracts.host_policy_contract_errors(enabled) == [
+        "find_escholarship: backend for suspended host escholarship.org must be disabled"
+    ]
