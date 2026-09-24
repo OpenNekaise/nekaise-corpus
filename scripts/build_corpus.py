@@ -33,6 +33,7 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 import threading
 import time
@@ -78,6 +79,9 @@ HOST_CONCURRENCY: dict[str, int] = {
     "documents.worldbank.org": 4,
     "documents1.worldbank.org": 4,
     "www.scielo.br": 4,
+    # SiteGround's rate-triggered sgcaptcha (HTTP 202 + HTML) poisoned 881 of 917 IBPSA fetches
+    # on 2026-08-05; one request at a time, spaced by HOST_DELAY, keeps it off.
+    "publications.ibpsa.org": 1,
 }
 # politeness overrides for hosts that need them (currently none). HOST_DELAY: minimum seconds
 # between request STARTS against a host, enforced under its semaphore — for hosts that tarpit at
@@ -100,11 +104,23 @@ HOST_CONCURRENCY: dict[str, int] = {
 HOST_DELAY: dict[str, float] = {
     "www.jstage.jst.go.jp": 2.0,  # J-STAGE throttles bulk fetches; nightly ~00:00 JST 503 window
     "www.boverket.se": 10.0,      # robots.txt Crawl-delay: 10 — respect it
-    "publications.ibpsa.org": 2.5,  # rate-triggered sgcaptcha poisons bulk fetches (07-xx pause);
-                                    # ~1 req/2-3s keeps it off — the fix that un-paused find_ibpsa
+    "publications.ibpsa.org": 3.0,  # rate-triggered sgcaptcha poisons bulk fetches (08-05 pause);
+                                    # serial (HOST_CONCURRENCY 1) at 1 req/3s keeps it off
+    "escholarship.org": 4.0,      # robots.txt Crawl-delay: 4 — respect it (find_escholarship)
     "bigladdersoftware.com": 10.0,  # robots.txt Crawl-delay: 10 — respect it
 }
-HOST_UA: dict[str, str] = {}
+HOST_UA: dict[str, str] = {
+    # The SiteGround WAF 403s the spoofed-Chrome UA (75 KB block page) but serves the PDF to a
+    # short honest tool UA (verified 2026-09-24; UAs with "(...)" comments were also 403'd).
+    "publications.ibpsa.org": "nekaise-corpus/build_corpus",
+}
+# Hosts whose challenge page means "stop for this run": after the first captcha / WAF answer
+# (HTTP 202/429/503 without the expected content), every later download for that host in
+# the same run fails fast WITHOUT a request, recorded as a transient 202 so the pruner never
+# blocklists it and the finder can re-propose it. One tripped captcha must not turn into
+# hundreds of further hits that prolong the block.
+CHALLENGE_TRIP_HOSTS = frozenset({"publications.ibpsa.org", "escholarship.org"})
+CHALLENGE_STATUSES = frozenset({202, 429, 503})
 try:  # vendor-literature hosts declare their politeness delay once, in registry/vendors.json
     import find_vendor
     HOST_DELAY.update(find_vendor.host_delays(find_vendor.load_vendors()))
@@ -142,6 +158,24 @@ _host_sems: dict[str, threading.BoundedSemaphore] = {}
 _host_sems_lock = threading.Lock()
 _host_next: dict[str, float] = {}
 _host_next_lock = threading.Lock()
+_tripped_hosts: dict[str, str] = {}
+_tripped_lock = threading.Lock()
+
+
+def _trip_host(host: str, why: str) -> None:
+    if host not in CHALLENGE_TRIP_HOSTS:
+        return
+    with _tripped_lock:
+        if host in _tripped_hosts:
+            return
+        _tripped_hosts[host] = why
+    print(f"challenge circuit OPEN for {host}: {why}; skipping its remaining downloads this run",
+          file=sys.stderr, flush=True)
+
+
+def _tripped(host: str) -> str | None:
+    with _tripped_lock:
+        return _tripped_hosts.get(host)
 
 
 def _host_sem(url: str) -> threading.BoundedSemaphore:
@@ -362,6 +396,10 @@ def download_one(src: dict) -> dict:
     ua = HOST_UA.get(urlparse(src["url"]).netloc.lower(), UA)
     try:
         with _host_sem(src["url"]):
+            if why := _tripped(host):
+                rec["http_status"] = 202
+                rec["error"] = f"challenge circuit open for {host} ({why}); not requested"
+                return rec
             _wait_for_host(host)
             if "ec.europa.eu/research/participants/documents/downloadPublic" in src["url"]:
                 resp = _fetch_ec_deliverable(src["url"])
@@ -416,6 +454,8 @@ def download_one(src: dict) -> dict:
             # a 200 that isn't a PDF is a WAF interstitial / captcha / error page — without this
             # check it lands in the corpus as an ok row with 0 text chars (IBPSA sgcaptcha, 07-09)
             rec["error"] = f"not-a-pdf (got {data[:12]!r})"
+            if rec["http_status"] in CHALLENGE_STATUSES:
+                _trip_host(host, f"HTTP {rec['http_status']} non-PDF body")
             return rec
         rec["sha256"] = sha256_bytes(data)
         rec["bytes"] = len(data)
@@ -432,6 +472,8 @@ def download_one(src: dict) -> dict:
         rec["_text_dir"] = str(TEXT)
     except Exception as e:
         rec["error"] = str(e)
+        if rec["http_status"] in CHALLENGE_STATUSES:
+            _trip_host(host, f"HTTP {rec['http_status']}")
     return rec
 
 

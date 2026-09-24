@@ -253,3 +253,67 @@ def test_fair_sources_round_robins_hosts():
     hosts = [urlparse(source["url"]).netloc for source in ordered]
 
     assert hosts == ["a.example", "b.example", "c.example", "a.example", "b.example"]
+
+
+def test_ibpsa_is_fetched_serially_slowly_with_an_honest_ua():
+    host = "publications.ibpsa.org"
+    assert build_corpus.HOST_CONCURRENCY[host] == 1
+    assert build_corpus.HOST_DELAY[host] >= 3.0
+    assert not build_corpus.HOST_UA[host].startswith("Mozilla")
+    assert build_corpus.HOST_DELAY["escholarship.org"] >= 4.0  # robots Crawl-delay: 4
+
+
+def test_challenge_trips_host_circuit_for_the_rest_of_the_run(tmp_path, monkeypatch):
+    calls = []
+    captcha = SimpleNamespace(
+        status_code=202,
+        content=b"<html><head><meta http-equiv='refresh' content='0;/.well-known/sgcaptcha/'>",
+        raise_for_status=lambda: None,
+    )
+
+    def get(url, **kwargs):
+        calls.append((url, kwargs["headers"]["User-Agent"]))
+        return captcha
+
+    monkeypatch.setattr(build_corpus.requests, "get", get)
+    monkeypatch.setattr(build_corpus, "HERE", tmp_path)
+    monkeypatch.setattr(build_corpus, "RAW", tmp_path / "raw")
+    monkeypatch.setattr(build_corpus, "HOST_DELAY", {})
+    monkeypatch.setattr(build_corpus, "_tripped_hosts", {})
+
+    def src(n):
+        return {
+            "id": f"ibp-{n}", "title": f"Paper {n}", "source": "ibpsa", "license": "open",
+            "url": f"https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_{n}.pdf",
+            "topic": "building_energy", "format": "pdf",
+        }
+
+    first = build_corpus.download_one(src(1))
+    second = build_corpus.download_one(src(2))
+
+    assert first["http_status"] == 202 and first["error"].startswith("not-a-pdf")
+    assert second["http_status"] == 202  # transient: the pruner never blocklists it
+    assert "challenge circuit open" in second["error"]
+    assert len(calls) == 1  # the tripped host is not requested again this run
+    assert calls[0][1] == build_corpus.HOST_UA["publications.ibpsa.org"]
+
+
+def test_challenge_circuit_ignores_hosts_outside_the_trip_list(tmp_path, monkeypatch):
+    calls = []
+    captcha = SimpleNamespace(status_code=202, content=b"<html>", raise_for_status=lambda: None)
+
+    def get(url, **_kwargs):
+        calls.append(url)
+        return captcha
+
+    monkeypatch.setattr(build_corpus.requests, "get", get)
+    monkeypatch.setattr(build_corpus, "HERE", tmp_path)
+    monkeypatch.setattr(build_corpus, "RAW", tmp_path / "raw")
+    monkeypatch.setattr(build_corpus, "_tripped_hosts", {})
+    for n in (1, 2):
+        build_corpus.download_one({
+            "id": f"x-{n}", "title": "X", "source": "test", "license": "open",
+            "url": f"https://example.org/{n}.pdf", "topic": "construction", "format": "pdf",
+        })
+
+    assert len(calls) == 2

@@ -95,9 +95,13 @@
   },
   "find_ibpsa": {
     "script": "find_ibpsa.py",
-    "args": [],
-    "enabled": false,
-    "reason": "rate captcha"
+    "args": [
+      "--max",
+      "60"
+    ],
+    "enabled": true,
+    "required": false,
+    "reason": "RE-ENABLED 2026-09-24 after the 2026-08-05 rate-captcha pause: one listing request per round, --max 60 per round (drained with rotation holds), loader fetches publications.ibpsa.org serially at 3 s with an honest UA and a per-run challenge circuit breaker; a 202/403/429 captcha answer holds rotation instead of failing the round"
   },
   "find_sdz": {
     "script": "find_sdz.py",

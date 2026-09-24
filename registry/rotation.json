@@ -54,9 +54,10 @@
     "note": "PAUSED 07-10: docs.lib.purdue.edu serves 202-challenge to all our clients (bepress wall; referer trick fails). 400 pur- rows purged from manifest, entries kept in registry. Retry from different network or headless browser."
   },
   "find_ibpsa": {
-    "flag": "--year",
-    "next": 2023,
-    "note": "PAUSED — rate-triggered sgcaptcha poisons bulk fetches; needs slow pacing (~1 req/2-3s) before re-enabling; bs series biennial 1985-2025"
+    "flag": "--slot",
+    "next": 0,
+    "step": 1,
+    "note": "RE-AIMED 2026-09-24 from --year 2023 to an index into find_ibpsa.UNIVERSE (76 append-only (conf, year) listings verified on the series index pages, newest first: esim2026, simbuild2026, bs2025, ...). Nothing was ever kept: the 2026-08-05 bs2023/bs2025 attempt lost 881 of 917 fetches to the rate captcha (not blocklisted; 36 hard-403 URLs were). A listing with more new papers than --max, or a captcha answer, holds the slot; past the last slot the backend reports exhausted."
   },
   "find_sdz": {
     "flag": "--page",
