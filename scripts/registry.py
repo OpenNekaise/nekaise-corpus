@@ -72,6 +72,8 @@ SHARDS = {
     "vnd-": "vendor.yaml",     # find_vendor (manufacturer product literature via sitemaps/listings;
                                # config registry/vendors.json, license=open by operator decision 2026-08-28)
     "ojs-": "ojs.yaml",        # find_ojs (CC-BY journals/proceedings on Open Journal Systems, OAI-PMH)
+    "esc-": "escholarship.yaml",  # find_escholarship (LBNL + UC Berkeley CBE via eScholarship GraphQL, CC BY/BY-SA/CC0)
+    "nlr-": "nlr.yaml",        # find_nlr (National Laboratory of the Rockies, ex-NREL, reports via Pure OAI)
     "ope-": "papers.yaml",     # find_sources OpenAlex backend
     "oa-": "papers.yaml",
     "arx-": "papers.yaml",     # find_sources arXiv backend

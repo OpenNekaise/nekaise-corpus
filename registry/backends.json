@@ -103,6 +103,30 @@
     "required": false,
     "reason": "RE-ENABLED 2026-09-24 after the 2026-08-05 rate-captcha pause: one listing request per round, --max 60 per round (drained with rotation holds), loader fetches publications.ibpsa.org serially at 3 s with an honest UA and a per-run challenge circuit breaker; a 202/403/429 captcha answer holds rotation instead of failing the round"
   },
+  "find_escholarship": {
+    "script": "find_escholarship.py",
+    "args": [
+      "--pages",
+      "10",
+      "--max",
+      "40"
+    ],
+    "enabled": true,
+    "required": false,
+    "reason": "NEW 2026-09-24: LBNL (lbnl_et_btus, lbnl_et, lbnl_rw) + UC Berkeley CBE (cedr_cbe) via eScholarship GraphQL; CC BY/BY-SA/CC0/PD PDFs only, bes_relevance gate; robots Crawl-delay 4 honoured by finder and loader; required=false because the CloudFront front end can answer with challenges"
+  },
+  "find_nlr": {
+    "script": "find_nlr.py",
+    "args": [
+      "--pages",
+      "8",
+      "--max",
+      "100"
+    ],
+    "enabled": true,
+    "required": false,
+    "reason": "NEW 2026-09-24: National Laboratory of the Rockies (ex-NREL) Pure OAI, records with a docs.nlr.gov report PDF link; buildings center (55xx) or strict bes_relevance title gate; public-domain like OSTI; robots Crawl-delay 5"
+  },
   "find_sdz": {
     "script": "find_sdz.py",
     "args": [

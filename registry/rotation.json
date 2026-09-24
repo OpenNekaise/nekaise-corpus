@@ -59,6 +59,20 @@
     "step": 1,
     "note": "RE-AIMED 2026-09-24 from --year 2023 to an index into find_ibpsa.UNIVERSE (76 append-only (conf, year) listings verified on the series index pages, newest first: esim2026, simbuild2026, bs2025, ...). Nothing was ever kept: the 2026-08-05 bs2023/bs2025 attempt lost 881 of 917 fetches to the rate captcha (not blocklisted; 36 hard-403 URLs were). A listing with more new papers than --max, or a captcha answer, holds the slot; past the last slot the backend reports exhausted."
   },
+  "find_escholarship": {
+    "flag": "--cursor",
+    "next": "cedr_cbe:START",
+    "step": 0,
+    "dynamic": true,
+    "note": "NEW 2026-09-24: '<unit>:<GraphQL more-token|START>' over cedr_cbe (636 items) -> lbnl_et_btus (1,790) -> lbnl_et (6,056) -> lbnl_rw (88,761), ADDED_ASC. At the tail of lbnl_rw the pointer stays on the last page's token to re-probe new deposits. Most pre-2016 LBNL items carry no rights and are skipped (fail-closed)."
+  },
+  "find_nlr": {
+    "flag": "--cursor",
+    "next": "2026:START",
+    "step": 0,
+    "dynamic": true,
+    "note": "NEW 2026-09-24: '<year>:<OAI resumptionToken|START>' over research-hub.nlr.gov Pure sets publications:yearYYYY, newest year first down to 1975 (53,919 records total; 2024 alone has 2,344). A rejected token restarts its year. Walk does not come back up: re-aim to the current year occasionally."
+  },
   "find_sdz": {
     "flag": "--page",
     "next": 4636,
