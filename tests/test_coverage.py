@@ -35,13 +35,26 @@ def fixture_restrictions():
     }
 
 
-def patch_manifest(monkeypatch, module):
-    monkeypatch.setattr(module.registry, "load_manifest_rows", fixture_rows)
-    monkeypatch.setattr(module.registry, "load_eligibility", fixture_restrictions)
+def store_with(monkeypatch, tmp_path, module, rows, restrictions=None):
+    """The coverage tools read the manifest through the store: build one holding `rows`."""
+    import registry
+    shards = {}
+    for row in rows:
+        shards.setdefault(registry.manifest_shard(row["id"]), []).append(dict(row, topic="t"))
+    (tmp_path / "manifest").mkdir(parents=True, exist_ok=True)
+    for stem, group in shards.items():
+        (tmp_path / "manifest" / f"{stem}.jsonl").write_text(registry.manifest_shard_text(group))
+    monkeypatch.setattr(module.registry, "ROOT", tmp_path)
+    monkeypatch.setattr(module.registry, "load_eligibility",
+                        (lambda: restrictions) if restrictions is not None else (lambda: {}))
 
 
-def test_genre_coverage_omits_training_excluded_rows(monkeypatch, capsys):
-    patch_manifest(monkeypatch, coverage_report)
+def patch_manifest(monkeypatch, module, tmp_path):
+    store_with(monkeypatch, tmp_path, module, fixture_rows(), fixture_restrictions())
+
+
+def test_genre_coverage_omits_training_excluded_rows(monkeypatch, capsys, tmp_path):
+    patch_manifest(monkeypatch, coverage_report, tmp_path)
     monkeypatch.setattr(sys, "argv", ["coverage.py"])
 
     coverage_report.main()
@@ -54,13 +67,12 @@ def test_genre_coverage_omits_training_excluded_rows(monkeypatch, capsys):
     assert "jstage_aij" not in output
 
 
-def test_vendor_sources_are_manufacturer_literature(monkeypatch, capsys):
+def test_vendor_sources_are_manufacturer_literature(monkeypatch, capsys, tmp_path):
     row = {
         "id": "vnd-sika-1", "title": "Construction product manual", "status": "ok",
         "source": "vendor_sika", "license": "open", "text_chars": 100,
     }
-    monkeypatch.setattr(coverage_report.registry, "load_manifest_rows", lambda: [row])
-    monkeypatch.setattr(coverage_report.registry, "load_eligibility", lambda: {})
+    store_with(monkeypatch, tmp_path, coverage_report, [row])
     monkeypatch.setattr(sys, "argv", ["coverage.py", "--sources"])
 
     coverage_report.main()
@@ -77,7 +89,7 @@ def test_vendor_sources_are_manufacturer_literature(monkeypatch, capsys):
     assert coverage_report.genre_of("vendor_example") == "equipment_mfr_docs"
 
 
-def test_cross_published_globalabc_rows_use_originating_genre(monkeypatch, capsys):
+def test_cross_published_globalabc_rows_use_originating_genre(monkeypatch, capsys, tmp_path):
     rows = [
         {
             "id": "iag-globalabc-regional-roadmap-for-buildings",
@@ -104,8 +116,7 @@ def test_cross_published_globalabc_rows_use_originating_genre(monkeypatch, capsy
             "text_chars": 100,
         },
     ]
-    monkeypatch.setattr(coverage_report.registry, "load_manifest_rows", lambda: rows)
-    monkeypatch.setattr(coverage_report.registry, "load_eligibility", lambda: {})
+    store_with(monkeypatch, tmp_path, coverage_report, rows)
     monkeypatch.setattr(sys, "argv", ["coverage.py", "--sources"])
 
     coverage_report.main()
@@ -249,7 +260,7 @@ def test_language_of_keeps_heuristic_fallback_for_english_document():
 def test_coverage_matrix_omits_restricted_regions_and_languages(
     tmp_path, monkeypatch, capsys
 ):
-    patch_manifest(monkeypatch, coverage_matrix)
+    patch_manifest(monkeypatch, coverage_matrix, tmp_path / "repo")
     monkeypatch.setattr(coverage_matrix, "head_of", lambda _row: "")
     report = tmp_path / "coverage.json"
     monkeypatch.setattr(sys, "argv", ["coverage_matrix.py", "--json", str(report)])

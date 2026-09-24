@@ -16,3 +16,22 @@ def _no_live_store_dedup(monkeypatch):
         raise AssertionError("test reached the live store through dedup: patch dedup.open_keys "
                              "/ dedup.read_view or pass a root")
     monkeypatch.setattr(dedup, "_default_root", refuse)
+
+
+@pytest.fixture(autouse=True)
+def _no_live_store(monkeypatch, request):
+    """No test may open a store over the live repository (it would read 1.6M rows or take the
+    live round lock); tests build their own store in tmp_path. Opt out with @pytest.mark.live."""
+    if request.node.get_closest_marker("live"):
+        return
+    import store
+
+    live = store.ROOT.resolve()
+    real_init = store.FileStore.__init__
+
+    def guarded(self, root=store.ROOT):
+        if Path(root).resolve() == live:
+            raise AssertionError("test opened a FileStore over the live repository; build one in "
+                                 "tmp_path and point the code under test at it")
+        real_init(self, root)
+    monkeypatch.setattr(store.FileStore, "__init__", guarded)

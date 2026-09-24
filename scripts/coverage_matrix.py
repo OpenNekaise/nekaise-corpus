@@ -26,7 +26,9 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
+import corpus_stats
 import registry
+import store
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 HEAD_CHARS = 4000  # how much extracted text joins the title for classification
@@ -184,12 +186,15 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--sample", type=int, default=0, help="classify a random subset only")
     ap.add_argument("--json", default="", help="dump aggregate counts to this file")
+    ap.add_argument("--lock-timeout", type=float, default=60)
     args = ap.parse_args()
 
     restrictions = registry.load_eligibility()
-    rows, excluded = registry.partition_manifest_ok_rows(
-        registry.load_manifest_rows(), restrictions
-    )
+    with store.open(root=registry.ROOT).read(timeout=args.lock_timeout) as view:
+        rows = list(corpus_stats.iter_eligible(
+            view, restrictions,
+            fields=("id", "title", "source", "text_path", "text_chars", "license", "language")))
+        excluded_count = corpus_stats.compute(view, restrictions).excluded
     if args.sample:
         rows = random.Random(7).sample(rows, min(args.sample, len(rows)))
 
@@ -223,7 +228,7 @@ def main() -> None:
     n = len(rows)
     print(f"coverage matrix — {n:,} training-eligible docs / {total_tok/1e6:,.0f}M tokens "
           f"(facets are multi-label; a doc counts in every matching cell)\n")
-    print(f"  {len(excluded):,} training-excluded provenance rows omitted\n")
+    print(f"  {excluded_count:,} training-excluded provenance rows omitted\n")
     GAP = 0.01  # <1% of docs in a dimension key = flagged
     for d, c in dims.items():
         print(f"── {d}")
@@ -258,7 +263,7 @@ def main() -> None:
             {"cross_domain_lifecycle": {k: dict(v) for k, v in cross_dl.items()},
              "cross_domain_region": {k: dict(v) for k, v in cross_dr.items()},
              "docs": n, "tokens_M": round(total_tok / 1e6),
-             "training_excluded_docs": len(excluded)}, ensure_ascii=False, indent=1))
+             "training_excluded_docs": excluded_count}, ensure_ascii=False, indent=1))
         print(f"aggregates -> {args.json}")
 
 

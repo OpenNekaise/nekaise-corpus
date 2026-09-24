@@ -70,8 +70,12 @@ def test_clean_check_passes_on_a_fresh_clone_and_reports_unavailable(
     monkeypatch.setattr(cc, "CORPUS", corpus)
     monkeypatch.setattr(cc, "STAMP", corpus / ".ruleset")
     monkeypatch.setattr(registry, "load_host_policy", lambda: POLICY)
-    monkeypatch.setattr(registry, "load_manifest_rows", lambda: rows)
     monkeypatch.setattr(registry, "load_eligibility", lambda: {})
+    import store  # --check reads the manifest through the store
+    st = store.FileStore(tmp_path)
+    with st.writer() as w:
+        with st.transaction("seed", expected_version=st.version(), writer=w) as tx:
+            tx.upsert_manifest(rows)
     monkeypatch.setattr(sys, "argv", ["clean_corpus.py", "--check"])
 
     cc.main()  # would raise SystemExit(1) on "missing from corpus/: ope-missing.md"

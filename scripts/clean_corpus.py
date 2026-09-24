@@ -42,7 +42,9 @@ from collections import Counter
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
+import corpus_stats
 import registry
+import store
 import ops
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
@@ -429,6 +431,8 @@ def main() -> None:
                     help="verify corpus/ agrees with the manifest (paths, char counts, no extra "
                          "or missing files); exit 1 on drift. Writes nothing.")
     ap.add_argument("--force", action="store_true", help="rewrite every doc, ignore the stamp")
+    ap.add_argument("--lock-timeout", type=float, default=60,
+                    help="standalone --check/--report wait this long for the round lock")
     ap.add_argument("--workers", type=int, default=DEFAULT_WORKERS,
                     help=f"parallel worker processes (default {DEFAULT_WORKERS} on this machine)")
     args = ap.parse_args()
@@ -441,7 +445,14 @@ def main() -> None:
 
     rules = parse_rules(stamped_ruleset() if args.rules == "stamp" else args.rules)
     restrictions = registry.load_eligibility()
-    rows = registry.load_manifest_rows()
+    if args.report or args.check:
+        # read-only modes: one consistent store view, rows in the legacy manifest order (the
+        # seeded per-shard sample and first-N diagnostics depend on it). The build mode still
+        # rewrites the manifest through registry.py until its stage-3 step converts it.
+        with store.open(root=HERE).read(timeout=args.lock_timeout) as view:
+            rows = list(corpus_stats.iter_manifest(view))
+    else:
+        rows = registry.load_manifest_rows()
     todo, restricted = partition_training_rows(rows, restrictions)
 
     # --------------------------------------------------------------------- report mode

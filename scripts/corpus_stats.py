@@ -98,3 +98,29 @@ def local_unavailable(view, root: Path, restrictions: dict) -> int:
         if page.next_cursor is None:
             return n
         cursor = page.next_cursor
+
+
+def iter_eligible(view, restrictions: dict, fields: tuple[str, ...] | None = None):
+    """Successful training-eligible manifest rows in registry.load_manifest_rows' order (so
+    first-seen ties and seeded samples match the pre-store tools), projected to `fields`."""
+    where = And(Eq("status", "ok"), store.eligibility_where(restrictions))
+    cursor = None
+    while True:
+        page = view.scan(store.Table.MANIFEST, where=where, fields=fields, cursor=cursor,
+                         limit=store.MAX_PAGE, order="legacy")
+        yield from page.rows
+        if page.next_cursor is None:
+            return
+        cursor = page.next_cursor
+
+
+def iter_manifest(view, where=None, fields: tuple[str, ...] | None = None):
+    """Every manifest row in registry.load_manifest_rows' order, page by page."""
+    cursor = None
+    while True:
+        page = view.scan(store.Table.MANIFEST, where=where, fields=fields, cursor=cursor,
+                         limit=store.MAX_PAGE, order="legacy")
+        yield from page.rows
+        if page.next_cursor is None:
+            return
+        cursor = page.next_cursor
