@@ -21154,12 +21154,26 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-jacksons-fencing-tri-guard-techspec-2-triguard-gates-technical-data-sheet
-    title: 'SpecifiedBy (UK manufacturer documents): jacksons-fencing_tri-guard_techspec_2_triguard-gates-technical-data-sheet.pdf'
-    url: https://www.specifiedby.com/jacksons-fencing/tri-guard-fencing/jacksons-fencing_tri-guard_techspec_2_triguard-gates-technical-data-sheet.pdf
+  - id: vnd-specifiedby-jacksons-fencing-jakoustic-plus-ab-2
+    title: 'SpecifiedBy (UK manufacturer documents): jacksons-fencing_jakoustic-plus-absorptive-acoustic-fencing_specifications_5_q40-jakoustic-plus.pdf'
+    url: https://www.specifiedby.com/jacksons-fencing/jakoustic-plus-absorptive-acoustic-fencing/jacksons-fencing_jakoustic-plus-absorptive-acoustic-fencing_specifications_5_q40-jakoustic-plus.pdf
     source: vendor_specifiedby
     license: open
-    topic: construction
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-bioclad-advanced-pvc-hygienic-wall-cladding-fire-test
+    title: 'SpecifiedBy (UK manufacturer documents): BioClad_Advanced-PVC-Hygienic-Wall-Cladding_Fire-Test.pdf'
+    url: https://www.specifiedby.com/bioclad/advanced-pvc-hygienic-wall-cladding/BioClad_Advanced-PVC-Hygienic-Wall-Cladding_Fire-Test.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
     format: pdf
     language: en
     document_type: product-literature
