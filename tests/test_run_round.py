@@ -580,3 +580,21 @@ def test_capture_failure_stops_round_before_mutation(tmp_path, monkeypatch, caps
     assert state.read_bytes() == b"before\n"
     assert not run_round.ops.StateSnapshot.pending()
     assert not (snapshots / "capture-failed").exists()
+
+
+def test_round_refuses_to_start_over_an_interrupted_store_transaction(tmp_path, monkeypatch,
+                                                                       capsys):
+    txn = tmp_path / "workspace" / "store-transactions" / "r1"
+    txn.mkdir(parents=True)
+    (txn / "meta.json").write_text('{"run_id": "r1", "state": "prepared", "files": []}')
+    monkeypatch.setattr(run_round, "ROOT", tmp_path)
+    monkeypatch.setattr(run_round.ops, "SNAPSHOTS", tmp_path / "workspace" / "round-snapshots")
+    monkeypatch.setattr(run_round.ops, "WORKSPACE", tmp_path / "workspace")
+    monkeypatch.setattr(run_round.ops, "run_event", lambda *args, **kwargs: None)
+    for name in ("run_finders_parallel", "run_command", "commit_snapshot", "doc_stats"):
+        monkeypatch.setattr(run_round, name,
+                            lambda *a, **k: pytest.fail("no round step may run"))
+    monkeypatch.setattr(sys, "argv", ["run_round.py", "--skip-discovery", "--allow-dirty"])
+
+    assert run_round.main() == 1
+    assert "interrupted store transaction(s) pending: r1" in capsys.readouterr().err

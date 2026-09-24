@@ -329,6 +329,7 @@ class WriterToken:
     epoch: int
     lock_path: str
     nonce: str
+    round_id: str | None = None  # the in-flight round this writer owns, if any
 
 
 @dataclass(frozen=True)
@@ -472,11 +473,13 @@ class FileStore:
         return Version(_digest(rows))
 
     @contextmanager
-    def writer(self, timeout: float = 0) -> Iterator[WriterToken]:
+    def writer(self, timeout: float = 0, *, round_id: str | None = None) -> Iterator[WriterToken]:
         """Hold the canonical round lock and yield the token that proves it. The token dies with
-        this context, even if the same process takes the lock again later."""
+        this context, even if the same process takes the lock again later. `round_id` declares
+        the round this writer is running; only that round's snapshot counts as its own state."""
         with ops.named_lock(ROUND_LOCK, timeout=timeout, workspace=self.workspace) as path:
-            token = WriterToken("file-lock", str(os.getpid()), 0, str(path), uuid.uuid4().hex)
+            token = WriterToken("file-lock", str(os.getpid()), 0, str(path), uuid.uuid4().hex,
+                                round_id)
             self._live_tokens.add(token.nonce)
             try:
                 yield token
@@ -599,11 +602,11 @@ class FileStore:
     @contextmanager
     def read(self, *, timeout: float = 0, writer: WriterToken | None = None) -> Iterator["ReadView"]:
         """A consistent read view. Holds the round lock for its lifetime unless the caller passes
-        a writer token it holds (it then owns any in-flight round), or runs under a verified
+        a writer token it holds (whose declared round_id may be in flight), or runs under a verified
         INHERITED_LOCK_ENV parent."""
         if writer is not None:
             self._check_writer(writer)
-            self._require_settled(allow_rounds=self._legacy_snapshots())
+            self._require_settled(allow_rounds=[writer.round_id] if writer.round_id else [])
             yield from self._view()
         elif (run_id := self._inherited_run()) is not None:
             self._require_settled(allow_rounds=[run_id])
@@ -683,6 +686,9 @@ class FileStore:
         if meta["state"] == "committed":
             _rmtree_durable(path)
             return RecoveryResult(run_id, "finalized")
+        if meta["state"] == "rolled_back":  # restored earlier; only cleanup was interrupted
+            _rmtree_durable(path)
+            return RecoveryResult(run_id, "rolled_back")
         self._rollback(path, meta)
         return RecoveryResult(run_id, "rolled_back")
 
@@ -702,13 +708,19 @@ class FileStore:
                 if _sha(data) != item["pre_sha"]:
                     raise StoreError(f"backup of {item['rel']} is corrupt")
                 _write_durable(target, data)
+        # Publish "restored" before deleting the backups, so a crash during cleanup leaves a
+        # marker recover() can finish instead of a "prepared" one whose backups are gone.
+        meta = {**meta, "state": "rolled_back"}
+        _write_durable(txn / "meta.json", (json.dumps(meta, indent=2) + "\n").encode())
         _rmtree_durable(txn)
 
     # -- commit --------------------------------------------------------------------------------
 
     def _commit(self, view: "WriteView", digest: str) -> None:
-        if not view._ops:
-            return
+        if not view._requests:
+            return  # nothing was requested: there is no identity to record
+        # A run whose requests changed nothing still commits its identity (the journal's commit
+        # row), so a later retry of it stays a no-op instead of re-applying over newer runs.
         writes: dict[Path, bytes | None] = {}
         self._render_entries(view, writes)
         self._render_manifest(view, writes)
@@ -1143,11 +1155,23 @@ class ReadView:
 
 # --- write view -----------------------------------------------------------------------------------
 
+def _materialize(value: Any) -> Any:
+    """Lists for one-shot or view iterables (generators, dict views, map objects), so a request
+    can be both recorded and applied; values _plain already understands pass through."""
+    if isinstance(value, (str, bytes, Mapping, list, tuple, set, frozenset, Enum)) or (
+            dataclasses.is_dataclass(value) and not isinstance(value, type)):
+        return value
+    if isinstance(value, Iterable):
+        return list(value)
+    return value
+
+
 def _mutation(fn):
     """Record the call as a request (the replay identity), then apply it unless replaying."""
     def wrapper(self, *args, **kwargs):
         self._check_open()
-        args = [list(a) if isinstance(a, Iterator) else a for a in args]
+        args = [_materialize(a) for a in args]
+        kwargs = {k: _materialize(v) for k, v in kwargs.items()}
         self._requests.append({"call": fn.__name__, "args": _plain(args), "kwargs": _plain(kwargs)})
         if self._replay:
             return None if fn.__name__ in ("rotation_set", "backend_state_set") else 0

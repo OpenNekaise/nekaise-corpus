@@ -235,7 +235,11 @@ def test_legacy_round_snapshot_blocks_views_and_transactions(st):
         with pytest.raises(store.PendingTransaction, match="round snapshot"):
             with st.transaction("r1", expected_version=st.version(), writer=w):
                 pass
-        with st.read(writer=w) as v:  # the lock holder owns its in-flight round
+        with pytest.raises(store.PendingTransaction, match="round snapshot"):
+            with st.read(writer=w):  # a fresh lock holder does not own an abandoned round
+                pass
+    with st.writer(round_id="20260924T000000Z-abc") as w:
+        with st.read(writer=w) as v:  # the round's own writer may read its in-flight state
             v.scan(Table.ENTRIES)
 
 
@@ -255,3 +259,23 @@ def test_inherited_lock_must_be_verified(st, monkeypatch):
                              text=True, cwd=store.ROOT)
         assert out.returncode == 0, out.stderr
         assert out.stdout.strip() == "4"
+
+
+def test_crash_during_rollback_cleanup_is_still_recoverable(st, monkeypatch):
+    before = files(st.root)
+    crashing_writes(monkeypatch, 2)
+    with pytest.raises(KeyboardInterrupt):
+        write(st, "r1", big_change)
+    monkeypatch.undo()
+    real = store._rmtree_durable
+    monkeypatch.setattr(store, "_rmtree_durable", lambda p: (_ for _ in ()).throw(
+        KeyboardInterrupt()) if "store-transactions" in str(p) else real(p))
+    with st.writer() as w:
+        with pytest.raises(KeyboardInterrupt):
+            st.recover("r1", writer=w)  # restored, then died deleting the backups
+    monkeypatch.undo()
+    assert [t.state for t in st.pending_transactions()] == ["rolled_back"]
+    assert files(st.root) == before
+    with st.writer() as w:
+        assert st.recover("r1", writer=w).action == "rolled_back"
+    assert st.pending_transactions() == []

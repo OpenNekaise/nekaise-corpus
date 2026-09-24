@@ -30,6 +30,7 @@ from pathlib import Path
 import ops
 import registry
 import rotation
+import store
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
@@ -481,6 +482,12 @@ def main() -> int:
     committed = False
     try:
         with ops.named_lock("corpus-round", timeout=args.lock_timeout):
+            if store_pending := store.FileStore(ROOT).pending_transactions():
+                raise RuntimeError(
+                    "interrupted store transaction(s) pending: "
+                    + ", ".join(t.run_id for t in store_pending)
+                    + "; recover them with FileStore.recover() before starting a round"
+                )
             pending = ops.StateSnapshot.pending()
             if pending:
                 raise RuntimeError(

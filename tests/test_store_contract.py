@@ -323,3 +323,23 @@ def test_export_is_deterministic_and_complete(st, tmp_path):
 def test_unknown_backend_fails_explicitly(tmp_path):
     with pytest.raises(store.StoreError, match="not available"):
         store.open(root=tmp_path, backend="postgres")
+
+
+def test_noop_run_still_records_its_identity(st):
+    write(st, "a", lambda tx: tx.update_manifest_fields({"oer-a": {"topic": "building_energy"}}))
+    write(st, "b", lambda tx: tx.update_manifest_fields({"oer-a": {"topic": "changed"}}))
+    write(st, "a", lambda tx: tx.update_manifest_fields({"oer-a": {"topic": "building_energy"}}))
+    with st.read() as v:  # retrying the no-op run must not revert run b
+        assert v.get_manifest(["oer-a"])["oer-a"]["topic"] == "changed"
+
+
+def test_one_shot_iterables_are_accepted_positionally_and_by_keyword(st):
+    def body(tx):
+        return (tx.blocklist_add(urls=(u for u in ["https://g.org/1"])),
+                tx.blocklist_add(u for u in ["https://g.org/2"]),
+                tx.delete_manifest(ids={"oer-b": 1}.keys(), reason="x"))
+    assert write(st, "r1", body) == (1, 1, 1)
+    assert write(st, "r1", body) == (0, 0, 0)  # the identical requests replay as a no-op
+    with st.read() as v:
+        assert v.known(urls=["https://g.org/1", "https://g.org/2"]).urls == {
+            "https://g.org/1", "https://g.org/2"}
