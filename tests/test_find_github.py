@@ -108,3 +108,104 @@ def test_completed_code_repo_drops_out_of_routine_walk():
     )
 
     assert [spec["repo"] for spec in pending] == ["example/pending"]
+
+
+def test_no_curated_repo_uses_the_moved_nrel_org():
+    # The NREL org moved to NatLabRockies; the API answers NREL/<repo> with 301 Moved
+    # Permanently, which a walk must not depend on.
+    assert not [spec["repo"] for spec in find_github.REPOS if spec["repo"].startswith("NREL/")]
+
+
+def test_doc_markup_is_opt_in_bounded_by_include_and_exclude():
+    docs = tuple(find_github.doc_formats(["tex", "man", "text"]))
+    include, exclude = ["Manuals/", "doc/"], ["Manuals/Bibliography/", "/FIGURES/"]
+    keep = [
+        "Manuals/FDS_User_Guide/FDS_User_Guide.tex",
+        "doc/man/man1/rpict.1",
+        "doc/ray.1",
+        "doc/notes/materials",
+        "doc/notes/BSDFdirections.txt",
+    ]
+    drop = [
+        "Manuals/Bibliography/BIBLIO_FDS_refs.tex",
+        "Manuals/FDS_User_Guide/FIGURES/Coriolis_vector.tex",
+        "Source/notes.tex",          # outside every include prefix
+        "doc/man/.gitignore",
+    ]
+    for path in keep:
+        assert find_github.wanted(path, include, (), docs, exclude), path
+    for path in drop:
+        assert not find_github.wanted(path, include, (), docs, exclude), path
+    # without the opt-in, markup is ignored exactly as before
+    assert not find_github.wanted("Manuals/FDS_User_Guide/FDS_User_Guide.tex", include)
+
+
+def test_from_repo_honours_branch_override_and_maps_doc_formats(monkeypatch):
+    class Response:
+        def __init__(self, payload):
+            self.payload = payload
+
+        def raise_for_status(self):
+            return None
+
+        def json(self):
+            return self.payload
+
+    tree = [{"type": "blob", "path": p} for p in (
+        "README.md", "doc/man/man1/rpict.1", "doc/notes/materials", "doc/filefmts.md",
+        "doc/ps/ray.ps", "src/rt/rpict.c",
+    )]
+    seen = []
+
+    def get(url, **_kwargs):
+        seen.append(url)
+        if "/git/trees/" in url:
+            return Response({"tree": tree})
+        return Response({"default_branch": "cvsimport"})
+
+    monkeypatch.setattr(find_github.requests, "get", get)
+    entries = find_github.from_repo({
+        "repo": "LBNL-ETA/Radiance", "license": "open", "topic": "building_energy",
+        "branch": "master", "include": ["doc/", "README"], "docs": ["man", "text"],
+    })
+
+    assert seen[-1].endswith("/git/trees/master")
+    by_path = {e["title"].split(": ", 1)[1]: e for e in entries}
+    assert set(by_path) == {"README.md", "doc/man/man1/rpict.1", "doc/notes/materials",
+                            "doc/filefmts.md"}
+    assert by_path["doc/man/man1/rpict.1"]["format"] == "troff"
+    assert by_path["doc/notes/materials"]["format"] == "txt"
+    assert by_path["doc/notes/materials"]["id"] == "gh-radiance-doc-notes-materials"
+    assert by_path["README.md"]["format"] == "md"
+    assert all("/master/" in e["url"] for e in entries)
+
+
+def test_repo_walked_for_markdown_only_returns_for_its_doc_markup_pass():
+    repos = [
+        {"repo": "LBNL-ETA/Radiance", "docs": ["man"]},
+        {"repo": "firemodels/fds", "docs": ["tex"]},
+        {"repo": "example/plain"},
+    ]
+    formats = {"gh_radiance": {"md"}, "gh_fds": {"md", "tex"}, "gh_plain": {"md"}}
+
+    pending = find_github.pending_repos(repos, set(formats), set(), formats)
+
+    assert [spec["repo"] for spec in pending] == ["LBNL-ETA/Radiance"]
+
+
+def test_blocklisted_markup_urls_record_their_doc_format(tmp_path, monkeypatch):
+    registry_dir = tmp_path / "registry"
+    manifest_dir = tmp_path / "manifest"
+    registry_dir.mkdir()
+    manifest_dir.mkdir()
+    monkeypatch.setattr(find_github.registry, "REG_DIR", registry_dir)
+    monkeypatch.setattr(find_github.registry, "MAN_DIR", manifest_dir)
+    raw = "https://raw." + "githubusercontent.com"
+    monkeypatch.setattr(find_github.blocklist, "load", lambda: {
+        f"{raw}/firemodels/fds/master/Manuals/A/B.tex",
+        f"{raw}/LBNL-ETA/Radiance/master/doc/man/man1/rpict.1",
+    })
+
+    formats = find_github.source_formats()
+
+    assert formats == {"gh_fds": {"tex"}, "gh_radiance": {"troff"}}

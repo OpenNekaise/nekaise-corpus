@@ -50,22 +50,32 @@ REPOS = [
     {"repo": "ibpsa/modelica-ibpsa", "license": "open", "topic": "building_energy",
      "include": ["IBPSA/"], "code": ["mo"], "cap": 2200},
     {"repo": "lbl-srg/BuildingsPy", "license": "open", "topic": "building_energy"},
-    {"repo": "NREL/EnergyPlus", "license": "open", "topic": "building_energy",
+    # NREL's GitHub org moved to NatLabRockies (2026): the API answers NREL/<repo> with
+    # 301 Moved Permanently, so every entry names the new owner. Source buckets are keyed by repo
+    # NAME (gh_<name>), so the move does not re-walk repos already ingested under NREL/.
+    {"repo": "NatLabRockies/EnergyPlus", "license": "open", "topic": "building_energy",
      "include": ["doc/", "design/", "README"]},
-    {"repo": "NREL/OpenStudio", "license": "open", "topic": "standards_protocols"},
-    {"repo": "NREL/openstudio-standards", "license": "open", "topic": "standards_protocols"},
-    {"repo": "NREL/resstock", "license": "open", "topic": "building_energy"},
-    {"repo": "NREL/comstock", "license": "open", "topic": "building_energy"},
-    {"repo": "NREL/OpenStudio-HPXML", "license": "open", "topic": "building_energy"},
-    {"repo": "LBNL-ETA/Radiance", "license": "open", "topic": "building_energy"},
+    {"repo": "NatLabRockies/OpenStudio", "license": "open", "topic": "standards_protocols"},
+    {"repo": "NatLabRockies/openstudio-standards", "license": "open",
+     "topic": "standards_protocols"},
+    {"repo": "NatLabRockies/resstock", "license": "open", "topic": "building_energy"},
+    {"repo": "NatLabRockies/ComStock", "license": "open", "topic": "building_energy"},
+    {"repo": "NatLabRockies/OpenStudio-HPXML", "license": "open", "topic": "building_energy"},
+    # Radiance Software License v2.0 (BSD-3 style): master/License.txt. The DEFAULT branch
+    # `cvsimport` holds only CI scripts; the sources and docs live on master. Docs are troff man
+    # pages (doc/man, ~150), the -ms reference manual doc/ray.1 and plain-text notes.
+    # doc/filefmts.ms / *.html duplicate filefmts.md / ray.1, doc/ps + doc/pdf are binaries.
+    {"repo": "LBNL-ETA/Radiance", "license": "open", "topic": "building_energy",
+     "branch": "master", "include": ["doc/", "README"], "docs": ["man", "text"],
+     "exclude": ["doc/ps/", "doc/pdf/", "doc/filefmts.ms"], "cap": 220},
     {"repo": "CoolProp/CoolProp", "license": "open", "topic": "equipment_systems"},
     # --- round 7: solar / PV / thermal-systems (Python domain code + rich docs) ---
     {"repo": "pvlib/pvlib-python", "license": "open", "topic": "equipment_systems"},
-    {"repo": "NREL/PySAM", "license": "open", "topic": "equipment_systems"},
-    {"repo": "NREL/bifacial_radiance", "license": "open", "topic": "equipment_systems"},
-    {"repo": "NREL/floris", "license": "open", "topic": "equipment_systems"},
+    {"repo": "NatLabRockies/pysam", "license": "open", "topic": "equipment_systems"},
+    {"repo": "NatLabRockies/bifacial_radiance", "license": "open", "topic": "equipment_systems"},
+    {"repo": "NatLabRockies/floris", "license": "open", "topic": "equipment_systems"},
     {"repo": "oemof/tespy", "license": "open", "topic": "equipment_systems"},
-    {"repo": "NREL/ssc", "license": "open", "topic": "equipment_systems",
+    {"repo": "NatLabRockies/ssc", "license": "open", "topic": "equipment_systems",
      "include": ["ssc/", "shared/", "README"]},
     # --- round 7: Modelica building/HVAC/thermal libraries (pull .mo domain code, bounded) ---
     {"repo": "open-ideas/IDEAS", "license": "open", "topic": "building_energy",
@@ -87,7 +97,7 @@ REPOS = [
     # --- round 7: whole-building / urban building energy modeling ---
     {"repo": "RWTH-EBC/TEASER", "license": "open", "topic": "building_energy"},
     {"repo": "RWTH-EBC/ebcpy", "license": "open", "topic": "building_energy"},
-    {"repo": "NREL/OCHRE", "license": "open", "topic": "building_energy"},
+    {"repo": "NatLabRockies/OCHRE", "license": "open", "topic": "building_energy"},
     {"repo": "architecture-building-systems/CityEnergyAnalyst", "license": "open",
      "topic": "building_energy", "include": ["cea/", "docs/", "README"]},
     # --- round 7: energy-system / power-system / techno-economic modeling ---
@@ -95,7 +105,7 @@ REPOS = [
     {"repo": "calliope-project/calliope", "license": "open", "topic": "building_energy"},
     {"repo": "PyPSA/PyPSA", "license": "open", "topic": "building_energy"},
     {"repo": "OSeMOSYS/OSeMOSYS", "license": "open", "topic": "building_energy"},
-    {"repo": "NREL/REopt.jl", "license": "open", "topic": "building_energy"},
+    {"repo": "NatLabRockies/REopt.jl", "license": "open", "topic": "building_energy"},
     {"repo": "e2nIEE/pandapower", "license": "open", "topic": "equipment_systems",
      "include": ["pandapower/", "doc/", "README"]},
     {"repo": "gridlab-d/gridlab-d", "license": "open", "topic": "equipment_systems",
@@ -158,7 +168,46 @@ REPOS = [
      "include": ["docs/", "README"]},
     {"repo": "USEPA/WNTR", "license": "open", "topic": "infrastructure"},
     {"repo": "pastas/pastas", "license": "open", "topic": "infrastructure"},
+    # --- 2026-09-24 building-energy-simulation documentation gaps (non-Markdown docs) ---
+    # NIST-developed software notice (LICENSE.md): NIST work is not subject to US copyright;
+    # "You may use, copy and distribute copies ... in any medium". The FDS / CFAST user guides,
+    # technical references and validation guides are LaTeX chapters under Manuals/.
+    # Bibliography/ is BibTeX-in-.tex and FIGURES/ holds TikZ drawings: excluded.
+    {"repo": "firemodels/fds", "license": "public-domain", "topic": "architecture",
+     "include": ["Manuals/", "README"], "docs": ["tex"],
+     "exclude": ["Manuals/Bibliography/", "/FIGURES/", "/SCRIPT_FIGURES/"], "cap": 80},
+    {"repo": "firemodels/cfast", "license": "public-domain", "topic": "architecture",
+     "include": ["Manuals/", "README"], "docs": ["tex"],
+     "exclude": ["Manuals/Bibliography/", "/FIGURES/", "/SCRIPT_FIGURES/", "Appendix_Graphs",
+                 "Appendix_Only"], "cap": 60},
+    # BSD-3 (LICENSE.md, "URBANopt ... Alliance for Energy Innovation"): the Jekyll/Markdown
+    # sources of docs.urbanopt.net — take these instead of crawling the rendered site.
+    {"repo": "urbanopt/urbanopt.github.io", "license": "open", "topic": "urban", "cap": 150},
+    # MIT: RL building-control environments on EnergyPlus (docs/source/*.rst).
+    {"repo": "ugr-sail/sinergym", "license": "open", "topic": "controls_bas"},
+    # MIT (moved from intelligent-environments-lab/CityLearn): demand-response RL environment.
+    {"repo": "citylearn-project/CityLearn", "license": "open", "topic": "controls_bas"},
+    # MIT: EnergyPlus IDF scripting (eppy), geometry (geomeppy), UMI/archetype templates.
+    {"repo": "santoshphilip/eppy", "license": "open", "topic": "building_energy"},
+    {"repo": "jamiebull1/geomeppy", "license": "open", "topic": "building_energy"},
+    {"repo": "samuelduchesne/archetypal", "license": "open", "topic": "building_energy"},
+    # AGPL-3.0 (copyleft, OSI-open; local training use, no redistribution of bytes).
+    {"repo": "ladybug-tools/honeybee-energy", "license": "open", "topic": "building_energy"},
+    {"repo": "ladybug-tools/honeybee-radiance", "license": "open", "topic": "building_energy"},
+    # NOT listed (checked 2026-09-24): lbl-srg/obc has no LICENSE file; mosaik lives on GitLab
+    # (LGPL-2.1, crawl mosaik.readthedocs.io instead); BESOS lives on GitLab.
 ]
+
+# Extra documentation kinds a repo may opt into with `docs: [...]` (beyond md/rst prose). They
+# are only collected under an `include` prefix, because e.g. a stray .tex or man page elsewhere
+# in a source tree is rarely documentation. kind -> (file extensions, registry format).
+# "" is an extension-less file (Radiance's doc/notes/*).
+DOC_KINDS = {
+    "tex": (("tex",), "tex"),
+    "man": (("1", "2", "3", "4", "5", "6", "7", "8", "9", "man", "ms"), "troff"),
+    "text": (("txt", ""), "txt"),
+    "html": (("html", "htm"), "html"),
+}
 
 MAX_PER_REPO = 100  # cap files kept per repo; excess is logged, never silently dropped
 SKIP_BASENAMES = {"license", "license.md", "license.txt", "license.rst", "copying",
@@ -176,21 +225,41 @@ def headers() -> dict:
     return h
 
 
-def wanted(path: str, include, code_exts=()) -> bool:
+def _ext(path: str) -> str:
+    base = path.lower().rsplit("/", 1)[-1]
+    return base.rsplit(".", 1)[-1] if "." in base.lstrip(".") else ""
+
+
+def doc_formats(kinds) -> dict[str, str]:
+    """Extension -> registry format for a repo's opted-in extra documentation kinds."""
+    out: dict[str, str] = {}
+    for kind in kinds or ():
+        exts, fmt = DOC_KINDS[kind]
+        for ext in exts:
+            out[ext] = fmt
+    return out
+
+
+def wanted(path: str, include, code_exts=(), doc_exts=(), exclude=()) -> bool:
     low = "/" + path.lower()
     base = low.rsplit("/", 1)[-1]
-    ext = base.rsplit(".", 1)[-1] if "." in base else ""
+    ext = _ext(path)
     is_prose = ext in ("md", "rst")
     is_code = bool(code_exts) and ext in code_exts  # opt-in: pull domain source (e.g. Modelica .mo)
-    if not (is_prose or is_code):
+    # opt-in doc markup (LaTeX / troff / plain text / html), never outside an include prefix
+    is_doc = (not is_prose and not is_code and ext in doc_exts and bool(include)
+              and any(path.startswith(p) for p in include))
+    if not (is_prose or is_code or is_doc):
         return False
     if any(seg in low for seg in SKIP_SEGMENTS):
         return False
-    if base in SKIP_BASENAMES:
+    if base in SKIP_BASENAMES or base.startswith("."):
+        return False
+    if any(x in "/" + path for x in exclude):
         return False
     if include and not any(path.startswith(p) for p in include) and not base.startswith("readme"):
         return False
-    if is_code:
+    if is_code or is_doc:
         # code must be bounded by an `include` prefix (huge libs); prune later drops symbol-soup files.
         return True
     # prose: any README, anything under a doc/ or docs/ dir, or a top-level doc
@@ -198,21 +267,30 @@ def wanted(path: str, include, code_exts=()) -> bool:
             or path.count("/") == 0)
 
 
-def done_sources():
-    """Return GitHub source buckets already ingested or pruned.
+def _url_format(filename: str) -> str:
+    """Registry format implied by a raw file name (blocklisted URLs carry no format field)."""
+    ext = _ext(filename)
+    if ext in ("md", "rst"):
+        return ext
+    for exts, fmt in DOC_KINDS.values():
+        if ext in exts and fmt != "txt":
+            return fmt
+    return "txt"
 
-    Only read the GitHub shards rather than parsing the entire 600k+ document corpus.  A pruned raw
-    GitHub URL is durable evidence that the repo was walked; a blocklisted non-prose extension also
-    proves that an opted-in code harvest was attempted.  This keeps fully-pruned repos from being
-    walked forever while still allowing a docs-only code repo to return once for its source files.
+
+def source_formats() -> dict[str, set[str]]:
+    """Map each GitHub source bucket (gh_<repo>) to the registry formats already ingested or
+    pruned for it.
+
+    Only the GitHub shards are read, never the entire 600k+ document corpus. A pruned raw GitHub
+    URL is durable evidence that the repo was walked, and its extension proves which pass (prose,
+    opted-in code, opted-in doc markup) was attempted.
     """
-    all_done, code_done = set(), set()
+    seen: dict[str, set[str]] = {}
 
     def note(s, fmt):
         if s and s.startswith("gh_"):
-            all_done.add(s)
-            if fmt == "txt":
-                code_done.add(s)
+            seen.setdefault(s, set()).add(fmt or "")
 
     manifest_path = registry.MAN_DIR / "github.jsonl"
     if manifest_path.exists():
@@ -233,19 +311,37 @@ def done_sources():
         parts = url[len(raw_prefix):].split("/")
         if len(parts) < 4:
             continue
-        source = f"gh_{registry.slug(parts[1])}"
-        suffix = parts[-1].lower().rsplit(".", 1)
-        fmt = suffix[-1] if len(suffix) == 2 else ""
-        note(source, fmt if fmt in ("md", "rst") else "txt")
-    return all_done, code_done
+        note(f"gh_{registry.slug(parts[1])}", _url_format(parts[-1]))
+    return seen
 
 
-def pending_repos(repos: list[dict], done: set[str], code_done: set[str]) -> list[dict]:
-    """Keep unwalked repos and code repos whose source-file pass has not completed."""
+def done_sources():
+    """Return (buckets walked at all, buckets whose opted-in code pass completed).
+
+    This keeps fully-pruned repos from being walked forever while still allowing a docs-only
+    code repo to return once for its source files.
+    """
+    seen = source_formats()
+    return set(seen), {s for s, fmts in seen.items() if "txt" in fmts}
+
+
+def _bucket(spec: dict) -> str:
+    return f"gh_{registry.slug(spec['repo'].split('/')[-1])}"
+
+
+def pending_repos(repos: list[dict], done: set[str], code_done: set[str],
+                  formats: dict[str, set[str]] | None = None) -> list[dict]:
+    """Keep unwalked repos, code repos whose source-file pass has not completed, and repos whose
+    opted-in doc-markup pass (`docs: [...]`, e.g. LaTeX manuals) has not landed any file yet —
+    a repo walked earlier for Markdown only (e.g. Radiance, whose README was pruned) must return
+    once for its man pages."""
+    formats = formats or {}
     out = []
     for spec in repos:
-        bucket = f"gh_{registry.slug(spec['repo'].split('/')[-1])}"
-        if bucket not in done or (spec.get("code") and bucket not in code_done):
+        bucket = _bucket(spec)
+        doc_fmts = set(doc_formats(spec.get("docs")).values())
+        if (bucket not in done or (spec.get("code") and bucket not in code_done)
+                or (doc_fmts and not doc_fmts & formats.get(bucket, set()))):
             out.append(spec)
     return out
 
@@ -280,7 +376,8 @@ def from_repo(spec: dict) -> list:
     name = repo.split("/")[-1]
     meta = requests.get(f"{API}/repos/{repo}", headers=headers(), timeout=30)
     meta.raise_for_status()
-    branch = meta.json().get("default_branch", "main")
+    # `branch` overrides a default branch that does not carry the docs (Radiance: cvsimport)
+    branch = spec.get("branch") or meta.json().get("default_branch", "main")
     tree = requests.get(f"{API}/repos/{repo}/git/trees/{branch}",
                         params={"recursive": "1"}, headers=headers(), timeout=45)
     tree.raise_for_status()
@@ -288,21 +385,26 @@ def from_repo(spec: dict) -> list:
     if tj.get("truncated"):
         print(f"# WARN {repo}: tree truncated by GitHub — some deep files not listed", file=sys.stderr)
     code_exts = tuple(e.lower().lstrip(".") for e in spec.get("code", []))
+    doc_map = doc_formats(spec.get("docs"))
     cap = spec.get("cap", MAX_PER_REPO)
     paths = sorted(n["path"] for n in tj.get("tree", [])
-                   if n.get("type") == "blob" and wanted(n["path"], spec.get("include"), code_exts))
+                   if n.get("type") == "blob"
+                   and wanted(n["path"], spec.get("include"), code_exts, tuple(doc_map),
+                              tuple(spec.get("exclude", ()))))
     if len(paths) > cap:
         print(f"# NOTE {repo}: {len(paths)} files, capping at {cap} "
               f"(dropped {len(paths) - cap})", file=sys.stderr)
         paths = capped_paths(paths, code_exts, cap)
     out = []
     for p in paths:
-        low = p.lower()
-        # code (e.g. Modelica .mo) is stored & extracted verbatim as plain text (format: txt)
-        fmt = "rst" if low.endswith(".rst") else "md" if low.endswith(".md") else "txt"
+        ext = _ext(p)
+        # code (e.g. Modelica .mo) is stored & extracted verbatim as plain text (format: txt);
+        # opted-in doc markup maps to its extractor format (tex / troff / html / txt)
+        fmt = ext if ext in ("md", "rst") else "txt" if ext in code_exts else doc_map.get(ext, "txt")
         url = f"https://raw.githubusercontent.com/{repo}/{branch}/{p}"
         title = f"{name}: {p}"[:150]
-        sid = f"gh-{registry.slug(name)}-{registry.slug(p.rsplit('.', 1)[0])}"[:63]
+        stem = p.rsplit(".", 1)[0] if ext else p
+        sid = f"gh-{registry.slug(name)}-{registry.slug(stem)}"[:63]
         out.append({"id": sid, "title": title, "url": url, "source": f"gh_{registry.slug(name)}",
                     "license": spec["license"], "topic": spec["topic"], "format": fmt})
     return out
@@ -320,8 +422,10 @@ def main() -> None:
         return
 
     if not args.repo:  # skip repos already ingested; re-walk a code repo only until its code lands
-        done, code_done = done_sources()
-        keep = pending_repos(repos, done, code_done)
+        formats = source_formats()
+        done = set(formats)
+        code_done = {s for s, fmts in formats.items() if "txt" in fmts}
+        keep = pending_repos(repos, done, code_done, formats)
         if len(keep) < len(repos):
             print(f"# skipping {len(repos) - len(keep)} already-ingested repos; "
                   f"walking {len(keep)} (60/hr API budget)", file=sys.stderr)
