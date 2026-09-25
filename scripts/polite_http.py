@@ -136,8 +136,13 @@ def get(url: str, *, delay: float = 1.0, expect: str = "any", max_bytes: int = M
         pace(hop, max(delay, robots_delay))
         if time.monotonic() - started > DEADLINE:  # the waits count: never request late
             raise Deferred(f"{hop}: the {DEADLINE:.0f} s request deadline passed while waiting")
-        resp = requests.get(hop, headers={**UA, **(headers or {})},
-                            timeout=TIMEOUT, allow_redirects=False, stream=True)
+        guard = stream_guard.Deadline(started + DEADLINE, hop)
+        try:
+            with guard:  # headers under the same watchdog as the body
+                resp = requests.get(hop, headers={**UA, **(headers or {})},
+                                    timeout=TIMEOUT, allow_redirects=False, stream=True)
+        except stream_guard.DeadlineExceeded as exc:
+            raise Deferred(f"{hop}: {exc}") from exc
         status = resp.status_code
         if status in REDIRECTS and resp.headers.get("location"):
             hop = prepared(urljoin(resp.url or hop, resp.headers["location"]))
@@ -154,7 +159,7 @@ def get(url: str, *, delay: float = 1.0, expect: str = "any", max_bytes: int = M
             resp.raise_for_status()
         try:
             body = stream_guard.read_body(resp, max_bytes=max_bytes, deadline=started + DEADLINE,
-                                          prefix=prefix)
+                                          prefix=prefix)  # a guard of its own, same deadline
         except stream_guard.BodyTooLarge as exc:
             raise TooLarge(f"{hop}: {exc}") from exc
         except stream_guard.DeadlineExceeded as exc:

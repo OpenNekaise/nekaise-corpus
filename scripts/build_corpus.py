@@ -228,6 +228,21 @@ def _cool(sid: str) -> None:
             pass
 
 
+def _log_restore_failure(rec: dict) -> None:
+    """Scratch evidence of a failed restoration of a held programme row (its manifest row is
+    kept): workspace/programme-restore-failures.jsonl."""
+    try:
+        path = HERE / "workspace" / "programme-restore-failures.jsonl"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a") as fh:
+            fh.write(json.dumps({"id": rec["id"], "url": rec.get("url"),
+                                 "http_status": rec.get("http_status"), "error": rec.get("error"),
+                                 "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())})
+                     + "\n")
+    except OSError:
+        pass
+
+
 class ProgrammeBudget:
     """This run's programme byte/time accounting (thread-safe)."""
 
@@ -469,11 +484,22 @@ def _get_hops(url: str, fmt: str, *, session=None, headers: dict | None = None):
                     raise BudgetExceeded("programme budget spent while waiting")
             capped = hops is not None and hops.max_bytes is not None
             ua = HONEST_UA if programme else HOST_UA.get(host, UA)
-            resp = get(hop, headers={"User-Agent": ua, "Accept": ACCEPT, **(headers or {})},
-                       timeout=TIMEOUT, allow_redirects=False,
-                       **({"stream": True} if capped else {}))
             if capped:
-                _read_capped(resp, hops.max_bytes, hops)
+                # one watchdog over the whole hop: header reception and every body read
+                import stream_guard
+                try:
+                    with stream_guard.Deadline(hops.started + DOCUMENT_DEADLINE,
+                                               "document") as guard:
+                        resp = get(hop, headers={"User-Agent": ua, "Accept": ACCEPT,
+                                                 **(headers or {})},
+                                   timeout=TIMEOUT, allow_redirects=False, stream=True)
+                        _read_capped(resp, hops.max_bytes, hops, guard)
+                except stream_guard.DeadlineExceeded as exc:
+                    raise DeadlineExceeded(f"{DOCUMENT_DEADLINE:.0f} s document deadline: "
+                                           f"{exc}") from exc
+            else:
+                resp = get(hop, headers={"User-Agent": ua, "Accept": ACCEPT, **(headers or {})},
+                           timeout=TIMEOUT, allow_redirects=False)
         status = getattr(resp, "status_code", 200)
         if (host in POLITE_HOSTS or programme) and is_challenge(
                 status, getattr(resp, "content", b"") or b"", fmt):
@@ -835,7 +861,7 @@ def is_challenge(status: int, body: bytes, fmt: str) -> bool:
     return bool(HTML_CHALLENGE_BODY.search(body[:4000]))
 
 
-def _read_capped(resp, max_bytes: int, hops: "Hops | None" = None) -> None:
+def _read_capped(resp, max_bytes: int, hops: "Hops | None" = None, guard=None) -> None:
     """Materialise a streamed response's decoded body, refusing it past `max_bytes` or past the
     chain's DOCUMENT_DEADLINE, and charging every chunk to the programme byte budget."""
     declared = _header(resp, "content-length")
@@ -848,7 +874,7 @@ def _read_capped(resp, max_bytes: int, hops: "Hops | None" = None) -> None:
     deadline = (hops.started if hops is not None else time.monotonic()) + DOCUMENT_DEADLINE
     try:
         stream_guard.read_body(
-            resp, max_bytes=max_bytes, deadline=deadline, chunk=READ_CHUNK,
+            resp, max_bytes=max_bytes, deadline=deadline, chunk=READ_CHUNK, guard=guard,
             on_chunk=(lambda n: PROGRAMME.charge(hops.sid, n)) if hops is not None else None)
     except stream_guard.BodyTooLarge as exc:
         raise TooLarge(str(exc)) from exc
@@ -1594,8 +1620,15 @@ def _run(view, session, args, only: set[str], selection: dict) -> None:
                 if future in download_futures:
                     download_futures.remove(future)
                     rec = future.result()
+                    if not rec.get("_deferred") and not rec.get("raw_path") \
+                            and rec["id"] in HELD_OK_IDS:
+                        # a restoration/refresh of a HELD programme document failed: its
+                        # successful provenance row stays; the failure is logged, cooled down
+                        _log_restore_failure(rec)
+                        _cool(rec["id"])
+                        rec["_deferred"] = f"restoration failed: {rec.get('error')}"
                     if rec.get("_deferred"):
-                        budget_deferred.append(rec["id"])  # never judged: no manifest row
+                        budget_deferred.append(rec["id"])  # never judged: no manifest change
                         continue
                     if rec.get("raw_path"):
                         digest = rec["sha256"]

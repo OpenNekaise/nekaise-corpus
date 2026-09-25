@@ -232,8 +232,12 @@ def _get_manual(url: str) -> tuple[int, bytes]:
             raise RobotsUnavailable(f"robots.txt redirect to a refused host: {hop}")
         from contextlib import nullcontext
         with (_pacer(hop) if _pacer is not None else nullcontext()):
-            r = requests.get(hop, headers=UA, timeout=TIMEOUT, allow_redirects=False,
-                             stream=True)
+            try:
+                with stream_guard.Deadline(deadline, hop):  # headers under the watchdog too
+                    r = requests.get(hop, headers=UA, timeout=TIMEOUT, allow_redirects=False,
+                                     stream=True)
+            except stream_guard.DeadlineExceeded as exc:
+                raise RobotsUnavailable(f"{hop}: {exc}") from exc
             if r.status_code in REDIRECTS and r.headers.get("location"):
                 hop = urljoin(hop, r.headers["location"])
                 r.close()

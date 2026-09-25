@@ -1440,3 +1440,112 @@ def test_eu_consolidation_anchor_checks_its_own_version_stamp():
              "persistent_id": "celex:02023R2772-20240101"}
     assert compliance_common.instrument_anchor(right, head) is True
     assert compliance_common.instrument_anchor(wrong, head) is False
+
+
+# ------------------------------------------------------------------------------------ round 4
+import socket as _socket  # noqa: E402
+
+
+@pytest.fixture
+def trickle_server():
+    """A local HTTP server that trickles: mode "headers" never finishes its header block,
+    mode "body" sends complete headers (Connection: close, no length) and then a body byte every
+    50 ms. Real sockets through the installed requests/urllib3 stack; no outside network."""
+    srv = _socket.socket()
+    srv.setsockopt(_socket.SOL_SOCKET, _socket.SO_REUSEADDR, 1)
+    srv.bind(("127.0.0.1", 0))
+    srv.listen(8)
+    stop = threading.Event()
+
+    def serve(conn):
+        with conn:
+            try:
+                req = conn.recv(65536).decode("latin-1")
+                if "/headers" in req:
+                    conn.sendall(b"HTTP/1.1 200 OK\r\nX-Slow: ")
+                else:
+                    conn.sendall(b"HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n"
+                                 b"Connection: close\r\n\r\n")
+                for _ in range(100):
+                    if stop.is_set():
+                        return
+                    conn.sendall(b"a")
+                    time.sleep(0.05)
+            except OSError:
+                return
+
+    def accept():
+        while not stop.is_set():
+            try:
+                srv.settimeout(0.2)
+                conn, _ = srv.accept()
+            except OSError:
+                continue
+            threading.Thread(target=serve, args=(conn,), daemon=True).start()
+    t = threading.Thread(target=accept, daemon=True)
+    t.start()
+    yield f"http://127.0.0.1:{srv.getsockname()[1]}"
+    stop.set()
+    srv.close()
+
+
+@pytest.mark.parametrize("mode", ["headers", "body"])
+def test_real_transport_deadline_covers_headers_and_close_delimited_bodies(trickle_server, mode):
+    import requests as _requests
+    import stream_guard
+    t0 = time.monotonic()
+    with pytest.raises(stream_guard.DeadlineExceeded):
+        with stream_guard.Deadline(time.monotonic() + 0.3) as guard:
+            resp = _requests.get(f"{trickle_server}/{mode}", stream=True, timeout=(5, 5))
+            stream_guard.read_body(resp, max_bytes=10**6, guard=guard)
+    assert time.monotonic() - t0 < 1.5
+
+
+def test_real_transport_loader_row_is_bounded(trickle_server, loader, monkeypatch):
+    import requests as _requests
+    monkeypatch.setattr(build_corpus.requests, "get", _requests.api.get)  # the real transport
+    monkeypatch.setattr(compliance_common, "PROGRAMME_HOSTS",
+                        {**compliance_common.PROGRAMME_HOSTS, "127.0.0.1": (0.0, 6)})
+    monkeypatch.setattr(build_corpus, "DOCUMENT_DEADLINE", 0.3)
+    for mode in ("headers", "body"):
+        t0 = time.monotonic()
+        rec = build_corpus.download_one(programme_row(f"reg-t-{mode}", f"{trickle_server}/{mode}"))
+        assert time.monotonic() - t0 < 1.5, mode
+        assert "deadline" in rec["error"] and rec["transient"] is True, rec
+
+
+def test_real_transport_discovery_is_bounded(trickle_server, monkeypatch):
+    monkeypatch.setattr(compliance_common, "PROGRAMME_HOSTS",
+                        {**compliance_common.PROGRAMME_HOSTS, "127.0.0.1": (0.0, 6)})
+    monkeypatch.setattr(robots_policy, "decision", lambda _u, fetcher=None: (True, None))
+    monkeypatch.setattr(polite_http, "DEADLINE", 0.3)
+    polite_http.set_policy({})
+    for mode in ("headers", "body"):
+        t0 = time.monotonic()
+        with pytest.raises(polite_http.Deferred):
+            polite_http.get(f"{trickle_server}/{mode}", delay=0)
+        assert time.monotonic() - t0 < 1.5, mode
+
+
+def test_a_failed_restoration_keeps_the_held_row(monkeypatch, tmp_path, capsys):
+    import sys as _sys
+    held = {**RIKS_ROW, "status": "ok", "sha256": "0" * 64, "bytes": 30,
+            "raw_path": "raw/riksdagen_sfs/reg-riksdagen-sfs-pbl.txt",
+            "text_path": "text/reg-riksdagen-sfs-pbl.md", "text_chars": 30,
+            "url": RIKS_ROW["url"] + "#tom-sfs-2025-1"}
+    row = {**RIKS_ROW, "url": held["url"]}
+    root = _programme_repo(monkeypatch, tmp_path, [row], [held], docs()["regdocs.json"])
+    failed = {**build_corpus._new_record(row)[0], "error": "404 Client Error",
+              "http_status": 404}
+    monkeypatch.setattr(build_corpus, "download_one", lambda _s: dict(failed))
+    monkeypatch.setattr(_sys, "argv", ["build_corpus.py", "--workers", "1"])
+    build_corpus.main()
+    rows = [json.loads(line) for line in
+            (root / "manifest" / "regdocs.jsonl").read_text().splitlines()]
+    assert rows[0]["status"] == "ok" and rows[0]["sha256"] == "0" * 64  # provenance kept
+    assert "reg-riksdagen-sfs-pbl" in (root / "workspace" /
+                                        "programme-restore-failures.jsonl").read_text()
+    assert "reg-riksdagen-sfs-pbl" in build_corpus._cooldowns()
+    deferred = json.loads((tmp_path / "fetch-deferred.json").read_text()) \
+        if (tmp_path / "fetch-deferred.json").exists() else None
+    assert deferred is None or "reg-riksdagen-sfs-pbl" in deferred["ids"]
