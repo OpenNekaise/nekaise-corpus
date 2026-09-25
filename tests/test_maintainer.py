@@ -10,6 +10,7 @@ import sys
 from datetime import datetime, timedelta, timezone
 
 import maintainer
+from runids import rid
 
 
 def test_quota_detection_is_specific():
@@ -74,11 +75,11 @@ def test_lock_owning_maintainer_recovers_one_pending_round(tmp_path, monkeypatch
     monkeypatch.setattr(maintainer.ops, "SNAPSHOTS", snapshots)
     monkeypatch.setattr(maintainer.run_round, "SNAPSHOT_PATHS", ("state.txt",))
     monkeypatch.setattr(maintainer.ops, "run_event", lambda *args, **kwargs: None)
-    maintainer.ops.StateSnapshot.capture("interrupted", ("state.txt",), root=tmp_path)
+    maintainer.ops.StateSnapshot.capture(rid("interrupted"), ("state.txt",), root=tmp_path)
     state.write_text("partial round\n")
     subprocess.run(["git", "add", "state.txt"], cwd=tmp_path, check=True)
 
-    assert maintainer.recover_pending_round() == "interrupted"
+    assert maintainer.recover_pending_round() == rid("interrupted")
     assert state.read_text() == "before\n"
     assert not snapshots.exists() or not any(snapshots.iterdir())
     assert subprocess.run(

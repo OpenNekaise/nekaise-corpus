@@ -12,6 +12,7 @@ import pytest
 
 import build_corpus
 import prune_corpus
+from runids import rid
 
 NOW = datetime(2026, 9, 24, 12, 0, 0)
 
@@ -58,7 +59,7 @@ def _run_prune(monkeypatch, rows, deferred=None, tmp_path=None):
     if deferred is None:
         monkeypatch.setattr(prune_corpus, "deferred_ids", lambda: set())
     else:  # the real hand-off file, written by the loader of the same run
-        monkeypatch.setenv("NEKAISE_RUN_ID", "run-1")
+        monkeypatch.setenv("NEKAISE_RUN_ID", rid("run-1"))
         path = root / "fetch-deferred.json"
         monkeypatch.setattr(build_corpus, "deferred_path", lambda: path)
         build_corpus.write_deferred(deferred)
@@ -144,11 +145,11 @@ def test_deferred_rows_are_never_dropped_or_blocklisted(monkeypatch, tmp_path):
 def test_stale_deferred_file_from_another_run_fails_closed(monkeypatch, tmp_path):
     path = tmp_path / "fetch-deferred.json"
     monkeypatch.setattr(build_corpus, "deferred_path", lambda: path)
-    monkeypatch.setenv("NEKAISE_RUN_ID", "old-run")
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("old-run"))
     build_corpus.write_deferred(["ibp-x"])
-    monkeypatch.setenv("NEKAISE_RUN_ID", "new-run")
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("new-run"))
 
-    with pytest.raises(prune_corpus.HandoffError, match="old-run"):
+    with pytest.raises(prune_corpus.HandoffError, match=rid("old-run")):
         prune_corpus.deferred_ids(path)
 
 
@@ -164,13 +165,13 @@ def test_standalone_prune_ignores_any_handoff_file(monkeypatch, tmp_path):
 @pytest.mark.parametrize(
     "content",
     [None, "not json", '{"run_id": null, "ids": []}', '{"run_id": "", "ids": []}',
-     '{"run_id": "run-1"}', '["run-1"]'],
+     '{"run_id": rid("run-1")}', '[rid("run-1")]'],
 )
 def test_round_prune_fails_closed_on_missing_or_corrupt_handoff(monkeypatch, tmp_path, content):
     path = tmp_path / "fetch-deferred.json"
     if content is not None:
         path.write_text(content)
-    monkeypatch.setenv("NEKAISE_RUN_ID", "run-1")
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("run-1"))
 
     with pytest.raises(prune_corpus.HandoffError):
         prune_corpus.deferred_ids(path)
@@ -181,7 +182,7 @@ def test_prune_main_exits_nonzero_without_the_handoff(monkeypatch, tmp_path, cap
     root = pipeline_repo.write_repo(tmp_path / "repo", manifest=[_failed("ibp-a")],
                                     entries=[pipeline_repo.entry_of(_failed("ibp-a"))])
     pipeline_repo.point(monkeypatch, root)
-    monkeypatch.setenv("NEKAISE_RUN_ID", "run-1")  # no handoff written
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("run-1"))  # no handoff written
     before = pipeline_repo.tracked(root)
     monkeypatch.setattr(sys, "argv", ["prune_corpus.py", "--apply"])
 
@@ -223,7 +224,7 @@ def test_81_ibpsa_restorations_are_all_fetched_despite_the_run_cap(tmp_path, mon
                         lambda src: requested.append(src["id"]) or {
                             **src, "status": "failed", "error": "x", "http_status": None,
                             "raw_path": None})
-    monkeypatch.setenv("NEKAISE_RUN_ID", "run-81")
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("run-81"))
     monkeypatch.setattr(sys, "argv", ["build_corpus.py", "--workers", "1"])
 
     build_corpus.main()

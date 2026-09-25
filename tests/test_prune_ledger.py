@@ -4,6 +4,7 @@ import ops
 import prune_corpus
 import pytest
 import registry
+from runids import rid
 
 
 def test_prune_ledger_records_reason_and_blocklist_decision(tmp_path, monkeypatch):
@@ -17,14 +18,14 @@ def test_prune_ledger_records_reason_and_blocklist_decision(tmp_path, monkeypatc
         "status": "ok",
         "quality": {"chars": 3},
     }]
-    monkeypatch.setenv("NEKAISE_RUN_ID", "run-7")
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("run-7"))
 
     got = prune_corpus.prune_ledger_rows(
         rows, {"ost-bad": "thin"}, {"https://example.org/bad.pdf"}, now="2026-09-24T00:00:00Z")
 
     assert len(got) == 1
     assert got[0]["id"] == "ost-bad" and got[0]["reason"] == "thin"
-    assert got[0]["blocklisted"] is True and got[0]["run_id"] == "run-7"
+    assert got[0]["blocklisted"] is True and got[0]["run_id"] == rid("run-7")
     assert set(got[0]) <= set(__import__("store").LEDGER_FIELDS)
 
 

@@ -1208,5 +1208,26 @@ is still v4; the rule "ship a new migration" applies once v5 is deployed).
   `stage_batch` now also analyzes the staging tables every 1 000 batches of a run.
 - **Gates**: full suite 1150 passed / 116 skipped (PG skipped), with PostgreSQL (`nekaise_test`)
   1295 passed / 1 skipped (the opt-in benchmark); `tests/test_store_pg_staging.py` has 66 tests;
-  `py_compile` clean. (Two suites must not run at once on one host: round recovery stops every
-  process of the user carrying the round's `NEKAISE_RUN_ID`, and the tests reuse run ids.)
+  `py_compile` clean. (Run concurrently, the suites then interfered: fixed test run ids —
+  fixed in the third review, below.)
+
+### Step 2, Codex third review (2026-09-25): no PG defect; test-execution isolation fixed
+
+- **P2 — concurrent test executions could kill each other's children, and a live round's
+  gate.** Round recovery stops every process of the user whose environment carries the round's
+  `NEKAISE_RUN_ID`; tests tagged children with, and recovered, fixed ids (`rnd-p`, …), so a
+  failing test in one execution could stop another execution's test children — including the
+  pytest gate of a live round, which then rolls back — and the reverse. Every run id that
+  reaches a child's `NEKAISE_RUN_ID`, a round snapshot, `--run-id`, `--recover` or a recovery
+  call now comes from `tests/runids.py`: `rid(name)` appends a suffix random per pytest process
+  (the same name gives the same id within an execution, so snapshots, commit trailers and event
+  assertions still match). Regressions: two real concurrent executions (this process and a
+  second Python process, each with its own suffix) tag children with the same round name; each
+  one's recovery stops only its own children, in both directions; and a static check fails any
+  test that hands a literal run id to a child environment, `--run-id`, `--recover` or
+  `recover_round`. A writer's `round_id` alone (lock ownership, `NEKAISE_STORE_ROUND`) is not
+  matched by recovery and stays as it was.
+- **Gates**: alone — full suite 1152 passed / 116 skipped (PG skipped), with PostgreSQL
+  (`nekaise_test`) 1297 passed / 1 skipped (the opt-in benchmark); run CONCURRENTLY on one host
+  — the same results for both (before the fix, 11 round-recovery tests failed that way);
+  `py_compile` clean.

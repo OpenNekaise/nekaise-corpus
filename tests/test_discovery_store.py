@@ -23,6 +23,7 @@ import registry
 import run_round
 import store
 import store_broker
+from runids import rid
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -324,7 +325,7 @@ def test_round_runs_only_effectively_enabled_backends_and_rolls_everything_back(
             raise RuntimeError("prune exploded")
 
     monkeypatch.setattr(run_round, "run_command", fail_in_prune)
-    monkeypatch.setattr(sys, "argv", ["run_round.py", "--skip-tests", "--run-id", "r-fail"])
+    monkeypatch.setattr(sys, "argv", ["run_round.py", "--skip-tests", "--run-id", rid("r-fail")])
     assert run_round.main() == 1
     assert "prune exploded" in capsys.readouterr().err
     started = [f["step"] for e, f in events if e == "step_started"]

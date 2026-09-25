@@ -23,6 +23,7 @@ import store
 import store_broker
 import store_staging
 from store import And, Eq, Exists, In, Not, Prefix, StaleView, StoreError, Table, VersionConflict
+from runids import rid
 from test_store_contract import write, write_config
 
 pytestmark = pytest.mark.skipif(not os.environ.get("NEKAISE_PG_TEST_DSN"),
@@ -1221,17 +1222,22 @@ print(json.dumps(out))
 """
 
 
+# the staged round of the child-process test: its children carry NEKAISE_RUN_ID, so the id
+# is unique to this test execution (tests/runids.py)
+ROUND = rid("rnd1")
+
+
 def run_child(pg, env, mode, batch=""):
     got = subprocess.run([sys.executable, "-c", CHILD, str(pg.root), pg.dsn, pg.schema, mode,
-                          batch], env={**env, "NEKAISE_RUN_ID": "rnd1"}, capture_output=True,
+                          batch], env={**env, "NEKAISE_RUN_ID": ROUND}, capture_output=True,
                          text=True, cwd=REPO)
     return got
 
 
 def test_a_staged_round_through_real_child_processes(pg):
     base = {k: v for k, v in os.environ.items() if not k.startswith("NEKAISE_STORE")}
-    with pg.writer(round_id="rnd1") as w:
-        with store_broker.staged_round(pg, w, "rnd1", producer_commit=SHA, extractor_version="x",
+    with pg.writer(round_id=ROUND) as w:
+        with store_broker.staged_round(pg, w, ROUND, producer_commit=SHA, extractor_version="x",
                                        cleaning_ruleset="none") as rnd:
             rnd.broker.computed_batch("discover", "merge", lambda v, b: b.upsert_manifest(
                 [mrow("disc-1")]))
@@ -1239,20 +1245,20 @@ def test_a_staged_round_through_real_child_processes(pg):
             one = run_child(pg, {**base, **rnd.broker.env()}, "write", "child-1")
             assert one.returncode == 0, one.stderr
             got = json.loads(one.stdout)
-            assert got["ids"] == ["disc-1"] and got["version"] == "pg:stage:rnd1:1"
-            assert got["after"] == "pg:stage:rnd1:2"
+            assert got["ids"] == ["disc-1"] and got["version"] == f"pg:stage:{ROUND}:1"
+            assert got["after"] == f"pg:stage:{ROUND}:2"
             two = json.loads(run_child(pg, {**base, **rnd.broker.env()}, "write", "child-2").stdout)
             assert two["ids"] == ["child-1", "disc-1"]      # sees the completed batch before it
             pinned = json.loads(run_child(pg, {**base, **finders}, "read").stdout)
             assert pinned["ids"] == ["disc-1"]              # the shared initial view
             plain = json.loads(run_child(pg, base, "read").stdout)
             assert plain["ids"] == [] and plain["version"].startswith("pg:")  # committed only
-            forged = run_child(pg, {**base, store_staging.STAGE_ENV: f"rnd1:live:{'0' * 64}"},
+            forged = run_child(pg, {**base, store_staging.STAGE_ENV: f"{ROUND}:live:{'0' * 64}"},
                                "read")
             assert forged.returncode != 0 and "AuthorityError" in forged.stderr
             frozen = rnd.freeze(["tests"])
             gate = json.loads(run_child(pg, {**base, **rnd.gate_env()}, "read").stdout)
-            assert gate["version"] == f"pg:stage:rnd1:{frozen.seq}" == "pg:stage:rnd1:3"
+            assert gate["version"] == f"pg:stage:{ROUND}:{frozen.seq}" == f"pg:stage:{ROUND}:3"
             late = run_child(pg, {**base, **rnd.broker.env()}, "write", "child-late")
             assert late.returncode != 0                     # drained: no more mutations
             rnd.record_gate("tests", passed=True)

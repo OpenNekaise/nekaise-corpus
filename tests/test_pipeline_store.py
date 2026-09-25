@@ -30,6 +30,7 @@ import run_round
 import store
 import store_broker
 from pipeline_repo import artifacts, entry_of, journal_runs, manifest_rows, tracked, write_repo
+from runids import rid
 
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 TEXT = ("Building energy simulation of HVAC systems, thermal comfort, ventilation, insulation "
@@ -143,7 +144,7 @@ def build_prune_repo(root: Path) -> None:
             (root / rel).write_text(body)
     (root / "workspace").mkdir(exist_ok=True)
     (root / "workspace" / "fetch-deferred.json").write_text(
-        json.dumps({"run_id": "rnd-p", "ids": ["ost-deferred"]}) + "\n")
+        json.dumps({"run_id": rid("rnd-p"), "ids": ["ost-deferred"]}) + "\n")
 
 
 def run_prune(monkeypatch, root, *args):
@@ -153,7 +154,7 @@ def run_prune(monkeypatch, root, *args):
 
 
 def test_prune_matches_the_legacy_pruner(tmp_path, monkeypatch, clock, capsys):
-    monkeypatch.setenv("NEKAISE_RUN_ID", "rnd-p")
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("rnd-p"))
     a, b = twins(tmp_path, build_prune_repo)
     pipeline_repo.point(monkeypatch, a, policy=SUSPENDED)
     drop = legacy_pipeline.legacy_prune()
@@ -192,7 +193,7 @@ def test_a_prune_that_changes_nothing_records_no_transaction(tmp_path, monkeypat
 
 
 def test_prune_dry_run_writes_nothing(tmp_path, monkeypatch, clock, capsys):
-    monkeypatch.setenv("NEKAISE_RUN_ID", "rnd-p")
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("rnd-p"))
     root = tmp_path / "r"
     build_prune_repo(root)
     before, files = tracked(root, journal=True), artifacts(root)
@@ -217,7 +218,7 @@ def _fail_commits(monkeypatch, exc=RuntimeError):
 def test_a_failed_prune_transaction_keeps_bytes_recoverable(tmp_path, monkeypatch, clock):
     """The transaction fails after the bytes moved aside: metadata is untouched, the bytes wait
     in the quarantine, and the next prune restores them first and then prunes normally."""
-    monkeypatch.setenv("NEKAISE_RUN_ID", "rnd-p")
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("rnd-p"))
     a, b = twins(tmp_path, build_prune_repo)
     run_prune(monkeypatch, a)  # the reference: an uninterrupted prune
     meta, files = tracked(b, journal=True), artifacts(b)
@@ -235,7 +236,7 @@ def test_a_failed_prune_transaction_keeps_bytes_recoverable(tmp_path, monkeypatc
 
 
 def test_a_prune_killed_after_its_commit_is_completed_by_the_next(tmp_path, monkeypatch, clock):
-    monkeypatch.setenv("NEKAISE_RUN_ID", "rnd-p")
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("rnd-p"))
     a, b = twins(tmp_path, build_prune_repo)
     run_prune(monkeypatch, a)
     with monkeypatch.context() as m:
@@ -342,7 +343,7 @@ def _fake_pipeline(root: Path, crash: str | None, fail_with):
 def _round(monkeypatch, root, crash=None, fail_with=RuntimeError):
     monkeypatch.setattr(run_round, "run_command", _fake_pipeline(root, crash, fail_with))
     monkeypatch.setattr(sys, "argv", ["run_round.py", "--skip-discovery", "--skip-tests",
-                                      "--allow-dirty", "--run-id", "rnd-p"])
+                                      "--allow-dirty", "--run-id", rid("rnd-p")])
     return run_round.main()
 
 
@@ -413,9 +414,9 @@ def test_recover_settles_the_prune_quarantine_of_an_interrupted_round(tmp_path, 
     root, meta, files, events = _pre_round(tmp_path, monkeypatch)
     with pytest.raises(KeyboardInterrupt):  # the round process itself dies: no rollback
         _round(monkeypatch, root, crash=crash, fail_with=KeyboardInterrupt)
-    assert run_round.ops.StateSnapshot.pending() == ["rnd-p"]
+    assert run_round.ops.StateSnapshot.pending() == [rid("rnd-p")]
     assert quarantined(root)
-    _recover(entry, monkeypatch, root, "rnd-p")
+    _recover(entry, monkeypatch, root, rid("rnd-p"))
     assert tracked(root) == meta
     assert {k: v for k, v in artifacts(root).items() if k in files} == files
     assert set(artifacts(root)) - set(files) <= ({"raw/osti/ost-new.pdf"}
@@ -430,13 +431,13 @@ def test_an_unfinished_settlement_keeps_the_round_recoverable(tmp_path, monkeypa
         m.setattr(prune_corpus, "settle_quarantine",
                   lambda *a, **k: (_ for _ in ()).throw(OSError("disk gone")))
         assert _round(monkeypatch, root) == 1
-        assert run_round.ops.StateSnapshot.pending() == ["rnd-p"]  # not discarded
+        assert run_round.ops.StateSnapshot.pending() == [rid("rnd-p")]  # not discarded
         assert quarantined(root)
         assert any(e == "rollback_failed" for e, _ in events)
-        monkeypatch.setattr(sys, "argv", ["run_round.py", "--recover", "rnd-p"])
+        monkeypatch.setattr(sys, "argv", ["run_round.py", "--recover", rid("rnd-p")])
         assert run_round.main() == 1  # recover reports failure and keeps the snapshot too
         assert "snapshot is kept" in capsys.readouterr().err
-        assert run_round.ops.StateSnapshot.pending() == ["rnd-p"]
+        assert run_round.ops.StateSnapshot.pending() == [rid("rnd-p")]
     assert run_round.main() == 0  # the cause is gone: recovery completes
     assert tracked(root) == meta
     assert {k: v for k, v in artifacts(root).items() if k in files} == files
@@ -448,7 +449,7 @@ def test_a_round_settles_a_standalone_prunes_leftover_before_fetching(tmp_path, 
     """A standalone prune killed after its commit leaves its bytes aside; the next round deletes
     them (their rows are gone) before its own fetch runs."""
     root, _, _, _ = _pre_round(tmp_path, monkeypatch)
-    monkeypatch.setenv("NEKAISE_RUN_ID", "rnd-p")
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("rnd-p"))
     with monkeypatch.context() as m:
         m.setattr(prune_corpus, "mark_committed",
                   lambda qdir: (_ for _ in ()).throw(KeyboardInterrupt("killed")))
@@ -462,7 +463,7 @@ def test_a_round_settles_a_standalone_prunes_leftover_before_fetching(tmp_path, 
         seen.setdefault(step, quarantined(root))
     monkeypatch.setattr(run_round, "run_command", record)
     monkeypatch.setattr(sys, "argv", ["run_round.py", "--skip-discovery", "--skip-tests",
-                                      "--allow-dirty", "--run-id", "rnd-2"])
+                                      "--allow-dirty", "--run-id", rid("rnd-2")])
     assert run_round.main() == 0
     assert seen["fetch"] == []
 
@@ -488,7 +489,7 @@ def test_the_settlement_rule_is_per_file(tmp_path):
 
 def test_a_standalone_prune_waits_for_no_broker_and_takes_its_own_writer(tmp_path, monkeypatch,
                                                                        clock):
-    monkeypatch.setenv("NEKAISE_RUN_ID", "rnd-p")
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("rnd-p"))
     root = tmp_path / "r"
     build_prune_repo(root)
     st = store.FileStore(root)
@@ -577,7 +578,7 @@ def run_load(monkeypatch, root, *args):
 
 
 def test_load_matches_the_legacy_loader(tmp_path, monkeypatch, clock, capsys):
-    monkeypatch.setenv("NEKAISE_RUN_ID", "rnd-l")
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("rnd-l"))
     a, b = twins(tmp_path, build_load_repo)
     pipeline_repo.point(monkeypatch, a, policy=None)
     serve(monkeypatch)
@@ -633,7 +634,7 @@ def test_verify_reads_only(tmp_path, monkeypatch, clock, capsys):
 
 def test_a_failed_checkpoint_leaves_committed_checkpoints_and_the_rerun_completes(
         tmp_path, monkeypatch, clock):
-    monkeypatch.setenv("NEKAISE_RUN_ID", "rnd-l")
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("rnd-l"))
     a, b = twins(tmp_path, lambda root: build_load_repo(root, failures=False))
     run_load(monkeypatch, a)
     real = store.FileStore._commit
@@ -796,7 +797,7 @@ def test_the_steps_against_postgres_match_the_file_store(tmp_path, monkeypatch, 
     but the journal, whose run ids are per session) and the same artifacts."""
     import store_pg
 
-    monkeypatch.setenv("NEKAISE_RUN_ID", "rnd-p")
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("rnd-p"))
     fs_root, pg_root = tmp_path / "fs", tmp_path / "pg"
     build(fs_root)
     shutil.copytree(fs_root, pg_root)
@@ -951,7 +952,7 @@ def _checkpoint_round(monkeypatch, root, fail_with):
             raise fail_with("fetch failed")
     monkeypatch.setattr(run_round, "run_command", run)
     monkeypatch.setattr(sys, "argv", ["run_round.py", "--skip-discovery", "--skip-tests",
-                                      "--allow-dirty", "--run-id", "rnd-c"])
+                                      "--allow-dirty", "--run-id", rid("rnd-c")])
     return run_round.main()
 
 
@@ -965,13 +966,13 @@ def test_a_crash_inside_a_later_checkpoint_commit_is_recovered_before_the_snapsh
     else:
         with pytest.raises(KeyboardInterrupt):  # the round process itself dies
             _checkpoint_round(monkeypatch, root, KeyboardInterrupt)
-        assert run_round.ops.StateSnapshot.pending() == ["rnd-c"]
-        _recover(entry, monkeypatch, root, "rnd-c")
+        assert run_round.ops.StateSnapshot.pending() == [rid("rnd-c")]
+        _recover(entry, monkeypatch, root, rid("rnd-c"))
     assert tracked(root) == meta
     assert not store.FileStore(root).pending_transactions()
     assert not run_round.ops.StateSnapshot.pending()
     assert ("store_transaction_recovered",
-            {"transaction": "rnd-c.fetch.ckpt-0002", "action": "rolled_back"}) in events
+            {"transaction": f"{rid('rnd-c')}.fetch.ckpt-0002", "action": "rolled_back"}) in events
 
 
 # --- quarantine record formats ---------------------------------------------------------------

@@ -11,6 +11,7 @@ import rotation
 import run_round
 import store
 import store_broker
+from runids import rid
 
 
 def test_real_backend_config_covers_rotation_and_finders():
@@ -106,7 +107,7 @@ def test_run_verify_parallel_awaits_every_gate_and_aggregates_failures(monkeypat
     ]
 
     with pytest.raises(RuntimeError, match=r"fail-a \(exit 2\), fail-b \(exit 3\)"):
-        run_round.run_verify_parallel(gates, {}, "run-1")
+        run_round.run_verify_parallel(gates, {}, rid("run-1"))
 
     assert sorted(seen) == sorted(step for step, _ in gates)  # nothing skipped after a failure
     assert ("step_failed", "fail-a") in events and ("step_completed", "slow-ok") in events
@@ -121,7 +122,7 @@ def test_run_command_raises_on_nonzero(monkeypatch):
     )
     monkeypatch.setattr(run_round.ops, "run_event", lambda *args, **kwargs: None)
     with pytest.raises(RuntimeError, match="failed with exit 9"):
-        run_round.run_command("broken", ["false"], {}, "run-1")
+        run_round.run_command("broken", ["false"], {}, rid("run-1"))
 
 
 def test_doc_stats_counts_only_training_eligible_rows(monkeypatch, tmp_path):
@@ -540,14 +541,14 @@ def test_capture_failure_stops_round_before_mutation(tmp_path, monkeypatch, caps
     monkeypatch.setattr(run_round.ops.shutil, "copy2", fail_copy)
     for name in ("run_finders_parallel", "run_command", "commit_snapshot"):
         monkeypatch.setattr(run_round, name, unexpected_mutation)
-    monkeypatch.setattr(sys, "argv", ["run_round.py", "--commit", "--run-id", "capture-failed"])
+    monkeypatch.setattr(sys, "argv", ["run_round.py", "--commit", "--run-id", rid("capture-failed")])
 
     assert run_round.main() == 1
     assert "No space left on device" in capsys.readouterr().err
     assert events == ["run_started", "run_failed"]
     assert state.read_bytes() == b"before\n"
     assert not run_round.ops.StateSnapshot.pending()
-    assert not (snapshots / "capture-failed").exists()
+    assert not (snapshots / rid("capture-failed")).exists()
 
 
 def test_round_refuses_to_start_over_an_interrupted_store_transaction(tmp_path, monkeypatch,
@@ -626,16 +627,16 @@ def test_only_mutating_steps_receive_the_store_broker(tmp_path, monkeypatch):
 
     monkeypatch.setattr(run_round, "run_verify_parallel", gates)
     monkeypatch.setattr(sys, "argv", ["run_round.py", "--skip-discovery", "--skip-tests",
-                                      "--allow-dirty", "--run-id", "r-env"])
+                                      "--allow-dirty", "--run-id", rid("r-env")])
     assert run_round.main() == 0
     for step in ("fetch", "prune", "clean"):
-        assert seen[step][store_broker.BROKER_ENV] and seen[step][store_broker.ROUND_ENV] == "r-env"
+        assert seen[step][store_broker.BROKER_ENV] and seen[step][store_broker.ROUND_ENV] == rid("r-env")
     for step in ("stats", "gates"):
         assert store_broker.BROKER_ENV not in seen[step]
     tests_env = seen.pop("tests_gate")
     for e in seen.values():
         (holder,) = run_round.ops.inherited_holders(e[run_round.store.INHERITED_LOCK_ENV])
-        assert holder["pid"] == os.getpid() and holder["run"] == "r-env"
+        assert holder["pid"] == os.getpid() and holder["run"] == rid("r-env")
     # pytest builds its own throwaway stores: it must not inherit the round's lock or broker
     assert run_round.store.INHERITED_LOCK_ENV not in tests_env
     assert store_broker.BROKER_ENV not in tests_env
