@@ -1,6 +1,6 @@
 ---
 name: find-sources
-description: Grow the corpus — run find_sources.py to discover new open-access sources via OpenAlex/OSTI/arXiv, review them (relevance, license, direct-PDF), add the good ones to the registry, then load + verify. Use when asked to find more data, enlarge, or grow the corpus.
+description: Grow the corpus — run find_sources.py to discover new open-access sources via OpenAlex, review them (relevance, license, direct-PDF), add the good ones to the registry, then load + verify. Use when asked to find more data, enlarge, or grow the corpus.
 ---
 
 # Skill: find-sources
@@ -23,19 +23,22 @@ budgets; never reset a live cursor to zero or append while another round owns th
    python scripts/find_sources.py --per 100 --backends openalex \
      --query-cursor 0 --query-count 1 --append        # append after review
    ```
-   It queries three keyless backends -- **OpenAlex** (filtered to repository / gov / arXiv / PMC PDF
-   copies, NOT publisher pages that 403 bots), **OSTI** (US DOE / national-lab reports,
-   public-domain), and the **arXiv API** -- across the topics, keeps candidates whose PDF is on
-   a download-friendly host, dedups against the manifest + the registry + `pruned_urls.txt`, and prints
-   ready-to-paste entries. `--backends openalex,osti,arxiv` selects which to use. OpenAlex anonymous
-   access is metered at 100 search calls/day; the 105-query universe therefore must use the committed
-   one-query `--query-cursor` rotation in routine rounds. Do not run all OpenAlex queries at once.
+   It queries **OpenAlex**, inspects every location of each work and keeps a copy only when it is on
+   an allowed download host (exact host / subdomain match, never a fetch-suspended host) AND carries
+   accepted rights evidence for that very copy (CC BY / BY-SA / CC0 / verified public domain;
+   `scripts/oa_resolution.py`) — an unknown licence is never registered as `open`. The OSTI and
+   arXiv backends fail closed (no per-record licence). It dedups against the manifest + the registry
+   + `pruned_urls.txt` + DOI/OpenAlex identity, and prints ready-to-paste entries. OpenAlex anonymous
+   access is metered (one search = 10 of 1,000 daily credits); routine rounds spend ONE search per
+   round across the legacy 105-query cursor (`find_openalex`) and the building-simulation family
+   (`find_openalex_sim`: `--family simulation --family-cursor …`, `scripts/openalex_families.py`),
+   which walk a shared schedule. Do not run all OpenAlex queries at once.
 
 2. **Review** (your judgment, not the script's):
    - **Relevance:** is it really built-environment / AEC / building-energy, and on-topic for its
      `topic` tag? OpenAlex search is broad — drop off-topic hits.
-   - **License:** prefer `cc-by` / `cc-by-sa` / `cc0` / `public-domain` (redistributable). `open`
-     means OA but check the per-source terms before any redistribution.
+   - **License:** OpenAlex entries carry `license_evidence` for the selected copy; other sources
+     may use `open` — check the per-source terms before any redistribution.
    - **URL:** confirm `url` is a direct PDF. Some OpenAlex `pdf_url`s are landing pages — the loader
      will fetch HTML or fail on those; fix or drop them.
    - **Dedup by meaning,** not just URL: skip near-duplicates of what is already in the corpus.
@@ -55,7 +58,9 @@ budgets; never reset a live cursor to zero or append while another round owns th
   [`dig`](../dig/SKILL.md) skill runs it alongside this one.
 - More backends: `scripts/find_osti.py` deep-harvests OSTI at scale; `scripts/find_books.py` pulls
   CC-BY open-access books from OAPEN. Others to add (same propose -> review -> load flow):
-  CORE.ac.uk, OpenEI, Semantic Scholar. Extend `WHITELIST` with more reliably-downloadable OA hosts
-  as you find them; publisher landing pages (sciencedirect / springer / wiley / ieee) 403 bots and
-  are deliberately excluded.
+  CORE.ac.uk, OpenEI, Semantic Scholar. Extend `oa_resolution.ALLOWED_PDF_HOSTS` with
+  reliably-downloadable OA hosts after probing them honestly; publisher landing pages
+  (sciencedirect / springer / wiley / tandf / ieee) 403 bots and are deliberately excluded. SSRN is
+  fetch-suspended (Cloudflare, all rights reserved): SSRN-origin works enter only through a
+  separately licensed copy on another host.
 - Never add `proprietary-internal` bytes; list paywalled high-value items as pointers only.

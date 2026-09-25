@@ -54,6 +54,8 @@ SHARDS = {
     "esc-": "escholarship.yaml",  # find_escholarship (LBNL + UC Berkeley CBE via eScholarship GraphQL, CC BY/BY-SA/CC0)
     "nlr-": "nlr.yaml",        # find_nlr (National Laboratory of the Rockies, ex-NREL, reports via Pure OAI)
     "ope-": "papers.yaml",     # find_sources OpenAlex backend
+    "oas-": "papers.yaml",     # find_sources OpenAlex families with persistent identity ids
+                               # (dedup.identity_id: one id per DOI / OpenAlex work)
     "oa-": "papers.yaml",
     "arx-": "papers.yaml",     # find_sources arXiv backend
 }
@@ -64,6 +66,10 @@ REQUIRED_FIELDS = ("id", "title", "url", "source", "license", "topic", "format")
 OPTIONAL_FIELDS = (
     "language", "published_at", "jurisdiction", "document_type", "persistent_id",
     "license_url", "license_evidence", "rights_verified_at",
+    # scholarly-metadata resolution provenance (scripts/oa_resolution.py): which version the
+    # fetched copy is, every normalized identifier of the work it stands for (space separated),
+    # and how the copy was chosen
+    "selected_version", "origin_ids", "resolution",
 )
 FIELDS = REQUIRED_FIELDS + OPTIONAL_FIELDS
 # Licenses in this set are registry pointers only: their metadata is useful for authorized users,

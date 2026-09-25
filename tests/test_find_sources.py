@@ -6,9 +6,23 @@ import find_sources
 import pytest
 
 
+# The pinned host policy as registry/host_policy.json states it (2026-09-25).
+POLICY = {
+    host: {"status": "suspended", "reason": "test", "decided_at": "2026-09-25", "backends": []}
+    for host in ("escholarship.org", "mdpi.com", "ssrn.com")
+}
+
+
 def stub_registry(monkeypatch):
     monkeypatch.setattr(find_sources.dedup, "open_keys", lambda: find_sources.dedup.from_sets(set(), set(), set()))
     monkeypatch.setattr(find_sources.registry, "uniquify_ids", lambda *_args: None)
+    monkeypatch.setattr(find_sources, "load_context", lambda partner=None: (POLICY, None, False))
+
+
+@pytest.fixture
+def policy(monkeypatch):
+    monkeypatch.setattr(find_sources, "_POLICY", POLICY)
+    return POLICY
 
 
 def test_all_upstreams_throttled_fails_and_persists_retry_after(tmp_path, monkeypatch):
@@ -82,7 +96,7 @@ def test_persisted_cooldown_with_other_backend_dry_success_is_ok(tmp_path, monke
     assert len(arxiv_calls) == 2
 
 
-def test_openalex_and_arxiv_receive_requested_page(monkeypatch):
+def test_openalex_receives_requested_page_and_arxiv_fails_closed(monkeypatch, policy):
     requests = []
 
     class Response:
@@ -102,13 +116,18 @@ def test_openalex_and_arxiv_receive_requested_page(monkeypatch):
     monkeypatch.setattr(find_sources.time, "sleep", lambda _seconds: None)
 
     find_sources.from_openalex("concrete", "materials", 20, page=5)
-    find_sources.from_arxiv("concrete", "materials", 20, page=5)
 
     assert requests[0][1]["page"] == 5
-    assert requests[1][1]["start"] == 80
+    assert "type:article|preprint" in requests[0][1]["filter"]  # preprints are no longer missed
+    # arXiv's API carries no per-record licence, OSTI is not blanket public domain: neither
+    # backend proposes anything (and neither makes a request).
+    for backend in (find_sources.from_arxiv, find_sources.from_osti):
+        with pytest.raises(find_sources.RightsUnavailable):
+            backend("concrete", "materials", 20, page=5)
+    assert len(requests) == 1
 
 
-def test_openalex_relevance_and_license_gate(monkeypatch):
+def test_openalex_relevance_and_license_gate(monkeypatch, policy):
     def location(url, license_name):
         return {"pdf_url": url, "license": license_name}
 
@@ -157,7 +176,14 @@ def test_openalex_relevance_and_license_gate(monkeypatch):
             "Ventilation control in office buildings",
             "2215",
             "cc-by-nc",
-            locations=[location("https://escholarship.org/permissive.pdf", "cc-by")],
+            locations=[location("https://zenodo.org/records/1/files/permissive.pdf", "cc-by")],
+        ),
+        # a permissive copy on a fetch-suspended host is never selected
+        work(
+            "Heat pump retrofit in multifamily buildings",
+            "2215",
+            "cc-by-nc",
+            locations=[location("https://escholarship.org/content/qt1/qt1.pdf", "cc-by")],
         ),
     ]
 
@@ -175,25 +201,27 @@ def test_openalex_relevance_and_license_gate(monkeypatch):
     assert [row["title"] for row in got] == [
         "Computational intelligence techniques for HVAC systems",
         "Rodent-proofing of buildings",
-        "Brick metadata schema for portable smart building applications",
+        # "Brick metadata schema…" (other-oa) is relevant but has no accepted licence: it is
+        # no longer registered as `open`
         "Gebäudeenergie und Lüftung im Bestand",
         "A Review of Antibiotic Resistance in Wastewater Treatment Plants",
         "Ventilation control in office buildings",
     ]
-    assert got[2]["license"] == "open"
-    assert got[2]["license_evidence"] == "OpenAlex OA location license: other-oa"
-    assert got[-1]["url"] == "https://escholarship.org/permissive.pdf"
+    assert {row["license"] for row in got} == {"cc-by"}
+    assert all(row["license_evidence"].startswith("openalex.license=cc-by") for row in got)
+    assert all(row["rights_verified_at"] and row["id"].startswith("ope-") for row in got)
+    assert got[-1]["url"] == "https://zenodo.org/records/1/files/permissive.pdf"
     assert got[-1]["license"] == "cc-by"
 
 
-def test_openalex_skips_paused_mdpi_host_for_fetchable_alternative():
+def test_openalex_skips_paused_mdpi_host_for_fetchable_alternative(policy):
     work = {
         "best_oa_location": {
             "pdf_url": "https://www.mdpi.com/2075-5309/13/6/1388/pdf",
             "license": "cc-by",
         },
         "locations": [{
-            "pdf_url": "https://escholarship.org/content/qt123/qt123.pdf",
+            "pdf_url": "https://zenodo.org/records/123/files/paper.pdf",
             "license": "cc-by",
         }],
     }
@@ -202,14 +230,14 @@ def test_openalex_skips_paused_mdpi_host_for_fetchable_alternative():
     assert find_sources._openalex_location(work) == (work["locations"][0], "cc-by")
 
 
-def test_openalex_skips_paused_pmc_host_for_fetchable_alternative():
+def test_openalex_skips_paused_pmc_host_for_fetchable_alternative(policy):
     work = {
         "best_oa_location": {
             "pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC123/pdf/article.pdf",
             "license": "cc-by",
         },
         "locations": [{
-            "pdf_url": "https://escholarship.org/content/qt123/qt123.pdf",
+            "pdf_url": "https://zenodo.org/records/123/files/paper.pdf",
             "license": "cc-by",
         }],
     }
@@ -218,14 +246,14 @@ def test_openalex_skips_paused_pmc_host_for_fetchable_alternative():
     assert find_sources._openalex_location(work) == (work["locations"][0], "cc-by")
 
 
-def test_openalex_skips_paused_osti_host_for_fetchable_alternative():
+def test_openalex_skips_paused_osti_host_for_fetchable_alternative(policy):
     work = {
         "best_oa_location": {
             "pdf_url": "https://www.osti.gov/servlets/purl/1234567",
             "license": "cc-by",
         },
         "locations": [{
-            "pdf_url": "https://escholarship.org/content/qt123/qt123.pdf",
+            "pdf_url": "https://zenodo.org/records/123/files/paper.pdf",
             "license": "cc-by",
         }],
     }
@@ -235,27 +263,46 @@ def test_openalex_skips_paused_osti_host_for_fetchable_alternative():
 
 
 @pytest.mark.parametrize("host", ["escholarship.org", "www.escholarship.org"])
-def test_openalex_skips_escholarship_landing_page_for_pdf_alternative(host):
+def test_openalex_never_selects_suspended_escholarship(host, policy):
     work = {
         "best_oa_location": {
-            "pdf_url": f"https://{host}/uc/item/abc123",
+            "pdf_url": f"https://{host}/content/qt123/qt123.pdf?t=abc",
             "license": "cc-by",
         },
         "locations": [{
-            "pdf_url": "https://escholarship.org/content/qt123/qt123.pdf?t=abc",
+            "pdf_url": "https://zenodo.org/records/123/files/paper.pdf",
             "license": "cc-by",
         }],
     }
 
     assert not find_sources.downloadable(work["best_oa_location"]["pdf_url"])
-    assert find_sources.downloadable(work["locations"][0]["pdf_url"])
     assert find_sources._openalex_location(work) == (work["locations"][0], "cc-by")
+    # without suspension the landing page is still refused, the /content/ PDF is not
+    assert not find_sources.downloadable(f"https://{host}/uc/item/abc123", {})
+    assert find_sources.downloadable(work["best_oa_location"]["pdf_url"], {})
 
 
-def test_openalex_accepts_escholarship_subdomain_content_pdf():
-    assert find_sources.downloadable(
-        "https://www.escholarship.org/content/qt123/qt123.pdf?t=abc"
-    )
+@pytest.mark.parametrize("url, ok", [
+    ("https://zenodo.org/records/1/files/a.pdf", True),
+    ("https://sandbox.zenodo.org/records/1/files/a.pdf", True),   # a subdomain
+    ("https://notzenodo.org/a.pdf", False),                       # substring only
+    ("https://zenodo.org.evil.example/a.pdf", False),
+    ("https://www.nrel.gov/docs/fy24osti/1.pdf", True),
+    ("https://evilgov.com/a.pdf", False),
+    ("https://arxiv.org/pdf/2401.00001", True),
+    ("https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=7231715", False),
+    ("https://doi.org/10.2139/ssrn.7231715", False),               # resolvers are never a copy
+    ("https://www.jstage.jst.go.jp/article/aija/1/1/1_1/_pdf", False),
+    ("https://www.sciencedirect.com/science/article/pii/S1/pdfft", False),
+])
+def test_download_hosts_match_exactly_or_as_subdomain(url, ok, policy):
+    assert find_sources.downloadable(url) is ok
+
+
+def test_discovery_without_a_host_policy_fails_closed(monkeypatch):
+    monkeypatch.setattr(find_sources, "_POLICY", None)
+    with pytest.raises(RuntimeError, match="fail closed"):
+        find_sources.downloadable("https://zenodo.org/records/1/files/a.pdf")
 
 
 def test_query_cursor_walks_queries_then_advances_page():

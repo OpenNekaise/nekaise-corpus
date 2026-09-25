@@ -289,11 +289,29 @@
       "--query-count",
       "1",
       "--circuit-threshold",
-      "1"
+      "1",
+      "--budget-partner",
+      "find_openalex_sim"
     ],
     "enabled": true,
     "required": false,
-    "reason": "budgeted 2026-08-26 for OpenAlex's anonymous 100-search/day allowance: continuous rounds now run every ~10-11 minutes, so a one-request circuit persists Retry-After on the first 429 and holds the cursor during the upstream cooldown; the cursor walks all 105 queries and then deeper pages without requiring credentials"
+    "reason": "budgeted 2026-08-26 for OpenAlex's anonymous 100-search/day allowance: continuous rounds now run every ~10-11 minutes, so a one-request circuit persists Retry-After on the first 429 and holds the cursor during the upstream cooldown; the cursor walks all 105 queries and then deeper pages without requiring credentials; 2026-09-25: shares that single search with find_openalex_sim (--budget-partner): it searches only on the partner's legacy ticks (2 of 10) and holds its cursor otherwise; unknown licences are no longer registered as open (scripts/oa_resolution.py)"
+  },
+  "find_openalex_sim": {
+    "script": "find_sources.py",
+    "args": [
+      "--family",
+      "simulation",
+      "--per",
+      "100",
+      "--max",
+      "25",
+      "--lookup-max",
+      "25"
+    ],
+    "enabled": true,
+    "required": false,
+    "reason": "NEW 2026-09-25 (Codex phase 1): building-energy-simulation OpenAlex query family (Modelica / Buildings-AixLib-IDEAS-IBPSA / EnergyPlus-Spawn-BOPTEST / calibration / HVAC MPC / digital twins / LLM-assisted modelling, multilingual), articles and preprints, its own versioned dynamic cursor; ONE OpenAlex search per round shared with find_openalex (7/10 simulation, 1/10 SSRN-origin, 2/10 legacy), at most 25 accepted docs and 25 free supplementary lookups (OpenAlex work, Crossref, Unpaywall) per run; a copy is registered only with accepted rights evidence for that copy; SSRN is never fetched; unresolved works wait in workspace/openalex-resolution.jsonl for retry; required=false while piloting"
   },
   "find_arxiv": {
     "script": "find_sources.py",

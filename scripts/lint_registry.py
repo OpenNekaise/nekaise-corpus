@@ -25,6 +25,10 @@ TOPICS = {"controls_bas", "equipment_systems", "building_energy", "commissioning
           "standards_protocols", "structures_civil", "construction", "materials",
           "architecture", "infrastructure", "urban"}
 FORMATS = {"pdf", "html", "md", "rst", "txt", "tex", "troff"}
+# Sources whose every entry must carry verified rights evidence for its selected copy (no `open`
+# fallback): the scholarly-metadata families resolved by scripts/oa_resolution.py.
+RIGHTS_EVIDENCE_SOURCES = {"openalex_sim"}
+EVIDENCED_LICENSES = {"cc-by", "cc-by-sa", "cc0", "public-domain"}
 
 
 def entry_errors(e: dict, where: str) -> list[str]:
@@ -44,6 +48,13 @@ def entry_errors(e: dict, where: str) -> list[str]:
         errors.append(f"{where}: {eid}: url is not http(s): {e.get('url')}")
     if e.get("license_url") and not str(e["license_url"]).startswith(("http://", "https://")):
         errors.append(f"{where}: {eid}: license_url is not http(s)")
+    if e.get("source") in RIGHTS_EVIDENCE_SOURCES:
+        if e.get("license") not in EVIDENCED_LICENSES:
+            errors.append(f"{where}: {eid}: {e.get('source')} requires an evidenced open licence, "
+                          f"got {e.get('license')!r}")
+        for key in ("license_evidence", "rights_verified_at", "persistent_id"):
+            if not e.get(key):
+                errors.append(f"{where}: {eid}: {e.get('source')} entry lacks {key}")
     return errors
 
 

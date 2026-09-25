@@ -157,6 +157,13 @@
     "step": 1,
     "note": "RE-AIMED 2026-08-26 after OpenAlex introduced usage pricing: anonymous access has 100 search requests/day, while the old all-query run made 105 requests and exhausted the budget. One query per round stays below the limit at the live ~72-round/day maximum; the flattened cursor advances across the frozen 105-query list, then continues at page 2 and deeper. Any query-list change requires a reviewed cursor migration."
   },
+  "find_openalex_sim": {
+    "flag": "--family-cursor",
+    "next": "sim1 t=0 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0",
+    "step": 0,
+    "dynamic": true,
+    "note": "NEW 2026-09-25: openalex_families cursor 'sim1 t=<tick> q=<query> w=<date window> p=<page> k=<results consumed on that page>' for the simulation walk plus sq/sw/sp/sk for the SSRN-origin walk. The tick drives the shared OpenAlex budget schedule (find_openalex reads it). A --max hit keeps the page with its k; a failure keeps the whole cursor. Changing openalex_families.SIM_QUERIES / WINDOWS / SCHEDULE needs a new version and a reviewed cursor migration."
+  },
   "find_arxiv": {
     "flag": "--page",
     "next": 8,

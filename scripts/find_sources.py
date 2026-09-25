@@ -1,13 +1,23 @@
 #!/usr/bin/env python3
 """find_sources.py — discover open-access building-energy sources (corpus growth).
 
-Three keyless backends:
-  - OpenAlex  : metered scholarly search; we scan ALL OA locations and keep a PDF on a
-                download-friendly host (publisher pages 403 bots, so we prefer repository / gov /
-                arXiv / PMC / publisher copies). Anonymous access allows 100 search calls/day, so the
-                automated backend advances one query/page cursor position per round.
-  - OSTI      : US DOE / national-lab reports (public-domain, downloadable via /servlets/purl).
-  - arXiv API : open preprints (always downloadable at arxiv.org/pdf).
+Backends:
+  - OpenAlex  : metered scholarly search. Every location of a work is inspected and a copy is kept
+                only when it sits on an allowed download host (exact host or subdomain match) AND
+                carries accepted rights evidence for that very copy (CC BY / BY-SA / CC0 /
+                verified public domain; scripts/oa_resolution.py). An unknown licence is never
+                registered as `open`. Anonymous access allows 100 search calls/day, so the legacy
+                family advances one query/page cursor position per round, and shares that budget
+                with the query families (see below).
+  - OSTI / arXiv : FAIL CLOSED. Their APIs carry no per-record reuse licence here (OSTI is not
+                blanket public domain; arXiv's default licence is not an open grant), so they
+                propose nothing until a per-record rights source is wired in.
+
+Query families (scripts/openalex_families.py) are separately configured, independently
+versioned OpenAlex query lists with their own dynamic cursor — the building-simulation family:
+
+    python scripts/find_sources.py --family simulation --per 100 --max 25 --lookup-max 25 \
+      --family-cursor "sim1 t=0 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0"
 
 Keeps candidates with a fetchable PDF, dedups against the current manifest + registry, and PROPOSES
 ready-to-paste registry entries. Review, then `--append` and run the loader.
@@ -28,17 +38,19 @@ import re
 import sys
 import time
 from pathlib import Path
-from urllib.parse import urlparse
 
 import requests
 import yaml
 
 import ops
 import dedup
+import oa_resolution as oar
+import openalex_families
 import registry
+import store
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
-MAILTO = "corpus@opennekaise.org"
+MAILTO = oar.MAILTO
 COOLDOWN_FILE = HERE / "workspace" / "find-sources-cooldowns.json"
 
 # (search term -> our corpus topic). Many specific sub-topic queries -> more unique results.
@@ -159,22 +171,12 @@ QUERIES = [
 ]
 QUERY_CURSOR_WIDTH = 105  # Changing this query universe requires a reviewed cursor migration.
 
-# hosts that reliably serve a direct PDF to a bot (publisher pages 403, so we whitelist).
-WHITELIST = ("arxiv.org", ".gov", "escholarship.org", "ncbi.nlm.nih.gov", "europepmc.org",
-             "mdpi.com", "plos.org", "frontiersin.org", "biomedcentral.com")
-# A host can remain license-compatible while being temporarily unsuitable for reproducible bulk
-# fetches.  MDPI returns a host-wide 403 to both requests and curl from this operator's network
-# (re-probed 2026-08-28).  PMC's apparent PDF URLs return a JavaScript interstitial as HTTP 200
-# (re-probed 2026-09-06), so the loader correctly rejects them as HTML.  OSTI's API and PDF host
-# still connect-timeout from this network (re-probed 2026-09-07), matching the dedicated backend's
-# pause.  Pause selection before registry append so open URLs are neither wasted nor permanently
-# blocklisted as fake PDFs; existing blocklist decisions remain untouched for separate review.
-PAUSED_PDF_HOSTS = {
-    "mdpi.com": "host-wide HTTP 403; re-probe requests and curl before re-enabling",
-    "osti.gov": "API and PDF host connect-timeout; re-probe before re-enabling",
-    "pmc.ncbi.nlm.nih.gov": "PDF paths return an HTTP 200 JavaScript download interstitial",
-}
-PERMISSIVE = {"cc-by", "cc-by-sa", "cc0", "public-domain"}
+# Download hosts, operational pauses (OSTI, PMC) and NO-GO hosts live in scripts/oa_resolution.py
+# (exact host / subdomain matching); fetch-suspended hosts (MDPI, eScholarship, SSRN) come from the
+# pinned registry/host_policy.json, loaded once per run by load_context().
+PAUSED_PDF_HOSTS = oar.PAUSED_PDF_HOSTS
+PERMISSIVE = set(oar.ACCEPTED_TAGS)
+_POLICY: dict | None = None  # the pinned host policy for this run (load_context)
 
 # OpenAlex's `search` covers full text, so even a specific HVAC query can rank astronomy
 # instruments, particle detectors, and medical imaging papers highly because they discuss sensors,
@@ -224,18 +226,30 @@ OPENALEX_TITLE_RELEVANCE = re.compile(
 )
 
 
-def downloadable(url: str) -> bool:
-    parsed = urlparse(url)
-    host = (parsed.hostname or "").lower()
-    if any(host == domain or host.endswith(f".{domain}") for domain in PAUSED_PDF_HOSTS):
-        return False
-    # OpenAlex labels eScholarship's /uc/item/<id> landing pages as pdf_url values.  They return
-    # HTTP 202 HTML rather than document bytes; only /content/... PDF paths are fetchable.
-    if (host == "escholarship.org" or host.endswith(".escholarship.org")) and re.fullmatch(
-        r"/uc/item/[^/]+/?", parsed.path
-    ):
-        return False
-    return any(w in host for w in WHITELIST)
+def _policy() -> dict:
+    if _POLICY is None:
+        raise RuntimeError("host policy not loaded: call load_context() first (fail closed)")
+    return _POLICY
+
+
+def downloadable(url: str, policy: dict | None = None) -> bool:
+    """Whether a URL may be selected as the copy to fetch (never a licence decision)."""
+    return oar.copy_refusal(url, _policy() if policy is None else policy) is None
+
+
+def load_context(partner: str | None = None) -> tuple[dict, str | None, bool]:
+    """(pinned host policy, budget partner's cursor, partner effectively enabled) from ONE store
+    read view (inside a round the finder inherits the round's read access)."""
+    with dedup.read_view() as view:
+        _, policy = store.pinned_policy(view)
+        if not partner:
+            return policy, None, False
+        try:
+            entry = view.rotation_get(partner)
+            enabled = view.backend_enabled(partner)
+        except (KeyError, store.StoreError):
+            return policy, None, False
+        return policy, str(entry.get("next")), enabled
 
 
 def entry(title, url, source, license, topic, **metadata):
@@ -262,87 +276,67 @@ def openalex_relevant(work: dict, title: str) -> bool:
     )
 
 
-def _restricted_oa_license(value: str) -> bool:
-    """Non-commercial/no-derivatives locations are not training-corpus candidates."""
-    return "-nc" in value or "-nd" in value
+def _openalex_location(work: dict, policy: dict | None = None) -> tuple[dict, str] | None:
+    """(OpenAlex location, accepted licence tag) of the copy select_copy() would fetch, or None.
+    Compatibility view of oa_resolution.select_copy for the legacy family."""
+    res = oar.select_copy(work, _policy() if policy is None else policy)
+    if res.status != "resolved":
+        return None
+    for loc in oar.work_locations(work):
+        if (loc.get("pdf_url") or "").strip().rstrip("/") == res.copy.url.rstrip("/"):
+            return loc, res.rights.tag
+    return None
 
 
-def _openalex_location(work: dict) -> tuple[dict, str] | None:
-    """Choose a download-friendly OA location, preferring a known permissive license."""
-    locations = [work.get("best_oa_location"), *(work.get("locations") or [])]
-    candidates = []
-    seen = set()
-    for location in locations:
-        if not location or not location.get("pdf_url") or not downloadable(location["pdf_url"]):
-            continue
-        url = location["pdf_url"]
-        license_name = (location.get("license") or "").lower()
-        key = (url, license_name)
-        if key in seen:
-            continue
-        seen.add(key)
-        if _restricted_oa_license(license_name):
-            continue
-        candidates.append((location, license_name))
-    return next((item for item in candidates if item[1] in PERMISSIVE), None) or (
-        candidates[0] if candidates else None
-    )
+def openalex_entry(work: dict, res: "oar.Resolution", topic: str, today: str) -> dict:
+    """A legacy-family registry entry (id prefix ope-) with the same rights evidence and
+    identity fields as the query families."""
+    title = work.get("title") or work.get("display_name")
+    meta = openalex_families.build_entry(work, res, topic=topic, source="openalex",
+                                         family="legacy", today=today)
+    for key in ("id", "title", "url", "source", "license", "topic", "format"):
+        meta.pop(key, None)
+    return entry(title, res.copy.url, "openalex", res.rights.tag, topic, **meta)
 
 
 def from_openalex(term, topic, per, page=1):
-    p = {"search": term, "filter": "open_access.is_oa:true,type:article",
+    p = {"search": term, "filter": "open_access.is_oa:true,type:article|preprint",
          "per-page": per, "page": page,
          "sort": "cited_by_count:desc", "mailto": MAILTO}
     r = requests.get("https://api.openalex.org/works", params=p, timeout=30)
     r.raise_for_status()
     out = []
+    today = time.strftime("%Y-%m-%d", time.gmtime())
+    unresolved = 0
     for w in r.json().get("results", []):
         title = w.get("title") or w.get("display_name")
         if not title or not openalex_relevant(w, title):
             continue
-        selected = _openalex_location(w)
-        if not selected:
+        res = oar.select_copy(w, _policy())
+        if res.status != "resolved":
+            unresolved += 1  # no copy with accepted rights: never registered as `open`
             continue
-        pick, lic = selected
-        tag = lic if lic in PERMISSIVE else "open"
-        metadata = {"license_evidence": f"OpenAlex OA location license: {lic}"} if lic else {}
-        out.append(entry(title, pick["pdf_url"], "openalex", tag, topic, **metadata))
+        out.append(openalex_entry(w, res, topic, today))
+    if unresolved:
+        print(f"# openalex [{topic}] {unresolved} relevant work(s) without an eligible "
+              "licensed copy skipped", file=sys.stderr)
     return out
+
+
+class RightsUnavailable(RuntimeError):
+    """A backend whose API exposes no per-record reuse licence: it proposes nothing."""
 
 
 def from_osti(term, topic, per, page=1):
-    r = requests.get("https://www.osti.gov/api/v1/records",
-                     params={"q": term, "rows": per}, timeout=30)
-    r.raise_for_status()
-    out = []
-    for rec in r.json():
-        oid = rec.get("osti_id") or rec.get("id")
-        ft = any("purl" in (l.get("href") or "") or l.get("rel") == "fulltext"
-                 for l in rec.get("links", []))
-        if not oid or not ft:
-            continue
-        out.append(entry(rec.get("title"), f"https://www.osti.gov/servlets/purl/{oid}",
-                         "osti", "public-domain", topic))
-    return out
+    # OSTI records are not blanket public domain (contractor copyright, journal versions), and
+    # the search API carries no per-record rights statement: fail closed.
+    raise RightsUnavailable("osti backend disabled: no per-record rights evidence (fail closed)")
 
 
 def from_arxiv(term, topic, per, page=1):
-    time.sleep(3.1)  # arXiv API asks for >=3s between requests (429 otherwise)
-    r = requests.get("https://export.arxiv.org/api/query",
-                     params={"search_query": f"all:{term}", "max_results": per,
-                             "start": (page - 1) * per,
-                             "sortBy": "relevance"}, timeout=30)
-    r.raise_for_status()
-    out = []
-    for e in re.findall(r"<entry>(.*?)</entry>", r.text, re.S):
-        m = re.search(r"<id>https?://arxiv\.org/abs/([^<]+)</id>", e)
-        t = re.search(r"<title>(.*?)</title>", e, re.S)
-        if not m:
-            continue
-        aid = re.sub(r"v\d+$", "", m.group(1).strip())
-        out.append(entry((t.group(1) if t else "").strip(),
-                         f"https://arxiv.org/pdf/{aid}", "arxiv", "open", topic))
-    return out
+    # arXiv's default licence is not an open grant and the query API carries no licence field:
+    # fail closed instead of registering unlicensed arXiv bytes as `open`.
+    raise RightsUnavailable("arxiv backend disabled: no per-record licence (fail closed)")
 
 
 BACKENDS = {"openalex": from_openalex, "osti": from_osti, "arxiv": from_arxiv}
@@ -440,7 +434,22 @@ def main() -> int:
     )
     ap.add_argument("--append", action="store_true",
                     help="append candidates into the registry shards (then load + prune)")
+    ap.add_argument("--family", choices=["simulation"],
+                    help="run a versioned OpenAlex query family instead of the legacy queries")
+    ap.add_argument("--family-cursor", help="the family's dynamic rotation cursor")
+    ap.add_argument("--max", type=int, default=25,
+                    help="family: accepted documents per run (a hit keeps the page position)")
+    ap.add_argument("--lookup-max", type=int, default=25,
+                    help="family: supplementary metadata lookups per run")
+    ap.add_argument("--resolution-file",
+                    help="family: resolution record path (default workspace/"
+                         "openalex-resolution.jsonl when --append)")
+    ap.add_argument("--budget-partner",
+                    help="legacy: backend sharing the one-search-per-round OpenAlex budget; the "
+                         "legacy family searches only on the partner's legacy ticks")
     args = ap.parse_args()
+    if args.family:
+        return main_family(args)
     if args.page < 1:
         ap.error("--page must be at least 1")
     if args.query_cursor is not None and args.query_cursor < 0:
@@ -457,6 +466,19 @@ def main() -> int:
     backends = [b.strip() for b in args.backends.split(",") if b.strip() in BACKENDS]
     if not backends:
         ap.error("--backends did not select any known backend")
+
+    global _POLICY
+    try:
+        _POLICY, partner_cursor, partner_enabled = load_context(args.budget_partner)
+    except Exception as exc:  # no pinned host policy: fail closed, the cursor stays
+        print(f"# ERROR: cannot load the pinned host policy: {exc}", file=sys.stderr)
+        return 1
+    if args.budget_partner and args.query_cursor is not None:
+        mine, why = openalex_families.legacy_may_search(partner_cursor, partner_enabled)
+        if not mine:
+            print(f"# OpenAlex budget: {why}; the legacy family yields this round")
+            request_rotation_hold(f"OpenAlex budget yielded to {args.budget_partner} ({why})")
+            return 0
 
     keys = dedup.open_keys()
     urls, titles = keys.urls, keys.titles
@@ -512,7 +534,10 @@ def main() -> int:
                 u, t = h["url"].rstrip("/"), registry.norm(h["title"])
                 if not h["title"] or u in urls or t in titles or u in seen:
                     continue
+                if keys.identity_known(h):  # same DOI / OpenAlex work already registered
+                    continue
                 seen.add(u)
+                keys.add_identity(h)
                 out.append(h)
 
     if not any(successful_requests.values()):
@@ -557,6 +582,34 @@ def main() -> int:
         counts = registry.append_entries(out)
         print(f"# appended {len(out)} entries to the registry: {counts}", file=sys.stderr)
     return 0
+
+
+def report_next(value: str) -> None:
+    """Report a dynamic cursor to run_round (or print it for a standalone run)."""
+    if name := os.environ.get("NEKAISE_ROTATION_NEXT_FILE"):
+        ops.atomic_write_text(Path(name), value + "\n")
+    print(f"# next cursor: {value}", file=sys.stderr)
+
+
+def main_family(args) -> int:
+    global _POLICY
+    if not args.family_cursor:
+        print("# ERROR: --family requires --family-cursor", file=sys.stderr)
+        return 2
+    if not 1 <= args.per <= 200 or args.max < 1 or args.lookup_max < 0:
+        print("# ERROR: --per must be 1..200, --max >= 1, --lookup-max >= 0", file=sys.stderr)
+        return 2
+    try:
+        _POLICY, _, _ = load_context()
+    except Exception as exc:  # no pinned host policy: fail closed, the cursor stays
+        print(f"# ERROR: cannot load the pinned host policy: {exc}", file=sys.stderr)
+        return 1
+    now = time.time()
+    return openalex_families.main_family(
+        args, policy=_POLICY, keys=dedup.open_keys(), cooldowns=load_cooldowns(now),
+        save_cooldowns=save_cooldowns, get=requests.get, openalex_relevant=openalex_relevant,
+        append_entries=registry.append_entries, request_hold=request_rotation_hold,
+        report_next=report_next, now=now)
 
 
 if __name__ == "__main__":

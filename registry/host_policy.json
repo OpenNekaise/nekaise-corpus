@@ -1,5 +1,5 @@
 {
-  "_readme": "Per-host FETCH policy for scripts/build_corpus.py (read via scripts/host_policy.py). A 'suspended' host is never requested by the loader: its registry rows are skipped without a manifest failure row, do not age toward pruning, and prune_corpus leaves its existing rows (including documents already held) untouched. This is a fetch suspension, not a corpus exclusion — use registry/eligibility.json for that. Every backend listed must be disabled (check_contracts).",
+  "_readme": "Per-host FETCH policy for scripts/build_corpus.py (read via scripts/host_policy.py). A 'suspended' host is never requested by the loader — neither as a registry URL nor as any redirect hop (DOI resolvers, download/CDN links, the curl fallback): its registry rows are skipped without a manifest failure row, do not age toward pruning, and prune_corpus leaves its existing rows (including documents already held) untouched. A host covers its subdomains. This is a fetch suspension, not a corpus exclusion — use registry/eligibility.json for that. Every backend listed must be disabled (check_contracts).",
   "version": 1,
   "hosts": {
     "escholarship.org": {
@@ -9,6 +9,18 @@
       "backends": [
         "find_escholarship"
       ]
+    },
+    "mdpi.com": {
+      "status": "suspended",
+      "reason": "network wall: MDPI answers a host-wide HTTP 403 to both requests and curl from this operator's network (re-probed 2026-08-28; until 2026-09-25 documented only as find_sources.PAUSED_PDF_HOSTS and prune_corpus.TRANSIENT_403_HOSTS). Content is often CC BY; resume only if an honest client is served again",
+      "decided_at": "2026-09-25",
+      "backends": []
+    },
+    "ssrn.com": {
+      "status": "suspended",
+      "reason": "policy: SSRN (papers.ssrn.com, reached via doi.org/10.2139 redirects) answers HTTP 403 through a Cloudflare challenge from this network (observed 2026-09-25); WAF or browser workarounds are forbidden and SSRN records state 'All rights reserved'. SSRN-origin works are registered only through a separately licensed copy on another host",
+      "decided_at": "2026-09-25",
+      "backends": []
     }
   }
 }

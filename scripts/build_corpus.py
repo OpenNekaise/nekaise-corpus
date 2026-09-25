@@ -50,7 +50,7 @@ from concurrent.futures import (
     wait,
 )
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 import requests
 
@@ -153,6 +153,60 @@ HOST_RUN_CAP: dict[str, int] = {
     "publications.ibpsa.org": 80,  # 80 x 3 s = 4 min
     "escholarship.org": 60,        # 60 x 4 s = 4 min
 }
+# Host fetch policy (registry/host_policy.json, pinned by the run's store view; set by _run) is
+# enforced BEFORE EVERY request hop, not only for the registry URL: an HTTP redirect (a DOI
+# resolver, a download/CDN link, a mirror) to a suspended host is refused before it is requested,
+# for requests and the curl fallback alike. Such a row fails transiently without a request to the
+# suspended host, so it neither ages toward pruning nor is blocklisted.
+HOST_POLICY: dict[str, dict] = {}
+MAX_REDIRECTS = 10
+REDIRECT_STATUSES = frozenset({301, 302, 303, 307, 308})
+# Scholarly-metadata sources fetch from many hosts this loader has never seen: for NEW work on a
+# host with no configured cap, one connection and 2 s between request starts (a longer declared
+# HOST_DELAY wins). Restoring rows already held is not slowed.
+PACED_SOURCES = frozenset({"openalex", "openalex_sim"})
+PACED_DELAY = 2.0
+
+
+class HostSuspended(Exception):
+    """A request hop would reach a fetch-suspended host; it was not requested."""
+
+    def __init__(self, url: str, rule: dict):
+        host = urlparse(url).hostname or url
+        super().__init__(f"redirect to fetch-suspended host {host} refused "
+                         f"(registry/host_policy.json, {rule.get('decided_at')}); not requested")
+        self.url = url
+
+
+def check_hop(url: str) -> None:
+    if rule := host_policy.suspended(url, HOST_POLICY):
+        raise HostSuspended(url, rule)
+
+
+def _redirect_guard(resp, *_args, **_kwargs):
+    """requests response hook: runs on every hop's response BEFORE the next hop is requested."""
+    location = (getattr(resp, "headers", None) or {}).get("location")
+    if location and getattr(resp, "status_code", None) in REDIRECT_STATUSES:
+        check_hop(urljoin(resp.url, location))
+    return resp
+
+
+GUARD = {"response": [_redirect_guard]}
+
+
+def pace_new_hosts(todo: list[dict], manifest: dict) -> None:
+    """One connection and PACED_DELAY between requests for new work of PACED_SOURCES on hosts
+    without a configured cap (called before any download starts)."""
+    for src in todo:
+        if src.get("source") not in PACED_SOURCES:
+            continue
+        if (manifest.get(src["id"]) or {}).get("status") == "ok":
+            continue
+        host = urlparse(src["url"]).netloc.lower()
+        HOST_CONCURRENCY.setdefault(host, 1)
+        HOST_DELAY[host] = max(HOST_DELAY.get(host, 0.0), PACED_DELAY)
+
+
 try:  # vendor-literature hosts declare their politeness delay once, in registry/vendors.json
     import find_vendor
     HOST_DELAY.update(find_vendor.host_delays(find_vendor.load_vendors()))
@@ -396,13 +450,14 @@ def _fetch_ec_deliverable(url: str) -> requests.Response:
     follow it with the same cookie jar to get the actual PDF."""
     with requests.Session() as s:
         s.headers.update({"User-Agent": UA})
-        first = s.get(url, timeout=TIMEOUT, allow_redirects=True)
+        first = s.get(url, timeout=TIMEOUT, allow_redirects=True, hooks=GUARD)
         if not first.headers.get("Content-Type", "").startswith("text/html"):
             return first
         m = re.search(r"window\.location='(https://ec\.europa\.eu[^']+)'", first.text)
         if not m:
             return first
-        return s.get(m.group(1), timeout=TIMEOUT, allow_redirects=True)
+        check_hop(m.group(1))
+        return s.get(m.group(1), timeout=TIMEOUT, allow_redirects=True, hooks=GUARD)
 
 
 def _fetch_publications_gc_ca(url: str) -> requests.Response:
@@ -417,13 +472,13 @@ def _fetch_publications_gc_ca(url: str) -> requests.Response:
             "User-Agent": UA,
             "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8",
         })
-        first = s.get(url, timeout=TIMEOUT, allow_redirects=True)
+        first = s.get(url, timeout=TIMEOUT, allow_redirects=True, hooks=GUARD)
         if first.content.startswith(b"%PDF-"):
             return first
         if "/site/archivee-archived.html" not in first.url:
             return first
         return s.get(url, headers={"Referer": first.url},
-                     timeout=TIMEOUT, allow_redirects=True)
+                     timeout=TIMEOUT, allow_redirects=True, hooks=GUARD)
 
 
 def _new_record(src: dict) -> tuple[dict, str]:
@@ -484,6 +539,7 @@ def _fetch_polite(url: str, fmt: str, ua: str, rec: dict, host: str) -> bytes | 
             headers={"User-Agent": ua, "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8"},
             timeout=TIMEOUT,
             allow_redirects=True,
+            hooks=GUARD,
         )
     except (requests.Timeout, requests.ConnectionError) as exc:
         rec["error"] = f"network: {exc}"
@@ -512,6 +568,7 @@ def download_one(src: dict) -> dict:
     polite = host in POLITE_HOSTS
     ua = HOST_UA.get(host, UA)
     try:
+        check_hop(src["url"])
         with _host_sem(src["url"]):
             if _circuit_open(rec, host):
                 return rec
@@ -562,6 +619,10 @@ def download_one(src: dict) -> dict:
         rec["_raw_file"] = str(raw_path)
         rec["_root"] = str(HERE)
         rec["_text_dir"] = str(TEXT)
+    except HostSuspended as e:
+        rec["error"] = str(e)
+        rec["transient"] = True
+        rec["_not_requested"] = True  # the suspended host was never asked: no retry ageing
     except Exception as e:
         rec["error"] = str(e)
         if recoverable_failure(e, rec.get("http_status")):
@@ -596,6 +657,7 @@ def _fetch_with_fallback(url: str, fmt: str, ua: str, rec: dict, resp=None) -> b
             headers={"User-Agent": ua, "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8"},
             timeout=TIMEOUT,
             allow_redirects=True,
+            hooks=GUARD,
         )
     rec["http_status"] = resp.status_code
     if resp.status_code not in (403, 410, 429, 503):
@@ -606,15 +668,7 @@ def _fetch_with_fallback(url: str, fmt: str, ua: str, rec: dict, resp=None) -> b
     # pipe: extraction workers are spawned while downloads are active, and a fork can inherit the
     # pipe's write end, so communicate() would never observe EOF. A temporary file also avoids
     # buffering large patent HTML responses in a pipe.
-    with tempfile.TemporaryFile() as curl_body:
-        out = subprocess.run(
-            ["curl", "-sSL", "--max-time", str(TIMEOUT), "-A", ua, url],
-            stdout=curl_body,
-            stderr=subprocess.DEVNULL,
-            timeout=TIMEOUT + 15,
-        )
-        curl_body.seek(0)
-        body = curl_body.read() if out.returncode == 0 else b""
+    body = _curl_follow(url, ua)
     good = len(body) > 512 and (
         body[:5] == b"%PDF-" if fmt == "pdf"
         else (
@@ -629,6 +683,46 @@ def _fetch_with_fallback(url: str, fmt: str, ua: str, rec: dict, resp=None) -> b
         return body
     resp.raise_for_status()
     return resp.content
+
+
+def _curl_follow(url: str, ua: str) -> bytes:
+    """The curl fallback, following redirects ITSELF (no -L) so that host policy is checked
+    before every hop. Returns the final body, or b"" on a curl error or too many redirects."""
+    hop = url
+    with tempfile.TemporaryDirectory(prefix="curl-") as tmp:
+        headers = Path(tmp) / "headers"
+        for _ in range(MAX_REDIRECTS + 1):
+            check_hop(hop)
+            headers.write_bytes(b"")
+            with tempfile.TemporaryFile() as curl_body:
+                out = subprocess.run(
+                    ["curl", "-sS", "--max-time", str(TIMEOUT), "-A", ua,
+                     "-D", str(headers), hop],
+                    stdout=curl_body,
+                    stderr=subprocess.DEVNULL,
+                    timeout=TIMEOUT + 15,
+                )
+                curl_body.seek(0)
+                body = curl_body.read() if out.returncode == 0 else b""
+            if out.returncode != 0:
+                return b""
+            status, location = _last_status_and_location(headers.read_bytes())
+            if status in REDIRECT_STATUSES and location:
+                hop = urljoin(hop, location)
+                continue
+            return body
+    return b""
+
+
+def _last_status_and_location(raw: bytes) -> tuple[int | None, str | None]:
+    """Status and Location of the LAST response block curl dumped with -D."""
+    status, location = None, None
+    for line in raw.decode("latin-1").splitlines():
+        if m := re.match(r"HTTP/\S+\s+(\d{3})", line):
+            status, location = int(m.group(1)), None
+        elif line.lower().startswith("location:"):
+            location = line.split(":", 1)[1].strip()
+    return status, location
 
 
 def extract_downloaded(rec: dict) -> dict:
@@ -907,14 +1001,19 @@ def main() -> None:
 def run(view, session, args, only: set[str], selection: dict) -> None:
     """The loader over one read view; `session` (None for --verify) receives its writes. Every
     read happens before the first write."""
-    global ACCESS
+    global ACCESS, HOST_POLICY
     ACCESS = artifact_store.for_view(view, HERE)
+    pacing = dict(HOST_CONCURRENCY), dict(HOST_DELAY)
     try:
         if ACCESS is not None:
             ACCESS.local.sweep_incoming()
         _run(view, session, args, only, selection)
     finally:
         ACCESS = None
+        HOST_POLICY = {}
+        for table, saved in zip((HOST_CONCURRENCY, HOST_DELAY), pacing):
+            table.clear()
+            table.update(saved)
 
 
 def _have(row: dict, stage: str) -> bool:
@@ -926,7 +1025,9 @@ def _have(row: dict, stage: str) -> bool:
 
 
 def _run(view, session, args, only: set[str], selection: dict) -> None:
+    global HOST_POLICY
     restrictions, policy = store.pinned_policy(view)  # the view's pinned configuration
+    HOST_POLICY = policy  # enforced on every request hop (check_hop)
     all_srcs = load_entries(view)
     pointer_only = sum(
         source.get("license") in registry.POINTER_ONLY_LICENSES for source in all_srcs
@@ -1042,6 +1143,7 @@ def _run(view, session, args, only: set[str], selection: dict) -> None:
             checkpoints.flush()  # an interrupted run loses <25 extractions
 
     todo, deferred_ids = cap_per_host(todo, manifest)
+    pace_new_hosts(todo, manifest)
     write_deferred(deferred_ids)
     if deferred_ids:
         print(f"deferred by per-run host caps (left in the registry for later rounds): "

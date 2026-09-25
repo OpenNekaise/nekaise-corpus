@@ -21,6 +21,10 @@ collide too, + the pruned-URL blocklist). Finders pass values already normalized
 registry.norm titles, so only a value that is its own normal form can equal a stored key — any
 other value is answered "unknown" without a query, as `value in legacy_set` did.
 
+Persistent identity (DOI / OpenAlex work id) is a fourth key: identity_known(entry) asks whether
+any identifier the entry declares (persistent_id, origin_ids) maps to an identity id the store or
+this run already holds (see identity_id below); run_round's serial proposal merge asks it too.
+
 prefetch() is only an optimization (a whole page in MAX_KNOWN-sized known() calls); a value that
 was not prefetched is looked up on its own when first tested, so a finder that checks a URL
 before an expensive metadata request still avoids that request.
@@ -211,6 +215,23 @@ class Keys:
             self.ids.add(e["id"])
 
 
+    # --- persistent identity (DOI / OpenAlex work id) ------------------------------------------
+
+    def identity_known(self, entry: Mapping) -> bool:
+        """Whether any persistent identifier the entry declares (persistent_id, origin_ids) is
+        already held: by the store (a registry/manifest row under its identity id) or by this
+        run. Entries that declare no DOI/OpenAlex identity are never "identity known"."""
+        keys = identity_ids(entry)
+        if not keys:
+            return False
+        self.prefetch(ids=keys)
+        return any(k in self.ids for k in keys)
+
+    def add_identity(self, entry: Mapping) -> None:
+        """Reserve the entry's identity keys for the rest of this run (serial merge)."""
+        self.ids.update(identity_ids(entry))
+
+
 def open_keys(root: Path | None = None) -> Keys:
     """A dedup session against the configured store (NEKAISE_STORE) at `root`."""
     return Keys(_StoreBackend(_open(root)))
@@ -224,6 +245,67 @@ def from_view(view) -> Keys:
 def from_sets(urls: set, titles: set, ids: set) -> Keys:
     """A dedup session over legacy in-memory key sets (registry.existing_keys()' shape)."""
     return Keys(_SetBackend(urls, titles, ids))
+
+
+# --- persistent identifiers -----------------------------------------------------------------------
+# URLs and titles miss one work under two DOIs or two copies (preprint vs published, publisher PDF
+# vs repository copy). Works found through scholarly metadata therefore carry normalized
+# persistent identifiers, and each identifier maps to a deterministic IDENTITY ID in the id space
+# the store already indexes (known(ids=...), both backends): a work registered under identity id
+# X is known to every later candidate that names the same DOI or OpenAlex work — directly, or
+# through an explicit version relation recorded in `origin_ids` — without a new store index.
+IDENTITY_PREFIX = "oas-"
+
+
+def normalize_pid(value) -> str | None:
+    """"doi:10.x/y" (lower-case) or "openalex:W123", from any common spelling; else None."""
+    import oa_resolution
+
+    if doi := oa_resolution.normalize_doi(value):
+        return f"doi:{doi}"
+    if work := oa_resolution.normalize_openalex(value):
+        return f"openalex:{work}"
+    return None
+
+
+def identity_id(pid: str) -> str | None:
+    """The deterministic registry id for one normalized persistent identifier."""
+    import hashlib
+
+    pid = normalize_pid(pid)
+    if pid is None:
+        return None
+    kind, value = pid.split(":", 1)
+    if kind == "openalex":
+        return f"{IDENTITY_PREFIX}{value.lower()}"
+    digest = hashlib.sha1(pid.encode()).hexdigest()[:8]
+    return f"{IDENTITY_PREFIX}{registry.slug(value)[:40].strip('-')}-{digest}"
+
+
+def entry_pids(entry: Mapping) -> list[str]:
+    """Every normalized persistent identifier an entry declares, in declaration order."""
+    values = [entry.get("persistent_id")]
+    origin = entry.get("origin_ids")
+    if isinstance(origin, str):
+        values += origin.split()
+    elif isinstance(origin, (list, tuple)):
+        values += list(origin)
+    return list(dict.fromkeys(p for p in map(normalize_pid, values) if p))
+
+
+def identity_ids(entry: Mapping) -> list[str]:
+    return list(dict.fromkeys(i for i in map(identity_id, entry_pids(entry)) if i))
+
+
+def held_rows(ids: Iterable[str], root: Path | None = None) -> dict[str, dict]:
+    """Manifest rows for these ids (one read view): lets a finder tell "known metadata" (a
+    registry row, a failed or pointer-only row) from "eligible content already held" (status ok).
+    Only called for ids that already hit, so it stays a handful of point reads."""
+    ids = [i for i in ids if isinstance(i, str) and i]
+    if not ids:
+        return {}
+    with read_view(root) as view:
+        return view.get_manifest(ids)
 
 
 def page_keys(items: Iterable[Mapping], url_field: str = "url",

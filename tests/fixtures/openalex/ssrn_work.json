@@ -1,0 +1,177 @@
+{
+ "id": "https://openalex.org/W7172451386",
+ "doi": "https://doi.org/10.2139/ssrn.7231715",
+ "title": "From Runnable to Behaviorally Reliable Models: A Multi-Agent Large Language Model Framework for Automated Modelica Modeling and Repair",
+ "display_name": "From Runnable to Behaviorally Reliable Models: A Multi-Agent Large Language Model Framework for Automated Modelica Modeling and Repair",
+ "publication_year": 2026,
+ "publication_date": "2026-01-01",
+ "language": null,
+ "type": "preprint",
+ "primary_location": {
+  "id": "doi:10.2139/ssrn.7231715",
+  "is_oa": true,
+  "landing_page_url": "https://doi.org/10.2139/ssrn.7231715",
+  "pdf_url": null,
+  "source": {
+   "id": "https://openalex.org/S4210172589",
+   "display_name": "SSRN Electronic Journal",
+   "issn_l": "1556-5068",
+   "issn": [
+    "1556-5068"
+   ],
+   "is_oa": true,
+   "is_in_doaj": false,
+   "is_core": false,
+   "host_organization": "https://openalex.org/I1318003438",
+   "host_organization_name": "RELX Group (Netherlands)",
+   "host_organization_lineage": [
+    "https://openalex.org/I1318003438"
+   ],
+   "host_organization_lineage_names": [],
+   "type": "repository"
+  },
+  "license": null,
+  "license_id": null,
+  "version": "acceptedVersion",
+  "is_accepted": true,
+  "is_published": false,
+  "raw_source_name": null,
+  "raw_type": "posted-content"
+ },
+ "locations": [
+  {
+   "id": "doi:10.2139/ssrn.7231715",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.2139/ssrn.7231715",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S4210172589",
+    "display_name": "SSRN Electronic Journal",
+    "issn_l": "1556-5068",
+    "issn": [
+     "1556-5068"
+    ],
+    "is_oa": true,
+    "is_in_doaj": false,
+    "is_core": false,
+    "host_organization": "https://openalex.org/I1318003438",
+    "host_organization_name": "RELX Group (Netherlands)",
+    "host_organization_lineage": [
+     "https://openalex.org/I1318003438"
+    ],
+    "host_organization_lineage_names": [],
+    "type": "repository"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "acceptedVersion",
+   "is_accepted": true,
+   "is_published": false,
+   "raw_source_name": null,
+   "raw_type": "posted-content"
+  }
+ ],
+ "best_oa_location": {
+  "id": "doi:10.2139/ssrn.7231715",
+  "is_oa": true,
+  "landing_page_url": "https://doi.org/10.2139/ssrn.7231715",
+  "pdf_url": null,
+  "source": {
+   "id": "https://openalex.org/S4210172589",
+   "display_name": "SSRN Electronic Journal",
+   "issn_l": "1556-5068",
+   "issn": [
+    "1556-5068"
+   ],
+   "is_oa": true,
+   "is_in_doaj": false,
+   "is_core": false,
+   "host_organization": "https://openalex.org/I1318003438",
+   "host_organization_name": "RELX Group (Netherlands)",
+   "host_organization_lineage": [
+    "https://openalex.org/I1318003438"
+   ],
+   "host_organization_lineage_names": [],
+   "type": "repository"
+  },
+  "license": null,
+  "license_id": null,
+  "version": "acceptedVersion",
+  "is_accepted": true,
+  "is_published": false,
+  "raw_source_name": null,
+  "raw_type": "posted-content"
+ },
+ "open_access": {
+  "is_oa": true,
+  "oa_status": "green",
+  "oa_url": "https://doi.org/10.2139/ssrn.7231715",
+  "any_repository_has_fulltext": true
+ },
+ "authorships": [
+  {
+   "author": {
+    "display_name": "Shutong Feng"
+   }
+  },
+  {
+   "author": {
+    "display_name": "Jiasheng Cheng"
+   }
+  },
+  {
+   "author": {
+    "display_name": "Ganpeng He"
+   }
+  },
+  {
+   "author": {
+    "display_name": "Jianxiang Zheng"
+   }
+  },
+  {
+   "author": {
+    "display_name": "Yaoli Zhang"
+   }
+  }
+ ],
+ "primary_topic": {
+  "id": "https://openalex.org/T13286",
+  "display_name": "Modeling and Simulation Systems",
+  "score": 0.8395000100135803,
+  "subfield": {
+   "id": "https://openalex.org/subfields/1703",
+   "display_name": "Computational Theory and Mathematics"
+  },
+  "field": {
+   "id": "https://openalex.org/fields/17",
+   "display_name": "Computer Science"
+  },
+  "domain": {
+   "id": "https://openalex.org/domains/3",
+   "display_name": "Physical Sciences"
+  }
+ },
+ "topics": [
+  {
+   "id": "https://openalex.org/T13286",
+   "display_name": "Modeling and Simulation Systems",
+   "score": 0.8395000100135803,
+   "subfield": {
+    "id": "https://openalex.org/subfields/1703",
+    "display_name": "Computational Theory and Mathematics"
+   },
+   "field": {
+    "id": "https://openalex.org/fields/17",
+    "display_name": "Computer Science"
+   },
+   "domain": {
+    "id": "https://openalex.org/domains/3",
+    "display_name": "Physical Sciences"
+   }
+  }
+ ],
+ "is_retracted": false,
+ "is_paratext": false,
+ "abstract_inverted_index": null
+}

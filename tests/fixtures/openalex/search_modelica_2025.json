@@ -1,0 +1,851 @@
+{
+ "meta": {
+  "count": 1192,
+  "page": 1,
+  "per_page": 5
+ },
+ "results": [
+  {
+   "id": "https://openalex.org/W4407749289",
+   "doi": "https://doi.org/10.1080/19401493.2024.2449375",
+   "title": "Comprehensive framework for dynamic energy assessment of building systems using IFC graphs and Modelica",
+   "publication_year": 2025,
+   "publication_date": "2025-02-19",
+   "language": "en",
+   "type": "article",
+   "locations": [
+    {
+     "id": "doi:10.1080/19401493.2024.2449375",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1080/19401493.2024.2449375",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S59432305",
+      "display_name": "Journal of Building Performance Simulation",
+      "issn_l": "1940-1493",
+      "issn": [
+       "1940-1493",
+       "1940-1507"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "jufo-1",
+       "norway-1"
+      ],
+      "host_organization": "https://openalex.org/P4310320547",
+      "host_organization_name": "Taylor & Francis",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320547",
+       "https://openalex.org/P4310320449"
+      ],
+      "host_organization_lineage_names": [
+       "Taylor & Francis",
+       "Informa"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Journal of Building Performance Simulation",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": null,
+   "primary_location": {
+    "id": "doi:10.1080/19401493.2024.2449375",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1080/19401493.2024.2449375",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S59432305",
+     "display_name": "Journal of Building Performance Simulation",
+     "issn_l": "1940-1493",
+     "issn": [
+      "1940-1493",
+      "1940-1507"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "jufo-1",
+      "norway-1"
+     ],
+     "host_organization": "https://openalex.org/P4310320547",
+     "host_organization_name": "Taylor & Francis",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320547",
+      "https://openalex.org/P4310320449"
+     ],
+     "host_organization_lineage_names": [
+      "Taylor & Francis",
+      "Informa"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Journal of Building Performance Simulation",
+    "raw_type": "journal-article"
+   },
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "primary_topic": {
+    "id": "https://openalex.org/T11006",
+    "display_name": "BIM and Construction Integration",
+    "score": 0.9972000122070312,
+    "subfield": {
+     "id": "https://openalex.org/subfields/2215",
+     "display_name": "Building and Construction"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/22",
+     "display_name": "Engineering"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/3",
+     "display_name": "Physical Sciences"
+    }
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "topics": [],
+   "authorships": [
+    {
+     "author": {
+      "display_name": "Petros Iliadis"
+     }
+    },
+    {
+     "author": {
+      "display_name": "Evangelos Bellos"
+     }
+    },
+    {
+     "author": {
+      "display_name": "Renos Rotas"
+     }
+    },
+    {
+     "author": {
+      "display_name": "Angeliki Kitsopoulou"
+     }
+    }
+   ]
+  },
+  {
+   "id": "https://openalex.org/W4415765999",
+   "doi": "https://doi.org/10.1016/j.energy.2025.139034",
+   "title": "Establishment of a Modelica model for flow metering valve controlled pump and analysis on delivery and leakage characteristics",
+   "publication_year": 2025,
+   "publication_date": "2025-11-01",
+   "language": "en",
+   "type": "article",
+   "locations": [
+    {
+     "id": "doi:10.1016/j.energy.2025.139034",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1016/j.energy.2025.139034",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S2497375143",
+      "display_name": "Energy",
+      "issn_l": "0360-5442",
+      "issn": [
+       "0360-5442",
+       "1873-6785"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "jufo-3",
+       "norway-2"
+      ],
+      "host_organization": "https://openalex.org/P4310320990",
+      "host_organization_name": "Elsevier BV",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320990"
+      ],
+      "host_organization_lineage_names": [
+       "Elsevier BV"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Energy",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": null,
+   "primary_location": {
+    "id": "doi:10.1016/j.energy.2025.139034",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1016/j.energy.2025.139034",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S2497375143",
+     "display_name": "Energy",
+     "issn_l": "0360-5442",
+     "issn": [
+      "0360-5442",
+      "1873-6785"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "jufo-3",
+      "norway-2"
+     ],
+     "host_organization": "https://openalex.org/P4310320990",
+     "host_organization_name": "Elsevier BV",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320990"
+     ],
+     "host_organization_lineage_names": [
+      "Elsevier BV"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Energy",
+    "raw_type": "journal-article"
+   },
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "primary_topic": {
+    "id": "https://openalex.org/T11372",
+    "display_name": "Hydraulic and Pneumatic Systems",
+    "score": 0.7727000117301941,
+    "subfield": {
+     "id": "https://openalex.org/subfields/2210",
+     "display_name": "Mechanical Engineering"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/22",
+     "display_name": "Engineering"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/3",
+     "display_name": "Physical Sciences"
+    }
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "topics": [],
+   "authorships": [
+    {
+     "author": {
+      "display_name": "Yuelin Wu"
+     }
+    },
+    {
+     "author": {
+      "display_name": "Liyun Fan"
+     }
+    },
+    {
+     "author": {
+      "display_name": "Bo Li"
+     }
+    },
+    {
+     "author": {
+      "display_name": "Yunpeng Wei"
+     }
+    }
+   ]
+  },
+  {
+   "id": "https://openalex.org/W4410921127",
+   "doi": "https://doi.org/10.1016/j.renene.2025.123620",
+   "title": "Modelica-based multiphysics modeling and multi-timescale dynamic analysis of a 100-kW alkaline water electrolysis system",
+   "publication_year": 2025,
+   "publication_date": "2025-05-31",
+   "language": "en",
+   "type": "article",
+   "locations": [
+    {
+     "id": "doi:10.1016/j.renene.2025.123620",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1016/j.renene.2025.123620",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S815301",
+      "display_name": "Renewable Energy",
+      "issn_l": "0960-1481",
+      "issn": [
+       "0960-1481",
+       "1879-0682"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "jufo-2",
+       "norway-1"
+      ],
+      "host_organization": "https://openalex.org/P4310320990",
+      "host_organization_name": "Elsevier BV",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320990"
+      ],
+      "host_organization_lineage_names": [
+       "Elsevier BV"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Renewable Energy",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": null,
+   "primary_location": {
+    "id": "doi:10.1016/j.renene.2025.123620",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1016/j.renene.2025.123620",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S815301",
+     "display_name": "Renewable Energy",
+     "issn_l": "0960-1481",
+     "issn": [
+      "0960-1481",
+      "1879-0682"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "jufo-2",
+      "norway-1"
+     ],
+     "host_organization": "https://openalex.org/P4310320990",
+     "host_organization_name": "Elsevier BV",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320990"
+     ],
+     "host_organization_lineage_names": [
+      "Elsevier BV"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Renewable Energy",
+    "raw_type": "journal-article"
+   },
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "primary_topic": {
+    "id": "https://openalex.org/T11007",
+    "display_name": "Hybrid Renewable Energy Systems",
+    "score": 0.9983999729156494,
+    "subfield": {
+     "id": "https://openalex.org/subfields/2102",
+     "display_name": "Energy Engineering and Power Technology"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/21",
+     "display_name": "Energy"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/3",
+     "display_name": "Physical Sciences"
+    }
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "topics": [],
+   "authorships": [
+    {
+     "author": {
+      "display_name": "Ruilin Yin"
+     }
+    },
+    {
+     "author": {
+      "display_name": "Bin Chen"
+     }
+    },
+    {
+     "author": {
+      "display_name": "Li Ning Sun"
+     }
+    }
+   ]
+  },
+  {
+   "id": "https://openalex.org/W4406229752",
+   "doi": "https://doi.org/10.1016/j.renene.2025.122372",
+   "title": "Modelica based hybrid-dimensional dynamic modeling, multi-objective optimization and thermodynamic analysis of cross-flow SOFC system",
+   "publication_year": 2025,
+   "publication_date": "2025-01-08",
+   "language": "en",
+   "type": "article",
+   "locations": [
+    {
+     "id": "doi:10.1016/j.renene.2025.122372",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1016/j.renene.2025.122372",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S815301",
+      "display_name": "Renewable Energy",
+      "issn_l": "0960-1481",
+      "issn": [
+       "0960-1481",
+       "1879-0682"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "jufo-2",
+       "norway-1"
+      ],
+      "host_organization": "https://openalex.org/P4310320990",
+      "host_organization_name": "Elsevier BV",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320990"
+      ],
+      "host_organization_lineage_names": [
+       "Elsevier BV"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Renewable Energy",
+     "raw_type": "journal-article"
+    },
+    {
+     "id": "pmh:oai:RePEc:eee:renene:v:241:y:2025:i:c:s0960148125000345",
+     "is_oa": false,
+     "landing_page_url": "http://www.sciencedirect.com/science/article/pii/S0960148125000345",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4306401271",
+      "display_name": "RePEc: Research Papers in Economics",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/I77793887",
+      "host_organization_name": "Federal Reserve Bank of St. Louis",
+      "host_organization_lineage": [
+       "https://openalex.org/I77793887"
+      ],
+      "host_organization_lineage_names": [],
+      "type": "repository"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "submittedVersion",
+     "is_accepted": false,
+     "is_published": false,
+     "raw_source_name": null,
+     "raw_type": "article"
+    },
+    {
+     "id": "pmh:oai:sdu.dk:openaire_cris_publications/885f7799-fa8b-40be-a706-4f6f2c1f0434",
+     "is_oa": false,
+     "landing_page_url": "https://portal.findresearcher.sdu.dk/da/publications/885f7799-fa8b-40be-a706-4f6f2c1f0434",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4306400423",
+      "display_name": "University of Southern Denmark Research Portal (University of Southern Denmark)",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/I177969490",
+      "host_organization_name": "University of Southern Denmark",
+      "host_organization_lineage": [
+       "https://openalex.org/I177969490"
+      ],
+      "host_organization_lineage_names": [],
+      "type": "repository"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "submittedVersion",
+     "is_accepted": false,
+     "is_published": false,
+     "raw_source_name": "Xia, L, Khosravi, A, Han, M & Sun, L 2025, 'Modelica based hybrid-dimensional dynamic modeling, multi-objective optimization and thermodynamic analysis of cross-flow SOFC system', Renewable Energy, vol. 241, 122372. https://doi.org/10.1016/j.renene.2025.122372",
+     "raw_type": "info:eu-repo/semantics/article"
+    }
+   ],
+   "best_oa_location": null,
+   "primary_location": {
+    "id": "doi:10.1016/j.renene.2025.122372",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1016/j.renene.2025.122372",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S815301",
+     "display_name": "Renewable Energy",
+     "issn_l": "0960-1481",
+     "issn": [
+      "0960-1481",
+      "1879-0682"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "jufo-2",
+      "norway-1"
+     ],
+     "host_organization": "https://openalex.org/P4310320990",
+     "host_organization_name": "Elsevier BV",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320990"
+     ],
+     "host_organization_lineage_names": [
+      "Elsevier BV"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Renewable Energy",
+    "raw_type": "journal-article"
+   },
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "primary_topic": {
+    "id": "https://openalex.org/T10311",
+    "display_name": "Advancements in Solid Oxide Fuel Cells",
+    "score": 0.9993000030517578,
+    "subfield": {
+     "id": "https://openalex.org/subfields/2505",
+     "display_name": "Materials Chemistry"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/25",
+     "display_name": "Materials Science"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/3",
+     "display_name": "Physical Sciences"
+    }
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "topics": [],
+   "authorships": [
+    {
+     "author": {
+      "display_name": "Lei Xia"
+     }
+    },
+    {
+     "author": {
+      "display_name": "Ali Khosravi"
+     }
+    },
+    {
+     "author": {
+      "display_name": "Minfang Han"
+     }
+    },
+    {
+     "author": {
+      "display_name": "Li Ning Sun"
+     }
+    }
+   ]
+  },
+  {
+   "id": "https://openalex.org/W4410369292",
+   "doi": "https://doi.org/10.3390/en18102539",
+   "title": "Numerical Assessment of Nuclear Cogeneration Transients with SMRs Using CATHARE 3–MODELICA Coupling",
+   "publication_year": 2025,
+   "publication_date": "2025-05-14",
+   "language": "en",
+   "type": "article",
+   "locations": [
+    {
+     "id": "doi:10.3390/en18102539",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.3390/en18102539",
+     "pdf_url": "https://www.mdpi.com/1996-1073/18/10/2539/pdf?version=1747220369",
+     "source": {
+      "id": "https://openalex.org/S198098182",
+      "display_name": "Energies",
+      "issn_l": "1996-1073",
+      "issn": [
+       "1996-1073"
+      ],
+      "is_oa": true,
+      "is_in_doaj": true,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "doaj",
+       "norway-1"
+      ],
+      "host_organization": "https://openalex.org/P4310310987",
+      "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310310987"
+      ],
+      "host_organization_lineage_names": [
+       "Multidisciplinary Digital Publishing Institute"
+      ],
+      "type": "journal"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Energies",
+     "raw_type": "journal-article"
+    },
+    {
+     "id": "pmh:oai:arpi.unipi.it:11568/1311722",
+     "is_oa": true,
+     "landing_page_url": "https://www.mdpi.com/1996-1073/18/10/2539",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4377196265",
+      "display_name": "CINECA IRIS Institutial research information system (University of Pisa)",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/I108290504",
+      "host_organization_name": "University of Pisa",
+      "host_organization_lineage": [
+       "https://openalex.org/I108290504"
+      ],
+      "host_organization_lineage_names": [],
+      "type": "repository"
+     },
+     "license": "cc-by-nc-sa",
+     "license_id": "https://openalex.org/licenses/cc-by-nc-sa",
+     "version": "submittedVersion",
+     "is_accepted": false,
+     "is_published": false,
+     "raw_source_name": null,
+     "raw_type": "info:eu-repo/semantics/article"
+    },
+    {
+     "id": "pmh:oai:doaj.org/article:4a2b23f25e2a45ec8600cc68bf179c32",
+     "is_oa": true,
+     "landing_page_url": "https://doaj.org/article/4a2b23f25e2a45ec8600cc68bf179c32",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4306401280",
+      "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": null,
+      "host_organization_name": null,
+      "host_organization_lineage": [],
+      "host_organization_lineage_names": [],
+      "type": "repository"
+     },
+     "license": "cc-by-sa",
+     "license_id": "https://openalex.org/licenses/cc-by-sa",
+     "version": "submittedVersion",
+     "is_accepted": false,
+     "is_published": false,
+     "raw_source_name": "Energies, Vol 18, Iss 10, p 2539 (2025)",
+     "raw_type": "article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.3390/en18102539",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.3390/en18102539",
+    "pdf_url": "https://www.mdpi.com/1996-1073/18/10/2539/pdf?version=1747220369",
+    "source": {
+     "id": "https://openalex.org/S198098182",
+     "display_name": "Energies",
+     "issn_l": "1996-1073",
+     "issn": [
+      "1996-1073"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "doaj",
+      "norway-1"
+     ],
+     "host_organization": "https://openalex.org/P4310310987",
+     "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310310987"
+     ],
+     "host_organization_lineage_names": [
+      "Multidisciplinary Digital Publishing Institute"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Energies",
+    "raw_type": "journal-article"
+   },
+   "primary_location": {
+    "id": "doi:10.3390/en18102539",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.3390/en18102539",
+    "pdf_url": "https://www.mdpi.com/1996-1073/18/10/2539/pdf?version=1747220369",
+    "source": {
+     "id": "https://openalex.org/S198098182",
+     "display_name": "Energies",
+     "issn_l": "1996-1073",
+     "issn": [
+      "1996-1073"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "doaj",
+      "norway-1"
+     ],
+     "host_organization": "https://openalex.org/P4310310987",
+     "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310310987"
+     ],
+     "host_organization_lineage_names": [
+      "Multidisciplinary Digital Publishing Institute"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Energies",
+    "raw_type": "journal-article"
+   },
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "gold",
+    "oa_url": "https://www.mdpi.com/1996-1073/18/10/2539/pdf?version=1747220369",
+    "any_repository_has_fulltext": true
+   },
+   "primary_topic": {
+    "id": "https://openalex.org/T10597",
+    "display_name": "Nuclear reactor physics and engineering",
+    "score": 0.9993000030517578,
+    "subfield": {
+     "id": "https://openalex.org/subfields/2202",
+     "display_name": "Aerospace Engineering"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/22",
+     "display_name": "Engineering"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/3",
+     "display_name": "Physical Sciences"
+    }
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "topics": [],
+   "authorships": [
+    {
+     "author": {
+      "display_name": "Alessandro De Angelis"
+     }
+    },
+    {
+     "author": {
+      "display_name": "N. Alpy"
+     }
+    },
+    {
+     "author": {
+      "display_name": "Paolo Olita"
+     }
+    },
+    {
+     "author": {
+      "display_name": "Calogera Lombardo"
+     }
+    }
+   ]
+  }
+ ]
+}

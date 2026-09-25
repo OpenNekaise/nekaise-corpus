@@ -251,11 +251,12 @@ def merge_proposals(view, results: list[dict]) -> tuple[list[dict], dict[str, in
         for entry in entries:
             url = entry["url"].rstrip("/")
             title = registry.norm(entry["title"])
-            if url in keys.urls or title in keys.titles:
-                continue
+            if url in keys.urls or title in keys.titles or keys.identity_known(entry):
+                continue  # identity: the same DOI / OpenAlex work under another URL or title
             keys.uniquify_ids([entry])
             keys.urls.add(url)
             keys.titles.add(title)
+            keys.add_identity(entry)
             merged.append(entry)
             count += 1
         accepted[result["name"]] = count
