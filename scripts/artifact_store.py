@@ -39,6 +39,7 @@ import os
 import re
 import secrets
 import stat
+import threading
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -193,8 +194,10 @@ def barrier(paths: Iterable[Path], root: Path) -> int:
 
 # Directories (absolute paths) whose own entry, and every ancestor's up to the data root, this
 # process has made durable (it fsynced each parent after the directory existed). Directories are
-# never removed, so the fact stays true; another process's crash cannot undo it.
+# never removed, so the fact stays true; another process's crash cannot undo it. Entries are added
+# only once a whole chain succeeded (LocalArtifacts._durable_chain).
 _DURABLE_DIRS: set[str] = set()
+_DURABLE_LOCK = threading.Lock()
 
 
 class Pending(NamedTuple):
@@ -255,17 +258,27 @@ class LocalArtifacts:
         """Create directory `d` (under the root) if needed and make its entry and every
         ancestor's entry up to the root durable: whether this process created them or found them
         — a directory found existing may have been created by a writer that crashed before any
-        sync reached its parent. Each directory is fsynced into its parent once per process."""
+        sync reached its parent. Each directory is fsynced into its parent once per process.
+
+        The cache records only COMPLETE chains: the uncached part is collected first, every
+        parent is fsynced (topmost first), and only when all succeeded are its directories
+        cached — so a failure part-way leaves nothing cached and a retry syncs the whole chain.
+        Overlapping callers may both sync (harmless); neither caches before its own chain is
+        done, and an entry always means "this directory and all its ancestors are durable"."""
         d = Path(d)
         d.mkdir(parents=True, exist_ok=True)
         root = self.root.resolve()
         p = d.resolve()
         if root not in p.parents:
             raise ArtifactError(f"{d} is not under {self.root}")
+        todo = []
         while p != root and str(p) not in _DURABLE_DIRS:
-            _fsync_dir(p.parent)
-            _DURABLE_DIRS.add(str(p))
+            todo.append(p)
             p = p.parent
+        for q in reversed(todo):       # ancestors first
+            _fsync_dir(q.parent)
+        with _DURABLE_LOCK:
+            _DURABLE_DIRS.update(str(q) for q in todo)
 
     def _check_existing(self, stage: str, sha: str, size: int) -> None:
         """An address found in place is accepted only when it holds exactly those bytes (hash,

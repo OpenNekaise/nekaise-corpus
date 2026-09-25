@@ -1127,6 +1127,60 @@ def test_p2_versioned_cleaning_pages_bounds_and_stages_as_it_goes(repo, monkeypa
         assert artifact_store.LocalArtifacts(root).has("corpus", got["corpus_sha256"])
 
 
+def test_review2_pointer_only_rows_never_reach_the_corpus(repo, monkeypatch, clock, capsys):
+    """Second review P1: the versioned builder, its check and the materializer apply the full
+    training predicate (registry.is_training_eligible: pointer-only licences AND eligibility.json
+    restrictions), like the legacy partition. A successful pointer-only row with extracted text
+    and a stale corpus claim is not cleaned, loses its corpus metadata (raw/text provenance
+    kept), fails the check while it still claims corpus data, and is never materialized."""
+    root, pg = repo
+    body = HEADER.encode() + b"private vendor text " + TEXT.encode()
+    stale = HEADER.encode() + b"a stale cleaned copy"
+    for rel, data in (("text/ost-private.md", body), ("corpus/ost-private.md", stale)):
+        (root / rel).write_bytes(data)
+    private = mrow("ost-private", license="proprietary-internal", text_path="text/ost-private.md",
+                   text_sha256=sha(body), corpus_path="corpus/ost-private.md",
+                   corpus_sha256=sha(stale), corpus_chars=20,
+                   cleaner_version="clean_corpus/2;rules=none")
+    with pg.writer() as w:
+        with pg.transaction("private", expected_version=pg.version(), writer=w) as tx:
+            tx.upsert_manifest([private])
+    with staged(pg, "private-check") as (_w, rnd):     # the check flags the stale claim
+        with monkeypatch.context() as m:
+            child_env(m, pg, rnd)
+            pipeline_repo.point(m, root, policy=None)
+            m.setattr(sys, "argv", ["clean_corpus.py", "--check"])
+            with pytest.raises(SystemExit):
+                clean_corpus.main()
+        assert "training-ineligible row (license or policy) has corpus metadata: ost-private" \
+            in capsys.readouterr().out
+        abandon(pg, rnd)
+    g = full_round(monkeypatch, pg, root, "private")
+    with pg.read() as v:
+        row = v.get_manifest(["ost-private"])["ost-private"]
+    import registry
+    assert not any(f in row for f in registry.CORPUS_FIELDS)
+    assert row["text_path"] == "text/ost-private.md" and row["text_sha256"] == sha(body)
+    local = artifact_store.LocalArtifacts(root)
+    cleaned = clean_corpus.clean_body(clean_corpus.split_header(body.decode())[1],
+                                      clean_corpus.parse_rules(RULES))[0]
+    assert not local.has("corpus", sha((HEADER + cleaned).encode()))   # never cleaned
+    stats = materialize.refresh(pg, root)
+    assert not (root / "corpus" / "ost-private.md").exists()
+    assert stats["removed"] >= 1 and local.has("corpus", sha(stale))  # preserved, not served
+    # even a row that claims a held version is not materialized while it is pointer-only
+    held = local.put_bytes("corpus", b"claimed but ineligible")
+    with staged(pg, "private-claim") as (w, rnd):
+        stage(pg, w, rnd.run.run_id, "b1", lambda b: b.update_manifest_fields(
+            {"ost-private": {"corpus_path": "corpus/ost-private.md",
+                             "corpus_sha256": held.sha256}}))
+        promote(rnd)
+    materialize.refresh(pg, root)
+    assert not (root / "corpus" / "ost-private.md").exists()
+    with materialize.acquire_current(pg, root) as stamp:
+        assert stamp["generation"] == g + 1
+
+
 # --- the v5 -> v6 migration ------------------------------------------------------------------------------
 
 def _load_v5(name: str):

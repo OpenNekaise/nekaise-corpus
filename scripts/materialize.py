@@ -162,7 +162,9 @@ class _Refresh:
         """The corpus claim `row` contributes to the materialization, or None."""
         if row is None or row.get("status") != "ok":
             return None
-        if registry.restriction_for(row, self.restrictions) is not None:
+        # the full training predicate: a pointer-only license or an eligibility.json
+        # restriction keeps a row out whatever its metadata claims
+        if not registry.is_training_eligible(row, self.restrictions):
             return None
         return artifact_store.claim(row, "corpus")
 

@@ -1521,3 +1521,44 @@ on the reviewed commit (447dfee272) and passes now.
 - **Gates**: full suite 1186 passed / 148 skipped (PG skipped), with PostgreSQL (`nekaise_test`)
   1362 passed / 2 skipped (the two opt-in benchmarks); `py_compile scripts/*.py` clean. Nothing
   ran against the live schema or checkout.
+
+### Step 3, Codex second review (2026-09-25): the six fixed; two new findings fixed
+
+- **P1 — the versioned path applies the full training predicate.** The paged cleaner checked
+  only `restriction_for()` and so dropped the licence half of the legacy partition
+  (`partition_manifest_ok_rows` → `is_training_eligible`): a successful pointer-only
+  (`proprietary-internal`) row with extracted text was cleaned, and the check and the
+  materializer (restrictions only as well) let it reach `corpus/`. All three now use
+  `registry.is_training_eligible` (pointer-only licences AND eligibility.json restrictions); an
+  ineligible row keeps its raw/text provenance and any corpus metadata it carries is cleared (the
+  check reports it until then). Audit of the other filters the legacy steps apply: `status ==
+  ok` and a text claim (applied), suspended-host rows missing locally (applied, by claim), the
+  loader's and pruner's eligibility decisions (shared code, unchanged on both paths). NC/ND
+  licences are refused by the finders (`licenses.py`) before anything reaches the registry; no
+  pipeline step filters them, on either path. Regression: a pointer-only row with text and a
+  stale legacy corpus claim — the check fails on it, a staged round leaves it uncleaned with its
+  corpus fields cleared and provenance kept, the refresh removes (after preserving) its legacy
+  file, and a later generation in which it claims a held version still does not materialize it
+  (fails on 3d5256a75f).
+- **P2 — the directory cache holds only complete chains.** `_durable_chain` cached each
+  directory as soon as its parent was fsynced, so a later ancestor fsync failure left entries
+  that made a same-process retry stop early with no fsync. It now collects the uncached part of
+  the chain, fsyncs every parent topmost first, and caches the whole part (under a lock) only
+  after all succeeded; overlapping callers may sync twice but never cache an incomplete chain.
+  Regressions: an ancestor fsync failure then a retry that fsyncs root, `artifacts/`, the stage
+  and fan-out directories in that order; three overlapping callers (one blocked mid-chain, one
+  failing, one completing) — nothing cached before a chain completes, and every cached entry's
+  ancestors cached.
+- **Notes for step 4/5 (no code now).** (a) The cleaner stages batches in completion order, so
+  batch contents are not deterministic across attempts: same-run resume must not simply restart
+  numbered cleaner batches (it must treat the applied receipts as done and recompute the rest, or
+  abort and re-run, as today). (b) The seal-time basis lookup (`nk_basis_text`) walks a key's
+  retained revision history across promoted, unfolded runs; its cost grows with the number of
+  generations between the projection and the run's parent — benchmark it with accumulated
+  unfolded generations before cutover (step 5). (c) Resolution is an existence lookup (the
+  locally held canonical version, else the registered locator, else the legacy path), not an
+  integrity check; integrity is the artifact gate at staging time and a future periodic
+  re-verification (step 5).
+- **Gates**: full suite 1188 passed / 149 skipped (PG skipped), with PostgreSQL (`nekaise_test`)
+  1365 passed / 2 skipped (the two opt-in benchmarks); `py_compile scripts/*.py` clean. Nothing
+  ran against the live schema or checkout.

@@ -266,6 +266,84 @@ def test_review_publication_fsyncs_the_whole_directory_chain_once_per_process(tm
     assert other in synced
 
 
+def test_review2_a_failed_ancestor_fsync_caches_nothing_and_the_retry_syncs_the_chain(
+        tmp_path, monkeypatch):
+    """Second review P2: the cache must only ever hold complete chains. An ancestor fsync that
+    fails leaves no entry, so a retry in the same process fsyncs the whole chain."""
+    local = LocalArtifacts(tmp_path)
+    leaf = local.path("raw", sha(DATA)).parent
+    artifact_store._DURABLE_DIRS.clear()
+    real = artifact_store._fsync_dir
+    synced = []
+
+    def failing_on_base(p):
+        if Path(p).resolve() == tmp_path.resolve():      # the artifacts/ entry in the root
+            raise OSError(5, "EIO")
+        synced.append(Path(p).resolve())
+        real(p)
+    monkeypatch.setattr(artifact_store, "_fsync_dir", failing_on_base)
+    with pytest.raises(OSError):
+        local._durable_chain(leaf)
+    assert not artifact_store._DURABLE_DIRS
+    synced.clear()
+    monkeypatch.setattr(artifact_store, "_fsync_dir",
+                        lambda p: (synced.append(Path(p).resolve()), real(p)))
+    local._durable_chain(leaf)
+    assert synced == [tmp_path.resolve(), local.base.resolve(), (local.base / "raw").resolve(),
+                      leaf.parent.resolve()]              # every parent, topmost first
+    assert str(leaf.resolve()) in artifact_store._DURABLE_DIRS
+
+
+def test_review2_overlapping_chain_syncs_only_cache_complete_chains(tmp_path, monkeypatch):
+    """Overlapping callers: one blocked inside its chain, another fails part-way, a third
+    completes. Nothing is cached until a caller's whole chain succeeded; afterwards every cached
+    directory's ancestors are cached too."""
+    import threading
+    local = LocalArtifacts(tmp_path)
+    leaves = [local.path("text", h).parent for h in ("a" * 64, "ab" + "c" * 62, "b" * 64)]
+    artifact_store._DURABLE_DIRS.clear()
+    real = artifact_store._fsync_dir
+    gate, entered = threading.Event(), threading.Event()
+    state = {"fail": True}
+
+    def slow(p):
+        p = Path(p).resolve()
+        if threading.current_thread().name == "blocked" and p == local.base.resolve():
+            entered.set()
+            gate.wait(5)
+        if threading.current_thread().name == "failing" and p == local.base.resolve() \
+                and state["fail"]:
+            raise OSError(5, "EIO")
+        real(p)
+    monkeypatch.setattr(artifact_store, "_fsync_dir", slow)
+    errors = []
+
+    def run(leaf):
+        try:
+            local._durable_chain(leaf)
+        except OSError as exc:
+            errors.append(exc)
+    blocked = threading.Thread(target=run, args=(leaves[0],), name="blocked")
+    blocked.start()
+    assert entered.wait(5)
+    assert not artifact_store._DURABLE_DIRS            # the blocked caller cached nothing yet
+    failing = threading.Thread(target=run, args=(leaves[1],), name="failing")
+    failing.start()
+    failing.join(5)
+    assert len(errors) == 1 and not artifact_store._DURABLE_DIRS
+    local._durable_chain(leaves[2])                     # a complete chain
+    gate.set()
+    blocked.join(5)
+    root = tmp_path.resolve()
+    for entry in list(artifact_store._DURABLE_DIRS):
+        p = Path(entry)
+        while p != root:
+            assert str(p) in artifact_store._DURABLE_DIRS, (entry, p)
+            p = p.parent
+    assert str(leaves[1].resolve()) not in artifact_store._DURABLE_DIRS
+    assert str(leaves[0].resolve()) in artifact_store._DURABLE_DIRS
+
+
 def test_barrier_fsyncs_each_directory_once(tmp_path):
     local = LocalArtifacts(tmp_path)
     arts = [local.put_bytes("raw", bytes([i]) * 3) for i in range(5)]

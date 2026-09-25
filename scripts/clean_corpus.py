@@ -888,7 +888,10 @@ def build_versioned(session, access, args) -> None:
         while True:   # one manifest page at a time, in key order
             page = session.view.scan(store.Table.MANIFEST, cursor=cursor, limit=store.MAX_PAGE)
             for r in page.rows:
-                if registry.restriction_for(r, restrictions) is not None:
+                # the full training predicate (license: pointer-only; eligibility.json), as the
+                # legacy partition_training_rows applies it; an ineligible row keeps its
+                # raw/text provenance and loses any corpus claim
+                if not registry.is_training_eligible(r, restrictions):
                     job.stats["restricted"] += 1
                     if any(f in r for f in registry.CORPUS_FIELDS):
                         job.clear(r["id"])
@@ -950,9 +953,10 @@ def check_versioned(view, access) -> None:
     checked = stale = 0
     import host_policy
     for r in corpus_stats.iter_manifest(view):
-        if registry.restriction_for(r, restrictions) is not None:
+        if not registry.is_training_eligible(r, restrictions):
             if any(f in r for f in registry.CORPUS_FIELDS) and len(problems) < 20:
-                problems.append(f"policy-restricted row has corpus metadata: {r['id']}")
+                problems.append(f"training-ineligible row (license or policy) has corpus "
+                                f"metadata: {r['id']}")
             continue
         if r.get("status") != "ok" or not r.get("text_path"):
             continue
