@@ -29,6 +29,10 @@ ALLOWLIST: dict[str, set[str] | str] = {
     # Git-shadow tooling: imports a commit and replays first-parent commits from git objects of
     # the tracked paths into PostgreSQL, and verifies both exports (ADR 0001 stage 2).
     "pg_shadow.py": "*",
+    # The PostgreSQL -> FileStore rollback exporter (ADR 0001 stage 4 step 5): writes the legacy
+    # tracked layout of one promoted generation into a fresh tree for step 6's rollback, then
+    # verifies it through the store's canonical export.
+    "rollback_export.py": "*",
     # The FileStore's rebuildable SQLite membership index, built from the tracked files it
     # accelerates (store.ReadView._known_indexed is its caller); removed with the file store.
     "corpus_index.py": "*",

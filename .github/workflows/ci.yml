@@ -20,5 +20,10 @@ jobs:
         run: python scripts/lint_registry.py
       - name: architecture contracts
         run: python scripts/check_contracts.py
+      - name: lint + contracts on the CI fixture (runnable once tracked data leaves git)
+        run: |
+          python tests/ci_fixture.py "$RUNNER_TEMP/ci-dataset"
+          python scripts/lint_registry.py --root "$RUNNER_TEMP/ci-dataset"
+          python scripts/check_contracts.py --root "$RUNNER_TEMP/ci-dataset"
       - name: golden tests (quality gate + registry I/O)
         run: pytest tests/ -q

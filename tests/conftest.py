@@ -6,6 +6,11 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 
+def pytest_configure(config):
+    config.addinivalue_line("markers", "recoverability: the test exercises the recoverability "
+                                       "growth block itself (no waiver)")
+
+
 @pytest.fixture(autouse=True)
 def _no_live_store_dedup(monkeypatch):
     """A finder under test must never ask the live repository's store (it would take the round
@@ -52,8 +57,36 @@ def _no_inherited_round_access(monkeypatch):
     """Tests build their own stores; a round lock inherited from whatever launched pytest (a
     round's gate, the maintainer, a backup) is never theirs."""
     for name in ("NEKAISE_STORE_LOCK_INHERITED", "NEKAISE_STORE_BROKER", "NEKAISE_STORE_CAP",
-                 "NEKAISE_STORE_ROUND", "NEKAISE_STORE_STAGE"):
+                 "NEKAISE_STORE_ROUND", "NEKAISE_STORE_STAGE", "NEKAISE_GATE_REPORT"):
         monkeypatch.delenv(name, raising=False)
+
+
+@pytest.fixture(autouse=True)
+def _no_live_backups(monkeypatch, tmp_path):
+    """No test reaches the live cluster's socket, base backups, WAL archive or drill log through
+    pg_backup's defaults (a test that wants a cluster passes its own socket and directories)."""
+    import pg_backup
+    monkeypatch.setattr(pg_backup, "SOCKET", str(tmp_path / "no-live-socket"))
+    monkeypatch.setattr(pg_backup, "BASES", tmp_path / "no-live-bases")
+    monkeypatch.setattr(pg_backup, "WAL", tmp_path / "no-live-wal")
+    monkeypatch.setattr(pg_backup, "DRILL_LOG", tmp_path / "no-live-drills.jsonl")
+    monkeypatch.setattr(pg_backup, "SCRATCH", tmp_path / "no-live-scratch")
+    import ops_health
+    monkeypatch.setattr(ops_health, "STATE", tmp_path / "no-live-ops-health.json")
+    monkeypatch.setattr(ops_health, "ALERTS", tmp_path / "no-live-alerts.jsonl")
+    monkeypatch.setattr(ops_health, "PAYLOAD_STATUS", tmp_path / "no-live-backup-status.json")
+    monkeypatch.setattr(ops_health, "SWEEP_STATE", tmp_path / "no-live-sweep.json")
+
+
+@pytest.fixture(autouse=True)
+def _waive_recoverability(monkeypatch, request):
+    """The test cluster archives no WAL, so the recoverability growth block (ops_health) would
+    refuse every in-process staged round and block every maintainer pass; tests not about it
+    waive it. Opt out with @pytest.mark.recoverability."""
+    if request.node.get_closest_marker("recoverability"):
+        return
+    import ops_health
+    monkeypatch.setattr(ops_health, "recoverability_block", lambda *a, **kw: None)
 
 
 @pytest.fixture(autouse=True)

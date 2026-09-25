@@ -204,7 +204,16 @@ class World:
         return {**base, "PYTHONPATH": str(SITE), "NEKAISE_TEST_AUTHORITY_RECORD": str(self.record),
                 "NEKAISE_STORE": "postgres", "NEKAISE_PG_DSN": DSN,
                 "NEKAISE_PG_SCHEMA": self.schema, "NEKAISE_DISABLE_INDEX": "1",
-                "NEKAISE_TEST_PATCHES": json.dumps(self.patches), "PYTHONUNBUFFERED": "1"}
+                "NEKAISE_TEST_PATCHES": json.dumps(self.patches), "PYTHONUNBUFFERED": "1",
+                # the test cluster archives no WAL: waive the recoverability growth block
+                # (tests/authority_site; test_rehearsal checks the block itself)
+                "NEKAISE_TEST_WAIVE_RECOVERABILITY": "1",
+                # and no child reaches the live cluster's backups, archive or drill log
+                "NEKAISE_PG_BACKUP_DIR": str(self.tmp / "no-live-bases"),
+                "NEKAISE_PG_WAL_DIR": str(self.tmp / "no-live-wal"),
+                "NEKAISE_PG_SOCKET": str(self.tmp / "no-live-socket"),
+                "NEKAISE_PG_DRILL_LOG": str(self.tmp / "no-live-drills.jsonl"),
+                "NEKAISE_PG_SCRATCH": str(self.tmp / "no-live-scratch")}
 
     def finder(self, entries: list[dict], **kw) -> None:
         (self.root / "workspace" / "fake-finder.json").write_text(

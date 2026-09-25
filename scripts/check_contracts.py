@@ -239,56 +239,40 @@ def readme_stats_errors(readme: str, stats, collection=None) -> list[str]:
     return errors
 
 
-def main() -> int:
-    errors: list[str] = []
-    st = store.open(root=ROOT)
-    with st.read(timeout=60) as view:
-        # eligibility and host policy pinned with the data they are checked against; invalid or
-        # missing policy is a contract failure (fail closed)
-        try:
-            restrictions, policy = store.pinned_policy(view)
-        except store.StoreError as exc:
-            print(f"CONTRACT: {exc}")
-            return 1
-        stats = corpus_stats.compute(view, restrictions)
-        collection = corpus_stats.compute_collection(view, restrictions)
-        restricted_metadata = corpus_stats.misplaced_view_claims(view, restrictions)
-        unavailable = corpus_stats.local_unavailable(view, ROOT, restrictions, policy)
-        config = view.config_get()
-        backends = {k: v for k, v in config.backends.items() if not k.startswith("_")}
-        programme_docs = {name: config.documents.get(name) for name in PROGRAMME_CONFIGS}
-        rotation_state = view.rotation_get()
-        runtime, runtime_errors = runtime_backend_state(view)
-    import staged_runs
-    if not staged_runs.staged_authority(st):
-        # README statistics are a per-round git artifact of the file-authoritative loop; under
-        # PostgreSQL authority rounds promote generations and write no README (ADR 0001 stage 4)
-        readme = (ROOT / "README.md").read_text()
-        errors.extend(readme_stats_errors(readme, stats, collection))
-    if unavailable:
-        print(f"local availability: {unavailable:,} eligible rows on a fetch-suspended host "
-              "have no local payload here (README counts are manifest-based)")
-
-    errors.extend(runtime_errors)
-    errors.extend(run_round.validate_backends(backends, rotation_state, runtime))
-    # Policy lives in configuration: an eligibility-restricted backend must be DISABLED IN CONFIG
-    # with a policy-blocked reason; runtime exhaustion never satisfies it.
-    errors.extend(eligibility_contract_errors(restricted_metadata, backends, restrictions))
-    # What may run is the effective enablement (configuration AND runtime state).
-    effective = effective_backends(backends, runtime)
-    errors.extend(patent_country_contract_errors(effective))
-    try:  # vendor-literature config is control plane: schema errors must fail the round, not a fetch
-        import find_vendor
-        find_vendor.load_vendors()
+def vendor_contract_errors(config) -> list[str]:
+    """registry/vendors.json as PINNED with the data (the view's configuration), validated like
+    find_vendor loads it: schema errors fail the gate, not a later fetch."""
+    import find_vendor
+    doc = config.documents.get("vendors.json")
+    if doc is None:
+        return ["registry/vendors.json: missing from the pinned configuration"]
+    try:
+        return [f"registry/vendors.json: {e}" for e in find_vendor.validate_vendors(doc)]
     except Exception as exc:
-        errors.append(f"registry/vendors.json: {exc}")
-    errors.extend(programme_config_errors(programme_docs, backends))
-    errors.extend(host_policy_contract_errors(effective, policy))
-    configured_scripts = {cfg["script"] for cfg in backends.values()}
-    actual_finders = {p.name for p in (ROOT / "scripts").glob("find_*.py")}
-    for script in sorted(actual_finders - configured_scripts):
-        errors.append(f"{script}: finder is missing from registry/backends.json")
+        return [f"registry/vendors.json: {exc}"]
 
+
+def staged_gate_contract_errors() -> list[str]:
+    """Under PostgreSQL authority the round's gates are the staged set: the versioned claim
+    check, lint, contracts, the test suite and the artifact gate — never the file store's SQLite
+    index gate or README stats step."""
+    import staged_runs
+    errors = []
+    gates = run_round.staged_gates()
+    if gates != ["artifacts", "check", "contracts", "lint", "tests"]:
+        errors.append(f"staged gates {gates!r}, expected artifacts/check/contracts/lint/tests")
+    if any(step == "index" for step, _, _ in run_round.STAGED_VERIFY):
+        errors.append("a staged round must not run the SQLite index gate")
+    if sorted(staged_runs.STANDALONE_GATES) != gates:
+        errors.append(f"standalone gates {sorted(staged_runs.STANDALONE_GATES)!r} differ from a "
+                      f"round's {gates!r}")
+    return errors
+
+
+def file_layout_contract_errors(root: Path) -> list[str]:
+    """The file store's production contracts: the serial pipeline and gate shape, publishable
+    control files, the decision-ledger shards."""
+    errors = []
     steps = [step for step, _, _ in run_round.PIPELINE]
     if steps != ["fetch", "prune", "clean", "stats"]:
         errors.append(f"serial pipeline {steps!r}, expected ['fetch', 'prune', 'clean', 'stats']")
@@ -298,25 +282,114 @@ def main() -> int:
             f"verify gates {gates!r}, expected check/index/lint/contracts, disjoint from the "
             "serial pipeline"
         )
-
-    for path, size in oversized_control_files():
+    for path, size in oversized_control_files(root):
         errors.append(
-            f"{path.relative_to(ROOT)} is {size / 1024 / 1024:.1f} MiB; "
+            f"{path.relative_to(root)} is {size / 1024 / 1024:.1f} MiB; "
             f"split before {MAX_CONTROL_FILE_BYTES / 1024 / 1024:.0f} MiB"
         )
+    errors.extend(prune_ledger_contract_errors(root))
+    return errors
 
-    errors.extend(prune_ledger_contract_errors())
-    errors.extend(payload_tracking_errors())
+
+def main(argv=()) -> int:
+    import argparse
+
+    import staged_runs
+    import verify_generation
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--root", default=None,
+                    help="the data root to check (default: this checkout; CI checks a fixture)")
+    ap.add_argument("--full", action="store_true",
+                    help="PostgreSQL authority: full eligibility check and counter recount even "
+                         "when the run left the policy unchanged")
+    args = ap.parse_args(list(argv))
+    root = Path(args.root).resolve() if args.root else ROOT
+    errors: list[str] = []
+    st = store.open(root=root)
+    staged = staged_runs.staged_authority(st)
+    report = None
+    stats = unavailable = collection = None
+    with st.read(timeout=60) as view:
+        # eligibility and host policy pinned with the data they are checked against; invalid or
+        # missing policy is a contract failure (fail closed)
+        try:
+            restrictions, policy = store.pinned_policy(view)
+        except store.StoreError as exc:
+            print(f"CONTRACT: {exc}")
+            return 1
+        config = view.config_get()
+        backends = {k: v for k, v in config.backends.items() if not k.startswith("_")}
+        programme_docs = {name: config.documents.get(name) for name in PROGRAMME_CONFIGS}
+        rotation_state = view.rotation_get()
+        runtime, runtime_errors = runtime_backend_state(view)
+        if staged and getattr(view, "stage", None) is not None:
+            # a gate over a frozen run: the run's changes and the generation-bound counters
+            rep = verify_generation.run_checks(view, restrictions, root=root, full=args.full)
+            errors.extend(rep.errors)
+            report = rep.as_report()
+            restricted_metadata = (0, None)   # run_checks checked eligibility (full when due)
+            documents = rep.counters["documents"]
+        elif staged:
+            # a committed view (an operator's invocation): the current generation's recorded
+            # counters; recounts and row checks of the whole generation are integrity_sweep.py's
+            counters = verify_generation.recorded_counters(view, view.generation)
+            if view.generation is not None and counters is None:
+                print(f"note: generation {view.generation} has no recorded counters; "
+                      "integrity_sweep.py metadata recounts them")
+            restricted_metadata = corpus_stats.misplaced_view_claims(view, restrictions)
+            documents = (counters or {}).get("documents", 0)
+        else:
+            stats = corpus_stats.compute(view, restrictions)
+            collection = corpus_stats.compute_collection(view, restrictions)
+            restricted_metadata = corpus_stats.misplaced_view_claims(view, restrictions)
+            unavailable = corpus_stats.local_unavailable(view, root, restrictions, policy)
+            documents = stats.documents
+    if staged:
+        # README statistics, shard layout, ledger shard files and the SQLite index belong to the
+        # file store; under PostgreSQL authority rounds promote generations (ADR 0001 stage 4)
+        errors.extend(staged_gate_contract_errors())
+    else:
+        readme = (root / "README.md").read_text()
+        errors.extend(readme_stats_errors(readme, stats, collection))
+        if unavailable:
+            print(f"local availability: {unavailable:,} eligible rows on a fetch-suspended host "
+                  "have no local payload here (README counts are manifest-based)")
+        errors.extend(file_layout_contract_errors(root))
+        errors.extend(payload_tracking_errors(root))
+
+    errors.extend(runtime_errors)
+    errors.extend(run_round.validate_backends(backends, rotation_state, runtime))
+    # Policy lives in configuration: an eligibility-restricted backend must be DISABLED IN CONFIG
+    # with a policy-blocked reason; runtime exhaustion never satisfies it.
+    errors.extend(eligibility_contract_errors(restricted_metadata, backends, restrictions))
+    # What may run is the effective enablement (configuration AND runtime state).
+    effective = effective_backends(backends, runtime)
+    errors.extend(patent_country_contract_errors(effective))
+    # vendor-literature config is control plane: schema errors must fail the round, not a fetch
+    errors.extend(vendor_contract_errors(config))
+    errors.extend(programme_config_errors(programme_docs, backends))
+    errors.extend(host_policy_contract_errors(effective, policy))
+    configured_scripts = {cfg["script"] for cfg in backends.values()}
+    actual_finders = {p.name for p in (ROOT / "scripts").glob("find_*.py")}
+    for script in sorted(actual_finders - configured_scripts):
+        errors.append(f"{script}: finder is missing from registry/backends.json")
 
     if errors:
         for error in errors:
             print(f"CONTRACT: {error}")
         print(f"FAIL — {len(errors)} architecture contract violation(s)")
         return 1
-    print(f"OK — control-plane contracts hold for {stats.documents:,} documents / "
-          f"{len(backends)} backends")
+    extra = ""
+    if report is not None:
+        # handed to the coordinator, which records it in the gate receipt (bound to the frozen
+        # state): generation G's counters are its run's passed contracts receipt
+        verify_generation.write_report(report)
+        extra = (f"; counters ({report['counter_mode']}) bound to the frozen state, changed "
+                 f"{report['changed']}")
+    print(f"OK — control-plane contracts hold for {documents:,} documents / "
+          f"{len(backends)} backends{extra}")
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(sys.argv[1:]))

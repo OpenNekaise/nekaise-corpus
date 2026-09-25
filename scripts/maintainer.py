@@ -901,6 +901,15 @@ def staged_block_reasons() -> list[str]:
     except Exception as exc:
         reasons.append(f"cannot read durable run or review state: {type(exc).__name__}: {exc}"
                        [:300])
+    # metadata recoverability beyond the RPO budget blocks growth (ADR 0001 stage 4 step 5);
+    # an unreadable archiver is a reason, never healthy — and a failure here is a reason too,
+    # so the growth block is always rewritten
+    try:
+        import ops_health
+        if why := ops_health.store_recoverability_block(st):
+            reasons.append(why)
+    except Exception as exc:
+        reasons.append(f"recoverability unknown: {type(exc).__name__}: {exc}"[:300])
     return reasons
 
 
@@ -987,6 +996,22 @@ def block_reasons() -> list[str]:
     if is_staged():
         reasons.extend(staged_block_reasons())
     return reasons
+
+
+def ops_health_summary() -> dict:
+    """The newest ops_health.py evaluation (ADR 0001 stage 4 step 5: recoverability, backups
+    and drills, capacity, the staged lifecycle, sweeps) as triage evidence: every check that is
+    not ok, and the evaluation's age. Read-only; an unreadable or missing state is reported."""
+    import ops_health
+    try:
+        doc = json.loads(ops_health.STATE.read_text())
+    except FileNotFoundError:
+        return {"error": "no evaluation recorded (is the ops_health cron installed?)"}
+    except (OSError, ValueError) as exc:
+        return {"error": f"{type(exc).__name__}: {exc}"[:300]}
+    return {"at": doc.get("at"), "worst": doc.get("worst"),
+            "not_ok": [{k: c.get(k) for k in ("check", "severity", "summary")}
+                       for c in doc.get("checks", []) if c.get("severity") != "ok"]}
 
 
 def update_growth_block() -> list[str]:
@@ -1077,6 +1102,7 @@ def run_maintenance() -> int:
         if is_staged():   # publication review is a generation-range review under PostgreSQL
             snapshot["generation_review"] = review_evidence(run_dir,
                                                             snapshot["triage_generation"])
+        snapshot["ops_health"] = ops_health_summary()
         reasons = update_growth_block()
     (run_dir / "repo-snapshot.json").write_text(json.dumps(snapshot, indent=2) + "\n")
 

@@ -217,29 +217,50 @@ def run_gates(rnd, root: Path, gates: Sequence[str], *, env: Mapping[str, str] |
     commands = [(g, gate_command(g, root)) for g in gates if g != "artifacts"]
     results: dict[str, dict] = {}
 
+    import shutil
+    import tempfile
+
     import store_staging
+    import verify_generation
+    # each gate may hand a report back (the contracts gate's generation-bound counters), which
+    # its receipt records; a reporting gate that passes without one is recorded as failed
+    report_dir = Path(tempfile.mkdtemp(prefix="gate-reports-"))
+    # the test suite gets no report path (its own tests run gates of their own)
+    reports = {g: report_dir / f"{g}.json" for g, _ in commands if g != "tests"}
+    expect = {"run": rnd.run.run_id, "seq": rnd.frozen.seq if rnd.frozen else None}
 
     def execute(gate: str, cmd: list[str]):
         started = time.monotonic()
         # the test suite builds its own stores: it gets no read pin (like run_round's)
         env = ({k: v for k, v in base.items() if k != store_staging.STAGE_ENV}
                if gate == "tests" else {**base, **rnd.gate_env()})
+        env.pop(verify_generation.REPORT_ENV, None)   # never an outer gate's report path
+        if gate in reports:
+            env[verify_generation.REPORT_ENV] = str(reports[gate])
         got = subprocess.run(cmd, cwd=root, env=env, capture_output=True, text=True)
         return gate, got, round(time.monotonic() - started, 3)
 
-    with ThreadPoolExecutor(max_workers=max(1, len(commands))) as pool:
-        done = [f.result() for f in [pool.submit(execute, g, c) for g, c in commands]]
-    for gate, got, elapsed in done:
-        passed = got.returncode == 0
-        rnd.record_gate(gate, passed=passed, detail={"exit": got.returncode,
-                                                     "seconds": elapsed})
-        results[gate] = {"passed": passed, "exit": got.returncode, "seconds": elapsed}
-        if not passed:
-            log(f"gate {gate} failed (exit {got.returncode}): "
-                f"{shlex.join(gate_command(gate, root))}")
-            for text in (got.stdout, got.stderr):
-                if text.strip():
-                    log(text.rstrip()[-4000:])
+    try:
+        with ThreadPoolExecutor(max_workers=max(1, len(commands))) as pool:
+            done = [f.result() for f in [pool.submit(execute, g, c) for g, c in commands]]
+        for gate, got, elapsed in done:
+            passed, report, why = verify_generation.read_gate_report(
+                gate, reports.get(gate), got.returncode == 0, expect=expect)
+            detail = {"exit": got.returncode, "seconds": elapsed}
+            if report is not None:
+                detail["report"] = report
+            if why:
+                detail["refused"] = why
+            rnd.record_gate(gate, passed=passed, detail=detail)
+            results[gate] = {"passed": passed, "exit": got.returncode, "seconds": elapsed}
+            if not passed:
+                log(f"gate {gate} failed (exit {got.returncode}{'; ' + why if why else ''}): "
+                    f"{shlex.join(gate_command(gate, root))}")
+                for text in (got.stdout, got.stderr):
+                    if text.strip():
+                        log(text.rstrip()[-4000:])
+    finally:
+        shutil.rmtree(report_dir, ignore_errors=True)
     if "artifacts" in gates:
         verified = rnd.verify_artifacts()
         results["artifacts"] = {"passed": not verified["failed"],

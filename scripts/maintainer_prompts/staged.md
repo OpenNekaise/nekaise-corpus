@@ -44,3 +44,13 @@ the range and digest shown in this pass. Never record a verdict for evidence you
 inspect, and never use `ok` to paper over a finding. If you commit code or configuration in a
 window, its store mutations are not promoted (they ran under other code): make data repairs in a
 pass without code changes.
+
+Operational health (ADR 0001 stage 4 step 5): the snapshot's `ops_health` lists every check of
+the newest `scripts/ops_health.py` evaluation that is not ok — WAL archive lag against the
+15-minute RPO, base-backup and restore-drill age and verdict, backup-disk capacity against the
+200 GB metadata budget, payload-backup freshness (reported apart from the metadata RPO), stalled
+runs, promotion latency, materialization lag, review backlog, and the integrity sweeps
+(`workspace/integrity-sweep.json`: a metadata or artifact failure is integrity evidence — record
+an `integrity` verdict naming it). While recoverability exceeds the RPO budget, growth rounds are
+refused by the round itself; repairs still promote. `scripts/artifact_gc.py` is a dry-run report:
+never delete artifact versions by hand.

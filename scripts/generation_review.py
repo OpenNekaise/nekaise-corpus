@@ -202,6 +202,26 @@ def _backup_health(conn, bases: Path | None) -> dict:
                                                         / 3600, 2) if newest else None}
     except OSError as exc:
         out["base_backup"] = {"location": str(bases), "error": f"{type(exc).__name__}: {exc}"}
+    # stage 4 step 5: the recoverability bound, the newest restore drill (named recovery point,
+    # measured RTO) and — reported apart from the metadata RPO — the payload backups
+    import ops_health
+    import pg_backup
+    try:
+        with conn.transaction():
+            arch = pg_backup.archiver_state(conn)
+        exposure, why = pg_backup.exposure(arch)
+        out["recoverability"] = {"exposure_s": exposure, "rpo_s": pg_backup.RPO_SECONDS,
+                                 "error": why}
+    except Exception as exc:
+        out["recoverability"] = {"error": f"{type(exc).__name__}: {exc}"[:300]}
+    try:
+        drill = pg_backup.last_drill()
+        out["last_drill"] = None if drill is None else {
+            k: drill.get(k) for k in ("at", "ok", "base", "target", "rto_s", "error")}
+    except (OSError, ValueError) as exc:
+        out["last_drill"] = {"error": f"{type(exc).__name__}: {exc}"[:300]}
+    payload = ops_health.payload_check(time.time())
+    out["payload_backup"] = {"severity": payload["severity"], "summary": payload["summary"]}
     return out
 
 

@@ -36,6 +36,15 @@ if _CRASH:
     _PATCHES.setdefault(_module, {})[_hook] = _die
 
 
+# The test cluster does not archive WAL (it is throwaway), so the recoverability growth block
+# (scripts/ops_health.py) would refuse every staged round; tests that are not ABOUT that block
+# waive it here, and tests/test_rehearsal.py checks the block itself with the waiver removed.
+if os.environ.get("NEKAISE_TEST_WAIVE_RECOVERABILITY") == "1":
+    def _recoverable(*_args, **_kwargs):
+        return None
+    _PATCHES.setdefault("ops_health", {})["recoverability_block"] = _recoverable
+
+
 class _PatchOnImport(importlib.abc.MetaPathFinder):
     def find_spec(self, name, path=None, target=None):
         if name not in _PATCHES:

@@ -284,6 +284,18 @@ persisted in PostgreSQL with a contiguous reviewed watermark; a finding withhold
 publication, an integrity finding also blocks growth rounds, and a repair is a compensating
 generation that a later verdict resolves.
 
+Verification and recoverability (ADR 0001 stage 4 step 5). Under PostgreSQL authority the
+`contracts` and `lint` gates check what the run changed (revision digests and derived keys,
+ledger, eligibility, artifact claims) and the contracts gate records the generation's counters in
+its receipt; `scripts/integrity_sweep.py` re-checks whole generations and re-hashes artifact
+versions in resumable background slices; `scripts/artifact_gc.py` reports collectable versions
+(dry run only). `scripts/pg_backup.py` keeps 35 days of base + WAL coverage and its weekly drill
+restores a named recovery point and compares fingerprints (the RTO); `scripts/ops_health.py`
+alerts (`workspace/ops-health.json`, `logs/alerts.jsonl`) and a staged round refuses to grow
+while committed metadata could be more than 15 minutes from the WAL archive.
+`scripts/rollback_export.py` materializes a promoted generation back into the legacy file layout
+for the stage-4 rollback.
+
 ## Hard rules
 
 - **Never commit `raw/`, `text/`, `corpus/` or `collection/`** — copyrighted content under mixed licenses. Only the

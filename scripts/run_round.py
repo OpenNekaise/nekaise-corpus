@@ -30,6 +30,7 @@ import argparse
 import json
 import os
 import shlex
+import shutil
 import signal
 import subprocess
 import sys
@@ -157,7 +158,8 @@ def run_command(step: str, cmd: list[str], env: dict, run_id: str) -> None:
 
 
 def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: str,
-                        envs: dict[str, dict] | None = None, record=None) -> None:
+                        envs: dict[str, dict] | None = None, record=None,
+                        report_expect: dict | None = None) -> None:
     """Run the read-only gates concurrently over the settled round state.
 
     Same fail-closed contract as run_command, minus the serial wall time: every gate is awaited even
@@ -172,11 +174,25 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
     shown = {step: shlex.join(cmd) for step, cmd in gates}
     print("\n== verify (concurrent): " + " | ".join(step for step, _ in gates), flush=True)
 
+    # a staged round's gates hand a report back (verify_generation.REPORT_ENV: the contracts
+    # gate's generation-bound counters), recorded in its receipt; the file round passes none
+    reports = report_dir = None
+    if record is not None:
+        report_dir = Path(tempfile.mkdtemp(prefix="gate-reports-"))
+        # the test suite gets no report path (its own tests run gates of their own)
+        reports = {step: report_dir / f"{step}.json" for step, _ in gates if step != "tests"}
+
     def execute(step: str, cmd: list[str]) -> tuple[str, subprocess.CompletedProcess, float]:
         ops.run_event(run_id, "step_started", step=step, command=shown[step])
         started = time.monotonic()
-        result = subprocess.run(cmd, cwd=ROOT, env=(envs or {}).get(step, env),
-                                capture_output=True, text=True)
+        gate_env = (envs or {}).get(step, env)
+        if reports is not None:
+            import verify_generation
+            # never an outer gate's report path; only the gates this round asks for a report
+            gate_env = {k: v for k, v in gate_env.items() if k != verify_generation.REPORT_ENV}
+            if step in reports:
+                gate_env[verify_generation.REPORT_ENV] = str(reports[step])
+        result = subprocess.run(cmd, cwd=ROOT, env=gate_env, capture_output=True, text=True)
         elapsed = round(time.monotonic() - started, 3)
         if result.returncode:
             ops.run_event(
@@ -187,22 +203,37 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
             ops.run_event(run_id, "step_completed", step=step, elapsed_seconds=elapsed)
         return step, result, elapsed
 
-    with ThreadPoolExecutor(max_workers=len(gates)) as pool:
-        futures = [pool.submit(execute, step, cmd) for step, cmd in gates]
-        results = [future.result() for future in futures]  # declared order; waits for every gate
-
     failed = []
-    for step, result, elapsed in results:
-        if record is not None:
-            record(step, result.returncode == 0, {"exit": result.returncode, "seconds": elapsed})
-        print(f"\n== {step}: {shown[step]}  [{elapsed:.0f}s, exit {result.returncode}]", flush=True)
-        if result.stdout:
-            print(result.stdout, end="" if result.stdout.endswith("\n") else "\n", flush=True)
-        if result.stderr:
-            print(result.stderr, end="" if result.stderr.endswith("\n") else "\n",
-                  file=sys.stderr, flush=True)
-        if result.returncode:
-            failed.append(f"{step} (exit {result.returncode})")
+    try:
+        with ThreadPoolExecutor(max_workers=len(gates)) as pool:
+            futures = [pool.submit(execute, step, cmd) for step, cmd in gates]
+            results = [future.result() for future in futures]  # declared order; awaits every gate
+        for step, result, elapsed in results:
+            passed = result.returncode == 0
+            if record is not None:
+                import verify_generation
+                passed, report, why = verify_generation.read_gate_report(
+                    step, reports.get(step), passed, expect=report_expect)
+                detail = {"exit": result.returncode, "seconds": elapsed}
+                if report is not None:
+                    detail["report"] = report
+                if why:   # a pass without its report is recorded as a failure (fail closed)
+                    detail["refused"] = why
+                record(step, passed, detail)
+            print(f"\n== {step}: {shown[step]}  [{elapsed:.0f}s, exit {result.returncode}]",
+                  flush=True)
+            if result.stdout:
+                print(result.stdout, end="" if result.stdout.endswith("\n") else "\n", flush=True)
+            if result.stderr:
+                print(result.stderr, end="" if result.stderr.endswith("\n") else "\n",
+                      file=sys.stderr, flush=True)
+            if record is not None and why:
+                print(f"ERROR: {why}", file=sys.stderr, flush=True)
+            if not passed:
+                failed.append(f"{step} (exit {result.returncode})")
+    finally:
+        if report_dir is not None:
+            shutil.rmtree(report_dir, ignore_errors=True)
     if failed:
         raise RuntimeError("verification failed: " + ", ".join(failed))
 
@@ -915,6 +946,7 @@ def _complete_previous(st, writer, run_id: str) -> None:
     materialization, fold, purge — is caught up (a promotion whose completion was interrupted
     converges here)."""
     import generation_review
+    import ops_health
     staged_runs.refuse_unfinished(st, writer)
     if why := generation_review.growth_block(st, writer):
         raise RuntimeError(why)
@@ -922,6 +954,11 @@ def _complete_previous(st, writer, run_id: str) -> None:
     ops.run_event(run_id, "generation_completed", **{
         "materialized": done["materialized"].get("mode"),
         "housekeeping": done["housekeeping"]})
+    # the metadata must be recoverable within the RPO budget before more of it is produced
+    # (ADR 0001 stage 4 step 5); the completion above still converges during an archive
+    # outage, and repairs — standalone and maintenance runs — are not refused
+    if why := ops_health.store_recoverability_block(st):
+        raise RuntimeError(f"growth blocked: {why}")
 
 
 def _staged_round(args, st, writer, run_id: str, env: dict, lifecycle=None) -> int:
@@ -997,6 +1034,7 @@ def _gate_and_promote(args, rnd, run_id: str, env: dict, done: dict | None = Non
     plain = {k: v for k, v in env.items() if k != store_staging.STAGE_ENV}
     try:
         run_verify_parallel(gates, gate_env, run_id, envs={"tests": plain},
+                            report_expect={"run": run_id, "seq": frozen.seq},
                             record=lambda step, passed, detail: rnd.record_gate(
                                 step, passed=passed, detail=detail))
     finally:
@@ -1089,6 +1127,11 @@ def _resume_staged(args, st, writer, run_id: str, env: dict, lifecycle=None) -> 
         ops.run_event(run_id, "round_processes_stopped", pids=stopped)
     artifact_store.LocalArtifacts(ROOT).sweep_incoming()
     ident = staged_runs.identity(st, ROOT)
+    import ops_health
+    if why := ops_health.store_recoverability_block(st):
+        # transient: the run stays as it is and can be resumed once the archive is healthy
+        raise RuntimeError(f"run {run_id} cannot be resumed now — growth blocked: {why}. Nothing "
+                           "was changed; retry --resume once recoverability is restored")
     if why := resume_refusal(st, writer, run, ident, staged_gates()):
         raise RuntimeError(f"run {run_id} cannot be resumed: {why}. Abort it "
                            f"(run_round.py --recover {run_id}) and start a new round")
