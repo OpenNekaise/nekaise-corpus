@@ -1517,7 +1517,7 @@ def _run(view, session, args, only: set[str], selection: dict) -> None:
     # local re-extraction (no network, no review needed); it is never "unavailable"
     repair = sorted(r["id"] for r in manifest.values()
                     if is_programme_row(r["id"]) and r.get("status") == "ok"
-                    and registry.is_training_eligible(r, restrictions)
+                    and registry.is_collection_eligible(r, restrictions)
                     and _have(r, "raw") and not _have(r, "text"))
     if repair and not args.force:
         touched: list[dict] = []

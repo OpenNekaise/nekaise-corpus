@@ -497,8 +497,10 @@ def src(**kw):
 
 def test_regdocs_config_rules():
     assert find_regdocs.validate({"sources": {"ok": src()}}) == []
-    errs = find_regdocs.validate({"sources": {"bad": src(license="proprietary")}})
-    assert any("awaits the collect-all" in e for e in errs)
+    # the collect-all licence classes have landed: a restricted-use tag is appendable
+    assert find_regdocs.validate({"sources": {"p": src(license="proprietary")}}) == []
+    errs = find_regdocs.validate({"sources": {"bad": src(license="made-up")}})
+    assert any("unknown licence tag" in e for e in errs)
     assert find_regdocs.validate({"sources": {"bad": src(license="proprietary", enabled=False,
                                                          reason="awaiting")}}) == []
     errs = find_regdocs.validate({"sources": {"b": src(blocked=True)}})
@@ -523,7 +525,8 @@ def test_committed_programme_configs_are_valid_and_enabled_sources_appendable():
     assert find_eurlex.validate(d["eurlex.json"]) == []
     assert find_esef.validate(d["esef.json"]) == []
     backends = json.loads((REPO / "registry" / "backends.json").read_text())
-    assert d["esef.json"]["license"] not in compliance_common.CURRENT_LICENSES
+    # its licence class exists now; enabling the backend stays an operator decision
+    assert d["esef.json"]["license"] in compliance_common.CURRENT_LICENSES
     assert backends["find_esef"]["enabled"] is False
     rotation = json.loads((REPO / "registry" / "rotation.json").read_text())
     for name in ("find_boverket_bfs", "find_regdocs", "find_eurlex", "find_esef"):
@@ -624,7 +627,7 @@ def test_sitemap_pages_scope_and_titles():
     assert out[0]["topic"] == "architecture" and out[0]["license"] == "unverified"
     assert compliance_common.quality_profile(out[0], docs()) is None
     ok, held = compliance_common.split_appendable(out)
-    assert ok == [] and len(held) == 2  # never appended before the collect-all split
+    assert len(ok) == 2 and held == []  # collect-all: classified "unverified", appended
 
 
 INDEX = b"""<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -909,7 +912,7 @@ def test_esef_annual_entries_languages_packages_and_relative_urls():
     assert all(e["url"].startswith("https://filings.xbrl.org/L/") for e in out)
     assert "published_at" not in out[0]
     ok, held = compliance_common.split_appendable(out)
-    assert ok == [] and len(held) == 3
+    assert len(ok) == 3 and held == []  # collect-all: appended under their licence class
 
 
 def test_esef_language_members_of_one_package_stay_distinct():
@@ -1284,11 +1287,11 @@ def test_programme_config_contracts():
     backends = {"find_regdocs": {}, "find_eurlex": {}, "find_esef": {"enabled": False}}
     assert check_contracts.programme_config_errors(d, backends) == []
     errs = check_contracts.programme_config_errors(d, {**backends, "find_esef": {"enabled": True}})
-    assert any("awaits the collect-all" in e for e in errs)
+    assert not any("awaits the collect-all" in e for e in errs)   # the classes have landed
     errs = check_contracts.programme_config_errors({**d, "eurlex.json": None}, backends)
     assert any("missing" in e for e in errs)
     bad = json.loads(json.dumps(d["regdocs.json"]))
-    bad["sources"]["efrag-esrs"]["enabled"] = True
+    bad["sources"]["efrag-esrs"].update(enabled=True, license="made-up")   # unknown tag
     assert check_contracts.programme_config_errors({**d, "regdocs.json": bad}, backends)
 
 
@@ -1394,12 +1397,17 @@ RIKS_ROW = {"id": "reg-riksdagen-sfs-pbl", "title": "PBL",
             "topic": "standards_protocols", "format": "txt"}
 
 
-def test_loader_repairs_missing_text_from_held_raw_without_network(monkeypatch, tmp_path, capsys):
+@pytest.mark.parametrize("licence", ["public-domain", "proprietary", "cc-by-nd", "unverified"])
+def test_loader_repairs_missing_text_from_held_raw_without_network(monkeypatch, tmp_path, capsys,
+                                                                   licence):
+    """Collect-all: a held original of ANY licence class is repaired locally (a restricted
+    class is collected like any other; only its use view differs)."""
     import sys as _sys
-    held = {**RIKS_ROW, "status": "ok", "sha256": "0" * 64, "bytes": 30,
+    row = {**RIKS_ROW, "license": licence}
+    held = {**row, "status": "ok", "sha256": "0" * 64, "bytes": 30,
             "raw_path": "raw/riksdagen_sfs/reg-riksdagen-sfs-pbl.txt",
             "text_path": "text/reg-riksdagen-sfs-pbl.md", "text_chars": 30}
-    root = _programme_repo(monkeypatch, tmp_path, [RIKS_ROW], [held], docs()["regdocs.json"])
+    root = _programme_repo(monkeypatch, tmp_path, [row], [held], docs()["regdocs.json"])
     (root / "raw" / "riksdagen_sfs").mkdir(parents=True)
     (root / "raw" / "riksdagen_sfs" / "reg-riksdagen-sfs-pbl.txt").write_text(
         "Plan- och bygglag (2010:900)\n\nSFS nr: 2010:900\n" + "1 kap. " * 100)

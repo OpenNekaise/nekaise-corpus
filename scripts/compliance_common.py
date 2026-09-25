@@ -4,9 +4,9 @@
 
 * Licence registration (Codex decision 2026-09-25): every row carries license_url,
   license_evidence and rights_verified_at. Rows whose honest tag is outside the CURRENT registry
-  vocabulary (proprietary, unverified, cc-by-nd, publisher-oa, …: the collect-all licence classes
-  that are not yet on main) are NEVER appended — they are reported as held until the collect-all
-  split lands, and the source definitions that produce them stay disabled.
+  vocabulary (lint_registry.LICENSES = registry.KNOWN_LICENSES) are never appended. The
+  collect-all licence classes (proprietary, unverified, cc-by-nd, publisher-oa, …) are part of
+  that vocabulary now: such rows are appended and classified into their use view.
 * The host policy the discovery client enforces is the one pinned in a store view.
 """
 from __future__ import annotations
@@ -20,8 +20,7 @@ import store
 
 CURRENT_LICENSES = frozenset(lint_registry.LICENSES)
 RIGHTS_FIELDS = ("license_url", "license_evidence", "rights_verified_at")
-# Tags the collect-all branch introduces (state_codec.LICENSE_CLASSES there): accepted in
-# configuration now, appended only after the split lands.
+# The collect-all tags (state_codec.LICENSE_CLASSES): now a subset of CURRENT_LICENSES.
 FUTURE_LICENSES = frozenset({"cc-by-nc", "cc-by-nc-sa", "cc-by-nd", "cc-by-nc-nd",
                              "arxiv-nonexclusive", "publisher-oa", "unverified", "proprietary"})
 KNOWN_LICENSES = CURRENT_LICENSES | FUTURE_LICENSES
