@@ -1549,3 +1549,61 @@ def test_a_failed_restoration_keeps_the_held_row(monkeypatch, tmp_path, capsys):
     deferred = json.loads((tmp_path / "fetch-deferred.json").read_text()) \
         if (tmp_path / "fetch-deferred.json").exists() else None
     assert deferred is None or "reg-riksdagen-sfs-pbl" in deferred["ids"]
+
+
+# ------------------------------------------------------------------------------------ round 5
+def test_real_transport_head_probe_is_bounded(trickle_server, monkeypatch):
+    monkeypatch.setattr(compliance_common, "PROGRAMME_HOSTS",
+                        {**compliance_common.PROGRAMME_HOSTS, "127.0.0.1": (0.0, 6)})
+    monkeypatch.setattr(robots_policy, "decision", lambda _u, fetcher=None: (True, None))
+    monkeypatch.setattr(polite_http, "DEADLINE", 0.3)
+    polite_http.set_policy({})
+    t0 = time.monotonic()
+    with pytest.raises(polite_http.Deferred):
+        polite_http.head(f"{trickle_server}/headers", delay=0)
+    assert time.monotonic() - t0 < 1.5
+    # the BFS consolidation probe maps that deferral to "not established now" (hold)
+    assert find_boverket.head_exists(f"{trickle_server}/headers") is None
+
+
+def test_nested_guards_honour_the_earliest_deadline(trickle_server):
+    import requests as _requests
+    import stream_guard
+    t0 = time.monotonic()
+    with pytest.raises(stream_guard.DeadlineExceeded):
+        with stream_guard.Deadline(time.monotonic() + 0.3, "outer"):
+            with stream_guard.Deadline(time.monotonic() + 30, "inner") as inner:
+                resp = _requests.get(f"{trickle_server}/body", stream=True, timeout=(5, 5))
+                stream_guard.read_body(resp, max_bytes=10**6, guard=inner)
+    assert time.monotonic() - t0 < 1.5
+
+
+def test_a_forced_refresh_that_extracts_nothing_keeps_the_held_row(monkeypatch, tmp_path):
+    import sys as _sys
+    bfs = {"id": "bov-bfs-bfs2011-6", "title": "BFS 2011:6 — BBR",
+           "url": "https://rinfo.boverket.se/BFS2011-6/pdf/BFS2011-6.pdf",
+           "source": "boverket_bfs", "license": "public-domain",
+           "topic": "standards_protocols", "format": "pdf"}
+    old = b"%PDF-1.4 the held bytes"
+    held = {**bfs, "status": "ok", "sha256": build_corpus.sha256_bytes(old), "bytes": len(old),
+            "raw_path": "raw/boverket_bfs/bov-bfs-bfs2011-6.pdf",
+            "text_path": "text/bov-bfs-bfs2011-6.md", "text_chars": 10}
+    root = _programme_repo(monkeypatch, tmp_path, [bfs], [held], docs()["regdocs.json"])
+    (root / "raw" / "boverket_bfs").mkdir(parents=True)
+    (root / "raw" / "boverket_bfs" / "bov-bfs-bfs2011-6.pdf").write_bytes(old)
+    (root / "text").mkdir()
+    (root / "text" / "bov-bfs-bfs2011-6.md").write_text("# held\n\n---\n\nBFS 2011:6 text")
+    monkeypatch.setattr(robots_policy, "decision", lambda _u, fetcher=None: (True, None))
+    monkeypatch.setattr(build_corpus, "_wait_for_host", lambda _h: None)
+    monkeypatch.setattr(build_corpus.requests, "get",
+                        lambda url, **_k: FakeResp(200, b"%PDF-1.4 broken, no text",
+                                                   "application/pdf", url=url))
+    monkeypatch.setattr(_sys, "argv", ["build_corpus.py", "--force", "--workers", "1",
+                                       "--extract-workers", "1"])
+    build_corpus.main()
+    row = json.loads((root / "manifest" / "nordic.jsonl").read_text().splitlines()[0])
+    assert row["sha256"] == held["sha256"] and row["text_path"] == held["text_path"]
+    assert (root / "raw" / "boverket_bfs" / "bov-bfs-bfs2011-6.pdf").read_bytes() == old
+    assert not (root / "raw" / "boverket_bfs" / "bov-bfs-bfs2011-6.pdf.incoming").exists()
+    assert "bov-bfs-bfs2011-6" in (root / "workspace" /
+                                    "programme-restore-failures.jsonl").read_text()

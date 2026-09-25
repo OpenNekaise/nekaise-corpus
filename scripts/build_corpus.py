@@ -941,11 +941,17 @@ def download_one(src: dict) -> dict:
             rec["_versions"] = str(access.root)
             return rec
         raw_dir.mkdir(parents=True, exist_ok=True)
-        raw_path.write_bytes(data)
+        target = raw_path
+        if sid in HELD_OK_IDS and raw_path.exists():
+            # a refresh of a HELD programme document: stage the new bytes; they replace the held
+            # raw only after extraction succeeds (settle_held), never before
+            target = raw_path.with_name(raw_path.name + ".incoming")
+            rec["_incoming"], rec["_final_raw"] = str(target), str(raw_path)
+        target.write_bytes(data)
         rec["raw_path"] = str(raw_path.relative_to(HERE))
         # Absolute process-local paths are removed by extract_downloaded before the row can reach
         # the manifest. Carrying them makes the extraction stage safe under both fork and spawn.
-        rec["_raw_file"] = str(raw_path)
+        rec["_raw_file"] = str(target)
         rec["_root"] = str(HERE)
         rec["_text_dir"] = str(TEXT)
     except HostSuspended as e:
@@ -1541,6 +1547,29 @@ def _run(view, session, args, only: set[str], selection: dict) -> None:
         f"{args.extract_workers} extract workers)"
     )
 
+    def settle_held(rec: dict) -> dict | None:
+        """A HELD programme row's refresh/restoration is recorded only when it produced text:
+        otherwise its successful row (and held raw) stay, the failure is logged and cooled down,
+        and the row is handed to the pruner as deferred. Staged bytes of a success replace the
+        held raw file now."""
+        incoming, final = rec.pop("_incoming", None), rec.pop("_final_raw", None)
+        if rec["id"] in HELD_OK_IDS and not rec.get("text_path"):
+            if incoming:
+                Path(incoming).unlink(missing_ok=True)
+            rec.setdefault("error", "refresh produced no text")
+            _log_restore_failure(rec)
+            _cool(rec["id"])
+            budget_deferred.append(rec["id"])
+            return None
+        if incoming and final:
+            os.replace(incoming, final)
+        return rec
+
+    def record_extracted(rec: dict) -> None:
+        settled = settle_held(rec)
+        if settled is not None:
+            record_result(settled)
+
     def record_result(rec: dict) -> None:
         nonlocal done, repro, drift, new
         done += 1
@@ -1633,7 +1662,7 @@ def _run(view, session, args, only: set[str], selection: dict) -> None:
                     if rec.get("raw_path"):
                         digest = rec["sha256"]
                         if digest in extraction_templates:
-                            record_result(reuse_extraction(rec, extraction_templates[digest]))
+                            record_extracted(reuse_extraction(rec, extraction_templates[digest]))
                         elif digest in extract_sha.values():
                             waiting_by_sha[digest].append(rec)
                         else:
@@ -1647,9 +1676,9 @@ def _run(view, session, args, only: set[str], selection: dict) -> None:
                     digest = extract_sha.pop(future)
                     extracted = future.result()
                     extraction_templates[digest] = extracted
-                    record_result(extracted)
+                    record_extracted(extracted)
                     for duplicate in waiting_by_sha.pop(digest, []):
-                        record_result(reuse_extraction(duplicate, extracted))
+                        record_extracted(reuse_extraction(duplicate, extracted))
     checkpoints.flush()
     if budget_deferred:
         write_deferred(sorted(set(deferred_ids) | set(budget_deferred)))

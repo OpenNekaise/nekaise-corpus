@@ -84,6 +84,12 @@ class Deadline:
             self.fired.set()
             raise DeadlineExceeded(f"{self.label}: the deadline passed before the request")
         self._prev = getattr(_local, "guard", None)
+        if self._prev is not None:  # nested: the earliest deadline wins
+            self.at = min(self.at, self._prev.at)
+            remaining = self.at - time.monotonic()
+            if remaining <= 0 or self._prev.fired.is_set():
+                self.fired.set()
+                raise DeadlineExceeded(f"{self.label}: the enclosing deadline already passed")
         _local.guard = self
         self._timer = threading.Timer(remaining, self._fire)
         self._timer.daemon = True
@@ -97,6 +103,8 @@ class Deadline:
         if exc_type is not None and self.fired.is_set() and not issubclass(
                 exc_type, (DeadlineExceeded, BodyTooLarge)):
             raise DeadlineExceeded(f"{self.label}: total deadline reached") from exc
+        if exc_type is None and self.fired.is_set():
+            raise DeadlineExceeded(f"{self.label}: total deadline reached")
         return False
 
     def _fire(self) -> None:
@@ -113,6 +121,8 @@ class Deadline:
             return
         with self._lock:
             self._socks.append(sock)
+        if self._prev is not None:  # an enclosing guard may fire first
+            self._prev.register_socket(sock)
         if self.fired.is_set():
             _shutdown(sock)
 

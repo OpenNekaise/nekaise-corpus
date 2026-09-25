@@ -181,6 +181,13 @@ def get(url: str, *, delay: float = 1.0, expect: str = "any", max_bytes: int = M
 def head(url: str, *, delay: float = 1.0) -> requests.Response:
     """HEAD with the same per-hop gate (no redirects followed: a 3xx is returned as is)."""
     hop = prepared(url)
+    started = time.monotonic()
     robots_delay = check(hop)
     pace(hop, max(delay, robots_delay))
-    return requests.head(hop, headers=UA, timeout=TIMEOUT, allow_redirects=False)
+    if time.monotonic() - started > DEADLINE:
+        raise Deferred(f"{hop}: the {DEADLINE:.0f} s request deadline passed while waiting")
+    try:
+        with stream_guard.Deadline(started + DEADLINE, hop):
+            return requests.head(hop, headers=UA, timeout=TIMEOUT, allow_redirects=False)
+    except stream_guard.DeadlineExceeded as exc:
+        raise Deferred(f"{hop}: {exc}") from exc
