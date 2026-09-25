@@ -50,6 +50,13 @@ GATE_COMMANDS = {
     "lint": ("lint_registry.py",),
     "contracts": ("check_contracts.py",),
 }
+# The pipeline stages a standalone step's run completes before it freezes: what a step stages must
+# be what the gates accept — a standalone fetch's new rows are pruned and cleaned (their corpus
+# claims written) in the same run, exactly as a round's fetch is followed by prune and clean.
+DOWNSTREAM = {
+    "fetch": (("prune", "prune_corpus.py", ("--apply",)), ("clean", "clean_corpus.py", ())),
+    "prune": (("clean", "clean_corpus.py", ()),),
+}
 # An aborted run's staging stays inspectable this long before housekeeping purges it.
 PURGE_GRACE_SECONDS = 24 * 3600
 # Housekeeping's time budget per call (each fold or purge step is its own short transaction).
@@ -361,28 +368,50 @@ def standalone(st, step: str, *, timeout: float = 30.0, writer=None,
     run's overlay (Standalone.view is opened by the caller: store_broker.step_session and
     run_batch do). On a clean exit: nothing staged -> the run is aborted as a no-op; otherwise
     frozen, gated (`gates`, receipts bound to the frozen state), promoted, and the promotion
-    completed (after_promotion). Any failure aborts it (store_broker.staged_round: owned
-    processes stopped, broker drained, durable status decides)."""
+    completed (after_promotion). Before freezing, the pipeline stages after `step` (DOWNSTREAM:
+    a fetch's prune and clean) run as the run's children through its broker, so the gates see a
+    complete state (a fetch's run shares its loader/pruner handoff through NEKAISE_RUN_ID, as a
+    round does). The command's process is tagged with the run id (NEKAISE_RUN_OWNER) and holds
+    the run's ownership mark, so recovery finds every process it started — exec'd or forked —
+    if it dies. Any failure aborts the run (store_broker.staged_round: owned processes stopped,
+    broker drained, durable status decides)."""
     import store_broker
     log = log or (lambda msg: print(msg, file=sys.stderr))
     root = Path(st.root)
     run_id = standalone_id(step)
+    downstream = DOWNSTREAM.get(step, ())
     with ExitStack() as stack:
         if writer is None:
+            import round_recovery   # a dead coordinator's forks may hold its writer session
+            round_recovery.stop_orphans_of_dead_coordinators(root)
             writer = stack.enter_context(st.writer(timeout=timeout, round_id=run_id))
+        if any(name == "prune" for name, _, _ in downstream):
+            # the loader and the pruner of ONE run share its deferral handoff, keyed by
+            # NEKAISE_RUN_ID exactly as in a round (a lone standalone prune has none)
+            saved = os.environ.get("NEKAISE_RUN_ID")
+            os.environ["NEKAISE_RUN_ID"] = run_id
+            stack.callback(lambda: os.environ.__setitem__("NEKAISE_RUN_ID", saved)
+                           if saved is not None else os.environ.pop("NEKAISE_RUN_ID", None))
         refuse_unfinished(st, writer)
         ident = identity(st, root)
         with store_broker.staged_round(st, writer, run_id, kind="standalone",
                                        producer_commit=ident.producer_commit,
                                        extractor_version=ident.extractor_version,
                                        cleaning_ruleset=ident.cleaning_ruleset,
-                                       config_documents=ident.config) as rnd:
+                                       config_documents=ident.config, tag=True) as rnd:
             session = Standalone(st, writer, rnd, step)
             yield session
             if not session.staged:
                 rnd.broker.drain()
                 st.abort_run(writer, run_id, reason="no-op: nothing staged")
                 return
+            for name, script, args in downstream:
+                cmd = [sys.executable, str(root / "scripts" / script), *args]
+                log(f"{step}: completing the run with {name}: {shlex.join(cmd)}")
+                done = subprocess.run(cmd, cwd=root, env={**os.environ, **rnd.broker.env()})
+                if done.returncode:
+                    raise StagedRunError(f"standalone run {run_id}: its {name} stage failed "
+                                         f"(exit {done.returncode})")
             rnd.freeze(list(gates))
             run_gates(rnd, root, gates, log=log)
             generation = rnd.promote()

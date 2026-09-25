@@ -118,6 +118,42 @@ def test_a_failing_gate_aborts_the_round_and_the_next_round_promotes(world):
     assert world.run_row(good)["status"] == "promoted" and world.generation() == 0
 
 
+def test_skip_tests_is_refused_before_a_staged_run_opens(world):
+    seeded(world)
+    world.finder([])
+    refused = world.run("--run-id", rid("sr-skip"), "--skip-tests")
+    assert refused.returncode == 2 and "--skip-tests does not apply" in refused.stderr
+    assert world.run_row(rid("sr-skip")) is None and world.generation() is None
+
+
+def test_discovery_follows_the_configuration_of_the_commit_that_runs(world):
+    """A committed backend change is honoured by the very next round: its discovery reads the
+    run's own pinned configuration (sequence 0), not the parent generation's."""
+    seeded(world)
+    world.finder([entry(world.payloads, "ost-s-a")])
+    ok(world.run("--run-id", rid("sr-cfg0")))
+    assert len(world.finder_runs()) == 1
+    # a rename: the old script is gone, the configuration names the new one
+    backends = json.loads((world.root / "registry" / "backends.json").read_text())
+    backends["find_fake"]["script"] = "find_fake2.py"
+    (world.root / "scripts" / "find_fake2.py").write_text(
+        (world.root / "scripts" / "find_fake.py").read_text())
+    (world.root / "scripts" / "find_fake.py").unlink()
+    world.commit("rename the finder",
+                 **{"registry__backends.json": json.dumps(backends, indent=2) + "\n"})
+    world.finder([entry(world.payloads, "ost-s-b")])
+    ok(world.run("--run-id", rid("sr-cfg1")))
+    assert len(world.finder_runs()) == 2 and "ost-s-b" in corpus_ids(world)
+    # a disable: the next round does not invoke it
+    backends["find_fake"].update(enabled=False, reason="operator: paused for the test")
+    world.commit("disable the finder",
+                 **{"registry__backends.json": json.dumps(backends, indent=2) + "\n"})
+    world.finder([entry(world.payloads, "ost-s-c")])
+    ok(world.run("--run-id", rid("sr-cfg2")))
+    assert len(world.finder_runs()) == 2 and "ost-s-c" not in corpus_ids(world)
+    assert world.generation() == 2
+
+
 def test_a_dirty_checkout_or_push_is_refused_before_anything_stages(world):
     seeded(world)
     (world.root / "scripts" / "stray.py").write_text("# uncommitted\n")
@@ -273,8 +309,9 @@ def test_a_resumed_frozen_run_only_runs_its_missing_gates(world):
     assert world.q("SELECT count(*) FROM gate_receipts WHERE run_id = %s", [run_id])[0][0] == 0
     slow.unlink()
     wrong = world.run("--resume", run_id, "--skip-tests")
-    assert wrong.returncode == 1 and "froze with gates" in wrong.stderr
+    assert wrong.returncode == 2 and "--skip-tests does not apply" in wrong.stderr
     assert world.run_row(run_id)["status"] == "frozen"      # refused before any adoption
+    assert world.q("SELECT count(*) FROM run_adoptions")[0][0] == 0
     ok(world.run("--resume", run_id))
     assert world.run_row(run_id)["status"] == "promoted"
     assert world.q("SELECT count(*) FROM gate_receipts WHERE run_id = %s AND verdict = 'passed'",
@@ -336,6 +373,43 @@ def test_a_standalone_blocklist_add_is_one_gated_promoted_run(world):
     assert again.stdout.strip().endswith("0") and len(standalone_runs(world)) == 1
     # the corpus materialization followed the promotion
     assert materialized(world)["generation"] == 1
+
+
+def test_a_standalone_fetch_prunes_and_cleans_in_its_own_run_and_promotes(world):
+    """A standalone loader's run completes the pipeline (prune, clean) before it freezes, so
+    the claim check accepts it: the fetched documents are promoted and materialized."""
+    seeded(world, n=3)
+    ok(world.run(script="build_corpus.py"))
+    (run_id, status, generation, _), = standalone_runs(world)
+    assert (status, generation) == ("promoted", 0) and run_id.startswith("fetch-")
+    steps = {s for (s,) in world.q("SELECT DISTINCT step FROM batches WHERE run_id = %s",
+                                   [run_id])}
+    assert {"fetch", "clean"} <= steps
+    assert corpus_ids(world) == {"ost-s-0", "ost-s-1", "ost-s-2"}
+
+
+def test_a_killed_standalone_loader_s_workers_are_found_by_recovery(world):
+    """SIGKILL a standalone loader while its extraction workers are up: they carry the run id
+    from exec (the command tags itself before it starts them), so recovery run from another
+    process stops them before it aborts the run."""
+    seeded(world, n=3)
+    world.payloads.hold["ost-s-2"] = threading.Event()
+    proc = world.start(script="build_corpus.py")
+    world.wait_for(lambda: world.q("SELECT count(*) FROM runs WHERE kind = 'standalone'")[0][0],
+                   what="the standalone run")
+    (run_id,), = world.q("SELECT run_id FROM runs WHERE kind = 'standalone'")
+    world.wait_for(lambda: "ost-s-2" in world.payloads.waiting, what="the held download")
+    world.wait_for(lambda: len(round_recovery.round_processes(run_id) - {proc.pid}) >= 1,
+                   what="the extraction workers")
+    kill(proc)
+    orphans = round_recovery.round_processes(run_id)
+    assert orphans
+    world.payloads.release()
+    recovered = world.run("--recover", "latest")
+    ok(recovered)
+    assert f"run {run_id}: open -> aborted" in recovered.stdout
+    assert not any(round_recovery._alive(p) for p in orphans)
+    assert not list((world.root / "workspace" / "run-owners").glob("*"))
 
 
 def test_a_standalone_step_stages_gates_and_promotes_or_aborts_a_no_op(world):

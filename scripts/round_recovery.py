@@ -32,6 +32,7 @@ raises before anything is mutated; temporaries are swept.
 """
 from __future__ import annotations
 
+import json
 import os
 import signal
 import stat as stat_mod
@@ -49,6 +50,9 @@ import store
 COMMIT_SEARCH_DEPTH = 200
 TRAILER = "Corpus run: "
 RUN_ENV = "NEKAISE_RUN_ID"
+# Names the run whose coordinator started a process, for recovery only (no pipeline step reads
+# it, unlike NEKAISE_RUN_ID, which keys the loader/pruner handoff and batch identities).
+OWNER_ENV = "NEKAISE_RUN_OWNER"
 _os_stat = os.stat  # repository discovery stats (tests inject I/O errors here)
 
 
@@ -104,10 +108,33 @@ def _ancestors() -> set[int]:
     return out
 
 
+OWNER_MARK = "nekaise-run-owner."
+
+
+def _holds_mark(proc: Path, mark: str) -> bool:
+    """Whether process `proc` holds an open file descriptor on run ownership mark `mark` (the
+    file may be deleted meanwhile: its link then ends in " (deleted)")."""
+    for fd in os.scandir(proc / "fd"):
+        try:
+            target = os.readlink(fd.path)
+        except FileNotFoundError:
+            continue   # closed meanwhile
+        name = target.removesuffix(" (deleted)").rsplit("/", 1)[-1]
+        if name == mark:
+            return True
+    return False
+
+
 def round_processes(run_id: str) -> set[int]:
-    """Live processes (this user's) whose environment names round `run_id`: every step, finder
-    and gate run_round starts carries NEKAISE_RUN_ID, and so do their children."""
-    needle = f"{RUN_ENV}={run_id}".encode()
+    """Live processes (this user's) that belong to run `run_id`: those whose environment names
+    it — every step, finder and gate run_round starts carries NEKAISE_RUN_ID from exec, and so
+    do their children — and those holding its ownership mark (OwnershipMark: a descriptor every
+    process forked by the run's coordinator inherits, including fork-only workers whose
+    /proc/<pid>/environ still shows the environment of their original exec). A process that
+    exits during the scan is skipped; any other error reading one of this user's processes
+    raises — ownership that cannot be read is never read as "not the run's"."""
+    needles = {f"{RUN_ENV}={run_id}".encode(), f"{OWNER_ENV}={run_id}".encode()}
+    mark = OWNER_MARK + run_id
     mine, skip = os.getuid(), _ancestors()
     found = set()
     for proc in Path("/proc").glob("[0-9]*"):
@@ -115,11 +142,126 @@ def round_processes(run_id: str) -> set[int]:
             pid = int(proc.name)
             if pid in skip or proc.stat().st_uid != mine:
                 continue
-            if needle in (proc / "environ").read_bytes().split(b"\0"):
+            if needles & set((proc / "environ").read_bytes().split(b"\0")) \
+                    or _holds_mark(proc, mark):
                 found.add(pid)
-        except (OSError, ValueError):
+        except (FileNotFoundError, ProcessLookupError):
+            continue   # exited during the scan
+        except ValueError:
+            continue   # not a pid
+        except PermissionError:
+            # a process of this user made non-dumpable (ssh-agent, gpg-agent, a setuid exec):
+            # the kernel hides its environment and descriptors. The run's processes are plain
+            # interpreters and tools and stay dumpable; guessing otherwise would make every
+            # recovery on such a host fail.
             continue
+        except OSError as exc:
+            if not _alive(int(proc.name)):
+                continue
+            raise RecoveryError(f"cannot read process {proc.name} while looking for run "
+                                f"{run_id}'s processes: {exc}") from exc
     return found
+
+
+class OwnershipMark:
+    """A run coordinator's process ownership mark: an inheritable read descriptor on
+    `<root>/workspace/run-owners/nekaise-run-owner.<run id>`, held for as long as the run's
+    lifecycle is open in this process. Every process it forks (a loader's extraction pool, a
+    cleaner's workers — without exec) inherits the descriptor, so recovery from ANY process can
+    find them after the coordinator died (round_processes), whatever their environment shows.
+    Exec'd children are found by their environment: NEKAISE_RUN_ID, or NEKAISE_RUN_OWNER, which
+    `tag()` sets in the coordinator so every child it execs from then on carries it."""
+
+    def __init__(self, root: Path, run_id: str):
+        store._check_run_id(run_id)
+        self.dir = Path(root) / "workspace" / "run-owners"
+        self.path = self.dir / (OWNER_MARK + run_id)
+        self.run_id = run_id
+        self.fd: int | None = None
+        self._saved_env: str | None = None
+        self._tagged = False
+
+    def __enter__(self) -> "OwnershipMark":
+        # the coordinator's identity (pid + start time: pids are reused) — so a later recovery
+        # can tell a dead coordinator's orphans from a live coordinator's workers WITHOUT the
+        # writer lock, which a dead coordinator's forks may still hold (they inherited its
+        # database session: stop_orphans_of_dead_coordinators)
+        ops.atomic_write_text(self.path, json.dumps(
+            {"run": self.run_id, "pid": os.getpid(), "start": process_start(os.getpid())}) + "\n")
+        self.fd = os.open(self.path, os.O_RDONLY)
+        os.set_inheritable(self.fd, True)
+        return self
+
+    def tag(self) -> None:
+        """Also name the run in this process's environment (NEKAISE_RUN_OWNER), so children
+        exec'd from here on (subprocesses, spawned workers, an agent and its tools) carry it in
+        their initial environment. Restored on exit."""
+        if not self._tagged:
+            self._saved_env = os.environ.get(OWNER_ENV)
+            os.environ[OWNER_ENV] = self.run_id
+            self._tagged = True
+
+    def __exit__(self, *exc) -> None:
+        if self._tagged:
+            if self._saved_env is None:
+                os.environ.pop(OWNER_ENV, None)
+            else:
+                os.environ[OWNER_ENV] = self._saved_env
+            self._tagged = False
+        if self.fd is not None:
+            os.close(self.fd)
+            self.fd = None
+        self.path.unlink(missing_ok=True)
+
+
+def process_start(pid: int) -> str | None:
+    """A process's start time (clock ticks since boot, /proc/<pid>/stat field 22), which with
+    its pid identifies it across pid reuse; None when there is no such process. Other errors
+    raise."""
+    try:
+        return Path(f"/proc/{pid}/stat").read_text().rsplit(")", 1)[1].split()[19]
+    except (FileNotFoundError, ProcessLookupError):
+        return None
+
+
+def stop_orphans_of_dead_coordinators(root: Path, grace: float = 2.0) -> dict[str, list]:
+    """Before taking the writer: stop the processes of every run whose coordinator is DEAD (its
+    ownership mark names a pid/start time that no longer runs). A fork of a dead coordinator
+    still holds the coordinator's database session — and with it the writer lock — so ownership
+    could never be acquired while it lives. A live coordinator's processes are never touched;
+    what the dead run's status becomes is decided afterwards, under the writer
+    (recover_staged). A mark that cannot be read raises. Returns {run id: pids stopped}."""
+    marks = Path(root) / "workspace" / "run-owners"
+    try:
+        entries = sorted(os.scandir(marks), key=lambda e: e.name)
+    except FileNotFoundError:
+        return {}
+    out = {}
+    for entry in entries:
+        if not entry.name.startswith(OWNER_MARK):
+            continue
+        run_id = entry.name[len(OWNER_MARK):]
+        try:
+            doc = json.loads(Path(entry.path).read_text())
+            pid, start = int(doc["pid"]), doc["start"]
+        except FileNotFoundError:
+            continue   # its coordinator finished meanwhile
+        except (ValueError, KeyError, TypeError) as exc:
+            raise RecoveryError(f"ownership mark {entry.path} is unreadable ({exc}): refusing to "
+                                "guess whose processes are orphans") from exc
+        if pid == os.getpid() or process_start(pid) == start:
+            continue   # a live coordinator
+        pids = round_processes(run_id)
+        out[run_id] = stop_processes(pids, grace) if pids else []
+        if out[run_id]:
+            ops.run_event(run_id, "round_processes_stopped", pids=out[run_id],
+                          coordinator="dead")
+    return out
+
+
+def sweep_owner_mark(root: Path, run_id: str) -> None:
+    """Remove a dead coordinator's ownership mark (after its processes were stopped)."""
+    (Path(root) / "workspace" / "run-owners" / (OWNER_MARK + run_id)).unlink(missing_ok=True)
 
 
 def _alive(pid: int) -> bool:
@@ -464,6 +606,8 @@ def recover_staged(st, writer, run_id: str | None = None, *, root: Path,
         else:
             raise RecoveryError(f"run {rid} has an unknown status {run['status']!r}")
         out.detail["swept_proposals"] = sweep_run_temporaries(root, rid)
+        if stop:
+            sweep_owner_mark(root, rid)
         outcomes.append(out)
     swept = artifact_store.LocalArtifacts(root).sweep_incoming()
     finished = staged_runs.after_promotion(st, writer, root) if finish else None

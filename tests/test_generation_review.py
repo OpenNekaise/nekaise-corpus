@@ -154,15 +154,79 @@ def test_publication_never_passes_the_endorsed_generation(pg):
     with pg.writer() as w:
         generations(pg, w, 2)
         verdict(pg, w, 0)
-        verdict(pg, w, 1, "finding")
         with pg.contracts(w) as c:
             c.ack("publication", 1, "ok")
             c.ack("publication", 2, "ok")
             with pytest.raises(sqlerr(), match="endorsed"), c._conn.transaction():
-                c.advance("publication")          # would pass generation 1 (not endorsed)
+                c.advance("publication")          # would pass generation 1 (not reviewed)
+        verdict(pg, w, 1, "finding")
         with pg.contracts(w) as c:
-            c._q("UPDATE outbox_consumers SET watermark = 1 WHERE consumer = 'publication'")
-    assert q(pg, "SELECT watermark FROM outbox_consumers WHERE consumer = 'publication'") == [(1,)]
+            with pytest.raises(sqlerr(), match="withheld"), c._conn.transaction():
+                c.advance("publication")          # a finding is open
+    assert q(pg, "SELECT watermark FROM outbox_consumers WHERE consumer = 'publication'") == [(0,)]
+
+
+def test_a_finding_raised_after_endorsement_stops_publication(pg):
+    """Endorse through 1 while publication lags at 0; then an empty-range integrity finding
+    about the reviewed data: endorsed_through stays 1, yet publication may not advance — until a
+    verdict covering the compensating repair resolves it."""
+    with pg.writer() as w:
+        generations(pg, w, 2)
+        assert verdict(pg, w, 1)["endorsed_through"] == 1
+        with pg.contracts(w) as c:
+            c.ack("publication", 1, "ok")
+            assert c.advance("publication") == 1     # publication lags behind endorsement
+            c.ack("publication", 2, "ok")
+        s = verdict(pg, w, 1, "integrity", summary="found after endorsement")
+        assert (s["endorsed_through"], s["open_integrity"], s["publishable_through"]) == (
+            1, 1, None)
+        with pg.contracts(w) as c:
+            with pytest.raises(sqlerr(), match="withheld"), c._conn.transaction():
+                c.advance("publication")
+        generations(pg, w, 1)                        # the repair
+        assert verdict(pg, w, 2, resolves=[2])["publishable_through"] == 2
+        with pg.contracts(w) as c:
+            c.ack("publication", 3, "ok")
+            assert c.advance("publication") == 3
+
+
+def test_a_publication_advance_and_a_new_finding_never_both_commit(pg):
+    """Two connections: the publication advance holds the review state row (it writes it);
+    a finding recorded meanwhile waits and then either follows the advance or — under
+    REPEATABLE READ — fails; never does publication pass a finding it did not see."""
+    import psycopg
+    with pg.writer() as w:
+        generations(pg, w, 1)
+        verdict(pg, w, 0)
+        with pg.contracts(w) as c:
+            c.ack("publication", 1, "ok")
+    publisher, reviewer = pg._connect(), pg._connect()
+    try:
+        publisher.execute("UPDATE outbox_consumers SET watermark = 1 WHERE consumer = "
+                          "'publication'")               # uncommitted: holds review_state
+        import threading
+        done = {}
+
+        def review():
+            try:
+                reviewer.execute("INSERT INTO review_verdicts (seq, lo_generation, hi_generation, "
+                                 "verdict, reviewer, evidence_digest) VALUES (2, 1, 0, 'integrity', "
+                                 "'t', repeat('0', 64))")
+                reviewer.commit()
+            except psycopg.Error as exc:
+                done["exc"] = exc
+        t = threading.Thread(target=review)
+        t.start()
+        t.join(1.0)
+        assert t.is_alive(), "the finding did not wait for the publication advance"
+        publisher.commit()
+        t.join(30)
+    finally:
+        publisher.close()
+        reviewer.close()
+    # the finding committed after the advance (READ COMMITTED re-reads): it now stops any further
+    # publication
+    assert q(pg, "SELECT open_integrity FROM review_state") == [(1,)]
 
 
 def test_verdicts_are_contiguous_immutable_and_only_resolve_open_findings(pg):

@@ -327,32 +327,141 @@ def test_a_lost_promotion_reply_stands(pg, monkeypatch):
         assert v.generation == 0 and v.known(ids=["kept"]).ids == {"kept"}
 
 
-def test_an_interrupt_while_stopping_still_drains_and_recovers(pg, monkeypatch):
+def _failing_round(pg, run_id, expect):
+    with pg.writer(round_id=run_id) as w:
+        with pytest.raises(expect) as raised:
+            with store_broker.staged_round(pg, w, run_id, producer_commit=SHA,
+                                           extractor_version="x", cleaning_ruleset="none",
+                                           artifacts="unchecked") as rnd:
+                rnd.broker.computed_batch("discover", "merge",
+                                          lambda v, b: b.upsert_manifest([mrow("x")]))
+                raise RuntimeError("a step failed")
+    return rnd, raised.value
+
+
+def test_an_interrupt_while_stopping_aborts_only_after_a_confirmed_stop(pg, monkeypatch):
     """SIGTERM arrives while a failing round stops its processes (the maintainer's handler
-    raises KeyboardInterrupt): the broker is still drained and the run recovered by its durable
-    status before the interrupt propagates."""
+    raises KeyboardInterrupt): the broker is still drained, recovery stops the processes again,
+    and the run is aborted only after that stop was CONFIRMED."""
     run_id = rid("rc-sig")
+    calls = []
+
+    def stop(run, existing=None, grace=2.0):
+        calls.append(("stop", q(pg, "SELECT status FROM runs")[0][0]))
+        if len(calls) == 1:
+            os.kill(os.getpid(), signal.SIGTERM)   # the interrupt, part-way through the stop
+        return []                                  # the second stop: confirmed, nothing alive
+    monkeypatch.setattr(round_recovery, "stop_owned", stop)
+
+    def handler(signum, frame):
+        raise KeyboardInterrupt("maintenance terminated")
+    previous = signal.signal(signal.SIGTERM, handler)
+    try:
+        rnd, _ = _failing_round(pg, run_id, KeyboardInterrupt)
+    finally:
+        signal.signal(signal.SIGTERM, previous)
+    assert rnd.broker._drained
+    assert calls == [("stop", "open"), ("stop", "open")]   # still open when the stop confirmed
+    assert q(pg, "SELECT status FROM runs") == [("aborted",)]
+
+
+def test_an_unconfirmed_stop_leaves_the_run_unfinished_and_blocking(pg, monkeypatch):
+    """A worker survives SIGKILL (or stopping fails otherwise): the broker is drained but the
+    run is NOT aborted — it stays open, so every later round and standalone mutation is refused
+    until a recovery confirms the stop."""
+    run_id = rid("rc-survivor")
+
+    def survivor(*_a, **_k):
+        raise round_recovery.RecoveryError("owned process(es) still alive after SIGKILL: [4242]")
+    monkeypatch.setattr(round_recovery, "stop_owned", survivor)
+    rnd, exc = _failing_round(pg, run_id, RuntimeError)
+    assert rnd.broker._drained and "a step failed" in str(exc)
+    assert any("left unfinished" in n for n in exc.__notes__)
+    assert q(pg, "SELECT status FROM runs") == [("open",)]
+    with pg.writer() as w:
+        with pytest.raises(staged_runs.StagedRunError, match="unfinished staged run"):
+            staged_runs.refuse_unfinished(pg, w)
+        with pytest.raises(round_recovery.RecoveryError, match="still alive"):
+            round_recovery.recover_staged(pg, w, run_id, root=pg.root, finish=False)
+    assert q(pg, "SELECT status FROM runs") == [("open",)]      # recovery refused to abort too
+    monkeypatch.undo()
+    with pg.writer() as w:
+        out, = round_recovery.recover_staged(pg, w, run_id, root=pg.root, finish=False)
+    assert out.action == "aborted"
+
+
+def test_a_second_interrupt_during_the_stop_leaves_the_run_open(pg, monkeypatch):
+    run_id = rid("rc-sig2")
 
     def interrupted(*_a, **_k):
         os.kill(os.getpid(), signal.SIGTERM)
     monkeypatch.setattr(round_recovery, "stop_owned", interrupted)
 
     def handler(signum, frame):
-        raise KeyboardInterrupt("maintenance terminated")
+        raise KeyboardInterrupt("terminated")
     previous = signal.signal(signal.SIGTERM, handler)
     try:
-        with pg.writer(round_id=run_id) as w:
-            with pytest.raises(KeyboardInterrupt):
-                with store_broker.staged_round(pg, w, run_id, producer_commit=SHA,
-                                               extractor_version="x", cleaning_ruleset="none",
-                                               artifacts="unchecked") as rnd:
-                    rnd.broker.computed_batch("discover", "merge",
-                                              lambda v, b: b.upsert_manifest([mrow("x")]))
-                    raise RuntimeError("a step failed")
+        rnd, _ = _failing_round(pg, run_id, KeyboardInterrupt)
     finally:
         signal.signal(signal.SIGTERM, previous)
     assert rnd.broker._drained
-    assert q(pg, "SELECT status FROM runs") == [("aborted",)]
+    assert q(pg, "SELECT status FROM runs") == [("open",)]      # never aborted unconfirmed
+
+
+def test_only_a_dead_coordinator_s_orphans_are_stopped_before_the_writer(tmp_path):
+    live_run, dead_run = rid("rc-live"), rid("rc-dead")
+    live = _sleeper(live_run)
+    try:
+        _visible(live.pid, live_run)
+        with round_recovery.OwnershipMark(tmp_path, live_run):   # this process: alive
+            marks = tmp_path / "workspace" / "run-owners"
+            (marks / f"{round_recovery.OWNER_MARK}{dead_run}").write_text(json.dumps(
+                {"run": dead_run, "pid": 999999999, "start": "1"}) + "\n")
+            orphan = _sleeper(dead_run)
+            _visible(orphan.pid, dead_run)
+            got = round_recovery.stop_orphans_of_dead_coordinators(tmp_path)
+            assert got == {dead_run: [orphan.pid]}
+            assert round_recovery._alive(live.pid)               # the live run is untouched
+            (marks / f"{round_recovery.OWNER_MARK}broken").write_text("{not json")
+            with pytest.raises(round_recovery.RecoveryError, match="unreadable"):
+                round_recovery.stop_orphans_of_dead_coordinators(tmp_path)
+    finally:
+        live.kill()
+        live.wait()
+
+
+def test_ownership_marks_identify_forked_workers_and_exec_tags(tmp_path):
+    """A fork-only worker's /proc/<pid>/environ still shows its parent's ORIGINAL environment,
+    so a tag set later is invisible there; the inherited ownership mark identifies it. A child
+    exec'd after tag() carries NEKAISE_RUN_OWNER from exec."""
+    run_id = rid("rc-mark")
+    code = (f"import os, sys, time\nsys.path.insert(0, {str(REPO / 'scripts')!r})\n"
+            "import round_recovery, subprocess\n"
+            f"m = round_recovery.OwnershipMark({str(tmp_path)!r}, {run_id!r}).__enter__()\n"
+            "m.tag()\n"
+            "pid = os.fork()\n"
+            "if pid == 0:\n    time.sleep(60)\n    os._exit(0)\n"
+            "child = subprocess.Popen([sys.executable, '-c', 'import time; time.sleep(60)'])\n"
+            "assert os.environ['NEKAISE_RUN_OWNER'] == m.run_id\n"
+            "print(pid, child.pid, flush=True)\ntime.sleep(60)\n")
+    coord = subprocess.Popen([sys.executable, "-c", code], stdout=subprocess.PIPE, text=True,
+                             env={k: v for k, v in os.environ.items() if k != "NEKAISE_RUN_ID"})
+    try:
+        forked, execd = map(int, coord.stdout.readline().split())
+        assert f"NEKAISE_RUN_OWNER={run_id}".encode() not in Path(
+            f"/proc/{forked}/environ").read_bytes().split(b"\0")
+        assert f"NEKAISE_RUN_OWNER={run_id}".encode() in Path(
+            f"/proc/{execd}/environ").read_bytes().split(b"\0")
+        coord.kill()                                   # the coordinator dies
+        coord.wait()
+        found = round_recovery.round_processes(run_id)
+        assert {forked, execd} <= found
+        round_recovery.stop_processes(found)
+        assert not round_recovery._alive(forked) and not round_recovery._alive(execd)
+    finally:
+        coord.kill()
+        for pid in round_recovery.round_processes(run_id):
+            os.kill(pid, signal.SIGKILL)
 
 
 # --- bounded housekeeping -------------------------------------------------------------------------------------------

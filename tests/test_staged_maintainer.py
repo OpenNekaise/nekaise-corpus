@@ -197,6 +197,54 @@ def test_a_timed_out_agent_s_batch_is_drained_before_the_window_is_judged(world,
         assert not view.known(urls=["https://x.example/late"]).urls
 
 
+KILLED_MAINTAINER = """
+import os, subprocess, sys, time
+from pathlib import Path
+sys.path.insert(0, {scripts!r})
+import maintainer
+with maintainer.maintenance_window("action") as window:
+    env = maintainer.agent_env(Path(sys.executable))
+    agent = subprocess.Popen([sys.executable, "-c", "import time; time.sleep(120)"], env=env,
+                             start_new_session=True)
+    forked = os.fork()
+    if forked == 0:
+        time.sleep(120)
+        os._exit(0)
+    print(window.run.run.run_id, agent.pid, forked, flush=True)
+    time.sleep(120)
+"""
+
+
+def test_a_killed_maintainer_s_agent_and_forks_are_found_by_recovery(world):
+    """SIGKILL the maintainer while its action agent runs: the agent (exec'd with the window
+    run's NEKAISE_RUN_ID) and a fork of the maintainer (holding the run's ownership mark) are
+    found and stopped by a recovery run from another process, which then aborts the run."""
+    promoted_round(world, "mt-g0")
+    proc = subprocess.Popen([sys.executable, "-c", KILLED_MAINTAINER.format(
+        scripts=str(world.root / "scripts"))], cwd=world.root, text=True,
+        env={**world.env, "MAINTAINER_LOCK_WAIT_SECONDS": "5"}, stdout=subprocess.PIPE)
+    world.procs.append(proc)
+    line = []
+    while len(line) != 3:
+        text = proc.stdout.readline()
+        assert text, "the maintainer child did not open its window"
+        line = text.split() if not text.startswith("Maintenance") else []
+    run_id, agent_pid, forked = line[0], int(line[1]), int(line[2])
+    kill(proc)
+    assert world.run_row(run_id)["status"] == "open"
+    assert {agent_pid, forked} <= maintainer.round_recovery.round_processes(run_id)
+    # the fork inherited the dead maintainer's database session: the writer lock is still held,
+    # so recovery must stop the dead coordinator's orphans BEFORE it can take ownership
+    with pytest.raises(maintainer.store.WriterError, match="held by another session"):
+        with world.store().writer():
+            pass
+    recovered = world.run("--recover", "latest")
+    assert recovered.returncode == 0, recovered.stderr
+    assert f"run {run_id}: open -> aborted" in recovered.stdout
+    assert not maintainer.round_recovery._alive(agent_pid)
+    assert not maintainer.round_recovery._alive(forked)
+
+
 def test_a_round_inside_the_postgres_window_is_refused_at_once(world):
     with maintainer.maintenance_window("action"):
         env = maintainer.agent_env(Path(sys.executable))

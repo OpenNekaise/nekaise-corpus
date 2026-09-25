@@ -717,15 +717,22 @@ class StagedRound:
 def staged_round(st, writer: store.WriterToken, run_id: str, *, kind: str = "round",
                  producer_commit: str | None = None, extractor_version: str | None = None,
                  cleaning_ruleset: str | None = None, artifacts: str = "versioned",
-                 config_documents=None, resume=None) -> Iterator[StagedRound]:
+                 config_documents=None, resume=None, tag: bool = False) -> Iterator[StagedRound]:
     """Open run `run_id` on the current generation — or continue `resume`, a run this writer
     adopted (store_staging.adopt_run) — and serve its staged broker (see StagedRound).
 
+    The coordinator holds the run's OwnershipMark while the block runs (every process it forks
+    inherits it); with `tag` it also names the run in its own environment (NEKAISE_RUN_OWNER)
+    so every child it execs carries it — for coordinators whose children do not get
+    NEKAISE_RUN_ID explicitly (standalone commands, the maintainer's agent). Recovery from any
+    process finds them.
+
     Leaving the block with an exception before the run was promoted recovers it in the shared
-    order (round_recovery.recover_staged): the processes started meanwhile (and any tagged with
-    the run id) are stopped first, then the broker is drained, then the run's DURABLE status
-    decides — a promotion whose reply was lost stands, anything else is aborted. The broker is
-    always drained before the block's outcome is judged."""
+    order (round_recovery.recover_staged): the processes started meanwhile (and any marked or
+    tagged with the run id) are stopped first, then the broker is drained, then the run's
+    DURABLE status decides — a promotion whose reply was lost stands, anything else is aborted.
+    If the stop cannot be confirmed the run is NOT aborted: it stays unfinished (blocking) for a
+    later recovery. The broker is always drained before the block's outcome is judged."""
     import round_recovery
     if resume is not None:
         if resume.run_id != run_id:
@@ -737,26 +744,41 @@ def staged_round(st, writer: store.WriterToken, run_id: str, *, kind: str = "rou
                           artifacts=artifacts, config_documents=config_documents)
     existing = round_recovery.descendants(os.getpid())
     rnd = StagedRound(st, writer, run)
-    stopped = False
-    try:
-        with rnd.broker.serving():   # drained on the way out, after the stop below
-            try:
-                yield rnd
-            except BaseException as exc:
-                if rnd.generation is None:
-                    stopped = True
+    # confirmed: the run's processes were stopped and none survived; unconfirmable: stopping
+    # failed (a survivor after SIGKILL, an error) — the run must then stay unfinished
+    stop = {"confirmed": False, "failed": None}
+    with round_recovery.OwnershipMark(st.root, run_id) as mark:
+        if tag:
+            mark.tag()
+        try:
+            with rnd.broker.serving():   # drained on the way out, after the stop below
+                try:
+                    yield rnd
+                except BaseException as exc:
+                    if rnd.generation is None:
+                        try:
+                            round_recovery.stop_owned(run_id, existing)
+                            stop["confirmed"] = True
+                        except Exception as stop_exc:
+                            stop["failed"] = stop_exc
+                            exc.add_note(f"stopping run {run_id}'s processes failed: {stop_exc}")
+                        # an interrupt during the stop propagates unconfirmed: recovery below
+                        # stops again and aborts only once that is confirmed
+                    raise
+        except BaseException as exc:
+            if rnd.generation is None:
+                if stop["failed"] is not None:
+                    # termination could not be confirmed: the broker is drained, but the run stays
+                    # open — unfinished runs block every later round and standalone mutation
+                    # until a recovery confirms the stop and decides
+                    exc.add_note(f"run {run_id} is left unfinished (its processes could not be "
+                                 "confirmed stopped): recover it with run_round.py --recover")
+                else:
                     try:
-                        round_recovery.stop_owned(run_id, existing)
-                    except Exception as stop_exc:
-                        exc.add_note(f"stopping run {run_id}'s processes failed: {stop_exc}")
-                raise
-    except BaseException as exc:
-        if rnd.generation is None:
-            try:
-                round_recovery.recover_staged(
-                    st, writer, run_id, root=st.root, stop=not stopped, finish=False,
-                    existing_descendants=existing,
-                    reason=f"{type(exc).__name__}: {exc}"[:500])
-            except Exception as abort_exc:  # the original failure stays the one raised
-                exc.add_note(f"recovering run {run_id} failed too: {abort_exc}")
-        raise
+                        round_recovery.recover_staged(
+                            st, writer, run_id, root=st.root, stop=not stop["confirmed"],
+                            finish=False, existing_descendants=existing,
+                            reason=f"{type(exc).__name__}: {exc}"[:500])
+                    except Exception as abort_exc:  # the original failure stays the one raised
+                        exc.add_note(f"recovering run {run_id} failed too: {abort_exc}")
+            raise

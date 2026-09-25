@@ -24,7 +24,9 @@ reviewer can only endorse exactly what it saw (never a self-supplied summary), a
 (schema v7, review_verdicts) keeps verdicts contiguous and immutable:
 
 * `ok` — the range is reviewed; with no finding open it is endorsed (publication may reach it);
-* `finding` — reviewed, but endorsement (and so publication) stops until a later verdict
+* `finding` — reviewed, but endorsement stops — and publication stops altogether, even for
+  generations endorsed before the finding (an empty-range finding about reviewed data) — until a
+  later verdict
   resolves it — one whose range covers a generation promoted after the finding (the repair,
   promoted as a compensating generation);
 * `integrity` — the same, and growth rounds are refused while it is open (`growth_block`).
@@ -83,7 +85,10 @@ def state(st, writer) -> dict:
                         "seq").fetchall()]
     return {"current_generation": head, "reviewed_through": reviewed,
             "endorsed_through": endorsed, "verdicts": verdicts, "open_findings": open_f,
-            "open_integrity": open_i, "findings": findings}
+            "open_integrity": open_i, "findings": findings,
+            # what publication may reach now: nothing while any finding is open — also one
+            # raised about generations already endorsed (the database enforces the same)
+            "publishable_through": None if open_f or open_i else endorsed}
 
 
 def growth_block(st, writer) -> str | None:

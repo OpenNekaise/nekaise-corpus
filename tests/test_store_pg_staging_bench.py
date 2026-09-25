@@ -312,7 +312,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--rows", type=int, default=200_000)
     ap.add_argument("--dsn", default=os.environ.get("NEKAISE_PG_TEST_DSN",
-                                                    "host=/home/zengp/.local/share/nekaise-pg/run "
+                                                    "host=/home/zengp/.local/share/nekaise-pg-test/run "
                                                     "dbname=nekaise_test"))
     args = ap.parse_args()
     print(json.dumps(run(args.dsn, args.rows), indent=1))

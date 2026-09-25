@@ -819,9 +819,10 @@ STAGED_VERIFY = (
 )
 
 
-def staged_gates(skip_tests: bool) -> list[str]:
-    return sorted(["artifacts", *(step for step, _, _ in STAGED_VERIFY),
-                   *(() if skip_tests else ("tests",))])
+def staged_gates() -> list[str]:
+    """The gates a staged round requires — always with the test suite (staged_main refuses
+    --skip-tests)."""
+    return sorted(["artifacts", "tests", *(step for step, _, _ in STAGED_VERIFY)])
 
 
 def staged_main(args, ap, st) -> int:
@@ -831,7 +832,15 @@ def staged_main(args, ap, st) -> int:
     if args.allow_dirty:
         ap.error("--allow-dirty does not apply to a staged round: its producer commit must be "
                  "exactly the code that runs")
+    if args.skip_tests and not args.recover:
+        ap.error("--skip-tests does not apply to a staged round: the test suite is one of the "
+                 "gates every staged run must pass before its promotion")
     env = {**os.environ, "PYTHONUNBUFFERED": "1"}
+    try:   # a dead coordinator's forks may hold its writer session: stop them first
+        round_recovery.stop_orphans_of_dead_coordinators(ROOT)
+    except Exception as exc:
+        print(f"ERROR: could not stop the orphans of a dead coordinator: {exc}", file=sys.stderr)
+        return 1
     if args.recover:
         target = None if args.recover == "latest" else args.recover
         with st.writer(timeout=args.lock_timeout, round_id=target) as writer:
@@ -900,17 +909,7 @@ def _staged_round(args, st, writer, run_id: str, env: dict) -> int:
     _complete_previous(st, writer, run_id)
     ident = staged_runs.identity(st, ROOT)
     with st.read(writer=writer) as view:
-        backends = {k: v for k, v in view.config_get().backends.items() if not k.startswith("_")}
-        rotation_state = view.rotation_get()
-        runtime = view.backend_state_get()
-        if errors := validate_backends(backends, rotation_state, runtime):
-            raise RuntimeError("backend configuration invalid:\n  " + "\n  ".join(errors))
-        enabled = {name: view.backend_enabled(name) for name in backends}
         before, _, _ = doc_stats(view)
-    selected = args.backend or [name for name in backends if enabled[name]]
-    if unknown := [name for name in selected if name not in backends]:
-        raise RuntimeError(f"unknown backend(s): {', '.join(unknown)}")
-    selected = [n for n in selected if enabled[n] or n in args.backend]
     with store_broker.staged_round(st, writer, run_id, kind="round",
                                    producer_commit=ident.producer_commit,
                                    extractor_version=ident.extractor_version,
@@ -920,12 +919,33 @@ def _staged_round(args, st, writer, run_id: str, env: dict) -> int:
                       producer_commit=ident.producer_commit,
                       cleaning_ruleset=ident.cleaning_ruleset)
         if not args.skip_discovery:
+            # selection, finder arguments and validation from the RUN's view at sequence 0: its
+            # configuration is this checkout's (pinned when it opened), not the parent
+            # generation's — a backend disabled or renamed in the commit that runs is honoured
+            selected, backends, rotation_state = select_backends(
+                args, st.read_staged(run_id, seq=0, writer=writer))
             run_finders_parallel(
-                selected, backends, rotation_state, {**env, **rnd.pinned_now()}, run_id,
+                selected, backends, rotation_state, {**env, **rnd.reader_env(0)}, run_id,
                 args.discovery_workers,
                 lambda compute: rnd.broker.computed_batch("discover", "merge", compute))
         generation = _drive_staged(args, st, rnd, run_id, env)
     return _promoted(st, writer, run_id, generation, before)
+
+
+def select_backends(args, opened) -> tuple[list[str], dict, dict]:
+    """(selected backends, backend configuration, rotation state) from the view `opened` opens:
+    validated, effective enablement (configuration AND runtime state), --backend overriding."""
+    with opened as view:
+        backends = {k: v for k, v in view.config_get().backends.items() if not k.startswith("_")}
+        rotation_state = view.rotation_get()
+        runtime = view.backend_state_get()
+        if errors := validate_backends(backends, rotation_state, runtime):
+            raise RuntimeError("backend configuration invalid:\n  " + "\n  ".join(errors))
+        enabled = {name: view.backend_enabled(name) for name in backends}
+    selected = args.backend or [name for name in backends if enabled[name]]
+    if unknown := [name for name in selected if name not in backends]:
+        raise RuntimeError(f"unknown backend(s): {', '.join(unknown)}")
+    return [n for n in selected if enabled[n] or n in args.backend], backends, rotation_state
 
 
 def _drive_staged(args, st, rnd, run_id: str, env: dict) -> int:
@@ -942,7 +962,7 @@ def _gate_and_promote(args, rnd, run_id: str, env: dict, done: dict | None = Non
     """Freeze (draining the broker first), run every required gate still without a receipt
     against the frozen state, record the verdicts, promote."""
     import store_staging
-    required = staged_gates(args.skip_tests)
+    required = staged_gates()
     frozen = rnd.freeze(required)
     ops.run_event(run_id, "staged_run_frozen", seq=frozen.seq, digest=frozen.digest,
                   gates=required)
@@ -1048,7 +1068,7 @@ def _resume_staged(args, st, writer, run_id: str, env: dict) -> int:
         ops.run_event(run_id, "round_processes_stopped", pids=stopped)
     artifact_store.LocalArtifacts(ROOT).sweep_incoming()
     ident = staged_runs.identity(st, ROOT)
-    if why := resume_refusal(st, writer, run, ident, staged_gates(args.skip_tests)):
+    if why := resume_refusal(st, writer, run, ident, staged_gates()):
         raise RuntimeError(f"run {run_id} cannot be resumed: {why}. Abort it "
                            f"(run_round.py --recover {run_id}) and start a new round")
     verified = artifact_store.verify_run(st, writer, run_id)

@@ -272,7 +272,7 @@ if __name__ == "__main__":
                          "(one size per process: its peak RSS is the process's)")
     ap.add_argument("--workers", type=int, default=8)
     ap.add_argument("--dsn", default=os.environ.get("NEKAISE_PG_TEST_DSN",
-                                                    "host=/home/zengp/.local/share/nekaise-pg/run "
+                                                    "host=/home/zengp/.local/share/nekaise-pg-test/run "
                                                     "dbname=nekaise_test"))
     args = ap.parse_args()
     if args.clean:

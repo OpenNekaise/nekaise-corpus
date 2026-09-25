@@ -1832,3 +1832,70 @@ is refused, as after every migration).
 - **Gates**: full suite 1195 passed / 206 skipped (PostgreSQL skipped), with PostgreSQL
   (`nekaise_test`) 1429 passed / 2 skipped (the two opt-in benchmarks); `py_compile` of scripts
   and tests clean. Nothing ran against the live schema, the live checkout, cron or the maintainer.
+
+### Step 4, Codex review fixes (2026-09-25; verdict MERGE AFTER FIXES, six P2)
+
+Each fix has a regression test. v7 is deployed nowhere but throwaway test schemas, so `V7_DDL`
+itself was revised (the publication guard); once any schema is v7, a change ships as migration 8.
+
+- **P2 1 — an unconfirmed stop never leads to an abort.** `store_broker.staged_round` marks the
+  stop confirmed only after `stop_owned` returned. If it raised (a survivor after SIGKILL, an
+  error), the broker is still drained but the run is NOT recovered: it stays open, which blocks
+  every later round and standalone mutation until a recovery confirms the stop (`recover_staged`
+  also raises before its status query when its own stop fails). An interrupt during the stop
+  propagates unconfirmed, and recovery stops again, aborting only once that stop returned.
+  Tests: interrupt then confirmed stop — the run is still open at the second stop and only then
+  aborted; a survivor — the run stays open, `refuse_unfinished` refuses, `recover_staged` refuses
+  to abort until the stop succeeds; two interrupts — the run stays open.
+- **P2 2 — every staged lifecycle's processes are recoverable.** Each coordinator holds an
+  ownership mark while its run is open (`round_recovery.OwnershipMark`,
+  `workspace/run-owners/nekaise-run-owner.<run>`): an inheritable descriptor that every process
+  it forks inherits (fork-only workers keep their parent's ORIGINAL environment in
+  `/proc/<pid>/environ`, so a later tag cannot reach them), and a record of the coordinator's pid
+  and start time. Standalone commands and the maintainer's action window also tag themselves
+  (`NEKAISE_RUN_OWNER=<run>`, set before anything is exec'd, restored after; a recovery-only
+  variable, so no pipeline step changes behaviour), so every child they exec — spawned
+  extraction workers, the agent and its tools — carries it from exec. `round_processes` matches
+  `NEKAISE_RUN_ID`, `NEKAISE_RUN_OWNER` or the mark; it skips only exited and non-dumpable
+  processes and raises on any other read error. Found while testing: a fork of a dead
+  coordinator also inherits its DATABASE SESSION, so the writer lock stays held and no recovery
+  could take ownership — `stop_orphans_of_dead_coordinators` therefore runs before the writer
+  is requested (run_round's staged modes, the maintainer's window, standalone commands) and
+  stops the processes of runs whose mark names a coordinator that is no longer alive (a live
+  coordinator's processes are never touched; an unreadable mark raises); the run's status is
+  then decided under the writer as before. Maintenance window run ids gained a random suffix.
+  Tests: a standalone loader SIGKILLed with its extraction workers up, and the maintainer
+  SIGKILLed with its action agent and a fork of itself running (the writer lock demonstrably
+  held by the fork) — both recovered by `run_round.py --recover latest` from another process,
+  orphans stopped, run aborted, marks swept; a unit test of the fork/exec markers and of the
+  dead-coordinator rule.
+- **P2 3 — a standalone fetch completes its pipeline.** `staged_runs.DOWNSTREAM`: before a
+  standalone fetch freezes, `prune_corpus.py --apply` and `clean_corpus.py` run as the run's
+  children through its broker (sharing the loader's deferral handoff through `NEKAISE_RUN_ID`,
+  as in a round); a standalone prune is followed by a clean. The gates are unchanged. Test: a
+  standalone `build_corpus.py` is promoted with fetch and clean batches and its documents
+  materialized.
+- **P2 4 — discovery uses the configuration of the commit that runs.** The run is opened first;
+  backend selection, finder arguments and validation come from its own view at sequence 0
+  (`select_backends`), whose pinned configuration is the checkout's. Test: a committed rename of
+  a finder (script and configuration) runs the new script in the next round, and a committed
+  disable stops the next round from invoking it.
+- **P2 5 — open findings stop publication.** The publication guard now writes the
+  `review_state` row (a no-op update, allowed at trigger depth 2) and refuses any advance while a
+  finding or integrity finding is open — including one raised about generations endorsed before
+  it (an empty-range finding) — as well as beyond the endorsed generation.
+  `generation_review.state` reports `publishable_through`. Because both a verdict and a
+  publication advance write that row, they serialize under any isolation level. Tests: endorse
+  through 1 with publication lagging, a retrospective integrity finding, the advance refused;
+  after the compensating repair's resolving verdict it succeeds; a finding recorded while an
+  advance is uncommitted waits for it.
+- **P2 6 — `--skip-tests` is refused under PostgreSQL authority**, for rounds and `--resume`,
+  before any run is opened or adopted (exit 2); the legacy file-store round is unchanged.
+  `staged_gates()` always includes `tests`.
+- **Test database.** PostgreSQL tests now run on a separate throwaway cluster without WAL
+  archiving (test WAL was filling the backup SSD):
+  `NEKAISE_PG_TEST_DSN="host=/home/zengp/.local/share/nekaise-pg-test/run dbname=nekaise_test"`;
+  the benchmarks' default DSN points there. The `nekaise_test` database on the live cluster is
+  no longer used.
+- **Gates**: full suite 1195 passed / 217 skipped (PostgreSQL skipped), with PostgreSQL (the
+  test cluster) 1440 passed / 2 skipped (the two opt-in benchmarks); `py_compile` clean.

@@ -270,6 +270,8 @@ def maintenance_window(phase: str):
     try:
         with ExitStack() as locks:
             st, staged = open_store("the maintenance window")
+            if staged:   # a dead coordinator's forks may hold its writer session
+                round_recovery.stop_orphans_of_dead_coordinators(ROOT)
             try:
                 locks.enter_context(ops.named_lock("continuous-dig", timeout=wait))
                 remaining = max(0, wait - (time.monotonic() - started))
@@ -283,7 +285,8 @@ def maintenance_window(phase: str):
                 raise MaintenanceBusy(str(exc)) from exc
             locks.enter_context(window_writer(st, writer, staged))
             window_id = f"maint-{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}-{phase}"
-            if staged:
+            if staged:   # a run id: unique even for two windows within one second
+                window_id += f"-{os.urandom(4).hex()}"
                 window = locks.enter_context(_staged_window(st, writer, window_id, phase))
             else:
                 broker = store_broker.Broker(st, writer, window_id)
@@ -324,11 +327,14 @@ def _staged_window(st, writer, window_id: str, phase: str):
               "this window", flush=True)
         yield Window(st, writer, None, staged=True, window_id=window_id)
         return
+    # tag=True: the window's agent (and everything it execs) carries NEKAISE_RUN_OWNER=<run>
+    # from exec, and forks of this process inherit the run's ownership mark — so if the
+    # maintainer is killed, any later recovery finds and stops them before it aborts the run
     with store_broker.staged_round(st, writer, window_id, kind="maintenance",
                                    producer_commit=ident.producer_commit,
                                    extractor_version=ident.extractor_version,
                                    cleaning_ruleset=ident.cleaning_ruleset,
-                                   config_documents=ident.config) as rnd:
+                                   config_documents=ident.config, tag=True) as rnd:
         window = Window(st, writer, rnd.broker, rnd, staged=True, window_id=window_id)
         with exported_env(rnd.broker.env()):
             yield window

@@ -1715,7 +1715,8 @@ def _migrate_6(conn, schema):  # stage 4 step 3 artifacts: additive, see V6_DDL
 #                      open findings. A verdict covers exactly (reviewed_through, hi]; findings
 #                      withhold endorsement until a later verdict resolves them — one whose range
 #                      covers a generation promoted after the finding (the compensating repair);
-#                      an integrity finding also blocks growth. Every verdict acknowledges the range's outbox
+#                      an integrity finding also blocks growth; any open finding (also one raised
+#                      after endorsement) stops publication. Every verdict acknowledges the range's outbox
 #                      rows for consumer "review" and advances its watermark; the "publication"
 #                      consumer may never pass the endorsed generation. Backfilled from the review
 #                      consumer's existing acknowledgements (a legacy non-ok one refuses the
@@ -2057,14 +2058,24 @@ END $f$;
 CREATE OR REPLACE TRIGGER outbox_acks_review BEFORE INSERT ON {s}.outbox_acks
     FOR EACH ROW EXECUTE FUNCTION {s}.nk_review_acks_guard();
 CREATE OR REPLACE FUNCTION {s}.nk_publication_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
-DECLARE endorsed bigint; top bigint;
+DECLARE endorsed bigint; top bigint; open_n int;
 BEGIN
     IF NEW.consumer = 'review' AND NEW.watermark > OLD.watermark AND pg_trigger_depth() < 2 THEN
         RAISE EXCEPTION 'nekaise: the review watermark moves only with review verdicts'
             USING ERRCODE = 'integrity_constraint_violation';
     END IF;
     IF NEW.consumer = 'publication' AND NEW.watermark > OLD.watermark THEN
-        SELECT endorsed_through INTO endorsed FROM {s}.review_state;
+        -- WRITE the review state row (a no-op update; its guard allows depth 2): a verdict writes
+        -- it too, so a publication advance and a new finding never both commit on stale reads,
+        -- under any isolation level
+        UPDATE {s}.review_state SET verdicts = verdicts
+            RETURNING endorsed_through, open_findings + open_integrity INTO endorsed, open_n;
+        -- any outstanding finding stops publication, including one raised AFTER its generations
+        -- were endorsed (an empty-range finding about reviewed data)
+        IF open_n > 0 THEN
+            RAISE EXCEPTION 'nekaise: publication is withheld while % review finding(s) are open',
+                open_n USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
         SELECT max(o.seq) INTO top FROM {s}.outbox o WHERE o.generation <= endorsed;
         IF endorsed IS NULL OR NEW.watermark > COALESCE(top, OLD.watermark) THEN
             RAISE EXCEPTION 'nekaise: publication may not pass the endorsed generation %',
