@@ -22,6 +22,7 @@ def source(tmp_path, monkeypatch):
     mount = tmp_path / "ssd"
     mount.mkdir()
     monkeypatch.setattr(backup, "require_mount", lambda path, expected_uuid=None: None)
+    monkeypatch.setattr(backup, "safety_margin", lambda mount: 0)   # a tmpfs test drive
     return root, mount
 
 
@@ -84,7 +85,7 @@ def test_failed_backup_never_published(source, monkeypatch, failure):
     if failure == "checksum":
         monkeypatch.setattr(backup, "hash_file", lambda path: "bad")
     elif failure == "copy":
-        def fail(root, path):
+        def fail(root, path, names=None):
             path.write_bytes(b"incomplete")
             raise OSError("disk disconnected")
         monkeypatch.setattr(backup, "write_archive", fail)
@@ -101,3 +102,49 @@ def test_symlink_input_refused(source):
     (root / "corpus/link.md").symlink_to(root / "corpus/sample.md")
     with pytest.raises(RuntimeError, match="link or special"):
         backup.backup(root, mount)
+
+
+def test_every_cleaned_view_is_archived_and_restores_but_raw_text_views_never(source, tmp_path):
+    root, mount = source
+    for cls in ("nc", "arxiv-nonexclusive", "policy-held"):
+        d = root / "collection" / cls / "corpus"
+        d.mkdir(parents=True)
+        (d / f"doc-{cls}.md").write_text(f"cleaned {cls} text\n")
+    raw_view = root / "collection" / "nc" / "raw" / "osti"
+    raw_view.mkdir(parents=True)
+    (raw_view / "doc-nc.pdf").write_bytes(b"%PDF raw alias")          # never on the SSD
+    (root / "collection" / "nc" / "text").mkdir()
+    (root / "collection" / "nc" / "text" / "doc-nc.md").write_text("verbatim alias")
+    first = backup.backup(root, mount)
+    import json
+    scope = json.loads((first / "SCOPE.json").read_text())
+    assert scope["format"] == backup.SCOPE_FORMAT and scope["scope"] == backup.SCOPE
+    assert set(scope["views"]) == {"corpus", "collection/nc/corpus",
+                                   "collection/arxiv-nonexclusive/corpus",
+                                   "collection/policy-held/corpus"}
+    restored = tmp_path / "restored"
+    restored.mkdir()
+    with tarfile.open(first / "corpus.tar.gz") as stream:
+        names = stream.getnames()
+        stream.extractall(restored, filter="data")
+    assert not any("/raw/" in n or "/text/" in n or n.startswith(("raw/", "text/"))
+                   for n in names)
+    for cls in ("nc", "arxiv-nonexclusive", "policy-held"):
+        rel = f"collection/{cls}/corpus/doc-{cls}.md"
+        assert (restored / rel).read_bytes() == (root / rel).read_bytes()
+    assert (restored / "corpus" / "sample.md").read_bytes() == \
+        (root / "corpus" / "sample.md").read_bytes()
+    assert (restored / "manifest" / "curated.jsonl").exists()
+
+
+def test_capacity_guard_keeps_the_safety_margin(source, monkeypatch):
+    root, mount = source
+    usage = backup.shutil.disk_usage(mount)
+    monkeypatch.setattr(backup.shutil, "disk_usage",
+                        lambda path: usage._replace(free=10 * 2**30, total=100 * 2**30))
+    monkeypatch.setattr(backup, "safety_margin", lambda m: 64 * 2**30)
+    with pytest.raises(RuntimeError, match="safety margin"):
+        backup.backup(root, mount)
+    assert not list(mount.iterdir())
+    monkeypatch.undo()
+    assert backup.safety_margin(mount) >= backup.SAFETY_MARGIN_BYTES

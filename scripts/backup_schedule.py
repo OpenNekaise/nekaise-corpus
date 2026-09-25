@@ -22,6 +22,18 @@ STATUS = ROOT / "workspace/backup-status.json"
 TAG = "# nekaise-corpus automatic backup"
 NAME = re.compile(r"corpus-\d{8}T\d{6}Z-[0-9a-f]{8}")
 FILES = {"corpus.tar.gz", "SHA256SUMS", "RESTORE.txt"}
+# the current archive format also records its scope; only those count as a fresh backup
+SCOPED_FILES = FILES | {"SCOPE.json"}
+
+
+def scoped(path: Path) -> bool:
+    """An archive of the current scope: every cleaned view (backup_corpus.SCOPE, format 2)."""
+    try:
+        doc = json.loads((path / "SCOPE.json").read_text())
+    except (OSError, ValueError):
+        return False
+    return (isinstance(doc, dict) and doc.get("format") == backup_corpus.SCOPE_FORMAT
+            and doc.get("scope") == backup_corpus.SCOPE)
 
 
 def drive_uuid(mount: Path) -> str:
@@ -53,8 +65,10 @@ def ensure_drive(config: dict) -> Path:
     return mount
 
 
-def candidates(mount: Path, *, partial: bool = False) -> list[Path]:
-    """Recognize only this tool's archives; never delete symlinks or unrelated content."""
+def candidates(mount: Path, *, partial: bool = False, current_scope: bool = False) -> list[Path]:
+    """Recognize only this tool's archives; never delete symlinks or unrelated content.
+    `current_scope`: only archives of the current scope (SCOPE.json) — an older default-corpus-
+    only archive never satisfies freshness, though it still counts for retention."""
     parent = mount / "nekaise-corpus-backups"
     if parent.is_symlink():
         raise RuntimeError("Backup directory must not be a symlink")
@@ -68,10 +82,12 @@ def candidates(mount: Path, *, partial: bool = False) -> list[Path]:
         if not NAME.fullmatch(name) or path.is_symlink() or not path.is_dir():
             continue
         files = list(path.iterdir())
-        if any(p.is_symlink() or not p.is_file() or p.name not in FILES for p in files):
+        if any(p.is_symlink() or not p.is_file() or p.name not in SCOPED_FILES for p in files):
             continue
         if not partial:
-            if {p.name for p in files} != FILES:
+            if {p.name for p in files} not in (FILES, SCOPED_FILES):
+                continue
+            if current_scope and not scoped(path):
                 continue
             checksum = (path / "SHA256SUMS").read_text()
             if not re.fullmatch(r"[0-9a-f]{64}  corpus\.tar\.gz\n", checksum):
@@ -90,7 +106,7 @@ def record(result: str, **fields) -> None:
 
 
 def recent(config: dict, mount: Path) -> bool:
-    completed = candidates(mount)
+    completed = candidates(mount, current_scope=True)
     if not completed:
         return False
     latest = completed[0]
@@ -126,7 +142,10 @@ def run(config: dict, *, force: bool = False) -> int:
                         print(f"Removing abandoned partial backup: {path}", flush=True)
                         shutil.rmtree(path)
                 record("backing-up", error=None)
-                completed = backup_corpus.backup(ROOT, mount, expected_uuid=config["uuid"])
+                # through locked_backup: the file-authority check under the lock we hold, never
+                # the bare backup() (a PostgreSQL-authoritative root must refuse)
+                completed = backup_corpus.locked_backup(ROOT, mount,
+                                                        expected_uuid=config["uuid"])
                 # Never evict a successful backup until its replacement is verified.
                 for path in candidates(mount)[config["keep"]:]:
                     if path != completed:

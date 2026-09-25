@@ -23,11 +23,12 @@ def setup(tmp_path, monkeypatch):
     monkeypatch.setattr(schedule, "STATUS", root / "workspace/backup-status.json")
     monkeypatch.setattr(ops, "WORKSPACE", root / "workspace")
     monkeypatch.setattr(schedule, "ensure_drive", lambda config: mount)
+    monkeypatch.setattr(backup_corpus, "safety_margin", lambda mount: 0)
     config = {"mount": str(mount), "uuid": "abc-123", "interval_hours": 24, "keep": 2}
     return root, mount, config
 
 
-def archive(mount, number, age=0, partial=False):
+def archive(mount, number, age=0, partial=False, scoped=True):
     folder = mount / "nekaise-corpus-backups" / f"corpus-20260901T000000Z-{number:08x}"
     if partial:
         folder = folder.with_name(folder.name + ".partial")
@@ -37,6 +38,9 @@ def archive(mount, number, age=0, partial=False):
         digest = hashlib.sha256(b"test archive").hexdigest()
         (folder / "SHA256SUMS").write_text(f"{digest}  corpus.tar.gz\n")
         (folder / "RESTORE.txt").write_text("restore instructions\n")
+        if scoped:   # the current archive format (every cleaned view)
+            (folder / "SCOPE.json").write_text(json.dumps(
+                {"format": backup_corpus.SCOPE_FORMAT, "scope": backup_corpus.SCOPE}))
     stamp = time.time() - age
     os.utime(folder, (stamp, stamp))
     return folder
@@ -180,3 +184,31 @@ def test_mount_table_refuses_conflicting_entries(setup):
         schedule.mount_table(config, "UUID=abc-123 /different ext4 defaults 0 2\n")
     with pytest.raises(RuntimeError, match="existing fstab entry"):
         schedule.mount_table(config, f"UUID=another {config['mount']} ext4 defaults 0 2\n")
+
+
+def test_a_default_corpus_only_archive_is_not_fresh_but_still_retained(setup, monkeypatch):
+    _, mount, config = setup
+    old_scope = archive(mount, 1, scoped=False)          # yesterday's corpus-only format
+    assert schedule.candidates(mount) == [old_scope]
+    assert schedule.candidates(mount, current_scope=True) == []
+    calls = []
+
+    def create(*args, **kwargs):
+        calls.append(kwargs)
+        return archive(mount, 2)
+    monkeypatch.setattr(backup_corpus, "backup", create)
+    assert schedule.run(config) == 0                     # due: the expanded scope is missing
+    assert calls and old_scope.exists()                  # keep=2: nothing evicted yet
+
+
+def test_the_scheduler_goes_through_the_authority_checked_locked_backup(setup, monkeypatch):
+    _, mount, config = setup
+    import store_authority
+    seen = []
+    monkeypatch.setattr(store_authority, "require_file_mode",
+                        lambda root, who: seen.append(who) or (_ for _ in ()).throw(
+                            store_authority.AuthorityError("postgres is authoritative")))
+    monkeypatch.setattr(backup_corpus, "backup", lambda *a, **k: pytest.fail("bypassed"))
+    assert schedule.run(config, force=True) == 1
+    assert seen == ["backup_corpus.py"]
+    assert json.loads(schedule.STATUS.read_text())["result"] == "failed"

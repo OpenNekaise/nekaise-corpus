@@ -1978,3 +1978,30 @@ normalized-identifier side table or expression index maintained with the rows) t
 staged-revision and deleted-row visibility of this lookup, and passes the same contract tests
 (`test_known_pids_*`, `test_store_pg_staging` snapshots). The index belongs in a NEW migration
 after v7, never an edit of an existing one.
+
+## Collect-all directive: classified views and backup scope (2026-09-25)
+
+Operator directive 2026-09-25: collect all raw data regardless of licence; the licence classifies
+the bytes into a use class and view (`registry.use_class`, `corpus_path_for`), it never decides
+collection. Storage consequences:
+
+- Artifact identities stay `(stage, sha256)` with stages exactly `raw`, `text`, `corpus`; a licence
+  is never part of an identity. `corpus_*` fields describe a cleaned artifact, not admission to
+  the default training view. Reclassification rewrites a row's `corpus_path` (same
+  `corpus_sha256`) and moves the materialized file between views; raw/text paths and hashes
+  never change and no bytes are erased.
+- Views: `corpus/` (the open class, the training default) and `collection/<class>/corpus/` for
+  every restricted-use class and policy hold; `collection/<class>/{raw,text}/` are rebuildable
+  hard-link views of the canonical originals. Materialization stamps carry view, stage,
+  classification-policy version, dataset and generation; `after_promotion` refreshes every
+  cleaned view (classified first), `materialization_current` requires all of them.
+- **Backup scope (operator, 2026-09-25):** the external SSD stores the cleaned corpus only — the
+  default view, every classified cleaned view, and the provenance metadata — as the existing
+  verified tar archives with 7-copy retention (format 2 archives carry `SCOPE.json`; an older
+  corpus-only archive no longer counts as fresh). A capacity guard keeps
+  `max(64 GiB, 3 %)` of the drive free for the PostgreSQL WAL and base backups, and the scheduler
+  now goes through `locked_backup()` (the file-authority check under the round lock).
+- **Open question, out of scope for the SSD:** `raw/` (746 GB) and `text/` (82 GB) have no backup
+  today. Their durability belongs to stage 5 (content-addressed packs / private S3 with
+  independent deletion protection, section 5); until then a lost disk loses the originals, and
+  cleaned views can be rebuilt only from surviving text.
