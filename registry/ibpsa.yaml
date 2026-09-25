@@ -7595,3 +7595,65 @@ sources:
     topic: building_energy
     format: pdf
     document_type: conference-paper
+  - id: ibp-transient-model-development-of-a-low-energy-multi-un
+    title: Transient Model Development of a Low-energy Multi-unit Residential Building
+      Comprising a Novel Solar-driven Space Cooling System
+    url: https://publications.ibpsa.org/proceedings/esim/2024/esim2024_7.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-optimizing-residential-mechanical-ventilation-agains
+    title: 'Optimizing residential mechanical ventilation against airborne infections:
+      A computational fluid dynamics approach'
+    url: https://publications.ibpsa.org/proceedings/esim/2024/esim2024_76.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-multi-armed-bandit-reinforcement-learning-method-f
+    title: A multi-armed bandit reinforcement learning method for occupant thermal preference
+      learning
+    url: https://publications.ibpsa.org/proceedings/esim/2024/esim2024_77.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-optimization-of-building-integrated-photovoltaic-the
+    title: Optimization of building-integrated photovoltaic/thermal-thermal storage
+      systems for domestic hot water in cold climate
+    url: https://publications.ibpsa.org/proceedings/esim/2024/esim2024_80.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-managing-humidity-in-greenhouses-using-ground-air-he
+    title: Managing humidity in greenhouses using ground air heat exchangers
+    url: https://publications.ibpsa.org/proceedings/esim/2024/esim2024_83.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-implementing-thermal-electric-storage-in-energyplus-
+    title: Implementing Thermal Electric Storage in EnergyPlus through an OpenStudio
+      Measure
+    url: https://publications.ibpsa.org/proceedings/esim/2024/esim2024_89.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-what-cooling-systems-can-be-implemented-to-enhance-o
+    title: What cooling systems can be implemented to enhance occupants' thermal comfort
+      in highly glazed spaces?
+    url: https://publications.ibpsa.org/proceedings/esim/2024/esim2024_97.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
