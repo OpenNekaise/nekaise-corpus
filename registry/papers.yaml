@@ -74291,3 +74291,55 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/isprsannals-ii-5-w2-337-2013 openalex:W2126169152
     resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-buildenv-2026-114553-320f787f
+    title: Large language model orchestrated workflow integrating retrieval-augmented
+      generation and model context protocol tools for urban-scale simulation-base
+    url: https://www.repository.cam.ac.uk/bitstreams/2e0aa826-03a0-4f97-a019-d266f30c50a9/download
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-03-25'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2026.114553
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.repository.cam.ac.uk/bitstreams/2e0aa826-03a0-4f97-a019-d266f30c50a9/download;
+      version submittedVersion]
+    rights_verified_at: '2026-09-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2026.114553 openalex:W7140294779
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2608-04695-c3d779bc
+    title: Personalized Federated Sparse Adaptation of Time-Series Foundation Models
+    url: https://arxiv.org/pdf/2608.04695
+    source: openalex_ai
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    published_at: '2026-08-05'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2608.04695
+    license_evidence: openalex.license=cc-by-sa; openalex.license_id=https://openalex.org/licenses/cc-by-sa
+      [copy https://arxiv.org/pdf/2608.04695; version submittedVersion]
+    rights_verified_at: '2026-09-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2608.04695 openalex:W7196973574
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2607-04374-d4fe30f3
+    title: An End-to-End Explainable AI Framework with Automated LLM-Based Natural Language
+      Explanation Generation for Energy Systems
+    url: https://arxiv.org/pdf/2607.04374
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    published_at: '2026-07-05'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2607.04374
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2607.04374; version submittedVersion]
+    rights_verified_at: '2026-09-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2607.04374 openalex:W7167640112
+    resolution: 'ai1: openalex location'
