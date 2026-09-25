@@ -74437,3 +74437,60 @@ sources:
     selected_version: acceptedVersion
     origin_ids: doi:10.3390/su18010087 openalex:W7117132036
     resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-annals-x-g-2025-397-2025-53f400f6
+    title: Automated District-Level Energy Demand Modeling Using EnergyPlus Empowered
+      by Digital Twin Technology
+    url: https://isprs-annals.copernicus.org/articles/X-G-2025/397/2025/isprs-annals-X-G-2025-397-2025.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-07-10'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-annals-x-g-2025-397-2025
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-annals.copernicus.org/articles/X-G-2025/397/2025/isprs-annals-X-G-2025-397-2025.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-25'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-annals-x-g-2025-397-2025 openalex:W4412170338
+    resolution: 'sim1: openalex location'
+  - id: oas-10-3390-buildings15132193-4a553589
+    title: 'Integrating Occupant Behavior into Window Design: A Dynamic Simulation Study
+      for Enhancing Natural Ventilation in Residential Buildings'
+    url: https://vuir.vu.edu.au/50038/1/buildings-15-02193%20%282%29.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-06-23'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/buildings15132193
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://vuir.vu.edu.au/50038/1/buildings-15-02193%20%282%29.pdf; version
+      submittedVersion]
+    rights_verified_at: '2026-09-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/buildings15132193 openalex:W4411611705
+    resolution: 'sim1: openalex location'
+  - id: oas-10-3389-frsc-2024-1469803-8e544b95
+    title: Sensitizing performance of air purifiers for the high-rise commercial buildings
+      in urban core
+    url: https://www.frontiersin.org/journals/sustainable-cities/articles/10.3389/frsc.2024.1469803/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-01-22'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/frsc.2024.1469803
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.frontiersin.org/journals/sustainable-cities/articles/10.3389/frsc.2024.1469803/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-25'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/frsc.2024.1469803 openalex:W4406725987
+    resolution: 'sim1: openalex location'
