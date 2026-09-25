@@ -74,15 +74,21 @@ def suspended_unavailable(row: dict, policy: dict[str, dict], root: Path | None 
     return not text_path or not ((root or ROOT) / text_path).exists()
 
 
-def programme_unavailable(row: dict, root: Path | None = None) -> bool:
-    """A successful compliance-programme row (state_codec.PROGRAMME_PREFIXES) whose extracted text
-    is not on this machine: its restoration is budgeted and may be deferred to a later round, and
-    a dated snapshot (URL fragment `#tom-…`) may be unrestorable because the upstream serves only
-    the current version. Locally unavailable, never re-judged from missing or newer text."""
+def programme_unavailable(row: dict, root: Path | None = None, exists=None) -> bool:
+    """A successful compliance-programme row (state_codec.PROGRAMME_PREFIXES) holding NEITHER its
+    extracted text NOR its raw bytes on this machine: its network restoration is budgeted (and
+    review-gated) and may be deferred to a later round, and a dated snapshot (URL fragment
+    `#tom-…`) may be unrestorable because the upstream serves only the current version. Locally
+    unavailable, never re-judged from missing or newer text. A row whose raw bytes ARE held is not
+    unavailable: its text is repaired by local re-extraction (build_corpus). `exists(row, stage)`
+    answers for versioned staged runs; default: the row's raw_path/text_path under `root`."""
     if row.get("status") != "ok" or not str(row.get("id", "")).startswith(PROGRAMME_PREFIXES):
         return False
-    text_path = row.get("text_path")
-    return not text_path or not ((root or ROOT) / text_path).exists()
+    if exists is None:
+        def exists(r, stage):
+            rel = r.get("raw_path" if stage == "raw" else "text_path")
+            return bool(rel) and ((root or ROOT) / rel).exists()
+    return not exists(row, "text") and not exists(row, "raw")
 
 
 def locally_unavailable_rows(rows: list[dict], policy: dict[str, dict],

@@ -30,6 +30,7 @@ import requests
 import compliance_common
 import host_policy
 import robots_policy
+import stream_guard
 
 UA = {"User-Agent": "nekaise-corpus/compliance-discovery (research corpus; robots.txt honoured)"}
 MAX_BYTES = 16 * 1024 * 1024
@@ -133,6 +134,8 @@ def get(url: str, *, delay: float = 1.0, expect: str = "any", max_bytes: int = M
     for _ in range(MAX_REDIRECTS + 1):
         robots_delay = check(hop)
         pace(hop, max(delay, robots_delay))
+        if time.monotonic() - started > DEADLINE:  # the waits count: never request late
+            raise Deferred(f"{hop}: the {DEADLINE:.0f} s request deadline passed while waiting")
         resp = requests.get(hop, headers={**UA, **(headers or {})},
                             timeout=TIMEOUT, allow_redirects=False, stream=True)
         status = resp.status_code
@@ -149,21 +152,13 @@ def get(url: str, *, delay: float = 1.0, expect: str = "any", max_bytes: int = M
         if status >= 400:
             resp.close()
             resp.raise_for_status()
-        body = bytearray()
-        for chunk in resp.iter_content(8192 if prefix is None else min(8192, prefix)):
-            body.extend(chunk)
-            if prefix is not None and len(body) >= prefix:
-                del body[prefix:]
-                resp.close()
-                break
-            if len(body) > max_bytes:
-                resp.close()
-                raise TooLarge(f"{hop}: body exceeds {max_bytes} bytes")
-            if time.monotonic() - started > DEADLINE:
-                resp.close()
-                raise TooLarge(f"{hop}: exceeded the {DEADLINE:.0f} s deadline")
-        resp._content = bytes(body)  # noqa: SLF001 — materialise the capped stream once
-        resp._content_consumed = True  # noqa: SLF001
+        try:
+            body = stream_guard.read_body(resp, max_bytes=max_bytes, deadline=started + DEADLINE,
+                                          prefix=prefix)
+        except stream_guard.BodyTooLarge as exc:
+            raise TooLarge(f"{hop}: {exc}") from exc
+        except stream_guard.DeadlineExceeded as exc:
+            raise Deferred(f"{hop}: {exc}") from exc  # slow now: retry later, never data
         ctype = (resp.headers.get("content-type") or "").lower()
         head = bytes(body[:4000]).lstrip()
         looks_html = "text/html" in ctype or head[:15].lower().startswith((b"<!doctype html",

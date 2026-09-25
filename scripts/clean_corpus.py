@@ -902,6 +902,8 @@ def build_versioned(session, access, args) -> None:
                 if policy and host_policy.suspended(r.get("url") or "", policy) \
                         and not access.exists(r, "text"):
                     continue   # locally unavailable, suspended host
+                if registry.programme_unavailable(r, exists=access.exists):
+                    continue   # locally unavailable, programme restoration deferred
                 if not args.force and versioned_fresh(r, access, tag):
                     job.stats["up-to-date"] += 1
                     continue
@@ -964,6 +966,8 @@ def check_versioned(view, access) -> None:
         if policy and host_policy.suspended(r.get("url") or "", policy) \
                 and not access.exists(r, "text"):
             continue
+        if registry.programme_unavailable(r, exists=access.exists):
+            continue  # locally unavailable, programme restoration deferred
         checked += 1
         if not versioned_fresh(r, access, tag):
             stale += 1

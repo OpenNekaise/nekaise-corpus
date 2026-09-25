@@ -193,6 +193,41 @@ def is_programme_row(sid: str) -> bool:
     return compliance_common.is_programme_id(sid)
 
 
+COOLDOWN_DAYS = 7
+
+
+def _cooldown_path() -> Path:
+    return HERE / "workspace" / "programme-cooldowns.json"  # scratch: loss only costs a retry
+
+
+def _cooldowns() -> set[str]:
+    """Held snapshots found unrestorable within COOLDOWN_DAYS (their version is gone upstream)."""
+    try:
+        data = json.loads(_cooldown_path().read_text())
+    except (OSError, ValueError):
+        return set()
+    now = time.time()
+    return {sid for sid, at in data.items()
+            if isinstance(at, (int, float)) and now - at < COOLDOWN_DAYS * 86400}
+
+
+_cool_lock = threading.Lock()
+
+
+def _cool(sid: str) -> None:
+    with _cool_lock:
+        try:
+            data = json.loads(_cooldown_path().read_text())
+        except (OSError, ValueError):
+            data = {}
+        data[sid] = time.time()
+        try:
+            _cooldown_path().parent.mkdir(parents=True, exist_ok=True)
+            ops.atomic_write_text(_cooldown_path(), json.dumps(data, sort_keys=True))
+        except OSError:
+            pass
+
+
 class ProgrammeBudget:
     """This run's programme byte/time accounting (thread-safe)."""
 
@@ -807,25 +842,18 @@ def _read_capped(resp, max_bytes: int, hops: "Hops | None" = None) -> None:
     if declared and declared.isdigit() and int(declared) > max_bytes:
         resp.close()
         raise TooLarge(f"declared {declared} bytes exceeds the {max_bytes}-byte cap")
-    body = bytearray()
-    # small reads: urllib3 returns a read as soon as READ_CHUNK bytes (or a read timeout) arrive,
-    # so the deadline is checked at least every TIMEOUT seconds even on a trickling stream
-    for chunk in resp.iter_content(READ_CHUNK):
-        body.extend(chunk)
-        if len(body) > max_bytes:
-            resp.close()
-            raise TooLarge(f"body exceeds the {max_bytes}-byte cap")
-        if hops is not None:
-            if time.monotonic() - hops.started > DOCUMENT_DEADLINE:
-                resp.close()
-                raise DeadlineExceeded(f"exceeded the {DOCUMENT_DEADLINE:.0f} s document deadline")
-            try:
-                PROGRAMME.charge(hops.sid, len(chunk))
-            except BudgetExceeded:
-                resp.close()
-                raise
-    resp._content = bytes(body)  # noqa: SLF001 — requests' own cache of a consumed body
-    resp._content_consumed = True  # noqa: SLF001
+    import stream_guard
+
+    # a watchdog enforces the deadline even when a trickling stream keeps one read blocked
+    deadline = (hops.started if hops is not None else time.monotonic()) + DOCUMENT_DEADLINE
+    try:
+        stream_guard.read_body(
+            resp, max_bytes=max_bytes, deadline=deadline, chunk=READ_CHUNK,
+            on_chunk=(lambda n: PROGRAMME.charge(hops.sid, n)) if hops is not None else None)
+    except stream_guard.BodyTooLarge as exc:
+        raise TooLarge(str(exc)) from exc
+    except stream_guard.DeadlineExceeded as exc:
+        raise DeadlineExceeded(f"{DOCUMENT_DEADLINE:.0f} s document deadline: {exc}") from exc
 
 
 def download_one(src: dict) -> dict:
@@ -859,6 +887,7 @@ def download_one(src: dict) -> dict:
             if sid in HELD_OK_IDS:
                 rec["_deferred"] = ("snapshot version no longer served upstream; the held "
                                     "provenance and bytes are kept")
+                _cool(sid)  # do not spend the next rounds' allocation on it again
             else:
                 rec["error"] = (f"snapshot-superseded: upstream no longer serves "
                                 f"{compliance_common.snapshot_token(src['url'])}")
@@ -1451,6 +1480,21 @@ def _run(view, session, args, only: set[str], selection: dict) -> None:
         print(f"host fetch suspended by registry/host_policy.json (not requested): "
               f"{dict(suspended)}")
 
+    # a held programme row whose raw bytes are here but whose text is missing is REPAIRED by
+    # local re-extraction (no network, no review needed); it is never "unavailable"
+    repair = sorted(r["id"] for r in manifest.values()
+                    if is_programme_row(r["id"]) and r.get("status") == "ok"
+                    and registry.is_training_eligible(r, restrictions)
+                    and _have(r, "raw") and not _have(r, "text"))
+    if repair and not args.force:
+        touched: list[dict] = []
+        done_repair, _ = reextract(manifest, restrictions, {"id": set(repair)}, None, touched)
+        if touched:
+            with session.batch("repair-text") as b:
+                b.upsert_manifest([dict(r) for r in touched])
+        print(f"compliance programme: re-extracted {done_repair} held documents whose text "
+              "was missing locally")
+
     # the committed manifest's sha256 = what WE fetched; compare to detect upstream drift.
     expected = {sid: r.get("sha256") for sid, r in manifest.items() if r.get("sha256")}
     extraction_templates = {
@@ -1498,13 +1542,20 @@ def _run(view, session, args, only: set[str], selection: dict) -> None:
             checkpoints.flush()  # an interrupted run loses <25 extractions
 
     documents = view.config_get().documents  # the programme configuration pinned with the rows
+    # an access-terms review older than RIGHTS_REVIEW_DAYS stops EVERY network request of the
+    # source — new work, retries, restorations and --force refreshes alike; held artifacts stay
     stale = [s["id"] for s in todo if is_programme_row(s["id"])
-             and (manifest.get(s["id"]) or {}).get("status") != "ok"
              and compliance_common.review_due_for_row(s, documents)]
     if stale:
         print(f"compliance programme: {len(stale)} rows wait for an access-terms re-review "
               f"(older than {compliance_common.RIGHTS_REVIEW_DAYS} days; not requested)")
-        todo = [s for s in todo if s["id"] not in set(stale)]
+    cooling = [s["id"] for s in todo if s["id"] in _cooldowns()]
+    if cooling:
+        print(f"compliance programme: {len(cooling)} held snapshots whose version is no longer "
+              f"served upstream are not retried before {COOLDOWN_DAYS} days")
+    skip = set(stale) | set(cooling)
+    todo = [s for s in todo if s["id"] not in skip]
+    stale = sorted(skip)
     todo, deferred_ids = cap_per_host(todo, manifest)
     deferred_ids = [*deferred_ids, *stale]
     pace_new_hosts(todo, manifest)

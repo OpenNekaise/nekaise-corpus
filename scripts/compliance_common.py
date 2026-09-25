@@ -267,7 +267,15 @@ def instrument_patterns(row: dict) -> list[tuple[re.Pattern, int]] | None:
     sid, url = str(row.get("id", "")), str(row.get("url", ""))
     if sid.startswith("eur-"):
         m = _CELEX_ID.match(str(row.get("persistent_id") or ""))
-        return [(_own_eu(m.group(1)) if m else _NEVER, HEAD_CHARS)]
+        if not m:
+            return [(_NEVER, HEAD_CHARS)]
+        pats = [(_own_eu(m.group(1)), HEAD_CHARS)]
+        cons = re.fullmatch(r"(0\d{4}[A-Z]{1,4}\d{1,5})-(\d{4})(\d{2})(\d{2})", m.group(1))
+        if cons:  # a consolidated version: its OWN version stamp "<celex> — XX — DD.MM.YYYY"
+            base, y, mo, d = cons.groups()
+            pats.append((re.compile(rf"{base}\s*[—–-]+\s*[A-Z]{{2}}\s*[—–-]+\s*{d}\.{mo}\.{y}"),
+                         HEAD_CHARS))
+        return pats
     if sid.startswith("bov-bfs-"):
         m = _RINFO.match(url)
         if not m:

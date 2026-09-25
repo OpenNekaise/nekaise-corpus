@@ -1290,3 +1290,153 @@ def test_programme_config_contracts():
     bad = json.loads(json.dumps(d["regdocs.json"]))
     bad["sources"]["efrag-esrs"]["enabled"] = True
     assert check_contracts.programme_config_errors({**d, "regdocs.json": bad}, backends)
+
+
+# ------------------------------------------------------------------------------------ round 3
+class TrickleResp:
+    """A response whose second read blocks until the connection is closed (a trickling source
+    whose bytes keep resetting the idle timeout)."""
+
+    def __init__(self):
+        self.closed = threading.Event()
+        self.headers = {"content-type": "text/plain"}
+        self.status_code, self.url = 200, ""
+        self.raw = SimpleNamespace()
+
+    def iter_content(self, _n):
+        yield b"x" * 10
+        if self.closed.wait(5):
+            raise OSError("connection shut down")
+        yield b"late"
+
+    def close(self):
+        self.closed.set()
+
+
+def test_stream_guard_enforces_the_deadline_on_a_blocked_read():
+    import stream_guard
+    resp = TrickleResp()
+    t0 = time.monotonic()
+    with pytest.raises(stream_guard.DeadlineExceeded):
+        stream_guard.read_body(resp, max_bytes=10**6, deadline=time.monotonic() + 0.2)
+    assert time.monotonic() - t0 < 2 and resp.closed.is_set()
+
+
+def test_loader_hard_deadline_on_a_trickling_stream(loader, monkeypatch):
+    url = programme_row()["url"]
+    loader.answers[url] = TrickleResp()
+    monkeypatch.setattr(build_corpus, "DOCUMENT_DEADLINE", 0.2)
+    t0 = time.monotonic()
+    rec = build_corpus.download_one(programme_row())
+    assert time.monotonic() - t0 < 2
+    assert "deadline" in rec["error"] and rec["transient"] is True
+
+
+def test_discovery_never_requests_after_its_deadline(web, monkeypatch):
+    clock = Clock()
+    monkeypatch.setattr(polite_http, "time", clock)
+    monkeypatch.setattr(polite_http, "pace", lambda _u, _d: clock.sleep(200))
+    web.answers["https://x.org/late"] = FakeResp(200, b"")
+    with pytest.raises(polite_http.Deferred):
+        polite_http.get("https://x.org/late", expect="text")
+    assert web.calls == []
+
+
+def test_robots_fetch_is_bounded_by_its_own_deadline(monkeypatch):
+    monkeypatch.setattr(robots_policy, "ROBOTS_DEADLINE", 0.2)
+    monkeypatch.setattr(robots_policy.requests, "get", lambda *_a, **_k: TrickleResp())
+    t0 = time.monotonic()
+    with pytest.raises(robots_policy.RobotsUnavailable):
+        robots_policy.decision("https://ok.org/a")
+    assert time.monotonic() - t0 < 2
+
+
+def test_an_unavailable_programme_row_never_displaces_an_available_copy(tmp_path, monkeypatch):
+    monkeypatch.setattr(prune_corpus, "HERE", tmp_path)
+    monkeypatch.setattr(prune_corpus, "ACCESS", None)
+    (tmp_path / "text").mkdir()
+    (tmp_path / "text" / "reg-z.md").write_text("# t\n\n---\n\n" + SV_LEGAL)
+    common = {"status": "ok", "sha256": "ab" * 32, "source": "x", "license": "open",
+              "format": "txt", "quality": quality.metrics(
+                  "The building energy performance and the concrete structure of the house. " * 80)}
+    rows = [{**common, "id": "eur-a", "title": "A", "url": "https://publications.europa.eu/a",
+             "text_path": "text/eur-a.md", "raw_path": "raw/x/eur-a.html"},
+            {**common, "id": "reg-z", "title": "Z", "url": "https://data.riksdagen.se/z",
+             "text_path": "text/reg-z.md"}]
+    plan = prune_corpus.decide(rows, {}, {}, set(), docs())
+    assert "reg-z" not in plan.drop and "eur-a" not in plan.drop
+
+
+def test_held_raw_without_text_is_repairable_not_unavailable(tmp_path):
+    import registry
+    row = {"id": "reg-x", "status": "ok", "text_path": "text/reg-x.md", "raw_path": "raw/r/reg-x.txt"}
+    (tmp_path / "raw" / "r").mkdir(parents=True)
+    (tmp_path / "raw" / "r" / "reg-x.txt").write_text("SFS nr: 2010:900")
+    assert not registry.programme_unavailable(row, tmp_path)
+    exists = lambda r, stage: stage == "raw"  # noqa: E731 — a versioned run's answer
+    assert not registry.programme_unavailable(row, exists=exists)
+    assert registry.programme_unavailable(row, exists=lambda r, stage: False)
+
+
+def _programme_repo(monkeypatch, tmp_path, entries, manifest=(), regdocs=None):
+    import pipeline_repo
+    root = pipeline_repo.write_repo(tmp_path / "repo", entries=entries, manifest=manifest)
+    if regdocs is not None:
+        (root / "registry" / "regdocs.json").write_text(json.dumps(regdocs))
+    pipeline_repo.point(monkeypatch, root)
+    monkeypatch.setattr(build_corpus, "deferred_path", lambda: tmp_path / "fetch-deferred.json")
+    return root
+
+
+RIKS_ROW = {"id": "reg-riksdagen-sfs-pbl", "title": "PBL",
+            "url": "https://data.riksdagen.se/dokument/sfs-2010-900.text",
+            "source": "riksdagen_sfs", "license": "public-domain",
+            "topic": "standards_protocols", "format": "txt"}
+
+
+def test_loader_repairs_missing_text_from_held_raw_without_network(monkeypatch, tmp_path, capsys):
+    import sys as _sys
+    held = {**RIKS_ROW, "status": "ok", "sha256": "0" * 64, "bytes": 30,
+            "raw_path": "raw/riksdagen_sfs/reg-riksdagen-sfs-pbl.txt",
+            "text_path": "text/reg-riksdagen-sfs-pbl.md", "text_chars": 30}
+    root = _programme_repo(monkeypatch, tmp_path, [RIKS_ROW], [held], docs()["regdocs.json"])
+    (root / "raw" / "riksdagen_sfs").mkdir(parents=True)
+    (root / "raw" / "riksdagen_sfs" / "reg-riksdagen-sfs-pbl.txt").write_text(
+        "Plan- och bygglag (2010:900)\n\nSFS nr: 2010:900\n" + "1 kap. " * 100)
+    monkeypatch.setattr(build_corpus, "download_one",
+                        lambda _s: pytest.fail("a held raw file needs no network"))
+    monkeypatch.setattr(_sys, "argv", ["build_corpus.py", "--workers", "1"])
+    build_corpus.main()
+    assert "re-extracted 1 held documents" in capsys.readouterr().out
+    assert (root / "text" / "reg-riksdagen-sfs-pbl.md").exists()
+
+
+def test_loader_requests_nothing_for_a_source_whose_review_is_due(monkeypatch, tmp_path, capsys):
+    import sys as _sys
+    stale = json.loads(json.dumps(docs()["regdocs.json"]))
+    stale["sources"]["riksdagen-sfs"]["rights_reviewed_at"] = "2026-01-01"
+    row = {**RIKS_ROW, "id": "reg-riksdagen-sfs-new"}
+    _programme_repo(monkeypatch, tmp_path, [row], [], stale)
+    monkeypatch.setattr(build_corpus, "download_one",
+                        lambda _s: pytest.fail("a stale access review allows no request"))
+    monkeypatch.setattr(_sys, "argv", ["build_corpus.py", "--workers", "1"])
+    build_corpus.main()
+    assert "wait for an access-terms re-review" in capsys.readouterr().out
+
+
+def test_unrestorable_snapshots_cool_down_instead_of_starving_others(monkeypatch, tmp_path):
+    monkeypatch.setattr(build_corpus, "HERE", tmp_path)
+    build_corpus._cool("reg-riksdagen-sfs-old")
+    assert "reg-riksdagen-sfs-old" in build_corpus._cooldowns()
+    assert "reg-other" not in build_corpus._cooldowns()
+
+
+def test_eu_consolidation_anchor_checks_its_own_version_stamp():
+    head = ("02023R2772 — FI — 01.01.2025 — 001.001\n\nKomission delegoitu asetus (EU) "
+            "2023/2772, annettu 31 päivänä heinäkuuta 2023\n") * 2
+    right = {"id": "eur-02023r2772-20250101-fi", "persistent_id": "celex:02023R2772-20250101",
+             "url": EUR_EL["url"]}
+    wrong = {**right, "id": "eur-02023r2772-20240101-fi",
+             "persistent_id": "celex:02023R2772-20240101"}
+    assert compliance_common.instrument_anchor(right, head) is True
+    assert compliance_common.instrument_anchor(wrong, head) is False

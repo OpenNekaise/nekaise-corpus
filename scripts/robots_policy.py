@@ -51,6 +51,7 @@ CHALLENGE = re.compile(rb"<html|captcha|challenge|cf-chl|awswaf|request rejected
                        re.I)
 
 MAX_REDIRECTS = 5
+ROBOTS_DEADLINE = 30.0
 REDIRECTS = frozenset({301, 302, 303, 307, 308})
 _memory: dict[str, dict] = {}
 _lock = threading.Lock()
@@ -222,7 +223,10 @@ def _hop_allowed(url: str) -> bool:
 def _get_manual(url: str) -> tuple[int, bytes]:
     """GET robots.txt following redirects by hand; every hop policy-checked and paced."""
     from urllib.parse import urljoin
+    import stream_guard
+
     hop = url
+    deadline = time.monotonic() + ROBOTS_DEADLINE
     for _ in range(MAX_REDIRECTS + 1):
         if not _hop_allowed(hop):
             raise RobotsUnavailable(f"robots.txt redirect to a refused host: {hop}")
@@ -234,9 +238,13 @@ def _get_manual(url: str) -> tuple[int, bytes]:
                 hop = urljoin(hop, r.headers["location"])
                 r.close()
                 continue
-            body = (r.raw.read(MAX_ROBOTS_BYTES, decode_content=True)
-                    if r.status_code == 200 else b"")
-            r.close()
+            if r.status_code != 200:
+                r.close()
+                return r.status_code, b""
+            try:  # a hard total deadline, even on a trickling answer
+                body = stream_guard.read_body(r, max_bytes=MAX_ROBOTS_BYTES, deadline=deadline)
+            except (stream_guard.BodyTooLarge, stream_guard.DeadlineExceeded) as exc:
+                raise RobotsUnavailable(f"{hop}: {exc}") from exc
         return r.status_code, body
     raise RobotsUnavailable(f"{url}: more than {MAX_REDIRECTS} redirects")
 

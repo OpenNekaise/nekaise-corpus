@@ -361,7 +361,8 @@ def decide(manifest: list[dict], reviewed_drop: dict[str, str], policy: dict[str
     by_sha: dict[str, list] = {}
     for r in manifest:
         if (r.get("status") == "ok" and r.get("sha256") and r["id"] not in drop
-                and (r["id"] not in protected or _usable_text(r))):
+                and (r["id"] not in protected or _usable_text(r))
+                and not (compliance_common.is_programme_id(r["id"]) and not _usable_text(r))):
             by_sha.setdefault(r["sha256"], []).append(r)
     for twins in by_sha.values():
         if len(twins) < 2:
