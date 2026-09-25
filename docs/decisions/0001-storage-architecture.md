@@ -904,3 +904,204 @@ second host writes.
   migration (v5, …); editing `V4_DDL` alone would not reach it (noted at `_migrate_4`).
 - **Gates**: full suite 1147 passed / 49 skipped (PG skipped), with PostgreSQL 1226 passed;
   `py_compile` clean.
+
+## Stage 4, step 2 record: staging with constant-size promotion (2026-09-25)
+
+Built as decided (Codex, stage 4 plan item 2) in `scripts/store_staging.py` over schema v5
+(`store_pg.V5_DDL`, migration 5). FileStore stays authoritative; nothing here runs in
+production yet — `run_round` still refuses any non-file authority (its PostgreSQL lifecycle is
+wired in steps 4 and 6).
+
+- **Model.** The existing tables (entries, manifest, blocklist, ledger, rotation, control_docs,
+  backend_state) are the *projection*: they materialize generation P
+  (`projection_state.generation`; NULL is the pre-generation base, i.e. today's shadow content).
+  A run never writes them. Each metadata batch is ONE transaction
+  (`PgStore.stage_batch(writer, run, step, batch, requests, expected_version=…)`): the batch's
+  immutable request (canonical JSON text + sha256) is inserted as `requested` at the run's current
+  staging sequence k (`basis_seq`), applied as revisions of the run at k+1, and sealed. Revisions
+  are puts/tombstones keyed by the stable identity (table, key) — ledger rows as
+  `"<row digest>:<n, 10 digits>"`, blocklist URLs by digest — carrying the derived lookup/order
+  columns (url/title keys, sha256, legacy shard/topic) and `before_sha256`, the digest of the row
+  the batch superseded. A batch records only its *net* changes (a key it created and deleted, or
+  changed and reverted, leaves no revision); its results and per-table operation counts are stored
+  in the receipt (`counts_text`), so an exact retry returns the original results (the file store
+  returns 0s on replay; the broker contract only requires a no-op). Mutations have PgWriteView's
+  validation and return values; bulk mutations (≥ 1000 revisions) COPY into a temporary buffer and
+  apply in one statement.
+- **Reading: views pin G, children read G + their run's overlay.** Every view is a REPEATABLE
+  READ snapshot of the projection plus an overlay (`Visibility`): ordinary views (`read()`) pin
+  the committed generation G and overlay the runs promoted in (P, G] (later generations win);
+  a run's views (`read_staged(run, seq=…)`) add the run's own revisions up to a staging sequence
+  (rank G+1). A projection row with any visible revision is superseded; the visible revision with
+  the highest (rank, batch sequence) is the value; a tombstone hides it. Every existing
+  PgReadView query runs unchanged over per-table "sources" (`_src`), except keyset scans, which
+  page in bounded windows (below). Views pinned at G read G's sealed configuration set; staging
+  views read the run's. Version tokens distinguish the two: committed `pg:<n>` (the counter,
+  bumped by every promotion), staging `pg:stage:<run>:<k>`.
+- **Who reads what.** A staged broker (`store_broker.Broker(…, stage=run)`) gives its mutating
+  children `NEKAISE_STORE_STAGE=<run>:live:<token>`: their `PgStore.read()` opens the run's
+  overlay at the sequence staged when the view opens, so a step sees every batch completed before
+  it. `StagedRound.pinned_now()` pins discovery workers to one shared sequence, `gate_env()` pins
+  gates to the frozen sequence. The token is 32 random bytes; the database stores its sha256
+  (`run_access`, immutable). Without a matching token (or the run's writer) the overlay is
+  refused (AuthorityError); a promoted, aborted or stale run is refused (StaleView). Children
+  without the variable read committed state. conftest clears the variable.
+- **Writing, freezing, gates, promotion.** Only the writer epoch that opened a run may stage,
+  freeze, record gates or promote it (client-checked: `WriterError`; any writer may abort).
+  `freeze(run, required_gates=[…])` drains nothing itself — `StagedRound.freeze` drains the
+  broker first — and binds the run to its staged sequence and that sequence's chain digest.
+  `record_gate(frozen, gate, passed=…)` stores an immutable receipt bound to (frozen sequence,
+  frozen digest). `promote(frozen)` checks ownership, the parent generation, the frozen state the
+  gates validated and that every required gate passed (and none failed), then writes a constant
+  number of rows: generation G+1 (copying the run's provenance and a sum of its batch counts),
+  run → promoted, dataset → G+1, one outbox row, the version counter. No revision is touched
+  (tested: revision `xmin`s unchanged, row deltas exactly generations +1 / outbox +1).
+- **Database contracts (v5).** Replaced trigger functions for the step-1 tables plus new ones;
+  every cross-row rule is protected by an UPDATE of one shared row, so two concurrent operations
+  conflict under any isolation level (READ COMMITTED re-reads in the trigger's fresh statement
+  snapshot; REPEATABLE READ and SERIALIZABLE fail) — the class of the step-1 review findings — and
+  every side effect lives in an AFTER trigger, which fires only for rows actually written:
+  * a batch is requested only in an open run at its current sequence (AFTER INSERT: `runs.
+    batches_open + 1` where `staged_seq = basis_seq`); it applies only at `basis_seq + 1` (AFTER:
+    `staged_seq` advances by exactly one); it is sealed before commit (deferred constraint
+    trigger), and sealing computes `revision_count`, `revisions_digest` (over the batch's
+    revisions) and `chain_digest = sha256(previous chain : seq : step : batch : request digest :
+    revisions digest)` in the database. Revisions can be written only while their batch is
+    applied and unsealed — i.e. only by the transaction applying it — and never after;
+    `staged_seq` and the counters move only through these triggers;
+  * a run freezes only with `batches_open = 0`, at its staged sequence, with exactly that
+    sequence's chain digest and a canonical, sorted, non-empty gate list; frozen values are
+    immutable;
+  * a gate receipt needs a frozen run and its exact (sequence, digest) (AFTER: `runs.
+    gate_receipts + 1` where still frozen); receipts are immutable;
+  * a generation needs every required gate passed at the frozen state and no failed receipt
+    (checked on insert AND in the run's frozen → promoted transition, after the row lock); and a
+    deferred constraint trigger requires it to commit together with its promoted run, the
+    advanced current generation and its outbox row;
+  * `projection_state` advances one generation at a time and never past an active retention pin;
+    pinning writes the same row (AFTER INSERT/UPDATE: `pins + 1`, refused below the projection).
+  Race tests on two connections (READ COMMITTED, REPEATABLE READ, SERIALIZABLE each): request vs
+  freeze and freeze vs request, a failed gate during promotion, a receipt after promotion, a pin
+  during a fold and a pin on a generation folded meanwhile — never both commit.
+- **Discovery is persisted before it applies** (`Broker.computed_batch`). `run_round`'s discovery
+  is now `plan_discovery(view, recorder, …)`: it reads only the view and records the complete,
+  final request (assigned ids and suffixes, cursor values, exhaustion, github passes).
+  On the file store it is applied as `<round>.discover.merge` exactly as before (all discovery,
+  dedup, round and pipeline tests unchanged). In a staged round the request is persisted in one
+  transaction — even when empty — and applied in a second; re-entering the step never calls
+  `compute`: a `requested` receipt is applied exactly as persisted (only at the sequence it was
+  computed at), an `applied` one is skipped. Test: a crash between the two, then the finders'
+  proposal files rewritten — re-entry applies the original ids, suffix and cursor.
+- **Folding: the projection consumer.** `fold(writer, limit=…)` applies the next promoted
+  generation's effective revisions to the projection tables in bounded keyset batches (one
+  transaction each, idempotent, resumable from `projection_state.fold_tbl/fold_key`); the last
+  batch sets P = G+1 and acknowledges that generation's outbox row for consumer `projection`
+  (registered by migration 5, before any compaction; compaction now also waits for it). Rows are
+  written with their stored canonical text, never re-serialized. While generation P+1 is
+  partially folded every view still overlays it, so it reads the same. Folding stops before an
+  active `generation_retention` pin: `read_generation(g)` serves any generation the projection
+  has not passed, byte-identically (export test over three generations, an aborted and purged
+  run and a pending frozen one); older ones need the baseline tool (decision (1), below).
+- **Legacy writes stop where staging starts.** `PgStore.transaction()` and `pg_shadow` replay
+  refuse once any run is open/frozen or any generation exists
+  (`store_staging.legacy_writes_refused`): the projection then belongs to the fold. The live
+  shadow has neither, so its sync and verify are unchanged.
+- **Keyset scans in bounded windows (performance decision).** A single `UNION ALL` over the
+  projection and the overlay is planned as a hash anti-join over the whole projection plus a sort
+  (O(table) per page); fencing the correlated subqueries keeps index order but Merge Append must
+  still fetch each branch's first row, so with a dense overlay (a full re-clean overrides every
+  row) the projection branch skipped all overridden rows to the end of the table on every page —
+  quadratic for a full scan. `Visibility.scan` therefore pages in windows: fetch the next chunk of
+  effective overlay puts (each flagged with the predicate; max(page, 256) rows), whose last key
+  bounds the window; fetch the projection rows in the window that nothing visible overrides and
+  that match the predicate, at most as many as the page still needs; merge in Python up to the
+  point both sides are complete; continue. Both are single-table `ORDER BY … LIMIT` index scans
+  with per-row visibility probes; a page costs its own key range plus one overlay chunk.
+  Lookups, membership, aggregates and duplicate detection keep the unfenced sources (the planner
+  may hash there, which is right for them).
+- **Migration 5** (additive, one transaction under the writer advisory lock like 2–4; its DDL is
+  idempotent so the tests' schema-version re-runs work): new nullable/defaulted columns on runs,
+  batches and revisions, four revision indexes, `run_access`, `gate_receipts`,
+  `projection_state`, replaced trigger functions, applied step-1 batches sealed in sequence order,
+  unfinished step-1 runs' `batches_open` backfilled, consumer `projection` registered. No
+  projection row, event, receipt or watermark is rewritten. Tests: a shadow imported and synced
+  by the real v4 code (`git show e8ba0d581b:scripts/store_pg.py`) migrates with identical
+  `pg_shadow` digests, byte-identical exports, the same dataset/authority row, `verify` OK, and
+  keeps syncing; v4 clients are then refused ("version 5, code expects 4", and a v4 writer built
+  before the migration cannot take the lock); a v4 schema with runs in every state (open with a
+  requested batch, promoted, aborted) migrates consistently — every applied batch sealed with a
+  chain, the open batch counted, the promoted generation readable through the overlay, then
+  folded. Step-1 contract tests were adapted to the v5 rules (their helpers now apply, seal,
+  freeze at the chain digest and pass a gate; the projection consumer acknowledges before
+  compaction; the multi-row outbox test runs inside its promotion transaction).
+- **Tests** (`tests/test_store_pg_staging.py`, 51 PostgreSQL tests): overlay equivalence against a
+  second store to which the same random batches (seeded; every mutation kind, replace_manifest,
+  floats like 1e20/-0.0/1.0 vs 1) were applied directly — every table, predicates, projections,
+  key and legacy order, small pages, lookups, membership, aggregates, duplicates, control tables,
+  configuration, artifacts — at every staging sequence (including pinned earlier sequences),
+  after promotion, during and after a fold in 4-row steps, and on a second run; in three
+  variants (literal visibility, subquery visibility, two-row scan windows with every mutation
+  COPYing) plus many unfolded generations; replacement semantics; net changes; number fidelity
+  through staging/promotion/fold; exact and conflicting retry; stale sequences (batches,
+  persisted requests, pinned views, stale runs); failures leave nothing; request validation;
+  atomic visibility (a poller during promotion sees only the before or the after state, an open
+  view keeps its snapshot); constant-size promotion; freezing/gate/ownership rules; the database
+  contracts against direct SQL; the races above; historical reconstruction; persisted
+  discovery; a staged round through real child processes (writers, a pinned reader, a plain
+  reader, a forged token, a gate at the frozen sequence, a late writer after the drain, a stale
+  pin after promotion); a failing staged round is aborted; both migrations.
+- **Benchmark** (`tests/test_store_pg_staging_bench.py`, opt-in `NEKAISE_PG_BENCH=1` or
+  `python tests/test_store_pg_staging_bench.py --rows N`; a throwaway schema in `nekaise_test`,
+  the live database refused), same host as stage 2/3:
+  | 1.62M documents (1.62M entries + manifest rows, synthetic) | time |
+  |---|---|
+  | small round: discovery merge (400 entries, persisted + applied) | 0.067 s |
+  | small round: loader checkpoint (25 rows), p50 / max of 16 | 0.012 s / 0.015 s |
+  | small round: prune (100 deletes + entries + blocklist + ledger, 300 metric updates) | 0.092 s |
+  | small round: cleaner patch (≈400 rows) · freeze · gate receipt | 0.057 s · 0.002 s · 0.003 s |
+  | **promotion, small round (2 000 revisions)** | **0.004 s** |
+  | full re-clean: staging, 82 batches of 20 000 patches (p50 / max per batch) | 194 s (2.29 s / 3.38 s) |
+  | **promotion, full re-clean (1 620 300 revisions)** | **0.005 s** |
+  | reads through the unfolded full-re-clean overlay: 25-id lookup · 10k-URL known() · first 2 000-row page · predicate page | 0.003 · 0.69 · 0.024 · 0.17 s |
+  | whole-manifest paged scan (10 000-row pages): dense overlay / folded | 24.0 s / 10.9 s |
+  | fold of the full re-clean, 82 batches of 20 000 (p50 / max) | 129 s (1.54 s / 3.07 s) |
+  | small-round overlay after promotion: first page · known 10k · fold | 0.023 s · 0.29 s · 0.14 s |
+  | peak client RSS for the whole benchmark | 217 MB |
+
+  At 200k documents (the earlier plan shape, before the bounded-window scan) the dense-overlay
+  full scan took 11.5 s against 1.2 s folded; with windows 2.2 s. The FileStore full re-clean
+  measured in stage 3 was 234 s for the same row count (81 transactions); staging it is 194 s
+  and promoting it 5 ms. Aggregates over 1.6M rows (6.7–15 s) are full scans in both shapes.
+- **Decisions the plan left open** (for review): the projection is generation P and promoted
+  revisions are folded afterwards, not copied (visibility = the run's promoted generation);
+  ranks are generation numbers, the staging run ranking above G; batch identity (run, step,
+  batch) with the request's basis sequence; receipts store results; a batch stores net changes
+  only; frozen digest = the chain digest at the frozen sequence (constant-time, computed by the
+  database); required gates are fixed at freeze and any failed receipt blocks promotion;
+  ownership is the opening writer epoch; children are authorized by per-run tokens; legacy
+  transactions and shadow replay stop once staging starts; staged runs write no legacy journal
+  events (their receipts and revisions are the journal; `Table.EVENTS` shows the legacy journal);
+  generation 0 on a schema without a baseline is the pre-generation projection plus the first
+  run; historical reads are served while the projection has not passed a generation (pins hold
+  the fold); scans page in bounded windows; bulk mutations COPY.
+- **Deferred to step 3 (immutable artifact versions).** Staging covers metadata only: raw/text/
+  corpus bytes are still written in place by fetch/clean before their rows are staged, so an
+  aborted run can leave changed local files; `artifacts`/`artifact_locators` are not yet filled
+  or consulted, and `corpus/` is not generation-stamped.
+- **Deferred to step 4 (recovery replacement).** Adopting a run under a new writer epoch
+  (resume only with unchanged parent/config/code) — today a restarted coordinator can only abort
+  (the persisted discovery request is replayed within its owner's session); shared recovery over
+  durable run status and `round_recovery` integration; wiring `run_round` and the maintainer to
+  `staged_round` (open, stage, drain, freeze, gates with `gate_env`, promote, fold); standalone
+  commands (`rotation.py`, `blocklist.add`, `migrate_backend_state.py`) as single-batch staged
+  runs (their direct transactions are refused once staging starts); scheduling the fold and the
+  purge of aborted runs; generation-range review.
+- **Also open.** The baseline tool (decision (1)) — generation 0 as a full copy so every
+  generation is reconstructible from revisions alone — is still TODO before step 6; ownership is
+  enforced by the client, not by triggers; after a bulk re-clean the planner relies on fresh
+  statistics for `revisions` (autovacuum), the scan shape keeps plans index-driven regardless;
+  the 160M-row benchmark is step 5.
+- **Gates**: full suite 1150 passed / 101 skipped (PG skipped), with PostgreSQL (`nekaise_test`)
+  1280 passed / 1 skipped (the opt-in benchmark); `py_compile scripts/*.py` clean. Nothing ran
+  against the live schema or checkout; the live shadow migrates 4 → 5 on its next
+  `pg_shadow sync` after the merge (coordinator), as step 1 did.

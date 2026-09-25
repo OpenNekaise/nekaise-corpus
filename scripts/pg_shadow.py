@@ -47,6 +47,7 @@ import psycopg
 import state_codec
 import store
 import store_pg
+import store_staging
 from store import canonical_row, key_digest, norm_url
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -296,6 +297,9 @@ def _require_shadow(conn) -> None:
     if mode != "file":
         raise SystemExit(f"schema is PostgreSQL-authoritative (authority epoch {epoch}): shadow "
                          "replay is refused")
+    # stage 4 step 2: once a run stages or a generation exists, the projection is the fold's
+    if why := store_staging.legacy_writes_refused(conn):
+        raise SystemExit(f"shadow replay is refused: {why}")
 
 
 def check_host_authority(st: store_pg.PgStore, root: Path = ROOT) -> None:

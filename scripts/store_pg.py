@@ -50,7 +50,7 @@ from store import (BackendState, ConfigSnapshot, Cursor, KnownHits, Page, Stage,
                    StoreError, Table, Version, VersionConflict, WriteView, WriterError,
                    WriterToken, canonical_row, key_digest, norm_title, norm_url)
 
-SCHEMA_VERSION = 4
+SCHEMA_VERSION = 5
 DEFAULT_DSN = "host=/home/zengp/.local/share/nekaise-pg/run dbname=nekaise"
 
 DDL = """
@@ -729,7 +729,571 @@ def _migrate_4(conn, schema):  # stage 4 step 1 contracts: new tables only, noth
     conn.execute(V4_DDL.format(s=schema))
 
 
-MIGRATIONS = {2: _migrate_2, 3: _migrate_3, 4: _migrate_4}
+# ADR 0001 stage 4, step 2: run-scoped staging with constant-size promotion. Created with a fresh
+# schema or by migration 5 (never re-run on open; a later revision ships as migration 6, ...).
+# Additive: new columns (nullable or defaulted), new tables, new indexes, and replaced trigger
+# FUNCTIONS for the step-1 tables — no projection row, event or receipt is rewritten.
+#
+# Every cross-row rule below is protected by an UPDATE of one shared row, never by a read or a
+# lock alone: two concurrent operations then conflict on that row under ANY isolation level
+# (READ COMMITTED re-reads the committed effect in the trigger's fresh statement snapshot;
+# REPEATABLE READ / SERIALIZABLE fail with a serialization error). The shared rows are the run
+# (`runs`: batch requests, applies, freezing, gate receipts, promotion) and `projection_state`
+# (folding and retention pins). Side effects live in AFTER row triggers, which fire only for rows
+# actually written (a conflict-skipped INSERT ... ON CONFLICT DO NOTHING has none).
+#
+#   runs            + batches_open (requested, not yet applied/abandoned), gate_receipts,
+#                     required_gates (canonical JSON array, fixed when frozen). staged_seq and the
+#                     counters move only through the batch/receipt triggers.
+#   batches         + basis_seq (the staging sequence the request was computed at), sealed,
+#                     revision_count, revisions_digest and chain_digest (computed by the database
+#                     when the batch is sealed; a committed applied batch is always sealed).
+#                     requested -> applied (seq = basis_seq + 1) -> sealed | requested -> abandoned
+#   revisions       + the derived lookup/order columns of entries/manifest rows (overlay reads).
+#                     Only the transaction that applies a batch can write its revisions (the batch
+#                     is applied and unsealed only inside it); after sealing they are immutable.
+#   gate_receipts   one verdict per (run, gate), bound to the run's frozen sequence and digest
+#   run_access      sha256 of the tokens that authorize pipeline children to read a run's overlay
+#   projection_state  the generation the projection tables materialize (NULL: the pre-generation
+#                     base) and the fold in progress; retention pins hold the fold back
+V5_DDL = r"""
+-- the run counters, backfilled for unfinished step-1 runs under the step-1 guard (still installed
+-- at this point, and it allows that); only when the columns are new, so re-running is a no-op
+DO $d$ BEGIN
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_schema = '{s}'
+                   AND table_name = 'runs' AND column_name = 'batches_open') THEN
+        ALTER TABLE {s}.runs
+            ADD COLUMN batches_open int NOT NULL DEFAULT 0 CHECK (batches_open >= 0),
+            ADD COLUMN gate_receipts int NOT NULL DEFAULT 0 CHECK (gate_receipts >= 0),
+            ADD COLUMN required_gates text;
+        UPDATE {s}.runs r SET batches_open = (SELECT count(*) FROM {s}.batches b
+                                              WHERE b.run_id = r.run_id
+                                              AND b.status = 'requested')
+            WHERE r.status IN ('open', 'frozen') AND EXISTS (
+                SELECT 1 FROM {s}.batches b WHERE b.run_id = r.run_id
+                AND b.status = 'requested');
+    END IF;
+END $d$;
+ALTER TABLE {s}.batches
+    ADD COLUMN IF NOT EXISTS basis_seq int CHECK (basis_seq >= 0),
+    ADD COLUMN IF NOT EXISTS sealed boolean NOT NULL DEFAULT false,
+    ADD COLUMN IF NOT EXISTS revision_count int,
+    ADD COLUMN IF NOT EXISTS revisions_digest text COLLATE "C",
+    ADD COLUMN IF NOT EXISTS chain_digest text COLLATE "C";
+ALTER TABLE {s}.revisions
+    ADD COLUMN IF NOT EXISTS url_norm text,
+    ADD COLUMN IF NOT EXISTS url_key bytea,
+    ADD COLUMN IF NOT EXISTS title_norm text,
+    ADD COLUMN IF NOT EXISTS title_key bytea,
+    ADD COLUMN IF NOT EXISTS sha256 text COLLATE "C",
+    ADD COLUMN IF NOT EXISTS shard text COLLATE "C",
+    ADD COLUMN IF NOT EXISTS topic_key text COLLATE "C";
+CREATE INDEX IF NOT EXISTS revisions_batch ON {s}.revisions (run_id, batch_seq);
+CREATE INDEX IF NOT EXISTS revisions_url_key ON {s}.revisions (url_key) WHERE url_key IS NOT NULL;
+CREATE INDEX IF NOT EXISTS revisions_title_key ON {s}.revisions (title_key)
+    WHERE title_key IS NOT NULL;
+CREATE INDEX IF NOT EXISTS revisions_legacy ON {s}.revisions (shard, topic_key, key)
+    WHERE tbl = 'manifest';
+
+CREATE TABLE IF NOT EXISTS {s}.run_access (
+    run_id text COLLATE "C" NOT NULL REFERENCES {s}.runs,
+    token_sha256 text COLLATE "C" NOT NULL CHECK (token_sha256 ~ '^[0-9a-f]{{64}}$'),
+    created_at timestamptz NOT NULL DEFAULT now(),
+    PRIMARY KEY (run_id, token_sha256)
+);
+CREATE OR REPLACE TRIGGER run_access_immutable BEFORE UPDATE OR DELETE ON {s}.run_access
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_refuse();
+
+CREATE TABLE IF NOT EXISTS {s}.gate_receipts (
+    run_id text COLLATE "C" NOT NULL REFERENCES {s}.runs,
+    gate text COLLATE "C" NOT NULL CHECK (gate ~ '^[A-Za-z0-9][A-Za-z0-9._-]{{0,127}}$'),
+    frozen_seq int NOT NULL,
+    frozen_digest text COLLATE "C" NOT NULL,
+    verdict text NOT NULL CHECK (verdict IN ('passed', 'failed')),
+    detail_text text NOT NULL DEFAULT '{{}}',
+    recorded_at timestamptz NOT NULL DEFAULT now(),
+    PRIMARY KEY (run_id, gate)
+);
+
+CREATE TABLE IF NOT EXISTS {s}.projection_state (
+    one boolean PRIMARY KEY DEFAULT true CHECK (one),
+    generation bigint REFERENCES {s}.generations,
+    fold_generation bigint REFERENCES {s}.generations,
+    fold_tbl text COLLATE "C",
+    fold_key text COLLATE "C",
+    pins bigint NOT NULL DEFAULT 0 CHECK (pins >= 0),
+    CHECK ((fold_tbl IS NULL) = (fold_key IS NULL)),
+    CHECK (fold_generation IS NOT NULL OR fold_tbl IS NULL)
+);
+INSERT INTO {s}.projection_state DEFAULT VALUES ON CONFLICT DO NOTHING;
+
+-- the chain digest of a run before its first batch
+CREATE OR REPLACE FUNCTION {s}.nk_chain_origin(rid text) RETURNS text
+    LANGUAGE sql IMMUTABLE AS $f$
+    SELECT encode(sha256(convert_to('nekaise-stage-chain:' || rid, 'UTF8')), 'hex')
+$f$;
+
+-- Every required gate passed, bound to the run's frozen sequence and digest, and no receipt of
+-- the run failed or is bound to anything else. Evaluated inside the promotion's own statements
+-- (fresh snapshots under READ COMMITTED, after the run row lock).
+CREATE OR REPLACE FUNCTION {s}.nk_gates_passed(rid text) RETURNS boolean LANGUAGE plpgsql AS $f$
+DECLARE r record;
+BEGIN
+    SELECT required_gates, frozen_seq, frozen_digest INTO r FROM {s}.runs WHERE run_id = rid;
+    IF r.required_gates IS NULL OR r.frozen_seq IS NULL OR r.frozen_digest IS NULL THEN
+        RETURN false;
+    END IF;
+    IF EXISTS (SELECT 1 FROM {s}.gate_receipts g WHERE g.run_id = rid
+               AND (g.verdict <> 'passed' OR g.frozen_seq <> r.frozen_seq
+                    OR g.frozen_digest <> r.frozen_digest)) THEN
+        RETURN false;
+    END IF;
+    RETURN NOT EXISTS (
+        SELECT 1 FROM jsonb_array_elements_text(r.required_gates::jsonb) q(gate)
+        WHERE NOT EXISTS (SELECT 1 FROM {s}.gate_receipts g WHERE g.run_id = rid
+                          AND g.gate = q.gate AND g.verdict = 'passed'));
+END $f$;
+
+CREATE OR REPLACE FUNCTION {s}.nk_runs_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE chain text; doc jsonb; canon text;
+BEGIN
+    IF TG_OP = 'DELETE' THEN
+        RAISE EXCEPTION 'nekaise: runs are never deleted (run %)', OLD.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF TG_OP = 'INSERT' THEN
+        IF NEW.status <> 'open' OR NEW.staged_seq <> 0 OR NEW.frozen_seq IS NOT NULL
+                OR NEW.frozen_digest IS NOT NULL OR NEW.promoted_generation IS NOT NULL
+                OR NEW.ended_at IS NOT NULL OR NEW.batches_open <> 0 OR NEW.gate_receipts <> 0
+                OR NEW.required_gates IS NOT NULL THEN
+            RAISE EXCEPTION 'nekaise: a run starts open and empty (run %)', NEW.run_id
+                USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        RETURN NEW;
+    END IF;
+    IF OLD.status IN ('promoted', 'aborted') THEN
+        RAISE EXCEPTION 'nekaise: run % is %, final', OLD.run_id, OLD.status
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF (NEW.run_id, NEW.kind, NEW.parent_generation, NEW.authority_epoch, NEW.writer_epoch,
+        NEW.producer_commit, NEW.config_digest, NEW.extractor_version, NEW.cleaning_ruleset,
+        NEW.started_at) IS DISTINCT FROM
+       (OLD.run_id, OLD.kind, OLD.parent_generation, OLD.authority_epoch, OLD.writer_epoch,
+        OLD.producer_commit, OLD.config_digest, OLD.extractor_version, OLD.cleaning_ruleset,
+        OLD.started_at) THEN
+        RAISE EXCEPTION 'nekaise: run % identity is immutable', OLD.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    -- the staging sequence and the counters are maintained by the batch and gate receipt
+    -- triggers only (depth 2: client statement -> their trigger -> this guard)
+    IF (NEW.staged_seq, NEW.batches_open, NEW.gate_receipts) IS DISTINCT FROM
+            (OLD.staged_seq, OLD.batches_open, OLD.gate_receipts) AND pg_trigger_depth() < 2 THEN
+        RAISE EXCEPTION 'nekaise: run % staging counters are maintained by the batch and gate '
+            'triggers', OLD.run_id USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.staged_seq NOT IN (OLD.staged_seq, OLD.staged_seq + 1)
+            OR (OLD.status <> 'open' AND NEW.staged_seq <> OLD.staged_seq) THEN
+        RAISE EXCEPTION 'nekaise: run % staging sequence only grows by one while open', OLD.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.gate_receipts <> OLD.gate_receipts
+            AND (OLD.status <> 'frozen' OR NEW.status <> 'frozen') THEN
+        RAISE EXCEPTION 'nekaise: gate receipts are recorded only for a frozen run (run %)',
+            OLD.run_id USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.status <> OLD.status AND (OLD.status, NEW.status) NOT IN
+            (('open', 'frozen'), ('open', 'aborted'), ('frozen', 'promoted'), ('frozen', 'aborted'))
+    THEN
+        RAISE EXCEPTION 'nekaise: run % cannot go from % to %', OLD.run_id, OLD.status, NEW.status
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.status = 'open' AND (NEW.frozen_seq IS NOT NULL OR NEW.frozen_digest IS NOT NULL
+                                OR NEW.required_gates IS NOT NULL) THEN
+        RAISE EXCEPTION 'nekaise: open run % has no frozen sequence or gate set', OLD.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF OLD.status = 'open' AND NEW.status = 'frozen' THEN
+        IF NEW.batches_open <> 0 THEN
+            RAISE EXCEPTION 'nekaise: run % has requested batches that were never applied',
+                OLD.run_id USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        IF NEW.staged_seq = 0 THEN
+            chain := {s}.nk_chain_origin(NEW.run_id);
+        ELSE
+            SELECT b.chain_digest INTO chain FROM {s}.batches b
+                WHERE b.run_id = NEW.run_id AND b.seq = NEW.staged_seq AND b.sealed;
+        END IF;
+        IF NEW.frozen_seq IS DISTINCT FROM NEW.staged_seq OR chain IS NULL
+                OR NEW.frozen_digest IS DISTINCT FROM chain THEN
+            RAISE EXCEPTION 'nekaise: run % must freeze at its staged sequence with that '
+                'sequence''s chain digest', OLD.run_id
+                USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        BEGIN
+            doc := NEW.required_gates::jsonb;
+        EXCEPTION WHEN others THEN
+            doc := NULL;
+        END;
+        IF doc IS NULL OR jsonb_typeof(doc) <> 'array' OR jsonb_array_length(doc) = 0
+                OR EXISTS (SELECT 1 FROM jsonb_array_elements(doc) e
+                           WHERE jsonb_typeof(e) <> 'string'
+                           OR NOT (e #>> '{{}}') ~ '^[A-Za-z0-9][A-Za-z0-9._-]{{0,127}}$') THEN
+            RAISE EXCEPTION 'nekaise: run % needs a non-empty list of required gate names',
+                OLD.run_id USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        SELECT '[' || string_agg(to_json(g)::text, ',' ORDER BY g COLLATE "C") || ']' INTO canon
+            FROM (SELECT DISTINCT e #>> '{{}}' AS g FROM jsonb_array_elements(doc) e) d;
+        IF canon <> NEW.required_gates THEN
+            RAISE EXCEPTION 'nekaise: run % required gates are not a sorted, distinct, canonical '
+                'JSON list', OLD.run_id USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+    END IF;
+    IF OLD.status = 'frozen' AND (NEW.frozen_seq, NEW.frozen_digest, NEW.required_gates)
+            IS DISTINCT FROM (OLD.frozen_seq, OLD.frozen_digest, OLD.required_gates) THEN
+        RAISE EXCEPTION 'nekaise: run % frozen sequence and gate set are immutable', OLD.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF (NEW.status = 'promoted') <> (NEW.promoted_generation IS NOT NULL)
+            OR (NEW.status = 'promoted' AND NOT EXISTS (
+                SELECT 1 FROM {s}.generations g WHERE g.generation = NEW.promoted_generation
+                AND g.run_id = NEW.run_id)) THEN
+        RAISE EXCEPTION 'nekaise: run % is promoted exactly when its generation exists',
+            OLD.run_id USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.status = 'promoted' AND NOT {s}.nk_gates_passed(NEW.run_id) THEN
+        RAISE EXCEPTION 'nekaise: run % did not pass its required gates at its frozen sequence',
+            OLD.run_id USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+
+CREATE OR REPLACE FUNCTION {s}.nk_batches_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE run_status text; run_staged int; prev text; cnt int; rdig text;
+BEGIN
+    IF TG_OP = 'DELETE' THEN
+        SELECT status INTO run_status FROM {s}.runs WHERE run_id = OLD.run_id;
+        IF run_status = 'aborted' THEN RETURN OLD; END IF;
+        RAISE EXCEPTION 'nekaise: batch receipts of run % (%) are retained', OLD.run_id,
+            run_status USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    SELECT status, staged_seq INTO run_status, run_staged FROM {s}.runs WHERE run_id = NEW.run_id;
+    IF TG_OP = 'INSERT' THEN
+        IF run_status IS DISTINCT FROM 'open' OR NEW.status <> 'requested' OR NEW.sealed
+                OR NEW.seq IS NOT NULL OR NEW.applied_at IS NOT NULL
+                OR NEW.basis_seq IS DISTINCT FROM run_staged OR NEW.counts_text IS NOT NULL
+                OR NEW.revision_count IS NOT NULL OR NEW.revisions_digest IS NOT NULL
+                OR NEW.chain_digest IS NOT NULL THEN
+            RAISE EXCEPTION 'nekaise: batch %.%.% must be requested in an open run at its current '
+                'staging sequence', NEW.run_id, NEW.step, NEW.batch
+                USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        IF NEW.request_digest <> encode(sha256(convert_to(NEW.request_text, 'UTF8')), 'hex') THEN
+            RAISE EXCEPTION 'nekaise: batch %.%.% request digest does not match its text',
+                NEW.run_id, NEW.step, NEW.batch USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        RETURN NEW;
+    END IF;
+    IF (NEW.run_id, NEW.step, NEW.batch, NEW.request_digest, NEW.request_text, NEW.requested_at,
+        NEW.basis_seq) IS DISTINCT FROM
+       (OLD.run_id, OLD.step, OLD.batch, OLD.request_digest, OLD.request_text, OLD.requested_at,
+        OLD.basis_seq) THEN
+        RAISE EXCEPTION 'nekaise: batch request %.%.% is immutable', OLD.run_id, OLD.step,
+            OLD.batch USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF OLD.status = 'requested' AND NEW.status = 'abandoned' THEN
+        IF NEW.seq IS NOT NULL OR NEW.sealed OR NEW.counts_text IS NOT NULL THEN
+            RAISE EXCEPTION 'nekaise: an abandoned batch stages nothing'
+                USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        RETURN NEW;
+    END IF;
+    IF OLD.status = 'requested' AND NEW.status = 'applied' THEN
+        IF run_status IS DISTINCT FROM 'open' OR OLD.basis_seq IS NULL
+                OR NEW.seq IS DISTINCT FROM OLD.basis_seq + 1 OR NEW.sealed
+                OR NEW.counts_text IS NOT NULL OR NEW.revision_count IS NOT NULL
+                OR NEW.revisions_digest IS NOT NULL OR NEW.chain_digest IS NOT NULL THEN
+            RAISE EXCEPTION 'nekaise: batch %.%.% applies in an open run exactly after the '
+                'sequence it was computed at', OLD.run_id, OLD.step, OLD.batch
+                USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        RETURN NEW;
+    END IF;
+    IF OLD.status = 'applied' AND NOT OLD.sealed AND NEW.sealed THEN
+        -- sealing: the client may set counts_text; the database computes the digests
+        IF NEW.status <> 'applied' OR NEW.seq IS DISTINCT FROM OLD.seq
+                OR NEW.applied_at IS DISTINCT FROM OLD.applied_at THEN
+            RAISE EXCEPTION 'nekaise: sealing batch %.%.% changes only its seal', OLD.run_id,
+                OLD.step, OLD.batch USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        SELECT count(*), encode(sha256(convert_to(COALESCE(string_agg(
+                   json_build_array(v.tbl, v.key, v.op, v.row_sha256, v.before_sha256,
+                                    v.reason)::text, E'\n' ORDER BY v.tbl, v.key), ''),
+                   'UTF8')), 'hex')
+            INTO cnt, rdig FROM {s}.revisions v
+            WHERE v.run_id = OLD.run_id AND v.batch_seq = OLD.seq;
+        IF OLD.seq = 1 THEN
+            prev := {s}.nk_chain_origin(OLD.run_id);
+        ELSE
+            SELECT b.chain_digest INTO prev FROM {s}.batches b
+                WHERE b.run_id = OLD.run_id AND b.seq = OLD.seq - 1 AND b.sealed;
+        END IF;
+        IF prev IS NULL THEN
+            RAISE EXCEPTION 'nekaise: batch %.%.% follows an unsealed batch', OLD.run_id,
+                OLD.step, OLD.batch USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        NEW.revision_count := cnt;
+        NEW.revisions_digest := rdig;
+        NEW.chain_digest := encode(sha256(convert_to(prev || ':' || OLD.seq || ':' || OLD.step
+            || ':' || OLD.batch || ':' || OLD.request_digest || ':' || rdig, 'UTF8')), 'hex');
+        RETURN NEW;
+    END IF;
+    RAISE EXCEPTION 'nekaise: batch %.%.% is %, final', OLD.run_id, OLD.step, OLD.batch,
+        CASE WHEN OLD.sealed THEN 'sealed' ELSE OLD.status END
+        USING ERRCODE = 'integrity_constraint_violation';
+END $f$;
+
+-- The run row is the shared row every batch transition writes (see the header).
+CREATE OR REPLACE FUNCTION {s}.nk_batches_after() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF TG_OP = 'INSERT' THEN
+        UPDATE {s}.runs SET batches_open = batches_open + 1
+            WHERE run_id = NEW.run_id AND status = 'open' AND staged_seq = NEW.basis_seq;
+        IF NOT FOUND THEN
+            RAISE EXCEPTION 'nekaise: run % moved on while batch %.% was requested', NEW.run_id,
+                NEW.step, NEW.batch USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+    ELSIF OLD.status = 'requested' AND NEW.status = 'applied' THEN
+        UPDATE {s}.runs SET staged_seq = NEW.seq, batches_open = batches_open - 1
+            WHERE run_id = NEW.run_id AND status = 'open' AND staged_seq = NEW.seq - 1;
+        IF NOT FOUND THEN
+            RAISE EXCEPTION 'nekaise: run % is not open at sequence % (batch %.% is stale)',
+                NEW.run_id, NEW.seq - 1, NEW.step, NEW.batch
+                USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+    ELSIF OLD.status = 'requested' AND NEW.status = 'abandoned' THEN
+        UPDATE {s}.runs SET batches_open = batches_open - 1
+            WHERE run_id = NEW.run_id AND status IN ('open', 'frozen');
+    END IF;
+    RETURN NULL;
+END $f$;
+CREATE OR REPLACE TRIGGER batches_after AFTER INSERT OR UPDATE ON {s}.batches
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_batches_after();
+-- at commit, every applied batch is sealed: no other transaction ever sees an unsealed one
+CREATE OR REPLACE FUNCTION {s}.nk_batches_sealed() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF EXISTS (SELECT 1 FROM {s}.batches b WHERE b.run_id = NEW.run_id AND b.step = NEW.step
+               AND b.batch = NEW.batch AND b.status = 'applied' AND NOT b.sealed) THEN
+        RAISE EXCEPTION 'nekaise: batch %.%.% was applied but not sealed', NEW.run_id, NEW.step,
+            NEW.batch USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NULL;
+END $f$;
+DO $d$ BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_trigger WHERE tgname = 'batches_sealed'
+                   AND tgrelid = '{s}.batches'::regclass) THEN
+        CREATE CONSTRAINT TRIGGER batches_sealed AFTER UPDATE ON {s}.batches
+            DEFERRABLE INITIALLY DEFERRED FOR EACH ROW
+            EXECUTE FUNCTION {s}.nk_batches_sealed();
+    END IF;
+END $d$;
+
+CREATE OR REPLACE FUNCTION {s}.nk_revisions_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE run_status text; b_status text; b_sealed boolean;
+BEGIN
+    IF TG_OP = 'DELETE' THEN
+        SELECT status INTO run_status FROM {s}.runs WHERE run_id = OLD.run_id;
+        IF run_status = 'aborted' THEN RETURN OLD; END IF;
+        SELECT status, sealed INTO b_status, b_sealed FROM {s}.batches
+            WHERE run_id = OLD.run_id AND seq = OLD.batch_seq;
+        IF run_status = 'open' AND b_status = 'applied' AND NOT b_sealed THEN
+            RETURN OLD;  -- the applying transaction drops a net no-op before sealing
+        END IF;
+        RAISE EXCEPTION 'nekaise: revisions of run % (%) are retained', OLD.run_id, run_status
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    SELECT status INTO run_status FROM {s}.runs WHERE run_id = NEW.run_id;
+    SELECT status, sealed INTO b_status, b_sealed FROM {s}.batches
+        WHERE run_id = NEW.run_id AND seq = NEW.batch_seq;
+    IF run_status IS DISTINCT FROM 'open' OR b_status IS DISTINCT FROM 'applied' OR b_sealed THEN
+        RAISE EXCEPTION 'nekaise: revision %/%/% belongs to no batch being applied (run %, batch '
+            '%)', NEW.tbl, NEW.key, NEW.batch_seq, run_status, COALESCE(b_status, 'missing')
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF TG_OP = 'UPDATE' AND (NEW.rev_id, NEW.run_id, NEW.batch_seq, NEW.tbl, NEW.key,
+                             NEW.before_sha256) IS DISTINCT FROM
+                            (OLD.rev_id, OLD.run_id, OLD.batch_seq, OLD.tbl, OLD.key,
+                             OLD.before_sha256) THEN
+        RAISE EXCEPTION 'nekaise: revision % identity is immutable', OLD.rev_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.op = 'put' AND NEW.row_sha256 <> encode(sha256(convert_to(NEW.row_text, 'UTF8')), 'hex')
+    THEN
+        RAISE EXCEPTION 'nekaise: revision row_sha256 does not match its row text'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+
+CREATE OR REPLACE FUNCTION {s}.nk_generations_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE r record; head bigint;
+BEGIN
+    IF TG_OP <> 'INSERT' THEN
+        RAISE EXCEPTION 'nekaise: generation % is immutable', OLD.generation
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    SELECT * INTO r FROM {s}.runs WHERE run_id = NEW.run_id;
+    SELECT current_generation INTO head FROM {s}.dataset;
+    IF r.status IS DISTINCT FROM 'frozen'
+            OR NEW.parent IS DISTINCT FROM head
+            OR r.parent_generation IS DISTINCT FROM head
+            OR (NEW.producer_commit, NEW.config_digest, NEW.extractor_version,
+                NEW.cleaning_ruleset, NEW.frozen_seq, NEW.frozen_digest) IS DISTINCT FROM
+               (r.producer_commit, r.config_digest, r.extractor_version, r.cleaning_ruleset,
+                r.frozen_seq, r.frozen_digest) THEN
+        RAISE EXCEPTION 'nekaise: generation % must promote a frozen run staged on the current '
+            'generation % with that run''s provenance', NEW.generation, head
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NOT {s}.nk_gates_passed(NEW.run_id) THEN
+        RAISE EXCEPTION 'nekaise: generation % needs every required gate of run % passed at its '
+            'frozen sequence', NEW.generation, NEW.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+
+-- A generation is one atomic promotion: by the end of the transaction that inserts it, its run
+-- is promoted to it, the dataset's current generation reached it, and its outbox row exists.
+CREATE OR REPLACE FUNCTION {s}.nk_generations_complete() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM {s}.runs r WHERE r.run_id = NEW.run_id
+                   AND r.status = 'promoted' AND r.promoted_generation = NEW.generation)
+            OR (SELECT current_generation FROM {s}.dataset) IS DISTINCT FROM NEW.generation
+            OR NOT EXISTS (SELECT 1 FROM {s}.outbox o WHERE o.generation = NEW.generation) THEN
+        RAISE EXCEPTION 'nekaise: generation % must commit with its run promoted, the current '
+            'generation advanced to it and its outbox row', NEW.generation
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NULL;
+END $f$;
+DO $d$ BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_trigger WHERE tgname = 'generations_complete'
+                   AND tgrelid = '{s}.generations'::regclass) THEN
+        CREATE CONSTRAINT TRIGGER generations_complete AFTER INSERT ON {s}.generations
+            DEFERRABLE INITIALLY DEFERRED FOR EACH ROW
+            EXECUTE FUNCTION {s}.nk_generations_complete();
+    END IF;
+END $d$;
+
+CREATE OR REPLACE FUNCTION {s}.nk_gate_receipts_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE r record;
+BEGIN
+    IF TG_OP = 'DELETE' THEN
+        IF (SELECT status FROM {s}.runs WHERE run_id = OLD.run_id) = 'aborted' THEN
+            RETURN OLD;
+        END IF;
+        RAISE EXCEPTION 'nekaise: gate receipt %/% is retained', OLD.run_id, OLD.gate
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF TG_OP = 'UPDATE' THEN
+        RAISE EXCEPTION 'nekaise: gate receipt %/% is immutable', OLD.run_id, OLD.gate
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    SELECT status, frozen_seq, frozen_digest INTO r FROM {s}.runs WHERE run_id = NEW.run_id;
+    IF r.status IS DISTINCT FROM 'frozen' OR (NEW.frozen_seq, NEW.frozen_digest)
+            IS DISTINCT FROM (r.frozen_seq, r.frozen_digest) THEN
+        RAISE EXCEPTION 'nekaise: gate receipt %/% must be bound to the frozen sequence and '
+            'digest of a frozen run', NEW.run_id, NEW.gate
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER gate_receipts_guard BEFORE INSERT OR UPDATE OR DELETE
+    ON {s}.gate_receipts FOR EACH ROW EXECUTE FUNCTION {s}.nk_gate_receipts_guard();
+CREATE OR REPLACE FUNCTION {s}.nk_gate_receipts_after() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    UPDATE {s}.runs SET gate_receipts = gate_receipts + 1
+        WHERE run_id = NEW.run_id AND status = 'frozen';
+    IF NOT FOUND THEN
+        RAISE EXCEPTION 'nekaise: run % is no longer frozen: gate % cannot be recorded',
+            NEW.run_id, NEW.gate USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NULL;
+END $f$;
+CREATE OR REPLACE TRIGGER gate_receipts_after AFTER INSERT ON {s}.gate_receipts
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_gate_receipts_after();
+
+-- The projection advances one generation at a time and never past an active retention pin;
+-- a pin can only be taken on a generation the projection has not passed. Pins and folding both
+-- write the projection_state row.
+CREATE OR REPLACE FUNCTION {s}.nk_projection_state_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF TG_OP = 'DELETE' THEN
+        RAISE EXCEPTION 'nekaise: projection_state is never deleted'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.pins <> OLD.pins AND (pg_trigger_depth() < 2 OR NEW.pins < OLD.pins) THEN
+        RAISE EXCEPTION 'nekaise: projection_state.pins is maintained by the retention trigger'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.generation IS DISTINCT FROM OLD.generation THEN
+        IF NEW.generation IS DISTINCT FROM COALESCE(OLD.generation, -1) + 1 THEN
+            RAISE EXCEPTION 'nekaise: the projection advances one generation at a time'
+                USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        IF EXISTS (SELECT 1 FROM {s}.generation_retention p WHERE p.generation < NEW.generation
+                   AND (p.until IS NULL OR p.until > now())) THEN
+            RAISE EXCEPTION 'nekaise: a retention pin holds the projection before generation %',
+                NEW.generation USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+    END IF;
+    IF NEW.fold_generation IS NOT NULL
+            AND NEW.fold_generation <> COALESCE(NEW.generation, -1) + 1 THEN
+        RAISE EXCEPTION 'nekaise: only the next generation can be folding'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER projection_state_guard BEFORE UPDATE OR DELETE ON {s}.projection_state
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_projection_state_guard();
+CREATE OR REPLACE FUNCTION {s}.nk_retention_after() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE p bigint;
+BEGIN
+    UPDATE {s}.projection_state SET pins = pins + 1 RETURNING generation INTO p;
+    IF NEW.generation < COALESCE(p, -1) THEN
+        RAISE EXCEPTION 'nekaise: generation % is already folded into the projection (at %); it '
+            'can no longer be pinned', NEW.generation, p
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NULL;
+END $f$;
+CREATE OR REPLACE TRIGGER generation_retention_after AFTER INSERT OR UPDATE
+    ON {s}.generation_retention FOR EACH ROW EXECUTE FUNCTION {s}.nk_retention_after();
+
+-- batches applied by step-1 code were never sealed: seal them in sequence order (the digests are
+-- computed from their immutable revisions; nothing else changes)
+DO $d$ DECLARE b record; BEGIN
+    FOR b IN SELECT run_id, step, batch FROM {s}.batches WHERE status = 'applied' AND NOT sealed
+             ORDER BY run_id, seq LOOP
+        UPDATE {s}.batches SET sealed = true
+            WHERE run_id = b.run_id AND step = b.step AND batch = b.batch;
+    END LOOP;
+END $d$;
+
+-- the projection consumer folds promoted generations into the projection tables; registered
+-- before any compaction (the consumer trigger refuses it afterwards)
+INSERT INTO {s}.outbox_consumers (consumer)
+    SELECT 'projection' WHERE NOT EXISTS (
+        SELECT 1 FROM {s}.outbox_consumers WHERE consumer = 'projection');
+"""
+V5_TABLES = ("run_access", "gate_receipts", "projection_state")
+
+
+def _migrate_5(conn, schema):  # stage 4 step 2 staging: additive, see V5_DDL
+    conn.execute(V5_DDL.format(s=schema))
+
+
+MIGRATIONS = {2: _migrate_2, 3: _migrate_3, 4: _migrate_4, 5: _migrate_5}
 # Indexes on columns that migrations may have just added: created after migrating.
 POST_DDL = "CREATE INDEX IF NOT EXISTS manifest_legacy_order ON {s}.manifest (shard, topic_key, id);"
 # store.open()'s marker for a root without an authority record: the schema must not be
@@ -737,9 +1301,10 @@ POST_DDL = "CREATE INDEX IF NOT EXISTS manifest_legacy_order ON {s}.manifest (sh
 UNBOUND = "unbound"
 
 
-def put_rows(cur, table: str, rows: list[dict]) -> None:
-    """Upsert entries/manifest rows with every derived column (the one writer both the store and
-    the shadow replicator use)."""
+def put_rows(cur, table: str, rows: list[dict], texts: list[str] | None = None) -> None:
+    """Upsert entries/manifest rows with every derived column (the one writer the store, the
+    shadow replicator and the staging fold use). `texts`: the rows' stored canonical text, written
+    verbatim (the fold copies revisions; nothing is re-serialized)."""
     if not rows:
         return
     manifest = table == "manifest"
@@ -752,9 +1317,9 @@ def put_rows(cur, table: str, rows: list[dict]) -> None:
         u=sql.SQL(", ").join(sql.SQL("{c} = EXCLUDED.{c}").format(c=sql.Identifier(c))
                              for c in cols[1:]))
     params = []
-    for r in rows:
+    for i, r in enumerate(rows):
         store.validate_json(r, f"{table} row {r.get('id')!r}")
-        rec = [r["id"], canonical_row(r), *_keys_for(r)]
+        rec = [r["id"], canonical_row(r) if texts is None else texts[i], *_keys_for(r)]
         if manifest:
             sha = r.get("sha256")
             shard, topic, _ = store.legacy_manifest_key(r)
@@ -851,6 +1416,7 @@ class PgStore:
                     with conn.transaction():
                         conn.execute(DDL.format(s=schema, v=SCHEMA_VERSION))
                         conn.execute(V4_DDL.format(s=schema))
+                        conn.execute(V5_DDL.format(s=schema))
                 else:
                     conn.execute(DDL.format(s=schema, v=SCHEMA_VERSION))
                 got = conn.execute(sql.SQL("SELECT schema_version FROM {}.state").format(
@@ -1062,14 +1628,26 @@ class PgStore:
 
     @contextmanager
     def read(self, *, timeout: float = 0, writer: WriterToken | None = None) -> Iterator["PgReadView"]:
-        """A snapshot-consistent view (REPEATABLE READ, read only) on its own connection."""
+        """A snapshot-consistent view (REPEATABLE READ, read only) on its own connection, pinned
+        at the committed generation G (stage 4 step 2: the projection plus the revisions of runs
+        promoted since it was folded). A pipeline child of a staged round
+        (store_staging.STAGE_ENV) reads its run's overlay instead; a writer's own view never
+        does (the coordinator reads its run with read_staged)."""
+        import store_staging
+        if writer is None and (pin := store_staging.pin_from_env()) is not None:
+            with store_staging.read_staged(self, pin.run_id, seq=pin.seq,
+                                           token=pin.token) as view:
+                yield view
+            return
         if writer is not None:
             self._writer_conn(writer)
         conn = self._connect()
         try:
             conn.execute("BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY")
             gen = conn.execute("SELECT generation FROM state").fetchone()[0]
-            view = PgReadView(self, conn, Version(f"pg:{gen}"), self._config(conn))
+            visibility, config, head = store_staging.committed(conn)
+            view = PgReadView(self, conn, Version(f"pg:{gen}"), config or self._config(conn),
+                              visibility=visibility, generation=head)
             try:
                 yield view
             finally:
@@ -1077,6 +1655,49 @@ class PgStore:
         finally:
             conn.rollback()
             conn.close()
+
+    # -- staging and promotion (stage 4 step 2; scripts/store_staging.py) -----------------------
+
+    def open_run(self, writer: WriterToken, run_id: str, **identity):
+        import store_staging
+        return store_staging.open_run(self, writer, run_id, **identity)
+
+    def read_staged(self, run_id: str, **kw):
+        import store_staging
+        return store_staging.read_staged(self, run_id, **kw)
+
+    def read_generation(self, generation: int):
+        import store_staging
+        return store_staging.read_generation(self, generation)
+
+    def stage_batch(self, writer: WriterToken, run_id: str, step: str, batch: str,
+                    requests: Sequence[Mapping], **kw):
+        import store_staging
+        return store_staging.stage_batch(self, writer, run_id, step, batch, requests, **kw)
+
+    def batch_receipt(self, writer: WriterToken, run_id: str, step: str, batch: str):
+        import store_staging
+        return store_staging.batch_receipt(self, writer, run_id, step, batch)
+
+    def freeze(self, writer: WriterToken, run_id: str, **kw):
+        import store_staging
+        return store_staging.freeze(self, writer, run_id, **kw)
+
+    def record_gate(self, writer: WriterToken, frozen, gate: str, **kw) -> None:
+        import store_staging
+        store_staging.record_gate(self, writer, frozen, gate, **kw)
+
+    def promote(self, writer: WriterToken, frozen) -> int:
+        import store_staging
+        return store_staging.promote(self, writer, frozen)
+
+    def abort_run(self, writer: WriterToken, run_id: str, **kw) -> None:
+        import store_staging
+        store_staging.abort_run(self, writer, run_id, **kw)
+
+    def fold(self, writer: WriterToken, **kw):
+        import store_staging
+        return store_staging.fold(self, writer, **kw)
 
     def peek(self, table: str):
         """store.FileStore.peek: a committed snapshot needs no lock here."""
@@ -1132,6 +1753,10 @@ class PgStore:
         try:
             with conn.transaction():
                 gen = self._fence(conn, writer)
+                import store_staging
+                if why := store_staging.legacy_writes_refused(conn):
+                    raise StoreError(f"direct store transactions are refused: {why} (stage its "
+                                     "batches in a run)")
                 current = Version(f"pg:{gen}")
                 row = conn.execute("SELECT row_text FROM events WHERE run_id = %s AND op = 'commit'",
                                    [run_id]).fetchone()
@@ -1268,8 +1893,11 @@ class Contracts:
                 raise StoreError(f"batch {run_id}.{step}.{batch} was requested with different "
                                  "content (conflicting retry)")
             return BatchReceipt(run_id, step, batch, digest, row[1], row[2], True)
-        self._q("INSERT INTO batches (run_id, step, batch, request_digest, request_text) "
-                "VALUES (%s, %s, %s, %s, %s)", [run_id, step, batch, digest, text])
+        # computed at the run's current staging sequence (schema v5 applies it right after it)
+        if self._q("INSERT INTO batches (run_id, step, batch, request_digest, request_text, "
+                   "basis_seq) SELECT %s, %s, %s, %s, %s, staged_seq FROM runs WHERE run_id = %s",
+                   [run_id, step, batch, digest, text, run_id]).rowcount != 1:
+            raise StoreError(f"unknown run {run_id}")
         return BatchReceipt(run_id, step, batch, digest, "requested", None, False)
 
     def register_artifact(self, stage: Stage | str, sha256: str, size: int, *,
@@ -1331,14 +1959,34 @@ class Contracts:
 # --- read view -----------------------------------------------------------------------------------
 
 class PgReadView:
+    """A snapshot view. `visibility` (store_staging.Visibility) overlays staged or promoted-but-
+    unfolded revisions on the projection tables; every query reads the visible rows through
+    _src(table), so the same SQL serves the projection alone (visibility None: the table itself)
+    and any overlay. `generation` is the committed generation the view pins (None before the
+    first one), `stage` the (run, sequence) of a staging view."""
+
     def __init__(self, st: PgStore, conn: psycopg.Connection, version: Version,
-                 config: ConfigSnapshot):
+                 config: ConfigSnapshot, *, visibility=None, generation: int | None = None,
+                 stage: tuple[str, int] | None = None):
         self._store = st
         self._conn = conn
         self._version = version
         self._config = config
         self._id = uuid.uuid4().hex
         self._closed = False
+        self._visibility = visibility
+        self._sources: dict[str, sql.Composable] = {}
+        self.generation = generation
+        self.stage = stage
+
+    def _src(self, table: str) -> sql.Composable:
+        """The visible rows of a projection table, as a FROM item named like the table (lookups,
+        membership, aggregates; keyset scans build their own ordered query, Visibility.scan)."""
+        if self._visibility is None:
+            return sql.Identifier(table)
+        if table not in self._sources:
+            self._sources[table] = self._visibility.source(table)
+        return self._sources[table]
 
     def _check_open(self) -> None:
         if self._closed:
@@ -1382,6 +2030,11 @@ class PgReadView:
         keys, rowexpr, textexpr, name = self._SCAN[table]
         if order == "legacy":
             keys = ("shard", "topic_key", "id")
+        if self._visibility is not None and table is not Table.EVENTS:
+            # rows are (keys..., text) — for the blocklist (keys..., url), like the query below
+            got = self._visibility.scan(self._q, table.value, order, where,
+                                        cursor.last_key if cursor else None, limit + 1)
+            return self._page(table, keys, fields, got, limit, query_id)
         cond, params = compile_predicate(where, sql.SQL(rowexpr))
         keycols = sql.SQL(", ").join(sql.Identifier(k) for k in keys)
         after = sql.SQL("true")
@@ -1395,6 +2048,10 @@ class PgReadView:
             keys=keycols, text=sql.SQL(textexpr), extra=extra, t=sql.Identifier(name),
             cond=cond, after=after)
         got = self._q(q, params + [limit + 1]).fetchall()
+        return self._page(table, keys, fields, got, limit, query_id)
+
+    def _page(self, table: Table, keys: tuple, fields, got: list, limit: int,
+              query_id: str) -> Page:
         rows, last = [], None
         for rec in got[:limit]:
             key = tuple(rec[:len(keys)])
@@ -1406,12 +2063,14 @@ class PgReadView:
 
     def get_manifest(self, ids: Iterable[str]) -> dict[str, dict]:
         ids = list(dict.fromkeys(ids))
-        found = dict(self._q("SELECT id, row_text FROM manifest WHERE id = ANY(%s)", [ids]).fetchall())
+        found = dict(self._q(sql.SQL("SELECT id, row_text FROM {} WHERE id = ANY(%s)").format(
+            self._src("manifest")), [ids]).fetchall())
         return {i: json.loads(found[i]) for i in ids if i in found}
 
     def get_entries(self, ids: Iterable[str]) -> dict[str, dict]:
         ids = list(dict.fromkeys(ids))
-        found = dict(self._q("SELECT id, row_text FROM entries WHERE id = ANY(%s)", [ids]).fetchall())
+        found = dict(self._q(sql.SQL("SELECT id, row_text FROM {} WHERE id = ANY(%s)").format(
+            self._src("entries")), [ids]).fetchall())
         return {i: json.loads(found[i]) for i in ids if i in found}
 
     def known(self, *, urls: Iterable[str] = (), titles: Iterable[str] = (),
@@ -1425,18 +2084,21 @@ class PgReadView:
                 raise StoreError(f"known(): at most {store.MAX_KNOWN} {label} per call")
         ukeys = [_url_key(u) for u in cand_u]
         tkeys = [_url_key(t) for t in cand_t]
-        hit_u = {r[0] for r in self._q(
-            "SELECT url_norm FROM entries WHERE url_key = ANY(%s) "
-            "UNION SELECT url_norm FROM manifest WHERE url_key = ANY(%s)", [ukeys, ukeys])}
+        e, m = self._src("entries"), self._src("manifest")
+        hit_u = {r[0] for r in self._q(sql.SQL(
+            "SELECT url_norm FROM {} WHERE url_key = ANY(%s) "
+            "UNION SELECT url_norm FROM {} WHERE url_key = ANY(%s)").format(e, m), [ukeys, ukeys])}
         if include_blocklist:
-            hit_u |= {r[0] for r in self._q("SELECT url FROM blocklist WHERE key = ANY(%s)",
+            hit_u |= {r[0] for r in self._q(sql.SQL("SELECT url FROM {} WHERE key = ANY(%s)")
+                                            .format(self._src("blocklist")),
                                             [[key_digest(u) for u in cand_u]])}
-        hit_t = {r[0] for r in self._q(
-            "SELECT title_norm FROM entries WHERE title_key = ANY(%s) "
-            "UNION SELECT title_norm FROM manifest WHERE title_key = ANY(%s)", [tkeys, tkeys])}
-        hit_i = {r[0] for r in self._q(
-            "SELECT id FROM entries WHERE id = ANY(%s) UNION SELECT id FROM manifest "
-            "WHERE id = ANY(%s)", [list(cand_i), list(cand_i)])}
+        hit_t = {r[0] for r in self._q(sql.SQL(
+            "SELECT title_norm FROM {} WHERE title_key = ANY(%s) "
+            "UNION SELECT title_norm FROM {} WHERE title_key = ANY(%s)").format(e, m),
+            [tkeys, tkeys])}
+        hit_i = {r[0] for r in self._q(sql.SQL(
+            "SELECT id FROM {} WHERE id = ANY(%s) UNION SELECT id FROM {} "
+            "WHERE id = ANY(%s)").format(e, m), [list(cand_i), list(cand_i)])}
         # digest hits are verified against the full value
         return KnownHits(frozenset(hit_u & cand_u), frozenset(hit_t & cand_t),
                          frozenset(hit_i & cand_i))
@@ -1456,8 +2118,8 @@ class PgReadView:
                       sql.SQL("COALESCE(bool_or(json_typeof({j}) = 'number' AND {jt} ~ '[.eE]'), "
                               "false)").format(j=j, jt=jt)]
         cols = gcols + [sql.SQL("count(*)")] + scols
-        q = sql.SQL("SELECT {cols} FROM manifest WHERE {cond}{grp}").format(
-            cols=sql.SQL(", ").join(cols), cond=cond,
+        q = sql.SQL("SELECT {cols} FROM {src} WHERE {cond}{grp}").format(
+            cols=sql.SQL(", ").join(cols), cond=cond, src=self._src("manifest"),
             grp=sql.SQL(" GROUP BY {}").format(sql.SQL(", ").join(
                 sql.SQL(str(i + 1)) for i in range(len(gcols)))) if gcols else sql.SQL(""))
         out = {}
@@ -1483,8 +2145,8 @@ class PgReadView:
             raise StoreError(f"batch_size must be within 1..{store.MAX_PAGE}")
         cond, params = compile_predicate(where, sql.SQL("row"))
         q = sql.SQL("SELECT row_text FROM (SELECT id, sha256, row_text, count(*) OVER "
-                    "(PARTITION BY sha256) AS c FROM manifest WHERE sha256 IS NOT NULL AND ({})) t "
-                    "WHERE c > 1 ORDER BY sha256, id").format(cond)
+                    "(PARTITION BY sha256) AS c FROM {} WHERE sha256 IS NOT NULL AND ({})) t "
+                    "WHERE c > 1 ORDER BY sha256, id").format(self._src("manifest"), cond)
         self._check_open()
         with self._conn.cursor(name=f"dup_{uuid.uuid4().hex}") as cur:
             cur.itersize = batch_size
@@ -1493,13 +2155,15 @@ class PgReadView:
                 yield json.loads(text)
 
     def rotation_get(self, name: str | None = None) -> dict:
-        rows = {n: json.loads(t) for n, t in self._q("SELECT name, value_text FROM rotation")}
+        rows = {n: json.loads(t) for n, t in self._q(sql.SQL("SELECT name, value_text FROM {}")
+                                                     .format(self._src("rotation")))}
         return rows if name is None else rows[name]
 
     def control_get(self, name: str) -> dict | None:
         if name not in store.CONTROL_FILES:
             raise StoreError(f"unknown control document {name!r}")
-        row = self._q("SELECT doc_text FROM control_docs WHERE name = %s", [name]).fetchone()
+        row = self._q(sql.SQL("SELECT doc_text FROM {} WHERE name = %s").format(
+            self._src("control_docs")), [name]).fetchone()
         return json.loads(row[0]) if row else None
 
     def config_get(self) -> ConfigSnapshot:
@@ -1509,7 +2173,8 @@ class PgReadView:
 
     def backend_state_get(self, name: str | None = None):
         runtime = {n: BackendState(e, r) for n, e, r in
-                   self._q("SELECT name, enabled, reason FROM backend_state")}
+                   self._q(sql.SQL("SELECT name, enabled, reason FROM {}").format(
+                       self._src("backend_state")))}
         names = [k for k in self._config.backends if not k.startswith("_")]
         states = {k: runtime.get(k, BackendState()) for k in sorted(set(names) | set(runtime))}
         return states if name is None else states.get(name, BackendState())

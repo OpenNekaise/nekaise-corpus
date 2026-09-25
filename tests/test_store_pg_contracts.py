@@ -59,12 +59,12 @@ def _downgrade_to_v3(st) -> None:
     """Remove every stage-4 object: the schema the shadow runs today (version 3)."""
     import store_pg
     with st._connect(autocommit=True) as conn:
-        for t in reversed(store_pg.V4_TABLES):
+        for t in reversed(store_pg.V5_TABLES + store_pg.V4_TABLES):
             conn.execute(f"DROP TABLE IF EXISTS {st.schema}.{t} CASCADE")
-        for (fn,) in conn.execute("SELECT p.proname FROM pg_proc p JOIN pg_namespace n ON "
-                                  "n.oid = p.pronamespace WHERE n.nspname = %s",
+        for (fn,) in conn.execute("SELECT p.oid::regprocedure::text FROM pg_proc p JOIN "
+                                  "pg_namespace n ON n.oid = p.pronamespace WHERE n.nspname = %s",
                                   [st.schema]).fetchall():
-            conn.execute(f"DROP FUNCTION {st.schema}.{fn}()")
+            conn.execute(f"DROP FUNCTION {fn}")
         conn.execute("UPDATE state SET schema_version = 3")
 
 
@@ -97,9 +97,10 @@ def test_v3_shadow_migrates_in_place_without_rewriting_anything(env):
     assert _snapshot(migrated) == before                # rows, events, watermark, receipts
     assert set(store_pg.V4_TABLES) <= tables(migrated)
     with migrated._connect(autocommit=True) as conn:
-        assert conn.execute("SELECT schema_version FROM state").fetchone()[0] == 4
+        assert conn.execute("SELECT schema_version FROM state").fetchone()[0] == 5
         assert conn.execute("SELECT consumer, watermark FROM outbox_consumers ORDER BY 1"
-                            ).fetchall() == [("index", 0), ("publication", 0), ("review", 0)]
+                            ).fetchall() == [("index", 0), ("projection", 0), ("publication", 0),
+                                             ("review", 0)]
     auth = migrated.authority()
     assert auth["mode"] == "file" and auth["epoch"] == 1 and auth["current_generation"] is None
     uuid.UUID(auth["dataset_uuid"])
@@ -154,7 +155,7 @@ def test_real_v3_code_data_migrates_and_old_clients_are_rejected(tmp_path, monke
 
         # old clients: construction refuses the newer schema; an instance built before the
         # migration cannot take the writer
-        with pytest.raises(StoreError, match="version 4, code expects 3"):
+        with pytest.raises(StoreError, match=f"version {store_pg.SCHEMA_VERSION}, code expects 3"):
             v3.PgStore(root, dsn=DSN, schema=schema)
         with pytest.raises(StoreError, match="restart with matching code"):
             with old_writer.writer():
@@ -167,14 +168,16 @@ def test_new_code_rejects_a_newer_schema_inside_transactions(pg, monkeypatch):
     import store_pg
     with pg.writer() as w:
         with pg._connect(autocommit=True) as admin:
-            admin.execute("UPDATE state SET schema_version = 5")   # a newer client migrated
+            admin.execute("UPDATE state SET schema_version = %s",   # a newer client migrated
+                          [store_pg.SCHEMA_VERSION + 1])
         with pytest.raises(store.WriterError, match="restart with matching code"):
             with pg.transaction("r1", expected_version=pg.version(), writer=w) as tx:
                 tx.blocklist_add(["https://e.org/x"])
-    with pytest.raises(StoreError, match="version 5, code expects 4"):
+    with pytest.raises(StoreError, match=f"version {store_pg.SCHEMA_VERSION + 1}, code expects "
+                                         f"{store_pg.SCHEMA_VERSION}"):
         store_pg.PgStore(pg.root, dsn=pg.dsn, schema=pg.schema)
     with pg._connect(autocommit=True) as admin:
-        admin.execute("UPDATE state SET schema_version = 4")
+        admin.execute("UPDATE state SET schema_version = %s", [store_pg.SCHEMA_VERSION])
 
 
 def test_a_fresh_schema_has_every_contract_table(pg):
@@ -316,6 +319,8 @@ def test_authority_epochs_are_logged_and_only_grow(pg):
 # --- runs, batches, revisions, generations, outbox ------------------------------------------------
 
 CONFIG = {"backends.json": b'{"find_x": {"script": "x.py"}}\n', "eligibility.json": b"{}\n"}
+# every registered outbox consumer (schema v5 adds the projection consumer)
+CONSUMERS = ("review", "publication", "index", "projection")
 
 
 def _open(c, run_id="r1", parent=None, **kw):
@@ -326,24 +331,36 @@ def _open(c, run_id="r1", parent=None, **kw):
 
 
 def _apply(conn, run_id, step, batch, seq, revisions):
-    """Stage-2 shape of applying one batch: receipt applied at the next staging sequence, its
-    revisions, and the run overlay's sequence — all in the caller's transaction."""
+    """The v5 shape of applying one batch (store_staging.stage_batch does this): receipt applied
+    right after the sequence it was computed at (the database advances the run's staging
+    sequence), its revisions, then the seal — all in the caller's transaction."""
     conn.execute("UPDATE batches SET status = 'applied', seq = %s, applied_at = now() WHERE "
                  "run_id = %s AND step = %s AND batch = %s", [seq, run_id, step, batch])
-    conn.execute("UPDATE runs SET staged_seq = %s WHERE run_id = %s", [seq, run_id])
     for tbl, key, op, row, reason in revisions:
         text = store.canonical_row(row) if row is not None else None
         conn.execute("INSERT INTO revisions (run_id, batch_seq, tbl, key, op, row_text, row_sha256, "
                      "reason) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
                      [run_id, seq, tbl, key, op, text,
                       hashlib.sha256(text.encode()).hexdigest() if text else None, reason])
+    conn.execute("UPDATE batches SET sealed = true WHERE run_id = %s AND step = %s AND batch = %s",
+                 [run_id, step, batch])
+
+
+def _freeze(conn, run_id):
+    """Freeze at the staged sequence's chain digest with one required gate, and pass it."""
+    conn.execute("UPDATE runs SET status = 'frozen', frozen_seq = staged_seq, frozen_digest = "
+                 "COALESCE((SELECT chain_digest FROM batches b WHERE b.run_id = runs.run_id AND "
+                 "b.seq = runs.staged_seq), nk_chain_origin(run_id)), required_gates = '[\"test\"]' "
+                 "WHERE run_id = %s", [run_id])
+    conn.execute("INSERT INTO gate_receipts (run_id, gate, frozen_seq, frozen_digest, verdict) "
+                 "SELECT run_id, 'test', frozen_seq, frozen_digest, 'passed' FROM runs "
+                 "WHERE run_id = %s", [run_id])
 
 
 def _promote(conn, run_id, generation, parent):
     """Stage-2 shape of promotion: a constant number of row writes whatever the run staged."""
     staged = conn.execute("SELECT staged_seq FROM runs WHERE run_id = %s", [run_id]).fetchone()[0]
-    conn.execute("UPDATE runs SET status = 'frozen', frozen_seq = staged_seq, frozen_digest = %s "
-                 "WHERE run_id = %s", ["f" * 64, run_id])
+    _freeze(conn, run_id)
     conn.execute("INSERT INTO generations (generation, parent, run_id, producer_commit, "
                  "config_digest, extractor_version, cleaning_ruleset, frozen_seq, frozen_digest, "
                  "counts_text) SELECT %s, %s, run_id, producer_commit, config_digest, "
@@ -472,15 +489,16 @@ def test_outbox_watermarks_are_independent_and_contiguous(pg):
             c.ack("review", 1, "ok")                   # exact retry
             with pytest.raises(StoreError, match="differently"):
                 c.ack("review", 1, "integrity")
-            assert c.watermarks() == {"index": 0, "publication": 1, "review": 3}
+            assert c.watermarks() == {"index": 0, "projection": 0, "publication": 1, "review": 3}
     _expect_refused(pg, "UPDATE outbox_consumers SET watermark = 3 WHERE consumer = 'index'")
     _expect_refused(pg, "UPDATE outbox_consumers SET watermark = 0 WHERE consumer = 'review'")
     _expect_refused(pg, "UPDATE outbox_acks SET verdict = 'ok'")
     _expect_refused(pg, "DELETE FROM outbox WHERE seq = 1")   # the index has not seen it
     _expect_refused(pg, "INSERT INTO outbox (seq, generation, payload_text) VALUES (9, 2, '{}')")
     with pg.writer() as w, pg.contracts(w) as c:
-        c.ack("index", 1, "ok")
-        assert c.advance("index") == 1
+        for consumer in ("index", "projection"):
+            c.ack(consumer, 1, "ok")
+            assert c.advance(consumer) == 1
     _expect_refused(pg, "DELETE FROM outbox_acks WHERE seq = 2")
     with pg._connect(autocommit=True) as conn:
         conn.execute("DELETE FROM outbox WHERE seq = 1")   # every consumer is past it: compacts
@@ -515,7 +533,7 @@ def test_full_compaction_never_reuses_outbox_sequences(pg):
     with pg.writer() as w:
         _generations(pg, w, 2)
         with pg.contracts(w) as c:
-            for consumer in ("review", "publication", "index"):
+            for consumer in CONSUMERS:
                 for seq in (1, 2):
                     c.ack(consumer, seq, "ok")
                 assert c.advance(consumer) == 2
@@ -603,7 +621,7 @@ def test_init_file_binds_a_file_mode_shadow(pg, tmp_path):
 
 def _ack_all(pg, w, seqs):
     with pg.contracts(w) as c:
-        for consumer in ("review", "publication", "index"):
+        for consumer in CONSUMERS:
             for seq in seqs:
                 c.ack(consumer, seq, "ok")
             c.advance(consumer)
@@ -773,26 +791,31 @@ def test_a_stale_snapshot_registrar_cannot_miss_a_compaction(pg, level):
 def test_a_multi_row_outbox_insert_fails_closed(pg):
     """Codex third review (minor): rows are allocated one statement at a time. A multi-row
     INSERT is refused (the second row's BEFORE trigger runs before the first row's AFTER
-    trigger advances the allocation) and changes nothing."""
+    trigger advances the allocation) and changes nothing. (Schema v5: a generation commits only
+    together with its outbox row, so the attempts run inside its promotion transaction.)"""
+    import psycopg
     with pg.writer() as w:
         _generations(pg, w, 1)                                   # seq 1 -> generation 0
-        with pg.contracts(w) as c:                               # two more generations
+        with pg.contracts(w) as c:                               # generation 1, in progress
             _open(c, "m1", parent=0)
             c.request_batch("m1", "fetch", "b", [{"call": "x"}])
             _apply(c._conn, "m1", "fetch", "b", 1, [("manifest", "m", "put", {"id": "m"}, None)])
-            c._q("UPDATE runs SET status = 'frozen', frozen_seq = 1, frozen_digest = %s "
-                 "WHERE run_id = 'm1'", ["f" * 64])
+            _freeze(c._conn, "m1")
             c._q("INSERT INTO generations (generation, parent, run_id, producer_commit, "
                  "config_digest, extractor_version, cleaning_ruleset, frozen_seq, frozen_digest, "
                  "counts_text) SELECT 1, 0, run_id, producer_commit, config_digest, "
                  "extractor_version, cleaning_ruleset, frozen_seq, frozen_digest, '{}' FROM runs "
                  "WHERE run_id = 'm1'")
-    _expect_refused(pg, "INSERT INTO outbox (seq, generation, payload_text) VALUES "
-                        "(2, 1, '{}'), (3, 0, '{}')")
-    _expect_refused(pg, "INSERT INTO outbox (seq, generation, payload_text) "
-                        "SELECT 2, 1, '{}' UNION ALL SELECT 3, 1, '{}'")
-    with pg._connect(autocommit=True) as conn:
-        assert conn.execute("SELECT allocated, compacted FROM outbox_state").fetchone() == (1, 0)
-        assert conn.execute("SELECT seq FROM outbox ORDER BY seq").fetchall() == [(1,)]
-        conn.execute("INSERT INTO outbox (seq, generation, payload_text) VALUES (2, 1, '{}')")
-        assert conn.execute("SELECT allocated FROM outbox_state").fetchone()[0] == 2
+            c._q("UPDATE runs SET status = 'promoted', promoted_generation = 1, ended_at = now() "
+                 "WHERE run_id = 'm1'")
+            c._q("UPDATE dataset SET current_generation = 1")
+            for stmt in ("INSERT INTO outbox (seq, generation, payload_text) VALUES "
+                         "(2, 1, '{}'), (3, 0, '{}')",
+                         "INSERT INTO outbox (seq, generation, payload_text) "
+                         "SELECT 2, 1, '{}' UNION ALL SELECT 3, 1, '{}'"):
+                with pytest.raises(psycopg.IntegrityError), c._conn.transaction():
+                    c._q(stmt)
+            assert c._q("SELECT allocated, compacted FROM outbox_state").fetchone() == (1, 0)
+            assert c._q("SELECT seq FROM outbox ORDER BY seq").fetchall() == [(1,)]
+            c._q("INSERT INTO outbox (seq, generation, payload_text) VALUES (2, 1, '{}')")
+            assert c._q("SELECT allocated FROM outbox_state").fetchone()[0] == 2

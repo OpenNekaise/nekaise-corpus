@@ -24,6 +24,18 @@ transaction with the round's writer token.
 * Only store mutation methods can be requested; each request is JSON, so arguments are plain data.
 * The capability is 32 random bytes per round; the socket lives in a 0700 directory and dies with
   the round.
+
+Staged rounds (ADR 0001 stage 4 step 2, PostgreSQL). A Broker given the round's staged run
+(`stage`, store_staging.StagedRun) records every batch as the run's staged batch
+(PgStore.stage_batch: identity (run, step, batch), the immutable request first, revisions at the
+run's next staging sequence) instead of a committed transaction; `expected_version` is then the
+run's staging version, so a batch computed at an earlier sequence is refused. Its children also
+receive the run's read pin (store_staging.STAGE_ENV), so their views show the run's overlay. The
+coordinator's own computed batches (the discovery merge) go through computed_batch(), which
+persists the computed request before applying it and, on re-entry, applies exactly the persisted
+request or skips an applied one — never recomputing against its own effects. StagedRound wraps
+the lifecycle: broker, drain, freeze, gate receipts bound to the frozen sequence, promotion, and
+abort on failure.
 """
 from __future__ import annotations
 
@@ -129,10 +141,14 @@ def _bind(call: str, args: list, kwargs: dict) -> dict:
 
 
 class Broker:
-    """Serve one round's mutation batches with the round's writer token."""
+    """Serve one round's mutation batches with the round's writer token (as committed store
+    transactions, or as the staged batches of `stage`, the round's staged run)."""
 
-    def __init__(self, st, writer: store.WriterToken, round_id: str):
+    def __init__(self, st, writer: store.WriterToken, round_id: str, *, stage=None):
         self.st, self.writer, self.round_id = st, writer, store._check_run_id(round_id)
+        if stage is not None and stage.run_id != self.round_id:
+            raise BrokerError(f"staged run {stage.run_id} is not round {self.round_id}")
+        self.stage = stage
         self.cap = secrets.token_hex(32)
         # a short private directory: unix socket paths are limited to ~108 bytes
         self._dir = Path(tempfile.mkdtemp(prefix="nekaise-broker-"))
@@ -185,8 +201,13 @@ class Broker:
         self._thread = threading.Thread(target=self._server.serve_forever, daemon=True)
 
     def env(self) -> dict[str, str]:
-        """Environment giving one child write access through this broker."""
-        return {BROKER_ENV: str(self.path), CAP_ENV: self.cap, ROUND_ENV: self.round_id}
+        """Environment giving one child write access through this broker (and, for a staged
+        round, its run's overlay as it stands when the child opens a view)."""
+        env = {BROKER_ENV: str(self.path), CAP_ENV: self.cap, ROUND_ENV: self.round_id}
+        if self.stage is not None:
+            import store_staging
+            env.update(store_staging.pin_env(self.stage.run_id, self.stage.token))
+        return env
 
     def _execute(self, msg: dict) -> dict:
         if not secrets.compare_digest(str(msg.get("cap", "")), self.cap):
@@ -205,6 +226,10 @@ class Broker:
         with self._lock:
             if self._closing:  # re-checked under the lock: shutdown may have begun meanwhile
                 raise BrokerError("broker is shutting down")
+            if self.stage is not None:
+                got = self.st.stage_batch(self.writer, self.round_id, step, batch, requests,
+                                          expected_version=expected)
+                return {"ok": True, "results": got.results, "version": got.version.token}
             results = []
             with self.st.transaction(run_id, expected_version=expected, writer=self.writer) as tx:
                 for r in requests:
@@ -215,10 +240,13 @@ class Broker:
 
     @contextmanager
     def local_batch(self, step: str, batch: str) -> Iterator["store.WriteView"]:
-        """A batch from the round's own process (e.g. run_round's discovery merge), run as
-        transaction "<round>.<step>.<batch>" and serialized with the children's batches."""
+        """A batch from the round's own process, run as transaction "<round>.<step>.<batch>" and
+        serialized with the children's batches. Not for staged rounds: their coordinator's
+        batches are computed first and persisted before they apply (computed_batch)."""
         if not _BATCH_ID.fullmatch(step) or not _BATCH_ID.fullmatch(batch):
             raise BrokerError("step and batch must be plain names")
+        if self.stage is not None:
+            raise BrokerError("a staged round records its own batches with computed_batch()")
         run_id = store._check_run_id(f"{self.round_id}.{step}.{batch}")
         with self._lock:
             if self._closing:
@@ -226,6 +254,56 @@ class Broker:
             with self.st.transaction(run_id, expected_version=self.st.version(),
                                      writer=self.writer) as tx:
                 yield tx
+
+    def computed_batch(self, step: str, batch: str, compute):
+        """Record one batch the coordinator computes itself (run_round's discovery merge),
+        serialized with the children's batches. `compute(view, recorder)` reads only `view` and
+        records store mutations on `recorder` (a Recorder); it returns what the caller reports.
+
+        File store: `compute` runs on the writer's read view, then its requests are applied as
+        transaction "<round>.<step>.<batch>" (none recorded: no transaction); returns compute's
+        result.
+
+        Staged round: the batch identity is (run, step, batch). A new batch is computed on the
+        run's overlay, its request PERSISTED (one transaction, even when empty) and then applied
+        (another); returns compute's result. If the identity already has a receipt — a retry, or
+        a coordinator re-entering the step — `compute` is NOT called: a persisted request is
+        applied exactly as persisted (it must still be at the sequence it was computed at), an
+        applied one is skipped. Returns None in both cases."""
+        if not _BATCH_ID.fullmatch(step) or not _BATCH_ID.fullmatch(batch):
+            raise BrokerError("step and batch must be plain names")
+        with self._lock:
+            if self._closing:
+                raise BrokerError("broker is shutting down")
+            if self.stage is None:
+                with self.st.read(writer=self.writer) as view:
+                    recorder = Recorder()
+                    out = compute(view, recorder)
+                    version = view.version()
+                if recorder.requests:
+                    run_id = store._check_run_id(f"{self.round_id}.{step}.{batch}")
+                    with self.st.transaction(run_id, expected_version=version,
+                                             writer=self.writer) as tx:
+                        apply_requests(tx, recorder.requests)
+                return out
+            import store_staging
+            got = self.st.batch_receipt(self.writer, self.round_id, step, batch)
+            if got is not None:
+                if got.status == "requested":
+                    self.st.stage_batch(self.writer, self.round_id, step, batch, got.requests,
+                                        expected_version=store_staging.stage_version(
+                                            self.round_id, got.basis_seq))
+                elif got.status != "applied":
+                    raise BrokerError(f"batch {self.round_id}.{step}.{batch} is {got.status}")
+                return None
+            with self.st.read_staged(self.round_id, writer=self.writer) as view:
+                recorder = Recorder()
+                out = compute(view, recorder)
+                version = view.version()
+            for persist_only in (True, False):
+                self.st.stage_batch(self.writer, self.round_id, step, batch, recorder.requests,
+                                    expected_version=version, persist_only=persist_only)
+            return out
 
     @contextmanager
     def serving(self) -> Iterator["Broker"]:
@@ -324,6 +402,16 @@ class _Batch:
             self.requests.append({"call": name, "args": store._plain(args),
                                   "kwargs": store._plain(kwargs)})
         return record
+
+
+Recorder = _Batch  # the public name for computed batches (Broker.computed_batch)
+
+
+def apply_requests(tx, requests: list[dict]) -> list:
+    """Apply recorded mutation requests to a write view, in order."""
+    return [getattr(tx, r["call"])(**_bind(r["call"], list(r.get("args") or []),
+                                          dict(r.get("kwargs") or {})))
+            for r in requests]
 
 
 class Client:
@@ -509,3 +597,82 @@ def run_batch(st, step: str, body, *, writer: "store.WriterToken | None" = None,
             results = [getattr(tx, r["call"])(**_bind(r["call"], r["args"], r["kwargs"]))
                        for r in batch.requests]
     return out, results
+
+
+# --- staged rounds (ADR 0001 stage 4 step 2) -------------------------------------------------------
+
+class StagedRound:
+    """One PostgreSQL round's lifecycle around its staged broker:
+
+        with store_broker.staged_round(st, writer, run_id, producer_commit=...,
+                                       extractor_version=..., cleaning_ruleset=...) as rnd:
+            rnd.broker.computed_batch("discover", "merge", compute)   # coordinator batches
+            ... children with rnd.broker.env() stage batches; rnd.reader_env() reads ...
+            frozen = rnd.freeze(["check", "lint", "tests"])           # drains the broker first
+            ... gates run with rnd.gate_env(), each verdict recorded ...
+            rnd.record_gate("check", passed=True)
+            generation = rnd.promote()
+
+    Leaving the block with an exception aborts the run unless it was promoted (unpromoted runs
+    default to abort; resuming one is stage 4 step 4)."""
+
+    def __init__(self, st, writer: store.WriterToken, run):
+        self.st, self.writer, self.run = st, writer, run
+        self.broker = Broker(st, writer, run.run_id, stage=run)
+        self.frozen = None
+        self.generation: int | None = None
+
+    def reader_env(self, seq: int | None = None) -> dict[str, str]:
+        """Environment for a read-only child (no write capability) pinned at staging sequence
+        `seq` (None: the run's sequence when the child opens its view). Discovery workers share
+        pinned_now(); gates get gate_env()."""
+        import store_staging
+        return store_staging.pin_env(self.run.run_id, self.run.token, seq)
+
+    def pinned_now(self) -> dict[str, str]:
+        """reader_env() pinned at the run's current staging sequence (one shared view)."""
+        with self.st.read_staged(self.run.run_id, writer=self.writer) as view:
+            return self.reader_env(view.stage[1])
+
+    def freeze(self, required_gates):
+        """Drain the broker (no more mutations), then freeze the run at its staged sequence."""
+        self.broker.drain()
+        self.frozen = self.st.freeze(self.writer, self.run.run_id, required_gates=required_gates)
+        return self.frozen
+
+    def gate_env(self) -> dict[str, str]:
+        if self.frozen is None:
+            raise BrokerError("freeze the run before running its gates")
+        return self.reader_env(self.frozen.seq)
+
+    def record_gate(self, gate: str, *, passed: bool, detail=None) -> None:
+        if self.frozen is None:
+            raise BrokerError("freeze the run before recording gates")
+        self.st.record_gate(self.writer, self.frozen, gate, passed=passed, detail=detail)
+
+    def promote(self) -> int:
+        if self.frozen is None:
+            raise BrokerError("freeze the run before promoting it")
+        self.generation = self.st.promote(self.writer, self.frozen)
+        return self.generation
+
+
+@contextmanager
+def staged_round(st, writer: store.WriterToken, run_id: str, *, kind: str = "round",
+                 producer_commit: str, extractor_version: str,
+                 cleaning_ruleset: str) -> Iterator[StagedRound]:
+    """Open run `run_id` on the current generation and serve its staged broker (see
+    StagedRound). The broker is drained before the block's outcome is judged."""
+    run = st.open_run(writer, run_id, kind=kind, producer_commit=producer_commit,
+                      extractor_version=extractor_version, cleaning_ruleset=cleaning_ruleset)
+    rnd = StagedRound(st, writer, run)
+    try:
+        with rnd.broker.serving():
+            yield rnd
+    except BaseException as exc:
+        if rnd.generation is None:
+            try:
+                st.abort_run(writer, run_id, reason=f"{type(exc).__name__}: {exc}"[:500])
+            except Exception as abort_exc:  # the original failure stays the one raised
+                exc.add_note(f"aborting run {run_id} failed too: {abort_exc}")
+        raise

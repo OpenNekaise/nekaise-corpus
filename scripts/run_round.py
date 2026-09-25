@@ -249,21 +249,24 @@ def merge_proposals(view, results: list[dict]) -> tuple[list[dict], dict[str, in
     return merged, accepted, passes
 
 
-def apply_discovery(tx, successful: list[dict], selected: list[str],
-                    backends: dict) -> tuple[int, dict[str, int], list[tuple]]:
-    """Record one discovery phase in the round's discovery transaction `tx`: the merged accepted
-    entries, find_github's staged passes, every successful rotating finder's pointer move (holds
-    keep theirs; failed finders are not in `successful`, so they keep theirs too) and
-    finder-reported exhaustion as runtime backend state. Returns (accepted total, accepted per
-    finder, [(message or None, run event, fields)]) for the caller to report after commit."""
-    merged, accepted, passes = merge_proposals(tx, successful)
+def plan_discovery(view, batch, successful: list[dict], selected: list[str],
+                   backends: dict) -> tuple[int, dict[str, int], list[tuple]]:
+    """Compute one discovery phase from `view` and record it on `batch` (store mutation calls):
+    the merged accepted entries, find_github's staged passes, every successful rotating finder's
+    pointer move (holds keep theirs; failed finders are not in `successful`, so they keep theirs
+    too) and finder-reported exhaustion as runtime backend state. Nothing is read after it is
+    recorded, so the recorded batch is the complete, final request — ids, suffixes and cursor
+    values included — which a staged round persists before applying (ADR 0001 stage 4 step 2).
+    Returns (accepted total, accepted per finder, [(message or None, run event, fields)]) for
+    the caller to report after the batch is recorded."""
+    merged, accepted, passes = merge_proposals(view, successful)
     if merged:
-        tx.insert_entries(merged)
+        batch.insert_entries(merged)
     if passes:
-        current = tx.control_get(GITHUB_PASSES) or {}
+        current = view.control_get(GITHUB_PASSES) or {}
         recorded = registry.merge_github_passes(current, passes)
         if recorded != current:
-            tx.control_set(GITHUB_PASSES, recorded)
+            batch.control_set(GITHUB_PASSES, recorded)
     notes: list[tuple] = []
     by_name = {r["name"]: r for r in successful}
     for name in selected:
@@ -280,23 +283,33 @@ def apply_discovery(tx, successful: list[dict], selected: list[str],
                      **({"detail": detail} if detail else {})},
                 ))
                 continue
-            entry = tx.rotation_get(name)
+            entry = view.rotation_get(name)
             if entry.get("dynamic"):
                 entry = rotation.with_next(name, entry,
                                            result["rotation_next"].read_text().strip())
             else:
                 entry = rotation.advanced(name, entry)
-            tx.rotation_set(name, entry)
+            batch.rotation_set(name, entry)
             notes.append((None, "rotation_advanced",
                           {"backend": name, "next": rotation.pointer_arg(entry)}))
         exhausted_path = result["backend_exhausted"]
         if exhausted_path.exists():
             reason = exhausted_path.read_text().strip()
             # Runtime state, never the git-owned configuration (ADR 0001 section 2).
-            tx.backend_state_set(name, store.BackendState(False, f"{EXHAUSTED}{reason}"))
+            batch.backend_state_set(name, store.BackendState(False, f"{EXHAUSTED}{reason}"))
             notes.append((f"backend disabled for {name}: {EXHAUSTED}{reason}",
                           "backend_disabled", {"backend": name, "reason": reason}))
     return len(merged), accepted, notes
+
+
+def apply_discovery(tx, successful: list[dict], selected: list[str],
+                    backends: dict) -> tuple[int, dict[str, int], list[tuple]]:
+    """plan_discovery read from and applied to one write view `tx` (the file store's local
+    batch; tests)."""
+    batch = store_broker.Recorder()
+    out = plan_discovery(tx, batch, successful, selected, backends)
+    store_broker.apply_requests(tx, batch.requests)
+    return out
 
 
 def warm_index(st, writer) -> None:
@@ -314,11 +327,13 @@ def run_finders_parallel(
     env: dict,
     run_id: str,
     workers: int,
-    transaction,
+    merge,
 ) -> None:
     """Run finders concurrently against one immutable store generation, then record the whole
-    discovery phase in ONE store transaction: `transaction()` returns a context manager yielding
-    the round's write view (run_round: broker.local_batch("discover", "merge"))."""
+    discovery phase as ONE computed batch: `merge(compute)` computes it with
+    compute(view, recorder) and records it (run_round: broker.computed_batch("discover",
+    "merge", compute)); it returns compute's result, or None when a staged round's receipt
+    already existed (the persisted request was replayed exactly, or the applied one skipped)."""
     ops.WORKSPACE.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(
         prefix=f"finder-proposals-{run_id}-",
@@ -399,8 +414,13 @@ def run_finders_parallel(
                     print(result["stderr"].rstrip(), file=sys.stderr, flush=True)
 
         successful = check_finder_results(results, backends, rotation_state, run_id)
-        with transaction() as tx:
-            total, accepted, notes = apply_discovery(tx, successful, selected, backends)
+        out = merge(lambda view, batch: plan_discovery(view, batch, successful, selected,
+                                                       backends))
+        if out is None:
+            print("discovery merge: already recorded for this run (its persisted request)")
+            ops.run_event(run_id, "discovery_replayed")
+            return
+        total, accepted, notes = out
         accepted = {name: accepted.get(name, 0) for name in selected}
         print(f"discovery merge: {total} unique candidates | by backend: {accepted}")
         ops.run_event(
@@ -696,7 +716,7 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
                     read_env,
                     run_id,
                     args.discovery_workers,
-                    lambda: broker.local_batch("discover", "merge"),
+                    lambda compute: broker.computed_batch("discover", "merge", compute),
                 )
 
             for step, script, fixed_args in PIPELINE:

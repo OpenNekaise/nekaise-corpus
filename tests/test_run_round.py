@@ -163,7 +163,7 @@ def discovery_transaction(st, run_id="fixture-run"):
     with st.writer(round_id=run_id) as w:
         broker = store_broker.Broker(st, w, run_id)
         with broker.serving():
-            yield lambda: broker.local_batch("discover", "merge")
+            yield lambda compute: broker.computed_batch("discover", "merge", compute)
 
 
 def registry_ids(st):
