@@ -270,11 +270,18 @@ def maintenance_window(phase: str):
     try:
         with ExitStack() as locks:
             st, staged = open_store("the maintenance window")
-            if staged:   # a dead coordinator's forks may hold its writer session
-                round_recovery.stop_orphans_of_dead_coordinators(ROOT)
+            lifecycle = None
             try:
                 locks.enter_context(ops.named_lock("continuous-dig", timeout=wait))
                 remaining = max(0, wait - (time.monotonic() - started))
+                if staged:
+                    # the lifecycle lock before the writer (held through this window's snapshot
+                    # phase, or until its maintenance run's mark is installed); a dead
+                    # coordinator's forks may hold its writer session: they are stopped first
+                    import run_ownership
+                    lifecycle = locks.enter_context(run_ownership.lifecycle(ROOT, remaining))
+                    run_ownership.sweep_dead(ROOT)
+                    remaining = max(0, wait - (time.monotonic() - started))
                 # The canonical round lock, held as the store's writer: while it is held every
                 # child inherits read access (ops.named_lock exports it), and the window's broker
                 # below gives children write access, so an agent's prune/rotation/blocklist
@@ -287,7 +294,8 @@ def maintenance_window(phase: str):
             window_id = f"maint-{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}-{phase}"
             if staged:   # a run id: unique even for two windows within one second
                 window_id += f"-{os.urandom(4).hex()}"
-                window = locks.enter_context(_staged_window(st, writer, window_id, phase))
+                window = locks.enter_context(_staged_window(st, writer, window_id, phase,
+                                                            lifecycle))
             else:
                 broker = store_broker.Broker(st, writer, window_id)
                 locks.enter_context(broker.serving())
@@ -305,7 +313,7 @@ def maintenance_window(phase: str):
 
 
 @contextmanager
-def _staged_window(st, writer, window_id: str, phase: str):
+def _staged_window(st, writer, window_id: str, phase: str, lifecycle=None):
     """The PostgreSQL window: the snapshot phase serves no broker (nothing may mutate while
     evidence is taken); the action phase first recovers any run a round left unfinished while
     the models deliberated (the shared routine), then opens ONE maintenance run whose staged
@@ -334,7 +342,8 @@ def _staged_window(st, writer, window_id: str, phase: str):
                                    producer_commit=ident.producer_commit,
                                    extractor_version=ident.extractor_version,
                                    cleaning_ruleset=ident.cleaning_ruleset,
-                                   config_documents=ident.config, tag=True) as rnd:
+                                   config_documents=ident.config, tag=True,
+                                   lifecycle=lifecycle) as rnd:
         window = Window(st, writer, rnd.broker, rnd, staged=True, window_id=window_id)
         with exported_env(rnd.broker.env()):
             yield window
@@ -472,6 +481,10 @@ def recover_pending_round() -> str | None:
             st, writer, staged = _WINDOW_WRITER
         else:
             st, staged = open_store("round recovery")
+            if staged:   # the lifecycle lock and the dead coordinators' sweep, then the writer
+                import run_ownership
+                stack.enter_context(run_ownership.lifecycle(ROOT))
+                run_ownership.sweep_dead(ROOT)
             writer = stack.enter_context(st.writer(timeout=0)) if staged else None
         if staged:
             outcomes = round_recovery.recover_staged(

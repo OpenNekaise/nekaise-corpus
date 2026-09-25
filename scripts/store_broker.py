@@ -662,9 +662,14 @@ class StagedRound:
 
     def __init__(self, st, writer: store.WriterToken, run):
         self.st, self.writer, self.run = st, writer, run
+        self.owner = None   # the coordinator attempt (run_ownership.Owner), set by staged_round
         self.broker = Broker(st, writer, run.run_id, stage=run)
         self.frozen = None
         self.generation: int | None = None
+
+    def owner_env(self) -> dict[str, str]:
+        """The attempt's tag for a child's environment (recovery finds it by it)."""
+        return self.owner.env() if self.owner is not None else {}
 
     def reader_env(self, seq: int | None = None) -> dict[str, str]:
         """Environment for a read-only child (no write capability) pinned at staging sequence
@@ -717,23 +722,28 @@ class StagedRound:
 def staged_round(st, writer: store.WriterToken, run_id: str, *, kind: str = "round",
                  producer_commit: str | None = None, extractor_version: str | None = None,
                  cleaning_ruleset: str | None = None, artifacts: str = "versioned",
-                 config_documents=None, resume=None, tag: bool = False) -> Iterator[StagedRound]:
+                 config_documents=None, resume=None, tag: bool = False,
+                 lifecycle=None) -> Iterator[StagedRound]:
     """Open run `run_id` on the current generation — or continue `resume`, a run this writer
     adopted (store_staging.adopt_run) — and serve its staged broker (see StagedRound).
 
-    The coordinator holds the run's OwnershipMark while the block runs (every process it forks
-    inherits it); with `tag` it also names the run in its own environment (NEKAISE_RUN_OWNER)
-    so every child it execs carries it — for coordinators whose children do not get
-    NEKAISE_RUN_ID explicitly (standalone commands, the maintainer's agent). Recovery from any
+    The coordinator installs a new ATTEMPT of the run's ownership mark (scripts/run_ownership.py:
+    root, run, nonce; an inheritable descriptor every process it forks holds) while the block
+    runs, and then releases `lifecycle` (the lifecycle lock its caller took before the writer, so
+    no recovery sweep can judge the run between adoption and this mark). Children it execs carry
+    the attempt's tag when given `rnd.owner_env()` (run_round) or, with `tag`, from this
+    process's own environment (standalone commands, the maintainer's agent). Recovery from any
     process finds them.
 
     Leaving the block with an exception before the run was promoted recovers it in the shared
-    order (round_recovery.recover_staged): the processes started meanwhile (and any marked or
-    tagged with the run id) are stopped first, then the broker is drained, then the run's
-    DURABLE status decides — a promotion whose reply was lost stands, anything else is aborted.
-    If the stop cannot be confirmed the run is NOT aborted: it stays unfinished (blocking) for a
-    later recovery. The broker is always drained before the block's outcome is judged."""
+    order (round_recovery.recover_staged): this attempt's processes and those started meanwhile
+    are stopped first, then the broker is drained, then the run's DURABLE status decides — a
+    promotion whose reply was lost stands, anything else is aborted. If the stop cannot be
+    confirmed the run is NOT aborted and its mark is kept: it stays unfinished (blocking) for a
+    later recovery, which finds the survivors through the mark. The broker is always drained
+    before the block's outcome is judged."""
     import round_recovery
+    import run_ownership
     if resume is not None:
         if resume.run_id != run_id:
             raise BrokerError(f"resumed run {resume.run_id} is not {run_id}")
@@ -747,7 +757,10 @@ def staged_round(st, writer: store.WriterToken, run_id: str, *, kind: str = "rou
     # confirmed: the run's processes were stopped and none survived; unconfirmable: stopping
     # failed (a survivor after SIGKILL, an error) — the run must then stay unfinished
     stop = {"confirmed": False, "failed": None}
-    with round_recovery.OwnershipMark(st.root, run_id) as mark:
+    with run_ownership.Mark(st.root, run_id) as mark:
+        rnd.owner = mark.owner
+        if lifecycle is not None:
+            lifecycle.release()
         if tag:
             mark.tag()
         try:
@@ -756,8 +769,10 @@ def staged_round(st, writer: store.WriterToken, run_id: str, *, kind: str = "rou
                     yield rnd
                 except BaseException as exc:
                     if rnd.generation is None:
+                        mark.keep = True   # until the run's outcome is decided below
                         try:
-                            round_recovery.stop_owned(run_id, existing)
+                            run_ownership.stop_attempt(st.root, run_id, existing=existing,
+                                                       current=mark.owner)
                             stop["confirmed"] = True
                         except Exception as stop_exc:
                             stop["failed"] = stop_exc
@@ -767,18 +782,20 @@ def staged_round(st, writer: store.WriterToken, run_id: str, *, kind: str = "rou
                     raise
         except BaseException as exc:
             if rnd.generation is None:
+                mark.keep = True
                 if stop["failed"] is not None:
                     # termination could not be confirmed: the broker is drained, but the run stays
-                    # open — unfinished runs block every later round and standalone mutation
-                    # until a recovery confirms the stop and decides
+                    # open (and its mark kept) — unfinished runs block every later round and
+                    # standalone mutation until a recovery confirms the stop and decides
                     exc.add_note(f"run {run_id} is left unfinished (its processes could not be "
                                  "confirmed stopped): recover it with run_round.py --recover")
                 else:
                     try:
                         round_recovery.recover_staged(
                             st, writer, run_id, root=st.root, stop=not stop["confirmed"],
-                            finish=False, existing_descendants=existing,
+                            finish=False, existing_descendants=existing, owner=mark.owner,
                             reason=f"{type(exc).__name__}: {exc}"[:500])
+                        mark.keep = False   # decided: nothing of this attempt runs any more
                     except Exception as abort_exc:  # the original failure stays the one raised
                         exc.add_note(f"recovering run {run_id} failed too: {abort_exc}")
             raise

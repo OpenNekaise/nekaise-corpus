@@ -1899,3 +1899,43 @@ itself was revised (the publication guard); once any schema is v7, a change ship
   no longer used.
 - **Gates**: full suite 1195 passed / 217 skipped (PostgreSQL skipped), with PostgreSQL (the
   test cluster) 1440 passed / 2 skipped (the two opt-in benchmarks); `py_compile` clean.
+
+### Step 4, Codex second review (2026-09-25): the six fixed; three new findings fixed
+
+All three were in the process-ownership mechanism added for P2 2; it moved into its own module,
+`scripts/run_ownership.py`, used only by staged (PostgreSQL) recovery.
+
+- **P2 — legacy recovery is byte-for-byte main's again.** `round_recovery.py` is main's file plus
+  the appended staged section: `round_processes`, `stop_owned`, `stop_processes` and
+  `descendants` are identical (NEKAISE_RUN_ID only, the same error handling). Staged recovery opts
+  into `run_ownership` explicitly, and staged ownership is scoped to a coordinator ATTEMPT of a
+  run of a root: the mark records the root key (sha256 of the resolved root), the run id and a
+  random nonce; the tag is `NEKAISE_RUN_OWNER=<root key>:<run>:<nonce>` (a round's children get it
+  through `StagedRound.owner_env()`, standalone commands and the maintainer's window set it in
+  their own environment before they exec anything); a descriptor counts only when it is the
+  attempt's mark file itself, compared by (st_dev, st_ino). Tests: the four legacy functions
+  equal main's source; legacy matching ignores the staged tag and mark descriptors; another
+  root's attempt of the same run id and an earlier attempt of the same run never match.
+- **P2 — liveness reads identity and state together.** A coordinator is alive only when ONE read
+  of `/proc/<pid>/stat` shows the recorded start time AND a state other than zombie/dead; there
+  is no self-pid shortcut (the start time decides for this process too). The mark also records
+  the boot id and the PID namespace: another boot means the coordinator is dead; another
+  namespace raises (refused: an operator recovers it from there). Tests: a zombie coordinator
+  whose fork holds the attempt is judged dead and its worker stopped; a mark naming this
+  process's pid with another start time is dead; boot and namespace mismatches.
+- **P2 — a sweep can no longer act on a newly installed attempt.** The lifecycle lock
+  (`run_ownership.lifecycle`, an flock under `workspace/run-owners/`) is taken BEFORE the
+  database writer by every staged coordinator start and every sweep (run_round's staged modes,
+  the maintainer's window and its out-of-window recovery, standalone commands) and held across
+  sweep → writer → mark installation (`staged_round(lifecycle=…)` releases it right after the
+  mark is written; `--recover` and the maintainer's snapshot phase hold it throughout). Signals
+  go through pidfds: each pid is opened, re-verified as the attempt's while its pidfd shows it
+  alive, and only then signalled (SIGTERM, SIGKILL after the grace, survivors raise), so a
+  reused pid is never hit; a sweep bound to attempt N never matches attempt N+1 (nonce, inode).
+  A run left unfinished keeps its mark (and a failed recovery too) so a later recovery finds its
+  survivors; a decided run's mark is removed. Tests: sweep A paused between verification and
+  signal while B cannot take the lifecycle lock, then A stops only attempt N's process and B's new
+  attempt is untouched (B's coordinator alive); a pid that exited between scan and signal and a
+  process that does not belong to the attempt are never signalled.
+- **Gates**: full suite 1198 passed / 222 skipped (PostgreSQL skipped), with PostgreSQL (the test
+  cluster) 1448 passed / 2 skipped (the two opt-in benchmarks); `py_compile` clean.

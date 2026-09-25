@@ -232,7 +232,10 @@ def test_a_killed_maintainer_s_agent_and_forks_are_found_by_recovery(world):
     run_id, agent_pid, forked = line[0], int(line[1]), int(line[2])
     kill(proc)
     assert world.run_row(run_id)["status"] == "open"
-    assert {agent_pid, forked} <= maintainer.round_recovery.round_processes(run_id)
+    import run_ownership
+    rec = run_ownership.read_mark(world.root, run_id)
+    assert {agent_pid, forked} <= run_ownership.owner_processes(rec.owner)
+    assert maintainer.round_recovery.round_processes(run_id) == set()   # legacy: untouched
     # the fork inherited the dead maintainer's database session: the writer lock is still held,
     # so recovery must stop the dead coordinator's orphans BEFORE it can take ownership
     with pytest.raises(maintainer.store.WriterError, match="held by another session"):

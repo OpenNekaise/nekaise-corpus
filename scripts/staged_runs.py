@@ -380,10 +380,14 @@ def standalone(st, step: str, *, timeout: float = 30.0, writer=None,
     root = Path(st.root)
     run_id = standalone_id(step)
     downstream = DOWNSTREAM.get(step, ())
+    lifecycle = None
     with ExitStack() as stack:
         if writer is None:
-            import round_recovery   # a dead coordinator's forks may hold its writer session
-            round_recovery.stop_orphans_of_dead_coordinators(root)
+            # the lifecycle lock before the writer, until this run's mark is installed; a dead
+            # coordinator's forks may hold its writer session: they are stopped first
+            import run_ownership
+            lifecycle = stack.enter_context(run_ownership.lifecycle(root, timeout=timeout))
+            run_ownership.sweep_dead(root)
             writer = stack.enter_context(st.writer(timeout=timeout, round_id=run_id))
         if any(name == "prune" for name, _, _ in downstream):
             # the loader and the pruner of ONE run share its deferral handoff, keyed by
@@ -398,7 +402,8 @@ def standalone(st, step: str, *, timeout: float = 30.0, writer=None,
                                        producer_commit=ident.producer_commit,
                                        extractor_version=ident.extractor_version,
                                        cleaning_ruleset=ident.cleaning_ruleset,
-                                       config_documents=ident.config, tag=True) as rnd:
+                                       config_documents=ident.config, tag=True,
+                                       lifecycle=lifecycle) as rnd:
             session = Standalone(st, writer, rnd, step)
             yield session
             if not session.staged:

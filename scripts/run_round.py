@@ -836,11 +836,29 @@ def staged_main(args, ap, st) -> int:
         ap.error("--skip-tests does not apply to a staged round: the test suite is one of the "
                  "gates every staged run must pass before its promotion")
     env = {**os.environ, "PYTHONUNBUFFERED": "1"}
-    try:   # a dead coordinator's forks may hold its writer session: stop them first
-        round_recovery.stop_orphans_of_dead_coordinators(ROOT)
+    import run_ownership
+    # The lifecycle lock, BEFORE the writer, held across the sweep, the writer acquisition and —
+    # for a round or a resume — the installation of this coordinator's mark (staged_round
+    # releases it then): no sweep can judge a run while an attempt of it installs itself. The
+    # sweep stops dead coordinators' orphans, whose forks may hold a dead writer session.
+    try:
+        lifecycle = run_ownership.lifecycle(ROOT, timeout=args.lock_timeout).__enter__()
     except Exception as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
+    try:
+        run_ownership.sweep_dead(ROOT)
+    except Exception as exc:
+        lifecycle.release()
         print(f"ERROR: could not stop the orphans of a dead coordinator: {exc}", file=sys.stderr)
         return 1
+    try:
+        return _staged_modes(args, st, env, lifecycle)
+    finally:
+        lifecycle.release()
+
+
+def _staged_modes(args, st, env: dict, lifecycle) -> int:
     if args.recover:
         target = None if args.recover == "latest" else args.recover
         with st.writer(timeout=args.lock_timeout, round_id=target) as writer:
@@ -871,8 +889,8 @@ def staged_main(args, ap, st) -> int:
     try:
         with st.writer(timeout=args.lock_timeout, round_id=run_id) as writer:
             if args.resume:
-                return _resume_staged(args, st, writer, run_id, env)
-            return _staged_round(args, st, writer, run_id, env)
+                return _resume_staged(args, st, writer, run_id, env, lifecycle)
+            return _staged_round(args, st, writer, run_id, env, lifecycle)
     except KeyboardInterrupt as exc:
         ops.run_event(run_id, "run_interrupted", error=str(exc))
         print(f"ERROR: interrupted ({exc}); the run was recovered on the way out", file=sys.stderr)
@@ -905,7 +923,7 @@ def _complete_previous(st, writer, run_id: str) -> None:
         "housekeeping": done["housekeeping"]})
 
 
-def _staged_round(args, st, writer, run_id: str, env: dict) -> int:
+def _staged_round(args, st, writer, run_id: str, env: dict, lifecycle=None) -> int:
     _complete_previous(st, writer, run_id)
     ident = staged_runs.identity(st, ROOT)
     with st.read(writer=writer) as view:
@@ -914,7 +932,8 @@ def _staged_round(args, st, writer, run_id: str, env: dict) -> int:
                                    producer_commit=ident.producer_commit,
                                    extractor_version=ident.extractor_version,
                                    cleaning_ruleset=ident.cleaning_ruleset,
-                                   config_documents=ident.config) as rnd:
+                                   config_documents=ident.config, lifecycle=lifecycle) as rnd:
+        env = {**env, **rnd.owner_env()}   # every child carries this attempt's tag
         ops.run_event(run_id, "staged_run_opened", parent=rnd.run.parent_generation,
                       producer_commit=ident.producer_commit,
                       cleaning_ruleset=ident.cleaning_ruleset)
@@ -1051,7 +1070,7 @@ def _never_recompute(view, batch):
     raise RuntimeError("a resumed run replays its persisted discovery; it never recomputes it")
 
 
-def _resume_staged(args, st, writer, run_id: str, env: dict) -> int:
+def _resume_staged(args, st, writer, run_id: str, env: dict, lifecycle=None) -> int:
     """Explicit resume: continue an interrupted open or frozen run under this writer, only when
     nothing it was based on changed — its parent generation, producer commit, configuration and
     extractor — and every artifact version it referenced verifies. The database re-checks all of
@@ -1063,7 +1082,8 @@ def _resume_staged(args, st, writer, run_id: str, env: dict) -> int:
     run = store_staging.run_status(st, writer, run_id)
     if run is None:
         raise RuntimeError(f"no staged run {run_id}")
-    stopped = round_recovery.stop_owned(run_id, None)   # its orphans first
+    import run_ownership
+    stopped = run_ownership.stop_attempt(ROOT, run_id)   # its earlier attempt's orphans first
     if stopped:
         ops.run_event(run_id, "round_processes_stopped", pids=stopped)
     artifact_store.LocalArtifacts(ROOT).sweep_incoming()
@@ -1083,7 +1103,9 @@ def _resume_staged(args, st, writer, run_id: str, env: dict) -> int:
                   verified=verified["verified"])
     with st.read(writer=writer) as view:
         before, _, _ = doc_stats(view)
-    with store_broker.staged_round(st, writer, run_id, resume=adopted) as rnd:
+    with store_broker.staged_round(st, writer, run_id, resume=adopted,
+                                   lifecycle=lifecycle) as rnd:
+        env = {**env, **rnd.owner_env()}   # the new attempt's tag (its own nonce and mark)
         if adopted.status == "frozen":
             receipts = store_staging.gate_receipts(st, writer, run_id)
             generation = _gate_and_promote(args, rnd, run_id, env, done=receipts)

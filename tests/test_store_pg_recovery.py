@@ -19,6 +19,7 @@ import pytest
 
 import artifact_store
 import round_recovery
+import run_ownership
 import staged_runs
 import store
 import store_broker
@@ -34,6 +35,7 @@ REPO = Path(__file__).resolve().parents[1]
 V6_COMMIT = "5dfb9ed77b"  # last commit whose store_pg.py writes schema version 6 (step 3)
 SHA = "0" * 40
 OTHER = "1" * 40
+OWNER_ENV = "NEKAISE_RUN_OWNER"
 
 
 def sqlerr():
@@ -215,15 +217,44 @@ def test_aborting_queues_the_run_and_purging_dequeues_it_only_when_empty(pg):
 
 # --- the shared staged recovery ------------------------------------------------------------------------------------
 
-def _sleeper(run_id):
-    return subprocess.Popen([sys.executable, "-c", "import time; time.sleep(60)"],
-                            env={**os.environ, "NEKAISE_RUN_ID": run_id}, start_new_session=True)
+DEAD_COORDINATOR = """
+import os, sys
+sys.path.insert(0, {scripts!r})
+import run_ownership
+m = run_ownership.Mark({root!r}, {run!r}).__enter__()
+print(m.owner.tag, flush=True)
+os._exit(0)      # dies holding its attempt: the mark stays
+"""
 
 
-def _visible(pid, run_id):
+def dead_attempt(root, run_id) -> str:
+    """A coordinator attempt of `run_id` whose coordinator is dead; returns its tag."""
+    got = subprocess.run([sys.executable, "-c", DEAD_COORDINATOR.format(
+        scripts=str(REPO / "scripts"), root=str(root), run=run_id)], capture_output=True,
+        text=True, check=True)
+    return got.stdout.strip()
+
+
+def _sleeper(run_id=None, tag=None):
+    env = {k: v for k, v in os.environ.items() if k not in ("NEKAISE_RUN_ID", OWNER_ENV)}
+    if run_id is not None:
+        env["NEKAISE_RUN_ID"] = run_id
+    if tag is not None:
+        env[OWNER_ENV] = tag
+    return subprocess.Popen([sys.executable, "-c", "import time; time.sleep(60)"], env=env,
+                            start_new_session=True)
+
+
+def _owned(root, run_id) -> set[int]:
+    rec = run_ownership.read_mark(root, run_id)
+    return run_ownership.owner_processes(rec.owner) if rec is not None else set()
+
+
+def _visible(pid, run_id, root=None):
     import time
     for _ in range(100):
-        if pid in round_recovery.round_processes(run_id):
+        found = round_recovery.round_processes(run_id) if root is None else _owned(root, run_id)
+        if pid in found:
             return
         time.sleep(0.05)
     raise AssertionError("never tagged")
@@ -240,9 +271,9 @@ class Drain:
 def test_recovery_stops_processes_then_drains_then_decides_by_durable_status(pg, monkeypatch):
     run_id = rid("rc-order")
     _stale_open(pg, run_id)
-    orphan = _sleeper(run_id)
+    orphan = _sleeper(tag=dead_attempt(pg.root, run_id))
     try:
-        _visible(orphan.pid, run_id)
+        _visible(orphan.pid, run_id, pg.root)
         log = []
         real_status = store_staging.run_status
 
@@ -265,6 +296,7 @@ def test_recovery_stops_processes_then_drains_then_decides_by_durable_status(pg,
         orphan.kill()
         orphan.wait()
     assert [e for _, e in events(pg)] == ["round_processes_stopped", "staged_run_aborted"]
+    assert run_ownership.read_mark(pg.root, run_id) is None     # the dead attempt's mark swept
 
 
 def test_an_unknown_database_outcome_mutates_nothing(pg, monkeypatch):
@@ -346,12 +378,12 @@ def test_an_interrupt_while_stopping_aborts_only_after_a_confirmed_stop(pg, monk
     run_id = rid("rc-sig")
     calls = []
 
-    def stop(run, existing=None, grace=2.0):
+    def stop(root, run, existing=None, current=None, grace=2.0):
         calls.append(("stop", q(pg, "SELECT status FROM runs")[0][0]))
         if len(calls) == 1:
             os.kill(os.getpid(), signal.SIGTERM)   # the interrupt, part-way through the stop
         return []                                  # the second stop: confirmed, nothing alive
-    monkeypatch.setattr(round_recovery, "stop_owned", stop)
+    monkeypatch.setattr(run_ownership, "stop_attempt", stop)
 
     def handler(signum, frame):
         raise KeyboardInterrupt("maintenance terminated")
@@ -373,17 +405,19 @@ def test_an_unconfirmed_stop_leaves_the_run_unfinished_and_blocking(pg, monkeypa
 
     def survivor(*_a, **_k):
         raise round_recovery.RecoveryError("owned process(es) still alive after SIGKILL: [4242]")
-    monkeypatch.setattr(round_recovery, "stop_owned", survivor)
+    monkeypatch.setattr(run_ownership, "stop_attempt", survivor)
     rnd, exc = _failing_round(pg, run_id, RuntimeError)
     assert rnd.broker._drained and "a step failed" in str(exc)
     assert any("left unfinished" in n for n in exc.__notes__)
     assert q(pg, "SELECT status FROM runs") == [("open",)]
+    assert run_ownership.read_mark(pg.root, run_id) is not None  # kept: survivors findable
     with pg.writer() as w:
         with pytest.raises(staged_runs.StagedRunError, match="unfinished staged run"):
             staged_runs.refuse_unfinished(pg, w)
         with pytest.raises(round_recovery.RecoveryError, match="still alive"):
             round_recovery.recover_staged(pg, w, run_id, root=pg.root, finish=False)
     assert q(pg, "SELECT status FROM runs") == [("open",)]      # recovery refused to abort too
+    assert run_ownership.read_mark(pg.root, run_id) is not None
     monkeypatch.undo()
     with pg.writer() as w:
         out, = round_recovery.recover_staged(pg, w, run_id, root=pg.root, finish=False)
@@ -395,7 +429,7 @@ def test_a_second_interrupt_during_the_stop_leaves_the_run_open(pg, monkeypatch)
 
     def interrupted(*_a, **_k):
         os.kill(os.getpid(), signal.SIGTERM)
-    monkeypatch.setattr(round_recovery, "stop_owned", interrupted)
+    monkeypatch.setattr(run_ownership, "stop_attempt", interrupted)
 
     def handler(signum, frame):
         raise KeyboardInterrupt("terminated")
@@ -410,58 +444,229 @@ def test_a_second_interrupt_during_the_stop_leaves_the_run_open(pg, monkeypatch)
 
 def test_only_a_dead_coordinator_s_orphans_are_stopped_before_the_writer(tmp_path):
     live_run, dead_run = rid("rc-live"), rid("rc-dead")
-    live = _sleeper(live_run)
-    try:
-        _visible(live.pid, live_run)
-        with round_recovery.OwnershipMark(tmp_path, live_run):   # this process: alive
-            marks = tmp_path / "workspace" / "run-owners"
-            (marks / f"{round_recovery.OWNER_MARK}{dead_run}").write_text(json.dumps(
-                {"run": dead_run, "pid": 999999999, "start": "1"}) + "\n")
-            orphan = _sleeper(dead_run)
-            _visible(orphan.pid, dead_run)
-            got = round_recovery.stop_orphans_of_dead_coordinators(tmp_path)
-            assert got == {dead_run: [orphan.pid]}
-            assert round_recovery._alive(live.pid)               # the live run is untouched
-            (marks / f"{round_recovery.OWNER_MARK}broken").write_text("{not json")
-            with pytest.raises(round_recovery.RecoveryError, match="unreadable"):
-                round_recovery.stop_orphans_of_dead_coordinators(tmp_path)
-    finally:
-        live.kill()
-        live.wait()
+    with run_ownership.Mark(tmp_path, live_run) as live:          # this process: alive
+        mine = _sleeper(tag=live.owner.tag)
+        orphan = _sleeper(tag=dead_attempt(tmp_path, dead_run))
+        try:
+            _visible(orphan.pid, dead_run, tmp_path)
+            _visible(mine.pid, live_run, tmp_path)
+            assert run_ownership.sweep_dead(tmp_path) == {dead_run: [orphan.pid]}
+            assert round_recovery._alive(mine.pid)               # the live attempt: untouched
+            assert run_ownership.read_mark(tmp_path, dead_run) is None
+            broken = tmp_path / run_ownership.MARKS / f"{run_ownership.MARK_PREFIX}broken"
+            broken.write_text("{not json")
+            with pytest.raises(run_ownership.OwnershipError, match="unreadable|malformed"):
+                run_ownership.sweep_dead(tmp_path)
+        finally:
+            for p in (mine, orphan):
+                p.kill()
+                p.wait()
 
 
 def test_ownership_marks_identify_forked_workers_and_exec_tags(tmp_path):
     """A fork-only worker's /proc/<pid>/environ still shows its parent's ORIGINAL environment,
-    so a tag set later is invisible there; the inherited ownership mark identifies it. A child
-    exec'd after tag() carries NEKAISE_RUN_OWNER from exec."""
+    so a tag set later is invisible there; the inherited mark descriptor identifies it. A child
+    exec'd after tag() carries the attempt's tag from exec."""
     run_id = rid("rc-mark")
     code = (f"import os, sys, time\nsys.path.insert(0, {str(REPO / 'scripts')!r})\n"
-            "import round_recovery, subprocess\n"
-            f"m = round_recovery.OwnershipMark({str(tmp_path)!r}, {run_id!r}).__enter__()\n"
+            "import run_ownership, subprocess\n"
+            f"m = run_ownership.Mark({str(tmp_path)!r}, {run_id!r}).__enter__()\n"
             "m.tag()\n"
             "pid = os.fork()\n"
             "if pid == 0:\n    time.sleep(60)\n    os._exit(0)\n"
             "child = subprocess.Popen([sys.executable, '-c', 'import time; time.sleep(60)'])\n"
-            "assert os.environ['NEKAISE_RUN_OWNER'] == m.run_id\n"
-            "print(pid, child.pid, flush=True)\ntime.sleep(60)\n")
+            "print(pid, child.pid, m.owner.tag, flush=True)\ntime.sleep(60)\n")
     coord = subprocess.Popen([sys.executable, "-c", code], stdout=subprocess.PIPE, text=True,
-                             env={k: v for k, v in os.environ.items() if k != "NEKAISE_RUN_ID"})
+                             env={k: v for k, v in os.environ.items() if k != OWNER_ENV})
     try:
-        forked, execd = map(int, coord.stdout.readline().split())
-        assert f"NEKAISE_RUN_OWNER={run_id}".encode() not in Path(
+        forked, execd, tag = coord.stdout.readline().split()
+        forked, execd = int(forked), int(execd)
+        assert f"{OWNER_ENV}={tag}".encode() not in Path(
             f"/proc/{forked}/environ").read_bytes().split(b"\0")
-        assert f"NEKAISE_RUN_OWNER={run_id}".encode() in Path(
+        assert f"{OWNER_ENV}={tag}".encode() in Path(
             f"/proc/{execd}/environ").read_bytes().split(b"\0")
+        assert round_recovery.round_processes(run_id) == set()   # legacy matching: untouched
         coord.kill()                                   # the coordinator dies
         coord.wait()
-        found = round_recovery.round_processes(run_id)
+        found = _owned(tmp_path, run_id)
         assert {forked, execd} <= found
-        round_recovery.stop_processes(found)
+        assert run_ownership.sweep_dead(tmp_path)[run_id]
         assert not round_recovery._alive(forked) and not round_recovery._alive(execd)
     finally:
         coord.kill()
-        for pid in round_recovery.round_processes(run_id):
+        for pid in _owned(tmp_path, run_id):
             os.kill(pid, signal.SIGKILL)
+
+
+# --- Codex second review of 1749fb5056 --------------------------------------------------------------
+
+def test_legacy_recovery_matching_is_exactly_main_s(tmp_path):
+    """The file store's recovery (round_recovery.round_processes / stop_owned) is byte for byte
+    what it was before step 4: NEKAISE_RUN_ID only — never the staged tag, a mark descriptor
+    (same file name, another root) or an error reading an unrelated process."""
+    main = subprocess.run(["git", "-C", str(REPO), "show", "5dfb9ed77b:scripts/round_recovery.py"],
+                          capture_output=True, text=True)
+    if main.returncode:
+        pytest.skip("5dfb9ed77b not in this clone")
+    now = (REPO / "scripts" / "round_recovery.py").read_text()
+    staged = now.index("# --- staged runs (PostgreSQL authority")
+    legacy_now = now[:staged].rstrip("\n")
+    for name in ("round_processes", "stop_owned", "stop_processes", "descendants"):
+        start = f"def {name}("
+        assert legacy_now[legacy_now.index(start):].split("\n\n\ndef ")[0] == \
+            main.stdout[main.stdout.index(start):].split("\n\n\ndef ")[0], name
+    run_id = rid("rc-legacy")
+    staged_only = _sleeper(tag=f"x:{run_id}:0")                    # the staged tag only
+    with run_ownership.Mark(tmp_path, run_id):
+        forked_like = subprocess.Popen([sys.executable, "-c", "import time; time.sleep(60)"],
+                                       close_fds=False, env={k: v for k, v in os.environ.items()
+                                                              if k != "NEKAISE_RUN_ID"})
+    legacy = _sleeper(run_id)
+    try:
+        _visible(legacy.pid, run_id)
+        found = round_recovery.round_processes(run_id)
+        assert legacy.pid in found and staged_only.pid not in found
+        assert forked_like.pid not in found
+    finally:
+        for p in (staged_only, forked_like, legacy):
+            p.kill()
+            p.wait()
+
+
+def test_staged_ownership_is_scoped_to_its_root_and_attempt(tmp_path):
+    """Another root's attempt of the same run id, and an earlier attempt of the same run on the
+    same root (same file name, another inode and nonce), never match."""
+    run_id = rid("rc-scope")
+    other_root = tmp_path / "other"
+    with run_ownership.Mark(other_root, run_id) as other:
+        theirs = _sleeper(tag=other.owner.tag)
+    first_tag = dead_attempt(tmp_path, run_id)
+    first = run_ownership.read_mark(tmp_path, run_id).owner
+    old = _sleeper(tag=first_tag)
+    with run_ownership.Mark(tmp_path, run_id) as second:           # the next attempt
+        new = _sleeper(tag=second.owner.tag)
+        try:
+            _visible(new.pid, run_id, tmp_path)
+            assert second.owner.ino != first.ino and second.owner.nonce != first.nonce
+            assert run_ownership.owner_processes(second.owner) == {new.pid}
+            assert run_ownership.owner_processes(first) == {old.pid}
+            assert theirs.pid not in run_ownership.owner_processes(second.owner)
+        finally:
+            for p in (theirs, old, new):
+                p.kill()
+                p.wait()
+
+
+def test_a_zombie_coordinator_is_dead_and_a_reused_pid_is_not_the_coordinator(tmp_path,
+                                                                             monkeypatch):
+    run_id = rid("rc-zombie")
+    # A: the coordinator is a zombie (dead, unreaped): its start time still matches
+    code = (f"import os, sys, time\nsys.path.insert(0, {str(REPO / 'scripts')!r})\n"
+            "import run_ownership\n"
+            f"m = run_ownership.Mark({str(tmp_path)!r}, {run_id!r}).__enter__()\n"
+            "print(m.owner.tag, flush=True)\nos._exit(0)\n")
+    zombie = subprocess.Popen([sys.executable, "-c", code], stdout=subprocess.PIPE, text=True)
+    tag = zombie.stdout.readline().strip()
+    worker = _sleeper(tag=tag)
+    try:
+        for _ in range(100):
+            if run_ownership.proc_state(zombie.pid)[0] == "Z":
+                break
+            __import__("time").sleep(0.05)
+        rec = run_ownership.read_mark(tmp_path, run_id)
+        assert run_ownership.proc_state(rec.pid)[1] == rec.start      # same start time...
+        assert not run_ownership.coordinator_alive(rec)              # ...but a zombie: dead
+        _visible(worker.pid, run_id, tmp_path)
+        assert run_ownership.sweep_dead(tmp_path) == {run_id: [worker.pid]}
+    finally:
+        worker.kill()
+        worker.wait()
+        zombie.wait()
+    # B: the recovering process has the dead coordinator's pid (reused): only the start time
+    # decides — no self-pid shortcut
+    run2 = rid("rc-reuse")
+    dead_attempt(tmp_path, run2)
+    rec = run_ownership.read_mark(tmp_path, run2)
+    doc = json.loads(rec.path.read_text())
+    doc["pid"] = os.getpid()                        # "our" pid, but another start time
+    rec.path.write_text(json.dumps(doc))
+    assert not run_ownership.coordinator_alive(run_ownership.read_mark(tmp_path, run2))
+    # another boot: dead; another PID namespace: refused
+    doc["boot"] = "00000000-0000-0000-0000-000000000000"
+    rec.path.write_text(json.dumps(doc))
+    assert not run_ownership.coordinator_alive(run_ownership.read_mark(tmp_path, run2))
+    doc["boot"] = run_ownership.boot_id()
+    doc["pidns"] = "pid:[1]"
+    rec.path.write_text(json.dumps(doc))
+    with pytest.raises(run_ownership.OwnershipError, match="namespace"):
+        run_ownership.sweep_dead(tmp_path)
+
+
+def test_a_paused_sweep_cannot_act_while_a_new_attempt_installs_itself(tmp_path, monkeypatch):
+    """Sweep A judges attempt N dead and pauses between the check and the signal; a resuming
+    coordinator B must take the lifecycle lock before its writer and its new mark, so it waits
+    until A is done — and A, bound to attempt N (nonce, inode, pidfd), never signals B's
+    attempt N+1."""
+    import threading
+    run_id = rid("rc-race")
+    old = _sleeper(tag=dead_attempt(tmp_path, run_id))
+    _visible(old.pid, run_id, tmp_path)
+    paused, go = threading.Event(), threading.Event()
+
+    def pause(point):
+        if point == "verified":
+            paused.set()
+            assert go.wait(30)
+    monkeypatch.setattr(run_ownership, "_pause", pause)
+    result = {}
+
+    def sweep_a():
+        with run_ownership.lifecycle(tmp_path):
+            result["a"] = run_ownership.sweep_dead(tmp_path)
+    a = threading.Thread(target=sweep_a)
+    a.start()
+    assert paused.wait(30)
+    with pytest.raises(run_ownership.OwnershipError, match="lifecycle lock"):
+        with run_ownership.lifecycle(tmp_path, timeout=0.5):   # B cannot adopt or re-mark now
+            pass
+    monkeypatch.setattr(run_ownership, "_pause", lambda point: None)
+    go.set()
+    a.join(30)
+    assert result["a"] == {run_id: [old.pid]}
+    with run_ownership.lifecycle(tmp_path, timeout=5) as held:   # B, after A
+        with run_ownership.Mark(tmp_path, run_id) as b:
+            held.release()
+            b_child = _sleeper(tag=b.owner.tag)
+            try:
+                _visible(b_child.pid, run_id, tmp_path)
+                assert run_ownership.sweep_dead(tmp_path) == {}   # B's coordinator is alive
+                assert round_recovery._alive(b_child.pid)
+            finally:
+                b_child.kill()
+                b_child.wait()
+    old.wait(5)
+
+
+def test_signals_go_through_a_pidfd_after_re_verification(tmp_path, monkeypatch):
+    """A pid that exits between the scan and the signal is never signalled (its pidfd shows it
+    gone); a pid that no longer belongs to the attempt at re-verification is not signalled."""
+    run_id = rid("rc-pidfd")
+    tag = dead_attempt(tmp_path, run_id)
+    owner = run_ownership.read_mark(tmp_path, run_id).owner
+    stranger = _sleeper()                               # not the attempt's
+    gone = _sleeper(tag=tag)
+    gone.kill()
+    gone.wait()
+    sent = []
+    real = signal.pidfd_send_signal
+    monkeypatch.setattr(signal, "pidfd_send_signal",
+                        lambda fd, sig, *a: (sent.append(sig), real(fd, sig, *a)))
+    try:
+        assert run_ownership.stop({stranger.pid, gone.pid}, owner) == []
+        assert sent == [] and round_recovery._alive(stranger.pid)
+    finally:
+        stranger.kill()
+        stranger.wait()
 
 
 # --- bounded housekeeping -------------------------------------------------------------------------------------------

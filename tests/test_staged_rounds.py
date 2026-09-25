@@ -29,6 +29,13 @@ def world(tmp_path):
     w.close()
 
 
+def owned(world, run_id) -> set[int]:
+    """The processes of the run's recorded coordinator attempt (scripts/run_ownership.py)."""
+    import run_ownership
+    rec = run_ownership.read_mark(world.root, run_id)
+    return run_ownership.owner_processes(rec.owner) if rec is not None else set()
+
+
 def seeded(world, n=2, **kw):
     """A checkout whose registry holds `n` documents to fetch (ids in fetch order); returns
     their entries."""
@@ -399,17 +406,17 @@ def test_a_killed_standalone_loader_s_workers_are_found_by_recovery(world):
                    what="the standalone run")
     (run_id,), = world.q("SELECT run_id FROM runs WHERE kind = 'standalone'")
     world.wait_for(lambda: "ost-s-2" in world.payloads.waiting, what="the held download")
-    world.wait_for(lambda: len(round_recovery.round_processes(run_id) - {proc.pid}) >= 1,
+    world.wait_for(lambda: len(owned(world, run_id) - {proc.pid}) >= 1,
                    what="the extraction workers")
     kill(proc)
-    orphans = round_recovery.round_processes(run_id)
+    orphans = owned(world, run_id)
     assert orphans
     world.payloads.release()
     recovered = world.run("--recover", "latest")
     ok(recovered)
     assert f"run {run_id}: open -> aborted" in recovered.stdout
     assert not any(round_recovery._alive(p) for p in orphans)
-    assert not list((world.root / "workspace" / "run-owners").glob("*"))
+    assert not list((world.root / "workspace" / "run-owners").glob("nekaise-run-owner.*"))
 
 
 def test_a_standalone_step_stages_gates_and_promotes_or_aborts_a_no_op(world):
