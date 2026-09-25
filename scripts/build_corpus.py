@@ -227,12 +227,13 @@ class ChainSession:
 
     def get(self, url, **kwargs):
         resp = requests.get(url, cookies=self.cookies, **kwargs)
-        jar = getattr(resp, "cookies", None)
-        if jar is not None:
-            try:
-                self.cookies.update(jar)
-            except (TypeError, AttributeError):
-                pass
+        # Apply the response's Set-Cookie headers to THIS jar exactly as requests.Session does
+        # (cookielib: deletions, Max-Age/Expires, Path and Domain rules), not a merge of
+        # resp.cookies, which can only add. A response without raw headers sets nothing.
+        request = getattr(resp, "request", None)
+        raw = getattr(resp, "raw", None)
+        if request is not None and raw is not None:
+            requests.cookies.extract_cookies_to_jar(self.cookies, request, raw)
         return resp
 
 

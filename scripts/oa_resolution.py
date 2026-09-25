@@ -125,7 +125,9 @@ _COPY_IDS = (
     ("uuid", re.compile(r"\b([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\b",
                         re.I)),
     ("handle", re.compile(r"/(?:handle|bitstream(?:/handle)?)/(\d+/\d+)(?:/|$)")),
-    ("arxiv", re.compile(r"/(?:pdf|abs)/(\d{4}\.\d{4,5})(?:v\d+)?(?:\.pdf)?(?:/|$)")),
+    # the version stays part of the id: v1 and v2 are different copies, and an UNVERSIONED id
+    # (arXiv serves the latest version under it, a moving target) matches only an unversioned id
+    ("arxiv", re.compile(r"/(?:pdf|abs)/(\d{4}\.\d{4,5}(?:v\d+)?)(?:\.pdf)?(?:/|$)")),
     ("pmc", re.compile(r"\b(PMC\d+)\b", re.I)),
     ("number", re.compile(r"/(\d{6,})(?:/|$)")),
     ("file", re.compile(r"/([^/?#]{5,}\.pdf)$", re.I)),
@@ -135,6 +137,11 @@ _COPY_IDS = (
 GENERIC_FILE_NAMES = frozenset({"fulltext.pdf", "download.pdf", "content.pdf", "file.pdf",
                                 "paper.pdf", "main.pdf", "article.pdf", "document.pdf",
                                 "manuscript.pdf", "preprint.pdf", "pdf.pdf"})
+
+
+# Identifier kinds that name ONE repository object. When both URLs carry the same kind with no
+# common value they are different objects: that conflict vetoes every weaker match (file name).
+STRONG_ID_KINDS = ("zenodo", "uuid", "handle", "arxiv", "pmc", "number")
 
 
 def copy_ids(url: str | None) -> set[tuple[str, str]]:
@@ -161,7 +168,16 @@ def same_copy(origin: str | None, url: str | None) -> bool:
         return False
     if (origin or "").strip() == (url or "").strip():
         return True
-    return bool(copy_ids(origin) & copy_ids(url))
+    ids_a, ids_b = {}, {}
+    for ids, u in ((ids_a, origin), (ids_b, url)):
+        for kind, value in copy_ids(u):
+            ids.setdefault(kind, set()).add(value)
+    strong = [k for k in STRONG_ID_KINDS if k in ids_a and k in ids_b]
+    if any(not ids_a[k] & ids_b[k] for k in strong):
+        return False  # a conflicting strong identifier: different objects, whatever else matches
+    if strong:
+        return True   # every shared strong kind agrees
+    return bool(ids_a.get("file", set()) & ids_b.get("file", set()))
 
 
 # compatibility name (the loader's hop check)

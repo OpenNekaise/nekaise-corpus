@@ -122,7 +122,7 @@ def test_malformed_first_page_keeps_the_cursor():
         save_cooldowns=lambda c: None, get=FakeHttp(pages=[{"meta": {"count": 100},
                                                             "results": []}]),
         openalex_relevant=find_sources.openalex_relevant, append_entries=lambda e: None,
-        request_hold=lambda r: None, report_next=reported.append, now=NOW, sleep=lambda s: None)
+        request_hold=lambda r: None, report_next=reported.append, now=NOW, sleep=lambda s: None, clock=lambda: NOW, pacer=fam.LocalPacer())
     assert code == 1 and reported == []
 
 
@@ -153,6 +153,71 @@ def test_a_paced_chain_installs_the_defaults_for_a_new_destination(monkeypatch, 
 
 # --- cookie-preserving chains ---------------------------------------------------------------------
 
+def with_set_cookies(resp, *values):
+    """Give a canned response real Set-Cookie headers, as urllib3 delivers them."""
+    import http.client
+
+    msg = http.client.HTTPMessage()
+    for value in values:
+        msg["Set-Cookie"] = value
+    resp.raw = SimpleNamespace(_original_response=SimpleNamespace(msg=msg))
+    for value in values:
+        resp.headers["Set-Cookie"] = value
+
+
+def cookie_transport(monkeypatch, routes):
+    """routes: path -> (status, location, [Set-Cookie values], body or None). Records
+    (path, Cookie header) per request."""
+    seen = []
+
+    def send(self, request, **kwargs):
+        path = "/" + request.url.split("/", 3)[3]
+        seen.append((path, request.headers.get("Cookie")))
+        status, location, cookies, body = routes[path](request)
+        resp = requests.Response()
+        resp.url, resp.request, resp.connection = request.url, request, self
+        resp.status_code, resp._content = status, body or b""
+        if location:
+            resp.headers["Location"] = location
+        with_set_cookies(resp, *cookies)
+        return resp
+
+    monkeypatch.setattr(requests.adapters.HTTPAdapter, "send", send)
+    return seen
+
+
+def deletion_routes():
+    return {
+        "/start": lambda r: (302, "/clear", ["sid=abc; Path=/"], None),
+        "/clear": lambda r: (302, "/end", ["sid=; Path=/; Max-Age=0"], None),
+        "/end": lambda r: ((403, None, [], b"stale session") if r.headers.get("Cookie")
+                           else (200, None, [], b"%PDF-1.7 fresh")),
+    }
+
+
+def test_a_deleted_cookie_is_not_sent_on_later_hops(monkeypatch, loader):
+    seen = cookie_transport(monkeypatch, deletion_routes())
+    monkeypatch.setattr(build_corpus.subprocess, "run",
+                        lambda *a, **k: pytest.fail("no curl fallback needed"))
+    rec = build_corpus.download_one(row("https://docs.example.org/start", source="curated"))
+    assert seen == [("/start", None), ("/clear", "sid=abc"), ("/end", None)]
+    assert rec.get("error") is None and rec["bytes"] == len(b"%PDF-1.7 fresh")
+
+
+def test_the_chain_session_matches_a_requests_session(monkeypatch):
+    seen = cookie_transport(monkeypatch, deletion_routes())
+    with requests.Session() as real:
+        real.get("https://docs.example.org/start")
+    reference, seen[:] = list(seen), []
+    chain, url = build_corpus.ChainSession(), "https://docs.example.org/start"
+    for _ in range(3):
+        resp = chain.get(url, allow_redirects=False)
+        if resp.status_code != 302:
+            break
+        url = "https://docs.example.org" + resp.headers["Location"]
+    assert seen == reference == [("/start", None), ("/clear", "sid=abc"), ("/end", None)]
+
+
 def test_a_cookie_set_on_a_redirect_reaches_the_next_hop(monkeypatch, loader):
     seen = []
 
@@ -161,10 +226,12 @@ def test_a_cookie_set_on_a_redirect_reaches_the_next_hop(monkeypatch, loader):
                      request.headers.get("User-Agent")))
         resp = requests.Response()
         resp.url, resp.request, resp.connection = request.url, request, self
+        resp._content = b""
+        with_set_cookies(resp)
         if request.url.endswith("/start"):
             resp.status_code = 302
             resp.headers["Location"] = "/file.pdf"
-            resp.cookies.set("sid", "abc", domain="docs.example.org", path="/")
+            with_set_cookies(resp, "sid=abc; Path=/")
         elif request.headers.get("Cookie") == "sid=abc":
             resp.status_code, resp._content = 200, b"%PDF-1.7 ok"
         else:
@@ -246,7 +313,7 @@ def test_lookup_max_below_one_works_worst_case_is_refused():
         args, policy=POLICY, keys=dedup.from_sets(set(), set(), set()), cooldowns={},
         save_cooldowns=lambda c: None, get=http, openalex_relevant=find_sources.openalex_relevant,
         append_entries=lambda e: None, request_hold=lambda r: None, report_next=lambda v: None,
-        now=NOW, sleep=lambda s: None)
+        now=NOW, sleep=lambda s: None, clock=lambda: NOW, pacer=fam.LocalPacer())
     assert code == 2 and http.calls == []
 
 
@@ -292,3 +359,149 @@ def test_a_lookup_during_a_foreign_rebuild_waits_then_fails_without_parsing(monk
                 view.known_pids(["doi:10.1234/x"])
     with st.read() as view:  # rebuilt once the lock is free
         assert view.known(urls=["https://a/x"]).urls == {"https://a/x"}
+
+
+# --- third review: conflicting identifiers veto, versions stay distinct ---------------------------
+
+@pytest.mark.parametrize("origin, dest, ok", [
+    # a shared file name never outweighs a conflicting strong identifier
+    ("https://zenodo.org/records/1/files/report.pdf",
+     "https://zenodo.org/records/2/files/report.pdf", False),
+    ("https://repo.example.edu/handle/1234/5/energy-model.pdf",
+     "https://repo.example.edu/handle/1234/6/energy-model.pdf", False),
+    (f"https://www.repository.cam.ac.uk/bitstreams/{UUID}/thermal-model.pdf",
+     "https://www.repository.cam.ac.uk/bitstreams/11111111-2222-3333-4444-555555555555/"
+     "thermal-model.pdf", False),
+    ("https://europepmc.org/articles/PMC1/energy-model.pdf",
+     "https://europepmc.org/articles/PMC2/energy-model.pdf", False),
+    ("https://kit.example.edu/1000186507/energy-model.pdf",
+     "https://kit.example.edu/1000186508/energy-model.pdf", False),
+    # explicit arXiv versions are different copies; unversioned matches only unversioned
+    ("https://arxiv.org/pdf/2401.12345v1", "https://arxiv.org/pdf/2401.12345v2", False),
+    ("https://arxiv.org/pdf/2401.12345", "https://arxiv.org/pdf/2401.12345v2", False),
+    ("https://arxiv.org/pdf/2401.12345v2", "https://arxiv.org/pdf/2401.12345", False),
+    ("https://arxiv.org/abs/2401.12345", "https://arxiv.org/pdf/2401.12345", True),
+    ("https://arxiv.org/pdf/2401.12345v1", "https://export.arxiv.org/pdf/2401.12345v1.pdf", True),
+    # agreeing strong ids, or a file name with no strong id on either side, still match
+    ("https://zenodo.org/records/1/files/report.pdf",
+     "https://zenodo.org/api/records/1/files/report.pdf/content", True),
+    ("https://orbi.example.be/files/energy-model-paper.pdf",
+     "https://orbi.example.be/cdn/energy-model-paper.pdf", True),
+    # a strong id on one side only does not veto the file-name match
+    ("https://zenodo.org/records/1/files/energy-model-paper.pdf",
+     "https://zenodo.org/cdn/energy-model-paper.pdf", True),
+])
+def test_conflicting_strong_identifiers_veto_the_file_name(origin, dest, ok):
+    assert oar.same_copy(origin, dest) is ok
+    if oar.host_of(origin) == oar.host_of(dest):  # host pairs are directional; ids symmetric
+        assert oar.same_copy(dest, origin) is ok
+
+
+# --- third review: cooldowns from a live clock ------------------------------------------------------
+
+class Clock:
+    def __init__(self, t):
+        self.t = t
+
+    def __call__(self):
+        return self.t
+
+
+def test_a_late_429_persists_its_cooldown_from_the_moment_it_arrived():
+    clock, saved = Clock(1000.0), {}
+
+    class Slow(FakeHttp):
+        def __call__(self, url, **kw):
+            clock.t = 1120.0  # the answer arrives two minutes after the run started
+            return SimpleNamespace(status_code=429, json=lambda: {},
+                                   headers={"Retry-After": "60",
+                                            "x-ratelimit-remaining": "700"})
+
+    api = fam.Api(Slow(), lookup_max=5, cooldowns={}, save_cooldowns=saved.update, now=clock,
+                  sleep=lambda s: None)
+    with pytest.raises(fam.UpstreamError, match="rate limited"):
+        api.search({}, 100)
+    assert saved == {"openalex": 1180.0}
+
+
+def test_budget_exhaustion_is_told_apart_from_rate_limiting():
+    clock, saved = Clock(1000.0), {}
+    http = FakeHttp()
+    http.__class__ = type("Budget", (FakeHttp,), {"__call__": lambda self, url, **kw: (
+        SimpleNamespace(status_code=429, json=lambda: {},
+                        headers={"X-RateLimit-Remaining": "0", "X-RateLimit-Limit": "1000",
+                                 "X-RateLimit-Reset": "5000", "Retry-After": "30"}))})
+    api = fam.Api(http, lookup_max=5, cooldowns={}, save_cooldowns=saved.update, now=clock,
+                  sleep=lambda s: None)
+    with pytest.raises(fam.UpstreamError, match="budget exhausted") as err:
+        api.search({}, 100)
+    assert saved == {"openalex": 6000.0}  # until the daily reset, not Retry-After
+    assert api.throttle == {"retry-after": "30", "x-ratelimit-remaining": "0",
+                            "x-ratelimit-limit": "1000", "x-ratelimit-reset": "5000"}
+    assert "x-ratelimit-reset=5000" in str(err.value)
+
+
+def test_the_budget_header_deadline_uses_the_live_clock():
+    clock, saved = Clock(1000.0), {}
+
+    def get(url, **kw):
+        clock.t = 1300.0
+        return SimpleNamespace(status_code=200, json=lambda: {"meta": {"count": 0},
+                                                              "results": []},
+                               headers={"x-ratelimit-remaining": "5",
+                                        "x-ratelimit-reset": "100"})
+
+    api = fam.Api(get, lookup_max=5, cooldowns={}, save_cooldowns=saved.update, now=clock,
+                  sleep=lambda s: None)
+    api.search({}, 100)
+    assert saved == {"openalex": 1400.0}
+
+
+def test_the_run_keeps_its_snapshot_time_for_records_and_a_live_clock_for_cooldowns(tmp_path):
+    clock = Clock(NOW)
+    holds = []
+    args = SimpleNamespace(family_cursor="sim1 t=0 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0",
+                           resolution_file=None, append=True, lookup_max=250, per=100, max=25)
+    code = fam.main_family(
+        args, policy=POLICY, keys=dedup.from_sets(set(), set(), set()),
+        cooldowns={"openalex": NOW - 5}, save_cooldowns=lambda c: None, get=FakeHttp(),
+        openalex_relevant=find_sources.openalex_relevant, append_entries=lambda e: None,
+        request_hold=holds.append, report_next=lambda v: None, now=NOW - 60,
+        sleep=lambda s: None, clock=clock, pacer=fam.LocalPacer())
+    # the snapshot (NOW - 60) predates the cooldown end; the live clock says it has passed
+    assert code in (0, 1) and holds == []
+
+
+# --- third review: OpenAlex spacing shared across processes ------------------------------------------
+
+def test_openalex_requests_are_spaced_one_second_across_callers(tmp_path):
+    clock, slept = Clock(100.0), []
+
+    def sleep(seconds):
+        slept.append(round(seconds, 3))
+        clock.t += seconds
+
+    first = fam.SharedPacer(clock=clock, sleep=sleep, workspace=tmp_path)
+    second = fam.SharedPacer(clock=clock, sleep=sleep, workspace=tmp_path)  # another process
+    first.wait()
+    clock.t += 0.25
+    second.wait()
+    clock.t += 3.0
+    first.wait()
+    assert slept == [0.75] and fam.OPENALEX_SPACING >= 1.0
+
+
+def test_family_openalex_lookups_go_through_the_pacer_and_others_do_not():
+    waits = []
+
+    class Counting:
+        def wait(self):
+            waits.append(1)
+
+    http = FakeHttp(singles={f"{fam.OPENALEX}/W1": {"id": "https://openalex.org/W1"},
+                             "https://api.unpaywall.org/v2/10.1234/x": {"doi": "10.1234/x"}})
+    api = fam.Api(http, lookup_max=5, cooldowns={}, save_cooldowns=lambda c: None,
+                  now=lambda: NOW, sleep=lambda s: None, pacer=Counting())
+    api.lookup("openalex", "W1")
+    api.lookup("unpaywall", "10.1234/x")
+    assert waits == [1]

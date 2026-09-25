@@ -108,7 +108,8 @@ UUID = "2e0aa826-03a0-4f97-a019-d266f30c50a9"
     (f"https://www.repository.cam.ac.uk/bitstreams/{UUID}/download",
      f"https://api.repository.cam.ac.uk/server/api/core/bitstreams/{UUID}/content", True),
     ("https://europepmc.org/articles/PMC123/pdf", "https://www.ebi.ac.uk/x/PMC123.pdf", True),
-    ("https://arxiv.org/pdf/2608.16638", "https://arxiv.org/pdf/2608.16638v2", True),
+    ("https://arxiv.org/pdf/2608.16638v2", "https://arxiv.org/pdf/2608.16638v2.pdf", True),
+    ("https://arxiv.org/pdf/2608.16638", "https://arxiv.org/pdf/2608.16638v2", False),
     ("https://repo.example.edu/handle/1234/567", "https://repo.example.edu/bitstream/1234/567/"
                                                  "thesis.pdf", True),
     ("https://orbi.example.be/files/energy-model-paper.pdf",
@@ -370,7 +371,7 @@ def test_malformed_search_keeps_the_cursor(data):
         args, policy=POLICY, keys=dedup.from_sets(set(), set(), set()), cooldowns={},
         save_cooldowns=lambda c: None, get=FakeHttp(pages=[data]),
         openalex_relevant=find_sources.openalex_relevant, append_entries=appended.extend,
-        request_hold=lambda r: None, report_next=reported.append, now=NOW, sleep=lambda s: None)
+        request_hold=lambda r: None, report_next=reported.append, now=NOW, sleep=lambda s: None, clock=lambda: NOW, pacer=fam.LocalPacer())
     assert code == 1 and reported == [] and appended == []
 
 
@@ -535,7 +536,7 @@ def test_family_off_its_slot_spends_no_search_and_still_advances():
         args, policy=POLICY, keys=dedup.from_sets(set(), set(), set()), cooldowns={},
         save_cooldowns=lambda c: None, get=http, openalex_relevant=find_sources.openalex_relevant,
         append_entries=lambda e: None, request_hold=lambda r: None, report_next=reported.append,
-        now=NOW, sleep=lambda s: None, run_id=run_id_for("sim"))
+        now=NOW, sleep=lambda s: None, clock=lambda: NOW, pacer=fam.LocalPacer(), run_id=run_id_for("sim"))
     assert code == 0 and http.calls == [] and reported == ["ai1 t=4 q=0 w=0 p=1 k=0"]
 
 

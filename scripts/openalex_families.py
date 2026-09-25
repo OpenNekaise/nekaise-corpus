@@ -376,19 +376,68 @@ def check_search(data, per: int, page: int = 1) -> tuple[list[dict], int]:
     return results, count
 
 
+OPENALEX_SPACING = 1.0  # seconds between ANY two OpenAlex requests of this machine's finders
+
+
+class SharedPacer:
+    """Spacing shared by every process on this machine (the family finders of one round run
+    concurrently): a lock file serializes callers, a timestamp file remembers the last request
+    start. `clock`/`sleep` are injectable; the files live in workspace/ (never committed)."""
+
+    def __init__(self, name: str = "openalex-pace", spacing: float = OPENALEX_SPACING, *,
+                 clock=time.time, sleep=time.sleep, workspace: Path | None = None,
+                 timeout: float = 300.0):
+        self.name, self.spacing, self.clock, self.sleep = name, spacing, clock, sleep
+        self.workspace, self.timeout = workspace, timeout
+
+    def wait(self) -> None:
+        ws = Path(self.workspace) if self.workspace is not None else ops.WORKSPACE
+        with ops.named_lock(self.name, timeout=self.timeout, workspace=ws):
+            stamp = ws / f"{self.name}.json"
+            try:
+                last = float(json.loads(stamp.read_text())["last"])
+            except (OSError, ValueError, KeyError, TypeError):
+                last = 0.0
+            if (delay := last + self.spacing - self.clock()) > 0:
+                self.sleep(delay)
+            ops.atomic_write_text(stamp, json.dumps({"last": self.clock()}) + "\n")
+
+
+class LocalPacer:
+    """No cross-process spacing (tests, and callers that own their pacing)."""
+
+    def wait(self) -> None:
+        return None
+
+
+RATE_HEADERS = ("retry-after", "x-ratelimit-remaining", "x-ratelimit-limit",
+                "x-ratelimit-reset", "x-ratelimit-remaining-usd", "x-ratelimit-cost-usd")
+
+
+def _headers_lower(headers) -> dict:
+    try:
+        return {str(k).lower(): v for k, v in dict(headers).items()}
+    except (TypeError, ValueError):
+        return {}
+
+
 class Api:
-    """Counts requests; enforces the lookup cap, OpenAlex budget headers and persisted
-    cooldowns; validates every response's shape. `get` is requests.get (tests replace it)."""
+    """Counts requests; enforces the lookup cap, OpenAlex budget headers, persisted cooldowns
+    and the machine-wide OpenAlex spacing; validates every response's shape. `get` is
+    requests.get (tests replace it). `now` is a LIVE clock: every cooldown deadline is computed
+    when the answer arrives, never from the run's start."""
 
     def __init__(self, get, *, lookup_max: int, cooldowns: dict, save_cooldowns, now,
-                 sleep=time.sleep):
+                 sleep=time.sleep, pacer=None):
         self.get, self.lookup_max = get, lookup_max
         self.cooldowns, self.save_cooldowns, self.now, self.sleep = (
             cooldowns, save_cooldowns, now, sleep)
+        self.pacer = pacer if pacer is not None else LocalPacer()
         self.searches = 0
         self.lookups = 0
         self.seconds = 0.0
         self.budget_note = ""
+        self.throttle: dict | None = None  # the rate-limit headers of the last 429/503
 
     @property
     def lookups_left(self) -> int:
@@ -399,6 +448,11 @@ class Api:
         if until > self.now():
             raise UpstreamError(f"{host_key} cooldown active for {int(until - self.now())}s",
                                 429, until)
+        if host_key == "openalex":
+            try:
+                self.pacer.wait()
+            except RuntimeError as exc:
+                raise UpstreamError(f"OpenAlex pacing lock unavailable: {exc}") from exc
         started = time.monotonic()
         try:
             r = self.get(url, params=params, timeout=30,
@@ -413,11 +467,7 @@ class Api:
         if host_key == "openalex":
             self._note_openalex_budget(headers)
         if status in (429, 503):
-            retry = headers.get("Retry-After")
-            deadline = self.now() + (int(retry) if str(retry or "").isdigit() else 3600)
-            self.cooldowns[host_key] = max(self.cooldowns.get(host_key, 0), deadline)
-            self.save_cooldowns(self.cooldowns)
-            raise UpstreamError(f"{host_key} HTTP {status}", status, deadline)
+            raise self._throttled(host_key, status, headers)
         if status == 404:
             return None
         if status >= 400:
@@ -426,6 +476,32 @@ class Api:
             return r.json()
         except ValueError as exc:
             raise UpstreamError(f"{host_key} returned non-JSON: {exc}") from exc
+
+    def _throttled(self, host_key: str, status: int, headers) -> "UpstreamError":
+        """Classify a 429/503 from its rate-limit headers — the daily credit BUDGET spent
+        (cooldown until the reset) versus request-RATE limiting (cooldown for Retry-After) —
+        persist the cooldown from the live clock, and keep the headers for the run record."""
+        h = _headers_lower(headers)
+        self.throttle = {k: h[k] for k in RATE_HEADERS if k in h}
+
+        def number(key):
+            try:
+                return int(float(h[key]))
+            except (KeyError, TypeError, ValueError):
+                return None
+
+        remaining, reset, retry = (number("x-ratelimit-remaining"),
+                                   number("x-ratelimit-reset"), number("retry-after"))
+        if host_key == "openalex" and remaining is not None and remaining < SEARCH_CREDITS:
+            kind, wait = "budget exhausted", reset if reset is not None else 3600
+        else:
+            kind, wait = "rate limited", retry if retry is not None else 3600
+        deadline = self.now() + max(0, wait)
+        self.cooldowns[host_key] = max(self.cooldowns.get(host_key, 0), deadline)
+        self.save_cooldowns(self.cooldowns)
+        detail = ", ".join(f"{k}={v}" for k, v in self.throttle.items()) or "no rate headers"
+        self.budget_note = f"{host_key} HTTP {status}: {kind} ({detail})"
+        return UpstreamError(f"{host_key} HTTP {status}: {kind} ({detail})", status, deadline)
 
     def _note_openalex_budget(self, headers) -> None:
         """Persist a cooldown until the daily reset once fewer credits remain than one search."""
@@ -455,7 +531,8 @@ class Api:
         if self.lookups >= self.lookup_max:
             raise LookupBudget()
         self.lookups += 1
-        self.sleep(0.2 if kind == "openalex" else 1.0)
+        if kind != "openalex":  # OpenAlex requests are spaced by the shared pacer
+            self.sleep(1.0)
         if kind == "openalex":
             data = self._request(f"{OPENALEX}/{key}", {"mailto": oar.MAILTO},
                                  host_key="openalex")
@@ -594,7 +671,12 @@ def work_urls(work: dict) -> list[str]:
 
 def build_entry(work: dict, res: oar.Resolution, *, topic: str, source: str, family: str,
                 today: str, origin_extra: list[str] = (), relation: str = "") -> dict:
-    """A registry entry for the resolved copy, carrying its rights evidence and identity."""
+    """A registry entry for the resolved copy, carrying its rights evidence and identity.
+
+    It assumes ACCEPTED rights (license = rights.tag). The collect-all follow-up cannot just
+    widen oa_resolution.copy_acceptable: a rejected/unknown/conflicting copy has no tag, so this
+    entry would lose `license` and fail lint. That change needs an explicit rights
+    classification, a persisted rights status, and lint / licence-class folder handling."""
     doi = oar.normalize_doi(work.get("doi"))
     wid = oar.normalize_openalex(work.get("id"))
     pid = oar.doi_url(doi) if doi else f"https://openalex.org/{wid}"
@@ -926,10 +1008,13 @@ def report(stats: Stats, api: Api, family: Family, cursor_in: str, cursor_out: s
 
 def main_family(args, *, policy: dict, keys, cooldowns: dict, save_cooldowns, get,
                 openalex_relevant, append_entries, request_hold, report_next,
-                now: float | None = None, sleep=time.sleep, run_id: str | None = None) -> int:
-    """find_sources.py --family NAME. Returns the process exit code."""
+                now: float | None = None, sleep=time.sleep, run_id: str | None = None,
+                clock=time.time, pacer=None) -> int:
+    """find_sources.py --family NAME. Returns the process exit code. `now` is the run's
+    snapshot timestamp (run records, retry schedules); `clock` is the live clock every API
+    cooldown is computed from."""
     started = time.monotonic()
-    now = time.time() if now is None else now
+    now = clock() if now is None else now
     family = FAMILIES[getattr(args, "family", None) or "simulation"]
     cursor = parse_cursor(args.family_cursor, family)
     if args.lookup_max < MAX_LOOKUPS_PER_WORK:
@@ -940,13 +1025,15 @@ def main_family(args, *, policy: dict, keys, cooldowns: dict, save_cooldowns, ge
         default_ledger_path() if args.append else None)
     ledger = Ledger(ledger_path)
     api = Api(get, lookup_max=args.lookup_max, cooldowns=cooldowns,
-              save_cooldowns=save_cooldowns, now=lambda: now, sleep=sleep)
+              save_cooldowns=save_cooldowns, now=clock, sleep=sleep,
+              pacer=pacer if pacer is not None else SharedPacer(clock=clock, sleep=sleep))
     run = FamilyRun(api=api, policy=policy, keys=keys, ledger=ledger, per=args.per,
                     max_docs=args.max, openalex_relevant=openalex_relevant, now=now,
                     family=family)
     slot = budget_slot(run_id, cursor.t)
-    if slot in family.walks and cooldowns.get("openalex", 0) > now:
-        request_hold(f"OpenAlex cooldown active for {int(cooldowns['openalex'] - now)}s")
+    if slot in family.walks and cooldowns.get("openalex", 0) > clock():
+        request_hold(f"OpenAlex cooldown active for "
+                     f"{max(1, int(cooldowns['openalex'] - clock()))}s")
         report(run.stats, api, family, cursor.render(), None, time.monotonic() - started)
         return 0
     try:

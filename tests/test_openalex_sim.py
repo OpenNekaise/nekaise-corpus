@@ -415,7 +415,7 @@ def test_upstream_failure_keeps_cursor_and_is_not_exhaustion(tmp_path):
         args, policy=POLICY, keys=dedup.from_sets(set(), set(), set()), cooldowns={},
         save_cooldowns=saved.update, get=FakeHttp(fail_search=True),
         openalex_relevant=find_sources.openalex_relevant, append_entries=appended.extend,
-        request_hold=holds.append, report_next=reported.append, now=NOW, sleep=lambda s: None)
+        request_hold=holds.append, report_next=reported.append, now=NOW, sleep=lambda s: None, clock=lambda: NOW, pacer=fam.LocalPacer())
     assert code == 1
     assert reported == [] and appended == []   # nothing proposed, the committed cursor stays
     assert saved["openalex"] == NOW + 120      # Retry-After persisted as a cooldown
@@ -430,7 +430,7 @@ def test_active_cooldown_holds_without_a_request():
         args, policy=POLICY, keys=dedup.from_sets(set(), set(), set()),
         cooldowns={"openalex": NOW + 60}, save_cooldowns=lambda c: None, get=http,
         openalex_relevant=find_sources.openalex_relevant, append_entries=lambda e: None,
-        request_hold=holds.append, report_next=reported.append, now=NOW, sleep=lambda s: None)
+        request_hold=holds.append, report_next=reported.append, now=NOW, sleep=lambda s: None, clock=lambda: NOW, pacer=fam.LocalPacer())
     assert code == 0 and holds and reported == [] and http.calls == []
 
 
@@ -453,7 +453,7 @@ def test_successful_run_reports_next_cursor_and_rights_evidence(tmp_path):
         args, policy=POLICY, keys=dedup.from_sets(set(), set(), set()), cooldowns={},
         save_cooldowns=lambda c: None, get=http, openalex_relevant=find_sources.openalex_relevant,
         append_entries=appended.extend, request_hold=lambda r: None,
-        report_next=reported.append, now=NOW, sleep=lambda s: None)
+        report_next=reported.append, now=NOW, sleep=lambda s: None, clock=lambda: NOW, pacer=fam.LocalPacer())
     assert code == 0
     assert reported == ["sim1 t=1 q=0 w=1 p=1 k=0 sq=0 sw=0 sp=1 sk=0"]
     (entry,) = appended
