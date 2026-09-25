@@ -74174,3 +74174,11 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
+  - id: ope-federated-learning-for-5g-base-station-traffic
+    title: Federated learning for 5G base station traffic forecasting
+    url: http://arxiv.org/pdf/2211.15220
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    license_evidence: 'OpenAlex OA location license: cc-by'
