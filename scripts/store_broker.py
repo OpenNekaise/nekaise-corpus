@@ -650,6 +650,18 @@ class StagedRound:
             raise BrokerError("freeze the run before recording gates")
         self.st.record_gate(self.writer, self.frozen, gate, passed=passed, detail=detail)
 
+    def verify_artifacts(self, gate: str = "artifacts") -> dict:
+        """The artifact gate (stage 4 step 3): re-hash every immutable version the frozen run
+        introduced that no earlier verification covered, and record the verdict as `gate`."""
+        import artifact_store
+        if self.frozen is None:
+            raise BrokerError("freeze the run before verifying its artifacts")
+        result = artifact_store.verify_run(self.st, self.writer, self.run.run_id)
+        self.record_gate(gate, passed=not result["failed"], detail={
+            "verified": result["verified"],
+            "failed": [list(f) for f in result["failed"][:20]]})
+        return result
+
     def promote(self) -> int:
         if self.frozen is None:
             raise BrokerError("freeze the run before promoting it")
@@ -660,11 +672,12 @@ class StagedRound:
 @contextmanager
 def staged_round(st, writer: store.WriterToken, run_id: str, *, kind: str = "round",
                  producer_commit: str, extractor_version: str,
-                 cleaning_ruleset: str) -> Iterator[StagedRound]:
+                 cleaning_ruleset: str, artifacts: str = "versioned") -> Iterator[StagedRound]:
     """Open run `run_id` on the current generation and serve its staged broker (see
     StagedRound). The broker is drained before the block's outcome is judged."""
     run = st.open_run(writer, run_id, kind=kind, producer_commit=producer_commit,
-                      extractor_version=extractor_version, cleaning_ruleset=cleaning_ruleset)
+                      extractor_version=extractor_version, cleaning_ruleset=cleaning_ruleset,
+                      artifacts=artifacts)
     rnd = StagedRound(st, writer, run)
     try:
         with rnd.broker.serving():

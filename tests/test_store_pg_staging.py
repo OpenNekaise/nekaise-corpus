@@ -101,7 +101,7 @@ def recorded(fn):
 
 def open_run(st, w, run_id="rnd1"):
     return st.open_run(w, run_id, producer_commit=SHA, extractor_version="x1",
-                       cleaning_ruleset="rules-1")
+                       cleaning_ruleset="rules-1", artifacts="unchecked")
 
 
 def version_of(st, w, run_id="rnd1"):
@@ -1238,7 +1238,7 @@ def test_a_staged_round_through_real_child_processes(pg):
     base = {k: v for k, v in os.environ.items() if not k.startswith("NEKAISE_STORE")}
     with pg.writer(round_id=ROUND) as w:
         with store_broker.staged_round(pg, w, ROUND, producer_commit=SHA, extractor_version="x",
-                                       cleaning_ruleset="none") as rnd:
+                                       cleaning_ruleset="none", artifacts="unchecked") as rnd:
             rnd.broker.computed_batch("discover", "merge", lambda v, b: b.upsert_manifest(
                 [mrow("disc-1")]))
             finders = rnd.pinned_now()                     # discovery workers' shared view
@@ -1274,7 +1274,8 @@ def test_a_failing_staged_round_is_aborted(pg):
     with pg.writer(round_id="rnd1") as w:
         with pytest.raises(RuntimeError, match="gate crashed"):
             with store_broker.staged_round(pg, w, "rnd1", producer_commit=SHA,
-                                           extractor_version="x", cleaning_ruleset="none") as rnd:
+                                           extractor_version="x", cleaning_ruleset="none",
+                                           artifacts="unchecked") as rnd:
                 rnd.broker.computed_batch("discover", "merge",
                                           lambda v, b: b.upsert_manifest([mrow("x")]))
                 raise RuntimeError("gate crashed")
@@ -1337,7 +1338,7 @@ def test_a_v4_shadow_migrates_to_v5_and_keeps_replicating(tmp_path, monkeypatch)
         auth = old.authority()
 
         new = store_pg.PgStore(repo.path, dsn=DSN, schema=schema)   # migrates 4 -> 5
-        assert q(new, "SELECT schema_version FROM state")[0][0] == 5
+        assert q(new, "SELECT schema_version FROM state")[0][0] == store_pg.SCHEMA_VERSION
         assert pg_shadow.pg_digests(new) == before_digests          # nothing rewritten
         with new.read() as v:
             assert export_bytes(new, v, tmp_path / "v5") == before
@@ -1349,7 +1350,7 @@ def test_a_v4_shadow_migrates_to_v5_and_keeps_replicating(tmp_path, monkeypatch)
         assert pg_shadow.do_sync(new, c3, repo.path, log=quiet) == 1
         assert pg_shadow.do_verify(new, repo.path, log=quiet)
         # old clients are refused now
-        with pytest.raises(StoreError, match="version 5, code expects 4"):
+        with pytest.raises(StoreError, match=f"version {store_pg.SCHEMA_VERSION}, code expects 4"):
             v4.PgStore(repo.path, dsn=DSN, schema=schema)
         with pytest.raises(StoreError, match="restart with matching code"):
             with old.writer():

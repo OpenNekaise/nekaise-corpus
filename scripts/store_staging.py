@@ -36,6 +36,14 @@ past an active retention pin. While generation P+1 is being folded, every view s
 so a partially folded key is superseded by the same value: folding changes where rows live, not
 what any generation contains.
 
+Payloads (stage 4 step 3, schema v6). A run's artifact policy is fixed when it opens. In a
+"versioned" run (the default) a manifest put that claims a payload (raw/text/corpus path +
+sha256) the superseded row did not claim identically must name an immutable version already
+written under artifacts/ (artifact_store): the batch's own transaction checks the file,
+registers its identity and local locator and records the run's reference (run_artifacts), and
+the database refuses to seal a batch with any other new claim. Such a run freezes only with the
+"artifacts" gate required (artifact_store.verify_run). "unchecked" runs keep the step-2 rules.
+
 Writing requires the run's owner: the writer whose epoch opened it (a resumed run with a new owner
 is stage 4 step 4). The database enforces the rest (V5_DDL): batches apply exactly after the
 sequence they were computed at, a committed applied batch is sealed, revisions of a sealed batch
@@ -85,6 +93,7 @@ class StagedRun:
     run_id: str
     token: str                    # authorizes the run's pipeline children to read its overlay
     parent_generation: int | None
+    artifact_policy: str = "versioned"
 
 
 @dataclass(frozen=True)
@@ -481,10 +490,11 @@ class StagedWriteView(store_pg.PgReadView):
     values are PgWriteView's; the projection is never written."""
 
     def __init__(self, st, conn, config: ConfigSnapshot, visibility: Visibility, run_id: str,
-                 seq: int, generation: int | None):
+                 seq: int, generation: int | None, artifact_policy: str = "unchecked"):
         super().__init__(st, conn, stage_version(run_id, seq), config, visibility=visibility,
                          generation=generation, stage=(run_id, seq))
         self.run_id, self.seq = run_id, seq
+        self.artifact_policy = artifact_policy
         # operation counts per table and op (fixed size, whatever a batch touches); no per-row
         # journal: the revisions are the record
         self._counts: dict[str, dict[str, int]] = {}
@@ -515,6 +525,8 @@ class StagedWriteView(store_pg.PgReadView):
         its revision."""
         if not items:
             return
+        if tbl == "manifest" and self.artifact_policy == "versioned":
+            self._claim_artifacts(items)
         params = []
         for key, op, row, text, reason, before in items:
             if text is not None:
@@ -542,6 +554,84 @@ class StagedWriteView(store_pg.PgReadView):
                 "key = ANY(%s) AND ((op = 'put' AND row_sha256 IS NOT DISTINCT FROM "
                 "before_sha256) OR (op = 'tombstone' AND before_sha256 IS NULL))",
                 [self.run_id, self.seq, tbl, [p[3] for p in params]])
+
+    def _claim_artifacts(self, items: list[tuple]) -> None:
+        """Versioned runs (schema v6): every payload claim a manifest put makes that the row it
+        supersedes did not make identically names an immutable version that must already be
+        written (artifact_store.LocalArtifacts.put_*): check it, register its identity and local
+        locator if new (after a directory fsync barrier) and record the run's reference, all in
+        this batch's transaction. The database re-checks the rule when the batch seals."""
+        import artifact_store
+        need: dict[tuple[str, str], int | None] = {}
+        for key, op, row, _text, _reason, before in items:
+            if op != "put" or row is None:
+                continue
+            prior = None if before is None else json.loads(before)
+            for stage, path, sha in artifact_store.changed_claims(row, prior):
+                if not isinstance(path, str) or not path:
+                    raise StoreError(f"manifest {key}: its {stage} claim needs a non-empty path")
+                try:
+                    artifact_store.check_identity(stage, sha)
+                except artifact_store.ArtifactError as exc:
+                    raise StoreError(f"manifest {key}: {exc}") from None
+                expect = None
+                if stage == "raw" and row.get("bytes") is not None:
+                    expect = row["bytes"]
+                    if isinstance(expect, bool) or not isinstance(expect, int):
+                        raise StoreError(f"manifest {key}: bytes must be an integer")
+                if (stage, sha) in need and None not in (need[(stage, sha)], expect) \
+                        and need[(stage, sha)] != expect:
+                    raise StoreError(f"raw artifact {sha} claimed with two sizes in one batch")
+                if need.get((stage, sha)) is None:
+                    need[(stage, sha)] = expect
+        if need:
+            self._register_artifacts(need)
+
+    def _register_artifacts(self, need: dict[tuple[str, str], int | None]) -> None:
+        import artifact_store
+        keys = sorted(need)
+        # keyed lookups per identity (LATERAL), never a scan of the growing artifacts table
+        have = {(s, h): (size, local) for s, h, size, local in self._q(
+            "SELECT a.stage, a.sha256, a.size, EXISTS (SELECT 1 FROM artifact_locators l WHERE "
+            "l.stage = a.stage AND l.sha256 = a.sha256 AND l.kind = 'local') FROM "
+            "unnest(%s::text[], %s::text[]) AS u(stage, sha256) CROSS JOIN LATERAL (SELECT * "
+            "FROM artifacts x WHERE x.stage = u.stage AND x.sha256 = u.sha256 OFFSET 0) a",
+            [[k[0] for k in keys], [k[1] for k in keys]])}
+        local = artifact_store.LocalArtifacts(self._store.root)
+        new_ids, new_locs = [], []
+        for stage, sha in keys:
+            on_disk = local.size(stage, sha)
+            if on_disk is None:
+                raise StoreError(f"{stage} artifact {sha} was not written before a batch "
+                                 f"referenced it (expected {local.path(stage, sha)})")
+            registered = have.get((stage, sha))
+            size = on_disk if registered is None else registered[0]
+            if on_disk != size:
+                raise StoreError(f"{stage} artifact {sha} has {on_disk} bytes on disk but was "
+                                 f"registered with {size}")
+            if need[(stage, sha)] is not None and need[(stage, sha)] != size:
+                raise StoreError(f"raw artifact {sha} has {size} bytes, not the row's "
+                                 f"{need[(stage, sha)]}")
+            if registered is None:
+                new_ids.append((stage, sha, size))
+            if registered is None or not registered[1]:
+                new_locs.append((stage, sha))
+        if new_locs:   # the writer fsynced them; make sure of their directory entries too
+            artifact_store.barrier(local.path(s, h) for s, h in new_locs)
+        if new_ids:
+            self._q("INSERT INTO artifacts (stage, sha256, size, first_run) SELECT s, h, z, %s "
+                    "FROM unnest(%s::text[], %s::text[], %s::bigint[]) AS u(s, h, z) "
+                    "ON CONFLICT DO NOTHING",
+                    [self.run_id, [i[0] for i in new_ids], [i[1] for i in new_ids],
+                     [i[2] for i in new_ids]])
+        if new_locs:
+            self._q("INSERT INTO artifact_locators (stage, sha256, locator, kind) SELECT s, h, "
+                    "nk_local_locator(s, h), 'local' FROM unnest(%s::text[], %s::text[]) AS "
+                    "u(s, h) ON CONFLICT DO NOTHING",
+                    [[i[0] for i in new_locs], [i[1] for i in new_locs]])
+        self._q("INSERT INTO run_artifacts (run_id, stage, sha256, batch_seq) SELECT %s, s, h, %s "
+                "FROM unnest(%s::text[], %s::text[]) AS u(s, h) ON CONFLICT DO NOTHING",
+                [self.run_id, self.seq, [k[0] for k in keys], [k[1] for k in keys]])
 
     def _upsert(self, tbl: str, rows: list[dict], op: str) -> int:
         """Stage every row that differs from the visible one; returns how many did."""
@@ -754,7 +844,7 @@ def _writer_txn(st, writer: WriterToken) -> Iterator[psycopg.Connection]:
 
 _RUN_COLS = ("run_id", "status", "parent_generation", "writer_epoch", "staged_seq", "frozen_seq",
              "frozen_digest", "required_gates", "promoted_generation", "config_digest",
-             "batches_open")
+             "batches_open", "artifact_policy")
 
 
 def _run(conn, run_id: str, *, lock: bool = False) -> dict:
@@ -820,10 +910,13 @@ def _check_names(step: str, batch: str) -> None:
 # --- run lifecycle -----------------------------------------------------------------------------------
 
 def open_run(st, writer: WriterToken, run_id: str, *, kind: str = "round", producer_commit: str,
-             extractor_version: str, cleaning_ruleset: str) -> StagedRun:
+             extractor_version: str, cleaning_ruleset: str,
+             artifacts: str = "versioned") -> StagedRun:
     """Open (or, with the same identity, re-open for the same owner) a run staged on the current
     generation, pinning the current git-owned configuration as a sealed config set. Returns a new
-    access token for the run's pipeline children."""
+    access token for the run's pipeline children. `artifacts` is the run's immutable artifact
+    policy (schema v6): "versioned" — payloads are immutable versions whose every new claim the
+    database checks — or "unchecked" (metadata-only runs in tests)."""
     store._check_run_id(run_id)
     token = secrets.token_hex(32)
     with _writer_txn(st, writer) as conn:
@@ -839,14 +932,15 @@ def open_run(st, writer: WriterToken, run_id: str, *, kind: str = "round", produ
         head = _head(conn)
         status = c.open_run(run_id, kind=kind, parent_generation=head,
                             producer_commit=producer_commit, config_digest=config_digest,
-                            extractor_version=extractor_version, cleaning_ruleset=cleaning_ruleset)
+                            extractor_version=extractor_version, cleaning_ruleset=cleaning_ruleset,
+                            artifact_policy=artifacts)
         run = _owned_run(conn, run_id, writer, "re-opening")
         if status != "open":
             raise StoreError(f"run {run_id} is {status}")
         _require_current(conn, run)
         conn.execute("INSERT INTO run_access (run_id, token_sha256) VALUES (%s, %s)",
                      [run_id, _sha(token)])
-    return StagedRun(run_id, token, head)
+    return StagedRun(run_id, token, head, artifacts)
 
 
 @contextmanager
@@ -977,7 +1071,7 @@ def stage_batch(st, writer: WriterToken, run_id: str, step: str, batch: str,
         lo, = conn.execute("SELECT generation FROM projection_state").fetchone()
         view = StagedWriteView(st, conn, config_from_set(conn, run["config_digest"]),
                                Visibility.read(conn, lo, head, own=(run_id, seq)), run_id, seq,
-                               head)
+                               head, run["artifact_policy"])
         try:
             import store_broker
             results = [getattr(view, r["call"])(**store_broker._bind(r["call"], r["args"],
@@ -1034,6 +1128,9 @@ def freeze(st, writer: WriterToken, run_id: str, *, required_gates: Iterable[str
         if run["status"] != "open":
             raise StaleView(f"run {run_id} is {run['status']}")
         _require_current(conn, run)
+        if run["artifact_policy"] == "versioned" and "artifacts" not in gates:
+            raise StoreError(f"run {run_id} stages immutable artifact versions: its required "
+                             "gates must include \"artifacts\" (artifact_store.verify_run)")
         if run["batches_open"]:
             raise StoreError(f"run {run_id} has {run['batches_open']} requested batch(es) that "
                              "were never applied: apply or abandon them first")
@@ -1148,6 +1245,12 @@ def purge_run(st, writer: WriterToken, run_id: str, *, limit: int = FOLD_BATCH) 
             raise StoreError(f"run {run_id} is not aborted")
         n = conn.execute("DELETE FROM revisions WHERE rev_id IN (SELECT rev_id FROM revisions "
                          "WHERE run_id = %s LIMIT %s)", [run_id, limit]).rowcount
+        if n == 0:
+            # its artifact references go; the registered identities and their immutable local
+            # versions stay (reference-checked cleanup is stage 5's)
+            n += conn.execute("DELETE FROM run_artifacts WHERE ctid IN (SELECT ctid FROM "
+                              "run_artifacts WHERE run_id = %s LIMIT %s)",
+                              [run_id, limit]).rowcount
         if n == 0:
             n += conn.execute("DELETE FROM gate_receipts WHERE run_id = %s", [run_id]).rowcount
             n += conn.execute("DELETE FROM batches WHERE run_id = %s", [run_id]).rowcount
@@ -1270,6 +1373,29 @@ def fold_all(st, writer: WriterToken, *, limit: int = FOLD_BATCH) -> int:
         if progress.generation is None or progress.blocked:
             return done
         done += progress.done
+
+
+def generation_config(view, generation: int) -> str | None:
+    """Generation `generation`'s pinned configuration set digest, in `view`'s snapshot."""
+    row = view._q("SELECT config_digest FROM generations WHERE generation = %s",
+                  [generation]).fetchone()
+    return None if row is None else row[0]
+
+
+def changed_manifest_ids(view, lo: int | None, hi: int, *, after: str = "",
+                         limit: int = 10_000) -> list[str]:
+    """Up to `limit` ids, after `after` in key order, whose manifest rows a generation in
+    (lo, hi] revised (a put or a tombstone), read in `view`'s snapshot. Revisions of promoted
+    runs are never rewritten or purged, so this holds whether or not the fold has passed them
+    (materialize.refresh's incremental mode)."""
+    runs = [r for (r,) in view._q(
+        "SELECT run_id FROM runs WHERE promoted_generation > %s AND promoted_generation <= %s",
+        [-1 if lo is None else lo, hi]).fetchall()]
+    if not runs:
+        return []
+    return [k for (k,) in view._q(
+        "SELECT DISTINCT key FROM revisions WHERE tbl = 'manifest' AND run_id = ANY(%s) AND "
+        "key > %s ORDER BY key LIMIT %s", [runs, after, limit]).fetchall()]
 
 
 def legacy_writes_refused(conn) -> str | None:

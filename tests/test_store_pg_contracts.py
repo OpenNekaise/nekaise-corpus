@@ -59,7 +59,7 @@ def _downgrade_to_v3(st) -> None:
     """Remove every stage-4 object: the schema the shadow runs today (version 3)."""
     import store_pg
     with st._connect(autocommit=True) as conn:
-        for t in reversed(store_pg.V5_TABLES + store_pg.V4_TABLES):
+        for t in reversed(store_pg.V6_TABLES + store_pg.V5_TABLES + store_pg.V4_TABLES):
             conn.execute(f"DROP TABLE IF EXISTS {st.schema}.{t} CASCADE")
         for (fn,) in conn.execute("SELECT p.oid::regprocedure::text FROM pg_proc p JOIN "
                                   "pg_namespace n ON n.oid = p.pronamespace WHERE n.nspname = %s",
@@ -97,7 +97,7 @@ def test_v3_shadow_migrates_in_place_without_rewriting_anything(env):
     assert _snapshot(migrated) == before                # rows, events, watermark, receipts
     assert set(store_pg.V4_TABLES) <= tables(migrated)
     with migrated._connect(autocommit=True) as conn:
-        assert conn.execute("SELECT schema_version FROM state").fetchone()[0] == 5
+        assert conn.execute("SELECT schema_version FROM state").fetchone()[0] == store_pg.SCHEMA_VERSION
         assert conn.execute("SELECT consumer, watermark FROM outbox_consumers ORDER BY 1"
                             ).fetchall() == [("index", 0), ("projection", 0), ("publication", 0),
                                              ("review", 0)]
@@ -324,6 +324,7 @@ CONSUMERS = ("review", "publication", "index", "projection")
 
 
 def _open(c, run_id="r1", parent=None, **kw):
+    kw.setdefault("artifact_policy", "unchecked")   # step-1/2 contracts (v6 adds the artifact gate)
     digest = c.put_config_set(CONFIG)
     return c.open_run(run_id, kind="round", parent_generation=parent, producer_commit=SHA,
                       config_digest=digest, extractor_version="x1", cleaning_ruleset="rules-1",
@@ -424,7 +425,7 @@ def test_contract_tables_refuse_rewrites(pg):
             _apply(c._conn, "r1", "prune", "apply", 1,
                    [("manifest", "a", "put", {"id": "a"}, None)])
             _promote(c._conn, "r1", 0, None)
-            c.register_artifact("raw", "a" * 64, 10, locator="file:raw/x.pdf")
+            c.register_artifact("raw", "a" * 64, 10, locator="artifacts/raw/aa/aa/" + "a" * 64)
     for stmt in ("UPDATE revisions SET key = 'z'", "DELETE FROM revisions",
                  "UPDATE generations SET cleaning_ruleset = 'x'", "DELETE FROM generations",
                  "UPDATE runs SET status = 'aborted'", "DELETE FROM runs",

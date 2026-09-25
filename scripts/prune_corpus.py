@@ -34,6 +34,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
+import artifact_store
 import blocklist
 import corpus_stats
 import host_policy
@@ -68,6 +69,9 @@ TRANSIENT_403_HOSTS = frozenset({"mdpi.com"})
 # as "failed" but NEVER blocklisted, so a later re-walk can still rediscover it.
 RETRY_MAX_ATTEMPTS = 20
 RETRY_MAX_AGE_DAYS = 14
+# Payload access of a versioned staged run (ADR 0001 stage 4 step 3), set by main() for its
+# duration; None: the legacy file-authoritative behaviour (paths under HERE, quarantined bytes).
+ACCESS: "artifact_store.VersionedAccess | None" = None
 
 
 def retry_pending(row: dict, now: datetime | None = None) -> bool:
@@ -93,7 +97,28 @@ def retry_pending(row: dict, now: datetime | None = None) -> bool:
 
 def _usable_text(row: dict) -> bool:
     text_path = row.get("text_path")
-    return row.get("status") == "ok" and bool(text_path) and (HERE / text_path).exists()
+    return row.get("status") == "ok" and bool(text_path) and _text_exists(row)
+
+
+def _text_exists(row: dict) -> bool:
+    if ACCESS is not None:
+        return ACCESS.exists(row, "text")
+    return (HERE / row["text_path"]).exists()
+
+
+def _suspended_unavailable(row: dict, policy: dict[str, dict]) -> bool:
+    """registry.suspended_unavailable, with a versioned run's text found by its claim."""
+    if ACCESS is None:
+        return registry.suspended_unavailable(row, policy, HERE)
+    return (row.get("status") == "ok" and bool(policy)
+            and host_policy.suspended(row.get("url") or "", policy)
+            and not (row.get("text_path") and ACCESS.exists(row, "text")))
+
+
+def _read_text(row: dict) -> str:
+    if ACCESS is not None:
+        return ACCESS.read_text(row, "text")
+    return (HERE / row["text_path"]).read_text()
 
 
 class HandoffError(RuntimeError):
@@ -276,7 +301,7 @@ def decide(manifest: list[dict], reviewed_drop: dict[str, str], policy: dict[str
     # alternative: a suspended-host row missing locally must never destroy an available mirror.
     seen_titles = {registry.norm(r.get("title")) for r in manifest
                    if not registry.discovered(r["id"]) and r.get("status") == "ok"
-                   and not registry.suspended_unavailable(r, policy, HERE)}
+                   and not _suspended_unavailable(r, policy)}
     drop: dict[str, str] = dict(reviewed_drop)
     computed: list[str] = []
     retrying = 0
@@ -299,12 +324,12 @@ def decide(manifest: list[dict], reviewed_drop: dict[str, str], policy: dict[str
             drop[r["id"]] = "off-topic-title"
             continue
         tp = r.get("text_path")
-        if not tp or not (HERE / tp).exists():
+        if not tp or not _text_exists(r):
             drop[r["id"]] = "no-text"
             continue
         m = r.get("quality")
         if not m:  # pre-metrics row: compute once from the file; persisted on --apply
-            m = r["quality"] = quality.metrics(quality.body((HERE / tp).read_text()))
+            m = r["quality"] = quality.metrics(quality.body(_read_text(r)))
             computed.append(r["id"])
         q = quality.verdict(m, quality.is_booklike(r["id"], r.get("format", "pdf")))
         if q != "ok":
@@ -560,8 +585,10 @@ def apply(session, plan: Plan) -> None:
         by_reason.setdefault(drop[sid], []).append(sid)
     dropped_rows = [r for r in manifest if r["id"] in drop]
     txn = session.identity("apply")
+    # A versioned staged run moves no bytes: pruning changes membership only, so every payload
+    # an admitted document or a retained generation claims stays where it is.
     qdir = quarantine_files(HERE, txn, dropped_rows, os.environ.get("NEKAISE_RUN_ID")) \
-        if drop else None
+        if drop and ACCESS is None else None
     removed = blocked = 0
     try:
         with session.batch("apply") as b:
@@ -610,22 +637,29 @@ def main() -> None:
                     help="standalone runs wait this long for the round lock (default 30 s)")
     args = ap.parse_args()
 
+    global ACCESS
     st = store.open(root=HERE)
-    if not args.apply:
-        with st.read(timeout=args.lock_timeout) as view:
-            plan = plan_prune(view, args, ap)
-        report(plan)
-        print("dry run -- pass --apply to prune")
-        return
-    # Inside a round: the inherited view and the round's broker; standalone: this command's own
-    # writer (the round lock) for the whole read-decide-apply.
-    with store_broker.step_session(st, "prune", timeout=args.lock_timeout) as session:
-        settled = settle_quarantines(HERE, session.view)
-        if settled["quarantines"]:
-            print(f"settled earlier prune quarantines: {settled}")
-        plan = plan_prune(session.view, args, ap)
-        report(plan)
-        apply(session, plan)
+    try:
+        if not args.apply:
+            with st.read(timeout=args.lock_timeout) as view:
+                ACCESS = artifact_store.for_view(view, HERE)
+                plan = plan_prune(view, args, ap)
+            report(plan)
+            print("dry run -- pass --apply to prune")
+            return
+        # Inside a round: the inherited view and the round's broker; standalone: this command's
+        # own writer (the round lock) for the whole read-decide-apply.
+        with store_broker.step_session(st, "prune", timeout=args.lock_timeout) as session:
+            ACCESS = artifact_store.for_view(session.view, HERE)
+            if ACCESS is None:   # quarantines exist only on the legacy path
+                settled = settle_quarantines(HERE, session.view)
+                if settled["quarantines"]:
+                    print(f"settled earlier prune quarantines: {settled}")
+            plan = plan_prune(session.view, args, ap)
+            report(plan)
+            apply(session, plan)
+    finally:
+        ACCESS = None
 
 
 if __name__ == "__main__":

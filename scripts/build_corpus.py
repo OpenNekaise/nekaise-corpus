@@ -54,6 +54,7 @@ from urllib.parse import urlparse
 
 import requests
 
+import artifact_store
 import host_policy
 import ops
 import corpus_stats
@@ -66,6 +67,10 @@ import store_broker
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 RAW = HERE / "raw"
 TEXT = HERE / "text"
+# Payload access of a versioned staged run (ADR 0001 stage 4 step 3), set by run() for its
+# duration: new raw and text bytes become immutable versions under artifacts/ and raw/ and text/
+# are never written. None: the legacy file-authoritative behaviour (writes raw/ and text/).
+ACCESS: "artifact_store.VersionedAccess | None" = None
 # Browser-like UA: publisher / repository bot-walls (eScholarship, Frontiers, PMC, …) 403 a generic
 # UA even for openly-licensed (CC-BY / OA) PDFs we're entitled to fetch. (MDPI sits behind Cloudflare
 # and still blocks; those need a headless browser — skipped for now.)
@@ -538,8 +543,18 @@ def download_one(src: dict) -> dict:
         rec["bytes"] = len(data)
 
         raw_dir = RAW / source
-        raw_dir.mkdir(parents=True, exist_ok=True)
         raw_path = raw_dir / f"{sid}.{ext}"
+        access = ACCESS
+        if access is not None:
+            # an immutable version; raw_path stays the logical name the row always carried
+            art = access.local.put_bytes("raw", data)
+            rec["raw_path"] = str(raw_path.relative_to(HERE))
+            rec["_raw_file"] = str(access.local.path("raw", art.sha256))
+            rec["_root"] = str(HERE)
+            rec["_text_dir"] = str(TEXT)
+            rec["_versions"] = str(access.root)
+            return rec
+        raw_dir.mkdir(parents=True, exist_ok=True)
         raw_path.write_bytes(data)
         rec["raw_path"] = str(raw_path.relative_to(HERE))
         # Absolute process-local paths are removed by extract_downloaded before the row can reach
@@ -622,6 +637,7 @@ def extract_downloaded(rec: dict) -> dict:
     try:
         root = Path(rec.pop("_root", HERE))
         text_dir = Path(rec.pop("_text_dir", TEXT))
+        versions = rec.pop("_versions", None)
         raw_path = Path(rec.pop("_raw_file", root / rec["raw_path"]))
         data = raw_path.read_bytes()
         try:
@@ -629,13 +645,16 @@ def extract_downloaded(rec: dict) -> dict:
         except Exception as e:
             txt, rec["error"] = "", f"text-extract: {e}"
         if txt:
-            text_dir.mkdir(parents=True, exist_ok=True)
             header = (f"# {rec['title']}\n\n"
                       f"source: {rec['url']}\nlicense: {rec['license']}\n"
                       f"topic: {rec['topic']}\n\n---\n\n")
             tp = text_dir / f"{sid}.md"
             rendered = header + txt
-            tp.write_text(rendered)
+            if versions is not None:   # a versioned staged run: text/ is never written
+                artifact_store.LocalArtifacts(Path(versions)).put_bytes("text", rendered.encode())
+            else:
+                text_dir.mkdir(parents=True, exist_ok=True)
+                tp.write_text(rendered)
             rec["text_path"] = str(tp.relative_to(root))
             rec["text_chars"] = len(txt)
             rec["text_sha256"] = sha256_bytes(rendered.encode())
@@ -653,12 +672,16 @@ def reuse_extraction(rec: dict, template: dict) -> dict:
     """Reuse text for identical bytes while rendering this record's own provenance header."""
     root = Path(rec.pop("_root", HERE))
     text_dir = Path(rec.pop("_text_dir", TEXT))
+    versions = rec.pop("_versions", None)
     rec.pop("_raw_file", None)
     template_path = template.get("text_path")
-    if template_path and (root / template_path).exists():
-        txt = quality.body((root / template_path).read_text())
+    if versions is not None:
+        source = artifact_store.VersionedAccess(Path(versions)).path(template, "text")
+    else:
+        source = root / template_path if template_path else None
+    if template_path and source is not None and source.exists():
+        txt = quality.body(source.read_text())
         if txt:
-            text_dir.mkdir(parents=True, exist_ok=True)
             header = (
                 f"# {rec['title']}\n\n"
                 f"source: {rec['url']}\nlicense: {rec['license']}\n"
@@ -666,7 +689,11 @@ def reuse_extraction(rec: dict, template: dict) -> dict:
             )
             rendered = header + txt
             target = text_dir / f"{rec['id']}.md"
-            target.write_text(rendered)
+            if versions is not None:   # a versioned staged run: text/ is never written
+                artifact_store.LocalArtifacts(Path(versions)).put_bytes("text", rendered.encode())
+            else:
+                text_dir.mkdir(parents=True, exist_ok=True)
+                target.write_text(rendered)
             rec["text_path"] = str(target.relative_to(root))
             rec["text_chars"] = len(txt)
             rec["text_sha256"] = sha256_bytes(rendered.encode())
@@ -790,7 +817,9 @@ def reextract(manifest: dict, restrictions: dict, selection: dict | None = None,
     the selected rows). Never downloads; rows without raw bytes are skipped. The rows it changed
     (in place) are appended to `touched`."""
     selection = selection or {}
-    TEXT.mkdir(parents=True, exist_ok=True)
+    access = ACCESS
+    if access is None:
+        TEXT.mkdir(parents=True, exist_ok=True)
     chosen = [
         r for r in manifest.values()
         if registry.is_training_eligible(r, restrictions)
@@ -800,9 +829,15 @@ def reextract(manifest: dict, restrictions: dict, selection: dict | None = None,
     done = 0
     for r in sorted(chosen, key=lambda x: x["id"]):
         rp = r.get("raw_path")
-        if not rp or not (HERE / rp).exists():
-            continue
-        data = (HERE / rp).read_bytes()
+        if access is not None:
+            raw_file = access.path(r, "raw")
+            if raw_file is None:
+                continue
+            data = raw_file.read_bytes()
+        else:
+            if not rp or not (HERE / rp).exists():
+                continue
+            data = (HERE / rp).read_bytes()
         fmt = r.get("format", "pdf")
         try:
             txt = clean_text(extract_for(fmt, data))
@@ -811,7 +846,10 @@ def reextract(manifest: dict, restrictions: dict, selection: dict | None = None,
         if txt:
             header = (f"# {r['title']}\n\nsource: {r['url']}\n"
                       f"license: {r['license']}\ntopic: {r['topic']}\n\n---\n\n")
-            (TEXT / f"{r['id']}.md").write_text(header + txt)
+            if access is not None:   # an immutable version; text/ is never written
+                access.local.put_bytes("text", (header + txt).encode())
+            else:
+                (TEXT / f"{r['id']}.md").write_text(header + txt)
             r["text_path"] = f"text/{r['id']}.md"
             r["text_chars"] = len(txt)
             r["text_sha256"] = sha256_bytes((header + txt).encode())
@@ -869,6 +907,25 @@ def main() -> None:
 def run(view, session, args, only: set[str], selection: dict) -> None:
     """The loader over one read view; `session` (None for --verify) receives its writes. Every
     read happens before the first write."""
+    global ACCESS
+    ACCESS = artifact_store.for_view(view, HERE)
+    try:
+        if ACCESS is not None:
+            ACCESS.local.sweep_incoming()
+        _run(view, session, args, only, selection)
+    finally:
+        ACCESS = None
+
+
+def _have(row: dict, stage: str) -> bool:
+    """Whether this machine holds the row's `stage` payload (its raw_path / text_path claim)."""
+    if ACCESS is not None:
+        return ACCESS.exists(row, stage)
+    rel = row.get("raw_path" if stage == "raw" else "text_path")
+    return bool(rel) and (HERE / rel).exists()
+
+
+def _run(view, session, args, only: set[str], selection: dict) -> None:
     restrictions, policy = store.pinned_policy(view)  # the view's pinned configuration
     all_srcs = load_entries(view)
     pointer_only = sum(
@@ -906,10 +963,11 @@ def run(view, session, args, only: set[str], selection: dict) -> None:
             if r.get("status") != "ok" or not r.get("sha256"):
                 continue
             rp = r.get("raw_path")
-            if not rp or not (HERE / rp).exists():
+            if not rp or not _have(r, "raw"):
                 miss += 1
                 continue
-            if sha256_bytes((HERE / rp).read_bytes()) == r["sha256"]:
+            raw_file = ACCESS.path(r, "raw") if ACCESS is not None else HERE / rp
+            if sha256_bytes(raw_file.read_bytes()) == r["sha256"]:
                 match += 1
             else:
                 mismatch += 1
@@ -926,7 +984,7 @@ def run(view, session, args, only: set[str], selection: dict) -> None:
             continue
         cur = manifest.get(s["id"])
         if cur and cur.get("status") == "ok" and not args.force:
-            if cur.get("raw_path") and (HERE / cur["raw_path"]).exists():
+            if cur.get("raw_path") and _have(cur, "raw"):
                 continue
         if host_policy.suspended(s["url"], policy):
             # Fetch suspension: never requested, no failure row, nothing ages toward pruning.
@@ -946,7 +1004,7 @@ def run(view, session, args, only: set[str], selection: dict) -> None:
             row.get("sha256")
             and row.get("status") == "ok"
             and row.get("text_path")
-            and (HERE / row["text_path"]).exists()
+            and _have(row, "text")
         )
     }
     repro = drift = new = done = 0

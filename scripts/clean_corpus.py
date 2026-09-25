@@ -39,14 +39,17 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import locale
 import os
 import random
 import re
 import shutil
+import sys
 from collections import Counter
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
+import artifact_store
 import corpus_stats
 import ops
 import registry
@@ -460,6 +463,10 @@ def main() -> None:
         # round lock) for the whole read-clean-patch sequence. The ruleset stamp and the policy
         # are read under it: eligibility and host policy from the view's pinned configuration.
         with store_broker.step_session(st, "clean", timeout=args.lock_timeout) as session:
+            access = artifact_store.for_view(session.view, HERE)
+            if access is not None:   # a versioned staged run (ADR 0001 stage 4 step 3)
+                build_versioned(session, access, args)
+                return
             rules = parse_rules(stamped_ruleset() if args.rules == "stamp" else args.rules)
             restrictions, policy = store.pinned_policy(session.view)
             rows = list(corpus_stats.iter_manifest(session.view))
@@ -469,6 +476,12 @@ def main() -> None:
     # read-only modes: one consistent store view, rows in the legacy manifest order (the seeded
     # per-shard sample and first-N diagnostics depend on it).
     with st.read(timeout=args.lock_timeout) as view:
+        access = artifact_store.for_view(view, HERE)
+        if access is not None:   # a versioned staged run: its claims, not corpus/, are checked
+            if args.report:
+                raise SystemExit("--report measures the legacy corpus; run it outside a staged run")
+            check_versioned(view, access)
+            return
         rules = parse_rules(stamped_ruleset() if args.rules == "stamp" else args.rules)
         restrictions, policy = store.pinned_policy(view)
         rows = list(corpus_stats.iter_manifest(view))
@@ -699,6 +712,174 @@ def build(session, todo: list[dict], restricted: list[dict], rules: list[str], a
         for name, c in attribution.most_common():
             if c:
                 print(f"  {c/1e6:8.2f}M  {name}")
+
+
+# --- versioned cleaning (ADR 0001 stage 4 step 3: a PostgreSQL staged run) -------------------------
+#
+# The run, not corpus/.ruleset, is the cleaning policy authority: its ruleset was recorded when it
+# was opened (runs.cleaning_ruleset, copied into the generation it promotes). Cleaned bytes become
+# immutable versions (artifact_store); corpus/ is never written here — it is a materialization of
+# a promoted generation (scripts/materialize.py). A row is up to date when its cleaner version is
+# this ruleset's, its source identity is the text it now claims, and its cleaned version is held
+# locally; everything else is cleaned (again), with the same rules and byte for byte the output
+# of the legacy cleaner. Policy-restricted rows lose their corpus fields exactly as before; no
+# file is moved or deleted.
+
+# cleaned versions made durable together (two syncfs per group instead of fsyncs per file)
+GROUP_COMMIT = 5000
+# what Path.write_text uses (the legacy cleaner wrote corpus/ with it)
+_WRITE_ENCODING = "utf-8" if sys.flags.utf8_mode else locale.getencoding()
+
+
+def _clean_one_versioned(task: tuple) -> tuple:
+    """Clean one document's text into a pending corpus version (committed by the parent in
+    groups, artifact_store.LocalArtifacts.commit). Returns (id, corpus_chars, per-rule
+    attribution, status, the pending version, source text sha256)."""
+    sid, src, rules, root, owner = task
+    src = Path(src)
+    data = src.read_bytes()
+    source = hashlib.sha256(data).hexdigest()
+    header, body = split_header(src.read_text(errors="replace"))  # exactly the legacy reading
+    if rules:
+        cleaned, attr = clean_body(body, rules)
+        out = (header + cleaned).encode(_WRITE_ENCODING)
+    else:
+        cleaned, attr, out = body, Counter(), data   # byte-identical pass-through
+    pending = artifact_store.write_pending(Path(root), "corpus", out, owner)
+    return sid, len(cleaned), dict(attr), "written", pending, source
+
+
+def cleaner_tag(stamp: str) -> str:
+    return f"clean_corpus/2;rules={stamp}"
+
+
+def versioned_fresh(row: dict, access, tag: str) -> bool:
+    source = row.get("corpus_source_sha256")
+    text_id = row.get("text_sha256")
+    return (row.get("cleaner_version") == tag
+            and row.get("corpus_path") == f"corpus/{row['id']}.md"
+            and isinstance(row.get("corpus_sha256"), str)
+            and isinstance(source, str) and (text_id is None or source == text_id)
+            and access.local.has("corpus", row["corpus_sha256"]))
+
+
+def build_versioned(session, access, args) -> None:
+    prov = artifact_store.run_policy(session.view)
+    pinned = parse_rules(prov["cleaning_ruleset"])
+    if args.rules != "stamp" and parse_rules(args.rules) != pinned:
+        raise SystemExit(f"this run's cleaning ruleset is {prov['cleaning_ruleset']!r} (pinned when "
+                         f"it opened); --rules {args.rules} is refused")
+    rules = pinned
+    stamp_now = ",".join(rules) if rules else "none"
+    tag = cleaner_tag(stamp_now)
+    restrictions, policy = store.pinned_policy(session.view)
+    rows = list(corpus_stats.iter_manifest(session.view))
+    eligible, _ = registry.partition_manifest_ok_rows(rows, restrictions)
+    restricted = [r for r in rows if registry.restriction_for(r, restrictions) is not None]
+    import host_policy
+    todo = [r for r in eligible if r.get("text_path") and not (
+        policy and host_policy.suspended(r.get("url") or "", policy)
+        and not access.exists(r, "text"))]
+    access.local.sweep_incoming()
+
+    stats: Counter = Counter()
+    attribution: Counter = Counter()
+    before = {r["id"]: {f: r[f] for f in registry.CORPUS_FIELDS if f in r} for r in todo}
+    cleared = [r["id"] for r in restricted if any(f in r for f in registry.CORPUS_FIELDS)]
+    by_id = {r["id"]: r for r in todo}
+    tasks = []
+    for r in todo:
+        if not args.force and versioned_fresh(r, access, tag):
+            stats["up-to-date"] += 1
+            continue
+        src = access.path(r, "text")
+        if src is None:
+            stats["missing-text"] += 1
+            continue
+        tasks.append((r["id"], str(src), rules, str(access.root), os.getpid()))
+    mismatched: list[str] = []
+    group: list[tuple] = []
+
+    def commit_group() -> None:
+        """Make a group of cleaned versions durable (two syncs), then — only then — let the rows
+        claim them."""
+        access.local.commit([g[3] for g in group])
+        for sid, chars, attr, pending, source in group:
+            row = by_id[sid]
+            row["corpus_path"] = f"corpus/{sid}.md"
+            row["corpus_chars"] = chars
+            row["corpus_sha256"] = pending.sha256
+            row["cleaner_version"] = tag
+            row["corpus_source_sha256"] = source
+            attribution.update(attr)
+        group.clear()
+
+    with ProcessPoolExecutor(max_workers=max(1, args.workers)) as pool:
+        for sid, chars, attr, status, pending, source in pool.map(_clean_one_versioned, tasks,
+                                                                  chunksize=64):
+            if by_id[sid].get("text_sha256") not in (None, source):
+                # the text payload does not hold the identity its row claims: surface it
+                stats["text-mismatch"] += 1
+                mismatched.append(sid)
+                continue
+            stats[status] += 1
+            group.append((sid, chars, attr, pending, source))
+            if len(group) >= GROUP_COMMIT:
+                commit_group()
+    commit_group()
+    patches = corpus_patches(todo, before)
+    batches = commit_metadata(session, patches, cleared)
+    print(f"versioned clean (run {prov['run']}, ruleset {stamp_now}): {stats['written']} "
+          f"written | {stats['up-to-date']} up-to-date | {stats['missing-text']} missing text | "
+          f"{stats['text-mismatch']} text payloads not matching their identity"
+          + (f" (e.g. {mismatched[:5]})" if mismatched else ""))
+    print(f"policy restricted: {len(restricted)} rows | {len(cleared)} manifest rows cleared")
+    print(f"manifest: {len(patches)} rows patched in {batches} batch(es); corpus/ is refreshed "
+          "from the promoted generation (scripts/materialize.py)")
+    if attribution:
+        tot = sum(attribution.values())
+        print(f"removed {tot/1e6:.2f}M chars this run:")
+        for name, c in attribution.most_common():
+            if c:
+                print(f"  {c/1e6:8.2f}M  {name}")
+
+
+def check_versioned(view, access) -> None:
+    """--check inside a versioned staged run (e.g. a gate at the frozen sequence): every eligible
+    row with text is cleaned under the run's ruleset from the text it claims, its cleaned version
+    is held locally, and no restricted row claims corpus data. corpus/ itself is a
+    materialization of a promoted generation and is not what a staged run is checked against.
+    Reads only (the artifact gate re-hashes the versions a run introduced)."""
+    prov = artifact_store.run_policy(view)
+    rules = parse_rules(prov["cleaning_ruleset"])
+    tag = cleaner_tag(",".join(rules) if rules else "none")
+    restrictions, policy = store.pinned_policy(view)
+    problems: list[str] = []
+    checked = stale = 0
+    import host_policy
+    for r in corpus_stats.iter_manifest(view):
+        if registry.restriction_for(r, restrictions) is not None:
+            if any(f in r for f in registry.CORPUS_FIELDS) and len(problems) < 20:
+                problems.append(f"policy-restricted row has corpus metadata: {r['id']}")
+            continue
+        if r.get("status") != "ok" or not r.get("text_path"):
+            continue
+        if policy and host_policy.suspended(r.get("url") or "", policy) \
+                and not access.exists(r, "text"):
+            continue
+        checked += 1
+        if not versioned_fresh(r, access, tag):
+            stale += 1
+            if len(problems) < 20:
+                problems.append(f"not cleaned under {tag} from its claimed text, or its cleaned "
+                                f"version is missing: {r['id']}")
+    print(f"checked {checked} docs of run {prov['run']} | ruleset: {prov['cleaning_ruleset']}")
+    if problems:
+        print(f"\nDRIFT — {stale} rows not cleaned as the run pins:")
+        for p_ in problems:
+            print(f"  {p_}")
+        raise SystemExit(1)
+    print("OK — every eligible row claims a cleaned version held locally")
 
 
 if __name__ == "__main__":

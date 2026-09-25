@@ -87,6 +87,12 @@ minutes; folding cleaning into extraction would mean re-parsing hundreds of thou
 (CPU-hours) for every rule tweak and would make `raw/` permanently undeletable. The additional local
 storage buys cheap iteration.
 
+Under the PostgreSQL-staged path (ADR 0001 stage 4, not yet in production) no step writes these
+directories: changed bytes become immutable versions in the git-ignored `artifacts/<stage>/…`
+(content-addressed by sha256), rows keep their logical `raw_path`/`text_path`/`corpus_path`, and
+`corpus/` is a materialization of one promoted generation (`scripts/materialize.py`, stamped
+`corpus/.materialization.json`) that a training run acquires for that generation.
+
 `corpus/` is built **from eligible manifest rows**, never from a directory listing, so it can only
 contain docs that have a provenance row and pass `registry/eligibility.json` — a training run over
 `corpus/*` cannot pick up unprovenanced or policy-restricted text, and ids whose `text_path` drifted

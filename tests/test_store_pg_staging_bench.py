@@ -184,7 +184,7 @@ def full_reclean(st, n: int, clock: Clock) -> dict:
     gone = set(_gone(n))
     with st.writer(round_id="reclean") as w:
         st.open_run(w, "reclean", producer_commit=SHA, extractor_version="x1",
-                    cleaning_ruleset="rules-2")
+                    cleaning_ruleset="rules-2", artifacts="unchecked")
         for b, start in enumerate(range(0, n + 400, BATCH)):
             patch = {f"doc-{i:08d}": {"corpus_path": f"corpus/doc-{i:08d}.md",
                                       "corpus_sha256": hashlib.sha256(b"%d" % i).hexdigest(),
@@ -235,7 +235,7 @@ def promotion_vs_batches(st, clock: Clock, sizes=(1, 1_000, 50_000)) -> dict:
         for n in sizes:
             run_id = f"many-{n}"
             st.open_run(w, run_id, producer_commit=SHA, extractor_version="x1",
-                        cleaning_ruleset="rules-2")
+                        cleaning_ruleset="rules-2", artifacts="unchecked")
             conn = st._writer_conn(w)
             t0 = time.monotonic()
             for lo in range(1, n + 1, 1000):   # committed chunks, statistics refreshed between
@@ -256,7 +256,7 @@ def replace_all(st, n: int, clock: Clock) -> dict:
     keep = _row(3)
     with st.writer() as w:
         st.open_run(w, "replace", producer_commit=SHA, extractor_version="x1",
-                    cleaning_ruleset="rules-2")
+                    cleaning_ruleset="rules-2", artifacts="unchecked")
         tracemalloc.start()
         got = clock("replace.stage_replace_all", _stage, st, w, "replace", "clean", "replace",
                     lambda tx: tx.replace_manifest([keep], reason="rebuild"))

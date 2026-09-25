@@ -50,7 +50,7 @@ from store import (BackendState, ConfigSnapshot, Cursor, KnownHits, Page, Stage,
                    StoreError, Table, Version, VersionConflict, WriteView, WriterError,
                    WriterToken, canonical_row, key_digest, norm_title, norm_url)
 
-SCHEMA_VERSION = 5
+SCHEMA_VERSION = 6
 DEFAULT_DSN = "host=/home/zengp/.local/share/nekaise-pg/run dbname=nekaise"
 
 DDL = """
@@ -1438,7 +1438,237 @@ def revision_keys(tbl: str, row: Mapping) -> tuple:
     return (*keys, sha if isinstance(sha, str) and sha else None, shard, topic)
 
 
-MIGRATIONS = {2: _migrate_2, 3: _migrate_3, 4: _migrate_4, 5: _migrate_5}
+# ADR 0001 stage 4, step 3: local artifacts compatible with atomic metadata. Created with a fresh
+# schema or by migration 6 (never re-run on open; a later revision ships as migration 7, ...).
+# Additive: one new column on runs (existing runs are backfilled 'unchecked': they were staged by
+# code that knew nothing of artifacts), one new table, new functions and triggers. No projection
+# row, revision, receipt, event or watermark is rewritten.
+#
+#   runs.artifact_policy   'versioned' (the default for new runs): every manifest row a batch
+#                          stages must, for each payload it claims (raw/text/corpus path +
+#                          sha256), either claim exactly what the row it supersedes claimed or
+#                          name an identity registered for this run in run_artifacts — checked by
+#                          the database when the batch seals, so a batch whose rows point at
+#                          bytes that were never durably written cannot commit. 'unchecked': the
+#                          step-2 rules only (runs from before this migration, metadata tests).
+#                          Immutable. A versioned run freezes only with the "artifacts" gate
+#                          required (artifact_store.verify_run re-hashes what it introduced).
+#   run_artifacts          (run, stage, sha256): the identities a run's batches introduced; FK to
+#                          artifacts; written only by the transaction applying the batch (like
+#                          revisions), immutable, deletable only for an aborted run (purge). The
+#                          verification gate and later reference-checked cleanup read it.
+#   artifact_locators      created unverified; immutable except verified_at (set, or moved
+#                          later); never deleted
+#                          (stage 5 relaxes that with reference checks); a 'local' locator must be
+#                          the canonical content address artifacts/<stage>/<aa>/<bb>/<sha256>.
+V6_DDL = r"""
+DO $d$ BEGIN
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_schema = '{s}'
+                   AND table_name = 'runs' AND column_name = 'artifact_policy') THEN
+        -- existing runs get 'unchecked' (the backfill); new runs default to 'versioned'
+        ALTER TABLE {s}.runs ADD COLUMN artifact_policy text NOT NULL DEFAULT 'unchecked'
+            CHECK (artifact_policy IN ('unchecked', 'versioned'));
+        ALTER TABLE {s}.runs ALTER COLUMN artifact_policy SET DEFAULT 'versioned';
+    END IF;
+END $d$;
+CREATE OR REPLACE FUNCTION {s}.nk_runs_artifact_policy() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE gates jsonb;
+BEGIN
+    IF NEW.artifact_policy IS DISTINCT FROM OLD.artifact_policy THEN
+        RAISE EXCEPTION 'nekaise: run % artifact policy is immutable', OLD.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    -- a versioned run freezes only with the artifact gate among its required gates, so it is
+    -- never promoted before the versions it introduced were re-hashed at the frozen state
+    IF NEW.artifact_policy = 'versioned' AND OLD.status = 'open' AND NEW.status = 'frozen' THEN
+        BEGIN
+            gates := NEW.required_gates::jsonb;
+        EXCEPTION WHEN others THEN
+            gates := NULL;
+        END;
+        IF gates IS NULL OR jsonb_typeof(gates) <> 'array' OR NOT gates ? 'artifacts' THEN
+            RAISE EXCEPTION 'nekaise: versioned run % must require the "artifacts" gate',
+                OLD.run_id USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER runs_artifact_policy BEFORE UPDATE ON {s}.runs
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_runs_artifact_policy();
+
+CREATE OR REPLACE FUNCTION {s}.nk_local_locator(stage text, sha text) RETURNS text
+    LANGUAGE sql IMMUTABLE AS $f$
+    SELECT 'artifacts/' || stage || '/' || substr(sha, 1, 2) || '/' || substr(sha, 3, 2) || '/'
+           || sha
+$f$;
+CREATE OR REPLACE FUNCTION {s}.nk_locators_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF TG_OP = 'DELETE' THEN
+        RAISE EXCEPTION 'nekaise: artifact locator %/% is retained', OLD.stage, OLD.locator
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF TG_OP = 'UPDATE' THEN
+        IF (NEW.stage, NEW.sha256, NEW.locator, NEW.kind, NEW.pack_offset, NEW.pack_length,
+            NEW.codec, NEW.created_at) IS DISTINCT FROM
+           (OLD.stage, OLD.sha256, OLD.locator, OLD.kind, OLD.pack_offset, OLD.pack_length,
+            OLD.codec, OLD.created_at)
+                OR NEW.verified_at IS NULL
+                OR (OLD.verified_at IS NOT NULL AND NEW.verified_at < OLD.verified_at) THEN
+            RAISE EXCEPTION 'nekaise: an artifact locator changes only its verification time'
+                USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        RETURN NEW;
+    END IF;
+    IF NEW.verified_at IS NOT NULL THEN   -- verification is recorded afterwards, never seeded
+        RAISE EXCEPTION 'nekaise: a new artifact locator starts unverified'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.kind = 'local' AND NEW.locator IS DISTINCT FROM
+            {s}.nk_local_locator(NEW.stage, NEW.sha256) THEN
+        RAISE EXCEPTION 'nekaise: a local locator is the content address %, not %',
+            {s}.nk_local_locator(NEW.stage, NEW.sha256), NEW.locator
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER artifact_locators_guard BEFORE INSERT OR UPDATE OR DELETE
+    ON {s}.artifact_locators FOR EACH ROW EXECUTE FUNCTION {s}.nk_locators_guard();
+
+CREATE TABLE IF NOT EXISTS {s}.run_artifacts (
+    run_id text COLLATE "C" NOT NULL REFERENCES {s}.runs,
+    stage text COLLATE "C" NOT NULL,
+    sha256 text COLLATE "C" NOT NULL,
+    batch_seq int NOT NULL CHECK (batch_seq >= 1),
+    PRIMARY KEY (run_id, stage, sha256),
+    FOREIGN KEY (stage, sha256) REFERENCES {s}.artifacts
+);
+CREATE INDEX IF NOT EXISTS run_artifacts_identity ON {s}.run_artifacts (stage, sha256);
+CREATE OR REPLACE FUNCTION {s}.nk_run_artifacts_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF TG_OP = 'DELETE' THEN
+        IF (SELECT status FROM {s}.runs WHERE run_id = OLD.run_id) = 'aborted' THEN
+            RETURN OLD;
+        END IF;
+        RAISE EXCEPTION 'nekaise: artifact references of run % are retained', OLD.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RAISE EXCEPTION 'nekaise: artifact reference %/%/% is immutable', OLD.run_id, OLD.stage,
+        OLD.sha256 USING ERRCODE = 'integrity_constraint_violation';
+END $f$;
+CREATE OR REPLACE TRIGGER run_artifacts_guard BEFORE UPDATE OR DELETE
+    ON {s}.run_artifacts FOR EACH ROW EXECUTE FUNCTION {s}.nk_run_artifacts_guard();
+-- Inserted references are checked per statement (the stager inserts a batch's references in
+-- one statement): each names a batch being applied (applied, unsealed, in an open run — i.e.
+-- only the applying transaction can add references, like revisions) and a located artifact.
+CREATE OR REPLACE FUNCTION {s}.nk_run_artifacts_insert() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE bad record;
+BEGIN
+    -- keyed lookups only (LATERAL), never a scan of runs, batches or locators
+    SELECT d.run_id, d.batch_seq, x.run_status, x.batch_status INTO bad
+        FROM (SELECT DISTINCT run_id, batch_seq FROM ins) d
+        CROSS JOIN LATERAL (SELECT (SELECT r.status FROM {s}.runs r WHERE r.run_id = d.run_id)
+                                   AS run_status,
+                                   b.status AS batch_status, b.sealed
+                            FROM (SELECT 1) one LEFT JOIN {s}.batches b
+                                ON b.run_id = d.run_id AND b.seq = d.batch_seq OFFSET 0) x
+        WHERE x.run_status IS DISTINCT FROM 'open' OR x.batch_status IS DISTINCT FROM 'applied'
+            OR x.sealed
+        LIMIT 1;
+    IF FOUND THEN
+        RAISE EXCEPTION 'nekaise: artifact references of run % belong to no batch being applied '
+            '(run %, batch % %)', bad.run_id, bad.run_status, bad.batch_seq,
+            COALESCE(bad.batch_status, 'missing')
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    SELECT i.stage, i.sha256 INTO bad FROM ins i CROSS JOIN LATERAL (
+        SELECT count(*) AS n FROM (SELECT 1 FROM {s}.artifact_locators l WHERE l.stage = i.stage
+                                   AND l.sha256 = i.sha256 LIMIT 1) z) found
+        WHERE found.n = 0
+        LIMIT 1;
+    IF FOUND THEN
+        RAISE EXCEPTION 'nekaise: artifact %/% has no locator: it cannot be referenced',
+            bad.stage, bad.sha256 USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NULL;
+END $f$;
+CREATE OR REPLACE TRIGGER run_artifacts_insert AFTER INSERT ON {s}.run_artifacts
+    REFERENCING NEW TABLE AS ins FOR EACH STATEMENT
+    EXECUTE FUNCTION {s}.nk_run_artifacts_insert();
+
+-- A manifest row's claim on one stage's payload: [path, sha256 or null], or NULL when the path
+-- field is absent or JSON null (artifact_store.claim is the same rule).
+CREATE OR REPLACE FUNCTION {s}.nk_claim(j jsonb, stage text) RETURNS jsonb
+    LANGUAGE sql IMMUTABLE AS $f$
+    SELECT CASE WHEN NULLIF(j -> f.p, 'null'::jsonb) IS NULL THEN NULL
+                ELSE jsonb_build_array(j -> f.p, COALESCE(j -> f.h, 'null'::jsonb)) END
+    FROM (SELECT CASE stage WHEN 'raw' THEN 'raw_path' WHEN 'text' THEN 'text_path'
+                            WHEN 'corpus' THEN 'corpus_path' END AS p,
+                 CASE stage WHEN 'raw' THEN 'sha256' WHEN 'text' THEN 'text_sha256'
+                            WHEN 'corpus' THEN 'corpus_sha256' END AS h) f
+$f$;
+-- The text of the manifest row with digest `digest` under key `k` (a revision's before-image):
+-- the projection row or any put revision with that digest (equal digests, equal text).
+CREATE OR REPLACE FUNCTION {s}.nk_before_text(k text, digest text) RETURNS SETOF text
+    LANGUAGE sql STABLE AS $f$
+    SELECT t FROM (
+        SELECT p.row_text AS t FROM {s}.manifest p WHERE digest IS NOT NULL AND p.id = k
+            AND encode(sha256(convert_to(p.row_text, 'UTF8')), 'hex') = digest
+        UNION ALL
+        SELECT o.row_text FROM {s}.revisions o WHERE digest IS NOT NULL AND o.tbl = 'manifest'
+            AND o.key = k AND o.op = 'put' AND o.row_sha256 = digest) z
+    LIMIT 1
+$f$;
+-- Sealing a batch of a versioned run: every claim of its manifest puts is either unchanged from
+-- the superseded row or a valid identity (non-empty string path, string sha256) this run
+-- registered in run_artifacts. Runs in the sealing transaction, so a violation rolls the whole
+-- batch back (its revisions, references and registrations).
+-- One pass over the batch's manifest puts (index range (run, seq)); per claim one primary-key
+-- probe of run_artifacts, and the before-image is looked up (once per row) only for a claim not
+-- registered for the run. Every statement is a keyed lookup, so the work is linear in the batch
+-- whatever the planner's statistics say about the freshly written tables.
+CREATE OR REPLACE FUNCTION {s}.nk_batch_artifacts() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE r record; st text; now jsonb; before jsonb; fetched boolean;
+BEGIN
+    IF (SELECT artifact_policy FROM {s}.runs WHERE run_id = NEW.run_id)
+            IS DISTINCT FROM 'versioned' THEN
+        RETURN NULL;
+    END IF;
+    FOR r IN SELECT v.key, v.row_text::jsonb AS j, v.before_sha256 FROM {s}.revisions v
+             WHERE v.run_id = NEW.run_id AND v.batch_seq = NEW.seq AND v.tbl = 'manifest'
+             AND v.op = 'put' LOOP
+        fetched := false;
+        FOREACH st IN ARRAY ARRAY['raw', 'text', 'corpus'] LOOP
+            now := {s}.nk_claim(r.j, st);
+            CONTINUE WHEN now IS NULL;
+            CONTINUE WHEN jsonb_typeof(now -> 0) = 'string' AND (now ->> 0) <> ''
+                AND jsonb_typeof(now -> 1) = 'string'
+                AND EXISTS (SELECT 1 FROM {s}.run_artifacts a WHERE a.run_id = NEW.run_id
+                            AND a.stage = st AND a.sha256 = (now ->> 1));
+            IF NOT fetched THEN
+                before := (SELECT b.t::jsonb FROM {s}.nk_before_text(r.key, r.before_sha256) b(t));
+                fetched := true;
+            END IF;
+            IF now IS DISTINCT FROM {s}.nk_claim(before, st) THEN
+                RAISE EXCEPTION 'nekaise: batch %.%.% stages % whose % payload claim is neither '
+                    'unchanged nor an artifact registered for the run (write the version first)',
+                    NEW.run_id, NEW.step, NEW.batch, r.key, st
+                    USING ERRCODE = 'integrity_constraint_violation';
+            END IF;
+        END LOOP;
+    END LOOP;
+    RETURN NULL;
+END $f$;
+CREATE OR REPLACE TRIGGER batches_artifacts AFTER UPDATE ON {s}.batches FOR EACH ROW
+    WHEN (NEW.sealed AND NOT OLD.sealed) EXECUTE FUNCTION {s}.nk_batch_artifacts();
+"""
+V6_TABLES = ("run_artifacts",)
+
+
+def _migrate_6(conn, schema):  # stage 4 step 3 artifacts: additive, see V6_DDL
+    conn.execute(V6_DDL.format(s=schema))
+
+
+MIGRATIONS = {2: _migrate_2, 3: _migrate_3, 4: _migrate_4, 5: _migrate_5, 6: _migrate_6}
 # Indexes on columns that migrations may have just added: created after migrating.
 POST_DDL = "CREATE INDEX IF NOT EXISTS manifest_legacy_order ON {s}.manifest (shard, topic_key, id);"
 # store.open()'s marker for a root without an authority record: the schema must not be
@@ -1562,6 +1792,7 @@ class PgStore:
                         conn.execute(DDL.format(s=schema, v=SCHEMA_VERSION))
                         conn.execute(V4_DDL.format(s=schema))
                         conn.execute(V5_DDL.format(s=schema))
+                        conn.execute(V6_DDL.format(s=schema))
                 else:
                     conn.execute(DDL.format(s=schema, v=SCHEMA_VERSION))
                 got = conn.execute(sql.SQL("SELECT schema_version FROM {}.state").format(
@@ -1844,6 +2075,38 @@ class PgStore:
         import store_staging
         return store_staging.fold(self, writer, **kw)
 
+    # -- artifact versions (stage 4 step 3; scripts/artifact_store.py) ---------------------------
+
+    def unverified_run_artifacts(self, writer: WriterToken, run_id: str, *,
+                                 after: tuple[str, str] = ("", ""),
+                                 limit: int = 1000) -> list[tuple]:
+        """The artifacts run `run_id` referenced whose local locator was never verified, after
+        keyset position (stage, sha256): [(stage, sha256, size, locator)]."""
+        import store_staging
+        with store_staging._writer_txn(self, writer) as conn:
+            return [tuple(r) for r in conn.execute(
+                # the run's references in key order, each probed by key (never a join scan of
+                # the global artifacts/locators tables)
+                "SELECT ra.stage, ra.sha256, x.size, x.locator FROM run_artifacts ra CROSS JOIN "
+                "LATERAL (SELECT a.size, l.locator FROM artifacts a JOIN artifact_locators l ON "
+                "l.stage = a.stage AND l.sha256 = a.sha256 WHERE a.stage = ra.stage AND "
+                "a.sha256 = ra.sha256 AND l.kind = 'local' AND l.verified_at IS NULL OFFSET 0) x "
+                "WHERE ra.run_id = %s AND (ra.stage, ra.sha256) > (%s, %s) "
+                "ORDER BY ra.stage, ra.sha256 LIMIT %s",
+                [run_id, after[0], after[1], limit]).fetchall()]
+
+    def mark_verified(self, writer: WriterToken, items: Sequence[tuple[str, str, str]]) -> int:
+        """Record that locators (stage, sha256, locator) were re-hashed just now."""
+        if not items:
+            return 0
+        import store_staging
+        with store_staging._writer_txn(self, writer) as conn:
+            return conn.execute(
+                "UPDATE artifact_locators l SET verified_at = now() FROM unnest(%s::text[], "
+                "%s::text[], %s::text[]) AS u(stage, sha256, locator) WHERE l.stage = u.stage "
+                "AND l.sha256 = u.sha256 AND l.locator = u.locator",
+                [[i[0] for i in items], [i[1] for i in items], [i[2] for i in items]]).rowcount
+
     def peek(self, table: str):
         """store.FileStore.peek: a committed snapshot needs no lock here."""
         if table not in store.PEEK_TABLES:
@@ -1953,6 +2216,7 @@ class BatchReceipt:
 
 RUN_IDENTITY = ("kind", "parent_generation", "producer_commit", "config_digest",
                 "extractor_version", "cleaning_ruleset")
+ARTIFACT_POLICIES = ("versioned", "unchecked")
 
 
 def require_run_owner(conn: psycopg.Connection, run_id: str, writer: WriterToken,
@@ -2020,17 +2284,22 @@ class Contracts:
 
     def open_run(self, run_id: str, *, kind: str, parent_generation: int | None,
                  producer_commit: str, config_digest: str, extractor_version: str,
-                 cleaning_ruleset: str) -> str:
+                 cleaning_ruleset: str, artifact_policy: str = "versioned") -> str:
         """Open a run staged on the current generation. Returns its status; an existing run
-        with the same identity is returned as is (exact retry), a different one raises."""
+        with the same identity is returned as is (exact retry), a different one raises.
+        `artifact_policy` (schema v6): "versioned" — the database checks every payload claim
+        the run's manifest rows make (V6_DDL) — or "unchecked" (metadata-only tests)."""
         store._check_run_id(run_id)
-        want = dict(zip(RUN_IDENTITY, (kind, parent_generation, producer_commit, config_digest,
-                                       extractor_version, cleaning_ruleset)))
-        cols = ", ".join(RUN_IDENTITY)
+        if artifact_policy not in ARTIFACT_POLICIES:
+            raise StoreError(f"artifact policy must be one of {ARTIFACT_POLICIES}")
+        want = dict(zip(RUN_IDENTITY + ("artifact_policy",),
+                        (kind, parent_generation, producer_commit, config_digest,
+                         extractor_version, cleaning_ruleset, artifact_policy)))
+        cols = ", ".join(want)
         row = self._q(f"SELECT status, {cols} FROM runs WHERE run_id = %s FOR UPDATE",
                       [run_id]).fetchone()
         if row is not None:
-            if dict(zip(RUN_IDENTITY, row[1:])) != want:
+            if dict(zip(want, row[1:])) != want:
                 raise StoreError(f"run {run_id} already exists with a different identity")
             return row[0]
         ds = self.dataset()
@@ -2038,7 +2307,7 @@ class Contracts:
             raise VersionConflict(f"run {run_id} would stage on generation {parent_generation}; "
                                   f"the current generation is {ds['current_generation']}")
         self._q(f"INSERT INTO runs (run_id, authority_epoch, writer_epoch, {cols}) VALUES "
-                "(%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                "(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                 [run_id, ds["epoch"], self._writer.epoch, *want.values()])
         return "open"
 
@@ -2071,6 +2340,11 @@ class Contracts:
         """Record artifact identity (stage, sha256) and optionally a locator; True if new. The
         same identity with a different size raises (identity is immutable)."""
         stage = Stage(stage).value
+        if locator is not None and kind == "local":
+            import artifact_store
+            if locator != artifact_store.local_locator(stage, sha256):
+                raise StoreError("a local locator is the content address "
+                                 f"{artifact_store.local_locator(stage, sha256)}, not {locator}")
         new = self._q("INSERT INTO artifacts (stage, sha256, size, first_run) VALUES "
                       "(%s, %s, %s, %s) ON CONFLICT DO NOTHING",
                       [stage, sha256, size, first_run]).rowcount == 1
@@ -2351,7 +2625,51 @@ class PgReadView:
         return bool(cfg.get("enabled", True)) and self.backend_state_get(name).enabled
 
     def resolve_artifact(self, id: str, stage: Stage):  # noqa: A002
-        return store.artifact_ref(self.get_manifest([id]).get(id), id, stage)
+        """Resolved through the view's membership: the visible row's claim (path, sha256); when
+        that identity is a registered artifact (schema v6), its local locator (the immutable
+        version) and registered size, else the claim's legacy path (store.artifact_ref)."""
+        return self.resolve_artifacts([id], stage).get(id)
+
+    def resolve_artifacts(self, ids: Sequence[str], stage: Stage) -> dict:
+        """resolve_artifact for up to MAX_KNOWN ids in two queries: {id: ArtifactRef}."""
+        stage = Stage(stage)
+        ids = list(dict.fromkeys(ids))
+        if len(ids) > store.MAX_KNOWN:
+            raise StoreError(f"resolve at most {store.MAX_KNOWN} ids per call")
+        refs = {i: ref for i, row in self.get_manifest(ids).items()
+                if (ref := store.artifact_ref(row, i, stage)) is not None}
+        shas = sorted({r.sha256 for r in refs.values() if isinstance(r.sha256, str)})
+        if not shas:
+            return refs
+        found = {sha: (loc, size) for sha, loc, size in self._q(
+            "SELECT DISTINCT ON (a.sha256) a.sha256, l.locator, a.size FROM artifacts a "
+            "JOIN artifact_locators l USING (stage, sha256) WHERE a.stage = %s AND "
+            "a.sha256 = ANY(%s) AND l.kind = 'local' ORDER BY a.sha256, l.locator",
+            [stage.value, shas])}
+        for i, ref in refs.items():
+            if (hit := found.get(ref.sha256)) is not None:
+                refs[i] = store.ArtifactRef(i, stage, f"file:{hit[0]}", ref.sha256, hit[1])
+        return refs
+
+    def provenance(self) -> dict | None:
+        """What this view pins (stage 4): the dataset, the committed generation and — for a
+        staging view — the run's recorded provenance (cleaning ruleset, extractor version,
+        artifact policy); for a committed view the provenance of generation G's run. None
+        before the first generation outside a run."""
+        if self.stage is not None:
+            row = self._q("SELECT r.run_id, r.cleaning_ruleset, r.extractor_version, "
+                          "r.artifact_policy, r.config_digest, d.dataset_uuid::text FROM runs r, "
+                          "dataset d WHERE r.run_id = %s", [self.stage[0]]).fetchone()
+        elif self.generation is not None:
+            row = self._q("SELECT r.run_id, g.cleaning_ruleset, g.extractor_version, "
+                          "r.artifact_policy, g.config_digest, d.dataset_uuid::text FROM "
+                          "generations g JOIN runs r USING (run_id), dataset d WHERE "
+                          "g.generation = %s", [self.generation]).fetchone()
+        else:
+            return None
+        return {"run": row[0], "cleaning_ruleset": row[1], "extractor_version": row[2],
+                "artifact_policy": row[3], "config_digest": row[4], "dataset": row[5],
+                "generation": self.generation, "staging": self.stage is not None}
 
 
 # --- write view -----------------------------------------------------------------------------------

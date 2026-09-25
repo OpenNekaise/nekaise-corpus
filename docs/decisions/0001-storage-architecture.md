@@ -1087,7 +1087,7 @@ wired in steps 4 and 6).
 - **Deferred to step 3 (immutable artifact versions).** Staging covers metadata only: raw/text/
   corpus bytes are still written in place by fetch/clean before their rows are staged, so an
   aborted run can leave changed local files; `artifacts`/`artifact_locators` are not yet filled
-  or consulted, and `corpus/` is not generation-stamped.
+  or consulted, and `corpus/` is not generation-stamped. (Done in step 3, record below.)
 - **Deferred to step 4 (recovery replacement).** Adopting a run under a new writer epoch
   (resume only with unchanged parent/config/code) — today a restarted coordinator can only abort
   (the persisted discovery request is replayed within its owner's session); shared recovery over
@@ -1231,3 +1231,201 @@ is still v4; the rule "ship a new migration" applies once v5 is deployed).
   (`nekaise_test`) 1297 passed / 1 skipped (the opt-in benchmark); run CONCURRENTLY on one host
   — the same results for both (before the fix, 11 round-recovery tests failed that way);
   `py_compile` clean.
+
+## Stage 4, step 3 record: local artifacts compatible with atomic metadata (2026-09-25)
+
+Plan decided by Codex: immutable local artifact versions for changed bytes, written and fsynced
+before their references are staged; existing committed paths stay readable; pruning changes
+membership only; payloads stay local (no packs, S3 or eviction); artifacts resolve through
+generation membership; `corpus/` becomes a generation-stamped materialization with supervised
+refresh that consumers acquire at a matching generation; the global ruleset stamp stops being
+policy authority. FileStore stays authoritative and the legacy loader/cleaner/pruner behaviour is
+unchanged (every step-6 equivalence test passes as before); the new path is active only inside a
+PostgreSQL staged run whose artifact policy is `versioned`.
+
+- **Immutable versions** (`scripts/artifact_store.py`). Identity `(stage, sha256)` of the exact
+  bytes; the local locator is the content address `artifacts/<stage>/<aa>/<bb>/<sha256>` under the
+  data root (git-ignored), registered apart from the identity (`artifact_locators`), so stage 5
+  can add pack/object locators without changing any identity. `put_bytes/put_file/put_stream`:
+  stream into a private temporary name (`artifacts/.incoming/<owner pid>-<hex>`) while hashing,
+  fsync, make it read-only (0444), hard-link it to its address (`link` never replaces a name; an
+  existing address is size-checked and a damaged one is never overwritten), fsync the address's
+  directory (parents created durably), unlink the temporary. **Group commit** for bulk writers
+  (the cleaner): `write_pending` (safe in worker processes; an unsynced temporary owned by the
+  parent's pid, or nothing when the version exists) then `commit(pending)`: ONE `syncfs`, link
+  every temporary to its address, a second `syncfs` (always), then drop the temporaries — the same
+  guarantee (an address exists only complete, and is durable when commit returns) at two syncs
+  per group instead of two fsyncs per version. `adopt(stage, file)` preserves an existing file's
+  bytes as a version by hard-linking its inode (made read-only first, then hashed; a copy across
+  filesystems). `sweep_incoming()` removes temporaries of dead owners or older than an hour.
+  Crash hooks at every boundary (`written`, `synced`, `linked`, `published`; `group-synced`,
+  `group-linked`, `group-published`).
+- **Claims.** A manifest row's claim on a stage is `(path, sha256)` from `raw_path`/`sha256`,
+  `text_path`/`text_sha256`, `corpus_path`/`corpus_sha256`; a path that is absent or JSON null
+  is no claim. Rows keep their logical paths (`raw/<source>/<id>.<ext>`, `text/<id>.md`,
+  `corpus/<id>.md`); a reader resolves a claim by identity — the immutable version when held
+  locally, else the claim's legacy path (`VersionedAccess`, relative paths only). Existing
+  committed files under `raw/`, `text/` and `corpus/` stay the locators of the unchanged claims
+  that name them; the staged path never writes those directories.
+- **Schema v6** (`store_pg.V6_DDL`, migration 6 — additive, one transaction under the writer
+  advisory lock, idempotent DDL; no projection row, revision, receipt, event or watermark
+  rewritten):
+  * `runs.artifact_policy` — `versioned` (the default for new runs) or `unchecked`; the migration
+    backfills every existing run `unchecked` (they were staged by code that knew nothing of
+    artifacts: `ADD COLUMN … DEFAULT 'unchecked'`, then `SET DEFAULT 'versioned'`); immutable; a
+    versioned run freezes only with the `"artifacts"` gate among its required gates (trigger;
+    `freeze()` says so first).
+  * `run_artifacts (run, stage, sha256, batch_seq)` — the identities a run's batches introduced;
+    FK to `artifacts`; inserted only by the transaction applying a batch (applied, unsealed, open
+    run — like revisions) and only for an artifact with a locator (checked per statement over the
+    transition table, with keyed lookups); immutable; deletable only for an aborted run
+    (`purge_run` now removes them; identities, locators and files stay).
+  * `artifact_locators` — created unverified, immutable except `verified_at` (set, or moved
+    forward); never deleted (stage 5 relaxes that with reference checks); a `local` locator must be
+    the canonical content address.
+  * The claim contract, checked when a batch of a versioned run seals (`nk_batch_artifacts`, in
+    the sealing transaction): every claim of the batch's manifest puts is either exactly the claim
+    of the row it superseded (found by the revision's `before_sha256` in the projection or any put
+    revision: equal digests, equal text) or a valid identity (non-empty string path, string
+    sha256) in `run_artifacts` for this run. One pass over the batch, one primary-key probe per
+    claim, the before-image fetched once per row and only for an unregistered claim.
+- **Staging** (`StagedWriteView._claim_artifacts`, versioned runs): for each manifest put, the
+  claims that changed from the row it supersedes must be valid identities whose version is on
+  disk (raw: with the row's `bytes`); new identities are registered with their local locator after
+  a directory barrier (an fsync per directory, one `syncfs` above 64) and every changed claim is
+  recorded in `run_artifacts` — all in the batch's own transaction, so a failed batch leaves no
+  registration (the file stays for the retry). Exact retries answer from the receipt. Lookups are
+  keyed (`LATERAL … OFFSET 0`), never scans of the growing global tables.
+- **Resolution through membership.** `PgReadView.resolve_artifact(s)` resolves the visible row of
+  the view (committed generation G, a staging overlay, or `read_generation(g)`): the registered
+  local locator when the identity is registered, else the claim's legacy path.
+  `PgReadView.provenance()` gives the view's dataset, generation and run provenance (cleaning
+  ruleset, extractor version, artifact policy, config digest). FileStore is unchanged.
+- **The pipeline steps** (`artifact_store.for_view(view, root)`: a `VersionedAccess` for a
+  versioned staged view, else None and exactly the legacy code path):
+  * loader — raw bytes `put_bytes("raw")`, extracted text `put_bytes("text")` (in the extraction
+    process), extraction reuse and `--reextract`/`--verify` read by claim; `raw/` and `text/` are
+    never written (a legacy file an earlier attempt left is not overwritten);
+  * pruner — reads text by claim; moves no bytes (no quarantine): pruning changes membership, so
+    every payload an admitted document or a retained generation claims stays;
+  * cleaner — the **run's** `cleaning_ruleset` is the policy (`--rules` must equal it; the
+    `corpus/.ruleset` stamp is neither read nor written); a row is up to date when its
+    `cleaner_version` is the ruleset's, its new `corpus_source_sha256` equals the text identity it
+    claims, and its cleaned version is held locally; otherwise it is cleaned byte for byte as the
+    legacy cleaner does (`read_text` exactly as before; pass-through copies bytes; output encoded
+    as `write_text` would) into pending versions committed in groups of 5 000 BEFORE the rows claim
+    them; a text payload that does not hash to its row's `text_sha256` is reported, not cleaned;
+    restricted rows lose their corpus fields as before (`corpus_source_sha256` joined
+    `CORPUS_FIELDS`); `corpus/` is not touched. `--check` inside a staged run checks the claims,
+    not `corpus/`.
+- **`corpus/` as a materialization** (`scripts/materialize.py`). `refresh(st, root)` makes
+  `corpus/` (or another directory) a materialization of committed generation G (default: the
+  current one; a staged view is refused): `corpus/<id>.md` for every row of G that is ok, eligible
+  under G's pinned policy and claims a cleaned payload — a hard link to its immutable version
+  (a legacy file is adopted as a version first, its identity checked) — under the exclusive
+  `corpus/.materialization.lock`, after durably stamping `corpus/.materialization.json`
+  `refreshing`, installing by link-to-temporary + rename, and only at the end the directory fsync
+  and the `complete` stamp (dataset, generation, config digest, ruleset). Every file replaced or
+  removed is preserved as a version first. Incremental when the stamp is at (or refreshing from)
+  B <= G of the same dataset and configuration: only ids revised by generations in (B, G]
+  (`store_staging.changed_manifest_ids`; revisions of promoted runs are never purged) are
+  revisited; otherwise a full pass plus a sweep of files outside G's membership. A member whose
+  payload is missing fails the refresh and the stamp stays `refreshing`. Consumers call
+  `acquire(dir, generation=…)` / `acquire_current(st, root)`: a shared lock for as long as they
+  read, refused unless the stamp is `complete` at that generation of that dataset.
+- **The artifact gate.** `artifact_store.verify_run` re-hashes (streamed, paged) every version the
+  run referenced whose locator was never verified and marks them; `StagedRound.verify_artifacts()`
+  records the `artifacts` gate at the frozen state (a damaged version fails it and promotion is
+  refused).
+- **Tests.** `tests/test_artifact_store.py` (25, no database): the write protocol; exceptions AND
+  real process kills at each boundary (an address is absent or complete, the retry converges, a
+  killed writer's temporary is swept, a live writer's is kept); the group commit and a crash at
+  each of its boundaries; damaged versions never overwritten; adoption without copying; claims;
+  resolution order and path safety; FileStore views keep the legacy path; the materialization
+  lock/stamp protocol. `tests/test_store_pg_artifacts.py` (25, PostgreSQL): **a staged round
+  (loader, pruner, cleaner with the production ruleset, artifact gate, promotion,
+  materialization) against the legacy pipeline on the same repository — identical manifest rows
+  (but the new field), raw/text bytes resolved from versions identical to the legacy files,
+  materialized corpus identical file for file (CJK prose with a page marker, numeric tables,
+  Modelica equations with diagram geometry, German with patent id soup, CRLF text), nothing under
+  raw/text/corpus changed during the round, the replaced legacy corpus file preserved**; the claim
+  contract (missing version, invalid or null identity, wrong raw size, empty path; registration
+  and retry; unchanged legacy claims pass) and the same with the client check switched off (the
+  database refuses at sealing; a claim registered for another run does not count; unchecked runs
+  keep the step-2 rules); rollback of registrations with a failed batch; the v6 contract tables
+  against direct SQL; a reference needs a located artifact; the artifact gate is required at
+  freeze; resolution through membership (committed vs staged); **crash injection with G readable
+  throughout** (every claimed payload of G resolves to bytes with its identity; the materialized
+  corpus unchanged and acquirable): a loader child killed after its 3rd/9th version, after a
+  link, after an fsync, or before its checkpoint submits, then a new round converges and G0
+  (pinned) stays readable; a prune killed before its batch (no byte moved), then a prune that
+  drops a held document (bytes all kept, the incremental refresh removes one file); a cleaner
+  killed between metadata batches under a ruleset change, then a new round converging to a fresh
+  full materialization; a promotion failing inside its transaction, then retried; a
+  materialization killed after its stamp, after an install, after the sweep, before the complete
+  stamp, or inside an adoption — refused to consumers, then converging to a fresh full refresh
+  with the legacy bytes preserved; eligibility, stray files, stale generations, an older
+  generation materialized elsewhere while pinned, refresh refused from a staged view; a damaged
+  version fails the gate; the migration: a shadow imported and synced by the real v5 code
+  (`git show e03860403a`) migrates with identical `pg_shadow` digests, byte-identical export and
+  authority, `verify` OK, keeps syncing, v5 clients refused; v5 runs (promoted, and open with
+  unregistered claims) backfilled `unchecked`, the promoted generation reads as before, the
+  orphaned open run aborts and purges, new runs are versioned. Step-2 tests that stage synthetic
+  rows (fake hashes) open `unchecked` runs; schema-version assertions follow `SCHEMA_VERSION`; the
+  contract test's local locator is canonical.
+- **Benchmark** (`tests/test_artifacts_bench.py`, opt-in like step 2; a throwaway schema of
+  `nekaise_test` and a directory on the corpus's own NVMe disk — `/tmp` is tmpfs on this host,
+  where fsync is free), 1.62M synthetic documents:
+
+  | 1.62M documents, real disk | time |
+  |---|---|
+  | `put_bytes` 10 KB text / 5 MB raw / already present (p50) | 2.1 ms / 10 ms / 1.4 ms |
+  | group commit of 5 000 cleaned versions (write + 2 syncfs, p50) | 0.45 s (≈ 0.09 ms each; per-file puts ≈ 11 s) |
+  | loader checkpoint, 25 new documents with raw + text versions (p50): versioned / unchecked | 34 ms / 19 ms |
+  | cleaner batch, 20 000 patches with new corpus versions: versioned / unchecked | 4.6 s / 1.8 s |
+  | artifact gate re-hashing 20 000 versions | 1.4 s |
+  | promotion (versioned) | 3.5 ms |
+  | materialization: full refresh (1.62M rows scanned, 40 000 members linked) | 24 s |
+  | materialization: incremental after a 400-row round / nothing changed | 0.84 s / 0.03 s |
+  | peak client RSS | 227 MB |
+
+  A full re-clean of 1.62M rows therefore stages in ≈ 82 × 4.6 s ≈ 6.3 min plus ≈ 2.5 min of group
+  commits (unchecked staging ≈ 2.5 min); a typical round's versioned metadata stays well under a
+  second. Found while measuring: per-row trigger checks and set joins against the growing global
+  tables were planner-dependent (in an ad-hoc probe a stale-statistics nested loop over
+  `run_artifacts` ran for 30 minutes), so every check now uses keyed probes (`LATERAL … OFFSET 0`,
+  a statement-level insert check, a plpgsql pass over the batch); and one fsync per version made
+  a 20 000-document clean take ~45 s of fsyncs, hence the group commit.
+- **Decisions the plan left open** (for review): the local layout and its two-level fan-out;
+  identity = sha256 of the exact bytes per stage; rows keep logical paths and gain no locator
+  field; the only new manifest field is `corpus_source_sha256` (versioned cleaning only); the
+  artifact policy is per run, `versioned` by default, `unchecked` kept for metadata-only runs and
+  pre-v6 runs (it is also the rollback switch: an unchecked staged run is exactly step 2); the
+  claim rule is "unchanged, or registered for this run", checked by the client AND at sealing;
+  registration happens in the referencing batch's transaction (no separate registration step to
+  crash between); the stager's barrier is a directory fsync or one `syncfs`; bulk durability by
+  group commit; the artifact gate is mandatory for versioned runs and hashes only never-verified
+  versions; `corpus/` stays at its path as an in-place materialization under a lock (not a
+  symlink swap) with a stamp consumers must match; replaced or removed materialized files are
+  adopted as versions; the materializer does not register adopted versions in PostgreSQL (the
+  content address is self-describing and resolution checks it first); `.ruleset` is left in place
+  (never consulted under the staged path; a rollback to file authority still finds it). Like run
+  ownership, the policy and the claim rule keep one trusted host's writers consistent; they are
+  not an authorization boundary.
+- **Deferred to step 4 (recovery replacement).** Wiring `run_round` and the maintainer to staged
+  rounds (their freeze must name the `artifacts` gate; `corpus/` is refreshed after promotion,
+  supervised); resuming an adopted run (today a crashed round's run is aborted and a new one
+  re-uses the versions already written); sweeping `.incoming` in recovery; the round's
+  `clean --check` gate becomes the versioned claim check plus the artifact gate.
+- **Deferred to step 5 (artifacts move).** Reference-checked garbage collection of versions no
+  retained generation or open run references (aborted runs', adopted legacy copies, replaced
+  materializations) — nothing is deleted today; periodic re-verification of verified versions;
+  pack/object locators and eviction; registering adopted legacy versions in PostgreSQL (a
+  background adoption of the pre-cutover raw/text/corpus files, so every generation-0 claim has a
+  registered identity); `backup_corpus` for `artifacts/`.
+- **Rollback.** Before cutover: open staged runs `unchecked` (step-2 behaviour) or simply keep
+  FileStore authority (nothing in production uses the path yet). Created versions are retained for
+  reference-checked cleanup; schema v6 stays (older code is refused, as after every migration).
+- **Gates**: full suite 1183 passed / 142 skipped (PG skipped), with PostgreSQL (`nekaise_test`)
+  1353 passed / 2 skipped (the two opt-in benchmarks); `py_compile scripts/*.py` clean. Nothing
+  ran against the live schema or checkout.

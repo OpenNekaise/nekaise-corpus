@@ -4,6 +4,8 @@
 raw/
 text/
 corpus/
+# Immutable payload versions of PostgreSQL-staged runs (ADR 0001 stage 4 step 3) — same bytes, same rule
+artifacts/
 
 # Agent scratch space — one-off scripts & notes stay local (see workspace/README.md)
 workspace/*

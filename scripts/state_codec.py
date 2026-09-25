@@ -69,7 +69,8 @@ FIELDS = REQUIRED_FIELDS + OPTIONAL_FIELDS
 # Licenses in this set are registry pointers only: their metadata is useful for authorized users,
 # but the loader must never fetch their bytes and the manifest must never describe a local payload.
 POINTER_ONLY_LICENSES = frozenset({"proprietary-internal"})
-CORPUS_FIELDS = ("corpus_path", "corpus_chars", "corpus_sha256", "cleaner_version")
+CORPUS_FIELDS = ("corpus_path", "corpus_chars", "corpus_sha256", "cleaner_version",
+                 "corpus_source_sha256")  # the last: stage 4 step 3 (versioned cleaning only)
 ENTRY_RE = re.compile(r"^  - id:\s*['\"]?(.+?)['\"]?\s*$")
 _FIELD_RE = re.compile(r"^    \s*\S")  # continuation lines of one entry
 # Quality decisions grow independently of the live registry because pruned sources can be
