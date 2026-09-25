@@ -16,6 +16,15 @@ Semantics (RFC 9309 plus the Google extensions every host we meet uses):
   * 401/403/429, 5xx, a challenge page, a timeout or a network error = UNAVAILABLE: the caller
     defers (no request is made to the protected URL; the discovery cursor/loader row is held,
     never marked failed or exhausted).
+Paths are compared in ONE normal form (normalize_path: percent-escapes of unreserved characters
+decoded exactly as requests' requote_uri does, other escapes upper-cased, non-ASCII UTF-8
+percent-encoded), so `/%70rivate/x` cannot slip past `Disallow: /private/`.
+
+The robots.txt request itself follows at most MAX_REDIRECTS redirects MANUALLY, each hop checked
+against the pinned host policy (set_policy) and — when a hop filter is installed (set_hop_filter,
+the programme's reviewed hosts) — against it; a refused hop makes robots UNAVAILABLE (defer).
+Requests are paced through an installed pacer (set_pacer: the caller's per-host clock) and
+concurrent lookups of one origin are coalesced (one fetch, per-origin lock).
 Results are cached per origin for CACHE_TTL (24 h) in memory and under workspace/robots-cache/
 (scratch; losing it only costs one refetch).
 """
@@ -41,8 +50,29 @@ MAX_ROBOTS_BYTES = 512 * 1024
 CHALLENGE = re.compile(rb"<html|captcha|challenge|cf-chl|awswaf|request rejected|access denied",
                        re.I)
 
+MAX_REDIRECTS = 5
+REDIRECTS = frozenset({301, 302, 303, 307, 308})
 _memory: dict[str, dict] = {}
 _lock = threading.Lock()
+_origin_locks: dict[str, threading.Lock] = {}
+POLICY: dict[str, dict] = {}
+_pacer = None      # callable(url) -> None, paces one request (installed by the caller)
+_hop_filter = None  # callable(url) -> bool, whether a robots redirect hop may be requested
+
+
+def set_policy(policy: dict[str, dict]) -> None:
+    POLICY.clear()
+    POLICY.update(policy or {})
+
+
+def set_pacer(pacer) -> None:
+    global _pacer
+    _pacer = pacer
+
+
+def set_hop_filter(hop_filter) -> None:
+    global _hop_filter
+    _hop_filter = hop_filter
 
 
 class RobotsUnavailable(RuntimeError):
@@ -97,9 +127,22 @@ def _select(groups: list[dict], token: str = UA_TOKEN) -> tuple[list[tuple[bool,
     return rules, (max(delays) if delays else None)
 
 
+_UNRESERVED = frozenset("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~")
+
+
+def normalize_path(path: str) -> str:
+    """One normal form for rule patterns and request paths (see module docstring)."""
+    def esc(m: re.Match) -> str:
+        ch = chr(int(m.group(1), 16))
+        return ch if ch in _UNRESERVED else "%" + m.group(1).upper()
+    path = re.sub(r"%([0-9A-Fa-f]{2})", esc, path)
+    return "".join(c if ord(c) < 128 else "".join(f"%{b:02X}" for b in c.encode("utf-8"))
+                   for c in path)
+
+
 def _pattern_regex(pattern: str) -> re.Pattern:
     anchored = pattern.endswith("$")
-    body = pattern[:-1] if anchored else pattern
+    body = normalize_path(pattern[:-1] if anchored else pattern)
     rx = "".join(".*" if ch == "*" else re.escape(ch) for ch in body)
     return re.compile(rx + ("$" if anchored else ""))
 
@@ -107,7 +150,7 @@ def _pattern_regex(pattern: str) -> re.Pattern:
 def _path_of(url: str) -> str:
     parts = urlsplit(url)
     path = parts.path or "/"
-    return path + (f"?{parts.query}" if parts.query else "")
+    return normalize_path(path + (f"?{parts.query}" if parts.query else ""))
 
 
 def permits(rules: list[tuple[bool, str]], url: str) -> bool:
@@ -136,9 +179,7 @@ def _fetch(org: str, fetcher=None) -> dict:
         if fetcher is not None:
             status, body = fetcher(url)
         else:
-            r = requests.get(url, headers=UA, timeout=TIMEOUT, allow_redirects=True, stream=True)
-            status = r.status_code
-            body = r.raw.read(MAX_ROBOTS_BYTES, decode_content=True) if status == 200 else b""
+            status, body = _get_manual(url)
     except requests.RequestException as exc:
         raise RobotsUnavailable(f"{url}: network error {exc}") from exc
     if status in (404, 410):
@@ -149,6 +190,33 @@ def _fetch(org: str, fetcher=None) -> dict:
     if head[:1] == b"<" and CHALLENGE.search(head):
         raise RobotsUnavailable(f"{url}: HTML/challenge page instead of robots.txt")
     return {"status": "ok", "text": body.decode("utf-8", "replace"), "fetched_at": time.time()}
+
+
+def _hop_allowed(url: str) -> bool:
+    import host_policy
+    if host_policy.suspended(url, POLICY):
+        return False
+    return _hop_filter is None or bool(_hop_filter(url))
+
+
+def _get_manual(url: str) -> tuple[int, bytes]:
+    """GET robots.txt following redirects by hand; every hop policy-checked and paced."""
+    from urllib.parse import urljoin
+    hop = url
+    for _ in range(MAX_REDIRECTS + 1):
+        if not _hop_allowed(hop):
+            raise RobotsUnavailable(f"robots.txt redirect to a refused host: {hop}")
+        if _pacer is not None:
+            _pacer(hop)
+        r = requests.get(hop, headers=UA, timeout=TIMEOUT, allow_redirects=False, stream=True)
+        if r.status_code in REDIRECTS and r.headers.get("location"):
+            hop = urljoin(hop, r.headers["location"])
+            r.close()
+            continue
+        body = r.raw.read(MAX_ROBOTS_BYTES, decode_content=True) if r.status_code == 200 else b""
+        r.close()
+        return r.status_code, body
+    raise RobotsUnavailable(f"{url}: more than {MAX_REDIRECTS} redirects")
 
 
 def load(url: str, fetcher=None, *, use_disk: bool = True) -> dict:
@@ -169,9 +237,16 @@ def load(url: str, fetcher=None, *, use_disk: bool = True) -> dict:
                 return rec
         except (OSError, ValueError, KeyError):
             pass
-    rec = _fetch(org, fetcher)
     with _lock:
-        _memory[org] = rec
+        origin_lock = _origin_locks.setdefault(org, threading.Lock())
+    with origin_lock:  # concurrent cold lookups of one origin: one fetch, the rest wait
+        with _lock:
+            rec = _memory.get(org)
+        if rec and time.time() - rec["fetched_at"] < CACHE_TTL:
+            return rec
+        rec = _fetch(org, fetcher)
+        with _lock:
+            _memory[org] = rec
     if use_disk and fetcher is None:
         try:
             CACHE_DIR.mkdir(parents=True, exist_ok=True)

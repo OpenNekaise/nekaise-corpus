@@ -103,6 +103,50 @@ def first_page_url(lei: str) -> str:
     return f"{BASE}/api/entities/{lei}/filings?page%5Bsize%5D={PAGE_SIZE}"
 
 
+def interim_filer(issuer: dict, filings: list[dict]) -> bool:
+    """Whether the issuer also files non-fiscal-year-end (interim) ESEF reports: then a
+    fiscal-year-end period alone does not prove an ANNUAL report (a Q4/half-year report can end
+    on the same day), so its filings go to the review queue instead of the registry."""
+    for f in filings:
+        a = f.get("attributes") or {}
+        period = str(a.get("period_end") or "")
+        if a.get("report_url") and re.fullmatch(r"\d{4}-\d{2}-\d{2}", period) \
+                and period[5:] != issuer["fiscal_year_end"]:
+            return True
+    return False
+
+
+def queue_for_review(issuer: dict, filings: list[dict], why: str) -> None:
+    """Ambiguous filings are recorded, never silently dropped (workspace/esef-review.jsonl)."""
+    try:
+        import ops
+        path = ops.WORKSPACE / "esef-review.jsonl"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a") as fh:
+            for f in filings:
+                a = f.get("attributes") or {}
+                if a.get("report_url"):
+                    fh.write(json.dumps({"lei": issuer["lei"], "name": issuer["name"],
+                                         "fxo_id": a.get("fxo_id"), "period_end": a.get("period_end"),
+                                         "report_url": a.get("report_url"), "why": why}) + "\n")
+    except OSError:
+        pass
+    print(f"# {issuer['name']}: {why}; {len(filings)} filing(s) queued for review",
+          file=sys.stderr)
+
+
+def filing_id(issuer: dict, period: str, fxo: str, stem: str) -> str:
+    """esf-<lei>-<period>-<package>-<report stem>; long ids keep a stable hash instead of being
+    truncated into collisions (amended packages and language versions stay distinct)."""
+    import hashlib
+    package = registry.slug(re.sub(rf"^{issuer['lei']}-{period}-", "", fxo or "") or "pkg")
+    sid = f"esf-{issuer['lei'].lower()}-{period}-{package}-{stem}"
+    if len(sid) > 110:
+        digest = hashlib.sha1(sid.encode()).hexdigest()[:10]
+        sid = f"{sid[:98].rstrip('-')}-{digest}"
+    return sid
+
+
 def annual_entries(issuer: dict, filings: list[dict], cfg: dict) -> list[dict]:
     out = []
     for f in filings:
@@ -117,13 +161,12 @@ def annual_entries(issuer: dict, filings: list[dict], cfg: dict) -> list[dict]:
         lang_m = re.search(r"-(sv|en|da|fi|no|nb|de|fr|es|it|nl|pl|pt)(?:-|$)", stem)
         lang = {"no": "nb"}.get(lang_m.group(1), lang_m.group(1)) if lang_m else ""
         entry = {
-            "id": f"esf-{issuer['lei'].lower()}-{period}-{stem}"[:90].rstrip("-"),
+            "id": filing_id(issuer, period, str(a.get("fxo_id") or ""), stem),
             "title": (f"{issuer['name']} annual report {period}" + (f" ({lang})" if lang else "")
                       + f" [ESEF {a.get('fxo_id') or stem}; {stem}]"),
             "url": url, "source": "esef", "license": cfg["license"], "topic": issuer["topic"],
             "format": "html", "jurisdiction": issuer["country"],
             "document_type": "annual-financial-report-esef",
-            "published_at": str(a.get("date_added") or "")[:10] or None,
             "persistent_id": f"lei:{issuer['lei']}/{a.get('fxo_id') or stem}",
             "license_url": ABOUT,
             "license_evidence": cfg["license_evidence"],
@@ -158,6 +201,7 @@ def run(cursor: str, maxn: int, entities: int, pages: int, max_requests: int, cf
     issuers = cfg["issuers"]
     e, page_url = cur["e"], cur["p"]
     out: list[dict] = []
+    ambiguous: dict[str, bool] = {}
     visited = pages_done = requests_left = 0
     requests_left = max_requests
     try:
@@ -170,7 +214,16 @@ def run(cursor: str, maxn: int, entities: int, pages: int, max_requests: int, cf
                 requests_left -= 1
                 pages_done += 1
                 doc = fetch(url)
-                cands = annual_entries(issuer, doc.get("data") or [], cfg)
+                filings = doc.get("data") or []
+                paged = bool((doc.get("links") or {}).get("next")) or url != first_page_url(
+                    issuer["lei"])  # classification needs ALL of the issuer's filings at once
+                if interim_filer(issuer, filings) or paged or ambiguous.get(issuer["lei"]):
+                    ambiguous[issuer["lei"]] = True
+                    queue_for_review(issuer, filings, "issuer also files interim ESEF reports; "
+                                     "annual status not established by period alone")
+                    cands = []
+                else:
+                    cands = annual_entries(issuer, filings, cfg)
                 keys.prefetch(urls=[c["url"] for c in cands], ids=[c["id"] for c in cands])
                 fresh = [c for c in cands if c["url"] not in keys.urls and c["id"] not in keys.ids]
                 taken = fresh[:max(0, maxn - len(out))]
@@ -214,15 +267,17 @@ def main() -> None:
     ap.add_argument("--max-requests", type=int, default=4)
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
-    cfg = load_config()
+    cfg = compliance_common.pinned_config("esef.json", validate)  # the view's pinned copy
     if args.issuer:
         cfg = {**cfg, "issuers": [i for i in cfg["issuers"] if i["lei"] == args.issuer]}
         if not cfg["issuers"]:
             raise SystemExit(f"LEI {args.issuer} is not a reviewed issuer in esef.json")
         args.cursor = "START"
-    compliance_common.pin_host_policy()
     keys = dedup.open_keys()
     report = finder_protocol.Report()
+    if compliance_common.review_due(cfg.get("rights_reviewed_at")):
+        report.hold("registry/esef.json rights review is due")
+        return
     out = run(args.cursor, args.max, args.entities, args.pages, args.max_requests, cfg, keys,
               report)
     ok, held = compliance_common.split_appendable(out)

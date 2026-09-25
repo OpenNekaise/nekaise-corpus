@@ -20,6 +20,11 @@
       "hosts": [
         "data.riksdagen.se"
       ],
+      "version_probe": {
+        "bytes": 800,
+        "pattern": "Ändrad:[ \\t]*t\\.o\\.m\\.\\s*SFS\\s*(\\d{4}):(\\d+)",
+        "unamended": "Ändrad:[ \\t]*\\r?\\n"
+      },
       "robots": "data.riksdagen.se: robots.txt 404 (none); www.riksdagen.se names Claude* crawlers only with crawl-delay 1",
       "items": [
         {
@@ -233,11 +238,6 @@
       "jurisdiction": "FI",
       "document_type": "regulation",
       "delay": 5,
-      "quality_profile": "normative",
-      "hosts": [
-        "finlex.fi",
-        "www.finlex.fi"
-      ],
       "robots": "ym.fi Crawl-delay 5; finlex.fi disallows only /_next/image",
       "seeds": [
         "https://ym.fi/rakentamismaaraykset"

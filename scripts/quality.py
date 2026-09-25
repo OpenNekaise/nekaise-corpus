@@ -256,10 +256,14 @@ def verdict(m: dict, book: bool) -> str:
 # Rows extracted before `uwords` existed fall back to the Latin word count.
 NORMATIVE_MIN_CHARS = 300
 NORMATIVE_MIN_WORDS = 40
-NORMATIVE_MIN_ALPHA = 0.40
+NORMATIVE_MIN_ALPHA = 0.20  # numeric legal tables are content; binary junk sits far lower
 
 
 def verdict_normative(m: dict, book: bool) -> str:
+    # the text must carry the instrument's own identifiers (compliance_common.instrument_anchor,
+    # computed at extraction): a login/error/navigation page or another act never passes
+    if m.get("anchor") is not True:
+        return "unanchored"
     is_book = book and m["total"] > BOOK_MIN_CHARS
     w = m["w100"] if is_book else m["w20"]
     if w["chars"] < NORMATIVE_MIN_CHARS:

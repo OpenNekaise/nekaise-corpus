@@ -25,7 +25,7 @@ by probing each amendment once (HEAD; a 404 is remembered in workspace/ for PROB
 Statutory text: public domain under upphovsrättslagen (1960:729) 9 §. Ids are deterministic
 (`bov-bfs-<grund>-<doc>`, consolidation `…-kons`), titles start with the BFS number so versions
 never collapse under title dedup. Dynamic cursor: START | <index into the published-date-sorted
-feed> | watch:<YYYY-MM-DD> (after a full pass the feed is re-read at most every WATCH_DAYS days;
+feed>:<feed fingerprint> | watch:<YYYY-MM-DD> (after a full pass the feed is re-read at most every WATCH_DAYS days;
 new BFS enter through the same dedup). --max is a hard cap on proposed entries and
 --max-requests on HTTP requests (robots.txt fetches excluded); a capped run reports NEXT at the
 first unprocessed entry, an access deferral reports HOLD.
@@ -201,25 +201,21 @@ class Budget:
 
 
 def head_exists(url: str) -> bool | None:
-    """True/False for a konsolidering PDF; None = could not be established now (defer)."""
+    """True/False for a konsolidering PDF; None = could not be established now (defer).
+    The HEAD goes through the programme gate (reviewed host, host policy, robots.txt with its
+    Crawl-delay, shared host clock); a policy refusal counts as "not collectable" (False)."""
     import polite_http
     try:
-        polite_http.check(url)
+        r = polite_http.head(url, delay=BFS_DELAY)
     except polite_http.Deferred:
         return None
-    polite_http._pace(host_policy_host(url), BFS_DELAY)  # noqa: SLF001
-    r = requests.head(url, headers=polite_http.UA, timeout=polite_http.TIMEOUT,
-                      allow_redirects=False)
+    except polite_http.Refused:
+        return False
     if r.status_code == 200 and "pdf" in (r.headers.get("content-type") or "").lower():
         return True
     if r.status_code in (404, 410):
         return False
     return None
-
-
-def host_policy_host(url: str) -> str:
-    import host_policy
-    return host_policy.canonical_host(url)
 
 
 def run_bfs(cursor: str, maxn: int, max_requests: int, keys, report, today: date | None = None,
@@ -235,7 +231,8 @@ def run_bfs(cursor: str, maxn: int, max_requests: int, keys, report, today: date
             report.next(cursor)  # watch phase: nothing to do yet, no request
             return []
         cursor = "0"
-    index = 0 if cursor in ("START", "") else int(cursor)
+    raw_index, _, want_fp = ("0" if cursor in ("START", "") else cursor).partition(":")
+    index = int(raw_index)
     budget = Budget(max_requests)
     if not budget.take():
         report.hold("--max-requests 0")
@@ -244,12 +241,16 @@ def run_bfs(cursor: str, maxn: int, max_requests: int, keys, report, today: date
         text = (fetch_feed or (lambda: polite_http.get(FEED, delay=BFS_DELAY,
                                                        expect="xml").text))()
         items = parse_feed(text)
-    except (polite_http.Deferred, requests.RequestException, ET.ParseError, ValueError) as exc:
+    except (polite_http.Deferred, polite_http.Refused, polite_http.TooLarge,
+            requests.RequestException, ET.ParseError, ValueError) as exc:
         report.hold(f"BFS feed unavailable: {exc}")
         return []
     if not items:
         report.hold("BFS feed parsed to zero entries (refusing to treat as exhaustion)")
         return []
+    fp = feed_fingerprint(items)
+    if want_fp and want_fp != fp or index > len(items):
+        index = 0  # the feed changed under the cursor: re-walk from the start (dedup is safe)
     probe = probe or head_exists
     probes = load_probes()
     out: list[dict] = []
@@ -299,8 +300,14 @@ def run_bfs(cursor: str, maxn: int, max_requests: int, keys, report, today: date
     elif stop_at == index and not out:
         report.hold("no progress possible this run (request budget or access deferral)")
     else:
-        report.next(str(stop_at))
+        report.next(f"{stop_at}:{fp}")
     return out
+
+
+def feed_fingerprint(items: list[dict]) -> str:
+    """Of the whole ordered feed: an offset into a changed feed could skip unseen entries."""
+    import hashlib
+    return hashlib.sha1("\n".join(i["pdf"] for i in items).encode()).hexdigest()[:12]
 
 
 def main_bfs(args) -> None:

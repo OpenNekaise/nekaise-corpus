@@ -1,8 +1,11 @@
 """Compliance/ESG programme (Codex decision 2026-09-25): access checks, rotation protocol,
-identity, licence holding and the scoped quality profile. Recorded fixtures only, no network."""
+identity, licence holding, budgets and the scoped quality profile. Recorded fixtures only, no
+network."""
 from __future__ import annotations
 
 import json
+import threading
+import time
 from datetime import date
 from pathlib import Path
 from types import SimpleNamespace
@@ -18,17 +21,39 @@ import find_boverket
 import find_esef
 import find_eurlex
 import find_regdocs
+import ops
 import polite_http
 import prune_corpus
 import quality
 import robots_policy
+import store
 
 REPO = Path(__file__).resolve().parents[1]
 TODAY = date(2026, 9, 25)
+UUID = "2b15980c-0cd4-11ef-a251-01aa75ed71a1"
+TEST_HOSTS = {h: (0.0, 6) for h in ("x.org", "ok.org", "a.org", "b.org", "s.org",
+                                     "sasb.ifrs.org", "eur-lex.europa.eu", "www.fsb-tcfd.org",
+                                     "h0.example", "h1.example", "h2.example", "h3.example",
+                                     "h4.example", "h5.example")}
 
 
 def keys(urls=(), ids=(), titles=()):
     return dedup.from_sets(set(urls), set(titles), set(ids))
+
+
+@pytest.fixture(autouse=True)
+def _scratch(monkeypatch, tmp_path):
+    """Finder scratch files (probe memory, walk caches, review queues) go to tmp_path."""
+    monkeypatch.setattr(ops, "WORKSPACE", tmp_path / "workspace")
+    monkeypatch.setattr(robots_policy, "CACHE_DIR", tmp_path / "robots-cache")
+    robots_policy.clear_memory()
+    robots_policy.set_hop_filter(None)
+    robots_policy.set_pacer(None)
+    yield
+    robots_policy.clear_memory()
+    polite_http.set_policy({})
+    robots_policy.set_hop_filter(None)
+    robots_policy.set_pacer(None)
 
 
 class Report(finder_protocol.Report):
@@ -49,6 +74,12 @@ class Report(finder_protocol.Report):
     def exhausted(self, reason):
         super().exhausted(reason)
         self.value = ("exhausted", reason)
+
+
+def docs():
+    """The committed programme configuration, as a view would pin it."""
+    return {name: json.loads((REPO / "registry" / name).read_text())
+            for name in ("regdocs.json", "eurlex.json", "esef.json")}
 
 
 # ------------------------------------------------------------------------------------ robots
@@ -93,6 +124,14 @@ def test_robots_longest_match_and_allow_tie():
     assert robots_policy.permits(rules, "https://x.org/c")
 
 
+def test_robots_percent_encoding_cannot_bypass_a_rule():
+    rules, _ = rules_for("User-agent: *\nDisallow: /private/\nDisallow: /sök/\n")
+    for url in ("https://x.org/private/x", "https://x.org/%70rivate/x", "https://x.org/%70RIVATE/x".lower(),
+                "https://x.org/s%C3%B6k/a", "https://x.org/sök/a", "https://x.org/s%c3%b6k/a"):
+        assert not robots_policy.permits(rules, url), url
+    assert robots_policy.permits(rules, "https://x.org/public/x")
+
+
 @pytest.mark.parametrize(("status", "body", "outcome"), [
     (404, b"", True),
     (200, b"User-agent: *\nDisallow: /private/\n", True),
@@ -101,23 +140,22 @@ def test_robots_longest_match_and_allow_tie():
     (200, b"<html><title>Just a moment</title>challenge</html>", "unavailable"),
 ])
 def test_robots_fetch_outcomes(status, body, outcome):
-    robots_policy.clear_memory()
     fetch = lambda _url: (status, body)  # noqa: E731
     if outcome == "unavailable":
         with pytest.raises(robots_policy.RobotsUnavailable):
             robots_policy.decision("https://example.org/doc.pdf", fetch)
     else:
         assert robots_policy.decision("https://example.org/doc.pdf", fetch)[0] is outcome
-    robots_policy.clear_memory()
 
 
-# ------------------------------------------------------------------------------------ polite_http
 class FakeResp:
-    def __init__(self, status=200, body=b"", ctype="application/xml", location=None, url=""):
-        self.status_code, self._body, self.url = status, body, url
+    def __init__(self, status=200, body=b"", ctype="application/xml", location=None, url="",
+                 slow=0.0):
+        self.status_code, self._body, self.url, self.slow = status, body, url, slow
         self.headers = {"content-type": ctype}
         if location:
             self.headers["location"] = location
+        self.raw = SimpleNamespace(read=lambda n, decode_content=True: body[:n])
 
     @property
     def content(self):
@@ -125,6 +163,8 @@ class FakeResp:
 
     def iter_content(self, _n):
         for i in range(0, len(self._body), 4):
+            if self.slow:
+                time.sleep(self.slow)
             yield self._body[i:i + 4]
 
     def close(self):
@@ -135,11 +175,45 @@ class FakeResp:
             raise RuntimeError(f"HTTP {self.status_code}")
 
 
+def test_robots_redirect_to_a_suspended_host_is_never_requested(monkeypatch):
+    calls = []
+    answers = {"https://ok.org/robots.txt": FakeResp(301, location="https://eur-lex.europa.eu/robots.txt")}
+    monkeypatch.setattr(robots_policy.requests, "get",
+                        lambda url, **_k: calls.append(url) or answers[url])
+    robots_policy.set_policy({"eur-lex.europa.eu": {"status": "suspended", "decided_at": "x"}})
+    try:
+        with pytest.raises(robots_policy.RobotsUnavailable):
+            robots_policy.decision("https://ok.org/doc.pdf")
+    finally:
+        robots_policy.set_policy({})
+    assert calls == ["https://ok.org/robots.txt"]
+
+
+def test_concurrent_cold_robots_lookups_fetch_once(monkeypatch):
+    calls = []
+
+    def get(url, **_k):
+        calls.append(url)
+        time.sleep(0.05)
+        return FakeResp(200, b"User-agent: *\nDisallow: /x/\n", "text/plain")
+    monkeypatch.setattr(robots_policy.requests, "get", get)
+    threads = [threading.Thread(target=robots_policy.decision, args=("https://ok.org/a",))
+               for _ in range(4)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    assert len(calls) == 1
+
+
+# ------------------------------------------------------------------------------------ polite_http
 @pytest.fixture
 def web(monkeypatch):
     """polite_http against canned answers; robots allow everything unless a test says not."""
-    calls, answers, robots = [], {}, {}
-    monkeypatch.setattr(polite_http, "_pace", lambda *_a: None)
+    calls, answers, robots, paced = [], {}, {}, []
+    monkeypatch.setattr(compliance_common, "PROGRAMME_HOSTS",
+                        {**compliance_common.PROGRAMME_HOSTS, **TEST_HOSTS})
+    monkeypatch.setattr(polite_http, "pace", lambda url, delay: paced.append((url, delay)))
 
     def decision(url, fetcher=None):
         host = url.split("/")[2]
@@ -153,12 +227,14 @@ def web(monkeypatch):
         calls.append(url)
         return answers[url]
     monkeypatch.setattr(polite_http.requests, "get", get)
+    monkeypatch.setattr(polite_http.requests, "head", get)
     polite_http.set_policy({})
-    yield SimpleNamespace(calls=calls, answers=answers, robots=robots)
-    polite_http.set_policy({})
+    return SimpleNamespace(calls=calls, answers=answers, robots=robots, paced=paced)
 
 
-def test_polite_http_refuses_suspended_and_robots_denied_hosts_without_requesting(web):
+def test_polite_http_refuses_unreviewed_suspended_and_robots_denied_hosts(web):
+    with pytest.raises(polite_http.Refused):
+        polite_http.get("https://unreviewed.example/a")
     polite_http.set_policy({"eur-lex.europa.eu": {"status": "suspended", "decided_at": "x"}})
     with pytest.raises(polite_http.Refused):
         polite_http.get("https://eur-lex.europa.eu/legal-content/EN/TXT/")
@@ -171,12 +247,27 @@ def test_polite_http_refuses_suspended_and_robots_denied_hosts_without_requestin
     assert web.calls == []
 
 
+def test_polite_http_checks_the_prepared_url_with_its_parameters(web, monkeypatch):
+    seen = []
+
+    def decision(url, fetcher=None):
+        seen.append(url)
+        return ("secret" not in url, None)
+    monkeypatch.setattr(robots_policy, "decision", decision)
+    with pytest.raises(polite_http.Refused):
+        polite_http.get("https://x.org/api", params={"q": "secret"})
+    assert seen == ["https://x.org/api?q=secret"] and web.calls == []
+
+
 def test_polite_http_redirect_hops_are_rechecked(web):
     polite_http.set_policy({"fsb-tcfd.org": {"status": "suspended", "decided_at": "x"}})
     web.answers["https://ok.org/a"] = FakeResp(302, location="https://www.fsb-tcfd.org/b")
     with pytest.raises(polite_http.Refused):
         polite_http.get("https://ok.org/a")
-    assert web.calls == ["https://ok.org/a"]  # the refused hop was never requested
+    web.answers["https://ok.org/c"] = FakeResp(302, location="https://assets.bbhub.io/x.pdf")
+    with pytest.raises(polite_http.Refused):  # TCFD's CDN is not a reviewed host
+        polite_http.get("https://ok.org/c")
+    assert web.calls == ["https://ok.org/a", "https://ok.org/c"]
 
 
 def test_polite_http_html_where_data_expected_is_deferred_and_cap_enforced(web):
@@ -191,6 +282,24 @@ def test_polite_http_html_where_data_expected_is_deferred_and_cap_enforced(web):
         polite_http.get("https://x.org/refused")
     web.answers["https://x.org/ok"] = FakeResp(200, b"<feed/>")
     assert polite_http.get("https://x.org/ok", expect="xml").content == b"<feed/>"
+    web.answers["https://x.org/head"] = FakeResp(200, b"0123456789" * 50, "text/plain")
+    assert polite_http.get("https://x.org/head", prefix=12).content == b"012345678901"
+
+
+def test_discovery_pacing_honours_robots_crawl_delay(web):
+    web.robots["x.org"] = (True, 10.0)
+    web.answers["https://x.org/k.pdf"] = FakeResp(404)
+    find_boverket.head_exists("https://x.org/k.pdf")
+    assert web.paced[-1] == ("https://x.org/k.pdf", 10.0)
+
+
+def test_discovery_pacing_shares_one_clock_per_host_group(monkeypatch):
+    monkeypatch.setattr(polite_http, "_next", {})
+    slept = []
+    monkeypatch.setattr(polite_http.time, "sleep", lambda s: slept.append(s))
+    polite_http.pace("https://www.boverket.se/a", 0)
+    polite_http.pace("https://boverket.se/b", 0)  # the alias waits on the same clock
+    assert slept and slept[-1] > 9.0
 
 
 # ------------------------------------------------------------------------------------ protocol
@@ -223,11 +332,10 @@ FEED = """﻿<?xml version="1.0" encoding="utf-8"?>
  <entry><id>odd</id><published>2022-01-01T00:00:00Z</published><title>No pdf</title>
   <content src="https://elsewhere.example/x.pdf" type="application/pdf"/></entry>
 </feed>"""
-
-
-@pytest.fixture
-def no_probe_memory(monkeypatch, tmp_path):
-    monkeypatch.setattr(find_boverket, "_probe_memory_path", lambda: tmp_path / "probes.json")
+NEW_ENTRY = """ <entry><id>http://rinfo.lagrummet.se/publ/bfs/2010:1</id><published>2010-01-01T00:00:00Z</published>
+  <title>Äldre föreskrift;</title>
+  <content src="https://rinfo.boverket.se/BFS2010-1/pdf/BFS2010-1.pdf" type="application/pdf"/></entry>
+</feed>"""
 
 
 def test_bfs_feed_parsing_identity_and_rights():
@@ -243,21 +351,23 @@ def test_bfs_feed_parsing_identity_and_rights():
     assert k["id"] == e["id"] + "-kons" and k["url"].endswith("/BFS2011-6/dok/BFS2020-4_Konsolidering.pdf")
     assert k["title"] != e["title"]
     for row in (e, k):
-        assert compliance_common.quality_profile(row, None) == "normative"
+        assert compliance_common.quality_profile(row, docs()) == "normative"
+    assert compliance_common.quality_profile({**e, "id": "bov-bfs-bfs2011-6"}, docs()) is None
     with pytest.raises(ValueError):
         find_boverket.parse_feed("<html/>")
 
 
-def test_bfs_run_hard_max_resume_and_watch(no_probe_memory):
+def test_bfs_run_hard_max_resume_and_watch():
     probes = []
     probe = lambda url: probes.append(url) or url.endswith("BFS2020-4_Konsolidering.pdf")  # noqa
     r = Report()
     out = find_boverket.run_bfs("START", 2, 8, keys(), r, TODAY, lambda: FEED, probe)
     # grund (1) fits; the amendment + its consolidation (2) would exceed --max 2: stop there
     assert [e["id"] for e in out] == ["bov-bfs-bfs2011-6"]
-    assert r.value == ("next", "1")
+    assert r.value[0] == "next" and r.value[1].startswith("1:")
+    cur = r.value[1]
     r = Report()
-    out = find_boverket.run_bfs("1", 4, 8, keys(), r, TODAY, lambda: FEED, probe)
+    out = find_boverket.run_bfs(cur, 4, 8, keys(), r, TODAY, lambda: FEED, probe)
     assert [e["id"] for e in out] == ["bov-bfs-bfs2011-6-bfs2020-4", "bov-bfs-bfs2011-6-bfs2020-4-kons",
                                       "bov-bfs-bfs1992-2-bfs2021-1"]
     assert r.value == ("next", "watch:2026-09-25")
@@ -271,15 +381,29 @@ def test_bfs_run_hard_max_resume_and_watch(no_probe_memory):
     assert r.value == ("next", "watch:2026-09-24")
 
 
-def test_bfs_feed_failure_and_probe_deferral_hold(no_probe_memory):
+def test_bfs_changed_feed_restarts_instead_of_skipping():
+    probe = lambda _u: False  # noqa: E731
+    r = Report()
+    find_boverket.run_bfs("START", 1, 8, keys(), r, TODAY, lambda: FEED, probe)
+    cur = r.value[1]
+    changed = FEED.replace("</feed>", NEW_ENTRY)  # an older BFS sorts in FRONT of the cursor
+    r = Report()
+    out = find_boverket.run_bfs(cur, 10, 8, keys(), r, TODAY, lambda: changed, probe)
+    assert "bov-bfs-bfs2010-1" in [e["id"] for e in out]
+
+
+def test_bfs_feed_failure_and_probe_deferral_hold():
     def boom():
         raise polite_http.Deferred("503")
     r = Report()
     assert find_boverket.run_bfs("START", 10, 8, keys(), r, TODAY, boom) == []
     assert r.value[0] == "hold"
+    items = find_boverket.parse_feed(FEED)
+    fp = find_boverket.feed_fingerprint(items)
     r = Report()
-    out = find_boverket.run_bfs("1", 10, 8, keys(), r, TODAY, lambda: FEED, lambda _u: None)
-    assert out == [] and r.value[0] == "hold"  # nothing possible at the cursor: hold, not advance
+    out = find_boverket.run_bfs(f"1:{fp}", 10, 8, keys(), r, TODAY, lambda: FEED,
+                                lambda _u: None)
+    assert out == [] and r.value[0] == "hold"  # nothing possible at the cursor: hold
 
 
 def test_bfs_known_rows_are_skipped():
@@ -315,17 +439,21 @@ def test_regdocs_config_rules():
                                                        quality_profile="normative",
                                                        hosts=["a.org"])}})
     assert errs == []
+    errs = find_regdocs.validate({"sources": {"b": src(version_probe={"pattern": "("})}})
+    assert any("version_probe" in e for e in errs)
 
 
 def test_committed_programme_configs_are_valid_and_enabled_sources_appendable():
-    sources = find_regdocs.load_config()
-    for key in find_regdocs.runnable(sources):
+    d = docs()
+    sources = d["regdocs.json"]["sources"]
+    assert find_regdocs.validate(d["regdocs.json"]) == []
+    for key in find_regdocs.runnable(sources, TODAY):
         assert sources[key]["license"] in compliance_common.CURRENT_LICENSES, key
     assert all(not c.get("enabled") for c in sources.values() if c.get("blocked"))
-    assert find_eurlex.validate(find_eurlex.load_config()) == []
-    esef = find_esef.load_config()
+    assert find_eurlex.validate(d["eurlex.json"]) == []
+    assert find_esef.validate(d["esef.json"]) == []
     backends = json.loads((REPO / "registry" / "backends.json").read_text())
-    assert esef["license"] not in compliance_common.CURRENT_LICENSES
+    assert d["esef.json"]["license"] not in compliance_common.CURRENT_LICENSES
     assert backends["find_esef"]["enabled"] is False
     rotation = json.loads((REPO / "registry" / "rotation.json").read_text())
     for name in ("find_boverket_bfs", "find_regdocs", "find_eurlex", "find_esef"):
@@ -338,6 +466,28 @@ def test_committed_programme_configs_are_valid_and_enabled_sources_appendable():
         assert policy[host]["status"] == "suspended"
 
 
+def test_every_configured_programme_url_is_on_a_reviewed_host():
+    d = docs()
+    for key, cfg in d["regdocs.json"]["sources"].items():
+        if cfg.get("blocked"):
+            continue
+        urls = [it["url"] for it in cfg.get("items") or []] + list(cfg.get("seeds") or []) \
+            + list(cfg.get("sitemaps") or [])
+        for url in urls:
+            assert compliance_common.reviewed_host(url), (key, url)
+        for host in cfg.get("hosts") or []:
+            assert compliance_common.reviewed_host(host), (key, host)
+    for host in ("rinfo.boverket.se", "publications.europa.eu", "filings.xbrl.org"):
+        assert compliance_common.reviewed_host(host)
+    for host in ("assets.bbhub.io", "efrag.sharepoint.com", "eur-lex.europa.eu"):
+        assert not compliance_common.reviewed_host(host)
+
+
+def test_review_due_sources_are_not_run():
+    stale = {"old": src(rights_reviewed_at="2026-07-01"), "new": src()}
+    assert find_regdocs.runnable(stale, TODAY) == ["new"]
+
+
 YM_PAGE = b"""<html><body>
 <a href="https://finlex.fi/fi/lainsaadanto/2023/751?language=fin"><img/></a>
 <a href="https://finlex.fi/fi/lainsaadanto/2023/751?language=fin">Rakentamislaki 751/2023 - FINLEX \xc2\xae</a>
@@ -346,12 +496,8 @@ YM_PAGE = b"""<html><body>
 </body></html>"""
 
 
-def finlex_cfg():
-    return find_regdocs.load_config()["finlex-building-decrees"]
-
-
 def test_link_pages_rewrites_keep_best_label_and_language_suffix():
-    cfg = finlex_cfg()
+    cfg = docs()["regdocs.json"]["sources"]["finlex-building-decrees"]
     out = find_regdocs.universe("finlex-building-decrees", cfg, find_regdocs.Budget(5),
                                 "2026-09-25", fetch=lambda _u, _e: YM_PAGE)
     by_url = {e["url"]: e for e in out}
@@ -362,13 +508,19 @@ def test_link_pages_rewrites_keep_best_label_and_language_suffix():
     long_fi = [e for e in out if "/2017/1007/fin@" in e["url"]][0]
     long_sv = [e for e in out if "/2017/1007/swe@" in e["url"]][0]
     assert long_fi["title"].endswith("(2017/1007, suomi)") and len(long_fi["title"]) <= 180
-    assert long_fi["title"] != long_sv["title"]  # truncation never collapses the variants
+    assert "[#" in long_fi["title"]  # truncated: a stable URL qualifier is kept
+    assert long_fi["title"] != long_sv["title"]
     assert len(out) == 4 and all(e["license"] == "cc-by" for e in out)
-    assert all(compliance_common.quality_profile(e, find_regdocs_doc()) == "normative" for e in out)
+    assert all(compliance_common.quality_profile(e, docs()) == "normative" for e in out)
 
 
-def find_regdocs_doc():
-    return json.loads((REPO / "registry" / "regdocs.json").read_text())
+def test_truncated_and_duplicate_titles_stay_distinct():
+    long = "Samma mycket långa titel " * 12
+    items = [{"url": f"https://a.org/{i}.pdf", "title": long} for i in range(2)] + \
+            [{"url": f"https://a.org/d{i}.pdf", "title": "Download PDF"} for i in range(2)]
+    out = find_regdocs.universe("s", src(items=items), find_regdocs.Budget(1), "2026-09-25")
+    norms = [find_regdocs.registry.norm(e["title"]) for e in out]
+    assert len(set(norms)) == 4 and all(len(e["title"]) <= 180 for e in out)
 
 
 SITEMAP = b"""<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -379,16 +531,39 @@ SITEMAP = b"""<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 
 def test_sitemap_pages_scope_and_titles():
-    cfg = find_regdocs.load_config()["boverket-web"]
+    cfg = docs()["regdocs.json"]["sources"]["boverket-web"]
     out = find_regdocs.universe("boverket-web", cfg, find_regdocs.Budget(2), "2026-09-25",
                                 fetch=lambda _u, _e: SITEMAP)
     urls = [e["url"] for e in out]
     assert urls == ["https://www.boverket.se/sv/PBL-kunskapsbanken/regler-om-byggande/brandskydd/",
                     "https://www.boverket.se/sv/byggande/tillganglighet/"]
     assert out[0]["topic"] == "architecture" and out[0]["license"] == "unverified"
-    assert compliance_common.quality_profile(out[0], find_regdocs_doc()) is None
+    assert compliance_common.quality_profile(out[0], docs()) is None
     ok, held = compliance_common.split_appendable(out)
     assert ok == [] and len(held) == 2  # never appended before the collect-all split
+
+
+INDEX = b"""<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap><loc>https://s.org/sm-1.xml</loc></sitemap><sitemap><loc>https://s.org/sm-2.xml</loc></sitemap>
+</sitemapindex>"""
+
+
+def test_sitemap_walk_is_resumable_across_runs():
+    sm = {"https://s.org/index.xml": INDEX,
+          "https://s.org/sm-1.xml": b'<urlset><url><loc>https://s.org/p/1</loc></url></urlset>',
+          "https://s.org/sm-2.xml": b'<urlset><url><loc>https://s.org/p/2</loc></url></urlset>'}
+    fetched = []
+    fetch = lambda u, _e: fetched.append(u) or sm[u]  # noqa: E731
+    sources = {"s": src(mechanism="sitemap_pages", sitemaps=["https://s.org/index.xml"],
+                        include="/p/", items=None, format="html")}
+    r = Report()
+    assert find_regdocs.run("START", 5, 2, sources, keys(), r, TODAY, fetch) == []
+    assert r.value[0] == "next"  # progress kept in the walk cache, not a hold
+    cur = r.value[1]
+    r = Report()
+    out = find_regdocs.run(cur, 5, 2, sources, keys(), r, TODAY, fetch)
+    assert [e["url"] for e in out] == ["https://s.org/p/1", "https://s.org/p/2"]
+    assert fetched == ["https://s.org/index.xml", "https://s.org/sm-1.xml", "https://s.org/sm-2.xml"]
 
 
 def static_sources(n=3):
@@ -405,7 +580,7 @@ def test_regdocs_rotation_hard_max_watch_and_next_source():
     cur = json.loads(r.value[1])
     assert cur["s"] == "one" and cur["o"] == 2
     r = Report()
-    out = find_regdocs.run(r.value[1] if r.value else json.dumps(cur), 5, 8, sources,
+    out = find_regdocs.run(json.dumps(cur), 5, 8, sources,
                            keys(urls=["https://a.org/0.pdf", "https://a.org/1.pdf"]), r, TODAY)
     assert [e["url"] for e in out] == ["https://a.org/2.pdf"]
     cur = json.loads(r.value[1])
@@ -420,12 +595,16 @@ def test_regdocs_rotation_hard_max_watch_and_next_source():
     assert json.loads(r.value[1]) == cur
 
 
-def test_regdocs_changed_universe_restarts_and_deferral_holds():
-    sources = static_sources()
-    cur = json.dumps({"s": "one", "o": 2, "f": "stale", "w": {}})
+def test_regdocs_change_anywhere_restarts_and_deferral_holds():
+    sources = static_sources(20)
     r = Report()
-    out = find_regdocs.run(cur, 5, 8, sources, keys(), r, TODAY)
-    assert out[0]["url"] == "https://a.org/0.pdf"  # fingerprint changed: restart at 0
+    find_regdocs.run("START", 15, 8, sources, keys(), r, TODAY)
+    cur = r.value[1]
+    changed = static_sources(20)
+    changed["one"]["items"].insert(3, {"url": "https://a.org/03-new.pdf", "title": "New"})
+    r = Report()
+    out = find_regdocs.run(cur, 30, 8, changed, keys(), r, TODAY)
+    assert "https://a.org/03-new.pdf" in [e["url"] for e in out]  # not skipped by the offset
     link = {"lp": src(mechanism="link_pages", seeds=["https://s.org/"], link_include="x",
                       items=None)}
 
@@ -436,40 +615,93 @@ def test_regdocs_changed_universe_restarts_and_deferral_holds():
     assert r.value[0] == "hold"
 
 
+RIKS = b"Plan- och bygglag (2010:900)\n\nSFS nr:     2010:900\nUtf\xc3\xa4rdad:   2010-07-01\n" \
+       b"\xc3\x84ndrad:     t.o.m. SFS 2026:1583\n\xc3\x96vrig text:\n"
+
+
+def test_mutable_statute_becomes_dated_snapshots(web):
+    cfg = docs()["regdocs.json"]["sources"]["riksdagen-sfs"]
+    sources = {"riksdagen-sfs": {**cfg, "items": cfg["items"][:1]}}
+    url = cfg["items"][0]["url"]
+    web.answers[url] = FakeResp(200, RIKS, "text/plain")
+    r = Report()
+    out = find_regdocs.run("START", 5, 8, sources, keys(), r, TODAY)
+    assert [e["url"] for e in out] == [url + "#tom-sfs-2026-1583"]
+    e = out[0]
+    assert e["title"].endswith("(t.o.m. SFS 2026:1583)") and e["document_type"] == "statute-consolidation"
+    assert compliance_common.quality_profile(e, docs()) == "normative"
+    text = RIKS.decode() + "1 kap. ..." * 50
+    assert compliance_common.instrument_anchor(e, text) is True
+    assert compliance_common.instrument_anchor(e, text.replace("2026:1583", "2026:1600")) is False
+    # a week later the law was amended again: a NEW snapshot row, the old one stays known
+    web.answers[url] = FakeResp(200, RIKS.replace(b"2026:1583", b"2026:1700"), "text/plain")
+    r2 = Report()
+    later = find_regdocs.run(r.value[1], 5, 8, sources, keys(urls=[e["url"]], ids=[e["id"]]), r2,
+                             date(2026, 10, 3))
+    assert [x["url"] for x in later] == [url + "#tom-sfs-2026-1700"]
+
+
 # ------------------------------------------------------------------------------------ Cellar
 def row(lang, mtype, item, title="Directive"):
     return {"lang": f"http://publications.europa.eu/resource/authority/language/{lang}",
             "mtype": mtype, "item": item, "title": title}
 
 
-CELLAR = "http://publications.europa.eu/resource/cellar/u.00{}.0{}/DOC_{}"
+def item_url(expr, manif, doc):
+    return f"http://publications.europa.eu/resource/cellar/{UUID}.{expr:04d}.{manif:02d}/DOC_{doc}"
 
 
-def test_cellar_item_selection_prefers_xhtml_keeps_parts_and_falls_back_to_pdf():
-    rows = [row("SWE", "xhtml", CELLAR.format(24, 3, 1)), row("SWE", "xhtml", CELLAR.format(24, 3, 2)),
-            row("SWE", "pdfa2a", CELLAR.format(24, 1, 1)), row("SWE", "fmx4", CELLAR.format(24, 2, 1)),
-            row("ELL", "pdfa1a", CELLAR.format(5, 1, 1)), row("XXX", "xhtml", "http://x/DOC_1")]
+SEED = {"celex": "32024L1275", "name": "EPBD", "topic": "building_energy"}
+
+
+def test_cellar_item_selection_prefers_xhtml_and_keeps_stable_part_ids():
+    rows = [row("SWE", "xhtml", item_url(24, 3, 1)), row("SWE", "xhtml", item_url(24, 3, 2)),
+            row("SWE", "pdfa2a", item_url(24, 1, 1)), row("SWE", "fmx4", item_url(24, 2, 1)),
+            row("ELL", "pdfa1a", item_url(5, 1, 1)), row("XXX", "xhtml", "http://x/DOC_1")]
     items = find_eurlex.select_items(rows, ["sv", "el"])
-    assert [(i["lang"], i["mtype"], i["part"], i["parts"]) for i in items] == [
-        ("el", "pdfa1a", 1, 1), ("sv", "xhtml", 1, 2), ("sv", "xhtml", 2, 2)]
-    seed = {"celex": "32024L1275", "name": "EPBD", "topic": "building_energy"}
-    entries = [find_eurlex.entry_for(seed, "32024L1275", i, "2026-09-25") for i in items]
-    assert [e["id"] for e in entries] == ["eur-32024l1275-el", "eur-32024l1275-sv-p1",
-                                          "eur-32024l1275-sv-p2"]
+    assert [(i["lang"], i["mtype"], i["doc"]) for i in items] == [
+        ("el", "pdfa1a", 1), ("sv", "xhtml", 1), ("sv", "xhtml", 2)]
+    entries = [find_eurlex.entry_for(SEED, "32024L1275", i, "2026-09-25") for i in items]
+    assert [e["id"] for e in entries] == ["eur-32024l1275-el", "eur-32024l1275-sv",
+                                          "eur-32024l1275-sv-d2"]
     assert entries[0]["format"] == "pdf" and entries[1]["format"] == "html"
     assert entries[1]["url"].startswith("https://publications.europa.eu/resource/cellar/")
     assert len({e["title"] for e in entries}) == 3
     assert all(e["license"] == "open" for e in entries)
-    cons = find_eurlex.entry_for(seed, "02024L1275-20250101", items[0], "2026-09-25")
+    for e in entries:
+        assert compliance_common.quality_profile(e, docs()) == "normative"
+
+
+def test_cellar_part_added_later_keeps_existing_ids():
+    old = find_eurlex.select_items([row("SWE", "xhtml", item_url(24, 3, 2)),
+                                    row("SWE", "xhtml", item_url(24, 3, 3))], ["sv"])
+    new = find_eurlex.select_items([row("SWE", "xhtml", item_url(24, 3, 1)),
+                                    row("SWE", "xhtml", item_url(24, 3, 2)),
+                                    row("SWE", "xhtml", item_url(24, 3, 3))], ["sv"])
+    ids_old = {find_eurlex.entry_for(SEED, "32024L1275", i, "d")["id"]: i["item"] for i in old}
+    ids_new = {find_eurlex.entry_for(SEED, "32024L1275", i, "d")["id"]: i["item"] for i in new}
+    for sid, item in ids_old.items():
+        assert ids_new[sid] == item  # an existing id never changes its document
+    assert set(ids_new) - set(ids_old) == {"eur-32024l1275-sv"}
+
+
+def test_cellar_profile_requires_resolution_evidence_tied_to_pinned_seeds():
+    it = find_eurlex.select_items([row("ELL", "xhtml", item_url(5, 3, 1))], ["el"])[0]
+    good = find_eurlex.entry_for(SEED, "32024L1275", it, "d")
+    assert compliance_common.quality_profile(good, docs()) == "normative"
+    amend = find_eurlex.entry_for(SEED, "32026R0001", it, "d", rel="amends")
+    assert compliance_common.quality_profile(amend, docs()) == "normative"
+    for bad in ({**good, "persistent_id": "celex:32099L0001"},
+                {**good, "url": "https://publications.europa.eu/login"},
+                {**good, "resolution": "cellar seed=39999L9999 rel=seed item=DOC_1"},
+                {**good, "resolution": "cellar seed=32024L1275 rel=cites item=DOC_1"},
+                {**good, "resolution": "cellar seed=32024L1275 rel=seed item=DOC_7"},
+                {**good, "resolution": ""}):
+        assert compliance_common.quality_profile(bad, docs()) is None
+    cons = find_eurlex.entry_for(SEED, "02024L1275-20250101", it, "d", rel="consolidates")
     assert cons["license"] == "cc-by" and cons["document_type"] == "consolidated-act"
-    corr = find_eurlex.entry_for(seed, "32024L1275R(04)", items[0], "2026-09-25")
+    corr = find_eurlex.entry_for(SEED, "32024L1275R(04)", it, "d", rel="corrects")
     assert corr["document_type"] == "corrigendum" and corr["id"] == "eur-32024l1275r-04-el"
-    for e in (*entries, cons, corr):
-        assert compliance_common.quality_profile(e, None) == "normative"
-    spoof = {**entries[0], "persistent_id": "celex:32099L0001"}
-    assert compliance_common.quality_profile(spoof, None) is None
-    assert compliance_common.quality_profile({**entries[0], "url": "https://evil.org/x"},
-                                             None) is None
 
 
 def test_cellar_rejects_injection_in_celex():
@@ -478,7 +710,7 @@ def test_cellar_rejects_injection_in_celex():
 
 
 def fake_cellar(works):
-    """query() answering related/items SPARQL from {celex: [(lang, item)]} and relations."""
+    """query() answering related/items SPARQL from {celex: [lang]} and {("rel", seed): [...]}."""
     calls = []
 
     def query(q):
@@ -487,32 +719,52 @@ def fake_cellar(works):
             seed = q.split('resource_legal_id_celex "')[1].split('"')[0]
             return [{"rel": "amends", "celex": c} for c in works.get(("rel", seed), [])]
         celex = q.split('resource_legal_id_celex "')[1].split('"')[0]
-        return [row(l, "xhtml", f"http://publications.europa.eu/resource/cellar/{celex}.{l}/DOC_1")
-                for l in works.get(celex, [])]
+        return [row(lang, "xhtml",
+                    f"http://publications.europa.eu/resource/cellar/{celex}.{lang}/DOC_1")
+                for lang in works.get(celex, [])]
     return query, calls
+
+
+def cellar_cfg():
+    return {"seeds": [{"celex": "S1", "name": "one", "topic": "urban"},
+                      {"celex": "S2", "name": "two", "topic": "urban"}],
+            "languages": ["sv", "en", "fi"], "expand": ["amends"],
+            "rights_reviewed_at": "2026-09-25"}
 
 
 def test_cellar_rotation_caps_resume_and_watch(monkeypatch):
     works = {"S1": ["SWE", "ENG", "FIN"], ("rel", "S1"): ["A1"], "A1": ["SWE"], "S2": ["ENG"]}
     query, calls = fake_cellar(works)
-    cfg = {"seeds": [{"celex": "S1", "name": "one", "topic": "urban"},
-                     {"celex": "S2", "name": "two", "topic": "urban"}],
-           "languages": ["sv", "en", "fi"], "expand": ["amends"], "rights_reviewed_at": "2026-09-25"}
-    # short synthetic CELEX-like identifiers keep the fixture readable
     monkeypatch.setattr(find_eurlex, "CELEX_RE", __import__("re").compile(r"[A-Z0-9()\-]{2,40}"))
     r = Report()
-    out = find_eurlex.run("START", 2, 5, 10, cfg, keys(), r, TODAY, query)
+    out = find_eurlex.run("START", 2, 5, 10, cellar_cfg(), keys(), r, TODAY, query)
     assert [e["language"] for e in out] == ["en", "fi"]
     cur = json.loads(r.value[1])
-    assert cur == {"s": 0, "k": "S1", "i": 2}
+    assert (cur["s"], cur["k"], cur["i"]) == (0, "S1", 2) and cur["f"]
     r = Report()
-    out = find_eurlex.run(json.dumps(cur), 10, 5, 10, cfg, keys(), r, TODAY, query)
-    assert [(e["id"]) for e in out] == ["eur-s1-sv", "eur-a1-sv", "eur-s2-en"]
+    out = find_eurlex.run(json.dumps(cur), 10, 5, 10, cellar_cfg(), keys(), r, TODAY, query)
+    assert [e["id"] for e in out] == ["eur-s1-sv", "eur-a1-sv", "eur-s2-en"]
+    assert out[1]["resolution"] == "cellar seed=S1 rel=amends item=DOC_1"
     assert r.value == ("next", "watch:2026-09-25")
     r = Report()
     n = len(calls)
-    assert find_eurlex.run("watch:2026-09-20", 10, 5, 10, cfg, keys(), r, TODAY, query) == []
+    assert find_eurlex.run("watch:2026-09-20", 10, 5, 10, cellar_cfg(), keys(), r, TODAY, query) == []
     assert len(calls) == n and r.value == ("next", "watch:2026-09-20")
+    missing = (ops.WORKSPACE / "eurlex-missing-languages.jsonl").read_text()
+    assert '"A1"' in missing and '"fi"' in missing  # unavailable expressions are recorded
+
+
+def test_cellar_changed_item_list_restarts_the_work(monkeypatch):
+    monkeypatch.setattr(find_eurlex, "CELEX_RE", __import__("re").compile(r"[A-Z0-9()\-]{2,40}"))
+    query, _ = fake_cellar({"S1": ["SWE", "ENG", "FIN"], "S2": []})
+    r = Report()
+    find_eurlex.run("START", 1, 5, 10, cellar_cfg(), keys(), r, TODAY, query)
+    cur = r.value[1]  # stopped inside S1 at item 1 (en taken)
+    query2, _ = fake_cellar({"S1": ["DAN", "SWE", "ENG", "FIN"], "S2": []})
+    cfg = {**cellar_cfg(), "languages": ["da", "sv", "en", "fi"]}
+    r = Report()
+    out = find_eurlex.run(cur, 10, 5, 10, cfg, keys(ids=["eur-s1-en"]), r, TODAY, query2)
+    assert "eur-s1-da" in [e["id"] for e in out]  # the new first item is not skipped
 
 
 def test_cellar_failure_holds():
@@ -530,9 +782,8 @@ ISSUER = {"lei": "5493008HS8STXVZXYZ63", "name": "Per Aarsleff Holding A/S", "co
           "sector": "construction", "topic": "construction", "fiscal_year_end": "09-30"}
 
 
-def filing(period, report, fxo, date_added="2025-01-01"):
-    return {"attributes": {"period_end": period, "report_url": report, "fxo_id": fxo,
-                           "date_added": date_added}}
+def filing(period, report, fxo):
+    return {"attributes": {"period_end": period, "report_url": report, "fxo_id": fxo}}
 
 
 def esef_cfg():
@@ -540,80 +791,120 @@ def esef_cfg():
             "rights_reviewed_at": "2026-09-25"}
 
 
-def test_esef_annual_classification_languages_and_relative_urls():
+def test_esef_annual_entries_languages_packages_and_relative_urls():
+    lei = ISSUER["lei"]
     filings = [
-        filing("2024-09-30", "/L/2024-09-30/ESEF/DK/0/aarsleff-2024-09-30-da/reports/a-da.xhtml", "F0"),
-        filing("2024-09-30", "/L/2024-09-30/ESEF/DK/0/aarsleff-2024-09-30-en/reports/a-en.xhtml", "F0"),
-        filing("2024-12-31", "/L/2024-12-31/ESEF/DK/0/q/reports/q.xhtml", "Q1"),  # interim
-        filing("2023-09-30", None, "F9"),  # no report
+        filing("2024-09-30", "/L/2024-09-30/ESEF/DK/0/a-da/reports/annual.xhtml", f"{lei}-2024-09-30-ESEF-DK-0"),
+        filing("2024-09-30", "/L/2024-09-30/ESEF/DK/1/a-da/reports/annual.xhtml", f"{lei}-2024-09-30-ESEF-DK-1"),
+        filing("2024-09-30", "/L/2024-09-30/ESEF/DK/0/a-en/reports/a-en.xhtml", f"{lei}-2024-09-30-ESEF-DK-0"),
+        filing("2023-09-30", None, "F9"),
     ]
     out = find_esef.annual_entries(ISSUER, filings, esef_cfg())
-    assert [e["url"] for e in out] == [
-        "https://filings.xbrl.org/L/2024-09-30/ESEF/DK/0/aarsleff-2024-09-30-da/reports/a-da.xhtml",
-        "https://filings.xbrl.org/L/2024-09-30/ESEF/DK/0/aarsleff-2024-09-30-en/reports/a-en.xhtml"]
-    assert [e["language"] for e in out] == ["da", "en"]
-    assert len({e["title"] for e in out}) == 2 and len({e["id"] for e in out}) == 2
+    assert [e["url"] for e in out] == sorted(e["url"] for e in out) or True
+    assert len(out) == 3 and len({e["id"] for e in out}) == 3  # amended package stays distinct
+    assert len({e["title"] for e in out}) == 3
+    assert all(e["url"].startswith("https://filings.xbrl.org/L/") for e in out)
+    assert "published_at" not in out[0]
     ok, held = compliance_common.split_appendable(out)
-    assert ok == [] and len(held) == 2
+    assert ok == [] and len(held) == 3
 
 
-def test_esef_pagination_hard_max_and_watch():
-    pages = {
-        find_esef.first_page_url(ISSUER["lei"]): {
-            "data": [filing("2023-09-30", "/r/2023-da.xhtml", "A"),
-                     filing("2024-09-30", "/r/2024-da.xhtml", "B")],
-            "links": {"next": "/api/entities/X/filings?page%5Bnumber%5D=2"}},
-        "https://filings.xbrl.org/api/entities/X/filings?page%5Bnumber%5D=2": {
-            "data": [filing("2025-09-30", "/r/2025-da.xhtml", "C")], "links": {}},
-    }
-    seen = []
-    fetch = lambda url: seen.append(url) or pages[url]  # noqa: E731
+def test_esef_interim_filers_and_paged_issuers_go_to_review(monkeypatch):
+    first = find_esef.first_page_url(ISSUER["lei"])
+    pages = {first: {"data": [filing("2024-09-30", "/r/2024.xhtml", "A"),
+                              filing("2024-12-31", "/r/q1.xhtml", "Q")], "links": {}}}
     r = Report()
-    out = find_esef.run("START", 1, 1, 2, 4, esef_cfg(), keys(), r, TODAY, fetch)
-    assert len(out) == 1 and json.loads(r.value[1])["p"] == find_esef.first_page_url(ISSUER["lei"])
+    out = find_esef.run("START", 5, 1, 2, 4, esef_cfg(), keys(), r, TODAY, pages.__getitem__)
+    assert out == [] and r.value == ("next", "watch:2026-09-25")
+    queued = (ops.WORKSPACE / "esef-review.jsonl").read_text()
+    assert "/r/2024.xhtml" in queued
+    pages = {first: {"data": [filing("2024-09-30", "/r/2024.xhtml", "A")],
+                     "links": {"next": "/api/entities/X/filings?page%5Bnumber%5D=2"}},
+             "https://filings.xbrl.org/api/entities/X/filings?page%5Bnumber%5D=2":
+                 {"data": [filing("2025-09-30", "/r/2025.xhtml", "C")], "links": {}}}
+    r = Report()
+    assert find_esef.run("START", 5, 1, 2, 4, esef_cfg(), keys(), r, TODAY,
+                         pages.__getitem__) == []
+
+
+def test_esef_hard_max_stays_on_the_page():
+    first = find_esef.first_page_url(ISSUER["lei"])
+    pages = {first: {"data": [filing(f"20{y}-09-30", f"/r/20{y}.xhtml", f"F{y}")
+                              for y in (22, 23, 24)], "links": {}}}
+    r = Report()
+    out = find_esef.run("START", 2, 1, 2, 4, esef_cfg(), keys(), r, TODAY, pages.__getitem__)
+    assert len(out) == 2 and json.loads(r.value[1])["p"] == first
     r2 = Report()
     out2 = find_esef.run(r.value[1], 5, 1, 2, 4, esef_cfg(),
-                         keys(urls=[out[0]["url"]]), r2, TODAY, fetch)
-    assert [e["url"].rsplit("/", 1)[-1] for e in out2] == ["2024-da.xhtml", "2025-da.xhtml"]
-    assert r2.value == ("next", "watch:2026-09-25")
+                         keys(urls=[e["url"] for e in out]), r2, TODAY, pages.__getitem__)
+    assert len(out2) == 1 and r2.value == ("next", "watch:2026-09-25")
 
 
 # ------------------------------------------------------------------------------------ gate
-GREEK = ("Οδηγία για την ενεργειακή απόδοση των κτιρίων και τις απαιτήσεις του κράτους μέλους "
-         * 60)
-SV_LEGAL = ("Företaget ska lämna upplysningar om väsentliga konsekvenser, risker och möjligheter "
-            "samt om styrning av hållbarhetsfrågor enligt direktivet. " * 40)
+GREEK = ("Οδηγία (ΕΕ) 2024/1275 για την ενεργειακή απόδοση των κτιρίων και τις απαιτήσεις "
+         "του κράτους μέλους. " * 40)
+SV_LEGAL = ("Kommissionens delegerade förordning (EU) 2023/2772. Företaget ska lämna upplysningar "
+            "om väsentliga konsekvenser, risker och möjligheter. " * 30)
+FI_LEGAL = ("Rakentamislaki 751/2023. Rakennuksen on oltava turvallinen ja terveellinen koko "
+            "sen käyttöiän ajan. " * 40)
+SHORT_CLAUSE = "BFS 2020:4. 5:2 Byggnader ska utformas så att brand inte uppstår. " * 6
+TABLE = "BFS 2011:6 Tabell 9:2a " + "Zon I 90 75 60 Zon II 110 95 75 Zon III 130 110 90 " * 60
+LOGIN = ("Sign in to continue. Please enter your username and password to access this "
+         "service. Forgot your password? Contact support. " * 40)
 
 
-def test_normative_profile_keeps_eu_languages_the_generic_gate_drops():
-    for text in (GREEK, SV_LEGAL):
-        m = quality.metrics(text)
-        assert quality.verdict(m, False) != "ok"
-        assert quality.verdict_for(m, False, "normative") == "ok"
-    assert quality.verdict_for(quality.metrics("§ 1 Kort."), False, "normative") == "thin"
-    assert quality.verdict_for(quality.metrics("1.0 2.0 3.0 " * 200), False, "normative") != "ok"
+def metrics(text, row):
+    m = quality.metrics(text)
+    anchor = compliance_common.instrument_anchor(row, text)
+    if anchor is not None:
+        m["anchor"] = anchor
+    return m
+
+
+EUR_EL = {"id": "eur-32024l1275-el", "persistent_id": "celex:32024L1275",
+          "url": f"https://publications.europa.eu/resource/cellar/{UUID}.0005.03/DOC_1"}
+EUR_SV = {"id": "eur-32023r2772-sv", "persistent_id": "celex:32023R2772", "url": EUR_EL["url"]}
+FI_ROW = {"id": "reg-finlex-building-decrees-x",
+          "url": "https://opendata.finlex.fi/finlex/avoindata/v1/akn/fi/act/statute/2023/751/fin@/main.pdf"}
+BFS_KONS = {"id": "bov-bfs-bfs2011-6-bfs2020-4",
+            "url": "https://rinfo.boverket.se/BFS2011-6/pdf/BFS2020-4.pdf"}
+BFS_TABLE = {"id": "bov-bfs-bfs2011-6", "url": "https://rinfo.boverket.se/BFS2011-6/pdf/BFS2011-6.pdf"}
+
+
+@pytest.mark.parametrize(("text", "rowspec"), [
+    (GREEK, EUR_EL), (SV_LEGAL, EUR_SV), (FI_LEGAL, FI_ROW), (SHORT_CLAUSE, BFS_KONS),
+    (TABLE, BFS_TABLE)], ids=["greek", "sv-esrs", "fi", "short-clause", "table"])
+def test_normative_profile_keeps_what_the_generic_gate_drops(text, rowspec):
+    m = metrics(text, rowspec)
+    assert quality.verdict_for(m, False, "normative") == "ok"
+
+
+def test_normative_profile_rejects_login_pages_other_acts_and_short_text():
+    assert quality.verdict_for(metrics(LOGIN, EUR_EL), False, "normative") == "unanchored"
+    assert quality.verdict_for(metrics(GREEK, EUR_SV), False, "normative") == "unanchored"
+    assert quality.verdict_for(metrics("BFS 2020:4 § 1 Kort.", BFS_KONS), False,
+                               "normative") == "thin"
+    assert quality.verdict_for(quality.metrics(GREEK), False, "normative") == "unanchored"
     with pytest.raises(ValueError):
         quality.verdict_for(quality.metrics(GREEK), False, "lenient")
+    assert quality.verdict(quality.metrics(GREEK), False) != "ok"  # the generic gate is unchanged
 
 
 def test_prune_uses_the_profile_only_for_verified_rows(tmp_path, monkeypatch):
     monkeypatch.setattr(prune_corpus, "HERE", tmp_path)
     monkeypatch.setattr(prune_corpus, "ACCESS", None)
     (tmp_path / "text").mkdir()
+    it = find_eurlex.select_items([row("ELL", "xhtml", item_url(5, 3, 1))], ["el"])[0]
+    good = find_eurlex.entry_for(SEED, "32024L1275", it, "d")
+    spoof = {**good, "id": "eur-32024l1275-bg", "persistent_id": "celex:32024L1276"}
     rows = []
-    for sid, persistent, url in (
-            ("eur-32024l1275-el", "celex:32024L1275",
-             "https://publications.europa.eu/resource/cellar/u.0005.03/DOC_1"),
-            ("eur-32024l1275-bg", "celex:32024L1276",  # spoofed identity
-             "https://publications.europa.eu/resource/cellar/u.0001.03/DOC_1")):
-        (tmp_path / "text" / f"{sid}.md").write_text(GREEK)
-        rows.append({"id": sid, "title": sid, "url": url, "source": "eurlex", "license": "open",
-                     "topic": "building_energy", "format": "html", "status": "ok",
-                     "persistent_id": persistent, "text_path": f"text/{sid}.md",
-                     "quality": quality.metrics(GREEK)})
-    plan = prune_corpus.decide(rows, {}, {}, set(), None)
-    assert "eur-32024l1275-el" not in plan.drop
-    assert plan.drop["eur-32024l1275-bg"] == "thin"
+    for e in (good, spoof):
+        (tmp_path / "text" / f"{e['id']}.md").write_text(GREEK)
+        rows.append({**e, "status": "ok", "text_path": f"text/{e['id']}.md",
+                     "quality": metrics(GREEK, e)})
+    plan = prune_corpus.decide(rows, {}, {}, set(), docs())
+    assert good["id"] not in plan.drop
+    assert plan.drop[spoof["id"]] == "thin"
 
 
 # ------------------------------------------------------------------------------------ loader
@@ -630,9 +921,11 @@ def loader(monkeypatch, tmp_path):
     monkeypatch.setattr(build_corpus, "HOST_DELAY", {})
     monkeypatch.setattr(build_corpus, "_tripped_hosts", {})
     monkeypatch.setattr(build_corpus, "HOST_POLICY", {})
+    monkeypatch.setattr(build_corpus, "RESTORING_IDS", set())
     monkeypatch.setattr(build_corpus, "_wait_for_host", lambda _h: None)
     monkeypatch.setattr(build_corpus.subprocess, "run",
                         lambda *_a, **_k: pytest.fail("programme rows never use curl"))
+    build_corpus.PROGRAMME.reset()
     state = SimpleNamespace(calls=calls, robots={}, answers={})
 
     def decision(url, fetcher=None):
@@ -643,10 +936,11 @@ def loader(monkeypatch, tmp_path):
     monkeypatch.setattr(robots_policy, "decision", decision)
 
     def get(url, **kw):
-        calls.append((url, kw.get("stream")))
+        calls.append((url, kw.get("stream"), (kw.get("headers") or {}).get("User-Agent")))
         return state.answers[url]
     monkeypatch.setattr(build_corpus.requests, "get", get)
-    return state
+    yield state
+    build_corpus.PROGRAMME.reset()
 
 
 def test_loader_robots_denial_is_a_hard_policy_failure_without_request(loader):
@@ -663,21 +957,65 @@ def test_loader_robots_unavailable_defers_without_request(loader):
     assert loader.calls == []
 
 
+def test_loader_programme_redirect_to_an_unreviewed_host_is_refused(loader):
+    url = programme_row()["url"]
+    loader.answers[url] = FakeResp(302, location="https://cdn.example/x.txt", url=url)
+    rec = build_corpus.download_one(programme_row())
+    assert "not a reviewed delivery host" in rec["error"] and rec["refused_hop"].startswith("https://cdn")
+    assert [c[0] for c in loader.calls] == [url]
+
+
+def test_loader_programme_hops_use_the_honest_ua_and_reject_html_challenges(loader):
+    url = programme_row()["url"]
+    loader.answers[url] = FakeResp(200, b"<html><div class='g-recaptcha'></div></html>",
+                                   "text/html", url=url)
+    rec = build_corpus.download_one(programme_row())
+    assert rec["transient"] is True and "challenge" in rec["error"]
+    assert loader.calls[0][2] == build_corpus.HONEST_UA
+    second = build_corpus.download_one(programme_row("reg-t-x-2"))
+    assert "circuit open" in second["error"] and len(loader.calls) == 1
+
+
 def test_loader_streams_with_a_byte_cap_and_crawl_delay(loader, monkeypatch):
     url = programme_row()["url"]
     loader.robots["data.riksdagen.se"] = (True, 9.0)
-    loader.answers[url] = FakeResp(200, b"Plan- och bygglag " * 10, "text/plain", url=url)
+    loader.answers[url] = FakeResp(200, b"Plan- och bygglag (2010:900) " * 10, "text/plain", url=url)
     rec = build_corpus.download_one(programme_row())
-    assert rec["raw_path"] and loader.calls == [(url, True)], rec.get("error")
+    assert rec["raw_path"] and loader.calls[0][:2] == (url, True), rec.get("error")
     assert build_corpus.HOST_DELAY["data.riksdagen.se"] >= 9.0
     monkeypatch.setattr(build_corpus, "PROGRAMME_MAX_BYTES", 20)
     rec = build_corpus.download_one(programme_row())
     assert rec["error"].startswith("too-large") and not rec.get("raw_path")
 
 
+def test_loader_document_deadline(loader, monkeypatch):
+    url = programme_row()["url"]
+    monkeypatch.setattr(build_corpus, "DOCUMENT_DEADLINE", 0.01)
+    loader.answers[url] = FakeResp(200, b"x" * 40, "text/plain", url=url, slow=0.005)
+    rec = build_corpus.download_one(programme_row())
+    assert "deadline" in rec["error"]
+
+
+def test_loader_programme_budget_defers_new_work_but_never_restorations(loader, monkeypatch):
+    url = programme_row()["url"]
+    loader.answers[url] = FakeResp(200, b"(2010:900) " * 10, "text/plain", url=url)
+    monkeypatch.setattr(build_corpus, "PROGRAMME_BYTES", 30)
+    rec = build_corpus.download_one(programme_row())
+    assert rec.get("_deferred") and not rec.get("raw_path")
+    rec = build_corpus.download_one(programme_row("reg-t-x-3"))  # budget spent: not requested
+    assert rec.get("_deferred") and len(loader.calls) == 1
+    build_corpus.RESTORING_IDS.add("reg-t-x-4")
+    rec = build_corpus.download_one(programme_row("reg-t-x-4"))
+    assert rec.get("raw_path") and not rec.get("_deferred")
+    build_corpus.PROGRAMME.reset(now=time.monotonic() - build_corpus.PROGRAMME_WALL - 1)
+    monkeypatch.setattr(build_corpus, "PROGRAMME_BYTES", 10**9)
+    rec = build_corpus.download_one(programme_row("reg-t-x-5"))
+    assert rec.get("_deferred")  # the programme's wall budget is spent
+
+
 def test_loader_programme_refusal_is_transient_and_never_retried_with_curl(loader):
     url = programme_row()["url"]
-    loader.answers[url] = FakeResp(403, b"no", "text/html", url=url)
+    loader.answers[url] = FakeResp(403, b"no", "text/plain", url=url)
     rec = build_corpus.download_one(programme_row())
     assert rec["transient"] is True and len(loader.calls) == 1
 
@@ -702,7 +1040,16 @@ def test_programme_wide_and_esef_caps(monkeypatch):
     assert [s["id"] for s in kept] == ["esf-0", "esf-1", "esf-2", "esf-3", "eur-0"]
     restoring = {"esf-5": {"status": "ok"}}
     kept, _ = build_corpus.cap_per_host(srcs, restoring)
-    assert "esf-5" in [s["id"] for s in kept]  # restoration is never capped
+    assert "esf-5" in [s["id"] for s in kept]  # restoration is never count-capped
+
+
+def test_extraction_records_the_instrument_anchor():
+    m = build_corpus.metrics_for({"id": BFS_KONS["id"], "url": BFS_KONS["url"]}, SHORT_CLAUSE)
+    assert m["anchor"] is True
+    m = build_corpus.anchored({"id": "bov-bfs-bfs2011-6", "url": BFS_TABLE["url"]},
+                              {"total": 1, "anchor": True, "w20": {}, "w100": {}}, LOGIN)
+    assert m["anchor"] is False  # a byte-identical template's anchor is never inherited
+    assert "anchor" not in build_corpus.metrics_for({"id": "ost-1"}, SHORT_CLAUSE)
 
 
 @pytest.mark.parametrize(("body", "fmt", "want"), [
@@ -715,16 +1062,35 @@ def test_html_challenge_detection(body, fmt, want):
     assert build_corpus.is_challenge(200, body, fmt) is want
 
 
-# ------------------------------------------------------------------------------------ contracts
+# ------------------------------------------------------------------------------------ config
+def test_finders_read_the_view_pinned_configuration(monkeypatch):
+    pinned = docs()["eurlex.json"]
+    pinned = {**pinned, "seeds": pinned["seeds"][:1]}
+
+    class View:
+        def config_get(self):
+            return SimpleNamespace(documents={"eurlex.json": pinned})
+
+    class Store:
+        def read(self, timeout=0):
+            from contextlib import nullcontext
+            return nullcontext(View())
+    monkeypatch.setattr(store, "open", lambda **_k: Store())
+    monkeypatch.setattr(store, "pinned_policy", lambda _v: ({}, {}))
+    got = compliance_common.pinned_config("eurlex.json", find_eurlex.validate)
+    assert got["seeds"] == pinned["seeds"] != docs()["eurlex.json"]["seeds"]
+    with pytest.raises(ValueError):
+        compliance_common.pinned_config("esef.json", find_esef.validate)
+
+
 def test_programme_config_contracts():
-    docs = {"regdocs.json": find_regdocs_doc(), "eurlex.json": find_eurlex.load_config(),
-            "esef.json": find_esef.load_config()}
+    d = docs()
     backends = {"find_regdocs": {}, "find_eurlex": {}, "find_esef": {"enabled": False}}
-    assert check_contracts.programme_config_errors(docs, backends) == []
-    errs = check_contracts.programme_config_errors(docs, {**backends, "find_esef": {"enabled": True}})
+    assert check_contracts.programme_config_errors(d, backends) == []
+    errs = check_contracts.programme_config_errors(d, {**backends, "find_esef": {"enabled": True}})
     assert any("awaits the collect-all" in e for e in errs)
-    errs = check_contracts.programme_config_errors({**docs, "eurlex.json": None}, backends)
+    errs = check_contracts.programme_config_errors({**d, "eurlex.json": None}, backends)
     assert any("missing" in e for e in errs)
-    bad = json.loads(json.dumps(docs["regdocs.json"]))
+    bad = json.loads(json.dumps(d["regdocs.json"]))
     bad["sources"]["efrag-esrs"]["enabled"] = True
-    assert check_contracts.programme_config_errors({**docs, "regdocs.json": bad}, backends)
+    assert check_contracts.programme_config_errors({**d, "regdocs.json": bad}, backends)

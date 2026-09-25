@@ -154,11 +154,17 @@ def items_query(celex: str) -> str:
             "?item cdm:item_belongs_to_manifestation ?manif . }")
 
 
-def works_for(seed: dict, relations: list[str], rows: list[dict]) -> list[str]:
-    """The seed first, then its related works (sorted, deduplicated, seed excluded)."""
-    related = sorted({r["celex"] for r in rows if r.get("celex") and CELEX_RE.fullmatch(r["celex"])}
-                     - {seed["celex"]})
-    return [seed["celex"], *related]
+def works_for(seed: dict, relations: list[str], rows: list[dict]) -> list[tuple[str, str]]:
+    """[(CELEX, relation)]: the seed first ("seed"), then its related works sorted by CELEX
+    (deduplicated, seed excluded; a work related several ways keeps the first relation name in
+    RELATIONS order)."""
+    rel_of: dict[str, str] = {}
+    for r in sorted(rows, key=lambda x: list(RELATIONS).index(x.get("rel"))
+                    if x.get("rel") in RELATIONS else 99):
+        c = r.get("celex")
+        if c and CELEX_RE.fullmatch(c) and c != seed["celex"] and r.get("rel") in relations:
+            rel_of.setdefault(c, r["rel"])
+    return [(seed["celex"], "seed"), *sorted(rel_of.items())]
 
 
 def select_items(rows: list[dict], languages: list[str]) -> list[dict]:
@@ -180,26 +186,57 @@ def select_items(rows: list[dict], languages: list[str]) -> list[dict]:
         seen: dict[str, dict] = {}
         for r in types[chosen]:
             seen.setdefault(r["item"], r)
-        for part, item in enumerate(sorted(seen), 1):
-            out.append({"lang": lang, "mtype": chosen, "item": item, "part": part,
+        for item in sorted(seen, key=_doc_number):
+            out.append({"lang": lang, "mtype": chosen, "item": item, "doc": _doc_number(item),
                         "parts": len(seen), "title": seen[item].get("title") or ""})
     return out
+
+
+def _doc_number(item: str) -> int:
+    m = re.search(r"/DOC_(\d+)$", item)
+    return int(m.group(1)) if m else 0
+
+
+def note_missing_languages(celex: str, langs: list[str], items: list[dict], today: date) -> None:
+    """Record, never paper over, languages Cellar has no expression for (coverage evidence in
+    workspace/eurlex-missing-languages.jsonl; scratch)."""
+    missing = sorted(set(langs) - {i["lang"] for i in items})
+    if not missing:
+        return
+    print(f"# {celex}: no expression in {' '.join(missing)}", file=sys.stderr)
+    try:
+        import ops
+        path = ops.WORKSPACE / "eurlex-missing-languages.jsonl"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a") as fh:
+            fh.write(json.dumps({"celex": celex, "missing": missing,
+                                 "checked": today.isoformat()}) + "\n")
+    except OSError:
+        pass
+
+
+def items_fingerprint(items: list[dict]) -> str:
+    import hashlib
+    return hashlib.sha1("\n".join(i["item"] for i in items).encode()).hexdigest()[:10]
 
 
 def https(url: str) -> str:
     return re.sub(r"^http://publications\.europa\.eu/", "https://publications.europa.eu/", url)
 
 
-def entry_for(seed: dict, celex: str, it: dict, rights_date: str) -> dict:
-    lang, part = it["lang"], it["part"]
-    suffix = f" [{celex}, {lang}" + (f", part {part}/{it['parts']}" if it["parts"] > 1 else "") + "]"
+def entry_for(seed: dict, celex: str, it: dict, rights_date: str, rel: str = "seed") -> dict:
+    """One candidate. Identity is work + language + Cellar document part: DOC_1 is the base id,
+    DOC_<n> adds `-d<n>` — stable when parts are added later, independent of list position and
+    of the preferred manifestation."""
+    lang, doc = it["lang"], it["doc"]
+    suffix = f" [{celex}, {lang}" + (f", DOC_{doc}" if it["parts"] > 1 or doc != 1 else "") + "]"
     base = re.sub(r"\s+", " ", it["title"]).strip() or seed["name"]
     room = 240 - len(suffix)
     title = (base[:room].rstrip() + suffix)
     consolidated = celex.startswith("0")
     url = https(it["item"])
     entry = {
-        "id": f"eur-{registry.slug(celex)}-{lang}" + (f"-p{part}" if it["parts"] > 1 else ""),
+        "id": f"eur-{registry.slug(celex)}-{lang}" + (f"-d{doc}" if doc != 1 else ""),
         "title": title, "url": url, "source": "eurlex",
         "license": "cc-by" if consolidated else "open",
         "topic": seed["topic"], "format": "html" if it["mtype"] in HTML_TYPES else "pdf",
@@ -208,6 +245,7 @@ def entry_for(seed: dict, celex: str, it: dict, rights_date: str) -> dict:
                           "proposal" if celex.startswith("5") else
                           "corrigendum" if re.search(r"R\(\d+\)$", celex) else "legal-act"),
         "persistent_id": f"celex:{celex}",
+        "resolution": f"cellar seed={seed['celex']} rel={rel} item=DOC_{doc}",
         "license_url": LEGAL_NOTICE,
         "license_evidence": (EVIDENCE_CONSOLIDATED if consolidated else EVIDENCE_OPEN).format(
             item=url),
@@ -219,11 +257,12 @@ def entry_for(seed: dict, celex: str, it: dict, rights_date: str) -> dict:
 # ------------------------------------------------------------------------------------ rotation
 def parse_cursor(value: str) -> dict:
     if value in ("", "START"):
-        return {"s": 0, "k": "", "i": 0}
+        return {"s": 0, "k": "", "i": 0, "f": ""}
     if value.startswith("watch:"):
         return {"watch": value.split(":", 1)[1]}
     data = json.loads(value)
-    return {"s": int(data.get("s", 0)), "k": str(data.get("k", "")), "i": int(data.get("i", 0))}
+    return {"s": int(data.get("s", 0)), "k": str(data.get("k", "")), "i": int(data.get("i", 0)),
+            "f": str(data.get("f", ""))}
 
 
 def dump_cursor(cur: dict) -> str:
@@ -260,7 +299,7 @@ def run(cursor: str, maxn: int, max_acts: int, max_requests: int, cfg: dict, key
     budget = Budget(max_requests)
     out: list[dict] = []
     acts = 0
-    s, k, i = cur["s"], cur["k"], cur["i"]
+    s, k, i, f = cur["s"], cur["k"], cur["i"], cur["f"]
     try:
         while s < len(seeds):
             seed = seeds[s]
@@ -268,30 +307,37 @@ def run(cursor: str, maxn: int, max_acts: int, max_requests: int, cfg: dict, key
                 break
             rows = query(related_query(seed["celex"], relations)) if relations else []
             works = works_for(seed, relations, rows)
-            w = works.index(k) if k in works else 0
-            if k not in works:
-                i = 0
+            names = [c for c, _ in works]
+            if k in names:
+                w = names.index(k)
+            else:
+                w, i, f = 0, 0, ""
             while w < len(works):
+                celex, rel = works[w]
+                k = celex
                 if acts >= max_acts or not budget.take():
-                    k = works[w]
                     raise _Stop
-                celex = works[w]
                 acts += 1
                 items = select_items(query(items_query(celex)), langs)
-                cands = [entry_for(seed, celex, it, rights_date) for it in items]
+                note_missing_languages(celex, langs, items, today)
+                fp = items_fingerprint(items)
+                if f and f != fp:
+                    i = 0  # the item list changed: restart this work (dedup makes it safe)
+                f = fp
+                cands = [entry_for(seed, celex, it, rights_date, rel) for it in items]
                 keys.prefetch(urls=[c["url"] for c in cands[i:]], ids=[c["id"] for c in cands[i:]])
                 while i < len(cands):
                     c = cands[i]
                     if c["url"] not in keys.urls and c["id"] not in keys.ids:
                         if len(out) >= maxn:
-                            k = celex
                             raise _Stop
                         keys.urls.add(c["url"])
                         keys.ids.add(c["id"])
                         out.append(c)
                     i += 1
-                w, i = w + 1, 0
-            s, k, i = s + 1, "", 0
+                w, i, f = w + 1, 0, ""
+                k = works[w][0] if w < len(works) else ""
+            s, k, i, f = s + 1, "", 0, ""
     except _Stop:
         pass
     except (polite_http.Deferred, polite_http.Refused, polite_http.TooLarge,
@@ -302,10 +348,10 @@ def run(cursor: str, maxn: int, max_acts: int, max_requests: int, cfg: dict, key
         print(f"# stopping early after {len(out)} candidates: {exc}", file=sys.stderr)
     if s >= len(seeds):
         report.next(f"watch:{today.isoformat()}")
-    elif not out and s == cur["s"] and k == cur["k"] and i == cur["i"]:
+    elif not out and (s, k, i, f) == (cur["s"], cur["k"], cur["i"], cur["f"]):
         report.hold("no progress possible this run (request/act budget)")
     else:
-        report.next(dump_cursor({"s": s, "k": k, "i": i}))
+        report.next(dump_cursor({"s": s, "k": k, "i": i, "f": f}))
     return out
 
 
@@ -318,15 +364,18 @@ def main() -> None:
     ap.add_argument("--max-requests", type=int, default=6, help="SPARQL request budget")
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
-    cfg = load_config()
+    cfg = compliance_common.pinned_config("eurlex.json", validate)  # the view's pinned copy
+    report = finder_protocol.Report()
+    if compliance_common.review_due(cfg.get("rights_reviewed_at")):
+        report.hold(f"registry/eurlex.json rights review older than "
+                    f"{compliance_common.RIGHTS_REVIEW_DAYS} days: re-review before collecting")
+        return
     if args.celex:
         seed = next((s for s in cfg["seeds"] if s["celex"] == args.celex),
                     {"celex": args.celex, "name": args.celex, "topic": "standards_protocols"})
         cfg = {**cfg, "seeds": [seed]}
         args.cursor = "START"
-    compliance_common.pin_host_policy()
     keys = dedup.open_keys()
-    report = finder_protocol.Report()
     out = run(args.cursor, args.max, args.acts, args.max_requests, cfg, keys, report)
     ok, _held = compliance_common.split_appendable(out)
     langs = sorted({e["language"] for e in out})
