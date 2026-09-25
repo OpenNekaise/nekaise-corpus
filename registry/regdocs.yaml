@@ -1,0 +1,132 @@
+# regdocs — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: reg-riksdagen-sfs-dokument-sfs-1987-10-text-ab27f305
+    title: SFS Plan- och bygglag (1987:10) (t.o.m. SFS 2010:1948)
+    url: https://data.riksdagen.se/dokument/sfs-1987-10.text#tom-sfs-2010-1948
+    source: riksdagen_sfs
+    license: public-domain
+    topic: standards_protocols
+    format: txt
+    language: sv
+    jurisdiction: SE
+    document_type: statute-consolidation
+    license_url: https://www.riksdagen.se/sv/dokument-och-lagar/riksdagens-oppna-data/
+    license_evidence: 'Upphovsrättslagen (1960:729) 9 §: författningar omfattas inte
+      av upphovsrätt; Riksdagens öppna data: ''Öppna data får användas fritt utan avgifter
+      eller licenser. Ange dock alltid Sveriges riksdag som källa.'' Current consolidated
+      SFS text (not every historical version).'
+    rights_verified_at: '2026-09-25'
+  - id: reg-riksdagen-sfs-dokument-sfs-1987-383-text-632fb4e8
+    title: SFS Plan- och byggförordning (1987:383) (t.o.m. SFS 2010:168)
+    url: https://data.riksdagen.se/dokument/sfs-1987-383.text#tom-sfs-2010-168
+    source: riksdagen_sfs
+    license: public-domain
+    topic: standards_protocols
+    format: txt
+    language: sv
+    jurisdiction: SE
+    document_type: statute-consolidation
+    license_url: https://www.riksdagen.se/sv/dokument-och-lagar/riksdagens-oppna-data/
+    license_evidence: 'Upphovsrättslagen (1960:729) 9 §: författningar omfattas inte
+      av upphovsrätt; Riksdagens öppna data: ''Öppna data får användas fritt utan avgifter
+      eller licenser. Ange dock alltid Sveriges riksdag som källa.'' Current consolidated
+      SFS text (not every historical version).'
+    rights_verified_at: '2026-09-25'
+  - id: reg-riksdagen-sfs-dokument-sfs-1992-1574-text-099aa3ea
+    title: SFS Lag (1992:1574) om bostadsanpassningsbidrag m.m. (t.o.m. SFS 2000:527)
+    url: https://data.riksdagen.se/dokument/sfs-1992-1574.text#tom-sfs-2000-527
+    source: riksdagen_sfs
+    license: public-domain
+    topic: standards_protocols
+    format: txt
+    language: sv
+    jurisdiction: SE
+    document_type: statute-consolidation
+    license_url: https://www.riksdagen.se/sv/dokument-och-lagar/riksdagens-oppna-data/
+    license_evidence: 'Upphovsrättslagen (1960:729) 9 §: författningar omfattas inte
+      av upphovsrätt; Riksdagens öppna data: ''Öppna data får användas fritt utan avgifter
+      eller licenser. Ange dock alltid Sveriges riksdag som källa.'' Current consolidated
+      SFS text (not every historical version).'
+    rights_verified_at: '2026-09-25'
+  - id: reg-riksdagen-sfs-dokument-sfs-1994-1215-text-f2d73d50
+    title: SFS Förordning (1994:1215) om tekniska egenskapskrav på byggnadsverk, m.m.
+      (t.o.m. SFS 2010:132)
+    url: https://data.riksdagen.se/dokument/sfs-1994-1215.text#tom-sfs-2010-132
+    source: riksdagen_sfs
+    license: public-domain
+    topic: standards_protocols
+    format: txt
+    language: sv
+    jurisdiction: SE
+    document_type: statute-consolidation
+    license_url: https://www.riksdagen.se/sv/dokument-och-lagar/riksdagens-oppna-data/
+    license_evidence: 'Upphovsrättslagen (1960:729) 9 §: författningar omfattas inte
+      av upphovsrätt; Riksdagens öppna data: ''Öppna data får användas fritt utan avgifter
+      eller licenser. Ange dock alltid Sveriges riksdag som källa.'' Current consolidated
+      SFS text (not every historical version).'
+    rights_verified_at: '2026-09-25'
+  - id: reg-riksdagen-sfs-dokument-sfs-1994-847-text-c0c3dda1
+    title: SFS Lag (1994:847) om tekniska egenskapskrav på byggnadsverk, m.m. (t.o.m.
+      SFS 2007:457)
+    url: https://data.riksdagen.se/dokument/sfs-1994-847.text#tom-sfs-2007-457
+    source: riksdagen_sfs
+    license: public-domain
+    topic: standards_protocols
+    format: txt
+    language: sv
+    jurisdiction: SE
+    document_type: statute-consolidation
+    license_url: https://www.riksdagen.se/sv/dokument-och-lagar/riksdagens-oppna-data/
+    license_evidence: 'Upphovsrättslagen (1960:729) 9 §: författningar omfattas inte
+      av upphovsrätt; Riksdagens öppna data: ''Öppna data får användas fritt utan avgifter
+      eller licenser. Ange dock alltid Sveriges riksdag som källa.'' Current consolidated
+      SFS text (not every historical version).'
+    rights_verified_at: '2026-09-25'
+  - id: reg-riksdagen-sfs-dokument-sfs-1995-1554-text-458f8e16
+    title: SFS Årsredovisningslag (1995:1554) (t.o.m. SFS 2026:780)
+    url: https://data.riksdagen.se/dokument/sfs-1995-1554.text#tom-sfs-2026-780
+    source: riksdagen_sfs
+    license: public-domain
+    topic: standards_protocols
+    format: txt
+    language: sv
+    jurisdiction: SE
+    document_type: statute-consolidation
+    license_url: https://www.riksdagen.se/sv/dokument-och-lagar/riksdagens-oppna-data/
+    license_evidence: 'Upphovsrättslagen (1960:729) 9 §: författningar omfattas inte
+      av upphovsrätt; Riksdagens öppna data: ''Öppna data får användas fritt utan avgifter
+      eller licenser. Ange dock alltid Sveriges riksdag som källa.'' Current consolidated
+      SFS text (not every historical version).'
+    rights_verified_at: '2026-09-25'
+  - id: reg-riksdagen-sfs-dokument-sfs-1998-808-text-36d9aefa
+    title: SFS Miljöbalk (1998:808) (t.o.m. SFS 2026:1442)
+    url: https://data.riksdagen.se/dokument/sfs-1998-808.text#tom-sfs-2026-1442
+    source: riksdagen_sfs
+    license: public-domain
+    topic: standards_protocols
+    format: txt
+    language: sv
+    jurisdiction: SE
+    document_type: statute-consolidation
+    license_url: https://www.riksdagen.se/sv/dokument-och-lagar/riksdagens-oppna-data/
+    license_evidence: 'Upphovsrättslagen (1960:729) 9 §: författningar omfattas inte
+      av upphovsrätt; Riksdagens öppna data: ''Öppna data får användas fritt utan avgifter
+      eller licenser. Ange dock alltid Sveriges riksdag som källa.'' Current consolidated
+      SFS text (not every historical version).'
+    rights_verified_at: '2026-09-25'
+  - id: reg-riksdagen-sfs-dokument-sfs-2003-778-text-f57441e5
+    title: SFS Lag (2003:778) om skydd mot olyckor (t.o.m. SFS 2025:1077)
+    url: https://data.riksdagen.se/dokument/sfs-2003-778.text#tom-sfs-2025-1077
+    source: riksdagen_sfs
+    license: public-domain
+    topic: standards_protocols
+    format: txt
+    language: sv
+    jurisdiction: SE
+    document_type: statute-consolidation
+    license_url: https://www.riksdagen.se/sv/dokument-och-lagar/riksdagens-oppna-data/
+    license_evidence: 'Upphovsrättslagen (1960:729) 9 §: författningar omfattas inte
+      av upphovsrätt; Riksdagens öppna data: ''Öppna data får användas fritt utan avgifter
+      eller licenser. Ange dock alltid Sveriges riksdag som källa.'' Current consolidated
+      SFS text (not every historical version).'
+    rights_verified_at: '2026-09-25'

@@ -20703,21 +20703,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-productselector-2
-    title: 'SpecifiedBy (UK manufacturer documents): ProductSelector.pdf (thermatex
-      fine stratos 600 mm x 600 mm sk — ProductSelector)'
-    url: https://www.specifiedby.com/knauf/thermatex-fine-stratos-600-mm-x-600-mm-sk/ProductSelector.pdf
-    source: vendor_specifiedby
-    license: open
-    topic: construction
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.specifiedby.com/terms
-    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); PDFs 200 without challenge
-    rights_verified_at: '2026-08-30'
   - id: vnd-specifiedby-kingspan-kooltherm-k15-brochure-en-gb-64a81171
     title: 'SpecifiedBy (UK manufacturer documents): kingspan-kooltherm-k15-brochure-en-gb_64a81171.pdf'
     url: https://www.specifiedby.com/kingspan-insulation/kingspan-kooltherm-k15-rainscreen-board-insulation-for-use-behind-rainscreen-facades/kingspan-kooltherm-k15-brochure-en-gb_64a81171.pdf
@@ -20751,20 +20736,6 @@ sources:
     title: 'SpecifiedBy (UK manufacturer documents): DoP-13-007-01_DLETA-MS_DRAIN.pdf
       (delta ms drain — DoP 13 007 01 DLETA MS DRAIN)'
     url: https://www.specifiedby.com/delta-membrane-systems-limited/delta-ms-drain/DoP-13-007-01_DLETA-MS_DRAIN.pdf
-    source: vendor_specifiedby
-    license: open
-    topic: materials
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.specifiedby.com/terms
-    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); PDFs 200 without challenge
-    rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-123d-2
-    title: 'SpecifiedBy (UK manufacturer documents): 123D.pdf (delta ms20 — 123D)'
-    url: https://www.specifiedby.com/delta-membrane-systems-limited/delta-ms20/123D.pdf
     source: vendor_specifiedby
     license: open
     topic: materials

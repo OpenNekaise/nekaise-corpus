@@ -20592,21 +20592,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-productreport-3
-    title: 'SpecifiedBy (UK manufacturer documents): ProductReport.pdf (delta floraxx
-      — ProductReport)'
-    url: https://www.specifiedby.com/delta-membrane-systems-limited/delta-floraxx/ProductReport.pdf
-    source: vendor_specifiedby
-    license: open
-    topic: materials
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.specifiedby.com/terms
-    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); PDFs 200 without challenge
-    rights_verified_at: '2026-08-30'
   - id: vnd-specifiedby-col6117598
     title: 'SpecifiedBy (UK manufacturer documents): COL6117598.pdf (delta floraxx —
       COL6117598)'
@@ -20656,20 +20641,6 @@ sources:
     title: 'SpecifiedBy (UK manufacturer documents): ProductReport.pdf (delta terraxx
       in walkable roof decks — ProductReport)'
     url: https://www.specifiedby.com/delta-membrane-systems-limited/delta-terraxx-in-walkable-roof-decks/ProductReport.pdf
-    source: vendor_specifiedby
-    license: open
-    topic: materials
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.specifiedby.com/terms
-    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); PDFs 200 without challenge
-    rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-123e
-    title: 'SpecifiedBy (UK manufacturer documents): 123E.pdf (delta ms drain — 123E)'
-    url: https://www.specifiedby.com/delta-membrane-systems-limited/delta-ms-drain/123E.pdf
     source: vendor_specifiedby
     license: open
     topic: materials
