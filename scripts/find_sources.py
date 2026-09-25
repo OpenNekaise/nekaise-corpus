@@ -48,12 +48,16 @@ import ops
 import dedup
 import oa_resolution as oar
 import openalex_families
+import openalex_state
 import registry
 import store
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 MAILTO = oar.MAILTO
-COOLDOWN_FILE = HERE / "workspace" / "find-sources-cooldowns.json"
+# Per-host API cooldowns live in ONE machine-level file shared by every checkout, worktree and
+# concurrent finder (openalex_state.Cooldowns: locked max-merge writes, re-read before every
+# request). None = that file; tests point it elsewhere.
+COOLDOWN_FILE: Path | None = None
 
 # (search term -> our corpus topic). Many specific sub-topic queries -> more unique results.
 QUERIES = [
@@ -304,7 +308,10 @@ def from_openalex(term, topic, per, page=1):
     p = {"search": term, "filter": "open_access.is_oa:true,type:article|preprint",
          "per-page": per, "page": page,
          "sort": "cited_by_count:desc", "mailto": MAILTO}
-    r = requests.get("https://api.openalex.org/works", params=p, timeout=30)
+    # the same machine-wide spacing, persisted cooldowns and throttle classification as the
+    # query families (openalex_state.openalex_get)
+    r = openalex_state.openalex_get(requests.get, "https://api.openalex.org/works", params=p,
+                                    timeout=30, cooldowns=cooldown_store())
     r.raise_for_status()
     out = []
     today = time.strftime("%Y-%m-%d", time.gmtime())
@@ -367,28 +374,20 @@ def query_window(
     ]
 
 
+def cooldown_store(path: Path | None = None) -> "openalex_state.Cooldowns":
+    return openalex_state.Cooldowns(path or COOLDOWN_FILE)
+
+
 def load_cooldowns(now: float, path: Path | None = None) -> dict[str, float]:
-    """Load unexpired local API cooldowns; malformed scratch state never blocks discovery."""
-    path = path or COOLDOWN_FILE
-    if not path.exists():
-        return {}
-    try:
-        data = json.loads(path.read_text())
-        if not isinstance(data, dict):
-            raise ValueError("expected a JSON object")
-        return {
-            str(backend): float(until)
-            for backend, until in data.items()
-            if float(until) > now
-        }
-    except (OSError, TypeError, ValueError, json.JSONDecodeError) as exc:
-        print(f"# ignoring invalid cooldown state {path}: {exc}", file=sys.stderr)
-        return {}
+    """Unexpired per-host API cooldowns; malformed state never blocks discovery."""
+    store = cooldown_store(path)
+    return {k: v for k, v in store._read().items() if v > now}
 
 
 def save_cooldowns(cooldowns: dict[str, float], path: Path | None = None) -> None:
-    path = path or COOLDOWN_FILE
-    ops.atomic_write_text(path, json.dumps(cooldowns, sort_keys=True) + "\n")
+    """Merge these deadlines into the shared file, keeping the MAXIMUM per host (a locked
+    read-merge-write: a process's startup snapshot never erases another's cooldown)."""
+    cooldown_store(path).raise_to(cooldowns)
 
 
 def retry_after_deadline(value: str | None, now: float) -> float | None:
@@ -444,7 +443,7 @@ def main() -> int:
                     help="family: supplementary metadata lookups per run")
     ap.add_argument("--resolution-file",
                     help="family: resolution record path (default workspace/"
-                         "openalex-resolution.jsonl when --append)")
+                         "openalex-resolution-<family>.jsonl when --append)")
     ap.add_argument("--budget-partner", action="append", default=[],
                     help="legacy: a family backend sharing the one-search-per-round OpenAlex "
                          "budget (repeatable); the legacy family searches only in its own round "
@@ -489,6 +488,8 @@ def main() -> int:
     throttled: dict[str, int] = {backend: 0 for backend in backends}
     successful_requests: dict[str, int] = {backend: 0 for backend in backends}
     now = time.time()
+    if COOLDOWN_FILE is None:  # fold this checkout's pre-2026-09-25 cooldown file in, once
+        openalex_state.migrate_legacy_cooldowns(HERE / "workspace")
     cooldowns = load_cooldowns(now)
     disabled = {backend for backend in backends if cooldowns.get(backend, 0) > now}
     incomplete = set(disabled)
@@ -504,6 +505,12 @@ def main() -> int:
     for term, topic, query_page in query_requests:
         for b in backends:
             if b in disabled:
+                continue
+            if until := cooldown_store().active(b):  # re-read: another process may have set it
+                disabled.add(b)
+                incomplete.add(b)
+                print(f"# {b} cooldown active for {math.ceil(until - time.time())}s "
+                      "(set meanwhile); skipping it for the rest of this round", file=sys.stderr)
                 continue
             try:
                 hits = BACKENDS[b](term, topic, args.per, query_page)
@@ -608,9 +615,11 @@ def main_family(args) -> int:
         print(f"# ERROR: cannot load the pinned host policy: {exc}", file=sys.stderr)
         return 1
     now = time.time()
+    if COOLDOWN_FILE is None:
+        openalex_state.migrate_legacy_cooldowns(HERE / "workspace")
     return openalex_families.main_family(
-        args, policy=_POLICY, keys=dedup.open_keys(), cooldowns=load_cooldowns(now),
-        save_cooldowns=save_cooldowns, get=requests.get, openalex_relevant=openalex_relevant,
+        args, policy=_POLICY, keys=dedup.open_keys(), cooldowns=cooldown_store(),
+        get=requests.get, openalex_relevant=openalex_relevant,
         append_entries=registry.append_entries, request_hold=request_rotation_hold,
         report_next=report_next, now=now, run_id=os.environ.get("NEKAISE_RUN_ID"))
 

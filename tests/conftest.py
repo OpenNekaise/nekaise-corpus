@@ -67,3 +67,18 @@ def _private_authority_record(monkeypatch, tmp_path):
                         tmp_path / ".host-config" / "store-authority.json")
     for name in ("NEKAISE_STORE", "NEKAISE_PG_DSN", "NEKAISE_PG_SCHEMA"):
         monkeypatch.delenv(name, raising=False)
+
+
+@pytest.fixture(autouse=True)
+def _private_machine_state(monkeypatch, tmp_path):
+    """The machine-level politeness state (scripts/openalex_state.py: shared OpenAlex spacing
+    and per-host cooldowns under ~/.cache/nekaise) is shared with live rounds of every checkout:
+    each test gets a private directory, and reaching the real default location fails."""
+    import openalex_state
+
+    monkeypatch.setenv(openalex_state.STATE_ENV, str(tmp_path / ".machine-state"))
+
+    def refuse():
+        raise AssertionError("test reached the machine-level state directory; it is isolated "
+                             f"through {openalex_state.STATE_ENV}")
+    monkeypatch.setattr(openalex_state, "default_state_dir", refuse)

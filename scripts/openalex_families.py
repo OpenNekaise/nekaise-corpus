@@ -26,7 +26,8 @@ cursor, run as `find_sources.py --family <name> --family-cursor <cursor>`:
   of lookups, or a failed supplementary lookup stops at that result and keeps the page with its
   `k`; a failed or malformed search keeps the whole committed cursor (exit 1). A fully read
   query/window moves on; after the last query the walk starts a new pass — never "exhausted".
-* The resolution record (workspace/openalex-resolution.jsonl) is OPTIONAL ACCELERATION: it lets a
+* The resolution record (workspace/openalex-resolution-<family>.jsonl, one per family so
+  concurrent families never rewrite each other's) is OPTIONAL ACCELERATION: it lets a
   later run re-check an unresolved work (e.g. an SSRN preprint whose published version may get a
   licensed copy) sooner than the next pass of the walk. Losing it, or a round rolling back after
   it was written, loses nothing: a retry is marked resolved only once a later run sees the work
@@ -50,6 +51,7 @@ from typing import Callable
 import bes_relevance
 import dedup
 import oa_resolution as oar
+import openalex_state
 import ops
 import registry
 
@@ -376,49 +378,12 @@ def check_search(data, per: int, page: int = 1) -> tuple[list[dict], int]:
     return results, count
 
 
-OPENALEX_SPACING = 1.0  # seconds between ANY two OpenAlex requests of this machine's finders
-
-
-class SharedPacer:
-    """Spacing shared by every process on this machine (the family finders of one round run
-    concurrently): a lock file serializes callers, a timestamp file remembers the last request
-    start. `clock`/`sleep` are injectable; the files live in workspace/ (never committed)."""
-
-    def __init__(self, name: str = "openalex-pace", spacing: float = OPENALEX_SPACING, *,
-                 clock=time.time, sleep=time.sleep, workspace: Path | None = None,
-                 timeout: float = 300.0):
-        self.name, self.spacing, self.clock, self.sleep = name, spacing, clock, sleep
-        self.workspace, self.timeout = workspace, timeout
-
-    def wait(self) -> None:
-        ws = Path(self.workspace) if self.workspace is not None else ops.WORKSPACE
-        with ops.named_lock(self.name, timeout=self.timeout, workspace=ws):
-            stamp = ws / f"{self.name}.json"
-            try:
-                last = float(json.loads(stamp.read_text())["last"])
-            except (OSError, ValueError, KeyError, TypeError):
-                last = 0.0
-            if (delay := last + self.spacing - self.clock()) > 0:
-                self.sleep(delay)
-            ops.atomic_write_text(stamp, json.dumps({"last": self.clock()}) + "\n")
-
-
-class LocalPacer:
-    """No cross-process spacing (tests, and callers that own their pacing)."""
-
-    def wait(self) -> None:
-        return None
-
-
-RATE_HEADERS = ("retry-after", "x-ratelimit-remaining", "x-ratelimit-limit",
-                "x-ratelimit-reset", "x-ratelimit-remaining-usd", "x-ratelimit-cost-usd")
-
-
-def _headers_lower(headers) -> dict:
-    try:
-        return {str(k).lower(): v for k, v in dict(headers).items()}
-    except (TypeError, ValueError):
-        return {}
+# Machine-level politeness state (pacer, cooldowns, throttle classification) is shared with
+# the legacy OpenAlex finder and every other checkout: scripts/openalex_state.py.
+OPENALEX_SPACING = openalex_state.OPENALEX_SPACING
+SharedPacer = openalex_state.SharedPacer
+LocalPacer = openalex_state.LocalPacer
+RATE_HEADERS = openalex_state.RATE_HEADERS
 
 
 class Api:
@@ -427,11 +392,13 @@ class Api:
     requests.get (tests replace it). `now` is a LIVE clock: every cooldown deadline is computed
     when the answer arrives, never from the run's start."""
 
-    def __init__(self, get, *, lookup_max: int, cooldowns: dict, save_cooldowns, now,
+    def __init__(self, get, *, lookup_max: int, cooldowns=None, save_cooldowns=None, now,
                  sleep=time.sleep, pacer=None):
         self.get, self.lookup_max = get, lookup_max
-        self.cooldowns, self.save_cooldowns, self.now, self.sleep = (
-            cooldowns, save_cooldowns, now, sleep)
+        self.now, self.sleep = now, sleep
+        # a machine-level Cooldowns store (re-read before every request, max-merged on write)
+        # or, for tests, a dict + save function
+        self.cooldowns = openalex_state.as_cooldowns(cooldowns, save_cooldowns, now)
         self.pacer = pacer if pacer is not None else LocalPacer()
         self.searches = 0
         self.lookups = 0
@@ -444,10 +411,9 @@ class Api:
         return max(0, self.lookup_max - self.lookups)
 
     def _request(self, url, params, *, host_key: str):
-        until = self.cooldowns.get(host_key, 0)
-        if until > self.now():
-            raise UpstreamError(f"{host_key} cooldown active for {int(until - self.now())}s",
-                                429, until)
+        if until := self.cooldowns.active(host_key):  # re-read: another process may have set it
+            raise UpstreamError(f"{host_key} cooldown active for "
+                                f"{max(1, int(until - self.now()))}s", 429, until)
         if host_key == "openalex":
             try:
                 self.pacer.wait()
@@ -478,46 +444,22 @@ class Api:
             raise UpstreamError(f"{host_key} returned non-JSON: {exc}") from exc
 
     def _throttled(self, host_key: str, status: int, headers) -> "UpstreamError":
-        """Classify a 429/503 from its rate-limit headers — the daily credit BUDGET spent
-        (cooldown until the reset) versus request-RATE limiting (cooldown for Retry-After) —
-        persist the cooldown from the live clock, and keep the headers for the run record."""
-        h = _headers_lower(headers)
-        self.throttle = {k: h[k] for k in RATE_HEADERS if k in h}
-
-        def number(key):
-            try:
-                return int(float(h[key]))
-            except (KeyError, TypeError, ValueError):
-                return None
-
-        remaining, reset, retry = (number("x-ratelimit-remaining"),
-                                   number("x-ratelimit-reset"), number("retry-after"))
-        if host_key == "openalex" and remaining is not None and remaining < SEARCH_CREDITS:
-            kind, wait = "budget exhausted", reset if reset is not None else 3600
-        else:
-            kind, wait = "rate limited", retry if retry is not None else 3600
-        deadline = self.now() + max(0, wait)
-        self.cooldowns[host_key] = max(self.cooldowns.get(host_key, 0), deadline)
-        self.save_cooldowns(self.cooldowns)
-        detail = ", ".join(f"{k}={v}" for k, v in self.throttle.items()) or "no rate headers"
+        """Classify a 429/503 (openalex_state.classify_throttle: budget exhausted vs rate
+        limited), persist the cooldown from the live clock (max-merged), keep the headers."""
+        kind, deadline, self.throttle, detail = openalex_state.classify_throttle(
+            host_key, status, headers, self.now())
+        self.cooldowns.raise_to({host_key: deadline})
         self.budget_note = f"{host_key} HTTP {status}: {kind} ({detail})"
         return UpstreamError(f"{host_key} HTTP {status}: {kind} ({detail})", status, deadline)
 
     def _note_openalex_budget(self, headers) -> None:
         """Persist a cooldown until the daily reset once fewer credits remain than one search."""
-        remaining = headers.get("x-ratelimit-remaining") or headers.get("X-RateLimit-Remaining")
-        reset = headers.get("x-ratelimit-reset") or headers.get("X-RateLimit-Reset")
-        try:
-            remaining = int(remaining)
-        except (TypeError, ValueError):
-            return
-        self.budget_note = f"OpenAlex credits remaining {remaining}"
-        if remaining < SEARCH_CREDITS:
-            wait = int(reset) if str(reset or "").isdigit() else 3600
-            self.cooldowns["openalex"] = max(self.cooldowns.get("openalex", 0),
-                                             self.now() + wait)
-            self.save_cooldowns(self.cooldowns)
-            self.budget_note += f"; cooldown persisted for {wait}s"
+        h = openalex_state.headers_lower(headers)
+        if "x-ratelimit-remaining" in h:
+            self.budget_note = f"OpenAlex credits remaining {h['x-ratelimit-remaining']}"
+        if (deadline := openalex_state.budget_deadline(headers, self.now())) is not None:
+            self.cooldowns.raise_to({"openalex": deadline})
+            self.budget_note += f"; cooldown persisted until {int(deadline)}"
 
     def search(self, params: dict, per: int) -> tuple[list[dict], int]:
         self.searches += 1
@@ -561,8 +503,35 @@ class Api:
 
 # --- resolution record (optional acceleration) ----------------------------------------------------
 
-def default_ledger_path() -> Path:
-    return ops.WORKSPACE / "openalex-resolution.jsonl"
+LEGACY_LEDGER = "openalex-resolution.jsonl"  # the shared file before 2026-09-25
+
+
+def default_ledger_path(family: str = "simulation") -> Path:
+    """One resolution record PER FAMILY: concurrent families never rewrite each other's."""
+    migrate_shared_ledger()
+    return ops.WORKSPACE / f"openalex-resolution-{family}.jsonl"
+
+
+def migrate_shared_ledger(workspace: Path | None = None) -> None:
+    """Split the old shared record into per-family files (rows keep their family_name; rows
+    without one were written by the simulation family), merging with what a per-family file
+    already holds, then rename the old file. Idempotent; serialized by a lock."""
+    ws = Path(workspace) if workspace is not None else ops.WORKSPACE
+    old = ws / LEGACY_LEDGER
+    if not old.exists():
+        return
+    with ops.named_lock("openalex-ledger-migration", timeout=300, workspace=ws):
+        if not old.exists():
+            return
+        by_family: dict[str, dict] = {}
+        for row in Ledger(old).rows.values():
+            by_family.setdefault(row.get("family_name") or "simulation", {})[row["key"]] = row
+        for name, rows in by_family.items():
+            target = Ledger(ws / f"openalex-resolution-{name}.jsonl")
+            for key, row in rows.items():
+                target.rows.setdefault(key, row)
+            target.save()
+        old.rename(old.with_name(old.name + ".migrated"))
 
 
 class Ledger:
@@ -1006,7 +975,7 @@ def report(stats: Stats, api: Api, family: Family, cursor_in: str, cursor_out: s
             print(f"# example {kind}: {row}")
 
 
-def main_family(args, *, policy: dict, keys, cooldowns: dict, save_cooldowns, get,
+def main_family(args, *, policy: dict, keys, cooldowns=None, save_cooldowns=None, get,
                 openalex_relevant, append_entries, request_hold, report_next,
                 now: float | None = None, sleep=time.sleep, run_id: str | None = None,
                 clock=time.time, pacer=None) -> int:
@@ -1022,18 +991,18 @@ def main_family(args, *, policy: dict, keys, cooldowns: dict, save_cooldowns, ge
               "case), or a work could stall its walk", file=sys.stderr)
         return 2
     ledger_path = Path(args.resolution_file) if args.resolution_file else (
-        default_ledger_path() if args.append else None)
+        default_ledger_path(family.name) if args.append else None)
     ledger = Ledger(ledger_path)
     api = Api(get, lookup_max=args.lookup_max, cooldowns=cooldowns,
               save_cooldowns=save_cooldowns, now=clock, sleep=sleep,
               pacer=pacer if pacer is not None else SharedPacer(clock=clock, sleep=sleep))
+    cooldowns = api.cooldowns
     run = FamilyRun(api=api, policy=policy, keys=keys, ledger=ledger, per=args.per,
                     max_docs=args.max, openalex_relevant=openalex_relevant, now=now,
                     family=family)
     slot = budget_slot(run_id, cursor.t)
-    if slot in family.walks and cooldowns.get("openalex", 0) > clock():
-        request_hold(f"OpenAlex cooldown active for "
-                     f"{max(1, int(cooldowns['openalex'] - clock()))}s")
+    if slot in family.walks and (until := cooldowns.active("openalex")):
+        request_hold(f"OpenAlex cooldown active for {max(1, int(until - clock()))}s")
         report(run.stats, api, family, cursor.render(), None, time.monotonic() - started)
         return 0
     try:
