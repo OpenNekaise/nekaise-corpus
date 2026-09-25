@@ -52,7 +52,8 @@ not require a code change at every maintenance wake.
 | `scripts/` | The **machinery** — loader, discovery backends, quality gate, cron/marathon runners. All run from the repo root: `python scripts/<x>.py`. |
 | `.claude/skills/` | The **skills** — step-by-step playbooks for each loop (`go` · `load-corpus` · `find-sources` · `crawl-docs` · `clean-corpus` · `dig`). Claude Code picks them up natively; Codex: read the `SKILL.md` files directly. |
 | `workspace/` | **Your scratch space** (git-ignored). One-off helper scripts, notes, dumps go here — never the repo root. Promote durable tools into `scripts/`. |
-| `raw/` · `text/` · `corpus/` | Your local copy, in three stages: original bytes → verbatim extraction → **cleaned, training-ready text**. **All git-ignored. Never committed.** See *The three stages* below. |
+| `raw/` · `text/` · `corpus/` | Your local copy, in three stages: original bytes → verbatim extraction → **cleaned, training-ready text** (the default `open` view). **All git-ignored. Never committed.** See *The three stages* below. |
+| `collection/<class>/` | **Classified views** of restricted-use classes: `corpus/` holds their cleaned text; `raw/`, `text/` are rebuildable views over the canonical originals. Git-ignored, never committed, never read by a default training run. |
 | `logs/` | Headless dig/marathon run logs (git-ignored). |
 
 **Storage is migrating (ADR 0001, `docs/decisions/0001-storage-architecture.md`).** Tracked state
@@ -285,16 +286,45 @@ generation that a later verdict resolves.
 
 ## Hard rules
 
-- **Never commit `raw/`, `text/`, or `corpus/`** — copyrighted content under mixed licenses. Only the
+- **Never commit `raw/`, `text/`, `corpus/` or `collection/`** — copyrighted content under mixed licenses. Only the
   registry, manifest, code, and docs are tracked.
 - **`text/` is verbatim — never clean it in place.** Cleaning writes `corpus/`. Editing `text/` throws
   away the ability to re-clean, and `raw/` is the only way back.
-- **Respect each source's `license`:** `public-domain` (US gov) · `cc-by` / `cc-by-sa` (attribute) ·
-  `open` (arXiv / OA — check per-source terms) · `proprietary-internal` (paywalled vendor material /
-  standards — **pointers only, never add the bytes**). A rights audit
-  (`scripts/audit_licence_evidence.py`) may re-tag already-fetched rows with an *excluded* licence
-  (`registry.EXCLUDED_LICENSES`: `arxiv-nonexclusive`, `publisher-oa`, `cc-by-nc*`/`cc-by-nd`,
-  `unverified`): provenance and raw/text stay, but the row is never training-eligible.
+- **Collect regardless of licence; classify before use (operator directive 2026-09-25).** "Ignore
+  the use of training, just get the raw data down": NC/ND, arXiv non-exclusive, publisher
+  free-to-read, unverified and proprietary-with-public-bytes content is downloaded, extracted,
+  cleaned and backed up like everything else. A licence NEVER decides whether bytes are collected;
+  it decides the **use class** (`registry.use_class`: `open` · `nc` · `nd` · `nc-nd` ·
+  `arxiv-nonexclusive` · `publisher-oa` · `unverified` · `proprietary` · `policy-held`) and so the
+  materialized view: the default `corpus/` holds the `open` class only (`public-domain` ·
+  `cc-by` · `cc-by-sa` · `cc0` · `open`, the project's existing use policy, unchanged), every
+  other class is cleaned into `collection/<class>/corpus/` (raw/text views under
+  `collection/<class>/{raw,text}/` are rebuildable links, never moved originals). Record the
+  exact licence tag plus `license_url` / `license_evidence` / `rights_verified_at`; unknown or
+  conflicting rights are `unverified`, never a generic `open`. `open` stays a project use label,
+  not a legal conclusion. Never reinstate a licence download filter in a finder.
+- **Access limits still stop collection** — they are not licence questions: logins, paywalls,
+  WAF/JS challenges (SSRN, eScholarship, HAL, FEMA, ERDC …), suspended hosts
+  (`registry/host_policy.json`), explicit ToS prohibitions of systematic/bulk downloading
+  (J-STAGE, NRC Canada, ROSA P, DTIC), robots-based exclusions outside the manufacturer
+  exception (SciELO Chile/Peru, Buildings & Cities, CISBAT/IOP), crawl delays and host caps.
+  Patents stay paused (operator decision). Paywalled standards without public bytes stay
+  `proprietary-internal` pointers, held by an explicit collection-deny rule.
+- **Former licence-only NO-GOs are collection GO** (subject to readable, permitted access):
+  ODYSSEE-MURE (ARR), ABCB/NCC NC/ND variants, Ladybug/Radiance forum (NC-SA), ComStock/SOEP/
+  OpenStudio Coalition docs and `lbl-srg/obc` (no grant), IEA EBC (reproduction objection;
+  classify per document). J-STAGE's reuse-only exclusion is lifted but its bulk-download
+  prohibition still holds collection. Timeouts/unreachable hosts and metadata-only records remain
+  unresolved for access, not licence. SAREF's rendered site stays held until its original
+  evidence separates rights from access.
+- **Rights audits** (`scripts/audit_licence_evidence.py`) pin licence evidence to the fetched
+  version/payload and RECLASSIFY rows (collection delta 0): the cleaned file moves to its view
+  with the same hash; raw/text provenance never changes.
+- **Source-policy evidence (phase 2, not yet implemented):** classification metadata only, never a
+  collection gate — `gov_uk`: a scoped OGL v3 policy record (checks for contrary notices and
+  third-party material, OGL kept as OGL); `worldbank_wds`, `ibpsa`, `ademe`, `openaire`:
+  per-document (or demonstrably homogeneous collection) evidence; `gh_*`: per repository +
+  revision + path (nested/third-party licences); `google_patents`: stays paused.
 - **Manufacturer product literature (operator decision 2026-08-30, supersedes 08-28):** catalogs,
   data sheets, IOM manuals, engineering/selection guides and specification texts are ingested as
   `license: open` via `scripts/find_vendor.py` + `registry/vendors.json` for local training use — the
@@ -302,11 +332,14 @@ generation that a later verdict resolves.
   AI-crawler opt-outs) are recorded per vendor in `rights.tos_excerpt` for the audit trail but are
   **not blockers**. What still bounds "obtainable": never bypass logins, paywalls or WAF/JS
   challenges; honour Crawl-delay and the per-host caps in `build_corpus.py`.
-- **Respect `registry/eligibility.json`:** restrictions override an otherwise fetchable license.
-  Preserve their registry/manifest and raw/text provenance; never restore them to `corpus/` without
-  a reviewed rights decision and matching control-plane change.
-- **Prefer openly-licensed sources.** Grow the corpus by editing `registry/curated.yaml`; high-value paywalled
-  items go in as pointers only.
+- **Respect `registry/eligibility.json` (version 2):** each rule has `effects: {collection,
+  default_corpus}` (`allow`/`deny`; a version-1 rule meant deny both) and EVERY matching rule is
+  evaluated. `collection: deny` keeps rows unfetched (held bytes and provenance stay; its backends
+  must be disabled with a policy-blocked reason); `default_corpus: deny` classifies rows
+  `policy-held` (`collection/policy-held/`). Never restore a held row to `corpus/` without a
+  reviewed rights decision and matching control-plane change.
+- **Grow** by editing `registry/curated.yaml` or adding finders; high-value paywalled items go in as
+  pointers only.
 - **Report failures, never hide them.** A 404 = fix or drop the entry; never leave a known-dead URL
   silently failing in the registry.
 

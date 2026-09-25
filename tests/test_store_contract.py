@@ -104,21 +104,69 @@ def test_predicate_semantics_missing_vs_null():
     assert not store.evaluate(Prefix("error", ""), row)  # prefix needs a string
 
 
-def test_eligibility_predicate_matches_python_policy():
-    restrictions = {
-        "cn": {"status": "restricted", "match": {"id_prefix": "pat-cn", "source": "google_patents"}},
-        "js": {"status": "restricted", "match": {"source": "jstage"}},
-    }
-    pred = store.eligibility_where(restrictions)
+POLICY = {   # overlapping rules with different effects: every matching rule counts
+    "cn": {"status": "restricted", "match": {"id_prefix": "pat-cn", "source": "google_patents"}},
+    "js": {"status": "restricted", "match": {"source": "jstage"},
+           "effects": {"collection": "deny", "default_corpus": "deny"}},
+    "held": {"status": "restricted", "match": {"source": "jstage", "license": "cc-by"},
+             "effects": {"collection": "allow", "default_corpus": "deny"}},
+    "soft": {"status": "restricted", "match": {"source": "other", "license": "cc-by"},
+             "effects": {"collection": "allow", "default_corpus": "deny"}},
+    "ptr": {"status": "restricted", "match": {"license": "proprietary-internal"},
+            "effects": {"collection": "deny", "default_corpus": "deny"}},
+}
+LICENCES = ("open", "cc-by", "proprietary-internal", "proprietary", "arxiv-nonexclusive",
+            "cc-by-nc-nd", "unverified", "made-up", 7, None)
+
+
+def policy_rows():
     for sid in ("pat-cn1", "pat-us1", "jst-1", "x", ""):
         for source in ("google_patents", "jstage", "other", None):
-            for lic in ("open", "proprietary-internal", "arxiv-nonexclusive", "cc-by", None):
-                r = {"id": sid}
-                if source is not None:
-                    r["source"] = source
-                if lic is not None:
-                    r["license"] = lic
-                assert store.evaluate(pred, r) == registry.is_training_eligible(r, restrictions), r
+            for lic in LICENCES:
+                for corpus_path in (None, "corpus/x.md", ""):
+                    r = {"id": sid, "status": "ok"}
+                    if source is not None:
+                        r["source"] = source
+                    if lic is not None:
+                        r["license"] = lic
+                    if corpus_path is not None:
+                        r["corpus_path"] = corpus_path
+                    yield r
+
+
+def test_use_predicates_match_python_policy():
+    preds = {"collection": (store.collection_where(POLICY), registry.is_collection_eligible),
+             "default": (store.default_corpus_where(POLICY),
+                         registry.is_default_corpus_eligible),
+             "deprecated": (store.default_corpus_where(POLICY), registry.is_training_eligible)}
+    for cls in registry.USE_CLASSES:
+        preds[f"class:{cls}"] = (store.class_where(cls, POLICY),
+                                 lambda r, _p, c=cls: registry.use_class(r, _p) == c)
+    for view in registry.VIEWS:
+        preds[f"view:{view}"] = (store.corpus_view_where(view, POLICY),
+                                 lambda r, _p, v=view: registry.is_corpus_view_member(r, v, _p))
+    for r in policy_rows():
+        classes = [c for c in registry.USE_CLASSES if registry.use_class(r, POLICY) == c]
+        assert len(classes) == 1, r
+        for name, (pred, fn) in preds.items():
+            assert store.evaluate(pred, r) == fn(r, POLICY), (name, r)
+            assert store.compile_python(pred)(r) == fn(r, POLICY), (name, r)
+
+
+def test_licence_never_denies_collection_and_rules_all_count():
+    for lic in LICENCES:
+        assert registry.is_collection_eligible({"id": "x", "license": lic}, {})
+    row = {"id": "j", "source": "jstage", "license": "cc-by"}
+    # "held" alone would allow collection; the overlapping "js" rule denies it
+    assert not registry.is_collection_eligible(row, POLICY)
+    assert registry.use_class(row, POLICY) == "policy-held"
+    soft = {"id": "s", "source": "other", "license": "cc-by"}
+    assert registry.is_collection_eligible(soft, POLICY)
+    assert not registry.is_default_corpus_eligible(soft, POLICY)
+    assert registry.corpus_path_for(soft, POLICY) == "collection/policy-held/corpus/s.md"
+    assert registry.corpus_path_for({"id": "o", "license": "open"}, POLICY) == "corpus/o.md"
+    assert registry.corpus_path_for({"id": "n", "license": "cc-by-nc-sa"}, {}) == \
+        "collection/nc/corpus/n.md"
 
 
 def test_unknown_fields_are_rejected(st):

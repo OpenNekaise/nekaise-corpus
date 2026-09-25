@@ -57,12 +57,17 @@ for targeted diagnosis; hold the canonical round lock across any manual mutation
 ## To grow the corpus
 
 Add entries to `registry/curated.yaml` (`id` / `title` / `url` / `source` / `license` / `topic` / `format`),
-then re-run. Prefer openly-licensed sources (public-domain gov reports, CC, arXiv). Follow AGENTS.md for manufacturer literature (locally ingestible as `open` under the operator
-policy); paywalled standards and other `proprietary-internal` sources remain pointers only.
+then re-run. Record each source's exact licence: it classifies the bytes (default `corpus/` view vs
+`collection/<class>/`), it does not decide whether they are collected (AGENTS.md, collect-all
+directive). Follow AGENTS.md for manufacturer literature (locally ingestible as `open` under the
+operator policy); paywalled standards and other sources without public bytes stay
+`proprietary-internal` pointers.
 
 ## License discipline (important)
 
 `raw/`, `text/` and `corpus/` are git-ignored and must NEVER be committed — they hold copyrighted
-content under mixed licenses (`public-domain` / `cc-by-sa` / `open` / `proprietary-internal`). This
-repo publishes only the registry, the loader, the cleaner, and the provenance manifest. Respect each
-source's `license` field before any downstream use that leaves this machine.
+content under mixed licenses. Neither is `collection/` (the classified views). This repo publishes
+only the registry, the loader, the cleaner, and the provenance manifest. Every collected document
+is classified by its `license` (`registry.use_class`); only the default `corpus/` view carries the
+project's training-use policy, and each source's licence still governs any use that leaves this
+machine.

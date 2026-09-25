@@ -56,10 +56,13 @@ def test_restricted_rows_still_claiming_corpus_data(factory, tmp_path):
                     "soep": {"match": {"source": "soep"}}}
     with st.read() as v:
         count, first = corpus_stats.restricted_with_corpus_data(v, restrictions)
+        misplaced, first_misplaced = corpus_stats.misplaced_view_claims(v, restrictions)
         every = v.scan("manifest", limit=100).rows
-    legacy = [r for r in every if registry.restriction_for(r, restrictions) is not None
-              and any(f in r for f in registry.CORPUS_FIELDS)]
-    assert count == len(legacy) == 2 and first in {r["id"] for r in legacy}
+    # only a claim on the DEFAULT view is wrong for a held row (crawl-s claims no path at all)
+    wrong = [r for r in every if not registry.is_default_corpus_eligible(r, restrictions)
+             and str(r.get("corpus_path", "")).startswith("corpus/")]
+    assert count == len(wrong) == 1 and first == "pat-cn1"
+    assert (misplaced, first_misplaced) == (1, "pat-cn1")
 
 
 def test_local_unavailable_counts_only_eligible_rows(tmp_path, monkeypatch):

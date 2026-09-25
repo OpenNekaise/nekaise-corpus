@@ -37,8 +37,13 @@ budgets; never reset a live cursor to zero or append while another round owns th
 2. **Review** (your judgment, not the script's):
    - **Relevance:** is it really built-environment / AEC / building-energy, and on-topic for its
      `topic` tag? OpenAlex search is broad — drop off-topic hits.
-   - **License:** OpenAlex entries carry `license_evidence` for the selected copy; other sources
-     may use `open` — check the per-source terms before any redistribution.
+   - **License = classification, not a filter** (operator directive 2026-09-25: collect all raw
+     data regardless of licence). OpenAlex entries carry `license_evidence` for the selected
+     copy; record the exact licence tag and its evidence everywhere. NC/ND, arXiv non-exclusive,
+     free-to-read and unknown rights are collected into their use class
+     (`registry.LICENSE_CLASSES`), never dropped. Unknown or conflicting rights are `unverified`,
+     never a generic `open`. Only access limits stop collection: logins, paywalls, WAF/JS
+     challenges, suspended hosts, explicit ToS bulk-download prohibitions.
    - **URL:** confirm `url` is a direct PDF. Some OpenAlex `pdf_url`s are landing pages — the loader
      will fetch HTML or fail on those; fix or drop them.
    - **Dedup by meaning,** not just URL: skip near-duplicates of what is already in the corpus.
@@ -63,4 +68,6 @@ budgets; never reset a live cursor to zero or append while another round owns th
   (sciencedirect / springer / wiley / tandf / ieee) 403 bots and are deliberately excluded. SSRN is
   fetch-suspended (Cloudflare, all rights reserved): SSRN-origin works enter only through a
   separately licensed copy on another host.
-- Never add `proprietary-internal` bytes; list paywalled high-value items as pointers only.
+- Paywalled / login-only items stay pointers (`proprietary-internal`, held by the collection-deny
+  rule in `registry/eligibility.json`). Public bytes of proprietary material are collected as
+  `proprietary` (classified), never by working around an access control.

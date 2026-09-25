@@ -20,13 +20,16 @@ import registry
 import store
 
 REQUIRED = registry.REQUIRED_FIELDS
-LICENSES = ({"public-domain", "cc-by", "cc-by-sa", "cc0", "open", "proprietary-internal"}
-            | set(registry.EXCLUDED_LICENSES))
+# Every supported licence tag (registry.LICENSE_CLASSES); any of them may describe a payload row
+# (collect regardless of licence: the tag decides the use view, never whether bytes are held).
+LICENSES = set(registry.KNOWN_LICENSES)
 # Rights-evidence rule (OFF by default; --require-rights-evidence). Once the licence audit
 # (scripts/audit_licence_evidence.py apply) has given every arXiv/OpenAlex row its evidence, this
 # keeps new rows from arriving as bare `open`: each such entry and manifest row must carry
 # license_evidence and rights_verified_at, and resolve to a concrete licence (never `open`).
-EVIDENCE_PREFIXES = ("arx-", "ope-", "oa-")
+# Scope: machine-discovered arXiv/OpenAlex ids and the hand-curated arxiv-* ids; the audit's
+# `enumerate` inventories the whole scope (incl. registry-only and failed rows) before enabling.
+EVIDENCE_PREFIXES = ("arx-", "ope-", "oa-", "arxiv-")
 TOPICS = {"controls_bas", "equipment_systems", "building_energy", "commissioning_fdd",
           "standards_protocols", "structures_civil", "construction", "materials",
           "architecture", "infrastructure", "urban"}
@@ -82,8 +85,6 @@ def manifest_errors(r: dict, entry: dict | None) -> list[str]:
     """Checks for one manifest row against its registry entry (None = orphaned)."""
     errors = []
     sid = r.get("id")
-    if r.get("license") in registry.POINTER_ONLY_LICENSES:
-        errors.append(f"manifest {sid}: pointer-only license {r.get('license')!r} has a payload row")
     if entry is None:
         errors.append(f"manifest row orphaned from registry: {sid}")
         return errors

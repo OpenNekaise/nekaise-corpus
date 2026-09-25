@@ -79,20 +79,46 @@ OPTIONAL_FIELDS = (
     "selected_version", "origin_ids", "resolution",
 )
 FIELDS = REQUIRED_FIELDS + OPTIONAL_FIELDS
-# Licenses in this set are registry pointers only: their metadata is useful for authorized users,
-# but the loader must never fetch their bytes and the manifest must never describe a local payload.
-POINTER_ONLY_LICENSES = frozenset({"proprietary-internal"})
-# Licenses established by a rights audit (scripts/audit_licence_evidence.py) for material that was
-# already fetched: the grant does not allow training use, so the row keeps its raw/text provenance
-# (unlike a pointer-only license, a payload row is legitimate) but never reaches corpus/. The
-# arXiv default licence grants distribution to arXiv only; OA without an open licence grants
-# reading, not reuse; NC/ND are excluded by project policy; "unverified" is an audited row whose
-# licence could not be pinned to the fetched version.
-EXCLUDED_LICENSES = frozenset({
-    "arxiv-nonexclusive", "publisher-oa", "cc-by-nc", "cc-by-nd", "cc-by-nc-sa", "cc-by-nc-nd",
-    "unverified",
-})
-NON_TRAINING_LICENSES = POINTER_ONLY_LICENSES | EXCLUDED_LICENSES
+# --- use classification (operator directive 2026-09-25: collect regardless of licence) ---------
+#
+# A licence never decides whether bytes are COLLECTED (fetched, extracted, cleaned, backed up);
+# it decides which materialized VIEW they belong to. Only an explicit eligibility.json rule with
+# effects.collection = "deny" stops collection (and host/access policy stops individual
+# requests). The default corpus/ view keeps the project's existing use policy: the "open" class.
+#
+# licence tag -> use class. Unknown or missing tags classify as "unverified" (fail closed for
+# the default view, never for collection).
+OPEN_USE_LICENSES = frozenset({"public-domain", "cc-by", "cc-by-sa", "cc0", "open"})
+LICENSE_CLASSES = {
+    **{tag: "open" for tag in sorted(OPEN_USE_LICENSES)},
+    "cc-by-nc": "nc", "cc-by-nc-sa": "nc", "cc-by-nd": "nd", "cc-by-nc-nd": "nc-nd",
+    "arxiv-nonexclusive": "arxiv-nonexclusive",   # arXiv's default: distribution by arXiv only
+    "publisher-oa": "publisher-oa",               # free to read, no open reuse licence
+    "unverified": "unverified",                   # rights not established for the held copy
+    "proprietary": "proprietary",                 # proprietary material with public bytes
+    # a pointer with no obtainable public full text: an explicit collection-deny rule in
+    # eligibility.json (not the tag) keeps it unfetched; audit_licence_evidence.py
+    # pointer-transition re-tags rows that do have public bytes as "proprietary"
+    "proprietary-internal": "proprietary",
+}
+KNOWN_LICENSES = frozenset(LICENSE_CLASSES)
+# Licences whose rows are collected but never in the default view (was EXCLUDED_LICENSES).
+RESTRICTED_USE_LICENSES = frozenset(t for t, c in LICENSE_CLASSES.items() if c != "open")
+# "policy-held": an eligibility.json rule denies the default view (and maybe collection) while
+# the row's underlying licence metadata stays as recorded.
+USE_CLASSES = ("open", "nc", "nd", "nc-nd", "arxiv-nonexclusive", "publisher-oa", "unverified",
+               "proprietary", "policy-held")
+DEFAULT_VIEW = "default"                    # corpus/: the open class's cleaned view
+CLASSIFIED_VIEWS = tuple(c for c in USE_CLASSES if c != "open")
+VIEWS = (DEFAULT_VIEW, *CLASSIFIED_VIEWS)
+COLLECTION_DIR = "collection"               # collection/<class>/{raw,text,corpus}/
+# Bumped whenever the licence -> class mapping or the view layout changes: materialization
+# stamps record it, so a reclassification invalidates a view even when no hash changed.
+CLASS_POLICY_VERSION = 1
+# eligibility.json rule effects; a version-1 rule (no "effects") keeps its historical meaning
+EFFECT_KEYS = ("collection", "default_corpus")
+LEGACY_EFFECTS = {"collection": "deny", "default_corpus": "deny"}
+SELECTORS = ("id_prefix", "source", "license")
 CORPUS_FIELDS = ("corpus_path", "corpus_chars", "corpus_sha256", "cleaner_version",
                  "corpus_source_sha256")  # the last: stage 4 step 3 (versioned cleaning only)
 ENTRY_RE = re.compile(r"^  - id:\s*['\"]?(.+?)['\"]?\s*$")
@@ -320,12 +346,18 @@ def manifest_shard_text(group) -> str:
 # --- eligibility policy schema --------------------------------------------------------------------
 
 def validate_eligibility(data: object) -> list[str]:
-    """Return schema errors for registry/eligibility.json."""
+    """Return schema errors for registry/eligibility.json.
+
+    Version 2 rules carry ``effects: {"collection": allow|deny, "default_corpus": allow|deny}``
+    (at least one deny) and may also select by ``license``; their ``backends`` (the finders a
+    collection deny keeps disabled) may be empty. Version 1 rules have no effects and mean
+    LEGACY_EFFECTS (deny both)."""
     if not isinstance(data, dict):
         return ["top level must be an object"]
     errors: list[str] = []
-    if data.get("version") != 1:
-        errors.append("version must be 1")
+    version = data.get("version")
+    if version not in (1, 2):
+        errors.append("version must be 1 or 2")
     restrictions = data.get("restrictions")
     if not isinstance(restrictions, dict):
         errors.append("restrictions must be an object")
@@ -339,20 +371,33 @@ def validate_eligibility(data: object) -> list[str]:
             continue
         if rule.get("status") != "restricted":
             errors.append(f"{label}.status must be 'restricted'")
+        selectors = SELECTORS if version == 2 else ("id_prefix", "source")
         match = rule.get("match")
         if not isinstance(match, dict) or not match:
             errors.append(f"{label}.match must be a non-empty object")
         else:
-            unknown = sorted(set(match) - {"id_prefix", "source"})
+            unknown = sorted(set(match) - set(selectors))
             if unknown:
                 errors.append(f"{label}.match has unknown selector(s): {', '.join(unknown)}")
             for key, value in match.items():
                 if not isinstance(value, str) or not value:
                     errors.append(f"{label}.match.{key} must be a non-empty string")
+        if version == 2:
+            effects = rule.get("effects")
+            if not isinstance(effects, dict) or set(effects) != set(EFFECT_KEYS) or any(
+                    v not in ("allow", "deny") for v in effects.values()):
+                errors.append(f"{label}.effects must map collection and default_corpus to "
+                              "'allow' or 'deny'")
+            elif "deny" not in effects.values():
+                errors.append(f"{label}.effects must deny something")
+        elif "effects" in rule:
+            errors.append(f"{label}.effects needs version 2")
         backends = rule.get("backends")
-        if (not isinstance(backends, list) or not backends
-                or any(not isinstance(v, str) or not v for v in backends)):
-            errors.append(f"{label}.backends must be a non-empty string list")
+        if not isinstance(backends, list) or any(not isinstance(v, str) or not v
+                                                 for v in backends) \
+                or (version != 2 and not backends):
+            errors.append(f"{label}.backends must be a "
+                          f"{'' if version == 2 else 'non-empty '}string list")
         for key in ("reason", "decided_at"):
             if not isinstance(rule.get(key), str) or not rule[key]:
                 errors.append(f"{label}.{key} must be a non-empty string")
@@ -363,20 +408,102 @@ def validate_eligibility(data: object) -> list[str]:
     return errors
 
 
+def rule_matches(entry: dict, rule: dict) -> bool:
+    """Every selector of `rule` matches the record (selectors are ANDed)."""
+    match = rule["match"]
+    if "id_prefix" in match and not str(entry.get("id", "")).startswith(match["id_prefix"]):
+        return False
+    if "source" in match and entry.get("source") != match["source"]:
+        return False
+    if "license" in match and entry.get("license") != match["license"]:
+        return False
+    return True
+
+
+def rule_effects(rule: dict) -> dict:
+    """A rule's effects; a version-1 rule (none recorded) keeps LEGACY_EFFECTS."""
+    return rule.get("effects") or LEGACY_EFFECTS
+
+
+def matching_rules(entry: dict, restrictions: dict[str, dict]) -> list[tuple[str, dict]]:
+    """EVERY committed rule matching a record: rules with different effects may overlap, so no
+    decision may stop at the first match."""
+    return [(name, rule) for name, rule in restrictions.items() if rule_matches(entry, rule)]
+
+
 def restriction_for(entry: dict, restrictions: dict[str, dict]) -> tuple[str, dict] | None:
-    """Return the first committed restriction matching a registry or manifest record."""
-    for name, rule in restrictions.items():
-        match = rule["match"]
-        if "id_prefix" in match and not str(entry.get("id", "")).startswith(match["id_prefix"]):
-            continue
-        if "source" in match and entry.get("source") != match["source"]:
-            continue
-        return name, rule
-    return None
+    """The first committed rule matching a record, for REPORTING which rule applies. Decisions
+    use matching_rules and the predicates below."""
+    found = matching_rules(entry, restrictions)
+    return found[0] if found else None
+
+
+def is_collection_eligible(entry: dict, restrictions: dict[str, dict]) -> bool:
+    """Whether the record's bytes may be collected (fetched, extracted, cleaned, kept): no
+    matching rule denies collection. A licence never makes this false; host/access policy
+    (host_policy.suspended, challenges, pacing) still governs each request separately."""
+    return not any(rule_effects(rule)["collection"] == "deny"
+                   for _, rule in matching_rules(entry, restrictions))
+
+
+def is_policy_held(entry: dict, restrictions: dict[str, dict]) -> bool:
+    """A matching rule denies the record the default view (or collection)."""
+    return any("deny" in rule_effects(rule).values()
+               for _, rule in matching_rules(entry, restrictions))
+
+
+def use_class(entry: dict, restrictions: dict[str, dict]) -> str:
+    """The record's use class (USE_CLASSES): "policy-held" under a matching rule, else the class
+    of its licence tag (unknown or missing: "unverified")."""
+    if is_policy_held(entry, restrictions):
+        return "policy-held"
+    return LICENSE_CLASSES.get(entry.get("license"), "unverified")
+
+
+def is_default_corpus_eligible(entry: dict, restrictions: dict[str, dict]) -> bool:
+    """Whether the default corpus/ view (the project's existing use policy) admits the record.
+    Independent of collection."""
+    return use_class(entry, restrictions) == "open"
+
+
+def view_of(entry: dict, restrictions: dict[str, dict]) -> str:
+    """The materialized view a record's cleaned payload belongs to: DEFAULT_VIEW or its class."""
+    cls = use_class(entry, restrictions)
+    return DEFAULT_VIEW if cls == "open" else cls
+
+
+def view_root(view: str) -> str:
+    """The directory (relative to the data root) holding a view's cleaned files."""
+    if view == DEFAULT_VIEW:
+        return "corpus"
+    if view not in CLASSIFIED_VIEWS:
+        raise ValueError(f"unknown view {view!r}")
+    return f"{COLLECTION_DIR}/{view}/corpus"
+
+
+def corpus_path_for(entry: dict, restrictions: dict[str, dict]) -> str:
+    """The logical path of a record's cleaned payload: corpus/<id>.md in the default view,
+    collection/<class>/corpus/<id>.md otherwise. The one place this is computed."""
+    return f"{view_root(view_of(entry, restrictions))}/{entry['id']}.md"
+
+
+def collection_view_path(entry: dict, stage: str, cls: str) -> str | None:
+    """Where class `cls`'s rebuildable raw/text view presents a record's canonical payload
+    (collection/<class>/<raw_path or text_path>); None without a usable claim."""
+    field = {"raw": "raw_path", "text": "text_path"}[stage]
+    path = entry.get(field)
+    if not isinstance(path, str) or not path or path.startswith("/") or ".." in path.split("/"):
+        return None
+    return f"{COLLECTION_DIR}/{cls}/{path}"
+
+
+def is_corpus_view_member(row: dict, view: str, restrictions: dict[str, dict]) -> bool:
+    """A successful record with a cleaned-payload claim that belongs to `view`."""
+    return (row.get("status") == "ok" and bool(row.get("corpus_path"))
+            and view_of(row, restrictions) == view)
 
 
 def is_training_eligible(entry: dict, restrictions: dict[str, dict]) -> bool:
-    """Whether an entry may produce fetched and training-ready payload bytes: its license is
-    neither pointer-only nor audit-excluded, and no eligibility restriction matches it."""
-    return (entry.get("license") not in NON_TRAINING_LICENSES
-            and restriction_for(entry, restrictions) is None)
+    """DEPRECATED alias of is_default_corpus_eligible (default-view eligibility). It no longer
+    says anything about collection: fetching asks is_collection_eligible."""
+    return is_default_corpus_eligible(entry, restrictions)

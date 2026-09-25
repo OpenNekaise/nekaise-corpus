@@ -4,6 +4,8 @@
 raw/
 text/
 corpus/
+# classified views of every restricted-use class (collect-all directive 2026-09-25): same rule
+collection/
 # Immutable payload versions of PostgreSQL-staged runs (ADR 0001 stage 4 step 3) — same bytes, same rule
 artifacts/
 

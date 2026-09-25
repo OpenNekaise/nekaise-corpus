@@ -7,21 +7,27 @@ same against FileStore and PostgreSQL, and it is manifest-based: identical on ev
 whatever payloads the machine holds (local availability is reported elsewhere).
 
 Semantics (unchanged from the pre-store code, pinned by tests/test_corpus_stats.py):
-* documents = successful ("ok") training-eligible manifest rows; excluded = successful rows a
-  restriction or pointer-only license keeps out;
+* documents = successful ("ok") DEFAULT-VIEW manifest rows (registry.is_default_corpus_eligible,
+  the open use class); excluded = successful rows outside the default view (restricted-use
+  classes and policy holds) — they are still COLLECTED, see compute_collection;
 * text_chars = sum of their text_chars; corpus_chars = sum of corpus_chars, falling back to
   text_chars for rows the cleaner has not visited;
 * tokens ≈ chars // 4;
 * topics / licenses: counts, ordered by count descending, ties by name.
+
+Collection statistics (compute_collection) are reported ALONGSIDE, never mixed into the default
+numbers: held raw originals per use class (a verified raw claim counts even when extraction
+failed), successful extractions, and cleaned payloads per view.
 """
 from __future__ import annotations
 
+from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
 
 import registry
 import store
-from store import And, Eq, Exists, Not, Or
+from store import And, Eq, Exists, Not, Or, Prefix
 
 
 @dataclass(frozen=True)
@@ -51,7 +57,7 @@ def compute(view, restrictions: dict | None = None) -> CorpusStats:
     eligibility policy (validated, failing closed)."""
     if restrictions is None:
         restrictions, _ = store.pinned_policy(view)
-    eligible_rule = store.eligibility_where(restrictions)
+    eligible_rule = store.default_corpus_where(restrictions)
     ok = Eq("status", "ok")
     eligible = And(ok, eligible_rule)
     topics, text_chars, corpus_chars, documents = {}, 0, 0, 0
@@ -73,11 +79,75 @@ def compute(view, restrictions: dict | None = None) -> CorpusStats:
                        _ordered(topics), licenses)
 
 
+@dataclass(frozen=True)
+class CollectionStats:
+    held: dict          # {use class: rows holding a verified raw original (sha256 + raw_path)}
+    extracted: dict     # {use class: successful rows with extracted text}
+    held_chars: dict    # {use class: sum of text_chars over the extracted rows}
+    cleaned: dict       # {view: rows whose cleaned payload is a member of that view}
+
+    @property
+    def total_held(self) -> int:
+        return sum(self.held.values())
+
+    @property
+    def extraction_failed(self) -> int:
+        return self.total_held - sum(self.extracted.values())
+
+
+def compute_collection(view, restrictions: dict | None = None) -> CollectionStats:
+    """Everything collected, by use class — reported alongside the default statistics. A few
+    aggregates grouped by licence (mapped to classes here, exactly as registry.use_class) plus
+    the policy-held rows, so it costs a handful of scans on any store."""
+    if restrictions is None:
+        restrictions, _ = store.pinned_policy(view)
+    held_rule = And(Exists("sha256"), Not(Eq("sha256", None)), Exists("raw_path"))
+    extracted_rule = And(Eq("status", "ok"), Exists("text_path"))
+    cleaned_rule = And(Eq("status", "ok"), Exists("corpus_path"), Not(Eq("corpus_path", "")),
+                       Not(Eq("corpus_path", None)))
+    policy_held = store.class_where("policy-held", restrictions)
+    held, extracted, chars, cleaned = Counter(), Counter(), Counter(), Counter()
+
+    def by_class(where, sums=()):
+        out = []
+        for g in view.aggregate_manifest(group_by=("license",), where=And(where, Not(policy_held)),
+                                         sums=sums):
+            lic = g["license"]
+            out.append((registry.LICENSE_CLASSES.get(lic, "unverified")
+                        if isinstance(lic, str) else "unverified", g))
+        for g in view.aggregate_manifest(group_by=(), where=And(where, policy_held), sums=sums):
+            out.append(("policy-held", g))
+        return out
+
+    for cls, g in by_class(held_rule):
+        held[cls] += g["count"]
+    for cls, g in by_class(extracted_rule, ("text_chars",)):
+        extracted[cls] += g["count"]
+        chars[cls] += int(g["sum_text_chars"])
+    for cls, g in by_class(cleaned_rule):
+        cleaned[registry.DEFAULT_VIEW if cls == "open" else cls] += g["count"]
+    drop = lambda c: {k: v for k, v in sorted(c.items()) if v}  # noqa: E731
+    return CollectionStats(drop(held), drop(extracted), drop(chars), drop(cleaned))
+
+
+def misplaced_view_claims(view, restrictions: dict) -> tuple[int, str | None]:
+    """Manifest rows whose cleaned-payload claim is not in their own view — above all a
+    restricted-use or policy-held row claiming the default corpus/ view: (count, first id)."""
+    wrong = []
+    for v in registry.VIEWS:
+        root = registry.view_root(v) + "/"
+        wrong.append(And(store.view_where(v, restrictions), Exists("corpus_path"),
+                         Not(Prefix("corpus_path", root))))
+    where = Or(*wrong)
+    count = sum(g["count"] for g in view.aggregate_manifest(group_by=(), where=where))
+    first = view.scan(store.Table.MANIFEST, where=where, fields=("id",), limit=1).rows
+    return count, (first[0]["id"] if first else None)
+
+
 def restricted_with_corpus_data(view, restrictions: dict) -> tuple[int, str | None]:
-    """Training-ineligible manifest rows (a policy restriction or an audit-excluded license) that
-    still claim corpus data: (count, first id)."""
-    where = And(Not(store.eligibility_where(restrictions)),
-                Or(*(Exists(f) for f in registry.CORPUS_FIELDS)))
+    """DEPRECATED name: rows outside the default view that still claim the default corpus/
+    view. Restricted-use rows legitimately claim a cleaned payload in their classified view."""
+    where = And(Not(store.default_corpus_where(restrictions)), Prefix("corpus_path", "corpus/"))
     count = sum(g["count"] for g in view.aggregate_manifest(group_by=(), where=where))
     first = view.scan(store.Table.MANIFEST, where=where, fields=("id",), limit=1).rows
     return count, (first[0]["id"] if first else None)
@@ -89,7 +159,7 @@ def local_unavailable(view, root: Path, restrictions: dict, policy: dict) -> int
     from the same view (store.pinned_policy(view))."""
     if not policy:
         return 0
-    eligible = And(Eq("status", "ok"), store.eligibility_where(restrictions))
+    eligible = And(Eq("status", "ok"), store.default_corpus_where(restrictions))
     n, cursor = 0, None
     while True:
         page = view.scan(store.Table.MANIFEST, where=eligible,
@@ -102,9 +172,9 @@ def local_unavailable(view, root: Path, restrictions: dict, policy: dict) -> int
 
 
 def iter_eligible(view, restrictions: dict, fields: tuple[str, ...] | None = None):
-    """Successful training-eligible manifest rows in registry.load_manifest_rows' order (so
+    """Successful default-view manifest rows in registry.load_manifest_rows' order (so
     first-seen ties and seeded samples match the pre-store tools), projected to `fields`."""
-    where = And(Eq("status", "ok"), store.eligibility_where(restrictions))
+    where = And(Eq("status", "ok"), store.default_corpus_where(restrictions))
     cursor = None
     while True:
         page = view.scan(store.Table.MANIFEST, where=where, fields=fields, cursor=cursor,

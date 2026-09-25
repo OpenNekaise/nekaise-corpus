@@ -85,8 +85,10 @@ what it drops, *and* the CJK prose / data tables / Modelica equations it must no
 
 ## Notes
 
-- `corpus/` is built **from eligible manifest rows**, never from a directory listing, so it can only
-  contain docs with provenance and current policy approval. Files in `text/` that no row references
+- `corpus/` is built **from default-view manifest rows**, never from a directory listing, so it can
+  only contain docs with provenance and current policy approval. Every other successful extraction
+  is cleaned into its classified view `collection/<class>/corpus/` (`registry.corpus_path_for`);
+  a reclassified cleaned file moves between views with the same hash, never deleted. Files in `text/` that no row references
   are excluded by design, and ids whose `text_path` drifted get canonical `corpus/<id>.md` names.
 - **License discipline:** `corpus/` is git-ignored like `raw/` and `text/` and must NEVER be committed.
   Commit only the manifest changes (`corpus_path` / `corpus_chars`), the code, and the docs.

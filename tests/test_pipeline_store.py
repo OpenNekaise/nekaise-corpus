@@ -546,11 +546,13 @@ def build_load_repo(root: Path, failures: bool = True) -> None:
                "error": "read timed out", "transient": True, "retry_attempts": 2,
                "first_failed_at": "2026-09-20T00:00:00Z"}
     if failures:
-        write_repo(root, entries=LOAD_ENTRIES, manifest=[have, drift, timeout], policy={})
+        write_repo(root, entries=LOAD_ENTRIES, manifest=[have, drift, timeout], policy={},
+                   restrictions={"pointers": pipeline_repo.pointer_rule()})
     else:  # every fetch succeeds: a re-run has nothing left to retry
         write_repo(root, entries=[e for e in LOAD_ENTRIES
                                   if e["id"] not in ("ost-l-timeout", "ost-l-404")],
-                   manifest=[have, drift], policy={})
+                   manifest=[have, drift], policy={},
+                   restrictions={"pointers": pipeline_repo.pointer_rule()})
     for rel, data in (("raw/osti/ost-l-have.md", template_body),
                       ("text/ost-l-have.md", HEADER.encode() + template_body)):
         (root / rel).parent.mkdir(parents=True, exist_ok=True)

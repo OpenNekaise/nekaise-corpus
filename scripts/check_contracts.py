@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
@@ -97,12 +98,16 @@ def patent_country_contract_errors(backends: dict) -> list[str]:
 def eligibility_contract_errors(
     restricted_metadata: tuple[int, str | None], backends: dict, restrictions: dict[str, dict]
 ) -> list[str]:
-    """``restricted_metadata`` = corpus_stats.restricted_with_corpus_data(view, restrictions)."""
-    """Cross-file guarantees that make policy restrictions effective, not documentary."""
+    """Cross-file guarantees that make policy restrictions effective, not documentary.
+    ``restricted_metadata`` = corpus_stats.misplaced_view_claims(view, restrictions): rows whose
+    cleaned-payload claim is outside their own view (above all: a restricted-use or policy-held
+    row in the default corpus/ view). Only COLLECTION-denying rules must keep their backends
+    disabled; a default-view hold does not stop discovery (collect regardless of licence)."""
     errors: list[str] = []
     covered_backends = {
         backend for rule in restrictions.values() for backend in rule["backends"]
         if backend not in registry.MANUAL_TOOLS  # one-shot tools enforce restrictions themselves
+        and registry.rule_effects(rule)["collection"] == "deny"
     }
     for backend in sorted(covered_backends - set(backends)):
         errors.append(f"eligibility policy names unknown backend {backend}")
@@ -122,8 +127,8 @@ def eligibility_contract_errors(
     count, first = restricted_metadata
     if count:
         errors.append(
-            f"{count:,} training-ineligible (policy-restricted or licence-excluded) manifest "
-            f"rows still claim corpus data (first: {first})"
+            f"{count:,} manifest rows still claim corpus data outside their use view, e.g. a "
+            f"restricted-use or policy-held row in the default corpus/ (first: {first})"
         )
     return errors
 
@@ -156,6 +161,28 @@ def programme_config_errors(docs: dict, backends: dict) -> list[str]:
     return errors
 
 
+PAYLOAD_DIRS = ("raw", "text", "corpus", "collection", "artifacts")
+
+
+def payload_tracking_errors(root: Path = ROOT) -> list[str]:
+    """Payload bytes (every stage and every classified view) are git-ignored and never tracked."""
+    errors = []
+    ignore = root / ".gitignore"
+    lines = set(ignore.read_text().split()) if ignore.exists() else set()
+    for d in PAYLOAD_DIRS:
+        if f"{d}/" not in lines:
+            errors.append(f".gitignore must ignore {d}/ (payload bytes are never committed)")
+    try:
+        tracked = subprocess.run(["git", "ls-files", "--", *PAYLOAD_DIRS], cwd=root,
+                                 capture_output=True, text=True, timeout=60)
+    except (OSError, subprocess.SubprocessError):
+        return errors
+    if tracked.returncode == 0 and tracked.stdout.strip():
+        first = tracked.stdout.split()[0]
+        errors.append(f"payload files are tracked by git (first: {first})")
+    return errors
+
+
 def host_policy_contract_errors(backends: dict, policy: dict) -> list[str]:
     """A suspended host's backends must be disabled. `policy` is the validated host policy
     pinned in the same view as `backends` (store.pinned_policy)."""
@@ -185,7 +212,7 @@ def effective_backends(backends: dict, runtime: dict) -> dict:
             for name, cfg in backends.items()}
 
 
-def readme_stats_errors(readme: str, stats) -> list[str]:
+def readme_stats_errors(readme: str, stats, collection=None) -> list[str]:
     """Validate every README statistic against ONE manifest-derived view (corpus_stats of one
     store view). Local file availability never enters it, so the committed numbers are identical
     on every machine and fields cannot be satisfied by different views."""
@@ -199,8 +226,13 @@ def readme_stats_errors(readme: str, stats) -> list[str]:
     expected_chars = f"{chars / 1e9:.3f}B" if chars >= 1e9 else f"{chars / 1e6:.0f}M"
     if f"~{expected_chars} chars" not in readme:
         errors.append(f"README extracted chars is stale (want {expected_chars})")
-    if f"**{excluded:,}** rows (not fetched or training-ready)" not in readme:
+    if f"**{excluded:,}** rows (not fetched or training-ready)" not in readme and \
+            f"**{excluded:,}** rows (collected; outside the default corpus view)" not in readme:
         errors.append(f"README policy-excluded count is stale (want {excluded:,})")
+    if collection is not None and "**Collection (all use classes)**" in readme:
+        held = f"**{collection.total_held:,}** held originals"
+        if held not in readme:
+            errors.append(f"README collection count is stale (want {collection.total_held:,})")
     if f"**Topics** | {len(stats.topics)}" not in readme:
         errors.append("README topic count is stale")
     return errors
@@ -218,7 +250,8 @@ def main() -> int:
             print(f"CONTRACT: {exc}")
             return 1
         stats = corpus_stats.compute(view, restrictions)
-        restricted_metadata = corpus_stats.restricted_with_corpus_data(view, restrictions)
+        collection = corpus_stats.compute_collection(view, restrictions)
+        restricted_metadata = corpus_stats.misplaced_view_claims(view, restrictions)
         unavailable = corpus_stats.local_unavailable(view, ROOT, restrictions, policy)
         config = view.config_get()
         backends = {k: v for k, v in config.backends.items() if not k.startswith("_")}
@@ -230,7 +263,7 @@ def main() -> int:
         # README statistics are a per-round git artifact of the file-authoritative loop; under
         # PostgreSQL authority rounds promote generations and write no README (ADR 0001 stage 4)
         readme = (ROOT / "README.md").read_text()
-        errors.extend(readme_stats_errors(readme, stats))
+        errors.extend(readme_stats_errors(readme, stats, collection))
     if unavailable:
         print(f"local availability: {unavailable:,} eligible rows on a fetch-suspended host "
               "have no local payload here (README counts are manifest-based)")
@@ -272,6 +305,7 @@ def main() -> int:
         )
 
     errors.extend(prune_ledger_contract_errors())
+    errors.extend(payload_tracking_errors())
 
     if errors:
         for error in errors:

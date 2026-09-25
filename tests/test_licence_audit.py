@@ -84,7 +84,7 @@ def throttle(route, interval=audit.ARXIV_MIN_INTERVAL):
 def test_licence_url_classification(raw, verdict, tag):
     got = audit.classify_licence_url(raw)
     assert got[:2] == (verdict, tag)
-    assert got[1] in registry.EXCLUDED_LICENSES | {"cc-by", "cc-by-sa", "cc0", "public-domain"}
+    assert got[1] in registry.RESTRICTED_USE_LICENSES | {"cc-by", "cc-by-sa", "cc0", "public-domain"}
 
 
 @pytest.mark.parametrize("raw,verdict,tag", [
@@ -458,10 +458,10 @@ def test_rights_evidence_lint_rule_is_opt_in(tmp_path, capsys):
 
 
 def test_excluded_licences_are_training_ineligible_everywhere():
-    for lic in registry.EXCLUDED_LICENSES:
+    for lic in registry.RESTRICTED_USE_LICENSES:
         row = {"id": "arx-x", "license": lic}
         assert not registry.is_training_eligible(row, {})
-        assert not store.evaluate(store.eligibility_where({}), row)
+        assert not store.evaluate(store.default_corpus_where({}), row)
         assert lic in lint_registry.LICENSES
-    assert not registry.EXCLUDED_LICENSES & registry.POINTER_ONLY_LICENSES
+    assert not registry.RESTRICTED_USE_LICENSES & registry.OPEN_USE_LICENSES
     assert registry.is_training_eligible({"id": "arx-x", "license": "cc-by"}, {})

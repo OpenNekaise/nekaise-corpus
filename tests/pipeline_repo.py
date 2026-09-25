@@ -37,15 +37,38 @@ def pin_policy(root: Path, *, restrictions: dict | None = None,
     pins and store.pinned_policy validates."""
     reg = Path(root) / "registry"
     reg.mkdir(parents=True, exist_ok=True)
-    (reg / "eligibility.json").write_text(json.dumps(
-        {"version": 1, "restrictions": restrictions or {}}, indent=2) + "\n")
+    (reg / "eligibility.json").write_text(eligibility_text(restrictions))
     write_policy(root, policy)
 
 
-def restriction(match: dict) -> dict:
-    """A schema-valid eligibility restriction."""
-    return {"status": "restricted", "match": match, "backends": ["find_x"], "reason": "test",
+def eligibility_text(restrictions: dict | None) -> str:
+    """registry/eligibility.json for `restrictions`: version 2 as soon as any rule records
+    effects (a v1 rule means deny both)."""
+    rules = restrictions or {}
+    version = 2 if any("effects" in r for r in rules.values()) else 1
+    if version == 2:
+        rules = {n: {**r, "effects": r.get("effects") or {"collection": "deny",
+                                                           "default_corpus": "deny"}}
+                 for n, r in rules.items()}
+    return json.dumps({"version": version, "restrictions": rules}, indent=2) + "\n"
+
+
+def restriction(match: dict, *, collection: str | None = None,
+                default_corpus: str | None = None) -> dict:
+    """A schema-valid eligibility restriction; with effects when either is given."""
+    rule = {"status": "restricted", "match": match, "backends": ["find_x"], "reason": "test",
             "decided_at": "2026-09-01", "evidence_urls": ["https://e.org/why"]}
+    if collection or default_corpus:
+        rule["effects"] = {"collection": collection or "allow",
+                           "default_corpus": default_corpus or "deny"}
+        rule["backends"] = [] if rule["effects"]["collection"] == "allow" else ["find_x"]
+    return rule
+
+
+def pointer_rule() -> dict:
+    """The committed pointer rule: proprietary-internal rows are never fetched."""
+    return {**restriction({"license": "proprietary-internal"}, collection="deny",
+                          default_corpus="deny"), "backends": []}
 
 
 def write_repo(root: Path, *, entries=(), manifest=(), blocklist=(), ledger=(),
@@ -56,8 +79,7 @@ def write_repo(root: Path, *, entries=(), manifest=(), blocklist=(), ledger=(),
     reg = root / "registry"
     reg.mkdir(parents=True, exist_ok=True)
     (reg / "backends.json").write_text(json.dumps({"_readme": "test"}, indent=2) + "\n")
-    (reg / "eligibility.json").write_text(json.dumps(
-        {"version": 1, "restrictions": restrictions or {}}, indent=2) + "\n")
+    (reg / "eligibility.json").write_text(eligibility_text(restrictions))
     write_policy(root, policy)
     shards: dict[str, list] = {}
     for e in entries:

@@ -44,8 +44,9 @@ hand as `/dig` any time you want to grow the corpus in one shot.
    `registry/backends.json`, add/update its rotation entry, and run the architecture contracts.
 
 ## Notes
-- Respect each source's `license`; prefer `public-domain` / `cc-by` / `cc-by-sa` / permissive-`open`.
-  Never add `proprietary-internal` bytes.
+- Collect regardless of licence and record it exactly (AGENTS.md); the licence picks the use view.
+  Never reinstate a licence download filter in a finder. Access limits (logins, paywalls,
+  challenges, suspended hosts, ToS bulk-download prohibitions) still stop collection.
 - The mission is **coverage** — keep widening discovery (new backends, new source types, deeper
   enumeration of known collections), not just re-fetching the popular head.
 - One-off helper scripts you write while digging go in `workspace/` (git-ignored), never the repo

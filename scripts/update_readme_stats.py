@@ -54,6 +54,7 @@ def main(argv: list[str] | None = None) -> None:
         # policy pinned with the data: a wait behind a writer cannot pair old rules with new rows
         restrictions, policy = store.pinned_policy(view)
         stats = corpus_stats.compute(view, restrictions)
+        collection = corpus_stats.compute_collection(view, restrictions)
         # README numbers are manifest-derived and identical on every machine; local availability
         # of suspended-host payloads is reported here only, never in the committed statistics.
         unavailable = corpus_stats.local_unavailable(view, HERE, restrictions, policy)
@@ -78,6 +79,9 @@ def main(argv: list[str] | None = None) -> None:
     by_lic = " · ".join(f"{k} {lic[k]:,}" for k in lic_order if lic.get(k)) or \
         " · ".join(f"{k} {n:,}" for k, n in lic.most_common())
 
+    by_class = " · ".join(f"{c} {n:,}" for c, n in sorted(
+        collection.held.items(), key=lambda kv: (-kv[1], kv[0]))) or "none"
+
     def big(n: float) -> str:
         """1484M -> '1.484B'; below a billion stay in M."""
         return f"{n/1e9:.3f}B" if n >= 1e9 else f"{n/1e6:.0f}M"
@@ -86,7 +90,8 @@ def main(argv: list[str] | None = None) -> None:
 | | |
 |---|---|
 | **Documents** | **{ok_count:,}** |
-| **Policy-excluded provenance** | **{excluded_count:,}** rows (not fetched or training-ready) |
+| **Policy-excluded provenance** | **{excluded_count:,}** rows (collected; outside the default corpus view) |
+| **Collection (all use classes)** | **{collection.total_held:,}** held originals · by class: {by_class} |
 | **Raw originals** | **~{du('raw')}** (PDF / HTML / source code) |
 | **Extracted text** | **~{du('text')}** (~{big(chars)} chars, **≈{big(tok)} tokens**) |
 | **Cleaned corpus** | **~{du('corpus')}** (~{big(cchars)} chars, **≈{big(ctok)} tokens**, ruleset-cleaned) |

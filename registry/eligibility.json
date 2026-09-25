@@ -1,6 +1,6 @@
 {
-  "_readme": "Reversible policy overlay for material that remains in registry/manifest provenance but must not be fetched or placed in the training-ready corpus. A restriction stays in force until a reviewed rights decision changes this file.",
-  "version": 1,
+  "_readme": "Reversible policy overlay (version 2). Operator directive 2026-09-25: collect all raw data regardless of licence; a licence decides the materialized use view, never collection. Each rule has effects {collection, default_corpus}: collection 'deny' keeps the matching rows unfetched (their held bytes and provenance stay; their backends must be disabled with a policy-blocked reason); default_corpus 'deny' keeps them out of the default corpus/ view, classifying them 'policy-held' (collection/policy-held/). Every matching rule is evaluated; a deny from any of them wins. Access restrictions (WAF, ToS bulk-download prohibitions, robots) are separate from licence and stay collection denies or host suspensions.",
+  "version": 2,
   "restrictions": {
     "jstage_aij_reuse_rights": {
       "status": "restricted",
@@ -14,7 +14,12 @@
       "evidence_urls": [
         "https://www.jstage.jst.go.jp/static/pages/TermsAndPolicies/ForIndividuals/-char/en"
       ],
-      "decided_at": "2026-08-25"
+      "decided_at": "2026-08-25",
+      "effects": {
+        "collection": "deny",
+        "default_corpus": "deny"
+      },
+      "collection_reason": "J-STAGE's terms also prohibit mechanical large-volume download: bulk collection stays held under the 2026-09-25 collect-all directive (only the reuse-only part of this rule is a licence question)."
     },
     "soep_docs_all_rights_reserved": {
       "status": "restricted",
@@ -29,7 +34,12 @@
         "https://lbl-srg.github.io/soep/",
         "https://github.com/lbl-srg/soep"
       ],
-      "decided_at": "2026-09-24"
+      "decided_at": "2026-09-24",
+      "effects": {
+        "collection": "allow",
+        "default_corpus": "deny"
+      },
+      "collection_reason": "Absence of a reuse grant is a licence question: collected under the 2026-09-25 collect-all directive, held out of the default view (policy-held)."
     },
     "openstudio_coalition_site_no_grant": {
       "status": "restricted",
@@ -44,7 +54,28 @@
         "https://openstudiocoalition.org/about/software_license/",
         "https://github.com/openstudiocoalition/openstudiocoalition.github.io"
       ],
-      "decided_at": "2026-09-24"
+      "decided_at": "2026-09-24",
+      "effects": {
+        "collection": "allow",
+        "default_corpus": "deny"
+      },
+      "collection_reason": "Absence of a reuse grant is a licence question: collected under the 2026-09-25 collect-all directive, held out of the default view (policy-held)."
+    },
+    "proprietary_internal_pointers": {
+      "status": "restricted",
+      "match": {
+        "license": "proprietary-internal"
+      },
+      "effects": {
+        "collection": "deny",
+        "default_corpus": "deny"
+      },
+      "backends": [],
+      "reason": "Pointer-only records (standards, vendor catalogue pages) with no obtainable public full text: never fetched. This is an ACCESS outcome carried over from the old pointer-only licence, not a licence prohibition: rows whose URL serves public bytes move to license 'proprietary' (collected, classified) through the reviewed pointer-transition in scripts/audit_licence_evidence.py (phase 2). Logins, paywalls and paid downloads are never worked around.",
+      "evidence_urls": [
+        "https://www.ashrae.org/technical-resources/standards-and-guidelines"
+      ],
+      "decided_at": "2026-09-25"
     }
   },
   "_lifted": {

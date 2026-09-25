@@ -374,21 +374,64 @@ def compile_python(pred: Predicate | None):
 _MISSING = object()
 
 
+def rule_where(rule: Mapping) -> Predicate:
+    """codec.rule_matches as a predicate: a rule's selectors, ANDed."""
+    leaves = []
+    for key, value in rule["match"].items():
+        if key == "id_prefix":
+            leaves.append(Prefix("id", value))
+        elif key in ("source", "license"):
+            leaves.append(Eq(key, value))
+        else:
+            raise StoreError(f"unsupported eligibility selector {key!r}")
+    return And(*leaves)
+
+
 def restriction_where(restrictions: Mapping[str, Mapping]) -> Predicate:
-    """registry.restriction_for(...) is not None, as a predicate: selectors inside one restriction
-    are ANDed; restrictions are ORed."""
-    rules = []
-    for rule in restrictions.values():
-        leaves = []
-        for key, value in rule["match"].items():
-            if key == "id_prefix":
-                leaves.append(Prefix("id", value))
-            elif key == "source":
-                leaves.append(Eq("source", value))
-            else:
-                raise StoreError(f"unsupported eligibility selector {key!r}")
-        rules.append(And(*leaves))
-    return Or(*rules)
+    """registry.restriction_for(...) is not None, as a predicate: any rule matches."""
+    return Or(*(rule_where(rule) for rule in restrictions.values()))
+
+
+def _held_where(restrictions: Mapping[str, Mapping]) -> Predicate:
+    """codec.is_policy_held: a matching rule denies something."""
+    return Or(*(rule_where(rule) for rule in restrictions.values()
+                if "deny" in codec.rule_effects(rule).values()))
+
+
+def collection_where(restrictions: Mapping[str, Mapping]) -> Predicate:
+    """registry.is_collection_eligible as a predicate: no matching rule denies collection."""
+    return Not(Or(*(rule_where(rule) for rule in restrictions.values()
+                    if codec.rule_effects(rule)["collection"] == "deny")))
+
+
+def class_where(cls: str, restrictions: Mapping[str, Mapping]) -> Predicate:
+    """registry.use_class(row) == cls as a predicate."""
+    if cls not in codec.USE_CLASSES:
+        raise StoreError(f"unknown use class {cls!r}")
+    held = _held_where(restrictions)
+    if cls == "policy-held":
+        return held
+    tags = sorted(t for t, c in codec.LICENSE_CLASSES.items() if c == cls)
+    licensed = In("license", tags)
+    if cls == "unverified":   # an unknown or missing licence tag classifies as unverified
+        licensed = Or(licensed, Not(In("license", sorted(codec.KNOWN_LICENSES))))
+    return And(Not(held), licensed)
+
+
+def default_corpus_where(restrictions: Mapping[str, Mapping]) -> Predicate:
+    """registry.is_default_corpus_eligible as a predicate (the open class)."""
+    return class_where("open", restrictions)
+
+
+def view_where(view: str, restrictions: Mapping[str, Mapping]) -> Predicate:
+    """registry.view_of(row) == view as a predicate."""
+    return class_where("open" if view == codec.DEFAULT_VIEW else view, restrictions)
+
+
+def corpus_view_where(view: str, restrictions: Mapping[str, Mapping]) -> Predicate:
+    """registry.is_corpus_view_member(row, view) as a predicate."""
+    return And(Eq("status", "ok"), Exists("corpus_path"), Not(Eq("corpus_path", "")),
+               Not(Eq("corpus_path", None)), view_where(view, restrictions))
 
 
 def pinned_policy(view) -> tuple[dict, dict]:
@@ -407,13 +450,6 @@ def pinned_policy(view) -> tuple[dict, dict]:
     if errors := host_policy.validate(docs["host_policy.json"]):
         raise StoreError(f"invalid pinned host_policy.json: {'; '.join(errors)}")
     return docs["eligibility.json"]["restrictions"], docs["host_policy.json"]["hosts"]
-
-
-def eligibility_where(restrictions: Mapping[str, Mapping]) -> Predicate:
-    """registry.is_training_eligible as a predicate: not pointer-only or audit-excluded, and no
-    restriction matches."""
-    return Not(Or(In("license", sorted(codec.NON_TRAINING_LICENSES)),
-                  restriction_where(restrictions)))
 
 
 def _plain(value: Any) -> Any:

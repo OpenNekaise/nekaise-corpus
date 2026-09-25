@@ -27,7 +27,8 @@ Use the canonical round lock for registry/manifest/corpus mutations, including m
    ```
    BFS within the domain + prefix, collects up to `--max` content pages, and (with `--append`)
    writes them into `registry/crawl.yaml` as `html` sources (id prefix `crawl-`). Pick the right `--topic`
-   and a redistributable `--license`.
+   and the site's exact `--license` (with `--license-url` / `--license-evidence`); an unknown
+   grant is `unverified`, which is collected into its classified view.
 
 3. **Load + gate + clean:** run the **`load-corpus`** skill (`python scripts/build_corpus.py`) to fetch
    each page, then `python scripts/prune_corpus.py --apply` to drop thin nav / stub / off-topic pages
@@ -44,6 +45,7 @@ sha256 in the manifest, so a clone fetches that frozen list -- it does NOT re-cr
 
 - `extract_html` (in `scripts/build_corpus.py`) targets sphinx / readthedocs / mkdocs main-content
   containers and strips nav / sidebar / footer. Check a sample page if a new site extracts poorly.
-- Respect each site's license and robots / ToS. Prefer openly-licensed docs (gov, open-source, CC).
+- Record each site's license (it classifies, it does not filter) and respect robots / ToS access
+  limits and crawl delays.
   For forums (e.g. Unmet Hours, CC-BY-SA) keep `--max` modest and attribute.
 - Pick `--prefix` carefully: too broad crawls the whole site; too narrow misses pages.

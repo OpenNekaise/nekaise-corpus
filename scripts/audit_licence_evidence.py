@@ -47,7 +47,7 @@ Dry run by default. With --apply: bounded store transactions (store_broker.run_b
 maintainer window's broker, else this command's own writer = the canonical round lock, held
 throughout) that give every audited row license_evidence, license_url and rights_verified_at and
 set its licence to the audited one — eligible rows to their CC tag, the rest to a
-registry.EXCLUDED_LICENSES tag, which makes them training-ineligible while raw/ and text/
+registry.RESTRICTED_USE_LICENSES tag, which makes them training-ineligible while raw/ and text/
 provenance stay. Idempotent (an applied row is skipped; a row that changed since the audit is
 skipped and reported); never deletes. Refuses above 1% of training-eligible docs or tokens
 (AGENTS.md) unless --allow-over-1pct. Afterwards `python scripts/clean_corpus.py` clears the
@@ -98,7 +98,7 @@ TARGET_FIELDS = ("id", "url", "source", "license", "license_evidence", "status",
                  "text_path", "text_chars", "corpus_chars", "topic")
 # The licence a verdict writes (phase B). Eligible rows get their canonical CC tag.
 UNRESOLVED_LICENSE = "unverified"
-assert UNRESOLVED_LICENSE in registry.EXCLUDED_LICENSES
+assert UNRESOLVED_LICENSE in registry.RESTRICTED_USE_LICENSES
 MUTATED_FIELDS = ("license", "license_url", "license_evidence", "rights_verified_at")
 APPLY_BATCH = 2000
 
@@ -200,7 +200,7 @@ def classify_openalex(raw: str | None) -> tuple[str, str, str]:
     if value.startswith(("http://", "https://")):
         return classify_licence_url(raw)
     if re.search(r"(?:^|-)n[cd](?:-|$)", value):
-        tag = value if value in registry.EXCLUDED_LICENSES else UNRESOLVED_LICENSE
+        tag = value if value in registry.RESTRICTED_USE_LICENSES else UNRESOLVED_LICENSE
         return "excluded-nc-nd", tag, f"OpenAlex licence {value} (NC/ND)"
     if value in _OA_ELIGIBLE:
         return "eligible", _OA_ELIGIBLE[value], f"OpenAlex licence {value}"
@@ -781,7 +781,7 @@ def plan_row(result: dict, entry: dict | None, row: dict | None) -> tuple[str, d
     for rec in (entry, row):
         if rec.get("license") != "open" or rec.get("license_evidence"):
             return "skip: licence or evidence changed since the audit", None
-    if patch["license"] not in registry.EXCLUDED_LICENSES | {"cc-by", "cc-by-sa", "cc0",
+    if patch["license"] not in registry.RESTRICTED_USE_LICENSES | {"cc-by", "cc-by-sa", "cc0",
                                                                "public-domain"}:
         return f"skip: unexpected licence {patch['license']!r}", None
     return "apply", patch
@@ -817,7 +817,7 @@ def run_apply(root: Path, out_dir: Path, *, apply: bool, allow_large: bool = Fal
         for sid, res in results.items():
             action, patch = plan_row(res, entries.get(sid), rows.get(sid))
             plan[action] += 1
-            if action == "apply" and patch["license"] in registry.EXCLUDED_LICENSES \
+            if action == "apply" and patch["license"] in registry.RESTRICTED_USE_LICENSES \
                     and registry.is_training_eligible(rows[sid], restrictions):
                 lose_docs += 1
                 lose_tokens += tokens(rows[sid])

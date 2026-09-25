@@ -29,7 +29,8 @@ def test_reextract_selector_parses_filters(tmp_path):
         build_corpus.reextract_selector(ids_from=str(tmp_path / "empty.txt"))
 
 
-def test_reextract_touches_only_selected_eligible_rows(tmp_path, monkeypatch):
+def test_reextract_covers_held_raw_across_classes_but_only_the_selection(tmp_path,
+                                                                        monkeypatch):
     monkeypatch.setattr(build_corpus, "HERE", tmp_path)
     monkeypatch.setattr(build_corpus, "TEXT", tmp_path / "text")
     page = b'<div role="main"><p>See <a class="reference internal">Running</a> now.</p></div>'
@@ -39,18 +40,18 @@ def test_reextract_touches_only_selected_eligible_rows(tmp_path, monkeypatch):
         "a": _row("a", "resstock_docs", raw="a.html"),
         "b": _row("b", "boptest_docs", raw="b.html"),
         "c": _row("c", "resstock_docs", fmt="md", raw="c.html"),
-        "d": _row("d", "soep", raw="d.html"),                     # restricted
+        "d": _row("d", "soep", raw="d.html"),                     # policy-held
     }
     restrictions = {"soep": {"match": {"source": "soep"}}}
 
     done, _ = build_corpus.reextract(
         manifest, restrictions, {"source": {"resstock_docs", "soep"}, "format": {"html"}})
 
-    assert done == 1
+    assert done == 2
     assert (tmp_path / "text" / "a.md").read_text().endswith("See\nRunning\nnow.")
     assert not (tmp_path / "text" / "b.md").exists()   # other source
     assert not (tmp_path / "text" / "c.md").exists()   # other format
-    assert not (tmp_path / "text" / "d.md").exists()   # policy-restricted
+    assert (tmp_path / "text" / "d.md").exists()       # held bytes, any class
     assert manifest["a"]["extractor_version"] == build_corpus.EXTRACTOR_VERSION
     assert "extractor_version" not in manifest["b"]
 
@@ -67,7 +68,19 @@ def test_crawl_docs_refuses_restricted_source_before_any_request(monkeypatch):
     monkeypatch.setattr(crawl_docs, "crawl", lambda *_a: pytest.fail("must not crawl"))
     monkeypatch.setattr(sys, "argv", ["crawl_docs.py", "--seed", "https://x/", "--source",
                                       "soep", "--topic", "building_energy"])
-    with pytest.raises(SystemExit, match="restricted by eligibility rule 'soep'"):
+    with pytest.raises(SystemExit, match="collection-held by eligibility rule 'soep'"):
+        crawl_docs.main()
+
+
+def test_crawl_docs_collects_a_default_view_hold(monkeypatch):
+    monkeypatch.setattr(crawl_docs, "pinned_restrictions", lambda: {
+        "soep": {"match": {"source": "soep"}, "decided_at": "2026-09-24", "reason": "ARR",
+                 "effects": {"collection": "allow", "default_corpus": "deny"}}})
+    monkeypatch.setattr(crawl_docs, "crawl", lambda *_a: (_ for _ in ()).throw(
+        RuntimeError("crawled")))
+    monkeypatch.setattr(sys, "argv", ["crawl_docs.py", "--seed", "https://x/", "--source",
+                                      "soep", "--topic", "building_energy"])
+    with pytest.raises(RuntimeError, match="crawled"):   # got past the policy check
         crawl_docs.main()
 
 

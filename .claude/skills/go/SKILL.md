@@ -27,6 +27,7 @@ invocation; a loader's opening missing-file count is not proof of success or a r
 5. Report the verified outcome, failures, current schedule, and where to inspect `logs/dig-*.log`.
    Remove the growth schedule with `bash scripts/install_cron.sh --remove`.
 
-Keep `raw/`, `text/`, and `corpus/` out of Git. Respect eligibility and licenses. Routine loading
+Keep `raw/`, `text/`, `corpus/` and `collection/` out of Git. Respect eligibility (collection
+holds and default-view holds) and record licences: they classify, they do not filter. Routine loading
 never changes cleaning policy. See [dig](../dig/SKILL.md) for growth and
 [clean-corpus](../clean-corpus/SKILL.md) for targeted cleaning investigations.

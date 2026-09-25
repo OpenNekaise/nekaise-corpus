@@ -92,12 +92,16 @@ def main() -> None:
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
 
-    # A reviewed rights decision (registry/eligibility.json) outranks a one-shot crawl: refuse
-    # before any request instead of registering pages the loader would never fetch.
-    probe = {"id": f"crawl-{args.source}-", "source": args.source}
-    if hit := registry.restriction_for(probe, pinned_restrictions()):
-        raise SystemExit(f"source {args.source!r} is restricted by eligibility rule "
-                         f"{hit[0]!r} ({hit[1]['decided_at']}): {hit[1]['reason']}")
+    # A reviewed COLLECTION hold (registry/eligibility.json effects.collection = deny) outranks a
+    # one-shot crawl: refuse before any request instead of registering pages the loader would
+    # never fetch. A default-view hold does not stop collection (the pages are classified).
+    probe = {"id": f"crawl-{args.source}-", "source": args.source, "license": args.license}
+    restrictions = pinned_restrictions()
+    if not registry.is_collection_eligible(probe, restrictions):
+        name, rule = next((n, r) for n, r in registry.matching_rules(probe, restrictions)
+                          if registry.rule_effects(r)["collection"] == "deny")
+        raise SystemExit(f"source {args.source!r} is collection-held by eligibility rule "
+                         f"{name!r} ({rule['decided_at']}): {rule['reason']}")
 
     pages = crawl(args.seed, args.prefix, args.max, args.delay)
     print(f"# crawled {len(pages)} pages from {args.seed}", file=sys.stderr)

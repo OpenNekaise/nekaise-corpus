@@ -41,7 +41,9 @@ def test_main_never_downloads_pointer_only_sources(monkeypatch, tmp_path, capsys
         "topic": "standards_protocols",
         "format": "pdf",
     }
-    root = _repo(monkeypatch, tmp_path, [pointer])
+    # not the licence: the committed pointer rule (eligibility.json) holds it unfetched
+    root = _repo(monkeypatch, tmp_path, [pointer],
+                 restrictions={"proprietary_internal_pointers": pipeline_repo.pointer_rule()})
     before = pipeline_repo.tracked(root, journal=True)
     monkeypatch.setattr(
         build_corpus,
@@ -53,7 +55,8 @@ def test_main_never_downloads_pointer_only_sources(monkeypatch, tmp_path, capsys
     build_corpus.main()
 
     output = capsys.readouterr().out
-    assert "pointer-only sources: 1 skipped by license policy" in output
+    assert ("collection-denied sources: 1 held by eligibility rule "
+            "'proprietary_internal_pointers'") in output
     assert "sources: 0 total, 0 to fetch" in output
     assert pipeline_repo.tracked(root, journal=True) == before  # no transaction at all
 
@@ -82,7 +85,7 @@ def test_main_never_downloads_policy_restricted_sources(monkeypatch, tmp_path, c
     build_corpus.main()
 
     output = capsys.readouterr().out
-    assert "policy-restricted sources: 1 skipped by eligibility policy" in output
+    assert "collection-denied sources: 1 held by eligibility rule 'translated'" in output
     assert "sources: 0 total, 0 to fetch" in output
 
 

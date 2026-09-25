@@ -269,7 +269,8 @@ def test_stamp_default_preserves_active_ruleset(tmp_path, monkeypatch):
 
 
 def test_policy_restricted_rows_are_excluded_and_corpus_metadata_is_cleared():
-    eligible = {"id": "pat-us1", "status": "ok", "text_path": "text/pat-us1.md"}
+    eligible = {"id": "pat-us1", "status": "ok", "text_path": "text/pat-us1.md",
+                "license": "open"}
     restricted = {
         "id": "pat-cn1",
         "status": "ok",

@@ -28,12 +28,16 @@ from pathlib import Path
 import ops
 import store
 from state_codec import (  # noqa: F401 — the shared vocabulary, re-exported for callers
-    CORPUS_FIELDS, CURATED, DISCOVERED_PREFIXES, ENTRY_RE, EXCLUDED_LICENSES, FIELDS, HASH_BUCKETS,
-    NON_TRAINING_LICENSES, OPTIONAL_FIELDS, POINTER_ONLY_LICENSES, PROGRAMME_PREFIXES,
-    PRUNE_LEDGER_BUCKETS, REQUIRED_FIELDS, SHARDS, discovered, emit_entry, is_training_eligible,
-    manifest_shard, manifest_shard_text, norm, parse_yaml,
-    prune_ledger_name, remove_ids_from_text, restriction_for, shard_filename, shard_header, slug,
-    uniquify_ids, validate_eligibility,
+    CLASS_POLICY_VERSION, CLASSIFIED_VIEWS, COLLECTION_DIR, CORPUS_FIELDS, CURATED,
+    DEFAULT_VIEW, DISCOVERED_PREFIXES, ENTRY_RE, FIELDS, HASH_BUCKETS, KNOWN_LICENSES,
+    LICENSE_CLASSES, OPEN_USE_LICENSES, OPTIONAL_FIELDS, PROGRAMME_PREFIXES, PRUNE_LEDGER_BUCKETS,
+    REQUIRED_FIELDS,
+    RESTRICTED_USE_LICENSES, SHARDS, USE_CLASSES, VIEWS, collection_view_path, corpus_path_for,
+    discovered, emit_entry, is_collection_eligible, is_corpus_view_member,
+    is_default_corpus_eligible, is_policy_held, is_training_eligible, manifest_shard,
+    manifest_shard_text, matching_rules, norm, parse_yaml, prune_ledger_name,
+    remove_ids_from_text, restriction_for, rule_effects, shard_filename, shard_header, slug,
+    uniquify_ids, use_class, validate_eligibility, view_of, view_root,
 )
 
 ROOT = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
@@ -103,7 +107,8 @@ def locally_unavailable_rows(rows: list[dict], policy: dict[str, dict],
 def partition_manifest_ok_rows(
     rows: list[dict], restrictions: dict[str, dict]
 ) -> tuple[list[dict], list[dict]]:
-    """Split successful provenance rows into training-eligible and excluded records.
+    """Split successful provenance rows into DEFAULT-VIEW-eligible and other records (the
+    other records are still collected; they belong to classified views).
 
     Purely manifest-based and therefore identical on every machine: local file availability
     (see locally_unavailable_rows) never changes these counts.
@@ -113,15 +118,15 @@ def partition_manifest_ok_rows(
     for row in rows:
         if row.get("status") != "ok":
             continue
-        target = eligible if is_training_eligible(row, restrictions) else excluded
+        target = eligible if is_default_corpus_eligible(row, restrictions) else excluded
         target.append(row)
     return eligible, excluded
 
 
 def is_fetchable(entry: dict, restrictions: dict[str, dict]) -> bool:
-    """Compatibility name for the loader's license + eligibility decision (`restrictions`: the
-    view-pinned eligibility policy)."""
-    return is_training_eligible(entry, restrictions)
+    """Compatibility name for the loader's collection decision (`restrictions`: the view-pinned
+    eligibility policy). Host/access policy is checked separately, per request."""
+    return is_collection_eligible(entry, restrictions)
 
 
 PROPOSAL_ENV = "NEKAISE_PROPOSAL_FILE"

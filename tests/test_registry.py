@@ -41,18 +41,23 @@ def test_append_routes_by_prefix(tmp_registry):
     assert "# hand comment that must survive" in (tmp_registry / registry.CURATED).read_text()
 
 
-def test_proprietary_internal_entries_are_pointer_only(tmp_registry, capsys, monkeypatch):
+def test_proprietary_internal_pointers_are_held_by_policy_not_licence(tmp_registry, capsys,
+                                                                     monkeypatch):
     pointer = {**entry("vendor-standard"), "license": "proprietary-internal"}
     registry.append_entries([pointer])
     import pipeline_repo
-    pipeline_repo.pin_policy(tmp_registry.parent)  # lint reads its view's pinned policy
+    rules = {"pointers": pipeline_repo.pointer_rule()}
+    pipeline_repo.pin_policy(tmp_registry.parent, restrictions=rules)
 
-    assert not registry.is_fetchable(pointer, {})
-    assert registry.is_fetchable(entry("open-report"), {})
+    # a licence never denies collection; the explicit pointer rule does
+    assert registry.is_fetchable(pointer, {})
+    assert not registry.is_fetchable(pointer, rules)
+    assert registry.is_fetchable(entry("open-report"), rules)
+    assert registry.use_class(pointer, {}) == "proprietary"
 
+    # a payload row under a restricted-use licence is legitimate provenance now
     registry.write_manifest_rows([{**pointer, "status": "ok"}])
-    assert lint_registry.main() == 1
-    assert "pointer-only license 'proprietary-internal' has a payload row" in capsys.readouterr().out
+    assert lint_registry.main() == 0, capsys.readouterr().out
 
 
 def test_eligibility_restrictions_are_reversible_policy_overlays(tmp_path):
