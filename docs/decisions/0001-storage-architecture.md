@@ -1125,8 +1125,9 @@ is still v4; the rule "ship a new migration" applies once v5 is deployed).
   url/title keys, sha256 and the legacy shard/topic of every entries/manifest put already in
   `revisions` (`store_pg._backfill_revision_keys`, the same `revision_keys()` `stage_batch` uses),
   after adding the columns and inside the migration's transaction, with the revision guard
-  disabled for that statement only (`ALTER TABLE … DISABLE/ENABLE TRIGGER`, which holds the
-  table exclusively); row text, digests, identities and provenance are untouched (tested
+  disabled for the backfill's batched UPDATE statements and re-enabled right after (`ALTER
+  TABLE … DISABLE/ENABLE TRIGGER`; the table is held exclusively until the migration commits,
+  and a failure rolls the disable back); row text, digests, identities and provenance are untouched (tested
   byte-for-byte). Test: a generation promoted by the real v4 code — membership (ids, URLs,
   normalized titles), duplicate detection against projection rows and one-row legacy pages
   (one-row scan windows) read identically before folding and after.
@@ -1174,8 +1175,38 @@ is still v4; the rule "ship a new migration" applies once v5 is deployed).
 
   Found while measuring: running 50 000 batches inside ONE transaction was quadratic — the
   triggers' cached generic plans were made while `batches` held a few rows (sequential scans) and
-  nothing invalidates them mid-transaction. Real staging commits every batch, and ANALYZE
-  (autovacuum) invalidates those plans; the benchmark commits and analyzes per 1 000 batches.
+  nothing invalidates them mid-transaction. Commits alone do not refresh those plans: a
+  statistics change does (ANALYZE sends the invalidation). Production relies on autovacuum's
+  ANALYZE and, since the second review, on `stage_batch` analyzing `batches` and `revisions`
+  every 1 000 batches of a run (`ANALYZE_EVERY`); the benchmark commits and analyzes per 1 000
+  batches.
 - **Gates**: full suite 1150 passed / 113 skipped (PG skipped), with PostgreSQL (`nekaise_test`)
   1292 passed / 1 skipped (the opt-in benchmark); `tests/test_store_pg_staging.py` now has 63
   tests; `py_compile scripts/*.py` clean. Nothing ran against the live schema or checkout.
+
+### Step 2, Codex second review (2026-09-25): the five fixed; three new findings fixed
+
+- **P2 — the migration accepts receipts of completed v4 runs.** Migration 5 sealed legacy
+  batches through the new summary trigger, which enforces NEW seals (open runs only), so a v4
+  receipt with counts in a frozen, promoted or aborted run rolled the whole upgrade back. The
+  legacy step is now separate from enforcement: inside the migration transaction the summary
+  trigger is disabled while legacy batches are sealed, every run's summary is computed in one
+  statement from its sealed receipts with the run guard disabled (a malformed legacy receipt
+  refuses the migration), then both triggers are enabled again. Test: v4 runs open, frozen,
+  promoted and aborted, each with a counted receipt — the upgrade succeeds and every summary
+  equals its receipts.
+- **P2 — a run starts with an empty summary.** The run guard's INSERT branch now also requires
+  `staged_counts = '{}'` (the staging sequence and the other counters were already required to
+  start at zero). Test: an INSERT seeding counts is refused.
+- **P3 — counts are JSON numbers.** `nk_batch_counts()` (one definition for new seals and the
+  legacy backfill) requires every count to be `jsonb_typeof = 'number'` written as a
+  non-negative integer; a JSON null (which `#>>` turned into SQL NULL, slipping past the regex),
+  a quoted number, a negative or a fraction refuses the seal. Test: each of those.
+- **Wording.** The revision-key backfill disables the guard for several batched statements
+  inside the migration transaction (comment and ADR corrected); the plan-cache note no longer
+  claims commits refresh plans (see the benchmark note above: statistics changes do), and
+  `stage_batch` now also analyzes the staging tables every 1 000 batches of a run.
+- **Gates**: full suite 1150 passed / 116 skipped (PG skipped), with PostgreSQL (`nekaise_test`)
+  1295 passed / 1 skipped (the opt-in benchmark); `tests/test_store_pg_staging.py` has 66 tests;
+  `py_compile` clean. (Two suites must not run at once on one host: round recovery stops every
+  process of the user carrying the round's `NEKAISE_RUN_ID`, and the tests reuse run ids.)

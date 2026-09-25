@@ -775,6 +775,26 @@ DO $d$ BEGIN
                 AND b.status = 'requested');
     END IF;
 END $d$;
+-- a batch receipt's operation counts ({{"counts": {{table: {{op: n}}}}, ...}}), or NULL unless
+-- every n is a JSON number written as a non-negative integer (no null, string, sign or fraction)
+CREATE OR REPLACE FUNCTION {s}.nk_batch_counts(receipt text) RETURNS jsonb
+    LANGUAGE plpgsql IMMUTABLE AS $f$
+DECLARE counts jsonb;
+BEGIN
+    BEGIN
+        counts := receipt::jsonb -> 'counts';
+    EXCEPTION WHEN others THEN
+        RETURN NULL;
+    END;
+    IF counts IS NULL OR jsonb_typeof(counts) <> 'object' OR EXISTS (
+            SELECT 1 FROM jsonb_each(counts) e WHERE jsonb_typeof(e.value) <> 'object'
+            OR EXISTS (SELECT 1 FROM jsonb_each(e.value) o
+                       WHERE jsonb_typeof(o.value) <> 'number'
+                       OR NOT (o.value::text) ~ '^[0-9]{{1,15}}$')) THEN
+        RETURN NULL;
+    END IF;
+    RETURN counts;
+END $f$;
 -- per-table/op operation counts: {{table: {{op: n}}}}; a + b, key by key (fixed size: tables x ops)
 CREATE OR REPLACE FUNCTION {s}.nk_counts_add(a jsonb, b jsonb) RETURNS jsonb
     LANGUAGE sql IMMUTABLE AS $f$
@@ -875,7 +895,7 @@ BEGIN
         IF NEW.status <> 'open' OR NEW.staged_seq <> 0 OR NEW.frozen_seq IS NOT NULL
                 OR NEW.frozen_digest IS NOT NULL OR NEW.promoted_generation IS NOT NULL
                 OR NEW.ended_at IS NOT NULL OR NEW.batches_open <> 0 OR NEW.gate_receipts <> 0
-                OR NEW.required_gates IS NOT NULL THEN
+                OR NEW.required_gates IS NOT NULL OR NEW.staged_counts <> '{{}}'::jsonb THEN
             RAISE EXCEPTION 'nekaise: a run starts open and empty (run %)', NEW.run_id
                 USING ERRCODE = 'integrity_constraint_violation';
         END IF;
@@ -1100,15 +1120,8 @@ BEGIN
             WHERE run_id = NEW.run_id AND status IN ('open', 'frozen');
     ELSIF NOT OLD.sealed AND NEW.sealed AND NEW.counts_text IS NOT NULL THEN
         -- the run's fixed-size summary grows with each sealed batch: promotion reads only it
-        BEGIN
-            counts := NEW.counts_text::jsonb -> 'counts';
-        EXCEPTION WHEN others THEN
-            counts := NULL;
-        END;
-        IF counts IS NULL OR jsonb_typeof(counts) <> 'object' OR EXISTS (
-                SELECT 1 FROM jsonb_each(counts) e WHERE jsonb_typeof(e.value) <> 'object'
-                OR EXISTS (SELECT 1 FROM jsonb_each(e.value) o
-                           WHERE NOT (o.value #>> '{{}}') ~ '^[0-9]{{1,15}}$')) THEN
+        counts := {s}.nk_batch_counts(NEW.counts_text);
+        IF counts IS NULL THEN
             RAISE EXCEPTION 'nekaise: batch %.%.% counts must map tables to operation counts',
                 NEW.run_id, NEW.step, NEW.batch USING ERRCODE = 'integrity_constraint_violation';
         END IF;
@@ -1328,14 +1341,43 @@ END $f$;
 CREATE OR REPLACE TRIGGER generation_retention_after AFTER INSERT OR UPDATE
     ON {s}.generation_retention FOR EACH ROW EXECUTE FUNCTION {s}.nk_retention_after();
 
--- batches applied by step-1 code were never sealed: seal them in sequence order (the digests are
--- computed from their immutable revisions; nothing else changes)
+-- Legacy state, inside the migration's transaction and before the new rules apply to it:
+-- (1) batches applied by step-1 code were never sealed: seal them in sequence order (the digests
+-- are computed from their immutable revisions; nothing else changes) — with the summary trigger
+-- off, since it enforces NEW seals (open runs only) and these runs may be frozen, promoted or
+-- aborted; (2) every run's summary is computed from its sealed receipts in one statement, with
+-- the run guard off (it lets only the batch trigger change the counters, and final runs not at
+-- all). A receipt whose counts are malformed refuses the migration. Idempotent: the summary is
+-- recomputed in full from the same receipts.
 DO $d$ DECLARE b record; BEGIN
+    -- checked as each legacy seal runs (queued deferred events would block ALTER TABLE)
+    SET CONSTRAINTS {s}.batches_sealed IMMEDIATE;
+    ALTER TABLE {s}.batches DISABLE TRIGGER batches_after;
     FOR b IN SELECT run_id, step, batch FROM {s}.batches WHERE status = 'applied' AND NOT sealed
              ORDER BY run_id, seq LOOP
         UPDATE {s}.batches SET sealed = true
             WHERE run_id = b.run_id AND step = b.step AND batch = b.batch;
     END LOOP;
+    ALTER TABLE {s}.batches ENABLE TRIGGER batches_after;
+    SET CONSTRAINTS {s}.batches_sealed DEFERRED;
+    SELECT run_id, step, batch INTO b FROM {s}.batches
+        WHERE sealed AND counts_text IS NOT NULL AND {s}.nk_batch_counts(counts_text) IS NULL
+        LIMIT 1;
+    IF FOUND THEN
+        RAISE EXCEPTION 'nekaise: legacy batch %.%.% has malformed counts: migrate by hand',
+            b.run_id, b.step, b.batch USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    ALTER TABLE {s}.runs DISABLE TRIGGER runs_guard;
+    UPDATE {s}.runs r SET staged_counts = c.summary FROM (
+        SELECT run_id, jsonb_object_agg(t, ops) AS summary FROM (
+            SELECT run_id, t, jsonb_object_agg(op, n) AS ops FROM (
+                SELECT lb.run_id, e.key AS t, o.key AS op, sum((o.value #>> '{{}}')::bigint) AS n
+                FROM {s}.batches lb, jsonb_each({s}.nk_batch_counts(lb.counts_text)) e,
+                     jsonb_each(e.value) o
+                WHERE lb.sealed AND lb.counts_text IS NOT NULL GROUP BY 1, 2, 3) x
+            GROUP BY run_id, t) y GROUP BY run_id) c
+        WHERE c.run_id = r.run_id AND r.staged_counts IS DISTINCT FROM c.summary;
+    ALTER TABLE {s}.runs ENABLE TRIGGER runs_guard;
 END $d$;
 
 -- the projection consumer folds promoted generations into the projection tables; registered
@@ -1357,9 +1399,10 @@ def _backfill_revision_keys(conn, schema) -> int:
     legacy shard/topic) for entries/manifest puts staged before them — without them the overlay
     misses those rows in known(), duplicate detection and legacy order. Computed from the stored
     row text exactly as stage_batch computes them; row text, digests, identity and every other
-    column stay as they are. The revision guard refuses updates, so it is disabled for this
-    statement only, inside the migration's transaction (ALTER TABLE holds an exclusive lock:
-    nothing else sees the table meanwhile). Returns the number of rows filled."""
+    column stay as they are. The revision guard refuses updates, so it is disabled for the
+    backfill's statements (several batched UPDATEs) and re-enabled right after, all inside the
+    migration's transaction (ALTER TABLE holds an exclusive lock until it commits: nothing else
+    sees the table meanwhile, and a failure rolls the disable back). Returns the rows filled."""
     s = sql.Identifier(schema)
     conn.execute(sql.SQL("ALTER TABLE {}.revisions DISABLE TRIGGER revisions_guard").format(s))
     filled = 0

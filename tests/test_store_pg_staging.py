@@ -1553,7 +1553,13 @@ def test_the_run_summary_is_maintained_only_by_sealing(pg):
         text = "[]"
         digest = hashlib.sha256(text.encode()).hexdigest()
         for bad in ('{"counts": {"manifest": {"upsert": -1}}}', '{"counts": []}', "not json",
-                    '{"counts": {"manifest": 3}}'):
+                    '{"counts": {"manifest": 3}}',
+                    # Codex second review (P3): a JSON null (#>> made it SQL NULL, slipping past
+                    # the regex), a quoted number, a fraction, a float spelling of an integer
+                    '{"counts": {"manifest": {"upsert": null}}}',
+                    '{"counts": {"manifest": {"upsert": "1"}}}',
+                    '{"counts": {"manifest": {"upsert": 1.5}}}',
+                    '{"counts": {"manifest": {"upsert": 1.0}}}', '{"results": []}'):
             with pytest.raises(psycopg.IntegrityError), c.transaction():
                 c.execute("INSERT INTO batches (run_id, step, batch, request_digest, "
                           "request_text, basis_seq) VALUES ('rnd1', 's', 'b', %s, %s, 0)",
@@ -1673,3 +1679,98 @@ def test_v4_revisions_get_their_derived_columns(tmp_path, monkeypatch):
         assert reads() == unfolded
     finally:
         store_pg.PgStore(root, dsn=DSN, schema=schema, create=False).drop()
+
+
+# --- Codex second review of ec61f649b1 --------------------------------------------------------------
+
+def test_a_run_cannot_start_with_counts(pg):
+    """(P2) the INSERT guard requires an empty summary, like every other initial counter: a
+    seeded summary would be published by the generation and its outbox row."""
+    with pg.writer() as w, pg.contracts(w) as c:
+        digest = c.put_config_set({"backends.json": b"{}"})
+    for extra, value in (("staged_counts", '{"manifest": {"upsert": 100}}'),
+                         ("staged_seq", 1), ("batches_open", 1), ("gate_receipts", 1)):
+        expect_refused(pg, f"INSERT INTO runs (run_id, kind, authority_epoch, writer_epoch, "
+                           f"producer_commit, config_digest, extractor_version, cleaning_ruleset, "
+                           f"{extra}) VALUES ('seeded', 'round', 1, 1, repeat('0', 40), %s, 'x', "
+                           f"'r', %s)", [digest, value])
+    assert q(pg, "SELECT count(*) FROM runs")[0][0] == 0
+
+
+def test_v4_receipts_with_counts_migrate_in_every_run_state(tmp_path):
+    """(P2) v4 receipts carrying counts in open, frozen, promoted and aborted runs: migration 5
+    seals them and computes every run's summary without refusing the completed runs, and the
+    summary trigger then enforces new seals as before."""
+    import store_pg
+    v4 = _v4_module()
+    root = tmp_path / "pg"
+    write_config(root)
+    schema = f"m_{uuid.uuid4().hex[:12]}"
+    old = v4.PgStore(root, dsn=DSN, schema=schema)
+    receipt = '{"counts":{"manifest":{"upsert":%d}},"results":[%d]}'
+    try:
+        old.pin_config_from_files()
+        with old.writer() as w, old.contracts(w) as c:
+            conn = c._conn
+            digest = c.put_config_set({"backends.json": b"{}"})
+            parent = None
+            for rid in ("promoted", "frozen", "aborted", "open"):
+                c.open_run(rid, kind="round", parent_generation=parent, producer_commit=SHA,
+                           config_digest=digest, extractor_version="x", cleaning_ruleset="r")
+                for n in (1, 2):
+                    c.request_batch(rid, "fetch", f"b{n}", [{"call": "x", "n": n}])
+                    conn.execute("UPDATE batches SET status = 'applied', seq = %s, applied_at = "
+                                 "now(), counts_text = %s WHERE run_id = %s AND batch = %s",
+                                 [n, receipt % (n, n), rid, f"b{n}"])
+                    conn.execute("UPDATE runs SET staged_seq = %s WHERE run_id = %s", [n, rid])
+                if rid in ("promoted", "frozen"):
+                    conn.execute("UPDATE runs SET status = 'frozen', frozen_seq = 2, "
+                                 "frozen_digest = %s WHERE run_id = %s", ["f" * 64, rid])
+                if rid == "promoted":
+                    conn.execute("INSERT INTO generations (generation, parent, run_id, "
+                                 "producer_commit, config_digest, extractor_version, "
+                                 "cleaning_ruleset, frozen_seq, frozen_digest, counts_text) "
+                                 "SELECT 0, NULL, run_id, producer_commit, config_digest, "
+                                 "extractor_version, cleaning_ruleset, 2, frozen_digest, '{}' "
+                                 "FROM runs WHERE run_id = 'promoted'")
+                    conn.execute("UPDATE runs SET status = 'promoted', promoted_generation = 0 "
+                                 "WHERE run_id = 'promoted'")
+                    conn.execute("UPDATE dataset SET current_generation = 0")
+                    conn.execute("INSERT INTO outbox (seq, generation, payload_text) "
+                                 "VALUES (1, 0, '{}')")
+                    parent = 0
+                if rid == "aborted":
+                    conn.execute("UPDATE runs SET status = 'aborted' WHERE run_id = 'aborted'")
+        new = store_pg.PgStore(root, dsn=DSN, schema=schema)       # migrates 4 -> 5
+        assert dict(q(new, "SELECT run_id, staged_counts::text FROM runs")) == {
+            rid: '{"manifest": {"upsert": 3}}'
+            for rid in ("promoted", "frozen", "aborted", "open")}
+        assert q(new, "SELECT count(*) FROM batches WHERE NOT sealed")[0][0] == 0
+        # the migration's disables are gone: the guards enforce again
+        expect_refused(new, "UPDATE runs SET staged_counts = '{}' WHERE run_id = 'open'")
+        with new._connect() as conn, pytest.raises(sqlerr(), match="counts must map"):
+            conn.execute("INSERT INTO batches (run_id, step, batch, request_digest, "
+                         "request_text, basis_seq) VALUES ('open', 's', 'b', %s, '[]', 2)",
+                         [hashlib.sha256(b"[]").hexdigest()])
+            conn.execute("UPDATE batches SET status = 'applied', seq = 3, applied_at = now() "
+                         "WHERE batch = 'b' AND step = 's'")
+            conn.execute("UPDATE batches SET sealed = true, counts_text = %s WHERE batch = 'b' "
+                         "AND step = 's'", ['{"counts": {"manifest": {"upsert": null}}}'])
+        # and re-running the migration's DDL (schema-version re-runs) changes nothing
+        with new._connect(autocommit=True) as conn:
+            conn.execute(store_pg.V5_DDL.format(s=schema))
+        assert dict(q(new, "SELECT run_id, staged_counts::text FROM runs"))["open"] == \
+            '{"manifest": {"upsert": 3}}'
+    finally:
+        store_pg.PgStore(root, dsn=DSN, schema=schema, create=False).drop()
+
+
+def test_stage_batch_refreshes_statistics_every_n_batches(pg, monkeypatch):
+    monkeypatch.setattr(store_staging, "ANALYZE_EVERY", 2)
+    with pg.writer() as w:
+        open_run(pg, w)
+        for i in range(4):
+            stage(pg, w, f"b{i}", lambda tx, i=i: tx.upsert_manifest([mrow(f"a{i}")]))
+    analyzed = q(pg, "SELECT relname, analyze_count + autoanalyze_count FROM pg_stat_user_tables "
+                     "WHERE schemaname = %s AND relname IN ('batches', 'revisions')", [pg.schema])
+    assert analyzed and all(n >= 1 for _, n in analyzed), analyzed

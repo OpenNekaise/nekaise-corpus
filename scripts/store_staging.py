@@ -69,6 +69,8 @@ STAGE_ENV = "NEKAISE_STORE_STAGE"
 # (order-preserving index scans); beyond it, as correlated lookups in `runs`.
 LITERAL_RUNS = 64
 FOLD_BATCH = 20_000
+# stage_batch refreshes the staging tables' planner statistics every this many batches of a run
+ANALYZE_EVERY = 1000
 # Overlay rows fetched per scan window (None: max(page size, 256)); tests shrink it.
 SCAN_CHUNK: int | None = None
 LEDGER_N_DIGITS = 10
@@ -986,6 +988,11 @@ def stage_batch(st, writer: WriterToken, run_id: str, step: str, batch: str,
         counts = store._canonical({"counts": view.counts(), "results": results})
         conn.execute("UPDATE batches SET sealed = true, counts_text = %s WHERE run_id = %s AND "
                      "step = %s AND batch = %s", [counts, run_id, step, batch])
+        if seq % ANALYZE_EVERY == 0:
+            # the trigger functions' cached plans were made against these tables' statistics
+            # when the run started; refreshing them (and invalidating those plans) keeps a long
+            # writer session from scanning a grown table, independently of autovacuum
+            conn.execute("ANALYZE batches, revisions")
     return StageResult(results, stage_version(run_id, seq), seq, "applied", False)
 
 
