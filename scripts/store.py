@@ -88,8 +88,10 @@ CONFIG_FILES = ("backends.json", "eligibility.json", "vendors.json", "host_polic
                 "regdocs.json", "eurlex.json", "esef.json")
 BACKEND_STATE_FILE = "backend_state.json"
 # Runtime control documents: whole JSON objects that the loop maintains (not configuration, not
-# rows), stored and replicated as-is. github_passes.json records find_github's completed passes.
-CONTROL_FILES = ("github_passes.json",)
+# rows), stored and replicated as-is. github_passes.json records find_github's completed passes;
+# use_view_changes.json the cumulative default-view changes of licence reclassifications
+# (scripts/audit_licence_evidence.py apply: baseline, change sets, the 1% escalation limit).
+CONTROL_FILES = ("github_passes.json", "use_view_changes.json")
 # The tracked layout the file store owns, relative to the repository root: what a round's git
 # snapshot copies and its commit stages (run_round), and what backups archive. Nothing outside the
 # store and its import/export/backup tooling spells these paths (tests/test_architecture.py).

@@ -303,9 +303,13 @@ def audit_store(factory, root: Path):
     return st
 
 
+def sha_of(sid: str) -> str:
+    return (sid.encode().hex() * 64)[:64]
+
+
 def rows_fixture():
-    arx = dict(source="arxiv", license="open", corpus_path="corpus/x.md", corpus_chars=4000)
-    return [
+    arx = dict(source="arxiv", license="open", corpus_chars=4000)
+    rows = [
         mrow("arx-pointer", url="https://arxiv.org/pdf/1911.02206", **arx),
         mrow("arx-cc", url="https://arxiv.org/pdf/2311.00720", **arx),
         mrow("arx-nc", url="https://arxiv.org/pdf/2501.08704", **arx),
@@ -315,15 +319,26 @@ def rows_fixture():
              license="open"),
         mrow("ope-evid", url="https://e.org/ev.pdf", source="openalex", license="open",
              license_evidence="OpenAlex OA location license: other-oa"),
+        mrow("ope-real", url="https://e.org/real.pdf", source="openalex", license="open",
+             license_evidence="checked by a human: CC BY on the landing page"),
         mrow("oer-open", source="oapen", license="open"),       # other source: counted only
         mrow("hand-pd", license="public-domain", text_chars=10_000_000),
     ]
+    for r in rows:
+        r["sha256"] = sha_of(r["id"])
+        r["corpus_path"] = f"corpus/{r['id']}.md"
+    return rows
 
 
-def seed_rows(st, rows):
+def seed_rows(st, rows, root: Path | None = None):
     entries = [pipeline_repo.entry_of(r) for r in rows]
     write(st, rid("seed-audit"), lambda tx: (tx.insert_entries(entries),
                                              tx.upsert_manifest(rows)))
+    if root is not None:           # the cleaned files the rows claim
+        for r in rows:
+            path = root / r["corpus_path"]
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(f"cleaned {r['id']}\n")
 
 
 @pytest.mark.parametrize("factory", STORES, ids=lambda f: f.__name__)
@@ -331,110 +346,270 @@ def test_enumerate_finds_the_debt_through_a_view(factory, tmp_path):
     st = audit_store(factory, tmp_path / "repo")
     seed_rows(st, rows_fixture())
     with st.read() as view:
-        targets, facts = audit.enumerate_targets(view, log=lambda *a: None)
+        targets, facts = audit.enumerate_targets(view, snapshot={"commit": "c1"},
+                                                 log=lambda *a: None)
     assert {t["id"]: t["cohort"] for t in targets} == {
         "arx-pointer": "arxiv", "arx-cc": "arxiv", "arx-nc": "arxiv",
-        "ope-open": "openalex", "ope-arx": "openalex-arxiv"}
-    assert facts["open_without_evidence_by_source"] == {"arxiv": 3, "openalex": 2, "oapen": 1}
-    assert facts["open_with_evidence_by_source"] == {"openalex": 1}
-    assert facts["targets_by_host"]["openalex"] == {"escholarship.org": 1}
+        "ope-open": "openalex", "ope-arx": "openalex-arxiv",
+        "ope-evid": "openalex"}                 # discovery-time evidence is not authoritative
+    assert all(t["snapshot"] == {"commit": "c1"} and t["sha256"] for t in targets)
+    assert facts["open_without_evidence_by_source"] == {"arxiv": 3, "openalex": 3, "oapen": 1}
+    assert facts["open_with_evidence_by_source"] == {"openalex": 1}          # ope-real
+    assert facts["targets_by_host"]["openalex"] == {"escholarship.org": 1, "e.org": 1}
+    # the lint rule's whole scope, registry-only rows included
+    assert facts["lint_scope_without_evidence"]["arx-ok:open"] == 3
 
 
-def result(sid, url, verdict, licence, checked="2026-09-25T10:00:00Z"):
+def result(sid, url, verdict, licence, checked="2026-09-25T10:00:00Z", payload=None):
     return {"id": sid, "url": url, "cohort": "arxiv", "verdict": verdict, "licence": licence,
             "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
             "evidence": f"arXiv OAI-PMH ... -> {verdict}", "checked_at": checked,
-            "reason": "test", "raw_license": None, "version": "v1"}
+            "reason": "test", "raw_license": None, "version": "v1",
+            "evidence_source": "arxiv-oai-pmh:arXivRaw", "resolver": 1,
+            "payload_sha256": payload or sha_of(sid)}
 
 
-def write_results(out: Path, rows: list[dict]) -> None:
-    audit.append_jsonl(out / "results.jsonl", rows)
+def write_audit(out: Path, rows: list[dict], results: list[dict]) -> None:
+    by_id = {r["id"]: r for r in rows}
+    write_targets(out, [{**by_id[r["id"]], "cohort": r["cohort"]} for r in results])
+    audit.append_jsonl(out / "results.jsonl", results)
+
+
+AUDITED = [
+    result("arx-pointer", "https://arxiv.org/pdf/1911.02206", "pointer-only",
+           "arxiv-nonexclusive"),
+    result("arx-cc", "https://arxiv.org/pdf/2311.00720", "eligible", "cc-by"),
+    result("arx-nc", "https://arxiv.org/pdf/2501.08704", "excluded-nc-nd", "cc-by-nc-nd"),
+    result("ope-open", "https://escholarship.org/content/qt1/qt1.pdf", "unresolved",
+           "unverified"),
+    result("ope-evid", "https://e.org/ev.pdf", "pointer-only", "publisher-oa"),
+]
 
 
 @pytest.mark.parametrize("factory", STORES, ids=lambda f: f.__name__)
-def test_apply_downgrades_idempotently_and_never_deletes(factory, tmp_path):
+def test_apply_reclassifies_moves_views_and_never_erases(factory, tmp_path):
     root = tmp_path / "repo"
     st = audit_store(factory, root)
     rows = rows_fixture()
-    seed_rows(st, rows)
+    seed_rows(st, rows, root)
     out = tmp_path / "audit"
-    write_results(out, [
-        result("arx-pointer", "https://arxiv.org/pdf/1911.02206", "pointer-only",
-               "arxiv-nonexclusive"),
-        result("arx-cc", "https://arxiv.org/pdf/2311.00720", "eligible", "cc-by"),
-        result("arx-nc", "https://arxiv.org/pdf/2501.08704", "excluded-nc-nd", "cc-by-nc-nd"),
-        result("ope-open", "https://escholarship.org/content/qt1/qt1.pdf", "unresolved",
-               "unverified"),
-        result("ope-arx", "https://arxiv.org/pdf/other", "eligible", "cc-by"),   # URL moved
-    ])
+    moved_url = result("ope-arx", "https://arxiv.org/pdf/other", "eligible", "cc-by")
+    changed_payload = result("arx-cc", "https://arxiv.org/pdf/2311.00720", "eligible",
+                             "cc-by", payload="f" * 64)
+    write_audit(out, rows, AUDITED + [moved_url])
     logs: list[str] = []
     with st.read() as v:
         before = {r["id"]: r for r in v.scan(store.Table.MANIFEST, limit=100).rows}
-    # dry run: nothing written (a toy corpus: the 1% guard is tested separately)
-    assert audit.run_apply(root, out, apply=False, st=st, log=logs.append, allow_large=True) == 0
+    inode = (root / "corpus" / "arx-nc.md").stat().st_ino
+    # dry run: nothing written
+    assert audit.run_apply(root, out, apply=False, st=st, log=logs.append,
+                           operator_decision="test: toy corpus") == 0
     with st.read() as v:
         assert {r["id"]: r for r in v.scan(store.Table.MANIFEST, limit=100).rows} == before
-    assert audit.run_apply(root, out, apply=True, st=st, log=logs.append, allow_large=True) == 0
+    assert audit.run_apply(root, out, apply=True, st=st, log=logs.append,
+                           operator_decision="test: toy corpus") == 0
     with st.read() as v:
         restrictions, _ = store.pinned_policy(v)
         after = {r["id"]: r for r in v.scan(store.Table.MANIFEST, limit=100).rows}
         entries = v.get_entries(after)
         stats = corpus_stats.compute(v, restrictions)
+        ledger = v.control_get(audit.CONTROL_DOC)
     assert set(after) == set(before) and set(entries) == set(before)   # nothing deleted
-    for sid, lic, eligible in [("arx-pointer", "arxiv-nonexclusive", False),
-                               ("arx-cc", "cc-by", True), ("arx-nc", "cc-by-nc-nd", False),
-                               ("ope-open", "unverified", False)]:
+    for sid, lic, cls in [("arx-pointer", "arxiv-nonexclusive", "arxiv-nonexclusive"),
+                          ("arx-cc", "cc-by", "open"), ("arx-nc", "cc-by-nc-nd", "nc-nd"),
+                          ("ope-open", "unverified", "unverified"),
+                          ("ope-evid", "publisher-oa", "publisher-oa")]:
         for rec in (after[sid], entries[sid]):
             assert rec["license"] == lic
             assert rec["license_evidence"] and rec["license_url"].startswith("http")
             assert rec["rights_verified_at"] == "2026-09-25"
-        assert registry.is_training_eligible(after[sid], restrictions) is eligible
-        # provenance kept: raw/text claims untouched
-        assert after[sid]["raw_path"] == before[sid]["raw_path"]
-        assert after[sid]["text_path"] == before[sid]["text_path"]
-    assert after["ope-arx"] == before["ope-arx"]                      # changed since the audit
-    assert stats.excluded == 3
+        assert registry.use_class(after[sid], restrictions) == cls
+        assert registry.is_collection_eligible(after[sid], restrictions)      # collect-all
+        # provenance kept: raw/text claims and hashes untouched
+        for key in ("raw_path", "sha256", "text_path", "status"):
+            assert after[sid][key] == before[sid][key]
+        # the cleaned file sits in its view, same bytes, and the claim names it
+        assert after[sid]["corpus_path"] == registry.corpus_path_for(after[sid], restrictions)
+        assert (root / after[sid]["corpus_path"]).read_text() == f"cleaned {sid}\n"
+    assert not (root / "corpus" / "arx-nc.md").exists()
+    assert (root / "collection" / "nc-nd" / "corpus" / "arx-nc.md").stat().st_ino == inode
+    assert not (root / "corpus" / clean_corpus.RECLASSIFYING).exists()
+    assert after["ope-arx"] == before["ope-arx"]                      # URL changed: skipped
+    assert stats.excluded == 4
+    assert ledger["baseline"]["documents"] == 9
+    assert ledger["changesets"][0]["left_default_docs"] == 4
+    assert ledger["changesets"][0]["operator_decision"] == "test: toy corpus"
     # idempotent: a second apply changes nothing
     logs.clear()
-    assert audit.run_apply(root, out, apply=True, st=st, log=logs.append, allow_large=True) == 0
-    assert any("'applied': 4" in line for line in logs)
+    assert audit.run_apply(root, out, apply=True, st=st, log=logs.append) == 0
+    assert any("'applied': 5" in line for line in logs)
     with st.read() as v:
         assert {r["id"]: r for r in v.scan(store.Table.MANIFEST, limit=100).rows} == after
-    # the cleaner treats them as restricted: corpus claim cleared, copy quarantined not deleted
-    todo, restricted = clean_corpus.partition_training_rows(list(after.values()), restrictions)
-    assert {r["id"] for r in restricted} == {"arx-pointer", "arx-nc", "ope-open"}
-    assert not {r["id"] for r in todo} & {"arx-pointer", "arx-nc", "ope-open"}
-    with st.read() as v:
-        count, _ = corpus_stats.restricted_with_corpus_data(v, restrictions)
-    assert count == 2                                   # arx-pointer, arx-nc claim corpus data
+    # a result bound to other bytes than the row now holds is never applied
+    reaudit = tmp_path / "audit2"
+    write_audit(reaudit, rows, [changed_payload])
+    logs.clear()
+    audit.run_apply(root, reaudit, apply=False, st=st, log=logs.append)
+    assert any("final': 0" in line or "stale" in line for line in logs)
 
 
 @pytest.mark.parametrize("factory", STORES, ids=lambda f: f.__name__)
-def test_apply_refuses_more_than_one_percent(factory, tmp_path):
+def test_apply_refuses_cumulative_default_view_loss_above_one_percent(factory, tmp_path):
     root = tmp_path / "repo"
     st = audit_store(factory, root)
-    rows = [r for r in rows_fixture() if r["id"] != "hand-pd"]      # the debt dominates
-    seed_rows(st, rows)
+    rows = rows_fixture()
+    seed_rows(st, rows, root)
     out = tmp_path / "audit"
-    write_results(out, [result("arx-pointer", "https://arxiv.org/pdf/1911.02206",
-                               "pointer-only", "arxiv-nonexclusive")])
+    write_audit(out, rows, AUDITED[:1])
     logs: list[str] = []
     assert audit.run_apply(root, out, apply=True, st=st, log=logs.append) == 1
-    assert any("REFUSED" in line for line in logs)
+    assert any("REFUSED" in line and "1%" in line for line in logs)
     with st.read() as v:
         assert v.get_manifest(["arx-pointer"])["arx-pointer"]["license"] == "open"
 
 
-def test_report_counts_extrapolates_and_samples_examples(tmp_path):
-    targets = [target(f"arx-{i}", corpus_chars=400) for i in range(20)]
-    results = {f"arx-{i}": result(f"arx-{i}", "u", v, "x")
-               for i, v in enumerate(["pointer-only"] * 6 + ["eligible"] * 4)}
+def test_apply_waits_for_every_target_unless_partial(tmp_path):
+    out = tmp_path / "audit"
+    rows = rows_fixture()
+    write_audit(out, rows, AUDITED[:2])
+    audit.append_jsonl(out / "targets.jsonl", [{**rows[2], "cohort": "arxiv"}])  # no result
+    logs: list[str] = []
+    assert audit.run_apply(tmp_path, out, apply=False, log=logs.append) == 1
+    assert any("REFUSED" in line and "missing" in line for line in logs)
+
+
+def test_result_states_bind_to_the_payload():
+    t = {"id": "a", "sha256": "1" * 64}
+    ok = {"id": "a", "verdict": "eligible", "payload_sha256": "1" * 64,
+          "evidence_source": "arxiv-oai-pmh:arXivRaw", "resolver": 1}
+    assert audit.result_state(t, ok) == "final"
+    assert audit.result_state(t, None) == "missing"
+    assert audit.result_state(t, {"id": "a", "verdict": None}) == "transient"
+    assert audit.result_state(t, {**ok, "payload_sha256": "2" * 64}) == "stale"
+    assert audit.result_state(t, {k: v for k, v in ok.items() if k != "payload_sha256"}) == \
+        "stale"
+    old_openalex = {**ok, "evidence_source": "openalex:works", "resolver": 1}
+    assert audit.result_state(t, old_openalex) == "stale"          # resolver upgraded
+    assert audit.result_state(t, {**ok, "stale": True}) == "stale"
+
+
+def test_bind_attaches_payloads_and_revokes_stale_stamps(tmp_path):
+    out, data = tmp_path / "audit", tmp_path / "data"
+    (data / "text").mkdir(parents=True)
+    (data / "text" / "arx-a.md").write_text("arXiv:1911.02206v2 [eess.SY]")
+    (data / "text" / "arx-b.md").write_text("EDITED since the audit")
+    import hashlib
+    good = hashlib.sha256(b"arXiv:1911.02206v2 [eess.SY]").hexdigest()
+    targets = [target("arx-a", sha256="1" * 64, text_sha256=good, snapshot={"commit": "c"}),
+               target("arx-b", sha256="2" * 64, text_sha256=good, snapshot={"commit": "c"}),
+               target("arx-c", sha256="3" * 64, snapshot={"commit": "c"})]
+    write_targets(out, targets)
+    legacy = [{"id": sid, "cohort": "arxiv", "url": t["url"], "verdict": "pointer-only",
+               "licence": "arxiv-nonexclusive", "version_basis": basis,
+               "evidence_source": "arxiv-oai-pmh:arXivRaw", "checked_at": "2026-09-25T09:00:00Z"}
+              for sid, t, basis in (("arx-a", targets[0], "pdf-stamp"),
+                                    ("arx-b", targets[1], "pdf-stamp"),
+                                    ("arx-c", targets[2], "dates"))]
+    audit.append_jsonl(out / "results.jsonl", legacy)
+    assert set(audit.audit_state(targets, audit.latest_results(out / "results.jsonl"))
+               .values()) == {"stale"}
+    audit.run_bind(out, data_root=data, log=lambda *a: None)
+    state = audit.audit_state(targets, audit.latest_results(out / "results.jsonl"))
+    assert state == {"arx-a": "final", "arx-b": "stale", "arx-c": "final"}
+    bound = audit.latest_results(out / "results.jsonl")["arx-a"]
+    assert bound["payload_sha256"] == "1" * 64 and bound["snapshot"] == {"commit": "c"}
+
+
+def test_report_counts_states_transitions_and_examples(tmp_path):
+    targets = [target(f"arx-{i}", corpus_chars=400, sha256=sha_of(f"arx-{i}"))
+               for i in range(20)]
+    results = {f"arx-{i}": result(f"arx-{i}", "u", v, lic)
+               for i, (v, lic) in enumerate([("pointer-only", "arxiv-nonexclusive")] * 6
+                                            + [("eligible", "cc-by")] * 4)}
     rep = audit.build_report(targets, results, {"corpus": {"documents": 1000, "tokens": 10_000}})
     c = rep["cohorts"]["arxiv"]
+    assert rep["states"] == {"final": 10, "missing": 10}
     assert c["counts"]["pointer-only"] == 6 and c["estimated_population_docs"]["pointer-only"] == 12
-    assert rep["impact"]["estimated_ineligible_docs"] == 12
-    assert rep["impact"]["estimated_ineligible_tokens"] == 1200
+    assert rep["class_transitions"] == {"open -> arxiv-nonexclusive": 6, "open -> open": 4}
+    assert rep["impact"]["collection_delta"] == 0
+    assert rep["impact"]["estimated_leaving_default_view_docs"] == 12
+    assert rep["impact"]["estimated_leaving_default_view_tokens"] == 1200
     assert len(rep["examples"]["pointer-only"]) == 6 and rep["examples"]["unresolved"] == []
+
+
+def test_pdd_is_public_domain_with_its_jurisdiction():
+    for url in ("http://creativecommons.org/licenses/publicdomain/",
+                "https://creativecommons.org/publicdomain/certification/1.0/us/"):
+        verdict, tag, reason = audit.classify_licence_url(url)
+        assert (verdict, tag) == ("eligible", "public-domain")
+        assert "US" in reason and "not CC0" in reason
+
+
+def test_openalex_matching_keeps_identity_parameters():
+    plos = "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0224998" \
+           "&type=printable"
+    other = "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0000001" \
+            "&type=printable"
+    assert audit._loc_matches(plos, {"pdf_url": plos.replace("&type=printable", "")})
+    assert not audit._loc_matches(plos, {"pdf_url": other})
+    esc = "https://escholarship.org/content/qt1/qt1.pdf?t=abc"
+    assert audit._loc_matches(esc, {"pdf_url": "https://escholarship.org/content/qt1/qt1.pdf"})
+    # the location that decided an NC verdict is the one recorded, not the first match
+    t = {**target("ope-x", url=plos), "cohort": "openalex"}
+    work = {"id": "W9", "locations": [
+        {"pdf_url": plos, "license": "cc-by", "license_id": "https://openalex.org/licenses/cc-by"},
+        {"pdf_url": plos, "license": "cc-by-nc",
+         "license_id": "https://openalex.org/licenses/cc-by-nc", "landing_page_url": "L"}]}
+    res = audit.openalex_verdict(t, work, "2026-09-25T00:00:00Z", "E")
+    assert (res["verdict"], res["licence"]) == ("excluded-nc-nd", "cc-by-nc")
+    assert res["deciding_location"]["license"] == "cc-by-nc"
+    assert res["license_url"] == "https://openalex.org/licenses/cc-by-nc"
+    # a publisher grant on another location is a candidate only
+    work2 = {"id": "W8", "locations": [
+        {"pdf_url": plos, "license": None},
+        {"pdf_url": None, "landing_page_url": "https://doi.org/10.1371/x", "license": "cc-by",
+         "version": "publishedVersion"}]}
+    res = audit.openalex_verdict(t, work2, "2026-09-25T00:00:00Z", "E")
+    assert res["verdict"] == "unresolved" and res["publisher_candidate"]["license"] == "cc-by"
+
+
+@pytest.mark.parametrize("factory", STORES, ids=lambda f: f.__name__)
+def test_pointer_transition_is_prepared_not_run(factory, tmp_path):
+    root = tmp_path / "repo"
+    st = audit_store(factory, root)
+    ptr = [{**pipeline_repo.entry_of(mrow("ashrae-a", url="https://ashrae.example/a.pdf")),
+            "license": "proprietary-internal"},
+           {**pipeline_repo.entry_of(mrow("vendor-page", url="https://v.example/standard")),
+            "license": "proprietary-internal", "format": "html"},
+           {**pipeline_repo.entry_of(mrow("ashrae-login", url="https://ashrae.example/b.pdf")),
+            "license": "proprietary-internal"}]
+    write(st, rid("seed-ptr"), lambda tx: tx.insert_entries(ptr))
+    logs: list[str] = []
+    assert audit.run_pointer_transition(root, probe=False, apply=False, st=st,
+                                        log=logs.append) == 0
+    assert any("2 unprobed candidates" in line for line in logs)
+
+    class R:
+        def __init__(self, url, status, ctype, body=b""):
+            self.url, self.status_code, self.content = url, status, body
+            self.headers = {"Content-Type": ctype}
+
+    def route(url, params):
+        if url.endswith("a.pdf"):
+            return R(url, 206, "application/pdf", b"%PDF-1.4")
+        return R("https://ashrae.example/login?next=b", 200, "text/html")
+
+    http, _ = throttle(route)
+    http.session.get = lambda url, params=None, timeout=None, **kw: route(url, params)
+    logs.clear()
+    assert audit.run_pointer_transition(root, probe=True, apply=True, st=st, http=http,
+                                        log=logs.append) == 0
+    with st.read() as v:
+        got = v.get_entries(["ashrae-a", "vendor-page", "ashrae-login"])
+    assert got["ashrae-a"]["license"] == "proprietary"
+    assert "public PDF" in got["ashrae-a"]["license_evidence"]
+    assert got["ashrae-login"]["license"] == "proprietary-internal"     # a login stays a pointer
+    assert got["vendor-page"]["license"] == "proprietary-internal"
 
 
 # --- the rights-evidence lint rule (off by default) --------------------------------------------------
@@ -446,6 +621,7 @@ def test_rights_evidence_lint_rule_is_opt_in(tmp_path, capsys):
             mrow("arx-b", source="arxiv", license="arxiv-nonexclusive",
                  license_evidence="arXiv OAI-PMH ...", rights_verified_at="2026-09-25",
                  license_url="http://arxiv.org/licenses/nonexclusive-distrib/1.0/", **sha),
+            mrow("arxiv-curated", source="arxiv", license="open", **sha),
             mrow("hand-x", license="open", **sha)]
     pipeline_repo.write_repo(root, entries=[pipeline_repo.entry_of(r) for r in rows],
                              manifest=rows)
@@ -454,14 +630,16 @@ def test_rights_evidence_lint_rule_is_opt_in(tmp_path, capsys):
     assert lint_registry.main(root, require_rights_evidence=True) == 1
     out = capsys.readouterr().out
     assert "arx-a: no license_evidence" in out and "arx-a: license 'open'" in out
+    assert "arxiv-curated: no license_evidence" in out
     assert "arx-b" not in out and "hand-x" not in out
 
 
-def test_excluded_licences_are_training_ineligible_everywhere():
+def test_restricted_use_licences_classify_never_filter():
     for lic in registry.RESTRICTED_USE_LICENSES:
         row = {"id": "arx-x", "license": lic}
-        assert not registry.is_training_eligible(row, {})
+        assert registry.is_collection_eligible(row, {})
+        assert not registry.is_default_corpus_eligible(row, {})
         assert not store.evaluate(store.default_corpus_where({}), row)
         assert lic in lint_registry.LICENSES
     assert not registry.RESTRICTED_USE_LICENSES & registry.OPEN_USE_LICENSES
-    assert registry.is_training_eligible({"id": "arx-x", "license": "cc-by"}, {})
+    assert registry.is_default_corpus_eligible({"id": "arx-x", "license": "cc-by"}, {})

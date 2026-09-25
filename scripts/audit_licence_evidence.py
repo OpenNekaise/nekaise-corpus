@@ -1,57 +1,77 @@
 #!/usr/bin/env python3
-"""audit_licence_evidence.py — pin authoritative licence evidence to arXiv / OpenAlex rows.
+"""audit_licence_evidence.py — pin authoritative licence evidence to arXiv / OpenAlex rows, and
+reclassify them (collect-all directive 2026-09-25: a licence classifies, it never removes bytes).
 
-Debt this measures and (phase B) repairs: find_sources.py registered arXiv papers (`arx-`) and
-OpenAlex works without a licence on their OA location (`ope-`, legacy `oa-`) as `license: open`
-with no `license_evidence`, so they count as training-eligible. Project policy admits only
-CC BY, CC BY-SA, CC0 and verified public domain into training. arXiv's default "non-exclusive
-distribution licence" grants distribution to arXiv only (pointer-only for us) and NC/ND are
-excluded, so part of these rows is not eligible.
+Debt this measures and (phase B) repairs: find_sources.py registered arXiv papers (`arx-`, and
+the hand-curated `arxiv-` ids) and OpenAlex works without an open licence on their OA location
+(`ope-`, legacy `oa-`) as `license: open` with no (or only discovery-time) evidence, so they sit
+in the default corpus/ view. That view admits only CC BY, CC BY-SA, CC0, verified public domain
+and the project's existing `open` sources. arXiv's default "non-exclusive distribution licence"
+grants distribution to arXiv only, NC/ND and unverified rights belong to classified views.
 
 Phase A (measure, read-only; everything lands in the git-ignored workspace/licence-audit/):
 
-    python scripts/audit_licence_evidence.py snapshot --from /path/to/live/checkout
-        git-archive the live checkout's committed tracked state (store.TRACKED_PATHS at its HEAD)
-        into workspace/licence-audit/snapshots/<sha>/ — reading git objects only, so the live
-        store's round lock is never taken (a FileStore read view holds the round lock for its
-        whole lifetime; the continuous dig would be blocked or would block us)
+    python scripts/audit_licence_evidence.py snapshot --from <checkout> [--rev main]
+        git-archive the committed tracked state (store.TRACKED_PATHS) into
+        workspace/licence-audit/snapshots/<sha>/ — git objects only, so the live store's round
+        lock is never taken (a FileStore read view holds the round lock for its whole lifetime)
     python scripts/audit_licence_evidence.py enumerate --root <snapshot>
-        one store read view: the affected rows (targets.jsonl), counts by source and host, the
-        same `open`-without-evidence debt in every other source, and the corpus totals
-    python scripts/audit_licence_evidence.py arxiv --data-root /path/to/live/checkout [--sample 500]
+        one store read view: the targets (targets.jsonl, each bound to its payload sha256 and the
+        snapshot identity), counts by source and host, the same debt in every other source, the
+        complete lint-rule scope inventory (registry-only, failed, CC-without-verification rows),
+        and the corpus totals
+    python scripts/audit_licence_evidence.py arxiv --data-root <checkout> [--sample 500]
         arXiv OAI-PMH GetRecord (arXivRaw) per paper: one connection, >= 3 s between requests,
         Retry-After honoured. The licence is pinned to the version actually fetched: the URL's
-        version, else the arXiv stamp in the extracted text (`arXiv:<id>vN`, read-only from
-        --data-root/text/), else the version dates against fetched_at. arXiv records carry the
-        CURRENT licence only, so a fetched version that is not the latest stays `unresolved`.
+        version, else the arXiv stamp in the extracted text (`arXiv:<id>vN`, trusted only when
+        that text's sha256 is the row's text_sha256), else the version dates against fetched_at.
+        arXiv records carry the CURRENT licence only, so a fetched version that is not the
+        latest stays `unresolved`.
     python scripts/audit_licence_evidence.py openalex
         OpenAlex re-query without searches: DOI and landing-page filter lists (50 values per
-        request, $0.0001 each; singleton/list costs are read from the X-RateLimit headers and the
-        pass stops above a reserve so the live finder's daily budget is never starved). The
-        location matching the fetched URL decides. OpenAlex rows hosted on arxiv.org go through
-        the arXiv pass instead (arXiv is authoritative, per version).
+        request, $0.0001 each; the pass stops above a reserve so the live finder's daily budget
+        is never starved). The location matching the fetched URL — identity-bearing query
+        parameters kept — decides, and is recorded. A publisher licence on ANOTHER location is
+        recorded as a candidate only (identical version not established). OpenAlex rows hosted on
+        arxiv.org go through the arXiv pass (arXiv is authoritative, per version).
+    python scripts/audit_licence_evidence.py bind --data-root <checkout>
+        bind results recorded before payload binding existed to their targets' payload sha256 and
+        snapshot, re-verifying each PDF-stamp pin against the text's current sha256 (a changed
+        text makes the result stale: re-audited, never applied)
     python scripts/audit_licence_evidence.py report
-        counts per verdict, the estimated doc/token impact on corpus/, 10 examples per verdict
+        final / missing / transient / stale counts, verdicts, class transitions, the default-view
+        impact, 10 examples per verdict
 
-Every pass is resumable: results.jsonl is append-only, keyed by id, and a row with a final
-verdict is never asked again (transient failures are recorded as errors and retried).
+Every pass is resumable: results.jsonl is append-only; a target is audited again only when it
+has no final result bound to its CURRENT payload (sha256) under the current resolver version.
 
-Verdicts: eligible (CC BY / BY-SA / CC0 / public domain, pinned) · pointer-only (arXiv
-non-exclusive, OA without an open licence) · excluded-nc-nd · unresolved (no pinnable evidence).
+Verdicts -> licence tag -> use class: eligible (cc-by / cc-by-sa / cc0 / public-domain -> open)
+· pointer-only (arxiv-nonexclusive, publisher-oa) · excluded-nc-nd (cc-by-nc* / cc-by-nd ->
+nc / nd / nc-nd) · unresolved (unverified). None of them affects collection.
 
 Phase B (prepared, NOT applied — the coordinator decides after review):
 
     python scripts/audit_licence_evidence.py apply [--apply]
 
-Dry run by default. With --apply: bounded store transactions (store_broker.run_batch; under the
-maintainer window's broker, else this command's own writer = the canonical round lock, held
-throughout) that give every audited row license_evidence, license_url and rights_verified_at and
-set its licence to the audited one — eligible rows to their CC tag, the rest to a
-registry.RESTRICTED_USE_LICENSES tag, which makes them training-ineligible while raw/ and text/
-provenance stay. Idempotent (an applied row is skipped; a row that changed since the audit is
-skipped and reported); never deletes. Refuses above 1% of training-eligible docs or tokens
-(AGENTS.md) unless --allow-over-1pct. Afterwards `python scripts/clean_corpus.py` clears the
-corpus claims and quarantines the corpus copies of the excluded rows (never deletes them).
+Dry run by default. Refuses until every target has a final, payload-bound result (missing,
+transient and stale results are listed). With --apply, ONE step session ("reclassify") —
+this command's own writer (the round lock, held throughout), the maintenance window's broker,
+or under PostgreSQL authority one standalone staged run whose clean step re-paths the claims and
+whose promotion refreshes every view — writes, per row, license (the audited tag),
+license_url, license_evidence and rights_verified_at to the registry entry and the manifest row,
+and (file authority) moves the cleaned file into its classified view: hard link first, claim
+committed, default copy removed last, a corpus/.reclassifying marker failing --check meanwhile.
+collection_delta is 0 by construction and verified; class transitions and default-view changes
+are reported; raw/text claims and hashes never change; nothing is erased. Idempotent; a row whose
+payload, URL or licence changed since the audit is skipped (re-audit it). Default-view removals
+are measured cumulatively in the use_view_changes.json control document against its first
+baseline; above 1% it refuses unless an operator decision is named (--operator-decision), which
+the maintainer window can never supply.
+
+    python scripts/audit_licence_evidence.py pointer-transition [--probe] [--apply]
+
+Phase 2, prepared only: proprietary-internal pointers whose URL serves public bytes become
+`proprietary` (collected, classified); catalogue pages, logins and paywalls stay pointers.
 """
 from __future__ import annotations
 
@@ -65,9 +85,8 @@ import subprocess
 import sys
 import time
 from collections import Counter, defaultdict
-from contextlib import ExitStack
 from pathlib import Path
-from typing import Callable, Iterable
+from typing import Iterable
 from urllib.parse import unquote, urlparse
 
 import licenses
@@ -95,7 +114,15 @@ STAMP_WINDOW = 300_000              # chars of extracted text searched for the a
 VERDICTS = ("eligible", "pointer-only", "excluded-nc-nd", "unresolved")
 COHORTS = ("arxiv", "openalex", "openalex-arxiv")
 TARGET_FIELDS = ("id", "url", "source", "license", "license_evidence", "status", "fetched_at",
-                 "text_path", "text_chars", "corpus_chars", "topic")
+                 "text_path", "text_chars", "corpus_chars", "topic", "sha256", "text_sha256",
+                 "raw_path", "corpus_path", "corpus_sha256")
+# Resolver versions: a result from an older resolver is re-audited (OpenAlex v2 keeps
+# identity-bearing query parameters and records the deciding location).
+RESOLVER = {"arxiv-oai-pmh:arXivRaw": 1, "openalex:works": 2}
+# discovery-time evidence the audit may replace (find_sources' OpenAlex note)
+REPLACEABLE_EVIDENCE = ("OpenAlex OA location license:",)
+CONTROL_DOC = "use_view_changes.json"
+LIMIT_FRACTION = 0.01
 # The licence a verdict writes (phase B). Eligible rows get their canonical CC tag.
 UNRESOLVED_LICENSE = "unverified"
 assert UNRESOLVED_LICENSE in registry.RESTRICTED_USE_LICENSES
@@ -146,13 +173,46 @@ def append_jsonl(path: Path, rows: Iterable[dict]) -> None:
 
 
 def latest_results(path: Path) -> dict[str, dict]:
-    """id -> its latest result record (a final verdict is never superseded by an error)."""
+    """id -> its latest result record (a final verdict is never superseded by an error of the
+    same payload; a stale marker does supersede it)."""
     out: dict[str, dict] = {}
     for r in read_jsonl(path):
         prev = out.get(r["id"])
-        if prev is not None and prev.get("verdict") and not r.get("verdict"):
+        if prev is not None and prev.get("verdict") and not r.get("verdict") \
+                and not r.get("stale") and r.get("payload_sha256") in (
+                    None, prev.get("payload_sha256")):
             continue
         out[r["id"]] = r
+    return out
+
+
+def result_state(target: dict, result: dict | None) -> str:
+    """final | missing | transient | stale for one target: a final result is bound to the
+    target's CURRENT payload (sha256) and produced by the current resolver version."""
+    if result is None:
+        return "missing"
+    if result.get("stale"):
+        return "stale"
+    if not result.get("verdict"):
+        return "transient"
+    if "payload_sha256" not in result:
+        return "stale"            # never bound to a payload: run `bind` (or re-audit)
+    if result["payload_sha256"] != target.get("sha256"):
+        return "stale"            # the fetched bytes changed since the audit
+    if result.get("resolver", 1) != RESOLVER.get(result.get("evidence_source"), 1):
+        return "stale"
+    return "final"
+
+
+def audit_state(targets: list[dict], results: dict[str, dict]) -> dict[str, str]:
+    return {t["id"]: result_state(t, results.get(t["id"])) for t in targets}
+
+
+def bound(target: dict, out: dict) -> dict:
+    """Bind a result to the payload and snapshot it was audited for."""
+    out["payload_sha256"] = target.get("sha256")
+    out["snapshot"] = target.get("snapshot")
+    out["resolver"] = RESOLVER.get(out.get("evidence_source"), 1)
     return out
 
 
@@ -160,7 +220,9 @@ def latest_results(path: Path) -> dict[str, dict]:
 
 _ARXIV_NONEXCLUSIVE = re.compile(
     r"^https?://arxiv\.org/licenses/(?:nonexclusive-distrib/1\.0|assumed-1991-2003)/?$", re.I)
-_CC_PDD = re.compile(r"^https?://(?:www\.)?creativecommons\.org/licenses/publicdomain/?$", re.I)
+# The retired CC Public Domain Dedication (and the deed it redirects to)
+_CC_PDD = re.compile(r"^https?://(?:www\.)?creativecommons\.org/(?:licenses/publicdomain"
+                     r"|publicdomain/certification/1\.0/us)/?$", re.I)
 _CC_RESTRICTED = re.compile(
     r"^https?://(?:www\.)?creativecommons\.org/licenses/(by-nc-nd|by-nc-sa|by-nc|by-nd)/\d\.\d", re.I)
 
@@ -179,7 +241,10 @@ def classify_licence_url(raw: str | None) -> tuple[str, str, str]:
         return "excluded-nc-nd", f"cc-{m.group(1).lower()}", "NC/ND Creative Commons licence"
     if _CC_PDD.match(value):
         # The retired CC Public Domain Dedication: an explicit dedication by the submitter.
-        return "eligible", "public-domain", "CC Public Domain Dedication (retired CC tool)"
+        # Retirement does not revoke it, but it is a US-law instrument: never CC0.
+        return ("eligible", "public-domain",
+                "CC Public Domain Dedication (retired CC tool; jurisdiction: US law — a "
+                "dedication under US copyright law, possibly limited elsewhere; not CC0)")
     tag, _ = licenses.cc_license([value])
     if tag:
         return "eligible", tag, "canonical Creative Commons grant"
@@ -273,14 +338,21 @@ def fetched_version(url_version: int | None, stamped: int | None, versions: list
     return max(public), "dates"
 
 
-def arxiv_verdict(target: dict, record: dict, text: str | None, checked_at: str) -> dict:
-    """The result record for one arXiv target from its parsed OAI record."""
+def arxiv_verdict(target: dict, record: dict, text: str | None, checked_at: str,
+                  text_sha256: str | None = None) -> dict:
+    """The result record for one arXiv target from its parsed OAI record, bound to its payload.
+    `text` (with its file's sha256) pins the version only when it IS the row's extraction."""
     aid, url_v = arxiv_id(target["url"])
     evidence_url = (f"{ARXIV_OAI}?verb=GetRecord&identifier=oai:arXiv.org:{aid}"
                     f"&metadataPrefix=arXivRaw")
     out = {"id": target["id"], "cohort": target["cohort"], "url": target["url"],
            "arxiv_id": aid, "evidence_source": "arxiv-oai-pmh:arXivRaw",
            "evidence_url": evidence_url, "checked_at": checked_at}
+    bound(target, out)
+    if text is not None and target.get("text_sha256") \
+            and text_sha256 != target["text_sha256"]:
+        out["stamp_ignored"] = "text/ does not hold the row's extraction (sha256 differs)"
+        text = None
     if "error" in record:
         code = record["error"]
         out.update(verdict="unresolved", licence=UNRESOLVED_LICENSE, license_url=evidence_url,
@@ -292,7 +364,8 @@ def arxiv_verdict(target: dict, record: dict, text: str | None, checked_at: str)
     version, basis = fetched_version(url_v, stamped, versions, target.get("fetched_at"))
     verdict, tag, reason = classify_licence_url(record["license"])
     out.update(raw_license=record["license"], versions=versions, latest_version=latest,
-               version=f"v{version}" if version else None, version_basis=basis)
+               version=f"v{version}" if version else None, version_basis=basis,
+               text_sha256_read=text_sha256 if basis == "pdf-stamp" else None)
     if version is None:
         verdict, tag = "unresolved", UNRESOLVED_LICENSE
         reason = f"fetched version cannot be determined ({basis}); record licence: {reason}"
@@ -358,15 +431,17 @@ def fetch_oai(http: Throttle, aid: str, *, retries: int = 5, log=print) -> str:
     raise RuntimeError(f"arXiv OAI kept refusing ({retries} attempts)")
 
 
-def read_text(data_root: Path | None, text_path: str | None) -> str | None:
-    """The extracted text of a row (read-only), confined to data_root."""
+def read_text(data_root: Path | None, text_path: str | None) -> tuple[str | None, str | None]:
+    """(the head of a row's extracted text, the sha256 of the whole file), read-only and
+    confined to data_root; (None, None) when it is not there."""
+    import hashlib
     if data_root is None or not text_path:
-        return None
+        return None, None
     path = (data_root / text_path).resolve()
     if not path.is_relative_to(data_root.resolve()) or not path.is_file():
-        return None
-    with path.open(errors="replace") as f:
-        return f.read(STAMP_WINDOW)
+        return None, None
+    data = path.read_bytes()
+    return data.decode(errors="replace")[:STAMP_WINDOW], hashlib.sha256(data).hexdigest()
 
 
 def stratified_sample(targets: list[dict], n: int, seed: int) -> list[dict]:
@@ -401,7 +476,8 @@ def run_arxiv(out_dir: Path, *, data_root: Path | None, sample: int | None, seed
     targets = [t for t in read_jsonl(out_dir / "targets.jsonl")
                if t["cohort"] in ("arxiv", "openalex-arxiv")]
     results_path = out_dir / "results.jsonl"
-    done = {sid for sid, r in latest_results(results_path).items() if r.get("verdict")}
+    state = audit_state(targets, latest_results(results_path))
+    done = {sid for sid, st_ in state.items() if st_ == "final"}
     todo = [t for t in targets if t["id"] not in done]
     if sample:
         picked = stratified_sample(targets, sample, seed)
@@ -420,25 +496,27 @@ def run_arxiv(out_dir: Path, *, data_root: Path | None, sample: int | None, seed
     for t in todo:
         aid, _ = arxiv_id(t["url"])
         if aid is None:
-            append_jsonl(results_path, [_with_evidence({
+            append_jsonl(results_path, [_with_evidence(bound(t, {
                 "id": t["id"], "cohort": t["cohort"], "url": t["url"], "arxiv_id": None,
                 "evidence_source": "arxiv-oai-pmh:arXivRaw", "evidence_url": t["url"],
                 "checked_at": now_iso(), "verdict": "unresolved", "licence": UNRESOLVED_LICENSE,
                 "license_url": t["url"], "raw_license": None, "version": None,
-                "reason": "URL carries no parsable arXiv id"})])
+                "reason": "URL carries no parsable arXiv id"}))])
             continue
         try:
             xml = fetch_oai(http, aid, log=log)
         except Exception as exc:  # network trouble: record, retry on the next run
             append_jsonl(results_path, [{"id": t["id"], "cohort": t["cohort"], "url": t["url"],
                                          "checked_at": now_iso(), "verdict": None,
+                                         "payload_sha256": t.get("sha256"),
                                          "error": f"{type(exc).__name__}: {exc}"[:300]}])
             log(f"# {t['id']}: {exc}")
             continue
         checked = now_iso()
         (raw_dir / (aid.replace("/", "_") + ".xml")).write_text(xml)
         record = parse_arxiv_raw(xml)
-        res = arxiv_verdict(t, record, read_text(data_root, t.get("text_path")), checked)
+        text, text_sha = read_text(data_root, t.get("text_path"))
+        res = arxiv_verdict(t, record, text, checked, text_sha)
         append_jsonl(results_path, [res])
         n += 1
         if n % 50 == 0:
@@ -479,27 +557,40 @@ def landing_candidates(url: str) -> list[str]:
     return [u for u in dict.fromkeys(out) if "," not in u and "|" not in u]
 
 
+# Query parameters that only select a presentation (cache busters, tracking, download flags);
+# every other parameter (PLOS ?id=10.1371/..., DSpace ?sequence=) identifies the document.
+_PRESENTATION_PARAMS = {"t", "download", "dl", "inline", "isallowed", "utm_source",
+                        "utm_medium", "utm_campaign", "utm_content", "utm_term"}
+_PRESENTATION_VALUES = {("type", "printable")}
+
+
 def norm_loc(url: str | None) -> str:
+    """host + path + the identity-bearing query parameters (sorted) of a URL."""
+    from urllib.parse import parse_qsl, urlencode
     if not url:
         return ""
     p = urlparse(url.strip())
     host = p.netloc.lower().removeprefix("www.")
-    return f"{host}{p.path.rstrip('/')}" + (f"?{p.query}" if p.query else "")
+    params = sorted((k, v) for k, v in parse_qsl(p.query, keep_blank_values=True)
+                    if k.lower() not in _PRESENTATION_PARAMS
+                    and (k.lower(), v.lower()) not in _PRESENTATION_VALUES)
+    return f"{host}{p.path.rstrip('/')}" + (f"?{urlencode(params)}" if params else "")
 
 
 def _loc_matches(url: str, loc: dict) -> bool:
-    want = {norm_loc(url), norm_loc(url).split("?")[0]}
+    """The location IS the fetched copy: the same PDF URL (identity parameters kept), or the
+    landing page derived from the fetched URL."""
     landings = {norm_loc(u) for u in landing_candidates(url)}
     got_pdf = norm_loc(loc.get("pdf_url"))
-    return bool((got_pdf and (got_pdf in want or got_pdf.split("?")[0] in want))
+    return bool((got_pdf and got_pdf == norm_loc(url))
                 or norm_loc(loc.get("landing_page_url")) in landings)
 
 
 def openalex_verdict(target: dict, work: dict | None, checked_at: str, evidence_url: str) -> dict:
-    out = {"id": target["id"], "cohort": target["cohort"], "url": target["url"],
-           "evidence_source": "openalex:works", "evidence_url": evidence_url,
-           "checked_at": checked_at, "version": None,
-           "work_id": (work or {}).get("id")}
+    out = bound(target, {"id": target["id"], "cohort": target["cohort"], "url": target["url"],
+                         "evidence_source": "openalex:works", "evidence_url": evidence_url,
+                         "checked_at": checked_at, "version": None,
+                         "work_id": (work or {}).get("id")})
     if work is None:
         out.update(verdict="unresolved", licence=UNRESOLVED_LICENSE, raw_license=None,
                    license_url=evidence_url,
@@ -519,18 +610,34 @@ def openalex_verdict(target: dict, work: dict | None, checked_at: str, evidence_
                    license_url=evidence_url,
                    reason=f"no OpenAlex location matches the fetched URL (work licences {lics})")
         return _with_evidence(out)
-    decisions = {classify_openalex(loc.get("license")) for loc in matched}
-    verdicts = {d[0] for d in decisions}
-    if "excluded-nc-nd" in verdicts:
-        verdict, tag, reason = next(d for d in sorted(decisions) if d[0] == "excluded-nc-nd")
+    decided = [(classify_openalex(loc.get("license")), loc) for loc in matched]
+    decisions = {d for d, _ in decided}
+    if any(d[0] == "excluded-nc-nd" for d in decisions):
+        (verdict, tag, reason), loc = next(x for x in sorted(decided, key=lambda x: x[0])
+                                           if x[0][0] == "excluded-nc-nd")
     elif len(decisions) > 1:
         verdict, tag = "unresolved", UNRESOLVED_LICENSE
         reason = f"matching locations disagree: {sorted(d[2] for d in decisions)}"
+        loc = None
     else:
-        verdict, tag, reason = decisions.pop()
-    loc = matched[0]
+        (verdict, tag, reason), loc = decided[0]
+    # a publisher grant on ANOTHER location is only a candidate: the identical version is not
+    # established by the same DOI / work (Codex decision 3); resolution records it for later
+    others = [x for x in locs if x not in matched and x.get("license")
+              and x.get("version") == "publishedVersion"]
+    if others:
+        out["publisher_candidate"] = {"license": others[0].get("license"),
+                                      "landing_page_url": others[0].get("landing_page_url")}
+    if loc is None:
+        out.update(verdict=verdict, licence=tag, reason=reason, raw_license=None,
+                   deciding_location=None,
+                   matched_url=matched[0].get("pdf_url") or matched[0].get("landing_page_url"),
+                   license_url=evidence_url)
+        return _with_evidence(out)
     out.update(verdict=verdict, licence=tag, reason=reason, raw_license=loc.get("license"),
                matched_url=loc.get("pdf_url") or loc.get("landing_page_url"),
+               deciding_location={k: loc.get(k) for k in ("pdf_url", "landing_page_url",
+                                                          "license", "license_id", "version")},
                license_url=loc.get("license_id") or evidence_url)
     return _with_evidence(out)
 
@@ -559,9 +666,9 @@ def run_openalex(out_dir: Path, *, reserve: float = OPENALEX_RESERVE_USD,
                  http: Throttle | None = None, log=print) -> int:
     targets = [t for t in read_jsonl(out_dir / "targets.jsonl") if t["cohort"] == "openalex"]
     results_path = out_dir / "results.jsonl"
-    done = {sid for sid, r in latest_results(results_path).items() if r.get("verdict")}
-    todo = [t for t in targets if t["id"] not in done]
-    log(f"# OpenAlex: {len(todo)} to audit, {len(done & {t['id'] for t in targets})} final")
+    state = audit_state(targets, latest_results(results_path))
+    todo = [t for t in targets if state[t["id"]] != "final"]
+    log(f"# OpenAlex: {len(todo)} to audit, {len(targets) - len(todo)} final")
     http = http or Throttle(OPENALEX_MIN_INTERVAL)
     works: dict[str, dict] = {}        # doi / landing url -> work
     evidence: dict[str, str] = {}      # key -> request url
@@ -608,12 +715,18 @@ def host(url: str | None) -> str:
 
 
 def cohort(row: dict) -> str | None:
+    """The audit cohort of a successful `license: open` row, or None."""
     sid, src = row.get("id", ""), row.get("source")
-    if sid.startswith("arx-") and src == "arxiv":
+    if sid.startswith(("arx-", "arxiv-")) and src == "arxiv":
         return "arxiv"
     if sid.startswith(("ope-", "oa-")) and src == "openalex":
         return "openalex-arxiv" if host(row.get("url")).endswith("arxiv.org") else "openalex"
     return None
+
+
+def replaceable(evidence: str | None) -> bool:
+    """No evidence, or only discovery-time evidence the audit supersedes."""
+    return not evidence or str(evidence).startswith(REPLACEABLE_EVIDENCE)
 
 
 def tokens(row: dict) -> int:
@@ -621,10 +734,20 @@ def tokens(row: dict) -> int:
     return int(chars) // 4
 
 
-def enumerate_targets(view, *, log=print) -> tuple[list[dict], dict]:
-    """(targets, facts): every successful, training-eligible `license: open` row without
-    license_evidence in the arXiv/OpenAlex cohorts, and the debt across all sources."""
+def snapshot_identity(root: Path, view) -> dict:
+    marker = Path(root) / ".complete"
+    commit = marker.read_text().strip() if marker.exists() else None
+    return {"commit": commit, "store_version": view.version().token}
+
+
+def enumerate_targets(view, *, snapshot: dict | None = None,
+                      log=print) -> tuple[list[dict], dict]:
+    """(targets, facts): every successful default-view `license: open` row of the arXiv /
+    OpenAlex cohorts without authoritative evidence (none, or only discovery-time evidence),
+    each bound to the snapshot; the same debt in every other source; and the complete scope of
+    the opt-in lint rule (lint_registry.EVIDENCE_PREFIXES) including registry-only rows."""
     import corpus_stats
+    import lint_registry
 
     restrictions, _ = store.pinned_policy(view)
     stats = corpus_stats.compute(view, restrictions)
@@ -633,22 +756,46 @@ def enumerate_targets(view, *, log=print) -> tuple[list[dict], dict]:
     with_evidence: Counter = Counter()
     by_host: dict[str, Counter] = defaultdict(Counter)
     targets = []
+    manifest_status: dict[str, str] = {}
     where = And(Eq("status", "ok"), Eq("license", "open"))
     for r in corpus_stats.iter_manifest(view, where=where, fields=TARGET_FIELDS):
-        if not registry.is_training_eligible(r, restrictions):
+        if not registry.is_default_corpus_eligible(r, restrictions):
             continue
-        if r.get("license_evidence"):
+        c = cohort(r)
+        if r.get("license_evidence") and not (c and replaceable(r["license_evidence"])):
             with_evidence[r.get("source")] += 1
             continue
         by_source[r.get("source")] += 1
         by_source_tokens[r.get("source")] += tokens(r)
-        c = cohort(r)
         if c is None:
             continue
         by_host[c][host(r.get("url"))] += 1
-        targets.append({**{k: r.get(k) for k in TARGET_FIELDS if k in r}, "cohort": c})
+        targets.append({**{k: r.get(k) for k in TARGET_FIELDS if k in r}, "cohort": c,
+                        "snapshot": snapshot})
+    # the lint rule's whole scope: entries (any manifest state) and manifest rows
+    scope: Counter = Counter()
+    prefixes = lint_registry.EVIDENCE_PREFIXES
+    for prefix in prefixes:
+        cursor = None
+        while True:
+            page = view.scan(store.Table.MANIFEST, where=store.Prefix("id", prefix),
+                             fields=("id", "status"), cursor=cursor, limit=store.MAX_PAGE)
+            manifest_status.update({r["id"]: r.get("status") for r in page.rows})
+            if (cursor := page.next_cursor) is None:
+                break
+        cursor = None
+        while True:
+            page = view.scan(store.Table.ENTRIES, where=store.Prefix("id", prefix),
+                             fields=("id", "license", "license_evidence", "rights_verified_at"),
+                             cursor=cursor, limit=store.MAX_PAGE)
+            for e in page.rows:
+                if lint_registry.rights_evidence_errors(e, "scope"):
+                    state = manifest_status.get(e["id"], "registry-only")
+                    scope[f"{prefix}{state}:{e.get('license')}"] += 1
+            if (cursor := page.next_cursor) is None:
+                break
     facts = {
-        "store_version": view.version().token,
+        "snapshot": snapshot,
         "enumerated_at": now_iso(),
         "corpus": {"documents": stats.documents, "tokens": stats.corpus_tokens,
                    "text_tokens": stats.tokens},
@@ -657,6 +804,7 @@ def enumerate_targets(view, *, log=print) -> tuple[list[dict], dict]:
         "open_with_evidence_by_source": dict(with_evidence.most_common()),
         "targets_by_cohort": dict(Counter(t["cohort"] for t in targets)),
         "targets_by_host": {c: dict(h.most_common()) for c, h in by_host.items()},
+        "lint_scope_without_evidence": dict(sorted(scope.items())),
     }
     return sorted(targets, key=lambda t: t["id"]), facts
 
@@ -664,7 +812,8 @@ def enumerate_targets(view, *, log=print) -> tuple[list[dict], dict]:
 def run_enumerate(root: Path, out_dir: Path, *, timeout: float, log=print) -> int:
     st = store.open(root=root)
     with st.read(timeout=timeout) as view:
-        targets, facts = enumerate_targets(view, log=log)
+        snapshot = snapshot_identity(root, view)
+        targets, facts = enumerate_targets(view, snapshot=snapshot, log=log)
     facts["root"] = str(root)
     out_dir.mkdir(parents=True, exist_ok=True)
     ops.atomic_write_text(out_dir / "targets.jsonl", "".join(
@@ -694,13 +843,56 @@ def run_snapshot(source: Path, out_dir: Path, *, rev: str = "HEAD", log=print) -
     return dest
 
 
+# --- binding results recorded before payload binding ----------------------------------------------
+
+def run_bind(out_dir: Path, *, data_root: Path | None, log=print) -> int:
+    """Bind every unbound final result to its target's payload sha256 and snapshot (the targets
+    of the snapshot the pass was run against). A PDF-stamp pin is re-verified: the text file
+    must still hash to the row's text_sha256, else the result is marked stale (re-audited).
+    Appends bound copies; the originals stay in the log."""
+    targets = {t["id"]: t for t in read_jsonl(out_dir / "targets.jsonl")}
+    results = latest_results(out_dir / "results.jsonl")
+    out, counts = [], Counter()
+    for sid, r in sorted(results.items()):
+        t = targets.get(sid)
+        if t is None or not r.get("verdict") or "payload_sha256" in r:
+            continue
+        rec = bound(t, dict(r))
+        if r.get("version_basis") == "pdf-stamp":
+            _text, sha = read_text(data_root, t.get("text_path"))
+            if sha is None or sha != t.get("text_sha256"):
+                rec = {"id": sid, "cohort": r.get("cohort"), "url": r.get("url"),
+                       "checked_at": now_iso(), "verdict": None, "stale": True,
+                       "payload_sha256": t.get("sha256"),
+                       "error": "stale: the stamped text is not the row's extraction"}
+                counts["stale"] += 1
+                out.append(rec)
+                continue
+            rec["text_sha256_read"] = sha
+        counts["bound"] += 1
+        out.append(rec)
+    append_jsonl(out_dir / "results.jsonl", out)
+    log(f"# bind: {dict(counts)}")
+    return 0
+
+
 # --- report --------------------------------------------------------------------------------------
+
+def old_class(target: dict) -> str:
+    return registry.LICENSE_CLASSES.get(target.get("license"), "unverified")
+
+
+def new_class(result: dict) -> str:
+    return registry.LICENSE_CLASSES.get(result.get("licence"), "unverified")
+
 
 def build_report(targets: list[dict], results: dict[str, dict], facts: dict) -> dict:
     by_id = {t["id"]: t for t in targets}
-    audited = {sid: r for sid, r in results.items() if r.get("verdict") and sid in by_id}
+    state = audit_state(targets, results)
+    audited = {sid: results[sid] for sid, st_ in state.items() if st_ == "final"}
     report: dict = {"generated_at": now_iso(), "targets": len(targets),
-                    "audited": len(audited), "cohorts": {}}
+                    "states": dict(Counter(state.values())), "audited": len(audited),
+                    "cohorts": {}}
     corpus_tokens = (facts.get("corpus") or {}).get("tokens") or 0
     corpus_docs = (facts.get("corpus") or {}).get("documents") or 0
     for c in COHORTS:
@@ -718,6 +910,7 @@ def build_report(targets: list[dict], results: dict[str, dict], facts: dict) -> 
         est_tokens = {v: round(tok[v] / frac) if frac else None for v in VERDICTS}
         report["cohorts"][c] = {
             "population": len(pop), "population_tokens": pop_tokens, "audited": len(done),
+            "states": dict(Counter(state[t["id"]] for t in pop)),
             "counts": {v: counts[v] for v in VERDICTS},
             "audited_tokens": {v: tok[v] for v in VERDICTS},
             "estimated_population_docs": est_docs,
@@ -726,13 +919,23 @@ def build_report(targets: list[dict], results: dict[str, dict], facts: dict) -> 
                 re.sub(r"\(.*|'.*|v\d+", "", r["reason"]).strip()[:80]
                 for r in done if r["verdict"] == "unresolved").most_common(8)),
             "raw_licences": dict(Counter(str(r.get("raw_license")) for r in done).most_common()),
+            "version_basis": dict(Counter(str(r.get("version_basis")) for r in done)),
+            "publisher_candidates": sum(1 for r in done if r.get("publisher_candidate")),
         }
+    transitions = Counter(f"{old_class(by_id[sid])} -> {new_class(r)}"
+                          for sid, r in audited.items())
+    leaving = [sid for sid, r in audited.items() if new_class(r) != "open"]
     lost_docs = sum((c["estimated_population_docs"][v] or 0)
                     for c in report["cohorts"].values() for v in VERDICTS if v != "eligible")
     lost_tokens = sum((c["estimated_population_tokens"][v] or 0)
                       for c in report["cohorts"].values() for v in VERDICTS if v != "eligible")
+    report["class_transitions"] = dict(transitions.most_common())
     report["impact"] = {
-        "estimated_ineligible_docs": lost_docs, "estimated_ineligible_tokens": lost_tokens,
+        "collection_delta": 0,
+        "audited_leaving_default_view_docs": len(leaving),
+        "audited_leaving_default_view_tokens": sum(tokens(by_id[s]) for s in leaving),
+        "estimated_leaving_default_view_docs": lost_docs,
+        "estimated_leaving_default_view_tokens": lost_tokens,
         "corpus_documents": corpus_docs, "corpus_tokens": corpus_tokens,
         "fraction_docs": lost_docs / corpus_docs if corpus_docs else None,
         "fraction_tokens": lost_tokens / corpus_tokens if corpus_tokens else None,
@@ -741,8 +944,8 @@ def build_report(targets: list[dict], results: dict[str, dict], facts: dict) -> 
     examples = {}
     for v in VERDICTS:
         pool = sorted((r for r in audited.values() if r["verdict"] == v), key=lambda r: r["id"])
-        examples[v] = [{k: r.get(k) for k in ("id", "cohort", "url", "version", "raw_license",
-                                               "licence", "reason")}
+        examples[v] = [{k: r.get(k) for k in ("id", "cohort", "url", "version", "version_basis",
+                                               "raw_license", "licence", "reason")}
                        for r in rng.sample(pool, min(10, len(pool)))]
     report["examples"] = examples
     return report
@@ -758,110 +961,264 @@ def run_report(out_dir: Path, *, log=print) -> int:
     return 0
 
 
-# --- phase B: apply ------------------------------------------------------------------------------
+# --- phase B: evidence + reclassification ---------------------------------------------------------
 
 def patch_for(result: dict) -> dict:
-    """The fields phase B writes for one final audit result."""
+    """The rights fields phase B writes for one final audit result."""
     return {"license": result["licence"], "license_url": result["license_url"],
             "license_evidence": result["evidence"],
             "rights_verified_at": result["checked_at"][:10]}
 
 
 def plan_row(result: dict, entry: dict | None, row: dict | None) -> tuple[str, dict | None]:
-    """('apply' | 'applied' | skip reason, patch) for one audited row — idempotent and guarded:
-    only the audited state (licence `open`, no evidence, same URL) is ever changed."""
+    """('apply' | 'applied' | skip reason, rights patch) for one audited row — idempotent and
+    guarded: only the audited state (the same payload and URL, licence `open`, no authoritative
+    evidence) is ever changed."""
     patch = patch_for(result)
     if entry is None or row is None:
         return "skip: row or entry no longer exists", None
     if all(entry.get(k) == v for k, v in patch.items()) and all(
             row.get(k) == v for k, v in patch.items()):
         return "applied", None
+    if row.get("sha256") != result.get("payload_sha256"):
+        return "skip: payload changed since the audit (re-audit)", None
     if row.get("url") != result["url"] or entry.get("url") != result["url"]:
         return "skip: URL changed since the audit", None
     for rec in (entry, row):
-        if rec.get("license") != "open" or rec.get("license_evidence"):
+        if rec.get("license") != "open" or not replaceable(rec.get("license_evidence")):
             return "skip: licence or evidence changed since the audit", None
-    if patch["license"] not in registry.RESTRICTED_USE_LICENSES | {"cc-by", "cc-by-sa", "cc0",
-                                                               "public-domain"}:
+    if patch["license"] not in registry.KNOWN_LICENSES:
         return f"skip: unexpected licence {patch['license']!r}", None
     return "apply", patch
 
 
-def final_results(out_dir: Path) -> dict[str, dict]:
-    return {sid: r for sid, r in latest_results(out_dir / "results.jsonl").items()
-            if r.get("verdict") in VERDICTS}
+def final_results(out_dir: Path) -> tuple[dict[str, dict], dict[str, str], list[dict]]:
+    """(final results by id, the state of every target, the targets)."""
+    targets = read_jsonl(out_dir / "targets.jsonl")
+    results = latest_results(out_dir / "results.jsonl")
+    state = audit_state(targets, results)
+    return ({sid: results[sid] for sid, st_ in state.items() if st_ == "final"}, state,
+            targets)
 
 
-def run_apply(root: Path, out_dir: Path, *, apply: bool, allow_large: bool = False,
-              batch_size: int = APPLY_BATCH, timeout: float = 60, log=print, st=None) -> int:
-    """Phase B. `st`: the store (default: the one authoritative for `root`)."""
+def load_changes(view) -> dict:
+    doc = view.control_get(CONTROL_DOC) or {}
+    return {"format": 1, "baseline": doc.get("baseline"), "changesets": doc.get("changesets", [])}
+
+
+def run_apply(root: Path, out_dir: Path, *, apply: bool, operator_decision: str | None = None,
+              allow_partial: bool = False, batch_size: int = APPLY_BATCH, timeout: float = 60,
+              log=print, st=None) -> int:
+    """Phase B in ONE step session (see the module docstring). `st`: the store (default: the one
+    authoritative for `root`)."""
+    import artifact_store
+    import clean_corpus
     import corpus_stats
 
-    results = final_results(out_dir)
+    results, state, _targets = final_results(out_dir)
+    pending = Counter(v for v in state.values() if v != "final")
+    log(f"audit states: {dict(Counter(state.values()))}")
+    if pending and not allow_partial:
+        log(f"REFUSED: {sum(pending.values())} targets have no final, payload-bound result "
+            f"({dict(pending)}); finish the passes (`bind` binds older results) first")
+        return 1
     if not results:
         log("no final audit results")
         return 1
+    if operator_decision and store_broker.client() is not None:
+        log("REFUSED: an operator decision cannot be supplied inside the maintenance window")
+        return 1
     st = st if st is not None else store.open(root=root)
-    with ExitStack() as stack:
-        # Under the round lock throughout: a maintenance window's child writes through its
-        # parent's broker; a standalone run holds its own writer for every batch.
-        writer = (None if store_broker.client() is not None
-                  else stack.enter_context(st.writer(timeout=timeout)))
-        with (st.read(writer=writer) if writer is not None else st.read()) as view:
-            restrictions, _ = store.pinned_policy(view)
-            stats = corpus_stats.compute(view, restrictions)
-            rows = view.get_manifest(results)
-            entries = view.get_entries(results)
+    with store_broker.step_session(st, "reclassify", timeout=timeout) as session:
+        view = session.view
+        restrictions, _ = store.pinned_policy(view)
+        stats = corpus_stats.compute(view, restrictions)
+        held_before = corpus_stats.compute_collection(view, restrictions).total_held
+        rows = view.get_manifest(results)
+        entries = view.get_entries(results)
+        changes = load_changes(view)
+        versioned = artifact_store.for_view(view, Path(root)) is not None
+
         plan: Counter = Counter()
-        lose_docs = lose_tokens = 0
-        for sid, res in results.items():
+        transitions: Counter = Counter()
+        todo: dict[str, dict] = {}
+        out_docs = out_tokens = in_docs = 0
+        for sid, res in sorted(results.items()):
             action, patch = plan_row(res, entries.get(sid), rows.get(sid))
             plan[action] += 1
-            if action == "apply" and patch["license"] in registry.RESTRICTED_USE_LICENSES \
-                    and registry.is_training_eligible(rows[sid], restrictions):
-                lose_docs += 1
-                lose_tokens += tokens(rows[sid])
-        frac_docs = lose_docs / stats.documents if stats.documents else 0.0
-        frac_tokens = lose_tokens / stats.corpus_tokens if stats.corpus_tokens else 0.0
-        verdicts = Counter(r["verdict"] for r in results.values())
-        log(f"audit results: {dict(verdicts)}")
+            if action != "apply":
+                continue
+            row = rows[sid]
+            before, after = registry.view_of(row, restrictions), registry.view_of(
+                {**row, **patch}, restrictions)
+            transitions[f"{registry.use_class(row, restrictions)} -> "
+                        f"{registry.use_class({**row, **patch}, restrictions)}"] += 1
+            if before == registry.DEFAULT_VIEW and after != registry.DEFAULT_VIEW:
+                out_docs += 1
+                out_tokens += tokens(row)
+            elif after == registry.DEFAULT_VIEW and before != registry.DEFAULT_VIEW:
+                in_docs += 1
+            todo[sid] = patch
+        baseline = changes["baseline"] or {"documents": stats.documents,
+                                           "tokens": stats.corpus_tokens, "at": now_iso()}
+        prior_docs = sum(c.get("left_default_docs", 0) for c in changes["changesets"])
+        prior_tokens = sum(c.get("left_default_tokens", 0) for c in changes["changesets"])
+        frac_docs = (prior_docs + out_docs) / baseline["documents"] if baseline["documents"] \
+            else 0.0
+        frac_tokens = (prior_tokens + out_tokens) / baseline["tokens"] if baseline["tokens"] \
+            else 0.0
         log(f"plan: {dict(plan)}")
-        log(f"training-eligible loss: {lose_docs:,} docs ({frac_docs:.3%}), "
-            f"{lose_tokens:,} tokens ({frac_tokens:.3%}) of {stats.documents:,} docs / "
-            f"{stats.corpus_tokens:,} tokens")
-        if max(frac_docs, frac_tokens) > 0.01 and not allow_large:
-            log("REFUSED: removes more than 1% of training-eligible docs or tokens "
-                "(AGENTS.md); record a proposal, or pass --allow-over-1pct on an operator "
-                "decision")
+        log(f"class transitions: {dict(transitions.most_common())}")
+        log(f"collection delta: 0 (reclassification never removes collected bytes); "
+            f"{held_before:,} held originals")
+        log(f"default view: -{out_docs:,} docs / -{out_tokens:,} tokens, +{in_docs:,} docs; "
+            f"cumulative since the {baseline['at']} baseline: {frac_docs:.3%} of "
+            f"{baseline['documents']:,} docs, {frac_tokens:.3%} of {baseline['tokens']:,} "
+            "tokens")
+        if (out_docs or out_tokens) and max(frac_docs, frac_tokens) > LIMIT_FRACTION \
+                and not operator_decision:
+            log("REFUSED: the cumulative default-view change exceeds 1% (AGENTS.md); record a "
+                "measured proposal for the operator, who may name a decision with "
+                "--operator-decision")
             return 1
-        if not apply:
-            log("dry run -- pass --apply to write")
+        if not apply or not todo:
+            log("dry run -- pass --apply to write" if not apply else "nothing to apply")
             return 0
-        todo = [sid for sid, res in results.items()
-                if plan_row(res, entries.get(sid), rows.get(sid))[0] == "apply"]
+
+        marker = Path(root) / "corpus" / clean_corpus.RECLASSIFYING
+        if not versioned:
+            marker.parent.mkdir(parents=True, exist_ok=True)
+            ops.atomic_write_text(marker, f"{session.identity('start')}\n")
+        moved: list[tuple[Path, Path]] = []
         written = 0
         for n, chunk in enumerate(store_broker.shard_batches(todo, batch_size), 1):
-            def body(view, batch, chunk=chunk):
-                cur_rows = view.get_manifest(chunk)
-                cur_entries = view.get_entries(chunk)
-                patches, new_entries = {}, []
-                for sid in chunk:
-                    action, patch = plan_row(results[sid], cur_entries.get(sid),
-                                             cur_rows.get(sid))
-                    if action == "apply":
-                        patches[sid] = patch
-                        new_entries.append({**cur_entries[sid], **patch})
-                if patches:
-                    batch.update_manifest_fields(patches)
-                    batch.upsert_entries(new_entries)
-                return len(patches)
+            patches, new_entries = {}, []
+            for sid in chunk:
+                patch = dict(todo[sid])
+                row = rows[sid]
+                if not versioned and row.get("corpus_path"):
+                    # file authority: the cleaned file moves to its view BEFORE the claim does
+                    # (a hard link: the same bytes and hash); the old entry goes last
+                    new_rel = registry.corpus_path_for({**row, **patch}, restrictions)
+                    old = Path(root) / row["corpus_path"]
+                    new = Path(root) / new_rel
+                    if new_rel != row["corpus_path"] and old.is_file():
+                        new.parent.mkdir(parents=True, exist_ok=True)
+                        if not new.exists():
+                            os.link(old, new)
+                        moved.append((old, new))
+                        patch["corpus_path"] = new_rel
+                patches[sid] = patch
+                new_entries.append({**entries[sid], **todo[sid]})
+            with session.batch(f"rights-{n:04d}") as b:
+                b.update_manifest_fields(patches)
+                b.upsert_entries(new_entries)
+            written += len(patches)
+            log(f"batch {n}: {len(patches)} rows")
+        with session.batch("ledger") as b:
+            changes["baseline"] = baseline
+            changes["changesets"].append({
+                "kind": "licence-reclassification", "at": now_iso(),
+                "session": session.identity("ledger"), "rows": written,
+                "left_default_docs": out_docs, "left_default_tokens": out_tokens,
+                "entered_default_docs": in_docs, "transitions": dict(transitions),
+                "operator_decision": operator_decision})
+            b.control_set(CONTROL_DOC, changes)
+        for old, new in moved:          # every claim is committed: drop the default copies
+            if old.exists() and new.exists() and os.path.samefile(old, new):
+                old.unlink()
+        if not versioned:
+            marker.unlink(missing_ok=True)
+    with st.read() as view:
+        held_after = corpus_stats.compute_collection(view).total_held
+    if held_after != held_before:
+        log(f"ERROR: collection delta {held_after - held_before} (expected 0)")
+        return 1
+    log(f"applied rights evidence to {written} rows; {len(moved)} cleaned files moved to their "
+        "classified views; collection delta 0" + ("" if not versioned else
+                                                  "; the run's clean step re-paths the claims"))
+    return 0
 
-            count, _ = store_broker.run_batch(st, "licence-audit", body, writer=writer)
-            written += count
-            log(f"batch {n}: {count} rows")
-        log(f"applied licence evidence to {written} rows; next: python scripts/clean_corpus.py "
-            "(quarantines the excluded rows' corpus copies), then the read-only gates")
+
+# --- phase 2, prepared only: proprietary pointers with public bytes -----------------------------
+
+def run_pointer_transition(root: Path, *, probe: bool, apply: bool, timeout: float = 60,
+                           http=None, log=print, st=None) -> int:
+    """proprietary-internal pointers -> `proprietary` (collected, classified) when their URL
+    serves public bytes. Without --probe nothing is requested: rows are only listed as
+    candidates (a direct PDF URL) or pointers. --probe asks each candidate once (HEAD, then a
+    ranged GET) with the loader's honest identity: HTTP 200 and a PDF content type without a
+    redirect to a login or checkout page. Logins, paywalls, challenges and catalogue pages stay
+    pointers. --apply re-tags the proven rows with the probe as evidence (phase 2)."""
+    st = st if st is not None else store.open(root=root)
+    with st.read(timeout=timeout) as view:
+        restrictions, _ = store.pinned_policy(view)
+        pointers = []
+        cursor = None
+        while True:
+            page = view.scan(store.Table.ENTRIES, where=Eq("license", "proprietary-internal"),
+                             cursor=cursor, limit=store.MAX_PAGE)
+            pointers += page.rows
+            if (cursor := page.next_cursor) is None:
+                break
+    plan = []
+    for e in pointers:
+        url = e.get("url") or ""
+        direct = e.get("format") == "pdf" or urlparse(url).path.lower().endswith(".pdf")
+        outcome = "candidate" if direct else "pointer: not a direct full-text URL"
+        evidence = None
+        if direct and probe:
+            outcome, evidence = _probe_public(http or Throttle(ARXIV_MIN_INTERVAL), url)
+        plan.append((e, outcome, evidence))
+    for e, outcome, _ev in plan:
+        log(f"{e['id']}: {outcome} ({e.get('url')})")
+    proven = [(e, ev) for e, outcome, ev in plan if outcome == "public-bytes"]
+    log(f"pointer transition: {len(pointers)} pointers, "
+        f"{sum(1 for _, o, _e in plan if o == 'candidate')} unprobed candidates, "
+        f"{len(proven)} proven public")
+    if not apply or not proven:
         return 0
+
+    def body(view, batch):
+        entries = view.get_entries(e["id"] for e, _ in proven)
+        rows = view.get_manifest(e["id"] for e, _ in proven)
+        today = now_iso()
+        new = []
+        for e, ev in proven:
+            cur = entries.get(e["id"])
+            if cur is None or cur.get("license") != "proprietary-internal":
+                continue
+            new.append({**cur, "license": "proprietary", "license_evidence": ev,
+                        "rights_verified_at": today[:10]})
+        if new:
+            batch.upsert_entries(new)
+            manifest = {e["id"]: {"license": "proprietary"} for e in new if e["id"] in rows}
+            if manifest:
+                batch.update_manifest_fields(manifest)
+        return len(new)
+
+    n, _ = store_broker.run_batch(st, "pointer-transition", body, timeout=timeout)
+    log(f"re-tagged {n} pointers as proprietary (collected, classified 'proprietary')")
+    return 0
+
+
+def _probe_public(http, url: str) -> tuple[str, str | None]:
+    """('public-bytes', evidence) or ('pointer: <why>', None) for one URL."""
+    try:
+        r = http.get(url, headers={"Range": "bytes=0-1023"}, allow_redirects=True)
+    except Exception as exc:   # an unreachable URL stays a pointer
+        return f"pointer: unreachable ({type(exc).__name__})", None
+    final = getattr(r, "url", url) or url
+    ctype = (r.headers.get("Content-Type") or "").lower()
+    body = getattr(r, "content", b"") or b""
+    if r.status_code not in (200, 206):
+        return f"pointer: HTTP {r.status_code}", None
+    if re.search(r"login|signin|sign-in|checkout|cart|account", final, re.I):
+        return "pointer: redirected to a login or checkout page", None
+    if "pdf" not in ctype and not body.startswith(b"%PDF"):
+        return f"pointer: not a PDF ({ctype or 'no content type'})", None
+    return "public-bytes", (f"public PDF served without login at {final} (HTTP "
+                            f"{r.status_code}, {ctype or 'PDF magic'}), probed {now_iso()}")
 
 
 # --- CLI -----------------------------------------------------------------------------------------
@@ -870,7 +1227,7 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT, help="audit directory (git-ignored)")
     sub = ap.add_subparsers(dest="cmd", required=True)
-    p = sub.add_parser("snapshot", help="extract a live checkout's committed tracked state")
+    p = sub.add_parser("snapshot", help="extract a checkout's committed tracked state")
     p.add_argument("--from", dest="source", type=Path, required=True)
     p.add_argument("--rev", default="HEAD")
     p = sub.add_parser("enumerate", help="list affected rows through a store read view")
@@ -884,13 +1241,24 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--limit", type=int, default=None)
     p = sub.add_parser("openalex", help="audit OpenAlex rows")
     p.add_argument("--reserve-usd", type=float, default=OPENALEX_RESERVE_USD)
+    p = sub.add_parser("bind", help="bind older results to their payloads")
+    p.add_argument("--data-root", type=Path, default=None)
     sub.add_parser("report", help="summarise results")
-    p = sub.add_parser("apply", help="phase B: write the verdicts (dry run by default)")
+    p = sub.add_parser("apply", help="phase B: evidence + reclassification (dry run by default)")
     p.add_argument("--root", type=Path, default=ROOT)
     p.add_argument("--apply", action="store_true")
-    p.add_argument("--allow-over-1pct", action="store_true")
+    p.add_argument("--operator-decision", default=None,
+                   help="the operator decision authorizing a >1%% default-view change (never "
+                        "available inside the maintenance window)")
+    p.add_argument("--allow-partial", action="store_true",
+                   help="apply the final results although other targets are still pending")
     p.add_argument("--batch", type=int, default=APPLY_BATCH)
     p.add_argument("--lock-timeout", type=float, default=60)
+    p = sub.add_parser("pointer-transition", help="phase 2: proprietary pointers with public "
+                                                  "bytes (dry run by default)")
+    p.add_argument("--root", type=Path, default=ROOT)
+    p.add_argument("--probe", action="store_true")
+    p.add_argument("--apply", action="store_true")
     args = ap.parse_args(argv)
     out = args.out
     if args.cmd == "snapshot":
@@ -903,11 +1271,17 @@ def main(argv: list[str] | None = None) -> int:
                          limit=args.limit)
     if args.cmd == "openalex":
         return run_openalex(out, reserve=args.reserve_usd)
+    if args.cmd == "bind":
+        return run_bind(out, data_root=args.data_root)
     if args.cmd == "report":
         return run_report(out)
     if args.cmd == "apply":
-        return run_apply(args.root, out, apply=args.apply, allow_large=args.allow_over_1pct,
-                         batch_size=args.batch, timeout=args.lock_timeout)
+        return run_apply(args.root, out, apply=args.apply,
+                         operator_decision=args.operator_decision,
+                         allow_partial=args.allow_partial, batch_size=args.batch,
+                         timeout=args.lock_timeout)
+    if args.cmd == "pointer-transition":
+        return run_pointer_transition(args.root, probe=args.probe, apply=args.apply)
     return 2
 
 

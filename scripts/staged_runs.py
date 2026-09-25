@@ -56,6 +56,9 @@ GATE_COMMANDS = {
 DOWNSTREAM = {
     "fetch": (("prune", "prune_corpus.py", ("--apply",)), ("clean", "clean_corpus.py", ())),
     "prune": (("clean", "clean_corpus.py", ()),),
+    # a licence reclassification: the clean step re-paths every re-tagged row's cleaned claim
+    # into its view (same version) before the gates; promotion refreshes the views
+    "reclassify": (("clean", "clean_corpus.py", ()),),
 }
 # An aborted run's staging stays inspectable this long before housekeeping purges it.
 PURGE_GRACE_SECONDS = 24 * 3600

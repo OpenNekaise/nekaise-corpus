@@ -579,3 +579,66 @@ def test_staged_main_holds_the_lifecycle_lock_across_sweep_and_writer(world, mon
     assert seen == {"sweep": True, "writer": True}, seen
     assert code == (0 if mode == "recover" else 1)
     assert not held()
+
+
+# --- a licence reclassification under PostgreSQL authority ---------------------------------------------
+
+def test_a_licence_reclassification_is_one_standalone_run_that_moves_views(world):
+    """audit_licence_evidence.py apply under PostgreSQL authority: ONE standalone staged run —
+    re-tagged rows, the clean step re-paths their cleaned claims into their classified views
+    (same versions), gates, promotion, every view materialized; nothing erased."""
+    seeded(world, n=3)
+    world.finder([])
+    ok(world.run("--run-id", rid("sr-lic")))
+    with world.store().read() as view:
+        rows = view.get_manifest(["ost-s-0", "ost-s-1", "ost-s-2"])
+    out = world.root / "workspace" / "licence-audit"
+    out.mkdir(parents=True, exist_ok=True)
+    # the audited state: registry-wide `open` without evidence (as the arXiv debt was)
+    targets, results = [], []
+    for sid, lic, verdict in (("ost-s-0", "cc-by-nc-sa", "excluded-nc-nd"),
+                              ("ost-s-1", "cc-by", "eligible")):
+        targets.append({**rows[sid], "cohort": "arxiv"})
+        results.append({"id": sid, "url": rows[sid]["url"], "cohort": "arxiv",
+                        "verdict": verdict, "licence": lic, "reason": "test",
+                        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+                        "evidence": f"test evidence -> {verdict}",
+                        "checked_at": "2026-09-25T12:00:00Z",
+                        "evidence_source": "arxiv-oai-pmh:arXivRaw", "resolver": 1,
+                        "payload_sha256": rows[sid]["sha256"]})
+    # the rows must look like the audited debt: licence `open`
+    retag = world.python(
+        "import store, store_broker\n"
+        "st = store.open()\n"
+        "def body(view, batch):\n"
+        "    ids = ['ost-s-0', 'ost-s-1']\n"
+        "    e = view.get_entries(ids)\n"
+        "    batch.update_manifest_fields({i: {'license': 'open'} for i in ids})\n"
+        "    batch.upsert_entries([{**e[i], 'license': 'open'} for i in ids])\n"
+        "store_broker.run_batch(st, 'retag', body)\n")
+    ok(retag)
+    (out / "targets.jsonl").write_text("".join(
+        json.dumps({**t, "license": "open"}) + "\n" for t in targets))
+    (out / "results.jsonl").write_text("".join(json.dumps(r) + "\n" for r in results))
+    applied = world.run("apply", "--apply", "--operator-decision", "test: a 3-document world",
+                        script="audit_licence_evidence.py")
+    ok(applied)
+    runs = [r for r in standalone_runs(world) if r[0].startswith("reclassify-")]
+    assert [(status, bool(gen)) for _, status, gen, _ in runs] == [("promoted", True)]
+    with world.store().read() as view:
+        after = view.get_manifest(["ost-s-0", "ost-s-1", "ost-s-2"])
+        ledger = view.control_get("use_view_changes.json")
+    nc = after["ost-s-0"]
+    assert nc["license"] == "cc-by-nc-sa" and nc["license_evidence"].startswith("test evidence")
+    assert nc["corpus_path"] == "collection/nc/corpus/ost-s-0.md"
+    assert nc["corpus_sha256"] == rows["ost-s-0"]["corpus_sha256"]          # same version
+    for key in ("sha256", "raw_path", "text_path", "text_sha256"):
+        assert nc[key] == rows["ost-s-0"][key]
+    assert after["ost-s-1"]["license"] == "cc-by"
+    assert after["ost-s-1"]["corpus_path"] == "corpus/ost-s-1.md"
+    assert corpus_ids(world) == {"ost-s-1", "ost-s-2"}                      # the default view
+    classified = world.root / "collection" / "nc" / "corpus" / "ost-s-0.md"
+    assert classified.is_file()
+    assert (materialized(world, "collection/nc/corpus")["state"],
+            materialized(world)["state"]) == ("complete", "complete")
+    assert ledger["changesets"][0]["left_default_docs"] == 1
