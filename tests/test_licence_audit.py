@@ -515,9 +515,18 @@ def test_bind_attaches_payloads_and_revokes_stale_stamps(tmp_path):
                .values()) == {"stale"}
     audit.run_bind(out, data_root=data, log=lambda *a: None)
     state = audit.audit_state(targets, audit.latest_results(out / "results.jsonl"))
+    # arx-b's stamp no longer matches its text and no OAI response is saved: re-audit it
     assert state == {"arx-a": "final", "arx-b": "stale", "arx-c": "final"}
-    bound = audit.latest_results(out / "results.jsonl")["arx-a"]
-    assert bound["payload_sha256"] == "1" * 64 and bound["snapshot"] == {"commit": "c"}
+    got = audit.latest_results(out / "results.jsonl")
+    assert got["arx-a"]["payload_sha256"] == "1" * 64 and got["arx-a"]["snapshot"] == {
+        "commit": "c"}
+    # with the saved OAI response the verdict is re-derived offline from the version dates
+    (out / "oai").mkdir()
+    (out / "oai" / "1911.02206.xml").write_text(fixture("arxiv_two_versions_nonexclusive.xml"))
+    audit.run_bind(out, data_root=data, log=lambda *a: None)
+    got = audit.latest_results(out / "results.jsonl")["arx-b"]
+    assert audit.result_state(targets[1], got) == "final"
+    assert got["version_basis"] == "dates" and "stamp_ignored" in got
 
 
 def test_report_counts_states_transitions_and_examples(tmp_path):

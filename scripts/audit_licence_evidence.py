@@ -846,31 +846,52 @@ def run_snapshot(source: Path, out_dir: Path, *, rev: str = "HEAD", log=print) -
 # --- binding results recorded before payload binding ----------------------------------------------
 
 def run_bind(out_dir: Path, *, data_root: Path | None, log=print) -> int:
-    """Bind every unbound final result to its target's payload sha256 and snapshot (the targets
-    of the snapshot the pass was run against). A PDF-stamp pin is re-verified: the text file
-    must still hash to the row's text_sha256, else the result is marked stale (re-audited).
-    Appends bound copies; the originals stay in the log."""
+    """Bind results recorded before payload binding existed to their target's payload sha256 and
+    snapshot. A PDF-stamp version pin is kept only when the stamped text still hashes to the
+    row's text_sha256; otherwise (the text changed, or the row records no text identity) the
+    verdict is re-derived OFFLINE from the saved OAI-PMH response without the stamp (version
+    dates only), and marked stale only when that response is not on disk. Appends new records;
+    the originals stay in the log."""
     targets = {t["id"]: t for t in read_jsonl(out_dir / "targets.jsonl")}
     results = latest_results(out_dir / "results.jsonl")
     out, counts = [], Counter()
-    for sid, r in sorted(results.items()):
-        t = targets.get(sid)
-        if t is None or not r.get("verdict") or "payload_sha256" in r:
+    for sid, t in sorted(targets.items()):
+        r = results.get(sid)
+        if r is None or result_state(t, r) == "final":
             continue
-        rec = bound(t, dict(r))
-        if r.get("version_basis") == "pdf-stamp":
+        unbound = r.get("verdict") and "payload_sha256" not in r
+        if not (unbound or r.get("stale")):
+            continue                     # transient, resolver-stale, changed payload: re-audit
+        stamped = r.get("version_basis") == "pdf-stamp" or r.get("stale")
+        if unbound and not stamped:
+            out.append(bound(t, dict(r)))
+            counts["bound"] += 1
+            continue
+        if unbound and t.get("text_sha256"):
             _text, sha = read_text(data_root, t.get("text_path"))
-            if sha is None or sha != t.get("text_sha256"):
-                rec = {"id": sid, "cohort": r.get("cohort"), "url": r.get("url"),
-                       "checked_at": now_iso(), "verdict": None, "stale": True,
-                       "payload_sha256": t.get("sha256"),
-                       "error": "stale: the stamped text is not the row's extraction"}
-                counts["stale"] += 1
-                out.append(rec)
+            if sha == t["text_sha256"]:
+                out.append({**bound(t, dict(r)), "text_sha256_read": sha})
+                counts["bound (stamp verified)"] += 1
                 continue
-            rec["text_sha256_read"] = sha
-        counts["bound"] += 1
-        out.append(rec)
+        aid, _ = arxiv_id(t["url"])
+        xml_path = out_dir / "oai" / f"{(aid or '').replace('/', '_')}.xml"
+        if aid is None or not xml_path.is_file():
+            out.append({"id": sid, "cohort": t["cohort"], "url": t["url"],
+                        "checked_at": now_iso(), "verdict": None, "stale": True,
+                        "payload_sha256": t.get("sha256"),
+                        "error": "stale: stamp unverifiable and no saved OAI response"})
+            counts["stale"] += 1
+            continue
+        xml = xml_path.read_text()
+        when = re.search(r"<responseDate>(.*?)</responseDate>", xml)
+        checked = when.group(1) if when else now_iso()
+        res = arxiv_verdict(t, parse_arxiv_raw(xml), None, checked)
+        res["stamp_ignored"] = ("the row records no text identity (text_sha256), so the "
+                                "extraction's arXiv stamp cannot be tied to the payload"
+                                if not t.get("text_sha256") else
+                                "text/ does not hold the row's extraction (sha256 differs)")
+        out.append(res)
+        counts["re-derived without the stamp"] += 1
     append_jsonl(out_dir / "results.jsonl", out)
     log(f"# bind: {dict(counts)}")
     return 0
