@@ -942,9 +942,10 @@ def download_one(src: dict) -> dict:
             return rec
         raw_dir.mkdir(parents=True, exist_ok=True)
         target = raw_path
-        if sid in HELD_OK_IDS and raw_path.exists():
-            # a refresh of a HELD programme document: stage the new bytes; they replace the held
-            # raw only after extraction succeeds (settle_held), never before
+        if sid in HELD_OK_IDS:
+            # a refresh or restoration of a HELD programme document: stage the new bytes; they
+            # become the raw file only after extraction succeeds (settle_held), never before —
+            # a failed restoration must not leave bytes that disagree with the kept provenance
             target = raw_path.with_name(raw_path.name + ".incoming")
             rec["_incoming"], rec["_final_raw"] = str(target), str(raw_path)
         target.write_bytes(data)
@@ -1556,7 +1557,8 @@ def _run(view, session, args, only: set[str], selection: dict) -> None:
         if rec["id"] in HELD_OK_IDS and not rec.get("text_path"):
             if incoming:
                 Path(incoming).unlink(missing_ok=True)
-            rec.setdefault("error", "refresh produced no text")
+            if not rec.get("error"):
+                rec["error"] = "refresh produced no text"
             _log_restore_failure(rec)
             _cool(rec["id"])
             budget_deferred.append(rec["id"])

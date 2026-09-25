@@ -1607,3 +1607,36 @@ def test_a_forced_refresh_that_extracts_nothing_keeps_the_held_row(monkeypatch, 
     assert not (root / "raw" / "boverket_bfs" / "bov-bfs-bfs2011-6.pdf.incoming").exists()
     assert "bov-bfs-bfs2011-6" in (root / "workspace" /
                                     "programme-restore-failures.jsonl").read_text()
+
+
+def test_a_failed_restoration_leaves_no_bytes_and_is_retried_later(monkeypatch, tmp_path):
+    import sys as _sys
+    bfs = {"id": "bov-bfs-bfs2011-6", "title": "BFS 2011:6 — BBR",
+           "url": "https://rinfo.boverket.se/BFS2011-6/pdf/BFS2011-6.pdf",
+           "source": "boverket_bfs", "license": "public-domain",
+           "topic": "standards_protocols", "format": "pdf"}
+    held = {**bfs, "status": "ok", "sha256": "1" * 64, "bytes": 9,
+            "raw_path": "raw/boverket_bfs/bov-bfs-bfs2011-6.pdf",
+            "text_path": "text/bov-bfs-bfs2011-6.md", "text_chars": 10}
+    root = _programme_repo(monkeypatch, tmp_path, [bfs], [held], docs()["regdocs.json"])
+    monkeypatch.setattr(robots_policy, "decision", lambda _u, fetcher=None: (True, None))
+    monkeypatch.setattr(build_corpus, "_wait_for_host", lambda _h: None)
+    monkeypatch.setattr(build_corpus.requests, "get",
+                        lambda url, **_k: FakeResp(200, b"%PDF-1.4 broken, no text",
+                                                   "application/pdf", url=url))
+    monkeypatch.setattr(_sys, "argv", ["build_corpus.py", "--workers", "1",
+                                       "--extract-workers", "1"])
+    build_corpus.main()  # a fresh machine: raw and text missing, the restoration extracts nothing
+    raw = root / "raw" / "boverket_bfs" / "bov-bfs-bfs2011-6.pdf"
+    assert not raw.exists() and not raw.with_name(raw.name + ".incoming").exists()
+    row = json.loads((root / "manifest" / "nordic.jsonl").read_text().splitlines()[0])
+    assert row["sha256"] == "1" * 64
+    log = (root / "workspace" / "programme-restore-failures.jsonl").read_text()
+    assert '"error": "refresh produced no text"' in log or "text-extract" in log
+    # after the cooldown the row is scheduled again (nothing pretends it was restored)
+    (root / "workspace" / "programme-cooldowns.json").write_text("{}")
+    calls = []
+    monkeypatch.setattr(build_corpus, "download_one",
+                        lambda src: calls.append(src["id"]) or {**src, "_deferred": "test"})
+    build_corpus.main()
+    assert calls == ["bov-bfs-bfs2011-6"]
