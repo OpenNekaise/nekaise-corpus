@@ -13748,3 +13748,356 @@ sources:
     topic: building_energy
     format: pdf
     document_type: conference-paper
+  - id: ibp-a-framework-for-parametric-multi-criteria-decision-a
+    title: A framework for parametric multi-criteria decision analysis (P-MCDA) for
+      building retrofits
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1519.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-development-of-a-building-stock-energy-model-for-com
+    title: Development of a building stock energy model for commercial building stock
+      considering heterogeneity and yearly change in building stock
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1522.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-evaluations-of-energy-efficiency-of-air-conditioning
+    title: Evaluations of energy efficiency of air-conditioning systems designed by
+      coincident design day
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1535.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-experimental-and-numerical-study-of-geothermal-rainw
+    title: Experimental and numerical study of geothermal rainwater tanks for buildings
+      passive cooling using Crank-Nicolson’s Method
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1540.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-review-of-the-control-optimization-and-application
+    title: A review of the control optimization and application potential of the radiant
+      floor cooling system
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1546.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-investigation-of-cold-storage-integration-in-a-danis
+    title: Investigation of cold storage integration in a Danish data center
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1560.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-digital-twin-simulation-of-a-danish-school-building
+    title: Digital twin simulation of a Danish school building
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1565.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-can-we-trust-building-energy-performance-models-resu
+    title: Can we trust building energy performance models’ results?
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1567.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-which-summer-comfort-level-can-be-reached-by-using-h
+    title: Which summer comfort level can be reached by using heat emitters connected
+      to district cooling in residential buildings?
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1574.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-systematic-review-of-the-use-of-artificial-intellige
+    title: Systematic review of the use of artificial intelligence methods in hospital
+      energy prediction
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1575.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-towards-automated-fault-detection-and-diagnosis-in-d
+    title: 'Towards automated fault detection and diagnosis in district heating customers:
+      generation and analysis of a labeled dataset with ground truth'
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1576.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-combined-reinforcement-learning-rl-and-model-predict
+    title: Combined reinforcement learning (RL) and model predictive control (MPC) for
+      optimal building energy use
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1578.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-cooperative-control-strategy-of-shared-energy-storag
+    title: Cooperative control strategy of shared energy storage system for smart grid
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1586.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-adaptable-and-scalable-energy-modeling-of-ventilatio
+    title: Adaptable and scalable energy modeling of ventilation systems as part of
+      building digital twins
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1589.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-study-on-floor-heating-systems-influenced-by-intrins
+    title: Study on floor heating systems influenced by intrinsic and extrinsic factors
+      - a review
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1602.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-occupancy-based-model-predictive-control-for-residen
+    title: Occupancy-based model predictive control for residential building cluster
+      with photovoltaic and battery systems
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1607.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-semi-automated-thermal-envelope-model-setup-for-adap
+    title: Semi-automated thermal envelope model setup for adaptive model predictive
+      control with event-triggered system identification
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1611.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-building-performance-simulation-of-an-office-buildin
+    title: Building performance simulation of an office building without conventional
+      mechanical systems in cold/temperate climate
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1614.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-data-mining-and-feature-selection-to-support-optimiz
+    title: Data mining and feature selection to support optimization of a demand-control
+      ventilation system
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1620.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-utilization-of-auxetic-structures-in-advanced-shadin
+    title: Utilization of auxetic structures in advanced shading systems to improve
+      lighting and thermal performance in Florida, USA
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1622.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-research-on-model-calibration-method-of-chiller-plan
+    title: Research on model calibration method of chiller plants based on error reverse
+      correction with limited data
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1630.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-jax-based-gray-box-modeling-framework-for-hybrid-the
+    title: JAX-based gray-box modeling framework for hybrid thermal building models
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1641.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-assessing-the-efficacy-of-multi-vent-module-based-ad
+    title: Assessing the efficacy of multi-vent module-based adaptive ventilation in
+      safeguarding room occupants against infection using a new design parameter
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1645.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-study-on-simplified-analysis-of-3d-wall-jet-using-
+    title: A study on simplified analysis of 3D wall jet using momentum method
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1658.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-control-performance-verification-the-hidden-opportun
+    title: Control Performance Verification – The Hidden Opportunity of Ensuring High
+      Performance of Building Control System
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1660.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-comparative-analysis-of-simplified-and-detailed-mo
+    title: A Comparative Analysis of Simplified and Detailed Modelling Procedures for
+      the Assessment of Chiller Efficiency in the European Context
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1664.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-techno-economic-assessment-of-a-model-based-legionel
+    title: Techno-economic assessment of a model-based Legionella control measure by
+      combining thermal shocks and UV radiation in residential hot water systems
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1668.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-solar-photovoltaics-and-battery-energy-storage-syste
+    title: Solar Photovoltaics and Battery Energy Storage systems potential for grid
+      flexibility and to address electrical demand of air-source heat pump systems
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1675.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-empirical-decomposition-of-time-signals-of-power-con
+    title: Empirical decomposition of time signals of power consumption
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1678.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-development-of-a-dynamic-building-stock-model-for-sm
+    title: 'Development of a dynamic building stock model for smart energy transition
+      decision support: university campus stock case study'
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1686.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-implementation-of-real-time-model-predictive-control
+    title: Implementation of real-time model predictive control (MPC) of energy recovery
+      ventilators for school buildings
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1692.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-various-waste-heat-recoveries-and-potential-energy-s
+    title: Various waste heat recoveries and potential energy savings in an ice hall
+      in Finland
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1701.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-impact-of-influential-factors-on-gray-box-model-perf
+    title: 'Impact of influential factors on gray-box model performance for identification
+      of building thermal properties: numerical and analytical analyses'
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1704.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-quantifying-model-uncertainty-of-exterior-convective
+    title: Quantifying model uncertainty of exterior convective heat transfer coefficient
+      models in building energy simulation by onsite measurement
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1707.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-case-study-of-spatial-and-temporal-characteristic-
+    title: A case-study of spatial and temporal characteristic analysis for indoor CO2
+      and PM2.5 concentration in open office space
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1710.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-an-optimal-co2-based-demand-controlled-ventilation-s
+    title: An optimal CO2-based demand-controlled ventilation strategy to improve ventilation
+      flexibility in large airport terminals
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1716.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-cooling-water-system-control-of-a-commercial-complex
+    title: Cooling water system control of a commercial complex based on reinforcement
+      learning
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1719.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-energy-consumption-characteristic-analysis-and-multi
+    title: Energy consumption characteristic analysis and multi-source instance transfer
+      prediction based on chiller operational data
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1729.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-an-image-characterisation-method-for-ahu-fault-diagn
+    title: An image characterisation method for AHU fault diagnosis based on residual
+      neural networks
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1730.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-ga-based-nzeb-cluster-coordinated-control-towards-
+    title: A GA-based NZEB-cluster coordinated control towards power grid overvoltage
+      optimization
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1734.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
