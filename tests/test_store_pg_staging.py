@@ -667,6 +667,11 @@ def test_a_failed_gate_blocks_promotion(pg):
             assert v.generation is None
 
 
+def _enter_staged(pg, w):
+    with pg.read_staged("rnd1", writer=w):
+        pass
+
+
 def test_every_owner_only_operation_refuses_a_later_writer_epoch(pg):
     """Codex review (step 2, P2 4): once the owner's session ended, a later writer epoch can do
     nothing owner-only with the run — stage, request (contract level), read its staging as its
@@ -692,7 +697,7 @@ def test_every_owner_only_operation_refuses_a_later_writer_epoch(pg):
                                    passed=True),
             lambda: pg.promote(w2, store_staging.Frozen("rnd1", 1, "0" * 64)),
             lambda: open_run(pg, w2),
-            lambda: pg.read_staged("rnd1", writer=w2).__enter__(),
+            lambda: _enter_staged(pg, w2),
         ]
         for call in calls:
             with pytest.raises(store.WriterError, match=owner_only):

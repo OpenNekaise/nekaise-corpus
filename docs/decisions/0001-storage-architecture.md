@@ -1939,3 +1939,18 @@ All three were in the process-ownership mechanism added for P2 2; it moved into 
   process that does not belong to the attempt are never signalled.
 - **Gates**: full suite 1198 passed / 222 skipped (PostgreSQL skipped), with PostgreSQL (the test
   cluster) 1448 passed / 2 skipped (the two opt-in benchmarks); `py_compile` clean.
+
+### Step 4, Codex third review (2026-09-25): one P2 fixed
+
+- **P2 — the lifecycle lock was released at once in `run_round`.** `staged_main` called
+  `run_ownership.lifecycle(...).__enter__()` and dropped the generator context manager, which
+  CPython finalized immediately (its `finally` released the lock) — so the sweep and the writer
+  acquisition ran without it, reopening the sweep-vs-new-attempt race. The lock is now held by an
+  ExitStack for the whole staged command (released early only by `staged_round` once the new
+  mark is installed). Regression: through the real `run_round.main()` in round, `--resume` and
+  `--recover` modes, a second descriptor's non-blocking flock proves the lock is held during the
+  sweep and during the writer acquisition, and free after the command returns (all three fail
+  on a6408cb4d9). No other dropped `.__enter__()` exists in scripts/; the one in a test
+  (expected to raise) now uses `with`.
+- **Gates**: full suite 1198 passed / 225 skipped (PostgreSQL skipped), with PostgreSQL (the test
+  cluster) 1451 passed / 2 skipped; `py_compile` clean.

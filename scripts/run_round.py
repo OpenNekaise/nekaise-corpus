@@ -37,6 +37,7 @@ import tempfile
 import time
 import uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from contextlib import ExitStack
 from pathlib import Path
 
 import ops
@@ -841,21 +842,20 @@ def staged_main(args, ap, st) -> int:
     # for a round or a resume — the installation of this coordinator's mark (staged_round
     # releases it then): no sweep can judge a run while an attempt of it installs itself. The
     # sweep stops dead coordinators' orphans, whose forks may hold a dead writer session.
-    try:
-        lifecycle = run_ownership.lifecycle(ROOT, timeout=args.lock_timeout).__enter__()
-    except Exception as exc:
-        print(f"ERROR: {exc}", file=sys.stderr)
-        return 1
-    try:
-        run_ownership.sweep_dead(ROOT)
-    except Exception as exc:
-        lifecycle.release()
-        print(f"ERROR: could not stop the orphans of a dead coordinator: {exc}", file=sys.stderr)
-        return 1
-    try:
+    with ExitStack() as scope:   # the lock lives until this function returns (or is released)
+        try:
+            lifecycle = scope.enter_context(run_ownership.lifecycle(ROOT,
+                                                                    timeout=args.lock_timeout))
+        except Exception as exc:
+            print(f"ERROR: {exc}", file=sys.stderr)
+            return 1
+        try:
+            run_ownership.sweep_dead(ROOT)
+        except Exception as exc:
+            print(f"ERROR: could not stop the orphans of a dead coordinator: {exc}",
+                  file=sys.stderr)
+            return 1
         return _staged_modes(args, st, env, lifecycle)
-    finally:
-        lifecycle.release()
 
 
 def _staged_modes(args, st, env: dict, lifecycle) -> int:

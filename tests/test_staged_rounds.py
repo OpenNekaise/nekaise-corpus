@@ -519,3 +519,55 @@ def test_an_integrity_finding_also_refuses_resuming_a_round(world):
     assert refused.returncode == 1 and "integrity finding(s) [1]" in refused.stderr
     assert world.run_row(run_id)["status"] == "open"
     assert world.q("SELECT count(*) FROM run_adoptions")[0][0] == 0
+
+
+# --- Codex third review of a6408cb4d9: the lifecycle lock is really held ---------------------------
+
+@pytest.mark.parametrize("mode", ["round", "resume", "recover"])
+def test_staged_main_holds_the_lifecycle_lock_across_sweep_and_writer(world, monkeypatch, mode):
+    """Through the real run_round.main(): the lifecycle lock is held while the dead
+    coordinators are swept and while the writer is acquired (a dropped context manager used to
+    release it at once), and released when the command returns."""
+    import fcntl
+    import sys
+
+    import run_ownership
+    import run_round
+    import store_pg
+    seeded(world)
+    for key in ("NEKAISE_STORE", "NEKAISE_PG_DSN", "NEKAISE_PG_SCHEMA"):
+        monkeypatch.setenv(key, world.env[key])
+    monkeypatch.setattr(run_round, "ROOT", world.root)
+    monkeypatch.setattr(run_round.ops, "RUN_LEDGER", world.root / "logs" / "run_history.jsonl")
+    lock = world.root / run_ownership.MARKS / run_ownership.LOCK_NAME
+
+    def held() -> bool:
+        with open(lock, "a") as probe:
+            try:
+                fcntl.flock(probe.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except BlockingIOError:
+                return True
+            fcntl.flock(probe.fileno(), fcntl.LOCK_UN)
+            return False
+    seen = {}
+    real_sweep = run_ownership.sweep_dead
+
+    def sweep(root, *a, **k):
+        seen["sweep"] = held()
+        return real_sweep(root, *a, **k)
+    monkeypatch.setattr(run_ownership, "sweep_dead", sweep)
+    real_writer = store_pg.PgStore.writer
+
+    def writer(self, *a, **k):
+        seen["writer"] = held()
+        if mode != "recover":
+            raise RuntimeError("stop here: the check is done")
+        return real_writer(self, *a, **k)
+    monkeypatch.setattr(store_pg.PgStore, "writer", writer)
+    argv = {"round": ["--run-id", rid("sr-lock")], "resume": ["--resume", rid("sr-lock")],
+            "recover": ["--recover", "latest"]}[mode]
+    monkeypatch.setattr(sys, "argv", ["run_round.py", *argv])
+    code = run_round.main()
+    assert seen == {"sweep": True, "writer": True}, seen
+    assert code == (0 if mode == "recover" else 1)
+    assert not held()
