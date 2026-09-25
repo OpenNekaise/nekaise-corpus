@@ -98,25 +98,48 @@ def test_redirect_to_another_domain_needs_equivalence(monkeypatch, loader):
     assert rec["refused_hop"] == "https://mirror.example.org/a.pdf"
 
 
+UUID = "2e0aa826-03a0-4f97-a019-d266f30c50a9"
+
+
 @pytest.mark.parametrize("origin, dest, ok", [
-    ("https://lirias.kuleuven.be/retrieve/1", "https://lirias2repo.kuleuven.be/x.pdf", True),
-    ("https://www.repository.cam.ac.uk/a", "https://api.repository.cam.ac.uk/b.pdf", True),
-    ("https://europepmc.org/a.pdf", "https://www.ebi.ac.uk/europepmc/b.pdf", True),  # CDN pair
-    ("https://a.ac.uk/x", "https://b.ac.uk/x", False),          # different universities
+    # the same repository identifier on the same host / a configured host pair
+    ("https://zenodo.org/records/1/files/a.pdf",
+     "https://zenodo.org/api/records/1/files/a.pdf/content", True),
+    (f"https://www.repository.cam.ac.uk/bitstreams/{UUID}/download",
+     f"https://api.repository.cam.ac.uk/server/api/core/bitstreams/{UUID}/content", True),
+    ("https://europepmc.org/articles/PMC123/pdf", "https://www.ebi.ac.uk/x/PMC123.pdf", True),
+    ("https://arxiv.org/pdf/2608.16638", "https://arxiv.org/pdf/2608.16638v2", True),
+    ("https://repo.example.edu/handle/1234/567", "https://repo.example.edu/bitstream/1234/567/"
+                                                 "thesis.pdf", True),
+    ("https://orbi.example.be/files/energy-model-paper.pdf",
+     "https://orbi.example.be/cdnfiles/energy-model-paper.pdf", True),
+    # a shared domain is NOT a shared copy
+    ("https://zenodo.org/records/1/files/a.pdf", "https://zenodo.org/records/2/files/a.pdf",
+     False),
+    ("https://a.vic.edu.au/x/1234567", "https://b.vic.edu.au/x/1234567", False),
+    ("https://a.ac.uk/x", "https://b.ac.uk/x", False),
+    ("https://lirias.kuleuven.be/retrieve/1", "https://lirias2repo.kuleuven.be/x.pdf", False),
+    (f"https://www.repository.cam.ac.uk/bitstreams/{UUID}/download",
+     "https://api.repository.cam.ac.uk/server/api/core/bitstreams/"
+     "11111111-2222-3333-4444-555555555555/content", False),
+    ("https://repo.example.org/a/fulltext.pdf", "https://repo.example.org/b/fulltext.pdf",
+     False),  # a generic file name identifies nothing
     ("https://lbl-srg.github.io/x", "https://other.github.io/x", False),
-    ("https://zenodo.org/a", "https://zenodo.org.evil.example/a", False),
+    ("https://zenodo.org/records/1", "https://zenodo.org.evil.example/records/1", False),
 ])
 def test_copy_equivalence_rules(origin, dest, ok):
-    assert oar.same_copy_host(origin, dest) is ok
+    assert oar.same_copy(origin, dest) is ok
 
 
 def test_cdn_redirect_is_followed_and_the_chain_recorded(monkeypatch, loader):
     requested = fake_transport(monkeypatch, {
-        "https://europepmc.org/a.pdf": (302, {"Location": "https://www.ebi.ac.uk/b.pdf"}, b""),
-        "https://www.ebi.ac.uk/b.pdf": pdf(),
+        "https://europepmc.org/articles/PMC7/pdf": (
+            302, {"Location": "https://www.ebi.ac.uk/europepmc/PMC7.pdf"}, b""),
+        "https://www.ebi.ac.uk/europepmc/PMC7.pdf": pdf(),
     })
-    rec = build_corpus.download_one(row("https://europepmc.org/a.pdf"))
-    assert rec.get("error") is None and rec["final_url"] == "https://www.ebi.ac.uk/b.pdf"
+    rec = build_corpus.download_one(row("https://europepmc.org/articles/PMC7/pdf"))
+    assert rec.get("error") is None
+    assert rec["final_url"] == "https://www.ebi.ac.uk/europepmc/PMC7.pdf"
     assert rec["redirect_chain"] == requested
 
 
@@ -206,10 +229,10 @@ def publisher_copy(version="acceptedVersion", license=None):
         "license": license, "version": version}])
 
 
-def grant(kind, url="https://creativecommons.org/licenses/by/4.0/", start=None):
+def grant(kind, url="https://creativecommons.org/licenses/by/4.0/", start=(2020, 1, 1)):
     lic = {"content-version": kind, "URL": url}
-    if start:
-        lic["start"] = {"date-parts": [start]}
+    if start is not None:
+        lic["start"] = {"date-parts": [list(start)]}
     return {"license": [lic]}
 
 

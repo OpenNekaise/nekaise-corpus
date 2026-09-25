@@ -1954,3 +1954,27 @@ All three were in the process-ownership mechanism added for P2 2; it moved into 
   (expected to raise) now uses `with`.
 - **Gates**: full suite 1198 passed / 225 skipped (PostgreSQL skipped), with PostgreSQL (the test
   cluster) 1451 passed / 2 skipped; `py_compile` clean.
+
+## Persistent-identifier membership (OpenAlex phase 1, 2026-09-25)
+
+`ReadView.known_pids(pids)` answers which normalized persistent identifiers (`doi:10.x/y`,
+`openalex:W…`; `state_codec.normalize_pid`) any registry or manifest row declares, as its
+`persistent_id` or among its `origin_ids` aliases (string or list, `state_codec.row_pids`).
+Discovery and the serial proposal merge use it (`dedup.Keys.identity_known`). It is purely
+additive: no schema change and no migration.
+
+- **FileStore:** kind `pid` in the SQLite acceleration index (`corpus_index.INDEX_SCHEMA` 3);
+  write views with local changes scan their rows. A lookup that finds a rebuild in progress waits
+  for it (`NEKAISE_INDEX_WAIT`, default 900 s) and then fails; it never falls back to parsing every
+  shard. `run_round` rebuilds the index once under the round lock before finders fan out
+  (`warm_index`).
+- **PgStore:** an UNINDEXED expression lookup over the rows' JSON (`row -> 'persistent_id'`,
+  `row -> 'origin_ids'`, decoded natively and verified exactly in Python). It reads through the
+  same visibility source as every other lookup, so staged revisions and tombstones behave as in
+  `known()`. Each call sequentially scans `entries` and `manifest`; callers batch by page.
+
+**REQUIRED before PostgreSQL becomes authoritative:** indexed PID membership (for example a
+normalized-identifier side table or expression index maintained with the rows) that keeps the
+staged-revision and deleted-row visibility of this lookup, and passes the same contract tests
+(`test_known_pids_*`, `test_store_pg_staging` snapshots). The index belongs in a NEW migration
+after v7, never an edit of an existing one.

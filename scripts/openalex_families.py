@@ -58,6 +58,11 @@ SSRN_SOURCE_ID = "S4210172589"  # OpenAlex source "SSRN Electronic Journal"
 SEARCH_CREDITS = 10             # x-ratelimit-cost: 0.001 USD = 10 credits per search (2026-09-25)
 MAX_PAGE_DEPTH = 10_000         # OpenAlex page-based paging limit (page * per-page)
 LEDGER_CAP = 20_000
+# The most supplementary lookups ONE work can need (Crossref + Unpaywall + the bounded related
+# versions and their confirmation lookups, oa_resolution.MAX_RELATIONS): a run's --lookup-max
+# must cover it, so a work always finishes within one run's budget and a cap stop always makes
+# progress on the next run.
+MAX_LOOKUPS_PER_WORK = 2 + 2 * oar.MAX_RELATIONS
 TYPES = "type:article|preprint"
 WINDOWS: tuple[str, ...] = (
     "publication_year:>2024", "publication_year:2020-2024", "publication_year:2015-2019",
@@ -345,9 +350,11 @@ class LookupBudget(Exception):
     """The per-run supplementary lookup cap is spent."""
 
 
-def check_search(data, per: int) -> tuple[list[dict], int]:
-    """(results, meta.count) of a well-formed OpenAlex list response, else UpstreamError: an
-    error object or a malformed page must never read as an empty (finished) page."""
+def check_search(data, per: int, page: int = 1) -> tuple[list[dict], int]:
+    """(results, meta.count) of a well-formed OpenAlex list response for `page`, else
+    UpstreamError: an error object or a malformed page must never read as an empty (finished)
+    page. A page is short only where the count says the result list ends: its length must be
+    exactly what meta.count leaves for this position (bounded by the paging depth)."""
     if not isinstance(data, dict) or "error" in data:
         raise UpstreamError(f"OpenAlex search returned an error or no object: {str(data)[:200]}")
     results, meta = data.get("results"), data.get("meta")
@@ -360,6 +367,12 @@ def check_search(data, per: int) -> tuple[list[dict], int]:
         raise UpstreamError("OpenAlex search results are malformed")
     if results and count < len(results):
         raise UpstreamError("OpenAlex search meta.count is smaller than the page")
+    if meta.get("page") not in (None, page):
+        raise UpstreamError(f"OpenAlex answered page {meta.get('page')!r} for page {page}")
+    expected = min(per, max(0, min(count, MAX_PAGE_DEPTH) - (page - 1) * per))
+    if len(results) != expected:
+        raise UpstreamError(f"OpenAlex page {page} has {len(results)} results where "
+                            f"meta.count={count} implies {expected}")
     return results, count
 
 
@@ -433,7 +446,8 @@ class Api:
     def search(self, params: dict, per: int) -> tuple[list[dict], int]:
         self.searches += 1
         return check_search(
-            self._request(OPENALEX, {**params, "mailto": oar.MAILTO}, host_key="openalex"), per)
+            self._request(OPENALEX, {**params, "mailto": oar.MAILTO}, host_key="openalex"), per,
+            int(params.get("page", 1)))
 
     def lookup(self, kind: str, key: str) -> dict | None:
         """One supplementary lookup (counted), schema-checked: an OpenAlex work, a Crossref
@@ -918,6 +932,10 @@ def main_family(args, *, policy: dict, keys, cooldowns: dict, save_cooldowns, ge
     now = time.time() if now is None else now
     family = FAMILIES[getattr(args, "family", None) or "simulation"]
     cursor = parse_cursor(args.family_cursor, family)
+    if args.lookup_max < MAX_LOOKUPS_PER_WORK:
+        print(f"# ERROR: --lookup-max must be at least {MAX_LOOKUPS_PER_WORK} (one work's worst "
+              "case), or a work could stall its walk", file=sys.stderr)
+        return 2
     ledger_path = Path(args.resolution_file) if args.resolution_file else (
         default_ledger_path() if args.append else None)
     ledger = Ledger(ledger_path)

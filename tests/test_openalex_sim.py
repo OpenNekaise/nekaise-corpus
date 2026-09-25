@@ -116,7 +116,8 @@ def test_openalex_license_and_license_id_must_agree():
 
 def test_crossref_licence_applies_only_to_its_content_version_and_never_tdm():
     msg = {"license": [
-        {"content-version": "vor", "URL": "http://creativecommons.org/licenses/by/4.0/"},
+        {"content-version": "vor", "URL": "http://creativecommons.org/licenses/by/4.0/",
+         "start": {"date-parts": [[2020, 1, 1]]}},
         {"content-version": "tdm", "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"},
     ]}
     direct, corroborating = oar.crossref_evidence(msg, "publishedVersion")
@@ -394,7 +395,7 @@ def test_max_cap_keeps_the_unfinished_page_and_resumes_after_consumed_results():
 
 def test_finished_page_advances_page_then_window_then_query():
     http = FakeHttp(pages=[page([good(1)] * 1 + [work("x", doi=None, wid="W9")] * 4, count=12),
-                           page([good(2)], count=12)])
+                           page([good(2)], count=6)])
     run = make_run(http=http, per=5)
     nxt = run.run(fam.parse_cursor("sim1 t=0 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0"), "sim")
     assert (nxt.sim.q, nxt.sim.w, nxt.sim.p, nxt.sim.k) == (0, 0, 2, 0)
@@ -545,7 +546,7 @@ def test_real_backends_share_the_openalex_budget():
     sim = backends["find_openalex_sim"]
     assert sim["script"] == "find_sources.py" and sim["required"] is False
     assert sim["args"][:2] == ["--family", "simulation"]
-    for flag, value in (("--max", "25"), ("--lookup-max", "25"), ("--per", "100")):
+    for flag, value in (("--max", "25"), ("--lookup-max", "250"), ("--per", "100")):
         assert sim["args"][sim["args"].index(flag) + 1] == value
     legacy = backends["find_openalex"]["args"]
     assert legacy[legacy.index("--budget-partner") + 1] == "find_openalex_sim"
@@ -608,11 +609,14 @@ def test_doi_redirect_to_ssrn_is_refused_before_the_request(monkeypatch, loader)
 
 def test_relative_and_cdn_hops_are_checked_too(monkeypatch, loader):
     requested = fake_transport(monkeypatch, {
-        "https://zenodo.org/records/1/files/a.pdf": (301, {"Location": "/r/a.pdf"}, b""),
-        "https://zenodo.org/r/a.pdf": (302, {"Location": "https://cdn.mdpi.com/a.pdf"}, b""),
+        "https://zenodo.org/records/1/files/a.pdf": (
+            301, {"Location": "/api/records/1/files/a.pdf/content"}, b""),
+        "https://zenodo.org/api/records/1/files/a.pdf/content": (
+            302, {"Location": "https://cdn.mdpi.com/a.pdf"}, b""),
     })
     rec = build_corpus.download_one(src("https://zenodo.org/records/1/files/a.pdf"))
-    assert requested == ["https://zenodo.org/records/1/files/a.pdf", "https://zenodo.org/r/a.pdf"]
+    assert requested == ["https://zenodo.org/records/1/files/a.pdf",
+                         "https://zenodo.org/api/records/1/files/a.pdf/content"]
     assert "cdn.mdpi.com" in rec["error"] and rec["transient"]
 
 

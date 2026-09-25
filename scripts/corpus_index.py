@@ -171,15 +171,36 @@ def rebuild(reg_dir: Path, man_dir: Path, blocklist_path: Path,
     return db
 
 
+# How long a lookup waits for ANOTHER process's rebuild (a full rebuild takes ~165 s at 1.6M
+# documents, 2026-09-25). run_round rebuilds once under the round lock before its finders fan
+# out (warm_index); a lookup that still finds a rebuild running waits for it instead of parsing
+# every shard itself, and fails with IndexBusy past this bound.
+WAIT_ENV = "NEKAISE_INDEX_WAIT"
+DEFAULT_WAIT = 900.0
+
+
+class IndexBusy(RuntimeError):
+    """Another process is (re)building the index and did not finish within the wait bound."""
+
+
 def ensure(reg_dir: Path, man_dir: Path, blocklist_path: Path,
-           db_path: Path | None = None) -> Path:
+           db_path: Path | None = None, timeout: float | None = None) -> Path:
     db = _db_path(Path(reg_dir), db_path)
     signature = source_signature(Path(reg_dir), Path(man_dir), Path(blocklist_path))
     if _current_signature(db) == signature:
         return db
-    with ops.named_lock("corpus-index", timeout=120):
+    if timeout is None:
+        timeout = float(os.environ.get(WAIT_ENV) or DEFAULT_WAIT)
+    lock = ops.named_lock("corpus-index", timeout=timeout)
+    try:
+        lock.__enter__()
+    except RuntimeError as exc:
+        raise IndexBusy(f"corpus index rebuild still running after {timeout:g}s: {exc}") from exc
+    try:
         if _current_signature(db) != signature:
             rebuild(Path(reg_dir), Path(man_dir), Path(blocklist_path), db)
+    finally:
+        lock.__exit__(None, None, None)
     return db
 
 

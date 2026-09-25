@@ -142,6 +142,8 @@ IDS = [f"oer-{i}" for i in range(8)] + [f"new-{i}" for i in range(40)] + ["hand-
 URLS = [f"https://e.org/{i}.pdf" for i in IDS] + ["https://e.org/shared", "https://e.org/blocked/",
                                                    "https://e.org/blocked", "https://x.org/b/1"]
 TITLES = [f"Title of {i}" for i in IDS] + ["Shared", "shared", "Other"]
+PIDS = ([f"doi:10.1234/p{n}" for n in range(6)] + [f"doi:10.5555/a{n}" for n in range(6)]
+        + [f"openalex:W{n}" for n in range(6)] + ["doi:10.9999/none"])
 
 
 def paged(view, table, limit=7, **kw):
@@ -173,6 +175,7 @@ def snapshot(view) -> dict:
     out["get_e"] = view.get_entries(IDS)
     out["known"] = view.known(urls=URLS, titles=TITLES, ids=IDS)
     out["known_nobl"] = view.known(urls=URLS, include_blocklist=False)
+    out["pids"] = view.known_pids(PIDS)
     out["rotation"] = view.rotation_get()
     out["control"] = view.control_get("github_passes.json")
     out["backend_state"] = view.backend_state_get()
@@ -206,7 +209,18 @@ class Workload:
                     license=r.choice(["public-domain", "cc-by", "open"]),
                     url=r.choice([f"https://e.org/{sid}.pdf", "https://e.org/shared/"]),
                     title=r.choice([f"Title of {sid}", "Shared", "  shared "]),
-                    error=r.choice([None, None, "timeout"]), bytes=r.randint(0, 5))
+                    error=r.choice([None, None, "timeout"]), bytes=r.randint(0, 5),
+                    **self.identity())
+
+    def identity(self) -> dict:
+        """Random persistent identifiers / aliases in every spelling (list or string aliases,
+        whitespace, doi.org URLs), so known_pids is compared through the staging overlay."""
+        r = self.rng
+        n = r.randint(0, 5)
+        pid = r.choice([None, f"https://doi.org/10.1234/P{n}", f"  doi:10.1234/p{n} "])
+        alias = r.choice([None, f"doi:10.5555/a{n} openalex:W{n}",
+                          [f"doi:10.5555/a{n}", f" openalex:W{n} "]])
+        return {k: v for k, v in (("persistent_id", pid), ("origin_ids", alias)) if v}
 
     def batch(self, ref) -> list:
         r = self.rng
@@ -236,7 +250,8 @@ class Workload:
                 for g in gone:
                     manifest.pop(g, None)
             elif kind == "ins_e":
-                new = [entry(self.new_id(), title=r.choice(["Shared", "Fresh"]))]
+                new = [entry(self.new_id(), title=r.choice(["Shared", "Fresh"]),
+                             **self.identity())]
                 ops.append(lambda tx, n=new: tx.insert_entries(n))
             elif kind == "up_e" and entries:
                 sid = r.choice(sorted(entries))

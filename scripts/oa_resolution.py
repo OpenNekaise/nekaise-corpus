@@ -105,39 +105,67 @@ def host_matches(host: str, domains) -> str | None:
     return None
 
 
-# Two-label public suffixes under which the registrable domain has THREE labels (a deliberately
-# small list for the hosts this corpus meets; an unknown suffix only makes matching stricter).
-MULTI_LABEL_SUFFIXES = frozenset({
-    "ac.uk", "co.uk", "org.uk", "gov.uk", "ac.jp", "co.jp", "go.jp", "or.jp", "ne.jp",
-    "edu.au", "com.au", "gov.au", "org.au", "ac.kr", "co.kr", "re.kr", "edu.cn", "com.cn",
-    "ac.cn", "gov.cn", "org.cn", "ac.nz", "co.nz", "com.br", "edu.br", "gov.br", "ac.at",
-    "edu.tw", "ac.in", "edu.sg", "ac.za", "ac.il", "edu.hk", "edu.pl", "edu.tr",
-    "github.io", "gitlab.io", "readthedocs.io", "netlify.app", "pages.dev",
+# COPY IDENTITY across redirects. Licence evidence belongs to one copy, so a redirect may only
+# be followed when it provably stays on that copy: an explicit, bounded URL transformation — the
+# SAME repository identifier (Zenodo record id, UUID bitstream/item id, handle, arXiv id, PMC id,
+# long numeric record id, or the same PDF file name) on the SAME host or a configured host pair.
+# Registrable domains are deliberately NOT used: a shared domain holds many different copies
+# (two Zenodo records; two universities under one multi-label public suffix).
+COPY_HOST_PAIRS = frozenset({
+    # DSpace 7 front end -> REST API delivering the same bitstream
+    ("www.repository.cam.ac.uk", "api.repository.cam.ac.uk"),
+    ("repository.cam.ac.uk", "api.repository.cam.ac.uk"),
+    # repository -> delivery network (same identifier still required)
+    ("europepmc.org", "www.ebi.ac.uk"),
+    ("europepmc.org", "europepmc.org"),
+    ("arxiv.org", "export.arxiv.org"),
 })
-# Repository -> delivery-network pairs a copy may legitimately be redirected through (keyed by
-# the repository's registrable domain). Anything else that leaves the copy's registrable domain
-# is a different copy whose rights were never checked.
-COPY_CDN_DOMAINS = {
-    "europepmc.org": frozenset({"ebi.ac.uk"}),
-    "figshare.com": frozenset({"figstatic.com"}),
-}
+_COPY_IDS = (
+    ("zenodo", re.compile(r"/(?:api/)?records?/(\d+)(?:/|$)")),
+    ("uuid", re.compile(r"\b([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\b",
+                        re.I)),
+    ("handle", re.compile(r"/(?:handle|bitstream(?:/handle)?)/(\d+/\d+)(?:/|$)")),
+    ("arxiv", re.compile(r"/(?:pdf|abs)/(\d{4}\.\d{4,5})(?:v\d+)?(?:\.pdf)?(?:/|$)")),
+    ("pmc", re.compile(r"\b(PMC\d+)\b", re.I)),
+    ("number", re.compile(r"/(\d{6,})(?:/|$)")),
+    ("file", re.compile(r"/([^/?#]{5,}\.pdf)$", re.I)),
+)
 
 
-def registrable_domain(host: str) -> str:
-    labels = [part for part in (host or "").lower().rstrip(".").split(".") if part]
-    if len(labels) <= 2:
-        return ".".join(labels)
-    keep = 3 if ".".join(labels[-2:]) in MULTI_LABEL_SUFFIXES else 2
-    return ".".join(labels[-keep:])
+GENERIC_FILE_NAMES = frozenset({"fulltext.pdf", "download.pdf", "content.pdf", "file.pdf",
+                                "paper.pdf", "main.pdf", "article.pdf", "document.pdf",
+                                "manuscript.pdf", "preprint.pdf", "pdf.pdf"})
 
 
-def same_copy_host(origin: str | None, url: str | None) -> bool:
-    """Whether a redirect from the registered copy URL `origin` to `url` stays on that copy's
-    host: the same registrable domain, or a configured repository -> CDN pair."""
-    a, b = registrable_domain(host_of(origin)), registrable_domain(host_of(url))
+def copy_ids(url: str | None) -> set[tuple[str, str]]:
+    """The repository identifiers a URL names ((kind, value) pairs, see _COPY_IDS)."""
+    path = urlparse(url or "").path
+    out = set()
+    for kind, pattern in _COPY_IDS:
+        for m in pattern.finditer(path):
+            value = m.group(1).lower()
+            if kind == "file" and value in GENERIC_FILE_NAMES:
+                continue  # names every copy on the host: identifies none
+            out.add((kind, value))
+    return out
+
+
+def same_copy(origin: str | None, url: str | None) -> bool:
+    """Whether a redirect from the registered copy URL `origin` to `url` provably stays on that
+    copy (see COPY_HOST_PAIRS / _COPY_IDS). Anything else is a different copy whose rights
+    were never checked: the caller refuses it (fail closed)."""
+    a, b = host_of(origin), host_of(url)
     if not a or not b:
         return False
-    return a == b or b in COPY_CDN_DOMAINS.get(a, frozenset())
+    if (a, b) != (a, a) and (a, b) not in COPY_HOST_PAIRS:
+        return False
+    if (origin or "").strip() == (url or "").strip():
+        return True
+    return bool(copy_ids(origin) & copy_ids(url))
+
+
+# compatibility name (the loader's hop check)
+same_copy_host = same_copy
 
 
 def copy_refusal(url: str | None, policy: dict) -> str | None:
@@ -254,35 +282,45 @@ def unpaywall_location_evidence(location: dict) -> list[Evidence]:
     return [ev] if ev else []
 
 
+_MALFORMED = object()
+
+
+def _aware(value: datetime) -> datetime:
+    return value if value.tzinfo is not None else value.replace(tzinfo=timezone.utc)
+
+
 def _crossref_start(lic: dict):
-    """A Crossref licence's effective start (UTC datetime), or None when absent/unparsable."""
+    """A Crossref licence's effective start as an aware UTC datetime; _MALFORMED when it is
+    missing, partial ([year] or [year, month] could be any later day) or unparsable."""
     start = lic.get("start")
     if not isinstance(start, dict):
-        return None
+        return _MALFORMED
     if isinstance(start.get("date-time"), str):
         try:
-            return datetime.fromisoformat(start["date-time"].replace("Z", "+00:00"))
+            return _aware(datetime.fromisoformat(start["date-time"].replace("Z", "+00:00")))
         except ValueError:
-            return None
-    parts = (start.get("date-parts") or [[None]])[0]
-    if parts and isinstance(parts[0], int):
-        parts = list(parts) + [1] * (3 - len(parts))
-        try:
-            return datetime(parts[0], parts[1], parts[2], tzinfo=timezone.utc)
-        except ValueError:
-            return None
-    return None
+            return _MALFORMED
+    parts = start.get("date-parts")
+    parts = parts[0] if isinstance(parts, list) and parts and isinstance(parts[0], list) else None
+    if not parts or len(parts) != 3 or not all(isinstance(x, int) and not isinstance(x, bool)
+                                               for x in parts):
+        return _MALFORMED
+    try:
+        return datetime(parts[0], parts[1], parts[2], tzinfo=timezone.utc)
+    except (ValueError, OverflowError):
+        return _MALFORMED
 
 
 def crossref_evidence(message: dict, version: str | None,
                       now: datetime | None = None) -> tuple[list[Evidence], list[Evidence]]:
     """Crossref licence statements about the DOI's own copy in `version`, as (direct,
     corroborating). Direct: the grant for exactly that content-version (vor = publishedVersion,
-    am = acceptedVersion). Corroborating: `unspecified` grants, which never grant on their own
+    am = acceptedVersion) with a valid, already effective start date (a missing, partial or
+    malformed date is an `unknown` statement: it fails closed, it never authorizes). Corroborating: `unspecified` grants, which never grant on their own
     (the caller adds them only next to other evidence, where a disagreement fails closed). A
     grant that starts in the future (an embargo) is not a grant yet: it becomes an `unknown`
     statement, which fails closed next to any accepted one. TDM licences are ignored."""
-    now = now or datetime.now(timezone.utc)
+    now = _aware(now) if now is not None else datetime.now(timezone.utc)
     wanted = CROSSREF_VERSION.get(version or "", ())
     direct: list[Evidence] = []
     corroborating: list[Evidence] = []
@@ -294,7 +332,10 @@ def crossref_evidence(message: dict, version: str | None,
             continue
         provider = f"crossref.license[{kind}]"
         start = _crossref_start(lic)
-        if start is not None and start > now:
+        if start is _MALFORMED:
+            # no valid effective date: the grant can neither authorize nor be ignored
+            ev = Evidence(provider, f"{lic.get('URL')} (no valid start date)", "unknown")
+        elif start > now:
             ev = Evidence(provider, f"{lic.get('URL')} (effective {start.date()})", "unknown")
         else:
             ev = structured_licence(provider, lic.get("URL"))
@@ -336,6 +377,14 @@ def combine(evidence: list[Evidence]) -> Rights:
 
 
 # --- copy selection -------------------------------------------------------------------------------
+
+def copy_acceptable(rights: Rights) -> bool:
+    """THE acceptance predicate: whether a copy with these combined rights may be selected and
+    registered. Today: accepted evidence only (CC BY / BY-SA / CC0 / verified PD). Every
+    selection decision goes through this one function, so a later collection-vs-licence-class
+    policy changes it here (and nowhere else)."""
+    return rights.status == "accepted"
+
 
 @dataclass
 class Copy:
@@ -442,7 +491,7 @@ def select_copy(work: dict, policy: dict, *, unpaywall: dict | None = None,
             reasons.append(refusal)
             continue
         rights = combine(c.evidence)
-        if rights.status != "accepted":
+        if not copy_acceptable(rights):
             reasons.append(f"rights_{rights.status}:{host_of(c.url)}")
             continue
         rank = (VERSION_RANK.get(c.version or "", 3), 0 if rights.url else 1,
@@ -491,25 +540,36 @@ def same_work(a: dict, b: dict) -> bool:
     return not (isinstance(ya, int) and isinstance(yb, int) and abs(ya - yb) > 3)
 
 
+MAX_RELATIONS = 2  # related DOIs examined per work, explicit ones first (bounds lookups)
+
+
 def crossref_related_dois(message: dict, record: dict | None = None,
-                          lookup=None) -> list[tuple[str, str]]:
-    """(relation type, DOI) pairs naming another version of this work: explicit version
-    relations always; weaker relation types only when `lookup(doi)` returns a record that
-    same_work() confirms against `record`."""
-    out = []
-    for rel_type, items in (message.get("relation") or {}).items():
+                          lookup=None, limit: int = MAX_RELATIONS) -> list[tuple[str, str]]:
+    """At most `limit` (relation type, DOI) pairs naming another version of this work. The
+    candidates are chosen BEFORE any network call — explicit version relations first, in
+    document order, then weaker relation types — and only the chosen weak ones are looked up
+    (`lookup(doi)`, confirmed by same_work() against `record`). One work therefore costs at
+    most `limit` relation lookups however many relations Crossref lists."""
+    explicit, weak = [], []
+    for rel_type, items in sorted((message.get("relation") or {}).items()):
         for item in items if isinstance(items, list) else []:
             if not isinstance(item, dict) or item.get("id-type") != "doi":
                 continue
             doi = normalize_doi(item.get("id"))
             if not doi:
                 continue
-            if rel_type in EXPLICIT_RELATIONS:
+            (explicit if rel_type in EXPLICIT_RELATIONS else weak).append((rel_type, doi))
+    chosen = list(dict.fromkeys(explicit))[:limit]
+    out = list(chosen)
+    if record is not None and lookup is not None:
+        seen = {doi for _, doi in chosen}
+        for rel_type, doi in weak[:max(0, limit - len(chosen))]:
+            if doi in seen:
+                continue
+            seen.add(doi)
+            other = lookup(doi)
+            if other is not None and same_work(record, other):
                 out.append((rel_type, doi))
-            elif record is not None and lookup is not None:
-                other = lookup(doi)
-                if other is not None and same_work(record, other):
-                    out.append((rel_type, doi))
     return out
 
 

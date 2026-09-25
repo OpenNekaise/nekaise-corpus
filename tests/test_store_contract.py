@@ -563,3 +563,36 @@ def test_known_pids_reads_persistent_ids_and_aliases_of_any_row(st):
         assert v.known_pids(["https://doi.org/10.1234/ABC.1", "", "NREL/TP-5500-1"]) == set()
         with pytest.raises(store.StoreError, match="at most"):
             v.known_pids([f"doi:10.1000/{i}" for i in range(store.MAX_KNOWN + 1)])
+
+
+def test_known_pids_decodes_native_aliases_whitespace_and_tombstones(st):
+    """Every backend reads origin_ids in its native JSON type (a list stays a list), tolerates
+    surrounding whitespace and prefixes, sees a transaction's own staged aliases, and forgets
+    the identifiers of deleted (tombstoned) rows."""
+    from runids import rid
+
+    def body(tx):
+        tx.insert_entries([
+            entry("oa-list", origin_ids=["doi:10.1234/abc", " openalex:W77 ",
+                                         "https://doi.org/10.4444/Listed"]),
+            entry("oa-space", persistent_id="  https://doi.org/10.5555/Spaced  \n"),
+            entry("oa-gone", persistent_id="doi:10.6666/gone", origin_ids="doi:10.6666/alias"),
+        ])
+        assert tx.known_pids(["doi:10.1234/abc", "openalex:W77", "doi:10.4444/listed",
+                              "doi:10.5555/spaced", "doi:10.6666/alias"]) == {
+            "doi:10.1234/abc", "openalex:W77", "doi:10.4444/listed", "doi:10.5555/spaced",
+            "doi:10.6666/alias"}
+    write(st, rid("pid-aliases"), body)
+    with st.read() as v:
+        assert v.known_pids(["doi:10.1234/abc", "openalex:W77", "doi:10.4444/listed",
+                             "doi:10.5555/spaced", "doi:10.6666/gone"]) == {
+            "doi:10.1234/abc", "openalex:W77", "doi:10.4444/listed", "doi:10.5555/spaced",
+            "doi:10.6666/gone"}
+
+    def drop(tx):
+        tx.delete_entries(["oa-gone"], reason="test")
+        assert tx.known_pids(["doi:10.6666/gone", "doi:10.6666/alias"]) == set()
+    write(st, rid("pid-tombstone"), drop)
+    with st.read() as v:
+        assert v.known_pids(["doi:10.6666/gone", "doi:10.6666/alias",
+                             "doi:10.1234/abc"]) == {"doi:10.1234/abc"}

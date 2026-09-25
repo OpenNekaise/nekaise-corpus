@@ -158,9 +158,9 @@ HOST_RUN_CAP: dict[str, int] = {
 # requesting it: checks the pinned host policy (registry/host_policy.json, set by _run) on the
 # canonical hostname (host_policy.canonical_host: no port/userinfo, no trailing dot, IDNA); for
 # rows whose licence evidence is bound to one scholarly COPY (COPY_BOUND_SOURCES) also refuses
-# NO-GO hosts and any hop that leaves the copy's host (oa_resolution.same_copy_host: same
-# registrable domain or a configured repository -> CDN pair), because the evidence does not
-# transfer to another copy; and applies that hop host's semaphore, delay, User-Agent and
+# NO-GO hosts and any hop that is not provably the same copy (oa_resolution.same_copy: the same
+# repository identifier on the same host or a configured host pair), because the evidence does
+# not transfer to another copy; and applies that hop host's semaphore, delay, User-Agent and
 # polite-host circuit. The chain is recorded on the row (redirect_chain, final_url). A redirect to
 # a SUSPENDED host is recorded as `suspended_redirect` (never requested, no retry ageing, and the
 # pruner protects the row while the suspension stands).
@@ -207,11 +207,33 @@ class ChallengeRefused(Exception):
 
 
 class Hops:
-    """One download's hop log: the origin, whether its rights are copy-bound, the chain."""
+    """One download chain: the origin, whether its rights are copy-bound, whether new hosts get
+    the paced defaults, the chain of requested hops, and the chain's OWN cookie session (a
+    302 + Set-Cookie + relative Location chain needs the cookie on the next hop)."""
 
-    def __init__(self, origin: str, copy_bound: bool):
-        self.origin, self.copy_bound = origin, copy_bound
+    def __init__(self, origin: str, copy_bound: bool, paced: bool = False):
+        self.origin, self.copy_bound, self.paced = origin, copy_bound, paced
         self.chain: list[str] = []
+        self.session = ChainSession()
+
+
+class ChainSession:
+    """One download chain's session: a persistent cookie jar (cookielib domain/path rules)
+    shared by every hop, while each hop still carries its own host's headers and User-Agent.
+    Requests go through requests.get with the jar, so the transport stays the module's."""
+
+    def __init__(self):
+        self.cookies = requests.cookies.RequestsCookieJar()
+
+    def get(self, url, **kwargs):
+        resp = requests.get(url, cookies=self.cookies, **kwargs)
+        jar = getattr(resp, "cookies", None)
+        if jar is not None:
+            try:
+                self.cookies.update(jar)
+            except (TypeError, AttributeError):
+                pass
+        return resp
 
 
 _hops = threading.local()
@@ -234,7 +256,7 @@ def check_hop(url: str, hops: "Hops | None" = None) -> None:
             host, oa_resolution.NEVER_FETCH_HOSTS | oa_resolution.WORK_EXCLUDED_HOSTS)
         if never:
             raise CopyChanged(url, f"hop to NO-GO host {host} refused")
-        if not oa_resolution.same_copy_host(hops.origin, url):
+        if not oa_resolution.same_copy(hops.origin, url):
             raise CopyChanged(url, f"redirect leaves the licensed copy "
                                    f"({host_policy.canonical_host(hops.origin)} -> {host}); "
                                    "its rights evidence does not transfer")
@@ -250,15 +272,32 @@ def _header(resp, name: str) -> str | None:
     return None
 
 
+def _pace_host(host: str) -> None:
+    """The paced defaults for a host with no configured cap: one connection, PACED_DELAY
+    between request starts (a longer configured delay wins). Installed BEFORE the host's
+    semaphore is first created, under the same lock."""
+    with _host_sems_lock:
+        if host not in _host_sems:
+            HOST_CONCURRENCY.setdefault(host, 1)
+        HOST_DELAY[host] = max(HOST_DELAY.get(host, 0.0), PACED_DELAY)
+
+
 def _get_hops(url: str, fmt: str, *, session=None, headers: dict | None = None):
-    """requests with MANUAL redirects: every hop is checked (check_hop), paced (its host's
-    semaphore and delay), identified (its host's HOST_UA) and, on a polite host, circuit-checked
-    and challenge-classified — the same rules as a registry URL on that host."""
-    get = session.get if session is not None else requests.get
+    """requests with MANUAL redirects inside ONE session per chain (the caller's, else the
+    download's ChainSession, so cookies set by a hop reach the next): every hop is checked
+    (check_hop), paced (its host's semaphore and delay; a paced chain installs the paced
+    defaults for a NEW destination host first), identified (its host's HOST_UA) and, on a polite
+    host, circuit-checked and challenge-classified — the same rules as a registry URL there."""
+    hops = _current_hops()
+    if session is None:
+        session = hops.session if hops is not None else ChainSession()
+    get = session.get
     hop = url
     for _ in range(MAX_REDIRECTS + 1):
         check_hop(hop)
         host = host_policy.canonical_host(hop)
+        if hops is not None and hops.paced:
+            _pace_host(host)
         with _host_sem(hop):
             if why := _tripped(host):
                 raise ChallengeRefused(f"challenge circuit open for {host} ({why})",
@@ -284,14 +323,19 @@ def _get_hops(url: str, fmt: str, *, session=None, headers: dict | None = None):
     raise requests.TooManyRedirects(f"more than {MAX_REDIRECTS} redirects from {url}")
 
 
+PACED_IDS: set[str] = set()  # this run's new work of PACED_SOURCES (pace_new_hosts)
+
+
 def pace_new_hosts(todo: list[dict], manifest: dict) -> None:
     """One connection and PACED_DELAY between requests for new work of PACED_SOURCES on hosts
-    without a configured cap (called before any download starts)."""
+    without a configured cap (called before any download starts); the same defaults reach
+    every redirect destination of such a download (_get_hops -> _pace_host)."""
     for src in todo:
         if src.get("source") not in PACED_SOURCES:
             continue
         if (manifest.get(src["id"]) or {}).get("status") == "ok":
             continue
+        PACED_IDS.add(src["id"])
         host = host_policy.canonical_host(src["url"])
         HOST_CONCURRENCY.setdefault(host, 1)
         HOST_DELAY[host] = max(HOST_DELAY.get(host, 0.0), PACED_DELAY)
@@ -615,7 +659,7 @@ def download_one(src: dict) -> dict:
     source = rec["source"]
     url = src["url"]
     host = host_policy.canonical_host(url)
-    hops = Hops(url, source in COPY_BOUND_SOURCES)
+    hops = Hops(url, source in COPY_BOUND_SOURCES, paced=sid in PACED_IDS)
     _hops.value = hops
     try:
         if "ec.europa.eu/research/participants/documents/downloadPublic" in url:
@@ -749,19 +793,24 @@ def _curl_follow(url: str, ua: str | None = None) -> bytes:
     host is never reached through curl. Returns the final body, or b"" on a curl error, a polite
     hop or too many redirects."""
     hop = url
+    hops = _current_hops()
     with tempfile.TemporaryDirectory(prefix="curl-") as tmp:
         headers = Path(tmp) / "headers"
+        cookies = Path(tmp) / "cookies"  # one cookie engine for the whole chain
         for _ in range(MAX_REDIRECTS + 1):
             check_hop(hop)
             host = host_policy.canonical_host(hop)
             if host in POLITE_HOSTS:
                 return b""
+            if hops is not None and hops.paced:
+                _pace_host(host)
             headers.write_bytes(b"")
             with _host_sem(hop), tempfile.TemporaryFile() as curl_body:
                 _wait_for_host(host)
                 out = subprocess.run(
                     ["curl", "-sS", "--max-time", str(TIMEOUT), "-A",
-                     HOST_UA.get(host, ua or UA), "-D", str(headers), hop],
+                     HOST_UA.get(host, ua or UA), "-b", str(cookies), "-c", str(cookies),
+                     "-D", str(headers), hop],
                     stdout=curl_body,
                     stderr=subprocess.DEVNULL,
                     timeout=TIMEOUT + 15,
@@ -1075,6 +1124,7 @@ def run(view, session, args, only: set[str], selection: dict) -> None:
     finally:
         ACCESS = None
         HOST_POLICY = {}
+        PACED_IDS.clear()
         for table, saved in zip((HOST_CONCURRENCY, HOST_DELAY), pacing):
             table.clear()
             table.update(saved)

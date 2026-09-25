@@ -2042,8 +2042,10 @@ class ReadView:
                 import corpus_index
                 args = (self._store.reg, self._store.man, self._store.blocklist_path)
                 return frozenset(corpus_index.lookup(*args, "pid", cand))
-            except Exception:
-                pass  # the index is a cache, never a correctness dependency
+            except Exception as exc:
+                if type(exc).__name__ == "IndexBusy":  # never parse every shard while it rebuilds
+                    raise StoreError(str(exc)) from exc
+                # otherwise the index is a cache, never a correctness dependency
         hits: set = set()
         for rows in (self._get("manifest").manifest, self._get("entries").entries):
             for row in rows.values():
@@ -2065,7 +2067,9 @@ class ReadView:
             return KnownHits(frozenset(corpus_index.lookup(*args, "url", urls)),
                              frozenset(corpus_index.lookup(*args, "title", titles)),
                              frozenset(corpus_index.lookup(*args, "id", ids)))
-        except Exception:
+        except Exception as exc:
+            if type(exc).__name__ == "IndexBusy":  # never parse every shard while it rebuilds
+                raise StoreError(str(exc)) from exc
             return None  # the index is a cache, never a correctness dependency
 
     def _dirty_keys(self) -> bool:
