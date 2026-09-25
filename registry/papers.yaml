@@ -74419,3 +74419,21 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.buildenv.2025.113126 openalex:W4410762134
     resolution: 'sim1: openalex location'
+  - id: oas-10-3390-su18010087-8dfa9ab0
+    title: Impact of Embodied Energy and Carbon on the Path to Nearly Zero Energy Residential
+      Buildings
+    url: https://research.tees.ac.uk/ws/files/113747314/110394796.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-12-20'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su18010087
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://research.tees.ac.uk/ws/files/113747314/110394796.pdf; version acceptedVersion]
+    rights_verified_at: '2026-09-25'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.3390/su18010087 openalex:W7117132036
+    resolution: 'sim1: openalex location'
