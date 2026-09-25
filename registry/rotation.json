@@ -68,7 +68,7 @@
   },
   "find_nlr": {
     "flag": "--cursor",
-    "next": "1987:oai_dc/776/246093414/700/0/47380148/publications:year1987/x/x",
+    "next": "1985:oai_dc/663/246093414/100/0/47276598/publications:year1985/x/x",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-24: '<year>:<OAI resumptionToken|START>' over research-hub.nlr.gov Pure sets publications:yearYYYY, newest year first down to 1975 (53,919 records total; 2024 alone has 2,344). A rejected token restarts its year. Walk does not come back up: re-aim to the current year occasionally."
@@ -159,14 +159,14 @@
   },
   "find_openalex_sim": {
     "flag": "--family-cursor",
-    "next": "sim1 t=19 q=2 w=0 p=2 k=0 sq=0 sw=3 sp=1 sk=0",
+    "next": "sim1 t=20 q=2 w=0 p=2 k=0 sq=0 sw=4 sp=1 sk=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families cursor 'sim1 t=<runs> q=<query> w=<date window> p=<page> k=<results finished on that page>' for the simulation walk plus sq/sw/sp/sk for the SSRN-origin walk. Which walk searches in a round comes from the round id (openalex_families.budget_slot), never from this cursor. A --max or lookup-cap stop keeps the page with its k; a failed or malformed search keeps the whole cursor. Changing openalex_families.SIMULATION queries/windows needs a new version and a reviewed cursor migration."
   },
   "find_openalex_ai": {
     "flag": "--family-cursor",
-    "next": "ai1 t=19 q=0 w=0 p=2 k=0",
+    "next": "ai1 t=20 q=0 w=0 p=2 k=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families BUILDING_AI cursor 'ai1 t q w p k' (same semantics as find_openalex_sim's main walk)."
@@ -179,7 +179,7 @@
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 2163,
+    "next": 2164,
     "step": 1,
     "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature)."
   },
@@ -191,21 +191,21 @@
   },
   "find_boverket_bfs": {
     "flag": "--cursor",
-    "next": "107:bc50125c2c60",
+    "next": "116:bc50125c2c60",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25 (compliance/ESG programme). Dynamic cursor reported by the finder (scripts/finder_protocol.py): START | <index into the published-date-sorted rinfo feed> | watch:<date> (full pass done; re-read at most every 7 days)."
   },
   "find_regdocs": {
     "flag": "--cursor",
-    "next": "{\"f\":\"50b63fa8d7bb\",\"o\":72,\"s\":\"finlex-building-decrees\",\"w\":{\"retsinformation-br18\":\"2026-09-25\",\"riksdagen-sfs\":\"2026-09-25\"}}",
+    "next": "{\"f\":\"50b63fa8d7bb\",\"o\":84,\"s\":\"finlex-building-decrees\",\"w\":{\"retsinformation-br18\":\"2026-09-25\",\"riksdagen-sfs\":\"2026-09-25\"}}",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25 (compliance/ESG programme). Dynamic cursor reported by the finder (scripts/finder_protocol.py): JSON {s: source key, o: offset into its sorted universe, f: universe fingerprint, w: {source: date fully walked}}; round-robin over enabled registry/regdocs.json sources with a 7-day watch phase."
   },
   "find_eurlex": {
     "flag": "--cursor",
-    "next": "{\"f\":\"\",\"i\":0,\"k\":\"32010L0031\",\"s\":1}",
+    "next": "{\"f\":\"\",\"i\":0,\"k\":\"02002L0091-20120201\",\"s\":1}",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25 (compliance/ESG programme). Dynamic cursor reported by the finder (scripts/finder_protocol.py): JSON {s: seed index into registry/eurlex.json, k: CELEX of the work in progress, i: item offset} | watch:<date> after the last seed (re-walked at most every 7 days)."
