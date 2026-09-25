@@ -54,7 +54,7 @@ print(f"# fake finder: {len(new)} new")
 '''
 
 TRIVIAL_TEST = "def test_ok():\n    assert True\n"
-GITIGNORE = "workspace/\nlogs/\nraw/\ntext/\ncorpus/\nartifacts/\n__pycache__/\n.pytest_cache/\n"
+GITIGNORE = "workspace/\nlogs/\nraw/\ntext/\ncorpus/\ncollection/\nartifacts/\n__pycache__/\n.pytest_cache/\n"
 TEXT = ("Building energy simulation of HVAC systems, thermal comfort, ventilation, insulation "
         "and heat pump performance in residential and commercial buildings. ") * 40
 

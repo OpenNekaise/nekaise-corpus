@@ -268,41 +268,39 @@ def test_stamp_default_preserves_active_ruleset(tmp_path, monkeypatch):
     assert cc.stamped_ruleset() == "toc_leaders,ocr_debris"  # crashed run resumes same policy
 
 
-def test_policy_restricted_rows_are_excluded_and_corpus_metadata_is_cleared():
+def test_every_class_is_cleaned_and_routed_to_its_view():
     eligible = {"id": "pat-us1", "status": "ok", "text_path": "text/pat-us1.md",
                 "license": "open"}
-    restricted = {
-        "id": "pat-cn1",
-        "status": "ok",
-        "text_path": "text/pat-cn1.md",
-        "corpus_path": "corpus/pat-cn1.md",
-        "corpus_chars": 12,
-        "corpus_sha256": "a" * 64,
-        "cleaner_version": "clean_corpus/2;rules=none",
-    }
+    held = {"id": "pat-cn1", "status": "ok", "text_path": "text/pat-cn1.md", "license": "open",
+            "corpus_path": "corpus/pat-cn1.md", "corpus_sha256": "a" * 64}
+    nc = {"id": "arx-1", "status": "ok", "text_path": "text/arx-1.md", "license": "cc-by-nc-nd"}
+    failed = {"id": "x-f", "status": "failed", "license": "open"}
     rules = {"translated": {"match": {"id_prefix": "pat-cn"}}}
 
-    todo, excluded = cc.partition_training_rows([eligible, restricted], rules)
+    todo = cc.partition_cleaning_rows([eligible, held, nc, failed], rules)
 
-    assert todo == [eligible]
-    assert excluded == [restricted]
-    assert cc.clear_corpus_metadata(excluded) == 1
-    assert not set(registry.CORPUS_FIELDS) & set(restricted)
+    assert todo == [eligible, held, nc]
+    assert [registry.corpus_path_for(r, rules) for r in todo] == [
+        "corpus/pat-us1.md", "collection/policy-held/corpus/pat-cn1.md",
+        "collection/nc-nd/corpus/arx-1.md"]
+    assert cc.prior_path(held) == "corpus/pat-cn1.md"
+    assert cc.prior_path({"id": "z", "corpus_path": "elsewhere/z.md"}) is None
+    assert cc.prior_path({"id": "z", "corpus_path": "corpus/sub/z.md"}) is None
 
 
-def test_policy_restricted_corpus_file_is_moved_not_deleted(tmp_path, monkeypatch):
-    corpus = tmp_path / "corpus"
-    quarantine = tmp_path / "workspace" / "policy-excluded-corpus"
-    corpus.mkdir()
-    original = corpus / "pat-cn1.md"
-    original.write_text("retained derived text")
-    monkeypatch.setattr(cc, "CORPUS", corpus)
-    monkeypatch.setattr(cc, "POLICY_QUARANTINE", quarantine)
-
-    assert cc.quarantine_policy_files([{"id": "pat-cn1"}]) == 1
-    assert not original.exists()
-    assert (quarantine / "pat-cn1.md").read_text() == "retained derived text"
-
+def test_a_reclassified_file_moves_with_the_same_bytes(tmp_path, monkeypatch):
+    monkeypatch.setattr(cc, "HERE", tmp_path)
+    (tmp_path / "text").mkdir()
+    (tmp_path / "corpus").mkdir()
+    src = tmp_path / "text" / "d.md"
+    src.write_text("# T\n\n---\n\nbody\n")
+    old = tmp_path / "corpus" / "d.md"
+    old.write_text("# T\n\n---\n\ncleaned body\n")   # newer than its text
+    task = ("d", "text/d.md", "collection/nc/corpus/d.md", [], False, "corpus/d.md")
+    sid, chars, _attr, status, digest = cc._clean_one(task)
+    new = tmp_path / "collection" / "nc" / "corpus" / "d.md"
+    assert status == "reclassified" and digest is None and chars == len("cleaned body\n")
+    assert new.read_bytes() == old.read_bytes() and new.stat().st_ino == old.stat().st_ino
 
 
 def test_header_is_always_preserved():
@@ -325,7 +323,7 @@ def test_clean_worker_returns_hash_for_written_output(tmp_path, monkeypatch):
     monkeypatch.setattr(cc, "HERE", tmp_path)
     monkeypatch.setattr(cc, "CORPUS", corpus)
 
-    sid, chars, _, status, digest = cc._clean_one(("x", "text/x.md", [], False))
+    sid, chars, _, status, digest = cc._clean_one(("x", "text/x.md", "corpus/x.md", [], False, None))
 
     assert (sid, chars, status) == ("x", len("real body\n"), "written")
     assert digest == hashlib.sha256((corpus / "x.md").read_bytes()).hexdigest()

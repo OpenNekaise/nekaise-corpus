@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""clean_corpus.py — stage 3: text/ (verbatim extraction) -> corpus/ (cleaned, training-ready).
+"""clean_corpus.py — stage 3: text/ (verbatim extraction) -> cleaned views.
+
+Every successful extraction is cleaned, whatever its licence (operator directive 2026-09-25:
+collect regardless of licence, classify before use). Its use class decides the destination
+(registry.corpus_path_for): the default, training-ready corpus/<id>.md for the open class,
+collection/<class>/corpus/<id>.md for every restricted-use class and policy hold. A
+reclassified cleaned file moves between views as the SAME bytes (hard link into the new view,
+claim updated, then the old view's entry removed) — never deleted, never re-cleaned for it.
 
 The loader (build_corpus.py) writes VERBATIM extraction into text/. That text carries PDF
 artefacts that are meaningless to a next-token objective: running headers repeated on every
@@ -59,8 +66,18 @@ import store_broker
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
 TEXT = HERE / "text"
 CORPUS = HERE / "corpus"
-STAMP = CORPUS / ".ruleset"  # which rules produced the current corpus/; a change forces rebuild
+STAMP = CORPUS / ".ruleset"  # which rules produced the current views; a change forces rebuild
+# Present while a licence reclassification moves cleaned files between views: --check fails and
+# no consumer may treat the views as settled (scripts/audit_licence_evidence.py apply).
+RECLASSIFYING = ".reclassifying"
+# Where earlier cleaners moved the corpus copies of policy-restricted rows (kept as they are;
+# those rows are now cleaned into their classified view from text/).
 POLICY_QUARANTINE = HERE / "workspace" / "policy-excluded-corpus"
+
+
+def view_dirs() -> list[Path]:
+    """Every cleaned-view directory: corpus/ (default) and collection/<class>/corpus/."""
+    return [HERE / registry.view_root(v) for v in registry.VIEWS]
 
 HEADER_SEP = "\n---\n\n"  # build_corpus's provenance header terminator (quality.body splits here)
 # CPU-bound (regex over 13GB), so scale with cores but leave headroom: this stage runs inside the
@@ -326,18 +343,30 @@ def clean_body(body: str, rules: list[str]) -> tuple[str, Counter]:
 
 
 def _clean_one(task: tuple) -> tuple[str, int, dict, str, str | None]:
-    """Clean one doc. Module-level and returning plain data so it can run in a process pool.
+    """Clean one doc into its view. Module-level and returning plain data so it can run in a
+    process pool.
 
+    task = (id, text_path, destination path, rules, rebuild, prior path or None). When the row's
+    cleaned file sits in another view (it was reclassified), it is first hard-linked into the
+    new destination: the same bytes, the same mtime, so an unchanged document is not re-cleaned.
     Returns (id, corpus_chars, per-rule attribution, status, sha256-if-written)."""
-    sid, text_path, rules, rebuild = task
+    sid, text_path, dst_rel, rules, rebuild, prior_rel = task
     src = HERE / text_path
-    dst = CORPUS / f"{sid}.md"
+    dst = HERE / dst_rel
     if not src.exists():
         return sid, 0, {}, "missing-text", None
-    # Canonical name corpus/<id>.md regardless of what text_path is called — this normalizes rows
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    moved = False
+    if prior_rel and prior_rel != dst_rel and not dst.exists():
+        prior = HERE / prior_rel
+        if prior.is_file():
+            os.link(prior, dst)
+            moved = True
+    # Canonical name <view>/<id>.md regardless of what text_path is called — this normalizes rows
     # whose text_path drifted from their id (the iea- -> iag- rename left 33 of them).
     if not rebuild and dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime:
-        return sid, len(split_header(dst.read_text(errors="replace"))[1]), {}, "up-to-date", None
+        return (sid, len(split_header(dst.read_text(errors="replace"))[1]), {},
+                "reclassified" if moved else "up-to-date", None)
     header, body = split_header(src.read_text(errors="replace"))
     if rules:
         cleaned, attr = clean_body(body, rules)
@@ -379,57 +408,37 @@ def parse_rules(spec: str) -> list[str]:
     return [n for n in RULES if n in names]  # canonical order -> stable attribution
 
 
+def partition_cleaning_rows(
+    rows: list[dict], restrictions: dict[str, dict], policy: dict[str, dict] | None = None,
+) -> list[dict]:
+    """The cleaner's inputs: EVERY successful row with extracted text, whatever its use class
+    (each is cleaned into its own view, registry.corpus_path_for).
+
+    Successful rows on a fetch-suspended host whose text is not on this machine (e.g. a fresh
+    clone) are "locally unavailable, suspended": neither cleaned nor expected in any view (see
+    registry.suspended_unavailable); ``locally_unavailable`` reports them explicitly.
+    """
+    ok = [r for r in rows if r.get("status") == "ok"]
+    missing = {r["id"] for r in registry.locally_unavailable_rows(ok, policy, root=HERE)}
+    return [r for r in ok if r.get("text_path") and r["id"] not in missing]
+
+
 def partition_training_rows(
     rows: list[dict], restrictions: dict[str, dict], policy: dict[str, dict] | None = None,
 ) -> tuple[list[dict], list[dict]]:
-    """Split cleaner inputs from policy-restricted rows whose provenance must remain.
-
-    Successful rows on a fetch-suspended host whose text is not on this machine (e.g. a fresh
-    clone) are "locally unavailable, suspended": neither cleaned nor expected in corpus/ (see
-    registry.suspended_unavailable); ``locally_unavailable`` reports them explicitly.
-    """
-    # every training-ineligible row: an eligibility restriction or an audit-excluded license
-    # (registry.EXCLUDED_LICENSES) — both keep raw/text provenance, lose their corpus claim, and
-    # have their corpus copy quarantined rather than deleted as an orphan
-    restricted = [r for r in rows if not registry.is_training_eligible(r, restrictions)]
-    eligible, _ = registry.partition_manifest_ok_rows(rows, restrictions)
-    missing = {r["id"] for r in locally_unavailable(eligible, restrictions, policy)}
-    todo = [r for r in eligible if r.get("text_path") and r["id"] not in missing]
-    return todo, restricted
+    """DEPRECATED: (default-view inputs, every other successful row). Nothing is excluded from
+    cleaning any more; partition_cleaning_rows is the cleaner's input."""
+    todo = partition_cleaning_rows(rows, restrictions, policy)
+    default = [r for r in todo if registry.is_default_corpus_eligible(r, restrictions)]
+    other = [r for r in rows if r.get("status") == "ok"
+             and not registry.is_default_corpus_eligible(r, restrictions)]
+    return default, other
 
 
 def locally_unavailable(rows: list[dict], restrictions: dict[str, dict],
                         policy: dict[str, dict] | None = None) -> list[dict]:
-    eligible, _ = registry.partition_manifest_ok_rows(rows, restrictions)
-    return registry.locally_unavailable_rows(eligible, policy, root=HERE)
-
-
-def clear_corpus_metadata(rows: list[dict]) -> int:
-    """Remove training-artifact claims while preserving fetch/extraction provenance."""
-    changed = 0
-    for row in rows:
-        if any(field in row for field in registry.CORPUS_FIELDS):
-            changed += 1
-        for field in registry.CORPUS_FIELDS:
-            row.pop(field, None)
-    return changed
-
-
-def quarantine_policy_files(rows: list[dict]) -> int:
-    """Move existing restricted corpus copies aside without deleting derived data."""
-    names = {f"{r['id']}.md" for r in rows}
-    files = [p for p in CORPUS.glob("*.md") if p.name in names]
-    if not files:
-        return 0
-    POLICY_QUARANTINE.mkdir(parents=True, exist_ok=True)
-    collisions = [p.name for p in files if (POLICY_QUARANTINE / p.name).exists()]
-    if collisions:
-        raise RuntimeError(
-            "policy quarantine already contains target(s): " + ", ".join(collisions[:5])
-        )
-    for path in files:
-        path.replace(POLICY_QUARANTINE / path.name)
-    return len(files)
+    ok = [r for r in rows if r.get("status") == "ok"]
+    return registry.locally_unavailable_rows(ok, policy, root=HERE)
 
 
 def main() -> None:
@@ -473,8 +482,8 @@ def main() -> None:
             rules = parse_rules(stamped_ruleset() if args.rules == "stamp" else args.rules)
             restrictions, policy = store.pinned_policy(session.view)
             rows = list(corpus_stats.iter_manifest(session.view))
-            todo, restricted = partition_training_rows(rows, restrictions, policy)
-            build(session, todo, restricted, rules, args)
+            todo = partition_cleaning_rows(rows, restrictions, policy)
+            build(session, todo, restrictions, rules, args)
         return
     # read-only modes: one consistent store view, rows in the legacy manifest order (the seeded
     # per-shard sample and first-N diagnostics depend on it).
@@ -488,10 +497,11 @@ def main() -> None:
         rules = parse_rules(stamped_ruleset() if args.rules == "stamp" else args.rules)
         restrictions, policy = store.pinned_policy(view)
         rows = list(corpus_stats.iter_manifest(view))
-    todo, restricted = partition_training_rows(rows, restrictions, policy)
+    todo = partition_cleaning_rows(rows, restrictions, policy)
 
     # --------------------------------------------------------------------- report mode
     if args.report:
+        todo = [r for r in todo if registry.is_default_corpus_eligible(r, restrictions)]
         if args.sample:
             # RANDOM per shard, not the first N: manifest order is discovery order, so the head of
             # a shard is one vein/crawl and misses whole document classes (taking the first 40
@@ -534,70 +544,88 @@ def main() -> None:
 
     # --------------------------------------------------------------------- check mode
     if args.check:
-        stamp = STAMP.read_text().strip() if STAMP.exists() else "(none written)"
-        problems: list[str] = []
-        if stamp.startswith("IN-PROGRESS"):
-            problems.append(f"stamp says a run never finished: {stamp!r} — re-run to rebuild")
-        restricted_with_metadata = [
-            r for r in restricted if any(field in r for field in registry.CORPUS_FIELDS)
-        ]
-        for r in restricted_with_metadata[:10]:
-            problems.append(f"policy-restricted row has corpus metadata: {r['id']}")
-        if len(restricted_with_metadata) > 10:
-            problems.append(
-                f"... and {len(restricted_with_metadata) - 10} more restricted metadata rows"
-            )
-        expect = {f"{r['id']}.md" for r in todo}
-        if unavailable := locally_unavailable(rows, restrictions, policy):
-            print(f"locally unavailable, suspended host or unrestored programme row "
-                  f"(provenance kept, not expected in corpus/): {len(unavailable):,} rows, "
-                  f"e.g. {unavailable[0]['id']}")
-        on_disk = {p.name for p in CORPUS.glob("*.md")}
-        for name in sorted(expect - on_disk)[:10]:
-            problems.append(f"missing from corpus/: {name}")
-        for name in sorted(on_disk - expect)[:10]:
-            problems.append(f"unprovenanced file in corpus/: {name}")
-        if len(expect - on_disk) > 10:
-            problems.append(f"... and {len(expect - on_disk) - 10} more missing")
-        if len(on_disk - expect) > 10:
-            problems.append(f"... and {len(on_disk - expect) - 10} more unprovenanced")
-        # char-count drift: the manifest's corpus_chars must match the file actually on disk.
-        # This is what catches a partially-applied ruleset (disk cleaned, manifest still says
-        # pass-through), which is otherwise completely invisible.
-        drift = 0
-        hash_drift = 0
-        checked = 0
-        for r in todo:
-            p = CORPUS / f"{r['id']}.md"
-            if not p.exists():
-                continue
-            checked += 1
-            actual = len(split_header(p.read_text(errors="replace"))[1])
-            if actual != r.get("corpus_chars"):
-                drift += 1
-                if drift <= 5:
-                    problems.append(f"corpus_chars drift {r['id']}: manifest="
-                                    f"{r.get('corpus_chars')} disk={actual}")
-            expected_hash = r.get("corpus_sha256")
-            if expected_hash and hashlib.sha256(p.read_bytes()).hexdigest() != expected_hash:
-                hash_drift += 1
-                if hash_drift <= 5:
-                    problems.append(f"corpus_sha256 drift {r['id']}")
-        print(f"checked {checked} docs | ruleset stamp: {stamp}")
-        if drift > 5:
-            problems.append(f"... and {drift - 5} more rows with corpus_chars drift")
-        if hash_drift > 5:
-            problems.append(f"... and {hash_drift - 5} more rows with corpus_sha256 drift")
-        if problems:
-            print(f"\nDRIFT — {len(expect - on_disk)} missing, {len(on_disk - expect)} "
-                  f"unprovenanced, {drift} char-count mismatches, "
-                  f"{hash_drift} hash mismatches:")
-            for p_ in problems:
-                print(f"  {p_}")
-            print("\nfix: python scripts/clean_corpus.py --force --rules <the ruleset you want>")
-            raise SystemExit(1)
-        print("OK — corpus/ matches the manifest exactly")
+        check_views(todo, rows, restrictions, policy)
         return
+
+
+def _view_files() -> dict[str, Path]:
+    """Every cleaned file on disk, keyed by its path relative to the root."""
+    out = {}
+    for d in view_dirs():
+        if d.is_dir():
+            for p in d.glob("*.md"):
+                out[str(p.relative_to(HERE))] = p
+    return out
+
+
+def check_views(todo: list[dict], rows: list[dict], restrictions: dict, policy: dict) -> None:
+    """--check: every view agrees with the manifest (paths, char counts, hashes, no extra or
+    missing files, every claim in its own view). Writes nothing; exits 1 on drift."""
+    stamp = STAMP.read_text().strip() if STAMP.exists() else "(none written)"
+    problems: list[str] = []
+    if stamp.startswith("IN-PROGRESS"):
+        problems.append(f"stamp says a run never finished: {stamp!r} — re-run to rebuild")
+    if (HERE / "corpus" / RECLASSIFYING).exists():
+        problems.append("a reclassification is in progress (corpus/.reclassifying): finish it "
+                        "(scripts/audit_licence_evidence.py apply) before using the views")
+    expect = {registry.corpus_path_for(r, restrictions): r for r in todo}
+    misplaced = [r["id"] for r in rows if r.get("corpus_path")
+                 and r.get("status") == "ok"
+                 and r["corpus_path"] != registry.corpus_path_for(r, restrictions)]
+    for sid in misplaced[:10]:
+        problems.append(f"cleaned-payload claim outside its use view: {sid}")
+    if len(misplaced) > 10:
+        problems.append(f"... and {len(misplaced) - 10} more claims outside their view")
+    if unavailable := locally_unavailable(rows, restrictions, policy):
+        print(f"locally unavailable, suspended host or unrestored programme row (provenance "
+              f"kept, not expected in any "
+              f"view): {len(unavailable):,} rows, e.g. {unavailable[0]['id']}")
+    on_disk = _view_files()
+    missing = sorted(set(expect) - set(on_disk))
+    extra = sorted(set(on_disk) - set(expect))
+    for name in missing[:10]:
+        problems.append(f"missing from its view: {name}")
+    for name in extra[:10]:
+        problems.append(f"unprovenanced file in a view: {name}")
+    if len(missing) > 10:
+        problems.append(f"... and {len(missing) - 10} more missing")
+    if len(extra) > 10:
+        problems.append(f"... and {len(extra) - 10} more unprovenanced")
+    # char-count drift: the manifest's corpus_chars must match the file actually on disk.
+    # This is what catches a partially-applied ruleset (disk cleaned, manifest still says
+    # pass-through), which is otherwise completely invisible.
+    drift = hash_drift = checked = 0
+    for rel, r in expect.items():
+        p = on_disk.get(rel)
+        if p is None:
+            continue
+        checked += 1
+        actual = len(split_header(p.read_text(errors="replace"))[1])
+        if actual != r.get("corpus_chars"):
+            drift += 1
+            if drift <= 5:
+                problems.append(f"corpus_chars drift {r['id']}: manifest="
+                                f"{r.get('corpus_chars')} disk={actual}")
+        expected_hash = r.get("corpus_sha256")
+        if expected_hash and hashlib.sha256(p.read_bytes()).hexdigest() != expected_hash:
+            hash_drift += 1
+            if hash_drift <= 5:
+                problems.append(f"corpus_sha256 drift {r['id']}")
+    by_view = Counter(registry.view_of(r, restrictions) for r in todo)
+    print(f"checked {checked} docs | ruleset stamp: {stamp} | views: "
+          + " · ".join(f"{v} {n:,}" for v, n in by_view.most_common()))
+    if drift > 5:
+        problems.append(f"... and {drift - 5} more rows with corpus_chars drift")
+    if hash_drift > 5:
+        problems.append(f"... and {hash_drift - 5} more rows with corpus_sha256 drift")
+    if problems:
+        print(f"\nDRIFT — {len(missing)} missing, {len(extra)} unprovenanced, {drift} "
+              f"char-count mismatches, {hash_drift} hash mismatches:")
+        for p_ in problems:
+            print(f"  {p_}")
+        print("\nfix: python scripts/clean_corpus.py --force --rules <the ruleset you want>")
+        raise SystemExit(1)
+    print("OK — every view matches the manifest exactly")
 
 
 def _same_value(a, b) -> bool:
@@ -635,13 +663,14 @@ def commit_metadata(session, patches: dict[str, dict], cleared: list[str]) -> in
     return n + m
 
 
-def build(session, todo: list[dict], restricted: list[dict], rules: list[str], args) -> None:
-    """Refresh corpus/ and record it. Artifacts (corpus/*.md) are written first, outside any
-    transaction; then the changed corpus fields are patched in short transactions; the ruleset
-    stamp is published only after the last one committed. Until then the stamp reads
-    IN-PROGRESS, so a crash anywhere in between makes the next run rebuild every document and
-    re-patch whatever did not commit (a rebuild with an unchanged ruleset reproduces the same
-    bytes, hence no spurious patches)."""
+def build(session, todo: list[dict], restrictions: dict, rules: list[str], args) -> None:
+    """Refresh every cleaned view and record it. Artifacts (<view>/<id>.md) are written first,
+    outside any transaction; then the changed corpus fields are patched in short transactions;
+    only then are files left in a view they no longer belong to removed (a reclassified file
+    was linked into its new view first, so its bytes survive); the ruleset stamp is published
+    last. Until then the stamp reads IN-PROGRESS, so a crash anywhere in between makes the next
+    run rebuild every document and re-patch whatever did not commit (a rebuild with an
+    unchanged ruleset reproduces the same bytes, hence no spurious patches)."""
     CORPUS.mkdir(parents=True, exist_ok=True)
     stamp_now = ",".join(rules) if rules else "none"
     stamp_was = STAMP.read_text().strip() if STAMP.exists() else None
@@ -662,9 +691,10 @@ def build(session, todo: list[dict], restricted: list[dict], rules: list[str], a
     attribution: Counter = Counter()
     stats: Counter = Counter()
     before = {r["id"]: {f: r[f] for f in registry.CORPUS_FIELDS if f in r} for r in todo}
-    cleared = [r["id"] for r in restricted if any(f in r for f in registry.CORPUS_FIELDS)]
     by_id = {r["id"]: r for r in todo}
-    tasks = [(r["id"], r["text_path"], rules, rebuild) for r in todo]
+    dst = {r["id"]: registry.corpus_path_for(r, restrictions) for r in todo}
+    tasks = [(r["id"], r["text_path"], dst[r["id"]], rules, rebuild, prior_path(r))
+             for r in todo]
 
     # Processes, not threads: the rules are regex-bound, so a thread pool stays pinned at ~1 core
     # (measured 108% CPU on 12 threads). Chunked to amortize pickling over 104k tiny tasks.
@@ -674,48 +704,62 @@ def build(session, todo: list[dict], restricted: list[dict], rules: list[str], a
             if status == "missing-text":
                 continue
             row = by_id[sid]
-            row["corpus_path"] = f"corpus/{sid}.md"
+            row["corpus_path"] = dst[sid]
             row["corpus_chars"] = chars
             if digest:
                 row["corpus_sha256"] = digest
                 row["cleaner_version"] = f"clean_corpus/2;rules={stamp_now}"
             attribution.update(attr)
 
-    # Policy exclusions are broad and reversible: move their derived corpus copy out of the
-    # training directory instead of deleting it. raw/ and verbatim text/ are never touched.
-    restricted_names = {f"{r['id']}.md" for r in restricted}
-    quarantined = quarantine_policy_files(restricted)
-
-    # Drop other corpus files with no manifest row (pruned docs, renamed ids) — corpus/ mirrors
-    # the provenance record exactly, so a training run over corpus/* can't read unprovenanced text.
-    # Derived bytes only: text/ still holds every retained document's verbatim source.
-    live = {f"{r['id']}.md" for r in todo}
-    orphans = [
-        p for p in CORPUS.glob("*.md")
-        if p.name not in live and p.name not in restricted_names
-    ]
-    for p in orphans:
-        p.unlink()
-
     patches = corpus_patches(todo, before)
-    batches = commit_metadata(session, patches, cleared)
+    batches = commit_metadata(session, patches, [])
+
+    # Only now, with every claim committed: drop files a view no longer holds. A file whose row
+    # moved to another view is removed only once that view holds it (it was linked there); a
+    # file with no manifest row at all (pruned docs, renamed ids) is removed as before — views
+    # mirror the provenance record exactly, so a training run over corpus/* can't read
+    # unprovenanced text. Derived bytes only: text/ still holds every retained document's
+    # verbatim source, and raw/ + text/ are never touched.
+    live = set(dst.values())
+    removed = 0
+    for rel, path in _view_files().items():
+        if rel in live:
+            continue
+        sid = path.name[:-3]
+        home = dst.get(sid)
+        if home is not None and home != rel and not (HERE / home).is_file():
+            continue   # its current view does not hold it yet: never lose the only copy
+        path.unlink()
+        removed += 1
     # last: only a fully-finished run (every metadata batch committed) may claim its ruleset
     ops.atomic_write_text(STAMP, stamp_now + "\n")
 
-    kept = sum(r.get("corpus_chars", 0) for r in todo)
-    print(f"corpus/: {stats['written']} written | {stats['up-to-date']} up-to-date | "
-          f"{stats['missing-text']} missing text | {len(orphans)} orphans removed")
-    print(f"policy restricted: {len(restricted)} rows | {len(cleared)} manifest rows cleared | "
-          f"{quarantined} corpus files quarantined")
+    views = Counter(registry.view_of(r, restrictions) for r in todo)
+    kept = sum(r.get("corpus_chars", 0) for r in todo
+               if registry.view_of(r, restrictions) == registry.DEFAULT_VIEW)
+    print(f"views: {stats['written']} written | {stats['up-to-date']} up-to-date | "
+          f"{stats['reclassified']} moved between views | {stats['missing-text']} missing text "
+          f"| {removed} stale files removed")
+    print("by view: " + " · ".join(f"{v} {n:,}" for v, n in views.most_common()))
     print(f"manifest: {len(patches)} rows patched in {batches} transaction(s)")
     print(f"ruleset: {stamp_now}")
-    print(f"corpus chars: {kept/1e6:.1f}M ({kept//4/1e6:.0f}M tokens)")
+    print(f"default corpus chars: {kept/1e6:.1f}M ({kept//4/1e6:.0f}M tokens)")
     if attribution:
         tot = sum(attribution.values())
         print(f"removed {tot/1e6:.2f}M chars this run:")
         for name, c in attribution.most_common():
             if c:
                 print(f"  {c/1e6:8.2f}M  {name}")
+
+
+def prior_path(row: dict) -> str | None:
+    """Where the row's cleaned file currently is, when it claims one inside a view directory."""
+    path = row.get("corpus_path")
+    if not isinstance(path, str) or not path.endswith(f"/{row['id']}.md") or ".." in path:
+        return None
+    roots = {registry.view_root(v) + "/" for v in registry.VIEWS}
+    return path if any(path.startswith(r) and path.count("/") == r.count("/") for r in roots) \
+        else None
 
 
 # --- versioned cleaning (ADR 0001 stage 4 step 3: a PostgreSQL staged run) -------------------------
@@ -757,14 +801,22 @@ def cleaner_tag(stamp: str) -> str:
     return f"clean_corpus/2;rules={stamp}"
 
 
-def versioned_fresh(row: dict, access, tag: str) -> bool:
+def versioned_cleaned(row: dict, access, tag: str) -> bool:
+    """The row's cleaned version is this ruleset's, of the text it claims, and held locally
+    (whatever view its path names)."""
     source = row.get("corpus_source_sha256")
     text_id = row.get("text_sha256")
     return (row.get("cleaner_version") == tag
-            and row.get("corpus_path") == f"corpus/{row['id']}.md"
             and isinstance(row.get("corpus_sha256"), str)
             and isinstance(source, str) and (text_id is None or source == text_id)
             and access.local.has("corpus", row["corpus_sha256"]))
+
+
+def versioned_fresh(row: dict, access, tag: str, restrictions: dict | None = None) -> bool:
+    """Cleaned (versioned_cleaned) AND claimed in the row's own view."""
+    want = (registry.corpus_path_for(row, restrictions) if restrictions is not None
+            else f"corpus/{row['id']}.md")
+    return row.get("corpus_path") == want and versioned_cleaned(row, access, tag)
 
 
 def _clean_many_versioned(tasks: list[tuple]) -> list[tuple]:
@@ -815,7 +867,7 @@ class _VersionedBuild:
             return
         self.access.local.commit([res[4] for _, res in self.group])
         for before, (sid, chars, attr, _status, pending, source) in self.group:
-            new = {"corpus_path": f"corpus/{sid}.md", "corpus_chars": chars,
+            new = {"corpus_path": before["path"], "corpus_chars": chars,
                    "corpus_sha256": pending.sha256, "cleaner_version": self.tag,
                    "corpus_source_sha256": source}
             patch = {f: new[f] for f in registry.CORPUS_FIELDS
@@ -836,6 +888,13 @@ class _VersionedBuild:
                 b.update_manifest_fields({sid: self.patches[sid] for sid in part})
             self.patched += len(part)
         self.patches = {}
+
+    def reclassify(self, sid: str, path: str) -> None:
+        """Only the view changed: the cleaned version (same hash) is claimed under the new path."""
+        self.stats["reclassified"] += 1
+        self.patches[sid] = {"corpus_path": path}
+        if len(self.patches) >= METADATA_BATCH_ROWS:
+            self.flush_patches()
 
     def clear(self, sid: str) -> None:
         self.cleared.append(sid)
@@ -892,14 +951,8 @@ def build_versioned(session, access, args) -> None:
         while True:   # one manifest page at a time, in key order
             page = session.view.scan(store.Table.MANIFEST, cursor=cursor, limit=store.MAX_PAGE)
             for r in page.rows:
-                # the full training predicate (license: pointer-only; eligibility.json), as the
-                # legacy partition_training_rows applies it; an ineligible row keeps its
-                # raw/text provenance and loses any corpus claim
-                if not registry.is_training_eligible(r, restrictions):
-                    job.stats["restricted"] += 1
-                    if any(f in r for f in registry.CORPUS_FIELDS):
-                        job.clear(r["id"])
-                    continue
+                # every successful extraction is cleaned, whatever its class; the class picks
+                # the view its claim names (registry.corpus_path_for)
                 if r.get("status") != "ok" or not r.get("text_path"):
                     continue
                 if policy and host_policy.suspended(r.get("url") or "", policy) \
@@ -907,16 +960,21 @@ def build_versioned(session, access, args) -> None:
                     continue   # locally unavailable, suspended host
                 if registry.programme_unavailable(r, exists=access.exists):
                     continue   # locally unavailable, programme restoration deferred
-                if not args.force and versioned_fresh(r, access, tag):
-                    job.stats["up-to-date"] += 1
+                path = registry.corpus_path_for(r, restrictions)
+                if not args.force and versioned_cleaned(r, access, tag):
+                    if r.get("corpus_path") == path:
+                        job.stats["up-to-date"] += 1
+                    else:     # reclassified: same cleaned version, new view
+                        job.reclassify(r["id"], path)
                     continue
                 src = access.path(r, "text")
                 if src is None:
                     job.stats["missing-text"] += 1
                     continue
                 chunk.append((r["id"], str(src), rules, str(access.root), os.getpid()))
-                chunk_before.append({"text_sha256": r.get("text_sha256"), "fields": {
-                    f: r[f] for f in registry.CORPUS_FIELDS if f in r}})
+                chunk_before.append({"text_sha256": r.get("text_sha256"), "path": path,
+                                     "fields": {f: r[f] for f in registry.CORPUS_FIELDS
+                                                if f in r}})
                 if len(chunk) >= CLEAN_CHUNK:
                     submit()
             if page.next_cursor is None:
@@ -932,8 +990,7 @@ def build_versioned(session, access, args) -> None:
           f"written | {stats['up-to-date']} up-to-date | {stats['missing-text']} missing text | "
           f"{stats['text-mismatch']} text payloads not matching their identity"
           + (f" (e.g. {job.mismatched})" if job.mismatched else ""))
-    print(f"policy restricted: {stats['restricted']} rows | {job.cleared_total} manifest rows "
-          "cleared")
+    print(f"reclassified (same cleaned version, new view): {stats['reclassified']} rows")
     print(f"manifest: {job.patched} rows patched in {job.n_meta + job.n_restricted} batch(es); "
           "corpus/ is refreshed from the promoted generation (scripts/materialize.py)")
     attribution = job.attribution
@@ -946,10 +1003,11 @@ def build_versioned(session, access, args) -> None:
 
 
 def check_versioned(view, access) -> None:
-    """--check inside a versioned staged run (e.g. a gate at the frozen sequence): every eligible
-    row with text is cleaned under the run's ruleset from the text it claims, its cleaned version
-    is held locally, and no restricted row claims corpus data. corpus/ itself is a
-    materialization of a promoted generation and is not what a staged run is checked against.
+    """--check inside a versioned staged run (e.g. a gate at the frozen sequence): every
+    successful row with text is cleaned under the run's ruleset from the text it claims, its
+    cleaned version is held locally, and its claim names its own use view (no restricted-use or
+    policy-held row in the default view). The views themselves are materializations of a
+    promoted generation and are not what a staged run is checked against.
     Reads only (the artifact gate re-hashes the versions a run introduced)."""
     prov = artifact_store.run_policy(view)
     rules = parse_rules(prov["cleaning_ruleset"])
@@ -959,11 +1017,6 @@ def check_versioned(view, access) -> None:
     checked = stale = 0
     import host_policy
     for r in corpus_stats.iter_manifest(view):
-        if not registry.is_training_eligible(r, restrictions):
-            if any(f in r for f in registry.CORPUS_FIELDS) and len(problems) < 20:
-                problems.append(f"training-ineligible row (license or policy) has corpus "
-                                f"metadata: {r['id']}")
-            continue
         if r.get("status") != "ok" or not r.get("text_path"):
             continue
         if policy and host_policy.suspended(r.get("url") or "", policy) \
@@ -972,7 +1025,7 @@ def check_versioned(view, access) -> None:
         if registry.programme_unavailable(r, exists=access.exists):
             continue  # locally unavailable, programme restoration deferred
         checked += 1
-        if not versioned_fresh(r, access, tag):
+        if not versioned_fresh(r, access, tag, restrictions):
             stale += 1
             if len(problems) < 20:
                 problems.append(f"not cleaned under {tag} from its claimed text, or its cleaned "
@@ -983,7 +1036,7 @@ def check_versioned(view, access) -> None:
         for p_ in problems:
             print(f"  {p_}")
         raise SystemExit(1)
-    print("OK — every eligible row claims a cleaned version held locally")
+    print("OK — every row claims a cleaned version held locally, in its own view")
 
 
 if __name__ == "__main__":

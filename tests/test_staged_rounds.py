@@ -49,8 +49,8 @@ def ok(result) -> None:
     assert result.returncode == 0, result.stdout[-6000:] + result.stderr[-6000:]
 
 
-def materialized(world) -> dict:
-    stamp = world.root / "corpus" / ".materialization.json"
+def materialized(world, view_root: str = "corpus") -> dict:
+    stamp = world.root / view_root / ".materialization.json"
     return json.loads(stamp.read_text()) if stamp.exists() else {}
 
 
@@ -236,11 +236,19 @@ def test_a_round_killed_during_its_materialization_stands_and_recovery_completes
                        env={"NEKAISE_TEST_CRASH": "materialize:_crash:stamped"})
     assert result.returncode == 137
     assert world.run_row(run_id)["status"] == "promoted" and world.generation() == 0
-    assert materialized(world)["state"] == "refreshing"     # consumers are refused meanwhile
+    # the classified views refresh first: the first one crashed while refreshing, the default
+    # view is not a complete materialization of generation 0 yet: consumers are refused
+    first = materialized(world, "collection/nc/corpus")
+    assert first["state"] == "refreshing" and first["view"] == "nc"
+    assert (materialized(world).get("state"), materialized(world).get("generation")) != (
+        "complete", 0)
     recovered = world.run("--recover", "latest")
     ok(recovered)
     assert "no unfinished staged run" in recovered.stdout
     assert (materialized(world)["state"], materialized(world)["generation"]) == ("complete", 0)
+    for view_root in ("collection/nc/corpus", "collection/unverified/corpus"):
+        assert (materialized(world, view_root)["state"],
+                materialized(world, view_root)["generation"]) == ("complete", 0)
     assert corpus_ids(world) == {"ost-s-0", "ost-s-1"}
 
 

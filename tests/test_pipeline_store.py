@@ -716,8 +716,10 @@ def test_clean_matches_the_legacy_cleaner_then_patches_only_changes(tmp_path, mo
     assert tracked(a) == tracked(b)
     assert artifacts(a) == artifacts(b)  # corpus files, their hashes, and the stamp
     assert (b / "corpus" / ".ruleset").read_text() == f"{rules}\n"
-    assert (b / "workspace" / "policy-excluded-corpus" / "pat-cn1.md").exists()
-    assert [r.rsplit(".", 1)[1] for r in journal_runs(b)] == ["restricted-0001", "meta-0001"]
+    # the held row is cleaned into its classified view; its old default-view copy moved there
+    assert (b / "collection" / "policy-held" / "corpus" / "pat-cn1.md").exists()
+    assert not (b / "corpus" / "pat-cn1.md").exists()
+    assert [r.rsplit(".", 1)[1] for r in journal_runs(b)] == ["meta-0001"]
     # an incremental re-run with the same ruleset changes nothing: no transaction
     before = tracked(b, journal=True)
     run_clean(monkeypatch, b)
@@ -889,12 +891,11 @@ def test_two_invocations_in_one_window_never_collide(tmp_path, monkeypatch):
                              policy={})
                 assert out.returncode == 0, out.stderr
     runs = journal_runs(root)
-    assert len(runs) == 3 and len(set(runs)) == 3  # the second has no restricted rows left
+    assert len(runs) == 2 and len(set(runs)) == 2  # one metadata batch each, no clearing
     tokens = {r.split(".")[2].split("-")[0] for r in runs}
     assert len(tokens) == 2 and all(t.startswith("i") for t in tokens)
     assert all(r.startswith("maint-w.clean.i") for r in runs)
-    assert [r.rsplit("-", 2)[-2:] for r in runs] == [["restricted", "0001"], ["meta", "0001"],
-                                                     ["meta", "0001"]]
+    assert [r.rsplit("-", 2)[-2:] for r in runs] == [["meta", "0001"], ["meta", "0001"]]
 
 
 # --- a crash inside a checkpoint's commit: store recovery precedes the snapshot restore ----------

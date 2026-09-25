@@ -187,10 +187,10 @@ def tracked(root: Path, *, journal: bool = False) -> dict[str, bytes]:
 
 
 def artifacts(root: Path) -> dict[str, bytes]:
-    """raw/, text/, corpus/ bytes (the corpus stamp included)."""
+    """raw/, text/, corpus/ and collection/ bytes (the corpus stamp included)."""
     root = Path(root)
     return {str(p.relative_to(root)): p.read_bytes()
-            for d in ("raw", "text", "corpus") if (root / d).exists()
+            for d in ("raw", "text", "corpus", "collection") if (root / d).exists()
             for p in sorted((root / d).rglob("*")) if p.is_file()}
 
 

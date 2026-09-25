@@ -146,3 +146,100 @@ def test_payload_directories_are_never_tracked(tmp_path):
     (tmp_path / ".gitignore").write_text("raw/\ntext/\ncorpus/\n")
     errors = check_contracts.payload_tracking_errors(tmp_path)
     assert any("collection/" in e for e in errors) and any("artifacts/" in e for e in errors)
+
+
+# --- classified cleaning on the file-authoritative store --------------------------------------------
+
+def _load_and_clean(tmp_path, monkeypatch):
+    import clean_corpus
+    monkeypatch.setenv("NEKAISE_RUN_ID", rid("rnd-classify"))
+    entries = [lentry("ost-k-open", license="cc-by"), lentry("ost-k-nc", license="cc-by-nc"),
+               lentry("ost-k-arx", license="arxiv-nonexclusive"),
+               lentry("ost-k-held", license="cc-by", source="heldsrc")]
+    rules = {"held": pipeline_repo.restriction({"source": "heldsrc"}, collection="allow",
+                                               default_corpus="deny")}
+    root = write_repo(tmp_path / "repo", entries=sorted(entries, key=lambda e: e["id"]),
+                      policy={}, restrictions=rules)
+    pipeline_repo.point(monkeypatch, root, policy={})
+    serve(monkeypatch)
+    monkeypatch.setattr(sys, "argv", ["build_corpus.py", "--workers", "1"])
+    build_corpus.main()
+    monkeypatch.setattr(sys, "argv", ["clean_corpus.py", "--workers", "1", "--rules", "none"])
+    clean_corpus.main()
+    return root, rules
+
+
+def check_ok(monkeypatch, capsys):
+    import clean_corpus
+    capsys.readouterr()
+    monkeypatch.setattr(sys, "argv", ["clean_corpus.py", "--check"])
+    clean_corpus.main()
+    assert "OK — every view matches the manifest exactly" in capsys.readouterr().out
+
+
+def test_every_class_is_cleaned_into_its_view_and_default_consumers_see_only_open(
+        tmp_path, monkeypatch, capsys):
+    root, _rules = _load_and_clean(tmp_path, monkeypatch)
+    rows = manifest_rows(root)
+    assert rows["ost-k-open"]["corpus_path"] == "corpus/ost-k-open.md"
+    assert rows["ost-k-nc"]["corpus_path"] == "collection/nc/corpus/ost-k-nc.md"
+    assert rows["ost-k-arx"]["corpus_path"] == \
+        "collection/arxiv-nonexclusive/corpus/ost-k-arx.md"
+    assert rows["ost-k-held"]["corpus_path"] == "collection/policy-held/corpus/ost-k-held.md"
+    for r in rows.values():
+        assert (root / r["corpus_path"]).is_file() and r["corpus_sha256"]
+    # a default consumer (a training run over corpus/*) reads the open class only
+    assert {p.name for p in (root / "corpus").rglob("*.md")} == {"ost-k-open.md"}
+    check_ok(monkeypatch, capsys)
+
+
+def test_reclassification_moves_the_same_bytes_and_keeps_provenance(tmp_path, monkeypatch,
+                                                                    capsys):
+    import clean_corpus
+    root, _rules = _load_and_clean(tmp_path, monkeypatch)
+    before = manifest_rows(root)
+    old = root / "corpus" / "ost-k-open.md"
+    inode, data = old.stat().st_ino, old.read_bytes()
+    st = store.FileStore(root)
+    with st.writer() as w:          # the licence audit's kind of change: re-tag with evidence
+        with st.transaction(rid("retag"), expected_version=st.version(), writer=w) as tx:
+            tx.update_manifest_fields({"ost-k-open": {"license": "cc-by-nc-nd",
+                                                      "license_evidence": "test"}})
+            e = tx.get_entries(["ost-k-open"])["ost-k-open"]
+            tx.upsert_entries([{**e, "license": "cc-by-nc-nd", "license_evidence": "test"}])
+    capsys.readouterr()
+    monkeypatch.setattr(sys, "argv", ["clean_corpus.py", "--workers", "1"])
+    clean_corpus.main()
+    assert "1 moved between views" in capsys.readouterr().out
+    after = manifest_rows(root)
+    new = root / "collection" / "nc-nd" / "corpus" / "ost-k-open.md"
+    assert not old.exists() and new.read_bytes() == data and new.stat().st_ino == inode
+    moved = after["ost-k-open"]
+    assert moved["corpus_path"] == "collection/nc-nd/corpus/ost-k-open.md"
+    assert moved["corpus_sha256"] == before["ost-k-open"]["corpus_sha256"]
+    for key in ("raw_path", "sha256", "text_path", "text_sha256", "status"):
+        assert moved[key] == before["ost-k-open"][key]
+    assert (root / moved["raw_path"]).is_file() and (root / moved["text_path"]).is_file()
+    assert set(after) == set(before)                         # nothing erased
+    check_ok(monkeypatch, capsys)
+    # and back: reclassified into the default view with the same bytes again
+    with st.writer() as w:
+        with st.transaction(rid("retag-back"), expected_version=st.version(), writer=w) as tx:
+            tx.update_manifest_fields({"ost-k-open": {"license": "cc-by"}})
+            e = tx.get_entries(["ost-k-open"])["ost-k-open"]
+            tx.upsert_entries([{**e, "license": "cc-by"}])
+    monkeypatch.setattr(sys, "argv", ["clean_corpus.py", "--workers", "1"])
+    clean_corpus.main()
+    assert old.read_bytes() == data and not new.exists()
+    check_ok(monkeypatch, capsys)
+
+
+def test_check_refuses_a_restricted_row_in_the_default_view(tmp_path, monkeypatch, capsys):
+    import clean_corpus
+    root, _rules = _load_and_clean(tmp_path, monkeypatch)
+    nc = root / "collection" / "nc" / "corpus" / "ost-k-nc.md"
+    (root / "corpus" / "ost-k-nc.md").write_bytes(nc.read_bytes())   # leaked into the default
+    monkeypatch.setattr(sys, "argv", ["clean_corpus.py", "--check"])
+    with pytest.raises(SystemExit):
+        clean_corpus.main()
+    assert "unprovenanced file in a view: corpus/ost-k-nc.md" in capsys.readouterr().out

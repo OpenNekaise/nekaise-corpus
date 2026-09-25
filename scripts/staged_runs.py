@@ -289,31 +289,30 @@ def housekeeping(st, writer, *, seconds: float = HOUSEKEEPING_SECONDS,
 
 
 def after_promotion(st, writer, root: Path, *, seconds: float = HOUSEKEEPING_SECONDS) -> dict:
-    """Completion work for the current generation (idempotent; recovery repeats it): refresh the
-    corpus/ materialization to the current generation (incremental from its stamp), then bounded
-    housekeeping. Raises when the materialization cannot be completed (its stamp then stays
-    "refreshing" and consumers are refused)."""
+    """Completion work for the current generation (idempotent; recovery repeats it): refresh
+    every required view's materialization — each classified collection/<class>/corpus/ view,
+    then the default corpus/ — to the current generation (incremental from its stamp), then
+    bounded housekeeping. Raises when a materialization cannot be completed (its stamp then
+    stays "refreshing" and consumers are refused); recovery repeats all of it. The returned
+    "materialized" is the default view's statistics, "views" every view's."""
     import artifact_store
     import materialize
     with st.read(writer=writer) as view:
         promoted = view.generation is not None
-    out = {"materialized": materialize.refresh(st, Path(root)) if promoted
-           else {"mode": None, "generation": None}}
+    views = materialize.refresh_required(st, Path(root)) if promoted else {}
+    out = {"materialized": views.get(materialize.registry.DEFAULT_VIEW)
+           or {"mode": None, "generation": None}, "views": views}
     out["housekeeping"] = housekeeping(st, writer, seconds=seconds)
     out["swept_incoming"] = artifact_store.LocalArtifacts(Path(root)).sweep_incoming()
     return out
 
 
 def materialization_current(st, root: Path) -> bool:
-    """corpus/ is a complete materialization of the current generation (or there is none yet)."""
+    """Every required view (corpus/ and each collection/<class>/corpus/) is a complete
+    materialization of the current generation under the current classification policy (or
+    there is no generation yet)."""
     import materialize
-    with st.read() as view:
-        generation, dataset = view.generation, (view.provenance() or {}).get("dataset")
-    if generation is None:
-        return True
-    stamp = materialize.read_stamp(Path(root) / "corpus") or {}
-    return (stamp.get("state"), stamp.get("generation"), stamp.get("dataset")) == (
-        "complete", generation, dataset)
+    return materialize.current(st, Path(root))
 
 
 # --- standalone mutations as staged runs --------------------------------------------------------------------

@@ -18,6 +18,7 @@ import pytest
 
 import artifact_store
 import materialize
+import registry
 import store
 from artifact_store import LocalArtifacts
 
@@ -406,7 +407,16 @@ def test_acquire_refuses_anything_but_a_complete_stamp_of_that_generation(tmp_pa
     with pytest.raises(materialize.MaterializeError, match="invalid"):
         with materialize.acquire(d, generation=3):
             pass
+    ident = {"view": "default", "stage": "corpus", "class_policy": registry.CLASS_POLICY_VERSION}
+    # a stamp from before classified views (no view/stage/classification policy) is refused
     materialize._write_stamp(d, {"state": "complete", "dataset": "u", "generation": 3})
+    with pytest.raises(materialize.MaterializeError, match="classification policy"):
+        with materialize.acquire(d, generation=3):
+            pass
+    materialize._write_stamp(d, {"state": "complete", "dataset": "u", "generation": 3, **ident})
+    with pytest.raises(materialize.MaterializeError, match="view 'default' stage 'corpus'"):
+        with materialize.acquire(d, generation=3, view="nc"):
+            pass
     with pytest.raises(materialize.MaterializeError, match="generation 3 of u, not 4"):
         with materialize.acquire(d, generation=4):
             pass

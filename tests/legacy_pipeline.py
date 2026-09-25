@@ -216,10 +216,12 @@ def legacy_prune(*, apply=True, drop_ids_from=None) -> dict[str, str]:
 # --- cleaner ------------------------------------------------------------------------------------
 
 def legacy_clean(*, rules_spec="stamp", force=False, workers=1) -> None:
+    """The file-authoritative cleaner as one in-memory rewrite (the oracle for the store path):
+    every successful extraction cleaned into its use view (collect-all, 2026-09-25)."""
     rules = cc.parse_rules(cc.stamped_ruleset() if rules_spec == "stamp" else rules_spec)
     restrictions = legacy_registry.load_eligibility()
     rows = legacy_registry.load_manifest_rows()
-    todo, restricted = cc.partition_training_rows(rows, restrictions)
+    todo = cc.partition_cleaning_rows(rows, restrictions)
     CORPUS, STAMP = cc.CORPUS, cc.STAMP
     CORPUS.mkdir(parents=True, exist_ok=True)
     stamp_now = ",".join(rules) if rules else "none"
@@ -227,25 +229,26 @@ def legacy_clean(*, rules_spec="stamp", force=False, workers=1) -> None:
     rebuild = force or stamp_was != stamp_now
     ops.atomic_write_text(STAMP, f"IN-PROGRESS {stamp_now}\n")
     attribution: Counter = Counter()
-    cc.clear_corpus_metadata(restricted)
     by_id = {r["id"]: r for r in todo}
-    tasks = [(r["id"], r["text_path"], rules, rebuild) for r in todo]
+    dst = {r["id"]: registry.corpus_path_for(r, restrictions) for r in todo}
+    tasks = [(r["id"], r["text_path"], dst[r["id"]], rules, rebuild, cc.prior_path(r))
+             for r in todo]
     with cc.ProcessPoolExecutor(max_workers=max(1, workers)) as pool:
         for sid, chars, attr, status, digest in pool.map(cc._clean_one, tasks, chunksize=64):
             if status == "missing-text":
                 continue
             row = by_id[sid]
-            row["corpus_path"] = f"corpus/{sid}.md"
+            row["corpus_path"] = dst[sid]
             row["corpus_chars"] = chars
             if digest:
                 row["corpus_sha256"] = digest
                 row["cleaner_version"] = f"clean_corpus/2;rules={stamp_now}"
             attribution.update(attr)
-    restricted_names = {f"{r['id']}.md" for r in restricted}
-    cc.quarantine_policy_files(restricted)
-    live = {f"{r['id']}.md" for r in todo}
-    for p in [p for p in CORPUS.glob("*.md")
-              if p.name not in live and p.name not in restricted_names]:
-        p.unlink()
+    live = set(dst.values())
+    for rel, path in cc._view_files().items():
+        home = dst.get(path.name[:-3])
+        if rel in live or (home is not None and home != rel and not (cc.HERE / home).is_file()):
+            continue
+        path.unlink()
     legacy_registry.write_manifest_rows(rows)
     ops.atomic_write_text(STAMP, stamp_now + "\n")

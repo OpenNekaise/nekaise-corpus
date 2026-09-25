@@ -82,7 +82,7 @@ def test_clean_check_passes_on_a_fresh_clone_and_reports_unavailable(
 
     out = capsys.readouterr().out
     assert "locally unavailable, suspended host" in out and "ope-missing" in out
-    assert "OK — corpus/ matches the manifest exactly" in out
+    assert "OK — every view matches the manifest exactly" in out
 
 
 def _prune(monkeypatch, tmp_path, rows):
