@@ -170,6 +170,27 @@ def test_a_crashed_group_commit_leaves_complete_versions_or_none(tmp_path, monke
     assert incoming(tmp_path) == []
 
 
+def test_pending_versions_cross_a_real_process_pool(tmp_path):
+    """The cleaner's workers are processes: a pending version must survive pickling (the first
+    Pending, a bare tuple subclass, did not — found by the step-3 review benchmark)."""
+    import pickle
+    from concurrent.futures import ProcessPoolExecutor
+
+    import clean_corpus
+    p = artifact_store.Pending("corpus", "a" * 64, 3, None)
+    assert pickle.loads(pickle.dumps(p)) == p
+    src = tmp_path / "t.md"
+    src.write_bytes(b"# t\n\n---\n\nPage 12\nReal prose about ventilation.\n")
+    with ProcessPoolExecutor(max_workers=1) as pool:
+        [res] = pool.submit(clean_corpus._clean_many_versioned,
+                            [("t", str(src), ["page_markers"], str(tmp_path), os.getpid())]
+                            ).result()
+    pending = res[4]
+    [art] = LocalArtifacts(tmp_path).commit([pending])
+    assert LocalArtifacts(tmp_path).read_bytes("corpus", art.sha256) == \
+        b"# t\n\n---\n\nReal prose about ventilation.\n"
+
+
 def test_sweep_keeps_a_live_writers_temp(tmp_path):
     local = LocalArtifacts(tmp_path)
     mine = local._tmp_name()
@@ -204,11 +225,52 @@ def test_adopt_preserves_a_file_without_copying(tmp_path):
     assert incoming(tmp_path) == []
 
 
+def test_review_same_size_damage_is_detected_by_hash_everywhere(tmp_path):
+    """Review P1 #2: an existing address is accepted only with the right hash — for a put, an
+    adoption (whose source must then be kept) and a group commit."""
+    local = LocalArtifacts(tmp_path)
+    path = local.path("corpus", sha(DATA))
+    path.parent.mkdir(parents=True)
+    path.write_bytes(bytes(len(DATA)))                    # same size, wrong bytes
+    legacy = tmp_path / "corpus" / "x.md"
+    legacy.parent.mkdir()
+    legacy.write_bytes(DATA)
+    for attempt in (lambda: local.put_bytes("corpus", DATA),
+                    lambda: local.adopt("corpus", legacy),
+                    lambda: local.commit([artifact_store.write_pending(tmp_path, "corpus",
+                                                                       DATA)])):
+        with pytest.raises(artifact_store.ArtifactError, match="does not hold the bytes"):
+            attempt()
+    assert legacy.read_bytes() == DATA and path.read_bytes() == bytes(len(DATA))
+
+
+def test_review_publication_fsyncs_the_whole_directory_chain_once_per_process(tmp_path,
+                                                                             monkeypatch):
+    """Review P1 #3: publishing into existing directories (left by a writer that crashed before
+    its sync) still fsyncs every ancestor entry up to the root — once per process."""
+    local = LocalArtifacts(tmp_path)
+    leaf = local.path("raw", sha(DATA)).parent
+    leaf.mkdir(parents=True)                              # created, never synced
+    artifact_store._DURABLE_DIRS.clear()
+    synced = []
+    real = artifact_store._fsync_dir
+    monkeypatch.setattr(artifact_store, "_fsync_dir",
+                        lambda p: (synced.append(Path(p).resolve()), real(p)))
+    local.put_bytes("raw", DATA)
+    chain = {leaf, leaf.parent, leaf.parent.parent, local.base, tmp_path}
+    assert {p.resolve() for p in chain} <= set(synced)
+    synced.clear()
+    local.put_bytes("raw", DATA + b"!")                   # another leaf, same ancestors
+    other = local.path("raw", sha(DATA + b"!")).parent.resolve()
+    assert local.base.resolve() not in synced and tmp_path.resolve() not in synced
+    assert other in synced
+
+
 def test_barrier_fsyncs_each_directory_once(tmp_path):
     local = LocalArtifacts(tmp_path)
     arts = [local.put_bytes("raw", bytes([i]) * 3) for i in range(5)]
     paths = [tmp_path / a.locator for a in arts] * 2
-    assert artifact_store.barrier(paths) == len({p.parent for p in paths})
+    assert artifact_store.barrier(paths, tmp_path) == len({p.parent for p in paths})
 
 
 # --- claims ---------------------------------------------------------------------------------------

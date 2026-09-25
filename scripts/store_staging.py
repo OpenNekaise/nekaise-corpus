@@ -617,7 +617,7 @@ class StagedWriteView(store_pg.PgReadView):
             if registered is None or not registered[1]:
                 new_locs.append((stage, sha))
         if new_locs:   # the writer fsynced them; make sure of their directory entries too
-            artifact_store.barrier(local.path(s, h) for s, h in new_locs)
+            artifact_store.barrier((local.path(s, h) for s, h in new_locs), local.root)
         if new_ids:
             self._q("INSERT INTO artifacts (stage, sha256, size, first_run) SELECT s, h, z, %s "
                     "FROM unnest(%s::text[], %s::text[], %s::bigint[]) AS u(s, h, z) "

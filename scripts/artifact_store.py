@@ -42,7 +42,7 @@ import stat
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing import BinaryIO, Iterable, Mapping
+from typing import BinaryIO, Iterable, Mapping, NamedTuple
 
 import store
 
@@ -81,6 +81,10 @@ def check_identity(stage: str, sha256) -> tuple[str, str]:
         raise ArtifactError(f"{stage} artifact identity must be a lowercase sha256, not "
                             f"{sha256!r}")
     return stage, sha256
+
+
+def is_identity(sha256) -> bool:
+    return isinstance(sha256, str) and _SHA.fullmatch(sha256) is not None
 
 
 def local_locator(stage: str, sha256: str) -> str:
@@ -171,31 +175,35 @@ def sync_filesystem(path: Path) -> None:
 BARRIER_DIRS = 64   # above this many directories, one syncfs is cheaper than fsyncing each
 
 
-def barrier(paths: Iterable[Path]) -> int:
-    """Make the directory entries of `paths` durable: fsync their distinct directories, or one
-    syncfs when there are many. Returns how many directories. Staging calls it before it
-    registers references to versions it did not write itself."""
+def barrier(paths: Iterable[Path], root: Path) -> int:
+    """Make the directory entries of `paths` (versions under <root>/artifacts) durable, with
+    every ancestor directory's entry up to the root: fsync each distinct leaf directory and its
+    chain, or one syncfs when there are many. Returns how many leaf directories. Staging calls
+    it before it registers references to versions it did not write itself."""
     dirs = sorted({Path(p).parent for p in paths})
     if len(dirs) > BARRIER_DIRS:
         sync_filesystem(dirs[0])
         return len(dirs)
+    local = LocalArtifacts(root)
     for d in dirs:
+        local._durable_chain(d)
         _fsync_dir(d)
     return len(dirs)
 
 
-class Pending(tuple):
+# Directories (absolute paths) whose own entry, and every ancestor's up to the data root, this
+# process has made durable (it fsynced each parent after the directory existed). Directories are
+# never removed, so the fact stays true; another process's crash cannot undo it.
+_DURABLE_DIRS: set[str] = set()
+
+
+class Pending(NamedTuple):
     """A version written but not yet committed (write_pending): (stage, sha256, size, tmp);
-    tmp is None when the version already existed."""
-    __slots__ = ()
-
-    def __new__(cls, stage: str, sha256: str, size: int, tmp: str | None):
-        return super().__new__(cls, (stage, sha256, size, tmp))
-
-    stage = property(lambda self: self[0])
-    sha256 = property(lambda self: self[1])
-    size = property(lambda self: self[2])
-    tmp = property(lambda self: self[3])
+    tmp is None when the version already existed. Crosses process boundaries (pickled)."""
+    stage: str
+    sha256: str
+    size: int
+    tmp: str | None
 
 
 def write_pending(root: Path, stage: str, data: bytes, owner: int | None = None) -> Pending:
@@ -243,6 +251,31 @@ class LocalArtifacts:
             return None
         return st.st_size if stat.S_ISREG(st.st_mode) else None
 
+    def _durable_chain(self, d: Path) -> None:
+        """Create directory `d` (under the root) if needed and make its entry and every
+        ancestor's entry up to the root durable: whether this process created them or found them
+        — a directory found existing may have been created by a writer that crashed before any
+        sync reached its parent. Each directory is fsynced into its parent once per process."""
+        d = Path(d)
+        d.mkdir(parents=True, exist_ok=True)
+        root = self.root.resolve()
+        p = d.resolve()
+        if root not in p.parents:
+            raise ArtifactError(f"{d} is not under {self.root}")
+        while p != root and str(p) not in _DURABLE_DIRS:
+            _fsync_dir(p.parent)
+            _DURABLE_DIRS.add(str(p))
+            p = p.parent
+
+    def _check_existing(self, stage: str, sha: str, size: int) -> None:
+        """An address found in place is accepted only when it holds exactly those bytes (hash,
+        not size): a damaged version is never overwritten, and nothing that depends on it — an
+        adoption followed by replacing the source — may proceed."""
+        if not self.verify(stage, sha, size):
+            raise ArtifactError(f"{self.path(stage, sha)} exists but does not hold the bytes of "
+                                f"its identity ({size} bytes, sha256 {sha}): a damaged version "
+                                "is never overwritten; investigate it")
+
     def _incoming(self) -> Path:
         d = self.base / INCOMING
         if not d.is_dir():
@@ -262,6 +295,7 @@ class LocalArtifacts:
         pending = list(pending)
         if not pending:
             return []
+        found = [p for p in pending if p.tmp is None]   # versions that existed already
         if any(p.tmp is not None for p in pending):
             sync_filesystem(self._incoming())
             _crash("group-synced")
@@ -273,12 +307,14 @@ class LocalArtifacts:
                 try:
                     os.link(p.tmp, final)
                 except FileExistsError:
-                    pass
+                    found.append(p)
             _crash("group-linked")
-        # always, even when every version already existed: an address found (not linked) here
-        # may come from a writer that crashed before its own final sync
+        # always, even when every version already existed: an address (or a directory) found
+        # here may come from a writer that crashed before its own final sync
         sync_filesystem(self.base)
         _crash("group-published")
+        for p in found:
+            self._check_existing(p.stage, p.sha256, p.size)
         out = []
         for p in pending:
             have = self.size(p.stage, p.sha256)
@@ -356,16 +392,13 @@ class LocalArtifacts:
 
     def _publish(self, stage: str, tmp: Path, sha: str, size: int) -> Artifact:
         final = self.path(stage, sha)
-        _mkdir_durable(final.parent)
+        self._durable_chain(final.parent)   # found or created: the whole chain is durable
         try:
             os.link(tmp, final)          # never replaces an existing name
             _crash("linked")
         except FileExistsError:
-            have = self.size(stage, sha)
-            if have != size:
-                raise ArtifactError(f"{final} exists with {have} bytes, not {size}: a damaged "
-                                    "version is never overwritten; investigate it")
-        _fsync_dir(final.parent)
+            self._check_existing(stage, sha, size)
+        _fsync_dir(final.parent)            # the address itself (linked now or found)
         _crash("published")
         return Artifact(stage, sha, size, local_locator(stage, sha))
 
@@ -497,7 +530,9 @@ def verify_run(st, writer, run_id: str, *, page: int = 1000) -> dict:
             return out
         ok = []
         for stage, sha, size, locator in rows:
-            if locator != local_locator(stage, sha):
+            if locator is None:
+                why = "no readable local locator"
+            elif locator != local_locator(stage, sha):
                 why = f"unexpected locator {locator}"
             elif not local.verify(stage, sha, size):
                 why = "missing or damaged"

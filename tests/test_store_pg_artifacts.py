@@ -514,7 +514,7 @@ def test_a_reference_needs_a_located_artifact(repo, monkeypatch):
     monkeypatch.setattr(store_staging.StagedWriteView, "_register_artifacts", references_only)
     with pg.writer() as w:
         run = open_run(pg, w, "unlocated")
-        with pytest.raises(sqlerr(), match="no locator"):
+        with pytest.raises(sqlerr(), match="no local locator"):
             stage(pg, w, run.run_id, "b1", lambda b: b.upsert_manifest([mrow(
                 "ost-u", text_path="text/ost-u.md", text_sha256=art.sha256)]))
         monkeypatch.undo()
@@ -716,6 +716,8 @@ def test_a_clean_killed_between_batches_leaves_G_readable_and_a_new_round_conver
     materialized = files(root, ("corpus",))
     ruleset = "toc_leaders,page_markers"                 # a policy change re-cleans everything
     monkeypatch.setattr(clean_corpus, "METADATA_BATCH_ROWS", 2)
+    monkeypatch.setattr(clean_corpus, "GROUP_COMMIT", 3)      # groups and batches interleave
+    monkeypatch.setattr(clean_corpus, "CLEAN_CHUNK", 2)
     calls = {"n": 0}
     real = store_broker.StepSession.submit
 
@@ -883,6 +885,246 @@ def test_the_artifact_gate_detects_a_damaged_version(repo, monkeypatch, clock):
             rnd.promote()
     # never promoted (recovery aborts it: step 4)
     assert q(pg, "SELECT status FROM runs")[0][0] == "frozen"
+
+
+# --- Codex review of step 3 (MERGE AFTER FIXES): regressions --------------------------------------------
+
+def _legacy_baseline_generation(pg, root, name="legacy-g0") -> int:
+    """A generation whose rows still claim the legacy files (a metadata-only batch)."""
+    with staged(pg, name) as (w, rnd):
+        stage(pg, w, rnd.run.run_id, "b1", lambda b: b.upsert_manifest([mrow(
+            "ost-meta-only", status="failed", error="x")]))
+        return promote(rnd)
+
+
+def test_p1_a_retained_legacy_generation_resolves_to_its_own_bytes_after_replacement(
+        repo, monkeypatch, clock):
+    """Review P1 #1: G0 claims legacy corpus/ost-g-have.md; G1 re-cleans it and the refresh
+    replaces that file (after adopting it); G2 prunes the document. G0 — through read_generation
+    and through VersionedAccess — must keep resolving to G0's bytes, also after folding."""
+    root, pg = repo
+    legacy = (root / "corpus" / "ost-g-have.md").read_bytes()
+    g0 = _legacy_baseline_generation(pg, root)
+    with pg.writer() as w:
+        store_staging.pin_generation(pg, w, g0, holder="test", reason="retain G0")
+    with pg.read_generation(g0) as v:
+        g0_row = v.get_manifest(["ost-g-have"])["ost-g-have"]
+        assert v.resolve_artifact("ost-g-have", "corpus").locator == \
+            "file:corpus/ost-g-have.md"                 # nothing adopted yet: the legacy path
+    readable = assert_readable(pg, root, g0)
+    full_round(monkeypatch, pg, root, "legacy-g1")      # re-cleans ost-g-have
+    materialize.refresh(pg, root)
+    assert (root / "corpus" / "ost-g-have.md").read_bytes() != legacy   # replaced
+    access = artifact_store.VersionedAccess(root)
+
+    def resolves_to_g0():
+        with pg.read_generation(g0) as v:
+            ref = v.resolve_artifact("ost-g-have", "corpus")
+        assert ref.sha256 == sha(legacy) == g0_row["corpus_sha256"]
+        assert ref.locator == "file:" + artifact_store.local_locator("corpus", ref.sha256)
+        assert (root / ref.locator[5:]).read_bytes() == legacy
+        assert access.path(g0_row, "corpus") == root / ref.locator[5:]  # both APIs agree
+        assert assert_readable(pg, root, g0) == readable
+    resolves_to_g0()
+    with staged(pg, "legacy-g2") as (_w, rnd):            # prune the document
+        with monkeypatch.context() as m:
+            child_env(m, pg, rnd)
+            handoff(root, rnd)
+            (root / "workspace" / "drop.txt").write_text("ost-g-have\n")
+            run_step(m, root, "prune", "--drop-ids-from", str(root / "workspace" / "drop.txt"))
+        promote(rnd)
+    materialize.refresh(pg, root)
+    assert not (root / "corpus" / "ost-g-have.md").exists()
+    resolves_to_g0()
+    with pg.writer() as w:
+        store_staging.fold_all(pg, w)                    # folds G0, stops at the pin
+    assert q(pg, "SELECT generation FROM projection_state")[0][0] == g0
+    resolves_to_g0()
+
+
+def test_p1_a_same_size_damaged_version_never_costs_the_intact_original(repo, monkeypatch, clock):
+    """Review P1 #2: the canonical address of the legacy corpus identity holds same-size
+    damaged bytes; the refresh must not accept it as the adoption of the intact legacy file and
+    then replace that file: it fails, the original stays."""
+    root, pg = repo
+    legacy = (root / "corpus" / "ost-g-have.md").read_bytes()
+    full_round(monkeypatch, pg, root, "damage-g0")
+    local = artifact_store.LocalArtifacts(root)
+    target = local.path("corpus", sha(legacy))
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_bytes(bytes(len(legacy)))               # same size, wrong bytes
+    with pytest.raises(artifact_store.ArtifactError, match="does not hold the bytes"):
+        materialize.refresh(pg, root)
+    assert (root / "corpus" / "ost-g-have.md").read_bytes() == legacy
+    assert materialize.read_stamp(root / "corpus")["state"] == "refreshing"
+
+
+def test_p1_retried_publication_makes_the_reused_directory_chain_durable(repo, monkeypatch):
+    """Review P1 #3: a group commit creates fresh fan-out directories, links, and dies before its
+    final sync; a single-file retry then reuses the address and a small batch references it.
+    Every ancestor directory up to the root is fsynced along the way."""
+    root, pg = repo
+    data = b"a version whose directories a crashed group created"
+    local = artifact_store.LocalArtifacts(root)
+    artifact_store._DURABLE_DIRS.clear()
+
+    def crash(p):
+        if p == "group-linked":
+            raise KeyboardInterrupt(p)
+    with monkeypatch.context() as m:
+        m.setattr(artifact_store, "_crash", crash)
+        with pytest.raises(KeyboardInterrupt):
+            local.commit([artifact_store.write_pending(root, "text", data)])
+    leaf = local.path("text", sha(data)).parent
+    assert local.path("text", sha(data)).exists()
+    chain = {leaf, leaf.parent, leaf.parent.parent, local.base, root}
+    synced = []
+    real = artifact_store._fsync_dir
+    monkeypatch.setattr(artifact_store, "_fsync_dir", lambda p: (synced.append(Path(p).resolve()),
+                                                                 real(p)))
+    artifact_store._DURABLE_DIRS.clear()               # a new process retries
+    local.put_bytes("text", data)
+    assert {p.resolve() for p in chain} <= set(synced), synced
+    synced.clear()
+    artifact_store._DURABLE_DIRS.clear()               # and another one stages the reference
+    with pg.writer() as w:
+        run = open_run(pg, w, "chain")
+        stage(pg, w, run.run_id, "b1", lambda b: b.upsert_manifest([mrow(
+            "ost-chain", text_path="text/ost-chain.md", text_sha256=sha(data))]))
+    assert {p.resolve() for p in chain} <= set(synced), synced
+
+
+def _forge(pg, run_id, key, row, before_sha):
+    """Direct SQL: one batch of `run_id` applying a manifest put with a chosen before-image."""
+    text = store.canonical_row(row)
+    request = "[]"
+    with pg._connect(autocommit=True) as conn, conn.transaction():
+        seq, = conn.execute("SELECT staged_seq FROM runs WHERE run_id = %s", [run_id]).fetchone()
+        conn.execute("INSERT INTO batches (run_id, step, batch, request_digest, request_text, "
+                     "basis_seq) VALUES (%s, 'forge', %s, %s, %s, %s)",
+                     [run_id, f"b{seq}", sha(request.encode()), request, seq])
+        conn.execute("UPDATE batches SET status = 'applied', seq = %s, applied_at = now() WHERE "
+                     "run_id = %s AND batch = %s", [seq + 1, run_id, f"b{seq}"])
+        conn.execute("INSERT INTO revisions (run_id, batch_seq, tbl, key, op, row_text, "
+                     "row_sha256, before_sha256) VALUES (%s, %s, 'manifest', %s, 'put', %s, %s, "
+                     "%s)", [run_id, seq + 1, key, text, sha(text.encode()), before_sha])
+        conn.execute("UPDATE batches SET sealed = true WHERE run_id = %s AND batch = %s",
+                     [run_id, f"b{seq}"])
+
+
+def test_p2_a_revision_cannot_supply_its_own_unchanged_before_image(repo):
+    """Review P2 #4: the seal compares with the row actually visible at the batch's basis, not
+    with whatever row a revision's before_sha256 names — its own, or one an unrelated (aborted)
+    run staged."""
+    root, pg = repo
+    with pg.read() as v:
+        have = v.get_manifest(["ost-g-have"])["ost-g-have"]
+    forged = {**have, "corpus_sha256": "e" * 64}             # bytes nobody wrote
+    digest = sha(store.canonical_row(forged).encode())
+    with pg.writer() as w:
+        run = open_run(pg, w, "forge")
+        other = open_run(pg, w, "forge-other", artifacts="unchecked")
+        stage(pg, w, other.run_id, "b1", lambda b: b.upsert_manifest([forged]))
+        pg.abort_run(w, other.run_id, reason="unrelated")
+    for before in (digest, None):
+        with pytest.raises(sqlerr(), match="neither unchanged"):
+            _forge(pg, run.run_id, "ost-g-have", forged, before)
+    # a new key claiming unwritten bytes, "superseding" a row only the aborted run staged
+    new = {**forged, "id": "ost-g-forged"}
+    with pytest.raises(sqlerr(), match="neither unchanged"):
+        _forge(pg, run.run_id, "ost-g-forged", new, sha(store.canonical_row(new).encode()))
+    # an honest unchanged claim still passes without any registration
+    fine = {**have, "quality": {"re": 2}}
+    _forge(pg, run.run_id, "ost-g-have", fine, sha(store.canonical_row(have).encode()))
+    assert q(pg, "SELECT count(*) FROM run_artifacts")[0][0] == 0
+
+
+def test_p2_references_without_a_local_locator_are_refused_and_never_verified(repo, monkeypatch):
+    """Review P2 #5: an identity located only in an object store is not a readable version
+    before stage 5: referencing it is refused, and a reference that got in anyway fails the
+    artifact gate instead of being skipped."""
+    root, pg = repo
+    sha_x = "f" * 64
+    with pg._connect(autocommit=True) as conn:
+        conn.execute("INSERT INTO artifacts (stage, sha256, size) VALUES ('corpus', %s, 3)",
+                     [sha_x])
+        conn.execute("INSERT INTO artifact_locators (stage, sha256, locator, kind) VALUES "
+                     "('corpus', %s, 's3://bucket/x', 'object')", [sha_x])
+
+    def references_only(self, need):
+        self._q("INSERT INTO run_artifacts (run_id, stage, sha256, batch_seq) SELECT %s, s, h, %s "
+                "FROM unnest(%s::text[], %s::text[]) AS u(s, h)",
+                [self.run_id, self.seq, [k[0] for k in need], [k[1] for k in need]])
+    monkeypatch.setattr(store_staging.StagedWriteView, "_register_artifacts", references_only)
+    row = mrow("ost-obj", corpus_path="corpus/ost-obj.md", corpus_sha256=sha_x)
+    with pg.writer() as w:
+        run = open_run(pg, w, "object-only")
+        with pytest.raises(sqlerr(), match="no local locator"):
+            stage(pg, w, run.run_id, "b1", lambda b: b.upsert_manifest([row]))
+        with pg._connect(autocommit=True) as conn:   # suppose it got in regardless
+            conn.execute("ALTER TABLE run_artifacts DISABLE TRIGGER run_artifacts_insert")
+        try:
+            stage(pg, w, run.run_id, "b1", lambda b: b.upsert_manifest([row]))
+        finally:
+            with pg._connect(autocommit=True) as conn:
+                conn.execute("ALTER TABLE run_artifacts ENABLE TRIGGER run_artifacts_insert")
+        frozen = pg.freeze(w, run.run_id, required_gates=["artifacts"])
+        result = artifact_store.verify_run(pg, w, run.run_id)
+        assert result["failed"] == [("corpus", sha_x, "no readable local locator")]
+        pg.record_gate(w, frozen, "artifacts", passed=not result["failed"])
+        with pytest.raises(store.StoreError, match="not passed every required gate"):
+            pg.promote(w, frozen)
+
+
+def test_p2_versioned_cleaning_pages_bounds_and_stages_as_it_goes(repo, monkeypatch, clock):
+    """Review P2 #6: build_versioned reads the manifest page by page, keeps a bounded number of
+    documents in flight, and stages each durable group's metadata before cleaning the rest."""
+    root, pg = repo
+    extra = [mrow(f"ost-b-{i:02d}", text_path=f"text/ost-b-{i:02d}.md") for i in range(12)]
+    for r in extra:
+        data = HEADER.encode() + f"body {r['id']} {TEXT}".encode()
+        (root / r["text_path"]).write_bytes(data)
+        r["text_sha256"] = sha(data)
+    with pg.writer() as w:
+        with pg.transaction("more", expected_version=pg.version(), writer=w) as tx:
+            tx.upsert_manifest(extra)
+    monkeypatch.setattr(store, "MAX_PAGE", 4)
+    monkeypatch.setattr(clean_corpus, "METADATA_BATCH_ROWS", 3)
+    monkeypatch.setattr(clean_corpus, "GROUP_COMMIT", 3)
+    monkeypatch.setattr(clean_corpus, "CLEAN_CHUNK", 2)
+    monkeypatch.setattr(clean_corpus, "IN_FLIGHT_PER_WORKER", 1)
+    events = []
+    real_clean = clean_corpus._clean_many_versioned
+    monkeypatch.setattr(clean_corpus, "_clean_many_versioned",
+                        lambda tasks: (events.append(("clean", len(tasks))), real_clean(tasks))[1])
+    real_submit = store_broker.StepSession.submit
+
+    def submit(self, batch, requests):
+        events.append(("batch", batch))
+        return real_submit(self, batch, requests)
+    monkeypatch.setattr(store_broker.StepSession, "submit", submit)
+    real_commit = artifact_store.LocalArtifacts.commit
+    monkeypatch.setattr(artifact_store.LocalArtifacts, "commit",
+                        lambda self, p: (events.append(("durable", len(p))),
+                                         real_commit(self, p))[1])
+    with staged(pg, "bounded", ruleset="none") as (_w, rnd):
+        with monkeypatch.context() as m:
+            child_env(m, pg, rnd)
+            run_step(m, root, "clean")
+        promote(rnd)
+    kinds = [e[0] for e in events]
+    cleaned = [i for i, k in enumerate(kinds) if k == "clean"]
+    batches = [i for i, k in enumerate(kinds) if k == "batch"]
+    durable = [i for i, k in enumerate(kinds) if k == "durable"]
+    assert len(batches) >= 4 and batches[0] < cleaned[-1]     # staged while still cleaning
+    assert durable[0] < batches[0]                            # versions durable before metadata
+    assert all(e[1] <= 2 for e in events if e[0] == "clean")
+    with pg.read() as v:
+        rows = rows_of(v)
+    for r in extra:
+        got = rows[r["id"]]
+        assert got["corpus_source_sha256"] == r["text_sha256"]
+        assert artifact_store.LocalArtifacts(root).has("corpus", got["corpus_sha256"])
 
 
 # --- the v5 -> v6 migration ------------------------------------------------------------------------------

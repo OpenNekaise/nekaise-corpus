@@ -1559,7 +1559,8 @@ CREATE OR REPLACE TRIGGER run_artifacts_guard BEFORE UPDATE OR DELETE
     ON {s}.run_artifacts FOR EACH ROW EXECUTE FUNCTION {s}.nk_run_artifacts_guard();
 -- Inserted references are checked per statement (the stager inserts a batch's references in
 -- one statement): each names a batch being applied (applied, unsealed, in an open run — i.e.
--- only the applying transaction can add references, like revisions) and a located artifact.
+-- only the applying transaction can add references, like revisions) and an artifact with its
+-- canonical local locator (the only readable kind before stage 5).
 CREATE OR REPLACE FUNCTION {s}.nk_run_artifacts_insert() RETURNS trigger LANGUAGE plpgsql AS $f$
 DECLARE bad record;
 BEGIN
@@ -1582,11 +1583,13 @@ BEGIN
     END IF;
     SELECT i.stage, i.sha256 INTO bad FROM ins i CROSS JOIN LATERAL (
         SELECT count(*) AS n FROM (SELECT 1 FROM {s}.artifact_locators l WHERE l.stage = i.stage
-                                   AND l.sha256 = i.sha256 LIMIT 1) z) found
+                                   AND l.sha256 = i.sha256 AND l.kind = 'local'
+                                   AND l.locator = {s}.nk_local_locator(i.stage, i.sha256)
+                                   LIMIT 1) z) found
         WHERE found.n = 0
         LIMIT 1;
     IF FOUND THEN
-        RAISE EXCEPTION 'nekaise: artifact %/% has no locator: it cannot be referenced',
+        RAISE EXCEPTION 'nekaise: artifact %/% has no local locator: it cannot be referenced',
             bad.stage, bad.sha256 USING ERRCODE = 'integrity_constraint_violation';
     END IF;
     RETURN NULL;
@@ -1606,21 +1609,41 @@ CREATE OR REPLACE FUNCTION {s}.nk_claim(j jsonb, stage text) RETURNS jsonb
                  CASE stage WHEN 'raw' THEN 'sha256' WHEN 'text' THEN 'text_sha256'
                             WHEN 'corpus' THEN 'corpus_sha256' END AS h) f
 $f$;
--- The text of the manifest row with digest `digest` under key `k` (a revision's before-image):
--- the projection row or any put revision with that digest (equal digests, equal text).
-CREATE OR REPLACE FUNCTION {s}.nk_before_text(k text, digest text) RETURNS SETOF text
-    LANGUAGE sql STABLE AS $f$
-    SELECT t FROM (
-        SELECT p.row_text AS t FROM {s}.manifest p WHERE digest IS NOT NULL AND p.id = k
-            AND encode(sha256(convert_to(p.row_text, 'UTF8')), 'hex') = digest
-        UNION ALL
-        SELECT o.row_text FROM {s}.revisions o WHERE digest IS NOT NULL AND o.tbl = 'manifest'
-            AND o.key = k AND o.op = 'put' AND o.row_sha256 = digest) z
-    LIMIT 1
-$f$;
+-- The manifest row `k` visible to batch `seq` of run `rid` at its basis (NULL: none), found
+-- from the actual preceding state, never from a digest a revision supplies: the run's own
+-- latest revision of the key in an EARLIER batch; else the latest revision of a run promoted
+-- in (projection generation P, the run's parent generation] (the committed overlay the run was
+-- staged on — no other run, aborted or pending, can supply it); else the projection row.
+-- (The run's parent is the current generation while it stages, and the fold never passes the
+-- current generation, so P <= parent.)
+CREATE OR REPLACE FUNCTION {s}.nk_basis_text(rid text, seq int, k text) RETURNS text
+    LANGUAGE plpgsql STABLE AS $f$
+DECLARE o record; parent bigint; lo bigint;
+BEGIN
+    SELECT v.op, v.row_text INTO o FROM {s}.revisions v
+        WHERE v.run_id = rid AND v.tbl = 'manifest' AND v.key = k AND v.batch_seq < seq
+        ORDER BY v.batch_seq DESC LIMIT 1;
+    IF FOUND THEN
+        RETURN CASE WHEN o.op = 'put' THEN o.row_text END;
+    END IF;
+    SELECT r.parent_generation INTO parent FROM {s}.runs r WHERE r.run_id = rid;
+    SELECT p.generation INTO lo FROM {s}.projection_state p;
+    IF parent IS NOT NULL THEN
+        SELECT v.op, v.row_text INTO o FROM {s}.revisions v JOIN {s}.runs u
+                ON u.run_id = v.run_id
+            WHERE v.tbl = 'manifest' AND v.key = k
+              AND u.promoted_generation > COALESCE(lo, -1) AND u.promoted_generation <= parent
+            ORDER BY u.promoted_generation DESC, v.batch_seq DESC LIMIT 1;
+        IF FOUND THEN
+            RETURN CASE WHEN o.op = 'put' THEN o.row_text END;
+        END IF;
+    END IF;
+    RETURN (SELECT m.row_text FROM {s}.manifest m WHERE m.id = k);
+END $f$;
 -- Sealing a batch of a versioned run: every claim of its manifest puts is either unchanged from
--- the superseded row or a valid identity (non-empty string path, string sha256) this run
--- registered in run_artifacts. Runs in the sealing transaction, so a violation rolls the whole
+-- the row visible at the batch's basis (nk_basis_text: the actual preceding state, not the
+-- revision's own before_sha256, which a writer supplies) or a valid identity (non-empty string
+-- path, string sha256) this run registered in run_artifacts. Runs in the sealing transaction, so a violation rolls the whole
 -- batch back (its revisions, references and registrations).
 -- One pass over the batch's manifest puts (index range (run, seq)); per claim one primary-key
 -- probe of run_artifacts, and the before-image is looked up (once per row) only for a claim not
@@ -1645,7 +1668,7 @@ BEGIN
                 AND EXISTS (SELECT 1 FROM {s}.run_artifacts a WHERE a.run_id = NEW.run_id
                             AND a.stage = st AND a.sha256 = (now ->> 1));
             IF NOT fetched THEN
-                before := (SELECT b.t::jsonb FROM {s}.nk_before_text(r.key, r.before_sha256) b(t));
+                before := {s}.nk_basis_text(NEW.run_id, NEW.seq, r.key)::jsonb;
                 fetched := true;
             END IF;
             IF now IS DISTINCT FROM {s}.nk_claim(before, st) THEN
@@ -2080,18 +2103,23 @@ class PgStore:
     def unverified_run_artifacts(self, writer: WriterToken, run_id: str, *,
                                  after: tuple[str, str] = ("", ""),
                                  limit: int = 1000) -> list[tuple]:
-        """The artifacts run `run_id` referenced whose local locator was never verified, after
-        keyset position (stage, sha256): [(stage, sha256, size, locator)]."""
+        """The artifacts run `run_id` referenced that still need verifying, after keyset
+        position (stage, sha256): [(stage, sha256, size, locator)] — every reference whose
+        canonical local locator was never verified, AND every reference with no canonical local
+        locator at all (locator None, size possibly None): verification must fail on those, never
+        skip them."""
         import store_staging
         with store_staging._writer_txn(self, writer) as conn:
             return [tuple(r) for r in conn.execute(
                 # the run's references in key order, each probed by key (never a join scan of
                 # the global artifacts/locators tables)
-                "SELECT ra.stage, ra.sha256, x.size, x.locator FROM run_artifacts ra CROSS JOIN "
-                "LATERAL (SELECT a.size, l.locator FROM artifacts a JOIN artifact_locators l ON "
-                "l.stage = a.stage AND l.sha256 = a.sha256 WHERE a.stage = ra.stage AND "
-                "a.sha256 = ra.sha256 AND l.kind = 'local' AND l.verified_at IS NULL OFFSET 0) x "
-                "WHERE ra.run_id = %s AND (ra.stage, ra.sha256) > (%s, %s) "
+                "SELECT ra.stage, ra.sha256, (SELECT a.size FROM artifacts a WHERE a.stage = "
+                "ra.stage AND a.sha256 = ra.sha256), l.locator FROM run_artifacts ra "
+                "LEFT JOIN LATERAL (SELECT x.locator, x.verified_at FROM artifact_locators x "
+                "WHERE x.stage = ra.stage AND x.sha256 = ra.sha256 AND x.kind = 'local' AND "
+                "x.locator = nk_local_locator(ra.stage, ra.sha256) OFFSET 0) l ON true "
+                "WHERE ra.run_id = %s AND (ra.stage, ra.sha256) > (%s, %s) AND "
+                "(l.locator IS NULL OR l.verified_at IS NULL) "
                 "ORDER BY ra.stage, ra.sha256 LIMIT %s",
                 [run_id, after[0], after[1], limit]).fetchall()]
 
@@ -2625,27 +2653,40 @@ class PgReadView:
         return bool(cfg.get("enabled", True)) and self.backend_state_get(name).enabled
 
     def resolve_artifact(self, id: str, stage: Stage):  # noqa: A002
-        """Resolved through the view's membership: the visible row's claim (path, sha256); when
-        that identity is a registered artifact (schema v6), its local locator (the immutable
-        version) and registered size, else the claim's legacy path (store.artifact_ref)."""
+        """Resolved through the view's membership: the visible row's claim (path, sha256). The
+        identity decides, never the logical path: the immutable version at its canonical
+        content address when this machine holds it (registered or not — an adopted legacy file
+        is held there before its path is reused), else the registered local locator (schema
+        v6), else the claim's legacy path (store.artifact_ref). artifact_store.VersionedAccess
+        resolves in the same order."""
         return self.resolve_artifacts([id], stage).get(id)
 
     def resolve_artifacts(self, ids: Sequence[str], stage: Stage) -> dict:
         """resolve_artifact for up to MAX_KNOWN ids in two queries: {id: ArtifactRef}."""
+        import artifact_store
         stage = Stage(stage)
         ids = list(dict.fromkeys(ids))
         if len(ids) > store.MAX_KNOWN:
             raise StoreError(f"resolve at most {store.MAX_KNOWN} ids per call")
         refs = {i: ref for i, row in self.get_manifest(ids).items()
                 if (ref := store.artifact_ref(row, i, stage)) is not None}
-        shas = sorted({r.sha256 for r in refs.values() if isinstance(r.sha256, str)})
-        if not shas:
-            return refs
-        found = {sha: (loc, size) for sha, loc, size in self._q(
-            "SELECT DISTINCT ON (a.sha256) a.sha256, l.locator, a.size FROM artifacts a "
-            "JOIN artifact_locators l USING (stage, sha256) WHERE a.stage = %s AND "
-            "a.sha256 = ANY(%s) AND l.kind = 'local' ORDER BY a.sha256, l.locator",
-            [stage.value, shas])}
+        local = artifact_store.LocalArtifacts(self._store.root)
+        held, rest = {}, set()
+        for ref in refs.values():
+            sha = ref.sha256
+            if isinstance(sha, str) and artifact_store.is_identity(sha):
+                size = local.size(stage.value, sha)
+                if size is not None:
+                    held[sha] = (artifact_store.local_locator(stage.value, sha), size)
+                else:
+                    rest.add(sha)
+        found = dict(held)
+        if rest:
+            found.update({sha: (loc, size) for sha, loc, size in self._q(
+                "SELECT DISTINCT ON (a.sha256) a.sha256, l.locator, a.size FROM artifacts a "
+                "JOIN artifact_locators l USING (stage, sha256) WHERE a.stage = %s AND "
+                "a.sha256 = ANY(%s) AND l.kind = 'local' ORDER BY a.sha256, l.locator",
+                [stage.value, sorted(rest)])})
         for i, ref in refs.items():
             if (hit := found.get(ref.sha256)) is not None:
                 refs[i] = store.ArtifactRef(i, stage, f"file:{hit[0]}", ref.sha256, hit[1])

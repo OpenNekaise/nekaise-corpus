@@ -1429,3 +1429,95 @@ PostgreSQL staged run whose artifact policy is `versioned`.
 - **Gates**: full suite 1183 passed / 142 skipped (PG skipped), with PostgreSQL (`nekaise_test`)
   1353 passed / 2 skipped (the two opt-in benchmarks); `py_compile scripts/*.py` clean. Nothing
   ran against the live schema or checkout.
+
+### Step 3, Codex review fixes (2026-09-25; verdict MERGE AFTER FIXES, three P1, three P2)
+
+v6 is deployed nowhere but throwaway test schemas (live is v5), so `V6_DDL` itself was revised;
+once any schema is v6, a change ships as migration 7. Each fix has a regression test that fails
+on the reviewed commit (447dfee272) and passes now.
+
+- **P1 — a retained generation resolves to its own bytes, not to a reused legacy path.** G0
+  claims legacy `corpus/x.md`; G1 changes it; the refresh adopts G0's bytes as a version and
+  replaces `corpus/x.md` — adoption registers no locator, so `resolve_artifact` returned the
+  logical path, now holding G1's bytes (or nothing after a prune). Resolution now lets the
+  identity decide in both APIs: the canonical local version `artifacts/<stage>/…/<sha>` when this
+  machine holds it (registered or not), else the registered local locator, else the legacy path
+  (`PgReadView.resolve_artifacts` = `VersionedAccess.path` = the materializer's source). No
+  database state is needed, so snapshots already open resolve correctly too. Test: a
+  legacy-baseline G0, pinned, across its replacement (G1 re-clean + refresh), a prune (G2 +
+  refresh removing the file) and a fold of G0 — `read_generation(G0)` and `VersionedAccess` both
+  resolve to G0's bytes and every claim of G0 stays readable.
+- **P1 — same-size damage never costs the last intact original.** An existing address was
+  accepted by size; so an adoption "succeeded" against same-size damaged bytes and the refresh
+  then unlinked the intact source. Every existing address is now accepted only after a hash check
+  (`_check_existing`: single puts, adoptions, and group commits for versions that already existed
+  or were linked by someone else); a mismatch raises, nothing is overwritten, and the refresh fails
+  with the original in place and the stamp `refreshing`. Tests: put, adopt and commit against a
+  same-size damaged address (no database); the materialization case (PostgreSQL).
+- **P1 — reused directory chains are made durable.** A group commit that created fan-out
+  directories, linked and died before its final `syncfs` left directory entries that a later
+  single put or adoption (which found the directories) did not fsync — only the leaf directory
+  was. Publication now makes the whole chain durable: `_durable_chain(dir)` fsyncs every
+  directory's parent up to the data root, found or created, once per process (a per-process
+  cache of chains already made durable — directories are never removed, so it stays true); the
+  address's own directory is fsynced after every link or find. The staging barrier does the same
+  for each leaf (or one `syncfs` above 64 leaves). Test: an interrupted group publication, a
+  single-file retry in a "new process" (cache cleared), then a small referencing batch in another
+  one — an fsync spy sees leaf, both fan-out levels, the stage directory, `artifacts/` and the
+  root each time; and without a database, a second put under the same ancestors fsyncs only its
+  new leaf.
+- **P2 — the before-image is the actual preceding state.** The seal compared a claim with the
+  row named by the revision's own `before_sha256`, found in ANY put revision — so a revision (or
+  an unrelated, aborted run) could supply its own "unchanged" before-image. `nk_basis_text(run,
+  seq, key)` now reads the row visible at the batch's basis: the run's latest revision of the key
+  in an earlier batch, else the latest revision of a run promoted in (projection generation, the
+  run's parent], else the projection row; `before_sha256` is not consulted. Test (direct SQL
+  batches): a put naming its own digest, one naming an aborted run's identical row, one with no
+  before-image, and a new key "superseding" a row only the aborted run staged — all refused; an
+  honest unchanged claim still passes with no registration.
+- **P2 — references need a readable local locator, and verification never skips one.** An
+  identity located only as `object` was accepted by the reference trigger and the seal but
+  skipped by verification (an inner join on local locators). The reference trigger now requires
+  the canonical local locator; `unverified_run_artifacts` returns every reference with no
+  canonical local locator (locator None) as well as the unverified ones, and `verify_run` fails
+  them ("no readable local locator"). The stager already adds the local locator when a
+  registered identity lacks one and its file is on disk. Test: an object-only identity is
+  refused as a reference; one forced in (trigger disabled) fails the artifact gate and promotion.
+- **P2 — versioned cleaning is bounded.** `build_versioned` held the whole manifest, every
+  before-image, the task list and every patch, and staged only at the end. It now reads the
+  manifest a page at a time (key order), submits documents in chunks of `CLEAN_CHUNK` with at most
+  `workers × IN_FLIGHT_PER_WORKER` chunks in flight, makes each group of `GROUP_COMMIT` versions
+  durable and only then turns it into patches, and stages patches (and restricted-row clears) as
+  soon as `METADATA_BATCH_ROWS` are waiting. Memory: one page + the chunks in flight + one group +
+  one batch, whatever the corpus size. Test: tiny page/chunk/group/batch sizes — metadata batches
+  are staged while documents are still being cleaned, every group is durable before its first
+  batch, no chunk exceeds its size, and the rows end up claiming held versions.
+- **Found while benchmarking the P2 fix: pending versions did not survive a process pool.**
+  `Pending` was a bare tuple subclass that pickling could not rebuild, so the cleaner's REAL
+  worker processes failed (the pipeline tests run workers in threads). It is a `NamedTuple` now;
+  a test round-trips it and cleans through a real `ProcessPoolExecutor`.
+- **`build_versioned` benchmark** (`python tests/test_artifacts_bench.py --clean --rows N`, one
+  size per process; every document needs cleaning under the production ruleset; 8 workers; NVMe):
+
+  | documents | `build_versioned` (clean + group commits + staged batches) | artifact gate | peak RSS of the process |
+  |---|---|---|---|
+  | 20 000 | 6.9 s | 1.4 s | 320 MB |
+  | 200 000 | 71 s | 8.9 s | 323 MB |
+  | 1 620 000 | 609 s (≈ 2 660 docs/s) | 74 s | 338 MB |
+
+  Peak RSS is flat in the corpus size (≈ 270 MB above the idle process, most of it one 20 000-row
+  staged batch in the broker thread and one 10 000-row manifest page); the old version held the
+  whole manifest and every patch.
+
+- **Disk.** Nothing is deleted before stage 5's reference-checked collection. The first versioned
+  full clean writes every cleaned document once more into `artifacts/corpus/` — about 77 GB for
+  today's corpus (1.2 TiB free on the corpus disk); legacy `corpus/` files are adopted by hard link
+  (no copy) when the materialization first replaces them. Later rounds add only what changed.
+- **Step-3 benchmark re-run** after the fixes (1.62M documents, same host and disk): unchanged
+  within noise — `put_bytes` 10 KB p50 3.3 ms, an already-present version (now hash-checked)
+  1.4 ms, group commit of 5 000 0.49 s, loader checkpoint versioned/unchecked 33/16 ms, cleaner
+  batch of 20 000 versioned/unchecked 4.8/1.8 s, gate 1.3 s per 20 000, promotion 4.4 ms,
+  materialization full 25.6 s / incremental 0.80 s / no-op 0.024 s, peak RSS 225 MB.
+- **Gates**: full suite 1186 passed / 148 skipped (PG skipped), with PostgreSQL (`nekaise_test`)
+  1362 passed / 2 skipped (the two opt-in benchmarks); `py_compile scripts/*.py` clean. Nothing
+  ran against the live schema or checkout.

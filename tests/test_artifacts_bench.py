@@ -174,6 +174,86 @@ def run(dsn: str, n: int) -> dict:
         shutil.rmtree(root, ignore_errors=True)
 
 
+CLEAN_RULES = "toc_leaders,patent_id_soup,patent_furniture,site_chrome,ocr_debris,code_annotations"
+
+
+def _text(i: int) -> bytes:
+    return (f"# Building energy study {i}\n\nsource: https://e.org/doc-{i:08d}.pdf\nlicense: open\n"
+            f"topic: building_energy\n\n---\n\nPage {i % 300}\nHeat pump sizing {i} .......... 4\n"
+            f"Real prose about HVAC and ventilation in building {i}. ").encode() * 3
+
+
+def clean_run(dsn: str, n: int, workers: int = 8) -> dict:
+    """clean_corpus.build_versioned itself over n documents whose (legacy) text files all need
+    cleaning under the production ruleset, inside a versioned staged run: wall time and the
+    process's peak RSS (run one size per process to compare peaks)."""
+    import clean_corpus
+    import store_broker
+    import store_pg
+    if re.search(r"dbname=nekaise(\s|$)", dsn):
+        raise SystemExit("refusing the live database: benchmark against nekaise_test")
+    base = Path(os.environ.get("NEKAISE_BENCH_DIR",
+                               Path(__file__).resolve().parents[1] / "workspace"))
+    root = base / f"nekaise-cbench-{uuid.uuid4().hex[:8]}"
+    (root / "registry").mkdir(parents=True)
+    (root / "registry" / "backends.json").write_text(json.dumps(
+        {"find_books": {"script": "find_books.py", "args": []}}))
+    (root / "registry" / "eligibility.json").write_text(json.dumps(
+        {"version": 1, "restrictions": {}}))
+    (root / "registry" / "host_policy.json").write_text(json.dumps({"version": 1, "hosts": {}}))
+    (root / "text").mkdir()
+    schema = f"cbench_{uuid.uuid4().hex[:10]}"
+    st = store_pg.PgStore(root, dsn=dsn, schema=schema)
+    report = {"rows": n, "workers": workers}
+    try:
+        st.pin_config_from_files()
+        import hashlib
+        import store
+        t0 = time.monotonic()
+        with st._connect() as conn:
+            with conn.cursor() as cur:
+                with cur.copy("COPY manifest (id, row_text, url_norm, url_key, title_norm, "
+                              "title_key, sha256, shard, topic_key) FROM STDIN") as cp:
+                    for i in range(n):
+                        data = _text(i)
+                        (root / "text" / f"doc-{i:08d}.md").write_bytes(data)
+                        r = {**_row(i), "text_sha256": hashlib.sha256(data).hexdigest()}
+                        shard, topic, _ = store.legacy_manifest_key(r)
+                        cp.write_row((r["id"], store.canonical_row(r), *store_pg._keys_for(r),
+                                      r["sha256"], shard, topic))
+            conn.commit()
+            conn.execute("ANALYZE")
+        report["populate_s"] = round(time.monotonic() - t0, 1)
+        run_id = f"cbench-{uuid.uuid4().hex[:8]}"
+        rss0 = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+        with st.writer(round_id=run_id) as w:
+            with store_broker.staged_round(st, w, run_id, producer_commit=SHA,
+                                           extractor_version="x1",
+                                           cleaning_ruleset=CLEAN_RULES) as rnd:
+                os.environ.update({**rnd.broker.env(), "NEKAISE_STORE": "postgres",
+                                   "NEKAISE_PG_DSN": dsn, "NEKAISE_PG_SCHEMA": schema,
+                                   "NEKAISE_RUN_ID": run_id})
+                clean_corpus.HERE = root
+                sys.argv = ["clean_corpus.py", "--workers", str(workers)]
+                t0 = time.monotonic()
+                clean_corpus.main()
+                report["build_versioned_s"] = round(time.monotonic() - t0, 1)
+                rnd.freeze(["artifacts"])
+                t0 = time.monotonic()
+                result = rnd.verify_artifacts()
+                report["artifact_gate_s"] = round(time.monotonic() - t0, 1)
+                report["verified"] = result["verified"]
+                rnd.promote()
+        report["peak_rss_mb_before"] = round(rss0 / 1024)
+        report["peak_rss_mb"] = round(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024)
+        return report
+    finally:
+        for k in ("NEKAISE_STORE", "NEKAISE_PG_DSN", "NEKAISE_PG_SCHEMA", "NEKAISE_RUN_ID"):
+            os.environ.pop(k, None)
+        st.drop()
+        shutil.rmtree(root, ignore_errors=True)
+
+
 @pytest.mark.skipif(not (os.environ.get("NEKAISE_PG_BENCH") and
                          os.environ.get("NEKAISE_PG_TEST_DSN")),
                     reason="benchmark: set NEKAISE_PG_BENCH=1 and NEKAISE_PG_TEST_DSN")
@@ -187,8 +267,15 @@ def test_artifacts_benchmark():
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--rows", type=int, default=200_000)
+    ap.add_argument("--clean", action="store_true",
+                    help="benchmark clean_corpus.build_versioned alone over --rows documents "
+                         "(one size per process: its peak RSS is the process's)")
+    ap.add_argument("--workers", type=int, default=8)
     ap.add_argument("--dsn", default=os.environ.get("NEKAISE_PG_TEST_DSN",
                                                     "host=/home/zengp/.local/share/nekaise-pg/run "
                                                     "dbname=nekaise_test"))
     args = ap.parse_args()
-    print(json.dumps(run(args.dsn, args.rows), indent=1, default=str))
+    if args.clean:
+        print(json.dumps(clean_run(args.dsn, args.rows, args.workers), indent=1))
+    else:
+        print(json.dumps(run(args.dsn, args.rows), indent=1, default=str))

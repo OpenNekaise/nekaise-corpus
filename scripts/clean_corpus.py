@@ -763,7 +763,94 @@ def versioned_fresh(row: dict, access, tag: str) -> bool:
             and access.local.has("corpus", row["corpus_sha256"]))
 
 
+def _clean_many_versioned(tasks: list[tuple]) -> list[tuple]:
+    """A chunk of _clean_one_versioned tasks (one pool submission)."""
+    return [_clean_one_versioned(t) for t in tasks]
+
+
+# tasks per pool submission, and submissions in flight per worker (bounds the parent's memory)
+CLEAN_CHUNK = 64
+IN_FLIGHT_PER_WORKER = 4
+
+
+class _VersionedBuild:
+    """build_versioned's state, bounded whatever the corpus size: one manifest page, at most
+    workers x IN_FLIGHT_PER_WORKER x CLEAN_CHUNK documents being cleaned, one group of at most
+    GROUP_COMMIT cleaned versions awaiting durability and at most METADATA_BATCH_ROWS patches
+    (or restricted ids) awaiting their batch. A group's versions are made durable BEFORE its
+    rows are patched; the patches are staged as soon as a batch is full."""
+
+    def __init__(self, session, access, rules, tag):
+        self.session, self.access, self.rules, self.tag = session, access, rules, tag
+        self.stats: Counter = Counter()
+        self.attribution: Counter = Counter()
+        self.mismatched: list[str] = []
+        self.group: list[tuple] = []          # (row's before-image fields, result)
+        self.patches: dict[str, dict] = {}
+        self.cleared: list[str] = []
+        self.n_meta = self.n_restricted = 0
+        self.patched = self.cleared_total = 0
+
+    def result(self, before: dict, res: tuple) -> None:
+        sid, chars, attr, status, pending, source = res
+        if before["text_sha256"] not in (None, source):
+            # the text payload does not hold the identity its row claims: surface it
+            self.stats["text-mismatch"] += 1
+            if len(self.mismatched) < 5:
+                self.mismatched.append(sid)
+            return
+        self.stats[status] += 1
+        self.group.append((before, res))
+        if len(self.group) >= GROUP_COMMIT:
+            self.commit_group()
+
+    def commit_group(self) -> None:
+        """Make the group's cleaned versions durable (two syncs), then — only then — let their
+        rows claim them."""
+        if not self.group:
+            return
+        self.access.local.commit([res[4] for _, res in self.group])
+        for before, (sid, chars, attr, _status, pending, source) in self.group:
+            new = {"corpus_path": f"corpus/{sid}.md", "corpus_chars": chars,
+                   "corpus_sha256": pending.sha256, "cleaner_version": self.tag,
+                   "corpus_source_sha256": source}
+            patch = {f: new[f] for f in registry.CORPUS_FIELDS
+                     if f not in before["fields"] or not _same_value(before["fields"][f], new[f])}
+            if patch:
+                self.patches[sid] = patch
+            self.attribution.update(attr)
+        self.group.clear()
+        if len(self.patches) >= METADATA_BATCH_ROWS:
+            self.flush_patches()
+
+    def flush_patches(self) -> None:
+        ids = list(self.patches)
+        for start in range(0, len(ids), METADATA_BATCH_ROWS):
+            part = ids[start:start + METADATA_BATCH_ROWS]
+            self.n_meta += 1
+            with self.session.batch(f"meta-{self.n_meta:04d}") as b:
+                b.update_manifest_fields({sid: self.patches[sid] for sid in part})
+            self.patched += len(part)
+        self.patches = {}
+
+    def clear(self, sid: str) -> None:
+        self.cleared.append(sid)
+        if len(self.cleared) >= METADATA_BATCH_ROWS:
+            self.flush_cleared()
+
+    def flush_cleared(self) -> None:
+        if self.cleared:
+            self.n_restricted += 1
+            with self.session.batch(f"restricted-{self.n_restricted:04d}") as b:
+                b.update_manifest_fields({sid: {} for sid in self.cleared},
+                                         unset=registry.CORPUS_FIELDS)
+            self.cleared_total += len(self.cleared)
+            self.cleared = []
+
+
 def build_versioned(session, access, args) -> None:
+    import host_policy
+    from concurrent.futures import FIRST_COMPLETED, wait
     prov = artifact_store.run_policy(session.view)
     pinned = parse_rules(prov["cleaning_ruleset"])
     if args.rules != "stamp" and parse_rules(args.rules) != pinned:
@@ -773,69 +860,74 @@ def build_versioned(session, access, args) -> None:
     stamp_now = ",".join(rules) if rules else "none"
     tag = cleaner_tag(stamp_now)
     restrictions, policy = store.pinned_policy(session.view)
-    rows = list(corpus_stats.iter_manifest(session.view))
-    eligible, _ = registry.partition_manifest_ok_rows(rows, restrictions)
-    restricted = [r for r in rows if registry.restriction_for(r, restrictions) is not None]
-    import host_policy
-    todo = [r for r in eligible if r.get("text_path") and not (
-        policy and host_policy.suspended(r.get("url") or "", policy)
-        and not access.exists(r, "text"))]
     access.local.sweep_incoming()
+    job = _VersionedBuild(session, access, rules, tag)
+    workers = max(1, args.workers)
+    limit = workers * IN_FLIGHT_PER_WORKER
+    chunk: list[tuple] = []
+    chunk_before: list[dict] = []
+    in_flight: dict = {}   # future -> the before-images of its documents
 
-    stats: Counter = Counter()
-    attribution: Counter = Counter()
-    before = {r["id"]: {f: r[f] for f in registry.CORPUS_FIELDS if f in r} for r in todo}
-    cleared = [r["id"] for r in restricted if any(f in r for f in registry.CORPUS_FIELDS)]
-    by_id = {r["id"]: r for r in todo}
-    tasks = []
-    for r in todo:
-        if not args.force and versioned_fresh(r, access, tag):
-            stats["up-to-date"] += 1
-            continue
-        src = access.path(r, "text")
-        if src is None:
-            stats["missing-text"] += 1
-            continue
-        tasks.append((r["id"], str(src), rules, str(access.root), os.getpid()))
-    mismatched: list[str] = []
-    group: list[tuple] = []
+    def drain(block_until: int) -> None:
+        while len(in_flight) > block_until:
+            done, _ = wait(in_flight, return_when=FIRST_COMPLETED)
+            for fut in done:
+                befores = in_flight.pop(fut)
+                for before, res in zip(befores, fut.result()):
+                    job.result(before, res)
 
-    def commit_group() -> None:
-        """Make a group of cleaned versions durable (two syncs), then — only then — let the rows
-        claim them."""
-        access.local.commit([g[3] for g in group])
-        for sid, chars, attr, pending, source in group:
-            row = by_id[sid]
-            row["corpus_path"] = f"corpus/{sid}.md"
-            row["corpus_chars"] = chars
-            row["corpus_sha256"] = pending.sha256
-            row["cleaner_version"] = tag
-            row["corpus_source_sha256"] = source
-            attribution.update(attr)
-        group.clear()
+    with ProcessPoolExecutor(max_workers=workers) as pool:
+        def submit() -> None:
+            nonlocal chunk, chunk_before
+            if chunk:
+                in_flight[pool.submit(_clean_many_versioned, chunk)] = chunk_before
+                chunk, chunk_before = [], []
+                drain(limit)
 
-    with ProcessPoolExecutor(max_workers=max(1, args.workers)) as pool:
-        for sid, chars, attr, status, pending, source in pool.map(_clean_one_versioned, tasks,
-                                                                  chunksize=64):
-            if by_id[sid].get("text_sha256") not in (None, source):
-                # the text payload does not hold the identity its row claims: surface it
-                stats["text-mismatch"] += 1
-                mismatched.append(sid)
-                continue
-            stats[status] += 1
-            group.append((sid, chars, attr, pending, source))
-            if len(group) >= GROUP_COMMIT:
-                commit_group()
-    commit_group()
-    patches = corpus_patches(todo, before)
-    batches = commit_metadata(session, patches, cleared)
+        cursor = None
+        while True:   # one manifest page at a time, in key order
+            page = session.view.scan(store.Table.MANIFEST, cursor=cursor, limit=store.MAX_PAGE)
+            for r in page.rows:
+                if registry.restriction_for(r, restrictions) is not None:
+                    job.stats["restricted"] += 1
+                    if any(f in r for f in registry.CORPUS_FIELDS):
+                        job.clear(r["id"])
+                    continue
+                if r.get("status") != "ok" or not r.get("text_path"):
+                    continue
+                if policy and host_policy.suspended(r.get("url") or "", policy) \
+                        and not access.exists(r, "text"):
+                    continue   # locally unavailable, suspended host
+                if not args.force and versioned_fresh(r, access, tag):
+                    job.stats["up-to-date"] += 1
+                    continue
+                src = access.path(r, "text")
+                if src is None:
+                    job.stats["missing-text"] += 1
+                    continue
+                chunk.append((r["id"], str(src), rules, str(access.root), os.getpid()))
+                chunk_before.append({"text_sha256": r.get("text_sha256"), "fields": {
+                    f: r[f] for f in registry.CORPUS_FIELDS if f in r}})
+                if len(chunk) >= CLEAN_CHUNK:
+                    submit()
+            if page.next_cursor is None:
+                break
+            cursor = page.next_cursor
+        submit()
+        drain(0)
+    job.commit_group()
+    job.flush_patches()
+    job.flush_cleared()
+    stats = job.stats
     print(f"versioned clean (run {prov['run']}, ruleset {stamp_now}): {stats['written']} "
           f"written | {stats['up-to-date']} up-to-date | {stats['missing-text']} missing text | "
           f"{stats['text-mismatch']} text payloads not matching their identity"
-          + (f" (e.g. {mismatched[:5]})" if mismatched else ""))
-    print(f"policy restricted: {len(restricted)} rows | {len(cleared)} manifest rows cleared")
-    print(f"manifest: {len(patches)} rows patched in {batches} batch(es); corpus/ is refreshed "
-          "from the promoted generation (scripts/materialize.py)")
+          + (f" (e.g. {job.mismatched})" if job.mismatched else ""))
+    print(f"policy restricted: {stats['restricted']} rows | {job.cleared_total} manifest rows "
+          "cleared")
+    print(f"manifest: {job.patched} rows patched in {job.n_meta + job.n_restricted} batch(es); "
+          "corpus/ is refreshed from the promoted generation (scripts/materialize.py)")
+    attribution = job.attribution
     if attribution:
         tot = sum(attribution.values())
         print(f"removed {tot/1e6:.2f}M chars this run:")
