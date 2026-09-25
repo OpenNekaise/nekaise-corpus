@@ -4,6 +4,7 @@ Discovery cursors advance before the fetch, so a challenge-failed candidate that
 removes is never rediscovered. The loader marks such rows `transient`; the pruner keeps them for
 a bounded retry window and never blocklists them.
 """
+import json
 import sys
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
@@ -165,7 +166,7 @@ def test_standalone_prune_ignores_any_handoff_file(monkeypatch, tmp_path):
 @pytest.mark.parametrize(
     "content",
     [None, "not json", '{"run_id": null, "ids": []}', '{"run_id": "", "ids": []}',
-     '{"run_id": rid("run-1")}', '[rid("run-1")]'],
+     json.dumps({"run_id": rid("run-1")}), json.dumps([rid("run-1")])],
 )
 def test_round_prune_fails_closed_on_missing_or_corrupt_handoff(monkeypatch, tmp_path, content):
     path = tmp_path / "fetch-deferred.json"
