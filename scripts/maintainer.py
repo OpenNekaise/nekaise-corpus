@@ -110,13 +110,13 @@ class MaintenanceBusy(RuntimeError):
 
 
 # The store writer of the open maintenance window (this process holds the round lock), if any.
-_WINDOW_WRITER = None  # (store, writer token) while a window is open
+_WINDOW_WRITER = None  # (store, writer token, staged) while a window is open
 
 
 @contextmanager
-def window_writer(st, writer):
+def window_writer(st, writer, staged: bool = False):
     global _WINDOW_WRITER
-    previous, _WINDOW_WRITER = _WINDOW_WRITER, (st, writer)
+    previous, _WINDOW_WRITER = _WINDOW_WRITER, (st, writer, staged)
     try:
         yield writer
     finally:
@@ -139,14 +139,105 @@ def exported_env(values: dict[str, str]):
                 os.environ[key] = value
 
 
+@contextmanager
+def hidden_env(*names: str):
+    """Remove `names` from this process's environment for the block, restoring them after."""
+    saved = {k: os.environ.pop(k) for k in names if k in os.environ}
+    try:
+        yield
+    finally:
+        os.environ.update(saved)
+
+
 def open_file_store(what: str):
     """The store the host authority record selects (scripts/store_authority.py), which must be
-    the file store: the window, its broker and round recovery are still the legacy file path.
-    Any other authority raises (AuthorityError), never falls back."""
+    the file store (legacy callers). Any other authority raises (AuthorityError)."""
     import store_authority
     st = store.open(root=ROOT)
     store_authority.require_file_authority(st, f"maintainer ({what})")
     return st
+
+
+def open_store(what: str):
+    """(store, staged): the store the host authority record selects — the file store (the
+    legacy window, broker and snapshot recovery), or, only when the record makes PostgreSQL
+    authoritative, the PostgreSQL store (staged runs: ADR 0001 stage 4 step 4). An unbound
+    PostgreSQL store raises (AuthorityError), never falls back."""
+    import staged_runs
+    import store_authority
+    st = store.open(root=ROOT)
+    if staged_runs.staged_authority(st):
+        return st, True
+    store_authority.require_file_authority(st, f"maintainer ({what})")
+    return st, False
+
+
+def is_staged() -> bool:
+    """The open window's store is PostgreSQL-authoritative."""
+    return _WINDOW_WRITER is not None and _WINDOW_WRITER[2]
+
+
+class Window:
+    """A held maintenance window: its writer, the broker its children write through (None when
+    it serves none), and — under PostgreSQL authority, in the action phase — the maintenance
+    run those children stage into (a store_broker.StagedRound).
+
+    drain(): stop accepting mutations and wait for the executing one (cancellation-safe).
+    conclude(ok): the window's outcome, decided once, after draining and before settled state is
+    judged. File store: nothing more (every batch was its own transaction). Staged run: `ok` and
+    something staged -> freeze, the standalone gates against the frozen state, promotion and its
+    completion; otherwise abort (unpromoted runs default to abort). Returns what happened."""
+
+    def __init__(self, st, writer, broker, run=None, staged=False, window_id=""):
+        self.st, self.writer, self.broker, self.run = st, writer, broker, run
+        self.staged, self.window_id = staged, window_id
+        self.outcome: dict | None = None
+
+    def drain(self) -> None:
+        if self.broker is not None:
+            self.broker.drain()
+
+    def conclude(self, ok: bool) -> dict:
+        self.drain()
+        if self.outcome is not None:
+            return self.outcome
+        # this process itself reads committed state from here on: the run's pin and broker are
+        # exported for the window's children only
+        with hidden_env(store_broker.BROKER_ENV, store_broker.CAP_ENV, store_broker.ROUND_ENV,
+                        store_broker.ATTEMPT_ENV, "NEKAISE_STORE_STAGE"):
+            return self._conclude(ok)
+
+    def _conclude(self, ok: bool) -> dict:
+        import staged_runs
+        import store_staging
+        if self.run is None:
+            self.outcome = {"run": None}
+            return self.outcome
+        run_id = self.run.run.run_id
+        self.outcome = {"run": run_id, "status": "aborted"}
+        status = store_staging.run_status(self.st, self.writer, run_id)
+        if status is None or status["status"] != "open":
+            self.outcome = {"run": run_id, "status": None if status is None else status["status"]}
+            return self.outcome
+        if not ok or status["staged_seq"] == 0:
+            reason = "no-op: nothing staged" if ok else "the maintenance action did not succeed"
+            self.st.abort_run(self.writer, run_id, reason=reason)
+            self.outcome["reason"] = reason
+            return self.outcome
+        self.run.freeze(list(staged_runs.STANDALONE_GATES))
+        try:
+            staged_runs.run_gates(self.run, ROOT, staged_runs.STANDALONE_GATES)
+        except staged_runs.GateFailed as exc:
+            self.st.abort_run(self.writer, run_id, reason=f"gates: {exc}"[:500])
+            self.outcome["reason"] = str(exc)
+            return self.outcome
+        generation = self.run.promote()
+        self.outcome = {"run": run_id, "status": "promoted", "generation": generation}
+        try:
+            staged_runs.after_promotion(self.st, self.writer, ROOT)
+        except Exception as exc:   # the repair stands; recovery completes it
+            self.outcome["completion_error"] = str(exc)
+        return self.outcome
 
 
 @contextmanager
@@ -158,7 +249,7 @@ def maintenance_window(phase: str):
     request.write_text(f"{os.getpid()} {phase} {utc_now().isoformat()}\n")
     try:
         with ExitStack() as locks:
-            st = open_file_store("the maintenance window")
+            st, staged = open_store("the maintenance window")
             try:
                 locks.enter_context(ops.named_lock("continuous-dig", timeout=wait))
                 remaining = max(0, wait - (time.monotonic() - started))
@@ -166,23 +257,62 @@ def maintenance_window(phase: str):
                 # child inherits read access (ops.named_lock exports it), and the window's broker
                 # below gives children write access, so an agent's prune/rotation/blocklist
                 # mutation runs as a store transaction instead of waiting on this very lock.
+                # (PostgreSQL: the database's writer lock; children stage into the window's run.)
                 writer = locks.enter_context(st.writer(timeout=remaining))
             except RuntimeError as exc:
                 raise MaintenanceBusy(str(exc)) from exc
-            locks.enter_context(window_writer(st, writer))
+            locks.enter_context(window_writer(st, writer, staged))
             window_id = f"maint-{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}-{phase}"
-            broker = store_broker.Broker(st, writer, window_id)
-            locks.enter_context(broker.serving())
-            locks.enter_context(exported_env(broker.env()))
+            if staged:
+                window = locks.enter_context(_staged_window(st, writer, window_id, phase))
+            else:
+                broker = store_broker.Broker(st, writer, window_id)
+                locks.enter_context(broker.serving())
+                locks.enter_context(exported_env(broker.env()))
+                window = Window(st, writer, broker, window_id=window_id)
             request.unlink(missing_ok=True)
             acquired = time.monotonic()
             print(f"Maintenance {phase}: acquired growth locks after {acquired - started:.1f}s", flush=True)
             try:
-                yield broker
+                yield window
             finally:
                 print(f"Maintenance {phase}: released growth locks after {time.monotonic() - acquired:.1f}s", flush=True)
     finally:
         request.unlink(missing_ok=True)
+
+
+@contextmanager
+def _staged_window(st, writer, window_id: str, phase: str):
+    """The PostgreSQL window: the snapshot phase serves no broker (nothing may mutate while
+    evidence is taken); the action phase first recovers any run a round left unfinished while
+    the models deliberated (the shared routine), then opens ONE maintenance run whose staged
+    broker the agent's store mutations go through. Leaving the window without a conclusion
+    aborts that run (store_broker.staged_round recovers it by its durable status)."""
+    import staged_runs
+    if phase != "action":
+        yield Window(st, writer, None, staged=True, window_id=window_id)
+        return
+    for out in round_recovery.recover_staged(st, writer, None, root=ROOT, finish=False,
+                                             reason="recovered by the maintainer's action window"):
+        ops.run_event(out.run_id, "run_recovered", recovered_by="ai_maintainer",
+                      action=out.action, status=out.status)
+    try:
+        staged_runs.refuse_unfinished(st, writer)
+        ident = staged_runs.identity(st, ROOT)
+    except Exception as exc:
+        print(f"Maintenance action: no maintenance run ({exc}); store mutations are refused in "
+              "this window", flush=True)
+        yield Window(st, writer, None, staged=True, window_id=window_id)
+        return
+    with store_broker.staged_round(st, writer, window_id, kind="maintenance",
+                                   producer_commit=ident.producer_commit,
+                                   extractor_version=ident.extractor_version,
+                                   cleaning_ruleset=ident.cleaning_ruleset,
+                                   config_documents=ident.config) as rnd:
+        window = Window(st, writer, rnd.broker, rnd, staged=True, window_id=window_id)
+        with exported_env(rnd.broker.env()):
+            yield window
+        window.conclude(ok=False)   # a window left without a conclusion aborts its run
 
 
 @contextmanager
@@ -298,7 +428,25 @@ def recover_pending_round() -> str | None:
     the canonical round lock: the open maintenance window's writer, or (outside a window) a
     writer taken here. Stops the round's orphaned processes, resolves store transactions, keeps a
     round that already committed (discarding its snapshot) or restores its snapshot, settles its
-    prune quarantine, then discards the snapshot. Raises, keeping the snapshot, on any failure."""
+    prune quarantine, then discards the snapshot. Raises, keeping the snapshot, on any failure.
+
+    PostgreSQL authority: the staged form of the same routine (round_recovery.recover_staged)
+    over every unfinished run — orphans stopped, durable status decides (promoted stands,
+    unpromoted is aborted), temporaries swept, the current generation's completion caught up.
+    Returns the recovered run ids (comma-separated) or None."""
+    with ExitStack() as stack:
+        if _WINDOW_WRITER is not None:
+            st, writer, staged = _WINDOW_WRITER
+        else:
+            st, staged = open_store("round recovery")
+            writer = stack.enter_context(st.writer(timeout=0)) if staged else None
+        if staged:
+            outcomes = round_recovery.recover_staged(
+                st, writer, None, root=ROOT, reason="recovered by the maintainer")
+            for out in outcomes:
+                ops.run_event(out.run_id, "run_recovered", recovered_by="ai_maintainer",
+                              action=out.action, status=out.status)
+            return ", ".join(o.run_id for o in outcomes) or None
     pending = ops.StateSnapshot.pending()
     if not pending:
         return None
@@ -307,7 +455,7 @@ def recover_pending_round() -> str | None:
     run_id = pending[0]
     with ExitStack() as stack:
         if _WINDOW_WRITER is not None:
-            st, writer = _WINDOW_WRITER
+            st, writer, _ = _WINDOW_WRITER
         else:
             st = open_file_store("round recovery")
             writer = stack.enter_context(st.writer(timeout=0))
@@ -319,7 +467,14 @@ def recover_pending_round() -> str | None:
 
 
 def verify_recovered_corpus() -> None:
-    """Fail closed when restored tracked state disagrees with derived corpus files."""
+    """Fail closed when restored tracked state disagrees with derived corpus files. (PostgreSQL
+    authority: corpus/ must be a complete materialization of the current generation.)"""
+    if is_staged():
+        import staged_runs
+        if not staged_runs.materialization_current(_WINDOW_WRITER[0], ROOT):
+            raise RuntimeError("post-recovery check failed: corpus/ is not a complete "
+                               "materialization of the current generation")
+        return
     with tempfile.TemporaryDirectory(prefix="maintainer-check-") as directory:
         stdout = Path(directory) / "stdout"
         stderr = Path(directory) / "stderr"
@@ -560,7 +715,7 @@ def backend_control_state() -> tuple[dict[str, Any], dict[str, Any], str]:
     try:
         with ExitStack() as stack:
             if _WINDOW_WRITER is not None:
-                st, writer = _WINDOW_WRITER
+                st, writer, _ = _WINDOW_WRITER
                 view = stack.enter_context(st.read(writer=writer))
             else:
                 view = stack.enter_context(store.open(root=ROOT).read(timeout=0))
@@ -622,7 +777,75 @@ def repo_snapshot(
         "backend_health": backend_health,
         "recent_run_events": recent_events,
         "recent_dig_logs": [str(path.relative_to(ROOT)) for path in recent_logs],
+        **({"store": staged_evidence()} if is_staged() else {}),
     }
+
+
+# How long a triage pin keeps its generation reconstructible if the maintainer never releases it
+# (it dies): the lock wait plus the triage, review and action budgets, rounded up.
+TRIAGE_PIN_HOURS = 8
+
+
+def staged_evidence() -> dict[str, Any]:
+    """PostgreSQL authority: the store facts the models judge (read under the window's writer):
+    the current generation, the projection and materialization it is folded / materialized to,
+    and the runs left unfinished. Failures are reported, never hidden."""
+    import materialize
+    import store_staging
+    st, writer, _ = _WINDOW_WRITER
+    try:
+        with st.read(writer=writer) as view:
+            generation = view.generation
+            provenance = view.provenance()
+        unfinished = [{"run_id": r["run_id"], "status": r["status"], "kind": r["kind"],
+                       "parent_generation": r["parent_generation"]}
+                      for r in store_staging.unfinished_runs(st, writer)]
+        stamp = materialize.read_stamp(ROOT / "corpus") or {}
+        return {"authority": "postgres", "generation": generation,
+                "cleaning_ruleset": (provenance or {}).get("cleaning_ruleset"),
+                "unfinished_runs": unfinished,
+                "materialization": {k: stamp.get(k) for k in ("state", "generation", "mode")}}
+    except Exception as exc:
+        return {"authority": "postgres", "error": f"{type(exc).__name__}: {exc}"[:500]}
+
+
+def pin_triage_generation(holder: str) -> int | None:
+    """Triage pins the generation it judges (without holding growth locks afterwards): the fold
+    keeps it reconstructible (store_staging.read_generation) until the action releases the pin,
+    or TRIAGE_PIN_HOURS pass. None: not PostgreSQL, or no generation yet."""
+    if not is_staged():
+        return None
+    import store_staging
+    st, writer, _ = _WINDOW_WRITER
+    with st.read(writer=writer) as view:
+        generation = view.generation
+    if generation is None:
+        return None
+    until = (utc_now() + timedelta(hours=TRIAGE_PIN_HOURS)).isoformat()
+    store_staging.pin_generation(st, writer, generation, holder=holder,
+                                 reason="maintainer triage evidence", until=until)
+    return generation
+
+
+def release_triage_pin(holder: str, generation: int | None) -> None:
+    if generation is None or not is_staged():
+        return
+    import store_staging
+    st, writer, _ = _WINDOW_WRITER
+    store_staging.unpin_generation(st, writer, generation, holder=holder)
+
+
+def staged_block_reasons() -> list[str]:
+    """PostgreSQL authority: settled-state reasons to block growth (read under the window's
+    writer; a failed read blocks)."""
+    import store_staging
+    st, writer, _ = _WINDOW_WRITER
+    try:
+        left = store_staging.unfinished_runs(st, writer)
+    except Exception as exc:
+        return [f"cannot read durable run status: {type(exc).__name__}: {exc}"[:300]]
+    return [f"{len(left)} unfinished staged run(s): {', '.join(r['run_id'] for r in left)}"] \
+        if left else []
 
 
 def block_reasons() -> list[str]:
@@ -648,6 +871,8 @@ def block_reasons() -> list[str]:
                 reasons.append(f"local main is {behind} commit(s) behind origin/main (ahead {ahead})")
         except ValueError:
             pass
+    if is_staged():
+        reasons.extend(staged_block_reasons())
     return reasons
 
 
@@ -730,10 +955,17 @@ def run_maintenance() -> int:
         snapshot = repo_snapshot(
             fetch_result, automatic_recovery=recovered, automatic_recovery_error=recovery_error,
         )
+        pin_holder = f"maintainer-{run_id}"
+        try:
+            snapshot["triage_generation"] = pin_triage_generation(pin_holder)
+        except Exception as exc:
+            snapshot["triage_generation"] = None
+            snapshot["triage_pin_error"] = f"{type(exc).__name__}: {exc}"[:300]
         reasons = update_growth_block()
     (run_dir / "repo-snapshot.json").write_text(json.dumps(snapshot, indent=2) + "\n")
 
-    triage_prompt = render("triage.md") + "\n\n<repository_snapshot>\n" + json.dumps(snapshot, indent=2) + "\n</repository_snapshot>\n"
+    staged_notes = render("staged.md") if "store" in snapshot else ""   # PostgreSQL authority
+    triage_prompt = render("triage.md") + staged_notes + "\n\n<repository_snapshot>\n" + json.dumps(snapshot, indent=2) + "\n</repository_snapshot>\n"
     triage_out = run_dir / "codex-triage.json"
     triage_events = run_dir / "codex-triage.events.jsonl"
     triage_errors = run_dir / "codex-triage.stderr.log"
@@ -814,13 +1046,17 @@ def run_maintenance() -> int:
                                         automatic_recovery_error=recovery_error)
         action_snapshot["triage_head"] = snapshot["head"]
         action_snapshot["changed_since_triage"] = action_snapshot["head"] != snapshot["head"]
+        if "store" in action_snapshot:   # code AND generation evidence are refreshed
+            action_snapshot["triage_generation"] = snapshot.get("triage_generation")
+            action_snapshot["changed_since_triage"] |= (
+                action_snapshot["store"].get("generation") != snapshot.get("triage_generation"))
         (run_dir / "action-snapshot.json").write_text(json.dumps(action_snapshot, indent=2) + "\n")
         action_prompt = render(
             "action.md",
             CODEX_TRIAGE=json.dumps(triage, indent=2),
             CLAUDE_REVIEW=claude_review,
             ACTION_SNAPSHOT=json.dumps(action_snapshot, indent=2),
-        )
+        ) + (render("staged.md") if "store" in action_snapshot else "")
         action_out = run_dir / "codex-action.txt"
         action_events = run_dir / "codex-action.events.jsonl"
         action_errors = run_dir / "codex-action.stderr.log"
@@ -828,6 +1064,7 @@ def run_maintenance() -> int:
             str(codex), "exec", "--ephemeral", "--sandbox", "danger-full-access", "--color", "never",
             "--output-last-message", str(action_out), "--json", "-C", str(ROOT), "-",
         ]
+        action_rc, status = None, "codex_action_interrupted"
         try:
             action_rc = run_command(
                 action_cmd, prompt=action_prompt, timeout=int(os.environ.get("CODEX_ACTION_TIMEOUT", "1800")),
@@ -841,9 +1078,14 @@ def run_maintenance() -> int:
         finally:
             # Killing a timed-out agent does not stop a transaction the window's broker is
             # executing for it: stop accepting and drain BEFORE judging settled state, still under
-            # both locks (drain defers an interrupt until it is done).
+            # both locks (drain defers an interrupt until it is done). A staged window then
+            # promotes its maintenance run (gated) or aborts it.
+            outcome = None
             try:
-                window.drain()
+                try:
+                    outcome = window.conclude(ok=action_rc == 0 and status == "action_completed")
+                finally:
+                    release_triage_pin(f"maintainer-{run_id}", snapshot.get("triage_generation"))
             finally:
                 reasons = update_growth_block()
         record({
@@ -853,6 +1095,7 @@ def run_maintenance() -> int:
             "triage": triage,
             "claude_status": claude_status,
             "growth_blocked": reasons,
+            **({"maintenance_run": outcome} if outcome and outcome.get("run") else {}),
         })
         print(f"Codex action: {status}; Claude: {claude_status}; growth block: {reasons or 'none'}")
         if action_out.exists():

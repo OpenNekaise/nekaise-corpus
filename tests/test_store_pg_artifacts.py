@@ -1248,8 +1248,8 @@ def test_a_v5_shadow_migrates_to_v6_and_keeps_replicating(tmp_path):
         before_digests = pg_shadow.pg_digests(old)
         auth = old.authority()
 
-        new = store_pg.PgStore(repo_.path, dsn=DSN, schema=schema)   # migrates 5 -> 6
-        assert q(new, "SELECT schema_version FROM state")[0][0] == 6
+        new = store_pg.PgStore(repo_.path, dsn=DSN, schema=schema)   # migrates 5 -> 6 (-> 7)
+        assert q(new, "SELECT schema_version FROM state")[0][0] == store_pg.SCHEMA_VERSION
         assert pg_shadow.pg_digests(new) == before_digests
         with new.read() as v:
             assert export_bytes(new, v, tmp_path / "v6") == before
@@ -1259,7 +1259,8 @@ def test_a_v5_shadow_migrates_to_v6_and_keeps_replicating(tmp_path):
         c3 = repo_.commit("c3")
         assert pg_shadow.do_sync(new, c3, repo_.path, log=quiet) == 1
         assert pg_shadow.do_verify(new, repo_.path, log=quiet)
-        with pytest.raises(store.StoreError, match="version 6, code expects 5"):
+        with pytest.raises(store.StoreError,
+                           match=f"version {store_pg.SCHEMA_VERSION}, code expects 5"):
             v5.PgStore(repo_.path, dsn=DSN, schema=schema)
         with pytest.raises(store.StoreError, match="restart with matching code"):
             with old.writer():

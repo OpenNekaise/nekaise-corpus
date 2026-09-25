@@ -22,6 +22,13 @@ already holds (its store writer). The order is fixed:
    round's final state, or the restored pre-round state);
 6. discard the snapshot — last, so any failure above leaves the round recoverable: the routine
    raises and the snapshot, the quarantine and the evidence stay for the next attempt.
+
+Under PostgreSQL authority (ADR 0001 stage 4 step 4; selected only by the host authority record)
+there is no snapshot and no commit: `recover_staged` is the same routine over durable run status —
+ownership (the caller's writer), stop the runs' processes, drain the broker, then the database
+decides: a promoted run stands (even after a lost reply) and its completion is finished, an
+unpromoted one is aborted (resuming is explicit: run_round.py --resume), an unknown outcome
+raises before anything is mutated; temporaries are swept.
 """
 from __future__ import annotations
 
@@ -351,3 +358,117 @@ def recover_round(st, writer, run_id: str, *, root: Path, snapshot_paths,
         ops.run_event(run_id, "prune_quarantine_settled", **out.quarantine)
     snap.discard()
     return out
+
+
+# --- staged runs (PostgreSQL authority, ADR 0001 stage 4 step 4) ------------------------------------
+
+@dataclass
+class StagedOutcome:
+    run_id: str
+    status: str | None            # the durable status found: open | frozen | promoted | aborted,
+                                  # None: the run was never opened (nothing was staged)
+    action: str                   # kept_promoted | aborted | already_aborted | not_opened
+    stopped: list = field(default_factory=list)
+    detail: dict = field(default_factory=dict)
+
+
+def sweep_run_temporaries(root: Path, run_id: str) -> int:
+    """Remove the temporary directories an interrupted round's process left in the workspace
+    (finder proposal directories: TemporaryDirectory cannot clean up after SIGKILL) — only the
+    named run's. Returns how many went; errors other than a missing workspace raise."""
+    import shutil
+    workspace = Path(root) / "workspace"
+    try:
+        entries = list(os.scandir(workspace))
+    except FileNotFoundError:
+        return 0
+    removed = 0
+    prefix = f"finder-proposals-{run_id}-"
+    for entry in entries:
+        if entry.name.startswith(prefix) and entry.is_dir(follow_symlinks=False):
+            shutil.rmtree(entry.path)
+            removed += 1
+    return removed
+
+
+def recover_staged(st, writer, run_id: str | None = None, *, root: Path,
+                   existing_descendants: set[int] | None = None, broker=None,
+                   grace: float = 2.0, reason: str = "recovered: its coordinator is gone",
+                   stop: bool = True, finish: bool = True) -> list[StagedOutcome]:
+    """Recover staged runs under `writer` (the caller holds the PostgreSQL writer: ownership is
+    acquired). The order is fixed:
+
+    1. which runs: `run_id`, or every open or frozen run (a durable query; a failure raises
+       before anything is touched);
+    2. stop their processes — the caller's new descendants and every live process tagged with
+       one of their run ids (orphans still downloading or cleaning) — unless `stop` is False
+       (the caller already did);
+    3. drain `broker` (the caller's, when it served the run) — always, even when stopping
+       failed: after this nothing can stage;
+    4. query each run's DURABLE status afresh and decide by it alone — a promoted run stands
+       (even when the promotion's reply was lost), an unpromoted one is aborted (the default:
+       resuming is explicit, run_round.py --resume), an aborted one needs nothing. A status that
+       cannot be read raises: an unknown database outcome never leads to a mutation;
+    5. sweep what the stopped processes left: artifact temporaries of dead writers and the
+       runs' finder proposal directories;
+    6. `finish`: complete the current generation (staged_runs.after_promotion: the corpus/
+       materialization and bounded fold/purge housekeeping) — idempotent, so a promoted run
+       whose completion was interrupted converges here.
+
+    Returns one outcome per run; emits run-ledger events. Any failure raises; the runs then keep
+    their durable status for the next attempt."""
+    import artifact_store
+    import staged_runs
+    import store_staging
+
+    root = Path(root)
+    if run_id is not None:
+        targets = [store._check_run_id(run_id)]
+    else:
+        targets = [r["run_id"] for r in store_staging.unfinished_runs(st, writer)]
+    stopped: dict[str, list] = {}
+    try:
+        if stop:
+            owned = set(existing_descendants) if existing_descendants is not None else None
+            for rid in targets:
+                stopped[rid] = stop_owned(rid, owned, grace)
+                owned = None   # the caller's descendants are stopped once
+                if stopped[rid]:
+                    ops.run_event(rid, "round_processes_stopped", pids=stopped[rid])
+            if not targets and owned is not None:
+                stop_processes(descendants(os.getpid()) - owned, grace)
+    finally:
+        if broker is not None:
+            broker.drain()
+    outcomes = []
+    for rid in targets:
+        run = store_staging.run_status(st, writer, rid)   # raises on any database failure
+        out = StagedOutcome(rid, None if run is None else run["status"], "not_opened",
+                            stopped.get(rid, []))
+        if run is None:
+            pass   # its opening never committed: nothing was staged under this id
+        elif run["status"] == "promoted":
+            out.action = "kept_promoted"
+            out.detail["generation"] = run["promoted_generation"]
+            ops.run_event(rid, "staged_run_kept", generation=run["promoted_generation"])
+        elif run["status"] == "aborted":
+            out.action = "already_aborted"
+        elif run["status"] in ("open", "frozen"):
+            store_staging.abort_run(st, writer, rid, reason=reason[:500])
+            after = store_staging.run_status(st, writer, rid)
+            if after is None or after["status"] != "aborted":
+                raise RecoveryError(f"run {rid} is {None if after is None else after['status']} "
+                                    "after aborting it")
+            out.action = "aborted"
+            ops.run_event(rid, "staged_run_aborted", was=run["status"], reason=reason[:500])
+        else:
+            raise RecoveryError(f"run {rid} has an unknown status {run['status']!r}")
+        out.detail["swept_proposals"] = sweep_run_temporaries(root, rid)
+        outcomes.append(out)
+    swept = artifact_store.LocalArtifacts(root).sweep_incoming()
+    finished = staged_runs.after_promotion(st, writer, root) if finish else None
+    for out in outcomes:
+        out.detail["swept_incoming"] = swept
+        if finished is not None:
+            out.detail["finish"] = finished
+    return outcomes

@@ -50,7 +50,7 @@ from store import (BackendState, ConfigSnapshot, Cursor, KnownHits, Page, Stage,
                    StoreError, Table, Version, VersionConflict, WriteView, WriterError,
                    WriterToken, canonical_row, key_digest, norm_title, norm_url)
 
-SCHEMA_VERSION = 6
+SCHEMA_VERSION = 7
 DEFAULT_DSN = "host=/home/zengp/.local/share/nekaise-pg/run dbname=nekaise"
 
 DDL = """
@@ -1691,7 +1691,407 @@ def _migrate_6(conn, schema):  # stage 4 step 3 artifacts: additive, see V6_DDL
     conn.execute(V6_DDL.format(s=schema))
 
 
-MIGRATIONS = {2: _migrate_2, 3: _migrate_3, 4: _migrate_4, 5: _migrate_5, 6: _migrate_6}
+# ADR 0001 stage 4, step 4: recovery and operational review. Created with a fresh schema or by
+# migration 7 (never re-run on open; a later revision ships as migration 8, ...). Additive: one
+# new column on runs (backfilled), new tables, functions and triggers; no projection row,
+# revision, receipt, event or watermark is rewritten.
+#
+#   runs.owner_epoch   the writer epoch that owns the run now: the opener's (backfilled from
+#                      writer_epoch for every existing run, set on insert) until an adoption
+#                      moves it. Every owner-only operation checks it (require_run_owner).
+#   run_adoptions      the immutable log of explicit resumes: a new writer epoch takes over an
+#                      open or frozen run ONLY when it is the current writer, the run's parent is
+#                      still the current generation, its producer commit, configuration set and
+#                      extractor version are the run's (checked against the row, never against
+#                      what the adopter claims alone), no batch is left requested except a
+#                      persisted one, and every artifact the run referenced has a verified
+#                      canonical local locator. Otherwise: abort and start a new run.
+#   purge_queue        aborted runs whose staging still has to be purged (bounded batches,
+#                      store_staging.purge_run); an abort queues its run (trigger), completion
+#                      dequeues it. Backfilled with every aborted run that still has staging.
+#   review_state       the generation-range review (scripts/generation_review.py): the contiguous
+#   review_verdicts    reviewed watermark, the endorsed watermark publication may reach, and the
+#                      open findings. A verdict covers exactly (reviewed_through, hi]; findings
+#                      withhold endorsement until a later verdict resolves them; an integrity
+#                      finding also blocks growth. Every verdict acknowledges the range's outbox
+#                      rows for consumer "review" and advances its watermark; the "publication"
+#                      consumer may never pass the endorsed generation. Backfilled from the review
+#                      consumer's existing acknowledgements (a legacy non-ok one refuses the
+#                      migration: it would need a finding to resolve).
+V7_DDL = r"""
+DO $d$ BEGIN
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_schema = '{s}'
+                   AND table_name = 'runs' AND column_name = 'owner_epoch') THEN
+        ALTER TABLE {s}.runs ADD COLUMN owner_epoch bigint;
+        -- the backfill touches final runs too, which the run guards refuse: off for this one
+        -- statement, inside the migration's transaction (ALTER TABLE holds the table exclusively
+        -- until it commits; a failure rolls the disable back)
+        ALTER TABLE {s}.runs DISABLE TRIGGER runs_guard;
+        ALTER TABLE {s}.runs DISABLE TRIGGER runs_artifact_policy;
+        UPDATE {s}.runs SET owner_epoch = writer_epoch;
+        ALTER TABLE {s}.runs ENABLE TRIGGER runs_artifact_policy;
+        ALTER TABLE {s}.runs ENABLE TRIGGER runs_guard;
+        ALTER TABLE {s}.runs ALTER COLUMN owner_epoch SET NOT NULL;
+    END IF;
+END $d$;
+
+CREATE TABLE IF NOT EXISTS {s}.run_adoptions (
+    run_id text COLLATE "C" NOT NULL REFERENCES {s}.runs,
+    owner_epoch bigint NOT NULL,
+    previous_epoch bigint NOT NULL,
+    status text NOT NULL CHECK (status IN ('open', 'frozen')),
+    parent_generation bigint,
+    producer_commit text COLLATE "C" NOT NULL,
+    config_digest text COLLATE "C" NOT NULL,
+    extractor_version text NOT NULL,
+    staged_seq int NOT NULL,
+    reason text NOT NULL CHECK (reason <> ''),
+    adopted_at timestamptz NOT NULL DEFAULT now(),
+    PRIMARY KEY (run_id, owner_epoch)
+);
+CREATE OR REPLACE FUNCTION {s}.nk_run_adoptions_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE r record; w bigint; head bigint; bad record;
+BEGIN
+    IF TG_OP <> 'INSERT' THEN
+        RAISE EXCEPTION 'nekaise: adoption %/% is immutable', OLD.run_id, OLD.owner_epoch
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    -- the run row lock serializes an adoption with every owner-only operation on the run
+    SELECT * INTO r FROM {s}.runs WHERE run_id = NEW.run_id FOR UPDATE;
+    SELECT writer_epoch INTO w FROM {s}.state;
+    SELECT current_generation INTO head FROM {s}.dataset;
+    IF r.status IS NULL OR r.status NOT IN ('open', 'frozen') OR NEW.status <> r.status THEN
+        RAISE EXCEPTION 'nekaise: run % is %: only an open or frozen run can be adopted',
+            NEW.run_id, COALESCE(r.status, 'unknown')
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.owner_epoch IS DISTINCT FROM w OR NEW.owner_epoch <= r.owner_epoch
+            OR NEW.previous_epoch IS DISTINCT FROM r.owner_epoch THEN
+        RAISE EXCEPTION 'nekaise: run % can only be adopted by the current writer (epoch %) '
+            'from its owner (epoch %)', NEW.run_id, w, r.owner_epoch
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF r.parent_generation IS DISTINCT FROM head
+            OR NEW.parent_generation IS DISTINCT FROM head THEN
+        RAISE EXCEPTION 'nekaise: run % was staged on generation %, the current generation is %: '
+            'it cannot be resumed (abort it and start a new run)', NEW.run_id,
+            r.parent_generation, head USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF (NEW.producer_commit, NEW.config_digest, NEW.extractor_version, NEW.staged_seq)
+            IS DISTINCT FROM (r.producer_commit, r.config_digest, r.extractor_version,
+                              r.staged_seq) THEN
+        RAISE EXCEPTION 'nekaise: run % was staged by other code, configuration or extractor '
+            '(or at another sequence): it cannot be resumed (abort it and start a new run)',
+            NEW.run_id USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    -- keyed probes over the run's own references (never a scan of the global tables)
+    SELECT ra.stage, ra.sha256 INTO bad FROM {s}.run_artifacts ra
+        WHERE ra.run_id = NEW.run_id AND NOT EXISTS (
+            SELECT 1 FROM {s}.artifact_locators l WHERE l.stage = ra.stage
+            AND l.sha256 = ra.sha256 AND l.kind = 'local'
+            AND l.locator = {s}.nk_local_locator(ra.stage, ra.sha256)
+            AND l.verified_at IS NOT NULL)
+        LIMIT 1;
+    IF FOUND THEN
+        RAISE EXCEPTION 'nekaise: run % references %/% without a verified local version: verify '
+            'its artifacts before resuming it', NEW.run_id, bad.stage, bad.sha256
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER run_adoptions_guard BEFORE INSERT OR UPDATE OR DELETE
+    ON {s}.run_adoptions FOR EACH ROW EXECUTE FUNCTION {s}.nk_run_adoptions_guard();
+CREATE OR REPLACE FUNCTION {s}.nk_run_adoptions_after() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    UPDATE {s}.runs SET owner_epoch = NEW.owner_epoch
+        WHERE run_id = NEW.run_id AND owner_epoch = NEW.previous_epoch
+        AND status IN ('open', 'frozen');
+    IF NOT FOUND THEN
+        RAISE EXCEPTION 'nekaise: run % changed owner or status during its adoption', NEW.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NULL;
+END $f$;
+CREATE OR REPLACE TRIGGER run_adoptions_after AFTER INSERT ON {s}.run_adoptions
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_run_adoptions_after();
+-- the owner is the opener until an adoption (its trigger, depth 2) moves it, one epoch forward
+CREATE OR REPLACE FUNCTION {s}.nk_runs_owner() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF TG_OP = 'INSERT' THEN
+        IF NEW.owner_epoch IS NULL THEN
+            NEW.owner_epoch := NEW.writer_epoch;
+        ELSIF NEW.owner_epoch <> NEW.writer_epoch THEN
+            RAISE EXCEPTION 'nekaise: run % starts owned by its opener', NEW.run_id
+                USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        RETURN NEW;
+    END IF;
+    IF NEW.owner_epoch IS DISTINCT FROM OLD.owner_epoch AND (
+            pg_trigger_depth() < 2 OR NEW.owner_epoch IS NULL
+            OR NEW.owner_epoch <= OLD.owner_epoch OR NOT EXISTS (
+                SELECT 1 FROM {s}.run_adoptions a WHERE a.run_id = OLD.run_id
+                AND a.owner_epoch = NEW.owner_epoch AND a.previous_epoch = OLD.owner_epoch)) THEN
+        RAISE EXCEPTION 'nekaise: run % changes owner only through a logged adoption', OLD.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER runs_owner BEFORE INSERT OR UPDATE ON {s}.runs
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_runs_owner();
+
+CREATE TABLE IF NOT EXISTS {s}.purge_queue (
+    run_id text COLLATE "C" PRIMARY KEY REFERENCES {s}.runs,
+    queued_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE OR REPLACE FUNCTION {s}.nk_purge_queue_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF TG_OP = 'UPDATE' THEN
+        RAISE EXCEPTION 'nekaise: purge queue entries are immutable'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF TG_OP = 'INSERT' THEN
+        IF (SELECT status FROM {s}.runs WHERE run_id = NEW.run_id) IS DISTINCT FROM 'aborted' THEN
+            RAISE EXCEPTION 'nekaise: only an aborted run is purged (run %)', NEW.run_id
+                USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        RETURN NEW;
+    END IF;
+    IF EXISTS (SELECT 1 FROM {s}.revisions WHERE run_id = OLD.run_id)
+            OR EXISTS (SELECT 1 FROM {s}.run_artifacts WHERE run_id = OLD.run_id)
+            OR EXISTS (SELECT 1 FROM {s}.gate_receipts WHERE run_id = OLD.run_id)
+            OR EXISTS (SELECT 1 FROM {s}.batches WHERE run_id = OLD.run_id) THEN
+        RAISE EXCEPTION 'nekaise: run % still has staging to purge', OLD.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN OLD;
+END $f$;
+CREATE OR REPLACE TRIGGER purge_queue_guard BEFORE INSERT OR UPDATE OR DELETE ON {s}.purge_queue
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_purge_queue_guard();
+CREATE OR REPLACE FUNCTION {s}.nk_runs_aborted() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    INSERT INTO {s}.purge_queue (run_id) VALUES (NEW.run_id) ON CONFLICT DO NOTHING;
+    RETURN NULL;
+END $f$;
+CREATE OR REPLACE TRIGGER runs_aborted AFTER UPDATE ON {s}.runs FOR EACH ROW
+    WHEN (OLD.status <> 'aborted' AND NEW.status = 'aborted')
+    EXECUTE FUNCTION {s}.nk_runs_aborted();
+INSERT INTO {s}.purge_queue (run_id, queued_at)
+    SELECT r.run_id, COALESCE(r.ended_at, now()) FROM {s}.runs r WHERE r.status = 'aborted'
+    AND (EXISTS (SELECT 1 FROM {s}.batches b WHERE b.run_id = r.run_id)
+         OR EXISTS (SELECT 1 FROM {s}.revisions v WHERE v.run_id = r.run_id)
+         OR EXISTS (SELECT 1 FROM {s}.run_artifacts a WHERE a.run_id = r.run_id)
+         OR EXISTS (SELECT 1 FROM {s}.gate_receipts g WHERE g.run_id = r.run_id))
+    ON CONFLICT DO NOTHING;
+
+CREATE TABLE IF NOT EXISTS {s}.review_state (
+    one boolean PRIMARY KEY DEFAULT true CHECK (one),
+    reviewed_through bigint,
+    endorsed_through bigint,
+    verdicts bigint NOT NULL DEFAULT 0 CHECK (verdicts >= 0),
+    open_findings int NOT NULL DEFAULT 0 CHECK (open_findings >= 0),
+    open_integrity int NOT NULL DEFAULT 0 CHECK (open_integrity >= 0),
+    updated_at timestamptz,
+    CHECK (endorsed_through IS NULL OR endorsed_through <= reviewed_through)
+);
+CREATE TABLE IF NOT EXISTS {s}.review_verdicts (
+    seq bigint PRIMARY KEY CHECK (seq >= 1),
+    lo_generation bigint NOT NULL CHECK (lo_generation >= 0),
+    hi_generation bigint NOT NULL,
+    verdict text NOT NULL CHECK (verdict IN ('ok', 'finding', 'integrity')),
+    reviewer text COLLATE "C" NOT NULL CHECK (reviewer ~ '^[A-Za-z0-9][A-Za-z0-9._:@-]{{0,127}}$'),
+    evidence_digest text COLLATE "C" NOT NULL CHECK (evidence_digest ~ '^[0-9a-f]{{64}}$'),
+    resolves_text text NOT NULL DEFAULT '[]',
+    detail_text text NOT NULL DEFAULT '{{}}',
+    recorded_at timestamptz NOT NULL DEFAULT now(),
+    resolved_by bigint REFERENCES {s}.review_verdicts,
+    CHECK (hi_generation >= lo_generation - 1),
+    CHECK (resolved_by IS NULL OR (verdict <> 'ok' AND resolved_by > seq))
+);
+CREATE OR REPLACE FUNCTION {s}.nk_review_verdicts_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE st record; head bigint; doc jsonb; canon text; n int;
+BEGIN
+    IF TG_OP = 'DELETE' THEN
+        RAISE EXCEPTION 'nekaise: review verdict % is retained', OLD.seq
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF TG_OP = 'UPDATE' THEN
+        -- only a later verdict's trigger resolves a finding, once
+        IF pg_trigger_depth() < 2 OR OLD.resolved_by IS NOT NULL OR NEW.resolved_by IS NULL
+                OR (NEW.seq, NEW.lo_generation, NEW.hi_generation, NEW.verdict, NEW.reviewer,
+                    NEW.evidence_digest, NEW.resolves_text, NEW.detail_text, NEW.recorded_at)
+                   IS DISTINCT FROM
+                   (OLD.seq, OLD.lo_generation, OLD.hi_generation, OLD.verdict, OLD.reviewer,
+                    OLD.evidence_digest, OLD.resolves_text, OLD.detail_text, OLD.recorded_at) THEN
+            RAISE EXCEPTION 'nekaise: review verdict % is immutable', OLD.seq
+                USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        RETURN NEW;
+    END IF;
+    -- the state row lock serializes verdicts (and the AFTER trigger writes it)
+    SELECT * INTO st FROM {s}.review_state FOR UPDATE;
+    SELECT current_generation INTO head FROM {s}.dataset;
+    IF NEW.seq <> st.verdicts + 1 OR NEW.resolved_by IS NOT NULL THEN
+        RAISE EXCEPTION 'nekaise: the next review verdict is % (got %)', st.verdicts + 1, NEW.seq
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.lo_generation <> COALESCE(st.reviewed_through, -1) + 1 THEN
+        RAISE EXCEPTION 'nekaise: review verdicts are contiguous: the next one starts at '
+            'generation % (got %)', COALESCE(st.reviewed_through, -1) + 1, NEW.lo_generation
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.hi_generation >= NEW.lo_generation AND (head IS NULL OR NEW.hi_generation > head) THEN
+        RAISE EXCEPTION 'nekaise: generation % is not promoted (current: %)', NEW.hi_generation,
+            head USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    BEGIN
+        doc := NEW.resolves_text::jsonb;
+    EXCEPTION WHEN others THEN
+        doc := NULL;
+    END;
+    IF doc IS NULL OR jsonb_typeof(doc) <> 'array' OR EXISTS (
+            SELECT 1 FROM jsonb_array_elements(doc) e WHERE jsonb_typeof(e) <> 'number'
+            OR NOT (e::text) ~ '^[1-9][0-9]{{0,17}}$') THEN
+        RAISE EXCEPTION 'nekaise: resolves must be a JSON list of verdict numbers'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    SELECT COALESCE('[' || string_agg(v::text, ',' ORDER BY v) || ']', '[]') INTO canon
+        FROM (SELECT DISTINCT (e::text)::bigint AS v FROM jsonb_array_elements(doc) e) d;
+    IF canon <> NEW.resolves_text THEN
+        RAISE EXCEPTION 'nekaise: resolves must be sorted and distinct'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    SELECT count(*) INTO n FROM jsonb_array_elements(doc) e JOIN {s}.review_verdicts v
+        ON v.seq = (e::text)::bigint
+        WHERE v.verdict <> 'ok' AND v.resolved_by IS NULL;
+    IF n <> jsonb_array_length(doc) THEN
+        RAISE EXCEPTION 'nekaise: a verdict resolves only open findings'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.hi_generation < NEW.lo_generation AND NEW.verdict = 'ok' AND n = 0 THEN
+        RAISE EXCEPTION 'nekaise: an ok verdict over no generation must resolve a finding'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER review_verdicts_guard BEFORE INSERT OR UPDATE OR DELETE
+    ON {s}.review_verdicts FOR EACH ROW EXECUTE FUNCTION {s}.nk_review_verdicts_guard();
+CREATE OR REPLACE FUNCTION {s}.nk_review_verdicts_after() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE fixed_f int; fixed_i int; open_f int; open_i int; reviewed bigint; top bigint;
+BEGIN
+    WITH done AS (
+        UPDATE {s}.review_verdicts v SET resolved_by = NEW.seq
+            FROM jsonb_array_elements(NEW.resolves_text::jsonb) e
+            WHERE v.seq = (e::text)::bigint AND v.resolved_by IS NULL
+            RETURNING v.verdict)
+    SELECT count(*) FILTER (WHERE verdict = 'finding'), count(*) FILTER (WHERE verdict = 'integrity')
+        INTO fixed_f, fixed_i FROM done;
+    IF fixed_f + fixed_i <> jsonb_array_length(NEW.resolves_text::jsonb) THEN
+        RAISE EXCEPTION 'nekaise: verdict % could not resolve every finding it names', NEW.seq
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    SELECT open_findings - fixed_f + (NEW.verdict = 'finding')::int,
+           open_integrity - fixed_i + (NEW.verdict = 'integrity')::int,
+           GREATEST(COALESCE(reviewed_through, -1), NEW.hi_generation)
+        INTO open_f, open_i, reviewed FROM {s}.review_state;
+    UPDATE {s}.review_state SET verdicts = NEW.seq, open_findings = open_f,
+        open_integrity = open_i,
+        reviewed_through = CASE WHEN reviewed < 0 THEN NULL ELSE reviewed END,
+        endorsed_through = CASE WHEN open_f + open_i = 0 AND reviewed >= 0 THEN reviewed
+                                ELSE endorsed_through END,
+        updated_at = now();
+    -- the outbox: the range's rows are acknowledged by the review consumer with this verdict,
+    -- and its watermark moves over them (rows compacted already were reviewed before)
+    INSERT INTO {s}.outbox_acks (consumer, seq, verdict, detail_text)
+        SELECT 'review', o.seq, NEW.verdict, '{{"review":' || NEW.seq || '}}' FROM {s}.outbox o
+        WHERE o.generation >= NEW.lo_generation AND o.generation <= NEW.hi_generation
+        ON CONFLICT DO NOTHING;
+    SELECT max(o.seq) INTO top FROM {s}.outbox o WHERE o.generation <= NEW.hi_generation
+        AND o.generation >= NEW.lo_generation;
+    IF top IS NOT NULL THEN
+        UPDATE {s}.outbox_consumers SET watermark = top, updated_at = now()
+            WHERE consumer = 'review' AND watermark < top;
+    END IF;
+    RETURN NULL;
+END $f$;
+CREATE OR REPLACE TRIGGER review_verdicts_after AFTER INSERT ON {s}.review_verdicts
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_review_verdicts_after();
+CREATE OR REPLACE FUNCTION {s}.nk_review_state_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF TG_OP = 'DELETE' OR pg_trigger_depth() < 2 THEN
+        RAISE EXCEPTION 'nekaise: review_state is maintained by the review verdict trigger'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.verdicts < OLD.verdicts
+            OR COALESCE(NEW.reviewed_through, -1) < COALESCE(OLD.reviewed_through, -1)
+            OR COALESCE(NEW.endorsed_through, -1) < COALESCE(OLD.endorsed_through, -1) THEN
+        RAISE EXCEPTION 'nekaise: the review watermarks only grow'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+-- the review consumer is driven by verdicts only (their trigger, depth 2): its acknowledgements
+-- and watermark are the verdicts' outbox image, never a second, self-supplied review record;
+-- publication never passes the endorsed generation
+CREATE OR REPLACE FUNCTION {s}.nk_review_acks_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+BEGIN
+    IF NEW.consumer = 'review' AND pg_trigger_depth() < 2 THEN
+        RAISE EXCEPTION 'nekaise: the review consumer acknowledges only through review verdicts'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER outbox_acks_review BEFORE INSERT ON {s}.outbox_acks
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_review_acks_guard();
+CREATE OR REPLACE FUNCTION {s}.nk_publication_guard() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE endorsed bigint; top bigint;
+BEGIN
+    IF NEW.consumer = 'review' AND NEW.watermark > OLD.watermark AND pg_trigger_depth() < 2 THEN
+        RAISE EXCEPTION 'nekaise: the review watermark moves only with review verdicts'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.consumer = 'publication' AND NEW.watermark > OLD.watermark THEN
+        SELECT endorsed_through INTO endorsed FROM {s}.review_state;
+        SELECT max(o.seq) INTO top FROM {s}.outbox o WHERE o.generation <= endorsed;
+        IF endorsed IS NULL OR NEW.watermark > COALESCE(top, OLD.watermark) THEN
+            RAISE EXCEPTION 'nekaise: publication may not pass the endorsed generation %',
+                endorsed USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+    END IF;
+    RETURN NEW;
+END $f$;
+CREATE OR REPLACE TRIGGER outbox_consumers_publication BEFORE UPDATE ON {s}.outbox_consumers
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_publication_guard();
+-- backfill from the review consumer's acknowledgements (all 'ok' up to its watermark)
+DO $d$ DECLARE w bigint; bad bigint; top bigint; BEGIN
+    IF NOT EXISTS (SELECT 1 FROM {s}.review_state) THEN
+        SELECT watermark INTO w FROM {s}.outbox_consumers WHERE consumer = 'review';
+        SELECT min(a.seq) INTO bad FROM {s}.outbox_acks a WHERE a.consumer = 'review'
+            AND a.seq <= COALESCE(w, 0) AND a.verdict <> 'ok';
+        IF bad IS NOT NULL THEN
+            RAISE EXCEPTION 'nekaise: legacy review acknowledgement % is not ok: migrate by hand',
+                bad USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        SELECT max(o.generation) INTO top FROM {s}.outbox o WHERE o.seq <= COALESCE(w, 0);
+        IF top IS NULL AND COALESCE(w, 0) > 0 THEN
+            -- every reviewed row was compacted: one outbox row per generation, from 1
+            top := w - 1;
+        END IF;
+        INSERT INTO {s}.review_state (reviewed_through, endorsed_through, updated_at)
+            VALUES (top, top, now());
+    END IF;
+END $d$;
+CREATE OR REPLACE TRIGGER review_state_guard BEFORE UPDATE OR DELETE ON {s}.review_state
+    FOR EACH ROW EXECUTE FUNCTION {s}.nk_review_state_guard();
+"""
+V7_TABLES = ("run_adoptions", "purge_queue", "review_state", "review_verdicts")
+
+
+def _migrate_7(conn, schema):  # stage 4 step 4 recovery and review: additive, see V7_DDL
+    conn.execute(V7_DDL.format(s=schema))
+
+
+MIGRATIONS = {2: _migrate_2, 3: _migrate_3, 4: _migrate_4, 5: _migrate_5, 6: _migrate_6,
+              7: _migrate_7}
 # Indexes on columns that migrations may have just added: created after migrating.
 POST_DDL = "CREATE INDEX IF NOT EXISTS manifest_legacy_order ON {s}.manifest (shard, topic_key, id);"
 # store.open()'s marker for a root without an authority record: the schema must not be
@@ -1816,6 +2216,7 @@ class PgStore:
                         conn.execute(V4_DDL.format(s=schema))
                         conn.execute(V5_DDL.format(s=schema))
                         conn.execute(V6_DDL.format(s=schema))
+                        conn.execute(V7_DDL.format(s=schema))
                 else:
                     conn.execute(DDL.format(s=schema, v=SCHEMA_VERSION))
                 got = conn.execute(sql.SQL("SELECT schema_version FROM {}.state").format(
@@ -2251,19 +2652,21 @@ def require_run_owner(conn: psycopg.Connection, run_id: str, writer: WriterToken
                       what: str) -> None:
     """The ONE ownership check of every owner-only run operation (staging, requesting, applying
     or abandoning batches, reading a run's staging as its writer, freezing, gates, promotion):
-    the run exists and `writer` is the writer epoch that opened it. Locks the run row. Cross-owner
+    the run exists and `writer` is its owner — the writer epoch that opened it, or the one that
+    adopted it last (schema v7, run_adoptions). Locks the run row. Cross-owner
     operations are separate and named as such (store_staging.abort_run / purge_run). This is a
     consistency guard for the trusted single-host model (ADR 0001: one writer at a time,
     fenced by the advisory lock and epoch), not a security boundary: any database client can
     bypass it."""
-    row = conn.execute("SELECT writer_epoch FROM runs WHERE run_id = %s FOR UPDATE",
+    row = conn.execute("SELECT owner_epoch FROM runs WHERE run_id = %s FOR UPDATE",
                        [run_id]).fetchone()
     if row is None:
         raise StoreError(f"unknown run {run_id}")
     if row[0] != writer.epoch:
         raise WriterError(f"run {run_id} belongs to writer epoch {row[0]}; this writer is epoch "
-                          f"{writer.epoch} ({what} refused; adopting a run under a new owner is "
-                          "stage 4 step 4 — abort_run is the explicit cross-owner operation)")
+                          f"{writer.epoch} ({what} refused; a new owner either aborts the run — "
+                          "abort_run, the explicit cross-owner operation — or resumes it through "
+                          "a logged adoption, store_staging.adopt_run)")
 
 
 class Contracts:

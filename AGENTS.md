@@ -93,6 +93,18 @@ directories: changed bytes become immutable versions in the git-ignored `artifac
 `corpus/` is a materialization of one promoted generation (`scripts/materialize.py`, stamped
 `corpus/.materialization.json`) that a training run acquires for that generation.
 
+On that path (selected only when the host authority record says `postgres`; production stays
+file-authoritative until the stage-4 cutover) every mutation is a staged run
+(`scripts/staged_runs.py`): `run_round.py` stages one run per round, freezes it, records its gates
+(`artifacts`, the claim `check`, `contracts`, `lint`, `tests`) against the frozen state and
+promotes it as the next generation — no snapshot, commit or README rewrite. Standalone commands
+(`rotation.py`, `blocklist.add`, `migrate_backend_state.py`, a standalone fetch/prune/clean) and
+the maintainer's repairs are gated, promoted runs too. Recovery (`round_recovery.recover_staged`:
+`--recover`, the maintainer, a failed or SIGTERMed round) stops the run's processes, drains its
+broker and lets the durable run status decide: promoted stands, unpromoted is aborted;
+`run_round.py --resume RUN_ID` continues one only when its parent, commit, configuration and
+extractor are unchanged and its artifacts verify.
+
 `corpus/` is built **from eligible manifest rows**, never from a directory listing, so it can only
 contain docs that have a provenance row and pass `registry/eligibility.json` — a training run over
 `corpus/*` cannot pick up unprovenanced or policy-restricted text, and ids whose `text_path` drifted

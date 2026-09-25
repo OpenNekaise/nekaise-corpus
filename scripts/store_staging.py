@@ -44,8 +44,12 @@ registers its identity and local locator and records the run's reference (run_ar
 the database refuses to seal a batch with any other new claim. Such a run freezes only with the
 "artifacts" gate required (artifact_store.verify_run). "unchecked" runs keep the step-2 rules.
 
-Writing requires the run's owner: the writer whose epoch opened it (a resumed run with a new owner
-is stage 4 step 4). The database enforces the rest (V5_DDL): batches apply exactly after the
+Writing requires the run's owner: the writer whose epoch opened it, or — after an explicit resume
+(adopt_run, schema v7) — the writer that adopted it; the adoption is logged and the database
+allows it only for an unchanged parent generation, commit, configuration and extractor with every
+referenced artifact verified. Recovery reads the durable run status (run_status, unfinished_runs)
+and aborts; aborted runs are queued for bounded purging (purge_due, purge_run). The database
+enforces the rest (V5_DDL): batches apply exactly after the
 sequence they were computed at, a committed applied batch is sealed, revisions of a sealed batch
 never change, a run freezes only with no requested batch and with its chain digest, gate receipts
 bind to the frozen sequence and digest, and a generation needs every required gate passed.
@@ -94,6 +98,9 @@ class StagedRun:
     token: str                    # authorizes the run's pipeline children to read its overlay
     parent_generation: int | None
     artifact_policy: str = "versioned"
+    attempt: int = 1              # 1 + the run's adoptions: a resumed run's steps name their
+                                  # batches "a<attempt>-<batch>" (store_broker.StepSession)
+    status: str = "open"          # open | frozen (a resumed frozen run only records gates)
 
 
 @dataclass(frozen=True)
@@ -844,7 +851,8 @@ def _writer_txn(st, writer: WriterToken) -> Iterator[psycopg.Connection]:
 
 _RUN_COLS = ("run_id", "status", "parent_generation", "writer_epoch", "staged_seq", "frozen_seq",
              "frozen_digest", "required_gates", "promoted_generation", "config_digest",
-             "batches_open", "artifact_policy")
+             "batches_open", "artifact_policy", "owner_epoch", "kind", "producer_commit",
+             "extractor_version", "cleaning_ruleset")
 
 
 def _run(conn, run_id: str, *, lock: bool = False) -> dict:
@@ -911,9 +919,12 @@ def _check_names(step: str, batch: str) -> None:
 
 def open_run(st, writer: WriterToken, run_id: str, *, kind: str = "round", producer_commit: str,
              extractor_version: str, cleaning_ruleset: str,
-             artifacts: str = "versioned") -> StagedRun:
+             artifacts: str = "versioned",
+             config_documents: Mapping[str, bytes] | None = None) -> StagedRun:
     """Open (or, with the same identity, re-open for the same owner) a run staged on the current
-    generation, pinning the current git-owned configuration as a sealed config set. Returns a new
+    generation, pinning its git-owned configuration as a sealed config set: the exact bytes
+    `config_documents` ({name: bytes}, the producer commit's configuration files — what
+    run_round and the standalone runs pass) or, without them, the `config` table. Returns a new
     access token for the run's pipeline children. `artifacts` is the run's immutable artifact
     policy (schema v6): "versioned" — payloads are immutable versions whose every new claim the
     database checks — or "unchecked" (metadata-only runs in tests)."""
@@ -921,8 +932,15 @@ def open_run(st, writer: WriterToken, run_id: str, *, kind: str = "round", produ
     token = secrets.token_hex(32)
     with _writer_txn(st, writer) as conn:
         docs = {}
-        for name, text, digest in conn.execute("SELECT name, doc_text, digest FROM config "
-                                               "ORDER BY name").fetchall():
+        if config_documents is not None:
+            docs = {name: bytes(data) for name, data in config_documents.items()}
+            unknown = sorted(set(docs) - set(store.CONFIG_FILES))
+            if unknown:
+                raise StoreError(f"not configuration documents: {unknown}")
+            for name, data in docs.items():
+                json.loads(data.decode())   # exact bytes, but they must be JSON
+        for name, text, digest in ([] if config_documents is not None else conn.execute(
+                "SELECT name, doc_text, digest FROM config ORDER BY name").fetchall()):
             data = text.encode()
             if hashlib.sha256(data).hexdigest() != digest:
                 raise StoreError(f"pinned configuration {name} does not match its digest")
@@ -1238,8 +1256,11 @@ def abort_run(st, writer: WriterToken, run_id: str, *, reason: str) -> None:
 
 
 def purge_run(st, writer: WriterToken, run_id: str, *, limit: int = FOLD_BATCH) -> int:
-    """CROSS-OWNER cleanup: delete up to `limit` revisions of an aborted run (then its
-    receipts); returns how many rows went. Call until it returns 0."""
+    """CROSS-OWNER cleanup: delete up to `limit` staging rows of an aborted run — revisions,
+    then artifact references, then gate receipts and batch receipts — in ONE short transaction;
+    returns how many rows went. Call until it returns 0: the call that finds nothing left also
+    takes the run off the purge queue (schema v7). The run row itself, with its status and
+    abort reason, is kept (failure evidence for the generation-range review)."""
     with _writer_txn(st, writer) as conn:
         if _run(conn, run_id)["status"] != "aborted":
             raise StoreError(f"run {run_id} is not aborted")
@@ -1253,8 +1274,82 @@ def purge_run(st, writer: WriterToken, run_id: str, *, limit: int = FOLD_BATCH) 
                               [run_id, limit]).rowcount
         if n == 0:
             n += conn.execute("DELETE FROM gate_receipts WHERE run_id = %s", [run_id]).rowcount
-            n += conn.execute("DELETE FROM batches WHERE run_id = %s", [run_id]).rowcount
+        if n == 0:
+            n += conn.execute("DELETE FROM batches WHERE ctid IN (SELECT ctid FROM batches WHERE "
+                              "run_id = %s LIMIT %s)", [run_id, limit]).rowcount
+        if n == 0:
+            conn.execute("DELETE FROM purge_queue WHERE run_id = %s", [run_id])
         return n
+
+
+def purge_due(st, writer: WriterToken, *, grace_seconds: float, limit: int = 16) -> list[str]:
+    """Aborted runs queued for purging at least `grace_seconds` ago (oldest first): a failed
+    round's staging stays inspectable for a while before it is purged."""
+    with _writer_txn(st, writer) as conn:
+        return [r for (r,) in conn.execute(
+            "SELECT run_id FROM purge_queue WHERE queued_at <= now() - make_interval(secs => %s) "
+            "ORDER BY queued_at, run_id LIMIT %s", [float(grace_seconds), limit]).fetchall()]
+
+
+# --- durable run status and adoption (stage 4 step 4, schema v7) ------------------------------------
+
+def run_status(st, writer: WriterToken, run_id: str) -> dict | None:
+    """The run's durable row (status, parent, owner, provenance, sequences), read in a fenced
+    writer transaction, or None when the query succeeded and no such run exists. Any database
+    failure raises: an unknown outcome is never read as "absent"."""
+    store._check_run_id(run_id)
+    with _writer_txn(st, writer) as conn:
+        row = conn.execute(f"SELECT {', '.join(_RUN_COLS)} FROM runs WHERE run_id = %s",
+                           [run_id]).fetchone()
+        return None if row is None else dict(zip(_RUN_COLS, row))
+
+
+def unfinished_runs(st, writer: WriterToken) -> list[dict]:
+    """Every open or frozen run (the runs_unfinished index), oldest first."""
+    with _writer_txn(st, writer) as conn:
+        return [dict(zip(_RUN_COLS, row)) for row in conn.execute(
+            f"SELECT {', '.join(_RUN_COLS)} FROM runs WHERE status IN ('open', 'frozen') "
+            "ORDER BY started_at, run_id").fetchall()]
+
+
+def gate_receipts(st, writer: WriterToken, run_id: str) -> dict[str, str]:
+    """{gate: verdict} of the run's recorded gate receipts."""
+    with _writer_txn(st, writer) as conn:
+        return dict(conn.execute("SELECT gate, verdict FROM gate_receipts WHERE run_id = %s",
+                                 [run_id]).fetchall())
+
+
+def adopt_run(st, writer: WriterToken, run_id: str, *, reason: str, producer_commit: str,
+              config_digest: str, extractor_version: str) -> StagedRun:
+    """Explicit resume: `writer` takes over open or frozen run `run_id` in ONE transaction — a
+    logged adoption (run_adoptions) and a new access token for the resumed coordinator's
+    children. The database refuses unless `writer` is the current writer, the run's parent is
+    still the current generation, the producer commit, configuration set and extractor version
+    the caller runs with are the run's, and every artifact the run referenced has a verified
+    local version (artifact_store.verify_run first). Otherwise abort and start a new run.
+    Re-adopting a run this writer already owns only issues a new token."""
+    if not reason:
+        raise StoreError("adopting a run needs a reason")
+    token = secrets.token_hex(32)
+    with _writer_txn(st, writer) as conn:
+        run = _run(conn, run_id, lock=True)
+        if run["status"] not in ("open", "frozen"):
+            raise StaleView(f"run {run_id} is {run['status']}: only an open or frozen run can "
+                            "be resumed")
+        if run["owner_epoch"] != writer.epoch:
+            conn.execute(
+                "INSERT INTO run_adoptions (run_id, owner_epoch, previous_epoch, status, "
+                "parent_generation, producer_commit, config_digest, extractor_version, "
+                "staged_seq, reason) SELECT %s, %s, %s, %s, current_generation, %s, %s, %s, %s, "
+                "%s FROM dataset",
+                [run_id, writer.epoch, run["owner_epoch"], run["status"], producer_commit,
+                 config_digest, extractor_version, run["staged_seq"], reason])
+        conn.execute("INSERT INTO run_access (run_id, token_sha256) VALUES (%s, %s)",
+                     [run_id, _sha(token)])
+        attempt = 1 + conn.execute("SELECT count(*) FROM run_adoptions WHERE run_id = %s",
+                                   [run_id]).fetchone()[0]
+    return StagedRun(run_id, token, run["parent_generation"], run["artifact_policy"], attempt,
+                     run["status"])
 
 
 def pin_generation(st, writer: WriterToken, generation: int, *, holder: str, reason: str,

@@ -1271,9 +1271,10 @@ def test_a_staged_round_through_real_child_processes(pg):
 
 
 def test_a_failing_staged_round_is_aborted(pg):
-    with pg.writer(round_id="rnd1") as w:
+    run_id = rid("rnd-fail")   # a failing staged round stops the processes tagged with it
+    with pg.writer(round_id=run_id) as w:
         with pytest.raises(RuntimeError, match="gate crashed"):
-            with store_broker.staged_round(pg, w, "rnd1", producer_commit=SHA,
+            with store_broker.staged_round(pg, w, run_id, producer_commit=SHA,
                                            extractor_version="x", cleaning_ruleset="none",
                                            artifacts="unchecked") as rnd:
                 rnd.broker.computed_batch("discover", "merge",

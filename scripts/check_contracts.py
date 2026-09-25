@@ -179,7 +179,8 @@ def readme_stats_errors(readme: str, stats) -> list[str]:
 
 def main() -> int:
     errors: list[str] = []
-    with store.open(root=ROOT).read(timeout=60) as view:
+    st = store.open(root=ROOT)
+    with st.read(timeout=60) as view:
         # eligibility and host policy pinned with the data they are checked against; invalid or
         # missing policy is a contract failure (fail closed)
         try:
@@ -193,8 +194,12 @@ def main() -> int:
         backends = {k: v for k, v in view.config_get().backends.items() if not k.startswith("_")}
         rotation_state = view.rotation_get()
         runtime, runtime_errors = runtime_backend_state(view)
-    readme = (ROOT / "README.md").read_text()
-    errors.extend(readme_stats_errors(readme, stats))
+    import staged_runs
+    if not staged_runs.staged_authority(st):
+        # README statistics are a per-round git artifact of the file-authoritative loop; under
+        # PostgreSQL authority rounds promote generations and write no README (ADR 0001 stage 4)
+        readme = (ROOT / "README.md").read_text()
+        errors.extend(readme_stats_errors(readme, stats))
     if unavailable:
         print(f"local availability: {unavailable:,} eligible rows on a fetch-suspended host "
               "have no local payload here (README counts are manifest-based)")

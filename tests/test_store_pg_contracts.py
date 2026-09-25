@@ -59,7 +59,8 @@ def _downgrade_to_v3(st) -> None:
     """Remove every stage-4 object: the schema the shadow runs today (version 3)."""
     import store_pg
     with st._connect(autocommit=True) as conn:
-        for t in reversed(store_pg.V6_TABLES + store_pg.V5_TABLES + store_pg.V4_TABLES):
+        for t in reversed(store_pg.V7_TABLES + store_pg.V6_TABLES + store_pg.V5_TABLES
+                          + store_pg.V4_TABLES):
             conn.execute(f"DROP TABLE IF EXISTS {st.schema}.{t} CASCADE")
         for (fn,) in conn.execute("SELECT p.oid::regprocedure::text FROM pg_proc p JOIN "
                                   "pg_namespace n ON n.oid = p.pronamespace WHERE n.nspname = %s",
@@ -468,6 +469,17 @@ def test_run_lifecycle_rules(pg):
     _expect_refused(pg, "UPDATE runs SET status = 'open'")
 
 
+def _review(conn, hi, verdict="ok", resolves="[]"):
+    """Schema v7: the review consumer moves only with review verdicts. Record one over every
+    generation not reviewed yet, through `hi` (its trigger acknowledges the range's outbox rows
+    for "review" and advances the watermark; an ok verdict with nothing open endorses)."""
+    n, done = conn.execute("SELECT verdicts, reviewed_through FROM review_state").fetchone()
+    conn.execute("INSERT INTO review_verdicts (seq, lo_generation, hi_generation, verdict, "
+                 "reviewer, evidence_digest, resolves_text) VALUES (%s, %s, %s, %s, 'test', %s, "
+                 "%s)", [n + 1, (-1 if done is None else done) + 1, hi, verdict, "0" * 64,
+                         resolves])
+
+
 def test_outbox_watermarks_are_independent_and_contiguous(pg):
     with pg.writer() as w:
         parent = None
@@ -480,26 +492,32 @@ def test_outbox_watermarks_are_independent_and_contiguous(pg):
                 _promote(c._conn, f"r{g}", g, parent)
             parent = g
         with pg.contracts(w) as c:
-            c.ack("review", 1, "ok")
-            c.ack("review", 3, "finding", {"note": "yield drop"})
-            assert c.advance("review") == 1            # 2 is not acknowledged: stops before it
-            c.ack("review", 2, "ok")
-            assert c.advance("review") == 3
-            c.ack("publication", 1, "ok")
-            assert c.advance("publication") == 1
-            c.ack("review", 1, "ok")                   # exact retry
+            c.ack("index", 1, "ok")
+            c.ack("index", 3, "finding", {"note": "yield drop"})
+            assert c.advance("index") == 1             # 2 is not acknowledged: stops before it
+            c.ack("index", 2, "ok")
+            assert c.advance("index") == 3
+            c.ack("index", 1, "ok")                    # exact retry
             with pytest.raises(StoreError, match="differently"):
-                c.ack("review", 1, "integrity")
-            assert c.watermarks() == {"index": 0, "projection": 0, "publication": 1, "review": 3}
-    _expect_refused(pg, "UPDATE outbox_consumers SET watermark = 3 WHERE consumer = 'index'")
+                c.ack("index", 1, "integrity")
+            # v7: review moves only with verdicts; publication only through endorsed generations
+            with pytest.raises(sqlerr()), c._conn.transaction():
+                c.ack("review", 1, "ok")
+            c.ack("publication", 1, "ok")
+            with pytest.raises(sqlerr()), c._conn.transaction():
+                c.advance("publication")               # nothing is endorsed yet
+            _review(c._conn, 0)
+            assert c.advance("publication") == 1
+            assert c.watermarks() == {"index": 3, "projection": 0, "publication": 1, "review": 1}
+    _expect_refused(pg, "UPDATE outbox_consumers SET watermark = 0 WHERE consumer = 'index'")
+    _expect_refused(pg, "UPDATE outbox_consumers SET watermark = 3 WHERE consumer = 'review'")
     _expect_refused(pg, "UPDATE outbox_consumers SET watermark = 0 WHERE consumer = 'review'")
     _expect_refused(pg, "UPDATE outbox_acks SET verdict = 'ok'")
-    _expect_refused(pg, "DELETE FROM outbox WHERE seq = 1")   # the index has not seen it
+    _expect_refused(pg, "DELETE FROM outbox WHERE seq = 1")   # projection has not seen it
     _expect_refused(pg, "INSERT INTO outbox (seq, generation, payload_text) VALUES (9, 2, '{}')")
     with pg.writer() as w, pg.contracts(w) as c:
-        for consumer in ("index", "projection"):
-            c.ack(consumer, 1, "ok")
-            assert c.advance(consumer) == 1
+        c.ack("projection", 1, "ok")
+        assert c.advance("projection") == 1
     _expect_refused(pg, "DELETE FROM outbox_acks WHERE seq = 2")
     with pg._connect(autocommit=True) as conn:
         conn.execute("DELETE FROM outbox WHERE seq = 1")   # every consumer is past it: compacts
@@ -533,11 +551,9 @@ def test_full_compaction_never_reuses_outbox_sequences(pg):
     sequence, so consumers whose watermark is past the old rows still receive it."""
     with pg.writer() as w:
         _generations(pg, w, 2)
+        _ack_all(pg, w, (1, 2))
         with pg.contracts(w) as c:
-            for consumer in CONSUMERS:
-                for seq in (1, 2):
-                    c.ack(consumer, seq, "ok")
-                assert c.advance(consumer) == 2
+            assert set(c.watermarks().values()) == {2}
     _expect_refused(pg, "DELETE FROM outbox WHERE seq = 2")   # compaction goes lowest first
     with pg._connect(autocommit=True) as conn:
         conn.execute("DELETE FROM outbox WHERE seq = 1")
@@ -553,9 +569,11 @@ def test_full_compaction_never_reuses_outbox_sequences(pg):
         with pg.contracts(w) as c:
             assert c.outbox_marks() == (3, 2)
             assert c._q("SELECT seq, generation FROM outbox").fetchall() == [(3, 2)]
-            assert c.advance("review") == 2                   # not acknowledged yet: still due
-            c.ack("review", 3, "ok")
-            assert c.advance("review") == 3
+            assert c.advance("index") == 2                    # not acknowledged yet: still due
+            c.ack("index", 3, "ok")
+            assert c.advance("index") == 3
+            _review(c._conn, 2)                               # the review consumer: by verdict
+            assert c.watermarks()["review"] == 3
 
 
 def test_config_sets_are_sealed_and_digest_checked(pg):
@@ -621,8 +639,13 @@ def test_init_file_binds_a_file_mode_shadow(pg, tmp_path):
 
 
 def _ack_all(pg, w, seqs):
+    """Every consumer past outbox rows `seqs` (one per generation: seq = generation + 1); the
+    review consumer by a verdict (schema v7), before publication (which needs endorsement)."""
     with pg.contracts(w) as c:
         for consumer in CONSUMERS:
+            if consumer == "review":
+                _review(c._conn, max(seqs) - 1)
+                continue
             for seq in seqs:
                 c.ack(consumer, seq, "ok")
             c.advance(consumer)

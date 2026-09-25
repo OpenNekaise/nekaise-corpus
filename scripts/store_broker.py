@@ -57,6 +57,10 @@ import store
 BROKER_ENV = "NEKAISE_STORE_BROKER"
 CAP_ENV = "NEKAISE_STORE_CAP"
 ROUND_ENV = "NEKAISE_STORE_ROUND"
+# A resumed staged run's attempt (> 1): its steps name their batches "a<n>-<batch>", so a step
+# re-run after an adoption never collides with the batches the earlier attempt applied
+# (the cleaner stages in completion order: its batch contents differ between attempts).
+ATTEMPT_ENV = "NEKAISE_STORE_ATTEMPT"
 MUTATIONS = frozenset({
     "insert_entries", "upsert_entries", "delete_entries", "upsert_manifest", "replace_manifest",
     "update_manifest_fields", "delete_manifest", "blocklist_add", "ledger_append", "rotation_set",
@@ -207,6 +211,8 @@ class Broker:
         if self.stage is not None:
             import store_staging
             env.update(store_staging.pin_env(self.stage.run_id, self.stage.token))
+            if getattr(self.stage, "attempt", 1) > 1:
+                env[ATTEMPT_ENV] = str(self.stage.attempt)
         return env
 
     def _execute(self, msg: dict) -> dict:
@@ -479,12 +485,17 @@ class StepSession:
 
     def __init__(self, st, step: str, view, *, client: "Client | None" = None,
                  writer: "store.WriterToken | None" = None, session_id: str | None = None,
-                 invocation: str | None = None):
+                 invocation: str | None = None, standalone=None):
         self.st, self.step, self.view = st, step, view
         self._client, self._writer, self.session_id = client, writer, session_id
-        if client is not None and invocation is None \
-                and client.round_id != (os.environ.get("NEKAISE_RUN_ID") or None):
-            invocation = f"i{secrets.token_hex(4)}"
+        self._standalone = standalone   # staged_runs.Standalone (PostgreSQL authority)
+        if client is not None and invocation is None:
+            if client.round_id != (os.environ.get("NEKAISE_RUN_ID") or None):
+                invocation = f"i{secrets.token_hex(4)}"
+            elif (attempt := os.environ.get(ATTEMPT_ENV)) is not None:
+                if not attempt.isdigit() or int(attempt) < 2:
+                    raise BrokerError(f"{ATTEMPT_ENV} is malformed: {attempt!r}")
+                invocation = f"a{int(attempt)}"   # a resumed run: its own batch namespace
         self.invocation = invocation
         self.version = view.version()
         self.transactions: list[str] = []  # identities of the batches committed, in order
@@ -505,6 +516,8 @@ class StepSession:
         """The store transaction id batch `batch` runs (or ran) as."""
         if self._client is not None:
             return f"{self._client.round_id}.{self.step}.{self._batch_name(batch)}"
+        if self._standalone is not None:
+            return f"{self._standalone.run_id}.{self.step}.{batch}"
         return f"{self.session_id}.{batch}"
 
     def submit(self, batch: str, requests: list[dict]) -> list:
@@ -519,6 +532,10 @@ class StepSession:
             results = self._client.submit(self.step, self._batch_name(batch), requests,
                                           self.version)
             self.version = self._client.last_version
+            self.transactions.append(self.identity(batch))
+            return results
+        if self._standalone is not None:   # a batch of this command's own staged run
+            results, self.version = self._standalone.submit(batch, requests, self.version)
             self.transactions.append(self.identity(batch))
             return results
         run_id = store._check_run_id(self.identity(batch))
@@ -559,6 +576,14 @@ def step_session(st, step: str, *, timeout: float = 30.0,
         with st.read() as view:
             yield StepSession(st, step, view, client=c)
         return
+    import staged_runs
+    if staged_runs.staged_authority(st):
+        # PostgreSQL authority: the step is ONE standalone staged run — its batches stage in it,
+        # its view is the run's overlay, and it is gated and promoted when the step ends
+        with staged_runs.standalone(st, step, timeout=timeout, writer=writer) as run:
+            with st.read_staged(run.run_id, writer=run.writer) as view:
+                yield StepSession(st, step, view, standalone=run)
+        return
     session_id = store._check_run_id(
         f"{step}-{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}-{secrets.token_hex(4)}")
     with ExitStack() as stack:
@@ -587,6 +612,23 @@ def run_batch(st, step: str, body, *, writer: "store.WriterToken | None" = None,
         results = (c.submit(step, f"{step}-{secrets.token_hex(6)}", batch.requests, version)
                    if batch.requests else [])
         return out, results
+    import staged_runs
+    if staged_runs.staged_authority(st):
+        # PostgreSQL authority: computed under the command's writer from the committed
+        # generation, then (only when something was recorded) staged, gated and promoted as ONE
+        # standalone run opened on that same generation — the writer is held throughout
+        import store_staging
+        with ExitStack() as stack:
+            if writer is None:
+                writer = stack.enter_context(st.writer(timeout=timeout))
+            with st.read(writer=writer) as view:
+                out = body(view, batch)
+            if not batch.requests:
+                return out, []
+            with staged_runs.standalone(st, step, writer=writer) as run:
+                results, _ = run.submit(step, batch.requests,
+                                        store_staging.stage_version(run.run_id, 0))
+        return out, results
     run_id = store._check_run_id(
         f"{step}-{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}-{secrets.token_hex(4)}")
     with ExitStack() as stack:
@@ -613,8 +655,10 @@ class StagedRound:
             rnd.record_gate("check", passed=True)
             generation = rnd.promote()
 
-    Leaving the block with an exception aborts the run unless it was promoted (unpromoted runs
-    default to abort; resuming one is stage 4 step 4)."""
+    Leaving the block with an exception recovers the run unless it was promoted: owned processes
+    stopped, broker drained, then the durable status decides (a lost promotion reply stands,
+    anything else is aborted; resuming is explicit: store_staging.adopt_run, staged_round's
+    `resume`)."""
 
     def __init__(self, st, writer: store.WriterToken, run):
         self.st, self.writer, self.run = st, writer, run
@@ -671,21 +715,48 @@ class StagedRound:
 
 @contextmanager
 def staged_round(st, writer: store.WriterToken, run_id: str, *, kind: str = "round",
-                 producer_commit: str, extractor_version: str,
-                 cleaning_ruleset: str, artifacts: str = "versioned") -> Iterator[StagedRound]:
-    """Open run `run_id` on the current generation and serve its staged broker (see
-    StagedRound). The broker is drained before the block's outcome is judged."""
-    run = st.open_run(writer, run_id, kind=kind, producer_commit=producer_commit,
-                      extractor_version=extractor_version, cleaning_ruleset=cleaning_ruleset,
-                      artifacts=artifacts)
+                 producer_commit: str | None = None, extractor_version: str | None = None,
+                 cleaning_ruleset: str | None = None, artifacts: str = "versioned",
+                 config_documents=None, resume=None) -> Iterator[StagedRound]:
+    """Open run `run_id` on the current generation — or continue `resume`, a run this writer
+    adopted (store_staging.adopt_run) — and serve its staged broker (see StagedRound).
+
+    Leaving the block with an exception before the run was promoted recovers it in the shared
+    order (round_recovery.recover_staged): the processes started meanwhile (and any tagged with
+    the run id) are stopped first, then the broker is drained, then the run's DURABLE status
+    decides — a promotion whose reply was lost stands, anything else is aborted. The broker is
+    always drained before the block's outcome is judged."""
+    import round_recovery
+    if resume is not None:
+        if resume.run_id != run_id:
+            raise BrokerError(f"resumed run {resume.run_id} is not {run_id}")
+        run = resume
+    else:
+        run = st.open_run(writer, run_id, kind=kind, producer_commit=producer_commit,
+                          extractor_version=extractor_version, cleaning_ruleset=cleaning_ruleset,
+                          artifacts=artifacts, config_documents=config_documents)
+    existing = round_recovery.descendants(os.getpid())
     rnd = StagedRound(st, writer, run)
+    stopped = False
     try:
-        with rnd.broker.serving():
-            yield rnd
+        with rnd.broker.serving():   # drained on the way out, after the stop below
+            try:
+                yield rnd
+            except BaseException as exc:
+                if rnd.generation is None:
+                    stopped = True
+                    try:
+                        round_recovery.stop_owned(run_id, existing)
+                    except Exception as stop_exc:
+                        exc.add_note(f"stopping run {run_id}'s processes failed: {stop_exc}")
+                raise
     except BaseException as exc:
         if rnd.generation is None:
             try:
-                st.abort_run(writer, run_id, reason=f"{type(exc).__name__}: {exc}"[:500])
+                round_recovery.recover_staged(
+                    st, writer, run_id, root=st.root, stop=not stopped, finish=False,
+                    existing_descendants=existing,
+                    reason=f"{type(exc).__name__}: {exc}"[:500])
             except Exception as abort_exc:  # the original failure stays the one raised
-                exc.add_note(f"aborting run {run_id} failed too: {abort_exc}")
+                exc.add_note(f"recovering run {run_id} failed too: {abort_exc}")
         raise

@@ -448,12 +448,17 @@ def test_recovery_in_one_test_execution_leaves_another_executions_children_alive
 
 
 def test_no_test_hands_a_fixed_run_id_to_children_or_recovery():
-    """Every run id that reaches NEKAISE_RUN_ID, --run-id or --recover comes from rid()."""
+    """Every run id that reaches NEKAISE_RUN_ID, --run-id, --recover, --resume or a recovery
+    that stops tagged processes comes from rid()."""
     import re
     # (what recovery matches: a child's NEKAISE_RUN_ID, and the ids rounds run and recover
     # under; a writer's round_id only names the lock holder, NEKAISE_STORE_ROUND is not matched)
+    # (stage 4 step 4: --resume, the staged recovery and a failing staged round's recovery stop
+    # the processes tagged with their run id too)
     fixed = re.compile(r'"NEKAISE_RUN_ID"\s*[:,]\s*["\'][^"\']|"--run-id",\s*["\']'
-                       r'|"--recover",\s*["\'](?!latest)|recover_round\([^)]*,\s*["\'][^"\']')
+                       r'|"--recover",\s*["\'](?!latest)|recover_round\([^)]*,\s*["\'][^"\']'
+                       r'|"--resume",\s*["\']|recover_staged\([^)]*,\s*["\'][^"\']'
+                       r'|staged_round\([^)]*,\s*["\'][^"\']')
     offenders = []
     for path in sorted(Path(__file__).parent.glob("*.py")):
         for n, line in enumerate(path.read_text().splitlines(), 1):

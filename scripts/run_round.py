@@ -17,6 +17,12 @@ Discovery ends in ONE store transaction (ADR 0001 stage 3, step 5): the merged a
 rotation pointer moves, find_github's completed passes and finder-reported exhaustion (runtime
 backend state, registry/backend_state.json — never registry/backends.json). A backend runs when
 its configuration AND its runtime state enable it.
+
+Under PostgreSQL authority (ADR 0001 stage 4 step 4; chosen only by the host authority record,
+scripts/store_authority.py) the round is ONE staged run instead — see staged_main() below: no git
+snapshot, commit or README; the gates validate the frozen run and the promotion is the commit.
+`--recover` then aborts unfinished runs (or keeps a promoted one) by their durable status, and
+`--resume RUN_ID` continues one explicitly when nothing it was based on changed.
 """
 from __future__ import annotations
 
@@ -24,6 +30,7 @@ import argparse
 import json
 import os
 import shlex
+import signal
 import subprocess
 import sys
 import tempfile
@@ -38,6 +45,7 @@ import rotation
 import round_recovery
 import corpus_stats
 import dedup
+import staged_runs
 import store
 import store_authority
 import store_broker
@@ -148,13 +156,15 @@ def run_command(step: str, cmd: list[str], env: dict, run_id: str) -> None:
 
 
 def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: str,
-                        envs: dict[str, dict] | None = None) -> None:
+                        envs: dict[str, dict] | None = None, record=None) -> None:
     """Run the read-only gates concurrently over the settled round state.
 
     Same fail-closed contract as run_command, minus the serial wall time: every gate is awaited even
     after another has failed, each records its own ledger events, output is replayed in declared
     order (never interleaved), and the round fails if any gate did. Measured 2026-08-28: check 86 s
     + index 57 s + lint 63 s + contracts 13 s + tests 78 s serially, vs the slowest one together.
+    `record(step, passed, detail)` (a staged round's gate receipts) is called for every gate, in
+    declared order, before a failure is raised.
     """
     if not gates:
         return
@@ -182,6 +192,8 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
 
     failed = []
     for step, result, elapsed in results:
+        if record is not None:
+            record(step, result.returncode == 0, {"exit": result.returncode, "seconds": elapsed})
         print(f"\n== {step}: {shown[step]}  [{elapsed:.0f}s, exit {result.returncode}]", flush=True)
         if result.stdout:
             print(result.stdout, end="" if result.stdout.endswith("\n") else "\n", flush=True)
@@ -525,13 +537,15 @@ def nested_round_owner(st) -> str | None:
     """Why this process must not start a round, or None. A round needs the canonical round lock
     as its writer; a process whose ancestor already holds it (a maintenance window's agent, a
     round's own step) would only wait on its own parent, so it is refused at once. A stale
-    inherited entry (no ancestor holds the lock any more) does not count."""
+    inherited entry (no ancestor holds the lock any more) does not count. (PostgreSQL: the
+    writer is the database's writer lock; an ancestor's broker in the environment is the sign.)"""
     try:
-        run = st._inherited_run()
+        inherited = getattr(st, "_inherited_run", None)
+        run = inherited() if inherited is not None else None
     except store.WriterError:
         run = None
-    holders = [h for h in ops.inherited_holders()
-               if h.get("lock") == str((st.workspace / f".{store.ROUND_LOCK}.lock").resolve())]
+    lock_file = (ROOT / "workspace" / f".{store.ROUND_LOCK}.lock").resolve()
+    holders = [h for h in ops.inherited_holders() if h.get("lock") == str(lock_file)]
     if run is None and store_broker.client() is None:
         return None
     owner = next((f"pid {h.get('pid')}" for h in holders), "the parent process")
@@ -561,19 +575,35 @@ def main() -> int:
                     help="seconds to wait for another corpus operator; default fail immediately")
     ap.add_argument("--run-id", default="")
     ap.add_argument("--recover", metavar="RUN_ID",
-                    help="restore tracked state from an interrupted run snapshot and exit")
+                    help="restore tracked state from an interrupted run snapshot and exit "
+                         "(PostgreSQL authority: stop its processes, abort it unless it was "
+                         "promoted, complete the current generation; 'latest' = every "
+                         "unfinished run)")
+    ap.add_argument("--resume", metavar="RUN_ID",
+                    help="PostgreSQL authority only: continue an interrupted staged run under "
+                         "this writer, if its parent generation, commit, configuration and "
+                         "extractor are unchanged and its artifacts verify; otherwise refused")
     args = ap.parse_args()
     try:
-        # The store the host authority record selects (scripts/store_authority.py); rounds are
-        # still the legacy file-store path, so any other authority is refused, never bypassed.
+        # The store the host authority record selects (scripts/store_authority.py): the legacy
+        # file-store round, or — only when the record makes PostgreSQL authoritative — staged
+        # runs. Anything else (an unbound PostgreSQL store) is refused, never bypassed.
         st = store.open(root=ROOT)
-        store_authority.require_file_authority(st, "run_round.py")
+        staged = staged_runs.staged_authority(st)
+        if not staged:
+            store_authority.require_file_authority(st, "run_round.py")
     except store.StoreError as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 2
     if nested := nested_round_owner(st):
         print(f"ERROR: {nested}", file=sys.stderr)
         return 2
+    if args.resume and not staged:
+        print("ERROR: --resume continues a PostgreSQL staged run; this root is file-"
+              "authoritative (recover with --recover)", file=sys.stderr)
+        return 2
+    if staged:
+        return staged_main(args, ap, st)
     if args.recover:
         run_id = (
             ops.StateSnapshot.pending()[-1]
@@ -769,6 +799,270 @@ def _locked_round(args, st, writer, run_id: str, env: dict) -> int:
             except Exception as rollback_exc:
                 ops.run_event(run_id, "rollback_failed", error=str(rollback_exc))
         raise
+
+
+# --- PostgreSQL authority: a round is ONE staged run (ADR 0001 stage 4 step 4) -------------------------
+#
+#   discover -> fetch -> prune -> clean -> freeze -> [check | lint | contracts | tests] + artifacts
+#            -> promote -> complete (materialize corpus/, bounded fold/purge)
+#
+# Nothing is snapshotted, committed to git or written to README: every batch stages in the run,
+# the gates validate the frozen state and record receipts bound to it, and the promotion is the
+# commit boundary (--commit is implied). `check` is clean_corpus.py --check inside the staged
+# view — the versioned claim check — and `artifacts` re-hashes the versions the run introduced;
+# the file store's `index` gate and README `stats` step do not exist here.
+
+STAGED_VERIFY = (
+    ("check", "clean_corpus.py", ("--check",)),
+    ("lint", "lint_registry.py", ()),
+    ("contracts", "check_contracts.py", ()),
+)
+
+
+def staged_gates(skip_tests: bool) -> list[str]:
+    return sorted(["artifacts", *(step for step, _, _ in STAGED_VERIFY),
+                   *(() if skip_tests else ("tests",))])
+
+
+def staged_main(args, ap, st) -> int:
+    if args.push:
+        ap.error("--push does not apply to a staged round: rounds promote generations; "
+                 "publication is the maintainer's reviewed generation range")
+    if args.allow_dirty:
+        ap.error("--allow-dirty does not apply to a staged round: its producer commit must be "
+                 "exactly the code that runs")
+    env = {**os.environ, "PYTHONUNBUFFERED": "1"}
+    if args.recover:
+        target = None if args.recover == "latest" else args.recover
+        with st.writer(timeout=args.lock_timeout, round_id=target) as writer:
+            try:
+                outcomes = round_recovery.recover_staged(
+                    st, writer, target, root=ROOT,
+                    reason="recovered by run_round.py --recover: unpromoted runs are aborted")
+            except Exception as exc:
+                ops.run_event(target or "-", "recover_failed", error=str(exc))
+                print(f"ERROR: could not recover {target or 'the unfinished runs'} completely "
+                      f"(owned processes, durable status, completion): {exc}; nothing was "
+                      "decided on an unknown outcome — fix and re-run --recover", file=sys.stderr)
+                return 1
+        if not outcomes:
+            print("no unfinished staged run; the current generation's completion is up to date")
+        for out in outcomes:
+            ops.run_event(out.run_id, "run_recovered", action=out.action, status=out.status)
+            print(f"run {out.run_id}: {out.status or 'never opened'} -> {out.action}")
+        return 0
+    run_id = args.resume or args.run_id or (time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
+                                            + "-" + uuid.uuid4().hex[:8])
+    env["NEKAISE_RUN_ID"] = run_id
+    ops.run_event(run_id, "run_started", argv=sys.argv[1:], store="postgres")
+    # SIGTERM (dig.sh's `timeout`, an operator's kill) unwinds like an error, so the staged
+    # round recovers itself on the way out — its processes stopped, its broker drained, the run
+    # aborted unless it was already promoted — instead of dying with the run left open
+    previous = signal.signal(signal.SIGTERM, _terminated)
+    try:
+        with st.writer(timeout=args.lock_timeout, round_id=run_id) as writer:
+            if args.resume:
+                return _resume_staged(args, st, writer, run_id, env)
+            return _staged_round(args, st, writer, run_id, env)
+    except KeyboardInterrupt as exc:
+        ops.run_event(run_id, "run_interrupted", error=str(exc))
+        print(f"ERROR: interrupted ({exc}); the run was recovered on the way out", file=sys.stderr)
+        return 130
+    except Exception as exc:
+        ops.run_event(run_id, "run_failed", error=str(exc))
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
+    finally:
+        signal.signal(signal.SIGTERM, previous)
+
+
+def _terminated(signum, frame):
+    raise KeyboardInterrupt("terminated")
+
+
+def _complete_previous(st, writer, run_id: str) -> None:
+    """Before anything stages: no crashed run may be unfinished (its outcome decides what this
+    round is based on), and the current generation's completion work — materialization, fold,
+    purge — is caught up (a promotion whose completion was interrupted converges here)."""
+    staged_runs.refuse_unfinished(st, writer)
+    done = staged_runs.after_promotion(st, writer, ROOT)
+    ops.run_event(run_id, "generation_completed", **{
+        "materialized": done["materialized"].get("mode"),
+        "housekeeping": done["housekeeping"]})
+
+
+def _staged_round(args, st, writer, run_id: str, env: dict) -> int:
+    _complete_previous(st, writer, run_id)
+    ident = staged_runs.identity(st, ROOT)
+    with st.read(writer=writer) as view:
+        backends = {k: v for k, v in view.config_get().backends.items() if not k.startswith("_")}
+        rotation_state = view.rotation_get()
+        runtime = view.backend_state_get()
+        if errors := validate_backends(backends, rotation_state, runtime):
+            raise RuntimeError("backend configuration invalid:\n  " + "\n  ".join(errors))
+        enabled = {name: view.backend_enabled(name) for name in backends}
+        before, _, _ = doc_stats(view)
+    selected = args.backend or [name for name in backends if enabled[name]]
+    if unknown := [name for name in selected if name not in backends]:
+        raise RuntimeError(f"unknown backend(s): {', '.join(unknown)}")
+    selected = [n for n in selected if enabled[n] or n in args.backend]
+    with store_broker.staged_round(st, writer, run_id, kind="round",
+                                   producer_commit=ident.producer_commit,
+                                   extractor_version=ident.extractor_version,
+                                   cleaning_ruleset=ident.cleaning_ruleset,
+                                   config_documents=ident.config) as rnd:
+        ops.run_event(run_id, "staged_run_opened", parent=rnd.run.parent_generation,
+                      producer_commit=ident.producer_commit,
+                      cleaning_ruleset=ident.cleaning_ruleset)
+        if not args.skip_discovery:
+            run_finders_parallel(
+                selected, backends, rotation_state, {**env, **rnd.pinned_now()}, run_id,
+                args.discovery_workers,
+                lambda compute: rnd.broker.computed_batch("discover", "merge", compute))
+        generation = _drive_staged(args, st, rnd, run_id, env)
+    return _promoted(st, writer, run_id, generation, before)
+
+
+def _drive_staged(args, st, rnd, run_id: str, env: dict) -> int:
+    """The staged pipeline from fetch to promotion (a new or a resumed open run)."""
+    write_env = {**env, **rnd.broker.env()}
+    for step, script, fixed_args in PIPELINE:
+        if step in MUTATING_STEPS:
+            run_command(step, [sys.executable, str(SCRIPTS / script), *fixed_args], write_env,
+                        run_id)
+    return _gate_and_promote(args, rnd, run_id, env)
+
+
+def _gate_and_promote(args, rnd, run_id: str, env: dict, done: dict | None = None) -> int:
+    """Freeze (draining the broker first), run every required gate still without a receipt
+    against the frozen state, record the verdicts, promote."""
+    import store_staging
+    required = staged_gates(args.skip_tests)
+    frozen = rnd.freeze(required)
+    ops.run_event(run_id, "staged_run_frozen", seq=frozen.seq, digest=frozen.digest,
+                  gates=required)
+    done = done or {}
+    if bad := sorted(g for g, v in done.items() if v != "passed"):
+        raise RuntimeError(f"gate(s) {', '.join(bad)} already failed at the frozen state")
+    gates = [(step, [sys.executable, str(SCRIPTS / script), *fixed_args])
+             for step, script, fixed_args in STAGED_VERIFY if step not in done]
+    if "tests" in required and "tests" not in done:
+        gates.append(("tests", [sys.executable, "-m", "pytest", "-q", "tests/"]))
+    gate_env = {**env, **rnd.gate_env()}
+    plain = {k: v for k, v in env.items() if k != store_staging.STAGE_ENV}
+    try:
+        run_verify_parallel(gates, gate_env, run_id, envs={"tests": plain},
+                            record=lambda step, passed, detail: rnd.record_gate(
+                                step, passed=passed, detail=detail))
+    finally:
+        if "artifacts" not in done:
+            verified = rnd.verify_artifacts()
+            ops.run_event(run_id, "artifacts_verified", verified=verified["verified"],
+                          failed=len(verified["failed"]))
+    if "artifacts" not in done and verified["failed"]:
+        raise RuntimeError(f"artifact gate failed: {verified['failed'][:5]}")
+    generation = rnd.promote()
+    ops.run_event(run_id, "run_promoted", generation=generation)
+    return generation
+
+
+def _promoted(st, writer, run_id: str, generation: int, before: int) -> int:
+    """After the promotion (the round stands whatever happens next): complete it and report."""
+    try:
+        done = staged_runs.after_promotion(st, writer, ROOT)
+    except Exception as exc:
+        ops.run_event(run_id, "completion_failed", generation=generation, error=str(exc))
+        print(f"ERROR: generation {generation} is promoted, but its completion (corpus/ "
+              f"materialization, housekeeping) failed: {exc}; the next round or --recover "
+              "latest repeats it", file=sys.stderr)
+        return 1
+    with st.read(writer=writer) as view:
+        after, tokens, excluded = doc_stats(view)
+    ops.run_event(run_id, "run_completed", before_docs=before, after_docs=after, tokens=tokens,
+                  excluded_docs=excluded, generation=generation,
+                  materialized=done["materialized"].get("mode"),
+                  housekeeping=done["housekeeping"])
+    print(f"\nround {run_id}: generation {generation}: {before} -> {after} training-eligible docs "
+          f"/ {tokens // 1_000_000}M tokens ({excluded} provenance rows excluded)")
+    return 0
+
+
+def resume_refusal(st, writer, run: dict, ident, gates: list[str]) -> str | None:
+    """Why run `run` cannot be resumed under the current checkout and this invocation's
+    required `gates`, or None. Checked before anything is adopted."""
+    import store_staging
+    if run["status"] not in ("open", "frozen"):
+        return f"it is {run['status']}"
+    with st.read(writer=writer) as view:
+        head = view.generation
+    if run["parent_generation"] != head:
+        return (f"it was staged on generation {run['parent_generation']}; the current generation "
+                f"is {head}")
+    for what, have, want in (("producer commit", ident.producer_commit, run["producer_commit"]),
+                             ("configuration", ident.config_digest, run["config_digest"]),
+                             ("extractor version", ident.extractor_version,
+                              run["extractor_version"])):
+        if have != want:
+            return f"its {what} was {want}, the checkout's is {have}"
+    others = [r["run_id"] for r in store_staging.unfinished_runs(st, writer)
+              if r["run_id"] != run["run_id"]]
+    if others:
+        return f"other unfinished run(s) {', '.join(others)} must be recovered first"
+    if run["status"] == "frozen":
+        if (frozen_with := sorted(json.loads(run["required_gates"]))) != gates:
+            return f"it froze with gates {frozen_with}; this invocation requires {gates}"
+        receipts = store_staging.gate_receipts(st, writer, run["run_id"])
+        if bad := sorted(g for g, v in receipts.items() if v != "passed"):
+            return f"gate(s) {', '.join(bad)} already failed at its frozen state"
+    return None
+
+
+def _never_recompute(view, batch):
+    raise RuntimeError("a resumed run replays its persisted discovery; it never recomputes it")
+
+
+def _resume_staged(args, st, writer, run_id: str, env: dict) -> int:
+    """Explicit resume: continue an interrupted open or frozen run under this writer, only when
+    nothing it was based on changed — its parent generation, producer commit, configuration and
+    extractor — and every artifact version it referenced verifies. The database re-checks all of
+    it when the adoption is logged. Steps re-run idempotently over the run's overlay in their own
+    batch namespace (attempt n); a persisted discovery merge is replayed exactly or skipped, and
+    discovery is never started anew. A frozen run only runs its missing gates."""
+    import artifact_store
+    import store_staging
+    run = store_staging.run_status(st, writer, run_id)
+    if run is None:
+        raise RuntimeError(f"no staged run {run_id}")
+    stopped = round_recovery.stop_owned(run_id, None)   # its orphans first
+    if stopped:
+        ops.run_event(run_id, "round_processes_stopped", pids=stopped)
+    artifact_store.LocalArtifacts(ROOT).sweep_incoming()
+    ident = staged_runs.identity(st, ROOT)
+    if why := resume_refusal(st, writer, run, ident, staged_gates(args.skip_tests)):
+        raise RuntimeError(f"run {run_id} cannot be resumed: {why}. Abort it "
+                           f"(run_round.py --recover {run_id}) and start a new round")
+    verified = artifact_store.verify_run(st, writer, run_id)
+    if verified["failed"]:
+        raise RuntimeError(f"run {run_id} cannot be resumed: its artifact versions do not "
+                           f"verify ({verified['failed'][:5]}); abort it and start a new round")
+    adopted = store_staging.adopt_run(st, writer, run_id, reason="run_round.py --resume",
+                                      producer_commit=ident.producer_commit,
+                                      config_digest=ident.config_digest,
+                                      extractor_version=ident.extractor_version)
+    ops.run_event(run_id, "staged_run_adopted", attempt=adopted.attempt, status=adopted.status,
+                  verified=verified["verified"])
+    with st.read(writer=writer) as view:
+        before, _, _ = doc_stats(view)
+    with store_broker.staged_round(st, writer, run_id, resume=adopted) as rnd:
+        if adopted.status == "frozen":
+            receipts = store_staging.gate_receipts(st, writer, run_id)
+            generation = _gate_and_promote(args, rnd, run_id, env, done=receipts)
+        else:
+            if st.batch_receipt(writer, run_id, "discover", "merge") is not None:
+                # a persisted merge is applied exactly as persisted; an applied one is skipped
+                rnd.broker.computed_batch("discover", "merge", _never_recompute)
+            generation = _drive_staged(args, st, rnd, run_id, env)
+    return _promoted(st, writer, run_id, generation, before)
 
 
 if __name__ == "__main__":
