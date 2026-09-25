@@ -411,14 +411,18 @@ class Api:
         return max(0, self.lookup_max - self.lookups)
 
     def _request(self, url, params, *, host_key: str):
-        if until := self.cooldowns.active(host_key):  # re-read: another process may have set it
-            raise UpstreamError(f"{host_key} cooldown active for "
-                                f"{max(1, int(until - self.now()))}s", 429, until)
+        def refuse_if_cooling():  # re-read: another process may have set it
+            if until := self.cooldowns.active(host_key):
+                raise UpstreamError(f"{host_key} cooldown active for "
+                                    f"{max(1, int(until - self.now()))}s", 429, until)
+
+        refuse_if_cooling()
         if host_key == "openalex":
             try:
                 self.pacer.wait()
             except RuntimeError as exc:
                 raise UpstreamError(f"OpenAlex pacing lock unavailable: {exc}") from exc
+            refuse_if_cooling()  # a cooldown persisted while this request queued for its slot
         started = time.monotonic()
         try:
             r = self.get(url, params=params, timeout=30,

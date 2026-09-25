@@ -82,3 +82,18 @@ def _private_machine_state(monkeypatch, tmp_path):
         raise AssertionError("test reached the machine-level state directory; it is isolated "
                              f"through {openalex_state.STATE_ENV}")
     monkeypatch.setattr(openalex_state, "default_state_dir", refuse)
+
+    # the migration SOURCE too: a checkout's real pre-2026-09-25 cooldown file is never read or
+    # renamed by a test (find_sources.main migrates from LEGACY_COOLDOWN_WORKSPACE)
+    import find_sources
+
+    real_workspace = (Path(__file__).resolve().parents[1] / "workspace").resolve()
+    monkeypatch.setattr(find_sources, "LEGACY_COOLDOWN_WORKSPACE", tmp_path / ".legacy-workspace")
+    real_migrate = openalex_state.migrate_legacy_cooldowns
+
+    def guarded_migrate(workspace, store=None):
+        if Path(workspace).resolve() == real_workspace:
+            raise AssertionError("test reached the checkout's real legacy cooldown file "
+                                 f"({real_workspace / openalex_state.LEGACY_COOLDOWN_FILE})")
+        return real_migrate(workspace, store)
+    monkeypatch.setattr(openalex_state, "migrate_legacy_cooldowns", guarded_migrate)

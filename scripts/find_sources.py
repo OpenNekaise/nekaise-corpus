@@ -58,6 +58,8 @@ MAILTO = oar.MAILTO
 # concurrent finder (openalex_state.Cooldowns: locked max-merge writes, re-read before every
 # request). None = that file; tests point it elsewhere.
 COOLDOWN_FILE: Path | None = None
+# Where this checkout kept its cooldowns before 2026-09-25 (folded into the machine file once).
+LEGACY_COOLDOWN_WORKSPACE = HERE / "workspace"
 
 # (search term -> our corpus topic). Many specific sub-topic queries -> more unique results.
 QUERIES = [
@@ -489,7 +491,7 @@ def main() -> int:
     successful_requests: dict[str, int] = {backend: 0 for backend in backends}
     now = time.time()
     if COOLDOWN_FILE is None:  # fold this checkout's pre-2026-09-25 cooldown file in, once
-        openalex_state.migrate_legacy_cooldowns(HERE / "workspace")
+        openalex_state.migrate_legacy_cooldowns(LEGACY_COOLDOWN_WORKSPACE)
     cooldowns = load_cooldowns(now)
     disabled = {backend for backend in backends if cooldowns.get(backend, 0) > now}
     incomplete = set(disabled)
@@ -616,7 +618,7 @@ def main_family(args) -> int:
         return 1
     now = time.time()
     if COOLDOWN_FILE is None:
-        openalex_state.migrate_legacy_cooldowns(HERE / "workspace")
+        openalex_state.migrate_legacy_cooldowns(LEGACY_COOLDOWN_WORKSPACE)
     return openalex_families.main_family(
         args, policy=_POLICY, keys=dedup.open_keys(), cooldowns=cooldown_store(),
         get=requests.get, openalex_relevant=openalex_relevant,

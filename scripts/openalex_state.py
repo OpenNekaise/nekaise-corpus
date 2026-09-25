@@ -258,10 +258,15 @@ def openalex_get(get, url: str, *, params=None, timeout: float = 30, cooldowns=N
     spent budget reported on a successful answer). Returns the response otherwise."""
     clock = clock or (lambda: time.time())
     cooldowns = as_cooldowns(cooldowns, clock=clock)
-    if until := cooldowns.active("openalex"):
-        raise Throttled(f"openalex cooldown active for {max(1, int(until - clock()))}s", 429,
-                        deadline=until)
+
+    def refuse_if_cooling():
+        if until := cooldowns.active("openalex"):
+            raise Throttled(f"openalex cooldown active for {max(1, int(until - clock()))}s",
+                            429, deadline=until)
+
+    refuse_if_cooling()
     (pacer if pacer is not None else SharedPacer(clock=clock)).wait()
+    refuse_if_cooling()  # a cooldown persisted while this request queued for its slot
     resp = get(url, params=params, timeout=timeout, **kwargs)
     status = getattr(resp, "status_code", 200)
     headers = getattr(resp, "headers", {}) or {}

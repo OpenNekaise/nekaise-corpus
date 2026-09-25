@@ -98,6 +98,7 @@ def test_a_family_cooldown_stops_the_legacy_finder_mid_run(monkeypatch, tmp_path
         openalex_state.Cooldowns().raise_to({"openalex": __import__("time").time() + 600})
         return []
 
+    monkeypatch.setattr(find_sources, "LEGACY_COOLDOWN_WORKSPACE", tmp_path / "workspace")
     monkeypatch.setattr(find_sources, "QUERIES", [("one", "urban"), ("two", "urban")])
     monkeypatch.setattr(find_sources, "BACKENDS", {"openalex": openalex})
     monkeypatch.setattr(find_sources, "load_context", lambda partners=(): (POLICY, {}))
@@ -222,3 +223,40 @@ def test_main_family_uses_its_familys_record(monkeypatch, tmp_path):
     assert code == 0 and reported
     assert (tmp_path / "openalex-resolution-building-ai.jsonl").exists()
     assert not (tmp_path / "openalex-resolution-simulation.jsonl").exists()
+
+
+# --- fifth review: a cooldown persisted while a request queued for its slot ------------------------
+
+class CoolingPacer:
+    """A pacer during whose wait another process persists an OpenAlex cooldown."""
+
+    def wait(self):
+        openalex_state.Cooldowns().raise_to({"openalex": 5e9})
+
+
+def test_legacy_request_is_not_sent_after_a_cooldown_set_during_the_wait():
+    calls = []
+    with pytest.raises(openalex_state.Throttled, match="cooldown active"):
+        openalex_state.openalex_get(lambda url, **kw: calls.append(url), fam.OPENALEX,
+                                    params={}, cooldowns=openalex_state.Cooldowns(),
+                                    pacer=CoolingPacer())
+    assert calls == []
+
+
+def test_family_request_is_not_sent_after_a_cooldown_set_during_the_wait():
+    http = FakeHttp(pages=[page([])])
+    api = fam.Api(http, lookup_max=5, cooldowns=openalex_state.Cooldowns(), now=lambda: NOW,
+                  sleep=lambda s: None, pacer=CoolingPacer())
+    with pytest.raises(fam.UpstreamError, match="cooldown active"):
+        api.search({}, 100)
+    assert http.calls == []
+
+
+# --- fifth review: tests never touch a checkout's real legacy cooldown file -------------------------
+
+def test_the_migration_source_is_isolated_and_guarded(tmp_path):
+    real = Path(find_sources.__file__).resolve().parents[1] / "workspace"
+    assert Path(find_sources.LEGACY_COOLDOWN_WORKSPACE).resolve() != real.resolve()
+    with pytest.raises(AssertionError, match="real legacy cooldown file"):
+        openalex_state.migrate_legacy_cooldowns(real)
+    openalex_state.migrate_legacy_cooldowns(tmp_path)  # anything else is allowed
