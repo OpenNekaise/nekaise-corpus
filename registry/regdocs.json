@@ -1,0 +1,814 @@
+{
+  "_readme": "Sources of scripts/find_regdocs.py (compliance/ESG programme, Codex decision 2026-09-25). Order is the rotation order: APPEND new sources at the END. enabled=false sources carry a reason; licence tags outside the current registry vocabulary (unverified, proprietary, cc-by-nd, ...) must stay disabled until the collect-all licence classes land. blocked=true records a reviewed NO-GO and can never run.",
+  "sources": {
+    "riksdagen-sfs": {
+      "name": "Riksdagen open data: Swedish building, fire, accessibility and reporting statutes (SFS)",
+      "enabled": true,
+      "mechanism": "static_list",
+      "source": "riksdagen_sfs",
+      "license": "public-domain",
+      "license_url": "https://www.riksdagen.se/sv/dokument-och-lagar/riksdagens-oppna-data/",
+      "license_evidence": "Upphovsrättslagen (1960:729) 9 §: författningar omfattas inte av upphovsrätt; Riksdagens öppna data: 'Öppna data får användas fritt utan avgifter eller licenser. Ange dock alltid Sveriges riksdag som källa.' Current consolidated SFS text (not every historical version).",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "txt",
+      "language": "sv",
+      "jurisdiction": "SE",
+      "document_type": "statute",
+      "delay": 1,
+      "quality_profile": "normative",
+      "hosts": [
+        "data.riksdagen.se"
+      ],
+      "robots": "data.riksdagen.se: robots.txt 404 (none); www.riksdagen.se names Claude* crawlers only with crawl-delay 1",
+      "items": [
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2010-900.text",
+          "title": "SFS Plan- och bygglag (2010:900) [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2011-338.text",
+          "title": "SFS Plan- och byggförordning (2011:338) [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2006-985.text",
+          "title": "SFS Lag (2006:985) om energideklaration för byggnader [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2006-1592.text",
+          "title": "SFS Förordning (2006:1592) om energideklaration för byggnader [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2021-787.text",
+          "title": "SFS Lag (2021:787) om klimatdeklaration för byggnader [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2021-789.text",
+          "title": "SFS Förordning (2021:789) om klimatdeklaration för byggnader [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2003-778.text",
+          "title": "SFS Lag (2003:778) om skydd mot olyckor [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2003-789.text",
+          "title": "SFS Förordning (2003:789) om skydd mot olyckor [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2010-1011.text",
+          "title": "SFS Lag (2010:1011) om brandfarliga och explosiva varor [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2010-1075.text",
+          "title": "SFS Förordning (2010:1075) om brandfarliga och explosiva varor [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2018-222.text",
+          "title": "SFS Lag (2018:222) om bostadsanpassningsbidrag [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-1992-1574.text",
+          "title": "SFS Lag (1992:1574) om bostadsanpassningsbidrag m.m. [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-1994-847.text",
+          "title": "SFS Lag (1994:847) om tekniska egenskapskrav på byggnadsverk, m.m. [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-1994-1215.text",
+          "title": "SFS Förordning (1994:1215) om tekniska egenskapskrav på byggnadsverk, m.m. [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-1987-10.text",
+          "title": "SFS Plan- och bygglag (1987:10) [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-1987-383.text",
+          "title": "SFS Plan- och byggförordning (1987:383) [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2014-227.text",
+          "title": "SFS Lag (2014:227) om färdigställandeskydd [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2014-348.text",
+          "title": "SFS Förordning (2014:348) om energimätning i byggnader [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2014-266.text",
+          "title": "SFS Lag (2014:266) om energikartläggning i stora företag [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2016-1128.text",
+          "title": "SFS Förordning (2016:1128) om fluorerade växthusgaser [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-2008-567.text",
+          "title": "SFS Diskrimineringslag (2008:567) [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-1995-1554.text",
+          "title": "SFS Årsredovisningslag (1995:1554) [riksdagen.se, gällande lydelse]"
+        },
+        {
+          "url": "https://data.riksdagen.se/dokument/sfs-1998-808.text",
+          "title": "SFS Miljöbalk (1998:808) [riksdagen.se, gällande lydelse]"
+        }
+      ]
+    },
+    "retsinformation-br18": {
+      "name": "Retsinformation: Danish Building Act and BR18 building regulations (all published BEK)",
+      "enabled": true,
+      "mechanism": "static_list",
+      "source": "retsinformation",
+      "license": "public-domain",
+      "license_url": "https://www.retsinformation.dk/eli/lta/2023/1093",
+      "license_evidence": "Ophavsretsloven § 9: love, administrative forskrifter og retsafgørelser er ikke genstand for ophavsret; official PDF of the Danish legal information system (Retsinformation).",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "pdf",
+      "language": "da",
+      "jurisdiction": "DK",
+      "document_type": "regulation",
+      "delay": 2,
+      "quality_profile": "normative",
+      "hosts": [
+        "www.retsinformation.dk"
+      ],
+      "robots": "retsinformation.dk robots.txt lists only a sitemap (no disallow)",
+      "items": [
+        {
+          "url": "https://www.retsinformation.dk/eli/lta/2016/1178/pdf",
+          "title": "LBK nr 1178 af 2016: Bekendtgørelse af byggeloven"
+        },
+        {
+          "url": "https://www.retsinformation.dk/eli/lta/2017/1615/pdf",
+          "title": "BEK nr 1615 af 2017: Bekendtgørelse om bygningsreglement 2018 (BR18)"
+        },
+        {
+          "url": "https://www.retsinformation.dk/eli/lta/2019/680/pdf",
+          "title": "BEK nr 680 af 2019: Bekendtgørelse om ændring af bekendtgørelse om bygningsreglement 2018 (BR18)"
+        },
+        {
+          "url": "https://www.retsinformation.dk/eli/lta/2019/1399/pdf",
+          "title": "BEK nr 1399 af 2019: Bekendtgørelse om bygningsreglement 2018 (BR18)"
+        },
+        {
+          "url": "https://www.retsinformation.dk/eli/lta/2020/794/pdf",
+          "title": "BEK nr 794 af 2020: Bekendtgørelse om ændring af bekendtgørelse om bygningsreglement 2018 (BR18)"
+        },
+        {
+          "url": "https://www.retsinformation.dk/eli/lta/2021/2312/pdf",
+          "title": "BEK nr 2312 af 2021: Bekendtgørelse om ændring af bekendtgørelse om bygningsreglement 2018 (BR18)"
+        },
+        {
+          "url": "https://www.retsinformation.dk/eli/lta/2023/1673/pdf",
+          "title": "BEK nr 1673 af 2023: Bekendtgørelse om ændring af bekendtgørelse om bygningsreglement 2018 (BR18)"
+        },
+        {
+          "url": "https://www.retsinformation.dk/eli/lta/2024/855/pdf",
+          "title": "BEK nr 855 af 2024: Bekendtgørelse om ændring af bekendtgørelse om bygningsreglement 2018 (BR18)"
+        },
+        {
+          "url": "https://www.retsinformation.dk/eli/lta/2025/271/pdf",
+          "title": "BEK nr 271 af 2025: Bekendtgørelse om ændring af bekendtgørelse om bygningsreglement 2018 (BR18)"
+        },
+        {
+          "url": "https://www.retsinformation.dk/eli/lta/2025/285/pdf",
+          "title": "BEK nr 285 af 2025: Bekendtgørelse om ændring af bekendtgørelse om bygningsreglement 2018 (BR18)"
+        }
+      ]
+    },
+    "finlex-building-decrees": {
+      "name": "Finlex open data: Finnish building act and decrees linked from the YM building-code collection (fi + sv PDFs)",
+      "enabled": true,
+      "mechanism": "link_pages",
+      "source": "finlex",
+      "license": "cc-by",
+      "license_url": "https://www.finlex.fi/en/faq",
+      "license_evidence": "Finlex open data (opendata.finlex.fi) is licensed under Creative Commons Attribution 4.0 (Finlex FAQ); statutes are also outside copyright (tekijänoikeuslaki 9 §).",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "pdf",
+      "jurisdiction": "FI",
+      "document_type": "statute",
+      "delay": 5,
+      "quality_profile": "normative",
+      "hosts": [
+        "opendata.finlex.fi"
+      ],
+      "robots": "ym.fi Crawl-delay 5 (discovery honours it); opendata.finlex.fi robots 404; finlex.fi disallows only /_next/image",
+      "seeds": [
+        "https://ym.fi/rakentamismaaraykset"
+      ],
+      "link_include": "^https://(?:www\\.)?finlex\\.fi/fi/lainsaadanto/(?:saadoskokoelma/)?\\d{4}/\\d+",
+      "label_strip": "\\s*[|-]\\s*(?:Säädökset alkuperäisinä\\s*-\\s*)?FINLEX\\s*®?\\s*$",
+      "rewrites": [
+        {
+          "pattern": "lainsaadanto/(?:saadoskokoelma/)?(\\d{4})/(\\d+)",
+          "replace": "https://opendata.finlex.fi/finlex/avoindata/v1/akn/fi/act/statute/\\1/\\2/fin@/main.pdf",
+          "language": "fi",
+          "title_suffix": " (\\1/\\2, suomi)"
+        },
+        {
+          "pattern": "lainsaadanto/(?:saadoskokoelma/)?(\\d{4})/(\\d+)",
+          "replace": "https://opendata.finlex.fi/finlex/avoindata/v1/akn/fi/act/statute/\\1/\\2/swe@/main.pdf",
+          "language": "sv",
+          "title_suffix": " (\\1/\\2, svenska)"
+        }
+      ]
+    },
+    "ym-authority-regulations": {
+      "name": "Ympäristöministeriö: historical building-code collection regulations (Finlex authority-regulation PDFs)",
+      "enabled": true,
+      "mechanism": "link_pages",
+      "source": "ym_building_code",
+      "license": "public-domain",
+      "license_url": "https://www.finlex.fi/en/faq",
+      "license_evidence": "Ministry of the Environment building regulations (Suomen rakentamismääräyskokoelma) are administrative regulations outside copyright under tekijänoikeuslaki 9 §; PDF served by Finlex.",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "pdf",
+      "language": "fi",
+      "jurisdiction": "FI",
+      "document_type": "regulation",
+      "delay": 5,
+      "quality_profile": "normative",
+      "hosts": [
+        "finlex.fi",
+        "www.finlex.fi"
+      ],
+      "robots": "ym.fi Crawl-delay 5; finlex.fi disallows only /_next/image",
+      "seeds": [
+        "https://ym.fi/rakentamismaaraykset"
+      ],
+      "link_include": "^https://(?:www\\.)?finlex\\.fi/api/media/authority-regulation/\\d+/mainPdf/main\\.pdf",
+      "title_prefix": "Suomen rakentamismääräyskokoelma",
+      "label_prefix": "Suomen rakentamismääräyskokoelma "
+    },
+    "boverket-web": {
+      "name": "Boverket web guidance: PBL kunskapsbanken (BBR 3 tillgänglighet, BBR 5 brandskydd, EKS), byggande, planering, statistics",
+      "enabled": false,
+      "reason": "awaiting collect-all licence classes (unverified)",
+      "mechanism": "sitemap_pages",
+      "source": "boverket_web",
+      "license": "unverified",
+      "license_url": "https://www.boverket.se/sv/om-boverket/om-webbplatsen/lagar-som-styr-webbplatsen/",
+      "license_evidence": "No reuse grant was established for this content on 2026-09-25; collected as `unverified` under the operator's collect-regardless-of-licence directive (2026-09-25). Existing `open` tags on Boverket publications are not evidence (Codex 2026-09-25).",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "html",
+      "language": "sv",
+      "jurisdiction": "SE",
+      "document_type": "guidance",
+      "delay": 10,
+      "robots": "www.boverket.se Crawl-delay 10; disallows search, sitemap pages and query URLs",
+      "sitemaps": [
+        "https://www.boverket.se/sitemap.xml"
+      ],
+      "include": "^https://www\\.boverket\\.se/sv/(?:PBL-kunskapsbanken|byggande|samhallsplanering|hallbar-stad|babhandboken|lag--ratt|energiguiden|klimatdeklaration|energideklaration|kommunernas-bostadsforsorjning)/",
+      "exclude": "/(?:webbplatskarta|sok|sok-i-[^/]+|tillganglighetsredogorelse[^/]*|om-webbplatsen)/|[?#]",
+      "title_prefix": "Boverket",
+      "title_strip": "sv",
+      "topic_rules": [
+        [
+          "tillganglig",
+          "architecture"
+        ],
+        [
+          "brand",
+          "architecture"
+        ],
+        [
+          "energi|klimatdeklaration",
+          "building_energy"
+        ],
+        [
+          "konstruktion|eks|barverk",
+          "structures_civil"
+        ],
+        [
+          "samhallsplanering|hallbar-stad|detaljplan|oversiktsplan",
+          "urban"
+        ]
+      ]
+    },
+    "mcf-brandskydd": {
+      "name": "MCF (ex-MSB): brandskydd, skydd mot olyckor and brandfarliga varor guidance",
+      "enabled": false,
+      "reason": "awaiting collect-all licence classes (unverified)",
+      "mechanism": "sitemap_pages",
+      "source": "mcf",
+      "license": "unverified",
+      "license_url": "https://www.mcf.se/",
+      "license_evidence": "No reuse grant was established for this content on 2026-09-25; collected as `unverified` under the operator's collect-regardless-of-licence directive (2026-09-25). ",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "architecture",
+      "format": "html",
+      "language": "sv",
+      "jurisdiction": "SE",
+      "document_type": "guidance",
+      "delay": 2,
+      "robots": "www.mcf.se robots disallows only ?q= search, /Util/, /EPiServer/",
+      "sitemaps": [
+        "https://www.mcf.se/Mvc/SiteMap/GetXml/"
+      ],
+      "include": "^https://www\\.mcf\\.se/sv/amnesomraden/skydd-mot-olyckor-och-farliga-amnen/(?:stod-till-kommunal-raddningstjanst/brandskydd|brandfarligt-och-explosivt|brandskydd|tillsyn)",
+      "exclude": "[?#]",
+      "title_prefix": "MCF",
+      "title_strip": "sv/amnesomraden"
+    },
+    "dibk-regelverk": {
+      "name": "DiBK: TEK17 with guidance, SAK10, DOK, older TEK and DiBK reports",
+      "enabled": false,
+      "reason": "awaiting collect-all licence classes (unverified: TEK17 pages mix regulation text with authored guidance)",
+      "mechanism": "sitemap_pages",
+      "source": "dibk",
+      "license": "unverified",
+      "license_url": "https://www.dibk.no/",
+      "license_evidence": "No reuse grant was established for this content on 2026-09-25; collected as `unverified` under the operator's collect-regardless-of-licence directive (2026-09-25). Pure regulation text would be outside copyright (åndsverkloven § 14) but each fetched page also carries authored guidance.",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "html",
+      "language": "nb",
+      "jurisdiction": "NO",
+      "document_type": "regulation-with-guidance",
+      "delay": 2,
+      "robots": "www.dibk.no robots disallows only /innsiden/",
+      "sitemaps": [
+        "https://www.dibk.no/sitemap.xml"
+      ],
+      "include": "^https://www\\.dibk\\.no/(?:regelverk/(?:byggteknisk-forskrift-tek17|tek|sak|dok|forskrift)/|verktoy-og-veivisere/rapporter-og-publikasjoner/)",
+      "exclude": "[?#]",
+      "title_prefix": "DiBK",
+      "topic_rules": [
+        [
+          "brann|brannsikkerhet",
+          "architecture"
+        ],
+        [
+          "universell-utforming|tilgjengelig",
+          "architecture"
+        ],
+        [
+          "energi",
+          "building_energy"
+        ],
+        [
+          "konstruksjon|sikkerhet-mot-sammenbrudd",
+          "structures_civil"
+        ]
+      ]
+    },
+    "bygningsreglementet-dk": {
+      "name": "bygningsreglementet.dk: BR18 requirements and vejledninger (Social- og Boligstyrelsen)",
+      "enabled": false,
+      "reason": "awaiting collect-all licence classes (unverified guidance); no sitemap, seed coverage to be widened after the pilot",
+      "mechanism": "link_pages",
+      "source": "bygningsreglementet",
+      "license": "unverified",
+      "license_url": "https://www.bygningsreglementet.dk/",
+      "license_evidence": "No reuse grant was established for this content on 2026-09-25; collected as `unverified` under the operator's collect-regardless-of-licence directive (2026-09-25). The BR18 instruments themselves are collected from Retsinformation (public domain).",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "html",
+      "language": "da",
+      "jurisdiction": "DK",
+      "document_type": "guidance",
+      "delay": 2,
+      "robots": "bygningsreglementet.dk robots.txt 404 (none)",
+      "seeds": [
+        "https://www.bygningsreglementet.dk/"
+      ],
+      "link_include": "^https://(?:www\\.)?bygningsreglementet\\.dk/(?:Tekniske-bestemmelser|Administrative-bestemmelser|Vejledninger|Historiske-reglementer)/",
+      "link_exclude": "[?#]"
+    },
+    "efrag-esrs": {
+      "name": "EFRAG: ESRS implementation guidance (IG 1-3), Q&A explanations, simplified-ESRS drafts and technical advice, VSME",
+      "enabled": false,
+      "reason": "awaiting collect-all licence classes (proprietary)",
+      "mechanism": "link_pages",
+      "source": "efrag",
+      "license": "proprietary",
+      "license_url": "https://www.efrag.org/en/disclaimer",
+      "license_evidence": "EFRAG disclaimer: 'Any copy, adaptation, change, translation ... is prohibited without the prior written permission of EFRAG'; sui generis database right asserted. No robot/automated-access clause. Collected as restricted (proprietary) under the operator's collect-regardless-of-licence directive 2026-09-25.",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "pdf",
+      "language": "en",
+      "jurisdiction": "EU",
+      "document_type": "framework-guidance",
+      "delay": 2,
+      "robots": "www.efrag.org robots: Drupal defaults (admin/search/user paths only)",
+      "seeds": [
+        "https://www.efrag.org/en/projects/esrs-simplification",
+        "https://www.efrag.org/en/projects/esrs-implementation-guidance-documents",
+        "https://www.efrag.org/en/esrs-qa-platform",
+        "https://www.efrag.org/en/projects/efrag-esrs-qa-platform/monitoring",
+        "https://www.efrag.org/en/projects/voluntary-reporting-standard-for-smes-vsme/concluded",
+        "https://www.efrag.org/en/smes-and-sustainability-reporting"
+      ],
+      "link_include": "^https://www\\.efrag\\.org/(?:sites/|Assets/Download).*(?:\\.pdf|pdf)$",
+      "link_exclude": "(?i)cookie|privacy|legal"
+    },
+    "fsb-tcfd": {
+      "name": "FSB-hosted TCFD final report, implementation annex and status reports",
+      "enabled": false,
+      "reason": "awaiting collect-all licence classes (proprietary: FSB custom non-commercial permission)",
+      "mechanism": "static_list",
+      "source": "fsb_tcfd",
+      "license": "proprietary",
+      "license_url": "https://www.fsb.org/terms_conditions/",
+      "license_evidence": "FSB terms: 'You are granted permission to: download and copy information and documents presented on this site; ... distribute or reproduce the material presented on this site except for commercial purposes, provided that the information appears accurately and that the FSB is cited as the source; make translations, provided that the translation is labelled as unofficial'. Custom non-commercial permission, not a CC licence. (The TCFD website fsb-tcfd.org and its assets.bbhub.io links are NOT used: its ToU bans robots/scrapers.)",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "pdf",
+      "language": "en",
+      "document_type": "framework",
+      "delay": 2,
+      "robots": "www.fsb.org robots disallows only wp-admin and wp-json/metrics",
+      "items": [
+        {
+          "url": "https://www.fsb.org/uploads/P290617-5.pdf",
+          "title": "Final Report: Recommendations of the Task Force on Climate-related Financial Disclosures (June 2017)"
+        },
+        {
+          "url": "http://www.fsb.org/wp-content/uploads/Annex.pdf",
+          "title": "Implementing the Recommendations of the TCFD (Annex, 2017)"
+        },
+        {
+          "url": "https://www.fsb.org/wp-content/uploads/P291020-1.pdf",
+          "title": "Task Force on Climate-related Financial Disclosures: 2020 Status Report"
+        },
+        {
+          "url": "https://www.fsb.org/wp-content/uploads/P141021-2.pdf",
+          "title": "Task Force on Climate-related Financial Disclosures: 2021 Status Report"
+        },
+        {
+          "url": "https://www.fsb.org/wp-content/uploads/P121023-2.pdf",
+          "title": "Task Force on Climate-related Financial Disclosures: 2023 Status Report"
+        }
+      ]
+    },
+    "ukbim-guidance": {
+      "name": "UK BIM Framework: ISO 19650 guidance parts (public PDFs)",
+      "enabled": false,
+      "reason": "awaiting collect-all licence classes (unverified)",
+      "mechanism": "static_list",
+      "source": "ukbim_framework",
+      "license": "unverified",
+      "license_url": "https://www.ukbimframework.org/",
+      "license_evidence": "No reuse grant was established for this content on 2026-09-25; collected as `unverified` under the operator's collect-regardless-of-licence directive (2026-09-25). Terms page 404; the site now redirects to imiframework.org / Notion, which are not used.",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "pdf",
+      "language": "en",
+      "jurisdiction": "GB",
+      "document_type": "guidance",
+      "delay": 2,
+      "robots": "ukbimframework.org robots disallows only /wp-admin/",
+      "items": [
+        {
+          "url": "https://ukbimframework.org/wp-content/uploads/2020/05/ISO19650-2Edition4.pdf",
+          "title": "Information management according to BS EN ISO 19650 — Guidance Part 2 (Edition 4)"
+        },
+        {
+          "url": "https://www.ukbimframework.org/wp-content/uploads/2021/02/Guidance-Part-A_The-information-management-function-and-resources_Edition-2.pdf",
+          "title": "Information management according to BS EN ISO 19650 — Guidance Part A: The information management function and resources (Edition 2)"
+        },
+        {
+          "url": "https://ukbimframework.org/wp-content/uploads/2020/09/Guidance-Part-B_Open-data-buildingSMART-and-COBie_Edition-1.pdf",
+          "title": "Information management according to BS EN ISO 19650 — Guidance Part B: Open data, buildingSMART and COBie (Edition 1)"
+        },
+        {
+          "url": "https://ukbimframework.org/wp-content/uploads/2020/09/Guidance-Part-C_Facilitating-the-common-data-environment-workflow-and-technical-solutions_Edition-1.pdf",
+          "title": "Information management according to BS EN ISO 19650 — Guidance Part C: Facilitating the common data environment (Edition 1)"
+        },
+        {
+          "url": "https://www.ukbimframework.org/wp-content/uploads/2021/02/Guidance-Part-D_Developing-information-requirements_Edition-2.pdf",
+          "title": "Information management according to BS EN ISO 19650 — Guidance Part D: Developing information requirements (Edition 2)"
+        },
+        {
+          "url": "https://www.ukbimframework.org/wp-content/uploads/2021/02/Guidance-Part-E_Tendering-and-appointments_Edition-2.pdf",
+          "title": "Information management according to BS EN ISO 19650 — Guidance Part E: Tendering and appointments (Edition 2)"
+        },
+        {
+          "url": "https://ukbimframework.org/wp-content/uploads/2020/09/Guidance-Part-F_About-information-delivery-planning_Edition-1.pdf",
+          "title": "Information management according to BS EN ISO 19650 — Guidance Part F: Information delivery planning (Edition 1)"
+        },
+        {
+          "url": "https://www.ukbimframework.org/wp-content/uploads/2021/02/Guidance-Part-3_Operational-phase-of-the-asset-life-cycle_Edition-2.pdf",
+          "title": "Information management according to BS EN ISO 19650 — Guidance Part 3: Operational phase of the asset life cycle (Edition 2)"
+        }
+      ]
+    },
+    "aibob-site": {
+      "name": "AI-BOB (aibob.io): company, product and press pages",
+      "enabled": false,
+      "reason": "awaiting collect-all licence classes (unverified company pages; product descriptions are company claims); pilot 2026-09-25: pages are a JavaScript app, /about extracted 0 chars (no-text) - needs a server-rendered route before enabling",
+      "mechanism": "sitemap_pages",
+      "source": "aibob",
+      "license": "unverified",
+      "license_url": "https://www.aibob.io/terms-of-service",
+      "license_evidence": "No reuse grant was established for this content on 2026-09-25; collected as `unverified` under the operator's collect-regardless-of-licence directive (2026-09-25). Company claims about the product, not evidence of its private rule base.",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "construction",
+      "format": "html",
+      "language": "en",
+      "document_type": "company-profile",
+      "delay": 2,
+      "robots": "aibob.io robots: User-agent * Allow /",
+      "sitemaps": [
+        "https://aibob.io/sitemap.xml"
+      ],
+      "include": "^https://www\\.aibob\\.io/(?:|about|press|downloads)$",
+      "title_prefix": "AI-BOB"
+    },
+    "cleartraced-site": {
+      "name": "Cleartraced (formerly Climate Tracker Initiative, climatetrackerinitiative.org): company, methodology and article pages",
+      "enabled": false,
+      "reason": "awaiting collect-all licence classes (unverified company pages)",
+      "mechanism": "sitemap_pages",
+      "source": "cleartraced",
+      "license": "unverified",
+      "license_url": "https://cleartraced.com/terms-of-service/",
+      "license_evidence": "No reuse grant was established for this content on 2026-09-25; collected as `unverified` under the operator's collect-regardless-of-licence directive (2026-09-25). climatetrackerinitiative.org redirects to cleartraced.com (the CTI rebrand).",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "html",
+      "language": "en",
+      "document_type": "company-profile",
+      "delay": 2,
+      "robots": "cleartraced.com robots.txt 404 (none)",
+      "sitemaps": [
+        "https://cleartraced.com/post-sitemap.xml",
+        "https://cleartraced.com/page-sitemap.xml"
+      ],
+      "include": "^https://cleartraced\\.com/",
+      "exclude": "/(?:terms-of-service|privacy-policy|cookie-policy|sitemap|cleartraced-book-demo)/",
+      "title_prefix": "Cleartraced (CTI)"
+    },
+    "aec-ai-press": {
+      "name": "Press coverage of AI-BOB (tech.eu, EU-Startups, ArcticStartup, Vestbee, Opper)",
+      "enabled": false,
+      "reason": "awaiting collect-all licence classes (unverified press articles)",
+      "mechanism": "static_list",
+      "source": "aec_ai_press",
+      "license": "unverified",
+      "license_url": "https://tech.eu/",
+      "license_evidence": "No reuse grant was established for this content on 2026-09-25; collected as `unverified` under the operator's collect-regardless-of-licence directive (2026-09-25). Publisher copyright; robots of every host allow the article paths (tech.eu explicitly allows ClaudeBot).",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "construction",
+      "format": "html",
+      "language": "en",
+      "document_type": "press-article",
+      "delay": 2,
+      "robots": "all five hosts allow the article paths",
+      "items": [
+        {
+          "url": "https://tech.eu/2025/10/21/meet-ai-bob-the-swedish-startup-bringing-ai-powered-compliance-to-the-construction-industry/",
+          "title": "Tech.eu: Meet AI-BOB, the Swedish startup bringing AI-powered compliance to the construction industry (2025-10-21)"
+        },
+        {
+          "url": "https://www.eu-startups.com/2025/02/female-led-constructiontech-startup-ai-bob-secures-e2-million-to-expand-globally",
+          "title": "EU-Startups: Female-led ConstructionTech startup AI-BOB secures €2 million to expand globally"
+        },
+        {
+          "url": "https://arcticstartup.com/ai-bob-raises-e2-million/",
+          "title": "ArcticStartup: Sweden's AI-BOB secures new investment to scale AI for construction regulations"
+        },
+        {
+          "url": "https://www.vestbee.com/insights/articles/ai-bob-raises-2-m",
+          "title": "Vestbee: Stockholm-based construction tech firm AI-BOB raises €2M led by CapitalT"
+        },
+        {
+          "url": "https://opper.ai/stories/aibob",
+          "title": "Opper AI: AI-BOB — compliance reviews from days to minutes"
+        }
+      ]
+    },
+    "nationella-riktlinjer": {
+      "name": "BIM Alliance Nationella Riktlinjer (public part)",
+      "enabled": false,
+      "reason": "public portal is a JavaScript application with no server-side text (coverage gap); the licensed part needs an organisation login (never used)",
+      "mechanism": "static_list",
+      "source": "nationella_riktlinjer",
+      "license": "unverified",
+      "license_url": "https://www.nationella-riktlinjer.se/",
+      "license_evidence": "No reuse grant was established for this content on 2026-09-25; collected as `unverified` under the operator's collect-regardless-of-licence directive (2026-09-25). 'fri att använda' is not a specific reuse licence.",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "html",
+      "language": "sv",
+      "document_type": "guidance",
+      "delay": 2,
+      "robots": "robots.txt empty",
+      "items": [
+        {
+          "url": "https://www.nationella-riktlinjer.se/",
+          "title": "Nationella Riktlinjer – Livscykelinformation för byggd miljö"
+        }
+      ]
+    },
+    "gri-standards": {
+      "name": "GRI Standards (GRI 1-3, sector and topic standards)",
+      "enabled": false,
+      "blocked": true,
+      "reason": "NO-GO: download behind a registration form; GRI website terms prohibit 'any automated systems (robots, spiders) to access the Site'. Pointer only (registry/curated.yaml ptr-).",
+      "mechanism": "static_list",
+      "source": "gri_standards",
+      "license": "proprietary",
+      "license_url": "https://www.globalreporting.org/standards/download-the-standards/",
+      "license_evidence": "NO-GO: download behind a registration form; GRI website terms prohibit 'any automated systems (robots, spiders) to access the Site'. Pointer only (registry/curated.yaml ptr-).",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "html",
+      "items": [
+        {
+          "url": "https://www.globalreporting.org/standards/download-the-standards/",
+          "title": "GRI Standards (GRI 1-3, sector and topic standards)"
+        }
+      ]
+    },
+    "ifrs-sustainability": {
+      "name": "IFRS S1 and IFRS S2 (ISSB)",
+      "enabled": false,
+      "blocked": true,
+      "reason": "NO-GO: the standards navigator requires sign-in. Pointer only.",
+      "mechanism": "static_list",
+      "source": "ifrs_sustainability",
+      "license": "proprietary",
+      "license_url": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/",
+      "license_evidence": "NO-GO: the standards navigator requires sign-in. Pointer only.",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "html",
+      "items": [
+        {
+          "url": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/",
+          "title": "IFRS S1 and IFRS S2 (ISSB)"
+        }
+      ]
+    },
+    "sasb-standards": {
+      "name": "SASB Standards (industry-based)",
+      "enabled": false,
+      "blocked": true,
+      "reason": "NO-GO: sasb.ifrs.org robots.txt 'Disallow: /*.pdf$' for all agents, plus a download form. Pointer only.",
+      "mechanism": "static_list",
+      "source": "sasb_standards",
+      "license": "proprietary",
+      "license_url": "https://sasb.ifrs.org/standards/download/",
+      "license_evidence": "NO-GO: sasb.ifrs.org robots.txt 'Disallow: /*.pdf$' for all agents, plus a download form. Pointer only.",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "html",
+      "items": [
+        {
+          "url": "https://sasb.ifrs.org/standards/download/",
+          "title": "SASB Standards (industry-based)"
+        }
+      ]
+    },
+    "ghg-protocol": {
+      "name": "GHG Protocol standards",
+      "enabled": false,
+      "blocked": true,
+      "reason": "NO-GO: GHG Protocol terms 'you will not use any robot, spider, rover, scraper ... to ... copy'; applies to its two CC BY publications too. Pointer only.",
+      "mechanism": "static_list",
+      "source": "ghg_protocol",
+      "license": "proprietary",
+      "license_url": "https://ghgprotocol.org/standards",
+      "license_evidence": "NO-GO: GHG Protocol terms 'you will not use any robot, spider, rover, scraper ... to ... copy'; applies to its two CC BY publications too. Pointer only.",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "html",
+      "items": [
+        {
+          "url": "https://ghgprotocol.org/standards",
+          "title": "GHG Protocol standards"
+        }
+      ]
+    },
+    "tcfd-website": {
+      "name": "TCFD website (fsb-tcfd.org, assets.bbhub.io)",
+      "enabled": false,
+      "blocked": true,
+      "reason": "NO-GO: fsb-tcfd.org terms 'You may not access ... copy any content ... using any robot, spider, scraper ... or other automated means'. FSB-hosted copies are used instead (fsb-tcfd).",
+      "mechanism": "static_list",
+      "source": "tcfd_website",
+      "license": "proprietary",
+      "license_url": "https://www.fsb-tcfd.org/publications/",
+      "license_evidence": "NO-GO: fsb-tcfd.org terms 'You may not access ... copy any content ... using any robot, spider, scraper ... or other automated means'. FSB-hosted copies are used instead (fsb-tcfd).",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "html",
+      "items": [
+        {
+          "url": "https://www.fsb-tcfd.org/publications/",
+          "title": "TCFD website (fsb-tcfd.org, assets.bbhub.io)"
+        }
+      ]
+    },
+    "cdp-guidance": {
+      "name": "CDP disclosure guidance (real estate)",
+      "enabled": false,
+      "blocked": true,
+      "reason": "NO-GO: CDP terms '15. No text or data mining' and robot ban. Pointer only.",
+      "mechanism": "static_list",
+      "source": "cdp_guidance",
+      "license": "proprietary",
+      "license_url": "https://www.cdp.net/en/guidance",
+      "license_evidence": "NO-GO: CDP terms '15. No text or data mining' and robot ban. Pointer only.",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "html",
+      "items": [
+        {
+          "url": "https://www.cdp.net/en/guidance",
+          "title": "CDP disclosure guidance (real estate)"
+        }
+      ]
+    },
+    "buildingsmart-web": {
+      "name": "buildingSMART websites (technical, standards/IFC docs, bSDD search)",
+      "enabled": false,
+      "blocked": true,
+      "reason": "NO-GO: robots.txt 'Content-Signal: search=yes,ai-train=no' for all agents (express DSM Art. 4 reservation) and ClaudeBot/anthropic-ai/GPTBot/CCBot Disallow: /. Official GitHub repository copies are a separate, reviewed route.",
+      "mechanism": "static_list",
+      "source": "buildingsmart_web",
+      "license": "cc-by-nd",
+      "license_url": "https://technical.buildingsmart.org/",
+      "license_evidence": "NO-GO: robots.txt 'Content-Signal: search=yes,ai-train=no' for all agents (express DSM Art. 4 reservation) and ClaudeBot/anthropic-ai/GPTBot/CCBot Disallow: /. Official GitHub repository copies are a separate, reviewed route.",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "html",
+      "items": [
+        {
+          "url": "https://technical.buildingsmart.org/",
+          "title": "buildingSMART websites (technical, standards/IFC docs, bSDD search)"
+        }
+      ]
+    },
+    "lovdata": {
+      "name": "Lovdata / api.lovdata.no public data (TEK17 regulation text, NLOD)",
+      "enabled": false,
+      "blocked": true,
+      "reason": "NO-GO: lovdata.no and api.lovdata.no robots.txt 'User-agent: * Disallow: /'; NLOD does not override the access policy. Pointer only.",
+      "mechanism": "static_list",
+      "source": "lovdata",
+      "license": "open",
+      "license_url": "https://api.lovdata.no/",
+      "license_evidence": "NO-GO: lovdata.no and api.lovdata.no robots.txt 'User-agent: * Disallow: /'; NLOD does not override the access policy. Pointer only.",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "html",
+      "items": [
+        {
+          "url": "https://api.lovdata.no/",
+          "title": "Lovdata / api.lovdata.no public data (TEK17 regulation text, NLOD)"
+        }
+      ]
+    },
+    "coclass": {
+      "name": "CoClass / BSAB (Svensk Byggtjänst)",
+      "enabled": false,
+      "blocked": true,
+      "reason": "NO-GO: login required and robots.txt 'Disallow: /'. Pointer only.",
+      "mechanism": "static_list",
+      "source": "coclass",
+      "license": "proprietary",
+      "license_url": "https://coclass.byggtjanst.se/",
+      "license_evidence": "NO-GO: login required and robots.txt 'Disallow: /'. Pointer only.",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "html",
+      "items": [
+        {
+          "url": "https://coclass.byggtjanst.se/",
+          "title": "CoClass / BSAB (Svensk Byggtjänst)"
+        }
+      ]
+    },
+    "eur-lex-website": {
+      "name": "EUR-Lex website",
+      "enabled": false,
+      "blocked": true,
+      "reason": "NO-GO: eur-lex.europa.eu answers every request (incl. robots.txt) with an AWS WAF challenge (HTTP 202, empty body). The same documents are collected from the Publications Office Cellar (find_eurlex).",
+      "mechanism": "static_list",
+      "source": "eur_lex_website",
+      "license": "open",
+      "license_url": "https://eur-lex.europa.eu/",
+      "license_evidence": "NO-GO: eur-lex.europa.eu answers every request (incl. robots.txt) with an AWS WAF challenge (HTTP 202, empty body). The same documents are collected from the Publications Office Cellar (find_eurlex).",
+      "rights_reviewed_at": "2026-09-25",
+      "topic": "standards_protocols",
+      "format": "html",
+      "items": [
+        {
+          "url": "https://eur-lex.europa.eu/",
+          "title": "EUR-Lex website"
+        }
+      ]
+    }
+  }
+}

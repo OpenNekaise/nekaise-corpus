@@ -147,12 +147,63 @@ CHALLENGE_STATUSES = frozenset({202, 403, 429, 503})
 CHALLENGE_BODY = re.compile(
     rb"sgcaptcha|captcha|challenge-platform|cf-chl|awswaf|request blocked|access denied", re.I
 )
+HTML_CHALLENGE_BODY = re.compile(
+    rb"sgcaptcha|g-recaptcha|hcaptcha|challenge-platform|cf-chl|awswaf|"
+    rb"<title>\s*(?:access denied|request rejected|just a moment|attention required)", re.I)
 # Per-run download cap for polite hosts, so a retry backlog paced at HOST_DELAY cannot stretch a
 # round's fetch step: the excess stays in the registry untouched (no manifest row) until later.
 HOST_RUN_CAP: dict[str, int] = {
     "publications.ibpsa.org": 80,  # 80 x 3 s = 4 min
     "escholarship.org": 60,        # 60 x 4 s = 4 min
 }
+# Compliance/ESG programme (Codex decision 2026-09-25; ids bov-bfs- / reg- / eur- / esf-, see
+# scripts/compliance_common.py): each delivery host is POLITE (honest UA, no curl/browser
+# fallback, challenge circuit), serial, paced and capped per run. Aliases share ONE pacing/cap
+# budget (PACE_ALIAS: a redirect between www.x and x cannot double the rate). A longer robots.txt
+# Crawl-delay raises the delay at run time (check_hop). {group key: (delay s, run cap)}.
+PROGRAMME_HOSTS: dict[str, tuple[float, int]] = {
+    "www.boverket.se": (10.0, 12), "rinfo.boverket.se": (2.0, 24),
+    "publications.europa.eu": (2.0, 24), "filings.xbrl.org": (2.0, 4),
+    "www.dibk.no": (2.0, 12), "www.mcf.se": (2.0, 12), "www.retsinformation.dk": (2.0, 12),
+    "www.bygningsreglementet.dk": (2.0, 12), "finlex.fi": (2.0, 12),
+    "opendata.finlex.fi": (2.0, 12), "ym.fi": (5.0, 6), "www.efrag.org": (2.0, 8),
+    "www.fsb.org": (2.0, 8), "data.riksdagen.se": (1.0, 12), "www.aibob.io": (2.0, 6),
+    "cleartraced.com": (2.0, 6), "ukbimframework.org": (2.0, 6), "tech.eu": (2.0, 6),
+    "www.eu-startups.com": (2.0, 6), "arcticstartup.com": (2.0, 6), "www.vestbee.com": (2.0, 6),
+    "opper.ai": (2.0, 6),
+}
+PACE_ALIAS: dict[str, str] = {
+    "boverket.se": "www.boverket.se", "dibk.no": "www.dibk.no", "mcf.se": "www.mcf.se",
+    "retsinformation.dk": "www.retsinformation.dk",
+    "bygningsreglementet.dk": "www.bygningsreglementet.dk", "www.finlex.fi": "finlex.fi",
+    "www.ym.fi": "ym.fi", "efrag.org": "www.efrag.org", "fsb.org": "www.fsb.org",
+    "aibob.io": "www.aibob.io", "www.cleartraced.com": "cleartraced.com",
+    "www.ukbimframework.org": "ukbimframework.org", "www.tech.eu": "tech.eu",
+    "eu-startups.com": "www.eu-startups.com", "vestbee.com": "www.vestbee.com",
+    "www.opper.ai": "opper.ai",
+}
+# Programme-wide per-run limits: attempted NEW documents (restores exempt, like HOST_RUN_CAP),
+# the ESEF sub-limit, and decoded response bytes per document (streamed, refused past the cap).
+PROGRAMME_RUN_CAP = 88
+ESEF_RUN_CAP = 4
+PROGRAMME_MAX_BYTES = 128 * 1024 * 1024
+ESEF_MAX_BYTES = 64 * 1024 * 1024
+for _host, (_delay, _cap) in PROGRAMME_HOSTS.items():
+    HOST_DELAY[_host] = max(HOST_DELAY.get(_host, 0.0), _delay)
+    HOST_CONCURRENCY[_host] = 1
+    HOST_RUN_CAP[_host] = min(HOST_RUN_CAP.get(_host, _cap), _cap)
+    HOST_UA[_host] = HONEST_UA
+POLITE_HOSTS = POLITE_HOSTS | frozenset(PROGRAMME_HOSTS)
+
+
+def pace_key(host: str) -> str:
+    """The pacing/cap/politeness group of a canonical hostname (aliases share one budget)."""
+    return PACE_ALIAS.get(host, host)
+
+
+def is_programme_row(sid: str) -> bool:
+    import compliance_common
+    return compliance_common.is_programme_id(sid)
 # Every request hop — the registry URL, each HTTP redirect (DOI resolvers, download/CDN links,
 # mirrors), each curl-fallback hop — goes through ONE path (_get_hops / _curl_follow) that, BEFORE
 # requesting it: checks the pinned host policy (registry/host_policy.json, set by _run) on the
@@ -198,6 +249,14 @@ class CopyChanged(HopRefused):
     """A copy-bound row's hop leaves the licensed copy (or reaches a NO-GO host)."""
 
 
+class RobotsRefused(HopRefused):
+    """robots.txt disallows the hop (compliance programme rows): a hard, policy failure."""
+
+
+class TooLarge(Exception):
+    """The decoded response body exceeded the row's byte cap."""
+
+
 class ChallengeRefused(Exception):
     """A polite host answered with a challenge, or its per-run circuit is open."""
 
@@ -211,8 +270,11 @@ class Hops:
     the paced defaults, the chain of requested hops, and the chain's OWN cookie session (a
     302 + Set-Cookie + relative Location chain needs the cookie on the next hop)."""
 
-    def __init__(self, origin: str, copy_bound: bool, paced: bool = False):
+    def __init__(self, origin: str, copy_bound: bool, paced: bool = False,
+                 robots: bool = False, max_bytes: int | None = None):
         self.origin, self.copy_bound, self.paced = origin, copy_bound, paced
+        # compliance programme rows: robots.txt checked on every hop, decoded body capped
+        self.robots, self.max_bytes = robots, max_bytes
         self.chain: list[str] = []
         self.session = ChainSession()
 
@@ -251,6 +313,19 @@ def check_hop(url: str, hops: "Hops | None" = None) -> None:
     hops = hops if hops is not None else _current_hops()
     if rule := host_policy.suspended(url, HOST_POLICY):
         raise HostSuspended(url, rule)
+    if hops is not None and hops.robots:
+        import robots_policy
+        try:
+            ok, delay = robots_policy.decision(url)
+        except robots_policy.RobotsUnavailable as exc:
+            # robots.txt cannot be established now: defer, never request the document
+            raise ChallengeRefused(f"robots.txt unavailable ({exc})", requested=False) from exc
+        if not ok:
+            raise RobotsRefused(url, f"robots.txt disallows {url}")
+        if delay:
+            key = pace_key(host_policy.canonical_host(url))
+            with _host_sems_lock:
+                HOST_DELAY[key] = max(HOST_DELAY.get(key, 0.0), float(delay))
     if hops is not None and hops.copy_bound:
         host = host_policy.canonical_host(url)
         never = oa_resolution.host_matches(
@@ -296,7 +371,7 @@ def _get_hops(url: str, fmt: str, *, session=None, headers: dict | None = None):
     hop = url
     for _ in range(MAX_REDIRECTS + 1):
         check_hop(hop)
-        host = host_policy.canonical_host(hop)
+        host = pace_key(host_policy.canonical_host(hop))
         if hops is not None and hops.paced:
             _pace_host(host)
         with _host_sem(hop):
@@ -307,9 +382,13 @@ def _get_hops(url: str, fmt: str, *, session=None, headers: dict | None = None):
             if why := _tripped(host):  # opened by another worker while this one waited
                 raise ChallengeRefused(f"challenge circuit open for {host} ({why})",
                                        requested=False)
+            capped = hops is not None and hops.max_bytes is not None
             resp = get(hop, headers={"User-Agent": HOST_UA.get(host, UA), "Accept": ACCEPT,
                                      **(headers or {})},
-                       timeout=TIMEOUT, allow_redirects=False)
+                       timeout=TIMEOUT, allow_redirects=False,
+                       **({"stream": True} if capped else {}))
+            if capped:
+                _read_capped(resp, hops.max_bytes)
         status = getattr(resp, "status_code", 200)
         if host in POLITE_HOSTS and is_challenge(status, getattr(resp, "content", b"") or b"",
                                                  fmt):
@@ -400,7 +479,7 @@ def _tripped(host: str) -> str | None:
 
 
 def _host_sem(url: str) -> threading.BoundedSemaphore:
-    host = host_policy.canonical_host(url)
+    host = pace_key(host_policy.canonical_host(url))
     with _host_sems_lock:
         limit = HOST_CONCURRENCY.get(host, PER_HOST)
         return _host_sems.setdefault(host, threading.BoundedSemaphore(limit))
@@ -645,11 +724,32 @@ def _wait_for_host(host: str) -> None:
 
 
 def is_challenge(status: int, body: bytes, fmt: str) -> bool:
-    """A polite host's refusal/captcha: challenge status, or a captcha page served as 200."""
+    """A polite host's refusal/captcha: challenge status, or a captcha page served as 200 —
+    for a PDF row any HTML-ish challenge body, for an HTML/text row only unambiguous challenge
+    markers in the head of the page (prose may mention "challenge")."""
     if status in CHALLENGE_STATUSES:
         return True
-    return (status == 200 and fmt == "pdf" and not body.startswith(b"%PDF-")
-            and bool(CHALLENGE_BODY.search(body[:4000])))
+    if status != 200:
+        return False
+    if fmt == "pdf":
+        return not body.startswith(b"%PDF-") and bool(CHALLENGE_BODY.search(body[:4000]))
+    return bool(HTML_CHALLENGE_BODY.search(body[:4000]))
+
+
+def _read_capped(resp, max_bytes: int) -> None:
+    """Materialise a streamed response's decoded body, refusing it past `max_bytes`."""
+    declared = _header(resp, "content-length")
+    if declared and declared.isdigit() and int(declared) > max_bytes:
+        resp.close()
+        raise TooLarge(f"declared {declared} bytes exceeds the {max_bytes}-byte cap")
+    body = bytearray()
+    for chunk in resp.iter_content(1 << 16):
+        body.extend(chunk)
+        if len(body) > max_bytes:
+            resp.close()
+            raise TooLarge(f"body exceeds the {max_bytes}-byte cap")
+    resp._content = bytes(body)  # noqa: SLF001 — requests' own cache of a consumed body
+    resp._content_consumed = True  # noqa: SLF001
 
 
 def download_one(src: dict) -> dict:
@@ -660,7 +760,11 @@ def download_one(src: dict) -> dict:
     source = rec["source"]
     url = src["url"]
     host = host_policy.canonical_host(url)
-    hops = Hops(url, source in COPY_BOUND_SOURCES, paced=sid in PACED_IDS)
+    programme = is_programme_row(sid)
+    hops = Hops(url, source in COPY_BOUND_SOURCES, paced=sid in PACED_IDS or programme,
+                robots=programme,
+                max_bytes=(ESEF_MAX_BYTES if sid.startswith("esf-") else PROGRAMME_MAX_BYTES)
+                if programme else None)
     _hops.value = hops
     try:
         if "ec.europa.eu/research/participants/documents/downloadPublic" in url:
@@ -710,6 +814,11 @@ def download_one(src: dict) -> dict:
     except CopyChanged as e:
         rec["error"] = str(e)  # a hard failure: this registry URL does not serve the licensed copy
         rec["refused_hop"] = e.url
+    except RobotsRefused as e:
+        rec["error"] = str(e)  # policy: robots.txt disallows the document (never requested)
+        rec["refused_hop"] = e.url
+    except TooLarge as e:
+        rec["error"] = f"too-large: {e}"
     except ChallengeRefused as e:
         rec["error"] = str(e)
         rec["transient"] = True
@@ -761,7 +870,9 @@ def _fetch_with_fallback(url: str, fmt: str, rec: dict, resp=None) -> bytes:
         resp.raise_for_status()
         return resp.content
     hops = _current_hops()
-    if any(host_policy.canonical_host(h) in POLITE_HOSTS for h in (hops.chain if hops else [])):
+    if (hops is not None and hops.robots) or any(
+            pace_key(host_policy.canonical_host(h)) in POLITE_HOSTS
+            for h in (hops.chain if hops else [])):
         resp.raise_for_status()  # a polite host's refusal is never retried with another client
         return resp.content
     # WAFs (Akamai/Cloudflare/Google) block the python client's TLS fingerprint but pass curl's.
@@ -800,7 +911,7 @@ def _curl_follow(url: str, ua: str | None = None) -> bytes:
         cookies = Path(tmp) / "cookies"  # one cookie engine for the whole chain
         for _ in range(MAX_REDIRECTS + 1):
             check_hop(hop)
-            host = host_policy.canonical_host(hop)
+            host = pace_key(host_policy.canonical_host(hop))
             if host in POLITE_HOSTS:
                 return b""
             if hops is not None and hops.paced:
@@ -949,15 +1060,25 @@ def cap_per_host(srcs: list[dict], manifest: dict | None = None) -> tuple[list[d
     manifest = manifest or {}
     counts: dict[str, int] = defaultdict(int)
     kept, deferred = [], []
+    programme = esef = 0
     for src in srcs:
-        host = urlparse(src["url"]).netloc.lower()
+        host = pace_key(host_policy.canonical_host(src["url"]))
         cap = HOST_RUN_CAP.get(host)
         restoring = (manifest.get(src["id"]) or {}).get("status") == "ok"
+        if not restoring and is_programme_row(src["id"]):
+            # the compliance programme's own budgets (count; bytes are capped per download)
+            if programme >= PROGRAMME_RUN_CAP or (
+                    src["id"].startswith("esf-") and esef >= ESEF_RUN_CAP):
+                deferred.append(src["id"])
+                continue
         if cap is not None and not restoring:
             if counts[host] >= cap:
                 deferred.append(src["id"])
                 continue
             counts[host] += 1
+        if not restoring and is_programme_row(src["id"]):
+            programme += 1
+            esef += src["id"].startswith("esf-")
         kept.append(src)
     return kept, deferred
 

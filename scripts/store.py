@@ -84,7 +84,8 @@ ROUND_LOCK = "corpus-round"
 # snapshot does not count as unsettled state for it.
 INHERITED_LOCK_ENV = ops.INHERITED_LOCK_ENV
 # Git-owned configuration and policy documents; a store never writes them.
-CONFIG_FILES = ("backends.json", "eligibility.json", "vendors.json", "host_policy.json")
+CONFIG_FILES = ("backends.json", "eligibility.json", "vendors.json", "host_policy.json",
+                "regdocs.json", "eurlex.json", "esef.json")
 BACKEND_STATE_FILE = "backend_state.json"
 # Runtime control documents: whole JSON objects that the loop maintains (not configuration, not
 # rows), stored and replicated as-is. github_passes.json records find_github's completed passes.

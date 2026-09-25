@@ -1,0 +1,33 @@
+{
+  "_readme": "Seed EU acts for scripts/find_eurlex.py (compliance/ESG programme, Codex decision 2026-09-25). Each seed is expanded through Cellar by its amending acts, corrigenda and consolidated versions (`expand`); every listed language expression is collected (XHTML items, else PDF). Rights: EUR-Lex legal notice (acts/proposals/corrigenda re-use authorised -> open; consolidated texts CC BY 4.0 -> cc-by). eur-lex.europa.eu itself is fetch-suspended (AWS WAF challenge); only the Publications Office Cellar is used. Append new seeds at the END (the rotation cursor indexes this list).",
+  "rights_reviewed_at": "2026-09-25",
+  "languages": ["bg", "cs", "da", "de", "el", "en", "es", "et", "fi", "fr", "ga", "hr", "hu", "it", "lt", "lv", "mt", "nl", "pl", "pt", "ro", "sk", "sl", "sv"],
+  "expand": ["amends", "corrects", "consolidates"],
+  "seeds": [
+    {"celex": "32024L1275", "name": "Energy Performance of Buildings Directive (recast) (EU) 2024/1275", "topic": "building_energy"},
+    {"celex": "32010L0031", "name": "Energy Performance of Buildings Directive 2010/31/EU", "topic": "building_energy"},
+    {"celex": "32018L0844", "name": "Directive (EU) 2018/844 amending the EPBD and the Energy Efficiency Directive", "topic": "building_energy"},
+    {"celex": "32024R3110", "name": "Construction Products Regulation (EU) 2024/3110", "topic": "materials"},
+    {"celex": "32011R0305", "name": "Construction Products Regulation (EU) No 305/2011", "topic": "materials"},
+    {"celex": "32019L0882", "name": "European Accessibility Act, Directive (EU) 2019/882", "topic": "architecture"},
+    {"celex": "32023L1791", "name": "Energy Efficiency Directive (recast) (EU) 2023/1791", "topic": "building_energy"},
+    {"celex": "32012L0027", "name": "Energy Efficiency Directive 2012/27/EU", "topic": "building_energy"},
+    {"celex": "32020R0852", "name": "EU Taxonomy Regulation (EU) 2020/852", "topic": "standards_protocols"},
+    {"celex": "32021R2139", "name": "EU Taxonomy Climate Delegated Act (EU) 2021/2139", "topic": "standards_protocols"},
+    {"celex": "32023R2486", "name": "EU Taxonomy Environmental Delegated Act (EU) 2023/2486", "topic": "standards_protocols"},
+    {"celex": "32023R2485", "name": "Delegated Regulation (EU) 2023/2485 amending the Climate Delegated Act", "topic": "standards_protocols"},
+    {"celex": "32021R2178", "name": "EU Taxonomy Disclosures Delegated Act (EU) 2021/2178", "topic": "standards_protocols"},
+    {"celex": "32026R0073", "name": "EU Taxonomy simplification Delegated Regulation (EU) 2026/73", "topic": "standards_protocols"},
+    {"celex": "32022L2464", "name": "Corporate Sustainability Reporting Directive (EU) 2022/2464", "topic": "standards_protocols"},
+    {"celex": "32023R2772", "name": "European Sustainability Reporting Standards, Delegated Regulation (EU) 2023/2772", "topic": "standards_protocols"},
+    {"celex": "32025L0794", "name": "Omnibus 'stop-the-clock' Directive (EU) 2025/794", "topic": "standards_protocols"},
+    {"celex": "32026L0470", "name": "Omnibus I Directive (EU) 2026/470 amending the CSRD and CSDDD", "topic": "standards_protocols"},
+    {"celex": "52025PC0080", "name": "Commission proposal COM(2025) 80 (Omnibus I, stop-the-clock)", "topic": "standards_protocols"},
+    {"celex": "52025PC0081", "name": "Commission proposal COM(2025) 81 (Omnibus I, CSRD/CSDDD content)", "topic": "standards_protocols"},
+    {"celex": "32019R2088", "name": "Sustainable Finance Disclosure Regulation (EU) 2019/2088", "topic": "standards_protocols"},
+    {"celex": "32022R1288", "name": "SFDR Regulatory Technical Standards, Delegated Regulation (EU) 2022/1288", "topic": "standards_protocols"},
+    {"celex": "32024L1760", "name": "Corporate Sustainability Due Diligence Directive (EU) 2024/1760", "topic": "standards_protocols"},
+    {"celex": "32023L2413", "name": "Renewable Energy Directive (EU) 2023/2413 (RED III)", "topic": "building_energy"},
+    {"celex": "32024R1781", "name": "Ecodesign for Sustainable Products Regulation (EU) 2024/1781", "topic": "materials"}
+  ]
+}

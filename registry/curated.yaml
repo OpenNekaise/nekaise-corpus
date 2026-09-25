@@ -4728,3 +4728,175 @@ sources:
     license: public-domain
     topic: construction
     format: pdf
+
+  # ============================================================
+  # COMPLIANCE / ESG PROGRAMME POINTERS (2026-09-25, Codex decision) — paywalled standards and
+  # sources whose access terms forbid automated collection (login/registration, robots.txt, ToU
+  # robot bans). Pointers only: never fetched (proprietary-internal = pointer licence; the hosts
+  # of the access-blocked ones are also suspended in registry/host_policy.json).
+  # ============================================================
+  - id: ptr-iso-19650-1
+    title: "ISO 19650-1:2018 — Organization and digitization of information about buildings and civil engineering works, including BIM — Part 1: Concepts and principles"
+    url: https://www.iso.org/standard/68078.html
+    source: iso
+    license: proprietary-internal
+    topic: standards_protocols
+    format: html
+    document_type: standard-pointer
+    license_url: https://www.iso.org/standard/68078.html
+    license_evidence: "Paid ISO standard (catalogue page); pointer only, never fetched"
+    rights_verified_at: '2026-09-25'
+  - id: ptr-iso-19650-2
+    title: "ISO 19650-2:2018 — Information management using BIM — Part 2: Delivery phase of the assets"
+    url: https://www.iso.org/standard/68080.html
+    source: iso
+    license: proprietary-internal
+    topic: standards_protocols
+    format: html
+    document_type: standard-pointer
+    license_url: https://www.iso.org/standard/68080.html
+    license_evidence: "Paid ISO standard (catalogue page); pointer only, never fetched"
+    rights_verified_at: '2026-09-25'
+  - id: ptr-iso-19650-3
+    title: "ISO 19650-3:2020 — Information management using BIM — Part 3: Operational phase of the assets"
+    url: https://www.iso.org/standard/75109.html
+    source: iso
+    license: proprietary-internal
+    topic: standards_protocols
+    format: html
+    document_type: standard-pointer
+    license_url: https://www.iso.org/standard/75109.html
+    license_evidence: "Paid ISO standard (catalogue page); pointer only, never fetched"
+    rights_verified_at: '2026-09-25'
+  - id: ptr-iso-19650-4
+    title: "ISO 19650-4:2022 — Information management using BIM — Part 4: Information exchange"
+    url: https://www.iso.org/standard/78246.html
+    source: iso
+    license: proprietary-internal
+    topic: standards_protocols
+    format: html
+    document_type: standard-pointer
+    license_url: https://www.iso.org/standard/78246.html
+    license_evidence: "Paid ISO standard (catalogue page); pointer only, never fetched"
+    rights_verified_at: '2026-09-25'
+  - id: ptr-iso-19650-5
+    title: "ISO 19650-5:2020 — Information management using BIM — Part 5: Security-minded approach to information management"
+    url: https://www.iso.org/standard/74206.html
+    source: iso
+    license: proprietary-internal
+    topic: standards_protocols
+    format: html
+    document_type: standard-pointer
+    license_url: https://www.iso.org/standard/74206.html
+    license_evidence: "Paid ISO standard (catalogue page); pointer only, never fetched"
+    rights_verified_at: '2026-09-25'
+  - id: ptr-iso-16739-1
+    title: "ISO 16739-1:2024 — Industry Foundation Classes (IFC) for data sharing in the construction and facility management industries — Part 1: Data schema"
+    url: https://www.iso.org/standard/84123.html
+    source: iso
+    license: proprietary-internal
+    topic: standards_protocols
+    format: html
+    document_type: standard-pointer
+    license_url: https://www.iso.org/standard/84123.html
+    license_evidence: "Paid ISO standard (catalogue page); pointer only, never fetched"
+    rights_verified_at: '2026-09-25'
+  - id: ptr-ss-91-42-21
+    title: "SS 91 42 21 — Byggnadsutformning – Bostäder – Invändiga mått (Swedish housing interior dimensions / accessibility, referenced by BBR avsnitt 3)"
+    url: https://www.sis.se/en/produkter/construction-materials-and-building/buildings/residential-buildings/ss-914221-d44b2736/
+    source: sis
+    license: proprietary-internal
+    topic: architecture
+    format: html
+    document_type: standard-pointer
+    license_url: https://www.sis.se/en/produkter/construction-materials-and-building/buildings/residential-buildings/ss-914221-d44b2736/
+    license_evidence: "Paid SIS standard (catalogue page); pointer only, never fetched"
+    rights_verified_at: '2026-09-25'
+  - id: ptr-gri-standards
+    title: "GRI Standards — consolidated set (GRI 1 Foundation, GRI 2 General Disclosures, GRI 3 Material Topics, sector and topic standards)"
+    url: https://www.globalreporting.org/standards/download-the-standards/
+    source: gri
+    license: proprietary-internal
+    topic: standards_protocols
+    format: html
+    document_type: standard-pointer
+    license_url: https://www.globalreporting.org/media/mgspa4n4/gri-global-website-term-of-use-mpgc-05222025_25-august.pdf
+    license_evidence: "Download behind a registration form; GRI website terms prohibit 'any automated systems (robots, spiders) to access the Site'. Pointer only"
+    rights_verified_at: '2026-09-25'
+  - id: ptr-ifrs-s1
+    title: "IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information (ISSB)"
+    url: https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/ifrs-s1-general-requirements/
+    source: ifrs
+    license: proprietary-internal
+    topic: standards_protocols
+    format: html
+    document_type: standard-pointer
+    license_url: https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/ifrs-s1-general-requirements/
+    license_evidence: "Standard text requires IFRS Foundation sign-in; pointer only"
+    rights_verified_at: '2026-09-25'
+  - id: ptr-ifrs-s2
+    title: "IFRS S2 Climate-related Disclosures (ISSB)"
+    url: https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/ifrs-s2-climate-related-disclosures/
+    source: ifrs
+    license: proprietary-internal
+    topic: standards_protocols
+    format: html
+    document_type: standard-pointer
+    license_url: https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/ifrs-s2-climate-related-disclosures/
+    license_evidence: "Standard text requires IFRS Foundation sign-in; pointer only"
+    rights_verified_at: '2026-09-25'
+  - id: ptr-sasb-real-estate
+    title: "SASB Standards — Real Estate; Home Builders; Engineering & Construction Services; Building Products & Furnishings (industry-based)"
+    url: https://sasb.ifrs.org/standards/download/
+    source: sasb
+    license: proprietary-internal
+    topic: standards_protocols
+    format: html
+    document_type: standard-pointer
+    license_url: https://sasb.ifrs.org/standards/download/
+    license_evidence: "sasb.ifrs.org robots.txt 'Disallow: /*.pdf$' for all agents plus a download form; pointer only"
+    rights_verified_at: '2026-09-25'
+  - id: ptr-ghg-protocol
+    title: "GHG Protocol Corporate Accounting and Reporting Standard, Scope 2 Guidance and Corporate Value Chain (Scope 3) Standard"
+    url: https://ghgprotocol.org/standards
+    source: ghg_protocol
+    license: proprietary-internal
+    topic: standards_protocols
+    format: html
+    document_type: standard-pointer
+    license_url: https://ghgprotocol.org/terms-use
+    license_evidence: "GHG Protocol terms forbid 'any robot, spider, rover, scraper ... to ... copy'; pointer only"
+    rights_verified_at: '2026-09-25'
+  - id: ptr-cdp-real-estate
+    title: "CDP disclosure guidance for companies (real estate and construction sector questions)"
+    url: https://www.cdp.net/en/guidance
+    source: cdp
+    license: proprietary-internal
+    topic: standards_protocols
+    format: html
+    document_type: standard-pointer
+    license_url: https://www.cdp.net/en/terms-and-conditions
+    license_evidence: "CDP terms section 15 'No text or data mining' and robot ban; pointer only"
+    rights_verified_at: '2026-09-25'
+  - id: ptr-coclass
+    title: "CoClass — Swedish classification system for the built environment (Svensk Byggtjänst)"
+    url: https://coclass.byggtjanst.se/
+    source: coclass
+    license: proprietary-internal
+    topic: standards_protocols
+    format: html
+    document_type: standard-pointer
+    license_url: https://coclass.byggtjanst.se/
+    license_evidence: "Login required and robots.txt 'Disallow: /'; pointer only"
+    rights_verified_at: '2026-09-25'
+  - id: ptr-lovdata-tek17
+    title: "Forskrift om tekniske krav til byggverk (byggteknisk forskrift, TEK17), FOR-2017-06-19-840 (Lovdata)"
+    url: https://lovdata.no/dokument/SF/forskrift/2017-06-19-840
+    source: lovdata
+    license: open
+    topic: standards_protocols
+    format: html
+    document_type: regulation-pointer
+    license_url: https://api.lovdata.no/
+    license_evidence: "Lovdata public data is NLOD 2.0, but lovdata.no and api.lovdata.no robots.txt 'User-agent: * Disallow: /' (verified 2026-09-25): pointer only; the host is fetch-suspended in registry/host_policy.json, so this row is never requested"
+    rights_verified_at: '2026-09-25'

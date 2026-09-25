@@ -371,5 +371,61 @@
     "enabled": true,
     "required": false,
     "reason": "NEW 2026-09-24: small CC-BY built-environment journals/proceedings on Open Journal Systems via OAI-PMH (CLIMA 2022, J. Facade Design & Engineering, TU Delft OPEN coastal/hydraulic/delta-urbanism/architecture venues); per-record dc:rights gate keeps CC-BY/BY-SA/CC0/PDM only; required=false because small OJS hosts are volatile"
+  },
+  "find_boverket_bfs": {
+    "script": "find_boverket.py",
+    "args": [
+      "--mode",
+      "bfs",
+      "--max",
+      "24",
+      "--max-requests",
+      "8"
+    ],
+    "enabled": true,
+    "required": false,
+    "reason": "NEW 2026-09-25, compliance/ESG programme (operator request 2026-09-25: everything publicly obtainable behind AI-BOB-style building-code compliance checking and CTI-style ESG report extraction; Codex decision 2026-09-25): every Boverket BFS (all BBR/EKS versions, amendments, repeals, allmänna råd) from the rinfo.boverket.se Atom feed plus Boverket's published consolidations; public domain (upphovsrättslagen 9 §); robots/host policy checked per request (polite_http)"
+  },
+  "find_regdocs": {
+    "script": "find_regdocs.py",
+    "args": [
+      "--max",
+      "12",
+      "--max-requests",
+      "8"
+    ],
+    "enabled": true,
+    "required": false,
+    "reason": "NEW 2026-09-25, compliance/ESG programme (operator request 2026-09-25: everything publicly obtainable behind AI-BOB-style building-code compliance checking and CTI-style ESG report extraction; Codex decision 2026-09-25): config-driven (registry/regdocs.json); only current-vocabulary sources run (Riksdagen SFS, Retsinformation BR18, Finlex building decrees, YM regulations); guidance/framework/company sources stay disabled until the collect-all licence classes land; reviewed NO-GO sources are recorded blocked"
+  },
+  "find_eurlex": {
+    "script": "find_eurlex.py",
+    "args": [
+      "--acts",
+      "1",
+      "--max",
+      "24",
+      "--max-requests",
+      "6"
+    ],
+    "enabled": true,
+    "required": false,
+    "reason": "NEW 2026-09-25, compliance/ESG programme (operator request 2026-09-25: everything publicly obtainable behind AI-BOB-style building-code compliance checking and CTI-style ESG report extraction; Codex decision 2026-09-25): EU building and sustainability-reporting acts (registry/eurlex.json seeds + amendments, corrigenda, consolidations) in all 24 languages via the Publications Office Cellar (eur-lex.europa.eu is WAF-challenged and suspended); EUR-Lex legal notice re-use grant (open) / consolidated texts CC BY 4.0"
+  },
+  "find_esef": {
+    "script": "find_esef.py",
+    "args": [
+      "--entities",
+      "1",
+      "--pages",
+      "2",
+      "--max",
+      "4",
+      "--max-requests",
+      "4"
+    ],
+    "enabled": false,
+    "required": false,
+    "reason": "awaiting collect-all licence classes (proprietary issuer reports) and the dedicated ESEF Inline-XBRL extractor; compliance/ESG programme (operator request 2026-09-25: everything publicly obtainable behind AI-BOB-style building-code compliance checking and CTI-style ESG report extraction; Codex decision 2026-09-25): annual reports of 74 reviewed AEC issuers (registry/esef.json) via filings.xbrl.org"
   }
 }

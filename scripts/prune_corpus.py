@@ -36,6 +36,7 @@ from urllib.parse import urlparse
 
 import artifact_store
 import blocklist
+import compliance_common
 import corpus_stats
 import host_policy
 import ops
@@ -293,7 +294,7 @@ class Plan:
 
 
 def decide(manifest: list[dict], reviewed_drop: dict[str, str], policy: dict[str, dict],
-           deferred: set[str]) -> Plan:
+           deferred: set[str], regdocs: dict | None = None) -> Plan:
     """The pruning decisions, exactly as the legacy pruner made them. `manifest` must be in the
     legacy manifest order (the first-seen title wins). Rows lacking metrics get them computed
     from their text (in place); the survivors among them are Plan.quality."""
@@ -334,7 +335,10 @@ def decide(manifest: list[dict], reviewed_drop: dict[str, str], policy: dict[str
         if not m:  # pre-metrics row: compute once from the file; persisted on --apply
             m = r["quality"] = quality.metrics(quality.body(_read_text(r)))
             computed.append(r["id"])
-        q = quality.verdict(m, quality.is_booklike(r["id"], r.get("format", "pdf")))
+        # verified normative instruments of the compliance programme use their scoped profile
+        # (quality.verdict_normative); `regdocs` is the view-pinned registry/regdocs.json
+        profile = compliance_common.quality_profile(r, regdocs)
+        q = quality.verdict_for(m, quality.is_booklike(r["id"], r.get("format", "pdf")), profile)
         if q != "ok":
             drop[r["id"]] = q
             continue
@@ -543,7 +547,8 @@ def plan_prune(view, args, ap) -> Plan:
     except HandoffError as exc:
         print(f"ERROR: {exc}; refusing to prune without the loader handoff", file=sys.stderr)
         raise SystemExit(1)
-    return decide(manifest, reviewed_drop, policy, deferred)
+    regdocs = view.config_get().documents.get("regdocs.json")  # pinned with the rows
+    return decide(manifest, reviewed_drop, policy, deferred, regdocs)
 
 
 def report(plan: Plan) -> None:

@@ -50,6 +50,7 @@ DOMAIN = re.compile(
     r"钢结构|鋼結構|鉄骨|抗震|耐震|岩土|地基|施工|工程|造价|给排水|排水|市政|城市规划|"
     r"都市計画|コンクリート|建材|건축|구조|공조|난방|단열|콘크리트", re.I)
 EN = re.compile(r"\b(the|and|of|to|in|is|for|that|with|are|this|be|as|by|on|from)\b", re.I)
+UWORD = re.compile(r"[^\W\d_]{2,}")  # words in ANY alphabetic script (Greek, Cyrillic, ...)
 CJK = re.compile(r"[一-鿿㐀-䶿぀-ヿ가-힯]")
 
 # Patent-title off-domain kill. The polysemous stems that route patent discovery ("insulat",
@@ -209,6 +210,7 @@ def _window(t: str) -> dict:
         "cjk": len(CJK.findall(t)),  # CJK scripts don't space-separate; ~2 chars ≈ 1 word
         "en": len(EN.findall(t)),
         "domain": len(DOMAIN.findall(t)),
+        "uwords": len(UWORD.findall(t)),
     }
 
 
@@ -242,6 +244,43 @@ def verdict(m: dict, book: bool) -> str:
     if (density < BOOK_MIN_DENSITY) if is_book else (w["domain"] < SHORT_MIN_HITS):
         return "off-topic"
     return "ok"
+
+
+# Scoped quality profile for VERIFIED NORMATIVE INSTRUMENTS of the compliance programme (Codex
+# decision 2026-09-25): statutes, EU acts in all 24 languages, building-code regulations whose
+# identity the finder validated (compliance_common.quality_profile). The generic gate misjudges
+# them: Greek/Bulgarian texts have almost no [A-Za-z] words ("thin"), and CSRD/ESRS legal text in
+# Swedish or Finnish carries almost no DOMAIN (building) vocabulary ("off-topic"). For these rows
+# completeness and successful extraction replace relevance: at least NORMATIVE_MIN_CHARS of text,
+# NORMATIVE_MIN_WORDS words in any script, and an alpha floor low enough for legal tables.
+# Rows extracted before `uwords` existed fall back to the Latin word count.
+NORMATIVE_MIN_CHARS = 300
+NORMATIVE_MIN_WORDS = 40
+NORMATIVE_MIN_ALPHA = 0.40
+
+
+def verdict_normative(m: dict, book: bool) -> str:
+    is_book = book and m["total"] > BOOK_MIN_CHARS
+    w = m["w100"] if is_book else m["w20"]
+    if w["chars"] < NORMATIVE_MIN_CHARS:
+        return "thin"
+    if w["alpha"] < NORMATIVE_MIN_ALPHA:
+        return "garbage"
+    words = w.get("uwords")
+    if words is None:
+        words = w["words"] + w.get("cjk", 0) // 2
+    if words < NORMATIVE_MIN_WORDS:
+        return "thin"
+    return "ok"
+
+
+def verdict_for(m: dict, book: bool, profile: str | None = None) -> str:
+    """The gate verdict under a quality profile (None = the generic gate)."""
+    if profile == "normative":
+        return verdict_normative(m, book)
+    if profile is not None:
+        raise ValueError(f"unknown quality profile {profile!r}")
+    return verdict(m, book)
 
 
 def assess(text: str, sid: str = "", fmt: str = "pdf") -> str:

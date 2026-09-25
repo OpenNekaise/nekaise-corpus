@@ -21,6 +21,60 @@
       "reason": "policy: SSRN (papers.ssrn.com, reached via doi.org/10.2139 redirects) answers HTTP 403 through a Cloudflare challenge from this network (observed 2026-09-25); WAF or browser workarounds are forbidden and SSRN records state 'All rights reserved'. SSRN-origin works are registered only through a separately licensed copy on another host",
       "decided_at": "2026-09-25",
       "backends": []
+    },
+    "lovdata.no": {
+      "status": "suspended",
+      "reason": "policy: lovdata.no and api.lovdata.no robots.txt 'User-agent: * Disallow: /' (verified 2026-09-25); the NLOD public-data dumps are not requested. Compliance programme (Codex decision 2026-09-25): pointer only",
+      "decided_at": "2026-09-25",
+      "backends": []
+    },
+    "eur-lex.europa.eu": {
+      "status": "suspended",
+      "reason": "access control: eur-lex.europa.eu answers every request, robots.txt included, with an AWS WAF challenge (HTTP 202, empty body; verified 2026-09-25); the same EU documents are collected from the Publications Office Cellar (find_eurlex)",
+      "decided_at": "2026-09-25",
+      "backends": []
+    },
+    "ghgprotocol.org": {
+      "status": "suspended",
+      "reason": "policy: GHG Protocol terms of use forbid 'any robot, spider, rover, scraper ... to ... copy' the Services (verified 2026-09-25), including its two CC BY publications; pointer only",
+      "decided_at": "2026-09-25",
+      "backends": []
+    },
+    "fsb-tcfd.org": {
+      "status": "suspended",
+      "reason": "policy: TCFD website terms forbid accessing or copying content 'using any robot, spider, scraper, web crawler or other automated means' (verified 2026-09-25); FSB-hosted copies on www.fsb.org are the reviewed route",
+      "decided_at": "2026-09-25",
+      "backends": []
+    },
+    "buildingsmart.org": {
+      "status": "suspended",
+      "reason": "policy: buildingSMART websites' robots.txt carry 'Content-Signal: ai-train=no' for all agents (express DSM Art. 4 reservation) and Disallow: / for ClaudeBot/anthropic-ai/GPTBot/CCBot (verified 2026-09-25); official GitHub repository copies are a separate reviewed route",
+      "decided_at": "2026-09-25",
+      "backends": []
+    },
+    "globalreporting.org": {
+      "status": "suspended",
+      "reason": "policy: GRI website terms prohibit 'any automated systems (robots, spiders)' and the standards download sits behind a registration form (verified 2026-09-25); pointer only",
+      "decided_at": "2026-09-25",
+      "backends": []
+    },
+    "sasb.ifrs.org": {
+      "status": "suspended",
+      "reason": "policy: sasb.ifrs.org robots.txt 'Disallow: /*.pdf$' for all agents plus a download form (verified 2026-09-25); pointer only",
+      "decided_at": "2026-09-25",
+      "backends": []
+    },
+    "cdp.net": {
+      "status": "suspended",
+      "reason": "policy: CDP terms section 15 'No text or data mining' and a robot/scraper ban (verified 2026-09-25); pointer only",
+      "decided_at": "2026-09-25",
+      "backends": []
+    },
+    "coclass.byggtjanst.se": {
+      "status": "suspended",
+      "reason": "access control: login required and robots.txt 'Disallow: /' (verified 2026-09-25); pointer only",
+      "decided_at": "2026-09-25",
+      "backends": []
     }
   }
 }

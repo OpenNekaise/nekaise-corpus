@@ -127,6 +127,34 @@ def eligibility_contract_errors(
     return errors
 
 
+# Compliance/ESG programme configuration (registry/*.json, pinned with the view): schema-valid,
+# and a source whose licence tag is outside the current registry vocabulary can never be enabled
+# (its rows could not be appended); a backend reading a missing document is a contract failure.
+PROGRAMME_CONFIGS = {"regdocs.json": ("find_regdocs", "find_regdocs"),
+                     "eurlex.json": ("find_eurlex", "find_eurlex"),
+                     "esef.json": ("find_esef", "find_esef")}
+
+
+def programme_config_errors(docs: dict, backends: dict) -> list[str]:
+    import importlib
+
+    errors = []
+    for name, (module, backend) in PROGRAMME_CONFIGS.items():
+        data = docs.get(name)
+        if data is None:
+            if backend in backends:
+                errors.append(f"registry/{name}: missing but backend {backend} is configured")
+            continue
+        errors.extend(f"registry/{name}: {e}"
+                      for e in importlib.import_module(module).validate(data))
+        if name == "esef.json" and backends.get(backend, {}).get("enabled", True):
+            import compliance_common
+            if data.get("license") not in compliance_common.CURRENT_LICENSES:
+                errors.append(f"{backend}: enabled while its licence tag {data.get('license')!r} "
+                              "awaits the collect-all licence classes")
+    return errors
+
+
 def host_policy_contract_errors(backends: dict, policy: dict) -> list[str]:
     """A suspended host's backends must be disabled. `policy` is the validated host policy
     pinned in the same view as `backends` (store.pinned_policy)."""
@@ -191,7 +219,9 @@ def main() -> int:
         stats = corpus_stats.compute(view, restrictions)
         restricted_metadata = corpus_stats.restricted_with_corpus_data(view, restrictions)
         unavailable = corpus_stats.local_unavailable(view, ROOT, restrictions, policy)
-        backends = {k: v for k, v in view.config_get().backends.items() if not k.startswith("_")}
+        config = view.config_get()
+        backends = {k: v for k, v in config.backends.items() if not k.startswith("_")}
+        programme_docs = {name: config.documents.get(name) for name in PROGRAMME_CONFIGS}
         rotation_state = view.rotation_get()
         runtime, runtime_errors = runtime_backend_state(view)
     import staged_runs
@@ -217,6 +247,7 @@ def main() -> int:
         find_vendor.load_vendors()
     except Exception as exc:
         errors.append(f"registry/vendors.json: {exc}")
+    errors.extend(programme_config_errors(programme_docs, backends))
     errors.extend(host_policy_contract_errors(effective, policy))
     configured_scripts = {cfg["script"] for cfg in backends.values()}
     actual_finders = {p.name for p in (ROOT / "scripts").glob("find_*.py")}

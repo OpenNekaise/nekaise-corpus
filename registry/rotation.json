@@ -188,5 +188,33 @@
     "next": 9,
     "step": 1,
     "note": "Index into find_ojs.SITES (append-only list). One venue per round, harvested completely; a --max-capped run requests a rotation hold so the venue drains next round; an index past the end disables the backend as exhausted. Re-enable with a reset only to pick up new issues (dedup makes a re-walk idempotent). NEW 2026-09-24."
+  },
+  "find_boverket_bfs": {
+    "flag": "--cursor",
+    "next": "START",
+    "step": 0,
+    "dynamic": true,
+    "note": "NEW 2026-09-25 (compliance/ESG programme). Dynamic cursor reported by the finder (scripts/finder_protocol.py): START | <index into the published-date-sorted rinfo feed> | watch:<date> (full pass done; re-read at most every 7 days)."
+  },
+  "find_regdocs": {
+    "flag": "--cursor",
+    "next": "START",
+    "step": 0,
+    "dynamic": true,
+    "note": "NEW 2026-09-25 (compliance/ESG programme). Dynamic cursor reported by the finder (scripts/finder_protocol.py): JSON {s: source key, o: offset into its sorted universe, f: universe fingerprint, w: {source: date fully walked}}; round-robin over enabled registry/regdocs.json sources with a 7-day watch phase."
+  },
+  "find_eurlex": {
+    "flag": "--cursor",
+    "next": "START",
+    "step": 0,
+    "dynamic": true,
+    "note": "NEW 2026-09-25 (compliance/ESG programme). Dynamic cursor reported by the finder (scripts/finder_protocol.py): JSON {s: seed index into registry/eurlex.json, k: CELEX of the work in progress, i: item offset} | watch:<date> after the last seed (re-walked at most every 7 days)."
+  },
+  "find_esef": {
+    "flag": "--cursor",
+    "next": "START",
+    "step": 0,
+    "dynamic": true,
+    "note": "NEW 2026-09-25 (compliance/ESG programme). Dynamic cursor reported by the finder (scripts/finder_protocol.py): JSON {e: issuer index into registry/esef.json, p: JSON:API page URL to resume} | watch:<date>."
   }
 }

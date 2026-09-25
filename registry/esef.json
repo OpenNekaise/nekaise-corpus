@@ -1,0 +1,600 @@
+{
+  "_readme": "Reviewed AEC issuers for scripts/find_esef.py (compliance/ESG programme, Codex decision 2026-09-25). LEIs resolved against GLEIF (CC0) on 2026-09-25 and checked against filings.xbrl.org entity records; fiscal_year_end (MM-DD) is the evidence that marks a filing as the ANNUAL report (other periods are interim and skipped). Nordic issuers first, then European listed AEC. Append new issuers at the END (the rotation cursor indexes this list).",
+  "rights_reviewed_at": "2026-09-25",
+  "license": "proprietary",
+  "license_evidence": "Issuer copyright (annual financial report filed under the ESEF regime with the national OAM); filings.xbrl.org/docs/about: 'at present, there are no restrictions on the ways that the data can be used' - repository availability, not an open licence. Collected as restricted (proprietary) under the operator's collect-regardless-of-licence directive 2026-09-25.",
+  "issuers": [
+    {
+      "name": "Skanska AB",
+      "lei": "549300UINV5RINHGMG07",
+      "country": "SE",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "NCC AB",
+      "lei": "213800WRGLW3CY4MHW53",
+      "country": "SE",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Peab AB",
+      "lei": "549300FQS4VD3153I854",
+      "country": "SE",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "JM AB",
+      "lei": "529900X0UEM9DOM6FK12",
+      "country": "SE",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Bonava AB",
+      "lei": "213800SLYJ6HYXWP8L95",
+      "country": "SE",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Veidekke ASA",
+      "lei": "5967007LIEEXZXHF4O96",
+      "country": "NO",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "AF Gruppen ASA",
+      "lei": "5967007LIEEXZXFU1405",
+      "country": "NO",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Selvaag Bolig ASA",
+      "lei": "5967007LIEEXZXIHPK59",
+      "country": "NO",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "YIT Oyj",
+      "lei": "529900M13GM4VSTE6W80",
+      "country": "FI",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "SRV Yhtiöt Oyj",
+      "lei": "743700GB29FXC0VXF414",
+      "country": "FI",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Consti Oyj",
+      "lei": "743700JMXCC11CRJCS71",
+      "country": "FI",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "MT Højgaard Holding A/S",
+      "lei": "529900V9DJVZE2LVED66",
+      "country": "DK",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Per Aarsleff Holding A/S",
+      "lei": "5493008HS8STXVZXYZ63",
+      "country": "DK",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "09-30"
+    },
+    {
+      "name": "Fasadgruppen Group AB",
+      "lei": "549300E24LG2Z7KCFQ23",
+      "country": "SE",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Castellum AB",
+      "lei": "549300GU5OHTR1T5IY68",
+      "country": "SE",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Fabege AB",
+      "lei": "549300JNPI46XNH0PM97",
+      "country": "SE",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Wallenstam AB",
+      "lei": "21380081R2P9MKFQBD25",
+      "country": "SE",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Fastighets AB Balder",
+      "lei": "549300GHKJCEZOAEUU82",
+      "country": "SE",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Wihlborgs Fastigheter AB",
+      "lei": "549300RC1YDJPITF8X06",
+      "country": "SE",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Atrium Ljungberg AB",
+      "lei": "5493001NNP6HM67OVU09",
+      "country": "SE",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Hufvudstaden AB",
+      "lei": "213800UEV5ZAFFVQ4J85",
+      "country": "SE",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "AB Sagax",
+      "lei": "549300LJX28T6OM8DT95",
+      "country": "SE",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Catena AB",
+      "lei": "549300EMLM7AH5LDLY65",
+      "country": "SE",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Platzer Fastigheter Holding AB",
+      "lei": "5493009KPII4BZE70820",
+      "country": "SE",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Entra ASA",
+      "lei": "549300APU14LQKTYCH34",
+      "country": "NO",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Kojamo Oyj",
+      "lei": "7437007YPUOQZ8OV1R42",
+      "country": "FI",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Citycon Oyj",
+      "lei": "549300P8N0P6KDGTJ206",
+      "country": "FI",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Jeudan A/S",
+      "lei": "529900MI0WOKLZH7MS98",
+      "country": "DK",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "ASSA ABLOY AB",
+      "lei": "549300YECS8HKCIMMB67",
+      "country": "SE",
+      "sector": "building-products",
+      "topic": "architecture",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Lindab International AB",
+      "lei": "54930085MH6IRQ1JP227",
+      "country": "SE",
+      "sector": "building-products",
+      "topic": "equipment_systems",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "NIBE Industrier AB",
+      "lei": "549300ZQH0FIF1P0MX67",
+      "country": "SE",
+      "sector": "building-products",
+      "topic": "equipment_systems",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Systemair AB",
+      "lei": "529900RK1R6HF8KKOI20",
+      "country": "SE",
+      "sector": "building-products",
+      "topic": "equipment_systems",
+      "fiscal_year_end": "04-30"
+    },
+    {
+      "name": "Munters Group AB",
+      "lei": "549300KYCB37YAVUV523",
+      "country": "SE",
+      "sector": "building-products",
+      "topic": "equipment_systems",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Troax Group AB",
+      "lei": "5493003TBEWGBIEG1X97",
+      "country": "SE",
+      "sector": "building-products",
+      "topic": "materials",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Inwido AB",
+      "lei": "529900A9NKQW5UTHBG13",
+      "country": "SE",
+      "sector": "building-products",
+      "topic": "architecture",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Nobia AB",
+      "lei": "529900MZ8Y3QGPDF6815",
+      "country": "SE",
+      "sector": "building-products",
+      "topic": "architecture",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Uponor Oyj",
+      "lei": "743700KA2GMSYJM3CM12",
+      "country": "FI",
+      "sector": "building-products",
+      "topic": "equipment_systems",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "KONE Oyj",
+      "lei": "2138001CNF45JP5XZK38",
+      "country": "FI",
+      "sector": "building-products",
+      "topic": "equipment_systems",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Byggmax Group AB",
+      "lei": "549300MPJPYQB0KCNH03",
+      "country": "SE",
+      "sector": "building-materials",
+      "topic": "materials",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "SSAB AB",
+      "lei": "529900329VS14ZIML164",
+      "country": "SE",
+      "sector": "building-materials",
+      "topic": "materials",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "ROCKWOOL A/S",
+      "lei": "213800QRC7LNX935OZ09",
+      "country": "DK",
+      "sector": "building-materials",
+      "topic": "materials",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "H+H International A/S",
+      "lei": "213800GJODT6FV8QM841",
+      "country": "DK",
+      "sector": "building-materials",
+      "topic": "materials",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Bravida Holding AB",
+      "lei": "549300H88IJGPNNL3T61",
+      "country": "SE",
+      "sector": "building-services",
+      "topic": "equipment_systems",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Instalco AB",
+      "lei": "549300DZ9ONT2AXY4029",
+      "country": "SE",
+      "sector": "building-services",
+      "topic": "equipment_systems",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Caverion Oyj",
+      "lei": "7437007ECQWVPCJIS695",
+      "country": "FI",
+      "sector": "building-services",
+      "topic": "equipment_systems",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "AFRY AB",
+      "lei": "549300Q87LKPPD4X9R30",
+      "country": "SE",
+      "sector": "engineering",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Sweco AB",
+      "lei": "549300Q4Y55VICYV6U90",
+      "country": "SE",
+      "sector": "engineering",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Multiconsult ASA",
+      "lei": "5967007LIEEXZXG9GO07",
+      "country": "NO",
+      "sector": "engineering",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "VINCI",
+      "lei": "213800WFQ334R8UXUG83",
+      "country": "FR",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Bouygues",
+      "lei": "969500MOCLNQFNZN0D63",
+      "country": "FR",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Eiffage",
+      "lei": "969500OQXKE5WDM9M994",
+      "country": "FR",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Ferrovial SE",
+      "lei": "72450022R2ZFL41Y6I04",
+      "country": "NL",
+      "sector": "construction",
+      "topic": "infrastructure",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "ACS Actividades de Construcción y Servicios",
+      "lei": "95980020140005558665",
+      "country": "ES",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "STRABAG SE",
+      "lei": "529900TYYSRJH2VJSP60",
+      "country": "AT",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "PORR AG",
+      "lei": "529900ARBU9SBJFNX419",
+      "country": "AT",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Koninklijke Heijmans N.V.",
+      "lei": "724500OUE3PCA809DZ79",
+      "country": "NL",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Koninklijke BAM Groep N.V.",
+      "lei": "724500V38C5KTDY5BS93",
+      "country": "NL",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Webuild S.p.A.",
+      "lei": "549300UKR289DF4UXQ47",
+      "country": "IT",
+      "sector": "construction",
+      "topic": "infrastructure",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Mota-Engil SGPS",
+      "lei": "549300L6RR1203WN9F57",
+      "country": "PT",
+      "sector": "construction",
+      "topic": "infrastructure",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Nexity",
+      "lei": "969500JJ71T2DIPDVV84",
+      "country": "FR",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Kaufman & Broad SA",
+      "lei": "969500CE0X343D8ALO86",
+      "country": "FR",
+      "sector": "construction",
+      "topic": "construction",
+      "fiscal_year_end": "11-30"
+    },
+    {
+      "name": "Arcadis N.V.",
+      "lei": "7245000UZH70GO047N03",
+      "country": "NL",
+      "sector": "engineering",
+      "topic": "construction",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "SPIE SA",
+      "lei": "969500TJNS5GSFWJ8X85",
+      "country": "FR",
+      "sector": "building-services",
+      "topic": "equipment_systems",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Wienerberger AG",
+      "lei": "529900VXIFBHO0SW2I31",
+      "country": "AT",
+      "sector": "building-materials",
+      "topic": "materials",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Kingspan Group plc",
+      "lei": "635400HM7V74SUB9OG75",
+      "country": "IE",
+      "sector": "building-materials",
+      "topic": "materials",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "CRH plc",
+      "lei": "549300MIDJNNTH068E74",
+      "country": "IE",
+      "sector": "building-materials",
+      "topic": "materials",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Legrand",
+      "lei": "969500XXRPGD7HCAFA90",
+      "country": "FR",
+      "sector": "building-products",
+      "topic": "equipment_systems",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Schneider Electric SE",
+      "lei": "969500A1YF1XUYYXS284",
+      "country": "FR",
+      "sector": "building-products",
+      "topic": "controls_bas",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Klépierre",
+      "lei": "969500PB4U31KEFHZ621",
+      "country": "FR",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Unibail-Rodamco-Westfield SE",
+      "lei": "969500SHQITWXSIS7N89",
+      "country": "FR",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Covivio",
+      "lei": "969500P8M3W2XX376054",
+      "country": "FR",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Gecina",
+      "lei": "9695003E4MMA10IBTR26",
+      "country": "FR",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Icade",
+      "lei": "969500UDH342QLTE1M42",
+      "country": "FR",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    },
+    {
+      "name": "Aroundtown SA",
+      "lei": "529900H4DWG3KWMBMQ39",
+      "country": "LU",
+      "sector": "real-estate",
+      "topic": "urban",
+      "fiscal_year_end": "12-31"
+    }
+  ]
+}
