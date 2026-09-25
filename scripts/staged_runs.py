@@ -40,7 +40,11 @@ import store
 # The gates every standalone mutation passes before its promotion (read-only over the frozen
 # state; "artifacts" re-hashes the versions the run introduced, "check" is the versioned claim
 # check of clean_corpus.py --check inside a staged view).
-STANDALONE_GATES = ("artifacts", "check", "contracts", "lint")
+# The gates every staged run passes before its promotion — rounds, standalone mutations and
+# maintainer repairs alike: read-only over the frozen state ("artifacts" re-hashes the versions the
+# run introduced, "check" is the versioned claim check of clean_corpus.py --check inside a staged
+# view) plus the test suite of the code that ran.
+STANDALONE_GATES = ("artifacts", "check", "contracts", "lint", "tests")
 GATE_COMMANDS = {
     "check": ("clean_corpus.py", "--check"),
     "lint": ("lint_registry.py",),
@@ -152,6 +156,19 @@ class Identity:
         return config_digest(self.config)
 
 
+def identity_changed(root: Path, run: Mapping) -> str | None:
+    """What of a run's identity (its row: producer commit, config digest) the checkout at `root`
+    no longer matches, or None. A git failure raises."""
+    root = Path(root)
+    if not tree_clean(root):
+        return "the checkout (uncommitted changes)"
+    if producer_commit(root) != run["producer_commit"]:
+        return "the producer commit"
+    if config_digest(config_documents(root)) != run["config_digest"]:
+        return "the configuration"
+    return None
+
+
 def identity(st, root: Path, *, require_clean: bool = True) -> Identity:
     """The identity a new (or resumed) run at `root` has now; refuses a dirty checkout, whose
     HEAD would not describe the code that runs."""
@@ -168,6 +185,8 @@ def identity(st, root: Path, *, require_clean: bool = True) -> Identity:
 
 def gate_command(gate: str, root: Path, python: str = sys.executable) -> list[str]:
     """The gate's command in the checkout at `root` (its own scripts judge its own state)."""
+    if gate == "tests":
+        return [python, "-m", "pytest", "-q", "tests/"]
     return [python, str(Path(root) / "scripts" / GATE_COMMANDS[gate][0]), *GATE_COMMANDS[gate][1:]]
 
 
@@ -188,10 +207,14 @@ def run_gates(rnd, root: Path, gates: Sequence[str], *, env: Mapping[str, str] |
     commands = [(g, gate_command(g, root)) for g in gates if g != "artifacts"]
     results: dict[str, dict] = {}
 
+    import store_staging
+
     def execute(gate: str, cmd: list[str]):
         started = time.monotonic()
-        got = subprocess.run(cmd, cwd=root, env={**base, **rnd.gate_env()}, capture_output=True,
-                             text=True)
+        # the test suite builds its own stores: it gets no read pin (like run_round's)
+        env = ({k: v for k, v in base.items() if k != store_staging.STAGE_ENV}
+               if gate == "tests" else {**base, **rnd.gate_env()})
+        got = subprocess.run(cmd, cwd=root, env=env, capture_output=True, text=True)
         return gate, got, round(time.monotonic() - started, 3)
 
     with ThreadPoolExecutor(max_workers=max(1, len(commands))) as pool:

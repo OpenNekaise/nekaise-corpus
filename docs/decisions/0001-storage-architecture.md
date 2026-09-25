@@ -1562,3 +1562,273 @@ on the reviewed commit (447dfee272) and passes now.
 - **Gates**: full suite 1188 passed / 149 skipped (PG skipped), with PostgreSQL (`nekaise_test`)
   1365 passed / 2 skipped (the two opt-in benchmarks); `py_compile scripts/*.py` clean. Nothing
   ran against the live schema or checkout.
+
+## Stage 4, step 4 record: recovery and operational review (2026-09-25)
+
+Plan decided by Codex: "Replace recovery and operational review. Shared recovery acquires
+ownership, stops owned descendants, drains the broker, and queries durable run status. Promoted
+runs stand even after lost replies; finish their materialization/cleanup. Unpromoted runs default
+to abort. Explicit resume requires unchanged parent/config/code and durable batches plus verified
+artifacts; otherwise start a new run. Uncertain database outcomes block mutation. Standalone
+mutations and maintainer repairs use the same staged promotion lifecycle and required checks.
+Preserve cancellation-safe draining. Triage pins a generation without holding growth locks;
+action reacquires ownership and refreshes both generation and code evidence. Replace outgoing
+data-commit review with generation-range review: revisions, decisions, quality/yield changes,
+failures, gate receipts, and backup health. Persist review verdicts and a contiguous reviewed
+watermark. Findings withhold endorsement/publication; integrity findings also block growth.
+Repairs create compensating generations. Gate: every existing recovery entrypoint, timeout,
+orphan, lost-response, and maintainer race scenario against PG. Rollback: keep legacy recovery
+selected until production cutover."
+
+Production is unchanged: FileStore stays authoritative and the legacy round (git snapshot,
+per-round commit, README stats), the legacy recovery (`round_recovery.recover_round`) and the
+legacy outgoing-commit review stay selected. Every new path is chosen by ONE predicate,
+`staged_runs.staged_authority(st)`: the store is a PgStore bound to a host authority record whose
+mode is `postgres` (an unbound PostgreSQL store is still refused by `run_round` and the maintainer,
+as in step 1). Rollback before cutover is therefore "change nothing"; schema v7 stays (older code
+is refused, as after every migration).
+
+- **Schema v7** (`store_pg.V7_DDL`, migration 7 — additive, one transaction under the writer lock,
+  idempotent DDL, every derived value backfilled; no projection row, revision, receipt, event or
+  watermark rewritten):
+  * `runs.owner_epoch` — the writer epoch that owns the run: backfilled from `writer_epoch` for
+    every existing run (the run guards are disabled for that one statement inside the migration's
+    transaction, as migration 5 did), set to the opener on insert (a different value is refused),
+    and changed only by a logged adoption (trigger `runs_owner`: depth 2, one epoch forward, a
+    matching `run_adoptions` row). `store_pg.require_run_owner` — the one ownership check of every
+    owner-only operation — now reads `owner_epoch`.
+  * `run_adoptions` — the immutable log of explicit resumes. The guard locks the run row and
+    accepts an adoption only when the adopter is the CURRENT writer (`state.writer_epoch`), one
+    epoch past the current owner, the run is open or frozen, its parent is still the dataset's
+    current generation, and the producer commit, configuration set, extractor version and staged
+    sequence the adopter runs with equal the run's own row (never what the adopter claims alone),
+    and every artifact the run referenced has a verified canonical local locator. The AFTER
+    trigger moves `owner_epoch` (conditional on the previous owner: a concurrent adoption fails).
+  * `purge_queue` — aborted runs whose staging is still to be purged: an abort queues its run
+    (AFTER UPDATE trigger on `runs`, so every abort path does), only aborted runs may be queued,
+    an entry leaves only when the run has no revision, artifact reference, gate receipt or batch
+    left. Backfilled with every aborted run that still has staging.
+  * `review_state` (one row: `reviewed_through`, `endorsed_through`, verdict count, open findings
+    / integrity findings) and `review_verdicts` (below). The review consumer's acknowledgements and
+    watermark are written only by the verdict trigger (a direct `review` ack or watermark move is
+    refused), and a new trigger keeps the `publication` watermark at or below the outbox row of the
+    endorsed generation. Backfill: `reviewed_through`/`endorsed_through` from the review consumer's
+    existing acknowledgements; a legacy non-ok review acknowledgement refuses the migration
+    ("migrate by hand": it would need a finding row to resolve). Live has neither.
+- **A round under PostgreSQL authority** (`run_round.staged_main`): writer (the database's writer
+  lock), then `_complete_previous` — refused while any run is unfinished (open/frozen: `--recover`
+  or `--resume` first) or an integrity finding is open; the current generation's completion caught
+  up — then the run's identity (`staged_runs.identity`): a clean checkout (`git status` empty; a
+  git failure raises), its HEAD as producer commit, the exact bytes of its configuration files as
+  the run's sealed config set (`open_run(config_documents=…)`), `build_corpus.EXTRACTOR_VERSION`,
+  and the cleaning ruleset inherited from the parent generation (before the first generation: the
+  legacy `corpus/.ruleset` stamp, which is what the file-authoritative corpus was built with).
+  `staged_round(kind="round")`; finders read the run pinned at sequence 0; the discovery merge is
+  the persisted computed batch; fetch/prune/clean stage through the broker; `freeze` with the
+  required gates `artifacts`, `check`, `contracts`, `lint`, `tests` (no `--skip-tests`); the gates
+  run concurrently against the frozen state (`gate_env`) and every verdict is recorded as a gate
+  receipt (`run_verify_parallel(record=…)`), the artifact gate in-process; `promote`; then
+  `after_promotion`. No snapshot, commit or README: `--commit` is implied, `--push` and
+  `--allow-dirty` are refused. `check` is the claim check `clean_corpus.py --check` runs inside a
+  staged view (step 3), which with the artifact gate replaces the file store's corpus/ check; the
+  `index` gate and the `stats` step belong to the file store only, and `check_contracts` skips its
+  README checks under PostgreSQL authority. SIGTERM (dig.sh's `timeout`, an operator's kill)
+  raises KeyboardInterrupt, so the round recovers itself on the way out (exit 130).
+- **Completion and scheduling** (`staged_runs.after_promotion`, `housekeeping`): the incremental
+  refresh of the corpus/ materialization to the current generation (step 3), then the fold of
+  promoted generations into the projection and the purge of aborted runs queued more than 24 h
+  ago (their staging stays inspectable for the review meanwhile), each step its own short
+  transaction (≤ `FOLD_BATCH` rows), under a 60 s budget per call; what is left waits for the next
+  call. It runs after every promotion (round, standalone, maintenance), at every round's start
+  and in every recovery — the fold and purge schedule. The run rows of aborted runs, with their
+  abort reason, are kept (failure evidence).
+- **Shared recovery** (`round_recovery.recover_staged`, the staged form of the one routine): (1)
+  the caller holds the writer — ownership, and proof that no coordinator of those runs is alive;
+  (2) targets: the named run, or every open/frozen run (a durable query; a failure raises before
+  anything is touched); (3) stop the runs' processes — the caller's new descendants and every live
+  process tagged with a target's `NEKAISE_RUN_ID`; (4) drain the caller's broker, in a `finally`,
+  so it is drained even when stopping failed or was interrupted; (5) per run a FRESH status query
+  decides: promoted → kept (`staged_run_kept`), open/frozen → aborted and re-read to confirm,
+  aborted → nothing, never opened → nothing; a status that cannot be read raises — an unknown
+  database outcome never leads to an abort, a sweep or a completion; (6) sweep what the stopped
+  processes left: `artifacts/.incoming` temporaries of dead writers and the runs' finder proposal
+  directories (`workspace/finder-proposals-<run>-*`, which TemporaryDirectory cannot clean after
+  SIGKILL; materialization temporaries are removed by the next refresh under its lock); (7)
+  optionally finish (`after_promotion`). Entry points: `run_round.py --recover latest|RUN_ID`, the
+  maintainer (both windows), and every staged round/standalone/maintenance run that fails before
+  its promotion — `store_broker.staged_round` stops the processes in the body's `except`, lets
+  `serving()` drain the broker, then calls the routine with `stop=False`. A promotion whose reply
+  is lost (it committed, the client raised) is found promoted and stands; `abort_run` itself also
+  refuses a promoted run.
+- **Explicit resume** (`run_round.py --resume RUN_ID`): with the writer held, the run's tagged
+  orphans are stopped and temporaries swept; then every refusal is checked BEFORE anything is
+  adopted — the run is an open or frozen ROUND (a standalone or maintenance run is never re-run
+  as a round's pipeline: recovery aborts it), no integrity finding is open, its parent is the
+  current generation, the checkout's commit, configuration digest and extractor equal the run's,
+  no other run is unfinished, and a frozen run's gate set equals this invocation's with no failed
+  receipt — then `artifact_store.verify_run`
+  re-hashes every version the run referenced that was never verified, and `adopt_run` logs the
+  adoption (the database re-checks all of it) and issues a new access token. Otherwise the error
+  names `--recover RUN_ID` (abort) and a new round. An open run continues with `attempt` n (1 +
+  its adoptions): its steps' batches are named `a<n>-<batch>` (`NEKAISE_STORE_ATTEMPT`), so a
+  re-run step never collides with an earlier attempt's applied batches — the cleaner stages in
+  completion order (step-3 note), so batches are never renumbered and replayed: applied receipts
+  stand as done work and the step recomputes the rest over the run's overlay, idempotently
+  (loader: fetched rows are ok; cleaner: up-to-date claims are skipped; pruner: decisions from the
+  overlay). Discovery is never started again: a persisted merge is applied exactly as persisted,
+  an applied one skipped. A frozen run records only its missing gates and promotes.
+- **Standalone mutations** (`store_broker.run_batch`, `step_session`; i.e. `rotation.py advance|
+  next`, `blocklist.add`, `migrate_backend_state.py --apply`, find_github's pass recording, the
+  registry adapters, and a standalone `build_corpus.py` / `prune_corpus.py --apply` /
+  `clean_corpus.py`): outside a broker and under PostgreSQL authority each is ONE staged run of
+  kind `standalone` (`staged_runs.standalone`): refused while a run is unfinished; the same
+  identity as a round; its batches staged in the run; frozen with the round's gates `artifacts`,
+  `check`, `contracts`, `lint`, `tests`, which run as subprocesses of the checkout's own scripts
+  (and its test suite, without a read pin) against the frozen state; promoted; completed (a completion failure is a warning — the promotion stands). `run_batch`
+  computes under the writer from the committed generation first and opens a run only when
+  something was recorded; a step session with nothing to stage aborts its run as a no-op. Under a
+  broker (a round's step, a maintenance window's agent) nothing changes: the batch is the broker's.
+- **The maintainer** (`maintainer.open_store`, `Window`): the snapshot window serves no broker
+  (nothing may mutate while evidence is taken), recovers every unfinished run with the shared
+  routine (finishing the current generation), checks that corpus/ is a complete materialization
+  of the current generation, pins the triage generation (`generation_retention`, holder
+  `maintainer-<id>`, `until` +8 h so a dead maintainer cannot hold the fold forever; released on
+  every way out of the pass — no action, a failed or invalid triage, the action's end — with
+  `store_staging.release_pin`, which needs no writer because dropping a pin only lets the fold
+  proceed) and reads the generation-range review evidence up to it; growth-block reasons add unfinished runs and open
+  integrity findings (a failed read blocks). Triage then runs without locks. The action window
+  reacquires both locks, recovers again, opens ONE maintenance run (identity as above; a dirty
+  checkout means no run and every store mutation is refused in that window), exports its broker and
+  read pin to the agent's processes, and reports fresh code AND generation evidence
+  (`changed_since_triage` covers HEAD and the generation). After the agent: `conclude(ok)` drains,
+  then — only if the action succeeded (exit 0 and no tool of it left running: `run_command`
+  reports the survivors it had to stop, whose work is incomplete), something was staged and the
+  checkout still has the run's commit and configuration (an agent that commits code or policy in
+  the window gets its data mutations aborted: they ran under other code than the run records) —
+  freezes, runs the gates, promotes (a compensating generation) and completes it; otherwise, or
+  when a gate fails, it aborts. A conclusion that fails otherwise is recovered by durable status
+  at once (so the growth block judged next never shows the window's own run as unfinished); a
+  window left without a conclusion (an exception, SIGTERM) aborts through `staged_round`. Then the agent's review verdict (below) is recorded, the pin released and the
+  growth block updated, still under both locks. `conclude` hides the exported broker/pin variables
+  from the maintainer's own reads (found by the end-to-end test: the completion's materialization
+  read the just-promoted run's pin through the exported environment). Under PostgreSQL authority
+  both prompts get `maintainer_prompts/staged.md`.
+- **Generation-range review** (`scripts/generation_review.py`). `evidence(through)` covers the next
+  unreviewed range (reviewed_through, min(through, +200)]: per generation its run, kind, producer
+  commit, config digest, extractor, ruleset, frozen state, operation counts (promotion record),
+  manifest rows its run staged by status (bounded by the range) and its gate receipts; the
+  configuration documents that changed between consecutive generations and ruleset changes; the
+  runs aborted while producing the range (parent in [lo-1, hi-1]) with their reasons (total + 50);
+  the code commits between consecutive producer commits (git, bounded); backup health (the WAL
+  archiver's last success/failure from `pg_stat_archiver`, the newest base backup's age; an
+  unreadable location is reported, never hidden). The database part has a digest.
+  `record(through, verdict, evidence_digest, …)` recomputes the evidence under the writer and
+  refuses a verdict whose digest differs — the reviewer can only endorse exactly what it saw. The
+  database (v7) keeps verdicts contiguous (`lo = reviewed_through + 1`, `seq = verdicts + 1`, the
+  shared `review_state` row locked, so concurrent verdicts conflict under any isolation level),
+  bounded by the current generation, immutable except the one-time `resolved_by` of a finding set
+  by a later verdict's trigger; `resolves` must name open findings (canonical sorted list) and
+  a verdict resolves a finding only when its range covers a generation promoted AFTER the
+  finding's range — the compensating repair — so a verdict written before the repair exists (or
+  over no generation) cannot resolve it; an empty range (hi = lo - 1) only records a finding about
+  generations already reviewed. Verdict semantics: `ok` reviews the range and, when no
+  finding is open, endorses through it; `finding` reviews it but endorsement (and so publication:
+  the `publication` watermark is capped) stops until a later verdict resolves the finding;
+  `integrity` also refuses growth rounds (`growth_block`, checked by `run_round` before a round
+  and in the maintainer's block reasons) while standalone and maintenance runs — the repairs —
+  still promote. Every verdict acknowledges the range's outbox rows for the `review` consumer and
+  advances its watermark (the consumer is the verdicts' outbox image). CLI `status | evidence |
+  record`; in the action window the agent writes its verdict to `$NEKAISE_REVIEW_VERDICT_FILE`
+  (`verdict_from_file` validates it) and the maintainer records it as `codex-maintainer` only
+  when it is about exactly the range and digest the pass showed (an agent with database access
+  could otherwise compute and endorse evidence for generations neither triage nor Claude saw); a
+  refused verdict is reported in the history and the range stays unreviewed.
+- **Test isolation** (`tests/authority_site/sitecustomize.py`, tests only): real `run_round.py`
+  processes and all their children see a throwaway checkout's authority record because the tests
+  put that directory on `PYTHONPATH`; its `sitecustomize` points `store_authority.HOST_RECORD` at
+  the test's private record and can turn a crash-injection hook into a process kill. Production
+  code has no such override (the record is still located through the passwd database only). The
+  static run-id check now also covers `--resume`, `recover_staged` and `staged_round`.
+- **Tests** (PostgreSQL, `nekaise_test`, throwaway schemas and checkouts): `test_staged_rounds.py`
+  (15, real `run_round.py`/`prune_corpus.py`/`clean_corpus.py`/`generation_review.py` processes, a
+  fake finder, a local HTTP server): a round is one promoted generation with every gate receipt
+  bound to the frozen state, the finder pinned at sequence 0, git untouched; a second round's
+  incremental materialization; a failing gate aborts and queues the purge, the next round
+  promotes; a dirty checkout or `--push` refused before anything stages; SIGKILL mid-fetch — a new
+  round refused, `--recover latest` stops the orphaned fetch before aborting, sweeps a dead
+  writer's temporary, the next round promotes; SIGTERM (timeout) recovers on the way out; a round
+  killed during its materialization stands and recovery completes it; resume after changed code
+  refused without touching the run, then resumed (finder not re-run, `a2-` batches after the first
+  attempt's checkpoint, every document present); a frozen run resumed with only its missing gates
+  (a different gate set refused before adoption); a damaged unverified version refuses resume;
+  standalone `blocklist.add` as one gated promoted run (a no-op makes no run), standalone prune as
+  a promoted run and a no-op clean aborted, standalone mutations refused while a run is unfinished
+  and aborted when their gates fail; an integrity verdict blocks rounds, a standalone repair
+  promotes, a stale digest is refused, the resolving verdict endorses and growth resumes; an
+  integrity finding also refuses resuming a round (nothing adopted).
+  `test_staged_maintainer.py` (15): snapshot window recovery + triage pin holding the fold; action
+  window mutations as one gated promoted maintenance run (a child without the broker refused);
+  failed, unconcluded and empty windows abort; a timed-out agent's batch drained before the
+  window is judged; a round inside the window refused at once; the whole pass (a round promoted
+  during triage, fresh generation evidence, the repair promoted, the pin released) with a verdict
+  recorded, a stale-digest verdict and a verdict over a range the pass did not show refused, no
+  verdict, and an agent that left a tool running (its repair aborted); `run_command` reports and
+  stops survivors; a window whose code changed does not promote; a failing conclusion is
+  recovered before the growth block is judged. `test_store_pg_recovery.py` (18):
+  adoption rules (current writer, parent, commit/config/extractor, verified artifacts, final runs,
+  direct SQL), the purge queue, recovery order (stopped before drained before the status query),
+  an unknown outcome mutates nothing, outcomes per status, a lost promotion reply stands, SIGTERM
+  while stopping still drains and recovers, bounded housekeeping converges, attempt namespaces,
+  and the v6 → v7 migration (runs by the real v6 code: owners backfilled, purge queue filled,
+  v6 clients refused, a v6 run resumed by new code; a v6 shadow keeps identical digests/export and
+  keeps replicating). `test_generation_review.py` (9): evidence contents and digest binding,
+  configuration decisions, findings withholding endorsement until resolved (+ the outbox image),
+  resolution only by a verdict covering a later (compensating) generation,
+  the publication cap, contiguity/immutability against direct SQL, integrity blocking growth,
+  verdict files, and the backfill from legacy acknowledgements. Step-1/2 contract tests now drive
+  the review consumer through verdicts.
+- **Internal adversarial review before hand-off** (a separate reviewer agent over the diff): five
+  findings, all fixed with regressions — an integrity finding resolvable although the repair was
+  aborted (the resolution rule above); a partially applied repair promotable after the supervisor
+  stopped the agent's leftover tools (survivors fail the action); a maintenance run recording the
+  wrong commit after the agent committed code (identity re-checked at conclusion); `--resume`
+  skipping the integrity block (and resuming non-round runs); verdicts not tied to the evidence
+  the pass showed. Also adopted: triage pins released on every path, a failing conclusion
+  recovered before the growth block is judged, the review range capped at 200 generations.
+- **Decisions the plan left open** (for review): one predicate selects every new path; the owner is
+  a new column moved only by a logged adoption (the opener stays `writer_epoch`); resume refusals
+  are checked in Python before adoption and again by the database; a resumed run's steps re-run
+  idempotently in their own batch namespace instead of replaying numbered batches; discovery is
+  never restarted on resume; `run_round` refuses to start while any run is unfinished (recovery
+  stays an explicit or maintainer act, as with snapshots) but catches up a promoted generation's
+  completion itself; aborted runs keep their row and are purged after 24 h; housekeeping is
+  time-budgeted and piggybacks on promotions and recoveries rather than a new timer; standalone
+  runs require the same identity (clean checkout) and the same gates as rounds (including the test
+  suite); a maintenance run is promoted only when the action exited 0 with nothing left running
+  and code/configuration unchanged; the triage pin expires after 8 h and is released without the
+  writer; the review range is capped at 200 generations, its failures at 50 shown; verdicts are recorded by the maintainer from a file
+  (the agent cannot take the writer inside the window); the review consumer is written only by
+  verdicts and publication is capped at endorsement in the database; README statistics are not
+  checked under PostgreSQL authority.
+- **Deferred to step 5 (verification, backups, the rehearsal).** Generation-bound counters and
+  ledger / derived-key / eligibility / artifact verification sweeps; periodic re-verification of
+  verified versions; the `nk_basis_text` benchmark with accumulated unfolded generations (step-3
+  note b); reference-checked garbage collection of versions; `backup_corpus` for `artifacts/` and
+  PostgreSQL-aware backups; named recovery points and restore drills; metadata RPO ≤ 15 min and
+  RTO ≤ 60 min demonstrated; alerts (backup health is only reported to the review now); a full
+  throwaway PostgreSQL-authoritative rehearsal including rollback; the 160M-row benchmark.
+- **Known limits.** A second SIGTERM while a failing staged round recovers escapes the recovery
+  (the run stays open: fail-closed, the next `--recover` or maintainer pass aborts it); a round
+  whose promotion reply was lost logs `run_failed` although its generation stands (the database
+  is right; the next recovery records `staged_run_kept`); nothing acknowledges the `publication`
+  consumer yet (its cap at endorsement becomes effective with stage 6's release publisher).
+- **Deferred to step 6 (cutover).** The baseline generation-0 tool; switching the live record and
+  the fence; making the frozen legacy data read-only; the cron/maintainer environment
+  (`NEKAISE_STORE=postgres` + DSN/schema) and the maintainer's publication switch to the
+  generation-range review (the code path exists and is selected by the record); the publication
+  consumer's Parquet release (stage 6 of the plan). Also still open: the lease with heartbeat and
+  fencing epoch before any second host writes; ownership and the review guards are consistency
+  rules for one trusted host, not an authorization boundary.
+- **Gates**: full suite 1195 passed / 206 skipped (PostgreSQL skipped), with PostgreSQL
+  (`nekaise_test`) 1429 passed / 2 skipped (the two opt-in benchmarks); `py_compile` of scripts
+  and tests clean. Nothing ran against the live schema, the live checkout, cron or the maintainer.

@@ -205,7 +205,19 @@ class Window:
         # exported for the window's children only
         with hidden_env(store_broker.BROKER_ENV, store_broker.CAP_ENV, store_broker.ROUND_ENV,
                         store_broker.ATTEMPT_ENV, "NEKAISE_STORE_STAGE"):
-            return self._conclude(ok)
+            try:
+                return self._conclude(ok)
+            except Exception as exc:
+                # decided now by the durable status (a promotion stands), so the growth block
+                # judged right after never reports this window's own run as unfinished
+                if self.run is not None and self.run.generation is None:
+                    try:
+                        round_recovery.recover_staged(
+                            self.st, self.writer, self.run.run.run_id, root=ROOT, stop=False,
+                            finish=False, reason=f"concluding failed: {exc}"[:500])
+                    except Exception as rexc:
+                        exc.add_note(f"recovering the maintenance run failed too: {rexc}")
+                raise
 
     def _conclude(self, ok: bool) -> dict:
         import staged_runs
@@ -219,8 +231,16 @@ class Window:
         if status is None or status["status"] != "open":
             self.outcome = {"run": run_id, "status": None if status is None else status["status"]}
             return self.outcome
-        if not ok or status["staged_seq"] == 0:
-            reason = "no-op: nothing staged" if ok else "the maintenance action did not succeed"
+        reason = None
+        if not ok:
+            reason = "the maintenance action did not succeed"
+        elif status["staged_seq"] == 0:
+            reason = "no-op: nothing staged"
+        elif changed := staged_runs.identity_changed(ROOT, status):
+            # the agent changed code or configuration meanwhile: its data mutations ran under
+            # other code than the run records — promoted separately, in a later window
+            reason = f"not promoted: {changed} changed during the window"
+        if reason is not None:
             self.st.abort_run(self.writer, run_id, reason=reason)
             self.outcome["reason"] = reason
             return self.outcome
@@ -375,7 +395,10 @@ def run_command(
     stdout_path: Path,
     stderr_path: Path,
     env: dict[str, str] | None = None,
+    report: dict | None = None,
 ) -> int:
+    """Run `command` supervised. `report`, when given, receives "survivors": the processes the
+    command left running after it exited (stopped here) — work the command did not finish."""
     with adopt_agent_children(), stdout_path.open("w") as stdout, stderr_path.open("w") as stderr:
         existing = descendants(os.getpid())
         process = subprocess.Popen(
@@ -384,6 +407,10 @@ def run_command(
         )
         try:
             process.communicate(input=prompt, timeout=timeout)
+            if report is not None:
+                report["survivors"] = sorted(
+                    pid for pid in descendants(os.getpid()) - existing - {process.pid}
+                    if round_recovery._alive(pid))
             return process.returncode
         except subprocess.TimeoutExpired:
             stderr.write(f"\nmaintainer timeout after {timeout}s\n")
@@ -828,24 +855,91 @@ def pin_triage_generation(holder: str) -> int | None:
 
 
 def release_triage_pin(holder: str, generation: int | None) -> None:
-    if generation is None or not is_staged():
+    """Release the triage pin (store_staging.release_pin: no writer needed — dropping a pin only
+    lets the fold proceed). Called on every way out of a pass; the pin's expiry is the backstop."""
+    if generation is None:
         return
     import store_staging
-    st, writer, _ = _WINDOW_WRITER
-    store_staging.unpin_generation(st, writer, generation, holder=holder)
+    st = _WINDOW_WRITER[0] if _WINDOW_WRITER is not None else open_store("triage pin")[0]
+    store_staging.release_pin(st, generation, holder=holder)
 
 
 def staged_block_reasons() -> list[str]:
     """PostgreSQL authority: settled-state reasons to block growth (read under the window's
-    writer; a failed read blocks)."""
+    writer; a failed read blocks): unfinished runs, and an open integrity finding of the
+    generation-range review."""
+    import generation_review
     import store_staging
     st, writer, _ = _WINDOW_WRITER
+    reasons = []
     try:
         left = store_staging.unfinished_runs(st, writer)
+        if left:
+            reasons.append(f"{len(left)} unfinished staged run(s): "
+                           f"{', '.join(r['run_id'] for r in left)}")
+        if why := generation_review.growth_block(st, writer):
+            reasons.append(why)
     except Exception as exc:
-        return [f"cannot read durable run status: {type(exc).__name__}: {exc}"[:300]]
-    return [f"{len(left)} unfinished staged run(s): {', '.join(r['run_id'] for r in left)}"] \
-        if left else []
+        reasons.append(f"cannot read durable run or review state: {type(exc).__name__}: {exc}"
+                       [:300])
+    return reasons
+
+
+def review_evidence(run_dir: Path, through: int | None) -> dict | None:
+    """PostgreSQL authority: the generation-range review's evidence for the unreviewed range up
+    to `through` (the pinned triage generation), read under the window's writer. The full
+    evidence goes to run_dir/review-evidence.json, a compact summary (with its digest) into the
+    snapshot. None when there is no generation to review."""
+    import generation_review
+    if not is_staged() or through is None:
+        return None
+    st, writer, _ = _WINDOW_WRITER
+    try:
+        ev = generation_review.evidence(st, writer, through=through, root=ROOT)
+    except Exception as exc:
+        return {"error": f"{type(exc).__name__}: {exc}"[:500]}
+    (run_dir / "review-evidence.json").write_text(json.dumps(ev, indent=2) + "\n")
+    return {**generation_review.summary(ev),
+            "evidence_file": str((run_dir / "review-evidence.json").relative_to(ROOT)),
+            "review_state": generation_review.state(st, writer)}
+
+
+def generation_review_env() -> str:
+    import generation_review
+    return generation_review.VERDICT_ENV
+
+
+def record_review_verdict(path: Path, shown: dict | None) -> dict | None:
+    """PostgreSQL authority, action window: the verdict the action agent wrote (if any) is
+    validated and recorded under the window's writer. It must be about exactly the range and
+    evidence digest the maintainer showed triage and the action (`shown`, the snapshot's
+    generation_review), and the evidence is recomputed and must still have that digest; the
+    database keeps verdicts contiguous. Returns what happened (never raises: a refused verdict is
+    reported and the range stays unreviewed)."""
+    import generation_review
+    if not is_staged() or not path.exists():
+        return None
+    st, writer, _ = _WINDOW_WRITER
+    try:
+        doc = generation_review.verdict_from_file(path)
+        if not shown or "digest" not in shown:
+            raise generation_review.ReviewError("no review evidence was shown in this pass")
+        if (doc["through"], doc["evidence_digest"]) != (shown["range"][1], shown["digest"]):
+            raise generation_review.ReviewError(
+                f"the verdict is about generations through {doc['through']} with digest "
+                f"{doc['evidence_digest'][:12]}; this pass showed through {shown['range'][1]} "
+                f"with digest {shown['digest'][:12]}")
+        after = generation_review.record(
+            st, writer, through=doc["through"], verdict=doc["verdict"],
+            reviewer="codex-maintainer", evidence_digest=doc["evidence_digest"],
+            detail={"summary": doc["summary"], "findings": doc.get("findings", [])},
+            resolves=doc.get("resolves", []), root=ROOT)
+        return {"recorded": doc["verdict"], "through": doc["through"],
+                "reviewed_through": after["reviewed_through"],
+                "endorsed_through": after["endorsed_through"],
+                "open_findings": after["open_findings"], "open_integrity": after["open_integrity"]}
+    except Exception as exc:
+        return {"refused": f"{type(exc).__name__}: {exc}"[:500]}
 
 
 def block_reasons() -> list[str]:
@@ -961,146 +1055,171 @@ def run_maintenance() -> int:
         except Exception as exc:
             snapshot["triage_generation"] = None
             snapshot["triage_pin_error"] = f"{type(exc).__name__}: {exc}"[:300]
+        if is_staged():   # publication review is a generation-range review under PostgreSQL
+            snapshot["generation_review"] = review_evidence(run_dir,
+                                                            snapshot["triage_generation"])
         reasons = update_growth_block()
     (run_dir / "repo-snapshot.json").write_text(json.dumps(snapshot, indent=2) + "\n")
 
-    staged_notes = render("staged.md") if "store" in snapshot else ""   # PostgreSQL authority
-    triage_prompt = render("triage.md") + staged_notes + "\n\n<repository_snapshot>\n" + json.dumps(snapshot, indent=2) + "\n</repository_snapshot>\n"
-    triage_out = run_dir / "codex-triage.json"
-    triage_events = run_dir / "codex-triage.events.jsonl"
-    triage_errors = run_dir / "codex-triage.stderr.log"
-    triage_cmd = [
-        str(codex), "exec", "--ephemeral", "--sandbox", "read-only", "--color", "never",
-        "--output-schema", str(SCHEMA), "--output-last-message", str(triage_out), "--json",
-        "-C", str(ROOT), "-",
-    ]
-    triage_rc = run_command(
-        triage_cmd, prompt=triage_prompt, timeout=int(os.environ.get("CODEX_TRIAGE_TIMEOUT", "600")),
-        stdout_path=triage_events, stderr_path=triage_errors, env=agent_env(codex),
-    )
-    if triage_rc != 0 or not triage_out.exists():
-        status = "codex_quota" if provider_quota(triage_rc, triage_errors, triage_events) else "codex_triage_failed"
-        if status == "codex_quota":
-            set_cooldown("codex")
-        record({"run_id": run_id, "status": status, "exit": triage_rc, "growth_blocked": reasons})
-        print(f"Codex triage deferred: {status} (exit {triage_rc}); Claude was not called.")
-        return 0 if status == "codex_quota" else 1
+    def triage_and_act() -> int:
+        nonlocal reasons
+
+        staged_notes = render("staged.md") if "store" in snapshot else ""   # PostgreSQL authority
+        triage_prompt = render("triage.md") + staged_notes + "\n\n<repository_snapshot>\n" + json.dumps(snapshot, indent=2) + "\n</repository_snapshot>\n"
+        triage_out = run_dir / "codex-triage.json"
+        triage_events = run_dir / "codex-triage.events.jsonl"
+        triage_errors = run_dir / "codex-triage.stderr.log"
+        triage_cmd = [
+            str(codex), "exec", "--ephemeral", "--sandbox", "read-only", "--color", "never",
+            "--output-schema", str(SCHEMA), "--output-last-message", str(triage_out), "--json",
+            "-C", str(ROOT), "-",
+        ]
+        triage_rc = run_command(
+            triage_cmd, prompt=triage_prompt, timeout=int(os.environ.get("CODEX_TRIAGE_TIMEOUT", "600")),
+            stdout_path=triage_events, stderr_path=triage_errors, env=agent_env(codex),
+        )
+        if triage_rc != 0 or not triage_out.exists():
+            status = "codex_quota" if provider_quota(triage_rc, triage_errors, triage_events) else "codex_triage_failed"
+            if status == "codex_quota":
+                set_cooldown("codex")
+            record({"run_id": run_id, "status": status, "exit": triage_rc, "growth_blocked": reasons})
+            print(f"Codex triage deferred: {status} (exit {triage_rc}); Claude was not called.")
+            return 0 if status == "codex_quota" else 1
+
+        try:
+            triage = load_triage(triage_out)
+        except (OSError, ValueError, json.JSONDecodeError) as exc:
+            record({"run_id": run_id, "status": "invalid_triage", "error": str(exc), "growth_blocked": reasons})
+            print(f"Invalid Codex triage: {exc}")
+            return 1
+
+        if not triage["needs_action"]:
+            record({"run_id": run_id, "status": "healthy_no_action", "triage": triage, "growth_blocked": reasons})
+            print(f"Codex found no action: {triage['summary']}")
+            return 0
+
+        claude = resolve_agent("claude", os.environ.get("CLAUDE_BIN"))
+        claude_review = "Claude Code was unavailable; Codex must proceed from its own evidence."
+        claude_status = "missing"
+        if triage["action_kind"] == "publish":
+            claude_status = "not_needed"
+            claude_review = "Publication-only pass: Codex reviews the complete outgoing range under the action lock. No machinery or policy edits are authorized by this proposal."
+        elif claude is not None and not read_cooldown("claude"):
+            review_prompt = render("claude_review.md", CODEX_TRIAGE=json.dumps(triage, indent=2),
+                                   REPOSITORY_SNAPSHOT=json.dumps(snapshot, indent=2))
+            review_out = run_dir / "claude-review.json"
+            review_errors = run_dir / "claude-review.stderr.log"
+            claude_cmd = [
+                str(claude), "--print", "--no-session-persistence", "--tools", "",
+                "--disable-slash-commands", "--output-format", "json",
+                "--model", os.environ.get("CLAUDE_REVIEW_MODEL", "claude-opus-5-5"),
+                "--effort", os.environ.get("CLAUDE_REVIEW_EFFORT", "xhigh"),
+            ]
+            review_rc = run_command(
+                claude_cmd, prompt=review_prompt, timeout=int(os.environ.get("CLAUDE_REVIEW_TIMEOUT", "300")),
+                stdout_path=review_out, stderr_path=review_errors, env=agent_env(claude),
+            )
+            try:
+                review = json.loads(review_out.read_text())
+                valid_review = (isinstance(review, dict) and review.get("is_error") is not True
+                                and isinstance(review.get("result"), str) and bool(review["result"].strip()))
+            except (ValueError, OSError):
+                valid_review = False
+            if review_rc == 0 and valid_review:
+                claude_review = review["result"][-12000:]
+                claude_status = "reviewed"
+            elif provider_quota(review_rc or 1, review_errors, review_out):
+                set_cooldown("claude")
+                claude_status = "quota"
+                claude_review = "Claude Code hit its usage limit. Codex remains primary and may proceed cautiously."
+            else:
+                claude_status = f"failed_exit_{review_rc}"
+                claude_review = "Claude Code review failed for a non-quota reason. Codex remains primary; inspect logs and proceed cautiously."
+        elif claude is not None:
+            claude_status = "cooldown"
+            claude_review = "Claude Code is in a usage cooldown. Codex remains primary and may proceed cautiously."
+
+        with maintenance_window("action") as window:
+            # A round may have completed or failed while models deliberated. Never recover or
+            # act on the earlier snapshot without refreshing state under both locks.
+            action_snapshot = repo_snapshot(fetch_result, automatic_recovery=recovered,
+                                            automatic_recovery_error=recovery_error)
+            action_snapshot["triage_head"] = snapshot["head"]
+            action_snapshot["changed_since_triage"] = action_snapshot["head"] != snapshot["head"]
+            if "store" in action_snapshot:   # code AND generation evidence are refreshed
+                action_snapshot["triage_generation"] = snapshot.get("triage_generation")
+                action_snapshot["changed_since_triage"] |= (
+                    action_snapshot["store"].get("generation") != snapshot.get("triage_generation"))
+            (run_dir / "action-snapshot.json").write_text(json.dumps(action_snapshot, indent=2) + "\n")
+            action_prompt = render(
+                "action.md",
+                CODEX_TRIAGE=json.dumps(triage, indent=2),
+                CLAUDE_REVIEW=claude_review,
+                ACTION_SNAPSHOT=json.dumps(action_snapshot, indent=2),
+            ) + (render("staged.md") if "store" in action_snapshot else "")
+            action_out = run_dir / "codex-action.txt"
+            action_events = run_dir / "codex-action.events.jsonl"
+            action_errors = run_dir / "codex-action.stderr.log"
+            action_cmd = [
+                str(codex), "exec", "--ephemeral", "--sandbox", "danger-full-access", "--color", "never",
+                "--output-last-message", str(action_out), "--json", "-C", str(ROOT), "-",
+            ]
+            action_rc, status = None, "codex_action_interrupted"
+            verdict_file = run_dir / "review-verdict.json"
+            action_env = agent_env(codex)
+            if "store" in action_snapshot:
+                action_env[generation_review_env()] = str(verdict_file)
+            action_report: dict = {}
+            try:
+                action_rc = run_command(
+                    action_cmd, prompt=action_prompt, timeout=int(os.environ.get("CODEX_ACTION_TIMEOUT", "1800")),
+                    stdout_path=action_events, stderr_path=action_errors, env=action_env,
+                    report=action_report,
+                )
+                if action_rc != 0 and provider_quota(action_rc, action_errors, action_events):
+                    set_cooldown("codex")
+                    status = "codex_action_quota"
+                else:
+                    status = "action_completed" if action_rc == 0 else "codex_action_failed"
+            finally:
+                # Killing a timed-out agent does not stop a transaction the window's broker is
+                # executing for it: stop accepting and drain BEFORE judging settled state, still under
+                # both locks (drain defers an interrupt until it is done). A staged window then
+                # promotes its maintenance run (gated) or aborts it.
+                outcome = review = None
+                try:
+                    try:
+                        # a repair is promoted only when the action finished: exit 0 and no tool of
+                        # it left running (those were just stopped — their work is incomplete)
+                        outcome = window.conclude(ok=action_rc == 0 and status == "action_completed"
+                                                  and not action_report.get("survivors"))
+                        # still under both locks: the verdict on exactly the range triage showed
+                        review = record_review_verdict(verdict_file, snapshot.get("generation_review"))
+                    finally:
+                        release_triage_pin(f"maintainer-{run_id}", snapshot.get("triage_generation"))
+                finally:
+                    reasons = update_growth_block()
+            record({
+                "run_id": run_id,
+                "status": status,
+                "exit": action_rc,
+                "triage": triage,
+                "claude_status": claude_status,
+                "growth_blocked": reasons,
+                **({"maintenance_run": outcome} if outcome and outcome.get("run") else {}),
+                **({"review": review} if review else {}),
+            })
+            print(f"Codex action: {status}; Claude: {claude_status}; growth block: {reasons or 'none'}")
+            if action_out.exists():
+                print(action_out.read_text(errors="replace")[-8000:])
+            return 0 if action_rc == 0 or status == "codex_action_quota" else 1
 
     try:
-        triage = load_triage(triage_out)
-    except (OSError, ValueError, json.JSONDecodeError) as exc:
-        record({"run_id": run_id, "status": "invalid_triage", "error": str(exc), "growth_blocked": reasons})
-        print(f"Invalid Codex triage: {exc}")
-        return 1
-
-    if not triage["needs_action"]:
-        record({"run_id": run_id, "status": "healthy_no_action", "triage": triage, "growth_blocked": reasons})
-        print(f"Codex found no action: {triage['summary']}")
-        return 0
-
-    claude = resolve_agent("claude", os.environ.get("CLAUDE_BIN"))
-    claude_review = "Claude Code was unavailable; Codex must proceed from its own evidence."
-    claude_status = "missing"
-    if triage["action_kind"] == "publish":
-        claude_status = "not_needed"
-        claude_review = "Publication-only pass: Codex reviews the complete outgoing range under the action lock. No machinery or policy edits are authorized by this proposal."
-    elif claude is not None and not read_cooldown("claude"):
-        review_prompt = render("claude_review.md", CODEX_TRIAGE=json.dumps(triage, indent=2),
-                               REPOSITORY_SNAPSHOT=json.dumps(snapshot, indent=2))
-        review_out = run_dir / "claude-review.json"
-        review_errors = run_dir / "claude-review.stderr.log"
-        claude_cmd = [
-            str(claude), "--print", "--no-session-persistence", "--tools", "",
-            "--disable-slash-commands", "--output-format", "json",
-            "--model", os.environ.get("CLAUDE_REVIEW_MODEL", "claude-opus-5-5"),
-            "--effort", os.environ.get("CLAUDE_REVIEW_EFFORT", "xhigh"),
-        ]
-        review_rc = run_command(
-            claude_cmd, prompt=review_prompt, timeout=int(os.environ.get("CLAUDE_REVIEW_TIMEOUT", "300")),
-            stdout_path=review_out, stderr_path=review_errors, env=agent_env(claude),
-        )
-        try:
-            review = json.loads(review_out.read_text())
-            valid_review = (isinstance(review, dict) and review.get("is_error") is not True
-                            and isinstance(review.get("result"), str) and bool(review["result"].strip()))
-        except (ValueError, OSError):
-            valid_review = False
-        if review_rc == 0 and valid_review:
-            claude_review = review["result"][-12000:]
-            claude_status = "reviewed"
-        elif provider_quota(review_rc or 1, review_errors, review_out):
-            set_cooldown("claude")
-            claude_status = "quota"
-            claude_review = "Claude Code hit its usage limit. Codex remains primary and may proceed cautiously."
-        else:
-            claude_status = f"failed_exit_{review_rc}"
-            claude_review = "Claude Code review failed for a non-quota reason. Codex remains primary; inspect logs and proceed cautiously."
-    elif claude is not None:
-        claude_status = "cooldown"
-        claude_review = "Claude Code is in a usage cooldown. Codex remains primary and may proceed cautiously."
-
-    with maintenance_window("action") as window:
-        # A round may have completed or failed while models deliberated. Never recover or
-        # act on the earlier snapshot without refreshing state under both locks.
-        action_snapshot = repo_snapshot(fetch_result, automatic_recovery=recovered,
-                                        automatic_recovery_error=recovery_error)
-        action_snapshot["triage_head"] = snapshot["head"]
-        action_snapshot["changed_since_triage"] = action_snapshot["head"] != snapshot["head"]
-        if "store" in action_snapshot:   # code AND generation evidence are refreshed
-            action_snapshot["triage_generation"] = snapshot.get("triage_generation")
-            action_snapshot["changed_since_triage"] |= (
-                action_snapshot["store"].get("generation") != snapshot.get("triage_generation"))
-        (run_dir / "action-snapshot.json").write_text(json.dumps(action_snapshot, indent=2) + "\n")
-        action_prompt = render(
-            "action.md",
-            CODEX_TRIAGE=json.dumps(triage, indent=2),
-            CLAUDE_REVIEW=claude_review,
-            ACTION_SNAPSHOT=json.dumps(action_snapshot, indent=2),
-        ) + (render("staged.md") if "store" in action_snapshot else "")
-        action_out = run_dir / "codex-action.txt"
-        action_events = run_dir / "codex-action.events.jsonl"
-        action_errors = run_dir / "codex-action.stderr.log"
-        action_cmd = [
-            str(codex), "exec", "--ephemeral", "--sandbox", "danger-full-access", "--color", "never",
-            "--output-last-message", str(action_out), "--json", "-C", str(ROOT), "-",
-        ]
-        action_rc, status = None, "codex_action_interrupted"
-        try:
-            action_rc = run_command(
-                action_cmd, prompt=action_prompt, timeout=int(os.environ.get("CODEX_ACTION_TIMEOUT", "1800")),
-                stdout_path=action_events, stderr_path=action_errors, env=agent_env(codex),
-            )
-            if action_rc != 0 and provider_quota(action_rc, action_errors, action_events):
-                set_cooldown("codex")
-                status = "codex_action_quota"
-            else:
-                status = "action_completed" if action_rc == 0 else "codex_action_failed"
-        finally:
-            # Killing a timed-out agent does not stop a transaction the window's broker is
-            # executing for it: stop accepting and drain BEFORE judging settled state, still under
-            # both locks (drain defers an interrupt until it is done). A staged window then
-            # promotes its maintenance run (gated) or aborts it.
-            outcome = None
-            try:
-                try:
-                    outcome = window.conclude(ok=action_rc == 0 and status == "action_completed")
-                finally:
-                    release_triage_pin(f"maintainer-{run_id}", snapshot.get("triage_generation"))
-            finally:
-                reasons = update_growth_block()
-        record({
-            "run_id": run_id,
-            "status": status,
-            "exit": action_rc,
-            "triage": triage,
-            "claude_status": claude_status,
-            "growth_blocked": reasons,
-            **({"maintenance_run": outcome} if outcome and outcome.get("run") else {}),
-        })
-        print(f"Codex action: {status}; Claude: {claude_status}; growth block: {reasons or 'none'}")
-        if action_out.exists():
-            print(action_out.read_text(errors="replace")[-8000:])
-        return 0 if action_rc == 0 or status == "codex_action_quota" else 1
+        return triage_and_act()
+    finally:
+        # on every way out (no action, a failed or invalid triage, the action's end): the
+        # generation triage pinned is released (the pin's expiry is only the backstop)
+        release_triage_pin(f"maintainer-{run_id}", snapshot.get("triage_generation"))
 
 
 def main() -> int:

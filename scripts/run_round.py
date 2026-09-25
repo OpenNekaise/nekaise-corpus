@@ -882,9 +882,14 @@ def _terminated(signum, frame):
 
 def _complete_previous(st, writer, run_id: str) -> None:
     """Before anything stages: no crashed run may be unfinished (its outcome decides what this
-    round is based on), and the current generation's completion work — materialization, fold,
-    purge — is caught up (a promotion whose completion was interrupted converges here)."""
+    round is based on), no integrity finding of the generation-range review may be open (it
+    blocks growth until a verdict resolves it), and the current generation's completion work —
+    materialization, fold, purge — is caught up (a promotion whose completion was interrupted
+    converges here)."""
+    import generation_review
     staged_runs.refuse_unfinished(st, writer)
+    if why := generation_review.growth_block(st, writer):
+        raise RuntimeError(why)
     done = staged_runs.after_promotion(st, writer, ROOT)
     ops.run_event(run_id, "generation_completed", **{
         "materialized": done["materialized"].get("mode"),
@@ -990,9 +995,14 @@ def _promoted(st, writer, run_id: str, generation: int, before: int) -> int:
 def resume_refusal(st, writer, run: dict, ident, gates: list[str]) -> str | None:
     """Why run `run` cannot be resumed under the current checkout and this invocation's
     required `gates`, or None. Checked before anything is adopted."""
+    import generation_review
     import store_staging
     if run["status"] not in ("open", "frozen"):
         return f"it is {run['status']}"
+    if run["kind"] != "round":
+        return f"it is a {run['kind']} run: only rounds are resumed"
+    if why := generation_review.growth_block(st, writer):
+        return why
     with st.read(writer=writer) as view:
         head = view.generation
     if run["parent_generation"] != head:

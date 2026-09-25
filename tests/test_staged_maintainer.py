@@ -19,7 +19,7 @@ import pytest
 import maintainer
 import store_broker
 from runids import rid
-from staged_world import DSN, SITE, World, entry, kill
+from staged_world import World, entry, kill
 
 pytestmark = pytest.mark.skipif(not os.environ.get("NEKAISE_PG_TEST_DSN"),
                                 reason="NEKAISE_PG_TEST_DSN not set")
@@ -130,7 +130,7 @@ def test_action_window_mutations_are_one_gated_promoted_maintenance_run(world):
     assert (row["status"], row["kind"]) == ("promoted", "maintenance")
     assert world.q("SELECT gate FROM gate_receipts WHERE run_id = %s AND verdict = 'passed' "
                    "ORDER BY 1", [run_id]) == [("artifacts",), ("check",), ("contracts",),
-                                               ("lint",)]
+                                               ("lint",), ("tests",)]
     assert committed_known(world, ["https://x.example/m1", "https://x.example/m2"]) == {
         "https://x.example/m1", "https://x.example/m2"}
     assert store_broker.BROKER_ENV not in os.environ
@@ -208,11 +208,15 @@ def test_a_round_inside_the_postgres_window_is_refused_at_once(world):
     assert nested.returncode == 2 and elapsed < 20 and "cannot run nested" in nested.stderr
 
 
+@pytest.mark.parametrize("review", ["ok", "stale", "other-range", "none", "survivor"])
 def test_a_maintenance_pass_refreshes_generation_evidence_and_promotes_its_repair(world,
-                                                                               monkeypatch):
-    """The whole pass: triage pins generation G without holding the locks, a round promotes
-    G+1 meanwhile, the action reacquires the locks with fresh code AND generation evidence,
-    its repair is gated and promoted as a maintenance run, and the pin is released."""
+                                                                               monkeypatch,
+                                                                               review):
+    """The whole pass: triage pins generation G without holding the locks and gets the
+    generation-range review evidence up to G, a round promotes G+1 meanwhile, the action
+    reacquires the locks with fresh code AND generation evidence, its repair is gated and
+    promoted as a maintenance run (a compensating generation), its verdict file is recorded only
+    when its digest is the evidence's, and the pin is released."""
     promoted_round(world, "mt-g0")
     monkeypatch.setattr(maintainer, "resolve_agent",
                         lambda name, override=None: Path("/bin") / name)
@@ -241,15 +245,85 @@ def test_a_maintenance_pass_refreshes_generation_evidence_and_promotes_its_repai
         seen["action"] = kwargs["prompt"]
         got = agent(world, kwargs["env"], CHILD.format(urls=["https://x.example/repair"]))
         assert got.returncode == 0, got.stderr
+        if review in ("ok", "stale", "other-range"):
+            evidence, = maintainer.LOGS.glob("maintainer-*/review-evidence.json")
+            ev = json.loads(evidence.read_text())
+            if review == "other-range":   # evidence the agent computed itself, for more
+                import generation_review
+                import store
+                with world.store()._connect() as conn:
+                    db = generation_review._database_evidence(conn, 0, 1)
+                ev = {"range": db["range"], "digest": store._digest(db)}
+            Path(kwargs["env"]["NEKAISE_REVIEW_VERDICT_FILE"]).write_text(json.dumps({
+                "through": ev["range"][1], "verdict": "ok", "summary": "reviewed",
+                "evidence_digest": ev["digest"] if review != "stale" else "0" * 64}))
+        if review == "survivor":   # a tool the agent left running (stopped by the supervisor)
+            kwargs["report"]["survivors"] = [os.getpid()]
         return 0
     monkeypatch.setattr(maintainer, "run_command", run)
     assert maintainer.main() == 0
     assert '"triage_generation": 0' in seen["triage"]
+    assert "GENERATION-RANGE review" in seen["triage"] and "GENERATION-RANGE" in seen["action"]
+    assert '"range": [\n      0,\n      0\n    ]' in seen["triage"]
     assert '"triage_generation": 0' in seen["action"]
     assert '"changed_since_triage": true' in seen["action"]
     history = [json.loads(l) for l in maintainer.HISTORY.read_text().splitlines()]
     run = history[-1]["maintenance_run"]
-    assert run["status"] == "promoted" and run["generation"] == 2
     assert world.q("SELECT count(*) FROM generation_retention")[0][0] == 0
+    if review == "survivor":   # the action did not finish: its repair is not promoted
+        assert run["status"] == "aborted" and "did not succeed" in run["reason"]
+        with world.store().read() as view:
+            assert view.generation == 1
+            assert not view.known(urls=["https://x.example/repair"]).urls
+        return
+    assert run["status"] == "promoted" and run["generation"] == 2
     with world.store().read() as view:
         assert view.generation == 2 and view.known(urls=["https://x.example/repair"]).urls
+    reviewed = world.q("SELECT reviewed_through, endorsed_through FROM review_state")[0]
+    if review == "ok":
+        assert history[-1]["review"]["recorded"] == "ok" and reviewed == (0, 0)
+    elif review == "stale":
+        assert "this pass showed" in history[-1]["review"]["refused"]
+        assert reviewed == (None, None)
+    elif review == "other-range":   # a digest the agent computed for more than it was shown
+        assert "through 1" in history[-1]["review"]["refused"] and reviewed == (None, None)
+    else:
+        assert "review" not in history[-1] and reviewed == (None, None)
+
+
+def test_run_command_reports_the_tools_an_agent_left_running(world, tmp_path):
+    report = {}
+    code = maintainer.run_command(
+        ["bash", "-c", "sleep 30 & exit 0"], prompt=None, timeout=30,
+        stdout_path=tmp_path / "out", stderr_path=tmp_path / "err", report=report)
+    assert code == 0 and len(report["survivors"]) == 1
+    assert not maintainer.round_recovery._alive(report["survivors"][0])   # and it was stopped
+
+
+def test_a_window_whose_code_changed_does_not_promote_its_mutations(world):
+    promoted_round(world, "mt-g0")
+    with maintainer.maintenance_window("action") as window:
+        run_id = window.run.run.run_id
+        env = maintainer.agent_env(Path(sys.executable))
+        assert agent(world, env, CHILD.format(urls=["https://x.example/c"])).returncode == 0
+        world.commit("the agent changes code", **{"scripts__note.txt": "new\n"})
+        outcome = window.conclude(ok=True)
+    assert outcome["status"] == "aborted" and "producer commit" in outcome["reason"]
+    assert world.run_row(run_id)["status"] == "aborted" and world.generation() == 0
+
+
+def test_a_failing_conclusion_is_recovered_before_growth_is_judged(world, monkeypatch):
+    import staged_runs
+    promoted_round(world, "mt-g0")
+
+    def crash(*_a, **_k):
+        raise RuntimeError("a gate process could not start")
+    monkeypatch.setattr(staged_runs, "run_gates", crash)
+    with maintainer.maintenance_window("action") as window:
+        run_id = window.run.run.run_id
+        env = maintainer.agent_env(Path(sys.executable))
+        assert agent(world, env, CHILD.format(urls=["https://x.example/f"])).returncode == 0
+        with pytest.raises(RuntimeError, match="could not start"):
+            window.conclude(ok=True)
+        assert world.run_row(run_id)["status"] == "aborted"
+        assert not any("unfinished" in r for r in maintainer.block_reasons())

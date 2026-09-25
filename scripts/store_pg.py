@@ -1703,17 +1703,19 @@ def _migrate_6(conn, schema):  # stage 4 step 3 artifacts: additive, see V6_DDL
 #                      open or frozen run ONLY when it is the current writer, the run's parent is
 #                      still the current generation, its producer commit, configuration set and
 #                      extractor version are the run's (checked against the row, never against
-#                      what the adopter claims alone), no batch is left requested except a
-#                      persisted one, and every artifact the run referenced has a verified
-#                      canonical local locator. Otherwise: abort and start a new run.
+#                      what the adopter claims alone), and every artifact the run referenced
+#                      has a verified canonical local locator. (A batch left requested is the
+#                      persisted discovery merge, which the resumed coordinator replays exactly.)
+#                      Otherwise: abort and start a new run.
 #   purge_queue        aborted runs whose staging still has to be purged (bounded batches,
 #                      store_staging.purge_run); an abort queues its run (trigger), completion
 #                      dequeues it. Backfilled with every aborted run that still has staging.
 #   review_state       the generation-range review (scripts/generation_review.py): the contiguous
 #   review_verdicts    reviewed watermark, the endorsed watermark publication may reach, and the
 #                      open findings. A verdict covers exactly (reviewed_through, hi]; findings
-#                      withhold endorsement until a later verdict resolves them; an integrity
-#                      finding also blocks growth. Every verdict acknowledges the range's outbox
+#                      withhold endorsement until a later verdict resolves them — one whose range
+#                      covers a generation promoted after the finding (the compensating repair);
+#                      an integrity finding also blocks growth. Every verdict acknowledges the range's outbox
 #                      rows for consumer "review" and advances its watermark; the "publication"
 #                      consumer may never pass the endorsed generation. Backfilled from the review
 #                      consumer's existing acknowledgements (a legacy non-ok one refuses the
@@ -1967,8 +1969,20 @@ BEGIN
         RAISE EXCEPTION 'nekaise: a verdict resolves only open findings'
             USING ERRCODE = 'integrity_constraint_violation';
     END IF;
-    IF NEW.hi_generation < NEW.lo_generation AND NEW.verdict = 'ok' AND n = 0 THEN
-        RAISE EXCEPTION 'nekaise: an ok verdict over no generation must resolve a finding'
+    -- a repair is a compensating generation: a finding is resolved only by a verdict whose range
+    -- covers a generation promoted after the finding's own range (never by a verdict written
+    -- before the repair exists, nor over nothing)
+    IF EXISTS (SELECT 1 FROM jsonb_array_elements(doc) e JOIN {s}.review_verdicts v
+               ON v.seq = (e::text)::bigint
+               WHERE NEW.hi_generation < NEW.lo_generation
+               OR NEW.hi_generation <= GREATEST(v.hi_generation, v.lo_generation - 1)) THEN
+        RAISE EXCEPTION 'nekaise: a finding is resolved only by a verdict covering a generation '
+            'promoted after it (the compensating repair)'
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    -- an empty range (hi = lo - 1) only records a finding about generations already reviewed
+    IF NEW.hi_generation < NEW.lo_generation AND NEW.verdict = 'ok' THEN
+        RAISE EXCEPTION 'nekaise: an ok verdict must cover at least one generation'
             USING ERRCODE = 'integrity_constraint_violation';
     END IF;
     RETURN NEW;

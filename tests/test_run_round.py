@@ -640,3 +640,12 @@ def test_only_mutating_steps_receive_the_store_broker(tmp_path, monkeypatch):
     # pytest builds its own throwaway stores: it must not inherit the round's lock or broker
     assert run_round.store.INHERITED_LOCK_ENV not in tests_env
     assert store_broker.BROKER_ENV not in tests_env
+
+
+def test_resume_refusals_come_before_anything_is_adopted():
+    """--resume continues only a staged ROUND (a standalone or maintenance run is aborted by
+    recovery, never re-run as a round's pipeline); the checks run before any adoption."""
+    assert run_round.resume_refusal(None, None, {"status": "aborted", "kind": "round"}, None,
+                                    []) == "it is aborted"
+    assert "only rounds are resumed" in run_round.resume_refusal(
+        None, None, {"status": "open", "kind": "standalone"}, None, [])

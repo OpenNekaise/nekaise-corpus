@@ -10,10 +10,7 @@ from __future__ import annotations
 import json
 import os
 import signal
-import subprocess
-import sys
 import threading
-import time
 
 import pytest
 
@@ -284,9 +281,9 @@ def test_a_resumed_frozen_run_only_runs_its_missing_gates(world):
                    [run_id])[0][0] == 5
 
 
-def test_resume_is_refused_after_another_generation_or_an_unverifiable_artifact(world):
-    """The database's adoption guard (schema v7) is the last word: a run whose parent is no
-    longer current, or whose referenced versions do not verify, cannot be adopted."""
+def test_resume_is_refused_for_an_unverifiable_artifact(world):
+    """A run whose referenced versions do not verify cannot be adopted (the database's adoption
+    guard checks it again); it is left open for --recover."""
     seeded(world, n=N_RESUME)
     world.finder([])
     run_id = rid("sr-art")
@@ -329,7 +326,8 @@ def test_a_standalone_blocklist_add_is_one_gated_promoted_run(world):
     assert (status, generation) == ("promoted", 1) and run_id.startswith("blocklist-")
     gates = world.q("SELECT gate, verdict FROM gate_receipts WHERE run_id = %s ORDER BY 1",
                     [run_id])
-    assert gates == [(g, "passed") for g in ("artifacts", "check", "contracts", "lint")]
+    assert gates == [(g, "passed") for g in ("artifacts", "check", "contracts", "lint",
+                                              "tests")]
     with world.store().read() as view:
         assert view.known(urls=["https://x.example/dropped"]).urls
     # nothing new: no run at all
@@ -382,3 +380,61 @@ def test_standalone_mutations_wait_for_recovery_and_fail_closed_on_gates(world):
     assert status == "aborted" and "contracts" in detail
     with world.store().read() as view:
         assert not view.known(urls=["https://x.example/a"]).urls
+
+
+# --- the generation-range review through its command line ------------------------------------------------
+
+def review(world, *args):
+    got = world.run(*args, script="generation_review.py")
+    ok(got)
+    return json.loads(got.stdout)
+
+
+def test_an_integrity_finding_blocks_rounds_until_a_compensating_generation_resolves_it(world):
+    seeded(world)
+    world.finder([])
+    ok(world.run("--run-id", rid("sr-rv0")))
+    ev = review(world, "evidence")
+    assert ev["range"] == [0, 0] and ev["generations"][0]["kind"] == "round"
+    state = review(world, "record", "--through", "0", "--verdict", "integrity", "--reviewer",
+                   "operator", "--evidence-digest", ev["digest"], "--summary",
+                   "a pointer-only row reached the corpus")
+    assert (state["reviewed_through"], state["endorsed_through"], state["open_integrity"]) == (
+        0, None, 1)
+    blocked = world.run("--run-id", rid("sr-rv-blocked"))
+    assert blocked.returncode == 1 and "integrity finding(s) [1]" in blocked.stderr
+    assert world.run_row(rid("sr-rv-blocked")) is None
+    # the repair is a standalone (or maintenance) run: a compensating generation
+    ok(world.python(ADD.format(urls=["https://x.example/repair"])))
+    ev = review(world, "evidence")
+    assert ev["range"] == [1, 1] and ev["generations"][0]["kind"] == "standalone"
+    stale = world.run("record", "--through", "1", "--verdict", "ok", "--reviewer", "operator",
+                      "--evidence-digest", "0" * 64, "--resolves", "1",
+                      script="generation_review.py")
+    assert stale.returncode == 1 and "digest differs" in stale.stderr
+    state = review(world, "record", "--through", "1", "--verdict", "ok", "--reviewer",
+                   "operator", "--evidence-digest", ev["digest"], "--resolves", "1")
+    assert (state["reviewed_through"], state["endorsed_through"], state["open_integrity"]) == (
+        1, 1, 0)
+    ok(world.run("--run-id", rid("sr-rv-after")))
+    assert world.generation() == 2
+
+
+def test_an_integrity_finding_also_refuses_resuming_a_round(world):
+    seeded(world, n=N_RESUME)
+    world.finder([])
+    ok(world.run("--run-id", rid("sr-ri0")))
+    world.finder([entry(world.payloads, "ost-s-late")])
+    run_id = rid("sr-ri1")
+    world.payloads.hold["ost-s-late"] = threading.Event()
+    proc = world.start("--run-id", run_id)
+    world.wait_for(lambda: "ost-s-late" in world.payloads.waiting, what="the held download")
+    kill(proc)
+    world.payloads.release()
+    ev = review(world, "evidence")
+    review(world, "record", "--through", "0", "--verdict", "integrity", "--reviewer", "operator",
+           "--evidence-digest", ev["digest"], "--summary", "found after the round started")
+    refused = world.run("--resume", run_id)
+    assert refused.returncode == 1 and "integrity finding(s) [1]" in refused.stderr
+    assert world.run_row(run_id)["status"] == "open"
+    assert world.q("SELECT count(*) FROM run_adoptions")[0][0] == 0

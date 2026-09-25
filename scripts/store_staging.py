@@ -1362,6 +1362,16 @@ def pin_generation(st, writer: WriterToken, generation: int, *, holder: str, rea
                      [generation, holder, reason, until])
 
 
+def release_pin(st, generation: int, *, holder: str) -> bool:
+    """Drop `holder`'s pin on `generation` without the writer: removing a pin can only let the
+    fold proceed further (the retention trigger guards taking pins, not dropping them), so a
+    maintainer releases its triage pin on every way out of a pass, even while a round holds the
+    writer. Returns whether a pin was dropped."""
+    with st._connect(autocommit=True) as conn:
+        return conn.execute("DELETE FROM generation_retention WHERE generation = %s AND holder = "
+                            "%s", [generation, holder]).rowcount > 0
+
+
 def unpin_generation(st, writer: WriterToken, generation: int, *, holder: str) -> None:
     with _writer_txn(st, writer) as conn:
         conn.execute("DELETE FROM generation_retention WHERE generation = %s AND holder = %s",

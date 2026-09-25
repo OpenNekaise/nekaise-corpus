@@ -266,6 +266,15 @@ never executes restrictions, prunes or policy changes removing more than 1% of t
 docs/tokens, counting related changes together; it writes a measured, reversible proposal to
 `workspace/` instead. Remove with `bash scripts/install_maintainer_cron.sh --remove`.
 
+Under PostgreSQL authority (ADR 0001 stage 4 step 4; not yet in production) the same pass pins
+the generation it triages, and its action window stages the agent's store mutations into one
+maintenance run that is gated and promoted only if the action succeeds. Publication review becomes
+a generation-range review (`scripts/generation_review.py`): evidence per unreviewed range of
+generations (revisions, decisions, yield, failures, gate receipts, backup health), verdicts
+persisted in PostgreSQL with a contiguous reviewed watermark; a finding withholds endorsement and
+publication, an integrity finding also blocks growth rounds, and a repair is a compensating
+generation that a later verdict resolves.
+
 ## Hard rules
 
 - **Never commit `raw/`, `text/`, or `corpus/`** — copyrighted content under mixed licenses. Only the
