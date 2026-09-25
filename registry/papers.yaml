@@ -74381,3 +74381,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1080/19401493.2024.2446517 openalex:W4406185512
     resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-enconman-2025-120696-6fbb8c1c
+    title: 'Cutting peaks and costs: Techno-economic design guidelines for solar PVT
+      and GSHP in land-constrained multi-family buildings'
+    url: https://kth.diva-portal.org/smash/get/diva2:2021952/FULLTEXT01
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-10-30'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enconman.2025.120696
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://kth.diva-portal.org/smash/get/diva2:2021952/FULLTEXT01; version
+      submittedVersion]
+    rights_verified_at: '2026-09-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enconman.2025.120696 openalex:W4415714213
+    resolution: 'sim1: openalex location'
