@@ -10581,3 +10581,531 @@ sources:
     topic: building_energy
     format: pdf
     document_type: conference-paper
+  - id: ibp-comparison-between-popular-genetic-algorithm-ga-base
+    title: Comparison between popular Genetic Algorithm (GA)-based tool and Covariance
+      Matrix Adaptation - Evolutionary Strategy (CMA-ES) for optimizing indoor d
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1218.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-data-driven-framework-for-building-energy-benchmar
+    title: 'A data-driven framework for building energy benchmarking: Time-series decomposition,
+      clustering and change-point regression'
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1226.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-feasibility-analysis-of-pod-and-deep-autoencoder-for
+    title: Feasibility analysis of pod and deep autoencoder for reduced order modelling
+      Indoor environment cfd prediction
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1227.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-assessing-daylight-illuminance-and-glare-risk-of-pol
+    title: Assessing daylight illuminance and glare risk of Polymer Dispersed Liquid
+      Crystal (PDLC) glazing with Radiance
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1231.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-validation-of-energyplus-infiltration-models-for-a-c
+    title: Validation of EnergyPlus infiltration models for a case study in a high-rise
+      residential building
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1250.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-measuring-legibility-of-public-open-spaces-using-dee
+    title: 'Measuring legibility of public open spaces using Deep Convolutional Neural
+      Network: A case study in Harbin'
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1252.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-bridging-the-gap-between-building-energy-modeling-an
+    title: Bridging the gap between building energy modeling and controls implementation
+      - experiences of, and best practice for, coupled HVAC-control modeling
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1258.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-quantifying-the-cooling-demand-of-urban-areas-using-
+    title: Quantifying the cooling demand of urban areas using aerial images
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1259.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-framework-for-calibrating-and-validating-an-air-lo
+    title: A framework for calibrating and validating an air loop dynamic model in an
+      HVAC system in Modelica
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1265.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-classification-of-building-properties-from-the-germa
+    title: Classification of building properties from the German census data for energy
+      analyses purposes
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1266.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-improved-urban-irradiation-simulations-using-the-pyr
+    title: Improved urban irradiation simulations using the Pyrano 2-phase model with
+      semantic obstruction segmentation
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1273.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-development-of-simplified-chiller-energy-consumption
+    title: Development of simplified chiller energy consumption simulation model using
+      load ratio in PKPM BES module
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1278.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-bim-interoperability-graph-neural-networks-as-an-alt
+    title: 'BIM interoperability: graph neural networks as an alternative for data communication
+      and relationship establishment in human-centric studies'
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1290.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-empirical-validation-of-building-energy-modeling-inp
+    title: 'Empirical validation of building energy modeling input parameters: Cooling
+      performance curves of a direct expansion coil'
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1301.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-data-driven-reduced-order-modelling-using-clusters-o
+    title: Data-driven reduced order modelling using clusters of thermal dynamics
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1304.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-what-metrics-does-the-building-energy-performance-co
+    title: What metrics does the building energy performance community use to compare
+      dynamic models?
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1309.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-machine-learning-based-sobol-sensitivity-analysis-fo
+    title: Machine learning-based Sobol sensitivity analysis for building energy assessment
+      without Monte Carlo integral
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1311.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-exploring-cross-project-building-performance-predict
+    title: 'Exploring cross-project building performance prediction: creation and implementation
+      of a zone-based surrogate model for building performance optimiza'
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1330.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-method-for-selection-of-outdoor-design-conditions-
+    title: A method for selection of outdoor design conditions based on simultaneous
+      occurrence of meteorological elements by using multivariate joint distributi
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1346.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-building-energy-consumption-and-peak-load-reduction-
+    title: Building energy consumption and peak load reduction potential of mixed-use
+      community through urban building energy modeling
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1350.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-assessing-the-potential-of-open-data-for-expanding-t
+    title: 'Assessing the Potential of Open Data for Expanding the Urban Building Dataset:
+      A case study in Huangpu District, Shanghai'
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1355.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-data-framework-enabling-bem-and-bms-interoperabili
+    title: A data framework enabling BEM and BMS interoperability based on semantic
+      web technologies and Brick ontology
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1366.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-phyvac-a-python-module-for-highly-flexible-hvac-syst
+    title: 'Phyvac: a Python module for highly flexible HVAC system simulation, and
+      fault dataset generation as an application example'
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1370.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-bayesian-deep-learning-methodology-with-uncertaint
+    title: A Bayesian deep learning methodology with uncertainty quantification for
+      harnessing the residential building heating system energy flexibility
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1372.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-inverse-surrogate-modelling-to-determine-thermal-cha
+    title: Inverse surrogate modelling to determine thermal characteristics of buildings
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1378.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-rapid-prototyping-of-building-energy-system-modeling
+    title: Rapid prototyping of building energy system modeling for shopping centers
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1379.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-low-cost-photographic-measurement-of-colour-specular
+    title: Low-cost photographic measurement of colour, specular reflectance, and roughness
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1380.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-review-of-the-fundamental-concepts-of-cfd-for-novi
+    title: A Review of the Fundamental Concepts of CFD for Novice Users in Building
+      Research and Design
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1386.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-evaluating-an-auto-decoder-based-generative-model-fo
+    title: Evaluating an auto decoder-based generative model for the infomorphism urban
+      planning framework
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1393.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-development-of-a-surrogate-model-for-interactive-ear
+    title: Development of a surrogate model for interactive early-stage net-zero building
+      design
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1394.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-infomorphism-integrating-a-forecasting-model-for-hig
+    title: 'Infomorphism: integrating a forecasting model for high-resolution urban
+      energy demand prediction'
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1395.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-predicting-energy-consumption-and-thermal-comfort-in
+    title: Predicting energy consumption and thermal comfort in buildings using a hybrid
+      machine learning and building performance simulation approach
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1398.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-novel-model-reduction-and-calibration-methodology-
+    title: A novel model reduction and calibration methodology to define lumped parameters
+      of building thermal models
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1399.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-ensemble-transfer-learning-strategy-in-forecasting-p
+    title: Ensemble transfer learning strategy in forecasting power consumption for
+      residential buildings
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1400.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-unsupervised-estimation-of-residential-electricity-o
+    title: Unsupervised estimation of residential electricity outages from aggregated
+      meter data
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1403.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-building-energy-modelling-based-on-building-informat
+    title: 'Building energy modelling based on building information modelling: the remaining
+      problems and a more robust method'
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1412.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-graph-convolutional-network-gcn-for-predicting-multi
+    title: Graph Convolutional Network (GCN) for predicting multizone airflow path
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1413.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-novel-framework-for-bayesian-calibration-of-buildi
+    title: A novel framework for Bayesian calibration of building energy models with
+      sub-hourly building operational data
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1418.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-environment-for-pre-simulation-characterization-of-e
+    title: Environment for pre-simulation characterization of energy models through
+      set analysis
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1447.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-novel-rooftop-solar-energy-potential-estimation-me
+    title: A novel rooftop solar energy potential estimation method based on deep learning
+      at district level
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1450.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-clustering-analysis-of-iaq-patterns-and-characterist
+    title: Clustering analysis of IAQ patterns and characteristics in a university dormitory
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1458.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-developing-teaching-in-urban-building-energy-modelli
+    title: Developing teaching in urban building energy modelling
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1468.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-study-on-the-performance-of-fractional-step-methods-
+    title: Study on the performance of fractional-step methods for unsteady ventilation
+      simulations
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1471.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-3d-printing-path-optimization-strategy-based-on-dijk
+    title: 3D printing path optimization strategy based on Dijkstra's algorithm --The
+      contour slicing method with Eulerian loop optimization as an example
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1476.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-investigating-the-relationship-between-energy-assess
+    title: Investigating the relationship between energy assessor training and assessment
+      methodology in standardised energy assessments in Europe
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1480.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-pathway-toward-prior-knowledge-integrated-machine-le
+    title: Pathway toward prior knowledge-integrated machine learning in engineering
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1481.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-investigating-the-whole-life-performance-of-represen
+    title: Investigating the “whole-life performance” of representative profile extraction
+      for microgrid planning
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1502.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-developing-a-framework-for-automated-modelling-of-bi
+    title: Developing a Framework for Automated Modelling of BIPV
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1508.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-identification-of-room-occupancy-and-activity-based-
+    title: Identification of room occupancy and activity based on Gaussian Mixture Modeling
+      of HEMS data
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1509.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-conditional-generative-adversarial-networks-cgan-m
+    title: A Conditional Generative Adversarial Networks (CGAN) model for indoor wind
+      field images prediction
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1513.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-energy-modelling-and-forecasting-for-an-underground-
+    title: Energy modelling and forecasting for an underground agricultural farm using
+      a higher order dynamic mode decomposition approach
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1529.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-hvac-systems-performance-modeling-using-component-ba
+    title: HVAC systems performance modeling using component-based machine learning
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1531.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-large-scale-data-driven-predictive-control-of-ahu-an
+    title: Large-scale data-driven predictive control of AHU and RTU systems for New
+      York State in winter
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1548.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-physical-informed-graph-convolutional-networks-for-f
+    title: Physical informed graph convolutional networks for fast simulation of thermal
+      bridges in building structures
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1553.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-coordinate-descent-based-model-calibration-methodolo
+    title: Coordinate descent-based model calibration methodology for HVAC subsystems
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1561.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-machine-learning-model-for-the-prediction-of-build
+    title: 'A Machine Learning Model for the Prediction of Building Hourly Heating Demand
+      from CityGML Files: Training Workflow and Deployment as an API'
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1570.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-development-of-a-directed-acyclic-graph-through-expe
+    title: Development of a Directed Acyclic Graph through expert elicitation for Causal
+      Inference in Built Environment Research.
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1588.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-implementation-and-demonstration-of-an-automated-ene
+    title: Implementation and demonstration of an automated energy modeling framework
+      for scalable and adaptable building digital twins based on the SAREF ontolo
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1595.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-how-does-different-collected-data-influence-data-dri
+    title: How does different collected data influence data-driven chiller model – Analysis
+      of collected data distribution using causal discovery method
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1618.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-leveraging-simulation-data-to-predict-thermal-comfor
+    title: Leveraging simulation data to predict thermal comfort using reduce order
+      modelling
+    url: https://publications.ibpsa.org/proceedings/bs/2023/papers/bs2023_1621.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
