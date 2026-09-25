@@ -29,7 +29,8 @@ import ops
 import store
 from state_codec import (  # noqa: F401 — the shared vocabulary, re-exported for callers
     CORPUS_FIELDS, CURATED, DISCOVERED_PREFIXES, ENTRY_RE, FIELDS, HASH_BUCKETS, OPTIONAL_FIELDS,
-    POINTER_ONLY_LICENSES, PRUNE_LEDGER_BUCKETS, REQUIRED_FIELDS, SHARDS, discovered, emit_entry,
+    POINTER_ONLY_LICENSES, PROGRAMME_PREFIXES, PRUNE_LEDGER_BUCKETS, REQUIRED_FIELDS, SHARDS,
+    discovered, emit_entry,
     is_training_eligible, manifest_shard, manifest_shard_text, norm, parse_yaml,
     prune_ledger_name, remove_ids_from_text, restriction_for, shard_filename, shard_header, slug,
     uniquify_ids, validate_eligibility,
@@ -73,12 +74,24 @@ def suspended_unavailable(row: dict, policy: dict[str, dict], root: Path | None 
     return not text_path or not ((root or ROOT) / text_path).exists()
 
 
+def programme_unavailable(row: dict, root: Path | None = None) -> bool:
+    """A successful compliance-programme row (state_codec.PROGRAMME_PREFIXES) whose extracted text
+    is not on this machine: its restoration is budgeted and may be deferred to a later round, and
+    a dated snapshot (URL fragment `#tom-…`) may be unrestorable because the upstream serves only
+    the current version. Locally unavailable, never re-judged from missing or newer text."""
+    if row.get("status") != "ok" or not str(row.get("id", "")).startswith(PROGRAMME_PREFIXES):
+        return False
+    text_path = row.get("text_path")
+    return not text_path or not ((root or ROOT) / text_path).exists()
+
+
 def locally_unavailable_rows(rows: list[dict], policy: dict[str, dict],
                              root: Path | None = None) -> list[dict]:
-    """Successful suspended-host rows whose payload is missing on THIS machine (a local
-    availability report; never an input to committed statistics). `policy`: the view-pinned
-    host policy."""
-    return [row for row in rows if suspended_unavailable(row, policy, root)]
+    """Successful suspended-host rows and budgeted/unrestorable programme rows whose payload is missing
+    on THIS machine (a local availability report; never an input to committed statistics).
+    `policy`: the view-pinned host policy."""
+    return [row for row in rows
+            if suspended_unavailable(row, policy, root) or programme_unavailable(row, root)]
 
 
 def partition_manifest_ok_rows(

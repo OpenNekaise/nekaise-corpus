@@ -64,6 +64,9 @@ SHARDS = {
     "arx-": "papers.yaml",     # find_sources arXiv backend
 }
 DISCOVERED_PREFIXES = tuple(SHARDS)  # the pruner's gate: machine-discovered ids
+# The compliance/ESG programme's id families (scripts/compliance_common.py): robots-checked,
+# budgeted fetches; a held row without local text is locally unavailable, not failed.
+PROGRAMME_PREFIXES = ("bov-bfs-", "reg-", "eur-", "esf-")
 REQUIRED_FIELDS = ("id", "title", "url", "source", "license", "topic", "format")
 # Optional metadata is appended gradually by new/updated finders. Existing 100k+ entries stay valid
 # and are not mass-rewritten merely because the schema learned a new field.

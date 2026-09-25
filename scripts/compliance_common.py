@@ -15,6 +15,7 @@ import re
 import sys
 
 import lint_registry
+import state_codec
 import store
 
 CURRENT_LICENSES = frozenset(lint_registry.LICENSES)
@@ -26,7 +27,7 @@ FUTURE_LICENSES = frozenset({"cc-by-nc", "cc-by-nc-sa", "cc-by-nd", "cc-by-nc-nd
 KNOWN_LICENSES = CURRENT_LICENSES | FUTURE_LICENSES
 # The programme's id families (registry routing: state_codec.SHARDS). The loader applies the
 # programme's robots/byte/pacing rules to exactly these rows.
-ID_PREFIXES = ("bov-bfs-", "reg-", "eur-", "esf-")
+ID_PREFIXES = state_codec.PROGRAMME_PREFIXES
 
 # The programme's REVIEWED delivery and discovery hosts (robots/ToU checked 2026-09-25): every
 # discovery request (polite_http) and every loader hop of a programme row (build_corpus) must be
@@ -58,6 +59,9 @@ PACE_ALIAS: dict[str, str] = {
 PROGRAMME_RUN_CAP = 88
 ESEF_RUN_CAP = 4
 RIGHTS_REVIEW_DAYS = 30  # a source whose access terms were reviewed longer ago is not run
+# Boverket's rättsinformation (rinfo.boverket.se: no robots.txt; statutes under URL 9 §) was
+# reviewed on this date; re-review and bump it to keep find_boverket_bfs running.
+BFS_RIGHTS_REVIEWED_AT = "2026-09-25"
 
 
 def pace_key(host: str) -> str:
@@ -68,6 +72,26 @@ def pace_key(host: str) -> str:
 def reviewed_host(url_or_host: str) -> bool:
     import host_policy
     return pace_key(host_policy.canonical_host(url_or_host)) in PROGRAMME_HOSTS
+
+
+def review_due_for_row(row: dict, documents: dict | None, today=None) -> bool:
+    """Whether a programme row's source has an access-terms review older than
+    RIGHTS_REVIEW_DAYS in the pinned configuration (unknown source: due, fail closed)."""
+    sid = str(row.get("id", ""))
+    documents = documents or {}
+    if sid.startswith("bov-bfs-"):
+        return review_due(BFS_RIGHTS_REVIEWED_AT, today)
+    if sid.startswith("eur-"):
+        return review_due((documents.get("eurlex.json") or {}).get("rights_reviewed_at"), today)
+    if sid.startswith("esf-"):
+        return review_due((documents.get("esef.json") or {}).get("rights_reviewed_at"), today)
+    if sid.startswith("reg-"):
+        sources = (documents.get("regdocs.json") or {}).get("sources") or {}
+        for key in sorted(sources, key=len, reverse=True):
+            if sid.startswith(f"reg-{key}-"):
+                return review_due(sources[key].get("rights_reviewed_at"), today)
+        return True
+    return False
 
 
 def review_due(reviewed_at: str | None, today=None) -> bool:
@@ -211,50 +235,93 @@ def quality_profile(row: dict, documents: dict | None) -> str | None:
 
 
 # --- instrument anchor (quality metric "anchor", computed at extraction) ---------------------------
-ANCHOR_WINDOW = 40_000
+# A normative row's extracted text must identify ITSELF: its own identifier in the document head
+# (title block / first page), not an incidental citation deeper in the text, and — for versioned
+# documents — its own version (a consolidation "till och med BFS <amendment>", a Riksdagen snapshot
+# "Ändrad: t.o.m. SFS <x>"). A head carrying login / error / JavaScript-shell markers is never
+# anchored, whatever identifiers it quotes.
+HEAD_CHARS = 3000
+STAMP_CHARS = 40_000  # Danish Lovtidende stamp "<date> <year>. Nr. <n>." sits after the first page
 _CELEX_PARTS = re.compile(r"^(?P<sector>[0-9CE])(?P<year>\d{4})(?P<type>[A-Z]{1,4})(?P<num>\d{1,5})")
+SHELL_MARKERS = re.compile(
+    r"\b(?:sign[ -]?in|log[ -]?in|password|username|forgot your password|logga in|lösenord|"
+    r"log ind|adgangskode|logg inn|passord|kirjaudu|salasana|anmelden|passwort|mot de passe|"
+    r"page not found|404 not found|sidan kunde inte hittas|siden blev ikke fundet|access denied|"
+    r"enable javascript|javascript is (?:disabled|required)|captcha)\b", re.I)
+_NEVER = re.compile(r"(?!x)x")
 
 
-def instrument_patterns(row: dict) -> list[re.Pattern] | None:
-    """The identifiers the extracted text of a normative row must contain (ALL of them), derived
-    from the row's own identity; None when the row is not a normative instrument family."""
+def _own_eu(celex: str) -> re.Pattern:
+    p = _CELEX_PARTS.match(celex)
+    if not p:
+        return _NEVER
+    year, num = p.group("year"), str(int(p.group("num")))
+    if p.group("sector") == "5":
+        return re.compile(rf"COM\s*\(\s*{year}\s*\)\s*0*{num}\b|COM/{year}/0*{num}\b")
+    return re.compile(rf"(?<!\d){year}\s*/\s*0*{num}(?!\d)|(?<!\d)0*{num}\s*/\s*{year}(?!\d)")
+
+
+def instrument_patterns(row: dict) -> list[tuple[re.Pattern, int]] | None:
+    """[(pattern, window)]: the identifiers the text of a normative row must carry, each within
+    its window of the extracted body; None when the row is not a normative instrument family."""
     sid, url = str(row.get("id", "")), str(row.get("url", ""))
     if sid.startswith("eur-"):
         m = _CELEX_ID.match(str(row.get("persistent_id") or ""))
-        p = _CELEX_PARTS.match(m.group(1)) if m else None
-        if not p:
-            return [re.compile(r"(?!x)x")]  # unparseable identity: never anchored
-        year, num = p.group("year"), str(int(p.group("num")))
-        if p.group("sector") == "5":
-            return [re.compile(rf"COM\s*[(/]\s*{year}\s*\)?\s*/?\s*0*{num}\b")]
-        return [re.compile(rf"(?<!\d){year}\s*/\s*0*{num}(?!\d)|(?<!\d){num}\s*/\s*{year}(?!\d)")]
+        return [(_own_eu(m.group(1)) if m else _NEVER, HEAD_CHARS)]
     if sid.startswith("bov-bfs-"):
         m = _RINFO.match(url)
         if not m:
-            return [re.compile(r"(?!x)x")]
-        code = m.group("doc") or m.group("grund")
-        c = re.fullmatch(r"[A-Z]+(\d{4})-(\d+)", code)
-        return [re.compile(rf"(?<!\d){c.group(1)}\s*:\s*{c.group(2)}(?!\d)")]
+            return [(_NEVER, HEAD_CHARS)]
+        def bfs(code):
+            c = re.fullmatch(r"[A-Z]+(\d{4})-(\d+)", code)
+            return c.group(1), c.group(2)
+        if m.group("kdoc"):  # a consolidation: the base act AND the amendment it runs to
+            gy, gn = bfs(m.group("grund"))
+            ky, kn = bfs(m.group("kdoc"))
+            return [(re.compile(rf"(?<!\d){gy}\s*:\s*{gn}(?!\d)"), HEAD_CHARS),
+                    (re.compile(rf"(?:till och med|t\.\s*o\.\s*m\.)\s*(?:BFS\s*)?{ky}\s*:\s*{kn}"
+                                r"(?!\d)", re.I), HEAD_CHARS)]
+        y, n = bfs(m.group("doc"))
+        return [(re.compile(rf"(?<!\d){y}\s*:\s*{n}(?!\d)"), HEAD_CHARS)]
     if sid.startswith("reg-"):
         if m := re.search(r"data\.riksdagen\.se/dokument/sfs-(\d{4})-(\d+)\.text(?:#(.+))?$", url):
-            pats = [re.compile(rf"\({m.group(1)}:{m.group(2)}\)|SFS nr:\s*{m.group(1)}:{m.group(2)}")]
+            pats = [(re.compile(rf"SFS nr:\s*{m.group(1)}:{m.group(2)}(?!\d)"), HEAD_CHARS)]
             if m.group(3):  # a dated snapshot: the text must be exactly that consolidation
                 tom = re.fullmatch(r"tom-sfs-(\d{4})-(\d+)", m.group(3))
-                pats.append(re.compile(rf"t\.o\.m\.\s*SFS\s*{tom.group(1)}:{tom.group(2)}(?!\d)")
-                            if tom else re.compile(r"Ändrad:[ \t]*\r?\n"))
+                pats.append((re.compile(rf"Ändrad:[ \t]*t\.o\.m\.\s*SFS\s*{tom.group(1)}:"
+                                        rf"{tom.group(2)}(?!\d)") if tom else
+                             re.compile(r"Ändrad:[ \t]*\r?\n"), HEAD_CHARS))
             return pats
         if m := re.search(r"retsinformation\.dk/eli/lta/(\d{4})/(\d+)/pdf$", url):
-            return [re.compile(rf"(?<!\d){m.group(2)}(?!\d)")]
+            return [(re.compile(rf"(?<!\d){m.group(1)}\.\s*Nr\.\s*{m.group(2)}(?!\d)"),
+                     STAMP_CHARS)]
         if m := re.search(r"/akn/fi/act/statute/(\d{4})/(\d+)/", url):
-            return [re.compile(rf"(?<!\d){m.group(2)}\s*/\s*{m.group(1)}(?!\d)")]
+            return [(re.compile(rf"(?<!\d){m.group(2)}\s*/\s*{m.group(1)}(?!\d)"), HEAD_CHARS)]
     return None
 
 
 def instrument_anchor(row: dict, text: str) -> bool | None:
-    """Whether the extracted text carries the row's own instrument identifiers (a login page,
-    error page, navigation shell or a different act never does); None = not applicable."""
+    """Whether the extracted body identifies the row's own instrument (and version) in its head
+    and carries no login/error/shell markers there; None = not a normative family."""
     pats = instrument_patterns(row)
     if pats is None:
         return None
-    head = text[:ANCHOR_WINDOW]
-    return all(p.search(head) for p in pats)
+    if SHELL_MARKERS.search(text[:HEAD_CHARS]):
+        return False
+    return all(p.search(text[:window]) for p, window in pats)
+
+
+def snapshot_token(url: str) -> str | None:
+    """The version a dated-snapshot row stands for (its URL fragment), else None."""
+    m = re.search(r"#(tom-(?:sfs-\d{4}-\d+|orig))$", str(url or ""))
+    return m.group(1) if m else None
+
+
+def snapshot_matches(row: dict, data: bytes) -> bool | None:
+    """For a dated-snapshot row: whether the fetched bytes are still that version (upstream
+    serves only the CURRENT consolidation); None = not a snapshot row."""
+    if snapshot_token(row.get("url")) is None:
+        return None
+    head = data[:4000].decode("utf-8", "replace")
+    pats = instrument_patterns(row) or []
+    return all(p.search(head) for p, _window in pats)

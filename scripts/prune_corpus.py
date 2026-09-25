@@ -329,15 +329,23 @@ def decide(manifest: list[dict], reviewed_drop: dict[str, str], policy: dict[str
             continue
         tp = r.get("text_path")
         if not tp or not _text_exists(r):
+            if tp and compliance_common.is_programme_id(r["id"]):
+                continue  # registry.programme_unavailable: restoration deferred/unrestorable
             drop[r["id"]] = "no-text"
             continue
         m = r.get("quality")
-        if not m:  # pre-metrics row: compute once from the file; persisted on --apply
-            m = r["quality"] = quality.metrics(quality.body(_read_text(r)))
+        profile = compliance_common.quality_profile(r, documents)
+        if not m or (profile == "normative" and "anchor" not in m):
+            # pre-metrics row (or a normative row from before the anchor metric): compute once
+            # from the verbatim text, anchor included; persisted on --apply
+            text = quality.body(_read_text(r))
+            m = dict(m) if m else quality.metrics(text)
+            if profile == "normative":
+                m["anchor"] = compliance_common.instrument_anchor(r, text)
+            r["quality"] = m
             computed.append(r["id"])
         # verified normative instruments of the compliance programme use their scoped profile
         # (quality.verdict_normative); `documents` are the view-pinned registry/*.json
-        profile = compliance_common.quality_profile(r, documents)
         q = quality.verdict_for(m, quality.is_booklike(r["id"], r.get("format", "pdf")), profile)
         if q != "ok":
             drop[r["id"]] = q

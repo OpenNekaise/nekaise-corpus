@@ -124,6 +124,14 @@ def test_robots_longest_match_and_allow_tie():
     assert robots_policy.permits(rules, "https://x.org/c")
 
 
+def test_robots_specificity_is_measured_on_the_normalized_pattern():
+    rules, _ = rules_for("User-agent: *\nAllow: /%70%72%69%76%61%74%65\nDisallow: /private/x\n")
+    assert not robots_policy.permits(rules, "https://x.org/private/x")
+    assert robots_policy.permits(rules, "https://x.org/private/y")
+    rules, _ = rules_for("User-agent: *\nDisallow: /private/\n")
+    assert not robots_policy.permits(rules, "https://x.org/public/../private/x")
+
+
 def test_robots_percent_encoding_cannot_bypass_a_rule():
     rules, _ = rules_for("User-agent: *\nDisallow: /private/\nDisallow: /sök/\n")
     for url in ("https://x.org/private/x", "https://x.org/%70rivate/x", "https://x.org/%70RIVATE/x".lower(),
@@ -293,13 +301,75 @@ def test_discovery_pacing_honours_robots_crawl_delay(web):
     assert web.paced[-1] == ("https://x.org/k.pdf", 10.0)
 
 
+class Clock:
+    """A fake monotonic clock that sleeping advances."""
+
+    def __init__(self):
+        self.now = 1000.0
+        self.starts = []
+
+    def monotonic(self):
+        return self.now
+
+    def sleep(self, s):
+        self.now += s
+
+
 def test_discovery_pacing_shares_one_clock_per_host_group(monkeypatch):
-    monkeypatch.setattr(polite_http, "_next", {})
-    slept = []
-    monkeypatch.setattr(polite_http.time, "sleep", lambda s: slept.append(s))
+    clock = Clock()
+    monkeypatch.setattr(polite_http, "_last", {})
+    monkeypatch.setattr(polite_http, "time", clock)
     polite_http.pace("https://www.boverket.se/a", 0)
+    t0 = clock.now
     polite_http.pace("https://boverket.se/b", 0)  # the alias waits on the same clock
-    assert slept and slept[-1] > 9.0
+    assert clock.now - t0 >= 10.0
+
+
+def test_a_crawl_delay_learnt_later_applies_to_the_next_request(monkeypatch):
+    clock = Clock()
+    monkeypatch.setattr(polite_http, "_last", {})
+    monkeypatch.setattr(polite_http, "_crawl_delay", {})
+    monkeypatch.setattr(polite_http, "time", clock)
+    monkeypatch.setattr(compliance_common, "PROGRAMME_HOSTS",
+                        {**compliance_common.PROGRAMME_HOSTS, "x.org": (1.0, 6)})
+    polite_http.pace("https://x.org/robots.txt", 0)  # the robots request itself, 1 s clock
+    t0 = clock.now
+    monkeypatch.setattr(robots_policy, "decision", lambda _u, fetcher=None: (True, 10.0))
+    delay = polite_http.check("https://x.org/doc")  # learns Crawl-delay: 10
+    polite_http.pace("https://x.org/doc", delay)
+    assert clock.now - t0 >= 10.0
+
+
+def test_loader_pacing_applies_a_raised_delay_against_the_previous_start(monkeypatch):
+    clock = Clock()
+    monkeypatch.setattr(build_corpus, "_host_last", {})
+    monkeypatch.setattr(build_corpus, "time", clock)
+    monkeypatch.setattr(build_corpus, "HOST_DELAY", {"x.org": 1.0})
+    build_corpus._wait_for_host("x.org")
+    t0 = clock.now
+    build_corpus.HOST_DELAY["x.org"] = 10.0  # a robots Crawl-delay learnt meanwhile
+    build_corpus._wait_for_host("x.org")
+    assert clock.now - t0 >= 10.0
+
+
+def test_robots_request_holds_the_pacer_through_the_transport(monkeypatch):
+    events = []
+    from contextlib import contextmanager
+
+    @contextmanager
+    def pacer(url):
+        events.append(("enter", url))
+        yield
+        events.append(("exit", url))
+    robots_policy.set_pacer(pacer)
+
+    def get(url, **_k):
+        events.append(("get", url))
+        return FakeResp(404)
+    monkeypatch.setattr(robots_policy.requests, "get", get)
+    robots_policy.decision("https://ok.org/a")
+    assert events == [("enter", "https://ok.org/robots.txt"), ("get", "https://ok.org/robots.txt"),
+                      ("exit", "https://ok.org/robots.txt")]
 
 
 # ------------------------------------------------------------------------------------ protocol
@@ -486,6 +556,20 @@ def test_every_configured_programme_url_is_on_a_reviewed_host():
 def test_review_due_sources_are_not_run():
     stale = {"old": src(rights_reviewed_at="2026-07-01"), "new": src()}
     assert find_regdocs.runnable(stale, TODAY) == ["new"]
+    r = Report()  # run() judges freshness on ITS date, not the machine's
+    assert find_regdocs.run("START", 5, 8, {"new": src()}, keys(), r, date(2026, 12, 1)) == []
+    r = Report()
+    assert find_regdocs.run("START", 5, 8, {"new": src()}, keys(), r, date(2026, 10, 1))
+
+
+def test_loader_skips_programme_rows_whose_access_review_is_due():
+    d = docs()
+    row = {"id": "reg-riksdagen-sfs-x", "url": "https://data.riksdagen.se/a"}
+    assert not compliance_common.review_due_for_row(row, d, date(2026, 10, 1))
+    assert compliance_common.review_due_for_row(row, d, date(2026, 12, 1))
+    assert compliance_common.review_due_for_row({"id": "reg-unknown-x"}, d, TODAY)
+    assert compliance_common.review_due_for_row({"id": "bov-bfs-x"}, d, date(2027, 1, 1))
+    assert not compliance_common.review_due_for_row({"id": "ost-1"}, d, date(2027, 1, 1))
 
 
 YM_PAGE = b"""<html><body>
@@ -672,6 +756,17 @@ def test_cellar_item_selection_prefers_xhtml_and_keeps_stable_part_ids():
         assert compliance_common.quality_profile(e, docs()) == "normative"
 
 
+def test_cellar_image_items_are_never_documents():
+    rows = [dict(row("HRV", "xhtml", item_url(23, 3, n)), mime="image/jpeg") for n in range(1, 13)]
+    rows.append(dict(row("HRV", "xhtml", item_url(23, 3, 13)), mime="application/xhtml+xml"))
+    rows.append(dict(row("HRV", "pdfa1a", item_url(23, 1, 1)), mime="application/pdf"))
+    items = find_eurlex.select_items(rows, ["hr"])
+    assert [(i["mtype"], i["doc"]) for i in items] == [("xhtml", 13)]
+    only_images = [dict(row("HRV", "xhtml", item_url(23, 3, 1)), mime="image/jpeg"),
+                   dict(row("HRV", "pdfa1a", item_url(23, 1, 1)), mime="application/pdf")]
+    assert [(i["mtype"]) for i in find_eurlex.select_items(only_images, ["hr"])] == ["pdfa1a"]
+
+
 def test_cellar_part_added_later_keeps_existing_ids():
     old = find_eurlex.select_items([row("SWE", "xhtml", item_url(24, 3, 2)),
                                     row("SWE", "xhtml", item_url(24, 3, 3))], ["sv"])
@@ -767,6 +862,14 @@ def test_cellar_changed_item_list_restarts_the_work(monkeypatch):
     assert "eur-s1-da" in [e["id"] for e in out]  # the new first item is not skipped
 
 
+def test_cellar_expired_watch_restarts_the_walk(monkeypatch):
+    monkeypatch.setattr(find_eurlex, "CELEX_RE", __import__("re").compile(r"[A-Z0-9()\-]{2,40}"))
+    query, _ = fake_cellar({"S1": ["SWE"], "S2": ["ENG"]})
+    r = Report()
+    out = find_eurlex.run("watch:2026-09-18", 10, 5, 10, cellar_cfg(), keys(), r, TODAY, query)
+    assert [e["id"] for e in out] == ["eur-s1-sv", "eur-s2-en"]
+
+
 def test_cellar_failure_holds():
     def boom(_q):
         raise polite_http.Deferred("HTTP 503")
@@ -807,6 +910,16 @@ def test_esef_annual_entries_languages_packages_and_relative_urls():
     assert "published_at" not in out[0]
     ok, held = compliance_common.split_appendable(out)
     assert ok == [] and len(held) == 3
+
+
+def test_esef_language_members_of_one_package_stay_distinct():
+    lei = ISSUER["lei"]
+    base = f"/{lei}/2024-09-30/ESEF/DK/0"
+    filings = [filing("2024-09-30", f"{base}/pkg/sv/reports/annual.xhtml", "F0"),
+               filing("2024-09-30", f"{base}/pkg/en/reports/annual.xhtml", "F0")]
+    out = find_esef.annual_entries(ISSUER, filings, esef_cfg())
+    assert len({e["id"] for e in out}) == 2 and len({e["title"] for e in out}) == 2
+    assert sorted(e["language"] for e in out) == ["en", "sv"]
 
 
 def test_esef_interim_filers_and_paged_issuers_go_to_review(monkeypatch):
@@ -879,6 +992,36 @@ def test_normative_profile_keeps_what_the_generic_gate_drops(text, rowspec):
     assert quality.verdict_for(m, False, "normative") == "ok"
 
 
+def test_anchor_requires_the_own_identity_in_the_head_and_no_shell_markers():
+    login = "Directive (EU) 2024/1275 — sign in to continue. " + "Please enter your password. " * 50
+    assert compliance_common.instrument_anchor(EUR_EL, login) is False
+    cited_deep = "Commission notice on something else. " * 200 + "Directive (EU) 2024/1275"
+    assert compliance_common.instrument_anchor(EUR_EL, cited_deep) is False
+    kons = {"id": "bov-bfs-bfs2011-6-bfs2020-4-kons",
+            "url": "https://rinfo.boverket.se/BFS2011-6/dok/BFS2020-4_Konsolidering.pdf"}
+    right = "Boverkets byggregler (2011:6)\nBFS 2011:6 med ändringar till och med BFS 2020:4\n" * 3
+    wrong = "Boverkets byggregler (2011:6)\nBFS 2011:6 med ändringar till och med BFS 2018:4\n" * 3
+    assert compliance_common.instrument_anchor(kons, right) is True
+    assert compliance_common.instrument_anchor(kons, wrong) is False
+    dk = {"id": "reg-retsinformation-br18-x",
+          "url": "https://www.retsinformation.dk/eli/lta/2023/1673/pdf"}
+    assert compliance_common.instrument_anchor(dk, "§ 1 ... 11. december 2023. Nr. 1673. ") is True
+    assert compliance_common.instrument_anchor(dk, "nr. 1673 af 12. december 2019") is False
+
+
+def test_prune_backfills_the_anchor_of_a_normative_row(tmp_path, monkeypatch):
+    monkeypatch.setattr(prune_corpus, "HERE", tmp_path)
+    monkeypatch.setattr(prune_corpus, "ACCESS", None)
+    (tmp_path / "text").mkdir()
+    it = find_eurlex.select_items([row("ELL", "xhtml", item_url(5, 3, 1))], ["el"])[0]
+    good = find_eurlex.entry_for(SEED, "32024L1275", it, "d")
+    (tmp_path / "text" / f"{good['id']}.md").write_text("# t\n\n---\n\n" + GREEK)
+    stale = quality.metrics(GREEK)  # extracted before the anchor metric existed
+    plan = prune_corpus.decide([{**good, "status": "ok", "text_path": f"text/{good['id']}.md",
+                                 "quality": stale}], {}, {}, set(), docs())
+    assert good["id"] not in plan.drop and plan.quality[good["id"]]["quality"]["anchor"] is True
+
+
 def test_normative_profile_rejects_login_pages_other_acts_and_short_text():
     assert quality.verdict_for(metrics(LOGIN, EUR_EL), False, "normative") == "unanchored"
     assert quality.verdict_for(metrics(GREEK, EUR_SV), False, "normative") == "unanchored"
@@ -921,7 +1064,7 @@ def loader(monkeypatch, tmp_path):
     monkeypatch.setattr(build_corpus, "HOST_DELAY", {})
     monkeypatch.setattr(build_corpus, "_tripped_hosts", {})
     monkeypatch.setattr(build_corpus, "HOST_POLICY", {})
-    monkeypatch.setattr(build_corpus, "RESTORING_IDS", set())
+    monkeypatch.setattr(build_corpus, "HELD_OK_IDS", set())
     monkeypatch.setattr(build_corpus, "_wait_for_host", lambda _h: None)
     monkeypatch.setattr(build_corpus.subprocess, "run",
                         lambda *_a, **_k: pytest.fail("programme rows never use curl"))
@@ -988,15 +1131,53 @@ def test_loader_streams_with_a_byte_cap_and_crawl_delay(loader, monkeypatch):
     assert rec["error"].startswith("too-large") and not rec.get("raw_path")
 
 
-def test_loader_document_deadline(loader, monkeypatch):
+def test_loader_document_deadline_is_retryable(loader, monkeypatch):
     url = programme_row()["url"]
     monkeypatch.setattr(build_corpus, "DOCUMENT_DEADLINE", 0.01)
     loader.answers[url] = FakeResp(200, b"x" * 40, "text/plain", url=url, slow=0.005)
     rec = build_corpus.download_one(programme_row())
-    assert "deadline" in rec["error"]
+    assert "deadline" in rec["error"] and rec["transient"] is True
 
 
-def test_loader_programme_budget_defers_new_work_but_never_restorations(loader, monkeypatch):
+def test_loader_deadline_spent_in_waits_is_not_requested(loader, monkeypatch):
+    url = programme_row()["url"]
+    loader.answers[url] = FakeResp(200, b"x", "text/plain", url=url)
+    monkeypatch.setattr(build_corpus, "DOCUMENT_DEADLINE", 0.05)
+    monkeypatch.setattr(build_corpus, "_wait_for_host", lambda _h: time.sleep(0.1))
+    rec = build_corpus.download_one(programme_row())
+    assert rec["transient"] is True and loader.calls == []
+
+
+def test_loader_checks_robots_on_the_prepared_path(loader, monkeypatch):
+    seen = []
+
+    def decision(url, fetcher=None):
+        seen.append(url)
+        return ("/private/" not in url, None)
+    monkeypatch.setattr(robots_policy, "decision", decision)
+    row = programme_row(url="https://data.riksdagen.se/public/../private/x.text")
+    rec = build_corpus.download_one(row)
+    assert "robots.txt disallows" in rec["error"] and loader.calls == []
+    assert seen == ["https://data.riksdagen.se/private/x.text"]
+
+
+SNAP = "https://data.riksdagen.se/dokument/sfs-2010-900.text#tom-sfs-2025-1"
+RIKS_NOW = (b"Plan- och bygglag (2010:900)\n\nSFS nr:     2010:900\n"
+            b"\xc3\x84ndrad:     t.o.m. SFS 2026:1583\n")
+
+
+def test_an_amended_snapshot_never_overwrites_or_fails_a_held_copy(loader, tmp_path):
+    loader.answers[SNAP] = FakeResp(200, RIKS_NOW, "text/plain", url=SNAP)  # the fragment is never sent
+    row = programme_row("reg-riksdagen-sfs-x", SNAP)
+    fresh = build_corpus.download_one(row)
+    assert fresh["error"].startswith("snapshot-superseded") and not fresh.get("raw_path")
+    build_corpus.HELD_OK_IDS.add(row["id"])
+    held = build_corpus.download_one(row)
+    assert held.get("_deferred") and not held.get("raw_path")
+    assert not (tmp_path / "raw").exists()  # nothing was written before the version check
+
+
+def test_loader_programme_budget_defers_all_programme_work(loader, monkeypatch):
     url = programme_row()["url"]
     loader.answers[url] = FakeResp(200, b"(2010:900) " * 10, "text/plain", url=url)
     monkeypatch.setattr(build_corpus, "PROGRAMME_BYTES", 30)
@@ -1004,13 +1185,25 @@ def test_loader_programme_budget_defers_new_work_but_never_restorations(loader, 
     assert rec.get("_deferred") and not rec.get("raw_path")
     rec = build_corpus.download_one(programme_row("reg-t-x-3"))  # budget spent: not requested
     assert rec.get("_deferred") and len(loader.calls) == 1
-    build_corpus.RESTORING_IDS.add("reg-t-x-4")
-    rec = build_corpus.download_one(programme_row("reg-t-x-4"))
-    assert rec.get("raw_path") and not rec.get("_deferred")
     build_corpus.PROGRAMME.reset(now=time.monotonic() - build_corpus.PROGRAMME_WALL - 1)
     monkeypatch.setattr(build_corpus, "PROGRAMME_BYTES", 10**9)
     rec = build_corpus.download_one(programme_row("reg-t-x-5"))
     assert rec.get("_deferred")  # the programme's wall budget is spent
+
+
+def test_a_deferred_restoration_is_locally_unavailable_not_failed(tmp_path, monkeypatch):
+    import registry
+    held = {"id": "eur-32024l1275-sv", "status": "ok", "text_path": "text/eur-32024l1275-sv.md",
+            "url": "https://publications.europa.eu/x"}
+    assert registry.programme_unavailable(held, tmp_path)
+    assert registry.locally_unavailable_rows([held, {**held, "id": "ost-1"}], {}, tmp_path) == [held]
+    (tmp_path / "text").mkdir()
+    (tmp_path / "text" / "eur-32024l1275-sv.md").write_text("x")
+    assert not registry.programme_unavailable(held, tmp_path)
+    monkeypatch.setattr(prune_corpus, "HERE", tmp_path / "elsewhere")
+    monkeypatch.setattr(prune_corpus, "ACCESS", None)
+    plan = prune_corpus.decide([{**held, "title": "t", "source": "eurlex"}], {}, {}, set(), docs())
+    assert held["id"] not in plan.drop  # never "no-text": its restoration resumes later
 
 
 def test_loader_programme_refusal_is_transient_and_never_retried_with_curl(loader):
@@ -1039,8 +1232,11 @@ def test_programme_wide_and_esef_caps(monkeypatch):
     kept, deferred = build_corpus.cap_per_host(srcs)
     assert [s["id"] for s in kept] == ["esf-0", "esf-1", "esf-2", "esf-3", "eur-0"]
     restoring = {"esf-5": {"status": "ok"}}
-    kept, _ = build_corpus.cap_per_host(srcs, restoring)
-    assert "esf-5" in [s["id"] for s in kept]  # restoration is never count-capped
+    kept, deferred = build_corpus.cap_per_host(srcs, restoring)
+    assert "esf-5" in deferred  # programme restorations are budgeted too (resumable)
+    other = [{"id": f"ost-{i}", "url": "https://www.boverket.se/x.pdf"} for i in range(20)]
+    kept, _ = build_corpus.cap_per_host(other, {s["id"]: {"status": "ok"} for s in other})
+    assert len(kept) == 20  # other veins' restorations stay uncapped
 
 
 def test_extraction_records_the_instrument_anchor():

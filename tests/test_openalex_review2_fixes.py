@@ -135,7 +135,7 @@ def test_a_paced_chain_installs_the_defaults_for_a_new_destination(monkeypatch, 
     monkeypatch.setattr(build_corpus, "HOST_CONCURRENCY", {})
     monkeypatch.setattr(build_corpus, "HOST_DELAY", {"api.repository.cam.ac.uk": 5.0})
     monkeypatch.setattr(build_corpus, "_host_sems", {})
-    monkeypatch.setattr(build_corpus, "_host_next", {})
+    monkeypatch.setattr(build_corpus, "_host_last", {})
     monkeypatch.setattr(build_corpus.time, "sleep", lambda s: None)
     src = row(origin)
     build_corpus.pace_new_hosts([src], {})

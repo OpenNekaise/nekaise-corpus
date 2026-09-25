@@ -146,12 +146,14 @@ def related_query(celex: str, relations: list[str]) -> str:
 
 def items_query(celex: str) -> str:
     return ("PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>\n"
-            "SELECT ?lang ?mtype ?item ?title WHERE { "
+            "SELECT ?lang ?mtype ?item ?title ?mime WHERE { "
             f"?work cdm:resource_legal_id_celex {_lit(celex)} . "
             "?expr cdm:expression_belongs_to_work ?work ; cdm:expression_uses_language ?lang . "
             "OPTIONAL { ?expr cdm:expression_title ?title } "
             "?manif cdm:manifestation_manifests_expression ?expr ; cdm:manifestation_type ?mtype . "
-            "?item cdm:item_belongs_to_manifestation ?manif . }")
+            "?item cdm:item_belongs_to_manifestation ?manif . "
+            "OPTIONAL { ?item <http://publications.europa.eu/ontology/cdm/cmr#manifestationMimeType>"
+            " ?mime } }")
 
 
 def works_for(seed: dict, relations: list[str], rows: list[dict]) -> list[tuple[str, str]]:
@@ -167,14 +169,30 @@ def works_for(seed: dict, relations: list[str], rows: list[dict]) -> list[tuple[
     return [(seed["celex"], "seed"), *sorted(rel_of.items())]
 
 
+TEXT_MIMES = {"xhtml": ("application/xhtml+xml", "text/html"), "pdf": ("application/pdf",)}
+
+
+def _document_item(row: dict) -> bool:
+    """Whether a Cellar item is a DOCUMENT of its manifestation: an XHTML manifestation also
+    carries its embedded images (and old special editions scanned pages) as items — their
+    cmr:manifestationMimeType is image/*. Items without a declared mime type are kept (the loader
+    still verifies the bytes)."""
+    mime = (row.get("mime") or "").split(";")[0].strip().lower()
+    if not mime:
+        return True
+    family = "xhtml" if row.get("mtype") in HTML_TYPES else "pdf"
+    return mime in TEXT_MIMES[family]
+
+
 def select_items(rows: list[dict], languages: list[str]) -> list[dict]:
-    """Per language: XHTML items when the expression has any, else its PDF-family items (one
-    manifestation type: the first available in PDF_TYPES order). Sorted by (language, item)."""
+    """Per language: XHTML document items when the expression has any, else the PDF-family
+    ones (one manifestation type: the first available in PDF_TYPES order); image items are never
+    documents. Sorted by (language, DOC number)."""
     by_lang: dict[str, dict[str, list[dict]]] = {}
     for r in rows:
         code = (r.get("lang") or "").rsplit("/", 1)[-1]
         lang = LANGS.get(code)
-        if lang not in languages or not r.get("item"):
+        if lang not in languages or not r.get("item") or not _document_item(r):
             continue
         by_lang.setdefault(lang, {}).setdefault(r.get("mtype", ""), []).append(r)
     out = []
@@ -293,7 +311,7 @@ def run(cursor: str, maxn: int, max_acts: int, max_requests: int, cfg: dict, key
         if today - date.fromisoformat(cur["watch"]) < timedelta(days=WATCH_DAYS):
             report.next(cursor)
             return []
-        cur = {"s": 0, "k": "", "i": 0}
+        cur = parse_cursor("START")
     seeds, langs, relations = cfg["seeds"], cfg["languages"], cfg.get("expand", [])
     rights_date = cfg["rights_reviewed_at"]
     budget = Budget(max_requests)

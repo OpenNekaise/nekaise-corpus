@@ -137,7 +137,7 @@ def bfs_entry(item: dict, today: str) -> dict:
         "license_evidence": ("Upphovsrättslagen (1960:729) 9 § 1: författningar och beslut av "
                              "myndigheter omfattas inte av upphovsrätt; official BFS PDF listed "
                              f"in the Boverket rättsinformation feed {FEED} as {item['rinfo_id']}"),
-        "rights_verified_at": today,
+        "rights_verified_at": _rights_date(),
     }
     if re.fullmatch(r"\d{4}-\d{2}-\d{2}", item["published"]):
         entry["published_at"] = item["published"]
@@ -149,6 +149,11 @@ def bfs_topic(title: str) -> str:
     topic = topic_for(title)
     return "standards_protocols" if topic == "urban" and not re.search(
         r"plan(ering)?|översiktsplan|detaljplan|stadsutveckling", title, re.I) else topic
+
+
+def _rights_date() -> str:
+    import compliance_common
+    return compliance_common.BFS_RIGHTS_REVIEWED_AT
 
 
 def consolidation_url(item: dict) -> str:
@@ -317,6 +322,10 @@ def main_bfs(args) -> None:
     compliance_common.pin_host_policy()
     keys = dedup.open_keys()
     report = finder_protocol.Report()
+    if compliance_common.review_due(compliance_common.BFS_RIGHTS_REVIEWED_AT):
+        report.hold("Boverket rättsinformation access review is due "
+                    "(compliance_common.BFS_RIGHTS_REVIEWED_AT)")
+        return
     out = run_bfs(args.cursor, args.max, args.max_requests, keys, report)
     ok, _held = compliance_common.split_appendable(out)
     print(f"# {len(ok)} NEW Boverket BFS documents (rinfo feed; deduped vs manifest + registry "

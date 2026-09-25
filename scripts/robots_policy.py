@@ -56,7 +56,7 @@ _memory: dict[str, dict] = {}
 _lock = threading.Lock()
 _origin_locks: dict[str, threading.Lock] = {}
 POLICY: dict[str, dict] = {}
-_pacer = None      # callable(url) -> None, paces one request (installed by the caller)
+_pacer = None      # callable(url) -> context manager held through one robots request
 _hop_filter = None  # callable(url) -> bool, whether a robots redirect hop may be requested
 
 
@@ -136,8 +136,27 @@ def normalize_path(path: str) -> str:
         ch = chr(int(m.group(1), 16))
         return ch if ch in _UNRESERVED else "%" + m.group(1).upper()
     path = re.sub(r"%([0-9A-Fa-f]{2})", esc, path)
+    path = _remove_dot_segments(path)
     return "".join(c if ord(c) < 128 else "".join(f"%{b:02X}" for b in c.encode("utf-8"))
                    for c in path)
+
+
+def _remove_dot_segments(path: str) -> str:
+    """RFC 3986 section 5.2.4 on the path part (the query is left alone)."""
+    head, sep, query = path.partition("?")
+    if "." not in head:
+        return path
+    out: list[str] = []
+    for seg in head.split("/"):
+        if seg == "..":
+            if len(out) > 1:
+                out.pop()
+        elif seg != ".":
+            out.append(seg)
+    fixed = "/".join(out)
+    if head.endswith(("/.", "/..")):
+        fixed += "/"
+    return (fixed or "/") + sep + query
 
 
 def _pattern_regex(pattern: str) -> re.Pattern:
@@ -161,7 +180,8 @@ def permits(rules: list[tuple[bool, str]], url: str) -> bool:
         if not pattern:
             continue
         if _pattern_regex(pattern).match(path):
-            length = len(pattern.replace("*", "").rstrip("$"))
+            # specificity of the NORMALIZED pattern (as matched), not of its spelling
+            length = len(normalize_path(pattern.rstrip("$")).replace("*", ""))
             if best is None or length > best[0] or (length == best[0] and allow):
                 best = (length, allow)
     return True if best is None else best[1]
@@ -206,15 +226,17 @@ def _get_manual(url: str) -> tuple[int, bytes]:
     for _ in range(MAX_REDIRECTS + 1):
         if not _hop_allowed(hop):
             raise RobotsUnavailable(f"robots.txt redirect to a refused host: {hop}")
-        if _pacer is not None:
-            _pacer(hop)
-        r = requests.get(hop, headers=UA, timeout=TIMEOUT, allow_redirects=False, stream=True)
-        if r.status_code in REDIRECTS and r.headers.get("location"):
-            hop = urljoin(hop, r.headers["location"])
+        from contextlib import nullcontext
+        with (_pacer(hop) if _pacer is not None else nullcontext()):
+            r = requests.get(hop, headers=UA, timeout=TIMEOUT, allow_redirects=False,
+                             stream=True)
+            if r.status_code in REDIRECTS and r.headers.get("location"):
+                hop = urljoin(hop, r.headers["location"])
+                r.close()
+                continue
+            body = (r.raw.read(MAX_ROBOTS_BYTES, decode_content=True)
+                    if r.status_code == 200 else b"")
             r.close()
-            continue
-        body = r.raw.read(MAX_ROBOTS_BYTES, decode_content=True) if r.status_code == 200 else b""
-        r.close()
         return r.status_code, body
     raise RobotsUnavailable(f"{url}: more than {MAX_REDIRECTS} redirects")
 

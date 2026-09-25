@@ -19,6 +19,7 @@ Deferred, never data.
 """
 from __future__ import annotations
 
+import contextlib
 import re
 import threading
 import time
@@ -41,7 +42,7 @@ CHALLENGE_BODY = re.compile(
     rb"captcha|challenge-platform|cf-chl|awswaf|request rejected|access denied|"
     rb"please enable javascript and cookies", re.I)
 
-_next: dict[str, float] = {}
+_last: dict[str, float] = {}  # last reserved request START per host group
 _lock = threading.Lock()
 POLICY: dict[str, dict] = {}   # set by the finder from its store view (store.pinned_policy)
 
@@ -62,7 +63,7 @@ def set_policy(policy: dict[str, dict]) -> None:
     POLICY.clear()
     POLICY.update(policy or {})
     robots_policy.set_policy(policy)
-    robots_policy.set_pacer(lambda url: pace(url, 0.0))
+    robots_policy.set_pacer(_robots_slot)
     robots_policy.set_hop_filter(compliance_common.reviewed_host)
 
 
@@ -71,17 +72,28 @@ def _group(url: str) -> str:
 
 
 def pace(url: str, delay: float) -> None:
-    """Wait for this host group's clock: max(delay, the group's programme delay)."""
+    """Wait for this host group's clock: the next start is max(now, previous START + the delay
+    that applies NOW = max(delay, the group's programme delay, any robots Crawl-delay learnt))."""
     group = _group(url)
-    delay = max(delay, compliance_common.PROGRAMME_HOSTS.get(group, (0.0, 0))[0])
-    if delay <= 0:
-        return
+    delay = max(delay, compliance_common.PROGRAMME_HOSTS.get(group, (0.0, 0))[0],
+                _crawl_delay.get(group, 0.0))
     with _lock:
-        start = max(time.monotonic(), _next.get(group, 0.0))
-        _next[group] = start + delay
+        last = _last.get(group)
+        start = time.monotonic() if last is None else max(time.monotonic(), last + delay)
+        _last[group] = start
     wait = start - time.monotonic()
     if wait > 0:
         time.sleep(wait)
+
+
+_crawl_delay: dict[str, float] = {}  # robots Crawl-delay learnt per host group
+
+
+@contextlib.contextmanager
+def _robots_slot(url: str):
+    """robots.txt requests take the same host-group clock as payload requests."""
+    pace(url, 0.0)
+    yield
 
 
 def prepared(url: str, params: dict | None = None) -> str:
@@ -102,6 +114,10 @@ def check(url: str) -> float:
         raise Deferred(str(exc)) from exc
     if not ok:
         raise Refused(f"robots.txt disallows {url}")
+    if delay:
+        group = _group(url)
+        with _lock:
+            _crawl_delay[group] = max(_crawl_delay.get(group, 0.0), float(delay))
     return float(delay or 0.0)
 
 
@@ -134,7 +150,7 @@ def get(url: str, *, delay: float = 1.0, expect: str = "any", max_bytes: int = M
             resp.close()
             resp.raise_for_status()
         body = bytearray()
-        for chunk in resp.iter_content(65536 if prefix is None else min(65536, prefix)):
+        for chunk in resp.iter_content(8192 if prefix is None else min(8192, prefix)):
             body.extend(chunk)
             if prefix is not None and len(body) >= prefix:
                 del body[prefix:]

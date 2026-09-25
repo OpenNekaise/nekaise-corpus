@@ -455,7 +455,7 @@ def run(cursor: str, maxn: int, max_requests: int, sources: dict[str, dict], key
     today = today or date.today()
     iso = today.isoformat()
     cur = parse_cursor(cursor)
-    order = runnable(sources)
+    order = runnable(sources, today)
     cur["w"] = {k: v for k, v in cur["w"].items() if k in order}
     if not order:
         report.next(dump_cursor(cur))

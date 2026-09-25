@@ -135,6 +135,16 @@ def queue_for_review(issuer: dict, filings: list[dict], why: str) -> None:
           file=sys.stderr)
 
 
+def member_stem(url: str) -> str:
+    """The report's identity WITHIN its package: its package-relative path (package directory,
+    reports/ member) as a slug — two language versions or two packages that share a file name
+    never share it."""
+    path = re.sub(r"^https?://[^/]+", "", url)
+    m = re.search(r"/ESEF/[A-Z]{2}/\d+/(.+)$", path)
+    member = (m.group(1) if m else path.lstrip("/")).rsplit(".", 1)[0]
+    return registry.slug(member.replace("/reports/", "-"))
+
+
 def filing_id(issuer: dict, period: str, fxo: str, stem: str) -> str:
     """esf-<lei>-<period>-<package>-<report stem>; long ids keep a stable hash instead of being
     truncated into collisions (amended packages and language versions stay distinct)."""
@@ -157,8 +167,8 @@ def annual_entries(issuer: dict, filings: list[dict], cfg: dict) -> list[dict]:
         if period[5:] != issuer["fiscal_year_end"]:
             continue  # interim or unexplained period: never guessed to be annual
         url = urljoin(BASE + "/", report)
-        stem = registry.slug(url.rsplit("/", 1)[-1].rsplit(".", 1)[0])
-        lang_m = re.search(r"-(sv|en|da|fi|no|nb|de|fr|es|it|nl|pl|pt)(?:-|$)", stem)
+        stem = member_stem(url)
+        lang_m = re.search(r"(?:^|-)(sv|en|da|fi|no|nb|de|fr|es|it|nl|pl|pt)(?:-|$)", stem)
         lang = {"no": "nb"}.get(lang_m.group(1), lang_m.group(1)) if lang_m else ""
         entry = {
             "id": filing_id(issuer, period, str(a.get("fxo_id") or ""), stem),

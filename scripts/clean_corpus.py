@@ -546,8 +546,9 @@ def main() -> None:
             )
         expect = {f"{r['id']}.md" for r in todo}
         if unavailable := locally_unavailable(rows, restrictions, policy):
-            print(f"locally unavailable, suspended host (provenance kept, not expected in "
-                  f"corpus/): {len(unavailable):,} rows, e.g. {unavailable[0]['id']}")
+            print(f"locally unavailable, suspended host or unrestored programme row "
+                  f"(provenance kept, not expected in corpus/): {len(unavailable):,} rows, "
+                  f"e.g. {unavailable[0]['id']}")
         on_disk = {p.name for p in CORPUS.glob("*.md")}
         for name in sorted(expect - on_disk)[:10]:
             problems.append(f"missing from corpus/: {name}")
