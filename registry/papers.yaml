@@ -74128,3 +74128,25 @@ sources:
     topic: controls_bas
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: ope-a-tracking-cooling-fan-using-geofence-and-came
+    title: A tracking cooling fan using geofence and camera-based indoor localization
+    url: https://escholarship.org/content/qt5br8q4x4/qt5br8q4x4.pdf
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: ope-scenario-based-nonlinear-model-predictive-cont
+    title: Scenario-based nonlinear model predictive control for building heating systems
+    url: https://arxiv.org/pdf/2012.02011
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
+  - id: ope-towards-a-sustainable-energy-balance-progressi
+    title: 'Towards a sustainable energy balance: progressive efficiency and the return
+      of energy conservation'
+    url: https://escholarship.org/content/qt09v4k44b/qt09v4k44b.pdf
+    source: openalex
+    license: open
+    topic: controls_bas
+    format: pdf
