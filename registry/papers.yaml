@@ -74182,3 +74182,75 @@ sources:
     topic: building_energy
     format: pdf
     license_evidence: 'OpenAlex OA location license: cc-by'
+  - id: oas-10-1016-j-egyai-2025-100634-4eef93eb
+    title: 'ScaleONet: Scalable and control-oriented modeling of building cluster thermal
+      dynamics using deep operator networks — A practical case study for a Bel'
+    url: https://lirias.kuleuven.be/retrieve/10042a23-26eb-4811-96e1-a6a8aea490fe
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-10-28'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.egyai.2025.100634
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://lirias.kuleuven.be/retrieve/10042a23-26eb-4811-96e1-a6a8aea490fe;
+      version submittedVersion]
+    rights_verified_at: '2026-09-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.egyai.2025.100634 openalex:W4415629065
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1002-elsa-202400030-fea0e644
+    title: 'eCherry: A Modelica Library for Modular Dynamic Modelling of Electrochemical
+      Reactors'
+    url: https://lirias.kuleuven.be/retrieve/2e61a113-3b16-4ac6-acba-349691053340
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-02-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1002/elsa.202400030
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://lirias.kuleuven.be/retrieve/2e61a113-3b16-4ac6-acba-349691053340;
+      version submittedVersion]
+    rights_verified_at: '2026-09-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1002/elsa.202400030 openalex:W4407287502
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2608-16638-6a660d53
+    title: 'ModBench: A Pipeline for Building Modelica Benchmark Datasets Mined from
+      Library Repositories'
+    url: https://arxiv.org/pdf/2608.16638
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    published_at: '2026-08-17'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2608.16638
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2608.16638; version submittedVersion]
+    rights_verified_at: '2026-09-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2608.16638 openalex:W7203706544
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5445-ir-1000186507-3ab63f1d
+    title: 'Co-simulation of building energy and geothermal systems: A review'
+    url: https://publikationen.bibliothek.kit.edu/1000186507/169005352
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.5445/ir/1000186507
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://publikationen.bibliothek.kit.edu/1000186507/169005352; version submittedVersion]
+    rights_verified_at: '2026-09-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.5445/ir/1000186507 openalex:W7103993336
+    resolution: 'sim1: openalex location'
