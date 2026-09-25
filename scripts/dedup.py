@@ -46,7 +46,7 @@ import store
 
 LOCK_TIMEOUT_ENV = "NEKAISE_DEDUP_LOCK_TIMEOUT"
 DEFAULT_LOCK_TIMEOUT = 30.0
-_KINDS = ("urls", "titles", "ids")
+_KINDS = ("urls", "titles", "ids", "pids")
 
 
 class DedupUnavailable(RuntimeError):
@@ -95,35 +95,38 @@ def scan_all(view, table: "store.Table", *, where=None, fields=None,
         cursor = result.next_cursor
 
 
-def _wanted(urls: list, titles: list, ids: list) -> tuple[list, list, list]:
+def _wanted(urls: list, titles: list, ids: list, pids: list = ()) -> tuple[list, ...]:
     # Only a value that is its own normal form can equal a stored (normalized) key.
     return ([u for u in urls if store.norm_url(u) == u],
-            [t for t in titles if store.norm_title(t) == t], list(ids))
+            [t for t in titles if store.norm_title(t) == t], list(ids),
+            [p for p in pids if normalize_pid(p) == p])
 
 
-def _known(view, wanted: tuple[list, list, list]) -> tuple[set, set, set]:
-    hits: tuple[set, set, set] = (set(), set(), set())
+def _known(view, wanted: tuple[list, ...]) -> tuple[set, ...]:
+    hits: tuple[set, ...] = (set(), set(), set(), set())
     n = store.MAX_KNOWN
-    for i in range(0, max(map(len, wanted)), n):
+    for i in range(0, max(map(len, wanted[:3])), n):
         got = view.known(urls=wanted[0][i:i + n], titles=wanted[1][i:i + n],
                          ids=wanted[2][i:i + n])
         hits[0].update(got.urls)
         hits[1].update(got.titles)
         hits[2].update(got.ids)
+    for i in range(0, len(wanted[3]), n):  # persistent ids and aliases of any row
+        hits[3].update(view.known_pids(wanted[3][i:i + n]))
     return hits
 
 
 class _StoreBackend:
-    """Membership from the store's known(), one read view per lookup batch."""
+    """Membership from the store's known() / known_pids(), one read view per lookup batch."""
 
     def __init__(self, st):
         self.st = st
         self.round_trips = 0  # read views opened
 
-    def lookup(self, urls: list, titles: list, ids: list) -> tuple[set, set, set]:
-        wanted = _wanted(urls, titles, ids)
+    def lookup(self, urls: list, titles: list, ids: list, pids: list = ()) -> tuple[set, ...]:
+        wanted = _wanted(urls, titles, ids, pids)
         if not any(wanted):
-            return set(), set(), set()
+            return set(), set(), set(), set()
         self.round_trips += 1
         with read_view(st=self.st) as view:
             return _known(view, wanted)
@@ -136,20 +139,20 @@ class _ViewBackend:
     def __init__(self, view):
         self.view = view
 
-    def lookup(self, urls: list, titles: list, ids: list) -> tuple[set, set, set]:
-        wanted = _wanted(urls, titles, ids)
-        return _known(self.view, wanted) if any(wanted) else (set(), set(), set())
+    def lookup(self, urls: list, titles: list, ids: list, pids: list = ()) -> tuple[set, ...]:
+        wanted = _wanted(urls, titles, ids, pids)
+        return _known(self.view, wanted) if any(wanted) else (set(), set(), set(), set())
 
 
 class _SetBackend:
     """Membership from in-memory sets: the legacy existing_keys() path (tests, equivalence)."""
 
-    def __init__(self, urls: set, titles: set, ids: set):
-        self.sets = (urls, titles, ids)
+    def __init__(self, urls: set, titles: set, ids: set, pids: set = frozenset()):
+        self.sets = (urls, titles, ids, pids)
 
-    def lookup(self, urls: list, titles: list, ids: list) -> tuple[set, set, set]:
+    def lookup(self, urls: list, titles: list, ids: list, pids: list = ()) -> tuple[set, ...]:
         return tuple({v for v in values if v in known}
-                     for values, known in zip((urls, titles, ids), self.sets))
+                     for values, known in zip((urls, titles, ids, pids), self.sets))
 
 
 class KnownSet:
@@ -184,24 +187,28 @@ class Keys:
 
     def __init__(self, backend):
         self._backend = backend
-        self.urls, self.titles, self.ids = (KnownSet(self, k) for k in _KINDS)
+        self.urls, self.titles, self.ids, self.pids = (KnownSet(self, k) for k in _KINDS)
 
     @property
     def lookups(self) -> int:
         """Store round trips (read views opened) so far, for tests and diagnostics."""
         return getattr(self._backend, "round_trips", 0)
 
-    def prefetch(self, *, urls: Iterable = (), titles: Iterable = (), ids: Iterable = ()) -> None:
-        """Answer these candidates in as few store round trips as possible."""
+    def prefetch(self, *, urls: Iterable = (), titles: Iterable = (), ids: Iterable = (),
+                 pids: Iterable = (), identity_ids: Iterable = ()) -> None:
+        """Answer these candidates in as few store round trips as possible (`identity_ids` are
+        ids too; page_keys() returns them separately so a caller can add its own ids)."""
+        ids = [*ids, *identity_ids]
         pending = []
-        for known_set, values in zip((self.urls, self.titles, self.ids), (urls, titles, ids)):
+        sets = (self.urls, self.titles, self.ids, self.pids)
+        for known_set, values in zip(sets, (urls, titles, ids, pids)):
             fresh = dict.fromkeys(v for v in values if isinstance(v, str) and v
                                   and v not in known_set._cache)
             pending.append(list(fresh))
         if not any(pending):
             return
         hits = self._backend.lookup(*pending)
-        for known_set, values, hit in zip((self.urls, self.titles, self.ids), pending, hits):
+        for known_set, values, hit in zip(sets, pending, hits):
             for v in values:
                 known_set._cache[v] = v in hit
 
@@ -219,17 +226,21 @@ class Keys:
 
     def identity_known(self, entry: Mapping) -> bool:
         """Whether any persistent identifier the entry declares (persistent_id, origin_ids) is
-        already held: by the store (a registry/manifest row under its identity id) or by this
-        run. Entries that declare no DOI/OpenAlex identity are never "identity known"."""
-        keys = identity_ids(entry)
-        if not keys:
+        already declared by a registry/manifest row of ANY source (store.known_pids: the stored
+        persistent_id and origin_ids aliases, across processes and rounds) or by this run, or
+        names the identity id of a registered row. Entries without a DOI/OpenAlex id: False."""
+        pids = entry_pids(entry)
+        if not pids:
             return False
-        self.prefetch(ids=keys)
-        return any(k in self.ids for k in keys)
+        ids = [i for i in map(identity_id, pids) if i]
+        self.prefetch(pids=pids, ids=ids)
+        return any(p in self.pids for p in pids) or any(i in self.ids for i in ids)
 
     def add_identity(self, entry: Mapping) -> None:
-        """Reserve the entry's identity keys for the rest of this run (serial merge)."""
-        self.ids.update(identity_ids(entry))
+        """Reserve the entry's identifiers for the rest of this run (serial merge)."""
+        pids = entry_pids(entry)
+        self.pids.update(pids)
+        self.ids.update(i for i in map(identity_id, pids) if i)
 
 
 def open_keys(root: Path | None = None) -> Keys:
@@ -242,9 +253,9 @@ def from_view(view) -> Keys:
     return Keys(_ViewBackend(view))
 
 
-def from_sets(urls: set, titles: set, ids: set) -> Keys:
+def from_sets(urls: set, titles: set, ids: set, pids: set = frozenset()) -> Keys:
     """A dedup session over legacy in-memory key sets (registry.existing_keys()' shape)."""
-    return Keys(_SetBackend(urls, titles, ids))
+    return Keys(_SetBackend(urls, titles, ids, pids))
 
 
 # --- persistent identifiers -----------------------------------------------------------------------
@@ -259,13 +270,7 @@ IDENTITY_PREFIX = "oas-"
 
 def normalize_pid(value) -> str | None:
     """"doi:10.x/y" (lower-case) or "openalex:W123", from any common spelling; else None."""
-    import oa_resolution
-
-    if doi := oa_resolution.normalize_doi(value):
-        return f"doi:{doi}"
-    if work := oa_resolution.normalize_openalex(value):
-        return f"openalex:{work}"
-    return None
+    return store.codec.normalize_pid(value)
 
 
 def identity_id(pid: str) -> str | None:
@@ -284,13 +289,7 @@ def identity_id(pid: str) -> str | None:
 
 def entry_pids(entry: Mapping) -> list[str]:
     """Every normalized persistent identifier an entry declares, in declaration order."""
-    values = [entry.get("persistent_id")]
-    origin = entry.get("origin_ids")
-    if isinstance(origin, str):
-        values += origin.split()
-    elif isinstance(origin, (list, tuple)):
-        values += list(origin)
-    return list(dict.fromkeys(p for p in map(normalize_pid, values) if p))
+    return store.codec.row_pids(entry)
 
 
 def identity_ids(entry: Mapping) -> list[str]:
@@ -310,11 +309,15 @@ def held_rows(ids: Iterable[str], root: Path | None = None) -> dict[str, dict]:
 
 def page_keys(items: Iterable[Mapping], url_field: str = "url",
               title_field: str = "title") -> dict[str, list[str]]:
-    """prefetch() arguments for a page of candidate dicts, normalized the legacy way."""
-    urls, titles = [], []
+    """prefetch() arguments for a page of candidate dicts, normalized the legacy way, plus the
+    persistent identifiers they declare (so identity checks are answered in the same batch)."""
+    urls, titles, pids, ids = [], [], [], []
     for item in items:
         if isinstance(u := item.get(url_field), str):
             urls.append(u.rstrip("/"))
         if isinstance(t := item.get(title_field), str):
             titles.append(registry.norm(t))
-    return {"urls": urls, "titles": titles}
+        declared = entry_pids(item)
+        pids.extend(declared)
+        ids.extend(i for i in map(identity_id, declared) if i)
+    return {"urls": urls, "titles": titles, "pids": pids, "identity_ids": ids}

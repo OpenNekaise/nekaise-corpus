@@ -27,7 +27,7 @@ TOPICS = {"controls_bas", "equipment_systems", "building_energy", "commissioning
 FORMATS = {"pdf", "html", "md", "rst", "txt", "tex", "troff"}
 # Sources whose every entry must carry verified rights evidence for its selected copy (no `open`
 # fallback): the scholarly-metadata families resolved by scripts/oa_resolution.py.
-RIGHTS_EVIDENCE_SOURCES = {"openalex_sim"}
+RIGHTS_EVIDENCE_SOURCES = {"openalex_sim", "openalex_ai"}
 EVIDENCED_LICENSES = {"cc-by", "cc-by-sa", "cc0", "public-domain"}
 
 

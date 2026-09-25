@@ -149,6 +149,47 @@ def slug(s: str) -> str:
     return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", (s or "").lower())).strip("-")
 
 
+_DOI = re.compile(r"^10\.\d{4,9}/\S+$")
+
+
+def normalize_doi(value) -> str | None:
+    """Lower-case bare DOI ("10.x/y") from a DOI, doi: form or doi.org URL; None if not a DOI."""
+    if not isinstance(value, str):
+        return None
+    v = re.sub(r"^(?:https?://(?:dx\.)?doi\.org/|doi:\s*)", "", value.strip(), flags=re.I)
+    v = v.strip().lower()
+    return v if _DOI.match(v) else None
+
+
+def normalize_openalex(value) -> str | None:
+    """"W123…" from an OpenAlex work URL, "openalex:W…" or bare id; None otherwise."""
+    if not isinstance(value, str):
+        return None
+    m = re.fullmatch(r"(?:https?://openalex\.org/|openalex:)?(W\d+)", value.strip(), re.I)
+    return m.group(1).upper() if m else None
+
+
+def normalize_pid(value) -> str | None:
+    """Normalized persistent identifier: "doi:10.x/y" (lower-case) or "openalex:W123"."""
+    if doi := normalize_doi(value):
+        return f"doi:{doi}"
+    if work := normalize_openalex(value):
+        return f"openalex:{work}"
+    return None
+
+
+def row_pids(row) -> list[str]:
+    """Every normalized persistent identifier a registry/manifest row declares: its
+    `persistent_id` and the space-separated (or listed) `origin_ids` aliases."""
+    values = [row.get("persistent_id")]
+    origin = row.get("origin_ids")
+    if isinstance(origin, str):
+        values += origin.split()
+    elif isinstance(origin, (list, tuple)):
+        values += list(origin)
+    return list(dict.fromkeys(p for p in map(normalize_pid, values) if p))
+
+
 def norm(s: str) -> str:
     """Title normal form used by every dedup key."""
     return re.sub(r"\W+", " ", (s or "").lower()).strip()

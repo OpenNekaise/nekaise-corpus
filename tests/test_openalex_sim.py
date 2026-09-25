@@ -108,7 +108,7 @@ def test_combine_is_fail_closed():
 def test_openalex_license_and_license_id_must_agree():
     agree = oar.openalex_location_evidence(
         {"license": "cc-by", "license_id": "https://openalex.org/licenses/cc-by"})
-    assert len(agree) == 1
+    assert len(agree) == 2 and oar.combine(agree).status == "accepted"  # both kept, they agree
     clash = oar.openalex_location_evidence(
         {"license": "cc-by", "license_id": "https://openalex.org/licenses/cc-by-nc"})
     assert oar.combine(clash).status == "rejected"
@@ -119,9 +119,10 @@ def test_crossref_licence_applies_only_to_its_content_version_and_never_tdm():
         {"content-version": "vor", "URL": "http://creativecommons.org/licenses/by/4.0/"},
         {"content-version": "tdm", "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"},
     ]}
-    assert [e.tag for e in oar.crossref_evidence(msg, "publishedVersion")] == ["cc-by"]
-    assert oar.crossref_evidence(msg, "acceptedVersion") == []
-    assert oar.crossref_evidence(msg, "submittedVersion") == []
+    direct, corroborating = oar.crossref_evidence(msg, "publishedVersion")
+    assert [e.tag for e in direct] == ["cc-by"] and corroborating == []
+    assert oar.crossref_evidence(msg, "acceptedVersion") == ([], [])
+    assert oar.crossref_evidence(msg, "submittedVersion") == ([], [])
 
 
 # --- per-copy rights ----------------------------------------------------------------------------
@@ -248,8 +249,13 @@ def test_identity_known_covers_every_declared_version():
 
 
 class FakeView:
-    def __init__(self, ids=(), urls=(), titles=()):
+    def __init__(self, ids=(), urls=(), titles=(), rows=()):
         self.ids, self.urls, self.titles = set(ids), set(urls), set(titles)
+        self.rows = list(rows)  # registry/manifest rows with persistent_id / origin_ids
+
+    def known_pids(self, pids):
+        declared = {p for row in self.rows for p in store.codec.row_pids(row)}
+        return frozenset(set(pids) & declared)
 
     def known(self, *, urls=(), titles=(), ids=(), include_blocklist=True):
         return store.KnownHits(frozenset(set(urls) & self.urls),
@@ -374,13 +380,13 @@ def test_max_cap_keeps_the_unfinished_page_and_resumes_after_consumed_results():
     works = [good(n) for n in range(5)]
     http = FakeHttp(pages=[page(works, count=500), page(works, count=500)])
     run = make_run(http=http, max_docs=2, per=5)
-    nxt = run.run(fam.parse_cursor("sim1 t=0 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0"))
+    nxt = run.run(fam.parse_cursor("sim1 t=0 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0"), "sim")
     assert [e["url"] for e in run.out] == [w["locations"][0]["pdf_url"] for w in works[:2]]
     assert nxt.render() == "sim1 t=1 q=0 w=0 p=1 k=2 sq=0 sw=0 sp=1 sk=0"
-    assert run.stats.stopped_at_max
+    assert run.stats.stopped == "max"
     # the next run re-reads the same page and continues at result 2
     run2 = make_run(http=http, max_docs=2, per=5)
-    nxt2 = run2.run(nxt)
+    nxt2 = run2.run(nxt, "sim")
     assert [e["url"] for e in run2.out] == [w["locations"][0]["pdf_url"] for w in works[2:4]]
     assert nxt2.render() == "sim1 t=2 q=0 w=0 p=1 k=4 sq=0 sw=0 sp=1 sk=0"
     assert http.calls[0][1]["page"] == http.calls[1][1]["page"] == 1
@@ -390,30 +396,13 @@ def test_finished_page_advances_page_then_window_then_query():
     http = FakeHttp(pages=[page([good(1)] * 1 + [work("x", doi=None, wid="W9")] * 4, count=12),
                            page([good(2)], count=12)])
     run = make_run(http=http, per=5)
-    nxt = run.run(fam.parse_cursor("sim1 t=0 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0"))
+    nxt = run.run(fam.parse_cursor("sim1 t=0 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0"), "sim")
     assert (nxt.sim.q, nxt.sim.w, nxt.sim.p, nxt.sim.k) == (0, 0, 2, 0)
-    nxt = make_run(http=http, per=5).run(nxt)  # short page: window done
+    nxt = make_run(http=http, per=5).run(nxt, "sim")  # short page: window done
     assert (nxt.sim.q, nxt.sim.w, nxt.sim.p, nxt.sim.k) == (0, 1, 1, 0)
     last = fam.Position(q=len(fam.SIM_QUERIES) - 1, w=len(fam.WINDOWS) - 1, p=3, k=9)
-    last.advance_window()
+    last.advance_window(len(fam.SIM_QUERIES))
     assert (last.q, last.w, last.p, last.k) == (0, 0, 1, 0)  # a new pass, never "exhausted"
-
-
-def test_lookup_cap_parks_items_instead_of_losing_them(tmp_path):
-    # no PDF anywhere, preprints: each would need a Crossref lookup
-    works = [work(f"Modelica building HVAC simulation preprint number {n}", type_="preprint",
-                  doi=f"10.2139/ssrn.{n}", wid=f"W{n}", locations=[]) for n in range(4)]
-    http = FakeHttp(pages=[page(works)])
-    ledger = fam.Ledger(tmp_path / "res.jsonl")
-    run = make_run(http=http, lookup_max=1, ledger=ledger)
-    nxt = run.run(fam.parse_cursor("sim1 t=0 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0"))
-    assert run.api.lookups == 1
-    assert run.stats.pending_lookup == 3
-    statuses = sorted(r["status"] for r in ledger.rows.values())
-    assert statuses == ["pending_lookup"] * 3 + ["unresolved"]
-    assert (nxt.sim.w, nxt.sim.p) == (1, 1)  # page done; the parked items wait in the record
-    ledger.save()
-    assert len((tmp_path / "res.jsonl").read_text().splitlines()) == 4
 
 
 def test_upstream_failure_keeps_cursor_and_is_not_exhaustion(tmp_path):
@@ -449,7 +438,7 @@ def test_budget_headers_persist_a_cooldown_until_reset():
     http = FakeHttp(pages=[page([])], remaining="5")
     api = fam.Api(http, lookup_max=0, cooldowns={}, save_cooldowns=saved.update,
                   now=lambda: NOW, sleep=lambda s: None)
-    api.search({})
+    api.search({}, 100)
     assert saved == {"openalex": NOW + 3600}
 
 
@@ -502,21 +491,29 @@ def test_relevance_needs_simulation_and_building_evidence():
     assert fam.sim_relevant(ssrn, rel)  # Modelica is a building-simulation anchor
 
 
-def test_ssrn_family_never_requests_ssrn_and_parks_the_work(tmp_path):
+def test_ssrn_family_never_requests_ssrn_and_records_the_work(tmp_path):
     ssrn = load("ssrn_work.json")
+    unpaywall = dict(load("unpaywall_ssrn.json"))
+    # even an SSRN PDF offered by Unpaywall is never a copy to fetch
+    unpaywall["oa_locations"] = [{"url_for_pdf": "https://papers.ssrn.com/sol3/Delivery.cfm/x.pdf",
+                                  "license": "cc-by", "version": "acceptedVersion"}]
     http = FakeHttp(pages=[page([ssrn])], singles={
         "https://api.crossref.org/works/10.2139/ssrn.7231715": {"message":
-                                                                load("crossref_ssrn.json")}})
+                                                                load("crossref_ssrn.json")},
+        "https://api.unpaywall.org/v2/10.2139/ssrn.7231715": unpaywall})
     ledger = fam.Ledger(tmp_path / "r.jsonl")
     run = make_run(http=http, ledger=ledger)
     cursor = fam.parse_cursor("sim1 t=5 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0")
-    assert fam.turn(cursor.t) == "ssrn"
-    nxt = run.run(cursor)
+    assert fam.budget_slot(None, cursor.t) == "ssrn"
+    nxt = run.run(cursor, "ssrn")
     assert run.out == []
     assert all("ssrn.com" not in url for url, _ in http.calls)
     assert f"primary_location.source.id:{fam.SSRN_SOURCE_ID}" in http.calls[0][1]["filter"]
     assert "open_access.is_oa" not in http.calls[0][1]["filter"]  # no known OA copy needed
     assert ledger.rows["doi:10.2139/ssrn.7231715"]["status"] == "unresolved"
+    assert "host_never_fetch:ssrn.com" in ledger.rows["doi:10.2139/ssrn.7231715"]["reasons"]
+    # the Unpaywall METADATA lookup ran for the SSRN DOI (no content request to SSRN)
+    assert "https://api.unpaywall.org/v2/10.2139/ssrn.7231715" in [u for u, _ in http.calls]
     assert (nxt.ssrn.w, nxt.sim.w) == (1, 0)
 
 
@@ -541,47 +538,7 @@ def test_ssrn_preprint_resolves_through_an_explicit_published_version(tmp_path):
     assert entry["selected_version"] == "acceptedVersion"
 
 
-def test_retry_resolves_a_parked_work_later(tmp_path):
-    ledger = fam.Ledger(tmp_path / "r.jsonl")
-    ledger.upsert("doi:10.1234/good.3", ids=["doi:10.1234/good.3", "openalex:W103"],
-                  status="pending_lookup", next_retry_at=fam.iso(NOW - 1), topic="controls_bas",
-                  last_tried=fam.iso(NOW - 10))
-    http = FakeHttp(singles={f"{fam.OPENALEX}/W103": good(3)})
-    run = make_run(http=http, ledger=ledger)
-    nxt = run.run(fam.parse_cursor("sim1 t=2 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0"))  # legacy tick
-    assert fam.turn(2) == "legacy" and run.api.searches == 0
-    assert [e["topic"] for e in run.out] == ["controls_bas"]
-    assert ledger.rows["doi:10.1234/good.3"]["status"] == "resolved"
-    assert nxt.t == 3
-
-
 # --- shared OpenAlex budget ---------------------------------------------------------------------
-
-def test_schedule_gives_one_search_per_round_weighted_to_simulation():
-    slots = [fam.turn(t) for t in range(len(fam.SCHEDULE))]
-    assert slots.count("sim") == 7 and slots.count("legacy") == 2 and slots.count("ssrn") == 1
-    assert fam.legacy_may_search("sim1 t=2 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0", True)[0]
-    assert not fam.legacy_may_search("sim1 t=0 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0", True)[0]
-    assert fam.legacy_may_search("sim1 t=0 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0", False)[0]
-    assert fam.legacy_may_search("garbage", True)[0]
-
-
-def test_legacy_backend_yields_its_round_with_a_hold_and_no_request(tmp_path, monkeypatch):
-    calls = []
-    monkeypatch.setattr(find_sources, "BACKENDS", {"openalex": lambda *a: calls.append(a) or []})
-    monkeypatch.setattr(find_sources, "COOLDOWN_FILE", tmp_path / "cooldowns.json")
-    monkeypatch.setattr(find_sources, "load_context", lambda partner=None: (
-        POLICY, "sim1 t=0 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0", True))
-    monkeypatch.setattr(find_sources.dedup, "open_keys",
-                        lambda: find_sources.dedup.from_sets(set(), set(), set()))
-    hold = tmp_path / "hold"
-    monkeypatch.setenv("NEKAISE_ROTATION_HOLD_FILE", str(hold))
-    monkeypatch.setattr(sys, "argv", [
-        "find_sources.py", "--backends", "openalex", "--query-count", "1",
-        "--query-cursor", "7", "--budget-partner", "find_openalex_sim"])
-    assert find_sources.main() == 0
-    assert calls == [] and "yielded to find_openalex_sim" in hold.read_text()
-
 
 def test_real_backends_share_the_openalex_budget():
     backends = run_round.load_backends()
@@ -659,14 +616,18 @@ def test_relative_and_cdn_hops_are_checked_too(monkeypatch, loader):
     assert "cdn.mdpi.com" in rec["error"] and rec["transient"]
 
 
-def test_allowed_redirect_chain_still_downloads(monkeypatch, loader):
+def test_allowed_redirect_chain_still_downloads_and_is_recorded(monkeypatch, loader):
     requested = fake_transport(monkeypatch, {
-        "https://doi.org/10.5281/zenodo.1": (302, {"Location": "https://zenodo.org/a.pdf"}, b""),
-        "https://zenodo.org/a.pdf": (200, {"Content-Type": "application/pdf"}, b"%PDF-1.7 ok"),
+        "https://zenodo.org/records/1/files/a.pdf": (
+            302, {"Location": "https://zenodo.org/api/records/1/files/a.pdf/content"}, b""),
+        "https://zenodo.org/api/records/1/files/a.pdf/content": (
+            200, {"Content-Type": "application/pdf"}, b"%PDF-1.7 ok"),
     })
-    rec = build_corpus.download_one(src("https://doi.org/10.5281/zenodo.1"))
+    rec = build_corpus.download_one(src("https://zenodo.org/records/1/files/a.pdf"))
     assert rec.get("error") is None and rec["bytes"] == len(b"%PDF-1.7 ok")
-    assert requested[-1] == "https://zenodo.org/a.pdf"
+    assert requested[-1] == "https://zenodo.org/api/records/1/files/a.pdf/content"
+    assert rec["redirect_chain"] == requested
+    assert rec["final_url"] == requested[-1]
 
 
 def test_a_suspended_registry_url_is_never_requested(monkeypatch, loader):

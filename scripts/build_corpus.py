@@ -153,45 +153,135 @@ HOST_RUN_CAP: dict[str, int] = {
     "publications.ibpsa.org": 80,  # 80 x 3 s = 4 min
     "escholarship.org": 60,        # 60 x 4 s = 4 min
 }
-# Host fetch policy (registry/host_policy.json, pinned by the run's store view; set by _run) is
-# enforced BEFORE EVERY request hop, not only for the registry URL: an HTTP redirect (a DOI
-# resolver, a download/CDN link, a mirror) to a suspended host is refused before it is requested,
-# for requests and the curl fallback alike. Such a row fails transiently without a request to the
-# suspended host, so it neither ages toward pruning nor is blocklisted.
+# Every request hop — the registry URL, each HTTP redirect (DOI resolvers, download/CDN links,
+# mirrors), each curl-fallback hop — goes through ONE path (_get_hops / _curl_follow) that, BEFORE
+# requesting it: checks the pinned host policy (registry/host_policy.json, set by _run) on the
+# canonical hostname (host_policy.canonical_host: no port/userinfo, no trailing dot, IDNA); for
+# rows whose licence evidence is bound to one scholarly COPY (COPY_BOUND_SOURCES) also refuses
+# NO-GO hosts and any hop that leaves the copy's host (oa_resolution.same_copy_host: same
+# registrable domain or a configured repository -> CDN pair), because the evidence does not
+# transfer to another copy; and applies that hop host's semaphore, delay, User-Agent and
+# polite-host circuit. The chain is recorded on the row (redirect_chain, final_url). A redirect to
+# a SUSPENDED host is recorded as `suspended_redirect` (never requested, no retry ageing, and the
+# pruner protects the row while the suspension stands).
 HOST_POLICY: dict[str, dict] = {}
 MAX_REDIRECTS = 10
 REDIRECT_STATUSES = frozenset({301, 302, 303, 307, 308})
+COPY_BOUND_SOURCES = frozenset({"openalex", "openalex_sim", "openalex_ai"})
+ACCEPT = "application/pdf,text/html;q=0.9,*/*;q=0.8"
 # Scholarly-metadata sources fetch from many hosts this loader has never seen: for NEW work on a
 # host with no configured cap, one connection and 2 s between request starts (a longer declared
 # HOST_DELAY wins). Restoring rows already held is not slowed.
-PACED_SOURCES = frozenset({"openalex", "openalex_sim"})
+PACED_SOURCES = COPY_BOUND_SOURCES
 PACED_DELAY = 2.0
 
 
-class HostSuspended(Exception):
-    """A request hop would reach a fetch-suspended host; it was not requested."""
+class HopRefused(Exception):
+    """A request hop was refused before it was requested."""
 
-    def __init__(self, url: str, rule: dict):
-        host = urlparse(url).hostname or url
-        super().__init__(f"redirect to fetch-suspended host {host} refused "
-                         f"(registry/host_policy.json, {rule.get('decided_at')}); not requested")
+    def __init__(self, url: str, why: str):
+        super().__init__(f"{why}; not requested")
         self.url = url
 
 
-def check_hop(url: str) -> None:
+class HostSuspended(HopRefused):
+    """The hop's host is fetch-suspended (registry/host_policy.json)."""
+
+    def __init__(self, url: str, rule: dict):
+        host = host_policy.canonical_host(url) or url
+        super().__init__(url, f"redirect to fetch-suspended host {host} refused "
+                              f"(registry/host_policy.json, {rule.get('decided_at')})")
+        self.host, self.rule = host, rule
+
+
+class CopyChanged(HopRefused):
+    """A copy-bound row's hop leaves the licensed copy (or reaches a NO-GO host)."""
+
+
+class ChallengeRefused(Exception):
+    """A polite host answered with a challenge, or its per-run circuit is open."""
+
+    def __init__(self, message: str, status: int | None = None, requested: bool = True):
+        super().__init__(message)
+        self.status, self.requested = status, requested
+
+
+class Hops:
+    """One download's hop log: the origin, whether its rights are copy-bound, the chain."""
+
+    def __init__(self, origin: str, copy_bound: bool):
+        self.origin, self.copy_bound = origin, copy_bound
+        self.chain: list[str] = []
+
+
+_hops = threading.local()
+
+
+def _current_hops() -> "Hops | None":
+    return getattr(_hops, "value", None)
+
+
+def check_hop(url: str, hops: "Hops | None" = None) -> None:
+    """Refuse a hop before it is requested (see the block comment above); log it otherwise."""
+    import oa_resolution
+
+    hops = hops if hops is not None else _current_hops()
     if rule := host_policy.suspended(url, HOST_POLICY):
         raise HostSuspended(url, rule)
+    if hops is not None and hops.copy_bound:
+        host = host_policy.canonical_host(url)
+        never = oa_resolution.host_matches(
+            host, oa_resolution.NEVER_FETCH_HOSTS | oa_resolution.WORK_EXCLUDED_HOSTS)
+        if never:
+            raise CopyChanged(url, f"hop to NO-GO host {host} refused")
+        if not oa_resolution.same_copy_host(hops.origin, url):
+            raise CopyChanged(url, f"redirect leaves the licensed copy "
+                                   f"({host_policy.canonical_host(hops.origin)} -> {host}); "
+                                   "its rights evidence does not transfer")
+    if hops is not None:
+        hops.chain.append(url)
 
 
-def _redirect_guard(resp, *_args, **_kwargs):
-    """requests response hook: runs on every hop's response BEFORE the next hop is requested."""
-    location = (getattr(resp, "headers", None) or {}).get("location")
-    if location and getattr(resp, "status_code", None) in REDIRECT_STATUSES:
-        check_hop(urljoin(resp.url, location))
-    return resp
+def _header(resp, name: str) -> str | None:
+    headers = getattr(resp, "headers", None) or {}
+    for key, value in headers.items():
+        if key.lower() == name:
+            return value
+    return None
 
 
-GUARD = {"response": [_redirect_guard]}
+def _get_hops(url: str, fmt: str, *, session=None, headers: dict | None = None):
+    """requests with MANUAL redirects: every hop is checked (check_hop), paced (its host's
+    semaphore and delay), identified (its host's HOST_UA) and, on a polite host, circuit-checked
+    and challenge-classified — the same rules as a registry URL on that host."""
+    get = session.get if session is not None else requests.get
+    hop = url
+    for _ in range(MAX_REDIRECTS + 1):
+        check_hop(hop)
+        host = host_policy.canonical_host(hop)
+        with _host_sem(hop):
+            if why := _tripped(host):
+                raise ChallengeRefused(f"challenge circuit open for {host} ({why})",
+                                       requested=False)
+            _wait_for_host(host)
+            if why := _tripped(host):  # opened by another worker while this one waited
+                raise ChallengeRefused(f"challenge circuit open for {host} ({why})",
+                                       requested=False)
+            resp = get(hop, headers={"User-Agent": HOST_UA.get(host, UA), "Accept": ACCEPT,
+                                     **(headers or {})},
+                       timeout=TIMEOUT, allow_redirects=False)
+        status = getattr(resp, "status_code", 200)
+        if host in POLITE_HOSTS and is_challenge(status, getattr(resp, "content", b"") or b"",
+                                                 fmt):
+            why = f"HTTP {status} challenge"
+            _trip_host(host, why)
+            raise ChallengeRefused(f"{why} (polite host: no fallback)", status)
+        location = _header(resp, "location")
+        if status in REDIRECT_STATUSES and location:
+            hop = urljoin(getattr(resp, "url", None) or hop, location)
+            continue
+        return resp
+    raise requests.TooManyRedirects(f"more than {MAX_REDIRECTS} redirects from {url}")
 
 
 def pace_new_hosts(todo: list[dict], manifest: dict) -> None:
@@ -202,7 +292,7 @@ def pace_new_hosts(todo: list[dict], manifest: dict) -> None:
             continue
         if (manifest.get(src["id"]) or {}).get("status") == "ok":
             continue
-        host = urlparse(src["url"]).netloc.lower()
+        host = host_policy.canonical_host(src["url"])
         HOST_CONCURRENCY.setdefault(host, 1)
         HOST_DELAY[host] = max(HOST_DELAY.get(host, 0.0), PACED_DELAY)
 
@@ -265,7 +355,7 @@ def _tripped(host: str) -> str | None:
 
 
 def _host_sem(url: str) -> threading.BoundedSemaphore:
-    host = urlparse(url).netloc.lower()
+    host = host_policy.canonical_host(url)
     with _host_sems_lock:
         limit = HOST_CONCURRENCY.get(host, PER_HOST)
         return _host_sems.setdefault(host, threading.BoundedSemaphore(limit))
@@ -450,14 +540,13 @@ def _fetch_ec_deliverable(url: str) -> requests.Response:
     follow it with the same cookie jar to get the actual PDF."""
     with requests.Session() as s:
         s.headers.update({"User-Agent": UA})
-        first = s.get(url, timeout=TIMEOUT, allow_redirects=True, hooks=GUARD)
-        if not first.headers.get("Content-Type", "").startswith("text/html"):
+        first = _get_hops(url, "pdf", session=s)
+        if not (_header(first, "content-type") or "").startswith("text/html"):
             return first
         m = re.search(r"window\.location='(https://ec\.europa\.eu[^']+)'", first.text)
         if not m:
             return first
-        check_hop(m.group(1))
-        return s.get(m.group(1), timeout=TIMEOUT, allow_redirects=True, hooks=GUARD)
+        return _get_hops(m.group(1), "pdf", session=s)
 
 
 def _fetch_publications_gc_ca(url: str) -> requests.Response:
@@ -468,17 +557,13 @@ def _fetch_publications_gc_ca(url: str) -> requests.Response:
     the notice forever and fails the PDF magic-byte check.
     """
     with requests.Session() as s:
-        s.headers.update({
-            "User-Agent": UA,
-            "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8",
-        })
-        first = s.get(url, timeout=TIMEOUT, allow_redirects=True, hooks=GUARD)
+        s.headers.update({"User-Agent": UA, "Accept": ACCEPT})
+        first = _get_hops(url, "pdf", session=s)
         if first.content.startswith(b"%PDF-"):
             return first
         if "/site/archivee-archived.html" not in first.url:
             return first
-        return s.get(url, headers={"Referer": first.url},
-                     timeout=TIMEOUT, allow_redirects=True, hooks=GUARD)
+        return _get_hops(url, "pdf", session=s, headers={"Referer": first.url})
 
 
 def _new_record(src: dict) -> tuple[dict, str]:
@@ -522,73 +607,24 @@ def is_challenge(status: int, body: bytes, fmt: str) -> bool:
             and bool(CHALLENGE_BODY.search(body[:4000])))
 
 
-def _circuit_open(rec: dict, host: str) -> bool:
-    if why := _tripped(host):
-        rec["error"] = f"challenge circuit open for {host} ({why}); not requested"
-        rec["transient"] = True
-        rec["_not_requested"] = True
-        return True
-    return False
-
-
-def _fetch_polite(url: str, fmt: str, ua: str, rec: dict, host: str) -> bytes | None:
-    """One honest request; a challenge trips the circuit (caller holds the host semaphore)."""
-    try:
-        resp = requests.get(
-            url,
-            headers={"User-Agent": ua, "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8"},
-            timeout=TIMEOUT,
-            allow_redirects=True,
-            hooks=GUARD,
-        )
-    except (requests.Timeout, requests.ConnectionError) as exc:
-        rec["error"] = f"network: {exc}"
-        if recoverable_failure(exc, None):  # DNS failures keep the pruner's DNS evidence rule
-            rec["transient"] = True
-        return None
-    rec["http_status"] = resp.status_code
-    body = resp.content or b""
-    if is_challenge(resp.status_code, body, fmt):
-        why = f"HTTP {resp.status_code} challenge"
-        _trip_host(host, why)
-        rec["error"] = f"{why} (polite host: no fallback)"
-        rec["transient"] = True
-        return None
-    resp.raise_for_status()
-    return body
-
-
 def download_one(src: dict) -> dict:
-    """Download and persist original bytes, holding a host slot for network I/O only."""
+    """Download and persist original bytes; every hop holds its own host slot (see _get_hops)."""
     rec, ext = _new_record(src)
     sid = rec["id"]
     fmt = rec["format"]
     source = rec["source"]
-    host = urlparse(src["url"]).netloc.lower()
-    polite = host in POLITE_HOSTS
-    ua = HOST_UA.get(host, UA)
+    url = src["url"]
+    host = host_policy.canonical_host(url)
+    hops = Hops(url, source in COPY_BOUND_SOURCES)
+    _hops.value = hops
     try:
-        check_hop(src["url"])
-        with _host_sem(src["url"]):
-            if _circuit_open(rec, host):
-                return rec
-            _wait_for_host(host)
-            # Another worker may have opened the circuit while this one waited for its slot.
-            if _circuit_open(rec, host):
-                return rec
-            if polite:
-                data = _fetch_polite(src["url"], fmt, ua, rec, host)
-                if data is None:
-                    return rec
-            elif "ec.europa.eu/research/participants/documents/downloadPublic" in src["url"]:
-                data = _fetch_with_fallback(src["url"], fmt, ua, rec,
-                                            _fetch_ec_deliverable(src["url"]))
-            elif (host.removeprefix("www.") == "publications.gc.ca"
-                  and "/collections/" in urlparse(src["url"]).path):
-                data = _fetch_with_fallback(src["url"], fmt, ua, rec,
-                                            _fetch_publications_gc_ca(src["url"]))
-            else:
-                data = _fetch_with_fallback(src["url"], fmt, ua, rec)
+        if "ec.europa.eu/research/participants/documents/downloadPublic" in url:
+            data = _fetch_with_fallback(url, fmt, rec, _fetch_ec_deliverable(url))
+        elif (host.removeprefix("www.") == "publications.gc.ca"
+              and "/collections/" in urlparse(url).path):
+            data = _fetch_with_fallback(url, fmt, rec, _fetch_publications_gc_ca(url))
+        else:
+            data = _fetch_with_fallback(url, fmt, rec)
         if fmt == "pdf" and not data.startswith(b"%PDF-"):
             # a 200 that isn't a PDF is a WAF interstitial / captcha / error page — without this
             # check it lands in the corpus as an ok row with 0 text chars (IBPSA sgcaptcha, 07-09)
@@ -623,10 +659,31 @@ def download_one(src: dict) -> dict:
         rec["error"] = str(e)
         rec["transient"] = True
         rec["_not_requested"] = True  # the suspended host was never asked: no retry ageing
+        rec["suspended_redirect"] = {"host": e.host, "url": e.url,
+                                     "decided_at": e.rule.get("decided_at")}
+        rec["refused_hop"] = e.url
+    except CopyChanged as e:
+        rec["error"] = str(e)  # a hard failure: this registry URL does not serve the licensed copy
+        rec["refused_hop"] = e.url
+    except ChallengeRefused as e:
+        rec["error"] = str(e)
+        rec["transient"] = True
+        if e.status is not None:
+            rec["http_status"] = e.status
+        if not e.requested:
+            rec["_not_requested"] = True
     except Exception as e:
         rec["error"] = str(e)
+        if isinstance(e, (requests.Timeout, requests.ConnectionError)):
+            rec["error"] = f"network: {e}"
         if recoverable_failure(e, rec.get("http_status")):
             rec["transient"] = True
+    finally:
+        _hops.value = None
+        if len(hops.chain) > 1 or rec.get("refused_hop"):
+            rec["redirect_chain"] = list(hops.chain)  # the hops actually requested
+            if hops.chain:
+                rec["final_url"] = hops.chain[-1]
     return rec
 
 
@@ -649,26 +706,27 @@ def recoverable_failure(exc: BaseException, status: int | None) -> bool:
     return False
 
 
-def _fetch_with_fallback(url: str, fmt: str, ua: str, rec: dict, resp=None) -> bytes:
-    """Default (non-polite) hosts: requests, then a bounded curl retry on 403/410/429/503."""
+def _fetch_with_fallback(url: str, fmt: str, rec: dict, resp=None) -> bytes:
+    """requests over _get_hops, then — only when no hop is a polite host — a bounded curl retry
+    on 403/410/429/503 that follows the same per-hop rules (_curl_follow)."""
     if resp is None:
-        resp = requests.get(
-            url,
-            headers={"User-Agent": ua, "Accept": "application/pdf,text/html;q=0.9,*/*;q=0.8"},
-            timeout=TIMEOUT,
-            allow_redirects=True,
-            hooks=GUARD,
-        )
+        resp = _get_hops(url, fmt)
     rec["http_status"] = resp.status_code
     if resp.status_code not in (403, 410, 429, 503):
         resp.raise_for_status()
+        return resp.content
+    hops = _current_hops()
+    if any(host_policy.canonical_host(h) in POLITE_HOSTS for h in (hops.chain if hops else [])):
+        resp.raise_for_status()  # a polite host's refusal is never retried with another client
         return resp.content
     # WAFs (Akamai/Cloudflare/Google) block the python client's TLS fingerprint but pass curl's.
     # Only accept a fallback with the expected content. Do not capture curl stdout through a
     # pipe: extraction workers are spawned while downloads are active, and a fork can inherit the
     # pipe's write end, so communicate() would never observe EOF. A temporary file also avoids
     # buffering large patent HTML responses in a pipe.
-    body = _curl_follow(url, ua)
+    if hops is not None:
+        hops.chain.clear()  # the fallback re-walks (and re-logs) the chain from the start
+    body = _curl_follow(url)
     good = len(body) > 512 and (
         body[:5] == b"%PDF-" if fmt == "pdf"
         else (
@@ -685,19 +743,25 @@ def _fetch_with_fallback(url: str, fmt: str, ua: str, rec: dict, resp=None) -> b
     return resp.content
 
 
-def _curl_follow(url: str, ua: str) -> bytes:
-    """The curl fallback, following redirects ITSELF (no -L) so that host policy is checked
-    before every hop. Returns the final body, or b"" on a curl error or too many redirects."""
+def _curl_follow(url: str, ua: str | None = None) -> bytes:
+    """The curl fallback, following redirects ITSELF (no -L): each hop is checked (check_hop),
+    paced (host semaphore + delay) and identified (its host's HOST_UA, else `ua`/UA); a polite
+    host is never reached through curl. Returns the final body, or b"" on a curl error, a polite
+    hop or too many redirects."""
     hop = url
     with tempfile.TemporaryDirectory(prefix="curl-") as tmp:
         headers = Path(tmp) / "headers"
         for _ in range(MAX_REDIRECTS + 1):
             check_hop(hop)
+            host = host_policy.canonical_host(hop)
+            if host in POLITE_HOSTS:
+                return b""
             headers.write_bytes(b"")
-            with tempfile.TemporaryFile() as curl_body:
+            with _host_sem(hop), tempfile.TemporaryFile() as curl_body:
+                _wait_for_host(host)
                 out = subprocess.run(
-                    ["curl", "-sS", "--max-time", str(TIMEOUT), "-A", ua,
-                     "-D", str(headers), hop],
+                    ["curl", "-sS", "--max-time", str(TIMEOUT), "-A",
+                     HOST_UA.get(host, ua or UA), "-D", str(headers), hop],
                     stdout=curl_body,
                     stderr=subprocess.DEVNULL,
                     timeout=TIMEOUT + 15,
@@ -1087,7 +1151,7 @@ def _run(view, session, args, only: set[str], selection: dict) -> None:
         if cur and cur.get("status") == "ok" and not args.force:
             if cur.get("raw_path") and _have(cur, "raw"):
                 continue
-        if host_policy.suspended(s["url"], policy):
+        if host_policy.suspended(s["url"], policy) or host_policy.suspended_redirect(cur, policy):
             # Fetch suspension: never requested, no failure row, nothing ages toward pruning.
             suspended[urlparse(s["url"]).hostname or ""] += 1
             continue

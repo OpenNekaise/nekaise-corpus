@@ -2998,6 +2998,33 @@ class PgReadView:
         return KnownHits(frozenset(hit_u & cand_u), frozenset(hit_t & cand_t),
                          frozenset(hit_i & cand_i))
 
+    def known_pids(self, pids: Iterable[str]) -> frozenset:
+        """store.ReadView.known_pids over the rows' JSON. A pure lookup, no schema change: the
+        candidate rows are found with an UNINDEXED expression match (a suffix LIKE on
+        persistent_id, a substring LIKE on origin_ids — a sequential scan of both tables per
+        call) and verified exactly in Python with codec.row_pids. Callers batch their pids."""
+        self._check_open()
+        cand = {p for p in pids if p and store.codec.normalize_pid(p) == p}
+        if len(cand) > store.MAX_KNOWN:
+            raise StoreError(f"known_pids(): at most {store.MAX_KNOWN} per call")
+        if not cand:
+            return frozenset()
+        bare = sorted({p.split(":", 1)[1].lower() for p in cand})
+        # LIKE wildcards in a DOI ("_", "%") only widen the candidate set, and a backslash (LIKE's
+        # escape) becomes "_": the exact verification below removes every false candidate.
+        likes = ["%" + b.replace("\\", "_") for b in bare]
+        hits: set = set()
+        for table in ("entries", "manifest"):
+            rows = self._q(sql.SQL(
+                "SELECT row->>'persistent_id', row->>'origin_ids' FROM {} "
+                "WHERE lower(row->>'persistent_id') LIKE ANY(%s) "
+                "OR lower(row->>'origin_ids') LIKE ANY(%s)").format(self._src(table)),
+                [likes, [like + "%" for like in likes]]).fetchall()
+            for persistent_id, origin_ids in rows:
+                hits.update(cand.intersection(store.codec.row_pids(
+                    {"persistent_id": persistent_id, "origin_ids": origin_ids})))
+        return frozenset(hits)
+
     def aggregate_manifest(self, *, group_by: tuple[str, ...], where=None,
                            sums: tuple[str, ...] = (), count: bool = True) -> Iterator[dict]:
         self._validate(Table.MANIFEST, where, tuple(group_by) + tuple(sums))

@@ -535,3 +535,31 @@ def test_a_warmed_view_still_refuses_after_close(st, table, kwargs):
     if first.next_cursor is not None:
         with pytest.raises(store.StaleView):
             view.scan(table, cursor=first.next_cursor, limit=1, **kwargs)
+
+
+def test_known_pids_reads_persistent_ids_and_aliases_of_any_row(st):
+    """Persistent-identifier membership (DOI / OpenAlex id) over the rows' own JSON: the
+    persistent_id of ANY source and every origin_ids alias, registry and manifest-only rows,
+    committed and read-your-writes."""
+    from runids import rid
+
+    def body(tx):
+        tx.insert_entries([
+            entry("ojs-paper", persistent_id="https://doi.org/10.1234/ABC.1"),
+            entry("ope-legacy", persistent_id="https://doi.org/10.5555/pub.2",
+                  origin_ids="doi:10.5555/pub.2 doi:10.2139/ssrn.99 openalex:W77"),
+            entry("nlr-report", persistent_id="NREL/TP-5500-1"),
+        ])
+        tx.upsert_manifest([mrow("hand-one", persistent_id="doi:10.9999/Manifest.Only")])
+        assert tx.known_pids(["doi:10.2139/ssrn.99"]) == {"doi:10.2139/ssrn.99"}
+    write(st, rid("pids"), body)
+    with st.read() as v:
+        assert v.known_pids(["doi:10.1234/abc.1", "doi:10.5555/pub.2", "doi:10.2139/ssrn.99",
+                             "openalex:W77", "doi:10.9999/manifest.only", "doi:10.1234/abc",
+                             "doi:10.1234/abc.10", "openalex:W7"]) == {
+            "doi:10.1234/abc.1", "doi:10.5555/pub.2", "doi:10.2139/ssrn.99", "openalex:W77",
+            "doi:10.9999/manifest.only"}
+        # only normalized values can be known
+        assert v.known_pids(["https://doi.org/10.1234/ABC.1", "", "NREL/TP-5500-1"]) == set()
+        with pytest.raises(store.StoreError, match="at most"):
+            v.known_pids([f"doi:10.1000/{i}" for i in range(store.MAX_KNOWN + 1)])

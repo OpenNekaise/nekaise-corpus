@@ -2,40 +2,50 @@
 """openalex_families.py — independently versioned OpenAlex query families for find_sources.py.
 
 The legacy OpenAlex family (find_sources.QUERIES, 105 frozen queries, integer cursor) stays as
-it is. A FAMILY is a separately configured query list with its own dynamic rotation cursor, run
-as `find_sources.py --family <name> --family-cursor <cursor>` (backend find_openalex_sim):
+it is. A FAMILY is a separately configured query list with its own backend and dynamic rotation
+cursor, run as `find_sources.py --family <name> --family-cursor <cursor>`:
 
-    sim1 t=<tick> q=<query> w=<window> p=<page> k=<consumed> sq=… sw=… sp=… sk=…
+    simulation   (find_openalex_sim, source openalex_sim)
+        sim1 t=<n> q=<query> w=<date window> p=<page> k=<consumed> sq=… sw=… sp=… sk=…
+        building-energy simulation; sq/sw/sp/sk walk the SSRN-origin sub-family (records with no
+        known OA copy yet; SSRN itself is never fetched — only other licensed copies are)
+    building-ai  (find_openalex_ai, source openalex_ai)
+        ai1 t=<n> q=… w=… p=… k=…
+        LLM / generative-AI / agent work on building energy and operation that has no simulation
+        anchor (kept out of the simulation family on purpose)
 
-* ONE OpenAlex budget. OpenAlex meters searches (10 credits each; anonymous 1,000 credits/day),
-  and every OpenAlex backend shares it: each round spends at most ONE search across the legacy
-  family and this one. The tick walks SCHEDULE — 7/10 simulation, 2/10 legacy, 1/10 SSRN-origin
-  — and the legacy backend (--budget-partner) yields its round unless the tick says "legacy".
-  Singleton work lookups and Crossref/Unpaywall calls are free supplementary lookups, capped per
-  run (--lookup-max).
-* Position is never lost. A page is (query, date window, page); `k` counts results of that page
-  already consumed. Hitting --max accepted documents stops mid-page and keeps the page with its
-  new `k`; running out of lookups parks the item in the resolution record (pending_lookup)
-  instead. An upstream failure exits non-zero or holds (the committed cursor stays); it is never
-  reported as exhaustion. A query/window that is fully read moves on; after the last query the
-  walk starts a new pass (new literature appears in the newest window).
-* Unresolved works (no copy with accepted rights yet, e.g. SSRN preprints) are kept in a
-  SEPARATE resolution record (workspace/openalex-resolution.jsonl, a retry cache — losing it
-  loses retry hints, never committed state) instead of title-blocking pointer rows in the fetch
-  registry, and are re-resolved later with bounded supplementary lookups.
+* ONE OpenAlex budget. A search costs 10 of the 1,000 anonymous daily credits and every OpenAlex
+  backend shares them: each round spends at most ONE search. The owner of a round's search is
+  budget_slot(NEKAISE_RUN_ID) — a hash of the round id over SCHEDULE (6/10 simulation, 1/10
+  SSRN-origin, 1/10 building-ai, 2/10 legacy). It depends on nothing a backend's progress or
+  failure can freeze, so a failing family never starves another. A standalone run (no round id)
+  uses its cursor tick instead. Singleton work lookups and Crossref/Unpaywall calls are free
+  supplementary lookups, capped per run (--lookup-max).
+* Position is never lost and never passes unfinished work. A page is (query, date window, page);
+  `k` counts results of that page already FINISHED. Hitting --max accepted documents, running out
+  of lookups, or a failed supplementary lookup stops at that result and keeps the page with its
+  `k`; a failed or malformed search keeps the whole committed cursor (exit 1). A fully read
+  query/window moves on; after the last query the walk starts a new pass — never "exhausted".
+* The resolution record (workspace/openalex-resolution.jsonl) is OPTIONAL ACCELERATION: it lets a
+  later run re-check an unresolved work (e.g. an SSRN preprint whose published version may get a
+  licensed copy) sooner than the next pass of the walk. Losing it, or a round rolling back after
+  it was written, loses nothing: a retry is marked resolved only once a later run sees the work
+  registered in the store.
 
-Changing SIM_QUERIES, WINDOWS or SCHEDULE requires a new FAMILY_VERSION and a reviewed cursor
-migration (parse_cursor refuses a cursor of another version).
+Changing a family's queries or windows requires a new version and a reviewed cursor migration
+(parse_cursor refuses a cursor of another version).
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
 import time
-from dataclasses import asdict, dataclass, field
+from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Callable
 
 import bes_relevance
 import dedup
@@ -43,67 +53,45 @@ import oa_resolution as oar
 import ops
 import registry
 
-FAMILY_VERSION = "sim1"
-SOURCE = "openalex_sim"
 OPENALEX = "https://api.openalex.org/works"
 SSRN_SOURCE_ID = "S4210172589"  # OpenAlex source "SSRN Electronic Journal"
 SEARCH_CREDITS = 10             # x-ratelimit-cost: 0.001 USD = 10 credits per search (2026-09-25)
 MAX_PAGE_DEPTH = 10_000         # OpenAlex page-based paging limit (page * per-page)
 LEDGER_CAP = 20_000
-PENDING_CAP = 500
-
-# (key, OpenAlex title_and_abstract.search expression, topic). No commas: they separate filters.
-SIM_QUERIES: tuple[tuple[str, str, str], ...] = (
-    ("modelica", '(Modelica OR OpenModelica OR Dymola) AND (building OR buildings OR HVAC OR '
-                 '"heat pump" OR "district heating" OR "thermal zone")', "building_energy"),
-    ("modelica-libraries", '"Modelica Buildings" OR "Buildings library" OR AixLib OR '
-                           '"IDEAS library" OR "IBPSA Project" OR BuildingSystems OR BuildSysPro',
-     "building_energy"),
-    ("energyplus", '(EnergyPlus OR "Spawn of EnergyPlus" OR BOPTEST OR OpenStudio OR TRNSYS OR '
-                   '"IDA ICE" OR "ESP-r" OR DOE-2) AND (building OR buildings OR HVAC)',
-     "building_energy"),
-    ("calibration", '("building energy simulation" OR "building performance simulation" OR '
-                    '"building energy model" OR "building energy modeling" OR '
-                    '"building energy modelling") AND (calibration OR calibrated OR validation)',
-     "building_energy"),
-    ("hvac-mpc", '("model predictive control" OR MPC) AND (HVAC OR building OR buildings) AND '
-                 '(simulation OR co-simulation OR emulator OR "building model")', "controls_bas"),
-    ("digital-twin", '"digital twin" AND (building OR buildings OR HVAC) AND (simulation OR '
-                     '"energy model" OR "physics-based" OR "building energy")', "building_energy"),
-    ("llm-simulation", '("large language model" OR "large language models" OR LLM OR LLMs) AND '
-                       '(EnergyPlus OR Modelica OR "building energy" OR "building simulation" OR '
-                       'HVAC OR "energy model")', "building_energy"),
-    ("co-simulation", '(co-simulation OR "functional mock-up" OR FMU) AND (building OR buildings '
-                      'OR HVAC OR "district heating")', "building_energy"),
-    ("de", 'Gebäudesimulation OR "thermische Gebäudesimulation" OR "energetische '
-           'Gebäudesimulation" OR Anlagensimulation OR "dynamische Gebäudesimulation"',
-     "building_energy"),
-    ("fr", '("simulation énergétique" OR "simulation thermique dynamique") AND (bâtiment OR '
-           'bâtiments OR logement)', "building_energy"),
-    ("es-pt-it", '"simulación energética" OR "simulação energética" OR "simulazione energetica" '
-                 'OR "simulación térmica" OR "simulação termoenergética" OR "simulazione '
-                 'dinamica"', "building_energy"),
-    ("zh", '建筑能耗模拟 OR 建筑能耗仿真 OR 建筑能源模拟 OR 建筑热环境模拟 OR 暖通空调仿真',
-     "building_energy"),
-    ("ja-ko", '建築 シミュレーション OR 熱負荷計算 OR 空調 シミュレーション OR "건물 에너지 시뮬레이션" OR '
-              '"건물 에너지 해석"', "building_energy"),
-    ("nl-nordic", 'gebouwsimulatie OR "energiesimulatie" OR bygningssimulering OR '
-                  'byggnadssimulering OR energisimulering OR rakennussimulointi',
-     "building_energy"),
-)
-# Queries whose expression itself requires a simulation/tool term in the title or abstract: a
-# match proves the simulation anchor even when OpenAlex serves no abstract (it withholds many
-# publishers' abstracts). The BUILDING anchor is never implied by a query.
-SIM_IMPLIED = frozenset({"modelica", "modelica-libraries", "energyplus", "calibration",
-                         "hvac-mpc", "co-simulation", "de", "fr", "es-pt-it", "zh", "ja-ko",
-                         "nl-nordic"})
+TYPES = "type:article|preprint"
 WINDOWS: tuple[str, ...] = (
     "publication_year:>2024", "publication_year:2020-2024", "publication_year:2015-2019",
     "publication_year:2005-2014", "publication_year:<2005",
 )
-SCHEDULE: tuple[str, ...] = ("sim", "sim", "legacy", "sim", "sim", "ssrn", "sim", "sim",
+# The shared OpenAlex budget: which walk owns a round's single search.
+SCHEDULE: tuple[str, ...] = ("sim", "sim", "legacy", "sim", "ai", "ssrn", "sim", "sim",
                              "legacy", "sim")
-TYPES = "type:article|preprint"
+SLOT_OWNER = {"sim": "find_openalex_sim", "ssrn": "find_openalex_sim",
+              "ai": "find_openalex_ai", "legacy": "find_openalex"}
+
+
+def budget_slot(run_id: str | None, tick: int = 0) -> str:
+    """The walk that owns this round's OpenAlex search: from the round id when there is one
+    (every backend of the round computes the same slot), else from the cursor tick."""
+    if run_id:
+        return SCHEDULE[int(hashlib.sha256(run_id.encode()).hexdigest()[:12], 16)
+                        % len(SCHEDULE)]
+    return SCHEDULE[tick % len(SCHEDULE)]
+
+
+def legacy_may_search(run_id: str | None, partners_enabled: dict[str, bool]) -> tuple[bool, str]:
+    """Whether the legacy family owns this round's search: its own slot, or a slot whose owning
+    family backend is disabled (the budget is not wasted on a paused family)."""
+    if not run_id:
+        return True, "standalone run"
+    slot = budget_slot(run_id)
+    owner = SLOT_OWNER[slot]
+    if slot == "legacy":
+        return True, f"round slot {slot}"
+    if owner in partners_enabled and not partners_enabled[owner]:
+        return True, f"round slot {slot} belongs to disabled {owner}"
+    return False, f"round slot {slot} belongs to {owner}"
+
 
 # --- relevance ------------------------------------------------------------------------------------
 SIM_ANCHOR = re.compile(
@@ -124,13 +112,30 @@ MULTILINGUAL_BUILT = re.compile(
     r"rakennu|здани",
     re.I,
 )
+AI_ANCHOR = re.compile(
+    r"language models?|\bllms?\b|generative ai|\bgpt|chatgpt|foundation models?|\bagents?\b|"
+    r"agentic|大语言模型|语言模型|大規模言語モデル|sprachmodell|modèles? de langage",
+    re.I,
+)
+# Building anchors that are safe in an ABSTRACT of an AI paper ("building an agent" is a verb).
+AI_BUILT_ABSTRACT = re.compile(
+    r"\bhvac\b|building energy|\bbuildings\b|smart buildings?|building (?:automation|management|"
+    r"operation|operations|performance|systems?|stock|retrofit)|indoor|thermal comfort|"
+    r"heat pumps?|energy retrofit|ventilation|air[- ]condition|district heating|occupant",
+    re.I,
+)
+
+
+def _building_title(work: dict, title: str, openalex_relevant) -> bool:
+    return bool(openalex_relevant(work, title) or bes_relevance.relevant(title, strict=True)
+                or MULTILINGUAL_BUILT.search(title))
 
 
 def sim_relevant(work: dict, openalex_relevant, sim_implied: bool = False) -> bool:
     """Simulation AND built-environment evidence. Generic "agents", "digital twin" or "energy"
     alone is not enough: a simulation/tool anchor must meet a building anchor — in the title, in
     OpenAlex's AEC subfields, or in the abstract when the text also names a building-simulation
-    tool."""
+    tool. `sim_implied`: the query expression itself required a simulation term."""
     title = (work.get("title") or work.get("display_name") or "").strip()
     if not title or bes_relevance.vetoed(title):
         return False
@@ -138,12 +143,120 @@ def sim_relevant(work: dict, openalex_relevant, sim_implied: bool = False) -> bo
     text = f"{title} {abstract}"
     if not sim_implied and not SIM_ANCHOR.search(text):
         return False
-    if openalex_relevant(work, title) or bes_relevance.relevant(title, strict=True):
-        return True
-    if MULTILINGUAL_BUILT.search(title):
+    if _building_title(work, title, openalex_relevant):
         return True
     return bool(TOOL_ANCHOR.search(text) and (bes_relevance.BUILT.search(abstract)
                                                or MULTILINGUAL_BUILT.search(abstract)))
+
+
+def ai_relevant(work: dict, openalex_relevant, ai_implied: bool = False) -> bool:
+    """AI/LLM AND building evidence: a building anchor in the title/AEC subfields, or a
+    building-operation phrase in the abstract (never the verb "building")."""
+    title = (work.get("title") or work.get("display_name") or "").strip()
+    if not title or bes_relevance.vetoed(title):
+        return False
+    abstract = oar.abstract_text(work)
+    if not ai_implied and not AI_ANCHOR.search(f"{title} {abstract}"):
+        return False
+    # bes_relevance's title gate is not used here: its \bbuilding\b also matches the verb
+    # ("Building LLM agents for …"), which AI titles are full of
+    return bool(openalex_relevant(work, title) or MULTILINGUAL_BUILT.search(title)
+                or AI_BUILT_ABSTRACT.search(title) or AI_BUILT_ABSTRACT.search(abstract)
+                or MULTILINGUAL_BUILT.search(abstract))
+
+
+# --- families -------------------------------------------------------------------------------------
+
+@dataclass(frozen=True)
+class Family:
+    name: str
+    version: str
+    source: str
+    backend: str
+    queries: tuple[tuple[str, str, str], ...]  # (key, title_and_abstract.search expr, topic)
+    implied: frozenset                          # query keys whose expression proves the anchor
+    relevant: Callable
+    walks: tuple[str, ...]                      # schedule slots this family owns, main walk first
+
+
+SIMULATION = Family(
+    name="simulation", version="sim1", source="openalex_sim", backend="find_openalex_sim",
+    queries=(
+        ("modelica", '(Modelica OR OpenModelica OR Dymola) AND (building OR buildings OR HVAC OR '
+                     '"heat pump" OR "district heating" OR "thermal zone")', "building_energy"),
+        ("modelica-libraries", '"Modelica Buildings" OR "Buildings library" OR AixLib OR '
+                               '"IDEAS library" OR "IBPSA Project" OR BuildingSystems OR '
+                               'BuildSysPro', "building_energy"),
+        ("energyplus", '(EnergyPlus OR "Spawn of EnergyPlus" OR BOPTEST OR OpenStudio OR TRNSYS OR '
+                       '"IDA ICE" OR "ESP-r" OR DOE-2) AND (building OR buildings OR HVAC)',
+         "building_energy"),
+        ("calibration", '("building energy simulation" OR "building performance simulation" OR '
+                        '"building energy model" OR "building energy modeling" OR '
+                        '"building energy modelling") AND (calibration OR calibrated OR '
+                        'validation)', "building_energy"),
+        ("hvac-mpc", '("model predictive control" OR MPC) AND (HVAC OR building OR buildings) AND '
+                     '(simulation OR co-simulation OR emulator OR "building model")',
+         "controls_bas"),
+        ("digital-twin", '"digital twin" AND (building OR buildings OR HVAC) AND (simulation OR '
+                         '"energy model" OR "physics-based" OR "building energy")',
+         "building_energy"),
+        ("llm-simulation", '("large language model" OR "large language models" OR LLM OR LLMs) '
+                           'AND (EnergyPlus OR Modelica OR "building energy" OR "building '
+                           'simulation" OR HVAC OR "energy model")', "building_energy"),
+        ("co-simulation", '(co-simulation OR "functional mock-up" OR FMU) AND (building OR '
+                          'buildings OR HVAC OR "district heating")', "building_energy"),
+        ("de", 'Gebäudesimulation OR "thermische Gebäudesimulation" OR "energetische '
+               'Gebäudesimulation" OR Anlagensimulation OR "dynamische Gebäudesimulation"',
+         "building_energy"),
+        ("fr", '("simulation énergétique" OR "simulation thermique dynamique") AND (bâtiment OR '
+               'bâtiments OR logement)', "building_energy"),
+        ("es-pt-it", '"simulación energética" OR "simulação energética" OR "simulazione '
+                     'energetica" OR "simulación térmica" OR "simulação termoenergética" OR '
+                     '"simulazione dinamica"', "building_energy"),
+        ("zh", '建筑能耗模拟 OR 建筑能耗仿真 OR 建筑能源模拟 OR 建筑热环境模拟 OR 暖通空调仿真',
+         "building_energy"),
+        ("ja-ko", '建築 シミュレーション OR 熱負荷計算 OR 空調 シミュレーション OR "건물 에너지 시뮬레이션" '
+                  'OR "건물 에너지 해석"', "building_energy"),
+        ("nl-nordic", 'gebouwsimulatie OR "energiesimulatie" OR bygningssimulering OR '
+                      'byggnadssimulering OR energisimulering OR rakennussimulointi',
+         "building_energy"),
+    ),
+    implied=frozenset({"modelica", "modelica-libraries", "energyplus", "calibration",
+                       "hvac-mpc", "co-simulation", "de", "fr", "es-pt-it", "zh", "ja-ko",
+                       "nl-nordic"}),
+    relevant=sim_relevant,
+    walks=("sim", "ssrn"),
+)
+
+BUILDING_AI = Family(
+    name="building-ai", version="ai1", source="openalex_ai", backend="find_openalex_ai",
+    queries=(
+        ("llm-building", '("large language model" OR "large language models" OR LLM OR LLMs OR '
+                         '"generative AI" OR GPT OR ChatGPT OR "foundation model") AND ("building '
+                         'energy" OR HVAC OR "smart building" OR "smart buildings" OR "building '
+                         'operation" OR "building management" OR "energy retrofit" OR "building '
+                         'automation")', "building_energy"),
+        ("agents", '("AI agent" OR "AI agents" OR "LLM agent" OR "LLM agents" OR agentic OR '
+                   '"multi-agent") AND (HVAC OR "building energy" OR "building management" OR '
+                   '"building automation" OR "building operation")', "controls_bas"),
+        ("llm-operations", '("large language model" OR LLM OR "generative AI") AND ("fault '
+                           'detection" OR "fault diagnosis" OR commissioning OR "energy '
+                           'management") AND (building OR buildings OR HVAC)',
+         "commissioning_fdd"),
+        ("zh", '大语言模型 AND (建筑 OR 暖通 OR 空调)', "building_energy"),
+        ("de-fr", '(Sprachmodell OR Sprachmodelle OR "modèle de langage" OR "modèles de langage") '
+                  'AND (Gebäude OR Gebäudetechnik OR bâtiment OR bâtiments)', "building_energy"),
+    ),
+    implied=frozenset({"llm-building", "agents", "llm-operations", "zh", "de-fr"}),
+    relevant=ai_relevant,
+    walks=("ai",),
+)
+FAMILIES = {f.name: f for f in (SIMULATION, BUILDING_AI)}
+# kept for callers/tests of the first version
+SIM_QUERIES = SIMULATION.queries
+SIM_IMPLIED = SIMULATION.implied
+FAMILY_VERSION = SIMULATION.version
+SOURCE = SIMULATION.source
 
 
 # --- cursor ---------------------------------------------------------------------------------------
@@ -155,66 +268,72 @@ class Position:
     p: int = 1
     k: int = 0
 
-    def advance_window(self) -> None:
+    def advance_window(self, n_queries: int) -> None:
         self.p, self.k = 1, 0
         self.w += 1
         if self.w >= len(WINDOWS):
             self.w = 0
-            self.q = (self.q + 1) % len(SIM_QUERIES)
+            self.q = (self.q + 1) % n_queries
+
+
+WALK_PREFIX = {"sim": "", "ssrn": "s", "ai": ""}
 
 
 @dataclass
 class Cursor:
+    family: Family
     t: int = 0
-    sim: Position = field(default_factory=Position)
-    ssrn: Position = field(default_factory=Position)
+    walks: dict = field(default_factory=dict)  # walk name -> Position
 
     def render(self) -> str:
-        s, r = self.sim, self.ssrn
-        return (f"{FAMILY_VERSION} t={self.t} q={s.q} w={s.w} p={s.p} k={s.k} "
-                f"sq={r.q} sw={r.w} sp={r.p} sk={r.k}")
+        parts = [self.family.version, f"t={self.t}"]
+        for walk in self.family.walks:
+            pos, pre = self.walks[walk], WALK_PREFIX[walk]
+            parts += [f"{pre}q={pos.q}", f"{pre}w={pos.w}", f"{pre}p={pos.p}", f"{pre}k={pos.k}"]
+        return " ".join(parts)
+
+    def copy(self) -> "Cursor":
+        return Cursor(self.family, self.t,
+                      {w: Position(p.q, p.w, p.p, p.k) for w, p in self.walks.items()})
+
+    # compatibility accessors
+    @property
+    def sim(self) -> Position:
+        return self.walks["sim"]
+
+    @property
+    def ssrn(self) -> Position:
+        return self.walks["ssrn"]
 
 
-_CURSOR = re.compile(
-    r"(?P<v>\S+) t=(?P<t>\d+) q=(?P<q>\d+) w=(?P<w>\d+) p=(?P<p>\d+) k=(?P<k>\d+) "
-    r"sq=(?P<sq>\d+) sw=(?P<sw>\d+) sp=(?P<sp>\d+) sk=(?P<sk>\d+)"
-)
-
-
-def parse_cursor(value: str) -> Cursor:
-    m = _CURSOR.fullmatch((value or "").strip())
-    if not m:
+def parse_cursor(value: str, family: Family = SIMULATION) -> Cursor:
+    tokens = (value or "").strip().split()
+    if not tokens:
         raise ValueError(f"malformed family cursor: {value!r}")
-    if m["v"] != FAMILY_VERSION:
-        raise ValueError(f"family cursor is {m['v']}, this code walks {FAMILY_VERSION}: "
+    if tokens[0] != family.version:
+        raise ValueError(f"family cursor is {tokens[0]}, this code walks {family.version}: "
                          "migrate the committed cursor before changing the family")
-    n = {k: int(v) for k, v in m.groupdict().items() if k != "v"}
-    cur = Cursor(n["t"], Position(n["q"], n["w"], n["p"], n["k"]),
-                 Position(n["sq"], n["sw"], n["sp"], n["sk"]))
-    for pos in (cur.sim, cur.ssrn):
-        if not (pos.q < len(SIM_QUERIES) and pos.w < len(WINDOWS) and pos.p >= 1
+    fields_ = {}
+    for token in tokens[1:]:
+        m = re.fullmatch(r"([a-z]+)=(\d+)", token)
+        if not m or m[1] in fields_:
+            raise ValueError(f"malformed family cursor: {value!r}")
+        fields_[m[1]] = int(m[2])
+    keys = ["t"] + [WALK_PREFIX[w] + k for w in family.walks for k in "qwpk"]
+    if sorted(fields_) != sorted(keys):
+        raise ValueError(f"malformed family cursor: {value!r}")
+    cur = Cursor(family, fields_["t"])
+    for walk in family.walks:
+        pre = WALK_PREFIX[walk]
+        pos = Position(*(fields_[pre + k] for k in "qwpk"))
+        if not (pos.q < len(family.queries) and pos.w < len(WINDOWS) and pos.p >= 1
                 and 0 <= pos.k <= 200):
             raise ValueError(f"family cursor out of range: {value!r}")
+        cur.walks[walk] = pos
     return cur
 
 
-def turn(tick: int) -> str:
-    return SCHEDULE[tick % len(SCHEDULE)]
-
-
-def legacy_may_search(partner_cursor: str | None, partner_enabled: bool) -> tuple[bool, str]:
-    """Whether the legacy family owns this round's single OpenAlex search."""
-    if not partner_enabled or not partner_cursor:
-        return True, "budget partner disabled"
-    try:
-        cur = parse_cursor(partner_cursor)
-    except ValueError as exc:
-        return True, f"budget partner cursor unreadable ({exc})"
-    slot = turn(cur.t)
-    return slot == "legacy", f"tick {cur.t} belongs to {slot}"
-
-
-# --- HTTP with budgets ----------------------------------------------------------------------------
+# --- HTTP with budgets and schema checks ----------------------------------------------------------
 
 class UpstreamError(RuntimeError):
     def __init__(self, message: str, status: int | None = None, retry_at: float | None = None):
@@ -222,9 +341,31 @@ class UpstreamError(RuntimeError):
         self.status, self.retry_at = status, retry_at
 
 
+class LookupBudget(Exception):
+    """The per-run supplementary lookup cap is spent."""
+
+
+def check_search(data, per: int) -> tuple[list[dict], int]:
+    """(results, meta.count) of a well-formed OpenAlex list response, else UpstreamError: an
+    error object or a malformed page must never read as an empty (finished) page."""
+    if not isinstance(data, dict) or "error" in data:
+        raise UpstreamError(f"OpenAlex search returned an error or no object: {str(data)[:200]}")
+    results, meta = data.get("results"), data.get("meta")
+    if not isinstance(results, list) or not isinstance(meta, dict):
+        raise UpstreamError("OpenAlex search response lacks results/meta")
+    count = meta.get("count")
+    if isinstance(count, bool) or not isinstance(count, int) or count < 0:
+        raise UpstreamError(f"OpenAlex search meta.count is not a count: {count!r}")
+    if len(results) > per or any(not isinstance(r, dict) or not r.get("id") for r in results):
+        raise UpstreamError("OpenAlex search results are malformed")
+    if results and count < len(results):
+        raise UpstreamError("OpenAlex search meta.count is smaller than the page")
+    return results, count
+
+
 class Api:
     """Counts requests; enforces the lookup cap, OpenAlex budget headers and persisted
-    cooldowns. `get` is requests.get (tests replace it)."""
+    cooldowns; validates every response's shape. `get` is requests.get (tests replace it)."""
 
     def __init__(self, get, *, lookup_max: int, cooldowns: dict, save_cooldowns, now,
                  sleep=time.sleep):
@@ -248,7 +389,8 @@ class Api:
         started = time.monotonic()
         try:
             r = self.get(url, params=params, timeout=30,
-                         headers={"User-Agent": f"nekaise-corpus/find_sources (mailto:{oar.MAILTO})"})
+                         headers={"User-Agent": f"nekaise-corpus/find_sources "
+                                                f"(mailto:{oar.MAILTO})"})
         except Exception as exc:
             raise UpstreamError(f"{host_key} request failed: {exc}") from exc
         finally:
@@ -288,45 +430,53 @@ class Api:
             self.save_cooldowns(self.cooldowns)
             self.budget_note += f"; cooldown persisted for {wait}s"
 
-    def search(self, params: dict) -> dict:
+    def search(self, params: dict, per: int) -> tuple[list[dict], int]:
         self.searches += 1
-        data = self._request(OPENALEX, {**params, "mailto": oar.MAILTO}, host_key="openalex")
-        if not isinstance(data, dict):
-            raise UpstreamError("OpenAlex search returned no result object")
-        return data
+        return check_search(
+            self._request(OPENALEX, {**params, "mailto": oar.MAILTO}, host_key="openalex"), per)
 
     def lookup(self, kind: str, key: str) -> dict | None:
-        """One supplementary lookup (counted): OpenAlex work, Crossref work or Unpaywall DOI."""
+        """One supplementary lookup (counted), schema-checked: an OpenAlex work, a Crossref
+        work message or an Unpaywall DOI record; None only for a clean 404."""
         if self.lookups >= self.lookup_max:
             raise LookupBudget()
         self.lookups += 1
         self.sleep(0.2 if kind == "openalex" else 1.0)
         if kind == "openalex":
-            return self._request(f"{OPENALEX}/{key}", {"mailto": oar.MAILTO},
+            data = self._request(f"{OPENALEX}/{key}", {"mailto": oar.MAILTO},
                                  host_key="openalex")
+            if data is not None and not (isinstance(data, dict) and "error" not in data
+                                         and oar.normalize_openalex(data.get("id"))):
+                raise UpstreamError(f"malformed OpenAlex work for {key}")
+            return data
         if kind == "crossref":
             data = self._request(f"https://api.crossref.org/works/{key}",
                                  {"mailto": oar.MAILTO}, host_key="crossref")
-            return (data or {}).get("message") if isinstance(data, dict) else None
+            if data is None:
+                return None
+            if not (isinstance(data, dict) and isinstance(data.get("message"), dict)):
+                raise UpstreamError(f"malformed Crossref record for {key}")
+            return data["message"]
         if kind == "unpaywall":
-            return self._request(f"https://api.unpaywall.org/v2/{key}",
+            data = self._request(f"https://api.unpaywall.org/v2/{key}",
                                  {"email": oar.MAILTO}, host_key="unpaywall")
+            if data is not None and not (isinstance(data, dict) and "error" not in data
+                                         and isinstance(data.get("doi"), str)
+                                         and isinstance(data.get("oa_locations", []), list)):
+                raise UpstreamError(f"malformed Unpaywall record for {key}")
+            return data
         raise ValueError(kind)
 
 
-class LookupBudget(Exception):
-    """The per-run supplementary lookup cap is spent."""
-
-
-# --- resolution record ----------------------------------------------------------------------------
+# --- resolution record (optional acceleration) ----------------------------------------------------
 
 def default_ledger_path() -> Path:
     return ops.WORKSPACE / "openalex-resolution.jsonl"
 
 
 class Ledger:
-    """The resolution record: unresolved/pending works kept for later retry, keyed by their
-    first normalized persistent id. A git-ignored retry cache, written atomically."""
+    """Unresolved works a later run may re-check early, keyed by their first normalized
+    persistent id. A git-ignored ACCELERATION cache (see module docstring), written atomically."""
 
     def __init__(self, path: Path | None):
         self.path = path
@@ -346,23 +496,20 @@ class Ledger:
         row.update({k: v for k, v in fields.items() if v is not None})
         return row
 
-    def due(self, now_iso: str, limit: int) -> list[dict]:
+    def due(self, now_iso: str, limit: int, family: str) -> list[dict]:
         rows = [r for r in self.rows.values()
-                if r.get("status") in ("pending_lookup", "unresolved")
+                if r.get("status") in ("unresolved", "proposed")
+                and r.get("family_name", "simulation") == family
                 and (r.get("next_retry_at") or "") <= now_iso]
-        rows.sort(key=lambda r: (r.get("status") != "pending_lookup", r.get("next_retry_at") or "",
-                                 r["key"]))
+        rows.sort(key=lambda r: (r.get("next_retry_at") or "", r["key"]))
         return rows[:limit]
-
-    def pending(self) -> int:
-        return sum(r.get("status") == "pending_lookup" for r in self.rows.values())
 
     def save(self) -> None:
         if self.path is None:
             return
         rows = list(self.rows.values())
         if len(rows) > LEDGER_CAP:  # forget settled rows first, then the oldest
-            rows.sort(key=lambda r: (r.get("status") in ("unresolved", "pending_lookup"),
+            rows.sort(key=lambda r: (r.get("status") in ("unresolved", "proposed"),
                                      r.get("last_tried") or ""))
             rows = rows[len(rows) - LEDGER_CAP:]
         rows.sort(key=lambda r: r["key"])
@@ -396,10 +543,9 @@ class Stats:
     resolved_via: dict = field(default_factory=dict)
     unresolved: int = 0
     rights_rejected: int = 0
-    pending_lookup: int = 0
     retried: int = 0
     retry_resolved: int = 0
-    stopped_at_max: bool = False
+    stopped: str = ""
     reasons: dict = field(default_factory=dict)
     examples: dict = field(default_factory=dict)
 
@@ -461,31 +607,48 @@ def build_entry(work: dict, res: oar.Resolution, *, topic: str, source: str, fam
     return {k: v for k, v in entry.items() if v not in (None, "")}
 
 
+class StopPage(Exception):
+    """Stop consuming the page at the current result (it stays unfinished)."""
+
+
 class FamilyRun:
-    """One invocation of the simulation family (see module docstring)."""
+    """One invocation of a query family (see module docstring)."""
 
     def __init__(self, *, api: Api, policy: dict, keys, ledger: Ledger, per: int, max_docs: int,
-                 openalex_relevant, now: float, held_rows=dedup.held_rows):
+                 openalex_relevant, now: float, held_rows=dedup.held_rows,
+                 family: Family = SIMULATION):
         self.api, self.policy, self.keys, self.ledger = api, policy, keys, ledger
         self.per, self.max_docs = per, max_docs
         self.openalex_relevant = openalex_relevant
         self.now = now
         self.today = iso(now)[:10]
         self.held_rows = held_rows
+        self.family = family
         self.out: list[dict] = []
         self.stats = Stats()
 
     # -- dedup ---------------------------------------------------------------------------------
+    def _prefetch(self, works: list[dict]) -> None:
+        """Answer the whole page's dedup keys in one store round trip (known_pids is an
+        unindexed scan on PostgreSQL: never one call per work)."""
+        pids = [p for w in works for p in work_pids(w)]
+        self.keys.prefetch(
+            pids=pids, ids=[i for i in map(dedup.identity_id, pids) if i],
+            titles=[registry.norm(w.get("title") or w.get("display_name") or "") for w in works],
+            urls=[u for w in works for u in work_urls(w)])
+
     def _known(self, work: dict, extra_pids: list[str] = ()) -> str | None:
         pids = list(dict.fromkeys([*work_pids(work), *extra_pids]))
         ids = [i for i in map(dedup.identity_id, pids) if i]
-        self.keys.prefetch(ids=ids)
+        self.keys.prefetch(ids=ids, pids=pids)
         hit_ids = [i for i in ids if i in self.keys.ids]
         if hit_ids:
             rows = self.held_rows(hit_ids)
             if any(r.get("status") == "ok" for r in rows.values()):
                 return "identity_held"
             return "identity_known_not_held"
+        if any(p in self.keys.pids for p in pids):
+            return "persistent_id"  # declared by a row of any source (persistent_id/origin_ids)
         title = registry.norm(work.get("title") or work.get("display_name") or "")
         if title and title in self.keys.titles:
             return "title"
@@ -496,50 +659,51 @@ class FamilyRun:
         return None
 
     def _accept(self, work: dict, res: oar.Resolution, topic: str, *, origin_extra=(),
-                relation: str = "") -> bool:
-        entry = build_entry(work, res, topic=topic, source=SOURCE, family=FAMILY_VERSION,
-                            today=self.today, origin_extra=list(origin_extra), relation=relation)
+                relation: str = "") -> dict | None:
+        entry = build_entry(work, res, topic=topic, source=self.family.source,
+                            family=self.family.version, today=self.today,
+                            origin_extra=list(origin_extra), relation=relation)
         url, title = entry["url"].rstrip("/"), registry.norm(entry["title"])
         if url in self.keys.urls or title in self.keys.titles or self.keys.identity_known(entry):
             self.stats.dup("selected_copy")
-            return False
+            return None
         self.keys.urls.add(url)
         self.keys.titles.add(title)
         self.keys.add_identity(entry)
         self.out.append(entry)
         self.stats.example("retain", f"{entry['id']} | {entry['license']} | {entry['url']} | "
                                      f"{entry['title']}")
-        return True
+        return entry
 
     # -- resolution ------------------------------------------------------------------------------
     def resolve(self, work: dict) -> tuple[oar.Resolution, dict | None, list[str], str]:
         """select_copy with bounded supplementary evidence. Returns (resolution, the work whose
-        copy was chosen, extra origin pids, relation note). Raises LookupBudget when a lookup
-        that could still change the outcome is unaffordable."""
+        copy was chosen, extra origin pids, relation note). Raises LookupBudget / UpstreamError
+        when a lookup that could still change the outcome is unaffordable or fails."""
         res = oar.select_copy(work, self.policy)
         if res.status != "unresolved":
             return res, work, [], ""
         doi = oar.normalize_doi(work.get("doi"))
         if not doi:
             return res, work, [], ""
-        # Lookups only where they can change the outcome: a preprint may have an explicitly
-        # related published version (Crossref relations); a PDF on an allowed host whose licence
-        # is merely UNKNOWN may gain evidence (Crossref licence for the DOI's own copy, Unpaywall
-        # for any copy). A work with no allowed PDF at all is not looked up: Unpaywall mirrored
-        # OpenAlex's (absent) PDF locations for every such DOI sampled on 2026-09-25.
+        # Crossref where it can change the outcome: a preprint may have an explicitly related
+        # published version; a PDF on an allowed host with a merely UNKNOWN licence may gain
+        # version-bound evidence for the DOI's own copy.
         preprint = work.get("type") == "preprint" or doi.startswith("10.2139/")
         fixable = any(r.startswith("rights_unknown:") for r in res.reasons)
-        crossref = unpaywall = None
+        crossref = None
         if preprint or fixable:
             crossref = self.api.lookup("crossref", doi)
             res = oar.select_copy(work, self.policy, crossref=crossref)
             if res.status == "resolved":
                 return res, work, [], "crossref licence evidence"
-        if fixable and not doi.startswith("10.2139/"):
-            unpaywall = self.api.lookup("unpaywall", doi)
-            res = oar.select_copy(work, self.policy, crossref=crossref, unpaywall=unpaywall)
-            if res.status == "resolved":
-                return res, work, [], "unpaywall fallback"
+        # Unpaywall: a bounded metadata fallback for every unresolved DOI — works with no OpenAlex
+        # PDF and SSRN (10.2139) DOIs included. It is a lookup at api.unpaywall.org only; its
+        # locations pass the same host, NO-GO and per-copy rights checks (an SSRN copy never).
+        unpaywall = self.api.lookup("unpaywall", doi)
+        res = oar.select_copy(work, self.policy, crossref=crossref, unpaywall=unpaywall)
+        if res.status == "resolved":
+            return res, work, [], "unpaywall fallback"
         if crossref:
             record = oar.work_record(work)
             fetched: dict[str, dict | None] = {}
@@ -567,60 +731,56 @@ class FamilyRun:
                 res.reasons.extend(f"related:{r}" for r in other_res.reasons)
         return res, work, [], ""
 
-    def _record_unresolved(self, work: dict, res: oar.Resolution, topic: str, *,
-                           pending: bool = False, family: str = "sim") -> None:
+    def _record_unresolved(self, work: dict, res: oar.Resolution, topic: str,
+                           walk: str) -> None:
         pids = work_pids(work)
         if not pids:
             return
         existing = self.ledger.rows.get(pids[0], {})
-        attempts = int(existing.get("attempts") or 0) + (0 if pending else 1)
-        pending = pending and self.ledger.pending() < PENDING_CAP
+        attempts = int(existing.get("attempts") or 0) + 1
         rec = oar.work_record(work)
         self.ledger.upsert(
             pids[0], ids=pids, title=rec["title"], authors=rec["authors"], year=rec["year"],
-            type=work.get("type"), topic=topic, family=family,
-            status="pending_lookup" if pending else "unresolved",
-            reasons=sorted(set(res.reasons))[:12], attempts=attempts,
-            last_tried=iso(self.now),
-            next_retry_at=iso(self.now) if pending else backoff_iso(self.now, attempts),
+            type=work.get("type"), topic=topic, family=walk, family_name=self.family.name,
+            status="unresolved", reasons=sorted(set(res.reasons))[:12], attempts=attempts,
+            last_tried=iso(self.now), next_retry_at=backoff_iso(self.now, attempts),
         )
 
-    def consider(self, work: dict, topic: str, family: str, sim_implied: bool = False) -> None:
-        """Gate, dedup and resolve one work from a page (never raises LookupBudget)."""
+    def consider(self, work: dict, topic: str, walk: str, implied: bool = False) -> None:
+        """Gate, dedup and resolve one work from a page. Raises StopPage when the work needs a
+        lookup that is unaffordable (cap) or failed: the page stays unfinished at this work."""
         st = self.stats
-        st.considered += 1
         title = (work.get("title") or work.get("display_name") or "").strip()
-        if not sim_relevant(work, self.openalex_relevant, sim_implied):
+        if not self.family.relevant(work, self.openalex_relevant, implied):
+            st.considered += 1
             st.relevance_rejected += 1
             st.example("relevance_drop", title)
             return
         if why := oar.work_excluded(work):
+            st.considered += 1
             st.excluded += 1
             st.example("excluded", f"{why} | {title}")
             return
         if kind := self._known(work):
+            st.considered += 1
             st.dup(kind)
             if kind == "identity_known_not_held":
                 st.known_not_held += 1
                 pids = work_pids(work)
                 if pids:  # replacing it is an explicit, provenance-preserving transaction
                     self.ledger.upsert(pids[0], ids=pids, title=title, status="known_not_held",
-                                       last_tried=iso(self.now),
+                                       family_name=self.family.name, last_tried=iso(self.now),
                                        reasons=["registered row without held eligible content; "
                                                 "replacement needs an explicit transaction"])
             return
         try:
             res, chosen, extra, note = self.resolve(work)
-        except (LookupBudget, UpstreamError) as exc:
-            # out of lookups, or a supplementary upstream failed: park the work for a later
-            # retry (the page position still moves on; nothing about it is lost)
-            if isinstance(exc, UpstreamError):
-                st.reasons["lookup_failed"] = st.reasons.get("lookup_failed", 0) + 1
-            res = oar.select_copy(work, self.policy)
-            st.pending_lookup += 1
-            self._tally(res)
-            self._record_unresolved(work, res, topic, pending=True, family=family)
-            return
+        except LookupBudget:
+            raise StopPage("lookup cap")
+        except UpstreamError as exc:
+            st.reasons["lookup_failed"] = st.reasons.get("lookup_failed", 0) + 1
+            raise StopPage(f"lookup failed: {exc}")
+        st.considered += 1
         self._tally(res)
         if res.status == "excluded":
             st.excluded += 1
@@ -631,8 +791,8 @@ class FamilyRun:
                 return
             if self._accept(chosen, res, topic, origin_extra=extra, relation=note):
                 st.resolved += 1
-                via = note.split(" ", 2)[:2] if note else ["openalex", "location"]
-                st.resolved_via[" ".join(via)] = st.resolved_via.get(" ".join(via), 0) + 1
+                via = " ".join(note.split(" ", 2)[:2]) if note else "openalex location"
+                st.resolved_via[via] = st.resolved_via.get(via, 0) + 1
             return
         st.unresolved += 1
         if any(r.startswith("rights_rejected") for r in res.reasons):
@@ -640,45 +800,50 @@ class FamilyRun:
             st.example("rights_drop", f"{'; '.join(sorted(set(res.reasons)))[:120]} | {title}")
         else:
             st.example("unresolved", f"{'; '.join(sorted(set(res.reasons)))[:120]} | {title}")
-        self._record_unresolved(work, res, topic, family=family)
+        self._record_unresolved(work, res, topic, walk)
 
     def _tally(self, res: oar.Resolution) -> None:
         for kind in res.reason_kinds():
             self.stats.reasons[kind] = self.stats.reasons.get(kind, 0) + 1
 
     # -- the page --------------------------------------------------------------------------------
-    def search_page(self, pos: Position, family: str) -> None:
+    def search_page(self, pos: Position, walk: str) -> None:
         """Consume the page at `pos` from pos.k; update pos in place (see module docstring).
-        Raises UpstreamError on a failed search (the caller keeps the committed cursor)."""
-        key, expr, topic = SIM_QUERIES[pos.q]
+        Raises UpstreamError on a failed or malformed search (the caller keeps the cursor)."""
+        key, expr, topic = self.family.queries[pos.q]
         filters = [f"title_and_abstract.search:{expr}", WINDOWS[pos.w], TYPES]
-        if family == "ssrn":
+        if walk == "ssrn":
             filters.append(f"primary_location.source.id:{SSRN_SOURCE_ID}")
         else:
             filters.append("open_access.is_oa:true")
         params = {"filter": ",".join(filters), "per-page": self.per, "page": pos.p,
                   "sort": "cited_by_count:desc"}
-        self.stats.searched = f"{family} q={pos.q}:{key} w={WINDOWS[pos.w]} p={pos.p} k={pos.k}"
-        data = self.api.search(params)
-        results = data.get("results") or []
-        count = int((data.get("meta") or {}).get("count") or 0)
+        self.stats.searched = f"{walk} q={pos.q}:{key} w={WINDOWS[pos.w]} p={pos.p} k={pos.k}"
+        results, count = self.api.search(params, self.per)
         self.stats.results = len(results)
+        self._prefetch(results[pos.k:])
         for index in range(pos.k, len(results)):
             if len(self.out) >= self.max_docs:
-                pos.k = index  # unfinished page: revisit it, skipping what was consumed
-                self.stats.stopped_at_max = True
+                pos.k = index  # unfinished page: revisit it, skipping what was finished
+                self.stats.stopped = "max"
                 return
-            work = results[index]
-            if isinstance(work, dict):
-                self.consider(work, topic, family, key in SIM_IMPLIED)
-        if (len(results) < self.per or pos.p * self.per >= min(count, MAX_PAGE_DEPTH)):
-            pos.advance_window()
+            try:
+                self.consider(results[index], topic, walk, key in self.family.implied)
+            except StopPage as stop:
+                pos.k = index
+                self.stats.stopped = str(stop)
+                return
+        if len(results) < self.per or pos.p * self.per >= min(count, MAX_PAGE_DEPTH):
+            pos.advance_window(len(self.family.queries))
         else:
             pos.p, pos.k = pos.p + 1, 0
 
     def retry_due(self) -> None:
-        """Re-resolve due works from the resolution record with the lookups that remain."""
-        for row in self.ledger.due(iso(self.now), limit=max(0, self.api.lookups_left)):
+        """Re-check due works from the resolution record with the lookups that remain. A work
+        found here is proposed but NOT marked resolved: that happens only once a later run sees
+        it registered (a rolled-back round simply proposes it again)."""
+        for row in self.ledger.due(iso(self.now), max(0, self.api.lookups_left),
+                                   self.family.name):
             if len(self.out) >= self.max_docs or self.api.lookups_left <= 0:
                 return
             wid = next((p.split(":", 1)[1] for p in row.get("ids", [])
@@ -689,9 +854,9 @@ class FamilyRun:
                 return  # the row stays due
             self.stats.retried += 1
             if not work:
-                row.update(status="unresolved", attempts=int(row.get("attempts") or 0) + 1,
-                           last_tried=iso(self.now),
-                           next_retry_at=backoff_iso(self.now, int(row.get("attempts") or 0) + 1))
+                attempts = int(row.get("attempts") or 0) + 1
+                row.update(status="unresolved", attempts=attempts, last_tried=iso(self.now),
+                           next_retry_at=backoff_iso(self.now, attempts))
                 continue
             if kind := self._known(work):
                 row.update(status="known_not_held" if kind == "identity_known_not_held"
@@ -706,33 +871,36 @@ class FamilyRun:
                 if self._accept(chosen, res, row.get("topic") or "building_energy",
                                 origin_extra=extra, relation=note or "resolution retry"):
                     self.stats.retry_resolved += 1
-                row.update(status="resolved", last_tried=iso(self.now))
+                # re-checked tomorrow: "resolved" only once the store holds it
+                row.update(status="proposed", last_tried=iso(self.now),
+                           next_retry_at=iso(self.now + 86400))
                 continue
             if res.status == "excluded":
                 row.update(status="excluded", reasons=res.reasons, last_tried=iso(self.now))
                 continue
             attempts = int(row.get("attempts") or 0) + 1
-            row.update(status="unresolved", attempts=attempts, reasons=sorted(set(res.reasons))[:12],
-                       last_tried=iso(self.now), next_retry_at=backoff_iso(self.now, attempts))
+            row.update(status="unresolved", attempts=attempts,
+                       reasons=sorted(set(res.reasons))[:12], last_tried=iso(self.now),
+                       next_retry_at=backoff_iso(self.now, attempts))
 
-    def run(self, cursor: Cursor) -> Cursor:
-        """One scheduled step. Returns the next cursor; raises UpstreamError (cursor kept)."""
-        nxt = Cursor(cursor.t, Position(**asdict(cursor.sim)), Position(**asdict(cursor.ssrn)))
-        slot = turn(cursor.t)
+    def run(self, cursor: Cursor, slot: str) -> Cursor:
+        """One scheduled step for `slot`. Returns the next cursor; raises UpstreamError (the
+        committed cursor is kept)."""
+        nxt = cursor.copy()
         self.stats.tick, self.stats.slot = cursor.t, slot
-        if slot in ("sim", "ssrn"):
-            self.search_page(nxt.sim if slot == "sim" else nxt.ssrn, slot)
-        # legacy ticks spend no search here; every tick drains due retries with free lookups
+        if slot in self.family.walks:
+            self.search_page(nxt.walks[slot], slot)
+        # a slot owned by another walk spends no search here; retries use free lookups
         self.retry_due()
         nxt.t = cursor.t + 1
         return nxt
 
 
-def report(stats: Stats, api: Api, cursor_in: str, cursor_out: str | None,
+def report(stats: Stats, api: Api, family: Family, cursor_in: str, cursor_out: str | None,
            elapsed: float) -> None:
-    s = asdict(stats)
+    s = dict(stats.__dict__)
     examples = s.pop("examples")
-    print(f"# family {FAMILY_VERSION}: tick {stats.tick} slot={stats.slot} {stats.searched}")
+    print(f"# family {family.version}: tick {stats.tick} slot={stats.slot} {stats.searched}")
     print(f"# cursor {cursor_in} -> {cursor_out or '(held)'}")
     print(f"# requests: {api.searches} OpenAlex search, {api.lookups} supplementary lookups, "
           f"{api.seconds:.1f}s network, {elapsed:.1f}s total; {api.budget_note}")
@@ -744,33 +912,35 @@ def report(stats: Stats, api: Api, cursor_in: str, cursor_out: str | None,
 
 def main_family(args, *, policy: dict, keys, cooldowns: dict, save_cooldowns, get,
                 openalex_relevant, append_entries, request_hold, report_next,
-                now: float | None = None, sleep=time.sleep) -> int:
-    """find_sources.py --family simulation. Returns the process exit code."""
+                now: float | None = None, sleep=time.sleep, run_id: str | None = None) -> int:
+    """find_sources.py --family NAME. Returns the process exit code."""
     started = time.monotonic()
     now = time.time() if now is None else now
-    cursor = parse_cursor(args.family_cursor)
+    family = FAMILIES[getattr(args, "family", None) or "simulation"]
+    cursor = parse_cursor(args.family_cursor, family)
     ledger_path = Path(args.resolution_file) if args.resolution_file else (
         default_ledger_path() if args.append else None)
     ledger = Ledger(ledger_path)
     api = Api(get, lookup_max=args.lookup_max, cooldowns=cooldowns,
               save_cooldowns=save_cooldowns, now=lambda: now, sleep=sleep)
     run = FamilyRun(api=api, policy=policy, keys=keys, ledger=ledger, per=args.per,
-                    max_docs=args.max, openalex_relevant=openalex_relevant, now=now)
-    slot = turn(cursor.t)
-    if slot != "legacy" and cooldowns.get("openalex", 0) > now:
+                    max_docs=args.max, openalex_relevant=openalex_relevant, now=now,
+                    family=family)
+    slot = budget_slot(run_id, cursor.t)
+    if slot in family.walks and cooldowns.get("openalex", 0) > now:
         request_hold(f"OpenAlex cooldown active for {int(cooldowns['openalex'] - now)}s")
-        report(run.stats, api, cursor.render(), None, time.monotonic() - started)
+        report(run.stats, api, family, cursor.render(), None, time.monotonic() - started)
         return 0
     try:
-        nxt = run.run(cursor)
+        nxt = run.run(cursor, slot)
     except UpstreamError as exc:
-        # An upstream failure is never exhaustion: the committed cursor stays and nothing is
-        # proposed (a partial page must not advance past unread results).
+        # An upstream failure (or a malformed answer) is never exhaustion: the committed cursor
+        # stays and nothing is proposed.
         print(f"# ERROR: {exc}; cursor kept at {cursor.render()}", file=sys.stderr)
-        report(run.stats, api, cursor.render(), None, time.monotonic() - started)
+        report(run.stats, api, family, cursor.render(), None, time.monotonic() - started)
         return 1
     # ids are identity ids (dedup.identity_id), already checked against the store and this run
-    report(run.stats, api, cursor.render(), nxt.render(), time.monotonic() - started)
+    report(run.stats, api, family, cursor.render(), nxt.render(), time.monotonic() - started)
     print(f"# {len(run.out)} NEW candidates with accepted rights for the selected copy")
     import yaml
     print(yaml.safe_dump(run.out, sort_keys=False, allow_unicode=True))

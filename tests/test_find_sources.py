@@ -16,7 +16,7 @@ POLICY = {
 def stub_registry(monkeypatch):
     monkeypatch.setattr(find_sources.dedup, "open_keys", lambda: find_sources.dedup.from_sets(set(), set(), set()))
     monkeypatch.setattr(find_sources.registry, "uniquify_ids", lambda *_args: None)
-    monkeypatch.setattr(find_sources, "load_context", lambda partner=None: (POLICY, None, False))
+    monkeypatch.setattr(find_sources, "load_context", lambda partners=(): (POLICY, {}))
 
 
 @pytest.fixture

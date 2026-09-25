@@ -119,7 +119,7 @@ dedups by sha256; fairly interleaves hosts (`--workers`, conservative host-speci
 extraction in a separate process pool (`--extract-workers`), so parsing never holds a network slot.
 PDF downloads are magic-byte checked, and a bounded curl transport fallback handles HTTP/TLS compatibility failures
 (403/429/503). It does not solve or bypass login, paywall, or WAF/JS challenges. The discovery
-backends (`find_sources.py` OpenAlex — legacy queries + the building-simulation family, rights evidence per selected copy via `oa_resolution.py` · `find_github.py` curated repos + source code ·
+backends (`find_sources.py` OpenAlex — legacy queries + the building-simulation and building-AI families, rights evidence per selected copy via `oa_resolution.py` · `find_github.py` curated repos + source code ·
 `find_osti.py` deep OSTI · `find_books.py` OAPEN books, all languages · `find_archive.py` pre-1929
 public-domain texts (Internet Archive) · `find_openaire.py` EU project deliverables · `find_nist.py`
 NIST/NBS via Crossref · `find_zenodo.py` CC-licensed records · `find_patents.py` US patents via the

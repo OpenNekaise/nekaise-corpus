@@ -26,10 +26,12 @@ from __future__ import annotations
 import re
 import unicodedata
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from urllib.parse import urlparse
 
 import host_policy
 import licenses
+import state_codec
 
 # The repository's configured polite-pool contact (OpenAlex mailto, Crossref mailto, Unpaywall
 # email). It is the project address, never an operator's personal address.
@@ -81,8 +83,7 @@ RESOLVER_HOSTS = frozenset({"doi.org", "dx.doi.org", "hdl.handle.net", "n2t.net"
 VERSION_RANK = {"publishedVersion": 0, "acceptedVersion": 1, "submittedVersion": 2}
 # Crossref licence content-versions per OpenAlex/Unpaywall version. TDM licences are text-mining
 # terms for subscribers, never a reuse licence, and are ignored.
-CROSSREF_VERSION = {"publishedVersion": ("vor", "unspecified"),
-                    "acceptedVersion": ("am", "unspecified")}
+CROSSREF_VERSION = {"publishedVersion": ("vor",), "acceptedVersion": ("am",)}
 # Crossref relation types that state version identity outright; other relation types need
 # title + author evidence (same_work) before a related DOI is treated as the same work.
 EXPLICIT_RELATIONS = frozenset({
@@ -92,7 +93,7 @@ EXPLICIT_RELATIONS = frozenset({
 
 
 def host_of(url: str | None) -> str:
-    return (urlparse(url or "").hostname or "").lower().rstrip(".")
+    return host_policy.canonical_host(url)
 
 
 def host_matches(host: str, domains) -> str | None:
@@ -102,6 +103,41 @@ def host_matches(host: str, domains) -> str | None:
         if host == domain or host.endswith("." + domain):
             return domain
     return None
+
+
+# Two-label public suffixes under which the registrable domain has THREE labels (a deliberately
+# small list for the hosts this corpus meets; an unknown suffix only makes matching stricter).
+MULTI_LABEL_SUFFIXES = frozenset({
+    "ac.uk", "co.uk", "org.uk", "gov.uk", "ac.jp", "co.jp", "go.jp", "or.jp", "ne.jp",
+    "edu.au", "com.au", "gov.au", "org.au", "ac.kr", "co.kr", "re.kr", "edu.cn", "com.cn",
+    "ac.cn", "gov.cn", "org.cn", "ac.nz", "co.nz", "com.br", "edu.br", "gov.br", "ac.at",
+    "edu.tw", "ac.in", "edu.sg", "ac.za", "ac.il", "edu.hk", "edu.pl", "edu.tr",
+    "github.io", "gitlab.io", "readthedocs.io", "netlify.app", "pages.dev",
+})
+# Repository -> delivery-network pairs a copy may legitimately be redirected through (keyed by
+# the repository's registrable domain). Anything else that leaves the copy's registrable domain
+# is a different copy whose rights were never checked.
+COPY_CDN_DOMAINS = {
+    "europepmc.org": frozenset({"ebi.ac.uk"}),
+    "figshare.com": frozenset({"figstatic.com"}),
+}
+
+
+def registrable_domain(host: str) -> str:
+    labels = [part for part in (host or "").lower().rstrip(".").split(".") if part]
+    if len(labels) <= 2:
+        return ".".join(labels)
+    keep = 3 if ".".join(labels[-2:]) in MULTI_LABEL_SUFFIXES else 2
+    return ".".join(labels[-keep:])
+
+
+def same_copy_host(origin: str | None, url: str | None) -> bool:
+    """Whether a redirect from the registered copy URL `origin` to `url` stays on that copy's
+    host: the same registrable domain, or a configured repository -> CDN pair."""
+    a, b = registrable_domain(host_of(origin)), registrable_domain(host_of(url))
+    if not a or not b:
+        return False
+    return a == b or b in COPY_CDN_DOMAINS.get(a, frozenset())
 
 
 def copy_refusal(url: str | None, policy: dict) -> str | None:
@@ -132,25 +168,14 @@ def copy_refusal(url: str | None, policy: dict) -> str | None:
 
 # --- identifiers ----------------------------------------------------------------------------------
 
-_DOI = re.compile(r"^10\.\d{4,9}/\S+$")
-
-
 def normalize_doi(value: str | None) -> str | None:
     """Lower-case bare DOI ("10.x/y") from a DOI, doi: form or doi.org URL; None if not a DOI."""
-    if not isinstance(value, str):
-        return None
-    v = value.strip()
-    v = re.sub(r"^(?:https?://(?:dx\.)?doi\.org/|doi:\s*)", "", v, flags=re.I)
-    v = v.strip().lower()
-    return v if _DOI.match(v) else None
+    return state_codec.normalize_doi(value)
 
 
 def normalize_openalex(value: str | None) -> str | None:
     """"W123…" from an OpenAlex work URL or id; None otherwise."""
-    if not isinstance(value, str):
-        return None
-    m = re.fullmatch(r"(?:https?://openalex\.org/|openalex:)?(W\d+)", value.strip(), re.I)
-    return m.group(1).upper() if m else None
+    return state_codec.normalize_openalex(value)
 
 
 def doi_url(doi: str) -> str:
@@ -214,16 +239,13 @@ def structured_licence(provider: str, value: str | None) -> Evidence | None:
 
 
 def openalex_location_evidence(location: dict) -> list[Evidence]:
-    """Evidence from one OpenAlex location's `license` and `license_id` (both, when present, so
-    a disagreement between them is visible as a contradiction)."""
+    """Evidence from one OpenAlex location's `license` and `license_id`: BOTH statements are
+    kept, so a disagreement between them stays visible (and fails closed in combine())."""
     out = []
     for key in ("license", "license_id"):
         ev = structured_licence(f"openalex.{key}", location.get(key))
         if ev:
             out.append(ev)
-    # license and license_id restating the same thing are one statement
-    if len(out) == 2 and (out[0].status, out[0].tag) == (out[1].status, out[1].tag):
-        out = out[:1]
     return out
 
 
@@ -232,17 +254,53 @@ def unpaywall_location_evidence(location: dict) -> list[Evidence]:
     return [ev] if ev else []
 
 
-def crossref_evidence(message: dict, version: str | None) -> list[Evidence]:
-    """Crossref licence evidence for the DOI's own copy in `version` (TDM ignored)."""
+def _crossref_start(lic: dict):
+    """A Crossref licence's effective start (UTC datetime), or None when absent/unparsable."""
+    start = lic.get("start")
+    if not isinstance(start, dict):
+        return None
+    if isinstance(start.get("date-time"), str):
+        try:
+            return datetime.fromisoformat(start["date-time"].replace("Z", "+00:00"))
+        except ValueError:
+            return None
+    parts = (start.get("date-parts") or [[None]])[0]
+    if parts and isinstance(parts[0], int):
+        parts = list(parts) + [1] * (3 - len(parts))
+        try:
+            return datetime(parts[0], parts[1], parts[2], tzinfo=timezone.utc)
+        except ValueError:
+            return None
+    return None
+
+
+def crossref_evidence(message: dict, version: str | None,
+                      now: datetime | None = None) -> tuple[list[Evidence], list[Evidence]]:
+    """Crossref licence statements about the DOI's own copy in `version`, as (direct,
+    corroborating). Direct: the grant for exactly that content-version (vor = publishedVersion,
+    am = acceptedVersion). Corroborating: `unspecified` grants, which never grant on their own
+    (the caller adds them only next to other evidence, where a disagreement fails closed). A
+    grant that starts in the future (an embargo) is not a grant yet: it becomes an `unknown`
+    statement, which fails closed next to any accepted one. TDM licences are ignored."""
+    now = now or datetime.now(timezone.utc)
     wanted = CROSSREF_VERSION.get(version or "", ())
-    out = []
+    direct: list[Evidence] = []
+    corroborating: list[Evidence] = []
     for lic in message.get("license") or []:
-        if not isinstance(lic, dict) or lic.get("content-version") not in wanted:
+        if not isinstance(lic, dict):
             continue
-        ev = structured_licence(f"crossref.license[{lic.get('content-version')}]", lic.get("URL"))
+        kind = lic.get("content-version")
+        if kind not in wanted and kind != "unspecified":
+            continue
+        provider = f"crossref.license[{kind}]"
+        start = _crossref_start(lic)
+        if start is not None and start > now:
+            ev = Evidence(provider, f"{lic.get('URL')} (effective {start.date()})", "unknown")
+        else:
+            ev = structured_licence(provider, lic.get("URL"))
         if ev:
-            out.append(ev)
-    return out
+            (corroborating if kind == "unspecified" else direct).append(ev)
+    return direct, corroborating
 
 
 @dataclass(frozen=True)
@@ -304,17 +362,10 @@ def _norm_url(u: str | None) -> str:
 
 
 def work_locations(work: dict) -> list[dict]:
-    seen, out = set(), []
-    for loc in [work.get("best_oa_location"), work.get("primary_location"),
-                *(work.get("locations") or [])]:
-        if not isinstance(loc, dict):
-            continue
-        key = (loc.get("id"), loc.get("pdf_url"), loc.get("landing_page_url"))
-        if key in seen:
-            continue
-        seen.add(key)
-        out.append(loc)
-    return out
+    """EVERY location statement (best_oa_location, primary_location, locations), never deduped:
+    the same location listed twice with different licences is a contradiction to keep."""
+    return [loc for loc in [work.get("best_oa_location"), work.get("primary_location"),
+                            *(work.get("locations") or [])] if isinstance(loc, dict)]
 
 
 def work_excluded(work: dict) -> str | None:
@@ -331,8 +382,9 @@ def work_excluded(work: dict) -> str | None:
 
 
 def candidate_copies(work: dict, *, unpaywall: dict | None = None,
-                     crossref: dict | None = None) -> list[Copy]:
-    """Every distinct PDF copy the metadata names, with the licence statements about it."""
+                     crossref: dict | None = None, now: datetime | None = None) -> list[Copy]:
+    """Every distinct PDF copy the metadata names, with EVERY licence statement about it (only
+    identical statements — same provider, value, verdict, tag and licence URL — collapse)."""
     doi = normalize_doi(work.get("doi"))
     copies: dict[str, Copy] = {}
 
@@ -348,7 +400,9 @@ def candidate_copies(work: dict, *, unpaywall: dict | None = None,
                 # two providers disagree on WHICH version this file is: its rights are unknowable
                 c.evidence.append(Evidence(source, f"version {version} vs {c.version}",
                                            "unknown"))
-        c.evidence.extend(evidence)
+        for ev in evidence:
+            if ev not in c.evidence:
+                c.evidence.append(ev)
         c.sources.append(source)
         c.doi_copy = c.doi_copy or doi_copy
 
@@ -366,18 +420,21 @@ def candidate_copies(work: dict, *, unpaywall: dict | None = None,
     if crossref:
         for c in copies.values():
             if c.doi_copy:
-                c.evidence.extend(crossref_evidence(crossref, c.version))
+                direct, corroborating = crossref_evidence(crossref, c.version, now)
+                c.evidence.extend(direct)
+                if c.evidence:  # `unspecified` never grants alone
+                    c.evidence.extend(corroborating)
     return list(copies.values())
 
 
 def select_copy(work: dict, policy: dict, *, unpaywall: dict | None = None,
-                crossref: dict | None = None) -> Resolution:
+                crossref: dict | None = None, now: datetime | None = None) -> Resolution:
     """Choose the best fetchable copy WITH accepted rights for that very copy."""
     if why := work_excluded(work):
         return Resolution("excluded", [why])
     reasons: list[str] = []
     eligible: list[tuple[tuple, Copy, Rights]] = []
-    copies = candidate_copies(work, unpaywall=unpaywall, crossref=crossref)
+    copies = candidate_copies(work, unpaywall=unpaywall, crossref=crossref, now=now)
     if not copies:
         reasons.append("no_pdf_copy")
     for c in copies:

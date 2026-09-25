@@ -123,7 +123,7 @@ def test_publications_gc_archive_notice_is_followed_with_session_and_referer(mon
     got = build_corpus._fetch_publications_gc_ca(url)
 
     assert got.content.startswith(b"%PDF-")
-    assert session.calls[1][1]["headers"] == {"Referer": notice}
+    assert session.calls[1][1]["headers"]["Referer"] == notice
 
 
 def test_publications_gc_direct_pdf_needs_no_second_request(monkeypatch):

@@ -291,11 +291,13 @@
       "--circuit-threshold",
       "1",
       "--budget-partner",
-      "find_openalex_sim"
+      "find_openalex_sim",
+      "--budget-partner",
+      "find_openalex_ai"
     ],
     "enabled": true,
     "required": false,
-    "reason": "budgeted 2026-08-26 for OpenAlex's anonymous 100-search/day allowance: continuous rounds now run every ~10-11 minutes, so a one-request circuit persists Retry-After on the first 429 and holds the cursor during the upstream cooldown; the cursor walks all 105 queries and then deeper pages without requiring credentials; 2026-09-25: shares that single search with find_openalex_sim (--budget-partner): it searches only on the partner's legacy ticks (2 of 10) and holds its cursor otherwise; unknown licences are no longer registered as open (scripts/oa_resolution.py)"
+    "reason": "budgeted 2026-08-26 for OpenAlex's anonymous 100-search/day allowance: continuous rounds now run every ~10-11 minutes, so a one-request circuit persists Retry-After on the first 429 and holds the cursor during the upstream cooldown; the cursor walks all 105 queries and then deeper pages without requiring credentials; 2026-09-25: shares that single search with find_openalex_sim and find_openalex_ai (--budget-partner): the round id's slot (openalex_families.budget_slot) gives legacy 2 of 10 rounds plus any slot whose family backend is disabled; otherwise it holds its cursor. Unknown licences are no longer registered as open (oa_resolution)"
   },
   "find_openalex_sim": {
     "script": "find_sources.py",
@@ -311,7 +313,23 @@
     ],
     "enabled": true,
     "required": false,
-    "reason": "NEW 2026-09-25 (Codex phase 1): building-energy-simulation OpenAlex query family (Modelica / Buildings-AixLib-IDEAS-IBPSA / EnergyPlus-Spawn-BOPTEST / calibration / HVAC MPC / digital twins / LLM-assisted modelling, multilingual), articles and preprints, its own versioned dynamic cursor; ONE OpenAlex search per round shared with find_openalex (7/10 simulation, 1/10 SSRN-origin, 2/10 legacy), at most 25 accepted docs and 25 free supplementary lookups (OpenAlex work, Crossref, Unpaywall) per run; a copy is registered only with accepted rights evidence for that copy; SSRN is never fetched; unresolved works wait in workspace/openalex-resolution.jsonl for retry; required=false while piloting"
+    "reason": "NEW 2026-09-25 (Codex phase 1): building-energy-simulation OpenAlex query family (Modelica / Buildings-AixLib-IDEAS-IBPSA / EnergyPlus-Spawn-BOPTEST / calibration / HVAC MPC / digital twins / LLM-assisted modelling, multilingual), articles and preprints, its own versioned dynamic cursor; ONE OpenAlex search per round shared with find_openalex and find_openalex_ai via the round-id slot (6/10 simulation, 1/10 SSRN-origin, 1/10 building-ai, 2/10 legacy); at most 25 accepted docs and 25 free supplementary lookups (OpenAlex work, Crossref, Unpaywall) per run, a cap stops at the unfinished result; a copy is registered only with accepted rights evidence for that copy; SSRN is never fetched; workspace/openalex-resolution.jsonl is optional retry acceleration; required=false while piloting"
+  },
+  "find_openalex_ai": {
+    "script": "find_sources.py",
+    "args": [
+      "--family",
+      "building-ai",
+      "--per",
+      "100",
+      "--max",
+      "25",
+      "--lookup-max",
+      "25"
+    ],
+    "enabled": true,
+    "required": false,
+    "reason": "NEW 2026-09-25 (Codex phase 1 P3): LLM / generative-AI / agent work on building energy and operation WITHOUT a simulation anchor (kept out of the simulation family), own versioned cursor ai1, same rights/identity rules; owns 1 of 10 OpenAlex round slots; required=false while piloting"
   },
   "find_arxiv": {
     "script": "find_sources.py",

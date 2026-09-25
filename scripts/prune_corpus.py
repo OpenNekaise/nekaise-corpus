@@ -153,10 +153,13 @@ def deferred_ids(path: Path | None = None) -> set[str]:
 def protected_ids(manifest: list[dict], policy: dict[str, dict],
                   deferred: set[str]) -> set[str]:
     """Rows the pruner must not judge this run: suspended-host rows (a fetch suspension keeps
-    held documents as they are and never ages the rest) and rows the loader only deferred."""
+    held documents as they are and never ages the rest), rows whose last fetch was refused at a
+    redirect to a still-suspended host (build_corpus records `suspended_redirect`; their retry
+    history is kept, it just does not expire them), and rows the loader only deferred."""
     return {
         r["id"] for r in manifest
         if r["id"] in deferred or host_policy.suspended(r.get("url"), policy)
+        or host_policy.suspended_redirect(r, policy)
     }
 
 

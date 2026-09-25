@@ -42,7 +42,9 @@ def _paths(reg_dir: Path, man_dir: Path, blocklist_path: Path) -> list[Path]:
 
 # Bump when the index's contents change meaning (e.g. normalization), so every existing DB is
 # rebuilt instead of mixing old and new keys. 2: URLs normalize via blocklist.normalize (2026-09-24).
-INDEX_SCHEMA = 2
+# 3: kind "pid" — normalized persistent identifiers and aliases (state_codec.row_pids, 2026-09-25).
+INDEX_SCHEMA = 3
+KINDS = ("url", "title", "id", "pid")
 
 
 def source_signature(reg_dir: Path, man_dir: Path, blocklist_path: Path) -> str:
@@ -118,6 +120,7 @@ def rebuild(reg_dir: Path, man_dir: Path, blocklist_path: Path,
                     known_batch.append(("url", url))
                 if title:
                     known_batch.append(("title", title))
+                known_batch.extend(("pid", p) for p in state_codec.row_pids(entry))
 
             for path in sorted(reg_dir.glob("*.yaml")):
                 for entry in (yaml.load(path.read_text(), Loader=_YAML_LOADER) or {}).get("sources") or []:
@@ -200,7 +203,7 @@ def lookup(reg_dir: Path, man_dir: Path, blocklist_path: Path, kind: str, values
            db_path: Path | None = None) -> set[str]:
     """The subset of `values` already known as `kind` (url/title/id), via indexed IN queries.
     Membership only — never materializes the whole key set."""
-    if kind not in ("url", "title", "id"):
+    if kind not in KINDS:
         raise ValueError(f"unknown key kind {kind}")
     values = list(dict.fromkeys(v for v in values if v))
     db = ensure(reg_dir, man_dir, blocklist_path, db_path)
@@ -235,6 +238,7 @@ def record_appended_entries(reg_dir: Path, man_dir: Path, blocklist_path: Path,
                 (kind, value) for kind, value in (("id", sid), ("url", url), ("title", title))
                 if value
             )
+            batch.extend(("pid", p) for p in state_codec.row_pids(entry))
         with sqlite3.connect(db) as conn:
             conn.executemany("INSERT OR IGNORE INTO known VALUES (?,?)", batch)
             signature = source_signature(Path(reg_dir), Path(man_dir), Path(blocklist_path))

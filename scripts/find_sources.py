@@ -14,7 +14,9 @@ Backends:
                 propose nothing until a per-record rights source is wired in.
 
 Query families (scripts/openalex_families.py) are separately configured, independently
-versioned OpenAlex query lists with their own dynamic cursor — the building-simulation family:
+versioned OpenAlex query lists, each with its own backend and dynamic cursor, sharing ONE search
+per round with the legacy queries — `simulation` (find_openalex_sim) and `building-ai`
+(find_openalex_ai):
 
     python scripts/find_sources.py --family simulation --per 100 --max 25 --lookup-max 25 \
       --family-cursor "sim1 t=0 q=0 w=0 p=1 k=0 sq=0 sw=0 sp=1 sk=0"
@@ -237,19 +239,18 @@ def downloadable(url: str, policy: dict | None = None) -> bool:
     return oar.copy_refusal(url, _policy() if policy is None else policy) is None
 
 
-def load_context(partner: str | None = None) -> tuple[dict, str | None, bool]:
-    """(pinned host policy, budget partner's cursor, partner effectively enabled) from ONE store
-    read view (inside a round the finder inherits the round's read access)."""
+def load_context(partners=()) -> tuple[dict, dict[str, bool]]:
+    """(pinned host policy, {budget partner: effectively enabled}) from ONE store read view
+    (inside a round the finder inherits the round's read access)."""
     with dedup.read_view() as view:
         _, policy = store.pinned_policy(view)
-        if not partner:
-            return policy, None, False
-        try:
-            entry = view.rotation_get(partner)
-            enabled = view.backend_enabled(partner)
-        except (KeyError, store.StoreError):
-            return policy, None, False
-        return policy, str(entry.get("next")), enabled
+        enabled = {}
+        for name in partners or ():
+            try:
+                enabled[name] = view.backend_enabled(name)
+            except store.StoreError:
+                enabled[name] = False
+        return policy, enabled
 
 
 def entry(title, url, source, license, topic, **metadata):
@@ -434,7 +435,7 @@ def main() -> int:
     )
     ap.add_argument("--append", action="store_true",
                     help="append candidates into the registry shards (then load + prune)")
-    ap.add_argument("--family", choices=["simulation"],
+    ap.add_argument("--family", choices=sorted(openalex_families.FAMILIES),
                     help="run a versioned OpenAlex query family instead of the legacy queries")
     ap.add_argument("--family-cursor", help="the family's dynamic rotation cursor")
     ap.add_argument("--max", type=int, default=25,
@@ -444,9 +445,10 @@ def main() -> int:
     ap.add_argument("--resolution-file",
                     help="family: resolution record path (default workspace/"
                          "openalex-resolution.jsonl when --append)")
-    ap.add_argument("--budget-partner",
-                    help="legacy: backend sharing the one-search-per-round OpenAlex budget; the "
-                         "legacy family searches only on the partner's legacy ticks")
+    ap.add_argument("--budget-partner", action="append", default=[],
+                    help="legacy: a family backend sharing the one-search-per-round OpenAlex "
+                         "budget (repeatable); the legacy family searches only in its own round "
+                         "slots, or in a slot whose owning backend is disabled")
     args = ap.parse_args()
     if args.family:
         return main_family(args)
@@ -469,15 +471,16 @@ def main() -> int:
 
     global _POLICY
     try:
-        _POLICY, partner_cursor, partner_enabled = load_context(args.budget_partner)
+        _POLICY, partners_enabled = load_context(args.budget_partner)
     except Exception as exc:  # no pinned host policy: fail closed, the cursor stays
         print(f"# ERROR: cannot load the pinned host policy: {exc}", file=sys.stderr)
         return 1
     if args.budget_partner and args.query_cursor is not None:
-        mine, why = openalex_families.legacy_may_search(partner_cursor, partner_enabled)
+        mine, why = openalex_families.legacy_may_search(os.environ.get("NEKAISE_RUN_ID"),
+                                                        partners_enabled)
         if not mine:
             print(f"# OpenAlex budget: {why}; the legacy family yields this round")
-            request_rotation_hold(f"OpenAlex budget yielded to {args.budget_partner} ({why})")
+            request_rotation_hold(f"OpenAlex budget yielded ({why})")
             return 0
 
     keys = dedup.open_keys()
@@ -600,7 +603,7 @@ def main_family(args) -> int:
         print("# ERROR: --per must be 1..200, --max >= 1, --lookup-max >= 0", file=sys.stderr)
         return 2
     try:
-        _POLICY, _, _ = load_context()
+        _POLICY, _ = load_context()
     except Exception as exc:  # no pinned host policy: fail closed, the cursor stays
         print(f"# ERROR: cannot load the pinned host policy: {exc}", file=sys.stderr)
         return 1
@@ -609,7 +612,7 @@ def main_family(args) -> int:
         args, policy=_POLICY, keys=dedup.open_keys(), cooldowns=load_cooldowns(now),
         save_cooldowns=save_cooldowns, get=requests.get, openalex_relevant=openalex_relevant,
         append_entries=registry.append_entries, request_hold=request_rotation_hold,
-        report_next=report_next, now=now)
+        report_next=report_next, now=now, run_id=os.environ.get("NEKAISE_RUN_ID"))
 
 
 if __name__ == "__main__":

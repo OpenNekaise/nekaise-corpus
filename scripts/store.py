@@ -2025,6 +2025,32 @@ class ReadView:
             hit_u |= cand_u & self._blocklist_set()
         return KnownHits(frozenset(hit_u), frozenset(cand_t & known_t), frozenset(cand_i & known_i))
 
+    def known_pids(self, pids: Iterable[str]) -> frozenset:
+        """Which normalized persistent identifiers (codec.normalize_pid: "doi:10.x/y",
+        "openalex:W1") some registry or manifest row declares, as its persistent_id or among its
+        origin_ids aliases (codec.row_pids). At most MAX_KNOWN candidates. Uncommitted local
+        additions participate. Values that are not their own normal form are never known."""
+        self._check_open()
+        cand = {p for p in pids if p and codec.normalize_pid(p) == p}
+        if len(cand) > MAX_KNOWN:
+            raise StoreError(f"known_pids(): at most {MAX_KNOWN} per call")
+        if not cand:
+            return frozenset()
+        if not self._dirty_keys() and os.environ.get("NEKAISE_DISABLE_INDEX") != "1":
+            self._check_generation()
+            try:
+                import corpus_index
+                args = (self._store.reg, self._store.man, self._store.blocklist_path)
+                return frozenset(corpus_index.lookup(*args, "pid", cand))
+            except Exception:
+                pass  # the index is a cache, never a correctness dependency
+        hits: set = set()
+        for rows in (self._get("manifest").manifest, self._get("entries").entries):
+            for row in rows.values():
+                if row.get("persistent_id") or row.get("origin_ids"):
+                    hits.update(cand.intersection(codec.row_pids(row)))
+        return frozenset(hits)
+
     def _known_indexed(self, urls, titles, ids, include_blocklist) -> KnownHits | None:
         """Answer from the SQLite acceleration index when it can: it covers registry + manifest +
         blocklist together, so it serves include_blocklist=True reads with no uncommitted local

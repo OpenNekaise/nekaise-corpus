@@ -45,10 +45,37 @@ def validate(data: object) -> list[str]:
     return errors
 
 
+def canonical_host(value: str | None) -> str:
+    """THE hostname every policy decision uses (selection and transport alike): parsed from a
+    URL or a bare host, without userinfo and port, lower-case, trailing dots stripped
+    ("papers.ssrn.com." is papers.ssrn.com), IDNA-encoded (Unicode look-alikes fold to ASCII)."""
+    text = str(value or "").strip()
+    if not text:
+        return ""
+    try:
+        host = urlparse(text if "//" in text else "//" + text).hostname or ""
+    except ValueError:
+        return ""
+    host = host.rstrip(".")
+    try:
+        host = host.encode("idna").decode("ascii")
+    except UnicodeError:
+        pass
+    return host.lower().rstrip(".")
+
+
 def suspended(url: str | None, policy: dict[str, dict]) -> dict | None:
     """The suspension rule covering this URL's host (exact host or a subdomain of it)."""
-    host = (urlparse(url or "").hostname or "").lower()
+    host = canonical_host(url)
     for name, rule in policy.items():
         if rule.get("status") == "suspended" and (host == name or host.endswith(f".{name}")):
             return rule
     return None
+
+
+def suspended_redirect(row: dict | None, policy: dict[str, dict]) -> dict | None:
+    """The suspension rule covering the redirect destination a row's last fetch was refused at
+    (build_corpus records it as `suspended_redirect`), while that suspension stands."""
+    value = (row or {}).get("suspended_redirect")
+    url = value.get("url") if isinstance(value, dict) else None
+    return suspended(url, policy) if isinstance(url, str) and url else None
