@@ -7657,3 +7657,524 @@ sources:
     topic: building_energy
     format: pdf
     document_type: conference-paper
+  - id: ibp-10-jahre-simulationsgest-tzte-entwicklung-von-fenste
+    title: 10 Jahre simulationsgestützte Entwicklung von Fenstern mit Vakuumglas für
+      neue und Bestandsfensterkonstruktionen
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-transient-simulation-based-approach-for-in-situ-es
+    title: A transient simulation-based approach for in-situ estimation of U-values
+      using artificial neural networks
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-comparison-of-detailed-large-scale-thermal-energy-st
+    title: Comparison of detailed large-scale Thermal Energy Storage simulation models
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-development-and-validation-of-a-finite-element-pyrol
+    title: Development and Validation of a Finite Element Pyrolysis Model for Simulating
+      Fire Resistance Tests of Wood Building Elements
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_4.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-hygrothermal-performance-of-internal-insulation-syst
+    title: Hygrothermal performance of internal insulation systems with moisture-adaptive
+      vapour retarders
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_5.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-extending-an-ifc-based-framework-to-include-an-autom
+    title: Extending an IFC-based Framework to include an Automated CFD-Setup using
+      Pre-Computed Boundary Conditions
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_10.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-combined-web-based-and-bim-tool-plugin-toolchain-to-
+    title: Combined web-based and BIM tool plugin toolchain to support data exchange
+      during BIM2SIM workflows
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_6.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-konzepte-zur-bim-basierten-konfiguration-und-paramet
+    title: Konzepte zur BIM-basierten Konfiguration und Parametrisierung von Beleuchtungssteuerungen
+      abgeleitet aus Literatur- und Marktrecherchen
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_7.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-bimreason-validating-bim-model-correctness
+    title: BIMReason - Validating BIM Model Correctness
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_8.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-citydpc-a-python-library-for-handling-3d-city-model-
+    title: 'CityDPC: A Python Library for handling 3D City Model Datasets'
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_9.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-peexcel-a-fast-one-stop-shop-assessment-and-simulati
+    title: 'PEExcel: A fast one-stop-shop Assessment and Simulation framework for Positive
+      Energy Districts'
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_11.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-artificial-neural-networks-use-for-the-design-of-geo
+    title: Artificial neural networks use for the design of geothermal probe fields
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_12.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-begleitende-simulationsanalysen-zur-unterst-tzung-de
+    title: Begleitende Simulationsanalysen zur Unterstützung der energetischen Sanierung
+      des Hochschulcampus Berlin-Charlottenburg
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_13.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-citygml-data-preparation-for-thermal-building-simula
+    title: CityGML Data Preparation for Thermal Building Simulation at District Level
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_14.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-component-based-machine-learning-modeling-for-predic
+    title: Component-based machine learning modeling for predicting building energy
+      performance – An overview
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_15.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-effect-of-dew-point-temperature-and-sky-patch-discre
+    title: Effect of Dew Point Temperature and Sky Patch Discretization on Annual Daylight
+      Simulations
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_16.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-energetische-geb-ude-und-anlagensimulation-als-werkz
+    title: Energetische Gebäude- und Anlagensimulation als Werkzeug bei der Ausbildung
+      von Architekturstudierenden
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_17.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-enhancing-efficiency-and-feasibility-of-large-scale-
+    title: Enhancing Efficiency and Feasibility of Large-Scale Thermal Energy Storage
+      In District Heating
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_18.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-enhancing-grid-stability-and-economic-operation-thro
+    title: 'Enhancing Grid Stability and Economic Operation through Heuristic Control:
+      A Simulation Case Study'
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_19.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-explainable-ai-for-cooling-load-prediction-and-heat-
+    title: Explainable AI for cooling load prediction and heat flow estimation using
+      SHAP values
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_20.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-from-building-load-profile-to-district-load-profile-
+    title: From building load profile to district load profile - a comparison of up-scaling
+      methods
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_21.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-from-building-to-district-accelerating-urban-buildin
+    title: 'From Building to District: Accelerating Urban Building Energy Modeling with
+      an Open-Source Database for Germany'
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_22.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-greenpv-untersuchung-von-fassadengestaltungsm-glichk
+    title: 'GreenPV: Untersuchung von Fassadengestaltungsmöglichkeiten mit Photovoltaik
+      und Begrünung'
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_23.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-iea-hpt-annex-61-simulation-von-w-rmepumpen-in-pluse
+    title: IEA HPT Annex 61 – Simulation von Wärmepumpen in Plusenergiequartieren
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_24.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-integration-of-a-latent-heat-storage-in-the-refriger
+    title: Integration of a latent heat storage in the refrigeration cycle of an air
+      source heat pump for energy-efficient heating, cooling and DHW operations
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_25.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-integration-verschiedener-simulationsmethoden-zur-en
+    title: Integration verschiedener Simulationsmethoden zur energieeffizienten Sanierung
+      am Beispiel eines Innenhofes im Welterbe Speicherstadt Hamburg
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_26.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-investigation-of-optimal-hybrid-energy-systems-for-d
+    title: Investigation of optimal hybrid energy systems for detached single family
+      house districts under different boundary conditions
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_27.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-level-of-detail-in-dynamic-simulation-models-a-compa
+    title: Level of detail in dynamic simulation models – a comparison for multi-family
+      houses
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_28.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-modelling-approaches-for-decentral-domestic-hot-wate
+    title: Modelling Approaches for Decentral Domestic Hot Water Heat Exchangers in
+      Hydronic Simulations
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_29.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-modularity-in-water-water-heat-pumps-with-integrated
+    title: Modularity in water-water heat pumps with integrated latent heat storage
+      for energy-efficient residential applications
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_30.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-netzdienlicher-w-rmepumpenbetrieb-mittels-erweiterte
+    title: Netzdienlicher Wärmepumpenbetrieb mittels erweitertem Low-Tech MPC-Algorithmus
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_31.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-performative-evidence-of-smart-and-urban-trees-asses
+    title: Performative Evidence of Smart and Urban Trees - Assessing the thermal and
+      visual impact of large scale urban shading structures via simulation
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_32.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-reduced-complexity-building-and-heat-pump-model-to-f
+    title: Reduced complexity building and heat pump model to facilitate large scale
+      deployment evaluations
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_33.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-revolutionizing-heating-planning-a-data-driven-appro
+    title: 'Revolutionizing Heating Planning: A Data-Driven Approach for Accurate and
+      Scalable Energy Consumption Predictions'
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_34.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-simulation-realisierung-und-monitoring-einer-nachtr-
+    title: Simulation, Realisierung und Monitoring einer nachträglichen Bauteilaktivierung
+      als minimalinvasives Wärmeabgabesystem in der Sanierung
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_35.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-simulativer-vergleich-der-thermischen-bedarfsabsch-t
+    title: 'Simulativer Vergleich der thermischen Bedarfsabschätzung eines Einfamilienhauses:
+      Unterschiede zwischen der AixLib und EnergyPlus für ein High-Order-M'
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_36.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-trends-in-energy-performance-certificate-data-a-comp
+    title: 'Trends in energy performance certificate data: A comparative study of building
+      stock characteristics'
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_37.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-exploring-urban-typology-impacts-on-trade-offs-betwe
+    title: Exploring Urban Typology Impacts on Trade-Offs between Global Warming Potential,
+      Costs, and Outdoor Thermal Comfort
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_38.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-geb-udetypen-f-r-nicht-wohngeb-ude-zur-vereinfachten
+    title: Gebäudetypen für Nicht-Wohngebäude zur vereinfachten Durchführung von Lebenszyklusanalysen
+      auf Stadtquartiersebene
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_39.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-optimierung-von-d-mmst-rke-und-w-rmeversorgung-von-v
+    title: Optimierung von Dämmstärke und Wärmeversorgung von vier verschiedenen Gebäudetypen
+      unter Berücksichtigung der Dynamik und der prognostizierten Entwick
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_40.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-simulation-based-determination-of-system-size-and-en
+    title: Simulation-based determination of system size and energy savings for a life
+      cycle assessment of a facade-integrated adsorption system for solar coolin
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_41.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-supporting-the-mainstreamed-implementation-of-life-c
+    title: Supporting the mainstreamed implementation of life cycle assessment in the
+      established German building funding ecosystem
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_42.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-einfluss-der-wettervorhersageg-te-auf-ein-pv-unterst
+    title: Einfluss der Wettervorhersagegüte auf ein PV-unterstütztes MPC-geregeltes
+      Wärmepumpenheizsystem
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_43.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-enhancing-automated-fault-detection-in-building-syst
+    title: 'Enhancing automated fault detection in building systems: A percentile-based
+      scoring approach with dynamic tolerance range for residual evaluation'
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_44.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-monitoringkonzept-f-r-ein-demonstrationswohngeb-ude-
+    title: Monitoringkonzept für ein Demonstrationswohngebäude zur Entwicklung von netzreaktiven
+      Betriebsführungskonzepten mit Smart Home Technologien
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_45.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-neural-network-based-occupancy-detection-on-the-edge
+    title: Neural Network-based Occupancy Detection on the Edge
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_46.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-performance-evaluation-of-decentralized-split-unit-a
+    title: Performance Evaluation of Decentralized Split Unit Air-to-air Heat Pumps
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_47.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-vergleichende-betrachtung-von-verschiedenen-konfigur
+    title: Vergleichende Betrachtung von verschiedenen Konfigurationen hybrider Wärmepumpensysteme
+      im Mehrfamilienhaus-Bestand
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_48.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-bauakustische-simulation-einer-holzrahmenwand
+    title: Bauakustische Simulation einer Holzrahmenwand
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_49.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-explainable-ai-for-deriving-predictive-and-trustwort
+    title: Explainable AI for deriving predictive and trustworthy operational rules
+      for building energy control
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_50.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-modelling-ice-formation-and-de-icing-for-enhanced-pe
+    title: Modelling Ice Formation and De-icing for Enhanced Performance of Compact
+      Facade-integrated Air-to-Water Heat Pumps
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_51.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-parameterstudie-zur-optimierung-der-bel-ftung-in-kin
+    title: Parameterstudie zur Optimierung der Belüftung in Kinosälen anhand eines Automatisierungstools
+      und zonaler Strömungssimulationen
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_52.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-shared-memory-parallelization-strategies-and-speedup
+    title: Shared Memory Parallelization Strategies and Speedup Scaling of the Hygrothermal
+      Building Component Simulation Program HAM4D_VIE
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_53.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-impact-of-zoning-strategy-on-heating-load-heating-de
+    title: Impact of Zoning Strategy on Heating Load, Heating Demand, Comfort and Air
+      Quality for a Flat Equipped with Different Ventilation Systems
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_54.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-indoor-climate-and-heat-demand-of-surface-heated-roo
+    title: Indoor climate and heat demand of surface-heated rooms considering the radiatively
+      participating air
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_55.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-modeling-simulation-and-performance-analysis-of-radi
+    title: Modeling, simulation and performance analysis of radiant cooling panels operating
+      below the dew point
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_56.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-simulation-based-evaluation-of-thermal-comfort-in-bu
+    title: Simulation-based evaluation of thermal comfort in buildings, by mitigation
+      of heat stress through passive measures
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_57.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-beyond-building-physics-pilot-testing-of-a-novel-vir
+    title: BEYOND building physics - pilot testing of a novel virtual reality-learning
+      environment
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_58.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-thermostat-control-and-window-opening-impact-on-indo
+    title: 'Thermostat Control and Window Opening: Impact on Indoor Environmental Conditions
+      and Building Performance'
+    url: https://publications.ibpsa.org/proceedings/bausim/2024/papers/bausim2024_59.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper

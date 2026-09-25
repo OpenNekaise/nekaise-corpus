@@ -9243,22 +9243,6 @@ sources:
     license: public-domain
     topic: building_energy
     format: pdf
-  - id: ost-grid-interactive-efficient-buildings-tec-2
-    title: 'Grid-Interactive Efficient Buildings Technical Report Series: Windows and
-      Opaque Envelope'
-    url: https://www.osti.gov/servlets/purl/1577965
-    source: osti
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: ost-grid-interactive-efficient-buildings-technical
-    title: 'Grid-Interactive Efficient Buildings Technical Report Series: Overview of
-      Research Challenges and Gaps'
-    url: https://www.osti.gov/servlets/purl/1577966
-    source: osti
-    license: public-domain
-    topic: building_energy
-    format: pdf
   - id: ost-grid-interactive-electric-vehicle-and-building
     title: 'Grid-Interactive Electric Vehicle and Building Coordination Using Coupled
       Distributed Control: Preprint'
@@ -33583,14 +33567,6 @@ sources:
     title: 'Healthy Buildings Initiative: Pacific Northwest National Laboratory Pilot
       Study'
     url: https://www.osti.gov/servlets/purl/1646976
-    source: osti
-    license: public-domain
-    topic: building_energy
-    format: pdf
-  - id: ost-grid-interactive-efficient-buildings-technical-2
-    title: 'Grid-Interactive Efficient Buildings Technical Report Series: Whole-Building
-      Controls, Sensors, Modeling, and Analytics'
-    url: https://www.osti.gov/servlets/purl/1580329
     source: osti
     license: public-domain
     topic: building_energy

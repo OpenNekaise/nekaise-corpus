@@ -4425,3 +4425,69 @@ sources:
     persistent_id: NREL/FS-5500-78425
     license_evidence: US DOE national laboratory report (NLR, formerly NREL); same policy
       as OSTI full-text records
+  - id: nlr-grid-interactive-efficient-buildings-technical-repor
+    title: 'Grid-Interactive Efficient Buildings Technical Report Series: Whole-Building
+      Controls, Sensors, Modeling, and Analytics:U.S. Department of Energy (DOE'
+    url: https://docs.nlr.gov/docs/fy20osti/75478.pdf
+    source: nlr
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+    persistent_id: NREL/TP-5500-75478
+    license_evidence: US DOE national laboratory report (NLR, formerly NREL); same policy
+      as OSTI full-text records
+  - id: nlr-end-use-load-profiles-for-the-u-s-building-stock-mar
+    title: 'End-Use Load Profiles for the U.S. Building Stock: Market Needs, Use Cases,
+      and Data Gaps:U.S. Department of Energy (DOE), Energy Efficiency & Renewab'
+    url: https://docs.nlr.gov/docs/fy20osti/75215.pdf
+    source: nlr
+    license: public-domain
+    topic: building_energy
+    format: pdf
+    persistent_id: NREL/TP-5500-75215
+    license_evidence: US DOE national laboratory report (NLR, formerly NREL); same policy
+      as OSTI full-text records
+  - id: nlr-quantifying-the-opportunity-limits-of-automatic-resi
+    title: Quantifying the Opportunity Limits of Automatic Residential Electric Load
+      Shaping
+    url: https://docs.nlr.gov/docs/fy19osti/74293.pdf
+    source: nlr
+    license: public-domain
+    topic: building_energy
+    format: pdf
+    persistent_id: NREL/JA-5D00-74293
+    license_evidence: US DOE national laboratory report (NLR, formerly NREL); same policy
+      as OSTI full-text records
+  - id: nlr-grid-interactive-efficient-buildings-technical-2
+    title: 'Grid-Interactive Efficient Buildings Technical Report Series: Overview of
+      Research Challenges and Gaps:U.S. Department of Energy (DOE), Energy Efficie'
+    url: https://docs.nlr.gov/docs/fy20osti/75470.pdf
+    source: nlr
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+    persistent_id: NREL/TP-5500-75470
+    license_evidence: US DOE national laboratory report (NLR, formerly NREL); same policy
+      as OSTI full-text records
+  - id: nlr-grid-interactive-efficient-buildings-technical-3
+    title: 'Grid-Interactive Efficient Buildings Technical Report Series: Windows and
+      Opaque Envelope:U.S. Department of Energy (DOE), Energy Efficiency & Renewab'
+    url: https://docs.nlr.gov/docs/fy20osti/75387.pdf
+    source: nlr
+    license: public-domain
+    topic: controls_bas
+    format: pdf
+    persistent_id: NREL/TP-5500-75387
+    license_evidence: US DOE national laboratory report (NLR, formerly NREL); same policy
+      as OSTI full-text records
+  - id: nlr-representing-small-commercial-building-faults-in-ene
+    title: 'Representing Small Commercial Building Faults in EnergyPlus, Part I: Model
+      Development'
+    url: https://docs.nlr.gov/docs/fy20osti/75713.pdf
+    source: nlr
+    license: public-domain
+    topic: building_energy
+    format: pdf
+    persistent_id: NREL/JA-5500-75713
+    license_evidence: US DOE national laboratory report (NLR, formerly NREL); same policy
+      as OSTI full-text records
