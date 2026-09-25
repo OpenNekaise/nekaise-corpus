@@ -1105,3 +1105,77 @@ wired in steps 4 and 6).
   1280 passed / 1 skipped (the opt-in benchmark); `py_compile scripts/*.py` clean. Nothing ran
   against the live schema or checkout; the live shadow migrates 4 → 5 on its next
   `pg_shadow sync` after the merge (coordinator), as step 1 did.
+
+### Step 2, Codex review fixes (2026-09-25; verdict MERGE AFTER FIXES, five P2)
+
+v5 was not deployed anywhere but throwaway test schemas, so `V5_DDL` itself was revised (live
+is still v4; the rule "ship a new migration" applies once v5 is deployed).
+
+- **P2 1 — a partial fold is the pin floor.** After a fold batch commits a generation's first
+  rows (`generation = P, fold_generation = P+1`) the projection no longer serves P. Pins are now
+  validated against `COALESCE(fold_generation, generation)` (the retention trigger reads both
+  from the `projection_state` row it writes), and the projection guard checks active pins when a
+  fold STARTS (`fold_generation` set or changed), not only when `generation` advances; `fold()`
+  already refused to start below a pin client-side. Tests: a real multi-batch fold (limit 1):
+  pinning P is refused mid-fold while pinning P+1 works and the fold completes to it, then stops
+  at the pin until it is released; the database refuses to start a fold below an active pin; two
+  connections in both orders × READ COMMITTED / REPEATABLE READ / SERIALIZABLE (a pin taken
+  while a fold starts, a fold started while a pin is taken) — never both commit.
+- **P2 2 — revisions staged by v4 code get their derived columns.** Migration 5 now fills
+  url/title keys, sha256 and the legacy shard/topic of every entries/manifest put already in
+  `revisions` (`store_pg._backfill_revision_keys`, the same `revision_keys()` `stage_batch` uses),
+  after adding the columns and inside the migration's transaction, with the revision guard
+  disabled for that statement only (`ALTER TABLE … DISABLE/ENABLE TRIGGER`, which holds the
+  table exclusively); row text, digests, identities and provenance are untouched (tested
+  byte-for-byte). Test: a generation promoted by the real v4 code — membership (ids, URLs,
+  normalized titles), duplicate detection against projection rows and one-row legacy pages
+  (one-row scan windows) read identically before folding and after.
+- **P2 3 — promotion is constant in the number of batches.** Each run keeps a fixed-size
+  summary, `runs.staged_counts` (`{table: {op: n}}`), added to in the batches' AFTER trigger when
+  a batch seals (validated: an object of non-negative integer counts, or the seal fails; only
+  while the run is open; like every run counter, only the trigger may change it). Promotion
+  reads that summary and `staged_seq` (= applied batches) and nothing per batch (tested by
+  intercepting the promotion's statements). Benchmark below grows batches independently of
+  revisions.
+- **P2 4 — one ownership check on every owner-only entrypoint.** `store_pg.require_run_owner`
+  (locks the run row; `WriterError` unless the writer epoch opened the run) now guards
+  `stage_batch` (before exact retries are answered), `Contracts.request_batch`, `read_staged`
+  with a writer, `batch_receipt`, `abandon_batch`, `freeze`, `record_gate`, `promote` (exact
+  retries included) and re-opening a run. The cross-owner recovery operations are explicit and
+  named as such: `abort_run` and `purge_run`. A run's readers keep using its access token.
+  **This is not a security boundary**: it keeps one trusted host's writers consistent (one
+  writer at a time, fenced by the advisory lock and the writer epoch); any database client can
+  bypass it, and the contracts it relies on are structural (the triggers), not authorization.
+  Test: after the owner's session ended, a later epoch is refused by every one of these calls,
+  including exact retries and the contract-level request; the token still reads; abort and
+  purge work.
+- **P2 5 — replacement and sealing are bounded.** `replace_manifest` tombstones every visible
+  row it omits in ONE set-based `INSERT … SELECT` (before-image digests computed in the
+  database; the kept ids are an array joined with a hash anti-join), so Python holds only the
+  request's own rows; the net-no-op cleanup is one statement; the write view keeps operation
+  COUNTS, not per-row records. Replacement stays one batch — its semantics need no multi-batch
+  protocol once nothing about it is held in Python. The seal digest is built in two levels
+  (sha256 per 4 096 revisions in (tbl, key) order, then sha256 of the chunk digests), so no value
+  grows with the batch. Test: `replace_manifest` keeping one row over 60 000 rows stages 60 000
+  tombstones with a Python peak below 8 MB (tracemalloc; the old expansion held ~60 MB) and a
+  digest equal to an independent recomputation.
+- **Benchmark additions** (same 1.62M-document run):
+
+  | 1.62M documents | time |
+  |---|---|
+  | promotion after 1 / 1 000 / 50 000 batches (one revision each) | 3.6 / 2.5 / 2.7 ms |
+  | staging those tiny batches through the real triggers (server-side loop, committed per 1 000) | 0.6 / 1.8 / 80 s (≈1.6 ms per batch, linear) |
+  | promotion, small round / full re-clean | 5.3 ms / 3.5 ms |
+  | full re-clean staging, 82 batches of 20 000 (p50 / max) | 153 s (1.90 s / 2.16 s; was 194 s — counts instead of per-row records) |
+  | `replace_manifest` keeping one row over the whole manifest (1 620 300 tombstones, one batch) | 53.8 s, Python peak 0.1 MB |
+  | whole-manifest paged scan: dense overlay / folded | 17.5 s / 9.9 s |
+  | fold of the full re-clean | 116 s |
+  | small round: discovery 400 / checkpoint 25 (p50) / prune 100 / clean 400 | 0.082 / 0.014 / 0.098 / 0.063 s |
+
+  Found while measuring: running 50 000 batches inside ONE transaction was quadratic — the
+  triggers' cached generic plans were made while `batches` held a few rows (sequential scans) and
+  nothing invalidates them mid-transaction. Real staging commits every batch, and ANALYZE
+  (autovacuum) invalidates those plans; the benchmark commits and analyzes per 1 000 batches.
+- **Gates**: full suite 1150 passed / 113 skipped (PG skipped), with PostgreSQL (`nekaise_test`)
+  1292 passed / 1 skipped (the opt-in benchmark); `tests/test_store_pg_staging.py` now has 63
+  tests; `py_compile scripts/*.py` clean. Nothing ran against the live schema or checkout.

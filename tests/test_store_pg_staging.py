@@ -666,22 +666,46 @@ def test_a_failed_gate_blocks_promotion(pg):
             assert v.generation is None
 
 
-def test_only_the_owning_writer_stages_freezes_and_promotes(pg):
+def test_every_owner_only_operation_refuses_a_later_writer_epoch(pg):
+    """Codex review (step 2, P2 4): once the owner's session ended, a later writer epoch can do
+    nothing owner-only with the run — stage, request (contract level), read its staging as its
+    writer, read receipts, abandon, freeze, gate, promote, re-open — even exact retries; only
+    the explicit cross-owner recovery operations (abort_run, purge_run) work. The run's token
+    still authorizes its readers."""
     with pg.writer() as w:
-        open_run(pg, w)
+        run = open_run(pg, w)
         stage(pg, w, "b1", lambda tx: tx.upsert_manifest([mrow("a")]))
-        v0 = version_of(pg, w)
+        v1 = version_of(pg, w)
+        pg.stage_batch(w, "rnd1", "discover", "merge", recorded(lambda tx: tx.upsert_manifest(
+            [mrow("p")])), expected_version=v1, persist_only=True)
+    owner_only = "belongs to writer epoch"
     with pg.writer() as w2:                                        # a new writer epoch
-        with pytest.raises(store.WriterError, match="belongs to writer epoch"):
-            pg.stage_batch(w2, "rnd1", "fetch", "b2", [], expected_version=v0)
-        with pytest.raises(store.WriterError, match="belongs to writer epoch"):
-            pg.freeze(w2, "rnd1", required_gates=["t"])
-        with pytest.raises(StoreError, match="different identity|belongs"):
-            open_run(pg, w2)
-        pg.abort_run(w2, "rnd1", reason="owner gone")              # aborting is always allowed
+        calls = [
+            lambda: pg.stage_batch(w2, "rnd1", "fetch", "b2", [], expected_version=v1),
+            lambda: pg.stage_batch(w2, "rnd1", "fetch", "b1", recorded(   # an exact retry
+                lambda tx: tx.upsert_manifest([mrow("a")])), expected_version=v1),
+            lambda: pg.batch_receipt(w2, "rnd1", "fetch", "b1"),
+            lambda: store_staging.abandon_batch(pg, w2, "rnd1", "discover", "merge"),
+            lambda: pg.freeze(w2, "rnd1", required_gates=["t"]),
+            lambda: pg.record_gate(w2, store_staging.Frozen("rnd1", 1, "0" * 64), "t",
+                                   passed=True),
+            lambda: pg.promote(w2, store_staging.Frozen("rnd1", 1, "0" * 64)),
+            lambda: open_run(pg, w2),
+            lambda: pg.read_staged("rnd1", writer=w2).__enter__(),
+        ]
+        for call in calls:
+            with pytest.raises(store.WriterError, match=owner_only):
+                call()
+        with pg.contracts(w2) as c, pytest.raises(store.WriterError, match=owner_only):
+            c.request_batch("rnd1", "fetch", "b9", [{"call": "x"}])
+        with pg.read_staged("rnd1", token=run.token) as v:        # its readers still read
+            assert v.known(ids=["a"]).ids == {"a"}
+        assert q(pg, "SELECT count(*), max(status) FROM batches WHERE step = 'discover'")[0] \
+            == (1, "requested")                                   # nothing was abandoned
+        pg.abort_run(w2, "rnd1", reason="owner gone")              # the explicit cross-owner op
         pg.abort_run(w2, "rnd1", reason="again")                   # idempotent
         with pytest.raises(StaleView, match="aborted"):
-            with pg.read_staged("rnd1", writer=w2):
+            with pg.read_staged("rnd1", token=run.token):
                 pass
         while store_staging.purge_run(pg, w2, "rnd1", limit=1):
             pass
@@ -1401,5 +1425,251 @@ def test_v4_runs_in_every_state_migrate_consistently(tmp_path):
         with new.read() as v:
             assert v._visibility is None
             assert v.known(ids=["promoted-1", "promoted-2"]).ids == {"promoted-1", "promoted-2"}
+    finally:
+        store_pg.PgStore(root, dsn=DSN, schema=schema, create=False).drop()
+
+
+# --- Codex review of 8e40df11cc (P2 1): a partial fold is the pin floor --------------------------------
+
+def _three_generations(pg, rows_per=4):
+    with pg.writer() as w:
+        for g in range(3):
+            open_run(pg, w, f"r{g}")
+            stage(pg, w, "b", lambda tx, g=g: tx.upsert_manifest(
+                [mrow(f"g{g}-{i}") for i in range(rows_per)]), run_id=f"r{g}")
+            finish(pg, w, f"r{g}")
+        assert pg.fold(w).done                                     # the projection is 0
+
+
+def test_a_partial_fold_is_the_pin_floor(pg):
+    import psycopg
+    _three_generations(pg)
+    with pg.writer() as w:
+        progress = pg.fold(w, limit=1)                             # generation 1: one row in
+        assert (progress.generation, progress.done) == (1, False)
+        assert q(pg, "SELECT generation, fold_generation FROM projection_state")[0] == (0, 1)
+        with pytest.raises(StoreError, match="already folded"):
+            with pg.read_generation(0):
+                pass
+        with pytest.raises(psycopg.IntegrityError, match="can no longer be pinned"):
+            store_staging.pin_generation(pg, w, 0, holder="late", reason="too late")
+        store_staging.pin_generation(pg, w, 1, holder="h", reason="keep 1")   # at the floor: ok
+        with pg.read_generation(1) as v:
+            assert v.known(ids=["g1-3", "g2-0"]).ids == {"g1-3"}
+        while not (p := pg.fold(w, limit=1)).done:                 # the fold completes
+            assert not p.blocked
+        assert pg.fold(w, limit=1).blocked                         # 2 would pass the pin on 1
+        with pg.read_generation(1) as v:
+            assert v.known(ids=["g1-3", "g2-0"]).ids == {"g1-3"}
+        store_staging.unpin_generation(pg, w, 1, holder="h")
+        assert store_staging.fold_all(pg, w, limit=1) == 1
+    assert q(pg, "SELECT generation, fold_generation FROM projection_state")[0] == (2, None)
+
+
+def test_a_fold_does_not_start_below_an_active_pin(pg):
+    _three_generations(pg)
+    with pg.writer() as w:
+        store_staging.pin_generation(pg, w, 0, holder="h", reason="keep 0")
+        assert pg.fold(w, limit=1).blocked                         # the client refuses to start
+    expect_refused(pg, "UPDATE projection_state SET fold_generation = 1, fold_tbl = 'manifest', "
+                       "fold_key = 'g1-0'")                         # and so does the database
+    assert q(pg, "SELECT generation, fold_generation FROM projection_state")[0] == (0, None)
+
+
+START_FOLD = ("UPDATE projection_state SET fold_generation = 1, fold_tbl = 'manifest', "
+              "fold_key = 'g1-0'")
+PIN_0 = "INSERT INTO generation_retention (generation, holder, reason) VALUES (0, 'h', 'keep 0')"
+
+
+@pytest.mark.parametrize("level", LEVELS)
+def test_a_pin_taken_while_a_fold_starts_blocks_it(pg, level):
+    import psycopg
+    _three_generations(pg)
+    pinner, folder = _two(pg, level)
+    try:
+        folder.execute("SELECT 1 FROM projection_state")
+        pinner.execute(PIN_0)
+        exc = _blocked_then(lambda: (folder.execute(START_FOLD), folder.commit()), pinner.commit)
+        assert isinstance(exc, (psycopg.IntegrityError, psycopg.errors.SerializationFailure)), exc
+        folder.rollback()
+    finally:
+        pinner.close()
+        folder.close()
+    assert q(pg, "SELECT generation, fold_generation FROM projection_state")[0] == (0, None)
+
+
+@pytest.mark.parametrize("level", LEVELS)
+def test_a_pin_below_a_fold_started_meanwhile_is_refused(pg, level):
+    import psycopg
+    _three_generations(pg)
+    folder, pinner = _two(pg, level)
+    try:
+        pinner.execute("SELECT 1 FROM projection_state")
+        folder.execute(START_FOLD)
+        exc = _blocked_then(lambda: (pinner.execute(PIN_0), pinner.commit()), folder.commit)
+        assert isinstance(exc, (psycopg.IntegrityError, psycopg.errors.SerializationFailure)), exc
+        pinner.rollback()
+    finally:
+        pinner.close()
+        folder.close()
+    assert q(pg, "SELECT count(*) FROM generation_retention")[0][0] == 0
+    assert q(pg, "SELECT fold_generation FROM projection_state")[0][0] == 1
+
+
+# --- (P2 3): promotion reads a fixed-size run summary --------------------------------------------------
+
+def test_promotion_reads_the_run_summary_accumulated_at_each_seal(pg, monkeypatch):
+    with pg.writer() as w:
+        open_run(pg, w)
+        stage(pg, w, "b1", lambda tx: (tx.upsert_manifest([mrow("a"), mrow("b")]),
+                                       tx.blocklist_add(["https://e.org/x"])))
+        stage(pg, w, "b2", lambda tx: tx.delete_manifest(["a"], reason="junk"))
+        stage(pg, w, "b3", lambda tx: None)                          # an empty batch counts too
+        assert q(pg, "SELECT staged_counts::text, staged_seq FROM runs")[0] == (
+            '{"manifest": {"delete": 1, "upsert": 2}, "blocklist": {"insert": 1}}', 3)
+        frozen = pg.freeze(w, "rnd1", required_gates=["t"])
+        pg.record_gate(w, frozen, "t", passed=True)
+        seen = []
+        real = pg._writer_conn(w).execute
+
+        def spy(query, params=None, **kw):
+            seen.append(str(query))
+            return real(query, params, **kw)
+        monkeypatch.setattr(pg._writer_conn(w), "execute", spy)
+        assert pg.promote(w, frozen) == 0
+        monkeypatch.undo()
+        assert not [x for x in seen if "FROM batches" in x], seen   # no per-batch work
+    counts = json.loads(q(pg, "SELECT counts_text FROM generations")[0][0])
+    assert counts == {"batches": 3, "ops": {"blocklist": {"insert": 1},
+                                            "manifest": {"delete": 1, "upsert": 2}}}
+    expect_refused(pg, "UPDATE runs SET staged_counts = '{}'")
+
+
+def test_the_run_summary_is_maintained_only_by_sealing(pg):
+    import psycopg
+    with pg.writer() as w:
+        open_run(pg, w)
+        c = pg._writer_conn(w)
+        text = "[]"
+        digest = hashlib.sha256(text.encode()).hexdigest()
+        for bad in ('{"counts": {"manifest": {"upsert": -1}}}', '{"counts": []}', "not json",
+                    '{"counts": {"manifest": 3}}'):
+            with pytest.raises(psycopg.IntegrityError), c.transaction():
+                c.execute("INSERT INTO batches (run_id, step, batch, request_digest, "
+                          "request_text, basis_seq) VALUES ('rnd1', 's', 'b', %s, %s, 0)",
+                          [digest, text])
+                c.execute("UPDATE batches SET status = 'applied', seq = 1, applied_at = now()")
+                c.execute("UPDATE batches SET sealed = true, counts_text = %s", [bad])
+    expect_refused(pg, "UPDATE runs SET staged_counts = '{\"x\": {\"y\": 1}}'")
+    assert q(pg, "SELECT staged_counts::text FROM runs")[0][0] == "{}"
+
+
+# --- (P2 5): replacement expansion and the seal digest are bounded --------------------------------------
+
+def test_replacing_a_large_manifest_is_bounded_in_python(pg, monkeypatch):
+    """replace_manifest([]) over 60 000 rows: the tombstones are one statement in the database,
+    so Python's peak allocation stays small and independent of the manifest; the seal digest is
+    built in 4096-row chunks (checked against an independent computation)."""
+    import tracemalloc
+
+    import test_store_pg_staging_bench as bench
+    n = 60_000
+    bench.populate(pg, n)
+    with pg.writer() as w:
+        open_run(pg, w)
+        v0 = version_of(pg, w)
+        requests = recorded(lambda tx: tx.replace_manifest([mrow("kept")], reason="rebuild"))
+        tracemalloc.start()
+        got = pg.stage_batch(w, "rnd1", "clean", "replace", requests, expected_version=v0)
+        peak = tracemalloc.get_traced_memory()[1]
+        tracemalloc.stop()
+        assert got.results == [n + 1]                              # n deleted + 1 upserted
+        assert peak < 8 * 1024 * 1024, peak                        # ~60 MB if expanded in Python
+        count, digest = q(pg, "SELECT revision_count, revisions_digest FROM batches")[0]
+        assert count == n + 1
+        lines = [json.dumps([t, k, o, rs, bs, rn], separators=(", ", ": "))
+                 for t, k, o, rs, bs, rn in q(pg, "SELECT tbl, key, op, row_sha256, "
+                                                  "before_sha256, reason FROM revisions "
+                                                  "ORDER BY tbl COLLATE \"C\", key")]
+        chunks = [hashlib.sha256("\n".join(lines[i:i + 4096]).encode()).hexdigest()
+                  for i in range(0, len(lines), 4096)]
+        assert digest == hashlib.sha256("\n".join(chunks).encode()).hexdigest()
+        with pg.read_staged("rnd1", writer=w) as v:
+            assert [r["id"] for r in v.scan(Table.MANIFEST, limit=10).rows] == ["kept"]
+            assert v.get_manifest(["doc-00000000", "kept"]).keys() == {"kept"}
+        assert json.loads(q(pg, "SELECT counts_text FROM batches")[0][0])["counts"] == {
+            "manifest": {"delete": n, "upsert": 1}}
+
+
+# --- (P2 2): revisions staged by v4 code are fully readable after the migration -----------------
+
+def test_v4_revisions_get_their_derived_columns(tmp_path, monkeypatch):
+    """A generation promoted by step-1 (v4) code: after the migration its revisions carry their
+    url/title keys, sha256 and legacy order columns, so membership, duplicate detection and
+    small-page legacy scans read the same before folding as after (the projection then holds the
+    rows themselves); row text, digests and identities are unchanged."""
+    import store_pg
+    v4 = _v4_module()
+    root = tmp_path / "pg"
+    write_config(root)
+    schema = f"m_{uuid.uuid4().hex[:12]}"
+    old = v4.PgStore(root, dsn=DSN, schema=schema)
+    staged = [mrow("v4-a", sha256="dup", title="Shared title"),
+              mrow("v4-b", sha256="dup2", url="https://e.org/elsewhere/", topic="urban"),
+              mrow("v4-c", sha256="s-c", topic="structures_civil")]
+    try:
+        old.pin_config_from_files()
+        write(old, "seed", lambda tx: tx.upsert_manifest([mrow("base", sha256="dup"),
+                                                          mrow("base2", sha256="dup2")]))
+        with old.writer() as w, old.contracts(w) as c:
+            digest = c.put_config_set({"backends.json": b'{"find_books": {}}'})
+            c.open_run("v4run", kind="round", parent_generation=None, producer_commit=SHA,
+                       config_digest=digest, extractor_version="x", cleaning_ruleset="r")
+            c.request_batch("v4run", "fetch", "b1", [{"call": "x"}])
+            conn = c._conn
+            conn.execute("UPDATE batches SET status = 'applied', seq = 1, applied_at = now()")
+            conn.execute("UPDATE runs SET staged_seq = 1")
+            for r in staged:
+                text = store.canonical_row(r)
+                conn.execute("INSERT INTO revisions (run_id, batch_seq, tbl, key, op, row_text, "
+                             "row_sha256) VALUES ('v4run', 1, 'manifest', %s, 'put', %s, %s)",
+                             [r["id"], text, hashlib.sha256(text.encode()).hexdigest()])
+            conn.execute("UPDATE runs SET status = 'frozen', frozen_seq = 1, frozen_digest = %s",
+                         ["f" * 64])
+            conn.execute("INSERT INTO generations (generation, parent, run_id, producer_commit, "
+                         "config_digest, extractor_version, cleaning_ruleset, frozen_seq, "
+                         "frozen_digest, counts_text) SELECT 0, NULL, run_id, producer_commit, "
+                         "config_digest, extractor_version, cleaning_ruleset, 1, frozen_digest, "
+                         "'{}' FROM runs")
+            conn.execute("UPDATE runs SET status = 'promoted', promoted_generation = 0")
+            conn.execute("UPDATE dataset SET current_generation = 0")
+            conn.execute("INSERT INTO outbox (seq, generation, payload_text) VALUES (1, 0, '{}')")
+        before = q(old, "SELECT rev_id, run_id, batch_seq, tbl, key, op, row_text, row_sha256, "
+                        "before_sha256, reason FROM revisions ORDER BY rev_id")
+        new = store_pg.PgStore(root, dsn=DSN, schema=schema)       # migrates 4 -> 5
+        assert q(new, "SELECT rev_id, run_id, batch_seq, tbl, key, op, row_text, row_sha256, "
+                      "before_sha256, reason FROM revisions ORDER BY rev_id") == before
+        assert q(new, "SELECT count(*) FROM revisions WHERE url_key IS NULL OR title_key IS NULL "
+                      "OR sha256 IS NULL OR shard IS NULL OR topic_key IS NULL")[0][0] == 0
+        monkeypatch.setattr(store_staging, "SCAN_CHUNK", 1)
+
+        def reads():
+            with new.read() as v:
+                assert v._visibility is None or v.generation == 0
+                return {"known": v.known(urls=[r["url"] for r in staged],
+                                         titles=["shared title", "Title of v4-c"],
+                                         ids=["v4-a", "v4-b", "v4-c"]),
+                        "dups": [r["id"] for r in v.iter_duplicate_sha256(batch_size=1)],
+                        "legacy": [r["id"] for r in paged(v, Table.MANIFEST, order="legacy",
+                                                          limit=1)],
+                        "urban": paged(v, Table.MANIFEST, where=Eq("topic", "urban"), limit=1)}
+        unfolded = reads()
+        assert unfolded["known"].ids == {"v4-a", "v4-b", "v4-c"}
+        assert unfolded["known"].urls == {r["url"].rstrip("/") for r in staged}
+        assert unfolded["dups"] == ["base", "v4-a", "base2", "v4-b"]
+        assert len(unfolded["legacy"]) == 5
+        with new.writer() as w:
+            assert new.fold(w).done
+        assert reads() == unfolded
     finally:
         store_pg.PgStore(root, dsn=DSN, schema=schema, create=False).drop()

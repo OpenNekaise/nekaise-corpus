@@ -434,12 +434,13 @@ def _staged(fn):
     before mutating to the same end); its journal ops are dropped with it."""
     def wrapper(self, *args, **kwargs):
         self._check_open()
-        mark = len(self._ops)
+        saved = {t: dict(ops) for t, ops in self._counts.items()}
+        self._mutations += 1
         try:
             with self._conn.transaction():
                 return fn(self, *args, **kwargs)
         except BaseException:
-            del self._ops[mark:]
+            self._counts = saved   # a failed mutation leaves no count (its revisions are undone)
             raise
     wrapper.__name__ = fn.__name__
     wrapper.__doc__ = fn.__doc__
@@ -482,20 +483,21 @@ class StagedWriteView(store_pg.PgReadView):
         super().__init__(st, conn, stage_version(run_id, seq), config, visibility=visibility,
                          generation=generation, stage=(run_id, seq))
         self.run_id, self.seq = run_id, seq
-        self._ops: list[dict] = []
+        # operation counts per table and op (fixed size, whatever a batch touches); no per-row
+        # journal: the revisions are the record
+        self._counts: dict[str, dict[str, int]] = {}
+        self._mutations = 0
 
     def _cursor_scope(self) -> str:
-        return f"{self._id}:{len(self._ops)}"
+        return f"{self._id}:{self._mutations}"
 
-    def _record(self, table, op, sid, before=None, reason=None) -> None:
-        self._ops.append(store.journal_op(table, op, sid, before, reason))
+    def _record(self, table: str, op: str, n: int = 1) -> None:
+        if n:
+            per = self._counts.setdefault(table, {})
+            per[op] = per.get(op, 0) + n
 
     def counts(self) -> dict:
-        out: dict = {}
-        for op in self._ops:
-            per = out.setdefault(op["table"], {})
-            per[op["op"]] = per.get(op["op"], 0) + 1
-        return out
+        return {t: dict(ops) for t, ops in self._counts.items()}
 
     def _rows(self, table: str, ids: list[str]) -> dict[str, tuple[dict, str]]:
         """The visible rows `ids` (including this batch's): id -> (row, its stored canonical
@@ -517,12 +519,7 @@ class StagedWriteView(store_pg.PgReadView):
                 store_pg._check_text(text, f"{tbl} row")
             derived = (None,) * 7
             if row is not None and tbl in ("entries", "manifest"):
-                derived = (*store_pg._keys_for(row), None, None, None)
-                if tbl == "manifest":
-                    sha = row.get("sha256")
-                    shard, topic, _ = store.legacy_manifest_key(row)
-                    derived = (*derived[:4], sha if isinstance(sha, str) and sha else None,
-                               shard, topic)
+                derived = store_pg.revision_keys(tbl, row)
             params.append((self.run_id, self.seq, tbl, store_pg._check_text(key, f"{tbl} key"),
                            op, text, None if text is None else _sha(text),
                            None if before is None else _sha(before), reason, *derived))
@@ -553,7 +550,7 @@ class StagedWriteView(store_pg.PgReadView):
             old = before.get(r["id"])
             if old is None or old[1] != text:
                 items.append((r["id"], "put", r, text, None, None if old is None else old[1]))
-                self._record(tbl, op, r["id"])
+                self._record(tbl, op)
         self._stage(tbl, items)
         return len(items)
 
@@ -561,8 +558,7 @@ class StagedWriteView(store_pg.PgReadView):
                    before: Mapping[str, tuple[dict, str]]) -> int:
         present = [i for i in ids if i in before]
         self._stage(tbl, [(i, "tombstone", None, None, reason, before[i][1]) for i in present])
-        for i in present:
-            self._record(tbl, "delete", i, before=before[i][0], reason=reason)
+        self._record(tbl, "delete", len(present))
         return len(present)
 
     def uniquify_ids(self, entries: Sequence[Mapping]) -> list[dict]:
@@ -598,18 +594,28 @@ class StagedWriteView(store_pg.PgReadView):
     @_staged
     def replace_manifest(self, rows: Iterable[Mapping], *, reason: str) -> int:
         """write_manifest_rows semantics: `rows` becomes the whole manifest; every other visible
-        row is tombstoned with `reason`. Reads every visible id (whole-manifest, like the other
-        backends)."""
+        row is tombstoned with `reason`. The tombstones are ONE set-based statement in the
+        database (before-image digests computed there), so Python holds only the request's own
+        rows however large the manifest; the net-no-op cleanup and the seal digest are bounded
+        the same way."""
         if not reason:
             raise StoreError("replace_manifest requires a reason")
         rows = [dict(r) for r in rows]
         WriteView._unique_ids(rows, "replace_manifest")
         rows = [json.loads(canonical_row(r)) for r in rows]
-        keep = [r["id"] for r in rows]
-        gone = [i for (i,) in self._q(sql.SQL("SELECT id FROM {} WHERE NOT (id = ANY(%s)) "
-                                              "ORDER BY id").format(self._src("manifest")),
-                                      [keep]).fetchall()]
-        deleted = self._tombstone("manifest", gone, reason, self._rows("manifest", gone))
+        deleted = self._q(sql.SQL(
+            "INSERT INTO revisions (run_id, batch_seq, tbl, key, op, before_sha256, reason) "
+            "SELECT %s, %s, 'manifest', manifest.id, 'tombstone', "
+            "encode(sha256(convert_to(manifest.row_text, 'UTF8')), 'hex'), %s FROM {src} "
+            "WHERE NOT EXISTS (SELECT 1 FROM unnest(%s::text[]) k(id) WHERE k.id = manifest.id) "
+            "ON CONFLICT (run_id, tbl, key, batch_seq) DO UPDATE SET op = 'tombstone', "
+            "row_text = NULL, row_sha256 = NULL, reason = EXCLUDED.reason, url_norm = NULL, "
+            "url_key = NULL, title_norm = NULL, title_key = NULL, sha256 = NULL, shard = NULL, "
+            "topic_key = NULL").format(src=self._src("manifest")),
+            [self.run_id, self.seq, reason, [r["id"] for r in rows]]).rowcount
+        self._q("DELETE FROM revisions WHERE run_id = %s AND batch_seq = %s AND tbl = 'manifest' "
+                "AND op = 'tombstone' AND before_sha256 IS NULL", [self.run_id, self.seq])
+        self._record("manifest", "delete", deleted)
         return deleted + self._upsert("manifest", rows, "upsert")
 
     @_staged
@@ -625,7 +631,7 @@ class StagedWriteView(store_pg.PgReadView):
             text = canonical_row(after)
             if text != old:
                 items.append((sid, "put", after, text, None, old))
-                self._record("manifest", "update", sid)
+                self._record("manifest", "update")
         self._stage("manifest", items)
         return len(items)
 
@@ -647,8 +653,7 @@ class StagedWriteView(store_pg.PgReadView):
         self._stage("blocklist", [
             (store.key_digest(store_pg._check_text(u, "blocklist url")), "put", {"url": u},
              canonical_row({"url": u}), None, None) for u in new])
-        for u in new:
-            self._record("blocklist", "insert", u)
+        self._record("blocklist", "insert", len(new))
         return len(new)
 
     @_staged
@@ -670,8 +675,7 @@ class StagedWriteView(store_pg.PgReadView):
             items.append((f"{digest}:{n:0{LEDGER_N_DIGITS}d}", "put", None, text, None, None))
             next_n[digest] = n + 1
         self._stage("ledger", items)
-        for r in rows:
-            self._record("ledger", "insert", r["id"])
+        self._record("ledger", "insert", len(rows))
         return len(rows)
 
     def _small(self, table: str, column: str, name: str) -> str | None:
@@ -690,7 +694,7 @@ class StagedWriteView(store_pg.PgReadView):
         if before == text:
             return
         self._stage("rotation", [(name, "put", None, text, None, before)])
-        self._record("rotation", "upsert", name)
+        self._record("rotation", "upsert")
 
     @_staged
     def control_set(self, name: str, doc: Mapping | None) -> None:
@@ -708,11 +712,10 @@ class StagedWriteView(store_pg.PgReadView):
         if text is None:
             self._stage("control", [(name, "tombstone", None, None, "control_set: deleted",
                                      before)])
-            self._record("control", "delete", name, before=json.loads(before),
-                         reason="control_set: deleted")
+            self._record("control", "delete")
         else:
             self._stage("control", [(name, "put", None, text, None, before)])
-            self._record("control", "upsert", name)
+            self._record("control", "upsert")
 
     @_staged
     def backend_state_set(self, name: str, value: BackendState) -> None:
@@ -727,7 +730,7 @@ class StagedWriteView(store_pg.PgReadView):
             return
         self._stage("backend_state", [(name, "put", None, canonical_row(after), None,
                                        None if before is None else canonical_row(before))])
-        self._record("backend_state", "upsert", name)
+        self._record("backend_state", "upsert")
 
 
 # --- writer transactions -----------------------------------------------------------------------------
@@ -765,12 +768,10 @@ def _head(conn, *, lock: bool = False) -> int | None:
                         + (" FOR UPDATE" if lock else "")).fetchone()[0]
 
 
-def _require_owned(run: dict, writer: WriterToken, what: str) -> None:
-    """The run belongs to this writer: the writer epoch that opened it."""
-    if run["writer_epoch"] != writer.epoch:
-        raise WriterError(f"run {run['run_id']} belongs to writer epoch {run['writer_epoch']}; "
-                          f"this writer is epoch {writer.epoch} ({what} refused; resuming a run "
-                          "under a new owner is stage 4 step 4)")
+def _owned_run(conn, run_id: str, writer: WriterToken, what: str) -> dict:
+    """The run, locked, after the one ownership check (store_pg.require_run_owner)."""
+    store_pg.require_run_owner(conn, run_id, writer, what)
+    return _run(conn, run_id, lock=True)
 
 
 def _require_current(conn, run: dict) -> int | None:
@@ -837,10 +838,9 @@ def open_run(st, writer: WriterToken, run_id: str, *, kind: str = "round", produ
         status = c.open_run(run_id, kind=kind, parent_generation=head,
                             producer_commit=producer_commit, config_digest=config_digest,
                             extractor_version=extractor_version, cleaning_ruleset=cleaning_ruleset)
-        run = _run(conn, run_id, lock=True)
+        run = _owned_run(conn, run_id, writer, "re-opening")
         if status != "open":
             raise StoreError(f"run {run_id} is {status}")
-        _require_owned(run, writer, "re-opening")
         _require_current(conn, run)
         conn.execute("INSERT INTO run_access (run_id, token_sha256) VALUES (%s, %s)",
                      [run_id, _sha(token)])
@@ -854,7 +854,8 @@ def read_staged(st, run_id: str, *, seq: int | None = None, token: str | None = 
     (default: its staged sequence now). Authorized by the run's writer or an access token of the
     run; the run must be open or frozen and still staged on the current generation."""
     if writer is not None:
-        st._writer_conn(writer)
+        with _writer_txn(st, writer) as wconn:   # the owner check, fenced
+            store_pg.require_run_owner(wconn, run_id, writer, "reading its staging")
     elif token is None:
         raise store.AuthorityError(f"reading run {run_id}'s staging needs its writer or an "
                                    "access token")
@@ -937,7 +938,7 @@ def stage_batch(st, writer: WriterToken, run_id: str, step: str, batch: str,
     _check_names(step, batch)
     requests, text, digest = normalize_requests(requests)
     with _writer_txn(st, writer) as conn:
-        run = _run(conn, run_id, lock=True)
+        run = _owned_run(conn, run_id, writer, "staging")
         got = receipt(conn, run_id, step, batch)
         if got is not None:
             if got.request_digest != digest:
@@ -950,7 +951,6 @@ def stage_batch(st, writer: WriterToken, run_id: str, step: str, batch: str,
                 raise StoreError(f"batch {run_id}.{step}.{batch} is {got.status}")
         if run["status"] != "open":
             raise StaleView(f"run {run_id} is {run['status']}: it stages nothing more")
-        _require_owned(run, writer, "staging")
         head = _require_current(conn, run)
         if got is None:
             if expected_version != stage_version(run_id, run["staged_seq"]):
@@ -991,12 +991,15 @@ def stage_batch(st, writer: WriterToken, run_id: str, step: str, batch: str,
 
 def batch_receipt(st, writer: WriterToken, run_id: str, step: str, batch: str) -> Receipt | None:
     with _writer_txn(st, writer) as conn:
+        store_pg.require_run_owner(conn, run_id, writer, "reading a batch receipt")
         return receipt(conn, run_id, step, batch)
 
 
 def abandon_batch(st, writer: WriterToken, run_id: str, step: str, batch: str) -> None:
-    """Give up a persisted (requested) batch without applying it (e.g. before aborting)."""
+    """Give up a persisted (requested) batch without applying it (owner only; a new owner
+    aborts the run instead)."""
     with _writer_txn(st, writer) as conn:
+        store_pg.require_run_owner(conn, run_id, writer, "abandoning a batch")
         got = receipt(conn, run_id, step, batch)
         if got is None or got.status == "abandoned":
             return
@@ -1015,7 +1018,7 @@ def freeze(st, writer: WriterToken, run_id: str, *, required_gates: Iterable[str
         raise StoreError("freeze needs a non-empty list of plain gate names")
     text = store._canonical(gates)
     with _writer_txn(st, writer) as conn:
-        run = _run(conn, run_id, lock=True)
+        run = _owned_run(conn, run_id, writer, "freezing")
         if run["status"] == "frozen":
             if run["required_gates"] != text:
                 raise StoreError(f"run {run_id} is frozen with required gates "
@@ -1023,7 +1026,6 @@ def freeze(st, writer: WriterToken, run_id: str, *, required_gates: Iterable[str
             return Frozen(run_id, run["frozen_seq"], run["frozen_digest"])
         if run["status"] != "open":
             raise StaleView(f"run {run_id} is {run['status']}")
-        _require_owned(run, writer, "freezing")
         _require_current(conn, run)
         if run["batches_open"]:
             raise StoreError(f"run {run_id} has {run['batches_open']} requested batch(es) that "
@@ -1047,7 +1049,7 @@ def record_gate(st, writer: WriterToken, frozen: Frozen, gate: str, *, passed: b
     store.validate_json(dict(detail or {}), f"gate {gate} detail")
     text = store_pg._check_text(store._canonical(dict(detail or {})), f"gate {gate} detail")
     with _writer_txn(st, writer) as conn:
-        run = _run(conn, frozen.run_id, lock=True)
+        run = _owned_run(conn, frozen.run_id, writer, "recording a gate")
         row = conn.execute("SELECT frozen_seq, frozen_digest, verdict, detail_text FROM "
                            "gate_receipts WHERE run_id = %s AND gate = %s",
                            [frozen.run_id, gate]).fetchone()
@@ -1058,7 +1060,6 @@ def record_gate(st, writer: WriterToken, frozen: Frozen, gate: str, *, passed: b
             return
         if run["status"] != "frozen":
             raise StaleView(f"run {frozen.run_id} is {run['status']}, not frozen")
-        _require_owned(run, writer, "recording a gate")
         if (run["frozen_seq"], run["frozen_digest"]) != (frozen.seq, frozen.digest):
             raise StoreError(f"gate {gate} validated sequence {frozen.seq}/{frozen.digest[:12]}; "
                              f"run {frozen.run_id} froze at {run['frozen_seq']}/"
@@ -1075,14 +1076,13 @@ def promote(st, writer: WriterToken, frozen: Frozen) -> int:
     it again."""
     run_id = frozen.run_id
     with _writer_txn(st, writer) as conn:
-        run = _run(conn, run_id, lock=True)
+        run = _owned_run(conn, run_id, writer, "promotion")
         if run["status"] == "promoted":
             if (run["frozen_seq"], run["frozen_digest"]) != (frozen.seq, frozen.digest):
                 raise StoreError(f"run {run_id} was promoted at another frozen state")
             return run["promoted_generation"]
         if run["status"] != "frozen":
             raise StaleView(f"run {run_id} is {run['status']}, not frozen")
-        _require_owned(run, writer, "promotion")
         if (run["frozen_seq"], run["frozen_digest"]) != (frozen.seq, frozen.digest):
             raise StoreError(f"run {run_id} froze at {run['frozen_seq']}/"
                              f"{run['frozen_digest'][:12]}, not at the state the gates validated")
@@ -1093,15 +1093,9 @@ def promote(st, writer: WriterToken, frozen: Frozen) -> int:
         if not conn.execute("SELECT nk_gates_passed(%s)", [run_id]).fetchone()[0]:
             raise StoreError(f"run {run_id} has not passed every required gate "
                              f"{run['required_gates']} at its frozen sequence")
-        counts: dict = {}
-        batches = 0
-        for (text,) in conn.execute("SELECT counts_text FROM batches WHERE run_id = %s AND "
-                                    "status = 'applied' ORDER BY seq", [run_id]):
-            batches += 1
-            for table, per in (json.loads(text)["counts"] if text else {}).items():
-                acc = counts.setdefault(table, {})
-                for op, n in per.items():
-                    acc[op] = acc.get(op, 0) + n
+        # the run's summary, accumulated as each batch sealed (V5_DDL): constant work here
+        counts, batches = conn.execute("SELECT staged_counts, staged_seq FROM runs WHERE "
+                                       "run_id = %s", [run_id]).fetchone()
         generation = 0 if head is None else head + 1
         counts_text = store._canonical({"batches": batches, "ops": counts})
         conn.execute("INSERT INTO generations (generation, parent, run_id, producer_commit, "
@@ -1124,8 +1118,9 @@ def promote(st, writer: WriterToken, frozen: Frozen) -> int:
 
 
 def abort_run(st, writer: WriterToken, run_id: str, *, reason: str) -> None:
-    """Abort an unpromoted run (any writer may: aborting is the safe default). Its staging stays
-    invisible and may be purged. Idempotent."""
+    """CROSS-OWNER recovery operation: abort an unpromoted run, whichever writer epoch opened it
+    (aborting is the safe default for a run whose owner is gone). Its staging stays invisible and
+    may be purged. Idempotent."""
     if not reason:
         raise StoreError("aborting a run needs a reason")
     with _writer_txn(st, writer) as conn:
@@ -1139,8 +1134,8 @@ def abort_run(st, writer: WriterToken, run_id: str, *, reason: str) -> None:
 
 
 def purge_run(st, writer: WriterToken, run_id: str, *, limit: int = FOLD_BATCH) -> int:
-    """Delete up to `limit` revisions of an aborted run (then its receipts); returns how many
-    rows went. Call until it returns 0."""
+    """CROSS-OWNER cleanup: delete up to `limit` revisions of an aborted run (then its
+    receipts); returns how many rows went. Call until it returns 0."""
     with _writer_txn(st, writer) as conn:
         if _run(conn, run_id)["status"] != "aborted":
             raise StoreError(f"run {run_id} is not aborted")

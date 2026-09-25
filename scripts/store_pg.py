@@ -765,7 +765,8 @@ DO $d$ BEGIN
         ALTER TABLE {s}.runs
             ADD COLUMN batches_open int NOT NULL DEFAULT 0 CHECK (batches_open >= 0),
             ADD COLUMN gate_receipts int NOT NULL DEFAULT 0 CHECK (gate_receipts >= 0),
-            ADD COLUMN required_gates text;
+            ADD COLUMN required_gates text,
+            ADD COLUMN staged_counts jsonb NOT NULL DEFAULT '{{}}'::jsonb;
         UPDATE {s}.runs r SET batches_open = (SELECT count(*) FROM {s}.batches b
                                               WHERE b.run_id = r.run_id
                                               AND b.status = 'requested')
@@ -774,6 +775,15 @@ DO $d$ BEGIN
                 AND b.status = 'requested');
     END IF;
 END $d$;
+-- per-table/op operation counts: {{table: {{op: n}}}}; a + b, key by key (fixed size: tables x ops)
+CREATE OR REPLACE FUNCTION {s}.nk_counts_add(a jsonb, b jsonb) RETURNS jsonb
+    LANGUAGE sql IMMUTABLE AS $f$
+    SELECT COALESCE(jsonb_object_agg(t, ops), '{{}}'::jsonb) FROM (
+        SELECT t, jsonb_object_agg(op, n) AS ops FROM (
+            SELECT e.key AS t, o.key AS op, sum((o.value #>> '{{}}')::bigint) AS n
+            FROM (SELECT * FROM jsonb_each(a) UNION ALL SELECT * FROM jsonb_each(b)) e,
+                 jsonb_each(e.value) o GROUP BY 1, 2) x GROUP BY t) y
+$f$;
 ALTER TABLE {s}.batches
     ADD COLUMN IF NOT EXISTS basis_seq int CHECK (basis_seq >= 0),
     ADD COLUMN IF NOT EXISTS sealed boolean NOT NULL DEFAULT false,
@@ -886,14 +896,20 @@ BEGIN
     END IF;
     -- the staging sequence and the counters are maintained by the batch and gate receipt
     -- triggers only (depth 2: client statement -> their trigger -> this guard)
-    IF (NEW.staged_seq, NEW.batches_open, NEW.gate_receipts) IS DISTINCT FROM
-            (OLD.staged_seq, OLD.batches_open, OLD.gate_receipts) AND pg_trigger_depth() < 2 THEN
+    IF (NEW.staged_seq, NEW.batches_open, NEW.gate_receipts, NEW.staged_counts)
+            IS DISTINCT FROM (OLD.staged_seq, OLD.batches_open, OLD.gate_receipts,
+                              OLD.staged_counts) AND pg_trigger_depth() < 2 THEN
         RAISE EXCEPTION 'nekaise: run % staging counters are maintained by the batch and gate '
             'triggers', OLD.run_id USING ERRCODE = 'integrity_constraint_violation';
     END IF;
     IF NEW.staged_seq NOT IN (OLD.staged_seq, OLD.staged_seq + 1)
             OR (OLD.status <> 'open' AND NEW.staged_seq <> OLD.staged_seq) THEN
         RAISE EXCEPTION 'nekaise: run % staging sequence only grows by one while open', OLD.run_id
+            USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
+    IF NEW.staged_counts IS DISTINCT FROM OLD.staged_counts
+            AND (OLD.status <> 'open' OR NEW.status <> 'open') THEN
+        RAISE EXCEPTION 'nekaise: run % operation counts grow only while it stages', OLD.run_id
             USING ERRCODE = 'integrity_constraint_violation';
     END IF;
     IF NEW.gate_receipts <> OLD.gate_receipts
@@ -1025,12 +1041,20 @@ BEGIN
             RAISE EXCEPTION 'nekaise: sealing batch %.%.% changes only its seal', OLD.run_id,
                 OLD.step, OLD.batch USING ERRCODE = 'integrity_constraint_violation';
         END IF;
-        SELECT count(*), encode(sha256(convert_to(COALESCE(string_agg(
-                   json_build_array(v.tbl, v.key, v.op, v.row_sha256, v.before_sha256,
-                                    v.reason)::text, E'\n' ORDER BY v.tbl, v.key), ''),
-                   'UTF8')), 'hex')
-            INTO cnt, rdig FROM {s}.revisions v
-            WHERE v.run_id = OLD.run_id AND v.batch_seq = OLD.seq;
+        -- two levels, so no value grows with the batch: each chunk of 4096 revisions (in
+        -- (tbl, key) order) is hashed, then the list of chunk digests
+        SELECT COALESCE(sum(c.n), 0), encode(sha256(convert_to(COALESCE(string_agg(
+                   c.digest, E'\n' ORDER BY c.chunk), ''), 'UTF8')), 'hex')
+            INTO cnt, rdig FROM (
+                SELECT w.chunk, count(*) AS n, encode(sha256(convert_to(string_agg(w.line,
+                       E'\n' ORDER BY w.tbl, w.key), 'UTF8')), 'hex') AS digest
+                FROM (SELECT v.tbl, v.key, (row_number() OVER (ORDER BY v.tbl, v.key) - 1)
+                             / 4096 AS chunk,
+                             json_build_array(v.tbl, v.key, v.op, v.row_sha256, v.before_sha256,
+                                              v.reason)::text AS line
+                      FROM {s}.revisions v
+                      WHERE v.run_id = OLD.run_id AND v.batch_seq = OLD.seq) w
+                GROUP BY w.chunk) c;
         IF OLD.seq = 1 THEN
             prev := {s}.nk_chain_origin(OLD.run_id);
         ELSE
@@ -1054,6 +1078,7 @@ END $f$;
 
 -- The run row is the shared row every batch transition writes (see the header).
 CREATE OR REPLACE FUNCTION {s}.nk_batches_after() RETURNS trigger LANGUAGE plpgsql AS $f$
+DECLARE counts jsonb;
 BEGIN
     IF TG_OP = 'INSERT' THEN
         UPDATE {s}.runs SET batches_open = batches_open + 1
@@ -1073,6 +1098,26 @@ BEGIN
     ELSIF OLD.status = 'requested' AND NEW.status = 'abandoned' THEN
         UPDATE {s}.runs SET batches_open = batches_open - 1
             WHERE run_id = NEW.run_id AND status IN ('open', 'frozen');
+    ELSIF NOT OLD.sealed AND NEW.sealed AND NEW.counts_text IS NOT NULL THEN
+        -- the run's fixed-size summary grows with each sealed batch: promotion reads only it
+        BEGIN
+            counts := NEW.counts_text::jsonb -> 'counts';
+        EXCEPTION WHEN others THEN
+            counts := NULL;
+        END;
+        IF counts IS NULL OR jsonb_typeof(counts) <> 'object' OR EXISTS (
+                SELECT 1 FROM jsonb_each(counts) e WHERE jsonb_typeof(e.value) <> 'object'
+                OR EXISTS (SELECT 1 FROM jsonb_each(e.value) o
+                           WHERE NOT (o.value #>> '{{}}') ~ '^[0-9]{{1,15}}$')) THEN
+            RAISE EXCEPTION 'nekaise: batch %.%.% counts must map tables to operation counts',
+                NEW.run_id, NEW.step, NEW.batch USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
+        UPDATE {s}.runs SET staged_counts = {s}.nk_counts_add(staged_counts, counts)
+            WHERE run_id = NEW.run_id AND status = 'open';
+        IF NOT FOUND THEN
+            RAISE EXCEPTION 'nekaise: run % is not open: batch %.% cannot be counted', NEW.run_id,
+                NEW.step, NEW.batch USING ERRCODE = 'integrity_constraint_violation';
+        END IF;
     END IF;
     RETURN NULL;
 END $f$;
@@ -1252,17 +1297,30 @@ BEGIN
         RAISE EXCEPTION 'nekaise: only the next generation can be folding'
             USING ERRCODE = 'integrity_constraint_violation';
     END IF;
+    -- starting a fold already passes the generations below it (a partially folded projection
+    -- serves none of them), so it needs the same clearance as completing it
+    IF NEW.fold_generation IS NOT NULL
+            AND NEW.fold_generation IS DISTINCT FROM OLD.fold_generation
+            AND EXISTS (SELECT 1 FROM {s}.generation_retention p
+                        WHERE p.generation < NEW.fold_generation
+                        AND (p.until IS NULL OR p.until > now())) THEN
+        RAISE EXCEPTION 'nekaise: a retention pin holds the projection before generation %',
+            NEW.fold_generation USING ERRCODE = 'integrity_constraint_violation';
+    END IF;
     RETURN NEW;
 END $f$;
 CREATE OR REPLACE TRIGGER projection_state_guard BEFORE UPDATE OR DELETE ON {s}.projection_state
     FOR EACH ROW EXECUTE FUNCTION {s}.nk_projection_state_guard();
 CREATE OR REPLACE FUNCTION {s}.nk_retention_after() RETURNS trigger LANGUAGE plpgsql AS $f$
-DECLARE p bigint;
+DECLARE p bigint; f bigint;
 BEGIN
-    UPDATE {s}.projection_state SET pins = pins + 1 RETURNING generation INTO p;
-    IF NEW.generation < COALESCE(p, -1) THEN
-        RAISE EXCEPTION 'nekaise: generation % is already folded into the projection (at %); it '
-            'can no longer be pinned', NEW.generation, p
+    -- the floor is the generation being folded when a fold is in progress (it has passed the
+    -- projection generation below it), else the projection generation
+    UPDATE {s}.projection_state SET pins = pins + 1 RETURNING generation, fold_generation
+        INTO p, f;
+    IF NEW.generation < COALESCE(f, p, -1) THEN
+        RAISE EXCEPTION 'nekaise: generation % is already folded into the projection (at %, '
+            'folding %); it can no longer be pinned', NEW.generation, p, f
             USING ERRCODE = 'integrity_constraint_violation';
     END IF;
     RETURN NULL;
@@ -1291,6 +1349,50 @@ V5_TABLES = ("run_access", "gate_receipts", "projection_state")
 
 def _migrate_5(conn, schema):  # stage 4 step 2 staging: additive, see V5_DDL
     conn.execute(V5_DDL.format(s=schema))
+    _backfill_revision_keys(conn, schema)
+
+
+def _backfill_revision_keys(conn, schema) -> int:
+    """Fill the derived lookup/order columns V5_DDL added to revisions (url/title keys, sha256,
+    legacy shard/topic) for entries/manifest puts staged before them — without them the overlay
+    misses those rows in known(), duplicate detection and legacy order. Computed from the stored
+    row text exactly as stage_batch computes them; row text, digests, identity and every other
+    column stay as they are. The revision guard refuses updates, so it is disabled for this
+    statement only, inside the migration's transaction (ALTER TABLE holds an exclusive lock:
+    nothing else sees the table meanwhile). Returns the number of rows filled."""
+    s = sql.Identifier(schema)
+    conn.execute(sql.SQL("ALTER TABLE {}.revisions DISABLE TRIGGER revisions_guard").format(s))
+    filled = 0
+    with conn.cursor(name="backfill5") as cur, conn.cursor() as up:
+        cur.itersize = 20000
+        cur.execute(sql.SQL("SELECT rev_id, tbl, row_text FROM {}.revisions WHERE op = 'put' AND "
+                            "tbl IN ('entries', 'manifest')").format(s))
+        q = sql.SQL("UPDATE {}.revisions SET url_norm = %s, url_key = %s, title_norm = %s, "
+                    "title_key = %s, sha256 = %s, shard = %s, topic_key = %s WHERE rev_id = %s"
+                    ).format(s)
+        batch = []
+        for rev_id, tbl, text in cur:
+            batch.append((*revision_keys(tbl, json.loads(text)), rev_id))
+            if len(batch) >= 20000:
+                up.executemany(q, batch)
+                filled += len(batch)
+                batch.clear()
+        if batch:
+            up.executemany(q, batch)
+            filled += len(batch)
+    conn.execute(sql.SQL("ALTER TABLE {}.revisions ENABLE TRIGGER revisions_guard").format(s))
+    return filled
+
+
+def revision_keys(tbl: str, row: Mapping) -> tuple:
+    """The derived columns of an entries/manifest revision row: url_norm, url_key, title_norm,
+    title_key, sha256, shard, topic_key (the last three only for manifest rows)."""
+    keys = _keys_for(row)
+    if tbl != "manifest":
+        return (*keys, None, None, None)
+    sha = row.get("sha256")
+    shard, topic, _ = store.legacy_manifest_key(row)
+    return (*keys, sha if isinstance(sha, str) and sha else None, shard, topic)
 
 
 MIGRATIONS = {2: _migrate_2, 3: _migrate_3, 4: _migrate_4, 5: _migrate_5}
@@ -1810,6 +1912,25 @@ RUN_IDENTITY = ("kind", "parent_generation", "producer_commit", "config_digest",
                 "extractor_version", "cleaning_ruleset")
 
 
+def require_run_owner(conn: psycopg.Connection, run_id: str, writer: WriterToken,
+                      what: str) -> None:
+    """The ONE ownership check of every owner-only run operation (staging, requesting, applying
+    or abandoning batches, reading a run's staging as its writer, freezing, gates, promotion):
+    the run exists and `writer` is the writer epoch that opened it. Locks the run row. Cross-owner
+    operations are separate and named as such (store_staging.abort_run / purge_run). This is a
+    consistency guard for the trusted single-host model (ADR 0001: one writer at a time,
+    fenced by the advisory lock and epoch), not a security boundary: any database client can
+    bypass it."""
+    row = conn.execute("SELECT writer_epoch FROM runs WHERE run_id = %s FOR UPDATE",
+                       [run_id]).fetchone()
+    if row is None:
+        raise StoreError(f"unknown run {run_id}")
+    if row[0] != writer.epoch:
+        raise WriterError(f"run {run_id} belongs to writer epoch {row[0]}; this writer is epoch "
+                          f"{writer.epoch} ({what} refused; adopting a run under a new owner is "
+                          "stage 4 step 4 — abort_run is the explicit cross-owner operation)")
+
+
 class Contracts:
     """Stage-4 contract operations inside one fenced PgStore transaction (PgStore.contracts).
     Every rule the tables state is also enforced by triggers; these helpers add exact-retry
@@ -1883,6 +2004,7 @@ class Contracts:
         """Persist a batch's computed request (canonical JSON text) before it is applied. Same
         identity + same digest: the existing receipt (exact retry, whatever its status); a
         different digest: StoreError (conflicting retry)."""
+        require_run_owner(self._conn, run_id, self._writer, "requesting a batch")
         store.validate_json(list(requests), f"batch {run_id}.{step}.{batch}")
         text = _check_text(store._canonical(list(requests)), "batch request")
         digest = hashlib.sha256(text.encode()).hexdigest()

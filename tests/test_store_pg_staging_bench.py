@@ -209,6 +209,63 @@ def full_reclean(st, n: int, clock: Clock) -> dict:
     return {"revisions": revs, "rows_overlay_scan": rows_overlay, "rows_folded_scan": rows_folded}
 
 
+TINY_BATCHES = """
+DO $d$ DECLARE i int; BEGIN
+    FOR i IN {lo}..{hi} LOOP
+        INSERT INTO batches (run_id, step, batch, request_digest, request_text, basis_seq)
+            VALUES ('{run}', 'fetch', 'b' || i, encode(sha256('[]'::bytea), 'hex'), '[]', i - 1);
+        UPDATE batches SET status = 'applied', seq = i, applied_at = now()
+            WHERE run_id = '{run}' AND step = 'fetch' AND batch = 'b' || i;
+        INSERT INTO revisions (run_id, batch_seq, tbl, key, op, row_text, row_sha256)
+            VALUES ('{run}', i, 'rotation', 'k' || i, 'put', '{{}}',
+                    encode(sha256('{{}}'::bytea), 'hex'));
+        UPDATE batches SET sealed = true,
+            counts_text = '{{"counts":{{"rotation":{{"upsert":1}}}},"results":[1]}}'
+            WHERE run_id = '{run}' AND step = 'fetch' AND batch = 'b' || i;
+    END LOOP;
+END $d$"""
+
+
+def promotion_vs_batches(st, clock: Clock, sizes=(1, 1_000, 50_000)) -> dict:
+    """Promotion work must not grow with the number of batches (Codex review, P2 3): runs of
+    1 / 1k / 50k tiny sealed batches (one revision each, written through the real triggers by a
+    server-side loop, so the staging itself is cheap) are frozen and promoted."""
+    out = {}
+    with st.writer() as w:
+        for n in sizes:
+            run_id = f"many-{n}"
+            st.open_run(w, run_id, producer_commit=SHA, extractor_version="x1",
+                        cleaning_ruleset="rules-2")
+            conn = st._writer_conn(w)
+            t0 = time.monotonic()
+            for lo in range(1, n + 1, 1000):   # committed chunks, statistics refreshed between
+                with conn.transaction():        # them — like batches committed one by one
+                    conn.execute(TINY_BATCHES.format(lo=lo, hi=min(lo + 999, n), run=run_id))
+                conn.execute("ANALYZE batches, revisions")
+            out[f"stage_{n}_tiny_batches_s"] = round(time.monotonic() - t0, 2)
+            frozen = st.freeze(w, run_id, required_gates=["tests"])
+            st.record_gate(w, frozen, "tests", passed=True)
+            clock(f"batches.promote_after_{n}", st.promote, w, frozen)
+    return out
+
+
+def replace_all(st, n: int, clock: Clock) -> dict:
+    """replace_manifest with one kept row over the whole manifest: set-based tombstones (Codex
+    review, P2 5). Reports the Python peak allocation of the staging call."""
+    import tracemalloc
+    keep = _row(3)
+    with st.writer() as w:
+        st.open_run(w, "replace", producer_commit=SHA, extractor_version="x1",
+                    cleaning_ruleset="rules-2")
+        tracemalloc.start()
+        got = clock("replace.stage_replace_all", _stage, st, w, "replace", "clean", "replace",
+                    lambda tx: tx.replace_manifest([keep], reason="rebuild"))
+        peak = tracemalloc.get_traced_memory()[1]
+        tracemalloc.stop()
+        st.abort_run(w, "replace", reason="benchmark")
+    return {"replaced": got.results[0], "python_peak_mb": round(peak / 2**20, 1)}
+
+
 def run(dsn: str, n: int) -> dict:
     import store_pg
     if re.search(r"dbname=nekaise(\s|$)", dsn):
@@ -228,6 +285,8 @@ def run(dsn: str, n: int) -> dict:
         t0 = time.monotonic()
         report["full_reclean"] = full_reclean(st, n, clock)
         report["full_reclean_total_s"] = round(time.monotonic() - t0, 1)
+        report["promotion_vs_batches"] = promotion_vs_batches(st, clock)
+        report["replace_all"] = replace_all(st, n, clock)
         report["timings"] = clock.report()
         report["max_rss_mb"] = round(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024)
         return report
@@ -245,6 +304,7 @@ def test_staging_benchmark():
     t = {k: float(v.split("max=")[1].rstrip("s")) for k, v in report["timings"].items()}
     # promotion is constant-size: a full re-clean promotes about as fast as a small round
     assert t["reclean.promote"] < 5 * max(t["small.promote"], 0.05)
+    assert t["batches.promote_after_50000"] < 5 * max(t["batches.promote_after_1"], 0.05)
     assert report["full_reclean"]["rows_overlay_scan"] == report["full_reclean"]["rows_folded_scan"]
 
 
