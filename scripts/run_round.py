@@ -38,7 +38,7 @@ import tempfile
 import time
 import uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from contextlib import ExitStack
+from contextlib import ExitStack, contextmanager
 from pathlib import Path
 
 import ops
@@ -966,11 +966,12 @@ def _staged_round(args, st, writer, run_id: str, env: dict, lifecycle=None) -> i
     ident = staged_runs.identity(st, ROOT)
     with st.read(writer=writer) as view:
         before, _, _ = doc_stats(view)
-    with store_broker.staged_round(st, writer, run_id, kind="round",
-                                   producer_commit=ident.producer_commit,
-                                   extractor_version=ident.extractor_version,
-                                   cleaning_ruleset=ident.cleaning_ruleset,
-                                   config_documents=ident.config, lifecycle=lifecycle) as rnd:
+    with _recoverability_watch(st, run_id), \
+            store_broker.staged_round(st, writer, run_id, kind="round",
+                                      producer_commit=ident.producer_commit,
+                                      extractor_version=ident.extractor_version,
+                                      cleaning_ruleset=ident.cleaning_ruleset,
+                                      config_documents=ident.config, lifecycle=lifecycle) as rnd:
         env = {**env, **rnd.owner_env()}   # every child carries this attempt's tag
         ops.run_event(run_id, "staged_run_opened", parent=rnd.run.parent_generation,
                       producer_commit=ident.producer_commit,
@@ -1005,11 +1006,74 @@ def select_backends(args, opened) -> tuple[list[str], dict, dict]:
     return [n for n in selected if enabled[n] or n in args.backend], backends, rotation_state
 
 
+# A growth round re-checks recoverability this often while it works (a background watcher) —
+# besides before every mutating step and right before its promotion (ADR 0001 stage 4 step 5).
+RECOVERABILITY_RECHECK_SECONDS = 300
+
+
+def recheck_seconds() -> float:
+    """RECOVERABILITY_RECHECK_SECONDS, or NEKAISE_RECOVERABILITY_RECHECK_SECONDS when set — which
+    can only make the re-check MORE frequent (clamped to 1..RECOVERABILITY_RECHECK_SECONDS; an
+    unparsable value keeps the default), never switch it off."""
+    raw = os.environ.get("NEKAISE_RECOVERABILITY_RECHECK_SECONDS")
+    try:
+        value = float(raw) if raw else RECOVERABILITY_RECHECK_SECONDS
+    except ValueError:
+        value = RECOVERABILITY_RECHECK_SECONDS
+    return min(RECOVERABILITY_RECHECK_SECONDS, max(1.0, value))
+
+
+class GrowthBlocked(RuntimeError):
+    """Recoverability exceeded the RPO budget during a growth round: it is not promoted."""
+
+
+def _require_recoverable(st, run_id: str, when: str) -> None:
+    """Refuse to continue a GROWTH round while the metadata is not recoverable within the RPO
+    budget (ops_health.store_recoverability_block — the monitoring's own judgement). Recovery,
+    standalone repairs and maintenance runs never call this."""
+    import ops_health
+    if why := ops_health.store_recoverability_block(st):
+        ops.run_event(run_id, "growth_blocked", when=when, reason=why)
+        raise GrowthBlocked(f"growth blocked {when}: {why}")
+
+
+@contextmanager
+def _recoverability_watch(st, run_id: str):
+    """For the body: re-check recoverability every RECOVERABILITY_RECHECK_SECONDS in a thread;
+    when it is lost, record why and SIGTERM this process — the staged round unwinds exactly as on
+    a cron timeout (its processes stopped, its broker drained, the run aborted: never promoted).
+    The watcher is stopped (and joined) on the way out."""
+    import threading
+    stop = threading.Event()
+    tripped: list[str] = []
+
+    def watch():
+        import ops_health
+        while not stop.wait(interval):
+            why = ops_health.store_recoverability_block(st)
+            if why and not stop.is_set():
+                tripped.append(why)
+                ops.run_event(run_id, "growth_blocked", when="while the round worked",
+                              reason=why)
+                os.kill(os.getpid(), signal.SIGTERM)
+                return
+    interval = recheck_seconds()
+    thread = threading.Thread(target=watch, name=f"recoverability-{run_id}", daemon=True)
+    thread.start()
+    try:
+        yield tripped
+    finally:
+        stop.set()
+        thread.join()
+
+
 def _drive_staged(args, st, rnd, run_id: str, env: dict) -> int:
-    """The staged pipeline from fetch to promotion (a new or a resumed open run)."""
+    """The staged pipeline from fetch to promotion (a new or a resumed open run); growth stops
+    as soon as recoverability exceeds the RPO budget (before each step, before promotion)."""
     write_env = {**env, **rnd.broker.env()}
     for step, script, fixed_args in PIPELINE:
         if step in MUTATING_STEPS:
+            _require_recoverable(st, run_id, f"before {step}")
             run_command(step, [sys.executable, str(SCRIPTS / script), *fixed_args], write_env,
                         run_id)
     return _gate_and_promote(args, rnd, run_id, env)
@@ -1044,6 +1108,7 @@ def _gate_and_promote(args, rnd, run_id: str, env: dict, done: dict | None = Non
                           failed=len(verified["failed"]))
     if "artifacts" not in done and verified["failed"]:
         raise RuntimeError(f"artifact gate failed: {verified['failed'][:5]}")
+    _require_recoverable(rnd.st, run_id, "before promotion")
     generation = rnd.promote()
     ops.run_event(run_id, "run_promoted", generation=generation)
     return generation
@@ -1147,8 +1212,9 @@ def _resume_staged(args, st, writer, run_id: str, env: dict, lifecycle=None) -> 
                   verified=verified["verified"])
     with st.read(writer=writer) as view:
         before, _, _ = doc_stats(view)
-    with store_broker.staged_round(st, writer, run_id, resume=adopted,
-                                   lifecycle=lifecycle) as rnd:
+    with _recoverability_watch(st, run_id), \
+            store_broker.staged_round(st, writer, run_id, resume=adopted,
+                                      lifecycle=lifecycle) as rnd:
         env = {**env, **rnd.owner_env()}   # the new attempt's tag (its own nonce and mark)
         if adopted.status == "frozen":
             receipts = store_staging.gate_receipts(st, writer, run_id)

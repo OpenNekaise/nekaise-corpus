@@ -50,7 +50,7 @@ from store import (BackendState, ConfigSnapshot, Cursor, KnownHits, Page, Stage,
                    StoreError, Table, Version, VersionConflict, WriteView, WriterError,
                    WriterToken, canonical_row, key_digest, norm_title, norm_url)
 
-SCHEMA_VERSION = 7
+SCHEMA_VERSION = 8
 DEFAULT_DSN = "host=/home/zengp/.local/share/nekaise-pg/run dbname=nekaise"
 
 DDL = """
@@ -2115,8 +2115,90 @@ def _migrate_7(conn, schema):  # stage 4 step 4 recovery and review: additive, s
     conn.execute(V7_DDL.format(s=schema))
 
 
+# ADR 0001 stage 4 step 5: indexed persistent-identifier membership. Created with a fresh schema
+# or by migration 8 (never re-run on open; a later revision ships as migration 9, ...).
+#
+#   pids   a derived column of entries, manifest and revisions: every normalized persistent
+#          identifier the row declares (state_codec.row_pids: its persistent_id and origin_ids,
+#          "doi:10.x/y" / "openalex:W…"), NULL when it declares none — written by every writer of
+#          the other derived columns (put_rows: the store, the shadow replay, the fold; staging:
+#          StagedWriteView._stage), with partial GIN indexes. known_pids() answers `pids && ...`
+#          over each visibility source instead of scanning both tables' JSON.
+#   Migration 8 adds the columns (no rewrite: NULL is "declares none", which is exact for rows
+#   without persistent_id/origin_ids) and backfills every row that has either field, in the
+#   migration's transaction; revisions' guard is disabled for the backfill's own statements only.
+V8_DDL = r"""
+ALTER TABLE {s}.entries ADD COLUMN IF NOT EXISTS pids text[];
+ALTER TABLE {s}.manifest ADD COLUMN IF NOT EXISTS pids text[];
+ALTER TABLE {s}.revisions ADD COLUMN IF NOT EXISTS pids text[];
+CREATE INDEX IF NOT EXISTS entries_pids ON {s}.entries USING gin (pids) WHERE pids IS NOT NULL;
+CREATE INDEX IF NOT EXISTS manifest_pids ON {s}.manifest USING gin (pids) WHERE pids IS NOT NULL;
+CREATE INDEX IF NOT EXISTS revisions_pids ON {s}.revisions USING gin (pids)
+    WHERE pids IS NOT NULL;
+"""
+
+
+def pids_for(row: Mapping) -> list[str] | None:
+    """The `pids` derived column of an entries/manifest row: its normalized persistent
+    identifiers (state_codec.row_pids), None when it declares none."""
+    return store.codec.row_pids(row) or None
+
+
+def _backfill_pids(conn, schema) -> dict:
+    """Fill `pids` for every entries/manifest row and every entries/manifest put revision that
+    declares a persistent_id or origin_ids (computed from the stored row text exactly as the
+    writers compute it). Returns the rows filled per table."""
+    s = sql.Identifier(schema)
+    out = {}
+    for table in ("entries", "manifest"):
+        n = 0
+        with conn.cursor(name=f"backfill8_{table}") as cur, conn.cursor() as up:
+            cur.itersize = 20000
+            cur.execute(sql.SQL("SELECT id, row_text FROM {}.{} WHERE row ? 'persistent_id' OR "
+                                "row ? 'origin_ids'").format(s, sql.Identifier(table)))
+            q = sql.SQL("UPDATE {}.{} SET pids = %s WHERE id = %s").format(
+                s, sql.Identifier(table))
+            batch = []
+            for rid, text in cur:
+                batch.append((pids_for(json.loads(text)), rid))
+                if len(batch) >= 20000:
+                    up.executemany(q, batch)
+                    n += len(batch)
+                    batch.clear()
+            if batch:
+                up.executemany(q, batch)
+                n += len(batch)
+        out[table] = n
+    conn.execute(sql.SQL("ALTER TABLE {}.revisions DISABLE TRIGGER revisions_guard").format(s))
+    n = 0
+    with conn.cursor(name="backfill8_revisions") as cur, conn.cursor() as up:
+        cur.itersize = 20000
+        cur.execute(sql.SQL("SELECT rev_id, row_text FROM {}.revisions WHERE op = 'put' AND tbl "
+                            "IN ('entries', 'manifest') AND (row_text::jsonb ? 'persistent_id' "
+                            "OR row_text::jsonb ? 'origin_ids')").format(s))
+        q = sql.SQL("UPDATE {}.revisions SET pids = %s WHERE rev_id = %s").format(s)
+        batch = []
+        for rev_id, text in cur:
+            batch.append((pids_for(json.loads(text)), rev_id))
+            if len(batch) >= 20000:
+                up.executemany(q, batch)
+                n += len(batch)
+                batch.clear()
+        if batch:
+            up.executemany(q, batch)
+            n += len(batch)
+    conn.execute(sql.SQL("ALTER TABLE {}.revisions ENABLE TRIGGER revisions_guard").format(s))
+    out["revisions"] = n
+    return out
+
+
+def _migrate_8(conn, schema):  # stage 4 step 5 indexed pid membership: see V8_DDL
+    conn.execute(V8_DDL.format(s=schema))
+    _backfill_pids(conn, schema)
+
+
 MIGRATIONS = {2: _migrate_2, 3: _migrate_3, 4: _migrate_4, 5: _migrate_5, 6: _migrate_6,
-              7: _migrate_7}
+              7: _migrate_7, 8: _migrate_8}
 # Indexes on columns that migrations may have just added: created after migrating.
 POST_DDL = "CREATE INDEX IF NOT EXISTS manifest_legacy_order ON {s}.manifest (shard, topic_key, id);"
 # store.open()'s marker for a root without an authority record: the schema must not be
@@ -2134,6 +2216,7 @@ def put_rows(cur, table: str, rows: list[dict], texts: list[str] | None = None) 
     cols = ["id", "row_text", "url_norm", "url_key", "title_norm", "title_key"]
     if manifest:
         cols += ["sha256", "shard", "topic_key"]
+    cols.append("pids")
     q = sql.SQL("INSERT INTO {t} ({c}) VALUES ({v}) ON CONFLICT (id) DO UPDATE SET {u}").format(
         t=sql.Identifier(table), c=sql.SQL(", ").join(map(sql.Identifier, cols)),
         v=sql.SQL(", ").join(sql.Placeholder() for _ in cols),
@@ -2147,6 +2230,7 @@ def put_rows(cur, table: str, rows: list[dict], texts: list[str] | None = None) 
             sha = r.get("sha256")
             shard, topic, _ = store.legacy_manifest_key(r)
             rec += [sha if isinstance(sha, str) and sha else None, shard, topic]
+        rec.append(pids_for(r))
         params.append(rec)
     cur.executemany(q, params)
 
@@ -2242,6 +2326,7 @@ class PgStore:
                         conn.execute(V5_DDL.format(s=schema))
                         conn.execute(V6_DDL.format(s=schema))
                         conn.execute(V7_DDL.format(s=schema))
+                        conn.execute(V8_DDL.format(s=schema))
                 else:
                     conn.execute(DDL.format(s=schema, v=SCHEMA_VERSION))
                 got = conn.execute(sql.SQL("SELECT schema_version FROM {}.state").format(
@@ -2999,36 +3084,37 @@ class PgReadView:
                          frozenset(hit_i & cand_i))
 
     def known_pids(self, pids: Iterable[str]) -> frozenset:
-        """store.ReadView.known_pids over the rows' JSON. A pure lookup, no schema change: the
-        candidate rows are found with an UNINDEXED expression match (a sequential scan of both
-        tables per call; callers batch their pids) and verified exactly in Python with
-        codec.row_pids on the NATIVE JSON values (`->`, so an origin_ids list stays a list).
-        The SQL filter only ever WIDENS: case-folded substring matches on the JSON text of
-        persistent_id and origin_ids, so whitespace, doi.org/doi: prefixes, arrays and
-        strings all reach the exact check. Indexed PID membership is required before PostgreSQL
-        becomes authoritative (docs/decisions/0001-storage-architecture.md)."""
+        """store.ReadView.known_pids through the indexed `pids` derived column (schema v8), in
+        two keyed steps whatever the planner's statistics: (1) candidate ids — one GIN probe per
+        identifier (`LATERAL ... pids @> ARRAY[p] OFFSET 0`: a `pids && <400 values>` filter is
+        estimated to match most of the table and planned as a sequential scan at scale) into the
+        projection table and into the revisions of ANY run; (2) the VISIBLE rows of those ids,
+        read by primary key through the view's source — so the overlay (staged revisions,
+        promoted unfolded generations, tombstones) decides exactly as in known(). A superset of
+        candidates is harmless; every visible row that declares a candidate is among them."""
         self._check_open()
         cand = {p for p in pids if p and store.codec.normalize_pid(p) == p}
         if len(cand) > store.MAX_KNOWN:
             raise StoreError(f"known_pids(): at most {store.MAX_KNOWN} per call")
         if not cand:
             return frozenset()
-        # "%value%" over the lower-cased JSON text. LIKE wildcards in a DOI ("_", "%") only
-        # widen; JSON escapes a backslash (and a quote) as two characters, so each of them —
-        # and LIKE's own escape character — becomes "%".
-        likes = sorted({"%" + "".join("%" if ch in '\\"' else ch
-                                      for ch in p.split(":", 1)[1].lower()) + "%"
-                        for p in cand})
+        want = sorted(cand)
         hits: set = set()
         for table in ("entries", "manifest"):
-            rows = self._q(sql.SQL(
-                "SELECT row->'persistent_id', row->'origin_ids' FROM {} "
-                "WHERE lower((row->'persistent_id')::text) LIKE ANY(%s) "
-                "OR lower((row->'origin_ids')::text) LIKE ANY(%s)").format(self._src(table)),
-                [likes, likes]).fetchall()
-            for persistent_id, origin_ids in rows:
-                hits.update(cand.intersection(store.codec.row_pids(
-                    {"persistent_id": persistent_id, "origin_ids": origin_ids})))
+            ids = {i for (i,) in self._q(sql.SQL(
+                "SELECT e.id FROM unnest(%s::text[]) u(p) CROSS JOIN LATERAL (SELECT id FROM {} "
+                "WHERE pids @> ARRAY[u.p] OFFSET 0) e").format(sql.Identifier(table)),
+                [want]).fetchall()}
+            if self._visibility is not None:
+                ids |= {k for (k,) in self._q(
+                    "SELECT e.key FROM unnest(%s::text[]) u(p) CROSS JOIN LATERAL (SELECT key "
+                    "FROM revisions WHERE pids IS NOT NULL AND pids @> ARRAY[u.p] AND tbl = %s "
+                    "OFFSET 0) e", [want, table]).fetchall()}
+            if not ids:
+                continue
+            for (row_pids,) in self._q(sql.SQL("SELECT pids FROM {} WHERE id = ANY(%s)").format(
+                    self._src(table)), [sorted(ids)]).fetchall():
+                hits.update(cand.intersection(row_pids or ()))
         return frozenset(hits)
 
     def aggregate_manifest(self, *, group_by: tuple[str, ...], where=None,

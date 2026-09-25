@@ -40,7 +40,13 @@ if _CRASH:
 # (scripts/ops_health.py) would refuse every staged round; tests that are not ABOUT that block
 # waive it here, and tests/test_rehearsal.py checks the block itself with the waiver removed.
 if os.environ.get("NEKAISE_TEST_WAIVE_RECOVERABILITY") == "1":
+    # ...unless the test names a file whose EXISTENCE means "not recoverable now" (a block that
+    # appears while a round works)
+    _BLOCK_FILE = os.environ.get("NEKAISE_TEST_RECOVERABILITY_BLOCK_FILE")
+
     def _recoverable(*_args, **_kwargs):
+        if _BLOCK_FILE and os.path.exists(_BLOCK_FILE):
+            return "recoverability: test block (the archive went away)"
         return None
     _PATCHES.setdefault("ops_health", {})["recoverability_block"] = _recoverable
 

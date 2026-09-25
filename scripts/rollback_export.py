@@ -44,10 +44,12 @@ verify, then move the tree into the checkout and switch the host authority recor
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import secrets
 import shutil
+import stat
 import sys
 import tempfile
 from contextlib import ExitStack
@@ -261,59 +263,140 @@ def export(st, target: Path, generation: int | None = None, *, log=print) -> dic
     return meta
 
 
-def link_payloads(st, root: Path, generation: int | None = None, *, dry_run: bool = False,
-                  log=print) -> dict:
-    """The payload half of a rollback: the legacy pipeline reads raw/ and text/ at each row's
-    claimed path, but a staged run wrote its payloads only as immutable versions under
-    artifacts/. For every raw and text claim of generation G whose version is held here, the
-    claimed path becomes a hard link to it (a different file already there is first preserved as
-    a version, then replaced by an atomic rename); a claim no version holds must already be at
-    its legacy path (a pre-cutover file) and is left alone; a claim held nowhere is counted as
-    missing. corpus/ needs nothing: it is the materialization of G (materialize.refresh), whose
-    stamp must be complete at G, and corpus/.ruleset is set to G's ruleset — the policy that
-    produced it — so the legacy cleaner continues incrementally. Streams G's manifest a page at a
-    time; one syncfs makes the new names durable at the end."""
+def _file_sha256(path: Path) -> tuple[str, int]:
+    h, n = hashlib.sha256(), 0
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+            n += len(chunk)
+    return h.hexdigest(), n
+
+
+def _regular(path: Path) -> bool:
+    """A readable regular file (never a directory, symlink, device or socket)."""
+    try:
+        st = os.lstat(path)
+    except FileNotFoundError:
+        return False
+    return stat.S_ISREG(st.st_mode) and os.access(path, os.R_OK)
+
+
+def verify_payloads(st, root: Path, generation: int | None = None, *, log=print) -> dict:
+    """Check, without changing anything, that generation G's payloads are exactly available for a
+    FileStore rollback: every raw/text claim of G is either a held immutable version whose bytes
+    hash to the claim's identity (and, for raw, have the row's size) or a readable regular file
+    at the claimed legacy path with those bytes; corpus/ is a complete materialization of G (its
+    stamp) AND every member is a regular file at corpus/<id>.md whose bytes hash to the row's
+    corpus_sha256, with no other document file in corpus/. Streams G's manifest a page at a
+    time. Returns {"ok": bool, "failures": [...], counts}."""
     import artifact_store
     import materialize
     root = Path(root)
     local = artifact_store.LocalArtifacts(root)
-    out = {"linked": 0, "already": 0, "legacy": 0, "missing": 0, "preserved": 0,
-           "missing_sample": [], "dry_run": dry_run}
+    out = {"held": 0, "legacy": 0, "corpus_members": 0, "failures": [], "failure_count": 0}
+
+    def fail(text):
+        out["failure_count"] += 1
+        if len(out["failures"]) < 50:
+            out["failures"].append(text)
+
+    corpus_dir = root / "corpus"
     with open_generation(st, generation) as view:
         g = view.generation
         prov = view.provenance() or {}
-        stamp = materialize.read_stamp(root / "corpus") or {}
+        out["generation"], out["ruleset"] = g, prov.get("cleaning_ruleset")
+        restrictions, _ = store.pinned_policy(view)
+        stamp = materialize.read_stamp(corpus_dir) or {}
         if (stamp.get("state"), stamp.get("generation"), stamp.get("dataset")) != (
                 "complete", g, prov.get("dataset")):
-            raise ExportError(f"corpus/ is not a complete materialization of generation {g} "
-                              f"({stamp.get('state')} at {stamp.get('generation')}): refresh it "
-                              "first (materialize.refresh) — a rollback never starts from a "
-                              "partial corpus")
+            fail(f"corpus/ is not a complete materialization of generation {g} "
+                 f"({stamp.get('state')} at {stamp.get('generation')})")
+        members = materialize._Refresh(root, corpus_dir, view, restrictions)
         for row in _scan(view, Table.MANIFEST):
+            sid = row["id"]
             for stage in ("raw", "text"):
                 c = artifact_store.claim(row, stage)
                 if c is None:
                     continue
                 path, sha = c
-                if not isinstance(path, str) or not path or os.path.isabs(path) or \
-                        ".." in Path(path).parts:
-                    raise ExportError(f"{row['id']}: unsafe {stage} path {path!r}")
+                size = row.get("bytes") if stage == "raw" else None
+                if isinstance(size, bool) or not isinstance(size, int):
+                    size = None
+                if not (isinstance(path, str) and path and not os.path.isabs(path)
+                        and ".." not in Path(path).parts):
+                    fail(f"{sid}: unsafe {stage} path {path!r}")
+                    continue
+                if not (isinstance(sha, str) and artifact_store.is_identity(sha)):
+                    fail(f"{sid}: its {stage} claim has no identity to verify")
+                    continue
+                if local.has(stage, sha):
+                    if local.verify(stage, sha, size):
+                        out["held"] += 1
+                    else:
+                        fail(f"{sid}: its {stage} version {sha[:12]} is damaged")
+                    continue
                 target = root / path
-                held = isinstance(sha, str) and artifact_store.is_identity(sha) and \
-                    local.has(stage, sha)
+                if not _regular(target):
+                    fail(f"{sid}: its {stage} payload is held nowhere (no version, and "
+                         f"{path} is not a readable regular file)")
+                    continue
+                got, n = _file_sha256(target)
+                if got != sha or (size is not None and n != size):
+                    fail(f"{sid}: {path} does not hold its {stage} claim ({sha[:12]})")
+                    continue
+                out["legacy"] += 1
+            c = members.wanted(row)
+            if c is None:
+                continue
+            out["corpus_members"] += 1
+            dst = corpus_dir / f"{sid}.md"
+            if not _regular(dst):
+                fail(f"{sid}: corpus/{sid}.md is missing or not a regular file")
+            elif _file_sha256(dst)[0] != c[1]:
+                fail(f"{sid}: corpus/{sid}.md does not hold its cleaned claim")
+    present = sum(1 for p in corpus_dir.glob("*.md")) if corpus_dir.is_dir() else 0
+    if present != out["corpus_members"]:
+        fail(f"corpus/ holds {present} document files, generation {g} has "
+             f"{out['corpus_members']} members")
+    out["ok"] = not out["failure_count"]
+    log(f"payloads of generation {g}: {'verified' if out['ok'] else 'NOT verified'} "
+        f"({out['held']} held versions, {out['legacy']} legacy files, "
+        f"{out['corpus_members']} corpus members, {out['failure_count']} failure(s))")
+    return out
+
+
+def link_payloads(st, root: Path, generation: int | None = None, *, dry_run: bool = False,
+                  log=print) -> dict:
+    """The payload half of a rollback: the legacy pipeline reads raw/ and text/ at each row's
+    claimed path, but a staged run wrote its payloads only as immutable versions under
+    artifacts/. FIRST verify_payloads (every claim verified by hash and size, corpus/ verified
+    file by file against G): any failure raises ExportError before anything is changed — the
+    caller switches authority only after this returns. Then every raw/text claim whose verified
+    version is held becomes a hard link at its legacy path (a different file already there is
+    first preserved as a version, then replaced by an atomic rename), one syncfs makes the new
+    names durable, and corpus/.ruleset is set to G's ruleset (the policy that produced corpus/)."""
+    import artifact_store
+    root = Path(root)
+    checked = verify_payloads(st, root, generation, log=log)
+    if not checked["ok"]:
+        raise ExportError(f"generation {checked['generation']}'s payloads do not verify "
+                          f"({checked['failure_count']} failure(s)): {checked['failures'][:5]} — "
+                          "nothing was changed; do not switch authority")
+    local = artifact_store.LocalArtifacts(root)
+    out = {"linked": 0, "already": 0, "legacy": checked["legacy"], "preserved": 0,
+           "dry_run": dry_run, "generation": checked["generation"]}
+    with open_generation(st, checked["generation"]) as view:
+        for row in _scan(view, Table.MANIFEST):
+            for stage in ("raw", "text"):
+                c = artifact_store.claim(row, stage)
+                if c is None or not local.has(stage, c[1]):
+                    continue
+                path, sha = c
+                target, version = root / path, local.path(stage, sha)
                 try:
                     have = os.lstat(target)
                 except FileNotFoundError:
                     have = None
-                if not held:
-                    if have is None:
-                        out["missing"] += 1
-                        if len(out["missing_sample"]) < 20:
-                            out["missing_sample"].append(f"{row['id']} {stage}")
-                    else:
-                        out["legacy"] += 1
-                    continue
-                version = local.path(stage, sha)
                 vst = os.lstat(version)
                 if have is not None and (have.st_ino, have.st_dev) == (vst.st_ino, vst.st_dev):
                     out["already"] += 1
@@ -321,19 +404,20 @@ def link_payloads(st, root: Path, generation: int | None = None, *, dry_run: boo
                 out["linked"] += 1
                 if dry_run:
                     continue
-                if have is not None:   # never lose bytes: the file there becomes a version
+                if have is not None:   # never lose bytes: a file there becomes a version
+                    if not stat.S_ISREG(have.st_mode):
+                        raise ExportError(f"{path} is not a regular file; nothing more linked")
                     local.adopt(stage, target)
                     out["preserved"] += 1
                 target.parent.mkdir(parents=True, exist_ok=True)
                 tmp = target.with_name(f".{target.name}.rollback-{secrets.token_hex(4)}")
                 os.link(version, tmp)
                 os.replace(tmp, target)
-        if not dry_run:
-            artifact_store.sync_filesystem(root)
-            import ops
-            ops.atomic_write_text(root / "corpus" / ".ruleset", f"{prov['cleaning_ruleset']}\n")
-    out["generation"] = g
-    log(f"payloads of generation {g}: {out}")
+    if not dry_run:
+        artifact_store.sync_filesystem(root)
+        import ops
+        ops.atomic_write_text(root / "corpus" / ".ruleset", f"{checked['ruleset']}\n")
+    log(f"payloads of generation {out['generation']}: {out}")
     return out
 
 
@@ -356,11 +440,8 @@ def main(argv=None) -> int:
             export(st, Path(args.target), args.generation)
         elif args.command == "payloads":
             # --target is the data root whose raw/ and text/ receive the links
-            out = link_payloads(st, Path(args.target), args.generation, dry_run=args.dry_run)
-            if out["missing"]:
-                print(f"ERROR: {out['missing']} claimed payload(s) are held nowhere here: "
-                      f"{out['missing_sample']}", file=sys.stderr)
-                return 1
+            # verifies every claim and corpus/ first; raises (nothing changed) on any failure
+            link_payloads(st, Path(args.target), args.generation, dry_run=args.dry_run)
         else:
             if not verify(st, Path(args.target), args.generation)["identical"]:
                 return 1

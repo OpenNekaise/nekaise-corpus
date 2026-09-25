@@ -218,7 +218,7 @@ def rollback(world, target: Path) -> None:
     meta = rollback_export.export(st, target, log=lambda *_: None)
     assert meta["identical"] and meta["generation"] == world.generation()
     payloads = rollback_export.link_payloads(st, root, log=lambda *_: None)
-    assert payloads["missing"] == 0 and payloads["linked"] > 0
+    assert payloads["linked"] > 0   # (verify_payloads passed first, or it would have raised)
     # fence: the database half first, then the host record (lifting the cutover fence)
     epoch = st.set_authority("file", root=root, reason="rehearsal rollback")
     store_authority.write_record(root, "file", reason="rehearsal rollback", epoch=epoch,
@@ -274,3 +274,68 @@ def rollback(world, target: Path) -> None:
     with pytest.raises(store.StoreError):
         with world.store().writer(timeout=1):
             pass
+
+
+def test_rollback_payloads_are_verified_before_anything_changes(world):
+    """link_payloads verifies every raw/text claim (hash and size, regular readable files only)
+    and corpus/ file by file against the generation BEFORE it links anything; any failure raises
+    with nothing changed, so the authority switch never happens on unverified payloads."""
+    import artifact_store
+    import rollback_export
+    p = world.payloads
+    world.build([entry(p, "ost-v-0"), entry(p, "ost-v-1")])
+    world.finder([])
+    ok(world.run("--run-id", rid("rv-1")))
+    root, st = world.root, world.store()
+    assert rollback_export.verify_payloads(st, root, log=lambda *_: None)["ok"]
+    with st.read() as view:
+        rows = view.get_manifest(["ost-v-0", "ost-v-1"])
+    local = artifact_store.LocalArtifacts(root)
+
+    def refused(match):
+        before = sorted(q.relative_to(root) for q in root.rglob("*") if "raw" in q.parts
+                        or "text" in q.parts)
+        with pytest.raises(rollback_export.ExportError, match="do not verify"):
+            rollback_export.link_payloads(st, root, log=lambda *_: None)
+        got = rollback_export.verify_payloads(st, root, log=lambda *_: None)
+        assert any(match in f for f in got["failures"]), got["failures"]
+        after = sorted(q.relative_to(root) for q in root.rglob("*") if "raw" in q.parts
+                       or "text" in q.parts)
+        assert before == after                       # nothing was linked
+        assert store_authority.record_for(root).mode == "postgres"
+
+    # (1) a held text version with same-size damage
+    text_sha = rows["ost-v-0"]["text_sha256"]
+    version = local.path("text", text_sha)
+    good = version.read_bytes()
+    os.chmod(version, 0o644)
+    version.write_bytes(bytes([good[0] ^ 1]) + good[1:])
+    refused("is damaged")
+    version.write_bytes(good)
+    # (2) a raw version gone and a DIRECTORY at its legacy path (never "legacy ok")
+    raw_sha, raw_path = rows["ost-v-1"]["sha256"], rows["ost-v-1"]["raw_path"]
+    rv = local.path("raw", raw_sha)
+    saved = rv.read_bytes()
+    os.chmod(rv, 0o644)
+    rv.unlink()
+    (root / raw_path).mkdir(parents=True)
+    refused("not a readable regular file")
+    # a regular legacy file with the wrong bytes is refused too
+    (root / raw_path).rmdir()
+    (root / raw_path).write_bytes(saved[:-1] + b"X")
+    refused("does not hold its raw claim")
+    (root / raw_path).write_bytes(saved)             # the right bytes: accepted as legacy
+    assert rollback_export.verify_payloads(st, root, log=lambda *_: None)["ok"]
+    # (3) corpus/ tampered, or holding a document the generation does not have
+    member = root / "corpus" / "ost-v-0.md"
+    body = member.read_bytes()
+    member.unlink()
+    member.write_bytes(body + b"tampered")
+    refused("does not hold its cleaned claim")
+    member.unlink()
+    member.write_bytes(body)
+    (root / "corpus" / "stray.md").write_text("not a member")
+    refused("document files")
+    (root / "corpus" / "stray.md").unlink()
+    out = rollback_export.link_payloads(st, root, log=lambda *_: None)
+    assert out["linked"] >= 1

@@ -377,7 +377,7 @@ class Visibility:
         p = sql.SQL
         if table in ("entries", "manifest"):
             extra = ["sha256", "shard", "topic_key"] if table == "manifest" else []
-            cols = ["row_text", "url_norm", "url_key", "title_norm", "title_key", *extra]
+            cols = ["row_text", "url_norm", "url_key", "title_norm", "title_key", *extra, "pids"]
             pcols = p(", ").join(p("p.{}").format(sql.Identifier(c)) for c in cols)
             rcols = p(", ").join(p("r.{}").format(sql.Identifier(c)) for c in cols)
             return p("(SELECT p.id, p.row, {pc} FROM {t} p WHERE NOT {ov} UNION ALL "
@@ -468,7 +468,7 @@ def _staged(fn):
 
 _REVISION_COLS = ("run_id", "batch_seq", "tbl", "key", "op", "row_text", "row_sha256",
                   "before_sha256", "reason", "url_norm", "url_key", "title_norm", "title_key",
-                  "sha256", "shard", "topic_key")
+                  "sha256", "shard", "topic_key", "pids")
 _UPSERT_REVISION = sql.SQL(
     "INSERT INTO revisions ({cols}) VALUES ({vals}) ON CONFLICT (run_id, tbl, key, batch_seq) "
     "DO UPDATE SET {sets}").format(
@@ -538,9 +538,9 @@ class StagedWriteView(store_pg.PgReadView):
         for key, op, row, text, reason, before in items:
             if text is not None:
                 store_pg._check_text(text, f"{tbl} row")
-            derived = (None,) * 7
+            derived = (None,) * 8
             if row is not None and tbl in ("entries", "manifest"):
-                derived = store_pg.revision_keys(tbl, row)
+                derived = (*store_pg.revision_keys(tbl, row), store_pg.pids_for(row))
             params.append((self.run_id, self.seq, tbl, store_pg._check_text(key, f"{tbl} key"),
                            op, text, None if text is None else _sha(text),
                            None if before is None else _sha(before), reason, *derived))
@@ -710,7 +710,7 @@ class StagedWriteView(store_pg.PgReadView):
             "ON CONFLICT (run_id, tbl, key, batch_seq) DO UPDATE SET op = 'tombstone', "
             "row_text = NULL, row_sha256 = NULL, reason = EXCLUDED.reason, url_norm = NULL, "
             "url_key = NULL, title_norm = NULL, title_key = NULL, sha256 = NULL, shard = NULL, "
-            "topic_key = NULL").format(src=self._src("manifest")),
+            "topic_key = NULL, pids = NULL").format(src=self._src("manifest")),
             [self.run_id, self.seq, reason, [r["id"] for r in rows]]).rowcount
         self._q("DELETE FROM revisions WHERE run_id = %s AND batch_seq = %s AND tbl = 'manifest' "
                 "AND op = 'tombstone' AND before_sha256 IS NULL", [self.run_id, self.seq])

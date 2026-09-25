@@ -293,7 +293,7 @@ def _revision_errors(view, scope: Scope, tbl: str, keys: list[str], rep: Report)
     import store_pg
     rows = view._q(
         "SELECT key, op, row_text, row_sha256, reason, url_norm, url_key, title_norm, title_key, "
-        "sha256, shard, topic_key FROM revisions WHERE run_id = %s AND tbl = %s AND batch_seq <= "
+        "sha256, shard, topic_key, pids FROM revisions WHERE run_id = %s AND tbl = %s AND batch_seq <= "
         "%s AND key = ANY(%s)", [scope.run_id, tbl, scope.seq, keys]).fetchall()
     for key, op, text, digest, reason, *derived in rows:
         where = f"{tbl} {key}"
@@ -317,7 +317,7 @@ def _revision_errors(view, scope: Scope, tbl: str, keys: list[str], rep: Report)
             if row.get("id") != key:
                 rep.error(f"{where}: key is not the row's id ({row.get('id')!r})")
             got = [bytes(v) if isinstance(v, memoryview) else v for v in derived]
-            want = list(store_pg.revision_keys(tbl, row))
+            want = [*store_pg.revision_keys(tbl, row), store_pg.pids_for(row)]
             if got != want:
                 rep.error(f"{where}: derived columns differ from the row "
                           f"(stored {got[:1] + got[4:]} != {want[:1] + want[4:]})")

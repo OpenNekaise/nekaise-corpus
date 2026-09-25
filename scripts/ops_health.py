@@ -78,46 +78,14 @@ def _error(name: str, exc: BaseException) -> dict:
 
 def recoverability_block(conn, *, wal=None) -> str | None:
     """Why growth must stop because the metadata is not recoverable within the RPO budget, or
-    None. `conn` is a connection to the store's cluster (superuser or pg_monitor: the ready list).
-    Any failure to read the facts blocks, and no fact is ever formatted into a crash."""
+    None: pg_backup.recoverability() — the same judgement every health report shows — over the
+    store's cluster. `conn` needs superuser or pg_monitor (the ready list). Any failure to read
+    or evaluate the facts blocks."""
     try:
-        arch = pg_backup.archiver_state(conn)
-        exposure, why = pg_backup.exposure(arch)
+        problems = pg_backup.recoverability(pg_backup.archiver_state(conn), wal=wal)
     except Exception as exc:
-        return f"recoverability unknown: cannot read the WAL archiver ({type(exc).__name__}: {exc})"
-    if why:
-        return f"recoverability: {why}"
-    wal = pg_backup.WAL if wal is None else wal
-    if exposure > pg_backup.RPO_SECONDS:
-        return (f"recoverability: committed WAL may be up to {exposure / 60:.0f} min old without "
-                f"being archived (oldest waiting segment {arch['oldest_ready_s'] or 0:.0f} s + "
-                f"archive_timeout {arch['archive_timeout_s']} s) — above the "
-                f"{pg_backup.RPO_SECONDS // 60}-minute RPO budget"
-                + (f"; the archiver is failing ({arch['last_failed_wal']})" if arch["failing"]
-                   else ""))
-    try:
-        # what the server believes it archived must be in THE archive the drills restore from (an
-        # archive_command writing elsewhere, or a mount-point mix-up, "succeeds" otherwise)
-        last = arch["last_archived_wal"]
-        if arch["archived"] and last and pg_backup.segment_like(last) and \
-                not pg_backup.archived(last, wal):
-            return (f"recoverability: the server reports {last} archived, but it is not in "
-                    f"{wal} (the archive the restores read)")
-        found = pg_backup.bases()
-        if not found:
-            return "recoverability: no base backup exists — nothing to recover from"
-        first = pg_backup.start_segment(found[-1])
-        current = arch["current_wal"]
-        if current and pg_backup.segment_number(first)[0] != pg_backup.segment_number(current)[0]:
-            return (f"recoverability: the server is on timeline "
-                    f"{pg_backup.segment_number(current)[0]} but the newest base starts on "
-                    f"timeline {pg_backup.segment_number(first)[0]} — take a new base backup")
-        if gaps := pg_backup.chain_gaps(first, wal):
-            return (f"recoverability: the WAL archive has gaps after the newest base "
-                    f"({', '.join(gaps[:3])})")
-    except Exception as exc:
-        return f"recoverability unknown: cannot read the backups ({type(exc).__name__}: {exc})"
-    return None
+        return f"recoverability unknown: {type(exc).__name__}: {exc}"[:400]
+    return ("recoverability: " + "; ".join(problems)) if problems else None
 
 
 def store_recoverability_block(st) -> str | None:
@@ -139,23 +107,25 @@ def store_recoverability_block(st) -> str | None:
 def metadata_checks(facts: dict, now: float) -> list[dict]:
     out = []
     arch = facts.get("archiver", {})
-    if "error" in arch:
-        out.append(_check("archive", "critical", f"cannot read the archiver: {arch['error']}"))
+    # the growth block's own judgement (pg_backup.recoverability): monitoring and blocking agree
+    problems = facts.get("recoverability")
+    if not isinstance(problems, list):
+        problems = ["recoverability was not evaluated"]
+    exposure = facts.get("exposure_s")
+    if problems:
+        out.append(_check("archive", "critical", "not recoverable within the RPO budget: "
+                          + "; ".join(problems), problems=problems,
+                          **({} if "error" in arch else arch)))
+    elif arch.get("failing"):
+        out.append(_check("archive", "warning", f"the archiver reports a failure "
+                          f"({arch.get('last_failed_wal')}) — exposure still {exposure:.0f} s",
+                          exposure_s=exposure, **arch))
+    elif exposure > pg_backup.RPO_SECONDS * 2 / 3:
+        out.append(_check("archive", "warning", f"archive lag: exposure {exposure:.0f} s",
+                          exposure_s=exposure, **arch))
     else:
-        exposure, why = facts.get("exposure_s"), facts.get("exposure_error")
-        if why:
-            out.append(_check("archive", "critical", why, **arch))
-        elif arch["failing"] or exposure > pg_backup.RPO_SECONDS:
-            out.append(_check("archive", "critical",
-                              f"archive lag: exposure {exposure:.0f} s (budget "
-                              f"{pg_backup.RPO_SECONDS} s), failing={arch['failing']}",
-                              exposure_s=exposure, **arch))
-        elif exposure > pg_backup.RPO_SECONDS * 2 / 3:
-            out.append(_check("archive", "warning", f"archive lag: exposure {exposure:.0f} s",
-                              exposure_s=exposure, **arch))
-        else:
-            out.append(_check("archive", "ok", f"exposure <= {exposure:.0f} s",
-                              exposure_s=exposure, **arch))
+        out.append(_check("archive", "ok", f"recoverable; exposure <= {exposure:.0f} s",
+                          exposure_s=exposure, **arch))
     b = facts.get("bases", {})
     if "error" in b:
         out.append(_check("base_backup", "critical", f"cannot read the bases: {b['error']}"))
@@ -239,28 +209,36 @@ def data_disk_check(root: Path | None = None) -> dict:
 
 def payload_check(now: float, path: Path | None = None) -> dict:
     """raw/text/artifact backups (backup_schedule): freshness only, reported apart from the
-    metadata RPO (the payload durability gap closes in stage 5)."""
+    metadata RPO (the payload durability gap closes in stage 5). Whatever the status file holds
+    — missing, unreadable, valid JSON of the wrong shape, a bad date — becomes a check result;
+    nothing escapes (health publication and the review evidence depend on it)."""
     path = PAYLOAD_STATUS if path is None else path
     try:
-        doc = json.loads(path.read_text())
-    except FileNotFoundError:
-        return _check("payload_backup", "warning", "no payload backup status recorded")
-    except (OSError, ValueError) as exc:
-        return _error("payload_backup", exc)
-    latest = doc.get("latest_backup") or ""
-    stamp = next((part for part in Path(latest).name.split("-") if len(part) == 16
-                  and part.endswith("Z")), None)
-    age_h = None
-    if stamp:
+        try:
+            doc = json.loads(path.read_text())
+        except FileNotFoundError:
+            return _check("payload_backup", "warning", "no payload backup status recorded")
+        if not isinstance(doc, dict):
+            raise ValueError(f"the status is a {type(doc).__name__}, not an object")
+        latest, result, error = doc.get("latest_backup"), doc.get("result"), doc.get("error")
+        if not isinstance(latest, str) or not latest:
+            raise ValueError(f"latest_backup is {latest!r}")
+        if result is not None and not isinstance(result, str):
+            raise ValueError(f"result is {result!r}")
+        stamp = next((part for part in Path(latest).name.split("-") if len(part) == 16
+                      and part.endswith("Z")), None)
+        if stamp is None:
+            raise ValueError(f"no backup time in {latest!r}")
         age_h = (now - calendar.timegm(time.strptime(stamp, "%Y%m%dT%H%M%SZ"))) / 3600
-    bad = doc.get("error") or doc.get("result") not in ("ok", "up-to-date", "completed")
-    sev = ("critical" if age_h is None or age_h > PAYLOAD_CRIT_H else
-           "warning" if bad or age_h > PAYLOAD_WARN_H else "ok")
-    return _check("payload_backup", sev,
-                  f"newest payload backup {'?' if age_h is None else f'{age_h:.1f}'} h old "
-                  f"({doc.get('result')}) — payload durability is tracked apart from the "
-                  "metadata RPO", age_h=None if age_h is None else round(age_h, 2),
-                  result=doc.get("result"), error=doc.get("error"), latest=latest)
+        bad = bool(error) or result not in ("ok", "up-to-date", "completed")
+        sev = ("critical" if age_h > PAYLOAD_CRIT_H else
+               "warning" if bad or age_h > PAYLOAD_WARN_H else "ok")
+        return _check("payload_backup", sev,
+                      f"newest payload backup {age_h:.1f} h old ({result}) — payload durability "
+                      "is tracked apart from the metadata RPO", age_h=round(age_h, 2),
+                      result=result, error=str(error)[:300] if error else None, latest=latest)
+    except Exception as exc:
+        return _error("payload_backup", exc)
 
 
 def lifecycle_checks(conn, now: float, root: Path | None = None) -> list[dict]:
@@ -349,27 +327,46 @@ def lifecycle_checks(conn, now: float, root: Path | None = None) -> list[dict]:
 
 
 def sweep_check(now: float, path: Path | None = None) -> dict:
-    """The integrity sweeps (scripts/integrity_sweep.py): a failure is critical; a full pass of
-    either kind older than SWEEP_WARN_DAYS a warning."""
+    """The integrity sweeps (scripts/integrity_sweep.py): a failure — of the last completed pass
+    OR of the pass in progress — is critical, and stays critical until a later COMPLETED pass
+    without failures replaces it; a kind whose last completed pass is older than
+    SWEEP_WARN_DAYS (or that never completed) is a warning. An unreadable or malformed state
+    file is critical."""
     path = SWEEP_STATE if path is None else path
     try:
-        doc = json.loads(path.read_text())
-    except FileNotFoundError:
-        return _check("integrity_sweep", "warning", "no integrity sweep has run")
-    except (OSError, ValueError) as exc:
+        try:
+            doc = json.loads(path.read_text())
+        except FileNotFoundError:
+            return _check("integrity_sweep", "warning", "no integrity sweep has run")
+        if not isinstance(doc, dict):
+            raise ValueError("the sweep state is not an object")
+        failures, ages = {}, {}
+        for kind in ("metadata", "artifacts"):
+            part = doc.get(kind) or {}
+            if not isinstance(part, dict):
+                raise ValueError(f"{kind} is not an object")
+            current = part.get("current") or {}
+            if not isinstance(current, dict):
+                raise ValueError(f"{kind}.current is not an object")
+            found = [f"(completed pass) {f}" for f in part.get("failures") or []]
+            found += [f"(pass in progress) {f}" for f in current.get("failures") or []]
+            if part.get("failure_count") and not part.get("failures"):
+                found.append(f"(completed pass) {part['failure_count']} failure(s)")
+            if current.get("failure_count") and not current.get("failures"):
+                found.append(f"(pass in progress) {current['failure_count']} failure(s)")
+            if found:
+                failures[kind] = found
+            if part.get("completed_at") is not None:
+                ages[kind] = (now - float(part["completed_at"])) / 86400
+        stale = [k for k in ("metadata", "artifacts") if ages.get(k, 1e9) > SWEEP_WARN_DAYS]
+        sev = "critical" if failures else "warning" if stale else "ok"
+        return _check("integrity_sweep", sev,
+                      f"failures: {sorted(failures)}" if failures else
+                      f"stale or never completed: {stale}" if stale else "sweeps current",
+                      ages_days={k: round(v, 2) for k, v in ages.items()},
+                      failures={k: v[:10] for k, v in failures.items()})
+    except Exception as exc:
         return _error("integrity_sweep", exc)
-    failures = {kind: part.get("failures") for kind, part in doc.items()
-                if isinstance(part, dict) and part.get("failures")}
-    ages = {kind: (now - part["completed_at"]) / 86400 for kind, part in doc.items()
-            if isinstance(part, dict) and part.get("completed_at")}
-    stale = [k for k in ("metadata", "artifacts") if ages.get(k, 1e9) > SWEEP_WARN_DAYS]
-    sev = "critical" if failures else "warning" if stale else "ok"
-    return _check("integrity_sweep", sev,
-                  f"failures: {sorted(failures)}" if failures else
-                  f"stale or never completed: {stale}" if stale else "sweeps current",
-                  ages_days={k: round(v, 2) for k, v in ages.items()},
-                  failures={k: (v[:10] if isinstance(v, list) else v)
-                            for k, v in failures.items()})
 
 
 def lifecycle_target(root: Path | None = None) -> tuple[str, str]:
@@ -383,6 +380,14 @@ def lifecycle_target(root: Path | None = None) -> tuple[str, str]:
     return f"host={pg_backup.SOCKET} dbname={pg_backup.DB}", pg_backup.SCHEMA
 
 
+def _guarded(name: str, fn, *args) -> dict:
+    """A check that raises becomes a critical check result, never a skipped evaluation."""
+    try:
+        return fn(*args)
+    except Exception as exc:
+        return _error(name, exc)
+
+
 def evaluate(*, now: float | None = None, lifecycle_conn=None) -> list[dict]:
     """Every check. `lifecycle_conn`: a connection to the staged schema (or None: found from the
     host authority record, else the shadow schema pg_backup names)."""
@@ -393,8 +398,8 @@ def evaluate(*, now: float | None = None, lifecycle_conn=None) -> list[dict]:
         checks += metadata_checks(facts, now)
     except Exception as exc:
         checks.append(_error("metadata_recoverability", exc))
-    checks.append(data_disk_check())
-    checks.append(payload_check(now))
+    checks.append(_guarded("data_capacity", data_disk_check))
+    checks.append(_guarded("payload_backup", payload_check, now))
     try:
         if lifecycle_conn is None:
             import psycopg
@@ -414,7 +419,7 @@ def evaluate(*, now: float | None = None, lifecycle_conn=None) -> list[dict]:
     except Exception as exc:   # an unreadable record: judge the sweeps as if staged
         checks.append(_error("authority_record", exc))
         staged = True
-    checks.append(sweep_check(now) if staged else _check(
+    checks.append(_guarded("integrity_sweep", sweep_check, now) if staged else _check(
         "integrity_sweep", "ok", "not applicable under file authority (lint_registry and "
         "check_contracts check the whole state every round)"))
     return checks
@@ -454,7 +459,10 @@ def main(argv=None) -> int:
     ap.add_argument("command", choices=("check",))
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args(argv)
-    checks = evaluate()
+    try:
+        checks = evaluate()
+    except Exception as exc:   # never skip record(): the state file must say something is wrong
+        checks = [_error("ops_health", exc)]
     changes = record(checks)
     if args.json:
         print(json.dumps(checks, indent=1, default=str))

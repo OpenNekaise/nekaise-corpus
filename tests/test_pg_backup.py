@@ -77,21 +77,34 @@ def _wal(tmp: Path, *segments: str) -> Path:
     return tmp
 
 
-def test_chain_gaps_and_compressed_segments(tmp_path):
+def test_missing_segments_needs_the_start_and_the_explicit_end(tmp_path):
     wal = _wal(tmp_path / "wal", "000000010000000100000010", "000000010000000100000011",
                "000000010000000100000013.zst", "000000010000000100000013.00000028.backup")
-    assert pg_backup.chain_gaps("000000010000000100000010", wal) == ["000000010000000100000012"]
+    ms = pg_backup.missing_segments
+    assert ms("000000010000000100000010", "000000010000000100000013", wal) == [
+        "000000010000000100000012"]                                    # interior gap
     assert pg_backup.archived("000000010000000100000013", wal)
     (wal / "000000010000000100000012").write_bytes(b"")
-    assert pg_backup.chain_gaps("000000010000000100000010", wal) == []
-    assert pg_backup.chain_gaps("000000020000000100000010", wal) == ["000000020000000100000010"]
+    assert ms("000000010000000100000010", "000000010000000100000013", wal) == []
+    # the start beyond everything archived: the whole required range is missing, not "[]"
+    assert ms("000000010000000100000020", "000000010000000100000021", wal) == [
+        "000000010000000100000020", "000000010000000100000021"]
+    # a missing prefix, and a missing tail
+    assert ms("00000001000000010000000E", "000000010000000100000010", wal) == [
+        "00000001000000010000000E", "00000001000000010000000F"]
+    assert ms("000000010000000100000012", "000000010000000100000015", wal) == [
+        "000000010000000100000014", "000000010000000100000015"]
+    assert "crosses timelines" in ms("000000010000000100000010", "000000020000000100000010",
+                                     wal)[0]
+    assert "precedes" in ms("000000010000000100000011", "000000010000000100000010", wal)[0]
 
 
-def _base(root: Path, when: str, start_lsn: str) -> Path:
+def _base(root: Path, when: str, start_lsn: str, end_lsn: str | None = None) -> Path:
     d = root / name(when)
     d.mkdir(parents=True)
     (d / "backup_manifest").write_text(json.dumps(
-        {"WAL-Ranges": [{"Timeline": 1, "Start-LSN": start_lsn, "End-LSN": start_lsn}]}))
+        {"WAL-Ranges": [{"Timeline": 1, "Start-LSN": start_lsn,
+                         "End-LSN": end_lsn or start_lsn}]}))
     return d
 
 
@@ -101,7 +114,7 @@ def test_prune_refuses_a_broken_chain_and_dry_run_touches_nothing(tmp_path, monk
     new = _base(bases, "2026-09-29T03:30:00Z", "1/12000000")
     wal = _wal(tmp_path / "wal", "000000010000000100000010", "000000010000000100000012")
     now = ts("2026-09-30T00:00:00Z")
-    with pytest.raises(SystemExit, match="gaps"):
+    with pytest.raises(SystemExit, match="incomplete"):
         pg_backup.prune(retain_days=35, dry_run=True, now=now, root=bases, wal=wal,
                         log=lambda *_: None)
     (wal / "000000010000000100000011").write_bytes(b"")
@@ -111,10 +124,117 @@ def test_prune_refuses_a_broken_chain_and_dry_run_touches_nothing(tmp_path, monk
                           log=lambda *_: None)
     assert out["kept"] == [old.name, new.name] and out["removed"] == []
     assert calls == [] and old.exists()
-    # legacy --keep 1: the newest base only, WAL cleaned to its start
+    # legacy --keep 1: the newest base only, WAL (plain and .zst) cleaned to its start
     out = pg_backup.prune(1, root=bases, wal=wal, now=now, log=lambda *_: None)
     assert out["kept"] == [new.name] and not old.exists()
-    assert calls and calls[0][-1] == "000000010000000100000012"
+    assert calls and calls[0][-3:] == (".zst", wal, "000000010000000100000012")
+
+
+@pytest.mark.parametrize("have, why", [
+    (["000000010000000100000010", "000000010000000100000012", "000000010000000100000013"],
+     "missing prefix (the newer base's start)"),
+    (["000000010000000100000010", "000000010000000100000011", "000000010000000100000013"],
+     "interior gap"),
+    (["000000010000000100000010", "000000010000000100000011", "000000010000000100000012"],
+     "missing tail (the newer base's end)"),
+    (["000000010000000100000010"], "the whole range of the newer base (the reviewed case)"),
+    ([], "nothing archived"),
+])
+def test_prune_never_drops_the_fallback_for_a_base_the_archive_cannot_serve(
+        tmp_path, monkeypatch, have, why):
+    """The newer base needs ...11 through its end ...13; the older fallback starts at ...10. If
+    any of that range is missing, keeping only the newer base would leave nothing recoverable."""
+    bases = tmp_path / "bases"
+    old = _base(bases, "2026-09-20T03:30:00Z", "1/10000000")
+    new = _base(bases, "2026-09-29T03:30:00Z", "1/11000000", "1/13000100")
+    wal = _wal(tmp_path / "wal", *have)
+    calls = []
+    monkeypatch.setattr(pg_backup, "run", lambda *a, **k: calls.append(a))
+    with pytest.raises(SystemExit, match="incomplete"):
+        pg_backup.prune(1, root=bases, wal=wal, log=lambda *_: None)
+    assert old.exists() and new.exists() and calls == [], why
+
+
+def test_prune_waits_for_a_running_drill(tmp_path, monkeypatch):
+    bases = tmp_path / "bases"
+    old = _base(bases, "2026-09-20T03:30:00Z", "1/10000000")
+    _base(bases, "2026-09-29T03:30:00Z", "1/11000000")
+    wal = _wal(tmp_path / "wal", "000000010000000100000010", "000000010000000100000011")
+    monkeypatch.setattr(pg_backup, "run", lambda *a, **k: None)
+    with pg_backup.retention_lock(exclusive=False, timeout=1, root=bases):   # a drill
+        with pytest.raises(SystemExit, match="a drill is using the backups"):
+            pg_backup.prune(1, root=bases, wal=wal, lock_timeout=0.5, log=lambda *_: None)
+        assert old.exists()
+    pg_backup.prune(1, root=bases, wal=wal, lock_timeout=0.5, log=lambda *_: None)
+    assert not old.exists()
+
+
+def test_archive_cleanup_removes_plain_and_compressed_segments(tmp_path):
+    """The real pg_archivecleanup with -x .zst over a mixed archive."""
+    binary = pg_backup.PGBIN / "pg_archivecleanup"
+    if not binary.exists():
+        pytest.skip("pg_archivecleanup not installed here")
+    bases = tmp_path / "bases"
+    _base(bases, "2026-09-29T03:30:00Z", "1/12000000")
+    wal = _wal(tmp_path / "wal", "00000001000000010000000F", "000000010000000100000010.zst",
+               "000000010000000100000011", "000000010000000100000012.zst",
+               "000000010000000100000013")
+    pg_backup.prune(1, root=bases, wal=wal, log=lambda *_: None)
+    assert sorted(p.name for p in wal.iterdir()) == [
+        "000000010000000100000012.zst", "000000010000000100000013"]
+
+
+def _fake_postgres(data: Path):
+    """A process that looks like data's postmaster: argv[0] 'postgres', cwd = data."""
+    import subprocess
+    data.mkdir(parents=True, exist_ok=True)
+    proc = subprocess.Popen(["bash", "-c", "exec -a postgres sleep 600"], cwd=data)
+    time.sleep(0.2)
+    start = pg_backup._proc(proc.pid)["start"]
+    (data / "postmaster.pid").write_text(f"{proc.pid}\n{data}\n{int(start)}\n5432\n/tmp\n")
+    return proc
+
+
+def test_stop_never_signals_an_unrelated_process_with_a_reused_pid(tmp_path, monkeypatch):
+    import subprocess
+    data = tmp_path / "restore-test-x" / "data"
+    data.mkdir(parents=True)
+    other = subprocess.Popen(["sleep", "600"])          # not a postgres, not in `data`
+    try:
+        start = pg_backup._proc(other.pid)["start"]
+        (data / "postmaster.pid").write_text(f"{other.pid}\n{data}\n{int(start) - 5000}\n")
+        stops = []
+        monkeypatch.setattr(pg_backup, "_pg_ctl_stop", lambda d, m: stops.append(m) or 0)
+        assert pg_backup.instance_state(data) == "other"
+        assert pg_backup.stop_instance(data, wait=0.5) is True    # the postmaster is gone
+        assert stops == [] and other.poll() is None               # nothing signalled
+    finally:
+        other.kill()
+        other.wait()
+    # an unreadable postmaster.pid is uncertain: kept
+    (data / "postmaster.pid").write_text("garbage\n")
+    assert pg_backup.instance_state(data) == "uncertain"
+    assert pg_backup.stop_instance(data, wait=0.5) is False
+
+
+def test_a_failed_stop_keeps_the_scratch_directory(tmp_path, monkeypatch):
+    scratch = tmp_path / "scratch"
+    monkeypatch.setattr(pg_backup, "SCRATCH", scratch)
+    monkeypatch.setattr(pg_backup, "STOP_WAIT_SECONDS", 1.0)
+    data = scratch / "restore-test-dead" / "data"
+    proc = _fake_postgres(data)
+    try:
+        assert pg_backup.instance_state(data) == "ours"
+        monkeypatch.setattr(pg_backup, "_pg_ctl_stop", lambda d, m: 0)   # "succeeds", does not
+        assert pg_backup._sweep_scratch(lambda *_: None) == [str(data.parent)]
+        assert data.exists() and proc.poll() is None
+        # a stop that really stops it: the directory goes
+        monkeypatch.setattr(pg_backup, "_pg_ctl_stop", lambda d, m: proc.terminate() or 0)
+        assert pg_backup._sweep_scratch(lambda *_: None) == []
+        assert not data.parent.exists()
+    finally:
+        proc.kill()
+        proc.wait()
 
 
 def test_exposure_bounds_the_unarchived_age():

@@ -206,22 +206,27 @@ def _backup_health(conn, bases: Path | None) -> dict:
     # measured RTO) and — reported apart from the metadata RPO — the payload backups
     import ops_health
     import pg_backup
-    try:
+    try:   # the one judgement the growth block uses (pg_backup.recoverability)
         with conn.transaction():
             arch = pg_backup.archiver_state(conn)
-        exposure, why = pg_backup.exposure(arch)
+        exposure, _ = pg_backup.exposure(arch)
         out["recoverability"] = {"exposure_s": exposure, "rpo_s": pg_backup.RPO_SECONDS,
-                                 "error": why}
+                                 "problems": pg_backup.recoverability(arch)}
     except Exception as exc:
-        out["recoverability"] = {"error": f"{type(exc).__name__}: {exc}"[:300]}
+        out["recoverability"] = {"problems": [f"recoverability unknown: {type(exc).__name__}: "
+                                              f"{exc}"[:300]]}
     try:
         drill = pg_backup.last_drill()
         out["last_drill"] = None if drill is None else {
             k: drill.get(k) for k in ("at", "ok", "base", "target", "rto_s", "error")}
     except (OSError, ValueError) as exc:
         out["last_drill"] = {"error": f"{type(exc).__name__}: {exc}"[:300]}
-    payload = ops_health.payload_check(time.time())
-    out["payload_backup"] = {"severity": payload["severity"], "summary": payload["summary"]}
+    try:   # payload_check turns any malformed status into a critical result; guard anyway
+        payload = ops_health.payload_check(time.time())
+        out["payload_backup"] = {"severity": payload["severity"], "summary": payload["summary"]}
+    except Exception as exc:
+        out["payload_backup"] = {"severity": "critical",
+                                 "summary": f"{type(exc).__name__}: {exc}"[:300]}
     return out
 
 

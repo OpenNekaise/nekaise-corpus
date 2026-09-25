@@ -20,6 +20,8 @@ from pathlib import Path
 
 import pytest
 
+import old_code
+
 import artifact_store
 import build_corpus
 import clean_corpus
@@ -1234,14 +1236,15 @@ def test_a_v5_shadow_migrates_to_v6_and_keeps_replicating(tmp_path):
     c1 = repo_.commit("c1")
     schema = f"m6_{uuid.uuid4().hex[:12]}"
     old = v5.PgStore(repo_.path, dsn=DSN, schema=schema)       # the step-2 code
+    old_shadow = old_code.load(V5_COMMIT, "pg_shadow", store_pg=v5)
     try:
-        pg_shadow.do_import(old, c1, repo_.path, log=quiet)
+        old_shadow.do_import(old, c1, repo_.path, log=quiet)
         repo_.write("pruned_urls.txt", "https://e.org/old\nhttps://e.org/v5\n")
         c2 = repo_.commit("c2")
-        assert pg_shadow.do_sync(old, c2, repo_.path, log=quiet) == 1
+        assert old_shadow.do_sync(old, c2, repo_.path, log=quiet) == 1
         with old.read() as v:
             before = export_bytes(old, v, tmp_path / "v5")
-        before_digests = pg_shadow.pg_digests(old)
+        before_digests = old_shadow.pg_digests(old)
         auth = old.authority()
 
         new = store_pg.PgStore(repo_.path, dsn=DSN, schema=schema)   # migrates 5 -> 6 (-> 7)

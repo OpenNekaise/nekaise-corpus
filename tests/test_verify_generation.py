@@ -592,3 +592,64 @@ def test_the_one_pass_recount_equals_corpus_stats_and_the_row_arithmetic(pgw):
     mine["rows"]["entries"] = len(rows)
     assert vg.finalize(mine) == full
     assert full["fractional"] == {"text_chars": 1, "corpus_chars": 1}
+
+
+@needs_pg
+def test_the_recovery_fingerprint_ignores_a_concurrent_lock_free_pin_release(pgw):
+    """store_staging.release_pin() writes without the writer lock, so it can commit between a
+    drill's snapshot and its restore point: the fingerprint excludes that transient bookkeeping
+    on both sides — the snapshot taken before the release and the state after it compare equal."""
+    import psycopg
+
+    import pg_backup
+    import store_staging
+    pgw.run([("discover", add(CLEAN[:2]))])
+    with pgw.st.writer() as w:
+        store_staging.pin_generation(pgw.st, w, 0, holder="maintainer-x", reason="triage")
+    schema = pgw.st.schema
+    with psycopg.connect(pgw.st.dsn, autocommit=True) as snap:
+        snap.execute("BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY")
+        snap.execute("SELECT 1").fetchone()               # the drill's snapshot
+        # the release commits between the snapshot and the restore point
+        assert store_staging.release_pin(pgw.st, 0, holder="maintainer-x")
+        before = pg_backup.fingerprint(snap, [schema])
+        snap.execute("ROLLBACK")
+    with psycopg.connect(pgw.st.dsn, autocommit=True) as now:
+        now.execute("BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY")
+        after = pg_backup.fingerprint(now, [schema])
+        pins = now.execute(f'SELECT count(*) FROM "{schema}".generation_retention').fetchone()[0]
+        now.execute("ROLLBACK")
+    assert pins == 0 and pg_backup.diff(before, after) == []
+    assert "generation_retention" not in before[schema]["tables"]
+
+
+@needs_pg
+def test_incremental_lint_carries_the_openalex_rights_checks(pgw):
+    """changed_lint uses the shared entry validator, so OpenAlex families' rights evidence
+    requirements (lint_registry.RIGHTS_EVIDENCE_SOURCES) apply to a run's changes too."""
+    import lint_registry
+    import store_broker
+    pgw.run([("discover", add(CLEAN[:2]))])
+    bad = {**entry(mrow(720)), "id": "oas-w720", "source": "openalex_sim", "license": "open"}
+    good = {**entry(mrow(721)), "id": "oas-w721", "source": "openalex_sim", "license": "cc-by",
+            "license_evidence": "https://api.openalex.org/works/W721",
+            "rights_verified_at": "2026-09-25T00:00:00Z",
+            "persistent_id": "https://doi.org/10.5555/w721"}
+    st = pgw.st
+    with st.writer() as w:
+        run_id = rid("vg-oa")
+        st.open_run(w, run_id, producer_commit=SHA, extractor_version="x1",
+                    cleaning_ruleset="none", artifacts="unchecked")
+        rec = store_broker.Recorder()
+        rec.insert_entries([bad, good])
+        with st.read_staged(run_id, writer=w) as v:
+            st.stage_batch(w, run_id, "discover", "b", rec.requests,
+                           expected_version=v.version())
+        fr = st.freeze(w, run_id, required_gates=["lint"])
+        with st.read_staged(run_id, seq=fr.seq, writer=w) as view:
+            errors, n_entries, _ = lint_registry.changed_lint(view)
+        st.abort_run(w, run_id, reason="test")
+    assert n_entries == 2
+    assert any("oas-w720: openalex_sim requires an evidenced open licence" in e for e in errors)
+    assert any("oas-w720: openalex_sim entry lacks license_evidence" in e for e in errors)
+    assert not any("oas-w721" in e for e in errors)

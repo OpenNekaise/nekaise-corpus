@@ -451,8 +451,8 @@ def git_digests(rev: str, repo: Path = ROOT) -> dict[str, str]:
 
 
 DERIVED = {
-    "entries": ", id, url_norm, url_key, title_norm, title_key",
-    "manifest": ", id, url_norm, url_key, title_norm, title_key, sha256, shard, topic_key",
+    "entries": ", id, url_norm, url_key, title_norm, title_key, pids",
+    "manifest": ", id, url_norm, url_key, title_norm, title_key, sha256, shard, topic_key, pids",
     "blocklist": ", key",
     "ledger": ", key",
 }
@@ -469,6 +469,7 @@ def derived_ok(table: str, rec) -> bool:
         sha = row.get("sha256")
         shard, topic, _ = store.legacy_manifest_key(row)
         want += [sha if isinstance(sha, str) and sha else None, shard, topic]
+    want.append(store_pg.pids_for(row))
     got = list(rec[1:])
     got[2] = bytes(got[2]) if got[2] is not None else None
     got[4] = bytes(got[4]) if got[4] is not None else None

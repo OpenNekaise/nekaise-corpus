@@ -107,13 +107,15 @@ def _derived_page(view, part: dict, *, page: int) -> bool:
     kind, after = part["cursor"] or ["entries", ""]
     if kind in ("entries", "manifest"):
         extra = ", sha256, shard, topic_key" if kind == "manifest" else ""
-        rows = view._q(f"SELECT id, row_text, url_norm, url_key, title_norm, title_key{extra} "
+        rows = view._q(f"SELECT id, row_text, url_norm, url_key, title_norm, title_key{extra}, pids "
                        f"FROM {kind} WHERE id > %s ORDER BY id LIMIT %s", [after, page]).fetchall()
         for rid, text, *derived in rows:
             got = [bytes(v) if isinstance(v, memoryview) else v for v in derived]
-            want = list(store_pg.revision_keys(kind, json.loads(text)))
+            row = json.loads(text)
+            want = list(store_pg.revision_keys(kind, row))
             if kind == "entries":
                 want = want[:4]
+            want.append(store_pg.pids_for(row))
             if got != want:
                 _fail(part, f"{kind} {rid}: projection derived columns differ from its row")
         part["checked"][f"derived_{kind}"] = part["checked"].get(f"derived_{kind}", 0) + len(rows)
@@ -127,12 +129,13 @@ def _derived_page(view, part: dict, *, page: int) -> bool:
     runs = [r for r, _ in vis.runs] if vis is not None else []
     rows = view._q(
         "SELECT rev_id::text, tbl, key, row_text, url_norm, url_key, title_norm, title_key, "
-        "sha256, shard, topic_key FROM revisions WHERE run_id = ANY(%s) AND op = 'put' AND "
+        "sha256, shard, topic_key, pids FROM revisions WHERE run_id = ANY(%s) AND op = 'put' AND "
         "tbl IN ('entries', 'manifest') AND rev_id > %s::bigint ORDER BY rev_id LIMIT %s",
         [runs, after or "0", page]).fetchall() if runs else []
     for rev, tbl, key, text, *derived in rows:
         got = [bytes(v) if isinstance(v, memoryview) else v for v in derived]
-        if got != list(store_pg.revision_keys(tbl, json.loads(text))):
+        row = json.loads(text)
+        if got != [*store_pg.revision_keys(tbl, row), store_pg.pids_for(row)]:
             _fail(part, f"revision {rev} ({tbl} {key}): derived columns differ from its row")
     part["checked"]["derived_revisions"] = part["checked"].get("derived_revisions", 0) + len(rows)
     if len(rows) == page:

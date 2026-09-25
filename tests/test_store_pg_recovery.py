@@ -17,6 +17,8 @@ from pathlib import Path
 
 import pytest
 
+import old_code
+
 import artifact_store
 import round_recovery
 import run_ownership
@@ -812,18 +814,19 @@ def test_a_v6_shadow_migrates_to_v7_and_keeps_replicating(tmp_path):
     c1 = repo_.commit("c1")
     schema = f"m7s_{uuid.uuid4().hex[:12]}"
     old = v6.PgStore(repo_.path, dsn=DSN, schema=schema)
+    old_shadow = old_code.load(V6_COMMIT, "pg_shadow", store_pg=v6)
     quiet = lambda *_: None  # noqa: E731
     try:
-        pg_shadow.do_import(old, c1, repo_.path, log=quiet)
+        old_shadow.do_import(old, c1, repo_.path, log=quiet)
         repo_.write("pruned_urls.txt", "https://e.org/old\nhttps://e.org/v6\n")
         c2 = repo_.commit("c2")
-        assert pg_shadow.do_sync(old, c2, repo_.path, log=quiet) == 1
+        assert old_shadow.do_sync(old, c2, repo_.path, log=quiet) == 1
         with old.read() as v:
             before = export_bytes(old, v, tmp_path / "v6")
-        before_digests = pg_shadow.pg_digests(old)
+        before_digests = old_shadow.pg_digests(old)
         auth = old.authority()
-        new = store_pg.PgStore(repo_.path, dsn=DSN, schema=schema)       # migrates 6 -> 7
-        assert q(new, "SELECT schema_version FROM state")[0][0] == 7
+        new = store_pg.PgStore(repo_.path, dsn=DSN, schema=schema)       # migrates 6 -> 7 (-> 8)
+        assert q(new, "SELECT schema_version FROM state")[0][0] == store_pg.SCHEMA_VERSION
         assert pg_shadow.pg_digests(new) == before_digests
         with new.read() as v:
             assert export_bytes(new, v, tmp_path / "v7") == before

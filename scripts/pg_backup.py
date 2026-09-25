@@ -47,6 +47,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+from contextlib import contextmanager as contextmanager_
 import json
 import os
 import re
@@ -77,6 +78,11 @@ _SEGMENT = re.compile(r"[0-9A-F]{24}")
 _BASE_NAME = re.compile(r"\d{8}T\d{6}Z")
 # Tables whose whole content the fingerprint shows (small control tables; the rest are digested).
 SMALL_TABLE_ROWS = 64
+# Transient bookkeeping that is written WITHOUT the store's writer lock (store_staging.release_pin
+# drops a retention pin lock-free), so it can change between the drill's snapshot and its restore
+# point: never part of the recovery fingerprint, on either side of the comparison. A pin decides
+# only how far the fold may advance; no generation's content depends on it.
+VOLATILE_TABLES = frozenset({"generation_retention"})
 
 
 class DrillError(RuntimeError):
@@ -149,21 +155,37 @@ def archived_segments(wal: Path | None = None) -> dict[int, set[int]]:
     return out
 
 
-def chain_gaps(start: str, wal: Path | None = None, limit: int = 20) -> list[str]:
-    """Segments missing between `start` and the newest archived segment of its timeline (the
-    first `limit`): recovery replays WAL in order, so a gap makes every later point
-    unrecoverable from a base before it."""
-    tli, first = segment_number(start)
+def missing_segments(first: str, last: str, wal: Path | None = None,
+                     limit: int = 20) -> list[str]:
+    """The segments of the INCLUSIVE range first..last that the archive does not hold (the first
+    `limit`), the starting segment and the endpoint included — recovery replays WAL in order,
+    so any of them missing makes every later point unrecoverable from a base before it. A range
+    that crosses timelines or runs backwards is reported as unrecoverable, never as complete."""
+    tli, lo = segment_number(first)
+    tli2, hi = segment_number(last)
+    if tli != tli2:
+        return [f"{first}..{last}: the range crosses timelines {tli} -> {tli2}"]
+    if hi < lo:
+        return [f"{first}..{last}: the endpoint precedes the start"]
     have = archived_segments(WAL if wal is None else wal).get(tli, set())
-    if not have:
-        return [start]
     missing = []
-    for seg in range(first, max(have) + 1):
+    for seg in range(lo, hi + 1):
         if seg not in have:
             missing.append(segment_name(tli, seg))
             if len(missing) >= limit:
                 break
     return missing
+
+
+def base_range(base_dir: Path) -> tuple[str, str]:
+    """(start segment, end segment) of the WAL a base backup needs to be consistent: its
+    manifest's Start-LSN and End-LSN on its timeline. Recovery from it needs both and everything
+    in between, then every segment after it up to the recovery target."""
+    wal = json.loads((base_dir / "backup_manifest").read_text())["WAL-Ranges"][0]
+    return (segment_of(wal["Start-LSN"], wal["Timeline"]),
+            segment_of(wal["End-LSN"], wal["Timeline"]))
+
+
 
 
 # --- bases ---------------------------------------------------------------------------------------
@@ -184,8 +206,40 @@ def base_time(base_dir: Path) -> float:
 
 def start_segment(base_dir: Path) -> str:
     """WAL segment file holding a base backup's start LSN, per its manifest."""
-    wal = json.loads((base_dir / "backup_manifest").read_text())["WAL-Ranges"][0]
-    return segment_of(wal["Start-LSN"], wal["Timeline"])
+    return base_range(base_dir)[0]
+
+
+# --- the backup-retention lock -------------------------------------------------------------------------
+
+@contextmanager_
+def retention_lock(*, exclusive: bool, timeout: float, root: Path | None = None):
+    """The lock that keeps bases and WAL a drill is using from being pruned: a drill holds it
+    shared from choosing its base until its scratch instance is gone; prune holds it exclusive
+    (waiting at most `timeout` seconds, then refusing). An flock on a file in the base
+    directory: it dies with its holder. Corpus rounds never take it."""
+    import fcntl
+    root = BASES if root is None else root
+    root.mkdir(parents=True, exist_ok=True)
+    with open(root / ".retention.lock", "a+") as f:
+        mode = fcntl.LOCK_EX if exclusive else fcntl.LOCK_SH
+        deadline = time.monotonic() + max(0.0, timeout)
+        while True:
+            try:
+                fcntl.flock(f.fileno(), mode | fcntl.LOCK_NB)
+                break
+            except BlockingIOError:
+                if time.monotonic() >= deadline:
+                    who = "a drill is using the backups" if exclusive else "a prune is running"
+                    raise RetentionBusy(f"{root / '.retention.lock'} is held ({who})") from None
+                time.sleep(0.5)
+        try:
+            yield
+        finally:
+            fcntl.flock(f.fileno(), fcntl.LOCK_UN)
+
+
+class RetentionBusy(RuntimeError):
+    """The backup-retention lock could not be taken in time."""
 
 
 def base() -> Path:
@@ -234,11 +288,23 @@ def retention_plan(names: list[str], now: float, *, retain_days: float,
 
 def prune(keep: int | None = None, *, retain_days: float | None = None, daily_days: float = 7,
           dry_run: bool = False, now: float | None = None, root: Path | None = None,
-          wal: Path | None = None, log=print) -> dict:
+          wal: Path | None = None, lock_timeout: float = 3 * 3600, log=print) -> dict:
     """Remove bases outside the plan (`keep`: the legacy newest-N rule; `retain_days`: the
-    coverage rule above), then WAL older than the oldest kept base's start segment. Refuses to
-    remove anything while the WAL chain from the oldest kept base has a gap."""
+    coverage rule above), then WAL older than the oldest kept base's start segment, plain and
+    zstd-compressed alike. Holds the retention lock exclusively (a running drill keeps its base
+    and WAL). Refuses to remove anything unless every segment from the oldest kept base's start
+    through the newest kept base's end is archived (a missing prefix, interior gap or tail would
+    leave a kept base unrecoverable while its fallback is deleted)."""
     root, wal = (BASES if root is None else root), (WAL if wal is None else wal)
+    try:
+        with retention_lock(exclusive=True, timeout=lock_timeout, root=root):
+            return _prune(keep, retain_days=retain_days, daily_days=daily_days, dry_run=dry_run,
+                          now=now, root=root, wal=wal, log=log)
+    except RetentionBusy as exc:
+        raise SystemExit(f"prune refused: {exc}") from None
+
+
+def _prune(keep, *, retain_days, daily_days, dry_run, now, root, wal, log) -> dict:
     found = bases(root)
     names = [p.name for p in found]
     if retain_days is not None:
@@ -252,10 +318,12 @@ def prune(keep: int | None = None, *, retain_days: float | None = None, daily_da
     if not kept:
         return out
     segment = start_segment(root / kept[0])
-    if gaps := chain_gaps(segment, wal):
-        raise SystemExit(f"WAL chain from {kept[0]} ({segment}) has gaps ({', '.join(gaps[:5])}"
-                         f"{' ...' if len(gaps) > 5 else ''}): nothing removed — later points are "
-                         "not recoverable from it; take a new base and investigate the archive")
+    through = base_range(root / kept[-1])[1]
+    if gaps := missing_segments(segment, through, wal):
+        raise SystemExit(f"WAL chain from {kept[0]} ({segment}) through {kept[-1]}'s end "
+                         f"({through}) is incomplete ({', '.join(gaps[:5])}"
+                         f"{' ...' if len(gaps) > 5 else ''}): nothing removed — a kept base is "
+                         "not recoverable; take a new base and investigate the archive")
     out["wal_cleaned_to"] = segment
     for name in gone:
         log(f"{'would remove' if dry_run else 'removed'} base {name}")
@@ -264,7 +332,8 @@ def prune(keep: int | None = None, *, retain_days: float | None = None, daily_da
     if dry_run:
         log(f"would clean the WAL archive up to {segment} (the start of base {kept[0]})")
     else:
-        run(PGBIN / "pg_archivecleanup", wal, segment)
+        # -x .zst: compressed segments are judged by their segment name like plain ones
+        run(PGBIN / "pg_archivecleanup", "-x", ".zst", wal, segment)
         log(f"WAL archive cleaned up to {segment} (the start of base {kept[0]})")
     return out
 
@@ -290,7 +359,7 @@ def fingerprint(conn, schemas: list[str] | None = None) -> dict:
         tables = [t for (t,) in conn.execute(
             "SELECT c.relname FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace "
             "WHERE n.nspname = %s AND c.relkind IN ('r', 'p') AND NOT c.relispartition "
-            "ORDER BY c.relname", [schema]).fetchall()]
+            "ORDER BY c.relname", [schema]).fetchall() if t not in VOLATILE_TABLES]
         digests, small = {}, {}
         for table in tables:
             ident = sql.Identifier(schema, table)
@@ -399,9 +468,94 @@ def start_instance(work: Path, data: Path, *, conf: str, timeout: float = RTO_SE
         time.sleep(1)
 
 
-def stop_instance(data: Path) -> None:
-    subprocess.run([str(PGBIN / "pg_ctl"), "-D", str(data), "-w", "-m", "fast", "stop"],
-                   capture_output=True)
+def _postmaster(data: Path) -> dict | None:
+    """postmaster.pid of a data directory: pid, data directory, start time (epoch seconds);
+    None when there is no such file. A malformed file raises (uncertain)."""
+    try:
+        lines = (Path(data) / "postmaster.pid").read_text().splitlines()
+    except FileNotFoundError:
+        return None
+    return {"pid": int(lines[0]), "data": lines[1], "start": int(lines[2])}
+
+
+def _proc(pid: int) -> dict | None:
+    """What /proc says about `pid`: its start time (epoch seconds), command line and working
+    directory; None when no such process exists. Any other read failure raises (uncertain)."""
+    base = Path("/proc") / str(pid)
+    try:
+        stat = (base / "stat").read_text()
+    except FileNotFoundError:
+        return None
+    fields = stat.rsplit(")", 1)[1].split()
+    state, ticks = fields[0], int(fields[19])
+    if state in ("Z", "X"):
+        return None
+    btime = next(int(line.split()[1]) for line in Path("/proc/stat").read_text().splitlines()
+                 if line.startswith("btime "))
+    try:
+        cmdline = (base / "cmdline").read_bytes().split(b"\0")
+        cwd = os.readlink(base / "cwd")
+    except FileNotFoundError:
+        return None
+    return {"start": btime + ticks / os.sysconf("SC_CLK_TCK"),
+            "cmdline": [c.decode(errors="replace") for c in cmdline if c], "cwd": cwd}
+
+
+def instance_state(data: Path) -> str:
+    """"absent" (no postmaster.pid, or its pid is not running), "ours" (the running process is
+    a postgres whose working directory or -D is this data directory and whose start time is the
+    one postmaster.pid records), "other" (the pid now belongs to an unrelated process — the
+    recorded postmaster is gone) or "uncertain" (anything could not be read)."""
+    data = Path(data).resolve()
+    try:
+        pm = _postmaster(data)
+        if pm is None:
+            return "absent"
+        proc = _proc(pm["pid"])
+    except (OSError, ValueError, IndexError, StopIteration):
+        return "uncertain"
+    if proc is None:
+        return "absent"
+    argv = proc["cmdline"]
+    named = bool(argv) and Path(argv[0]).name.startswith("postgres")
+    in_dir = proc["cwd"] == str(data) or (
+        "-D" in argv and argv.index("-D") + 1 < len(argv)
+        and Path(argv[argv.index("-D") + 1]).resolve() == data)
+    same_start = abs(proc["start"] - pm["start"]) <= 2
+    return "ours" if named and in_dir and same_start else "other"
+
+
+def _pg_ctl_stop(data: Path, mode: str) -> int:
+    return subprocess.run([str(PGBIN / "pg_ctl"), "-D", str(data), "-w", "-t", "60", "-m", mode,
+                           "stop"], capture_output=True).returncode
+
+
+STOP_WAIT_SECONDS = 90.0
+
+
+def stop_instance(data: Path, *, wait: float | None = None) -> bool:
+    """Stop a scratch instance and CONFIRM it is gone. Never signals anything that is not
+    verifiably this data directory's postmaster (instance_state: pid, start time, command line
+    and working directory); pg_ctl's result alone is not trusted — the process must have exited.
+    True when no instance of `data` runs any more; False when that could not be established
+    (the caller then keeps the scratch state)."""
+    wait = STOP_WAIT_SECONDS if wait is None else wait
+    for mode in ("fast", "immediate"):
+        state = instance_state(data)
+        if state in ("absent", "other"):
+            return True
+        if state == "uncertain":
+            return False
+        _pg_ctl_stop(data, mode)
+        deadline = time.monotonic() + wait
+        while time.monotonic() < deadline:
+            state = instance_state(data)
+            if state in ("absent", "other"):
+                return True
+            if state == "uncertain":
+                return False
+            time.sleep(0.2)
+    return False
 
 
 def _log_tail(work: Path, lines: int = 12) -> str:
@@ -472,16 +626,22 @@ def _terminated(signum, frame):
     raise Terminated(f"signal {signum}")
 
 
-def _sweep_scratch(log) -> None:
+def _sweep_scratch(log) -> list[str]:
     """Stop and remove what an earlier drill killed hard (SIGKILL) left in SCRATCH: its
-    restore-test-* directories and any instance still running from one. Called under the drill
-    lock, so no other drill is using them."""
+    restore-test-* directories and any instance still running from one — but only an instance
+    verified to be that directory's postmaster is ever signalled, and a directory whose instance
+    could not be confirmed gone is KEPT (reported). Called under the drill lock, so no other
+    drill is using them. Returns the directories kept."""
+    kept = []
     for d in sorted(SCRATCH.glob("restore-test-*")):
-        data = d / "data"
-        if (data / "postmaster.pid").exists():
-            stop_instance(data)
+        if not stop_instance(d / "data"):
+            kept.append(str(d))
+            log(f"kept the leftover drill directory {d.name}: its instance could not be "
+                "confirmed stopped")
+            continue
         shutil.rmtree(d, ignore_errors=True)
         log(f"removed a leftover drill directory {d.name}")
+    return kept
 
 
 def restore_test(base_name: str | None = None, *, archive_timeout: float = 900,
@@ -503,8 +663,15 @@ def restore_test(base_name: str | None = None, *, archive_timeout: float = 900,
         previous = signal.signal(signal.SIGTERM, _terminated) \
             if threading_main() else None
         try:
-            _sweep_scratch(log)
-            return _drill(record, base_name, archive_timeout=archive_timeout, log=log)
+            if kept := _sweep_scratch(log):
+                record["leftover_scratch"] = kept
+            with retention_lock(exclusive=False, timeout=600):
+                return _drill(record, base_name, archive_timeout=archive_timeout, log=log)
+        except RetentionBusy as exc:
+            record["error"] = f"RetentionBusy: {exc}"
+            _write_record(record)
+            log(f"restore drill: {record['error']}")
+            return record
         finally:
             if previous is not None:
                 signal.signal(signal.SIGTERM, previous)
@@ -534,9 +701,9 @@ def _drill(record: dict, base_name: str | None, *, archive_timeout: float, log) 
         record["archived_after_switch_s"] = round(time.monotonic() - switched, 1)
         first = start_segment(chosen)
         record["segments_to_replay"] = segment_number(segment)[1] - segment_number(first)[1] + 1
-        if gaps := chain_gaps(first):
-            if segment_number(gaps[0])[1] <= segment_number(segment)[1]:
-                raise DrillError(f"WAL chain from {first} to {segment} has gaps: {gaps[:5]}")
+        if gaps := missing_segments(first, segment):
+            raise DrillError(f"WAL chain from {first} through {segment} is incomplete: "
+                             f"{gaps[:5]}")
         # the recovery clock: from here to a verified restored state is the measured RTO
         t0 = time.monotonic()
         run(PGBIN / "pg_verifybackup", "-n", "-m", chosen / "backup_manifest", chosen)
@@ -572,10 +739,25 @@ def _drill(record: dict, base_name: str | None, *, archive_timeout: float, log) 
     except Exception as exc:   # a database error: recorded, and the drill fails
         record["error"] = f"{type(exc).__name__}: {exc}"[:1000]
     finally:
-        if data is not None and data.exists():
-            stop_instance(data)
-        if work is not None:
+        stopped = data is None or not data.exists() or stop_instance(data)
+        if work is not None and stopped:
             shutil.rmtree(work, ignore_errors=True)
+        elif work is not None:   # never delete under an instance that may still run
+            record["ok"] = False
+            record["error"] = (record.get("error") or "") + (
+                f" the scratch instance could not be confirmed stopped: kept at {work}").strip()
+    _write_record(record)
+    log(f"restore drill from {record.get('base')}: {'OK' if record['ok'] else 'FAILED'} "
+        f"(target {record.get('target')}, archive wait {record.get('archive_wait_s')} s, "
+        f"RTO {record.get('rto_s')} s)")
+    for line in record.get("mismatches", []):
+        log(f"  MISMATCH {line}")
+    if record.get("error"):
+        log(f"  ERROR {record['error']}")
+    return record
+
+
+def _write_record(record: dict) -> None:
     try:
         DRILL_LOG.parent.mkdir(parents=True, exist_ok=True)
         with DRILL_LOG.open("a") as f:
@@ -585,14 +767,6 @@ def _drill(record: dict, base_name: str | None, *, archive_timeout: float, log) 
     except OSError as exc:
         record["log_error"] = str(exc)
         record["ok"] = False
-    log(f"restore drill from {record.get('base')}: {'OK' if record['ok'] else 'FAILED'} "
-        f"(target {record.get('target')}, archive wait {record.get('archive_wait_s')} s, "
-        f"RTO {record.get('rto_s')} s)")
-    for line in record.get("mismatches", []):
-        log(f"  MISMATCH {line}")
-    if record.get("error"):
-        log(f"  ERROR {record['error']}")
-    return record
 
 
 def last_drill(path: Path | None = None) -> dict | None:
@@ -655,6 +829,75 @@ def exposure(archiver: dict) -> tuple[float | None, str | None]:
     return (archiver["oldest_ready_s"] or 0.0) + timeout, None
 
 
+def recoverability(arch: dict, *, wal: Path | None = None,
+                   root: Path | None = None) -> list[str]:
+    """THE recoverability judgement — the growth block and every health report use this one
+    function: the problems that make committed metadata unrecoverable within the RPO budget
+    (empty: recoverable). `arch` is archiver_state() of the store's cluster.
+
+    * WAL is archived at all (archive_mode, archive_timeout) and the exposure (oldest waiting
+      segment + archive_timeout) is within RPO_SECONDS;
+    * the segment the server reports as last archived is in the archive the restores read;
+    * a base exists, and the server's timeline is the newest base's;
+    * the WAL chain from the newest base's start through its end and on through the last
+      archived segment is complete (prefix, interior and tail)."""
+    wal, root = (WAL if wal is None else wal), (BASES if root is None else root)
+    problems: list[str] = []
+    exp, why = exposure(arch)
+    if why:
+        problems.append(why)
+    elif exp > RPO_SECONDS:
+        problems.append(
+            f"committed WAL may be up to {exp / 60:.0f} min old without being archived (oldest "
+            f"waiting segment {arch.get('oldest_ready_s') or 0:.0f} s + archive_timeout "
+            f"{arch['archive_timeout_s']} s) — above the {RPO_SECONDS // 60}-minute RPO budget"
+            + (f"; the archiver is failing ({arch.get('last_failed_wal')})"
+               if arch.get("failing") else ""))
+    last = arch.get("last_archived_wal")
+    if arch.get("archived") and last:
+        if not segment_like(last):
+            problems.append(f"the server's last archived file {last!r} is not a WAL segment")
+            last = None
+        elif not archived(last, wal):
+            problems.append(f"the server reports {last} archived, but it is not in {wal} (the "
+                            "archive the restores read)")
+    found = bases(root)
+    if not found:
+        problems.append("no base backup exists — nothing to recover from")
+        return problems
+    start, end = base_range(found[-1])
+    current = arch.get("current_wal")
+    if current and segment_like(current) and \
+            segment_number(current)[0] != segment_number(start)[0]:
+        problems.append(f"the server is on timeline {segment_number(current)[0]} but the newest "
+                        f"base starts on timeline {segment_number(start)[0]} — take a new base")
+        return problems
+    tail = end
+    if last and segment_number(last)[0] == segment_number(end)[0] and \
+            segment_number(last)[1] > segment_number(end)[1]:
+        tail = last
+    if gaps := missing_segments(start, tail, wal):
+        problems.append(f"the WAL chain from the newest base ({found[-1].name}: {start}) through "
+                        f"{tail} is incomplete ({', '.join(gaps[:3])})")
+    return problems
+
+
+def coverage_gaps(*, wal: Path | None = None, root: Path | None = None,
+                  through: str | None = None) -> list[str]:
+    """The retention check on top of recoverability(): every segment from the OLDEST base's
+    start through the newest base's end (or `through`, the last archived segment, when later)
+    must be archived, so every kept point in time is recoverable."""
+    found = bases(BASES if root is None else root)
+    if not found:
+        return ["no base backup"]
+    start = start_segment(found[0])
+    end = base_range(found[-1])[1]
+    if through and segment_like(through) and segment_number(through)[0] == \
+            segment_number(end)[0] and segment_number(through)[1] > segment_number(end)[1]:
+        end = through
+    return missing_segments(start, end, WAL if wal is None else wal)
+
+
 def wal_rate(wal: Path | None = None, *, hours: float = 24.0,
              since: float | None = None) -> dict:
     """Archived WAL volume per day from the archive's own files (their mtimes) over the last
@@ -689,6 +932,13 @@ def status(*, retain_days: float = 35, socket: str | None = None,
             out["exposure_error"] = why
     except Exception as exc:
         out["archiver"] = {"error": f"{type(exc).__name__}: {exc}"[:300]}
+    # the one recoverability judgement (the growth block uses the same function)
+    try:
+        if "error" in out["archiver"]:
+            raise RuntimeError(f"cannot read the archiver: {out['archiver']['error']}")
+        out["recoverability"] = recoverability(out["archiver"])
+    except Exception as exc:
+        out["recoverability"] = [f"recoverability unknown: {type(exc).__name__}: {exc}"[:300]]
     try:
         found = bases()
         out["bases"] = {"count": len(found), "names": [b.name for b in found],
@@ -696,10 +946,10 @@ def status(*, retain_days: float = 35, socket: str | None = None,
                         if found else None,
                         "oldest": found[0].name if found else None}
         if found:
-            first = start_segment(found[0])
             out["bases"]["recoverable_from"] = _utc(base_time(found[0]))
             out["bases"]["coverage_days"] = round((_now() - base_time(found[0])) / 86400, 2)
-            out["wal_chain_gaps"] = chain_gaps(first)
+            out["wal_chain_gaps"] = coverage_gaps(
+                through=(out.get("archiver") or {}).get("last_archived_wal"))
     except Exception as exc:
         out["bases"] = {"error": f"{type(exc).__name__}: {exc}"[:300]}
     try:

@@ -2024,7 +2024,7 @@ promotion, failure/kill/recovery, maintainer review, restore, and PG→FileStore
 bounded-memory scaling and the ADR's 160M-row/400-document metadata p95 <30 seconds benchmark.
 Rollback: fix failures while production remains FileStore."
 
-Production is unchanged: FileStore stays authoritative, no schema change (live stays v7), and the
+Production is unchanged: FileStore stays authoritative (the review fixes add schema v8, below), and the
 only new behaviour outside PostgreSQL authority is additive monitoring (a crontab snippet below,
 NOT installed), a stronger restore drill that the existing Sunday cron line runs once this is
 merged, the installed `prune --keep 7` line refusing to delete anything while the WAL chain has
@@ -2172,11 +2172,27 @@ Every new gate path is selected by `staged_runs.staged_authority(st)`, as in ste
   own cluster; a normal day archives ≈ 200 segments, ≈ 35 s of replay at the measured ≈ 6
   segments/s, so with daily bases the RTO is ≈ 4–5 min (verify + extract + replay +
   fingerprint) plus switching the service over.
+- **Drill under representative growth load** (after the review fixes, with the new cleanup and
+  retention lock): `drill-20260925T143446Z`, 14:34:46–14:48:43 UTC, while the live cron round
+  `20260925T142601Z-3dbc0595` ran its prune (from 14:34:06), clean, README stats and all five
+  file gates concurrently (check, index, lint, contracts, the test suite, from 14:40:35) on the
+  same host: **fingerprint identical** (entries 1,623,816, manifest 1,623,806, blocklist 140,305,
+  ledger 115,994, events 1,856), segment archived 18.0 s after the switch, verify 71.8 s,
+  extraction 96.7 s, replay of 3,984 segments 649.1 s, fingerprint 19.0 s: **restore time
+  836.5 s = 13.9 min**. These are RESTORE times: they exclude the service cutover (moving the
+  restored directory into place or repointing `nekaise-postgres` and the store DSN, restarting,
+  and the first round's checks — an operator procedure, not yet rehearsed), so they demonstrate
+  the 60-minute RTO for restoring the metadata, not an end-to-end operational RTO. Step 6 should
+  rehearse the cutover part once on a scratch instance before the claim is made.
 - **RPO**: `pg_backup.py rpo-probe` writes a WAL record (a non-transactional logical message: no
   table changes) and times until its segment is in the archive: 69.5 s, 302.7 s, 298.1 s and
-  302.6 s on the live cluster (11:05–11:21 UTC) — **worst 303 s** = archive_timeout (300 s) +
-  copy, against the 15-minute budget. The bound the growth block enforces: exposure = (age of
-  the oldest `.ready` segment) + archive_timeout (`pg_backup.exposure`).
+  302.6 s on the live cluster (11:05–11:21 UTC). These are OBSERVED archive-arrival latencies of
+  a healthy archiver — about archive_timeout (300 s) + the copy — not a proven worst-case bound:
+  under failures (the SSD unmounted, the archive_command failing, the archiver stalled) the loss
+  window grows until someone acts. What bounds it operationally is the growth block and the
+  alert, which fire when the exposure — (age of the oldest `.ready` segment) + archive_timeout
+  (`pg_backup.exposure`) — exceeds the 15-minute budget, or the archive stops holding what the
+  server reports archived; the block stops growth then, so no NEW metadata is produced at risk.
 - **Backup-disk budget (operator note, 2026-09-25: the 1.8 TB SSD is for corpus backups — about 7
   tars of ~22 GB — and metadata backups must fit a sensible share, ≤ 200 GB)**. Measured live WAL
   after the test clusters moved away (10:45–15:52 local, drills and probes included): 41 segments
@@ -2271,35 +2287,51 @@ work_mem 64 MB, maintenance_work_mem 2 GB, max_wal_size 16 GB, wal_compression z
 and synchronous_commit on**, wal_level replica; archive_mode off), removed afterwards. The
 throwaway test cluster (fsync off) was not used for the numbers.
 
-**The ADR's acceptance benchmark — 160M synthetic documents** (160,000,000 entries + 160,000,000
-manifest rows = 320M metadata rows, 437 GB database: manifest 315 GB, entries 121 GB; ~600-byte
-rows as in the step-2/3 benchmarks), generated in the server by 16 sessions and indexed with the
-schema's own index definitions (load 73 min, index builds 51 min — both slowed by the other
-benchmarks and a drill running at the same time), sample rows checked canonical with exact
-derived columns; a baseline generation whose contracts receipt carries the full recount
-(**one-pass recount of 160M documents: 360 s**); then 20 rounds of a typical 400-document
-round's metadata work (above: discovery with dedup over URLs/titles/ids, 16 loader checkpoints,
-a 100-document prune with blocklist + ledger + 300 metric updates, a 400-row cleaner patch,
-freeze, the contracts + lint checks of the frozen run in delta mode, gate receipts, promotion
-and the fold):
+**The ADR's acceptance benchmark — 160M synthetic documents, schema v8** (rerun after the review
+with indexed persistent-id membership: 160,000,000 entries + 160,000,000 manifest rows = 320M
+metadata rows, each carrying a DOI `persistent_id` and its `pids`; 562 GB database; ~650-byte
+rows), generated in the server by 16 sessions (manifest 60 min, entries 24 min) and indexed with
+the schema's own definitions (url/title keys, sha256, legacy order and the two `pids` GIN
+indexes: 59 min; populate 8,615 s in all), sample rows checked canonical with exact derived
+columns including `pids`; a baseline generation whose contracts receipt carries the full recount
+(**one-pass recount of 160M documents: 349 s**); then 20 rounds of a typical 400-document
+round's metadata work (discovery with dedup over URLs/titles/ids AND `known_pids()` over 400
+persistent identifiers — 200 new, 200 already present, all 200 found every round — 16 loader
+checkpoints, a 100-document prune with blocklist + ledger + 300 metric updates, a 400-row cleaner
+patch, freeze, the contracts + lint checks of the frozen run in delta mode, gate receipts,
+promotion and the fold):
 
 | per round (n = 20) | p50 | p95 | max |
 |---|---|---|---|
-| discovery: known() over 400 URLs + titles + ids | 0.283 s | 0.371 s | 0.371 s |
-| discovery merge (persisted + applied) | 0.051 s | 0.072 s | 0.072 s |
-| loader checkpoint of 25 rows (n = 320) | 0.022 s | 0.026 s | 0.068 s |
-| prune: 100 dropped + blocklist + ledger + 300 updates | 0.238 s | 0.422 s | 0.422 s |
-| cleaner patch of 400 rows | 0.063 s | 0.068 s | 0.068 s |
-| freeze | 0.002 s | 0.006 s | 0.006 s |
-| contracts + lint checks at the frozen state (delta counters) | 0.239 s | 0.333 s | 0.333 s |
-| gate receipts / promotion | 0.005 / 0.004 s | 0.008 / 0.005 s | |
-| fold of the promoted generation | 0.454 s | 0.720 s | 0.720 s |
-| **whole round's metadata work** | **1.69 s** | **2.44 s** | **2.44 s** |
+| discovery: `known_pids()` of 400 identifiers | 0.770 s | 1.526 s | 1.526 s |
+| discovery: known() over 400 URLs + titles + ids, with the above | 1.097 s | 1.716 s | 1.716 s |
+| discovery merge (persisted + applied) | 0.054 s | 0.081 s | 0.081 s |
+| loader checkpoint of 25 rows (n = 320) | 0.022 s | 0.027 s | 0.054 s |
+| prune: 100 dropped + blocklist + ledger + 300 updates | 0.245 s | 0.570 s | 0.570 s |
+| cleaner patch of 400 rows | 0.069 s | 0.079 s | 0.079 s |
+| freeze | 0.003 s | 0.004 s | 0.004 s |
+| contracts + lint checks at the frozen state (delta counters) | 0.232 s | 0.637 s | 0.637 s |
+| gate receipts / promotion | 0.005 / 0.004 s | 0.068 / 0.023 s | |
+| fold of the promoted generation | 0.499 s | 1.044 s | 1.044 s |
+| **whole round's metadata work** | **2.82 s** | **4.00 s** | **4.00 s** |
 
-**p95 2.44 s against the 30 s budget**; the benchmark process's peak RSS was **52 MB** (bounded:
-every step pages; nothing holds a table). Not included (not metadata work): payload download
-and extraction, subprocess start-up of the gates, the test-suite gate, and the `check` gate
-(`clean_corpus.py --check`, which still walks the manifest — see step 6).
+**p95 4.00 s against the 30 s budget** (before v8, without `known_pids()`: p95 2.44 s); the
+benchmark process's peak RSS was **56 MB** (bounded: every step pages; nothing holds a table).
+The rounds ran on the populated schema kept from the load (`--reuse-schema`): the first attempt
+found `known_pids()` planned as a sequential scan of 160M rows (a `pids && <400 values>` filter is
+estimated to match most of the table), which is why it now probes the GIN index once per
+identifier and reads the visible rows by primary key (`LATERAL … OFFSET 0`, as the artifact
+checks do; a test pins the plan).
+
+**Scope — what this benchmark covers and what it does not.** It measures the store's metadata
+work of a round: staging, the per-run checks, promotion and the fold. The runs were
+`artifacts="unchecked"`: no versioned artifact metadata (no `run_artifacts` registration, no
+claim checks at sealing, no artifact gate re-hashing), no payload bytes, network or extraction,
+no subprocess start-up, no test-suite gate, and not the full `check` gate
+(`clean_corpus.py --check`, which still walks every manifest row — step 6). The versioned
+artifact path was measured separately at 1.62M documents (step 3: a versioned 400-row cleaner
+patch ≈ 60 ms, a 25-row versioned checkpoint 33 ms, the artifact gate 1.4 s per 20,000
+versions); it has not been measured at 160M.
 
 **nk_basis_text and reads with accumulated unfolded generations** (`basis` mode; 1.62M
 documents; K generations promoted and NOT folded, each revising the same 400 documents — the worst
@@ -2335,20 +2367,11 @@ critical above 128). If long pins ever become normal, the overlay's supersession
 per-key "latest visible revision" form (e.g. DISTINCT ON over (rank, batch)) — noted for stage 5,
 not needed for the cutover.
 
-### Persistent-id membership: a hard pre-cutover requirement
+### Persistent-id membership: indexed (schema v8)
 
-The `known_pids()` lookup arriving from the licence/persistent-id branch is an unindexed
-expression scan of both tables per call. Its index needs the branch's normalization
-(`state_codec.normalize_pid`/`row_pids`, not on main), so it is not shipped here. **Before
-cutover**: a migration (the next free schema version) adds a derived `pids text[]` column to
-`entries`, `manifest` and `revisions`, written by every derived-column writer (`put_rows`,
-`revision_keys` in staging, the fold, the shadow replay) from `codec.row_pids(row)`, with GIN
-indexes (`revisions`: partial, entries/manifest puts); it backfills every existing row in the
-migration transaction in keyset batches (≈ 3.2M rows at cutover; like migration 5's revision-key
-backfill, guards disabled only for its own statements) and bumps the schema version so older code
-is refused; `known_pids` becomes `pids && %s::text[]` over each source (both branches index-
-usable); `verify_generation`'s derived-key checks and the metadata sweep compare `pids` like the
-other derived columns.
+Shipped after the review (below: "Indexed persistent-id membership: schema v8"); it is no longer
+a pre-cutover requirement. The live shadow migrates 7 → 8 on its next `pg_shadow sync` after
+the merge (12,808 entries and 12,808 manifest rows backfilled), like every earlier migration.
 
 ### Tests and gates
 
@@ -2418,8 +2441,8 @@ other derived columns.
 - Stage 5: pack/object locators and eviction; registering adopted legacy versions in PostgreSQL;
   an actual (reviewed) collector behind the GC report; a per-key latest-revision form of the
   overlay's supersession check if long retention pins become normal.
-- Step 6 prerequisites (below): indexed persistent-id membership, the baseline tool recording
-  counters, the changed-rows-only `check` gate before large growth.
+- Step 6 prerequisites (below): the baseline tool recording counters, the changed-rows-only
+  `check` gate before large growth, a rehearsal of the service cutover part of the RTO.
 - Unchanged: the lease with heartbeat and fencing epoch before any second host writes.
 
 ### Crontab snippet (NOT installed; `bash scripts/install_ops_cron.sh` installs it, `--print` shows it)
@@ -2433,15 +2456,21 @@ other derived columns.
 ```
 
 The last line replaces the stage-2 `prune --keep 7` line (same tag); the Sunday 05:00 drill line
-stays as it is. Install the retention line only after the one-time test-WAL prune above.
+stays as it is.
+
+**Operational decisions (Codex-aligned, 2026-09-25), all for the coordinator after the merge:**
+(1) after the 2026-09-26 03:30 base, run `pg_backup.py prune --keep 1` ONCE to drop the 113 GB of
+test-database WAL — only with this branch merged (the prune now refuses a missing prefix,
+interior gap or tail); (2) enable zstd compression in `archive_wal.sh` only together with this
+branch (prune now cleans `.zst` segments; restores read them); (3) install the monitoring lines
+(ops_health, sweeps, GC report) only now that fixes 6–8 are in, i.e. after the merge; install
+the 35-day retention line after (1).
 
 ### What step 6 (cutover) must do
 
 Everything below is for the coordinator/operator; nothing of it ran against live.
 
 1. **Hard pre-cutover requirements** (code, reviewed like any step):
-   - indexed persistent-id membership (the migration above) once the licence/persistent-id
-     branch has merged;
    - the baseline generation-0 tool (step 1 decision (1), still TODO) must promote generation 0
      through a baseline run whose `contracts` receipt carries `verify_generation.full_counters`
      of the baseline (as `tests/test_scale_bench.py`'s `baseline()` does), so the first round
@@ -2452,13 +2481,15 @@ Everything below is for the coordinator/operator; nothing of it ran against live
      check moved into the metadata sweep) before the corpus grows by an order of magnitude — left
      for the owner of `clean_corpus.py` (another branch is changing it now);
    - the store's database role keeps superuser or gets `pg_monitor` (the recoverability block and
-     ops_health read `pg_ls_archive_statusdir`; without it growth is blocked, never allowed).
+     ops_health read `pg_ls_archive_statusdir`; without it growth is blocked, never allowed);
+   - a rehearsal of the service-cutover part of the RTO (restore → repoint the service and DSN →
+     first round's checks) on a scratch instance: the drills measure restoration only.
 2. **Backups before the switch**: after the 2026-09-26 03:30 base, one `pg_backup.py prune
    --keep 1` drops the 113 GB of test-database WAL; decide on archive compression (zstd in
    `archive_wal.sh`, restore already reads `.zst`); install `scripts/install_ops_cron.sh` (the
    35-day retention line replaces the `prune --keep 7` line; ops_health every 5 min; sweeps; the
-   weekly GC report); let one Sunday drill pass with the new code (it ran to completion twice by hand,
-   see above) and ops_health show no critical check.
+   weekly GC report); let one Sunday drill pass with the new code (it ran to completion three
+   times by hand, once under a live round, see above) and ops_health show no critical check.
 3. **The cutover itself** (plan item 6, unchanged): pause dig and maintainer crons, take the
    locks in the fixed order, drain/recover, pin commit C, final `pg_shadow sync` + `verify`,
    create and verify the baseline generation (1), disable the shadow timers, switch the database
@@ -2472,10 +2503,120 @@ Everything below is for the coordinator/operator; nothing of it ran against live
 4. **Rollback during the seven-day window** (rehearsed end to end in `tests/test_rehearsal.py`):
    fence writers (pause crons, take the locks), `rollback_export.py export --target DIR` of the
    latest promoted generation (it verifies itself: identical canonical export or it fails),
-   `rollback_export.py payloads --target <checkout>` (fails if any claimed payload is held
-   nowhere), switch the database half to `file` (`set_authority("file")`) and the host record
+   `rollback_export.py payloads --target <checkout>` (verifies every raw/text claim by hash and
+   size and corpus/ file by file BEFORE linking anything; any failure stops the rollback before
+   the authority switch), switch the database half to `file` (`set_authority("file")`) and the host record
    (`write_record(..., "file", lift_fence=True)`), replace the tracked layout with the exported
    tree, render README stats, commit, and run one legacy round. Never restore a stale cutover
    copy.
 5. **After seven healthy days** (plan item 7): retire the production file adapters; keep
    `rollback_export.py`, `pg_shadow.py` import/verify and `pg_backup.py`.
+
+
+### Step 5, Codex review fixes (2026-09-25; verdict MERGE AFTER FIXES, two P1, eight P2)
+
+Rebased onto main with the OpenAlex resolver (phase 1: `known_pids()`, rights checks in
+`lint_registry.entry_errors`, conftest machine-state isolation — all kept). Each fix has a
+regression test.
+
+- **P1 1 — drill cleanup never signals a process it cannot identify.** `stop_instance` now reads
+  the scratch directory's `postmaster.pid` (pid, data directory, start time) and `/proc/<pid>`
+  (start time from `stat` + `btime`, `cmdline`, `cwd`): only a process whose argv[0] is
+  `postgres`, whose working directory (or `-D`) is that data directory and whose start time is
+  the recorded one is ever stopped (`pg_ctl stop -m fast`, then `-m immediate`); success means
+  the process has actually EXITED (polled; pg_ctl's exit code is not trusted). A pid that now
+  belongs to another process (reuse after a reboot) is never signalled; anything that cannot be
+  read is "uncertain" and the scratch state is KEPT (reported in the drill record and the log)
+  — in the leftover sweep and in the drill's own teardown. Tests: a stale pid naming a live
+  unrelated process (not signalled), an unreadable pid file (kept), a stop that "succeeds" but
+  leaves the process running (kept), a stop that works (removed).
+- **P1 2 — WAL coverage has explicit endpoints.** `missing_segments(first, last)` checks the
+  inclusive range (the start and the end included; a range crossing timelines or running
+  backwards is unrecoverable, never "complete"); `base_range(base)` gives a base's Start-LSN and
+  End-LSN segments from its manifest. Prune requires every segment from the oldest kept base's
+  start through the newest kept base's END; the drill requires its base's start through the
+  restore point's segment; recoverability requires the newest base's start through its end and
+  on through the server's last archived segment. `chain_gaps` (open-ended at the newest archived
+  file, so a start beyond it returned `[]`) is gone. Tests: missing prefix, interior gap, missing
+  tail, the reviewed case (the newer base's whole range absent) and an empty archive — prune
+  refuses and keeps the fallback base in every case.
+- **P2 3 — prune respects a running drill.** `retention_lock` (an flock on
+  `<bases>/.retention.lock`): the drill holds it shared from choosing its base until its scratch
+  instance is gone; prune holds it exclusive, waiting at most `--lock-timeout` (3 h) and then
+  refusing. Corpus rounds never take it. Test: a shared holder makes prune refuse, releasing it
+  lets prune proceed.
+- **P2 4 — compressed WAL is pruned.** `pg_archivecleanup -x .zst`: `.zst` segments are judged by
+  their segment name like plain ones. Test: the real binary over a mixed archive removes older
+  plain and compressed segments and keeps newer ones of both kinds.
+- **P2 5 — the rollback verifies payloads before anything changes.** `verify_payloads` (run by
+  `link_payloads` first; any failure raises with nothing changed, so the authority switch never
+  happens on unverified payloads): every raw/text claim must be a held version whose bytes hash
+  to the claim (raw: and have the row's size) or a readable REGULAR file at the legacy path with
+  those bytes (a directory, symlink or device is never "legacy ok"; a claim without an identity
+  fails); corpus/ must be a complete materialization of G by its stamp AND file by file — every
+  member regular with the row's `corpus_sha256`, no other document file. Test (real round): a
+  same-size damaged text version, a directory at a raw path, a legacy file with wrong bytes, a
+  tampered and an extra corpus file — each refused with raw/text unchanged and authority still
+  PostgreSQL; the right bytes are then accepted and linked.
+- **P2 6 — sweep failures in progress are failures.** `sweep_check` counts the failures of the
+  completed pass AND of the pass in progress (lists or bare counts); a completed pass's failures
+  stay critical until a later completed pass without failures replaces them; a malformed state
+  file is critical.
+- **P2 7 — health is always published.** `payload_check` validates the whole status inside its
+  protected boundary (a non-object, a non-string `latest_backup`/`result`, a missing or
+  impossible date → critical); every check runs through `_guarded` (an exception becomes a
+  critical result), and `main` records even when `evaluate()` itself fails. The review evidence
+  guards the same helper. Tests: seven malformed statuses, a failing `status()` plus a malformed
+  payload file (both critical, recorded), a failing `evaluate()` (recorded), review evidence with
+  a malformed status.
+- **P2 8 — one recoverability judgement.** `pg_backup.recoverability(arch)` is THE function:
+  WAL archived at all and exposure within the RPO; the server's last archived segment present in
+  the archive; a base exists on the server's timeline; the chain from the newest base's start
+  through its end and the last archived segment complete. The growth block
+  (`ops_health.recoverability_block`), the health report (`pg_backup.status()` →
+  `metadata_checks`' `archive` check: critical exactly when it reports problems) and the review
+  evidence all call it; the oldest-base coverage check (`coverage_gaps`) stays on top as the
+  retention check. Test: every state of the block test asserts monitoring and blocking agree.
+- **P2 9 — the drill fingerprint ignores lock-free pin bookkeeping.** `release_pin()` deletes
+  from `generation_retention` without the writer lock, so it can commit between the drill's
+  snapshot and its restore point: `VOLATILE_TABLES = {"generation_retention"}` is excluded from
+  every fingerprint (both sides); a pin changes only how far the fold may go, never a
+  generation's content. Test: a pin released between an open REPEATABLE READ snapshot and a new
+  one — identical fingerprints (the table differed: one pin vs none).
+- **P2 10 — recoverability is re-checked while a round grows.** A growth round checks before
+  every mutating step (`before fetch/prune/clean`), right before its promotion, and every
+  `RECOVERABILITY_RECHECK_SECONDS` (300; `NEKAISE_RECOVERABILITY_RECHECK_SECONDS` can only lower
+  it, clamped to 1..300) in a watcher thread that records `growth_blocked` and SIGTERMs the
+  round, which unwinds as on a cron timeout (processes stopped, broker drained, run aborted).
+  Recovery, standalone repairs and maintenance runs are not blocked. Tests (real rounds): a
+  block that appears during the gates stops the promotion, one that appears during fetch stops
+  the round before prune, the watcher stops a round held in its fetch (exit 130, aborted), and
+  a standalone repair still promotes while rounds are refused.
+- **Indexed persistent-id membership: schema v8** (it now fits: the normalization is on main).
+  Migration 8 adds `pids text[]` to entries, manifest and revisions — NULL means "declares none",
+  exact for rows without `persistent_id`/`origin_ids`, so there is no table rewrite — with partial
+  GIN indexes, and backfills every row and every entries/manifest put revision that has either
+  field (live: 12,808 entries + 12,808 manifest rows; the revision guard is disabled only for the
+  backfill's own statements). Every derived-column writer fills it (`put_rows`: the store, the
+  shadow replay, the fold; staging's `_stage` and replacement tombstones). `known_pids()` probes
+  the GIN index once per identifier (`LATERAL … pids @> ARRAY[p] OFFSET 0`) into the projection
+  and into revisions for candidate ids, then reads the VISIBLE rows of those ids by primary key
+  through the view's source, so the overlay decides exactly as in `known()`. A single
+  `pids && <400 values>` filter was estimated to match most of the table and seq-scanned 160M
+  rows in the benchmark (12+ min per call); the probe is 0.77 s p50 / 1.53 s p95 there. The
+  derived-key checks cover it
+  (`pg_shadow` verify, `verify_generation`, the integrity sweep). Old-code migration tests now
+  drive the pre-migration schema with the OLD `pg_shadow` too (`tests/old_code.py`). Tests
+  (`tests/test_store_pg_pids.py`): a schema written by the real v7 code (projection rows, a
+  promoted unfolded generation with a staged alias and a tombstone, an open run) migrates, every
+  pid backfilled, `known_pids` answers exactly what the v7 expression scan answered, the open
+  run's overlay sees its own staged pid, v7 clients refused; every writer derives `pids` and the
+  fold carries them; the lookup uses `manifest_pids`; stale `pids` are found by all three
+  derived-key checks. The OpenAlex `test_known_pids_*` contract tests pass on both backends.
+- **Incremental lint and the OpenAlex rights checks**: `changed_lint` calls the shared
+  `entry_errors`, so the rights-evidence rules apply to a run's changes (test: an `openalex_sim`
+  entry with `license: open` and no evidence fails incrementally; a complete one passes).
+- **Gates after the fixes**: full suite 1488 passed / 254 skipped (PostgreSQL skipped); with
+  PostgreSQL (the test cluster) 1771 passed / 3 skipped (the opt-in benchmarks); `py_compile`
+  of scripts and tests clean. The 160M benchmark was rerun at schema v8 (above: p95 4.00 s per
+  round, `known_pids()` of 400 identifiers p95 1.53 s) and its cluster removed afterwards.

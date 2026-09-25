@@ -19,6 +19,8 @@ from pathlib import Path
 
 import pytest
 
+import old_code
+
 import store
 import store_broker
 import store_staging
@@ -1345,17 +1347,18 @@ def test_a_v4_shadow_migrates_to_v5_and_keeps_replicating(tmp_path, monkeypatch)
     c1 = repo.commit("c1")
     schema = f"m_{uuid.uuid4().hex[:12]}"
     old = v4.PgStore(repo.path, dsn=DSN, schema=schema)       # the live shadow's code
+    old_shadow = old_code.load(V4_COMMIT, "pg_shadow", store_pg=v4)
     try:
-        pg_shadow.do_import(old, c1, repo.path, log=quiet)
+        old_shadow.do_import(old, c1, repo.path, log=quiet)
         repo.write("pruned_urls.txt", "https://e.org/old\nhttps://e.org/v4\n")
         repo.write("registry/journal/2026-09-25.jsonl", json.dumps(
             {"seq": 1, "run_id": "r", "op": "commit", "digest": "d", "v": 2}) + "\n")
         c2 = repo.commit("c2")
-        assert pg_shadow.do_sync(old, c2, repo.path, log=quiet) == 1
-        assert pg_shadow.do_verify(old, repo.path, log=quiet)
+        assert old_shadow.do_sync(old, c2, repo.path, log=quiet) == 1
+        assert old_shadow.do_verify(old, repo.path, log=quiet)
         with old.read() as v:
             before = export_bytes(old, v, tmp_path / "v4")
-        before_digests = pg_shadow.pg_digests(old)
+        before_digests = old_shadow.pg_digests(old)
         auth = old.authority()
 
         new = store_pg.PgStore(repo.path, dsn=DSN, schema=schema)   # migrates 4 -> 5

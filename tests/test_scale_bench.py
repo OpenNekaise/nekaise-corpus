@@ -74,22 +74,24 @@ def row(i: int) -> dict:
             "raw_path": f"raw/bench/{s}.pdf", "text_path": f"text/{s}.md",
             "text_chars": 40_000 + i % 997, "error": None, "fetched_at": "2026-09-25T00:00:00Z",
             "text_sha256": hashlib.sha256(s.encode() + b"t").hexdigest(),
-            "extractor_version": "x1",
+            "extractor_version": "x1", "persistent_id": f"https://doi.org/10.5555/BENCH.{i}",
             "quality": {"total": 1.5, "w20": {"domain": i % 7, "alpha": 0.75025}}}
 
 
 def entry(r: dict) -> dict:
-    return {k: r[k] for k in ("id", "title", "url", "source", "license", "topic", "format")}
+    return {k: r[k] for k in ("id", "title", "url", "source", "license", "topic", "format",
+                              "persistent_id")}
 
 
 # The same rows, generated in the server: canonical JSON (sorted keys, compact) by construction.
 ID = "'doc-' || lpad(g::text, 9, '0')"
 MANIFEST_SQL = f"""
 INSERT INTO {{schema}}.manifest (id, row_text, url_norm, url_key, title_norm, title_key, sha256,
-                                  shard, topic_key)
+                                  shard, topic_key, pids)
 SELECT id, '{{{{"bytes":' || (100000 + g) || ',"error":null,"extractor_version":"x1",'
         || '"fetched_at":"2026-09-25T00:00:00Z","format":"pdf","http_status":200,"id":"' || id
-        || '","license":"open","quality":{{{{"total":1.5,"w20":{{{{"alpha":0.75025,"domain":'
+        || '","license":"open","persistent_id":"https://doi.org/10.5555/BENCH.' || g
+        || '","quality":{{{{"total":1.5,"w20":{{{{"alpha":0.75025,"domain":'
         || mod(g, 7) || '}}}}}}}},"raw_path":"raw/bench/' || id || '.pdf","sha256":"' || sha
         || '","source":"bench","status":"ok","text_chars":' || (40000 + mod(g, 997))
         || ',"text_path":"text/' || id || '.md","text_sha256":"' || tsha
@@ -99,7 +101,7 @@ SELECT id, '{{{{"bytes":' || (100000 + g) || ',"error":null,"extractor_version":
        sha256(convert_to('https://e.org/' || id || '.pdf', 'UTF8')),
        'building energy study ' || g,
        sha256(convert_to('building energy study ' || g, 'UTF8')),
-       sha, {{shard}}, topic
+       sha, {{shard}}, topic, ARRAY['doi:10.5555/bench.' || g]
 FROM (SELECT g, {ID} AS id,
              encode(sha256(convert_to({ID}, 'UTF8')), 'hex') AS sha,
              encode(sha256(convert_to({ID} || 't', 'UTF8')), 'hex') AS tsha,
@@ -107,14 +109,16 @@ FROM (SELECT g, {ID} AS id,
       FROM generate_series(%s::bigint, %s::bigint) g) s
 """
 ENTRIES_SQL = f"""
-INSERT INTO {{schema}}.entries (id, row_text, url_norm, url_key, title_norm, title_key)
-SELECT id, '{{{{"format":"pdf","id":"' || id || '","license":"open","source":"bench",'
+INSERT INTO {{schema}}.entries (id, row_text, url_norm, url_key, title_norm, title_key, pids)
+SELECT id, '{{{{"format":"pdf","id":"' || id || '","license":"open","persistent_id":'
+        || '"https://doi.org/10.5555/BENCH.' || g || '","source":"bench",'
         || '"title":"Building energy study ' || g || '","topic":"' || topic
         || '","url":"https://e.org/' || id || '.pdf"}}}}',
        'https://e.org/' || id || '.pdf',
        sha256(convert_to('https://e.org/' || id || '.pdf', 'UTF8')),
        'building energy study ' || g,
-       sha256(convert_to('building energy study ' || g, 'UTF8'))
+       sha256(convert_to('building energy study ' || g, 'UTF8')),
+       ARRAY['doi:10.5555/bench.' || g]
 FROM (SELECT g, {ID} AS id,
              (ARRAY['building_energy','structures_civil','urban','materials'])[mod(g, 4) + 1] AS topic
       FROM generate_series(%s::bigint, %s::bigint) g) s
@@ -190,13 +194,14 @@ def check_sample(st, n: int) -> None:
         keys = {r[0]: tuple(bytes(v) if isinstance(v, memoryview) else v for v in r[1:])
                 for r in conn.execute(
                     "SELECT id, url_norm, url_key, title_norm, title_key, sha256, shard, "
-                    "topic_key FROM manifest WHERE id = ANY(%s)", [[sid(i) for i in ids]])}
+                    "topic_key, pids FROM manifest WHERE id = ANY(%s)", [[sid(i) for i in ids]])}
         ent = dict(conn.execute("SELECT id, row_text FROM entries WHERE id = ANY(%s)",
                                 [[sid(i) for i in ids]]).fetchall())
     for i in ids:
         r = row(i)
         assert got[sid(i)] == store.canonical_row(r), (got[sid(i)], store.canonical_row(r))
-        assert keys[sid(i)] == tuple(store_pg.revision_keys("manifest", r)), sid(i)
+        assert keys[sid(i)] == (*store_pg.revision_keys("manifest", r),
+                                store_pg.pids_for(r)), sid(i)
         assert ent[sid(i)] == store.canonical_row(entry(r))
 
 
@@ -248,12 +253,13 @@ def baseline(st, clock: Clock) -> dict:
     return counters
 
 
-def one_round(st, root: Path, n: int, r: int, clock: Clock, rng) -> None:
+def one_round(st, root: Path, n: int, r: int, clock: Clock, rng, pruned: set) -> None:
     import lint_registry
     import store_broker
     import store_staging
     import verify_generation
     run_id = f"round-{r:03d}-{uuid.uuid4().hex[:6]}"
+    known_pids: list[int] = []
     base = n + r * 1000
     t_round = time.monotonic()
     with st.writer(round_id=run_id) as w:
@@ -264,19 +270,27 @@ def one_round(st, root: Path, n: int, r: int, clock: Clock, rng) -> None:
             fresh = [entry(row(base + i)) for i in range(400)]
             hits = view.known(urls=[e["url"] for e in fresh],
                               titles=[e["title"] for e in fresh], ids=[e["id"] for e in fresh])
+            # persistent identities of the candidates, half of them already in the corpus
+            probe = [f"doi:10.5555/bench.{base + i}" for i in range(200)] + \
+                [f"doi:10.5555/bench.{i}" for i in rng.sample(range(n), 400) if i not in pruned][:200]
+            known_pids.append(len(clock("discovery.known_pids_400", view.known_pids, probe)))
             batch.insert_entries([e for e in fresh if e["url"] not in hits.urls
                                   and e["id"] not in hits.ids])
         rec = store_broker.Recorder()
         with st.read_staged(run_id, writer=w) as v:
             clock("discovery.known_400", compute, v, rec)
             version = v.version()
+        # (a few of the 200 random existing identities may have been pruned by earlier rounds)
+        if not known_pids or known_pids[-1] < 190:
+            raise SystemExit(f"known_pids found {known_pids} of the 200 existing identities")
         clock("discovery.merge_400", st.stage_batch, w, run_id, "discover", "merge",
               rec.requests, expected_version=version)
         for c in range(16):
             rows = [row(base + c * 25 + i) for i in range(25)]
             clock("loader.checkpoint_25", _stage, st, w, run_id, "fetch", f"ckpt-{c:04d}",
                   lambda tx, rows=rows: tx.upsert_manifest(rows))
-        picks = sorted(set(rng.sample(range(n), 400)))
+        picks = sorted(set(i for i in rng.sample(range(n), 440) if i not in pruned))[:400]
+        pruned.update(picks[:100])   # never picked again (a pruned id is gone)
         gone = [sid(i) for i in picks[:100]]
         survivors = {sid(i): {"quality": {"total": 2.5}} for i in picks[100:400]}
 
@@ -334,32 +348,59 @@ def refuse_live(dsn: str) -> None:
         raise SystemExit(f"refusing {dsn!r}: the live database name")
 
 
-def scale(dsn: str, n: int, rounds: int, sessions: int, keep: bool, log) -> dict:
+def scale(dsn: str, n: int, rounds: int, sessions: int, keep: bool, log,
+          reuse: str | None = None) -> dict:
+    """`reuse`: the schema of an earlier run of this benchmark, kept (--keep, or the process was
+    killed): its projection and baseline generation are used as they are (unfinished runs
+    aborted), so the rounds can be measured again without a multi-hour load."""
     refuse_live(dsn)
     import random
 
     import store_pg
+    import store_staging
     root = Path(os.environ.get("TMPDIR", "/tmp")) / f"nekaise-scale-{uuid.uuid4().hex[:8]}"
     (root / "registry").mkdir(parents=True)
     repo = Path(__file__).resolve().parents[1] / "registry"
     for name in store.CONFIG_FILES:
         if (repo / name).exists():
             (root / "registry" / name).write_bytes((repo / name).read_bytes())
-    st = store_pg.PgStore(root, dsn=dsn, schema=f"scale_{uuid.uuid4().hex[:10]}")
+    if reuse:
+        st = store_pg.PgStore(root, dsn=dsn, schema=reuse, create=False)
+    else:
+        st = store_pg.PgStore(root, dsn=dsn, schema=f"scale_{uuid.uuid4().hex[:10]}")
     clock = Clock()
     report = {"rows": n, "rounds": rounds, "schema": st.schema, "hardware": hardware(),
-              "server": server_settings(st)}
+              "server": server_settings(st), "reused": bool(reuse)}
     try:
-        st.pin_config_from_files()
-        t0 = time.monotonic()
-        report["populate"] = populate(st, dsn, n, sessions, log)
-        report["populate_s"] = round(time.monotonic() - t0, 1)
-        log(f"populated in {report['populate_s']} s")
-        report["baseline_counters"] = baseline(st, clock)
-        log(f"baseline recount {clock.times['baseline.full_recount'][0]:.0f} s")
-        rng = random.Random(20260925)
-        for r in range(rounds):
-            one_round(st, root, n, r, clock, rng)
+        if reuse:
+            with st.writer() as w:
+                for run in store_staging.unfinished_runs(st, w):
+                    st.abort_run(w, run["run_id"], reason="benchmark rerun")
+            with st._connect(autocommit=True) as conn:
+                report["rows_present"] = conn.execute(
+                    "SELECT (SELECT count(*) FROM manifest), (SELECT count(*) FROM entries)"
+                ).fetchone()
+                report["generation"] = conn.execute(
+                    "SELECT current_generation FROM dataset").fetchone()[0]
+            with st.read() as v:
+                import verify_generation
+                report["baseline_counters"] = verify_generation.recorded_counters(v, 0)
+            if report["baseline_counters"] is None:
+                raise SystemExit(f"{reuse} has no recorded baseline counters")
+            prior = report["generation"]
+        else:
+            st.pin_config_from_files()
+            t0 = time.monotonic()
+            report["populate"] = populate(st, dsn, n, sessions, log)
+            report["populate_s"] = round(time.monotonic() - t0, 1)
+            log(f"populated in {report['populate_s']} s")
+            report["baseline_counters"] = baseline(st, clock)
+            log(f"baseline recount {clock.times['baseline.full_recount'][0]:.0f} s")
+            prior = 0
+        rng = random.Random(20260925 + prior)
+        pruned: set[int] = set()
+        for r in range(prior, prior + rounds):
+            one_round(st, root, n, r, clock, rng, pruned)
             log(f"round {r}: {clock.times['round_total'][-1]:.2f} s")
         report["timings"] = clock.report()
         report["max_rss_mb"] = round(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024)
@@ -495,6 +536,8 @@ def main() -> int:
     ap.add_argument("--generations", default="0,1,16,64,65,256")
     ap.add_argument("--cases", default="hot,disjoint")
     ap.add_argument("--keep", action="store_true", help="keep the schema (debugging)")
+    ap.add_argument("--reuse-schema", default=None,
+                    help="scale: rerun the rounds on a kept, populated schema")
     ap.add_argument("--dsn", default=os.environ.get(
         "NEKAISE_PG_BENCH_DSN", os.environ.get(
             "NEKAISE_PG_TEST_DSN",
@@ -506,7 +549,8 @@ def main() -> int:
     def log(msg):
         print(f"[{time.strftime('%H:%M:%S')}] {msg}", file=sys.stderr, flush=True)
     if args.mode == "scale":
-        report = scale(args.dsn, args.rows, args.rounds, args.sessions, args.keep, log)
+        report = scale(args.dsn, args.rows, args.rounds, args.sessions, args.keep, log,
+                       reuse=args.reuse_schema)
     else:
         report = basis(args.dsn, args.rows, [int(x) for x in args.generations.split(",")],
                        args.keep, log, tuple(args.cases.split(",")))
