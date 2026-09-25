@@ -24268,3 +24268,516 @@ sources:
     topic: controls_bas
     format: pdf
     document_type: conference-paper
+  - id: ibp-a-diagnostic-bayesian-network-method-to-diagnose-bui
+    title: A Diagnostic Bayesian Network Method To Diagnose Building Energy Performance
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210945.pdf
+    source: ibpsa
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-applying-machine-learning-to-automate-calibration-fo
+    title: Applying Machine Learning to Automate Calibration for Model Predictive Control
+      of Building Energy Systems
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210992.pdf
+    source: ibpsa
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-characterisation-and-quantification-of-energy-flexib
+    title: Characterisation and Quantification of Energy Flexibility in the Residential
+      Sector
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_211001.pdf
+    source: ibpsa
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-assessing-the-impact-of-direct-evaporative-control-a
+    title: Assessing the Impact of Direct Evaporative Control Algorithms in Mixed-mode
+      Building
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_211059.pdf
+    source: ibpsa
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-coupling-of-modelica-domestic-hot-water-simulation-m
+    title: Coupling of Modelica Domestic Hot Water Simulation Model with Controller
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_211222.pdf
+    source: ibpsa
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-energy-savings-of-occupancy-based-controls-in-office
+    title: Energy Savings of Occupancy-Based Controls in Office Buildings
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_211335.pdf
+    source: ibpsa
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-coupling-building-system-and-power-grid-models-to-si
+    title: Coupling Building System and Power Grid Models to Simulate the Building-to-Grid
+      Integration
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_211356.pdf
+    source: ibpsa
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-impact-of-realistic-controls-on-building-energy-cons
+    title: Impact of Realistic Controls on Building Energy Consumption and Comfort
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_211358.pdf
+    source: ibpsa
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-simplified-building-controls-environment-with-a-re
+    title: A Simplified Building Controls Environment with a Reinforcement Learning
+      Application
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_211427.pdf
+    source: ibpsa
+    license: open
+    topic: controls_bas
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-building-climate-based-daylighting-models-based-on-o
+    title: Building Climate-based Daylighting Models Based On One-time Field Measurements
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210105.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-lighting-design-for-psychophysical-wellbeing-tools-a
+    title: 'Lighting Design For Psychophysical Wellbeing: Tools And Investigation Methods.'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210218.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-fast-climate-based-glare-analysis-and-spatial-mappin
+    title: Fast Climate-Based Glare Analysis and Spatial Mapping
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210267.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-modeling-daylight-in-adjacent-spaces-of-the-courtyar
+    title: Modeling Daylight in Adjacent Spaces of the Courtyard under Clear Sky Conditions
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210307.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-predicting-annual-equirectangular-panoramic-luminanc
+    title: Predicting Annual Equirectangular Panoramic Luminance Maps Using Deep Neural
+      Networks
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210369.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-sensitivity-analysis-on-the-impact-of-controlling-de
+    title: Sensitivity Analysis on the Impact of Controlling Decisions on Daylight and
+      Energy Simulations
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210371.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-simulating-the-performance-of-daylight-linked-contro
+    title: Simulating The Performance Of Daylight-Linked Control Systems
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210378.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-lighting-effects-on-human-behaviour-and-movements-a-
+    title: 'Lighting Effects on Human Behaviour and Movements: a Correlation between
+      Space Syntax and Modelling Index in a Museum Environment'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210392.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-methodology-to-model-the-performance-of-a-dynamic-
+    title: A Methodology To Model The Performance Of a Dynamic Mirror Light-shelf Based
+      on Solar Radiant Flux Impinging on the Window
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210483.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-novel-method-for-daylight-harvesting-optimization-
+    title: A Novel Method For Daylight Harvesting Optimization Based On Lighting Simulation
+      And Data-Driven Optimal Control
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210494.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-effect-of-facade-thickness-on-daylight-performance-i
+    title: Effect of Facade Thickness on Daylight Performance in a Reference Office
+      Building
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210503.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-tri-stimulus-color-accuracy-in-image-based-sky-model
+    title: 'Tri-stimulus Color Accuracy in Image-based Sky Models: Simulating the Impact
+      of Color Distributions throughout the Sky Dome on Daylit Interiors with D'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210585.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-design-method-for-complex-fenestration-systems-usi
+    title: A Design Method for Complex Fenestration Systems Using Forward Raytracing
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210599.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-evaluation-of-energy-savings-of-daylight-linked-ligh
+    title: Evaluation of Energy Savings of Daylight-Linked Lighting Control Strategies
+      Using Different Sky Distribution Models
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210626.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-the-effects-of-orientation-window-size-and-lighting-
+    title: The Effects of Orientation, Window Size, and Lighting Control to Climate-Based
+      Daylight Performance and Lighting Energy Demand on Buildings in Tropica
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210677.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-instantaneous-and-long-term-lighting-design-metrics-
+    title: Instantaneous and Long-term Lighting Design Metrics for Higher Education
+      Buildings in a Tropical Climate
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210728.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-methodology-to-simulate-annual-blind-use-in-large-
+    title: A Methodology To Simulate Annual Blind Use In Large Open Plan Offices
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210742.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-new-framework-for-evaluating-views-throughout-open
+    title: A New Framework for Evaluating Views throughout Open Plan Work Spaces
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210755.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-dynamic-cubic-illuminance-an-example-of-application-
+    title: 'Dynamic Cubic Illuminance: An Example Of Application Of A New Paradigm For
+      Daylight Analysis In An Ancient Pompeian Domus'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210761.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-climate-based-daylighting-metrics-assessment-to-sele
+    title: 'Climate-Based Daylighting Metrics Assessment to Select among Optimum Energy
+      Efficient Windows’ Shading Devices Solutions: case study of an office in a'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210785.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-daylight-simulation-and-compliance-reliability-of-cl
+    title: 'Daylight Simulation and Compliance: Reliability of Climate Data Solar Radiation
+      Models'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210800.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-aperture-based-daylight-modelling-introducing-the-vi
+    title: 'Aperture-Based Daylight Modelling: Introducing the ‘View Lumen’'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210810.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-adapting-the-residential-daylight-score-for-arid-hot
+    title: Adapting the Residential Daylight Score for Arid, Hot, and Humid Climates
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210843.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-method-for-optimizing-facades-design-for-enhancing
+    title: A Method for Optimizing Facades Design for Enhancing Daylight Distribution
+      in Exhibition Spaces
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210866.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-subjective-and-measured-evidence-for-residential-lig
+    title: Subjective and Measured Evidence for Residential Lighting Metrics in the
+      Tropics
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210898.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-evaluation-of-daylight-performance-of-the-new-worksh
+    title: Evaluation of Daylight Performance of the New Workshop Building at CEPT University,
+      Ahmedabad
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210912.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-model-evaluation-and-development-for-global-luminous
+    title: Model Evaluation and Development for Global Luminous Efficacy Models through
+      On-Site Measurement and Optimization Techniques
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210928.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-estimation-of-point-daylight-factor-pdf-average-dayl
+    title: Estimation of Point Daylight Factor (PDF) Average Daylight Factor (ADF) and
+      Vertical Daylight Factor (VDF) under various CIE standard obstructed Skies
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210943.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-simulating-daylighting-and-energy-demand-for-lightin
+    title: 'Simulating Daylighting and Energy Demand for Lighting of Buildings with
+      Different Models and Programs: Analysis of Influencing Factors and Comparison '
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210951.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-spectral-rendering-with-daylight-a-comparison-of-two
+    title: 'Spectral Rendering with Daylight: A Comparison of Two Spectral Daylight
+      Simulation Platforms'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_211158.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-color-heterogeneity-of-building-surfaces-lean-image-
+    title: 'Color Heterogeneity Of Building Surfaces: Lean Image Processing Approach
+      For Visible Reflectance Characterization Performance'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_211175.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-the-impact-of-window-systems-on-daylighting-performa
+    title: The Impact Of Window Systems On Daylighting Performance, Visual Comfort And
+      Energy Efficiency In Patient Rooms
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_211185.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-dynamic-balancing-between-personalized-daylight-pref
+    title: 'Dynamic Balancing Between Personalized Daylight Preferences And Lighting
+      Energy Use: Implementation Of A Multi-Objective Optimization Framework'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_211194.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-an-alternative-method-for-the-assessment-of-the-typi
+    title: An Alternative Method for the Assessment of the Typical Lighting Energy Numeric
+      Indicator for Different Outdoor Illuminance Conditions
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_211230.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-multi-objective-optimization-on-daylight-control-sys
+    title: Multi Objective Optimization on Daylight Control System’s Qualitative and
+      Quantitative Performance
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_211259.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-the-case-for-occupant-centric-daylight-analytics-a-c
+    title: 'The Case for Occupant-Centric Daylight Analytics: a Comparison of Horizontal
+      Illumination and Immersive View'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_211290.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-generative-design-approaches-to-daylight-in-murbs
+    title: Generative Design Approaches to Daylight in MURBs
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_211380.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-frequency-domain-methodology-for-design-and-contro
+    title: A Frequency Domain Methodology for Design and Control of Radiant Floor Systems
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210108.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-cockroaches-0-0-beta-exploring-the-novel-building-pe
+    title: 'Cockroaches 0.0 Beta: Exploring The Novel Building Performance Simulation
+      Domain Of Pest Modelling Through A Literature Review'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210135.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-application-of-a-method-of-1-d-equivalent-wall-to-mu
+    title: 'Application Of A Method Of 1-D Equivalent Wall To Multidimensional Geometries:
+      Impact On Building Energy Performance'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210182.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-determination-of-a-short-simulation-sequence-for-the
+    title: 'Determination Of A Short Simulation Sequence For The Multi-Criteria Optimization
+      Of Buildings: A Case Study'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210214.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-specific-building-simulation-tool-for-the-design-a
+    title: A Specific Building Simulation Tool For The Design And Evaluation Of Innovative
+      Fenestration Systems And Their Control
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210222.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-fast-response-performance-simulation-screening-too
+    title: A Fast Response Performance Simulation Screening Tool In Support Of Early
+      Stage Building Design
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210252.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-unlocking-potentials-of-building-energy-systems-oper
+    title: 'Unlocking Potentials of Building Energy Systems’ Operational Efficiency:
+      Application of Digital Twin Design for HVAC systems'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210257.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-updated-openstudio-os-small-and-medium-office-protot
+    title: Updated OpenStudio(OS) Small and Medium Office Prototype Models
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210265.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-energy-management-system-ems-the-impact-of-natural-v
+    title: 'Energy Management System (EMS): The Impact of Natural Ventilation and Shading
+      Control on Thermal Performance of University Building in Winnipeg, Canad'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210306.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-effect-of-simulation-methodology-on-variable-efficie
+    title: Effect of Simulation methodology on variable efficiency of Bi-directional
+      Heat Recovery Ventilator.
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210318.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-real-time-experimental-connection-of-an-energyplus-b
+    title: Real-Time Experimental Connection of an EnergyPlus Building Model with a
+      Real Water-To-Water Heat Pump Through Functional Mock-Up Interface
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210375.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-design-guidance-from-a-data-driven-lca-based-design-
+    title: Design Guidance From A Data-Driven LCA-Based Design Method And Tool Prototype
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210403.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-near-roof-air-temperatures-modelling-the-implication
+    title: 'Near-Roof Air Temperatures: Modelling the Implications for HVAC Performance
+      and Cool Roofs'
+    url: https://publications.ibpsa.org/proceedings/bs/2019/papers/BS2019_210426.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper

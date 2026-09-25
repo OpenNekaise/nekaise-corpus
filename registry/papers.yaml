@@ -74272,3 +74272,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.autcon.2022.104320 openalex:W4280523772
     resolution: 'legacy: openalex location'
+  - id: oas-10-5194-isprsannals-ii-5-w2-337-2013-a82e332d
+    title: Effects of Building Primitive Library and Automatic Correction of Roof Topology
+      Graph
+    url: https://isprs-annals.copernicus.org/articles/II-5-W2/337/2013/isprsannals-II-5-W2-337-2013.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2013-10-16'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprsannals-ii-5-w2-337-2013
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-annals.copernicus.org/articles/II-5-W2/337/2013/isprsannals-II-5-W2-337-2013.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-25'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprsannals-ii-5-w2-337-2013 openalex:W2126169152
+    resolution: 'sim1: openalex location'
