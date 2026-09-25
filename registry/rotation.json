@@ -68,7 +68,7 @@
   },
   "find_nlr": {
     "flag": "--cursor",
-    "next": "2015:oai_dc/1571/246024886/1500/0/48687922/publications:year2015/x/x",
+    "next": "2014:oai_dc/1538/246024886/700/0/46267634/publications:year2014/x/x",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-24: '<year>:<OAI resumptionToken|START>' over research-hub.nlr.gov Pure sets publications:yearYYYY, newest year first down to 1975 (53,919 records total; 2024 alone has 2,344). A rejected token restarts its year. Walk does not come back up: re-aim to the current year occasionally."
@@ -153,7 +153,7 @@
   },
   "find_openalex": {
     "flag": "--query-cursor",
-    "next": 2115,
+    "next": 2116,
     "step": 1,
     "note": "RE-AIMED 2026-08-26 after OpenAlex introduced usage pricing: anonymous access has 100 search requests/day, while the old all-query run made 105 requests and exhausted the budget. One query per round stays below the limit at the live ~72-round/day maximum; the flattened cursor advances across the frozen 105-query list, then continues at page 2 and deeper. Any query-list change requires a reviewed cursor migration."
   },
@@ -165,7 +165,7 @@
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 2128,
+    "next": 2129,
     "step": 1,
     "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature)."
   },
