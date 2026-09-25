@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">
+    <responseDate>2026-09-25T09:44:23Z</responseDate>
+                <request>http://oaipmh.arxiv.org/oai</request>
+    <error code='idDoesNotExist'>The value of the identifier argument is unknown or illegal in this repository. Reason: Invalid arXiv_id structure</error>
+</OAI-PMH>

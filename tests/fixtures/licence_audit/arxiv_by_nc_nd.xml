@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+    <responseDate>2026-09-25T09:43:34Z</responseDate>
+                <request verb="GetRecord" identifier="oai:arXiv.org:2501.08704" metadataPrefix="arXivRaw">http://oaipmh.arxiv.org/oai</request>
+
+
+    <GetRecord>
+                <record>
+                <header>
+        <identifier>oai:arXiv.org:2501.08704</identifier>
+        <datestamp>2025-01-16</datestamp>
+            <setSpec>physics:physics:app-ph</setSpec>
+    </header>
+
+            <metadata>
+                        <arXivRaw xmlns="http://arxiv.org/OAI/arXivRaw/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://arxiv.org/OAI/arXivRaw/ https://oaipmh.arxiv.org/OAI/arXivRaw.xsd">
+        <id>2501.08704</id>
+        <submitter>Dolores Otero-Chans</submitter>
+            <version version="v1">
+                <date>Wed, 15 Jan 2025 10:41:01 GMT</date>
+                <size>2112kb</size>
+            </version>
+        <title>Experimental and numerical analysis of a full-scale timber-concrete-composite beam from simply supported to frame-connected</title>
+        <authors>Dolores Otero-Chans, F\&#39;elix Su\&#39;arez-Riestra, Emilio Mart\&#39;in-Guti\&#39;errez, Javier Est\&#39;evez-Cimadevila</authors>
+        <categories>physics.app-ph</categories>
+            <comments>preprint version; 35 pages; 19 figures</comments>
+            <msc-class>G.1.10</msc-class>
+            <journal-ref>Engineering Structures, Volume 327, 15 March 2025, 119624</journal-ref>
+            <doi>10.1016/j.engstruct.2025.119624</doi>
+            <license>http://creativecommons.org/licenses/by-nc-nd/4.0/</license>
+            <abstract>(trimmed)</abstract>
+    </arXivRaw>
+
+            </metadata>
+        </record>
+
+    </GetRecord>
+</OAI-PMH>

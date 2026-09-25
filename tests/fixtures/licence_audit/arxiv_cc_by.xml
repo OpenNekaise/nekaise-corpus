@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+    <responseDate>2026-09-25T09:42:54Z</responseDate>
+                <request verb="GetRecord" identifier="oai:arXiv.org:2311.00720" metadataPrefix="arXivRaw">http://oaipmh.arxiv.org/oai</request>
+
+
+    <GetRecord>
+                <record>
+                <header>
+        <identifier>oai:arXiv.org:2311.00720</identifier>
+        <datestamp>2023-11-03</datestamp>
+            <setSpec>eess:eess:SY</setSpec>
+            <setSpec>cs:cs:SY</setSpec>
+    </header>
+
+            <metadata>
+                        <arXivRaw xmlns="http://arxiv.org/OAI/arXivRaw/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://arxiv.org/OAI/arXivRaw/ https://oaipmh.arxiv.org/OAI/arXivRaw.xsd">
+        <id>2311.00720</id>
+        <submitter>Vamsi Borra</submitter>
+            <version version="v1">
+                <date>Sat, 28 Oct 2023 21:16:20 GMT</date>
+                <size>884kb</size>
+            </version>
+        <title>Harmonic content analysis of a soft starting variable frequency motor drive based on FPGA</title>
+        <authors>Yogesh Sapkota, Suman Devkota, Vamsi Borra, Pedro Cortes, Frank Li and Srikanth Itapu</authors>
+        <categories>eess.SY cs.SY</categories>
+            <comments>10 figures</comments>
+            <journal-ref>Sapkota, Yogesh, et al. &#34;Harmonic content analysis of a soft starting variable frequency motor drive based on FPGA.&#34; 2023 IEEE 3rd International Conference on Sustainable Energy and Future Electric Transportation (SEFET). IEEE, 2023</journal-ref>
+            <doi>10.1109/SeFeT57834.2023.10245108</doi>
+            <license>http://creativecommons.org/licenses/by/4.0/</license>
+            <abstract>(trimmed)</abstract>
+    </arXivRaw>
+
+            </metadata>
+        </record>
+
+    </GetRecord>
+</OAI-PMH>

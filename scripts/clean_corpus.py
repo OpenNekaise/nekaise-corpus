@@ -388,7 +388,10 @@ def partition_training_rows(
     clone) are "locally unavailable, suspended": neither cleaned nor expected in corpus/ (see
     registry.suspended_unavailable); ``locally_unavailable`` reports them explicitly.
     """
-    restricted = [r for r in rows if registry.restriction_for(r, restrictions) is not None]
+    # every training-ineligible row: an eligibility restriction or an audit-excluded license
+    # (registry.EXCLUDED_LICENSES) — both keep raw/text provenance, lose their corpus claim, and
+    # have their corpus copy quarantined rather than deleted as an orphan
+    restricted = [r for r in rows if not registry.is_training_eligible(r, restrictions)]
     eligible, _ = registry.partition_manifest_ok_rows(rows, restrictions)
     missing = {r["id"] for r in locally_unavailable(eligible, restrictions, policy)}
     todo = [r for r in eligible if r.get("text_path") and r["id"] not in missing]

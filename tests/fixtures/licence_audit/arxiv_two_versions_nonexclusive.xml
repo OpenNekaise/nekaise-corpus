@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+    <responseDate>2026-09-25T09:43:00Z</responseDate>
+                <request verb="GetRecord" identifier="oai:arXiv.org:1911.02206" metadataPrefix="arXivRaw">http://oaipmh.arxiv.org/oai</request>
+
+
+    <GetRecord>
+                <record>
+                <header>
+        <identifier>oai:arXiv.org:1911.02206</identifier>
+        <datestamp>2020-03-30</datestamp>
+            <setSpec>math:math:OC</setSpec>
+            <setSpec>cs:cs:LG</setSpec>
+            <setSpec>cs:cs:SY</setSpec>
+            <setSpec>eess:eess:SY</setSpec>
+    </header>
+
+            <metadata>
+                        <arXivRaw xmlns="http://arxiv.org/OAI/arXivRaw/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://arxiv.org/OAI/arXivRaw/ https://oaipmh.arxiv.org/OAI/arXivRaw.xsd">
+        <id>1911.02206</id>
+        <submitter>Shuhan Yao</submitter>
+            <version version="v1">
+                <date>Wed, 06 Nov 2019 05:14:54 GMT</date>
+                <size>355kb</size>
+                    <source_type>D</source_type>
+            </version>
+            <version version="v2">
+                <date>Fri, 27 Mar 2020 12:30:33 GMT</date>
+                <size>885kb</size>
+                    <source_type>D</source_type>
+            </version>
+        <title>Resilient Load Restoration in Microgrids Considering Mobile Energy Storage Fleets: A Deep Reinforcement Learning Approach</title>
+        <authors>Shuhan Yao, Jiuxiang Gu, Peng Wang, Tianyang Zhao, Huajun Zhang, Xiaochuan Liu</authors>
+        <categories>math.OC cs.LG cs.SY eess.SY</categories>
+            <comments>Submitted to 2020 IEEE Power and Energy Society General Meeting</comments>
+            <license>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</license>
+            <abstract>(trimmed)</abstract>
+    </arXivRaw>
+
+            </metadata>
+        </record>
+
+    </GetRecord>
+</OAI-PMH>

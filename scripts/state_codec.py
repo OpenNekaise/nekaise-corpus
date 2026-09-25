@@ -82,6 +82,17 @@ FIELDS = REQUIRED_FIELDS + OPTIONAL_FIELDS
 # Licenses in this set are registry pointers only: their metadata is useful for authorized users,
 # but the loader must never fetch their bytes and the manifest must never describe a local payload.
 POINTER_ONLY_LICENSES = frozenset({"proprietary-internal"})
+# Licenses established by a rights audit (scripts/audit_licence_evidence.py) for material that was
+# already fetched: the grant does not allow training use, so the row keeps its raw/text provenance
+# (unlike a pointer-only license, a payload row is legitimate) but never reaches corpus/. The
+# arXiv default licence grants distribution to arXiv only; OA without an open licence grants
+# reading, not reuse; NC/ND are excluded by project policy; "unverified" is an audited row whose
+# licence could not be pinned to the fetched version.
+EXCLUDED_LICENSES = frozenset({
+    "arxiv-nonexclusive", "publisher-oa", "cc-by-nc", "cc-by-nd", "cc-by-nc-sa", "cc-by-nc-nd",
+    "unverified",
+})
+NON_TRAINING_LICENSES = POINTER_ONLY_LICENSES | EXCLUDED_LICENSES
 CORPUS_FIELDS = ("corpus_path", "corpus_chars", "corpus_sha256", "cleaner_version",
                  "corpus_source_sha256")  # the last: stage 4 step 3 (versioned cleaning only)
 ENTRY_RE = re.compile(r"^  - id:\s*['\"]?(.+?)['\"]?\s*$")
@@ -365,6 +376,7 @@ def restriction_for(entry: dict, restrictions: dict[str, dict]) -> tuple[str, di
 
 
 def is_training_eligible(entry: dict, restrictions: dict[str, dict]) -> bool:
-    """Whether an entry may produce fetched and training-ready payload bytes."""
-    return (entry.get("license") not in POINTER_ONLY_LICENSES
+    """Whether an entry may produce fetched and training-ready payload bytes: its license is
+    neither pointer-only nor audit-excluded, and no eligibility restriction matches it."""
+    return (entry.get("license") not in NON_TRAINING_LICENSES
             and restriction_for(entry, restrictions) is None)

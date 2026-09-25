@@ -20,7 +20,13 @@ import registry
 import store
 
 REQUIRED = registry.REQUIRED_FIELDS
-LICENSES = {"public-domain", "cc-by", "cc-by-sa", "cc0", "open", "proprietary-internal"}
+LICENSES = ({"public-domain", "cc-by", "cc-by-sa", "cc0", "open", "proprietary-internal"}
+            | set(registry.EXCLUDED_LICENSES))
+# Rights-evidence rule (OFF by default; --require-rights-evidence). Once the licence audit
+# (scripts/audit_licence_evidence.py apply) has given every arXiv/OpenAlex row its evidence, this
+# keeps new rows from arriving as bare `open`: each such entry and manifest row must carry
+# license_evidence and rights_verified_at, and resolve to a concrete licence (never `open`).
+EVIDENCE_PREFIXES = ("arx-", "ope-", "oa-")
 TOPICS = {"controls_bas", "equipment_systems", "building_energy", "commissioning_fdd",
           "standards_protocols", "structures_civil", "construction", "materials",
           "architecture", "infrastructure", "urban"}
@@ -58,6 +64,20 @@ def entry_errors(e: dict, where: str) -> list[str]:
     return errors
 
 
+def rights_evidence_errors(row: dict, where: str) -> list[str]:
+    """The opt-in rights-evidence rule for one arXiv/OpenAlex entry or manifest row."""
+    sid = str(row.get("id", ""))
+    if not sid.startswith(EVIDENCE_PREFIXES):
+        return []
+    errors = []
+    for key in ("license_evidence", "rights_verified_at"):
+        if not row.get(key):
+            errors.append(f"{where}: {sid}: no {key} (rights evidence required)")
+    if row.get("license") == "open":
+        errors.append(f"{where}: {sid}: license 'open' is not a verified licence")
+    return errors
+
+
 def manifest_errors(r: dict, entry: dict | None) -> list[str]:
     """Checks for one manifest row against its registry entry (None = orphaned)."""
     errors = []
@@ -87,7 +107,7 @@ def pages(view, table):
         cursor = page.next_cursor
 
 
-def main(root: Path | None = None) -> int:
+def main(root: Path | None = None, *, require_rights_evidence: bool = False) -> int:
     root = Path(root) if root is not None else registry.ROOT
     st = store.open(root=root)
     # Physical layout first (unparsable shards, routing drift, duplicate ids): keyed store reads
@@ -105,6 +125,8 @@ def main(root: Path | None = None) -> int:
             for batch in pages(view, store.Table.ENTRIES):
                 for e in batch:
                     errors.extend(entry_errors(e, registry.shard_filename(e["id"])))
+                    if require_rights_evidence:
+                        errors.extend(rights_evidence_errors(e, registry.shard_filename(e["id"])))
                     if restricted := registry.restriction_for(e, restrictions):
                         restriction_hits[restricted[0]] += 1
             for name in restrictions:
@@ -115,6 +137,8 @@ def main(root: Path | None = None) -> int:
                 for r in batch:
                     n_rows += 1
                     errors.extend(manifest_errors(r, entries.get(r.get("id"))))
+                    if require_rights_evidence:
+                        errors.extend(rights_evidence_errors(r, "manifest"))
 
     if errors:
         for e in errors[:50]:
@@ -129,4 +153,12 @@ def main(root: Path | None = None) -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    import argparse
+
+    ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    ap.add_argument("--require-rights-evidence", action="store_true",
+                    help="also require license_evidence + rights_verified_at and a concrete "
+                         "licence on arXiv/OpenAlex rows (arx-/ope-/oa-); off by default until "
+                         "the licence-audit migration is applied")
+    args = ap.parse_args()
+    sys.exit(main(require_rights_evidence=args.require_rights_evidence))

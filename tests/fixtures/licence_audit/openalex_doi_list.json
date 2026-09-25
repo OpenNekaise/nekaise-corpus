@@ -1,0 +1,13 @@
+{"meta": {"count": 2, "cost_usd": 0.0001},
+ "results": [
+  {"id": "https://openalex.org/W1", "doi": "https://doi.org/10.3389/feart.2021.777323",
+   "best_oa_location": {"pdf_url": "https://www.frontiersin.org/articles/10.3389/feart.2021.777323/pdf", "landing_page_url": "https://doi.org/10.3389/feart.2021.777323", "license": "cc-by-nc", "license_id": "https://openalex.org/licenses/cc-by-nc"},
+   "primary_location": {"pdf_url": "https://www.frontiersin.org/articles/10.3389/feart.2021.777323/pdf", "landing_page_url": "https://doi.org/10.3389/feart.2021.777323", "license": "cc-by-nc", "license_id": "https://openalex.org/licenses/cc-by-nc"},
+   "locations": [
+    {"pdf_url": "https://www.frontiersin.org/articles/10.3389/feart.2021.777323/pdf", "landing_page_url": "https://doi.org/10.3389/feart.2021.777323", "license": "cc-by-nc", "license_id": "https://openalex.org/licenses/cc-by-nc"},
+    {"pdf_url": null, "landing_page_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/1", "license": "cc-by", "license_id": "https://openalex.org/licenses/cc-by"}]},
+  {"id": "https://openalex.org/W2", "doi": "https://doi.org/10.1007/s10462-022-10286-2",
+   "best_oa_location": null, "primary_location": null,
+   "locations": [
+    {"pdf_url": "https://link.springer.com/content/pdf/10.1007/s10462-022-10286-2.pdf", "landing_page_url": "https://doi.org/10.1007/s10462-022-10286-2", "license": "cc-by", "license_id": "https://openalex.org/licenses/cc-by"}]}
+ ]}

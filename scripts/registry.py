@@ -28,10 +28,10 @@ from pathlib import Path
 import ops
 import store
 from state_codec import (  # noqa: F401 — the shared vocabulary, re-exported for callers
-    CORPUS_FIELDS, CURATED, DISCOVERED_PREFIXES, ENTRY_RE, FIELDS, HASH_BUCKETS, OPTIONAL_FIELDS,
-    POINTER_ONLY_LICENSES, PROGRAMME_PREFIXES, PRUNE_LEDGER_BUCKETS, REQUIRED_FIELDS, SHARDS,
-    discovered, emit_entry,
-    is_training_eligible, manifest_shard, manifest_shard_text, norm, parse_yaml,
+    CORPUS_FIELDS, CURATED, DISCOVERED_PREFIXES, ENTRY_RE, EXCLUDED_LICENSES, FIELDS, HASH_BUCKETS,
+    NON_TRAINING_LICENSES, OPTIONAL_FIELDS, POINTER_ONLY_LICENSES, PROGRAMME_PREFIXES,
+    PRUNE_LEDGER_BUCKETS, REQUIRED_FIELDS, SHARDS, discovered, emit_entry, is_training_eligible,
+    manifest_shard, manifest_shard_text, norm, parse_yaml,
     prune_ledger_name, remove_ids_from_text, restriction_for, shard_filename, shard_header, slug,
     uniquify_ids, validate_eligibility,
 )

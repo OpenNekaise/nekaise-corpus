@@ -291,7 +291,10 @@ generation that a later verdict resolves.
   away the ability to re-clean, and `raw/` is the only way back.
 - **Respect each source's `license`:** `public-domain` (US gov) · `cc-by` / `cc-by-sa` (attribute) ·
   `open` (arXiv / OA — check per-source terms) · `proprietary-internal` (paywalled vendor material /
-  standards — **pointers only, never add the bytes**).
+  standards — **pointers only, never add the bytes**). A rights audit
+  (`scripts/audit_licence_evidence.py`) may re-tag already-fetched rows with an *excluded* licence
+  (`registry.EXCLUDED_LICENSES`: `arxiv-nonexclusive`, `publisher-oa`, `cc-by-nc*`/`cc-by-nd`,
+  `unverified`): provenance and raw/text stay, but the row is never training-eligible.
 - **Manufacturer product literature (operator decision 2026-08-30, supersedes 08-28):** catalogs,
   data sheets, IOM manuals, engineering/selection guides and specification texts are ingested as
   `license: open` via `scripts/find_vendor.py` + `registry/vendors.json` for local training use — the

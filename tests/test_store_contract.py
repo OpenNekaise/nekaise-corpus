@@ -112,7 +112,7 @@ def test_eligibility_predicate_matches_python_policy():
     pred = store.eligibility_where(restrictions)
     for sid in ("pat-cn1", "pat-us1", "jst-1", "x", ""):
         for source in ("google_patents", "jstage", "other", None):
-            for lic in ("open", "proprietary-internal", None):
+            for lic in ("open", "proprietary-internal", "arxiv-nonexclusive", "cc-by", None):
                 r = {"id": sid}
                 if source is not None:
                     r["source"] = source

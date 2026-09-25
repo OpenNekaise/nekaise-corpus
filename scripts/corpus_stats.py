@@ -74,8 +74,9 @@ def compute(view, restrictions: dict | None = None) -> CorpusStats:
 
 
 def restricted_with_corpus_data(view, restrictions: dict) -> tuple[int, str | None]:
-    """Policy-restricted manifest rows that still claim corpus data: (count, first id)."""
-    where = And(store.restriction_where(restrictions),
+    """Training-ineligible manifest rows (a policy restriction or an audit-excluded license) that
+    still claim corpus data: (count, first id)."""
+    where = And(Not(store.eligibility_where(restrictions)),
                 Or(*(Exists(f) for f in registry.CORPUS_FIELDS)))
     count = sum(g["count"] for g in view.aggregate_manifest(group_by=(), where=where))
     first = view.scan(store.Table.MANIFEST, where=where, fields=("id",), limit=1).rows

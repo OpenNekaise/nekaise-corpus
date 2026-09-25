@@ -1449,8 +1449,11 @@ def _run(view, session, args, only: set[str], selection: dict) -> None:
     pointer_only = sum(
         source.get("license") in registry.POINTER_ONLY_LICENSES for source in all_srcs
     )
+    licence_excluded = sum(
+        source.get("license") in registry.EXCLUDED_LICENSES for source in all_srcs
+    )
     policy_restricted = sum(
-        source.get("license") not in registry.POINTER_ONLY_LICENSES
+        source.get("license") not in registry.NON_TRAINING_LICENSES
         and registry.restriction_for(source, restrictions) is not None
         for source in all_srcs
     )
@@ -1460,6 +1463,9 @@ def _run(view, session, args, only: set[str], selection: dict) -> None:
     ]
     if pointer_only:
         print(f"pointer-only sources: {pointer_only} skipped by license policy")
+    if licence_excluded:
+        print(f"licence-excluded sources: {licence_excluded} skipped (audited licence does not "
+              "allow training use; provenance kept)")
     if policy_restricted:
         print(f"policy-restricted sources: {policy_restricted} skipped by eligibility policy")
     manifest = load_manifest(view)

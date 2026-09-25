@@ -410,8 +410,9 @@ def pinned_policy(view) -> tuple[dict, dict]:
 
 
 def eligibility_where(restrictions: Mapping[str, Mapping]) -> Predicate:
-    """registry.is_training_eligible as a predicate: not pointer-only and no restriction matches."""
-    return Not(Or(In("license", sorted(codec.POINTER_ONLY_LICENSES)),
+    """registry.is_training_eligible as a predicate: not pointer-only or audit-excluded, and no
+    restriction matches."""
+    return Not(Or(In("license", sorted(codec.NON_TRAINING_LICENSES)),
                   restriction_where(restrictions)))
 
 

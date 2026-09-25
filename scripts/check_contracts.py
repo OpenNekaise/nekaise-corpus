@@ -122,7 +122,8 @@ def eligibility_contract_errors(
     count, first = restricted_metadata
     if count:
         errors.append(
-            f"{count:,} policy-restricted manifest rows still claim corpus data (first: {first})"
+            f"{count:,} training-ineligible (policy-restricted or licence-excluded) manifest "
+            f"rows still claim corpus data (first: {first})"
         )
     return errors
 
