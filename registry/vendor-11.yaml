@@ -20625,14 +20625,43 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-dualproof-market-comparisons
-    title: 'SpecifiedBy (UK manufacturer documents): DualProof - market comparisons.pdf
-      (basement waterproofing membranes — DualProof   market comparisons)'
-    url: https://www.specifiedby.com/delta-membrane-systems-limited/basement-waterproofing-membranes/DualProof
-      - market comparisons.pdf
+  - id: vnd-specifiedby-nbl-interface-bimobjectguide
+    title: 'SpecifiedBy (UK manufacturer documents): nbl_Interface_BIMObjectGuide.pdf
+      (equilibrium — nbl Interface BIMObjectGuide)'
+    url: https://www.specifiedby.com/interface/equilibrium/nbl_Interface_BIMObjectGuide.pdf
     source: vendor_specifiedby
     license: open
-    topic: materials
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-interface-duet-technical-eds
+    title: 'SpecifiedBy (UK manufacturer documents): Interface_Duet_Technical_EDS.pdf
+      (duet — Interface Duet Technical EDS)'
+    url: https://www.specifiedby.com/interface/duet/Interface_Duet_Technical_EDS.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-interface-heuga-530-brochures
+    title: 'SpecifiedBy (UK manufacturer documents): Interface_Heuga-530_Brochures.pdf
+      (heuga 530 — Interface Heuga 530 Brochures)'
+    url: https://www.specifiedby.com/interface/heuga-530/Interface_Heuga-530_Brochures.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
     format: pdf
     language: en
     document_type: product-literature

@@ -20791,12 +20791,12 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-foul-v3-installation-instructions-93f84d93
-    title: 'SpecifiedBy (UK manufacturer documents): foul-v3-installation-instructions_93f84d93.pdf'
-    url: https://www.specifiedby.com/delta-membrane-systems-limited/foul-v3-sump-pump/foul-v3-installation-instructions_93f84d93.pdf
+  - id: vnd-specifiedby-interface-straightfoward-technical-environmental-data-sheet
+    title: 'SpecifiedBy (UK manufacturer documents): Interface_Straightfoward_Technical_Environmental-Data-Sheet.pdf'
+    url: https://www.specifiedby.com/interface/straightforward/Interface_Straightfoward_Technical_Environmental-Data-Sheet.pdf
     source: vendor_specifiedby
     license: open
-    topic: equipment_systems
+    topic: construction
     format: pdf
     language: en
     document_type: product-literature
@@ -20805,12 +20805,13 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-case-study-the-fusion-f4cd09a8
-    title: 'SpecifiedBy (UK manufacturer documents): case-study-the-fusion_f4cd09a8.pdf'
-    url: https://www.specifiedby.com/delta-membrane-systems-limited/maxxconnect-battery-backup-telemetry-alarm/case-study-the-fusion_f4cd09a8.pdf
+  - id: vnd-specifiedby-interface-heuga-580-brochures
+    title: 'SpecifiedBy (UK manufacturer documents): Interface_Heuga-580_Brochures.pdf
+      (heuga 580 — Interface Heuga 580 Brochures)'
+    url: https://www.specifiedby.com/interface/heuga-580/Interface_Heuga-580_Brochures.pdf
     source: vendor_specifiedby
     license: open
-    topic: materials
+    topic: construction
     format: pdf
     language: en
     document_type: product-literature

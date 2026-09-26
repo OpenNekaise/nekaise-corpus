@@ -10912,3 +10912,41 @@ sources:
       Cellar item https://publications.europa.eu/resource/cellar/6eb3ceb5-8905-11e9-9369-01aa75ed71a1.0024.03/DOC_1'
     rights_verified_at: '2026-09-25'
     resolution: cellar seed=32019L0882 rel=seed item=DOC_1
+  - id: eur-02019l0882-20190607-et
+    title: Euroopa Parlamendi ja nõukogu direktiiv (EL) 2019/882, 17. aprill 2019, toodete
+      ja teenuste ligipääsetavusnõuete kohta (EMPs kohaldatav tekst) [02019L0882-20190607,
+      et]
+    url: https://publications.europa.eu/resource/cellar/4a7dd506-7ad3-11ea-aea8-01aa75ed71a1.0001.03/DOC_1
+    source: eurlex
+    license: cc-by
+    topic: architecture
+    format: html
+    language: et
+    jurisdiction: EU
+    document_type: consolidated-act
+    persistent_id: celex:02019L0882-20190607
+    license_url: https://eur-lex.europa.eu/content/legal-notice/legal-notice.html
+    license_evidence: 'EUR-Lex legal notice: consolidated texts are licensed under Creative
+      Commons Attribution 4.0 (CC BY 4.0); copy served by the Publications Office Cellar
+      item https://publications.europa.eu/resource/cellar/4a7dd506-7ad3-11ea-aea8-01aa75ed71a1.0001.03/DOC_1'
+    rights_verified_at: '2026-09-25'
+    resolution: cellar seed=32019L0882 rel=consolidates item=DOC_1
+  - id: eur-02019l0882-20190607-fi
+    title: Euroopan parlamentin ja neuvoston direktiivi (EU) 2019/882, annettu 17 päivänä
+      huhtikuuta 2019, tuotteiden ja palvelujen esteettömyysvaatimuksista (ETA:n kannalta
+      merkityksellinen teksti) [02019L0882-20190607, fi]
+    url: https://publications.europa.eu/resource/cellar/4a7dd506-7ad3-11ea-aea8-01aa75ed71a1.0002.02/DOC_1
+    source: eurlex
+    license: cc-by
+    topic: architecture
+    format: html
+    language: fi
+    jurisdiction: EU
+    document_type: consolidated-act
+    persistent_id: celex:02019L0882-20190607
+    license_url: https://eur-lex.europa.eu/content/legal-notice/legal-notice.html
+    license_evidence: 'EUR-Lex legal notice: consolidated texts are licensed under Creative
+      Commons Attribution 4.0 (CC BY 4.0); copy served by the Publications Office Cellar
+      item https://publications.europa.eu/resource/cellar/4a7dd506-7ad3-11ea-aea8-01aa75ed71a1.0002.02/DOC_1'
+    rights_verified_at: '2026-09-25'
+    resolution: cellar seed=32019L0882 rel=consolidates item=DOC_1
