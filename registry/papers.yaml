@@ -74706,3 +74706,159 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2502.03034 openalex:W4407213440
     resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2403-16809-135cea88
+    title: An LLM-Based Digital Twin for Optimizing Human-in-the Loop Systems
+    url: https://arxiv.org/pdf/2403.16809
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-03-25'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2403.16809
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2403.16809; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2403.16809 openalex:W4393213649
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2308-10380-ed3a1812
+    title: A Human-on-the-Loop Optimization Autoformalism Approach for Sustainability
+    url: https://arxiv.org/pdf/2308.10380
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-08-20'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2308.10380
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2308.10380; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2308.10380 openalex:W4386081299
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2402-09584-639aa116
+    title: Large Language Model-Based Interpretable Machine Learning Control in Building
+      Energy Systems
+    url: https://arxiv.org/pdf/2402.09584
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-02-14'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2402.09584
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2402.09584; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2402.09584 openalex:W4391912445
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2410-14107-c4ad0673
+    title: Transfer Learning on Transformers for Building Energy Consumption Forecasting
+      -- A Comparative Study
+    url: https://arxiv.org/pdf/2410.14107
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-10-18'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2410.14107
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2410.14107; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2410.14107 openalex:W4403995496
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2408-02450-c73f06b7
+    title: An Evaluation of Requirements Modeling for Cyber-Physical Systems via LLMs
+    url: https://arxiv.org/pdf/2408.02450
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-08-05'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2408.02450
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2408.02450; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2408.02450 openalex:W4403370432
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2407-03469-5c356b22
+    title: Scaling Data-Driven Building Energy Modelling using Large Language Models
+    url: https://arxiv.org/pdf/2407.03469
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-07-03'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2407.03469
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2407.03469; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2407.03469 openalex:W4400433695
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2412-14175-890028a8
+    title: 'BiTSA: Leveraging Time Series Foundation Model for Building Energy Analytics'
+    url: https://arxiv.org/pdf/2412.14175
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-11-20'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2412.14175
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2412.14175; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2412.14175 openalex:W4405627090
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2410-19262-0baa54ba
+    title: Autonomous Building Cyber-Physical Systems Using Decentralized Autonomous
+      Organizations, Digital Twins, and Large Language Model
+    url: https://arxiv.org/pdf/2410.19262
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-10-25'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2410.19262
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2410.19262; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2410.19262 openalex:W4404311481
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2407-12734-d9cf3b3d
+    title: A LLM Benchmark based on the Minecraft Builder Dialog Agent Task
+    url: https://arxiv.org/pdf/2407.12734
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-07-17'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2407.12734
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2407.12734; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2407.12734 openalex:W4403781291
+    resolution: 'ai1: openalex location'
