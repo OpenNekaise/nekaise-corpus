@@ -74601,3 +74601,20 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.3390/su18136517 openalex:W7166050699
     resolution: 'sim1: openalex location'
+  - id: oas-w7144390917
+    title: Experimental study on surveillance video-based indoor occupancy measurement
+      with occupant-centric control
+    url: https://arxiv.org/pdf/2603.26081
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    published_at: '2026-03-27'
+    document_type: preprint
+    persistent_id: https://openalex.org/W7144390917
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2603.26081; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144390917
+    resolution: 'sim1: openalex location'
