@@ -74583,3 +74583,21 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/hess-18-85-2014 openalex:W2168643429
     resolution: 'legacy: openalex location'
+  - id: oas-10-3390-su18136517-feb343ca
+    title: 'From Building Services to Process Loads: Whole-Building Utility-Calibrated
+      Simulation of Sustainable Operational Decarbonisation Limits in a UK SME Re'
+    url: http://bura.brunel.ac.uk/bitstream/2438/33530/1/FullText.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-06-26'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su18136517
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy http://bura.brunel.ac.uk/bitstream/2438/33530/1/FullText.pdf; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/su18136517 openalex:W7166050699
+    resolution: 'sim1: openalex location'
