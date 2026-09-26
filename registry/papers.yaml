@@ -75381,3 +75381,21 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5109/7236915 openalex:W4403151078
     resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2312-05073-0f20acdd
+    title: A Distributed ADMM-based Deep Learning Approach for Thermal Control in Multi-Zone
+      Buildings under Demand Response Events
+    url: https://arxiv.org/pdf/2312.05073
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-12-08'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2312.05073
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2312.05073; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2312.05073 openalex:W4389600135
+    resolution: 'sim1: openalex location'
