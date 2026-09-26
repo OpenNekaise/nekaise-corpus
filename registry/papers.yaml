@@ -74862,3 +74862,39 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2407.12734 openalex:W4403781291
     resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2512-19038-fded97da
+    title: 'Time-series Forecast for Indoor Zone Air Temperature with Long Horizons:
+      A Case Study with Sensor-based Data from a Smart Building'
+    url: https://arxiv.org/pdf/2512.19038
+    source: openalex_sim
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    published_at: '2025-12-22'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2512.19038
+    license_evidence: openalex.license=cc-by-sa; openalex.license_id=https://openalex.org/licenses/cc-by-sa
+      [copy https://arxiv.org/pdf/2512.19038; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2512.19038 openalex:W7117137146
+    resolution: 'sim1: openalex location'
+  - id: oas-10-3389-fenrg-2025-1672714-d8818097
+    title: 'Enhanced thermal storage for residential heating: sand and iron waste to
+      manage PV surpluses'
+    url: https://public-pages-files-2025.frontiersin.org/journals/energy-research/articles/10.3389/fenrg.2025.1672714/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-11-19'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fenrg.2025.1672714
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://public-pages-files-2025.frontiersin.org/journals/energy-research/articles/10.3389/fenrg.2025.1672714/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fenrg.2025.1672714 openalex:W4416404500
+    resolution: 'sim1: openalex location'
