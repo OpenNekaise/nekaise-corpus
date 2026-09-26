@@ -74656,3 +74656,53 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1093/ijlct/ctag108 openalex:W7204877696
     resolution: 'sim1: openalex location'
+  - id: oas-w7160457070
+    title: Toward a foundational thermal model for residential buildings
+    url: https://arxiv.org/pdf/2605.01364
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    published_at: '2026-05-02'
+    document_type: preprint
+    persistent_id: https://openalex.org/W7160457070
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2605.01364; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7160457070
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2602-16140-661b9e0b
+    title: 'Human-AI Collaboration in Large Language Model-Integrated Building Energy
+      Management Systems: The Role of User Domain Knowledge and AI Literacy'
+    url: https://arxiv.org/pdf/2602.16140
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    published_at: '2026-02-18'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2602.16140
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2602.16140; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2602.16140 openalex:W7130529502
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2502-03034-ede37c0e
+    title: Knowledge Distillation from Large Language Models for Household Energy Modeling
+    url: https://arxiv.org/pdf/2502.03034
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-02-05'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2502.03034
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2502.03034; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2502.03034 openalex:W4407213440
+    resolution: 'ai1: openalex location'
