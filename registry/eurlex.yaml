@@ -10950,3 +10950,23 @@ sources:
       item https://publications.europa.eu/resource/cellar/4a7dd506-7ad3-11ea-aea8-01aa75ed71a1.0002.02/DOC_1'
     rights_verified_at: '2026-09-25'
     resolution: cellar seed=32019L0882 rel=consolidates item=DOC_1
+  - id: eur-32019l0882r-01-de
+    title: Berichtigung der Richtlinie (EU) 2019/882 des Europäischen Parlaments und
+      des Rates vom 17. April 2019 über die Barrierefreiheitsanforderungen für Produkte
+      und Dienstleistungen (ABl. L 151 vom 7.6.2019) [32019L0882R(01), de]
+    url: https://publications.europa.eu/resource/cellar/9dd0f1d2-bd8f-11e9-9d01-01aa75ed71a1.0001.03/DOC_1
+    source: eurlex
+    license: open
+    topic: architecture
+    format: html
+    language: de
+    jurisdiction: EU
+    document_type: corrigendum
+    persistent_id: celex:32019L0882R(01)
+    license_url: https://eur-lex.europa.eu/content/legal-notice/legal-notice.html
+    license_evidence: 'EUR-Lex legal notice: ''you can re-use the legal documents published
+      in EUR-Lex for commercial or non-commercial purposes'' (Commission Decision 2011/833/EU
+      on the reuse of Commission documents); copy served by the Publications Office
+      Cellar item https://publications.europa.eu/resource/cellar/9dd0f1d2-bd8f-11e9-9d01-01aa75ed71a1.0001.03/DOC_1'
+    rights_verified_at: '2026-09-25'
+    resolution: cellar seed=32019L0882 rel=corrects item=DOC_1
