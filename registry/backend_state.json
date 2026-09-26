@@ -3,6 +3,10 @@
     "enabled": false,
     "reason": "exhausted: KITopen set ddc:720 fully harvested"
   },
+  "find_nlr": {
+    "enabled": false,
+    "reason": "exhausted: NLR Pure OAI walked down to 1975"
+  },
   "find_ojs": {
     "enabled": false,
     "reason": "exhausted: all 8 OJS venues harvested"
