@@ -74953,3 +74953,41 @@ sources:
     selected_version: acceptedVersion
     origin_ids: doi:10.1016/j.enconman.2023.117572 openalex:W4386390261
     resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-buildenv-2023-110621-5729ccc9
+    title: Impact of building density on natural ventilation potential and cooling energy
+      saving across Chinese climate zones
+    url: https://discovery.ucl.ac.uk/10174326/1/1-s2.0-S0360132323006480-main.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-07-24'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2023.110621
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/10174326/1/1-s2.0-S0360132323006480-main.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2023.110621 openalex:W4385202467
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-enbuild-2021-111249-7a5278fe
+    title: Developing a Data-driven school building stock energy and indoor environmental
+      quality modelling method
+    url: https://discovery.ucl.ac.uk/10130905/1/Developing%20a%20Data-driven%20school%20building%20stock%20energy%20and%20indoor%20environmental%20quality%20modelling%20method.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-07-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2021.111249
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/10130905/1/Developing%20a%20Data-driven%20school%20building%20stock%20energy%20and%20indoor%20environmental%20quality%20modelling%20method.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2021.111249 openalex:W3180077049
+    resolution: 'sim1: openalex location'
