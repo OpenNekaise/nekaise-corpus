@@ -74898,3 +74898,58 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.3389/fenrg.2025.1672714 openalex:W4416404500
     resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-apenergy-2021-118346-6b2fee87
+    title: Reinforced model predictive control (RL-MPC) for building energy management
+    url: https://lirias.kuleuven.be/retrieve/c97a2374-ccd6-49d8-9a3e-e3edc5e28b36
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-01-07'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2021.118346
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://lirias.kuleuven.be/retrieve/c97a2374-ccd6-49d8-9a3e-e3edc5e28b36;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2021.118346 openalex:W4205300464
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-enbuild-2022-112479-597fb912
+    title: Multiobjective optimization of building energy consumption and thermal comfort
+      based on integrated BIM framework with machine learning-NSGA II
+    url: https://vbn.aau.dk/ws/files/502995517/1_s2.0_S0378778822006508_main.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-10-12'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2022.112479
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://vbn.aau.dk/ws/files/502995517/1_s2.0_S0378778822006508_main.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2022.112479 openalex:W4304687678
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-enconman-2023-117572-0178088a
+    title: Technical and economic analysis of multi-energy complementary systems for
+      net-zero energy consumption combining wind, solar, hydrogen, geothermal, and
+    url: https://eprints.gla.ac.uk/308212/2/308212.pdf
+    source: openalex_sim
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-09-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enconman.2023.117572
+    license_evidence: openalex.license=cc-by-sa; openalex.license_id=https://openalex.org/licenses/cc-by-sa
+      [copy https://eprints.gla.ac.uk/308212/2/308212.pdf; version acceptedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1016/j.enconman.2023.117572 openalex:W4386390261
+    resolution: 'sim1: openalex location'
