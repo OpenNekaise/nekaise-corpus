@@ -75216,3 +75216,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1080/17508975.2024.2410804 openalex:W4404173767
     resolution: 'sim1: openalex location'
+  - id: oas-10-3390-app10124336-5f74ef71
+    title: Demand Control Strategies of a PCM Enhanced Ventilation System for Residential
+      Buildings
+    url: https://vbn.aau.dk/ws/files/336684497/Demand_Control_Strategies_of_a_PCM_Enhanced_Ventilation_System_for_Residential_Buildings.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-06-24'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/app10124336
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://vbn.aau.dk/ws/files/336684497/Demand_Control_Strategies_of_a_PCM_Enhanced_Ventilation_System_for_Residential_Buildings.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/app10124336 openalex:W3037183534
+    resolution: 'sim1: openalex location'
