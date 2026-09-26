@@ -75235,3 +75235,40 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.3390/app10124336 openalex:W3037183534
     resolution: 'sim1: openalex location'
+  - id: ope-climate-and-site-management-as-driving-factors
+    title: Climate and site management as driving factors for the atmospheric greenhouse
+      gas exchange of a restored wetland
+    url: https://bg.copernicus.org/articles/10/39/2013/bg-10-39-2013.pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2013-01-07'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/bg-10-39-2013
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://bg.copernicus.org/articles/10/39/2013/bg-10-39-2013.pdf; version
+      publishedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/bg-10-39-2013 openalex:W2097076223
+    resolution: 'legacy: openalex location'
+  - id: ope-a-review-of-ventilation-and-environmental-cont
+    title: A Review of Ventilation and Environmental Control of Underground Spaces
+    url: https://lirias.kuleuven.be/retrieve/fcb3bb6b-c819-41ce-a1a6-65e466f4c455
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2022-01-06'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/en15020409
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://lirias.kuleuven.be/retrieve/fcb3bb6b-c819-41ce-a1a6-65e466f4c455;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/en15020409 openalex:W4205451959
+    resolution: 'legacy: openalex location'
