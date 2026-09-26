@@ -75542,3 +75542,40 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/gmd-13-4891-2020 openalex:W3023777732
     resolution: 'ai1: openalex location'
+  - id: oas-10-3390-su7044022-1dcbeca7
+    title: The Effects of Air Permeability, Background Ventilation and Lifestyle on
+      Energy Performance, Indoor Air Quality and Risk of Condensation in Domestic B
+    url: https://www.repository.cam.ac.uk/bitstreams/8ff78b4c-f766-4cda-9cd7-ee85a1e5df5e/download
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-04-08'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su7044022
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.repository.cam.ac.uk/bitstreams/8ff78b4c-f766-4cda-9cd7-ee85a1e5df5e/download;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/su7044022 openalex:W2017225388
+    resolution: 'sim1: openalex location'
+  - id: oas-10-3390-en12132603-48dc3595
+    title: An Investigation into the Limitations of Low Temperature District Heating
+      on Traditional Tenement Buildings in Scotland
+    url: http://eprints.gla.ac.uk/189612/1/189612.pdf
+    source: openalex_sim
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-07-06'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/en12132603
+    license_evidence: openalex.license=cc-by-sa; openalex.license_id=https://openalex.org/licenses/cc-by-sa
+      [copy http://eprints.gla.ac.uk/189612/1/189612.pdf; version acceptedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.3390/en12132603 openalex:W2953629132
+    resolution: 'sim1: openalex location'
