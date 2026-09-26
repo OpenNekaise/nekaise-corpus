@@ -75143,3 +75143,57 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.3390/en16093834 openalex:W4367624496
     resolution: 'sim1: openalex location'
+  - id: oas-10-3390-su141811549-80b40ad9
+    title: Design of a Building-Scale Space Solar Cooling System Using TRNSYS
+    url: http://bura.brunel.ac.uk/bitstream/2438/25908/1/FullText.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-09-15'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su141811549
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy http://bura.brunel.ac.uk/bitstream/2438/25908/1/FullText.pdf; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/su141811549 openalex:W4296283868
+    resolution: 'sim1: openalex location'
+  - id: oas-10-3390-eng5040159-227a007e
+    title: 'Evaluating the Impact of Phase Change Materials and Double-Skin Façades
+      on Energy Performance in Office Buildings Under Climate Change Scenarios: A Ca'
+    url: https://vuir.vu.edu.au/50390/1/eng-05-00159.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-11-25'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/eng5040159
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://vuir.vu.edu.au/50390/1/eng-05-00159.pdf; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/eng5040159 openalex:W4404712351
+    resolution: 'sim1: openalex location'
+  - id: oas-10-3390-su15118606-c1fe5521
+    title: Modeling Occupant Window Behavior in Hospitals—A Case Study in a Maternity
+      Hospital in Beijing, China
+    url: https://discovery.ucl.ac.uk/10171112/1/2023-J-Sustainability_02.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-05-25'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su15118606
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/10171112/1/2023-J-Sustainability_02.pdf; version
+      submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/su15118606 openalex:W4378472040
+    resolution: 'sim1: openalex location'
