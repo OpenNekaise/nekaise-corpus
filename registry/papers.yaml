@@ -75272,3 +75272,39 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.3390/en15020409 openalex:W4205451959
     resolution: 'legacy: openalex location'
+  - id: oas-10-3389-fenef-2024-1471628-f68eabd9
+    title: The value of air conditioning
+    url: https://www.frontiersin.org/journals/energy-efficiency/articles/10.3389/fenef.2024.1471628/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-12-23'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fenef.2024.1471628
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.frontiersin.org/journals/energy-efficiency/articles/10.3389/fenef.2024.1471628/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fenef.2024.1471628 openalex:W4405691965
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2302-04126-6dd34ac5
+    title: Predicting the performance of hybrid ventilation in buildings using a multivariate
+      attention-based biLSTM Encoder-Decoder neural network
+    url: https://arxiv.org/pdf/2302.04126
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-02-08'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2302.04126
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2302.04126; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2302.04126 openalex:W4319793531
+    resolution: 'sim1: openalex location'

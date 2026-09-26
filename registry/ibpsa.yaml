@@ -42235,3 +42235,527 @@ sources:
     topic: building_energy
     format: pdf
     document_type: conference-paper
+  - id: ibp-verification-of-a-multizone-airflow-and-energy-netwo
+    title: Verification of a Multizone Airflow and Energy Network Model by Analytical
+      Solutions to Stack-driven Flows in Buildings
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_1A_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-new-trend-natural-ventilation-potential-analytics-fo
+    title: New-Trend Natural Ventilation Potential & Analytics for Various Climates
+      in Canada
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_1A_2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-towards-voxel-based-algorithms-for-building-performa
+    title: Towards Voxel-Based Algorithms for Building Performance Simulation
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_1B_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-opportunities-and-constraints-in-the-use-of-simulati
+    title: Opportunities and constraints in the use of simulation on low cost ARM-based
+      computers
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_1B_2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-optimization-of-a-battery-charging-schedule-in-a-net
+    title: Optimization of a Battery Charging Schedule in a Net Zero Energy House using
+      Vehicle-to-Home functionality
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_2A_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-recursive-thermal-building-model-training-using-ense
+    title: Recursive thermal building model training using Ensemble Kalman Filters
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_2A_2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-multi-level-architecture-to-facilitate-mpc-impleme
+    title: A multi-level architecture to facilitate MPC implementation in commercial
+      buildings basic principles and case study
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_2A_3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-linear-data-driven-system-identification-methodolo
+    title: A Linear Data-Driven System Identification Methodology for an ActivePassive
+      Solar Thermal Storage System and Application to a Solar House
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_2A_4.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-the-effect-of-input-uncertainty-in-model-based-predi
+    title: The Effect of Input Uncertainty in Model-based Predictive Control
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_2A_5.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-2013-solar-decathlon-technologies-modelling-tools-an
+    title: 2013 Solar Decathlon Technologies, Modelling Tools and Canadian Applications
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_2B_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-impact-of-future-climate-change-on-the-overheating-o
+    title: Impact of Future Climate Change on the Overheating of Canadian Housing Retrofitted
+      to the PassiveHaus Standard A Case Study
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_2B_2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-flexible-terraced-passive-house-design-and-performan
+    title: Flexible Terraced Passive House Design and Performance Evaluation using Building
+      Simulation
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_2B_3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-the-role-of-building-performance-simulation-in-the-d
+    title: The role of building performance simulation in the design of ECHO, Team Ontario’s
+      entry to the U.S. Department of Energy Solar Decathlon 2013
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_2B_4.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-feasible-upper-boundaries-of-passive-solar-space-hea
+    title: Feasible upper boundaries of passive solar space heating fraction potentials
+      by climate zone
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_2B_5.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-impact-of-the-representation-of-interior-loads-on-th
+    title: Impact of the Representation of Interior Loads on the Calibration of an eQuest
+      Energy Model for a Case Study
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_3A_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-natural-ventilation-in-residential-building-archetyp
+    title: Natural ventilation in residential building archetypes a stochastic approach
+      based on occupant behaviour and thermal comfort
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_3A_2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-effect-of-window-blind-use-in-residential-buildings-
+    title: Effect of Window Blind Use in Residential Buildings Observation and Simulation
+      Study
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_3A_3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-probabilistic-activity-model-to-include-realistic-
+    title: A probabilistic activity model to include realistic occupant behaviour in
+      building simulations
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_3A_4.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-simulation-du-confort-thermique-int-rieur-pour-l-ori
+    title: Simulation du confort thermique intérieur pour l’orientation d’un bâtiment
+      collectif à Biskra, Algérie
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_3A_5.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-potential-benefits-in-terms-of-thermal-comfort-and-e
+    title: Potential benefits in terms of thermal comfort and energy use of adding a
+      control loop to an existing multizone Air Handling Unit in a hospital settin
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_3A_6.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-setting-building-energy-performance-targets-economet
+    title: Setting Building Energy Performance Targets Econometric versus Baseline Models
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_3B_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-natural-ventilation-of-a-tall-industrial-building-in
+    title: Natural Ventilation of a Tall Industrial Building Investigation on the Impact
+      of Modeling Assumptions
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_3B_2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-savings-by-design-benefits-of-live-energy-modelling-
+    title: Savings by Design Benefits of Live Energy Modelling in Integrated Design
+      Charrettes
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_3B_3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-graphical-method-for-characterization-of-space-condi
+    title: Graphical Method for Characterization of Space Conditioning Requirements
+      for a House with Improved Building Envelope
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_3B_4.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-implementation-of-meta-modelling-for-sensitivity-ana
+    title: Implementation of Meta-modelling for Sensitivity Analysis in Building Energy
+      Analysis
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_3B_5.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-from-the-first-sketch-of-your-design-instantly-simul
+    title: From the first sketch of your design, instantly simulate your project’s bioclimatic
+      performance with the 3D simulation software ArchiWIZARD Bioclim
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_3B_6.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-study-of-electrical-heating-setpoint-modulation-stra
+    title: Study of Electrical Heating Setpoint Modulation Strategies for Residential
+      Demand Response
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_4A_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-mitigation-of-peak-cooling-demand-through-the-combin
+    title: Mitigation of Peak Cooling Demand through the Combination of Residential
+      Zoned Cooling and Window Shading A Building Simulation Case Study
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_4A_2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-exploring-the-demand-response-potential-of-a-smart-g
+    title: Exploring the Demand Response Potential of a Smart-Grid Ready House Using
+      Building Simulation Software
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_4A_3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-demand-response-strategies-in-a-small-all-electric-c
+    title: Demand Response Strategies in a Small All-Electric Commercial Building in
+      Quebec
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_4A_4.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-high-resolution-residential-electricity-consumption-
+    title: High-resolution residential electricity consumption trends under fixed and
+      time-of-use rates
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_4A_5.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-raybooster-an-efficient-robust-generic-and-easy-to-u
+    title: RayBooster An efficient, robust, generic and easy to use basic component
+      for high performance radiative simulations
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_4B_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-lasers-light-and-god-3-d-scanning-assisted-lighting-
+    title: Lasers, Light, and God 3-D scanning assisted lighting analysis of a house
+      of worship
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_4B_2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-physically-based-global-illumination-calculation-usi
+    title: Physically Based Global Illumination Calculation Using Graphics Hardware
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_4B_3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-predicting-the-daylit-area-a-comparison-of-students-
+    title: Predicting the Daylit Area – A Comparison of Students Assessments and Simulations
+      at Eleven Schools of Architecture
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_4B_4.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-tool-for-integrated-thermal-and-lighting-analysis-
+    title: A tool for integrated thermal and lighting analysis of spaces with controlled
+      hardware Fenestration Systems and artificial lighting
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_4B_5.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-computational-fluid-dynamics-cfd-analysis-of-air-bas
+    title: Computational Fluid Dynamics (CFD) Analysis of Air Based Building Integrated
+      Photovoltaic Thermal (BIPVT) Systems for Efficient Performance
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_5A_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-energy-and-exergy-analysis-of-a-solar-combisystem-us
+    title: Energy and Exergy Analysis of a Solar Combisystem using Engineering Equation
+      Solver (EES)
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_5A_2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-wind-effects-on-the-performance-of-solar-collectors-
+    title: Wind effects on the performance of solar collectors on roofs
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_5A_3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-applications-of-large-scale-solar-modeling-in-the-bu
+    title: Applications of Large Scale Solar Modeling in the Built Environment
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_5B_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-automated-multi-zone-building-energy-model-generatio
+    title: Automated multi-zone building energy model generation for schematic design
+      and urban massing studies
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_5B_2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-simulation-approaches-to-smart-solar-communities
+    title: Simulation approaches to smart solar communities
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_5B_3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-effectiveness-of-a-ventilated-concrete-slab-on-an-ai
+    title: Effectiveness of a Ventilated Concrete Slab on an Air Source Heat Pump Performance
+      in Cold Climate
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_6A_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-cfd-modelling-of-an-underground-water-tank-heat-stor
+    title: CFD Modelling of an Underground Water Tank Heat Storage System
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_6A_2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-experimental-assessment-of-a-phase-change-material-i
+    title: Experimental assessment of a phase change material in walls for heating and
+      cooling applications
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_6A_3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-pcm-thermal-storage-system-analysis-using-energyplus
+    title: PCM Thermal Storage System Analysis Using EnergyPlus and BCVTB
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_6A_4.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-mod-lisation-sur-trnsys-d-un-r-servoir-d-eau-chaude-
+    title: Modélisation sur TRNSYS d’un réservoir d’eau chaude sanitaire et comparaison
+      avec des mesures expérimentales
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_6A_5.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-pre-design-tools-and-procedures-for-efficient-integr
+    title: Pre-design tools and procedures for efficient integration of smart windows
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_6B_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-case-study-on-the-daylighting-and-thermal-effects-
+    title: A Case Study on the Daylighting and Thermal Effects of Fixed and Motorized
+      Light Louvers
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_6B_2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-dynamic-commercial-fa-ades-versus-traditional-constr
+    title: Dynamic commercial façades versus traditional construction energy performance
+      and comparative analysis
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_6B_3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-study-of-different-glazing-modelling-approaches-in-a
+    title: Study of different glazing modelling approaches in assessing energy performance
+      of curtain wall systems using EnergyPlus
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_6B_4.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-thermal-response-characterization-of-an-environmenta
+    title: Thermal Response Characterization of an Environmental Test Chamber by means
+      of Dynamic Thermal Models
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_6B_5.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-cloud-based-model-calibration-using-openstudio
+    title: Cloud-Based Model Calibration Using OpenStudio
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_7A_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-csa-c873-building-energy-estimation-methodology-a-si
+    title: CSA C873 Building Energy Estimation Methodology- A simplified monthly calculation
+      for quick building optimization
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_7A_2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-application-of-data-mining-techniques-for-energy-mod
+    title: Application of data mining techniques for energy modeling of HVAC sub-systems
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_7A_3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-bottom-up-simulation-calibration-of-zone-and-system-
+    title: Bottom-up simulation calibration of zone and system level models using building
+      automation system (BAS) trend data
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_7A_4.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-excalibbem-tool-development-to-calibrate-building-en
+    title: ExCalibBEM Tool Development to Calibrate Building Energy Models
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_7A_5.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-comparing-design-and-as-built-simulations-with-actua
+    title: Comparing Design and As-Built Simulations with Actual Measurements for a
+      Large Multi-Use University Building
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_7A_6.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-whole-building-annual-energy-analysis-of-air-curtain
+    title: Whole Building Annual Energy Analysis of Air Curtain Performance in Commercial
+      Building
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_7B_1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-virtual-flow-meter-for-chilled-water-loops-in-existi
+    title: Virtual Flow Meter for Chilled Water Loops in Existing Buildings
+    url: https://publications.ibpsa.org/proceedings/esim/2014/papers/esim2014_7B_2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
