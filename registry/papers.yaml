@@ -75029,3 +75029,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.jobe.2022.105536 openalex:W4309630671
     resolution: 'sim1: openalex location'
+  - id: oas-10-5194-acp-22-4721-2022-56ba7491
+    title: 'Revising the definition of anthropogenic heat flux from buildings: role
+      of human activities and building storage heat flux'
+    url: https://acp.copernicus.org/articles/22/4721/2022/acp-22-4721-2022.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-04-12'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/acp-22-4721-2022
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://acp.copernicus.org/articles/22/4721/2022/acp-22-4721-2022.pdf; version
+      publishedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/acp-22-4721-2022 openalex:W4226192388
+    resolution: 'sim1: openalex location'
