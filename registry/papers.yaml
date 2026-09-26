@@ -75105,3 +75105,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.jobe.2022.104100 openalex:W4207063057
     resolution: 'sim1: openalex location'
+  - id: ope-different-methods-for-spatial-interpolation-of
+    title: Different methods for spatial interpolation of rainfall data for operational
+      hydrology and hydrological modeling at watershed scale. A review
+    url: https://figshare.com/articles/journal_contribution/Different_methods_for_spatial_interpolation_of_rainfall_data_for_operational_hydrology_and_hydrological_modeling_at_watershed_scale_A_review/1225842
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2014-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.6084/m9.figshare.1225842
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://figshare.com/articles/journal_contribution/Different_methods_for_spatial_interpolation_of_rainfall_data_for_operational_hydrology_and_hydrological_modeling_at_watershed_scale_A_review/1225842;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.6084/m9.figshare.1225842 openalex:W1550206690
+    resolution: 'legacy: openalex location'
