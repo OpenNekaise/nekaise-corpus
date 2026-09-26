@@ -75344,3 +75344,40 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.3389/fenrg.2025.1609210 openalex:W4412041554
     resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2412-02943-697c36a7
+    title: Modularized Neural Network Incorporating Physical Priors for Smart Building
+      Control, Accuracy or Consistency?
+    url: https://arxiv.org/pdf/2412.02943
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-12-04'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2412.02943
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2412.02943; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2412.02943 openalex:W4405035987
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5109-7236915-bfe05514
+    title: Predicting Cooling Load and Energy Consumption of Coconut Oil as Phase Change
+      Material for Thermal Management in a Residential Building using Artifici
+    url: https://catalog.lib.kyushu-u.ac.jp/opac_download_md/7236915/p2761-2773.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-09-01'
+    document_type: article
+    persistent_id: https://doi.org/10.5109/7236915
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://catalog.lib.kyushu-u.ac.jp/opac_download_md/7236915/p2761-2773.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5109/7236915 openalex:W4403151078
+    resolution: 'sim1: openalex location'
