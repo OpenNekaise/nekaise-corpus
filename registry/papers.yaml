@@ -74637,3 +74637,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.3390/su15021455 openalex:W4315786528
     resolution: 'legacy: openalex location'
+  - id: oas-10-1093-ijlct-ctag108-afb6ee8a
+    title: 'Comprehensive techno-economic analysis of phase change material-stabilized
+      building-integrated photovoltaic thermal façades in residential buildings: '
+    url: https://knowledge.lancashire.ac.uk/id/eprint/60157/1/60157%20Almazam%20et%20al.%20VOR.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1093/ijlct/ctag108
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://knowledge.lancashire.ac.uk/id/eprint/60157/1/60157%20Almazam%20et%20al.%20VOR.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1093/ijlct/ctag108 openalex:W7204877696
+    resolution: 'sim1: openalex location'
