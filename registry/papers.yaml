@@ -75197,3 +75197,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.3390/su15118606 openalex:W4378472040
     resolution: 'sim1: openalex location'
+  - id: oas-10-1080-17508975-2024-2410804-2acb85e9
+    title: 'School building-stock climate resilience: evaluating London’s school stock
+      overheating performance'
+    url: https://discovery.ucl.ac.uk/id/eprint/10199986/1/School%20building-stock%20climate%20resilience%20%20evaluating%20London%20s%20school%20stock%20overheating%20performance.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-05-03'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/17508975.2024.2410804
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/id/eprint/10199986/1/School%20building-stock%20climate%20resilience%20%20evaluating%20London%20s%20school%20stock%20overheating%20performance.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/17508975.2024.2410804 openalex:W4404173767
+    resolution: 'sim1: openalex location'
