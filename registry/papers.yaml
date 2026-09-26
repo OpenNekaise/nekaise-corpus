@@ -74618,3 +74618,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7144390917
     resolution: 'sim1: openalex location'
+  - id: ope-lighting-strategies-to-increase-nighttime-pede
+    title: Lighting Strategies to Increase Nighttime Pedestrian Visibility at Midblock
+      Crosswalks
+    url: https://vtechworks.lib.vt.edu/bitstreams/4f64c670-bce0-4721-90df-6caa5404aed0/download
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-01-12'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su15021455
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://vtechworks.lib.vt.edu/bitstreams/4f64c670-bce0-4721-90df-6caa5404aed0/download;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/su15021455 openalex:W4315786528
+    resolution: 'legacy: openalex location'
