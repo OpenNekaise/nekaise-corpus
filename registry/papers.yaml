@@ -74991,3 +74991,41 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.enbuild.2021.111249 openalex:W3180077049
     resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-enbuild-2024-114879-3e9e3f59
+    title: 'Dyna-PINN: Physics-informed deep dyna-q reinforcement learning for intelligent
+      control of building heating system in low-diversity training data regim'
+    url: https://lirias.kuleuven.be/retrieve/3723e203-874a-4782-8136-300f6c01a79e
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-10-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2024.114879
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://lirias.kuleuven.be/retrieve/3723e203-874a-4782-8136-300f6c01a79e;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2024.114879 openalex:W4403267922
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-jobe-2022-105536-bddcb2c3
+    title: Dynamic modelling of indoor environmental conditions for future energy retrofit
+      scenarios across the UK school building stock
+    url: https://discovery.ucl.ac.uk/id/eprint/10160794/1/1-s2.0-S235271022201542X-main.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-11-17'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jobe.2022.105536
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/id/eprint/10160794/1/1-s2.0-S235271022201542X-main.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jobe.2022.105536 openalex:W4309630671
+    resolution: 'sim1: openalex location'
