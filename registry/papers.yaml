@@ -75307,3 +75307,40 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/hess-17-1851-2013 openalex:W2022112597
     resolution: 'legacy: openalex location'
+  - id: oas-10-3389-fbuil-2025-1629769-b02ee0ea
+    title: Advancing the circular economy in construction through circular business
+      models
+    url: https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2025.1629769/pdf
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-10-03'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fbuil.2025.1629769
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2025.1629769/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fbuil.2025.1629769 openalex:W4414773344
+    resolution: 'ai1: openalex location'
+  - id: oas-10-3389-fenrg-2025-1609210-e9239ae4
+    title: Collaborative optimal operation control of HVAC systems based on multi-agent
+    url: https://www.frontiersin.org/journals/energy-research/articles/10.3389/fenrg.2025.1609210/pdf
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-07-04'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fenrg.2025.1609210
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.frontiersin.org/journals/energy-research/articles/10.3389/fenrg.2025.1609210/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fenrg.2025.1609210 openalex:W4412041554
+    resolution: 'ai1: openalex location'
