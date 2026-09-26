@@ -74565,3 +74565,21 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/isprs-annals-xi-1-2026-447-2026 openalex:W7167357378
     resolution: 'sim1: openalex location'
+  - id: ope-ensemble-projections-of-future-streamflow-drou
+    title: Ensemble projections of future streamflow droughts in Europe
+    url: https://hess.copernicus.org/articles/18/85/2014/hess-18-85-2014.pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2014-01-09'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/hess-18-85-2014
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://hess.copernicus.org/articles/18/85/2014/hess-18-85-2014.pdf; version
+      publishedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/hess-18-85-2014 openalex:W2168643429
+    resolution: 'legacy: openalex location'
