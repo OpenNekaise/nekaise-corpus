@@ -75505,3 +75505,40 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.1371/journal.pone.0124413 openalex:W2019442123
     resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-energy-2022-125290-6fe55fce
+    title: Data-driven Offline Reinforcement Learning for HVAC-systems
+    url: https://vbn.aau.dk/ws/files/485246413/1_s2.0_S0360544222021739_main.pdf
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-08-29'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.energy.2022.125290
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://vbn.aau.dk/ws/files/485246413/1_s2.0_S0360544222021739_main.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.energy.2022.125290 openalex:W4293498985
+    resolution: 'ai1: openalex location'
+  - id: oas-10-5194-gmd-13-4891-2020-2e1406b6
+    title: 'Dynamic Anthropogenic activitieS impacting Heat emissions (DASH v1.0): development
+      and evaluation'
+    url: https://gmd.copernicus.org/articles/13/4891/2020/gmd-13-4891-2020.pdf
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-10-15'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/gmd-13-4891-2020
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://gmd.copernicus.org/articles/13/4891/2020/gmd-13-4891-2020.pdf; version
+      publishedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/gmd-13-4891-2020 openalex:W3023777732
+    resolution: 'ai1: openalex location'
