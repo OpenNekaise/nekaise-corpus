@@ -74494,3 +74494,74 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.3389/frsc.2024.1469803 openalex:W4406725987
     resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2608-09453-ab85fc21
+    title: 'Learning to Modulate, Not to Cycle: Soft Actor---Critic Recovers Inverter-Style
+      Heat-Pump Control'
+    url: https://arxiv.org/pdf/2608.09453
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    published_at: '2026-08-10'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2608.09453
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2608.09453; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2608.09453 openalex:W7202199005
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2607-16534-a45f78a3
+    title: 'Building2Building: A Large Scale Benchmark for Generalizable Real-World
+      Reinforcement Learning'
+    url: https://arxiv.org/pdf/2607.16534
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    published_at: '2026-07-17'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2607.16534
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2607.16534; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2607.16534 openalex:W7169885157
+    resolution: 'sim1: openalex location'
+  - id: oas-10-3389-fbuil-2026-1832972-28205c06
+    title: Radiation-focused UTCI analysis of urban morphology in Riyadh’s hyper-arid
+      residential fabric
+    url: https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2026.1832972/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-07-16'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fbuil.2026.1832972
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2026.1832972/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fbuil.2026.1832972 openalex:W7168642881
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-annals-xi-1-2026-447-2026-24ad92d3
+    title: Automatic 3D Building Model Generation for Energy Digital Twins
+    url: https://isprs-annals.copernicus.org/articles/XI-1-2026/447/2026/isprs-annals-XI-1-2026-447-2026.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-07-03'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-annals-xi-1-2026-447-2026
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-annals.copernicus.org/articles/XI-1-2026/447/2026/isprs-annals-XI-1-2026-447-2026.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-annals-xi-1-2026-447-2026 openalex:W7167357378
+    resolution: 'sim1: openalex location'
