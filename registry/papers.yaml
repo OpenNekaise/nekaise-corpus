@@ -75124,3 +75124,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.6084/m9.figshare.1225842 openalex:W1550206690
     resolution: 'legacy: openalex location'
+  - id: oas-10-3390-en16093834-a378305d
+    title: 'Windows of Opportunities: Orientation, Sizing and PV-Shading of the Glazed
+      Area to Reduce Cooling Energy Demand in Sub-Sahara Africa'
+    url: https://ltu.diva-portal.org/smash/get/diva2:1760091/FULLTEXT01
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-04-29'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/en16093834
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://ltu.diva-portal.org/smash/get/diva2:1760091/FULLTEXT01; version
+      submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/en16093834 openalex:W4367624496
+    resolution: 'sim1: openalex location'

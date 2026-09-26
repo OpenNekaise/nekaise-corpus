@@ -37017,3 +37017,354 @@ sources:
     topic: building_energy
     format: pdf
     document_type: conference-paper
+  - id: ibp-calibration-of-building-energy-use-models-a-case-stu
+    title: 'Calibration of building energy use models: a case study of three residential
+      buildings in Kosovo'
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-08-1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-numerical-calculation-of-the-direct-sound-transmissi
+    title: Numerical calculation of the direct sound transmission using a combined finite
+      element – statistical energy analysis approach
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-08-2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-exploring-the-implications-of-variance-in-urban-micr
+    title: 'Exploring the implications of variance in urban microclimate for buildings’
+      energy performance: a simulation based approach'
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-04-1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-numerische-simulation-am-praxisbeispiel-der-hygrothe
+    title: Numerische Simulation am Praxisbeispiel der hygrothermie von Holzbalkenköpfen
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-04-3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-fertigteile-zur-multifunktionalen-thermischen-nutzun
+    title: Fertigteile zur multifunktionalen thermischen Nutzung
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-05-1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-scalable-design-driven-parameterization-of-reduced-o
+    title: Scalable design-driven parameterization of reduced order models using archetype
+      buildings with teaser
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_E-01-1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-coupling-building-morphology-optimization-and-energy
+    title: Coupling building morphology optimization and energy efficiency – a proof
+      of concept
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_E-01-2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-erweiterung-von-modellen-zur-anwendung-strukturvaria
+    title: Erweiterung von Modellen zur Anwendung strukturvariabler Simulationen in
+      Modelica
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_E-01-3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-automated-collocation-of-simulation-modules-in-fmi-b
+    title: Automated collocation of simulation modules in fmi-based building energy
+      co-simulation
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_E-02-1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-consideration-of-heating-elements-behaviour-in-a-co-
+    title: Consideration of heating elements’ behaviour in a co-simulation setting using
+      model-predictive controls
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_E-02-2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-schnittstellen-f-r-die-co-simulationskopplung-zwisch
+    title: Schnittstellen für die Co-Simulationskopplung zwischen Gebäude- und Heizungsanlagensimulation
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_E-02-3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-entwicklung-von-algorithmen-zur-simulatorkopplung-un
+    title: Entwicklung von Algorithmen zur Simulatorkopplung unter Verwendung der FMI-Schnittstelle
+      für Anwendungen in der Gebäudesimulation
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_E-03-1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-integration-von-thermischer-geb-udesimulation-und-st
+    title: Integration von thermischer Gebäudesimulation und Strömungssimulation in
+      einer Nutzungsoberfläche – BIM HVACtool
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_E-03-2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-instation-re-energetische-bewertung-von-w-rmepumpen-
+    title: Instationäre energetische Bewertung von Wärmepumpen- und Mikro-KWK-Systemen
+      – Simulation und Emulation
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_E-03-3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-analysen-eines-zellul-ren-regionalen-energiesystems-
+    title: Analysen eines zellulären, regionalen Energiesystems in Theorie und Praxis
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_C-04-1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-monitoring-based-commissioning-mbcx-in-energy-and-fa
+    title: Monitoring based commissioning (mbcx) in energy and facility management
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_C-04-2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-monitoring-und-bilanzrechnung-ganz-ohne-performance-
+    title: 'Monitoring und Bilanzrechnung: ganz ohne Performance Gap'
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_C-04-3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-urban-energy-modeling-using-multivariate-cluster-ana
+    title: Urban energy modeling using multivariate cluster analysis
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_C-07-2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-numerische-und-experimentelle-untersuchung-thermisch
+    title: Numerische und experimentelle Untersuchung thermisch aktivierter Sandwichwände
+      mit integriertem Paraffin
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-05-2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-qualitative-und-quantitative-tageslichttechnische-fa
+    title: Qualitative und quantitative Tageslichttechnische Fassadenplanung für die
+      Beratungspraxis
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-05-3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-buildingsystems-eine-modular-hierarchische-modellbib
+    title: Buildingsystems – eine modular hierarchische Modellbibliothek zur energetischen
+      Gebäude- und Anlagensimulation
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-06-1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-coupling-a-thermal-comfort-model-with-1-building-sim
+    title: Coupling a thermal comfort model with 1 building simulation for user comfort
+      and energy efficiency
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-06-2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-exploring-the-effectiveness-of-window-operation-mode
+    title: Exploring the effectiveness of window operation models for thermal comfort
+      and energy performance assessments
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-06-3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-simulation-und-experimentelle-evaluierung-thermoakti
+    title: Simulation und experimentelle Evaluierung thermoaktiver Textilien für die
+      energieeffiziente Heizung und Kühlung von Räumen
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-07-1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-betonkernaktivierung-mit-luft-im-vergleich-zu-etabli
+    title: Betonkernaktivierung mit Luft im Vergleich zu etablierten Systemen der Raumkühlung
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-07-2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-agentenbasierte-steuerung-von-thermischer-simulation
+    title: Agentenbasierte Steuerung von thermischer Simulation in Echtzeit
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-07-3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-non-residential-buildings-input-parameters-for-model
+    title: 'Non-residential buildings: input parameters for modeling the energy demand'
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_C-03-1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-database-development-with-3d-citygml-and-energyade-s
+    title: Database development with "3d-citygml"-and "energyade"- schema for city-district-simulation
+      modelling
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_C-03-2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-density-based-clustering-algorithm-for-fault-detecti
+    title: Density-based clustering algorithm for fault detection and identification
+      in HVAC systems
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_C-03-3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-generation-of-building-geometry-for-energy-performan
+    title: Generation of building geometry for energy performance simulation using Modelica
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-01-1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-model-view-definition-for-advanced-building-energy-p
+    title: Model view definition for advanced building energy performance simulation
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-02-1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-eebim-lab-towards-a-coherent-green-building-design-p
+    title: eeBIM Lab – towards a coherent green building design process
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-02-2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-modellpr-diktive-einzelraumregelung-auf-basis-empiri
+    title: Modellprädiktive Einzelraumregelung auf Basis empirischer Modelle
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-03-1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-state-space-models-as-a-common-tool-for-control-desi
+    title: State space models as a common tool for control design, optimization and
+      fault detection in building systems
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-03-2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-dezentrale-einspeisung-von-solarenw-rmeertr-gen-in-n
+    title: Dezentrale Einspeisung von Solarenwärmeerträgen in nah- oder Fernwärmenetze
+      – Ergebnisse einer Simulationsstudie
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-03-3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-stochastic-analysis-for-design-space-exploration-and
+    title: Stochastic analysis for design space exploration and building performance
+      optimisation
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-01-2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-combination-of-monte-carlo-approach-and-artificial-n
+    title: Combination of Monte-Carlo approach and artificial neural network for the
+      determination of swiss typical building thermal load profiles
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_D-01-3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-aixlib-an-open-source-modelica-library-within-the-ie
+    title: AixLib – an open-source modelica library within the iea-ebc annex 60 framework
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_A-02-3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-simulation-and-validation-of-thermal-air-stratificat
+    title: Simulation and validation of thermal air stratification in living spaces
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_E-04-1.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-an-inquiry-into-the-reliability-of-urban-revel-cfd-b
+    title: An inquiry into the reliability of urban-revel cfd-based air flow field analysis
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_E-04-2.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-pr-fung-und-konvertierung-von-tga-ifcxml-modellen-zu
+    title: Prüfung und Konvertierung von TGA IFCXML-Modellen zu SimModel
+    url: https://publications.ibpsa.org/proceedings/bausim/2016/papers/bausim2016_E-04-3.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper

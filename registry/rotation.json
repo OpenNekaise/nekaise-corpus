@@ -55,7 +55,7 @@
   },
   "find_ibpsa": {
     "flag": "--slot",
-    "next": 34,
+    "next": 35,
     "step": 1,
     "note": "RE-AIMED 2026-09-24 from --year 2023 to an index into find_ibpsa.UNIVERSE (76 append-only (conf, year) listings verified on the series index pages, newest first: esim2026, simbuild2026, bs2025, ...). Nothing was ever kept: the 2026-08-05 bs2023/bs2025 attempt lost 881 of 917 fetches to the rate captcha (not blocklisted; 36 hard-403 URLs were). A listing with more new papers than --max, or a captcha answer, holds the slot; past the last slot the backend reports exhausted."
   },
@@ -159,14 +159,14 @@
   },
   "find_openalex_sim": {
     "flag": "--family-cursor",
-    "next": "sim1 t=48 q=2 w=1 p=7 k=0 sq=1 sw=1 sp=1 sk=0",
+    "next": "sim1 t=49 q=2 w=1 p=8 k=0 sq=1 sw=1 sp=1 sk=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families cursor 'sim1 t=<runs> q=<query> w=<date window> p=<page> k=<results finished on that page>' for the simulation walk plus sq/sw/sp/sk for the SSRN-origin walk. Which walk searches in a round comes from the round id (openalex_families.budget_slot), never from this cursor. A --max or lookup-cap stop keeps the page with its k; a failed or malformed search keeps the whole cursor. Changing openalex_families.SIMULATION queries/windows needs a new version and a reviewed cursor migration."
   },
   "find_openalex_ai": {
     "flag": "--family-cursor",
-    "next": "ai1 t=48 q=0 w=2 p=1 k=0",
+    "next": "ai1 t=49 q=0 w=2 p=1 k=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families BUILDING_AI cursor 'ai1 t q w p k' (same semantics as find_openalex_sim's main walk)."
@@ -179,7 +179,7 @@
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 2192,
+    "next": 2193,
     "step": 1,
     "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature)."
   },
@@ -191,7 +191,7 @@
   },
   "find_boverket_bfs": {
     "flag": "--cursor",
-    "next": "379:bc50125c2c60",
+    "next": "392:bc50125c2c60",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25 (compliance/ESG programme). Dynamic cursor reported by the finder (scripts/finder_protocol.py): START | <index into the published-date-sorted rinfo feed> | watch:<date> (full pass done; re-read at most every 7 days)."
@@ -205,7 +205,7 @@
   },
   "find_eurlex": {
     "flag": "--cursor",
-    "next": "{\"f\":\"\",\"i\":0,\"k\":\"32011R0305R(01)\",\"s\":4}",
+    "next": "{\"f\":\"\",\"i\":0,\"k\":\"32011R0305R(02)\",\"s\":4}",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25 (compliance/ESG programme). Dynamic cursor reported by the finder (scripts/finder_protocol.py): JSON {s: seed index into registry/eurlex.json, k: CELEX of the work in progress, i: item offset} | watch:<date> after the last seed (re-walked at most every 7 days)."
