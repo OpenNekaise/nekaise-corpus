@@ -75468,3 +75468,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2601.02061 openalex:W7118436948
     resolution: 'ai1: openalex location'
+  - id: oas-10-1371-journal-pone-0337139-b960e784
+    title: Research on energy-saving algorithm of HVAC multi-agent system consensus
+      based on event-triggered mechanism
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0337139&type=printable
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-11-21'
+    document_type: article
+    persistent_id: https://doi.org/10.1371/journal.pone.0337139
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0337139&type=printable;
+      version publishedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: publishedVersion
+    origin_ids: doi:10.1371/journal.pone.0337139 openalex:W4416513208
+    resolution: 'ai1: openalex location'
