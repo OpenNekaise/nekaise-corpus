@@ -75399,3 +75399,72 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2312.05073 openalex:W4389600135
     resolution: 'sim1: openalex location'
+  - id: oas-w7163595177
+    title: Explainable Data-driven Deep Reinforcement Learning Methods for Optimal Energy
+      Management in Buildings
+    url: https://arxiv.org/pdf/2606.02049
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    published_at: '2026-06-01'
+    document_type: preprint
+    persistent_id: https://openalex.org/W7163595177
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2606.02049; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7163595177
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2605-24406-d474e717
+    title: A Unified Python Framework for Direct PPO-based Control of AHUs with Economizer
+      Logic and CO2-Constrained Ventilation
+    url: https://arxiv.org/pdf/2605.24406
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    published_at: '2026-05-23'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2605.24406
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2605.24406; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2605.24406 openalex:W7162471687
+    resolution: 'ai1: openalex location'
+  - id: oas-10-3389-frsus-2026-1751386-fd222860
+    title: E-commerce vs. physical retail—Sustainability depends on logistics, not channels
+    url: https://public-pages-files-2025.frontiersin.org/journals/sustainability/articles/10.3389/frsus.2026.1751386/pdf
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    published_at: '2026-02-18'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/frsus.2026.1751386
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://public-pages-files-2025.frontiersin.org/journals/sustainability/articles/10.3389/frsus.2026.1751386/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/frsus.2026.1751386 openalex:W7130318295
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2601-02061-0fc2f2b8
+    title: 'Higher-Order Action Regularization in Deep Reinforcement Learning: From
+      Continuous Control to Building Energy Management'
+    url: https://arxiv.org/pdf/2601.02061
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-01-05'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2601.02061
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2601.02061; version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2601.02061 openalex:W7118436948
+    resolution: 'ai1: openalex location'
