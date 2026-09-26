@@ -75067,3 +75067,41 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.jobe.2022.104026 openalex:W4205847740
     resolution: 'sim1: openalex location'
+  - id: oas-10-3389-fenrg-2024-1423695-28f379f8
+    title: Artificial neural networks for predicting the performance of heat pumps with
+      horizontal ground heat exchangers
+    url: https://www.repository.cam.ac.uk/bitstreams/7a5587ae-20f5-4148-a19f-f037becdd4d4/download
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-06-12'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fenrg.2024.1423695
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.repository.cam.ac.uk/bitstreams/7a5587ae-20f5-4148-a19f-f037becdd4d4/download;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3389/fenrg.2024.1423695 openalex:W4399592605
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-jobe-2022-104100-589db1f9
+    title: Investigating the flexibility of a novel multi-zone air heating and ventilation
+      system using model predictive control
+    url: https://vbn.aau.dk/ws/files/482459330/1_s2.0_S2352710222001139_main.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-01-23'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jobe.2022.104100
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://vbn.aau.dk/ws/files/482459330/1_s2.0_S2352710222001139_main.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jobe.2022.104100 openalex:W4207063057
+    resolution: 'sim1: openalex location'
