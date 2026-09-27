@@ -226,8 +226,9 @@ def readme_stats_errors(readme: str, stats, collection=None) -> list[str]:
     expected_chars = f"{chars / 1e9:.3f}B" if chars >= 1e9 else f"{chars / 1e6:.0f}M"
     if f"~{expected_chars} chars" not in readme:
         errors.append(f"README extracted chars is stale (want {expected_chars})")
-    if f"**{excluded:,}** rows (not fetched or training-ready)" not in readme and \
-            f"**{excluded:,}** rows (collected; outside the default corpus view)" not in readme:
+    if not any(f"**{excluded:,}** rows ({phrase}" in readme for phrase in (
+            "not fetched or training-ready)", "collected; outside the default corpus view)",
+            "collected and kept)")):
         errors.append(f"README policy-excluded count is stale (want {excluded:,})")
     if collection is not None and "**Collection (all use classes)**" in readme:
         held = f"**{collection.total_held:,}** held originals"

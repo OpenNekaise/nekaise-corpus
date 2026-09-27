@@ -195,3 +195,18 @@ def test_readme_contract_uses_one_coherent_view(monkeypatch, tmp_path):
     assert check_contracts.readme_stats_errors(readme(3, "1M", 2), stats)
     assert check_contracts.readme_stats_errors(readme(3, "3M", 1), stats)
     assert check_contracts.readme_stats_errors(readme(3, "3M", 2), stats) == []
+
+
+def test_generated_readme_passes_the_contracts_validator(monkeypatch, tmp_path):
+    """Codex review ca2: whatever update_readme_stats writes, check_contracts must accept (a
+    relabel once broke every round's contracts gate)."""
+    import check_contracts
+    import corpus_stats
+    import store
+    text = _readme_for(monkeypatch, tmp_path, 2)
+    root = tmp_path / "held-2"
+    with store.open(root=root).read() as view:
+        restrictions, _ = store.pinned_policy(view)
+        stats = corpus_stats.compute(view, restrictions)
+        collection = corpus_stats.compute_collection(view, restrictions)
+    assert check_contracts.readme_stats_errors(text, stats, collection) == []

@@ -117,8 +117,9 @@ TARGET_FIELDS = ("id", "url", "source", "license", "license_evidence", "status",
                  "text_path", "text_chars", "corpus_chars", "topic", "sha256", "text_sha256",
                  "raw_path", "corpus_path", "corpus_sha256")
 # Resolver versions: a result from an older resolver is re-audited (OpenAlex v2 keeps
-# identity-bearing query parameters and records the deciding location).
-RESOLVER = {"arxiv-oai-pmh:arXivRaw": 1, "openalex:works": 2}
+# identity-bearing query parameters and records the deciding location; v3 classifies BOTH
+# `license` and `license_id` of a location and makes disagreement unverified).
+RESOLVER = {"arxiv-oai-pmh:arXivRaw": 1, "openalex:works": 3}
 # discovery-time evidence the audit may replace (find_sources' OpenAlex note)
 REPLACEABLE_EVIDENCE = ("OpenAlex OA location license:",)
 CONTROL_DOC = "use_view_changes.json"

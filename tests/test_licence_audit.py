@@ -729,3 +729,18 @@ def test_restricted_use_licences_classify_never_filter():
         assert lic in lint_registry.LICENSES
     assert not registry.RESTRICTED_USE_LICENSES & registry.OPEN_USE_LICENSES
     assert registry.is_default_corpus_eligible({"id": "arx-x", "license": "cc-by"}, {})
+
+
+def test_pre_fix_openalex_results_are_re_audited():
+    """Codex review ca2: a result saved by the resolver before license/license_id conflicts were
+    classified must not count as final — the OpenAlex pass re-audits it."""
+    url = "https://repo.example/paper.pdf"
+    t = {**target("ope-c", url=url), "cohort": "openalex"}
+    work = {"id": "W7", "locations": [
+        {"pdf_url": url, "license": "cc-by",
+         "license_id": "https://openalex.org/licenses/cc-by-nc"}]}
+    fresh = audit.openalex_verdict(t, work, "2026-09-25T00:00:00Z", "E")
+    assert fresh["resolver"] == audit.RESOLVER["openalex:works"] == 3
+    assert audit.result_state(t, fresh) == "final"
+    stale = {**fresh, "resolver": 2, "verdict": "eligible", "licence": "cc-by"}
+    assert audit.result_state(t, stale) != "final"
