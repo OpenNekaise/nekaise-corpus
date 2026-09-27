@@ -407,7 +407,12 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
             futures = [pool.submit(execute, step, cmd) for step, cmd in gates]
             results = [future.result() for future in futures]  # declared order; awaits every gate
         except BaseException:
-            stop_gates()
+            try:
+                stop_gates()
+            finally:
+                # whatever interrupts the cleanup (a second SIGTERM included), every worker
+                # stops waiting, so executor shutdown and process exit stay bounded
+                abandoned.set()
             raise
         finally:
             # never an unbounded wait behind a gate cleanup could not stop: the exception above

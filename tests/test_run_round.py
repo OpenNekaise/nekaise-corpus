@@ -399,6 +399,45 @@ def test_coordinator_exits_promptly_even_when_every_cleanup_fails(tmp_path):
         sp.run(["pkill", "-f", marker])             # the survivor recovery would stop
 
 
+SECOND_TERM = r"""
+import os, signal, sys, threading
+sys.path.insert(0, {scripts!r})
+import run_round
+run_round.ops.run_event = lambda *a, **k: None
+run_round.GATE_STOP_GRACE_SECONDS = 3.0
+def handler(signum, frame):
+    raise KeyboardInterrupt()             # as the staged round's SIGTERM handler does
+signal.signal(signal.SIGTERM, handler)
+threading.Timer(0.5, os.kill, (os.getpid(), signal.SIGTERM)).start()
+threading.Timer(1.2, os.kill, (os.getpid(), signal.SIGTERM)).start()   # during the grace
+gate = [sys.executable, "-c",
+        "import signal, time; signal.signal(signal.SIGTERM, signal.SIG_IGN); "
+        "time.sleep(30)  # {marker}"]
+try:
+    run_round.run_verify_parallel([("stuck", gate)], {{}}, {run_id!r})
+except KeyboardInterrupt:
+    print("cancelled", flush=True)
+"""
+
+
+def test_second_sigterm_during_cleanup_still_exits_promptly():
+    """Codex review 89: a second SIGTERM that interrupts stop_gates() itself must still release
+    every worker (no unbounded executor wait behind a TERM-resistant gate)."""
+    import subprocess as sp
+    import time as _time
+    import uuid
+    marker = f"gate-{uuid.uuid4().hex}"
+    code = SECOND_TERM.format(scripts=str(Path(run_round.__file__).parent), marker=marker,
+                              run_id=rid("run-term2"))
+    began = _time.monotonic()
+    try:
+        done = sp.run([sys.executable, "-c", code], capture_output=True, text=True, timeout=25)
+        assert "cancelled" in done.stdout, done.stderr
+        assert _time.monotonic() - began < 10       # never the gate's 30 s
+    finally:
+        sp.run(["pkill", "-f", marker])
+
+
 def test_run_command_raises_on_nonzero(monkeypatch):
     monkeypatch.setattr(
         run_round.subprocess, "run",
