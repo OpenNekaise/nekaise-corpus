@@ -75767,3 +75767,22 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.3389/fenrg.2026.1806403 openalex:W7161002058
     resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-renene-2021-07-077-d3579ce0
+    title: Simulation and optimization of night cooling with diffuse ceiling ventilation
+      and mixing ventilation in a cold climate
+    url: https://lirias.kuleuven.be/retrieve/36ed247b-1afc-47c9-aaa8-de9bdeb3b6ba
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-07-18'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.renene.2021.07.077
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://lirias.kuleuven.be/retrieve/36ed247b-1afc-47c9-aaa8-de9bdeb3b6ba;
+      version submittedVersion]
+    rights_verified_at: '2026-09-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.renene.2021.07.077 openalex:W3185092322
+    resolution: 'sim1: openalex location'
