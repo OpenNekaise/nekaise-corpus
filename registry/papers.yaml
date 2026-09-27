@@ -75710,3 +75710,60 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.enbuild.2026.117139 openalex:W7128541622
     resolution: 'sim1: openalex location'
+  - id: oas-10-3389-fbuil-2025-1707371-e8311e6e
+    title: 'Investigating lighting calibration opportunities in virtual reality for
+      real-world illumination fidelity: an empirical study of variable lighting arra'
+    url: https://public-pages-files-2025.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2025.1707371/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-10-28'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fbuil.2025.1707371
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://public-pages-files-2025.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2025.1707371/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-27'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fbuil.2025.1707371 openalex:W4415604624
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-annals-x-4-w7-2025-25-2025-10b9cb21
+    title: Data-Driven Energy Simulations To Evaluate Positive Energy District Potential
+      In Rotterdam
+    url: https://isprs-annals.copernicus.org/articles/X-4-W7-2025/25/2025/isprs-annals-X-4-W7-2025-25-2025.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-09-19'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-annals-x-4-w7-2025-25-2025
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-annals.copernicus.org/articles/X-4-W7-2025/25/2025/isprs-annals-X-4-W7-2025-25-2025.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-27'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-annals-x-4-w7-2025-25-2025 openalex:W4414354396
+    resolution: 'sim1: openalex location'
+  - id: oas-10-3389-fenrg-2026-1806403-8e4ee05d
+    title: Improving the reliability of urban building energy modelling through automated
+      data processing
+    url: https://www.frontiersin.org/journals/energy-research/articles/10.3389/fenrg.2026.1806403/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-05-13'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fenrg.2026.1806403
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.frontiersin.org/journals/energy-research/articles/10.3389/fenrg.2026.1806403/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-27'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fenrg.2026.1806403 openalex:W7161002058
+    resolution: 'sim1: openalex location'
