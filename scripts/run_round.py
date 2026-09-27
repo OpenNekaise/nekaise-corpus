@@ -177,23 +177,33 @@ def _start_time(pid: int) -> str | None:
     return fields[19] if fields else None
 
 
-def _descendants(pid: int) -> dict[int, str]:
-    """{pid: start time} of every live descendant of `pid` (a /proc parent-map walk)."""
-    children: dict[int, list[tuple[int, str]]] = {}
+def _pinned_tree(root_fd: int, root_pid: int) -> list[int]:
+    """pidfds of every descendant of a pinned, running process, each validated through its
+    ancestry: a child is pinned, then accepted only if its CURRENT parent is the pinned parent
+    and that parent has still not exited — so the parent's pid cannot have been reused and the
+    child really is its child. A branch whose ancestor cannot be validated is dropped whole
+    (Codex reviews 85, 86). Every returned fd is the caller's to close."""
+    children: dict[int, list[int]] = {}
     for entry in os.scandir("/proc"):
-        if not entry.name.isdigit():
-            continue
-        fields = _stat_fields(int(entry.name))
-        if fields is None:
-            continue
-        children.setdefault(int(fields[1]), []).append((int(entry.name), fields[19]))
-    out: dict[int, str] = {}
-    todo = [pid]
+        if entry.name.isdigit():
+            fields = _stat_fields(int(entry.name))
+            if fields is not None:
+                children.setdefault(int(fields[1]), []).append(int(entry.name))
+    out: list[int] = []
+    todo = [(root_pid, root_fd)]
     while todo:
-        for child, started in children.get(todo.pop(), []):
-            if child not in out:
-                out[child] = started
-                todo.append(child)
+        parent, parent_fd = todo.pop()
+        for child in children.get(parent, []):
+            try:
+                fd = os.pidfd_open(child)
+            except OSError:
+                continue
+            fields = _stat_fields(child)
+            if fields is None or int(fields[1]) != parent or _exited(parent_fd):
+                os.close(fd)            # not (or no longer provably) this parent's child
+                continue
+            out.append(fd)
+            todo.append((child, fd))
     return out
 
 
@@ -314,13 +324,9 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
             roots = _pidfds({p.pid: started})     # pin the gate itself first
             if not roots:
                 continue                          # already gone (or its pid reused): skip
-            tree = _descendants(p.pid)
-            # the walk is the gate's own tree only if the gate was still running when it ended:
-            # a gate that exited (and could be reaped, its pid reused) meanwhile invalidates it
-            # (Codex review 85)
-            if not _exited(roots[0]):
-                fds += _pidfds(tree)
             fds += roots
+            if not _exited(roots[0]):
+                fds += _pinned_tree(roots[0], p.pid)
         try:
             _signal_fds(fds, signal.SIGTERM)
             deadline = time.monotonic() + GATE_STOP_GRACE_SECONDS

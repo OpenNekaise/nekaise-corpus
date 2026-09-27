@@ -200,42 +200,83 @@ def test_cancellation_never_signals_a_reused_pid():
         bystander.wait()
 
 
-def test_cancellation_ignores_the_tree_of_a_reused_gate_pid(monkeypatch):
-    """Codex review 85: if the gate exits (is reaped, its pid reusable) while cancellation walks
-    its tree, the walked 'children' may belong to someone else: they must not be signalled."""
-    import signal
+def _sleeper(forks=False):
     import subprocess as sp
-    import threading
+    code = ("import os, time\n"
+            + ("if os.fork() == 0:\n    time.sleep(60)\n    os._exit(0)\n" if forks else "")
+            + "time.sleep(60)")
+    return sp.Popen([sys.executable, "-c", code])
+
+
+def test_pinned_tree_finds_real_children():
     import time as _time
-
-    class Cancelled(Exception):
-        pass
-
-    def handler(signum, frame):
-        raise Cancelled()
-
-    bystander = sp.Popen([sys.executable, "-c", "import time; time.sleep(60)"])
+    gate = _sleeper(forks=True)
     try:
-        def walk(pid):          # the gate dies mid-walk; the walk then "finds" the bystander
-            os.kill(pid, signal.SIGKILL)
-            _time.sleep(0.3)
-            return {bystander.pid: run_round._start_time(bystander.pid)}
-        monkeypatch.setattr(run_round, "_descendants", walk)
-        monkeypatch.setattr(run_round.ops, "run_event", lambda *a, **k: None)
-        monkeypatch.setattr(run_round, "GATE_STOP_GRACE_SECONDS", 1.0)
-        old = signal.signal(signal.SIGTERM, handler)
-        try:
-            timer = threading.Timer(1.0, os.kill, (os.getpid(), signal.SIGTERM))
-            timer.start()
-            with pytest.raises(Cancelled):
-                run_round.run_verify_parallel([_gate("stuck", 0, 60)], {}, rid("run-reuse"))
-        finally:
-            timer.cancel()
-            signal.signal(signal.SIGTERM, old)
-        assert bystander.poll() is None            # never signalled
+        _time.sleep(0.5)
+        root = run_round._pidfds({gate.pid: run_round._start_time(gate.pid)})
+        assert root
+        tree = run_round._pinned_tree(root[0], gate.pid)
+        assert len(tree) == 1                       # its forked child, pinned
+        run_round._signal_fds(tree + root, 9)
+        for fd in tree + root:
+            os.close(fd)
     finally:
-        bystander.kill()
-        bystander.wait()
+        gate.kill()
+        gate.wait()
+
+
+def test_pinned_tree_rejects_a_child_whose_ancestry_does_not_hold(monkeypatch):
+    """Codex reviews 85/86: the /proc scan is not atomic. A process the scan listed under a
+    pinned parent (an intermediate pid reused meanwhile, or a stale ppid) is accepted only if
+    its CURRENT parent is still the pinned, running parent — else it is never signalled."""
+    parent, bystander = _sleeper(), _sleeper()
+    try:
+        real = run_round._stat_fields
+        seen = set()
+
+        def scan_lies_once(pid):          # the scan sees the bystander under `parent`
+            fields = real(pid)
+            if pid == bystander.pid and pid not in seen and fields is not None:
+                seen.add(pid)
+                fields = list(fields)
+                fields[1] = str(parent.pid)
+            return fields
+        monkeypatch.setattr(run_round, "_stat_fields", scan_lies_once)
+        root = run_round._pidfds({parent.pid: run_round._start_time(parent.pid)})
+        tree = run_round._pinned_tree(root[0], parent.pid)
+        assert tree == []                               # re-validated: not the parent's child
+        os.close(root[0])
+        assert bystander.poll() is None
+    finally:
+        for p in (parent, bystander):
+            p.kill()
+            p.wait()
+
+
+def test_pinned_tree_drops_the_branch_of_an_exited_intermediate(monkeypatch):
+    """An intermediate that exited (pid reusable) cannot vouch for anything listed under it."""
+    parent, bystander = _sleeper(), _sleeper()
+    ghost = 2 ** 22 - 7                                  # a pid with no process
+    try:
+        real = run_round._stat_fields
+
+        def scan(pid):
+            fields = real(pid)
+            if fields is not None and pid == bystander.pid:
+                fields = list(fields)
+                fields[1] = str(ghost)               # listed under the vanished intermediate
+            return fields
+        monkeypatch.setattr(run_round, "_stat_fields", scan)
+        real_scandir = run_round.os.scandir
+        monkeypatch.setattr(run_round.os, "scandir", lambda path: list(real_scandir(path)))
+        root = run_round._pidfds({parent.pid: run_round._start_time(parent.pid)})
+        assert run_round._pinned_tree(root[0], parent.pid) == []
+        os.close(root[0])
+        assert bystander.poll() is None
+    finally:
+        for p in (parent, bystander):
+            p.kill()
+            p.wait()
 
 
 def test_run_command_raises_on_nonzero(monkeypatch):
