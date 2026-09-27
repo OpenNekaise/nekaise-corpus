@@ -75672,3 +75672,41 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.jclepro.2019.01.134 openalex:W2910736340
     resolution: 'legacy: openalex location'
+  - id: oas-10-5194-gmd-18-7129-2025-28c01fb6
+    title: 'MLUCM BEP + BEM: an offline one-dimensional multi-layer urban canopy model
+      based on the BEP + BEM scheme'
+    url: https://gmd.copernicus.org/articles/18/7129/2025/gmd-18-7129-2025.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-10-10'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/gmd-18-7129-2025
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://gmd.copernicus.org/articles/18/7129/2025/gmd-18-7129-2025.pdf; version
+      publishedVersion]
+    rights_verified_at: '2026-09-27'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/gmd-18-7129-2025 openalex:W4415115283
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-enbuild-2026-117139-3d83c585
+    title: 'Evaluating single-zone grey-box thermal models: Impact of model structure
+      on prediction accuracy and computational cost'
+    url: https://discovery.ucl.ac.uk/id/eprint/10221668/7/Chen_Evaluating%20Single-Zone%20Grey-Box%20Thermal%20Models-%20Impact%20of%20Model%20Structure%20on%20Prediction%20Accuracy%20and%20Computational%20Cost_VoR.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-02-11'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2026.117139
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/id/eprint/10221668/7/Chen_Evaluating%20Single-Zone%20Grey-Box%20Thermal%20Models-%20Impact%20of%20Model%20Structure%20on%20Prediction%20Accuracy%20and%20Computational%20Cost_VoR.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2026.117139 openalex:W7128541622
+    resolution: 'sim1: openalex location'
