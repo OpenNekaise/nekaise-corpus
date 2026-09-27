@@ -119579,3 +119579,21 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.jobe.2021.103286 openalex:W3200228168
     resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2408-07435-50bc9cac
+    title: Real-world validation of safe reinforcement learning, model predictive control
+      and decision tree-based home energy management systems
+    url: https://arxiv.org/pdf/2408.07435
+    source: openalex_sim
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-08-14'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2408.07435
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2408.07435; version submittedVersion]
+    rights_verified_at: '2026-09-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2408.07435 openalex:W4402560180
+    resolution: 'sim1: openalex location'
