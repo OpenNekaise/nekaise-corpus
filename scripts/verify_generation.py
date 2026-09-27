@@ -370,8 +370,9 @@ def run_checks(view, restrictions: dict, *, root: Path, full: bool = False,
                             # collect-all: every class keeps its cleaned copy, but only in its
                             # OWN view (a restricted-use or policy-held row never in corpus/)
                             claim = now[k].get("corpus_path")
-                            if claim and not claim.startswith(registry.view_root(
-                                    registry.view_of(now[k], restrictions)) + "/"):
+                            if "corpus_path" in now[k] and not (
+                                    isinstance(claim, str) and claim.startswith(registry.view_root(
+                                        registry.view_of(now[k], restrictions)) + "/")):
                                 rep.error(f"manifest {k}: corpus claim {claim!r} is outside its "
                                           "use view")
             elif tbl == "blocklist":

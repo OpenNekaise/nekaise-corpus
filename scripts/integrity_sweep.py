@@ -93,8 +93,10 @@ def _manifest_page(view, rows: list[dict], part: dict, policy, restrictions, acc
             _fail(part, e)
         # collect-all: every class keeps its cleaned copy, but only in its OWN use view
         claim = r.get("corpus_path")
-        if claim and not claim.startswith(
-                registry.view_root(registry.view_of(r, restrictions)) + "/"):
+        # the same predicate as corpus_stats.misplaced_view_claims: a PRESENT field (null and
+        # empty included) must name a path in the row's own view
+        if "corpus_path" in r and not (isinstance(claim, str) and claim.startswith(
+                registry.view_root(registry.view_of(r, restrictions)) + "/")):
             _fail(part, f"manifest {sid}: corpus claim {claim!r} is outside its use view")
         if r.get("status") != "ok" or host_policy.suspended(r.get("url"), policy):
             continue

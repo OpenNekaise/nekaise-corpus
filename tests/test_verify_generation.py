@@ -265,6 +265,10 @@ def test_a_restricted_row_that_claims_the_default_view_fails(pgw):
     _, rep = pgw.run([("fetch", add([mrow(81, source="soep",
                                           corpus_path="collection/policy-held/corpus/y.md")]))])
     assert not any("outside its use view" in e for e in rep.errors)
+    # a PRESENT but null claim is misplaced too, exactly as the full check counts it
+    _, rep = pgw.run([("fetch", add([mrow(82, source="soep", status="failed",
+                                          corpus_path=None)]))])
+    assert any("outside its use view" in e for e in rep.errors)
 
 
 @needs_pg

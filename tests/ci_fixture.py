@@ -59,7 +59,8 @@ def build(root: Path) -> Path:
     for n, rule in enumerate(eligibility.get("restrictions", {}).values()):
         match = rule["match"]
         sid = f"{match.get('id_prefix', 'ost-')}ci-restricted-{n}"
-        entries.append(_entry(sid, source=match.get("source", "osti")))
+        extra = {"license": match["license"]} if "license" in match else {}
+        entries.append(_entry(sid, source=match.get("source", "osti"), **extra))
     gone = "ost-ci-pruned"
     ledger = [{"id": gone, "url": f"https://fixture.example/{gone}.pdf", "reason": "thin",
                "pruned_at": "2026-09-25T00:00:00Z", "blocklisted": True}]
@@ -69,6 +70,7 @@ def build(root: Path) -> Path:
         src = REPO / "registry" / name
         if src.exists():
             shutil.copy2(src, root / "registry" / name)
+    shutil.copy2(REPO / ".gitignore", root / ".gitignore")   # payload dirs are git-ignored
     (root / "README.md").write_text("# CI fixture\n\n<!-- STATS:START -->\n<!-- STATS:END -->\n")
     saved = update_readme_stats.HERE, update_readme_stats.README
     update_readme_stats.HERE, update_readme_stats.README = root, root / "README.md"
