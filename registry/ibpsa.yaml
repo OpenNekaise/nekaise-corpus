@@ -58784,3 +58784,294 @@ sources:
     topic: building_energy
     format: pdf
     document_type: conference-paper
+  - id: ibp-simulating-the-impact-on-buildings-of-changing-clima
+    title: Simulating the Impact on Buildings of Changing Climate - Creation and Application
+      of Ersatz Future Weather Data Files
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_IS01-Lee.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-lessons-from-an-advanced-building-simulation-course
+    title: Lessons from an Advanced Building Simulation Course
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_IS06-Augenbroe.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-development-of-new-self-comparison-test-suites-for-e
+    title: Development of New Self-Comparison Test Suites for EnergyPlus
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS01-1-Witte.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-identification-of-building-model-parameters-and-load
+    title: Identification of Building Model Parameters and Loads Using On-Site Data
+      Logs
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS01-2-McKinley.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-energy-modeling-for-measurement-and-verification
+    title: Energy Modeling for Measurement and Verification
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS01-3-Morrison.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-the-energyplus-ufad-module
+    title: The EnergyPlus UFAD Module
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS02-1-Liu.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-system-level-simulation-model-of-sofc-systems-for-
+    title: A System Level Simulation Model of SOFC Systems for Building Applications
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS02-2-Lee.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-using-spark-as-a-solver-for-modelica
+    title: Using Spark as a Solver for Modelica
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS03-1-Wetter.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-testing-and-validating-an-equation-based-dynamic-bui
+    title: Testing and Validating an Equation-Based Dynamic Building Program with ASHRAE
+      Standard Method of Test
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS03-2-Yuan.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-building-and-hvac-system-simulation-with-the-help-of
+    title: Building and HVAC System Simulation with the Help of an Engineering Equation
+      Solver
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS03-3-Bertagnolio.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-specification-of-an-information-delivery-tool-to-sup
+    title: Specification of an Information Delivery Tool to Support Optimal Holistic
+      Environmental and Energy Management in Buildings
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS04-1-ODonnell.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-modular-building-controls-virtual-test-bed-for-the
+    title: A Modular Building Controls Virtual Test Bed for the Integration of Heterogeneous
+      Systems
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS04-2-Wetter.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-federation-tower-moscow-different-room-climates-unde
+    title: Federation Tower Moscow - Different Room Climates Under One Roof
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS05-1-Baumann.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-cfd-and-daylight-simulation-calibrated-with-site-mea
+    title: CFD and Daylight Simulation Calibrated with Site Measurement for Waiting
+      Hall of Shanghai South Railway Station
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS05-2-Pan.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-simulated-performance-of-solar-domestic-hot-water-te
+    title: Simulated Performance of Solar Domestic Hot Water Technologies in New York
+      State
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS05-3-McNamara.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-an-enhanced-sequential-search-methodology-for-identi
+    title: An Enhanced Sequential Search Methodology for Identifying Cost-Optimal Building
+      Pathways
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS06-1-Horowitz.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-comparative-simulation-of-a-high-performance-buildin
+    title: Comparative Simulation of a High Performance Building with EW4-DOE2.1E and
+      EnergyPlus
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS06-2-Tian.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-simulation-of-off-grid-off-pipe-single-family-detach
+    title: Simulation of Off-Grid, Off-Pipe, Single-Family Detached Residences in U.S.
+      Climates
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS06-3-Malhotra.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-validation-and-parametric-analysis-of-energyplus-air
+    title: 'Validation and Parametric Analysis of EnergyPlus: Air Flow Network Model
+      Using CONTAM'
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS07-1-Dutton.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-the-role-of-wind-in-natural-ventilation-simulations-
+    title: The Role of Wind in Natural Ventilation Simulations Using Airflow Network
+      Models
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS07-3-Good.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-potential-and-limitations-for-hydronic-radiant-slabs
+    title: Potential and Limitations for Hydronic Radiant Slabs Using Waterside Free
+      Cooling and Dedicated Outside Air Systems
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS08-1-Moore.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-bracketing-residential-net-zeroness-during-design-st
+    title: Bracketing Residential "Net-Zeroness" During Design Stage
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS08-2-Brahme.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-tqm-approaches-to-incorporating-simulation-into-resi
+    title: Tqm Approaches to Incorporating Simulation into Residential Energy Retrofit
+      Programs
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS08-3-Balbach.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-din-18599-accounting-for-primary-energy-new-code-req
+    title: DIN 18599 - Accounting for Primary Energy New Code Requires Dynamic Simulation
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS09-1-Reiser.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-simulation-and-model-calibration-of-a-large-scale-so
+    title: Simulation and Model Calibration of a Large-Scale Solar Seasonal Storage
+      System
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS09-2-McDowell.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-effective-early-collaboration-between-engineers-and-
+    title: Effective Early Collaboration Between Engineers and Architects for Successful
+      Energy-Efficient Design
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS09-3-White.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-development-of-a-simplified-simulation-tool-for-high
+    title: Development of a Simplified Simulation Tool for High Performance K-5 Schools
+      in Hot and Humid Climates
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS10-1-Im.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-visualizing-pedestrian-comfort-using-envi-met
+    title: Visualizing Pedestrian Comfort Using ENVI-met
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS10-2-Rosheidat.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-a-scalable-lighting-simulation-tool-for-integrated-b
+    title: A Scalable Lighting Simulation Tool for Integrated Building Design
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS10-3-Huang.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-modeling-of-underfloor-air-distribution-ufad-systems
+    title: Modeling of Underfloor Air Distribution (UFAD) Systems
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS11-1-Webster.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-development-of-a-simulation-toolkit-for-the-selectio
+    title: 'Development of a Simulation Toolkit for the Selection of High-Performance
+      Systems for Office Buildings in Hot and Humid Climates (Phase I: Calibrated '
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS11-2-Cho.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-demeter-a-green-building-plugin-for-sketchup
+    title: Demeter - A Green Building Plugin for SketchUp
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS12-1-Finlayson.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-energy-design-plugin-an-energyplus-plugin-for-sketch
+    title: 'Energy Design Plugin: An EnergyPlus Plugin for Sketchup'
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS12-2-Ellis.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
+  - id: ibp-comfen-a-commercial-fenestration-facade-design-tool
+    title: COMFEN a Commercial Fenestration/Facade Design Tool
+    url: https://publications.ibpsa.org/proceedings/simbuild/2008/papers/simbuild2008_TS12-3-Hitchcock.pdf
+    source: ibpsa
+    license: open
+    topic: building_energy
+    format: pdf
+    document_type: conference-paper
