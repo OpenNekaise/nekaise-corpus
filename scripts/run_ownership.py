@@ -265,7 +265,11 @@ def owner_processes(owner: Owner) -> set[int]:
 # --- stopping ---------------------------------------------------------------------------------------------
 
 def _exited(pidfd: int) -> bool:
-    return bool(select.select([pidfd], [], [], 0)[0])
+    """A pidfd is readable once its process exited. poll(), not select(): select() rejects
+    descriptors >= 1024 (Codex review 87)."""
+    poller = select.poll()
+    poller.register(pidfd, select.POLLIN)
+    return bool(poller.poll(0))
 
 
 def stop(pids: set[int], owner: Owner | None, grace: float = 2.0) -> list[int]:

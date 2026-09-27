@@ -254,29 +254,104 @@ def test_pinned_tree_rejects_a_child_whose_ancestry_does_not_hold(monkeypatch):
 
 
 def test_pinned_tree_drops_the_branch_of_an_exited_intermediate(monkeypatch):
-    """An intermediate that exited (pid reusable) cannot vouch for anything listed under it."""
-    parent, bystander = _sleeper(), _sleeper()
-    ghost = 2 ** 22 - 7                                  # a pid with no process
+    """Codex review 87: a REACHABLE intermediate, pinned and validated, that exits before its
+    child is validated cannot vouch for that child (its pid may be reused)."""
+    parent, inter, leaf = _sleeper(), _sleeper(), _sleeper()
     try:
         real = run_round._stat_fields
+        calls = {"exited": 0}
+        real_exited = run_round._exited
 
-        def scan(pid):
+        def spy(fd):
+            calls["exited"] += 1
+            return real_exited(fd)
+
+        def scan(pid):                  # parent -> inter -> leaf, as the scan and re-reads see it
             fields = real(pid)
-            if fields is not None and pid == bystander.pid:
-                fields = list(fields)
-                fields[1] = str(ghost)               # listed under the vanished intermediate
+            if fields is None:
+                return None
+            fields = list(fields)
+            if pid == inter.pid:
+                fields[1] = str(parent.pid)
+            elif pid == leaf.pid:
+                fields[1] = str(inter.pid)
+                if calls.get("scanned"):          # the leaf's validation: inter dies first
+                    inter.kill()
+                    inter.wait()
+                calls["scanned"] = calls.get("scanned", 0) + (pid == leaf.pid)
             return fields
         monkeypatch.setattr(run_round, "_stat_fields", scan)
-        real_scandir = run_round.os.scandir
-        monkeypatch.setattr(run_round.os, "scandir", lambda path: list(real_scandir(path)))
+        monkeypatch.setattr(run_round, "_exited", spy)
         root = run_round._pidfds({parent.pid: run_round._start_time(parent.pid)})
-        assert run_round._pinned_tree(root[0], parent.pid) == []
-        os.close(root[0])
-        assert bystander.poll() is None
+        tree = run_round._pinned_tree(root[0], parent.pid)
+        assert len(tree) == 1                     # inter was accepted (then exited) ...
+        assert calls["exited"] >= 2               # ... and the leaf was checked against it
+        for fd in tree + root:
+            os.close(fd)
+        assert leaf.poll() is None                # the leaf was never accepted or signalled
     finally:
-        for p in (parent, bystander):
+        for p in (parent, inter, leaf):
             p.kill()
             p.wait()
+
+
+def test_exited_handles_descriptors_above_1024():
+    """Codex review 87: select() rejects fds >= 1024; cancellation must not break there."""
+    import run_ownership
+    gate = _sleeper()
+    fd = os.pidfd_open(gate.pid)
+    high = fcntl_dup_high(fd)
+    try:
+        assert not run_round._exited(high) and not run_ownership._exited(high)
+        gate.kill()
+        gate.wait()
+        assert run_round._exited(high) and run_ownership._exited(high)
+    finally:
+        os.close(fd)
+        os.close(high)
+
+
+def fcntl_dup_high(fd):
+    import fcntl
+    import resource
+    soft, hard = resource.getrlimit(resource.RLIMIT_NOFILE)
+    if hard < 1100:
+        pytest.skip("RLIMIT_NOFILE too low for a descriptor above 1024")
+    if soft < 1100:
+        resource.setrlimit(resource.RLIMIT_NOFILE, (min(hard, 4096), hard))
+    return fcntl.fcntl(fd, fcntl.F_DUPFD, 1030)
+
+
+def test_cleanup_failure_is_bounded_and_still_stops_the_gate(monkeypatch):
+    """Codex review 87: EPERM (or EMFILE) during pinned cleanup must neither pass silently nor
+    leave cancellation waiting forever behind a running gate."""
+    import errno
+    import signal
+    import threading
+    import time as _time
+
+    class Cancelled(Exception):
+        pass
+
+    def handler(signum, frame):
+        raise Cancelled()
+
+    def eperm(fd, sig):
+        raise PermissionError(errno.EPERM, "Operation not permitted")
+    monkeypatch.setattr(run_round.signal, "pidfd_send_signal", eperm)
+    monkeypatch.setattr(run_round.ops, "run_event", lambda *a, **k: None)
+    monkeypatch.setattr(run_round, "GATE_STOP_GRACE_SECONDS", 1.0)
+    old = signal.signal(signal.SIGTERM, handler)
+    try:
+        timer = threading.Timer(1.0, os.kill, (os.getpid(), signal.SIGTERM))
+        timer.start()
+        began = _time.monotonic()
+        with pytest.raises(Cancelled):
+            run_round.run_verify_parallel([_gate("stuck", 0, 60)], {}, rid("run-eperm"))
+        assert _time.monotonic() - began < 15
+    finally:
+        timer.cancel()
+        signal.signal(signal.SIGTERM, old)
 
 
 def test_run_command_raises_on_nonzero(monkeypatch):
