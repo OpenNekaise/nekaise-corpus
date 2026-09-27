@@ -45,6 +45,7 @@ import re
 import sys
 import time
 from pathlib import Path
+from urllib.parse import urljoin
 
 import requests
 import yaml
@@ -59,6 +60,7 @@ BASE = "https://publications.ibpsa.org"
 UA = {"User-Agent": "nekaise-corpus/find_ibpsa"}
 CONTROLS_RE = re.compile(r"control|commissioning|automation|\bbas\b|fault detection|\bfdd\b", re.I)
 CHALLENGE_RE = re.compile(rb"sgcaptcha|captcha|challenge-platform", re.I)
+URL_PADDING = "".join(chr(i) for i in range(0x21))  # URL edge C0 controls and space
 
 # (conf, year) listings verified on the per-series proceedings index pages 2026-09-24, newest
 # editions first. APPEND-ONLY: the rotation pointer is an index into this tuple.
@@ -133,11 +135,20 @@ def fetch_papers(conf: str, year: int) -> list[dict]:
             title = a.get_text(strip=True)
             paper_url = a.get("href")
             tr = a.find_parent("tr")
-            pdf = tr.find("a", href=lambda h: h and h.lower().endswith(".pdf")) if tr else None
-            if not title or not pdf:
+            pdf_url = None
+            if tr:
+                for link in tr.find_all("a", href=True):
+                    # Some listings pad hrefs (bausim2006 even pads absolute URLs).
+                    # Normalize before suffix detection, resolution, dedup and emission;
+                    # preserve encoded spaces and other internal path characters.
+                    href = re.sub(r"[\t\r\n]", "", link["href"].strip(URL_PADDING))
+                    if href.lower().endswith(".pdf"):
+                        pdf_url = urljoin(url, href)
+                        break
+            if not title or not pdf_url:
                 continue  # no direct PDF sibling (rare) -> not fetchable, skip
             papers.append({"title": title, "paper_url": paper_url,
-                           "pdf_url": pdf.get("href"), "topic": topic})
+                           "pdf_url": pdf_url, "topic": topic})
     return papers
 
 
@@ -196,14 +207,11 @@ def main() -> None:
 
     keys = dedup.open_keys()
     urls, titles = keys.urls, keys.titles
-    keys.prefetch(urls=[(BASE + p["pdf_url"] if p["pdf_url"].startswith("/") else p["pdf_url"])
-                        .rstrip("/") for p in papers],
+    keys.prefetch(urls=[p["pdf_url"].rstrip("/") for p in papers],
                   titles=[registry.norm(p["title"]) for p in papers])
     candidates = []
     for p in papers:
         pdf_url = p["pdf_url"]
-        if pdf_url.startswith("/"):
-            pdf_url = BASE + pdf_url
         u, t = pdf_url.rstrip("/"), registry.norm(p["title"])
         if u in urls or t in titles:
             continue

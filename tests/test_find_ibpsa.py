@@ -4,6 +4,7 @@ from types import SimpleNamespace
 import pytest
 
 import find_ibpsa
+import lint_registry
 
 LISTING = b"""<html><body><div class="entry-content single-content">
 <h4>List of topics</h4><ul><li>x</li></ul>
@@ -88,6 +89,51 @@ def test_slot_run_proposes_deduped_entries_and_advances(monkeypatch, tmp_path, c
     ]
     assert all(e["id"].startswith("ibp-") and e["license"] == "open" for e in appended)
     assert not hold.exists()  # listing drained: rotation may advance
+    assert "2 NEW papers from bs2025" in capsys.readouterr().out
+
+
+@pytest.mark.parametrize(("href", "expected"), [
+    (" https://publications.ibpsa.org/paper.pdf", "https://publications.ibpsa.org/paper.pdf"),
+    ("https://publications.ibpsa.org/paper.pdf \r\n", "https://publications.ibpsa.org/paper.pdf"),
+    ("\x00\x1f https://publications.ibpsa.org/paper.pdf\x00", "https://publications.ibpsa.org/paper.pdf"),
+    ("https://publications.ibpsa.org/pa\nper.p\td\rf", "https://publications.ibpsa.org/paper.pdf"),
+    (" /proceedings/paper.pdf \t", "https://publications.ibpsa.org/proceedings/paper.pdf"),
+    (" papers/paper.pdf ", "https://publications.ibpsa.org/conference/papers/paper.pdf"),
+    (" //publications.ibpsa.org/paper.pdf ", "https://publications.ibpsa.org/paper.pdf"),
+    (" /papers/Heat%20pump+(\u00e4)_1.PDF ", "https://publications.ibpsa.org/papers/Heat%20pump+(\u00e4)_1.PDF"),
+    (" /papers/Heat pump.pdf ", "https://publications.ibpsa.org/papers/Heat pump.pdf"),
+    (" /papers/paper.html \n", None),
+    (" \t\n", None),
+])
+def test_href_normalized_before_pdf_detection_and_emission(monkeypatch, tmp_path, href, expected):
+    listing = ("<div class='entry-content'><table><tr>"
+               "<td><a class='paper_title' href='/landing'>Heat pump simulation</a></td>"
+               f"<td><a href='{href}'>download</a></td></tr></table></div>").encode()
+    _, appended, hold, _ = _setup(monkeypatch, tmp_path, _response(content=listing))
+    monkeypatch.setattr(sys, "argv", ["find_ibpsa.py", "--slot", "61", "--append"])
+
+    find_ibpsa.main()
+
+    assert [e["url"] for e in appended] == ([] if expected is None else [expected])
+    assert not hold.exists()
+    for entry in appended:
+        assert lint_registry.entry_errors(entry, "ibpsa.yaml") == []
+        # Finder sanitation must not weaken lint for malformed rows from other writers.
+        assert any("url is not http(s)" in e for e in lint_registry.entry_errors(
+            {**entry, "url": " " + entry["url"]}, "ibpsa.yaml"))
+
+
+def test_padded_urls_dedup_before_cap_and_hold(monkeypatch, tmp_path, capsys):
+    url = "https://publications.ibpsa.org/proceedings/bs/2025/papers/bs2025_3.pdf"
+    listing = LISTING.replace(url.encode(), f" \t{url}\n ".encode())
+    _, appended, hold, _ = _setup(
+        monkeypatch, tmp_path, _response(content=listing), ({url}, set(), set()))
+    monkeypatch.setattr(sys, "argv", ["find_ibpsa.py", "--slot", "2", "--max", "2", "--append"])
+
+    find_ibpsa.main()
+
+    assert len(appended) == 2 and all(e["url"] != url for e in appended)
+    assert not hold.exists()  # known padded URL must not inflate the remaining count
     assert "2 NEW papers from bs2025" in capsys.readouterr().out
 
 
