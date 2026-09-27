@@ -200,6 +200,44 @@ def test_cancellation_never_signals_a_reused_pid():
         bystander.wait()
 
 
+def test_cancellation_ignores_the_tree_of_a_reused_gate_pid(monkeypatch):
+    """Codex review 85: if the gate exits (is reaped, its pid reusable) while cancellation walks
+    its tree, the walked 'children' may belong to someone else: they must not be signalled."""
+    import signal
+    import subprocess as sp
+    import threading
+    import time as _time
+
+    class Cancelled(Exception):
+        pass
+
+    def handler(signum, frame):
+        raise Cancelled()
+
+    bystander = sp.Popen([sys.executable, "-c", "import time; time.sleep(60)"])
+    try:
+        def walk(pid):          # the gate dies mid-walk; the walk then "finds" the bystander
+            os.kill(pid, signal.SIGKILL)
+            _time.sleep(0.3)
+            return {bystander.pid: run_round._start_time(bystander.pid)}
+        monkeypatch.setattr(run_round, "_descendants", walk)
+        monkeypatch.setattr(run_round.ops, "run_event", lambda *a, **k: None)
+        monkeypatch.setattr(run_round, "GATE_STOP_GRACE_SECONDS", 1.0)
+        old = signal.signal(signal.SIGTERM, handler)
+        try:
+            timer = threading.Timer(1.0, os.kill, (os.getpid(), signal.SIGTERM))
+            timer.start()
+            with pytest.raises(Cancelled):
+                run_round.run_verify_parallel([_gate("stuck", 0, 60)], {}, rid("run-reuse"))
+        finally:
+            timer.cancel()
+            signal.signal(signal.SIGTERM, old)
+        assert bystander.poll() is None            # never signalled
+    finally:
+        bystander.kill()
+        bystander.wait()
+
+
 def test_run_command_raises_on_nonzero(monkeypatch):
     monkeypatch.setattr(
         run_round.subprocess, "run",

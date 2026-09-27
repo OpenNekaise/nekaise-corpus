@@ -306,13 +306,21 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
         with live_lock:
             cancelled.set()
             procs = list(live)
-        targets: dict[int, str] = {}
+        fds: list[int] = []
         for p in procs:
             started = gate_start.get(p.pid)
-            if p.returncode is None and started:
-                targets[p.pid] = started
-                targets.update(_descendants(p.pid))
-        fds = _pidfds(targets)          # identities pinned: no signal can hit a reused pid
+            if p.returncode is not None or not started:
+                continue
+            roots = _pidfds({p.pid: started})     # pin the gate itself first
+            if not roots:
+                continue                          # already gone (or its pid reused): skip
+            tree = _descendants(p.pid)
+            # the walk is the gate's own tree only if the gate was still running when it ended:
+            # a gate that exited (and could be reaped, its pid reused) meanwhile invalidates it
+            # (Codex review 85)
+            if not _exited(roots[0]):
+                fds += _pidfds(tree)
+            fds += roots
         try:
             _signal_fds(fds, signal.SIGTERM)
             deadline = time.monotonic() + GATE_STOP_GRACE_SECONDS
