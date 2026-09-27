@@ -2620,3 +2620,20 @@ regression test.
   PostgreSQL (the test cluster) 1771 passed / 3 skipped (the opt-in benchmarks); `py_compile`
   of scripts and tests clean. The 160M benchmark was rerun at schema v8 (above: p95 4.00 s per
   round, `known_pids()` of 400 identifiers p95 1.53 s) and its cluster removed afterwards.
+
+#### Step 5, Codex second review (2026-09-27)
+
+- **Cancelled rounds stop their gates first.** `run_verify_parallel` now starts gates with
+  `Popen` and, on any exception while awaiting them (a cron timeout or the recoverability
+  watcher's SIGTERM), terminates every running gate (SIGTERM, then SIGKILL after
+  `GATE_STOP_GRACE_SECONDS`) before the executor waits for its workers; no new gate starts once
+  cancelled. Regression: a 120 s gate is cut to seconds.
+- **Metadata health reads the authoritative server.** `ops_health.evaluate()` passes
+  `lifecycle_target()`'s DSN to `pg_backup.status(dsn=...)`, the same server the lifecycle checks
+  and the growth block judge.
+- **v7 -> v8 migration measured on a copy of the live shadow** (pg_dump of schema `nekaise` at
+  1,631,541 manifest / 1,631,566 entry rows, restored into the throwaway test cluster): 9.4 s
+  elapsed, 0.06 GB WAL, database 7.49 -> 7.55 GB, 93 MB client RSS. The test cluster runs with
+  `fsync=off`, `wal_level=minimal`, `full_page_writes=off`, so live elapsed time and WAL volume
+  will be higher (full-page images on the updated pages), but of the same order: seconds to a
+  minute, well under a shadow-sync interval.
