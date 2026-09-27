@@ -1,0 +1,96 @@
+{
+  "baseline": {
+    "at": "2026-09-27T18:02:24Z",
+    "documents": 1623769,
+    "tokens": 19098027021
+  },
+  "changesets": [
+    {
+      "at": "2026-09-27T18:02:24Z",
+      "entered_default_docs": 0,
+      "kind": "licence-reclassification",
+      "left_default_docs": 1467,
+      "left_default_tokens": 21241415,
+      "operator_decision": null,
+      "rows": 2000,
+      "session": "reclassify-20260927T175629Z-8b114eec.rights-0001",
+      "transitions": {
+        "open -> arxiv-nonexclusive": 1237,
+        "open -> nc": 80,
+        "open -> nc-nd": 140,
+        "open -> open": 533,
+        "open -> unverified": 10
+      }
+    },
+    {
+      "at": "2026-09-27T18:07:59Z",
+      "entered_default_docs": 0,
+      "kind": "licence-reclassification",
+      "left_default_docs": 1511,
+      "left_default_tokens": 20728457,
+      "operator_decision": null,
+      "rows": 2000,
+      "session": "reclassify-20260927T175629Z-8b114eec.rights-0002",
+      "transitions": {
+        "open -> arxiv-nonexclusive": 1306,
+        "open -> nc": 64,
+        "open -> nc-nd": 127,
+        "open -> open": 489,
+        "open -> unverified": 14
+      }
+    },
+    {
+      "at": "2026-09-27T18:13:30Z",
+      "entered_default_docs": 0,
+      "kind": "licence-reclassification",
+      "left_default_docs": 1503,
+      "left_default_tokens": 20257555,
+      "operator_decision": null,
+      "rows": 2000,
+      "session": "reclassify-20260927T175629Z-8b114eec.rights-0003",
+      "transitions": {
+        "open -> arxiv-nonexclusive": 1253,
+        "open -> nc": 74,
+        "open -> nc-nd": 166,
+        "open -> open": 497,
+        "open -> unverified": 10
+      }
+    },
+    {
+      "at": "2026-09-27T18:19:01Z",
+      "entered_default_docs": 0,
+      "kind": "licence-reclassification",
+      "left_default_docs": 1503,
+      "left_default_tokens": 20549804,
+      "operator_decision": null,
+      "rows": 2000,
+      "session": "reclassify-20260927T175629Z-8b114eec.rights-0004",
+      "transitions": {
+        "open -> arxiv-nonexclusive": 1295,
+        "open -> nc": 64,
+        "open -> nc-nd": 125,
+        "open -> open": 497,
+        "open -> unverified": 19
+      }
+    },
+    {
+      "at": "2026-09-27T18:24:36Z",
+      "entered_default_docs": 0,
+      "kind": "licence-reclassification",
+      "left_default_docs": 728,
+      "left_default_tokens": 13587154,
+      "operator_decision": null,
+      "rows": 836,
+      "session": "reclassify-20260927T175629Z-8b114eec.rights-0005",
+      "transitions": {
+        "open -> arxiv-nonexclusive": 286,
+        "open -> nc": 23,
+        "open -> nc-nd": 38,
+        "open -> open": 108,
+        "open -> publisher-oa": 7,
+        "open -> unverified": 374
+      }
+    }
+  ],
+  "format": 1
+}

@@ -12,17 +12,17 @@ locally and retain their original licenses.
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **1,623,769** |
-| **Outside the default view** | **8,059** rows (collected and kept): policy-held 8,059 · restricted licence classes 0 |
-| **Collection (all use classes)** | **1,631,828** held originals · by class: open 1,623,769 · policy-held 8,059 |
+| **Documents** | **1,617,057** |
+| **Outside the default view** | **14,771** rows (collected and kept): policy-held 8,059 · restricted licence classes 6,712 |
+| **Collection (all use classes)** | **1,631,828** held originals · by class: open 1,617,057 · policy-held 8,059 · arxiv-nonexclusive 5,377 · nc-nd 596 · unverified 427 · nc 305 · publisher-oa 7 |
 | **Raw originals** | **~758G** on disk, every class (PDF / HTML / source code) |
-| **Extracted text** | **~82G** on disk, every class (default view: ~80.346B chars, **≈20.087B tokens**) |
-| **Cleaned corpus** | **~78G** (~76.392B chars, **≈19.098B tokens**, ruleset-cleaned) |
+| **Extracted text** | **~82G** on disk, every class (default view: ~79.960B chars, **≈19.990B tokens**) |
+| **Cleaned corpus** | **~78G** (~76.007B chars, **≈19.002B tokens**, ruleset-cleaned) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): equipment_systems 535,887 · construction 431,474 · building_energy 220,380 · structures_civil 172,591 · materials 111,778 · infrastructure 75,654 · architecture 45,314 · standards_protocols 12,413 · controls_bas 11,323 · urban 6,114 · commissioning_fdd 841.
+**By topic** (a source gets one at registration): equipment_systems 534,388 · construction 431,061 · building_energy 219,339 · structures_civil 171,708 · materials 111,360 · infrastructure 75,367 · architecture 45,068 · standards_protocols 11,858 · controls_bas 10,481 · urban 6,022 · commissioning_fdd 405.
 
-**By license:** open 1,337,397 · public-domain 263,808 · cc-by-sa 1,742 · cc-by 20,822.
+**By license:** open 1,328,561 · public-domain 263,817 · cc-by-sa 1,851 · cc-by 22,771 · cc0 57.
 <!-- STATS:END -->
 
 ## Quick start
