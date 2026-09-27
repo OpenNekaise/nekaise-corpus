@@ -394,7 +394,10 @@ def evaluate(*, now: float | None = None, lifecycle_conn=None) -> list[dict]:
     now = time.time() if now is None else now
     checks: list[dict] = []
     try:
-        facts = pg_backup.status(retain_days=RETAIN_DAYS)
+        # the SAME server the lifecycle checks and the growth block judge: the one the host
+        # authority record makes authoritative, else this host's shadow (Codex review 82)
+        dsn, _schema = lifecycle_target()
+        facts = pg_backup.status(retain_days=RETAIN_DAYS, dsn=dsn)
         checks += metadata_checks(facts, now)
     except Exception as exc:
         checks.append(_error("metadata_recoverability", exc))

@@ -282,3 +282,18 @@ def test_review_evidence_survives_a_malformed_payload_status(tmp_path, monkeypat
     out = generation_review._backup_health(Conn(), tmp_path / "no-bases")
     assert out["payload_backup"]["severity"] == "critical"
     assert "recoverability unknown" in out["recoverability"]["problems"][0]
+
+
+def test_metadata_health_watches_the_authoritative_server(monkeypatch):
+    """Codex review 82: after a DSN change or recovery cutover, metadata health must read the
+    SAME server the lifecycle checks and the growth block judge — never the default socket."""
+    seen = {}
+    monkeypatch.setattr(ops_health, "lifecycle_target",
+                        lambda root=None: ("host=/scratch/restored-pg dbname=nekaise", "nekaise"))
+
+    def status(**kw):
+        seen.update(kw)
+        return {"archiver": {}, "recoverability": []}
+    monkeypatch.setattr(pg_backup, "status", status)
+    ops_health.evaluate(now=0.0, lifecycle_conn=object())
+    assert seen["dsn"] == "host=/scratch/restored-pg dbname=nekaise"

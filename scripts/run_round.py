@@ -157,6 +157,10 @@ def run_command(step: str, cmd: list[str], env: dict, run_id: str) -> None:
     ops.run_event(run_id, "step_completed", step=step, elapsed_seconds=elapsed)
 
 
+# a cancelled round gives its running gates this long to exit after SIGTERM, then SIGKILLs them
+GATE_STOP_GRACE_SECONDS = 10.0
+
+
 def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: str,
                         envs: dict[str, dict] | None = None, record=None,
                         report_expect: dict | None = None) -> None:
@@ -192,7 +196,14 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
             gate_env = {k: v for k, v in gate_env.items() if k != verify_generation.REPORT_ENV}
             if step in reports:
                 gate_env[verify_generation.REPORT_ENV] = str(reports[step])
-        result = subprocess.run(cmd, cwd=ROOT, env=gate_env, capture_output=True, text=True)
+        with live_lock:
+            if cancelled.is_set():      # the round is unwinding: never start another gate
+                raise RuntimeError(f"{step} not started: the round was cancelled")
+            proc = subprocess.Popen(cmd, cwd=ROOT, env=gate_env, stdout=subprocess.PIPE,
+                                    stderr=subprocess.PIPE, text=True)
+            live.append(proc)
+        out, err = proc.communicate()
+        result = subprocess.CompletedProcess(cmd, proc.returncode, out, err)
         elapsed = round(time.monotonic() - started, 3)
         if result.returncode:
             ops.run_event(
@@ -203,11 +214,39 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
             ops.run_event(run_id, "step_completed", step=step, elapsed_seconds=elapsed)
         return step, result, elapsed
 
+    import threading
+    live: list[subprocess.Popen] = []
+    live_lock = threading.Lock()
+    cancelled = threading.Event()
+
+    def stop_gates() -> None:
+        """Terminate every running gate BEFORE the executor waits for its workers: a cancelled
+        round (SIGTERM from a timeout or the recoverability watcher) must not stall behind a
+        blocked gate while it holds the writer (Codex review 82)."""
+        with live_lock:
+            cancelled.set()
+            procs = [p for p in live if p.poll() is None]
+        for p in procs:
+            p.terminate()
+        deadline = time.monotonic() + GATE_STOP_GRACE_SECONDS
+        for p in procs:
+            try:
+                p.wait(timeout=max(0.0, deadline - time.monotonic()))
+            except subprocess.TimeoutExpired:
+                p.kill()
+                p.wait()
+
     failed = []
     try:
-        with ThreadPoolExecutor(max_workers=len(gates)) as pool:
+        pool = ThreadPoolExecutor(max_workers=len(gates))
+        try:
             futures = [pool.submit(execute, step, cmd) for step, cmd in gates]
             results = [future.result() for future in futures]  # declared order; awaits every gate
+        except BaseException:
+            stop_gates()
+            raise
+        finally:
+            pool.shutdown(wait=True)
         for step, result, elapsed in results:
             passed = result.returncode == 0
             if record is not None:

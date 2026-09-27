@@ -920,12 +920,15 @@ def wal_rate(wal: Path | None = None, *, hours: float = 24.0,
 
 
 def status(*, retain_days: float = 35, socket: str | None = None,
-           db: str | None = None) -> dict:
+           db: str | None = None, dsn: str | None = None) -> dict:
     """Recoverability facts as one JSON-able dict (ops_health reads them; `status` prints them).
-    Every part that cannot be read is reported as an error, never as healthy."""
+    Every part that cannot be read is reported as an error, never as healthy. `dsn` (the
+    authoritative server, as ops_health resolves it) wins over `socket`/`db`."""
     out: dict = {"at": _utc(), "rpo_s": RPO_SECONDS, "rto_s": RTO_SECONDS}
     try:
-        with connect(socket, db, autocommit=True) as conn:
+        import psycopg
+        with (psycopg.connect(dsn, autocommit=True) if dsn is not None
+              else connect(socket, db, autocommit=True)) as conn:
             out["archiver"] = archiver_state(conn)
         out["exposure_s"], why = exposure(out["archiver"])
         if why:

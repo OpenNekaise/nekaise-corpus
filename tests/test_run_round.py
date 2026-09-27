@@ -84,36 +84,56 @@ def test_required_pipeline_is_fail_closed_and_complete():
     assert "stats" in serial and "contracts" in gates
 
 
+def _gate(step, rc=0, sleep=0.0):
+    code = (f"import sys, time; time.sleep({sleep}); print('out {step}'); sys.exit({rc})")
+    return (step, [sys.executable, "-c", code])
+
+
 def test_run_verify_parallel_awaits_every_gate_and_aggregates_failures(monkeypatch, capsys):
-    import time as _time
-
-    seen = []
-
-    def fake_run(cmd, **kwargs):
-        step = cmd[-1]
-        seen.append(step)
-        _time.sleep(0.05 if step == "slow-ok" else 0)
-        rc = {"fail-a": 2, "fail-b": 3}.get(step, 0)
-        return SimpleNamespace(returncode=rc, stdout=f"out {step}\n", stderr="")
-
     events = []
-    monkeypatch.setattr(run_round.subprocess, "run", fake_run)
     monkeypatch.setattr(
         run_round.ops, "run_event",
         lambda run_id, event, **kw: events.append((event, kw.get("step"))),
     )
-    gates = [
-        ("fail-a", ["x", "fail-a"]), ("slow-ok", ["x", "slow-ok"]),
-        ("fail-b", ["x", "fail-b"]), ("ok", ["x", "ok"]),
-    ]
+    gates = [_gate("fail-a", 2), _gate("slow-ok", 0, 0.3), _gate("fail-b", 3), _gate("ok")]
 
     with pytest.raises(RuntimeError, match=r"fail-a \(exit 2\), fail-b \(exit 3\)"):
         run_round.run_verify_parallel(gates, {}, rid("run-1"))
 
-    assert sorted(seen) == sorted(step for step, _ in gates)  # nothing skipped after a failure
+    started = sorted(step for event, step in events if event == "step_started")
+    assert started == sorted(step for step, _ in gates)  # nothing skipped after a failure
     assert ("step_failed", "fail-a") in events and ("step_completed", "slow-ok") in events
     out = capsys.readouterr().out  # replayed in declared order, not completion order
     assert out.index("out fail-a") < out.index("out slow-ok") < out.index("out fail-b") < out.index("out ok")
+
+
+def test_cancelled_round_does_not_wait_for_a_blocked_gate(monkeypatch):
+    """Codex review 82: SIGTERM (a timeout, or the recoverability watcher) while a gate blocks
+    must terminate the gates BEFORE the executor waits for them."""
+    import signal
+    import threading
+    import time as _time
+
+    class Cancelled(Exception):
+        pass
+
+    def handler(signum, frame):
+        raise Cancelled()
+
+    monkeypatch.setattr(run_round.ops, "run_event", lambda *a, **k: None)
+    monkeypatch.setattr(run_round, "GATE_STOP_GRACE_SECONDS", 2.0)
+    old = signal.signal(signal.SIGTERM, handler)
+    try:
+        timer = threading.Timer(1.0, os.kill, (os.getpid(), signal.SIGTERM))
+        timer.start()
+        began = _time.monotonic()
+        with pytest.raises(Cancelled):
+            run_round.run_verify_parallel([_gate("stuck", 0, 120), _gate("ok")], {},
+                                          rid("run-cancel"))
+        assert _time.monotonic() - began < 10          # never the gate's 120 s
+    finally:
+        timer.cancel()
+        signal.signal(signal.SIGTERM, old)
 
 
 def test_run_command_raises_on_nonzero(monkeypatch):
