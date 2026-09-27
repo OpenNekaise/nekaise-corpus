@@ -273,6 +273,32 @@ def classify_openalex(raw: str | None) -> tuple[str, str, str]:
             f"OpenAlex licence {value}: open access without an open reuse licence")
 
 
+def _openalex_license_id_tag(license_id: str | None) -> str | None:
+    """OpenAlex's license_id is a URL such as https://openalex.org/licenses/cc-by-nc; its last
+    path segment is the same short tag vocabulary as `license`."""
+    value = (license_id or "").strip()
+    if not value:
+        return None
+    if re.match(r"^https?://(?:www\.)?openalex\.org/licenses/", value, re.I):
+        return value.rstrip("/").rsplit("/", 1)[-1]
+    return value
+
+
+def classify_location(loc: dict) -> tuple[str, str, str]:
+    """Classify EVERY rights statement a location makes (`license` and `license_id`). They must
+    agree: contradictory statements about one copy are unverified, never the most permissive
+    reading (Codex review ca1, P1-3)."""
+    statements = [v for v in (loc.get("license"), _openalex_license_id_tag(loc.get("license_id")))
+                  if (v or "").strip()]
+    if not statements:
+        return classify_openalex(None)
+    decisions = {classify_openalex(v) for v in statements}
+    if len({(d[0], d[1]) for d in decisions}) > 1:
+        return ("unresolved", UNRESOLVED_LICENSE,
+                f"location rights statements disagree: {sorted(set(statements))}")
+    return next(iter(decisions))
+
+
 # --- arXiv ---------------------------------------------------------------------------------------
 
 _ARXIV_URL = re.compile(
@@ -600,7 +626,8 @@ def openalex_verdict(target: dict, work: dict | None, checked_at: str, evidence_
                             *(work.get("locations") or [])] if loc]
     matched, seen = [], set()
     for loc in locs:
-        key = (loc.get("pdf_url"), loc.get("landing_page_url"), loc.get("license"))
+        key = (loc.get("pdf_url"), loc.get("landing_page_url"), loc.get("license"),
+               loc.get("license_id"))
         if key not in seen and _loc_matches(target["url"], loc):
             seen.add(key)
             matched.append(loc)
@@ -610,7 +637,7 @@ def openalex_verdict(target: dict, work: dict | None, checked_at: str, evidence_
                    license_url=evidence_url,
                    reason=f"no OpenAlex location matches the fetched URL (work licences {lics})")
         return _with_evidence(out)
-    decided = [(classify_openalex(loc.get("license")), loc) for loc in matched]
+    decided = [(classify_location(loc), loc) for loc in matched]
     decisions = {d for d, _ in decided}
     if any(d[0] == "excluded-nc-nd" for d in decisions):
         (verdict, tag, reason), loc = next(x for x in sorted(decided, key=lambda x: x[0])
@@ -1027,6 +1054,26 @@ def load_changes(view) -> dict:
     return {"format": 1, "baseline": doc.get("baseline"), "changesets": doc.get("changesets", [])}
 
 
+def stale_default_copies(root: Path, rows: dict[str, dict]) -> list[tuple[Path, Path]]:
+    """(default copy, classified copy) pairs left by an interrupted apply: the committed claim
+    already points into a classified view, yet the SAME file (one inode) is still linked at the
+    default corpus/ path. Only identical links are returned — a differing default file is left for
+    `clean --check` to report, never deleted here (Codex review ca1, P1-1)."""
+    out = []
+    for row in rows.values():
+        rel = row.get("corpus_path") or ""
+        if not rel.startswith("collection/"):
+            continue
+        new = Path(root) / rel
+        old = Path(root) / "corpus" / Path(rel).name
+        try:
+            if old.is_file() and new.is_file() and os.path.samefile(old, new):
+                out.append((old, new))
+        except FileNotFoundError:
+            continue
+    return out
+
+
 def run_apply(root: Path, out_dir: Path, *, apply: bool, operator_decision: str | None = None,
               allow_partial: bool = False, batch_size: int = APPLY_BATCH, timeout: float = 60,
               log=print, st=None) -> int:
@@ -1063,6 +1110,7 @@ def run_apply(root: Path, out_dir: Path, *, apply: bool, operator_decision: str 
         plan: Counter = Counter()
         transitions: Counter = Counter()
         todo: dict[str, dict] = {}
+        impact: dict[str, tuple[int, int, int]] = {}    # sid -> (left docs, left tokens, entered)
         out_docs = out_tokens = in_docs = 0
         for sid, res in sorted(results.items()):
             action, patch = plan_row(res, entries.get(sid), rows.get(sid))
@@ -1074,11 +1122,12 @@ def run_apply(root: Path, out_dir: Path, *, apply: bool, operator_decision: str 
                 {**row, **patch}, restrictions)
             transitions[f"{registry.use_class(row, restrictions)} -> "
                         f"{registry.use_class({**row, **patch}, restrictions)}"] += 1
-            if before == registry.DEFAULT_VIEW and after != registry.DEFAULT_VIEW:
-                out_docs += 1
-                out_tokens += tokens(row)
-            elif after == registry.DEFAULT_VIEW and before != registry.DEFAULT_VIEW:
-                in_docs += 1
+            left = before == registry.DEFAULT_VIEW and after != registry.DEFAULT_VIEW
+            entered = after == registry.DEFAULT_VIEW and before != registry.DEFAULT_VIEW
+            impact[sid] = (int(left), tokens(row) if left else 0, int(entered))
+            out_docs += impact[sid][0]
+            out_tokens += impact[sid][1]
+            in_docs += impact[sid][2]
             todo[sid] = patch
         baseline = changes["baseline"] or {"documents": stats.documents,
                                            "tokens": stats.corpus_tokens, "at": now_iso()}
@@ -1102,11 +1151,25 @@ def run_apply(root: Path, out_dir: Path, *, apply: bool, operator_decision: str 
                 "measured proposal for the operator, who may name a decision with "
                 "--operator-decision")
             return 1
-        if not apply or not todo:
-            log("dry run -- pass --apply to write" if not apply else "nothing to apply")
+        marker = Path(root) / "corpus" / clean_corpus.RECLASSIFYING
+        stale = [] if versioned else stale_default_copies(root, rows)
+        if not apply:
+            log(f"dry run -- pass --apply to write"
+                + (f"; {len(stale)} default copies of an interrupted apply await removal"
+                   if stale else "")
+                + ("; an interrupted apply left the reclassifying marker" if marker.exists()
+                   else ""))
+            return 0
+        if not todo:
+            for old, new in stale:      # finish an interrupted apply: claims are committed
+                if os.path.samefile(old, new):
+                    old.unlink()
+            if not versioned:
+                marker.unlink(missing_ok=True)
+            log("nothing to apply" + (f"; removed {len(stale)} default copies left by an "
+                                      "interrupted apply" if stale else ""))
             return 0
 
-        marker = Path(root) / "corpus" / clean_corpus.RECLASSIFYING
         if not versioned:
             marker.parent.mkdir(parents=True, exist_ok=True)
             ops.atomic_write_text(marker, f"{session.identity('start')}\n")
@@ -1131,21 +1194,29 @@ def run_apply(root: Path, out_dir: Path, *, apply: bool, operator_decision: str 
                         patch["corpus_path"] = new_rel
                 patches[sid] = patch
                 new_entries.append({**entries[sid], **todo[sid]})
-            with session.batch(f"rights-{n:04d}") as b:
-                b.update_manifest_fields(patches)
-                b.upsert_entries(new_entries)
-            written += len(patches)
-            log(f"batch {n}: {len(patches)} rows")
-        with session.batch("ledger") as b:
+            # the impact ledger commits WITH the rows it accounts for: an interruption can never
+            # leave committed departures unrecorded (Codex review ca1, P1-2)
             changes["baseline"] = baseline
             changes["changesets"].append({
                 "kind": "licence-reclassification", "at": now_iso(),
-                "session": session.identity("ledger"), "rows": written,
-                "left_default_docs": out_docs, "left_default_tokens": out_tokens,
-                "entered_default_docs": in_docs, "transitions": dict(transitions),
+                "session": session.identity(f"rights-{n:04d}"), "rows": len(patches),
+                "left_default_docs": sum(impact[sid][0] for sid in patches),
+                "left_default_tokens": sum(impact[sid][1] for sid in patches),
+                "entered_default_docs": sum(impact[sid][2] for sid in patches),
+                "transitions": dict(Counter(
+                    f"{registry.use_class(rows[sid], restrictions)} -> "
+                    f"{registry.use_class({**rows[sid], **todo[sid]}, restrictions)}"
+                    for sid in patches)),
                 "operator_decision": operator_decision})
-            b.control_set(CONTROL_DOC, changes)
-        for old, new in moved:          # every claim is committed: drop the default copies
+            with session.batch(f"rights-{n:04d}") as b:
+                b.update_manifest_fields(patches)
+                b.upsert_entries(new_entries)
+                b.control_set(CONTROL_DOC, changes)
+            written += len(patches)
+            log(f"batch {n}: {len(patches)} rows")
+        # every claim is committed: drop the default copies, including any an earlier,
+        # interrupted apply left behind; the marker goes only once all of them are gone
+        for old, new in [*stale, *moved]:
             if old.exists() and new.exists() and os.path.samefile(old, new):
                 old.unlink()
         if not versioned:

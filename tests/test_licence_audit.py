@@ -453,6 +453,61 @@ def test_apply_reclassifies_moves_views_and_never_erases(factory, tmp_path):
     assert any("final': 0" in line or "stale" in line for line in logs)
 
 
+class _Interrupted(Exception):
+    pass
+
+
+def _interrupt_after(n_chunks):
+    """shard_batches that is interrupted once `n_chunks` batches have committed."""
+    real = audit.store_broker.shard_batches
+
+    def gen(todo, size):
+        for i, chunk in enumerate(real(todo, 1), 1):
+            yield chunk
+            if i >= n_chunks:
+                raise _Interrupted("killed between batches")
+        raise _Interrupted("killed after every batch, before the default copies were dropped")
+    return gen
+
+
+@pytest.mark.parametrize("factory", STORES, ids=lambda f: f.__name__)
+@pytest.mark.parametrize("cut", [1, 99])        # after the first batch / after every batch
+def test_interrupted_apply_is_finished_by_a_retry(factory, tmp_path, monkeypatch, cut):
+    """Codex review ca1 P1-1 + P1-2: a retry removes the default copies an interrupted apply
+    left behind, clears the marker only then, and the ledger counts every committed departure
+    exactly once."""
+    root = tmp_path / "repo"
+    st = audit_store(factory, root)
+    rows = rows_fixture()
+    seed_rows(st, rows, root)
+    out = tmp_path / "audit"
+    write_audit(out, rows, AUDITED)
+    monkeypatch.setattr(audit.store_broker, "shard_batches", _interrupt_after(cut))
+    with pytest.raises(_Interrupted):
+        audit.run_apply(root, out, apply=True, st=st, log=lambda *a: None,
+                        operator_decision="test: toy corpus")
+    assert (root / "corpus" / clean_corpus.RECLASSIFYING).exists()
+    with st.read() as v:
+        committed = v.control_get(audit.CONTROL_DOC)
+        after = {r["id"]: r for r in v.scan(store.Table.MANIFEST, limit=100).rows}
+    moved_so_far = [sid for sid, r in after.items()
+                    if (r.get("corpus_path") or "").startswith("collection/")]
+    assert sum(c["left_default_docs"] for c in committed["changesets"]) == len(moved_so_far)
+    monkeypatch.undo()
+    logs: list[str] = []
+    assert audit.run_apply(root, out, apply=True, st=st, log=logs.append,
+                           operator_decision="test: toy corpus") == 0
+    with st.read() as v:
+        ledger = v.control_get(audit.CONTROL_DOC)
+        after = {r["id"]: r for r in v.scan(store.Table.MANIFEST, limit=100).rows}
+    for sid in ("arx-pointer", "arx-nc", "ope-open", "ope-evid"):
+        assert after[sid]["corpus_path"].startswith("collection/")
+        assert not (root / "corpus" / f"{sid}.md").exists()          # no stranded default copy
+        assert (root / after[sid]["corpus_path"]).read_text() == f"cleaned {sid}\n"
+    assert not (root / "corpus" / clean_corpus.RECLASSIFYING).exists()
+    assert sum(c["left_default_docs"] for c in ledger["changesets"]) == 4    # exactly once
+
+
 @pytest.mark.parametrize("factory", STORES, ids=lambda f: f.__name__)
 def test_apply_refuses_cumulative_default_view_loss_above_one_percent(factory, tmp_path):
     root = tmp_path / "repo"
@@ -580,6 +635,28 @@ def test_openalex_matching_keeps_identity_parameters():
          "version": "publishedVersion"}]}
     res = audit.openalex_verdict(t, work2, "2026-09-25T00:00:00Z", "E")
     assert res["verdict"] == "unresolved" and res["publisher_candidate"]["license"] == "cc-by"
+
+
+def test_openalex_conflicting_license_and_license_id_is_unverified():
+    """Codex review ca1 P1-3: one location saying cc-by in `license` but cc-by-nc in
+    `license_id` must never be certified open."""
+    url = "https://repo.example/paper.pdf"
+    t = {**target("ope-c", url=url), "cohort": "openalex"}
+    work = {"id": "W7", "locations": [
+        {"pdf_url": url, "license": "cc-by",
+         "license_id": "https://openalex.org/licenses/cc-by-nc"}]}
+    res = audit.openalex_verdict(t, work, "2026-09-25T00:00:00Z", "E")
+    assert (res["verdict"], res["licence"]) == ("unresolved", "unverified")
+    assert "disagree" in res["reason"]
+    # agreeing statements still decide normally
+    work["locations"][0]["license_id"] = "https://openalex.org/licenses/cc-by"
+    res = audit.openalex_verdict(t, work, "2026-09-25T00:00:00Z", "E")
+    assert (res["verdict"], res["licence"]) == ("eligible", "cc-by")
+    # license_id alone is a statement too
+    work["locations"][0].update(license=None,
+                                license_id="https://openalex.org/licenses/cc-by-nd")
+    res = audit.openalex_verdict(t, work, "2026-09-25T00:00:00Z", "E")
+    assert res["verdict"] == "excluded-nc-nd"
 
 
 @pytest.mark.parametrize("factory", STORES, ids=lambda f: f.__name__)

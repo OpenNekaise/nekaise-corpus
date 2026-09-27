@@ -447,8 +447,10 @@ def is_collection_eligible(entry: dict, restrictions: dict[str, dict]) -> bool:
 
 
 def is_policy_held(entry: dict, restrictions: dict[str, dict]) -> bool:
-    """A matching rule denies the record the default view (or collection)."""
-    return any("deny" in rule_effects(rule).values()
+    """A matching rule denies the record the default view. Collection denial alone only stops
+    further downloads: it never revokes default use of what is already held (the two effects are
+    independent; Codex review ca1, P2-4)."""
+    return any(rule_effects(rule)["default_corpus"] == "deny"
                for _, rule in matching_rules(entry, restrictions))
 
 

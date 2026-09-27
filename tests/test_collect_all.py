@@ -76,6 +76,36 @@ def test_store_predicates_agree_with_the_python_policy(factory, tmp_path):
                for c in registry.USE_CLASSES) == len(every)
 
 
+@pytest.mark.parametrize("factory", STORES, ids=lambda f: f.__name__)
+def test_collection_deny_alone_never_revokes_default_use(factory, tmp_path):
+    """Codex review ca1 P2-4: {collection: deny, default_corpus: allow} stops new downloads
+    only; an already-held CC-BY row stays in the default view on both backends."""
+    import pipeline_repo as pr
+    policy = {"stop": pr.restriction({"source": "stopsrc"}, collection="deny",
+                                     default_corpus="allow"),
+              "hold": pr.restriction({"source": "holdsrc"}, collection="allow",
+                                     default_corpus="deny")}
+    st = factory(tmp_path / "repo")
+    if hasattr(st, "drop"):
+        import atexit
+        atexit.register(st.drop)
+    rows = [mrow("x-stop", source="stopsrc", license="cc-by", corpus_path="corpus/x-stop.md"),
+            mrow("x-hold", source="holdsrc", license="cc-by", corpus_path="corpus/x-hold.md")]
+    write(st, rid("seed-effects"), lambda tx: tx.upsert_manifest(rows))
+    assert registry.use_class(rows[0], policy) == "open"
+    assert registry.is_default_corpus_eligible(rows[0], policy)
+    assert not registry.is_collection_eligible(rows[0], policy)
+    assert registry.use_class(rows[1], policy) == "policy-held"
+    with st.read() as v:
+        got = {r["id"] for r in v.scan(store.Table.MANIFEST,
+                                       where=store.default_corpus_where(policy),
+                                       fields=("id",), limit=store.MAX_PAGE).rows}
+        held = {r["id"] for r in v.scan(store.Table.MANIFEST,
+                                        where=store.class_where("policy-held", policy),
+                                        fields=("id",), limit=store.MAX_PAGE).rows}
+    assert got == {"x-stop"} and held == {"x-hold"}
+
+
 # --- the loader collects every licence class ------------------------------------------------------
 
 RESTRICTED = ("cc-by-nc-nd", "cc-by-nc-sa", "cc-by-nd", "arxiv-nonexclusive", "publisher-oa",

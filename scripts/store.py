@@ -395,9 +395,9 @@ def restriction_where(restrictions: Mapping[str, Mapping]) -> Predicate:
 
 
 def _held_where(restrictions: Mapping[str, Mapping]) -> Predicate:
-    """codec.is_policy_held: a matching rule denies something."""
+    """codec.is_policy_held: a matching rule denies the default view."""
     return Or(*(rule_where(rule) for rule in restrictions.values()
-                if "deny" in codec.rule_effects(rule).values()))
+                if codec.rule_effects(rule)["default_corpus"] == "deny"))
 
 
 def collection_where(restrictions: Mapping[str, Mapping]) -> Predicate:

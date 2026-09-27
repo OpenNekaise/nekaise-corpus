@@ -79,6 +79,9 @@ def main(argv: list[str] | None = None) -> None:
     by_lic = " · ".join(f"{k} {lic[k]:,}" for k in lic_order if lic.get(k)) or \
         " · ".join(f"{k} {n:,}" for k, n in lic.most_common())
 
+    held_policy = collection.held.get("policy-held", 0)
+    held_restricted = sum(n for c, n in collection.held.items()
+                          if c not in ("open", "policy-held"))
     by_class = " · ".join(f"{c} {n:,}" for c, n in sorted(
         collection.held.items(), key=lambda kv: (-kv[1], kv[0]))) or "none"
 
@@ -90,10 +93,10 @@ def main(argv: list[str] | None = None) -> None:
 | | |
 |---|---|
 | **Documents** | **{ok_count:,}** |
-| **Policy-excluded provenance** | **{excluded_count:,}** rows (collected; outside the default corpus view) |
+| **Outside the default view** | **{excluded_count:,}** rows (collected and kept): policy-held {held_policy:,} · restricted licence classes {held_restricted:,} |
 | **Collection (all use classes)** | **{collection.total_held:,}** held originals · by class: {by_class} |
-| **Raw originals** | **~{du('raw')}** (PDF / HTML / source code) |
-| **Extracted text** | **~{du('text')}** (~{big(chars)} chars, **≈{big(tok)} tokens**) |
+| **Raw originals** | **~{du('raw')}** on disk, every class (PDF / HTML / source code) |
+| **Extracted text** | **~{du('text')}** on disk, every class (default view: ~{big(chars)} chars, **≈{big(tok)} tokens**) |
 | **Cleaned corpus** | **~{du('corpus')}** (~{big(cchars)} chars, **≈{big(ctok)} tokens**, ruleset-cleaned) |
 | **Topics** | {len(topics)} |
 
