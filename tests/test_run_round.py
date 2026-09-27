@@ -136,6 +136,50 @@ def test_cancelled_round_does_not_wait_for_a_blocked_gate(monkeypatch):
         signal.signal(signal.SIGTERM, old)
 
 
+CHILD_HOLDS_PIPES = (  # a gate whose forked child keeps stdout/stderr and blocks for 120 s
+    "import os, sys, time\n"
+    "if os.fork() == 0:\n"
+    "    time.sleep(120)\n"
+    "    os._exit(0)\n"
+    "{parent}")
+
+
+@pytest.mark.parametrize("parent,term_resistant", [
+    ("time.sleep(120)", False),                  # parent and child both blocked
+    ("sys.exit(0)", False),                      # parent already exited; orphan holds output
+    ("import signal; signal.signal(signal.SIGTERM, signal.SIG_IGN); time.sleep(120)", True),
+])
+def test_cancellation_is_not_blocked_by_gate_descendants(monkeypatch, parent, term_resistant):
+    """Codex review 83: descendants holding the gate's output, an already-exited gate parent,
+    and a TERM-resistant gate must not stall cancellation beyond the bounded grace."""
+    import signal
+    import threading
+    import time as _time
+
+    class Cancelled(Exception):
+        pass
+
+    def handler(signum, frame):
+        raise Cancelled()
+
+    monkeypatch.setattr(run_round.ops, "run_event", lambda *a, **k: None)
+    monkeypatch.setattr(run_round, "GATE_STOP_GRACE_SECONDS", 1.0)
+    code = CHILD_HOLDS_PIPES.format(parent=parent)
+    old = signal.signal(signal.SIGTERM, handler)
+    try:
+        timer = threading.Timer(1.5, os.kill, (os.getpid(), signal.SIGTERM))
+        timer.start()
+        began = _time.monotonic()
+        with pytest.raises(Cancelled):
+            run_round.run_verify_parallel(
+                [("stuck", [sys.executable, "-c", code]), _gate("ok", 0, 60)], {},
+                rid("run-desc"))
+        assert _time.monotonic() - began < 15             # never the children's 120 s
+    finally:
+        timer.cancel()
+        signal.signal(signal.SIGTERM, old)
+
+
 def test_run_command_raises_on_nonzero(monkeypatch):
     monkeypatch.setattr(
         run_round.subprocess, "run",

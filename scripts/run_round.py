@@ -161,6 +161,45 @@ def run_command(step: str, cmd: list[str], env: dict, run_id: str) -> None:
 GATE_STOP_GRACE_SECONDS = 10.0
 
 
+def _descendants(pid: int) -> set[int]:
+    """Every live descendant of `pid` (a /proc parent-map walk; a vanished process is skipped)."""
+    children: dict[int, list[int]] = {}
+    for entry in os.scandir("/proc"):
+        if not entry.name.isdigit():
+            continue
+        try:
+            with open(f"/proc/{entry.name}/stat", "rb") as fh:
+                stat = fh.read().decode("ascii", "replace")
+        except OSError:
+            continue
+        ppid = int(stat[stat.rindex(")") + 2:].split()[1])
+        children.setdefault(ppid, []).append(int(entry.name))
+    out, todo = set(), [pid]
+    while todo:
+        for child in children.get(todo.pop(), []):
+            if child not in out:
+                out.add(child)
+                todo.append(child)
+    return out
+
+
+def _alive(pid: int) -> bool:
+    try:
+        with open(f"/proc/{pid}/stat", "rb") as fh:
+            stat = fh.read().decode("ascii", "replace")
+    except OSError:
+        return False
+    return stat[stat.rindex(")") + 2:].split()[0] not in ("Z", "X")
+
+
+def _signal_all(pids, sig) -> None:
+    for pid in pids:
+        try:
+            os.kill(pid, sig)
+        except (ProcessLookupError, PermissionError):
+            pass
+
+
 def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: str,
                         envs: dict[str, dict] | None = None, record=None,
                         report_expect: dict | None = None) -> None:
@@ -196,13 +235,19 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
             gate_env = {k: v for k, v in gate_env.items() if k != verify_generation.REPORT_ENV}
             if step in reports:
                 gate_env[verify_generation.REPORT_ENV] = str(reports[step])
-        with live_lock:
-            if cancelled.is_set():      # the round is unwinding: never start another gate
-                raise RuntimeError(f"{step} not started: the round was cancelled")
-            proc = subprocess.Popen(cmd, cwd=ROOT, env=gate_env, stdout=subprocess.PIPE,
-                                    stderr=subprocess.PIPE, text=True)
-            live.append(proc)
-        out, err = proc.communicate()
+        # output goes to unlinked temp files, never pipes: a descendant that outlives the gate
+        # (or survives cancellation) can then never block the round waiting for pipe EOF
+        with tempfile.TemporaryFile() as out_f, tempfile.TemporaryFile() as err_f:
+            with live_lock:
+                if cancelled.is_set():      # the round is unwinding: never start another gate
+                    raise RuntimeError(f"{step} not started: the round was cancelled")
+                proc = subprocess.Popen(cmd, cwd=ROOT, env=gate_env, stdout=out_f, stderr=err_f)
+                live.append(proc)
+            proc.wait()
+            out_f.seek(0)
+            err_f.seek(0)
+            out = out_f.read().decode("utf-8", "replace")
+            err = err_f.read().decode("utf-8", "replace")
         result = subprocess.CompletedProcess(cmd, proc.returncode, out, err)
         elapsed = round(time.monotonic() - started, 3)
         if result.returncode:
@@ -220,21 +265,28 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
     cancelled = threading.Event()
 
     def stop_gates() -> None:
-        """Terminate every running gate BEFORE the executor waits for its workers: a cancelled
-        round (SIGTERM from a timeout or the recoverability watcher) must not stall behind a
-        blocked gate while it holds the writer (Codex review 82)."""
+        """Terminate every running gate AND its descendants (TERM, then KILL after the grace)
+        BEFORE the executor waits for its workers: a cancelled round (SIGTERM from a timeout or
+        the recoverability watcher) must not stall behind a blocked gate while it holds the
+        writer (Codex reviews 82, 83). Gate output goes to files, not pipes, so a descendant that
+        escaped the tree (an exited gate's orphan) cannot block the wait either; such survivors are
+        the staged cleanup's (run_ownership) to stop. Gates stay in the round's process group, so
+        the file round's cron `timeout` still takes them down with it, as before."""
         with live_lock:
             cancelled.set()
+            # only gates not yet reaped: their pid is still ours, so is their process tree
             procs = [p for p in live if p.poll() is None]
+        pids = set()
         for p in procs:
-            p.terminate()
+            pids.add(p.pid)
+            pids |= _descendants(p.pid)
+        _signal_all(pids, signal.SIGTERM)
         deadline = time.monotonic() + GATE_STOP_GRACE_SECONDS
+        while time.monotonic() < deadline and any(_alive(pid) for pid in pids):
+            time.sleep(0.05)
+        _signal_all({pid for pid in pids if _alive(pid)}, signal.SIGKILL)
         for p in procs:
-            try:
-                p.wait(timeout=max(0.0, deadline - time.monotonic()))
-            except subprocess.TimeoutExpired:
-                p.kill()
-                p.wait()
+            p.wait()                    # SIGKILLed above: returns; unblocks its worker
 
     failed = []
     try:
