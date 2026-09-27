@@ -119470,3 +119470,74 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7165218742
     resolution: 'sim1: openalex location'
+  - id: oas-10-1371-journal-pone-0332836-7b7d7b7f
+    title: An intelligent control algorithm for gas precise drainage problem based on
+      Model Predictive Control
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0332836&type=printable
+    source: openalex_sim
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-02-03'
+    document_type: article
+    persistent_id: https://doi.org/10.1371/journal.pone.0332836
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0332836&type=printable;
+      version publishedVersion]
+    rights_verified_at: '2026-09-27'
+    selected_version: publishedVersion
+    origin_ids: doi:10.1371/journal.pone.0332836 openalex:W7127415037
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2602-03435-2b8a55a7
+    title: 'Soft Swing-up: Benchmarking Model-Based Optimal Control for Rigid-Soft Underactuated
+      Systems'
+    url: https://arxiv.org/pdf/2602.03435
+    source: openalex_sim
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    published_at: '2026-02-03'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2602.03435
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2602.03435; version submittedVersion]
+    rights_verified_at: '2026-09-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2602.03435 openalex:W7127596560
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5445-ir-1000191407-c7cab269
+    title: Distributed model predictive control for district heating networks considering
+      building and network flexibility
+    url: https://publikationen.bibliothek.kit.edu/1000191407/177091149
+    source: openalex_sim
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.5445/ir/1000191407
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://publikationen.bibliothek.kit.edu/1000191407/177091149; version submittedVersion]
+    rights_verified_at: '2026-09-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.5445/ir/1000191407 openalex:W7136115698
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5445-ir-1000192741-c6a7e348
+    title: Deep Reinforcement Learning for Price-Aware Building Heating Control
+    url: https://publikationen.bibliothek.kit.edu/1000192741/180051906
+    source: openalex_sim
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.5445/ir/1000192741
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://publikationen.bibliothek.kit.edu/1000192741/180051906; version submittedVersion]
+    rights_verified_at: '2026-09-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.5445/ir/1000192741 openalex:W7157665099
+    resolution: 'sim1: openalex location'
