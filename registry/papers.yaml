@@ -119434,3 +119434,39 @@ sources:
       latest v2): http://arxiv.org/licenses/nonexclusive-distrib/1.0/ -> pointer-only
       (arXiv non-exclusive distribution licence (grants distribution to arXiv only))'
     rights_verified_at: '2026-09-25'
+  - id: oas-10-3389-fenrg-2026-1844532-5558c317
+    title: Electrothermal coupling modeling of air-conditioning-building systems and
+      aggregated direct load control dispatch tracking for office parks
+    url: https://www.frontiersin.org/journals/energy-research/articles/10.3389/fenrg.2026.1844532/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-09-18'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fenrg.2026.1844532
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.frontiersin.org/journals/energy-research/articles/10.3389/fenrg.2026.1844532/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-27'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fenrg.2026.1844532 openalex:W7213545659
+    resolution: 'sim1: openalex location'
+  - id: oas-w7165218742
+    title: 'Reducing Building Heat Demand Through Intelligent Control: A Comparative
+      Simulation Study'
+    url: https://arxiv.org/pdf/2606.17913
+    source: openalex_sim
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    published_at: '2026-06-16'
+    document_type: preprint
+    persistent_id: https://openalex.org/W7165218742
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2606.17913; version submittedVersion]
+    rights_verified_at: '2026-09-27'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7165218742
+    resolution: 'sim1: openalex location'
