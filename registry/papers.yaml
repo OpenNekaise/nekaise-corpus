@@ -119541,3 +119541,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.5445/ir/1000192741 openalex:W7157665099
     resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-apenergy-2021-116671-621a873d
+    title: Multi-time scale energy management framework for smart PV systems mixing
+      fast and slow dynamics
+    url: https://ir.library.osaka-u.ac.jp/repo/ouka/all/92479/ApplEnergy_289.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2021-03-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2021.116671
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://ir.library.osaka-u.ac.jp/repo/ouka/all/92479/ApplEnergy_289.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2021.116671 openalex:W3135538630
+    resolution: 'sim1: openalex location'
