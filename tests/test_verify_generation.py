@@ -65,7 +65,7 @@ def test_row_arithmetic_equals_corpus_stats_on_varied_rows(tmp_path):
         restrictions, _ = store.pinned_policy(view)
         stats = corpus_stats.compute(view, restrictions)
     c = vg.new_counters()
-    eligible = store.eligibility_where(restrictions)
+    eligible = store.default_corpus_where(restrictions)
     for r in VARIED:
         vg.add_manifest_row(c, r, eligible, 1)
     c = vg.finalize(c)
@@ -257,10 +257,14 @@ def test_a_configuration_change_runs_the_full_checks(pgw):
 
 
 @needs_pg
-def test_a_restricted_row_that_claims_corpus_data_fails(pgw):
+def test_a_restricted_row_that_claims_the_default_view_fails(pgw):
+    """collect-all: a held/restricted row keeps its cleaned copy, but only in its own view."""
     pgw.run([("discover", add(VARIED[:2]))])
     _, rep = pgw.run([("fetch", add([mrow(80, source="soep", corpus_path="corpus/x.md")]))])
-    assert any("restricted row claims corpus data" in e for e in rep.errors)
+    assert any("outside its use view" in e for e in rep.errors)
+    _, rep = pgw.run([("fetch", add([mrow(81, source="soep",
+                                          corpus_path="collection/policy-held/corpus/y.md")]))])
+    assert not any("outside its use view" in e for e in rep.errors)
 
 
 @needs_pg
@@ -586,7 +590,7 @@ def test_the_one_pass_recount_equals_corpus_stats_and_the_row_arithmetic(pgw):
     assert full["topics"] == {vg._label(t): n for t, n in stats.topics}
     assert full["licenses"] == {vg._label(k): n for k, n in stats.licenses.items()}
     mine = vg.new_counters()
-    eligible = store.eligibility_where(restrictions)
+    eligible = store.default_corpus_where(restrictions)
     for r in rows:
         vg.add_manifest_row(mine, r, eligible, 1)
     mine["rows"]["entries"] = len(rows)

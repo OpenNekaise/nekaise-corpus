@@ -41,6 +41,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Iterator
 
+import registry
 import store
 from store import canonical_row
 
@@ -99,7 +100,7 @@ def _bump(d: dict, key: str, n) -> None:
 
 def add_manifest_row(c: dict, row: dict, eligible_pred, sign: int) -> None:
     """Add (sign=1) or remove (sign=-1) one manifest row's contribution: documents = ok AND
-    training-eligible (store.eligibility_where, the predicate corpus_stats uses); corpus_chars
+    in the default view (store.default_corpus_where, the predicate corpus_stats uses); corpus_chars
     falls back to text_chars where the row has no corpus_chars field."""
     c["rows"]["manifest"] += sign
     _bump(c["status"], _label(row.get("status")), sign)
@@ -165,7 +166,7 @@ def full_counters(view, restrictions: dict) -> dict:
             c["rows"][table] = int(view._q(
                 _sql("SELECT count(*) FROM {}", view._src(table))).fetchone()[0])
     ok, ok_params = store_pg.compile_predicate(store.Eq("status", "ok"), sql.SQL("row"))
-    elig, elig_params = store_pg.compile_predicate(store.eligibility_where(restrictions),
+    elig, elig_params = store_pg.compile_predicate(store.default_corpus_where(restrictions),
                                                    sql.SQL("row"))
     for s, t, lic, is_ok, is_elig, n, text, text_frac, corpus, corpus_frac in view._q(
             sql.SQL(_FULL_SQL).format(ok=ok, elig=elig, src=view._src("manifest")),
@@ -343,8 +344,7 @@ def run_checks(view, restrictions: dict, *, root: Path, full: bool = False,
     import artifact_store
     scope = scope_of(view)
     rep = Report(run=scope.run_id, seq=scope.seq)
-    eligible = store.eligibility_where(restrictions)
-    restricted = store.restriction_where(restrictions)
+    eligible = store.default_corpus_where(restrictions)
     parent_counters = recorded_counters(view, scope.parent)
     rep.full_checks = full or scope.config_changed or scope.parent is None
     delta = new_counters()
@@ -367,9 +367,13 @@ def run_checks(view, restrictions: dict, *, root: Path, full: bool = False,
                         if k in now:
                             add_manifest_row(delta, now[k], eligible, 1)
                             _claim_checks(view, scope, k, now[k], before.get(k), local, rep)
-                            if store.evaluate(restricted, now[k]) and any(
-                                    f in now[k] for f in _corpus_fields()):
-                                rep.error(f"manifest {k}: a restricted row claims corpus data")
+                            # collect-all: every class keeps its cleaned copy, but only in its
+                            # OWN view (a restricted-use or policy-held row never in corpus/)
+                            claim = now[k].get("corpus_path")
+                            if claim and not claim.startswith(registry.view_root(
+                                    registry.view_of(now[k], restrictions)) + "/"):
+                                rep.error(f"manifest {k}: corpus claim {claim!r} is outside its "
+                                          "use view")
             elif tbl == "blocklist":
                 src_now, src_before = view._src("blocklist"), _parent_src(view, scope, "blocklist")
                 now = {k for (k,) in view._q(_sql("SELECT key FROM {} WHERE key = ANY(%s)",
@@ -385,9 +389,9 @@ def run_checks(view, restrictions: dict, *, root: Path, full: bool = False,
         rep.counters = full_counters(view, restrictions)
         if rep.full_checks:
             import corpus_stats
-            count, first = corpus_stats.restricted_with_corpus_data(view, restrictions)
+            count, first = corpus_stats.misplaced_view_claims(view, restrictions)
             if count:
-                rep.error(f"{count:,} policy-restricted manifest rows claim corpus data "
+                rep.error(f"{count:,} manifest rows claim corpus data outside their use view "
                           f"(first: {first})")
     else:
         rep.counters = combine(parent_counters, delta)

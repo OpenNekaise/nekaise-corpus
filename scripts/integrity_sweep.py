@@ -12,7 +12,7 @@ reading the CURRENT committed generation (one REPEATABLE READ snapshot per invoc
 pinned, so the pass never holds the fold back — with pinned generations every later generation
 would stay an overlay, and reads slow down with the number of unfolded generations, see the
 basis benchmark): every registry entry and manifest row (the lint checks, manifest/registry
-agreement, restricted rows claiming corpus data, every payload claim of a successful row
+agreement, corpus claims outside their use view, every payload claim of a successful row
 resolvable on this machine unless its host is fetch-suspended), every blocklist and ledger row,
 and the derived lookup/order columns of every physical row (the projection tables, and the
 revisions of the promoted runs the current view overlays). A row changed behind the cursor
@@ -41,6 +41,7 @@ import time
 from pathlib import Path
 
 import ops
+import registry
 import store
 import verify_generation
 
@@ -81,18 +82,20 @@ def _new_pass(dataset: str | None) -> dict:
             "checked": {}, "failures": [], "failure_count": 0, "generations": []}
 
 
-def _manifest_page(view, rows: list[dict], part: dict, policy, restricted, access) -> None:
+def _manifest_page(view, rows: list[dict], part: dict, policy, restrictions, access) -> None:
     import artifact_store
     import host_policy
     import lint_registry
     entries = view.get_entries([r["id"] for r in rows])
-    corpus_fields = verify_generation._corpus_fields()
     for r in rows:
         sid = r.get("id")
         for e in lint_registry.manifest_errors(r, entries.get(sid)):
             _fail(part, e)
-        if store.evaluate(restricted, r) and any(f in r for f in corpus_fields):
-            _fail(part, f"manifest {sid}: a restricted row claims corpus data")
+        # collect-all: every class keeps its cleaned copy, but only in its OWN use view
+        claim = r.get("corpus_path")
+        if claim and not claim.startswith(
+                registry.view_root(registry.view_of(r, restrictions)) + "/"):
+            _fail(part, f"manifest {sid}: corpus claim {claim!r} is outside its use view")
         if r.get("status") != "ok" or host_policy.suspended(r.get("url"), policy):
             continue
         for stage in ("raw", "text", "corpus"):
@@ -159,7 +162,6 @@ def _slice(st, view, part: dict, *, deadline: float, page: int, save) -> None:
     import artifact_store
     import lint_registry
     restrictions, policy = store.pinned_policy(view)
-    restricted = store.restriction_where(restrictions)
     access = artifact_store.VersionedAccess(Path(st.root))
     if view.generation not in part["generations"]:
         part["generations"].append(view.generation)
@@ -176,7 +178,7 @@ def _slice(st, view, part: dict, *, deadline: float, page: int, save) -> None:
                             e, store.codec.shard_filename(e["id"])):
                         _fail(part, err)
             elif phase == "manifest":
-                _manifest_page(view, got.rows, part, policy, restricted, access)
+                _manifest_page(view, got.rows, part, policy, restrictions, access)
             elif phase == "ledger":
                 for r in got.rows:
                     if missing := [f for f in verify_generation.LEDGER_REQUIRED if not r.get(f)]:
