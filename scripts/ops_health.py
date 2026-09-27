@@ -279,21 +279,28 @@ def lifecycle_checks(conn, now: float, root: Path | None = None) -> list[dict]:
     if head is not None:
         try:
             import materialize
-            stamp = materialize.read_stamp(Path(ROOT if root is None else root)
-                                           / "corpus") or {}
+            import registry
+            base = Path(ROOT if root is None else root)
+            lagging = []
+            for v, stage in materialize.REQUIRED_VIEWS:   # every cleaned view, not only corpus/
+                vdir = materialize.view_dir(base, v, stage)
+                stamp = materialize.read_stamp(vdir) or {}
+                if (stamp.get("state"), stamp.get("generation"), stamp.get("view"),
+                        stamp.get("class_policy")) != ("complete", head, v,
+                                                       registry.CLASS_POLICY_VERSION):
+                    lagging.append(f"{vdir.relative_to(base)}/ {stamp.get('state') or 'absent'} "
+                                   f"at {stamp.get('generation')}")
         except Exception as exc:
             out.append(_error("materialization_lag", exc))
         else:
-            behind = head - stamp["generation"] if isinstance(stamp.get("generation"), int) \
-                else None
-            state = stamp.get("state")
-            complete = state == "complete" and behind == 0
-            sev = "ok" if complete else ("warning" if last_age is None
-                                         or last_age > MATERIALIZE_WARN else "ok")
+            sev = "ok" if not lagging else ("warning" if last_age is None
+                                            or last_age > MATERIALIZE_WARN else "ok")
             out.append(_check("materialization_lag", sev,
-                              f"corpus/ is {state or 'absent'} at generation "
-                              f"{stamp.get('generation')} (current {head})",
-                              behind=behind, state=state))
+                              f"{len(materialize.REQUIRED_VIEWS) - len(lagging)}/"
+                              f"{len(materialize.REQUIRED_VIEWS)} views complete at generation "
+                              f"{head}" + (f"; behind: {'; '.join(lagging[:5])}" if lagging
+                                           else ""),
+                              lagging=len(lagging)))
     # fold lag: promoted generations the projection has not absorbed yet. Every read overlays
     # them, and its cost grows with their number (the basis benchmark: a hot document revised by
     # 256 unfolded generations makes a 400-row patch take ~10x longer and a first scan page

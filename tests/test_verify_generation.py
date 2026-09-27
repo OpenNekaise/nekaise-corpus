@@ -566,7 +566,7 @@ def test_lifecycle_alerts_over_a_staged_schema(pgw, monkeypatch):
     assert checks["fold_lag"]["facts"]["unfolded"] == 2
     assert checks["fold_lag"]["severity"] == "warning"
     assert checks["review_backlog"]["facts"]["backlog"] == 2
-    assert checks["materialization_lag"]["facts"]["state"] is None   # never materialized here
+    assert checks["materialization_lag"]["facts"]["lagging"] > 0     # never materialized here
     # an open run left behind is reported with its age; the fold clears the lag
     with pgw.st.writer() as w:
         pgw.st.open_run(w, rid("vg-stall"), producer_commit=SHA, extractor_version="x1",

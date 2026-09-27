@@ -56,6 +56,7 @@ from contextlib import ExitStack
 from pathlib import Path
 
 import state_codec as codec
+import registry
 import store
 from store import Table
 
@@ -300,18 +301,24 @@ def verify_payloads(st, root: Path, generation: int | None = None, *, log=print)
         if len(out["failures"]) < 50:
             out["failures"].append(text)
 
-    corpus_dir = root / "corpus"
     with open_generation(st, generation) as view:
         g = view.generation
         prov = view.provenance() or {}
         out["generation"], out["ruleset"] = g, prov.get("cleaning_ruleset")
         restrictions, _ = store.pinned_policy(view)
-        stamp = materialize.read_stamp(corpus_dir) or {}
-        if (stamp.get("state"), stamp.get("generation"), stamp.get("dataset")) != (
-                "complete", g, prov.get("dataset")):
-            fail(f"corpus/ is not a complete materialization of generation {g} "
-                 f"({stamp.get('state')} at {stamp.get('generation')})")
-        members = materialize._Refresh(root, corpus_dir, view, restrictions)
+        # EVERY required cleaned view (the default corpus/ and each classified
+        # collection/<class>/corpus/) must be a complete materialization of generation g under
+        # the current classification policy, and hold exactly its members (collect-all)
+        views = {}
+        for v, stage in materialize.REQUIRED_VIEWS:
+            vdir = materialize.view_dir(root, v, stage)
+            stamp = materialize.read_stamp(vdir) or {}
+            if (stamp.get("state"), stamp.get("generation"), stamp.get("dataset"),
+                    stamp.get("view"), stamp.get("class_policy")) != (
+                    "complete", g, prov.get("dataset"), v, registry.CLASS_POLICY_VERSION):
+                fail(f"{vdir.relative_to(root)}/ is not a complete materialization of generation "
+                     f"{g} ({stamp.get('state')} at {stamp.get('generation')})")
+            views[v] = (vdir, materialize._Refresh(root, vdir, view, restrictions, target=v), [0])
         for row in _scan(view, Table.MANIFEST):
             sid = row["id"]
             for stage in ("raw", "text"):
@@ -345,19 +352,23 @@ def verify_payloads(st, root: Path, generation: int | None = None, *, log=print)
                     fail(f"{sid}: {path} does not hold its {stage} claim ({sha[:12]})")
                     continue
                 out["legacy"] += 1
-            c = members.wanted(row)
-            if c is None:
-                continue
-            out["corpus_members"] += 1
-            dst = corpus_dir / f"{sid}.md"
-            if not _regular(dst):
-                fail(f"{sid}: corpus/{sid}.md is missing or not a regular file")
-            elif _file_sha256(dst)[0] != c[1]:
-                fail(f"{sid}: corpus/{sid}.md does not hold its cleaned claim")
-    present = sum(1 for p in corpus_dir.glob("*.md")) if corpus_dir.is_dir() else 0
-    if present != out["corpus_members"]:
-        fail(f"corpus/ holds {present} document files, generation {g} has "
-             f"{out['corpus_members']} members")
+            for v, (vdir, members, count) in views.items():
+                c = members.wanted(row)
+                if c is None:
+                    continue
+                out["corpus_members"] += 1
+                count[0] += 1
+                dst = vdir / f"{sid}.md"
+                rel = dst.relative_to(root)
+                if not _regular(dst):
+                    fail(f"{sid}: {rel} is missing or not a regular file")
+                elif _file_sha256(dst)[0] != c[1]:
+                    fail(f"{sid}: {rel} does not hold its cleaned claim")
+    for v, (vdir, _members, count) in views.items():
+        present = sum(1 for p in vdir.glob("*.md")) if vdir.is_dir() else 0
+        if present != count[0]:
+            fail(f"{vdir.relative_to(root)}/ holds {present} document files, generation {g} "
+                 f"has {count[0]} members")
     out["ok"] = not out["failure_count"]
     log(f"payloads of generation {g}: {'verified' if out['ok'] else 'NOT verified'} "
         f"({out['held']} held versions, {out['legacy']} legacy files, "

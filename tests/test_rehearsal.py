@@ -339,3 +339,15 @@ def test_rollback_payloads_are_verified_before_anything_changes(world):
     (root / "corpus" / "stray.md").unlink()
     out = rollback_export.link_payloads(st, root, log=lambda *_: None)
     assert out["linked"] >= 1
+    # (4) collect-all: EVERY cleaned view is verified, a classified one included
+    import materialize
+    stamp = materialize.view_dir(root, "nc") / materialize.STAMP
+    saved_stamp = stamp.read_bytes() if stamp.exists() else None
+    if saved_stamp is not None:
+        stamp.unlink()
+    got = rollback_export.verify_payloads(st, root, log=lambda *_: None)
+    assert not got["ok"]
+    assert any("collection/nc/corpus/ is not a complete materialization" in f
+               for f in got["failures"]), got["failures"]
+    if saved_stamp is not None:
+        stamp.write_bytes(saved_stamp)
