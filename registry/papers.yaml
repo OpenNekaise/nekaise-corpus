@@ -119560,3 +119560,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.apenergy.2021.116671 openalex:W3135538630
     resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-jobe-2021-103286-9e48cc0f
+    title: Economic heat control of mixing loop for residential buildings supplied by
+      low-temperature district heating
+    url: https://vbn.aau.dk/ws/files/457650829/1_s2.0_S235271022101144X_main.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2021-09-14'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jobe.2021.103286
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://vbn.aau.dk/ws/files/457650829/1_s2.0_S235271022101144X_main.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jobe.2021.103286 openalex:W3200228168
+    resolution: 'sim1: openalex location'
