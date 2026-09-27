@@ -180,6 +180,26 @@ def test_cancellation_is_not_blocked_by_gate_descendants(monkeypatch, parent, te
         signal.signal(signal.SIGTERM, old)
 
 
+def test_cancellation_never_signals_a_reused_pid():
+    """Codex review 84: a pid seen during the walk that has since been reused (its start time no
+    longer matches) gets no pidfd, so neither TERM nor KILL can reach the replacement."""
+    import subprocess as sp
+    bystander = sp.Popen([sys.executable, "-c", "import time; time.sleep(60)"])
+    try:
+        real = run_round._start_time(bystander.pid)
+        assert real is not None
+        # recorded under an OLDER identity (the pid was reused): never pinned, never signalled
+        assert run_round._pidfds({bystander.pid: str(int(real) - 1)}) == []
+        fds = run_round._pidfds({bystander.pid: real})
+        assert len(fds) == 1
+        run_round._signal_fds(fds, 0)                  # the pinned identity is signalable
+        os.close(fds[0])
+        assert bystander.poll() is None                 # nothing hit the bystander
+    finally:
+        bystander.kill()
+        bystander.wait()
+
+
 def test_run_command_raises_on_nonzero(monkeypatch):
     monkeypatch.setattr(
         run_round.subprocess, "run",

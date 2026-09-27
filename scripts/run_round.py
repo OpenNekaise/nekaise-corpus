@@ -161,43 +161,71 @@ def run_command(step: str, cmd: list[str], env: dict, run_id: str) -> None:
 GATE_STOP_GRACE_SECONDS = 10.0
 
 
-def _descendants(pid: int) -> set[int]:
-    """Every live descendant of `pid` (a /proc parent-map walk; a vanished process is skipped)."""
-    children: dict[int, list[int]] = {}
-    for entry in os.scandir("/proc"):
-        if not entry.name.isdigit():
-            continue
-        try:
-            with open(f"/proc/{entry.name}/stat", "rb") as fh:
-                stat = fh.read().decode("ascii", "replace")
-        except OSError:
-            continue
-        ppid = int(stat[stat.rindex(")") + 2:].split()[1])
-        children.setdefault(ppid, []).append(int(entry.name))
-    out, todo = set(), [pid]
-    while todo:
-        for child in children.get(todo.pop(), []):
-            if child not in out:
-                out.add(child)
-                todo.append(child)
-    return out
-
-
-def _alive(pid: int) -> bool:
+def _stat_fields(pid: int) -> list[str] | None:
+    """/proc/<pid>/stat fields after the command name (field 3 onwards), or None if gone."""
     try:
         with open(f"/proc/{pid}/stat", "rb") as fh:
             stat = fh.read().decode("ascii", "replace")
     except OSError:
-        return False
-    return stat[stat.rindex(")") + 2:].split()[0] not in ("Z", "X")
+        return None
+    return stat[stat.rindex(")") + 2:].split()
 
 
-def _signal_all(pids, sig) -> None:
-    for pid in pids:
+def _start_time(pid: int) -> str | None:
+    """The process's start time (clock ticks since boot): with the pid, its identity."""
+    fields = _stat_fields(pid)
+    return fields[19] if fields else None
+
+
+def _descendants(pid: int) -> dict[int, str]:
+    """{pid: start time} of every live descendant of `pid` (a /proc parent-map walk)."""
+    children: dict[int, list[tuple[int, str]]] = {}
+    for entry in os.scandir("/proc"):
+        if not entry.name.isdigit():
+            continue
+        fields = _stat_fields(int(entry.name))
+        if fields is None:
+            continue
+        children.setdefault(int(fields[1]), []).append((int(entry.name), fields[19]))
+    out: dict[int, str] = {}
+    todo = [pid]
+    while todo:
+        for child, started in children.get(todo.pop(), []):
+            if child not in out:
+                out[child] = started
+                todo.append(child)
+    return out
+
+
+def _pidfds(targets: dict[int, str]) -> list[int]:
+    """Open a pidfd for every (pid, start time) whose process is STILL that process: a pid that
+    exited and was reused since it was seen is skipped, and the pidfd then pins the identity for
+    every later signal (Codex review 84)."""
+    fds = []
+    for pid, started in targets.items():
         try:
-            os.kill(pid, sig)
-        except (ProcessLookupError, PermissionError):
+            fd = os.pidfd_open(pid)
+        except (ProcessLookupError, OSError):
+            continue
+        if _start_time(pid) != started:     # reused before the pidfd pinned it: not ours
+            os.close(fd)
+            continue
+        fds.append(fd)
+    return fds
+
+
+def _signal_fds(fds: list[int], sig) -> None:
+    for fd in fds:
+        try:
+            signal.pidfd_send_signal(fd, sig)
+        except (ProcessLookupError, OSError):
             pass
+
+
+def _exited(fd: int) -> bool:
+    """A pidfd is readable once its process has exited."""
+    import select
+    return bool(select.select([fd], [], [], 0)[0])
 
 
 def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: str,
@@ -242,6 +270,8 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
                 if cancelled.is_set():      # the round is unwinding: never start another gate
                     raise RuntimeError(f"{step} not started: the round was cancelled")
                 proc = subprocess.Popen(cmd, cwd=ROOT, env=gate_env, stdout=out_f, stderr=err_f)
+                # not yet waited, so the pid is still this child's: record its identity
+                gate_start[proc.pid] = _start_time(proc.pid)
                 live.append(proc)
             proc.wait()
             out_f.seek(0)
@@ -261,6 +291,7 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
 
     import threading
     live: list[subprocess.Popen] = []
+    gate_start: dict[int, str | None] = {}
     live_lock = threading.Lock()
     cancelled = threading.Event()
 
@@ -274,19 +305,25 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
         the file round's cron `timeout` still takes them down with it, as before."""
         with live_lock:
             cancelled.set()
-            # only gates not yet reaped: their pid is still ours, so is their process tree
-            procs = [p for p in live if p.poll() is None]
-        pids = set()
+            procs = list(live)
+        targets: dict[int, str] = {}
         for p in procs:
-            pids.add(p.pid)
-            pids |= _descendants(p.pid)
-        _signal_all(pids, signal.SIGTERM)
-        deadline = time.monotonic() + GATE_STOP_GRACE_SECONDS
-        while time.monotonic() < deadline and any(_alive(pid) for pid in pids):
-            time.sleep(0.05)
-        _signal_all({pid for pid in pids if _alive(pid)}, signal.SIGKILL)
+            started = gate_start.get(p.pid)
+            if p.returncode is None and started:
+                targets[p.pid] = started
+                targets.update(_descendants(p.pid))
+        fds = _pidfds(targets)          # identities pinned: no signal can hit a reused pid
+        try:
+            _signal_fds(fds, signal.SIGTERM)
+            deadline = time.monotonic() + GATE_STOP_GRACE_SECONDS
+            while time.monotonic() < deadline and not all(_exited(fd) for fd in fds):
+                time.sleep(0.05)
+            _signal_fds([fd for fd in fds if not _exited(fd)], signal.SIGKILL)
+        finally:
+            for fd in fds:
+                os.close(fd)
         for p in procs:
-            p.wait()                    # SIGKILLed above: returns; unblocks its worker
+            p.wait()                    # killed above (or already done): unblocks its worker
 
     failed = []
     try:
