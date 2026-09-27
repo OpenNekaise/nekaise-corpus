@@ -354,6 +354,51 @@ def test_cleanup_failure_is_bounded_and_still_stops_the_gate(monkeypatch):
         signal.signal(signal.SIGTERM, old)
 
 
+COORDINATOR = r"""
+import errno, os, signal, subprocess, sys, threading, uuid
+sys.path.insert(0, {scripts!r})
+import run_round
+def eperm(*a, **k):
+    raise PermissionError(errno.EPERM, "Operation not permitted")
+signal.pidfd_send_signal = eperm              # pinned signalling fails ...
+subprocess.Popen.kill = eperm                 # ... and so does the fallback kill
+run_round.ops.run_event = lambda *a, **k: None
+run_round.GATE_STOP_GRACE_SECONDS = 0.3
+class Cancelled(Exception):
+    pass
+def handler(signum, frame):
+    raise Cancelled()
+signal.signal(signal.SIGTERM, handler)
+threading.Timer(0.5, os.kill, (os.getpid(), signal.SIGTERM)).start()
+gate = [sys.executable, "-c", "import time; time.sleep(30)  # {marker}"]
+try:
+    run_round.run_verify_parallel([("stuck", gate)], {{}}, {run_id!r})
+except Cancelled:
+    print("cancelled", flush=True)
+"""
+
+
+def test_coordinator_exits_promptly_even_when_every_cleanup_fails(tmp_path):
+    """Codex review 88: with pidfd signalling AND the fallback kill failing, the coordinator
+    process itself must still unwind and EXIT (no executor or interpreter-exit join on a
+    surviving gate); the survivor is left to recovery."""
+    import subprocess as sp
+    import time as _time
+    import uuid
+    marker = f"gate-{uuid.uuid4().hex}"
+    code = COORDINATOR.format(scripts=str(Path(run_round.__file__).parent), marker=marker,
+                              run_id=rid("run-coord"))
+    began = _time.monotonic()
+    done = sp.run([sys.executable, "-c", code], capture_output=True, text=True, timeout=25)
+    elapsed = _time.monotonic() - began
+    try:
+        assert "cancelled" in done.stdout, done.stderr
+        assert "gate cleanup incomplete" in done.stderr
+        assert elapsed < 10                         # never the surviving gate's 30 s
+    finally:
+        sp.run(["pkill", "-f", marker])             # the survivor recovery would stop
+
+
 def test_run_command_raises_on_nonzero(monkeypatch):
     monkeypatch.setattr(
         run_round.subprocess, "run",

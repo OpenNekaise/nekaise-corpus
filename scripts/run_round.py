@@ -166,8 +166,8 @@ def _stat_fields(pid: int) -> list[str] | None:
     try:
         with open(f"/proc/{pid}/stat", "rb") as fh:
             stat = fh.read().decode("ascii", "replace")
-    except OSError:
-        return None
+    except (FileNotFoundError, ProcessLookupError):
+        return None                 # gone; any other error (EMFILE, EACCES, ...) propagates
     return stat[stat.rindex(")") + 2:].split()
 
 
@@ -191,23 +191,30 @@ def _pinned_tree(root_fd: int, root_pid: int) -> list[int]:
                 children.setdefault(int(fields[1]), []).append(int(entry.name))
     out: list[int] = []
     todo = [(root_pid, root_fd)]
-    while todo:
-        parent, parent_fd = todo.pop()
-        for child in children.get(parent, []):
-            try:
-                fd = os.pidfd_open(child)
-            except ProcessLookupError:
-                continue
-            except OSError:
-                for opened in out:
-                    os.close(opened)
-                raise
-            fields = _stat_fields(child)
-            if fields is None or int(fields[1]) != parent or _exited(parent_fd):
-                os.close(fd)            # not (or no longer provably) this parent's child
-                continue
-            out.append(fd)
-            todo.append((child, fd))
+    try:
+        while todo:
+            parent, parent_fd = todo.pop()
+            for child in children.get(parent, []):
+                try:
+                    fd = os.pidfd_open(child)
+                except ProcessLookupError:
+                    continue
+                try:
+                    fields = _stat_fields(child)
+                    ours = (fields is not None and int(fields[1]) == parent
+                            and not _exited(parent_fd))
+                except BaseException:
+                    os.close(fd)
+                    raise
+                if not ours:
+                    os.close(fd)        # not (or no longer provably) this parent's child
+                    continue
+                out.append(fd)
+                todo.append((child, fd))
+    except BaseException:
+        for fd in out:
+            os.close(fd)
+        raise
     return out
 
 
@@ -216,15 +223,25 @@ def _pidfds(targets: dict[int, str]) -> list[int]:
     exited and was reused since it was seen is skipped, and the pidfd then pins the identity for
     every later signal (Codex review 84)."""
     fds = []
-    for pid, started in targets.items():
-        try:
-            fd = os.pidfd_open(pid)
-        except ProcessLookupError:
-            continue                        # gone: nothing to stop
-        if _start_time(pid) != started:     # reused before the pidfd pinned it: not ours
+    try:
+        for pid, started in targets.items():
+            try:
+                fd = os.pidfd_open(pid)
+            except ProcessLookupError:
+                continue                        # gone: nothing to stop
+            try:
+                same = _start_time(pid) == started
+            except BaseException:
+                os.close(fd)
+                raise
+            if not same:                        # reused before the pidfd pinned it: not ours
+                os.close(fd)
+                continue
+            fds.append(fd)
+    except BaseException:
+        for fd in fds:
             os.close(fd)
-            continue
-        fds.append(fd)
+        raise
     return fds
 
 
@@ -297,7 +314,13 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
                 # not yet waited, so the pid is still this child's: record its identity
                 gate_start[proc.pid] = _start_time(proc.pid)
                 live.append(proc)
-            proc.wait()
+            while True:     # bounded: an abandoned (cancelled) round never waits on its gates
+                try:
+                    proc.wait(timeout=0.2)
+                    break
+                except subprocess.TimeoutExpired:
+                    if abandoned.is_set():
+                        raise RuntimeError(f"{step} abandoned: the round was cancelled") from None
             out_f.seek(0)
             err_f.seek(0)
             out = out_f.read().decode("utf-8", "replace")
@@ -316,7 +339,7 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
     import threading
     live: list[subprocess.Popen] = []
     gate_start: dict[int, str | None] = {}
-    cleanup_incomplete = threading.Event()
+    abandoned = threading.Event()
     live_lock = threading.Lock()
     cancelled = threading.Event()
 
@@ -354,21 +377,28 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
         finally:
             for fd in fds:
                 os.close(fd)
-        if failure is not None:
-            # bounded fallback: the gates are this process's own unreaped children, so Popen's
-            # own kill cannot hit a reused pid; their trees are left to run_ownership recovery
+        try:
+            if failure is not None:
+                # fallback: the gates are this process's own unreaped children, so Popen's own
+                # kill cannot hit a reused pid; any failure here is reported, never waited on
+                for p in procs:
+                    try:
+                        if p.poll() is None:
+                            p.kill()
+                    except Exception as exc:
+                        failure = exc
+                print(f"ERROR: gate cleanup incomplete ({type(failure).__name__}: {failure}); "
+                      "surviving gate processes are left to recovery (run_ownership)",
+                      file=sys.stderr, flush=True)
+            deadline = time.monotonic() + GATE_STOP_GRACE_SECONDS
             for p in procs:
-                if p.poll() is None:
-                    p.kill()
-            print(f"ERROR: gate cleanup incomplete ({type(failure).__name__}: {failure}); "
-                  "gate descendants may survive for recovery", file=sys.stderr, flush=True)
-        for p in procs:
-            try:
-                p.wait(timeout=GATE_STOP_GRACE_SECONDS)   # killed above: unblocks its worker
-            except subprocess.TimeoutExpired:
-                cleanup_incomplete.set()
-        if failure is not None:
-            cleanup_incomplete.set()
+                try:
+                    p.wait(timeout=max(0.0, deadline - time.monotonic()))
+                except subprocess.TimeoutExpired:
+                    print(f"ERROR: gate pid {p.pid} still running after cancellation; left to "
+                          "recovery", file=sys.stderr, flush=True)
+        finally:
+            abandoned.set()     # every worker stops waiting: shutdown and exit stay bounded
 
     failed = []
     try:
@@ -382,7 +412,7 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
         finally:
             # never an unbounded wait behind a gate cleanup could not stop: the exception above
             # propagates and the run is left to recovery
-            pool.shutdown(wait=not cleanup_incomplete.is_set(), cancel_futures=True)
+            pool.shutdown(wait=True, cancel_futures=True)
         for step, result, elapsed in results:
             passed = result.returncode == 0
             if record is not None:
