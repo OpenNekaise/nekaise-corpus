@@ -119635,3 +119635,21 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.rineng.2022.100619 openalex:W4294692439
     resolution: 'legacy: openalex location'
+  - id: ope-a-review-of-optimization-efforts-on-neighborho
+    title: A review of optimization efforts on neighborhood-level energy hubs
+    url: https://vbn.aau.dk/ws/files/771225561/1-s2.0-S0360544225002993-main.pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2025-01-23'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.energy.2025.134657
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://vbn.aau.dk/ws/files/771225561/1-s2.0-S0360544225002993-main.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.energy.2025.134657 openalex:W4406772020
+    resolution: 'legacy: openalex location'
