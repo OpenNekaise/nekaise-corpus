@@ -120642,3 +120642,21 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.3389/fmars.2026.1929353 openalex:W7213270487
     resolution: 'sim1: openalex location'
+  - id: oas-10-5194-egusphere-2026-3604-a873bfe1
+    title: Benefits of multi-target and self-supervised LSTM models for water quantity
+      and quality
+    url: https://egusphere.copernicus.org/preprints/2026/egusphere-2026-3604/egusphere-2026-3604.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    published_at: '2026-07-14'
+    document_type: preprint
+    persistent_id: https://doi.org/10.5194/egusphere-2026-3604
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://egusphere.copernicus.org/preprints/2026/egusphere-2026-3604/egusphere-2026-3604.pdf;
+      version acceptedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.5194/egusphere-2026-3604 openalex:W7168267449
+    resolution: 'sim1: openalex location'
