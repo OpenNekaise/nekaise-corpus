@@ -120260,3 +120260,117 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.heliyon.2023.e14640 openalex:W4327702769
     resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-archives-xlviii-4-w7-2023-72ab18ac
+    title: AN INTEROPERABLE DIGITAL TWIN TO SIMULATE SPATIO-TEMPORAL PHOTOVOLTAIC POWER
+      OUTPUT AND GRID CONGESTION AT NEIGHBOURHOOD AND CITY LEVELS IN LUXEMBOURG
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-4-W7-2023/95/2023/isprs-archives-XLVIII-4-W7-2023-95-2023.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-06-22'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-4-w7-2023-95-2023
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-4-W7-2023/95/2023/isprs-archives-XLVIII-4-W7-2023-95-2023.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-4-w7-2023-95-2023 openalex:W4381799491
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-annals-x-4-w2-2022-29-2022-69b662a8
+    title: DYNAMIC AND WEB-BASED 4D VISUALIZATION OF STREETSPACE ACTIVITIES DERIVED
+      FROM TRAFFIC SIMULATIONS AND SEMANTIC 3D CITY MODELS
+    url: https://isprs-annals.copernicus.org/articles/X-4-W2-2022/29/2022/isprs-annals-X-4-W2-2022-29-2022.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-10-14'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-annals-x-4-w2-2022-29-2022
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-annals.copernicus.org/articles/X-4-W2-2022/29/2022/isprs-annals-X-4-W2-2022-29-2022.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-annals-x-4-w2-2022-29-2022 openalex:W4306250651
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-archives-xlviii-4-2024-525-2b66da49
+    title: 'A Geodatabase Design for the Development of a Digital Twin for Urban Environments:
+      A Case Study from Turin, Italy'
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-4-2024/525/2024/isprs-archives-XLVIII-4-2024-525-2024.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-10-21'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-4-2024-525-2024
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-4-2024/525/2024/isprs-archives-XLVIII-4-2024-525-2024.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-4-2024-525-2024 openalex:W4403596269
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-archives-xlviii-5-w2-2023-5b00b68f
+    title: INTEGRATION OF SPATIALLY ORIENTED DATA FROM IOT TO FACILITY MANAGEMENT AND
+      BIM
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-5-W2-2023/31/2023/isprs-archives-XLVIII-5-W2-2023-31-2023.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-06-13'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-5-w2-2023-31-2023
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-5-W2-2023/31/2023/isprs-archives-XLVIII-5-W2-2023-31-2023.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-5-w2-2023-31-2023 openalex:W4380482279
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-archives-xlviii-4-2024-485-375f9534
+    title: Developing a Workflow for Transforming BIM Models into Immersive Virtual
+      Reality Experiences
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-4-2024/485/2024/isprs-archives-XLVIII-4-2024-485-2024.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-10-21'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-4-2024-485-2024
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-4-2024/485/2024/isprs-archives-XLVIII-4-2024-485-2024.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-4-2024-485-2024 openalex:W4403596108
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-annals-x-4-2024-287-2024-ea3ab491
+    title: Towards Automated BIM and BEM Model Generation using a B-Rep-based Method
+      with Topological Map
+    url: https://isprs-annals.copernicus.org/articles/X-4-2024/287/2024/isprs-annals-X-4-2024-287-2024.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-10-18'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-annals-x-4-2024-287-2024
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-annals.copernicus.org/articles/X-4-2024/287/2024/isprs-annals-X-4-2024-287-2024.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-annals-x-4-2024-287-2024 openalex:W4403522214
+    resolution: 'sim1: openalex location'
