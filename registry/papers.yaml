@@ -119729,3 +119729,39 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/isprs-archives-xlviii-4-w16-2025-1-2025 openalex:W4414381338
     resolution: 'sim1: openalex location'
+  - id: ope-ground-source-heat-pump-systems-the-effects-of
+    title: 'Ground-Source Heat Pump Systems: The Effects of Variable Trench Separations
+      and Pipe Configurations in Horizontal Ground Heat Exchangers'
+    url: https://www.repository.cam.ac.uk/bitstreams/77a08b13-8be0-42d5-b430-69242dbcd4a3/download
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2021-06-30'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/en14133919
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.repository.cam.ac.uk/bitstreams/77a08b13-8be0-42d5-b430-69242dbcd4a3/download;
+      version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/en14133919 openalex:W3173333687
+    resolution: 'legacy: openalex location'
+  - id: ope-net-zero-energy-buildings-an-overview-of-passi
+    title: 'Net zero energy buildings: An overview of passive and active designs'
+    url: https://research.tees.ac.uk/ws/files/119272401/118850545.pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2025-07-25'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.egyr.2025.07.028
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://research.tees.ac.uk/ws/files/119272401/118850545.pdf; version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.egyr.2025.07.028 openalex:W4412658875
+    resolution: 'legacy: openalex location'
