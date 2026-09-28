@@ -120114,3 +120114,57 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/isprs-archives-xlviii-1-w6-2025-107-2025 openalex:W7117784558
     resolution: 'sim1: openalex location'
+  - id: oas-10-5194-ica-abs-10-179-2025-684a7688
+    title: Integration of game technology, digital twins of buildings and real-life
+      indoor navigation app for cartographical research purposes
+    url: https://ica-abs.copernicus.org/articles/10/179/2025/ica-abs-10-179-2025.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-12-12'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/ica-abs-10-179-2025
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://ica-abs.copernicus.org/articles/10/179/2025/ica-abs-10-179-2025.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/ica-abs-10-179-2025 openalex:W4417300180
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2511-03684-282fd302
+    title: Simulation-Based Validation of an Integrated 4D/5D Digital-Twin Framework
+      for Predictive Construction Control
+    url: https://arxiv.org/pdf/2511.03684
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    published_at: '2025-11-05'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2511.03684
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2511.03684; version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2511.03684 openalex:W7104273229
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-archives-xlviii-g-2025-129-74ede188
+    title: Digital Twins and CFD simulations for accurate sensor positioning
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-G-2025/1291/2025/isprs-archives-XLVIII-G-2025-1291-2025.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-07-31'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-g-2025-1291-2025
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-G-2025/1291/2025/isprs-archives-XLVIII-G-2025-1291-2025.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-g-2025-1291-2025 openalex:W4412798085
+    resolution: 'sim1: openalex location'
