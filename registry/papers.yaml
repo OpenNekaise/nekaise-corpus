@@ -120408,3 +120408,110 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2608.08691 openalex:W7202192590
     resolution: 'sim1: openalex location'
+  - id: oas-10-1109-tac-2024-3445575-ec59525a
+    title: Distributed Momentum-Based Multiagent Optimization With Different Constraint
+      Sets
+    url: https://discovery.ucl.ac.uk/10197255/1/Distributed_Momentum_Based_Multi-Agent_Optimization_with_Different_Constraint_Sets.pdf
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-08-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/tac.2024.3445575
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/10197255/1/Distributed_Momentum_Based_Multi-Agent_Optimization_with_Different_Constraint_Sets.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1109/tac.2024.3445575 openalex:W4401687337
+    resolution: 'ai1: openalex location'
+  - id: oas-10-1144-geosci2020-070-f42da1ad
+    title: Heat from the Ground
+    url: https://eprints.gla.ac.uk/211473/7/211473.pdf
+    source: openalex_ai
+    license: cc-by-sa
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-03-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1144/geosci2020-070
+    license_evidence: openalex.license=cc-by-sa; openalex.license_id=https://openalex.org/licenses/cc-by-sa
+      [copy https://eprints.gla.ac.uk/211473/7/211473.pdf; version acceptedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1144/geosci2020-070 openalex:W3010974882
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2403-00172-082b1d80
+    title: 'Go Beyond Black-box Policies: Rethinking the Design of Learning Agent for
+      Interpretable and Verifiable HVAC Control'
+    url: https://arxiv.org/pdf/2403.00172
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-02-29'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2403.00172
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2403.00172; version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2403.00172 openalex:W4392425866
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2205-01951-2585cdaa
+    title: Proximal ADMM for Nonconvex and Nonsmooth Optimization
+    url: https://arxiv.org/pdf/2205.01951
+    source: openalex_ai
+    license: cc-by-sa
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-05-04'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2205.01951
+    license_evidence: openalex.license=cc-by-sa; openalex.license_id=https://openalex.org/licenses/cc-by-sa
+      [copy https://arxiv.org/pdf/2205.01951; version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2205.01951 openalex:W4229021214
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2406-15931-1e6525ff
+    title: Multistep Criticality Search and Power Shaping in Microreactors with Reinforcement
+      Learning
+    url: https://arxiv.org/pdf/2406.15931
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-06-22'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2406.15931
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2406.15931; version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2406.15931 openalex:W4400023105
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2403-05864-d79aa9c7
+    title: 'PEARL: Structural Privacy-Utility Control in Human-Centric CPS via Personalized
+      Early-Exit Deep Reinforcement Learning'
+    url: https://arxiv.org/pdf/2403.05864
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-03-09'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2403.05864
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2403.05864; version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2403.05864 openalex:W4392737006
+    resolution: 'ai1: openalex location'
