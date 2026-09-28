@@ -119672,3 +119672,60 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.rser.2023.113652 openalex:W4386395328
     resolution: 'legacy: openalex location'
+  - id: oas-10-5194-isprs-archives-xlviii-4-w16-2025-730b39ee
+    title: A Data-Driven Urban Digital Twin Approach for Evaluating Positive Energy
+      District Potential Using OGC Standards in Stuttgart
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-4-W16-2025/67/2025/isprs-archives-XLVIII-4-W16-2025-67-2025.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-09-19'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-4-w16-2025-67-2025
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-4-W16-2025/67/2025/isprs-archives-XLVIII-4-W16-2025-67-2025.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-4-w16-2025-67-2025 openalex:W4414347466
+    resolution: 'sim1: openalex location'
+  - id: oas-10-3389-fpsyg-2026-1692740-ffd783a7
+    title: 'Urban color in public design: a review of spatial aesthetics and behavioral
+      impact in Chinese and South Korean cities using structural equation modell'
+    url: https://public-pages-files-2025.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1692740/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-01-27'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fpsyg.2026.1692740
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://public-pages-files-2025.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1692740/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fpsyg.2026.1692740 openalex:W7125783538
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-archives-xlviii-4-w16-2025-eb111804
+    title: 'A Data-driven Smart District Toward Net Zero Using Generative Design and
+      Urban Digital Twins: A Use Case of Nihonbashi, Tokyo'
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-4-W16-2025/1/2025/isprs-archives-XLVIII-4-W16-2025-1-2025.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-09-19'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-4-w16-2025-1-2025
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-4-W16-2025/1/2025/isprs-archives-XLVIII-4-W16-2025-1-2025.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-4-w16-2025-1-2025 openalex:W4414381338
+    resolution: 'sim1: openalex location'
