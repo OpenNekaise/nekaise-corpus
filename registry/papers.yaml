@@ -120533,3 +120533,39 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1002/advs.202511691 openalex:W4414162660
     resolution: 'sim1: openalex location'
+  - id: oas-10-1136-bmjopen-2024-097530-33e2c044
+    title: 'Investigating the long-term public health and co-benefit impacts of an urban
+      greenway intervention in the UK: a natural experiment evaluation – study '
+    url: https://pureadmin.qub.ac.uk/ws/files/645805584/asfghhh.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-07-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1136/bmjopen-2024-097530
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://pureadmin.qub.ac.uk/ws/files/645805584/asfghhh.pdf; version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1136/bmjopen-2024-097530 openalex:W4412099178
+    resolution: 'sim1: openalex location'
+  - id: oas-10-3389-fpsyt-2025-1606075-363fbcb1
+    title: 'Breaking barriers, building futures: Inclusive workplaces for autistic people'
+    url: https://public-pages-files-2025.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1606075/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-11-11'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fpsyt.2025.1606075
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://public-pages-files-2025.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1606075/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fpsyt.2025.1606075 openalex:W4416099189
+    resolution: 'sim1: openalex location'
