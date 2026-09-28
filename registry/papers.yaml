@@ -120168,3 +120168,39 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/isprs-archives-xlviii-g-2025-1291-2025 openalex:W4412798085
     resolution: 'sim1: openalex location'
+  - id: oas-10-3390-buildings14113613-f8c30102
+    title: Digital Twins in the Sustainable Construction Industry
+    url: https://www.repository.cam.ac.uk/bitstreams/44c19c75-fe92-4b88-9f26-d93ebf461b65/download
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-11-13'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/buildings14113613
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.repository.cam.ac.uk/bitstreams/44c19c75-fe92-4b88-9f26-d93ebf461b65/download;
+      version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/buildings14113613 openalex:W4404357750
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1177-01436244231163084-05c0f6fd
+    title: A review of approaches and applications in building stock energy and indoor
+      environment modelling
+    url: https://discovery.ucl.ac.uk/10166782/1/01436244231163084.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-03-14'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/01436244231163084
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/10166782/1/01436244231163084.pdf; version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/01436244231163084 openalex:W4324149152
+    resolution: 'sim1: openalex location'
