@@ -120604,3 +120604,41 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.3389/fbuil.2026.1728896 openalex:W7130350190
     resolution: 'sim1: openalex location'
+  - id: oas-10-1371-journal-pone-0331703-d556334e
+    title: A System dynamics analysis of the factors influencing the promotion of prefabricated
+      decoration, based on a co-occurrence network
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0331703&type=printable
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-09-04'
+    document_type: article
+    persistent_id: https://doi.org/10.1371/journal.pone.0331703
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0331703&type=printable;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.1371/journal.pone.0331703 openalex:W4413980908
+    resolution: 'sim1: openalex location'
+  - id: oas-10-3389-fmars-2026-1929353-d49daa82
+    title: 'Symbiotic resilience in port governance: a tripartite dynamic assessment
+      framework'
+    url: https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2026.1929353/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-09-15'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fmars.2026.1929353
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2026.1929353/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fmars.2026.1929353 openalex:W7213270487
+    resolution: 'sim1: openalex location'
