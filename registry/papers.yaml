@@ -119984,3 +119984,59 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2608.14917 openalex:W7203715737
     resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-archives-xlix-b1-2026-607-8a2e5f1c
+    title: Integrating Advanced AI techniques to assist Urban Digital Twins Generation
+    url: https://isprs-archives.copernicus.org/articles/XLIX-B1-2026/607/2026/isprs-archives-XLIX-B1-2026-607-2026.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-07-22'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlix-b1-2026-607-2026
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLIX-B1-2026/607/2026/isprs-archives-XLIX-B1-2026-607-2026.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlix-b1-2026-607-2026 openalex:W7170050867
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-archives-xlix-b1-2026-553-61bb2567
+    title: A pipeline for automatic building reconstruction for Digital Twins in complex
+      urban environments
+    url: https://isprs-archives.copernicus.org/articles/XLIX-B1-2026/553/2026/isprs-archives-XLIX-B1-2026-553-2026.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-07-22'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlix-b1-2026-553-2026
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLIX-B1-2026/553/2026/isprs-archives-XLIX-B1-2026-553-2026.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlix-b1-2026-553-2026 openalex:W7170075412
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1371-journal-pone-0352787-12e66938
+    title: Modelling and simulation of smart city drainage system based on digital twin
+      five-dimensional models
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0352787&type=printable
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-07-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1371/journal.pone.0352787
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0352787&type=printable;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.1371/journal.pone.0352787 openalex:W7167805810
+    resolution: 'sim1: openalex location'
