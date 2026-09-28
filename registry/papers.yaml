@@ -120057,3 +120057,41 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2605.04751 openalex:W7160529669
     resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-archives-xlviii-4-w18-2025-bb41e08d
+    title: 'Metaverse-Enabled Digital Twins for Business and Smart Cities: Toward A
+      Human-Centered Framework for Digital Transformation'
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-4-W18-2025/273/2026/isprs-archives-XLVIII-4-W18-2025-273-2026.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-01-27'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-4-w18-2025-273-2026
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-4-W18-2025/273/2026/isprs-archives-XLVIII-4-W18-2025-273-2026.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-4-w18-2025-273-2026 openalex:W7126046836
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-archives-xlviii-4-w17-2025-6a044472
+    title: 'Optimizing 3D Urban Modelling: Integrating Land Lot and Building Footprint
+      Geometries in Dual-Iteration Morphometric Algorithms'
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-4-W17-2025/331/2026/isprs-archives-XLVIII-4-W17-2025-331-2026.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-01-15'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-4-w17-2025-331-2026
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-4-W17-2025/331/2026/isprs-archives-XLVIII-4-W17-2025-331-2026.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-4-w17-2025-331-2026 openalex:W7124264300
+    resolution: 'sim1: openalex location'
