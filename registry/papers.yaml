@@ -120374,3 +120374,37 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/isprs-annals-x-4-2024-287-2024 openalex:W4403522214
     resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2608-23653-f3a9c60a
+    title: 'Beyond Executable Models: The Pufibara Agent Harness and the Modelica Agent
+      Workflow Benchmark for Physical System Modeling'
+    url: https://arxiv.org/pdf/2608.23653
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    published_at: '2026-08-24'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2608.23653
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2608.23653; version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2608.23653 openalex:W7204222353
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2608-08691-ec6afb6d
+    title: 'EnergyBridge: Benchmarking Household Energy Management, User Participation,
+      and Grid Flexibility'
+    url: https://arxiv.org/pdf/2608.08691
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    published_at: '2026-08-09'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2608.08691
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2608.08691; version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2608.08691 openalex:W7202192590
+    resolution: 'sim1: openalex location'
