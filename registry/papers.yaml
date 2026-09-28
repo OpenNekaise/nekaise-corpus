@@ -120095,3 +120095,22 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/isprs-archives-xlviii-4-w17-2025-331-2026 openalex:W7124264300
     resolution: 'sim1: openalex location'
+  - id: oas-10-5194-isprs-archives-xlviii-1-w6-2025-f327ca0b
+    title: Investigations on the Geometric Accuracy of the NavVis VLX 2 and VLX 3 Systems
+      for the Use in Indoor Applications
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-1-W6-2025/107/2025/isprs-archives-XLVIII-1-W6-2025-107-2025.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-12-31'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-1-w6-2025-107-2025
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-1-W6-2025/107/2025/isprs-archives-XLVIII-1-W6-2025-107-2025.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-1-w6-2025-107-2025 openalex:W7117784558
+    resolution: 'sim1: openalex location'
