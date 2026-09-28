@@ -120569,3 +120569,38 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.3389/fpsyt.2025.1606075 openalex:W4416099189
     resolution: 'sim1: openalex location'
+  - id: oas-10-3389-fpsyg-2026-1664747-64d6a032
+    title: A quantum-cognitive approach to dynamic meaning construction
+    url: https://public-pages-files-2025.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1664747/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-03-18'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fpsyg.2026.1664747
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://public-pages-files-2025.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1664747/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fpsyg.2026.1664747 openalex:W7139078717
+    resolution: 'sim1: openalex location'
+  - id: oas-10-3389-fbuil-2026-1728896-f5f91f59
+    title: 'Development of EnergySkin: external wall temperature control for renovation'
+    url: https://public-pages-files-2025.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2026.1728896/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    published_at: '2026-02-18'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fbuil.2026.1728896
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://public-pages-files-2025.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2026.1728896/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fbuil.2026.1728896 openalex:W7130350190
+    resolution: 'sim1: openalex location'

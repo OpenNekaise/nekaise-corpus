@@ -21151,12 +21151,43 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-smet-liteflo-brochures-product-selector
-    title: 'SpecifiedBy (UK manufacturer documents): Smet_LiteFlo_Brochures_Product-Selector.pdf'
-    url: https://www.specifiedby.com/smet-building-products-ltd/smet-liteflo-lightweight-flowing-screed/Smet_LiteFlo_Brochures_Product-Selector.pdf
+  - id: vnd-specifiedby-easylationwall-brochure-technical-datasheet-issue-1-smet-building-products
+    title: 'SpecifiedBy (UK manufacturer documents): EasylationWall Brochure & Technical
+      Datasheet_Issue 1_Smet Building Products Ltd.pdf'
+    url: https://www.specifiedby.com/smet-building-products-ltd/easylationwall-external-wall-insulation-system-based-on-brick-slips/EasylationWall
+      Brochure & Technical Datasheet_Issue 1_Smet Building Products Ltd.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-smet-casea-bauprotec-flp-plus-technical-datasheet
+    title: 'SpecifiedBy (UK manufacturer documents): Smet_CASEA Bauprotec FLP Plus_Technical_Datasheet.pdf'
+    url: https://www.specifiedby.com/smet-building-products-ltd/casea-bauprotec-flp-plus-ultra-lightweight-fibre-render/Smet_CASEA
+      Bauprotec FLP Plus_Technical_Datasheet.pdf
     source: vendor_specifiedby
     license: open
     topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-classic-single-fd30-size-chart-technical-spec-2023-12d265f3
+    title: 'SpecifiedBy (UK manufacturer documents): classic-single-fd30-size-chart-technical-spec-2023_12d265f3.pdf'
+    url: https://www.specifiedby.com/eclisse/single-fire-rated-pocket-door-system/classic-single-fd30-size-chart-technical-spec-2023_12d265f3.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
     format: pdf
     language: en
     document_type: product-literature

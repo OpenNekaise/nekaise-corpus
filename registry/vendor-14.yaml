@@ -21193,12 +21193,43 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-smet-onexit-universal-brochures-product-selector
-    title: 'SpecifiedBy (UK manufacturer documents): Smet_Onexit-Universal_Brochures_Product-Selector.pdf'
-    url: https://www.specifiedby.com/smet-building-products-ltd/morcemdur-r-lightweight-one-coat-render/Smet_Onexit-Universal_Brochures_Product-Selector.pdf
+  - id: vnd-specifiedby-tds-sopro-epf-594-two-component-epoxy-paving-grout
+    title: 'SpecifiedBy (UK manufacturer documents): TDS Sopro EPF 594 Two Component
+      Epoxy Paving Grout.pdf'
+    url: https://www.specifiedby.com/smet-building-products-ltd/streetscape-sopro-epf-594-two-component-epoxy-paving-grout/TDS
+      Sopro EPF 594 Two Component Epoxy Paving Grout.pdf
     source: vendor_specifiedby
     license: open
     topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-boon-edam-tourniket-instructions
+    title: 'SpecifiedBy (UK manufacturer documents): Boon-Edam_Tourniket_Instructions.pdf
+      (tourniket revolving doors — Boon Edam Tourniket Instructions)'
+    url: https://www.specifiedby.com/boon-edam-ltd/tourniket-revolving-doors/Boon-Edam_Tourniket_Instructions.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-boon-edam-tournex-operations-instructions
+    title: 'SpecifiedBy (UK manufacturer documents): Boon-Edam_Tournex_Operations_Instructions.pdf'
+    url: https://www.specifiedby.com/boon-edam-ltd/tournex-revolving-doors/Boon-Edam_Tournex_Operations_Instructions.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
     format: pdf
     language: en
     document_type: product-literature
