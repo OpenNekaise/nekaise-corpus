@@ -120660,3 +120660,40 @@ sources:
     selected_version: acceptedVersion
     origin_ids: doi:10.5194/egusphere-2026-3604 openalex:W7168267449
     resolution: 'sim1: openalex location'
+  - id: ope-microclimatic-buffering-by-front-yard-vegetati
+    title: 'Microclimatic Buffering by Front‐Yard Vegetation: Simulation‐Based Assessment
+      of Near‐Façade Environmental Modulation in Urban Houses'
+    url: https://vuir.vu.edu.au/50103/1/INA6002561.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1155/ina/6002561
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://vuir.vu.edu.au/50103/1/INA6002561.pdf; version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1155/ina/6002561 openalex:W7154727926
+    resolution: 'legacy: openalex location'
+  - id: ope-the-role-of-private-outdoor-greenery-in-enhanc
+    title: 'The Role of Private Outdoor Greenery in Enhancing Indoor Air Quality, Thermal
+      Comfort and Energy Efficiency: A Critical Review'
+    url: https://vuir.vu.edu.au/50128/1/Indoor%20Air%20-%202026%20-%20Shishebori%20-%20The%20Role%20of%20Private%20Outdoor%20Greenery%20in%20Enhancing%20Indoor%20Air%20Quality%20%20Thermal%20Comfort%20and.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1155/ina/7318020
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://vuir.vu.edu.au/50128/1/Indoor%20Air%20-%202026%20-%20Shishebori%20-%20The%20Role%20of%20Private%20Outdoor%20Greenery%20in%20Enhancing%20Indoor%20Air%20Quality%20%20Thermal%20Comfort%20and.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1155/ina/7318020 openalex:W7165575741
+    resolution: 'legacy: openalex location'
