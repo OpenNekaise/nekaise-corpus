@@ -120515,3 +120515,21 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2403.05864 openalex:W4392737006
     resolution: 'ai1: openalex location'
+  - id: oas-10-1002-advs-202511691-e444ed43
+    title: A Modern Roman‐Inspired Concrete with Daytime Radiative Cooling Capacity
+    url: https://lirias.kuleuven.be/retrieve/5ab68c0e-3ca6-411f-a0b5-2386ee402f99
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-09-12'
+    document_type: article
+    persistent_id: https://doi.org/10.1002/advs.202511691
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://lirias.kuleuven.be/retrieve/5ab68c0e-3ca6-411f-a0b5-2386ee402f99;
+      version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1002/advs.202511691 openalex:W4414162660
+    resolution: 'sim1: openalex location'
