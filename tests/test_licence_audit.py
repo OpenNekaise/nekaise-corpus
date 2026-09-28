@@ -661,6 +661,10 @@ def test_openalex_conflicting_license_and_license_id_is_unverified():
 
 @pytest.mark.parametrize("factory", STORES, ids=lambda f: f.__name__)
 def test_pointer_transition_is_prepared_not_run(factory, tmp_path):
+    import requests
+    import robots_policy
+
+    robots_policy.clear_memory()
     root = tmp_path / "repo"
     st = audit_store(factory, root)
     ptr = [{**pipeline_repo.entry_of(mrow("ashrae-a", url="https://ashrae.example/a.pdf")),
@@ -675,15 +679,19 @@ def test_pointer_transition_is_prepared_not_run(factory, tmp_path):
                                         log=logs.append) == 0
     assert any("2 unprobed candidates" in line for line in logs)
 
-    class R:
-        def __init__(self, url, status, ctype, body=b""):
-            self.url, self.status_code, self.content = url, status, body
-            self.headers = {"Content-Type": ctype}
-
     def route(url, params):
-        if url.endswith("a.pdf"):
-            return R(url, 206, "application/pdf", b"%PDF-1.4")
-        return R("https://ashrae.example/login?next=b", 200, "text/html")
+        r = requests.Response()
+        r.url, r.status_code = url, 200
+        r._content, r._content_consumed = b"", True
+        if url.endswith("robots.txt"):
+            r._content = b"User-agent: *\nAllow: /\n"
+        elif url.endswith("a.pdf"):
+            r.status_code, r._content = 206, b"%PDF-1.4"
+            r.headers["Content-Type"] = "application/pdf"
+        else:
+            r.status_code = 302
+            r.headers["Location"] = "/login?next=b"
+        return r
 
     http, _ = throttle(route)
     http.session.get = lambda url, params=None, timeout=None, **kw: route(url, params)

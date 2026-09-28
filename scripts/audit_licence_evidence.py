@@ -87,9 +87,10 @@ import time
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Iterable
-from urllib.parse import unquote, urlparse
+from urllib.parse import unquote, urljoin, urlparse
 
 import licenses
+import host_policy
 import ops
 import registry
 import store
@@ -1235,17 +1236,117 @@ def run_apply(root: Path, out_dir: Path, *, apply: bool, operator_decision: str 
 
 # --- phase 2, prepared only: proprietary pointers with public bytes -----------------------------
 
+def _pointer_refusal(entry: dict, restrictions: dict, policy: dict, urls=()) -> str | None:
+    # Exempt only the reviewed pointer hold being evaluated, never another matching rule
+    # (even another licence selector). Ask the SAME predicates as the loader, for both the
+    # current row and its proposed class: neither classification may bypass an access hold.
+    independent = {name: rule for name, rule in restrictions.items()
+                   if not (name == "proprietary_internal_pointers"
+                           and rule["match"] == {"license": "proprietary-internal"})}
+    if not registry.is_collection_eligible(entry, independent) or not \
+            registry.is_collection_eligible({**entry, "license": "proprietary"}, restrictions):
+        return "collection denied by eligibility policy"
+    for url in (entry.get("url"), *urls):
+        if host_policy.suspended(url, policy):
+            return f"fetch-suspended host {host_policy.canonical_host(url)}"
+    return None
+
+
+class PointerProbe:
+    """One bounded, serial client for the whole pass, including robots and redirect requests.
+
+    Reuse the loader's host delays/caps and robots parser. The injected transport also serves
+    robots, so policy tests cannot accidentally reach the network through a second client.
+    """
+
+    def __init__(self, http, restrictions, policy, vendors):
+        import build_corpus
+        import find_vendor
+
+        self.http, self.restrictions, self.policy, self.vendors = http, restrictions, policy, vendors
+        self.delays = dict(build_corpus.HOST_DELAY)
+        for host, delay in find_vendor.host_delays(vendors).items():
+            host = host_policy.canonical_host(host)
+            self.delays[host] = max(self.delays.get(host, 0), delay)
+        self.caps = build_corpus.HOST_RUN_CAP
+        self.counts = Counter()
+        self.urls: list[str] = []
+
+    def vendor_exception(self, entry, url):
+        host = host_policy.canonical_host(url)
+        for cfg in self.vendors.values():
+            if cfg.get("source") != entry.get("source") or not cfg.get("enabled", True):
+                continue
+            routes = [*(cfg.get("hosts") or []), *(cfg.get("sitemaps") or []),
+                      *(cfg.get("index_urls") or []), cfg.get("index_url_template"),
+                      cfg.get("api_url_template")]
+            # Exact configured delivery hosts only: no exception follows an arbitrary CDN.
+            if host and host in {host_policy.canonical_host(u) for u in routes if u}:
+                return True
+        return False
+
+    def get(self, entry, url, *, robots=False):
+        import build_corpus
+        import requests
+        import robots_policy
+        import stream_guard
+
+        hop = url
+        for _ in range(robots_policy.MAX_REDIRECTS + 1):
+            hop = requests.Request("GET", hop).prepare().url
+            if urlparse(hop).scheme not in ("https", "http"):
+                raise ValueError("unsupported URL scheme")
+            if why := _pointer_refusal(entry, self.restrictions, self.policy, (hop,)):
+                raise ValueError(why)
+            if re.search(r"login|signin|sign-in|checkout|cart|account", hop, re.I):
+                raise ValueError("login or checkout route")
+            key = build_corpus.pace_key(host_policy.canonical_host(hop))
+            cap = self.caps.get(key)
+            if cap is not None and self.counts[key] >= cap:
+                raise ValueError(f"host request cap reached: {key}")
+            if not robots:
+                def fetch_robots(robots_url):
+                    status, _headers, body, _url = self.get(entry, robots_url, robots=True)
+                    return status, body
+                ok, delay = robots_policy.decision(hop, fetcher=fetch_robots)
+                if not ok and not self.vendor_exception(entry, hop):
+                    raise ValueError("robots.txt disallows URL")
+                self.delays[key] = max(self.delays.get(key, 0), float(delay or 0))
+                if cap is not None and self.counts[key] >= cap:
+                    raise ValueError(f"host request cap reached: {key}")
+            # A shared conservative clock: delays learned on any host apply to later requests,
+            # including robots and the next candidate. Serial requests respect concurrency caps.
+            self.http.interval = max(self.http.interval, self.delays.get(key, 0))
+            self.counts[key] += 1
+            self.urls.append(hop)
+            with stream_guard.Deadline(time.monotonic() + 60, hop) as guard:
+                r = self.http.get(hop, headers={} if robots else {"Range": "bytes=0-1023"},
+                                  allow_redirects=False, stream=True)
+                try:
+                    if r.status_code in robots_policy.REDIRECTS and r.headers.get("Location"):
+                        hop = urljoin(hop, r.headers["Location"])
+                        continue
+                    body = stream_guard.read_body(
+                        r, max_bytes=robots_policy.MAX_ROBOTS_BYTES if robots else 1024,
+                        prefix=None if robots else 1024, guard=guard)
+                    return r.status_code, r.headers, body, hop
+                finally:
+                    r.close()
+        raise ValueError("too many redirects")
+
+
 def run_pointer_transition(root: Path, *, probe: bool, apply: bool, timeout: float = 60,
                            http=None, log=print, st=None) -> int:
     """proprietary-internal pointers -> `proprietary` (collected, classified) when their URL
     serves public bytes. Without --probe nothing is requested: rows are only listed as
-    candidates (a direct PDF URL) or pointers. --probe asks each candidate once (HEAD, then a
-    ranged GET) with the loader's honest identity: HTTP 200 and a PDF content type without a
-    redirect to a login or checkout page. Logins, paywalls, challenges and catalogue pages stay
-    pointers. --apply re-tags the proven rows with the probe as evidence (phase 2)."""
+    candidates (a direct PDF URL) or pointers. --probe uses a bounded ranged GET with an honest
+    identity, policy/robots checks before every hop, and one pacer for the pass. Logins, paywalls,
+    challenges and catalogue pages stay pointers. --apply rechecks policy and row identity
+    before re-tagging the proven rows with the probe as evidence (phase 2)."""
     st = st if st is not None else store.open(root=root)
     with st.read(timeout=timeout) as view:
-        restrictions, _ = store.pinned_policy(view)
+        restrictions, policy = store.pinned_policy(view)
+        vendors = view.config_get().documents.get("vendors.json", {}).get("vendors", {})
         pointers = []
         cursor = None
         while True:
@@ -1254,14 +1355,19 @@ def run_pointer_transition(root: Path, *, probe: bool, apply: bool, timeout: flo
             pointers += page.rows
             if (cursor := page.next_cursor) is None:
                 break
-    plan = []
+    client = PointerProbe(http or Throttle(ARXIV_MIN_INTERVAL), restrictions, policy, vendors)
+    plan, checked = [], {}
     for e in pointers:
         url = e.get("url") or ""
         direct = e.get("format") == "pdf" or urlparse(url).path.lower().endswith(".pdf")
         outcome = "candidate" if direct else "pointer: not a direct full-text URL"
         evidence = None
-        if direct and probe:
-            outcome, evidence = _probe_public(http or Throttle(ARXIV_MIN_INTERVAL), url)
+        if why := _pointer_refusal(e, restrictions, policy):
+            outcome = f"pointer: {why}"
+        elif direct and probe:
+            client.urls = []
+            outcome, evidence = _probe_public(client, e)
+            checked[e["id"]] = list(client.urls)
         plan.append((e, outcome, evidence))
     for e, outcome, _ev in plan:
         log(f"{e['id']}: {outcome} ({e.get('url')})")
@@ -1273,13 +1379,20 @@ def run_pointer_transition(root: Path, *, probe: bool, apply: bool, timeout: flo
         return 0
 
     def body(view, batch):
+        current_restrictions, current_policy = store.pinned_policy(view)
+        current_vendors = view.config_get().documents.get("vendors.json", {}).get("vendors", {})
         entries = view.get_entries(e["id"] for e, _ in proven)
         rows = view.get_manifest(e["id"] for e, _ in proven)
         today = now_iso()
         new = []
         for e, ev in proven:
             cur = entries.get(e["id"])
-            if cur is None or cur.get("license") != "proprietary-internal":
+            if cur != e or current_vendors != vendors:
+                log(f"{e['id']}: stale probe; entry or vendor configuration changed")
+                continue
+            if why := _pointer_refusal(cur, current_restrictions, current_policy,
+                                       checked[e["id"]]):
+                log(f"{e['id']}: application refused: {why}")
                 continue
             new.append({**cur, "license": "proprietary", "license_evidence": ev,
                         "rights_verified_at": today[:10]})
@@ -1295,23 +1408,19 @@ def run_pointer_transition(root: Path, *, probe: bool, apply: bool, timeout: flo
     return 0
 
 
-def _probe_public(http, url: str) -> tuple[str, str | None]:
+def _probe_public(client: PointerProbe, entry: dict) -> tuple[str, str | None]:
     """('public-bytes', evidence) or ('pointer: <why>', None) for one URL."""
     try:
-        r = http.get(url, headers={"Range": "bytes=0-1023"}, allow_redirects=True)
+        status, headers, body, final = client.get(entry, entry["url"])
     except Exception as exc:   # an unreachable URL stays a pointer
-        return f"pointer: unreachable ({type(exc).__name__})", None
-    final = getattr(r, "url", url) or url
-    ctype = (r.headers.get("Content-Type") or "").lower()
-    body = getattr(r, "content", b"") or b""
-    if r.status_code not in (200, 206):
-        return f"pointer: HTTP {r.status_code}", None
-    if re.search(r"login|signin|sign-in|checkout|cart|account", final, re.I):
-        return "pointer: redirected to a login or checkout page", None
-    if "pdf" not in ctype and not body.startswith(b"%PDF"):
+        return f"pointer: probe refused/unavailable ({type(exc).__name__}: {exc})", None
+    ctype = (headers.get("Content-Type") or "").lower()
+    if status not in (200, 206):
+        return f"pointer: HTTP {status}", None
+    if not body.startswith(b"%PDF-"):
         return f"pointer: not a PDF ({ctype or 'no content type'})", None
     return "public-bytes", (f"public PDF served without login at {final} (HTTP "
-                            f"{r.status_code}, {ctype or 'PDF magic'}), probed {now_iso()}")
+                            f"{status}, {ctype or 'PDF magic'}), probed {now_iso()}")
 
 
 # --- CLI -----------------------------------------------------------------------------------------
