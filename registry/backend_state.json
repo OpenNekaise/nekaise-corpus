@@ -1,4 +1,8 @@
 {
+  "find_ibpsa": {
+    "enabled": false,
+    "reason": "exhausted: all 76 IBPSA (conf, year) listings walked"
+  },
   "find_kitopen": {
     "enabled": false,
     "reason": "exhausted: KITopen set ddc:720 fully harvested"
