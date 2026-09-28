@@ -120040,3 +120040,20 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.1371/journal.pone.0352787 openalex:W7167805810
     resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2605-04751-896730db
+    title: 'Sequential Monte Carlo for Resilient Networks: Assessment, Mitigation, and
+      Generative Modeling'
+    url: https://arxiv.org/pdf/2605.04751
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    published_at: '2026-05-06'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2605.04751
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2605.04751; version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2605.04751 openalex:W7160529669
+    resolution: 'sim1: openalex location'
