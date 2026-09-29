@@ -120844,3 +120844,56 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1175/jcli-d-25-0262.1 openalex:W4417085557
     resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2309-04568-0d5c4a8f
+    title: Circular economy meets building automation
+    url: https://arxiv.org/pdf/2309.04568
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-09-08'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2309.04568
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2309.04568; version submittedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2309.04568 openalex:W4386644382
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2308-00808-f4bf5734
+    title: 'Towards Climate Neutrality: A Comprehensive Overview of Sustainable Operations
+      Management, Optimization, and Wastewater Treatment Strategies'
+    url: https://arxiv.org/pdf/2308.00808
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-08-01'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2308.00808
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2308.00808; version submittedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2308.00808 openalex:W4385965183
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2307-08794-64a2a3dc
+    title: Non-Stationary Policy Learning for Multi-Timescale Multi-Agent Reinforcement
+      Learning
+    url: https://arxiv.org/pdf/2307.08794
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-07-17'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2307.08794
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2307.08794; version submittedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2307.08794 openalex:W4384807721
+    resolution: 'ai1: openalex location'
