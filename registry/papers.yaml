@@ -121064,3 +121064,76 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/acp-12-10387-2012 openalex:W2096882168
     resolution: 'sim1: openalex location'
+  - id: ope-fatigue-performance-simulation-of-reinforced-c
+    title: Fatigue performance simulation of reinforced concrete beams externally strengthened
+      with side bonded CFRP sheets
+    url: https://vuir.vu.edu.au/49047/1/Fatigue%20performance%20simulation%20of%20reinforced%20concrete%20beams%20externally%20strengthened%20with%20side%20bonded%20CFRP%20sheets.pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-07-04'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.engstruct.2024.118530
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://vuir.vu.edu.au/49047/1/Fatigue%20performance%20simulation%20of%20reinforced%20concrete%20beams%20externally%20strengthened%20with%20side%20bonded%20CFRP%20sheets.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.engstruct.2024.118530 openalex:W4400311192
+    resolution: 'legacy: openalex location'
+  - id: ope-development-and-implementation-of-shear-wall-f
+    title: Development and implementation of shear wall finite element in OpenSees
+    url: https://vuir.vu.edu.au/48290/1/Development_and_implementation_of_shear_wall.pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-02-20'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.engstruct.2024.117639
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://vuir.vu.edu.au/48290/1/Development_and_implementation_of_shear_wall.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.engstruct.2024.117639 openalex:W4391979254
+    resolution: 'legacy: openalex location'
+  - id: ope-frp-rc-beams-by-collected-test-data-comparison
+    title: 'FRP RC beams by collected test data: Comparison with design standard, parameter
+      sensitivity, and reliability analyses'
+    url: http://bura.brunel.ac.uk/bitstream/2438/28225/1/FullText.pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-10-03'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.engstruct.2023.116933
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy http://bura.brunel.ac.uk/bitstream/2438/28225/1/FullText.pdf; version submittedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.engstruct.2023.116933 openalex:W4387321278
+    resolution: 'legacy: openalex location'
+  - id: ope-flexural-performance-of-rc-beams-strengthened-
+    title: Flexural Performance of RC Beams Strengthened with Externally-Side Bonded
+      Reinforcement (E-SBR) Technique Using CFRP Composites
+    url: https://eprints.qut.edu.au/211541/1/87290737.pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-05-25'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/ma14112809
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://eprints.qut.edu.au/211541/1/87290737.pdf; version submittedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/ma14112809 openalex:W3164529023
+    resolution: 'legacy: openalex location'
