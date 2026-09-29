@@ -120897,3 +120897,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2307.08794 openalex:W4384807721
     resolution: 'ai1: openalex location'
+  - id: oas-10-5194-gmd-16-4551-2023-53c855db
+    title: 'Simulating heat and CO 2 fluxes in Beijing using SUEWS V2020b: sensitivity
+      to vegetation phenology and maximum conductance'
+    url: https://gmd.copernicus.org/articles/16/4551/2023/gmd-16-4551-2023.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-08-10'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/gmd-16-4551-2023
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://gmd.copernicus.org/articles/16/4551/2023/gmd-16-4551-2023.pdf; version
+      publishedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/gmd-16-4551-2023 openalex:W4385896645
+    resolution: 'sim1: openalex location'
