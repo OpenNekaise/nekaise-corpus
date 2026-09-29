@@ -121137,3 +121137,41 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.3390/ma14112809 openalex:W3164529023
     resolution: 'legacy: openalex location'
+  - id: ope-anchor-geotechnics-for-floating-offshore-wind-
+    title: 'Anchor geotechnics for floating offshore wind: Current technologies and
+      future innovations'
+    url: https://discovery.dundee.ac.uk/ws/files/102180255/1_s2.0_S0029801823007114_main.pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-05-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.oceaneng.2023.114327
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.dundee.ac.uk/ws/files/102180255/1_s2.0_S0029801823007114_main.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.oceaneng.2023.114327 openalex:W4368339574
+    resolution: 'legacy: openalex location'
+  - id: ope-a-state-of-the-art-review-on-the-application-o
+    title: A state-of-the-art review on the application of auxetic materials in cementitious
+      composites
+    url: https://www.repository.cam.ac.uk/bitstreams/85e3410d-2a23-4b58-9ed9-b3b6713c9e6a/download
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-01-03'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.tws.2023.111447
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.repository.cam.ac.uk/bitstreams/85e3410d-2a23-4b58-9ed9-b3b6713c9e6a/download;
+      version submittedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.tws.2023.111447 openalex:W4390569811
+    resolution: 'legacy: openalex location'
