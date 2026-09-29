@@ -120716,3 +120716,39 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.3390/en13195229 openalex:W3092206126
     resolution: 'legacy: openalex location'
+  - id: oas-w7160726645
+    title: 'Compound effects of traffic and climate on electric vehicle HVAC energy
+      consumption: a spatiotemporal framework with city-level attribution'
+    url: https://arxiv.org/pdf/2605.05919
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    published_at: '2026-05-07'
+    document_type: preprint
+    persistent_id: https://openalex.org/W7160726645
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2605.05919; version submittedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7160726645
+    resolution: 'sim1: openalex location'
+  - id: oas-10-3389-frsc-2026-1835029-c888ee0c
+    title: 'Urban economics for sustainable transitions: grand challenges in urban structure,
+      the urban–rural gradient and city systems'
+    url: https://public-pages-files-2025.frontiersin.org/journals/sustainable-cities/articles/10.3389/frsc.2026.1835029/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-04-22'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/frsc.2026.1835029
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://public-pages-files-2025.frontiersin.org/journals/sustainable-cities/articles/10.3389/frsc.2026.1835029/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/frsc.2026.1835029 openalex:W7155202183
+    resolution: 'sim1: openalex location'
