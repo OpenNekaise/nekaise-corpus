@@ -121010,3 +121010,38 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/acp-11-10407-2011 openalex:W2158187328
     resolution: 'legacy: openalex location'
+  - id: oas-10-48550-arxiv-2506-03024-2dfde37e
+    title: 'GenFair: Systematic Test Generation for Fairness Fault Detection in Large
+      Language Models'
+    url: https://arxiv.org/pdf/2506.03024
+    source: openalex_ai
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2025-06-03'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2506.03024
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2506.03024; version submittedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2506.03024 openalex:W4415135863
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2504-05946-01207a45
+    title: 'InstructMPC: A Human-LLM-in-the-Loop Framework for Context-Aware Control'
+    url: https://arxiv.org/pdf/2504.05946
+    source: openalex_ai
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2025-04-08'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2504.05946
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2504.05946; version submittedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2504.05946 openalex:W4416530096
+    resolution: 'ai1: openalex location'
