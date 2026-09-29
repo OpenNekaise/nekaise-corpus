@@ -50704,3 +50704,41 @@ sources:
       Cellar item https://publications.europa.eu/resource/cellar/dc3cfdf8-778e-11ee-99ba-01aa75ed71a1.0024.03/DOC_1'
     rights_verified_at: '2026-09-25'
     resolution: cellar seed=32023L2413 rel=seed item=DOC_1
+  - id: eur-01998l0070-20231120-de
+    title: Richtlinie 98/70/EG des Europäischen Parlaments und des Rates vom 13. Oktober
+      1998 über die Qualität von Otto- und Dieselkraftstoffen und zur Änderung der Richtlinie
+      93/12/EWG des Rates [01998L0070-20231120, de]
+    url: https://publications.europa.eu/resource/cellar/dbea39ae-8e12-11ee-8aa6-01aa75ed71a1.0005.02/DOC_1
+    source: eurlex
+    license: cc-by
+    topic: building_energy
+    format: html
+    language: de
+    jurisdiction: EU
+    document_type: consolidated-act
+    persistent_id: celex:01998L0070-20231120
+    license_url: https://eur-lex.europa.eu/content/legal-notice/legal-notice.html
+    license_evidence: 'EUR-Lex legal notice: consolidated texts are licensed under Creative
+      Commons Attribution 4.0 (CC BY 4.0); copy served by the Publications Office Cellar
+      item https://publications.europa.eu/resource/cellar/dbea39ae-8e12-11ee-8aa6-01aa75ed71a1.0005.02/DOC_1'
+    rights_verified_at: '2026-09-25'
+    resolution: cellar seed=32023L2413 rel=consolidates item=DOC_1
+  - id: eur-01998l0070-20231120-es
+    title: Directiva 98/70/CE del Parlamento Europeo y del Consejo, de 13 de octubre
+      de 1998, relativa a la calidad de la gasolina y el gasóleo y por la que se modifica
+      la Directiva 93/12/CEE del Consejo [01998L0070-20231120, es]
+    url: https://publications.europa.eu/resource/cellar/dbea39ae-8e12-11ee-8aa6-01aa75ed71a1.0008.02/DOC_1
+    source: eurlex
+    license: cc-by
+    topic: building_energy
+    format: html
+    language: es
+    jurisdiction: EU
+    document_type: consolidated-act
+    persistent_id: celex:01998L0070-20231120
+    license_url: https://eur-lex.europa.eu/content/legal-notice/legal-notice.html
+    license_evidence: 'EUR-Lex legal notice: consolidated texts are licensed under Creative
+      Commons Attribution 4.0 (CC BY 4.0); copy served by the Publications Office Cellar
+      item https://publications.europa.eu/resource/cellar/dbea39ae-8e12-11ee-8aa6-01aa75ed71a1.0008.02/DOC_1'
+    rights_verified_at: '2026-09-25'
+    resolution: cellar seed=32023L2413 rel=consolidates item=DOC_1
