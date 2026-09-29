@@ -120935,3 +120935,21 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.3389/fbuil.2026.1881793 openalex:W7170948909
     resolution: 'legacy: openalex location'
+  - id: oas-10-48550-arxiv-2307-02666-e0ce1318
+    title: 'Chiplet Cloud: Building AI Supercomputers for Serving Large Generative Language
+      Models'
+    url: https://arxiv.org/pdf/2307.02666
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-07-05'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2307.02666
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2307.02666; version submittedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2307.02666 openalex:W4383604504
+    resolution: 'sim1: openalex location'
