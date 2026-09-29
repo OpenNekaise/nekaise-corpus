@@ -12,17 +12,17 @@ locally and retain their original licenses.
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **1,618,855** |
+| **Documents** | **1,618,879** |
 | **Outside the default view** | **14,771** rows (collected and kept): policy-held 8,059 · restricted licence classes 6,712 |
-| **Collection (all use classes)** | **1,633,626** held originals · by class: open 1,618,855 · policy-held 8,059 · arxiv-nonexclusive 5,377 · nc-nd 596 · unverified 427 · nc 305 · publisher-oa 7 |
+| **Collection (all use classes)** | **1,633,650** held originals · by class: open 1,618,879 · policy-held 8,059 · arxiv-nonexclusive 5,377 · nc-nd 596 · unverified 427 · nc 305 · publisher-oa 7 |
 | **Raw originals** | **~763G** on disk, every class (PDF / HTML / source code) |
-| **Extracted text** | **~83G** on disk, every class (default view: ~80.238B chars, **≈20.060B tokens**) |
-| **Cleaned corpus** | **~78G** (~76.285B chars, **≈19.071B tokens**, ruleset-cleaned) |
+| **Extracted text** | **~83G** on disk, every class (default view: ~80.240B chars, **≈20.060B tokens**) |
+| **Cleaned corpus** | **~78G** (~76.286B chars, **≈19.072B tokens**, ruleset-cleaned) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): equipment_systems 534,403 · construction 431,128 · building_energy 219,814 · structures_civil 171,708 · materials 111,438 · infrastructure 75,367 · architecture 45,089 · standards_protocols 12,977 · controls_bas 10,504 · urban 6,022 · commissioning_fdd 405.
+**By topic** (a source gets one at registration): equipment_systems 534,403 · construction 431,128 · building_energy 219,814 · structures_civil 171,708 · materials 111,462 · infrastructure 75,367 · architecture 45,089 · standards_protocols 12,977 · controls_bas 10,504 · urban 6,022 · commissioning_fdd 405.
 
-**By license:** open 1,329,663 · public-domain 263,817 · cc-by-sa 1,853 · cc-by 23,465 · cc0 57.
+**By license:** open 1,329,663 · public-domain 263,817 · cc-by-sa 1,853 · cc-by 23,489 · cc0 57.
 <!-- STATS:END -->
 
 ## Quick start
