@@ -21438,12 +21438,28 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-603046100-istruzioni-kit-incastro-100-125-af-uk-fd059a99
-    title: 'SpecifiedBy (UK manufacturer documents): 603046100-istruzioni-kit-incastro-100-125-af-uk_fd059a99.pdf'
-    url: https://www.specifiedby.com/eclisse/classic-single-pocket-door-system/603046100-istruzioni-kit-incastro-100-125-af-uk_fd059a99.pdf
+  - id: vnd-specifiedby-20541ge-4ca266dd
+    title: 'SpecifiedBy (UK manufacturer documents): 20541ge_4ca266dd.pdf (protan blueproof
+      system — 20541ge 4ca266dd)'
+    url: https://www.specifiedby.com/protan-uk-ltd/protan-blueproof-system/20541ge_4ca266dd.pdf
     source: vendor_specifiedby
     license: open
-    topic: architecture
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-2561g-6e0e9a94
+    title: 'SpecifiedBy (UK manufacturer documents): 2561g_6e0e9a94.pdf (protan prefabricated
+      system mechanically fixed — 2561g 6e0e9a94)'
+    url: https://www.specifiedby.com/protan-uk-ltd/protan-prefabricated-system-mechanically-fixed/2561g_6e0e9a94.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
     format: pdf
     language: en
     document_type: product-literature
