@@ -120953,3 +120953,60 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2307.02666 openalex:W4383604504
     resolution: 'sim1: openalex location'
+  - id: ope-sustainable-assessment-of-concrete-repairs-thr
+    title: Sustainable Assessment of Concrete Repairs through Life Cycle Assessment
+      (LCA) and Life Cycle Cost Analysis (LCCA)
+    url: https://lirias.kuleuven.be/retrieve/742d01cc-47fc-42fc-9dd9-08ad659efde4
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2022-09-26'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/infrastructures7100128
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://lirias.kuleuven.be/retrieve/742d01cc-47fc-42fc-9dd9-08ad659efde4;
+      version submittedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/infrastructures7100128 openalex:W4297477504
+    resolution: 'legacy: openalex location'
+  - id: ope-a-holistic-sustainability-overview-of-hemp-as-
+    title: A holistic sustainability overview of hemp as building and highway construction
+      materials
+    url: https://research.tees.ac.uk/ws/files/80347624/Published_Version_Muhit_et_al_2024_.pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2024-03-29'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2024.111470
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://research.tees.ac.uk/ws/files/80347624/Published_Version_Muhit_et_al_2024_.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2024.111470 openalex:W4393320738
+    resolution: 'legacy: openalex location'
+  - id: ope-time-resolved-measurements-of-black-carbon-lig
+    title: Time-resolved measurements of black carbon light absorption enhancement in
+      urban and near-urban locations of southern Ontario, Canada
+    url: https://acp.copernicus.org/articles/11/10407/2011/acp-11-10407-2011.pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2011-10-20'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/acp-11-10407-2011
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://acp.copernicus.org/articles/11/10407/2011/acp-11-10407-2011.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/acp-11-10407-2011 openalex:W2158187328
+    resolution: 'legacy: openalex location'
