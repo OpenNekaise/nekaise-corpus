@@ -120807,3 +120807,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1002/2475-8876.70068 openalex:W7124605309
     resolution: 'sim1: openalex location'
+  - id: oas-10-3389-fsufs-2025-1707753-4411b53f
+    title: 'Hand in hand for urban food security: Feed4Food''s living labs and knowledge
+      hubs in European cities'
+    url: https://public-pages-files-2025.frontiersin.org/journals/sustainable-food-systems/articles/10.3389/fsufs.2025.1707753/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-11-24'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fsufs.2025.1707753
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://public-pages-files-2025.frontiersin.org/journals/sustainable-food-systems/articles/10.3389/fsufs.2025.1707753/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fsufs.2025.1707753 openalex:W4416607763
+    resolution: 'sim1: openalex location'
