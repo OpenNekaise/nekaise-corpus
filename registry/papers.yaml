@@ -120752,3 +120752,22 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.3389/frsc.2026.1835029 openalex:W7155202183
     resolution: 'sim1: openalex location'
+  - id: oas-10-3389-feart-2026-1787526-55d04fb3
+    title: 'Developed urban datasets for WRF-STILT: impacts on near-surface CO2 concentration
+      in urban functional zones'
+    url: https://public-pages-files-2025.frontiersin.org/journals/earth-science/articles/10.3389/feart.2026.1787526/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-03-26'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/feart.2026.1787526
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://public-pages-files-2025.frontiersin.org/journals/earth-science/articles/10.3389/feart.2026.1787526/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-09-29'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/feart.2026.1787526 openalex:W7140682901
+    resolution: 'sim1: openalex location'
