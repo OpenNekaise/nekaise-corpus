@@ -133,10 +133,15 @@ def compute_collection(view, restrictions: dict | None = None) -> CollectionStat
 def misplaced_view_claims(view, restrictions: dict) -> tuple[int, str | None]:
     """Manifest rows whose cleaned-payload claim is not in their own view — above all a
     restricted-use or policy-held row claiming the default corpus/ view: (count, first id)."""
+    # Exists tests JSON key presence, including the loader's corpus_path: null on a
+    # failed/unprocessed record. Only a nonempty path claims a cleaned payload. Do not
+    # filter by status: a failed row with a real misplaced path is still a violation.
+    claimed = And(Exists("corpus_path"), Not(Eq("corpus_path", None)),
+                  Not(Eq("corpus_path", "")))
     wrong = []
     for v in registry.VIEWS:
         root = registry.view_root(v) + "/"
-        wrong.append(And(store.view_where(v, restrictions), Exists("corpus_path"),
+        wrong.append(And(store.view_where(v, restrictions), claimed,
                          Not(Prefix("corpus_path", root))))
     where = Or(*wrong)
     count = sum(g["count"] for g in view.aggregate_manifest(group_by=(), where=where))

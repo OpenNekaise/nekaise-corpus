@@ -65,6 +65,60 @@ def test_restricted_rows_still_claiming_corpus_data(factory, tmp_path):
     assert (misplaced, first_misplaced) == (1, "pat-cn1")
 
 
+@pytest.mark.parametrize("factory", STORES, ids=lambda f: f.__name__)
+def test_empty_cleaned_paths_are_not_view_claims(factory, tmp_path, request):
+    """The loader's failed record has an explicit null, unlike an absent JSON field.
+
+    A transient download failure must remain reportable without aborting the round's
+    contracts gate; successful rows awaiting cleaning also make no path claim yet.
+    """
+    import build_corpus
+
+    st = factory(tmp_path / "repo")
+    if hasattr(st, "drop"):
+        request.addfinalizer(st.drop)
+    rows = []
+    restrictions = {"held": {"match": {"source": "held"}}}
+    for license, source in [("open", "test"), ("cc-by-nc", "test"), ("open", "held")]:
+        for status in ("ok", "failed"):
+            for state in ("missing", "null", "empty"):
+                row, _ = build_corpus._new_record(mrow(f"doc-{len(rows)}", license=license,
+                                                       source=source))
+                row["status"] = status
+                if state == "missing":
+                    row.pop("corpus_path")
+                elif state == "empty":
+                    row["corpus_path"] = ""
+                rows.append(row)
+    write(st, "rows", lambda tx: tx.upsert_manifest(rows))
+    with st.read() as v:
+        assert corpus_stats.misplaced_view_claims(v, restrictions) == (0, None)
+
+
+@pytest.mark.parametrize("factory", STORES, ids=lambda f: f.__name__)
+def test_nonempty_wrong_view_claims_fail_even_on_failed_rows(factory, tmp_path, request):
+    st = factory(tmp_path / "repo")
+    if hasattr(st, "drop"):
+        request.addfinalizer(st.drop)
+    restrictions = {"held": {"match": {"source": "held"}}}
+    rows, wrong = [], set()
+    for license, source in [("open", "test"), ("cc-by-nc", "test"), ("open", "held")]:
+        for status in ("ok", "failed"):
+            row = mrow(f"doc-{len(rows)}", license=license, source=source, status=status)
+            row["corpus_path"] = registry.corpus_path_for(row, restrictions)
+            rows.append(row)
+            bad = dict(row, id=f"doc-{len(rows)}")
+            bad["corpus_path"] = ("collection/nc/corpus/wrong.md" if license == "open"
+                                  and source == "test" else "corpus/wrong.md")
+            rows.append(bad)
+            wrong.add(bad["id"])
+    write(st, "rows", lambda tx: tx.upsert_manifest(rows))
+    with st.read() as v:
+        count, first = corpus_stats.misplaced_view_claims(v, restrictions)
+    assert count == len(wrong) == 6
+    assert first in wrong
+
+
 def test_local_unavailable_counts_only_eligible_rows(tmp_path, monkeypatch):
     import store
     from test_store_contract import file_store
