@@ -97,7 +97,7 @@ The part may start or end mid-sentence because the document continues in neighbo
 _LETTER = re.compile(r"[^\W\d_]")
 # A number token: optional sign (only where it cannot be a range dash), digits with separators,
 # optional exponent; an optional unit right after it.
-_NUMBER = re.compile(r"(\d+(?:[.,]\d+)*(?:[eE][-+]?\d+)?)")
+_NUMBER = re.compile(r"((?:\d+(?:[.,]\d+)*|(?<![\w.])\.\d+)(?:[eE][-+]?\d+)?)")  # '.5' keeps its point; 'No.6' is 6
 _UNIT = re.compile(r"\s?(%|‰|°[CF]?|(?:[kMGTmcμu]?(?:Pa|Wh|W|J|N|V|Hz|g|m|L))(?![A-Za-z])"
                    r"|(?:bar|psi|ppm|dB|Btu|BTU|cfm|rpm|kVA|MVA)(?![A-Za-z]))")
 # OCR reads digits as look-alike letters next to digits ('l957', '4l5', 'O.5'). Only l/I/O/o:
@@ -176,6 +176,10 @@ def number_problem(src: str, out: str) -> str | None:
             joined += S[j][1]
             j += 1
         if j - i >= 2 and joined == num and S[i][1].isdigit() and len(S[i][1]) <= 3:
+            if sign != S[i][0]:
+                return f"sign changed on {S[i][0]}{S[i][1]}"
+            if unit and S[j - 1][2] and unit != S[j - 1][2]:
+                return f"unit changed: {S[j - 1][2]} -> {unit}"
             i, k = j, k + 1
             continue
         # a glued run of >= 7 digits split into space-separated pieces
@@ -185,6 +189,12 @@ def number_problem(src: str, out: str) -> str | None:
                     and out_c[O[kk - 1][4]:O[kk][3]].strip() == "":
                 rest, kk = rest[len(O[kk][1]):], kk + 1
             if not rest:
+                if sign != s_sign:
+                    return f"sign changed on {s_sign}{s_num}"
+                if O[kk - 1][2] and s_unit and O[kk - 1][2] != s_unit:
+                    return f"unit changed: {s_unit} -> {O[kk - 1][2]}"
+                if any(O[m][0] for m in range(k + 1, kk)):
+                    return f"sign inserted inside the split of {s_num}"
                 i, k = i + 1, kk
                 continue
         # deleting numbers that stood only on running-header lines
@@ -206,14 +216,38 @@ def check(src: str, out: str) -> str | None:
     if out.strip() == DROP:
         if not garbage:
             return "dropped a part that holds readable content; repair it instead"
-        # a garbled part may still carry a readable table: its numbers must survive
-        return number_problem(src, "") and "dropped a part that holds numbers; repair it instead"
+        # a garbled part may still carry a readable table or line: every line must be garbage
+        if number_problem(src, ""):
+            return "dropped a part that holds numbers; repair it instead"
+        if readable := next((x for x in src.split("\n") if readable_line(x)), None):
+            return f"dropped a part with readable text ({readable.strip()[:60]!r}); repair it instead"
+    return None if out.strip() == DROP else _check_repair(src, out, garbage)
+
+
+def readable_line(line: str) -> bool:
+    """A line that holds real words: at least half of its words (2+ letters) are in the
+    dictionary, or it holds CJK (never judged by an English dictionary)."""
+    if _CJK.search(line):
+        return True
+    words = [w.lower() for w in re.findall(r"[A-Za-z]{2,}", line)]
+    known = v1_rules.english_words()
+    return bool(words) and sum(w in known or w.rstrip("s") in known for w in words) >= len(words) / 2
+
+
+def _check_repair(src: str, out: str, garbage: bool) -> str | None:
     if why := number_problem(src, out):
         return why
     if len(out) > 1.25 * len(src) + 200:
         return "output much longer than input"
     if not garbage and len(_LETTER.findall(out)) < 0.5 * len(_LETTER.findall(src)):
         return "output lost more than half of the text; keep all content"
+    if garbage:  # garbage may go, its readable lines may not: their words must survive
+        known = v1_rules.english_words()
+        kept = {w.lower() for w in re.findall(r"[A-Za-z]{2,}", out)}
+        words = [w.lower() for x in src.split("\n") if readable_line(x)
+                 for w in re.findall(r"[A-Za-z]{2,}", x) if w.lower() in known]
+        if words and sum(w in kept for w in words) < 0.8 * len(words):
+            return "output lost readable lines of a garbled part; keep them"
     return None
 
 

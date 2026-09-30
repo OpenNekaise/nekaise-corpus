@@ -111,6 +111,25 @@ def test_numbers_spread_by_blank_lines_are_not_page_numbers():
         assert v in out
 
 
+def test_labelled_values_a_few_sentences_apart_are_not_page_numbers():
+    lines = ["Measured temperatures:"]
+    for v in (20, 21, 22, 23):
+        lines += [str(v)] + ["The chamber was held at this temperature for one hour."] * 11
+    out = R.clean_body(lines, "")
+    for v in ("20", "21", "22", "23"):
+        assert v in out
+
+
+def test_repeated_table_rows_and_short_legends_kept():
+    doc = []
+    for fig in range(9):
+        doc += ["Real prose about the district and its public services, measured in 2021."] * 30 + \
+            ["Public Health Centre", "| C25/30 concrete | strength 25 | density 2400 |"]
+    out = R.drop_running_lines(doc)
+    assert out.count("Public Health Centre") == 9
+    assert out.count("| C25/30 concrete | strength 25 | density 2400 |") == 9
+
+
 def test_repeated_figure_legends_kept():
     doc = []
     for fig in range(9):

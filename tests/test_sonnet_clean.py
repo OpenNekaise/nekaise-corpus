@@ -41,6 +41,9 @@ def test_numbers_changes_rejected():
            ("1200 kPa", "1200 kPa and 1200 kPa"),                      # added duplicate
            ("设计压力为1200千帕。", "设计压力为千帕。"),                    # CJK prose
            ("tested in 19 57", "tested in 1957"),                      # not thousands grouping
+           ("-1 000 kPa", "+1000 Pa"), ("-1 000 kPa", "-1000 Pa"),     # through the join path
+           ("-1234567 kPa", "+1234 567 kPa"), ("1234567 kPa", "1234 567 Pa"),  # the split path
+           ("a gap of .5 mm", "a gap of 5 mm"),
            ("C25/30 25 2400\nC30/37 30 2400\nC35/45 35 2400", "")]  # a bare numeric table
     for src, out in bad:
         assert sc.number_problem(src, out), (src, out)
@@ -51,6 +54,9 @@ def test_check_rejects_dropping_or_gutting_readable_content():
     assert "dropped" in sc.check(table, sc.DROP)
     assert "half" in sc.check(PROSE, PROSE[:200])
     garbage = "the xqzt vbnm rtyu of wkpl and qxvz " * 40  # damage score well above 0.35
+    words_table = "Material | Use\nConcrete | Foundation\nSteel | Reinforcement"
+    assert sc.check(garbage + "\n" + words_table, sc.DROP)  # garbled text + a words-only table
+    assert sc.check(garbage + "\n" + words_table, "the " * 30)  # nor gutted by a 'repair'
     assert sc.check(garbage, sc.DROP) is None  # proven garbage may go
     assert sc.check("■■ rrrR.nafti««fc ¦¦ ~~", sc.DROP)  # too short to prove: kept
     short_table = "Concrete grade | strength | density\nC25/30 | 25 | 2400\nC30/37 | 30 | 2400"

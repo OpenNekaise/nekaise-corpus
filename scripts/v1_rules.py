@@ -24,7 +24,7 @@ import unicodedata
 from functools import lru_cache
 from pathlib import Path
 
-RULESET_VERSION = "r2"  # r2: numbers are never debris; page numbers need page evidence
+RULESET_VERSION = "r2"  # r2: numbers are never debris; page numbers and running lines need page evidence
 
 # ------------------------------------------------------------------------------------ pre-pass
 
@@ -154,11 +154,11 @@ _BARE_INT = re.compile(r"^\s*(?:[-–—]\s*)?(?:page\s+)?(\d{1,4})(?:\s*(?:of|/
 _LETTERS3 = re.compile(r"[^\W\d_]{3}")
 
 
-def page_number_lines(lines: list[str], min_gap: int = 12) -> set[int]:
-    """Indexes of page-number lines, by page-position evidence only: a bare number counts when
-    it continues a chain of numbers rising by 1-2 whose members stand at least `min_gap`
-    NON-BLANK lines apart (one per page; blank lines are no evidence of a page). A column of
-    values — even one spread out by blank lines — never forms such a chain."""
+def page_number_lines(lines: list[str], min_gap: int = 20) -> set[int]:
+    """Indexes of page-number lines, by page-position evidence only: >= 4 bare numbers rising by
+    1-2, each >= `min_gap` NON-BLANK lines after the previous (one per page; blank lines are no
+    evidence), at regular intervals (the longest gap <= 3x the shortest). A column of values —
+    spread out by blank lines, or labelled values a few sentences apart — never qualifies."""
     content_pos, k = [], 0
     for x in lines:
         content_pos.append(k)
@@ -169,7 +169,8 @@ def page_number_lines(lines: list[str], min_gap: int = 12) -> set[int]:
     chain: list[tuple[int, int]] = []
 
     def close():
-        if len(chain) >= 3:
+        gaps = [content_pos[b] - content_pos[a] for (a, _), (b, _) in zip(chain, chain[1:])]
+        if len(chain) >= 4 and max(gaps) <= 3 * min(gaps):
             pages.update(i for i, _ in chain)
 
     for i, v in cands:
@@ -187,24 +188,41 @@ def page_number_lines(lines: list[str], min_gap: int = 12) -> set[int]:
 
 def drop_running_lines(lines: list[str], min_repeats: int = 4) -> list[str]:
     """Running headers/footers and page numbers. Page numbers need page-position evidence
-    (page_number_lines). A running line must read like a header — >= 3 words, >= 12 characters,
-    holding letters (a repeated value like '0.5' or a one-word figure legend such as 'Nursery'
-    is content) — recur >= min_repeats times spread over the document and never back to back,
-    be short, and not be a sentence."""
+    (page_number_lines). A running line recurs >= min_repeats times, spread over the document
+    and never back to back, is short, holds words, is not a sentence and never a table row; and
+    it stands next to page numbers (within 3 content lines, in most occurrences) — or, where the
+    document has no page numbers left, reads like a header: >= 5 words, >= 25 characters.
+    A repeated figure legend ('Public Health Centre') or table row is content."""
     n = len(lines)
-    drop = page_number_lines(lines)
+    pages = page_number_lines(lines)
+    drop = set(pages)
     if n >= 200:
+        content = [i for i, x in enumerate(lines) if x.strip()]
+        rank = {i: r for r, i in enumerate(content)}
+        page_ranks = sorted(rank[i] for i in pages)
+
+        def near_page(i: int) -> bool:
+            r = rank[i]
+            return any(abs(r - p) <= 3 for p in page_ranks)
+
         pos: dict[str, list[int]] = {}
         for i, x in enumerate(lines):
             s = re.sub(r"\d+", "#", x.strip())  # 'Page 12' and 'Page 13' are one running line
-            if 12 <= len(s) <= 80 and len(s.split()) >= 3 and _LETTERS3.search(s) \
-                    and not _END_PUNCT.search(s):
+            if 2 < len(s) <= 80 and _LETTERS3.search(s) and not _END_PUNCT.search(s) \
+                    and not _TABLEISH.search(x):
                 pos.setdefault(s, []).append(i)
-        for where in pos.values():
-            if len(where) >= min_repeats:
-                gaps = [b - a for a, b in zip(where, where[1:])]
-                if (where[-1] - where[0]) / n > 0.3 and min(gaps) > 5:  # page after page
-                    drop.update(where)
+        for s, where in pos.items():
+            if len(where) < min_repeats:
+                continue
+            gaps = [b - a for a, b in zip(where, where[1:])]
+            if (where[-1] - where[0]) / n <= 0.3 or min(gaps) <= 5:
+                continue
+            if page_ranks:
+                header = sum(near_page(i) for i in where) >= 0.5 * len(where)
+            else:
+                header = len(s.split()) >= 5 and len(s) >= 25
+            if header:
+                drop.update(where)
     return [x for i, x in enumerate(lines) if i not in drop]
 
 

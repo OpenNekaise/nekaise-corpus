@@ -64,12 +64,14 @@ def test_targeted_rebuild_cannot_add_non_default_document(tmp_path, monkeypatch)
     monkeypatch.setattr(builder, "OUT", out)
     monkeypatch.setattr(builder, "REVISIONS", out / ".revisions")
     monkeypatch.setattr(builder, "DB", out / ".state.sqlite")
+    monkeypatch.setattr(builder, "LOCK_WORKSPACE", tmp_path / "workspace")
     (tmp_path / "text" / "held.md").write_text("# Held document\n\n---\nBuilding energy content.")
     builder.build(["held.md"], workers=1)
     assert not (out / "held.md").exists()
 
 
-def _gate_world(tmp_path, monkeypatch, *, diff_code=0, move_during_tests=False, verdict="MERGE AS IS"):
+def _gate_world(tmp_path, monkeypatch, *, diff_code=0, move_during_tests=False, verdict="MERGE AS IS",
+                base_code_changed=False):
     """A mocked repository for gate(): no process, repository or lock is touched."""
     calls, state = [], {"head": "a" * 40, "tests": 0}
 
@@ -85,6 +87,8 @@ def _gate_world(tmp_path, monkeypatch, *, diff_code=0, move_during_tests=False, 
 
     def fake_git(*args, **kwargs):
         calls.append(args)
+        if args[:2] == ("diff", "--quiet"):
+            return (1 if base_code_changed else 0), ""
         if args[0] == "diff":
             return diff_code, "diff --git a/x b/x\n+change\n"
         if args[0] == "rev-parse":
@@ -127,6 +131,7 @@ def _builder_world(tmp_path, monkeypatch):
     monkeypatch.setattr(builder, "OUT", out)
     monkeypatch.setattr(builder, "REVISIONS", out / ".revisions")
     monkeypatch.setattr(builder, "DB", out / ".state.sqlite")
+    monkeypatch.setattr(builder, "LOCK_WORKSPACE", tmp_path / "workspace")  # never the live lock
     return out
 
 
@@ -165,3 +170,24 @@ def test_repairs_validated_by_the_old_checks_are_not_trusted(tmp_path, monkeypat
         con.execute("INSERT OR REPLACE INTO revision VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     ("d.md", size, mtime, "0" * 64, "m", prompt, "ok", 1, 0, 0, 1, 1, "t"))
         assert ("d.md" in builder.valid_revisions(con)) is trusted
+
+
+def test_gate_requires_fresh_review_when_mains_code_changed(tmp_path, monkeypatch):
+    result, calls = _gate_world(tmp_path, monkeypatch, base_code_changed=True)
+    assert result["merged"] is False and not any(c[0] == "merge" for c in calls)
+
+
+def test_nothing_is_published_while_a_dig_round_holds_the_lock(tmp_path, monkeypatch):
+    out = _builder_world(tmp_path, monkeypatch)
+    (tmp_path / "text" / "d.md").write_text("# D\n\n---\nBuilding energy content.")
+    (tmp_path / "corpus" / "d.md").write_text("x")
+    with builder.ops.named_lock(builder.ops.ROUND_LOCK, workspace=tmp_path / "workspace"):
+        try:
+            builder.build(["d.md"], workers=1, lock_timeout=0)
+            raise AssertionError("build published while the round lock was held")
+        except RuntimeError:
+            pass
+        assert builder.rebuild_one(builder.connect(), "d.md") is False
+    assert not (out / "d.md").exists()
+    builder.build(["d.md"], workers=1, lock_timeout=0)  # lock free: published
+    assert (out / "d.md").exists()

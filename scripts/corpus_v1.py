@@ -38,6 +38,7 @@ import time
 import multiprocessing
 from pathlib import Path
 
+import ops
 import v1_rules
 
 HERE = Path(__file__).resolve().parents[1]
@@ -49,6 +50,14 @@ CORPUS = DATA / "corpus"
 OUT = DATA / "corpus_v1"
 REVISIONS = OUT / ".revisions"
 DB = OUT / ".state.sqlite"
+# corpus/ (the training view) only changes inside a dig round, under the corpus-round lock of
+# the data repo. Every corpus_v1/ publication holds the same lock, so membership cannot change
+# between the check and the write.
+LOCK_WORKSPACE = DATA / "workspace"
+
+
+def publication_lock(timeout: float):
+    return ops.named_lock(ops.ROUND_LOCK, timeout=timeout, workspace=LOCK_WORKSPACE)
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS build (
@@ -162,9 +171,19 @@ def remove(con, doc_id: str) -> None:
     con.commit()
 
 
-def rebuild_one(con, doc_id: str) -> None:
-    """Rebuild one file in-process (after a model repair), honouring its current revision.
-    A document that left the training view meanwhile is removed, never written."""
+def rebuild_one(con, doc_id: str) -> bool:
+    """Publish one file in-process after a model repair, if the round lock is free right now;
+    otherwise leave it — the stored repair differs from the file's build state, so the next
+    build publishes it. A document that left the training view is removed, never written."""
+    try:
+        with publication_lock(timeout=0):
+            _rebuild_one_locked(con, doc_id)
+        return True
+    except RuntimeError:  # a dig round holds the lock
+        return False
+
+
+def _rebuild_one_locked(con, doc_id: str) -> None:
     if not is_member(doc_id):
         remove(con, doc_id)
         return
@@ -176,7 +195,14 @@ def rebuild_one(con, doc_id: str) -> None:
     con.commit()
 
 
-def build(ids: list[str] | None, workers: int, deadline: float | None = None) -> dict:
+def build(ids: list[str] | None, workers: int, deadline: float | None = None,
+          lock_timeout: float = 3600) -> dict:
+    """Publish under the round lock (waiting up to lock_timeout for a running dig round)."""
+    with publication_lock(timeout=lock_timeout):
+        return _build_locked(ids, workers, deadline)
+
+
+def _build_locked(ids: list[str] | None, workers: int, deadline: float | None) -> dict:
     con = connect()
     t0 = time.time()
     live = {e.name for e in os.scandir(CORPUS) if e.name.endswith(".md")}
@@ -346,7 +372,12 @@ def main() -> int:
     if a.show:
         return show(a.sample or 10, a.seed)
     deadline = time.time() + a.max_seconds if a.max_seconds else None
-    print(json.dumps(build(a.ids, a.workers, deadline)))
+    try:
+        print(json.dumps(build(a.ids, a.workers, deadline,
+                               lock_timeout=a.max_seconds or 3600)))
+    except RuntimeError as e:  # the round lock stayed busy: nothing published, retry later
+        print(json.dumps({"built": 0, "error": str(e)}))
+        return 1
     return 0
 
 

@@ -50,6 +50,9 @@ SCHEMA = ROOT / "scripts" / "corpus_v1_review.schema.json"
 CLAUDE_MODEL = os.environ.get("CORPUS_V1_CLAUDE_MODEL", "claude-opus-5-5")
 TESTS = ["tests/test_v1_rules.py", "tests/test_sonnet_clean.py", "tests/test_corpus_v1_safety.py"]
 PATHS = [str(Path.home() / ".local/bin"), "/usr/local/bin", "/usr/bin", "/bin"]
+# What a gate review vouches for besides the patch itself: the code the patch runs with.
+CODE_PATHS = ["scripts", "tests", ".claude/skills/corpus-v1-night", "requirements.txt",
+              "requirements.lock"]
 
 
 def log(msg: str) -> None:
@@ -167,6 +170,10 @@ def gate(night: Path, branch: str, deadline: float) -> dict:
     code, diff = git("diff", f"main...{branch}", timeout=60)
     if code or not diff.strip():
         return {"merged": False, "why": f"cannot read the branch diff (git exit {code}): no review"}
+    code_b, review_base = git("rev-parse", "--verify", "main^{commit}")
+    if code_b:
+        return {"merged": False, "why": "cannot resolve main: no review"}
+    review_base = review_base.strip()
     audit = night / "audit" / "summary.json"
     prompt = (
         "You are the gate reviewer for a nightly change to corpus_v1, the cleaned training view of a "
@@ -212,6 +219,12 @@ def gate(night: Path, branch: str, deadline: float) -> dict:
             _, dirty = git("status", "--porcelain", "--untracked-files=no")
             if dirty:
                 return res | {"merged": False, "why": "main worktree not clean"}
+            # The review covered the patch AND the code it runs with. Dig commits (registry,
+            # manifest) may land meanwhile; a change to main's code may not: re-review first.
+            code, _ = git("diff", "--quiet", review_base, "main", "--", *CODE_PATHS)
+            if code != 0:
+                return res | {"merged": False, "why": "main's code changed since the review "
+                              "(or git failed): the branch carries over for a fresh review"}
             code, msg = git("rebase", "main", cwd=WORKTREE, timeout=300)
             if code:
                 git("rebase", "--abort", cwd=WORKTREE)
