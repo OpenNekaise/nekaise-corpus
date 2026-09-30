@@ -58,7 +58,7 @@ LOCK = HERE / "workspace" / ".sonnet-clean.lock"
 # Run the CLI outside the repo so no CLAUDE.md / project settings leak into the context.
 NEUTRAL_CWD = Path(tempfile.gettempdir()) / "nekaise-sonnet-clean"
 
-PROMPT_VERSION = "p2"
+PROMPT_VERSION = "p3"  # p3: checks rebuilt after the 2026-09-30 maintainer review; p2 repairs are redone
 CHUNK_CHARS = 16_000          # body characters per model call
 MAX_FILE_CHARS = 3_000_000    # larger files wait for a bigger budget (not truncated)
 CALL_TIMEOUT = 900
@@ -94,91 +94,108 @@ The part may start or end mid-sentence because the document continues in neighbo
 
 # ---------------------------------------------------------------- checks
 
-_DIGITS = re.compile(r"\d+")
-_OCR_DIGIT = str.maketrans({"l": "1", "I": "1", "|": "1", "O": "0", "o": "0", "S": "5", "B": "8"})
-_DIGITISH = re.compile(r"[0-9lI|OoSB]*\d[0-9lI|OoSB]*")
 _LETTER = re.compile(r"[^\W\d_]")
+# A number token: optional sign (only where it cannot be a range dash), digits with separators,
+# optional exponent; an optional unit right after it.
+_NUMBER = re.compile(r"(\d+(?:[.,]\d+)*(?:[eE][-+]?\d+)?)")
+_UNIT = re.compile(r"\s?(%|‰|°[CF]?|(?:[kMGTmcμu]?(?:Pa|Wh|W|J|N|V|Hz|g|m|L))(?![A-Za-z])"
+                   r"|(?:bar|psi|ppm|dB|Btu|BTU|cfm|rpm|kVA|MVA)(?![A-Za-z]))")
+# OCR reads digits as look-alike letters next to digits ('l957', '4l5', 'O.5'). Only l/I/O/o:
+# S and B are real ('S355' steel, 'B20' concrete).
+_OCR_EDGE = re.compile(r"(?<=\d)[lIOo]|[lIOo](?=\d)")
+_TABLE_ROW = re.compile(r"\|")
+_WORD3 = re.compile(r"[^\W\d_]{3}")
+_CJK = re.compile(r"[぀-ヿ㐀-鿿가-힯]")
 
 
-def number_runs(text: str, ocr: bool) -> list[tuple[str, int, int]]:
-    """(digits, start, end) of every number in text, NFKC-normalised; with ocr=True, OCR
-    look-alike letters inside numeric tokens ('l95O') read as digits."""
-    text = unicodedata.normalize("NFKC", text)
-    runs = []
-    for tok in (_DIGITISH if ocr else _DIGITS).finditer(text):
-        t = tok.group(0).translate(_OCR_DIGIT) if ocr else tok.group(0)
-        runs += [(m.group(0), tok.start() + m.start(), tok.start() + m.end())
-                 for m in _DIGITS.finditer(t)]
-    return runs
+def _canon(text: str) -> str:
+    text = unicodedata.normalize("NFKC", text).replace("−", "-")
+    return _OCR_EDGE.sub(lambda m: "1" if m.group(0) in "lI" else "0", text)
+
+
+def number_tokens(text: str) -> list[tuple[str, str, str, int, int]]:
+    """(sign, number, unit, start, end) of every number, in order, on the canonical text."""
+    out = []
+    for m in _NUMBER.finditer(text):
+        before = text[m.start() - 1] if m.start() else " "
+        sign = before if before in "+-–" and (m.start() < 2 or not text[m.start() - 2].isalnum()) else ""
+        sign = "-" if sign == "–" else sign
+        u = _UNIT.match(text, m.end())
+        out.append((sign, m.group(1), u.group(1) if u else "", m.start(), m.end()))
+    return out
+
+
+def furniture_lines(src: str) -> set[str]:
+    """Running-header lines of the part: a short line holding words (no CJK, not a table row)
+    that recurs >= 3 times with only its numbers changing, never close together (page after
+    page, >= 8 lines apart). Consecutive rows of one shape are a table, not furniture."""
+    where: dict[str, list[int]] = {}
+    for i, line in enumerate(src.split("\n")):
+        s = line.strip()
+        if 0 < len(s) <= 60 and not _CJK.search(s) and not _TABLE_ROW.search(s) \
+                and _WORD3.search(s):
+            where.setdefault(re.sub(r"\d+", "#", s), []).append(i)
+    return {k for k, pos in where.items()
+            if len(pos) >= 3 and min(b - a for a, b in zip(pos, pos[1:])) >= 8}
 
 
 def number_problem(src: str, out: str) -> str | None:
-    """Numbers are conserved. Walking the output's numbers in order against the source's, each
-    output number must be (a) exactly the next source number, (b) the next 2-3 source numbers
-    written together ('19 57' -> '1957', '1 000' -> '1000'), or (c) one piece of a glued source
-    number split into consecutive pieces that rebuild it exactly ('446425646' -> '4464 25646') —
-    but never split by a decimal point or comma the source did not have ('443' -> '44.3').
-    Source numbers may be skipped (removed furniture, a repeated header) within a small budget
-    of distinct values; a number of 3+ digits may move (a re-built table) if it exists exactly.
-    A number that is only a substring of a source number ('1200' -> '200') is invented."""
-    src_runs = [r[0] for r in number_runs(src, ocr=True)]
-    out_runs = number_runs(out, ocr=False)
-    out_text = unicodedata.normalize("NFKC", out)
-    src_set = set(src_runs)
-    i, rest, skipped = 0, "", set()
-    prev_end = None
-    for run, start, end in out_runs:
-        if rest:  # inside a split source number: this piece must continue it
-            sep = out_text[prev_end:start]
-            if not rest.startswith(run):
-                return f"number {run!r} breaks the source number it continues"
-            if sep.strip() in (".", ","):
-                return f"decimal point inserted into a source number before {run!r}"
-            rest = rest[len(run):]
-            prev_end = end
+    """Numbers are conserved token by token, in order: same sign, same digits and separators,
+    same exponent, and — where both sides give one — the same unit. Allowed only: OCR look-alike
+    letters next to digits (canonicalised on both sides), thousands grouping ('1 000' -> '1000'),
+    splitting a glued run of >= 7 digits into pieces separated by spaces, and deleting a number
+    together with a running-header line. Anything else — a changed sign, decimal, exponent, unit,
+    an added or deleted value, reordering — is rejected; the part then keeps its rule-cleaned text."""
+    src_c, out_c = _canon(src), _canon(out)
+    S, O = number_tokens(src_c), number_tokens(out_c)
+    furniture = furniture_lines(src_c)
+    line_of = {}
+    for line in src_c.split("\n"):
+        key = re.sub(r"\d+", "#", line.strip())
+        for t in number_tokens(line):
+            line_of.setdefault(t[1], set()).add(key)
+
+    def deletable(tok) -> bool:
+        return bool(line_of.get(tok[1])) and line_of[tok[1]] <= furniture
+
+    i = k = 0
+    while k < len(O):
+        sign, num, unit, start, end = O[k]
+        if i >= len(S):
+            return f"number {sign}{num} is not in the source"
+        s_sign, s_num, s_unit = S[i][:3]
+        if num == s_num and sign == s_sign:
+            if unit and s_unit and unit != s_unit:
+                return f"unit changed: {s_num} {s_unit} -> {num} {unit}"
+            i, k = i + 1, k + 1
             continue
-        matched = False
-        for j in range(i, min(len(src_runs), i + 40)):
-            for k in (1, 2, 3):
-                if "".join(src_runs[j:j + k]) == run and j + k <= len(src_runs):
-                    skipped.update(src_runs[i:j])
-                    i, matched = j + k, True
-                    break
-            if matched:
-                break
-            if src_runs[j].startswith(run) and len(run) < len(src_runs[j]):
-                skipped.update(src_runs[i:j])
-                rest, i, matched = src_runs[j][len(run):], j + 1, True
-                break
-        if not matched:
-            if len(run) >= 3 and run in src_set:
-                prev_end = end
-                continue  # moved within the part
-            return f"number {run!r} is not in the source at this point"
-        prev_end = end
-    if rest:
-        return "a split source number was not completed"
-    skipped.update(src_runs[i:])
-    lost = skipped - {r for r, _, _ in out_runs}
-    # A number may disappear only with its furniture: every one of its occurrences stands on a
-    # short line that is not prose (a page number, a running header 'TM 5-697'). A number
-    # deleted from a sentence or a table row is lost data.
-    furniture = furniture_numbers(src)
-    if prose_loss := sorted(lost - furniture)[:5]:
-        return f"numbers deleted from the text: {prose_loss}"
-    if len(lost) > max(3, len(set(src_runs)) // 20):
-        return f"{len(lost)} distinct numbers of the source are missing from the repair"
+        # thousands grouping: '1 000 000' -> '1000000'
+        j, joined = i, ""
+        while j < len(S) and len(joined) < len(num) and (j == i or (
+                len(S[j][1]) == 3 and S[j][1].isdigit() and src_c[S[j - 1][4]:S[j][3]] == " ")):
+            joined += S[j][1]
+            j += 1
+        if j - i >= 2 and joined == num and S[i][1].isdigit() and len(S[i][1]) <= 3:
+            i, k = j, k + 1
+            continue
+        # a glued run of >= 7 digits split into space-separated pieces
+        if len(re.sub(r"\D", "", s_num)) >= 7 and s_num.startswith(num) and num != s_num:
+            rest, kk = s_num[len(num):], k + 1
+            while rest and kk < len(O) and rest.startswith(O[kk][1]) \
+                    and out_c[O[kk - 1][4]:O[kk][3]].strip() == "":
+                rest, kk = rest[len(O[kk][1]):], kk + 1
+            if not rest:
+                i, k = i + 1, kk
+                continue
+        # deleting numbers that stood only on running-header lines
+        if deletable(S[i]):
+            i += 1
+            continue
+        return f"number {sign}{num} does not match the source's {s_sign}{s_num} at this point"
+    missing = [t for t in S[i:] if not deletable(t)]
+    if missing:
+        return f"numbers deleted: {[t[0] + t[1] for t in missing[:5]]}"
     return None
-
-
-def furniture_numbers(src: str) -> set[str]:
-    """Numbers that occur ONLY on short non-prose lines (<= 40 chars, < 5 words)."""
-    on_short, elsewhere = set(), set()
-    for line in src.split("\n"):
-        runs = {r for r, _, _ in number_runs(line, ocr=True)}
-        short = len(line.strip()) <= 40 and len(line.split()) < 5
-        (on_short if short else elsewhere).update(runs)
-    return on_short - elsewhere
 
 
 def check(src: str, out: str) -> str | None:
@@ -187,7 +204,10 @@ def check(src: str, out: str) -> str | None:
     and non-English text have no score, so they are never dropped."""
     garbage = (v1_rules.damage_score(src) or 0) >= 0.35
     if out.strip() == DROP:
-        return None if garbage else "dropped a part that holds readable content; repair it instead"
+        if not garbage:
+            return "dropped a part that holds readable content; repair it instead"
+        # a garbled part may still carry a readable table: its numbers must survive
+        return number_problem(src, "") and "dropped a part that holds numbers; repair it instead"
     if why := number_problem(src, out):
         return why
     if len(out) > 1.25 * len(src) + 200:
@@ -433,6 +453,7 @@ def run(args) -> int:
                else ClaudeBackend(args.model, args.effort))
     con = corpus_v1.connect()
     todo = [i for i in args.ids if corpus_v1.is_member(i)] if args.ids else queue(con)
+    assert PROMPT_VERSION in corpus_v1.TRUSTED_REVISION_PROMPTS, "builder would ignore our repairs"
     print(f"queue: {len(todo)} documents", flush=True)
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     log_path = LOGS / f"{run_id}.jsonl"

@@ -101,6 +101,26 @@ def test_running_header_dropped_table_values_kept():
     assert out.count("Mixed-Humid") == 5
 
 
+def test_numbers_spread_by_blank_lines_are_not_page_numbers():
+    lines = ["Measured temperatures:"]
+    for v in (20, 21, 22, 23):
+        lines += [str(v)] + [""] * 11
+    lines += ["End."] + ["Filler prose line about building energy performance."] * 80
+    out = R.clean_body(lines, "")
+    for v in ("20", "21", "22", "23"):
+        assert v in out
+
+
+def test_repeated_figure_legends_kept():
+    doc = []
+    for fig in range(9):
+        doc += [f"Figure {fig} shows the distribution of services in the district."] + \
+            ["Real prose about adaptive reuse of heritage buildings in contested cities."] * 30 + \
+            ["Nursery", "Parks", "Police Station", "Pharmacy", "Gas Station"]
+    out = R.drop_running_lines(doc)
+    assert out.count("Police Station") == 9 and out.count("Nursery") == 9
+
+
 def test_reflow_joins_wrapped_prose_only():
     lines = ["The refrigerator has become one of the indispensable house-",
              "hold appliances, and after it was closed for a long",

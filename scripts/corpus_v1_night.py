@@ -164,7 +164,9 @@ def gate(night: Path, branch: str, deadline: float) -> dict:
                out=night / "gate-tests.log")
     if code:
         return {"merged": False, "why": "tests failed on branch"}
-    _, diff = git("diff", f"main...{branch}", timeout=60)
+    code, diff = git("diff", f"main...{branch}", timeout=60)
+    if code or not diff.strip():
+        return {"merged": False, "why": f"cannot read the branch diff (git exit {code}): no review"}
     audit = night / "audit" / "summary.json"
     prompt = (
         "You are the gate reviewer for a nightly change to corpus_v1, the cleaned training view of a "
@@ -194,7 +196,7 @@ def gate(night: Path, branch: str, deadline: float) -> dict:
             return {"merged": False, "why": "Codex usage limit: branch carries over to the next night"}
         return {"merged": False, "why": f"Codex review failed (exit {code}): no approval"}
     try:
-        if verdict_path.stat().st_mtime < started:
+        if verdict_path.stat().st_mtime < started - 2:  # coarse fs clock; the name is fresh too
             raise ValueError("stale verdict file")
         verdict = json.loads(verdict_path.read_text())
     except (OSError, ValueError):
@@ -214,14 +216,24 @@ def gate(night: Path, branch: str, deadline: float) -> dict:
             if code:
                 git("rebase", "--abort", cwd=WORKTREE)
                 return res | {"merged": False, "why": f"rebase conflict: {msg[-300:]}"}
-            _, rebased = git("diff", f"main...{branch}", timeout=60)
-            if hashlib.sha256(rebased.encode()).hexdigest() != reviewed:
+
+            def fingerprint() -> tuple[str, str] | None:
+                c1, head = git("rev-parse", "--verify", f"{branch}^{{commit}}")
+                c2, d = git("diff", f"main...{head.strip()}", timeout=60) if not c1 else (1, "")
+                return None if c1 or c2 else (head.strip(), hashlib.sha256(d.encode()).hexdigest())
+
+            before = fingerprint()
+            if not before or before[1] != reviewed:
                 return res | {"merged": False,
                               "why": "the change differs from what Codex reviewed (rebase drift)"}
             if run([str(PY), "-m", "pytest", "-q", *TESTS], cwd=WORKTREE, timeout=900,
                    out=night / "gate-tests-rebased.log"):
                 return res | {"merged": False, "why": "tests failed after rebase"}
-            code, msg = git("merge", "--ff-only", branch)
+            after = fingerprint()
+            if after != before:  # anything moved during the tests: fail closed
+                return res | {"merged": False, "why": "the branch changed during the final tests"}
+            # merge the immutable commit that was reviewed and tested, never the moving name
+            code, msg = git("merge", "--ff-only", before[0])
     except RuntimeError as e:
         return res | {"merged": False, "why": f"round lock busy: {e}"}
     return res | {"merged": code == 0, "why": msg[-300:]}

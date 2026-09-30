@@ -31,6 +31,7 @@ import argparse
 import json
 import os
 import random
+import re
 import sqlite3
 import sys
 import time
@@ -101,12 +102,22 @@ def write_atomic(path: Path, text: str) -> None:
 
 
 def build_one(args: tuple[str, str | None]) -> tuple:
+    """Clean and publish one document. Membership is checked immediately before the write and
+    again after it: a document that left the training view meanwhile is unpublished, and the
+    caller drops its state row (("REMOVED", id)). Every full build also ends with a sweep."""
     doc_id, revision = args
+    if not is_member(doc_id):
+        return ("REMOVED", doc_id)
     header, body, in_chars, damage, kind = rule_clean(doc_id)
     if revision:  # a checked model repair of this exact source overrides the rules
         body = (REVISIONS / doc_id).read_text(encoding="utf-8")
     out = (header + "\n\n" if header else "") + body.strip() + "\n"
+    if not is_member(doc_id):
+        return ("REMOVED", doc_id)
     write_atomic(OUT / doc_id, out)
+    if not is_member(doc_id):
+        (OUT / doc_id).unlink(missing_ok=True)
+        return ("REMOVED", doc_id)
     size, mtime = source_key(doc_id) or (0, 0)
     return (doc_id, size, mtime, v1_rules.RULESET_VERSION, revision, in_chars, len(out), damage,
             kind, time.time())
@@ -119,17 +130,33 @@ def valid_revisions(con, ids: list[str] | None = None) -> dict[str, str]:
     rows = (con.execute(sql).fetchall() if ids is None else
             [r for i in ids for r in con.execute(sql + " AND id=?", (i,)).fetchall()])
     for doc_id, size, mtime, sha, prompt in rows:
+        if prompt not in TRUSTED_REVISION_PROMPTS or not valid_id(doc_id):
+            continue
         if source_key(doc_id) == (size, mtime) and (REVISIONS / doc_id).exists():
             out[doc_id] = f"{prompt}:{sha[:12]}"
     return out
 
 
+_ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]{0,250}\.md")
+# Model repairs are trusted only if made under the current checks: p2 repairs were validated by
+# the checks the 2026-09-30 maintainer review found unsafe, so they no longer override rules.
+TRUSTED_REVISION_PROMPTS = frozenset({"p3"})
+
+
+def valid_id(doc_id: str) -> bool:
+    """A document id is a plain file name: no directories, no '..'. Checked before any path is
+    built from an id, so no id can reach outside corpus_v1/ (or read outside text/)."""
+    return bool(_ID.fullmatch(doc_id)) and ".." not in doc_id
+
+
 def is_member(doc_id: str) -> bool:
     """corpus_v1/ mirrors the default training view: only ids present in corpus/ belong."""
-    return "/" not in doc_id and (CORPUS / doc_id).is_file()
+    return valid_id(doc_id) and (CORPUS / doc_id).is_file()
 
 
 def remove(con, doc_id: str) -> None:
+    if not valid_id(doc_id):
+        raise ValueError(f"refusing a non-plain document id: {doc_id!r}")
     (OUT / doc_id).unlink(missing_ok=True)
     con.execute("DELETE FROM build WHERE id=?", (doc_id,))
     con.commit()
@@ -142,6 +169,9 @@ def rebuild_one(con, doc_id: str) -> None:
         remove(con, doc_id)
         return
     res = build_one((doc_id, valid_revisions(con, [doc_id]).get(doc_id)))
+    if res[0] == "REMOVED":
+        remove(con, doc_id)
+        return
     con.execute("INSERT OR REPLACE INTO build VALUES (?,?,?,?,?,?,?,?,?,?)", res)
     con.commit()
 
@@ -153,7 +183,7 @@ def build(ids: list[str] | None, workers: int, deadline: float | None = None) ->
     removed = 0
     if ids is None:
         for (doc_id,) in con.execute("SELECT id FROM build").fetchall():
-            if doc_id not in live:
+            if doc_id not in live and valid_id(doc_id):
                 (OUT / doc_id).unlink(missing_ok=True)
                 con.execute("DELETE FROM build WHERE id=?", (doc_id,))
                 removed += 1
@@ -162,7 +192,12 @@ def build(ids: list[str] | None, workers: int, deadline: float | None = None) ->
         "SELECT id, src_size, src_mtime, ruleset, revision FROM build")}
     revs = valid_revisions(con)
     todo = []
+    invalid = 0
     for doc_id in (ids if ids is not None else sorted(live)):
+        if not valid_id(doc_id):  # never turned into a path, never removed: just refused
+            invalid += 1
+            print(f"  refusing non-plain id {doc_id!r}", file=sys.stderr)
+            continue
         if doc_id not in live:  # an explicit id outside the training view: never written
             if (OUT / doc_id).exists() or doc_id in have:
                 remove(con, doc_id)
@@ -192,6 +227,9 @@ def build(ids: list[str] | None, workers: int, deadline: float | None = None) ->
         for res in pool.imap_unordered(_safe_build, todo, chunksize=16):
             if res is None:
                 errors += 1
+            elif res[0] == "REMOVED":
+                remove(con, res[1])
+                removed += 1
             else:
                 batch.append(res)
             if len(batch) >= 5000:
@@ -200,7 +238,14 @@ def build(ids: list[str] | None, workers: int, deadline: float | None = None) ->
                 pool.terminate()
                 break
         flush()
+    if ids is None:  # closing sweep: whatever left corpus/ while the build ran is unpublished
+        live = {e.name for e in os.scandir(CORPUS) if e.name.endswith(".md")}
+        for e in os.scandir(OUT):
+            if e.name.endswith(".md") and e.name not in live and valid_id(e.name):
+                remove(con, e.name)
+                removed += 1
     return {"todo": len(todo), "built": done, "errors": errors, "removed": removed,
+            "invalid_ids": invalid,
             "revisions_used": sum(1 for _, r in todo if r), "secs": round(time.time() - t0)}
 
 

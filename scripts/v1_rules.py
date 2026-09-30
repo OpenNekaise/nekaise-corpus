@@ -156,8 +156,14 @@ _LETTERS3 = re.compile(r"[^\W\d_]{3}")
 
 def page_number_lines(lines: list[str], min_gap: int = 12) -> set[int]:
     """Indexes of page-number lines, by page-position evidence only: a bare number counts when
-    it continues a chain of numbers rising by 1-2 whose members stand at least `min_gap` lines
-    apart (one per page). A column of values on consecutive lines never forms such a chain."""
+    it continues a chain of numbers rising by 1-2 whose members stand at least `min_gap`
+    NON-BLANK lines apart (one per page; blank lines are no evidence of a page). A column of
+    values — even one spread out by blank lines — never forms such a chain."""
+    content_pos, k = [], 0
+    for x in lines:
+        content_pos.append(k)
+        if x.strip():
+            k += 1
     cands = [(i, int(m.group(1))) for i, x in enumerate(lines) if (m := _BARE_INT.match(x))]
     pages: set[int] = set()
     chain: list[tuple[int, int]] = []
@@ -167,9 +173,10 @@ def page_number_lines(lines: list[str], min_gap: int = 12) -> set[int]:
             pages.update(i for i, _ in chain)
 
     for i, v in cands:
-        if chain and 1 <= v - chain[-1][1] <= 2 and i - chain[-1][0] >= min_gap:
+        gap = content_pos[i] - content_pos[chain[-1][0]] if chain else 0
+        if chain and 1 <= v - chain[-1][1] <= 2 and gap >= min_gap:
             chain.append((i, v))
-        elif chain and i - chain[-1][0] < min_gap:
+        elif chain and gap < min_gap:
             continue  # a number inside the same page (a table value) neither extends nor breaks it
         else:
             close()
@@ -180,16 +187,18 @@ def page_number_lines(lines: list[str], min_gap: int = 12) -> set[int]:
 
 def drop_running_lines(lines: list[str], min_repeats: int = 4) -> list[str]:
     """Running headers/footers and page numbers. Page numbers need page-position evidence
-    (page_number_lines). A running line must hold words (>= 3 letters in a row: a repeated
-    value like '0.5' in a table is data), recur >= min_repeats times, spread over the document
-    and never back to back, be short, and not be a sentence."""
+    (page_number_lines). A running line must read like a header — >= 3 words, >= 12 characters,
+    holding letters (a repeated value like '0.5' or a one-word figure legend such as 'Nursery'
+    is content) — recur >= min_repeats times spread over the document and never back to back,
+    be short, and not be a sentence."""
     n = len(lines)
     drop = page_number_lines(lines)
     if n >= 200:
         pos: dict[str, list[int]] = {}
         for i, x in enumerate(lines):
             s = re.sub(r"\d+", "#", x.strip())  # 'Page 12' and 'Page 13' are one running line
-            if 2 < len(s) <= 80 and _LETTERS3.search(s) and not _END_PUNCT.search(s):
+            if 12 <= len(s) <= 80 and len(s.split()) >= 3 and _LETTERS3.search(s) \
+                    and not _END_PUNCT.search(s):
                 pos.setdefault(s, []).append(i)
         for where in pos.values():
             if len(where) >= min_repeats:
