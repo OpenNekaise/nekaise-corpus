@@ -100,14 +100,31 @@ def ruleset(checkout: Path) -> str:
     return text.split('RULESET_VERSION = "', 1)[1].split('"', 1)[0]
 
 
-def prepare_worktree(branch: str) -> bool:
+def unmerged_branches() -> list[str]:
+    """Earlier night branches with commits main does not have, newest first."""
+    _, out = git("for-each-ref", "--sort=-refname", "--format=%(refname:short)", "refs/heads/v1-night/")
+    return [b for b in out.split() if git("rev-list", "--count", f"main..{b}")[1].strip() not in ("", "0")]
+
+
+def prepare_worktree(branch: str) -> str:
+    """Check out tonight's branch. It starts from the newest unmerged night branch (work that
+    missed its gate — e.g. Codex out of quota — carries over and is gated together with
+    tonight's), else from main. Returns the base."""
     git("worktree", "prune")
     if WORKTREE.exists():
         git("worktree", "remove", "--force", str(WORKTREE))
-    code, msg = git("worktree", "add", "-B", branch, str(WORKTREE), "main")
+    carried = [b for b in unmerged_branches() if b != branch]
+    base = carried[0] if carried else "main"
+    code, msg = git("worktree", "add", "-B", branch, str(WORKTREE), base)
     if code:
         log(f"worktree failed: {msg}")
-    return code == 0
+        return ""
+    if base != "main":
+        code, msg = git("rebase", "main", cwd=WORKTREE, timeout=300)
+        if code:
+            git("rebase", "--abort", cwd=WORKTREE)
+            log(f"carried branch {base} does not rebase onto main; starting tonight from it as is")
+    return base
 
 
 def improve(night: Path, branch: str, deadline: float) -> dict:
@@ -165,6 +182,9 @@ def gate(night: Path, branch: str, deadline: float) -> dict:
     try:
         verdict = json.loads(verdict_path.read_text())
     except (OSError, ValueError):
+        log_text = (night / "codex-gate.log").read_text(errors="replace")[-3000:]
+        if "usage limit" in log_text or "rate limit" in log_text:
+            return {"merged": False, "why": "Codex usage limit: branch carries over to the next night"}
         return {"merged": False, "why": f"no Codex verdict (exit {code})"}
     res["codex"] = verdict
     if verdict.get("verdict") != "MERGE AS IS":
@@ -207,9 +227,11 @@ def append_notes(summary: dict) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--window", type=int, default=3 * 3600 - 300, help="seconds for the whole night")
-    ap.add_argument("--sonnet-workers", type=int, default=12)
+    ap.add_argument("--sonnet-workers", type=int, default=8)
     ap.add_argument("--no-improve", action="store_true")
     ap.add_argument("--no-repair", action="store_true")
+    ap.add_argument("--gate-only", metavar="BRANCH",
+                    help="run just the gate (tests, Codex review, merge, rebuild) on BRANCH")
     args = ap.parse_args()
 
     LOCK.parent.mkdir(exist_ok=True)
@@ -226,6 +248,19 @@ def main() -> int:
     night.mkdir(parents=True, exist_ok=True)
     summary: dict = {"date": date, "ruleset_before": ruleset(ROOT)}
     log(f"night {date}: window {args.window}s")
+
+    if args.gate_only:  # e.g. a branch that missed its gate; its evidence is in its night dir
+        night = BASE / args.gate_only.split("/", 1)[1]
+        git("worktree", "prune")
+        if WORKTREE.exists():
+            git("worktree", "remove", "--force", str(WORKTREE))
+        git("worktree", "add", str(WORKTREE), args.gate_only)
+        summary["gate"] = gate(night, args.gate_only, end)
+        log(f"gate: {summary['gate']}")
+        if summary["gate"].get("merged") and ruleset(ROOT) != summary["ruleset_before"]:
+            run([str(PY), "scripts/corpus_v1.py"], timeout=end - time.time(), out=night / "rebuild.log")
+        (night / "gate-only.json").write_text(json.dumps(summary, indent=1, default=str))
+        return 0
 
     # 1. build: new and changed documents (the day's dig growth) first.
     run([str(PY), "scripts/corpus_v1.py", "--max-seconds", "1800"], timeout=2100,
@@ -250,7 +285,9 @@ def main() -> int:
     # 3-4. improve, then gate.
     if not args.no_improve and end - time.time() > 3600:
         branch = f"v1-night/{date}"
-        if prepare_worktree(branch):
+        base = prepare_worktree(branch)
+        if base:
+            summary["base"] = base
             summary["improve"] = improve(night, branch, end - 2400)  # leave 40 min for the gate
             if summary["improve"]["commits"]:
                 summary["gate"] = gate(night, branch, end - 600)

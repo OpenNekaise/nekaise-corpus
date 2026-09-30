@@ -88,5 +88,12 @@ You are in a git worktree on branch `v1-night/<date>`. `CORPUS_V1_DATA` points a
   strict as they are.
 - **Mind the budget.** Sonnet runs on the operator's subscription alongside you. Don't start extra
   large Sonnet jobs from your session. Small experiments (≤10 files with `--ids`) are fine.
+- **Codex budget: at most 3 `codex exec` calls per session** (choosing and review rounds
+  combined), with short, focused prompts. The gate after your session needs Codex quota. On
+  2026-09-30 in-session consultations used it up and the night's work could not merge. If Codex
+  reports a usage limit, stop calling it, say so in `NOTES.md`, and commit anyway. An unmerged
+  branch carries over and is gated with the next night's work.
+- Work that missed its gate carries over: tonight's branch may already contain earlier nights'
+  commits (see `base` in `summary.json`). Keep building on them. Don't redo them.
 - **Stop before `DEADLINE`.** If the work isn't finished, commit what is proven, and leave the
   rest in `NOTES.md` for tomorrow.

@@ -166,6 +166,14 @@ class Refused(RuntimeError):
     pass
 
 
+class QuotaHit(RuntimeError):
+    """The subscription's usage or session limit: every further call fails until it resets."""
+
+
+_QUOTA = re.compile(r"hit your (?:session|usage) limit|usage limit|rate limit|limit reached"
+                    r"|too many requests|\b429\b|resets? (?:at|\d)", re.I)
+
+
 _REFUSAL = re.compile(r"Try rephrasing the request|change your model|unable to respond to this"
                       r"|blocked by content filtering", re.I)
 
@@ -183,8 +191,9 @@ class ClaudeBackend:
                            timeout=CALL_TIMEOUT, cwd=NEUTRAL_CWD)
         if p.returncode != 0:
             both = p.stdout + p.stderr
-            raise (Refused if _REFUSAL.search(both) else RuntimeError)(
-                f"claude exit {p.returncode}: {both[-400:]}")
+            kind = Refused if _REFUSAL.search(both) else QuotaHit if _QUOTA.search(both) \
+                else RuntimeError
+            raise kind(f"claude exit {p.returncode}: {both[-400:]}")
         d = json.loads(p.stdout)
         if d.get("is_error") or not isinstance(d.get("result"), str):
             raise RuntimeError(f"model error: {str(d.get('result'))[:400]}")
@@ -302,6 +311,8 @@ def revise(doc_id: str, backend, pool: ThreadPoolExecutor) -> dict:
         for attempt in range(3):  # transport errors (rate limits, timeouts): back off, retry
             try:
                 return revise_part(backend, title, k, len(parts), src, before)
+            except QuotaHit:
+                raise
             except Refused as e:
                 return {"text": src, "dropped": False, "dropped_text": "",
                         "fallback": f"refused: {str(e)[-120:]}", "fallback_chars": len(src),
@@ -314,6 +325,10 @@ def revise(doc_id: str, backend, pool: ThreadPoolExecutor) -> dict:
     futs = [pool.submit(call, k, src) for k, src in enumerate(parts)]
     try:
         results = [f.result() for f in futs]
+    except QuotaHit as e:
+        for f in futs:
+            f.cancel()
+        return rec | {"status": "quota", "error": str(e)[-300:], "secs": round(time.time() - t0, 1)}
     except Exception as e:  # noqa: BLE001
         for f in futs:
             f.cancel()
@@ -354,7 +369,7 @@ def queue(con, limit: int | None = None) -> list[str]:
 
 
 def record_revision(con, rec: dict, model: str, run_id: str) -> None:
-    if rec["status"] in ("failed", "skipped_large"):
+    if rec["status"] in ("failed", "skipped_large", "quota"):
         return
     con.execute("INSERT OR REPLACE INTO revision VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (rec["id"], rec["src_size"], rec["src_mtime"], rec["src_sha256"], model,
@@ -388,8 +403,10 @@ def run(args) -> int:
     it = iter(todo)
     inflight: set = set()
 
+    stop = False  # set on the first quota error: nothing more can succeed until it resets
+
     def refill():
-        while len(inflight) < max(2, args.workers // 2) and time.time() < deadline:
+        while not stop and len(inflight) < max(2, args.workers // 2) and time.time() < deadline:
             doc = next(it, None)
             if doc is None:
                 return
@@ -404,6 +421,12 @@ def run(args) -> int:
         except Exception as e:  # noqa: BLE001 — one bad file never stops the run
             print(f"error: {e}", file=sys.stderr)
             refill()
+            continue
+        if rec["status"] == "quota":
+            if not stop:
+                print(f"usage limit reached; stopping (unfinished files stay queued): "
+                      f"{rec['error'][-160:]}", flush=True)
+            stop = True
             continue
         with lock_db:
             with log_path.open("a", encoding="utf-8") as fh:
@@ -440,7 +463,7 @@ def main() -> int:
     ap.add_argument("--model", default="claude-sonnet-5-5")
     ap.add_argument("--effort", default="low")
     ap.add_argument("--endpoint", default="http://127.0.0.1:8000/v1")
-    ap.add_argument("--workers", type=int, default=16, help="parallel model calls")
+    ap.add_argument("--workers", type=int, default=8, help="parallel model calls")
     ap.add_argument("--max-seconds", type=int, default=3600, help="start no new file after this")
     ap.add_argument("--ids", nargs="*", help="repair exactly these doc ids")
     ap.add_argument("--queue", type=int, help="print the next N queued ids and exit")

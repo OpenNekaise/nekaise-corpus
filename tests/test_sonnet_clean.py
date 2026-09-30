@@ -63,3 +63,17 @@ def test_revise_part_falls_back_only_where_rejected():
 def test_unfence():
     assert sc.unfence("```markdown\nhello\n```") == "hello"
     assert sc.unfence("plain") == "plain"
+
+
+def test_quota_stops_the_file_without_marking_it_failed(tmp_path, monkeypatch):
+    """A usage limit is not a property of the document: the file must stay queued."""
+    monkeypatch.setattr(sc.corpus_v1, "TEXT", tmp_path)
+    (tmp_path / "d.md").write_text("# T\n\n---\n" + PROSE)
+
+    def backend(prompt):
+        raise sc.QuotaHit("You've hit your session limit · resets 6:10am")
+
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(2) as pool:
+        rec = sc.revise("d.md", backend, pool)
+    assert rec["status"] == "quota"
