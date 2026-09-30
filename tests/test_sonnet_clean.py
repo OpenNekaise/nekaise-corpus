@@ -59,8 +59,9 @@ def test_check_rejects_dropping_or_gutting_readable_content():
     german = "Die Wärmedämmung der Außenwand verringert den Heizwärmebedarf deutlich."
     assert sc.check(PROSE + "\n" + german, PROSE)          # a Latin-language sentence deleted
     assert sc.check(PROSE + " Tung sten was added.", PROSE + " Tungsten was added.") is None
-    garbled = "■■ rrrR ««fc ¦¦ ~~ xqzt vbnm"
-    assert sc.check(PROSE + "\n" + garbled, PROSE) is None  # unreadable debris may go
+    garbled = "■■ rrrR ¦¦ ~~ aCld chrom~um"
+    assert sc.check(PROSE + "\n" + garbled, PROSE) is None  # debris with an OCR signature may go
+    assert sc.check(PROSE + "\nxqzt vbnm", PROSE)  # no signature: protected, kept
     assert sc.check(PROSE + "\n■■ nafti", PROSE)  # word-shaped: kept (fail-closed)
     assert not sc.model_eligible("本发明公开了一种冰箱。" + PROSE)
     assert not sc.model_eligible("Теплоизоляция стены " + PROSE) and sc.model_eligible(PROSE)
@@ -78,6 +79,13 @@ def test_check_rejects_dropping_or_gutting_readable_content():
     assert sc.check(PROSE + " ≤1200 kPa", PROSE + " ≥1200 kPa")
     assert sc.check(PROSE + " 12\nMPa", PROSE + " 12\nkPa")
     assert sc.check(PROSE + " 12 MPa", PROSE + " 12")
+    assert sc.check(PROSE + " It can't burn.", PROSE + " It can burn.")
+    assert sc.check(PROSE + " a non-combustible wall", PROSE + " a combustible wall")
+    assert sc.check(PROSE + " F=m*a+b holds", PROSE + " F=m*a-b holds")
+    assert sc.check(PROSE + " Force = m - a", PROSE + " Force = ma")
+    assert sc.check(PROSE + " rrrR ■■", PROSE + " F=m*a")          # no inserting formulas
+    assert sc.check(PROSE + " ■■ here", PROSE + " ■■ xqzt here")      # nor inserting debris
+    assert sc.token_kind("EnergyPlus") == "protected" and sc.token_kind("aCld") == "damaged"
 
 
 def test_repairs_that_must_pass():

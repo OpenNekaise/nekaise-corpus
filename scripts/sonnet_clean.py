@@ -103,10 +103,7 @@ _NUMBER = re.compile(r"(?:([-+\u2212\u2013\u00b1/\u00d7x*^=<>~:\u2264\u2265\u226
 _TOKEN = re.compile(r"\S+")
 _NEXT = re.compile(r"\s*(\S+)")
 _MARKDOWN = re.compile(r"^(?:#{1,6}|\|+|:?-{3,}:?(?:\|:?-{3,}:?)*\|?|\|(?::?-{3,}:?\|)+)$")
-UNITS = frozenset("""% ‰ ° °C °F K C F mm cm m km in ft yd mi m2 m3 cm2 mm2 ft2 ft3 in2 l L ml mL
-    kg g mg t lb lbs oz N kN MN Pa kPa MPa GPa hPa bar mbar psi atm mmHg J kJ MJ GJ W kW MW GW Wh
-    kWh MWh GWh TWh Btu BTU MBtu kcal cal V kV mV A mA kA Hz kHz MHz VA kVA MVA dB lx lm cd ppm ppb
-    s ms min h hr hrs yr yrs d mol kmol cfm gpm rpm lps m/s km/h mph W/m2 W/mK W/m2K kg/m3 %RH""".split())
+UNITS = v1_rules.UNITS
 # OCR reads digits as look-alike letters next to digits ('l957', '4l5', 'O.5'). Only l/I/O/o:
 # S and B are real ('S355' steel, 'B20' concrete).
 _OCR_EDGE = re.compile(r"(?<=\d)[lIOo]|[lIOo](?=\d)")
@@ -194,34 +191,53 @@ def readable_word(w: str) -> bool:
 _MATH = set("+-=<>~^*/\\%\u00b0\u00b1\u00d7\u00f7\u2264\u2265\u2260\u2248\u2211\u220f\u222b\u221a\u2202\u2206\u2207\u221e\u221d\u2208\u2209\u2282\u2283\u2229\u222a\u2192\u2190\u2194\u21d2()[]{}|!?;:,.'\"'")
 
 
+# Formula operators: a token holding one of them between word characters is an expression.
+_OPERATORS = set("=+*/^<>")
+_INNER_CAP = re.compile(r"[a-z][A-Z]")
+
+
 def token_kind(tok: str) -> str:
-    """'protected' — must come through byte-identical: any dictionary word, any word-shaped
-    token (any language), anything holding a digit, a unit, a non-Latin letter, or a math /
-    punctuation symbol; 'damaged' — OCR debris the model may rewrite or drop ('aCld',
-    'determllled', 'chrom~um', '■■'); 'markdown' — structure the model may add ('#', '|')."""
+    """'markdown' — structure the model may add ('#', '|', table rules); 'damaged' — OCR debris
+    with a positive signature, which the model may repair or drop; 'protected' — everything
+    else, which must come through byte-identical. Protected by default: a token is damaged
+    only if it is symbol debris ('■■', '¦¦', '~~'), or a word holding a stray glyph between
+    letters ('chrom~um'), a letter tripled ('determllled'), or a capital inside a word whose
+    parts are not words ('aCld', 'dJssolved'; not 'EnergyPlus'). Words of any language,
+    contractions and compounds ("can't", 'non-combustible'), numbers, units, formulas
+    ('F=m*a+b') and non-Latin text are protected."""
     if _MARKDOWN.match(tok):
         return "markdown"
     core = tok.strip(".,;:!?()[]{}\"'")
-    if any(c.isdigit() for c in tok) or tok in UNITS or core in UNITS:
+    if not any(c.isalnum() for c in tok):  # symbols only
+        repeated = len(tok) >= 2 and len(set(tok)) == 1
+        return "protected" if all(c in _MATH for c in tok) and not repeated else "damaged"
+    if any(c.isdigit() for c in tok) or core in UNITS or any(c in _OPERATORS for c in core):
         return "protected"
     if any(c.isalpha() and ord(c) > 0x24F for c in tok):
         return "protected"
-    letters = [w for w in _WORD.findall(tok)]
-    if not letters:
-        # symbols only: math/punctuation is meaning; other glyphs ('■■', '¦¦', '««') and runs of
-        # one repeated symbol ('~~', '....') are debris
-        repeated = len(tok) >= 2 and len(set(tok)) == 1
-        return "protected" if all(c in _MATH for c in tok) and not repeated else "damaged"
-    if len(letters) == 1 and core == letters[0] and readable_word(core):
-        return "protected"
-    return "damaged"
+    for x, c, y in zip(core, core[1:], core[2:]):
+        if x.isalpha() and y.isalpha() and not c.isalpha() and c not in "-'\u2019.":
+            return "damaged"  # a stray glyph inside a word
+    if re.search(r"([A-Za-z])\1\1", core):
+        return "damaged"
+    if _INNER_CAP.search(core):
+        parts = [p.lower() for p in re.findall(r"[A-Z]?[a-z]+|[A-Z]+(?![a-z])", core)]
+        if not all(p in v1_rules.english_words() for p in parts if len(p) > 1):
+            return "damaged"
+    return "protected"
 
 
-def _hyphen_join(tokens: list[str]) -> str:
-    """Tokens as one string with line-break hyphens removed ('house-', 'hold' -> 'household')."""
+def _hyphen_join(tokens: list[tuple[str, bool]]) -> str:
+    """Tokens as one string, joining a word hyphenated at a real line break ('house-' at the
+    end of a line + 'hold' -> 'household'). tokens: (token, followed by a line break)."""
     out = ""
-    for t in tokens:
-        out = out[:-1] + t if out.endswith("-") and t[:1].islower() else out + t
+    prev_break = False
+    for t, brk in tokens:
+        if prev_break and re.search(r"[A-Za-z]-$", out) and t[:1].islower():
+            out = out[:-1] + t
+        else:
+            out += t
+        prev_break = brk
     return out
 
 
@@ -243,8 +259,13 @@ def _repairs_damage(A: list[str], B: list[str]) -> bool:
                 pending.append(letters)
             i += 1
             continue
-        if j < len(B) and token_kind(B[j]) != "protected":
-            j += 1  # damaged or markdown output token: allowed
+        if j < len(B) and token_kind(B[j]) == "markdown":
+            j += 1  # structure the repair may add
+            continue
+        if j < len(B) and token_kind(B[j]) == "damaged":
+            if B[j] not in A:
+                return False  # debris the source did not have: an insertion
+            j += 1
             continue
         if i < len(A) and j < len(B) and _canon(A[i], source=True) == B[j]:
             i, j, pending = i + 1, j + 1, []
@@ -264,29 +285,29 @@ def _repairs_damage(A: list[str], B: list[str]) -> bool:
     return True
 
 
+_BREAK_AFTER = re.compile(r"[ \t]*\n")
+
+
+def _tokens_with_breaks(text: str) -> list[tuple[str, bool]]:
+    """Tokens with whether a line break follows each (only spaces or tabs in between)."""
+    return [(m.group(0), bool(_BREAK_AFTER.match(text, m.end()))) for m in _TOKEN.finditer(text)]
+
+
 def word_changes(src: str, out: str) -> str | None:
-    """The repair may only re-space, join split or hyphen-broken words, rewrite or drop damaged
-    tokens, add markdown '#'/'|', and turn OCR look-alike letters next to digits into digits.
-    Every protected token (words of any language, numbers, units, symbols) must come through
-    byte-identical and in the same order."""
-    a, b = _TOKEN.findall(src), _TOKEN.findall(out)
+    """The repair may only re-space, join words hyphenated at a line break, rewrite or drop
+    damaged tokens (into letter-similar words), add markdown '#'/'|', and turn OCR look-alike
+    letters next to digits into digits. Every protected token (words of any language, numbers,
+    units, formulas, symbols) must come through byte-identical and in the same order."""
+    ta = _tokens_with_breaks(src)
+    a, b = [t for t, _ in ta], _TOKEN.findall(out)
     for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
         if tag == "equal":
             continue
         A, B = a[i1:i2], b[j1:j2]
-        if _hyphen_join(A) == "".join(B):  # re-spacing, split words, hyphen joins
-            continue
-        pa = [_canon(t, source=True) for t in A if token_kind(t) == "protected"]
-        pb = [t for t in B if token_kind(t) == "protected"]
-        if pa == pb:
-            continue  # only damaged tokens changed (and markdown added)
+        if "".join(A) == "".join(B) or _hyphen_join(ta[i1:i2]) == "".join(B):
+            continue  # re-spacing only, or a word hyphenated at a line break joined
         if _repairs_damage(A, B):
-            continue  # damaged tokens became letter-similar words; all else unchanged
-        # a split word repaired together with its damage ('Tung sten' is two protected tokens
-        # when each half looks like a word): the letters must be the same
-        if _hyphen_join(pa) == "".join(pb) and not any(k == "protected" and any(c.isdigit() for c in t)
-                                                       for t in A for k in [token_kind(t)]):
-            continue
+            continue  # damaged tokens repaired or dropped; all else unchanged
         return f"changed {' '.join(A)[:60]!r} -> {' '.join(B)[:60]!r}"
     return None
 

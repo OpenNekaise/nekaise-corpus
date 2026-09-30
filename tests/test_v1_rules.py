@@ -92,16 +92,34 @@ def test_glyph_columns_joined_not_deleted_and_cjk_columns_kept():
 
 def test_page_furniture_needs_real_page_breaks():
     page = [f"Line {i} of real prose about building energy use in cold climates." for i in range(40)]
-    header = "Volume 7.1 Guide to Determining Climate Regions by County"
+    header = "Guide to Determining Climate Regions by County"
     with_breaks, without = [], []
     for p in range(6):
-        with_breaks += [("\f" if p else "") + header, *page, str(p + 1)]
-        without += [header, *page, str(p + 1)]
+        with_breaks += [("\f" if p else "") + header, *page, f"Page {p + 1}"]
+        without += [header, *page, f"Page {p + 1}"]
     out = R.clean_body(with_breaks, "")
     assert header not in "\n".join(out)
-    assert not any(x.strip() in {"1", "2", "3", "4", "5", "6"} for x in out)
+    assert not any(x.strip().startswith("Page ") for x in out)
     out = R.clean_body(without, "")  # no page breaks: no page evidence, nothing removed
     assert "\n".join(out).count(header) == 6
+
+
+def test_constant_numbers_at_page_edges_are_kept():
+    page = [f"Line {i} of real prose about ventilation of office buildings." for i in range(30)]
+    for edge in ("Volume 7.1 Guide to Climate Regions, August 2010", "Design airflow 1200 cfm"):
+        doc = []
+        for p in range(5):
+            doc += [("\f" if p else "") + "Intro line of the page.", *page, edge]
+        assert "\n".join(R.clean_body(doc, "")).count(edge) == 5, edge
+
+
+def test_counting_measurements_with_units_at_page_edges_are_kept():
+    page = [f"Line {i} of real prose about ventilation of office buildings." for i in range(30)]
+    for unit in ("cfm", "lps", "kPa", "Btu"):
+        doc = []
+        for p in range(5):
+            doc += [("\f" if p else "") + "Intro line of the page.", *page, f"Design airflow {20 + p} {unit}"]
+        assert "\n".join(R.clean_body(doc, "")).count("Design airflow") == 5, unit
 
 
 def test_measurement_at_a_page_edge_is_kept_when_edges_do_not_repeat():

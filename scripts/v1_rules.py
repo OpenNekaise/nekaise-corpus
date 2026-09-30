@@ -176,27 +176,43 @@ def page_furniture(body: list[str], min_pages: int = 3) -> set[int]:
             seen.setdefault(key(i), []).append(tuple(int(d) for d in re.findall(r"\d+", text(i))))
     furniture = {k for k, nums in seen.items()
                  if len(nums) >= max(min_pages, pages / 2) and _page_like(nums)
-                 and not _MEASUREMENT.search(k)
-                 and (k != "#" or any(a != b for a, b in zip(nums, nums[1:])))}
+                 and not is_measurement(k)}
     return {i for e in edges for i in e if key(i) in furniture}
 
 
-# A number followed by a unit: a measurement, never page furniture, wherever it stands.
-_MEASUREMENT = re.compile(r"#(?:[.,]#)?\s*(?:%|\u00b0|[kMGmc\u03bc]?(?:Pa|W|Wh|J|N|V|A|Hz|g|m|L|m2|m3|s)\b"
-                          r"|bar\b|psi\b|atm\b|K\b|C\b|F\b|kg\b|t\b|h\b|min\b|ppm\b|dB\b)")
+# Units of measure (shared with sonnet_clean.py's number checks).
+UNITS = frozenset("""% ‰ ° °C °F K C F mm cm m km in ft yd mi m2 m3 cm2 mm2 ft2 ft3 in2 l L ml mL
+    kg g mg t lb lbs oz N kN MN Pa kPa MPa GPa hPa bar mbar psi atm mmHg J kJ MJ GJ W kW MW GW Wh
+    kWh MWh GWh TWh Btu BTU MBtu kcal cal V kV mV A mA kA Hz kHz MHz VA kVA MVA dB lx lm cd ppm ppb
+    s ms min h hr hrs yr yrs d mol kmol cfm gpm rpm lps m/s km/h mph W/m2 W/mK W/m2K kg/m3 %RH""".split())
+def is_measurement(key: str) -> bool:
+    """A number (written '#') followed by a unit — a known unit, or any short token that is not
+    an English word ('cfm', 'lps') — is a measurement, never furniture."""
+    for m in re.finditer(r"#(?:[.,]#)*\s*([^\s#]+)", key):
+        t = m.group(1).rstrip(".,;:)")
+        if t in UNITS or (len(t) <= 5 and t.isalpha() and t.lower() not in english_words()):
+            return True
+    return False
 
 
 def _page_like(nums: list[tuple[int, ...]]) -> bool:
-    """A running line's numbers stay constant ('Volume 7.1 ... 2010') or count pages: from one
-    occurrence to the next at most one number changes, and it goes up by 1-2. Values that jump
-    ('Design pressure 1200 / 1300 / 1400 kPa') are measurements, not furniture."""
+    """A running line is furniture only if it carries no numbers at all, or exactly one number
+    that counts pages (+1-2 from one occurrence to the next) while any others stay constant.
+    Constant numbers alone ('Design airflow 1200 cfm' on every page) and jumping values are
+    data: kept."""
+    if not nums or not nums[0]:
+        return all(not n for n in nums)
+    counting = None
     for a, b in zip(nums, nums[1:]):
         if len(a) != len(b):
             return False
-        changed = [(x, y) for x, y in zip(a, b) if x != y]
-        if len(changed) > 1 or any(not 1 <= y - x <= 2 for x, y in changed):
+        changed = [p for p, (x, y) in enumerate(zip(a, b)) if x != y]
+        if len(changed) != 1 or not 1 <= b[changed[0]] - a[changed[0]] <= 2:
             return False
-    return True
+        if counting is not None and changed[0] != counting:
+            return False
+        counting = changed[0]
+    return counting is not None
 
 
 def reflow(lines: list[str]) -> list[str]:
