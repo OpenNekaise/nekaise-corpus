@@ -59,7 +59,7 @@ def test_check_rejects_dropping_or_gutting_readable_content():
     german = "Die Wärmedämmung der Außenwand verringert den Heizwärmebedarf deutlich."
     assert sc.check(PROSE + "\n" + german, PROSE)          # a Latin-language sentence deleted
     assert sc.check(PROSE + " Tung sten was added.", PROSE + " Tungsten was added.") is None
-    garbled = "■■ rrrR ¦¦ ~~ aCld chrom~um"
+    garbled = "■■ rrrR ¦¦ ~~ chrom~um"
     assert sc.check(PROSE + "\n" + garbled, PROSE) is None  # debris with an OCR signature may go
     assert sc.check(PROSE + "\nxqzt vbnm", PROSE)  # no signature: protected, kept
     assert sc.check(PROSE + "\n■■ nafti", PROSE)  # word-shaped: kept (fail-closed)
@@ -85,7 +85,11 @@ def test_check_rejects_dropping_or_gutting_readable_content():
     assert sc.check(PROSE + " Force = m - a", PROSE + " Force = ma")
     assert sc.check(PROSE + " rrrR ■■", PROSE + " F=m*a")          # no inserting formulas
     assert sc.check(PROSE + " ■■ here", PROSE + " ■■ xqzt here")      # nor inserting debris
-    assert sc.token_kind("EnergyPlus") == "protected" and sc.token_kind("aCld") == "damaged"
+    assert sc.token_kind("EnergyPlus") == "protected" and sc.token_kind("IfcWall") == "protected"
+    assert sc.check(PROSE + " tau = | V | / A", PROSE + " tau = V / A")
+    assert sc.check(PROSE + " if a || b then", PROSE + " if a b then")
+    assert sc.check(PROSE + " the IfcWall entity", PROSE + " the entity")      # never deleted
+    assert sc.check(PROSE + " the IfcWall entity", PROSE + " the wall entity")  # nor replaced
     assert sc.check(PROSE + " Force = m a \u2212 b", PROSE + " Force = m a b")
     assert sc.check(PROSE + " where k_eff is the gain", PROSE + " where is the gain")
     assert sc.check(PROSE + " Force = m -\na", PROSE + " Force = ma")

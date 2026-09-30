@@ -193,7 +193,6 @@ _MATH = set("+-=<>~^*/\\%\u00b0\u00b1\u00d7\u00f7\u2264\u2265\u2260\u2248\u2211\
 
 # Formula operators: a token holding one of them between word characters is an expression.
 _OPERATORS = set("=+*/^<>")
-_INNER_CAP = re.compile(r"[a-z][A-Z]")
 
 
 _FILLER = set(".~_,'`\u00b7\u2022\u00a6\u00ab\u00bb")
@@ -210,8 +209,8 @@ def token_kind(tok: str) -> str:
     with a positive signature, which the model may repair or drop; 'protected' — everything
     else, which must come through byte-identical. Protected by default: a token is damaged
     only if it is symbol debris ('■■', '¦¦', '~~'), or a word holding a stray glyph between
-    letters ('chrom~um'), a letter repeated 4+ times ('rrrR'), or a capital inside a word whose
-    parts are not words ('aCld', 'dJssolved'; not 'EnergyPlus'). Words of any language,
+    letters ('chrom~um') or a letter repeated 4+ times ('rrrR'). Unknown words ('aCld',
+    'IfcWall') are protected but correctable (see _correctable). Words of any language,
     contractions and compounds ("can't", 'non-combustible'), numbers, units, formulas
     ('F=m*a+b') and non-Latin text are protected."""
     if _MARKDOWN.match(tok):
@@ -230,11 +229,7 @@ def token_kind(tok: str) -> str:
             return "damaged"  # a stray glyph inside a word ('chrom~um'); '_' in 'k_eff' is not
     if re.search(r"([A-Za-z])\1{3,}", core, re.I):  # 4+ ('rrrR'); German has 3 ('Stofffluss')
         return "damaged"
-    if _INNER_CAP.search(core):
-        parts = [p.lower() for p in re.findall(r"[A-Z]?[a-z]+|[A-Z]+(?![a-z])", core)]
-        if not all(p in v1_rules.english_words() for p in parts if len(p) > 1):
-            return "damaged"
-    return "protected"
+    return "protected"  # an unknown word ('aCld', 'IfcWall') is correctable, never deletable
 
 
 def _hyphen_join(tokens: list[tuple[str, bool]]) -> str | None:
@@ -262,20 +257,43 @@ def _letter_str(tok: str) -> str:
     return "".join(c.lower() for c in tok if c.isalpha())
 
 
+def _correctable(tok: str) -> bool:
+    """A protected word that may be CORRECTED (never deleted): alphabetic, Latin, not an English
+    word ('aCld', 'determllled', 'IfcWall'). It may only be replaced 1:1 by a very similar
+    English word; 'IfcWall' has none, so in practice it stays."""
+    core = tok.strip(".,;:!?()[]{}\"'")
+    return (core.isalpha() and all(ord(c) <= 0x24F for c in core)
+            and core.lower() not in v1_rules.english_words()
+            and core.lower().rstrip("s") not in v1_rules.english_words())
+
+
 def _repairs_damage(A: list[str], B: list[str]) -> bool:
-    """B is A with damaged tokens repaired into words: walking both in order, every protected
-    token of A appears unchanged in B, and every protected token B adds is a purely alphabetic
-    word whose letters resemble (>= 0.6) the next 1-3 damaged tokens it replaces, or the start
-    of a glued one. Debris without letters ('■■') can only be dropped, never become a word."""
+    """B is A repaired: walking both in order, every protected token of A reappears unchanged
+    (markdown already in the source counts as protected: '| V |', '||'), except that a
+    correctable word may become a very similar English word (>= 0.75, keeping its punctuation).
+    Damaged tokens (debris) may be dropped or become letter-similar words (>= 0.6) of the next
+    1-3 of them, or of the start of a glued one; debris without letters ('■■') can only be
+    dropped. The repair may add markdown, but no debris the source did not have."""
     i, j = 0, 0
     pending: list[str] = []  # letters of damaged tokens not yet repaired, in order
     sim = lambda x, y: difflib.SequenceMatcher(None, x, y, autojunk=False).ratio()
+    known = v1_rules.english_words()
     while j < len(B) or i < len(A):
-        if i < len(A) and token_kind(A[i]) != "protected":
+        if i < len(A) and token_kind(A[i]) == "damaged":
             if letters := _letter_str(A[i]):
                 pending.append(letters)
             i += 1
             continue
+        if i < len(A) and j < len(B) and _canon(A[i], source=True) == B[j]:
+            i, j, pending = i + 1, j + 1, []
+            continue
+        if i < len(A) and j < len(B) and _correctable(A[i]) and not pending:
+            ca, cb = A[i].strip(".,;:!?()[]{}\"'"), B[j].strip(".,;:!?()[]{}\"'")
+            same_punct = A[i].replace(ca, "") == B[j].replace(cb, "")
+            if cb.isalpha() and cb.lower() in known and same_punct and \
+                    sim(ca.lower(), cb.lower()) >= 0.75:
+                i, j = i + 1, j + 1
+                continue
         if j < len(B) and token_kind(B[j]) == "markdown":
             j += 1  # structure the repair may add
             continue
@@ -283,9 +301,6 @@ def _repairs_damage(A: list[str], B: list[str]) -> bool:
             if B[j] not in A:
                 return False  # debris the source did not have: an insertion
             j += 1
-            continue
-        if i < len(A) and j < len(B) and _canon(A[i], source=True) == B[j]:
-            i, j, pending = i + 1, j + 1, []
             continue
         w = _letter_str(B[j]) if j < len(B) and B[j].strip(".,;:").isalpha() else ""
         if w and pending:
