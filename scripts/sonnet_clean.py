@@ -262,6 +262,8 @@ def _correctable(tok: str) -> bool:
     word ('aCld', 'determllled', 'IfcWall'). It may only be replaced 1:1 by a very similar
     English word; 'IfcWall' has none, so in practice it stays."""
     core = tok.strip(".,;:!?()[]{}\"'")
+    if core in UNITS or core.lower() in {u.lower() for u in UNITS}:
+        return False  # a unit is never 'corrected' ('kPa' -> 'Pa' scales a table 1000-fold)
     return (core.isalpha() and all(ord(c) <= 0x24F for c in core)
             and core.lower() not in v1_rules.english_words()
             and core.lower().rstrip("s") not in v1_rules.english_words())
