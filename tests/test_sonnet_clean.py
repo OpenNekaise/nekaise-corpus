@@ -90,13 +90,17 @@ def test_check_rejects_dropping_or_gutting_readable_content():
     assert sc.check(PROSE + " where k_eff is the gain", PROSE + " where is the gain")
     assert sc.check(PROSE + " Force = m -\na", PROSE + " Force = ma")
     assert sc.check(PROSE + " the deter-\nmination", PROSE + " the determination") is None
+    assert sc.check(PROSE + " if load == limit then stop", PROSE + " if load limit then stop")
+    assert sc.check(PROSE + " compute a ** b", PROSE + " compute a b")
+    assert sc.check(PROSE + " Die Kunststofffassade des Gebäudes ist brennbar.",
+                    PROSE + " Die des Gebäudes ist brennbar.")
 
 
 def test_repairs_that_must_pass():
     ok = [(PROSE + " The house-\nhold uses gas.", PROSE + " The household uses gas."),
           (PROSE + " Tung sten and descr ibed", PROSE + " Tungsten and described"),
           (PROSE + " chrom~um steel ■■", PROSE + " chromium steel"),
-          (PROSE + " determllled in l957", PROSE + " determined in 1957"),
+          (PROSE + " dJssolved in l957", PROSE + " dissolved in 1957"),
           (PROSE + "\nResults\nThe line\nwraps here.", PROSE + "\n## Results\nThe line wraps here."),
           (PROSE + "\nGrade Strength Density\nC25 25 2400\nC30 30 2400",
            PROSE + "\n| Grade | Strength | Density |\n|---|---|---|\n| C25 | 25 | 2400 |\n| C30 | 30 | 2400 |")]

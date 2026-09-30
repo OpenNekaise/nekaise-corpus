@@ -196,6 +196,9 @@ _OPERATORS = set("=+*/^<>")
 _INNER_CAP = re.compile(r"[a-z][A-Z]")
 
 
+_FILLER = set(".~_,'`\u00b7\u2022\u00a6\u00ab\u00bb")
+
+
 def _is_debris_glyph(c: str) -> bool:
     """Glyphs OCR leaves behind and text never needs: box drawing and geometric shapes, broken
     bars, private-use code points."""
@@ -207,7 +210,7 @@ def token_kind(tok: str) -> str:
     with a positive signature, which the model may repair or drop; 'protected' — everything
     else, which must come through byte-identical. Protected by default: a token is damaged
     only if it is symbol debris ('■■', '¦¦', '~~'), or a word holding a stray glyph between
-    letters ('chrom~um'), a letter tripled ('determllled'), or a capital inside a word whose
+    letters ('chrom~um'), a letter repeated 4+ times ('rrrR'), or a capital inside a word whose
     parts are not words ('aCld', 'dJssolved'; not 'EnergyPlus'). Words of any language,
     contractions and compounds ("can't", 'non-combustible'), numbers, units, formulas
     ('F=m*a+b') and non-Latin text are protected."""
@@ -215,8 +218,9 @@ def token_kind(tok: str) -> str:
         return "markdown"
     core = tok.strip(".,;:!?()[]{}\"'")
     if not any(c.isalnum() for c in tok):  # symbols only: protected unless known debris
-        repeated = len(tok) >= 2 and len(set(tok)) == 1  # '~~', '....', '««'
-        return "damaged" if repeated or all(_is_debris_glyph(c) for c in tok) else "protected"
+        # runs of filler ('....', '~~', '__', '¦¦', '««'), never of operators ('==', '**', '//')
+        filler = len(tok) >= 2 and len(set(tok)) == 1 and tok[0] in _FILLER
+        return "damaged" if filler or all(_is_debris_glyph(c) for c in tok) else "protected"
     if any(c.isdigit() for c in tok) or core in UNITS or any(c in _OPERATORS for c in core):
         return "protected"
     if any(c.isalpha() and ord(c) > 0x24F for c in tok):
@@ -224,7 +228,7 @@ def token_kind(tok: str) -> str:
     for x, c, y in zip(core, core[1:], core[2:]):
         if x.isalpha() and y.isalpha() and (_is_debris_glyph(c) or c in "~¬"):
             return "damaged"  # a stray glyph inside a word ('chrom~um'); '_' in 'k_eff' is not
-    if re.search(r"([A-Za-z])\1\1", core):
+    if re.search(r"([A-Za-z])\1{3,}", core, re.I):  # 4+ ('rrrR'); German has 3 ('Stofffluss')
         return "damaged"
     if _INNER_CAP.search(core):
         parts = [p.lower() for p in re.findall(r"[A-Z]?[a-z]+|[A-Z]+(?![a-z])", core)]
