@@ -124,8 +124,23 @@ def valid_revisions(con, ids: list[str] | None = None) -> dict[str, str]:
     return out
 
 
+def is_member(doc_id: str) -> bool:
+    """corpus_v1/ mirrors the default training view: only ids present in corpus/ belong."""
+    return "/" not in doc_id and (CORPUS / doc_id).is_file()
+
+
+def remove(con, doc_id: str) -> None:
+    (OUT / doc_id).unlink(missing_ok=True)
+    con.execute("DELETE FROM build WHERE id=?", (doc_id,))
+    con.commit()
+
+
 def rebuild_one(con, doc_id: str) -> None:
-    """Rebuild one file in-process (after a model repair), honouring its current revision."""
+    """Rebuild one file in-process (after a model repair), honouring its current revision.
+    A document that left the training view meanwhile is removed, never written."""
+    if not is_member(doc_id):
+        remove(con, doc_id)
+        return
     res = build_one((doc_id, valid_revisions(con, [doc_id]).get(doc_id)))
     con.execute("INSERT OR REPLACE INTO build VALUES (?,?,?,?,?,?,?,?,?,?)", res)
     con.commit()
@@ -148,6 +163,11 @@ def build(ids: list[str] | None, workers: int, deadline: float | None = None) ->
     revs = valid_revisions(con)
     todo = []
     for doc_id in (ids if ids is not None else sorted(live)):
+        if doc_id not in live:  # an explicit id outside the training view: never written
+            if (OUT / doc_id).exists() or doc_id in have:
+                remove(con, doc_id)
+                removed += 1
+            continue
         key = source_key(doc_id)
         if key is None:
             continue

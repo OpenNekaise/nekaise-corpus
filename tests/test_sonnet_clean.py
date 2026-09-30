@@ -23,6 +23,8 @@ def test_numbers_ocr_repairs_and_respacing_pass():
 
 def test_numbers_guesses_rejected():
     assert sc.number_problem("tested in l957", "tested in 1958")
+    assert sc.number_problem("design pressure is 1200 kPa", "design pressure is 200 kPa")
+    assert sc.number_problem("between 20 and 25 C", "between 20 and C")
     assert sc.number_problem("cost sn.87i per ton, 12 tons", "cost $2.87 per ton, 12 tons")
     assert "decimal" in sc.number_problem("output was 443 units", "output was 44.3 units")
     assert sc.number_problem("CE~20fp", "CE-204")
@@ -32,7 +34,11 @@ def test_check_rejects_dropping_or_gutting_readable_content():
     table = "\n".join(f"Kansas | County {i} | Mixed-Humid | zone {i % 7}" for i in range(80))
     assert "dropped" in sc.check(table, sc.DROP)
     assert "half" in sc.check(PROSE, PROSE[:200])
-    assert sc.check("■■ rrrR.nafti««fc ¦¦ ~~", sc.DROP) is None  # real garbage may go
+    garbage = "the xqzt vbnm rtyu of wkpl and qxvz " * 40  # damage score well above 0.35
+    assert sc.check(garbage, sc.DROP) is None  # proven garbage may go
+    assert sc.check("■■ rrrR.nafti««fc ¦¦ ~~", sc.DROP)  # too short to prove: kept
+    short_table = "Concrete grade | strength | density\nC25/30 | 25 | 2400\nC30/37 | 30 | 2400"
+    assert sc.check(short_table, sc.DROP)
     assert sc.check(PROSE, PROSE.replace("aqua regia", "aqua  regia")) is None
 
 
@@ -68,6 +74,7 @@ def test_unfence():
 def test_quota_stops_the_file_without_marking_it_failed(tmp_path, monkeypatch):
     """A usage limit is not a property of the document: the file must stay queued."""
     monkeypatch.setattr(sc.corpus_v1, "TEXT", tmp_path)
+    monkeypatch.setattr(sc.corpus_v1, "CORPUS", tmp_path)  # d.md is in the training view
     (tmp_path / "d.md").write_text("# T\n\n---\n" + PROSE)
 
     def backend(prompt):

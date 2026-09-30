@@ -23,7 +23,7 @@ suggestion. Record what you decide and why in `NOTES.md`.
 | rules | `scripts/v1_rules.py` | deterministic cleaning of every file (patent template parser, furniture, re-flow, pre-pass); `RULESET_VERSION` |
 | builder | `scripts/corpus_v1.py` | incremental build of `corpus_v1/`, the state DB, `--report`, `--show`, `--audit` |
 | model repair | `scripts/sonnet_clean.py` | Sonnet 5.5 rewrites the most OCR-damaged docs into normal text, part by part, with number/drop/shrink checks; `PROMPT_VERSION` |
-| tests | `tests/test_v1_rules.py`, `tests/test_sonnet_clean.py` | golden KEEP/DROP cases; the 2026-09-29 audit's failures are pinned here |
+| tests | `tests/test_v1_rules.py`, `tests/test_sonnet_clean.py`, `tests/test_corpus_v1_safety.py` | golden KEEP/DROP cases; the 2026-09-29 audit's failures and the maintainer's 2026-09-30 publication blockers are pinned here |
 | night job | `scripts/corpus_v1_night.py` | runs everything; you are its improvement phase |
 
 The night job already did the incremental build (new dig documents) and is running Sonnet repair
@@ -61,7 +61,7 @@ You are in a git worktree on branch `v1-night/<date>`. `CORPUS_V1_DATA` points a
    `RULESET_VERSION` when rule output changes, and `PROMPT_VERSION` only when old repairs should
    be redone.
 5. **Prove it.**
-   - `python -m pytest -q tests/test_v1_rules.py tests/test_sonnet_clean.py`
+   - `python -m pytest -q tests/test_v1_rules.py tests/test_sonnet_clean.py tests/test_corpus_v1_safety.py`
    - `python scripts/corpus_v1.py --audit 400 --out $NIGHT_DIR/audit`. Read `changes.md`. Every
      removed line must be junk. If any real content goes, fix the rule or drop it.
 5b. **Ask Codex to review** before committing:

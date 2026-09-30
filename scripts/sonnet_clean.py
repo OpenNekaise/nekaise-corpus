@@ -97,55 +97,95 @@ The part may start or end mid-sentence because the document continues in neighbo
 _DIGITS = re.compile(r"\d+")
 _OCR_DIGIT = str.maketrans({"l": "1", "I": "1", "|": "1", "O": "0", "o": "0", "S": "5", "B": "8"})
 _DIGITISH = re.compile(r"[0-9lI|OoSB]*\d[0-9lI|OoSB]*")
-_DECIMAL = re.compile(r"(\d+)[.,](\d+)")
 _LETTER = re.compile(r"[^\W\d_]")
 
 
-def source_digits(src: str) -> tuple[str, set[int]]:
-    """The source's digits as one string (OCR look-alikes inside numeric tokens read as digits)
-    and the set of positions where a digit run starts (a boundary between two runs)."""
-    src = unicodedata.normalize("NFKC", src)
-    digits, starts = [], set()
-    for tok in _DIGITISH.findall(src):
-        for run in _DIGITS.findall(tok.translate(_OCR_DIGIT)):
-            starts.add(sum(len(d) for d in digits))
-            digits.append(run)
-    return "".join(digits), starts
+def number_runs(text: str, ocr: bool) -> list[tuple[str, int, int]]:
+    """(digits, start, end) of every number in text, NFKC-normalised; with ocr=True, OCR
+    look-alike letters inside numeric tokens ('l95O') read as digits."""
+    text = unicodedata.normalize("NFKC", text)
+    runs = []
+    for tok in (_DIGITISH if ocr else _DIGITS).finditer(text):
+        t = tok.group(0).translate(_OCR_DIGIT) if ocr else tok.group(0)
+        runs += [(m.group(0), tok.start() + m.start(), tok.start() + m.end())
+                 for m in _DIGITS.finditer(t)]
+    return runs
 
 
 def number_problem(src: str, out: str) -> str | None:
-    """Digit runs of `out` must appear in order inside the source's digit string. A run may
-    span neighbouring source runs ('19 57' -> '1957') or split one ('446425646' -> '4464 25646'),
-    but not appear from nowhere, and a decimal point may not split a source run."""
-    s, starts = source_digits(src)
-    out = unicodedata.normalize("NFKC", out)
-    pos = 0
-    ends: dict[int, int] = {}  # output run start offset -> source end position
-    for m in _DIGITS.finditer(out):
-        run = m.group(0)
-        at = s.find(run, pos)
-        if at < 0:
-            # Out of order: a long number may move (a re-built table); a 1-2 digit one that is
-            # not next in line is how a guessed digit ('sn.87i' -> '2.87') looks.
-            at = s.find(run) if len(run) >= 3 else -1
-            if at < 0:
-                return f"number {run!r} is not in the source at this point"
-        else:
-            pos = at + len(run)
-        ends[m.start()] = at
-    for m in _DECIMAL.finditer(out):
-        a, b = m.start(1), m.start(2)
-        if a in ends and b in ends:
-            joint = ends[a] + len(m.group(1))
-            if ends[b] == joint and joint not in starts and f"{m.group(1)}.{m.group(2)}" not in src \
-                    and f"{m.group(1)},{m.group(2)}" not in src:
-                return f"decimal point inserted into {m.group(1)}{m.group(2)!s}"
+    """Numbers are conserved. Walking the output's numbers in order against the source's, each
+    output number must be (a) exactly the next source number, (b) the next 2-3 source numbers
+    written together ('19 57' -> '1957', '1 000' -> '1000'), or (c) one piece of a glued source
+    number split into consecutive pieces that rebuild it exactly ('446425646' -> '4464 25646') —
+    but never split by a decimal point or comma the source did not have ('443' -> '44.3').
+    Source numbers may be skipped (removed furniture, a repeated header) within a small budget
+    of distinct values; a number of 3+ digits may move (a re-built table) if it exists exactly.
+    A number that is only a substring of a source number ('1200' -> '200') is invented."""
+    src_runs = [r[0] for r in number_runs(src, ocr=True)]
+    out_runs = number_runs(out, ocr=False)
+    out_text = unicodedata.normalize("NFKC", out)
+    src_set = set(src_runs)
+    i, rest, skipped = 0, "", set()
+    prev_end = None
+    for run, start, end in out_runs:
+        if rest:  # inside a split source number: this piece must continue it
+            sep = out_text[prev_end:start]
+            if not rest.startswith(run):
+                return f"number {run!r} breaks the source number it continues"
+            if sep.strip() in (".", ","):
+                return f"decimal point inserted into a source number before {run!r}"
+            rest = rest[len(run):]
+            prev_end = end
+            continue
+        matched = False
+        for j in range(i, min(len(src_runs), i + 40)):
+            for k in (1, 2, 3):
+                if "".join(src_runs[j:j + k]) == run and j + k <= len(src_runs):
+                    skipped.update(src_runs[i:j])
+                    i, matched = j + k, True
+                    break
+            if matched:
+                break
+            if src_runs[j].startswith(run) and len(run) < len(src_runs[j]):
+                skipped.update(src_runs[i:j])
+                rest, i, matched = src_runs[j][len(run):], j + 1, True
+                break
+        if not matched:
+            if len(run) >= 3 and run in src_set:
+                prev_end = end
+                continue  # moved within the part
+            return f"number {run!r} is not in the source at this point"
+        prev_end = end
+    if rest:
+        return "a split source number was not completed"
+    skipped.update(src_runs[i:])
+    lost = skipped - {r for r, _, _ in out_runs}
+    # A number may disappear only with its furniture: every one of its occurrences stands on a
+    # short line that is not prose (a page number, a running header 'TM 5-697'). A number
+    # deleted from a sentence or a table row is lost data.
+    furniture = furniture_numbers(src)
+    if prose_loss := sorted(lost - furniture)[:5]:
+        return f"numbers deleted from the text: {prose_loss}"
+    if len(lost) > max(3, len(set(src_runs)) // 20):
+        return f"{len(lost)} distinct numbers of the source are missing from the repair"
     return None
 
 
+def furniture_numbers(src: str) -> set[str]:
+    """Numbers that occur ONLY on short non-prose lines (<= 40 chars, < 5 words)."""
+    on_short, elsewhere = set(), set()
+    for line in src.split("\n"):
+        runs = {r for r, _, _ in number_runs(line, ocr=True)}
+        short = len(line.strip()) <= 40 and len(line.split()) < 5
+        (on_short if short else elsewhere).update(runs)
+    return on_short - elsewhere
+
+
 def check(src: str, out: str) -> str | None:
-    """Why a repaired part is rejected, or None if it passes."""
-    garbage = (v1_rules.damage_score(src) or 0) >= 0.35 or len(_LETTER.findall(src)) < 200
+    """Why a repaired part is rejected, or None if it passes. A part counts as garbage (may be
+    dropped or shrink) only on positive evidence: a damage score >= 0.35. Short parts, tables
+    and non-English text have no score, so they are never dropped."""
+    garbage = (v1_rules.damage_score(src) or 0) >= 0.35
     if out.strip() == DROP:
         return None if garbage else "dropped a part that holds readable content; repair it instead"
     if why := number_problem(src, out):
@@ -292,6 +332,8 @@ def revise_part(backend, title: str, k: int, n: int, src: str, before: str = "")
 
 def revise(doc_id: str, backend, pool: ThreadPoolExecutor) -> dict:
     t0 = time.time()
+    if not corpus_v1.is_member(doc_id):  # left the training view since it was queued
+        return {"id": doc_id, "status": "skipped_not_member"}
     key = corpus_v1.source_key(doc_id)
     raw = (corpus_v1.TEXT / doc_id).read_bytes()
     header, body, in_chars, damage, kind = corpus_v1.rule_clean(doc_id)
@@ -369,7 +411,7 @@ def queue(con, limit: int | None = None) -> list[str]:
 
 
 def record_revision(con, rec: dict, model: str, run_id: str) -> None:
-    if rec["status"] in ("failed", "skipped_large", "quota"):
+    if rec["status"] in ("failed", "skipped_large", "quota", "skipped_not_member"):
         return
     con.execute("INSERT OR REPLACE INTO revision VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (rec["id"], rec["src_size"], rec["src_mtime"], rec["src_sha256"], model,
@@ -390,7 +432,7 @@ def run(args) -> int:
     backend = (OpenAIBackend(args.model, args.endpoint) if args.backend == "openai"
                else ClaudeBackend(args.model, args.effort))
     con = corpus_v1.connect()
-    todo = args.ids or queue(con)
+    todo = [i for i in args.ids if corpus_v1.is_member(i)] if args.ids else queue(con)
     print(f"queue: {len(todo)} documents", flush=True)
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     log_path = LOGS / f"{run_id}.jsonl"

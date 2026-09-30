@@ -24,7 +24,7 @@ import unicodedata
 from functools import lru_cache
 from pathlib import Path
 
-RULESET_VERSION = "r1.1"  # r1.1: damage score English-only (output unchanged)
+RULESET_VERSION = "r2"  # r2: numbers are never debris; page numbers need page evidence
 
 # ------------------------------------------------------------------------------------ pre-pass
 
@@ -112,8 +112,6 @@ def parse_patent(body: list[str]) -> list[str] | None:
 
 _RULE_LINE = re.compile(r"^\s*([_=\-~*.·•─━═]\s?)\1{7,}\s*$")        # ________ ======= - - - -
 _TOC_LEADER = re.compile(r"(?:\.\s?){5,}\s*[\divxlcIVXLC]+\s*$")      # Introduction ...... 12
-_PAGE_NO = re.compile(r"^\s*(?:[-–—]\s*)?(?:page\s+)?\d{1,4}(?:\s*(?:of|/)\s*\d{1,4})?(?:\s*[-–—])?\s*$",
-                      re.I)
 _CJK = re.compile(r"[぀-ヿ㐀-鿿가-힯豈-﫿]")
 _TABLEISH = re.compile(r"\|.*\||\S\s{3,}\S.*\S\s{3,}\S|\t")
 _LIST_START = re.compile(r"^\s*(?:[-*•▪◦·]\s|\(?\d{1,3}[.)]\s|\(?[a-zA-Z][.)]\s|[ivx]{1,4}[.)]\s)")
@@ -130,13 +128,16 @@ def drop_toc_leaders(lines: list[str]) -> list[str]:
 
 def drop_glyph_columns(lines: list[str], run: int = 6) -> list[str]:
     """A formula or figure broken into one glyph per line ('=', '∑', 'W', 'T', 'ρ' ...): drop
-    runs of >= `run` consecutive non-blank lines of <= 2 characters. Lines holding CJK never
-    count — vertical CJK text is real content (the orphan_chars lesson in clean_corpus.py)."""
+    runs of >= `run` consecutive non-blank lines of <= 2 characters. A line holding a digit never
+    counts — a column of measurements ('20', '21', '22' ...) is data, not debris — and neither
+    does a line holding CJK: vertical CJK text is content (the orphan_chars lesson)."""
+    def glyph(s: str) -> bool:
+        return 0 < len(s) <= 2 and not _CJK.search(s) and not any(c.isdigit() for c in s)
+
     out, i, n = [], 0, len(lines)
     while i < n:
         j = i
-        while j < n and (s := lines[j].strip()) is not None and (
-                (0 < len(s) <= 2 and not _CJK.search(s)) or (not s and j > i)):
+        while j < n and (glyph(lines[j].strip()) or (not lines[j].strip() and j > i)):
             j += 1
         short = sum(1 for x in lines[i:j] if x.strip())
         if short >= run:
@@ -148,28 +149,54 @@ def drop_glyph_columns(lines: list[str], run: int = 6) -> list[str]:
     return out
 
 
+_BARE_INT = re.compile(r"^\s*(?:[-–—]\s*)?(?:page\s+)?(\d{1,4})(?:\s*(?:of|/)\s*\d{1,4})?(?:\s*[-–—])?\s*$",
+                       re.I)
+_LETTERS3 = re.compile(r"[^\W\d_]{3}")
+
+
+def page_number_lines(lines: list[str], min_gap: int = 12) -> set[int]:
+    """Indexes of page-number lines, by page-position evidence only: a bare number counts when
+    it continues a chain of numbers rising by 1-2 whose members stand at least `min_gap` lines
+    apart (one per page). A column of values on consecutive lines never forms such a chain."""
+    cands = [(i, int(m.group(1))) for i, x in enumerate(lines) if (m := _BARE_INT.match(x))]
+    pages: set[int] = set()
+    chain: list[tuple[int, int]] = []
+
+    def close():
+        if len(chain) >= 3:
+            pages.update(i for i, _ in chain)
+
+    for i, v in cands:
+        if chain and 1 <= v - chain[-1][1] <= 2 and i - chain[-1][0] >= min_gap:
+            chain.append((i, v))
+        elif chain and i - chain[-1][0] < min_gap:
+            continue  # a number inside the same page (a table value) neither extends nor breaks it
+        else:
+            close()
+            chain = [(i, v)]
+    close()
+    return pages
+
+
 def drop_running_lines(lines: list[str], min_repeats: int = 4) -> list[str]:
-    """Running headers/footers and page numbers: short lines that recur throughout the
-    document. Guarded: a line counts only if it recurs >= min_repeats times AND its
-    occurrences are spread over the document (a table column repeating a value in one place
-    is not furniture), it is short, and it is not a sentence."""
+    """Running headers/footers and page numbers. Page numbers need page-position evidence
+    (page_number_lines). A running line must hold words (>= 3 letters in a row: a repeated
+    value like '0.5' in a table is data), recur >= min_repeats times, spread over the document
+    and never back to back, be short, and not be a sentence."""
     n = len(lines)
-    if n < 200:
-        return [x for x in lines if not _PAGE_NO.match(x) or not x.strip()] if n > 60 else lines
-    pos: dict[str, list[int]] = {}
-    for i, x in enumerate(lines):
-        s = re.sub(r"\d+", "#", x.strip())  # 'Page 12' and 'Page 13' are one running line
-        if 2 < len(s) <= 80 and not _END_PUNCT.search(s):
-            pos.setdefault(s, []).append(i)
-    furniture = set()
-    for s, where in pos.items():
-        if len(where) >= min_repeats:
-            gaps = [b - a for a, b in zip(where, where[1:])]
-            spread = (where[-1] - where[0]) / n
-            if spread > 0.3 and min(gaps) > 5:  # recurs page after page, never back to back
-                furniture.add(s)
-    return [x for x in lines
-            if not (x.strip() and (_PAGE_NO.match(x) or re.sub(r"\d+", "#", x.strip()) in furniture))]
+    drop = page_number_lines(lines)
+    if n >= 200:
+        pos: dict[str, list[int]] = {}
+        for i, x in enumerate(lines):
+            s = re.sub(r"\d+", "#", x.strip())  # 'Page 12' and 'Page 13' are one running line
+            if 2 < len(s) <= 80 and _LETTERS3.search(s) and not _END_PUNCT.search(s):
+                pos.setdefault(s, []).append(i)
+        for where in pos.values():
+            if len(where) >= min_repeats:
+                gaps = [b - a for a, b in zip(where, where[1:])]
+                if (where[-1] - where[0]) / n > 0.3 and min(gaps) > 5:  # page after page
+                    drop.update(where)
+    return [x for i, x in enumerate(lines) if i not in drop]
 
 
 def reflow(lines: list[str]) -> list[str]:

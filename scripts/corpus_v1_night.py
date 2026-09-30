@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import argparse
 import fcntl
+import hashlib
 import json
 import os
 import signal
@@ -47,7 +48,7 @@ WORKTREE = BASE / "wt"
 LOCK = ROOT / "workspace" / ".corpus-v1-night.lock"
 SCHEMA = ROOT / "scripts" / "corpus_v1_review.schema.json"
 CLAUDE_MODEL = os.environ.get("CORPUS_V1_CLAUDE_MODEL", "claude-opus-5-5")
-TESTS = ["tests/test_v1_rules.py", "tests/test_sonnet_clean.py"]
+TESTS = ["tests/test_v1_rules.py", "tests/test_sonnet_clean.py", "tests/test_corpus_v1_safety.py"]
 PATHS = [str(Path.home() / ".local/bin"), "/usr/local/bin", "/usr/bin", "/bin"]
 
 
@@ -174,19 +175,32 @@ def gate(night: Path, branch: str, deadline: float) -> dict:
         "'MERGE AS IS' only if you would ship it unchanged.\n\n"
         f"Audit summary ({audit}):\n{audit.read_text() if audit.exists() else 'MISSING'}\n\n"
         f"Audit details: {night / 'audit' / 'changes.md'}\n\n<diff>\n{diff[:200_000]}\n</diff>\n")
-    verdict_path = night / "codex-gate.json"
+    # Approval binds to exactly the change reviewed: a fresh verdict file per attempt (an old
+    # verdict can never be reused), a successful Codex exit, and the diff's fingerprint, which
+    # must be unchanged after the rebase under the lock (fail closed on any drift).
+    reviewed = hashlib.sha256(diff.encode()).hexdigest()
+    verdict_path = night / f"codex-gate-{int(time.time())}.json"
+    verdict_path.unlink(missing_ok=True)
+    started = time.time()
     code = run(["codex", "exec", "--ephemeral", "--sandbox", "read-only", "--color", "never",
                 "--output-schema", str(SCHEMA), "--output-last-message", str(verdict_path),
                 "-C", str(WORKTREE), "-"], cwd=WORKTREE,
                timeout=min(1800, deadline - time.time()), out=night / "codex-gate.log", prompt=prompt)
-    try:
-        verdict = json.loads(verdict_path.read_text())
-    except (OSError, ValueError):
+    log_text = ""
+    if (night / "codex-gate.log").exists():
         log_text = (night / "codex-gate.log").read_text(errors="replace")[-3000:]
+    if code != 0:
         if "usage limit" in log_text or "rate limit" in log_text:
             return {"merged": False, "why": "Codex usage limit: branch carries over to the next night"}
-        return {"merged": False, "why": f"no Codex verdict (exit {code})"}
+        return {"merged": False, "why": f"Codex review failed (exit {code}): no approval"}
+    try:
+        if verdict_path.stat().st_mtime < started:
+            raise ValueError("stale verdict file")
+        verdict = json.loads(verdict_path.read_text())
+    except (OSError, ValueError):
+        return {"merged": False, "why": "no fresh Codex verdict: no approval"}
     res["codex"] = verdict
+    res["reviewed_diff_sha256"] = reviewed
     if verdict.get("verdict") != "MERGE AS IS":
         return res | {"merged": False, "why": "Codex: changes required"}
     # Under the round lock no dig round can commit: rebase onto the current main, re-test,
@@ -200,6 +214,10 @@ def gate(night: Path, branch: str, deadline: float) -> dict:
             if code:
                 git("rebase", "--abort", cwd=WORKTREE)
                 return res | {"merged": False, "why": f"rebase conflict: {msg[-300:]}"}
+            _, rebased = git("diff", f"main...{branch}", timeout=60)
+            if hashlib.sha256(rebased.encode()).hexdigest() != reviewed:
+                return res | {"merged": False,
+                              "why": "the change differs from what Codex reviewed (rebase drift)"}
             if run([str(PY), "-m", "pytest", "-q", *TESTS], cwd=WORKTREE, timeout=900,
                    out=night / "gate-tests-rebased.log"):
                 return res | {"merged": False, "why": "tests failed after rebase"}
