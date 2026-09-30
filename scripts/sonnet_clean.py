@@ -269,7 +269,7 @@ def _correctable(tok: str) -> bool:
             and core.lower().rstrip("s") not in v1_rules.english_words())
 
 
-def _repairs_damage(A: list[str], B: list[str]) -> bool:
+def _repairs_damage(A: list[str], B: list[str], md_ok: list[bool] | None = None) -> bool:
     """B is A repaired: walking both in order, every protected token of A reappears unchanged
     (markdown already in the source counts as protected: '| V |', '||'), except that a
     correctable word may become a very similar English word (>= 0.75, keeping its punctuation).
@@ -296,8 +296,8 @@ def _repairs_damage(A: list[str], B: list[str]) -> bool:
                     sim(ca.lower(), cb.lower()) >= 0.75:
                 i, j = i + 1, j + 1
                 continue
-        if j < len(B) and token_kind(B[j]) == "markdown":
-            j += 1  # structure the repair may add
+        if j < len(B) and token_kind(B[j]) == "markdown" and (md_ok is None or md_ok[j]):
+            j += 1  # structure the repair may add: a table row's bars, a heading's '#'
             continue
         if j < len(B) and token_kind(B[j]) == "damaged":
             if B[j] not in A:
@@ -327,20 +327,36 @@ def _tokens_with_breaks(text: str) -> list[tuple[str, bool]]:
     return [(m.group(0), bool(_BREAK_AFTER.match(text, m.end()))) for m in _TOKEN.finditer(text)]
 
 
+def _tokens_with_markdown_context(text: str) -> tuple[list[str], list[bool]]:
+    """Output tokens, and for each whether it is markdown the repair may ADD there: '|' only on
+    a line that is a table row (starts and ends with '|', at least two cells), '#' only as the
+    first token of a line. A '|' inside an equation ('tau = | V | / A') is not table markup."""
+    toks, ok = [], []
+    for line in text.split("\n"):
+        st = line.strip()
+        row = st.startswith("|") and st.endswith("|") and st.count("|") >= 3
+        for k, m in enumerate(_TOKEN.finditer(line)):
+            t = m.group(0)
+            toks.append(t)
+            ok.append(bool(_MARKDOWN.match(t)) and (row if "|" in t or "-" in t else k == 0))
+    return toks, ok
+
+
 def word_changes(src: str, out: str) -> str | None:
     """The repair may only re-space, join words hyphenated at a line break, rewrite or drop
     damaged tokens (into letter-similar words), add markdown '#'/'|', and turn OCR look-alike
     letters next to digits into digits. Every protected token (words of any language, numbers,
     units, formulas, symbols) must come through byte-identical and in the same order."""
     ta = _tokens_with_breaks(src)
-    a, b = [t for t, _ in ta], _TOKEN.findall(out)
+    a = [t for t, _ in ta]
+    b, md = _tokens_with_markdown_context(out)
     for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
         if tag == "equal":
             continue
         A, B = a[i1:i2], b[j1:j2]
         if "".join(A) == "".join(B) or _hyphen_join(ta[i1:i2]) == "".join(B):
             continue  # re-spacing only, or a word hyphenated at a line break joined
-        if _repairs_damage(A, B):
+        if _repairs_damage(A, B, md[j1:j2]):
             continue  # damaged tokens repaired or dropped; all else unchanged
         return f"changed {' '.join(A)[:60]!r} -> {' '.join(B)[:60]!r}"
     return None

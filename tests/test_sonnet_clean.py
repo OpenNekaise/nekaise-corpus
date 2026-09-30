@@ -90,6 +90,8 @@ def test_check_rejects_dropping_or_gutting_readable_content():
     assert sc.check(PROSE + " if a || b then", PROSE + " if a b then")
     assert sc.check(PROSE + " the IfcWall entity", PROSE + " the entity")      # never deleted
     assert sc.check(PROSE + " the IfcWall entity", PROSE + " the wall entity")  # nor replaced
+    assert sc.check(PROSE + " tau = V / A holds", PROSE + " tau = | V | / A holds")  # no bars
+    assert sc.check(PROSE + " the load is high", PROSE + " the # load is high")    # no '#'
     for a, b in (("kPa", "Pa"), ("MPa", "Pa"), ("mbar", "bar")):  # units in a table heading
         assert sc.check(f"{PROSE}\nPressure ({a})\n1200\n1300", f"{PROSE}\nPressure ({b})\n1200\n1300")
     assert sc.check(PROSE + " Force = m a \u2212 b", PROSE + " Force = m a b")
