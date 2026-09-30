@@ -91,8 +91,8 @@ def _gate_world(tmp_path, monkeypatch, *, diff_code=0, move_during_tests=False, 
             return (1 if base_code_changed else 0), ""
         if args[0] == "diff":
             return diff_code, "diff --git a/x b/x\n+change\n"
-        if args[0] == "rev-parse":
-            return 0, state["head"]
+        if args[0] in ("rev-parse", "merge-base"):
+            return 0, state["head"] if args[0] == "rev-parse" else "c" * 40
         return 0, ""
 
     monkeypatch.setattr(night, "run", fake_run)

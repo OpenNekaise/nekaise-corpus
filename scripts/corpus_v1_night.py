@@ -167,13 +167,19 @@ def gate(night: Path, branch: str, deadline: float) -> dict:
                out=night / "gate-tests.log")
     if code:
         return {"merged": False, "why": "tests failed on branch"}
-    code, diff = git("diff", f"main...{branch}", timeout=60)
+    # Review the patch on top of current main: rebase first, then the reviewed base is the
+    # branch's ACTUAL base (merge-base), whatever main does afterwards.
+    code, msg = git("rebase", "main", cwd=WORKTREE, timeout=300)
+    if code:
+        git("rebase", "--abort", cwd=WORKTREE)
+        return {"merged": False, "why": f"rebase conflict before review: {msg[-300:]}"}
+    code_b, review_base = git("merge-base", "main", branch)
+    if code_b or not review_base.strip():
+        return {"merged": False, "why": "cannot resolve the branch base: no review"}
+    review_base = review_base.strip()
+    code, diff = git("diff", f"{review_base}..{branch}", timeout=60)
     if code or not diff.strip():
         return {"merged": False, "why": f"cannot read the branch diff (git exit {code}): no review"}
-    code_b, review_base = git("rev-parse", "--verify", "main^{commit}")
-    if code_b:
-        return {"merged": False, "why": "cannot resolve main: no review"}
-    review_base = review_base.strip()
     audit = night / "audit" / "summary.json"
     prompt = (
         "You are the gate reviewer for a nightly change to corpus_v1, the cleaned training view of a "
@@ -233,6 +239,7 @@ def gate(night: Path, branch: str, deadline: float) -> dict:
             def fingerprint() -> tuple[str, str] | None:
                 c1, head = git("rev-parse", "--verify", f"{branch}^{{commit}}")
                 c2, d = git("diff", f"main...{head.strip()}", timeout=60) if not c1 else (1, "")
+                # main...head is the patch on its new base; same text as reviewed unless it drifted
                 return None if c1 or c2 else (head.strip(), hashlib.sha256(d.encode()).hexdigest())
 
             before = fingerprint()

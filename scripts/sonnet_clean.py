@@ -11,12 +11,15 @@ long as the text/ source is unchanged.
 The model input is the RULE-CLEANED body (furniture already gone, paragraphs already re-flowed),
 so the model only repairs. Every revised part is checked here, and a part that fails is retried
 once with the reason, then halved and retried, and otherwise keeps its rule-cleaned text:
-* numbers: the output's digit runs must align, in order, with the source's digits (OCR
-  look-alikes l/I/O/S/B allowed; re-spacing allowed); a decimal point inserted between digits
-  that were adjacent in the source is an invention ('443' -> '44.3');
-* shrinkage: a part may not lose more than half its letters unless it was mostly garbage;
-* drops: <<DROP>> is accepted only for a part the damage score calls garbage;
-* growth: the output may not grow far beyond the source.
+The checks are FAIL-CLOSED (the 2026-09-30 maintainer and Codex reviews): a rejected repair
+keeps the rule-cleaned text, so a check may be stricter than necessary, never looser.
+* numbers: every number survives exactly and in order — sign, digits, separators, exponent, and
+  its unit wherever either side has a known unit; none added, deleted, merged, split or moved
+  (only thousands spacing and OCR look-alikes l/I/O/o next to digits are normalised);
+* deletions: a word-level diff may not delete (or replace with far less) a run holding 3+
+  plausible words of any Latin-script language; the model never drops a part;
+* size: the output keeps at least half the letters and does not grow far beyond the input;
+* scripts: parts holding non-Latin script are not sent to the model at all.
 Parts the model refuses (safety or output filters) keep their rule-cleaned text and are
 recorded, so another backend can redo them later.
 
@@ -31,6 +34,7 @@ Backends (the queue is the same for any model, so a local model can later run it
 from __future__ import annotations
 
 import argparse
+import difflib
 import fcntl
 import hashlib
 import json
@@ -58,7 +62,7 @@ LOCK = HERE / "workspace" / ".sonnet-clean.lock"
 # Run the CLI outside the repo so no CLAUDE.md / project settings leak into the context.
 NEUTRAL_CWD = Path(tempfile.gettempdir()) / "nekaise-sonnet-clean"
 
-PROMPT_VERSION = "p3"  # p3: checks rebuilt after the 2026-09-30 maintainer review; p2 repairs are redone
+PROMPT_VERSION = "p3"  # p3: fail-closed checks after the 2026-09-30 reviews; p2 repairs are redone
 CHUNK_CHARS = 16_000          # body characters per model call
 MAX_FILE_CHARS = 3_000_000    # larger files wait for a bigger budget (not truncated)
 CALL_TIMEOUT = 900
@@ -72,182 +76,130 @@ or an old scan and already mechanically cleaned; what remains broken is for you 
 the repaired text: no preamble, no notes, no code fences.
 
 Repair:
-- OCR damage: split words ('Tung sten' -> 'Tungsten'), misread letters ('determllled' ->
-  'determined', 'lS' -> 'is', 'aCld' -> 'acid'), stray symbols inside words ('chrom~um' -> 'chromium'),
-  digits read as letters ('3/l6' -> '3/16', '5S.68' -> '55.68') where the digit is certain.
+- OCR damage inside words: split words ('Tung sten' -> 'Tungsten'), misread letters ('determllled'
+  -> 'determined', 'lS' -> 'is', 'aCld' -> 'acid'), stray symbols inside words ('chrom~um' -> 'chromium').
 - Paragraphs still broken across lines; words hyphenated across line breaks.
-- Leftover furniture: running headers/footers and page numbers inside the text (delete them and
-  join the sentence around them - never turn them into headings), garbage lines that are not words.
 - Structure: markdown '#'/'##' only for headings that are present in the text, '- ' lists, a
-  markdown table when rows and columns are clear, LaTeX ($...$) for formulas whose parts are present.
+  markdown table when rows and columns are clear.
 
-Never:
-- translate, summarize, shorten, reorder, add sentences, titles or comments;
-- guess a number: if a digit is illegible, leave that OCR text as it is. Never insert a decimal point
-  or digit that is not in the input. Numbers, units, names, dates and citations stay exactly;
-- drop content: tables, lists, data rows, reference lists, code and equations are content.
-  When unsure whether something is content, keep it.
-
-Only if the whole part is unreadable garbage with no words to recover, output exactly: <<DROP>>
+Never (a repair that does any of this is rejected automatically):
+- delete anything: no sentence, line, table row, caption, page number or header - even if it looks
+  like leftover furniture or garbage you cannot repair, leave it exactly as it is;
+- add, remove, merge, split, move or change any number, sign, decimal point or unit: every number
+  stays exactly as written, in its place, with its unit written the same way (no LaTeX for units);
+  if a digit is illegible, leave that text as it is;
+- translate, summarize, shorten, reorder, add sentences, titles or comments.
+When unsure, leave the text unchanged.
 The part may start or end mid-sentence because the document continues in neighbouring parts."""
 
 
 # ---------------------------------------------------------------- checks
 
 _LETTER = re.compile(r"[^\W\d_]")
-# A number token: optional sign (only where it cannot be a range dash), digits with separators,
-# optional exponent; an optional unit right after it.
-_NUMBER = re.compile(r"((?:\d+(?:[.,]\d+)*|(?<![\w.])\.\d+)(?:[eE][-+]?\d+)?)")  # '.5' keeps its point; 'No.6' is 6
-_UNIT = re.compile(r"\s?(%|‰|°[CF]?|(?:[kMGTmcμu]?(?:Pa|Wh|W|J|N|V|Hz|g|m|L))(?![A-Za-z])"
-                   r"|(?:bar|psi|ppm|dB|Btu|BTU|cfm|rpm|kVA|MVA)(?![A-Za-z]))")
+_WORD = re.compile(r"[^\W\d_]+")
+# Scripts other than Latin: a part holding any of them is never sent to the model (an English
+# dictionary cannot tell whether a repair kept them).
+_NON_LATIN = re.compile("[\u0370-\u03ff\u0400-\u04ff\u0590-\u06ff\u0e00-\u0e7f"
+                        "\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af\uf900-\ufaff]")
+# A number as written: an optional sign (with at most one space), digits with separators or a
+# leading decimal point, an optional exponent.
+_NUMBER = re.compile(r"(?:(?<![\w.,])([-+−–])\s?)?"
+                     r"((?:\d+(?:[.,]\d+)*|(?<![\w])[.,]\d+)(?:[eE][-+]?\d+)?)")
+_THOUSANDS = re.compile(r"(?<![\d.,])(\d{1,3})((?: \d{3})+)(?![\d])")
+_TOKEN = re.compile(r"\S+")
+UNITS = frozenset("""% ‰ ° °C °F K C F mm cm m km in ft yd mi m2 m3 cm2 mm2 ft2 ft3 in2 l L ml mL
+    kg g mg t lb lbs oz N kN MN Pa kPa MPa GPa hPa bar mbar psi atm mmHg J kJ MJ GJ W kW MW GW Wh
+    kWh MWh GWh TWh Btu BTU MBtu kcal cal V kV mV A mA kA Hz kHz MHz VA kVA MVA dB lx lm cd ppm ppb
+    s ms min h hr hrs yr yrs d mol kmol cfm gpm rpm lps m/s km/h mph W/m2 W/mK W/m2K kg/m3 %RH""".split())
 # OCR reads digits as look-alike letters next to digits ('l957', '4l5', 'O.5'). Only l/I/O/o:
 # S and B are real ('S355' steel, 'B20' concrete).
 _OCR_EDGE = re.compile(r"(?<=\d)[lIOo]|[lIOo](?=\d)")
-_TABLE_ROW = re.compile(r"\|")
-_WORD3 = re.compile(r"[^\W\d_]{3}")
-_CJK = re.compile(r"[぀-ヿ㐀-鿿가-힯]")
 
 
-def _canon(text: str) -> str:
-    text = unicodedata.normalize("NFKC", text).replace("−", "-")
-    return _OCR_EDGE.sub(lambda m: "1" if m.group(0) in "lI" else "0", text)
+def _canon(text: str, source: bool) -> str:
+    """NFKC, one minus sign, thousands spacing removed ('1 000' == '1000' on both sides); on the
+    source only, OCR look-alike letters next to digits read as digits."""
+    text = unicodedata.normalize("NFKC", text).replace("−", "-").replace("–", "-")
+    text = _THOUSANDS.sub(lambda m: m.group(1) + m.group(2).replace(" ", ""), text)
+    if source:
+        text = _OCR_EDGE.sub(lambda m: "1" if m.group(0) in "lI" else "0", text)
+    return text
 
 
-def number_tokens(text: str) -> list[tuple[str, str, str, int, int]]:
-    """(sign, number, unit, start, end) of every number, in order, on the canonical text."""
+def number_tokens(text: str) -> list[tuple[str, str, str]]:
+    """(sign, number, unit) of every number in order; unit is the token right after the number
+    when that token is a known unit (so a repaired word next to a number, 'aud' -> 'and', is not
+    a unit change, but 'kPa' -> 'atm' is)."""
     out = []
     for m in _NUMBER.finditer(text):
-        before = text[m.start() - 1] if m.start() else " "
-        sign = before if before in "+-–" and (m.start() < 2 or not text[m.start() - 2].isalnum()) else ""
-        sign = "-" if sign == "–" else sign
-        u = _UNIT.match(text, m.end())
-        out.append((sign, m.group(1), u.group(1) if u else "", m.start(), m.end()))
+        nxt = _TOKEN.match(text, m.end() + (1 if text[m.end():m.end() + 1] == " " else 0))
+        unit = nxt.group(0).rstrip(".,;:)") if nxt else ""
+        out.append((m.group(1) or "", m.group(2), unit if unit in UNITS else ""))
     return out
 
 
-def furniture_lines(src: str) -> set[str]:
-    """Running-header lines of the part: a short line holding words (no CJK, not a table row)
-    that recurs >= 3 times with only its numbers changing, never close together (page after
-    page, >= 8 lines apart). Consecutive rows of one shape are a table, not furniture."""
-    where: dict[str, list[int]] = {}
-    for i, line in enumerate(src.split("\n")):
-        s = line.strip()
-        if 0 < len(s) <= 60 and not _CJK.search(s) and not _TABLE_ROW.search(s) \
-                and _WORD3.search(s):
-            where.setdefault(re.sub(r"\d+", "#", s), []).append(i)
-    return {k for k, pos in where.items()
-            if len(pos) >= 3 and min(b - a for a, b in zip(pos, pos[1:])) >= 8}
-
-
 def number_problem(src: str, out: str) -> str | None:
-    """Numbers are conserved token by token, in order: same sign, same digits and separators,
-    same exponent, and — where both sides give one — the same unit. Allowed only: OCR look-alike
-    letters next to digits (canonicalised on both sides), thousands grouping ('1 000' -> '1000'),
-    splitting a glued run of >= 7 digits into pieces separated by spaces, and deleting a number
-    together with a running-header line. Anything else — a changed sign, decimal, exponent, unit,
-    an added or deleted value, reordering — is rejected; the part then keeps its rule-cleaned text."""
-    src_c, out_c = _canon(src), _canon(out)
-    S, O = number_tokens(src_c), number_tokens(out_c)
-    furniture = furniture_lines(src_c)
-    line_of = {}
-    for line in src_c.split("\n"):
-        key = re.sub(r"\d+", "#", line.strip())
-        for t in number_tokens(line):
-            line_of.setdefault(t[1], set()).add(key)
+    """Every number survives exactly, in order: same sign, same digits, separators and exponent,
+    and the same unit wherever either side has a known unit. No number may be added, deleted,
+    merged, split or reordered. (Removing page numbers and headers is the rules' job; a repair
+    that tries is rejected and the part keeps its rule-cleaned text.)"""
+    S = number_tokens(_canon(src, source=True))
+    O = number_tokens(_canon(out, source=False))
+    for k, (a, b) in enumerate(zip(S, O)):
+        if a[:2] != b[:2]:
+            return f"number {k + 1} changed: {a[0]}{a[1]} -> {b[0]}{b[1]}"
+        if (a[2] or b[2]) and a[2] != b[2]:
+            return f"unit of {a[1]} changed: {a[2] or '(none)'} -> {b[2] or '(none)'}"
+    if len(S) != len(O):
+        return f"{len(S)} numbers in the source, {len(O)} in the repair"
+    return None
 
-    def deletable(tok) -> bool:
-        return bool(line_of.get(tok[1])) and line_of[tok[1]] <= furniture
 
-    i = k = 0
-    while k < len(O):
-        sign, num, unit, start, end = O[k]
-        if i >= len(S):
-            return f"number {sign}{num} is not in the source"
-        s_sign, s_num, s_unit = S[i][:3]
-        if num == s_num and sign == s_sign:
-            if unit and s_unit and unit != s_unit:
-                return f"unit changed: {s_num} {s_unit} -> {num} {unit}"
-            i, k = i + 1, k + 1
-            continue
-        # thousands grouping: '1 000 000' -> '1000000'
-        j, joined = i, ""
-        while j < len(S) and len(joined) < len(num) and (j == i or (
-                len(S[j][1]) == 3 and S[j][1].isdigit() and src_c[S[j - 1][4]:S[j][3]] == " ")):
-            joined += S[j][1]
-            j += 1
-        if j - i >= 2 and joined == num and S[i][1].isdigit() and len(S[i][1]) <= 3:
-            if sign != S[i][0]:
-                return f"sign changed on {S[i][0]}{S[i][1]}"
-            if unit and S[j - 1][2] and unit != S[j - 1][2]:
-                return f"unit changed: {S[j - 1][2]} -> {unit}"
-            i, k = j, k + 1
-            continue
-        # a glued run of >= 7 digits split into space-separated pieces
-        if len(re.sub(r"\D", "", s_num)) >= 7 and s_num.startswith(num) and num != s_num:
-            rest, kk = s_num[len(num):], k + 1
-            while rest and kk < len(O) and rest.startswith(O[kk][1]) \
-                    and out_c[O[kk - 1][4]:O[kk][3]].strip() == "":
-                rest, kk = rest[len(O[kk][1]):], kk + 1
-            if not rest:
-                if sign != s_sign:
-                    return f"sign changed on {s_sign}{s_num}"
-                if O[kk - 1][2] and s_unit and O[kk - 1][2] != s_unit:
-                    return f"unit changed: {s_unit} -> {O[kk - 1][2]}"
-                if any(O[m][0] for m in range(k + 1, kk)):
-                    return f"sign inserted inside the split of {s_num}"
-                i, k = i + 1, kk
-                continue
-        # deleting numbers that stood only on running-header lines
-        if deletable(S[i]):
-            i += 1
-            continue
-        return f"number {sign}{num} does not match the source's {s_sign}{s_num} at this point"
-    missing = [t for t in S[i:] if not deletable(t)]
-    if missing:
-        return f"numbers deleted: {[t[0] + t[1] for t in missing[:5]]}"
+def model_eligible(src: str) -> bool:
+    """Only Latin-script parts go to the model; others keep their rule-cleaned text."""
+    return not _NON_LATIN.search(src)
+
+
+def plausible_word(w: str) -> bool:
+    """A token a reader would call a word in any Latin-script language: known English, or
+    letter-shaped (a vowel, no letter tripled, no capital inside) with 3+ letters."""
+    lw = w.lower()
+    if lw in v1_rules.english_words() or lw.rstrip("s") in v1_rules.english_words():
+        return True
+    return (len(w) >= 3 and any(c in "aeiouyäöüåéèàáíóúâêîôû" for c in lw)
+            and not re.search(r"(.)\1\1", lw) and not re.search(r".[A-Z]", w))
+
+
+def deleted_content(src: str, out: str) -> str | None:
+    """A word-level diff: the repair may change words (OCR fixes) and drop garbage, but may not
+    delete a run of source text that holds 3+ plausible words (in any Latin language) — deleting
+    content is never a repair. A replacement that is less than half the size of what it replaces
+    counts as a deletion."""
+    a = _TOKEN.findall(src)
+    b = _TOKEN.findall(out)
+    sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag == "delete" or (tag == "replace" and
+                               sum(map(len, b[j1:j2])) < 0.5 * sum(map(len, a[i1:i2]))):
+            words = [w for tok in a[i1:i2] for w in _WORD.findall(tok) if plausible_word(w)]
+            if len(words) >= 3:
+                return f"deleted text: {' '.join(a[i1:i2])[:80]!r}"
     return None
 
 
 def check(src: str, out: str) -> str | None:
-    """Why a repaired part is rejected, or None if it passes. A part counts as garbage (may be
-    dropped or shrink) only on positive evidence: a damage score >= 0.35. Short parts, tables
-    and non-English text have no score, so they are never dropped."""
-    garbage = (v1_rules.damage_score(src) or 0) >= 0.35
+    """Why a repaired part is rejected, or None if it passes. Fail-closed: a rejected repair
+    keeps the rule-cleaned text, so every check may be stricter than necessary, never looser."""
     if out.strip() == DROP:
-        if not garbage:
-            return "dropped a part that holds readable content; repair it instead"
-        # a garbled part may still carry a readable table or line: every line must be garbage
-        if number_problem(src, ""):
-            return "dropped a part that holds numbers; repair it instead"
-        if readable := next((x for x in src.split("\n") if readable_line(x)), None):
-            return f"dropped a part with readable text ({readable.strip()[:60]!r}); repair it instead"
-    return None if out.strip() == DROP else _check_repair(src, out, garbage)
-
-
-def readable_line(line: str) -> bool:
-    """A line that holds real words: at least half of its words (2+ letters) are in the
-    dictionary, or it holds CJK (never judged by an English dictionary)."""
-    if _CJK.search(line):
-        return True
-    words = [w.lower() for w in re.findall(r"[A-Za-z]{2,}", line)]
-    known = v1_rules.english_words()
-    return bool(words) and sum(w in known or w.rstrip("s") in known for w in words) >= len(words) / 2
-
-
-def _check_repair(src: str, out: str, garbage: bool) -> str | None:
+        return "the model may not drop parts; repair them or return them unchanged"
     if why := number_problem(src, out):
         return why
     if len(out) > 1.25 * len(src) + 200:
         return "output much longer than input"
-    if not garbage and len(_LETTER.findall(out)) < 0.5 * len(_LETTER.findall(src)):
+    if len(_LETTER.findall(out)) < 0.5 * len(_LETTER.findall(src)):
         return "output lost more than half of the text; keep all content"
-    if garbage:  # garbage may go, its readable lines may not: their words must survive
-        known = v1_rules.english_words()
-        kept = {w.lower() for w in re.findall(r"[A-Za-z]{2,}", out)}
-        words = [w.lower() for x in src.split("\n") if readable_line(x)
-                 for w in re.findall(r"[A-Za-z]{2,}", x) if w.lower() in known]
-        if words and sum(w in kept for w in words) < 0.8 * len(words):
-            return "output lost readable lines of a garbled part; keep them"
+    if why := deleted_content(src, out):
+        return why
     return None
 
 
@@ -400,8 +352,8 @@ def revise(doc_id: str, backend, pool: ThreadPoolExecutor) -> dict:
     title = header.split("\n", 1)[0].lstrip("# ")[:200]
 
     def call(k, src):
-        if not src.strip():
-            return {"text": "", "dropped": False, "dropped_text": "", "fallback": None,
+        if not src.strip() or not model_eligible(src):  # non-Latin script: rules only
+            return {"text": src, "dropped": False, "dropped_text": "", "fallback": None,
                     "fallback_chars": 0, "usage": Counter(), "attempts": 0}
         before = parts[k - 1][-600:] if k else ""
         for attempt in range(3):  # transport errors (rate limits, timeouts): back off, retry

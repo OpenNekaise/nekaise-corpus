@@ -24,7 +24,7 @@ import unicodedata
 from functools import lru_cache
 from pathlib import Path
 
-RULESET_VERSION = "r2"  # r2: numbers are never debris; page numbers and running lines need page evidence
+RULESET_VERSION = "r2"  # r2: numbers never debris; page numbers/running lines only with strong page evidence
 
 # ------------------------------------------------------------------------------------ pre-pass
 
@@ -112,7 +112,7 @@ def parse_patent(body: list[str]) -> list[str] | None:
 
 _RULE_LINE = re.compile(r"^\s*([_=\-~*.·•─━═]\s?)\1{7,}\s*$")        # ________ ======= - - - -
 _TOC_LEADER = re.compile(r"(?:\.\s?){5,}\s*[\divxlcIVXLC]+\s*$")      # Introduction ...... 12
-_CJK = re.compile(r"[぀-ヿ㐀-鿿가-힯豈-﫿]")
+_CJK = re.compile(r"[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af\uf900-\ufaff]")
 _TABLEISH = re.compile(r"\|.*\||\S\s{3,}\S.*\S\s{3,}\S|\t")
 _LIST_START = re.compile(r"^\s*(?:[-*•▪◦·]\s|\(?\d{1,3}[.)]\s|\(?[a-zA-Z][.)]\s|[ivx]{1,4}[.)]\s)")
 _END_PUNCT = re.compile(r"[.!?:;。！？：；…)\]\"'”’»」』]$")
@@ -154,11 +154,11 @@ _BARE_INT = re.compile(r"^\s*(?:[-–—]\s*)?(?:page\s+)?(\d{1,4})(?:\s*(?:of|/
 _LETTERS3 = re.compile(r"[^\W\d_]{3}")
 
 
-def page_number_lines(lines: list[str], min_gap: int = 20) -> set[int]:
-    """Indexes of page-number lines, by page-position evidence only: >= 4 bare numbers rising by
-    1-2, each >= `min_gap` NON-BLANK lines after the previous (one per page; blank lines are no
-    evidence), at regular intervals (the longest gap <= 3x the shortest). A column of values —
-    spread out by blank lines, or labelled values a few sentences apart — never qualifies."""
+def page_number_lines(lines: list[str], min_gap: int = 25, min_pages: int = 8) -> set[int]:
+    """Indexes of page-number lines, by strong page-position evidence only: >= `min_pages` bare
+    numbers rising by 1-2, each >= `min_gap` NON-BLANK lines after the previous (one per page;
+    blank lines are no evidence), at regular intervals (longest gap <= 3x the shortest). Weaker
+    evidence keeps the numbers: a stray page number is noise, a deleted measurement is loss."""
     content_pos, k = [], 0
     for x in lines:
         content_pos.append(k)
@@ -170,7 +170,7 @@ def page_number_lines(lines: list[str], min_gap: int = 20) -> set[int]:
 
     def close():
         gaps = [content_pos[b] - content_pos[a] for (a, _), (b, _) in zip(chain, chain[1:])]
-        if len(chain) >= 4 and max(gaps) <= 3 * min(gaps):
+        if len(chain) >= min_pages and max(gaps) <= 3 * min(gaps):
             pages.update(i for i, _ in chain)
 
     for i, v in cands:
@@ -187,12 +187,11 @@ def page_number_lines(lines: list[str], min_gap: int = 20) -> set[int]:
 
 
 def drop_running_lines(lines: list[str], min_repeats: int = 4) -> list[str]:
-    """Running headers/footers and page numbers. Page numbers need page-position evidence
-    (page_number_lines). A running line recurs >= min_repeats times, spread over the document
-    and never back to back, is short, holds words, is not a sentence and never a table row; and
-    it stands next to page numbers (within 3 content lines, in most occurrences) — or, where the
-    document has no page numbers left, reads like a header: >= 5 words, >= 25 characters.
-    A repeated figure legend ('Public Health Centre') or table row is content."""
+    """Running headers/footers and page numbers, only with page evidence (page_number_lines).
+    A running line recurs >= min_repeats times, spread over the document and never back to back,
+    is short, holds words, is not a sentence and never a table row, and stands next to detected
+    page numbers (within 3 content lines) in most of its occurrences. A document without page
+    evidence keeps every repeated line: a repeated legend, table row or measurement is content."""
     n = len(lines)
     pages = page_number_lines(lines)
     drop = set(pages)
@@ -217,11 +216,7 @@ def drop_running_lines(lines: list[str], min_repeats: int = 4) -> list[str]:
             gaps = [b - a for a, b in zip(where, where[1:])]
             if (where[-1] - where[0]) / n <= 0.3 or min(gaps) <= 5:
                 continue
-            if page_ranks:
-                header = sum(near_page(i) for i in where) >= 0.5 * len(where)
-            else:
-                header = len(s.split()) >= 5 and len(s) >= 25
-            if header:
+            if page_ranks and sum(near_page(i) for i in where) >= 0.5 * len(where):
                 drop.update(where)
     return [x for i, x in enumerate(lines) if i not in drop]
 

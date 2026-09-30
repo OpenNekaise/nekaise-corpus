@@ -120,6 +120,23 @@ def test_labelled_values_a_few_sentences_apart_are_not_page_numbers():
         assert v in out
 
 
+def test_labelled_values_twenty_lines_apart_are_not_page_numbers():
+    lines = ["Measured temperatures:"]
+    for v in (20, 21, 22, 23):
+        lines += [str(v)] + ["The chamber was held at this temperature for one hour."] * 20
+    out = R.clean_body(lines, "")
+    for v in ("20", "21", "22", "23"):
+        assert v in out
+
+
+def test_repeated_plain_text_rows_kept_without_page_evidence():
+    row = "Concrete grade C25/30 strength 25 density 2400"
+    doc = []
+    for _ in range(9):
+        doc += ["Real prose about the structural design of the building frame, checked in 2021."] * 30 + [row]
+    assert R.drop_running_lines(doc).count(row) == 9
+
+
 def test_repeated_table_rows_and_short_legends_kept():
     doc = []
     for fig in range(9):

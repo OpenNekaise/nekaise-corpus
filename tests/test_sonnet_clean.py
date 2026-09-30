@@ -14,15 +14,12 @@ PROSE = ("The sample is dissolved in aqua regia and the solution is evaporated t
 
 def test_numbers_allowed_transformations_pass():
     assert sc.number_problem("Vol. 59, No.6, l957 page 4l5", "Vol. 59, No. 6, 1957 page 415") is None
-    assert sc.number_problem("at 1 000 000 kPa", "at 1000000 kPa") is None  # thousands grouping
-    assert sc.number_problem("area 12 m²", "area 12 $m^2$") is None      # NFKC superscript
-    assert sc.number_problem("446425646.2%", "4464 25646.2%") is None      # glued OCR run split
+    assert sc.number_problem("at 1 000 000 kPa", "at 1000000 kPa") is None  # thousands spacing
     assert sc.number_problem("grade S355 and B20", "grade S355 and B20") is None
+    assert sc.number_problem("the 20 aud 25 values", "the 20 and 25 values") is None  # OCR word
+    assert sc.number_problem("range 20–25 °C", "range 20-25 °C") is None
     table = "| grade | fck | density |\n|C25/30|25|2400|\n|C30/37|30|2400|"
     assert sc.check(table, table) is None and sc.check(PROSE + table, PROSE + table) is None
-    page = "\n".join([PROSE[:200]] * 10)
-    running = "\n".join(f"TM 5-697 page {i}\n{page}" for i in range(3))
-    assert sc.number_problem(running, "\n".join([page] * 3)) is None   # header numbers go with it
 
 
 def test_numbers_changes_rejected():
@@ -32,37 +29,38 @@ def test_numbers_changes_rejected():
            ("cost sn.87i per ton, 12 tons", "cost $2.87 per ton, 12 tons"),
            ("output was 443 units", "output was 44.3 units"),
            ("CE~20fp", "CE-204"),
-           ("at -20 C", "at +20 C"), ("at -20 C", "at 20 C"),
+           ("at -20 C", "at +20 C"), ("at -20 C", "at 20 C"), ("at - 20 °C", "at + 20 °C"),
            ("mass 12.00 kg", "mass 1200 kg"),
            ("dose 1e-6 Sv", "dose 1e6 Sv"),
            ("range 20–25 C", "range 2025 C"),
-           ("pressure 1200 kPa", "pressure 1200 Pa"),
-           ("1200 kPa and 1200 kPa", "1200 kPa"),                      # deleted duplicate
-           ("1200 kPa", "1200 kPa and 1200 kPa"),                      # added duplicate
-           ("设计压力为1200千帕。", "设计压力为千帕。"),                    # CJK prose
-           ("tested in 19 57", "tested in 1957"),                      # not thousands grouping
-           ("-1 000 kPa", "+1000 Pa"), ("-1 000 kPa", "-1000 Pa"),     # through the join path
-           ("-1234567 kPa", "+1234 567 kPa"), ("1234567 kPa", "1234 567 Pa"),  # the split path
-           ("a gap of .5 mm", "a gap of 5 mm"),
-           ("C25/30 25 2400\nC30/37 30 2400\nC35/45 35 2400", "")]  # a bare numeric table
+           ("pressure 1200 kPa", "pressure 1200 Pa"), ("pressure 1200 kPa", "pressure 1200 atm"),
+           ("pressure 1200 kPa", "pressure 1200"),
+           ("1200 kPa and 1200 kPa", "1200 kPa"), ("1200 kPa", "1200 kPa and 1200 kPa"),
+           ("tested in 19 57", "tested in 1957"),
+           ("-1 000 kPa", "+1000 Pa"), ("-1234567 kPa", "+1234 567 kPa"),
+           ("a gap of .5 mm", "a gap of 5 mm"), ("a gap of ,5 mm", "a gap of 5 mm"),
+           ("446425646.2%", "4464 25646.2%"),                     # splits are not allowed
+           ("C25/30 25 2400\nC30/37 30 2400\nC35/45 35 2400", "")]
     for src, out in bad:
         assert sc.number_problem(src, out), (src, out)
+    page = "\n".join([PROSE[:200]] * 10)
+    headers = "\n".join(f"Design pressure {v} kPa\n{page}" for v in (1200, 1300, 1400))
+    assert sc.number_problem(headers, "\n".join([page] * 3))  # repeated measurements stay
 
 
 def test_check_rejects_dropping_or_gutting_readable_content():
-    table = "\n".join(f"Kansas | County {i} | Mixed-Humid | zone {i % 7}" for i in range(80))
-    assert "dropped" in sc.check(table, sc.DROP)
-    assert "half" in sc.check(PROSE, PROSE[:200])
-    garbage = "the xqzt vbnm rtyu of wkpl and qxvz " * 40  # damage score well above 0.35
+    garbage = "the xqzt vbnm rtyu of wkpl and qxvz " * 40
+    assert sc.check(garbage, sc.DROP)  # the model never drops
     words_table = "Material | Use\nConcrete | Foundation\nSteel | Reinforcement"
-    assert sc.check(garbage + "\n" + words_table, sc.DROP)  # garbled text + a words-only table
-    assert sc.check(garbage + "\n" + words_table, "the " * 30)  # nor gutted by a 'repair'
-    assert sc.check(garbage, sc.DROP) is None  # proven garbage may go
-    assert sc.check("■■ rrrR.nafti««fc ¦¦ ~~", sc.DROP)  # too short to prove: kept
-    short_table = "Concrete grade | strength | density\nC25/30 | 25 | 2400\nC30/37 | 30 | 2400"
-    assert sc.check(short_table, sc.DROP)
-    assert sc.check(garbage + "\n" + short_table, sc.DROP)  # garbled text + a real table
-    assert sc.check(PROSE, PROSE.replace("aqua regia", "aqua  regia")) is None
+    assert sc.check(garbage + "\n" + words_table, "the " * 30)
+    assert sc.check(PROSE, PROSE[:200])
+    german = "Die Wärmedämmung der Außenwand verringert den Heizwärmebedarf deutlich."
+    assert sc.check(PROSE + "\n" + german, PROSE)          # a Latin-language sentence deleted
+    assert sc.check(PROSE + " Tung sten was added.", PROSE + " Tungsten was added.") is None
+    garbled = "■■ rrrR.nafti««fc ¦¦ ~~ xqzt vbnm"
+    assert sc.check(PROSE + "\n" + garbled, PROSE) is None  # unreadable debris may go
+    assert not sc.model_eligible("本发明公开了一种冰箱。" + PROSE)
+    assert not sc.model_eligible("Теплоизоляция стены " + PROSE) and sc.model_eligible(PROSE)
 
 
 class FakeBackend:
@@ -87,6 +85,12 @@ def test_revise_part_falls_back_only_where_rejected():
     r = sc.revise_part(FakeBackend(lambda s: s.replace("34", "43")), "t", 0, 1, src)
     assert good in r["text"] and bad in r["text"]
     assert r["fallback"] and 0 < r["fallback_chars"] < len(src)
+
+
+def test_revise_part_drop_keeps_source():
+    src = "rrrR.nafti fc xqzt " + PROSE
+    r = sc.revise_part(FakeBackend(lambda s: sc.DROP), "t", 0, 1, src)
+    assert not r["dropped"] and r["text"] == src and r["fallback"]
 
 
 def test_unfence():
