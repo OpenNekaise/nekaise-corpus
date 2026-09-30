@@ -81,24 +81,38 @@ def test_rule_lines_and_toc_leaders():
     assert R.drop_toc_leaders(R.drop_rule_lines(lines)) == ["Real text... continues.", "a = b - c"]
 
 
-def test_glyph_columns_dropped_but_cjk_columns_kept():
-    formula = ["Heat balance:", "=", "∑", "W", "T", "ρ", "β", "x", "Next sentence."]
-    assert R.drop_glyph_columns(formula) == ["Heat balance:", "", "Next sentence."]
+def test_glyph_columns_joined_not_deleted_and_cjk_columns_kept():
+    formula = ["Heat balance:", "F", "=", "m", "a", "+", "b", "Next sentence."]
+    assert R.join_glyph_columns(formula) == ["Heat balance:", "F = m a + b", "Next sentence."]
     vertical_cjk = ["縦", "書", "き", "の", "日", "本", "語"]
-    assert R.drop_glyph_columns(vertical_cjk) == vertical_cjk
+    assert R.join_glyph_columns(vertical_cjk) == vertical_cjk
+    measurements = ["20", "21", "22", "23", "24", "25"]
+    assert R.join_glyph_columns(measurements) == measurements
 
 
-def test_running_header_dropped_table_values_kept():
-    page = [f"Line {i} of real prose about building energy use in cold climates." for i in range(60)]
-    doc = []
-    for p in range(8):
-        doc += ["Volume 7.1 Guide to Determining Climate Regions by County", *page, str(p + 1)]
-    table = ["Kansas", "Allen", "Mixed-Humid"] * 5  # repeated values close together
-    doc[100:100] = table
-    out = R.drop_running_lines(doc)
-    assert "Volume 7.1 Guide to Determining Climate Regions by County" not in out
-    assert "7" not in out  # page numbers
-    assert out.count("Mixed-Humid") == 5
+def test_page_furniture_needs_real_page_breaks():
+    page = [f"Line {i} of real prose about building energy use in cold climates." for i in range(40)]
+    header = "Volume 7.1 Guide to Determining Climate Regions by County"
+    with_breaks, without = [], []
+    for p in range(6):
+        with_breaks += [("\f" if p else "") + header, *page, str(p + 1)]
+        without += [header, *page, str(p + 1)]
+    out = R.clean_body(with_breaks, "")
+    assert header not in "\n".join(out)
+    assert not any(x.strip() in {"1", "2", "3", "4", "5", "6"} for x in out)
+    out = R.clean_body(without, "")  # no page breaks: no page evidence, nothing removed
+    assert "\n".join(out).count(header) == 6
+
+
+def test_measurement_at_a_page_edge_is_kept_when_edges_do_not_repeat():
+    pages = []
+    for p, v in enumerate((1200, 1300, 1400, 1500)):
+        pages += [("\f" if p else "") + f"Section {p} discusses the design of pipe network {p}.",
+                  "Real prose about the heating plant and its distribution network." * 2,
+                  f"Design pressure {v} kPa"]
+    out = "\n".join(R.clean_body(pages, ""))
+    for v in ("1200", "1300", "1400", "1500"):
+        assert v in out
 
 
 def test_numbers_spread_by_blank_lines_are_not_page_numbers():
@@ -134,7 +148,16 @@ def test_repeated_plain_text_rows_kept_without_page_evidence():
     doc = []
     for _ in range(9):
         doc += ["Real prose about the structural design of the building frame, checked in 2021."] * 30 + [row]
-    assert R.drop_running_lines(doc).count(row) == 9
+    assert "\n".join(R.clean_body(doc, "")).count(row) == 9
+
+
+def test_labelled_values_twenty_five_lines_apart_are_kept():
+    lines = ["Measured temperatures:"]
+    for v in range(20, 28):
+        lines += [str(v)] + ["The chamber was held at this temperature for one hour."] * 25
+    out = R.clean_body(lines, "")
+    for v in range(20, 28):
+        assert str(v) in out
 
 
 def test_repeated_table_rows_and_short_legends_kept():
@@ -142,7 +165,7 @@ def test_repeated_table_rows_and_short_legends_kept():
     for fig in range(9):
         doc += ["Real prose about the district and its public services, measured in 2021."] * 30 + \
             ["Public Health Centre", "| C25/30 concrete | strength 25 | density 2400 |"]
-    out = R.drop_running_lines(doc)
+    out = "\n".join(R.clean_body(doc, ""))
     assert out.count("Public Health Centre") == 9
     assert out.count("| C25/30 concrete | strength 25 | density 2400 |") == 9
 
@@ -153,7 +176,7 @@ def test_repeated_figure_legends_kept():
         doc += [f"Figure {fig} shows the distribution of services in the district."] + \
             ["Real prose about adaptive reuse of heritage buildings in contested cities."] * 30 + \
             ["Nursery", "Parks", "Police Station", "Pharmacy", "Gas Station"]
-    out = R.drop_running_lines(doc)
+    out = "\n".join(R.clean_body(doc, ""))
     assert out.count("Police Station") == 9 and out.count("Nursery") == 9
 
 

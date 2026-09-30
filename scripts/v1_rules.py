@@ -24,7 +24,7 @@ import unicodedata
 from functools import lru_cache
 from pathlib import Path
 
-RULESET_VERSION = "r2"  # r2: numbers never debris; page numbers/running lines only with strong page evidence
+RULESET_VERSION = "r2"  # r2: fail-closed: page furniture only at real page breaks; equations joined, not deleted
 
 # ------------------------------------------------------------------------------------ pre-pass
 
@@ -126,11 +126,11 @@ def drop_toc_leaders(lines: list[str]) -> list[str]:
     return [x for x in lines if not _TOC_LEADER.search(x)]
 
 
-def drop_glyph_columns(lines: list[str], run: int = 6) -> list[str]:
-    """A formula or figure broken into one glyph per line ('=', '∑', 'W', 'T', 'ρ' ...): drop
-    runs of >= `run` consecutive non-blank lines of <= 2 characters. A line holding a digit never
-    counts — a column of measurements ('20', '21', '22' ...) is data, not debris — and neither
-    does a line holding CJK: vertical CJK text is content (the orphan_chars lesson)."""
+def join_glyph_columns(lines: list[str], run: int = 6) -> list[str]:
+    """A formula or figure broken into one glyph per line ('F', '=', 'm', 'a', '+', 'b'): runs of
+    >= `run` consecutive non-blank lines of <= 2 characters are JOINED into one line
+    ('F = m a + b'), never deleted — an equation is content. Lines holding a digit or CJK never
+    count (a column of measurements, vertical CJK text)."""
     def glyph(s: str) -> bool:
         return 0 < len(s) <= 2 and not _CJK.search(s) and not any(c.isdigit() for c in s)
 
@@ -139,9 +139,9 @@ def drop_glyph_columns(lines: list[str], run: int = 6) -> list[str]:
         j = i
         while j < n and (glyph(lines[j].strip()) or (not lines[j].strip() and j > i)):
             j += 1
-        short = sum(1 for x in lines[i:j] if x.strip())
-        if short >= run:
-            out.append("")
+        cells = [x.strip() for x in lines[i:j] if x.strip()]
+        if len(cells) >= run:
+            out.append(" ".join(cells))
             i = j
         else:
             out.append(lines[i])
@@ -149,76 +149,45 @@ def drop_glyph_columns(lines: list[str], run: int = 6) -> list[str]:
     return out
 
 
-_BARE_INT = re.compile(r"^\s*(?:[-–—]\s*)?(?:page\s+)?(\d{1,4})(?:\s*(?:of|/)\s*\d{1,4})?(?:\s*[-–—])?\s*$",
-                       re.I)
-_LETTERS3 = re.compile(r"[^\W\d_]{3}")
+def page_furniture(body: list[str], min_pages: int = 3) -> set[int]:
+    """Indexes of running headers, footers and page numbers — ONLY where the extraction kept real
+    page breaks (form feeds). A line counts when it is the first or last non-blank line of its
+    page and the same line (digits aside) stands at that page edge on at least half the pages;
+    a bare number counts when page edges carry a bare number on at least half the pages.
+    Without form feeds nothing is removed: a stray header is noise, a deleted measurement or
+    repeated table row is loss, and without page breaks the two cannot be told apart."""
+    starts = [0] + [i for i, x in enumerate(body) if "\f" in x]
+    starts = sorted(set(starts))
+    if len(starts) < min_pages:
+        return set()
+    edges: list[list[int]] = []  # per page: indexes of its first and last non-blank lines
+    for k, a in enumerate(starts):
+        b = starts[k + 1] if k + 1 < len(starts) else len(body)
+        idx = [i for i in range(a, b) if body[i].replace("\f", "").strip()]
+        edges.append(sorted({idx[0], idx[-1]}) if idx else [])
+    pages = len(edges)
+    text = lambda i: body[i].replace("\f", "").strip()
+    key = lambda i: re.sub(r"\d+", "#", text(i))
+    seen: dict[str, list[tuple[int, ...]]] = {}  # key -> the numbers it carried, page by page
+    for e in edges:
+        for i in e:
+            seen.setdefault(key(i), []).append(tuple(int(d) for d in re.findall(r"\d+", text(i))))
+    furniture = {k for k, nums in seen.items()
+                 if len(nums) >= max(min_pages, pages / 2) and _page_like(nums)}
+    return {i for e in edges for i in e if key(i) in furniture}
 
 
-def page_number_lines(lines: list[str], min_gap: int = 25, min_pages: int = 8) -> set[int]:
-    """Indexes of page-number lines, by strong page-position evidence only: >= `min_pages` bare
-    numbers rising by 1-2, each >= `min_gap` NON-BLANK lines after the previous (one per page;
-    blank lines are no evidence), at regular intervals (longest gap <= 3x the shortest). Weaker
-    evidence keeps the numbers: a stray page number is noise, a deleted measurement is loss."""
-    content_pos, k = [], 0
-    for x in lines:
-        content_pos.append(k)
-        if x.strip():
-            k += 1
-    cands = [(i, int(m.group(1))) for i, x in enumerate(lines) if (m := _BARE_INT.match(x))]
-    pages: set[int] = set()
-    chain: list[tuple[int, int]] = []
-
-    def close():
-        gaps = [content_pos[b] - content_pos[a] for (a, _), (b, _) in zip(chain, chain[1:])]
-        if len(chain) >= min_pages and max(gaps) <= 3 * min(gaps):
-            pages.update(i for i, _ in chain)
-
-    for i, v in cands:
-        gap = content_pos[i] - content_pos[chain[-1][0]] if chain else 0
-        if chain and 1 <= v - chain[-1][1] <= 2 and gap >= min_gap:
-            chain.append((i, v))
-        elif chain and gap < min_gap:
-            continue  # a number inside the same page (a table value) neither extends nor breaks it
-        else:
-            close()
-            chain = [(i, v)]
-    close()
-    return pages
-
-
-def drop_running_lines(lines: list[str], min_repeats: int = 4) -> list[str]:
-    """Running headers/footers and page numbers, only with page evidence (page_number_lines).
-    A running line recurs >= min_repeats times, spread over the document and never back to back,
-    is short, holds words, is not a sentence and never a table row, and stands next to detected
-    page numbers (within 3 content lines) in most of its occurrences. A document without page
-    evidence keeps every repeated line: a repeated legend, table row or measurement is content."""
-    n = len(lines)
-    pages = page_number_lines(lines)
-    drop = set(pages)
-    if n >= 200:
-        content = [i for i, x in enumerate(lines) if x.strip()]
-        rank = {i: r for r, i in enumerate(content)}
-        page_ranks = sorted(rank[i] for i in pages)
-
-        def near_page(i: int) -> bool:
-            r = rank[i]
-            return any(abs(r - p) <= 3 for p in page_ranks)
-
-        pos: dict[str, list[int]] = {}
-        for i, x in enumerate(lines):
-            s = re.sub(r"\d+", "#", x.strip())  # 'Page 12' and 'Page 13' are one running line
-            if 2 < len(s) <= 80 and _LETTERS3.search(s) and not _END_PUNCT.search(s) \
-                    and not _TABLEISH.search(x):
-                pos.setdefault(s, []).append(i)
-        for s, where in pos.items():
-            if len(where) < min_repeats:
-                continue
-            gaps = [b - a for a, b in zip(where, where[1:])]
-            if (where[-1] - where[0]) / n <= 0.3 or min(gaps) <= 5:
-                continue
-            if page_ranks and sum(near_page(i) for i in where) >= 0.5 * len(where):
-                drop.update(where)
-    return [x for i, x in enumerate(lines) if i not in drop]
+def _page_like(nums: list[tuple[int, ...]]) -> bool:
+    """A running line's numbers stay constant ('Volume 7.1 ... 2010') or count pages: from one
+    occurrence to the next at most one number changes, and it goes up by 1-2. Values that jump
+    ('Design pressure 1200 / 1300 / 1400 kPa') are measurements, not furniture."""
+    for a, b in zip(nums, nums[1:]):
+        if len(a) != len(b):
+            return False
+        changed = [(x, y) for x, y in zip(a, b) if x != y]
+        if len(changed) > 1 or any(not 1 <= y - x <= 2 for x, y in changed):
+            return False
+    return True
 
 
 def reflow(lines: list[str]) -> list[str]:
@@ -291,15 +260,15 @@ def paragraphs(lines: list[str]) -> list[str]:
 
 def clean_body(body: list[str], header: str) -> list[str]:
     """The whole deterministic ruleset, in order."""
-    lines = [prepass(x) for x in body]
     if is_patent(header):
-        parsed = parse_patent(lines)
+        parsed = parse_patent([prepass(x) for x in body])
         if parsed is not None:
             return collapse_blank(parsed)
+    furniture = page_furniture(body)  # needs the form feeds that prepass removes
+    lines = [prepass(x) for i, x in enumerate(body) if i not in furniture]
     lines = drop_rule_lines(lines)
     lines = drop_toc_leaders(lines)
-    lines = drop_glyph_columns(lines)
-    lines = drop_running_lines(lines)
+    lines = join_glyph_columns(lines)
     lines = reflow(lines)
     lines = paragraphs(lines)
     return collapse_blank(lines)

@@ -14,7 +14,6 @@ PROSE = ("The sample is dissolved in aqua regia and the solution is evaporated t
 
 def test_numbers_allowed_transformations_pass():
     assert sc.number_problem("Vol. 59, No.6, l957 page 4l5", "Vol. 59, No. 6, 1957 page 415") is None
-    assert sc.number_problem("at 1 000 000 kPa", "at 1000000 kPa") is None  # thousands spacing
     assert sc.number_problem("grade S355 and B20", "grade S355 and B20") is None
     assert sc.number_problem("the 20 aud 25 values", "the 20 and 25 values") is None  # OCR word
     assert sc.number_problem("range 20–25 °C", "range 20-25 °C") is None
@@ -36,7 +35,10 @@ def test_numbers_changes_rejected():
            ("pressure 1200 kPa", "pressure 1200 Pa"), ("pressure 1200 kPa", "pressure 1200 atm"),
            ("pressure 1200 kPa", "pressure 1200"),
            ("1200 kPa and 1200 kPa", "1200 kPa"), ("1200 kPa", "1200 kPa and 1200 kPa"),
-           ("tested in 19 57", "tested in 1957"),
+           ("tested in 19 57", "tested in 1957"), ("at 1 000 kPa", "at 1000 kPa"),
+           ("cells 1 100 200", "cells 1100200"),
+           ("range 20-25 C", "range 20+25 C"), ("1200  kPa", "1200  Pa"),
+           ("12 kg/m² density", "12 lb/ft² density"),
            ("-1 000 kPa", "+1000 Pa"), ("-1234567 kPa", "+1234 567 kPa"),
            ("a gap of .5 mm", "a gap of 5 mm"), ("a gap of ,5 mm", "a gap of 5 mm"),
            ("446425646.2%", "4464 25646.2%"),                     # splits are not allowed
@@ -57,10 +59,18 @@ def test_check_rejects_dropping_or_gutting_readable_content():
     german = "Die Wärmedämmung der Außenwand verringert den Heizwärmebedarf deutlich."
     assert sc.check(PROSE + "\n" + german, PROSE)          # a Latin-language sentence deleted
     assert sc.check(PROSE + " Tung sten was added.", PROSE + " Tungsten was added.") is None
-    garbled = "■■ rrrR.nafti««fc ¦¦ ~~ xqzt vbnm"
+    garbled = "■■ rrrR ««fc ¦¦ ~~ xqzt vbnm"
     assert sc.check(PROSE + "\n" + garbled, PROSE) is None  # unreadable debris may go
+    assert sc.check(PROSE + "\n■■ nafti", PROSE)  # word-shaped: kept (fail-closed)
     assert not sc.model_eligible("本发明公开了一种冰箱。" + PROSE)
     assert not sc.model_eligible("Теплоизоляция стены " + PROSE) and sc.model_eligible(PROSE)
+    assert not sc.model_eligible(PROSE + " भवन ऊर्जा दक्षता") and not sc.model_eligible(PROSE + " Շենք")
+    assert sc.model_eligible(PROSE + " with density ρ and Δt")  # Greek formula symbols are fine
+    assert sc.check(PROSE + " The beam is not safe.", PROSE + " The beam is safe.")
+    assert sc.check(PROSE + " The beam is safe.", PROSE + " The beam is not safe.")
+    listing = PROSE + "\n- Concrete foundation\n- Steel reinforcement\n- Timber frame"
+    assert sc.check(listing, listing.replace("\n- Steel reinforcement", ""))
+    assert sc.check(PROSE + " aCld dJssolved", PROSE + " acid dissolved") is None  # OCR repair
 
 
 class FakeBackend:

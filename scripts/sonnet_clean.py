@@ -97,15 +97,9 @@ The part may start or end mid-sentence because the document continues in neighbo
 
 _LETTER = re.compile(r"[^\W\d_]")
 _WORD = re.compile(r"[^\W\d_]+")
-# Scripts other than Latin: a part holding any of them is never sent to the model (an English
-# dictionary cannot tell whether a repair kept them).
-_NON_LATIN = re.compile("[\u0370-\u03ff\u0400-\u04ff\u0590-\u06ff\u0e00-\u0e7f"
-                        "\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af\uf900-\ufaff]")
-# A number as written: an optional sign (with at most one space), digits with separators or a
-# leading decimal point, an optional exponent.
-_NUMBER = re.compile(r"(?:(?<![\w.,])([-+−–])\s?)?"
+# A number as written, with the operator right before it (sign, range dash, slash, ratio...).
+_NUMBER = re.compile(r"(?:([-+\u2212\u2013\u00b1/\u00d7x*^=<>~:])\s?)?"
                      r"((?:\d+(?:[.,]\d+)*|(?<![\w])[.,]\d+)(?:[eE][-+]?\d+)?)")
-_THOUSANDS = re.compile(r"(?<![\d.,])(\d{1,3})((?: \d{3})+)(?![\d])")
 _TOKEN = re.compile(r"\S+")
 UNITS = frozenset("""% ‰ ° °C °F K C F mm cm m km in ft yd mi m2 m3 cm2 mm2 ft2 ft3 in2 l L ml mL
     kg g mg t lb lbs oz N kN MN Pa kPa MPa GPa hPa bar mbar psi atm mmHg J kJ MJ GJ W kW MW GW Wh
@@ -117,73 +111,100 @@ _OCR_EDGE = re.compile(r"(?<=\d)[lIOo]|[lIOo](?=\d)")
 
 
 def _canon(text: str, source: bool) -> str:
-    """NFKC, one minus sign, thousands spacing removed ('1 000' == '1000' on both sides); on the
-    source only, OCR look-alike letters next to digits read as digits."""
+    """NFKC and one minus sign; on the source only, OCR look-alike letters next to digits read
+    as digits. Nothing else is normalised: '1 000' and '1000' are different texts."""
     text = unicodedata.normalize("NFKC", text).replace("−", "-").replace("–", "-")
-    text = _THOUSANDS.sub(lambda m: m.group(1) + m.group(2).replace(" ", ""), text)
     if source:
         text = _OCR_EDGE.sub(lambda m: "1" if m.group(0) in "lI" else "0", text)
     return text
 
 
 def number_tokens(text: str) -> list[tuple[str, str, str]]:
-    """(sign, number, unit) of every number in order; unit is the token right after the number
-    when that token is a known unit (so a repaired word next to a number, 'aud' -> 'and', is not
-    a unit change, but 'kPa' -> 'atm' is)."""
+    """(operator, number, next token) of every number, in order. The next token is the word
+    right after the number (up to 3 spaces away), stripped of trailing punctuation."""
     out = []
     for m in _NUMBER.finditer(text):
-        nxt = _TOKEN.match(text, m.end() + (1 if text[m.end():m.end() + 1] == " " else 0))
-        unit = nxt.group(0).rstrip(".,;:)") if nxt else ""
-        out.append((m.group(1) or "", m.group(2), unit if unit in UNITS else ""))
+        nxt = re.compile(r" {0,3}(\S+)").match(text, m.end())
+        follow = nxt.group(1).rstrip(".,;:)]") if nxt else ""
+        out.append((m.group(1) or "", m.group(2), follow))
     return out
 
 
+def _same_follow(a: str, b: str) -> bool:
+    """The token after a number is part of its meaning (a unit, 'kg/m2', 'times'); it must stay
+    the same — except an OCR repair of an ordinary lowercase word ('aud' -> 'and'), never of a
+    unit or anything holding digits or symbols."""
+    if a == b:
+        return True
+    if a in UNITS or b in UNITS or not (a.isalpha() and b.isalpha() and a.islower() and b.islower()):
+        return False
+    known = v1_rules.english_words()
+    return (a in known) != (b in known) and difflib.SequenceMatcher(None, a, b).ratio() >= 0.6
+
+
 def number_problem(src: str, out: str) -> str | None:
-    """Every number survives exactly, in order: same sign, same digits, separators and exponent,
-    and the same unit wherever either side has a known unit. No number may be added, deleted,
-    merged, split or reordered. (Removing page numbers and headers is the rules' job; a repair
+    """Every number survives exactly, in order: the same operator before it (sign, range dash,
+    slash), the same digits, separators and exponent, and the same token after it (its unit).
+    No number may be added, deleted, merged, split or moved; nothing is normalised except OCR
+    look-alikes next to digits. (Removing page numbers and headers is the rules' job; a repair
     that tries is rejected and the part keeps its rule-cleaned text.)"""
     S = number_tokens(_canon(src, source=True))
     O = number_tokens(_canon(out, source=False))
     for k, (a, b) in enumerate(zip(S, O)):
         if a[:2] != b[:2]:
             return f"number {k + 1} changed: {a[0]}{a[1]} -> {b[0]}{b[1]}"
-        if (a[2] or b[2]) and a[2] != b[2]:
-            return f"unit of {a[1]} changed: {a[2] or '(none)'} -> {b[2] or '(none)'}"
+        if not _same_follow(a[2], b[2]):
+            return f"the word after {a[1]} changed: {a[2] or '(none)'} -> {b[2] or '(none)'}"
     if len(S) != len(O):
         return f"{len(S)} numbers in the source, {len(O)} in the repair"
     return None
 
 
 def model_eligible(src: str) -> bool:
-    """Only Latin-script parts go to the model; others keep their rule-cleaned text."""
-    return not _NON_LATIN.search(src)
+    """Only Latin-script parts go to the model (Greek letters are allowed: formula symbols).
+    Any other script — CJK, Cyrillic, Devanagari, Armenian, Arabic... — keeps its rule text."""
+    for c in src:
+        if ord(c) > 0x24F and c.isalpha():
+            name = unicodedata.name(c, "")
+            if not (name.startswith("LATIN") or name.startswith("GREEK")
+                    or name.startswith("MATHEMATICAL")):
+                return False
+    return True
 
 
-def plausible_word(w: str) -> bool:
-    """A token a reader would call a word in any Latin-script language: known English, or
-    letter-shaped (a vowel, no letter tripled, no capital inside) with 3+ letters."""
+def readable_word(w: str) -> bool:
+    """A token a reader would call a word: known English, any word with Greek (or other
+    non-Latin) letters, or letter-shaped Latin (a vowel, no letter tripled, no capital inside)."""
     lw = w.lower()
-    if lw in v1_rules.english_words() or lw.rstrip("s") in v1_rules.english_words():
+    known = v1_rules.english_words()
+    if lw in known or lw.rstrip("s") in known or any(ord(c) > 0x24F for c in w):
         return True
-    return (len(w) >= 3 and any(c in "aeiouyäöüåéèàáíóúâêîôû" for c in lw)
+    return (len(w) >= 2 and any(c in "aeiouyäöüåéèàáíóúâêîôû" for c in lw)
             and not re.search(r"(.)\1\1", lw) and not re.search(r".[A-Z]", w))
 
 
-def deleted_content(src: str, out: str) -> str | None:
-    """A word-level diff: the repair may change words (OCR fixes) and drop garbage, but may not
-    delete a run of source text that holds 3+ plausible words (in any Latin language) — deleting
-    content is never a repair. A replacement that is less than half the size of what it replaces
-    counts as a deletion."""
-    a = _TOKEN.findall(src)
-    b = _TOKEN.findall(out)
-    sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
-    for tag, i1, i2, j1, j2 in sm.get_opcodes():
-        if tag == "delete" or (tag == "replace" and
-                               sum(map(len, b[j1:j2])) < 0.5 * sum(map(len, a[i1:i2]))):
-            words = [w for tok in a[i1:i2] for w in _WORD.findall(tok) if plausible_word(w)]
-            if len(words) >= 3:
-                return f"deleted text: {' '.join(a[i1:i2])[:80]!r}"
+def _letters(tokens: list[str]) -> str:
+    return "".join(c for t in tokens for c in t.lower() if c.isalpha())
+
+
+def word_changes(src: str, out: str) -> str | None:
+    """A word-level diff of the repair. It may re-flow, re-hyphenate and fix OCR inside words;
+    it may drop unreadable debris. It may not delete a readable word ('not'), insert one, or
+    replace words with something that is not a letter-level repair of them."""
+    a, b = _TOKEN.findall(src), _TOKEN.findall(out)
+    for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
+        if tag == "equal":
+            continue
+        gone = [w for t in a[i1:i2] for w in _WORD.findall(t) if readable_word(w)]
+        new = [w for t in b[j1:j2] for w in _WORD.findall(t) if readable_word(w)]
+        if tag == "delete" and gone:
+            return f"deleted words: {' '.join(a[i1:i2])[:80]!r}"
+        if tag == "insert" and new:
+            return f"inserted words: {' '.join(b[j1:j2])[:80]!r}"
+        if tag == "replace" and (gone or new):
+            la, lb = _letters(a[i1:i2]), _letters(b[j1:j2])
+            if la != lb and difflib.SequenceMatcher(None, la, lb, autojunk=False).ratio() < 0.8:
+                return f"replaced {' '.join(a[i1:i2])[:60]!r} with {' '.join(b[j1:j2])[:60]!r}"
     return None
 
 
@@ -198,7 +219,7 @@ def check(src: str, out: str) -> str | None:
         return "output much longer than input"
     if len(_LETTER.findall(out)) < 0.5 * len(_LETTER.findall(src)):
         return "output lost more than half of the text; keep all content"
-    if why := deleted_content(src, out):
+    if why := word_changes(src, out):
         return why
     return None
 
