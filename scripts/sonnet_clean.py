@@ -196,6 +196,12 @@ _OPERATORS = set("=+*/^<>")
 _INNER_CAP = re.compile(r"[a-z][A-Z]")
 
 
+def _is_debris_glyph(c: str) -> bool:
+    """Glyphs OCR leaves behind and text never needs: box drawing and geometric shapes, broken
+    bars, private-use code points."""
+    return 0x2500 <= ord(c) <= 0x25FF or c in "\u00a6\u00ac\ufffd" or 0xE000 <= ord(c) <= 0xF8FF
+
+
 def token_kind(tok: str) -> str:
     """'markdown' — structure the model may add ('#', '|', table rules); 'damaged' — OCR debris
     with a positive signature, which the model may repair or drop; 'protected' — everything
@@ -208,16 +214,16 @@ def token_kind(tok: str) -> str:
     if _MARKDOWN.match(tok):
         return "markdown"
     core = tok.strip(".,;:!?()[]{}\"'")
-    if not any(c.isalnum() for c in tok):  # symbols only
-        repeated = len(tok) >= 2 and len(set(tok)) == 1
-        return "protected" if all(c in _MATH for c in tok) and not repeated else "damaged"
+    if not any(c.isalnum() for c in tok):  # symbols only: protected unless known debris
+        repeated = len(tok) >= 2 and len(set(tok)) == 1  # '~~', '....', '««'
+        return "damaged" if repeated or all(_is_debris_glyph(c) for c in tok) else "protected"
     if any(c.isdigit() for c in tok) or core in UNITS or any(c in _OPERATORS for c in core):
         return "protected"
     if any(c.isalpha() and ord(c) > 0x24F for c in tok):
         return "protected"
     for x, c, y in zip(core, core[1:], core[2:]):
-        if x.isalpha() and y.isalpha() and not c.isalpha() and c not in "-'\u2019.":
-            return "damaged"  # a stray glyph inside a word
+        if x.isalpha() and y.isalpha() and (_is_debris_glyph(c) or c in "~¬"):
+            return "damaged"  # a stray glyph inside a word ('chrom~um'); '_' in 'k_eff' is not
     if re.search(r"([A-Za-z])\1\1", core):
         return "damaged"
     if _INNER_CAP.search(core):
@@ -227,18 +233,25 @@ def token_kind(tok: str) -> str:
     return "protected"
 
 
-def _hyphen_join(tokens: list[tuple[str, bool]]) -> str:
-    """Tokens as one string, joining a word hyphenated at a real line break ('house-' at the
-    end of a line + 'hold' -> 'household'). tokens: (token, followed by a line break)."""
-    out = ""
-    prev_break = False
-    for t, brk in tokens:
-        if prev_break and re.search(r"[A-Za-z]-$", out) and t[:1].islower():
-            out = out[:-1] + t
-        else:
-            out += t
-        prev_break = brk
-    return out
+def _hyphen_join(tokens: list[tuple[str, bool]]) -> str | None:
+    """Tokens as one string with words hyphenated at a real line break joined — only where the
+    hyphen belongs to a word token ('deter-' at the end of a line, not a standalone '-') and
+    the joined word is an English word ('deter-' + 'mination' -> 'determination'). None if a
+    join is attempted that does not qualify."""
+    out, i = [], 0
+    while i < len(tokens):
+        t, brk = tokens[i]
+        m = re.fullmatch(r"(.*?)([A-Za-z]+)-", t)
+        if brk and m and i + 1 < len(tokens) and tokens[i + 1][0][:1].islower():
+            nxt = tokens[i + 1][0]
+            tail = re.match(r"[a-z]+", nxt).group(0)
+            if (m.group(2) + tail).lower() in v1_rules.english_words():
+                out.append(m.group(1) + m.group(2) + nxt)
+                i += 2
+                continue
+        out.append(t)
+        i += 1
+    return "".join(out)
 
 
 def _letter_str(tok: str) -> str:

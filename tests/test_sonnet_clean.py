@@ -86,6 +86,10 @@ def test_check_rejects_dropping_or_gutting_readable_content():
     assert sc.check(PROSE + " rrrR ■■", PROSE + " F=m*a")          # no inserting formulas
     assert sc.check(PROSE + " ■■ here", PROSE + " ■■ xqzt here")      # nor inserting debris
     assert sc.token_kind("EnergyPlus") == "protected" and sc.token_kind("aCld") == "damaged"
+    assert sc.check(PROSE + " Force = m a \u2212 b", PROSE + " Force = m a b")
+    assert sc.check(PROSE + " where k_eff is the gain", PROSE + " where is the gain")
+    assert sc.check(PROSE + " Force = m -\na", PROSE + " Force = ma")
+    assert sc.check(PROSE + " the deter-\nmination", PROSE + " the determination") is None
 
 
 def test_repairs_that_must_pass():
