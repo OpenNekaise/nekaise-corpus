@@ -155,7 +155,9 @@ def page_furniture(body: list[str], min_pages: int = 3) -> set[int]:
     page and the same line (digits aside) stands at that page edge on at least half the pages;
     a bare number counts when page edges carry a bare number on at least half the pages.
     Without form feeds nothing is removed: a stray header is noise, a deleted measurement or
-    repeated table row is loss, and without page breaks the two cannot be told apart."""
+    repeated table row is loss, and without page breaks the two cannot be told apart. Even at
+    page edges a measurement (a number with a unit) is never furniture, and a bare number must
+    count pages (a constant value at every page end is data)."""
     starts = [0] + [i for i, x in enumerate(body) if "\f" in x]
     starts = sorted(set(starts))
     if len(starts) < min_pages:
@@ -173,8 +175,15 @@ def page_furniture(body: list[str], min_pages: int = 3) -> set[int]:
         for i in e:
             seen.setdefault(key(i), []).append(tuple(int(d) for d in re.findall(r"\d+", text(i))))
     furniture = {k for k, nums in seen.items()
-                 if len(nums) >= max(min_pages, pages / 2) and _page_like(nums)}
+                 if len(nums) >= max(min_pages, pages / 2) and _page_like(nums)
+                 and not _MEASUREMENT.search(k)
+                 and (k != "#" or any(a != b for a, b in zip(nums, nums[1:])))}
     return {i for e in edges for i in e if key(i) in furniture}
+
+
+# A number followed by a unit: a measurement, never page furniture, wherever it stands.
+_MEASUREMENT = re.compile(r"#(?:[.,]#)?\s*(?:%|\u00b0|[kMGmc\u03bc]?(?:Pa|W|Wh|J|N|V|A|Hz|g|m|L|m2|m3|s)\b"
+                          r"|bar\b|psi\b|atm\b|K\b|C\b|F\b|kg\b|t\b|h\b|min\b|ppm\b|dB\b)")
 
 
 def _page_like(nums: list[tuple[int, ...]]) -> bool:

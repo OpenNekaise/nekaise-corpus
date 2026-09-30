@@ -98,9 +98,11 @@ The part may start or end mid-sentence because the document continues in neighbo
 _LETTER = re.compile(r"[^\W\d_]")
 _WORD = re.compile(r"[^\W\d_]+")
 # A number as written, with the operator right before it (sign, range dash, slash, ratio...).
-_NUMBER = re.compile(r"(?:([-+\u2212\u2013\u00b1/\u00d7x*^=<>~:])\s?)?"
+_NUMBER = re.compile(r"(?:([-+\u2212\u2013\u00b1/\u00d7x*^=<>~:\u2264\u2265\u2260\u2248])\s*)?"
                      r"((?:\d+(?:[.,]\d+)*|(?<![\w])[.,]\d+)(?:[eE][-+]?\d+)?)")
 _TOKEN = re.compile(r"\S+")
+_NEXT = re.compile(r"\s*(\S+)")
+_MARKDOWN = re.compile(r"^(?:#{1,6}|\|+|:?-{3,}:?(?:\|:?-{3,}:?)*\|?|\|(?::?-{3,}:?\|)+)$")
 UNITS = frozenset("""% ‰ ° °C °F K C F mm cm m km in ft yd mi m2 m3 cm2 mm2 ft2 ft3 in2 l L ml mL
     kg g mg t lb lbs oz N kN MN Pa kPa MPa GPa hPa bar mbar psi atm mmHg J kJ MJ GJ W kW MW GW Wh
     kWh MWh GWh TWh Btu BTU MBtu kcal cal V kV mV A mA kA Hz kHz MHz VA kVA MVA dB lx lm cd ppm ppb
@@ -121,11 +123,16 @@ def _canon(text: str, source: bool) -> str:
 
 def number_tokens(text: str) -> list[tuple[str, str, str]]:
     """(operator, number, next token) of every number, in order. The next token is the word
-    right after the number (up to 3 spaces away), stripped of trailing punctuation."""
+    right after the number (across any whitespace, a line break too), stripped of trailing
+    punctuation."""
     out = []
     for m in _NUMBER.finditer(text):
-        nxt = re.compile(r" {0,3}(\S+)").match(text, m.end())
-        follow = nxt.group(1).rstrip(".,;:)]") if nxt else ""
+        follow, pos = "", m.end()
+        while nxt := _NEXT.match(text, pos):  # skip markdown a table conversion adds ('|')
+            if not _MARKDOWN.match(nxt.group(1)):
+                follow = nxt.group(1).rstrip(".,;:)]|")
+                break
+            pos = nxt.end()
         out.append((m.group(1) or "", m.group(2), follow))
     return out
 
@@ -183,28 +190,104 @@ def readable_word(w: str) -> bool:
             and not re.search(r"(.)\1\1", lw) and not re.search(r".[A-Z]", w))
 
 
-def _letters(tokens: list[str]) -> str:
-    return "".join(c for t in tokens for c in t.lower() if c.isalpha())
+# Characters that carry meaning in formulas and comparisons: a token made of them is protected.
+_MATH = set("+-=<>~^*/\\%\u00b0\u00b1\u00d7\u00f7\u2264\u2265\u2260\u2248\u2211\u220f\u222b\u221a\u2202\u2206\u2207\u221e\u221d\u2208\u2209\u2282\u2283\u2229\u222a\u2192\u2190\u2194\u21d2()[]{}|!?;:,.'\"'")
+
+
+def token_kind(tok: str) -> str:
+    """'protected' — must come through byte-identical: any dictionary word, any word-shaped
+    token (any language), anything holding a digit, a unit, a non-Latin letter, or a math /
+    punctuation symbol; 'damaged' — OCR debris the model may rewrite or drop ('aCld',
+    'determllled', 'chrom~um', '■■'); 'markdown' — structure the model may add ('#', '|')."""
+    if _MARKDOWN.match(tok):
+        return "markdown"
+    core = tok.strip(".,;:!?()[]{}\"'")
+    if any(c.isdigit() for c in tok) or tok in UNITS or core in UNITS:
+        return "protected"
+    if any(c.isalpha() and ord(c) > 0x24F for c in tok):
+        return "protected"
+    letters = [w for w in _WORD.findall(tok)]
+    if not letters:
+        # symbols only: math/punctuation is meaning; other glyphs ('■■', '¦¦', '««') and runs of
+        # one repeated symbol ('~~', '....') are debris
+        repeated = len(tok) >= 2 and len(set(tok)) == 1
+        return "protected" if all(c in _MATH for c in tok) and not repeated else "damaged"
+    if len(letters) == 1 and core == letters[0] and readable_word(core):
+        return "protected"
+    return "damaged"
+
+
+def _hyphen_join(tokens: list[str]) -> str:
+    """Tokens as one string with line-break hyphens removed ('house-', 'hold' -> 'household')."""
+    out = ""
+    for t in tokens:
+        out = out[:-1] + t if out.endswith("-") and t[:1].islower() else out + t
+    return out
+
+
+def _letter_str(tok: str) -> str:
+    return "".join(c.lower() for c in tok if c.isalpha())
+
+
+def _repairs_damage(A: list[str], B: list[str]) -> bool:
+    """B is A with damaged tokens repaired into words: walking both in order, every protected
+    token of A appears unchanged in B, and every protected token B adds is a purely alphabetic
+    word whose letters resemble (>= 0.6) the next 1-3 damaged tokens it replaces, or the start
+    of a glued one. Debris without letters ('■■') can only be dropped, never become a word."""
+    i, j = 0, 0
+    pending: list[str] = []  # letters of damaged tokens not yet repaired, in order
+    sim = lambda x, y: difflib.SequenceMatcher(None, x, y, autojunk=False).ratio()
+    while j < len(B) or i < len(A):
+        if i < len(A) and token_kind(A[i]) != "protected":
+            if letters := _letter_str(A[i]):
+                pending.append(letters)
+            i += 1
+            continue
+        if j < len(B) and token_kind(B[j]) != "protected":
+            j += 1  # damaged or markdown output token: allowed
+            continue
+        if i < len(A) and j < len(B) and _canon(A[i], source=True) == B[j]:
+            i, j, pending = i + 1, j + 1, []
+            continue
+        w = _letter_str(B[j]) if j < len(B) and B[j].strip(".,;:").isalpha() else ""
+        if w and pending:
+            k = next((k for k in (1, 2, 3) if k <= len(pending)
+                      and sim("".join(pending[:k]), w) >= 0.6), 0)
+            if k:
+                pending, j = pending[k:], j + 1
+                continue
+            head = pending[0][:len(w) + 1]
+            if len(pending[0]) > len(w) + 2 and sim(head, w) >= 0.75:  # a glued run split
+                pending[0], j = pending[0][len(w):], j + 1
+                continue
+        return False
+    return True
 
 
 def word_changes(src: str, out: str) -> str | None:
-    """A word-level diff of the repair. It may re-flow, re-hyphenate and fix OCR inside words;
-    it may drop unreadable debris. It may not delete a readable word ('not'), insert one, or
-    replace words with something that is not a letter-level repair of them."""
+    """The repair may only re-space, join split or hyphen-broken words, rewrite or drop damaged
+    tokens, add markdown '#'/'|', and turn OCR look-alike letters next to digits into digits.
+    Every protected token (words of any language, numbers, units, symbols) must come through
+    byte-identical and in the same order."""
     a, b = _TOKEN.findall(src), _TOKEN.findall(out)
     for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
         if tag == "equal":
             continue
-        gone = [w for t in a[i1:i2] for w in _WORD.findall(t) if readable_word(w)]
-        new = [w for t in b[j1:j2] for w in _WORD.findall(t) if readable_word(w)]
-        if tag == "delete" and gone:
-            return f"deleted words: {' '.join(a[i1:i2])[:80]!r}"
-        if tag == "insert" and new:
-            return f"inserted words: {' '.join(b[j1:j2])[:80]!r}"
-        if tag == "replace" and (gone or new):
-            la, lb = _letters(a[i1:i2]), _letters(b[j1:j2])
-            if la != lb and difflib.SequenceMatcher(None, la, lb, autojunk=False).ratio() < 0.8:
-                return f"replaced {' '.join(a[i1:i2])[:60]!r} with {' '.join(b[j1:j2])[:60]!r}"
+        A, B = a[i1:i2], b[j1:j2]
+        if _hyphen_join(A) == "".join(B):  # re-spacing, split words, hyphen joins
+            continue
+        pa = [_canon(t, source=True) for t in A if token_kind(t) == "protected"]
+        pb = [t for t in B if token_kind(t) == "protected"]
+        if pa == pb:
+            continue  # only damaged tokens changed (and markdown added)
+        if _repairs_damage(A, B):
+            continue  # damaged tokens became letter-similar words; all else unchanged
+        # a split word repaired together with its damage ('Tung sten' is two protected tokens
+        # when each half looks like a word): the letters must be the same
+        if _hyphen_join(pa) == "".join(pb) and not any(k == "protected" and any(c.isdigit() for c in t)
+                                                       for t in A for k in [token_kind(t)]):
+            continue
+        return f"changed {' '.join(A)[:60]!r} -> {' '.join(B)[:60]!r}"
     return None
 
 

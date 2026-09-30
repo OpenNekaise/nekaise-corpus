@@ -151,6 +151,21 @@ def test_repeated_plain_text_rows_kept_without_page_evidence():
     assert "\n".join(R.clean_body(doc, "")).count(row) == 9
 
 
+def test_measurements_at_page_edges_are_never_furniture():
+    for values in ((20, 21, 22, 23), (1200, 1200, 1200, 1200)):
+        pages = []
+        for p, v in enumerate(values):
+            pages += [("\f" if p else "") + f"Experiment {chr(65 + p)} on the heating plant.",
+                      "Real prose about the heating plant and its distribution network.",
+                      f"Design pressure {v} kPa"]
+        out = "\n".join(R.clean_body(pages, ""))
+        assert out.count("Design pressure") == 4, values
+    edges = []
+    for p in range(4):  # a constant bare value at every page end is data, not a page number
+        edges += [("\f" if p else "") + f"Table {chr(65 + p)} of results.", "Prose line.", "1200"]
+    assert "\n".join(R.clean_body(edges, "")).count("1200") == 4
+
+
 def test_labelled_values_twenty_five_lines_apart_are_kept():
     lines = ["Measured temperatures:"]
     for v in range(20, 28):

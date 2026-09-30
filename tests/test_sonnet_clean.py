@@ -71,6 +71,25 @@ def test_check_rejects_dropping_or_gutting_readable_content():
     listing = PROSE + "\n- Concrete foundation\n- Steel reinforcement\n- Timber frame"
     assert sc.check(listing, listing.replace("\n- Steel reinforcement", ""))
     assert sc.check(PROSE + " aCld dJssolved", PROSE + " acid dissolved") is None  # OCR repair
+    assert sc.check(PROSE + " The beam is not permitted.", PROSE + " The beam is permitted!")
+    assert sc.check(PROSE + " The beam is permitted.", PROSE + " The beam is not permitted.")
+    assert sc.check(PROSE + " Force = m a + b", PROSE + " Force = m a - b")
+    assert sc.check(PROSE + " -  20 C", PROSE + " +  20 C")
+    assert sc.check(PROSE + " ≤1200 kPa", PROSE + " ≥1200 kPa")
+    assert sc.check(PROSE + " 12\nMPa", PROSE + " 12\nkPa")
+    assert sc.check(PROSE + " 12 MPa", PROSE + " 12")
+
+
+def test_repairs_that_must_pass():
+    ok = [(PROSE + " The house-\nhold uses gas.", PROSE + " The household uses gas."),
+          (PROSE + " Tung sten and descr ibed", PROSE + " Tungsten and described"),
+          (PROSE + " chrom~um steel ■■", PROSE + " chromium steel"),
+          (PROSE + " determllled in l957", PROSE + " determined in 1957"),
+          (PROSE + "\nResults\nThe line\nwraps here.", PROSE + "\n## Results\nThe line wraps here."),
+          (PROSE + "\nGrade Strength Density\nC25 25 2400\nC30 30 2400",
+           PROSE + "\n| Grade | Strength | Density |\n|---|---|---|\n| C25 | 25 | 2400 |\n| C30 | 30 | 2400 |")]
+    for src, out in ok:
+        assert sc.check(src, out) is None, (src[-60:], out[-60:])
 
 
 class FakeBackend:
