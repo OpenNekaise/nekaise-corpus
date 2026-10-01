@@ -1,8 +1,8 @@
-"""Golden tests for the corpus_v1 ruleset (scripts/v1_rules.py).
+"""Golden tests for the next cleaning ruleset of corpus/ (scripts/v1_rules.py, dormant).
 
-KEEP cases matter more than DROP cases: these rules run over every document of the training
-view, and a rule that eats real content costs more than one that leaves junk behind. When a
-night session widens a rule, these say what it broke.
+KEEP cases matter more than DROP cases: these rules will run over every document of the
+training view, and a rule that eats real content costs more than one that leaves junk behind.
+When a rule is widened, these say what it broke.
 """
 import v1_rules as R
 
@@ -242,6 +242,9 @@ def test_patent_numeric_table_cells_kept():
     out = "\n".join(R.clean_body(body, HEADER))
     for keep in ("C25/30", "\n25\n", "\n30\n", "2400", "1. A concrete of grade C25/30."):
         assert keep in out, keep
+    claims = out[out.index("## Claims"):]
+    assert claims.split("\n")[2] == "1. A concrete of grade C25/30."  # 'Claims (' '1' ')' dropped
+    assert ")" not in claims.split("\n")[:3]
 
 
 def test_numeric_measurement_column_survives_cleaning():

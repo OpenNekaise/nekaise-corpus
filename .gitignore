@@ -4,7 +4,7 @@
 raw/
 text/
 corpus/
-# training view built by scripts/corpus_v1.py (rules + checked model repairs) — same rule
+# legacy payloads of the dropped corpus_v1/ view (operator 2026-10-01) — never committed
 corpus_v1/
 # classified views of every restricted-use class (collect-all directive 2026-09-25): same rule
 collection/

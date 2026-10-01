@@ -1,20 +1,21 @@
-"""v1_rules.py — the deterministic ruleset that turns verbatim text/ into corpus_v1/.
+"""v1_rules.py — the next deterministic cleaning ruleset for corpus/ (dormant).
 
-corpus_v1/ is the training view for continued pretraining / mid-training of a small
-built-environment LLM: EVERY document of corpus/, in a cleaned, readable form. This module is
-the script half of that cleaning; scripts/sonnet_clean.py is the model half (broken text that no
-rule can repair is rewritten into normal text by a model and overlaid by corpus_v1.py).
+Operator directive 2026-10-01: keep ONE cleaned folder, corpus/, cleaned by scripts only (the
+model-repair layer and the separate corpus_v1/ view were dropped). This module holds the rules
+that will be folded into the cleaning stage of corpus/ (clean_corpus.py) in a separate, measured
+change; until then nothing runs it. Its tests pin its behaviour.
 
 Contract for every rule here:
-* input and output are the document BODY (the metadata header is handled by the builder);
-* removal is structural (shape, repetition, a known page template) — never an alpha-fraction
+* input and output are the document BODY (the metadata header is handled by the caller);
+* removal is structural (a known page template, real page breaks) — never an alpha-fraction
   threshold, which reads CJK prose interleaved with figures as garbage (see clean_corpus.py);
+* fail-closed: what cannot be proven to be furniture stays (numbers, measurements, repeated
+  rows and legends); equations split one glyph per line are joined, not deleted;
 * a rule never rewrites words, never reorders, never invents; the only text changes are
   entity decoding, glyph/control-character removal, hyphen repair and line re-flow;
 * each rule is pinned by tests/test_v1_rules.py — KEEP cases matter more than DROP cases.
 
-RULESET_VERSION is part of every corpus_v1 file's state: bump it whenever output can change,
-and the builder rebuilds every file with the new rules.
+Bump RULESET_VERSION whenever output can change.
 """
 from __future__ import annotations
 
@@ -86,6 +87,10 @@ def parse_patent(body: list[str]) -> list[str] | None:
             i += 1
             continue
         j, text = i + 1, []
+        # 'Claims (' / '2' / ')': the heading's count and closing parenthesis are template
+        if body[i].strip().endswith("(") and j + 1 < n and body[j].strip().isdigit() \
+                and body[j + 1].strip() == ")":
+            j += 2
         while j < n:
             s = body[j].strip()
             if _SECTION.match(s) or _PATENT_END.match(s) or _PATENT_NO.match(s) or _ISO_DATE.match(s):
@@ -188,7 +193,7 @@ def page_furniture(body: list[str], min_pages: int = 3) -> set[int]:
     return {i for e in edges for i in e if key(i) in furniture}
 
 
-# Units of measure (shared with sonnet_clean.py's number checks).
+# Units of measure: a number followed by one is a measurement, never page furniture.
 UNITS = frozenset("""% ‰ ° °C °F K C F mm cm m km in ft yd mi m2 m3 cm2 mm2 ft2 ft3 in2 l L ml mL
     kg g mg t lb lbs oz N kN MN Pa kPa MPa GPa hPa bar mbar psi atm mmHg J kJ MJ GJ W kW MW GW Wh
     kWh MWh GWh TWh Btu BTU MBtu kcal cal V kV mV A mA kA Hz kHz MHz VA kVA MVA dB lx lm cd ppm ppb
