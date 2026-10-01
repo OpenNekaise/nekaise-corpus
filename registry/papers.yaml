@@ -121396,3 +121396,32 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.3390/app11094028 openalex:W3158840663
     resolution: 'legacy: openalex location'
+  - id: ope-transition-life-cycle-assessment-a-new-method-
+    title: 'Transition life cycle assessment: A new method to face ecological transition'
+    url: https://www.frontiersin.org/articles/10.3389/frsus.2022.801668/pdf
+    source: openalex
+    license: unverified
+    topic: materials
+    format: pdf
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/frsus.2022.801668/pdf
+      do not transfer to https://www.frontiersin.org/journals/sustainability/articles/10.3389/frsus.2022.801668/pdf;
+      payload sha256=26528009f4f6ed13245ca5b23b2a61337233a9f0049188a0078a7b5407d8d05e;
+      original evidence: {"license": "cc-by", "license_evidence": "Discovery licence
+      claim retained from prior prune decision; redirected payload requires independent
+      classification"}'
+    rights_verified_at: '2026-10-01T22:47:49Z'
+  - id: ope-phase-evolution-of-hybrid-alkali-sulfate-activ
+    title: Phase Evolution of Hybrid Alkali Sulfate-Activated Ground-Granulated Blast
+      Furnace Slag Cements
+    url: https://biblio.ugent.be/publication/01HT4PAJQTT7WEVRFPE4CMS6FQ/file/01HT4PGY59W9PXKDJZH84RRE1R.pdf
+    source: openalex
+    license: unverified
+    topic: materials
+    format: pdf
+    license_evidence: 'redirect: rights of requested copy https://biblio.ugent.be/publication/01HT4PAJQTT7WEVRFPE4CMS6FQ/file/01HT4PGY59W9PXKDJZH84RRE1R.pdf
+      do not transfer to https://backoffice.biblio.ugent.be/download/01HT4PAJQTT7WEVRFPE4CMS6FQ/01HT4PGY59W9PXKDJZH84RRE1R;
+      payload sha256=341ef88695e994894341e4b37c8505ea69f035d4d7eeb504f1354e29cdd8bd78;
+      original evidence: {"license": "cc-by", "license_evidence": "Discovery licence
+      claim retained from prior prune decision; redirected payload requires independent
+      classification"}'
+    rights_verified_at: '2026-10-01T22:47:51Z'

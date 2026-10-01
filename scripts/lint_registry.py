@@ -34,8 +34,9 @@ TOPICS = {"controls_bas", "equipment_systems", "building_energy", "commissioning
           "standards_protocols", "structures_civil", "construction", "materials",
           "architecture", "infrastructure", "urban"}
 FORMATS = {"pdf", "html", "md", "rst", "txt", "tex", "troff"}
-# Sources whose every entry must carry verified rights evidence for its selected copy (no `open`
-# fallback): the scholarly-metadata families resolved by scripts/oa_resolution.py.
+# Scholarly families require copy-specific evidence (no generic `open` fallback). A loader
+# redirect can invalidate the selected copy's grant: its payload-bound unresolved decision is
+# valid provenance too, with bytes classified outside the default view.
 RIGHTS_EVIDENCE_SOURCES = {"openalex_sim", "openalex_ai"}
 EVIDENCED_LICENSES = {"cc-by", "cc-by-sa", "cc0", "public-domain"}
 
@@ -58,7 +59,12 @@ def entry_errors(e: dict, where: str) -> list[str]:
     if e.get("license_url") and not str(e["license_url"]).startswith(("http://", "https://")):
         errors.append(f"{where}: {eid}: license_url is not http(s)")
     if e.get("source") in RIGHTS_EVIDENCE_SOURCES:
-        if e.get("license") not in EVIDENCED_LICENSES:
+        redirect_unverified = (
+            e.get("license") == "unverified"
+            and str(e.get("license_evidence", "")).startswith("redirect:")
+            and re.search(r"; payload sha256=[0-9a-f]{64}; original evidence: ",
+                          str(e.get("license_evidence", ""))) is not None)
+        if e.get("license") not in EVIDENCED_LICENSES and not redirect_unverified:
             errors.append(f"{where}: {eid}: {e.get('source')} requires an evidenced open licence, "
                           f"got {e.get('license')!r}")
         for key in ("license_evidence", "rights_verified_at", "persistent_id"):

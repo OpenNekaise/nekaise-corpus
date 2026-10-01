@@ -35,7 +35,7 @@ def test_a_redirect_to_another_zenodo_record_is_refused(monkeypatch, loader):
     })
     rec = build_corpus.download_one(row("https://zenodo.org/records/1/files/a.pdf"))
     assert requested == ["https://zenodo.org/records/1/files/a.pdf"]
-    assert "leaves the licensed copy" in rec["error"] and not rec.get("raw_path")
+    assert "different repository object" in rec["error"] and not rec.get("raw_path")
 
 
 def test_an_unclassified_multi_label_suffix_never_joins_two_sites():

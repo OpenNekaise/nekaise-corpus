@@ -284,9 +284,9 @@ PROGRAMME = ProgrammeBudget()
 # requesting it: checks the pinned host policy (registry/host_policy.json, set by _run) on the
 # canonical hostname (host_policy.canonical_host: no port/userinfo, no trailing dot, IDNA); for
 # rows whose licence evidence is bound to one scholarly COPY (COPY_BOUND_SOURCES) also refuses
-# NO-GO hosts and any hop that is not provably the same copy (oa_resolution.same_copy: the same
-# repository identifier on the same host or a configured host pair), because the evidence does
-# not transfer to another copy; and applies that hop host's semaphore, delay, User-Agent and
+# NO-GO hosts and conflicting repository identities. A permitted hop that is not provably the
+# same copy invalidates the rights evidence: collect it as unverified, never as the origin's
+# licence. Each hop applies its host's semaphore, delay, User-Agent and
 # polite-host circuit. The chain is recorded on the row (redirect_chain, final_url). A redirect to
 # a SUSPENDED host is recorded as `suspended_redirect` (never requested, no retry ageing, and the
 # pruner protects the row while the suspension stands).
@@ -321,7 +321,19 @@ class HostSuspended(HopRefused):
 
 
 class CopyChanged(HopRefused):
-    """A copy-bound row's hop leaves the licensed copy (or reaches a NO-GO host)."""
+    """A redirect explicitly names a different repository object (an identity failure)."""
+
+
+class AccessRefused(HopRefused):
+    """A destination has an explicit access prohibition."""
+
+
+class AccessPage(Exception):
+    """A response is an access barrier, not a document; never retry via another transport."""
+
+    def __init__(self, url: str, status: int):
+        super().__init__(f"access-restricted response at {url} (HTTP {status}); no fallback")
+        self.status = status
 
 
 class RobotsRefused(HopRefused):
@@ -366,6 +378,7 @@ class Hops:
         self.sid = sid
         self.started = time.monotonic()
         self.chain: list[str] = []
+        self.copy_changed = False
         self.session = ChainSession()
 
 
@@ -425,11 +438,11 @@ def check_hop(url: str, hops: "Hops | None" = None) -> None:
         never = oa_resolution.host_matches(
             host, oa_resolution.NEVER_FETCH_HOSTS | oa_resolution.WORK_EXCLUDED_HOSTS)
         if never:
-            raise CopyChanged(url, f"hop to NO-GO host {host} refused")
+            raise AccessRefused(url, f"access: hop to NO-GO host {host} refused")
         if not oa_resolution.same_copy(hops.origin, url):
-            raise CopyChanged(url, f"redirect leaves the licensed copy "
-                                   f"({host_policy.canonical_host(hops.origin)} -> {host}); "
-                                   "its rights evidence does not transfer")
+            if oa_resolution.conflicting_copy_ids(hops.origin, url):
+                raise CopyChanged(url, "redirect identifies a different repository object")
+            hops.copy_changed = True
     if hops is not None:
         hops.chain.append(url)
 
@@ -502,6 +515,7 @@ def _get_hops(url: str, fmt: str, *, session=None, headers: dict | None = None):
                 resp = get(hop, headers={"User-Agent": ua, "Accept": ACCEPT, **(headers or {})},
                            timeout=TIMEOUT, allow_redirects=False)
         status = getattr(resp, "status_code", 200)
+        check_access_response(hop, status, getattr(resp, "content", b"") or b"", fmt)
         if (host in POLITE_HOSTS or programme) and is_challenge(
                 status, getattr(resp, "content", b"") or b"", fmt):
             why = f"HTTP {status} challenge"
@@ -773,6 +787,20 @@ class Checkpoints:
         rows = [json.loads(json.dumps(r)) for r in self.pending.values()]  # immutable copies
         self.count += 1
         with self.session.batch(f"{self.prefix}-{self.count:04d}") as b:
+            # Rights changed at fetch time. Keep the recipe and payload classification in the
+            # SAME checkpoint so lint and future restores cannot inherit the old copy's grant.
+            changed = [r for r in rows if r.get("redirect_rights")]
+            if changed:
+                entries = self.session.view.get_entries([r["id"] for r in changed])
+                updates = []
+                for r in changed:
+                    entry = dict(entries[r["id"]])
+                    for key in REDIRECT_RIGHTS_FIELDS:
+                        entry.pop(key, None)
+                        if key in r:
+                            entry[key] = r[key]
+                    updates.append(entry)
+                b.upsert_entries(updates)
             b.upsert_manifest(rows)
         self.pending.clear()
 
@@ -860,6 +888,49 @@ def is_challenge(status: int, body: bytes, fmt: str) -> bool:
     if fmt == "pdf":
         return not body.startswith(b"%PDF-") and bool(CHALLENGE_BODY.search(body[:4000]))
     return bool(HTML_CHALLENGE_BODY.search(body[:4000]))
+
+
+ACCESS_PAGE = re.compile(
+    rb"<input\b[^>]*\btype\s*=\s*['\"]?password\b|"
+    rb"<title[^>]*>\s*(?:log\s*in|sign\s*in|authentication required|"
+    rb"purchase access|subscribe to (?:read|access)|payment required)\b", re.I)
+REDIRECT_RIGHTS_FIELDS = ("license", "license_url", "license_evidence", "rights_verified_at",
+                         "selected_version")
+
+
+def check_access_response(url: str, status: int, body: bytes, fmt: str) -> None:
+    """Newly reachable changed-copy responses must not turn access barriers into content.
+    Explicit barriers stop before fallback; PDF signature checking still rejects landing pages.
+    The existing behaviour for proven same-copy routes is unchanged."""
+    hops = _current_hops()
+    if hops is None or not hops.copy_changed:
+        return
+    if status in {401, 402, 403} or is_challenge(status, body, fmt) or (
+            not body.startswith(b"%PDF-") and ACCESS_PAGE.search(body[:16000])):
+        raise AccessPage(url, status)
+
+
+def classify_redirect(rec: dict, hops: Hops) -> None:
+    """Bind the unresolved rights decision to these bytes, retaining the origin's evidence."""
+    original = {k: rec.pop(k) for k in REDIRECT_RIGHTS_FIELDS if k in rec}
+    # A later restoration starts from the already reclassified recipe. Preserve the initial
+    # evidence without recursively quoting our own prior decision on every fetch.
+    prior = original.get("license_evidence", "")
+    if original.get("license") == "unverified" and prior.startswith("redirect:"):
+        try:
+            initial = json.loads(prior.split("; original evidence: ", 1)[1])
+            if isinstance(initial, dict) and "license" in initial:
+                original = initial
+        except (IndexError, ValueError):
+            pass
+    rec["redirect_rights"] = {"reason": "redirect", "original": original,
+                              "payload_sha256": rec["sha256"]}
+    rec["license"] = "unverified"
+    rec["license_evidence"] = (
+        f"redirect: rights of requested copy {hops.origin} do not transfer to "
+        f"{hops.chain[-1]}; payload sha256={rec['sha256']}; original evidence: "
+        + json.dumps(original, ensure_ascii=False, sort_keys=True))
+    rec["rights_verified_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
 
 def _read_capped(resp, max_bytes: int, hops: "Hops | None" = None, guard=None) -> None:
@@ -964,11 +1035,16 @@ def download_one(src: dict) -> dict:
                                      "decided_at": e.rule.get("decided_at")}
         rec["refused_hop"] = e.url
     except CopyChanged as e:
-        rec["error"] = str(e)  # a hard failure: this registry URL does not serve the licensed copy
+        rec["error"] = str(e)  # conflicting identity, not uncertain rights
         rec["refused_hop"] = e.url
-    except (RobotsRefused, RouteRefused) as e:
+    except (AccessRefused, RobotsRefused, RouteRefused) as e:
         rec["error"] = str(e)  # policy: robots.txt or an unreviewed route (never requested)
         rec["refused_hop"] = e.url
+    except AccessPage as e:
+        rec["error"] = str(e)
+        rec["http_status"] = e.status
+        if e.status in RECOVERABLE_STATUSES:
+            rec["transient"] = True
     except TooLarge as e:
         rec["error"] = f"too-large: {e}"
     except BudgetExceeded as e:
@@ -991,6 +1067,8 @@ def download_one(src: dict) -> dict:
             rec["transient"] = True
     finally:
         _hops.value = None
+        if rec.get("raw_path") and hops.copy_changed:
+            classify_redirect(rec, hops)
         if len(hops.chain) > 1 or rec.get("refused_hop"):
             rec["redirect_chain"] = list(hops.chain)  # the hops actually requested
             if hops.chain:
@@ -1089,6 +1167,8 @@ def _curl_follow(url: str, ua: str | None = None) -> bytes:
             if out.returncode != 0:
                 return b""
             status, location = _last_status_and_location(headers.read_bytes())
+            check_access_response(hop, status or 0, body, "pdf" if body.startswith(b"%PDF-")
+                                  else "html")
             if status in REDIRECT_STATUSES and location:
                 hop = urljoin(hop, location)
                 continue

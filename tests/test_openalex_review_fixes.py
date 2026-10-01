@@ -87,15 +87,16 @@ def test_redirect_to_jstage_is_refused_for_a_licensed_copy_via_curl(monkeypatch,
     assert "NO-GO host" in rec["error"] and not rec.get("raw_path")
 
 
-def test_redirect_to_another_domain_needs_equivalence(monkeypatch, loader):
+def test_redirect_to_another_domain_invalidates_rights(monkeypatch, loader):
     requested = fake_transport(monkeypatch, {
         "https://zenodo.org/a.pdf": (302, {"Location": "https://mirror.example.org/a.pdf"}, b""),
+        "https://mirror.example.org/a.pdf": pdf(),
     })
     rec = build_corpus.download_one(row("https://zenodo.org/a.pdf"))
-    assert requested == ["https://zenodo.org/a.pdf"]
-    assert "leaves the licensed copy (zenodo.org -> mirror.example.org)" in rec["error"]
-    assert rec["redirect_chain"] == ["https://zenodo.org/a.pdf"]
-    assert rec["refused_hop"] == "https://mirror.example.org/a.pdf"
+    assert requested == ["https://zenodo.org/a.pdf", "https://mirror.example.org/a.pdf"]
+    assert rec["error"] is None and rec["license"] == "unverified"
+    assert rec["redirect_chain"] == requested
+    assert rec["final_url"] == requested[-1]
 
 
 UUID = "2e0aa826-03a0-4f97-a019-d266f30c50a9"

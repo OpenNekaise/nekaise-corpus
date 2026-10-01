@@ -160,7 +160,7 @@ def copy_ids(url: str | None) -> set[tuple[str, str]]:
 def same_copy(origin: str | None, url: str | None) -> bool:
     """Whether a redirect from the registered copy URL `origin` to `url` provably stays on that
     copy (see COPY_HOST_PAIRS / _COPY_IDS). Anything else is a different copy whose rights
-    were never checked: the caller refuses it (fail closed)."""
+    were never checked: its rights must be classified independently."""
     a, b = host_of(origin), host_of(url)
     if not a or not b:
         return False
@@ -178,6 +178,21 @@ def same_copy(origin: str | None, url: str | None) -> bool:
     if strong:
         return True   # every shared strong kind agrees
     return bool(ids_a.get("file", set()) & ids_b.get("file", set()))
+
+
+def conflicting_copy_ids(origin: str, url: str) -> bool:
+    """Explicitly different object IDs on the same repository; absence of identity evidence
+    is not a conflict. Repository-local IDs on unrelated hosts cannot be compared."""
+    a, b = host_of(origin), host_of(url)
+    if a != b and (a, b) not in COPY_HOST_PAIRS:
+        return False
+    left, right = copy_ids(origin), copy_ids(url)
+    for kind in STRONG_ID_KINDS:
+        x = {v for k, v in left if k == kind}
+        y = {v for k, v in right if k == kind}
+        if x and y and not x & y:
+            return True
+    return False
 
 
 # compatibility name (the loader's hop check)
