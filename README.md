@@ -12,17 +12,17 @@ locally and retain their original licenses.
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **1,619,056** |
+| **Documents** | **1,619,066** |
 | **Outside the default view** | **14,771** rows (collected and kept): policy-held 8,059 · restricted licence classes 6,712 |
-| **Collection (all use classes)** | **1,633,827** held originals · by class: open 1,619,056 · policy-held 8,059 · arxiv-nonexclusive 5,377 · nc-nd 596 · unverified 427 · nc 305 · publisher-oa 7 |
+| **Collection (all use classes)** | **1,633,837** held originals · by class: open 1,619,066 · policy-held 8,059 · arxiv-nonexclusive 5,377 · nc-nd 596 · unverified 427 · nc 305 · publisher-oa 7 |
 | **Raw originals** | **~763G** on disk, every class (PDF / HTML / source code) |
 | **Extracted text** | **~83G** on disk, every class (default view: ~80.255B chars, **≈20.064B tokens**) |
 | **Cleaned corpus** | **~78G** (~76.302B chars, **≈19.075B tokens**, ruleset-cleaned) |
 | **Topics** | 11 |
 
-**By topic** (a source gets one at registration): equipment_systems 534,403 · construction 431,187 · building_energy 219,814 · structures_civil 171,721 · materials 111,561 · infrastructure 75,367 · architecture 45,089 · standards_protocols 12,977 · controls_bas 10,508 · urban 6,022 · commissioning_fdd 407.
+**By topic** (a source gets one at registration): equipment_systems 534,403 · construction 431,196 · building_energy 219,814 · structures_civil 171,721 · materials 111,562 · infrastructure 75,367 · architecture 45,089 · standards_protocols 12,977 · controls_bas 10,508 · urban 6,022 · commissioning_fdd 407.
 
-**By license:** open 1,329,776 · public-domain 263,817 · cc-by-sa 1,853 · cc-by 23,553 · cc0 57.
+**By license:** open 1,329,786 · public-domain 263,817 · cc-by-sa 1,853 · cc-by 23,553 · cc0 57.
 <!-- STATS:END -->
 
 ## Quick start
