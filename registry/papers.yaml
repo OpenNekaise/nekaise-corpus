@@ -121212,25 +121212,6 @@ sources:
     selected_version: acceptedVersion
     origin_ids: doi:10.1080/17452759.2024.2433588 openalex:W4404982834
     resolution: 'legacy: openalex location'
-  - id: ope-performance-of-camera-based-vibration-monitori
-    title: Performance of Camera-Based Vibration Monitoring Systems in Input-Output
-      Modal Identification Using Shaker Excitation
-    url: https://figshare.com/articles/journal_contribution/Performance_of_Camera-Based_Vibration_Monitoring_Systems_in_Input-Output_Modal_Identification_Using_Shaker_Excitation/16670980
-    source: openalex
-    license: cc-by
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2021-09-01'
-    document_type: article
-    persistent_id: https://doi.org/10.3390/rs13173471
-    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
-      [copy https://figshare.com/articles/journal_contribution/Performance_of_Camera-Based_Vibration_Monitoring_Systems_in_Input-Output_Modal_Identification_Using_Shaker_Excitation/16670980;
-      version submittedVersion]
-    rights_verified_at: '2026-10-01'
-    selected_version: submittedVersion
-    origin_ids: doi:10.3390/rs13173471 openalex:W3197737500
-    resolution: 'legacy: openalex location'
   - id: ope-effect-of-lumber-quality-grade-on-the-mechanic
     title: Effect of lumber quality grade on the mechanical properties and product costs
       of cross-laminated timber panels
