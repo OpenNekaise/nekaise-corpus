@@ -234,10 +234,19 @@ def test_reflow_keeps_compound_hyphen_and_joins_cjk():
     assert R.reflow(cjk) == [cjk[0] + cjk[1]]
 
 
-def test_damage_score_ranks_ocr_garbage():
-    clean = "the solution is evaporated to fumes of sulfuric acid and diluted " * 30
-    broken = "the solu t ion is e vaporated to fume s of s ulfuric aCld and dilut ed " * 30
-    assert R.damage_score(clean) < 0.05 < R.damage_score(broken)
-    assert R.damage_score("冰箱" * 500) is None
-    estonian = "käesoleva direktiiviga edendatakse liidus hoonete energiatõhususe parandamist " * 40
-    assert R.damage_score(estonian) is None  # not English: not judged by an English dictionary
+def test_patent_numeric_table_cells_kept():
+    """Maintainer 2026-10-01: standalone numeric cells inside a patent are content."""
+    body = ["CN1 - Concrete", "Description", "Material properties of the concrete:",
+            "Grade", "C25/30", "Strength", "25", "30", "Density", "2400",
+            "Claims (", "1", ")", "1. A concrete of grade C25/30.", "Legal Events"]
+    out = "\n".join(R.clean_body(body, HEADER))
+    for keep in ("C25/30", "\n25\n", "\n30\n", "2400", "1. A concrete of grade C25/30."):
+        assert keep in out, keep
+
+
+def test_numeric_measurement_column_survives_cleaning():
+    """Maintainer 2026-09-30 blocker 1, kept as a regression test."""
+    source = ["Measured air temperatures (C):", "20", "21", "22", "23", "24", "25",
+              "End of measured temperatures."]
+    output = R.clean_body(source, "")
+    assert all(value in output for value in source[1:7]), output

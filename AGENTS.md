@@ -54,7 +54,7 @@ not require a code change at every maintenance wake.
 | `workspace/` | **Your scratch space** (git-ignored). One-off helper scripts, notes, dumps go here — never the repo root. Promote durable tools into `scripts/`. |
 | `raw/` · `text/` · `corpus/` | Your local copy, in three stages: original bytes → verbatim extraction → **cleaned, training-ready text** (the default `open` view). **All git-ignored. Never committed.** See *The three stages* below. |
 | `collection/<class>/` | **Classified views** of restricted-use classes: `corpus/` holds their cleaned text; `raw/`, `text/` are rebuildable views over the canonical originals. Git-ignored, never committed, never read by a default training run. |
-| `corpus_v1/` | **Model-ready training view** (operator directive 2026-09-29): every `corpus/` doc, cleaned by `scripts/v1_rules.py` and, for broken OCR, repaired into normal text by a model (`scripts/sonnet_clean.py`); built by `scripts/corpus_v1.py`, improved every night by `scripts/corpus_v1_night.py`. Git-ignored, never committed. |
+| `scripts/v1_rules.py` | The **next cleaning ruleset** (operator directive 2026-10-01): structural, fail-closed rules (Google Patents template parser, page furniture only at real page breaks, equations joined, re-flow). It is being folded into the cleaning stage of `corpus/`; until then nothing runs it. The model-repair layer (Sonnet) and the separate `corpus_v1/` view were dropped. |
 | `logs/` | Headless dig/marathon run logs (git-ignored). |
 
 **Storage is migrating (ADR 0001, `docs/decisions/0001-storage-architecture.md`).** Tracked state
@@ -240,11 +240,6 @@ ongoing growth when authorized.
    → build `corpus/` from `text/`, then `--check`. *Within-document.* Run it after every prune so
    `corpus/` mirrors the manifest; it is incremental (only changed docs are rewritten) unless the
    ruleset changed, in which case it rebuilds everything.
-6. **corpus_v1 (nightly)** — [`corpus-v1-night`](.claude/skills/corpus-v1-night/SKILL.md):
-   `scripts/corpus_v1_night.py` (cron 02:00, 3 h) builds `corpus_v1/` for the day's new docs, has
-   Sonnet 5.5 repair the most OCR-damaged docs, and runs a Claude (Opus) improvement session whose
-   branch merges only on a Codex (GPT) `MERGE AS IS`. Goal: continued pretraining / mid-training of
-   a small built-environment LLM — every document kept, broken text repaired, never invented.
 
 Then re-load and repeat. **The mission is the loop itself** — an autonomous grower *and curator*.
 Keep *widening* discovery (new backends, new source types, deeper enumeration of known collections)
@@ -306,8 +301,6 @@ for the stage-4 rollback.
 
 - **Never commit `raw/`, `text/`, `corpus/` or `collection/`** — copyrighted content under mixed licenses. Only the
   registry, manifest, code, and docs are tracked.
-- **Never commit `corpus_v1/`** either; only `corpus_v1.py` writes it (model repairs go to
-  `corpus_v1/.revisions/` through `sonnet_clean.py`'s checks).
 - **`text/` is verbatim — never clean it in place.** Cleaning writes `corpus/`. Editing `text/` throws
   away the ability to re-clean, and `raw/` is the only way back.
 - **Collect regardless of licence; classify before use (operator directive 2026-09-25).** "Ignore

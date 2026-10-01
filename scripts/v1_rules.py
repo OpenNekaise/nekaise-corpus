@@ -24,7 +24,7 @@ import unicodedata
 from functools import lru_cache
 from pathlib import Path
 
-RULESET_VERSION = "r2"  # r2: fail-closed: page furniture only at real page breaks; equations joined, not deleted
+RULESET_VERSION = "r2.1"  # r2.1: patent numeric cells kept (only "(" "1" ")" controls dropped)
 
 # ------------------------------------------------------------------------------------ pre-pass
 
@@ -60,8 +60,12 @@ _PATENT_END = re.compile(
     r"|Worldwide applications|Application Number|Priority Date|Publication Date)$")
 _PATENT_NO = re.compile(r"^(?:[A-Z]{2}\d{3,}[A-Z0-9.]*|[A-Z]{2}\d{2}/[\d,]+)$")  # CN111964330B, US06/234,977
 _ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
-_PAREN_FRAGMENT = re.compile(r"^(?:\(|\)|[a-z]{2}|\d{1,3}|AREA|Translated from|Chinese|Japanese"
-                             r"|Korean|German|French|Other languages|Show more|Hide Dependent)$")
+# Page-control labels of the template. Counts and language codes appear only as the middle line
+# of a '(' / '1' / ')' control and are dropped with it — a bare number elsewhere is content (a
+# table cell such as the 25 of 'C25/30 ... 25 ... 2400').
+_PAREN_FRAGMENT = re.compile(r"^(?:AREA|Translated from|Chinese|Japanese|Korean|German|French"
+                             r"|Other languages|Show more|Hide Dependent)$")
+_CONTROL_MIDDLE = re.compile(r"\d{1,3}|[a-z]{2}")
 
 
 def is_patent(header: str) -> bool:
@@ -86,6 +90,10 @@ def parse_patent(body: list[str]) -> list[str] | None:
             s = body[j].strip()
             if _SECTION.match(s) or _PATENT_END.match(s) or _PATENT_NO.match(s) or _ISO_DATE.match(s):
                 break
+            if s == "(" and j + 2 < n and body[j + 2].strip() == ")" \
+                    and _CONTROL_MIDDLE.fullmatch(body[j + 1].strip()):
+                j += 3  # a '(' / '1' / ')' or '(' / 'en' / ')' page control
+                continue
             if not _PAREN_FRAGMENT.match(s):
                 text.append(s)
             j += 1
@@ -299,7 +307,7 @@ def clean_body(body: list[str], header: str) -> list[str]:
     return collapse_blank(lines)
 
 
-# ------------------------------------------------------------------------------------ scoring
+# ------------------------------------------------------------------------------------ dictionary
 
 @lru_cache(maxsize=1)
 def english_words() -> frozenset[str]:
@@ -308,28 +316,3 @@ def english_words() -> frozenset[str]:
             return frozenset(w.strip().lower() for w in p.read_text(errors="ignore").split()
                              if w.isalpha())
     return frozenset()
-
-
-_WORD = re.compile(r"[A-Za-z]{2,}")
-_ENGLISH_FUNCTION = frozenset("the of and to in is for that with as on are by be this from or at "
-                              "an it which was were not can has have its".split())
-
-
-def damage_score(text: str, sample_chars: int = 200_000) -> float | None:
-    """Share of English word tokens NOT in the dictionary (0 = clean, 0.3+ = badly broken
-    OCR). None when the text has too few Latin words to judge (CJK, tables, code). Used to
-    rank documents for model repair; never to delete anything."""
-    words = english_words()
-    toks = _WORD.findall(unicodedata.normalize("NFKC", text[:sample_chars]))
-    if len(toks) < 150 or not words:
-        return None
-    # Capitalised words are often names/acronyms: judge lowercase tokens only.
-    low = [t for t in toks if t.islower()]
-    if len(low) < 100:
-        return None
-    # English only: an English dictionary reads Estonian, Swedish or Portuguese as garbage. OCR
-    # damage spares short function words, so broken English still passes this.
-    if sum(1 for t in low if t in _ENGLISH_FUNCTION) < 0.12 * len(low):
-        return None
-    bad = sum(1 for t in low if t not in words and t.rstrip("s") not in words)
-    return round(bad / len(low), 4)
