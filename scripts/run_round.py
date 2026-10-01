@@ -539,7 +539,18 @@ def plan_discovery(view, batch, successful: list[dict], selected: list[str],
                 ))
                 continue
             entry = view.rotation_get(name)
-            if entry.get("dynamic"):
+            retry_report = result.get("vendor_retry")
+            if name == "find_vendor" and retry_report is not None:
+                import vendor_retry
+                report = json.loads(retry_report.read_text())
+                entry = vendor_retry.apply_report(entry, report)
+                details = vendor_retry.summaries(report)
+                if details:
+                    notes.append((f"discovery degraded: find_vendor: {details}",
+                                  "discovery_degraded", {"failures": {name: "connection_backoff"},
+                                                         "vendor": report["vendor"],
+                                                         "hosts": details}))
+            elif entry.get("dynamic"):
                 entry = rotation.with_next(name, entry,
                                            result["rotation_next"].read_text().strip())
             else:
@@ -609,6 +620,14 @@ def run_finders_parallel(
             child_env["NEKAISE_ROTATION_HOLD_FILE"] = str(rotation_hold)
             child_env["NEKAISE_ROTATION_NEXT_FILE"] = str(rotation_next)
             child_env["NEKAISE_BACKEND_EXHAUSTED_FILE"] = str(backend_exhausted)
+            retry_report = None
+            if name == "find_vendor":
+                import vendor_retry
+                retry_input = temp / f"{index:03d}-{name}.retry-input"
+                retry_report = temp / f"{index:03d}-{name}.retry-output"
+                retry_input.write_text(json.dumps(rotation_state[name]))
+                child_env[vendor_retry.INPUT_ENV] = str(retry_input)
+                child_env[vendor_retry.OUTPUT_ENV] = str(retry_report)
             step = f"discover:{name}"
             ops.run_event(run_id, "step_started", step=step, command=shown)
             started = time.monotonic()
@@ -637,6 +656,7 @@ def run_finders_parallel(
                 "rotation_hold_detail": _rotation_hold_detail(rotation_hold),
                 "rotation_next": rotation_next,
                 "backend_exhausted": backend_exhausted,
+                "vendor_retry": retry_report,
                 "returncode": result.returncode,
                 "stdout": result.stdout,
                 "stderr": result.stderr,

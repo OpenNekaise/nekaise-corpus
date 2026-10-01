@@ -103,6 +103,18 @@ def _prev_unskipped_week(bucket: str, skip: object) -> str:
 
 def validate_entry(name: str, entry: dict) -> list[str]:
     """Return control-plane errors for optional rotation features."""
+    if "vendor_retry" in entry:
+        import vendor_retry
+        retries = entry["vendor_retry"]
+        if name != "find_vendor" or not isinstance(retries, dict):
+            return [f"{name}: invalid vendor retry state"]
+        try:
+            for key, hosts in retries.items():
+                if not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,30}", key):
+                    raise ValueError("invalid vendor retry key")
+                vendor_retry.validate_hosts(hosts)
+        except ValueError as exc:
+            return [f"{name}: {exc}"]
     if "dynamic" in entry and not isinstance(entry["dynamic"], bool):
         return [f"{name}: dynamic must be true or false"]
     if entry.get("dynamic"):

@@ -26,6 +26,11 @@ Rotation: `--cursor N` selects enabled vendor N % V (round-robin, one vendor per
 sees two consecutive rounds); progress within a vendor is the registry/manifest/blocklist dedup —
 each visit proposes the next `--max` documents not yet known. Exhausted vendors cost one cheap
 visit per cycle. No rotation hold is requested: spreading rounds across vendors is the politeness.
+Automated page scans stop requesting a host after three consecutive connection timeouts. The
+round commits unfinished page URLs and exponential host backoff in the vendor rotation entry,
+together with its cursor advance; the next vendor gets its normal turn. Backoff is 1 hour to
+1 day, with one probe on a due visit and an operator-attention diagnostic after 7 days. Read
+timeouts and HTTP/access failures retain their existing handling. Manual runs still fail closed.
 
     python scripts/find_vendor.py --vendor carrier --max 20            # propose one vendor
     python scripts/find_vendor.py --cursor 7 --max 200 --append        # what run_round does
@@ -51,6 +56,7 @@ import ops
 import dedup
 import registry
 import store
+import vendor_retry
 
 HERE = Path(__file__).resolve().parents[1]
 VENDORS_PATH = store.config_path("vendors.json", registry.ROOT)
@@ -210,9 +216,9 @@ def fetch(url: str, delay: float = 0.0, method: str = "GET", data: dict | None =
     if delay:
         time.sleep(delay)
     if method == "POST":
-        r = requests.post(url, headers=UA, data=data or {}, timeout=90)
+        r = requests.post(url, headers=UA, data=data or {}, timeout=(vendor_retry.CONNECT_TIMEOUT, 90))
     else:
-        r = requests.get(url, headers=UA, timeout=60)
+        r = requests.get(url, headers=UA, timeout=(vendor_retry.CONNECT_TIMEOUT, 60))
     r.raise_for_status()
     data = r.content
     if data[:2] == b"\x1f\x8b":  # by magic, not suffix: some hosts serve *.xml.gz already inflated
@@ -424,8 +430,13 @@ def scan_pages(key: str, cfg: dict, pages: list[str], budget: int, fetcher=fetch
     docs = load_state(key, "docs")
     now = time.time()
     fresh = now - VISITED_TTL_DAYS * 86400
-    todo = [p for p in pages if page_re.search(p) and visited.get(p, 0) < fresh][:budget]
+    if isinstance(fetcher, vendor_retry.Connections):
+        pending = [p for state in fetcher.hosts.values() for p in state["pages"]]
+        pages = list(dict.fromkeys(pending + pages))
+    pages = [p for p in pages if page_re.search(p)]
+    todo = [p for p in pages if visited.get(p, 0) < fresh][:budget]
     fetched = failed = dead = 0
+    connection_only = True
     for page in todo:
         try:
             text = fetcher(page, delay, cfg.get("method", "GET"), cfg.get("data")).decode("utf-8", errors="replace")
@@ -435,6 +446,8 @@ def scan_pages(key: str, cfg: dict, pages: list[str], budget: int, fetcher=fetch
                 visited[page] = now
                 print(f"# page dead ({status}) {page}", file=sys.stderr)
                 continue
+            if not isinstance(exc, (requests.ConnectTimeout, vendor_retry.Deferred)):
+                connection_only = False
             failed += 1
             print(f"# page fetch failed {page}: {exc}", file=sys.stderr)
             continue
@@ -442,8 +455,16 @@ def scan_pages(key: str, cfg: dict, pages: list[str], budget: int, fetcher=fetch
         visited[page] = now
         for link, label in pdf_links(page, text, cfg):
             docs.setdefault(link, {"t": now, "title": label, "page": page})
-    if todo and fetched == 0 and dead == 0:
+    if (isinstance(fetcher, vendor_retry.Connections) and todo and not fetched and not dead
+            and connection_only):
+        for host, count in fetcher.streaks.items():
+            if count and host not in fetcher.blocked:
+                fetcher.defer(host)
+    deferred = isinstance(fetcher, vendor_retry.Connections) and fetcher.blocked
+    if todo and fetched == 0 and dead == 0 and not (deferred and connection_only):
         raise RuntimeError(f"all {len(todo)} page fetches failed")
+    if isinstance(fetcher, vendor_retry.Connections):
+        fetcher.finish_pages(pages, visited, fresh)
     store_state(key, "visited", visited)
     store_state(key, "docs", docs)
     remaining = sum(1 for p in pages if page_re.search(p) and visited.get(p, 0) < fresh)
@@ -681,6 +702,8 @@ def main() -> None:
     elif args.cursor is not None:
         if not enabled:
             print("# no enabled vendors — nothing to do")
+            if hold := os.environ.get("NEKAISE_ROTATION_HOLD_FILE"):
+                ops.atomic_write_text(Path(hold), "no enabled vendors; retry state preserved")
             return
         key = enabled[args.cursor % len(enabled)]
     else:
@@ -689,12 +712,42 @@ def main() -> None:
 
     keys = dedup.open_keys()
     urls, titles = keys.urls, keys.titles
+    retry_input = os.environ.get(vendor_retry.INPUT_ENV)
+    retry_output = os.environ.get(vendor_retry.OUTPUT_ENV)
+    retry = None
+    if retry_input or retry_output:
+        if not (retry_input and retry_output and args.cursor is not None and not args.vendor):
+            ap.error("vendor retries require both round side channels and an automated cursor")
+        state = json.loads(Path(retry_input).read_text())
+        if state["next"] != args.cursor:
+            ap.error("vendor retry input has a stale cursor")
+        retry = vendor_retry.Connections(state.get("vendor_retry", {}).get(key, {}), fetch)
     try:
-        universe = universe_for(key, cfg, refresh=args.refresh)
-        docs = candidate_documents(key, cfg, universe, args.pages)
+        fetcher = retry if retry is not None else fetch
+        universe = universe_for(key, cfg, refresh=args.refresh, fetcher=fetcher)
+        docs = candidate_documents(key, cfg, universe, args.pages, fetcher=fetcher)
+    except (requests.ConnectTimeout, vendor_retry.Deferred) as exc:
+        if retry is None:
+            print(f"# ERROR: {cfg['name']}: enumeration failed: {exc}", file=sys.stderr)
+            raise SystemExit(1)
+        # A sitemap/API request can fail before page scanning starts. Keep the vendor
+        # retryable without requiring the failed universe to have been cached.
+        if isinstance(exc, requests.ConnectTimeout):
+            for host, count in retry.streaks.items():
+                if count:
+                    retry.defer(host)
+        print(f"# DEGRADED: {cfg['name']}: {exc}", file=sys.stderr)
+        universe, docs = [], []
     except Exception as exc:
         print(f"# ERROR: {cfg['name']}: enumeration failed: {exc}", file=sys.stderr)
         raise SystemExit(1)  # abort WITHOUT advancing rotation
+    if retry is not None:
+        report = {"cursor": args.cursor, "vendor": key, "hosts": retry.hosts}
+        # Only a successful finder may have this report merged. The runner commits it
+        # and the next cursor in the same store transaction as accepted proposals.
+        ops.atomic_write_text(Path(retry_output), json.dumps(report))
+        for detail in vendor_retry.summaries(report):
+            print(f"# DEGRADED: {cfg['name']}: {json.dumps(detail)}", file=sys.stderr)
     keys.prefetch(urls=[url.rstrip("/") for url in docs])
     out = entries_for(key, cfg, docs, urls, titles, args.max, known_titles_for(key, cfg))
     keys.uniquify_ids(out)
