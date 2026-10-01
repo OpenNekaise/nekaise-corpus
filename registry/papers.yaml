@@ -121230,3 +121230,41 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.1371/journal.pone.0325646 openalex:W4411629422
     resolution: 'legacy: openalex location'
+  - id: ope-mobile-robotics-and-3d-printing-addressing-cha
+    title: 'Mobile robotics and 3D printing: addressing challenges in path planning
+      and scalability'
+    url: https://publications.aston.ac.uk/id/eprint/48033/1/Mobile_robotics_and_3D_printing_addressing_challenges_in_path_planning_and_scalability.pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-12-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/17452759.2024.2433588
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://publications.aston.ac.uk/id/eprint/48033/1/Mobile_robotics_and_3D_printing_addressing_challenges_in_path_planning_and_scalability.pdf;
+      version acceptedVersion]
+    rights_verified_at: '2026-10-01'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1080/17452759.2024.2433588 openalex:W4404982834
+    resolution: 'legacy: openalex location'
+  - id: ope-performance-of-camera-based-vibration-monitori
+    title: Performance of Camera-Based Vibration Monitoring Systems in Input-Output
+      Modal Identification Using Shaker Excitation
+    url: https://figshare.com/articles/journal_contribution/Performance_of_Camera-Based_Vibration_Monitoring_Systems_in_Input-Output_Modal_Identification_Using_Shaker_Excitation/16670980
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-09-01'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/rs13173471
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://figshare.com/articles/journal_contribution/Performance_of_Camera-Based_Vibration_Monitoring_Systems_in_Input-Output_Modal_Identification_Using_Shaker_Excitation/16670980;
+      version submittedVersion]
+    rights_verified_at: '2026-10-01'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/rs13173471 openalex:W3197737500
+    resolution: 'legacy: openalex location'
