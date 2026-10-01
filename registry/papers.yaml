@@ -121157,25 +121157,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.tws.2023.111447 openalex:W4390569811
     resolution: 'legacy: openalex location'
-  - id: ope-the-dingo-database-of-axial-pile-load-tests-fo
-    title: 'The DINGO database of axial pile load tests for the UK: settlement prediction
-      in fine-grained soils'
-    url: https://figshare.com/articles/journal_contribution/The_DINGO_database_of_axial_pile_load_tests_for_the_UK_settlement_prediction_in_fine-grained_soils/16634966
-    source: openalex
-    license: cc-by
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2021-09-16'
-    document_type: article
-    persistent_id: https://doi.org/10.1080/17499518.2021.1971249
-    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
-      [copy https://figshare.com/articles/journal_contribution/The_DINGO_database_of_axial_pile_load_tests_for_the_UK_settlement_prediction_in_fine-grained_soils/16634966;
-      version submittedVersion]
-    rights_verified_at: '2026-09-30'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1080/17499518.2021.1971249 openalex:W3201244189
-    resolution: 'legacy: openalex location'
   - id: ope-the-13-november-2007-rock-fall-at-viale-tizian
     title: The 13 November 2007 rock-fall at Viale Tiziano in Rome (Italy)
     url: https://nhess.copernicus.org/articles/12/1621/2012/nhess-12-1621-2012.pdf
