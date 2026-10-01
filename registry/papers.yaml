@@ -121284,3 +121284,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.5755/j01.sace.34.1.35534 openalex:W4391928570
     resolution: 'legacy: openalex location'
+  - id: ope-factors-associated-with-the-severity-of-constr
+    title: 'Factors associated with the severity of construction accidents: The case
+      of South Australia'
+    url: https://epress.lib.uts.edu.au/journals/index.php/AJCEB/article/download/3620/3879
+    source: openalex
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2013-12-11'
+    document_type: article
+    persistent_id: https://doi.org/10.5130/ajceb.v13i4.3620
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://epress.lib.uts.edu.au/journals/index.php/AJCEB/article/download/3620/3879;
+      version publishedVersion]
+    rights_verified_at: '2026-10-01'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5130/ajceb.v13i4.3620 openalex:W2012870172
+    resolution: 'legacy: openalex location'
