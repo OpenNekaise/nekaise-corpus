@@ -121358,3 +121358,41 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.3390/ma15041550 openalex:W4214739285
     resolution: 'legacy: openalex location'
+  - id: ope-microstructural-analysis-of-cement-paste-blend
+    title: Microstructural analysis of cement paste blended with blast furnace slag
+      using 1H NMR relaxometry
+    url: https://lirias.kuleuven.be/retrieve/14957d63-e254-4c19-bb2c-464fdbafe0dd
+    source: openalex
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2023-11-30'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.cemconcomp.2023.105377
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://lirias.kuleuven.be/retrieve/14957d63-e254-4c19-bb2c-464fdbafe0dd;
+      version submittedVersion]
+    rights_verified_at: '2026-10-01'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.cemconcomp.2023.105377 openalex:W4389158488
+    resolution: 'legacy: openalex location'
+  - id: ope-use-of-treated-non-ferrous-metallurgical-slags
+    title: Use of Treated Non-Ferrous Metallurgical Slags as Supplementary Cementitious
+      Materials in Cementitious Mixtures
+    url: https://lirias.kuleuven.be/retrieve/1ac78066-0316-4477-a5ff-9125e84f356c
+    source: openalex
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2021-04-28'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/app11094028
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://lirias.kuleuven.be/retrieve/1ac78066-0316-4477-a5ff-9125e84f356c;
+      version submittedVersion]
+    rights_verified_at: '2026-10-01'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/app11094028 openalex:W3158840663
+    resolution: 'legacy: openalex location'
