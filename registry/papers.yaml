@@ -121194,3 +121194,39 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1080/17499518.2021.1971249 openalex:W3201244189
     resolution: 'legacy: openalex location'
+  - id: ope-the-13-november-2007-rock-fall-at-viale-tizian
+    title: The 13 November 2007 rock-fall at Viale Tiziano in Rome (Italy)
+    url: https://nhess.copernicus.org/articles/12/1621/2012/nhess-12-1621-2012.pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-05-21'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/nhess-12-1621-2012
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://nhess.copernicus.org/articles/12/1621/2012/nhess-12-1621-2012.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-10-01'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/nhess-12-1621-2012 openalex:W1992608874
+    resolution: 'legacy: openalex location'
+  - id: ope-estimation-of-bimodal-soil-water-characteristi
+    title: Estimation of bimodal soil-water characteristics curve under wetting process
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0325646&type=printable
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-06-25'
+    document_type: article
+    persistent_id: https://doi.org/10.1371/journal.pone.0325646
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0325646&type=printable;
+      version publishedVersion]
+    rights_verified_at: '2026-10-01'
+    selected_version: publishedVersion
+    origin_ids: doi:10.1371/journal.pone.0325646 openalex:W4411629422
+    resolution: 'legacy: openalex location'
