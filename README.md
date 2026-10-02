@@ -12,17 +12,17 @@ locally and retain their original licenses.
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **1,620,411** |
-| **Outside the default view** | **15,229** rows (collected and kept): policy-held 8,059 · restricted licence classes 7,170 |
-| **Collection (all use classes)** | **1,635,640** held originals · by class: open 1,620,411 · policy-held 8,059 · arxiv-nonexclusive 5,377 · unverified 816 · nc-nd 605 · nc 313 · publisher-oa 59 |
+| **Documents** | **1,620,509** |
+| **Outside the default view** | **15,243** rows (collected and kept): policy-held 8,059 · restricted licence classes 7,184 |
+| **Collection (all use classes)** | **1,635,752** held originals · by class: open 1,620,509 · policy-held 8,059 · arxiv-nonexclusive 5,377 · unverified 828 · nc-nd 605 · nc 313 · publisher-oa 61 |
 | **Raw originals** | **~768G** on disk, every class (PDF / HTML / source code) |
-| **Extracted text** | **~83G** on disk, every class (default view: ~80.276B chars, **≈20.069B tokens**) |
-| **Cleaned corpus** | **~78G** (~76.322B chars, **≈19.081B tokens**, ruleset-cleaned) |
+| **Extracted text** | **~83G** on disk, every class (default view: ~80.278B chars, **≈20.069B tokens**) |
+| **Cleaned corpus** | **~78G** (~76.323B chars, **≈19.081B tokens**, ruleset-cleaned) |
 | **Topics** | 12 |
 
-**By topic** (a source gets one at registration): equipment_systems 534,403 · construction 431,251 · building_energy 219,818 · structures_civil 171,721 · materials 111,576 · infrastructure 75,370 · architecture 45,094 · standards_protocols 12,977 · controls_bas 10,508 · urban 6,025 · simulation_modeling 1,261 · commissioning_fdd 407.
+**By topic** (a source gets one at registration): equipment_systems 534,403 · construction 431,251 · building_energy 219,818 · structures_civil 171,721 · materials 111,576 · infrastructure 75,370 · architecture 45,094 · standards_protocols 12,977 · controls_bas 10,508 · urban 6,025 · simulation_modeling 1,359 · commissioning_fdd 407.
 
-**By license:** open 1,329,850 · public-domain 263,817 · cc-by-sa 2,829 · cc-by 23,857 · cc0 58.
+**By license:** open 1,329,850 · public-domain 263,817 · cc-by-sa 2,902 · cc-by 23,882 · cc0 58.
 <!-- STATS:END -->
 
 ## Quick start
