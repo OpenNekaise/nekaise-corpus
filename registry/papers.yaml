@@ -121425,3 +121425,66 @@ sources:
       claim retained from prior prune decision; redirected payload requires independent
       classification"}'
     rights_verified_at: '2026-10-01T22:47:51Z'
+  - id: ope-mechanical-and-microstructural-characterizatio
+    title: Mechanical and Microstructural Characterization of a Nano-stabilized Sandy
+      Soil
+    url: https://vuir.vu.edu.au/49166/1/Mechanical_and_Microstructural_Characterization_of_a_Nano-stabilized_Sandy_Soil.pdf
+    source: openalex
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024-07-30'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s10706-024-02890-6
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://vuir.vu.edu.au/49166/1/Mechanical_and_Microstructural_Characterization_of_a_Nano-stabilized_Sandy_Soil.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-10-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s10706-024-02890-6 openalex:W4401113152
+    resolution: 'legacy: openalex location'
+  - id: ope-green-roads-ahead-a-critical-examination-of-bi
+    title: 'Green roads ahead: a critical examination of bio-bitumen for sustainable
+      infrastructure'
+    url: https://www.frontiersin.org/articles/10.3389/fmats.2024.1382014/pdf?isPublishedV2=False
+    source: openalex
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024-02-25'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fmats.2024.1382014
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/fmats.2024.1382014/pdf?isPublishedV2=False
+      do not transfer to https://www.frontiersin.org/journals/materials/articles/10.3389/fmats.2024.1382014/pdf;
+      payload sha256=efe92270447849f1fca691f41836e69b25be68d30a67b1f53b9f918acc22a6cb;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://www.frontiersin.org/articles/10.3389/fmats.2024.1382014/pdf?isPublishedV2=False;
+      version publishedVersion]", "rights_verified_at": "2026-10-02", "selected_version":
+      "publishedVersion"}'
+    rights_verified_at: '2026-10-02T00:12:09Z'
+    origin_ids: doi:10.3389/fmats.2024.1382014 openalex:W4392167126
+    resolution: 'legacy: openalex location'
+  - id: ope-a-bibliometric-analysis-and-review-on-the-perf
+    title: A bibliometric analysis and review on the performance of polymer-modified
+      bitumen
+    url: https://www.frontiersin.org/articles/10.3389/fmats.2023.1225830/pdf
+    source: openalex
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2023-07-03'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fmats.2023.1225830
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/fmats.2023.1225830/pdf
+      do not transfer to https://www.frontiersin.org/journals/materials/articles/10.3389/fmats.2023.1225830/pdf;
+      payload sha256=da50ecc7dd671bbd8f3aecfa0bb9eba1be5753904049e032f4c81327b6afcf7f;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://www.frontiersin.org/articles/10.3389/fmats.2023.1225830/pdf;
+      version publishedVersion]", "rights_verified_at": "2026-10-02", "selected_version":
+      "publishedVersion"}'
+    rights_verified_at: '2026-10-02T00:12:04Z'
+    origin_ids: doi:10.3389/fmats.2023.1225830 openalex:W4382940231
+    resolution: 'legacy: openalex location'
