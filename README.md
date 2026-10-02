@@ -12,17 +12,17 @@ locally and retain their original licenses.
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **1,620,016** |
-| **Outside the default view** | **15,051** rows (collected and kept): policy-held 8,059 · restricted licence classes 6,992 |
-| **Collection (all use classes)** | **1,635,067** held originals · by class: open 1,620,016 · policy-held 8,059 · arxiv-nonexclusive 5,377 · unverified 650 · nc-nd 601 · nc 309 · publisher-oa 55 |
-| **Raw originals** | **~765G** on disk, every class (PDF / HTML / source code) |
-| **Extracted text** | **~83G** on disk, every class (default view: ~80.270B chars, **≈20.067B tokens**) |
-| **Cleaned corpus** | **~78G** (~76.316B chars, **≈19.079B tokens**, ruleset-cleaned) |
+| **Documents** | **1,620,103** |
+| **Outside the default view** | **15,152** rows (collected and kept): policy-held 8,059 · restricted licence classes 7,093 |
+| **Collection (all use classes)** | **1,635,255** held originals · by class: open 1,620,103 · policy-held 8,059 · arxiv-nonexclusive 5,377 · unverified 748 · nc-nd 601 · nc 309 · publisher-oa 58 |
+| **Raw originals** | **~766G** on disk, every class (PDF / HTML / source code) |
+| **Extracted text** | **~83G** on disk, every class (default view: ~80.272B chars, **≈20.068B tokens**) |
+| **Cleaned corpus** | **~78G** (~76.318B chars, **≈19.079B tokens**, ruleset-cleaned) |
 | **Topics** | 12 |
 
-**By topic** (a source gets one at registration): equipment_systems 534,403 · construction 431,251 · building_energy 219,818 · structures_civil 171,721 · materials 111,576 · infrastructure 75,367 · architecture 45,094 · standards_protocols 12,977 · controls_bas 10,508 · urban 6,025 · simulation_modeling 869 · commissioning_fdd 407.
+**By topic** (a source gets one at registration): equipment_systems 534,403 · construction 431,251 · building_energy 219,818 · structures_civil 171,721 · materials 111,576 · infrastructure 75,367 · architecture 45,094 · standards_protocols 12,977 · controls_bas 10,508 · urban 6,025 · simulation_modeling 956 · commissioning_fdd 407.
 
-**By license:** open 1,329,850 · public-domain 263,817 · cc-by-sa 2,536 · cc-by 23,755 · cc0 58.
+**By license:** open 1,329,850 · public-domain 263,817 · cc-by-sa 2,609 · cc-by 23,769 · cc0 58.
 <!-- STATS:END -->
 
 ## Quick start

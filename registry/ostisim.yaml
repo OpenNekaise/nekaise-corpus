@@ -2445,21 +2445,6 @@ sources:
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-02'
-  - id: osm-grid-interactive-efficient-buildings-technical-repor
-    title: 'Grid-interactive Efficient Buildings Technical Report Series: Windows and
-      Opaque Envelope'
-    url: https://www.osti.gov/servlets/purl/1580215
-    source: osti_sim
-    license: unverified
-    topic: simulation_modeling
-    format: pdf
-    language: en
-    published_at: '2019-12-02'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1580215
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-02'
   - id: osm-electrochromic-windows-for-commercial-buildings-moni
     title: 'Electrochromic windows for commercial buildings: Monitored results from
       a full-scale testbed'
@@ -2547,21 +2532,6 @@ sources:
     license_evidence: OSTI Conference full text; the OSTI record states no rights and
       OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-02'
-  - id: osm-hawaii-demand-side-management-resource-assessm-2
-    title: 'Hawaii demand-side management resource assessment. Final report, Reference
-      Volume 5: The DOETRAN user`s manual; The DOE-2/DBEDT DSM forecasting model '
-    url: https://www.osti.gov/servlets/purl/179250
-    source: osti_sim
-    license: unverified
-    topic: simulation_modeling
-    format: pdf
-    language: en
-    published_at: '1995-04-01'
-    document_type: technical-report
-    persistent_id: doi:10.2172/179250
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-02'
   - id: osm-the-design-and-evaluation-of-integrated-envelope-and
     title: The design and evaluation of integrated envelope and lighting control strategies
       for commercial buildings
@@ -2574,6 +2544,1063 @@ sources:
     published_at: '1995-01-01'
     document_type: technical-report
     persistent_id: doi:10.2172/1416948
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-a-buildings-module-for-the-stochastic-energy-deploym
+    title: A Buildings Module for the Stochastic Energy Deployment System
+    url: https://www.osti.gov/servlets/purl/929413
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2008-05-15'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-improving-energy-performance-through-whole-building-
+    title: Improving Energy Performance through Whole Building Simulation at Sandia
+      National Laboratories New Mexico.
+    url: https://www.osti.gov/servlets/purl/1465563
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2005-12-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-status-of-cool-roof-standards-in-the-united-states
+    title: Status of cool roof standards in the United States
+    url: https://www.osti.gov/servlets/purl/932559
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2007-06-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-utility-and-economic-benefits-of-electrochromic-smar
+    title: Utility and economic benefits of electrochromic smart windows
+    url: https://www.osti.gov/servlets/purl/10102353
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1992-06-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-recovery-act-development-of-design-and-simulation-to
+    title: 'Recovery act: development of design and simulation tool for hybrid geothermal
+      heat pump system'
+    url: https://www.osti.gov/servlets/purl/1186030
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2014-05-29'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1186030
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-bridging-the-gap-between-building-science-and-design
+    title: Bridging the gap between building science and design studios
+    url: https://www.osti.gov/servlets/purl/837728
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2002-02-06'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-providing-better-indoor-environmental-quality-brings
+    title: Providing better indoor environmental quality brings economicbenefits
+    url: https://www.osti.gov/servlets/purl/924794
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2007-06-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-residential-fenestration-performance-analysis-using-
+    title: Residential fenestration performance analysis using RESFEN3.1
+    url: https://www.osti.gov/servlets/purl/8692
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1999-02-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/8692
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-developing-integrated-envelop-and-lighting-systems-f
+    title: Developing integrated envelop and lighting systems for commercial buildings
+    url: https://www.osti.gov/servlets/purl/10166918
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1994-03-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-simulating-the-daylight-performance-of-fenestration-
+    title: 'Simulating the daylight performance of fenestration systems and spaces of
+      arbitrary complexity: The IDC method. Revision'
+    url: https://www.osti.gov/servlets/purl/10192493
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1993-04-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-simulating-the-daylight-performance-of-fenestr-2
+    title: 'Simulating the daylight performance of fenestration systems and spaces of
+      arbitrary complexity: The IDC method'
+    url: https://www.osti.gov/servlets/purl/10161306
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1993-04-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-integrated-envelope-and-lighting-systems-for-commerc
+    title: 'Integrated envelope and lighting systems for commercial buildings: a retrospective'
+    url: https://www.osti.gov/servlets/purl/7282
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1998-06-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-conservation-vol-86-no-22-november-
+    title: Buildings Energy Conservation [Vol. 86, No. 22, November 30, 1986]
+    url: https://www.osti.gov/servlets/purl/2544261
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1986-11-30'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-switchable-window-modeling-task-12-building-energy-a
+    title: 'Switchable window modeling. Task 12: Building energy analysis and design
+      tools for solar applications, Subtask A.1: High-performance glazing'
+    url: https://www.osti.gov/servlets/purl/10192481
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1992-06-30'
+    document_type: technical-report
+    persistent_id: doi:10.2172/10192481
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-energy-conservation-potential-of-the-us-department-o
+    title: Energy conservation potential of the US Department of Energy interim commercial
+      building standards
+    url: https://www.osti.gov/servlets/purl/10121034
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1993-12-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/10121034
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-evaluation-of-analytical-tools-for-the-solar-energy-
+    title: Evaluation of analytical tools for the solar energy design of buildings
+    url: https://www.osti.gov/servlets/purl/7064506
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1989-02-28'
+    document_type: technical-report
+    persistent_id: doi:10.2172/7064506
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-energy-savings-and-economic-analysis-of-updating-new
+    title: Energy Savings and Economic Analysis of Updating New Mexico’s Commercial
+      Building Energy Code
+    url: https://www.osti.gov/servlets/purl/1779785
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2003-01-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1779785
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-simulating-the-energy-performance-of-holographic-gla
+    title: Simulating the energy performance of holographic glazings
+    url: https://www.osti.gov/servlets/purl/10157051
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1994-03-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-comparison-of-chiller-models-for-use-in-model-based-
+    title: Comparison of chiller models for use in model-based fault detection
+    url: https://www.osti.gov/servlets/purl/829977
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2001-06-07'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-a-retrospective-analysis-of-commercial-building-ener
+    title: 'A Retrospective Analysis of Commercial Building Energy Codes: 1990 – 2008'
+    url: https://www.osti.gov/servlets/purl/1035003
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2010-10-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1035003
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-analysis-of-potential-benefits-and-costs-of-adopting
+    title: Analysis of Potential Benefits and Costs of Adopting ASHRAE Standard 90.1-1999
+      as a Commercial Building Energy Code in Illinois Jurisdictions
+    url: https://www.osti.gov/servlets/purl/969753
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2002-05-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/969753
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-the-energy-performance-of-prototype-holographic-glaz
+    title: The energy performance of prototype holographic glazings
+    url: https://www.osti.gov/servlets/purl/10182243
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1993-02-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/10182243
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-technology-vol-90-no-5-may-1990
+    title: Buildings Energy Technology [Vol. 90, No. 5, May 1990]
+    url: https://www.osti.gov/servlets/purl/2545008
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1990-05-01'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-energy-and-daylight-performance-of-angular-selective
+    title: Energy and daylight performance of angular selective glazings
+    url: https://www.osti.gov/servlets/purl/7325
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1998-11-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-potentials-for-and-barriers-to-building-energy-conse
+    title: Potentials for and barriers to building energy conservation in China
+    url: https://www.osti.gov/servlets/purl/6953005
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1989-10-01'
+    document_type: conference-paper
+    persistent_id: doi:10.1111/j.1465-7287.1990.tb00651.x
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-optical-properties-database-for-high-performance-gla
+    title: 'Optical properties database for high performance glazings. Task 12: Building
+      energy analysis and design tools for solar applications, Subtask A.1: Hig'
+    url: https://www.osti.gov/servlets/purl/10192474
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1992-06-30'
+    document_type: technical-report
+    persistent_id: doi:10.2172/10192474
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-a-database-of-window-annual-energy-use-in-typical-no
+    title: A database of window annual energy use in typical North American residences
+    url: https://www.osti.gov/servlets/purl/767535
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1999-08-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-integrating-energy-expertise-into-building-design
+    title: Integrating energy expertise into building design
+    url: https://www.osti.gov/servlets/purl/6394509
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1990-08-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-building-performance-analysis-using-interactive-mult
+    title: Building performance analysis using interactive multimedia concepts
+    url: https://www.osti.gov/servlets/purl/7054410
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1992-04-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-solar-buildings-technology-vol-89-no-1-january-febru
+    title: Solar Buildings Technology [Vol. 89, No. 1, January-February 1989]
+    url: https://www.osti.gov/servlets/purl/2566052
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1989-01-01'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-daylighting-simulation-methods-algorithms-and-resour
+    title: 'Daylighting simulation: methods, algorithms, and resources'
+    url: https://www.osti.gov/servlets/purl/861173
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1999-12-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/861173
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-window-u-value-effects-on-residential-cooling-load
+    title: Window U-value effects on residential cooling load
+    url: https://www.osti.gov/servlets/purl/10105124
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1993-09-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-minimum-cost-model-energy-code-envelope-requirements
+    title: Minimum cost model energy code envelope requirements
+    url: https://www.osti.gov/servlets/purl/10183522
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1994-08-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-a-new-method-for-predicting-the-solar-heat-gain-of-c
+    title: 'A new method for predicting the solar heat gain of complex fenestration
+      systems: 1, Overview and derivation of the matrix Layer calculation'
+    url: https://www.osti.gov/servlets/purl/10166417
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1993-10-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-fenestration-performance-analysis-using-an-interacti
+    title: Fenestration performance analysis using an interactive graphics-based methodology
+      on a microcomputer
+    url: https://www.osti.gov/servlets/purl/5494625
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1989-09-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-technology-vol-87-no-8-april-30-198
+    title: Buildings Energy Technology [Vol. 87, No. 8, April 30, 1987]
+    url: https://www.osti.gov/servlets/purl/2544299
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1987-04-30'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-analysis-of-potential-benefits-and-costs-of-ad-2
+    title: Analysis of Potential Benefits and Costs of Adopting ASHRAE Standard 90.1-1999
+      as a Commercial Building Energy Code in Michigan
+    url: https://www.osti.gov/servlets/purl/971902
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2002-09-30'
+    document_type: technical-report
+    persistent_id: doi:10.2172/971902
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-a-new-method-for-predicting-the-solar-heat-gai-2
+    title: A new method for predicting the solar heat gain of complex fenestration systems
+    url: https://www.osti.gov/servlets/purl/6928587
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1992-10-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-analysis-of-potential-benefits-and-costs-of-ad-3
+    title: Analysis of Potential Benefits and Costs of Adopting a Commercial Building
+      Energy Standard in South Dakota
+    url: https://www.osti.gov/servlets/purl/1035015
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2005-03-04'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1035015
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-comparison-of-the-energy-efficiency-prescribed-by-as
+    title: Comparison of the Energy Efficiency Prescribed by ASHRAE/ANSI/IESNA Standard
+      90.1-1999 and ASHRAE/ANSI/IESNA Standard 90.1-2004
+    url: https://www.osti.gov/servlets/purl/1025697
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2006-12-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1025697
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-analysis-of-potential-benefits-and-costs-of-ad-4
+    title: Analysis of Potential Benefits and Costs of Adopting ASHRAE Standard 90.1-2001
+      as the Commercial Building Energy Code in Tennessee
+    url: https://www.osti.gov/servlets/purl/967936
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2004-09-30'
+    document_type: technical-report
+    persistent_id: doi:10.2172/967936
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-ates-heat-pump-systems-for-commercial-office-buildin
+    title: ATES/heat pump systems for commercial office buildings
+    url: https://www.osti.gov/servlets/purl/6413075
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1989-03-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-conservation-vol-85-no-11-june-15-1
+    title: Buildings Energy Conservation [Vol. 85, No. 11, June 15, 1985]
+    url: https://www.osti.gov/servlets/purl/2543043
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1985-06-15'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-solar-buildings-program-summary-volume-2-research-su
+    title: 'Solar buildings program summary: Volume 2: Research summaries, fiscal year
+      1988'
+    url: https://www.osti.gov/servlets/purl/6053553
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1989-04-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/6053553
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-asean-usaid-buildings-energy-conservation-project-fi
+    title: ASEAN--USAID Buildings Energy Conservation Project final report. Volume 2,
+      Technology
+    url: https://www.osti.gov/servlets/purl/10163215
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1992-06-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/10163215
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-daily-radiation-model-for-use-in-the-simulation-of-p
+    title: Daily Radiation Model for Use in the Simulation of Passive Solar Buildings
+    url: https://www.osti.gov/servlets/purl/6535462
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1981-04-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/6535462
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-technology-vol-87-no-1-january-15-1
+    title: Buildings Energy Technology [Vol. 87, No. 1, January 15, 1987]
+    url: https://www.osti.gov/servlets/purl/2544292
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1987-01-15'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-future-buildings-forum-2025-toward-a-methodology-for
+    title: 'Future buildings Forum-2025: Toward a methodology for future buildings research'
+    url: https://www.osti.gov/servlets/purl/6050172
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1990-10-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-effects-of-skylight-parameters-on-daylighting-energy
+    title: Effects of skylight parameters on daylighting energy savings
+    url: https://www.osti.gov/servlets/purl/5492952
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1985-05-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/5492952
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-commercial-sector-energy-consumption-data-base-devel
+    title: Commercial-sector energy-consumption data-base-development project. Volume
+      III. Analysis of energy consumption in office buildings
+    url: https://www.osti.gov/servlets/purl/6379142
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1978-04-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/6379142
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-conservation-vol-86-no-8-april-30-1
+    title: Buildings Energy Conservation [Vol. 86, No. 8, April 30, 1986]
+    url: https://www.osti.gov/servlets/purl/2544209
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1986-04-30'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-appliance-analysis-residential-construction-demonstr
+    title: 'Appliance Analysis : Residential Construction Demonstration Project Cycle
+      2.'
+    url: https://www.osti.gov/servlets/purl/5391164
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1991-08-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/5391164
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-conservation-vol-86-no-10-may-30-19
+    title: Buildings Energy Conservation [Vol. 86, No. 10, May 30, 1986]
+    url: https://www.osti.gov/servlets/purl/2544211
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1986-05-30'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-integrated-performance-of-an-automated-venetian-blin
+    title: Integrated performance of an automated venetian blind/electric lighting system
+      in a full-scale office environment
+    url: https://www.osti.gov/servlets/purl/7285
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1998-02-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-commercial-lighting-solutions-webtool-peer-review-re
+    title: Commercial Lighting Solutions, Webtool Peer Review Report
+    url: https://www.osti.gov/servlets/purl/958007
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2009-06-17'
+    document_type: technical-report
+    persistent_id: doi:10.2172/958007
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-doe-2-supplement-version-2-1b
+    title: DOE-2 supplement, Version 2. 1B
+    url: https://www.osti.gov/servlets/purl/6012542
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1983-01-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/6012542
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-analysis-of-potential-benefits-and-costs-of-updating
+    title: Analysis of Potential Benefits and Costs of Updating the Commercial Building
+      Energy Code in Iowa
+    url: https://www.osti.gov/servlets/purl/943416
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2002-09-07'
+    document_type: technical-report
+    persistent_id: doi:10.2172/943416
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-conservation-vol-86-no-1-january-15
+    title: Buildings Energy Conservation [Vol. 86, No. 1, January 15, 1986]
+    url: https://www.osti.gov/servlets/purl/2544198
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1986-01-15'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-lighting-technology-energy-solutions-lites-final-tec
+    title: Lighting Technology Energy Solutions (LiTES) (Final Technical Report)
+    url: https://www.osti.gov/servlets/purl/1599329
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2020-02-13'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1599329
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-conservation-vol-85-no-3-february-1
+    title: Buildings Energy Conservation [Vol. 85, No. 3, February 15, 1985]
+    url: https://www.osti.gov/servlets/purl/5389983
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1986-02-15'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-frequency-domain-approach-to-passive-building-energy
+    title: Frequency-domain approach to passive building energy analysis
+    url: https://www.osti.gov/servlets/purl/5247700
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1982-07-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/5247700
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-conservation-vol-86-no-5-march-15-1
+    title: Buildings Energy Conservation [Vol. 86, No. 5, March 15, 1986]
+    url: https://www.osti.gov/servlets/purl/2544202
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1986-03-15'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-conservation-vol-86-no-9-may-15-198
+    title: Buildings Energy Conservation [Vol. 86, No. 9, May 15, 1986]
+    url: https://www.osti.gov/servlets/purl/2544210
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1986-05-15'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-conservation-vol-85-no-9-may-15-198
+    title: Buildings Energy Conservation [Vol. 85, No. 9, May 15, 1985]
+    url: https://www.osti.gov/servlets/purl/2543041
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1985-05-15'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-technology-vol-89-no-2-february-198
+    title: Buildings Energy Technology [Vol. 89, No. 2, February 1989]
+    url: https://www.osti.gov/servlets/purl/2544354
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1989-02-01'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-technology-vol-89-no-1-january-1989
+    title: Buildings Energy Technology [Vol. 89, No. 1, January 1989]
+    url: https://www.osti.gov/servlets/purl/2544345
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1989-01-01'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-solar-buildings-technology-vol-89-no-3-may-june-1989
+    title: Solar Buildings Technology [Vol. 89, No. 3, May-June 1989]
+    url: https://www.osti.gov/servlets/purl/2566054
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1989-05-01'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-technology-vol-91-no-9-september-19
+    title: Buildings Energy Technology [Vol. 91, No. 9, September 1991]
+    url: https://www.osti.gov/servlets/purl/2545045
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1991-09-01'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-technology-vol-87-no-5-march-15-198
+    title: Buildings Energy Technology [Vol. 87, No. 5, March 15, 1987]
+    url: https://www.osti.gov/servlets/purl/2544296
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1987-03-15'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-solar-buildings-technology-vol-90-no-1-january-febru
+    title: Solar Buildings Technology [Vol. 90, No. 1, January-February 1990]
+    url: https://www.osti.gov/servlets/purl/2566064
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1990-01-01'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-conservation-vol-85-no-1-january-15
+    title: Buildings Energy Conservation [Vol. 85, No. 1, January 15, 1985]
+    url: https://www.osti.gov/servlets/purl/12152205
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1985-01-15'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-analysis-and-simulation-of-performance-data-for-resi
+    title: Analysis and simulation of performance data for residential solar heating
+      and heat pump system in Seattle, Washington. Final report
+    url: https://www.osti.gov/servlets/purl/5397228
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1978-06-15'
+    document_type: technical-report
+    persistent_id: doi:10.2172/5397228
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-conservation-vol-86-no-3-february-1
+    title: Buildings Energy Conservation [Vol. 86, No. 3, February 15, 1986]
+    url: https://www.osti.gov/servlets/purl/2544200
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1986-02-15'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-mixed-strategies-for-energy-conservation-and-alterna
+    title: Mixed strategies for energy conservation and alternative energy utilization
+      (solar) in buildings. Final report. Volume I. Executive summary. [Simulati
+    url: https://www.osti.gov/servlets/purl/5230822
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1977-06-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/5230822
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-buildings-energy-conservation-vol-86-no-11-june-15-1
+    title: Buildings Energy Conservation [Vol. 86, No. 11, June 15, 1986]
+    url: https://www.osti.gov/servlets/purl/2544212
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1986-06-15'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-economic-analysis-in-support-of-interim-energy-conse
+    title: Economic analysis in support of interim energy conservation standards for
+      new federal residential buildings
+    url: https://www.osti.gov/servlets/purl/6950728
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1988-06-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/6950728
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-integrated-estimation-of-commercial-sector-end-use-l
+    title: Integrated estimation of commercial sector end-use load shapes and energy
+      use intensities in the PG&E service area
+    url: https://www.osti.gov/servlets/purl/10140911
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1993-12-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/10140911
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-02'
