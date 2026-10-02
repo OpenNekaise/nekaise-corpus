@@ -121748,3 +121748,40 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.1371/journal.pone.0137477 openalex:W2210803437
     resolution: 'legacy: openalex location'
+  - id: ope-blue-green-infrastructure-in-view-of-integrate
+    title: 'Blue-green infrastructure in view of Integrated Urban Water Management:
+      A novel assessment of an effectiveness index'
+    url: https://discovery.ucl.ac.uk/10192106/7/Campos_1-s2.0-S0043135424005591-main.pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-04-25'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.watres.2024.121658
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/10192106/7/Campos_1-s2.0-S0043135424005591-main.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-10-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.watres.2024.121658 openalex:W4395449416
+    resolution: 'legacy: openalex location'
+  - id: ope-placing-sensors-in-sewer-networks-a-system-to-
+    title: 'Placing sensors in sewer networks: A system to pinpoint new cases of coronavirus'
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0248893&type=printable
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2021-04-08'
+    document_type: article
+    persistent_id: https://doi.org/10.1371/journal.pone.0248893
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0248893&type=printable;
+      version submittedVersion]
+    rights_verified_at: '2026-10-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1371/journal.pone.0248893 openalex:W3121089739
+    resolution: 'legacy: openalex location'
