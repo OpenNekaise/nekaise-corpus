@@ -12,17 +12,17 @@ locally and retain their original licenses.
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **1,619,144** |
-| **Outside the default view** | **14,804** rows (collected and kept): policy-held 8,059 · restricted licence classes 6,745 |
-| **Collection (all use classes)** | **1,633,948** held originals · by class: open 1,619,144 · policy-held 8,059 · arxiv-nonexclusive 5,377 · nc-nd 596 · unverified 443 · nc 305 · publisher-oa 24 |
+| **Documents** | **1,619,225** |
+| **Outside the default view** | **14,819** rows (collected and kept): policy-held 8,059 · restricted licence classes 6,760 |
+| **Collection (all use classes)** | **1,634,044** held originals · by class: open 1,619,225 · policy-held 8,059 · arxiv-nonexclusive 5,377 · nc-nd 596 · unverified 449 · nc 305 · publisher-oa 33 |
 | **Raw originals** | **~764G** on disk, every class (PDF / HTML / source code) |
-| **Extracted text** | **~83G** on disk, every class (default view: ~80.257B chars, **≈20.064B tokens**) |
+| **Extracted text** | **~83G** on disk, every class (default view: ~80.258B chars, **≈20.064B tokens**) |
 | **Cleaned corpus** | **~78G** (~76.304B chars, **≈19.076B tokens**, ruleset-cleaned) |
-| **Topics** | 11 |
+| **Topics** | 12 |
 
-**By topic** (a source gets one at registration): equipment_systems 534,403 · construction 431,251 · building_energy 219,818 · structures_civil 171,721 · materials 111,576 · infrastructure 75,367 · architecture 45,094 · standards_protocols 12,977 · controls_bas 10,508 · urban 6,022 · commissioning_fdd 407.
+**By topic** (a source gets one at registration): equipment_systems 534,403 · construction 431,251 · building_energy 219,818 · structures_civil 171,721 · materials 111,576 · infrastructure 75,367 · architecture 45,094 · standards_protocols 12,977 · controls_bas 10,508 · urban 6,022 · commissioning_fdd 407 · simulation_modeling 81.
 
-**By license:** open 1,329,850 · public-domain 263,817 · cc-by-sa 1,854 · cc-by 23,566 · cc0 57.
+**By license:** open 1,329,850 · public-domain 263,817 · cc-by-sa 1,935 · cc-by 23,566 · cc0 57.
 <!-- STATS:END -->
 
 ## Quick start

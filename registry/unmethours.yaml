@@ -1,0 +1,1090 @@
+# unmethours — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: umh-1-what-are-the-available-sources-for-historica
+    title: 'Unmet Hours Q1: what are the available sources for historical weather data'
+    url: https://unmethours.com/question/1/what-are-the-available-sources-for-historical-weather-data/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-2-how-much-does-it-cost-to-create-a-model
+    title: 'Unmet Hours Q2: how much does it cost to create a model'
+    url: https://unmethours.com/question/2/how-much-does-it-cost-to-create-a-model/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-4-why-does-energyplus-take-so-much-longer-to-s
+    title: 'Unmet Hours Q4: why does energyplus take so much longer to simulate than
+      doe 2'
+    url: https://unmethours.com/question/4/why-does-energyplus-take-so-much-longer-to-simulate-than-doe-2/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-5-how-to-interpret-cycling-equipment-outputs
+    title: 'Unmet Hours Q5: how to interpret cycling equipment outputs'
+    url: https://unmethours.com/question/5/how-to-interpret-cycling-equipment-outputs/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-6-modelica-solver-efficiency-compared-to-predi
+    title: 'Unmet Hours Q6: modelica solver efficiency compared to predictorcorrector'
+    url: https://unmethours.com/question/6/modelica-solver-efficiency-compared-to-predictorcorrector/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-7-why-is-energy-modeling-important
+    title: 'Unmet Hours Q7: why is energy modeling important'
+    url: https://unmethours.com/question/7/why-is-energy-modeling-important/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-9-what-information-and-data-do-i-need-to-colle
+    title: 'Unmet Hours Q9: what information and data do i need to collect before starting
+      a model'
+    url: https://unmethours.com/question/9/what-information-and-data-do-i-need-to-collect-before-starting-a-model/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-12-how-do-you-model-transfer-air-in-energyplus
+    title: 'Unmet Hours Q12: how do you model transfer air in energyplus'
+    url: https://unmethours.com/question/12/how-do-you-model-transfer-air-in-energyplus/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-15-when-calibrating-an-energy-model-what-are-th
+    title: 'Unmet Hours Q15: when calibrating an energy model what are the typical metrics
+      to show proper calibration'
+    url: https://unmethours.com/question/15/when-calibrating-an-energy-model-what-are-the-typical-metrics-to-show-proper-calibration/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-18-are-there-more-recent-sources-of-building-oc
+    title: 'Unmet Hours Q18: are there more recent sources of building occupancyload
+      schedules based on measured empirical data from real buildings'
+    url: https://unmethours.com/question/18/are-there-more-recent-sources-of-building-occupancyload-schedules-based-on-measured-empirical-data-from-real-buildings/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-32-improving-navigationworkflow-for-idf-editing
+    title: 'Unmet Hours Q32: improving navigationworkflow for idf editing in notepad'
+    url: https://unmethours.com/question/32/improving-navigationworkflow-for-idf-editing-in-notepad/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-38-revision-control-for-text-based-modeling-pro
+    title: 'Unmet Hours Q38: revision control for text based modeling programs'
+    url: https://unmethours.com/question/38/revision-control-for-text-based-modeling-programs/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-42-what-is-the-best-practice-to-model-an-atrium
+    title: 'Unmet Hours Q42: what is the best practice to model an atrium in energyplus'
+    url: https://unmethours.com/question/42/what-is-the-best-practice-to-model-an-atrium-in-energyplus/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-43-calculating-3d-thermal-bridges
+    title: 'Unmet Hours Q43: calculating 3d thermal bridges'
+    url: https://unmethours.com/question/43/calculating-3d-thermal-bridges/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-44-visualizing-airflow-between-zones-in-energyp
+    title: 'Unmet Hours Q44: visualizing airflow between zones in energyplus'
+    url: https://unmethours.com/question/44/visualizing-airflow-between-zones-in-energyplus/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-71-what-features-of-equest-make-it-appealing-to
+    title: 'Unmet Hours Q71: what features of equest make it appealing to energy modelers'
+    url: https://unmethours.com/question/71/what-features-of-equest-make-it-appealing-to-energy-modelers/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-74-when-should-i-use-energyplus-instead-of-eque
+    title: 'Unmet Hours Q74: when should i use energyplus instead of equest and vice
+      versa'
+    url: https://unmethours.com/question/74/when-should-i-use-energyplus-instead-of-equest-and-vice-versa/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-87-how-to-describe-climate-data-calculate-degre
+    title: 'Unmet Hours Q87: how to describe climate data calculate degree days'
+    url: https://unmethours.com/question/87/how-to-describe-climate-data-calculate-degree-days/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-92-what-are-your-sources-for-part-load-curve-da
+    title: 'Unmet Hours Q92: what are your sources for part load curve data'
+    url: https://unmethours.com/question/92/what-are-your-sources-for-part-load-curve-data/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-95-what-causes-divide-by-zero-errors-and-how-ca
+    title: 'Unmet Hours Q95: what causes divide by zero errors and how can they be debugged'
+    url: https://unmethours.com/question/95/what-causes-divide-by-zero-errors-and-how-can-they-be-debugged/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-139-modelling-of-roof-top-solar-photovoltaic-pla
+    title: 'Unmet Hours Q139: modelling of roof top solar photovoltaic plant in equest'
+    url: https://unmethours.com/question/139/modelling-of-roof-top-solar-photovoltaic-plant-in-equest/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-142-radiance-simulations-fail-on-openstudio
+    title: 'Unmet Hours Q142: radiance simulations fail on openstudio'
+    url: https://unmethours.com/question/142/radiance-simulations-fail-on-openstudio/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-146-what-is-the-difference-between-the-design-co
+    title: 'Unmet Hours Q146: what is the difference between the design coil load btuhr
+      and the nominal total capacity btuhr reported from energyplus'
+    url: https://unmethours.com/question/146/what-is-the-difference-between-the-design-coil-load-btuhr-and-the-nominal-total-capacity-btuhr-reported-from-energyplus/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-162-is-there-a-way-to-run-multiple-versions-of-o
+    title: 'Unmet Hours Q162: is there a way to run multiple versions of openstudio
+      without having to re scan for energyplus'
+    url: https://unmethours.com/question/162/is-there-a-way-to-run-multiple-versions-of-openstudio-without-having-to-re-scan-for-energyplus/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-174-has-anyone-created-a-docker-linux-container
+    title: 'Unmet Hours Q174: has anyone created a docker linux container for deployingrunning
+      energyplus'
+    url: https://unmethours.com/question/174/has-anyone-created-a-docker-linux-container-for-deployingrunning-energyplus/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-182-modeling-plenums-in-openstudio
+    title: 'Unmet Hours Q182: modeling plenums in openstudio'
+    url: https://unmethours.com/question/182/modeling-plenums-in-openstudio/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-191-modeling-indirect-evaporative-cooling-with-w
+    title: 'Unmet Hours Q191: modeling indirect evaporative cooling with winter heat
+      recovery'
+    url: https://unmethours.com/question/191/modeling-indirect-evaporative-cooling-with-winter-heat-recovery/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-218-how-do-you-model-in-equest-a-doas-that-suppl
+    title: 'Unmet Hours Q218: how do you model in equest a doas that supplies air to
+      registers corridors as well as other hvac systems'
+    url: https://unmethours.com/question/218/how-do-you-model-in-equest-a-doas-that-supplies-air-to-registers-corridors-as-well-as-other-hvac-systems/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-221-equest-doas-supply-temperature-as-function-o
+    title: 'Unmet Hours Q221: equest doas supply temperature as function of outside
+      air'
+    url: https://unmethours.com/question/221/equest-doas-supply-temperature-as-function-of-outside-air/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-236-what-are-the-best-tools-for-modeling-data-ce
+    title: 'Unmet Hours Q236: what are the best tools for modeling data center cooling'
+    url: https://unmethours.com/question/236/what-are-the-best-tools-for-modeling-data-center-cooling/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-242-ground-contact-slab-modeling
+    title: 'Unmet Hours Q242: ground contact slab modeling'
+    url: https://unmethours.com/question/242/ground-contact-slab-modeling/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-250-getting-infiltration-rates-right
+    title: 'Unmet Hours Q250: getting infiltration rates right'
+    url: https://unmethours.com/question/250/getting-infiltration-rates-right/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-282-glazing-switch-in-equest-based-on-hour-of-th
+    title: 'Unmet Hours Q282: glazing switch in equest based on hour of the year'
+    url: https://unmethours.com/question/282/glazing-switch-in-equest-based-on-hour-of-the-year/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-294-can-someone-explain-why-a-pvvt-is-usually-ch
+    title: 'Unmet Hours Q294: can someone explain why a pvvt is usually chosen to model
+      vrvvrf'
+    url: https://unmethours.com/question/294/can-someone-explain-why-a-pvvt-is-usually-chosen-to-model-vrvvrf/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-302-chiller-oversizing-problem-in-equest
+    title: 'Unmet Hours Q302: chiller oversizing problem in equest'
+    url: https://unmethours.com/question/302/chiller-oversizing-problem-in-equest/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-305-typical-envelope-constructions-and-thermal-p
+    title: 'Unmet Hours Q305: typical envelope constructions and thermal properties
+      in existing historic buildings'
+    url: https://unmethours.com/question/305/typical-envelope-constructions-and-thermal-properties-in-existing-historic-buildings/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-306-what-are-the-underlying-resources-for-simula
+    title: 'Unmet Hours Q306: what are the underlying resources for simulation using
+      sefairas new plug in to revit'
+    url: https://unmethours.com/question/306/what-are-the-underlying-resources-for-simulation-using-sefairas-new-plug-in-to-revit/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-309-how-do-i-model-natural-ventilation-for-leed
+    title: 'Unmet Hours Q309: how do i model natural ventilation for leed in energyplus'
+    url: https://unmethours.com/question/309/how-do-i-model-natural-ventilation-for-leed-in-energyplus/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-329-workaround-for-modeling-displacement-ventila
+    title: 'Unmet Hours Q329: workaround for modeling displacement ventilation in ee4'
+    url: https://unmethours.com/question/329/workaround-for-modeling-displacement-ventilation-in-ee4/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-342-what-assumptions-do-you-make-for-modeling-bl
+    title: 'Unmet Hours Q342: what assumptions do you make for modeling blinds'
+    url: https://unmethours.com/question/342/what-assumptions-do-you-make-for-modeling-blinds/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-351-what-are-available-tools-for-calibrating-ene
+    title: 'Unmet Hours Q351: what are available tools for calibrating energy model
+      inputs using measured data'
+    url: https://unmethours.com/question/351/what-are-available-tools-for-calibrating-energy-model-inputs-using-measured-data/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-359-what-are-your-techniques-for-reducing-unmet
+    title: 'Unmet Hours Q359: what are your techniques for reducing unmet hours'
+    url: https://unmethours.com/question/359/what-are-your-techniques-for-reducing-unmet-hours/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-373-how-to-model-doas-correctly-using-equest
+    title: 'Unmet Hours Q373: how to model doas correctly using equest'
+    url: https://unmethours.com/question/373/how-to-model-doas-correctly-using-equest/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-375-modeling-doas-in-energyplus-using-dual-duct
+    title: 'Unmet Hours Q375: modeling doas in energyplus using dual duct terminal'
+    url: https://unmethours.com/question/375/modeling-doas-in-energyplus-using-dual-duct-terminal/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-381-modeling-vs-money
+    title: 'Unmet Hours Q381: modeling vs money'
+    url: https://unmethours.com/question/381/modeling-vs-money/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-386-how-do-i-manipulate-wwr-in-equest-detailed-m
+    title: 'Unmet Hours Q386: how do i manipulate wwr in equest detailed mode'
+    url: https://unmethours.com/question/386/how-do-i-manipulate-wwr-in-equest-detailed-mode/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-399-need-plenum-space-type-when-running-wshp-wit
+    title: 'Unmet Hours Q399: need plenum space type when running wshp with doas measure
+      in os'
+    url: https://unmethours.com/question/399/need-plenum-space-type-when-running-wshp-with-doas-measure-in-os/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-407-are-there-any-documents-illustrating-the-hva
+    title: 'Unmet Hours Q407: are there any documents illustrating the hvac systems
+      in appendix g'
+    url: https://unmethours.com/question/407/are-there-any-documents-illustrating-the-hvac-systems-in-appendix-g/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-430-how-can-i-model-a-vfd-in-energyplus
+    title: 'Unmet Hours Q430: how can i model a vfd in energyplus'
+    url: https://unmethours.com/question/430/how-can-i-model-a-vfd-in-energyplus/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-433-how-can-i-model-swimming-pool-using-equest
+    title: 'Unmet Hours Q433: how can i model swimming pool using equest'
+    url: https://unmethours.com/question/433/how-can-i-model-swimming-pool-using-equest/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-447-how-to-integrate-energyplus-slab-pre-process
+    title: 'Unmet Hours Q447: how to integrate energyplus slab pre processor into openstudio'
+    url: https://unmethours.com/question/447/how-to-integrate-energyplus-slab-pre-processor-into-openstudio/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-449-how-to-trim-down-air-flow-at-night-for-a-mak
+    title: 'Unmet Hours Q449: how to trim down air flow at night for a make up air unit
+      in openstudio'
+    url: https://unmethours.com/question/449/how-to-trim-down-air-flow-at-night-for-a-make-up-air-unit-in-openstudio/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-460-what-tdb-means-in-this-performance-curve-for
+    title: 'Unmet Hours Q460: what tdb means in this performance curve for heat pumps'
+    url: https://unmethours.com/question/460/what-tdb-means-in-this-performance-curve-for-heat-pumps/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-470-how-to-model-indirect-water-heaters-in-opens
+    title: 'Unmet Hours Q470: how to model indirect water heaters in openstudio'
+    url: https://unmethours.com/question/470/how-to-model-indirect-water-heaters-in-openstudio/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-477-why-is-the-data-center-energy-so-high-in-doe
+    title: 'Unmet Hours Q477: why is the data center energy so high in doe energyplus
+      large office prototype models'
+    url: https://unmethours.com/question/477/why-is-the-data-center-energy-so-high-in-doe-energyplus-large-office-prototype-models/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-494-is-the-average-illuminance-provided-by-eques
+    title: 'Unmet Hours Q494: is the average illuminance provided by equest reliable'
+    url: https://unmethours.com/question/494/is-the-average-illuminance-provided-by-equest-reliable/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-497-how-to-model-makeup-air-unit-in-openstudio
+    title: 'Unmet Hours Q497: how to model makeup air unit in openstudio'
+    url: https://unmethours.com/question/497/how-to-model-makeup-air-unit-in-openstudio/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-518-has-anyone-had-any-trouble-running-the-energ
+    title: 'Unmet Hours Q518: has anyone had any trouble running the energyplus reference
+      building models provided on the doe website'
+    url: https://unmethours.com/question/518/has-anyone-had-any-trouble-running-the-energyplus-reference-building-models-provided-on-the-doe-website/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-525-tolerance-for-unmet-load-hours-for-leed
+    title: 'Unmet Hours Q525: tolerance for unmet load hours for leed'
+    url: https://unmethours.com/question/525/tolerance-for-unmet-load-hours-for-leed/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-540-splitting-existing-spaces
+    title: 'Unmet Hours Q540: splitting existing spaces'
+    url: https://unmethours.com/question/540/splitting-existing-spaces/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-546-how-to-model-natural-ventilation-with-openst
+    title: 'Unmet Hours Q546: how to model natural ventilation with openstudio'
+    url: https://unmethours.com/question/546/how-to-model-natural-ventilation-with-openstudio/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-550-export-gbxml-from-sketchup
+    title: 'Unmet Hours Q550: export gbxml from sketchup'
+    url: https://unmethours.com/question/550/export-gbxml-from-sketchup/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-565-french-renovated-buildings
+    title: 'Unmet Hours Q565: french renovated buildings'
+    url: https://unmethours.com/question/565/french-renovated-buildings/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-568-legacy-open-studio-1011414
+    title: 'Unmet Hours Q568: legacy open studio 1011414'
+    url: https://unmethours.com/question/568/legacy-open-studio-1011414/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-575-modeling-cooling-tower-without-chiller-in-ie
+    title: 'Unmet Hours Q575: modeling cooling tower without chiller in ies ve'
+    url: https://unmethours.com/question/575/modeling-cooling-tower-without-chiller-in-ies-ve/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-580-openstudio-wshp-condenser-loop-cooling-tower
+    title: 'Unmet Hours Q580: openstudio wshp condenser loop cooling tower issues'
+    url: https://unmethours.com/question/580/openstudio-wshp-condenser-loop-cooling-tower-issues/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-588-where-can-i-get-quality-weather-files-for-th
+    title: 'Unmet Hours Q588: where can i get quality weather files for the southern
+      hemisphere'
+    url: https://unmethours.com/question/588/where-can-i-get-quality-weather-files-for-the-southern-hemisphere/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-593-total-zone-energy-consumption-by-fuel-type-i
+    title: 'Unmet Hours Q593: total zone energy consumption by fuel type in energyplus'
+    url: https://unmethours.com/question/593/total-zone-energy-consumption-by-fuel-type-in-energyplus/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-611-how-to-model-underground-floors-in-openstudi
+    title: 'Unmet Hours Q611: how to model underground floors in openstudio'
+    url: https://unmethours.com/question/611/how-to-model-underground-floors-in-openstudio/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-626-extraneuous-piu-system-central-heat-coil-out
+    title: 'Unmet Hours Q626: extraneuous piu system central heat coil output'
+    url: https://unmethours.com/question/626/extraneuous-piu-system-central-heat-coil-output/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-627-daylight-simulation-for-leed-v40-ieqc7
+    title: 'Unmet Hours Q627: daylight simulation for leed v40 ieqc7'
+    url: https://unmethours.com/question/627/daylight-simulation-for-leed-v40-ieqc7/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-632-install-openstudio-sketchup-plugin-on-mac-os
+    title: 'Unmet Hours Q632: install openstudio sketchup plugin on mac osx'
+    url: https://unmethours.com/question/632/install-openstudio-sketchup-plugin-on-mac-osx/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-639-openstudio-submeter
+    title: 'Unmet Hours Q639: openstudio submeter'
+    url: https://unmethours.com/question/639/openstudio-submeter/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-657-why-does-sunspace-ventilation-cease-at-night
+    title: 'Unmet Hours Q657: why does sunspace ventilation cease at night eq 3 64'
+    url: https://unmethours.com/question/657/why-does-sunspace-ventilation-cease-at-night-eq-3-64/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-660-looking-for-surfaces-on-openstudio-inspector
+    title: 'Unmet Hours Q660: looking for surfaces on openstudio inspector tool'
+    url: https://unmethours.com/question/660/looking-for-surfaces-on-openstudio-inspector-tool/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-666-help-regarding-rendering-and-white-surfaces
+    title: 'Unmet Hours Q666: help regarding rendering and white surfaces'
+    url: https://unmethours.com/question/666/help-regarding-rendering-and-white-surfaces/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-680-importing-composite-wall-constrcution-files
+    title: 'Unmet Hours Q680: importing composite wall constrcution files'
+    url: https://unmethours.com/question/680/importing-composite-wall-constrcution-files/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-699-details-on-openstudio-aedg-k12-gshp-doas-mea
+    title: 'Unmet Hours Q699: details on openstudio aedg k12 gshp doas measure'
+    url: https://unmethours.com/question/699/details-on-openstudio-aedg-k12-gshp-doas-measure/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-702-importing-zone-loads
+    title: 'Unmet Hours Q702: importing zone loads'
+    url: https://unmethours.com/question/702/importing-zone-loads/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-714-can-energyplus-model-a-building-with-electri
+    title: 'Unmet Hours Q714: can energyplus model a building with electric baseboards'
+    url: https://unmethours.com/question/714/can-energyplus-model-a-building-with-electric-baseboards/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-718-which-simulator-is-the-best-in-the-describin
+    title: 'Unmet Hours Q718: which simulator is the best in the describing of the thermal
+      behavior of buildings trnsys or energyplus'
+    url: https://unmethours.com/question/718/which-simulator-is-the-best-in-the-describing-of-the-thermal-behavior-of-buildings-trnsys-or-energyplus/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
+  - id: umh-723-can-energyplus-or-trnsys-simulate-electric-o
+    title: 'Unmet Hours Q723: can energyplus or trnsys simulate electric ovens'
+    url: https://unmethours.com/question/723/can-energyplus-or-trnsys-simulate-electric-ovens/
+    source: unmethours
+    license: cc-by-sa
+    topic: simulation_modeling
+    format: html
+    language: en
+    document_type: forum-thread
+    license_url: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+    license_evidence: 'unmethours.com page footer: ''User contributions licensed under
+      the Creative Commons Attribution Share Alike 3.0 License'''
+    rights_verified_at: '2026-10-02'
