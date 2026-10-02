@@ -69,7 +69,9 @@ def build(root: Path) -> Path:
     for name in (*store.CONFIG_FILES, *CONTROL):
         src = REPO / "registry" / name
         if src.exists():
-            shutil.copy2(src, root / "registry" / name)
+            dst = root / "registry" / name
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, dst)
     shutil.copy2(REPO / ".gitignore", root / ".gitignore")   # payload dirs are git-ignored
     (root / "README.md").write_text("# CI fixture\n\n<!-- STATS:START -->\n<!-- STATS:END -->\n")
     saved = update_readme_stats.HERE, update_readme_stats.README
