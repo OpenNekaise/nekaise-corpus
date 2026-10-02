@@ -121543,3 +121543,21 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.3390/ma14040752 openalex:W3128908801
     resolution: 'legacy: openalex location'
+  - id: ope-fully-developed-compartment-fire-dynamics-in-l
+    title: Fully-developed compartment fire dynamics in large-scale mass timber compartments
+    url: https://discovery.ucl.ac.uk/id/eprint/10180012/7/Torero%20Cullen_Fully-developed%20compartment%20fire%20dynamics%20in%20large-scale%20mass%20timber%20compartments_VoR.pdf
+    source: openalex
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-10-06'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.firesaf.2023.104022
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/id/eprint/10180012/7/Torero%20Cullen_Fully-developed%20compartment%20fire%20dynamics%20in%20large-scale%20mass%20timber%20compartments_VoR.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-10-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.firesaf.2023.104022 openalex:W4387400556
+    resolution: 'legacy: openalex location'
