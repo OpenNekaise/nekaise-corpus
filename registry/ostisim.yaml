@@ -1551,21 +1551,6 @@ sources:
       Energy): free to read under the DOE Public Access Plan; publisher copyright, no
       reuse licence'
     rights_verified_at: '2026-10-02'
-  - id: osm-validation-and-verification-for-inl-modelica-based-t
-    title: Validation and Verification for INL Modelica-based TEDS models Via Experimental
-      Results
-    url: https://www.osti.gov/servlets/purl/1836100
-    source: osti_sim
-    license: unverified
-    topic: simulation_modeling
-    format: pdf
-    language: en
-    published_at: '2021-09-01'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1836100
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-02'
   - id: osm-field-testing-and-validation-of-a-low-cost-mpc-for-d
     title: Field testing and validation of a low-cost MPC for demand flexibility for
       grid-interactive K-12 schools
@@ -1732,21 +1717,6 @@ sources:
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-02'
-  - id: osm-status-on-the-component-models-developed-in-the-mode
-    title: 'Status on the Component Models Developed in the Modelica Framework: High-Temperature
-      Steam Electrolysis Plant & Gas Turbine Power Plant'
-    url: https://www.osti.gov/servlets/purl/1333156
-    source: osti_sim
-    license: unverified
-    topic: simulation_modeling
-    format: pdf
-    language: en
-    published_at: '2016-10-01'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1333156
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-02'
   - id: osm-a-control-oriented-dynamic-model-of-air-flow-in-a-si
     title: A control-oriented dynamic model of air flow in a single duct HVAC
     url: https://www.osti.gov/servlets/purl/1468185
@@ -1879,4 +1849,108 @@ sources:
     license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Thermal
       Science and Engineering Progress): free to read under the DOE Public Access Plan;
       publisher copyright, no reuse licence'
+    rights_verified_at: '2026-10-02'
+  - id: osm-us-department-of-energy-office-of-science-high-perfo
+    title: 'US Department of Energy, Office of Science, High-Performance Computing Facility:
+      2023 Operational Assessment Oak Ridge Leadership Computing Facility'
+    url: https://www.osti.gov/servlets/purl/2378093
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2024-04-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/2378093
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-development-and-validation-of-a-gas-fired-residentia
+    title: Development and Validation of a Gas-Fired Residential Heat Pump Water Heater
+      (Final Report)
+    url: https://www.osti.gov/servlets/purl/1060285
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2013-01-21'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1060285
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-a-review-of-control-methodologies-for-vapor-compress
+    title: A review of control methodologies for vapor compression and absorption heat
+      pumps; Examen des méthodes de régulation des pompes à chaleur à compressio
+    url: https://www.osti.gov/servlets/purl/1613581
+    source: osti_sim
+    license: publisher-oa
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2018-09-15'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.ijrefrig.2018.08.026
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (International
+      Journal of Refrigeration): free to read under the DOE Public Access Plan; publisher
+      copyright, no reuse licence'
+    rights_verified_at: '2026-10-02'
+  - id: osm-building-operation-model-morpheus-for-dallas-fort-wo
+    title: Building Operation Model (Morpheus) for Dallas Fort Worth Airport (CRADA
+      CRD-19-16301 Final Report)
+    url: https://www.osti.gov/servlets/purl/3409097
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2026-08-05'
+    document_type: technical-report
+    persistent_id: doi:10.66816/tp6809226
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-generalizable-web-user-interface-for-scalable-and-st
+    title: Generalizable Web User Interface for Scalable and Streamlined Deployment
+      of Building Energy Management Systems in Small and Medium-Sized Commercial Bu
+    url: https://www.osti.gov/servlets/purl/3740260
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2026-09-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/3740260
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-a-technical-framework-to-describe-occupant-behavior-
+    title: A technical framework to describe occupant behavior for building energy simulations
+    url: https://www.osti.gov/servlets/purl/1164208
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2013-12-20'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-stochastic-modeling-of-overtime-occupancy-and-its-ap
+    title: Stochastic Modeling of Overtime Occupancy and Its Application in Building
+      Energy Simulation and Calibration
+    url: https://www.osti.gov/servlets/purl/1164209
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2014-02-28'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.buildenv.2014.04.030
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-02'
