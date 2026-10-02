@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "id": "modelica",
+  "title": "Modelica and equation-based physical modeling",
+  "description": "Language, libraries, examples, media, controls, solvers and coupling for building and energy systems; includes the general Modelica foundations these use.",
+  "selector": {
+    "categories": ["modelica"],
+    "extensions": [".mo", ".mos"],
+    "source_pattern": "modelica|buildingsystems|buildsyspro|aixlib|besmod|thermopower|thermosyspro|thermofluid|modelicabook|open-ideas|externalmedia|transient|clara|disheat",
+    "title_pattern": "(?i)\\bmodelica\\b|\\bopenmodelica\\b|\\bdymola\\b"
+  },
+  "roles": ["core", "research_candidates", "patent_supplement", "reference_assets", "reference_history", "reference_pdf"],
+  "publication": "Immutable local domain dataset; independent of the default corpus view and training execution.",
+  "text_policy": "Preserve verified prepared bytes and complete source code; no implicit global cleaner.",
+  "exclusions": "Private evaluation banks and the operator-excluded general datasets; no authentication/access bypass. Source license declarations remain provenance, not a domain acquisition gate."
+}

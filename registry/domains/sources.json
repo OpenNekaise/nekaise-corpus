@@ -1,0 +1,2203 @@
+{
+  "schema": 1,
+  "as_of": "2026-10-02",
+  "purpose": "Reproducible bounded source recipe for corpus-owned domain collections; no training activation",
+  "catalogs": [
+    "https://modelica.org/libraries/",
+    "https://github.com/OpenModelica/OMPackageManager",
+    "https://mbe.modelica.university/"
+  ],
+  "repositories": [
+    {
+      "repo": "modelica/ModelicaStandardLibrary",
+      "ref": "refs/tags/v4.1.0",
+      "categories": [
+        "modelica",
+        "thermal_fluid",
+        "numerics_coupling"
+      ],
+      "commit": "8ae3d35c24e519cb2996cab20f3b13daf2b0c50a",
+      "archive_sha256": "b402903aefd4f1397364e3ae1992bb99080ce935ab9a426d3bcdb47e4da8eeb6",
+      "requested_ref": "refs/tags/v4.1.0"
+    },
+    {
+      "repo": "modelica/ModelicaSpecification",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "commit": "0ba1aea3f88e370e9d3c7e9a8fe435afdf3b30f9",
+      "archive_sha256": "e76786171ec349bb6c47c3de7c7c75fa5b2cba650681c1966f551dcdd7da85c0",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "lbl-srg/modelica-buildings",
+      "ref": "refs/tags/v13.0.0",
+      "categories": [
+        "modelica",
+        "energyplus_bes",
+        "thermal_fluid",
+        "controls_calibration"
+      ],
+      "commit": "55abf579598ca81cae0a82f337350375958e6722",
+      "archive_sha256": "def06dd8c9e890e04f32ef593a978a5205d975c477b65d7583e3e9640b2e9217",
+      "requested_ref": "refs/tags/v13.0.0"
+    },
+    {
+      "repo": "ibpsa/modelica-ibpsa",
+      "categories": [
+        "modelica",
+        "thermal_fluid",
+        "controls_calibration"
+      ],
+      "commit": "5b19c7eb8b86bb4a9963b21fe3deb407c762ba1c",
+      "archive_sha256": "bdfe20afa85da725a403cb1039dab3862d9560984d6353ce634d0cede64f01ca",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "RWTH-EBC/AixLib",
+      "categories": [
+        "modelica",
+        "thermal_fluid",
+        "energyplus_bes"
+      ],
+      "commit": "e5df9a8da27833ee391c2f7a0adbcd80278f47d2",
+      "archive_sha256": "4d27bcd40769ef1a3cf07602d56bc885984c833fe13b0e66102e67e26b240a8e",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "open-ideas/IDEAS",
+      "categories": [
+        "modelica",
+        "thermal_fluid",
+        "controls_calibration"
+      ],
+      "commit": "3c12883555885bcd5f17979d9028eadf94b21d92",
+      "archive_sha256": "ff976728d0536754e5e3f9e70abc10834d575d9faca9ad140617230b4f8fedd3",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "UdK-VPT/BuildingSystems",
+      "categories": [
+        "modelica",
+        "thermal_fluid",
+        "solar_daylight"
+      ],
+      "commit": "2dfbe6cbb9314bbbd02dc1fec633a4b4ebfb9a7a",
+      "archive_sha256": "c13a6520ac87a5c6a29f3041784b379c18e975fe45bd0b9565a3d3cb6154ffce",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "RWTH-EBC/BESMod",
+      "categories": [
+        "modelica",
+        "energyplus_bes",
+        "controls_calibration"
+      ],
+      "commit": "0332467d5f3ad2354a6ff36e4202ad485666d482",
+      "archive_sha256": "73495a64b8a23c68d8e9c3565249ec04fb65c4566dcc050ab113e494b5333da1",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "EDF-TREE/BuildSysPro",
+      "categories": [
+        "modelica",
+        "thermal_fluid",
+        "energyplus_bes"
+      ],
+      "commit": "7d30fb7b35c996f1946023dfc303601542102978",
+      "archive_sha256": "9686b664db27bd3868e9ef58a41a5895459793e3de6f088a548c2b498dffde0f",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "casella/ThermoPower",
+      "categories": [
+        "modelica",
+        "thermal_fluid"
+      ],
+      "commit": "e2b011ac7fd90f9cf5771f29f1aefa160550b6ee",
+      "archive_sha256": "1f6bd174a131b2336ca2ae9ef9f5f6cf2d3584da673d0297830b8925405f5c2c",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "DLR-SR/ThermofluidStream",
+      "categories": [
+        "modelica",
+        "thermal_fluid"
+      ],
+      "commit": "50a7ce5919ce360d8054773899683d1c2c27a8db",
+      "archive_sha256": "e376b8b8788c8fb9273a93a68d57ab7ecc13148fc906abff74ffe980e4ea114a",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "xogeny/ModelicaBook",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "commit": "e9f0bc71f0c3f01be512dbeacd162f1b0749c030",
+      "archive_sha256": "272d71a12fc5b38b964f6d83c3333a1793ed84519c776c8265578f7c181a5407",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "OpenModelica/OpenModelica-doc",
+      "prefixes": [
+        "UsersGuide/",
+        "README"
+      ],
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "commit": "f863b8c3d86223259fa53f7bf5acdbef04727792",
+      "archive_sha256": "c269cc73fc623cfad9f4d97a20adc9e6ead13fb6f5ea87063ee0b7ef9618353c",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "NREL/EnergyPlus",
+      "prefixes": [
+        "doc/",
+        "src/EnergyPlus/",
+        "testfiles/",
+        "datasets/",
+        "idd/",
+        "README"
+      ],
+      "categories": [
+        "energyplus_bes",
+        "thermal_fluid",
+        "controls_calibration"
+      ],
+      "commit": "c5b94f59806c8ac4c76dfd846956950598f26483",
+      "archive_sha256": "e4c32016fcd585ac429968f72dbda027af72975724e3bbaccb5eb90fcc36bb63",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "NREL/OpenStudio",
+      "prefixes": [
+        "src/",
+        "doc/",
+        "resources/model/",
+        "README"
+      ],
+      "categories": [
+        "energyplus_bes"
+      ],
+      "commit": "4fdcc24de453b1ff859cb46654f304b024b85079",
+      "archive_sha256": "696e7664ec57b252ef2bdcaab33872fc70cb34bc0e0ef101b604ea3e1c1c2207",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "modelica/fmi-standard",
+      "categories": [
+        "numerics_coupling"
+      ],
+      "commit": "5365a49654d2f6e5b0bc7c75b5176b495dd72ac5",
+      "archive_sha256": "de94e769b75d85aed45243ac8b9dc34d46f415b48497189c2532df223dd01d34",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "lbl-srg/BuildingsPy",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "commit": "81743d04a5667c5b61ed95543d7edcba5919c229",
+      "archive_sha256": "6039568f9c98aa55258af507cfbbaeb036d68bc5058b860e237a0f33d12dc5cb",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "RWTH-EBC/TEASER",
+      "categories": [
+        "modelica",
+        "energyplus_bes"
+      ],
+      "commit": "92ec587c7cb25837879db52e2cd0cd46763ceaf4",
+      "archive_sha256": "9242392f7eef343d313b8c134b9d3c551f97ed740c07bdbe243f3606b83a22df",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "RWTH-EBC/ebcpy",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "commit": "e4679fdc333e826ddacf48963afebdfdf93bee0e",
+      "archive_sha256": "6dbb723f32d99e188cfce990b3bef2758ed8b84db712f40f2dbf016ea1bf4fa7",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "RWTH-EBC/AixCaliBuHA",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "commit": "3f948ef1d972f7bc67d86a703b3541c3bedcc129",
+      "archive_sha256": "f6c4750a7dce0be8f5e6d79b795a558e1c47b20dbdb1378659ef0fc73b776a34",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "ibpsa/project1-boptest",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "commit": "0f8a467cb1823f005b6512937e9333c65e1e483e",
+      "archive_sha256": "3b6d451f16ca6e116af0dbc4bca71b8ed01e32c072e8d745311901b8dd133ac7",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "oemof/tespy",
+      "categories": [
+        "thermal_fluid"
+      ],
+      "commit": "19425523ff7ecd67b36e7b90efe04a9480a9ebe3",
+      "archive_sha256": "e783a0c674eca2ab9723ccaddf81446d0bcb7fccd5e69075b009ace0d2055af9",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "CoolProp/CoolProp",
+      "prefixes": [
+        "Web/",
+        "doc/",
+        "src/",
+        "include/",
+        "examples/",
+        "README"
+      ],
+      "categories": [
+        "thermal_fluid"
+      ],
+      "commit": "6c8b5756c54f965fdc15bc7886715404e4301fda",
+      "archive_sha256": "052c4c3d5de1de71f3fcc1e6bb9b3169a004544581e5a0fedaba1459d9a78587",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "ladybug-tools/honeybee-energy",
+      "categories": [
+        "energyplus_bes",
+        "solar_daylight"
+      ],
+      "commit": "8e5102f58ba2476cc6f38ed6050eaedea84e6f8d",
+      "archive_sha256": "ce6c848eae59b8eaf1e837cadfbeca97116baacb87469f7e3be30d80785bde2d",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "santoshphilip/eppy",
+      "categories": [
+        "energyplus_bes"
+      ],
+      "commit": "3323849be84bf48c1b7c99c760f93bed80564ca5",
+      "archive_sha256": "99fb8dacac5854431aaa6ad1d1ed949b717de0000250113375e607634acbf225",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "pvlib/pvlib-python",
+      "categories": [
+        "solar_daylight",
+        "thermal_fluid"
+      ],
+      "commit": "ddcc776134f56067e185302c54b15dfc5d01621e",
+      "archive_sha256": "5c4c9dfb8346fea72d06c58516fe7d1bf54fe0ebd79efdd858041c5b63318355",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "NatLabRockies/Spawn",
+      "categories": [
+        "modelica",
+        "energyplus_bes",
+        "numerics_coupling"
+      ],
+      "commit": "638b8408fdaad3dcb53ad5c8d1789f0c8430a1f5",
+      "archive_sha256": "3c0b0d2be95ca623bed46bb57a8bc9f76abb1555e6994b49a901d49c8bf4f086",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "LLNL/sundials",
+      "prefixes": [
+        "doc/",
+        "examples/",
+        "README"
+      ],
+      "categories": [
+        "numerics_coupling"
+      ],
+      "commit": "312fc0f3684f27209ca9dc9249d194436eb41a7a",
+      "archive_sha256": "5da5d3576e8d4962472a59029e0a1ebd4bb7c0490a2353a7108f82b55df39f38",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "LBNL-ETA/Radiance",
+      "ref": "refs/heads/master",
+      "categories": [
+        "solar_daylight"
+      ],
+      "commit": "bcffc2b52d99b908adfdc2543e4cddf83268a125",
+      "archive_sha256": "d944392af3fe59055052f3fa6dbb1de684d855a85e43bda38d3d98915fd3acea",
+      "requested_ref": "refs/heads/master"
+    },
+    {
+      "repo": "usnistgov/fipy",
+      "prefixes": [
+        "documentation/",
+        "examples/",
+        "fipy/",
+        "README"
+      ],
+      "categories": [
+        "numerics_coupling",
+        "thermal_fluid"
+      ],
+      "commit": "200ee6020ff0d912ce71d787a14848813d217c99",
+      "archive_sha256": "c66c8959d573049835df848130dc394e62213a404ef1c982c6341f7d84571e8d",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "looms-polimi/Automation_of_Energy_Systems",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "AES",
+      "commit": "a9ed19c0e27bb9214261b23327830e4f9e219dd7",
+      "archive_sha256": "5187ae59b7f61d6d13b23fa757610551afd09d585d423c51d129c4649be282f6",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "looms-polimi/BoundaryInitBlocks",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "BoundaryInitBlocks",
+      "commit": "54a78a7fb979e3f655d31feecd774ccbbc72cfbb",
+      "archive_sha256": "fde3e465bc089ef3e23ebff56027f8e80d0fac299947150fc34059e5f96f1c27",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "TechnicalBuildingSystems/BuildingControlLib",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "BuildingControlLib",
+      "commit": "fffe3d891d2785fa676b94324d3f939c833fae5e",
+      "archive_sha256": "3c94439d021ac2e5af1a8b025ca99d4fea1831a5698aa01717654caafeac49ea",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "xrg-simulation/ClaRa-official",
+      "categories": [
+        "modelica",
+        "thermal_fluid"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "ClaRa",
+      "commit": "042f1e54880a60ba8f1c7ec3eed1140d850e4a60",
+      "archive_sha256": "c3285c35f80c964cf882e9bd7f60d282429c19e1220195539b0662586b7c78b8",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "mabachmann/dhcSim",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "dhcSim",
+      "commit": "2858c98d0a784930a461677e826335a5de7cbb38",
+      "archive_sha256": "72dbed690d8ff6e3d84ad9714019c98734b48a7a98106016e50bcb27ccda1e9e",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "AIT-IES/DisHeatLib",
+      "categories": [
+        "modelica",
+        "thermal_fluid"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "DisHeatLib",
+      "commit": "217f4016b06f317f82c3955bd4853f3ece36f5e7",
+      "archive_sha256": "6157c6af3264611a47e951246b9e04e9293bf2bc8e57f28a0562a3a0d0eb309f",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "modelica-3rdparty/ElectricalEnergyStorage",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "ElectricalEnergyStorage",
+      "commit": "72ba3d49aae809280208a991c88134541b8c14f9",
+      "archive_sha256": "bed2eb3e64deb630f84d32cef4a3c6a2db5efad1c47149e8310e18870bea328d",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "modelica-3rdparty/ExternData",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "ExternData",
+      "commit": "0c2533d86b5cace345ff9e7c48e449366060b13a",
+      "archive_sha256": "9b8ce8d37ff8706525fe01891d80199df30a1f6be8e861ac2194f42c7bcdf583",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "open-ideas/FastBuildings",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "FastBuildings",
+      "commit": "34e7296a025e789fa12b6d39699d9c287b60e008",
+      "archive_sha256": "35ee0fa917951a117437ddb0bf77dd0172d82f9d670e71b8080fe503b496fc4b",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "kdavies4/FCSys",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "FCSys",
+      "commit": "cb4b17f34313b9d8f2d4223d5365684b4dc1ab65",
+      "archive_sha256": "7fc7199a36967e741b3afa153efc95848a27d47a5193aac627db96c53ad89a62",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "CarlosTrujilloGonzalez/FreeFluidsModelica",
+      "categories": [
+        "modelica",
+        "thermal_fluid"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "FreeFluidsModelica",
+      "commit": "bf82ebbee90b05fbd58b0a59c011890f9cb7e4e5",
+      "archive_sha256": "9b212c91f7f16f923140d69a6b61ca0d3f8f28585867f2c3297c62854a571751",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "modelica-3rdparty/FuelCellLib",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "FuelCellLib",
+      "commit": "a6acb23f66ac30cd9dc40c071efe0e6707e826ac",
+      "archive_sha256": "1b8d396c08ec05375b96e18751cf4ba475079a08e1faec3fb4f2792d46265d46",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "adrpo/Greenhouses-Library",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "Greenhouses",
+      "commit": "845525ed51e3048447839e8896e25f3690c02eb9",
+      "archive_sha256": "779a6fd9fb057aa90aea4332090a54ac6ef4ea4df4ac0198c9aebfc5f991e26e",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "thorade/HelmholtzMedia",
+      "categories": [
+        "modelica",
+        "thermal_fluid"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "HelmholtzMedia",
+      "commit": "2045ee572a098a340f377b0902a2206ba2444680",
+      "archive_sha256": "8fe45654082ccf024c3feda7ba8406e431aa7fa530bc05982d2d2efc083072b4",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "looms-polimi/IndustrialControlSystems",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "IndustrialControlSystems",
+      "commit": "148672debbeffe842dc7be441cc4b896ea677284",
+      "archive_sha256": "a6164142a0e22358deadda517ab8c46e4cd36ace83a226cd61bb423a0d7fd448",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "modelica-3rdparty/LinearMPC",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "LinearMPC",
+      "commit": "c16ad1c1970ea581c51158cca0647e165dc4c3b9",
+      "archive_sha256": "c85022dae3b3ae8992a01cbb3cad4c2b70adef794c2fbb39fb1381a053a6183c",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "modelica-3rdparty/Modelica_DeviceDrivers",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "Modelica_DeviceDrivers",
+      "commit": "f0ea4af79f50c7bd1e9560c88b3fb4d82f0f8e98",
+      "archive_sha256": "a10c35f0c01f27cbcac93e0da9898d5a64284ecc6df5739c117ca79dcfbb8a1e",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "modelica/Modelica_LinearSystems2",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "Modelica_LinearSystems2",
+      "commit": "9d6112cc11bc483708ea4ee65f7e7e6b952a7640",
+      "archive_sha256": "822853279fb34eb0bfe31c8010f2babdfa42375bce5e1ff7297714f76b1895eb",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "HansOlsson/Modelica_StateGraph2",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "Modelica_StateGraph2",
+      "commit": "a6c9dff61581760d05829e14ab35451af8e0b29c",
+      "archive_sha256": "21c7f310a624c7371adea16afa63e3d8d1532ef4f158cd08bc242de92fc40fce",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "modelica/Modelica_Synchronous",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "Modelica_Synchronous",
+      "commit": "c8350276bfd945086962cf4150ba941b9c57ed13",
+      "archive_sha256": "2777ea6a9e3b7357eabf7d9dbf6c7e81626a1e64150d7234d73c404f3dfa9227",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "tbeu/ModelicaTableAdditions",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "ModelicaTableAdditions",
+      "commit": "3f18e1a2d3682e8e12a520c7e0def8c4b83ab56a",
+      "archive_sha256": "bb0e344be8136c876b2eceb9bb01b47091357737ba6b9dace72a827206df145d",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "jwindahlModelon/MultiPhaseMixtureMedia",
+      "categories": [
+        "modelica",
+        "thermal_fluid"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "MultiPhaseMixtureMedia",
+      "commit": "0bda0c58af6384f8e0edf7aa7520afb369af3e38",
+      "archive_sha256": "a21b7fab785b54218a461cd6c848d628f8c8c97507bced1e920bcbd0309cd844",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "OpenSimHub/OpenHPL",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "OpenHPL",
+      "commit": "801b12965fa801b681669e68decb94cb70ed49a4",
+      "archive_sha256": "5b7fb3302fc8b474183a5ae1f63cab0689dcc36d2a42fd850a83b968aed316c2",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "cparedis/OpenHydraulics",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "OpenHydraulics",
+      "commit": "d7832e6af944702db67c4a23bbbb3b429c272dde",
+      "archive_sha256": "f82adb712dacfb2db1a58a5911e6bb24333c258beb9451171a3fec2d7f99456b",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "OpenIPSL/OpenIPSL",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "OpenIPSL",
+      "commit": "4a653ce7c41f6466fe0d11a5002a3d2d08e13419",
+      "archive_sha256": "2e07a572f74a566fb0077523c70292ea1693460e8b7d99b629d7b728c518ea55",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "christiankral/PhotoVoltaics",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "PhotoVoltaics",
+      "commit": "097631258eb78dd799e50b0ae750805b904b0306",
+      "archive_sha256": "3e3a9f82b370266c8157c23374cf5982425b11e1d43eeaa93d2d018ccbeedcc0",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "PowerGrids/PowerGrids",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "PowerGrids",
+      "commit": "1858e8b1d5234a3d9506e89da89c3c1df793b866",
+      "archive_sha256": "a4a8895e53e2a25053eac5e8860cc548013807856d9f2fc671ec27f464006a43",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "modelica-3rdparty/PowerSystems",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "PowerSystems",
+      "commit": "80343c524bb96a983374277732b84a19cf055052",
+      "archive_sha256": "2d7399d36eb07d4acb25c603839aa006cbe68b4835954f35d795f366a78de49b",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "adrpo/powersyspro",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "PowerSysPro",
+      "commit": "3c3de185302ff016146743369ba3d7afd88e7eea",
+      "archive_sha256": "dc112798785edeed4f683190d84e9efd648eb5f2b0941d2e10a679e28d313a33",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "SolarTherm/SolarTherm",
+      "categories": [
+        "modelica",
+        "thermal_fluid"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "SolarTherm",
+      "commit": "b5614b12ed96b3bb47b3f5d28c1b194110ed93de",
+      "archive_sha256": "1b76799af867e7073eb20683aa22392468c154588fd39ca26ded3ff6434029d7",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "gheralb/Soltermica",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "Soltermica",
+      "commit": "12e1f5aa17be29ec5c6848aa76b8e1b34724b4f1",
+      "archive_sha256": "1f11e876bb27d5d8f6982079968fe9edb372e0b6ed49b31b6aa581d1876d92e6",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "looms-polimi/SOFCPoliMi",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "SOFCPoliMi",
+      "commit": "e059ad070d30e9d175fd853aedd372ba9b5efba1",
+      "archive_sha256": "2bbddafecab99f5c9d0244b137cd9d7c6af1694301157e4d2ef5325c3092dd65",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "modelica-3rdparty/ThermalSeparation",
+      "categories": [
+        "modelica",
+        "thermal_fluid"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "ThermalSeparation",
+      "commit": "fd1928130a9a46effefb5f6a117d2e2c7c7637cf",
+      "archive_sha256": "108e3b799f92c456e3fbabbccfe60226c618febc3bd0f724e4df77cd0e43d4d4",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "thermocycle/Thermocycle-library",
+      "categories": [
+        "modelica",
+        "thermal_fluid"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "Thermocycle",
+      "commit": "b4f16c0b9dc16ffd05d24b2980ff15533aa36cc9",
+      "archive_sha256": "1bdac2df3b543dd72d8b4a146198f8ee69cd4d819fabc82697994aa5b89daaa6",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "ORNL-Modelica/TRANSFORM-Library",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "TRANSFORM",
+      "commit": "0f097b4a170e20fe6e9c5e747189ff301c8df334",
+      "archive_sha256": "a1e5c11f330b7e989b05b13a8cc1f180c628da9477f7bc1db72d2bcae557ad74",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "TransiEnt-official/transient-lib",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "TransiEnt",
+      "commit": "e9f3c76af7e011da1caa086f4dd504f03f50069d",
+      "archive_sha256": "22700d7d20731622a53d466d989fdca3072e14219331bba4bc4b21324221208c",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "christiankral/WindPowerPlants",
+      "categories": [
+        "modelica",
+        "controls_calibration"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "WindPowerPlants",
+      "commit": "a4f6df4c8ac04ccd5ef2a6b9276f5ca328d62e04",
+      "archive_sha256": "7019643c5305dbd4a8ce45a965e0195b5b4c529efe05ce5afa0a9acf37c48077",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "TLK-Thermo/TILMediaClaRa",
+      "categories": [
+        "modelica",
+        "thermal_fluid"
+      ],
+      "discovered_from": "OpenModelica package registry; TransiEnt resolved to official upstream",
+      "library_name": "TILMedia",
+      "commit": "e7aa67b78ec5ea3ec229dcb2d064b10db17d96cd",
+      "archive_sha256": "72c2258a941a3c2bcf411485d17a2ee847ff6802c777698d89bab89bbf4d9959",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "modelica-3rdparty/ExternalMedia",
+      "categories": [
+        "modelica",
+        "thermal_fluid"
+      ],
+      "discovered_from": "Official standard/tool repository",
+      "commit": "e529e89a9096ababe60cdc0a2e5d6144af5b2104",
+      "archive_sha256": "fc445c5b25852793f9536d04175c0da250ece0283136ab858f5cb73b755f48d7",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "modelica/ssp-standard",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "discovered_from": "Official standard/tool repository",
+      "commit": "800e899004fa15deab2f1e9f42645faac5386d8f",
+      "archive_sha256": "bfe076ebf400e402d04d144c1e06107125a6bc313cce99737d2d4093fa99cbff",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "modelica/dcp-standard",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "discovered_from": "Official standard/tool repository",
+      "commit": "b4a642bb7e988eab1aedace148f3799418e11d46",
+      "archive_sha256": "79f0b162ecda3f11b4085745e47f8cecc681a1f6099b5a9f01bbec37694106fe",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "OpenModelica/OMPython",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "discovered_from": "Official standard/tool repository",
+      "commit": "6a474910cac0b084ac07a8bcffb3315802ab2a0d",
+      "archive_sha256": "6799e6a97910a895c89a35f10b1da7b9eef6793bf2079a0f706a026387604472",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "OpenModelica/OMSimulator",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "discovered_from": "Official standard/tool repository",
+      "commit": "f0fc88fe3a76d1ba2978499d44e4b8c667841daa",
+      "archive_sha256": "aa51c68159c0a906f9f84bad7388ce1e5a9d49c82132d15162be706ebe13372a",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "CATIA-Systems/FMPy",
+      "categories": [
+        "numerics_coupling"
+      ],
+      "discovered_from": "Official standard/tool repository",
+      "commit": "e42e288f448830c5f146ae334b38e91d17ff19fa",
+      "archive_sha256": "8563e714cbd0207f77b2b2c7f6ad7b9a131bd0406e4bf783d213bae21755ba1a",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "modelon-community/PyFMI",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "discovered_from": "Official standard/tool repository",
+      "commit": "52c136812f8c0a4b9ffc925150469be0831a070d",
+      "archive_sha256": "84a609dc496d24aa5200e2817fb3ac41a179339f30dca554c4003af2def7ba54",
+      "requested_ref": "HEAD"
+    },
+    {
+      "repo": "Modelica-OpenVendorSpecificLibraries/DymolaCommands",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "DymolaCommands",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "706b43d3a7eeda59ba70f7df7cf9bf30d06ddac0",
+      "archive_sha256": "8bd6f195a0c476eb3365186976fcae76b40b918109bada22b8ca7295c711db78"
+    },
+    {
+      "repo": "modelica-3rdparty/netCDF-DataReader",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "NcDataReader2",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "1cf93e5b70cc591a36706d2114e0835c8e43dc7a",
+      "archive_sha256": "201ac57e9ac31ba4b34f54d7362837433aeaebbdd6a7949709e8dc0ec3ec14f7"
+    },
+    {
+      "repo": "ScientificDataFormat/SDF-Modelica",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "SDF",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "e333f8e2ecf124ca7bcfcaef7841570f03bf9376",
+      "archive_sha256": "dbacfb9be65283e0c8f7c83ba5aaa0aef7e1efcb7f65f77bd8674e3f751de37a"
+    },
+    {
+      "repo": "xrg-simulation/SMArtInt",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "SMArtInt",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "ec912f5f857bb7855e07a4273c10097cfb650189",
+      "archive_sha256": "7b894b10331a7eeaf3b45ece44d021f47d19f7f4ff7115b25f8a450309178e8f"
+    },
+    {
+      "repo": "modelica-3rdparty/PDELib",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "PDELib",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "d0e2b0c70659dd3f3827073963541a56fc26215b",
+      "archive_sha256": "82ca3e5deae245e48686f3fe296cae0ce459fb6e152bbb63db3500a0f2bf5579"
+    },
+    {
+      "repo": "modelica-3rdparty/Modelica_Requirements",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "Modelica_Requirements",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "90397485985a57aa9bdca009dfe3c9f5bc25e809",
+      "archive_sha256": "f89c5a7ff706daa6d5100decf88f2d6394dab57d29708087c528d005d140bc6e"
+    },
+    {
+      "repo": "DLR-SR/Noise",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "Modelica_Noise",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "5fbae4513fa03d8937c27d4047670a146041c2d6",
+      "archive_sha256": "c9e81f8aa68e7dc4fb0ff60d0d8ad1b6aec59fa6517ec96da65e2e12812b2eda"
+    },
+    {
+      "repo": "DLR-SR/AdvancedNoise",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "AdvancedNoise",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "7fd853cf68c4f5f5b103a79491718685db91eac4",
+      "archive_sha256": "e2e7996b9d09f7d6ad38827c2a6ccd696573483b73eddf8944281724564fb5ba"
+    },
+    {
+      "repo": "DLR-SR/FractionalOrder",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "FractionalOrder",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "99918820e346c362c3ad52d782c8215e5deeac4c",
+      "archive_sha256": "f77050389380f5b6db58a979575436084bd450e6fb8dae5a6346df6cf60829a4"
+    },
+    {
+      "repo": "modelica-3rdparty/BondGraph",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "BondGraph",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "20c23e60d12989bd4668ccac47659d82d39d29cc",
+      "archive_sha256": "eeb17af65d02e4ffc8ab0055e8e137b8f2174c1ed4c1a72326e15c553550c92c"
+    },
+    {
+      "repo": "modelica-3rdparty/BondLib",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "BondLib",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "df7a40fe612617da22e27d39edfa4b27d65f23d0",
+      "archive_sha256": "53594c6a5c2b6697fb77ab6bb6b28b3c5c25b4e6e27dd21b07d1a5657cd73e2c"
+    },
+    {
+      "repo": "kdavies4/QCalc",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "QCalc",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "c5fce77b41dd86c04f3cdfe7d75fb7a425938563",
+      "archive_sha256": "c8979b2b23af30d582709e1fdd7ddaa45b75bcff74c8332bc6dae2aa47736431"
+    },
+    {
+      "repo": "upb-lea/OpenModelica_Microgrids",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "OpenModelica_Microgrids",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "23067b08010c1e60e8fcd95acbb3f6cf685c41e1",
+      "archive_sha256": "7ad071799fa855a88edba6038c3e44e245a0d5c8fce870d89b6a8a92e2fd1519"
+    },
+    {
+      "repo": "dzimmer/PlanarMechanics",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "PlanarMechanics",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "4a15ecee1129d67cfa1d1f224d283aa357c31a61",
+      "archive_sha256": "6df89e4bc031859dd79675d218b5f5efbfd1c3aca4b94993ad689251f39f0446"
+    },
+    {
+      "repo": "modelica-3rdparty/QSSFluidFlow",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "QSSFluidFlow",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "d84a2c107132f2cd47ea3c3751238d69e4b1f64b",
+      "archive_sha256": "25743f332af133294a3ce6c4cb6f3a137f112f758cf447314b0561e113b88e8f"
+    },
+    {
+      "repo": "harmanpa/Optimisers",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "Optimisers",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "e33c69edaad6dad8029167b0ca00533964a6fe37",
+      "archive_sha256": "2e3de1f0ffca050a148aa243e983631ea01c8bf637dcb6ec42a14c827ff68058"
+    },
+    {
+      "repo": "LBNL-ETA/ESL",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "ESL",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "5584ea5481c53120697d469b7e4062732228cf9b",
+      "archive_sha256": "e7d506d177cb8344a7e94c42387a3d10ad884a58246145a14214f12110d86193"
+    },
+    {
+      "repo": "DLR-SR/Credibility",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "Credibility",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "2e68adf4f79c11f4e93f956caf43e9bffc25cc85",
+      "archive_sha256": "0e08a75fffc2195e3bc70e15c1dc118e053ce54fa0b7102dcff698258787ced8"
+    },
+    {
+      "repo": "casella/FailureModes",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "FailureModes",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "894be5ce74947120e95595a574a5d04f04766f03",
+      "archive_sha256": "2e49ca4daf96ded2f871fc00c05ac662c0f0450497bbc3cfd6c064117bc9e7da"
+    },
+    {
+      "repo": "DLR-SR/FaultTriggering",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "FaultTriggering",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "928c66efe608b34515147edffcc6ffb464874c8c",
+      "archive_sha256": "11b4787ba61aea15866e81ba8287aa28a6758caec44516e41cd62b24f6542e09"
+    },
+    {
+      "repo": "TechnicalBuildingSystems/ModelicaADS",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "ModelicaADS",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "56eb724769bf9296c89fc91ea9274c6b477d76fa",
+      "archive_sha256": "95bdea3d8d2f91f8f472e0ed067e4545766f5d1563634bcf058dc0472c6f5d3e"
+    },
+    {
+      "repo": "CATIA-Systems/Modelica-ExternalLibrary",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "ExternalLibrary",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "b5a194eca6969d8c141bbb3e16dd7f1ed502f3a0",
+      "archive_sha256": "57413beedc18e9b796402bcca198d18de5864028bb11cdefebabedc9ff20e1f2"
+    },
+    {
+      "repo": "vwaurich/ExternalMemoryLib",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ],
+      "library_name": "ExternalMemoryLib",
+      "discovered_from": "Dependency closure or supporting physical modeling/controls family from official registry",
+      "commit": "146a17aff81a60bb6753b91000152b0d6fe0690b",
+      "archive_sha256": "ae761ecf7d116ebc220de774b58f1ee29c43bad24e096a9eb54511c35382e99b"
+    },
+    {
+      "repo": "EDF-ThermoSysPro/ThermoSysPro",
+      "canonical_git_url": "https://gitlab.pam-retd.fr/thermosysproandco/ThermoSysPro",
+      "commit": "a896ab75ce22162369e7fa4ce79927eeca44ad4a",
+      "archive_sha256": "326bf344406ee61e728acfb1d6255c511fed3440c5d082fd47d1babead47e2e8",
+      "categories": [
+        "modelica",
+        "thermal_fluid"
+      ],
+      "library_name": "ThermoSysPro"
+    }
+  ],
+  "web_and_pdf_sources": [
+    {
+      "id": "equa-ida-wiki",
+      "url": "https://equa.cloud.xwiki.com/xwiki/bin/view/IDA_ICE/",
+      "prefix": "https://equa.cloud.xwiki.com/xwiki/bin/view/IDA_ICE/",
+      "max_pages": 256,
+      "language_hint": "en",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid",
+        "controls_calibration"
+      ],
+      "jurisdiction": "international",
+      "version_note": "Dated public source snapshot; software editions/effective dates remain page-specific.",
+      "document_role": "technical_documentation"
+    },
+    {
+      "id": "equa-ida-en",
+      "url": "https://www.equa.se/en/ida-ice",
+      "prefix": "https://www.equa.se/en/ida-ice",
+      "max_pages": 48,
+      "language_hint": "en",
+      "categories": [
+        "ida_ice",
+        "other_bes"
+      ],
+      "jurisdiction": "international",
+      "version_note": "Dated public source snapshot; software editions/effective dates remain page-specific.",
+      "document_role": "technical_documentation"
+    },
+    {
+      "id": "equa-ida-sv",
+      "url": "https://www.equa.se/se/ida-ice",
+      "prefix": "https://www.equa.se/se/ida-ice",
+      "max_pages": 48,
+      "language_hint": "sv",
+      "categories": [
+        "ida_ice",
+        "other_bes"
+      ],
+      "jurisdiction": "international",
+      "version_note": "Dated public source snapshot; software editions/effective dates remain page-specific.",
+      "document_role": "technical_documentation"
+    },
+    {
+      "id": "equa-ida-de",
+      "url": "https://www.equa.se/de/ida-ice",
+      "prefix": "https://www.equa.se/de/ida-ice",
+      "max_pages": 48,
+      "language_hint": "de",
+      "categories": [
+        "ida_ice",
+        "other_bes"
+      ],
+      "jurisdiction": "international",
+      "version_note": "Dated public source snapshot; software editions/effective dates remain page-specific.",
+      "document_role": "technical_documentation"
+    },
+    {
+      "id": "equa-public-documentation",
+      "url": "https://www.equaonline.com/iceuser/new_documentation.html",
+      "prefix": "https://www.equaonline.com/iceuser/new_documentation.html",
+      "max_pages": 1,
+      "language_hint": "en",
+      "categories": [
+        "ida_ice"
+      ],
+      "jurisdiction": "international",
+      "version_note": "Dated public source snapshot; software editions/effective dates remain page-specific.",
+      "document_role": "technical_documentation"
+    },
+    {
+      "id": "boverket-energy-declarations",
+      "url": "https://www.boverket.se/sv/energideklaration/",
+      "prefix": "https://www.boverket.se/sv/energideklaration/",
+      "max_pages": 96,
+      "language_hint": "sv",
+      "categories": [
+        "energy_rating"
+      ],
+      "jurisdiction": "SE",
+      "version_note": "Publisher warns this handbook is not yet fully updated for rules effective2026-10-01. Preserve mixed current/historical context; retrieval date is not an effective date.",
+      "document_role": "building_energy_assessment_reference"
+    },
+    {
+      "id": "boverket-primary-energy",
+      "url": "https://www.boverket.se/sv/byggande/bygg-och-renovera-energieffektivt/energihushallningskrav/primarenergital-och-byggnadens-energiprestanda",
+      "prefix": "https://www.boverket.se/sv/byggande/bygg-och-renovera-energieffektivt/energihushallningskrav/primarenergital-och-byggnadens-energiprestanda",
+      "max_pages": 1,
+      "language_hint": "sv",
+      "categories": [
+        "energy_rating"
+      ],
+      "jurisdiction": "SE",
+      "version_note": "Dated public source snapshot; software editions/effective dates remain page-specific.",
+      "document_role": "building_energy_assessment_reference"
+    },
+    {
+      "id": "motiva-energy-certificates",
+      "url": "https://www.motiva.fi/tietopankki/energiatodistusneuvonta/",
+      "prefix": "https://www.motiva.fi/tietopankki/energiatodistusneuvonta/",
+      "max_pages": 64,
+      "language_hint": "fi",
+      "categories": [
+        "energy_rating"
+      ],
+      "jurisdiction": "FI",
+      "version_note": "Dated public source snapshot; software editions/effective dates remain page-specific.",
+      "document_role": "building_energy_assessment_reference"
+    },
+    {
+      "id": "enova-energy-labels",
+      "url": "https://enova.no/nb/energimerking",
+      "prefix": "https://enova.no/nb/energimerking",
+      "max_pages": 48,
+      "language_hint": "nb",
+      "categories": [
+        "energy_rating"
+      ],
+      "jurisdiction": "NO",
+      "version_note": "Dated public source snapshot; software editions/effective dates remain page-specific.",
+      "document_role": "building_energy_assessment_reference"
+    },
+    {
+      "id": "denmark-energy-handbook",
+      "url": "https://hbemo.dk/",
+      "prefix": "https://hbemo.dk/",
+      "max_pages": 64,
+      "language_hint": "da",
+      "categories": [
+        "energy_rating"
+      ],
+      "jurisdiction": "DK",
+      "version_note": "Dated public source snapshot; software editions/effective dates remain page-specific.",
+      "document_role": "building_energy_assessment_reference"
+    },
+    {
+      "id": "denmark-energy-methods",
+      "url": "https://ens.dk/analyser-og-statistik/lovgivning-om-energimaerkning",
+      "prefix": "https://ens.dk/analyser-og-statistik/lovgivning-om-energimaerkning",
+      "max_pages": 1,
+      "language_hint": "da",
+      "categories": [
+        "energy_rating"
+      ],
+      "jurisdiction": "DK",
+      "version_note": "Dated public source snapshot; software editions/effective dates remain page-specific.",
+      "document_role": "building_energy_assessment_reference"
+    },
+    {
+      "id": "france-dpe-method",
+      "url": "https://www.ecologie.gouv.fr/politiques-publiques/diagnostic-performance-energetique-dpe",
+      "prefix": "https://www.ecologie.gouv.fr/politiques-publiques/diagnostic-performance-energetique-dpe",
+      "max_pages": 1,
+      "language_hint": "fr",
+      "categories": [
+        "energy_rating"
+      ],
+      "jurisdiction": "FR",
+      "version_note": "Dated public source snapshot; software editions/effective dates remain page-specific.",
+      "document_role": "building_energy_assessment_reference"
+    },
+    {
+      "id": "france-dpe-2026-update",
+      "url": "https://www.ecologie.gouv.fr/presse/evolution-du-calcul-du-dpe-1er-janvier-2026-favoriser-lelectrification-du-chauffage",
+      "prefix": "https://www.ecologie.gouv.fr/presse/evolution-du-calcul-du-dpe-1er-janvier-2026-favoriser-lelectrification-du-chauffage",
+      "max_pages": 1,
+      "language_hint": "fr",
+      "categories": [
+        "energy_rating"
+      ],
+      "jurisdiction": "FR",
+      "version_note": "Dated public source snapshot; software editions/effective dates remain page-specific.",
+      "document_role": "building_energy_assessment_reference"
+    },
+    {
+      "id": "uk-sap-method",
+      "url": "https://www.gov.uk/guidance/standard-assessment-procedure",
+      "prefix": "https://www.gov.uk/guidance/standard-assessment-procedure",
+      "max_pages": 1,
+      "language_hint": "en",
+      "categories": [
+        "energy_rating"
+      ],
+      "jurisdiction": "GB",
+      "version_note": "Dated public source snapshot; software editions/effective dates remain page-specific.",
+      "document_role": "building_energy_assessment_reference"
+    },
+    {
+      "id": "karelia-ida-parametric",
+      "url": "https://www.karelia.fi/2022/11/parametrisoitu-laskenta-energiasimulointiohjelmissa/",
+      "prefix": "https://www.karelia.fi/2022/11/parametrisoitu-laskenta-energiasimulointiohjelmissa/",
+      "max_pages": 1,
+      "language_hint": "fi",
+      "categories": [
+        "ida_ice",
+        "controls_calibration"
+      ],
+      "jurisdiction": "FI",
+      "version_note": "Dated public source snapshot; software editions/effective dates remain page-specific.",
+      "document_role": "technical_documentation"
+    },
+    {
+      "id": "equa-pdf-01",
+      "url": "https://www.equaonline.com/iceuser/pdf/ICE48GettingStartedEng.pdf",
+      "format": "pdf",
+      "language_hint": "en",
+      "jurisdiction": "international",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-02",
+      "url": "https://www.equaonline.com/iceuser/pdf/IDAICE48_Einfuhrungstutorium.pdf",
+      "format": "pdf",
+      "language_hint": "de",
+      "jurisdiction": "DE",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-03",
+      "url": "https://www.equaonline.com/esbouser/User_guide.pdf",
+      "format": "pdf",
+      "language_hint": "en",
+      "jurisdiction": "international",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-04",
+      "url": "https://www.equaonline.com/iceuser/pdf/IDA_ICE_Daylight_calculation_instructions.pdf",
+      "format": "pdf",
+      "language_hint": "en",
+      "jurisdiction": "international",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-05",
+      "url": "https://www.equaonline.com/iceuser/pdf/ASHRAE_90.1_Extension_v2010.pdf",
+      "format": "pdf",
+      "language_hint": "en",
+      "jurisdiction": "international",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-06",
+      "url": "https://www.equaonline.com/iceuser/pdf/UserGuideBoreholes.pdf",
+      "format": "pdf",
+      "language_hint": "en",
+      "jurisdiction": "international",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-07",
+      "url": "https://www.equaonline.com/iceuser/pdf/Building_and_zone_geometry_import.pdf",
+      "format": "pdf",
+      "language_hint": "en",
+      "jurisdiction": "international",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-08",
+      "url": "https://www.equaonline.com/iceuser/pdf/Facade_windows_and_shading_objects.pdf",
+      "format": "pdf",
+      "language_hint": "en",
+      "jurisdiction": "international",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-09",
+      "url": "https://www.equaonline.com/iceuser/pdf/Guide%20Anpassning%20Sverige_2022.02.pdf",
+      "format": "pdf",
+      "language_hint": "sv",
+      "jurisdiction": "SE",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-10",
+      "url": "https://www.equaonline.com/iceuser/pdf/Guide_Miljobyggnad_i_IDA%20ICE_2024.02.pdf",
+      "format": "pdf",
+      "language_hint": "sv",
+      "jurisdiction": "SE",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-11",
+      "url": "https://www.equaonline.com/iceuser/pdf/Manual_IDA-ICE-48-Sui_D.pdf",
+      "format": "pdf",
+      "language_hint": "de",
+      "jurisdiction": "CH",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-12",
+      "url": "https://www.equaonline.com/iceuser/pdf/Manual_IDA-ICE-48-Sui_F.pdf",
+      "format": "pdf",
+      "language_hint": "fr",
+      "jurisdiction": "CH",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-13",
+      "url": "https://www.equaonline.com/iceuser/pdf/Konvertieren_von_TRY_Effekte_aufpraegen-Datensatzen_nach_IDA_ICE.pdf",
+      "format": "pdf",
+      "language_hint": "de",
+      "jurisdiction": "DE",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-14",
+      "url": "https://www.equaonline.com/iceuser/pdf/Handbuch%20IDA%20ICE-Deutsche%20Lokalisierung%204.8-SP2_211111.pdf",
+      "format": "pdf",
+      "language_hint": "de",
+      "jurisdiction": "DE",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-15",
+      "url": "https://www.equaonline.com/iceuser/pdf/IFC_Import.pdf",
+      "format": "pdf",
+      "language_hint": "en",
+      "jurisdiction": "international",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-16",
+      "url": "https://www.equaonline.com/iceuser/pdf/IFC_import_and_export_using_simplebim-exercise.pdf",
+      "format": "pdf",
+      "language_hint": "en",
+      "jurisdiction": "international",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-17",
+      "url": "https://www.equaonline.com/iceuser/pdf/IFC_Reference_Guide_for_ARCHICAD_22_1003.pdf",
+      "format": "pdf",
+      "language_hint": "en",
+      "jurisdiction": "international",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-pdf-18",
+      "url": "https://www.equaonline.com/iceuser/pdf/180213_Revit_IFC_Manual.pdf",
+      "format": "pdf",
+      "language_hint": "en",
+      "jurisdiction": "international",
+      "categories": [
+        "ida_ice",
+        "other_bes",
+        "thermal_fluid"
+      ],
+      "document_role": "public_software_manual",
+      "version_note": "Publicly linked by EQUA documentation index; preserve filename/software edition. Legacy4.8 guides are not claimed as version5 manuals."
+    },
+    {
+      "id": "equa-ida4-equations",
+      "url": "https://www.equa.se/deliv/ICE4eng.pdf",
+      "format": "pdf",
+      "language_hint": "en",
+      "jurisdiction": "international",
+      "categories": [
+        "ida_ice",
+        "thermal_fluid"
+      ],
+      "version_note": "Legacy IDA ICE4 documentation; retain original edition."
+    },
+    {
+      "id": "france-dpe-professional-guide",
+      "url": "https://www.ecologie.gouv.fr/sites/default/files/documents/Guide_pour_les_diagnostiqueurs_DPE.pdf",
+      "format": "pdf",
+      "language_hint": "fr",
+      "jurisdiction": "FR",
+      "categories": [
+        "energy_rating"
+      ],
+      "version_note": "Publisher guide; historic edition, not a claim of2026 rule coverage."
+    },
+    {
+      "id": "motiva-worked-energy-certificate",
+      "url": "https://www.motiva.fi/wp-content/uploads/sites/2/2025/08/Energiatodistuksen-laadintaesimerkki-%E2%80%93-Pientalo-1940-luku-korjaus-06-2023.pdf",
+      "format": "pdf",
+      "language_hint": "fi",
+      "jurisdiction": "FI",
+      "categories": [
+        "energy_rating",
+        "thermal_fluid"
+      ],
+      "version_note": "Worked1940s-house example, June2023 revision; historic method context retained."
+    },
+    {
+      "id": "equa-ida-zh",
+      "url": "https://www.equa.se/cn/ida-ice",
+      "language_hint": "zh",
+      "jurisdiction": "international",
+      "categories": [
+        "ida_ice",
+        "other_bes"
+      ],
+      "version_note": "Dated source snapshot; legal/software applicability is source-specific, not inferred from acquisition date.",
+      "document_role": "technical_reference",
+      "prefix": "https://www.equa.se/cn/ida-ice",
+      "max_pages": 32
+    },
+    {
+      "id": "dena-energy-certificate",
+      "url": "https://www.gebaeudeforum.de/ordnungsrecht/energieausweis/",
+      "language_hint": "de",
+      "jurisdiction": "DE",
+      "categories": [
+        "energy_rating"
+      ],
+      "version_note": "Dated source snapshot; legal/software applicability is source-specific, not inferred from acquisition date.",
+      "document_role": "technical_reference",
+      "prefix": "https://www.gebaeudeforum.de/ordnungsrecht/energieausweis/",
+      "max_pages": 32
+    },
+    {
+      "id": "dena-calculation-guide",
+      "url": "https://www.gebaeudeforum.de/fileadmin/gebaeudeforum/Downloads/Leitfaden-Handbuch/dena_Leitfaden_Energieausweis_1.pdf",
+      "language_hint": "de",
+      "jurisdiction": "DE",
+      "categories": [
+        "energy_rating"
+      ],
+      "version_note": "Dated source snapshot; legal/software applicability is source-specific, not inferred from acquisition date.",
+      "document_role": "technical_reference",
+      "format": "pdf"
+    },
+    {
+      "id": "enea-ape-glossary",
+      "url": "https://www.efficienzaenergetica.enea.it/glossario-efficienza-energetica/lettera-a/ape-attestato-di-prestazione-energetica.html",
+      "language_hint": "it",
+      "jurisdiction": "IT",
+      "categories": [
+        "energy_rating"
+      ],
+      "version_note": "Dated source snapshot; legal/software applicability is source-specific, not inferred from acquisition date.",
+      "document_role": "technical_reference",
+      "prefix": "https://www.efficienzaenergetica.enea.it/glossario-efficienza-energetica/lettera-a/ape-attestato-di-prestazione-energetica.html",
+      "max_pages": 1
+    },
+    {
+      "id": "enea-ape-method",
+      "url": "https://pnpe2.enea.it/ape",
+      "language_hint": "it",
+      "jurisdiction": "IT",
+      "categories": [
+        "energy_rating"
+      ],
+      "version_note": "Dated source snapshot; legal/software applicability is source-specific, not inferred from acquisition date.",
+      "document_role": "technical_reference",
+      "prefix": "https://pnpe2.enea.it/ape",
+      "max_pages": 1
+    },
+    {
+      "id": "idae-building-rating",
+      "url": "https://www.idae.es/tecnologias/eficiencia-energetica/edificacion/calificacion-energetica-de-edificios",
+      "language_hint": "es",
+      "jurisdiction": "ES",
+      "categories": [
+        "energy_rating"
+      ],
+      "version_note": "Dated source snapshot; legal/software applicability is source-specific, not inferred from acquisition date.",
+      "document_role": "technical_reference",
+      "prefix": "https://www.idae.es/tecnologias/eficiencia-energetica/edificacion/calificacion-energetica-de-edificios",
+      "max_pages": 1
+    },
+    {
+      "id": "idae-rating-scale-existing",
+      "url": "https://www.idae.es/sites/default/files/documentos/publicaciones_idae/documentos_11261_escalacalifenerg_edifexistentes_2011_accesible_c762988d.pdf",
+      "language_hint": "es",
+      "jurisdiction": "ES",
+      "categories": [
+        "energy_rating"
+      ],
+      "version_note": "2011 existing-building scale reference; historic method, not a statement of current law.",
+      "document_role": "technical_reference",
+      "format": "pdf"
+    },
+    {
+      "id": "japan-building-performance-label",
+      "url": "https://www.mlit.go.jp/shoene-label/",
+      "language_hint": "ja",
+      "jurisdiction": "JP",
+      "categories": [
+        "energy_rating"
+      ],
+      "version_note": "Dated source snapshot; legal/software applicability is source-specific, not inferred from acquisition date.",
+      "document_role": "technical_reference",
+      "prefix": "https://www.mlit.go.jp/shoene-label/",
+      "max_pages": 48
+    },
+    {
+      "id": "korea-building-efficiency",
+      "url": "https://www.energy.or.kr/front/conts/105002002002000.do",
+      "language_hint": "ko",
+      "jurisdiction": "KR",
+      "categories": [
+        "energy_rating"
+      ],
+      "version_note": "Dated source snapshot; legal/software applicability is source-specific, not inferred from acquisition date.",
+      "document_role": "technical_reference",
+      "prefix": "https://www.energy.or.kr/front/conts/105002002002000.do",
+      "max_pages": 1
+    },
+    {
+      "id": "korea-building-assessment-method",
+      "url": "https://beec.energy.or.kr/BC/BC02/BC02_03_001.do",
+      "language_hint": "ko",
+      "jurisdiction": "KR",
+      "categories": [
+        "energy_rating"
+      ],
+      "version_note": "Dated source snapshot; legal/software applicability is source-specific, not inferred from acquisition date.",
+      "document_role": "technical_reference",
+      "prefix": "https://beec.energy.or.kr/BC/BC02/BC02_03_001.do",
+      "max_pages": 1
+    },
+    {
+      "id": "netherlands-building-label",
+      "url": "https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/energielabel-woningen",
+      "language_hint": "nl",
+      "jurisdiction": "NL",
+      "categories": [
+        "energy_rating"
+      ],
+      "version_note": "Dated source snapshot; legal/software applicability is source-specific, not inferred from acquisition date.",
+      "document_role": "technical_reference",
+      "prefix": "https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/energielabel-woningen",
+      "max_pages": 24
+    },
+    {
+      "id": "portugal-building-method-qa",
+      "url": "https://academia.adene.pt/wp-content/uploads/PeR_DL101D2020_2024Set_V4.pdf",
+      "language_hint": "pt",
+      "jurisdiction": "PT",
+      "categories": [
+        "energy_rating"
+      ],
+      "version_note": "ADENE2024Septemberv4 technical FAQ; dated context retained.",
+      "document_role": "technical_reference",
+      "format": "pdf"
+    },
+    {
+      "id": "denmark-handbook-canonical",
+      "url": "https://www.hbemo.dk/haandbog-for-energikonsulenter-hb2023",
+      "prefix": "https://www.hbemo.dk/haandbog-for-energikonsulenter-hb2023",
+      "max_pages": 128,
+      "language_hint": "da",
+      "jurisdiction": "DK",
+      "categories": [
+        "energy_rating"
+      ],
+      "version_note": "HB2023 named handbook; canonical www host explicitly selected after non-www robots redirect failed.",
+      "html_region": "role_main"
+    },
+    {
+      "id": "portugal-sce-documentation",
+      "url": "https://www.sce.pt/documentacao/",
+      "prefix": "https://www.sce.pt/documentacao/",
+      "max_pages": 1,
+      "language_hint": "pt",
+      "jurisdiction": "PT",
+      "categories": [
+        "energy_rating"
+      ],
+      "version_note": "ADENE SCE public documentation index; replacement discovery source for stale academia PDF URL."
+    },
+    {
+      "id": "portugal-sce-professionals",
+      "url": "https://www.sce.pt/certificacao-energetica-de-edificios/profissionais-sce/",
+      "prefix": "https://www.sce.pt/certificacao-energetica-de-edificios/profissionais-sce/",
+      "max_pages": 16,
+      "language_hint": "pt",
+      "jurisdiction": "PT",
+      "categories": [
+        "energy_rating"
+      ],
+      "version_note": "Public professional-method guidance; no login or certificate database collection."
+    },
+    {
+      "id": "sveby-residential-inputs-2024",
+      "url": "https://www.sveby.org/wp-content/uploads/2024/11/Sveby-brukarindata-bostadshus-2.0-241111.pdf",
+      "format": "pdf",
+      "language_hint": "sv",
+      "jurisdiction": "SE",
+      "categories": [
+        "energy_rating",
+        "controls_calibration",
+        "thermal_fluid"
+      ],
+      "version_note": "Sveby residential standard-user inputs v2.0 dated2024-11-11; preserve exact method/edition."
+    },
+    {
+      "id": "sveby-office-inputs",
+      "url": "https://www.sveby.org/wp-content/uploads/2013/06/Brukarindata-kontor-version-1.1.pdf",
+      "format": "pdf",
+      "language_hint": "sv",
+      "jurisdiction": "SE",
+      "categories": [
+        "energy_rating",
+        "controls_calibration",
+        "thermal_fluid"
+      ],
+      "version_note": "Sveby office-user inputs v1.1,2013 historical reference."
+    },
+    {
+      "id": "portugal-sce-method-qa-2023",
+      "url": "https://www.sce.pt/wp-content/uploads/2023/04/P_R_2023_04_V3.pdf",
+      "format": "pdf",
+      "categories": [
+        "energy_rating",
+        "other_bes"
+      ],
+      "language_hint": "pt",
+      "jurisdiction": "PT",
+      "version_note": "Official SCE questions and answers, April 2023 v3; historical dated method, not a claim of current law.",
+      "document_role": "building energy certification methodology"
+    },
+    {
+      "id": "modelica-specification-3.7",
+      "url": "https://specification.modelica.org/maint/3.7/",
+      "prefix": "https://specification.modelica.org/maint/3.7/",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ]
+    },
+    {
+      "id": "openmodelica-user-guide",
+      "url": "https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/",
+      "prefix": "https://openmodelica.org/doc/OpenModelicaUsersGuide/latest/",
+      "categories": [
+        "modelica",
+        "numerics_coupling"
+      ]
+    },
+    {
+      "id": "energyplus-26.2-docs",
+      "url": "https://energyplus.readthedocs.io/en/latest/",
+      "prefix": "https://energyplus.readthedocs.io/en/latest/",
+      "categories": [
+        "energyplus_bes",
+        "thermal_fluid"
+      ]
+    },
+    {
+      "id": "modelica-by-example",
+      "url": "https://mbe.modelica.university/",
+      "prefix": "https://mbe.modelica.university/",
+      "categories": [
+        "modelica",
+        "thermal_fluid"
+      ]
+    },
+    {
+      "id": "trnsys-public-support",
+      "url": "https://www.trnsys.com/support/",
+      "prefix": "https://www.trnsys.com/support/",
+      "categories": [
+        "other_bes",
+        "thermal_fluid"
+      ]
+    },
+    {
+      "id": "coolprop-docs",
+      "url": "https://coolprop.org/",
+      "prefix": "https://coolprop.org/",
+      "categories": [
+        "thermal_fluid"
+      ]
+    },
+    {
+      "id": "tespy-docs",
+      "url": "https://tespy.readthedocs.io/en/main/",
+      "prefix": "https://tespy.readthedocs.io/en/main/",
+      "categories": [
+        "thermal_fluid"
+      ]
+    },
+    {
+      "id": "espr-current-documentation",
+      "url": "https://appdocs.esru.strath.ac.uk/books",
+      "prefix": "https://appdocs.esru.strath.ac.uk/books",
+      "categories": [
+        "other_bes",
+        "thermal_fluid"
+      ]
+    },
+    {
+      "id": "espr-courseware",
+      "url": "https://www.esru.strath.ac.uk/Courseware/ESP-r/tour/Overview.html",
+      "prefix": "https://www.esru.strath.ac.uk/Courseware/ESP-r/",
+      "categories": [
+        "other_bes",
+        "thermal_fluid"
+      ]
+    },
+    {
+      "id": "espr-introduction-2024",
+      "url": "https://www.esru.strath.ac.uk/Documents/2024_Introduction_to_ESP-r_1ed.pdf",
+      "format": "pdf",
+      "version_note": "2024 first edition; not a claim about latest software",
+      "categories": [
+        "other_bes",
+        "thermal_fluid"
+      ]
+    },
+    {
+      "id": "espr-user-guide-10",
+      "url": "https://www.esru.strath.ac.uk/Documents/ESP-r_userguide.pdf",
+      "format": "pdf",
+      "version_note": "Legacy version 10 guide, separately labeled",
+      "categories": [
+        "other_bes",
+        "thermal_fluid"
+      ]
+    },
+    {
+      "id": "trnsys-17-mathematical-reference",
+      "url": "https://trnsys.org/MaillistArchive/pdfkSLYr_lzDr.pdf",
+      "format": "pdf",
+      "version_note": "Publicly hosted TRNSYS 17 mathematical reference; not TRNSYS 18 coverage",
+      "categories": [
+        "other_bes",
+        "thermal_fluid"
+      ]
+    },
+    {
+      "id": "trnsys-18-update-guide",
+      "url": "https://trnsys.org/files/trnsys18_0_updates.pdf",
+      "format": "pdf",
+      "version_note": "TRNSYS 18 update guide; not the complete manual set",
+      "categories": [
+        "other_bes",
+        "thermal_fluid"
+      ]
+    },
+    {
+      "id": "annex60-final-report",
+      "url": "https://www.iea-annex60.org/downloads/iea-ebc-annex60-final-report.pdf",
+      "format": "pdf",
+      "version_note": "IEA EBC Annex 60 final report",
+      "categories": [
+        "modelica",
+        "thermal_fluid",
+        "numerics_coupling"
+      ]
+    },
+    {
+      "id": "modelica-buildings-tutorial-2024",
+      "url": "https://simulationresearch.lbl.gov/modelica/downloads/workshops/2024-10-14-american-modelica/tutorial_slides.pdf",
+      "format": "pdf",
+      "version_note": "October 2024 workshop slides; images retained in original PDF",
+      "categories": [
+        "modelica",
+        "thermal_fluid"
+      ]
+    },
+    {
+      "id": "contam-3.4-reference",
+      "url": "https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1887r1.pdf",
+      "format": "pdf",
+      "version_note": "NIST TN1887r1, CONTAM3.4, 2020",
+      "categories": [
+        "thermal_fluid",
+        "numerics_coupling"
+      ]
+    },
+    {
+      "id": "champs-public-manual",
+      "url": "https://beesl.syr.edu/wp-content/uploads/2016/11/CHAMPS_manual.pdf",
+      "format": "pdf",
+      "version_note": "Public CHAMPS manual; independent related scope, not an interpretation of CHANCES",
+      "categories": [
+        "other_bes",
+        "thermal_fluid"
+      ]
+    }
+  ],
+  "keyword_families": {
+    "version": "0.1",
+    "purpose": "Additive multilingual energy-modeling discovery; no training activation",
+    "query_languages": [
+      "en",
+      "sv",
+      "de",
+      "fi",
+      "nb",
+      "da",
+      "fr",
+      "it",
+      "es",
+      "zh",
+      "ja",
+      "ko",
+      "nl",
+      "pt"
+    ],
+    "ambiguous_tokens_not_standalone": [
+      "ICE",
+      "IDA",
+      "EPC",
+      "NMF",
+      "SAP",
+      "A",
+      "B",
+      "C"
+    ],
+    "building_context": [
+      "building",
+      "dwelling",
+      "house",
+      "byg",
+      "rakenn",
+      "gebäude",
+      "wohn",
+      "bâtiment",
+      "logement",
+      "edific",
+      "建筑",
+      "住宅",
+      "建築",
+      "건물",
+      "건축",
+      "woning"
+    ],
+    "concepts": [
+      {
+        "id": "ida_ice",
+        "aliases": [
+          "IDA ICE",
+          "IDAICE",
+          "IDA-ICE",
+          "IDA_ICE",
+          "IDA–ICE",
+          "IDA ICE",
+          "IDA Indoor Climate and Energy",
+          "IDA Klimat och Energi",
+          "IDA ESBO",
+          "IDA Districts",
+          "Neutral Model Format"
+        ]
+      },
+      {
+        "id": "building_energy_rating",
+        "aliases": [
+          "energy performance certificate",
+          "building energy rating",
+          "building energy label",
+          "energy rating of dwellings",
+          "energideklaration",
+          "primärenergital",
+          "energiprestandatal",
+          "energiatodistus",
+          "rakennuksen energialuokka",
+          "energiemerkning av bygninger",
+          "energimerking av bygg",
+          "energimærkning af bygninger",
+          "energieausweis",
+          "Gebäudeenergiegesetz",
+          "diagnostic de performance énergétique",
+          "diagnostic de performance energetique",
+          "attestato di prestazione energetica",
+          "certificado de eficiencia energética",
+          "certificado de eficiencia energetica",
+          "建筑能效标识",
+          "建筑能效等级",
+          "建筑能源性能",
+          "建築物省エネルギー性能",
+          "住宅性能表示",
+          "건축물 에너지효율등급",
+          "energieprestatie van gebouwen",
+          "energielabel woning",
+          "certificado energético edifício",
+          "Standard Assessment Procedure",
+          "Simplified Building Energy Model",
+          "Home Energy Model"
+        ]
+      },
+      {
+        "id": "energy_class_contextual",
+        "requires_building_context": true,
+        "aliases": [
+          "energy class",
+          "energy classes",
+          "energyclass",
+          "energiklass",
+          "energikarakter",
+          "energimerke",
+          "energimærke",
+          "energiklasse",
+          "energialuokka",
+          "E-luku",
+          "Energieeffizienzklasse",
+          "classe énergétique",
+          "classe energetique",
+          "classe energetica",
+          "calificación energética",
+          "calificacion energetica",
+          "energetische klasse",
+          "classe energética"
+        ]
+      },
+      {
+        "id": "physical_modeling_workflow",
+        "requires_building_context": true,
+        "aliases": [
+          "thermal comfort",
+          "operative temperature",
+          "overheating",
+          "heating load",
+          "cooling load",
+          "daylight simulation",
+          "solar shading",
+          "borehole heat exchanger",
+          "termisk komfort",
+          "övertemperatur",
+          "kylbehov",
+          "värmebehov",
+          "thermische Behaglichkeit",
+          "Heizlast",
+          "Kühllast",
+          "dynamische Gebäudesimulation",
+          "lämpöviihtyvyys",
+          "energiasimulointi",
+          "confort thermique",
+          "simulation thermique dynamique",
+          "simulazione energetica dinamica",
+          "simulación energética",
+          "热舒适",
+          "动态能耗模拟",
+          "室内环境模拟",
+          "供热负荷",
+          "空调负荷",
+          "年负荷计算",
+          "建築環境シミュレーション",
+          "에너지 시뮬레이션"
+        ]
+      }
+    ]
+  },
+  "refresh": "Resolve declared public refs explicitly; pin commit and archive SHA; inspect every file and record unresolved dispositions. Reconcile root package uses dependencies and published chapter indexes; publish a new immutable snapshot and token report. Do not execute source code.",
+  "limits": [
+    "No claim to all internet knowledge",
+    "Exact dedup does not remove translated or namespace-renamed models",
+    "Dependency/version compatibility and compilation remain unverified",
+    "Unavailable commercial sources and unsupported binary/LFS objects remain gaps"
+  ],
+  "training_started": false
+}

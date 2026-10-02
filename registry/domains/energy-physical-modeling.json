@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "id": "energy-physical-modeling",
+  "title": "Building energy and physical modeling",
+  "description": "Building/HVAC simulation, Modelica, EnergyPlus, IDA ICE, heat and mass transfer, fluid networks, media, energy conversion/storage, district energy, electrical coupling, controls, calibration, numerical methods and simulation interoperability.",
+  "selector": {"all_declared_domain_sources": true},
+  "roles": ["core", "research_candidates", "patent_supplement", "reference_assets", "reference_history", "reference_pdf"],
+  "publication": "Immutable local domain dataset; independent of the default corpus view and training execution.",
+  "text_policy": "Preserve verified prepared bytes and complete source code; no implicit global cleaner.",
+  "exclusions": "Private evaluation banks and the operator-excluded general datasets; no authentication/access bypass. Source license declarations remain provenance, not a domain acquisition gate."
+}
