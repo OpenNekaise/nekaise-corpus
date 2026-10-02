@@ -132,7 +132,8 @@ vein) · `find_ibpsa.py` IBPSA building-simulation proceedings (captcha-paced) �
 Laboratory of the Rockies (ex-NREL) building reports · `find_osti_sim.py` OSTI building energy /
 physical simulation query family (licence per record) · `find_unmethours.py` Unmet Hours
 simulation Q&A pages (CC BY-SA 3.0, sitemap walk) · `find_diva.py` DiVA (Swedish universities)
-theses and reports on building simulation via OAI-PMH · the compliance/ESG programme (2026-09-25):
+theses and reports on building simulation via OAI-PMH · `find_zenodo_sim.py` Zenodo building
+simulation publications (multilingual query family, licence from record metadata) · the compliance/ESG programme (2026-09-25):
 `find_boverket.py --mode bfs` every Boverket BFS (BBR/EKS, all versions) from the rinfo feed,
 `find_regdocs.py` statutes and guidance per `registry/regdocs.json`, `find_eurlex.py` EU building
 and sustainability-reporting law in 24 languages via the Publications Office Cellar

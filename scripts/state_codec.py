@@ -56,6 +56,7 @@ SHARDS = {
     "osm-": "ostisim.yaml",    # find_osti_sim (OSTI building energy / physical simulation query family)
     "umh-": "unmethours.yaml",  # find_unmethours (Unmet Hours simulation Q&A pages, CC BY-SA 3.0)
     "dva-": "diva.yaml",       # find_diva (DiVA Swedish theses/reports on building simulation, OAI-PMH)
+    "zns-": "zenodosim.yaml",  # find_zenodo_sim (Zenodo building simulation publications, all licences)
     "eur-": "eurlex.yaml",     # find_eurlex (EU acts via the Publications Office Cellar, 24 languages)
     "esf-": "esef.yaml",       # find_esef (AEC issuers' ESEF annual reports via filings.xbrl.org)
     "reg-": "regdocs.yaml",    # find_regdocs (building-code / ESG-framework / BIM guidance documents,
