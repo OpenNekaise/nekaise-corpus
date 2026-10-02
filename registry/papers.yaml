@@ -121561,3 +121561,40 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.firesaf.2023.104022 openalex:W4387400556
     resolution: 'legacy: openalex location'
+  - id: ope-macro-micro-studio-a-prototype-energy-autonomo
+    title: 'Macro Micro Studio: A Prototype Energy Autonomous Laboratory'
+    url: https://discovery.dundee.ac.uk/ws/files/9002232/sustainability_08_00500.pdf
+    source: openalex
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2016-05-25'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su8060500
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.dundee.ac.uk/ws/files/9002232/sustainability_08_00500.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-10-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/su8060500 openalex:W2395233869
+    resolution: 'legacy: openalex location'
+  - id: ope-smart-3d-printed-facades-a-review-of-innovatio
+    title: 'Smart 3D-printed facades: a review of innovations, materials, and sustainable
+      performance'
+    url: https://www.frontiersin.org/journals/sustainable-cities/articles/10.3389/frsc.2025.1610729/pdf
+    source: openalex
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2025-07-08'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/frsc.2025.1610729
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.frontiersin.org/journals/sustainable-cities/articles/10.3389/frsc.2025.1610729/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-10-02'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/frsc.2025.1610729 openalex:W4412100356
+    resolution: 'legacy: openalex location'
