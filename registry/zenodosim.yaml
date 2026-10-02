@@ -5234,3 +5234,16 @@ sources:
     persistent_id: doi:10.1007/978-3-319-03964-0_16
     license_evidence: Zenodo record metadata.license.id = cc-by-nc-nd-4.0
     rights_verified_at: '2026-10-02'
+  - id: zns-risk-assessment-of-human-exposure-to-heterocyclic-ar
+    title: Risk assessment of human exposure to heterocyclic aromatic compounds in sediment
+      dwelling biota from Ibeno River Catchment, Southeast, Nigeria
+    url: https://zenodo.org/api/records/18164178/files/WNOFNS%2051%20(2023)%2083-97.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2023-10-09'
+    document_type: article
+    persistent_id: doi:10.5281/zenodo.18164178
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
