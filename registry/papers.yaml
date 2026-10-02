@@ -121598,3 +121598,41 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.3389/frsc.2025.1610729 openalex:W4412100356
     resolution: 'legacy: openalex location'
+  - id: ope-embodied-carbon-and-construction-cost-differen
+    title: Embodied Carbon and Construction Cost Differences between Hong Kong and Melbourne
+      Buildings
+    url: https://epress.lib.uts.edu.au/journals/index.php/AJCEB/article/download/6280/7052
+    source: openalex
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2018-12-12'
+    document_type: article
+    persistent_id: https://doi.org/10.5130/ajceb.v18i4.6280
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://epress.lib.uts.edu.au/journals/index.php/AJCEB/article/download/6280/7052;
+      version publishedVersion]
+    rights_verified_at: '2026-10-02'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5130/ajceb.v18i4.6280 openalex:W2906026065
+    resolution: 'legacy: openalex location'
+  - id: ope-evaluating-the-influence-of-old-and-new-rental
+    title: 'Evaluating the influence of old and new rental systems on the physical condition
+      of historic mixed-use buildings: a case study of Lebanon'
+    url: https://public-pages-files-2025.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2023.1190374/pdf
+    source: openalex
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-09-26'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fbuil.2023.1190374
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://public-pages-files-2025.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2023.1190374/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-10-02'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fbuil.2023.1190374 openalex:W4387104660
+    resolution: 'legacy: openalex location'
