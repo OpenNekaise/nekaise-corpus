@@ -2078,3 +2078,243 @@ sources:
     persistent_id: doi:10.1016/j.egyai.2023.100296
     license_evidence: Zenodo record metadata.license.id = cc-by-4.0
     rights_verified_at: '2026-10-02'
+  - id: zns-optimization-of-computational-time-for-urban-buildin
+    title: Optimization of computational time for Urban Building Energy Modelling, through
+      generalizing the Building Footprint. A case study in London, UK.
+    url: https://zenodo.org/api/records/7822849/files/GISRUK_2023_paper_676.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2023-04-19'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.7822849
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-transfer-learning-based-prediction-of-heating-energy
+    title: Transfer Learning-Based Prediction of Heating Energy Consumption Using Urban
+      Building Energy Models (UBEM)
+    url: https://zenodo.org/api/records/13842423/files/EG-ICE2024.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2024'
+    document_type: conferenceproceeding
+    persistent_id: doi:10.5281/zenodo.13842423
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-assessment-of-the-urban-heat-island-impact-on-buildi
+    title: Assessment of the Urban Heat Island Impact on Building Energy Performance
+      at District Level with the EUReCA Platform
+    url: https://zenodo.org/api/records/14405804/files/fulltext.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2021-03-16'
+    document_type: article
+    persistent_id: doi:10.3390/cli9030048
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-towards-an-integrated-urban-energy-model-linking-mul
+    title: 'Towards an Integrated Urban Energy Model: Linking Multi-Source Energy Consumption
+      with Urban Variables in Gulf Cities'
+    url: https://zenodo.org/api/records/21504984/files/Towards%20an%20Integrated%20Urban%20Energy%20Model%20Linking%20Multi-Source%20Energy%20Consumption%20with%20Urban%20Variables%20in%20Gulf%20Cities.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2026-07-23'
+    document_type: article
+    persistent_id: doi:10.5281/zenodo.21504984
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-urban-energy-dynamics-as-a-regenerative-framework-in
+    title: 'Urban Energy Dynamics as a Regenerative Framework: Integrating Urban Physics
+      and Circular Economy for Climate-Resilient Indian Cities (Case of Lucknow'
+    url: https://zenodo.org/api/records/22211945/files/Research%20Paper%20Submission_Urban%20Energy%20Dynamics%20as%20a%20Regenerative%20Framework_Srajati%20Tiwari.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2026-08-31'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.22211945
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-fmu-software-component-orchestration-strategies-for-
+    title: FMU software component orchestration strategies for co-simulation of building
+      energy systems
+    url: https://zenodo.org/api/records/495002/files/article.pdf/content
+    source: zenodo_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2015-04-01'
+    document_type: conferencepaper
+    persistent_id: doi:10.1109/taeece.2015.7113591
+    license_evidence: Zenodo record metadata.license.id = other-open (not a recognised
+      reuse licence)
+    rights_verified_at: '2026-10-02'
+  - id: zns-a-virtual-test-bed-for-building-model-predictive-con
+    title: A virtual test-bed for building Model Predictive Control developments
+    url: https://zenodo.org/api/records/2583463/files/Modelica2019paper1A1.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2019-03-04'
+    document_type: conferencepaper
+    persistent_id: doi:10.3384/ecp1915717
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-a-new-modular-nanogrid-energy-management-system-base
+    title: A new modular nanogrid energy management system based on multi-agent architecture
+    url: https://zenodo.org/api/records/6614700/files/19%2021663.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2022-03-01'
+    document_type: article
+    persistent_id: doi:10.11591/ijpeds.v13.i1.pp178-190
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-numerical-modelling-and-performance-assessment-of-mi
+    title: Numerical Modelling and Performance Assessment of MicroFluidic Glazing (MFG)
+    url: https://zenodo.org/api/records/10868075/files/SDEWES23_Numerical%20Modelling%20and%20Performance%20Assessment%20of%20MicroFluidic%20Glazing%20(MFG).pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2024-03-25'
+    document_type: conferenceproceeding
+    persistent_id: doi:10.5281/zenodo.10868075
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-a-hybrid-data-driven-co-simulation-approach-for-enha
+    title: A hybrid data-driven Co-simulation approach for enhanced integrations of
+      renewables and thermal storage in building district energy systems
+    url: https://zenodo.org/api/records/15439651/files/1-s2.0-S2352710225006424-main.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2025-03-18'
+    persistent_id: doi:10.1016/j.jobe.2025.112405
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-beyond-patterning-embedding-shading-in-opaque-buildi
+    title: 'Beyond Patterning: Embedding Shading in Opaque Building Envelopes'
+    url: https://zenodo.org/api/records/17192753/files/Beyond_Patterning.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2023'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.17192753
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-ten-questions-concerning-co-simulation-for-performan
+    title: Ten questions concerning co-simulation for performance prediction of advanced
+      building envelopes
+    url: https://zenodo.org/api/records/14442789/files/fulltext.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2021-01-02'
+    document_type: article
+    persistent_id: doi:10.1016/j.buildenv.2020.107570
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-bim-iot-and-bms-for-the-management-of-buildings-and-
+    title: BIM, IOT AND BMS FOR THE MANAGEMENT OF BUILDINGS AND INFRASTRUCTURES. THE
+      DIGITAL TWIN FOR SUSTAINABLE DEVELOPMENT
+    url: https://zenodo.org/api/records/5705738/files/Mohammad%20Hassan%20Meshkini.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2021-09-30'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.5705738
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-the-development-of-a-bim-based-interoperable-toolkit
+    title: 'The Development of a BIM-Based Interoperable Toolkit for Efficient Renovation
+      in Buildings: From BIM to Digital Twin'
+    url: https://zenodo.org/api/records/6276297/files/buildings-12-00231.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2022-02-17'
+    document_type: article
+    persistent_id: doi:10.3390/buildings12020231
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-restoration-and-transformation-of-high-tech-machine-
+    title: Restoration and transformation of high-tech machine building industry by
+      implementing the principles of the CALS-concept in the context of Industry 4.
+    url: https://zenodo.org/api/records/6818472/files/Restoration%20and%20transformation%20of%20high-tech%20machine%20building%20industry%20by%20implementing%20the%20principles%20of%20the%20CALS-concept%20in%20the%20context%20of%20Industry%204.0%20development.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2022-06-30'
+    document_type: article
+    persistent_id: doi:10.15587/1729-4061.2022.260045
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-sphere-digital-twin-definitions-for-buildings
+    title: 'SPHERE: Digital Twin Definitions for Buildings'
+    url: https://zenodo.org/api/records/7147937/files/Sphere_Digital_Twins_White_Paper-1.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2019-04-04'
+    document_type: technicalnote
+    persistent_id: doi:10.5281/zenodo.7147937
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-a-digital-twin-architecture-for-smart-buildings
+    title: A Digital Twin Architecture for Smart Buildings
+    url: https://zenodo.org/api/records/7303876/files/KIOS%20Buidling%20Digital%20Twin%20-%20official%20version%20to%20be%20submitted.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2022-10-26'
+    document_type: conferencepaper
+    persistent_id: doi:10.1109/isc255366.2022.9922482
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-ontologies-and-digital-building-twins-bimprove-contr
+    title: Ontologies and Digital Building Twins (BIMprove contribution to the SPHERE
+      whitepaper)
+    url: https://zenodo.org/api/records/7342437/files/Sphere_Digital_Twins_White_Paper-3-.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2022-11-21'
+    document_type: report
+    persistent_id: doi:10.5281/zenodo.7342437
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-building-s-digital-twin-model-shown-as-first-person-
+    title: Building's digital twin model shown as first-person and third-person views
+    url: https://zenodo.org/api/records/7417624/files/Building%E2%80%99s%20digital%20twin%20model%20shown%20as%20first-person.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2022-12-09'
+    document_type: conferencepaper
+    persistent_id: doi:10.1088/1755-1315/1101/8/082018
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
