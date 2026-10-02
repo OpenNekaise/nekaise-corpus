@@ -121524,3 +121524,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.conbuildmat.2018.07.005 openalex:W2883209662
     resolution: 'legacy: openalex location'
+  - id: ope-mechanical-properties-of-hardened-3d-printed-c
+    title: Mechanical Properties of Hardened 3D Printed Concretes and Mortars—Development
+      of a Consistent Experimental Characterization Strategy
+    url: https://lirias.kuleuven.be/retrieve/2c32a653-ca9a-4c4d-a962-e5265fef0290
+    source: openalex
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2021-02-05'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/ma14040752
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://lirias.kuleuven.be/retrieve/2c32a653-ca9a-4c4d-a962-e5265fef0290;
+      version submittedVersion]
+    rights_verified_at: '2026-10-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/ma14040752 openalex:W3128908801
+    resolution: 'legacy: openalex location'
