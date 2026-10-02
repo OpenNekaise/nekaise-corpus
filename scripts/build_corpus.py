@@ -102,6 +102,7 @@ HOST_CONCURRENCY: dict[str, int] = {
     "publications.ibpsa.org": 1,
     "escholarship.org": 1,  # robots Crawl-delay: 4 means serial
     "unmethours.com": 1,    # small community Q&A site (find_unmethours): serial, paced
+    "www.diva-portal.org": 1,  # find_diva: robots Crawl-delay 10 means serial
 }
 # politeness overrides for hosts that need them (currently none). HOST_DELAY: minimum seconds
 # between request STARTS against a host, enforced under its semaphore — for hosts that tarpit at
@@ -129,6 +130,7 @@ HOST_DELAY: dict[str, float] = {
     "escholarship.org": 4.0,      # robots.txt Crawl-delay: 4 — respect it (find_escholarship)
     "bigladdersoftware.com": 10.0,  # robots.txt Crawl-delay: 10 — respect it
     "unmethours.com": 2.0,        # no robots Crawl-delay; one page per 2 s keeps a small site calm
+    "www.diva-portal.org": 10.0,  # robots.txt Crawl-delay: 10 — respect it (find_diva)
 }
 HONEST_UA = "nekaise-corpus/build_corpus"
 HOST_UA: dict[str, str] = {
@@ -141,6 +143,8 @@ HOST_UA: dict[str, str] = {
     "escholarship.org": HONEST_UA,
     # Unmet Hours (find_unmethours) serves the honest tool UA (verified 2026-10-02).
     "unmethours.com": HONEST_UA,
+    # DiVA (find_diva) serves full-text PDFs to the honest tool UA (verified 2026-10-02).
+    "www.diva-portal.org": HONEST_UA,
 }
 # POLITE hosts: a refusal or challenge means "stop and come back later", never "try another
 # identity". For these hosts the loader uses only HOST_UA, never the browser UA or the curl
@@ -149,7 +153,8 @@ HOST_UA: dict[str, str] = {
 # download for the host fails fast WITHOUT a request. Such failures and network timeouts are
 # marked `transient`, stay in the registry and are retried by later rounds (bounded by
 # prune_corpus.RETRY_MAX_*), and are never blocklisted.
-POLITE_HOSTS = frozenset({"publications.ibpsa.org", "escholarship.org", "unmethours.com"})
+POLITE_HOSTS = frozenset({"publications.ibpsa.org", "escholarship.org", "unmethours.com",
+                          "www.diva-portal.org"})
 CHALLENGE_STATUSES = frozenset({202, 403, 429, 503})
 CHALLENGE_BODY = re.compile(
     rb"sgcaptcha|captcha|challenge-platform|cf-chl|awswaf|request blocked|access denied", re.I
@@ -163,6 +168,7 @@ HOST_RUN_CAP: dict[str, int] = {
     "publications.ibpsa.org": 80,  # 80 x 3 s = 4 min
     "escholarship.org": 60,        # 60 x 4 s = 4 min
     "unmethours.com": 120,         # 120 x 2 s = 4 min
+    "www.diva-portal.org": 30,     # 30 x 10 s = 5 min
 }
 # Compliance/ESG programme (Codex decision 2026-09-25; ids bov-bfs- / reg- / eur- / esf-, see
 # scripts/compliance_common.py, which owns the reviewed delivery-host table): a programme row's

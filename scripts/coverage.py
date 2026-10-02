@@ -70,7 +70,7 @@ SOURCE_GENRE = {
     "openstudio-docs": "software_sim_docs", "soep": "software_sim_docs",
     "openmodelica-docs": "software_sim_docs", "modelica-spec": "software_sim_docs",
     "brick": "ontology_dataspec", "haystack": "ontology_dataspec", "open223": "ontology_dataspec",
-    "unmethours": "practitioner_qa",
+    "unmethours": "practitioner_qa", "diva": "research_papers",
     "wikipedia": "encyclopedic",
     "aceee": "industry_ngo_utility",
     "ngo_globalabc": "industry_ngo_utility",

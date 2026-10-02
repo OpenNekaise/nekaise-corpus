@@ -314,12 +314,14 @@ def _answer(status, body):
 
 
 def test_polite_hosts_are_serial_paced_and_use_an_honest_ua_only():
-    for host in ("publications.ibpsa.org", "escholarship.org", "unmethours.com"):
+    for host in ("publications.ibpsa.org", "escholarship.org", "unmethours.com",
+                 "www.diva-portal.org"):
         assert host in build_corpus.POLITE_HOSTS
         assert build_corpus.HOST_CONCURRENCY[host] == 1
         assert not build_corpus.HOST_UA[host].startswith("Mozilla")
     assert build_corpus.HOST_DELAY["publications.ibpsa.org"] >= 3.0
     assert build_corpus.HOST_DELAY["escholarship.org"] >= 4.0  # robots Crawl-delay: 4
+    assert build_corpus.HOST_DELAY["www.diva-portal.org"] >= 10.0  # robots Crawl-delay: 10
 
 
 @pytest.mark.parametrize(
