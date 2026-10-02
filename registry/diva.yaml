@@ -1,0 +1,195 @@
+# diva — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: dva-solar-photovoltaic-thermal-integration-with-ground-s
+    title: 'Solar Photovoltaic-Thermal Integration with Ground Source Heat Pump Systems
+      for Low-Energy-Single-Family Houses in Sweden: A Twenty-Year Operational S'
+    url: https://www.diva-portal.org/smash/get/diva2:2031584/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: diva2:2031584
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-02'
+  - id: dva-energianalys-av-k-rhuset-g6-en-analys-av-energianv-n
+    title: 'ENERGIANALYS AV KÅRHUSET G6: En analys av energianvändningen för Kårhuset
+      G6, med förslag till potentiellaenergiförbättringar'
+    url: https://www.diva-portal.org/smash/get/diva2:2033100/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: sv
+    published_at: '2026'
+    document_type: thesis
+    persistent_id: diva2:2033100
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-02'
+  - id: dva-energy-balance-analysis-in-a-residential-renewable-e
+    title: 'ENERGY BALANCE ANALYSIS IN A RESIDENTIAL RENEWABLE ENERGY COMMUNITY IN STOCKHOLM:
+      A MATLAB-Based Simulation of Photovoltaic, Battery Storage, and CHP '
+    url: https://www.diva-portal.org/smash/get/diva2:2035190/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2026'
+    document_type: thesis
+    persistent_id: diva2:2035190
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-02'
+  - id: dva-design-and-simulation-of-renewable-energy-systems-to
+    title: Design and Simulation of Renewable Energy Systems to Meet Industrial and
+      Service Sector Electricity Demand in Swedish Regions
+    url: https://www.diva-portal.org/smash/get/diva2:2034837/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2026'
+    document_type: thesis
+    persistent_id: diva2:2034837
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-02'
+  - id: dva-design-and-simulation-of-a-residential-microgrid
+    title: Design and Simulation of a Residential Microgrid
+    url: https://www.diva-portal.org/smash/get/diva2:2033443/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: diva2:2033443
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-02'
+  - id: dva-simulering-av-forcerad-luftkylning-av-frukt-hur-l-da
+    title: 'Simulering av forcerad luftkylning av frukt: Hur lådans design påverkar
+      ventilationens och kylningens homogenitet'
+    url: https://www.diva-portal.org/smash/get/diva2:634243/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: sv
+    published_at: '2013'
+    document_type: thesis
+    persistent_id: diva2:634243
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-02'
+  - id: dva-simulering-av-torkprocess-i-en-v-rmepumpsdiskmaskin-
+    title: 'Simulering av torkprocess i en värmepumpsdiskmaskin: Kondensering mot kalla
+      ytor'
+    url: https://www.diva-portal.org/smash/get/diva2:634242/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: sv
+    published_at: '2013'
+    document_type: thesis
+    persistent_id: diva2:634242
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-02'
+  - id: dva-kombinerat-system-f-r-ventilation-och-rumsuppv-rmnin
+    title: 'Kombinerat system för ventilation och rumsuppvärmning: Parameterundersökning
+      i simuleringsmodell för takvärmesystem'
+    url: https://www.diva-portal.org/smash/get/diva2:635402/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: sv
+    published_at: '2013'
+    document_type: thesis
+    persistent_id: diva2:635402
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-02'
+  - id: dva-klimatunders-kning-i-krypgrund-m-tning-och-simulerin
+    title: 'Klimatundersökning i krypgrund: Mätning och simulering av temperatur och
+      fukthalt'
+    url: https://www.diva-portal.org/smash/get/diva2:727916/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: sv
+    published_at: '2014'
+    document_type: thesis
+    persistent_id: diva2:727916
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-02'
+  - id: dva-precision-av-indata-vid-energiber-kningar-hur-p-verk
+    title: 'Precision av indata vid energiberäkningar: Hur påverkas energiberäkningar
+      vid valet av indata?'
+    url: https://www.diva-portal.org/smash/get/diva2:743683/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: sv
+    published_at: '2014'
+    document_type: thesis
+    persistent_id: diva2:743683
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-02'
+  - id: dva-utveckling-av-ytterv-ggskomponent-f-r-hantering-av-f
+    title: 'Utveckling av ytterväggskomponent: För hantering av frisk- och förbrukad
+      luft'
+    url: https://www.diva-portal.org/smash/get/diva2:952037/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: sv
+    published_at: '2016'
+    document_type: thesis
+    persistent_id: diva2:952037
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-02'
+  - id: dva-sikhall-naturhus-m-tning-och-simulering-av-temperatu
+    title: Sikhall naturhus, mätning och simulering av temperatur och luftfuktighet.
+    url: https://www.diva-portal.org/smash/get/diva2:941169/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: sv
+    published_at: '2016'
+    document_type: thesis
+    persistent_id: diva2:941169
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-02'
+  - id: dva-energisimulering-av-byggnadertidigt-i-projekteringsf
+    title: 'Energisimulering av byggnadertidigt i projekteringsfasen: En utvärdering
+      av Energy Analysis som verktyg för hållbar byggnadsdesign'
+    url: https://www.diva-portal.org/smash/get/diva2:855398/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: sv
+    published_at: '2015'
+    document_type: thesis
+    persistent_id: diva2:855398
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-02'
