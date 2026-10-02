@@ -121636,3 +121636,59 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.3389/fbuil.2023.1190374 openalex:W4387104660
     resolution: 'legacy: openalex location'
+  - id: ope-5th-generation-district-heating-and-cooling-sy
+    title: 5th generation district heating and cooling systems as a solution for renewable
+      urban thermal energy supply
+    url: https://adgeo.copernicus.org/articles/49/129/2019/adgeo-49-129-2019.pdf
+    source: openalex
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019-09-20'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/adgeo-49-129-2019
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://adgeo.copernicus.org/articles/49/129/2019/adgeo-49-129-2019.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-10-02'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/adgeo-49-129-2019 openalex:W2973740234
+    resolution: 'legacy: openalex location'
+  - id: ope-exploratory-literature-review-of-blockchain-in
+    title: Exploratory literature review of blockchain in the construction industry
+    url: https://discovery.ucl.ac.uk/10134004/7/Scott_Exploratory%20literature%20review%20of%20blockchain%20in%20the%20construction%20industry.pdf
+    source: openalex
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-09-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.autcon.2021.103914
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/10134004/7/Scott_Exploratory%20literature%20review%20of%20blockchain%20in%20the%20construction%20industry.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-10-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.autcon.2021.103914 openalex:W3198020096
+    resolution: 'legacy: openalex location'
+  - id: ope-inundation-analysis-of-metro-systems-with-the-
+    title: 'Inundation analysis of metro systems with the storm water management model
+      incorporated into a geographical information system: a case study in Shangh'
+    url: https://hess.copernicus.org/articles/23/4293/2019/hess-23-4293-2019.pdf
+    source: openalex
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019-10-24'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/hess-23-4293-2019
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://hess.copernicus.org/articles/23/4293/2019/hess-23-4293-2019.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-10-02'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/hess-23-4293-2019 openalex:W2981532286
+    resolution: 'legacy: openalex location'
