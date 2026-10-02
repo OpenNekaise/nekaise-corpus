@@ -121692,3 +121692,59 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/hess-23-4293-2019 openalex:W2981532286
     resolution: 'legacy: openalex location'
+  - id: ope-descriptive-analysis-of-the-performance-of-a-v
+    title: 'Descriptive Analysis of the Performance of a Vegetated Swale through Long-Term
+      Hydrological Monitoring: A Case Study from Coventry, UK'
+    url: https://pure.coventry.ac.uk/ws/files/31660780/Binder9.pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2020-10-06'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/w12102781
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://pure.coventry.ac.uk/ws/files/31660780/Binder9.pdf; version acceptedVersion]
+    rights_verified_at: '2026-10-02'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.3390/w12102781 openalex:W3092144365
+    resolution: 'legacy: openalex location'
+  - id: ope-assessing-the-impact-of-road-segment-obstructi
+    title: Assessing the impact of road segment obstruction on accessibility of critical
+      services in case of a hazard
+    url: https://nhess.copernicus.org/articles/19/1251/2019/nhess-19-1251-2019.pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019-06-26'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/nhess-19-1251-2019
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://nhess.copernicus.org/articles/19/1251/2019/nhess-19-1251-2019.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-10-02'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/nhess-19-1251-2019 openalex:W2954432497
+    resolution: 'legacy: openalex location'
+  - id: ope-the-influence-of-intersections-on-fuel-consump
+    title: 'The Influence of Intersections on Fuel Consumption in Urban Arterial Road
+      Traffic: A Single Vehicle Test in Harbin, China'
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0137477&type=printable
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2015-09-14'
+    document_type: article
+    persistent_id: https://doi.org/10.1371/journal.pone.0137477
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0137477&type=printable;
+      version publishedVersion]
+    rights_verified_at: '2026-10-02'
+    selected_version: publishedVersion
+    origin_ids: doi:10.1371/journal.pone.0137477 openalex:W2210803437
+    resolution: 'legacy: openalex location'
