@@ -3627,3 +3627,550 @@ sources:
     persistent_id: doi:10.5281/zenodo.22215880
     license_evidence: Zenodo record metadata.license.id = cc-by-4.0
     rights_verified_at: '2026-10-02'
+  - id: zns-computer-assisted-management-of-building-climate-and
+    title: Computer-Assisted Management of Building Climate and Microgrid with Model
+      Predictive Control
+    url: https://zenodo.org/api/records/1338662/files/10003400.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2016-01-05'
+    document_type: article
+    persistent_id: doi:10.5281/zenodo.1338662
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-review-on-hvac-and-energy-conservation-techniques-em
+    title: Review on HVAC and Energy conservation Techniques employed with BIM Systems
+    url: https://zenodo.org/api/records/19661880/files/review-on-hvac-and-energy-conservation-techniques-employed-with-bim-systems-IJERTV15IS041103.pdf/content
+    source: zenodo_sim
+    license: cc-by-nc
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2026-04-20'
+    document_type: article
+    persistent_id: doi:10.5281/zenodo.19661880
+    license_evidence: Zenodo record metadata.license.id = cc-by-nc-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-room-level-indoor-temperature-forecasting-using-a-gr
+    title: Room-level indoor temperature forecasting using a grey-box model with dynamic
+      thermostat offset and TRV-controlled heating
+    url: https://zenodo.org/api/records/21531314/files/room-level-indoor-temperature.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2026-06-30'
+    document_type: article
+    persistent_id: doi:10.1016/j.egyai.2026.100822
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-designing-a-generalised-reward-for-building-energy-m
+    title: Designing a generalised reward for Building Energy Management Reinforcement
+      Learning agents
+    url: https://zenodo.org/api/records/5583238/files/2021136865.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2021-09-08'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.5583238
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-smart-home-s-energy-management-through-a-clustering-
+    title: Smart Home's Energy Management Through a Clustering-Based Reinforcement Learning
+      Approach
+    url: https://zenodo.org/api/records/8398585/files/manuscript.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2022-10-18'
+    document_type: article
+    persistent_id: doi:10.1109/jiot.2022.3152586
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-human-centric-hvac-control-balancing-comfort-and-ene
+    title: 'Human-Centric HVAC Control: Balancing Comfort and Energy Efficiency'
+    url: https://zenodo.org/api/records/11080059/files/EJAET-10-10-42-48.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2023-10-31'
+    document_type: article
+    persistent_id: doi:10.5281/zenodo.11080059
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-the-role-of-reinforcement-learning-in-autonomous-arc
+    title: The role of reinforcement learning in autonomous architectural optimization
+      and energy efficiency
+    url: https://zenodo.org/api/records/15266720/files/WJARR-2024-3907.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2024-12-30'
+    document_type: article
+    persistent_id: doi:10.5281/zenodo.15266720
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-deep-reinforcement-learning-based-demond-response-ma
+    title: Deep Reinforcement Learning-Based Demond Response Management in Residential
+      Microgrids
+    url: https://zenodo.org/api/records/16149754/files/Deep%20Reinforcement%20Learning-Based%20Demond%20Response%20Management%20in%20Residential%20Microgrids.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2025-07-19'
+    persistent_id: doi:10.5281/zenodo.16149754
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-ai-driven-cooling-optimization-in-data-centers-reinf
+    title: 'AI-driven cooling optimization in data centers: Reinforcement learning for
+      dynamic workload placement and HVAC control'
+    url: https://zenodo.org/api/records/17184689/files/AI-driven%20cooling%20optimization%20in%20data%20centers%20Reinforcement%20learning%20for%20dynamic%20workload%20placement%20and%20HVAC%20control.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2025-09-23'
+    document_type: article
+    persistent_id: doi:10.5281/zenodo.17184689
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-a-state-feedback-bias-compensating-q-learning-value-
+    title: A State Feedback Bias Compensating Q-learning Value Iteration Algorithm for
+      Model-Free Game-Theoretic HVAC Optimal Control
+    url: https://zenodo.org/api/records/18321156/files/MECC%202025.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2025-10-05'
+    persistent_id: doi:10.5281/zenodo.18321156
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-a-conceptual-ai-based-approach-for-understanding-and
+    title: A CONCEPTUAL AI-BASED APPROACH FOR UNDERSTANDING AND REDUCING ELECTRICITY
+      CONSUMPTION IN HOMES AND CAMPUSES
+    url: https://zenodo.org/api/records/18638051/files/17.Abhinav%20Dinesan%20Nambiar.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2026-02-14'
+    document_type: journal
+    persistent_id: doi:10.5281/zenodo.18638051
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-towards-plug-play-smart-thermostats-inspired-by-rein
+    title: Towards plug&play smart thermostats inspired by reinforcement learning
+    url: https://zenodo.org/api/records/3380093/files/towards_plug_and_play.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2018-11-01'
+    document_type: article
+    persistent_id: doi:10.1145/3285017.3285024
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-exploring-the-potentialities-of-deep-reinforcement-l
+    title: Exploring the Potentialities of Deep Reinforcement Learning for Incentive-Based
+      Demand Response in a Cluster of Small Commercial Buildings
+    url: https://zenodo.org/api/records/14477412/files/fulltext.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2021-05-19'
+    document_type: article
+    persistent_id: doi:10.3390/en14102933
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-development-of-an-intelligent-system-with-fuzzy-logi
+    title: Development of an Intelligent System with Fuzzy Logic for Indoor Microclimate
+      Control
+    url: https://zenodo.org/api/records/19439827/files/Paper_26.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2024-12-06'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.19439827
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-reinforcement-learning-for-building-energy-control-s
+    title: 'Reinforcement Learning for Building Energy Control: Safety Constraints and
+      Comfort Complaints'
+    url: https://zenodo.org/api/records/22660643/files/revised_FAAIML_V3I1_2024_002_ReinforcementLearningBuildingEnergyControl.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2024-02-08'
+    document_type: article
+    persistent_id: doi:10.5281/zenodo.22660643
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-computational-combination-of-the-optical-properties-
+    title: Computational combination of the optical properties of fenestration layers
+      at high directional resolution
+    url: https://zenodo.org/api/records/437434/files/buildings-07-00022-v2_1_.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2017-01-01'
+    document_type: article
+    persistent_id: doi:10.5281/zenodo.437434
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-comparison-of-measured-and-computed-bsdf-of-a-daylig
+    title: Comparison of measured and computed BSDF of a daylight redirecting component
+    url: https://zenodo.org/api/records/545796/files/3_GROBE-1.pdf/content
+    source: zenodo_sim
+    license: cc-by-nc-nd
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2015-01-01'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.545796
+    license_evidence: Zenodo record metadata.license.id = cc-by-nc-nd-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-evaldrc-a-tool-for-annual-characterisation-of-daylig
+    title: 'EvalDRC: A Tool for Annual Characterisation of Daylight Redirecting Components
+      with Photon Mapping'
+    url: https://zenodo.org/api/records/545797/files/3_SCHREGLE-1.pdf/content
+    source: zenodo_sim
+    license: cc-by-nc-nd
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2015-01-01'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.545797
+    license_evidence: Zenodo record metadata.license.id = cc-by-nc-nd-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-the-assessment-of-daylight-reflections-from-buidling
+    title: The Assessment of daylight reflections from buidling envelopes
+    url: https://zenodo.org/api/records/545812/files/CISBAT2013_Yang_Reflections.pdf/content
+    source: zenodo_sim
+    license: cc-by-nc-nd
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2013-01-01'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.545812
+    license_evidence: Zenodo record metadata.license.id = cc-by-nc-nd-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-modeling-the-effects-of-daylight-scattering-by-windo
+    title: 'Modeling the effects of daylight scattering by window glass: The case of
+      6th century Hagia Sophia in Istanbul'
+    url: https://zenodo.org/api/records/1414008/files/Noback_ModelingEffectsDaylightScatteringHagiaSophia_AIHV-2018.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2018-09-12'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.1414008
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-photon-mapping-to-accelerate-daylight-simulation-wit
+    title: Photon mapping to accelerate daylight simulation with high-resolution, data-driven
+      fenestration models
+    url: https://zenodo.org/api/records/3559996/files/CISBAT2019_Grobe_PMapAccelerateDaylightSimDDFenestration_JPhysConfSer_2019.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2019-01-01'
+    document_type: other
+    persistent_id: doi:10.5281/zenodo.3559996
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-evaluating-kinetic-light-shelves-and-their-impacts-o
+    title: Evaluating kinetic light-shelves and their impacts on daylighting performance
+    url: https://zenodo.org/api/records/5730968/files/58%2020427-42731-1-PB.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2020-07-01'
+    document_type: article
+    persistent_id: doi:10.11591/ijeecs.v19.i1.pp476-484
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-data-driven-modelling-of-daylight-redirecting-fenest
+    title: Data-driven modelling of daylight redirecting fenestration at variable directional
+      resolution
+    url: https://zenodo.org/api/records/10154582/files/GrobeLO_Thesis_IYTE_print.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: 2019-10
+    document_type: dissertation
+    persistent_id: doi:10.5281/zenodo.10154582
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-light-distribution-and-glare-prevention-performance-
+    title: 'Light distribution and glare prevention performance of a complex fenestration
+      system: A simulation based evaluation'
+    url: https://zenodo.org/api/records/3629847/files/Paper_Sujanova_ATF2018.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2018-10-11'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.3629847
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-assessment-of-daylight-of-mid-rise-office-buildings-
+    title: Assessment of Daylight of Mid-Rise Office Buildings in Tropical Wet and Dry
+      Climate of Nigeria
+    url: https://zenodo.org/api/records/10465853/files/ARCHICULTURE...pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2019-12-01'
+    document_type: journal
+    persistent_id: doi:10.5281/zenodo.10465853
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-daylighting-optimization-and-visual-comfort-in-tropi
+    title: 'DAYLIGHTING OPTIMIZATION AND VISUAL COMFORT IN TROPICAL RETAIL ARCHITECTURE:
+      SIMULATION-BASED EVALUATION OF A SHOPPING MALL IN KEFFI, NASARAWA STATE'
+    url: https://zenodo.org/api/records/23079462/files/IIJEAS%20262590091234300%201%201.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2026-10-01'
+    persistent_id: doi:10.5281/zenodo.23079462
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-climate-based-daylight-simulation-as-a-planning-aid-
+    title: Climate-based daylight simulation as a planning aid for the design of solar
+      façades
+    url: https://zenodo.org/api/records/1095005/files/Grobe_ClimateBasedDaylightSim_EnergyForum-2013.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2013-01-01'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.1095005
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-daylight-scattering-by-late-antique-window-glass-fro
+    title: 'Daylight scattering by late antique window glass from Ephesos: Reconstructing
+      the spatial distribution of daylight in lost architecture'
+    url: https://zenodo.org/api/records/5094912/files/Grobe_DaylightScatteringLateAntiqueWindowGlassEphesus_CHNT24-2021.pdf/content
+    source: zenodo_sim
+    license: cc-by-nc-nd
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2021-06-10'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.5094912
+    license_evidence: Zenodo record metadata.license.id = cc-by-nc-nd-3.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-analyzing-fa-ade-scenarios-and-daylight-levels-in-th
+    title: 'Analyzing Façade Scenarios and Daylight Levels in the Reid Building: A Reflective
+      Case Study on the Designed Daylight under Overcast Sky'
+    url: https://zenodo.org/api/records/3299511/files/10010484.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2019-05-01'
+    document_type: article
+    persistent_id: doi:10.5281/zenodo.3299511
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-assessing-daylighting-strategies-for-enhancing-user-
+    title: 'ASSESSING DAYLIGHTING STRATEGIES FOR ENHANCING USER COMFORT IN THE PROPOSED
+      PRIME UNIVERSITY SENATE BUILDING, ABUJA, NIGERIA: A SIMULATION-BASED APPRO'
+    url: https://zenodo.org/api/records/20717072/files/IJLPSA%202615679991.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2026-06-16'
+    persistent_id: doi:10.5281/zenodo.20717072
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-monitoring-mass-timber-buildings-a-case-study-of-the
+    title: 'Monitoring Mass Timber Buildings: A Case Study of the InnoRenew CoE Building'
+    url: https://zenodo.org/api/records/3960807/files/SWST-2020-Proceedings%20(1).pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2020-07-15'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.3960807
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-mould-growth-risk-evaluation-of-internal-insulation-
+    title: Mould growth risk evaluation of internal insulation solutions in a historic
+      building under temperate climates
+    url: https://zenodo.org/api/records/3964383/files/3.%20Mould%20growth%20risk%20evaluation%20of%20internal%20insulation%20solutions%20in%20a%20historic%20building%20under%20temperate%20climates.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2018-05-14'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.3964383
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-internal-insulation-of-historic-buildings-a-stochast
+    title: 'Internal insulation of historic buildings: a stochastic approach to life-cycle
+      costing within RIBuild EU project'
+    url: https://zenodo.org/api/records/3964387/files/5.%20OK%20_%20SEB%202019.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2019-10-27'
+    document_type: conferencepaper
+    persistent_id: doi:10.1007/978-981-32-9868-2_30
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-decay-of-wooden-beams-in-historical-buildings-effect
+    title: 'Decay of wooden beams in historical buildings: effects of capillary active
+      insulation for the energy retrofit'
+    url: https://zenodo.org/api/records/3967432/files/2.%20OK%20_%20FULL-CLQMT_Gianangeli%20A.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2016-10-12'
+    document_type: article
+    persistent_id: doi:10.5281/zenodo.3967432
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-hygrothermal-and-acoustic-performance-of-two-innovat
+    title: Hygrothermal and Acoustic Performance of Two Innovative Envelope Renovation
+      Solutions Developed in the e-SAFE Project
+    url: https://zenodo.org/api/records/5139817/files/2021_Energies_eSAFE.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2021-07-02'
+    document_type: article
+    persistent_id: doi:10.3390/en14134006
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-hygrothermal-analysis-of-clt-based-retrofit-strategy
+    title: Hygrothermal analysis of CLT-based retrofit strategy of existing wall assemblies
+      according to EN 13788 Standard
+    url: https://zenodo.org/api/records/5548289/files/Paper_AIGE_2021.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2021-07-08'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.5548289
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-preliminary-investigation-on-the-transient-hygrother
+    title: Preliminary investigation on the transient hygrothermal analysis of a CLT-based
+      retrofit solution for exterior walls
+    url: https://zenodo.org/api/records/5552147/files/Paper_CISBAT_Hygrometric_final.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2021-09-09'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.5552147
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-prediction-of-indoor-climate-based-on-questionnaires
+    title: Prediction of indoor climate based on questionnaires
+    url: https://zenodo.org/api/records/5594952/files/NSB2014%20Paper%20171.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2014-06-19'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.5594952
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-a-modelling-approach-for-the-assessment-of-climate-c
+    title: A Modelling Approach for the Assessment of Climate Change Impact on the Fungal
+      Colonization of Historic Timber Structures
+    url: https://zenodo.org/api/records/6349690/files/forests-12-00819-v2.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2021-06-22'
+    document_type: article
+    persistent_id: doi:10.5281/zenodo.6349690
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-hygrothermal-performance-of-log-walls-in-a-building-
+    title: Hygrothermal performance of log walls in a building of 18th century and prediction
+      of climate change impact on biological deterioration
+    url: https://zenodo.org/api/records/6349732/files/e3sconf_nsb2020_15006.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2020-06-30'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.6349732
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-hygrothermal-performance-of-an-old-building-with-log
+    title: Hygrothermal performance of an old building with log walls from the region
+      of Vestfold in Norway
+    url: https://zenodo.org/api/records/6349736/files/Adaptinghistoricplacestoclimatechange_ProceedingsoftheinternationalvirtualconferenceoftheprojectAdaptNorthernHeritage_0506May2020.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2020-05-05'
+    document_type: article
+    persistent_id: doi:10.5281/zenodo.6349736
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-thermo-energy-and-environmental-evaluation-in-the-ve
+    title: 'THERMO-ENERGY AND ENVIRONMENTAL EVALUATION IN THE VERTICAL ENVELOPE OF HIGH-RISE
+      BUILDINGS: A CASE STUDY IN TUCUMÁN, ARGENTINA'
+    url: https://zenodo.org/api/records/6602823/files/NOCMAT_2022_paper_22.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2022-06-01'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.6602823
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
+  - id: zns-hygrothermal-evaluation-of-a-construction-component-
+    title: 'HYGROTHERMAL EVALUATION OF A CONSTRUCTION COMPONENT WITH TEXTILE WASTE:
+      THE CASE OF AISLA-SUSTEX'
+    url: https://zenodo.org/api/records/6611408/files/NOCMAT_2022_paper_11.pdf/content
+    source: zenodo_sim
+    license: cc-by
+    topic: simulation_modeling
+    format: pdf
+    published_at: '2022-06-03'
+    document_type: conferencepaper
+    persistent_id: doi:10.5281/zenodo.6611408
+    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
+    rights_verified_at: '2026-10-02'
