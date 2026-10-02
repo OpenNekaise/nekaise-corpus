@@ -314,7 +314,7 @@ def _answer(status, body):
 
 
 def test_polite_hosts_are_serial_paced_and_use_an_honest_ua_only():
-    for host in ("publications.ibpsa.org", "escholarship.org"):
+    for host in ("publications.ibpsa.org", "escholarship.org", "unmethours.com"):
         assert host in build_corpus.POLITE_HOSTS
         assert build_corpus.HOST_CONCURRENCY[host] == 1
         assert not build_corpus.HOST_UA[host].startswith("Mozilla")
@@ -352,6 +352,34 @@ def test_escholarship_refusal_is_transient_with_honest_ua(tmp_path, monkeypatch)
 
     assert row["transient"] is True
     assert calls[0][1] == build_corpus.HONEST_UA
+
+
+def _umh(n):
+    return {"id": f"umh-{n}", "title": f"Unmet Hours Q{n}", "source": "unmethours",
+            "license": "cc-by-sa", "url": f"https://unmethours.com/question/{n}/x/",
+            "topic": "simulation_modeling", "format": "html"}
+
+
+def test_unmethours_challenge_is_transient_and_trips_the_circuit(tmp_path, monkeypatch):
+    calls = _polite_env(monkeypatch, tmp_path, lambda _url: _answer(
+        200, b"<html><head><title>Just a moment...</title></head><body>cf-chl</body></html>"))
+
+    first = build_corpus.download_one(_umh(1))
+    second = build_corpus.download_one(_umh(2))
+
+    assert first["transient"] is True and "challenge" in first["error"]
+    assert second["transient"] is True and "circuit open" in second["error"]
+    assert len(calls) == 1 and calls[0][1] == build_corpus.HONEST_UA
+
+
+def test_unmethours_page_with_a_recaptcha_form_below_the_head_is_content(tmp_path, monkeypatch):
+    page = (b"<html><head><title>How to model transfer air? - Unmet Hours</title></head><body>"
+            + b"<p>question text</p>" * 400 + b"<div class='g-recaptcha'></div></body></html>")
+    _polite_env(monkeypatch, tmp_path, lambda _url: _answer(200, page))
+
+    row = build_corpus.download_one(_umh(3))
+
+    assert row["raw_path"] and "transient" not in row
 
 
 def test_circuit_is_rechecked_after_the_pacing_wait(tmp_path, monkeypatch):

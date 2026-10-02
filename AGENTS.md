@@ -130,7 +130,8 @@ Google Patents sitemap (the biggest open vein) · `find_wiki.py` multilingual Wi
 vein) · `find_ibpsa.py` IBPSA building-simulation proceedings (captcha-paced) ·
 `find_escholarship.py` LBNL + UC Berkeley CBE CC-licensed papers (disabled: WAF policy) · `find_nlr.py` National
 Laboratory of the Rockies (ex-NREL) building reports · `find_osti_sim.py` OSTI building energy /
-physical simulation query family (licence per record type) · the compliance/ESG programme (2026-09-25):
+physical simulation query family (licence per record) · `find_unmethours.py` Unmet Hours
+simulation Q&A pages (CC BY-SA 3.0, sitemap walk) · the compliance/ESG programme (2026-09-25):
 `find_boverket.py --mode bfs` every Boverket BFS (BBR/EKS, all versions) from the rinfo feed,
 `find_regdocs.py` statutes and guidance per `registry/regdocs.json`, `find_eurlex.py` EU building
 and sustainability-reporting law in 24 languages via the Publications Office Cellar
