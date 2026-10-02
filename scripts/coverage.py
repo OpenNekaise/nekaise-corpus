@@ -49,7 +49,7 @@ SOURCE_GENRE = {
     "arxiv": "research_papers", "openalex": "research_papers", "academic": "research_papers",
     "jstage_aij": "research_papers", "modelica_conf": "research_papers",
     "scielo_scl": "research_papers",
-    "osti": "us_gov_lab_reports", "gov_osti": "us_gov_lab_reports", "gov_pnnl": "us_gov_lab_reports",
+    "osti": "us_gov_lab_reports", "osti_sim": "us_gov_lab_reports", "gov_osti": "us_gov_lab_reports", "gov_pnnl": "us_gov_lab_reports",
     "gov_lbnl": "us_gov_lab_reports", "gov_doe": "us_gov_lab_reports", "gov_ca": "us_gov_lab_reports",
     "nist": "us_gov_lab_reports", "gsa": "us_gov_lab_reports", "naseo": "us_gov_lab_reports",
     "calnext": "us_gov_lab_reports", "wbdg": "us_gov_lab_reports", "energystar": "us_gov_lab_reports",

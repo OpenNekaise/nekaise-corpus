@@ -129,7 +129,8 @@ Google Patents sitemap (the biggest open vein) · `find_wiki.py` multilingual Wi
 `find_scielo.py` SciELO Brazil's CC-BY AEC journals (the biggest Portuguese built-environment
 vein) · `find_ibpsa.py` IBPSA building-simulation proceedings (captcha-paced) ·
 `find_escholarship.py` LBNL + UC Berkeley CBE CC-licensed papers (disabled: WAF policy) · `find_nlr.py` National
-Laboratory of the Rockies (ex-NREL) building reports · the compliance/ESG programme (2026-09-25):
+Laboratory of the Rockies (ex-NREL) building reports · `find_osti_sim.py` OSTI building energy /
+physical simulation query family (licence per record type) · the compliance/ESG programme (2026-09-25):
 `find_boverket.py --mode bfs` every Boverket BFS (BBR/EKS, all versions) from the rinfo feed,
 `find_regdocs.py` statutes and guidance per `registry/regdocs.json`, `find_eurlex.py` EU building
 and sustainability-reporting law in 24 languages via the Publications Office Cellar
@@ -363,6 +364,11 @@ Building-energy vein: `controls_bas` · `equipment_systems` · `building_energy`
 
 Built-environment / AEC vein (added round 7): `structures_civil` · `construction` · `materials` ·
 `architecture` · `infrastructure` · `urban`
+
+Simulation vein (added 2026-10-02, operator-approved): `simulation_modeling` — building energy and
+physical simulation modelling (BES tools, HVAC/controls simulation, CFD/airflow, daylighting,
+hygrothermal, urban energy modelling, calibration, co-simulation, digital twins). New simulation
+sources carry it; existing rows are not relabelled in bulk.
 
 Topics are just a **radar label** for coverage — they don't gate anything except `scripts/coverage.py`.
 The real relevance gate is the `DOMAIN` regex in `scripts/quality.py` (widened in round 7 to AEC/built-env

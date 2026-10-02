@@ -32,7 +32,7 @@ LICENSES = set(registry.KNOWN_LICENSES)
 EVIDENCE_PREFIXES = ("arx-", "ope-", "oa-", "arxiv-")
 TOPICS = {"controls_bas", "equipment_systems", "building_energy", "commissioning_fdd",
           "standards_protocols", "structures_civil", "construction", "materials",
-          "architecture", "infrastructure", "urban"}
+          "architecture", "infrastructure", "urban", "simulation_modeling"}
 FORMATS = {"pdf", "html", "md", "rst", "txt", "tex", "troff"}
 # Scholarly families require copy-specific evidence (no generic `open` fallback). A loader
 # redirect can invalidate the selected copy's grant: its payload-bound unresolved decision is

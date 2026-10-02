@@ -61,6 +61,8 @@ DOMAIN = [
                            r"beleuchtung|éclairage")),
     ("controls_bas",    rx(r"bacnet|building automation|\bbas\b|thermostat|setpoint|sensor|"
                            r"fault detection|smart building|楼宇自控|控制系统")),
+    ("simulation",      rx(r"simulat|energyplus|modelica|openstudio|trnsys|\bcfd\b|digital twin|"
+                           r"仿真|模拟|シミュレーション")),
     ("constr_mgmt",     rx(r"construction management|project delivery|cost estimat|scheduling|"
                            r"procurement|construction safety|施工管理|造价|工程管理|bauleitung")),
 ]

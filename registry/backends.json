@@ -427,5 +427,17 @@
     "enabled": false,
     "required": false,
     "reason": "awaiting collect-all licence classes (proprietary issuer reports) and the dedicated ESEF Inline-XBRL extractor; compliance/ESG programme (operator request 2026-09-25: everything publicly obtainable behind AI-BOB-style building-code compliance checking and CTI-style ESG report extraction; Codex decision 2026-09-25): annual reports of 74 reviewed AEC issuers (registry/esef.json) via filings.xbrl.org"
+  },
+  "find_osti_sim": {
+    "script": "find_osti_sim.py",
+    "args": [
+      "--pages",
+      "6",
+      "--max",
+      "150"
+    ],
+    "enabled": true,
+    "required": false,
+    "reason": "NEW 2026-10-02: OSTI building energy / physical simulation query family (EnergyPlus, OpenStudio, Modelica, DOE-2, TRNSYS, CONTAM, CFD, Radiance, WUFI, ResStock/ComStock/URBANopt, calibration, co-simulation, MPC/RL, digital twins); query-major walk of ~36k full-text records, strict building-science title gate; licence per record: an explicit CC statement in the rights field, else DOE PAGES accepted manuscripts publisher-oa and everything else unverified (OSTI public access is not public domain); 1 request/s; required=false because www.osti.gov had a 2026-07/09 outage"
   }
 }
