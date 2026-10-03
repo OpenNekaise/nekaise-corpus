@@ -12908,20 +12908,6 @@ sources:
       Engineering and Design): free to read under the DOE Public Access Plan; publisher
       copyright, no reuse licence'
     rights_verified_at: '2026-10-03'
-  - id: osm-evaluation-of-air-barriers-for-residential-buildings
-    title: Evaluation of Air Barriers for Residential Buildings
-    url: https://www.osti.gov/servlets/purl/1134643
-    source: osti_sim
-    license: unverified
-    topic: simulation_modeling
-    format: pdf
-    language: en
-    published_at: '2014-05-01'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1134643
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-03'
   - id: osm-experimentally-validated-computational-modeling-of-c
     title: Experimentally Validated Computational Modeling of Creep and Creep-Cracking
       for Nuclear Concrete Structures
@@ -13061,6 +13047,138 @@ sources:
     format: pdf
     language: en
     published_at: '2026-08-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-resilient-buildings-for-fire-adapted-landscapes-ee-a
+    title: 'Resilient buildings for fire-adapted landscapes: EE and flexible loads integrated
+      with solar and storage microgrids'
+    url: https://www.osti.gov/servlets/purl/1713313
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2020-11-09'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-dynamic-machine-learning-based-optimization-algorith
+    title: Dynamic machine learning-based optimization algorithm to improve boiler efficiency
+    url: https://www.osti.gov/servlets/purl/2418188
+    source: osti_sim
+    license: publisher-oa
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2022-11-28'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.jprocont.2022.11.002
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Journal
+      of Process Control): free to read under the DOE Public Access Plan; publisher
+      copyright, no reuse licence'
+    rights_verified_at: '2026-10-03'
+  - id: osm-decision-oriented-dynamic-operating-envelopes-for-di
+    title: Decision-Oriented Dynamic Operating Envelopes for Distributed Energy Resources
+      via End-to-End Learning With Simulation-in-the-Loop
+    url: https://www.osti.gov/servlets/purl/3682402
+    source: osti_sim
+    license: publisher-oa
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2026-07-01'
+    document_type: journal-article
+    persistent_id: doi:10.1109/tste.2026.3660223
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (IEEE
+      Transactions on Sustainable Energy): free to read under the DOE Public Access
+      Plan; publisher copyright, no reuse licence'
+    rights_verified_at: '2026-10-03'
+  - id: osm-learning-from-correlated-events-for-equipment-relati
+    title: Learning from Correlated Events for Equipment Relation Inference in Buildings
+    url: https://www.osti.gov/servlets/purl/1567727
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2019-11-13'
+    document_type: conference-paper
+    persistent_id: doi:10.1145/3360322.3360852
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-experimentally-determined-characteristics-of-radiant
+    title: Experimentally-determined characteristics of radiant systems for office buildings
+    url: https://www.osti.gov/servlets/purl/1633223
+    source: osti_sim
+    license: publisher-oa
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2018-07-01'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.apenergy.2018.03.121
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Applied
+      Energy): free to read under the DOE Public Access Plan; publisher copyright, no
+      reuse licence'
+    rights_verified_at: '2026-10-03'
+  - id: osm-development-of-a-health-monitoring-framework-applica
+    title: 'Development of a health monitoring framework: Application to a supercritical
+      pulverized coal-fired boiler'
+    url: https://www.osti.gov/servlets/purl/2447448
+    source: osti_sim
+    license: publisher-oa
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2023-12-27'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.energy.2023.130153
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Energy):
+      free to read under the DOE Public Access Plan; publisher copyright, no reuse licence'
+    rights_verified_at: '2026-10-03'
+  - id: osm-adopting-energy-efficiency-in-connected-homes
+    title: Adopting Energy Efficiency in Connected Homes
+    url: https://www.osti.gov/servlets/purl/1405068
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2017-10-02'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-a-critical-exploration-of-the-efficiency-impacts-of-
+    title: A Critical Exploration of the Efficiency Impacts of Demand Response From
+      HVAC in Commercial Buildings
+    url: https://www.osti.gov/servlets/purl/1725807
+    source: osti_sim
+    license: publisher-oa
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2020-07-17'
+    document_type: journal-article
+    persistent_id: doi:10.1109/jproc.2020.3006804
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Proceedings
+      of the IEEE): free to read under the DOE Public Access Plan; publisher copyright,
+      no reuse licence'
+    rights_verified_at: '2026-10-03'
+  - id: osm-model-free-control-of-building-hvac-systems-to-accom
+    title: Model-free Control of Building HVAC Systems to Accommodate Solar Photovoltaic
+      Energy
+    url: https://www.osti.gov/servlets/purl/1468188
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2018-07-01'
     document_type: conference-paper
     license_evidence: OSTI Conference full text; the OSTI record states no rights and
       OSTI distinguishes public access from public domain (osti.gov/disclaim)
