@@ -121844,3 +121844,22 @@ sources:
     rights_verified_at: '2026-10-02T21:56:41Z'
     origin_ids: doi:10.3389/fenvs.2019.00199 openalex:W3001697928
     resolution: 'legacy: openalex location'
+  - id: ope-accurate-extraction-of-surface-water-in-comple
+    title: Accurate extraction of surface water in complex environment based on Google
+      Earth Engine and Sentinel-2
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0253209&type=printable
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2021-06-18'
+    document_type: article
+    persistent_id: https://doi.org/10.1371/journal.pone.0253209
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0253209&type=printable;
+      version publishedVersion]
+    rights_verified_at: '2026-10-03'
+    selected_version: publishedVersion
+    origin_ids: doi:10.1371/journal.pone.0253209 openalex:W3168025151
+    resolution: 'legacy: openalex location'
