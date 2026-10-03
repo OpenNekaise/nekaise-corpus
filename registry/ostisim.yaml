@@ -7981,18 +7981,190 @@ sources:
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-03'
-  - id: osm-report-of-the-south-texas-project-allegations-review
-    title: Report of the South Texas Project Allegations Review Team. Docket Nos. 50-498
-      and 50-499, Houston Lighting and Power Company et al.
-    url: https://www.osti.gov/servlets/purl/46681
+  - id: osm-market-assessment-for-active-solar-heating-and-cooli
+    title: 'Market assessment for active solar heating and cooling products. Category
+      B: a survey of decision-makers in the HVAC marketplace. Final report'
+    url: https://www.osti.gov/servlets/purl/6890045
     source: osti_sim
     license: unverified
     topic: simulation_modeling
     format: pdf
     language: en
-    published_at: '1995-03-01'
+    published_at: '1980-09-01'
     document_type: technical-report
-    persistent_id: doi:10.2172/46681
+    persistent_id: doi:10.2172/6890045
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-model-based-optimal-design-of-active-cool-thermal-en
+    title: Model-based optimal design of active cool thermal energy storage for maximal
+      life-cycle cost saving from demand management in commercial buildings
+    url: https://www.osti.gov/servlets/purl/1366386
+    source: osti_sim
+    license: publisher-oa
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2016-12-23'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.apenergy.2016.12.035
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Applied
+      Energy): free to read under the DOE Public Access Plan; publisher copyright, no
+      reuse licence'
+    rights_verified_at: '2026-10-03'
+  - id: osm-ground-source-integrated-heat-pump-gs-ihp-developmen
+    title: Ground Source Integrated Heat Pump (GS-IHP) Development
+    url: https://www.osti.gov/servlets/purl/1080358
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2013-05-24'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1080358
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-impact-of-installation-faults-on-heat-pump-performan
+    title: Impact of Installation Faults on Heat Pump Performance
+    url: https://www.osti.gov/servlets/purl/1185872
+    source: osti_sim
+    license: publisher-oa
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2015-01-01'
+    document_type: journal-article
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (IEA
+      Heat Pump Center Newsletter (Online)): free to read under the DOE Public Access
+      Plan; publisher copyright, no reuse licence'
+    rights_verified_at: '2026-10-03'
+  - id: osm-revisions-to-the-srcc-rating-process-for-solar-water
+    title: Revisions to the SRCC Rating Process for Solar Water Heaters
+    url: https://www.osti.gov/servlets/purl/1220053
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2012-06-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1220053
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-comparative-study-among-hybrid-ground-source-heat-pu
+    title: COMPARATIVE STUDY AMONG HYBRID GROUND SOURCE HEAT PUMP SYSTEM, COMPLETE GROUND
+      SOURCE HEAT PUMP AND CONVENTIONAL HVAC SYSTEM
+    url: https://www.osti.gov/servlets/purl/1039052
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2011-11-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-analysis-of-highly-efficient-electric-residential-hp
+    title: Analysis of highly-efficient electric residential HPWHs
+    url: https://www.osti.gov/servlets/purl/1024282
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2011-09-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1024282
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-adaptive-full-spectrum-solar-energy-systems-cross-cu
+    title: 'Adaptive Full-Spectrum Solar Energy Systems: Cross-Cutting R&D on adaptive
+      full-spectrum solar energy systems for more efficient and affordable use of'
+    url: https://www.osti.gov/servlets/purl/1084638
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2007-05-10'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1084638
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-stochastic-control-of-energy-efficient-buildings-a-s
+    title: 'Stochastic Control of Energy Efficient Buildings: A Semidefinite Programming
+      Approach'
+    url: https://www.osti.gov/servlets/purl/1265794
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2015-01-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-initial-business-case-analysis-of-two-integrated-hea
+    title: Initial Business Case Analysis of Two Integrated Heat Pump HVAC Systems for
+      Near-Zero-Energy Homes
+    url: https://www.osti.gov/servlets/purl/931584
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2006-11-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/931584
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-current-tes-capabilities-in-trnsys-presentation
+    title: Current TES Capabilities in TRNSYS (Presentation)
+    url: https://www.osti.gov/servlets/purl/888686
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2003-02-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-low-cost-solar-water-heater
+    title: Low Cost Solar Water Heater
+    url: https://www.osti.gov/servlets/purl/861446
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2005-12-16'
+    document_type: technical-report
+    persistent_id: doi:10.2172/861446
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-solar-water-heating-technical-support-technical-repo
+    title: Solar water heating technical support. Technical report for November 1997--April
+      1998 and final report
+    url: https://www.osti.gov/servlets/purl/308018
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1998-10-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/308018
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-03'
