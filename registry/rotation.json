@@ -153,20 +153,20 @@
   },
   "find_openalex": {
     "flag": "--query-cursor",
-    "next": 2210,
+    "next": 2211,
     "step": 1,
     "note": "RE-AIMED 2026-08-26 after OpenAlex introduced usage pricing: anonymous access has 100 search requests/day, while the old all-query run made 105 requests and exhausted the budget. One query per round stays below the limit at the live ~72-round/day maximum; the flattened cursor advances across the frozen 105-query list, then continues at page 2 and deeper. Any query-list change requires a reviewed cursor migration."
   },
   "find_openalex_sim": {
     "flag": "--family-cursor",
-    "next": "sim1 t=428 q=0 w=0 p=2 k=0 sq=8 sw=1 sp=1 sk=0",
+    "next": "sim1 t=429 q=0 w=0 p=2 k=0 sq=8 sw=1 sp=1 sk=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families cursor 'sim1 t=<runs> q=<query> w=<date window> p=<page> k=<results finished on that page>' for the simulation walk plus sq/sw/sp/sk for the SSRN-origin walk. Which walk searches in a round comes from the round id (openalex_families.budget_slot), never from this cursor. A --max or lookup-cap stop keeps the page with its k; a failed or malformed search keeps the whole cursor. Changing openalex_families.SIMULATION queries/windows needs a new version and a reviewed cursor migration."
   },
   "find_openalex_ai": {
     "flag": "--family-cursor",
-    "next": "ai1 t=472 q=0 w=0 p=3 k=0",
+    "next": "ai1 t=473 q=0 w=0 p=3 k=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families BUILDING_AI cursor 'ai1 t q w p k' (same semantics as find_openalex_sim's main walk)."
@@ -179,7 +179,7 @@
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 2607,
+    "next": 2608,
     "step": 1,
     "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature).",
     "vendor_retry": {
@@ -189,26 +189,6 @@
           "first_failure_at": 0,
           "next_retry_at": 0,
           "pages": [
-            "https://www.sauter-controls.com/en/produkt/heating-and-district-heating-controller-equitherm/",
-            "https://www.sauter-controls.com/en/produkt/heating-and-district-heating-controller-equitherm-2/",
-            "https://www.sauter-controls.com/fr/produkt/regulateur-de-chauffage-avec-interface-utilisateur-numerique-equitherm/",
-            "https://www.sauter-controls.com/fr/produkt/regulateur-de-chauffage-et-de-chauffage-a-distance-equitherm/",
-            "https://www.sauter-controls.com/en/produkt/rotary-actuator-with-sauter-universal-technology-sut-for-ball-valve/",
-            "https://www.sauter-controls.com/en/produkt/sauter-ems-and-ems-mobile/",
-            "https://www.sauter-controls.com/en/produkt/pneumatic-relay-pluggable/",
-            "https://www.sauter-controls.com/fr/produkt/sauter-ems-et-ems-mobile/",
-            "https://www.sauter-controls.com/fr/produkt/relais-pneumatiques-enfichables/",
-            "https://www.sauter-controls.com/fr/produkt/servomoteur-rotatif-avec-sauter-universal-technology-sut-pour-vanne-a-boule/",
-            "https://www.sauter-controls.com/en/produkt/distributor-for-control-signals/",
-            "https://www.sauter-controls.com/fr/produkt/repartiteur-pour-signaux-de-reglage/",
-            "https://www.sauter-controls.com/en/produkt/energy-data-logger-fur-ems/",
-            "https://www.sauter-controls.com/en/produkt/8-x-ao-and-8-x-di-ci-i-o-module-modu671-io/",
-            "https://www.sauter-controls.com/en/produkt/2-way-regulating-ball-valve-with-female-thread-pn-40/",
-            "https://www.sauter-controls.com/en/produkt/3-way-regulating-ball-valve-with-female-thread-pn-40/",
-            "https://www.sauter-controls.com/en/produkt/3-way-change-over-ball-valve-l-with-female-thread-pn-40/",
-            "https://www.sauter-controls.com/en/produkt/3-way-change-over-ball-valve-t-with-female-thread-pn-40/",
-            "https://www.sauter-controls.com/en/produkt/2-way-cut-off-ball-valve-with-female-thread-pn-40/",
-            "https://www.sauter-controls.com/fr/produkt/vanne-a-boule-de-regulation-2-voies-avec-filetage-interieur-pn-40/",
             "https://www.sauter-controls.com/fr/produkt/vanne-a-boule-de-regulation-3-voies-avec-filetage-interieur-pn-40/",
             "https://www.sauter-controls.com/fr/produkt/vanne-a-boule-de-commutation-3-voies-t-avec-filetage-interieur-pn-40/",
             "https://www.sauter-controls.com/fr/produkt/vanne-a-boule-darret-2-voies-avec-filetage-interieur-pn-40/",
@@ -444,21 +424,21 @@
   },
   "find_osti_sim": {
     "flag": "--cursor",
-    "next": "q=24 p=9",
+    "next": "q=24 p=15",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-10-02: 'q=<index into find_osti_sim.QUERIES (append-only)> p=<API page>'; query-major walk, each query to its last (short) page; an unexpected answer holds; past the last query the backend reports EXHAUSTED (append new queries and re-enable to continue)."
   },
   "find_unmethours": {
     "flag": "--cursor",
-    "next": "31524",
+    "next": "32043",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-10-02: '<last question id walked>' over the unmethours.com sitemap in ascending id order, or 'watch:<YYYY-MM-DD>:<id>' after the end (sitemap re-read at most every 7 days for new questions)."
   },
   "find_diva": {
     "flag": "--cursor",
-    "next": "0:2024:1791039360444/diva/swepub_mods/2800/100/Technology/2024-01-01T00:00:00Z/2024-12-31T23:59:59Z/",
+    "next": "0:2024:1791040861482/diva/swepub_mods/3600/100/Technology/2024-01-01T00:00:00Z/2024-12-31T23:59:59Z/",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-10-02: '<index into find_diva.SETS (append-only)>:<datestamp year>:<OAI resumptionToken|START>', newest year first down to 1995 per set; a rejected token restarts its year; past the last set the backend reports EXHAUSTED. Records modified after their year was walked land in a newer, already-walked year: reset to the current year occasionally."

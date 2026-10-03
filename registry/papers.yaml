@@ -121900,3 +121900,20 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1111/iere.12475 openalex:W4230664013
     resolution: 'legacy: openalex location'
+  - id: ope-digital-twin-for-autonomous-surface-vessels-en
+    title: 'Digital Twin for Autonomous Surface Vessels: Enabler for Safe Maritime Navigation'
+    url: https://arxiv.org/pdf/2411.03465
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-11-05'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2411.03465
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2411.03465; version submittedVersion]
+    rights_verified_at: '2026-10-03'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2411.03465 openalex:W4404354591
+    resolution: 'legacy: openalex location'
