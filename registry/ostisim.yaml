@@ -11286,20 +11286,6 @@ sources:
     license_evidence: OSTI Conference full text; the OSTI record states no rights and
       OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-03'
-  - id: osm-a-policymaker-s-guide-to-scaling-home-energy-upgrade
-    title: A Policymaker's Guide to Scaling Home Energy Upgrades
-    url: https://www.osti.gov/servlets/purl/1331040
-    source: osti_sim
-    license: unverified
-    topic: simulation_modeling
-    format: pdf
-    language: en
-    published_at: '2015-09-01'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1331040
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-03'
   - id: osm-caught-in-headlights-captive-white-tailed-deer-respo
     title: 'Caught in headlights: Captive white-tailed deer responses to variations
       in vehicle lighting during imminent collision scenarios'
@@ -13608,4 +13594,174 @@ sources:
     persistent_id: doi:10.20357/b70033
     license_evidence: OSTI Conference full text; the OSTI record states no rights and
       OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-construction-of-energy-stable-projection-based-reduc
+    title: Construction of energy-stable projection-based reduced order models
+    url: https://www.osti.gov/servlets/purl/1145405
+    source: osti_sim
+    license: publisher-oa
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2014-12-15'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.amc.2014.10.073
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Applied
+      Mathematics and Computation): free to read under the DOE Public Access Plan; publisher
+      copyright, no reuse licence'
+    rights_verified_at: '2026-10-03'
+  - id: osm-approaches-for-building-stable-projection-based-redu
+    title: Approaches for building stable projection-based reduced order models for
+      compressible flow.
+    url: https://www.osti.gov/servlets/purl/1456589
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2017-04-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-construction-of-energy-stable-galerkin-reduced-order
+    title: Construction of Energy-Stable Galerkin Reduced Order Models
+    url: https://www.osti.gov/servlets/purl/1088071
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2013-05-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1088071
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-approaches-for-building-stable-projection-base-2
+    title: Approaches for building stable projection-based reduced order models.
+    url: https://www.osti.gov/servlets/purl/1497601
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2014-08-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-building-to-grid-integration-research
+    title: Building to Grid Integration Research.
+    url: https://www.osti.gov/servlets/purl/1677635
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2013-12-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-adaptive-control-for-energy-conservation-august-1-19
+    title: Adaptive control for energy conservation, August 1, 1976--February 15, 1977.
+      [For solar heated and cooled buildings; SOLCON code]
+    url: https://www.osti.gov/servlets/purl/7102423
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1977-03-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/7102423
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-thermal-storage-performance-of-a-dual-purpose-underg
+    title: Thermal Storage Performance of a Dual-Purpose Underground Thermal Battery
+      for Shaping the Electric Demand of Buildings
+    url: https://www.osti.gov/servlets/purl/1818725
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2020-12-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-2017-geothermal-technologies-office-annual-report
+    title: 2017 Geothermal Technologies Office Annual Report
+    url: https://www.osti.gov/servlets/purl/1420228
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2018-01-29'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1420228
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-application-analysis-of-ground-source-heat-pumps-in-
+    title: Application analysis of ground source heat pumps in building space conditioning
+    url: https://www.osti.gov/servlets/purl/1165368
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2013-07-01'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-field-demonstration-of-ground-source-integrated-heat
+    title: Field Demonstration of Ground-Source Integrated Heat Pump Part I. Technology
+      and Field Demo System/Site Descriptions, and Preliminary Summer/Fall Perf
+    url: https://www.osti.gov/servlets/purl/1238754
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2016-02-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1238754
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-case-study-of-the-arra-funded-gshp-demonstration-at-
+    title: Case Study of The ARRA-Funded GSHP Demonstration at the Natural Sources Building,
+      Montana Tech
+    url: https://www.osti.gov/servlets/purl/1185865
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2014-12-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1185865
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-recovery-act-tennessee-energy-efficient-schools-init
+    title: 'Recovery Act: Tennessee Energy Efficient Schools Initiative Ground Source
+      Heat Pump Program'
+    url: https://www.osti.gov/servlets/purl/1352592
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2017-04-24'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1352592
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-03'
