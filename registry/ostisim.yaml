@@ -4760,20 +4760,6 @@ sources:
     license_evidence: OSTI Conference full text; the OSTI record states no rights and
       OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-02'
-  - id: osm-winter-2015-progress-update-better-buildings-allianc
-    title: 'Winter 2015 Progress Update: Better Buildings Alliance'
-    url: https://www.osti.gov/servlets/purl/1671886
-    source: osti_sim
-    license: unverified
-    topic: simulation_modeling
-    format: pdf
-    language: en
-    published_at: '2014-12-31'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1671886
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-02'
   - id: osm-enabling-efficient-responsive-and-resilient-building
     title: 'Enabling Efficient, Responsive, and Resilient Buildings: Collaboration Between
       the United States and India'
@@ -11179,6 +11165,20 @@ sources:
     published_at: '2001-06-30'
     document_type: technical-report
     persistent_id: doi:10.2172/891318
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-long-term-energy-and-emissions-savings-potential-in-
+    title: Long-term Energy and Emissions Savings Potential in New York City Buildings
+    url: https://www.osti.gov/servlets/purl/1113715
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2012-09-30'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1113715
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-03'

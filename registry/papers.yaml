@@ -121863,3 +121863,22 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.1371/journal.pone.0253209 openalex:W3168025151
     resolution: 'legacy: openalex location'
+  - id: ope-a-review-of-energy-efficiency-strategies-in-sm
+    title: 'A Review of Energy Efficiency Strategies in Smart Buildings: Integrating
+      Occupant Comfort, HVAC Optimisation, and Building Automation'
+    url: https://irep.ntu.ac.uk/id/eprint/54673/1/2522408_Al-Habaibeh.pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-10-29'
+    document_type: article
+    persistent_id: https://doi.org/10.5334/rss.9
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://irep.ntu.ac.uk/id/eprint/54673/1/2522408_Al-Habaibeh.pdf; version
+      acceptedVersion]
+    rights_verified_at: '2026-10-03'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.5334/rss.9 openalex:W4415655166
+    resolution: 'legacy: openalex location'
