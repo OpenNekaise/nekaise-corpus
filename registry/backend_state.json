@@ -15,6 +15,10 @@
     "enabled": false,
     "reason": "exhausted: all 8 OJS venues harvested"
   },
+  "find_osti_sim": {
+    "enabled": false,
+    "reason": "exhausted: all 36 OSTI simulation queries walked"
+  },
   "find_zenodo_sim": {
     "enabled": false,
     "reason": "exhausted: all 29 Zenodo simulation queries walked"
