@@ -4802,20 +4802,6 @@ sources:
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-02'
-  - id: osm-energy-savings-measure-packages-existing-homes
-    title: 'Energy Savings Measure Packages: Existing Homes'
-    url: https://www.osti.gov/servlets/purl/1219325
-    source: osti_sim
-    license: unverified
-    topic: simulation_modeling
-    format: pdf
-    language: en
-    published_at: '2011-11-01'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1219325
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-02'
   - id: osm-enabling-efficient-responsive-and-resilient-building
     title: 'Enabling Efficient, Responsive, and Resilient Buildings: Collaboration Between
       the United States and India'
@@ -4897,5 +4883,163 @@ sources:
     published_at: '2000-05-01'
     document_type: journal-article
     license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-analysis-of-2009-international-energy-conserva-3
+    title: Analysis of 2009 International Energy Conservation Code Requirements for
+      Residential Buildings in Utah
+    url: https://www.osti.gov/servlets/purl/1000177
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2009-05-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1000177
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-improving-information-technology-to-maximize-fenestr
+    title: Improving information technology to maximize fenestration energyefficiency
+    url: https://www.osti.gov/servlets/purl/861179
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2001-06-06'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-analysis-of-potential-benefits-and-costs-of-up-3
+    title: Analysis of Potential Benefits and Costs of Updating the Commercial Building
+      Energy Code in North Dakota
+    url: https://www.osti.gov/servlets/purl/963251
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2004-04-30'
+    document_type: technical-report
+    persistent_id: doi:10.2172/963251
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-statewide-savings-projections-from-the-adoption-of-c
+    title: Statewide Savings Projections from the Adoption of Commercial Building Energy
+      Codes in Illinois
+    url: https://www.osti.gov/servlets/purl/971903
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2002-09-30'
+    document_type: technical-report
+    persistent_id: doi:10.2172/971903
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-using-measured-equipment-load-profiles-to-right-size
+    title: Using measured equipment load profiles to 'right-size' HVACsystems and reduce
+      energy use in laboratory buildings (Pt. 2)
+    url: https://www.osti.gov/servlets/purl/929009
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2005-06-29'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-performance-metrics-and-life-cycle-information-manag
+    title: Performance metrics and life-cycle information management for building performance
+      assurance
+    url: https://www.osti.gov/servlets/purl/8624
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1998-06-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-evaluation-of-integrated-wall-systems-incorporating-
+    title: Evaluation of integrated wall systems incorporating electrochromic windows
+      [Final report]
+    url: https://www.osti.gov/servlets/purl/803361
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2001-03-30'
+    document_type: technical-report
+    persistent_id: doi:10.2172/803361
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-documenting-performance-metrics-in-a-building-life-c
+    title: Documenting performance metrics in a building life-cycle information system
+    url: https://www.osti.gov/servlets/purl/676944
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1998-08-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-a-three-story-prototype-commercial-building-model-fo
+    title: A three-story prototype commercial building model for energy standard development
+      and assessment
+    url: https://www.osti.gov/servlets/purl/10166807
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1994-06-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-construction-cost-impact-analysis-of-the-u-s-departm
+    title: Construction cost impact analysis of the U.S. Department of Energy mandatory
+      performance standards for new federal commercial and multi-family, high-r
+    url: https://www.osti.gov/servlets/purl/10110216
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1993-12-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/10110216
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-02'
+  - id: osm-applicability-of-related-data-algorithms-and-models-
+    title: Applicability of Related Data, Algorithms, and Models to the Simulation of
+      Ground-Coupled Residential Hot Water Piping in California
+    url: https://www.osti.gov/servlets/purl/957038
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2006-01-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/957038
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-02'

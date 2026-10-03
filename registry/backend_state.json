@@ -14,5 +14,9 @@
   "find_ojs": {
     "enabled": false,
     "reason": "exhausted: all 8 OJS venues harvested"
+  },
+  "find_zenodo_sim": {
+    "enabled": false,
+    "reason": "exhausted: all 29 Zenodo simulation queries walked"
   }
 }
