@@ -11498,20 +11498,6 @@ sources:
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-03'
-  - id: osm-design-and-analysis-of-hybrid-solar-lighting-and-ful
-    title: Design and Analysis of Hybrid Solar Lighting and Full-Spectrum Solar Energy
-      Systems
-    url: https://www.osti.gov/servlets/purl/788614
-    source: osti_sim
-    license: unverified
-    topic: simulation_modeling
-    format: pdf
-    language: en
-    published_at: '2001-06-19'
-    document_type: conference-paper
-    license_evidence: OSTI Conference full text; the OSTI record states no rights and
-      OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-03'
   - id: osm-spectral-selectivity-of-electrochromic-windows-with-
     title: Spectral selectivity of electrochromic windows with color state for all-sky
       conditions
@@ -11537,19 +11523,6 @@ sources:
     format: pdf
     language: en
     published_at: '1993-10-01'
-    document_type: conference-paper
-    license_evidence: OSTI Conference full text; the OSTI record states no rights and
-      OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-03'
-  - id: osm-comparisons-of-luminaires-efficacies-and-system-desi
-    title: 'Comparisons of luminaires: Efficacies and system design'
-    url: https://www.osti.gov/servlets/purl/62385
-    source: osti_sim
-    license: unverified
-    topic: simulation_modeling
-    format: pdf
-    language: en
-    published_at: '1994-12-31'
     document_type: conference-paper
     license_evidence: OSTI Conference full text; the OSTI record states no rights and
       OSTI distinguishes public access from public domain (osti.gov/disclaim)
@@ -11639,6 +11612,126 @@ sources:
     published_at: '1983-05-01'
     document_type: technical-report
     persistent_id: doi:10.2172/5673963
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-effects-of-atmospheric-variability-on-energy-utiliza
+    title: Effects of atmospheric variability on energy utilization and conservation.
+      [Space heating energy demand modeling; Program HEATLOAD]
+    url: https://www.osti.gov/servlets/purl/7334746
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '1976-11-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/7334746
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-understanding-multifamily-energy-use-in-the-greater-
+    title: 'Understanding Multifamily Energy Use in the Greater Atlanta and Macon Area:
+      Building Stock Segmentation for Retrofit Planning'
+    url: https://www.osti.gov/servlets/purl/2583609
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2025-06-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/2583609
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-understanding-multifamily-energy-use-in-rural-southe
+    title: 'Understanding Multifamily Energy Use in Rural Southern Arizona: Building
+      Stock Segmentation for Retrofit Planning'
+    url: https://www.osti.gov/servlets/purl/2583605
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2025-06-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/2583605
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-understanding-multifamily-energy-use-in-the-gr-2
+    title: 'Understanding Multifamily Energy Use in the Greater New York City Area:
+      Building Stock Segmentation for Retrofit Planning'
+    url: https://www.osti.gov/servlets/purl/2583597
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2025-06-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/2583597
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-understanding-multifamily-energy-use-in-the-columbus
+    title: 'Understanding Multifamily Energy Use in the Columbus-Dayton-Cincinnati-Lexington
+      Area: Building Stock Segmentation for Retrofit Planning'
+    url: https://www.osti.gov/servlets/purl/2583595
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2025-06-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/2583595
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-understanding-multifamily-energy-use-in-rural-lower-
+    title: 'Understanding Multifamily Energy Use in Rural Lower Midwest and the High
+      Plains: Building Stock Segmentation for Retrofit Planning'
+    url: https://www.osti.gov/servlets/purl/2583591
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2025-06-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/2583591
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-understanding-multifamily-energy-use-in-rural--2
+    title: 'Understanding Multifamily Energy Use in Rural Southern Michigan and the
+      Toledo Area: Building Stock Segmentation for Retrofit Planning'
+    url: https://www.osti.gov/servlets/purl/2583590
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2025-06-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/2583590
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-03'
+  - id: osm-equitable-strategies-for-residential-building-energy
+    title: Equitable Strategies for Residential Building Energy Efficiency and Electrification
+      in San José, California [Slides]
+    url: https://www.osti.gov/servlets/purl/2396316
+    source: osti_sim
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2024-07-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/2396316
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-03'
