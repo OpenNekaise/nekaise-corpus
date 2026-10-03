@@ -121917,3 +121917,38 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2411.03465 openalex:W4404354591
     resolution: 'legacy: openalex location'
+  - id: ope-a-mini-review-of-the-impacts-of-machine-learni
+    title: A Mini Review of the Impacts of Machine Learning on Mobility Electrifications
+    url: https://discovery.ucl.ac.uk/10211306/1/energies-17-06069.pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2024-12-02'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/en17236069
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/10211306/1/energies-17-06069.pdf; version submittedVersion]
+    rights_verified_at: '2026-10-03'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/en17236069 openalex:W4404960462
+    resolution: 'legacy: openalex location'
+  - id: ope-control-oriented-modelling-of-wind-direction-v
+    title: Control-oriented modelling of wind direction variability
+    url: https://wes.copernicus.org/articles/9/841/2024/wes-9-841-2024.pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2024-04-10'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/wes-9-841-2024
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://wes.copernicus.org/articles/9/841/2024/wes-9-841-2024.pdf; version
+      publishedVersion]
+    rights_verified_at: '2026-10-03'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/wes-9-841-2024 openalex:W4394707711
+    resolution: 'legacy: openalex location'
