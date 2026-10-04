@@ -122044,3 +122044,21 @@ sources:
     selected_version: acceptedVersion
     origin_ids: doi:10.1016/j.egyr.2023.04.048 openalex:W4366298682
     resolution: 'legacy: openalex location'
+  - id: ope-porous-materials-in-building-energy-technologi
+    title: Porous materials in building energy technologies—A review of the applications,
+      modelling and experiments
+    url: http://eprints.gla.ac.uk/160009/7/160009.pdf
+    source: openalex
+    license: cc-by-sa
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2018-04-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.rser.2018.03.092
+    license_evidence: openalex.license=cc-by-sa; openalex.license_id=https://openalex.org/licenses/cc-by-sa
+      [copy http://eprints.gla.ac.uk/160009/7/160009.pdf; version acceptedVersion]
+    rights_verified_at: '2026-10-04'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1016/j.rser.2018.03.092 openalex:W2796530248
+    resolution: 'legacy: openalex location'
