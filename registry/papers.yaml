@@ -121952,3 +121952,57 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/wes-9-841-2024 openalex:W4394707711
     resolution: 'legacy: openalex location'
+  - id: ope-quantifying-uncertainties-from-mobile-laborato
+    title: Quantifying uncertainties from mobile-laboratory-derived emissions of well
+      pads using inverse Gaussian methods
+    url: https://acp.copernicus.org/articles/18/15145/2018/acp-18-15145-2018.pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2018-10-22'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/acp-18-15145-2018
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://acp.copernicus.org/articles/18/15145/2018/acp-18-15145-2018.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-10-04'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/acp-18-15145-2018 openalex:W2896480147
+    resolution: 'legacy: openalex location'
+  - id: ope-no-x-emission-estimates-during-the-2014-youth-
+    title: NO x emission estimates during the 2014 Youth Olympic Games in Nanjing
+    url: https://acp.copernicus.org/articles/15/9399/2015/acp-15-9399-2015.pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2015-08-24'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/acp-15-9399-2015
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://acp.copernicus.org/articles/15/9399/2015/acp-15-9399-2015.pdf; version
+      publishedVersion]
+    rights_verified_at: '2026-10-04'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/acp-15-9399-2015 openalex:W2164474809
+    resolution: 'legacy: openalex location'
+  - id: ope-deep-learning-in-automated-power-line-inspecti
+    title: 'Deep learning in automated power line inspection: A review'
+    url: https://arxiv.org/pdf/2502.07826
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2025-02-17'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2025.125507
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2502.07826; version submittedVersion]
+    rights_verified_at: '2026-10-04'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2025.125507 openalex:W4407628695
+    resolution: 'legacy: openalex location'
