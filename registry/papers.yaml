@@ -122122,3 +122122,42 @@ sources:
     rights_verified_at: '2026-10-04T12:44:58Z'
     origin_ids: doi:10.3389/fbuil.2023.1176515 openalex:W4385759037
     resolution: 'legacy: openalex location'
+  - id: ope-seasonal-thermal-energy-storage-in-smart-energ
+    title: 'Seasonal thermal energy storage in smart energy systems: District-level
+      applications and modelling approaches'
+    url: http://eprints.gla.ac.uk/274694/2/274694.pdf
+    source: openalex
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-07-20'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.rser.2022.112760
+    license_evidence: openalex.license=cc-by-sa; openalex.license_id=https://openalex.org/licenses/cc-by-sa
+      [copy http://eprints.gla.ac.uk/274694/2/274694.pdf; version acceptedVersion]
+    rights_verified_at: '2026-10-04'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1016/j.rser.2022.112760 openalex:W4285992074
+    resolution: 'legacy: openalex location'
+  - id: ope-the-role-of-occupants-in-buildings-energy-perf
+    title: 'The Role of Occupants in Buildings’ Energy Performance Gap: Myth or Reality?'
+    url: https://biblio.ugent.be/publication/8705107/file/8708623.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-03-12'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su13063146
+    license_evidence: 'redirect: rights of requested copy https://biblio.ugent.be/publication/8705107/file/8708623.pdf
+      do not transfer to https://backoffice.biblio.ugent.be/download/8705107/8708623;
+      payload sha256=58fb70385b074f90a605ca08bc0fc85ff201476866ed360fa2746ad5777c3ccc;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://biblio.ugent.be/publication/8705107/file/8708623.pdf;
+      version submittedVersion]", "rights_verified_at": "2026-10-04", "selected_version":
+      "submittedVersion"}'
+    rights_verified_at: '2026-10-04T13:11:39Z'
+    origin_ids: doi:10.3390/su13063146 openalex:W3130203824
+    resolution: 'legacy: openalex location'
