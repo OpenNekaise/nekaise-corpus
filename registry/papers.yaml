@@ -122062,3 +122062,63 @@ sources:
     selected_version: acceptedVersion
     origin_ids: doi:10.1016/j.rser.2018.03.092 openalex:W2796530248
     resolution: 'legacy: openalex location'
+  - id: ope-testing-innovative-technologies-for-retrofitti
+    title: 'Testing innovative technologies for retrofitting: Coventry University as
+      a living lab'
+    url: https://pure.coventry.ac.uk/ws/files/4619820/Ahmed_Testing_innovative_technologies_for_retrofitting_Coventry_University_as_a_living_lab.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-02-15'
+    document_type: article
+    persistent_id: https://doi.org/10.9770/jesi.2017.4.3s(2)
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://pure.coventry.ac.uk/ws/files/4619820/Ahmed_Testing_innovative_technologies_for_retrofitting_Coventry_University_as_a_living_lab.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-10-04'
+    selected_version: submittedVersion
+    origin_ids: doi:10.9770/jesi.2017.4.3s(2) openalex:W2588880394
+    resolution: 'legacy: openalex location'
+  - id: ope-uncertainty-based-optimal-energy-retrofit-meth
+    title: Uncertainty-based optimal energy retrofit methodology for building heat electrification
+      with enhanced energy flexibility and climate adaptability
+    url: https://discovery.ucl.ac.uk/10169192/1/1-s2.0-S0306261923004750-main.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-04-17'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2023.121111
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/10169192/1/1-s2.0-S0306261923004750-main.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-10-04'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2023.121111 openalex:W4366131873
+    resolution: 'legacy: openalex location'
+  - id: ope-decision-making-approaches-for-optimal-seismic
+    title: Decision-making approaches for optimal seismic/energy integrated retrofitting
+      of existing buildings
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2023.1176515/pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-08-11'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fbuil.2023.1176515
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/fbuil.2023.1176515/pdf
+      do not transfer to https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2023.1176515/pdf;
+      payload sha256=e023399366a12e1ea6305a5778e60a9e136af4879b00ead5027e58d89dfd628d;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://www.frontiersin.org/articles/10.3389/fbuil.2023.1176515/pdf;
+      version publishedVersion]", "rights_verified_at": "2026-10-04", "selected_version":
+      "publishedVersion"}'
+    rights_verified_at: '2026-10-04T12:44:58Z'
+    origin_ids: doi:10.3389/fbuil.2023.1176515 openalex:W4385759037
+    resolution: 'legacy: openalex location'
