@@ -159,14 +159,14 @@
   },
   "find_openalex_sim": {
     "flag": "--family-cursor",
-    "next": "sim1 t=483 q=2 w=1 p=5 k=0 sq=10 sw=0 sp=1 sk=0",
+    "next": "sim1 t=484 q=2 w=1 p=5 k=0 sq=10 sw=1 sp=1 sk=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families cursor 'sim1 t=<runs> q=<query> w=<date window> p=<page> k=<results finished on that page>' for the simulation walk plus sq/sw/sp/sk for the SSRN-origin walk. Which walk searches in a round comes from the round id (openalex_families.budget_slot), never from this cursor. A --max or lookup-cap stop keeps the page with its k; a failed or malformed search keeps the whole cursor. Changing openalex_families.SIMULATION queries/windows needs a new version and a reviewed cursor migration."
   },
   "find_openalex_ai": {
     "flag": "--family-cursor",
-    "next": "ai1 t=528 q=0 w=2 p=1 k=0",
+    "next": "ai1 t=529 q=0 w=2 p=1 k=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families BUILDING_AI cursor 'ai1 t q w p k' (same semantics as find_openalex_sim's main walk)."
@@ -179,7 +179,7 @@
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 2663,
+    "next": 2664,
     "step": 1,
     "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature).",
     "vendor_retry": {
@@ -189,26 +189,6 @@
           "first_failure_at": 0,
           "next_retry_at": 0,
           "pages": [
-            "https://www.sauter-controls.com/fr/produkt/controleur-de-pression-pressostat/",
-            "https://www.sauter-controls.com/en/produkt/i-o-module-for-smart-actuators/",
-            "https://www.sauter-controls.com/fr/produkt/module-e-s-pour-smart-actuators/",
-            "https://www.sauter-controls.com/en/produkt/motorised-actuator-for-unit-valves-with-positioner-2/",
-            "https://www.sauter-controls.com/fr/produkt/servomoteur-electrique-pour-petites-vannes-avec-positionneur-2/",
-            "https://www.sauter-controls.com/en/produkt/sauter-engineering-tools/",
-            "https://www.sauter-controls.com/en/produkt/dynamic-flow-control-system-with-2%e2%80%91way-valve-and-energy-data-acquisition-evalveco/",
-            "https://www.sauter-controls.com/en/produkt/room-automation-station-ecos504-505/",
-            "https://www.sauter-controls.com/fr/produkt/unite-dautomatisation-de-locaux-ecos504-505/",
-            "https://www.sauter-controls.com/en/produkt/2-way-regulating-ball-valve-with-male-thread-pn-40/",
-            "https://www.sauter-controls.com/en/produkt/3-way-regulating-ball-valve-with-male-thread-pn-40/",
-            "https://www.sauter-controls.com/en/produkt/3-way-change-over-ball-valve-t-with-male-thread-pn-40/",
-            "https://www.sauter-controls.com/en/produkt/2-way-cut-off-ball-valve-with-male-thread-pn-40/",
-            "https://www.sauter-controls.com/fr/produkt/vanne-a-boule-de-regulation-2-voies-avec-filetage-exterieur-pn-40/",
-            "https://www.sauter-controls.com/fr/produkt/vanne-a-boule-de-regulation-3-voies-avec-filetage-exterieur-pn-40/",
-            "https://www.sauter-controls.com/fr/produkt/vanne-a-boule-de-commutation-3-voies-t-avec-filetage-exterieur-pn-40/",
-            "https://www.sauter-controls.com/fr/produkt/vanne-a-boule-darret-2-voies-avec-filetage-exterieur-pn-40/",
-            "https://www.sauter-controls.com/en/produkt/sut-valve-actuator-with-positioner/",
-            "https://www.sauter-controls.com/en/produkt/sut-valve-actuator-with-spring-return-2/",
-            "https://www.sauter-controls.com/fr/produkt/servomoteur-sut-avec-rappel-par-ressort-2/",
             "https://www.sauter-controls.com/fr/produkt/servomoteur-sut-avec-positionneur/",
             "https://www.sauter-controls.com/en/produkt/vav-compact-controller/",
             "https://www.sauter-controls.com/fr/produkt/regulateur-compact-vav/",
@@ -411,14 +391,14 @@
   },
   "find_unmethours": {
     "flag": "--cursor",
-    "next": "87195",
+    "next": "88565",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-10-02: '<last question id walked>' over the unmethours.com sitemap in ascending id order, or 'watch:<YYYY-MM-DD>:<id>' after the end (sitemap re-read at most every 7 days for new questions)."
   },
   "find_diva": {
     "flag": "--cursor",
-    "next": "0:2018:1791125517150/diva/swepub_mods/3800/100/Technology/2018-01-01T00:00:00Z/2018-12-31T23:59:59Z/",
+    "next": "0:2018:1791127139747/diva/swepub_mods/4600/100/Technology/2018-01-01T00:00:00Z/2018-12-31T23:59:59Z/",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-10-02: '<index into find_diva.SETS (append-only)>:<datestamp year>:<OAI resumptionToken|START>', newest year first down to 1995 per set; a rejected token restarts its year; past the last set the backend reports EXHAUSTED. Records modified after their year was walked land in a newer, already-walked year: reset to the current year occasionally."
