@@ -122025,3 +122025,22 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/acp-7-2447-2007 openalex:W2125782074
     resolution: 'legacy: openalex location'
+  - id: ope-how-to-develop-fifth-generation-district-heati
+    title: How to develop fifth-generation district heating and cooling in Sweden? Application
+      review and best practices proposed by middle agents
+    url: https://vbn.aau.dk/ws/files/742436379/1-s2.0-S2352484723004092-main.pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2023-04-18'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.egyr.2023.04.048
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://vbn.aau.dk/ws/files/742436379/1-s2.0-S2352484723004092-main.pdf;
+      version acceptedVersion]
+    rights_verified_at: '2026-10-04'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1016/j.egyr.2023.04.048 openalex:W4366298682
+    resolution: 'legacy: openalex location'
