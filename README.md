@@ -12,17 +12,17 @@ locally and retain their original licenses.
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Documents** | **1,625,074** |
-| **Outside the default view** | **16,338** rows (collected and kept): policy-held 8,059 · restricted licence classes 8,279 |
-| **Collection (all use classes)** | **1,641,412** held originals · by class: open 1,625,074 · policy-held 8,059 · arxiv-nonexclusive 5,377 · unverified 1,867 · nc-nd 607 · nc 318 · publisher-oa 110 |
+| **Documents** | **1,625,131** |
+| **Outside the default view** | **16,342** rows (collected and kept): policy-held 8,059 · restricted licence classes 8,283 |
+| **Collection (all use classes)** | **1,641,473** held originals · by class: open 1,625,131 · policy-held 8,059 · arxiv-nonexclusive 5,377 · unverified 1,871 · nc-nd 607 · nc 318 · publisher-oa 110 |
 | **Raw originals** | **~777G** on disk, every class (PDF / HTML / source code) |
-| **Extracted text** | **~83G** on disk, every class (default view: ~80.301B chars, **≈20.075B tokens**) |
+| **Extracted text** | **~83G** on disk, every class (default view: ~80.302B chars, **≈20.075B tokens**) |
 | **Cleaned corpus** | **~78G** (~76.345B chars, **≈19.086B tokens**, ruleset-cleaned) |
 | **Topics** | 12 |
 
-**By topic** (a source gets one at registration): equipment_systems 534,406 · construction 431,260 · building_energy 219,818 · structures_civil 171,721 · materials 111,581 · infrastructure 75,375 · architecture 45,094 · standards_protocols 12,977 · controls_bas 10,511 · urban 6,025 · simulation_modeling 5,893 · commissioning_fdd 413.
+**By topic** (a source gets one at registration): equipment_systems 534,406 · construction 431,260 · building_energy 219,818 · structures_civil 171,721 · materials 111,581 · infrastructure 75,375 · architecture 45,094 · standards_protocols 12,977 · controls_bas 10,511 · urban 6,025 · simulation_modeling 5,950 · commissioning_fdd 413.
 
-**By license:** open 1,329,865 · public-domain 263,817 · cc-by-sa 7,324 · cc-by 24,010 · cc0 58.
+**By license:** open 1,329,865 · public-domain 263,817 · cc-by-sa 7,381 · cc-by 24,010 · cc0 58.
 <!-- STATS:END -->
 
 ## Quick start
