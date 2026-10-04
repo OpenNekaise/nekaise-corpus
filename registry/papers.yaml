@@ -122161,3 +122161,41 @@ sources:
     rights_verified_at: '2026-10-04T13:11:39Z'
     origin_ids: doi:10.3390/su13063146 openalex:W3130203824
     resolution: 'legacy: openalex location'
+  - id: ope-modelling-and-evaluating-different-multi-carri
+    title: Modelling and evaluating different multi-carrier energy system configurations
+      for a Dutch house
+    url: https://repository.tudelft.nl/file/File_5cf926b1-d036-4653-87ab-87104c49ddab
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-04-13'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2024.123197
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://repository.tudelft.nl/file/File_5cf926b1-d036-4653-87ab-87104c49ddab;
+      version submittedVersion]
+    rights_verified_at: '2026-10-04'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2024.123197 openalex:W4394782930
+    resolution: 'legacy: openalex location'
+  - id: ope-socio-technical-transitions-in-uk-electricity-
+    title: 'Socio-technical transitions in UK electricity: part 1 – history, actors
+      and pathways'
+    url: http://sro.sussex.ac.uk/id/eprint/93021/3/Foxon_Hammond_Pearson_STTP_Part1_ener_GreenOA_2020.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-01-28'
+    document_type: article
+    persistent_id: https://doi.org/10.1680/jener.19.00051
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy http://sro.sussex.ac.uk/id/eprint/93021/3/Foxon_Hammond_Pearson_STTP_Part1_ener_GreenOA_2020.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-10-04'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1680/jener.19.00051 openalex:W3004044693
+    resolution: 'legacy: openalex location'
