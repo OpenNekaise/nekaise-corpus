@@ -21081,3 +21081,32 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-dulux-trade-classic-select-woodstain-technical-pds
+    title: 'SpecifiedBy (UK manufacturer documents): Dulux-Trade_Classic-Select-Woodstain_Technical_PDS.pdf'
+    url: https://www.specifiedby.com/dulux-trade/classic-select-woodstain/Dulux-Trade_Classic-Select-Woodstain_Technical_PDS.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-dulux-trade-floorshield-technical-sds
+    title: 'SpecifiedBy (UK manufacturer documents): Dulux-Trade_Floorshield_Technical_SDS.pdf
+      (floorshield — Dulux Trade Floorshield Technical SDS)'
+    url: https://www.specifiedby.com/dulux-trade/floorshield/Dulux-Trade_Floorshield_Technical_SDS.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
