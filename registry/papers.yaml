@@ -122218,3 +122218,76 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.3390/ijerph18031287 openalex:W3127004009
     resolution: 'legacy: openalex location'
+  - id: ope-water-accounting-plus-wa-a-water-accounting-pr
+    title: Water Accounting Plus (WA+) – a water accounting procedure for complex river
+      basins based on satellite measurements
+    url: https://hess.copernicus.org/articles/17/2459/2013/hess-17-2459-2013.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2013-07-04'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/hess-17-2459-2013
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://hess.copernicus.org/articles/17/2459/2013/hess-17-2459-2013.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-10-04'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/hess-17-2459-2013 openalex:W2157598297
+    resolution: 'legacy: openalex location'
+  - id: ope-human-exposure-to-no2-in-school-and-office-ind
+    title: Human exposure to NO2 in school and office indoor environments
+    url: https://eprints.qut.edu.au/135831/1/1-s2.0-S016041201930981X-main.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-06-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.envint.2019.05.081
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://eprints.qut.edu.au/135831/1/1-s2.0-S016041201930981X-main.pdf; version
+      submittedVersion]
+    rights_verified_at: '2026-10-04'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.envint.2019.05.081 openalex:W4211219109
+    resolution: 'legacy: openalex location'
+  - id: ope-thermal-comfort-of-heterogeneous-and-dynamic-i
+    title: Thermal comfort of heterogeneous and dynamic indoor conditions — An overview
+    url: https://pure.tue.nl/ws/files/37531294/1_s2.0_S0360132316303560_main.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-09-17'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2016.09.016
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://pure.tue.nl/ws/files/37531294/1_s2.0_S0360132316303560_main.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-10-04'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2016.09.016 openalex:W2519419780
+    resolution: 'legacy: openalex location'
+  - id: ope-snow-depth-mapping-in-high-alpine-catchments-u
+    title: Snow depth mapping in high-alpine catchments using digital photogrammetry
+    url: https://tc.copernicus.org/articles/9/229/2015/tc-9-229-2015.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-02-06'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/tc-9-229-2015
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://tc.copernicus.org/articles/9/229/2015/tc-9-229-2015.pdf; version
+      publishedVersion]
+    rights_verified_at: '2026-10-04'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/tc-9-229-2015 openalex:W1975196255
+    resolution: 'legacy: openalex location'
