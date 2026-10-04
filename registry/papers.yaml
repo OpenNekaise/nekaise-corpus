@@ -122199,3 +122199,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1680/jener.19.00051 openalex:W3004044693
     resolution: 'legacy: openalex location'
+  - id: ope-assessing-comfort-in-urban-public-spaces-a-str
+    title: 'Assessing Comfort in Urban Public Spaces: A Structural Equation Model Involving
+      Environmental Attitude and Perception'
+    url: https://pure.tue.nl/ws/files/182294525/Assessing_comfort_in_urban_public_spaces_A_structural_equation_model_involving_environmental_attitude_and_perception.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-02-01'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/ijerph18031287
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://pure.tue.nl/ws/files/182294525/Assessing_comfort_in_urban_public_spaces_A_structural_equation_model_involving_environmental_attitude_and_perception.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-10-04'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/ijerph18031287 openalex:W3127004009
+    resolution: 'legacy: openalex location'
