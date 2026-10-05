@@ -122328,3 +122328,22 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/isprs-archives-xlviii-2-w8-2024-477-2024 openalex:W4405395973
     resolution: 'legacy: openalex location'
+  - id: ope-sustainability-and-building-information-modell
+    title: 'Sustainability and building information modelling: Integration, research
+      gaps, and future directions'
+    url: https://pure.tue.nl/ws/files/354212243/1-s2.0-S0926580524001560-main.pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2024-04-17'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.autcon.2024.105420
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://pure.tue.nl/ws/files/354212243/1-s2.0-S0926580524001560-main.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-10-05'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.autcon.2024.105420 openalex:W4394904051
+    resolution: 'legacy: openalex location'
