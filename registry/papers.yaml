@@ -122347,3 +122347,61 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.autcon.2024.105420 openalex:W4394904051
     resolution: 'legacy: openalex location'
+  - id: ope-an-energy-efficient-lighting-design-strategy-t
+    title: An Energy Efficient Lighting Design Strategy to Enhance Visual Comfort in
+      Offices with Windows
+    url: https://eprints.qut.edu.au/109691/1/energies-10-01126.pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2017-08-01'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/en10081126
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://eprints.qut.edu.au/109691/1/energies-10-01126.pdf; version submittedVersion]
+    rights_verified_at: '2026-10-05'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/en10081126 openalex:W2740745710
+    resolution: 'legacy: openalex location'
+  - id: ope-future-workspace-needs-flexibility-and-diversi
+    title: 'Future workspace needs flexibility and diversity: A machine learning-driven
+      behavioural analysis of co-working space'
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0292370&type=printable
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-10-18'
+    document_type: article
+    persistent_id: https://doi.org/10.1371/journal.pone.0292370
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0292370&type=printable;
+      version publishedVersion]
+    rights_verified_at: '2026-10-05'
+    selected_version: publishedVersion
+    origin_ids: doi:10.1371/journal.pone.0292370 openalex:W4387737637
+    resolution: 'legacy: openalex location'
+  - id: ope-systematic-review-of-deep-learning-and-machine
+    title: Systematic review of deep learning and machine learning for building energy
+    url: https://osf.io/fxtmz/download
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-02-23'
+    document_type: preprint
+    persistent_id: https://doi.org/10.31219/osf.io/fxtmz
+    license_evidence: 'redirect: rights of requested copy https://osf.io/fxtmz/download
+      do not transfer to https://storage.googleapis.com/cos-osf-prod-files-us-east1/48db014847ec6a2de6992ba245da978c3c5ced4ce17ac0ad82310e7bc3463904?response-content-disposition=attachment%3B%20filename%3D%22Clean%20version_Preprint.pdf%22%3B%20filename%2A%3DUTF-8%27%27Clean%2520version_Preprint.pdf&GoogleAccessId=files-us%40cos-osf-prod.iam.gserviceaccount.com&Expires=1791185495&Signature=TfHKNHcWxe45WIKd9nG9RerrYWgWzI9X%2FjckfhmIhQEL6aI2%2FdTjG3w2DzuTZu44ZBVIG%2BwqVCgRGxMZS9hcY2l8Iulnv3ffJs1KCsq%2FPN7hecw7ykga2fg%2FX2nOBzkGCBtWSfvhI%2Bz4dt55zYppb5Sym97mWRft5D17TUamgdBizhe9%2BVtZTvMfPnMRVjzOMVBRGRjp7woEAx%2FQaJPdPtnmTka9acrUXf4yoPDCu3TDexdyDWnEE8uaiL92aX2DKPNbKLNqgRsrk10bjQjAXuFvoKP4FRXO4WAwNDuNGqJGcGObAyD%2FEposfoZtj3IzKg1H%2FAIM3mRoo4GvdoVOMw%3D%3D;
+      payload sha256=48db014847ec6a2de6992ba245da978c3c5ced4ce17ac0ad82310e7bc3463904;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://osf.io/fxtmz/download;
+      version acceptedVersion]", "rights_verified_at": "2026-10-05", "selected_version":
+      "acceptedVersion"}'
+    rights_verified_at: '2026-10-05T07:30:36Z'
+    origin_ids: doi:10.31219/osf.io/fxtmz openalex:W4213051752
+    resolution: 'legacy: openalex location'
