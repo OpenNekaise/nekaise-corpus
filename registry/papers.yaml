@@ -122291,3 +122291,59 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/tc-9-229-2015 openalex:W1975196255
     resolution: 'legacy: openalex location'
+  - id: ope-making-sense-of-multi-actor-social-collaborati
+    title: 'Making Sense of Multi-Actor Social Collaboration in Building Information
+      Modelling Level 2 Projects: A Case in Malaysia'
+    url: https://epress.lib.uts.edu.au/journals/index.php/AJCEB/article/download/7829/7870
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2021-12-03'
+    document_type: article
+    persistent_id: https://doi.org/10.5130/ajceb.v21i4.7829
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://epress.lib.uts.edu.au/journals/index.php/AJCEB/article/download/7829/7870;
+      version publishedVersion]
+    rights_verified_at: '2026-10-05'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5130/ajceb.v21i4.7829 openalex:W4200115561
+    resolution: 'legacy: openalex location'
+  - id: ope-the-use-of-cloud-enabled-building-information-
+    title: The use of cloud enabled building information models – an expert analysis
+    url: https://epress.lib.uts.edu.au/journals/index.php/AJCEB/article/download/3037/3248
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2014-10-01'
+    document_type: article
+    persistent_id: https://doi.org/10.5130/ajceb.v12i4.3037
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://epress.lib.uts.edu.au/journals/index.php/AJCEB/article/download/3037/3248;
+      version publishedVersion]
+    rights_verified_at: '2026-10-05'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5130/ajceb.v12i4.3037 openalex:W1976360172
+    resolution: 'legacy: openalex location'
+  - id: ope-railway-reconstruction-from-3d-point-cloud-usi
+    title: Railway reconstruction from 3D point cloud using Deep Learning and Parametric
+      Modeling
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-2-W8-2024/477/2024/isprs-archives-XLVIII-2-W8-2024-477-2024.pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2024-12-14'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-2-w8-2024-477-2024
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-2-W8-2024/477/2024/isprs-archives-XLVIII-2-W8-2024-477-2024.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-10-05'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-2-w8-2024-477-2024 openalex:W4405395973
+    resolution: 'legacy: openalex location'
