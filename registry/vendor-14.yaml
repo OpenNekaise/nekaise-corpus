@@ -21326,3 +21326,18 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-gds-product-range-auto
+    title: 'SpecifiedBy (UK manufacturer documents): GDS_Product_Range_AUTO.pdf (gilgen
+      ffm automatic folding doors — GDS Product Range AUTO)'
+    url: https://www.specifiedby.com/gilgen-door-systems-uk-ltd/gilgen-ffm-automatic-folding-doors/GDS_Product_Range_AUTO.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
