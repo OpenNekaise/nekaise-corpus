@@ -159,14 +159,14 @@
   },
   "find_openalex_sim": {
     "flag": "--family-cursor",
-    "next": "sim1 t=606 q=5 w=4 p=1 k=0 sq=12 sw=2 sp=1 sk=0",
+    "next": "sim1 t=607 q=6 w=0 p=1 k=0 sq=12 sw=2 sp=1 sk=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families cursor 'sim1 t=<runs> q=<query> w=<date window> p=<page> k=<results finished on that page>' for the simulation walk plus sq/sw/sp/sk for the SSRN-origin walk. Which walk searches in a round comes from the round id (openalex_families.budget_slot), never from this cursor. A --max or lookup-cap stop keeps the page with its k; a failed or malformed search keeps the whole cursor. Changing openalex_families.SIMULATION queries/windows needs a new version and a reviewed cursor migration."
   },
   "find_openalex_ai": {
     "flag": "--family-cursor",
-    "next": "ai1 t=651 q=2 w=2 p=1 k=0",
+    "next": "ai1 t=652 q=2 w=2 p=1 k=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families BUILDING_AI cursor 'ai1 t q w p k' (same semantics as find_openalex_sim's main walk)."
@@ -179,7 +179,7 @@
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 2786,
+    "next": 2787,
     "step": 1,
     "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature).",
     "vendor_retry": {
@@ -290,7 +290,7 @@
   },
   "find_eurlex": {
     "flag": "--cursor",
-    "next": "{\"f\":\"\",\"i\":0,\"k\":\"32011R0305R(06)\",\"s\":4}",
+    "next": "{\"f\":\"\",\"i\":0,\"k\":\"32011R0305R(07)\",\"s\":4}",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25 (compliance/ESG programme). Dynamic cursor reported by the finder (scripts/finder_protocol.py): JSON {s: seed index into registry/eurlex.json, k: CELEX of the work in progress, i: item offset} | watch:<date> after the last seed (re-walked at most every 7 days)."
@@ -318,7 +318,7 @@
   },
   "find_diva": {
     "flag": "--cursor",
-    "next": "1:2010:1791296575910/diva/swepub_mods/1200/100/doctoralThesis/2010-01-01T00:00:00Z/2010-12-31T23:59:59Z/",
+    "next": "1:2009:1791297836327/diva/swepub_mods/400/100/doctoralThesis/2009-01-01T00:00:00Z/2009-12-31T23:59:59Z/",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-10-02: '<index into find_diva.SETS (append-only)>:<datestamp year>:<OAI resumptionToken|START>', newest year first down to 1995 per set; a rejected token restarts its year; past the last set the backend reports EXHAUSTED. Records modified after their year was walked land in a newer, already-walked year: reset to the current year occasionally."
