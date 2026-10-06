@@ -122661,3 +122661,25 @@ sources:
     rights_verified_at: '2026-10-06T13:59:40Z'
     origin_ids: doi:10.3389/fenvs.2023.972980 openalex:W4366823938
     resolution: 'legacy: openalex location'
+  - id: ope-assessment-of-eco-friendly-pavement-constructi
+    title: Assessment of Eco-Friendly Pavement Construction and Maintenance Using Multi-Recycled
+      RAP Mixtures
+    url: https://biblio.ugent.be/publication/01HPNY4A7X7T8FDSA0BMD2FT31/file/01HQQYRGBJ23Z9KS9ZGDTB5GM6.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-08-14'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/recycling5030017
+    license_evidence: 'redirect: rights of requested copy https://biblio.ugent.be/publication/01HPNY4A7X7T8FDSA0BMD2FT31/file/01HQQYRGBJ23Z9KS9ZGDTB5GM6.pdf
+      do not transfer to https://backoffice.biblio.ugent.be/download/01HPNY4A7X7T8FDSA0BMD2FT31/01HQQYRGBJ23Z9KS9ZGDTB5GM6;
+      payload sha256=cf9c396400e80c4c8d2cb910f4a58a26451f3c4182cbba4e29c630d1303ad3ad;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://biblio.ugent.be/publication/01HPNY4A7X7T8FDSA0BMD2FT31/file/01HQQYRGBJ23Z9KS9ZGDTB5GM6.pdf;
+      version submittedVersion]", "rights_verified_at": "2026-10-06", "selected_version":
+      "submittedVersion"}'
+    rights_verified_at: '2026-10-06T15:08:31Z'
+    origin_ids: doi:10.3390/recycling5030017 openalex:W3049757906
+    resolution: 'legacy: openalex location'
