@@ -26,7 +26,8 @@ states no reuse licence).
 
 Rotation (dynamic, `--cursor "<set index>:<year>:<resumptionToken|START>"`): an unexpected answer
 holds the cursor, a rejected token restarts its year window, past the last set and FLOOR_YEAR the
-backend reports EXHAUSTED.
+backend reports EXHAUSTED. A full final page closes its window only when DiVA's declared total,
+continuation offset and actual record count agree; an empty continuation never proves completion.
 
     python scripts/find_diva.py --cursor "0:2025:START" --pages 2 --max 20
 """
@@ -101,8 +102,45 @@ def fetch_page(setname: str, year: int, token: str | None) -> bytes:
     return response.content
 
 
-def parse_page(body: bytes) -> tuple[list[ET.Element], str | None]:
-    """(mods elements, next token). noRecordsMatch = empty finished window; badResumptionToken
+def _position(token: str | None) -> tuple[int, int, list[str]] | None:
+    """Recognize only DiVA's observed year-window tokens; unknown formats stay opaque."""
+    parts = (token or "").split("/")
+    if (len(parts) != 9 or parts[1:3] != ["diva", "swepub_mods"] or parts[8]
+            or parts[5] not in SETS
+            or not all(re.fullmatch(r"[0-9]+", parts[i]) for i in (0, 3, 4))
+            or not re.fullmatch(r"[0-9]{4}-01-01T00:00:00Z", parts[6])
+            or parts[7] != parts[6][:4] + "-12-31T23:59:59Z"):
+        return None
+    offset, size = int(parts[3]), int(parts[4])
+    if not size or offset % size:
+        return None
+    # Timestamps change on every response. Page size, set and date bounds must not.
+    return offset, size, parts[4:]
+
+
+def _full_final_page(token_el: ET.Element, request_token: str | None,
+                     record_count: int) -> bool:
+    """DiVA can issue a token one page past the end when the total is a page multiple.
+
+    Live ListRecords and ListIdentifiers probes corroborate that DiVA's cursor attribute names
+    the NEXT offset. Require a full, contiguous page and matching total before ignoring that
+    spurious token. This is provider-specific, not a generic OAI cursor interpretation.
+    """
+    successor = _position((token_el.text or "").strip())
+    if successor is None:
+        return False
+    end, size, scope = successor
+    previous = _position(request_token) if request_token is not None else (0, size, scope)
+    if previous is None or previous[1:] != successor[1:]:
+        return False
+    return (record_count == size and previous[0] + record_count == end
+            and token_el.get("completeListSize") == str(end)
+            and token_el.get("cursor") == str(end))
+
+
+def parse_page(body: bytes, *, request_token: str | None = None
+               ) -> tuple[list[ET.Element], str | None]:
+    """(mods elements, next token). Initial noRecordsMatch = empty finished window; badResumptionToken
     raises LookupError; anything that is not an OAI ListRecords answer raises Unexpected."""
     try:
         root = ET.fromstring(body)
@@ -113,7 +151,7 @@ def parse_page(body: bytes) -> tuple[list[ET.Element], str | None]:
     error = root.find("o:error", NS)
     if error is not None:
         code = error.get("code")
-        if code == "noRecordsMatch":
+        if code == "noRecordsMatch" and request_token is None:
             return [], None
         if code == "badResumptionToken":
             raise LookupError(f"badResumptionToken: {error.text}")
@@ -130,9 +168,10 @@ def parse_page(body: bytes) -> tuple[list[ET.Element], str | None]:
         mods.append(m)
     token_el = root.find(".//o:resumptionToken", NS)
     token = (token_el.text or "").strip() if token_el is not None else ""
-    if not records and not token:
-        # an empty, finished window is answered with noRecordsMatch, never an empty list
-        raise Unexpected("ListRecords answer with no records and no resumption token")
+    if not records:
+        raise Unexpected("ListRecords answer with no records; completion is unproven")
+    if token and _full_final_page(token_el, request_token, len(records)):
+        token = ""
     return mods, token or None
 
 
@@ -258,7 +297,7 @@ def main() -> None:
         if pages:
             time.sleep(CRAWL_DELAY)
         try:
-            mods, next_token = parse_page(fetch_page(SETS[s], year, token))
+            mods, next_token = parse_page(fetch_page(SETS[s], year, token), request_token=token)
         except LookupError as exc:
             if restarted or token is None:
                 report.hold(f"{exc} at {s}:{year}; nothing proposed")

@@ -158,6 +158,75 @@ def test_deleted_records_and_no_records_match_are_valid():
     assert find_diva.parse_page(_error("noRecordsMatch")) == ([], None)
 
 
+def _diva_token(offset, size=2, stamp="1791327753133", setname="doctoralThesis"):
+    return (f"{stamp}/diva/swepub_mods/{offset}/{size}/{setname}/"
+            "2009-01-01T00:00:00Z/2009-12-31T23:59:59Z/")
+
+
+def _counted_page(records, token, total, cursor):
+    return _page(records, token).replace(
+        b'completeListSize="9"', f'completeListSize="{total}" cursor="{cursor}"'.encode())
+
+
+def test_full_final_page_closes_without_requesting_spurious_empty_page(monkeypatch, tmp_path):
+    # DiVA emits a continuation even when a full page reaches completeListSize.
+    # Its token and cursor both name the NEXT offset, unlike generic OAI cursors.
+    pages = [_counted_page([IDA, EPLUS], _diva_token(2), 4, 2),
+             _counted_page([KEYWORD, NC], _diva_token(4), 4, 4), _page([])]
+    calls, appended, files = _setup(monkeypatch, tmp_path, pages)
+    monkeypatch.setattr(sys, "argv", ["find_diva.py", "--cursor", "1:2009:START",
+                                      "--pages", "2", "--append"])
+    find_diva.main()
+    assert len([c for c in calls if c != "sleep"]) == 2
+    assert [e["persistent_id"] for e in appended] == [
+        "diva2:101", "diva2:202", "diva2:505", "diva2:707"]
+    assert files["next"].read_text() == "1:2008:START\n"
+    assert not files["hold"].exists() and not files["exhausted"].exists()
+
+
+@pytest.mark.parametrize("requested_token", [None, _diva_token(0, stamp="1791299095935")])
+def test_first_full_page_can_also_be_terminal(requested_token):
+    body = _counted_page([IDA, EPLUS], _diva_token(2), 2, 2)
+    mods, token = find_diva.parse_page(body, request_token=requested_token)
+    assert len(mods) == 2 and token is None
+
+
+def test_deleted_records_count_toward_proven_terminal_page():
+    deleted = '<record><header status="deleted"><identifier>x</identifier></header></record>'
+    body = _counted_page([IDA, deleted], _diva_token(4), 4, 4)
+    mods, token = find_diva.parse_page(body, request_token=_diva_token(2))
+    assert len(mods) == 1 and token is None
+
+
+@pytest.mark.parametrize("requested_token,token,total,cursor,records", [
+    (_diva_token(2), _diva_token(4), 6, 4, [IDA, EPLUS]),  # more records promised
+    (_diva_token(1), _diva_token(3), 3, 3, [IDA, EPLUS]),  # non-page boundary
+    (_diva_token(2), _diva_token(4), 4, 4, [IDA]),  # truncated payload
+    (_diva_token(2), _diva_token(4), 4, 2, [IDA, EPLUS]),  # different cursor convention
+    (_diva_token(2), _diva_token(4), "unknown", 4, [IDA, EPLUS]),
+    (_diva_token(2), _diva_token(4, setname="report"), 4, 4, [IDA, EPLUS]),
+    (_diva_token(2, size=1), _diva_token(4), 4, 4, [IDA, EPLUS]),
+    ("opaque", _diva_token(4), 4, 4, [IDA, EPLUS]),
+    (_diva_token(2), "opaque", 4, 4, [IDA, EPLUS]),
+    (_diva_token(2), _diva_token(6), 6, 6, [IDA, EPLUS]),  # skipped records
+])
+def test_uncorroborated_count_cannot_close_window(requested_token, token, total, cursor, records):
+    body = _counted_page(records, token, total, cursor)
+    _, next_token = find_diva.parse_page(body, request_token=requested_token)
+    assert next_token == token
+
+
+@pytest.mark.parametrize("body", [
+    _page([]),
+    _counted_page([], _diva_token(4), 6, 4),
+    _counted_page([], _diva_token(4), 4, 4),
+    _error("noRecordsMatch"),
+])
+def test_empty_continuation_never_proves_completion(body):
+    with pytest.raises(find_diva.Unexpected):
+        find_diva.parse_page(body, request_token=_diva_token(4))
+
+
 def _setup(monkeypatch, tmp_path, pages, known=None):
     known = known or (set(), set(), set())
     calls, queue = [], iter(pages)
