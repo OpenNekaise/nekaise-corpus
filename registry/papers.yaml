@@ -122556,3 +122556,25 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/isprs-archives-l-4-w2-2026-163-2026 openalex:W7214671532
     resolution: 'sim1: openalex location'
+  - id: ope-near-zero-waste-processing-of-low-grade-comple
+    title: 'Near-zero-waste processing of low-grade, complex primary ores and secondary
+      raw materials in Europe: technology development trends'
+    url: https://biblio.ugent.be/publication/8669733/file/8669735.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-05-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.resconrec.2020.104919
+    license_evidence: 'redirect: rights of requested copy https://biblio.ugent.be/publication/8669733/file/8669735.pdf
+      do not transfer to https://backoffice.biblio.ugent.be/download/8669733/8669735;
+      payload sha256=d09d3b140c29610fc2fbae62b082e5dfc256a97238961dbe0701bdcdcac04c2a;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://biblio.ugent.be/publication/8669733/file/8669735.pdf;
+      version submittedVersion]", "rights_verified_at": "2026-10-06", "selected_version":
+      "submittedVersion"}'
+    rights_verified_at: '2026-10-06T07:29:15Z'
+    origin_ids: doi:10.1016/j.resconrec.2020.104919 openalex:W3027755493
+    resolution: 'legacy: openalex location'
