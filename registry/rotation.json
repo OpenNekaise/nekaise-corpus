@@ -159,14 +159,14 @@
   },
   "find_openalex_sim": {
     "flag": "--family-cursor",
-    "next": "sim1 t=567 q=4 w=1 p=2 k=0 sq=11 sw=2 sp=1 sk=0",
+    "next": "sim1 t=568 q=4 w=1 p=2 k=0 sq=11 sw=3 sp=1 sk=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families cursor 'sim1 t=<runs> q=<query> w=<date window> p=<page> k=<results finished on that page>' for the simulation walk plus sq/sw/sp/sk for the SSRN-origin walk. Which walk searches in a round comes from the round id (openalex_families.budget_slot), never from this cursor. A --max or lookup-cap stop keeps the page with its k; a failed or malformed search keeps the whole cursor. Changing openalex_families.SIMULATION queries/windows needs a new version and a reviewed cursor migration."
   },
   "find_openalex_ai": {
     "flag": "--family-cursor",
-    "next": "ai1 t=612 q=1 w=4 p=1 k=0",
+    "next": "ai1 t=613 q=1 w=4 p=1 k=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families BUILDING_AI cursor 'ai1 t q w p k' (same semantics as find_openalex_sim's main walk)."
@@ -179,7 +179,7 @@
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 2747,
+    "next": 2748,
     "step": 1,
     "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature).",
     "vendor_retry": {
@@ -189,26 +189,6 @@
           "first_failure_at": 0,
           "next_retry_at": 0,
           "pages": [
-            "https://www.sauter-controls.com/fr/produkt/8-x-ui-di-ci-ai-et-8-x-di-ci-module-e-s-modu631-io/",
-            "https://www.sauter-controls.com/fr/produkt/6-x-sorties-relais-2-a-module-e-s-modu650-io/",
-            "https://www.sauter-controls.com/fr/produkt/8-x-di-ci-do-oc-et-8-x-di-ci-module-e-s-modu670-io/",
-            "https://www.sauter-controls.com/en/produkt/remote-i-o-module-ecolink522-523/",
-            "https://www.sauter-controls.com/fr/produkt/module-e-s-deporte-ecolink522-523/",
-            "https://www.sauter-controls.com/en/produkt/bacnet-router-andsc-hub-b-sc-b-ip/",
-            "https://www.sauter-controls.com/fr/produkt/routeur-et-hub-sc-bacnet-b-sc-b-ip/",
-            "https://www.sauter-controls.com/en/produkt/modular-bacnet-automation-station-modu660-as/",
-            "https://www.sauter-controls.com/en/produkt/modular-bacnet-automation-station-and-web-server-modu680-as/",
-            "https://www.sauter-controls.com/fr/produkt/unite-modulaire-de-gestion-locale-bacnet-modu660-as/",
-            "https://www.sauter-controls.com/fr/produkt/unite-modulaire-de-gestion-locale-bacnet-et-serveur-web-modu680-as/",
-            "https://www.sauter-controls.com/en/produkt/4-x-ao-4-x-dooc-4-x-ui-di-ci-ai-i-o-module-modu672%e2%80%91io/",
-            "https://www.sauter-controls.com/fr/produkt/coupleur-ip-pour-modules-e-s-avec-serveur-web-modu612%e2%80%91lc/",
-            "https://www.sauter-controls.com/fr/produkt/module-e-s-a-4-ao-4-dooc-et-4-ui-di-ci-ai-modu672-io/",
-            "https://www.sauter-controls.com/en/produkt/dynamic-flow-control-system-with-6-way-ball-valve-evalveco/",
-            "https://www.sauter-controls.com/en/produkt/3-way-unit-valve-pn-16/",
-            "https://www.sauter-controls.com/en/produkt/2-way-valve-pn16/",
-            "https://www.sauter-controls.com/en/produkt/3-way-unit-valve-pn-16-2/",
-            "https://www.sauter-controls.com/en/produkt/2-way-valve-pn-16/",
-            "https://www.sauter-controls.com/en/produkt/3-way-unit-valve-pn-16-el/",
             "https://www.sauter-controls.com/en/produkt/programmable-controller-ecos311/",
             "https://www.sauter-controls.com/fr/produkt/vanne-de-regulation-2-voies-pour-lequilibrage-hydraulique-dynamique-pn-25-valveco-compact/",
             "https://www.sauter-controls.com/fr/produkt/systeme-de-regulation-dynamique-du-debit-avec-vanne-a-boule-6-voies-evalveco/",
@@ -330,7 +310,7 @@
   },
   "find_eurlex": {
     "flag": "--cursor",
-    "next": "{\"f\":\"\",\"i\":0,\"k\":\"32024L1275R(04)\",\"s\":0}",
+    "next": "{\"f\":\"\",\"i\":0,\"k\":\"32024L1275R(05)\",\"s\":0}",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25 (compliance/ESG programme). Dynamic cursor reported by the finder (scripts/finder_protocol.py): JSON {s: seed index into registry/eurlex.json, k: CELEX of the work in progress, i: item offset} | watch:<date> after the last seed (re-walked at most every 7 days)."
@@ -358,7 +338,7 @@
   },
   "find_diva": {
     "flag": "--cursor",
-    "next": "1:2022:1791245694105/diva/swepub_mods/6000/100/doctoralThesis/2022-01-01T00:00:00Z/2022-12-31T23:59:59Z/",
+    "next": "1:2022:1791246954135/diva/swepub_mods/6800/100/doctoralThesis/2022-01-01T00:00:00Z/2022-12-31T23:59:59Z/",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-10-02: '<index into find_diva.SETS (append-only)>:<datestamp year>:<OAI resumptionToken|START>', newest year first down to 1995 per set; a rejected token restarts its year; past the last set the backend reports EXHAUSTED. Records modified after their year was walked land in a newer, already-walked year: reset to the current year occasionally."
