@@ -122424,3 +122424,42 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/hess-26-6457-2022 openalex:W4312185728
     resolution: 'legacy: openalex location'
+  - id: ope-rice-straw-for-energy-and-value-added-products
+    title: 'Rice straw for energy and value-added products in China: a review'
+    url: https://pureadmin.qub.ac.uk/ws/files/483316387/Rice_straw_for_energy.pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2023-06-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s10311-023-01612-3
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://pureadmin.qub.ac.uk/ws/files/483316387/Rice_straw_for_energy.pdf;
+      version submittedVersion]
+    rights_verified_at: '2026-10-05'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s10311-023-01612-3 openalex:W4380789053
+    resolution: 'legacy: openalex location'
+  - id: ope-a-review-of-nature-based-solutions-for-resourc
+    title: A review of nature-based solutions for resource recovery in cities
+    url: https://biblio.ugent.be/publication/8715725/file/8715726.pdf
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2020-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.2166/bgs.2020.930
+    license_evidence: 'redirect: rights of requested copy https://biblio.ugent.be/publication/8715725/file/8715726.pdf
+      do not transfer to https://backoffice.biblio.ugent.be/download/8715725/8715726;
+      payload sha256=8954fb41316346f053c9dab9188af274ed65cd47311e5bcadcb5bcc1a699ae48;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://biblio.ugent.be/publication/8715725/file/8715726.pdf;
+      version submittedVersion]", "rights_verified_at": "2026-10-05", "selected_version":
+      "submittedVersion"}'
+    rights_verified_at: '2026-10-05T23:51:33Z'
+    origin_ids: doi:10.2166/bgs.2020.930 openalex:W3004431704
+    resolution: 'legacy: openalex location'
