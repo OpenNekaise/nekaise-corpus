@@ -122578,3 +122578,23 @@ sources:
     rights_verified_at: '2026-10-06T07:29:15Z'
     origin_ids: doi:10.1016/j.resconrec.2020.104919 openalex:W3027755493
     resolution: 'legacy: openalex location'
+  - id: oas-10-1021-acs-jctc-4c00323-f28fd649
+    title: Emergence of Multiphase Condensates from a Limited Set of Chemical Building
+      Blocks
+    url: https://arxiv.org/pdf/2311.18142
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-07-30'
+    document_type: article
+    persistent_id: https://doi.org/10.1021/acs.jctc.4c00323
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2311.18142; version submittedVersion]
+    rights_verified_at: '2026-10-06'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1021/acs.jctc.4c00323 openalex:W4401121337 doi:10.1101/2023.11.30.569439
+      openalex:W4389259420
+    resolution: 'sim1: openalex location; crossref relation is-preprint-of 10.1101/2023.11.30.569439
+      -> 10.1021/acs.jctc.4c00323'
