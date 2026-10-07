@@ -122738,3 +122738,21 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.1371/journal.pwat.0000612 openalex:W7212170281
     resolution: 'legacy: openalex location'
+  - id: oas-10-1016-j-enconman-2023-117226-3c482b7f
+    title: A comparative co-simulation analysis to improve the sustainability of cogeneration-based
+      district multi-energy systems using photovoltaics, power-to-h
+    url: https://publikationen.bibliothek.kit.edu/1000159294/150822358
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-06-07'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enconman.2023.117226
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://publikationen.bibliothek.kit.edu/1000159294/150822358; version submittedVersion]
+    rights_verified_at: '2026-10-07'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enconman.2023.117226 openalex:W4379745106
+    resolution: 'sim1: openalex location'
