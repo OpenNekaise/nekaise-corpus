@@ -122794,3 +122794,25 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2302.09140 openalex:W4321471989
     resolution: 'sim1: openalex location'
+  - id: oas-10-3389-feart-2019-00261-6a29518e
+    title: Cascading Geological Hazards and Risks of the 2018 Sulawesi Indonesia Earthquake
+      and Sensitivity Analysis of Tsunami Inundation Simulations
+    url: https://www.frontiersin.org/articles/10.3389/feart.2019.00261/pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-10-04'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/feart.2019.00261
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/feart.2019.00261/pdf
+      do not transfer to https://www.frontiersin.org/journals/earth-science/articles/10.3389/feart.2019.00261/pdf;
+      payload sha256=57011852e8b58054ba36dd2b5c7998062d634cb231dfa453cdf5eb1bcce4bc4b;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://www.frontiersin.org/articles/10.3389/feart.2019.00261/pdf;
+      version publishedVersion]", "rights_verified_at": "2026-10-07", "selected_version":
+      "publishedVersion"}'
+    rights_verified_at: '2026-10-07T07:07:04Z'
+    origin_ids: doi:10.3389/feart.2019.00261 openalex:W2977886265
+    resolution: 'sim1: openalex location'
