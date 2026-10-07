@@ -122871,3 +122871,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.heliyon.2023.e17626 openalex:W4382045017
     resolution: 'legacy: openalex location'
+  - id: oas-10-5194-nhess-10-1679-2010-e989814c
+    title: Tsunami inundation modelling based on detailed roughness maps of densely
+      populated areas
+    url: https://nhess.copernicus.org/articles/10/1679/2010/nhess-10-1679-2010.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2010-08-03'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/nhess-10-1679-2010
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://nhess.copernicus.org/articles/10/1679/2010/nhess-10-1679-2010.pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-10-07'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/nhess-10-1679-2010 openalex:W1991300340
+    resolution: 'sim1: openalex location'
