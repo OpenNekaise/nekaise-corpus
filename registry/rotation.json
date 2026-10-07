@@ -159,14 +159,14 @@
   },
   "find_openalex_sim": {
     "flag": "--family-cursor",
-    "next": "sim1 t=651 q=7 w=2 p=4 k=0 sq=13 sw=0 sp=1 sk=0",
+    "next": "sim1 t=652 q=7 w=3 p=1 k=0 sq=13 sw=0 sp=1 sk=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families cursor 'sim1 t=<runs> q=<query> w=<date window> p=<page> k=<results finished on that page>' for the simulation walk plus sq/sw/sp/sk for the SSRN-origin walk. Which walk searches in a round comes from the round id (openalex_families.budget_slot), never from this cursor. A --max or lookup-cap stop keeps the page with its k; a failed or malformed search keeps the whole cursor. Changing openalex_families.SIMULATION queries/windows needs a new version and a reviewed cursor migration."
   },
   "find_openalex_ai": {
     "flag": "--family-cursor",
-    "next": "ai1 t=696 q=2 w=4 p=1 k=0",
+    "next": "ai1 t=697 q=2 w=4 p=1 k=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families BUILDING_AI cursor 'ai1 t q w p k' (same semantics as find_openalex_sim's main walk)."
@@ -179,7 +179,7 @@
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 2831,
+    "next": 2832,
     "step": 1,
     "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature).",
     "vendor_retry": {
@@ -189,26 +189,6 @@
           "first_failure_at": 0,
           "next_retry_at": 0,
           "pages": [
-            "https://www.sauter-controls.com/fr/produkt/smart-actuator-pour-vannes-a-soupape/",
-            "https://www.sauter-controls.com/fr/produkt/smart-actuator-pour-volets-de-ventilation/",
-            "https://www.sauter-controls.com/fr/produkt/smart-actuator-pour-vanne-a-boule-bacnet-ip/",
-            "https://www.sauter-controls.com/en/produkt/vision-services/",
-            "https://www.sauter-controls.com/en/produkt/universal-gateway/",
-            "https://www.sauter-controls.com/fr/produkt/universal-gateway/",
-            "https://www.sauter-controls.com/en/produkt/tight-sealing-butterfly-valve-pn-16/",
-            "https://www.sauter-controls.com/fr/produkt/vanne-papillon-a-fermeture-hermetique-pn-16/",
-            "https://www.sauter-controls.com/fr/produkt/smart-actuator-pour-vannes-2-et-3-voies-bacnet-ip/",
-            "https://www.sauter-controls.com/en/produkt/smart-actuator-for-ventilation-dampers-bacnet-ip/",
-            "https://www.sauter-controls.com/fr/produkt/smart-actuator-pour-volets-de-ventilation-bacnet-ip/",
-            "https://www.sauter-controls.com/en/produkt/pneumatic-sash-sensor/",
-            "https://www.sauter-controls.com/fr/produkt/regulateur-pneumatique-de-debit-volumique/",
-            "https://www.sauter-controls.com/fr/produkt/relais-daddition-de-debit-volumique/",
-            "https://www.sauter-controls.com/fr/produkt/transmetteur-pneumatique-de-course/",
-            "https://www.sauter-controls.com/en/produkt/room-automation-station-ecos514-515/",
-            "https://www.sauter-controls.com/fr/produkt/unite-dautomatisation-de-locaux-ecos514-515/",
-            "https://www.sauter-controls.com/en/produkt/2-way-regulating-valve-for-dynamic-hydronic-balancing-pn-16-valveco-flange-3/",
-            "https://www.sauter-controls.com/fr/produkt/vanne-de-regulation-2-voies-pour-lequilibrage-hydraulique-dynamique-pn-16-bride-valveco-3/",
-            "https://www.sauter-controls.com/en/produkt/2-way-regulating-valve-for-dynamic-hydronic-balancing-pn-25-valveco-compact/",
             "https://www.sauter-controls.com/en/produkt/sauter-vision-center/",
             "https://www.sauter-controls.com/en/produkt/cable-temperature-sensor/",
             "https://www.sauter-controls.com/en/produkt/pneumatic-actuator-2/",
@@ -270,7 +250,7 @@
   },
   "find_eurlex": {
     "flag": "--cursor",
-    "next": "{\"f\":\"\",\"i\":0,\"k\":\"32012L0027R(06)\",\"s\":7}",
+    "next": "{\"f\":\"\",\"i\":0,\"k\":\"32013L0012\",\"s\":7}",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25 (compliance/ESG programme). Dynamic cursor reported by the finder (scripts/finder_protocol.py): JSON {s: seed index into registry/eurlex.json, k: CELEX of the work in progress, i: item offset} | watch:<date> after the last seed (re-walked at most every 7 days)."
@@ -298,7 +278,7 @@
   },
   "find_diva": {
     "flag": "--cursor",
-    "next": "2:2016:1791361853265/diva/swepub_mods/700/100/licentiateThesis/2016-01-01T00:00:00Z/2016-12-31T23:59:59Z/",
+    "next": "2:2016:1791363055610/diva/swepub_mods/1500/100/licentiateThesis/2016-01-01T00:00:00Z/2016-12-31T23:59:59Z/",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-10-02: '<index into find_diva.SETS (append-only)>:<datestamp year>:<OAI resumptionToken|START>', newest year first down to 1995 per set; a rejected token restarts its year; past the last set the backend reports EXHAUSTED. Records modified after their year was walked land in a newer, already-walked year: reset to the current year occasionally."
