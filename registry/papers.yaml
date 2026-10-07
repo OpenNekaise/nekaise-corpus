@@ -122701,3 +122701,40 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.5445/ir/1000192870 openalex:W7160095729
     resolution: 'sim1: openalex location'
+  - id: ope-advanced-nanocomposite-membranes-for-sustainab
+    title: Advanced nanocomposite membranes for sustainable water reuse in agriculture
+    url: https://www.frontiersin.org/journals/membrane-science-and-technology/articles/10.3389/frmst.2026.1954364/pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2026-09-30'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/frmst.2026.1954364
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.frontiersin.org/journals/membrane-science-and-technology/articles/10.3389/frmst.2026.1954364/pdf;
+      version publishedVersion]
+    rights_verified_at: '2026-10-07'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/frmst.2026.1954364 openalex:W7214947675
+    resolution: 'legacy: openalex location'
+  - id: ope-on-farm-wastewater-treatment-for-irrigation-us
+    title: On-farm wastewater treatment for irrigation using biochar from local agro-residues
+      in Obuasi, Ghana
+    url: https://journals.plos.org/water/article/file?id=10.1371/journal.pwat.0000612&type=printable
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2026-09-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1371/journal.pwat.0000612
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://journals.plos.org/water/article/file?id=10.1371/journal.pwat.0000612&type=printable;
+      version publishedVersion]
+    rights_verified_at: '2026-10-07'
+    selected_version: publishedVersion
+    origin_ids: doi:10.1371/journal.pwat.0000612 openalex:W7212170281
+    resolution: 'legacy: openalex location'
