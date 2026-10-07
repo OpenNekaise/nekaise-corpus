@@ -122816,3 +122816,21 @@ sources:
     rights_verified_at: '2026-10-07T07:07:04Z'
     origin_ids: doi:10.3389/feart.2019.00261 openalex:W2977886265
     resolution: 'sim1: openalex location'
+  - id: oas-10-5194-jsss-7-535-2018-7f69ceea
+    title: Gas sensors for climate research
+    url: https://jsss.copernicus.org/articles/7/535/2018/jsss-7-535-2018.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-10-11'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/jsss-7-535-2018
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://jsss.copernicus.org/articles/7/535/2018/jsss-7-535-2018.pdf; version
+      publishedVersion]
+    rights_verified_at: '2026-10-07'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/jsss-7-535-2018 openalex:W2896527843
+    resolution: 'sim1: openalex location'
