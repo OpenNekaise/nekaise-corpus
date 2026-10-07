@@ -122683,3 +122683,21 @@ sources:
     rights_verified_at: '2026-10-06T15:08:31Z'
     origin_ids: doi:10.3390/recycling5030017 openalex:W3049757906
     resolution: 'legacy: openalex location'
+  - id: oas-10-5445-ir-1000192870-e87c0a2c
+    title: Comprehensive comparative assessments of optimal distributed solar-energy
+      systems for combined heat and power
+    url: https://publikationen.bibliothek.kit.edu/1000192870/180381150
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.5445/ir/1000192870
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://publikationen.bibliothek.kit.edu/1000192870/180381150; version submittedVersion]
+    rights_verified_at: '2026-10-07'
+    selected_version: submittedVersion
+    origin_ids: doi:10.5445/ir/1000192870 openalex:W7160095729
+    resolution: 'sim1: openalex location'
