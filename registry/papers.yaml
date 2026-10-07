@@ -122834,3 +122834,40 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/jsss-7-535-2018 openalex:W2896527843
     resolution: 'sim1: openalex location'
+  - id: ope-the-role-of-vadose-zone-physics-in-the-ecohydr
+    title: The role of vadose zone physics in the ecohydrological response of a Tibetan
+      meadow to freeze–thaw cycles
+    url: https://tc.copernicus.org/articles/14/4653/2020/tc-14-4653-2020.pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2020-12-21'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/tc-14-4653-2020
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://tc.copernicus.org/articles/14/4653/2020/tc-14-4653-2020.pdf; version
+      publishedVersion]
+    rights_verified_at: '2026-10-07'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/tc-14-4653-2020 openalex:W3117084243
+    resolution: 'legacy: openalex location'
+  - id: ope-a-review-of-the-techno-economic-potential-and-
+    title: A review of the techno-economic potential and environmental impact analysis
+      through life cycle assessment of parabolic trough collector towards the co
+    url: https://du.diva-portal.org/smash/get/diva2:1782917/FULLTEXT01
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2023-06-26'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.heliyon.2023.e17626
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://du.diva-portal.org/smash/get/diva2:1782917/FULLTEXT01; version submittedVersion]
+    rights_verified_at: '2026-10-07'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.heliyon.2023.e17626 openalex:W4382045017
+    resolution: 'legacy: openalex location'
