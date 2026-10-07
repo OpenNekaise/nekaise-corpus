@@ -122777,3 +122777,20 @@ sources:
       openalex:W4399815661
     resolution: 'sim1: openalex location; crossref relation is-preprint-of 10.5194/egusphere-2024-1561
       -> 10.5194/acp-25-555-2025'
+  - id: oas-10-48550-arxiv-2302-09140-badc5dd6
+    title: Towards Co-operative Congestion Mitigation
+    url: https://arxiv.org/pdf/2302.09140
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-02-17'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2302.09140
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2302.09140; version submittedVersion]
+    rights_verified_at: '2026-10-07'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2302.09140 openalex:W4321471989
+    resolution: 'sim1: openalex location'
