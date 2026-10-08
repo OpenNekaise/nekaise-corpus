@@ -34,11 +34,10 @@ TOPICS = {"controls_bas", "equipment_systems", "building_energy", "commissioning
           "standards_protocols", "structures_civil", "construction", "materials",
           "architecture", "infrastructure", "urban", "simulation_modeling"}
 FORMATS = {"pdf", "html", "md", "rst", "txt", "tex", "troff"}
-# Scholarly families require copy-specific evidence (no generic `open` fallback). A loader
-# redirect can invalidate the selected copy's grant: its payload-bound unresolved decision is
-# valid provenance too, with bytes classified outside the default view.
+# Scholarly families require copy-specific evidence (no generic `open` fallback). Restricted
+# and unverified copies are collectable and use the same segregated views as other sources.
 RIGHTS_EVIDENCE_SOURCES = {"openalex_sim", "openalex_ai"}
-EVIDENCED_LICENSES = {"cc-by", "cc-by-sa", "cc0", "public-domain"}
+EVIDENCED_LICENSES = LICENSES - {"open", "proprietary-internal", "unverified"}
 
 
 def entry_errors(e: dict, where: str) -> list[str]:
@@ -59,13 +58,17 @@ def entry_errors(e: dict, where: str) -> list[str]:
     if e.get("license_url") and not str(e["license_url"]).startswith(("http://", "https://")):
         errors.append(f"{where}: {eid}: license_url is not http(s)")
     if e.get("source") in RIGHTS_EVIDENCE_SOURCES:
+        evidence = str(e.get("license_evidence", ""))
         redirect_unverified = (
-            e.get("license") == "unverified"
-            and str(e.get("license_evidence", "")).startswith("redirect:")
-            and re.search(r"; payload sha256=[0-9a-f]{64}; original evidence: ",
-                          str(e.get("license_evidence", ""))) is not None)
-        if e.get("license") not in EVIDENCED_LICENSES and not redirect_unverified:
-            errors.append(f"{where}: {eid}: {e.get('source')} requires an evidenced open licence, "
+            evidence.startswith("redirect:")
+            and re.search(r"; payload sha256=[0-9a-f]{64}; original evidence: ", evidence)
+            is not None)
+        copy_unverified = bool(e.get("selected_version")) and re.search(
+            re.escape(f"[copy {e.get('url')}; version {e.get('selected_version')}; rights ")
+            + r"(?:unknown|conflict)\]$", evidence) is not None
+        unverified = e.get("license") == "unverified" and (redirect_unverified or copy_unverified)
+        if e.get("license") not in EVIDENCED_LICENSES and not unverified:
+            errors.append(f"{where}: {eid}: {e.get('source')} requires an evidenced copy classification, "
                           f"got {e.get('license')!r}")
         for key in ("license_evidence", "rights_verified_at", "persistent_id"):
             if not e.get(key):

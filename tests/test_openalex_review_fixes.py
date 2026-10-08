@@ -207,10 +207,10 @@ def test_same_location_listed_twice_with_contradictory_licences_fails_closed():
     copy = loc("https://zenodo.org/records/1/files/a.pdf", "cc-by")
     w = work(locations=[{**copy, "license": "cc-by-nc"}])
     w["best_oa_location"] = copy
-    assert oar.select_copy(w, POLICY).status == "unresolved"
+    assert oar.select_copy(w, POLICY).rights.tag == "unverified"
     w2 = work(locations=[{**copy, "license_id": "https://openalex.org/licenses/cc-by-sa"}])
     w2["best_oa_location"] = copy
-    assert oar.select_copy(w2, POLICY).status == "unresolved"  # BY vs BY-SA: a conflict
+    assert oar.select_copy(w2, POLICY).rights.tag == "unverified"  # BY vs BY-SA: a conflict
     same = work(locations=[dict(copy)])
     same["best_oa_location"] = copy
     assert oar.select_copy(same, POLICY).status == "resolved"  # identical statements agree
@@ -220,7 +220,7 @@ def test_conflicting_version_statements_fail_closed():
     url = "https://zenodo.org/records/1/files/a.pdf"
     w = work(locations=[loc(url, "cc-by", "acceptedVersion")])
     w["best_oa_location"] = loc(url, "cc-by", "publishedVersion")
-    assert oar.select_copy(w, POLICY).status == "unresolved"
+    assert oar.select_copy(w, POLICY).rights.tag == "unverified"
 
 
 # --- P1.4 Crossref grants are version- and date-bound ------------------------------------------

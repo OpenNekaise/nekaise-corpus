@@ -646,10 +646,8 @@ def build_entry(work: dict, res: oar.Resolution, *, topic: str, source: str, fam
                 today: str, origin_extra: list[str] = (), relation: str = "") -> dict:
     """A registry entry for the resolved copy, carrying its rights evidence and identity.
 
-    It assumes ACCEPTED rights (license = rights.tag). The collect-all follow-up cannot just
-    widen oa_resolution.copy_acceptable: a rejected/unknown/conflicting copy has no tag, so this
-    entry would lose `license` and fail lint. That change needs an explicit rights
-    classification, a persisted rights status, and lint / licence-class folder handling."""
+    Every result has a use tag, including unverified. Evidence is kept without truncation;
+    the existing registry classifier routes restricted copies outside the default view."""
     doi = oar.normalize_doi(work.get("doi"))
     wid = oar.normalize_openalex(work.get("id"))
     pid = oar.doi_url(doi) if doi else f"https://openalex.org/{wid}"
@@ -666,7 +664,7 @@ def build_entry(work: dict, res: oar.Resolution, *, topic: str, source: str, fam
         "persistent_id": pid,
         "license_url": rights.url,
         "license_evidence": (f"{rights.evidence} [copy {copy.url}; version "
-                             f"{copy.version or 'unstated'}]")[:600],
+                             f"{copy.version or 'unstated'}; rights {rights.status}]"),
         "rights_verified_at": today,
         "selected_version": copy.version or "unstated",
         "origin_ids": " ".join(origin),
@@ -749,12 +747,12 @@ class FamilyRun:
         """select_copy with bounded supplementary evidence. Returns (resolution, the work whose
         copy was chosen, extra origin pids, relation note). Raises LookupBudget / UpstreamError
         when a lookup that could still change the outcome is unaffordable or fails."""
-        res = oar.select_copy(work, self.policy)
+        res = oar.select_copy(work, self.policy, open_only=True)
         if res.status != "unresolved":
             return res, work, [], ""
         doi = oar.normalize_doi(work.get("doi"))
         if not doi:
-            return res, work, [], ""
+            return oar.select_copy(work, self.policy), work, [], ""
         # Crossref where it can change the outcome: a preprint may have an explicitly related
         # published version; a PDF on an allowed host with a merely UNKNOWN licence may gain
         # version-bound evidence for the DOI's own copy.
@@ -763,16 +761,18 @@ class FamilyRun:
         crossref = None
         if preprint or fixable:
             crossref = self.api.lookup("crossref", doi)
-            res = oar.select_copy(work, self.policy, crossref=crossref)
+            res = oar.select_copy(work, self.policy, crossref=crossref, open_only=True)
             if res.status == "resolved":
                 return res, work, [], "crossref licence evidence"
         # Unpaywall: a bounded metadata fallback for every unresolved DOI — works with no OpenAlex
         # PDF and SSRN (10.2139) DOIs included. It is a lookup at api.unpaywall.org only; its
         # locations pass the same host, NO-GO and per-copy rights checks (an SSRN copy never).
         unpaywall = self.api.lookup("unpaywall", doi)
-        res = oar.select_copy(work, self.policy, crossref=crossref, unpaywall=unpaywall)
+        res = oar.select_copy(work, self.policy, crossref=crossref, unpaywall=unpaywall,
+                              open_only=True)
         if res.status == "resolved":
             return res, work, [], "unpaywall fallback"
+        related_collection = None
         if crossref:
             record = oar.work_record(work)
             fetched: dict[str, dict | None] = {}
@@ -793,12 +793,19 @@ class FamilyRun:
                     continue
                 if (why := oar.work_excluded(other)) is not None:
                     return oar.Resolution("excluded", [why]), None, [], ""
-                other_res = oar.select_copy(other, self.policy)
+                other_res = oar.select_copy(other, self.policy, open_only=True)
                 if other_res.status == "resolved":
                     note = f"crossref relation {rel_type} {doi} -> {other_doi}"
                     return other_res, other, work_pids(work), note
+                other_collection = oar.select_copy(other, self.policy)
+                if related_collection is None and other_collection.status == "resolved":
+                    note = f"crossref relation {rel_type} {doi} -> {other_doi}"
+                    related_collection = other_collection, other, work_pids(work), note
                 res.reasons.extend(f"related:{r}" for r in other_res.reasons)
-        return res, work, [], ""
+        collected = oar.select_copy(work, self.policy, crossref=crossref, unpaywall=unpaywall)
+        if collected.status == "resolved":
+            return collected, work, [], ""
+        return related_collection or (res, work, [], "")
 
     def _record_unresolved(self, work: dict, res: oar.Resolution, topic: str,
                            walk: str) -> None:
@@ -1019,7 +1026,7 @@ def main_family(args, *, policy: dict, keys, cooldowns=None, save_cooldowns=None
         return 1
     # ids are identity ids (dedup.identity_id), already checked against the store and this run
     report(run.stats, api, family, cursor.render(), nxt.render(), time.monotonic() - started)
-    print(f"# {len(run.out)} NEW candidates with accepted rights for the selected copy")
+    print(f"# {len(run.out)} NEW candidates with classified rights for the selected copy")
     import yaml
     print(yaml.safe_dump(run.out, sort_keys=False, allow_unicode=True))
     if args.append:

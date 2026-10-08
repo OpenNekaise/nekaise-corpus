@@ -3,9 +3,9 @@
 
 Backends:
   - OpenAlex  : metered scholarly search. Every location of a work is inspected and a copy is kept
-                only when it sits on an allowed download host (exact host or subdomain match) AND
-                carries accepted rights evidence for that very copy (CC BY / BY-SA / CC0 /
-                verified public domain; scripts/oa_resolution.py). An unknown licence is never
+                when it sits on an allowed download host (exact host or subdomain match), with
+                rights classified for that very copy (scripts/oa_resolution.py). NC/ND and
+                unverified copies are collected into restricted use views. An unknown licence is never
                 registered as `open`. Anonymous access allows 100 search calls/day, so the legacy
                 family advances one query/page cursor position per round, and shares that budget
                 with the query families (see below).
@@ -284,7 +284,7 @@ def openalex_relevant(work: dict, title: str) -> bool:
 
 
 def _openalex_location(work: dict, policy: dict | None = None) -> tuple[dict, str] | None:
-    """(OpenAlex location, accepted licence tag) of the copy select_copy() would fetch, or None.
+    """(OpenAlex location, use licence tag) of the copy select_copy() would fetch, or None.
     Compatibility view of oa_resolution.select_copy for the legacy family."""
     res = oar.select_copy(work, _policy() if policy is None else policy)
     if res.status != "resolved":
@@ -324,12 +324,12 @@ def from_openalex(term, topic, per, page=1):
             continue
         res = oar.select_copy(w, _policy())
         if res.status != "resolved":
-            unresolved += 1  # no copy with accepted rights: never registered as `open`
+            unresolved += 1
             continue
         out.append(openalex_entry(w, res, topic, today))
     if unresolved:
         print(f"# openalex [{topic}] {unresolved} relevant work(s) without an eligible "
-              "licensed copy skipped", file=sys.stderr)
+              "fetchable copy skipped", file=sys.stderr)
     return out
 
 

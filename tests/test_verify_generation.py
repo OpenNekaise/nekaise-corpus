@@ -658,6 +658,7 @@ def test_incremental_lint_carries_the_openalex_rights_checks(pgw):
             errors, n_entries, _ = lint_registry.changed_lint(view)
         st.abort_run(w, run_id, reason="test")
     assert n_entries == 2
-    assert any("oas-w720: openalex_sim requires an evidenced open licence" in e for e in errors)
+    assert any("oas-w720: openalex_sim requires an evidenced copy classification" in e
+               for e in errors)
     assert any("oas-w720: openalex_sim entry lacks license_evidence" in e for e in errors)
     assert not any("oas-w721" in e for e in errors)

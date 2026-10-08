@@ -127,7 +127,7 @@ def test_openalex_receives_requested_page_and_arxiv_fails_closed(monkeypatch, po
     assert len(requests) == 1
 
 
-def test_openalex_relevance_and_license_gate(monkeypatch, policy):
+def test_openalex_relevance_and_license_classification(monkeypatch, policy):
     def location(url, license_name):
         return {"pdf_url": url, "license": license_name}
 
@@ -201,17 +201,18 @@ def test_openalex_relevance_and_license_gate(monkeypatch, policy):
     assert [row["title"] for row in got] == [
         "Computational intelligence techniques for HVAC systems",
         "Rodent-proofing of buildings",
-        # "Brick metadata schema…" (other-oa) is relevant but has no accepted licence: it is
-        # no longer registered as `open`
+        "Brick metadata schema for portable smart building applications",
         "Gebäudeenergie und Lüftung im Bestand",
         "A Review of Antibiotic Resistance in Wastewater Treatment Plants",
+        "Building energy optimization",
         "Ventilation control in office buildings",
+        "Heat pump retrofit in multifamily buildings",
     ]
-    assert {row["license"] for row in got} == {"cc-by"}
-    assert all(row["license_evidence"].startswith("openalex.license=cc-by") for row in got)
+    assert [row["license"] for row in got] == [
+        "cc-by", "cc-by", "unverified", "cc-by", "cc-by", "cc-by-nc-nd", "cc-by", "cc-by-nc"]
     assert all(row["rights_verified_at"] and row["id"].startswith("ope-") for row in got)
-    assert got[-1]["url"] == "https://zenodo.org/records/1/files/permissive.pdf"
-    assert got[-1]["license"] == "cc-by"
+    assert got[-2]["url"] == "https://zenodo.org/records/1/files/permissive.pdf"
+    assert got[-2]["license"] == "cc-by"
 
 
 def test_openalex_skips_paused_mdpi_host_for_fetchable_alternative(policy):

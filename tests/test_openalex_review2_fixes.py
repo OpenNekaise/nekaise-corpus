@@ -331,10 +331,10 @@ def test_committed_family_backends_use_lookup_max_250():
 
 def test_every_selection_goes_through_the_one_acceptance_predicate(monkeypatch):
     w = work(locations=[{"pdf_url": "https://zenodo.org/records/1/files/a.pdf",
-                         "license": "cc-by-nc", "version": "publishedVersion"}])
+                         "license": "cc-by-nc", "version": "publishedVersion", "is_oa": True}])
+    assert oar.select_copy(w, POLICY).rights.tag == "cc-by-nc"
+    monkeypatch.setattr(oar, "copy_acceptable", lambda rights: False)
     assert oar.select_copy(w, POLICY).status == "unresolved"
-    monkeypatch.setattr(oar, "copy_acceptable", lambda rights: True)
-    assert oar.select_copy(w, POLICY).status == "resolved"
 
 
 # --- the index rebuild: waited for, never replaced by a full parse --------------------------------

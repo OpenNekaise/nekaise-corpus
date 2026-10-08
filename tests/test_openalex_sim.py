@@ -34,7 +34,7 @@ def load(name):
 
 
 def loc(pdf, license=None, version="publishedVersion", **extra):
-    return {"pdf_url": pdf, "license": license, "version": version, **extra}
+    return {"pdf_url": pdf, "license": license, "version": version, "is_oa": True, **extra}
 
 
 def work(title="Calibrating a Modelica Buildings library model of an office building HVAC plant",
@@ -63,10 +63,11 @@ def work(title="Calibrating a Modelica Buildings library model of an office buil
      "http://creativecommons.org/licenses/by/4.0/"),
     ("https://creativecommons.org/publicdomain/mark/1.0/", "accepted", "public-domain",
      "https://creativecommons.org/publicdomain/mark/1.0/"),
-    ("cc-by-nc", "rejected", None, None),
-    ("cc-by-nc-sa", "rejected", None, None),
-    ("CC-BY-ND-4.0", "rejected", None, None),
-    ("https://creativecommons.org/licenses/by-nc-nd/4.0/", "rejected", None, None),
+    ("cc-by-nc", "restricted", "cc-by-nc", None),
+    ("cc-by-nc-sa", "restricted", "cc-by-nc-sa", None),
+    ("CC-BY-ND-4.0", "restricted", "cc-by-nd", "https://creativecommons.org/licenses/by-nd/4.0/"),
+    ("https://creativecommons.org/licenses/by-nc-nd/4.0/", "restricted", "cc-by-nc-nd",
+     "https://creativecommons.org/licenses/by-nc-nd/4.0/"),
     ("public-domain", "unknown", None, None),                  # a label is not verification
     ("pd", "unknown", None, None),
     ("other-oa", "unknown", None, None),
@@ -100,7 +101,7 @@ def test_combine_is_fail_closed():
     assert oar.combine([by, sa]).status == "conflict"
     assert oar.combine([by, other]).status == "conflict"
     assert oar.combine([by4, by3]).status == "conflict"
-    assert oar.combine([by, nc]).status == "rejected"
+    assert oar.combine([by, nc]).status == "conflict"
     pd = oar.structured_licence("openalex", "public-domain")
     assert oar.combine([pd]).status == "unknown"
 
@@ -111,7 +112,7 @@ def test_openalex_license_and_license_id_must_agree():
     assert len(agree) == 2 and oar.combine(agree).status == "accepted"  # both kept, they agree
     clash = oar.openalex_location_evidence(
         {"license": "cc-by", "license_id": "https://openalex.org/licenses/cc-by-nc"})
-    assert oar.combine(clash).status == "rejected"
+    assert oar.combine(clash).status == "conflict"
 
 
 def test_crossref_licence_applies_only_to_its_content_version_and_never_tdm():
@@ -139,22 +140,21 @@ def test_rights_are_required_for_the_selected_copy_and_versions_are_independent(
     assert res.copy.url == "https://zenodo.org/records/9/files/am.pdf"
     assert res.copy.version == "acceptedVersion"
     assert res.rights.tag == "cc-by"
-    assert "rights_rejected:www.frontiersin.org" in res.reasons
-    assert "rights_unknown:arxiv.org" in res.reasons
+    assert res.reasons == []  # restricted copies are collectable; the open copy still wins
 
 
 def test_unknown_licence_never_becomes_open():
     w = work(locations=[loc("https://zenodo.org/records/9/files/a.pdf", "other-oa"),
                         loc("https://arxiv.org/pdf/2501.00002", None)])
     res = oar.select_copy(w, POLICY)
-    assert res.status == "unresolved" and res.copy is None
+    assert res.status == "resolved" and res.rights.tag == "unverified"
 
 
-def test_two_providers_disagreeing_on_a_copy_leave_it_unresolved():
+def test_two_providers_disagreeing_on_a_copy_classify_it_unverified():
     w = work(locations=[loc("https://zenodo.org/records/9/files/a.pdf", "cc-by")])
     unpaywall = {"oa_locations": [{"url_for_pdf": "https://zenodo.org/records/9/files/a.pdf",
                                    "license": "cc-by-nc", "version": "publishedVersion"}]}
-    assert oar.select_copy(w, POLICY, unpaywall=unpaywall).status == "unresolved"
+    assert oar.select_copy(w, POLICY, unpaywall=unpaywall).rights.tag == "unverified"
 
 
 def test_copies_on_suspended_paused_and_never_hosts_are_not_selected():
@@ -474,7 +474,7 @@ def test_lint_rejects_an_openalex_sim_entry_without_evidence():
              "source": "openalex_sim", "license": "open", "topic": "building_energy",
              "format": "pdf"}
     errors = lint_registry.entry_errors(entry, "papers.yaml")
-    assert any("requires an evidenced open licence" in e for e in errors)
+    assert any("requires an evidenced copy classification" in e for e in errors)
     assert any("lacks license_evidence" in e for e in errors)
 
 
@@ -518,14 +518,15 @@ def test_ssrn_family_never_requests_ssrn_and_records_the_work(tmp_path):
     assert (nxt.ssrn.w, nxt.sim.w) == (1, 0)
 
 
-def test_ssrn_preprint_resolves_through_an_explicit_published_version(tmp_path):
+@pytest.mark.parametrize("license", ["https://openalex.org/licenses/cc-by", "cc-by-nc", None])
+def test_ssrn_preprint_resolves_through_an_explicit_published_version(tmp_path, license):
     ssrn = load("ssrn_work.json")
     crossref = dict(load("crossref_ssrn.json"))
     crossref["relation"] = {"is-preprint-of": [{"id": "10.1016/j.autcon.2026.9",
                                                 "id-type": "doi"}]}
     published = work(ssrn["title"], doi="10.1016/j.autcon.2026.9", wid="W8",
                      locations=[loc("https://zenodo.org/records/8/files/aam.pdf",
-                                    "https://openalex.org/licenses/cc-by", "acceptedVersion")])
+                                    license, "acceptedVersion")])
     http = FakeHttp(singles={
         "https://api.crossref.org/works/10.2139/ssrn.7231715": {"message": crossref},
         f"{fam.OPENALEX}/doi:10.1016/j.autcon.2026.9": published})
@@ -537,6 +538,8 @@ def test_ssrn_preprint_resolves_through_an_explicit_published_version(tmp_path):
     assert "doi:10.2139/ssrn.7231715" in entry["origin_ids"].split()
     assert "is-preprint-of" in entry["resolution"]
     assert entry["selected_version"] == "acceptedVersion"
+    assert entry["license"] == ("cc-by" if license and license.endswith("/cc-by")
+                                else license or "unverified")
 
 
 # --- shared OpenAlex budget ---------------------------------------------------------------------

@@ -482,6 +482,7 @@ def test_interrupted_apply_is_finished_by_a_retry(factory, tmp_path, monkeypatch
     seed_rows(st, rows, root)
     out = tmp_path / "audit"
     write_audit(out, rows, AUDITED)
+    original_batches = audit.store_broker.shard_batches
     monkeypatch.setattr(audit.store_broker, "shard_batches", _interrupt_after(cut))
     with pytest.raises(_Interrupted):
         audit.run_apply(root, out, apply=True, st=st, log=lambda *a: None,
@@ -493,7 +494,9 @@ def test_interrupted_apply_is_finished_by_a_retry(factory, tmp_path, monkeypatch
     moved_so_far = [sid for sid, r in after.items()
                     if (r.get("corpus_path") or "").startswith("collection/")]
     assert sum(c["left_default_docs"] for c in committed["changesets"]) == len(moved_so_far)
-    monkeypatch.undo()
+    # Restore the interrupted iterator without undoing autouse isolation from the live
+    # maintenance broker. A retry still belongs to this test's private store.
+    monkeypatch.setattr(audit.store_broker, "shard_batches", original_batches)
     logs: list[str] = []
     assert audit.run_apply(root, out, apply=True, st=st, log=logs.append,
                            operator_decision="test: toy corpus") == 0

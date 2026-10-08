@@ -8,9 +8,9 @@ records why, so that nothing reaches the registry with a licence it merely "look
 * every location is inspected and rights are required for the SELECTED copy — the licence of a
   different version (publisher PDF vs. accepted manuscript vs. preprint) never transfers, and a
   rejected licence on one version does not invalidate an independently licensed other version;
-* only CC BY, CC BY-SA, CC0 and verified public domain are accepted (NC/ND are excluded as
-  everywhere else); an unknown, missing or contradictory licence leaves the work UNRESOLVED —
-  never ``license: open`` merely because a PDF downloads;
+* licences classify use, never collection: NC/ND retain their exact tags; unknown, missing or
+  contradictory evidence is ``unverified``. Open copies retain selection priority. New restricted
+  copies require affirmative OA metadata; a closed location is never a fallback;
 * canonical Creative Commons URLs go through licenses.cc_license(); structured provider licence
   ids ("cc-by", "CC-BY-4.0", "https://openalex.org/licenses/cc-by") are mapped by tested adapters
   that never invent a licence version a provider did not state (a bare "cc-by" records no
@@ -245,16 +245,19 @@ def doi_url(doi: str) -> str:
 
 @dataclass(frozen=True)
 class Evidence:
-    """One provider's statement about one copy: accepted (tag), rejected, or unknown."""
+    """One provider's statement about one copy: accepted, restricted, or unknown."""
     provider: str
     value: str
-    status: str            # "accepted" | "rejected" | "unknown"
+    status: str            # "accepted" | "restricted" | "unknown"
     tag: str | None = None
     url: str | None = None  # canonical licence URL, only when the provider stated one
 
 
-_SPDX = re.compile(r"^cc[- ]?(by(?:[- ]sa)?|0)(?:[- ](\d\.\d))?$", re.I)
-_RESTRICTIVE_LABEL = re.compile(r"\bnc\b|\bnd\b|non-?commercial|no-?deriv", re.I)
+_SPDX = re.compile(r"^cc[- ]?(by(?:[- ]nc)?(?:[- ]sa|[- ]nd)?|0)(?:[- ](\d\.\d))?$", re.I)
+_RESTRICTED_CC = re.compile(
+    r"https?://(?:www\.)?creativecommons\.org/licenses/(by-nc(?:-sa|-nd)?|by-nd)/\d\.\d"
+    r"(?:/[a-z]{2}(?:-[a-z]{2})?)?"
+    r"(?:/(?:legalcode(?:\.[a-z]{2})?|deed\.[a-z]{2}(?:-[a-z]{2})?)?)?/?", re.I)
 
 
 def structured_licence(provider: str, value: str | None) -> Evidence | None:
@@ -263,7 +266,8 @@ def structured_licence(provider: str, value: str | None) -> Evidence | None:
     Canonical creativecommons.org URLs go through licenses.cc_license(). SPDX-style ids with a
     version ("CC-BY-4.0", "CC0-1.0") are expanded to their canonical URL; bare labels ("cc-by")
     are accepted as the provider's structured claim WITHOUT a licence URL — no version is
-    invented. NC/ND in any form is rejected; public-domain labels are not verification."""
+    invented. Canonical NC/ND statements retain their tags; public-domain labels are not
+    verification. Unrecognized prose stays unknown, even if it contains a licence name."""
     if value is None or not str(value).strip():
         return None
     raw = str(value).strip()
@@ -273,20 +277,20 @@ def structured_licence(provider: str, value: str | None) -> Evidence | None:
         tag, url = licenses.cc_license([raw])
         if tag:
             return Evidence(provider, raw, "accepted", tag, url)
-        if "creativecommons.org" in v and ("-nc" in v or "-nd" in v):
-            return Evidence(provider, raw, "rejected")
+        if m := _RESTRICTED_CC.fullmatch(raw):
+            return Evidence(provider, raw, "restricted", f"cc-{m.group(1).lower()}", raw)
         return Evidence(provider, raw, "unknown")  # TDM / publisher / other licence URLs
     label = v.replace("_", "-")
-    if _RESTRICTIVE_LABEL.search(label.replace("-", " ")):
-        return Evidence(provider, raw, "rejected")
     if m := _SPDX.match(label):
         kind = m.group(1).replace(" ", "-")
         version = m.group(2)
         if kind == "0":
             url = "https://creativecommons.org/publicdomain/zero/1.0/" if version == "1.0" else None
             return Evidence(provider, raw, "accepted", "cc0", url)
-        tag = "cc-by-sa" if kind == "by-sa" else "cc-by"
+        tag = f"cc-{kind}"
         url = (f"https://creativecommons.org/licenses/{kind}/{version}/" if version else None)
+        if tag in state_codec.RESTRICTED_USE_LICENSES:
+            return Evidence(provider, raw, "restricted", tag, url)
         if url:
             tag, url = licenses.cc_license([url])
             if not tag:
@@ -377,8 +381,8 @@ def crossref_evidence(message: dict, version: str | None,
 
 @dataclass(frozen=True)
 class Rights:
-    status: str                  # "accepted" | "rejected" | "unknown" | "conflict"
-    tag: str | None = None
+    status: str                  # "accepted" | "restricted" | "unknown" | "conflict"
+    tag: str = "unverified"
     url: str | None = None
     evidence: str = ""
 
@@ -388,9 +392,7 @@ def combine(evidence: list[Evidence]) -> Rights:
     text = "; ".join(f"{e.provider}={e.value}" for e in evidence)
     if not evidence:
         return Rights("unknown", evidence="no licence statement for this copy")
-    if any(e.status == "rejected" for e in evidence):
-        return Rights("rejected", evidence=text)
-    accepted = [e for e in evidence if e.status == "accepted"]
+    accepted = [e for e in evidence if e.status in ("accepted", "restricted")]
     if not accepted:
         return Rights("unknown", evidence=text)
     tags = {e.tag for e in accepted}
@@ -404,17 +406,15 @@ def combine(evidence: list[Evidence]) -> Rights:
     if len(urls) > 1:
         # e.g. CC BY 3.0 vs 4.0 from two providers: the tag agrees, the URL does not
         return Rights("conflict", evidence=text)
-    return Rights("accepted", tag, urls.pop() if urls else None, text)
+    status = "accepted" if tag in ACCEPTED_TAGS else "restricted"
+    return Rights(status, tag, urls.pop() if urls else None, text)
 
 
 # --- copy selection -------------------------------------------------------------------------------
 
 def copy_acceptable(rights: Rights) -> bool:
-    """THE acceptance predicate: whether a copy with these combined rights may be selected and
-    registered. Today: accepted evidence only (CC BY / BY-SA / CC0 / verified PD). Every
-    selection decision goes through this one function, so a later collection-vs-licence-class
-    policy changes it here (and nowhere else)."""
-    return rights.status == "accepted"
+    """Collection needs a use classification, including unverified; access is checked first."""
+    return rights.tag in state_codec.LICENSE_CLASSES
 
 
 @dataclass
@@ -424,6 +424,8 @@ class Copy:
     evidence: list[Evidence] = field(default_factory=list)
     sources: list[str] = field(default_factory=list)
     doi_copy: bool = False  # the DOI's own (publisher) location
+    is_oa: bool = False
+    access_denied: bool = False
 
 
 @dataclass
@@ -468,7 +470,7 @@ def candidate_copies(work: dict, *, unpaywall: dict | None = None,
     doi = normalize_doi(work.get("doi"))
     copies: dict[str, Copy] = {}
 
-    def add(url, version, evidence, source, doi_copy=False):
+    def add(url, version, evidence, source, doi_copy=False, is_oa=None):
         key = _norm_url(url)
         if not key:
             return
@@ -485,18 +487,22 @@ def candidate_copies(work: dict, *, unpaywall: dict | None = None,
                 c.evidence.append(ev)
         c.sources.append(source)
         c.doi_copy = c.doi_copy or doi_copy
+        c.is_oa = c.is_oa or is_oa is True
+        c.access_denied = c.access_denied or is_oa is False
 
     for loc in work_locations(work):
         if not loc.get("pdf_url"):
             continue
         loc_doi = normalize_doi(loc.get("id")) or normalize_doi(loc.get("landing_page_url"))
         add(loc["pdf_url"], loc.get("version"), openalex_location_evidence(loc), "openalex",
-            doi_copy=bool(doi and loc_doi == doi))
+            doi_copy=bool(doi and loc_doi == doi),
+            is_oa=loc.get("is_oa", True if loc is work.get("best_oa_location") else None))
     for loc in (unpaywall or {}).get("oa_locations") or []:
         if not isinstance(loc, dict) or not loc.get("url_for_pdf"):
             continue
         add(loc["url_for_pdf"], loc.get("version"), unpaywall_location_evidence(loc),
-            "unpaywall", doi_copy=loc.get("host_type") == "publisher")
+            "unpaywall", doi_copy=loc.get("host_type") == "publisher",
+            is_oa=loc.get("is_oa", True))
     if crossref:
         for c in copies.values():
             if c.doi_copy:
@@ -508,8 +514,12 @@ def candidate_copies(work: dict, *, unpaywall: dict | None = None,
 
 
 def select_copy(work: dict, policy: dict, *, unpaywall: dict | None = None,
-                crossref: dict | None = None, now: datetime | None = None) -> Resolution:
-    """Choose the best fetchable copy WITH accepted rights for that very copy."""
+                crossref: dict | None = None, now: datetime | None = None,
+                open_only: bool = False) -> Resolution:
+    """Choose a fetchable copy and classify its rights, preferring existing open copies.
+
+    Families use open_only during their bounded supplementary lookups, then call again without
+    it: an available open copy found by the existing fallback search retains priority."""
     if why := work_excluded(work):
         return Resolution("excluded", [why])
     reasons: list[str] = []
@@ -521,11 +531,18 @@ def select_copy(work: dict, policy: dict, *, unpaywall: dict | None = None,
         if refusal := copy_refusal(c.url, policy):
             reasons.append(refusal)
             continue
+        if c.access_denied:
+            reasons.append(f"access_closed:{host_of(c.url)}")
+            continue
         rights = combine(c.evidence)
-        if not copy_acceptable(rights):
+        if rights.status != "accepted" and not c.is_oa:
+            reasons.append(f"access_unverified:{host_of(c.url)}")
+            continue
+        if not copy_acceptable(rights) or (open_only and rights.status != "accepted"):
             reasons.append(f"rights_{rights.status}:{host_of(c.url)}")
             continue
-        rank = (VERSION_RANK.get(c.version or "", 3), 0 if rights.url else 1,
+        rank = (0 if rights.status == "accepted" else 1,
+                VERSION_RANK.get(c.version or "", 3), 0 if rights.url else 1,
                 -len(c.evidence), c.url)
         eligible.append((rank, c, rights))
     if not eligible:

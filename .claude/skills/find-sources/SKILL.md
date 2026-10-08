@@ -23,13 +23,15 @@ budgets; never reset a live cursor to zero or append while another round owns th
    python scripts/find_sources.py --per 100 --backends openalex \
      --query-cursor 0 --query-count 1 --append        # append after review
    ```
-   It queries **OpenAlex**, inspects every location of each work and keeps a copy only when it is on
-   an allowed download host (exact host / subdomain match, never a fetch-suspended host) AND carries
-   accepted rights evidence for that very copy (CC BY / BY-SA / CC0 / verified public domain;
-   `scripts/oa_resolution.py`) — an unknown licence is never registered as `open`. The OSTI and
-   arXiv backends fail closed (no per-record licence). It dedups against the manifest + the registry
-   + `pruned_urls.txt` + DOI/OpenAlex identity, and prints ready-to-paste entries. OpenAlex anonymous
-   access is metered (one search = 10 of 1,000 daily credits); routine rounds spend ONE search per
+   It queries **OpenAlex**, inspects every location of each work and selects copies on allowed
+   download hosts (exact host / subdomain match, never a fetch-suspended host), preferring verified
+   open copies. NC/ND and unknown or conflicting rights are classified into restricted views;
+   these copies need affirmative public-access metadata (`scripts/oa_resolution.py`). An unknown
+   licence is never registered as `open`. The legacy standalone OSTI and arXiv adapters still
+   propose nothing; replacing those licence-only refusals is outstanding work, not collection
+   policy. OpenAlex can discover arXiv copies through the resolver. Discovery dedups against the
+   manifest + registry + `pruned_urls.txt` + DOI/OpenAlex identity, and prints ready-to-paste entries.
+   OpenAlex anonymous access is metered (one search = 10 of 1,000 daily credits); routine rounds spend ONE search per
    round across the legacy 105-query cursor (`find_openalex`) and the building-simulation family
    (`find_openalex_sim`: `--family simulation --family-cursor …`, `scripts/openalex_families.py`),
    which walk a shared schedule. Do not run all OpenAlex queries at once.
@@ -66,8 +68,8 @@ budgets; never reset a live cursor to zero or append while another round owns th
   CORE.ac.uk, OpenEI, Semantic Scholar. Extend `oa_resolution.ALLOWED_PDF_HOSTS` with
   reliably-downloadable OA hosts after probing them honestly; publisher landing pages
   (sciencedirect / springer / wiley / tandf / ieee) 403 bots and are deliberately excluded. SSRN is
-  fetch-suspended (Cloudflare, all rights reserved): SSRN-origin works enter only through a
-  separately licensed copy on another host.
+  fetch-suspended (Cloudflare): SSRN-origin works enter only through a permitted public copy on
+  another host, with rights classified independently for that copy.
 - Paywalled / login-only items stay pointers (`proprietary-internal`, held by the collection-deny
   rule in `registry/eligibility.json`). Public bytes of proprietary material are collected as
   `proprietary` (classified), never by working around an access control.
