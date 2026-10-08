@@ -122975,3 +122975,90 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7204343542
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-34321-23048-2f26949c
+    title: '建物改修工事の会計処理における一試案 : 建築士と経理担当のコミュニケーション促進に必要となる知識の補填'
+    url: https://opac.agulin.aoyama.ac.jp/iwjs0011opc/bdyview.do?bodyid=TF01305200&elmid=Body&fname=52333.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2023-09-28'
+    document_type: article
+    persistent_id: https://doi.org/10.34321/23048
+    license_evidence: no licence statement for this copy [copy https://opac.agulin.aoyama.ac.jp/iwjs0011opc/bdyview.do?bodyid=TF01305200&elmid=Body&fname=52333.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-08'
+    selected_version: submittedVersion
+    origin_ids: doi:10.34321/23048 openalex:W7207760723
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7144512338
+    title: '仮想空間を活用した建築教育DXの実践－VR SNSによる建築空間のリアルスケール観察と議論の効果－;Practice of architectural
+      education DX using virtual space Real-scale observation and discussion of '
+    url: http://kitir.kanazawa-it.ac.jp/infolib/cont/01/G0000002repository/000/000/000000333.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2023-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7144512338
+    license_evidence: no licence statement for this copy [copy http://kitir.kanazawa-it.ac.jp/infolib/cont/01/G0000002repository/000/000/000000333.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-08'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144512338
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7145010194
+    title: '関東学院大学 建築・環境学部創設10周年記念 国際交流シンポジウム : -コロナ感染症蔓延下での建築教育実態と今後の建築の方向性-'
+    url: https://kguopac.kanto-gakuin.ac.jp/webopac/bdyview.do?bodyid=NI30004306&elmid=Body&fname=005.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2023-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145010194
+    license_evidence: no licence statement for this copy [copy https://kguopac.kanto-gakuin.ac.jp/webopac/bdyview.do?bodyid=NI30004306&elmid=Body&fname=005.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-08'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145010194
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7146182193
+    title: 近現代建築資料の閲覧環境の現状と課題－国内外の建築アーカイブズ施設における資料閲覧室の事例を通じて－;The current situation
+      and issues of the environment for reading modern and contemporary architectur
+    url: http://kitir.kanazawa-it.ac.jp/infolib/cont/01/G0000002repository/000/000/000000318.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2023-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146182193
+    license_evidence: no licence statement for this copy [copy http://kitir.kanazawa-it.ac.jp/infolib/cont/01/G0000002repository/000/000/000000318.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-08'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146182193
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7204361231
+    title: 'デッキ・アーバニズム : 多摩センターのペデストリアンデッキをめぐるインフラ論的検討'
+    url: https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/download.php?koara_id=2024000001-20240094
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7204361231
+    license_evidence: no licence statement for this copy [copy https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/download.php?koara_id=2024000001-20240094;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-08'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7204361231
+    resolution: 'sim1: openalex location; resolution retry'
