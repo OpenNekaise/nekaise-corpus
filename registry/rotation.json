@@ -153,20 +153,20 @@
   },
   "find_openalex": {
     "flag": "--query-cursor",
-    "next": 2269,
+    "next": 2270,
     "step": 1,
     "note": "RE-AIMED 2026-08-26 after OpenAlex introduced usage pricing: anonymous access has 100 search requests/day, while the old all-query run made 105 requests and exhausted the budget. One query per round stays below the limit at the live ~72-round/day maximum; the flattened cursor advances across the frozen 105-query list, then continues at page 2 and deeper. Any query-list change requires a reviewed cursor migration."
   },
   "find_openalex_sim": {
     "flag": "--family-cursor",
-    "next": "sim1 t=707 q=12 w=1 p=5 k=0 sq=1 sw=1 sp=1 sk=0",
+    "next": "sim1 t=708 q=12 w=1 p=5 k=0 sq=1 sw=1 sp=1 sk=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families cursor 'sim1 t=<runs> q=<query> w=<date window> p=<page> k=<results finished on that page>' for the simulation walk plus sq/sw/sp/sk for the SSRN-origin walk. Which walk searches in a round comes from the round id (openalex_families.budget_slot), never from this cursor. A --max or lookup-cap stop keeps the page with its k; a failed or malformed search keeps the whole cursor. Changing openalex_families.SIMULATION queries/windows needs a new version and a reviewed cursor migration."
   },
   "find_openalex_ai": {
     "flag": "--family-cursor",
-    "next": "ai1 t=752 q=3 w=2 p=1 k=0",
+    "next": "ai1 t=753 q=3 w=2 p=1 k=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families BUILDING_AI cursor 'ai1 t q w p k' (same semantics as find_openalex_sim's main walk)."
@@ -179,34 +179,9 @@
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 2887,
+    "next": 2888,
     "step": 1,
-    "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature).",
-    "vendor_retry": {
-      "sauter": {
-        "www.sauter-controls.com": {
-          "failures": 0,
-          "first_failure_at": 0,
-          "next_retry_at": 0,
-          "pages": [
-            "https://www.sauter-controls.com/fr/produkt/raccord-detranglement-pneumatique/",
-            "https://www.sauter-controls.com/fr/produkt/unite-de-touches-pour-boitier-dambiance-ecounit306/",
-            "https://www.sauter-controls.com/fr/produkt/transmetteur-pneumatique-de-temperature-pour-montage-en-gaine-centair/",
-            "https://www.sauter-controls.com/fr/produkt/boitier-dambiance-tactile-ecounit365/",
-            "https://www.sauter-controls.com/fr/produkt/transmetteur-pneumatique-dhumidite-pour-montage-mural/",
-            "https://www.sauter-controls.com/fr/produkt/boitier-dambiance-ecounit310-316/",
-            "https://www.sauter-controls.com/fr/produkt/cadres-pour-pieces-dinsertion-avec-dimensions-dencastrement-55-x-55-mm/",
-            "https://www.sauter-controls.com/fr/produkt/transmetteur-pneumatique-dhumidite-pour-montage-en-gaine/",
-            "https://www.sauter-controls.com/fr/produkt/module-e-s-deporte-ecolink510-512/",
-            "https://www.sauter-controls.com/fr/produkt/remote-management/",
-            "https://www.sauter-controls.com/fr/produkt/thermostat-pour-ventilo-convecteur-modbus/",
-            "https://www.sauter-controls.com/fr/produkt/systeme-de-regulation-dynamique-du-debit-avec-vanne-2-voies-et-collecte-des-donnees-energetiques-evalveco/",
-            "https://www.sauter-controls.com/fr/produkt/customer-portal/",
-            "https://www.sauter-controls.com/fr/produkt/sonde-de-temperature-de-gaine-2/"
-          ]
-        }
-      }
-    }
+    "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature)."
   },
   "find_ojs": {
     "flag": "--site",
@@ -230,7 +205,7 @@
   },
   "find_eurlex": {
     "flag": "--cursor",
-    "next": "{\"f\":\"\",\"i\":0,\"k\":\"32023R2486\",\"s\":12}",
+    "next": "{\"f\":\"\",\"i\":0,\"k\":\"32026R0073\",\"s\":12}",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25 (compliance/ESG programme). Dynamic cursor reported by the finder (scripts/finder_protocol.py): JSON {s: seed index into registry/eurlex.json, k: CELEX of the work in progress, i: item offset} | watch:<date> after the last seed (re-walked at most every 7 days)."
@@ -258,7 +233,7 @@
   },
   "find_diva": {
     "flag": "--cursor",
-    "next": "3:2025:1791548094087/diva/swepub_mods/23900/100/report/2025-01-01T00:00:00Z/2025-12-31T23:59:59Z/",
+    "next": "3:2025:1791549414499/diva/swepub_mods/24700/100/report/2025-01-01T00:00:00Z/2025-12-31T23:59:59Z/",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-10-02: '<index into find_diva.SETS (append-only)>:<datestamp year>:<OAI resumptionToken|START>', newest year first down to 1995 per set; a rejected token restarts its year; past the last set the backend reports EXHAUSTED. Records modified after their year was walked land in a newer, already-walked year: reset to the current year occasionally."
