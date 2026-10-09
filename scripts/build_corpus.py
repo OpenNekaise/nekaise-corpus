@@ -59,6 +59,7 @@ import requests
 import artifact_store
 import compliance_common
 import host_policy
+import fetch_backoff
 import ops
 import corpus_stats
 import markup_text
@@ -493,13 +494,9 @@ def _get_hops(url: str, fmt: str, *, session=None, headers: dict | None = None):
         if hops is not None and hops.paced:
             _pace_host(host)
         with _host_sem(hop):
-            if why := _tripped(host):
-                raise ChallengeRefused(f"challenge circuit open for {host} ({why})",
-                                       requested=False)
+            _check_fetch_backoff(hop)
             _wait_for_host(host)
-            if why := _tripped(host):  # opened by another worker while this one waited
-                raise ChallengeRefused(f"challenge circuit open for {host} ({why})",
-                                       requested=False)
+            _check_fetch_backoff(hop)
             programme = hops is not None and hops.robots
             if programme:  # the waits above count: recheck the budgets BEFORE requesting
                 if time.monotonic() - hops.started > DOCUMENT_DEADLINE:
@@ -525,6 +522,9 @@ def _get_hops(url: str, fmt: str, *, session=None, headers: dict | None = None):
             else:
                 resp = get(hop, headers={"User-Agent": ua, "Accept": ACCEPT, **(headers or {})},
                            timeout=TIMEOUT, allow_redirects=False)
+            # Classify under the host slot: a queued request must see this hold before it
+            # starts. No fallback or identity/header experiment on a refusal response.
+            _refuse_406(hop, getattr(resp, "status_code", 200), _header(resp, "retry-after"))
         status = getattr(resp, "status_code", 200)
         check_access_response(hop, status, getattr(resp, "content", b"") or b"", fmt)
         if (host in POLITE_HOSTS or programme) and is_challenge(
@@ -614,6 +614,31 @@ def _trip_host(host: str, why: str, force: bool = False) -> None:
 def _tripped(host: str) -> str | None:
     with _tripped_lock:
         return _tripped_hosts.get(host)
+
+
+def _check_fetch_backoff(url: str) -> None:
+    if why := _tripped(pace_key(host_policy.canonical_host(url))):
+        raise ChallengeRefused(f"challenge circuit open for {host_policy.canonical_host(url)} "
+                               f"({why})", requested=False)
+    if until := fetch_backoff.active(url, root=HERE):
+        raise ChallengeRefused(
+            f"HTTP 406 host cooldown for {host_policy.canonical_host(url)} until {until:.0f}",
+            requested=False)
+
+
+def _refuse_406(url: str, status: int | None, retry_after: str | None) -> None:
+    if status != 406:
+        return
+    why = "HTTP 406 negotiation/refusal"
+    _trip_host(pace_key(host_policy.canonical_host(url)), why, force=True)
+    try:
+        until = fetch_backoff.defer(url, retry_after, root=HERE)
+        why += f"; host cooldown until {until:.0f}"
+    except (OSError, RuntimeError, ValueError) as exc:
+        # Still stop this run and preserve the transient verdict if scratch persistence fails.
+        # Surface the failure in the manifest/log rather than turning it into a dead URL.
+        why += f"; cooldown persistence failed: {exc}"
+    raise ChallengeRefused(why, status=406)
 
 
 @contextlib.contextmanager
@@ -1091,7 +1116,7 @@ def download_one(src: dict) -> dict:
 # rows are kept and retried (prune_corpus.retry_pending) instead of being pruned. Hard failures
 # (404/410, fake PDFs, non-polite 403s, TLS errors) and DNS failures (which have their own
 # repeated-evidence blocklist rule in prune_corpus) keep today's behaviour.
-RECOVERABLE_STATUSES = frozenset({202, 429, 503})
+RECOVERABLE_STATUSES = frozenset({202, 406, 429, 503})
 
 
 def recoverable_failure(exc: BaseException, status: int | None) -> bool:
@@ -1164,7 +1189,9 @@ def _curl_follow(url: str, ua: str | None = None) -> bytes:
                 _pace_host(host)
             headers.write_bytes(b"")
             with _host_sem(hop), tempfile.TemporaryFile() as curl_body:
+                _check_fetch_backoff(hop)
                 _wait_for_host(host)
+                _check_fetch_backoff(hop)
                 out = subprocess.run(
                     ["curl", "-sS", "--max-time", str(TIMEOUT), "-A",
                      HOST_UA.get(host, ua or UA), "-b", str(cookies), "-c", str(cookies),
@@ -1175,9 +1202,17 @@ def _curl_follow(url: str, ua: str | None = None) -> bytes:
                 )
                 curl_body.seek(0)
                 body = curl_body.read() if out.returncode == 0 else b""
+                raw_headers = headers.read_bytes()
+                status, location = _last_status_and_location(raw_headers)
+                retry_after = None
+                for line in raw_headers.decode("latin-1").splitlines():
+                    if line.startswith("HTTP/"):
+                        retry_after = None
+                    elif line.lower().startswith("retry-after:"):
+                        retry_after = line.split(":", 1)[1].strip()
+                _refuse_406(hop, status, retry_after)
             if out.returncode != 0:
                 return b""
-            status, location = _last_status_and_location(headers.read_bytes())
             check_access_response(hop, status or 0, body, "pdf" if body.startswith(b"%PDF-")
                                   else "html")
             if status in REDIRECT_STATUSES and location:

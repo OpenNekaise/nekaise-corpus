@@ -46,7 +46,7 @@ import store
 import store_broker
 
 HERE = Path(__file__).resolve().parents[1]  # repo root (this file lives in scripts/)
-TRANSIENT_FETCH_STATUSES = frozenset({202, 429, 503})
+TRANSIENT_FETCH_STATUSES = frozenset({202, 406, 429, 503})
 DNS_ERROR_MARKERS = (
     "nameresolutionerror",
     "failed to resolve",
