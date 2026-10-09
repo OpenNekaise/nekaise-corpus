@@ -123182,3 +123182,106 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7146427974
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7208175910
+    title: 既存試験機を用いた応答遅れの小さい免震建築物サブストラクチャ・リアルタイム・オンライン応答実験システムの開発
+    url: http://t2r2.star.titech.ac.jp/rrws/file/CTT100862807/ATD100000413/28-121AIJT2106063-02.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2022-02-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208175910
+    license_evidence: no licence statement for this copy [copy http://t2r2.star.titech.ac.jp/rrws/file/CTT100862807/ATD100000413/28-121AIJT2106063-02.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-08'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208175910
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7208156818
+    title: 『アントニーとクレオパトラ』における建築と理性
+    url: https://ir.library.osaka-u.ac.jp/repo/ouka/all/99459/jaas_045_079.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2021-03-31'
+    document_type: article
+    persistent_id: https://openalex.org/W7208156818
+    license_evidence: no licence statement for this copy [copy https://ir.library.osaka-u.ac.jp/repo/ouka/all/99459/jaas_045_079.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-08'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208156818
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-15017-4769748-7fc14ad2
+    title: 建築計画学領域における被災地へのエスノグラフィック・アプローチ
+    url: https://catalog.lib.kyushu-u.ac.jp/opac_download_md/4769748/39_p007.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-01-15'
+    document_type: article
+    persistent_id: https://doi.org/10.15017/4769748
+    license_evidence: no licence statement for this copy [copy https://catalog.lib.kyushu-u.ac.jp/opac_download_md/4769748/39_p007.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-08'
+    selected_version: submittedVersion
+    origin_ids: doi:10.15017/4769748 openalex:W7207715997
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-34321-21999-e195672e
+    title: 建築復元をめぐる国内外の近年の動向
+    url: https://opac.agulin.aoyama.ac.jp/iwjs0011opc/bdyview.do?bodyid=TF01310658&elmid=Body&fname=51364.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2021-03-01'
+    document_type: article
+    persistent_id: https://doi.org/10.34321/21999
+    license_evidence: no licence statement for this copy [copy https://opac.agulin.aoyama.ac.jp/iwjs0011opc/bdyview.do?bodyid=TF01310658&elmid=Body&fname=51364.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-08'
+    selected_version: submittedVersion
+    origin_ids: doi:10.34321/21999 openalex:W7144072808
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w3159714716
+    title: 科目間連携とオンライン対応を図った建築環境設計教育 ―学部3年次の専門実験・演習科目での取り組み―;Architectural environment
+      design education with cooperation between subjects and online support - In
+    url: http://kitir.kanazawa-it.ac.jp/infolib/cont/01/G0000002repository/000/000/000000260.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2021-03-10'
+    document_type: article
+    persistent_id: https://openalex.org/W3159714716
+    license_evidence: no licence statement for this copy [copy http://kitir.kanazawa-it.ac.jp/infolib/cont/01/G0000002repository/000/000/000000260.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-08'
+    selected_version: submittedVersion
+    origin_ids: openalex:W3159714716
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w3189332668
+    title: 'コロナ禍における建築プロジェクトの進め方とその課題 : 施主・設計・施工・アドバイザーの立場から感じたこと'
+    url: https://kguopac.kanto-gakuin.ac.jp/webopac/bdyview.do?bodyid=NI30003862&elmid=Body&fname=008.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2021-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W3189332668
+    license_evidence: no licence statement for this copy [copy https://kguopac.kanto-gakuin.ac.jp/webopac/bdyview.do?bodyid=NI30003862&elmid=Body&fname=008.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-08'
+    selected_version: submittedVersion
+    origin_ids: openalex:W3189332668
+    resolution: 'sim1: openalex location; resolution retry'
