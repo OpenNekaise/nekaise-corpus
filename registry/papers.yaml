@@ -129816,3 +129816,56 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7209341700
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-20604-00002579-0828c8b1
+    title: 版築と鉄骨による合成構造の開発 (特集 自然素材をまとった建物づくり)
+    url: https://tus.repo.nii.ac.jp/record/2654/files/410号_2019年4月_p18-21特集_杉山_今本_清原.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2019-04-01'
+    document_type: article
+    persistent_id: https://doi.org/10.20604/00002579
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://tus.repo.nii.ac.jp/record/2654/files/410号_2019年4月_p18-21特集_杉山_今本_清原.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-09'
+    selected_version: submittedVersion
+    origin_ids: doi:10.20604/00002579 openalex:W7143591095
+    resolution: 'sim1: openalex location'
+  - id: oas-w2968031770
+    title: 'Development of a City and Its Architectural Styles: Riga, Latvia'
+    url: https://suac.repo.nii.ac.jp/record/1542/files/10%E3%80%90%E5%8E%9F%E8%91%97%E8%AB%96%E6%96%87%E3%80%91%E5%A4%A9%E5%86%85%E5%A4%A7%E6%A8%B9%E5%85%88%E7%94%9F_p085.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-03-31'
+    document_type: article
+    persistent_id: https://openalex.org/W2968031770
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://suac.repo.nii.ac.jp/record/1542/files/10%E3%80%90%E5%8E%9F%E8%91%97%E8%AB%96%E6%96%87%E3%80%91%E5%A4%A9%E5%86%85%E5%A4%A7%E6%A8%B9%E5%85%88%E7%94%9F_p085.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-09'
+    selected_version: submittedVersion
+    origin_ids: openalex:W2968031770
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208536269
+    title: A Practical Method to Encourage Concept Level Creation
+    url: https://suac.repo.nii.ac.jp/record/1553/files/21%E3%80%90%E7%A0%94%E7%A9%B6%E5%A0%B1%E5%91%8A%E3%80%91%E5%B2%A9%E5%B4%8E%E6%95%8F%E4%B9%8B%E5%85%88%E7%94%9F_p181.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2019-03-31'
+    document_type: article
+    persistent_id: https://openalex.org/W7208536269
+    license_evidence: no licence statement for this copy [copy https://suac.repo.nii.ac.jp/record/1553/files/21%E3%80%90%E7%A0%94%E7%A9%B6%E5%A0%B1%E5%91%8A%E3%80%91%E5%B2%A9%E5%B4%8E%E6%95%8F%E4%B9%8B%E5%85%88%E7%94%9F_p181.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-09'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208536269
+    resolution: 'sim1: openalex location'
