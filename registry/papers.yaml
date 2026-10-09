@@ -125752,3 +125752,20 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.18910/53400 openalex:W2125723648
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-18910-53574-30e95256
+    title: '昭和初期の日本の近代建築における「合理主義」 : 東京帝室博物館設計競技を手がかりに'
+    url: https://ir.library.osaka-u.ac.jp/repo/ouka/all/53574/jjsd54_064.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2009-09-07'
+    document_type: article
+    persistent_id: https://doi.org/10.18910/53574
+    license_evidence: no licence statement for this copy [copy https://ir.library.osaka-u.ac.jp/repo/ouka/all/53574/jjsd54_064.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-09'
+    selected_version: submittedVersion
+    origin_ids: doi:10.18910/53574 openalex:W2180596920
+    resolution: 'sim1: openalex location; resolution retry'

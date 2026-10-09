@@ -12560,35 +12560,6 @@ sources:
     license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
       licence'
     rights_verified_at: '2026-10-09'
-  - id: dva-simulatorbaserad-med-knings-vning-f-r-trafikledarutb
-    title: 'Simulatorbaserad medåkningsövning för trafikledarutbildningen: ett kostnadseffektivt
-      och flexibelt utbildningsverktyg'
-    url: https://www.diva-portal.org/smash/get/diva2:1701259/FULLTEXT01.pdf
-    source: diva
-    license: unverified
-    topic: simulation_modeling
-    format: pdf
-    language: sv
-    published_at: '2019'
-    document_type: report
-    persistent_id: diva2:1701259
-    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
-      licence'
-    rights_verified_at: '2026-10-09'
-  - id: dva-kalibrering-av-restidsfunktioner-f-rslag-till-metodi
-    title: 'Kalibrering av restidsfunktioner: förslag till metodik och datainsamlingsupplägg'
-    url: https://www.diva-portal.org/smash/get/diva2:1694928/FULLTEXT01.pdf
-    source: diva
-    license: unverified
-    topic: simulation_modeling
-    format: pdf
-    language: sv
-    published_at: '2017'
-    document_type: report
-    persistent_id: diva2:1694928
-    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
-      licence'
-    rights_verified_at: '2026-10-09'
   - id: dva-f-rstudie-t-gsimulering-och-ertms
     title: Förstudie tågsimulering och ERTMS
     url: https://www.diva-portal.org/smash/get/diva2:1747141/FULLTEXT01.pdf
@@ -12645,20 +12616,6 @@ sources:
     license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
       licence'
     rights_verified_at: '2026-10-09'
-  - id: dva-handbok-f-r-kapacitetsanalys-med-hj-lp-av-simulering
-    title: Handbok för kapacitetsanalys med hjälp av simulering
-    url: https://www.diva-portal.org/smash/get/diva2:1738262/FULLTEXT01.pdf
-    source: diva
-    license: unverified
-    topic: simulation_modeling
-    format: pdf
-    language: sv
-    published_at: '2014'
-    document_type: report
-    persistent_id: diva2:1738262
-    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
-      licence'
-    rights_verified_at: '2026-10-09'
   - id: dva-tema-vintermodell-kalibrering-och-vidareutveckling-a
     title: 'Tema Vintermodell: kalibrering och vidareutveckling av Vintermodellen'
     url: https://www.diva-portal.org/smash/get/diva2:1738152/FULLTEXT01.pdf
@@ -12684,6 +12641,20 @@ sources:
     published_at: '2014'
     document_type: report
     persistent_id: diva2:1738182
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-09'
+  - id: dva-inverkan-av-tunnel-p-g-ngtider-underlag-f-r-g-ngtids
+    title: Inverkan av tunnel på gångtider, Underlag för gångtidssimuleringar
+    url: https://www.diva-portal.org/smash/get/diva2:1363606/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: sv
+    published_at: '2018'
+    document_type: report
+    persistent_id: diva2:1363606
     license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
       licence'
     rights_verified_at: '2026-10-09'
