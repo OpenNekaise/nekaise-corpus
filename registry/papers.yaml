@@ -125371,23 +125371,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.24546/81008328 openalex:W157885184
     resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w2750299879
-    title: 伝統木造建築の新しい耐震建具の研究開発 その2 耐震性能を有する和障子の研究開発
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC11000063&elmid=Body&fname=E03_023_046.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2011-03-01'
-    document_type: article
-    persistent_id: https://openalex.org/W2750299879
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC11000063&elmid=Body&fname=E03_023_046.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-09'
-    selected_version: submittedVersion
-    origin_ids: openalex:W2750299879
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w7160225950
     title: '北海道帝国大学および前身校が近代期に蒐集した建築関連洋書について : 1886〜1947 年の教育および営繕活動との関連'
     url: https://eprints.lib.hokudai.ac.jp/repo/huscap/all/99408/01_ikegami.pdf
@@ -127489,3 +127472,40 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.34382/00016838 openalex:W7143965529
     resolution: 'sim1: openalex location'
+  - id: ope-representative-days-selection-for-district-ene
+    title: 'Representative days selection for district energy system optimisation: a
+      solar district heating system with seasonal storage'
+    url: https://lirias.kuleuven.be/retrieve/47b15055-6be3-430a-b5c5-4f4186cf6ef2
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-04-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2019.04.030
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/47b15055-6be3-430a-b5c5-4f4186cf6ef2;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-09'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2019.04.030 openalex:W2941702620
+    resolution: 'legacy: openalex location'
+  - id: ope-global-energy-consumption-of-the-mineral-minin
+    title: 'Global energy consumption of the mineral mining industry: Exploring the
+      historical perspective and future pathways to 2060'
+    url: https://eprints.whiterose.ac.uk/206880/7/1-s2.0-S0959378023001115-main.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-11-16'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.gloenvcha.2023.102745
+    license_evidence: no licence statement for this copy [copy https://eprints.whiterose.ac.uk/206880/7/1-s2.0-S0959378023001115-main.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-09'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.gloenvcha.2023.102745 openalex:W4388742954
+    resolution: 'legacy: openalex location'
