@@ -138179,3 +138179,192 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.techfore.2020.120255 openalex:W3044780387
     resolution: 'legacy: openalex location'
+  - id: oas-10-48550-arxiv-2609-04216-fd1d29c6
+    title: 'Engineering as Code: Bringing Software Engineering Methodology to Engineering
+      Design'
+    url: https://arxiv.org/pdf/2609.04216
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-06-22'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2609.04216
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2609.04216;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2609.04216 openalex:W7211890439
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2606-22312-f4e9dd4b
+    title: 'SHACR: A Graph-Augmented Semi-Autonomous Framework for Multi-Class Conflict
+      Resolution in Smart Home IoT Automation'
+    url: https://arxiv.org/pdf/2606.22312
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-06-21'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2606.22312
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2606.22312;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2606.22312 openalex:W7165645154
+    resolution: 'ai1: openalex location'
+  - id: oas-10-5281-zenodo-20451473-7440029a
+    title: 'Build2SPARQL: A Large-Scale Text-to-SPARQL Benchmark Dataset for Building
+      Knowledge Graph Querying'
+    url: https://arxiv.org/pdf/2610.00224
+    source: openalex_ai
+    license: cc-by-nc
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-05-29'
+    document_type: preprint
+    persistent_id: https://doi.org/10.5281/zenodo.20451473
+    license_evidence: openalex.license=cc-by-nc; openalex.license_id=https://openalex.org/licenses/cc-by-nc
+      [copy https://arxiv.org/pdf/2610.00224; version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.5281/zenodo.20451473 openalex:W7162773382
+    resolution: 'ai1: openalex location'
+  - id: oas-w7161916065
+    title: 'SENSE: Satellite-based ENergy Synthesis for Sustainable Environment'
+    url: https://arxiv.org/pdf/2605.18101
+    source: openalex_ai
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    published_at: '2026-05-18'
+    document_type: preprint
+    persistent_id: https://openalex.org/W7161916065
+    license_evidence: openalex.license=cc-by-nc-sa; openalex.license_id=https://openalex.org/licenses/cc-by-nc-sa
+      [copy https://arxiv.org/pdf/2605.18101; version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7161916065
+    resolution: 'ai1: openalex location'
+  - id: oas-w7159550860
+    title: Retrieval‑Augmented LLM Framework for Robust Automated Generation of HVAC
+      Diagnostic Models
+    url: https://lirias.kuleuven.be/retrieve/0697ed68-b03a-42f5-9e46-3405aa8b8c0e
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-04-16'
+    document_type: article
+    persistent_id: https://openalex.org/W7159550860
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/0697ed68-b03a-42f5-9e46-3405aa8b8c0e;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7159550860
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2604-02032-45c89ae7
+    title: 'IndoorCrowd: A Multi-Scene Dataset for Human Detection, Segmentation, and
+      Tracking with an Automated Annotation Pipeline'
+    url: https://arxiv.org/pdf/2604.02032
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-04-02'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2604.02032
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2604.02032;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2604.02032 openalex:W7148936186
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2603-23668-bbac627a
+    title: 'Energy Efficient Software Hardware CoDesign for Machine Learning: From TinyML
+      to Large Language Models'
+    url: https://arxiv.org/pdf/2603.23668
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-03-24'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2603.23668
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2603.23668;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2603.23668 openalex:W7140575499
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2602-17829-4a8243da
+    title: 'Causality by Abstraction: Symbolic Rule Learning in Multivariate Timeseries
+      with Large Language Models'
+    url: https://arxiv.org/pdf/2602.17829
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-02-19'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2602.17829
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2602.17829;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2602.17829 openalex:W7131064392
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2602-15089-92130771
+    title: 'Triplet Feature Fusion for Equipment Anomaly Prediction : An Open-Source
+      Methodology Using Small Foundation Models'
+    url: https://arxiv.org/pdf/2602.15089
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-02-16'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2602.15089
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2602.15089;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2602.15089 openalex:W7130390981
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2512-25055-8cf6d33e
+    title: Context-aware LLM-based AI Agents for Human-centered Energy Management Systems
+      in Smart Buildings
+    url: https://arxiv.org/pdf/2512.25055
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2025-12-31'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2512.25055
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2512.25055;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2512.25055 openalex:W7117987584
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2502-11723-d0d29017
+    title: 'Energy-Conscious LLM Decoding: Impact of Text Generation Strategies on GPU
+      Energy Consumption'
+    url: https://arxiv.org/pdf/2502.11723
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-02-17'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2502.11723
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2502.11723;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2502.11723 openalex:W4407719413
+    resolution: 'ai1: openalex location'
