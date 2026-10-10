@@ -137469,3 +137469,62 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7145637136
     resolution: 'sim1: openalex location'
+  - id: ope-artificial-intelligence-assisted-infrastructur
+    title: Artificial Intelligence Assisted Infrastructure Assessment using Mixed Reality
+      Systems
+    url: https://arxiv.org/pdf/1812.05659
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-07-17'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/0361198119839988
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1812.05659;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/0361198119839988 openalex:W2904140524
+    resolution: 'legacy: openalex location'
+  - id: ope-experimental-validation-of-a-drive-by-stiffnes
+    title: Experimental validation of a drive-by stiffness identification method for
+      bridge monitoring
+    url: https://pureadmin.qub.ac.uk/ws/files/17180750/20141018_SHM_Manuscript.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-04-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/1475921715578314
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://pureadmin.qub.ac.uk/ws/files/17180750/20141018_SHM_Manuscript.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/1475921715578314 openalex:W2135167670
+    resolution: 'legacy: openalex location'
+  - id: ope-is-it-all-going-to-waste-illegal-transports-of
+    title: Is it all going to waste? Illegal transports of e-waste in a European trade
+      hub
+    url: https://biblio.ugent.be/publication/2967255/file/6776703.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-07-30'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s10611-012-9383-0
+    license_evidence: 'redirect: rights of requested copy https://biblio.ugent.be/publication/2967255/file/6776703.pdf
+      do not transfer to https://backoffice.biblio.ugent.be/download/2967255/6776703;
+      payload sha256=ad910e45147999e601631c23181afa67b87e0bdd6b2bd7f83ba915610612f11e;
+      original evidence: {"license": "unverified", "license_evidence": "openalex.license=other-oa;
+      openalex.license_id=https://openalex.org/licenses/other-oa [copy https://biblio.ugent.be/publication/2967255/file/6776703.pdf;
+      version submittedVersion; rights unknown]", "rights_verified_at": "2026-10-10",
+      "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-10T18:41:14Z'
+    origin_ids: doi:10.1007/s10611-012-9383-0 openalex:W2097169217
+    resolution: 'legacy: openalex location'
