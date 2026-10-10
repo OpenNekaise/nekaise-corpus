@@ -137177,3 +137177,20 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W621987907
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-18910-53432-ea75789e
+    title: '機械時代の映画性 : 中井正一の映画論におけるル コルビュジエと精神分析理論'
+    url: https://ir.lib.shimane-u.ac.jp/36650/files/2908
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2008-05-31'
+    document_type: article
+    persistent_id: https://doi.org/10.18910/53432
+    license_evidence: no licence statement for this copy [copy https://ir.lib.shimane-u.ac.jp/36650/files/2908;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.18910/53432 openalex:W2113440455
+    resolution: 'sim1: openalex location'
