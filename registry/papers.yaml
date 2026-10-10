@@ -136899,3 +136899,58 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.14946/00001659 openalex:W7207874723
     resolution: 'sim1: openalex location'
+  - id: oas-w7208241706
+    title: 各都道府県の人口増減がコンクリート需要に及ぼす影響
+    url: https://kutarr.kochi-tech.ac.jp/record/202/files/JSCEF4_67_4_I-339.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2011-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208241706
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kutarr.kochi-tech.ac.jp/record/202/files/JSCEF4_67_4_I-339.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208241706
+    resolution: 'sim1: openalex location'
+  - id: oas-10-15083-00037500-09205356
+    title: 'The City of the American Dream : A Bret Easton Ellis / Steven Millhauser
+      Remix'
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/37509/files/reny002014.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2010-12-27'
+    document_type: article
+    persistent_id: https://doi.org/10.15083/00037500
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/37509/files/reny002014.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.15083/00037500 openalex:W34497422
+    resolution: 'sim1: openalex location'
+  - id: oas-10-24517-00053704-0a4b7c9c
+    title: '都市計画道路の見直しにおける広域調整及び見直し後の対応に関する実態と課題 : 道府県・政令市の見直し実態及び先進自治体の取り組み状況'
+    url: https://kanazawa-u.repo.nii.ac.jp/record/47377/files/TE-PR-KAWAKAMI-M-733.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2010-10-25'
+    document_type: article
+    persistent_id: https://doi.org/10.24517/00053704
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kanazawa-u.repo.nii.ac.jp/record/47377/files/TE-PR-KAWAKAMI-M-733.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.24517/00053704 openalex:W409210803
+    resolution: 'sim1: openalex location'
