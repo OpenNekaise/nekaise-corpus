@@ -136575,23 +136575,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7145964577
     resolution: 'sim1: openalex location'
-  - id: oas-w389991997
-    title: '建築構造物の地震被害予測に関する実地調査研究・VI : 多治見市を対象とした調査'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2007-12-01'
-    document_type: article
-    persistent_id: https://openalex.org/W389991997
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W389991997
-    resolution: 'sim1: openalex location; resolution retry'
   - id: ope-a-review-of-optimization-techniques-used-in-th
     title: A review of optimization techniques used in the design of fibre composite
       structures for civil engineering applications
@@ -137434,3 +137417,55 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W175225039
     resolution: 'legacy: openalex location'
+  - id: oas-w621637342
+    title: '都市法制の環境法制への応接に関する一断面 : ドイツ建設法典と侵害規則(Eingriffsregelung)'
+    url: https://ynu.repo.nii.ac.jp/?action=repository_uri&item_id=3279
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2008-02-20'
+    document_type: article
+    persistent_id: https://openalex.org/W621637342
+    license_evidence: no licence statement for this copy [copy https://ynu.repo.nii.ac.jp/?action=repository_uri&item_id=3279;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W621637342
+    resolution: 'sim1: openalex location'
+  - id: oas-w1566672019
+    title: 'モダンデザインの背景を探る : 1920年代アバンギャルド住宅誕生におけるクライアント像 その1'
+    url: https://osaka-shoin.repo.nii.ac.jp/record/2236/files/KJ00005117660.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2008-01-31'
+    document_type: article
+    persistent_id: https://openalex.org/W1566672019
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://osaka-shoin.repo.nii.ac.jp/record/2236/files/KJ00005117660.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W1566672019
+    resolution: 'sim1: openalex location'
+  - id: oas-w7145637136
+    title: 景観を教材とした美術教育の一例
+    url: https://petit.lib.yamaguchi-u.ac.jp/5741/files/162863
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2008-01-31'
+    document_type: article
+    persistent_id: https://openalex.org/W7145637136
+    license_evidence: no licence statement for this copy [copy https://petit.lib.yamaguchi-u.ac.jp/5741/files/162863;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145637136
+    resolution: 'sim1: openalex location'
