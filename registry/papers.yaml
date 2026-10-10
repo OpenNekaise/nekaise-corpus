@@ -136086,3 +136086,75 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208602589
     resolution: 'sim1: openalex location; resolution retry'
+  - id: ope-factors-influencing-impact-force-profile-and-m
+    title: Factors influencing impact force profile and measurement accuracy in drop
+      weight impact tests
+    url: https://espace.curtin.edu.au/bitstream/20.500.11937/91663/3/91487.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-08-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.ijimpeng.2020.103688
+    license_evidence: no licence statement for this copy [copy https://espace.curtin.edu.au/bitstream/20.500.11937/91663/3/91487.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.ijimpeng.2020.103688 openalex:W3047785254
+    resolution: 'legacy: openalex location'
+  - id: ope-seismic-loss-and-downtime-assessment-of-existi
+    title: Seismic Loss and Downtime Assessment of Existing Tall Steel-Framed Buildings
+      and Strategies for Increased Resilience
+    url: https://discovery.ucl.ac.uk/1518028/1/Molina%20Hutt_Seismic%20Loss%20and%20Downtime%20Assessment%20of%20Existing%20Tall%20Steel-Framed%20Buildings_.aam_pdf.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-05-14'
+    document_type: article
+    persistent_id: https://doi.org/10.1061/(asce)st.1943-541x.0001314
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/1518028/1/Molina%20Hutt_Seismic%20Loss%20and%20Downtime%20Assessment%20of%20Existing%20Tall%20Steel-Framed%20Buildings_.aam_pdf.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1061/(asce)st.1943-541x.0001314 openalex:W1592198920
+    resolution: 'legacy: openalex location'
+  - id: ope-tunnel-lining-detection-and-retrofitting
+    title: Tunnel lining detection and retrofitting
+    url: https://eprints.whiterose.ac.uk/208177/1/V30_Tunnel%20lining-clear%20version.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-05-03'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.autcon.2023.104881
+    license_evidence: no licence statement for this copy [copy https://eprints.whiterose.ac.uk/208177/1/V30_Tunnel%20lining-clear%20version.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.autcon.2023.104881 openalex:W4367838721
+    resolution: 'legacy: openalex location'
+  - id: ope-efficacy-of-a-sheet-pile-wall-as-a-wave-barrie
+    title: Efficacy of a sheet pile wall as a wave barrier for railway induced ground
+      vibration
+    url: https://lirias.kuleuven.be/retrieve/97881cbc-e05c-49f2-8f73-6fc62791af6e
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-02-21'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.soildyn.2016.02.001
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/97881cbc-e05c-49f2-8f73-6fc62791af6e;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.soildyn.2016.02.001 openalex:W2285922991
+    resolution: 'legacy: openalex location'
