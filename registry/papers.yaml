@@ -136539,3 +136539,39 @@ sources:
     rights_verified_at: '2026-10-10T10:09:24Z'
     origin_ids: doi:10.3389/feart.2020.533498 openalex:W3094501031
     resolution: 'legacy: openalex location'
+  - id: ope-the-potential-of-exoskeletons-in-construction-
+    title: 'The potential of exoskeletons in construction: barriers and challenges'
+    url: https://vbn.aau.dk/ws/files/751795533/THE_POTENTIAL_OF_EXOSKELETONS_IN_CONSTRUCTION_BARRIERS_AND_CHALLENGES_prepublished.pdf
+    source: openalex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1108/ci-08-2022-0206
+    license_evidence: openalex.license=cc-by-nc; openalex.license_id=https://openalex.org/licenses/cc-by-nc
+      [copy https://vbn.aau.dk/ws/files/751795533/THE_POTENTIAL_OF_EXOSKELETONS_IN_CONSTRUCTION_BARRIERS_AND_CHALLENGES_prepublished.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1108/ci-08-2022-0206 openalex:W4389790937
+    resolution: 'legacy: openalex location'
+  - id: ope-a-comprehensive-review-of-digital-twin-part-1-
+    title: 'A Comprehensive Review of Digital Twin -- Part 1: Modeling and Twinning
+      Enabling Technologies'
+    url: https://arxiv.org/pdf/2208.14197
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-08-26'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2208.14197
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2208.14197;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2208.14197 openalex:W4293999519
+    resolution: 'legacy: openalex location'
