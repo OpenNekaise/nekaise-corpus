@@ -136827,3 +136827,39 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.conbuildmat.2023.132295 openalex:W4382877303
     resolution: 'legacy: openalex location'
+  - id: oas-w7163458278
+    title: Development and Evaluation of Map Study Materials for Elementary School Students
+      Using Augmented Reality
+    url: https://suac.repo.nii.ac.jp/record/948/files/110009596232.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2012-12-20'
+    document_type: article
+    persistent_id: https://openalex.org/W7163458278
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://suac.repo.nii.ac.jp/record/948/files/110009596232.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7163458278
+    resolution: 'sim1: openalex location'
+  - id: oas-w7145519508
+    title: 東京都心3区におけるオフィスビルの取壊と建替の動向
+    url: https://ir.lib.shimane-u.ac.jp/36866/files/4598
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2012-04-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145519508
+    license_evidence: no licence statement for this copy [copy https://ir.lib.shimane-u.ac.jp/36866/files/4598;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145519508
+    resolution: 'sim1: openalex location'
