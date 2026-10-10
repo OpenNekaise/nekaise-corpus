@@ -138068,3 +138068,77 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W2111364805
     resolution: 'sim1: openalex location'
+  - id: ope-construction-industry-4-0-and-sustainability-a
+    title: 'Construction Industry 4.0 and Sustainability: An Enabling Framework'
+    url: https://ore.exeter.ac.uk/repository/bitstream/10871/126992/1/FINAL%20VERSION.pdf
+    source: openalex
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2021-10-11'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/tem.2021.3110427
+    license_evidence: no licence statement for this copy [copy https://ore.exeter.ac.uk/repository/bitstream/10871/126992/1/FINAL%20VERSION.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1109/tem.2021.3110427 openalex:W3199359719
+    resolution: 'legacy: openalex location'
+  - id: ope-an-overview-of-the-recent-approaches-to-terroi
+    title: An overview of the recent approaches to terroir functional modelling, footprinting
+      and zoning
+    url: https://soil.copernicus.org/articles/1/287/2015/soil-1-287-2015.pdf
+    source: openalex
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2015-03-18'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/soil-1-287-2015
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://soil.copernicus.org/articles/1/287/2015/soil-1-287-2015.pdf; version
+      publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-10'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/soil-1-287-2015 openalex:W2155983721
+    resolution: 'legacy: openalex location'
+  - id: ope-a-review-of-the-efficiency-of-self-healing-con
+    title: A review of the efficiency of self-healing concrete technologies for durable
+      and sustainable concrete under realistic conditions
+    url: https://lirias.kuleuven.be/retrieve/0a9b5767-d5dc-467d-89b8-45453e5481bd
+    source: openalex
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-01-18'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/09506608.2022.2145747
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/0a9b5767-d5dc-467d-89b8-45453e5481bd;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/09506608.2022.2145747 openalex:W4319833981
+    resolution: 'legacy: openalex location'
+  - id: ope-a-scenario-based-planning-for-the-pickup-and-d
+    title: A scenario-based planning for the pickup and delivery problem with time windows,
+      scheduled lines and stochastic demands
+    url: https://pure.tue.nl/ws/files/23623433/1_s2.0_S0191261515300485_main.pdf
+    source: openalex
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2016-05-13'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.trb.2016.04.015
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://pure.tue.nl/ws/files/23623433/1_s2.0_S0191261515300485_main.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.trb.2016.04.015 openalex:W2379012095
+    resolution: 'legacy: openalex location'
