@@ -135786,3 +135786,303 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208548223
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-15017-2341007-a5185c84
+    title: '七月王朝期におけるパリ建築工の運動 : とくに下請制廃止の要求をめぐって'
+    url: https://catalog.lib.kyushu-u.ac.jp/opac_download_md/2341007/p099.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1956-03-10'
+    document_type: article
+    persistent_id: https://doi.org/10.15017/2341007
+    license_evidence: no licence statement for this copy [copy https://catalog.lib.kyushu-u.ac.jp/opac_download_md/2341007/p099.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.15017/2341007 openalex:W7207663100
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w126270501
+    title: 建築施設の設計(KSC) (カッパ8L・8・9L・9M型)
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/22907/files/sk015007052.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: pt
+    published_at: '1963-07-01'
+    document_type: article
+    persistent_id: https://openalex.org/W126270501
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/22907/files/sk015007052.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W126270501
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w128040741
+    title: '計画原論からみた建築の話 : 回顧30年（退官記念講演要旨）'
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/23033/files/sk014005002.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1962-05-01'
+    document_type: article
+    persistent_id: https://openalex.org/W128040741
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/23033/files/sk014005002.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W128040741
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w1513380657
+    title: 建築工業生産化のためのモデュール(標準数)の確立について
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/23521/files/sk010012001.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1958-12-01'
+    document_type: article
+    persistent_id: https://openalex.org/W1513380657
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/23521/files/sk010012001.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W1513380657
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w3041738790
+    title: 〔行政法一〇〕建築許可に關する消防長の同意の取消と抗告訴訟 (昭和三四年一月二九日最高裁一小法廷判決・棄却)
+    url: https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/download.php?koara_id=AN00224504-19600515-0052
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1960-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W3041738790
+    license_evidence: no licence statement for this copy [copy https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/download.php?koara_id=AN00224504-19600515-0052;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W3041738790
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7145215402
+    title: 'これからの簡易耐火建築 : 特に新材料の防火性について'
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/23396/files/sk011009004.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1959-09-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145215402
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/23396/files/sk011009004.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145215402
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7145313372
+    title: 建築における生産管理の実態調査
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/22927/files/sk015005004.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1963-05-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145313372
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/22927/files/sk015005004.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145313372
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7145315891
+    title: 鉄筋コンクリート格子梁の塑性的性状について
+    url: https://meiji.repo.nii.ac.jp/record/5604/files/kougakubuhokoku_14_183.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1960-10-25'
+    document_type: article
+    persistent_id: https://openalex.org/W7145315891
+    license_evidence: no licence statement for this copy [copy https://meiji.repo.nii.ac.jp/record/5604/files/kougakubuhokoku_14_183.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145315891
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7145449557
+    title: 第2室戸台風による奄美群島の建築物被害について
+    url: https://ir.kagoshima-u.ac.jp/record/7565/files/AN00040363_v2_p129-139.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1962-09-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145449557
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ir.kagoshima-u.ac.jp/record/7565/files/AN00040363_v2_p129-139.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145449557
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7145664728
+    title: 日本の建築家
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/23627/files/sk010004004.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1958-04-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145664728
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/23627/files/sk010004004.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145664728
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7145801872
+    title: 住宅並びに地域施設の使われ方に関する建築計画的研究(要約)
+    url: https://meiji.repo.nii.ac.jp/record/5603/files/kougakubuhokoku_14_178.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1960-10-25'
+    document_type: article
+    persistent_id: https://openalex.org/W7145801872
+    license_evidence: no licence statement for this copy [copy https://meiji.repo.nii.ac.jp/record/5603/files/kougakubuhokoku_14_178.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145801872
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7145986620
+    title: 建築材料の難燃性について(建設特集号)
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/23285/files/sk012006004.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1960-06-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145986620
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/23285/files/sk012006004.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145986620
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7146045568
+    title: 建築用コンクリートの耐凍害性に対する北海道産粗骨材の影響
+    url: https://eprints.lib.hokudai.ac.jp/repo/huscap/all/40632/19_167-174.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1958-08-15'
+    document_type: article
+    persistent_id: https://openalex.org/W7146045568
+    license_evidence: no licence statement for this copy [copy https://eprints.lib.hokudai.ac.jp/repo/huscap/all/40632/19_167-174.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146045568
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7208162313
+    title: '写真測量を応用した建築の実測 : 旧工部省品川硝子製造所建築の実測'
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/23041/files/sk014004002.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1962-04-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208162313
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/23041/files/sk014004002.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208162313
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7208361042
+    title: 日本における初期工場建築の系譜(建設特集号)
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/23281/files/sk012006001.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1960-06-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208361042
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/23281/files/sk012006001.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208361042
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7208375299
+    title: ヨーロッパにおける建築生産の工業化
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/22984/files/sk014010003.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1962-10-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208375299
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/22984/files/sk014010003.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208375299
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7208602589
+    title: 現代建築における人間性に関する一考察
+    url: https://ir.lib.shimane-u.ac.jp/2586/files/6282
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1957-03-30'
+    document_type: article
+    persistent_id: https://openalex.org/W7208602589
+    license_evidence: no licence statement for this copy [copy https://ir.lib.shimane-u.ac.jp/2586/files/6282;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208602589
+    resolution: 'sim1: openalex location; resolution retry'
