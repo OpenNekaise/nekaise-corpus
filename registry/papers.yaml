@@ -137087,3 +137087,93 @@ sources:
     rights_verified_at: '2026-10-10T15:58:32Z'
     origin_ids: doi:10.3389/feart.2022.883572 openalex:W4224980407
     resolution: 'legacy: openalex location'
+  - id: ope-effect-of-cushion-types-on-the-seismic-respons
+    title: Effect of cushion types on the seismic response of structure with disconnected
+      pile raft foundation
+    url: https://discovery.ucl.ac.uk/10167561/1/Manuscript-revised-2022.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-01-16'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.istruc.2022.12.099
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10167561/1/Manuscript-revised-2022.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.istruc.2022.12.099 openalex:W4316505334
+    resolution: 'legacy: openalex location'
+  - id: ope-breathing-in-the-anthropocene-thinking-through
+    title: 'Breathing in the Anthropocene: Thinking Through Scale with Containment Technologies'
+    url: https://epress.lib.uts.edu.au/journals/index.php/csrj/article/download/6941/7346
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-11-13'
+    document_type: article
+    persistent_id: https://doi.org/10.5130/csr.v25i2.6941
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://epress.lib.uts.edu.au/journals/index.php/csrj/article/download/6941/7346;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-10'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5130/csr.v25i2.6941 openalex:W2998002314
+    resolution: 'legacy: openalex location'
+  - id: ope-impact-of-semi-empirical-methods-implemented-i
+    title: Impact of semi-empirical methods implemented in heat, air, and moisture (HAM)
+      models on predicted wind-driven rain (WDR) loads and hygrothermal respon
+    url: https://lirias.kuleuven.be/retrieve/c31380a9-ed66-4eae-a9f0-458d913d2161
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2024.111770
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/c31380a9-ed66-4eae-a9f0-458d913d2161;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2024.111770 openalex:W4399913495
+    resolution: 'legacy: openalex location'
+  - id: ope-energy-response-of-a-passive-variable-friction
+    title: Energy response of a passive variable friction damper and numerical simulation
+      on the control effects for high‐rise buildings
+    url: https://eprints.lib.hokudai.ac.jp/repo/huscap/all/90707/SCHM_MainText_r06b.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-10-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1002/stc.3124
+    license_evidence: no licence statement for this copy [copy https://eprints.lib.hokudai.ac.jp/repo/huscap/all/90707/SCHM_MainText_r06b.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1002/stc.3124 openalex:W4306786643
+    resolution: 'legacy: openalex location'
+  - id: oas-w621987907
+    title: '建築構造物の地震被害予測に関する実地調査研究・III : 瀬戸市の調査結果'
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2004-12-15'
+    document_type: article
+    persistent_id: https://openalex.org/W621987907
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W621987907
+    resolution: 'sim1: openalex location; resolution retry'
