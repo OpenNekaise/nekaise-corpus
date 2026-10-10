@@ -131169,3 +131169,465 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7145753007
     resolution: 'sim1: openalex location; resolution retry'
+  - id: ope-life-cycle-energy-and-carbon-assessment-of-dou
+    title: Life cycle energy and carbon assessment of double skin façades for office
+      refurbishments
+    url: https://cris.brighton.ac.uk/ws/files/378489/full_final_draft_submission_revised_v4_plaintext_proofread.pdf
+    source: openalex
+    license: unverified
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2015-09-29'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2015.09.051
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://cris.brighton.ac.uk/ws/files/378489/full_final_draft_submission_revised_v4_plaintext_proofread.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2015.09.051 openalex:W1777824897
+    resolution: 'legacy: openalex location'
+  - id: ope-ai-driven-digital-twins-for-enhancing-indoor-e
+    title: AI-Driven Digital Twins for Enhancing Indoor Environmental Quality and Energy
+      Efficiency in Smart Building Systems
+    url: https://kau.diva-portal.org/smash/get/diva2:1962884/FULLTEXT01
+    source: openalex
+    license: unverified
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2025-03-24'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/buildings15071030
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://kau.diva-portal.org/smash/get/diva2:1962884/FULLTEXT01; version
+      submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/buildings15071030 openalex:W4408798679
+    resolution: 'legacy: openalex location'
+  - id: ope-where-to-focus-developing-a-lca-impact-categor
+    title: Where to focus? Developing a LCA impact category selection tool for manufacturers
+      of building materials
+    url: https://research.chalmers.se/publication/535316/file/535316_Fulltext.pdf
+    source: openalex
+    license: unverified
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2023-03-30'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jclepro.2023.136936
+    license_evidence: no licence statement for this copy [copy https://research.chalmers.se/publication/535316/file/535316_Fulltext.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jclepro.2023.136936 openalex:W4361269594
+    resolution: 'legacy: openalex location'
+  - id: ope-environmental-benchmarks-for-buildings-a-criti
+    title: 'Environmental benchmarks for buildings: a critical literature review'
+    url: https://lirias.kuleuven.be/retrieve/01138242-08d1-435b-bee5-41ddf7c8a593
+    source: openalex
+    license: unverified
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2020-11-16'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s11367-020-01840-7
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/01138242-08d1-435b-bee5-41ddf7c8a593;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s11367-020-01840-7 openalex:W3100594891
+    resolution: 'legacy: openalex location'
+  - id: ope-an-application-of-hybrid-life-cycle-assessment
+    title: An application of hybrid life cycle assessment as a decision support framework
+      for green supply chains
+    url: https://kar.kent.ac.uk/43166/1/IJPR%20Proof.pdf
+    source: openalex
+    license: unverified
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2014-09-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/00207543.2014.951092
+    license_evidence: no licence statement for this copy [copy https://kar.kent.ac.uk/43166/1/IJPR%20Proof.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/00207543.2014.951092 openalex:W2050277670
+    resolution: 'legacy: openalex location'
+  - id: oas-w7145952996
+    title: '665 高齢者の要望からみた在宅福祉サービス必要量の設定手法に関する研究 : 福祉サービス実施のシステム化に関する研究(建築計画)'
+    url: https://ir.kagoshima-u.ac.jp/record/2749/files/110007644320.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1996-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145952996
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ir.kagoshima-u.ac.jp/record/2749/files/110007644320.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145952996
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7146053099
+    title: '614 遺伝的アルゴリズムを活用した高齢者福祉サービス供給量の最適化手法に関する研究 : その2(建築計画)'
+    url: https://ir.kagoshima-u.ac.jp/record/991/files/110007024645.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1997-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146053099
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ir.kagoshima-u.ac.jp/record/991/files/110007024645.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146053099
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7146251332
+    title: '近郊住宅地における建築協定の締結要因と効果に関する研究 : 神戸市北区鈴蘭台地域を対象として'
+    url: https://ocu-omu.repo.nii.ac.jp/record/2015333/files/DB00010368.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1996-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146251332
+    license_evidence: no licence statement for this copy [copy https://ocu-omu.repo.nii.ac.jp/record/2015333/files/DB00010368.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146251332
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7146747118
+    title: '606 自治体の類縁性と圏域形成に関する数量化分析 : 地域施設計画における圏域設定手法に関する研究 その9(建築計画)'
+    url: https://ir.kagoshima-u.ac.jp/record/5539/files/110007024637.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1997-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146747118
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ir.kagoshima-u.ac.jp/record/5539/files/110007024637.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146747118
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7146851426
+    title: '杉板木口面の局所湿気伝達係数の測定と検討 : 多孔質建築材料内における水蒸気移動の局所非平衡性に関する研究 その1'
+    url: https://nitech.repo.nii.ac.jp/record/4444/files/JAPEE_488_9.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1996-10-30'
+    document_type: article
+    persistent_id: https://openalex.org/W7146851426
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://nitech.repo.nii.ac.jp/record/4444/files/JAPEE_488_9.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146851426
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7207928831
+    title: '第13回公開講座 : 阪神・淡路大震災と建築基準法'
+    url: https://kansai-u.repo.nii.ac.jp/record/2004249/files/KU-0600-19961220-07.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1996-12-20'
+    document_type: article
+    persistent_id: https://openalex.org/W7207928831
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kansai-u.repo.nii.ac.jp/record/2004249/files/KU-0600-19961220-07.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7207928831
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7208071423
+    title: '667 高齢者が参加するサークルの意義とアクセス : 高齢者が自立できる社会形成に関する研究 その7(建築計画)'
+    url: https://ir.kagoshima-u.ac.jp/record/8552/files/110007644322.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1996-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208071423
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ir.kagoshima-u.ac.jp/record/8552/files/110007644322.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208071423
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7208260664
+    title: '608 長期スパンの増改築に見る病院リニューアルの手法 : 病院のリニューアル計画に関する研究 その2(建築計画)'
+    url: https://ir.kagoshima-u.ac.jp/record/2750/files/110007024639.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1997-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208260664
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ir.kagoshima-u.ac.jp/record/2750/files/110007024639.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208260664
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7208500458
+    title: 阪神・淡路大震災の地下鉄構造物の被害と被害原因の検討
+    url: https://tokyo-metro-u.repo.nii.ac.jp/record/5577/files/20024-061-003.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1996-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208500458
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://tokyo-metro-u.repo.nii.ac.jp/record/5577/files/20024-061-003.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208500458
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-14993-0002000518-79b8afde
+    title: 建築と住まいにおけるおもての問題について
+    url: https://mukogawa.repo.nii.ac.jp/record/2000518/files/P31-36.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1995-10-01'
+    document_type: article
+    persistent_id: https://doi.org/10.14993/0002000518
+    license_evidence: no licence statement for this copy [copy https://mukogawa.repo.nii.ac.jp/record/2000518/files/P31-36.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.14993/0002000518 openalex:W7143613691
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-14993-0002000526-28116891
+    title: 風土と建築デザイン
+    url: https://mukogawa.repo.nii.ac.jp/record/2000526/files/P031-035.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1994-10-01'
+    document_type: article
+    persistent_id: https://doi.org/10.14993/0002000526
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://mukogawa.repo.nii.ac.jp/record/2000526/files/P031-035.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.14993/0002000526 openalex:W7207750895
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w1511050580
+    title: 都市づくりにおける「地域ルール」の意義と課題：建築協定と地区計画を素材にして
+    url: https://eprints.lib.hokudai.ac.jp/repo/huscap/all/22259/1_P117-143.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1994-11-01'
+    document_type: article
+    persistent_id: https://openalex.org/W1511050580
+    license_evidence: no licence statement for this copy [copy https://eprints.lib.hokudai.ac.jp/repo/huscap/all/22259/1_P117-143.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W1511050580
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w221691267
+    title: '20427 建築基礎地盤としてのセメント系改良地盤に関する研究(その20) : 各種地盤におけるインテグリティ試験'
+    url: https://kanazawa-u.repo.nii.ac.jp/?action=repository_uri&item_id=8208
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1995-07-20'
+    document_type: article
+    persistent_id: https://openalex.org/W221691267
+    license_evidence: no licence statement for this copy [copy https://kanazawa-u.repo.nii.ac.jp/?action=repository_uri&item_id=8208;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W221691267
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w3086973383
+    title: '日本・韓国伝統建築空間のイメージ評定尺度抽出 : 日本・韓国伝統建築空間のイメージ特性（その１）'
+    url: https://nitech.repo.nii.ac.jp/record/4281/files/JAPEE_458_171.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1994-04-30'
+    document_type: article
+    persistent_id: https://openalex.org/W3086973383
+    license_evidence: no licence statement for this copy [copy https://nitech.repo.nii.ac.jp/record/4281/files/JAPEE_458_171.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W3086973383
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w342810527
+    title: '9020 大正から昭和にかけての建築家の言説 その2 : 言説にみる建築思潮の構造'
+    url: https://nitech.repo.nii.ac.jp/record/4302/files/STPAM_1994_1087.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1994-07-25'
+    document_type: article
+    persistent_id: https://openalex.org/W342810527
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://nitech.repo.nii.ac.jp/record/4302/files/STPAM_1994_1087.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W342810527
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w420162621
+    title: '5457 視深度による建築平面解析手法の研究 : 視深度の映像化'
+    url: https://nitech.repo.nii.ac.jp/record/4360/files/STPAM_1995_911.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1995-07-20'
+    document_type: article
+    persistent_id: https://openalex.org/W420162621
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://nitech.repo.nii.ac.jp/record/4360/files/STPAM_1995_911.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W420162621
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w50058640
+    title: '戦後の住宅行政、都市建築行政 : 21世紀に残るストック形成に向けて(インタビュー)( 戦後建築をつくった人々 : 人とその逸話で歴史の行間を照らし出す)'
+    url: https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12203&item_no=1&attribute_id=24&file_no=1
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1995-08-20'
+    document_type: article
+    persistent_id: https://openalex.org/W50058640
+    license_evidence: no licence statement for this copy [copy https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12203&item_no=1&attribute_id=24&file_no=1;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W50058640
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w586919177
+    title: '2019 事務所建築における柱設計用積載荷重の階数による低減 その4 : 物品偏在の同時生起確率を考慮した検討'
+    url: https://nitech.repo.nii.ac.jp/record/4297/files/STPAM_1994_37.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1994-07-25'
+    document_type: article
+    persistent_id: https://openalex.org/W586919177
+    license_evidence: no licence statement for this copy [copy https://nitech.repo.nii.ac.jp/record/4297/files/STPAM_1994_37.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W586919177
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7139618835
+    title: ハトにおける三田キャンパス内建築物の認知
+    url: https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/download.php/AN0006957X-00000041-0023.pdf?file_id=36757
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1995-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7139618835
+    license_evidence: no licence statement for this copy [copy https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/download.php/AN0006957X-00000041-0023.pdf?file_id=36757;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7139618835
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7144844557
+    title: '439 鹿児島県における公営住宅入居者の実態把握(日吉町,吾平町の事例) : 人口減少高齢化地域における公営住宅に関する研究 その1(建築計画)'
+    url: https://ir.kagoshima-u.ac.jp/record/11494/files/110007024382.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1994-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7144844557
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ir.kagoshima-u.ac.jp/record/11494/files/110007024382.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144844557
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7144915851
+    title: '445 在宅福祉サービスの実施開始要因に関する研究 : 高齢者のためのまちづくりに関する研究 その1(建築計画)'
+    url: https://ir.kagoshima-u.ac.jp/record/8548/files/110007024388.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1994-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7144915851
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ir.kagoshima-u.ac.jp/record/8548/files/110007024388.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144915851
+    resolution: 'sim1: openalex location; resolution retry'
