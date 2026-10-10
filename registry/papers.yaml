@@ -136627,3 +136627,59 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W389991997
     resolution: 'sim1: openalex location; resolution retry'
+  - id: ope-a-review-of-optimization-techniques-used-in-th
+    title: A review of optimization techniques used in the design of fibre composite
+      structures for civil engineering applications
+    url: https://eprints.qut.edu.au/46714/1/46714_submittedForPub.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2011-05-07'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.matdes.2011.04.061
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://eprints.qut.edu.au/46714/1/46714_submittedForPub.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.matdes.2011.04.061 openalex:W1591820175
+    resolution: 'legacy: openalex location'
+  - id: ope-representation-of-landscape-hydrological-conne
+    title: Representation of landscape hydrological connectivity using a topographically
+      driven surface flow index
+    url: https://eprints.lancs.ac.uk/id/eprint/31422/1/2008WR007336.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2009-08-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1029/2008wr007336
+    license_evidence: no licence statement for this copy [copy https://eprints.lancs.ac.uk/id/eprint/31422/1/2008WR007336.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1029/2008wr007336 openalex:W1880640180
+    resolution: 'legacy: openalex location'
+  - id: ope-dynamic-strain-estimation-for-fatigue-assessme
+    title: Dynamic strain estimation for fatigue assessment of an offshore monopile
+      wind turbine using filtering and modal expansion algorithms
+    url: https://lirias.kuleuven.be/retrieve/238db59f-e13b-46d4-9171-3b2d4638b891
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-02-16'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.ymssp.2016.01.004
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/238db59f-e13b-46d4-9171-3b2d4638b891;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.ymssp.2016.01.004 openalex:W2325895773
+    resolution: 'legacy: openalex location'
