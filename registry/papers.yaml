@@ -137126,23 +137126,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1002/stc.3124 openalex:W4306786643
     resolution: 'legacy: openalex location'
-  - id: oas-w621987907
-    title: '建築構造物の地震被害予測に関する実地調査研究・III : 瀬戸市の調査結果'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2004-12-15'
-    document_type: article
-    persistent_id: https://openalex.org/W621987907
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W621987907
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-10-18910-53432-ea75789e
     title: '機械時代の映画性 : 中井正一の映画論におけるル コルビュジエと精神分析理論'
     url: https://ir.lib.shimane-u.ac.jp/36650/files/2908
@@ -138159,3 +138142,40 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W43058097
     resolution: 'sim1: openalex location'
+  - id: ope-net-zero-emissions-chemical-industry-in-a-worl
+    title: Net-zero emissions chemical industry in a world of limited resources
+    url: https://pure.tue.nl/ws/files/303911886/1-s2.0-S2590332223002075-main.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-05-29'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.oneear.2023.05.006
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://pure.tue.nl/ws/files/303911886/1-s2.0-S2590332223002075-main.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.oneear.2023.05.006 openalex:W4378717523
+    resolution: 'legacy: openalex location'
+  - id: ope-uk-s-net-zero-carbon-emissions-target-investig
+    title: 'UK''s net-zero carbon emissions target: Investigating the potential role
+      of economic growth, financial development, and R&D expenditures based on histo'
+    url: https://pure.hud.ac.uk/ws/files/21715707/UK_Paper_20200809.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2020-09-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.techfore.2020.120255
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://pure.hud.ac.uk/ws/files/21715707/UK_Paper_20200809.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.techfore.2020.120255 openalex:W3044780387
+    resolution: 'legacy: openalex location'
