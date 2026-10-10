@@ -136247,3 +136247,37 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208112774
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w1575156324
+    title: 「近世画家論」第二巻より「建築の七灯」に至る迄（一） ジョン・ラスキン伝続稿の一片
+    url: https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/download.php/AN00234610-19240110-0079.pdf?file_id=84320
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1924-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W1575156324
+    license_evidence: no licence statement for this copy [copy https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/download.php/AN00234610-19240110-0079.pdf?file_id=84320;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W1575156324
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7207904453
+    title: 「近世画家論」第二巻より「建築の七灯」に至る迄（二、完） ジョン・ラスキン伝続稿の一片
+    url: https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/download.php/AN00234610-19240217-0083.pdf?file_id=84331
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1924-02-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7207904453
+    license_evidence: no licence statement for this copy [copy https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/download.php/AN00234610-19240217-0083.pdf?file_id=84331;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7207904453
+    resolution: 'sim1: openalex location; resolution retry'
