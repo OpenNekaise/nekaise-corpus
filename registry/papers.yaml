@@ -134816,3 +134816,267 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.57349/0002000376 openalex:W7163134551
     resolution: 'sim1: openalex location'
+  - id: oas-w7144712394
+    title: 老人の療養・看護施設の建築計画に関する研究
+    url: https://ynu.repo.nii.ac.jp/?action=repository_action_common_download&item_id=4314&item_no=1&attribute_id=20&file_no=1
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1980-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7144712394
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ynu.repo.nii.ac.jp/?action=repository_action_common_download&item_id=4314&item_no=1&attribute_id=20&file_no=1;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144712394
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7145233880
+    title: 520 オープンシステム病院に関する研究(建築計画)
+    url: https://ir.kagoshima-u.ac.jp/record/8517/files/110007599323.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1979-02-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145233880
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ir.kagoshima-u.ac.jp/record/8517/files/110007599323.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145233880
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7145275539
+    title: '木造建物の諸性状と地震被害の関係について : 1968年十勝沖地震・1978年宮城県沖地震の調査から'
+    url: https://tokyo-metro-u.repo.nii.ac.jp/record/4752/files/20024-008-011.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1979-12-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145275539
+    license_evidence: no licence statement for this copy [copy https://tokyo-metro-u.repo.nii.ac.jp/record/4752/files/20024-008-011.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145275539
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7145340728
+    title: 床面内変形を伴う建築物の振動性状
+    url: https://eprints.lib.hokudai.ac.jp/repo/huscap/all/41545/92_29-42.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1979-01-31'
+    document_type: article
+    persistent_id: https://openalex.org/W7145340728
+    license_evidence: no licence statement for this copy [copy https://eprints.lib.hokudai.ac.jp/repo/huscap/all/41545/92_29-42.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145340728
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7145627881
+    title: フランスにおける建築請負契約の基本法理－Domat,pothier の学説を中心に－
+    url: https://eprints.lib.hokudai.ac.jp/repo/huscap/all/16272/29(3-4)_p381-407.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1979-03-12'
+    document_type: article
+    persistent_id: https://openalex.org/W7145627881
+    license_evidence: no licence statement for this copy [copy https://eprints.lib.hokudai.ac.jp/repo/huscap/all/16272/29(3-4)_p381-407.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145627881
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7145635662
+    title: 建築構法の表面精度について(その2)(実測値と感覚量の対応)
+    url: https://meiji.repo.nii.ac.jp/record/5719/files/kougakubuhokoku_37_43.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1979-09-30'
+    document_type: article
+    persistent_id: https://openalex.org/W7145635662
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://meiji.repo.nii.ac.jp/record/5719/files/kougakubuhokoku_37_43.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145635662
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7145695255
+    title: 'オープンシステム病院に関する研究-1 : 病院の利用運営状況 : 建築計画'
+    url: https://ir.kagoshima-u.ac.jp/record/8518/files/110004095446.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1979-09-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145695255
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ir.kagoshima-u.ac.jp/record/8518/files/110004095446.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145695255
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7146073701
+    title: 沖永良部台風による建築構造物の被害について
+    url: https://ir.kagoshima-u.ac.jp/record/7754/files/AN00040363_v20_p65-79.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1978-09-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146073701
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ir.kagoshima-u.ac.jp/record/7754/files/AN00040363_v20_p65-79.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146073701
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7146135953
+    title: 'オープンシステム病院に関する研究-2 : 地域住民の受療構造とオープンシステム病院の役割 : 建築計画'
+    url: https://ir.kagoshima-u.ac.jp/record/11468/files/110004095447.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1979-09-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146135953
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ir.kagoshima-u.ac.jp/record/11468/files/110004095447.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146135953
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7207911319
+    title: 'シルクロードを訪ねて② : シルクロードの建築'
+    url: https://kansai-u.repo.nii.ac.jp/record/22486/files/KU-1100-19811120-02.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1981-11-20'
+    document_type: article
+    persistent_id: https://openalex.org/W7207911319
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kansai-u.repo.nii.ac.jp/record/22486/files/KU-1100-19811120-02.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7207911319
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7208210239
+    title: 鉄筋コンクリート建築物の大変形領域における非対称履歴ループと地震応答性状
+    url: https://kindai.repo.nii.ac.jp/record/2004776/files/AN00063653-19791201-0025.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1979-12-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208210239
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kindai.repo.nii.ac.jp/record/2004776/files/AN00063653-19791201-0025.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208210239
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7208287769
+    title: フランスの新たな不動産建築契約について －フランスの所有権観念の考察をかねて－
+    url: https://eprints.lib.hokudai.ac.jp/repo/huscap/all/16328/31(3-4)1_p165-186.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1981-03-25'
+    document_type: article
+    persistent_id: https://openalex.org/W7208287769
+    license_evidence: no licence statement for this copy [copy https://eprints.lib.hokudai.ac.jp/repo/huscap/all/16328/31(3-4)1_p165-186.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208287769
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7208397054
+    title: 'オープンシステム病院の利用・運営状況に関する研究 : 利用状況の変化(徳山博愛病院から医師会病院) : 建築計画'
+    url: https://ir.kagoshima-u.ac.jp/record/2731/files/110004099618.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1978-09-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208397054
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ir.kagoshima-u.ac.jp/record/2731/files/110004099618.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208397054
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7208481873
+    title: '住宅地における建築群の空間構成と視覚的効果について : 建築群の空間構成計画に関する研究 その 1'
+    url: https://nitech.repo.nii.ac.jp/record/3717/files/TAIJ_280_151.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1979-06-30'
+    document_type: article
+    persistent_id: https://openalex.org/W7208481873
+    license_evidence: no licence statement for this copy [copy https://nitech.repo.nii.ac.jp/record/3717/files/TAIJ_280_151.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208481873
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w7208583078
+    title: '高層建築物による放送電波障害の法的救済 : 現行法の問題点と立法論'
+    url: https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/download.php?koara_id=AN00224504-19790615-0059
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1979-06-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208583078
+    license_evidence: no licence statement for this copy [copy https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/download.php?koara_id=AN00224504-19790615-0059;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208583078
+    resolution: 'sim1: openalex location; resolution retry'
