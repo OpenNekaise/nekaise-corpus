@@ -21388,3 +21388,17 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-scoutmoor-diamond-sawn-yorkstone-paving-january-2020-98538330
+    title: 'SpecifiedBy (UK manufacturer documents): scoutmoor-diamond-sawn-yorkstone-paving-january-2020_98538330.pdf'
+    url: https://www.specifiedby.com/marshalls/scoutmoor-yorkstone-paving/scoutmoor-diamond-sawn-yorkstone-paving-january-2020_98538330.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
