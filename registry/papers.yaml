@@ -137007,3 +137007,21 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W588311787
     resolution: 'sim1: openalex location'
+  - id: oas-w2079376578
+    title: PROJECT Op.I MK邸・小ホール・資料館計画
+    url: https://hju.repo.nii.ac.jp/record/126/files/seikatsukagaku16motomura.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2009-03-09'
+    document_type: article
+    persistent_id: https://openalex.org/W2079376578
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://hju.repo.nii.ac.jp/record/126/files/seikatsukagaku16motomura.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W2079376578
+    resolution: 'sim1: openalex location'
