@@ -137580,3 +137580,211 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208028075
     resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-aei-2025-104225-1f15b8f2
+    title: Artificial Intelligence for the Built World
+    url: https://pure.tue.nl/ws/files/378779466/1-s2.0-S1474034625011188-main.pdf
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-12-13'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.aei.2025.104225
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://pure.tue.nl/ws/files/378779466/1-s2.0-S1474034625011188-main.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.aei.2025.104225 openalex:W4417292652
+    resolution: 'ai1: openalex+unpaywall location'
+  - id: oas-10-48550-arxiv-2506-11250-a986dc99
+    title: Can Time-Series Foundation Models Perform Building Energy Management Tasks?
+    url: https://arxiv.org/pdf/2506.11250
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-06-12'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2506.11250
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2506.11250;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2506.11250 openalex:W4415068292
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2506-00630-ff993912
+    title: Probabilistic Forecasting for Building Energy Systems using Time-Series Foundation
+      Models
+    url: https://arxiv.org/pdf/2506.00630
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-05-31'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2506.00630
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2506.00630;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2506.00630 openalex:W4414891739
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2503-21932-b926473d
+    title: 'Multimodal Data Integration for Sustainable Indoor Gardening: Tracking Anyplant
+      with Time Series Foundation Model'
+    url: https://arxiv.org/pdf/2503.21932
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-03-27'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2503.21932
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2503.21932;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2503.21932 openalex:W4416419929
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2610-02442-37243fc8
+    title: AI-driven Thermal-aware Data Center Capacity Planning
+    url: https://arxiv.org/pdf/2610.02442
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-10-01'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2610.02442
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2610.02442;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2610.02442 openalex:W7220443678
+    resolution: 'ai1: openalex location'
+  - id: oas-10-1016-j-buildenv-2026-115329-ed3a505f
+    title: Large language model agents capture heterogeneous occupant behaviors in building
+      energy simulation of shared office spaces
+    url: https://discovery.ucl.ac.uk/id/eprint/10231413/1/Mitoulis_Large%20language%20model%20agents%20capture%20heterogeneous%20occupant%20behaviors%20in%20building%20energy%20simulation%20of%20shared%20office%20spaces_Pre-proof.pdf
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-09-26'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2026.115329
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/id/eprint/10231413/1/Mitoulis_Large%20language%20model%20agents%20capture%20heterogeneous%20occupant%20behaviors%20in%20building%20energy%20simulation%20of%20shared%20office%20spaces_Pre-proof.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2026.115329 openalex:W7214501457
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2609-05314-684959fc
+    title: 'Large Language Models for HVAC Operations in Building Energy Systems: A
+      Critical Review of Methods, Applications, and Deployment Readiness'
+    url: https://arxiv.org/pdf/2609.05314
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-09-04'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2609.05314
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2609.05314;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2609.05314 openalex:W7211885610
+    resolution: 'ai1: openalex location'
+  - id: oas-w7210603173
+    title: AI-driven Whole-Life Costing for Decision-Ready UK Public Building Retrofits
+    url: https://pure.manchester.ac.uk/ws/files/2031565503/manuscript_R2_clean.pdf
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-09-02'
+    document_type: article
+    persistent_id: https://openalex.org/W7210603173
+    license_evidence: no licence statement for this copy [copy https://pure.manchester.ac.uk/ws/files/2031565503/manuscript_R2_clean.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7210603173
+    resolution: 'ai1: openalex location'
+  - id: oas-w7172172323
+    title: 'Exact Action Values Are Not Enough: Rollout-Verified Reinforcement Fine-Tuning
+      of a Reasoning Model for Multi-Zone VAV Control'
+    url: https://arxiv.org/pdf/2607.27914
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-07-30'
+    document_type: preprint
+    persistent_id: https://openalex.org/W7172172323
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2607.27914;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7172172323
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2607-06349-89dce96f
+    title: 'TopoBrick: Agentic Topology Sampling of Exogenous Variables for Zero-Shot
+      Building IoT Forecasting'
+    url: https://arxiv.org/pdf/2607.06349
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-07-07'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2607.06349
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2607.06349;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2607.06349 openalex:W7167722321
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2607-05440-2ecf5253
+    title: 'Retrieval over Reasoning: A Cost-Controlled Benchmark of Language Models
+      for Energy-Retrofit Recommendation'
+    url: https://arxiv.org/pdf/2607.05440
+    source: openalex_ai
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    published_at: '2026-07-03'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2607.05440
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://arxiv.org/pdf/2607.05440; version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2607.05440 openalex:W7167687778
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2606-22911-881d6e38
+    title: 'ThermoLLM: Thermodynamics-Aware HVAC Control with Spatial-Semantic Knowledge
+      Graph'
+    url: https://arxiv.org/pdf/2606.22911
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-06-22'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2606.22911
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2606.22911;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2606.22911 openalex:W7165666560
+    resolution: 'ai1: openalex location'
