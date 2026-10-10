@@ -138017,3 +138017,54 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W301124472
     resolution: 'sim1: openalex location'
+  - id: oas-w7208066501
+    title: 木造教会建築の礼拝室天井高確保の空間演出について ： 日本基督教会遠軽教会と元田稔の教会建築を対象として
+    url: https://eprints.lib.hokudai.ac.jp/repo/huscap/all/46687/40_27-31.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2005-06-09'
+    document_type: article
+    persistent_id: https://openalex.org/W7208066501
+    license_evidence: no licence statement for this copy [copy https://eprints.lib.hokudai.ac.jp/repo/huscap/all/46687/40_27-31.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208066501
+    resolution: 'sim1: openalex location'
+  - id: oas-w2575174869
+    title: '「わが国建築界の職能・資格・教育に今なにが求められているか」 : 研究所創設35周年記念公開学術シンポジウム講演要旨報告'
+    url: https://kguopac.kanto-gakuin.ac.jp/webopac/bdyview.do?bodyid=NI10000404&elmid=Body&fname=01fujimoto.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2005-04-11'
+    document_type: article
+    persistent_id: https://openalex.org/W2575174869
+    license_evidence: no licence statement for this copy [copy https://kguopac.kanto-gakuin.ac.jp/webopac/bdyview.do?bodyid=NI10000404&elmid=Body&fname=01fujimoto.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W2575174869
+    resolution: 'sim1: openalex location'
+  - id: oas-w2111364805
+    title: '建築学科における建築環境・設備系の授業改善事例報告 : 建築環境工学を中心に'
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2005-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W2111364805
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W2111364805
+    resolution: 'sim1: openalex location'
