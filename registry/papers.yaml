@@ -132000,23 +132000,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W3929518
     resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w399462216
-    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1993-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W399462216
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W399462216
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w400706832
     title: '9023 夏目漱石の作品における都市と建築の空間 : その1 建築用語の頻度と意識時間にみる漱石の空間'
     url: https://nitech.repo.nii.ac.jp/record/4235/files/STPAM_1993_1093.pdf
