@@ -134798,3 +134798,21 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208519117
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-57349-0002000376-553e9cc8
+    title: 床材メーカーのカタログに記された性能表示について
+    url: https://kasei-gakuin.repo.nii.ac.jp/record/2000376/files/21861951_55_87-91.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2015-08-31'
+    document_type: article
+    persistent_id: https://doi.org/10.57349/0002000376
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kasei-gakuin.repo.nii.ac.jp/record/2000376/files/21861951_55_87-91.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.57349/0002000376 openalex:W7163134551
+    resolution: 'sim1: openalex location'
