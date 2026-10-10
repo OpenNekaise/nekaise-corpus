@@ -137511,3 +137511,55 @@ sources:
     rights_verified_at: '2026-10-10T18:41:14Z'
     origin_ids: doi:10.1007/s10611-012-9383-0 openalex:W2097169217
     resolution: 'legacy: openalex location'
+  - id: oas-w389991997
+    title: '建築構造物の地震被害予測に関する実地調査研究・VI : 多治見市を対象とした調査'
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2007-12-01'
+    document_type: article
+    persistent_id: https://openalex.org/W389991997
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W389991997
+    resolution: 'sim1: openalex location'
+  - id: oas-w316096069
+    title: '40174 正弦波複合振動の知覚および心理量に関する実験の概要 : ランダム振動に対する振動感覚の評価へ向けて(その1)(振動性能評価,環境工学I)'
+    url: https://sucra.repo.nii.ac.jp/record/13646/files/A1004091.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2007-07-31'
+    document_type: article
+    persistent_id: https://openalex.org/W316096069
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://sucra.repo.nii.ac.jp/record/13646/files/A1004091.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W316096069
+    resolution: 'sim1: openalex location'
+  - id: oas-10-20645-00000375-237bd82b
+    title: 地域に根ざした芸術家のアトリエ計画 福島県福島市・美術研究所デルタの計画・設計を通して
+    url: https://jc.u-aizu.repo.nii.ac.jp/record/382/files/r_04.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2007-03-25'
+    document_type: article
+    persistent_id: https://doi.org/10.20645/00000375
+    license_evidence: no licence statement for this copy [copy https://jc.u-aizu.repo.nii.ac.jp/record/382/files/r_04.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: doi:10.20645/00000375 openalex:W80551959
+    resolution: 'sim1: openalex location'
