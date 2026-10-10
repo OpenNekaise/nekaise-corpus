@@ -136954,3 +136954,38 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.24517/00053704 openalex:W409210803
     resolution: 'sim1: openalex location'
+  - id: oas-w7145769540
+    title: 戸建て住宅地における住宅配置と庭の変容過程--西宮市上甲東園の計画的住宅地を対象に
+    url: https://da.lib.kobe-u.ac.jp/da/kernel/90001622/90001622.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2010-08-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145769540
+    license_evidence: no licence statement for this copy [copy https://da.lib.kobe-u.ac.jp/da/kernel/90001622/90001622.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145769540
+    resolution: 'sim1: openalex location'
+  - id: oas-w1993730707
+    title: '地方都市の土地利用の動向と都市法制の方向 : 新潟市を例に( 日本における「都市法」論の生成と展望)'
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/17040/files/shk061003005.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2010-03-10'
+    document_type: article
+    persistent_id: https://openalex.org/W1993730707
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/17040/files/shk061003005.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W1993730707
+    resolution: 'sim1: openalex location'
