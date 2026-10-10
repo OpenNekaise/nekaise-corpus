@@ -476,8 +476,33 @@ def test_quota_uses_provider_errors_not_tool_output(tmp_path, code, stderr, even
 def process_running(pid):
     try:
         return Path(f'/proc/{pid}/stat').read_text().split(') ', 1)[1].split()[0] != 'Z'
-    except FileNotFoundError:
+    except (FileNotFoundError, ProcessLookupError):
         return False
+
+
+@pytest.mark.parametrize('error', [FileNotFoundError, ProcessLookupError])
+def test_process_running_handles_disappearance_during_stat_read(monkeypatch, error):
+    def disappeared(path):
+        assert str(path) == '/proc/12345/stat'
+        raise error('process exited while reading stat')
+
+    monkeypatch.setattr(Path, 'read_text', disappeared)
+    assert not process_running(12345)
+
+
+def test_process_running_does_not_hide_unreadable_status(monkeypatch):
+    def unreadable(path):
+        raise PermissionError('cannot inspect process')
+
+    monkeypatch.setattr(Path, 'read_text', unreadable)
+    with pytest.raises(PermissionError):
+        process_running(12345)
+
+
+@pytest.mark.parametrize('state, running', [('S', True), ('R', True), ('D', True), ('Z', False)])
+def test_process_running_distinguishes_live_children_from_zombies(monkeypatch, state, running):
+    monkeypatch.setattr(Path, 'read_text', lambda path: f'12345 (python) {state} 12344')
+    assert process_running(12345) is running
 
 
 @pytest.mark.parametrize('exit_parent', [False, True])
@@ -509,19 +534,79 @@ def test_timeout_and_normal_exit_stop_descendants(tmp_path, monkeypatch, exit_pa
             os.kill(pid, signal.SIGKILL)
 
 
-def test_sigterm_cleans_processes_before_unlock(tmp_path):
+@pytest.mark.parametrize('interrupt_wait', [False, True])
+def test_sigterm_cleans_processes_before_unlock(tmp_path, record_property, interrupt_wait):
     scripts = Path(maintainer.__file__).parent
     child = tmp_path / 'child.pid'
+    phases = tmp_path / 'shutdown.jsonl'
     code = f'''
-import sys,os
+import sys,os,time,json,signal,faulthandler
 from pathlib import Path
 sys.path.insert(0,{str(scripts)!r})
 import maintainer
+faulthandler.dump_traceback_later(8)
 maintainer.ROOT=Path({str(tmp_path)!r})
 maintainer.WORKSPACE=maintainer.ROOT/'workspace'
 maintainer.ops.WORKSPACE=maintainer.WORKSPACE
 maintainer.LOGS=maintainer.ROOT/'logs'
 maintainer.HISTORY=maintainer.LOGS/'history.jsonl'
+def phase(name, **facts):
+    with Path({str(phases)!r}).open('a') as out:
+        out.write(json.dumps(dict(phase=name, at=time.monotonic(), **facts))+'\\n')
+from contextlib import contextmanager
+named_lock=maintainer.ops.named_lock
+@contextmanager
+def checked_lock(name, *args, **kwargs):
+    with named_lock(name, *args, **kwargs) as lock:
+        try:
+            yield lock
+        finally:
+            child_path=Path({str(child)!r})
+            alive=child_path.exists() and maintainer.round_recovery._alive(int(child_path.read_text()))
+            phase('unlock_'+name, child_alive=alive)
+maintainer.ops.named_lock=checked_lock
+stop_owned=maintainer.stop_process_group
+def stop(*args, **kwargs):
+    phase('stop_started')
+    try:
+        return stop_owned(*args, **kwargs)
+    finally:
+        phase('stop_finished')
+maintainer.stop_process_group=stop
+drain_broker=maintainer.store_broker.Broker.drain
+def drain(self):
+    phase('drain_started')
+    try:
+        return drain_broker(self)
+    finally:
+        phase('drain_finished')
+maintainer.store_broker.Broker.drain=drain
+if {interrupt_wait!r}:
+    # SIGTERM may arrive after Popen._wait acquires its lock, before its try/finally.
+    # Deliver it in that interval deterministically; cleanup must still reap the child.
+    original_popen=maintainer.subprocess.Popen
+    class InterruptedLock:
+        def __init__(self, lock):
+            self.lock=lock
+            self.once=True
+        def acquire(self, *args, **kwargs):
+            acquired=self.lock.acquire(*args, **kwargs)
+            if acquired and self.once and Path({str(child)!r}).exists():
+                self.once=False
+                phase('signal_sent')
+                signal.raise_signal(signal.SIGTERM)
+            return acquired
+        def release(self):
+            self.lock.release()
+        def __enter__(self):
+            self.acquire()
+        def __exit__(self, *exc):
+            self.release()
+    class InterruptedPopen(original_popen):
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self._waitpid_lock=InterruptedLock(self._waitpid_lock)
+    maintainer.subprocess.Popen=InterruptedPopen
 def run():
     with maintainer.maintenance_window('test'):
         return maintainer.run_command(
@@ -537,10 +622,27 @@ sys.exit(maintainer.main())
             time.sleep(0.05)
         assert child.exists()
         pid = int(child.read_text())
-        process.send_signal(signal.SIGTERM)
-        stdout, stderr = process.communicate(timeout=10)
+        started = time.monotonic()
+        if not interrupt_wait:
+            process.send_signal(signal.SIGTERM)
+        try:
+            stdout, stderr = process.communicate(timeout=10)
+        except subprocess.TimeoutExpired as exc:
+            survivors = [p for p in (process.pid, pid) if process_running(p)]
+            pytest.fail(f'SIGTERM exceeded 10s after {time.monotonic() - started:.3f}s; '
+                        f'surviving PIDs: {survivors}; '
+                        f'phases: {phases.read_text() if phases.exists() else "none"}; '
+                        f'stdout: {exc.stdout!r}; stderr/stacks: {exc.stderr!r}')
+        record_property('shutdown_seconds', time.monotonic() - started)
         assert process.returncode == 130, (stdout, stderr)
         assert not process_running(pid)
+        events = [json.loads(line) for line in phases.read_text().splitlines()]
+        unlocks = {e['phase']: e for e in events if e['phase'].startswith('unlock_')}
+        assert set(unlocks) == {'unlock_' + name for name in
+                                ('continuous-dig', 'corpus-round', 'maintainer')}
+        assert all(not e['child_alive'] for e in unlocks.values()), unlocks
+        if interrupt_wait:
+            assert any(e['phase'] == 'signal_sent' for e in events)
         assert not (tmp_path / 'workspace/.maintenance-requested').exists()
         import fcntl
         for name in ('continuous-dig', 'corpus-round', 'maintainer'):
@@ -551,7 +653,10 @@ sys.exit(maintainer.main())
             process.kill()
             process.wait()
         if child.exists() and process_running(int(child.read_text())):
-            os.kill(int(child.read_text()), signal.SIGKILL)
+            try:
+                os.kill(int(child.read_text()), signal.SIGKILL)
+            except ProcessLookupError:
+                pass  # It exited after the status read.
 
 
 def test_supervision_preserves_preexisting_children(tmp_path, monkeypatch):

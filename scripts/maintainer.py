@@ -389,11 +389,18 @@ def stop_process_group(process: subprocess.Popen, *, existing: set[int], grace: 
     while True:
         process.poll()
         owned = descendants(os.getpid()) - existing
-        for pid in owned - {process.pid}:
+        for pid in owned:
             try:
-                os.waitpid(pid, os.WNOHANG)
+                reaped, status = os.waitpid(pid, os.WNOHANG)
             except ChildProcessError:
                 pass  # Still a grandchild until its immediate parent exits.
+            else:
+                if reaped == process.pid:
+                    # Cancellation can interrupt Popen._wait between acquiring its lock and
+                    # entering its try/finally. poll() then cannot reap even a dead child.
+                    # We alone supervise this Popen: preserve its status and reap it directly,
+                    # just like adopted descendants, before releasing the maintenance locks.
+                    process.returncode = os.waitstatus_to_exitcode(status)
         if not (descendants(os.getpid()) - existing):
             break
         if time.monotonic() >= deadline:
