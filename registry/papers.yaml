@@ -133267,24 +133267,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W607597425
     resolution: 'legacy: openalex location'
-  - id: ope-construction-and-repair-with-wet-process-spray
-    title: Construction and repair with wet-process sprayed concrete and mortar
-    url: https://figshare.com/articles/journal_contribution/Construction_and_repair_with_wet-process_sprayed_concrete_and_mortar/9440180
-    source: openalex
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2002-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W1526620871
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://figshare.com/articles/journal_contribution/Construction_and_repair_with_wet-process_sprayed_concrete_and_mortar/9440180;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W1526620871
-    resolution: 'legacy: openalex location'
   - id: ope-state-of-the-art-artificial-intelligence-techn
     title: 'State-of-the-art artificial intelligence techniques in structural engineering:
       A review of applications and prospects'
@@ -136263,4 +136245,39 @@ sources:
     rights_verified_at: '2026-10-10'
     selected_version: submittedVersion
     origin_ids: openalex:W7146370307
+    resolution: 'sim1: openalex location'
+  - id: oas-w7146425058
+    title: Empty Housingファンド ： 介護の未来は空き家にかかっている
+    url: https://tku.repo.nii.ac.jp/record/2005913/files/NGG-10.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2014-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146425058
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://tku.repo.nii.ac.jp/record/2005913/files/NGG-10.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146425058
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208325261
+    title: 「方丈の庵」の居住空間のデザインに関する実践的研究
+    url: https://kobe-du.repo.nii.ac.jp/record/124/files/19_kaneko_2013.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2013-11-25'
+    document_type: article
+    persistent_id: https://openalex.org/W7208325261
+    license_evidence: no licence statement for this copy [copy https://kobe-du.repo.nii.ac.jp/record/124/files/19_kaneko_2013.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208325261
     resolution: 'sim1: openalex location'
