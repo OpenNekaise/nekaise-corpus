@@ -136575,3 +136575,55 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2208.14197 openalex:W4293999519
     resolution: 'legacy: openalex location'
+  - id: oas-w7163482869
+    title: 'Visible Dynamics : Visualization of Displacement and Stress'
+    url: https://suac.repo.nii.ac.jp/?action=repository_action_common_download&item_id=666&item_no=1&attribute_id=18&file_no=1
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2013-03-31'
+    document_type: article
+    persistent_id: https://openalex.org/W7163482869
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://suac.repo.nii.ac.jp/?action=repository_action_common_download&item_id=666&item_no=1&attribute_id=18&file_no=1;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7163482869
+    resolution: 'sim1: openalex location'
+  - id: oas-w7145964577
+    title: 「景観利益」概念の位相
+    url: https://da.lib.kobe-u.ac.jp/da/kernel/90002762/90002762.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2013-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145964577
+    license_evidence: no licence statement for this copy [copy https://da.lib.kobe-u.ac.jp/da/kernel/90002762/90002762.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145964577
+    resolution: 'sim1: openalex location'
+  - id: oas-w389991997
+    title: '建築構造物の地震被害予測に関する実地調査研究・VI : 多治見市を対象とした調査'
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2007-12-01'
+    document_type: article
+    persistent_id: https://openalex.org/W389991997
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W389991997
+    resolution: 'sim1: openalex location; resolution retry'
