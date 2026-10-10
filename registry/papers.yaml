@@ -136017,24 +136017,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208602589
     resolution: 'sim1: openalex location; resolution retry'
-  - id: ope-factors-influencing-impact-force-profile-and-m
-    title: Factors influencing impact force profile and measurement accuracy in drop
-      weight impact tests
-    url: https://espace.curtin.edu.au/bitstream/20.500.11937/91663/3/91487.pdf
-    source: openalex
-    license: unverified
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2020-08-09'
-    document_type: article
-    persistent_id: https://doi.org/10.1016/j.ijimpeng.2020.103688
-    license_evidence: no licence statement for this copy [copy https://espace.curtin.edu.au/bitstream/20.500.11937/91663/3/91487.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1016/j.ijimpeng.2020.103688 openalex:W3047785254
-    resolution: 'legacy: openalex location'
   - id: ope-seismic-loss-and-downtime-assessment-of-existi
     title: Seismic Loss and Downtime Assessment of Existing Tall Steel-Framed Buildings
       and Strategies for Increased Resilience
@@ -136862,4 +136844,21 @@ sources:
     rights_verified_at: '2026-10-10'
     selected_version: submittedVersion
     origin_ids: openalex:W7145519508
+    resolution: 'sim1: openalex location'
+  - id: oas-w7146279754
+    title: 業績目録(吉野博)
+    url: https://tohoku.repo.nii.ac.jp/record/99002/files/gyoseki-2011-1182-yoshino.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2012-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146279754
+    license_evidence: no licence statement for this copy [copy https://tohoku.repo.nii.ac.jp/record/99002/files/gyoseki-2011-1182-yoshino.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146279754
     resolution: 'sim1: openalex location'
