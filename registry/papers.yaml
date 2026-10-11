@@ -139546,23 +139546,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208183068
     resolution: 'sim1: openalex location'
-  - id: oas-w2111364805
-    title: '建築学科における建築環境・設備系の授業改善事例報告 : 建築環境工学を中心に'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2005-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W2111364805
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-11'
-    selected_version: submittedVersion
-    origin_ids: openalex:W2111364805
-    resolution: 'sim1: openalex location; resolution retry'
   - id: ope-numerical-study-on-the-asphalt-concrete-struct
     title: Numerical Study on the Asphalt Concrete Structure for Blast and Impact Load
       Using the Karagozian and Case Concrete Model
@@ -140107,3 +140090,58 @@ sources:
     rights_verified_at: '2026-10-11T19:29:09Z'
     origin_ids: doi:10.3389/fbioe.2021.779854 openalex:W4200618670
     resolution: 'legacy: openalex location'
+  - id: oas-10-1016-j-egyai-2020-100020-3fba4a39
+    title: Reinforcement learning for whole-building HVAC control and demand response
+    url: https://researchmgt.monash.edu/ws/files/319587219/319446418_oa.pdf
+    source: openalex_ai
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-08-05'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.egyai.2020.100020
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://researchmgt.monash.edu/ws/files/319587219/319446418_oa.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.egyai.2020.100020 openalex:W3047508891
+    resolution: 'ai1: openalex+unpaywall location'
+  - id: oas-10-1109-tac-2021-3128592-ce34d304
+    title: 'Distributed Reinforcement Learning for Decentralized Linear Quadratic Control:
+      A Derivative-Free Policy Optimization Approach'
+    url: https://arxiv.org/pdf/1912.09135
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2021-11-16'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/tac.2021.3128592
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1912.09135;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1109/tac.2021.3128592 openalex:W2994779591
+    resolution: 'ai1: openalex+unpaywall location'
+  - id: oas-10-1016-j-jobe-2022-105689-d650f385
+    title: Deep clustering of cooperative multi-agent reinforcement learning to optimize
+      multi chiller HVAC systems for smart buildings energy management
+    url: https://uhra.herts.ac.uk/id/eprint/10141/1/JBE_D_22_07022_R2.pdf
+    source: openalex_ai
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-12-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jobe.2022.105689
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://uhra.herts.ac.uk/id/eprint/10141/1/JBE_D_22_07022_R2.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jobe.2022.105689 openalex:W4311758680
+    resolution: 'ai1: openalex+unpaywall location'
