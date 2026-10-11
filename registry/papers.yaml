@@ -139153,3 +139153,55 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208315796
     resolution: 'sim1: openalex location'
+  - id: oas-10-1002-gdj3-289-854b5745
+    title: 'Connecting Physical and Socio‐Economic Spaces for Multi‐Scale Urban Modelling:
+      A Dataset for London'
+    url: https://centaur.reading.ac.uk/121211/11/Geoscience%20Data%20Journal%20-%202025%20-%20Hertwig%20-%20Connecting%20Physical%20and%20Socio%E2%80%90Economic%20Spaces%20for%20Multi%E2%80%90Scale%20Urban%20Modelling%20%20A.pdf
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-04-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1002/gdj3.289
+    license_evidence: no licence statement for this copy [copy https://centaur.reading.ac.uk/121211/11/Geoscience%20Data%20Journal%20-%202025%20-%20Hertwig%20-%20Connecting%20Physical%20and%20Socio%E2%80%90Economic%20Spaces%20for%20Multi%E2%80%90Scale%20Urban%20Modelling%20%20A.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1002/gdj3.289 openalex:W4409579719
+    resolution: 'ai1: openalex+unpaywall location'
+  - id: oas-10-1109-tase-2026-3679728-d348444f
+    title: Adaptive Model-Based Transfer Learning for Dynamic HVAC Control
+    url: https://arxiv.org/pdf/2607.15663
+    source: openalex_ai
+    license: cc-by-nc-sa
+    topic: controls_bas
+    format: pdf
+    published_at: '2026-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/tase.2026.3679728
+    license_evidence: openalex.license=cc-by-nc-sa; openalex.license_id=https://openalex.org/licenses/cc-by-nc-sa;
+      unpaywall.license=cc-by-nc-sa [copy https://arxiv.org/pdf/2607.15663; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1109/tase.2026.3679728 openalex:W7146966863
+    resolution: 'ai1: openalex+unpaywall location'
+  - id: oas-10-48550-arxiv-2609-18029-dac08d48
+    title: Toward a Time-Aware Assessment Framework for the Carbon Cost of AI-Enabled
+      Decarbonization
+    url: https://arxiv.org/pdf/2609.18029
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    published_at: '2026-09-16'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2609.18029
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2609.18029;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2609.18029 openalex:W7213506836
+    resolution: 'ai1: openalex location'
