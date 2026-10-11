@@ -140014,3 +140014,55 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2502.08337 openalex:W4407570461
     resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2509-14623-390a6d3f
+    title: 'Automating Modelica Module Generation Using Large Language Models: A Case
+      Study on Building Control Description Language'
+    url: https://arxiv.org/pdf/2509.14623
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-09-18'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2509.14623
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2509.14623;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2509.14623 openalex:W4416256148
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1177-00375497261465009-51a87997
+    title: A highly configurable framework for large-scale thermal building data generation
+      to drive machine learning research
+    url: https://arxiv.org/pdf/2512.00483
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-07-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/00375497261465009
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2512.00483;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/00375497261465009 openalex:W4416937054
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-w7140954031
+    title: 'JanusBM: A Dual-Fidelity Multi-Zone White-Box Building Modeling Framework'
+    url: https://arxiv.org/pdf/2603.23015
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-03-24'
+    document_type: preprint
+    persistent_id: https://openalex.org/W7140954031
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2603.23015;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7140954031
+    resolution: 'sim1: openalex location'
