@@ -138368,3 +138368,20 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2502.11723 openalex:W4407719413
     resolution: 'ai1: openalex location'
+  - id: oas-w413185441
+    title: 建築構造物の減衰性能と生体の生理反応--座位・立位での振動暴露に対する手掌部発汗
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10102222&elmid=Body&fname=079_Kotake.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1997-12-01'
+    document_type: article
+    persistent_id: https://openalex.org/W413185441
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10102222&elmid=Body&fname=079_Kotake.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-10'
+    selected_version: submittedVersion
+    origin_ids: openalex:W413185441
+    resolution: 'sim1: openalex location; resolution retry'
