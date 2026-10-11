@@ -1,4 +1,8 @@
 {
+  "find_diva": {
+    "enabled": false,
+    "reason": "exhausted: all 4 DiVA sets walked down to 1995"
+  },
   "find_ibpsa": {
     "enabled": false,
     "reason": "exhausted: all 76 IBPSA (conf, year) listings walked"
