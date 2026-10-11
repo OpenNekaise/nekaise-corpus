@@ -139621,3 +139621,21 @@ sources:
     rights_verified_at: '2026-10-11T13:22:08Z'
     origin_ids: doi:10.1016/j.conbuildmat.2021.122725 openalex:W3133706857
     resolution: 'legacy: openalex location'
+  - id: oas-w7146592112
+    title: '都市の概念 : その綜合的検討のために : 各論1(法学・政治学)'
+    url: https://tokyo-metro-u.repo.nii.ac.jp/record/7990/files/20033-033-001.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1973-03-31'
+    document_type: article
+    persistent_id: https://openalex.org/W7146592112
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://tokyo-metro-u.repo.nii.ac.jp/record/7990/files/20033-033-001.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146592112
+    resolution: 'sim1: openalex location'
