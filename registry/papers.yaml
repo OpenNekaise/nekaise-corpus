@@ -139205,3 +139205,104 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2609.18029 openalex:W7213506836
     resolution: 'ai1: openalex location'
+  - id: ope-encapsulation-techniques-and-test-methods-of-e
+    title: 'Encapsulation Techniques and Test Methods of Evaluating the Bacteria-Based
+      Self-Healing Efficiency of Concrete: A Literature Review'
+    url: https://lirias.kuleuven.be/retrieve/5c4d086b-d2b0-48ac-b8f0-4fee14c7a6b6
+    source: openalex
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2020-06-01'
+    document_type: article
+    persistent_id: https://doi.org/10.2478/ncr-2020-0006
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/5c4d086b-d2b0-48ac-b8f0-4fee14c7a6b6;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.2478/ncr-2020-0006 openalex:W3042871579
+    resolution: 'legacy: openalex location'
+  - id: ope-vibration-monitoring-and-acoustic-emission-sen
+    title: Vibration monitoring and acoustic emission sensing during progressive load
+      tests of corroded reinforced concrete beams
+    url: https://lirias.kuleuven.be/retrieve/d3fe57f3-921a-43ae-8621-2c1ff5239342
+    source: openalex
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024-03-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.engstruct.2024.117851
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/d3fe57f3-921a-43ae-8621-2c1ff5239342;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.engstruct.2024.117851 openalex:W4392934956
+    resolution: 'legacy: openalex location'
+  - id: ope-does-carbon-footprint-reduction-impair-mechani
+    title: Does carbon footprint reduction impair mechanical properties and service
+      life of concrete?
+    url: https://infoscience.epfl.ch/bitstreams/419f0ece-1458-4e8c-a9c0-a1745599b0e3/download
+    source: openalex
+    license: cc-by-nc-nd
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2022-12-29'
+    document_type: article
+    persistent_id: https://doi.org/10.1617/s11527-022-02090-9
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://infoscience.epfl.ch/bitstreams/419f0ece-1458-4e8c-a9c0-a1745599b0e3/download;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1617/s11527-022-02090-9 openalex:W4313330922
+    resolution: 'legacy: openalex location'
+  - id: ope-comparative-analysis-of-three-different-types-
+    title: Comparative analysis of three different types of self-healing concrete via
+      permeability testing and a quasi-steady-state chloride migration test
+    url: https://biblio.ugent.be/publication/01HT4X81NJHTBQQPTSRZBA0ZHJ/file/01HT52XFTY3K9TKY4CK4WAN268.pdf
+    source: openalex
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2023-12-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.conbuildmat.2023.134288
+    license_evidence: 'redirect: rights of requested copy https://biblio.ugent.be/publication/01HT4X81NJHTBQQPTSRZBA0ZHJ/file/01HT52XFTY3K9TKY4CK4WAN268.pdf
+      do not transfer to https://backoffice.biblio.ugent.be/download/01HT4X81NJHTBQQPTSRZBA0ZHJ/01HT52XFTY3K9TKY4CK4WAN268;
+      payload sha256=d0cdcbccae5725f0c58e4c5969b988a624bbaffe1e3690a8aa9882e97cfc7116;
+      original evidence: {"license": "unverified", "license_evidence": "openalex.license=other-oa;
+      openalex.license_id=https://openalex.org/licenses/other-oa [copy https://biblio.ugent.be/publication/01HT4X81NJHTBQQPTSRZBA0ZHJ/file/01HT52XFTY3K9TKY4CK4WAN268.pdf;
+      version submittedVersion; rights unknown]", "rights_verified_at": "2026-10-11",
+      "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-11T09:52:14Z'
+    origin_ids: doi:10.1016/j.conbuildmat.2023.134288 openalex:W4389263130
+    resolution: 'legacy: openalex location'
+  - id: ope-challenges-in-assessing-corrosion-damage-in-re
+    title: 'Challenges in assessing corrosion damage in reinforced concrete beams by
+      vibration-based monitoring: literature analysis and experimental study'
+    url: https://biblio.ugent.be/publication/01HBZ9N3VDVG7C0JM4GTTKKN4D/file/01HC50ESY2MJFVFQGV7TSGDKG7.pdf
+    source: openalex
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2023-03-20'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/14759217231159321
+    license_evidence: 'redirect: rights of requested copy https://biblio.ugent.be/publication/01HBZ9N3VDVG7C0JM4GTTKKN4D/file/01HC50ESY2MJFVFQGV7TSGDKG7.pdf
+      do not transfer to https://backoffice.biblio.ugent.be/download/01HBZ9N3VDVG7C0JM4GTTKKN4D/01HC50ESY2MJFVFQGV7TSGDKG7;
+      payload sha256=8a09af18871bc22f399154d96bc9eacdd9407de83a920677d999d71c04d1974d;
+      original evidence: {"license": "unverified", "license_evidence": "openalex.license=other-oa;
+      openalex.license_id=https://openalex.org/licenses/other-oa [copy https://biblio.ugent.be/publication/01HBZ9N3VDVG7C0JM4GTTKKN4D/file/01HC50ESY2MJFVFQGV7TSGDKG7.pdf;
+      version submittedVersion; rights unknown]", "rights_verified_at": "2026-10-11",
+      "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-11T09:52:12Z'
+    origin_ids: doi:10.1177/14759217231159321 openalex:W4327947809
+    resolution: 'legacy: openalex location'

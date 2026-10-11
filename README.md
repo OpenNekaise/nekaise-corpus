@@ -13,8 +13,8 @@ locally and retain their original licenses.
 | | |
 |---|---|
 | **Documents** | **1,627,833** |
-| **Outside the default view** | **17,128** rows (collected and kept): policy-held 8,059 · restricted licence classes 9,069 |
-| **Collection (all use classes)** | **1,644,961** held originals · by class: open 1,627,833 · policy-held 8,059 · arxiv-nonexclusive 5,377 · unverified 2,640 · nc-nd 618 · nc 324 · publisher-oa 110 |
+| **Outside the default view** | **17,133** rows (collected and kept): policy-held 8,059 · restricted licence classes 9,074 |
+| **Collection (all use classes)** | **1,644,966** held originals · by class: open 1,627,833 · policy-held 8,059 · arxiv-nonexclusive 5,377 · unverified 2,644 · nc-nd 619 · nc 324 · publisher-oa 110 |
 | **Raw originals** | **~781G** on disk, every class (PDF / HTML / source code) |
 | **Extracted text** | **~83G** on disk, every class (default view: ~80.319B chars, **≈20.080B tokens**) |
 | **Cleaned corpus** | **~78G** (~76.361B chars, **≈19.090B tokens**, ruleset-cleaned) |
