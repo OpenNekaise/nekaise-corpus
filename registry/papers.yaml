@@ -139926,3 +139926,91 @@ sources:
     rights_verified_at: '2026-10-11T17:42:10Z'
     origin_ids: doi:10.32620/oikit.2026.107.16 openalex:W7139978412
     resolution: 'ai1: openalex+unpaywall location'
+  - id: oas-10-48550-arxiv-2511-08587-74816e6a
+    title: Conversational Agents for Building Energy Efficiency -- Advising Housing
+      Cooperatives in Stockholm on Reducing Energy Consumption
+    url: https://arxiv.org/pdf/2511.08587
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    published_at: '2025-10-01'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2511.08587
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2511.08587;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2511.08587 openalex:W4416234077
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2509-13369-1ec048a6
+    title: 'Right-to-Override for Critical Urban Control Systems: A Deliberative Audit
+      Method for Buildings, Power, and Transport'
+    url: https://arxiv.org/pdf/2509.13369
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-09-16'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2509.13369
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2509.13369;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2509.13369 openalex:W4416259118
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2507-07769-d1f701fd
+    title: 'BEAVER: Building Environments with Assessable Variation for Evaluating Multi-Objective
+      Reinforcement Learning'
+    url: https://arxiv.org/pdf/2507.07769
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-07-10'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2507.07769
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2507.07769;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2507.07769 openalex:W4415202926
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2506-16352-bbe69668
+    title: Data-Driven Policy Mapping for Safe RL-based Energy Management Systems
+    url: https://arxiv.org/pdf/2506.16352
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-06-19'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2506.16352
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2506.16352;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2506.16352 openalex:W4417538479
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2502-08337-22d74be5
+    title: Hierarchical Multi-Agent Framework for Carbon-Efficient Liquid-Cooled Data
+      Center Clusters
+    url: https://arxiv.org/pdf/2502.08337
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-02-12'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2502.08337
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2502.08337;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2502.08337 openalex:W4407570461
+    resolution: 'ai1: openalex location'
