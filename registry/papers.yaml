@@ -140181,3 +140181,26 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.geothermics.2019.101788 openalex:W2999151035
     resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1080-23744731-2023-2247948-5f201769
+    title: In-situ empirical validation of common indoor climate parameters in an inhabited
+      multizone dwelling
+    url: https://biblio.ugent.be/publication/01H8P8ZXCK4T73NHYTKHZFJ26X/file/01H8P93Q53VVH03ATKT1PJEZAF.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-08-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/23744731.2023.2247948
+    license_evidence: 'redirect: rights of requested copy https://biblio.ugent.be/publication/01H8P8ZXCK4T73NHYTKHZFJ26X/file/01H8P93Q53VVH03ATKT1PJEZAF.pdf
+      do not transfer to https://backoffice.biblio.ugent.be/download/01H8P8ZXCK4T73NHYTKHZFJ26X/01H8P93Q53VVH03ATKT1PJEZAF;
+      payload sha256=9e40e711f44345ce73da6e7956bfe970434cbdd88ba682ecb776c6d061c601fe;
+      original evidence: {"license": "unverified", "license_evidence": "openalex.license=other-oa;
+      openalex.license_id=https://openalex.org/licenses/other-oa; unpaywall.license=other-oa
+      [copy https://biblio.ugent.be/publication/01H8P8ZXCK4T73NHYTKHZFJ26X/file/01H8P93Q53VVH03ATKT1PJEZAF.pdf;
+      version submittedVersion; rights unknown]", "rights_verified_at": "2026-10-11",
+      "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-11T21:14:13Z'
+    origin_ids: doi:10.1080/23744731.2023.2247948 openalex:W4385986097
+    resolution: 'sim1: openalex+unpaywall location'
