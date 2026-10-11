@@ -138685,3 +138685,63 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7144496687
     resolution: 'sim1: openalex location'
+  - id: ope-topologically-optimised-facade-brackets-an-emb
+    title: 'Topologically optimised facade brackets: an embodied carbon, structural
+      and residual stress analysis'
+    url: https://discovery.ucl.ac.uk/id/eprint/10193884/1/s44223-024-00063-2.pdf
+    source: openalex
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-06-25'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s44223-024-00063-2
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/id/eprint/10193884/1/s44223-024-00063-2.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s44223-024-00063-2 openalex:W4400008859
+    resolution: 'legacy: openalex location'
+  - id: ope-shear-behavior-of-notched-connection-for-gluba
+    title: 'Shear behavior of notched connection for glubam-geopolymer concrete composite
+      structures: Experimental investigation'
+    url: https://bioresources.cnr.ncsu.edu/wp-content/uploads/2022/11/BioRes_18_1_701_Zhan_HSXH_Shear_Notched_Connec_Glulam_Geopolym_Concrete_20585.pdf
+    source: openalex
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-11-23'
+    document_type: article
+    persistent_id: https://doi.org/10.15376/biores.18.1.701-719
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://bioresources.cnr.ncsu.edu/wp-content/uploads/2022/11/BioRes_18_1_701_Zhan_HSXH_Shear_Notched_Connec_Glulam_Geopolym_Concrete_20585.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-11'
+    selected_version: publishedVersion
+    origin_ids: doi:10.15376/biores.18.1.701-719 openalex:W4310579983
+    resolution: 'legacy: openalex location'
+  - id: ope-assessment-of-chlorine-resistance-in-concrete-
+    title: Assessment of chlorine resistance in concrete in the tidal range and splash
+      zone of a torrid marine region
+    url: https://www.frontiersin.org/articles/10.3389/fmats.2023.1269124/pdf?isPublishedV2=False
+    source: openalex
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-11-14'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fmats.2023.1269124
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/fmats.2023.1269124/pdf?isPublishedV2=False
+      do not transfer to https://www.frontiersin.org/journals/materials/articles/10.3389/fmats.2023.1269124/pdf;
+      payload sha256=9ef641670824f53f5ab17f27d1a855fe19c20cf273f909f9dca7b74996a7f642;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://www.frontiersin.org/articles/10.3389/fmats.2023.1269124/pdf?isPublishedV2=False;
+      version publishedVersion; rights accepted]", "rights_verified_at": "2026-10-11",
+      "selected_version": "publishedVersion"}'
+    rights_verified_at: '2026-10-11T03:34:32Z'
+    origin_ids: doi:10.3389/fmats.2023.1269124 openalex:W4388656186
+    resolution: 'legacy: openalex location'
