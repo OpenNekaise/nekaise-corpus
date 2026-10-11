@@ -139510,20 +139510,56 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W621511431
     resolution: 'sim1: openalex location'
-  - id: oas-w389991997
-    title: '建築構造物の地震被害予測に関する実地調査研究・VI : 多治見市を対象とした調査'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf
+  - id: oas-w7145627060
+    title: 多摩ニュータウン土地区画整理事業地区の市街地形成に関する調査
+    url: https://tokyo-metro-u.repo.nii.ac.jp/record/4824/files/20024-015-005.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1982-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145627060
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://tokyo-metro-u.repo.nii.ac.jp/record/4824/files/20024-015-005.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145627060
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208210728
+    title: 生産施設内の機械設備の耐震設計
+    url: https://tokyo-metro-u.repo.nii.ac.jp/record/4816/files/20024-014-008.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1981-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208210728
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://tokyo-metro-u.repo.nii.ac.jp/record/4816/files/20024-014-008.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208210728
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208183068
+    title: オープンシステムの幼稚園について
+    url: https://takamatsu-u.repo.nii.ac.jp/record/5980/files/AN00138796_8_1_8.pdf
     source: openalex_sim
     license: unverified
     topic: building_energy
     format: pdf
     language: ja
-    published_at: '2007-12-01'
+    published_at: '1978-03-10'
     document_type: article
-    persistent_id: https://openalex.org/W389991997
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf;
+    persistent_id: https://openalex.org/W7208183068
+    license_evidence: no licence statement for this copy [copy https://takamatsu-u.repo.nii.ac.jp/record/5980/files/AN00138796_8_1_8.pdf;
       version submittedVersion; rights unknown]
     rights_verified_at: '2026-10-11'
     selected_version: submittedVersion
-    origin_ids: openalex:W389991997
-    resolution: 'sim1: openalex location; resolution retry'
+    origin_ids: openalex:W7208183068
+    resolution: 'sim1: openalex location'
