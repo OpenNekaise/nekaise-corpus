@@ -137366,23 +137366,6 @@ sources:
     selected_version: acceptedVersion
     origin_ids: doi:10.1016/j.cscm.2014.01.001 openalex:W2047155627
     resolution: 'legacy: openalex location'
-  - id: ope-structural-performance-of-cross-laminated-timb
-    title: Structural performance of cross laminated timber panels as walls
-    url: http://eprints.usq.edu.au/18406/1/Turner_2010.pdf
-    source: openalex
-    license: unverified
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2010-10-01'
-    document_type: article
-    persistent_id: https://openalex.org/W175225039
-    license_evidence: no licence statement for this copy [copy http://eprints.usq.edu.au/18406/1/Turner_2010.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W175225039
-    resolution: 'legacy: openalex location'
   - id: oas-w621637342
     title: '都市法制の環境法制への応接に関する一断面 : ドイツ建設法典と侵害規則(Eingriffsregelung)'
     url: https://ynu.repo.nii.ac.jp/?action=repository_uri&item_id=3279
@@ -138474,3 +138457,57 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2412.17285 openalex:W4405767736
     resolution: 'ai1: openalex location'
+  - id: ope-an-analysis-on-promoting-prefabrication-implem
+    title: An Analysis on Promoting Prefabrication Implementation in Construction Industry
+      towards Sustainability
+    url: https://publications.aston.ac.uk/id/eprint/43252/1/ijerph-18-11493-v2.pdf
+    source: openalex
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2021-10-31'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/ijerph182111493
+    license_evidence: no licence statement for this copy [copy https://publications.aston.ac.uk/id/eprint/43252/1/ijerph-18-11493-v2.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.3390/ijerph182111493 openalex:W3209547365
+    resolution: 'legacy: openalex location'
+  - id: ope-task-complexity-and-learning-styles-in-situate
+    title: Task complexity and learning styles in situated virtual learning environments
+      for construction higher education
+    url: https://opus.lib.uts.edu.au/bitstream/10453/143204/4/2-s2.0-85080973626%20am%20Combined%20.pdf
+    source: openalex
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2020-03-08'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.autcon.2020.103148
+    license_evidence: no licence statement for this copy [copy https://opus.lib.uts.edu.au/bitstream/10453/143204/4/2-s2.0-85080973626%20am%20Combined%20.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.autcon.2020.103148 openalex:W3012030602
+    resolution: 'legacy: openalex location'
+  - id: ope-reduce-rework-improve-safety-an-empirical-inqu
+    title: 'Reduce rework, improve safety: an empirical inquiry into the precursors
+      to error in construction'
+    url: https://espace.curtin.edu.au/bitstream/handle/20.500.11937/65838/Accepted%20PPC_Precursor.pdf?sequence=5&isAllowed=y
+    source: openalex
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2018-01-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/09537287.2018.1424961
+    license_evidence: no licence statement for this copy [copy https://espace.curtin.edu.au/bitstream/handle/20.500.11937/65838/Accepted%20PPC_Precursor.pdf?sequence=5&isAllowed=y;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/09537287.2018.1424961 openalex:W2782786240
+    resolution: 'legacy: openalex location'
