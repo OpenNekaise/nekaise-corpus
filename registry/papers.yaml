@@ -140066,3 +140066,44 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7140954031
     resolution: 'sim1: openalex location'
+  - id: ope-prestressed-cfrp-strengthening-and-long-term-w
+    title: Prestressed CFRP-strengthening and long-term wireless monitoring of an old
+      roadway metallic bridge
+    url: https://researchmgt.monash.edu/ws/files/390174528/390159883_oa.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2018-09-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.engstruct.2018.09.042
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://researchmgt.monash.edu/ws/files/390174528/390159883_oa.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.engstruct.2018.09.042 openalex:W2893914685
+    resolution: 'legacy: openalex location'
+  - id: ope-analysis-of-mechanical-properties-and-permeabi
+    title: Analysis of Mechanical Properties and Permeability of Trabecular-Like Porous
+      Scaffold by Additive Manufacturing
+    url: https://www.frontiersin.org/articles/10.3389/fbioe.2021.779854/pdf
+    source: openalex
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2021-12-21'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fbioe.2021.779854
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/fbioe.2021.779854/pdf
+      do not transfer to https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2021.779854/pdf;
+      payload sha256=3095968d14788025255712c4da000cc191b81f6183e5afc4239f1c5a01d54bfe;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://www.frontiersin.org/articles/10.3389/fbioe.2021.779854/pdf;
+      version publishedVersion; rights accepted]", "rights_verified_at": "2026-10-11",
+      "selected_version": "publishedVersion"}'
+    rights_verified_at: '2026-10-11T19:29:09Z'
+    origin_ids: doi:10.3389/fbioe.2021.779854 openalex:W4200618670
+    resolution: 'legacy: openalex location'
