@@ -22557,20 +22557,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-renolit-alkorplan-waterproofing-for-all-residential-applications-70781a85
-    title: 'SpecifiedBy (UK manufacturer documents): renolit-alkorplan-waterproofing-for-all-residential-applications_70781a85.pdf'
-    url: https://www.specifiedby.com/renolit-uk-limited/highly-reflective-and-energy-efficient-cool-roof-system-fully-adhered-with-pir-insulation-board-renolit-alkorplan-bright-a/renolit-alkorplan-waterproofing-for-all-residential-applications_70781a85.pdf
-    source: vendor_specifiedby
-    license: open
-    topic: building_energy
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.specifiedby.com/terms
-    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); PDFs 200 without challenge
-    rights_verified_at: '2026-08-30'
   - id: vnd-sika-gb-sika-two-part-woodfiller
     title: 'Sika GB: sika two part woodfiller'
     url: https://gbr.sika.com/dms/getdocument.get/8dee2955-ac1a-4cc1-8386-055ae76ee439/sika-two-part-woodfiller.pdf
@@ -22584,3 +22570,17 @@ sources:
     license_evidence: you may download or print any pages from this Site for personal,
       non-commercial use; no scraping clause
     rights_verified_at: '2026-08-28'
+  - id: vnd-specifiedby-silent-gliss-roller-blind-system-4830-technical-fabric-overview
+    title: 'SpecifiedBy (UK manufacturer documents): Silent-Gliss_Roller-Blind-System-4830_Technical_Fabric-Overview.pdf'
+    url: https://www.specifiedby.com/silent-gliss/roller-blind-system-4830/Silent-Gliss_Roller-Blind-System-4830_Technical_Fabric-Overview.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'

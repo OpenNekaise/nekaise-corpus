@@ -22059,20 +22059,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-general-renolit-alkorplan-waterproofing-membrane-single-ply-brochure-2f890
-    title: 'SpecifiedBy (UK manufacturer documents): general-renolit-alkorplan-waterproofing-membrane-single-ply-brochure_2f89012f.pdf'
-    url: https://www.specifiedby.com/renolit-uk-limited/highly-reflective-and-energy-efficient-cool-roof-system-fully-adhered-with-pir-insulation-board-renolit-alkorplan-bright-a/general-renolit-alkorplan-waterproofing-membrane-single-ply-brochure_2f89012f.pdf
-    source: vendor_specifiedby
-    license: open
-    topic: building_energy
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.specifiedby.com/terms
-    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); PDFs 200 without challenge
-    rights_verified_at: '2026-08-30'
   - id: vnd-vaillant-de-installationsanleitung-arotherm-perform-1519550
     title: 'Vaillant DE: de — installationsanleitung arotherm perform 1519550'
     url: https://www.vaillant.de/api/download/product/de/installationsanleitung_arotherm-perform_1519550.pdf
@@ -22086,3 +22072,45 @@ sources:
     license_evidence: für Ihren privaten, nicht-geschäftlichen Gebrauch ansehen, ausdrucken
       und speichern; keine Vervielfältigung ohne Genehmigung; no robot clause
     rights_verified_at: '2026-08-28'
+  - id: vnd-specifiedby-recticel-insulation-eurothane-gp-technical-pds
+    title: 'SpecifiedBy (UK manufacturer documents): Recticel-Insulation_Eurothane-GP_Technical_PDS.pdf'
+    url: https://www.specifiedby.com/recticel-insulation/eurothane-gp/Recticel-Insulation_Eurothane-GP_Technical_PDS.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-recticel-insulation-eurothane-pl-technical-pds
+    title: 'SpecifiedBy (UK manufacturer documents): Recticel-Insulation_Eurothane-PL_Technical_PDS.pdf'
+    url: https://www.specifiedby.com/recticel-insulation/eurothane-pl/Recticel-Insulation_Eurothane-PL_Technical_PDS.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-silent-gliss-roller-blind-system-4830-brochures-education
+    title: 'SpecifiedBy (UK manufacturer documents): Silent-Gliss_Roller-Blind-System-4830_Brochures_Education.pdf'
+    url: https://www.specifiedby.com/silent-gliss/roller-blind-system-4830/Silent-Gliss_Roller-Blind-System-4830_Brochures_Education.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
