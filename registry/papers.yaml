@@ -139457,3 +139457,38 @@ sources:
     rights_verified_at: '2026-10-11T10:35:11Z'
     origin_ids: doi:10.3389/fmats.2019.00090 openalex:W2943576505
     resolution: 'legacy: openalex location'
+  - id: oas-10-15094-00008629-554030a7
+    title: 南極大陸氷床上における建築物と風の関係 -斜面下降風が建築物 の外壁熱伝導率と隙間風に及ぼす影響-
+    url: https://nipr.repo.nii.ac.jp/record/8629/files/KJ00000139879.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1989-07-01'
+    document_type: article
+    persistent_id: https://doi.org/10.15094/00008629
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://nipr.repo.nii.ac.jp/record/8629/files/KJ00000139879.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.15094/00008629 openalex:W2110752084
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208459308
+    title: 技術の進歩と居住環境の変化(<特集>居住環境の創造とテクノロジー)
+    url: https://sucra.repo.nii.ac.jp/record/12209/files/A1004158.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1989-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208459308
+    license_evidence: no licence statement for this copy [copy https://sucra.repo.nii.ac.jp/record/12209/files/A1004158.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208459308
+    resolution: 'sim1: openalex location'
