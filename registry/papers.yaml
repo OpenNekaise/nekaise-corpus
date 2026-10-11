@@ -139803,3 +139803,39 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W5181335
     resolution: 'sim1: openalex location'
+  - id: oas-w7146041122
+    title: '建物内の空気条件に関する硏究 : 地下事務室の夏季の換気と汚染度'
+    url: https://ocu-omu.repo.nii.ac.jp/record/2018339/files/111H0000001-1-2-3.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1954-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146041122
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ocu-omu.repo.nii.ac.jp/record/2018339/files/111H0000001-1-2-3.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146041122
+    resolution: 'sim1: openalex location'
+  - id: oas-w7146674307
+    title: 氣候區と防暑對策
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/24845/files/sk002007007.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1950-07-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146674307
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/24845/files/sk002007007.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146674307
+    resolution: 'sim1: openalex location'
