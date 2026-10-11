@@ -140145,3 +140145,20 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.jobe.2022.105689 openalex:W4311758680
     resolution: 'ai1: openalex+unpaywall location'
+  - id: oas-10-48550-arxiv-2508-12703-f90ef5de
+    title: 'BUILDA: A Thermal Building Data Generation Framework for Transfer Learning'
+    url: https://arxiv.org/pdf/2508.12703
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-08-18'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2508.12703
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2508.12703;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2508.12703 openalex:W4414490493
+    resolution: 'sim1: openalex location'
