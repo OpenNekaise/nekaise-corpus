@@ -139510,3 +139510,20 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W621511431
     resolution: 'sim1: openalex location'
+  - id: oas-w389991997
+    title: '建築構造物の地震被害予測に関する実地調査研究・VI : 多治見市を対象とした調査'
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2007-12-01'
+    document_type: article
+    persistent_id: https://openalex.org/W389991997
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W389991997
+    resolution: 'sim1: openalex location; resolution retry'
