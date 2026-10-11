@@ -138425,24 +138425,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.autcon.2020.103148 openalex:W3012030602
     resolution: 'legacy: openalex location'
-  - id: ope-reduce-rework-improve-safety-an-empirical-inqu
-    title: 'Reduce rework, improve safety: an empirical inquiry into the precursors
-      to error in construction'
-    url: https://espace.curtin.edu.au/bitstream/handle/20.500.11937/65838/Accepted%20PPC_Precursor.pdf?sequence=5&isAllowed=y
-    source: openalex
-    license: unverified
-    topic: construction
-    format: pdf
-    language: en
-    published_at: '2018-01-15'
-    document_type: article
-    persistent_id: https://doi.org/10.1080/09537287.2018.1424961
-    license_evidence: no licence statement for this copy [copy https://espace.curtin.edu.au/bitstream/handle/20.500.11937/65838/Accepted%20PPC_Precursor.pdf?sequence=5&isAllowed=y;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-11'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1080/09537287.2018.1424961 openalex:W2782786240
-    resolution: 'legacy: openalex location'
   - id: oas-w621987907
     title: '建築構造物の地震被害予測に関する実地調査研究・III : 瀬戸市の調査結果'
     url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf
@@ -138925,4 +138907,91 @@ sources:
     rights_verified_at: '2026-10-11'
     selected_version: submittedVersion
     origin_ids: openalex:W427517995
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208415596
+    title: 地価高騰期における東京都内の住宅系土地利用の変化
+    url: https://tokyo-metro-u.repo.nii.ac.jp/record/5624/files/20024-062-002.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1997-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208415596
+    license_evidence: no licence statement for this copy [copy https://tokyo-metro-u.repo.nii.ac.jp/record/5624/files/20024-062-002.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208415596
+    resolution: 'sim1: openalex location'
+  - id: oas-w92022318
+    title: '40434 環境とエネルギーを重視した高密度都市モデル : その5 理想都市構想具体化への断章'
+    url: https://sucra.repo.nii.ac.jp/record/12453/files/A1004110.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1996-07-30'
+    document_type: article
+    persistent_id: https://openalex.org/W92022318
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://sucra.repo.nii.ac.jp/record/12453/files/A1004110.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W92022318
+    resolution: 'sim1: openalex location'
+  - id: oas-w7144855717
+    title: 東京都における1994年用途地域制改定の実態と課題
+    url: https://tokyo-metro-u.repo.nii.ac.jp/record/5563/files/20024-059-006.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1996-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7144855717
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://tokyo-metro-u.repo.nii.ac.jp/record/5563/files/20024-059-006.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144855717
+    resolution: 'sim1: openalex location'
+  - id: oas-w7146775194
+    title: 1995年阪神・淡路大震災における放射性同位元素使用施設の被害と対応
+    url: https://tokyo-metro-u.repo.nii.ac.jp/record/5578/files/20024-061-004.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1996-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146775194
+    license_evidence: no licence statement for this copy [copy https://tokyo-metro-u.repo.nii.ac.jp/record/5578/files/20024-061-004.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146775194
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208662618
+    title: '地震防災ポテンシャルの評価手法に関する基礎的研究 : 都市特性と被害量による定量評価'
+    url: https://tokyo-metro-u.repo.nii.ac.jp/record/5589/files/20024-061-015.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1996-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208662618
+    license_evidence: no licence statement for this copy [copy https://tokyo-metro-u.repo.nii.ac.jp/record/5589/files/20024-061-015.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208662618
     resolution: 'sim1: openalex location'
