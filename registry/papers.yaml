@@ -139839,3 +139839,20 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7146674307
     resolution: 'sim1: openalex location'
+  - id: oas-w621987907
+    title: '建築構造物の地震被害予測に関する実地調査研究・III : 瀬戸市の調査結果'
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2004-12-15'
+    document_type: article
+    persistent_id: https://openalex.org/W621987907
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W621987907
+    resolution: 'sim1: openalex location; resolution retry'
