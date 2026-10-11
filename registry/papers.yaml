@@ -138652,3 +138652,36 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W399462216
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-w36493629
+    title: 都市型産業集積の形成に関する一考察--京都市の「高度集積地区」を事例に
+    url: https://opac.ryukoku.ac.jp/iwjs0005opc/bdyview.do?bodyid=BD00001793&elmid=Body&fname=KJ00003971434.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2003-08-31'
+    document_type: article
+    persistent_id: https://openalex.org/W36493629
+    license_evidence: no licence statement for this copy [copy https://opac.ryukoku.ac.jp/iwjs0005opc/bdyview.do?bodyid=BD00001793&elmid=Body&fname=KJ00003971434.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W36493629
+    resolution: 'sim1: openalex location'
+  - id: oas-w7144496687
+    title: 水彩パース図風レンダリング法
+    url: https://iwate-u.repo.nii.ac.jp/record/10199/files/jsas-v2n1p40-50.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2003-03-25'
+    document_type: article
+    persistent_id: https://openalex.org/W7144496687
+    license_evidence: no licence statement for this copy [copy https://iwate-u.repo.nii.ac.jp/record/10199/files/jsas-v2n1p40-50.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144496687
+    resolution: 'sim1: openalex location'
