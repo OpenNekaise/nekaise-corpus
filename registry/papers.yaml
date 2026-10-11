@@ -138511,3 +138511,161 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1080/09537287.2018.1424961 openalex:W2782786240
     resolution: 'legacy: openalex location'
+  - id: oas-w621987907
+    title: '建築構造物の地震被害予測に関する実地調査研究・III : 瀬戸市の調査結果'
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2004-12-15'
+    document_type: article
+    persistent_id: https://openalex.org/W621987907
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W621987907
+    resolution: 'sim1: openalex location'
+  - id: oas-w7146632942
+    title: The 921 Chi-chi Earthquake and Puli City, Taiwan
+    url: https://rissho.repo.nii.ac.jp/record/9917/files/RS045-1.01-13.lee%20et.al.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2004-09-30'
+    document_type: article
+    persistent_id: https://openalex.org/W7146632942
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://rissho.repo.nii.ac.jp/record/9917/files/RS045-1.01-13.lee%20et.al.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146632942
+    resolution: 'sim1: openalex location'
+  - id: oas-w597116083
+    title: '41187 住宅内のエネルギー消費量の都道府県別将来推計に関する研究(その4) : 都道府県別住宅断熱水準(住宅エネルギー推定,環境工学II)'
+    url: https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12442&item_no=1&attribute_id=24&file_no=1
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2004-07-31'
+    document_type: article
+    persistent_id: https://openalex.org/W597116083
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12442&item_no=1&attribute_id=24&file_no=1;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W597116083
+    resolution: 'sim1: openalex location'
+  - id: oas-w641375485
+    title: '41184 住宅内のエネルギー消費量の都道府県別将来推計に関する研究(その1) : 住宅内のエネルギー消費推計マクロモデルの概要(住宅エネルギー推定,環境工学II)'
+    url: https://sucra.repo.nii.ac.jp/record/12440/files/A1004195.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2004-07-31'
+    document_type: article
+    persistent_id: https://openalex.org/W641375485
+    license_evidence: no licence statement for this copy [copy https://sucra.repo.nii.ac.jp/record/12440/files/A1004195.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W641375485
+    resolution: 'sim1: openalex location'
+  - id: oas-w650607920
+    title: '41185 住宅内のエネルギー消費量の都道府県別将来推計に関する研究(その2) : 住宅内のエネルギー消費推計マクロモデルの検証(住宅エネルギー推定,環境工学II)'
+    url: https://sucra.repo.nii.ac.jp/record/12441/files/A1004196.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2004-07-31'
+    document_type: article
+    persistent_id: https://openalex.org/W650607920
+    license_evidence: no licence statement for this copy [copy https://sucra.repo.nii.ac.jp/record/12441/files/A1004196.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W650607920
+    resolution: 'sim1: openalex location'
+  - id: oas-w572018671
+    title: 地方戸建住宅居住者の住宅選択行動に関する研究(第2報)新築戸建住宅取得者による住宅と施工業者に対する評価
+    url: https://shotoku.repo.nii.ac.jp/?action=repository_action_common_download&item_id=319&item_no=1&attribute_id=21&file_no=1
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2004-03-31'
+    document_type: article
+    persistent_id: https://openalex.org/W572018671
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://shotoku.repo.nii.ac.jp/?action=repository_action_common_download&item_id=319&item_no=1&attribute_id=21&file_no=1;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W572018671
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208007315
+    title: Possibility and Prospect of Wooden Culture
+    url: https://suac.repo.nii.ac.jp/record/575/files/P163-P173.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2004-03-31'
+    document_type: article
+    persistent_id: https://openalex.org/W7208007315
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://suac.repo.nii.ac.jp/record/575/files/P163-P173.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208007315
+    resolution: 'sim1: openalex location'
+  - id: oas-w379283349
+    title: 地方戸建住宅居住者の住宅選択行動に関する研究(第1報)新築戸建住宅取得者の施工業者選択
+    url: https://aska-r.repo.nii.ac.jp/record/6850/files/0016009200403059076.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2004-03-03'
+    document_type: article
+    persistent_id: https://openalex.org/W379283349
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://aska-r.repo.nii.ac.jp/record/6850/files/0016009200403059076.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W379283349
+    resolution: 'sim1: openalex location'
+  - id: oas-w399462216
+    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1993-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W399462216
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W399462216
+    resolution: 'sim1: openalex location; resolution retry'
