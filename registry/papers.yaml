@@ -138745,3 +138745,94 @@ sources:
     rights_verified_at: '2026-10-11T03:34:32Z'
     origin_ids: doi:10.3389/fmats.2023.1269124 openalex:W4388656186
     resolution: 'legacy: openalex location'
+  - id: oas-w7208413785
+    title: (1)新たなパラダイム下の高齢社会のデザイン(II 論考, <特集>高齢社会のデザイン)
+    url: https://sucra.repo.nii.ac.jp/record/12201/files/A1004147.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2003-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208413785
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://sucra.repo.nii.ac.jp/record/12201/files/A1004147.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208413785
+    resolution: 'sim1: openalex location'
+  - id: oas-w7162969732
+    title: Estimation of Sedimentary Structure in Fukui Plain Based on Microtremor Observation
+    url: https://u-fukui.repo.nii.ac.jp/record/24655/files/KK_009_2002_014_019.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2002-11-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7162969732
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://u-fukui.repo.nii.ac.jp/record/24655/files/KK_009_2002_014_019.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7162969732
+    resolution: 'sim1: openalex location'
+  - id: oas-w372314838
+    title: '「よみがえれ!新浦安駅前『公共広場』大作戦」の内容と方法 : 市民まちづくり活動と学校教育との連携に関する研究 (その2)(2002年度大会 (北陸)
+      学術講演梗概集)'
+    url: https://sucra.repo.nii.ac.jp/record/12069/files/A1004131.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2002-06-30'
+    document_type: article
+    persistent_id: https://openalex.org/W372314838
+    license_evidence: no licence statement for this copy [copy https://sucra.repo.nii.ac.jp/record/12069/files/A1004131.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W372314838
+    resolution: 'sim1: openalex location'
+  - id: oas-w378918355
+    title: '「よみがえれ!新浦安駅前『公共広場』大作戦」に対する市民・子ども・教師の評価 : 市民まちづくり活動と学校教育との連携に関する研究 (3)(2002年度大会
+      (北陸) 学術講演梗概集)'
+    url: https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12068&item_no=1&attribute_id=24&file_no=1
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2002-06-30'
+    document_type: article
+    persistent_id: https://openalex.org/W378918355
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12068&item_no=1&attribute_id=24&file_no=1;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W378918355
+    resolution: 'sim1: openalex location'
+  - id: oas-w629163365
+    title: 薄板軽量形鋼を枠組とした外張高断熱高気密住宅の温熱環境特性とエネルギー消費効率の評価(2002年度大会 (北陸) 学術講演梗概集)
+    url: https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12429&item_no=1&attribute_id=24&file_no=1
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2002-06-30'
+    document_type: article
+    persistent_id: https://openalex.org/W629163365
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12429&item_no=1&attribute_id=24&file_no=1;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W629163365
+    resolution: 'sim1: openalex location'
