@@ -139639,3 +139639,56 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7146592112
     resolution: 'sim1: openalex location'
+  - id: oas-w7208140899
+    title: '40年の研究生活をかえりみて : 停年退官に当たって'
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/22039/files/sk021009001.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1969-09-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208140899
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/22039/files/sk021009001.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208140899
+    resolution: 'sim1: openalex location'
+  - id: oas-w7145635826
+    title: 逐次積分法による室温および負荷変動の解析
+    url: https://eprints.lib.hokudai.ac.jp/repo/huscap/all/40905/51_185-200.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1968-12-25'
+    document_type: article
+    persistent_id: https://openalex.org/W7145635826
+    license_evidence: no licence statement for this copy [copy https://eprints.lib.hokudai.ac.jp/repo/huscap/all/40905/51_185-200.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145635826
+    resolution: 'sim1: openalex location'
+  - id: oas-w1496843
+    title: '""プレハブリケーション型""という技術の一概念 : 技術開発の歴史について'
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/22259/files/sk020007005.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1968-07-01'
+    document_type: article
+    persistent_id: https://openalex.org/W1496843
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/22259/files/sk020007005.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W1496843
+    resolution: 'sim1: openalex location'
