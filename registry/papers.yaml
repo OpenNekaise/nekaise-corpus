@@ -138425,23 +138425,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.autcon.2020.103148 openalex:W3012030602
     resolution: 'legacy: openalex location'
-  - id: oas-w621987907
-    title: '建築構造物の地震被害予測に関する実地調査研究・III : 瀬戸市の調査結果'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2004-12-15'
-    document_type: article
-    persistent_id: https://openalex.org/W621987907
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-11'
-    selected_version: submittedVersion
-    origin_ids: openalex:W621987907
-    resolution: 'sim1: openalex location'
   - id: oas-w7146632942
     title: The 921 Chi-chi Earthquake and Puli City, Taiwan
     url: https://rissho.repo.nii.ac.jp/record/9917/files/RS045-1.01-13.lee%20et.al.pdf
@@ -138566,23 +138549,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W379283349
     resolution: 'sim1: openalex location'
-  - id: oas-w399462216
-    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1993-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W399462216
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-11'
-    selected_version: submittedVersion
-    origin_ids: openalex:W399462216
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w36493629
     title: 都市型産業集積の形成に関する一考察--京都市の「高度集積地区」を事例に
     url: https://opac.ryukoku.ac.jp/iwjs0005opc/bdyview.do?bodyid=BD00001793&elmid=Body&fname=KJ00003971434.pdf
@@ -138994,4 +138960,22 @@ sources:
     rights_verified_at: '2026-10-11'
     selected_version: submittedVersion
     origin_ids: openalex:W7208662618
+    resolution: 'sim1: openalex location'
+  - id: oas-w402056877
+    title: インスティテューションの将来(座談会)( 「施設」の意味を問う)
+    url: https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12204&item_no=1&attribute_id=24&file_no=1
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1995-03-20'
+    document_type: article
+    persistent_id: https://openalex.org/W402056877
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12204&item_no=1&attribute_id=24&file_no=1;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W402056877
     resolution: 'sim1: openalex location'
