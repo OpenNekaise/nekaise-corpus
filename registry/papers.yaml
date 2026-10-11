@@ -140204,3 +140204,77 @@ sources:
     rights_verified_at: '2026-10-11T21:14:13Z'
     origin_ids: doi:10.1080/23744731.2023.2247948 openalex:W4385986097
     resolution: 'sim1: openalex+unpaywall location'
+  - id: ope-police-misconduct-community-opposition-and-urb
+    title: Police Misconduct, Community Opposition, and Urban Governance in New York
+      City, 1945–1965
+    url: https://ueaeprints.uea.ac.uk/id/eprint/57188/1/police_2015_.pdf
+    source: openalex
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2015-04-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/0096144215574695
+    license_evidence: no licence statement for this copy [copy https://ueaeprints.uea.ac.uk/id/eprint/57188/1/police_2015_.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/0096144215574695 openalex:W2040552781
+    resolution: 'legacy: openalex location'
+  - id: ope-comparison-between-seismic-and-domestic-risk-i
+    title: 'Comparison between seismic and domestic risk in moderate seismic hazard
+      prone region: the Grenoble City (France) test site'
+    url: https://nhess.copernicus.org/articles/12/511/2012/nhess-12-511-2012.pdf
+    source: openalex
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2012-02-29'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/nhess-12-511-2012
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://nhess.copernicus.org/articles/12/511/2012/nhess-12-511-2012.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-11'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/nhess-12-511-2012 openalex:W1980263197
+    resolution: 'legacy: openalex location'
+  - id: ope-a-probabilistic-assessment-of-ship-blackout-in
+    title: A probabilistic assessment of ship blackout incident with Fault Tree Analysis
+      into (FTA) Bayesian Network (BN)
+    url: https://researchonline.ljmu.ac.uk/id/eprint/24761/1/A%20probabilistic%20assessment%20of%20ship%20blackout%20incident%20with%20Fault%20Tree%20Analysis%20into%20%28FTA%29%20Bayesian%20Network%20%28BN%29.pdf
+    source: openalex
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-10-31'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/20464177.2024.2423425
+    license_evidence: no licence statement for this copy [copy https://researchonline.ljmu.ac.uk/id/eprint/24761/1/A%20probabilistic%20assessment%20of%20ship%20blackout%20incident%20with%20Fault%20Tree%20Analysis%20into%20%28FTA%29%20Bayesian%20Network%20%28BN%29.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/20464177.2024.2423425 openalex:W4403952281
+    resolution: 'legacy: openalex location'
+  - id: ope-matching-design-intent-planar-curved-and-linea
+    title: Matching design-intent planar, curved, and linear structural instances in
+      point clouds
+    url: https://www.repository.cam.ac.uk/bitstreams/a243108b-c650-404e-bd4b-aa2df4d01737/download
+    source: openalex
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-12-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.autcon.2023.105219
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://www.repository.cam.ac.uk/bitstreams/a243108b-c650-404e-bd4b-aa2df4d01737/download;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.autcon.2023.105219 openalex:W4389560230
+    resolution: 'legacy: openalex location'
