@@ -138300,23 +138300,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2502.11723 openalex:W4407719413
     resolution: 'ai1: openalex location'
-  - id: oas-w413185441
-    title: 建築構造物の減衰性能と生体の生理反応--座位・立位での振動暴露に対する手掌部発汗
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10102222&elmid=Body&fname=079_Kotake.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1997-12-01'
-    document_type: article
-    persistent_id: https://openalex.org/W413185441
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10102222&elmid=Body&fname=079_Kotake.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W413185441
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-10-48550-arxiv-2308-05391-864f15a9
     title: 'Enhancing Trust in LLM-Based AI Automation Agents: New Considerations and
       Future Challenges'
@@ -138871,4 +138854,75 @@ sources:
     rights_verified_at: '2026-10-11'
     selected_version: submittedVersion
     origin_ids: doi:10.15085/00000396 openalex:W7143734426
+    resolution: 'sim1: openalex location'
+  - id: oas-w648468034
+    title: 40419 HLCE-Human Life Cycle Emission とその削減(HLCE)
+    url: https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12475&item_no=1&attribute_id=24&file_no=1
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1998-07-30'
+    document_type: article
+    persistent_id: https://openalex.org/W648468034
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12475&item_no=1&attribute_id=24&file_no=1;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W648468034
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208471050
+    title: 'オランダの水管理政策分析システムを応用した既存河口堰の評価 : 長良川および利根川'
+    url: https://tokyo-metro-u.repo.nii.ac.jp/record/5694/files/20024-067-003.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1998-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208471050
+    license_evidence: no licence statement for this copy [copy https://tokyo-metro-u.repo.nii.ac.jp/record/5694/files/20024-067-003.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208471050
+    resolution: 'sim1: openalex location'
+  - id: oas-w630543684
+    title: '40468 ヒューマンライフサイクルエネルギー評価に関する研究 : 都心居住の省エネ効果 : その1 概念とインフラ分野の省エネ効果'
+    url: https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12452&item_no=1&attribute_id=24&file_no=1
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1997-07-30'
+    document_type: article
+    persistent_id: https://openalex.org/W630543684
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12452&item_no=1&attribute_id=24&file_no=1;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W630543684
+    resolution: 'sim1: openalex location'
+  - id: oas-w427517995
+    title: 都市史研究会(都市史研究の現場)( 都市史)
+    url: https://sucra.repo.nii.ac.jp/record/12064/files/A1004151.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1997-05-20'
+    document_type: article
+    persistent_id: https://openalex.org/W427517995
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://sucra.repo.nii.ac.jp/record/12064/files/A1004151.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W427517995
     resolution: 'sim1: openalex location'
