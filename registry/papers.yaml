@@ -138385,3 +138385,92 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W413185441
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-48550-arxiv-2308-05391-864f15a9
+    title: 'Enhancing Trust in LLM-Based AI Automation Agents: New Considerations and
+      Future Challenges'
+    url: https://arxiv.org/pdf/2308.05391
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-08-10'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2308.05391
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://arxiv.org/pdf/2308.05391; version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2308.05391 openalex:W4385774857
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2409-02111-770ebb93
+    title: 'Toward Large-scale Spiking Neural Networks: A Comprehensive Survey and Future
+      Directions'
+    url: https://arxiv.org/pdf/2409.02111
+    source: openalex_ai
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-08-19'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2409.02111
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://arxiv.org/pdf/2409.02111; version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2409.02111 openalex:W4403159822
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2309-01957-c690ba45
+    title: 'Automatic Data Transformation Using Large Language Model: An Experimental
+      Study on Building Energy Data'
+    url: https://arxiv.org/pdf/2309.01957
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-09-05'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2309.01957
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2309.01957;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2309.01957 openalex:W4386555649
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2411-08888-8d6bcddb
+    title: Exploring Capabilities of Time Series Foundation Models in Building Analytics
+    url: https://arxiv.org/pdf/2411.08888
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-10-28'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2411.08888
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2411.08888;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2411.08888 openalex:W4404449543
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2412-17285-00772e91
+    title: Enabling Time-series Foundation Model for Building Energy Forecasting via
+      Contrastive Curriculum Learning
+    url: https://arxiv.org/pdf/2412.17285
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-12-23'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2412.17285
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2412.17285;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2412.17285 openalex:W4405767736
+    resolution: 'ai1: openalex location'
