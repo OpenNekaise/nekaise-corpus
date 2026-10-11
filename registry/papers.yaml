@@ -139030,23 +139030,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.24568/2145 openalex:W7144114906
     resolution: 'sim1: openalex location'
-  - id: oas-w399462216
-    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1993-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W399462216
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-11'
-    selected_version: submittedVersion
-    origin_ids: openalex:W399462216
-    resolution: 'sim1: openalex location'
   - id: oas-w7145740247
     title: 隠居と隣居と閑居と
     url: https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12207&item_no=1&attribute_id=24&file_no=1
@@ -139748,3 +139731,75 @@ sources:
     rights_verified_at: '2026-10-11T14:55:06Z'
     origin_ids: doi:10.1088/1361-665x/abf41d openalex:W3145912483
     resolution: 'legacy: openalex location'
+  - id: oas-w7146341010
+    title: '研究解説 : スペース・ユニット'
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/22749/files/sk016009003.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1964-09-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146341010
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/22749/files/sk016009003.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146341010
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208276290
+    title: '研究解説 : 薄肉開断面材の弾性力学(1)'
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/22808/files/sk016001004.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1964-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208276290
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/22808/files/sk016001004.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208276290
+    resolution: 'sim1: openalex location'
+  - id: oas-w7146135747
+    title: 新しい道路材
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/22943/files/sk015003005.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1963-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146135747
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/22943/files/sk015003005.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146135747
+    resolution: 'sim1: openalex location'
+  - id: oas-w5181335
+    title: 'アスファルトエマルジョンの研究 : 第1報 研究概要とレッテル氏論説の紹介'
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/22976/files/sk014011001.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1962-11-01'
+    document_type: article
+    persistent_id: https://openalex.org/W5181335
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/22976/files/sk014011001.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W5181335
+    resolution: 'sim1: openalex location'
