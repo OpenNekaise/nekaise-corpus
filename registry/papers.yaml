@@ -140278,3 +140278,194 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.autcon.2023.105219 openalex:W4389560230
     resolution: 'legacy: openalex location'
+  - id: oas-10-1016-j-enbuild-2015-11-014-a421bf04
+    title: Practical implementation and evaluation of model predictive control for an
+      office building in Brussels
+    url: https://lirias.kuleuven.be/retrieve/b4e2b438-3acd-4c39-bff6-16e80de3d453
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-11-23'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2015.11.014
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/b4e2b438-3acd-4c39-bff6-16e80de3d453;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2015.11.014 openalex:W2180271301
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1080-19401493-2018-1428361-ae598f13
+    title: Implementation and verification of the IDEAS building energy simulation library
+    url: https://lirias.kuleuven.be/retrieve/206342a8-7bd1-4986-a234-4772f4260b8c
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-02-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/19401493.2018.1428361
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/206342a8-7bd1-4986-a234-4772f4260b8c;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/19401493.2018.1428361 openalex:W2794243362
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-apenergy-2016-11-103-96c2f25d
+    title: Heat pump and PV impact on residential low-voltage distribution grids as
+      a function of building and district properties
+    url: https://lirias.kuleuven.be/retrieve/45c046c8-c9ae-4819-b803-72822f6610e0
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-12-03'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2016.11.103
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/45c046c8-c9ae-4819-b803-72822f6610e0;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2016.11.103 openalex:W2558336743
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1080-19401493-2015-1046933-ea769460
+    title: Toolbox for development and validation of grey-box building models for forecasting
+      and control
+    url: https://lirias.kuleuven.be/retrieve/0a7c6c39-266d-43ba-9ad6-db3a6ca17597
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-06-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/19401493.2015.1046933
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/0a7c6c39-266d-43ba-9ad6-db3a6ca17597;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/19401493.2015.1046933 openalex:W1908007089
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1080-19401493-2018-1498537-5d70745b
+    title: 'TACO, an automated toolchain for model predictive control of building systems:
+      implementation and verification'
+    url: https://lirias.kuleuven.be/retrieve/29bebdae-e47e-498e-9340-e3ea9e864fb8
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-08-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/19401493.2018.1498537
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/29bebdae-e47e-498e-9340-e3ea9e864fb8;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/19401493.2018.1498537 openalex:W2886605681
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-autcon-2018-09-016-55c623fd
+    title: An auto-deployed model-based fault detection and diagnosis approach for Air
+      Handling Units using BIM and Modelica
+    url: https://lirias.kuleuven.be/retrieve/2a399c59-75db-48f9-9046-d1dfa76580eb
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-10-25'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.autcon.2018.09.016
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/2a399c59-75db-48f9-9046-d1dfa76580eb;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.autcon.2018.09.016 openalex:W2898606798
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2019-01-046-dfe201a1
+    title: Automated grey box model implementation using BIM and Modelica
+    url: https://lirias.kuleuven.be/retrieve/65704bc9-1f83-4b1a-9f5a-a1f93d0c02f0
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-02-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2019.01.046
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/65704bc9-1f83-4b1a-9f5a-a1f93d0c02f0;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2019.01.046 openalex:W2913586039
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1080-19401493-2018-1544277-b6d0a0e6
+    title: Model implementation and verification of the envelope, HVAC and controller
+      of an office building in Modelica
+    url: https://lirias.kuleuven.be/retrieve/c4a520ec-42b5-431e-ab81-ce705f05e88a
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-12-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/19401493.2018.1544277
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/c4a520ec-42b5-431e-ab81-ce705f05e88a;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/19401493.2018.1544277 openalex:W2905248102
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1080-19401493-2019-1597923-5b60f4d6
+    title: Assessing scalability of a low-voltage distribution grid co-simulation through
+      functional mock-up interface
+    url: https://lirias.kuleuven.be/retrieve/6579dbed-a970-4596-829b-be1d8406b879
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-04-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/19401493.2019.1597923
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/6579dbed-a970-4596-829b-be1d8406b879;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/19401493.2019.1597923 openalex:W2935311659
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1080-19401493-2019-1583286-b497a223
+    title: 'Simulation of Legionella concentration in domestic hot water: comparison
+      of pipe and boiler models'
+    url: https://biblio.ugent.be/publication/8600409/file/8628788.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-03-26'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/19401493.2019.1583286
+    license_evidence: 'redirect: rights of requested copy https://biblio.ugent.be/publication/8600409/file/8628788.pdf
+      do not transfer to https://backoffice.biblio.ugent.be/download/8600409/8628788;
+      payload sha256=dcf46f34e10804dfee359f5e5df90a3598c38f747349eecc19921beb1ff2bb46;
+      original evidence: {"license": "unverified", "license_evidence": "openalex.license=other-oa;
+      openalex.license_id=https://openalex.org/licenses/other-oa; unpaywall.license=other-oa
+      [copy https://biblio.ugent.be/publication/8600409/file/8628788.pdf; version submittedVersion;
+      rights unknown]", "rights_verified_at": "2026-10-11", "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-11T22:35:23Z'
+    origin_ids: doi:10.1080/19401493.2019.1583286 openalex:W2924926383
+    resolution: 'sim1: openalex+unpaywall location'
