@@ -138979,3 +138979,71 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W402056877
     resolution: 'sim1: openalex location'
+  - id: oas-w92901968
+    title: '2959 在来鉄筋継手を全数継手で用いる場合の継手性能評価に関する研究 : その18 ガス圧接継手を持つはりの曲げひびわれ性状'
+    url: https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12085&item_no=1&attribute_id=24&file_no=1
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1993-07-25'
+    document_type: article
+    persistent_id: https://openalex.org/W92901968
+    license_evidence: no licence statement for this copy [copy https://sucra.repo.nii.ac.jp/?action=repository_action_common_download&item_id=12085&item_no=1&attribute_id=24&file_no=1;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W92901968
+    resolution: 'sim1: openalex location'
+  - id: oas-w390385466
+    title: 地理情報システム(GIS)研究とGIS教育の必要性
+    url: https://nara-u.repo.nii.ac.jp/record/2001519/files/AN00181569-19930300-1012.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1993-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W390385466
+    license_evidence: no licence statement for this copy [copy https://nara-u.repo.nii.ac.jp/record/2001519/files/AN00181569-19930300-1012.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W390385466
+    resolution: 'sim1: openalex location'
+  - id: oas-10-24568-2145-1732c25a
+    title: 産業廃棄物処理と地域環境問題
+    url: https://ir.lib.shimane-u.ac.jp/2145/files/1906
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1993-02-25'
+    document_type: article
+    persistent_id: https://doi.org/10.24568/2145
+    license_evidence: no licence statement for this copy [copy https://ir.lib.shimane-u.ac.jp/2145/files/1906;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.24568/2145 openalex:W7144114906
+    resolution: 'sim1: openalex location'
+  - id: oas-w399462216
+    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1993-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W399462216
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W399462216
+    resolution: 'sim1: openalex location'
