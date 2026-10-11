@@ -139856,3 +139856,73 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W621987907
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-48550-arxiv-2608-24817-8a6f937f
+    title: 'A Co-Simulation Platform Coupling Land Use, Transportation, and Building
+      Energy: Development and Case Study'
+    url: https://arxiv.org/pdf/2608.24817
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    published_at: '2026-08-25'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2608.24817
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2608.24817;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2608.24817 openalex:W7204244887
+    resolution: 'ai1: openalex location'
+  - id: oas-w7129180654
+    title: Modelling human activities in a system of cities
+    url: https://arxiv.org/pdf/2602.13038
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    published_at: '2026-02-13'
+    document_type: preprint
+    persistent_id: https://openalex.org/W7129180654
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2602.13038;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7129180654
+    resolution: 'ai1: openalex location'
+  - id: oas-w7126123551
+    title: 'OptAgent: an Agentic AI framework for Intelligent Building Operations'
+    url: https://arxiv.org/pdf/2601.20005
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    published_at: '2026-01-27'
+    document_type: preprint
+    persistent_id: https://openalex.org/W7126123551
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2601.20005;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7126123551
+    resolution: 'ai1: openalex location'
+  - id: oas-10-32620-oikit-2026-107-16-52024616
+    title: Гібридна модель адаптивної пріоритезації енергетичних ресурсів медичного
+      закладу в умовах критичного дефіциту
+    url: https://nti.khai.edu/ojs/index.php/oikit/article/download/oikit.2026.107.16/3073
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    published_at: '2026-03-21'
+    document_type: article
+    persistent_id: https://doi.org/10.32620/oikit.2026.107.16
+    license_evidence: 'redirect: rights of requested copy https://nti.khai.edu/ojs/index.php/oikit/article/download/oikit.2026.107.16/3073
+      do not transfer to https://nti.khai.edu/index.php/oikit/article/download/oikit.2026.107.16/3073;
+      payload sha256=e6a94e523a7357614b09b7f5f8dee8e74943547b5caba352312b8dc96c57599b;
+      original evidence: {"license": "unverified", "license_evidence": "no licence statement
+      for this copy [copy https://nti.khai.edu/ojs/index.php/oikit/article/download/oikit.2026.107.16/3073;
+      version publishedVersion; rights unknown]", "rights_verified_at": "2026-10-11",
+      "selected_version": "publishedVersion"}'
+    rights_verified_at: '2026-10-11T17:42:10Z'
+    origin_ids: doi:10.32620/oikit.2026.107.16 openalex:W7139978412
+    resolution: 'ai1: openalex+unpaywall location'
