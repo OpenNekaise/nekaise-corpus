@@ -138837,3 +138837,55 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W613684965
     resolution: 'sim1: openalex location'
+  - id: oas-w2732675078
+    title: '欧米5か国のリビングルームのしつらいについて : 雑誌データを中心に, 松原小夜子, 169(評論-1)'
+    url: https://sucra.repo.nii.ac.jp/record/12198/files/A1004138.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2000-12-20'
+    document_type: article
+    persistent_id: https://openalex.org/W2732675078
+    license_evidence: no licence statement for this copy [copy https://sucra.repo.nii.ac.jp/record/12198/files/A1004138.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W2732675078
+    resolution: 'sim1: openalex location'
+  - id: oas-w587119865
+    title: '40480 世帯人員とCO_2排出量に関する研究 : 家計消費支出にもとづくCO_2排出量の推計'
+    url: https://sucra.repo.nii.ac.jp/record/12468/files/A1004095.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2000-07-31'
+    document_type: article
+    persistent_id: https://openalex.org/W587119865
+    license_evidence: no licence statement for this copy [copy https://sucra.repo.nii.ac.jp/record/12468/files/A1004095.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: openalex:W587119865
+    resolution: 'sim1: openalex location'
+  - id: oas-10-15085-00000396-48531d49
+    title: 'インテリアデザイン試論 : ホスピタリティから見たインテリアデザイン'
+    url: https://myu.repo.nii.ac.jp/record/407/files/jigyou_02_12.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2000-03-25'
+    document_type: article
+    persistent_id: https://doi.org/10.15085/00000396
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://myu.repo.nii.ac.jp/record/407/files/jigyou_02_12.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.15085/00000396 openalex:W7143734426
+    resolution: 'sim1: openalex location'
