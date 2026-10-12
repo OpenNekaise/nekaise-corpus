@@ -141275,3 +141275,484 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1038/s41559-020-01358-z openalex:W3119690318
     resolution: 'legacy: openalex location'
+  - id: oas-10-1016-j-jobe-2025-115046-7f8c6cd2
+    title: Data imputation methods for missing U-values of building envelopes in building
+      performance database
+    url: https://discovery.ucl.ac.uk/id/eprint/10219426/1/1-s2.0-S2352710225032838-main.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-12-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jobe.2025.115046
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/id/eprint/10219426/1/1-s2.0-S2352710225032838-main.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jobe.2025.115046 openalex:W4417504912
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-grets-2025-100312-47dfb744
+    title: Co-simulating the effects of nature-based and conventional composite facades
+      on building thermal and energy performance in temperate climates
+    url: https://uhra.herts.ac.uk/id/eprint/26397/1/Co-simulating_the_effects_of_nature-based_and_conventional_composite_facades_on_building_thermal_and_energy_performance_in_temperate_climates.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-11-21'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.grets.2025.100312
+    license_evidence: no licence statement for this copy [copy https://uhra.herts.ac.uk/id/eprint/26397/1/Co-simulating_the_effects_of_nature-based_and_conventional_composite_facades_on_building_thermal_and_energy_performance_in_temperate_climates.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.grets.2025.100312 openalex:W4416443616
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-48550-arxiv-2506-00888-4e92e9d6
+    title: An Integrated Platform for LEED Certification Automation Using Computer Vision
+      and LLM-RAG
+    url: https://arxiv.org/pdf/2506.00888
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-06-01'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2506.00888
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2506.00888;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2506.00888 openalex:W4414893784
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1088-2752-5309-adc763-fa1d95fc
+    title: Use of a synthetic population to model co-benefits to air quality and health
+      from household fuel emission mitigation policies in Kenya
+    url: https://researchonline.lshtm.ac.uk/id/eprint/4676119/1/Brunn-etal-2025-Use-of-a-synthetic-population.pdf
+    source: openalex_sim
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-03-31'
+    document_type: article
+    persistent_id: https://doi.org/10.1088/2752-5309/adc763
+    license_evidence: openalex.license=cc-by-nc-sa; openalex.license_id=https://openalex.org/licenses/cc-by-nc-sa;
+      unpaywall.license=cc-by-nc-sa [copy https://researchonline.lshtm.ac.uk/id/eprint/4676119/1/Brunn-etal-2025-Use-of-a-synthetic-population.pdf;
+      version acceptedVersion; rights restricted]
+    rights_verified_at: '2026-10-12'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1088/2752-5309/adc763 openalex:W4409013942
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-learning-based-model-predictive-control-for-sm
+    title: Learning-based Model Predictive Control for Smart Building Thermal Management
+    url: https://arxiv.org/pdf/1909.05331v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2019-09-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1909.05331
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1909.05331 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-predictive-real-time-control-optimization-of-a
+    title: Predictive Real-Time Control Optimization of a Stormwater Management System
+    url: https://arxiv.org/pdf/1910.04033v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019-10-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1910.04033
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1910.04033 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-modular-modeling-and-optimized-scheduling-of-b
+    title: Modular Modeling and Optimized Scheduling of Building Energy Systems Based
+      on Mixed Integer Programming
+    url: https://arxiv.org/pdf/1909.01767v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2019-08-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1909.01767
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1909.01767 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-pipe-roughness-identification-of-water-distrib
+    title: 'Pipe Roughness Identification of Water Distribution Networks: A Tensor Method'
+    url: https://arxiv.org/pdf/1910.13306v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019-10-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1910.13306
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1910.13306 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-deep-transfer-learning-for-thermal-dynamics-mo
+    title: Deep Transfer Learning for Thermal Dynamics Modeling in Smart Buildings
+    url: https://arxiv.org/pdf/1911.03318v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-11-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1911.03318
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1911.03318 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-pipe-roughness-identification-of-water-distrib-2
+    title: 'Pipe Roughness Identification of Water Distribution Networks: The Full Turbulent
+      Case'
+    url: https://arxiv.org/pdf/1908.07794v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019-08-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1908.07794
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1908.07794 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1016/j.apm.2019.11.011
+  - id: arx-an-incremental-scenario-approach-for-building-
+    title: An incremental scenario approach for building energy management with uncertain
+      occupancy
+    url: https://arxiv.org/pdf/1911.06733v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2019-11-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1911.06733
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1911.06733 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-deep-reinforcement-learning-for-smart-home-ene
+    title: Deep Reinforcement Learning for Smart Home Energy Management
+    url: https://arxiv.org/pdf/1909.10165v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-09-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1909.10165
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1909.10165 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1109/jiot.2019.2957289
+  - id: arx-profitability-of-photovoltaic-and-battery-syst
+    title: Profitability of Photovoltaic and Battery Systems on Municipal Buildings
+    url: https://arxiv.org/pdf/2003.00741v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-03-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2003.00741
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2003.00741 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1016/j.renene.2020.02.077
+  - id: arx-a-scenario-based-branch-and-bound-approach-for
+    title: A Scenario-based Branch-and-Bound Approach for MES Scheduling in Urban Buildings
+    url: https://arxiv.org/pdf/2003.03750v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-03-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2003.03750
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2003.03750 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1109/tii.2020.2978870
+  - id: arx-learning-optimal-control-of-water-distribution
+    title: Learning Optimal Control of Water Distribution Networks through Sequential
+      Model-based Optimization
+    url: https://arxiv.org/pdf/2003.04268v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2020-03-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2003.04268
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2003.04268 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-bounding-privacy-leakage-in-smart-buildings
+    title: Bounding Privacy Leakage in Smart Buildings
+    url: https://arxiv.org/pdf/2003.13187v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-03-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2003.13187
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2003.13187 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-state-estimation-in-water-distribution-network
+    title: State Estimation in Water Distribution Networks through a New Successive
+      Linear Approximation
+    url: https://arxiv.org/pdf/1909.03182v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019-09-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1909.03182
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1909.03182 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-neuropt-neural-network-based-optimization-for-
+    title: 'NeurOpt: Neural network based optimization for building energy management
+      and climate control'
+    url: https://arxiv.org/pdf/2001.07831v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-01-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2001.07831
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2001.07831 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-linking-parking-and-electricity-values-to-unlo
+    title: Linking Parking and Electricity Values to Unlock Potentials of Electric Vehicles
+      in Portuguese Buildings
+    url: https://arxiv.org/pdf/2005.02804v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-05-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2005.02804
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2005.02804 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-continuous-multiagent-control-using-collective
+    title: Continuous Multiagent Control using Collective Behavior Entropy for Large-Scale
+      Home Energy Management
+    url: https://arxiv.org/pdf/2005.10000v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-05-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2005.10000
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2005.10000 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-optimal-partitioning-of-multi-thermal-zone-bui
+    title: Optimal partitioning of multi-thermal zone buildings for decentralized control
+    url: https://arxiv.org/pdf/2006.06326v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-06-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2006.06326
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2006.06326 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-a-forecast-based-load-management-approach-for-
+    title: A Forecast Based Load Management Approach For Commercial Buildings -- Comparing
+      LSTM And Standardized Load Profile Techniques
+    url: https://arxiv.org/pdf/2007.06832v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-07-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2007.06832
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2007.06832 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-data-driven-control-of-micro-climate-in-buildi
+    title: 'Data-driven control of micro-climate in buildings: an event-triggered reinforcement
+      learning approach'
+    url: https://arxiv.org/pdf/2001.10505v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-01-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2001.10505
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2001.10505 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1016/j.apenergy.2020.115451
+  - id: arx-representing-long-term-impact-of-residential-b
+    title: Representing Long-term Impact of Residential Building Energy Management using
+      Stochastic Dynamic Programming
+    url: https://arxiv.org/pdf/2008.10528v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-08-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2008.10528
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2008.10528 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-an-optimal-home-energy-management-system-for-m
+    title: An optimal home energy management system for modulating heat pumps and photovoltaic
+      systems
+    url: https://arxiv.org/pdf/2009.02349v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2020-09-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2009.02349
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2009.02349 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1016/j.apenergy.2020.115661
+  - id: arx-control-oriented-data-driven-models-of-thermal
+    title: Control-Oriented, Data-Driven Models of Thermal Dynamics
+    url: https://arxiv.org/pdf/1912.03860v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2019-12-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1912.03860
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1912.03860 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-stochastic-model-predictive-control-and-sewer-
+    title: Stochastic Model Predictive Control and Sewer Networks
+    url: https://arxiv.org/pdf/2010.06859v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2020-10-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2010.06859
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2010.06859 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
