@@ -131,7 +131,7 @@ Google Patents sitemap (the biggest open vein) · `find_wiki.py` multilingual Wi
 `find_scielo.py` SciELO Brazil's CC-BY AEC journals (the biggest Portuguese built-environment
 vein) · `find_ibpsa.py` IBPSA building-simulation proceedings (captcha-paced) ·
 `find_escholarship.py` LBNL + UC Berkeley CBE CC-licensed papers (disabled: WAF policy) · `find_nlr.py` National
-Laboratory of the Rockies (ex-NREL) building reports · `find_osti_sim.py` OSTI building energy /
+Laboratory of the Rockies (ex-NREL) building reports (history walk, then a weekly watch pass) · `find_osti_sim.py` OSTI building energy /
 physical simulation query family (licence per record) · `find_osti_aec.py` the general OSTI
 built-environment query family (same runner: title gate, licence per record, then a daily watch
 pass over newly entered records; supersedes `find_osti.py`) · `find_unmethours.py` Unmet Hours

@@ -42,6 +42,8 @@ WIND = _record("Aeroacoustics Noise Model of OpenFAST", "NREL/TP-5000-75731",
                "https://www.nlr.gov/docs/fy20osti/75731.pdf")
 HVAC_OTHER_DIV = _record("Heat Pump Water Heater Field Study", "NREL/TP-6A20-70000",
                          "https://www.nlr.gov/docs/fy22osti/70000.pdf")
+NEW_NUMBERING = _record("Survey of Homes and Offices in 2026", "NLR/TP-5500-97001",
+                        "https://www.nlr.gov/docs/fy26osti/97001.pdf")
 NO_LINK = _record("Residential building retrofits", "NREL/JA-5500-70001")
 SLIDES = _record("ResStock webinar", "NREL/PR-5500-70002",
                  "https://www.nlr.gov/docs/fy22osti/70002.pdf")
@@ -64,7 +66,13 @@ def test_parse_and_candidate_mapping():
         "https://docs.nlr.gov/docs/fy22osti/70000.pdf",  # other division, strict gate passes
     ]
     first = kept[0]
-    assert first["id"].startswith("nlr-") and first["license"] == "public-domain"
+    # contractor-operated laboratory: no record is public-domain without document evidence
+    assert first["id"].startswith("nlr-")
+    assert {c["license"] for c in kept} == {"unverified"}
+    assert "nlr.gov/disclaimer" in first["license_evidence"]
+    assert "subject to U.S. and foreign Copyright Laws" in first["license_evidence"]
+    assert find_nlr.candidate(records[0], "2026-10-12")["rights_verified_at"] == "2026-10-12"
+    assert not lint_registry.entry_errors(first, "nlr.yaml")
     assert first["persistent_id"] == "NREL/TP-5500-88109"
     assert all(c["topic"] in lint_registry.TOPICS for c in kept)
     assert first["license"] in lint_registry.LICENSES
@@ -140,24 +148,122 @@ def test_bad_resumption_token_restarts_the_year(monkeypatch, tmp_path):
     assert files["next"].read_text() == "2024:fresh\n"
 
 
-def test_floor_reached_reports_end_and_exhaustion(monkeypatch, tmp_path):
+class _Clock:
+    """datetime.now() frozen at 2026-10-12 UTC."""
+
+    @staticmethod
+    def now(tz=None):
+        from datetime import datetime, timezone
+        return datetime(2026, 10, 12, 3, 0, tzinfo=timezone.utc)
+
+
+def test_floor_reached_becomes_a_due_watch_and_never_exhausts(monkeypatch, tmp_path):
+    monkeypatch.setattr(find_nlr, "datetime", _Clock)
     _, _, files = _setup(monkeypatch, tmp_path, [_error("noRecordsMatch")])
     monkeypatch.setattr(sys, "argv", ["find_nlr.py", "--cursor", f"{find_nlr.FLOOR_YEAR}:START"])
 
     find_nlr.main()
 
-    assert files["next"].read_text() == "END\n"
-    assert "1975" in files["exhausted"].read_text()
+    assert files["next"].read_text() == "watch:2026-10-05\n"  # due at once (WATCH_DAYS = 7)
+    assert not files["exhausted"].exists()
 
 
-def test_end_cursor_makes_no_request(monkeypatch, tmp_path):
+def test_watch_not_due_makes_no_request(monkeypatch, tmp_path):
+    monkeypatch.setattr(find_nlr, "datetime", _Clock)
     calls, _, files = _setup(monkeypatch, tmp_path, [])
-    monkeypatch.setattr(sys, "argv", ["find_nlr.py", "--cursor", "END"])
+    monkeypatch.setattr(sys, "argv", ["find_nlr.py", "--cursor", "watch:2026-10-06"])
 
     find_nlr.main()
 
     assert calls == []
-    assert files["next"].read_text() == "END\n"
+    assert files["next"].read_text() == "watch:2026-10-06\n"
+
+
+@pytest.mark.parametrize("cursor", ["END", "watch:2026-10-05"])
+def test_due_watch_walks_current_and_previous_year_then_waits(monkeypatch, tmp_path, cursor):
+    monkeypatch.setattr(find_nlr, "datetime", _Clock)
+    pages = [_page([BUILDINGS], "tok-2"), _page([NEW_NUMBERING]), _page([OCCUPANT])]
+    calls, appended, files = _setup(monkeypatch, tmp_path, pages)
+    monkeypatch.setattr(sys, "argv", ["find_nlr.py", "--cursor", cursor, "--pages", "2",
+                                      "--append"])
+
+    find_nlr.main()  # first run: two pages of 2026, the pass continues in 2025
+
+    made = [c for c in calls if c != "sleep"]
+    assert made[0]["set"] == "publications:year2026" and "from" not in made[0]
+    assert made[1] == {"verb": "ListRecords", "resumptionToken": "tok-2"}
+    assert files["next"].read_text() == "watch:2026-10-12:2025:START\n"
+
+    monkeypatch.setattr(sys, "argv", ["find_nlr.py", "--cursor", "watch:2026-10-12:2025:START",
+                                      "--pages", "2", "--append"])
+    find_nlr.main()  # second run: 2025 ends the pass (WATCH_YEARS = 2), 2024 is not requested
+
+    made = [c for c in calls if c != "sleep"]
+    assert len(made) == 3 and made[2]["set"] == "publications:year2025"
+    assert files["next"].read_text() == "watch:2026-10-12\n"
+    assert len(appended) == 3 and not files["exhausted"].exists()
+
+
+def test_watch_pass_keeps_its_token_and_start_date(monkeypatch, tmp_path):
+    monkeypatch.setattr(find_nlr, "datetime", _Clock)
+    calls, _, files = _setup(monkeypatch, tmp_path, [_page([BUILDINGS], "oai_dc/9/x:y/z")])
+    monkeypatch.setattr(sys, "argv", ["find_nlr.py", "--cursor",
+                                      "watch:2026-10-10:2026:oai_dc/5/a:b/c", "--pages", "1"])
+
+    find_nlr.main()
+
+    assert calls[0] == {"verb": "ListRecords", "resumptionToken": "oai_dc/5/a:b/c"}
+    assert files["next"].read_text() == "watch:2026-10-10:2026:oai_dc/9/x:y/z\n"
+
+
+@pytest.mark.parametrize("cursor", ["watch", "watch:2026-13-01", "watch:2026-10-01:2026",
+                                    "watch:2026-10-01:x:START", "watch:2026-10-01:2026:"])
+def test_malformed_watch_cursor_is_rejected(cursor):
+    with pytest.raises(ValueError):
+        find_nlr.parse_watch(cursor)
+
+
+@pytest.mark.parametrize("cursor", ["1974:START", "0:START", "2028:START", "9999:tok",
+                                    "watch:2026-10-10:2024:START",
+                                    "watch:2026-10-10:2027:START"])
+def test_out_of_range_year_is_an_error_not_a_finished_walk(monkeypatch, tmp_path, cursor):
+    monkeypatch.setattr(find_nlr, "datetime", _Clock)
+    calls, _, files = _setup(monkeypatch, tmp_path, [])
+    monkeypatch.setattr(sys, "argv", ["find_nlr.py", "--cursor", cursor])
+
+    with pytest.raises(SystemExit) as exc:
+        find_nlr.main()
+
+    assert exc.value.code == 2 and calls == []
+    assert not files["next"].exists() and not files["exhausted"].exists()
+
+
+def test_nlr_report_numbers_since_the_renaming(monkeypatch):
+    """2026 reports are numbered NLR/...: same division gate, slide/poster skip and id."""
+    records = find_nlr.parse_page(_page([
+        NEW_NUMBERING,
+        _record("ResStock webinar", "NLR/PR-5500-97002",
+                "https://www.nlr.gov/docs/fy26osti/97002.pdf"),
+        _record("Survey of Homes and Offices", "NLR/TP-5000-97003",
+                "https://www.nlr.gov/docs/fy26osti/97003.pdf"),
+    ]))[0]
+    kept = [c for c in map(find_nlr.candidate, records) if c]
+    assert [c["persistent_id"] for c in kept] == ["NLR/TP-5500-97001"]
+
+
+@pytest.mark.parametrize("title,kept", [
+    ("District Geothermal Heating and Cooling with Underground Thermal Energy Storage", True),
+    ("Adapting Thermal Energy Networks to Site Conditions", True),
+    ("Affordable and Scalable Modular Multifamily Housing: A Case Study", True),
+    ("Geoexchange for vehicle battery plants", False),          # off-domain veto wins
+    ("2025 U.S. Geothermal Market Report", False),
+    ("Metal Halide Perovskite Photovoltaics Research", False),
+    ("Community Solar Project Models", False),
+])
+def test_modest_widening_outside_the_buildings_center(title, kept):
+    record = find_nlr.parse_page(_page([_record(
+        title, "NLR/TP-5700-1", "https://www.nlr.gov/docs/fy26osti/1.pdf")]))[0][0]
+    assert (find_nlr.candidate(record) is not None) is kept
 
 
 def test_api_failure_exits_nonzero_before_partial_append(monkeypatch, tmp_path):

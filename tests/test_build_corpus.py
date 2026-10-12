@@ -347,6 +347,70 @@ def test_polite_challenge_trips_circuit_without_fallback(tmp_path, monkeypatch, 
     assert calls[0][1] == build_corpus.HOST_UA["publications.ibpsa.org"]
 
 
+NLR_KIT = {"docs.nlr.gov": "https://docs.nlr.gov/docs/fy26osti/9529{n}.pdf"}
+
+
+def _nlr_kit(host, n):
+    return {"id": f"x-{n}", "title": f"Report {n}", "source": "x", "license": "unverified",
+            "url": NLR_KIT[host].format(n=n), "topic": "building_energy", "format": "pdf"}
+
+
+@pytest.mark.parametrize("host", sorted(NLR_KIT))
+def test_nlr_and_kitopen_hosts_are_polite_serial_paced_and_capped(host):
+    assert host in build_corpus.POLITE_HOSTS
+    assert build_corpus.HOST_UA[host] == build_corpus.HONEST_UA
+    assert build_corpus.HOST_CONCURRENCY[host] == 1
+    assert build_corpus.HOST_DELAY[host] >= 2.0
+    assert build_corpus.HOST_RUN_CAP[host] * build_corpus.HOST_DELAY[host] <= 240
+
+
+@pytest.mark.parametrize("host", sorted(NLR_KIT))
+def test_nlr_and_kitopen_downloads_use_the_honest_ua_and_are_spaced(tmp_path, monkeypatch, host):
+    pdf = b"%PDF-1.7 " + b"x" * 2000
+    calls = _polite_env(monkeypatch, tmp_path, lambda _url: _answer(200, pdf))
+    monkeypatch.setattr(build_corpus, "HOST_DELAY", {host: 2.0})
+    monkeypatch.setattr(build_corpus, "_host_last", {}, raising=False)
+    clock = {"now": 1000.0}
+    starts, slept = [], []
+    monkeypatch.setattr(build_corpus.time, "monotonic", lambda: clock["now"])
+
+    def sleep(seconds):
+        slept.append(seconds)
+        clock["now"] += seconds
+
+    monkeypatch.setattr(build_corpus.time, "sleep", sleep)
+    real_get = build_corpus.requests.get
+
+    def get(url, **kwargs):
+        starts.append(clock["now"])
+        return real_get(url, **kwargs)
+
+    monkeypatch.setattr(build_corpus.requests, "get", get)
+
+    rows = [build_corpus.download_one(_nlr_kit(host, n)) for n in (1, 2, 3)]
+
+    assert [r["error"] for r in rows] == [None, None, None]
+    assert [ua for _url, ua in calls] == [build_corpus.HONEST_UA] * 3   # never the browser UA
+    assert [b - a for a, b in zip(starts, starts[1:])] == [2.0, 2.0]    # one start per 2 s
+    assert sum(slept) == 4.0
+
+
+@pytest.mark.parametrize("host", sorted(NLR_KIT))
+@pytest.mark.parametrize("status,body", [(403, b"Forbidden"), (429, b"slow down"),
+                                         (503, b"busy"),
+                                         (200, b"<html><title>Access Denied</title></html>")])
+def test_nlr_and_kitopen_refusal_stops_without_fallback(tmp_path, monkeypatch, host, status,
+                                                        body):
+    calls = _polite_env(monkeypatch, tmp_path, lambda _url: _answer(status, body))
+
+    first = build_corpus.download_one(_nlr_kit(host, 1))
+    second = build_corpus.download_one(_nlr_kit(host, 2))
+
+    assert first["transient"] is True and "challenge" in first["error"]
+    assert second["transient"] is True and "circuit open" in second["error"]
+    assert len(calls) == 1 and calls[0][1] == build_corpus.HONEST_UA  # no curl, no second UA
+
+
 def test_escholarship_refusal_is_transient_with_honest_ua(tmp_path, monkeypatch):
     calls = _polite_env(monkeypatch, tmp_path, lambda _url: _answer(403, b"Request blocked."))
 
@@ -537,10 +601,10 @@ def test_retry_window_starts_only_with_a_real_attempt():
     assert attempted["retry_attempts"] == 1 and attempted["first_failed_at"]
 
 
-def _plain(url_suffix="1"):
+def _plain(url_suffix="1"):  # a host with no POLITE_HOSTS entry
     return {"id": f"nlr-{url_suffix}", "title": "Report", "source": "nlr",
             "license": "public-domain", "topic": "building_energy", "format": "pdf",
-            "url": f"https://docs.nlr.gov/docs/fy24osti/{url_suffix}.pdf"}
+            "url": f"https://reports.example.org/docs/fy24osti/{url_suffix}.pdf"}
 
 
 @pytest.mark.parametrize(

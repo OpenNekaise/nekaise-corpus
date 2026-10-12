@@ -137,7 +137,7 @@
     ],
     "enabled": true,
     "required": false,
-    "reason": "NEW 2026-09-24: National Laboratory of the Rockies (ex-NREL) Pure OAI, records with a docs.nlr.gov report PDF link; buildings center (55xx) or strict bes_relevance title gate; public-domain like OSTI; robots Crawl-delay 5"
+    "reason": "NEW 2026-09-24: National Laboratory of the Rockies (ex-NREL) Pure OAI, records with a docs.nlr.gov report PDF link; buildings center (55xx) or strict bes_relevance title gate; robots Crawl-delay 5. 2026-10-12: new records are licence unverified (contractor-operated laboratory; nlr.gov/disclaimer states only a Government-retained licence and that documents may be subject to copyright; earlier rows keep public-domain pending a separate audit); loader: docs.nlr.gov is a polite host (honest UA, serial, 2 s, 120 files per run, no curl fallback); history walked to 1975; now a weekly watch pass over the current and the previous year's set (Pure re-stamps most records, so OAI from= selects nothing useful) instead of EXHAUSTED; report numbers NLR/... (2026 renaming) read like NREL/...; a few building-energy concepts outside the buildings center added (thermal energy networks, district geothermal, ground-source, multifamily/modular housing)"
   },
   "find_sdz": {
     "script": "find_sdz.py",

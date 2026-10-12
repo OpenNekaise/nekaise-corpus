@@ -17,18 +17,41 @@ their publisher, book chapters) are skipped — guessing the fiscal-year folder 
 number is not reliable. Presentations (PR) and posters (PO) are skipped: slide decks extract to
 thin text that the quality gate would prune anyway.
 
-Relevance: the report number `NREL/<type>-<division>-<number>` (dc:subject) names the issuing
-center; division 55xx is the Buildings Technologies & Science Center, so those records pass on
-the loose gate. Every other division must pass scripts/bes_relevance.py's strict title gate.
+Relevance: the report number `NREL/<type>-<division>-<number>` (dc:subject; `NLR/...` since
+the 2026 renaming) names the issuing center; division 55xx is the Buildings Technologies &
+Science Center, so those records pass on the loose gate. Every other division must pass
+scripts/bes_relevance.py's strict title gate, or name one of a few building-energy concepts that
+the lab files outside the buildings center (NLR_EXTRA: thermal energy networks, district
+geothermal heating and cooling, ground-source / geoexchange systems, multifamily and modular
+housing; calibrated 2026-10-12 on the 2025 and 2026 sets) without an off-domain veto.
 
-License: `public-domain`, matching the repo's policy for US DOE national-laboratory reports
-(find_osti tags every OSTI full-text record public-domain).
+License: `unverified` for every record proposed from 2026-10-12 on. NLR is operated by a
+contractor (Alliance for Energy Innovation, LLC), so its reports are not US Government works.
+The laboratory's copyright statement (https://www.nlr.gov/disclaimer, read 2026-10-12) says the
+Government "retain[s] a paid-up nonexclusive, irrevocable world-wide license" for use "by or on
+behalf of the Government" and that "Use of documents available from or referenced by this
+server may be subject to U.S. and foreign Copyright Laws". That is no reuse licence for the
+public, and the OAI record carries no rights field. Rows registered before this date keep the
+`public-domain` tag they were given; a separate audit decides them.
 
-Rotation (dynamic, `--cursor`): "<year>:<resumptionToken>" or "<year>:START", walking the Pure
-per-year sets (publications:yearYYYY) from the newest year down to FLOOR_YEAR. A rejected or
-expired resumptionToken restarts that year (dedup makes the replay harmless). robots.txt asks
-for `Crawl-delay: 5`, honoured between OAI requests. The walk is newest-first and does not
-come back up: re-aim the pointer to the current year occasionally to pick up new reports.
+Rotation (dynamic, `--cursor`), three forms:
+  * "<year>:<resumptionToken>" or "<year>:START" — the history walk over the Pure per-year sets
+    (publications:yearYYYY) from the newest year down to FLOOR_YEAR.
+  * "watch:<YYYY-MM-DD>" — history is walked; nothing is requested until WATCH_DAYS after that
+    date. Then a watch pass starts.
+  * "watch:<started>:<year>:<resumptionToken|START>" — a watch pass: the current year's set and
+    the WATCH_YEARS - 1 sets before it are walked again (new reports are filed under their
+    publication year). Pure re-stamps most records every few days (31,981 of 53,919 modified in
+    17 days, probed 2026-10-12), so an OAI `from=` bound selects nothing useful; the per-year
+    sets are small (1,473 and 2,076 records) and the URL / title dedup makes the replay
+    harmless. When the pass ends the cursor becomes "watch:<started>".
+The walk ends in a watch cursor that is due at once, never in EXHAUSTED (the legacy `END`
+cursor is read the same way): the laboratory keeps publishing. That first pass needs no walk
+start date: it is not date-bounded, it reads the whole current and previous year sets. A year
+outside FLOOR_YEAR..next year (walk) or outside the pass's own years (watch pass) is rejected,
+so a wrong pointer is an error and never a finished walk. A rejected or expired
+resumptionToken restarts that year. robots.txt asks for `Crawl-delay: 5`, honoured between OAI
+requests.
 
     python scripts/find_nlr.py --cursor 2024:START --pages 2 --max 30
 """
@@ -41,7 +64,7 @@ import re
 import sys
 import time
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
@@ -56,6 +79,8 @@ UA = {"User-Agent": "nekaise-corpus/find_nlr"}
 CRAWL_DELAY = 5.0  # research-hub.nlr.gov robots.txt Crawl-delay
 FLOOR_YEAR = 1975  # oldest publications:yearYYYY set listed by ListSets
 START = "START"
+WATCH_DAYS = 7   # days between watch passes
+WATCH_YEARS = 2  # a pass walks the current year and the year before it
 DOCS = "https://docs.nlr.gov"
 NS = {
     "oai": "http://www.openarchives.org/OAI/2.0/",
@@ -64,7 +89,17 @@ NS = {
 DOC_LINK = re.compile(
     r"^https?://(?:www\.|docs\.)?(?:nlr|nrel)\.gov/docs/(fy\d{2}osti/\d+\.pdf)$", re.I
 )
-REPORT_NUMBER = re.compile(r"^NREL/([A-Z]{2,3})-([0-9A-Z]{4})-(\d+)", re.I)
+# Reports issued since the 2026 renaming are numbered NLR/..., older ones NREL/...
+REPORT_NUMBER = re.compile(r"^(NREL|NLR)/([A-Z]{2,3})-([0-9A-Z]{4})-(\d+)", re.I)
+# Building-energy concepts that the lab files outside the buildings center and that the shared
+# strict gate does not name (kept narrow: the dropped 2025/2026 titles are mostly PV devices,
+# grid planning and fuels).
+NLR_EXTRA = re.compile(
+    r"thermal energy networks?|thermal microgrids?|district geothermal|geoexchange|"
+    r"ground[ -]source|geothermal heat(?:ing)? (?:and cooling|pump)|\bmultifamily\b|"
+    r"(?:modular|manufactured|affordable) (?:\w+ )?(?:housing|homes?)\b",
+    re.I,
+)
 SKIP_TYPES = frozenset({"PR", "PO"})
 # Pure appends the journal article number to titles ("...Transportation:Article No. 132134"),
 # which would defeat title dedup against the same paper registered from OSTI/OpenAlex.
@@ -76,6 +111,23 @@ def parse_cursor(cursor: str) -> tuple[int, str | None]:
     if not sep or not year.isdigit() or not token:
         raise ValueError(f"cursor must be '<year>:<token|START>': {cursor!r}")
     return int(year), (None if token == START else token)
+
+
+def parse_watch(cursor: str) -> tuple[date, int | None, str | None]:
+    """'watch:<date>' -> (date, None, None); 'watch:<started>:<year>:<token|START>' ->
+    (started, year, token or None). Raises ValueError."""
+    parts = cursor.split(":", 3)
+    try:
+        if parts[0] != "watch" or len(parts) not in (2, 4):
+            raise ValueError("shape")
+        day = date.fromisoformat(parts[1])
+        if len(parts) == 2:
+            return day, None, None
+        year, token = parse_cursor(f"{parts[2]}:{parts[3]}")
+    except ValueError as exc:
+        raise ValueError("watch cursor must be 'watch:<YYYY-MM-DD>' or "
+                         f"'watch:<YYYY-MM-DD>:<year>:<token|START>': {cursor!r}") from exc
+    return day, year, token
 
 
 class Unexpected(RuntimeError):
@@ -136,10 +188,12 @@ def parse_page(xml_text: str) -> tuple[list[dict], str | None]:
     return records, token or None
 
 
-def report_number(subjects: list[str]) -> tuple[str, str, str] | None:
+def report_number(subjects: list[str]) -> tuple[str, str, str, str] | None:
+    """(type, division, number, lab prefix NREL|NLR) of the first report-number subject."""
     for subject in subjects:
         if match := REPORT_NUMBER.match(subject):
-            return match.group(1).upper(), match.group(2).upper(), match.group(3)
+            return (match.group(2).upper(), match.group(3).upper(), match.group(4),
+                    match.group(1).upper())
     return None
 
 
@@ -151,7 +205,16 @@ def docs_url(links: list[str]) -> str | None:
     return None
 
 
-def candidate(record: dict) -> dict | None:
+LICENCE_EVIDENCE = (
+    "NLR (formerly NREL) report PDF; the OAI record states no rights. NLR copyright statement "
+    "(https://www.nlr.gov/disclaimer): the Government retains 'a paid-up nonexclusive, "
+    "irrevocable world-wide license ... by or on behalf of the Government' and 'Use of documents "
+    "available from or referenced by this server may be subject to U.S. and foreign Copyright "
+    "Laws' - no reuse licence for the public is stated"
+)
+
+
+def candidate(record: dict, today: str | None = None) -> dict | None:
     title = ARTICLE_NO.sub("", record["title"]).strip()
     url = docs_url(record["links"])
     if not title or url is None:
@@ -161,17 +224,17 @@ def candidate(record: dict) -> dict | None:
     if kind in SKIP_TYPES:
         return None
     buildings_center = division.startswith("55")
-    if not bes_relevance.relevant(title, strict=not buildings_center):
+    if not (bes_relevance.relevant(title, strict=not buildings_center)
+            or (NLR_EXTRA.search(title) and not bes_relevance.vetoed(title))):
         return None
     entry = {
         "id": f"nlr-{registry.slug(title)[:52]}", "title": title[:150], "url": url,
-        "source": "nlr", "license": "public-domain", "topic": bes_relevance.topic_for(title),
-        "format": "pdf",
-        "license_evidence": "US DOE national laboratory report (NLR, formerly NREL); "
-                            "same policy as OSTI full-text records",
+        "source": "nlr", "license": "unverified", "topic": bes_relevance.topic_for(title),
+        "format": "pdf", "license_evidence": LICENCE_EVIDENCE,
+        "rights_verified_at": today or datetime.now(timezone.utc).date().isoformat(),
     }
     if number:
-        entry["persistent_id"] = f"NREL/{number[0]}-{number[1]}-{number[2]}"
+        entry["persistent_id"] = f"{number[3]}/{number[0]}-{number[1]}-{number[2]}"
     return entry
 
 
@@ -181,16 +244,17 @@ def request_rotation_hold(reason: str) -> None:
     print(f"# rotation hold requested: {reason}", file=sys.stderr)
 
 
-def report_exhausted(reason: str) -> None:
-    if name := os.environ.get("NEKAISE_BACKEND_EXHAUSTED_FILE"):
-        Path(name).write_text(reason + "\n", encoding="utf-8")
-    print(f"# backend exhausted: {reason}", file=sys.stderr)
+def report_next(cursor: str) -> None:
+    if next_name := os.environ.get("NEKAISE_ROTATION_NEXT_FILE"):
+        Path(next_name).write_text(cursor + "\n", encoding="utf-8")
+    print(f"# next-cursor: {cursor}")
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--cursor", default=f"{datetime.now(timezone.utc).year}:{START}",
-                    help="'<year>:<resumptionToken>' or '<year>:START' (rotation pointer)")
+                    help="'<year>:<resumptionToken|START>', 'watch:<date>' or "
+                         "'watch:<started>:<year>:<resumptionToken|START>' (rotation pointer)")
     ap.add_argument("--pages", type=int, default=4, help="max OAI pages (100 records) this run")
     ap.add_argument("--max", type=int, default=100,
                     help="page-granular target for new entries (the last page may exceed it)")
@@ -198,14 +262,31 @@ def main() -> None:
     args = ap.parse_args()
     if args.pages < 1 or args.max < 1:
         ap.error("--pages and --max must be positive")
-    if args.cursor == "END":
-        report_exhausted(f"NLR Pure OAI walked down to {FLOOR_YEAR}")
-        if next_name := os.environ.get("NEKAISE_ROTATION_NEXT_FILE"):
-            Path(next_name).write_text("END\n", encoding="utf-8")
-        print("# 0 NEW NLR reports (cursor END)")
-        return
+    today = datetime.now(timezone.utc).date()
+    # A finished history walk (and the legacy END cursor) is a watch that is due at once.
+    cursor = (f"watch:{today - timedelta(days=WATCH_DAYS)}" if args.cursor == "END"
+              else args.cursor)
+    started: date | None = None   # set while a watch pass runs
+    floor = FLOOR_YEAR
     try:
-        year, token = parse_cursor(args.cursor)
+        if cursor.startswith("watch"):
+            started, year, token = parse_watch(cursor)
+            if year is None:
+                due = started + timedelta(days=WATCH_DAYS)
+                if today < due:
+                    print(f"# 0 NEW NLR reports (watching since {started}; next pass {due})")
+                    report_next(cursor)
+                    return
+                started, year, token = today, today.year, None
+            floor = started.year - WATCH_YEARS + 1
+            if not floor <= year <= started.year:
+                raise ValueError(f"watch pass started {started} walks {floor}..{started.year}, "
+                                 f"not {year}: {cursor!r}")
+        else:
+            year, token = parse_cursor(cursor)
+            if not FLOOR_YEAR <= year <= today.year + 1:
+                raise ValueError(f"year {year} is outside {FLOOR_YEAR}..{today.year + 1}: "
+                                 f"{cursor!r}")
     except ValueError as exc:
         ap.error(str(exc))
 
@@ -214,7 +295,7 @@ def main() -> None:
     out: list[dict] = []
     scanned = pages = 0
     restarted = False
-    while year >= FLOOR_YEAR and pages < args.pages and len(out) < args.max:
+    while year >= floor and pages < args.pages and len(out) < args.max:
         if pages:
             time.sleep(CRAWL_DELAY)
         try:
@@ -239,7 +320,7 @@ def main() -> None:
         pages += 1
         for record in records:
             scanned += 1
-            entry = candidate(record)
+            entry = candidate(record, today.isoformat())
             if entry is None:
                 continue
             u, t = entry["url"].rstrip("/"), registry.norm(entry["title"])
@@ -254,12 +335,18 @@ def main() -> None:
             year, token = year - 1, None
 
     keys.uniquify_ids(out)
-    next_cursor = f"{year}:{token or START}"
+    if year < floor:
+        # pass finished: wait WATCH_DAYS from its start; history finished: first pass is due now
+        next_cursor = f"watch:{started or today - timedelta(days=WATCH_DAYS)}"
+    elif started is not None:
+        next_cursor = f"watch:{started}:{year}:{token or START}"
+    else:
+        next_cursor = f"{year}:{token or START}"
     by_topic: dict[str, int] = {}
     for entry in out:
         by_topic[entry["topic"]] = by_topic.get(entry["topic"], 0) + 1
     print(f"# {len(out)} NEW NLR (ex-NREL) building reports (kept {len(out)}/{scanned} OAI "
-          f"records over {pages} pages; docs.nlr.gov PDFs, public-domain, deduped vs manifest + "
+          f"records over {pages} pages; docs.nlr.gov PDFs, licence unverified, deduped vs manifest + "
           f"registry + blocklist)")
     print(f"# by topic: {by_topic}")
     print("# --- review, then --append, then scripts/build_corpus.py ---")
@@ -268,12 +355,7 @@ def main() -> None:
     if args.append and out:
         counts = registry.append_entries(out)
         print(f"# appended {len(out)} entries to the registry: {counts}", file=sys.stderr)
-    if year < FLOOR_YEAR:
-        next_cursor = "END"
-        report_exhausted(f"NLR Pure OAI walked down to {FLOOR_YEAR}")
-    if next_name := os.environ.get("NEKAISE_ROTATION_NEXT_FILE"):
-        Path(next_name).write_text(next_cursor + "\n", encoding="utf-8")
-    print(f"# next-cursor: {next_cursor}")
+    report_next(next_cursor)
 
 
 if __name__ == "__main__":
