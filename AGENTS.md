@@ -123,7 +123,9 @@ PDF downloads are magic-byte checked, and a bounded curl transport fallback hand
 (403/429/503). It does not solve or bypass login, paywall, or WAF/JS challenges. The discovery
 backends (`find_sources.py` OpenAlex — legacy queries + the building-simulation and building-AI families, rights evidence per selected copy via `oa_resolution.py` · `find_github.py` curated repos + source code ·
 `find_osti.py` deep OSTI · `find_books.py` OAPEN books, all languages · `find_archive.py` pre-1929
-public-domain texts (Internet Archive) · `find_openaire.py` EU project deliverables · `find_nist.py`
+public-domain texts (Internet Archive) · `find_openaire.py` EU project deliverables (disabled: superseded) · `find_cordis.py` public
+deliverables of EU-funded built-environment projects from the CORDIS EURIO graph (SPARQL, licence
+`unverified`) · `find_nist.py`
 NIST/NBS via Crossref · `find_zenodo.py` CC-licensed records · `find_patents.py` US patents via the
 Google Patents sitemap (the biggest open vein) · `find_wiki.py` multilingual Wikipedia ·
 `find_scielo.py` SciELO Brazil's CC-BY AEC journals (the biggest Portuguese built-environment

@@ -76,6 +76,7 @@ SOURCE_GENRE = {
     "aceee": "industry_ngo_utility",
     "ngo_globalabc": "industry_ngo_utility",
     "openaire_deliverable": "international_bodies",
+    "cordis_deliverable": "international_bodies",
     "zenodo": "research_papers",
     "cec": "us_gov_lab_reports",
     "patents": "patents",

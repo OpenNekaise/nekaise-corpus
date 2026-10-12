@@ -45,7 +45,19 @@
       "300"
     ],
     "enabled": false,
-    "reason": "OpenAIRE rejects deep pagination beyond 10,000 results (HTTP 400 at p903); reset/re-aim the query universe before re-enabling"
+    "reason": "OpenAIRE rejects deep pagination beyond 10,000 results (HTTP 400 at p903), and by 2026-10-12 its deliverable records point at DOIs instead of the EC download URL; superseded by find_cordis (the CORDIS EURIO graph lists every public deliverable with that URL). Pointer preserved."
+  },
+  "find_cordis": {
+    "script": "find_cordis.py",
+    "args": [
+      "--pages",
+      "6",
+      "--max",
+      "200"
+    ],
+    "enabled": true,
+    "required": false,
+    "reason": "NEW 2026-10-12: public deliverables of EU-funded (Horizon 2020 / Horizon Europe) built-environment projects from the CORDIS EURIO knowledge graph (211,188 deliverables on 2026-10-12), read through the public SPARQL endpoint that CORDIS names for automated access (cordis.europa.eu/llms.txt); light keyset project pages (200 by rcn) plus per-project deliverable lists, one request per 2 s, relevance decided locally (project title / objective AEC gate, administrative deliverables dropped); PDF at the EC documents download module (ec.europa.eu downloadPublic, honest UA, polite hosts, 1 s per host, 150 per run); licence unverified (beneficiary documents follow their Grant Agreement, not CORDIS CC BY 4.0); after the last project a watch cursor restarts the walk every 14 days for new deliverables, never EXHAUSTED; required=false"
   },
   "find_nist": {
     "script": "find_nist.py",

@@ -132,6 +132,10 @@ HOST_DELAY: dict[str, float] = {
     "bigladdersoftware.com": 10.0,  # robots.txt Crawl-delay: 10 — respect it
     "unmethours.com": 2.0,        # no robots Crawl-delay; one page per 2 s keeps a small site calm
     "www.diva-portal.org": 10.0,  # robots.txt Crawl-delay: 10 — respect it (find_diva)
+    # EC documents download module (find_cordis / find_openaire deliverables): no robots
+    # Crawl-delay; one request start per second per host keeps a bulk walk calm.
+    "ec.europa.eu": 1.0,
+    "www.ec.europa.eu": 1.0,
 }
 HONEST_UA = "nekaise-corpus/build_corpus"
 HOST_UA: dict[str, str] = {
@@ -146,6 +150,11 @@ HOST_UA: dict[str, str] = {
     "unmethours.com": HONEST_UA,
     # DiVA (find_diva) serves full-text PDFs to the honest tool UA (verified 2026-10-02).
     "www.diva-portal.org": HONEST_UA,
+    # The EC documents download module serves deliverables to the honest tool UA (verified
+    # 2026-10-12); its second hop is on www.ec.europa.eu. Both are POLITE hosts: a refusal or
+    # challenge opens the circuit, never the browser UA or the curl fallback.
+    "ec.europa.eu": HONEST_UA,
+    "www.ec.europa.eu": HONEST_UA,
 }
 # POLITE hosts: a refusal or challenge means "stop and come back later", never "try another
 # identity". For these hosts the loader uses only HOST_UA, never the browser UA or the curl
@@ -155,7 +164,7 @@ HOST_UA: dict[str, str] = {
 # marked `transient`, stay in the registry and are retried by later rounds (bounded by
 # prune_corpus.RETRY_MAX_*), and are never blocklisted.
 POLITE_HOSTS = frozenset({"publications.ibpsa.org", "escholarship.org", "unmethours.com",
-                          "www.diva-portal.org"})
+                          "www.diva-portal.org", "ec.europa.eu", "www.ec.europa.eu"})
 CHALLENGE_STATUSES = frozenset({202, 403, 429, 503})
 CHALLENGE_BODY = re.compile(
     rb"sgcaptcha|captcha|challenge-platform|cf-chl|awswaf|request blocked|access denied", re.I
@@ -170,6 +179,7 @@ HOST_RUN_CAP: dict[str, int] = {
     "escholarship.org": 60,        # 60 x 4 s = 4 min
     "unmethours.com": 120,         # 120 x 2 s = 4 min
     "www.diva-portal.org": 30,     # 30 x 10 s = 5 min
+    "ec.europa.eu": 150,           # deliverables: 150 x 2 hops at 1 s per host = ~3-5 min
 }
 # Compliance/ESG programme (Codex decision 2026-09-25; ids bov-bfs- / reg- / eur- / esf-, see
 # scripts/compliance_common.py, which owns the reviewed delivery-host table): a programme row's
@@ -846,16 +856,25 @@ CHECKPOINT_EVERY = 25
 REEXTRACT_BATCH_ROWS = 5_000
 
 
+# The EC download module's own second hop: a JS location (until 2026) or a meta refresh (verified
+# 2026-10-12), always inside the same module path on ec.europa.eu / www.ec.europa.eu.
+EC_NEXT_HOP = re.compile(
+    r"""(?:window\.location=|http-equiv="refresh"\s+content="0;\s*url=)['"]?"""
+    r"""(https://(?:www\.)?ec\.europa\.eu/research/participants/documents/downloadPublic"""
+    r"""[^'"<>\s]*)""")
+
+
 def _fetch_ec_deliverable(url: str) -> requests.Response:
     """EC 'Documents download module' (Horizon project deliverables, eud- ids): the stable public
-    URL returns a JS interstitial whose window.location points at a session-bound tokenized URL —
-    follow it with the same cookie jar to get the actual PDF."""
+    URL returns an interstitial ("the requested document is being prepared for download") that
+    sends the browser on to a session-bound tokenized URL of the same module, by a JS location
+    or a meta refresh. Follow that one hop with the same cookie jar to get the actual PDF."""
     with requests.Session() as s:
-        s.headers.update({"User-Agent": UA})
+        s.headers.update({"User-Agent": HONEST_UA})
         first = _get_hops(url, "pdf", session=s)
         if not (_header(first, "content-type") or "").startswith("text/html"):
             return first
-        m = re.search(r"window\.location='(https://ec\.europa\.eu[^']+)'", first.text)
+        m = EC_NEXT_HOP.search(first.text)
         if not m:
             return first
         return _get_hops(m.group(1), "pdf", session=s)

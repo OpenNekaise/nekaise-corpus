@@ -24,6 +24,13 @@
     "step": 1,
     "note": "PAUSED 2026-08-18: OpenAIRE enforces page*pageSize <= 10000 and rejects p903 with HTTP 400. Finder now exits nonzero on any incomplete query. Preserve pointer until the query universe is reset/re-aimed. Earlier vein was nearly dry: p1=300, p2=109, p3=52, p4=22."
   },
+  "find_cordis": {
+    "flag": "--cursor",
+    "next": "p=0",
+    "step": 0,
+    "dynamic": true,
+    "note": "NEW 2026-10-12: 'p=<last CORDIS project rcn walked>' (ascending keyset over ~80k projects, 200 per page), or 'watch:<YYYY-MM-DD>' after the last project: the walk starts again 14 days later (running projects keep publishing deliverables; dedup keeps only the new ones). An unexpected SPARQL answer holds the cursor."
+  },
   "find_nist": {
     "flag": "--month-index",
     "next": 24321,

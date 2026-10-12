@@ -25,7 +25,7 @@ SHARDS = {
     "gh-": "github.yaml",      # find_github (repo docs + source code)
     "crawl-": "crawl.yaml",    # crawl_docs (doc-site pages)
     "ost-": "reports.yaml",    # find_osti + find_sources OSTI backend
-    "eud-": "deliverables.yaml",  # find_openaire (EU Horizon/H2020 project deliverables)
+    "eud-": "deliverables.yaml",  # find_cordis / find_openaire (EU project deliverables)
     "nst-": "nist.yaml",       # find_nist (NIST/NBS technical series via Crossref DOI prefix)
     "pat-": "patents.yaml",    # find_patents (Google Patents sitemap, building/HVAC CPC classes);
                                # base name only — _shard_stem adds country + hash buckets

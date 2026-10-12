@@ -101,7 +101,8 @@ BLDGTYPE = [
 REGION_SOURCE = {
     "osti": "US", "nist_crossref": "US", "gov_cec": "US", "gov_nyserda": "US", "cec": "US",
     "google_patents": None,  # split by pat- country prefix below
-    "gov_uk": "UK", "jrc": "EU", "openaire_deliverable": "EU", "kitopen": "EU",
+    "gov_uk": "UK", "jrc": "EU", "openaire_deliverable": "EU", "cordis_deliverable": "EU",
+    "kitopen": "EU",
     "sdz_at": "EU", "hdz_at": "EU", "seai": "EU", "ademe": "EU",
     "bri_jp": "JP", "nilim_jp": "JP", "worldbank": "Global",
     "worldbank_wds": "Global", "modelica_conf": "Global", "aivc": "Global",
