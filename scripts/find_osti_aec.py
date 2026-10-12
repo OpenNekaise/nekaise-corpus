@@ -20,7 +20,9 @@ bio science, so a record is kept only when its TITLE passes a gate (never the qu
     (CIVIL), or an ambiguous one (CIVIL_WEAK: "concrete", "seismic", "bridge", "foundation" ...)
     together with an engineering context word (CIVIL_CONTEXT),
 and never when the title names an off-domain subject (bes_relevance veto, plus OFF_DOMAIN:
-reactor physics, radioactive waste forms, weapons, accelerators, geophysics exploration ...).
+reactor physics, radioactive waste forms, weapons, particle accelerators, geophysics exploration
+...). Ambiguous subjects (OFF_DOMAIN_SOFT: detectors, oil, lasers, turbines, vehicles ...) veto
+only a title without an unambiguous building anchor.
 Structural and seismic engineering of energy facilities (containment concrete, plant seismic
 design) is civil engineering and passes; reactor physics does not.
 Calibrated 2026-10-12 on live pages of every query (numbers in the backend's `reason`).
@@ -208,44 +210,72 @@ GERUND = re.compile(
     re.I,
 )
 # Subjects that turn a civil word into something else in a DOE repository. A CIVIL hit does not
-# rescue these: "concrete durability in tank waste grout" stays out.
+# rescue these: "concrete durability in tank waste grout" stays out. Every stem is anchored so
+# that it cannot match inside an ordinary word ("fusion" in "diffusion").
 OFF_DOMAIN = re.compile(
-    r"reactor (?:core|physics|coolant|vessel internals|fuel|kinetics)|\bfuel (?:rods?|pins?|"
-    r"assembl|cycle|cladding|pellets?)|\bneutron|fission|fusion|tokamak|\bplasma|"
-    r"radionuclide|radioactive|\bwaste forms?\b|tank waste|saltstone|vitrif|\bleach|"
-    r"\bplutonium|\buranium|\btritium|actinide|isotop|spent (?:nuclear )?fuel|"
-    r"nuclear (?:weapons?|explosi|test|material|fuel|waste)|\bweapons?\b|warhead|munition|"
-    r"\bexplosi(?:ve|on)s? (?:test|yield|monitoring)|underground (?:nuclear|test)|"
-    r"accelerator|collider|\blinac\b|synchrotron|beamline|\bdetectors?\b|\blasers?\b|"
-    r"seismic (?:survey|imaging|monitoring of (?:nuclear|explosion)|reflection|tomograph|"
+    r"\breactor (?:core|physics|coolant|vessel internals|fuel|kinetics)|\bfuel (?:rods?|pins?|"
+    r"assembl|cycle|cladding|pellets?)|\bneutron|\bneutrino|\bfission\b|\bfusion\b|"
+    r"\bgaseous diffusion\b|\buf\W*(?:sub )?6\b|"
+    r"\btokamak|\bplasma|"
+    r"\bradionuclide|\bradioactiv|\bwaste forms?\b|\btank waste|\bsaltstone|\bvitrif|"
+    r"\bplutonium|\buranium|\btritium|\bactinide|\bisotop|\bspent (?:nuclear )?fuel|"
+    r"\bnuclear (?:weapons?|explosi|test|material|fuel|waste)|\bweapons?\b|\bwarheads?\b|"
+    r"\bmunitions?\b|"
+    r"\bexplosi(?:ve|on)s? (?:test|yield|monitoring)|\bunderground (?:nuclear|test)|"
+    r"\b(?:particle|linear|ion|electron|proton|heavy[- ]ion) accelerators?\b|"
+    r"\baccelerator (?:facilit|physics|laborator|beam|complex|driven)|\bcolliders?\b|"
+    r"\blinac\b|\bsynchrotron|\bbeamlines?\b|"
+    r"\b(?:particle|radiation|neutron|gamma|silicon|pixel|germanium|scintillat\w+) detectors?\b|"
+    r"\bseismic (?:survey|imaging|monitoring of (?:nuclear|explosion)|reflection|tomograph|"
     r"inversion|waveform|source|discrimination|attenuation|anisotropy|velocity|data "
-    r"processing|exploration)|\breservoirs? (?:characteri|simulat|rock)|hydraulic fractur|"
-    r"\bwell(?:bore|s)\b|\bwell cements?\b|drilling|\bshale\b|petroleum|\boil\b|natural gas (?:production|"
-    r"reservoir)|geologic (?:repository|storage|sequestration|disposal)|\brepository\b|"
-    r"yucca mountain|\bwipp\b|carbon (?:capture|sequestration|storage)|\bco2 (?:storage|"
-    r"sequestration|injection)|enhanced geothermal|geothermal (?:reservoir|well|field|"
-    r"exploration|resource)|\bcoal(?:[- ]fired| gasif| combust| mining| liquefaction| "
-    r"utilization| conversion| plants?| preparation)|gasification|combustor|gas turbine|"
-    r"fluid(?:ized)?[- ]bed|utility boilers?|electric utilit|\bturbines?\b|"
-    r"safety analysis report|sodium[- ]concrete|\bmolten\b|light water reactor|"
-    r"\b[bp]wr\b|\bhtgr\b|\blmfbr\b|fermilab|\bcern\b|\bslac\b|"
-    r"laboratory directed research|\bldrd\b|coal mine|accident sequences?|\bipeee\b|"
-    r"probabilistic (?:risk|safety) assessment|reactor vessels?|liquid[- ]metal|"
-    r"fluid[- ]structure interaction|\bautomotive\b|\bbumpers?\b|"
-    r"corrective action|decontaminat|decommission|deactivation|closure report|"
-    r"environmental (?:impact statement|surveillance|restoration|monitoring report)|"
-    r"site environmental report|"
+    r"processing|exploration)|\breservoirs? (?:characteri|simulat|rock)|\bhydraulic fractur|"
+    r"\bwellbores?\b|\bwell cements?\b|\bshale\b|\bpetroleum\b|"
+    r"\boil (?:exploration|recovery|reservoirs?|fields?|wells?|sands?|shale|production|"
+    r"refin\w+|spills?)|\bcrude oil\b|\bnatural gas (?:production|reservoir)|"
+    r"\bgeologic (?:repository|storage|sequestration|disposal)|"
+    r"\byucca mountain|\bwipp\b|\bco2 (?:storage|sequestration|injection)|"
+    r"\benhanced geothermal|\bgeothermal (?:reservoir|well|field|exploration|resource)|"
+    r"\bcoal(?:[- ]fired| gasif| combust| mining| liquefaction| utilization| conversion| "
+    r"plants?| preparation| mine)|\bgasif|\bcombustors?\b|\bgas turbines?\b|"
+    r"\bfluid(?:ized)?[- ]bed|\butility boilers?\b|"
+    r"\bsafety analysis report|\bsodium[- ]concrete|\bmolten\b|\blight water reactor|"
+    r"\b[bp]wr\b|\bhtgr\b|\blmfbr\b|\bfermilab\b|\bcern\b|\bslac\b|"
+    r"\blaboratory directed research|\bldrd\b|\baccident sequences?\b|\bipeee\b|"
+    r"\bprobabilistic (?:risk|safety) assessment|\breactor vessels?\b|\bliquid[- ]metal|"
+    r"\bfluid[- ]structure interaction|\bautomotive\b|\bbumpers?\b|"
+    r"\bcorrective action|\bdecontaminat|\bdecommission|\bdeactivation\b|\bclosure report|"
+    r"\benvironmental (?:impact statement|surveillance|restoration|monitoring report)|"
+    r"\bsite environmental report|"
     r"\bquantum|\bmolecul|\batom(?:s|ic)?\b|\bnano|\bcrystal|\balloys?\b(?! (?:steel|"
-    r"structur))|superconduct|photovoltaic (?:cell|material)|\bsolar cells?\b|"
-    r"\bbiomass\b|\bbiofuel|\bethanol\b|algae|\bspecies\b|\bfish|salmon|wildlife|"
-    r"\bforest\b|\bcrops?\b|agricultur|\bgenes?\b|\bcancer|\bclinical|\bpatients?\b|"
-    r"dose (?:reconstruction|assessment|rate)|dosimetr|"
-    r"software (?:quality|architecture)|\bcyber|machine learning (?:for|of) (?:material|"
-    r"molecul)|supercomput|exascale|data structures?|\bcomputing infrastructure|"
-    r"hydrogen infrastructure|charging infrastructure|\bvehicle|\baircraft|spacecraft|"
-    r"\bsatellite|\blunar\b|\bmars\b",
+    r"structur))|\bsuperconduct|\bphotovoltaic (?:cell|material)|\bsolar cells?\b|"
+    r"\bbiofuel|\bethanol\b|\b(?:micro)?algae\b|\bspecies\b|\bfish(?:es|ery|eries)?\b|"
+    r"\bsalmon\b|\bwildlife\b|"
+    r"\bforests?\b|\bcrops?\b|\bagricultur|\bgenes?\b|\bcancer|\bclinical\b|"
+    r"\bdose (?:reconstruction|assessment|rate)|\bdosimetr|"
+    r"\bsoftware (?:quality|architecture)|\bmachine learning (?:for|of) (?:material|"
+    r"molecul)|\bsupercomput|\bexascale\b|\bdata structures?\b|\bcomputing infrastructure|"
+    r"\bhydrogen infrastructure|\baircraft|\bspacecraft|\blunar\b|\bmars\b",
     re.I,
 )
+# Subjects that are usually off-domain here but have ordinary building readings ("smoke
+# detectors in residential buildings", "oil-fired residential furnaces", "laser scanning of
+# buildings", "cybersecurity of building automation", "EV charging infrastructure in
+# multifamily housing"): vetoed only when the title carries no unambiguous building anchor
+# (bes_relevance.BUILT) — the rule bes_relevance uses for its own soft vetoes.
+OFF_DOMAIN_SOFT = re.compile(
+    r"\bdetectors?\b|\blasers?\b|\boil\b|\baccelerators?\b|\bdrilling\b|\bwells\b|"
+    r"\bleach(?:ing|ed|ate|ability)?\b|\brepositor(?:y|ies)\b|"
+    r"\bcarbon (?:capture|sequestration|storage)|\bturbines?\b|\belectric utilit|"
+    r"\bbiomass\b|\bpatients?\b|\bcyber|\bcharging infrastructure|\bvehicles?\b|"
+    r"\bsatellites?\b",
+    re.I,
+)
+
+
+def off_domain(title: str) -> bool:
+    """An unconditional veto, or a contextual one without a building anchor in the title."""
+    return bool(OFF_DOMAIN.search(title)) or (
+        bool(OFF_DOMAIN_SOFT.search(title)) and not bes_relevance.BUILT.search(title))
 
 
 # A laboratory's name is not a subject ("... Idaho National Engineering Laboratory").
@@ -264,7 +294,7 @@ def civil_relevant(title: str) -> bool:
 def relevant(title: str, _q: int = 0) -> bool:
     """Title gate of the family: building science (strict) or civil engineering, no veto."""
     title = LAB_NAME.sub(" ", GERUND.sub(" ", title or ""))
-    if not title.strip() or OFF_DOMAIN.search(title):
+    if not title.strip() or off_domain(title):
         return False
     if bes_relevance.vetoed(_without_weak_soil(title)):
         return False

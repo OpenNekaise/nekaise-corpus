@@ -323,6 +323,11 @@ def run(family: Family, argv: list[str] | None = None) -> None:
     q, page, since, until = position.q, position.page, position.since, position.until
     if (until or since or now) > now:
         ap.error(f"cursor date is in the future: {args.cursor!r}")
+    if q is not None and q >= len(queries):
+        # A generated cursor never names it (the last query hands over to watch). Walking
+        # nothing and reporting the walk or window complete would skip records for good.
+        ap.error(f"cursor query index {q} is outside the {len(queries)} {label} queries: "
+                 f"{args.cursor!r}")
     if q is None:  # watch, idle
         if now < since + timedelta(days=WATCH_DAYS):
             print(f"# 0 NEW OSTI {label} records (watching since {since}; next pass "

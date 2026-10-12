@@ -54,6 +54,16 @@ DATASET = _rec(2006, "Residential building stock dataset", "Dataset")
     "Compressive strength of concrete with recycled aggregate",
     "Earthquake hazard and the safety of dams",
     "Corrosion of steel in cracked concrete structures",
+    # "fusion" is not "diffusion" (Codex review round 1)
+    "Chloride diffusion in reinforced concrete",
+    "Moisture diffusion through building envelopes",
+    # contextual vetoes: a building anchor in the title overrides them
+    "Fire protection using smoke detectors in residential buildings",
+    "Oil-fired residential furnaces",
+    "Laser scanning of building facades for retrofit design",
+    "Cybersecurity of building automation systems",
+    "Electric vehicle charging infrastructure in multifamily buildings",
+    "Biomass boiler for a district heating network",
 ])
 def test_gate_keeps_built_environment_titles(title):
     assert find_osti_aec.relevant(title)
@@ -80,9 +90,35 @@ def test_gate_keeps_built_environment_titles(title):
     "Fire safety of lithium battery cells",
     "Soil microbial communities under drought",
     "Hydrogen infrastructure for fuel cell vehicles",
+    # unconditional vetoes hold beside a civil or building word
+    "Structural design of a nuclear fusion reactor building",
+    "Seismic qualification of particle detectors in the collider hall building",
+    "Petroleum exploration: construction of drilling structures",
+    "Oil exploration and the design of offshore structures",
+    "Gaseous diffusion plant building ventilation",
+    # contextual vetoes hold without a building anchor
+    "Structural design of silicon strip detectors",
+    "Foundations and structures for oil storage",
+    "Structural analysis of wind turbine blades",
+    "Laser welding of structural steel",
+    "Cement leaching in a geologic repository",
 ])
 def test_gate_drops_off_domain_and_ambiguous_titles(title):
     assert not find_osti_aec.relevant(title)
+
+
+@pytest.mark.parametrize("word", [
+    "diffusion", "infusion", "confusion", "communition", "bleaching", "isotropic", "anisotropic",
+    "accelerated", "accelerator admixture", "wellbeing", "well-insulated", "foiled", "soiled",
+    "turmoil", "marsh", "generation", "generic", "indigenous", "forestall", "fishing line",
+    "selfish", "unclear", "lasers" + "cape", "crystalline"[:4], "atomizer", "biomassive",
+    "electrolaser", "detectorist", "plasmatic"[:5] + "ter",
+])
+def test_vetoes_do_not_match_inside_ordinary_words(word):
+    """Each word contains a veto stem as a substring only; the building title must pass."""
+    title = f"Residential building energy retrofit: {word} study"
+    assert not find_osti_aec.OFF_DOMAIN.search(title), find_osti_aec.OFF_DOMAIN.search(title)
+    assert find_osti_aec.relevant(title)
 
 
 def test_candidate_carries_family_identity_topic_and_licence_classes():
@@ -199,6 +235,24 @@ def test_watch_pass_reads_the_entry_date_window(monkeypatch, tmp_path):
                ("10/10/2026", "10/12/2026", "entry_date asc") for c in calls)
     assert len(appended) == 2
     assert files["next"].read_text() == "watch:2026-10-10:2026-10-12 q=2 p=1\n"
+
+
+@pytest.mark.parametrize("cursor", [
+    "q={n} p=1", "q=999 p=1 since=2026-10-02", "watch:2026-10-02:2026-10-12 q={n} p=1",
+    "watch:2026-10-02:2026-10-12 q=999 p=1",
+])
+def test_query_index_outside_the_family_is_refused(monkeypatch, tmp_path, cursor):
+    calls, appended, files = _setup(monkeypatch, tmp_path, [])
+    opened = []
+    monkeypatch.setattr(find_osti_sim.dedup, "open_keys", lambda: opened.append(1))
+    monkeypatch.setattr(sys, "argv", ["find_osti_aec.py", "--cursor",
+                                      cursor.format(n=len(find_osti_aec.QUERIES)), "--append"])
+    with pytest.raises(SystemExit) as exc:
+        find_osti_aec.main()
+    assert exc.value.code == 2
+    # no request, no dedup state, and above all no NEXT: the window is not "complete"
+    assert calls == [] and opened == [] and appended == []
+    assert not any(path.exists() for path in files.values())
 
 
 def test_unexpected_answer_holds(monkeypatch, tmp_path):

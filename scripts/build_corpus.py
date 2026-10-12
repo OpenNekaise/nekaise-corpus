@@ -155,6 +155,10 @@ HOST_UA: dict[str, str] = {
     # challenge opens the circuit, never the browser UA or the curl fallback.
     "ec.europa.eu": HONEST_UA,
     "www.ec.europa.eu": HONEST_UA,
+    # OSTI serves /servlets/purl/<id> PDFs to the honest tool UA (verified 2026-10-12, 3 of 3),
+    # the identity its finders (find_osti_sim / find_osti_aec) already use. The override also
+    # binds the curl fallback, so no OSTI request presents as a browser.
+    "www.osti.gov": HONEST_UA,
 }
 # POLITE hosts: a refusal or challenge means "stop and come back later", never "try another
 # identity". For these hosts the loader uses only HOST_UA, never the browser UA or the curl

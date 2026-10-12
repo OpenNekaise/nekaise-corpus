@@ -274,6 +274,23 @@ def test_malformed_cursor_is_rejected(cursor):
 
 
 @pytest.mark.parametrize("cursor", [
+    "q={n} p=1", "q={n} p=1 since=2026-10-02", "watch:2026-10-02:2026-10-12 q={n} p=1",
+    "watch:2026-10-02:2026-10-12 q=999 p=1",
+])
+def test_query_index_outside_the_family_is_refused(monkeypatch, tmp_path, cursor):
+    calls, _, files = _setup(monkeypatch, tmp_path, [])
+    opened = []
+    monkeypatch.setattr(find_osti_sim.dedup, "open_keys", lambda: opened.append(1))
+    monkeypatch.setattr(sys, "argv", ["find_osti_sim.py", "--cursor",
+                                      cursor.format(n=len(find_osti_sim.QUERIES))])
+    with pytest.raises(SystemExit) as exc:
+        find_osti_sim.main()
+    assert exc.value.code == 2
+    assert calls == [] and opened == []
+    assert not any(path.exists() for path in files.values())  # no NEXT, no EXHAUSTED
+
+
+@pytest.mark.parametrize("cursor", [
     "q=4 p=7", "q=4 p=7 since=2026-10-02", "watch:2026-10-02",
     "watch:2026-10-02:2026-10-09 q=3 p=2",
 ])

@@ -356,6 +356,49 @@ def test_escholarship_refusal_is_transient_with_honest_ua(tmp_path, monkeypatch)
     assert calls[0][1] == build_corpus.HONEST_UA
 
 
+@pytest.mark.parametrize(("sid", "source"), [("osa-heat-pump-field-study", "osti_aec"),
+                                             ("osm-energyplus-report", "osti_sim")])
+def test_osti_downloads_present_the_honest_tool_ua(tmp_path, monkeypatch, sid, source):
+    """The OSTI finders identify themselves; the loader must not fetch their rows as Chrome."""
+    calls = []
+
+    def get(url, **kwargs):
+        calls.append((url, kwargs["headers"]["User-Agent"]))
+        raise build_corpus.requests.ConnectionError("offline")
+
+    monkeypatch.setattr(build_corpus.requests, "get", get)
+    monkeypatch.setattr(build_corpus.subprocess, "run",
+                        lambda *_a, **_k: pytest.fail("no curl fallback expected"))
+    monkeypatch.setattr(build_corpus, "HERE", tmp_path)
+    monkeypatch.setattr(build_corpus, "RAW", tmp_path / "raw")
+    monkeypatch.setattr(build_corpus, "HOST_DELAY", {})
+    monkeypatch.setattr(build_corpus, "_tripped_hosts", {})
+
+    row = build_corpus.download_one({
+        "id": sid, "title": "Report", "source": source, "license": "unverified",
+        "url": "https://www.osti.gov/servlets/purl/3682473", "topic": "building_energy",
+        "format": "pdf"})
+
+    assert row.get("error") and calls
+    assert {ua for _url, ua in calls} == {build_corpus.HONEST_UA}
+    assert build_corpus.HOST_UA["www.osti.gov"] == build_corpus.HONEST_UA
+    assert not build_corpus.HONEST_UA.startswith("Mozilla")
+
+
+def test_osti_curl_fallback_keeps_the_honest_tool_ua(monkeypatch):
+    """A 403 from OSTI may reach the curl transport fallback; it must not change identity."""
+    seen = []
+
+    def run(argv, **_kwargs):
+        seen.append(argv[argv.index("-A") + 1])
+        return SimpleNamespace(returncode=1, stderr=b"")
+
+    monkeypatch.setattr(build_corpus.subprocess, "run", run)
+    monkeypatch.setattr(build_corpus, "HOST_DELAY", {})
+    assert build_corpus._curl_follow("https://www.osti.gov/servlets/purl/3682473") == b""
+    assert seen == [build_corpus.HONEST_UA]
+
+
 def _umh(n):
     return {"id": f"umh-{n}", "title": f"Unmet Hours Q{n}", "source": "unmethours",
             "license": "cc-by-sa", "url": f"https://unmethours.com/question/{n}/x/",
