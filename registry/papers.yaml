@@ -140615,3 +140615,113 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1080/01441647.2012.712555 openalex:W1996628464
     resolution: 'legacy: openalex location'
+  - id: ope-design-collaboration-and-exaptation-in-a-habit
+    title: Design Collaboration and Exaptation in a Habitat Restoration Project
+    url: https://openresearch-repository.anu.edu.au/bitstreams/2d4b0dc6-1ca4-4b2b-8934-cabbc32fede0/download
+    source: openalex
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2021-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.sheji.2020.08.011
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://openresearch-repository.anu.edu.au/bitstreams/2d4b0dc6-1ca4-4b2b-8934-cabbc32fede0/download;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.sheji.2020.08.011 openalex:W3176050462
+    resolution: 'legacy: openalex location'
+  - id: ope-the-use-of-historical-data-in-rule-based-model
+    title: The Use of Historical Data in Rule-Based Modelling for Scenarios to Improve
+      Resilience within the Building Stock
+    url: https://discovery.ucl.ac.uk/10060118/1/Hudson-Smith_The%20Use%20of%20Historical%20Data%20in%20Rule-Based%20Modelling%20for%20Scenarios%20to%20Improve%20Resilience%20within%20the%20Building%20Stock_combined.pdf
+    source: openalex
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2018-10-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/17567505.2018.1517142
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10060118/1/Hudson-Smith_The%20Use%20of%20Historical%20Data%20in%20Rule-Based%20Modelling%20for%20Scenarios%20to%20Improve%20Resilience%20within%20the%20Building%20Stock_combined.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/17567505.2018.1517142 openalex:W2897666971
+    resolution: 'legacy: openalex location'
+  - id: ope-enhancing-urban-sustainability-through-industr
+    title: 'Enhancing urban sustainability through industrial synergy: A multidisciplinary
+      framework for integrating sustainable industrial practices within urban'
+    url: https://kau.diva-portal.org/smash/get/diva2:1883876/FULLTEXT01
+    source: openalex
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1515/eng-2024-0033
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://kau.diva-portal.org/smash/get/diva2:1883876/FULLTEXT01; version
+      submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1515/eng-2024-0033 openalex:W4400222862
+    resolution: 'legacy: openalex location'
+  - id: ope-climate-responsive-strategies-in-vernacular-ar
+    title: 'Climate Responsive Strategies in Vernacular Architecture: A Comparative
+      Analysis at Various Latitude'
+    url: https://research.chalmers.se/publication/544099/file/544099_Fulltext.pdf
+    source: openalex
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.47857/irjms.2024.v05i04.01637
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://research.chalmers.se/publication/544099/file/544099_Fulltext.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.47857/irjms.2024.v05i04.01637 openalex:W4404382315
+    resolution: 'legacy: openalex location'
+  - id: ope-knowledge-based-modelling-for-automatizing-hbi
+    title: KNOWLEDGE-BASED MODELLING FOR AUTOMATIZING HBIM OBJECTS. THE VAULTED CEILINGS
+      OF PALAZZO DUCALE IN URBINO
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-M-2-2023/1271/2023/isprs-archives-XLVIII-M-2-2023-1271-2023.pdf
+    source: openalex
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-06-26'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-m-2-2023-1271-2023
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-M-2-2023/1271/2023/isprs-archives-XLVIII-M-2-2023-1271-2023.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-12'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-m-2-2023-1271-2023 openalex:W4382140587
+    resolution: 'legacy: openalex location'
+  - id: oas-w399462216
+    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1993-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W399462216
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: openalex:W399462216
+    resolution: 'sim1: openalex location; resolution retry'
