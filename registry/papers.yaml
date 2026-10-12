@@ -140891,3 +140891,21 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1080/02723638.2023.2275426 openalex:W4388453778
     resolution: 'legacy: openalex location'
+  - id: oas-10-2139-ssrn-5031622-0b276b40
+    title: A Bootstrapped Automated Pipeline for Developing Model Predictive Controllers
+      for Non-Domestic Buildings
+    url: https://eprints.whiterose.ac.uk/id/eprint/225055/1/bootstrap-pipeline-final.pdf
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-01-01'
+    document_type: preprint
+    persistent_id: https://doi.org/10.2139/ssrn.5031622
+    license_evidence: no licence statement for this copy [copy https://eprints.whiterose.ac.uk/id/eprint/225055/1/bootstrap-pipeline-final.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.2139/ssrn.5031622 openalex:W4404654875
+    resolution: 'sim1: openalex+unpaywall location'
