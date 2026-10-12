@@ -12,8 +12,8 @@ Access: the public SPARQL endpoint https://cordis.europa.eu/datalab/sparql. CORD
 the channel for automated access (https://cordis.europa.eu/llms.txt: "Preferred access for
 agents: use the SPARQL endpoint or bulk datasets on data.europa.eu for large-scale or automated
 access"); robots.txt for `*` does not disallow /datalab/. This finder sends only light queries:
-one page of projects by ascending record number (keyset `rcn > N`, no full-text or regex
-filter on the server), then the deliverables of the projects it kept, a few projects per query,
+one page of projects that list a deliverable, by ascending record number (keyset `rcn > N`,
+no full-text or regex filter on the server), then the deliverables of the projects it kept, a few projects per query,
 at most one request per DELAY seconds. Relevance is decided locally.
 
 Relevance (precision first, the quality gate remains the second safeguard):
@@ -200,7 +200,10 @@ def project_page(after: int) -> list[dict]:
         "?uri a eurio:Project ; eurio:rcn ?rcn ; eurio:identifier ?grant ; eurio:title ?title . "
         "OPTIONAL { ?uri eurio:abstract ?abstract } "
         "OPTIONAL { ?uri eurio:hasAcronym ?a . ?a eurio:shortForm ?acronym } "
-        f"FILTER(xsd:integer(?rcn) > {int(after)}) }} "
+        f"FILTER(xsd:integer(?rcn) > {int(after)}) "
+        # Only projects that list a deliverable (16,011 of ~80,000 on 2026-10-12, all Horizon
+        # 2020 or later): the earlier programmes would cost about 300 pages for nothing.
+        "FILTER EXISTS { ?uri eurio:hasResult ?d . ?d a eurio:ProjectDeliverable } } "
         f"ORDER BY xsd:integer(?rcn) LIMIT {PROJECT_PAGE}")
     out, seen = [], set()
     for row in rows:

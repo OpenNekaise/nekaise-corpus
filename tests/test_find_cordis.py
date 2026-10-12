@@ -151,6 +151,7 @@ def test_walk_pages_projects_then_lists_kept_projects_only(monkeypatch, tmp_path
     assert len(queries) == 2 and calls.count("sleep") == 1
     assert "xsd:integer(?rcn) > 10" in queries[0] and "LIMIT 3" in queries[0]
     assert "regex" not in queries[0].lower() and "contains" not in queries[0].lower()
+    assert "FILTER EXISTS { ?uri eurio:hasResult ?d . ?d a eurio:ProjectDeliverable }" in queries[0]
     assert f"<{U1}>" in queries[1] and f"<{U2}>" in queries[1] and U3 not in queries[1]
     # the DMP is administration, ...a4 is already known; "Final report" stays distinct by acronym
     assert [e["title"] for e in appended] == ["RENO (700011): Façade module design guide",
