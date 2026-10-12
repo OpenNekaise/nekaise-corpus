@@ -140598,3 +140598,20 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.3389/fbuil.2025.1544177 openalex:W4407419532
     resolution: 'legacy: openalex location'
+  - id: ope-wayfinding-a-simple-concept-a-complex-process
+    title: 'Wayfinding: A simple concept, a complex process'
+    url: https://eprints.qut.edu.au/53297/1/Farr_et_al_%282%29.pdf
+    source: openalex
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2012-08-17'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/01441647.2012.712555
+    license_evidence: no licence statement for this copy [copy https://eprints.qut.edu.au/53297/1/Farr_et_al_%282%29.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-11'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/01441647.2012.712555 openalex:W1996628464
+    resolution: 'legacy: openalex location'
