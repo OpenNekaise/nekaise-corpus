@@ -144081,3 +144081,407 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-12'
+  - id: oas-10-3390-su18021037-8a5d30df
+    title: Climate-Resilient Reinforcement Learning Control of Hybrid Ventilation in
+      Mediterranean Offices Under Future Climate Scenarios
+    url: https://lirias.kuleuven.be/retrieve/c5da6102-5c3e-4380-8f00-714bfa66077b
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-01-20'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su18021037
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://lirias.kuleuven.be/retrieve/c5da6102-5c3e-4380-8f00-714bfa66077b;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/su18021037 openalex:W7124958093
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1109-tvcg-2024-3456315-90a5baa4
+    title: 'BEMTrace: Visualization-Driven Approach for Deriving Building Energy Models
+      from BIM'
+    url: https://arxiv.org/pdf/2407.19464
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-09-23'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/tvcg.2024.3456315
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://arxiv.org/pdf/2407.19464; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1109/tvcg.2024.3456315 openalex:W4402742934
+    resolution: 'sim1: openalex+unpaywall location; resolution retry'
+  - id: arx-adaptive-data-driven-prediction-in-a-building-
+    title: 'Adaptive Data-Driven Prediction in a Building Control Hierarchy: A Case
+      Study of Demand Response in Switzerland'
+    url: https://arxiv.org/pdf/2307.08866v3
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-07-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2307.08866
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2307.08866 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-datasets-of-great-britain-primary-substations-
+    title: Datasets of Great Britain Primary Substations Integrated with Household Heating
+      Information
+    url: https://arxiv.org/pdf/2403.16313v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-03-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.16313
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.16313 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1016/j.dib.2024.110483
+  - id: arx-optimizing-photovoltaic-panel-quantity-for-wat
+    title: Optimizing Photovoltaic Panel Quantity for Water Distribution Networks
+    url: https://arxiv.org/pdf/2412.15402v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-12-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2412.15402
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2412.15402 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-enhancing-in-situ-structural-health-monitoring
+    title: Enhancing In-Situ Structural Health Monitoring through RF Energy-Powered
+      Sensor Nodes and Mobile Platform
+    url: https://arxiv.org/pdf/2308.10343v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-08-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2308.10343
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2308.10343 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1109/tmc.2024.3491574
+  - id: arx-recommender-systems-and-reinforcement-learning
+    title: 'Recommender systems and reinforcement learning for human-building interaction
+      and context-aware support: A text mining-driven review of scientific lit'
+    url: https://arxiv.org/pdf/2411.08734v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-11-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2411.08734
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2411.08734 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1016/j.enbuild.2024.115247
+  - id: arx-empowering-aggregators-with-practical-data-dri
+    title: 'Empowering Aggregators with Practical Data-Driven Tools: Harnessing Aggregated
+      and Disaggregated Flexibility for Demand Response'
+    url: https://arxiv.org/pdf/2401.10726v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-01-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2401.10726
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2401.10726 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-decision-focused-learning-for-complex-system-i
+    title: 'Decision-Focused Learning for Complex System Identification: HVAC Management
+      System Application'
+    url: https://arxiv.org/pdf/2501.14708v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2025-01-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.14708
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.14708 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-evaluating-the-impact-of-data-availability-on-
+    title: Evaluating the Impact of Data Availability on Machine Learning-augmented
+      MPC for a Building Energy Management System
+    url: https://arxiv.org/pdf/2407.13308v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-07-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2407.13308
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2407.13308 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1109/isgteurope62998.2024.10863763
+  - id: arx-data-driven-modeling-of-combined-sewer-systems
+    title: 'Data-driven Modeling of Combined Sewer Systems for Urban Sustainability:
+      An Empirical Evaluation'
+    url: https://arxiv.org/pdf/2408.11619v3
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-08-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2408.11619
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.11619 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-scalable-and-robust-physics-informed-graph-neu
+    title: Scalable and Robust Physics-Informed Graph Neural Networks for Water Distribution
+      Systems
+    url: https://arxiv.org/pdf/2502.12164v1
+    source: arxiv
+    license: cc-by-sa
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2025-02-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2502.12164
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2502.12164 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-comprehensive-review-on-the-control-of-heat-pu
+    title: Comprehensive Review on the Control of Heat Pumps for Energy Flexibility
+      in Distribution Networks
+    url: https://arxiv.org/pdf/2502.14111v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-02-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2502.14111
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2502.14111 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-privacy-preserved-aggregate-thermal-dynamic-mo
+    title: Privacy-Preserved Aggregate Thermal Dynamic Model of Buildings
+    url: https://arxiv.org/pdf/2310.08418v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-10-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.08418
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.08418 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1109/tsg.2024.3420743
+  - id: arx-community-energy-management-system-for-fast-fr
+    title: 'Community Energy Management System for Fast Frequency Response: A Hierarchical
+      Control Approach'
+    url: https://arxiv.org/pdf/2503.05361v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-03-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.05361
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.05361 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-forecast-driven-scenario-generation-for-buildi
+    title: Forecast-Driven Scenario Generation for Building Energy Management Using
+      Stochastic Optimization
+    url: https://arxiv.org/pdf/2503.08113v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-03-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.08113
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.08113 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-isls-iot-based-smart-lighting-system-for-impro
+    title: 'ISLS: IoT-Based Smart Lighting System for Improving Energy Conservation
+      in Office Buildings'
+    url: https://arxiv.org/pdf/2503.13474v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-03-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.13474
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.13474 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-economy-and-sustainability-analysis-with-a-nov
+    title: Economy and sustainability analysis with a novel modular configurable multi-modal
+      white-box building model
+    url: https://arxiv.org/pdf/2503.21666v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-03-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.21666
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.21666 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-optimal-operation-of-a-building-with-electrici
+    title: Optimal Operation of a Building with Electricity-Heat Networks and Seasonal
+      Storage
+    url: https://arxiv.org/pdf/2409.08721v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-09-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2409.08721
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2409.08721 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1109/isgteurope62998.2024.10863412
+  - id: arx-effect-of-electric-vehicles-heat-pumps-and-sol
+    title: 'Effect of electric vehicles, heat pumps, and solar panels on low-voltage
+      feeders: Evidence from smart meter profiles'
+    url: https://arxiv.org/pdf/2409.18105v2
+    source: arxiv
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2024-09-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2409.18105
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2409.18105 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1016/j.segan.2025.101705
+  - id: arx-probabilistic-time-series-forecasting-of-resid
+    title: Probabilistic Time Series Forecasting of Residential Loads -- A Copula Approach
+    url: https://arxiv.org/pdf/2504.21661v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-04-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2504.21661
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2504.21661 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-integration-of-multi-mode-preference-into-home
+    title: Integration of Multi-Mode Preference into Home Energy Management System Using
+      Deep Reinforcement Learning
+    url: https://arxiv.org/pdf/2505.01332v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-05-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2505.01332
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2505.01332 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-interpretable-event-diagnosis-in-water-distrib
+    title: Interpretable Event Diagnosis in Water Distribution Networks
+    url: https://arxiv.org/pdf/2505.07299v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2025-05-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2505.07299
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2505.07299 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
