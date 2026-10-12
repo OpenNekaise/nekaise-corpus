@@ -361,16 +361,16 @@
     "reason": "NEW 2026-09-25 (Codex phase 1 P3): LLM / generative-AI / agent work on building energy and operation WITHOUT a simulation anchor (kept out of the simulation family), own versioned cursor ai1, same rights/identity rules; owns 1 of 10 OpenAlex round slots; required=false while piloting"
   },
   "find_arxiv": {
-    "script": "find_sources.py",
+    "script": "find_arxiv.py",
     "args": [
-      "--per",
-      "20",
-      "--backends",
-      "arxiv"
+      "--pages",
+      "3",
+      "--max",
+      "30"
     ],
-    "enabled": false,
+    "enabled": true,
     "required": false,
-    "reason": "paused 2026-08-23: relevance precision collapsed after independent pagination reached page 8, and the API began returning repeated 429s; preserve pointer until category/abstract metadata filtering is calibrated and queries are re-aimed against shallower results"
+    "reason": "RE-AIMED 2026-10-12 (was paused 2026-08-23: search-API paging lost precision by page 8, drew HTTP 429 and carries no licence): arXiv OAI-PMH (oaipmh.arxiv.org, arXivRaw) per the arXiv API terms, one request per 3.1 s on one connection; sets eess.SY, physics.soc-ph, cs.CE, physics.flu-dyn, physics.app-ph, then all of arXiv in datestamp order, then a 2-day watch with from=; precision-first title/abstract gate (calibrated 2026-10-12: 50 of 9,059 records kept); licence per record from the licence URI (CC tags exact, arXiv non-exclusive -> arxiv-nonexclusive, else unverified), collected regardless of licence; PDFs at arxiv.org/pdf/<id>v<N>, the version whose licence was read (robots Allow /pdf, Crawl-delay 15: polite host in the loader, serial, 15 s, honest UA, 20 per run, a refusal opens the circuit); never EXHAUSTED; required=false"
   },
   "find_github": {
     "script": "find_github.py",

@@ -136,6 +136,8 @@ built-environment vein; licence per article, weekly sweep) · `find_ibpsa.py` IB
 `find_ojs.py` open-access AEC journals and proceedings on Open Journal Systems via OAI-PMH (the
 reviewed, multilingual venue list is `scripts/ojs_sites.py`; licence per record, backfill then a
 weekly watch cycle) ·
+`find_arxiv.py` built-environment arXiv preprints via OAI-PMH (title/abstract gate,
+licence per record, robots Crawl-delay 15 for PDFs) ·
 `find_escholarship.py` LBNL + UC Berkeley CBE CC-licensed papers (disabled: WAF policy) · `find_nlr.py` National
 Laboratory of the Rockies (ex-NREL) building reports (history walk, then a weekly watch pass) · `find_osti_sim.py` OSTI building energy /
 physical simulation query family (licence per record) · `find_osti_aec.py` the general OSTI

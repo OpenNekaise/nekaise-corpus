@@ -187,10 +187,11 @@
     "note": "NEW 2026-09-25: openalex_families BUILDING_AI cursor 'ai1 t q w p k' (same semantics as find_openalex_sim's main walk)."
   },
   "find_arxiv": {
-    "flag": "--page",
-    "next": 8,
-    "step": 1,
-    "note": "PAUSED 2026-08-23: independent pagination exposed severe off-AEC drift by page 8, while 108 serial API queries per round triggered repeated 429s. Pointer 8 is preserved; before re-enabling, capture primary category and abstract metadata, calibrate a structured relevance filter, re-aim to reviewed shallower pages, and reduce request volume. Partial upstream runs request a hold so a page is never burned."
+    "flag": "--cursor",
+    "next": "s=0 t=START f=-,-,-,-,-,- w=-",
+    "step": 0,
+    "dynamic": true,
+    "note": "RE-AIMED 2026-10-12 from search-API page 8 to arXiv OAI-PMH: 's=<index into find_arxiv.SETS (append-only; the last entry is all of arXiv)> t=<resumptionToken|START> f=<harvested-through datestamp per set, '-' = from the beginning> w=<day the last full cycle ended|->'. A rejected token restarts its set from the stored datestamp; an unexpected answer (HTTP 429/503, non-OAI body) holds. After the last set the cursor waits 2 days, then harvests all of arXiv with from=<its datestamp>."
   },
   "find_vendor": {
     "flag": "--cursor",

@@ -66,7 +66,7 @@ SHARDS = {
     "oas-": "papers.yaml",     # find_sources OpenAlex families with persistent identity ids
                                # (dedup.identity_id: one id per DOI / OpenAlex work)
     "oa-": "papers.yaml",
-    "arx-": "papers.yaml",     # find_sources arXiv backend
+    "arx-": "papers.yaml",     # find_arxiv (arXiv OAI-PMH; earlier: find_sources arXiv backend)
 }
 DISCOVERED_PREFIXES = tuple(SHARDS)  # the pruner's gate: machine-discovered ids
 # The compliance/ESG programme's id families (scripts/compliance_common.py): robots-checked,
