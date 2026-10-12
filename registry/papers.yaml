@@ -140926,3 +140926,21 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W2574276577
     resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2211-03430-8f7d92c3
+    title: A Federated DRL Approach for Smart Micro-Grid Energy Control with Distributed
+      Energy Resources
+    url: https://arxiv.org/pdf/2211.03430
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-11-07'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2211.03430
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2211.03430;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2211.03430 openalex:W4308615096
+    resolution: 'ai1: openalex location'
