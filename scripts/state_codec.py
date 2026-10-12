@@ -41,7 +41,8 @@ SHARDS = {
     "zen-": "zenodo.yaml",     # find_zenodo (open CC-licensed records)
     "wbd-": "worldbank.yaml",  # find_worldbank (World Bank Documents & Reports API, open)
     "jrc-": "jrc.yaml",        # find_jrc (EU JRC science-for-policy reports via OpenAIRE, cc-by)
-    "guk-": "govuk.yaml",      # find_govuk (UK gov.uk publications via Search/Content APIs, OGL v3)
+    "guk-": "govuk.yaml",      # find_govuk (UK gov.uk publications via Search/Content APIs, OGL v3);
+                               # base name only — hash-bucketed into govuk-0…3
     "jst-": "jstage.yaml",     # find_jstage (AIJ journals via the J-STAGE search API, Japanese)
     "iag-": "iea.yaml",        # find_iea (IEA agency analysis reports, CC BY 4.0, Azure-blob PDFs).
                                # NOT "iea-": that prefix shadows hand-curated iea-ebc-* ids in
@@ -145,6 +146,7 @@ HASH_BUCKETS = {
     "patents-us": 8,
     "vendor": 16,
     "ostiaec": 4,  # find_osti_aec: bucketed from its first row (tens of thousands expected)
+    "govuk": 4,     # manifest/govuk.jsonl reached 71.4 MiB of the 80 MiB gate (split 2026-10-12)
 }
 
 

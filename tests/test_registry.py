@@ -209,6 +209,10 @@ def test_manifest_shard_routing():
     vendor_id = "vnd-acme-air-handler"
     vendor_bucket = zlib.crc32(vendor_id.encode()) % registry.HASH_BUCKETS["vendor"]
     assert registry.manifest_shard(vendor_id) == f"vendor-{vendor_bucket}"
+    govuk_id = "guk-approved-document-l"
+    govuk_bucket = zlib.crc32(govuk_id.encode()) % registry.HASH_BUCKETS["govuk"]
+    assert registry.manifest_shard(govuk_id) == f"govuk-{govuk_bucket}"
+    assert registry.shard_filename(govuk_id) == f"govuk-{govuk_bucket}.yaml"
     # a country without a bucket entry keeps the plain per-country shard
     assert registry.manifest_shard("pat-ep1234567a1") == "patents-ep"
 
