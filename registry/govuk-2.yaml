@@ -42675,14 +42675,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-european-regional-development-fund-strategic-e-4
-    title: 'European Regional Development Fund: Strategic Environmental Assessment —
-      2017 determination statement'
-    url: https://assets.publishing.service.gov.uk/media/601a7f13d3bf7f70b83bfbcc/170911_ERDF_MA_determination_on_Strategic_Environmental_Assessment.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-modern-languages-achievement-and-challenge-200-2
     title: 'Modern languages: achievement and challenge 2007 to 2010 — Modern languages
       achievement and challenge 2007 to 2010: report summary'
@@ -42867,14 +42859,6 @@ sources:
   - id: guk-household-wealth-july-2006-to-june-2012-statis
     title: 'Household wealth: July 2006 to June 2012 — Statistics on household wealth'
     url: https://assets.publishing.service.gov.uk/media/5a7da9c3e5274a5eaea65943/household-wealth.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
-  - id: guk-european-regional-development-fund-annual-impl-9
-    title: 'European Regional Development Fund: Annual Implementation Reports — Annual
-      Implementation Report 2018 - Summary'
-    url: https://assets.publishing.service.gov.uk/media/603667918fa8f5480e38bae2/AIR_2018_-_Citizens_Summary_-_ERDF_-_England.pdf
     source: gov_uk
     license: open
     topic: building_energy
@@ -104208,6 +104192,128 @@ sources:
     license: unverified
     topic: building_energy
     format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-changes-to-permitted-development-rights-for-el
+    title: 'Changes to permitted development rights for electronic communications infrastructure:
+      technical consultation'
+    url: https://www.gov.uk/government/consultations/changes-to-permitted-development-rights-for-electronic-communications-infrastructure-technical-consultation/changes-to-permitted-development-rights-for-electronic-communications-infrastructure-technical-consultation
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-changes-to-permitted-development-rights-for-el-2
+    title: 'Changes to permitted development rights for electronic communications infrastructure:
+      technical consultation — Changes to permitted development rights for electronic
+      communications'
+    url: https://www.gov.uk/government/consultations/changes-to-permitted-development-rights-for-electronic-communications-infrastructure-technical-consultation/outcome/changes-to-permitted-development-rights-for-electronic-communications-infrastructure-government-response-to-the-technical-consultation
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-improving-energy-performance-certificates-acti
+    title: 'Improving Energy Performance Certificates: action plan - progress report'
+    url: https://www.gov.uk/government/publications/improving-energy-performance-certificates-action-plan-progress-report/improving-energy-performance-certificates-action-plan-progress-report
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-flood-insurance-review-2020-doncaster-independ
+    title: 'Flood insurance review 2020: Doncaster — Independent review of flood insurance
+      in Doncaster'
+    url: https://assets.publishing.service.gov.uk/media/5fa28b70e90e0704157fb18a/review-flood-insurance-doncaster.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-england-2014-to-2020-european-structural-and-i-3
+    title: England 2014 to 2020 European Structural and Investment Funds — Annual Implementation
+      Report 2016
+    url: https://assets.publishing.service.gov.uk/media/5a81e4b840f0b62302699bbf/Annual_Implementation_Report_2016.pdf
+    source: gov_uk
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-getting-building-fund-lancashire-lep
+    title: Getting Building Fund — Lancashire LEP
+    url: https://assets.publishing.service.gov.uk/media/5f283207e90e0732debd304e/Lancs_Summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-getting-building-fund-liverpool-city-region-mc
+    title: Getting Building Fund — Liverpool City Region MCA
+    url: https://assets.publishing.service.gov.uk/media/5f283214d3bf7f1b1dfa2f8e/LCR_Summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-getting-building-fund-sheffield-city-region
+    title: Getting Building Fund — Sheffield City Region
+    url: https://assets.publishing.service.gov.uk/media/5f2834e6d3bf7f1b1c0d8271/GBF_Summary_Sheffield_City_Region.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-getting-building-fund-tees-valley-combined-aut
+    title: Getting Building Fund — Tees Valley Combined Authority
+    url: https://assets.publishing.service.gov.uk/media/5f2834fd8fa8f57acdd8dead/GBF_Summary_Tees_Valley.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
     language: en
     license_evidence: 'GOV.UK publication page: ''All content is available under the
       Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)

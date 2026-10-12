@@ -85267,21 +85267,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/zero/1.0/']
       date/year ['1950', '1950', '1955']
     rights_verified_at: '2026-10-12'
-  - id: arc-vacationcabinsaselectionofsmallcabinsforcom-cdfb223a
-    title: 'Vacation cabins : a selection of small cabins for comfort, utility, economy
-      (1939) [arc-vacationcabinsaselectionofsmallcabinsforcom-cdfb223a]'
-    url: https://archive.org/download/VacationCabinsASelectionOfSmallCabinsForComfortUtilityEconomy/VacationCabinsByJ.B.Parker_djvu.txt
-    source: internet_archive
-    license: cc0
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1939'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/zero/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/zero/1.0/']
-      date/year ['1939', '1939']
-    rights_verified_at: '2026-10-12'
   - id: arc-newamericanhomes-cfa4ee9b
     title: New American homes (1938) [arc-newamericanhomes-cfa4ee9b]
     url: https://archive.org/download/NewAmericanHomes/NewAmericanHomes_djvu.txt
@@ -85323,20 +85308,6 @@ sources:
     license_url: http://creativecommons.org/publicdomain/zero/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/zero/1.0/']
       date/year ['193-?']
-    rights_verified_at: '2026-10-12'
-  - id: arc-modernhomeplans-ac1197e4
-    title: Modern home plans (1955) [arc-modernhomeplans-ac1197e4]
-    url: https://archive.org/download/ModernHomePlans/ModernHomePlans_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1955'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1950', '1950', '1955']
     rights_verified_at: '2026-10-12'
   - id: arc-lowcostcustomhomes-133f3a8e
     title: Low cost custom homes (1955) [arc-lowcostcustomhomes-133f3a8e]

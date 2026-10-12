@@ -145883,3 +145883,503 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-12'
+  - id: ope-development-of-a-multi-scaled-virtual-field-tr
+    title: Development of a multi-scaled virtual field trip for the teaching and learning
+      of geospatial science
+    url: http://ijedict.dec.uwi.edu/include/getdoc.php?id=804&amp;article=29&amp;mode=pdf
+    source: openalex
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2005-10-31'
+    document_type: article
+    persistent_id: https://openalex.org/W1534675431
+    license_evidence: no licence statement for this copy [copy http://ijedict.dec.uwi.edu/include/getdoc.php?id=804&amp;article=29&amp;mode=pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: openalex:W1534675431
+    resolution: 'legacy: openalex location'
+  - id: ope-towards-next-generation-urban-decision-support
+    title: Towards Next-Generation Urban Decision Support Systems through AI-Powered
+      Construction of Scientific Ontology Using Large Language Models—A Case in Op
+    url: https://arxiv.org/pdf/2405.19255
+    source: openalex
+    license: cc-by-nc-nd
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-08-31'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/smartcities7050094
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://arxiv.org/pdf/2405.19255; version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/smartcities7050094 openalex:W4402243741
+    resolution: 'legacy: openalex location'
+  - id: ope-geographical-accessibility-to-functional-emerg
+    title: 'Geographical accessibility to functional emergency obstetric care facilities
+      in urban Nigeria using closer-to-reality travel time estimates: a populat'
+    url: http://gala.gre.ac.uk/id/eprint/47548/7/47548_WANG_Geographical_accessibility_to_functional_emergency_obstetric_care_facilities_in_urban_Nigeria_using_closer-to-reality_travel_time_estimates.pdf
+    source: openalex
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-04-11'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/s2214-109x(24)00045-7
+    license_evidence: no licence statement for this copy [copy http://gala.gre.ac.uk/id/eprint/47548/7/47548_WANG_Geographical_accessibility_to_functional_emergency_obstetric_care_facilities_in_urban_Nigeria_using_closer-to-reality_travel_time_estimates.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1016/s2214-109x(24)00045-7 openalex:W4394709997
+    resolution: 'legacy: openalex location'
+  - id: ope-an-overview-of-groundwater-monitoring-through-
+    title: An Overview of Groundwater Monitoring through Point-to Satellite-Based Techniques
+    url: https://ueaeprints.uea.ac.uk/id/eprint/83681/1/Published_Version.pdf
+    source: openalex
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2022-02-13'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/w14040565
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://ueaeprints.uea.ac.uk/id/eprint/83681/1/Published_Version.pdf; version
+      acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.3390/w14040565 openalex:W4213240928
+    resolution: 'legacy: openalex location'
+  - id: oas-10-48550-arxiv-2610-01489-2ec84c75
+    title: 'Building Seasonal Highways for Residential Energy Hubs: Sizing, planning
+      and operating thermal energy storage'
+    url: https://arxiv.org/pdf/2610.01489
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    published_at: '2026-10-01'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2610.01489
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2610.01489;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2610.01489 openalex:W7215874877
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-deep-reinforcement-learning-for-optimal-contro
+    title: Deep Reinforcement Learning for Optimal Control of Space Heating
+    url: https://arxiv.org/pdf/1805.03777v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2018-05-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1805.03777
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1805.03777 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-maintenance-of-smart-buildings-using-fault-tre
+    title: Maintenance of Smart Buildings using Fault Trees
+    url: https://arxiv.org/pdf/1806.05174v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-06-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1806.05174
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1806.05174 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-large-scale-demonstration-of-precise-demand-re
+    title: Large-Scale Demonstration of Precise Demand Response Provided by Residential
+      Heating Systems
+    url: https://arxiv.org/pdf/1806.07670v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2018-06-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1806.07670
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1806.07670 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-a-fixed-point-iteration-for-steady-state-analy
+    title: A Fixed-Point Iteration for Steady-State Analysis of Water Distribution Networks
+    url: https://arxiv.org/pdf/1807.01404v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2018-07-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1807.01404
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1807.01404 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-transfer-operator-theoretic-framework-for-moni
+    title: Transfer Operator Theoretic Framework for Monitoring Building Indoor Environment
+      in Uncertain Operating Conditions
+    url: https://arxiv.org/pdf/1807.04781v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-07-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1807.04781
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1807.04781 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-data-driven-identification-of-a-thermal-networ
+    title: Data-driven identification of a thermal network in multi-zone building
+    url: https://arxiv.org/pdf/1810.07400v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-10-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1810.07400
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1810.07400 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-a-markov-process-approach-to-ensemble-control-
+    title: A Markov Process Approach to Ensemble Control of Smart Buildings
+    url: https://arxiv.org/pdf/1902.06866v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2019-02-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1902.06866
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1902.06866 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-input-modeling-and-uncertainty-quantification-
+    title: Input Modeling and Uncertainty Quantification for Improving Volatile Residential
+      Load Forecasting
+    url: https://arxiv.org/pdf/1905.06773v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-05-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1905.06773
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1905.06773 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-omniloc-a-geometry-aware-foundation-model-for-
+    title: 'OmniLoc: A Geometry-Aware Foundation Model for Anchor-Free UE Localization
+      Across Diverse Indoor Environments'
+    url: https://arxiv.org/pdf/2606.11490v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-06-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2606.11490
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2606.11490 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-sustainable-heating-with-karma-a-simulation-st
+    title: 'Sustainable Heating with Karma: A Simulation Study of the KTH Live-In Lab'
+    url: https://arxiv.org/pdf/2606.16321v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-06-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2606.16321
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2606.16321 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-active-learning-for-optimal-experimental-desig
+    title: Active Learning for Optimal Experimental Design in Machine Learning-Based
+      Building Energy System Identification
+    url: https://arxiv.org/pdf/2606.25301v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-06-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2606.25301
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2606.25301 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-a-conversational-agentic-interface-to-physics-
+    title: A Conversational Agentic Interface to Physics-Based Household Digital Twins
+      for Residential Energy Decision Support
+    url: https://arxiv.org/pdf/2606.31744v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-06-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2606.31744
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2606.31744 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-markov-decision-process-approximation-methods-
+    title: 'Markov Decision Process Approximation Methods for Water Distribution Network
+      Inspection and Maintenance: A Case Study of the U.S. Virgin Islands'
+    url: https://arxiv.org/pdf/2607.04626v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2026-07-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2607.04626
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2607.04626 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-constrained-reinforcement-learning-for-safe-he
+    title: Constrained Reinforcement Learning for Safe Heat Pump Control
+    url: https://arxiv.org/pdf/2409.19716v2
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-09-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2409.19716
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2409.19716 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-gentl-a-general-transfer-learning-model-for-bu
+    title: 'GenTL: A General Transfer Learning Model for Building Thermal Dynamics'
+    url: https://arxiv.org/pdf/2501.13703v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-01-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.13703
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.13703 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1145/3679240.3734589
+  - id: arx-llms-for-agentic-home-energy-management
+    title: LLMs for Agentic Home Energy Management
+    url: https://arxiv.org/pdf/2607.04569v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-07-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2607.04569
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2607.04569 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-adaptive-demand-driven-energy-management-of-pc
+    title: 'Adaptive Demand-Driven Energy Management of PCM-Integrated District Heating
+      Systems: Operational Flexibility and Techno-Economic Assessment'
+    url: https://arxiv.org/pdf/2607.28280v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-07-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2607.28280
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2607.28280 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-quantifying-the-value-of-seismic-structural-he
+    title: Quantifying the Value of Seismic Structural Health Monitoring for post-earthquake
+      recovery of electric power system in terms of resilience enhancement
+    url: https://arxiv.org/pdf/2508.10318v3
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-08-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2508.10318
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2508.10318 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1016/j.ress.2026.112292
+  - id: arx-automated-generation-of-experimentally-validat
+    title: Automated generation of experimentally validated digital twins for desiccant-based
+      low-dew-point air-conditioning systems from declarative topology sp
+    url: https://arxiv.org/pdf/2608.08967v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2026-08-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2608.08967
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2608.08967 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-towards-an-approach-to-multivariate-outlier-de
+    title: Towards an approach to multivariate outlier detection for District Heating
+      System data
+    url: https://arxiv.org/pdf/2608.11375v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-08-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2608.11375
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2608.11375 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1007/978-3-031-71419-1_5
+  - id: arx-xgboost-is-all-you-need-the-case-of-forecastin
+    title: 'XGBoost "is all you need": the case of forecasting transmitted heat energy
+      in District Heating Systems'
+    url: https://arxiv.org/pdf/2608.11446v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-08-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2608.11446
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2608.11446 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1007/978-3-031-71419-1_2
+  - id: ope-sentinel-1-detects-firn-aquifers-in-the-greenl
+    title: Sentinel‐1 Detects Firn Aquifers in the Greenland Ice Sheet
+    url: https://biblio.ugent.be/publication/8684945/file/8684946.pdf
+    source: openalex
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2020-01-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1029/2019gl085192
+    license_evidence: 'redirect: rights of requested copy https://biblio.ugent.be/publication/8684945/file/8684946.pdf
+      do not transfer to https://backoffice.biblio.ugent.be/download/8684945/8684946;
+      payload sha256=16267973177e10136712e1c5bcc222b2baaa9b4ec381df12c4daf33542f8ac74;
+      original evidence: {"license": "cc-by-nc-nd", "license_evidence": "openalex.license=cc-by-nc-nd;
+      openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd [copy https://biblio.ugent.be/publication/8684945/file/8684946.pdf;
+      version submittedVersion; rights restricted]", "rights_verified_at": "2026-10-12",
+      "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-12T21:28:08Z'
+    origin_ids: doi:10.1029/2019gl085192 openalex:W3000095025
+    resolution: 'legacy: openalex location'
+  - id: ope-ensemble-machine-learning-approach-improves-pr
+    title: Ensemble Machine Learning Approach Improves Predicted Spatial Variation of
+      Surface Soil Organic Carbon Stocks in Data-Limited Northern Circumpolar Reg
+    url: https://www.frontiersin.org/articles/10.3389/fdata.2020.528441/pdf
+    source: openalex
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2020-10-28'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fdata.2020.528441
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/fdata.2020.528441/pdf
+      do not transfer to https://www.frontiersin.org/journals/big-data/articles/10.3389/fdata.2020.528441/pdf;
+      payload sha256=c29d9de167f659afe04dc4da5bddae9262538cef1cfbdf34ee6bff2ad137d49d;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://www.frontiersin.org/articles/10.3389/fdata.2020.528441/pdf;
+      version publishedVersion; rights accepted]", "rights_verified_at": "2026-10-12",
+      "selected_version": "publishedVersion"}'
+    rights_verified_at: '2026-10-12T21:28:09Z'
+    origin_ids: doi:10.3389/fdata.2020.528441 openalex:W3096190728
+    resolution: 'legacy: openalex location'

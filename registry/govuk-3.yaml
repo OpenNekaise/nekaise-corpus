@@ -43456,22 +43456,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-european-regional-development-fund-annual-impl-11
-    title: 'European Regional Development Fund: Annual Implementation Reports — Annual
-      Implementation Report 2017'
-    url: https://assets.publishing.service.gov.uk/media/6036673be90e0740b6262a47/180926_-_2017_Annual_Implementation_Report_-_England_2014UK16RFOP001_2017_2_en_-_EC_Accepted_Version.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
-  - id: guk-european-regional-development-fund-annual-impl-13
-    title: 'European Regional Development Fund: Annual Implementation Reports — Annual
-      Implementation Report 2015'
-    url: https://assets.publishing.service.gov.uk/media/60366701e90e0740b4391cc9/Annual_Implementation_Report_2015.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-severn-river-basin-district-river-basin-manage-4
     title: 'Severn river basin district river basin management plan: 2009 — Severn river
       basin district RBMP 2009 Annex A: Current state of waters'
@@ -104611,6 +104595,89 @@ sources:
     license: unverified
     topic: materials
     format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-technical-consultation-on-consequential-change-2
+    title: 'Technical consultation on consequential changes to permitted development
+      rights — Technical consultation on consequential changes to permitted development
+      rights: consultation outc'
+    url: https://www.gov.uk/government/consultations/technical-consultation-on-consequential-changes-to-permitted-development-rights/outcome/technical-consultation-on-consequential-changes-to-permitted-development-rights-consultation-outcome
+    source: gov_uk
+    license: unverified
+    topic: urban
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-industry-safety-steering-group-third-report-on-2
+    title: 'Industry Safety Steering Group third report on culture change in the built
+      environment industry — Building safety: The Industry Safety Steering Group’s third
+      report for the Secreta'
+    url: https://www.gov.uk/government/publications/industry-safety-steering-group-third-report-on-culture-change-in-the-built-environment-industry/building-safety-the-industry-safety-steering-groups-third-report-for-the-secretary-of-state-and-the-minister-for-building-safety
+    source: gov_uk
+    license: unverified
+    topic: construction
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-housing-infrastructure-fund-marginal-viability
+    title: Housing Infrastructure Fund — Marginal Viability Funding projects
+    url: https://www.gov.uk/government/publications/housing-infrastructure-fund/marginal-viability-funding-projects-in-contract-accessible-version
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-england-2014-to-2020-european-structural-and-i-7
+    title: England 2014 to 2020 European Structural and Investment Funds — Citizen's
+      Summary 2018
+    url: https://assets.publishing.service.gov.uk/media/5e2ab3ad40f0b62c4b0f0a79/AIR_2018_-_Citizens_Summary_-_ERDF_-_England.pdf
+    source: gov_uk
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-getting-building-fund-cheshire-and-warrington-
+    title: Getting Building Fund — Cheshire and Warrington LEP
+    url: https://assets.publishing.service.gov.uk/media/5f2831d78fa8f57acebf677f/C_W_Summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-getting-building-fund-greater-manchester-combi
+    title: Getting Building Fund — Greater Manchester Combined Authority
+    url: https://assets.publishing.service.gov.uk/media/5f2831f9e90e0732dafc02b5/GM_Summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
     language: en
     license_evidence: 'GOV.UK publication page: ''All content is available under the
       Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)

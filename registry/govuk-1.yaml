@@ -42665,14 +42665,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-european-regional-development-fund-annual-impl-12
-    title: 'European Regional Development Fund: Annual Implementation Reports — Annual
-      Implementation Report 2016'
-    url: https://assets.publishing.service.gov.uk/media/60366717d3bf7f0aa7266c36/Annual_Implementation_Report_2016.pdf
-    source: gov_uk
-    license: open
-    topic: building_energy
-    format: pdf
   - id: guk-severn-river-basin-district-river-basin-manage-11
     title: 'Severn river basin district river basin management plan: 2009 — Severn river
       basin district RBMP 2009 Annex H: Adapting to climate change'
@@ -103842,6 +103834,114 @@ sources:
     license: unverified
     topic: infrastructure
     format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-technical-consultation-on-consequential-change
+    title: Technical consultation on consequential changes to permitted development
+      rights
+    url: https://www.gov.uk/government/consultations/technical-consultation-on-consequential-changes-to-permitted-development-rights/technical-consultation-on-consequential-changes-to-permitted-development-rights
+    source: gov_uk
+    license: unverified
+    topic: urban
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-access-to-social-housing-and-homelessness-assi
+    title: Access to social housing and homelessness assistance for EEA and Swiss citizens
+      in England — EEA citizens’ eligibility for social housing or homelessness assistance
+    url: https://assets.publishing.service.gov.uk/media/606349dbd3bf7f0c854ce227/LA_workshops_FAQ.pdf
+    source: gov_uk
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-england-2014-to-2020-european-structural-and-i-4
+    title: England 2014 to 2020 European Structural and Investment Funds — Annual Implementation
+      Report 2015
+    url: https://assets.publishing.service.gov.uk/media/5a74c29340f0b61df477845e/Annual_Implementation_Report_2015.pdf
+    source: gov_uk
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-england-2014-to-2020-european-structural-and-i-6
+    title: England 2014 to 2020 European Structural and Investment Funds — Annual Implementation
+      Report 2017
+    url: https://assets.publishing.service.gov.uk/media/5bd971b240f0b6050306ae62/180926_-_2017_Annual_Implementation_Report_-_England_2014UK16RFOP001_2017_2_en_-_EC_Accepted_Version.pdf
+    source: gov_uk
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-planning-for-the-future-explained-pdf-version
+    title: Planning for the future explained — PDF version
+    url: https://assets.publishing.service.gov.uk/media/5f2be89a8fa8f57ac287c155/One_Pager_v4.pdf
+    source: gov_uk
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-getting-building-fund-humber-lep
+    title: Getting Building Fund — Humber LEP
+    url: https://assets.publishing.service.gov.uk/media/5f2834c2d3bf7f1b1119249e/GBF_Summary_Humber_LEP.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-getting-building-fund-north-east-lep
+    title: Getting Building Fund — North East LEP
+    url: https://assets.publishing.service.gov.uk/media/5f2834d2e90e0732dbca7a3a/GBF_Summary_North_East_LEP.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-12'
+  - id: guk-getting-building-fund-york-north-yorkshire-lep
+    title: Getting Building Fund — York North Yorkshire LEP
+    url: https://assets.publishing.service.gov.uk/media/5f283522d3bf7f1b1593c19b/GBF_Summary_York_North_Yorkshire_LEP.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
     language: en
     license_evidence: 'GOV.UK publication page: ''All content is available under the
       Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
