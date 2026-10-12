@@ -145209,3 +145209,180 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-12'
+  - id: oas-10-20935-acadenergy8057-88a60eab
+    title: Energy analysis of technologies to reduce electricity demand for heating
+      in UK residential buildings
+    url: https://centaur.reading.ac.uk/127707/1/Energy_analysis_of_technologies_to_reduc.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-12-22'
+    document_type: article
+    persistent_id: https://doi.org/10.20935/acadenergy8057
+    license_evidence: no licence statement for this copy [copy https://centaur.reading.ac.uk/127707/1/Energy_analysis_of_technologies_to_reduc.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.20935/acadenergy8057 openalex:W7116692446
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1002-ese3-70314-6a5589fd
+    title: 'Advancing Energy and Indoor Environmental Quality Through Integrated Co‐Simulation
+      and Multi‐Objective Optimisation for SARS‐CoV‐2 Risk Mitigation: A '
+    url: https://repository.uwl.ac.uk/id/eprint/14179/8/Advancing%20energy%20and%20indoor%20environmental%20quality%20through%20integrated%20co-simulation%20_Bahadori%E2%80%90JahromiA_accessible.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-10-06'
+    document_type: article
+    persistent_id: https://doi.org/10.1002/ese3.70314
+    license_evidence: no licence statement for this copy [copy https://repository.uwl.ac.uk/id/eprint/14179/8/Advancing%20energy%20and%20indoor%20environmental%20quality%20through%20integrated%20co-simulation%20_Bahadori%E2%80%90JahromiA_accessible.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1002/ese3.70314 openalex:W4414877596
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-48550-arxiv-2509-16397-93588c9e
+    title: 'GRID: Graph-based Reasoning for Intervention and Discovery in Built Environments'
+    url: https://arxiv.org/pdf/2509.16397
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-09-19'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2509.16397
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2509.16397;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2509.16397 openalex:W4415250989
+    resolution: 'sim1: openalex location'
+  - id: arx-smart-load-node-for-nonsmart-load-under-smart-
+    title: 'Smart Load Node for Nonsmart Load Under Smart Grid Paradigm: A New Home
+      Energy Management System'
+    url: https://arxiv.org/pdf/1810.06450v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-10-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1810.06450
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1810.06450 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1109/mce.2018.2880804
+  - id: arx-generalizability-of-learning-based-occupancy-d
+    title: Generalizability of Learning-based Occupancy Detection in Residential Buildings
+      (extended version)
+    url: https://arxiv.org/pdf/2604.14841v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-04-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2604.14841
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2604.14841 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-vision-based-structural-damage-identification-
+    title: Vision-Based Structural Damage Identification in Vibrating Beams via Dynamic
+      Mode Decomposition
+    url: https://arxiv.org/pdf/2605.02803v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-05-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2605.02803
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2605.02803 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-buildyn-excitation-driven-data-generation-for-
+    title: 'BuilDyn: Excitation-Driven Data Generation for Building Thermal Dynamics
+      Modeling and Control'
+    url: https://arxiv.org/pdf/2605.29849v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-05-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2605.29849
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2605.29849 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-coordinated-home-energy-management-for-real-ti
+    title: Coordinated Home Energy Management for Real-Time Power Balancing
+    url: https://arxiv.org/pdf/1204.2252v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-04-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1204.2252
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1204.2252 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-accurate-estimation-of-gaseous-strength-using-
+    title: Accurate Estimation of Gaseous Strength using Transient Data
+    url: https://arxiv.org/pdf/1205.6919v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-05-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1205.6919
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1205.6919 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1109/tim.2010.2084731
+  - id: arx-incentive-design-for-efficient-building-qualit
+    title: Incentive Design for Efficient Building Quality of Service
+    url: https://arxiv.org/pdf/1207.2515v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-07-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1207.2515
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1207.2515 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
