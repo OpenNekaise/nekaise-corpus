@@ -809,6 +809,8 @@ def test_escholarship_fetch_suspension_is_committed_policy():
 FINDER_DELIVERY_URLS = [
     "https://assets.publishing.service.gov.uk/media/abc/approved_document_l.pdf",
     "https://www.gov.uk/guidance/heat-networks-overview",
+    "https://documents.worldbank.org/curated/en/abc/pdf/urban-water.pdf",
+    "https://documents1.worldbank.org/curated/en/abc/pdf/urban-water.pdf",
 ]
 
 

@@ -137,10 +137,11 @@
     "note": "RE-AIMED 2026-10-12: 'o=<index into find_govuk.ORGS (append-only)> s=<Search API start offset> w=<day the walk started>' (w is added on the first run), organisation-major, newest first, 50 results per page with 5 re-read; then 'watch:<boundary day> w=<walk day>' (idle; boundary first = the walk's START day; next look 2 days after the boundary, full re-walk 90 days after the walk day); a look is 'catch:<boundary day> n=<day the look started> o=<org> s=<start> w=<walk day>' (pages published since the day before the boundary), continued over rounds within the budgets, then 'watch:<n> w=<walk day>'. Out-of-range indices, offsets and future dates are refused. An unexpected answer holds. History: free-text paging reached p905 (paused 2026-08-18, fuzzy off-topic results); wave-1 18 queries mined p1-27, wave-2 +14 queries from 2026-07-20."
   },
   "find_worldbank": {
-    "flag": "--os",
-    "next": 8000,
-    "step": 400,
-    "note": "PAUSED 2026-08-21 at construction-industry os=8000: broad full-text phrase search retained mostly non-AEC development-economics reports, while project-cycle documents exposed through WDS are not uniformly CC-BY. Re-enable only after adding a calibrated multilingual title/type relevance gate and per-document license mapping; prefer bounded AEC queries such as '\"water infrastructure\"' (1,946), '\"sustainable cities\"' (1,298), '\"built environment\"' (585), or '\"thermal insulation\"' (195). Resume unfinished '\"urban planning\"' at os=16400 only after the same repair."
+    "flag": "--cursor",
+    "next": "s=0 o=0",
+    "step": 0,
+    "dynamic": true,
+    "note": "RE-AIMED 2026-10-12: walk 's=<index into find_worldbank.SLICES (append-only)> o=<record offset> w=<day the walk started>' (w is added on the first run), slice-major, newest first (srt=docdt), 100 records per page with 5 re-read; then 'watch:<boundary day> w=<walk day>' (idle; next look 3 days after the boundary, full re-walk 90 days after the walk day); a look is 'catch:<boundary day> n=<day the look started> s=<slice> o=<offset> w=<walk day>', continued over rounds until every slice is read back to the boundary minus 45 days, then 'watch:<n> w=<walk day>'. Out-of-range indices, offsets and future dates are refused. An unexpected answer holds. History: free-text --q/--os paging was paused 2026-08-21 at '\"construction industry\"' os=8000 ('\"urban planning\"' unfinished at os=16400)."
   },
   "find_jstage": {
     "flag": "--start",

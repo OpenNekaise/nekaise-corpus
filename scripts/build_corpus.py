@@ -96,8 +96,8 @@ HOST_CONCURRENCY: dict[str, int] = {
     "www.osti.gov": 4,
     "library.oapen.org": 4,
     "patents.google.com": 4,
-    "documents.worldbank.org": 4,
-    "documents1.worldbank.org": 4,
+    "documents.worldbank.org": 1,   # find_worldbank: serial, paced (was 4 unpaced)
+    "documents1.worldbank.org": 1,  # the host documents.worldbank.org redirects every PDF to
     "www.scielo.br": 4,
     # SiteGround's rate-triggered sgcaptcha (HTTP 202 + HTML) poisoned 881 of 917 IBPSA fetches
     # on 2026-08-05; one request at a time, spaced by HOST_DELAY, keeps it off.
@@ -162,6 +162,10 @@ HOST_DELAY: dict[str, float] = {
     # GOV.UK (find_govuk): robots.txt has no Crawl-delay; one request start per second per host.
     "www.gov.uk": 1.0,
     "assets.publishing.service.gov.uk": 1.0,
+    # World Bank Documents & Reports (find_worldbank): robots.txt has no Crawl-delay; one
+    # request start per second per host. A PDF is 1 request on documents and 2 on documents1.
+    "documents.worldbank.org": 1.0,
+    "documents1.worldbank.org": 1.0,
 }
 HONEST_UA = "nekaise-corpus/build_corpus"
 ARCHIVE_UA = "nekaise-corpus-build_corpus/3.0 (research corpus loader)"
@@ -208,6 +212,10 @@ HOST_UA: dict[str, str] = {
     # per host). POLITE hosts: no browser UA, no curl fallback.
     "www.gov.uk": HONEST_UA,
     "assets.publishing.service.gov.uk": HONEST_UA,
+    # World Bank document hosts serve the honest tool UA (verified 2026-10-12, 3 documents per
+    # host; documents.worldbank.org redirects to documents1.worldbank.org). POLITE hosts.
+    "documents.worldbank.org": HONEST_UA,
+    "documents1.worldbank.org": HONEST_UA,
 }
 # POLITE hosts: a refusal or challenge means "stop and come back later", never "try another
 # identity". For these hosts the loader uses only HOST_UA, never the browser UA or the curl
@@ -224,7 +232,8 @@ POLITE_HOSTS = frozenset({"publications.ibpsa.org", "escholarship.org", "unmetho
                           # every SciELO national host find_scielo proposes (2026-10-12)
                           "www.scielo.br", "www.scielo.org.mx", "www.scielo.org.ar", "scielo.pt",
                           "www.scielo.sa.cr", "www.scielo.org.za", "www.scielo.org.co",
-                          "www.gov.uk", "assets.publishing.service.gov.uk"})
+                          "www.gov.uk", "assets.publishing.service.gov.uk",
+                          "documents.worldbank.org", "documents1.worldbank.org"})
 CHALLENGE_STATUSES = frozenset({202, 403, 429, 503})
 CHALLENGE_BODY = re.compile(
     rb"sgcaptcha|captcha|challenge-platform|cf-chl|awswaf|request blocked|access denied", re.I
@@ -250,6 +259,8 @@ HOST_RUN_CAP: dict[str, int] = {
     "www.scielo.sa.cr": 120, "www.scielo.org.za": 120, "www.scielo.org.co": 120,
     "www.gov.uk": 240,                        # 240 x 1 s = 4 min
     "assets.publishing.service.gov.uk": 240,  # 240 x 1 s = 4 min
+    "documents.worldbank.org": 120,   # 120 PDFs x 2 requests on documents1 at 1 s = 4 min
+    "documents1.worldbank.org": 120,
 }
 # Compliance/ESG programme (Codex decision 2026-09-25; ids bov-bfs- / reg- / eur- / esf-, see
 # scripts/compliance_common.py, which owns the reviewed delivery-host table): a programme row's

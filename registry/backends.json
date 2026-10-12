@@ -250,17 +250,14 @@
   "find_worldbank": {
     "script": "find_worldbank.py",
     "args": [
-      "--q",
-      "\"construction industry\"",
-      "--rows",
-      "50",
       "--pages",
-      "8",
+      "6",
       "--max",
-      "250"
+      "120"
     ],
-    "enabled": false,
-    "reason": "paused 2026-08-21: broad full-text phrase search retained mostly non-AEC development-economics reports. A conservative multilingual title gate plus Publications & Research / Economic & Sector Work allowlist landed 2026-08-28, but per-document license mapping and sampled precision still require review; preserve offset 8000"
+    "enabled": true,
+    "required": false,
+    "reason": "RE-AIMED 2026-10-12 (paused 2026-08-21: a broad full-text phrase search retained mostly non-AEC development-economics reports): no text query any more; a structured walk of 24 WDS classification slices (Publications & Research / Economic & Sector Work / Publications x Urban Development, Transport, Energy, Water Supply and Sanitation, Communities and Human Settlements, Infrastructure Economics and Finance; plus ESMAP, PPIAF and Water and Sanitation Program series), newest first, 100 records per request at 1 request/s, with the multilingual title gate, a filter for figurative 'capacity building' / 'the road to' titles and the operational-document denylist (sample 2026-10-12: gate kept 19% of 48,367 records). New rows are licence unverified with the World Bank Group terms as evidence (non-commercial use, no derivative works; no CC BY grant established for the WDS copy), so they land in collection/unverified. After the walk: every 3 days a catch-up reads each slice from the newest record back to the previous coverage boundary (document date, 45-day margin), over as many rounds as needed; every 90 days the full walk runs again to reconcile backdated additions and records lost to listing shifts larger than the 5-record overlap. Malformed answers, empty or short pages below the total and a slice without records hold; never EXHAUSTED. Loader: documents.worldbank.org and documents1.worldbank.org are polite hosts (honest UA verified 2026-10-12, 1 s, 120 per run). required=false"
   },
   "find_jstage": {
     "script": "find_jstage.py",
