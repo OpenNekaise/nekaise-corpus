@@ -140985,25 +140985,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.ejrh.2022.101010 openalex:W4210259879
     resolution: 'legacy: openalex location'
-  - id: ope-hydraulic-characterization-and-removal-of-meta
-    title: Hydraulic characterization and removal of metals and nutrients in an aerated
-      horizontal subsurface flow “racetrack” wetland treating primary-treated o
-    url: https://scholarworks.montana.edu/bitstreams/0fbb09e8-99a5-42c1-b176-431d7f8f1432/download
-    source: openalex
-    license: cc-by-nc-nd
-    topic: infrastructure
-    format: pdf
-    language: en
-    published_at: '2021-05-14'
-    document_type: article
-    persistent_id: https://doi.org/10.1016/j.watres.2021.117220
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://scholarworks.montana.edu/bitstreams/0fbb09e8-99a5-42c1-b176-431d7f8f1432/download;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-12'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1016/j.watres.2021.117220 openalex:W3163292803
-    resolution: 'legacy: openalex location'
   - id: oas-10-3390-su172210317-2385ef79
     title: 'Automating Building Energy Performance Simulation with EnergyPlus Using
       Modular JSON–Python Workflows: A Case Study of the Hilton Watford Hotel'
@@ -146764,4 +146745,57 @@ sources:
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:physics/0212105 (v2, the
       current version and the copy this URL names): no licence element -> arxiv-nonexclusive
       (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-gamma-radiation-measurements-and-dose-rates-in
+    title: Gamma Radiation Measurements and Dose Rates in Commonly Used Building Materials
+      in Cyprus
+    url: https://arxiv.org/pdf/1009.3385v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2010-09-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1009.3385
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1009.3385 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-complex-network-analysis-of-water-distribution
+    title: Complex network analysis of water distribution systems
+    url: https://arxiv.org/pdf/1104.0121v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2011-04-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1104.0121
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1104.0121 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1063/1.3540339
+  - id: arx-on-scaling-functionality-in-urban-form
+    title: On Scaling Functionality in Urban Form
+    url: https://arxiv.org/pdf/1311.2462v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2013-11-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1311.2462
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1311.2462 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
     rights_verified_at: '2026-10-12'
