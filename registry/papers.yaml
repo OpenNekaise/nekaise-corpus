@@ -140963,3 +140963,78 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.apenergy.2025.125686 openalex:W4408253249
     resolution: 'sim1: openalex+unpaywall location'
+  - id: ope-a-microbial-fuel-cell-in-contaminated-ground-d
+    title: A microbial fuel cell in contaminated ground delineated by electrical self‐potential
+      and normalized induced polarization data
+    url: https://pureadmin.qub.ac.uk/ws/files/2725088/2009JG001131_PROOF.pdf
+    source: openalex
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2010-07-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1029/2009jg001131
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://pureadmin.qub.ac.uk/ws/files/2725088/2009JG001131_PROOF.pdf; version
+      submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1029/2009jg001131 openalex:W2102284379
+    resolution: 'legacy: openalex location'
+  - id: ope-automated-model-construction-for-combined-sewe
+    title: Automated Model Construction for Combined Sewer Overflow Prediction Based
+      on Efficient LASSO Algorithm
+    url: https://ueaeprints.uea.ac.uk/id/eprint/75905/1/08013727.pdf
+    source: openalex
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2017-08-21'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/tsmc.2017.2724440
+    license_evidence: no licence statement for this copy [copy https://ueaeprints.uea.ac.uk/id/eprint/75905/1/08013727.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1109/tsmc.2017.2724440 openalex:W2743158422
+    resolution: 'legacy: openalex location'
+  - id: ope-geochemistry-and-evolution-of-groundwater-reso
+    title: Geochemistry and evolution of groundwater resources in the context of salinization
+      and freshening in the southernmost Mekong Delta, Vietnam
+    url: https://publikationen.bibliothek.kit.edu/1000142832/144981423
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2022-02-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.ejrh.2022.101010
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://publikationen.bibliothek.kit.edu/1000142832/144981423; version submittedVersion;
+      rights accepted]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.ejrh.2022.101010 openalex:W4210259879
+    resolution: 'legacy: openalex location'
+  - id: ope-hydraulic-characterization-and-removal-of-meta
+    title: Hydraulic characterization and removal of metals and nutrients in an aerated
+      horizontal subsurface flow “racetrack” wetland treating primary-treated o
+    url: https://scholarworks.montana.edu/bitstreams/0fbb09e8-99a5-42c1-b176-431d7f8f1432/download
+    source: openalex
+    license: cc-by-nc-nd
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2021-05-14'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.watres.2021.117220
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://scholarworks.montana.edu/bitstreams/0fbb09e8-99a5-42c1-b176-431d7f8f1432/download;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.watres.2021.117220 openalex:W3163292803
+    resolution: 'legacy: openalex location'
