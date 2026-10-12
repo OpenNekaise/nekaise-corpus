@@ -164,12 +164,14 @@
   "find_kitopen": {
     "script": "find_kitopen.py",
     "args": [
-      "--set",
-      "ddc:720",
+      "--pages",
+      "10",
       "--max",
-      "300"
+      "150"
     ],
-    "enabled": true
+    "enabled": true,
+    "required": false,
+    "reason": "RE-AIMED 2026-10-12: KITopen OAI-PMH sets ddc:720 (architecture, urban design; 1,438 records) and ddc:690 (KIT's civil-engineering and building output; 9,346 records), walked again for every licence class (the earlier walks kept CC BY / BY-SA / CC0 only): open CC via licenses.cc_license, a lone NC/ND CC URL keeps its exact tag, the KITopen License is publisher-oa, anything else unverified; live sample 82 new full texts in 300 records; weekly watch pass (OAI from=) after the walk, never EXHAUSTED; ddc:620 stays out (too broad, sampled twice); loader: publikationen.bibliothek.kit.edu is a polite host (honest UA, serial, 2 s, 120 files per run, no curl fallback); required=false"
   },
   "find_japan": {
     "script": "find_japan.py",

@@ -105,6 +105,7 @@ HOST_CONCURRENCY: dict[str, int] = {
     "unmethours.com": 1,    # small community Q&A site (find_unmethours): serial, paced
     "www.diva-portal.org": 1,  # find_diva: robots Crawl-delay 10 means serial
     "docs.nlr.gov": 1,         # find_nlr report PDFs: serial, paced
+    "publikationen.bibliothek.kit.edu": 1,  # find_kitopen full texts: serial, paced
 }
 # politeness overrides for hosts that need them (currently none). HOST_DELAY: minimum seconds
 # between request STARTS against a host, enforced under its semaphore — for hosts that tarpit at
@@ -137,9 +138,10 @@ HOST_DELAY: dict[str, float] = {
     # Crawl-delay; one request start per second per host keeps a bulk walk calm.
     "ec.europa.eu": 1.0,
     "www.ec.europa.eu": 1.0,
-    # No robots Crawl-delay (www.nlr.gov/robots.txt allows all and docs.nlr.gov has none): one
-    # request start per 2 s is a conservative pace.
+    # No robots Crawl-delay on either host (www.nlr.gov/robots.txt allows all and docs.nlr.gov
+    # has none; KITopen robots `Allow: /`): one request start per 2 s is a conservative pace.
     "docs.nlr.gov": 2.0,
+    "publikationen.bibliothek.kit.edu": 2.0,
 }
 HONEST_UA = "nekaise-corpus/build_corpus"
 HOST_UA: dict[str, str] = {
@@ -163,9 +165,10 @@ HOST_UA: dict[str, str] = {
     # the identity its finders (find_osti_sim / find_osti_aec) already use. The override also
     # binds the curl fallback, so no OSTI request presents as a browser.
     "www.osti.gov": HONEST_UA,
-    # NLR report PDFs (find_nlr) are served to the honest tool UA (3 PDFs, 200
-    # application/pdf, verified 2026-10-12). A POLITE host.
+    # NLR report PDFs (find_nlr) and KITopen full texts (find_kitopen) are served to the honest
+    # tool UA (3 PDFs per host, 200 application/pdf, verified 2026-10-12). Both are POLITE hosts.
     "docs.nlr.gov": HONEST_UA,
+    "publikationen.bibliothek.kit.edu": HONEST_UA,
 }
 # POLITE hosts: a refusal or challenge means "stop and come back later", never "try another
 # identity". For these hosts the loader uses only HOST_UA, never the browser UA or the curl
@@ -176,7 +179,7 @@ HOST_UA: dict[str, str] = {
 # prune_corpus.RETRY_MAX_*), and are never blocklisted.
 POLITE_HOSTS = frozenset({"publications.ibpsa.org", "escholarship.org", "unmethours.com",
                           "www.diva-portal.org", "ec.europa.eu", "www.ec.europa.eu",
-                          "docs.nlr.gov"})
+                          "docs.nlr.gov", "publikationen.bibliothek.kit.edu"})
 CHALLENGE_STATUSES = frozenset({202, 403, 429, 503})
 CHALLENGE_BODY = re.compile(
     rb"sgcaptcha|captcha|challenge-platform|cf-chl|awswaf|request blocked|access denied", re.I
@@ -193,6 +196,7 @@ HOST_RUN_CAP: dict[str, int] = {
     "www.diva-portal.org": 60,     # 60 x 10 s = 10 min (find_diva + find_diva_aec)
     "ec.europa.eu": 150,           # deliverables: 150 x 2 hops at 1 s per host = ~3-5 min
     "docs.nlr.gov": 120,           # 120 x 2 s = 4 min
+    "publikationen.bibliothek.kit.edu": 120,  # 120 x 2 s = 4 min
 }
 # Compliance/ESG programme (Codex decision 2026-09-25; ids bov-bfs- / reg- / eur- / esf-, see
 # scripts/compliance_common.py, which owns the reviewed delivery-host table): a programme row's

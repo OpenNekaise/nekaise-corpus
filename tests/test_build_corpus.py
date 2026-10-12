@@ -347,7 +347,9 @@ def test_polite_challenge_trips_circuit_without_fallback(tmp_path, monkeypatch, 
     assert calls[0][1] == build_corpus.HOST_UA["publications.ibpsa.org"]
 
 
-NLR_KIT = {"docs.nlr.gov": "https://docs.nlr.gov/docs/fy26osti/9529{n}.pdf"}
+NLR_KIT = {"docs.nlr.gov": "https://docs.nlr.gov/docs/fy26osti/9529{n}.pdf",
+           "publikationen.bibliothek.kit.edu":
+               "https://publikationen.bibliothek.kit.edu/100019754{n}/19116846{n}"}
 
 
 def _nlr_kit(host, n):
