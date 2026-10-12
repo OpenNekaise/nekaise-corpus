@@ -616,7 +616,7 @@ def test_archive_org_500_is_transient_but_other_hosts_500_is_not(tmp_path, monke
 
     node = build_corpus.download_one(_arc(1))
     front = build_corpus.download_one(_arc(2, "https://archive.org/download/x/x_djvu.txt"))
-    other = build_corpus.download_one({**_arc(3, "https://example.org/y.txt"), "id": "rep-y"})
+    other = build_corpus.download_one({**_arc(3, "https://example.org/y.txt"), "id": "ost-y"})
 
     for row in (node, front):  # retried by later rounds, and no circuit: the next row still ran
         assert row["transient"] is True and row["http_status"] == 500

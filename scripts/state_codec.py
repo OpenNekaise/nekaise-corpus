@@ -57,6 +57,8 @@ SHARDS = {
     "osm-": "ostisim.yaml",    # find_osti_sim (OSTI building energy / physical simulation query family)
     "osa-": "ostiaec.yaml",    # find_osti_aec (OSTI general built-environment query family; hash-bucketed)
     "umh-": "unmethours.yaml",  # find_unmethours (Unmet Hours simulation Q&A pages, CC BY-SA 3.0)
+    "rep-": "repositories.yaml",  # find_repo (university / institute repositories over OAI-PMH,
+                                  # config registry/repositories.json; licence per record)
     "dva-": "diva.yaml",       # find_diva (DiVA Swedish theses/reports on building simulation, OAI-PMH)
     "zns-": "zenodosim.yaml",  # find_zenodo_sim (Zenodo building simulation publications, all licences)
     "eur-": "eurlex.yaml",     # find_eurlex (EU acts via the Publications Office Cellar, 24 languages)

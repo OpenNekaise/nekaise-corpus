@@ -200,6 +200,20 @@
     "enabled": false,
     "reason": "nilim floor 2012 reached (start 320, step -6 walks below floor); bri/data top-number re-walk = occasional manual run"
   },
+  "find_repo": {
+    "script": "find_repo.py",
+    "args": [
+      "--repos",
+      "2",
+      "--pages",
+      "6",
+      "--max",
+      "60"
+    ],
+    "enabled": true,
+    "required": false,
+    "reason": "NEW 2026-10-12: theses, dissertations, reports and repository copies of papers on the built environment from vetted university / institute repositories over OAI-PMH (DSpace xoai), one config-driven finder (registry/repositories.json, a rights record per repository: robots.txt, terms, sample downloads; AI-crawler opt-outs, challenges and OAI/bitstream Disallow rules reject a repository); two repositories per round, round-robin, at each host's robots Crawl-delay (min 2 s); keeps open, non-embargoed ORIGINAL PDFs of dedicated built-environment sets / departments / Dewey classes or with an unambiguous AEC title term (en + the repository's languages); licence per record (canonical CC URL else unverified); loader hosts polite (serial, honest UA, ~4.5 min per host and run); after a repository's history a from= watch every 7 days, never EXHAUSTED; required=false"
+  },
   "find_modelica_conf": {
     "script": "find_modelica_conf.py",
     "args": [

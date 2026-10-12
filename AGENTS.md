@@ -145,7 +145,9 @@ Laboratory of the Rockies (ex-NREL) building reports (history walk, then a weekl
 physical simulation query family (licence per record) · `find_osti_aec.py` the general OSTI
 built-environment query family (same runner: title gate, licence per record, then a daily watch
 pass over newly entered records; supersedes `find_osti.py`) · `find_unmethours.py` Unmet Hours
-simulation Q&A pages (CC BY-SA 3.0, sitemap walk) · `find_diva.py` DiVA (Swedish universities)
+simulation Q&A pages (CC BY-SA 3.0, sitemap walk) · `find_repo.py` theses, reports and papers from vetted university
+repositories over OAI-PMH (`registry/repositories.json`, a rights record per repository; licence
+per record) · `find_diva.py` DiVA (Swedish universities)
 theses and reports via OAI-PMH, two families: building simulation (`find_diva`) and every
 built-environment subject (`find_diva_aec`, gate `scripts/diva_aec.py`); both end in a datestamp
 watch cursor, not exhaustion · `find_zenodo_sim.py` Zenodo building

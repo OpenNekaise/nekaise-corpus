@@ -119,7 +119,8 @@ PREFIX_GENRE = [
     (("oapen", "intechopen", "textbook", "oer", "internet_archive", "wikibooks"), "books_textbooks"),
     (("wikipedia",), "encyclopedic"),
     (("gov_uk", "sdz_at", "hdz_at", "ademe", "bri_jp", "nilim_jp"), "international_bodies"),
-    (("kitopen", "ojs_"), "research_papers"),
+    # repo_*: find_repo (registry/repositories.json)
+    (("kitopen", "ojs_", "repo_"), "research_papers"),
     (("gov_", "doe", "eere", "epa", "fhwa", "fema", "usgs", "osha", "gsa", "nps", "hud", "usda",
       "wbdg", "nist", "nasa", "ornl", "sandia", "access_board", "noaa", "usbr"), "us_gov_lab_reports"),
 ]

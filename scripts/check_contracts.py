@@ -257,6 +257,22 @@ def vendor_contract_errors(config) -> list[str]:
         return [f"registry/vendors.json: {exc}"]
 
 
+def repository_contract_errors(config, backends: dict) -> list[str]:
+    """registry/repositories.json as PINNED with the data, validated like find_repo loads it
+    (scripts/repo_config.py). The document is required when a backend runs find_repo.py."""
+    import repo_config
+    doc = config.documents.get("repositories.json")
+    if doc is None:
+        configured = any(isinstance(cfg, dict) and cfg.get("script") == "find_repo.py"
+                         for cfg in backends.values())
+        return (["registry/repositories.json: missing from the pinned configuration"]
+                if configured else [])
+    try:
+        return [f"registry/repositories.json: {e}" for e in repo_config.validate(doc)]
+    except Exception as exc:
+        return [f"registry/repositories.json: {exc}"]
+
+
 def staged_gate_contract_errors() -> list[str]:
     """Under PostgreSQL authority the round's gates are the staged set: the versioned claim
     check, lint, contracts, the test suite and the artifact gate — never the file store's SQLite
@@ -372,6 +388,7 @@ def main(argv=()) -> int:
     errors.extend(patent_country_contract_errors(effective))
     # vendor-literature config is control plane: schema errors must fail the round, not a fetch
     errors.extend(vendor_contract_errors(config))
+    errors.extend(repository_contract_errors(config, backends))
     errors.extend(programme_config_errors(programme_docs, backends))
     errors.extend(host_policy_contract_errors(effective, policy))
     configured_scripts = {cfg["script"] for cfg in backends.values()}

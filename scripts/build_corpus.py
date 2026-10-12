@@ -314,7 +314,8 @@ POLITE_HOSTS = POLITE_HOSTS | frozenset(ojs_sites.HOSTS)
 # pacing for the rest of the run. Such rows use the honest UA on every hop, each hop host gets
 # the paced defaults, and a refusal is never retried through another client. A finder that
 # wants its rows robots-checked appends its id prefix here.
-ROBOTS_CHECKED_PREFIXES: tuple[str, ...] = ("ojs-",)
+# rep-: find_repo rows (university repositories, registry/repositories.json)
+ROBOTS_CHECKED_PREFIXES: tuple[str, ...] = ("ojs-", "rep-")
 ROBOTS_MAX_DELAY = 15.0
 
 
@@ -743,6 +744,49 @@ try:  # vendor-literature hosts declare their politeness delay once, in registry
     HOST_DELAY.update(find_vendor.host_delays(find_vendor.load_vendors()))
 except Exception as exc:  # a broken vendors.json fails the contracts gate; fetching stays usable
     print(f"vendors.json host delays not applied: {exc}", file=sys.stderr)
+
+
+def apply_repository_hosts(hosts: dict[str, dict]) -> None:
+    """University / institute repositories (find_repo, scripts/repo_config.py) are polite
+    hosts: serial, paced at the robots Crawl-delay the config records, honest UA only, a per-run
+    cap of about RUN_SECONDS of downloads. Stricter values already configured here win."""
+    global POLITE_HOSTS
+    for host, limits in hosts.items():
+        HOST_CONCURRENCY[host] = 1
+        HOST_DELAY[host] = max(HOST_DELAY.get(host, 0.0), float(limits["delay"]))
+        HOST_UA[host] = HONEST_UA
+        HOST_RUN_CAP[host] = min(HOST_RUN_CAP.get(host, int(limits["cap"])), int(limits["cap"]))
+    POLITE_HOSTS = POLITE_HOSTS | frozenset(hosts)
+    REPOSITORY_HOSTS.update(hosts)
+
+
+# Hosts of every configured repository (enabled or not), and why they are unknown when the
+# configuration could not be loaded. A `rep-` row is downloaded only from a host with these
+# protections: with no usable configuration, or on any other host, it is DEFERRED (no request,
+# no manifest change), never fetched with the default UA, concurrency and fallback clients.
+REPOSITORY_HOSTS: set[str] = set()
+REPOSITORY_CONFIG_ERROR = ""
+REPOSITORY_PREFIX = "rep-"
+try:  # repository hosts declare their politeness once, in registry/repositories.json
+    import repo_config
+    apply_repository_hosts(repo_config.loader_hosts(repo_config.load_config()))
+except Exception as exc:
+    REPOSITORY_CONFIG_ERROR = f"{type(exc).__name__}: {exc}"[:200]
+    if not isinstance(exc, FileNotFoundError):  # absent: a checkout without the find_repo vein
+        print(f"repositories.json host settings not applied, rep- rows are deferred: {exc}",
+              file=sys.stderr)
+
+
+def repository_deferral(sid: str, url: str) -> str | None:
+    """Why a `rep-` row must not be requested now, or None."""
+    if not sid.startswith(REPOSITORY_PREFIX):
+        return None
+    if REPOSITORY_CONFIG_ERROR:
+        return f"repository policy configuration unavailable ({REPOSITORY_CONFIG_ERROR})"
+    host = host_policy.canonical_host(url)
+    if host not in REPOSITORY_HOSTS:
+        return f"{host} is not a host of a configured repository (registry/repositories.json)"
+    return None
 
 
 def _version(package: str) -> str:
@@ -1198,6 +1242,9 @@ def download_one(src: dict) -> dict:
     url = src["url"]
     host = host_policy.canonical_host(url)
     programme = is_programme_row(sid)
+    if why := repository_deferral(sid, url):
+        rec["_deferred"] = why
+        return rec
     if programme and not PROGRAMME.admit(sid):
         rec["_deferred"] = "programme budget (bytes/time) spent this run"
         return rec

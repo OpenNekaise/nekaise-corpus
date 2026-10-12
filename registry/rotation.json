@@ -112,6 +112,13 @@
     "step": -6,
     "note": "nilim 2012-2025 mined (floor 2012); bri reports 139-158 done (new numbers appear at top); --series data (建築研究資料, data.html) walked No.1-217 on 07-17 (+141 appended, ~105 live folders) — re-walk the top numbers occasionally for new releases"
   },
+  "find_repo": {
+    "flag": "--cursor",
+    "next": "START",
+    "step": 0,
+    "dynamic": true,
+    "note": "NEW 2026-10-12: JSON {r: round-robin position over the enabled repositories of registry/repositories.json (sorted keys), s: {key: {i: index into that repository's sets (append-only), t: OAI resumptionToken, f: from-date of this pass, d: date this pass started, w: date the last pass ended, p: from-date for the next pass}}}. First pass = full history per set; then a from= pass every 7 days. A failing repository keeps its state and is retried on its next turn. START = empty state."
+  },
   "find_wiki": {
     "flag": "--depth",
     "next": 270,

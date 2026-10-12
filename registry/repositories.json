@@ -1,0 +1,455 @@
+{
+  "_readme": "University and institute repositories harvested over OAI-PMH by scripts/find_repo.py (backend find_repo). One entry per repository, vetted by hand: robots.txt (the OAI path and the full-text path must not be disallowed for *; an AI / dataset crawler opt-out or a challenge page rejects the repository), terms of use (a prohibition of systematic or bulk downloading rejects it), and two sample PDFs fetched with the honest tool User-Agent. `sets` is append-only (the rotation cursor indexes it); `all_sets` are sets dedicated to the built environment (no term gate, the off-domain title veto still applies); `relevant_fields` maps a metadata field to a pattern that marks a record as built-environment (a department or faculty name); `open_access` names the field that must state the open value (fail closed); `types` / `skip_types` override the default document types ('*' = a dedicated thesis repository without dc.type). `crawl_delay` is the robots.txt Crawl-delay (minimum 2 s) and paces both the finder and the loader (scripts/build_corpus.py makes every enabled host polite: serial, honest UA, per-run cap). Licence is classified per record (scripts/find_repo.py licence_of): collect regardless of licence, never a generic open. To add a repository: vet it, add the entry with its rights record, run tests/test_find_repo.py and scripts/check_contracts.py. `backlog` records candidates not enabled, with the verified reason. Run-time enforcement: the finder re-reads robots.txt and the pinned host policy before every request and redirect hop, and the loader keeps the polite-host settings for every configured host (also of disabled repositories) and defers rep- rows when this file cannot be loaded.",
+  "_policy": {
+    "reject": "robots.txt Disallow covering the OAI endpoint or the bitstream path for *; robots.txt Disallow: / (or ai-train opt-out) for AI / dataset crawlers such as ClaudeBot, GPTBot, CCBot, anthropic-ai; a WAF / JS / proof-of-work challenge on robots.txt, the OAI endpoint or the PDF; terms that prohibit systematic or bulk downloading or restrict access to registered users",
+    "go": "OAI-PMH endpoint published for harvesting, full texts openly downloadable with an honest User-Agent, no prohibition found; rights are recorded per document"
+  },
+  "repositories": {
+    "chalmers-odr": {
+      "name": "Chalmers Open Digital Repository (ODR)",
+      "country": "SE",
+      "languages": [
+        "en",
+        "sv"
+      ],
+      "source": "repo_chalmers_odr",
+      "platform": "dspace-xoai",
+      "oai": "https://odr.chalmers.se/oai/request",
+      "hosts": [
+        "odr.chalmers.se"
+      ],
+      "fulltext_pattern": "^https://odr\\.chalmers\\.se/bitstreams/[0-9a-f-]{36}/download$",
+      "sets": [
+        "com_20.500.12380_2",
+        ""
+      ],
+      "all_sets": [
+        "com_20.500.12380_2"
+      ],
+      "relevant_fields": {
+        "dc.contributor.department": "arkitektur och samhällsbyggnad|Architecture and Civil Engineering|bygg- och miljöteknik|Civil and Environmental Engineering|Institutionen för arkitektur|Department of Architecture"
+      },
+      "crawl_delay": 3,
+      "topic": "structures_civil",
+      "enabled": false,
+      "rights": {
+        "robots": "https://odr.chalmers.se/robots.txt (2026-10-12): User-agent: * disallows /discover, /search, /browse/*, /admin/*, /statistics and account pages; no Crawl-delay; /oai/ and /bitstreams/ are not disallowed; no AI-crawler group (named Disallow: / groups are SEO and offline-copy tools: SemrushBot, Amazonbot, HTTrack, wget ...). REJECTED 2026-10-12 by the shared run-time rule (robots_policy.ai_training_refused): the Disallow: / group for Amazonbot is an AI / dataset crawler opt-out, so the finder and the loader skip this host.",
+        "terms_url": "https://odr.chalmers.se/bitstreams/03b4683c-02ab-49d8-b3e2-9bad5879a467/download",
+        "terms_excerpt": "CONDITIONS FOR PUBLISHING: All works in odr.chalmers.se are protected by copyright. See each record for specific information about license(s). [...] All students/authors of a thesis must have given their consent to e-publishing on the Work Card/publishing agreement. (No prohibition of automated or bulk download found.)",
+        "reviewed_at": "2026-10-12",
+        "decision": "rejected"
+      }
+    },
+    "luh-repo": {
+      "name": "Leibniz Universität Hannover Repository",
+      "country": "DE",
+      "languages": [
+        "en",
+        "de"
+      ],
+      "source": "repo_luh",
+      "platform": "dspace-xoai",
+      "oai": "https://repo.uni-hannover.de/server/oai/request",
+      "hosts": [
+        "repo.uni-hannover.de"
+      ],
+      "fulltext_pattern": "^https://repo\\.uni-hannover\\.de/server/api/core/bitstreams/[0-9a-f-]{36}/content(?:/[^?#]*)?$",
+      "sets": [
+        "col_123456789_3",
+        "col_123456789_2",
+        "col_123456789_326",
+        "ddc:690",
+        "ddc:720",
+        "ddc:710",
+        "ddc:620"
+      ],
+      "all_sets": [
+        "col_123456789_326",
+        "ddc:690",
+        "ddc:720"
+      ],
+      "types": "thesis|report|book|article|conferenceobject|workingpaper|periodicalpart|bookpart",
+      "skip_types": "recension|review$|dataset|image|video|sound|software|lecture|poster",
+      "open_access": {
+        "field": "tib.accessRights",
+        "pattern": "^openAccess$"
+      },
+      "crawl_delay": 3,
+      "topic": "structures_civil",
+      "enabled": true,
+      "rights": {
+        "robots": "https://repo.uni-hannover.de/robots.txt (2026-10-12): User-agent: * disallows /search, /admin/*, /processes, /submit, /workspaceitems, /profile, /workflowitems, /entities/*?f; no Crawl-delay; /server/oai/ and /server/api/core/bitstreams/ are not disallowed; no AI-crawler group.",
+        "terms_url": "https://repo.uni-hannover.de/server/oai/request?verb=Identify",
+        "terms_excerpt": "NO TERMS PAGE COULD BE READ: the policy page (https://www.repo.uni-hannover.de/page/policies) answers 403 to an automated request and was not worked around; the terms_url is the OAI Identify endpoint, not a terms page. Evidence is per record: dc.rights.uri / dc.rights.license (mostly Creative Commons) and tib.accessRights openAccess.",
+        "reviewed_at": "2026-10-12",
+        "decision": "go"
+      }
+    },
+    "uminho": {
+      "name": "RepositóriUM - Universidade do Minho",
+      "country": "PT",
+      "languages": [
+        "pt",
+        "en",
+        "es"
+      ],
+      "source": "repo_uminho",
+      "platform": "dspace-xoai",
+      "oai": "https://repositorium.sdum.uminho.pt/oai/request",
+      "hosts": [
+        "repositorium.uminho.pt"
+      ],
+      "fulltext_pattern": "^https://repositorium\\.uminho\\.pt/bitstreams/[0-9a-f-]{36}/download$",
+      "sets": [
+        "com_1822_9380",
+        "com_1822_1088",
+        "com_1822_9381",
+        "com_1822_9382",
+        "com_1822_1835"
+      ],
+      "all_sets": [
+        "com_1822_9380",
+        "com_1822_1088",
+        "com_1822_9381",
+        "com_1822_9382"
+      ],
+      "types": "thesis|report|book|article|conferencepaper|workingpaper",
+      "skip_types": "editorial|abstract|review$|dataset|image|video|sound|software|lecture|poster|patent",
+      "open_access": {
+        "field": "dc.rights",
+        "pattern": "^openAccess$"
+      },
+      "crawl_delay": 3,
+      "topic": "structures_civil",
+      "enabled": true,
+      "rights": {
+        "robots": "https://repositorium.uminho.pt/robots.txt and https://repositorium.sdum.uminho.pt/robots.txt (2026-10-12): User-agent: * disallows /search, /admin/*, /processes, /submit, /workspaceitems, /profile, /workflowitems, /entities/*?f, /collections/*?f, /communities/*?spc.page; no Crawl-delay; /oai/ and /bitstreams/ are not disallowed; no AI-crawler group.",
+        "terms_url": "https://helpdesk.usdb.uminho.pt/faqs/en-gb/29-about-repositorium/82-what-are-the-objectives-of-repositorium",
+        "terms_excerpt": "NO TERMS-OF-USE PAGE WAS FOUND for RepositóriUM (searched 2026-10-12; the terms page that exists belongs to the separate DataRepositóriUM). The library's knowledge base states the repository's objectives: 'To enhance the impact of research conducted at the University of Minho. To enhance the visibility of UMinho and its academic community [...]'. No prohibition of automated or bulk download was found. Every record states its access level in dc.rights (only openAccess is proposed) and, where granted, a Creative Commons licence in dc.rights.uri.",
+        "reviewed_at": "2026-10-12",
+        "decision": "go"
+      }
+    },
+    "umanitoba-mspace": {
+      "name": "MSpace - University of Manitoba",
+      "country": "CA",
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "source": "repo_umanitoba",
+      "platform": "dspace-xoai",
+      "oai": "https://mspace.lib.umanitoba.ca/server/oai/request",
+      "hosts": [
+        "mspace.lib.umanitoba.ca"
+      ],
+      "fulltext_pattern": "^https://mspace\\.lib\\.umanitoba\\.ca/bitstreams/[0-9a-f-]{36}/download$",
+      "sets": [
+        "com_1993_36354",
+        "com_1993_5",
+        "com_1993_3991"
+      ],
+      "all_sets": [
+        "com_1993_36354"
+      ],
+      "relevant_fields": {
+        "dc.degree.discipline": "^(?:Department of |School of |Faculty of )?(?:Civil(?: and Environmental| and Structural| and Coastal)? Engineering|Architecture|Architecture and Design Research|Landscape Architecture|Building Construction|Building Science|Building/Construction Science and Management|Construction Economics|Construction Management|Environmental Design and Planning|City Planning|Community Planning|Urban and Regional Planning|Urban Affairs and Planning|Town and Regional Planning|Interior Design|Environmental Engineering|Real Estate)$"
+      },
+      "crawl_delay": 3,
+      "topic": "structures_civil",
+      "enabled": true,
+      "rights": {
+        "robots": "https://mspace.lib.umanitoba.ca/robots.txt (2026-10-12): User-agent: * disallows /search, /admin/*, /processes, /submit, /workspaceitems, /profile, /workflowitems, /entities/*?f; no Crawl-delay; /server/oai/ and /bitstreams/ are not disallowed; no AI-crawler group.",
+        "terms_url": "https://mspace.lib.umanitoba.ca/bitstreams/941e14c0-51e0-4b4c-b76f-1abe53c1a6b9/download",
+        "terms_excerpt": "MSpace Copyright Distribution Licence: 'Works deposited to MSpace are public documents [...] MSpace users shall be permitted to reproduce copies of the Licenced Materials for non-commercial research and educational purposes or pursuant to the terms of an Open Licence applied to the Licenced Materials by you.' (No prohibition of automated or bulk download found; records state no licence, so rows are unverified.)",
+        "reviewed_at": "2026-10-12",
+        "decision": "go"
+      }
+    },
+    "vtechworks": {
+      "name": "VTechWorks (Virginia Tech)",
+      "country": "US",
+      "languages": [
+        "en"
+      ],
+      "source": "repo_vtechworks",
+      "platform": "dspace-xoai",
+      "oai": "https://vtechworks.lib.vt.edu/server/oai/request",
+      "hosts": [
+        "vtechworks.lib.vt.edu"
+      ],
+      "fulltext_pattern": "^https://vtechworks\\.lib\\.vt\\.edu/bitstreams/[0-9a-f-]{36}/download$",
+      "sets": [
+        "com_10919_23747",
+        "com_10919_111113",
+        "com_10919_24236",
+        "com_10919_24371",
+        "col_10919_11041",
+        "col_10919_9291"
+      ],
+      "all_sets": [
+        "com_10919_23747",
+        "com_10919_111113",
+        "com_10919_24236",
+        "com_10919_24371"
+      ],
+      "relevant_fields": {
+        "dc.contributor.department": "^(?:Department of |School of |Faculty of )?(?:Civil(?: and Environmental| and Structural| and Coastal)? Engineering|Architecture|Architecture and Design Research|Landscape Architecture|Building Construction|Building Science|Building/Construction Science and Management|Construction Economics|Construction Management|Environmental Design and Planning|City Planning|Community Planning|Urban and Regional Planning|Urban Affairs and Planning|Town and Regional Planning|Interior Design|Environmental Engineering|Real Estate)$",
+        "thesis.degree.discipline": "^(?:Department of |School of |Faculty of )?(?:Civil(?: and Environmental| and Structural| and Coastal)? Engineering|Architecture|Architecture and Design Research|Landscape Architecture|Building Construction|Building Science|Building/Construction Science and Management|Construction Economics|Construction Management|Environmental Design and Planning|City Planning|Community Planning|Urban and Regional Planning|Urban Affairs and Planning|Town and Regional Planning|Interior Design|Environmental Engineering|Real Estate)$"
+      },
+      "crawl_delay": 3,
+      "topic": "structures_civil",
+      "enabled": true,
+      "rights": {
+        "robots": "https://vtechworks.lib.vt.edu/robots.txt (2026-10-12): User-agent: * Crawl-delay: 2; disallows /search, /admin/*, /processes, /submit, /workspaceitems, /profile, /workflowitems, /browse/*, /statistics and account pages; /server/oai/ and /bitstreams/ are not disallowed; no AI-crawler group.",
+        "terms_url": "https://guides.lib.vt.edu/vtwpolicies/tdm",
+        "terms_excerpt": "VTechWorks Policies, TDM Policy (read 2026-10-12, page last updated 2022-07-29): 'VTechWorks metadata is open for text and data mining because metadata is not copyrightable. Anyone who wants to mine the objects in VTechWorks, must comply with U.S. Copyright law. [...] Some works have Creative Commons licenses.' No prohibition of automated or bulk download is stated. Records state their rights in dc.rights / dc.rights.uri (mostly 'In Copyright' http://rightsstatements.org/vocab/InC/1.0/: unverified).",
+        "reviewed_at": "2026-10-12",
+        "decision": "go"
+      }
+    },
+    "auburn-etd": {
+      "name": "Auburn University Electronic Theses and Dissertations (AUETD)",
+      "country": "US",
+      "languages": [
+        "en"
+      ],
+      "source": "repo_auburn_etd",
+      "platform": "dspace-xoai",
+      "oai": "https://etd.auburn.edu/oai/request",
+      "hosts": [
+        "etd.auburn.edu"
+      ],
+      "fulltext_pattern": "^https://etd\\.auburn\\.edu/bitstream/10415/[0-9]+/[0-9]+/[^?#]+\\.pdf$",
+      "sets": [
+        "col_10415_2"
+      ],
+      "relevant_fields": {
+        "dc.subject": "^(?:Department of |School of |Faculty of )?(?:Civil(?: and Environmental| and Structural| and Coastal)? Engineering|Architecture|Architecture and Design Research|Landscape Architecture|Building Construction|Building Science|Building/Construction Science and Management|Construction Economics|Construction Management|Environmental Design and Planning|City Planning|Community Planning|Urban and Regional Planning|Urban Affairs and Planning|Town and Regional Planning|Interior Design|Environmental Engineering|Real Estate)$"
+      },
+      "open_access": {
+        "field": "dc.embargo.status",
+        "pattern": "^NOT_EMBARGOED$"
+      },
+      "ignore_fields": [
+        "dc.embargo.length"
+      ],
+      "crawl_delay": 3,
+      "topic": "structures_civil",
+      "enabled": true,
+      "rights": {
+        "robots": "https://etd.auburn.edu/robots.txt (2026-10-12): User-agent: * disallows /discover, /search-filter, /handle/*/*/discover, /browse, /contact, /feedback, /forgot, /login, /register, /ldap-login; no Crawl-delay; /oai/ and /bitstream/ are not disallowed; no AI-crawler group (named Disallow: / groups are offline-copy and SEO tools).",
+        "terms_url": "https://etd.auburn.edu/",
+        "terms_excerpt": "NO TERMS-OF-USE PAGE WAS FOUND (searched 2026-10-12). Records carry dc.embargo.status (only NOT_EMBARGOED records are proposed; an embargoed file redirects to a login page and is never requested) and state no reuse licence, so rows are unverified.",
+        "reviewed_at": "2026-10-12",
+        "decision": "go"
+      }
+    },
+    "up-space": {
+      "name": "University of Pretoria Repository (UPSpace)",
+      "country": "ZA",
+      "languages": [
+        "en"
+      ],
+      "source": "repo_upspace",
+      "platform": "dspace-xoai",
+      "oai": "https://repository.up.ac.za/server/oai/request",
+      "hosts": [
+        "repository.up.ac.za"
+      ],
+      "fulltext_pattern": "^https://repository\\.up\\.ac\\.za/bitstreams/[0-9a-f-]{36}/download$",
+      "sets": [
+        ""
+      ],
+      "relevant_fields": {
+        "dc.description.department": "^(?:Department of |School of |Faculty of )?(?:Civil(?: and Environmental| and Structural| and Coastal)? Engineering|Architecture|Architecture and Design Research|Landscape Architecture|Building Construction|Building Science|Building/Construction Science and Management|Construction Economics|Construction Management|Environmental Design and Planning|City Planning|Community Planning|Urban and Regional Planning|Urban Affairs and Planning|Town and Regional Planning|Interior Design|Environmental Engineering|Real Estate)$"
+      },
+      "crawl_delay": 6,
+      "topic": "structures_civil",
+      "enabled": false,
+      "rights": {
+        "robots": "https://repository.up.ac.za/robots.txt (2026-10-12): User-agent: * disallows /search, /admin/*, /processes, /submit, /workspaceitems, /profile, /workflowitems, /entities/*?f; no Crawl-delay (6 s used: the host is slow); /server/oai/ and /bitstreams/ are not disallowed; no AI-crawler group.",
+        "terms_url": "https://repository.up.ac.za/server/oai/request?verb=Identify",
+        "terms_excerpt": "NO TERMS-OF-USE PAGE WAS FOUND (searched 2026-10-12). Thesis records state '© <year> University of Pretoria. All rights reserved. The copyright in this work vests in the University of Pretoria.' (unverified); embargo dates are in dc.description.embargo (a future date drops the record). NOT ENABLED: on 2026-10-12 the host answered one sample PDF, then HTTP 502, a dropped connection and a connect timeout (robots.txt took 20 s); enable after it answers reliably.",
+        "reviewed_at": "2026-10-12",
+        "decision": "later"
+      }
+    }
+  },
+  "backlog": [
+    {
+      "name": "ETH Research Collection",
+      "url": "https://www.research-collection.ethz.ch/oai/request",
+      "status": "rejected",
+      "reason": "robots.txt 2026-10-12: User-agent: GPTBot Disallow: / (AI-crawler opt-out) and for * Disallow: /server/oai/* (the OAI service); Crawl-delay 10"
+    },
+    {
+      "name": "UPCommons (UPC Barcelona)",
+      "url": "https://upcommons.upc.edu/oai/request",
+      "status": "rejected",
+      "reason": "robots.txt 2026-10-12: Disallow: / for ClaudeBot, anthropic-ai, Claude-Web, GPTBot, ChatGPT-User, Bytespider"
+    },
+    {
+      "name": "TU Berlin DepositOnce",
+      "url": "https://depositonce.tu-berlin.de",
+      "status": "rejected",
+      "reason": "robots.txt 2026-10-12: Disallow: / for anthropic-ai, ClaudeBot, Claude-Web, CCBot, ChatGPT-User, Bytespider"
+    },
+    {
+      "name": "Uni Kassel KOBRA",
+      "url": "https://kobra.uni-kassel.de/server/oai/request",
+      "status": "rejected",
+      "reason": "robots.txt 2026-10-12: Disallow: /oai for * and AI-crawler groups (ClaudeBot, GPTBot, CCBot)"
+    },
+    {
+      "name": "TU Dortmund Eldorado",
+      "url": "https://eldorado.tu-dortmund.de/server/oai/request",
+      "status": "rejected",
+      "reason": "robots.txt 2026-10-12: for * Disallow: /oai, /oai/request (the OAI service); Crawl-delay 10"
+    },
+    {
+      "name": "ZHAW digitalcollection",
+      "url": "https://digitalcollection.zhaw.ch/oai/request",
+      "status": "rejected",
+      "reason": "robots.txt 2026-10-12: User-agent: * Disallow: /"
+    },
+    {
+      "name": "Edinburgh ERA / Heriot-Watt ROS / Cranfield CERES",
+      "url": "https://era.ed.ac.uk/oai/request",
+      "status": "rejected",
+      "reason": "robots.txt 2026-10-12 on each host: Disallow: / for ClaudeBot, anthropic-ai, Claude-Web, GPTBot, CCBot, Google-Extended (Cranfield also Content-Signal ai-train=no)"
+    },
+    {
+      "name": "University of Galway / Georgia Tech / Iowa State / NUS ScholarBank / Auckland",
+      "url": "https://researchrepository.universityofgalway.ie/server/oai/request",
+      "status": "rejected",
+      "reason": "robots.txt 2026-10-12 on each host: for * Disallow: /server/oai/* (the OAI service); Crawl-delay 10 (Auckland also names AI crawlers)"
+    },
+    {
+      "name": "UPCT Cartagena / Alicante RUA / A Coruña RUC / Aveiro RIA / Calgary PRISM / Toronto TSpace / METU / UNAL / JYX Jyväskylä",
+      "url": "https://repositorio.upct.es/oai/request",
+      "status": "rejected",
+      "reason": "robots.txt 2026-10-12 on each host names AI / dataset crawlers in Disallow: / groups (ClaudeBot, GPTBot, CCBot, anthropic-ai, AI2Bot or PerplexityBot; Toronto and Calgary also carry an ai-train content signal)"
+    },
+    {
+      "name": "Estudo Geral (Coimbra)",
+      "url": "https://estudogeral.uc.pt/oai/request",
+      "status": "rejected",
+      "reason": "robots.txt 2026-10-12: for * Disallow: /*? (covers every OAI request, which carries a query string); Crawl-delay 10"
+    },
+    {
+      "name": "Universidad de Chile",
+      "url": "https://repositorio.uchile.cl/oai/request",
+      "status": "rejected",
+      "reason": "2026-10-12: the bitstream PDF URLs answer an Anubis proof-of-work challenge page to the honest tool UA (OAI itself answers)"
+    },
+    {
+      "name": "Universidade de Lisboa / Uni Stuttgart elib",
+      "url": "https://repositorio.ulisboa.pt/oai/request",
+      "status": "rejected",
+      "reason": "2026-10-12: robots.txt itself answers an Anubis challenge page"
+    },
+    {
+      "name": "Rice Research Repository",
+      "url": "https://repository.rice.edu/server/oai/request",
+      "status": "rejected",
+      "reason": "2026-10-12: bitstream downloads answer HTTP 202 with an empty body (WAF challenge) to the honest tool UA"
+    },
+    {
+      "name": "POLITesi (Politecnico di Milano) / HKU Scholars Hub",
+      "url": "https://www.politesi.polimi.it/oai/request",
+      "status": "rejected",
+      "reason": "2026-10-12: robots.txt answers a Cloudflare 'Just a moment...' challenge (403)"
+    },
+    {
+      "name": "NTU Singapore DR-NTU / UCD Research Repository / Texas A&M OAKTrust / UT Austin",
+      "url": "https://dr.ntu.edu.sg/oai/request",
+      "status": "rejected",
+      "reason": "2026-10-12: robots.txt answers 403/405 with a human-verification or block page"
+    },
+    {
+      "name": "Seoul National University S-Space",
+      "url": "https://s-space.snu.ac.kr/oai/request",
+      "status": "rejected",
+      "reason": "robots.txt 2026-10-12: for * Disallow: /bitstream/ (the full-text path)"
+    },
+    {
+      "name": "TU Wien reposiTUm",
+      "url": "https://repositum.tuwien.at/oai/request",
+      "status": "rejected",
+      "reason": "robots.txt 2026-10-12: User-agent: GPTBot Disallow: / (AI-crawler opt-out); the OAI path answered HTTP 500"
+    },
+    {
+      "name": "Qucosa (TU Dresden) / TU Braunschweig LEOPARD",
+      "url": "https://tud.qucosa.de/oai/",
+      "status": "rejected",
+      "reason": "robots.txt 2026-10-12: Qucosa Disallow: / for ClaudeBot and GPTBot (Crawl-delay 30); LEOPARD for * Disallow: /servlets/ (the OAI provider) and /*?"
+    },
+    {
+      "name": "PolyU Electronic Theses (Hong Kong)",
+      "url": "https://theses.lib.polyu.edu.hk/oai/request",
+      "status": "later",
+      "reason": "xoai and PDFs work and robots.txt is clean, but the site states 'The Database is available for access by bona fide library users for the sole purpose of research or private study in compliance with the Copyright Ordinance' and each record says 'All rights reserved': needs a rights decision. Config hint: relevant_fields dc.contributor = Department of Civil and Environmental Engineering | Building and Real Estate | Building Environment and Energy Engineering; types '*'; open_access dcterms.accessRights ^open access$"
+    },
+    {
+      "name": "Kyoto University KURENAI",
+      "url": "https://repository.kulib.kyoto-u.ac.jp/server/oai/request",
+      "status": "later",
+      "reason": "xoai works and robots.txt is clean (no Crawl-delay, no AI group), dcterms.accessRights 'open access' / 'embargoed access'; but /bitstreams/<uuid>/download answers the JavaScript application page (the PDF is at /server/api/core/bitstreams/<uuid>/content: needs a url rewrite), the terms of use were not read yet, and the gate needs Japanese terms and NDC classes (51x civil engineering, 52x architecture)"
+    },
+    {
+      "name": "UFSC (Brazil)",
+      "url": "https://repositorio.ufsc.br/oai/request",
+      "status": "later",
+      "reason": "xoai works and robots.txt is clean, but bitstream URLs redirect with a non-UTF-8 Location header that python-requests cannot follow; needs a URL normalisation"
+    },
+    {
+      "name": "MIT DSpace / LUTPub / Trepo / Cornell eCommons / Brunel BURA / TUprints / HCU Hamburg / Helda",
+      "url": "https://dspace.mit.edu/server/oai/request",
+      "status": "later",
+      "reason": "DSpace (or successor) without the xoai metadata format (mets / ore / qdc / oai_dc only): needs a dspace-mets or oai_dc adapter. LUTPub Crawl-delay 20, TUprints and Helda Crawl-delay 5. HCU Hamburg is a dedicated built-environment university (high value)"
+    },
+    {
+      "name": "TU/e Pure, Aalborg VBN (BUILD / SBi reports), VTT (cris.vtt.fi)",
+      "url": "https://vbn.aau.dk/ws/oai",
+      "status": "later",
+      "reason": "Pure OAI answers Identify (2026-10-12); needs a pure adapter (scripts/find_nlr.py parses one) and per-host vetting"
+    },
+    {
+      "name": "EPrints repositories: Politecnico di Torino webthesis, ETS Montreal Espace, QUT ePrints, White Rose eTheses, Concordia Spectrum",
+      "url": "https://webthesis.biblio.polito.it/cgi/oai2",
+      "status": "later",
+      "reason": "OAI answers Identify (2026-10-12); needs an eprints-oai_dc adapter and per-host vetting"
+    },
+    {
+      "name": "German xMetaDissPlus repositories: RWTH Publications, OPUS Augsburg, KLUEDO",
+      "url": "https://publications.rwth-aachen.de/oai2d",
+      "status": "later",
+      "reason": "needs an xmetadissplus adapter (ddb:transfer file URL); RWTH robots.txt restricts /oai2d/ for Googlebot and bingbot groups: read the * group before enabling"
+    },
+    {
+      "name": "Aaltodoc / mediaTUM / UPV RiuNet / Canterbury / ITU Polen / Bauhaus Weimar / Cantabria / UTFPR / UFPR",
+      "url": "https://aaltodoc.aalto.fi/server/oai/request",
+      "status": "later",
+      "reason": "connect or read timeout from this network on 2026-10-12 (Aaltodoc answers Identify and lists xoai, then resets the connection)"
+    },
+    {
+      "name": "Hosts answering 5xx: U Porto, Unicamp, UFRGS Lume, Granada Digibug, UnB, Cambridge Apollo, K-REx",
+      "url": "https://repositorio-aberto.up.pt/oai/request",
+      "status": "later",
+      "reason": "HTTP 502/503/504 on robots.txt or the OAI endpoint on 2026-10-12; retry"
+    },
+    {
+      "name": "NTNU Open / UiO DUO (Norway)",
+      "url": "https://nva.sikt.no",
+      "status": "later",
+      "reason": "the old DSpace OAI endpoints redirect to the national NVA portal (nva.sikt.no); its API and terms were not vetted"
+    },
+    {
+      "name": "PUCP Tesis (Peru)",
+      "url": "https://tesis.pucp.edu.pe/oai/request",
+      "status": "later",
+      "reason": "xoai works (26,270 records changed since 2026-06; Spanish theses with CC 2.5 PE licences; access as info:eu-repo and COAR access-right URIs, which the finder reads) and robots.txt is clean, but the host stops answering (connect timeout) after two or three requests in a row on 2026-10-12: do not enable until the cause is known. Config hint: relevant_fields thesis.degree.discipline ^(Ingeniería Civil|Arquitectura)$ and thesis.degree.grantor Facultad de Arquitectura y Urbanismo"
+    }
+  ]
+}
