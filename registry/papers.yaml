@@ -140818,3 +140818,76 @@ sources:
     rights_verified_at: '2026-10-12T01:48:44Z'
     origin_ids: doi:10.3390/rs10060946 openalex:W2808092904
     resolution: 'legacy: openalex location'
+  - id: ope-bayesian-dynamic-modelling-for-probabilistic-p
+    title: Bayesian dynamic modelling for probabilistic prediction of pavement condition
+    url: https://www.repository.cam.ac.uk/bitstreams/26428c1d-2ae0-4f4d-9062-ecdc64b19239/download
+    source: openalex
+    license: cc-by-nc
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-05-27'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.engappai.2024.108637
+    license_evidence: openalex.license=cc-by-nc; openalex.license_id=https://openalex.org/licenses/cc-by-nc
+      [copy https://www.repository.cam.ac.uk/bitstreams/26428c1d-2ae0-4f4d-9062-ecdc64b19239/download;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.engappai.2024.108637 openalex:W4399046100
+    resolution: 'legacy: openalex location'
+  - id: ope-understanding-street-racing-and-hoon-culture-a
+    title: 'Understanding street racing and hoon culture: An exploratory investigation
+      of perceptions and experiences'
+    url: https://eprints.qut.edu.au/2785/1/2785.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2006-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W1526425973
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://eprints.qut.edu.au/2785/1/2785.pdf; version submittedVersion; rights
+      restricted]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: openalex:W1526425973
+    resolution: 'legacy: openalex location'
+  - id: ope-a-systematic-survey-role-of-deep-learning-base
+    title: 'A systematic survey: role of deep learning-based image anomaly detection
+      in industrial inspection contexts'
+    url: https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1554196/pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2025-06-23'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/frobt.2025.1554196
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1554196/pdf;
+      version publishedVersion; rights restricted]
+    rights_verified_at: '2026-10-12'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/frobt.2025.1554196 openalex:W4411568164
+    resolution: 'legacy: openalex location'
+  - id: ope-regulating-sidewalk-delivery-robots-as-a-disru
+    title: Regulating sidewalk delivery robots as a disruptive new urban technology
+    url: https://eprints.whiterose.ac.uk/id/eprint/205666/1/Regulating%20sidewalk%20delivery%20robots%20as%20a%20disruptive%20new%20urban%20technology.pdf
+    source: openalex
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2023-11-07'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/02723638.2023.2275426
+    license_evidence: no licence statement for this copy [copy https://eprints.whiterose.ac.uk/id/eprint/205666/1/Regulating%20sidewalk%20delivery%20robots%20as%20a%20disruptive%20new%20urban%20technology.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/02723638.2023.2275426 openalex:W4388453778
+    resolution: 'legacy: openalex location'
