@@ -143193,3 +143193,450 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
       -> cc-by-nc-nd (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-12'
+  - id: oas-10-48550-arxiv-2607-00585-1cbf1b7d
+    title: Mobility Safe Adaptive Reserve Certification for Electric Vehicle Hydrogen
+      Bus and Building Resilience Hubs
+    url: https://arxiv.org/pdf/2607.00585
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-07-01'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2607.00585
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2607.00585;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2607.00585 openalex:W7167011115
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2606-28834-58c2a801
+    title: 'Q-DASC: State-of-the-Art Safe Quantum Control for HVAC under Local Model
+      Misspecification'
+    url: https://arxiv.org/pdf/2606.28834
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-06-27'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2606.28834
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2606.28834;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2606.28834 openalex:W7166662144
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2606-09778-eb7cfb9b
+    title: Who Earns the Safety? Intervention-Aware Quantum Predictive Control with
+      Safety Attribution
+    url: https://arxiv.org/pdf/2606.09778
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-06-08'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2606.09778
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2606.09778;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2606.09778 openalex:W7164015844
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2606-01994-24e75ecb
+    title: Real-world and simulated thermal data from 960 residential multi-zone buildings
+      in Central Europe
+    url: https://arxiv.org/pdf/2606.01994
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-06-01'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2606.01994
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2606.01994;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2606.01994 openalex:W7163169240
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2605-30763-b484be0f
+    title: 'Scalable Distributed Learning-Based MPC for Heterogeneous Consumer-Prosumer
+      Building Aggregations: MPC-Aware Feature Selection and Convex Constraint-C'
+    url: https://arxiv.org/pdf/2605.30763
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-05-29'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2605.30763
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2605.30763;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2605.30763 openalex:W7163073135
+    resolution: 'sim1: openalex location'
+  - id: arx-do-resilience-metrics-of-water-distribution-sy
+    title: Do Resilience Metrics of Water Distribution Systems Really Assess Resilience?
+      A Critical Review
+    url: https://arxiv.org/pdf/2306.13113v1
+    source: arxiv
+    license: cc-by-sa
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2023-06-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2306.13113
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2306.13113 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-scenario-based-cost-optimization-of-water-dist
+    title: Scenario Based Cost Optimization of Water Distribution Networks Powered by
+      Grid-Connected Photovoltaic Systems
+    url: https://arxiv.org/pdf/2307.00845v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2023-07-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2307.00845
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2307.00845 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-degradation-aware-data-enabled-predictive-cont
+    title: Degradation-aware data-enabled predictive control of energy hubs
+    url: https://arxiv.org/pdf/2307.01543v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-07-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2307.01543
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2307.01543 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-what-influences-occupants-behavior-in-resident
+    title: 'What influences occupants'' behavior in residential buildings: An experimental
+      study on window operation in the KTH Live-In Lab'
+    url: https://arxiv.org/pdf/2307.08090v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-07-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2307.08090
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2307.08090 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-adaptive-control-of-iot-m2m-devices-in-smart-b
+    title: Adaptive Control of IoT/M2M Devices in Smart Buildings using Heterogeneous
+      Wireless Networks
+    url: https://arxiv.org/pdf/2302.13343v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-02-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2302.13343
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2302.13343 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-regression-based-model-error-compensation-for-
+    title: Regression-Based Model Error Compensation for Hierarchical MPC Building Energy
+      Management System
+    url: https://arxiv.org/pdf/2306.09080v2
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-06-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2306.09080
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2306.09080 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1109/ccta54093.2023.10252861
+  - id: arx-data-driven-adaptive-building-thermal-controll
+    title: 'Data-driven adaptive building thermal controller tuning with constraints:
+      A primal-dual contextual Bayesian optimization approach'
+    url: https://arxiv.org/pdf/2310.00758v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-10-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.00758
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.00758 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-impact-of-artificial-intelligence-on-electrica
+    title: Impact of Artificial Intelligence on Electrical and Electronics Engineering
+      Productivity in the Construction Industry
+    url: https://arxiv.org/pdf/2310.03591v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-10-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.03591
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.03591 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-optimal-control-of-district-cooling-energy-pla
+    title: Optimal Control of District Cooling Energy Plant with Reinforcement Learning
+      and MPC
+    url: https://arxiv.org/pdf/2310.03814v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-10-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.03814
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.03814 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-toward-more-accurate-and-robust-optimal-power-
+    title: Toward More Accurate and Robust Optimal Power Flow for Distribution Systems
+    url: https://arxiv.org/pdf/2310.06170v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-10-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.06170
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.06170 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-low-emission-building-control-with-zero-shot-r
+    title: Low Emission Building Control with Zero-Shot Reinforcement Learning
+    url: https://arxiv.org/pdf/2206.14191v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-06-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2206.14191
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2206.14191 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1609/aaai.v37i12.26668
+  - id: arx-designing-a-kinetic-fa-c-c-ade-using-bb-bc-alg
+    title: Designing a Kinetic Fa\c{c}ade Using BB-BC Algorithm with a Focus on Enhancing
+      Building Energy Efficiency
+    url: https://arxiv.org/pdf/2310.18650v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-10-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.18650
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.18650 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-real-world-implementation-of-reinforcement-lea
+    title: Real-World Implementation of Reinforcement Learning Based Energy Coordination
+      for a Cluster of Households
+    url: https://arxiv.org/pdf/2310.19155v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-10-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.19155
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.19155 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1145/3600100.3625681
+  - id: arx-transfer-learning-in-transformer-based-demand-
+    title: Transfer Learning in Transformer-Based Demand Forecasting For Home Energy
+      Management System
+    url: https://arxiv.org/pdf/2310.19159v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-10-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.19159
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.19159 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1145/3600100.3626635
+  - id: arx-energy-optimization-for-hvac-systems-in-multi-
+    title: 'Energy Optimization for HVAC Systems in Multi-VAV Open Offices: A Deep Reinforcement
+      Learning Approach'
+    url: https://arxiv.org/pdf/2306.13333v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2023-06-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2306.13333
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2306.13333 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-occupancy-detection-based-on-electricity-consu
+    title: Occupancy Detection Based on Electricity Consumption
+    url: https://arxiv.org/pdf/2312.08535v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-12-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2312.08535
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2312.08535 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-joint-expansion-planning-of-power-and-water-di
+    title: Joint Expansion Planning of Power and Water Distribution Networks
+    url: https://arxiv.org/pdf/2312.10224v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2023-12-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2312.10224
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2312.10224 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-active-reinforcement-learning-for-robust-build
+    title: Active Reinforcement Learning for Robust Building Control
+    url: https://arxiv.org/pdf/2312.10289v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-12-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2312.10289
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2312.10289 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-a-modifiable-architectural-design-for-commerci
+    title: A Modifiable Architectural Design for Commercial Greenhouses Energy Economic
+      Dispatch Testbed
+    url: https://arxiv.org/pdf/2401.03888v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-01-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2401.03888
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2401.03888 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1007/978-3-031-48649-4_14
+  - id: arx-havok-model-predictive-control-for-time-delay-
+    title: HAVOK Model Predictive Control for Time-Delay Systems with Applications to
+      District Heating
+    url: https://arxiv.org/pdf/2211.00134v2
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-10-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2211.00134
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2211.00134 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1016/j.ifacol.2023.10.1187
+  - id: arx-nonlinear-identification-algorithm-for-online-
+    title: Nonlinear identification algorithm for online and offline study of pulmonary
+      mechanical ventilation
+    url: https://arxiv.org/pdf/2402.18709v1
+    source: arxiv
+    license: cc0
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2024-02-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2402.18709
+    license_url: http://creativecommons.org/publicdomain/zero/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2402.18709 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/publicdomain/zero/1.0/
+      -> cc0 (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
