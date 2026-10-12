@@ -3005,21 +3005,6 @@ sources:
     license: cc-by-sa
     topic: urban
     format: pdf
-  - id: kit-wem-geh-rt-connewitz
-    title: Wem gehört Connewitz
-    url: https://publikationen.bibliothek.kit.edu/1000197711/191670693
-    source: kitopen
-    license: publisher-oa
-    topic: architecture
-    format: pdf
-    language: de
-    published_at: '2026-10-01'
-    document_type: book
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
   - id: kit-synergising-natural-material-complexity-and-low-impa
     title: Synergising Natural Material Complexity and Low-Impact Automation
     url: https://publikationen.bibliothek.kit.edu/1000197482/190966234
@@ -3323,20 +3308,6 @@ sources:
       rights stay with the authors, scholarly and personal use only, no commercial use
       or modification'
     rights_verified_at: '2026-10-12'
-  - id: kit-wirkungen-von-katastrophen-auf-das-soziale-gef-ge-am
-    title: Wirkungen von Katastrophen auf das soziale Gefüge am Beispiel der Trinkwasserversorgung
-      im ländlichen Südwesten von Bangladesch
-    url: https://publikationen.bibliothek.kit.edu/1000132698/113941178
-    source: kitopen
-    license: cc-by-nd
-    topic: architecture
-    format: pdf
-    language: de
-    published_at: '2021-05-17'
-    document_type: thesis
-    license_url: https://creativecommons.org/licenses/by-nd/4.0/deed.de
-    license_evidence: 'KITopen dc:rights: https://creativecommons.org/licenses/by-nd/4.0/deed.de'
-    rights_verified_at: '2026-10-12'
   - id: kit-more-than-substitute-nachdenken-ber-neue-geb-udeh-ll
     title: More than Substitute? Nachdenken über neue Gebäudehüllen aus nachwachsenden
       Rohstoffen
@@ -3612,22 +3583,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/deed.de
     license_evidence: 'KITopen dc:rights: https://creativecommons.org/licenses/by-nc-nd/4.0/deed.de'
     rights_verified_at: '2026-10-12'
-  - id: kit-wie-komplex-mu-e-partizipation-sein-erfahrungen-mit-
-    title: Wie komplex muß e-Partizipation sein? Erfahrungen mit elektronischer Bürgerbeteiligung
-      im Web 2.0
-    url: https://publikationen.bibliothek.kit.edu/1000068944/4141309
-    source: kitopen
-    license: publisher-oa
-    topic: architecture
-    format: pdf
-    language: de
-    published_at: '2016'
-    document_type: thesis
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
   - id: kit-continuous-simulation-for-urban-energy-planning-base
     title: Continuous Simulation for Urban Energy Planning Based on a Non-Linear Data-Driven
       Modelling Approach
@@ -3741,53 +3696,6 @@ sources:
       rights stay with the authors, scholarly and personal use only, no commercial use
       or modification'
     rights_verified_at: '2026-10-12'
-  - id: kit-wissenskommunikation-ber-f-chergrenzen-ein-trainings
-    title: Wissenskommunikation über Fächergrenzen. Ein Trainingsprogramm
-    url: https://publikationen.bibliothek.kit.edu/1000034004/2495615
-    source: kitopen
-    license: publisher-oa
-    topic: architecture
-    format: pdf
-    language: de
-    published_at: '2003'
-    document_type: journal-article
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
-  - id: kit-zur-rolle-der-psychologie-f-r-architektur-und-stadtp
-    title: Zur Rolle der Psychologie für Architektur und Stadtplanung - didaktische
-      und konzeptionelle Überlegungen
-    url: https://publikationen.bibliothek.kit.edu/1000034002/2495599
-    source: kitopen
-    license: publisher-oa
-    topic: urban
-    format: pdf
-    language: de
-    published_at: '2003'
-    document_type: journal-article
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
-  - id: kit-wie-es-ist-der-ffentliche-raum-in-zeiten-der-schrump
-    title: 'Wie es ist: Der öffentliche Raum in Zeiten der SchrumpfungDer öffentliche
-      Raum in Zeiten der Schrumpfung'
-    url: https://publikationen.bibliothek.kit.edu/1000033992/2495507
-    source: kitopen
-    license: publisher-oa
-    topic: architecture
-    format: pdf
-    language: de
-    published_at: '2004'
-    document_type: book-chapter
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
   - id: kit-sichtbeton-in-der-architektur-perspektivenunterschie
     title: 'Sichtbeton in der Architektur: Perspektivenunterschiede zwischen Experten
       und Laien'
@@ -3798,21 +3706,6 @@ sources:
     format: pdf
     language: de
     published_at: '2011'
-    document_type: journal-article
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
-  - id: kit-who-s-afraid-of-colours-blau-in-gelsenkirchen-keine-
-    title: Who's afraid of Colours? Blau in Gelsenkirchen, keine T-Shirts in Tirana
-    url: https://publikationen.bibliothek.kit.edu/1000031611/2494871
-    source: kitopen
-    license: publisher-oa
-    topic: architecture
-    format: pdf
-    language: de
-    published_at: '2008'
     document_type: journal-article
     license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
     license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
@@ -4812,21 +4705,6 @@ sources:
       rights stay with the authors, scholarly and personal use only, no commercial use
       or modification'
     rights_verified_at: '2026-10-12'
-  - id: kit-zustandsformen-des-verkehrsablaufs-auf-autobahnen
-    title: Zustandsformen des Verkehrsablaufs auf Autobahnen
-    url: https://publikationen.bibliothek.kit.edu/1000188895/171101828
-    source: kitopen
-    license: publisher-oa
-    topic: infrastructure
-    format: pdf
-    language: de
-    published_at: '1978'
-    document_type: thesis
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
   - id: kit-digitaler-zwilling-x-denkmalschutz-ein-neuer-ansatz-
     title: Digitaler Zwilling x Denkmalschutz – ein neuer Ansatz zur Vorbereitung eines
       Solarrahmenplans für eine denkmalgeschützte Altstadt
@@ -5535,22 +5413,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de
     license_evidence: 'KITopen dc:rights: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de'
     rights_verified_at: '2026-10-12'
-  - id: kit-wechselwirkungen-zwischen-verkehr-und-telekommunikat
-    title: Wechselwirkungen zwischen Verkehr und Telekommunikation in einer asiatischen
-      Stadtumgebung
-    url: https://publikationen.bibliothek.kit.edu/1000176316/155566389
-    source: kitopen
-    license: publisher-oa
-    topic: urban
-    format: pdf
-    language: de
-    published_at: '1998'
-    document_type: thesis
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
   - id: kit-a-literature-review-on-analytical-methods-in-constru
     title: A literature review on analytical methods in construction master scheduling
       to generate a competitive advantage
@@ -6228,21 +6090,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc/4.0/deed.de
     license_evidence: 'KITopen dc:rights: https://creativecommons.org/licenses/by-nc/4.0/deed.de'
     rights_verified_at: '2026-10-12'
-  - id: kit-wissenschaftliche-begleitung-der-easy-mile-busse-in-
-    title: Wissenschaftliche Begleitung der Easy-Mile-Busse in Monheim am Rhein - Ergebnisbericht
-    url: https://publikationen.bibliothek.kit.edu/1000169630/152531537
-    source: kitopen
-    license: publisher-oa
-    topic: structures_civil
-    format: pdf
-    language: de
-    published_at: 2024-02
-    document_type: report
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
   - id: kit-triaxial-mechanical-behaviours-and-life-cycle-assess
     title: Triaxial mechanical behaviours and life cycle assessment of sustainable multi-recycled
       aggregate concrete
@@ -6738,22 +6585,6 @@ sources:
     format: pdf
     language: en
     published_at: '2023-09-21'
-    document_type: conference-paper
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
-  - id: kit-weiterentwicklung-eines-separationsverfahrens-zur-be
-    title: Weiterentwicklung eines Separationsverfahrens zur Behandlung des Sekundärabfalls
-      aus der Wasser-Abrasiv-Suspensions-Schneidtechnik
-    url: https://publikationen.bibliothek.kit.edu/1000165709/151872759
-    source: kitopen
-    license: publisher-oa
-    topic: structures_civil
-    format: pdf
-    language: de
-    published_at: '2023-08-30'
     document_type: conference-paper
     license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
     license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
@@ -7330,21 +7161,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc/4.0/deed.de
     license_evidence: 'KITopen dc:rights: https://creativecommons.org/licenses/by-nc/4.0/deed.de'
     rights_verified_at: '2026-10-12'
-  - id: kit-wie-wird-in-autonomen-fahrzeugen-die-fahrzeit-genutz
-    title: Wie wird in autonomen Fahrzeugen die Fahrzeit genutzt? – Ergebnisse einer
-      Stated-Preference-Befragung
-    url: https://publikationen.bibliothek.kit.edu/1000158823/150919487
-    source: kitopen
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: de
-    published_at: '2023-05-08'
-    document_type: journal-article
-    persistent_id: doi:10.34647/jmv.nr17.id109
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/deed.de
-    license_evidence: 'KITopen dc:rights: https://creativecommons.org/licenses/by-nc-nd/4.0/deed.de'
-    rights_verified_at: '2026-10-12'
   - id: kit-ergebnisbericht-zu-den-arbeitspaketen-7-8-und-10-des
     title: Ergebnisbericht zu den Arbeitspaketen 7, 8 und 10 des Forschungsprojekts
       NaMaRes
@@ -7633,22 +7449,6 @@ sources:
     language: en
     published_at: '2022-12-15'
     document_type: thesis
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
-  - id: kit-wirkungen-neuer-mobilit-tsformen-auf-das-verkehrsver
-    title: 'Wirkungen neuer Mobilitätsformen auf das Verkehrsverhalten : Schlussbericht
-      - Forschungsprojekt im Auftrag des BMDV'
-    url: https://publikationen.bibliothek.kit.edu/1000153465/149775645
-    source: kitopen
-    license: publisher-oa
-    topic: infrastructure
-    format: pdf
-    language: de
-    published_at: '2022-09-30'
-    document_type: report
     license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
     license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
       rights stay with the authors, scholarly and personal use only, no commercial use
@@ -8794,22 +8594,6 @@ sources:
     source: kitopen
     license: publisher-oa
     topic: structures_civil
-    format: pdf
-    language: de
-    published_at: '2019'
-    document_type: thesis
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
-  - id: kit-zuhause-im-quartier-die-r-umliche-gestaltung-der-umw
-    title: Zuhause im Quartier - Die räumliche Gestaltung der Umwelt zwecks Förderung
-      der Ortsverbundenheit
-    url: https://publikationen.bibliothek.kit.edu/1000097006/36678089
-    source: kitopen
-    license: publisher-oa
-    topic: urban
     format: pdf
     language: de
     published_at: '2019'
@@ -11172,19 +10956,6 @@ sources:
       rights stay with the authors, scholarly and personal use only, no commercial use
       or modification'
     rights_verified_at: '2026-10-12'
-  - id: kit-zur-rheologie-und-den-physikalischen-wechselwirkunge
-    title: Zur Rheologie und den physikalischen Wechselwirkungen bei Zementsuspensionen
-    url: https://publikationen.bibliothek.kit.edu/1000015592/1240788
-    source: kitopen
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: de
-    published_at: '2010'
-    document_type: thesis
-    license_url: https://creativecommons.org/licenses/by-nc-nd/3.0/de/
-    license_evidence: 'KITopen dc:rights: https://creativecommons.org/licenses/by-nc-nd/3.0/de/'
-    rights_verified_at: '2026-10-12'
   - id: kit-ingenieurwissenschaftliche-untersuchungen-an-der-hau
     title: Ingenieurwissenschaftliche Untersuchungen an der Hauptkuppel und den Hauptpfeilern
       der Hagia Sophia in Istanbul
@@ -11715,22 +11486,6 @@ sources:
       rights stay with the authors, scholarly and personal use only, no commercial use
       or modification'
     rights_verified_at: '2026-10-12'
-  - id: kit-zur-praxis-ffentlichen-liegenschaftsverwaltung-bei-e
-    title: Zur Praxis öffentlichen Liegenschaftsverwaltung bei einem Staatlichen Vermögens-
-      und Hochbauamt - Prozessanalyse am Beispiel des Winterstützpunkt Simm
-    url: https://publikationen.bibliothek.kit.edu/1000011360/798046
-    source: kitopen
-    license: publisher-oa
-    topic: structures_civil
-    format: pdf
-    language: de
-    published_at: '2004'
-    document_type: thesis
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
   - id: kit-comparing-building-stocks-in-three-european-countrie
     title: Comparing building stocks in three European countries
     url: https://publikationen.bibliothek.kit.edu/1000011358/798032
@@ -11901,22 +11656,6 @@ sources:
       rights stay with the authors, scholarly and personal use only, no commercial use
       or modification'
     rights_verified_at: '2026-10-12'
-  - id: kit-wirksamkeit-von-verkehrsinformationen-und-belastungs
-    title: Wirksamkeit von Verkehrsinformationen und belastungsabhängigen Preisen zur
-      Nutzung von Kapazitätsreserven im Straßennetz
-    url: https://publikationen.bibliothek.kit.edu/1000010442/701365
-    source: kitopen
-    license: publisher-oa
-    topic: infrastructure
-    format: pdf
-    language: de
-    published_at: '2008'
-    document_type: thesis
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
   - id: kit-transportverhalten-koh-siver-sedimente-in-turbulente
     title: Transportverhalten kohäsiver Sedimente in turbulenten Strömungen - Untersuchungen
       im offenen Kreisgerinne
@@ -12074,21 +11813,6 @@ sources:
     format: pdf
     language: de
     published_at: '2007'
-    document_type: thesis
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
-  - id: kit-wissensbasierte-ausbildung-von-architekten
-    title: Wissensbasierte Ausbildung von Architekten
-    url: https://publikationen.bibliothek.kit.edu/1000008164/300736
-    source: kitopen
-    license: publisher-oa
-    topic: structures_civil
-    format: pdf
-    language: de
-    published_at: '2008'
     document_type: thesis
     license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
     license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
@@ -13215,22 +12939,6 @@ sources:
       rights stay with the authors, scholarly and personal use only, no commercial use
       or modification'
     rights_verified_at: '2026-10-12'
-  - id: kit-wassermengenbewirtschaftung-im-einzugsgebiet-der-ruh
-    title: 'Wassermengenbewirtschaftung im Einzugsgebiet der Ruhr: Simulation und Echtzeitbetrieb
-      [online]'
-    url: https://publikationen.bibliothek.kit.edu/5082003/2858
-    source: kitopen
-    license: publisher-oa
-    topic: structures_civil
-    format: pdf
-    language: de
-    published_at: '2003'
-    document_type: thesis
-    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
-    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
-      rights stay with the authors, scholarly and personal use only, no commercial use
-      or modification'
-    rights_verified_at: '2026-10-12'
   - id: kit-sedimenttransportprozesse-im-himalaya-karakorum-und-
     title: Sedimenttransportprozesse im Himalaya-Karakorum und ihre Bedeutung für Wasserkraftanlagen
       [online]
@@ -13709,6 +13417,129 @@ sources:
     format: pdf
     language: en
     published_at: '1995'
+    document_type: book-chapter
+    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
+    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
+      rights stay with the authors, scholarly and personal use only, no commercial use
+      or modification'
+    rights_verified_at: '2026-10-12'
+  - id: kit-das-kooperative-geb-ude-studie-zum-neubauvorhaben-de
+    title: Das Kooperative Gebäude - Studie zum Neubauvorhaben der GMD in Darmstadt
+    url: https://publikationen.bibliothek.kit.edu/361596/3187
+    source: kitopen
+    license: publisher-oa
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1996'
+    document_type: book
+    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
+    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
+      rights stay with the authors, scholarly and personal use only, no commercial use
+      or modification'
+    rights_verified_at: '2026-10-12'
+  - id: kit-life-cycle-modeling-of-buildings-life-cycle-impact-a
+    title: Life cycle modeling of buildings. Life cycle impact assessement and building
+      specification
+    url: https://publikationen.bibliothek.kit.edu/342195/1010
+    source: kitopen
+    license: publisher-oa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '1995'
+    document_type: conference-paper
+    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
+    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
+      rights stay with the authors, scholarly and personal use only, no commercial use
+      or modification'
+    rights_verified_at: '2026-10-12'
+  - id: kit-integration-of-sustainable-approaches-in-the-buildin
+    title: Integration of sustainable approaches in the building design process
+    url: https://publikationen.bibliothek.kit.edu/326598/2470
+    source: kitopen
+    license: publisher-oa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '1998'
+    document_type: conference-paper
+    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
+    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
+      rights stay with the authors, scholarly and personal use only, no commercial use
+      or modification'
+    rights_verified_at: '2026-10-12'
+  - id: kit-dynamische-entscheidungsunterst-tzung-in-computerbas
+    title: Dynamische Entscheidungsunterstützung in computerbasierten kooperativen Planungssystemen
+    url: https://publikationen.bibliothek.kit.edu/326498/2469
+    source: kitopen
+    license: publisher-oa
+    topic: structures_civil
+    format: pdf
+    language: de
+    published_at: '1998'
+    document_type: conference-paper
+    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
+    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
+      rights stay with the authors, scholarly and personal use only, no commercial use
+      or modification'
+    rights_verified_at: '2026-10-12'
+  - id: kit-caad-system-with-integrated-quantity-surveying-energ
+    title: CAAD system with integrated quantity surveying, energy calculation and LCA
+    url: https://publikationen.bibliothek.kit.edu/326298/2467
+    source: kitopen
+    license: publisher-oa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1998'
+    document_type: conference-paper
+    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
+    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
+      rights stay with the authors, scholarly and personal use only, no commercial use
+      or modification'
+    rights_verified_at: '2026-10-12'
+  - id: kit-integrales-energie-und-geb-udekonzept-f-r-ein-verwal
+    title: Integrales Energie- und Gebäudekonzept für ein Verwaltungsgebäude
+    url: https://publikationen.bibliothek.kit.edu/319398/799955
+    source: kitopen
+    license: publisher-oa
+    topic: building_energy
+    format: pdf
+    language: de
+    published_at: '1998'
+    document_type: conference-paper
+    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
+    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
+      rights stay with the authors, scholarly and personal use only, no commercial use
+      or modification'
+    rights_verified_at: '2026-10-12'
+  - id: kit-a-planning-process-model-for-computer-supported-coop
+    title: A planning process model for computer supported cooperative work in building
+      construction
+    url: https://publikationen.bibliothek.kit.edu/298098/2382
+    source: kitopen
+    license: publisher-oa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '1998'
+    document_type: conference-paper
+    license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
+    license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
+      rights stay with the authors, scholarly and personal use only, no commercial use
+      or modification'
+    rights_verified_at: '2026-10-12'
+  - id: kit-policies-strategies-and-planning-for-integrated-rura
+    title: Policies, strategies and planning for integrated rural water management in
+      the Mediterranean region
+    url: https://publikationen.bibliothek.kit.edu/281199/1059
+    source: kitopen
+    license: publisher-oa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '1999'
     document_type: book-chapter
     license_url: https://publikationen.bibliothek.kit.edu/kitopen-lizenz
     license_evidence: 'KITopen dc:rights: KITopen License — free to read in KITopen;
