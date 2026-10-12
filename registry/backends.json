@@ -379,12 +379,14 @@
   "find_ojs": {
     "script": "find_ojs.py",
     "args": [
+      "--sites",
+      "4",
       "--max",
-      "500"
+      "50"
     ],
     "enabled": true,
     "required": false,
-    "reason": "NEW 2026-09-24: small CC-BY built-environment journals/proceedings on Open Journal Systems via OAI-PMH (CLIMA 2022, J. Facade Design & Engineering, TU Delft OPEN coastal/hydraulic/delta-urbanism/architecture venues); per-record dc:rights gate keeps CC-BY/BY-SA/CC0/PDM only; required=false because small OJS hosts are volatile"
+    "reason": "NEW 2026-09-24, EXPANDED 2026-10-12: open-access built-environment journals/proceedings on Open Journal Systems via OAI-PMH; scripts/ojs_sites.py lists the reviewed venues (8 TU Delft/JFDE venues + 141 DOAJ-listed venues in en/es/pt/id/pl/ru/uk/it/de, each checked live: OAI, robots.txt for the OAI and download paths, no AI-crawler opt-out, sampled PDF galleys with an honest UA). Collects regardless of licence: per-record dc:rights gives the exact open or NC/ND Creative Commons tag, anything else unverified. Round-robin backfill (4 venues per round; a visit stops after the OAI page that reaches 50 new records), then a 7-day incremental watch cycle (OAI from=); never EXHAUSTED; robots.txt and host policy re-checked per request, one request clock per host; broad venues pass scripts/ojs_gate.py; loader: ojs- rows are robots-checked on every hop, hosts are polite (serial, >= 2 s, honest UA, 60 per run). required=false because small OJS hosts are volatile"
   },
   "find_boverket_bfs": {
     "script": "find_boverket.py",

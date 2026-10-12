@@ -130,6 +130,9 @@ NIST/NBS via Crossref · `find_zenodo.py` CC-licensed records · `find_patents.p
 Google Patents sitemap (the biggest open vein) · `find_wiki.py` multilingual Wikipedia ·
 `find_scielo.py` SciELO Brazil's CC-BY AEC journals (the biggest Portuguese built-environment
 vein) · `find_ibpsa.py` IBPSA building-simulation proceedings (captcha-paced) ·
+`find_ojs.py` open-access AEC journals and proceedings on Open Journal Systems via OAI-PMH (the
+reviewed, multilingual venue list is `scripts/ojs_sites.py`; licence per record, backfill then a
+weekly watch cycle) ·
 `find_escholarship.py` LBNL + UC Berkeley CBE CC-licensed papers (disabled: WAF policy) · `find_nlr.py` National
 Laboratory of the Rockies (ex-NREL) building reports (history walk, then a weekly watch pass) · `find_osti_sim.py` OSTI building energy /
 physical simulation query family (licence per record) · `find_osti_aec.py` the general OSTI

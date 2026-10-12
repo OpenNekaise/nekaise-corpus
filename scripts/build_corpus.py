@@ -59,6 +59,7 @@ import requests
 import artifact_store
 import compliance_common
 import host_policy
+import ojs_sites
 import fetch_backoff
 import ops
 import corpus_stats
@@ -226,7 +227,43 @@ for _host, (_delay, _cap) in compliance_common.PROGRAMME_HOSTS.items():
     HOST_RUN_CAP[_host] = min(HOST_RUN_CAP.get(_host, _cap), _cap)
     HOST_UA[_host] = HONEST_UA
 POLITE_HOSTS = POLITE_HOSTS | frozenset(compliance_common.PROGRAMME_HOSTS)
+# Open Journal Systems venues (find_ojs, scripts/ojs_sites.py; reviewed 2026-10-12): mostly small
+# university and society hosts. Each is a polite host: one connection, at least 1 s (or the
+# robots Crawl-delay seen at review) between request starts, the honest UA only (a sampled
+# galley of every venue was served to it), a challenge opens the per-run circuit, and at most
+# OJS_RUN_CAP downloads per run (a portal may host several venues). Their rows are also
+# robots-checked on every hop (ROBOTS_CHECKED_PREFIXES below).
+OJS_RUN_CAP = 60
+for _host in ojs_sites.HOSTS:
+    HOST_DELAY[_host] = max(HOST_DELAY.get(_host, 0.0), ojs_sites.HOST_DELAYS[_host])
+    HOST_CONCURRENCY[_host] = 1
+    HOST_RUN_CAP[_host] = min(HOST_RUN_CAP.get(_host, OJS_RUN_CAP), OJS_RUN_CAP)
+    HOST_UA.setdefault(_host, HONEST_UA)
+POLITE_HOSTS = POLITE_HOSTS | frozenset(ojs_sites.HOSTS)
 pace_key = compliance_common.pace_key
+# ROBOTS-CHECKED rows (generic; independent of the compliance programme's reviewed-host
+# allowlist and budgets): for a row whose id starts with one of these prefixes, robots.txt is
+# read (scripts/robots_policy.py, product token nekaise-corpus) for the ACTUAL download URL and
+# for every redirect hop, whatever its host, before the hop is requested. A Disallow, an
+# AI-training opt-out (a Disallow for a named AI / dataset crawler or Content-Signal
+# ai-train=no: robots_policy.ai_training_refused), an unavailable robots.txt (asked once per
+# origin and run) or a Crawl-delay above ROBOTS_MAX_DELAY defers the row (transient, not
+# requested, no retry ageing, never blocklisted); a smaller Crawl-delay raises that host's
+# pacing for the rest of the run. Such rows use the honest UA on every hop, each hop host gets
+# the paced defaults, and a refusal is never retried through another client. A finder that
+# wants its rows robots-checked appends its id prefix here.
+ROBOTS_CHECKED_PREFIXES: tuple[str, ...] = ("ojs-",)
+ROBOTS_MAX_DELAY = 15.0
+
+
+# origins whose robots.txt could not be established in THIS run (robots-checked rows)
+_robots_down: dict[str, str] = {}
+_robots_down_locks: dict[str, threading.Lock] = {}
+_robots_down_lock = threading.Lock()
+
+
+def is_robots_checked_row(sid: str) -> bool:
+    return sid.startswith(ROBOTS_CHECKED_PREFIXES)
 
 
 def is_programme_row(sid: str) -> bool:
@@ -409,11 +446,15 @@ class Hops:
     302 + Set-Cookie + relative Location chain needs the cookie on the next hop)."""
 
     def __init__(self, origin: str, copy_bound: bool, paced: bool = False,
-                 robots: bool = False, max_bytes: int | None = None, sid: str = ""):
+                 robots: bool = False, max_bytes: int | None = None, sid: str = "",
+                 robots_checked: bool = False):
         self.origin, self.copy_bound, self.paced = origin, copy_bound, paced
         # compliance programme rows: every hop on a reviewed host, robots.txt checked, honest
         # UA, challenge-classified, decoded body capped and charged to the programme budget
         self.robots, self.max_bytes = robots, max_bytes
+        # generic robots-checked rows (ROBOTS_CHECKED_PREFIXES): robots.txt on every hop of any
+        # host, honest UA, no fallback client; none of the programme's allowlist or budgets
+        self.robots_checked = robots_checked and not robots
         self.sid = sid
         self.started = time.monotonic()
         self.chain: list[str] = []
@@ -455,6 +496,41 @@ def check_hop(url: str, hops: "Hops | None" = None) -> None:
     hops = hops if hops is not None else _current_hops()
     if rule := host_policy.suspended(url, HOST_POLICY):
         raise HostSuspended(url, rule)
+    if hops is not None and hops.robots_checked:
+        import robots_policy
+        url = requests.Request("GET", url).prepare().url  # dot segments, escapes: as sent
+        # serial defaults BEFORE the host's semaphore can first be created (a cold robots.txt
+        # lookup takes it through _robots_pace)
+        _pace_host(pace_key(host_policy.canonical_host(url)))
+        org = robots_policy.origin(url)
+        with _robots_down_lock:
+            origin_lock = _robots_down_locks.setdefault(org, threading.Lock())
+        # One robots.txt attempt per origin and run: a refusal, challenge or timeout is
+        # remembered, and every later row (and every caller that waited here) defers WITHOUT
+        # another request.
+        with origin_lock:
+            if why := _robots_down.get(org):
+                raise ChallengeRefused(f"robots.txt unavailable ({why}; not asked again this "
+                                       "run)", requested=False)
+            try:
+                ok, delay = robots_policy.decision(url)
+                opt_out = robots_policy.ai_training_refused(url)
+            except robots_policy.RobotsUnavailable as exc:
+                _robots_down[org] = str(exc)
+                raise ChallengeRefused(f"robots.txt unavailable ({exc})",
+                                       requested=False) from exc
+        if not ok:
+            raise ChallengeRefused(f"robots.txt disallows {url}: deferred", requested=False)
+        if opt_out:
+            raise ChallengeRefused(f"robots.txt AI-training opt-out ({opt_out}) for {url}: "
+                                   "deferred", requested=False)
+        if delay and float(delay) > ROBOTS_MAX_DELAY:
+            raise ChallengeRefused(f"robots.txt Crawl-delay {float(delay):g} s for {url} exceeds "
+                                   f"{ROBOTS_MAX_DELAY:g} s: deferred", requested=False)
+        if delay:
+            key = pace_key(host_policy.canonical_host(url))
+            with _host_sems_lock:
+                HOST_DELAY[key] = max(HOST_DELAY.get(key, 0.0), float(delay))
     if hops is not None and hops.robots:
         import robots_policy
         url = requests.Request("GET", url).prepare().url  # dot segments, escapes: as sent
@@ -518,7 +594,7 @@ def _get_hops(url: str, fmt: str, *, session=None, headers: dict | None = None):
     for _ in range(MAX_REDIRECTS + 1):
         check_hop(hop)
         host = pace_key(host_policy.canonical_host(hop))
-        if hops is not None and hops.paced:
+        if hops is not None and (hops.paced or hops.robots_checked):
             _pace_host(host)
         with _host_sem(hop):
             _check_fetch_backoff(hop)
@@ -532,7 +608,8 @@ def _get_hops(url: str, fmt: str, *, session=None, headers: dict | None = None):
                 if not PROGRAMME.admit(hops.sid):
                     raise BudgetExceeded("programme budget spent while waiting")
             capped = hops is not None and hops.max_bytes is not None
-            ua = HONEST_UA if programme else HOST_UA.get(host, UA)
+            honest = programme or (hops is not None and hops.robots_checked)
+            ua = HONEST_UA if honest else HOST_UA.get(host, UA)
             if capped:
                 # one watchdog over the whole hop: header reception and every body read
                 import stream_guard
@@ -554,10 +631,10 @@ def _get_hops(url: str, fmt: str, *, session=None, headers: dict | None = None):
             _refuse_406(hop, getattr(resp, "status_code", 200), _header(resp, "retry-after"))
         status = getattr(resp, "status_code", 200)
         check_access_response(hop, status, getattr(resp, "content", b"") or b"", fmt)
-        if (host in POLITE_HOSTS or programme) and is_challenge(
+        if (host in POLITE_HOSTS or honest) and is_challenge(
                 status, getattr(resp, "content", b"") or b"", fmt):
             why = f"HTTP {status} challenge"
-            _trip_host(host, why, force=programme)
+            _trip_host(host, why, force=honest)
             raise ChallengeRefused(f"{why} (polite host: no fallback)", status)
         location = _header(resp, "location")
         if status in REDIRECT_STATUSES and location:
@@ -674,9 +751,20 @@ def _robots_pace(url: str):
     through the transport) and clock. check_hop — and so this — runs before the document hop
     takes the same semaphore, never inside it: no nested acquisition."""
     host = pace_key(host_policy.canonical_host(url))
+    hops = _current_hops()
+    if hops is not None and hops.robots_checked:
+        _pace_host(host)  # a robots.txt redirect host too: serial before its first semaphore
     with _host_sem(url):
         _wait_for_host(host)
         yield
+
+
+def _robots_hop_allowed(url: str) -> bool:
+    """Whether a robots.txt request (or a redirect of one) may go to this host: a reviewed
+    programme host, or any host while the current download is a generic robots-checked row
+    (suspended hosts are refused by robots_policy itself)."""
+    hops = _current_hops()
+    return compliance_common.reviewed_host(url) or (hops is not None and hops.robots_checked)
 
 
 def _host_sem(url: str) -> threading.BoundedSemaphore:
@@ -1039,7 +1127,7 @@ def download_one(src: dict) -> dict:
         rec["_deferred"] = "programme budget (bytes/time) spent this run"
         return rec
     hops = Hops(url, source in COPY_BOUND_SOURCES, paced=sid in PACED_IDS or programme,
-                robots=programme,
+                robots=programme, robots_checked=is_robots_checked_row(sid),
                 max_bytes=(ESEF_MAX_BYTES if sid.startswith("esf-") else PROGRAMME_MAX_BYTES)
                 if programme else None, sid=sid)
     _hops.value = hops
@@ -1177,7 +1265,7 @@ def _fetch_with_fallback(url: str, fmt: str, rec: dict, resp=None) -> bytes:
         resp.raise_for_status()
         return resp.content
     hops = _current_hops()
-    if (hops is not None and hops.robots) or any(
+    if (hops is not None and (hops.robots or hops.robots_checked)) or any(
             pace_key(host_policy.canonical_host(h)) in POLITE_HOSTS
             for h in (hops.chain if hops else [])):
         resp.raise_for_status()  # a polite host's refusal is never retried with another client
@@ -1606,8 +1694,9 @@ def _run(view, session, args, only: set[str], selection: dict) -> None:
     HOST_POLICY = policy  # enforced on every request hop (check_hop)
     import robots_policy
     robots_policy.set_policy(policy)  # robots.txt redirects obey the same suspensions
-    robots_policy.set_hop_filter(compliance_common.reviewed_host)
+    robots_policy.set_hop_filter(_robots_hop_allowed)
     robots_policy.set_pacer(_robots_pace)
+    _robots_down.clear()
     all_srcs = load_entries(view)
     # Collect regardless of licence (operator directive 2026-09-25): only an explicit
     # collection-deny rule (eligibility.json) keeps a source unfetched; its licence decides the

@@ -307,6 +307,46 @@ def crawl_delay(url: str, fetcher=None) -> float | None:
     return decision(url, fetcher)[1]
 
 
+# AI-training opt-outs (reviewed NO-GO precedent: ERDC, SciELO Peru, buildingSMART). decision()
+# answers for OUR product token only; a host that tells the AI / dataset crawlers to stay out
+# has opted out of exactly this use, whatever it says to `*`. Callers that collect for the
+# training corpus under robots rules (find_ojs, the loader's robots-checked rows) ask
+# ai_training_refused() too. The vendor-literature exception and the compliance programme do
+# not call it: their rules are reviewed elsewhere (AGENTS.md).
+AI_AGENTS = ("claudebot", "claude-web", "claude-user", "claude-searchbot", "anthropic",
+             "gptbot", "chatgpt", "oai-searchbot", "ccbot", "google-extended", "perplexity",
+             "img2dataset", "bytespider", "amazonbot", "applebot-extended", "cohere",
+             "meta-externalagent", "facebookbot", "diffbot", "omgili", "ai2bot", "youbot",
+             "mistralai", "deepseek", "timpibot", "imagesiftbot")
+_CONTENT_SIGNAL_NO = re.compile(r"^\s*content-signal\s*:[^#\n]*\bai-train\s*=\s*no\b", re.I | re.M)
+
+
+def ai_opt_out(text: str, url: str = "/") -> str | None:
+    """Why a robots.txt text opts `url` out of AI training, or None: a `Content-Signal:
+    ai-train=no` line, or an AI / dataset crawler whose rules disallow the URL (all groups
+    naming that crawler merged, then longest match, as for any agent)."""
+    if _CONTENT_SIGNAL_NO.search(text):
+        return "Content-Signal: ai-train=no"
+    groups = parse(text)
+    names = dict.fromkeys(a for g in groups for a in g["agents"]
+                          if any(bot in a for bot in AI_AGENTS))
+    for name in names:
+        # RFC 9309: several groups for one agent are ONE group; then longest match decides
+        rules = [rule for g in groups if name in g["agents"] for rule in g["rules"]]
+        if not permits(rules, url):
+            return f"Disallow for AI crawler {name}"
+    return None
+
+
+def ai_training_refused(url: str, fetcher=None) -> str | None:
+    """The AI-training opt-out covering url in its origin's robots.txt, or None; raises
+    RobotsUnavailable (callers defer). Uses the same cached record as decision()."""
+    rec = load(url, fetcher)
+    if rec["status"] == "absent":
+        return None
+    return ai_opt_out(rec["text"], url)
+
+
 def clear_memory() -> None:
     """Tests: forget the in-process cache."""
     with _lock:

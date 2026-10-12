@@ -50,7 +50,7 @@ SHARDS = {
     "sci-": "scielo.yaml",     # find_scielo (SciELO Brazil AEC journals, Portuguese, cc-by)
     "vnd-": "vendor.yaml",     # find_vendor (manufacturer product literature via sitemaps/listings;
                                # config registry/vendors.json, license=open by operator decision 2026-08-28)
-    "ojs-": "ojs.yaml",        # find_ojs (CC-BY journals/proceedings on Open Journal Systems, OAI-PMH)
+    "ojs-": "ojs.yaml",        # find_ojs (OA journals/proceedings on Open Journal Systems, OAI-PMH)
     "esc-": "escholarship.yaml",  # find_escholarship (LBNL + UC Berkeley CBE via eScholarship GraphQL, CC BY/BY-SA/CC0)
     "nlr-": "nlr.yaml",        # find_nlr (National Laboratory of the Rockies, ex-NREL, reports via Pure OAI)
     "osm-": "ostisim.yaml",    # find_osti_sim (OSTI building energy / physical simulation query family)
