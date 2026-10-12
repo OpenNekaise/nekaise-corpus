@@ -141038,3 +141038,39 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.watres.2021.117220 openalex:W3163292803
     resolution: 'legacy: openalex location'
+  - id: oas-10-3390-su172210317-2385ef79
+    title: 'Automating Building Energy Performance Simulation with EnergyPlus Using
+      Modular JSON–Python Workflows: A Case Study of the Hilton Watford Hotel'
+    url: https://repository.uwl.ac.uk/id/eprint/14286/1/Automating%20Building%20Energy%20Performance%20Simulation%20with%20EnergyPlus.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-11-18'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su172210317
+    license_evidence: no licence statement for this copy [copy https://repository.uwl.ac.uk/id/eprint/14286/1/Automating%20Building%20Energy%20Performance%20Simulation%20with%20EnergyPlus.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.3390/su172210317 openalex:W4416321892
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-3390-buildings15142532-bd46e0a3
+    title: Energy Consumption Analysis of Using Mashrabiya as a Retrofit Solution for
+      a Residential Apartment in Al Ain Square, Al Ain, UAE
+    url: https://centaur.reading.ac.uk/123714/1/buildings-15-02532.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-07-18'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/buildings15142532
+    license_evidence: no licence statement for this copy [copy https://centaur.reading.ac.uk/123714/1/buildings-15-02532.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.3390/buildings15142532 openalex:W4413060311
+    resolution: 'sim1: openalex+unpaywall location'

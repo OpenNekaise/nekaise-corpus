@@ -1,0 +1,162 @@
+# ostiaec-3 — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: osa-range-hood-use-and-effectiveness-in-reducing-indoor-
+    title: Range Hood Use and Effectiveness in Reducing Indoor Air Pollution During
+      Gas and Induction Cooking
+    url: https://www.osti.gov/servlets/purl/3424753
+    source: osti_aec
+    license: publisher-oa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-06-09'
+    document_type: journal-article
+    persistent_id: doi:10.1051/e3sconf/202671601054
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (E3S
+      Web of Conferences): free to read under the DOE Public Access Plan; publisher
+      copyright, no reuse licence'
+    rights_verified_at: '2026-10-12'
+  - id: osa-energy-management-in-small-commercial-buildings-a-lo
+    title: 'Energy Management in Small Commercial Buildings: A Look at How HVAC Contractors
+      Can Deliver Energy Efficiency to this Segment'
+    url: https://www.osti.gov/servlets/purl/1170602
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-07-01'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-federal-high-performance-and-sustainable-buildings-g
+    title: 'Federal High Performance and Sustainable Buildings: Guiding Principles for
+      the Laboratory Support Building (LSB)'
+    url: https://www.osti.gov/servlets/purl/1159320
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-09-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1159320
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-better-buildings-nw-ohio
+    title: Better Buildings NW Ohio
+    url: https://www.osti.gov/servlets/purl/1171731
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-03-04'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1171731
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-weatherization-assistance-program-technical-memorand
+    title: Weatherization Assistance Program Technical Memorandum Background Data and
+      Statistics On Low-Income Energy Use and Burdens
+    url: https://www.osti.gov/servlets/purl/1132973
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-04-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1132973
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-accelerating-energy-efficiency-improvements-in-room-
+    title: 'Accelerating Energy Efficiency Improvements in Room Air Conditioners in
+      India: Potential, Costs-Benefits, and Policies'
+    url: https://www.osti.gov/servlets/purl/1830081
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-04-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1830081
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-transforming-ordinary-buildings-into-smart-buildings
+    title: Transforming Ordinary Buildings into Smart Buildings via Low-Cost, Self-Powering
+      Wireless Sensors & Sensor Networks
+    url: https://www.osti.gov/servlets/purl/1372099
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-06-09'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1372099
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-an-analysis-of-statewide-adoption-rates-of-building-
+    title: An Analysis of Statewide Adoption Rates of Building Energy Code by Local
+      Jurisdictions
+    url: https://www.osti.gov/servlets/purl/1076722
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-12-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1076722
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-r-d-issues-in-the-office-of-energy-efficiency-and-re
+    title: R&D Issues in the Office of Energy Efficiency and Renewable Energy
+    url: https://www.osti.gov/servlets/purl/828760
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2003-08-24'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-energy-efficiency-in-buildings-as-an-air-quality-com
+    title: 'Energy Efficiency in Buildings as an Air Quality Compliance Approach: Opportunities
+      for the U.S. Department of Energy'
+    url: https://www.osti.gov/servlets/purl/810481
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2002-05-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/810481
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-strategies-for-demand-response-in-commercial-buildin
+    title: Strategies for Demand Response in Commercial Buildings
+    url: https://www.osti.gov/servlets/purl/908471
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2006-06-20'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'

@@ -1,0 +1,273 @@
+# ostiaec-1 — machine-appended shard (see AGENTS.md); prune_corpus edits it in place
+sources:
+  - id: osa-performance-of-a-co2-sorbent-for-indoor-air-cleaning
+    title: 'Performance of a CO2 sorbent for indoor air cleaning applications: Effects
+      of environmental conditions, sorbent aging, and adsorption of co-occurring '
+    url: https://www.osti.gov/servlets/purl/1633294
+    source: osti_aec
+    license: publisher-oa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-05-26'
+    document_type: journal-article
+    persistent_id: doi:10.1111/ina.12695
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Indoor
+      Air): free to read under the DOE Public Access Plan; publisher copyright, no reuse
+      licence'
+    rights_verified_at: '2026-10-12'
+  - id: osa-experimental-demonstration-of-drain-source-high-perf
+    title: Experimental Demonstration of Drain Source High Performance Water Heaters
+    url: https://www.osti.gov/servlets/purl/3403196
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-07-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-building-energy-efficiency-through-innovative-thermo
+    title: Building Energy Efficiency through Innovative Thermodevices (BEEIT)
+    url: https://www.osti.gov/servlets/purl/1057388
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-12-14'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1057388
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-state-energy-offices-engagement-in-electric-distribu
+    title: State Energy Offices’ Engagement in Electric Distribution Planning to Meet
+      State Policy Goals
+    url: https://www.osti.gov/servlets/purl/2234024
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-12-14'
+    document_type: technical-report
+    persistent_id: doi:10.2172/2234024
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-unlocking-energy-efficiency-in-small-commercial-buil
+    title: Unlocking energy efficiency in small commercial buildings through mechanical
+      contractors
+    url: https://www.osti.gov/servlets/purl/1345195
+    source: osti_aec
+    license: publisher-oa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-03-01'
+    document_type: journal-article
+    persistent_id: doi:10.1061/(asce)ae.1943-5568.0000225
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Journal
+      of Architectural Engineering): free to read under the DOE Public Access Plan;
+      publisher copyright, no reuse licence'
+    rights_verified_at: '2026-10-12'
+  - id: osa-overview-of-industry-research-on-led-lighting-techno
+    title: Overview of Industry Research on LED Lighting Technology and Application
+      to the Federal Sector
+    url: https://www.osti.gov/servlets/purl/1779783
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-06-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1779783
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-revisit-of-energy-use-and-technologies-of-high-perfo
+    title: Revisit of Energy Use and Technologies of High Performance Buildings
+    url: https://www.osti.gov/servlets/purl/1164284
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-03-30'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-algorithmic-design-for-3d-printing-at-building-scale
+    title: Algorithmic design for 3D printing at building scale
+    url: https://www.osti.gov/servlets/purl/1351781
+    source: osti_aec
+    license: publisher-oa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-01-01'
+    document_type: journal-article
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (International
+      Journal of Modern Research in Engineering and Technology): free to read under
+      the DOE Public Access Plan; publisher copyright, no reuse licence'
+    rights_verified_at: '2026-10-12'
+  - id: osa-using-third-party-inspectors-in-building-energy-code
+    title: Using Third-Party Inspectors in Building Energy Codes Enforcement in India
+    url: https://www.osti.gov/servlets/purl/1063732
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2013-01-31'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1063732
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-feedbacks-from-focus-group-meeting-on-training-and-i
+    title: Feedbacks from Focus Group Meeting on Training and Implementation of Building
+      Energy Codes in China
+    url: https://www.osti.gov/servlets/purl/1007361
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2011-01-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1007361
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-recovery-act-advanced-load-identification-and-manage
+    title: 'Recovery Act: Advanced Load Identification and Management for Buildings'
+    url: https://www.osti.gov/servlets/purl/1172882
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-02-12'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1172882
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-targeting-net-zero-energy-for-military-installations
+    title: Targeting Net Zero Energy for Military Installations (Presentation)
+    url: https://www.osti.gov/servlets/purl/1040940
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-05-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-performance-monitoring-of-residential-hot-water-dist
+    title: Performance Monitoring of Residential Hot Water Distribution Systems
+    url: https://www.osti.gov/servlets/purl/1172649
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-08-11'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-better-buildings-challenge-progress-update-spring-20
+    title: 'Better Buildings Challenge. Progress Update: Spring 2013'
+    url: https://www.osti.gov/servlets/purl/1671876
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2013-05-20'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1671876
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-healthy-efficient-new-gas-homes-hengh-pilot-test-res
+    title: Healthy Efficient New Gas Homes (HENGH) Pilot Test Results
+    url: https://www.osti.gov/servlets/purl/1342387
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-05-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1342387
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-a-policymaker-s-guide-to-scaling-home-energy-upgrade
+    title: A Policymaker's Guide to Scaling Home Energy Upgrades
+    url: https://www.osti.gov/servlets/purl/1331040
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-09-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1331040
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-understanding-energy-code-acceptance-within-the-alas
+    title: Understanding Energy Code Acceptance within the Alaska Building Community
+    url: https://www.osti.gov/servlets/purl/1086925
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-02-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1086925
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-case-study-of-the-regional-manufacturers-participati
+    title: Case Study of the Regional Manufacturers' Participation in the Manufactured
+      Housing RCDP (Residential Construction Demonstration Project).
+    url: https://www.osti.gov/servlets/purl/6979578
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1989-12-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/6979578
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
+  - id: osa-healthy-zero-energy-buildings-hzeb-program-cross-sec
+    title: Healthy Zero Energy Buildings (HZEB) Program - Cross-Sectional Study of Contaminant
+      Levels, Source, Strengths, and Ventilation Rates in Retail Stores
+    url: https://www.osti.gov/servlets/purl/1163269
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-02-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1163269
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-12'
