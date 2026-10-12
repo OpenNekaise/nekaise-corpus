@@ -112,6 +112,8 @@ HOST_CONCURRENCY: dict[str, int] = {
     # SciELO national hosts added 2026-10-12 (find_scielo): small old servers, serial and paced
     "www.scielo.org.mx": 1, "www.scielo.org.ar": 1, "scielo.pt": 1, "www.scielo.sa.cr": 1,
     "www.scielo.org.za": 1, "www.scielo.org.co": 1,
+    "www.gov.uk": 1,                        # find_govuk HTML publications: serial, paced
+    "assets.publishing.service.gov.uk": 1,  # find_govuk PDF attachments: serial, paced
 }
 # politeness overrides for hosts that need them (currently none). HOST_DELAY: minimum seconds
 # between request STARTS against a host, enforced under its semaphore — for hosts that tarpit at
@@ -157,6 +159,9 @@ HOST_DELAY: dict[str, float] = {
     "www.scielo.br": 1.0,
     "www.scielo.org.mx": 2.0, "www.scielo.org.ar": 2.0, "scielo.pt": 2.0,
     "www.scielo.sa.cr": 2.0, "www.scielo.org.za": 2.0, "www.scielo.org.co": 2.0,
+    # GOV.UK (find_govuk): robots.txt has no Crawl-delay; one request start per second per host.
+    "www.gov.uk": 1.0,
+    "assets.publishing.service.gov.uk": 1.0,
 }
 HONEST_UA = "nekaise-corpus/build_corpus"
 ARCHIVE_UA = "nekaise-corpus-build_corpus/3.0 (research corpus loader)"
@@ -199,6 +204,10 @@ HOST_UA: dict[str, str] = {
     "www.scielo.org.mx": HONEST_UA, "www.scielo.org.ar": HONEST_UA, "scielo.pt": HONEST_UA,
     "www.scielo.sa.cr": HONEST_UA, "www.scielo.org.za": HONEST_UA,
     "www.scielo.org.co": HONEST_UA,
+    # GOV.UK pages and its asset host serve the honest tool UA (verified 2026-10-12, 3 documents
+    # per host). POLITE hosts: no browser UA, no curl fallback.
+    "www.gov.uk": HONEST_UA,
+    "assets.publishing.service.gov.uk": HONEST_UA,
 }
 # POLITE hosts: a refusal or challenge means "stop and come back later", never "try another
 # identity". For these hosts the loader uses only HOST_UA, never the browser UA or the curl
@@ -214,7 +223,8 @@ POLITE_HOSTS = frozenset({"publications.ibpsa.org", "escholarship.org", "unmetho
                           "arxiv.org",
                           # every SciELO national host find_scielo proposes (2026-10-12)
                           "www.scielo.br", "www.scielo.org.mx", "www.scielo.org.ar", "scielo.pt",
-                          "www.scielo.sa.cr", "www.scielo.org.za", "www.scielo.org.co"})
+                          "www.scielo.sa.cr", "www.scielo.org.za", "www.scielo.org.co",
+                          "www.gov.uk", "assets.publishing.service.gov.uk"})
 CHALLENGE_STATUSES = frozenset({202, 403, 429, 503})
 CHALLENGE_BODY = re.compile(
     rb"sgcaptcha|captcha|challenge-platform|cf-chl|awswaf|request blocked|access denied", re.I
@@ -238,6 +248,8 @@ HOST_RUN_CAP: dict[str, int] = {
     "www.scielo.br": 150,
     "www.scielo.org.mx": 120, "www.scielo.org.ar": 120, "scielo.pt": 120,
     "www.scielo.sa.cr": 120, "www.scielo.org.za": 120, "www.scielo.org.co": 120,
+    "www.gov.uk": 240,                        # 240 x 1 s = 4 min
+    "assets.publishing.service.gov.uk": 240,  # 240 x 1 s = 4 min
 }
 # Compliance/ESG programme (Codex decision 2026-09-25; ids bov-bfs- / reg- / eur- / esf-, see
 # scripts/compliance_common.py, which owns the reviewed delivery-host table): a programme row's

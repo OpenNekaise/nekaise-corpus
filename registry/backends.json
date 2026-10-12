@@ -238,13 +238,14 @@
   "find_govuk": {
     "script": "find_govuk.py",
     "args": [
-      "--rows",
-      "20",
+      "--pages",
+      "6",
       "--max",
-      "250"
+      "200"
     ],
-    "enabled": false,
-    "reason": "deep search p905 is dominated by fuzzy off-topic results; title relevance gate added, but queries/pointer must be re-aimed and the 71.4 MiB govuk manifest shard must be bucketed before re-enabling"
+    "enabled": true,
+    "required": false,
+    "reason": "RE-AIMED 2026-10-12 (paused 2026-08-18: deep free-text search p905 was dominated by fuzzy off-topic results): no text query any more; a structured walk of 24 built-environment organisations (MHCLG/DLUHC, Building Safety Regulator, DESNZ/BEIS/DECC, Homes England, Planning Inspectorate, HSE, OPSS, Environment Agency, DfT, National Highways, HS2, ORR, IPA/NISTA, NIC, DIO, DfE ...) filtered to publication document types, newest first with overlapping pages, with a title/description anchor gate; registers PDF attachments, HTML attachments and attachment-less guide pages. New rows are licence unverified (the OGL v3 statement is conditional, 'except where otherwise stated', GOV.UK terms name exempt content, and no document-specific check is made; the statement is kept as evidence text), so they land in collection/unverified. Coverage exclusion: at most 12 documents per page (map books, consultations with hundreds of PDFs), reported per run. After the walk, coverage starts at the walk's START day: every 2 days a catch-up reads every organisation's pages published since the boundary, within the --pages/--max budgets and over as many rounds as needed (persisted position); every 90 days the full walk runs again to reconcile pages lost to listing shifts larger than the 5-result overlap. Malformed answers, empty or short pages below the total and an organisation without publications hold; never EXHAUSTED. Loader: www.gov.uk and assets.publishing.service.gov.uk are polite hosts (honest UA verified 2026-10-12, 1 s, 240 per run). The gov.uk registry/manifest family was bucketed into govuk-0..3 first. required=false"
   },
   "find_worldbank": {
     "script": "find_worldbank.py",

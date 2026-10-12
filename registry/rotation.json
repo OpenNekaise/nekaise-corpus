@@ -130,10 +130,11 @@
     "note": "JRC Publications Repository via OpenAIRE datasource filter -> handle page -> OP-DOI (10.2760 etc, cc-by) + bitstream PDF; run with --rows 40 --max 250. First 15 QUERIES dry at p5; second-wave QUERIES added 07-17 (+61 at p1 rows40) — pointer restarted at p2 for the widened set. Page 23 retained after a handle connection reset on 2026-07-31; finder now exits nonzero on incomplete OpenAIRE or handle requests."
   },
   "find_govuk": {
-    "flag": "--page",
-    "next": 905,
-    "step": 1,
-    "note": "PAUSED 2026-08-18: deep Search API page p905 is dominated by fuzzy off-topic results despite AEC query terms. Finder now requires explicit AEC title anchors. Preserve pointer until queries are re-aimed or restarted against a bounded result universe. OGL v3 = open; run with --rows 20 --max 250. Wave-1 (18 queries) mined p1-27; wave-2 +14 UK-policy queries added 2026-07-20 and reset to p1."
+    "flag": "--cursor",
+    "next": "o=0 s=0",
+    "step": 0,
+    "dynamic": true,
+    "note": "RE-AIMED 2026-10-12: 'o=<index into find_govuk.ORGS (append-only)> s=<Search API start offset> w=<day the walk started>' (w is added on the first run), organisation-major, newest first, 50 results per page with 5 re-read; then 'watch:<boundary day> w=<walk day>' (idle; boundary first = the walk's START day; next look 2 days after the boundary, full re-walk 90 days after the walk day); a look is 'catch:<boundary day> n=<day the look started> o=<org> s=<start> w=<walk day>' (pages published since the day before the boundary), continued over rounds within the budgets, then 'watch:<n> w=<walk day>'. Out-of-range indices, offsets and future dates are refused. An unexpected answer holds. History: free-text paging reached p905 (paused 2026-08-18, fuzzy off-topic results); wave-1 18 queries mined p1-27, wave-2 +14 queries from 2026-07-20."
   },
   "find_worldbank": {
     "flag": "--os",

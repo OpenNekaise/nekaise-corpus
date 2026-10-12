@@ -802,3 +802,26 @@ def test_escholarship_fetch_suspension_is_committed_policy():
     assert check_contracts.host_policy_contract_errors(enabled, policy) == [
         "find_escholarship: backend for suspended host escholarship.org must be disabled"
     ]
+
+
+# Delivery hosts of re-aimed finders (find_govuk, find_worldbank): the loader identifies itself
+# honestly there, and a refusal opens the circuit instead of trying a browser identity or curl.
+FINDER_DELIVERY_URLS = [
+    "https://assets.publishing.service.gov.uk/media/abc/approved_document_l.pdf",
+    "https://www.gov.uk/guidance/heat-networks-overview",
+]
+
+
+@pytest.mark.parametrize("url", FINDER_DELIVERY_URLS)
+def test_finder_delivery_host_refusal_is_transient_with_the_honest_ua(tmp_path, monkeypatch, url):
+    calls = _polite_env(monkeypatch, tmp_path, lambda _url: _answer(403, b"Request blocked."))
+    fmt = "pdf" if url.endswith(".pdf") else "html"
+    rows = [build_corpus.download_one({
+        "id": f"dlv-{n}", "title": f"Document {n}", "source": "delivery", "license": "unverified",
+        "url": url.replace("abc", f"abc{n}") + ("" if fmt == "pdf" else f"-{n}"),
+        "topic": "building_energy", "format": fmt}) for n in (1, 2)]
+
+    assert rows[0]["transient"] is True and "challenge" in rows[0]["error"]
+    assert rows[1]["transient"] is True and "circuit open" in rows[1]["error"]
+    assert len(calls) == 1 and calls[0][1] == build_corpus.HONEST_UA
+    assert not calls[0][1].startswith("Mozilla")

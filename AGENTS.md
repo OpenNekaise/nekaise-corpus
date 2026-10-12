@@ -127,7 +127,8 @@ public-domain texts (Internet Archive; superseded by `find_archive_scrape.py`: t
 Scraping API over the Building Technology Heritage Library and Avery trade catalogs, then the same
 pre-1929 queries, text file and licence resolved per item) · `find_openaire.py` EU project deliverables (disabled: superseded) · `find_cordis.py` public
 deliverables of EU-funded built-environment projects from the CORDIS EURIO graph (SPARQL, licence
-`unverified`) · `find_nist.py`
+`unverified`) · `find_govuk.py` GOV.UK publications of built-environment departments and
+agencies (structured organisation walk, no text query; new rows `unverified`) · `find_nist.py`
 NIST/NBS via Crossref · `find_zenodo.py` CC-licensed records · `find_patents.py` US patents via the
 Google Patents sitemap (the biggest open vein) · `find_wiki.py` multilingual Wikipedia ·
 `find_scielo.py` AEC journals of seven robots-reviewed SciELO collections (Brazil, Mexico,
