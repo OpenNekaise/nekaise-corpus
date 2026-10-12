@@ -146383,3 +146383,385 @@ sources:
     rights_verified_at: '2026-10-12T21:28:09Z'
     origin_ids: doi:10.3389/fdata.2020.528441 openalex:W3096190728
     resolution: 'legacy: openalex location'
+  - id: oas-10-48550-arxiv-2604-05904-14f4ccae
+    title: Neural Parameter Estimation of RC Thermal Building Models for Model Predictive
+      Control
+    url: https://arxiv.org/pdf/2604.05904
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    published_at: '2026-04-07'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2604.05904
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2604.05904;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2604.05904 openalex:W7151980530
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-dimension-reduced-adp-for-real-time-microgrid-
+    title: Dimension-Reduced ADP for Real-Time Microgrid Operation with Massive Air-Conditioning
+      Loads under Multiple Uncertainties
+    url: https://arxiv.org/pdf/2609.01972v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2026-09-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.01972
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.01972 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-continuous-time-aggregation-of-massive-flexibl
+    title: Continuous-Time Aggregation of Massive Flexible HVAC Loads Considering Uncertainty
+      for Reserve Provision in Power System Dispatch
+    url: https://arxiv.org/pdf/2609.02408v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-09-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.02408
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.02408 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-leveraging-time-causal-state-variable-aggregat
+    title: Leveraging Time-Causal State Variable Aggregation for Real-Time Schedule
+      of Massive Air Conditioners
+    url: https://arxiv.org/pdf/2609.02410v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2026-09-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.02410
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.02410 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-coupling-aware-aggregation-of-multi-zone-hvac-
+    title: 'Coupling-Aware Aggregation of Multi-Zone HVAC Loads under Uncertainty: A
+      Two-level Framework'
+    url: https://arxiv.org/pdf/2609.03253v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2026-09-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.03253
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.03253 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-data-driven-estimation-of-design-heating-loads
+    title: Data-driven estimation of design heating loads for HVAC equipment sizing
+    url: https://arxiv.org/pdf/2609.07619v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2026-09-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.07619
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.07619 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-model-predictive-control-for-dynamic-hydraulic
+    title: 'Model Predictive Control for Dynamic Hydraulic Balancing in Building Radiator
+      Heating Systems: Modeling, Design, and Experimental Validation'
+    url: https://arxiv.org/pdf/2609.08708v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-09-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.08708
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.08708 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-graph-based-characterization-of-vision-derived
+    title: Graph-Based Characterization of Vision-Derived Dynamic Modes for Structural
+      Damage Identification
+    url: https://arxiv.org/pdf/2609.09666v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-09-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.09666
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.09666 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-dynamic-centrality-measures-for-water-distribu
+    title: Dynamic Centrality Measures for Water Distribution Network Hydraulics
+    url: https://arxiv.org/pdf/2609.10800v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2026-09-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.10800
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.10800 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-reachable-set-decomposition-for-real-time-aggr
+    title: Reachable-Set Decomposition for Real-Time Aggregation of Multi-Zone HVAC
+      Fleets
+    url: https://arxiv.org/pdf/2605.13836v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2026-05-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2605.13836
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2605.13836 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-very-exciting-zero-shot-model-predictive-contr
+    title: 'Very Exciting: Zero-Shot Model Predictive Control of Buildings via Excitation-Based
+      Generalized Transfer Learning Models'
+    url: https://arxiv.org/pdf/2609.12853v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-09-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.12853
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.12853 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-probabilistic-hazard-analysis-framework-with-s
+    title: Probabilistic Hazard Analysis Framework with Stochastic Optimal Control for
+      Deteriorating Civil Infrastructure Systems
+    url: https://arxiv.org/pdf/2604.23068v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-04-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2604.23068
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2604.23068 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-scalable-supervisory-hvac-control-for-linear-o
+    title: Scalable Supervisory HVAC Control for Linear Objectives
+    url: https://arxiv.org/pdf/2607.15867v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-07-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2607.15867
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2607.15867 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-model-free-control-for-residential-heating-dep
+    title: 'Model-Free Control for Residential Heating: Deployment and Simulation of
+      Nonlinear Data-Enabled Predictive Control'
+    url: https://arxiv.org/pdf/2609.21500v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-09-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.21500
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.21500 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-agenthomeid-agent-based-modelling-of-building-
+    title: 'AgentHomeID - Agent-based modelling of building stock transformation: A
+      multi-scale framework for policy assessment and infrastructure planning'
+    url: https://arxiv.org/pdf/2609.05763v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-09-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.05763
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.05763 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-heating-in-human-hvac-interaction-for-smart-ho
+    title: 'Heating in human-HVAC interaction for smart homes: An interdisciplinary
+      overview'
+    url: https://arxiv.org/pdf/2609.23508v1
+    source: arxiv
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2026-09-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.23508
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.23508 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1016/j.buildenv.2026.115220
+  - id: arx-energy-vision-language-action-a-controlled-mul
+    title: 'Energy Vision--Language--Action: A Controlled Multimodal Benchmark for Intent-Conditioned
+      Residential Energy Management'
+    url: https://arxiv.org/pdf/2609.31648v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-09-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.31648
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.31648 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-cost-informed-learning-for-aggregating-buildin
+    title: Cost-Informed Learning for Aggregating Building HVAC Flexibility
+    url: https://arxiv.org/pdf/2610.00219v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-09-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2610.00219
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2610.00219 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-differentiable-hybrid-action-neural-feedback-c
+    title: Differentiable Hybrid-Action Neural Feedback Control for District Heating
+      Networks
+    url: https://arxiv.org/pdf/2610.01822v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-10-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2610.01822
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2610.01822 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+  - id: arx-adapt-an-autonomous-forklift-for-construction-
+    title: 'ADAPT: An Autonomous Forklift for Construction Site Operation'
+    url: https://arxiv.org/pdf/2503.14331v4
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-03-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.14331
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.14331 (v4, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-12'
+    origin_ids: doi:10.1002/rob.70321
+  - id: arx-optimal-coordination-of-heat-pump-demand-flexi
+    title: Optimal Coordination of Heat Pump Demand Flexibility and Battery Energy Storage
+      Considering the Operation of Distribution Networks
+    url: https://arxiv.org/pdf/2610.07841v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-10-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2610.07841
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2610.07841 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-12'
+  - id: arx-indoor-radon-rn-222-concentration-measurements
+    title: Indoor radon (Rn-222) concentration measurements in Cyprus using high-sensitivity
+      portable detectors
+    url: https://arxiv.org/pdf/physics/0212105v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2002-12-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.physics/0212105
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:physics/0212105&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:physics/0212105 (v2, the
+      current version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-12'
