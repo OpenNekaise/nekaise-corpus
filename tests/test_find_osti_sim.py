@@ -1,4 +1,5 @@
 import sys
+from datetime import date
 from types import SimpleNamespace
 
 import pytest
@@ -54,6 +55,9 @@ def test_titles_lose_markup_entities():
     assert find_osti_sim.candidate(rec, "x")["title"] == "CO2 & ventilation in office buildings"
 
 
+TODAY = date(2026, 10, 12)
+
+
 def _setup(monkeypatch, tmp_path, pages, known=None):
     known = known or (set(), set(), set())
     calls, queue = [], iter(pages)
@@ -69,6 +73,7 @@ def _setup(monkeypatch, tmp_path, pages, known=None):
 
     monkeypatch.setattr(find_osti_sim.requests, "get", get)
     monkeypatch.setattr(find_osti_sim.time, "sleep", lambda _s: calls.append("sleep"))
+    monkeypatch.setattr(find_osti_sim, "utc_today", lambda: TODAY)
     monkeypatch.setattr(find_osti_sim.dedup, "open_keys",
                         lambda: find_osti_sim.dedup.from_sets(*known))
     appended = []
@@ -94,17 +99,20 @@ def test_full_page_advances_page_short_page_advances_query(monkeypatch, tmp_path
     assert [(c["q"], c["page"]) for c in made] == [(find_osti_sim.QUERIES[0], 1),
                                                    (find_osti_sim.QUERIES[0], 2)]
     assert all(c["has_fulltext"] == "true" for c in made)
+    assert not any("entry_date_start" in c or "sort" in c for c in made)  # history: no window
     assert calls.count("sleep") == 1
     assert [e["url"].rsplit("/", 1)[1] for e in appended] == ["1001", "1002"]  # 1003 known
-    assert files["next"].read_text() == "q=1 p=1\n"
+    # a walk without a start date is stamped with the day it began
+    assert files["next"].read_text() == "q=1 p=1 since=2026-10-12\n"
 
 
 def test_deep_full_pages_keep_walking_the_same_query(monkeypatch, tmp_path):
     monkeypatch.setattr(find_osti_sim, "ROWS", 1)
     _, _, files = _setup(monkeypatch, tmp_path, [[REPORT]])
-    monkeypatch.setattr(sys, "argv", ["find_osti_sim.py", "--cursor", "q=3 p=40", "--pages", "1"])
+    monkeypatch.setattr(sys, "argv", ["find_osti_sim.py", "--cursor", "q=3 p=40 since=2026-10-02",
+                                      "--pages", "1"])
     find_osti_sim.main()
-    assert files["next"].read_text() == "q=3 p=41\n"
+    assert files["next"].read_text() == "q=3 p=41 since=2026-10-02\n"  # the start date is kept
     assert not files["exhausted"].exists()
 
 
@@ -150,16 +158,78 @@ def test_max_stops_after_the_page_that_reaches_it(monkeypatch, tmp_path):
     find_osti_sim.main()
     assert len([c for c in calls if c != "sleep"]) == 1
     assert len(appended) == 2
-    assert files["next"].read_text() == "q=0 p=2\n"
+    assert files["next"].read_text() == "q=0 p=2 since=2026-10-12\n"
 
 
-def test_last_query_finished_reports_exhausted(monkeypatch, tmp_path):
+def test_last_query_finished_starts_watching_from_the_walk_start(monkeypatch, tmp_path):
     last = len(find_osti_sim.QUERIES) - 1
     _, _, files = _setup(monkeypatch, tmp_path, [[]])
-    monkeypatch.setattr(sys, "argv", ["find_osti_sim.py", "--cursor", f"q={last} p=3"])
+    monkeypatch.setattr(sys, "argv", ["find_osti_sim.py", "--cursor",
+                                      f"q={last} p=3 since=2026-10-02"])
     find_osti_sim.main()
-    assert files["next"].read_text() == "END\n"
-    assert "queries walked" in files["exhausted"].read_text()
+    # OSTI keeps publishing: never EXHAUSTED; records entered since the walk began are next
+    assert files["next"].read_text() == "watch:2026-10-02\n"
+    assert not files["exhausted"].exists()
+
+
+def test_watch_waits_without_a_request_until_the_next_day(monkeypatch, tmp_path):
+    calls, _, files = _setup(monkeypatch, tmp_path, [])
+    monkeypatch.setattr(sys, "argv", ["find_osti_sim.py", "--cursor", "watch:2026-10-12"])
+    find_osti_sim.main()
+    assert calls == [] and files["next"].read_text() == "watch:2026-10-12\n"
+    assert not files["exhausted"].exists() and not files["hold"].exists()
+
+
+def test_due_watch_starts_a_pass_over_the_entry_date_window(monkeypatch, tmp_path):
+    monkeypatch.setattr(find_osti_sim, "ROWS", 2)
+    calls, appended, files = _setup(monkeypatch, tmp_path, [[REPORT, AM], [CONF], []])
+    monkeypatch.setattr(sys, "argv", ["find_osti_sim.py", "--cursor", "watch:2026-10-02",
+                                      "--pages", "3", "--append"])
+    find_osti_sim.main()
+    made = [c for c in calls if c != "sleep"]
+    assert [(c["q"], c["page"]) for c in made] == [
+        (find_osti_sim.QUERIES[0], 1), (find_osti_sim.QUERIES[0], 2), (find_osti_sim.QUERIES[1], 1)]
+    for c in made:  # the only date form the API filters on is MM/DD/YYYY
+        assert (c["entry_date_start"], c["entry_date_end"]) == ("10/02/2026", "10/12/2026")
+        assert c["sort"] == "entry_date asc" and c["has_fulltext"] == "true"
+    assert len(appended) == 3
+    assert files["next"].read_text() == "watch:2026-10-02:2026-10-12 q=2 p=1\n"
+
+
+def test_watch_pass_resumes_with_its_window_and_ends_at_its_until_date(monkeypatch, tmp_path):
+    last = len(find_osti_sim.QUERIES) - 1
+    calls, _, files = _setup(monkeypatch, tmp_path, [[REPORT]])
+    monkeypatch.setattr(sys, "argv", ["find_osti_sim.py", "--cursor",
+                                      f"watch:2026-10-02:2026-10-10 q={last} p=1"])
+    find_osti_sim.main()
+    (made,) = [c for c in calls if c != "sleep"]
+    assert (made["entry_date_start"], made["entry_date_end"]) == ("10/02/2026", "10/10/2026")
+    # the next window starts on the day this one ended (not today): nothing entered between
+    # the pass's end date and its last round is skipped
+    assert files["next"].read_text() == "watch:2026-10-10\n"
+    assert not files["exhausted"].exists()
+
+
+def test_watch_pass_holds_on_an_unexpected_answer(monkeypatch, tmp_path):
+    answer = SimpleNamespace(status_code=500, json=lambda: {})
+    _, appended, files = _setup(monkeypatch, tmp_path, [answer])
+    monkeypatch.setattr(sys, "argv", ["find_osti_sim.py", "--cursor", "watch:2026-10-02",
+                                      "--append"])
+    find_osti_sim.main()
+    assert appended == [] and "watch:2026-10-02:2026-10-12 q=0 p=1" in files["hold"].read_text()
+    assert not files["next"].exists()
+
+
+def test_requests_ask_for_json(monkeypatch, tmp_path):
+    seen = []
+
+    def get(url, **kwargs):
+        seen.append(kwargs["headers"])
+        return SimpleNamespace(status_code=200, json=lambda: [])
+
+    monkeypatch.setattr(find_osti_sim.requests, "get", get)
+    find_osti_sim.fetch_page("x", 1)
+    assert seen[0]["Accept"] == "application/json" and "nekaise-corpus" in seen[0]["User-Agent"]
 
 
 def test_end_cursor_makes_no_request(monkeypatch, tmp_path):
@@ -193,7 +263,29 @@ def test_network_failure_exits_nonzero_without_append(monkeypatch, tmp_path):
     assert appended == [] and not files["next"].exists()
 
 
-@pytest.mark.parametrize("cursor", ["", "q=1", "q=a p=1", "q=1 p=0", "p=1 q=1"])
+@pytest.mark.parametrize("cursor", [
+    "", "q=1", "q=a p=1", "q=1 p=0", "p=1 q=1", "q=1 p=1 since=2026-13-01", "q=1 p=1 since=x",
+    "watch:", "watch:2026-02-30", "watch:2026-10-02:2026-10-01 q=0 p=1",
+    "watch:2026-10-02:2026-10-03", "watch:2026-10-02:2026-10-03 q=0 p=0", "watch:2026-10-02 q=0",
+])
 def test_malformed_cursor_is_rejected(cursor):
     with pytest.raises(ValueError):
-        find_osti_sim.parse_cursor(cursor)
+        find_osti_sim.parse_position(cursor)
+
+
+@pytest.mark.parametrize("cursor", [
+    "q=4 p=7", "q=4 p=7 since=2026-10-02", "watch:2026-10-02",
+    "watch:2026-10-02:2026-10-09 q=3 p=2",
+])
+def test_cursor_round_trips(cursor):
+    assert find_osti_sim.parse_position(cursor).cursor() == cursor
+
+
+@pytest.mark.parametrize("cursor", ["watch:2026-10-13", "q=0 p=1 since=2026-10-13",
+                                    "watch:2026-10-02:2026-10-13 q=0 p=1"])
+def test_future_cursor_dates_are_refused(monkeypatch, tmp_path, cursor):
+    calls, _, files = _setup(monkeypatch, tmp_path, [])
+    monkeypatch.setattr(sys, "argv", ["find_osti_sim.py", "--cursor", cursor])
+    with pytest.raises(SystemExit):
+        find_osti_sim.main()
+    assert calls == [] and not files["next"].exists()

@@ -31,9 +31,20 @@ Licence classification (collect regardless of licence; the class picks the view)
 Records with a DOI carry it as persistent_id, so a paper held through OpenAlex is not fetched
 again.
 
-Rotation (dynamic, `--cursor "q=<query index> p=<page>"`): the cursor names the next page to
-read. A run reads at most --pages API pages and stops after the page that reaches --max. An
-unexpected answer holds the cursor; past the last query the backend reports EXHAUSTED.
+Rotation (dynamic, `--cursor`), shared with scripts/find_osti_aec.py through `run(Family)`:
+  * `q=<query index> p=<page>[ since=<YYYY-MM-DD>]`: the history walk; the cursor names the next
+    page to read. `since` is the UTC date the walk started (stamped on its first run).
+  * `watch:<since>`: the history walk is done. OSTI keeps publishing, so the backend never
+    reports EXHAUSTED: once per WATCH_DAYS it starts a watch pass over records whose OSTI
+    `entry_date` is in [since, today] (API `entry_date_start` / `entry_date_end`, MM/DD/YYYY,
+    `sort=entry_date asc`; verified live 2026-10-12). Before that it makes no request.
+  * `watch:<since>:<until> q=<i> p=<page>`: a watch pass in progress (every query once over that
+    window). When it ends the cursor becomes `watch:<until>`: the next window starts on the
+    day the last one ended, so no record is skipped and the overlap is deduplicated.
+  * `END` (legacy): no request, reports EXHAUSTED. Re-aim it to `watch:<date of the walk>`.
+A run reads at most --pages API pages and stops after the page that reaches --max. An
+unexpected answer holds the cursor. To walk a query appended later, re-aim the cursor to
+`q=<its index> p=1 since=<the current watch date>`: the walk returns to that watch date.
 
     python scripts/find_osti_sim.py --cursor "q=0 p=1" --pages 2 --max 50
 """
@@ -43,7 +54,9 @@ import argparse
 import re
 import sys
 import time
-from datetime import datetime, timezone
+from dataclasses import dataclass
+from datetime import date, datetime, timedelta, timezone
+from typing import Callable
 
 import requests
 import yaml
@@ -113,24 +126,89 @@ SIM_TOOL = re.compile(
     r"\bblast\b(?= (?:program|energy|simulation))",
     re.I,
 )
-CURSOR = re.compile(r"^q=(\d+) p=(\d+)$")
-ENTITIES = (("&amp;", "&"), ("<sub>", ""), ("</sub>", ""), ("<sup>", ""), ("</sup>", ""))
+WATCH_DAYS = 1       # days between watch passes (one request per query when nothing is new)
+WALK = re.compile(r"^q=(\d+) p=(\d+)(?: since=(\d{4}-\d{2}-\d{2}))?$")
+WATCH_IDLE = re.compile(r"^watch:(\d{4}-\d{2}-\d{2})$")
+WATCH_PASS = re.compile(r"^watch:(\d{4}-\d{2}-\d{2}):(\d{4}-\d{2}-\d{2}) q=(\d+) p=(\d+)$")
+TITLE_MARKUP = re.compile(r"</?(?:sub|sup|em|strong|i|b)>", re.I)  # "CO<Sub>2</Sub>", "<em>in situ</em>"
 
 
 class Unexpected(RuntimeError):
     """An answer that is not the records API's JSON list (maintenance page, challenge, error)."""
 
 
-def parse_cursor(cursor: str) -> tuple[int, int]:
-    match = CURSOR.match(cursor.strip())
-    if not match or int(match.group(2)) < 1:
-        raise ValueError(f"cursor must be 'q=<index> p=<page>' (page >= 1): {cursor!r}")
-    return int(match.group(1)), int(match.group(2))
+@dataclass(frozen=True)
+class Family:
+    """One OSTI query family (a backend): what it asks, what it keeps and how it labels it."""
+    label: str                              # "simulation" — used in messages
+    queries: tuple[str, ...]                # append-only; the cursor indexes it
+    source: str
+    prefix: str
+    relevant: Callable[[str, int], bool]    # (clean title, query index) -> keep
+    topic: Callable[[str, int], str]        # (clean title, query index) -> registry topic
+    ua: dict
 
 
-def fetch_page(query: str, page: int) -> list[dict]:
-    response = requests.get(API, params={"q": query, "has_fulltext": "true", "rows": ROWS,
-                                         "page": page}, headers=UA, timeout=90)
+@dataclass(frozen=True)
+class Position:
+    """A parsed cursor. `until` is set only inside a watch pass; q is None while watch is idle."""
+    q: int | None
+    page: int
+    since: date | None = None
+    until: date | None = None
+
+    def cursor(self) -> str:
+        if self.until is not None:
+            return f"watch:{self.since}:{self.until} q={self.q} p={self.page}"
+        if self.q is None:
+            return f"watch:{self.since}"
+        return f"q={self.q} p={self.page}" + (f" since={self.since}" if self.since else "")
+
+
+def parse_position(cursor: str) -> Position:
+    """Every cursor form of the module docstring except END. Raises ValueError."""
+    cursor = cursor.strip()
+    try:
+        if match := WALK.match(cursor):
+            q, page, since = match.groups()
+            position = Position(int(q), int(page), date.fromisoformat(since) if since else None)
+        elif match := WATCH_IDLE.match(cursor):
+            return Position(None, 1, date.fromisoformat(match.group(1)))
+        elif match := WATCH_PASS.match(cursor):
+            since, until, q, page = match.groups()
+            position = Position(int(q), int(page), date.fromisoformat(since),
+                                date.fromisoformat(until))
+            if position.until < position.since:
+                raise ValueError("watch window ends before it starts")
+        else:
+            raise ValueError("unknown form")
+    except ValueError as exc:
+        raise ValueError(f"cursor must be 'q=<index> p=<page>[ since=<date>]', 'watch:<date>' "
+                         f"or 'watch:<date>:<date> q=<index> p=<page>': {cursor!r} ({exc})") from exc
+    if position.page < 1:
+        raise ValueError(f"cursor page must be >= 1: {cursor!r}")
+    return position
+
+
+def utc_today() -> date:
+    return datetime.now(timezone.utc).date()
+
+
+def _us_date(day: date) -> str:
+    """The only date form the records API filters on (ISO dates answer HTTP 500)."""
+    return day.strftime("%m/%d/%Y")
+
+
+def fetch_page(query: str, page: int, window: tuple[date, date] | None = None,
+               ua: dict | None = None) -> list[dict]:
+    params = {"q": query, "has_fulltext": "true", "rows": ROWS, "page": page}
+    if window:
+        params.update(entry_date_start=_us_date(window[0]), entry_date_end=_us_date(window[1]),
+                      sort="entry_date asc")
+    # Without an Accept header the API answers XML for about half of the requests (measured
+    # 2026-10-12: 5 of 12), which read as an unexpected answer and held the cursor.
+    response = requests.get(API, params=params, timeout=90,
+                            headers={**(ua or UA), "Accept": "application/json"})
     if response.status_code != 200:
         raise Unexpected(f"OSTI answered HTTP {response.status_code}")
     try:
@@ -143,9 +221,7 @@ def fetch_page(query: str, page: int) -> list[dict]:
 
 
 def clean_title(title: str) -> str:
-    for old, new in ENTITIES:
-        title = title.replace(old, new)
-    return " ".join(title.split())
+    return " ".join(TITLE_MARKUP.sub("", title.replace("&amp;", "&")).split())
 
 
 def relevant(title: str) -> bool:
@@ -187,17 +263,24 @@ def licence(record: dict) -> tuple[str, str, str | None]:
                           "distinguishes public access from public domain (osti.gov/disclaim)"), None
 
 
-def candidate(record: dict, today: str) -> dict | None:
+def sim_family() -> Family:
+    """Built per call so the module constants stay the single (patchable) source."""
+    return Family("simulation", tuple(QUERIES), SOURCE, PREFIX, lambda title, _q: relevant(title),
+                  lambda _title, _q: TOPIC, UA)
+
+
+def candidate(record: dict, today: str, family: Family | None = None, q: int = 0) -> dict | None:
+    family = family or sim_family()
     if record.get("product_type") not in KEEP_TYPES:
         return None
     url = fulltext_url(record)
     title = clean_title(record.get("title") or "")
-    if url is None or not title or not relevant(title):
+    if url is None or not title or not family.relevant(title, q):
         return None
     tag, evidence, licence_url = licence(record)
     entry = {
-        "id": f"{PREFIX}{registry.slug(title)[:52]}", "title": title[:150], "url": url,
-        "source": SOURCE, "license": tag, "topic": TOPIC, "format": "pdf",
+        "id": f"{family.prefix}{registry.slug(title)[:52]}", "title": title[:150], "url": url,
+        "source": family.source, "license": tag, "topic": family.topic(title, q), "format": "pdf",
         "document_type": KEEP_TYPES[record["product_type"]],
         "license_evidence": evidence, "rights_verified_at": today,
     }
@@ -212,46 +295,64 @@ def candidate(record: dict, today: str) -> dict | None:
     return entry
 
 
-def main() -> None:
+def run(family: Family, argv: list[str] | None = None) -> None:
+    label, queries = family.label, family.queries
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cursor", default="q=0 p=1", help="'q=<query index> p=<page>' (rotation)")
+    ap.add_argument("--cursor", default="q=0 p=1",
+                    help="'q=<query index> p=<page>[ since=<date>]', 'watch:<date>' or "
+                         "'watch:<date>:<date> q=<index> p=<page>' (rotation)")
     ap.add_argument("--pages", type=int, default=6, help="max API pages (100 records) this run")
     ap.add_argument("--max", type=int, default=150,
                     help="page-granular target for new entries (the last page may exceed it)")
-    ap.add_argument("--append", action="store_true",
-                    help="append into the registry (registry/ostisim.yaml)")
-    args = ap.parse_args()
+    ap.add_argument("--append", action="store_true", help="append into the registry")
+    args = ap.parse_args(argv)
     if args.pages < 1 or args.max < 1:
         ap.error("--pages and --max must be positive")
     report = Report()
     if args.cursor == "END":
-        report.exhausted(f"all {len(QUERIES)} OSTI simulation queries walked")
-        print("# 0 NEW OSTI simulation records (cursor END)")
+        report.exhausted(f"all {len(queries)} OSTI {label} queries walked")
+        print(f"# 0 NEW OSTI {label} records (cursor END)")
         return
     try:
-        q, page = parse_cursor(args.cursor)
+        position = parse_position(args.cursor)
     except ValueError as exc:
         ap.error(str(exc))
 
-    today = datetime.now(timezone.utc).date().isoformat()
+    now = utc_today()
+    today = now.isoformat()
+    q, page, since, until = position.q, position.page, position.since, position.until
+    if (until or since or now) > now:
+        ap.error(f"cursor date is in the future: {args.cursor!r}")
+    if q is None:  # watch, idle
+        if now < since + timedelta(days=WATCH_DAYS):
+            print(f"# 0 NEW OSTI {label} records (watching since {since}; next pass "
+                  f"{since + timedelta(days=WATCH_DAYS)})")
+            report.next(position.cursor())
+            return
+        q, page, until = 0, 1, now
+    elif since is None:
+        since = now  # the history walk starts now: the later watch begins on this day
+    window = (since, until) if until is not None else None
+
     keys = dedup.open_keys()
     out: list[dict] = []
     scanned = requests_made = 0
-    while q < len(QUERIES) and requests_made < args.pages and len(out) < args.max:
+    while q < len(queries) and requests_made < args.pages and len(out) < args.max:
         if requests_made:
             time.sleep(DELAY)
+        at = Position(q, page, since, until).cursor()
         try:
-            records = fetch_page(QUERIES[q], page)
+            records = fetch_page(queries[q], page, window, family.ua)
         except Unexpected as exc:
-            report.hold(f"{exc} at q={q} p={page}; nothing proposed, retrying next round")
-            print("# 0 NEW OSTI simulation records (unexpected answer)")
+            report.hold(f"{exc} at {at}; nothing proposed, retrying next round")
+            print(f"# 0 NEW OSTI {label} records (unexpected answer)")
             return
         except Exception as exc:
-            print(f"# ERROR: OSTI request failed at q={q} p={page}: {exc}; refusing a partial "
+            print(f"# ERROR: OSTI request failed at {at}: {exc}; refusing a partial "
                   "append so rotation does not advance", file=sys.stderr)
             raise SystemExit(1)
         requests_made += 1
-        entries = [e for e in (candidate(r, today) for r in records) if e]
+        entries = [e for e in (candidate(r, today, family, q) for r in records) if e]
         scanned += len(records)
         keys.prefetch(**dedup.page_keys(entries))
         for entry in entries:
@@ -271,7 +372,8 @@ def main() -> None:
     by_licence: dict[str, int] = {}
     for entry in out:
         by_licence[entry["license"]] = by_licence.get(entry["license"], 0) + 1
-    print(f"# {len(out)} NEW OSTI simulation records (kept {len(out)}/{scanned} over "
+    mode = f"watch pass {since}..{until}" if window else "history walk"
+    print(f"# {len(out)} NEW OSTI {label} records ({mode}; kept {len(out)}/{scanned} over "
           f"{requests_made} API pages; deduped vs manifest + registry + blocklist + DOI)")
     print(f"# by licence: {by_licence}")
     print("# --- review, then --append, then scripts/build_corpus.py ---")
@@ -279,10 +381,16 @@ def main() -> None:
     if args.append and out:
         counts = registry.append_entries(out)
         print(f"# appended {len(out)} entries to the registry: {counts}", file=sys.stderr)
-    if q >= len(QUERIES):
-        report.exhausted(f"all {len(QUERIES)} OSTI simulation queries walked")
+    if q >= len(queries):
+        # Finished: a watch pass hands its end date to the next window; a history walk hands
+        # over the day it started. Never EXHAUSTED: OSTI keeps publishing.
+        report.next(Position(None, 1, until if window else since).cursor())
     else:
-        report.next(f"q={q} p={page}")
+        report.next(Position(q, page, since, until).cursor())
+
+
+def main() -> None:
+    run(sim_family())
 
 
 if __name__ == "__main__":

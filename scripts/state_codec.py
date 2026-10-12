@@ -54,6 +54,7 @@ SHARDS = {
     "esc-": "escholarship.yaml",  # find_escholarship (LBNL + UC Berkeley CBE via eScholarship GraphQL, CC BY/BY-SA/CC0)
     "nlr-": "nlr.yaml",        # find_nlr (National Laboratory of the Rockies, ex-NREL, reports via Pure OAI)
     "osm-": "ostisim.yaml",    # find_osti_sim (OSTI building energy / physical simulation query family)
+    "osa-": "ostiaec.yaml",    # find_osti_aec (OSTI general built-environment query family; hash-bucketed)
     "umh-": "unmethours.yaml",  # find_unmethours (Unmet Hours simulation Q&A pages, CC BY-SA 3.0)
     "dva-": "diva.yaml",       # find_diva (DiVA Swedish theses/reports on building simulation, OAI-PMH)
     "zns-": "zenodosim.yaml",  # find_zenodo_sim (Zenodo building simulation publications, all licences)
@@ -143,6 +144,7 @@ HASH_BUCKETS = {
     "patents-cn": 64,
     "patents-us": 8,
     "vendor": 16,
+    "ostiaec": 4,  # find_osti_aec: bucketed from its first row (tens of thousands expected)
 }
 
 

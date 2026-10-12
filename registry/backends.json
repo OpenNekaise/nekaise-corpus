@@ -11,7 +11,7 @@
       "400"
     ],
     "enabled": false,
-    "reason": "www.osti.gov connect-timeout outage since 2026-07-30; re-enable when API responds"
+    "reason": "superseded 2026-10-12 by find_osti_aec (same OSTI records API, with a title gate, per-record licence classification instead of a blanket public-domain label, and a watch mode); disabled since the 2026-07-30 www.osti.gov outage, pointer 169 kept as history. Do not re-enable: its rows would be mislabelled public-domain"
   },
   "find_archive": {
     "script": "find_archive.py",
@@ -450,7 +450,19 @@
     ],
     "enabled": true,
     "required": false,
-    "reason": "NEW 2026-10-02: OSTI building energy / physical simulation query family (EnergyPlus, OpenStudio, Modelica, DOE-2, TRNSYS, CONTAM, CFD, Radiance, WUFI, ResStock/ComStock/URBANopt, calibration, co-simulation, MPC/RL, digital twins); query-major walk of ~36k full-text records, strict building-science title gate; licence per record: an explicit CC statement in the rights field, else DOE PAGES accepted manuscripts publisher-oa and everything else unverified (OSTI public access is not public domain); 1 request/s; required=false because www.osti.gov had a 2026-07/09 outage"
+    "reason": "NEW 2026-10-02: OSTI building energy / physical simulation query family (EnergyPlus, OpenStudio, Modelica, DOE-2, TRNSYS, CONTAM, CFD, Radiance, WUFI, ResStock/ComStock/URBANopt, calibration, co-simulation, MPC/RL, digital twins); query-major walk of ~36k full-text records, strict building-science title gate; licence per record: an explicit CC statement in the rights field, else DOE PAGES accepted manuscripts publisher-oa and everything else unverified (OSTI public access is not public domain); 1 request/s; required=false because www.osti.gov had a 2026-07/09 outage; 2026-10-12: after the history walk the cursor is 'watch:<date>' and a daily pass reads records entered since then (entry_date window), so the backend no longer reports EXHAUSTED; requests send Accept: application/json (the API answered XML to about half of the requests without it)"
+  },
+  "find_osti_aec": {
+    "script": "find_osti_aec.py",
+    "args": [
+      "--pages",
+      "20",
+      "--max",
+      "300"
+    ],
+    "enabled": true,
+    "required": false,
+    "reason": "NEW 2026-10-12: the general built-environment (AEC) query family over the OSTI records API, sharing find_osti_sim's runner (1 request/s, Accept: application/json, HOLD on an unexpected answer): 60 append-only queries (building energy, envelope, HVAC and equipment, lighting, controls, commissioning/FDD, codes, weatherization, district energy, concrete/cement, structures/seismic, geotechnics, bridges, pavements, construction, water infrastructure, fire, urban), a registry topic per query; kept only with a full text, a report / conference / article / thesis type and a TITLE passing bes_relevance strict or the civil gate, minus off-domain vetoes (reactor physics, waste forms, geophysics exploration, accelerators ...). Calibrated live 2026-10-12 on 3 pages of every query (page 1, 25% and 75% depth): 18,000 records scanned, 5,977 kept by the gate, 1,013 not yet held (823 unverified, 190 publisher-oa); the queries total 783,251 records (~7,800 pages). Licence per record as in find_osti_sim: a canonical CC URL in the rights field, DOE PAGES accepted manuscripts publisher-oa, everything else unverified (never public-domain without evidence). After the history walk the cursor is 'watch:<date>' and one pass per day reads records entered since then; the backend never reports EXHAUSTED. Supersedes find_osti. required=false because www.osti.gov had a 2026-07/09 outage"
   },
   "find_unmethours": {
     "script": "find_unmethours.py",

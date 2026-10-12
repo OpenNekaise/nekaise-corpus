@@ -122,7 +122,7 @@ extraction in a separate process pool (`--extract-workers`), so parsing never ho
 PDF downloads are magic-byte checked, and a bounded curl transport fallback handles HTTP/TLS compatibility failures
 (403/429/503). It does not solve or bypass login, paywall, or WAF/JS challenges. The discovery
 backends (`find_sources.py` OpenAlex — legacy queries + the building-simulation and building-AI families, rights evidence per selected copy via `oa_resolution.py` · `find_github.py` curated repos + source code ·
-`find_osti.py` deep OSTI · `find_books.py` OAPEN books, all languages · `find_archive.py` pre-1929
+`find_osti.py` deep OSTI (superseded, disabled) · `find_books.py` OAPEN books, all languages · `find_archive.py` pre-1929
 public-domain texts (Internet Archive) · `find_openaire.py` EU project deliverables (disabled: superseded) · `find_cordis.py` public
 deliverables of EU-funded built-environment projects from the CORDIS EURIO graph (SPARQL, licence
 `unverified`) · `find_nist.py`
@@ -132,7 +132,9 @@ Google Patents sitemap (the biggest open vein) · `find_wiki.py` multilingual Wi
 vein) · `find_ibpsa.py` IBPSA building-simulation proceedings (captcha-paced) ·
 `find_escholarship.py` LBNL + UC Berkeley CBE CC-licensed papers (disabled: WAF policy) · `find_nlr.py` National
 Laboratory of the Rockies (ex-NREL) building reports · `find_osti_sim.py` OSTI building energy /
-physical simulation query family (licence per record) · `find_unmethours.py` Unmet Hours
+physical simulation query family (licence per record) · `find_osti_aec.py` the general OSTI
+built-environment query family (same runner: title gate, licence per record, then a daily watch
+pass over newly entered records; supersedes `find_osti.py`) · `find_unmethours.py` Unmet Hours
 simulation Q&A pages (CC BY-SA 3.0, sitemap walk) · `find_diva.py` DiVA (Swedish universities)
 theses and reports via OAI-PMH, two families: building simulation (`find_diva`) and every
 built-environment subject (`find_diva_aec`, gate `scripts/diva_aec.py`); both end in a datestamp

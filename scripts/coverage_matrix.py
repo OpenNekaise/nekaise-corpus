@@ -99,7 +99,7 @@ BLDGTYPE = [
 ]
 # region: primarily by source; title cues can ADD (e.g. a World Bank report about China)
 REGION_SOURCE = {
-    "osti": "US", "nist_crossref": "US", "gov_cec": "US", "gov_nyserda": "US", "cec": "US",
+    "osti": "US", "osti_sim": "US", "osti_aec": "US", "nist_crossref": "US", "gov_cec": "US", "gov_nyserda": "US", "cec": "US",
     "google_patents": None,  # split by pat- country prefix below
     "gov_uk": "UK", "jrc": "EU", "openaire_deliverable": "EU", "cordis_deliverable": "EU",
     "kitopen": "EU",
