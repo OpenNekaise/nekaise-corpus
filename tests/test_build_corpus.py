@@ -4,6 +4,7 @@ from types import SimpleNamespace
 import hashlib
 from concurrent.futures import ProcessPoolExecutor
 import json
+import re
 import sys
 from pathlib import Path
 from urllib.parse import urlparse
@@ -520,6 +521,106 @@ def test_polite_timeout_is_transient_but_hard_404_is_not(tmp_path, monkeypatch):
 
     assert timed_out["transient"] is True
     assert "transient" not in missing and missing["http_status"] == 404
+
+
+ARC_URL = "https://archive.org/download/GuthLighting/Guth%20Lighting%201925_djvu.txt"
+ARC_NODE = "https://dn790007.ca.archive.org/0/items/GuthLighting/Guth%20Lighting%201925_djvu.txt"
+
+
+def _arc(n=1, url=ARC_URL):
+    return {"id": f"arc-{n}", "title": f"Catalog {n}", "source": "internet_archive",
+            "license": "public-domain", "url": url, "topic": "materials", "format": "txt"}
+
+
+def _redirect(location):
+    return SimpleNamespace(status_code=302, content=b"", headers={"Location": location},
+                           raise_for_status=lambda: None)
+
+
+def test_archive_org_and_its_storage_nodes_are_one_polite_host_group():
+    for host in ("archive.org", "www.archive.org", "dn790007.ca.archive.org",
+                 "ia801004.us.archive.org", "dn760002.eu.archive.org"):
+        assert build_corpus.pace_key(host) == "archive.org"
+    for other in ("web.archive.org", "blog.archive.org", "dn1.ca.archive.org.example.com",
+                  "evil-ia801004.us.archive.org"):
+        assert build_corpus.pace_key(other) == other
+    assert "archive.org" in build_corpus.POLITE_HOSTS
+    assert build_corpus.HOST_CONCURRENCY["archive.org"] == 1
+    assert build_corpus.HOST_DELAY["archive.org"] >= 1.0
+    # archive.org/developers/bots.html: tool name and version number, never a browser UA
+    assert re.fullmatch(r"nekaise-corpus-build_corpus/\d+\.\d+ \(.+\)",
+                        build_corpus.HOST_UA["archive.org"])
+    assert build_corpus.HOST_RUN_CAP["archive.org"] <= 60
+    assert build_corpus._host_sem(ARC_URL) is build_corpus._host_sem(ARC_NODE)
+
+
+def test_archive_download_uses_the_honest_ua_and_one_clock_on_both_hops(tmp_path, monkeypatch):
+    answers = {ARC_URL: _redirect(ARC_NODE), ARC_NODE: _answer(200, b"HEATING CATALOG " * 300)}
+    calls = _polite_env(monkeypatch, tmp_path, answers.__getitem__)
+    waits = []
+    monkeypatch.setattr(build_corpus, "_wait_for_host", waits.append)
+
+    row = build_corpus.download_one(_arc())
+
+    assert row["raw_path"] and row["http_status"] == 200 and "transient" not in row
+    assert calls == [(ARC_URL, build_corpus.ARCHIVE_UA), (ARC_NODE, build_corpus.ARCHIVE_UA)]
+    assert waits == ["archive.org", "archive.org"]  # the storage hop is paced on the same clock
+
+
+def test_archive_pacing_spaces_the_two_hops_by_the_host_delay(monkeypatch):
+    clock, sleeps = [100.0], []
+    monkeypatch.setattr(build_corpus, "_host_last", {})
+    monkeypatch.setattr(build_corpus.time, "monotonic", lambda: clock[0])
+    monkeypatch.setattr(build_corpus.time, "sleep", sleeps.append)
+    for hop in (ARC_URL, ARC_NODE, ARC_URL):
+        build_corpus._wait_for_host(build_corpus.pace_key(
+            build_corpus.host_policy.canonical_host(hop)))
+    assert sleeps == [build_corpus.HOST_DELAY["archive.org"],
+                      2 * build_corpus.HOST_DELAY["archive.org"]]
+
+
+@pytest.mark.parametrize("status", [403, 429, 503])
+@pytest.mark.parametrize("at_node", [False, True])
+def test_archive_challenge_stops_the_run_without_another_identity(tmp_path, monkeypatch, status,
+                                                                   at_node):
+    refusal = _answer(status, b"SlowDown: please reduce your request rate")
+    answers = {ARC_URL: _redirect(ARC_NODE) if at_node else refusal, ARC_NODE: refusal}
+    calls = _polite_env(monkeypatch, tmp_path, answers.__getitem__)  # curl use fails the test
+
+    first = build_corpus.download_one(_arc(1))
+    second = build_corpus.download_one(_arc(2, "https://archive.org/download/b/b_djvu.txt"))
+
+    assert first["transient"] is True and "challenge" in first["error"]
+    assert first["http_status"] == status
+    assert second["transient"] is True and "circuit open" in second["error"]
+    assert len(calls) == (2 if at_node else 1)  # the second row was never requested
+    assert {ua for _url, ua in calls} == {build_corpus.ARCHIVE_UA}
+
+
+def test_archive_restricted_file_401_is_a_hard_failure_without_fallback(tmp_path, monkeypatch):
+    answers = {ARC_URL: _redirect(ARC_NODE), ARC_NODE: _answer(401, b"Authorization Required")}
+    calls = _polite_env(monkeypatch, tmp_path, answers.__getitem__)
+
+    row = build_corpus.download_one(_arc())
+    again = build_corpus.download_one(_arc(2))
+
+    assert row["http_status"] == 401 and "transient" not in row and not row.get("raw_path")
+    assert len(calls) == 4 and "circuit" not in (again.get("error") or "")  # no circuit
+
+
+def test_archive_org_500_is_transient_but_other_hosts_500_is_not(tmp_path, monkeypatch):
+    answers = {ARC_URL: _redirect(ARC_NODE), ARC_NODE: _answer(500, b"Internal Server Error"),
+               "https://archive.org/download/x/x_djvu.txt": _answer(500, b"Internal Server Error"),
+               "https://example.org/y.txt": _answer(500, b"Internal Server Error")}
+    _polite_env(monkeypatch, tmp_path, answers.__getitem__)
+
+    node = build_corpus.download_one(_arc(1))
+    front = build_corpus.download_one(_arc(2, "https://archive.org/download/x/x_djvu.txt"))
+    other = build_corpus.download_one({**_arc(3, "https://example.org/y.txt"), "id": "rep-y"})
+
+    for row in (node, front):  # retried by later rounds, and no circuit: the next row still ran
+        assert row["transient"] is True and row["http_status"] == 500
+    assert "transient" not in other and other["http_status"] == 500
 
 
 def test_polite_pdf_is_downloaded_normally(tmp_path, monkeypatch):

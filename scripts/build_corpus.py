@@ -107,6 +107,7 @@ HOST_CONCURRENCY: dict[str, int] = {
     "www.diva-portal.org": 1,  # find_diva: robots Crawl-delay 10 means serial
     "docs.nlr.gov": 1,         # find_nlr report PDFs: serial, paced
     "publikationen.bibliothek.kit.edu": 1,  # find_kitopen full texts: serial, paced
+    "archive.org": 1,       # Internet Archive downloads and their storage-node hop: serial, paced
 }
 # politeness overrides for hosts that need them (currently none). HOST_DELAY: minimum seconds
 # between request STARTS against a host, enforced under its semaphore — for hosts that tarpit at
@@ -135,6 +136,9 @@ HOST_DELAY: dict[str, float] = {
     "bigladdersoftware.com": 10.0,  # robots.txt Crawl-delay: 10 — respect it
     "unmethours.com": 2.0,        # no robots Crawl-delay; one page per 2 s keeps a small site calm
     "www.diva-portal.org": 10.0,  # robots.txt Crawl-delay: 10 — respect it (find_diva)
+    # no robots Crawl-delay; a download is two requests (archive.org, then a storage node), both
+    # on this clock (pace_key): at most one request per second to the Archive
+    "archive.org": 1.0,
     # EC documents download module (find_cordis / find_openaire deliverables): no robots
     # Crawl-delay; one request start per second per host keeps a bulk walk calm.
     "ec.europa.eu": 1.0,
@@ -145,6 +149,7 @@ HOST_DELAY: dict[str, float] = {
     "publikationen.bibliothek.kit.edu": 2.0,
 }
 HONEST_UA = "nekaise-corpus/build_corpus"
+ARCHIVE_UA = "nekaise-corpus-build_corpus/3.0 (research corpus loader)"
 HOST_UA: dict[str, str] = {
     # The SiteGround WAF 403s the spoofed-Chrome UA (75 KB block page) but serves the PDF to a
     # short honest tool UA (verified 2026-09-24; UAs with "(...)" comments were also 403'd).
@@ -157,6 +162,11 @@ HOST_UA: dict[str, str] = {
     "unmethours.com": HONEST_UA,
     # DiVA (find_diva) serves full-text PDFs to the honest tool UA (verified 2026-10-02).
     "www.diva-portal.org": HONEST_UA,
+    # archive.org/developers/bots.html asks every automated request for the tool name AND a
+    # version number, so this host gets the versioned form of the honest UA (served: verified
+    # 2026-10-12); the storage-node hop (dnNNNNNN.ca.archive.org, iaNNNNNN.us.archive.org)
+    # shares the entry.
+    "archive.org": ARCHIVE_UA,
     # The EC documents download module serves deliverables to the honest tool UA (verified
     # 2026-10-12); its second hop is on www.ec.europa.eu. Both are POLITE hosts: a refusal or
     # challenge opens the circuit, never the browser UA or the curl fallback.
@@ -180,7 +190,8 @@ HOST_UA: dict[str, str] = {
 # prune_corpus.RETRY_MAX_*), and are never blocklisted.
 POLITE_HOSTS = frozenset({"publications.ibpsa.org", "escholarship.org", "unmethours.com",
                           "www.diva-portal.org", "ec.europa.eu", "www.ec.europa.eu",
-                          "docs.nlr.gov", "publikationen.bibliothek.kit.edu"})
+                          "docs.nlr.gov", "publikationen.bibliothek.kit.edu",
+                          "archive.org"})
 CHALLENGE_STATUSES = frozenset({202, 403, 429, 503})
 CHALLENGE_BODY = re.compile(
     rb"sgcaptcha|captcha|challenge-platform|cf-chl|awswaf|request blocked|access denied", re.I
@@ -195,6 +206,7 @@ HOST_RUN_CAP: dict[str, int] = {
     "escholarship.org": 60,        # 60 x 4 s = 4 min
     "unmethours.com": 120,         # 120 x 2 s = 4 min
     "www.diva-portal.org": 60,     # 60 x 10 s = 10 min (find_diva + find_diva_aec)
+    "archive.org": 60,             # 60 x 2 hops at 1 s, slow storage nodes: ~4-8 min
     "ec.europa.eu": 150,           # deliverables: 150 x 2 hops at 1 s per host = ~3-5 min
     "docs.nlr.gov": 120,           # 120 x 2 s = 4 min
     "publikationen.bibliothek.kit.edu": 120,  # 120 x 2 s = 4 min
@@ -240,7 +252,6 @@ for _host in ojs_sites.HOSTS:
     HOST_RUN_CAP[_host] = min(HOST_RUN_CAP.get(_host, OJS_RUN_CAP), OJS_RUN_CAP)
     HOST_UA.setdefault(_host, HONEST_UA)
 POLITE_HOSTS = POLITE_HOSTS | frozenset(ojs_sites.HOSTS)
-pace_key = compliance_common.pace_key
 # ROBOTS-CHECKED rows (generic; independent of the compliance programme's reviewed-host
 # allowlist and budgets): for a row whose id starts with one of these prefixes, robots.txt is
 # read (scripts/robots_policy.py, product token nekaise-corpus) for the ACTUAL download URL and
@@ -264,6 +275,19 @@ _robots_down_lock = threading.Lock()
 
 def is_robots_checked_row(sid: str) -> bool:
     return sid.startswith(ROBOTS_CHECKED_PREFIXES)
+
+
+# An Internet Archive download redirects to a numbered storage node (dn790007.ca.archive.org,
+# ia801004.us.archive.org). The nodes share archive.org's pacing clock, connection limit,
+# honest UA and challenge circuit; web.archive.org (the Wayback Machine) is another service.
+ARCHIVE_STORAGE_HOST = re.compile(r"(?:ia|dn)\d+\.[a-z]{2}\.archive\.org")
+
+
+def pace_key(host: str) -> str:
+    """The pacing/cap/politeness group of a canonical hostname (aliases share one budget)."""
+    if host == "www.archive.org" or ARCHIVE_STORAGE_HOST.fullmatch(host):
+        return "archive.org"
+    return compliance_common.pace_key(host)
 
 
 def is_programme_row(sid: str) -> bool:
@@ -1223,7 +1247,8 @@ def download_one(src: dict) -> dict:
         rec["error"] = str(e)
         if isinstance(e, (requests.Timeout, requests.ConnectionError)):
             rec["error"] = f"network: {e}"
-        if recoverable_failure(e, rec.get("http_status")):
+        if (recoverable_failure(e, rec.get("http_status"))
+                or rec.get("http_status") in HOST_RECOVERABLE_STATUSES.get(pace_key(host), ())):
             rec["transient"] = True
     finally:
         _hops.value = None
@@ -1241,6 +1266,11 @@ def download_one(src: dict) -> dict:
 # (404/410, fake PDFs, non-polite 403s, TLS errors) and DNS failures (which have their own
 # repeated-evidence blocklist rule in prune_corpus) keep today's behaviour.
 RECOVERABLE_STATUSES = frozenset({202, 406, 429, 503})
+# Statuses that are a passing fault on ONE host only. archive.org's storage nodes answer an
+# intermittent HTTP 500 for files that exist (measured 2026-10-12 on Building Technology Heritage
+# Library OCR texts: 3 of 30 answered 500, one of them 200 minutes later). A hard failure would
+# blocklist the URL; as transient it is retried by later rounds within the usual retry bounds.
+HOST_RECOVERABLE_STATUSES: dict[str, frozenset[int]] = {"archive.org": frozenset({500})}
 
 
 def recoverable_failure(exc: BaseException, status: int | None) -> bool:
