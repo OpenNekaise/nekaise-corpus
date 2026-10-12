@@ -140944,3 +140944,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2211.03430 openalex:W4308615096
     resolution: 'ai1: openalex location'
+  - id: oas-10-1016-j-apenergy-2025-125686-3e562698
+    title: A modeling framework for integrating model predictive control into building
+      design optimization
+    url: https://lirias.kuleuven.be/retrieve/3e29e259-0479-4a3d-aee7-c44e64d63779
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-03-08'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2025.125686
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/3e29e259-0479-4a3d-aee7-c44e64d63779;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2025.125686 openalex:W4408253249
+    resolution: 'sim1: openalex+unpaywall location'
