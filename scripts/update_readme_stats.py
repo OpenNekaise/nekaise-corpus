@@ -10,7 +10,6 @@ from __future__ import annotations
 import argparse
 import subprocess
 import sys
-from collections import Counter
 from pathlib import Path
 
 import corpus_stats
@@ -54,7 +53,6 @@ def main(argv: list[str] | None = None) -> None:
         # policy pinned with the data: a wait behind a writer cannot pair old rules with new rows
         restrictions, policy = store.pinned_policy(view)
         stats = corpus_stats.compute(view, restrictions)
-        collection = corpus_stats.compute_collection(view, restrictions)
         # README numbers are manifest-derived and identical on every machine; local availability
         # of suspended-host payloads is reported here only, never in the committed statistics.
         unavailable = corpus_stats.local_unavailable(view, HERE, restrictions, policy)
@@ -72,37 +70,26 @@ def main(argv: list[str] | None = None) -> None:
         return
 
     topics = stats.topics
-    lic = Counter(stats.licenses)
 
     by_topic = " · ".join(f"{t} {n:,}" for t, n in topics)
-    lic_order = ["open", "public-domain", "cc-by-sa", "cc-by", "cc0", "proprietary-internal"]
-    by_lic = " · ".join(f"{k} {lic[k]:,}" for k in lic_order if lic.get(k)) or \
-        " · ".join(f"{k} {n:,}" for k, n in lic.most_common())
-
-    held_policy = collection.held.get("policy-held", 0)
-    held_restricted = sum(n for c, n in collection.held.items()
-                          if c not in ("open", "policy-held"))
-    by_class = " · ".join(f"{c} {n:,}" for c, n in sorted(
-        collection.held.items(), key=lambda kv: (-kv[1], kv[0]))) or "none"
 
     def big(n: float) -> str:
         """1484M -> '1.484B'; below a billion stay in M."""
         return f"{n/1e9:.3f}B" if n >= 1e9 else f"{n/1e6:.0f}M"
 
+    # Operator 2026-10-12: keep it simple; what people read first is how many tokens are mined.
     block = f"""{START}
 | | |
 |---|---|
+| **Training tokens** | **≈{big(ctok)}** (cleaned, training-ready) |
 | **Documents** | **{ok_count:,}** |
-| **Outside the default view** | **{excluded_count:,}** rows (collected and kept): policy-held {held_policy:,} · restricted licence classes {held_restricted:,} |
-| **Collection (all use classes)** | **{collection.total_held:,}** held originals · by class: {by_class} |
-| **Raw originals** | **~{du('raw')}** on disk, every class (PDF / HTML / source code) |
-| **Extracted text** | **~{du('text')}** on disk, every class (default view: ~{big(chars)} chars, **≈{big(tok)} tokens**) |
-| **Cleaned corpus** | **~{du('corpus')}** (~{big(cchars)} chars, **≈{big(ctok)} tokens**, ruleset-cleaned) |
+| **Extracted text** | ≈{big(tok)} tokens (~{big(chars)} chars) |
+| **Raw originals** | ~{du('raw')} (PDF / HTML / source code) |
 | **Topics** | {len(topics)} |
 
-**By topic** (a source gets one at registration): {by_topic}.
+**By topic:** {by_topic}.
 
-**By license:** {by_lic}.
+_The default training view, auto-generated from the manifest. Another **{excluded_count:,}** rows (collected and kept) stay outside it: policy-held or restricted licences. The bytes are not shipped; run the loader to fetch your own copy._
 {END}"""
 
     text = README.read_text()

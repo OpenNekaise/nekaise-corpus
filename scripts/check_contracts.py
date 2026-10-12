@@ -236,6 +236,11 @@ def readme_stats_errors(readme: str, stats, collection=None) -> list[str]:
             errors.append(f"README collection count is stale (want {collection.total_held:,})")
     if f"**Topics** | {len(stats.topics)}" not in readme:
         errors.append("README topic count is stale")
+    if "**Training tokens**" in readme:  # the headline number: cleaned, training-ready tokens
+        t = stats.corpus_tokens
+        want = f"**≈{t / 1e9:.3f}B**" if t >= 1e9 else f"**≈{t / 1e6:.0f}M**"
+        if f"**Training tokens** | {want}" not in readme:
+            errors.append(f"README training tokens is stale (want {want})")
     return errors
 
 
