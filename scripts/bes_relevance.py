@@ -54,7 +54,7 @@ ENERGY_CONTEXT = re.compile(
 
 # Titles naming a subject with no building reading never pass, whatever else they mention.
 HARD_KILL = re.compile(
-    r"\bgenom|\bprotein|tumou?r|cancer|neutrino|\bquarks?\b|hadron|\bbosons?\b|lepton|galax|"
+    r"\bgenom(?!\b)|\bprotein|tumou?r|cancer|neutrino|\bquarks?\b|hadron|\bbosons?\b|lepton|galax|"
     r"cosmolog|supernova|\bmice\b|\bmouse\b|enzym|photosynth|crystal structure|"
     r"x-ray diffraction|synchrotron|beamline|\bstomata|\bvaccin|antibod|\bhiv\b|\bhsv\b|"
     r"metabolic engineering|\bcations?\b|semiconductor|perovskite|\bwafers?\b",

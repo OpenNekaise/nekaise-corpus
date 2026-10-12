@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""find_diva.py — building energy / physical simulation theses and reports from DiVA (Sweden).
+"""find_diva.py — built-environment theses and reports from DiVA (Sweden), two families.
 
 DiVA (Digitala Vetenskapliga Arkivet, diva-portal.org) is the shared repository of ~50 Swedish
 universities and agencies (KTH, Linköping, Uppsala, Luleå, Mälardalen, Gävle, Umeå, ...). It
@@ -24,27 +24,50 @@ statement keeps its exact tag (cc-by-nc, cc-by-nc-sa, cc-by-nd, cc-by-nc-nd);
 anything else, including no statement, is `unverified` (DiVA marks the file free to read but
 states no reuse licence).
 
-Rotation (dynamic, `--cursor "<set index>:<year>:<resumptionToken|START>"`): an unexpected answer
-holds the cursor, a rejected token restarts its year window, past the last set and FLOOR_YEAR the
-backend reports EXHAUSTED. A full final page closes its window only when DiVA's declared total,
-continuation offset and actual record count agree; an empty continuation never proves completion.
+Families (`--family`, one backend each, same `dva-` shard and source `diva`):
+  * `sim` (backend find_diva, the default): the gate above, topic simulation_modeling.
+  * `aec` (backend find_diva_aec): every built-environment subject. Sets studentThesis (all
+    subjects, a superset of Technology), doctoralThesis, licentiateThesis and report; a record is
+    kept when scripts/diva_aec.py passes its titles, author keywords and research-subject (HSV)
+    classification; the topic comes from the same module.
+
+Rotation (dynamic, `--cursor`):
+  * history `"<set index>[@<walk start date>]:<year>:<resumptionToken|START>"`: an unexpected
+    answer holds the cursor, a rejected token restarts its window. The walk start date is set on
+    the first run and carried to the end. A full final page closes its window only when
+    DiVA's declared total, continuation offset and actual record count agree for the requested
+    set and window; an empty continuation never proves completion.
+  * past the last set and FLOOR_YEAR the history is complete and the cursor becomes a WATCH
+    cursor `"watch:<YYYY-MM-DD>"` (the backend does not report EXHAUSTED: DiVA keeps publishing).
+    A watch cursor makes no request until WATCH_DAYS have passed; then it harvests every set by
+    OAI datestamp from one day before that date until today
+    (`"watch:<since>:<until>:<set index>:<resumptionToken|START>"` while in progress) and ends
+    as `"watch:<until>"`. The first watch after a history walk starts at the walk's start date,
+    however long the walk took: a record added or modified after its window was walked carries a
+    datestamp on or after that date. (A hand-written history cursor without a start date that
+    is not the initial position falls back to 1 January of the previous year.)
+  * the legacy cursor `END` still reports EXHAUSTED.
 
     python scripts/find_diva.py --cursor "0:2025:START" --pages 2 --max 20
+    python scripts/find_diva.py --family aec --cursor "watch:2026-10-01" --pages 2 --max 20
 """
 from __future__ import annotations
 
 import argparse
+import fcntl
 import re
 import sys
 import time
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
+from pathlib import Path
 
 import requests
 import yaml
 
 import bes_relevance
 import dedup
+import diva_aec
 import licenses
 import registry
 from finder_protocol import Report
@@ -52,10 +75,21 @@ from finder_protocol import Report
 OAI = "https://www.diva-portal.org/dice/oai"
 UA = {"User-Agent": "nekaise-corpus/find_diva (research corpus; robots.txt honoured)"}
 CRAWL_DELAY = 10.0  # diva-portal.org robots.txt Crawl-delay for *
+# The two family backends run in the same round, concurrently: every OAI request goes through
+# this file (exclusive lock + time of the last answer) so that together they still make one
+# request per CRAWL_DELAY. None disables the gate (tests).
+PACE_FILE: Path | None = Path(__file__).resolve().parents[1] / "workspace" / ".diva-oai.pace"
 FLOOR_YEAR = 1995
 START = "START"
 # Append-only: the cursor indexes this tuple.
 SETS = ("Technology", "doctoralThesis", "licentiateThesis", "report")
+# Append-only too. studentThesis covers every subject (architecture, planning and real-estate
+# theses are classified outside Technology); 2026-10-12: 445,377 + 37,257 + 8,150 + 57,436 records.
+AEC_SETS = ("studentThesis", "doctoralThesis", "licentiateThesis", "report")
+FAMILIES = {"sim": (SETS, "simulation"), "aec": (AEC_SETS, "AEC")}
+KNOWN_SETS = frozenset(SETS + AEC_SETS)
+WATCH_DAYS = 7              # a watch cursor harvests new datestamps at most this often
+DAY = re.compile(r"\d{4}-\d{2}-\d{2}")
 SOURCE = "diva"
 TOPIC = "simulation_modeling"
 PREFIX = "dva-"
@@ -75,8 +109,8 @@ SIM = re.compile(
 RESTRICTED_CC = re.compile(r"https?://(?:www\.)?creativecommons\.org/licenses/"
                            r"(by-nc-nd|by-nc-sa|by-nc|by-nd)/\d\.\d(?:/[a-z]{2})?"
                            r"(?:/(?:legalcode(?:\.[a-z]{2})?|deed\.[a-z]{2}))?/?", re.I)
-LANGS = {"eng": "en", "swe": "sv", "nor": "no", "dan": "da", "fin": "fi", "ger": "de",
-         "fre": "fr", "spa": "es"}
+LANGS = {"eng": "en", "swe": "sv", "nor": "no", "nob": "no", "nno": "no", "dan": "da",
+         "fin": "fi", "ger": "de", "fre": "fr", "spa": "es"}
 DOC_TYPES = {"studentThesis": "thesis", "doctoralThesis": "thesis", "licentiateThesis": "thesis",
              "report": "report"}
 
@@ -85,31 +119,106 @@ class Unexpected(RuntimeError):
     """Not an OAI-PMH ListRecords answer (challenge, maintenance page, error)."""
 
 
-def parse_cursor(cursor: str) -> tuple[int, int, str | None]:
+def parse_history(cursor: str) -> tuple[int, date | None, int, str | None]:
+    """(set index, walk start date or None, year, token) of a history cursor."""
     parts = cursor.split(":", 2)
-    if len(parts) != 3 or not parts[0].isdigit() or not parts[1].isdigit() or not parts[2]:
-        raise ValueError(f"cursor must be '<set>:<year>:<token|START>': {cursor!r}")
-    return int(parts[0]), int(parts[1]), None if parts[2] == START else parts[2]
+    index, _, started = parts[0].partition("@")
+    if (len(parts) != 3 or not index.isdigit() or not parts[1].isdigit() or not parts[2]
+            or ("@" in parts[0] and not DAY.fullmatch(started))):
+        raise ValueError("cursor must be '<set>[@<YYYY-MM-DD>]:<year>:<token|START>': "
+                         f"{cursor!r}")
+    try:
+        start = date.fromisoformat(started) if started else None
+    except ValueError as exc:
+        raise ValueError(f"cursor names an impossible date: {cursor!r}") from exc
+    return int(index), start, int(parts[1]), None if parts[2] == START else parts[2]
 
 
-def fetch_page(setname: str, year: int, token: str | None) -> bytes:
+def parse_cursor(cursor: str) -> tuple[int, int, str | None]:
+    index, _start, year, token = parse_history(cursor)
+    return index, year, token
+
+
+def _day(text: str) -> date:
+    if not DAY.fullmatch(text):
+        raise ValueError(f"not a YYYY-MM-DD date: {text!r}")
+    return date.fromisoformat(text)
+
+
+def parse_watch(cursor: str) -> tuple[date, date | None, int, str | None]:
+    """(since, until, set index, token) of a watch cursor: 'watch:<since>' (idle: until is None)
+    or 'watch:<since>:<until>:<set index>:<token|START>' (a harvest in progress)."""
+    parts = cursor.split(":", 4)
+    try:
+        if parts[0] != "watch" or len(parts) not in (2, 5):
+            raise ValueError("shape")
+        since = _day(parts[1])
+        if len(parts) == 2:
+            return since, None, 0, None
+        until = _day(parts[2])
+        if until < since or not parts[3].isdigit() or not parts[4]:
+            raise ValueError("fields")
+        return since, until, int(parts[3]), None if parts[4] == START else parts[4]
+    except ValueError as exc:
+        raise ValueError("cursor must be 'watch:<YYYY-MM-DD>' or 'watch:<since>:<until>:<set>:"
+                         f"<token|START>': {cursor!r}") from exc
+
+
+def year_window(year: int) -> tuple[str, str]:
+    return f"{year}-01-01T00:00:00Z", f"{year}-12-31T23:59:59Z"
+
+
+def watch_window(since: date, until: date) -> tuple[str, str]:
+    """One day of overlap: a record stamped on the day of the previous walk, after it passed."""
+    return f"{since - timedelta(days=1)}T00:00:00Z", f"{until}T23:59:59Z"
+
+
+def fetch_page(setname: str, window: tuple[str, str], token: str | None) -> bytes:
     params = ({"verb": "ListRecords", "resumptionToken": token} if token else
               {"verb": "ListRecords", "metadataPrefix": "swepub_mods", "set": setname,
-               "from": f"{year}-01-01T00:00:00Z", "until": f"{year}-12-31T23:59:59Z"})
-    response = requests.get(OAI, params=params, headers=UA, timeout=180)
+               "from": window[0], "until": window[1]})
+    response = paced_get(params)
     if response.status_code != 200:
         raise Unexpected(f"OAI answered HTTP {response.status_code}")
     return response.content
 
 
+def paced_get(params: dict):
+    """One OAI request, no sooner than CRAWL_DELAY after the last answer to ANY find_diva
+    process on this machine (the families share the host's robots Crawl-delay)."""
+    if PACE_FILE is None:
+        return requests.get(OAI, params=params, headers=UA, timeout=180)
+    PACE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with PACE_FILE.open("a+") as handle:
+        fcntl.flock(handle.fileno(), fcntl.LOCK_EX)
+        handle.seek(0)
+        try:
+            last = float(handle.read().strip() or 0)
+        except ValueError:
+            last = 0.0
+        wait = last + CRAWL_DELAY - time.time()
+        if wait > 0:
+            # never longer than one delay (a clock set back must not stall the round), never
+            # skipped (the stored time is rounded and may be slightly ahead of this clock)
+            time.sleep(min(wait, CRAWL_DELAY))
+        try:
+            return requests.get(OAI, params=params, headers=UA, timeout=180)
+        finally:
+            handle.seek(0)
+            handle.truncate()
+            handle.write(f"{time.time():.6f}")
+            handle.flush()
+
+
 def _position(token: str | None) -> tuple[int, int, list[str]] | None:
-    """Recognize only DiVA's observed year-window tokens; unknown formats stay opaque."""
+    """Recognize only DiVA's observed set + datestamp-window tokens; unknown formats stay opaque."""
     parts = (token or "").split("/")
     if (len(parts) != 9 or parts[1:3] != ["diva", "swepub_mods"] or parts[8]
-            or parts[5] not in SETS
+            or parts[5] not in KNOWN_SETS
             or not all(re.fullmatch(r"[0-9]+", parts[i]) for i in (0, 3, 4))
-            or not re.fullmatch(r"[0-9]{4}-01-01T00:00:00Z", parts[6])
-            or parts[7] != parts[6][:4] + "-12-31T23:59:59Z"):
+            or not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}T00:00:00Z", parts[6])
+            or not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}T23:59:59Z", parts[7])
+            or parts[6] > parts[7]):
         return None
     offset, size = int(parts[3]), int(parts[4])
     if not size or offset % size:
@@ -119,18 +228,22 @@ def _position(token: str | None) -> tuple[int, int, list[str]] | None:
 
 
 def _full_final_page(token_el: ET.Element, request_token: str | None,
-                     record_count: int) -> bool:
+                     record_count: int, scope: tuple[str, str, str] | None = None) -> bool:
     """DiVA can issue a token one page past the end when the total is a page multiple.
 
     Live ListRecords and ListIdentifiers probes corroborate that DiVA's cursor attribute names
     the NEXT offset. Require a full, contiguous page and matching total before ignoring that
     spurious token. This is provider-specific, not a generic OAI cursor interpretation.
+    `scope` is the requested (set, from, until): a token for another set or window proves nothing.
     """
     successor = _position((token_el.text or "").strip())
     if successor is None:
         return False
-    end, size, scope = successor
-    previous = _position(request_token) if request_token is not None else (0, size, scope)
+    end, size, token_scope = successor
+    if scope is not None and token_scope[1:4] != list(scope):
+        return False
+    previous = (_position(request_token) if request_token is not None
+                else (0, size, token_scope))
     if previous is None or previous[1:] != successor[1:]:
         return False
     return (record_count == size and previous[0] + record_count == end
@@ -138,7 +251,8 @@ def _full_final_page(token_el: ET.Element, request_token: str | None,
             and token_el.get("cursor") == str(end))
 
 
-def parse_page(body: bytes, *, request_token: str | None = None
+def parse_page(body: bytes, *, request_token: str | None = None,
+               scope: tuple[str, str, str] | None = None
                ) -> tuple[list[ET.Element], str | None]:
     """(mods elements, next token). Initial noRecordsMatch = empty finished window; badResumptionToken
     raises LookupError; anything that is not an OAI ListRecords answer raises Unexpected."""
@@ -170,7 +284,7 @@ def parse_page(body: bytes, *, request_token: str | None = None
     token = (token_el.text or "").strip() if token_el is not None else ""
     if not records:
         raise Unexpected("ListRecords answer with no records; completion is unproven")
-    if token and _full_final_page(token_el, request_token, len(records)):
+    if token and _full_final_page(token_el, request_token, len(records), scope):
         token = ""
     return mods, token or None
 
@@ -216,9 +330,36 @@ def licence_of(mods: ET.Element) -> tuple[str, str | None, list[str]]:
     return "unverified", None, values
 
 
-def candidate(mods: ET.Element, today: str) -> dict | None:
+def subjects_of(mods: ET.Element) -> tuple[list[str], list[tuple[str, str]]]:
+    """(author keywords, [(HSV code, English leaf name)]). The research-subject classification
+    (`<subject authority="hsv" xlink:href="20103">`) is kept apart from the free keywords."""
+    keywords: list[str] = []
+    codes: list[tuple[str, str]] = []
+    for subject in mods.iterfind("m:subject", NS):
+        topics = _text(subject.iterfind("m:topic", NS))
+        if subject.get("authority") != "hsv":
+            keywords.extend(topics)
+        elif (code := (subject.get(XLINK) or "").strip()).isdigit():
+            name = topics[-1] if topics and subject.get("lang") == "eng" else ""
+            if (code, name) not in codes:
+                codes.append((code, name))
+    return keywords, codes
+
+
+def sim_gate(titles: list[str], keywords: list[str]) -> bool:
+    """A building concept AND a simulation concept in titles + keywords (Swedish or English)."""
+    if any(bes_relevance.vetoed(t) for t in titles):
+        return False
+    text = " ; ".join(titles + keywords)
+    # Modelica is building-specific in a lab repository, not in a university one ("inverted
+    # pendulum in Modelica"): it counts as simulation evidence only.
+    anchor_text = re.sub(r"\bmodelica\b", " ", text, flags=re.I)
+    built = bes_relevance.BUILT.search(anchor_text) or SV_BUILT.search(anchor_text)
+    return bool(built and SIM.search(text))
+
+
+def candidate(mods: ET.Element, today: str, family: str = "sim") -> dict | None:
     titles = full_titles(mods)
-    keywords = _text(mods.iterfind("m:subject/m:topic", NS))
     if not titles:
         return None
     url = None
@@ -227,20 +368,23 @@ def candidate(mods: ET.Element, today: str) -> dict | None:
         if match and loc.get("note") == "free" and loc.get("displayLabel") == "fulltext":
             url = f"https://www.diva-portal.org/smash/get/{match.group(1)}/{match.group(2)}"
             break
-    if url is None or any(bes_relevance.vetoed(t) for t in titles):
+    if url is None:
         return None
-    text = " ; ".join(titles + keywords)
-    # Modelica is building-specific in a lab repository, not in a university one ("inverted
-    # pendulum in Modelica"): it counts as simulation evidence only.
-    anchor_text = re.sub(r"\bmodelica\b", " ", text, flags=re.I)
-    built = bes_relevance.BUILT.search(anchor_text) or SV_BUILT.search(anchor_text)
-    if not (built and SIM.search(text)):
-        return None
+    if family == "sim":
+        # the simulation family reads every subject topic, the classification names included
+        if not sim_gate(titles, _text(mods.iterfind("m:subject/m:topic", NS))):
+            return None
+        topic = TOPIC
+    else:
+        keywords, codes = subjects_of(mods)
+        if not diva_aec.relevant(titles, keywords, codes):
+            return None
+        topic = diva_aec.topic(titles, keywords, codes)
     tag, licence_url, conditions = licence_of(mods)
     title = titles[0]
     entry = {
         "id": f"{PREFIX}{registry.slug(title)[:52]}", "title": title[:150], "url": url,
-        "source": SOURCE, "license": tag, "topic": TOPIC, "format": "pdf",
+        "source": SOURCE, "license": tag, "topic": topic, "format": "pdf",
         "license_evidence": (f"DiVA accessCondition: {'; '.join(conditions)[:200]}"
                              if tag != "unverified" else
                              "DiVA swepub_mods: full text marked free; no verifiable reuse "
@@ -266,11 +410,88 @@ def candidate(mods: ET.Element, today: str) -> dict | None:
     return entry
 
 
+class Walk:
+    """Where the next request goes: a history year window or a watch window of one set."""
+
+    def __init__(self, sets: tuple[str, ...], cursor: str, today: date):
+        self.sets, self.today = sets, today
+        self.since: date | None = None   # watch mode when set
+        self.until: date | None = None
+        self.started: date | None = None  # history mode: the day the walk began
+        if cursor.startswith("watch"):
+            self.since, self.until, self.s, self.token = parse_watch(cursor)
+            self.year = today.year
+            active = self.until is not None
+        else:
+            self.s, self.started, self.year, self.token = parse_history(cursor)
+            active = True
+            if self.started is None and (self.s, self.year, self.token) == (0, today.year, None):
+                self.started = today   # the initial position: the walk begins now
+        if active and self.s >= len(sets):
+            # an out-of-range index would end the walk without a single request
+            raise ValueError(f"cursor names set {self.s}, the family has {len(sets)}: {cursor!r}")
+
+    @property
+    def watching(self) -> bool:
+        return self.since is not None
+
+    def due(self) -> bool:
+        """An idle watch cursor waits WATCH_DAYS; a harvest in progress always continues."""
+        return self.until is not None or self.today >= self.since + timedelta(days=WATCH_DAYS)
+
+    def begin(self) -> None:
+        if self.watching and self.until is None:
+            self.until, self.s, self.token = max(self.today, self.since), 0, None
+
+    @property
+    def done(self) -> bool:
+        return self.s >= len(self.sets)
+
+    def window(self) -> tuple[str, str]:
+        return (watch_window(self.since, self.until) if self.watching
+                else year_window(self.year))
+
+    def scope(self) -> tuple[str, str, str]:
+        return (self.sets[self.s], *self.window())
+
+    def where(self) -> str:
+        return self.cursor() if not self.done else "the end"
+
+    def restart(self) -> None:
+        self.token = None
+
+    def advance(self, next_token: str | None) -> None:
+        if next_token:
+            self.token = next_token
+        elif self.watching or self.year <= FLOOR_YEAR:
+            self.s, self.year, self.token = self.s + 1, self.today.year, None
+        else:
+            self.year, self.token = self.year - 1, None
+
+    def cursor(self) -> str:
+        """The cursor to persist. A finished history becomes a watch from the day the walk
+        began; a finished watch becomes idle at the day its window ended."""
+        if self.watching:
+            if self.done:
+                return f"watch:{self.until}"
+            return f"watch:{self.since}:{self.until}:{self.s}:{self.token or START}"
+        if self.done:
+            # no start date (a hand-written mid-walk cursor): a bounded, conservative watermark
+            return f"watch:{self.started or date(self.today.year - 1, 1, 1)}"
+        index = f"{self.s}@{self.started}" if self.started else str(self.s)
+        return f"{index}:{self.year}:{self.token or START}"
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     now = datetime.now(timezone.utc)
+    ap.add_argument("--family", choices=sorted(FAMILIES), default="sim",
+                    help="sim: building AND simulation concept (find_diva); aec: every "
+                         "built-environment subject (find_diva_aec)")
     ap.add_argument("--cursor", default=f"0:{now.year}:{START}",
-                    help="'<set index>:<year>:<resumptionToken|START>' (rotation pointer)")
+                    help="'<set index>[@<start date>]:<year>:<resumptionToken|START>', "
+                         "'watch:<YYYY-MM-DD>' or "
+                         "'watch:<since>:<until>:<set index>:<token|START>' (rotation pointer)")
     ap.add_argument("--pages", type=int, default=6, help="max OAI pages this run")
     ap.add_argument("--max", type=int, default=40,
                     help="page-granular target for new entries (the last page may exceed it)")
@@ -278,46 +499,56 @@ def main() -> None:
     args = ap.parse_args()
     if args.pages < 1 or args.max < 1:
         ap.error("--pages and --max must be positive")
+    sets, label = FAMILIES[args.family]
     report = Report()
     if args.cursor == "END":
-        report.exhausted(f"all {len(SETS)} DiVA sets walked down to {FLOOR_YEAR}")
-        print("# 0 NEW DiVA records (cursor END)")
+        report.exhausted(f"all {len(sets)} DiVA sets walked down to {FLOOR_YEAR}")
+        print(f"# 0 NEW DiVA {label} records (cursor END)")
         return
     try:
-        s, year, token = parse_cursor(args.cursor)
+        walk = Walk(sets, args.cursor, now.date())
     except ValueError as exc:
         ap.error(str(exc))
+    if walk.watching and not walk.due():
+        print(f"# 0 NEW DiVA {label} records (datestamps harvested to {walk.since}; next look "
+              f"{walk.since + timedelta(days=WATCH_DAYS)})")
+        report.next(args.cursor)
+        return
+    walk.begin()
 
     today = now.date().isoformat()
     keys = dedup.open_keys()
     out: list[dict] = []
     scanned = pages = 0
     restarted = False
-    while s < len(SETS) and pages < args.pages and len(out) < args.max:
+    while not walk.done and pages < args.pages and len(out) < args.max:
         if pages:
             time.sleep(CRAWL_DELAY)
         try:
-            mods, next_token = parse_page(fetch_page(SETS[s], year, token), request_token=token)
+            mods, next_token = parse_page(
+                fetch_page(sets[walk.s], walk.window(), walk.token),
+                request_token=walk.token, scope=walk.scope())
         except LookupError as exc:
-            if restarted or token is None:
-                report.hold(f"{exc} at {s}:{year}; nothing proposed")
-                print("# 0 NEW DiVA records (rejected token)")
+            if restarted or walk.token is None:
+                report.hold(f"{exc} at {walk.where()}; nothing proposed")
+                print(f"# 0 NEW DiVA {label} records (rejected token)")
                 return
-            print(f"# {exc}; restarting {SETS[s]} {year}", file=sys.stderr)
-            restarted, token = True, None
+            print(f"# {exc}; restarting {sets[walk.s]} {walk.window()[0][:10]}", file=sys.stderr)
+            restarted = True
+            walk.restart()
             pages += 1
             continue
         except Unexpected as exc:
-            report.hold(f"{exc} at {s}:{year}:{token or START}; nothing proposed")
-            print("# 0 NEW DiVA records (unexpected OAI answer)")
+            report.hold(f"{exc} at {walk.where()}; nothing proposed")
+            print(f"# 0 NEW DiVA {label} records (unexpected OAI answer)")
             return
         except Exception as exc:
-            print(f"# ERROR: DiVA OAI page failed at {s}:{year}:{token or START}: {exc}; "
+            print(f"# ERROR: DiVA OAI page failed at {walk.where()}: {exc}; "
                   "refusing a partial append so rotation does not advance", file=sys.stderr)
             raise SystemExit(1)
         pages += 1
         scanned += len(mods)
-        entries = [e for e in (candidate(m, today) for m in mods) if e]
+        entries = [e for e in (candidate(m, today, args.family) for m in mods) if e]
         keys.prefetch(**dedup.page_keys(entries))
         for entry in entries:
             u, t = entry["url"].rstrip("/"), registry.norm(entry["title"])
@@ -327,29 +558,24 @@ def main() -> None:
             keys.titles.add(t)
             keys.add_identity(entry)
             out.append(entry)
-        if next_token:
-            token = next_token
-        elif year > FLOOR_YEAR:
-            year, token = year - 1, None
-        else:
-            s, year, token = s + 1, now.year, None
+        walk.advance(next_token)
 
     keys.uniquify_ids(out)
     by_licence: dict[str, int] = {}
+    by_topic: dict[str, int] = {}
     for entry in out:
         by_licence[entry["license"]] = by_licence.get(entry["license"], 0) + 1
-    print(f"# {len(out)} NEW DiVA simulation records (kept {len(out)}/{scanned} over {pages} OAI "
+        by_topic[entry["topic"]] = by_topic.get(entry["topic"], 0) + 1
+    print(f"# {len(out)} NEW DiVA {label} records (kept {len(out)}/{scanned} over {pages} OAI "
           f"pages; deduped vs manifest + registry + blocklist)")
     print(f"# by licence: {by_licence}")
+    print(f"# by topic: {by_topic}")
     print("# --- review, then --append, then scripts/build_corpus.py ---")
     print(yaml.safe_dump(out, sort_keys=False, allow_unicode=True))
     if args.append and out:
         counts = registry.append_entries(out)
         print(f"# appended {len(out)} entries to the registry: {counts}", file=sys.stderr)
-    if s >= len(SETS):
-        report.exhausted(f"all {len(SETS)} DiVA sets walked down to {FLOOR_YEAR}")
-    else:
-        report.next(f"{s}:{year}:{token or START}")
+    report.next(walk.cursor())
 
 
 if __name__ == "__main__":

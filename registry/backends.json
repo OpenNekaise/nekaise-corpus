@@ -472,7 +472,21 @@
     ],
     "enabled": true,
     "required": false,
-    "reason": "NEW 2026-10-02: DiVA (diva-portal.org, ~50 Swedish universities and agencies) OAI-PMH swepub_mods, sets Technology student theses / doctoral / licentiate theses / reports by datestamp year; keeps free full texts whose titles+keywords (sv/en) name a building concept AND a simulation concept (IDA ICE, EnergyPlus, TRNSYS, Modelica, VIP-Energy, CFD, simulering ...); canonical www.diva-portal.org PDF URL; licence from accessCondition via licenses.cc_license else unverified; robots Crawl-delay 10 honoured in the finder and the loader (polite host, 30 PDFs per run); required=false"
+    "reason": "NEW 2026-10-02: DiVA (diva-portal.org, ~50 Swedish universities and agencies) OAI-PMH swepub_mods, sets Technology student theses / doctoral / licentiate theses / reports by datestamp year; keeps free full texts whose titles+keywords (sv/en) name a building concept AND a simulation concept (IDA ICE, EnergyPlus, TRNSYS, Modelica, VIP-Energy, CFD, simulering ...); canonical www.diva-portal.org PDF URL; licence from accessCondition via licenses.cc_license else unverified; robots Crawl-delay 10 honoured in the finder and the loader (polite host, 60 PDFs per run); required=false. 2026-10-12: the history walk (down to 1995) finished 2026-10-11; the cursor is now a watch cursor (new OAI datestamps at most every 7 days), so the backend no longer ends EXHAUSTED"
+  },
+  "find_diva_aec": {
+    "script": "find_diva.py",
+    "args": [
+      "--family",
+      "aec",
+      "--pages",
+      "12",
+      "--max",
+      "60"
+    ],
+    "enabled": true,
+    "required": false,
+    "reason": "NEW 2026-10-12: DiVA all-AEC family (find_diva.py --family aec, same dva- shard as find_diva): OAI-PMH swepub_mods sets studentThesis (every subject) / doctoralThesis / licentiateThesis / report (548k records on 2026-10-12) by datestamp year down to 1995, then a watch cursor from the walk's start date (new datestamps at most every 7 days; never EXHAUSTED). Keeps free full texts that scripts/diva_aec.py passes on titles + author keywords + HSV research-subject codes (buildings, building energy/HVAC, architecture, construction management, structures, geotechnics, materials, roads/railways, water infrastructure, fire safety, urban planning, real estate; sv/en/no/da); calibrated on 3,361 live records: 322 kept (student theses 4-5%, Technology 15-24%), estimated 20k documents. Licence from accessCondition via licenses.cc_license else unverified. One OAI request per 10 s (robots Crawl-delay) shared with find_diva through workspace/.diva-oai.pace; --max 60 matches the loader's 60 PDFs per run; required=false"
   },
   "find_zenodo_sim": {
     "script": "find_zenodo_sim.py",

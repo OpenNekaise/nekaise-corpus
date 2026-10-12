@@ -1,4 +1,5 @@
 import sys
+from datetime import date
 from types import SimpleNamespace
 
 import pytest
@@ -6,6 +7,12 @@ import pytest
 import find_diva
 import lint_registry
 import registry
+
+
+@pytest.fixture(autouse=True)
+def _no_pace_file(monkeypatch):
+    """The cross-process pacing file is exercised by its own test only."""
+    monkeypatch.setattr(find_diva, "PACE_FILE", None)
 
 
 def _mods(title, keywords=(), url="https://kth.diva-portal.org/smash/get/diva2:101/FULLTEXT01.pdf",
@@ -275,7 +282,21 @@ def test_floor_year_moves_to_next_set_and_last_set_exhausts(monkeypatch, tmp_pat
     monkeypatch.setattr(sys, "argv", ["find_diva.py", "--cursor",
                                       f"{last}:{find_diva.FLOOR_YEAR}:START", "--pages", "1"])
     find_diva.main()
-    assert files["next"].read_text() == "END\n" and files["exhausted"].read_text().strip()
+    # DiVA keeps publishing: a finished history becomes a watch cursor, never EXHAUSTED
+    cursor = files["next"].read_text().strip()
+    since, until, _s, _token = find_diva.parse_watch(cursor)
+    assert until is None and not files["exhausted"].exists()
+    # a hand-written cursor without a walk start date: bounded, conservative watermark
+    assert since.month == since.day == 1 and since.year in (date.today().year - 1,
+                                                            date.today().year - 2)
+
+
+def test_legacy_end_cursor_still_reports_exhausted(monkeypatch, tmp_path):
+    calls, _, files = _setup(monkeypatch, tmp_path, [])
+    monkeypatch.setattr(sys, "argv", ["find_diva.py", "--cursor", "END"])
+    find_diva.main()
+    assert calls == [] and files["next"].read_text() == "END\n"
+    assert files["exhausted"].read_text().strip()
 
 
 def test_floor_year_of_a_middle_set_starts_the_next_set(monkeypatch, tmp_path):

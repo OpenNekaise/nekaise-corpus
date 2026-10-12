@@ -178,7 +178,7 @@ HOST_RUN_CAP: dict[str, int] = {
     "publications.ibpsa.org": 80,  # 80 x 3 s = 4 min
     "escholarship.org": 60,        # 60 x 4 s = 4 min
     "unmethours.com": 120,         # 120 x 2 s = 4 min
-    "www.diva-portal.org": 30,     # 30 x 10 s = 5 min
+    "www.diva-portal.org": 60,     # 60 x 10 s = 10 min (find_diva + find_diva_aec)
     "ec.europa.eu": 150,           # deliverables: 150 x 2 hops at 1 s per host = ~3-5 min
 }
 # Compliance/ESG programme (Codex decision 2026-09-25; ids bov-bfs- / reg- / eur- / esf-, see
