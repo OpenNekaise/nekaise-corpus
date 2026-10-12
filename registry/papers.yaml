@@ -141074,3 +141074,22 @@ sources:
     selected_version: acceptedVersion
     origin_ids: doi:10.3390/buildings15142532 openalex:W4413060311
     resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2026-117443-68554c8c
+    title: 'Modernist heritage and environmental quality of Nadyr de Oliveira House
+      (1960): A Corbusian residence in São Paulo, Brazil'
+    url: https://discovery.ucl.ac.uk/id/eprint/10231404/1/MANUSCRIPT_PLEA-SPECIAL-ISSUE-NADYR-HOUSE.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-04-11'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2026.117443
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/id/eprint/10231404/1/MANUSCRIPT_PLEA-SPECIAL-ISSUE-NADYR-HOUSE.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2026.117443 openalex:W7153592175
+    resolution: 'sim1: openalex location'
