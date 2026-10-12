@@ -141182,3 +141182,96 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.1901.07333 openalex:W2912435597
     resolution: 'ai1: openalex location'
+  - id: ope-anthropogenic-and-natural-drivers-of-a-strong-
+    title: Anthropogenic and natural drivers of a strong winter urban heat island in
+      a typical Arctic city
+    url: https://acp.copernicus.org/articles/18/17573/2018/acp-18-17573-2018.pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2018-12-12'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/acp-18-17573-2018
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://acp.copernicus.org/articles/18/17573/2018/acp-18-17573-2018.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-12'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/acp-18-17573-2018 openalex:W2890733297
+    resolution: 'legacy: openalex location'
+  - id: ope-integrated-urban-hydrometeorological-climate-a
+    title: 'Integrated urban hydrometeorological, climate and environmental services:
+      Concept, methodology and key messages'
+    url: https://centaur.reading.ac.uk/90581/1/Grimmond%20_etal2020_IUS_UC.pdf
+    source: openalex
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2020-04-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.uclim.2020.100623
+    license_evidence: no licence statement for this copy [copy https://centaur.reading.ac.uk/90581/1/Grimmond%20_etal2020_IUS_UC.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.uclim.2020.100623 openalex:W3015025985
+    resolution: 'legacy: openalex location'
+  - id: ope-connecting-land-use-and-water-planning-prospec
+    title: 'Connecting land-use and water planning: Prospects for an urban water metabolism
+      approach'
+    url: https://eprints.qut.edu.au/205150/1/Serrao_Neumann_at_al_2016_Cities_accepted_manuscript.pdf
+    source: openalex
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-08-03'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.cities.2016.07.003
+    license_evidence: openalex=version acceptedVersion vs publishedVersion; openalex.license=cc-by-nc-nd;
+      openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd [copy https://eprints.qut.edu.au/205150/1/Serrao_Neumann_at_al_2016_Cities_accepted_manuscript.pdf;
+      version publishedVersion; rights conflict]
+    rights_verified_at: '2026-10-12'
+    selected_version: publishedVersion
+    origin_ids: doi:10.1016/j.cities.2016.07.003 openalex:W2489764467
+    resolution: 'legacy: openalex location'
+  - id: ope-a-critical-review-for-the-application-of-cutti
+    title: A critical review for the application of cutting-edge digital visualisation
+      technologies for effective urban flood risk management
+    url: https://repository.uwl.ac.uk/id/eprint/10398/7/A.1-s2.0-S2210670723005693-main.pdf
+    source: openalex
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2023-09-24'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.scs.2023.104958
+    license_evidence: no licence statement for this copy [copy https://repository.uwl.ac.uk/id/eprint/10398/7/A.1-s2.0-S2210670723005693-main.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.scs.2023.104958 openalex:W4386997404
+    resolution: 'legacy: openalex location'
+  - id: ope-a-global-horizon-scan-of-the-future-impacts-of
+    title: A global horizon scan of the future impacts of robotics and autonomous systems
+      on urban ecosystems
+    url: https://pure-oai.bham.ac.uk/ws/files/120813145/Goddard_RAS_horizon_scan_final_version_Sept_2020.pdf
+    source: openalex
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2021-01-04'
+    document_type: article
+    persistent_id: https://doi.org/10.1038/s41559-020-01358-z
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://pure-oai.bham.ac.uk/ws/files/120813145/Goddard_RAS_horizon_scan_final_version_Sept_2020.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1038/s41559-020-01358-z openalex:W3119690318
+    resolution: 'legacy: openalex location'
