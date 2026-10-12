@@ -26,7 +26,7 @@
   },
   "find_cordis": {
     "flag": "--cursor",
-    "next": "p=194808",
+    "next": "p=198802",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-10-12: 'p=<last CORDIS project rcn walked>' (ascending keyset over ~80k projects, 200 per page), or 'watch:<YYYY-MM-DD>' after the last project: the walk starts again 14 days later (running projects keep publishing deliverables; dedup keeps only the new ones). An unexpected SPARQL answer holds the cursor."
@@ -75,7 +75,7 @@
   },
   "find_nlr": {
     "flag": "--cursor",
-    "next": "watch:2026-10-12:2026:oai_dc/1473/248331703/800/0/233000040/publications:year2026/x/x",
+    "next": "watch:2026-10-12:2025:oai_dc/2076/248331703/100/0/161531601/publications:year2025/x/x",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-24: '<year>:<OAI resumptionToken|START>' over research-hub.nlr.gov Pure sets publications:yearYYYY, newest year first down to 1975 (53,919 records total; 2024 alone has 2,344). A rejected token restarts its year. RE-AIMED 2026-10-12 from END to the watch mode: 'watch:<date>' waits 7 days, then a pass 'watch:<started>:<year>:<token|START>' walks the current year's set and the one before it again and ends in 'watch:<started>'. Never EXHAUSTED."
@@ -94,7 +94,7 @@
   },
   "find_kitopen": {
     "flag": "--cursor",
-    "next": "walk:2026-10-12:0:kK7TdRWJFXQ63pMh",
+    "next": "walk:2026-10-12:1:7urEvtFZK8LZ82hk",
     "step": 0,
     "dynamic": true,
     "note": "RE-AIMED 2026-10-12 from '--token END' (ddc:720 walked for CC BY / BY-SA / CC0 on 2026-09-02, ddc:690 on 07-10) to '--cursor walk:<walk start date>:<index into find_kitopen.SETS (append-only)>:<OAI resumptionToken|START>': both sets again for every licence class. The walk ends in 'watch:<walk start date>', so the first pass reads everything changed since the walk began. Then 'watch:<date>' waits 7 days and a pass 'watch:<since>:<started>:<set index>:<token|START>' reads each set with OAI from=<since minus 2 days>, ending in 'watch:<started>'. A rejected token restarts its set; a set index outside SETS is an error. Never EXHAUSTED. ddc:620 was sampled 2026-09-02 and 2026-10-12 and rejected as too broad."
@@ -166,14 +166,14 @@
   },
   "find_openalex_sim": {
     "flag": "--family-cursor",
-    "next": "sim1 t=885 q=2 w=0 p=5 k=0 sq=4 sw=2 sp=1 sk=0",
+    "next": "sim1 t=886 q=2 w=0 p=5 k=0 sq=4 sw=2 sp=1 sk=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families cursor 'sim1 t=<runs> q=<query> w=<date window> p=<page> k=<results finished on that page>' for the simulation walk plus sq/sw/sp/sk for the SSRN-origin walk. Which walk searches in a round comes from the round id (openalex_families.budget_slot), never from this cursor. A --max or lookup-cap stop keeps the page with its k; a failed or malformed search keeps the whole cursor. Changing openalex_families.SIMULATION queries/windows needs a new version and a reviewed cursor migration."
   },
   "find_openalex_ai": {
     "flag": "--family-cursor",
-    "next": "ai1 t=930 q=1 w=2 p=1 k=0",
+    "next": "ai1 t=931 q=1 w=3 p=1 k=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families BUILDING_AI cursor 'ai1 t q w p k' (same semantics as find_openalex_sim's main walk)."
@@ -186,7 +186,7 @@
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 3066,
+    "next": 3067,
     "step": 1,
     "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature)."
   },
@@ -226,14 +226,14 @@
   },
   "find_osti_sim": {
     "flag": "--cursor",
-    "next": "watch:2026-10-02:2026-10-12 q=18 p=1",
+    "next": "watch:2026-10-02:2026-10-12 q=24 p=1",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-10-02: 'q=<index into find_osti_sim.QUERIES (append-only)> p=<API page>[ since=<walk start date>]' query-major history walk, each query to its last (short) page; then 'watch:<date>' (one pass per day over records whose OSTI entry_date is in [date, today]; in progress: 'watch:<since>:<until> q=<i> p=<page>'). RE-AIMED 2026-10-12 from END to watch:2026-10-02, the day the history walk started. An unexpected answer holds. After appending a query re-aim to 'q=<its index> p=1 since=<current watch date>'."
   },
   "find_osti_aec": {
     "flag": "--cursor",
-    "next": "q=1 p=29 since=2026-10-12",
+    "next": "q=1 p=49 since=2026-10-12",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-10-12: same cursor grammar as find_osti_sim (shared runner): 'q=<index into find_osti_aec.QUERIES (append-only)> p=<API page>[ since=<walk start date>]', then 'watch:<date>' / 'watch:<since>:<until> q=<i> p=<page>'. The first run stamps since=<today>. Never EXHAUSTED. After appending a query re-aim to 'q=<its index> p=1 since=<current watch date>'."
@@ -254,7 +254,7 @@
   },
   "find_diva_aec": {
     "flag": "--cursor",
-    "next": "0@2026-10-12:2026:1791788547823/diva/swepub_mods/3400/100/studentThesis/2026-01-01T00:00:00Z/2026-12-31T23:59:59Z/",
+    "next": "0@2026-10-12:2026:1791791268138/diva/swepub_mods/4600/100/studentThesis/2026-01-01T00:00:00Z/2026-12-31T23:59:59Z/",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-10-12: find_diva.py --family aec; same cursor grammar as find_diva over find_diva.AEC_SETS (append-only): history '<set index>@<walk start date>:<datestamp year>:<OAI resumptionToken|START>' down to 1995, then 'watch:<walk start date>' (the first watch harvests every datestamp since the walk began)."

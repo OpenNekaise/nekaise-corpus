@@ -140544,23 +140544,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2110.06396 openalex:W4297778180
     resolution: 'ai1: openalex location'
-  - id: ope-what-color-is-this-place
-    title: What Color Is This Place?
-    url: https://e-space.mmu.ac.uk/631948/3/What%20Color%20Is%20This%20Place.pdf
-    source: openalex
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '2023-04-14'
-    document_type: article
-    persistent_id: https://doi.org/10.1080/2373566x.2023.2188095
-    license_evidence: no licence statement for this copy [copy https://e-space.mmu.ac.uk/631948/3/What%20Color%20Is%20This%20Place.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-11'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1080/2373566x.2023.2188095 openalex:W4365504201
-    resolution: 'legacy: openalex location'
   - id: ope-turning-shops-into-housing-planning-deregulati
     title: Turning Shops into Housing? Planning Deregulation, Design Quality and the
       Future of the High Street in England
@@ -141093,3 +141076,109 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.enbuild.2026.117443 openalex:W7153592175
     resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-enbuild-2019-07-009-6de705cd
+    title: A systematic development and validation approach to a novel agent-based modeling
+      of occupant behaviors in commercial buildings
+    url: https://opus.lib.uts.edu.au/bitstream/10453/136881/4/EnB-manuscript-new-revise-1.pdf
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2019-07-07'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2019.07.009
+    license_evidence: no licence statement for this copy [copy https://opus.lib.uts.edu.au/bitstream/10453/136881/4/EnB-manuscript-new-revise-1.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2019.07.009 openalex:W2955757204
+    resolution: 'ai1: openalex+unpaywall location'
+  - id: oas-10-1002-er-4867-eff3c005
+    title: Development and energy evaluation of phase change material composite for
+      building energy‐saving
+    url: https://discovery.ucl.ac.uk/10084233/3/Wei%20Development%20and%20energy%20evaluation%20of%20phase%20change%20material%20composite%20for%20building%20energy-saving%20.pdf
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2019-09-03'
+    document_type: article
+    persistent_id: https://doi.org/10.1002/er.4867
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10084233/3/Wei%20Development%20and%20energy%20evaluation%20of%20phase%20change%20material%20composite%20for%20building%20energy-saving%20.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1002/er.4867 openalex:W2972078282
+    resolution: 'ai1: openalex+unpaywall location'
+  - id: oas-10-48550-arxiv-1910-07899-b2f966ba
+    title: Design, Benchmarking and Explainability Analysis of a Game-Theoretic Framework
+      towards Energy Efficiency in Smart Infrastructure
+    url: https://arxiv.org/pdf/1910.07899
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2019-10-16'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.1910.07899
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1910.07899;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.1910.07899 openalex:W2980809349
+    resolution: 'ai1: openalex location'
+  - id: oas-10-2139-ssrn-2829316-a41536b2
+    title: 'Modelling Office Energy Consumption: An Agent Based Approach'
+    url: https://arxiv.org/pdf/1607.06332
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2016-01-01'
+    document_type: preprint
+    persistent_id: https://doi.org/10.2139/ssrn.2829316
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1607.06332;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.2139/ssrn.2829316 openalex:W102836821
+    resolution: 'ai1: openalex+unpaywall location'
+  - id: oas-10-3390-en12224276-598c67d7
+    title: HVAC-Based Cooperative Algorithms for Demand Side Management in a Microgrid
+    url: https://eprints.lancs.ac.uk/id/eprint/138850/1/energies_12_04276.pdf
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2019-11-09'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/en12224276
+    license_evidence: no licence statement for this copy [copy https://eprints.lancs.ac.uk/id/eprint/138850/1/energies_12_04276.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/en12224276 openalex:W2984881269
+    resolution: 'ai1: openalex+unpaywall location'
+  - id: oas-10-48550-arxiv-1901-07333-4cbda6d3
+    title: Multi-agent Reinforcement Learning Embedded Game for the Optimization of
+      Building Energy Control and Power System Planning
+    url: https://arxiv.org/pdf/1901.07333
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2019-01-17'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.1901.07333
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1901.07333;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-12'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.1901.07333 openalex:W2912435597
+    resolution: 'ai1: openalex location'
