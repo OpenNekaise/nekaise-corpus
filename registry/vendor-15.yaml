@@ -21903,9 +21903,23 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-quantum-flooring-cleaning-guidelines-stair-nosing-c57e0e7d
-    title: 'SpecifiedBy (UK manufacturer documents): quantum-flooring-cleaning-guidelines-stair-nosing_c57e0e7d.pdf'
-    url: https://www.specifiedby.com/quantum-flooring-accessories/dda-sf160r-stair-nosing-for-vinyl/quantum-flooring-cleaning-guidelines-stair-nosing_c57e0e7d.pdf
+  - id: vnd-specifiedby-quantum-flooring-pds-h-range-79ca2b53
+    title: 'SpecifiedBy (UK manufacturer documents): quantum-flooring-pds-h-range_79ca2b53.pdf'
+    url: https://www.specifiedby.com/quantum-flooring-accessories/stair-nosing-hf1-heavy-duty-stair-nosing/quantum-flooring-pds-h-range_79ca2b53.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-quantum-flooring-cleaning-guidelines-stair-nosing-1-13d589c7
+    title: 'SpecifiedBy (UK manufacturer documents): quantum-flooring-cleaning-guidelines-stair-nosing-1_13d589c7.pdf'
+    url: https://www.specifiedby.com/quantum-flooring-accessories/stair-nosing-qrd-hf153/quantum-flooring-cleaning-guidelines-stair-nosing-1_13d589c7.pdf
     source: vendor_specifiedby
     license: open
     topic: construction
