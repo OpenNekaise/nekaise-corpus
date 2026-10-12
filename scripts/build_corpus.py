@@ -1054,7 +1054,11 @@ class Checkpoints:
     def flush(self) -> None:
         if not self.pending:
             return
-        rows = [json.loads(json.dumps(r)) for r in self.pending.values()]  # immutable copies
+        # Immutable copies, as single-line text: a fetched value (a redirect Location decoded as
+        # latin-1, an exception message) can hold U+0085 / U+2028 / U+2029, which json.dumps
+        # writes raw and the store's line-based manifest shard index splits on (2026-10-12: one
+        # such row failed the checkpoint and rolled the whole round back, every round).
+        rows = [registry.single_line(json.loads(json.dumps(r))) for r in self.pending.values()]
         self.count += 1
         with self.session.batch(f"{self.prefix}-{self.count:04d}") as b:
             # Rights changed at fetch time. Keep the recipe and payload classification in the
@@ -1849,7 +1853,7 @@ def _run(view, session, args, only: set[str], selection: dict) -> None:
         by_id = {r["id"]: r for r in touched}
         for n, chunk in enumerate(store_broker.shard_batches(by_id, REEXTRACT_BATCH_ROWS), 1):
             with session.batch(f"reextract-{n:04d}") as b:
-                b.upsert_manifest([by_id[sid] for sid in chunk])
+                b.upsert_manifest([registry.single_line(by_id[sid]) for sid in chunk])
         print(f"re-extracted {done} docs | total text {tot / 1e6:.2f} M chars")
         return
 
@@ -1903,7 +1907,7 @@ def _run(view, session, args, only: set[str], selection: dict) -> None:
         done_repair, _ = reextract(manifest, restrictions, {"id": set(repair)}, None, touched)
         if touched:
             with session.batch("repair-text") as b:
-                b.upsert_manifest([dict(r) for r in touched])
+                b.upsert_manifest([registry.single_line(dict(r)) for r in touched])
         print(f"compliance programme: re-extracted {done_repair} held documents whose text "
               "was missing locally")
 

@@ -827,3 +827,32 @@ def test_finder_delivery_host_refusal_is_transient_with_the_honest_ua(tmp_path, 
     assert rows[1]["transient"] is True and "circuit open" in rows[1]["error"]
     assert len(calls) == 1 and calls[0][1] == build_corpus.HONEST_UA
     assert not calls[0][1].startswith("Mozilla")
+
+
+def test_checkpoint_rows_are_single_line_text():
+    """A fetched value with a Unicode line boundary must not reach the manifest raw: the store's
+    shard index reads the JSONL text with str.splitlines(), which splits on it."""
+    class Batch:
+        def __init__(self):
+            self.rows = None
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *exc):
+            return False
+
+        def upsert_manifest(self, rows):
+            self.rows = rows
+
+    batch = Batch()
+    session = SimpleNamespace(batch=lambda name: batch, view=None)
+    checkpoints = build_corpus.Checkpoints(session)
+    checkpoints.record({"id": "rep-x", "status": "failed", "final_url": "http://h/\u00c3\u0085lesund",
+                        "error": "network: bad\u2028header", "redirect_chain": ["a\u2029b"]})
+    checkpoints.flush()
+    (row,) = batch.rows
+    assert row["final_url"] == "http://h/\u00c3%C2%85lesund"  # same resource, percent-encoded
+    assert row["error"] == "network: bad header"
+    assert row["redirect_chain"] == ["a b"]
+    assert len(json.dumps(row, ensure_ascii=False).splitlines()) == 1

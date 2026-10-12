@@ -124,6 +124,48 @@ def test_append_proposal_mode_stages_json_without_mutating_registry(
     assert (tmp_registry / registry.CURATED).read_text() == before
 
 
+def test_append_replaces_unicode_line_boundaries_in_every_string(tmp_registry, tmp_path,
+                                                                 monkeypatch):
+    # json.dumps(ensure_ascii=False) writes U+2028 / U+2029 / U+0085 raw and str.splitlines()
+    # splits on them: one in a title cut a manifest row in two for the store's shard index
+    dirty = entry("oer-sep", "https://e.org/sep.pdf")
+    dirty["title"] = "Line one\u2028second\u2029third\u0085fourth"
+    dirty["license_evidence"] = "rights\u2028\u2028statement"
+    proposal = tmp_path / "proposal.json"
+    monkeypatch.setenv("NEKAISE_PROPOSAL_FILE", str(proposal))
+    registry.append_entries([dirty])
+    staged = json.loads(proposal.read_text())[0]
+    assert staged["title"] == "Line one second third fourth"
+    assert staged["license_evidence"] == "rights statement"
+    assert dirty["title"].count("\u2028") == 1  # the caller's dict is not modified
+
+    monkeypatch.delenv("NEKAISE_PROPOSAL_FILE")
+    registry.append_entries([dict(dirty, id="oer-sep2", url="https://e.org/sep2.pdf")])
+    row = next(e for e in registry.load_entries() if e["id"] == "oer-sep2")
+    assert row["title"] == "Line one second third fourth"
+    for text in (json.dumps(row, ensure_ascii=False),
+                 (tmp_registry / registry.CURATED).read_text()):
+        assert len(json.dumps(row, ensure_ascii=False).splitlines()) == 1
+        assert not any(mark in text for mark in ("\u2028", "\u2029", "\u0085"))
+    assert registry.single_line({"a": ["x\u2028y", 3], "b": None}) == {"a": ["x y", 3], "b": None}
+
+
+def test_single_line_keeps_url_identity():
+    import requests
+
+    for mark, encoded in (("\u2028", "%E2%80%A8"), ("\u2029", "%E2%80%A9"), ("\u0085", "%C2%85")):
+        url = f"https://host.example/a{mark}b.pdf?q=1{mark}2"
+        safe = registry.single_line(url)
+        assert safe == f"https://host.example/a{encoded}b.pdf?q=1{encoded}2"
+        # the request for the safe form is the request for the original
+        prepared = lambda u: requests.Request("GET", u).prepare().url
+        assert prepared(safe) == prepared(url)
+        assert registry.single_line({"url": url, "redirect_chain": [url]}) == {
+            "url": safe, "redirect_chain": [safe]}
+    # prose that merely contains a URL stays prose
+    assert registry.single_line("see https://h/x\u2028next line") == "see https://h/x next line"
+
+
 def test_emit_preserves_optional_provenance_fields():
     enriched = {
         **entry("ost-enriched"),

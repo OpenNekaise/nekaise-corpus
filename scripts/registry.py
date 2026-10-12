@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import warnings
 from pathlib import Path
 
@@ -179,6 +180,34 @@ def stage_github_passes(records: dict) -> bool:
     return True
 
 
+# Unicode line boundaries that json.dumps(ensure_ascii=False) writes RAW and str.splitlines()
+# splits on: LINE SEPARATOR, PARAGRAPH SEPARATOR, NEXT LINE. One of them in a title or an evidence
+# string cut a manifest JSONL row in two for the store's line-based shard index (2026-10-12: the
+# fetch checkpoint failed with JSONDecodeError and every round rolled back). A registry entry is
+# single-line text by definition, so a finder's strings are normalised here, at the one place
+# every finder's output passes.
+_LINE_BOUNDARIES = re.compile("[\u2028\u2029\u0085]+")
+_URL_VALUE = re.compile(r"https?://\S+", re.I)  # \S excludes the three characters themselves
+
+
+def single_line(value):
+    """`value` with Unicode line boundaries removed from every string (nested lists/dicts too).
+    In prose they become one space. In a URL they are percent-encoded as UTF-8 instead
+    (U+2028 -> %E2%80%A8), which names the SAME resource: the request for it is unchanged."""
+    if isinstance(value, str):
+        if not _LINE_BOUNDARIES.search(value):
+            return value
+        if _URL_VALUE.fullmatch(_LINE_BOUNDARIES.sub("x", value)):
+            return _LINE_BOUNDARIES.sub(
+                lambda m: "".join(f"%{byte:02X}" for byte in m.group(0).encode("utf-8")), value)
+        return _LINE_BOUNDARIES.sub(" ", value)
+    if isinstance(value, dict):
+        return {key: single_line(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [single_line(item) for item in value]
+    return value
+
+
 def append_entries(entries: list[dict]) -> dict[str, int]:
     """A finder's output. During a round's discovery phase run_round sets NEKAISE_PROPOSAL_FILE
     separately for each finder: entries are then atomically staged there as JSON and the round
@@ -188,13 +217,13 @@ def append_entries(entries: list[dict]) -> dict[str, int]:
     transaction inserting the entries (store insert_entries: routed, validated, appended exactly
     as the legacy writer did; an id that already exists is refused). Returns {shard filename:
     appended}."""
+    entries = [single_line(dict(e)) for e in entries]
     if proposal_name := os.environ.get(PROPOSAL_ENV):
         proposal = Path(proposal_name)
         doc = read_proposal(proposal)
         doc["entries"].extend(entries)
         _write_proposal(proposal, doc)
         return {"proposal.json": len(entries)}
-    entries = [dict(e) for e in entries]
     if entries:
         _batch("append", lambda view, batch: batch.insert_entries(entries))
     counts: dict[str, int] = {}
