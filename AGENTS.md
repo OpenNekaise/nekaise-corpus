@@ -130,8 +130,9 @@ deliverables of EU-funded built-environment projects from the CORDIS EURIO graph
 `unverified`) · `find_nist.py`
 NIST/NBS via Crossref · `find_zenodo.py` CC-licensed records · `find_patents.py` US patents via the
 Google Patents sitemap (the biggest open vein) · `find_wiki.py` multilingual Wikipedia ·
-`find_scielo.py` SciELO Brazil's CC-BY AEC journals (the biggest Portuguese built-environment
-vein) · `find_ibpsa.py` IBPSA building-simulation proceedings (captcha-paced) ·
+`find_scielo.py` AEC journals of seven robots-reviewed SciELO collections (Brazil, Mexico,
+Argentina, Portugal, Costa Rica, South Africa, Colombia; the biggest Portuguese and Spanish
+built-environment vein; licence per article, weekly sweep) · `find_ibpsa.py` IBPSA building-simulation proceedings (captcha-paced) ·
 `find_ojs.py` open-access AEC journals and proceedings on Open Journal Systems via OAI-PMH (the
 reviewed, multilingual venue list is `scripts/ojs_sites.py`; licence per record, backfill then a
 weekly watch cycle) ·

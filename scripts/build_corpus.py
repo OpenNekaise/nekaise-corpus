@@ -108,6 +108,9 @@ HOST_CONCURRENCY: dict[str, int] = {
     "docs.nlr.gov": 1,         # find_nlr report PDFs: serial, paced
     "publikationen.bibliothek.kit.edu": 1,  # find_kitopen full texts: serial, paced
     "archive.org": 1,       # Internet Archive downloads and their storage-node hop: serial, paced
+    # SciELO national hosts added 2026-10-12 (find_scielo): small old servers, serial and paced
+    "www.scielo.org.mx": 1, "www.scielo.org.ar": 1, "scielo.pt": 1, "www.scielo.sa.cr": 1,
+    "www.scielo.org.za": 1, "www.scielo.org.co": 1,
 }
 # politeness overrides for hosts that need them (currently none). HOST_DELAY: minimum seconds
 # between request STARTS against a host, enforced under its semaphore — for hosts that tarpit at
@@ -147,6 +150,11 @@ HOST_DELAY: dict[str, float] = {
     # has none; KITopen robots `Allow: /`): one request start per 2 s is a conservative pace.
     "docs.nlr.gov": 2.0,
     "publikationen.bibliothek.kit.edu": 2.0,
+    # SciELO national hosts (find_scielo): no robots Crawl-delay; one PDF per 2 s per host
+    # (www.scielo.br, the large Brazilian platform: one request start per second)
+    "www.scielo.br": 1.0,
+    "www.scielo.org.mx": 2.0, "www.scielo.org.ar": 2.0, "scielo.pt": 2.0,
+    "www.scielo.sa.cr": 2.0, "www.scielo.org.za": 2.0, "www.scielo.org.co": 2.0,
 }
 HONEST_UA = "nekaise-corpus/build_corpus"
 ARCHIVE_UA = "nekaise-corpus-build_corpus/3.0 (research corpus loader)"
@@ -180,6 +188,12 @@ HOST_UA: dict[str, str] = {
     # tool UA (3 PDFs per host, 200 application/pdf, verified 2026-10-12). Both are POLITE hosts.
     "docs.nlr.gov": HONEST_UA,
     "publikationen.bibliothek.kit.edu": HONEST_UA,
+    # The SciELO national hosts serve PDFs to the honest tool UA (verified 2026-10-12). POLITE
+    # hosts: a refusal or challenge opens the circuit, never the browser UA or the curl fallback.
+    "www.scielo.br": HONEST_UA,
+    "www.scielo.org.mx": HONEST_UA, "www.scielo.org.ar": HONEST_UA, "scielo.pt": HONEST_UA,
+    "www.scielo.sa.cr": HONEST_UA, "www.scielo.org.za": HONEST_UA,
+    "www.scielo.org.co": HONEST_UA,
 }
 # POLITE hosts: a refusal or challenge means "stop and come back later", never "try another
 # identity". For these hosts the loader uses only HOST_UA, never the browser UA or the curl
@@ -191,7 +205,10 @@ HOST_UA: dict[str, str] = {
 POLITE_HOSTS = frozenset({"publications.ibpsa.org", "escholarship.org", "unmethours.com",
                           "www.diva-portal.org", "ec.europa.eu", "www.ec.europa.eu",
                           "docs.nlr.gov", "publikationen.bibliothek.kit.edu",
-                          "archive.org"})
+                          "archive.org",
+                          # every SciELO national host find_scielo proposes (2026-10-12)
+                          "www.scielo.br", "www.scielo.org.mx", "www.scielo.org.ar", "scielo.pt",
+                          "www.scielo.sa.cr", "www.scielo.org.za", "www.scielo.org.co"})
 CHALLENGE_STATUSES = frozenset({202, 403, 429, 503})
 CHALLENGE_BODY = re.compile(
     rb"sgcaptcha|captcha|challenge-platform|cf-chl|awswaf|request blocked|access denied", re.I
@@ -210,6 +227,10 @@ HOST_RUN_CAP: dict[str, int] = {
     "ec.europa.eu": 150,           # deliverables: 150 x 2 hops at 1 s per host = ~3-5 min
     "docs.nlr.gov": 120,           # 120 x 2 s = 4 min
     "publikationen.bibliothek.kit.edu": 120,  # 120 x 2 s = 4 min
+    # SciELO national hosts: 120 x 2 s = 4 min each (Brazil: 150 x 2 hops at 1 s = 5 min)
+    "www.scielo.br": 150,
+    "www.scielo.org.mx": 120, "www.scielo.org.ar": 120, "scielo.pt": 120,
+    "www.scielo.sa.cr": 120, "www.scielo.org.za": 120, "www.scielo.org.co": 120,
 }
 # Compliance/ESG programme (Codex decision 2026-09-25; ids bov-bfs- / reg- / eur- / esf-, see
 # scripts/compliance_common.py, which owns the reviewed delivery-host table): a programme row's

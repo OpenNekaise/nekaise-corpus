@@ -48,7 +48,10 @@ GENRES = [
 SOURCE_GENRE = {
     "arxiv": "research_papers", "openalex": "research_papers", "academic": "research_papers",
     "jstage_aij": "research_papers", "modelica_conf": "research_papers",
-    "scielo_scl": "research_papers",
+    "scielo_scl": "research_papers", "scielo_mex": "research_papers",
+    "scielo_arg": "research_papers", "scielo_prt": "research_papers",
+    "scielo_cri": "research_papers", "scielo_sza": "research_papers",
+    "scielo_col": "research_papers",
     "osti": "us_gov_lab_reports", "osti_sim": "us_gov_lab_reports", "osti_aec": "us_gov_lab_reports", "gov_osti": "us_gov_lab_reports", "gov_pnnl": "us_gov_lab_reports",
     "gov_lbnl": "us_gov_lab_reports", "gov_doe": "us_gov_lab_reports", "gov_ca": "us_gov_lab_reports",
     "nist": "us_gov_lab_reports", "gsa": "us_gov_lab_reports", "naseo": "us_gov_lab_reports",

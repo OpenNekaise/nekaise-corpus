@@ -299,13 +299,14 @@
   "find_scielo": {
     "script": "find_scielo.py",
     "args": [
-      "--per",
-      "25",
+      "--pages",
+      "2",
       "--max",
-      "400"
+      "100"
     ],
-    "enabled": false,
-    "reason": "exhausted: largest configured journal has 4368 articles; per-journal offset reached 23050 and all configured Brazil journals repeatedly yield zero"
+    "enabled": true,
+    "required": false,
+    "reason": "RE-ENABLED 2026-10-12 (was config-disabled 'exhausted' after the 11 Brazil journals were walked): 52 more AEC journals in 7 robots-reviewed SciELO collections (Brazil, Mexico, Argentina, Portugal, Costa Rica, South Africa, Colombia over plain HTTP), journal-major walk with a dynamic cursor, then a weekly sweep of every journal with the ArticleMeta `from` date, never EXHAUSTED; licence per article from the article record's own licence, else unverified (the journal record's current licence is evidence context only), collected regardless of licence; title gate on the broad engineering journals; Chile/Peru stay NO-GO (robots Disallow /); all seven SciELO hosts are polite hosts in the loader (honest UA, paced, per-run cap, challenge opens the circuit, no curl fallback; the six new ones serial at 2 s, www.scielo.br at 1 request per second); required=false"
   },
   "find_openalex": {
     "script": "find_sources.py",

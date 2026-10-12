@@ -170,17 +170,21 @@ def run_scielo(monkeypatch, tmp_path, capsys):
         if path == "article/identifiers/":
             # S1 is registered, S2 only in the manifest: both skipped WITHOUT a metadata request;
             # S3 twice (the second is a url repeat), S4 has a known title, S5 is blocklisted
-            return {"objects": [{"code": c} for c in ("S1", "S2", "S3", "S3", "S4", "S5")]}
+            return {"meta": {"total": 6},
+                    "objects": [{"code": c} for c in ("S1", "S2", "S3", "S3", "S4", "S5")]}
+        if path == "journal/":
+            return [{"v541": [{"_": "BY"}]}]
         code = params["code"]
-        return {"article": {"v12": [{"_": titles[code], "l": "pt"}], "v40": [{"_": "pt"}]},
+        return {"code": code,
+                "article": {"v12": [{"_": titles[code], "l": "pt"}], "v40": [{"_": "pt"}]},
                 "fulltexts": {"pdf": {"pt": f"https://www.scielo.br/pdf/ac/v1/{code.lower()}.pdf"}}}
 
     monkeypatch.setattr(find_scielo, "_get", get)
-    monkeypatch.setattr(find_scielo, "JOURNALS", [("scl", "1678-8621", "construction")])
+    monkeypatch.setattr(find_scielo, "JOURNALS", [("scl", "1678-8621", "construction", False)])
     monkeypatch.setattr(find_scielo.time, "sleep", lambda _s: None)
     appended = []
     monkeypatch.setattr(find_scielo.registry, "append_entries", appended.extend)
-    monkeypatch.setattr(sys, "argv", ["find_scielo.py", "--append"])
+    monkeypatch.setattr(sys, "argv", ["find_scielo.py", "--cursor", "walk j=0 o=0", "--append"])
     find_scielo.main()
     return {"appended": appended, "requests": requests_seen, "out": capsys.readouterr().out}
 
@@ -260,7 +264,7 @@ def test_legacy_and_store_membership_give_identical_runs(scenario, corpus, monke
     elif scenario is run_scielo:
         assert ids == ["sci-s3"]
         # no metadata request for the registered or the manifest-only article
-        assert [c for p, c in got["requests"] if p == "article/"] == ["S3", "S3", "S4", "S5"]
+        assert [c for p, c in got["requests"] if p == "article/"] == ["S3", "S4", "S5"]
     elif scenario is run_crawl_docs:
         assert ids == ["crawl-mosaik_docs-api-html-2", "crawl-mosaik_docs-api-html-3"]
     elif scenario is run_github:

@@ -106,7 +106,9 @@ REGION_SOURCE = {
     "sdz_at": "EU", "hdz_at": "EU", "seai": "EU", "ademe": "EU",
     "bri_jp": "JP", "nilim_jp": "JP", "worldbank": "Global",
     "worldbank_wds": "Global", "modelica_conf": "Global", "aivc": "Global",
-    "scielo_scl": "LatAm", "boverket": "Nordic",
+    "scielo_scl": "LatAm", "scielo_mex": "LatAm", "scielo_arg": "LatAm",
+    "scielo_cri": "LatAm", "scielo_col": "LatAm", "scielo_prt": "EU", "scielo_sza": "Global",
+    "boverket": "Nordic",
     "nrcan_oee": "Canada", "canada_publications": "Canada", "nz_mbie": "NZ",
     "iea": "Global", "oapen": "Global", "zenodo": "Global", "internet_archive": "US/UK-hist",
 }
