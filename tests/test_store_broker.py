@@ -9,7 +9,7 @@ import pytest
 import store
 import store_broker
 from store import Table
-from test_store_contract import entry, file_store, seed, write
+from test_store_contract import entry, file_store, mrow, seed, write
 
 CHILD = r"""
 import json, os, sys
@@ -75,6 +75,107 @@ def test_identical_retry_is_a_noop_and_a_stale_version_is_refused(round_):
     with pytest.raises(store_broker.BrokerError, match="VersionConflict"):
         client.submit("fetch", "b9", [{"call": "blocklist_add", "args": [["https://x"]],
                                        "kwargs": {}}], store.Version("stale"))
+
+
+def test_multilingual_checkpoints_at_failed_round_scale(round_):
+    st, broker, env, w = round_
+    client = store_broker.Client(broker.path, broker.cap, "rnd1")
+    rows = [mrow(f"oer-scale-{n:04d}", title="建築\u2028строительство\u0085béton\u2029水",
+                 final_url="https://e.org/a\u0085b", quality={"nested": ["測定\u2028данные"]})
+            for n in range(1675)]
+    with client.batch("discover", "seed", expected_version=st.version()) as tx:
+        tx.insert_entries([entry(r["id"]) for r in rows])
+    # Real socket, FileStore transactions and repeated writes to the same shard; the old
+    # splitlines reader fails on the second checkpoint, independently of request size.
+    for start in range(0, len(rows), 25):
+        with client.batch("fetch", f"checkpoint-{start // 25:04d}",
+                          expected_version=client.last_version) as tx:
+            tx.upsert_manifest(rows[start:start + 25])
+    with st.read(writer=w) as view:
+        assert view.get_manifest([r["id"] for r in rows]) == {r["id"]: r for r in rows}
+        assert len(view.scan(Table.MANIFEST, limit=10000).rows) == len(rows) + 4
+    assert st.pending_transactions() == []
+
+
+@pytest.mark.parametrize("body", [b'{"cap": "truncated', b'{}', b'{broken}\n'])
+def test_malformed_frames_are_refused_without_mutation(round_, caplog, body):
+    import socket
+    st, broker, env, w = round_
+    before = st.version()
+    with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as sock:
+        sock.settimeout(5)
+        sock.connect(str(broker.path))
+        sock.sendall(body)
+        sock.shutdown(socket.SHUT_WR)
+        reply = json.loads(sock.makefile("rb").readline())
+    assert not reply["ok"]
+    facts = json.loads(caplog.records[-1].message.removeprefix("store broker failure "))
+    assert facts["phase"] == ("request_decode" if body.endswith(b"\n") else "request_read")
+    assert facts["received_bytes"] == len(body)
+    assert st.version() == before
+    assert st.pending_transactions() == []
+
+
+def test_transaction_decoder_diagnostic_is_private_and_rollback_is_atomic(round_, monkeypatch,
+                                                                        caplog):
+    st, broker, env, w = round_
+    client = store_broker.Client(broker.path, broker.cap, "rnd1")
+    before = st.version()
+    secret_document = '"private document contents'
+
+    def broken(self, rows):
+        json.loads(secret_document)
+
+    monkeypatch.setattr(store.WriteView, "upsert_manifest", broken)
+    with pytest.raises(store_broker.BrokerError, match="JSONDecodeError"):
+        with client.batch("fetch", "checkpoint-0066", expected_version=before) as tx:
+            tx.blocklist_add(["https://e.org/must-rollback"])
+            tx.upsert_manifest([mrow("oer-a")])
+    facts = json.loads(caplog.records[-1].message.removeprefix("store broker failure "))
+    assert facts["phase"] == "execute"
+    assert facts["step"] == "fetch" and facts["batch"] == "checkpoint-0066"
+    assert facts["json_position"] == 0 and facts["json_chars"] == len(secret_document)
+    assert any(frame["function"] == "broken" for frame in facts["stack"])
+    assert secret_document not in caplog.text and broker.cap not in caplog.text
+    assert st.version() == before
+    assert st.pending_transactions() == []
+    with st.read(writer=w) as view:
+        assert not view.known(urls=["https://e.org/must-rollback"]).urls
+
+
+def test_partial_frame_timeout_reports_unknown_length(round_, monkeypatch, caplog):
+    import socket
+    st, broker, env, w = round_
+    before = st.version()
+    monkeypatch.setattr(store_broker, "REQUEST_DEADLINE", 0.05)
+    with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as sock:
+        sock.settimeout(5)
+        sock.connect(str(broker.path))
+        sock.sendall(b'{"cap": "private partial data')
+        reply = json.loads(sock.makefile("rb").readline())
+    assert not reply["ok"]
+    facts = json.loads(caplog.records[-1].message.removeprefix("store broker failure "))
+    assert facts["phase"] == "request_read" and facts["error_type"] == "TimeoutError"
+    assert facts["received_bytes"] is None and facts["payload_sha256"] is None
+    assert "private partial data" not in caplog.text
+    assert st.version() == before
+
+
+@pytest.mark.parametrize("value, error", [("bad\x00value", "NUL"),
+                                        ("bad\ud800value", "UnicodeEncodeError")])
+def test_unstorable_string_fails_visibly_and_rolls_back(round_, value, error):
+    st, broker, env, w = round_
+    client = store_broker.Client(broker.path, broker.cap, "rnd1")
+    before = st.version()
+    with pytest.raises(store_broker.BrokerError, match=error):
+        with client.batch("fetch", "invalid-string", expected_version=before) as tx:
+            tx.blocklist_add(["https://e.org/must-rollback"])
+            tx.upsert_manifest([mrow("oer-a", error=value)])
+    assert st.version() == before
+    assert st.pending_transactions() == []
+    with st.read(writer=w) as view:
+        assert not view.known(urls=["https://e.org/must-rollback"]).urls
+        assert view.get_manifest(["oer-a"])["oer-a"]["error"] is None
 
 
 def test_capability_and_call_whitelist(round_):

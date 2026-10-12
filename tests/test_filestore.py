@@ -689,6 +689,39 @@ def test_a_non_canonical_shard_fails_closed_and_is_linted(st):
         write(st, "r1", lambda tx: tx.upsert_manifest([mrow("oer-a", error="x")]))
 
 
+@pytest.mark.parametrize("mark", ["\u0085", "\u2028", "\u2029"])
+def test_manifest_unicode_separators_survive_index_splice_and_full_reads(tmp_path, mark):
+    # JSONL has LF record boundaries. These other Unicode separators are legal string data,
+    # including in redirect URLs and rights evidence; no normalization is necessary.
+    write_config(tmp_path)
+    st = store.FileStore(tmp_path)
+    rows = [mrow(f"oer-{n:04d}", title=f"建築{mark}строительство",
+                 error=f"network{mark}detail", quality={"evidence": [f"a{mark}b"]})
+            for n in range(100)]
+    write(st, "seed", lambda tx: (
+        tx.insert_entries([entry(r["id"]) for r in rows]), tx.upsert_manifest(rows)))
+    path = st.man / "books.jsonl"
+    before = path.read_bytes()
+    shard = store._ManifestShard(path, "books")
+    # Exceed INDEX_AFTER to exercise the indexed path, not just the LF-based find path.
+    for row in rows:
+        assert shard.get(row["id"]) == row
+    assert shard.rows() == {r["id"]: r for r in rows}
+    updated = dict(rows[50], bytes=123)
+    write(st, "splice", lambda tx: tx.upsert_manifest([updated]))
+    expected = [updated if r["id"] == updated["id"] else r for r in rows]
+    assert path.read_bytes() == registry.manifest_shard_text(expected).encode()
+    assert path.read_bytes().split(b"\n")[:50] == before.split(b"\n")[:50]
+    with st.read() as view:
+        assert view.get_manifest([r["id"] for r in rows]) == {r["id"]: r for r in expected}
+        assert len(view.scan(Table.MANIFEST, limit=1000).rows) == 100
+    assert st._load_files(Table.MANIFEST, [path]) == {r["id"]: r for r in expected}
+    assert st.validate_layout()[0] == []
+    # More changes select the whole-shard rendering path, which must preserve the same data.
+    write(st, "full", lambda tx: tx.upsert_manifest(expected))
+    assert path.read_bytes() == registry.manifest_shard_text(expected).encode()
+
+
 def test_a_stray_manifest_row_is_linted(st):
     (st.man / "books.jsonl").write_text((st.man / "books.jsonl").read_text()
                                         + json.dumps(mrow("zen-stray")) + "\n")

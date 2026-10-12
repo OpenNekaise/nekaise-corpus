@@ -57,6 +57,7 @@ import copy
 import dataclasses
 import fcntl
 import hashlib
+import io
 import json
 import os
 import re
@@ -878,7 +879,9 @@ class _ManifestShard:
         if self._offsets is None:
             offsets: dict[str, int] = {}
             pos = 0
-            for line in self.text.splitlines(keepends=True):
+            # JSONL separates records on LF only. str.splitlines() also cuts valid JSON
+            # string data at U+0085/U+2028/U+2029 and corrupts the row offsets.
+            for line in io.StringIO(self.text):
                 sid = None
                 if line.startswith('{"id": "'):
                     end = line.find('"', 8)
@@ -931,7 +934,7 @@ class _ManifestShard:
         """Every row of the shard (parses it all; the fallback for large changes)."""
         if self._rows is None:
             rows = {}
-            for line in self.text.splitlines():
+            for line in io.StringIO(self.text):
                 if line.strip():
                     row = json.loads(line)
                     rows[row["id"]] = row
@@ -941,7 +944,7 @@ class _ManifestShard:
     def render(self, changes: Mapping[str, dict | None]) -> str | None:
         """The shard's text after `changes` (id -> new row, or None to delete); None when the
         shard becomes empty (its file is deleted, like registry.write_manifest_rows)."""
-        lines = self.text.splitlines(keepends=True)
+        lines = list(io.StringIO(self.text))
         if not lines or len(changes) * self.SPLICE_FRACTION > len(lines):
             rows = dict(self.rows())
             for sid, row in changes.items():
@@ -1264,7 +1267,7 @@ class FileStore:
         mseen: dict[str, int] = {}
         for path in sorted(self.man.glob("*.jsonl")) if self.man.exists() else []:
             prev = None
-            for n, line in enumerate(path.read_text().splitlines(), 1):
+            for n, line in enumerate(io.StringIO(path.read_text()), 1):
                 if not line.strip():
                     continue
                 try:
@@ -1322,7 +1325,7 @@ class FileStore:
                 state.manifest.update(cached[1])
                 return
             for path in sorted(self.man.glob("*.jsonl")) if self.man.exists() else []:
-                for line in path.read_text().splitlines():
+                for line in io.StringIO(path.read_text()):
                     if line.strip():
                         row = json.loads(line)
                         state.manifest[row["id"]] = row
@@ -1334,10 +1337,10 @@ class FileStore:
             legacy = self.reg / "pruned.jsonl"
             paths = [legacy] if legacy.exists() else self._ledger_files()
             for path in paths:
-                state.ledger.extend(json.loads(l) for l in path.read_text().splitlines() if l.strip())
+                state.ledger.extend(json.loads(l) for l in io.StringIO(path.read_text()) if l.strip())
         elif table == "events":
             for path in sorted(self.journal_dir.glob("*.jsonl")) if self.journal_dir.exists() else []:
-                state.events.extend(json.loads(l) for l in path.read_text().splitlines() if l.strip())
+                state.events.extend(json.loads(l) for l in io.StringIO(path.read_text()) if l.strip())
             state.events.sort(key=lambda e: e["seq"])
         elif table == "rotation":
             if self.rotation_path.exists():
@@ -1397,7 +1400,7 @@ class FileStore:
                         raise StoreError(f"duplicate registry id {e['id']} in {path.name}")
                     rows[e["id"]] = e
             else:
-                for line in path.read_text().splitlines():
+                for line in io.StringIO(path.read_text()):
                     if line.strip():
                         row = json.loads(line)
                         rows[row["id"]] = row

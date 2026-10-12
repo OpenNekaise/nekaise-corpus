@@ -39,7 +39,9 @@ abort on failure.
 """
 from __future__ import annotations
 
+import hashlib
 import json
+import logging
 import os
 import secrets
 import signal
@@ -48,6 +50,7 @@ import socketserver
 import tempfile
 import threading
 import time
+import traceback
 from contextlib import ExitStack, contextmanager
 from pathlib import Path
 from typing import Iterator
@@ -70,6 +73,32 @@ MAX_REQUEST_BYTES = 256 * 1024 * 1024
 REQUEST_DEADLINE = 120.0   # seconds a client may take to send its request
 MAX_CONNECTIONS = 8
 _BATCH_ID = store._RUN_ID  # same shape as run ids: plain, bounded names
+LOG = logging.getLogger(__name__)
+
+
+def _log_failure(exc: Exception, *, phase: str, line: bytes | None, msg, round_id: str) -> None:
+    """Diagnostic identity and stack only: never log payloads, capabilities or exception text.
+
+    A JSONDecodeError during execute is inside the transaction path, whereas request_decode
+    concerns the wire body. This protocol has no declared content length. On a read timeout
+    readline() gives us no partial buffer, so its length and hash are unknown, not zero.
+    """
+    facts = {"phase": phase, "round": round_id, "error_type": type(exc).__name__,
+             "received_bytes": len(line) if line is not None else None,
+             "terminated": line.endswith(b"\n") if line is not None else None,
+             "payload_sha256": hashlib.sha256(line).hexdigest() if line is not None else None,
+             "stack": [{"file": Path(f.filename).name, "line": f.lineno, "function": f.name}
+                       for f in traceback.extract_tb(exc.__traceback__)]}
+    if isinstance(msg, dict):
+        for key in ("step", "batch"):
+            value = msg.get(key)
+            if isinstance(value, str) and _BATCH_ID.fullmatch(value):
+                facts[key] = value
+    if isinstance(exc, json.JSONDecodeError):
+        facts.update(json_position=exc.pos, json_line=exc.lineno, json_column=exc.colno,
+                     json_chars=len(exc.doc),
+                     json_sha256=hashlib.sha256(exc.doc.encode("utf-8", "surrogatepass")).hexdigest())
+    LOG.error("store broker failure %s", json.dumps(facts, sort_keys=True))
 
 
 class BrokerError(store.StoreError):
@@ -179,14 +208,22 @@ class Broker:
                 with broker._conns_lock:
                     broker._conns.add(self.request)
                 try:
+                    line, msg, phase = None, None, "request_read"
                     try:
                         line = self.rfile.readline(MAX_REQUEST_BYTES + 1)
                         if broker._closing:
                             raise BrokerError("broker is shutting down")
                         if len(line) > MAX_REQUEST_BYTES:
                             raise BrokerError("batch too large")
-                        reply = broker._execute(json.loads(line))
+                        if not line.endswith(b"\n"):
+                            raise BrokerError("incomplete request frame")
+                        phase = "request_decode"
+                        msg = json.loads(line)
+                        phase = "execute"
+                        reply = broker._execute(msg)
                     except Exception as exc:  # every failure is reported, never swallowed
+                        _log_failure(exc, phase=phase, line=line, msg=msg,
+                                     round_id=broker.round_id)
                         reply = {"ok": False, "error": f"{type(exc).__name__}: {exc}"}
                     try:
                         self.wfile.write((json.dumps(reply) + "\n").encode())
