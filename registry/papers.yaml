@@ -142678,23 +142678,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2607.15677 openalex:W7169805387
     resolution: 'sim1: openalex location'
-  - id: oas-w2111364805
-    title: '建築学科における建築環境・設備系の授業改善事例報告 : 建築環境工学を中心に'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2005-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W2111364805
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-12'
-    selected_version: submittedVersion
-    origin_ids: openalex:W2111364805
-    resolution: 'sim1: openalex location; resolution retry'
   - id: arx-statistical-mechanics-of-thermostatically-cont
     title: Statistical Mechanics of Thermostatically Controlled Multi-Zone Buildings
     url: https://arxiv.org/pdf/2208.13099v1
@@ -150238,3 +150221,298 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-13'
     origin_ids: doi:10.25743/ict.2019.24.3.002
+  - id: oas-10-1109-access-2023-3262934-07d066b6
+    title: Design of an EnergyPlus Model-Based Smart Controller for Maintaining Thermal
+      Comfortable Environment in Non-Domestic Building
+    url: https://e-space.mmu.ac.uk/632483/1/10086530.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/access.2023.3262934
+    license_evidence: no licence statement for this copy [copy https://e-space.mmu.ac.uk/632483/1/10086530.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1109/access.2023.3262934 openalex:W4361801809
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-buildenv-2022-109951-a37f4571
+    title: Use of wind pressure coefficients to simulate natural ventilation and building
+      energy for isolated and surrounded buildings
+    url: https://centaur.reading.ac.uk/110048/1/2023-BE-Xiaoxiong-Xie-Cp.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-12-20'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2022.109951
+    license_evidence: no licence statement for this copy [copy https://centaur.reading.ac.uk/110048/1/2023-BE-Xiaoxiong-Xie-Cp.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2022.109951 openalex:W4312038458
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-scitotenv-2023-167056-95ae6cc7
+    title: 'Analysis of inequalities in personal exposure to PM2.5: A modelling study
+      for the Greater London school-aged population'
+    url: https://discovery.ucl.ac.uk/10179522/1/1-s2.0-S0048969723056838-main.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-09-16'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.scitotenv.2023.167056
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/10179522/1/1-s2.0-S0048969723056838-main.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.scitotenv.2023.167056 openalex:W4386797738
+    resolution: 'sim1: openalex location'
+  - id: arx-physics-informed-single-atom-convolutional-mat
+    title: 'Physics-Informed Single Atom Convolutional Matching Pursuit: Guided-Waves
+      Wavenumbers and Propagation Distance Estimation for Damage Localization in S'
+    url: https://arxiv.org/pdf/2606.03933v2
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-06-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2606.03933
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2606.03933 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-automating-structural-reliability-analysis-wit
+    title: Automating structural reliability analysis with a multi-agent large language
+      model framework
+    url: https://arxiv.org/pdf/2607.16580v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-07-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2607.16580
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2607.16580 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-image-generation-techniques-for-urban-planning
+    title: Image Generation Techniques for Urban Planning
+    url: https://arxiv.org/pdf/2608.18908v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-08-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2608.18908
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2608.18908 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-finite-element-model-updating-based-load-ratin
+    title: Finite Element Model Updating-based Load Rating of Bridges with Incomplete
+      As-Built Information
+    url: https://arxiv.org/pdf/2608.30939v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-08-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2608.30939
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2608.30939 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-buildability-assessment-of-3d-printed-concrete
+    title: Buildability Assessment of 3D-Printed Concrete Structures Using Smoothed
+      Mohr-Coulomb Plasticity with Isotropic Hardening
+    url: https://arxiv.org/pdf/2609.07679v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2026-09-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.07679
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.07679 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-influence-of-extruded-filament-shape-on-builda
+    title: 'Influence of Extruded Filament Shape on Buildability in 3D Concrete Printing:
+      A Geometry-Informed Deep Learning-FEM Approach'
+    url: https://arxiv.org/pdf/2609.04028v2
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2026-09-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.04028
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.04028 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-embedding-model-form-uncertainty-in-probabilis
+    title: Embedding Model-form Uncertainty in Probabilistic Calibration of Digital
+      Twins for Bridges
+    url: https://arxiv.org/pdf/2609.10171v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-09-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.10171
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.10171 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-flow-reconstruction-from-sparse-measurements-i
+    title: 'Flow Reconstruction from Sparse Measurements in Urban Drainage Networks:
+      An Application and Evaluation of Data-Driven Sparse Sensing'
+    url: https://arxiv.org/pdf/2511.04556v3
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-11-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2511.04556
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2511.04556 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-modelling-non-linear-aeroelastic-loads-in-long
+    title: Modelling non-linear aeroelastic loads in long-span bridges with extreme
+      learning machines
+    url: https://arxiv.org/pdf/2609.33274v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-09-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2609.33274
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2609.33274 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1680/jbren.25.00003
+  - id: arx-a-deflection-basin-fusion-transformer-for-pred
+    title: A deflection-basin fusion transformer for predicting critical pavement strains
+      from falling weight deflectometer
+    url: https://arxiv.org/pdf/2610.00055v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2026-09-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2610.00055
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2610.00055 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-bridge-bridging-routine-inputs-and-digital-mod
+    title: 'BRIDGE: Bridging Routine Inputs and Digital modelling for Geotechnical Engineering'
+    url: https://arxiv.org/pdf/2610.03170v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-10-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2610.03170
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2610.03170 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-fourier-neural-operator-for-real-time-simulati
+    title: Fourier neural operator for real-time simulation of 3D dynamic urban microclimate
+    url: https://arxiv.org/pdf/2308.03985v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-08-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2308.03985
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2308.03985 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-conditional-flow-matching-for-generation-of-3d
+    title: Conditional Flow Matching for Generation of 3D Multi-variable Instantaneous
+      Urban Microclimate Fields
+    url: https://arxiv.org/pdf/2610.10430v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-10-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2610.10430
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2610.10430 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-joint-pdf-modelling-of-turbulent-flow-and-disp
+    title: Joint PDF modelling of turbulent flow and dispersion in an urban street canyon
+    url: https://arxiv.org/pdf/1003.4548v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2010-03-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1003.4548
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1003.4548 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1007/s10546-009-9370-x
