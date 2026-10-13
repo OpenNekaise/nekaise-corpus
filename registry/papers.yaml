@@ -147332,23 +147332,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.enbuild.2023.113284 openalex:W4381163295
     resolution: 'sim1: openalex+unpaywall location'
-  - id: oas-w399462216
-    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1993-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W399462216
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-13'
-    selected_version: submittedVersion
-    origin_ids: openalex:W399462216
-    resolution: 'sim1: openalex location; resolution retry'
   - id: arx-spatial-point-pattern-and-urban-morphology-per
     title: 'Spatial Point Pattern and Urban Morphology: Perspectives from Entropy, Complexity
       and Networks'
@@ -151891,4 +151874,74 @@ sources:
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: oas-10-18409-urjiit-vi-68-a8bb46a9
+    title: Modeling the Impacts of Filter Fouling on Energy Consumption
+    url: https://urj.library.iit.edu/index.php/urj/article/download/68/29
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-08-11'
+    document_type: article
+    persistent_id: https://doi.org/10.18409/urjiit.vi.68
+    license_evidence: no licence statement for this copy [copy https://urj.library.iit.edu/index.php/urj/article/download/68/29;
+      version publishedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: publishedVersion
+    origin_ids: doi:10.18409/urjiit.vi.68 openalex:W4393079867
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-improving-structural-damage-tolerance-and-frac
+    title: Improving structural damage tolerance and fracture energy via bamboo-inspired
+      void patterns
+    url: https://arxiv.org/pdf/2306.05365v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-06-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2306.05365
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2306.05365 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-fabrication-of-metasurfaces-on-building-constr
+    title: Fabrication of Metasurfaces on Building Construction Materials for Potential
+      Electromagnetic Applications in the Microwave Band
+    url: https://arxiv.org/pdf/2210.06969v1
+    source: arxiv
+    license: cc0
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-10-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2210.06969
+    license_url: http://creativecommons.org/publicdomain/zero/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2210.06969 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/publicdomain/zero/1.0/
+      -> cc0 (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.3390/ma15207315
+  - id: arx-smart-structural-health-monitoring-shm-system-
+    title: Smart structural health monitoring (SHM) system for on-board localization
+      of defects in pipes using torsional ultrasonic guided waves
+    url: https://arxiv.org/pdf/2403.11110v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.11110
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.11110 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-13'
