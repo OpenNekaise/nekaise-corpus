@@ -151220,3 +151220,124 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-13'
+  - id: arx-impact-of-wind-direction-on-flow-over-a-realis
+    title: 'Impact of Wind Direction on Flow Over a Realistic Urban Area: A Large-Eddy
+      Simulation Study'
+    url: https://arxiv.org/pdf/2510.11247v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-10-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2510.11247
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2510.11247 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-how-do-water-filled-traffic-barriers-shake-a-s
+    title: How Do Water Filled Traffic Barriers Shake a Suspension Bridge?
+    url: https://arxiv.org/pdf/2510.18070v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-10-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2510.18070
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2510.18070 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.32604/fdmp.2022.017776
+  - id: arx-rapid-prediction-of-three-dimensional-scour-fl
+    title: Rapid Prediction of Three-Dimensional Scour Flow around Bridge Piers via
+      Body-Fitted Coordinate-Based U-Net
+    url: https://arxiv.org/pdf/2601.06506v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-01-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2601.06506
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2601.06506 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-spatio-temporal-performance-of-2d-local-inerti
+    title: Spatio-Temporal Performance of 2D Local Inertial Hydrodynamic Models for
+      Urban Drainage and Dam-Break Applications
+    url: https://arxiv.org/pdf/2410.09325v1
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-10-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2410.09325
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2410.09325 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.jhydrol.2025.134661
+  - id: arx-urbanflow-3k-a-dataset-of-3-000-lattice-boltzm
+    title: 'UrbanFlow-3K: A Dataset of 3,000 Lattice-Boltzmann Simulations of Random
+      Building Layouts'
+    url: https://arxiv.org/pdf/2603.16554v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-03-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2603.16554
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2603.16554 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-harnessing-natural-and-mechanical-airflows-for
+    title: Harnessing natural and mechanical airflows for surface-based atmospheric
+      pollutant removal
+    url: https://arxiv.org/pdf/2503.11803v6
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-03-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.11803
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.11803 (v6, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-a-fully-gpu-based-workflow-for-building-physic
+    title: A fully GPU-based workflow for building physics emulators of hypersonic flows
+    url: https://arxiv.org/pdf/2606.13742v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-06-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2606.13742
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2606.13742 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'

@@ -39498,20 +39498,6 @@ sources:
     license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
       the full text is openly downloadable, no reuse licence is given
     rights_verified_at: '2026-10-13'
-  - id: rep-uminho-vidro-na-arquitectura
-    title: Vidro na arquitectura
-    url: https://repositorium.uminho.pt/bitstreams/94ef876a-eb3e-4540-9277-7057d2192207/download
-    source: repo_uminho
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: pt
-    published_at: '2005'
-    document_type: journal-article
-    persistent_id: hdl:1822/4967
-    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
-      the full text is openly downloadable, no reuse licence is given
-    rights_verified_at: '2026-10-13'
   - id: rep-uminho-durabilidade-de-argamassas-com-incorpora
     title: Durabilidade de argamassas com incorporação de agregados funcionalizados
       com materiais de mudança de fase
@@ -40175,20 +40161,6 @@ sources:
     license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
       the full text is openly downloadable, no reuse licence is given
     rights_verified_at: '2026-10-13'
-  - id: rep-uminho-training-needs-in-construction-project--2
-    title: 'Training needs in construction project management: a survey in four EU countries'
-    url: https://repositorium.uminho.pt/bitstreams/86c4d176-ec9b-48f3-a344-f68cc1f5ff3b/download
-    source: repo_uminho
-    license: unverified
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2006'
-    document_type: journal-article
-    persistent_id: doi:10.1080/13923730.2006.9636398
-    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
-      the full text is openly downloadable, no reuse licence is given
-    rights_verified_at: '2026-10-13'
   - id: rep-vtechworks-implications-of-shape-factors-on-fate-up
     title: Implications of Shape Factors on Fate, Uptake, and Nanotoxicity of Gold Nanomaterials
     url: https://vtechworks.lib.vt.edu/bitstreams/b3fdfd6a-272b-4af3-917b-84d24b5c37b2/download
@@ -40732,4 +40704,611 @@ sources:
     document_type: thesis
     persistent_id: hdl:10919/111389
     license_evidence: 'VTechWorks (Virginia Tech) OAI record rights: In Copyright; http://rightsstatements.org/vocab/InC/1.0/'
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-a-stochastic-three-dimensional-cost-esti
+    title: A Stochastic Three-Dimensional Cost Estimation System for Hot Mix Asphalt
+      in the State of Alabama
+    url: https://etd.auburn.edu/bitstream/10415/6213/2/Keren%20Xu_Thesis%2004.30.2018.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: materials
+    format: pdf
+    published_at: '2018-04-30'
+    document_type: thesis
+    persistent_id: hdl:10415/6213
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-how-can-i-explore-and-represent-the-atmo
+    title: How can I explore and represent the atmosphere in landscape architecture
+      by 3Ds Max software?
+    url: https://etd.auburn.edu/bitstream/10415/4613/2/Nga%20Bui_MLA%20Thesis.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: architecture
+    format: pdf
+    published_at: '2015-05-08'
+    document_type: thesis
+    persistent_id: hdl:10415/4613
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-effectiveness-of-silane-in-mitigating-al
+    title: Effectiveness of Silane in Mitigating Alkali-Silica Reaction in the Bibb
+      Graves Bridge
+    url: https://etd.auburn.edu/bitstream/10415/3905/2/Darren%20Johnson_Thesis.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    published_at: '2013-11-11'
+    document_type: thesis
+    persistent_id: hdl:10415/3905
+    license_evidence: 'Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record rights: EMBARGO_NOT_AUBURN'
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-investigation-of-the-use-of-steel-interm
+    title: Investigation of the Use of Steel Intermediate Diaphragms and Temporary Bracing
+      Alternatives for Prestressed Concrete Girder Bridges
+    url: https://etd.auburn.edu/bitstream/10415/4040/2/Thesis%20Final%20%28Report%2bAppendix%29.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: materials
+    format: pdf
+    published_at: '2014-04-23'
+    document_type: thesis
+    persistent_id: hdl:10415/4040
+    license_evidence: 'Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record rights: EMBARGO_NOT_AUBURN'
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-torsional-resistance-of-drilled-shaft-fo
+    title: Torsional Resistance of Drilled Shaft Foundations
+    url: https://etd.auburn.edu/bitstream/10415/6399/2/vha001masterAU.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    published_at: '2018-07-30'
+    document_type: thesis
+    persistent_id: hdl:10415/6399
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-performance-measures-for-prioritizing-hi
+    title: Performance Measures for Prioritizing Highway Safety Improvements Based on
+      Predicted Crash Frequency and Severity
+    url: https://etd.auburn.edu/bitstream/10415/3510/2/Noah_Morgan_Thesis_Final_Draft%284-2-13%29.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    published_at: '2013-04-05'
+    document_type: thesis
+    persistent_id: hdl:10415/3510
+    license_evidence: 'Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record rights: EMBARGO_NOT_AUBURN'
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-a-statistical-analysis-of-georgia-s-hma-
+    title: A Statistical Analysis of Georgia's HMA Quality Assurance Proccess
+    url: https://etd.auburn.edu/bitstream/10415/103/1/WILLIS_JAMES_4.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2005-12-15'
+    document_type: thesis
+    persistent_id: hdl:10415/103
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-evaluation-of-critical-and-essential-con
+    title: Evaluation of Critical and Essential Concrete Highway Bridges in a Moderate
+      Seismic Hazard
+    url: https://etd.auburn.edu/bitstream/10415/3993/2/Jordan%20Thesis%20Final.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: materials
+    format: pdf
+    published_at: '2014-01-21'
+    document_type: thesis
+    persistent_id: hdl:10415/3993
+    license_evidence: 'Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record rights: EMBARGO_NOT_AUBURN'
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-design-and-construction-of-a-rainfall-si
+    title: Design and Construction of a Rainfall Simulator for Large-Scale Testing of
+      Erosion Control Practices and Products
+    url: https://etd.auburn.edu/bitstream/10415/5593/2/Thesis-MAH_XZF_JV_FINAL.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    published_at: '2017-04-14'
+    document_type: thesis
+    persistent_id: hdl:10415/5593
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-maintenance-reimagined
+    title: Maintenance Reimagined
+    url: https://etd.auburn.edu/bitstream/10415/5095/2/Ballard_Thesis.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: architecture
+    format: pdf
+    published_at: '2016-05-03'
+    document_type: thesis
+    persistent_id: hdl:10415/5095
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-low-slip-force-friction-connections-for-
+    title: Low-Slip Force Friction Connections for Early Phase Energy Dissipation in
+      Steel Structures
+    url: https://etd.auburn.edu/bitstream/10415/4869/2/Patrick_Koch_Thesis.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2015-11-10'
+    document_type: thesis
+    persistent_id: hdl:10415/4869
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-identifying-potential-cisco-refuge-lakes
+    title: Identifying Potential Cisco Refuge Lakes in Minnesota under Future Climate
+      Warming Scenarios
+    url: https://etd.auburn.edu/bitstream/10415/5483/2/Dissertation2016%20.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    published_at: '2016-12-09'
+    document_type: thesis
+    persistent_id: hdl:10415/5483
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-safety-performance-analysis-of-alternati
+    title: Safety Performance Analysis of Alternative Intersection Implementations in
+      Alabama
+    url: https://etd.auburn.edu/bitstream/10415/9593/2/Henly%20Crosby%20AUETD%20Thesis%20Submittal.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    published_at: '2024-12-10'
+    document_type: thesis
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-revelatory-design-making-legible-the-loc
+    title: Revelatory Design, Making legible the local implication of a national energy
+      infrastructure.
+    url: https://etd.auburn.edu/bitstream/10415/5094/2/AREVALO_GABRIELA_MLATHESIS2016.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2016-05-03'
+    document_type: thesis
+    persistent_id: hdl:10415/5094
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-moisture-content-monitoring-using-a-nucl
+    title: Moisture Content Monitoring using a Nuclear Moisture Gauge and Preliminary
+      Findings at Alabama Highway 5
+    url: https://etd.auburn.edu/bitstream/10415/5653/2/Thesis-Dylan%20Jones-Final.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    published_at: '2017-04-20'
+    document_type: thesis
+    persistent_id: hdl:10415/5653
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-a-study-of-the-effects-of-pavement-widen
+    title: A Study of the Effects of Pavement Widening, Rumble Strips, and Rumble Stripes
+      on Rural Highways in Alabama
+    url: https://etd.auburn.edu/bitstream/10415/4556/2/Dissertation_Luana%20Ozelim_Final.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    published_at: '2015-05-05'
+    document_type: thesis
+    persistent_id: hdl:10415/4556
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-finite-element-modeling-of-skewed-reinfo
+    title: Finite Element Modeling of Skewed Reinforced Concrete Bridges and the Bond-slip
+      Relationship Between Concrete and Reinforcement
+    url: https://etd.auburn.edu/bitstream/10415/188/1/Li_Xin_24.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2007-12-15'
+    document_type: thesis
+    persistent_id: hdl:10415/188
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-an-economic-analysis-of-integrating-hydr
+    title: An Economic Analysis of Integrating Hydroponic Tomato Production into an
+      Indoor Recirculating Aquacultural Production System
+    url: https://etd.auburn.edu/bitstream/10415/693/1/HOLLIMAN_JAMES_4.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2006-12-15'
+    document_type: thesis
+    persistent_id: hdl:10415/693
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-evaluation-of-aims-ii-and-micro-deval-fo
+    title: Evaluation of AIMS-II and Micro-Deval for Friction Characteristics of Aggregates
+    url: https://etd.auburn.edu/bitstream/10415/4620/2/Greer_Masters%20Thesis.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    published_at: '2015-05-08'
+    document_type: thesis
+    persistent_id: hdl:10415/4620
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-coupling-transport-codes-with-geochemica
+    title: Coupling Transport Codes with Geochemical Models
+    url: https://etd.auburn.edu/bitstream/10415/675/1/KUMAR_ANJANI_44.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2006-12-15'
+    document_type: thesis
+    persistent_id: hdl:10415/675
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-re-imagining-interaction
+    title: Re-Imagining Interaction
+    url: https://etd.auburn.edu/bitstream/10415/5091/2/Sunder_FinalScreen.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: architecture
+    format: pdf
+    published_at: '2016-05-03'
+    document_type: thesis
+    persistent_id: hdl:10415/5091
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-the-dance-a-fluid-model-of-street-design
+    title: 'The Dance: a fluid model of street design'
+    url: https://etd.auburn.edu/bitstream/10415/4069/2/TheDance_BonnieSzakel_2014.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: architecture
+    format: pdf
+    published_at: '2014-04-29'
+    document_type: thesis
+    persistent_id: hdl:10415/4069
+    license_evidence: 'Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record rights: EMBARGO_NOT_AUBURN'
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-feral-towns-alabama-s-shrinking-towns
+    title: 'Feral Towns : Alabama''s Shrinking Towns'
+    url: https://etd.auburn.edu/bitstream/10415/4532/2/Thesis%20Book%20Library_sm.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: architecture
+    format: pdf
+    published_at: '2015-05-04'
+    document_type: thesis
+    persistent_id: hdl:10415/4532
+    license_evidence: Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record states no rights; the full text is openly downloadable, no reuse licence
+      is given
+    rights_verified_at: '2026-10-13'
+  - id: rep-auburn-etd-eating-the-landscape-you-live-in-how-can
+    title: 'Eating the Landscape You Live In: How Can Contemporary Communities Be Incorporated
+      into the Agricultural Landscape?'
+    url: https://etd.auburn.edu/bitstream/10415/2897/2/Julie_Michael_Thesis_2010.pdf
+    source: repo_auburn_etd
+    license: unverified
+    topic: architecture
+    format: pdf
+    published_at: '2011-11-30'
+    document_type: thesis
+    persistent_id: hdl:10415/2897
+    license_evidence: 'Auburn University Electronic Theses and Dissertations (AUETD)
+      OAI record rights: EMBARGO_NOT_AUBURN'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-structural-performance-of-additively-man
+    title: Structural Performance of Additively Manufactured Cylinder Liner—A Numerical
+      Study
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/f3e28c58-4223-4b81-82d7-48d89206349c/content/Structural_Performance.pdf
+    source: repo_luh
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: journal-article
+    persistent_id: doi:10.3390/en15238926
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: https://creativecommons.org/licenses/by/4.0/;
+      CC BY 4.0 International'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-characterization-of-the-microstructure-e
+    title: Characterization of the Microstructure Evolution in IF-Steel and AA6016 during
+      Plane-Strain Tension and Simple Shear
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/974418f0-2d63-4e1f-9cc0-35916e54aedb/content/materials-08-00285.pdf
+    source: repo_luh
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015'
+    document_type: journal-article
+    persistent_id: doi:10.3390/ma8010285
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: https://creativecommons.org/licenses/by/4.0/;
+      CC BY 4.0 International'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-advances-in-contact-mechanics-and-fluid-
+    title: Advances in contact mechanics and fluid dynamics for rolling contacts
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/39fd250d-c49a-4a77-806a-a680e5c9a01b/content/Kelley_Josephine_2025.pdf
+    source: repo_luh
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: thesis
+    license_url: http://creativecommons.org/licenses/by-nc-nd/3.0/de/
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: http://creativecommons.org/licenses/by-nc-nd/3.0/de/;
+      Attribution-NonCommercial-NoDerivs 3.0 Germany'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-zentrale-w-rmeversorgung-mit-biogasanlag
+    title: Zentrale Wärmeversorgung mit Biogasanlagen und Wärmepumpen in ländlichen
+      niedersächsischen Kommunen
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/deeb1453-516f-412d-a956-0db043fdfe2c/content/882806157.pdf
+    source: repo_luh
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: de
+    published_at: '2016'
+    document_type: thesis
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: Es
+      gilt deutsches Urheberrecht. Das Dokument darf zum eigenen Gebrauch kostenfrei
+      genutzt, aber nicht im Internet bereitgestellt oder an Außenstehende weitergegeben
+      werden.'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-optimizing-investment-planning-for-distr
+    title: Optimizing Investment Planning For District Heating Coupling Of Industrial
+      Energy Systems Using MILP
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/03999c23-584d-49b1-b8f9-4db0a5381c31/content/Kohne_2023_CPSL-Optimizing_Investment_Planning.pdf
+    source: repo_luh
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023'
+    document_type: book
+    license_url: http://creativecommons.org/licenses/by/3.0/de/
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: http://creativecommons.org/licenses/by/3.0/de/;
+      CC BY 3.0 DE'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-linear-angetriebene-hybridaktorik-zur-um
+    title: 'Linear angetriebene Hybridaktorik zur umformtechnischen Fertigung komplexer
+      Bauteile : Abschlußbericht DFG Projektnr. 239414277'
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/046093c9-053f-45ea-a5b7-5975688e1e9a/content/DFG-Abschlussbericht-Hybridaktorik.pdf
+    source: repo_luh
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: de
+    published_at: '2026'
+    document_type: report
+    license_url: http://creativecommons.org/licenses/by-nc-nd/3.0/de/
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: http://creativecommons.org/licenses/by-nc-nd/3.0/de/;
+      Attribution-NonCommercial-NoDerivs 3.0 Germany'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-flux-filling-rate-effect-on-weld-bead-de
+    title: Flux Filling Rate Effect on Weld Bead Deposition of Recycled Titanium Chip
+      Tubular Wire
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/1841e81d-43fe-4708-83e0-78fcc84d555e/content/Flux_Filling_Rate_Effect_on_Weld_Bead.pdf
+    source: repo_luh
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: journal-article
+    persistent_id: doi:10.1007/s40684-024-00658-0
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: https://creativecommons.org/licenses/by/4.0;
+      CC BY 4.0 International'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-betonerm-dung-unter-verschiedenen-belast
+    title: Betonermüdung unter verschiedenen Belastungsfrequenzen und -pausen
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/0bd45332-9525-4bff-80f3-b9a312044453/content/id_6122_Schneider.pdf
+    source: repo_luh
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: de
+    published_at: '2019'
+    document_type: book
+    license_url: https://creativecommons.org/licenses/by/3.0/de/
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: https://creativecommons.org/licenses/by/3.0/de/;
+      CC BY 3.0 DE'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-maghemite-nanofluid-based-on-natural-est
+    title: 'Maghemite Nanofluid Based on Natural Ester: Cooling and Insulation Properties
+      Assessment'
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/5669f889-3ccc-4468-a80b-9f907ce837b5/content/08859306.pdf
+    source: repo_luh
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: journal-article
+    persistent_id: doi:10.1109/access.2019.2945547
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: https://creativecommons.org/licenses/by/4.0/;
+      CC BY 4.0 International'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-emv-anforderungen-und-funktionale-sicher
+    title: EMV-Anforderungen und funktionale Sicherheit für Assistenzsysteme
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/7d9be42c-efe7-46dd-a921-5a53c509868e/content/283-291.pdf
+    source: repo_luh
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: de
+    published_at: '2026'
+    document_type: book
+    license_url: https://creativecommons.org/licenses/by/3.0/de/
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: https://creativecommons.org/licenses/by/3.0/de/;
+      CC BY 3.0 DE'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-optimal-connection-of-heat-pump-and-sola
+    title: Optimal Connection of Heat Pump and Solar Buffer Storage under Different
+      Boundary Conditions
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/0c6483b1-eaa6-49a1-bd7f-423bda5f95f8/content/1-s2.0-S1876610216302880-main.pdf
+    source: repo_luh
+    license: cc-by-nc-nd
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2016'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.egypro.2016.06.190
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: https://creativecommons.org/licenses/by-nc-nd/4.0/;
+      CC BY-NC-ND 4.0 International'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-stepwise-transformation-of-algorithms-in
+    title: Stepwise transformation of algorithms into array processor architectures
+      by the decomp
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/3fd3a0f9-c53d-4582-b449-e38e260bed67/content/076861.pdf
+    source: repo_luh
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1995'
+    document_type: journal-article
+    persistent_id: doi:10.1155/1995/76861
+    license_url: https://creativecommons.org/licenses/by/3.0/
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: https://creativecommons.org/licenses/by/3.0/;
+      CC BY 3.0 Unported'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-pr-fverfahren-zur-bewertung-der-mischung
+    title: Prüfverfahren zur Bewertung der Mischungsstabilität von Beton unter Rütteleinwirkung
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/ee1cfaa5-d2bc-4d2a-9416-d7d6e0f10593/content/id_6139_
+      Begemann.pdf
+    source: repo_luh
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: de
+    published_at: '2019'
+    document_type: book
+    license_url: https://creativecommons.org/licenses/by/3.0/de/
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: https://creativecommons.org/licenses/by/3.0/de/;
+      CC BY 3.0 DE'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-analysis-of-esd-induced-field-coupling-d
+    title: Analysis of ESD induced field coupling due to improper contact between PCB
+      ground and metal housing
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/f7aa5735-2156-441b-8e0f-27abbf104232/content/Proceedings_EMV2024_E-Book-107-117.pdf
+    source: repo_luh
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: book
+    license_url: https://creativecommons.org/licenses/by/3.0/de/
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: https://creativecommons.org/licenses/by/3.0/de/;
+      CC BY 3.0 DE'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-evaluation-of-functionalized-porous-tita
+    title: Evaluation of functionalized porous titanium implants for enhancing angiogenesis
+      in vitro
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/d2123fa2-b268-494f-abd5-ba4f915bd2e0/content/materials-09-00304.pdf
+    source: repo_luh
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016'
+    document_type: journal-article
+    persistent_id: doi:10.3390/ma9040304
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: https://creativecommons.org/licenses/by-nc-sa/4.0/;
+      CC BY-NC-SA 4.0 International'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-fachwerke-aus-betonstreben-und-sph-rogus
+    title: Fachwerke aus Betonstreben und Sphärogussknoten
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/7bfced92-0408-4dc1-8241-65fd2f9df606/content/id_6134_Stuempel.pdf
+    source: repo_luh
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: de
+    published_at: '2019'
+    document_type: book
+    license_url: https://creativecommons.org/licenses/by/3.0/de/
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: https://creativecommons.org/licenses/by/3.0/de/;
+      CC BY 3.0 DE'
+    rights_verified_at: '2026-10-13'
+  - id: rep-luh-repo-energetische-sch-digungsanalyse-der-beto
+    title: Energetische Schädigungsanalyse der Betonermüdung
+    url: https://repo.uni-hannover.de/server/api/core/bitstreams/5d89e939-f46b-4d86-9dfa-568118f90169/content/id_6124_Bode.pdf
+    source: repo_luh
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: de
+    published_at: '2019'
+    document_type: book
+    license_url: https://creativecommons.org/licenses/by/3.0/de/
+    license_evidence: 'Leibniz Universität Hannover Repository OAI record rights: https://creativecommons.org/licenses/by/3.0/de/;
+      CC BY 3.0 DE'
     rights_verified_at: '2026-10-13'
