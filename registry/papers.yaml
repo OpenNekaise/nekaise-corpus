@@ -146792,25 +146792,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.scs.2023.104664 openalex:W4379052683
     resolution: 'sim1: openalex+unpaywall location'
-  - id: oas-10-1016-j-energy-2020-119646-8b61cccc
-    title: Comprehensive energy, economic and thermal comfort assessments for the passive
-      energy retrofit of historical buildings - A case study of a late ninete
-    url: https://figshare.com/articles/journal_contribution/Comprehensive_energy_economic_and_thermal_comfort_assessments_for_the_passive_energy_retrofit_of_historical_buildings_-_A_case_study_of_a_late_nineteenth-century_Victorian_house_renovation_in_the_UK/13607732
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2020-12-26'
-    document_type: article
-    persistent_id: https://doi.org/10.1016/j.energy.2020.119646
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
-      unpaywall.license=cc-by-nc-nd [copy https://figshare.com/articles/journal_contribution/Comprehensive_energy_economic_and_thermal_comfort_assessments_for_the_passive_energy_retrofit_of_historical_buildings_-_A_case_study_of_a_late_nineteenth-century_Victorian_house_renovation_in_the_UK/13607732;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-13'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1016/j.energy.2020.119646 openalex:W3116469510
-    resolution: 'sim1: openalex+unpaywall location'
   - id: oas-10-1080-19401493-2020-1770861-cb2fca8f
     title: Identification of multi-zone grey-box building models for use in model predictive
       control
@@ -151658,6 +151639,94 @@ sources:
     persistent_id: doi:10.48550/arxiv.2001.11081
     license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2001.11081 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: oas-10-5334-bc-425-6d1c3737
+    title: A population-level framework to estimate unequal exposure to indoor heat
+      and air pollution
+    url: https://researchonline.lshtm.ac.uk/id/eprint/4674328/1/Cole-etal-2024-A-population-level-framework-to-estimate.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-10-30'
+    document_type: article
+    persistent_id: https://doi.org/10.5334/bc.425
+    license_evidence: no licence statement for this copy [copy https://researchonline.lshtm.ac.uk/id/eprint/4674328/1/Cole-etal-2024-A-population-level-framework-to-estimate.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.5334/bc.425 openalex:W4403899276
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-36828-efs-219-80e5b9c4
+    title: Mitigation of airborne contaminants dispersion in an educational building
+      and investigate its impacts on indoor air quality and energy performance
+    url: https://repository.uwl.ac.uk/id/eprint/9944/1/Mitigation%20of%20airborne%20contaminants%20dispersion%20in%20an%20educational%20building%202023.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-03-17'
+    document_type: article
+    persistent_id: https://doi.org/10.36828/efs.219
+    license_evidence: no licence statement for this copy [copy https://repository.uwl.ac.uk/id/eprint/9944/1/Mitigation%20of%20airborne%20contaminants%20dispersion%20in%20an%20educational%20building%202023.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.36828/efs.219 openalex:W4327731521
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-w2111364805
+    title: '建築学科における建築環境・設備系の授業改善事例報告 : 建築環境工学を中心に'
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2005-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W2111364805
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: openalex:W2111364805
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-the-influence-of-structure-geometry-and-materi
+    title: The influence of structure geometry and material on seismic metamaterial
+      performance
+    url: https://arxiv.org/pdf/2007.14424v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-07-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2007.14424
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2007.14424 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-radiative-cooling-and-thermoregulation-in-the-
+    title: Radiative Cooling and Thermoregulation in the Earth's Glow
+    url: https://arxiv.org/pdf/2006.11931v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-06-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2006.11931
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2006.11931 (v3, the current
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'

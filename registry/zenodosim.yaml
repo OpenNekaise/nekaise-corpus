@@ -4200,19 +4200,6 @@ sources:
     persistent_id: doi:10.1051/e3sconf/202236211003
     license_evidence: Zenodo record metadata.license.id = cc-by-4.0
     rights_verified_at: '2026-10-02'
-  - id: zns-d4-2-assessment-of-hygrothermal-and-textural-feature
-    title: D4.2 - Assessment of hygrothermal and textural features controlling building
-      materials decay, and required as input in the hydrothermal simulations"
-    url: https://zenodo.org/api/records/7620473/files/Deliverable%20D4.2.pdf/content
-    source: zenodo_sim
-    license: cc-by
-    topic: simulation_modeling
-    format: pdf
-    published_at: '2023-01-11'
-    document_type: deliverable
-    persistent_id: doi:10.5281/zenodo.7620473
-    license_evidence: Zenodo record metadata.license.id = cc-by-4.0
-    rights_verified_at: '2026-10-02'
   - id: zns-hygro-thermal-modeling-of-timber-bridge-decks-consid
     title: Hygro-thermal modeling of timber bridge decks considering the effect of solar
       radiation
