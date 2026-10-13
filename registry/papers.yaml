@@ -150416,25 +150416,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-13'
-  - id: oas-10-1016-j-egyr-2020-11-011-7317469d
-    title: Investigations towards lower cooling load in a typical residential building
-      in Kurdistan (Iraq)
-    url: http://researchrepository.napier.ac.uk/Output/2787393
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2020-11-01'
-    document_type: article
-    persistent_id: https://doi.org/10.1016/j.egyr.2020.11.011
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
-      unpaywall.license=cc-by-nc-nd [copy http://researchrepository.napier.ac.uk/Output/2787393;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-13'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1016/j.egyr.2020.11.011 openalex:W3109005860
-    resolution: 'sim1: openalex+unpaywall location'
   - id: oas-10-48550-arxiv-2610-01863-37da1f2a
     title: 'LiteReality-Agent: An Agentic System for Interactable 3D Indoor Scene Reconstruction'
     url: https://arxiv.org/pdf/2610.01863
@@ -152132,6 +152113,118 @@ sources:
     persistent_id: doi:10.48550/arxiv.astro-ph/9507104
     license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:astro-ph/9507104&metadataPrefix=arXivRaw
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:astro-ph/9507104 (v1, the
+      current version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-urban-tranport-phenomena-in-the-street-canyon
+    title: Urban tranport phenomena in the street canyon
+    url: https://arxiv.org/pdf/cond-mat/0211671v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2002-11-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.cond-mat/0211671
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:cond-mat/0211671&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:cond-mat/0211671 (v2, the
+      current version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-gasdynamic-model-of-street-canyon
+    title: Gasdynamic model of street canyon
+    url: https://arxiv.org/pdf/cond-mat/0211673v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2002-11-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.cond-mat/0211673
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:cond-mat/0211673&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:cond-mat/0211673 (v2, the
+      current version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-transport-phenomena-in-the-urban-street-canyon
+    title: Transport phenomena in the urban street canyon
+    url: https://arxiv.org/pdf/cond-mat/0212284v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2002-12-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.cond-mat/0212284
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:cond-mat/0212284&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:cond-mat/0212284 (v2, the
+      current version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-hydrodynamical-approach-to-vehicular-flow-in-t
+    title: Hydrodynamical Approach to Vehicular Flow in the Urban Street Canyon
+    url: https://arxiv.org/pdf/cond-mat/0212427v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2002-12-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.cond-mat/0212427
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:cond-mat/0212427&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:cond-mat/0212427 (v2, the
+      current version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-continuum-field-model-of-street-canyon-theoret
+    title: 'Continuum Field Model of Street Canyon: Theoretical Description; Part I'
+    url: https://arxiv.org/pdf/cond-mat/0301572v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2003-01-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.cond-mat/0301572
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:cond-mat/0301572&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:cond-mat/0301572 (v2, the
+      current version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-gasdynamic-model-of-street-canyon-pccmm-99-pos
+    title: 'Gasdynamic model of street canyon: PCCMM''99 poster session'
+    url: https://arxiv.org/pdf/cond-mat/0306455v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2003-06-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.cond-mat/0306455
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:cond-mat/0306455&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:cond-mat/0306455 (v1, the
+      current version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-the-number-of-capillary-bridges-in-a-wet-granu
+    title: The number of capillary bridges in a wet granular medium
+    url: https://arxiv.org/pdf/cond-mat/0307762v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2003-07-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.cond-mat/0307762
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:cond-mat/0307762&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:cond-mat/0307762 (v1, the
       current version and the copy this URL names): no licence element -> arxiv-nonexclusive
       (no licence recorded: arXiv''s default distribution licence applies)'
     rights_verified_at: '2026-10-13'
