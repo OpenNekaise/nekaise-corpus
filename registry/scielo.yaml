@@ -168116,20 +168116,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc/3.0/
     license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S2007-24222012000400006&format=json)
     rights_verified_at: '2026-10-12'
-  - id: sci-s2007-24222012000400005
-    title: El efecto pantalla o sombra de los árboles en la formación de los escurrimientos
-      urbanos
-    url: https://www.scielo.org.mx/pdf/tca/v3n4/v3n4a5.pdf
-    source: scielo_mex
-    license: cc-by-nc
-    topic: infrastructure
-    format: pdf
-    language: es
-    document_type: journal-article
-    persistent_id: S2007-24222012000400005
-    license_url: https://creativecommons.org/licenses/by-nc/3.0/
-    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S2007-24222012000400005&format=json)
-    rights_verified_at: '2026-10-12'
   - id: sci-s2007-24222012000400007
     title: Retención de 4-nonilfenol y di(2-etilhexil)ftalato en suelos del Valle de
       Tula, Hidalgo, México
@@ -168266,19 +168252,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc/3.0/
     license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S2007-24222010000200001&format=json)
     rights_verified_at: '2026-10-12'
-  - id: sci-s2007-24222011000400009
-    title: 'El Río Verde, Oaxaca: estudio de sus cambios de morfología'
-    url: https://www.scielo.org.mx/pdf/tca/v2n4/v2n4a9.pdf
-    source: scielo_mex
-    license: cc-by-nc
-    topic: infrastructure
-    format: pdf
-    language: es
-    document_type: journal-article
-    persistent_id: S2007-24222011000400009
-    license_url: https://creativecommons.org/licenses/by-nc/3.0/
-    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S2007-24222011000400009&format=json)
-    rights_verified_at: '2026-10-12'
   - id: sci-s2007-24222011000400001
     title: 'Modelo de administración de acuíferos: MADA'
     url: https://www.scielo.org.mx/pdf/tca/v2n4/v2n4a1.pdf
@@ -168305,19 +168278,6 @@ sources:
     persistent_id: S2007-24222010000200004
     license_url: https://creativecommons.org/licenses/by-nc/3.0/
     license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S2007-24222010000200004&format=json)
-    rights_verified_at: '2026-10-12'
-  - id: sci-s2007-24222010000100002
-    title: La problemática aluvional en el Alto Valle del Río Negro, Argentina
-    url: https://www.scielo.org.mx/pdf/tca/v1n1/v1n1a2.pdf
-    source: scielo_mex
-    license: cc-by-nc
-    topic: infrastructure
-    format: pdf
-    language: es
-    document_type: journal-article
-    persistent_id: S2007-24222010000100002
-    license_url: https://creativecommons.org/licenses/by-nc/3.0/
-    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S2007-24222010000100002&format=json)
     rights_verified_at: '2026-10-12'
   - id: sci-s2007-24222010000100001
     title: Modelos de catástrofe del flujo alrededor de objetos sumergidos
@@ -168750,19 +168710,6 @@ sources:
     persistent_id: S2007-24222015000300007
     license_url: https://creativecommons.org/licenses/by-nc/3.0/
     license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S2007-24222015000300007&format=json)
-    rights_verified_at: '2026-10-12'
-  - id: sci-s2007-24222015000300001
-    title: Strategies for Dam Safety Risk Management in México
-    url: https://www.scielo.org.mx/pdf/tca/v6n3/v6n3a1.pdf
-    source: scielo_mex
-    license: cc-by-nc
-    topic: infrastructure
-    format: pdf
-    language: en
-    document_type: journal-article
-    persistent_id: S2007-24222015000300001
-    license_url: https://creativecommons.org/licenses/by-nc/3.0/
-    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S2007-24222015000300001&format=json)
     rights_verified_at: '2026-10-12'
   - id: sci-s2007-24222014000300001
     title: Análisis de las inundaciones en la planicie tabasqueña en el periodo 1995-2010
@@ -186564,3 +186511,1323 @@ sources:
       (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
     rights_verified_at: '2026-10-13'
     origin_ids: doi:10.15847/cct.26252
+  - id: sci-s2182-30302022000200180
+    title: 'As crianças no planeamento urbano participativo: perceções institucionais
+      a partir dos municípios de Almada e Sintra'
+    url: https://scielo.pt/pdf/cct/v44/2182-3030-cct-44-180.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000200180
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000200180&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.24339
+  - id: sci-s2182-30302022000200019
+    title: Retornar, não retornar ou circulação entre lugares? Diferentes práticas migratórias
+      e seus impactos no presente e no futuro de um lugar de partida (al
+    url: https://scielo.pt/pdf/cct/v44/2182-3030-cct-44-19.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000200019
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000200019&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.25412
+  - id: sci-s2182-30302022000300033
+    title: 'Encarnando o vírus: intervenções epistêmicas e performativas à hegemonia
+      disciplinar na arquitetura e urbanismo'
+    url: https://scielo.pt/pdf/cct/vau22/2182-3030-cct-au22-33.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000300033
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000300033&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.25835
+  - id: sci-s2182-30302022000200271
+    title: 'Recensão do livro Direitos Humanos e Habitação: Evolução do direito à habitação
+      em Portugal'
+    url: https://scielo.pt/pdf/cct/v44/2182-3030-cct-44-271.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000200271
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000200271&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27187
+  - id: sci-s2182-30302022000300002
+    title: La perspectiva de género en la legislación autonómica sobre ordenación del
+      territorio y urbanismo en España. Apuntes sobre sus ritmos y diferencias
+    url: https://scielo.pt/pdf/cct/vau22/2182-3030-cct-au22-2.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S2182-30302022000300002
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000300002&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27291
+  - id: sci-s2182-30302022000200230
+    title: 'Um flâneur anônimo em São Paulo: olhar dissidente sobre a metrópole do Quarto
+      Centenário'
+    url: https://scielo.pt/pdf/cct/v44/2182-3030-cct-44-230.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000200230
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000200230&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.25796
+  - id: sci-s2182-30302022000200038
+    title: 'Migração de regresso na reforma: tensões e negociações no casal'
+    url: https://scielo.pt/pdf/cct/v44/2182-3030-cct-44-38.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000200038
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000200038&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.26304
+  - id: sci-s2182-30302022000200001
+    title: Editorial 44
+    url: https://scielo.pt/pdf/cct/v44/2182-3030-cct-44-i.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302022000200001
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000200001&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27381
+  - id: sci-s2182-30302022000200002
+    title: 'Migração de regresso para Portugal: revisitar o passado, compreender o presente'
+    url: https://scielo.pt/pdf/cct/v44/2182-3030-cct-44-iii.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000200002
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000200002&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27207
+  - id: sci-s2182-30302022000300113
+    title: Entrevista ao projeto Mulheres em Construção
+    url: https://scielo.pt/pdf/cct/vau22/2182-3030-cct-au22-113.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000300113
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000300113&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.28059
+  - id: sci-s2182-30302022000300066
+    title: 'Struggles at the &#8216;peripheries&#8217;: situated knowledge production
+      and feminist visions for post-extractive environments'
+    url: https://scielo.pt/pdf/cct/vau22/2182-3030-cct-au22-66.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302022000300066
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000300066&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.25931
+  - id: sci-s2182-30302022000200121
+    title: '&#8220;Talvez devêssemos revisitar o vocabulário do &#8216;regresso&#8217;&#8221;.
+      Entrevista com Marie-Antoinette Hily'
+    url: https://scielo.pt/pdf/cct/v44/2182-3030-cct-44-121.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000200121
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000200121&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27212
+  - id: sci-s2182-30302022000200196
+    title: 'Ocupação urbana e enfrentamento à violência contra as mulheres: será a Casa
+      de Referência da Mulher Tina Martins, em Belo Horizonte, MG -Brasil, um ex'
+    url: https://scielo.pt/pdf/cct/v44/2182-3030-cct-44-196.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000200196
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000200196&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.26181
+  - id: sci-s2182-30302022000200071
+    title: Políticas emigratórias, perceções e práticas de gestão dos regressos durante
+      a ditadura portuguesa (1945-1974)
+    url: https://scielo.pt/pdf/cct/v44/2182-3030-cct-44-71.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000200071
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000200071&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.25238
+  - id: sci-s2182-30302022000300126
+    title: MORE. Expanding architecture from a gender-based perspective
+    url: https://scielo.pt/pdf/cct/vau22/2182-3030-cct-au22-126.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000300126
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000300126&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.26224
+  - id: sci-s2182-30302022000300016
+    title: 'Four women at the top: The self-image and media representation of female
+      leaders in Soviet and Post-Soviet Estonian architecture'
+    url: https://scielo.pt/pdf/cct/vau22/2182-3030-cct-au22-16.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302022000300016
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000300016&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.25985
+  - id: sci-s2182-30302022000400181
+    title: 'Construir y gestionar el parque de viviendas: aportes desde el análisis
+      de la demanda demográfica para el caso de São Paulo (1991-2040)'
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-181.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S2182-30302022000400181
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400181&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27040
+  - id: sci-s2182-30302022000400003
+    title: 'Mais e melhor habitação pública: um olhar a partir da Amadora e do outrora
+      Bairro de Santa Filomena'
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-1.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000400003
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400003&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.26591
+  - id: sci-s2182-30302022000400001
+    title: Editorial 45
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-i.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302022000400001
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400001&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.29058
+  - id: sci-s2182-30302022000400080
+    title: 'Habitação em pandemia: os desafios da COVID-19 a partir da experiência de
+      mulheres em situação de precariedade habitacional'
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-80.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000400080
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400080&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.26604
+  - id: sci-s2182-30302022000400143
+    title: 'O problema da habitação: uma questão de classe'
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-143.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000400143
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400143&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.28240
+  - id: sci-s2182-30302022000400260
+    title: Sustentabilidade e eficiência no uso de recursos em Portugal. Os impactos
+      do PO SEUR (2014-2020)
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-260.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000400260
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400260&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27282
+  - id: sci-s2182-30302022000400112
+    title: '&#8216;Eu pertenço ao grupo de pessoas que acha que deve haver intervenção
+      pública na habitação privada.&#8217; Entrevista com Jorge Malheiros realiza'
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-112.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000400112
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400112&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.26558
+  - id: sci-s2182-30302022000400121
+    title: '&#8216;Se o Estado regular o mercado - e isso é fazer política pública -,
+      consegue implementar uma política social redistributiva&#8217;. Entrevista c'
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-121.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000400121
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400121&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.26571
+  - id: sci-s2182-30302022000400137
+    title: 100 anos de Nuno Teotónio Pereira e da sua obra, um resgate emotivo
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-137.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000400137
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400137&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.28235
+  - id: sci-s2182-30302022000400131
+    title: 'Recensão do livro Habitação: Cem Anos de Políticas Públicas de Habitação
+      em Portugal (1918-2018)'
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-131.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000400131
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400131&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.28115
+  - id: sci-s2182-30302022000400095
+    title: O poder público enquanto catalisador da mudança social. Processo e balanço
+      da reabilitação das &#8220;ilhas&#8221; do Porto em curso
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-95.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000400095
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400095&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.26601
+  - id: sci-s2182-30302022000400146
+    title: 'Acesso à habitação e Covid-19: Leituras a partir das Áreas Metropolitanas
+      de Lisboa e Porto'
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-iii.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000400146
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400146&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.28602
+  - id: sci-s2182-30302022000400039
+    title: 'Refugiados de África e do Médio Oriente em Portugal: notas sobre o acesso
+      à habitação e direito à cidade'
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-39.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000400039
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400039&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.26570
+  - id: sci-s2182-30302022000400055
+    title: Impactos da pandemia na evolução do acesso à habitação na Área Metropolitana
+      de Lisboa
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-55.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000400055
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400055&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.26600
+  - id: sci-s2182-30302022000400240
+    title: La caracterización del urbanismo de Le Corbusier. Los planes urbanos para
+      las ciudades costeras
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-240.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S2182-30302022000400240
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400240&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.26823
+  - id: sci-s2182-30302022000400201
+    title: 'La urbanización diferencial en el Área Metropolitana de Barcelona: El caso
+      del Parque Agrario del Baix Llobregat'
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-201.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S2182-30302022000400201
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400201&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27285
+  - id: sci-s2182-30302022000400147
+    title: Têm os Territórios Educativos de Intervenção Prioritária mitigado as desigualdades
+      educativas e sociais?
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-147.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302022000400147
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400147&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27404
+  - id: sci-s2182-30302022000400221
+    title: 'Urbanism and privatisation: The case of Madrid''s street cleaning system
+      (1975 - 2000)'
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-221.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302022000400221
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400221&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27177
+  - id: sci-s2182-30302022000400161
+    title: 'Rio de Janeiro&#8217;s attempt at Favela urban upgrading: Analysis of the
+      Favela-Bairro programme three decades later'
+    url: https://scielo.pt/pdf/cct/v45/2182-3030-cct-45-161.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302022000400161
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302022000400161&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.25913
+  - id: sci-s2182-30302023000300015
+    title: 'O direito à habitação como direito à cidade: os processos de realojamento
+      dos moradores do Bairro da Cruz Vermelha e do Bairro da Torre'
+    url: https://scielo.pt/pdf/cct/nau23/2182-3030-cct-au23-15.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000300015
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000300015&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.29273
+  - id: sci-s2182-30302023000300105
+    title: O continuum difícil acesso de pessoas e famílias ciganas/Roma à habitação
+      adequada em Portugal
+    url: https://scielo.pt/pdf/cct/nau23/2182-3030-cct-au23-105.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000300105
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000300105&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.29036
+  - id: sci-s2182-30302023000300087
+    title: Será a condição de sem-abrigo uma questão de escolha? Um estudo exploratório
+      realizado nos Açores
+    url: https://scielo.pt/pdf/cct/nau23/2182-3030-cct-au23-87.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000300087
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000300087&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.28721
+  - id: sci-s2182-30302023000300069
+    title: Cidades e comunidades sustentáveis? Problemas práticos de implementação local
+      da Agenda 2030 à luz do processo de reabilitação das ilhas do Porto
+    url: https://scielo.pt/pdf/cct/nau23/2182-3030-cct-au23-69.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000300069
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000300069&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.29239
+  - id: sci-s2182-30302023000300053
+    title: 'Histórias de despejo e resistência: ser idoso no centro de Lisboa'
+    url: https://scielo.pt/pdf/cct/nau23/2182-3030-cct-au23-53.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000300053
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000300053&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.29296
+  - id: sci-s2182-30302023000300004
+    title: Viver (n)um &#8220;bairro precário&#8221;. Problematização a partir de três
+      trajectórias habitacionais
+    url: https://scielo.pt/pdf/cct/nau23/2182-3030-cct-au23-4.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000300004
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000300004&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.29247
+  - id: sci-s2182-30302023000300036
+    title: 'Gendered and classed homelessness: A life-history analysis on displaced
+      survival in Lisbon'
+    url: https://scielo.pt/pdf/cct/nau23/2182-3030-cct-au23-36.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000300036
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000300036&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.29261
+  - id: sci-s2182-30302023000400158
+    title: 'Desafios ao planeamento dos territórios suburbanos: o planeamento do desenvolvimento
+      territorial na Amadora'
+    url: https://scielo.pt/pdf/cct/n47/2182-3030-cct-47-158.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000400158
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000400158&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.28306
+  - id: sci-s2182-30302023000400062
+    title: Habitação de interesse social na produção do habitat rural em territórios
+      de reforma agrária no oeste do estado de São Paulo, Brasil
+    url: https://scielo.pt/pdf/cct/n47/2182-3030-cct-47-62.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000400062
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000400062&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.29969
+  - id: sci-s2182-30302023000400140
+    title: Reforma Administrativa das Freguesias Portuguesas 2013. Reflexões a partir
+      do caso do Algarve
+    url: https://scielo.pt/pdf/cct/n47/2182-3030-cct-47-140.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000400140
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000400140&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27923
+  - id: sci-s2182-30302023000400211
+    title: Representação da paisagem em painéis azulejares nas estações e apeadeiros
+      de comboio da Área Metropolitana do Porto e envolvente
+    url: https://scielo.pt/pdf/cct/n47/2182-3030-cct-47-211.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000400211
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000400211&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.29634
+  - id: sci-s2182-30302023000400003
+    title: 'Playgrounds as meeting places: Post-war experimentations and contemporary
+      perspectives on the design of in-between areas in residential complexes'
+    url: https://scielo.pt/pdf/cct/n47/2182-3030-cct-47-1.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000400003
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000400003&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.29899
+  - id: sci-s2182-30302023000400126
+    title: A produção de cidade e o direito a habitá-la. Uma conversa em dois momentos
+      com Ermínia Maricato
+    url: https://scielo.pt/pdf/cct/n47/2182-3030-cct-47-126.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000400126
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000400126&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.30044
+  - id: sci-s2182-30302023000400137
+    title: 'Recensão de Cities and Affordable Housing: Planning, Design and Policy Nexus'
+    url: https://scielo.pt/pdf/cct/n47/2182-3030-cct-47-137.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000400137
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000400137&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.30370
+  - id: sci-s2182-30302023000400043
+    title: 'Contentions of affordability in the habitat planning of a new town: a case
+      of Navi Mumbai, India'
+    url: https://scielo.pt/pdf/cct/n47/2182-3030-cct-47-43.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000400043
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000400043&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.30054
+  - id: sci-s2182-30302023000400001
+    title: Editorial 47
+    url: https://scielo.pt/pdf/cct/n47/2182-3030-cct-47-i.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000400001
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000400001&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.34111
+  - id: sci-s2182-30302023000400101
+    title: Entre o doméstico e o urbano. Os sistemas de transição como espaço para um
+      habitar colectivo
+    url: https://scielo.pt/pdf/cct/n47/2182-3030-cct-47-101.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000400101
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000400101&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.30462
+  - id: sci-s2182-30302023000400002
+    title: How do we design an habitat? Influence and implications of urban design in
+      territorial, social, economic and environmental sustainability
+    url: https://scielo.pt/pdf/cct/n47/2182-3030-cct-47-iii.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000400002
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000400002&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.34109
+  - id: sci-s2182-30302023000400023
+    title: 'Towards La Charte de l&#8217;Habitat: Jane Drew pioneering a &#8216;more
+      humane architecture&#8217; in Chandigarh'
+    url: https://scielo.pt/pdf/cct/n47/2182-3030-cct-47-23.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000400023
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000400023&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.29960
+  - id: sci-s2182-30302023000400082
+    title: 'An indigenous horticultural project in Rio de Janeiro as a gap in formal
+      urban space: the case of the Dja Guata Porã Garden'
+    url: https://scielo.pt/pdf/cct/n47/2182-3030-cct-47-82.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000400082
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000400082&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.29897
+  - id: sci-s2182-30302023000400193
+    title: 'The potential of integrated transport modes: modelling the combined use
+      of bicycles and train in Lisbon, Portugal'
+    url: https://scielo.pt/pdf/cct/n47/2182-3030-cct-47-193.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000400193
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000400193&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.28015
+  - id: sci-s2182-30302023000100002
+    title: A Economia Política de crises estruturais
+    url: https://scielo.pt/pdf/cct/nsp23/2182-3030-cct-sp23-1.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000100002
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000100002&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.30320
+  - id: sci-s2182-30302023000100007
+    title: 'Inovações sociais para a utilização sustentável da água: experiências de
+      pequena escala em Lajedo de Timbaúba (Brasil) e Tamera (Portugal)'
+    url: https://scielo.pt/pdf/cct/nsp23/2182-3030-cct-sp23-55.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000100007
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000100007&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.28095
+  - id: sci-s2182-30302023000100003
+    title: A Economia Política do turismo
+    url: https://scielo.pt/pdf/cct/nsp23/2182-3030-cct-sp23-5.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000100003
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000100003&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.30324
+  - id: sci-s2182-30302023000100010
+    title: 'Critical reflections on tourism: phenomenological perspectives on global-South,
+      degrowth and the role of visual aids'
+    url: https://scielo.pt/pdf/cct/nsp23/2182-3030-cct-sp23-105.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000100010
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000100010&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.28019
+  - id: sci-s2182-30302023000100012
+    title: 'Recensão de Economia de Missão: Um guia ousado e inovador para mudar o capitalismo'
+    url: https://scielo.pt/pdf/cct/nsp23/2182-3030-cct-sp23-126.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000100012
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000100012&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.28524
+  - id: sci-s2182-30302023000100011
+    title: Recensão de Advanced Introduction to Social Innovation
+    url: https://scielo.pt/pdf/cct/nsp23/2182-3030-cct-sp23-122.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000100011
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000100011&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27979
+  - id: sci-s2182-30302023000100005
+    title: 'Crises do capitalismo global no século XXI: tópicos para uma abordagem estrutural
+      e holística'
+    url: https://scielo.pt/pdf/cct/nsp23/2182-3030-cct-sp23-19.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000100005
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000100005&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27670
+  - id: sci-s2182-30302023000100006
+    title: Uma análise de resiliência regional para o Vale do Paranhana/RS/Brasil
+    url: https://scielo.pt/pdf/cct/nsp23/2182-3030-cct-sp23-35.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000100006
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000100006&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.28172
+  - id: sci-s2182-30302023000100004
+    title: 'As consequências imediatas e a longo prazo da pandemia Covid-19 na educação
+      em Portugal: uma exploração empírica'
+    url: https://scielo.pt/pdf/cct/nsp23/2182-3030-cct-sp23-8.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000100004
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000100004&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.28006
+  - id: sci-s2182-30302023000200003
+    title: 'Exploring the potential of coworking spaces for quality of working life
+      and wellbeing: a systematic review of academic literature'
+    url: https://scielo.pt/pdf/cct/n46/2182-3030-cct-46-1.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000200003
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000200003&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.30874
+  - id: sci-s2182-30302023000200001
+    title: Editorial 46
+    url: https://scielo.pt/pdf/cct/n46/2182-3030-cct-46-i.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000200001
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000200001&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.31722
+  - id: sci-s2182-30302023000200059
+    title: Students with an immigrant background in the Lisbon Metropolitan Area. Evidence
+      at the municipal, school, and class levels
+    url: https://scielo.pt/pdf/cct/n46/2182-3030-cct-46-59.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000200059
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000200059&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.25864
+  - id: sci-s2182-30302023000200173
+    title: The gender of commute
+    url: https://scielo.pt/pdf/cct/n46/2182-3030-cct-46-173.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000200173
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000200173&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.28392
+  - id: sci-s2182-30302023000200078
+    title: Evaluación del espacio público para personas con movilidad reducida. Ibagué,
+      Colombia
+    url: https://scielo.pt/pdf/cct/n46/2182-3030-cct-46-78.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S2182-30302023000200078
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000200078&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27635
+  - id: sci-s2182-30302023000200018
+    title: 'The evolution and spatial dynamics of coworking spaces in Lisbon: a qualitative
+      analysis'
+    url: https://scielo.pt/pdf/cct/n46/2182-3030-cct-46-18.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000200018
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000200018&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.31140
+  - id: sci-s2182-30302023000200031
+    title: Types of Co-Working Spaces in Istanbul
+    url: https://scielo.pt/pdf/cct/n46/2182-3030-cct-46-31.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000200031
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000200031&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.28804
+  - id: sci-s2182-30302023000200131
+    title: O Serviço de Belas Artes da Fundação Calouste Gulbenkian e a atribuição de
+      bolsas de estudo a arquitetos (1960-2000)
+    url: https://scielo.pt/pdf/cct/n46/2182-3030-cct-46-131.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000200131
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000200131&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27213
+  - id: sci-s2182-30302023000200184
+    title: 'Recensão Critica de Espaço, Lugar e Território: Figuras do Pensamento Português
+      Contemporâneo'
+    url: https://scielo.pt/pdf/cct/n46/2182-3030-cct-46-184.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000200184
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000200184&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.30316
+  - id: sci-s2182-30302023000200095
+    title: 'Retenção de fachada na cidade de Lisboa: origens, história e tipologias'
+    url: https://scielo.pt/pdf/cct/n46/2182-3030-cct-46-95.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000200095
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000200095&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.25954
+  - id: sci-s2182-30302023000200002
+    title: 'Transforming work environments: Unveiling the dynamics and impacts of coworking
+      spaces'
+    url: https://scielo.pt/pdf/cct/n46/2182-3030-cct-46-iii.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000200002
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000200002&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.31751
+  - id: sci-s2182-30302023000200055
+    title: 'Collaborative Workspaces: Shaping the future of work, innovation and sustainable
+      development. Interview to Ignasi Capdevila'
+    url: https://scielo.pt/pdf/cct/n46/2182-3030-cct-46-55.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302023000200055
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000200055&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.31571
+  - id: sci-s2182-30302023000200114
+    title: 'O conceito de lugar arquitetónico: contributos da arquitetura e da filosofia
+      hermenêutica'
+    url: https://scielo.pt/pdf/cct/n46/2182-3030-cct-46-114.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302023000200114
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302023000200114&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.27344
+  - id: sci-s2182-30302024000200011
+    title: Vítor Matias Ferreira. Da Expo&#8217;98 aos &#8216;Grandes Trabalhos&#8217;
+    url: https://scielo.pt/pdf/cct/n48/2182-3030-cct-48-11.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302024000200011
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302024000200011&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.36369
+  - id: sci-s2182-30302024000200096
+    title: 'Creative dynamics in districts of large Brazilian metropolises: Botafogo
+      (RJ) and Santa Tereza (BH)'
+    url: https://scielo.pt/pdf/cct/n48/2182-3030-cct-48-96.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302024000200096
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302024000200096&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.32456
+  - id: sci-s2182-30302024000200006
+    title: 'Vítor Matias Ferreira: Compromiso Y Fascinación Por La Ciudad'
+    url: https://scielo.pt/pdf/cct/n48/2182-3030-cct-48-6.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S2182-30302024000200006
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302024000200006&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.35783
+  - id: sci-s2182-30302024000200078
+    title: 'Dissonâncias nas políticas de revitalização da área central do Recife: avanços
+      e desafios das transformações urbanísticas (2000-2023)'
+    url: https://scielo.pt/pdf/cct/n48/2182-3030-cct-48-78.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302024000200078
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302024000200078&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.34363
+  - id: sci-s2182-30302024000200001
+    title: Editorial 48
+    url: https://scielo.pt/pdf/cct/n48/2182-3030-cct-48-i.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S2182-30302024000200001
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302024000200001&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.36853
+  - id: sci-s2182-30302024000200148
+    title: Quinta do Ferro, da participação à gentrificação promovida por uma autarquia
+    url: https://scielo.pt/pdf/cct/n48/2182-3030-cct-48-148.pdf
+    source: scielo_prt
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S2182-30302024000200148
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=prt&code=S2182-30302024000200148&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC'' (https://articlemeta.scielo.org/api/v1/journal/?collection=prt&issn=2182-3030)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.15847/cct.33409

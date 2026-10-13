@@ -22721,3 +22721,33 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-48-50-art-smvu-3t
+    title: 'Carrier Commercial (US literature): SmartVu™ Controls Version 4.X Network
+      Integration Guide for Applied Rooftop Units (48/50K, 48/50V)'
+    url: https://www.shareddocs.com/hvac/docs/1005/Public/08/48-50-ART-SMVU-3T.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
+  - id: vnd-carrier-commercial-11-808-1327-01
+    title: 'Carrier Commercial (US literature): i-Vu Cloud V11 Why Upgrade (09 — 11
+      808 1327 01)'
+    url: https://www.shareddocs.com/hvac/docs/1000/Public/09/11-808-1327-01.pdf
+    source: vendor_carrier
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.carrier.com/commercial/en/us/legal/terms-of-use/
+    license_evidence: prohibits any device/program to access, acquire, copy or monitor
+      the Website — declared prohibition disregarded by operator decision 2026-08-30
+      (local training use, no redistribution)
+    rights_verified_at: '2026-08-30'
