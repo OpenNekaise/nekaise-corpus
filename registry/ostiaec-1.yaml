@@ -632,20 +632,6 @@ sources:
       Engineering): free to read under the DOE Public Access Plan; publisher copyright,
       no reuse licence'
     rights_verified_at: '2026-10-12'
-  - id: osa-winter-2016-progress-update-better-buildings-allianc
-    title: 'Winter 2016 Progress Update: Better Buildings Alliance'
-    url: https://www.osti.gov/servlets/purl/1671885
-    source: osti_aec
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2016-01-02'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1671885
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-12'
   - id: osa-characterization-of-commercial-building-appliances-f
     title: Characterization of commercial building appliances. Final report
     url: https://www.osti.gov/servlets/purl/10172941
@@ -783,20 +769,6 @@ sources:
     published_at: '1990-09-01'
     document_type: technical-report
     persistent_id: doi:10.2172/6204435
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-12'
-  - id: osa-better-buildings-challenge-progress-update-spr-2
-    title: 'Better Buildings Challenge: Progress Update: Spring 2014'
-    url: https://www.osti.gov/servlets/purl/1671875
-    source: osti_aec
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2014-05-12'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1671875
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-12'
@@ -4637,4 +4609,123 @@ sources:
     persistent_id: doi:10.2172/6535861
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-heat-pump-centered-integrated-community-energy-10
+    title: Heat Pump Centered Integrated Community Energy Systems Interim Report
+    url: https://www.osti.gov/servlets/purl/12036794
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1979-02-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/12036794
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-user-manual-for-geocity-a-computer-model-for-geother
+    title: 'User manual for GEOCITY: a computer model for geothermal district heating
+      cost analysis'
+    url: https://www.osti.gov/servlets/purl/6435902
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1978-10-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/6435902
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-measured-indoor-nitrogen-oxides-in-homes-with-a-chil
+    title: Measured Indoor Nitrogen Oxides in Homes with a Child with Asthma and Gas
+      or Induction Electric Cooking
+    url: https://www.osti.gov/servlets/purl/3424752
+    source: osti_aec
+    license: publisher-oa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-06-09'
+    document_type: journal-article
+    persistent_id: doi:10.1051/e3sconf/202671601053
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (E3S
+      Web of Conferences): free to read under the DOE Public Access Plan; publisher
+      copyright, no reuse licence'
+    rights_verified_at: '2026-10-13'
+  - id: osa-thermal-and-photoinduced-chemistry-of-the-aromatic-c
+    title: 'Thermal and photoinduced chemistry of the aromatic Criegee intermediate,
+      benzaldehyde oxide: Implications for indoor air quality'
+    url: https://www.osti.gov/servlets/purl/3000174
+    source: osti_aec
+    license: publisher-oa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-08-31'
+    document_type: journal-article
+    persistent_id: doi:10.1111/php.70029
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Photochemistry
+      and Photobiology): free to read under the DOE Public Access Plan; publisher copyright,
+      no reuse licence'
+    rights_verified_at: '2026-10-13'
+  - id: osa-a-year-round-energy-efficient-fresh-air-handling-sys
+    title: A Year-Round Energy-Efficient Fresh Air Handling System with Two-Stage Heat
+      Pumps and Lake Water Pre-Treatment
+    url: https://www.osti.gov/servlets/purl/3484835
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-01-01'
+    document_type: conference-paper
+    persistent_id: doi:10.1051/e3sconf/202567203015
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-are-ventilation-filters-degrading-indoor-air-quality
+    title: Are Ventilation Filters Degrading Indoor Air Quality in California Classrooms?
+    url: https://www.osti.gov/servlets/purl/964413
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2008-10-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/964413
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-is-co2-an-indoor-pollutant-higher-levels-of-co2-may-
+    title: Is CO2 an Indoor Pollutant? Higher Levels of CO2 May Diminish Decision Making
+      Performance
+    url: https://www.osti.gov/servlets/purl/1171812
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2013-03-01'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-sources-and-source-strengths-of-volatile-organic-com
+    title: Sources and Source Strengths of Volatile Organic Compounds in a New Office
+      Building
+    url: https://www.osti.gov/servlets/purl/6026187
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-03-06'
+    document_type: conference-paper
+    persistent_id: doi:10.1080/10473289.1991.10466944
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-13'

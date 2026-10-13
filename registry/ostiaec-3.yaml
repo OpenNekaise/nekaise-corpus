@@ -591,34 +591,6 @@ sources:
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-12'
-  - id: osa-promoting-solar-pv-on-leased-buildings-guide-benefit
-    title: 'Promoting Solar PV on Leased Buildings Guide: Benefits, Barriers, and Strategies'
-    url: https://www.osti.gov/servlets/purl/1755556
-    source: osti_aec
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2015-10-01'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1755556
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-12'
-  - id: osa-energy-data-management-manual-for-the-wastewater-tre
-    title: Energy Data Management Manual for the Wastewater Treatment Sector
-    url: https://www.osti.gov/servlets/purl/1756504
-    source: osti_aec
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2017-12-01'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1756504
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-12'
   - id: osa-effect-of-insulation-on-the-performance-of-wrapped-c
     title: Effect of Insulation on the Performance of Wrapped-Coil-Tank Heat Pump Water
       Heater Deploying Low GWP Refrigerants
@@ -3981,6 +3953,157 @@ sources:
     published_at: '1980-01-01'
     document_type: technical-report
     persistent_id: doi:10.2172/5751310
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-overcoming-barriers-to-residential-conservation-do-e
+    title: 'Overcoming barriers to residential conservation: do energy audits help'
+    url: https://www.osti.gov/servlets/purl/6542791
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1982-12-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/6542791
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-solar-industrial-retrofit-system-north-coles-l-2
+    title: 'Solar industrial retrofit system: North Coles Levee Natural Gas Processing
+      Plant. Technical report. Final report'
+    url: https://www.osti.gov/servlets/purl/5196684
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1980-07-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/5196684
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-test-case-for-the-potential-application-of-district-
+    title: Test case for the potential application of district energy systems using
+      thermal energy cogenerated at existing electric power plants
+    url: https://www.osti.gov/servlets/purl/6539716
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1978-01-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/6539716
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-industrial-food-processing-and-space-heating-with-ge
+    title: Industrial food processing and space heating with geothermal heat. Final
+      report, February 16, 1979-August 31, 1982
+    url: https://www.osti.gov/servlets/purl/6505523
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1982-08-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/6505523
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-financial-methods-applicable-to-energy-conserving-re
+    title: Financial methods applicable to energy-conserving retrofits for single-family
+      residences
+    url: https://www.osti.gov/servlets/purl/5957761
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1977-06-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/5957761
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-measured-indoor-pm2-5-black-carbon-and-oxidative-pot
+    title: Measured indoor PM2.5, black carbon, and oxidative potential before and after
+      replacing gas with induction cooking in asthmatic households
+    url: https://www.osti.gov/servlets/purl/3424754
+    source: osti_aec
+    license: publisher-oa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-06-09'
+    document_type: journal-article
+    persistent_id: doi:10.1051/e3sconf/202671601058
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (E3S
+      Web of Conferences): free to read under the DOE Public Access Plan; publisher
+      copyright, no reuse licence'
+    rights_verified_at: '2026-10-13'
+  - id: osa-heated-tobacco-products-volatile-emissions-and-their
+    title: 'Heated Tobacco Products: Volatile Emissions and Their Predicted Impact on
+      Indoor Air Quality'
+    url: https://www.osti.gov/servlets/purl/1637293
+    source: osti_aec
+    license: publisher-oa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-05-31'
+    document_type: journal-article
+    persistent_id: doi:10.1021/acs.est.9b02544
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Environmental
+      Science and Technology): free to read under the DOE Public Access Plan; publisher
+      copyright, no reuse licence'
+    rights_verified_at: '2026-10-13'
+  - id: osa-mixs-be-a-mixs-extension-defining-a-minimum-informat
+    title: 'MIxS-BE: a MIxS extension defining a minimum information standard for sequence
+      data from the built environment'
+    url: https://www.osti.gov/servlets/purl/1629371
+    source: osti_aec
+    license: publisher-oa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2013-10-24'
+    document_type: journal-article
+    persistent_id: doi:10.1038/ismej.2013.176
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (The
+      ISME Journal): free to read under the DOE Public Access Plan; publisher copyright,
+      no reuse licence'
+    rights_verified_at: '2026-10-13'
+  - id: osa-investigation-of-key-parameters-influencing-the-effi
+    title: Investigation of key parameters influencing the efficient photocatalytic
+      oxidation of indoor volatile organic compounds (VOCs)
+    url: https://www.osti.gov/servlets/purl/971188
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2008-06-01'
+    document_type: journal-article
+    license_evidence: OSTI Journal Article full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-characteristics-of-range-hoods-in-california-homes-d
+    title: Characteristics of Range Hoods in California Homes -- Data Collected from
+      a Real Estate Web Site
+    url: https://www.osti.gov/servlets/purl/1051043
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2011-09-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1051043
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-13'

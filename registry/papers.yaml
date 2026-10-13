@@ -147772,3 +147772,283 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-13'
     origin_ids: doi:10.1371/journal.pone.0246096
+  - id: ope-developing-an-algorithm-to-illustrate-the-like
+    title: Developing an algorithm to illustrate the likelihood of the dissatisfaction
+      rate with relation to the indoor temperature in naturally ventilated class
+    url: https://pure.coventry.ac.uk/ws/files/10789505/algorithm.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2016-10-20'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2016.10.009
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://pure.coventry.ac.uk/ws/files/10789505/algorithm.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2016.10.009 openalex:W2537201069
+    resolution: 'legacy: openalex location'
+  - id: ope-climatic-analysis-of-a-passive-cooling-technol
+    title: Climatic analysis of a passive cooling technology for the built environment
+      in hot countries
+    url: https://strathprints.strath.ac.uk/67889/1/Calautit_etal_AE_2016_Climatic_analysis_of_a_passive_cooling_technology_for_the_built_environment.pdf
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2016-05-25'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2016.05.096
+    license_evidence: no licence statement for this copy [copy https://strathprints.strath.ac.uk/67889/1/Calautit_etal_AE_2016_Climatic_analysis_of_a_passive_cooling_technology_for_the_built_environment.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2016.05.096 openalex:W2397865019
+    resolution: 'legacy: openalex location'
+  - id: ope-the-application-of-machine-learning-to-air-pol
+    title: 'The application of machine learning to air pollution research: A bibliometric
+      analysis'
+    url: https://repository.rothamsted.ac.uk/id/eprint/32503/1/1-s2.0-S0147651323004153-main.pdf
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-04-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.ecoenv.2023.114911
+    license_evidence: no licence statement for this copy [copy https://repository.rothamsted.ac.uk/id/eprint/32503/1/1-s2.0-S0147651323004153-main.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1016/j.ecoenv.2023.114911 openalex:W4365812881
+    resolution: 'legacy: openalex location'
+  - id: ope-energy-quota-based-integrated-solutions-for-he
+    title: Energy-quota-based integrated solutions for heating and cooling of residential
+      buildings in the Hot Summer and Cold Winter zone in China
+    url: https://centaur.reading.ac.uk/98348/1/20210103Revised-2.%20Manuscript%20clean.pdf
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2021-01-26'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2021.110767
+    license_evidence: no licence statement for this copy [copy https://centaur.reading.ac.uk/98348/1/20210103Revised-2.%20Manuscript%20clean.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2021.110767 openalex:W3122507976
+    resolution: 'legacy: openalex location'
+  - id: arx-methodological-foundation-of-a-numerical-taxon
+    title: Methodological Foundation of a Numerical Taxonomy of Urban Form
+    url: https://arxiv.org/pdf/2104.14956v3
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-04-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2104.14956
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2104.14956 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-configurational-approaches-to-urban-form-empir
+    title: 'Configurational Approaches to Urban Form: Empirical Test on the City of
+      Nice (France)'
+    url: https://arxiv.org/pdf/2111.04587v1
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-11-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.04587
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.04587 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-a-growth-model-for-water-distribution-networks
+    title: A growth model for water distribution networks with loops
+    url: https://arxiv.org/pdf/2106.13519v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2021-06-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2106.13519
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2106.13519 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1098/rspa.2021.0528
+  - id: arx-does-built-environment-influence-physical-acti
+    title: Does built environment influence physical activity and body postures in homework
+      journeys?
+    url: https://arxiv.org/pdf/2201.07031v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-01-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2201.07031
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2201.07031 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-disadvantaged-communities-have-lower-access-to
+    title: Disadvantaged Communities Have Lower Access to Urban Infrastructure
+    url: https://arxiv.org/pdf/2203.13784v1
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-03-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2203.13784
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2203.13784 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-knitcity-a-machine-learning-based-game-theoret
+    title: 'KnitCity: a machine learning-based, game-theoretical framework for prediction
+      assessment and seismic risk policy design'
+    url: https://arxiv.org/pdf/2205.02679v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-05-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2205.02679
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2205.02679 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-mtbf-33-a-multi-temporal-building-footprint-da
+    title: 'MTBF-33: A multi-temporal building footprint dataset for 33 counties in
+      the United States (1900-2015)'
+    url: https://arxiv.org/pdf/2203.11078v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-03-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2203.11078
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2203.11078 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.dib.2022.108369
+  - id: arx-objective-and-perceived-risk-in-seismic-vulner
+    title: Objective and perceived risk in seismic vulnerability assessment at urban
+      scale
+    url: https://arxiv.org/pdf/2208.06367v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-06-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2208.06367
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2208.06367 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-time-evolving-impact-of-trees-on-street-canyon
+    title: Time-evolving Impact of Trees on Street Canyon Microclimate
+    url: https://arxiv.org/pdf/2301.09935v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-01-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2301.09935
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2301.09935 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-influence-of-self-disassembly-of-bridges-on-co
+    title: Influence of self-disassembly of bridges on collective flow characteristics
+      of swarm robots in a single-lane and periodic system with a gap
+    url: https://arxiv.org/pdf/2302.10067v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-02-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2302.10067
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2302.10067 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.physa.2023.129080
+  - id: arx-using-machine-learning-to-understand-causal-re
+    title: Using machine learning to understand causal relationships between urban form
+      and travel CO2 emissions across continents
+    url: https://arxiv.org/pdf/2308.16599v2
+    source: arxiv
+    license: cc-by-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-08-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2308.16599
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2308.16599 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-flow-acoustics-theory-and-benchmarking
+    title: 'Flow-Acoustics: Theory and Benchmarking'
+    url: https://arxiv.org/pdf/2404.10634v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-03-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2404.10634
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2404.10634 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
