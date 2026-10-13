@@ -29,20 +29,6 @@ sources:
     license_evidence: OSTI Conference full text; the OSTI record states no rights and
       OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-12'
-  - id: osa-2020-leadership-agenda-for-existing-commercial-and-m
-    title: 2020 Leadership Agenda for Existing Commercial and Multifamily Buildings
-    url: https://www.osti.gov/servlets/purl/1332063
-    source: osti_aec
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2016-01-21'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1332063
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-12'
   - id: osa-understanding-occupancy-patterns-in-a-commercial-spa
     title: Understanding Occupancy Patterns in a Commercial Space
     url: https://www.osti.gov/servlets/purl/1599176
@@ -188,20 +174,6 @@ sources:
     license_evidence: OSTI Conference full text; the OSTI record states no rights and
       OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-12'
-  - id: osa-outdoor-lighting-challenges-and-solution-pathways
-    title: Outdoor Lighting Challenges and Solution Pathways
-    url: https://www.osti.gov/servlets/purl/1755534
-    source: osti_aec
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2016-03-01'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1755534
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-12'
   - id: osa-web-based-energy-information-systems-for-large-comme
     title: Web-based energy information systems for large commercial buildings
     url: https://www.osti.gov/servlets/purl/831096
@@ -240,20 +212,6 @@ sources:
     published_at: '2018-05-01'
     document_type: technical-report
     persistent_id: doi:10.2172/1426746
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-12'
-  - id: osa-winter-2015-progress-update-better-buildings-allianc
-    title: 'Winter 2015 Progress Update: Better Buildings Alliance'
-    url: https://www.osti.gov/servlets/purl/1671886
-    source: osti_aec
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2014-12-31'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1671886
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-12'
@@ -328,21 +286,6 @@ sources:
     published_at: '2013-11-01'
     document_type: technical-report
     persistent_id: doi:10.2172/1110481
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-12'
-  - id: osa-next-generation-luminaire-ngl-downlight-demonstratio
-    title: Next Generation Luminaire (NGL) Downlight Demonstration Project, Hilton Columbus
-      Downtown
-    url: https://www.osti.gov/servlets/purl/1220500
-    source: osti_aec
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2014-09-30'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1220500
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-12'
@@ -3849,3 +3792,47 @@ sources:
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-12'
+  - id: osa-seismic-design-technology-for-breeder-reactor-struct
+    title: 'Seismic design technology for Breeder Reactor structures. Volume 3: special
+      topics in reactor structures'
+    url: https://www.osti.gov/servlets/purl/5708428
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1983-04-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/5708428
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-weatherization-assistance-program-administrative-pro
+    title: 'Weatherization Assistance Program: Administrative Professionals Training'
+    url: https://www.osti.gov/servlets/purl/1592091
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-01-10'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-electric-vehicle-and-solar-energy-pilot-opportunity-
+    title: 'Electric vehicle and solar energy pilot: Opportunity to address suburban
+      energy challenges'
+    url: https://www.osti.gov/servlets/purl/1472012
+    source: osti_aec
+    license: publisher-oa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-08-23'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.tej.2018.06.007
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Electricity
+      Journal): free to read under the DOE Public Access Plan; publisher copyright,
+      no reuse licence'
+    rights_verified_at: '2026-10-13'

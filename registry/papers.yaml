@@ -146799,3 +146799,187 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-12'
+  - id: oas-10-1016-j-apenergy-2021-117164-bdeada10
+    title: Experimental evaluation of model-free reinforcement learning algorithms for
+      continuous HVAC control
+    url: https://backend.orbit.dtu.dk/ws/files/247573805/1_s2.0_S0306261921005961_main.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-06-08'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2021.117164
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://backend.orbit.dtu.dk/ws/files/247573805/1_s2.0_S0306261921005961_main.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2021.117164 openalex:W3166166623
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-autcon-2020-103188-6539f398
+    title: Data driven model improved by multi-objective optimisation for prediction
+      of building energy loads
+    url: https://research.tees.ac.uk/ws/files/15878652/elsarticle_template.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-04-29'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.autcon.2020.103188
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://research.tees.ac.uk/ws/files/15878652/elsarticle_template.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.autcon.2020.103188 openalex:W3014418864
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-scs-2023-104664-7c0f12e3
+    title: 'Urban building energy modeling from geo-referenced energy performance certificate
+      data: Development, calibration, and validation'
+    url: https://uu.diva-portal.org/smash/get/diva2:1763115/FULLTEXT01
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-06-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.scs.2023.104664
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://uu.diva-portal.org/smash/get/diva2:1763115/FULLTEXT01;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.scs.2023.104664 openalex:W4379052683
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-energy-2020-119646-8b61cccc
+    title: Comprehensive energy, economic and thermal comfort assessments for the passive
+      energy retrofit of historical buildings - A case study of a late ninete
+    url: https://figshare.com/articles/journal_contribution/Comprehensive_energy_economic_and_thermal_comfort_assessments_for_the_passive_energy_retrofit_of_historical_buildings_-_A_case_study_of_a_late_nineteenth-century_Victorian_house_renovation_in_the_UK/13607732
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-12-26'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.energy.2020.119646
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://figshare.com/articles/journal_contribution/Comprehensive_energy_economic_and_thermal_comfort_assessments_for_the_passive_energy_retrofit_of_historical_buildings_-_A_case_study_of_a_late_nineteenth-century_Victorian_house_renovation_in_the_UK/13607732;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.energy.2020.119646 openalex:W3116469510
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1080-19401493-2020-1770861-cb2fca8f
+    title: Identification of multi-zone grey-box building models for use in model predictive
+      control
+    url: https://lirias.kuleuven.be/retrieve/9f03f0a8-e11b-4d28-868e-9c7ea690dd30
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-05-27'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/19401493.2020.1770861
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/9f03f0a8-e11b-4d28-868e-9c7ea690dd30;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/19401493.2020.1770861 openalex:W3033217105
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1007-s12273-023-1090-5-2d7a0a01
+    title: 'CBE Clima Tool: A free and open-source web application for climate analysis
+      tailored to sustainable building design'
+    url: https://arxiv.org/pdf/2212.04609
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-12-04'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s12273-023-1090-5
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2212.04609;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s12273-023-1090-5 openalex:W4389309910
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-buildenv-2021-108088-2cc17ae4
+    title: Urban meteorological forcing data for building energy simulations
+    url: https://centaur.reading.ac.uk/99057/8/BAE-D-21-00849_R1-Centaur.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-07-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2021.108088
+    license_evidence: no licence statement for this copy [copy https://centaur.reading.ac.uk/99057/8/BAE-D-21-00849_R1-Centaur.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2021.108088 openalex:W3182265689
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-building-damage-resilient-dominating-sets-in-c
+    title: Building Damage-Resilient Dominating Sets in Complex Networks against Random
+      and Targeted Attacks
+    url: https://arxiv.org/pdf/1409.7831v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-09-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1409.7831
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1409.7831 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1038/srep08321
+  - id: arx-modelling-air-pollution-abatement-in-deep-stre
+    title: Modelling air pollution abatement in deep street canyons by means of air
+      scrubbers
+    url: https://arxiv.org/pdf/1506.06088v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-06-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1506.06088
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1506.06088 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-urban-skylines-building-heights-and-shapes-as-
+    title: 'Urban Skylines: building heights and shapes as measures of city size'
+    url: https://arxiv.org/pdf/1512.00946v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2015-12-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1512.00946
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1512.00946 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
