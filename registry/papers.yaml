@@ -150121,24 +150121,6 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-13'
     origin_ids: doi:10.25743/ict.2019.24.3.002
-  - id: oas-10-1109-access-2023-3262934-07d066b6
-    title: Design of an EnergyPlus Model-Based Smart Controller for Maintaining Thermal
-      Comfortable Environment in Non-Domestic Building
-    url: https://e-space.mmu.ac.uk/632483/1/10086530.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2023-01-01'
-    document_type: article
-    persistent_id: https://doi.org/10.1109/access.2023.3262934
-    license_evidence: no licence statement for this copy [copy https://e-space.mmu.ac.uk/632483/1/10086530.pdf;
-      version acceptedVersion; rights unknown]
-    rights_verified_at: '2026-10-13'
-    selected_version: acceptedVersion
-    origin_ids: doi:10.1109/access.2023.3262934 openalex:W4361801809
-    resolution: 'sim1: openalex+unpaywall location'
   - id: oas-10-1016-j-buildenv-2022-109951-a37f4571
     title: Use of wind pressure coefficients to simulate natural ventilation and building
       energy for isolated and surrounded buildings
